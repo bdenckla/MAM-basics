@@ -335,7 +335,7 @@ infrastructure has changed enough to make them misleading examples:
   `exodus-17-26-note-links.chapters.json`; run artifacts
   `.novc/mam-ws-bot-real-runs/20261013-102232-324529-0400/`.
 
-### Introduction note templates: every `נוסח` call given `2=`, 2026-10-18 — current
+### Introduction note templates: every `נוסח` call given `2=`, 2026-10-18
 
 - **Purpose:** Ben asked on 2026-10-18 for every `{{נוסח}}` call in MAM's introduction to
   take the form MAM's chapter pages use, the note as parameter 2 written `2=`, as a
@@ -370,6 +370,67 @@ infrastructure has changed enough to make them misleading examples:
 - **JSON file:** `in/mam-ws-bot-edits/intro-nusach-2-prefix.json`; run artifacts
   `.novc/mam-ws-bot-intro-runs/20261018-121729-392296-0400/`, dry run
   `.novc/mam-ws-bot-intro-runs/20261018-121701-421342-0400/`.
+
+### Ketiv forms with two vowels on one letter: a CGJ between the vowels, 2026-10-28 — current
+
+- **Purpose:** Give a CGJ (U+034F, COMBINING GRAPHEME JOINER) to nine atoms whose letter had
+  two vowels with no CGJ between them: five ketiv forms in four documentation notes, and the
+  four entries of chapter 5 of MAM's introduction that quote them. MAM's Scripture text has a
+  CGJ between the two vowels of every such letter. At Ezekiel 14:14, 14:20 (two forms) and 28:3
+  the notes' א-כתיב forms of דנאל and מדנאל have a ḥiriq and a tsere on the nun, and the notes
+  give that order: "חיריק, צירה, ... בסדר הזה". At 2 Kings 18:27 the note's combined form has a
+  sheva and a tsere on its yod. Each CGJ follows the ḥiriq or the sheva, and nothing else
+  changed.
+- **Framing:** Ben asked on 2026-10-28 that the change be framed "as making fragile words
+  robust", not as a font fix. Normalization is not what reorders these four atoms: Unicode's
+  combining classes already put sheva (10) and ḥiriq (14) before tsere (15), so NFC and NFD leave
+  them as they are, and `is_fragile` in `py/mb_cmn/uni_norm_fragile.py` calls them robust.
+  HarfBuzz's own order for Hebrew points puts tsere first, so Taamey D 1.1, adopted in
+  `229ce922`, showed the tsere to the right of the ḥiriq, against the notes. A CGJ keeps the
+  stated order under any normalization or shaping engine.
+- **Authorization:** On 2026-10-28 Ben chose the CGJ, asked that BdencklaBot insert it from a
+  top-level session, and accepted a literal CGJ with nothing else changed: "Yes, given your
+  survey, that seems like the best course of (non-precedent-changing) action." A Claude Code
+  session wrote the files and ran them the same day, after his go-ahead for the saves.
+- **Literal code point:** every CGJ already in a documentation note, on five note lines of
+  `in/mam-ws/`, and in the mirrored introduction is the literal code point; templates insert
+  CGJs only into the Scripture text.
+- **Saving runs:** 2 Kings 18, revision 3010616 → 3098808; Ezekiel 14, 2988050 → 3098809 (three
+  CGJs); Ezekiel 28, 3001796 → 3098811; introduction chapter 5, 3088859 → 3098815 (four CGJs).
+- **Safety rule:** a script cut each `old` from the live wikitext of the four pages, read before
+  the dry runs and again, byte for byte the same, just before the saves; each `old` occurs
+  exactly once, and each `new` is its `old` with one CGJ. The `--no-save` dry runs' pages
+  equalled that capture with the replacements applied, code point for code point, and differed
+  from it by the nine CGJs alone. The saving runs' pages equalled the dry runs', and the post-run
+  downloads equalled both. In MAM-parsed the nun now has dagesh, ḥiriq, CGJ, tsere and its
+  accent, and the yod sheva, CGJ and tsere.
+- **Post-run downloads:** the chapter run refetched the three chapters and all 36 declared special
+  pages, and the reparse of Kings and Ezekiel passed all 59 MAM-parsed claims. Three special
+  pages, none of them saved by this run, brought in edits by others since the previous download:
+  `decalogue`, revision 952886 → 3088871 (2026-10-15), which now points to the introduction's
+  chapters 2 and 3, links the English page and changes six Onkelos link anchors; `decalogue-en`,
+  2980688 → 3088722 (2026-10-14), which links the Hebrew page and drops three header links; and
+  `deuteronomy-32`, 3079372 → 3092658 (2026-10-19), whose note at 32:34 now says the full
+  spelling has a vav, not a yod. The chapter mirror of Deuteronomy 32 keeps the earlier note,
+  since this run downloaded only the chapters it saved. The introduction run's refresh brought in
+  five pages' edits by others: chapter 1, revision 3095761 (2026-10-23), which rewords the
+  chapter's opening and corrects a Job reference and an mgketer link; chapters 2 and 3 and the
+  Westminster page, 3092676, 3092677 and 3092678 (2026-10-19), which correct the spelling
+  וסטמינסטר; and the appendices, 3092644 (2026-10-19), which correct a date.
+- **One-shot:** every `old` describes the pre-edit text. Confirmed 2026-10-28, immediately after
+  the runs: `--no-save` re-runs raised on 2 Kings 18 and on chapter 5's first `old`.
+- **Left as they are:** `doc/near-aleppo-avi-ketiv-investigation.html`, which quotes the
+  introduction's earlier forms verbatim; and chapter 5's six other letters with two vowels and
+  no CGJ, outside the scope Ben confirmed: Proverbs 6:24's lamed, and five ḥataf-ḥiriq forms, a
+  sheva then a ḥiriq, at 1 Kings 17:11, Psalms 14:1 (two) and Psalms 53:2 (two).
+- **Edit level:** Raw page text string replacement, chapter- and page-targeted.
+- **JSON files:** `in/mam-ws-bot-edits/note-ketiv-two-vowels-cgj.json` and its selector,
+  `note-ketiv-two-vowels-cgj.chapters.json`, and
+  `in/mam-ws-bot-edits/intro-ketiv-two-vowels-cgj.json`; run artifacts
+  `.novc/mam-ws-bot-real-runs/20261028-153831-542909-0400/`, dry run
+  `.novc/mam-ws-bot-real-runs/20261028-152208-478727-0400/`, and
+  `.novc/mam-ws-bot-intro-runs/20261028-154221-003122-0400/`, dry run
+  `.novc/mam-ws-bot-intro-runs/20261028-152218-893094-0400/`.
 
 ## How to look up the original code
 

@@ -6,19 +6,19 @@
       "resolved_title": "עשרת הדברות/טעמים",
       "page_id": 344329,
       "requested_title": "עשרת הדברות/טעמים",
-      "revision_id": 952886,
-      "revision_timestamp": "2020-04-23T19:50:36Z",
-      "byte_size": 19885,
-      "sha256": "af7c1b1d94c7a18bab54cc7232152ed0ed0c29c877739553e6e1c6d976f1826e"
+      "revision_id": 3088871,
+      "revision_timestamp": "2026-10-15T12:37:41Z",
+      "byte_size": 20486,
+      "sha256": "6a8f27da71555a235132439749aa263d767b2073fa584a611b0ed594c88d9ab8"
     },
     "decalogue-en": {
       "resolved_title": "מקרא על פי המסורה/Decalogue",
       "page_id": 377858,
       "requested_title": "Decalogue",
-      "revision_id": 2980688,
-      "revision_timestamp": "2026-01-27T16:42:35Z",
-      "byte_size": 19915,
-      "sha256": "e62752bd1549ef2a53a2ef2212cac70b350982b4d215fd0d2a4b301c6e15a0d0"
+      "revision_id": 3088722,
+      "revision_timestamp": "2026-10-14T18:50:57Z",
+      "byte_size": 19695,
+      "sha256": "44403c25961c55d0f3297d44c81ea9785940ccba638a4eb6371c4e1264e4bae4"
     },
     "decalogue-base": {
       "resolved_title": "עשרת הדברות בסיס/טעמים",
@@ -267,10 +267,10 @@
       "resolved_title": "דברים לב/טעמים",
       "page_id": 236679,
       "requested_title": "דברים לב/טעמים",
-      "revision_id": 3079372,
-      "revision_timestamp": "2026-08-27T17:42:10Z",
+      "revision_id": 3092658,
+      "revision_timestamp": "2026-10-19T09:15:19Z",
       "byte_size": 26689,
-      "sha256": "555cf34cdf376874fe3e197a6830a332a8f860b44051bc57829ef246a2d4f8c6"
+      "sha256": "b0fa8ac77270207d45e62d56f065f6604ad67ed8f87040b7068373d1d17eb536"
     },
     "joshua-12": {
       "resolved_title": "יהושע יב/טעמים",

@@ -1,0 +1,40 @@
+{
+  "summary": "Make four notes' ketiv forms robust: where one letter has two vowels, put a CGJ (U+034F) between them, as MAM's Scripture text does, so that the order the note gives holds under any normalization or shaping engine. 2 Kgs 18:27: after the yod's sheva; Ezek 14:14, 14:20 (two forms) and 28:3: after the nun's ḥiriq",
+  "edit-kind": "explicit-replacement",
+  "edits": {
+    "2Kings": [
+      {
+        "ch": "יח",
+        "old": "‹ֵשֵ֥נַיְֵהֶ֖ם›",
+        "new": "‹ֵשֵ֥נַיְ͏ֵהֶ֖ם›",
+        "comment": "2 Kings 18:27: the note's second א-כתיב form, in single guillemets, whose yod has a sheva and a tsere; CGJ after the yod's sheva"
+      }
+    ],
+    "Ezekiel": [
+      {
+        "ch": "יד",
+        "old": "א-כתיב=דָּנִֵּ֣אל (חיריק, צירה, ומונח מתחת לאות נו\"ן הדגושה, בסדר הזה)",
+        "new": "א-כתיב=דָּנִ͏ֵּ֣אל (חיריק, צירה, ומונח מתחת לאות נו\"ן הדגושה, בסדר הזה)",
+        "comment": "Ezekiel 14:14: the note's א-כתיב form of דנאל; CGJ after the nun's ḥiriq"
+      },
+      {
+        "ch": "יד",
+        "old": "א-כתיב=דָּנִֵּ֣אל (חיריק, צירה, ומונח מתחת לאות נו\"ן הדגושה, בסדר הזה;",
+        "new": "א-כתיב=דָּנִ͏ֵּ֣אל (חיריק, צירה, ומונח מתחת לאות נו\"ן הדגושה, בסדר הזה;",
+        "comment": "Ezekiel 14:20: the note's first א-כתיב form, with the munaḥ on the nun; CGJ after the nun's ḥiriq"
+      },
+      {
+        "ch": "יד",
+        "old": "כזה: דָּנִֵּא֣ל",
+        "new": "כזה: דָּנִ͏ֵּא֣ל",
+        "comment": "Ezekiel 14:20: the same note's second form, after כזה:, with the munaḥ on the alef; CGJ after the nun's ḥiriq"
+      },
+      {
+        "ch": "כח",
+        "old": "א-כתיב=מִדָּנִֵּ֑אל (חיריק, צירה, ואתנחתא מתחת לנו\"ן, בסדר הזה)",
+        "new": "א-כתיב=מִדָּנִ͏ֵּ֑אל (חיריק, צירה, ואתנחתא מתחת לנו\"ן, בסדר הזה)",
+        "comment": "Ezekiel 28:3: the note's א-כתיב form of מדנאל; CGJ after the nun's ḥiriq"
+      }
+    ]
+  }
+}
