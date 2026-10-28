@@ -18,6 +18,19 @@ stress helper, a dexi on a later letter of its atom, with a top-meteg glyph that
 the vowel-raising rule's mark filtering skips; for no atom in those two trees does
 skipping such a dexi change this screen's result.
 
+1.1 keeps them too. A fontTools comparison of the 1.0 and 1.1 TTFs on
+2026-10-28 found the two kern lookups identical, with their nested lookups and
+mark filtering sets resolved, and the GDEF glyph classes, outlines and advance
+widths unchanged. 1.1's source adds two placement-only rules to the
+vowel-raising rule's lookup, after that rule. 1.1 also deletes every combining
+grapheme joiner during shaping, where 1.0 deleted one in only five contexts, so
+this screen's skipping of the joiner, in _FONT_IGNORED, now matches the font
+wherever the joiner stands. Shaping every distinct atom of those two trees with
+each font in HarfBuzz 14.3.0 gave each atom the same total advance in both, and
+the marks of every yod before qof the same offsets; in every atom, with either
+font, this screen's font-added-space verdict matched whether the font added
+advance.
+
 HTML conversion sees contiguous text leaves after semantic rendering. Atoms split
 by special-letter or vowel-variant spans may be missed or only partly expanded;
 single-letter leaves are left alone. No source character or mark order changes.
@@ -117,8 +130,8 @@ def _font_below(marks, *, include_dehi=False):
 def _font_added_space(clusters):
     """The five kern1AddThin contexts and the observed second kern2AddThin rule.
 
-    Source: in/font-support/taamey-d-1.0/'s source archive,
-    font-m-TaD/Taamey_D.sym.fea, lines 203–216. The first kern2AddThin
+    Source: in/font-support/taamey-d-1.1/'s source archive,
+    font-m-TaD/Taamey_D.sym.fea, lines 200–213. The first kern2AddThin
     rule (two below marks before a narrow letter with three) remains a trial:
     the selected-Scripture investigation found no occurrence to judge visually.
     """
@@ -195,7 +208,7 @@ def _font_added_space(clusters):
 
 
 def _yod_before_qof(clusters):
-    """Screen the exact vowel-raising context at line 422 of the 1.0 source's .fea."""
+    """Screen the exact vowel-raising context at line 419 of the 1.1 source's .fea."""
     for (first, a), (second, b) in zip(clusters, clusters[1:]):
         if first != "י" or second != "ק":
             continue

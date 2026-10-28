@@ -125,8 +125,9 @@ Hebrew atoms with yod or vav carrying both a wide below-vowel
 (tsere, segol, a ḥataf vowel or qubuts) and a below-accent. By Ben's approval
 of 2026-10-13, the active selection also includes the six observed advance-adding
 contexts in the Taamey D 0.921 source and its precise preceding-yod
-vowel-raising context beside qof. Taamey D 1.0 keeps those rules; the helper's
-module docstring records the 2026-10-26 comparison of the two fonts. The selected
+vowel-raising context beside qof. Taamey D 1.0 and 1.1 keep those rules; the
+helper's module docstring records the comparisons of 1.0 with 0.921, made on
+2026-10-26, and of 1.1 with 1.0, made on 2026-10-28. The selected
 text gets `0.06em` extra letter spacing in the edition stylesheet. This is a
 conservative visual heuristic, not a collision detector or an exhaustive list
 of cramped atoms. The same rule reaches ketiv, qere and Hebrew examples in notes;
@@ -147,7 +148,7 @@ remains inactive without a visual verdict. Orphan vowels are removed from the
 font's below-mark screen; unjudged final he, ḥet or ayin shapes with pataḥ are
 excluded from its fifth advance-adding context because the font can use a
 filtered-out furtive glyph there. The source archive is
-`in/font-support/taamey-d-1.0/Taamey_D-1.0-sources.zip`, whose
+`in/font-support/taamey-d-1.1/Taamey_D-1.1-sources.zip`, whose
 `font-m-TaD/Taamey_D.sym.fea` declares the relevant rules. The runtime
 classifier requires no font-analysis libraries.
 

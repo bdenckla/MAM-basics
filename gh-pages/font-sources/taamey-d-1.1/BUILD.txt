@@ -1,10 +1,10 @@
-Taamey D 1.0 source package
+Taamey D 1.1 source package
 ===========================
 
 This package supplies Taamey_D-sources.zip from the Taamey D release snapshot
-1.0-hbofonts-68cd62902202, renamed Taamey_D-1.0-sources.zip and otherwise
+1.1-hbofonts-5d9d8d461f79, renamed Taamey_D-1.1-sources.zip and otherwise
 unchanged. The snapshot's provenance.json names its source commit,
-68cd629022028ec648c0ee2f36ac0480123d0d47. SOURCE-INVENTORY.json records every
+5d9d8d461f798910dc39ec5c63836229e0d6a810. SOURCE-INVENTORY.json records every
 archive member's size and SHA-256.
 
 Build-input scope
@@ -15,7 +15,7 @@ font-m-TaD/Taamey_D.sym.fea is the template of the editable OpenType features.
 font-m-TaD/license.sym.txt is the copyright/license template, and
 font-m-TaD/license.txt is its expansion.
 main_fill_in_template.py expands the three templates, using my_font_version.py,
-which declares version 1.0, and my_open.py.
+which declares version 1.1, and my_open.py.
 font-m-TaD/ffscript_generate_sfd_n_ttf.py uses FontForge to merge the features
 into the outlines and emit SFD, TTF, WOFF, and WOFF2 files.
 py/main_mega.py drives those steps.
@@ -53,10 +53,10 @@ reproducing identical binary bytes is not claimed here.
 Binary association
 ------------------
 
-The Taamey_D.woff2 that MAM-basics publishes is 22,264 bytes, version 1.0,
-SHA-256 f17ec56ac2ef44a0f1e78b1d9adaaef6330ed1a1f9dec3d0ad1c87390e0dc151.
+The Taamey_D.woff2 that MAM-basics publishes is 22,524 bytes, version 1.1,
+SHA-256 388a38a23b22d038a8bc3b969158f79cb27aa5edaddddf2fead8969d07f21275.
 It is the Taamey_D/Taamey_D.woff2 member of the same snapshot's Taamey_D.zip,
-SHA-256 be17640488ccd497908349114e8ea329bdd98aa4f59f6725cf4c2b278bfb3628.
+SHA-256 b41c3486db472215345f3ea7ab40a37aa839af2ba1b33a4b68986b5d29601f4a.
 The snapshot's provenance.json lists both archives and their members under one
 source commit, and its SHA256SUMS.txt lists both archives. This association and
 the static input review are the basis for providing this source package; they
@@ -68,7 +68,7 @@ License and notices
 FONT-NOTICE.txt transcribes the copyright, GNU GPL version 2 grant, and font-
 embedding exception from the font's OpenType name table, name ID 0. Only
 whitespace on otherwise blank lines and the final newline differ from that
-extracted text. Name ID 0 is the same in 1.0 as in 0.921.
+extracted text. Name ID 0 is the same in 1.1 as in 1.0 and 0.921.
 GPL-2.0.txt is the full, unmodified GNU GPL version 2 text from
 https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt.
 

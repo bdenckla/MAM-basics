@@ -2,7 +2,7 @@
 
 Every published stylesheet that sets Hebrew in Taamey D loads ``gh-pages/woff2/Taamey_D.woff2``
 by a relative URL. That tracked file is the canonical font: no code writes it, and
-``font_bytes`` refuses it unless it is the pinned binary, Taamey D 1.0. ``site_font_assets``
+``font_bytes`` refuses it unless it is the pinned binary, Taamey D 1.1. ``site_font_assets``
 returns bytes and performs no writes: the notices and ``SOURCE.txt`` that stand beside the font
 in ``gh-pages/woff2/``, and the source package in ``gh-pages/font-sources/``. A publisher whose
 pages link that ``SOURCE.txt`` must include the complete returned mapping in the same
@@ -21,11 +21,11 @@ from mb_cmn import paths
 
 # The Pages-root-relative path of the site's one copy of the font.
 FONT = "woff2/Taamey_D.woff2"
-_VERSION = "taamey-d-1.0"
-_FONT_HASH = "f17ec56ac2ef44a0f1e78b1d9adaaef6330ed1a1f9dec3d0ad1c87390e0dc151"
-# Taamey_D-sources.zip of the release snapshot 1.0-hbofonts-68cd62902202, renamed.
-_ARCHIVE = "Taamey_D-1.0-sources.zip"
-_ARCHIVE_HASH = "19bcdd68fd0a7526a0cd38d9f5ee50e86e6e7b69ba05e40738522add68300ad4"
+_VERSION = "taamey-d-1.1"
+_FONT_HASH = "388a38a23b22d038a8bc3b969158f79cb27aa5edaddddf2fead8969d07f21275"
+# Taamey_D-sources.zip of the release snapshot 1.1-hbofonts-5d9d8d461f79, renamed.
+_ARCHIVE = "Taamey_D-1.1-sources.zip"
+_ARCHIVE_HASH = "97e33813adbfe17a9298696d3976bd6add82984e3b2c6f741527a6538a684d34"
 _SHARED_FILES = (
     _ARCHIVE,
     "FONT-NOTICE.txt",
@@ -38,10 +38,10 @@ _SHARED_FILES = (
 _SUPPORT_SHA256 = {
     "FONT-NOTICE.txt": "25f37bd8a9785e2112994bb0583e6068aab610546b195dfbeb8b93c4ef79b9e1",
     "GPL-2.0.txt": "edaef632cbb643e4e7a221717a6c441a4c1a7c918e6e4d56debc3d8739b233f6",
-    "SOURCE-INVENTORY.json": "53f03a5301bf15b9f9fe3010e8482f07e5a2550ac0357e02f1aaa83d52ffe34d",
-    "BUILD.txt": "5e16f5d38515c0917575028e15b901fff374f7488d78ecf40a8270be262b3119",
-    "SOURCE.txt": "f06de5add8e66b18a69e6983bbe52a1eb470654ad68fb7250b6dbc879ecc2458",
-    "PRODUCT-WOFF2-SOURCE.txt": "63af21ec1e7b5b7e52d3ab17d87cd111f276f72e460555233b3eba9081cbeb82",
+    "SOURCE-INVENTORY.json": "87bf1394fdd99be98a7aaf453a488ceb8c384721e51594aeb377c67cd52638fc",
+    "BUILD.txt": "7c3ea65b81fe7bcf84af3d24b4990bf62167c02db14384aca379a71aea66035a",
+    "SOURCE.txt": "710057ec8a5e9fb3e569aef0cf504d50d42aeb04deb3a86e31e30db720c2299f",
+    "PRODUCT-WOFF2-SOURCE.txt": "bb60336e580c7a1419a847207827db1fcc2b586899564a98ad80235b53b70f6f",
 }
 
 
@@ -54,7 +54,7 @@ def font_bytes():
     """Return the site's font, refusing any file that is not the pinned binary."""
     font = font_path().read_bytes()
     if hashlib.sha256(font).hexdigest() != _FONT_HASH:
-        raise ValueError(f"gh-pages/{FONT} differs from the pinned Taamey D 1.0")
+        raise ValueError(f"gh-pages/{FONT} differs from the pinned Taamey D 1.1")
     return font
 
 

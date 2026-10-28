@@ -64,8 +64,8 @@ verify the integrated local pages, not the deployed site.
 
 ## Font support
 
-`in/font-support/taamey-d-1.0/` holds the release's immutable source archive, license,
-copyright notice, and provenance for the site's font, Taamey D 1.0. The font itself is the
+`in/font-support/taamey-d-1.1/` holds the release's immutable source archive, license,
+copyright notice, and provenance for the site's font, Taamey D 1.1. The font itself is the
 site's one copy, `gh-pages/woff2/Taamey_D.woff2`, which the pure
 `py_html.taamey_d_assets.site_font_assets` helper checks against its pin before
 returning the font's complete same-host support mapping, without writing files. Each

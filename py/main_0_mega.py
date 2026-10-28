@@ -630,10 +630,10 @@ _STEPS = [
         _run_phonetic_mam_render,
         "reads the tracked public release, its stylesheet and script in"
         " py/phonetic_mam/assets/, the five example images in in/phonetic-mam-images/,"
-        " the site's one font, gh-pages/woff2/Taamey_D.woff2 (Taamey D 1.0), which it"
-        " checks against its pin, and in/font-support/taamey-d-1.0/; writes the unified"
+        " the site's one font, gh-pages/woff2/Taamey_D.woff2 (Taamey D 1.1), which it"
+        " checks against its pin, and in/font-support/taamey-d-1.1/; writes the unified"
         " phonetic-mam site, the font's three notice and source files beside it in"
-        " gh-pages/woff2/ and the shared gh-pages/font-sources/taamey-d-1.0/ package,"
+        " gh-pages/woff2/ and the shared gh-pages/font-sources/taamey-d-1.1/ package,"
         " which yeivin-itm-render also writes; runs in cloud",
     ),
     StepRecord(
@@ -651,10 +651,10 @@ _STEPS = [
         _run_yeivin_itm_render,
         "reads the approved tracked claims, the adaptation and"
         " py/yeivin_itm/assets/style.css, the site's one font,"
-        " gh-pages/woff2/Taamey_D.woff2 (Taamey D 1.0), which it checks against its"
-        " pin, and in/font-support/taamey-d-1.0/; writes the 17 public Yeivin pages,"
+        " gh-pages/woff2/Taamey_D.woff2 (Taamey D 1.1), which it checks against its"
+        " pin, and in/font-support/taamey-d-1.1/; writes the 17 public Yeivin pages,"
         " gh-pages/yeivin-itm/style.css, and the font's three notice and source files"
-        " in gh-pages/woff2/ and the shared gh-pages/font-sources/taamey-d-1.0/"
+        " in gh-pages/woff2/ and the shared gh-pages/font-sources/taamey-d-1.1/"
         " package, both of which phonetic-mam-render also writes",
     ),
     # Added 2026-09-10, when Ben decided the survey "should join mega" on two conditions: a

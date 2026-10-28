@@ -1,29 +1,29 @@
 {
   "font": "Taamey D",
-  "version": "1.0",
+  "version": "1.1",
   "release_snapshot": {
-    "identifier": "1.0-hbofonts-68cd62902202",
-    "url": "https://bdenckla.github.io/hbofonts/downloads/snapshots/1.0-hbofonts-68cd62902202/",
-    "published_date": "2026-10-26",
+    "identifier": "1.1-hbofonts-5d9d8d461f79",
+    "url": "https://bdenckla.github.io/hbofonts/downloads/snapshots/1.1-hbofonts-5d9d8d461f79/",
+    "published_date": "2026-10-27",
     "source_repository": "https://github.com/bdenckla/hbofonts",
-    "source_commit": "68cd629022028ec648c0ee2f36ac0480123d0d47",
-    "sha256sums_sha256": "d56a609c5f4f050d35e7c821de89656516bcae391ac5ac5e01a6c6905610d7e7",
-    "provenance_sha256": "25dd028af4cd174de4e3983ca5c09e8921542a2545b783de84618c9dfd9d008f"
+    "source_commit": "5d9d8d461f798910dc39ec5c63836229e0d6a810",
+    "sha256sums_sha256": "5b2b4a3947575da168f8f4725a0b75309eb144336d847e7666abbc5dbfa054c2",
+    "provenance_sha256": "dc2a87a9a29ad81d7552a4fda758ad6ceae7f4d47909fa41947583219efcd4d0"
   },
   "binary": {
     "filename": "Taamey_D.woff2",
-    "size": 22264,
-    "sha256": "f17ec56ac2ef44a0f1e78b1d9adaaef6330ed1a1f9dec3d0ad1c87390e0dc151",
-    "git_blob": "0459900225d1eaa6a05c87b8df64adba459b9739",
+    "size": 22524,
+    "sha256": "388a38a23b22d038a8bc3b969158f79cb27aa5edaddddf2fead8969d07f21275",
+    "git_blob": "4937ad92463114872f5e9ccb66220526cb8c7155",
     "release_archive": "Taamey_D.zip",
-    "release_archive_sha256": "be17640488ccd497908349114e8ea329bdd98aa4f59f6725cf4c2b278bfb3628",
+    "release_archive_sha256": "b41c3486db472215345f3ea7ab40a37aa839af2ba1b33a4b68986b5d29601f4a",
     "release_member": "Taamey_D/Taamey_D.woff2"
   },
   "source_archive": {
-    "filename": "Taamey_D-1.0-sources.zip",
+    "filename": "Taamey_D-1.1-sources.zip",
     "release_filename": "Taamey_D-sources.zip",
-    "size": 73688,
-    "sha256": "19bcdd68fd0a7526a0cd38d9f5ee50e86e6e7b69ba05e40738522add68300ad4",
+    "size": 76138,
+    "sha256": "97e33813adbfe17a9298696d3976bd6add82984e3b2c6f741527a6538a684d34",
     "members": [
       {
         "path": "font-m-TaD/Taamey_D-nofea.sym.sfd",
@@ -32,8 +32,8 @@
       },
       {
         "path": "font-m-TaD/Taamey_D.sym.fea",
-        "size": 45503,
-        "sha256": "df3b65e921f36235fe183c6729b4e020f085bb0800ffe25b7304443f565c74af"
+        "size": 52000,
+        "sha256": "d1cde5c68393d1188eda8fcab51b187ce13e6d16a304f8d967905c7fe67dd0a5"
       },
       {
         "path": "font-m-TaD/ffscript_generate_sfd_n_ttf.py",
@@ -52,13 +52,13 @@
       },
       {
         "path": "main_fill_in_template.py",
-        "size": 14966,
-        "sha256": "132dde29e405c75f86ddce1435c550056e208dfa81afdc40791da2e7427845db"
+        "size": 16997,
+        "sha256": "8166ca031e7ecb8ea9aef86b68f51ead5fda606062545ccf6605a4c3864b3c04"
       },
       {
         "path": "my_font_version.py",
         "size": 16,
-        "sha256": "91f48f71ca5b4063c282c9c2e184be62adcbcaf3c31168a83bb471c153ed99b0"
+        "sha256": "0da0d21ac03b65dba8f7c6ea1fa3555f7bfbdce46278e409c0008317d819c854"
       },
       {
         "path": "my_open.py",
@@ -67,13 +67,13 @@
       },
       {
         "path": "py/main_mega.py",
-        "size": 6114,
-        "sha256": "93361956e086c53bb15978e7ca06c61a7915c9d2f3a05ddb366f9deb866b897b"
+        "size": 6517,
+        "sha256": "5676a89263cb1714e040b434056baed12c1630f99e832e652afccfe85ebeaff0"
       }
     ]
   },
   "font_notice": {
-    "origin": "OpenType name ID 0 of the exact 1.0 binary, identical to that of 0.921",
+    "origin": "OpenType name ID 0 of the 1.1 TTF in the same Taamey_D.zip, identical to that of 1.0 and 0.921",
     "extracted_utf8_sha256": "a9f90ba574cebfe67c6941706daf03eaf5c49159c082c44adf3dc7b997060d62",
     "packaged_sha256": "25f37bd8a9785e2112994bb0583e6068aab610546b195dfbeb8b93c4ef79b9e1",
     "formatting": "Removed whitespace on otherwise blank lines and added a final LF; all copyright and license wording preserved."
@@ -86,8 +86,8 @@
   "checks": {
     "release_archives": "Taamey_D.zip and Taamey_D-sources.zip match the snapshot's SHA256SUMS.txt and provenance.json",
     "source_archive_members": "All nine members match provenance.json's paths, sizes and SHA-256 values",
-    "binary": "Taamey_D.woff2 is byte-identical to Taamey_D.zip's Taamey_D/Taamey_D.woff2",
-    "font_notice": "Name ID 0 of the 1.0 TTF and WOFF2, read with fontTools, is identical to that of 0.921; FONT-NOTICE.txt is derived from it as recorded above",
+    "binary": "Taamey_D.woff2 is byte-identical to Taamey_D.zip's Taamey_D/Taamey_D.woff2 and has the Git blob of hbofonts' font-m-TaD/Taamey_D.woff2 at the source commit",
+    "font_notice": "Name ID 0 of the 1.1 TTF, read with fontTools, is identical to that of the 1.0 TTF; FONT-NOTICE.txt is derived from it as recorded above. The WOFF2 itself was not decompressed for this check",
     "source_input_closure": "Static inspection of the generate-only path of py/main_mega.py, script imports and feature-file includes",
     "source_execution": "None",
     "exact_binary_rebuild": "Not established"

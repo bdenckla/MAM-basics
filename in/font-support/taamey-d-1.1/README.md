@@ -1,13 +1,13 @@
-# Taamey D 1.0 distribution support
+# Taamey D 1.1 distribution support
 
-These support inputs accompany the 22,264-byte Taamey D 1.0 font whose SHA-256 is
-`f17ec56ac2ef44a0f1e78b1d9adaaef6330ed1a1f9dec3d0ad1c87390e0dc151`.
+These support inputs accompany the 22,524-byte Taamey D 1.1 font whose SHA-256 is
+`388a38a23b22d038a8bc3b969158f79cb27aa5edaddddf2fead8969d07f21275`.
 The font itself is not an input in this directory: it is the site's one copy,
 [`gh-pages/woff2/Taamey_D.woff2`](../../../gh-pages/woff2/Taamey_D.woff2), which
 `py/py_html/taamey_d_assets.py` checks against that SHA-256. It is the
 `Taamey_D/Taamey_D.woff2` member of `Taamey_D.zip` in the Taamey D release snapshot
-`1.0-hbofonts-68cd62902202`, published at
-<https://bdenckla.github.io/hbofonts/downloads/snapshots/1.0-hbofonts-68cd62902202/>.
+`1.1-hbofonts-5d9d8d461f79`, published at
+<https://bdenckla.github.io/hbofonts/downloads/snapshots/1.1-hbofonts-5d9d8d461f79/>.
 [`SOURCE.txt`](SOURCE.txt) records the source-download details;
 [`SOURCE-INVENTORY.json`](SOURCE-INVENTORY.json) records the release identities and every
 archive member's size and SHA-256. [`BUILD.txt`](BUILD.txt) describes the build inputs, the
@@ -19,8 +19,8 @@ The asset publisher must make byte-for-byte copies, without reserializing JSON o
 
 | Canonical input | Published destination |
 |---|---|
-| `Taamey_D-1.0-sources.zip` | `gh-pages/font-sources/taamey-d-1.0/` with the same filename |
-| `FONT-NOTICE.txt`, `GPL-2.0.txt`, `SOURCE-INVENTORY.json`, `BUILD.txt`, `SOURCE.txt` | `gh-pages/font-sources/taamey-d-1.0/` with the same filenames |
+| `Taamey_D-1.1-sources.zip` | `gh-pages/font-sources/taamey-d-1.1/` with the same filename |
+| `FONT-NOTICE.txt`, `GPL-2.0.txt`, `SOURCE-INVENTORY.json`, `BUILD.txt`, `SOURCE.txt` | `gh-pages/font-sources/taamey-d-1.1/` with the same filenames |
 | `FONT-NOTICE.txt`, `GPL-2.0.txt` | `gh-pages/woff2/`, beside the font, with the same filenames |
 | `PRODUCT-WOFF2-SOURCE.txt` | `SOURCE.txt` in `gh-pages/woff2/` |
 
