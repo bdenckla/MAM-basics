@@ -304,21 +304,24 @@ _POINTED_KETIV_ADJUSTMENTS = {
 # Ben revised the three Ezekiel representations on 2026-10-13: nun matches
 # the qere nun, while the absent qere yod's complete mark cluster uses a
 # medial GD carrier. Its dagesh requires dalet rather than alef.
+# On 2026-10-28 a bot run that Ben approved put a CGJ between the nun's HEBREW
+# POINT HIRIQ and HEBREW POINT TSERE in the three Ezekiel source forms, in the
+# order their notes state. As at 2 Kings 4:7, the representation needs none.
 _REVIEWED_ORPHAN_VALUES = {
     ('BC-Kings מל"ב', "4", "7"): (
         ("בניכי", "וּבָנַ֔יִךְ", "בֻ͏ָנַ֔יִכי"),
         ("", "אֻ", "בָנַ֔יִכי", False),
     ),
     ("C3-Ezekiel", "14", "14"): (
-        ("דנאל", "דָּנִיֵּ֣אל", "דָּנִֵּ֣אל"),
+        ("דנאל", "דָּנִיֵּ֣אל", "דָּנִּ͏ֵ֣אל"),
         ("דָּנִ", "דֵּ֣", "אל", True),
     ),
     ("C3-Ezekiel", "14", "20"): (
-        ("דנאל", "דָּנִיֵּ֣אל", "דָּנִֵּ֣אל"),
+        ("דנאל", "דָּנִיֵּ֣אל", "דָּנִּ͏ֵ֣אל"),
         ("דָּנִ", "דֵּ֣", "אל", True),
     ),
     ("C3-Ezekiel", "28", "3"): (
-        ("מדנאל", "מִדָּנִיֵּ֑אל", "מִדָּנִֵּ֑אל"),
+        ("מדנאל", "מִדָּנִיֵּ֑אל", "מִדָּנִּ͏ֵ֑אל"),
         ("מִדָּנִ", "דֵּ֑", "אל", True),
     ),
 }
