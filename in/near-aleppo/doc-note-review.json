@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "inventory_sha256": "e7c7c6cdc6861b70d8c267f9935377d10cfa5ebe7dbef71810d922cb052cf590",
+  "inventory_sha256": "081ae9cb52d471d63a76122a777cc4909522ce8316eabbe8abfe2df38092fcf5",
   "notes": [
     {
       "id": "A1-Genesis 1:1 note 1 נוסח",
@@ -36311,7 +36311,7 @@
       ],
       "note_ordinal": 1,
       "source_template": "נוסח",
-      "source_note_sha256": "1b8d9953e4eaa69b822b13ec45336ef8bbe933c8241ecebecacaa525b2ea5ef7",
+      "source_note_sha256": "20ab6554dcbab5a17ed083e953ecad6a0954a51f5aa273773ad56a5bea1465a8",
       "original_target": [
         "יָמִ֥ים ",
         {
@@ -36342,7 +36342,7 @@
         {
           "tmpl_name": "ש"
         },
-        "א=הִנֵּ֛ה יָמִ֥ים [] נְאֻם־יְהֹוָֽה (חסר ניקוד ברווח המיועד ל\"קרי ולא כתיב\")",
+        "א=הִנֵּ֛ה יָמִ֥ים [] נְאֻם־יְהוָ֑ה (חסר ניקוד ברווח המיועד ל\"קרי ולא כתיב\")",
         {
           "tmpl_name": "ש"
         },
@@ -36354,7 +36354,7 @@
       ],
       "clauses": [
         "=ל,ק ובדפוסים",
-        "א=הִנֵּ֛ה יָמִ֥ים [] נְאֻם־יְהֹוָֽה (חסר ניקוד ברווח המיועד ל\"קרי ולא כתיב\")",
+        "א=הִנֵּ֛ה יָמִ֥ים [] נְאֻם־יְהוָ֑ה (חסר ניקוד ברווח המיועד ל\"קרי ולא כתיב\")",
         "הערת ברויאר",
         "קורן, ברויאר, סימנים, מכון ממרא"
       ],
@@ -36371,7 +36371,7 @@
       },
       "candidate_clause": null,
       "proposal_reason": "Structured or whitespace target; preserve explicit MAM context.",
-      "evidence_sha256": "e5bd7b5e7144127cfa21de1fa7a0696c68b8c5f1eb19258d3a28a013a7bdf25c",
+      "evidence_sha256": "dfc624820af6fe4a931aa3c642141aa97b939a585bd08798be46b7a2129b8c5f",
       "review": {
         "status": "reviewed",
         "presentation": "framed-mam",
@@ -36405,7 +36405,7 @@
               "=ל,ק ובדפוסים"
             ],
             [
-              "א=הִנֵּ֛ה יָמִ֥ים [] נְאֻם־יְהֹוָֽה (חסר ניקוד ברווח המיועד ל\"קרי ולא כתיב\")"
+              "א=הִנֵּ֛ה יָמִ֥ים [] נְאֻם־יְהוָ֑ה (חסר ניקוד ברווח המיועד ל\"קרי ולא כתיב\")"
             ],
             [
               "הערת ברויאר"
@@ -48769,12 +48769,12 @@
       ],
       "note_ordinal": 1,
       "source_template": "נוסח",
-      "source_note_sha256": "573e4e29386d8324b479f1279e7d021553b92f405cf44502b9b3077ad2e054fd",
+      "source_note_sha256": "021f45745031b0025842468410384fb344687077cb09dae2fa31d5ee1b2d2ce5",
       "original_target": "לִ֥֫י",
       "near_target": "לִ֥י",
-      "original_body": "א=לִ֥י (השמטת נקודת הרביע)",
+      "original_body": "א=לִ֥י (השמטת סימן העולה)",
       "clauses": [
-        "א=לִ֥י (השמטת נקודת הרביע)"
+        "א=לִ֥י (השמטת סימן העולה)"
       ],
       "change_causes": [
         "representation policies"
@@ -48788,24 +48788,22 @@
       },
       "candidate_clause": 0,
       "proposal_reason": "One literal full-target alternative; semantic review of its suffix and other clauses required.",
-      "evidence_sha256": "990a3b3ee631a048122a76dbe81b205a27aac00ae89c8bfb15632fa7b22af077",
+      "evidence_sha256": "2897d66f9311414d2a297c97144aed15cf8b13e314ffa38fa97b3f261e847c1c",
       "review": {
         "status": "reviewed",
-        "presentation": "framed-mam",
-        "reason": "Inherited source discrepancy: the target has ole, while the source clause describes omission of revia. Retain complete source context without correcting the claim.",
+        "presentation": "recast",
+        "reason": "Reviewed literal source agreement: retain the complete source head and suffix; keep all remaining clauses in their original order under MAM's labelled target. This attributes agreement and does not explain near-Aleppo's selection.",
         "proposed_parts": {
-          "near_clause": null,
-          "mam_clauses": [
-            [
-              "א=לִ֥י (השמטת נקודת הרביע)"
-            ]
-          ]
+          "near_clause": [
+            "=א (השמטת סימן העולה)"
+          ],
+          "mam_clauses": []
         },
         "clauses": [
           {
             "index": 0,
-            "disposition": "mam-context",
-            "reason": "Keep this source clause verbatim with its original MAM subject, explanations, alternatives and cross-references. Inherited source discrepancy: the target has ole, while the source clause describes omission of revia. Retain complete source context without correcting the claim."
+            "disposition": "near-subject",
+            "reason": "Complete literal form matches the near target; preserve the attributed source and every qualification verbatim."
           }
         ]
       }
@@ -50513,6 +50511,54 @@
         "proposed_parts": {
           "near_clause": [
             "=א (השמטת נקודת הרביע)"
+          ],
+          "mam_clauses": []
+        },
+        "clauses": [
+          {
+            "index": 0,
+            "disposition": "near-subject",
+            "reason": "Complete literal form matches the near target; preserve the attributed source and every qualification verbatim."
+          }
+        ]
+      }
+    },
+    {
+      "id": "D1-Psalms 42:3 note 1 נוסח",
+      "ref": [
+        "D1-Psalms",
+        "42",
+        "3"
+      ],
+      "note_ordinal": 1,
+      "source_template": "נוסח",
+      "source_note_sha256": "6ff1b132b348e05448edcc15887e18e415f1524b6d193ee23fdf2e195ce36add",
+      "original_target": "חָ֥֫י",
+      "near_target": "חָ֥י",
+      "original_body": "א=חָ֥י (השמטת סימן העולה)",
+      "clauses": [
+        "א=חָ֥י (השמטת סימן העולה)"
+      ],
+      "change_causes": [
+        "representation policies"
+      ],
+      "coverage": {
+        "category": "surviving",
+        "pages": [
+          "247v"
+        ],
+        "partial_gap_boundaries": []
+      },
+      "candidate_clause": 0,
+      "proposal_reason": "One literal full-target alternative; semantic review of its suffix and other clauses required.",
+      "evidence_sha256": "8171835319d20a73ecdd78854855ea473c3fef5dac3ff453d0d085006e10df61",
+      "review": {
+        "status": "reviewed",
+        "presentation": "recast",
+        "reason": "Reviewed literal source agreement: retain the complete source head and suffix; keep all remaining clauses in their original order under MAM's labelled target. This attributes agreement and does not explain near-Aleppo's selection.",
+        "proposed_parts": {
+          "near_clause": [
+            "=א (השמטת סימן העולה)"
           ],
           "mam_clauses": []
         },
@@ -80450,7 +80496,7 @@
       ],
       "note_ordinal": 1,
       "source_template": "נוסח",
-      "source_note_sha256": "b3ec7efbfe8b2c7786b1a2a5acb918514fa2544f41a065862ca78c6e5f036d23",
+      "source_note_sha256": "b1e1205b7af215cc28234bdd0f652380689aff0994140f9186b8dcaca45cb17f",
       "original_target": {
         "tmpl_name": "כו״ק",
         "tmpl_params": {
@@ -80471,11 +80517,11 @@
         {
           "tmpl_name": "ש"
         },
-        "ל-כתיב?!=יְבֻחָ֔ר (קמץ באות חי\"ת?) ע\"פ הערת ברויאר בספק. אבל מעיון בצילום כתב־היד בהגדלה נראה שהוא פת\"ח למרות הטשטוש מתחת לקו (אולי סימן של מחיקה) וכן דעתו של דותן."
+        "ל-כתיב?!=יְבֻּחָ֔ר (קמץ באות חי\"ת?) ע\"פ הערת ברויאר בספק. אבל מעיון בצילום כתב־היד בהגדלה נראה שהוא פת\"ח למרות הטשטוש מתחת לקו (אולי סימן של מחיקה) וכן דעתו של דותן."
       ],
       "clauses": [
         "=ש1,ק-מ ובדפוסים וכן בקורן וברויאר ומג\"ה",
-        "ל-כתיב?!=יְבֻחָ֔ר (קמץ באות חי\"ת?) ע\"פ הערת ברויאר בספק. אבל מעיון בצילום כתב־היד בהגדלה נראה שהוא פת\"ח למרות הטשטוש מתחת לקו (אולי סימן של מחיקה) וכן דעתו של דותן."
+        "ל-כתיב?!=יְבֻּחָ֔ר (קמץ באות חי\"ת?) ע\"פ הערת ברויאר בספק. אבל מעיון בצילום כתב־היד בהגדלה נראה שהוא פת\"ח למרות הטשטוש מתחת לקו (אולי סימן של מחיקה) וכן דעתו של דותן."
       ],
       "change_causes": [
         "individual editorial pointing"
@@ -80487,7 +80533,7 @@
       },
       "candidate_clause": null,
       "proposal_reason": "Structured or whitespace target; preserve explicit MAM context.",
-      "evidence_sha256": "fb73292714bf8555a63ce080d17dd7d22f9f08e45aea7a133d19fa9401dd681a",
+      "evidence_sha256": "4a71cce22503d94071fb478a9004ab760099c51864c6df9f282a900521072257",
       "review": {
         "status": "reviewed",
         "presentation": "framed-mam",
@@ -80499,7 +80545,7 @@
               "=ש1,ק-מ ובדפוסים וכן בקורן וברויאר ומג\"ה"
             ],
             [
-              "ל-כתיב?!=יְבֻחָ֔ר (קמץ באות חי\"ת?) ע\"פ הערת ברויאר בספק. אבל מעיון בצילום כתב־היד בהגדלה נראה שהוא פת\"ח למרות הטשטוש מתחת לקו (אולי סימן של מחיקה) וכן דעתו של דותן."
+              "ל-כתיב?!=יְבֻּחָ֔ר (קמץ באות חי\"ת?) ע\"פ הערת ברויאר בספק. אבל מעיון בצילום כתב־היד בהגדלה נראה שהוא פת\"ח למרות הטשטוש מתחת לקו (אולי סימן של מחיקה) וכן דעתו של דותן."
             ]
           ]
         },
