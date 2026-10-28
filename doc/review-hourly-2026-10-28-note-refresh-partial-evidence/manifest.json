@@ -1,0 +1,17 @@
+{
+  "source": "6835873fcb2ba63afec21846e5fc65f730e7757a",
+  "exclusive_base": "4aca1d2e13f31edecff8dda8fd339348cb3e9ddb",
+  "archive_bytes": 34360,
+  "archive_sha256": "8c9a3237aaea94596627745941ff9cc1f29a79362a09a7d1f925f7724dcd0ee4",
+  "members": {
+    "endpoint.patch": {
+      "bytes": 270363,
+      "sha256": "e87b25cdce843adfe1a44f75bd2a22bfa6ca4c8014b0872dbdc445c1b5bde672"
+    },
+    "paths.nul": {
+      "bytes": 2834,
+      "sha256": "7e4265b98c37b634150ba5fe39da4976c9d4c7e973f89096069ab7011ee61e4e"
+    }
+  },
+  "privacy": "Owning repository only; no private evidence copied into Basics."
+}

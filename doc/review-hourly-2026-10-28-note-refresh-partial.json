@@ -1,0 +1,114 @@
+{
+  "date": "2026-10-28",
+  "state": "partial; stopped for exclusive HP integration handoff",
+  "receipt_parent": "d5f2cc3c1aacf77a958991c1ea4bb136dcb848f3",
+  "receipt_branch": "review-hourly-20261028-note-refresh-receipts",
+  "window": {
+    "exclusive_base": "4aca1d2e13f31edecff8dda8fd339348cb3e9ddb",
+    "frozen_main": "6835873fcb2ba63afec21846e5fc65f730e7757a",
+    "commits": 4,
+    "paths": 70
+  },
+  "runtime_checks_started": [],
+  "tests_started": [],
+  "generators_started": [],
+  "blocker": {
+    "state": "pending coordinated clearance, not denied; no runner started",
+    "reason": "Parent reserved the exclusive Private writer and expensive-job slot for Ben-authorized BHL main integration. Investigation stopped at a clean read-only checkpoint.",
+    "recovery": "Resume only the recorded pending stages after a new coordination release. Freeze inputs again without silently extending this window."
+  },
+  "repair": null,
+  "evidence": "review-hourly-2026-10-28-note-refresh-partial-evidence/manifest.json",
+  "scope_limits": [
+    "Read-only Git source/data/process inspection only; no author test result treated as this run.",
+    "No source bot/dry run/download, full mega/suite, baseline acceptance, font generation, main/shared push or deployment."
+  ],
+  "screened_through": "6835873fcb2ba63afec21846e5fc65f730e7757a",
+  "reviewed_through": "4aca1d2e13f31edecff8dda8fd339348cb3e9ddb",
+  "focused_checked_through": "4aca1d2e13f31edecff8dda8fd339348cb3e9ddb",
+  "broad_tested_through": "5c28eba09f95fd491afef38454149bde628ee2a7",
+  "classification": "Consequential source-note refresh, derived products and near-Aleppo records; no confirmed defect in partial source triage. Runtime verification remains pending.",
+  "source_findings": [
+    "The seven book mirrors contain eight changed documentation notes and a new note at Psalms 42:3. The new note wraps the existing atom; selected-Scripture invariance remains a pending independent runtime comparison.",
+    "The near-Aleppo ledger carries Jeremiah/Ecclesiastes note quotations, recasts Psalms 30:12 under the existing omission-description pattern, and adds a Psalms 42:3 row. Existing code is unchanged; these owner/source choices were preserved. Their fresh inventory/build/replay checks were not run.",
+    "The qere-without-ketiv record changes only the Jeremiah Hebrew source/translation quotation; its English explanation is unchanged.",
+    "Committed population/census/template/sigil and HTML changes are consistent in scope with the added note and changed note prose, but reproduction is not claimed. Change-log JSON changes only its MAM-parsed tree ID, retaining count 10.",
+    "No executable Python, current policy, workflow or installer changed. Commit messages describe source -> products -> change-log ordering and author checks; those checks remain attributed evidence."
+  ],
+  "pending_inputs": {
+    "Basics": "6835873fcb2ba63afec21846e5fc65f730e7757a",
+    "sibling_inputs_for_public_checks": []
+  },
+  "pending_stages_in_order": [
+    [
+      "py/main_diff.py",
+      "mpplus",
+      "--old",
+      "4aca1d2e13f31edecff8dda8fd339348cb3e9ddb",
+      "--new",
+      "6835873fcb2ba63afec21846e5fc65f730e7757a",
+      "--output",
+      "<absolute-owned-scratch>/endpoint.html"
+    ],
+    [
+      "py/main_test.py",
+      "py/tests/test_near_aleppo.py::test_dataset_and_population_baselines_are_current",
+      "py/tests/test_near_aleppo.py::test_all_changed_note_presentations_match_the_source_inventory",
+      "py/tests/test_near_aleppo_note_content.py::test_baked_clauses_match_reviews_and_preserve_current_pre_bake_book_content",
+      "-q"
+    ],
+    [
+      "py/main_near_aleppo.py",
+      "--html",
+      "--check"
+    ],
+    [
+      "py/main_mam_with_doc.py",
+      "--book39",
+      "Exodus"
+    ],
+    [
+      "py/main_mam_with_doc.py",
+      "--book39",
+      "Numbers"
+    ],
+    [
+      "py/main_mam_with_doc.py",
+      "--book39",
+      "Deuteronomy"
+    ],
+    [
+      "py/main_mam_with_doc.py",
+      "--book39",
+      "Jeremiah"
+    ],
+    [
+      "py/main_mam_with_doc.py",
+      "--book39",
+      "Psalms"
+    ],
+    [
+      "py/main_mam_with_doc.py",
+      "--book39",
+      "Ecclesiastes"
+    ],
+    [
+      "py/main_mam_with_doc.py",
+      "--book39",
+      "Ezra"
+    ],
+    [
+      "py/main_sigil_inventory.py"
+    ],
+    [
+      "py/main_tmpl_survey.py"
+    ],
+    [
+      "py/main_diff.py",
+      "mpplus",
+      "--check"
+    ]
+  ],
+  "pending_execution_notes": "Use the home Basics interpreter from a committed isolated source checkout. Await every stage. Preserve and triage tracked diffs; template-survey also writes DOT/SVG, so do not silently accept or discard Graphviz differences. No broad mega/suite or sibling work is necessary for these local checks.",
+  "remaining_window": "4aca1d2e13f31edecff8dda8fd339348cb3e9ddb -> 6835873fcb2ba63afec21846e5fc65f730e7757a"
+}
