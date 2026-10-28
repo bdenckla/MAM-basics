@@ -419,6 +419,12 @@ infrastructure has changed enough to make them misleading examples:
   וסטמינסטר; and the appendices, 3092644 (2026-10-19), which correct a date.
 - **One-shot:** every `old` describes the pre-edit text. Confirmed 2026-10-28, immediately after
   the runs: `--no-save` re-runs raised on 2 Kings 18 and on chapter 5's first `old`.
+- **Near-Aleppo:** two near-Aleppo records quote these notes, so the refresh's mega stopped at
+  its near-Aleppo build. `acbb7b5f` gave the three Ezekiel guards of `_REVIEWED_ORPHAN_VALUES`,
+  in `py/near_aleppo/phase5_readings.py`, their source forms with the CGJ, and carried four
+  reviewed rows of `in/near-aleppo/doc-note-review.json` across, those of 2 Kings 18:27's
+  second note and the three Ezekiel notes, their quoted clauses gaining the CGJ. Ben's
+  representations and the rows' dispositions are unchanged.
 - **Left as they are:** `doc/near-aleppo-avi-ketiv-investigation.html`, which quotes the
   introduction's earlier forms verbatim; and chapter 5's six other letters with two vowels and
   no CGJ, outside the scope Ben confirmed: Proverbs 6:24's lamed, and five ḥataf-ḥiriq forms, a
