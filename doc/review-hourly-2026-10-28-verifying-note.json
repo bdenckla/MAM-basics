@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-28",
+  "state": "completed documentation-only screen",
+  "recorded_utc": "2026-10-28T15:29:57.157766+00:00",
+  "window": {
+    "from": "229ce9223dd01abf38c45ee4fa81fc23f44c3c0a",
+    "through": "298bf1c21cd468a293643c4a3c3c553c704027c9",
+    "commits": 1,
+    "path": "dot-claude/skills/hebrew-prose/references/verifying.md",
+    "added_lines": 8,
+    "deleted_lines": 0
+  },
+  "receipt_parent": "4f71343bdea8a0eef8f5ca8e2a0314bf514e9ca4",
+  "classification": "Preservation advice only: the prose records a historical Edit/Write observation and recommends source-byte or named-codepoint construction followed by exact source comparison. No executable, source data, generator, font, publication permission or deployment change.",
+  "inspection": "Read current policy/status, complete endpoint diff and surrounding mechanics section. Guidance is consistent with the existing MAM mark-order and source-preservation rules and adds no broad-test gate or new repair/publication authority.",
+  "attribution_limit": "The October 27 tool behavior and any author tests remain attributed observations. This screen did not reproduce normalization or trailing-space behavior and makes no claim about current Edit, Write or apply_patch behavior.",
+  "disposition": "No consequential defect or repair. No deeper investigation/tests warranted for this bounded documentation change; preserve the wording and editorial authority.",
+  "tests_and_generators": "None run. No codepoint experiment, full/focused suite, generator, build, live user-config sync or deployment.",
+  "anchor_effect": {
+    "reviewed_through": "298bf1c21cd468a293643c4a3c3c553c704027c9",
+    "focused_checked_unchanged": "229ce9223dd01abf38c45ee4fa81fc23f44c3c0a",
+    "broad_tested_unchanged": "5c28eba09f95fd491afef38454149bde628ee2a7"
+  },
+  "private_evidence": "/workspace/scratch/review-hourly-20261028-verifying-note/private-evidence",
+  "evidence_sha256": {
+    "verifying-at-endpoint.md": "81b20877d91a50747c97af3a941614da78a6facec9df91d557f0c3606e98be1f",
+    "endpoint.diff": "0a9991c847fc3fa3dbae06645bc9e2dd6b77bd7820aacf4625d40a0a9649f68c"
+  },
+  "remote_before_receipt": {
+    "refs/heads/main": "298bf1c21cd468a293643c4a3c3c553c704027c9",
+    "refs/heads/review-hourly-20261028-taamey11-receipts": "4f71343bdea8a0eef8f5ca8e2a0314bf514e9ca4"
+  },
+  "remaining_window": null,
+  "blockers": [],
+  "limits": "Git-object source inspection only; isolated receipt tree is not the screened source. No Private/Fonts review or write, HP work, main/shared integration, deployment or live skill sync. Earlier receipts and tested anchors remain unchanged."
+}
