@@ -1,0 +1,180 @@
+{
+  "base": "438ee6f15d5a90572eca0f9268a3a5584ea127e8",
+  "tip": "4aca1d2e13f31edecff8dda8fd339348cb3e9ddb",
+  "method": "Static Git object/JSON/text comparison, no project execution.",
+  "changed_paths": 37,
+  "json_changes": {
+    "MAM-parsed/plus/BC-Kings.json": {
+      "changed_leaves": 1,
+      "CGJ_only_leaves": 1,
+      "inserted_CGJs": 1,
+      "changed_paths": [
+        "/book39s/1/chapters/18/27/2/5/tmpl_params/2/2"
+      ]
+    },
+    "MAM-parsed/plus/C3-Ezekiel.json": {
+      "changed_leaves": 3,
+      "CGJ_only_leaves": 3,
+      "inserted_CGJs": 4,
+      "changed_paths": [
+        "/book39s/0/chapters/14/14/2/1/tmpl_params/2",
+        "/book39s/0/chapters/14/20/2/1/tmpl_params/2",
+        "/book39s/0/chapters/28/3/2/1/tmpl_params/2"
+      ]
+    },
+    "in/mam-ws/BD-2Kings.json": {
+      "changed_leaves": 1,
+      "CGJ_only_leaves": 1,
+      "inserted_CGJs": 1,
+      "changed_paths": [
+        "/יח/34"
+      ]
+    },
+    "in/mam-ws/C3-Ezekiel.json": {
+      "changed_leaves": 3,
+      "CGJ_only_leaves": 3,
+      "inserted_CGJs": 4,
+      "changed_paths": [
+        "/יד/19",
+        "/יד/25",
+        "/כח/7"
+      ]
+    },
+    "out/mam-ws-bot/proto-fmt-2/BD-2Kings.json": {
+      "changed_leaves": 1,
+      "CGJ_only_leaves": 1,
+      "inserted_CGJs": 1,
+      "changed_paths": [
+        "/יח/ws-chap-body/כז/verse-body/5/tmpl/2/2"
+      ]
+    },
+    "out/mam-ws-bot/proto-fmt-2/C3-Ezekiel.json": {
+      "changed_leaves": 3,
+      "CGJ_only_leaves": 3,
+      "inserted_CGJs": 4,
+      "changed_paths": [
+        "/יד/ws-chap-body/יד/verse-body/1/tmpl/2/0",
+        "/יד/ws-chap-body/כ/verse-body/1/tmpl/2/0",
+        "/כח/ws-chap-body/ג/verse-body/1/tmpl/2/0"
+      ]
+    },
+    "out/mam-ws-bot/proto/BD-2Kings.json": {
+      "changed_leaves": 1,
+      "CGJ_only_leaves": 1,
+      "inserted_CGJs": 1,
+      "changed_paths": [
+        "/יח/34"
+      ]
+    },
+    "out/mam-ws-bot/proto/C3-Ezekiel.json": {
+      "changed_leaves": 3,
+      "CGJ_only_leaves": 3,
+      "inserted_CGJs": 4,
+      "changed_paths": [
+        "/יד/19",
+        "/יד/25",
+        "/כח/7"
+      ]
+    },
+    "out/mam-ws-parsed-fmt-2/BD-2Kings.json": {
+      "changed_leaves": 1,
+      "CGJ_only_leaves": 1,
+      "inserted_CGJs": 1,
+      "changed_paths": [
+        "/יח/ws-chap-body/כז/verse-body/5/tmpl/2/2"
+      ]
+    },
+    "out/mam-ws-parsed-fmt-2/C3-Ezekiel.json": {
+      "changed_leaves": 3,
+      "CGJ_only_leaves": 3,
+      "inserted_CGJs": 4,
+      "changed_paths": [
+        "/יד/ws-chap-body/יד/verse-body/1/tmpl/2/0",
+        "/יד/ws-chap-body/כ/verse-body/1/tmpl/2/0",
+        "/כח/ws-chap-body/ג/verse-body/1/tmpl/2/0"
+      ]
+    },
+    "out/near-aleppo/plus/BC-Kings.json": {
+      "changed_leaves": 1,
+      "CGJ_only_leaves": 1,
+      "inserted_CGJs": 1,
+      "changed_paths": [
+        "/book39s/1/chapters/18/27/2/5/tmpl_params/הערת מקרא על פי המסורה/2"
+      ]
+    },
+    "out/near-aleppo/plus/C3-Ezekiel.json": {
+      "changed_leaves": 3,
+      "CGJ_only_leaves": 3,
+      "inserted_CGJs": 4,
+      "changed_paths": [
+        "/book39s/0/chapters/14/14/2/1/tmpl_params/הערת מקרא על פי המסורה",
+        "/book39s/0/chapters/14/20/2/1/tmpl_params/הערת מקרא על פי המסורה",
+        "/book39s/0/chapters/28/3/2/1/tmpl_params/הערת מקרא על פי המסורה"
+      ]
+    }
+  },
+  "html_comparison": {
+    "gh-pages/MAM-with-doc/BD-2Kings.html": {
+      "net_CGJ": 1,
+      "CGJ_insertions_only": true,
+      "CGJ_only_after_whitespace_collapse": true
+    },
+    "gh-pages/MAM-with-doc/C3-Ezekiel.html": {
+      "net_CGJ": 4,
+      "CGJ_insertions_only": true,
+      "CGJ_only_after_whitespace_collapse": true
+    },
+    "gh-pages/near-aleppo/edition/BD-2Kings.html": {
+      "net_CGJ": 1,
+      "CGJ_insertions_only": false,
+      "CGJ_only_after_whitespace_collapse": true
+    },
+    "gh-pages/near-aleppo/edition/C3-Ezekiel.html": {
+      "net_CGJ": 4,
+      "CGJ_insertions_only": false,
+      "CGJ_only_after_whitespace_collapse": true
+    }
+  },
+  "review_rows_before_after": [
+    1556,
+    1556
+  ],
+  "review_added_ids": [],
+  "review_removed_ids": [],
+  "changed_review_ids": [
+    "BC-Kings מל\"ב 18:27 note 2 נוסח",
+    "C3-Ezekiel 14:14 note 1 נוסח",
+    "C3-Ezekiel 14:20 note 1 נוסח",
+    "C3-Ezekiel 28:3 note 1 נוסח"
+  ],
+  "review_delta_fields": {
+    "C3-Ezekiel 14:14 note 1 נוסח": [
+      "/clauses/0",
+      "/evidence_sha256",
+      "/original_body",
+      "/review/proposed_parts/mam_clauses/0/0",
+      "/source_note_sha256"
+    ],
+    "BC-Kings מל\"ב 18:27 note 2 נוסח": [
+      "/clauses/1",
+      "/evidence_sha256",
+      "/original_body/2",
+      "/review/proposed_parts/mam_clauses/1/0",
+      "/source_note_sha256"
+    ],
+    "C3-Ezekiel 14:20 note 1 נוסח": [
+      "/clauses/0",
+      "/evidence_sha256",
+      "/original_body",
+      "/review/proposed_parts/mam_clauses/0/0",
+      "/source_note_sha256"
+    ],
+    "C3-Ezekiel 28:3 note 1 נוסח": [
+      "/clauses/0",
+      "/evidence_sha256",
+      "/original_body",
+      "/review/proposed_parts/mam_clauses/0/0",
+      "/source_note_sha256"
+    ]
+  }
+}

@@ -1,0 +1,212 @@
+{
+  "date": "2026-10-28",
+  "state": "reviewed; bounded focused checks completed after parent clearance",
+  "receipt_parent": "cbd5173ecedf6cdc987b7e371b41625951e670e7",
+  "receipt_branch": "review-hourly-20261028-cgj-refresh-receipts",
+  "window": {
+    "exclusive_base": "438ee6f15d5a90572eca0f9268a3a5584ea127e8",
+    "frozen_main": "4aca1d2e13f31edecff8dda8fd339348cb3e9ddb",
+    "commits": 6,
+    "paths": 37,
+    "inserted_lines": 290,
+    "deleted_lines": 131
+  },
+  "screened_through": "4aca1d2e13f31edecff8dda8fd339348cb3e9ddb",
+  "reviewed_through": "4aca1d2e13f31edecff8dda8fd339348cb3e9ddb",
+  "broad_tested_through": "5c28eba09f95fd491afef38454149bde628ee2a7",
+  "prior_focused_anchor_unchanged": "229ce9223dd01abf38c45ee4fa81fc23f44c3c0a",
+  "classification": "Consequential source/renderer and strict source-guard window reviewed; focused checks pass, no consequential defect or repair. Broad-tested anchor unchanged.",
+  "read": [
+    "Current AGENTS and review policy (unchanged from reviewed base)",
+    "Full endpoint file inventory and changed source/process/data",
+    "mam-wikisource-refresh runbook and dependent-refresh reference",
+    "MAM introduction mirror README",
+    "Near-Aleppo build guide, relevant CLI, guard caller and focused tests",
+    "Inherited status/receipt history"
+  ],
+  "findings": [
+    "Committed source inserts five CGJs into four documentation-note bodies: one in 2 Kings 18:27; one in Ezekiel 14:14, two in 14:20 and one in 28:3. The parsed/prototype snapshots and near-Aleppo copied MAM-note fields show exactly those insertions, with no other changed JSON leaves there. Near-Aleppo selected Scripture/pointed-ketiv payloads are unchanged.",
+    "phase5_readings.py changes three strict Ezekiel expected-source literals to include the CGJ, plus its explanation. The ketiv/qere operands, replacement representations and strict equality/raise path are unchanged; the change does not weaken the source guard or introduce a new representation.",
+    "All 1556 note-review IDs remain. Four rows change only original/quoted MAM-note CGJs and associated source/evidence hashes; review statuses, presentation choices and reasons are unchanged. Fresh source enumeration now passes for all 1556 reviewed notes; ledger/build checks and independent baked-note replay pass.",
+    "MAM-with-doc pages are exact CGJ insertions (one/four). Near-Aleppo edition pages have the same net CGJs and compare equal after whitespace collapse plus those insertions. This static textual comparison does not establish rendering, pixel or regenerated-byte correctness. Subsequent focused regeneration/checks reproduce both selected MAM-with-doc books and all 106 near-Aleppo HTML files, without tracked writes.",
+    "The change-log JSON changes only new_tree, retaining diff_count 10. The new commit sequence records source first, guard/review repair, products, change log, merge of already-reviewed dot-claude-only changes, then history explanation. Static ordering is consistent with the runbook; claimed generation/tests and the dependency loop were not independently rerun.",
+    "Unrelated introduction and three special-page mirror updates are recorded with their separate revisions and attributed in bot history. The Deuteronomy 32 special-page note differs from the older chapter capture at a documented separate revision; this selected chapter refresh does not make that fact a defect. decalogue-base.mediawiki, the generator source for printed-Decalogue work, is unchanged.",
+    "The CGJ choice, scholarly readings and existing near-Aleppo representation decisions were preserved. Source/hash movement alone was not treated as a defect. No live bot, dry run, source download or new editorial repair was performed."
+  ],
+  "attributed_only": "Commit messages and bot history report prior dry runs/saves, exact replacements, broad megas, 1100 passed/5 skipped suite results and post-merge checks. These remain author evidence, not execution by this reviewer. General normalization/shaping-engine statements are not new independently proved claims here.",
+  "actual_execution": {
+    "tests": [
+      "One differential baked-note replay test: 1 passed in 7.07 seconds through py/main_test.py."
+    ],
+    "generators": [
+      "Near-Aleppo note-review, dataset/population and HTML currentness checks; selected MAM-with-doc 2Kings and Ezekiel regeneration; change-log currentness."
+    ],
+    "bot_or_source_network": [],
+    "private_or_fonts_work": [],
+    "static_only": "Git diff/show/grep and a sub-second standalone JSON/text inspection helper with no project import. Exact data summary linked below.",
+    "formatting": "Black --check on changed phase5_readings.py passes."
+  },
+  "hold": {
+    "state": "released by parent before any runtime stage",
+    "evidence": "Parent confirmed HP task terminal and all jobs stopped at 21:30 UTC; first cloud focused stage began 21:33:25.944608 UTC. All eight stages were awaited sequentially; no overlap.",
+    "completed_utc": "2026-10-28T21:34:40.094882+00:00"
+  },
+  "evidence": "review-hourly-2026-10-28-cgj-refresh-evidence/static-summary.json",
+  "full_static_evidence_retained": "/workspace/scratch/review-hourly-20261028-cgj-refresh/static-delta.json and inspect_committed.py; only public committed inputs, no private findings.",
+  "repair": null,
+  "remaining_window": null,
+  "focused_tested_through": "4aca1d2e13f31edecff8dda8fd339348cb3e9ddb",
+  "focused_results": {
+    "note_review": "1556/1556 current reviewed notes agree with fresh enumeration",
+    "dataset": "24 near-Aleppo dataset files plus build-populations.json current",
+    "baked_notes": "1 differential pytest case passed",
+    "html": "106 near-Aleppo files current; both selected MAM-with-doc book writes leave no tracked diff, including shared CSS",
+    "change_log": "Current including historical reports; unpinned count remains 10",
+    "formatting": "Changed Python Black check passes",
+    "tracked_writes_after_every_stage": false,
+    "stage_seconds_sum": 74.148
+  },
+  "runtime_inputs": {
+    "Basics": "4aca1d2e13f31edecff8dda8fd339348cb3e9ddb",
+    "sibling_checkouts_used": [],
+    "explanation": "All selected runtime commands are local Basics products/tests. No private adapter, sibling corpus, font repository or source network operation was used."
+  },
+  "stages": [
+    {
+      "name": "note-review",
+      "source_commit": "4aca1d2e13f31edecff8dda8fd339348cb3e9ddb",
+      "cwd": "/workspace/review-hourly-20261028-cgj-refresh-source",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_near_aleppo.py",
+        "--check-note-review"
+      ],
+      "started_utc": "2026-10-28T21:33:25.944608+00:00",
+      "completed_utc": "2026-10-28T21:33:39.673268+00:00",
+      "seconds": 13.729,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "name": "near-build",
+      "source_commit": "4aca1d2e13f31edecff8dda8fd339348cb3e9ddb",
+      "cwd": "/workspace/review-hourly-20261028-cgj-refresh-source",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_near_aleppo.py",
+        "--build",
+        "--check"
+      ],
+      "started_utc": "2026-10-28T21:33:39.673864+00:00",
+      "completed_utc": "2026-10-28T21:34:00.198067+00:00",
+      "seconds": 20.524,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "name": "baked-note-replay",
+      "source_commit": "4aca1d2e13f31edecff8dda8fd339348cb3e9ddb",
+      "cwd": "/workspace/review-hourly-20261028-cgj-refresh-source",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        "py/tests/test_near_aleppo_note_content.py::test_baked_clauses_match_reviews_and_preserve_current_pre_bake_book_content",
+        "-q"
+      ],
+      "started_utc": "2026-10-28T21:34:00.198418+00:00",
+      "completed_utc": "2026-10-28T21:34:07.456626+00:00",
+      "seconds": 7.258,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "name": "near-html",
+      "source_commit": "4aca1d2e13f31edecff8dda8fd339348cb3e9ddb",
+      "cwd": "/workspace/review-hourly-20261028-cgj-refresh-source",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_near_aleppo.py",
+        "--html",
+        "--check"
+      ],
+      "started_utc": "2026-10-28T21:34:07.457205+00:00",
+      "completed_utc": "2026-10-28T21:34:32.480714+00:00",
+      "seconds": 25.024,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "name": "mwd-2kings",
+      "source_commit": "4aca1d2e13f31edecff8dda8fd339348cb3e9ddb",
+      "cwd": "/workspace/review-hourly-20261028-cgj-refresh-source",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_mam_with_doc.py",
+        "--book39",
+        "2Kings"
+      ],
+      "started_utc": "2026-10-28T21:34:32.481020+00:00",
+      "completed_utc": "2026-10-28T21:34:32.720276+00:00",
+      "seconds": 0.239,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "name": "mwd-ezekiel",
+      "source_commit": "4aca1d2e13f31edecff8dda8fd339348cb3e9ddb",
+      "cwd": "/workspace/review-hourly-20261028-cgj-refresh-source",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_mam_with_doc.py",
+        "--book39",
+        "Ezekiel"
+      ],
+      "started_utc": "2026-10-28T21:34:32.720578+00:00",
+      "completed_utc": "2026-10-28T21:34:33.062520+00:00",
+      "seconds": 0.342,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "name": "change-log",
+      "source_commit": "4aca1d2e13f31edecff8dda8fd339348cb3e9ddb",
+      "cwd": "/workspace/review-hourly-20261028-cgj-refresh-source",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_diff.py",
+        "mpplus",
+        "--check"
+      ],
+      "started_utc": "2026-10-28T21:34:33.062788+00:00",
+      "completed_utc": "2026-10-28T21:34:39.707399+00:00",
+      "seconds": 6.645,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "name": "changed-python-black",
+      "source_commit": "4aca1d2e13f31edecff8dda8fd339348cb3e9ddb",
+      "cwd": "/workspace/review-hourly-20261028-cgj-refresh-source",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "-m",
+        "black",
+        "--check",
+        "py/near_aleppo/phase5_readings.py"
+      ],
+      "started_utc": "2026-10-28T21:34:39.707711+00:00",
+      "completed_utc": "2026-10-28T21:34:40.094882+00:00",
+      "seconds": 0.387,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    }
+  ],
+  "limits": [
+    "No broad mega/full suite rerun and no broad-tested anchor advance.",
+    "No live bot/dry-run/source download; earlier saves and author test claims remain attributed.",
+    "No browser/pixel or universal shaping-engine guarantee established.",
+    "No scholarly/editorial change, font build, baseline acceptance, main/shared push or deployment.",
+    "Private and Fonts were not accessed by this Basics-only turn."
+  ],
+  "focused_evidence": "review-hourly-2026-10-28-cgj-refresh-evidence/manifest.json"
+}

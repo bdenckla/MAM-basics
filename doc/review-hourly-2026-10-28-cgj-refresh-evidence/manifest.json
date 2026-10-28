@@ -1,0 +1,85 @@
+{
+  "source": "4aca1d2e13f31edecff8dda8fd339348cb3e9ddb",
+  "created_utc": "2026-10-28T21:36:54.472255+00:00",
+  "members": {
+    "focused/baked-note-replay.json": {
+      "bytes": 562,
+      "sha256": "e610969be28aa1f969700011d0ba60dcc2389fac0e82cc91ff1858b465f1c778"
+    },
+    "focused/baked-note-replay.log": {
+      "bytes": 98,
+      "sha256": "80698f4ea3489f4fc1dabc236970389941c6150098e97fba2e443f71289b14c1"
+    },
+    "focused/change-log.json": {
+      "bytes": 448,
+      "sha256": "16887f322de406cf0e3ba3c3939583e9958fb863a42e58a6f69309da6f3c20a2"
+    },
+    "focused/change-log.log": {
+      "bytes": 1489,
+      "sha256": "f367a69fa71ed4ba88094ea0580b941c402b077433b865d98b231e7ec892f4ca"
+    },
+    "focused/changed-python-black.json": {
+      "bytes": 485,
+      "sha256": "5ad832473685c971c911c69f948f77930873e3afc12a77b76c90127af62fc453"
+    },
+    "focused/changed-python-black.log": {
+      "bytes": 55,
+      "sha256": "1a56c7cd8457fd05d978cfbd139d7bfd86e86acaa9b57668e718ef8bccc0cf48"
+    },
+    "focused/mwd-2kings.json": {
+      "bytes": 457,
+      "sha256": "2eada3fe7c65f830b78747ae4ef9336f0586db12db9ad4236c727dbefd6fd61c"
+    },
+    "focused/mwd-2kings.log": {
+      "bytes": 30,
+      "sha256": "3cb832f1606ef53f013926c27aad18f12f3fbcb0a278b165949641d3d239fb5b"
+    },
+    "focused/mwd-ezekiel.json": {
+      "bytes": 459,
+      "sha256": "9377aa06840cbcce46dabe4c419a20604e387ae8440921c3600cae72941a5d65"
+    },
+    "focused/mwd-ezekiel.log": {
+      "bytes": 31,
+      "sha256": "547b3bcd307e09edebf2382ddec8292b18284173e0cf9276d2729d1e4d00acd4"
+    },
+    "focused/near-build.json": {
+      "bytes": 457,
+      "sha256": "7fa8277d24fa68748f4919cecd67349b3ac1a1c21803fe92b1b77156c263ad15"
+    },
+    "focused/near-build.log": {
+      "bytes": 230,
+      "sha256": "d031d24ce8d4051e9f3f07a487732c5e4f179538b9d8dbecc1cd385401bb8203"
+    },
+    "focused/near-html.json": {
+      "bytes": 455,
+      "sha256": "0c5a0848a59cf03fa8d7dcb9d849844eb6c7b54c876b57d27e449f5b772525d2"
+    },
+    "focused/near-html.log": {
+      "bytes": 1315,
+      "sha256": "b35f94ad58df344b0a0862d4c4562b29daaf8b00f8aff5c4f9b3d34ad7fc9e77"
+    },
+    "focused/note-review.json": {
+      "bytes": 455,
+      "sha256": "724b74d4cb51e237c3dbb90acd1548382fee81c632fa97823eba21abf43f0ee8"
+    },
+    "focused/note-review.log": {
+      "bytes": 85,
+      "sha256": "c4deddc759b28cabf3da89c799218f602ed67580d7af1b48ee81458048aa386e"
+    },
+    "inspect_committed.py": {
+      "bytes": 4707,
+      "sha256": "d7824b81c18af311a27ec91058288effd03347f5e0aeb2be59fe2304dac8dcf6"
+    },
+    "static-delta.json": {
+      "bytes": 32909,
+      "sha256": "d53a8cb6bae5177606ac177281f1518f9c254600e2b82b2ab76a1b6ae84538e0"
+    },
+    "run_focused.py": {
+      "bytes": 2874,
+      "sha256": "37bbfda9d6ad746091bbe2cfb7fc85192f8c5d4e889d04a273477d319acf0b8f"
+    }
+  },
+  "archive_bytes": 14398,
+  "archive_sha256": "919c52a342f7840e30041c0764ff7e9fe6186926b8b76fe4ed547a57a9ac53d1",
+  "content": "Public committed source evidence and focused logs only; no private source findings."
+}
