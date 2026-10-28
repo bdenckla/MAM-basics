@@ -1,0 +1,97 @@
+{
+  "date": "2026-10-28",
+  "state": "completed focused review",
+  "recorded_utc": "2026-10-28T12:24:10.461928+00:00",
+  "window": {
+    "from": "5c28eba09f95fd491afef38454149bde628ee2a7",
+    "through": "229ce9223dd01abf38c45ee4fa81fc23f44c3c0a",
+    "commits": 1,
+    "paths": 23
+  },
+  "receipt_parent": "22fa34f1d2e3aa6bd265c69e865da3be7a10301f",
+  "classification": "Consequential asset/process migration: Taamey D 1.1 binary/source package, pins and paths replace 1.0. Publisher logic is unchanged; spacing runtime is AST-identical after docstrings are removed, and mega changes are descriptions only.",
+  "inspection": "Read current AGENTS/policy and reconciled October 28 nightly status, complete endpoint source/support/provenance diffs and both publisher paths. Source package is immutable input, never executed. Existing notices, license wording and explicit unverified-exact-build limitation remain; no new legal/editorial or publication decision is made.",
+  "inputs": {
+    "basics_code_and_all_public_texts": "229ce9223dd01abf38c45ee4fa81fc23f44c3c0a",
+    "differential_basics_parent": "5c28eba09f95fd491afef38454149bde628ee2a7",
+    "fonts_public_download_blobs": "26f68d51b0da78e87de7860b710c0d6403c685f9",
+    "release_source_commit": "5d9d8d461f798910dc39ec5c63836229e0d6a810",
+    "font_release_comparison": "1.0-hbofonts-68cd62902202 and 1.1-hbofonts-5d9d8d461f79",
+    "private_runtime_input": "None; no MAM-private source or working-tree sibling input. Only committed public download blobs read from the exact Fonts commit."
+  },
+  "actual_checks": [
+    {
+      "check": "Official py/main_test.py targeted asset/pin/source mapping and spacing-input checks",
+      "result": "6 passed in 2.60 s, zero skips; old/corrupted font rejection is intentional and verified",
+      "stage_seconds": 2.901
+    },
+    {
+      "check": "py/main_phonetic_mam.py render",
+      "result": "exit 0, committed site/support outputs reproduce with no tracked difference",
+      "stage_seconds": 34.336
+    },
+    {
+      "check": "py/main_yeivin_itm.py render",
+      "result": "exit 0, committed approved pages/support outputs reproduce with no tracked difference",
+      "stage_seconds": 0.445
+    },
+    {
+      "check": "Independent FontTools/HarfBuzz inspection of committed public 1.0/1.1 TTFs",
+      "result": "exit 0; compatibility results below, HarfBuzz 14.3.0",
+      "stage_seconds": 4.272
+    },
+    {
+      "check": "Official py/main_test.py py/tests/test_shared_html_styles.py -q",
+      "result": "2 passed in 16.60 s, zero skips; complete published stylesheet/font dependency graph and one-font invariant",
+      "stage_seconds": 16.793
+    },
+    {
+      "check": "Black --check --workers 1 for all three changed Python files; endpoint git diff --check",
+      "result": "both exit 0; no formatting changes"
+    }
+  ],
+  "asset_results": "22,524-byte font SHA-256 388a38a23b22d038a8bc3b969158f79cb27aa5edaddddf2fead8969d07f21275 and 76,138-byte source ZIP SHA-256 97e33813adbfe17a9298696d3976bd6add82984e3b2c6f741527a6538a684d34 match independent committed release payloads. All nine archive members, release provenance/checksums, Git blob, support pins and nine generated support copies agree. Both same-host source links resolve; old active 1.0 package paths are absent. Font notice and GPL bytes equal the old package; notice also matches both TTF name tables.",
+  "spacing_results": {
+    "scope": "Every distinct Hebrew letter/mark run from string values of both public plus trees, including body and note prose; exact source codepoints, no normalization.",
+    "source_tree_counts": {
+      "MAM-parsed/plus": {
+        "files": 24,
+        "distinct_letter_mark_runs": 119846
+      },
+      "out/near-aleppo/plus": {
+        "files": 24,
+        "distinct_letter_mark_runs": 119045
+      }
+    },
+    "distinct_combined_runs": 123642,
+    "resolved_kern_lookups_identical": 2,
+    "gdef_classes_outlines_and_advances_unchanged": true,
+    "total_advance_differences": 0,
+    "font_added_space_screen_disagreements": 0,
+    "positive_runs_each_font": 1727,
+    "yod_before_qof_clusters_compared": 1282,
+    "yod_mark_offset_differences": 0
+  },
+  "failure_status": "No unexpected failure, skipped focused check or unexplained generated difference. Eight pytest cases pass across two runs. Author mega/suite results are not adopted.",
+  "disposition": "No consequential defect, repair, issue or draft PR. Close only this frozen window; preserve editorial and publication decisions.",
+  "overlap": "Saved cloud environment ready; fresh process inventory found no competing generator/test. Parent confirmed no HP hold. All eight stages awaited sequentially. Other repositories were not re-reviewed or broadly tested.",
+  "reviewed_through": "229ce9223dd01abf38c45ee4fa81fc23f44c3c0a",
+  "focused_checked_through": "229ce9223dd01abf38c45ee4fa81fc23f44c3c0a",
+  "broad_tested_unchanged": "5c28eba09f95fd491afef38454149bde628ee2a7",
+  "not_run": "No full mega/suite, font build, baseline acceptance, frozen generation, corpus/source refresh, Private regeneration, browser/Windows comparison, exact binary rebuild, live-site/deployment check or Pages dispatch.",
+  "evidence": {
+    "private_archive": "/workspace/scratch/review-hourly-20261028-taamey11/private-evidence.tar.gz",
+    "archive_sha256": "ec224dfe83d900c09f4add55701e89aabf572ad1737316fa6829b70deda2de0b",
+    "private_execution_receipts": "/workspace/scratch/review-hourly-20261028-taamey11/executed-stages.json",
+    "raw": "/workspace/scratch/review-hourly-20261028-taamey11/source-raw",
+    "retention": "Complete logs, helper sources, exact public reference payloads and spacing inputs/results retained privately in saved cloud workspace; not copied into this public receipt."
+  },
+  "deployment_guard": ".github/workflows/pages.yml is workflow_dispatch only; isolated receipt push does not deploy.",
+  "remote_before_receipt": {
+    "refs/heads/main": "229ce9223dd01abf38c45ee4fa81fc23f44c3c0a",
+    "refs/heads/review-nightly-20261028-cloud-receipts": "22fa34f1d2e3aa6bd265c69e865da3be7a10301f"
+  },
+  "remaining_window": null,
+  "blockers": [],
+  "limits": "Receipt branch code tree is not tested source. Broad anchor/results from the latest nightly receipt remain byte-identical; earlier finished receipts remain unchanged. No main/shared integration or push, deployment or unrelated checkout write. Clean completed task-owned checkouts after verified retention."
+}
