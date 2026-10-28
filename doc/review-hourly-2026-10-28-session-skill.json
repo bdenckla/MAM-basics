@@ -1,0 +1,45 @@
+{
+  "date": "2026-10-28",
+  "state": "reviewed by proportionate documentation/process inspection",
+  "receipt_parent": "86ea93560c8eefe108735a96a765fcd46c5f3ff8",
+  "receipt_branch": "review-hourly-20261028-session-skill-receipts",
+  "window": {
+    "exclusive_base": "298bf1c21cd468a293643c4a3c3c553c704027c9",
+    "frozen_main": "438ee6f15d5a90572eca0f9268a3a5584ea127e8",
+    "commits": 2,
+    "paths": 3,
+    "inserted_lines": 74,
+    "deleted_lines": 2
+  },
+  "reviewed_through": "438ee6f15d5a90572eca0f9268a3a5584ea127e8",
+  "broad_tested_through": "5c28eba09f95fd491afef38454149bde628ee2a7",
+  "prior_focused_result_unchanged": "229ce9223dd01abf38c45ee4fa81fc23f44c3c0a",
+  "classification": "Documentation/process-only: one terminology clarification, one Claude Desktop skill and README routing. No consequential defect established; no repair or optional polish.",
+  "disposition": [
+    "Read the complete three-file endpoint diff and current review policy/AGENTS, reconciling the inherited reviewed and tested anchors. Source recipes were reviewed as documentation, not invoked.",
+    "The seven-line terminology addition distinguishes U+034F CGJ from ZWJ and other named controls. It changes no Unicode data, normalization, renderer or font input. The quoted instruction and reference to earlier font work remain attributed history.",
+    "The new skill is explicitly Claude Desktop-only. Its instructions preserve requested initiation, checkout/HEAD/status verification, one-writer handoff, an independently owned checkout when needed, an attributed brief, required source commit and integration owner, and permission-mode approval. Planning remains planning under the unchanged common instruction body.",
+    "Read the deployment code rather than assuming installation: user_config_sync.py discovers Claude skills separately and maps only shared-skills.txt entries into Codex destinations; the cloud SessionStart hook also uses that shared list. The list is unchanged and excludes top-level-sessions. This supports the README routing; no live installation or sync was performed.",
+    "Codex currently exposes none of the five named Claude Desktop session tools. Tool schemas, start/detach behavior, archival coupling, permission-mode ordering and approval-card behavior therefore remain unverified runtime claims of the authored guide. No session was started, detached or changed, and no successful app behavior is claimed.",
+    "Git object comparison shows no changes to AGENTS, review-trial.md, the shared-skill inventory, cloud installer, Codex configuration, executable Python, corpus/data, generated products or workflows. No focused runtime test or regeneration is warranted for this bounded source-only screen."
+  ],
+  "skills_read_for_review": [
+    "hebrew-prose/SKILL.md",
+    "hebrew-prose/references/mam-basics.md",
+    "hebrew-prose/references/terminology.md",
+    "top-level-sessions/SKILL.md (reviewed, not invoked)"
+  ],
+  "methods": "Read-only git diff/show/grep/ls-tree over frozen committed objects and current tool-name discovery. Receipt-writing metadata helper imports no project code.",
+  "tests_or_generators_run": [],
+  "session_or_config_actions": [],
+  "limits": [
+    "No Claude Desktop runtime reproduction was possible or attempted in Codex.",
+    "No author test or historical tool observation was adopted as independently reproduced evidence.",
+    "No broad, focused-runtime or shaping anchor advanced; coordination hold respected.",
+    "Private and Fonts were not accessed for this Basics-only task."
+  ],
+  "publication": "The unchanged sole Pages workflow is workflow_dispatch-only; this isolated receipt push dispatches nothing. No main/shared integration, deployment or live-config sync.",
+  "repair": null,
+  "pending_focused_checks_for_this_window": [],
+  "remaining_window_at_frozen_tip": null
+}
