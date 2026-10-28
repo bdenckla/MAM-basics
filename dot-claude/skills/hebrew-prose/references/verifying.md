@@ -238,6 +238,14 @@ rule; it does not override the repository's subsequently declared cloud exceptio
   or write a temp `.py` that builds each needle from `chr(0x2019)` / `chr(0x2014)` and does
   `read_bytes()` → `replace(OLD, NEW, 1)` → `write_bytes()` with a `count == 1` assertion (bytes
   I/O preserves LF endings and normalization).
+- **The Edit and Write tools can reorder Hebrew marks.** On 2026-10-27 an Edit that pasted the
+  documentation-note token of Exodus 7:13, with its dagesh before its segol and patah as MAM
+  orders them, landed in the file with the marks in Unicode canonical order: segol, patah,
+  dagesh. A joiner-held order and an order already canonical came through unchanged, so the
+  damage shows only where MAM order and Unicode order differ, and the tool can also drop a
+  replacement's trailing space. For Hebrew whose mark order matters, build the string in a
+  scratch script from `\N{...}` names or copy it from the source file's bytes, and compare the
+  result code point by code point with its source before committing.
 - **Files change under you mid-session.** Ben edits the same file in parallel — re-diff before
   staging, and commit only your own work.
 - **Sibling paths and test invocation follow the repository's instructions.** MAM-basics'
