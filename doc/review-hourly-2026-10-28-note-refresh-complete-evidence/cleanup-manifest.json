@@ -1,0 +1,811 @@
+{
+  "archive_bytes": 1071368,
+  "archive_sha256": "3a555441370f48c70234e0c1c008a9ecb4aef796eb385b46efb2e30632430612",
+  "members": {
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/.pytest_cache/.gitignore": {
+      "bytes": 37,
+      "sha256": "3ed731b65d06150c138e2dadb0be0697550888a6b47eb8c45ecc9adba8b8e9bd"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/.pytest_cache/CACHEDIR.TAG": {
+      "bytes": 191,
+      "sha256": "37dc88ef9a0abeddbe81053a6dd8fdfb13afb613045ea1eb4a5c815a74a3bde4"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/.pytest_cache/README.md": {
+      "bytes": 302,
+      "sha256": "73fd6fccdd802c419a6b2d983d6c3173b7da97558ac4b589edec2dfe443db9ad"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/.pytest_cache/v/cache/nodeids": {
+      "bytes": 309,
+      "sha256": "79736bc8aa59d67cca2cacd48c2fd43f4c5ef51bbcee4b4a7214cd8b10344582"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/__pycache__/main_near_aleppo.cpython-313.pyc": {
+      "bytes": 4908,
+      "sha256": "2e16c037522e3756f1da973779698b22ed97c3c8f65128d765309a9986e70d4e"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/__pycache__/product_scopes.cpython-313.pyc": {
+      "bytes": 8867,
+      "sha256": "466ba19ad278dade3f08dd552cb1654628ebd1b88e382e223181aa674fb4b700"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/diff_ctr_vs_mam/__pycache__/massage_ctr_verse.cpython-313.pyc": {
+      "bytes": 2810,
+      "sha256": "0697e1a52bf854b7ae08915b769466358073371f27b2695c1a534a63cf05dafc"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/diff_ctr_vs_mam/__pycache__/massage_mpu_verse.cpython-313.pyc": {
+      "bytes": 3637,
+      "sha256": "8d79e21ef40111b45f6d9c32b711bd82e07548c99b9638e934166c307531dcd8"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/explicit_xataf/__pycache__/extract.cpython-313.pyc": {
+      "bytes": 12737,
+      "sha256": "fc2cdf8a5356a30bc58113185cf5c443140fbc1f627ac108f9f6ca1309dfbd25"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/hkq_cmn/__pycache__/uxlc_external_links.cpython-313.pyc": {
+      "bytes": 3974,
+      "sha256": "6c1841c432f56095a9ade7a22023190f4dbd9ba31de3cdaf96ca3040c15e85bf"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_author/__pycache__/author.cpython-313.pyc": {
+      "bytes": 27372,
+      "sha256": "7c5c1a62a05cc81e1c2757a74da516c8904747ae56fc727c6f11937845db30ca"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_author/__pycache__/dollar_sub_g.cpython-313.pyc": {
+      "bytes": 2505,
+      "sha256": "80f72ac2bb88228f779b7f2e8137d0606f79c40c08ebecd1eb504110bf573168"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_cmn/__pycache__/bib_locales.cpython-313.pyc": {
+      "bytes": 23488,
+      "sha256": "541dca17af6384ce0a6ddcf84ce6d26a413f23b833871aa59fafab2573b6917a"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_cmn/__pycache__/cantsys.cpython-313.pyc": {
+      "bytes": 527,
+      "sha256": "56fd87ab53803a23d8eeada38be1ce928dae934071b3aaaa43c084b3e1a43f3d"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_cmn/__pycache__/file_io.cpython-313.pyc": {
+      "bytes": 4140,
+      "sha256": "61cacab76ad2dc91c7453a84a3ffbdf0c0cf00da5ea5c089c16c0078384b72cf"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_cmn/__pycache__/git_process.cpython-313.pyc": {
+      "bytes": 2903,
+      "sha256": "b8ead6f077a0bf33c7b7fa51e75ed743e40acea3f366a2ac85f183b4f044baeb"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_cmn/__pycache__/graphviz_pin.cpython-313.pyc": {
+      "bytes": 15393,
+      "sha256": "7a86951accdc754db3125f1f00082b60d620b99b3082806b2c2a65ff214b533d"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_cmn/__pycache__/he_wikisource_url.cpython-313.pyc": {
+      "bytes": 1614,
+      "sha256": "7a76f72353d5101047a71397f2cc4ace296c3d3af436dab0379e0624439e99ea"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_cmn/__pycache__/hebrew_accents.cpython-313.pyc": {
+      "bytes": 2116,
+      "sha256": "9affcdba17d12db56046e525825fdd320cd83df3f01e22b531aeadd5237a5794"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_cmn/__pycache__/hebrew_letters.cpython-313.pyc": {
+      "bytes": 1126,
+      "sha256": "2b18323bf86e3c87fd37e682215a243ce5883fc9aa819feeb46cf0431c75bb80"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_cmn/__pycache__/hebrew_points.cpython-313.pyc": {
+      "bytes": 1302,
+      "sha256": "b59c1e0252d7f793a9b8c43a9a18858f2b8316a45b0772264b42056bc38a9772"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_cmn/__pycache__/hebrew_punctuation.cpython-313.pyc": {
+      "bytes": 588,
+      "sha256": "29f753fcb84a178327b4602663980fbb5cb2261acd16a0dd664058b883a70204"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_cmn/__pycache__/hebrew_verse_numerals.cpython-313.pyc": {
+      "bytes": 2730,
+      "sha256": "f6ac52578407c203a364e0d9422b6bd7ad24aba1b83793e6ac1d0a6b6394a98b"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_cmn/__pycache__/kq_special_templates.cpython-313.pyc": {
+      "bytes": 2887,
+      "sha256": "a29c64334e8f3453216a7161a4bbc99c1bfd512a6b3d4e2bb3e7e65cb2e79e8c"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_cmn/__pycache__/mam_bknas.cpython-313.pyc": {
+      "bytes": 3942,
+      "sha256": "5d89c30a17c74b2827c6b83643d2005703d023bb25bde35da24d4976714921b0"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_cmn/__pycache__/mam_bknas_and_std_bknas.cpython-313.pyc": {
+      "bytes": 5214,
+      "sha256": "107039fea9c45dc144b69f0e19ca581651bcfa61e7eb07ad338fe6c02d242c69"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_cmn/__pycache__/minirow.cpython-313.pyc": {
+      "bytes": 386,
+      "sha256": "dce02788dbc567b04c2fa62e7f7f4884ba6d6e1df6f7c664ff41864b67eac195"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_cmn/__pycache__/mpplus_schema_guard.cpython-313.pyc": {
+      "bytes": 2093,
+      "sha256": "5345fcedb5fe4f255a352af13b535395b85e194c341d9c950ab034a5fe4d57fe"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_cmn/__pycache__/my_diffs.cpython-313.pyc": {
+      "bytes": 1306,
+      "sha256": "63f7dd06e6935e2a74a518bc4df6f5b30247e7783baf7942743ce3ca8c235fde"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_cmn/__pycache__/my_utils.cpython-313.pyc": {
+      "bytes": 10619,
+      "sha256": "6546abff7c1e39ea79e62b53fb625a7e4277a8ca1de32cefcf12dc4c31264ba7"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_cmn/__pycache__/new_york_time.cpython-313.pyc": {
+      "bytes": 2522,
+      "sha256": "0228b30777c4e70033fea5fb907b49407ca2ecada2c250a8d39ff5bddda86440"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_cmn/__pycache__/paths.cpython-313.pyc": {
+      "bytes": 17607,
+      "sha256": "b66bf93a93cabd1ab2bd1d5ae3da4d8696055767c148a20443c09e8d5e762283"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_cmn/__pycache__/provenance.cpython-313.pyc": {
+      "bytes": 15779,
+      "sha256": "172eb2c6f0b58437b9a1cd18810c7659c264d9a77da9d84fbfa1a47dfa965f7b"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_cmn/__pycache__/read_books_from_mam_parsed_plus.cpython-313.pyc": {
+      "bytes": 5265,
+      "sha256": "d86698ba8d9f05f75a68d06f58f3dc462398dd84f0244d80a5487ce204f0b19e"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_cmn/__pycache__/retired_kq_special_templates.cpython-313.pyc": {
+      "bytes": 6001,
+      "sha256": "36181f37f66ff8e4e2b713cd53cbed3cd555aacac486eed10c5784d7fda38608"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_cmn/__pycache__/retired_template_names.cpython-313.pyc": {
+      "bytes": 1134,
+      "sha256": "7a9603ab6ce4f16c638c5a021a8fbf0690687b2f04750e883b154757debbd7a7"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_cmn/__pycache__/shrink.cpython-313.pyc": {
+      "bytes": 2911,
+      "sha256": "bbb5c3cbb4abd163862c36b06575bd0d1a4ea8015e6f23a14db0d842ff871957"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_cmn/__pycache__/silluq_before_meteg.cpython-313.pyc": {
+      "bytes": 4896,
+      "sha256": "b630e2ad12622b2d0b9633d2d04baa161a39c05f8761aefad62222984dd5dd42"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_cmn/__pycache__/str_defs.cpython-313.pyc": {
+      "bytes": 451,
+      "sha256": "375014fbcf8cf5abbe21824516213a7dee0adf340eeb3c22b9e5a5fac9f2f5a0"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_cmn/__pycache__/template_names.cpython-313.pyc": {
+      "bytes": 9666,
+      "sha256": "63040dad6ebb22d4eea06a60f63df17f5019106e321b3a03532dfd51c9076e5a"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_cmn/__pycache__/uni_denorm.cpython-313.pyc": {
+      "bytes": 3229,
+      "sha256": "52cecff77f7432657ba2455e3be4f9b1c6ac8aff2615ebf2aad87f99304636ef"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_cmn/__pycache__/uni_heb.cpython-313.pyc": {
+      "bytes": 11055,
+      "sha256": "96d4c908724ccf9657183bf486db784ec62b75500b259229808d3ca3360b0be6"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_cmn/__pycache__/uni_norm_fragile.cpython-313.pyc": {
+      "bytes": 1294,
+      "sha256": "3d4b098313ff0f10d9930710ec1c23950becfb467540f2ea2e89ede4cbcd5b0e"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_cmn/__pycache__/unicode_data.cpython-313.pyc": {
+      "bytes": 2179,
+      "sha256": "a6d097636b9891e7ed6a57c6bdb870aef4c158eac482e7291a1e99ecb9e12801"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_cmn/__pycache__/url_percent.cpython-313.pyc": {
+      "bytes": 833,
+      "sha256": "38e5db5e099eec99414de79114b5bcfb001ba51466053928d0b302c355fd763e"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_cmn/__pycache__/verse_external_links.cpython-313.pyc": {
+      "bytes": 11009,
+      "sha256": "5b5a7a8ef9d584ffee5f98e61045f9c04d715f71777c2aee30b1d7692ffd59d4"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_cmn/__pycache__/ws_tmpl1.cpython-313.pyc": {
+      "bytes": 7788,
+      "sha256": "cdff007c849a849f5c55160c619017632706559b25c1fbc55c965bf8d5a401b9"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_cmn/__pycache__/ws_tmpl2.cpython-313.pyc": {
+      "bytes": 8703,
+      "sha256": "ad1dd2aa293bba231b9b8d36e650b11ce0dbb48490a987eda90423510fed1a0d"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_cmn/__pycache__/ws_tmpl_named_params.cpython-313.pyc": {
+      "bytes": 2324,
+      "sha256": "924d6be2e176de23b7f833ac6b93f89abe31ec84201da0bbcc94e3ee44e026e8"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_diff_mpu/__pycache__/change_ops.cpython-313.pyc": {
+      "bytes": 8352,
+      "sha256": "c38d408b1de7ba09fc0342c5e3c019e3fc1a8b3a357f2e69c49c85d734ceb31e"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_diff_mpu/__pycache__/change_ops_apply.cpython-313.pyc": {
+      "bytes": 13072,
+      "sha256": "83eb50f23b57478fa552440ffec0389f7b6e53fba71dfba7dee192525c4a849e"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_diff_mpu/__pycache__/change_ops_extract.cpython-313.pyc": {
+      "bytes": 16457,
+      "sha256": "14c4d74bb7cd0b2ff1b0236c5870b6346a2f34d913bf6fa8af99497685c1a5f0"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_diff_mpu/__pycache__/change_ops_render.cpython-313.pyc": {
+      "bytes": 7007,
+      "sha256": "fa7986ca1d491da483ab5512cfa9af63b413cbab4c1449ff5ae11db0eb3688f9"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_diff_mpu/__pycache__/describe_diff.cpython-313.pyc": {
+      "bytes": 14878,
+      "sha256": "a82206c0b3f0d08acd4f59d4324e7fd6979059dae97a270881f5f3bef931f8cb"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_diff_mpu/__pycache__/grapheme_diff.cpython-313.pyc": {
+      "bytes": 2381,
+      "sha256": "da86461e6d1360f70fb8b432a897c5b52cf3f5acaa675326b9b74545ba1d35e9"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_diff_mpu/__pycache__/mpplus_archive.cpython-313.pyc": {
+      "bytes": 12504,
+      "sha256": "84bd24d0aebe7a175dd101b2a0c7703bc58d783dd422b4d8033d977a198848ba"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_diff_mpu/__pycache__/mpplus_assets.cpython-313.pyc": {
+      "bytes": 11900,
+      "sha256": "08892eda4a0f9f5235eb51e94f2404f2a23bf6c58015d40cee0a4487854d76a5"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_diff_mpu/__pycache__/mpplus_book_urls.cpython-313.pyc": {
+      "bytes": 1809,
+      "sha256": "def3332294585648a3b7c08372a819c005359b0097f0d3abf8745eb19a7a03f9"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_diff_mpu/__pycache__/mpplus_classify.cpython-313.pyc": {
+      "bytes": 7845,
+      "sha256": "5f7a98b2289c2a70752f79c6f88892ef6a3011ae0e1667c9143d04f15da7a68f"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_diff_mpu/__pycache__/mpplus_display.cpython-313.pyc": {
+      "bytes": 12460,
+      "sha256": "26debef33468f5c02b86b068421ad5b5781934be04b1882d46bfcd53be429514"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_diff_mpu/__pycache__/mpplus_docnote.cpython-313.pyc": {
+      "bytes": 9112,
+      "sha256": "0949f7b0d16281b742f808ca7a8baf0ba29580e3d83c61a59d0737a3bb7068d8"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_diff_mpu/__pycache__/mpplus_expand.cpython-313.pyc": {
+      "bytes": 4408,
+      "sha256": "9d4c232d1b77f585f25547e6bdaafbfbd64383a28e90c71f74784091bd406089"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_diff_mpu/__pycache__/mpplus_extract.cpython-313.pyc": {
+      "bytes": 13217,
+      "sha256": "11adfa63266af432dcc8f4e17839d2437884fc3c24e1bde33aebb57c7cae2579"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_diff_mpu/__pycache__/mpplus_file_matching.cpython-313.pyc": {
+      "bytes": 5720,
+      "sha256": "03101e52d0deb2d39a3852844e294a52c6fbba5cf75a7d9936f3a276138135c7"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_diff_mpu/__pycache__/mpplus_flatten.cpython-313.pyc": {
+      "bytes": 23280,
+      "sha256": "619db05762f419688f04a9910e4ba35bbf98afa901b0013e9cdb5016511f5cd4"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_diff_mpu/__pycache__/mpplus_html.cpython-313.pyc": {
+      "bytes": 20274,
+      "sha256": "224f7aa4b51c350b4955cb1cf2cb402dab822744b1325ac3d385c79a81f039ad"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_diff_mpu/__pycache__/mpplus_index.cpython-313.pyc": {
+      "bytes": 2305,
+      "sha256": "cfafeebcde4f73ff86cdfe63d2e5fdf18f982ecc6375781b6bad06aa966fafb8"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_diff_mpu/__pycache__/mpplus_json.cpython-313.pyc": {
+      "bytes": 5818,
+      "sha256": "1ba242a0b963d40d2182bc4b24f8a60781a4568f3c4f9b5e17d0487b3d46f8c1"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_diff_mpu/__pycache__/mpplus_normalize.cpython-313.pyc": {
+      "bytes": 5517,
+      "sha256": "d0c582e38090e023c7feda00f58a2d6acff73bd6a40581dc4f8b7b2df58a3c48"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_diff_mpu/__pycache__/mpplus_param_access.cpython-313.pyc": {
+      "bytes": 2798,
+      "sha256": "4fab81ab0ee4469fc869dc183e50aa33751b45b6748a1c721baf161412d858ab"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_diff_mpu/__pycache__/mpplus_revisions.cpython-313.pyc": {
+      "bytes": 19892,
+      "sha256": "a13d39dfe0fad09c2d19430b91fd7c99d96fad3c979e27938809fc259b7ddbde"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_diff_mpu/__pycache__/mpplus_structure.cpython-313.pyc": {
+      "bytes": 25725,
+      "sha256": "ade810a796d0eec04a82dbad27d2d1b0d735a96cc069a73e56134ec8b9efcf84"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_diff_mpu/__pycache__/mpplus_subtitle.cpython-313.pyc": {
+      "bytes": 4463,
+      "sha256": "57325dad19c1c61e3da442aa52c5c2982cdf75737509040749dca7214e41dafe"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_diff_mpu/__pycache__/mpplus_template_change_desc.cpython-313.pyc": {
+      "bytes": 7943,
+      "sha256": "85bfdb6e94361fea511ad77cf962bfc9f59c51ff97a16fc273d3577563cf4758"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_diff_mpu/__pycache__/mpplus_verify.cpython-313.pyc": {
+      "bytes": 4900,
+      "sha256": "760ff2e8f0bac91eff68c277fac096019938d10154fd35f664f33de4ce827cbe"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_misc/__pycache__/hebrew_letter_names.cpython-313.pyc": {
+      "bytes": 1675,
+      "sha256": "a9cd027b08c7abd5ce01cb1d0d6f5dc4200ef8f4552e5a762c9a40e523252ce3"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_misc/__pycache__/mam_attribution.cpython-313.pyc": {
+      "bytes": 852,
+      "sha256": "eed7758894b55f58ea418e428a1d04ad5eaa424d8ce61ea0a176f2dd0f72d644"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_misc/__pycache__/mb_html.cpython-313.pyc": {
+      "bytes": 18735,
+      "sha256": "53b5266790985fc36c752129bd0de560ab878e9cd709497afb8171ddcfb6648f"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_misc/__pycache__/mb_html_get_lines.cpython-313.pyc": {
+      "bytes": 8340,
+      "sha256": "227f947afc77bc9deabca8f2e6974420285ad0d61f17dd0c3ca9ab974d2248a6"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_misc/__pycache__/my_utils_for_mainish.cpython-313.pyc": {
+      "bytes": 1379,
+      "sha256": "433456e01278ea894bd84f7698dbd86f6afbdcc794c857d3ac314c61df7c37a6"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_misc/__pycache__/report_stylesheet.cpython-313.pyc": {
+      "bytes": 2737,
+      "sha256": "6c64acabff4815201d7c6d215153d1d48290e9a844de061faa2035da0ab488b6"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_misc/__pycache__/styles_mam_with_doc.cpython-313.pyc": {
+      "bytes": 1344,
+      "sha256": "d0c3229dd7b62a1feb6e046093e78fd1ac7d183dfc8055368721faf69588b9c7"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mb_misc/__pycache__/verse_and_friends.cpython-313.pyc": {
+      "bytes": 1452,
+      "sha256": "77da8817fd5f0e7bf699dbbbca25dc9dccdbcf8f19d0ed5f7ee27e2015ddd740"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mwd/__pycache__/mwd_write_book.cpython-313.pyc": {
+      "bytes": 8871,
+      "sha256": "f9099e3068b72723f2fe62ccc18fb55f95201f8d29c35546cf7181a1c176a004"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/mwd/__pycache__/mwd_write_index_dot_html.cpython-313.pyc": {
+      "bytes": 4494,
+      "sha256": "ae25c4715daedccd3ac8d1a9ff61e8304958b047cd9db04ef84f00b8e7640e2e"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/near_aleppo/__pycache__/__init__.cpython-313.pyc": {
+      "bytes": 250,
+      "sha256": "2438545b450f327fe6e6bde7e432c00d6d6bd89a69c86f5b37bf676cb2ba7c57"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/near_aleppo/__pycache__/build_expectations.cpython-313.pyc": {
+      "bytes": 26719,
+      "sha256": "75bbc4c5fba36509fe062ce59e0f3ca6ac30a4df61948e66cfc16fcfbb5e438f"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/near_aleppo/__pycache__/build_paths.cpython-313.pyc": {
+      "bytes": 1556,
+      "sha256": "37368b5dd242bc91fe349704cba2cd5037dcd99c8a5dcf27cfa92e2580b567bf"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/near_aleppo/__pycache__/consumer_notice.cpython-313.pyc": {
+      "bytes": 9589,
+      "sha256": "9a7e6370ef9379a5794a1f6b7e0edbe60aacd787306da6e6dad48298dcd865c8"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/near_aleppo/__pycache__/doc_changes.cpython-313.pyc": {
+      "bytes": 36725,
+      "sha256": "3b67fd20843127b7f47762724cfa00f821d37206c2e6787a53891a70ac5ac694"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/near_aleppo/__pycache__/doc_choices.cpython-313.pyc": {
+      "bytes": 45922,
+      "sha256": "2119213f9ddb268ac132ef32057a43a915deeb2fc12257b17ec6ea29714f0329"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/near_aleppo/__pycache__/doc_daniel_sheva.cpython-313.pyc": {
+      "bytes": 14140,
+      "sha256": "4d1809acd7212dc99503791bd319eddcba9ad56eaea0af3502f8ffb14e14a92e"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/near_aleppo/__pycache__/doc_figures.cpython-313.pyc": {
+      "bytes": 54475,
+      "sha256": "b1d047eabb393f05adf7cfd644ddd43d6d126c2240d3f9b0d9c47d17164502d7"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/near_aleppo/__pycache__/doc_genesis_ketiv.cpython-313.pyc": {
+      "bytes": 5982,
+      "sha256": "8bae9efb980c8d52ea1b98775d2d8da3038cea93d0c9532075ddfe998ff921ad"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/near_aleppo/__pycache__/doc_he_transfer.cpython-313.pyc": {
+      "bytes": 6185,
+      "sha256": "99fa017e443795a1ab91a0701cb191f695de24ef477eaa6d52939a9f84cf1dd9"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/near_aleppo/__pycache__/doc_html.cpython-313.pyc": {
+      "bytes": 14531,
+      "sha256": "a04b2c6b279dadcdf9d241c76fd243c45d525d4fc93ce58248e42040178acf66"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/near_aleppo/__pycache__/doc_investigation.cpython-313.pyc": {
+      "bytes": 4956,
+      "sha256": "bcf58e82e65096b1ef9b2b96921ed39ffd1983ed78a0c3790e64d7e702217428"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/near_aleppo/__pycache__/doc_note_review.cpython-313.pyc": {
+      "bytes": 20775,
+      "sha256": "7056a4dcac2766122b43d375b00439d75fb3d505614665422c1fc04444e3a635"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/near_aleppo/__pycache__/doc_page.cpython-313.pyc": {
+      "bytes": 39758,
+      "sha256": "31d98a679bf46b9c17ac0c7ce8a9dd05402b13abaf7c97903a1d36d44a1907ab"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/near_aleppo/__pycache__/doc_pages.cpython-313.pyc": {
+      "bytes": 11387,
+      "sha256": "8311daf2a8babe07bad08f1e2351b1900d3a9317d1f5fd30ab2c7809eb6369a6"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/near_aleppo/__pycache__/doc_policy_examples.cpython-313.pyc": {
+      "bytes": 15665,
+      "sha256": "d9b229607ad7e908bdd22a60384048a34b4be18f8409e2eb51f398f0f39fb8d4"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/near_aleppo/__pycache__/doc_registers.cpython-313.pyc": {
+      "bytes": 16466,
+      "sha256": "dfebdda7abd0cc880700935a10b608f8ae41f2ea67b5715b060ebd0581c19dcb"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/near_aleppo/__pycache__/doc_style.cpython-313.pyc": {
+      "bytes": 2779,
+      "sha256": "57c12422ebe9ed9d2612df5052faa25664e9f1bd4a87429a5d86c845ac2a47ff"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/near_aleppo/__pycache__/doc_template_examples.cpython-313.pyc": {
+      "bytes": 13391,
+      "sha256": "2e59e0451810a52870fb41f412bf5ffb1f96eb679563eae75694500453d37459"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/near_aleppo/__pycache__/edition.cpython-313.pyc": {
+      "bytes": 11266,
+      "sha256": "549fe8dcc22d3439d6335ef44696bf2ef16426eea42ec260a23a3226cc496f18"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/near_aleppo/__pycache__/editorial_ketiv.cpython-313.pyc": {
+      "bytes": 4574,
+      "sha256": "3c572a5de8e87a211a6c15e9eebfa244450359d48a914f8d5905f539a71d91b1"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/near_aleppo/__pycache__/features_of_interest.cpython-313.pyc": {
+      "bytes": 18637,
+      "sha256": "574a017895678b4feaa032e20cd248245d21c0cbf2d77e3f47e9f0496d36fa24"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/near_aleppo/__pycache__/foi_qere_without_ketiv.cpython-313.pyc": {
+      "bytes": 50856,
+      "sha256": "d6290c3a26bd18b62ec277d91b0fb8f9245ce0bf2202e869fe25d4386979e866"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/near_aleppo/__pycache__/foi_spacing.cpython-313.pyc": {
+      "bytes": 21150,
+      "sha256": "e3bd284d7e8589a461075e3ff8f46352aba8297b97580a254cf2d40e54292b42"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/near_aleppo/__pycache__/frozen_ketiv.cpython-313.pyc": {
+      "bytes": 10871,
+      "sha256": "363b9664ead839795a851505bb8e1e1d6e05078bfe1ec6e490966bd9f84a375a"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/near_aleppo/__pycache__/ketiv_checks.cpython-313.pyc": {
+      "bytes": 3555,
+      "sha256": "7785c88a1e77833eb81d4d4b453c39663d2a0ebe0c91174a25c8cfdbed86ed34"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/near_aleppo/__pycache__/link_presentation.cpython-313.pyc": {
+      "bytes": 8692,
+      "sha256": "15d0003be8cc652ecf73cdb95accbac3bc600e9133c4b05e367d6fd33205fc98"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/near_aleppo/__pycache__/main_build.cpython-313.pyc": {
+      "bytes": 11398,
+      "sha256": "0dbd6a096803d72877b72dcf5714d7892c73d87a74c06012cc6b69c097a094a8"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/near_aleppo/__pycache__/main_html_pages.cpython-313.pyc": {
+      "bytes": 10876,
+      "sha256": "ca29b7b8ff1b86e9043d7913eff9defeba688769e9855e9100b801cd10fe1ddb"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/near_aleppo/__pycache__/note_content.cpython-313.pyc": {
+      "bytes": 7854,
+      "sha256": "145e02db1b0fa679d50506f467118de6d437186059a18802d1d88b1234b4c9ff"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/near_aleppo/__pycache__/phase2_templates.cpython-313.pyc": {
+      "bytes": 24696,
+      "sha256": "065c6f8d35ec089cd2fea8fa83903692de08a5f60ad1a1f9a3cb4752abb34887"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/near_aleppo/__pycache__/phase3_policies.cpython-313.pyc": {
+      "bytes": 116096,
+      "sha256": "34e2fa251c3cdd3a4b05348207233728f399d05eac112e4de2605fa8196da373"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/near_aleppo/__pycache__/phase5_readings.cpython-313.pyc": {
+      "bytes": 83393,
+      "sha256": "f0b219466d9ddb145706cdac6f8ba9d3bbf2b2ec71cdea2ddb9a2e19a9d172e1"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/near_aleppo/__pycache__/phase6_flags.cpython-313.pyc": {
+      "bytes": 23086,
+      "sha256": "8a15be8f257836a1a232d4c42485ab71f20eae3ac938f8a77985c755edabd577"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/near_aleppo/__pycache__/phase6_mam_targets.cpython-313.pyc": {
+      "bytes": 7785,
+      "sha256": "54f87435faa96ecb86b5a438d5bd1f7d75bd887a6a359d1542dc70862a87d8cc"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/near_aleppo/__pycache__/phase6_rename.cpython-313.pyc": {
+      "bytes": 5016,
+      "sha256": "5f1fdfb49be54be5fd82c830e58c0642ca963f132d06928f26bc4951110f029f"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/near_aleppo/__pycache__/qere_without_ketiv.cpython-313.pyc": {
+      "bytes": 8722,
+      "sha256": "99da2dd0b61f2c733b49e66a9200f5e44be2df274de2980901040f9a16211afa"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/near_aleppo/__pycache__/reviewed_ketiv.cpython-313.pyc": {
+      "bytes": 5560,
+      "sha256": "5fd2b4f8716a9f9b6c5fd51b7cb854fb7e7fae7e4674da937302ff24542d79d0"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/near_aleppo/census/__pycache__/__init__.cpython-313.pyc": {
+      "bytes": 252,
+      "sha256": "735c6c04e6d60e9f6af51cdb8d814d1110a2c4e009db9e06ca655c4b343b01ff"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/near_aleppo/census/__pycache__/adonai_census.cpython-313.pyc": {
+      "bytes": 7632,
+      "sha256": "ef3725d3f524b1f01b9af09e947104a037030c405096c475aa2f20a2f0c5b125"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/near_aleppo/census/__pycache__/census_paths.cpython-313.pyc": {
+      "bytes": 707,
+      "sha256": "b3db3b41f9ce1b80b69599b5ef175b9c4228593991a720ce6c75158f05612844"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/near_aleppo/census/__pycache__/divine_name_split.cpython-313.pyc": {
+      "bytes": 7773,
+      "sha256": "581d48eec737d24e8327434bb4d76ea1546a0616e7ae7650e2de43fccbce92f2"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/near_aleppo/census/__pycache__/edition_projection.cpython-313.pyc": {
+      "bytes": 7028,
+      "sha256": "e162231e6ac5200f8fd1598b94eda37acb1eca05315381f675b02c66acdfc89c"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/near_aleppo/census/__pycache__/nusach_aleppo_readings.cpython-313.pyc": {
+      "bytes": 13130,
+      "sha256": "d013a30e35385071f1e2d328eb96924103808271f45450cff6a3e4d498b14c30"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/near_aleppo/census/__pycache__/nusach_codex_extant.cpython-313.pyc": {
+      "bytes": 2603,
+      "sha256": "6eb22a3d5211a52ae027f722394f686f5dd4985dd6bfb6c407f2df3ef09e8ee8"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/near_aleppo/census/__pycache__/qamats_params.cpython-313.pyc": {
+      "bytes": 7736,
+      "sha256": "f8ba26a705d24ab3050860d213ba2858d0e780f9ea5dfb4d814bb6da89c03517"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/near_aleppo/census/__pycache__/stress_helper_census.cpython-313.pyc": {
+      "bytes": 8497,
+      "sha256": "2b4e1b7c982f9005cceecf767035ad48ed41ba7655151610afd4dd34e1d81e91"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/near_aleppo/census/__pycache__/template_inventory.cpython-313.pyc": {
+      "bytes": 6766,
+      "sha256": "5e4027023363bd8498b6a14654cd39c52c7a0676cd4f2b077f069c9667b488dd"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/py_html/__pycache__/hebrew_letter_spacing.cpython-313.pyc": {
+      "bytes": 15932,
+      "sha256": "3d3d17580f5c96a36b7ef8c2825bcac0ded19514b2fb3632ece3fae4b1db1976"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/py_html/__pycache__/taamey_d_assets.cpython-313.pyc": {
+      "bytes": 5732,
+      "sha256": "277eb8022f9ce0f051a60807ffc0fb2efb175ed7a7fdd023f46ca459caad10aa"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/py_misc/__pycache__/analyze_qamats_variant.cpython-313.pyc": {
+      "bytes": 7758,
+      "sha256": "bc0c8cd80645ac88073eb2bd5d6502c708588a54995549aa134d6ae7582b472d"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/py_misc/__pycache__/get_cvm_rec_from_bcvt.cpython-313.pyc": {
+      "bytes": 2204,
+      "sha256": "9913725b1660d695c10780b2b8450835b74403cc6f48fe3164a68c35338a4bf9"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/py_misc/__pycache__/mam_doc_utils.cpython-313.pyc": {
+      "bytes": 7359,
+      "sha256": "6299bd026e04ff5e39937455af5b64851ffb762da5be785b6d9275fa86463960"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/py_misc/__pycache__/mwd_utils.cpython-313.pyc": {
+      "bytes": 18708,
+      "sha256": "bc30cb361c2f0dd7aba0b71b2b75b534d270d1ac2f2616051e5d72ad58d58fb7"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/py_misc/__pycache__/near_aleppo_params.cpython-313.pyc": {
+      "bytes": 6994,
+      "sha256": "a66b66e4df2ef808b5ab34f7823b13e752d9b47001e0056602c3eb5f1349fe97"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/py_misc/__pycache__/orphan_marks.cpython-313.pyc": {
+      "bytes": 4616,
+      "sha256": "a114ec14bbb962e61fd6ecae615bc5982ba1118b384fe913ae4a4a77d4e80340"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/py_misc/__pycache__/ren_html_for_renel.cpython-313.pyc": {
+      "bytes": 3468,
+      "sha256": "93e23ced2a788314a89ea52907809652b9f55099deb0dac3a7d527a95d641b94"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/py_misc/__pycache__/ren_html_from_ren_el_mapping.cpython-313.pyc": {
+      "bytes": 2658,
+      "sha256": "52fb60d17c95bfeb7cef0c687f3f1fd5381dd449d79cadba20185d7b11bf4876"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/py_misc/__pycache__/ren_tag_survey.cpython-313.pyc": {
+      "bytes": 2841,
+      "sha256": "70775c375021e008f40d4acc141db59df3296f9c378859c18be6d263fe155d40"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/py_misc/__pycache__/scrdfftar_to_doc.cpython-313.pyc": {
+      "bytes": 8520,
+      "sha256": "1e71cc765ccfa116ceaa79911cc3abef869f7d1098747e784211f94bdf897518"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/py_misc/__pycache__/trivial_qere_to_doc.cpython-313.pyc": {
+      "bytes": 7363,
+      "sha256": "6ff8304e71f58279fac8fa3cb041f78c39f73298bcdcedf0862f6a24aa69074d"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/py_misc/__pycache__/true_gershayim.cpython-313.pyc": {
+      "bytes": 2601,
+      "sha256": "5fe3befe36e5972d24005bf1aa660691fc363fbfa1735ad17d3b520f9a00066e"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/py_misc/__pycache__/unbury_doc_parts.cpython-313.pyc": {
+      "bytes": 979,
+      "sha256": "14c85830a44446df2ea8389b39a3f58841a0cd5f0eebf246322411ac858be269"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/py_misc/__pycache__/uni_check.cpython-313.pyc": {
+      "bytes": 2911,
+      "sha256": "68fd2b1da23b44cc07a58bc0e092235c978cf0cb7431770b6eb1ffff3b77b129"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/py_misc/__pycache__/uni_heb_char_classes.cpython-313.pyc": {
+      "bytes": 3236,
+      "sha256": "28c7a1a48bf52fe3d6b3d196d13dacd06e40a407b7afba0c820215c4ba18228f"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/py_misc/__pycache__/vtrad_data.cpython-313.pyc": {
+      "bytes": 6286,
+      "sha256": "00bbe721989a95f89e2cc2ec90db5df6b3dc5b53f234539023954b4515d524b6"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/py_misc/__pycache__/vtrad_helpers.cpython-313.pyc": {
+      "bytes": 3287,
+      "sha256": "cadf92359628867b1fe9214ddb13418f359f9120f79c3558e7e1fe82b0029f08"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/render_wt/__pycache__/doc_note_presentations.cpython-313.pyc": {
+      "bytes": 2689,
+      "sha256": "7d8338f89090b2ceec5caaac4956297f43b2a3d573708447aef7df7753ea68b6"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/render_wt/__pycache__/render_element.cpython-313.pyc": {
+      "bytes": 2844,
+      "sha256": "402d769b830d60d356a50212fdf484af98bb2cb1958a4755fd2b9a4f06aa8632"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/render_wt/__pycache__/render_wikitext.cpython-313.pyc": {
+      "bytes": 3142,
+      "sha256": "7eb70432d57a8315e7b0972a6f965ff9672f8f2035aa1bd91645c15c63ca3af2"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/render_wt/__pycache__/render_wikitext_added_lines.cpython-313.pyc": {
+      "bytes": 5048,
+      "sha256": "adbca159918f0e8f370966e027dee56d54dde54ec60974048f65816967d15011"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/render_wt/__pycache__/render_wikitext_dispatch.cpython-313.pyc": {
+      "bytes": 1688,
+      "sha256": "dbf80ce8465afa541466d7cbeda3d2662e530961d754c10128a76869714fe6b2"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/render_wt/__pycache__/render_wikitext_handlers.cpython-313.pyc": {
+      "bytes": 40347,
+      "sha256": "82aa13fe2e6f7b7aaa53ae4503abae80d50f90a18f00206605f413531d7d5d6f"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/render_wt/__pycache__/render_wikitext_handlers_for_qamats.cpython-313.pyc": {
+      "bytes": 3232,
+      "sha256": "dc0e453e54ae2012f5a12c6c9880d0f0957c908f32841e58479cd5fa4a479436"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/render_wt/__pycache__/render_wikitext_helpers.cpython-313.pyc": {
+      "bytes": 5348,
+      "sha256": "16c7a1778178cd03a1075fa060739523e65df751e300bc9a17caba03a1ddbd54"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/render_wt/__pycache__/render_wikitext_kq.cpython-313.pyc": {
+      "bytes": 15777,
+      "sha256": "81ba24afa21b4bd67688661b206bf64db4157639183f3d581a75aff256470ff6"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/render_wt/__pycache__/render_wikitext_spacing_concerns.cpython-313.pyc": {
+      "bytes": 2331,
+      "sha256": "d6536bbb45e88f89af4a4a8defd4d6d0c05eb3479fcdfe91f34be287f897f47c"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/repo_util/__pycache__/audit_line_terms.cpython-313.pyc": {
+      "bytes": 9843,
+      "sha256": "ca3d27ece4498daa67b60b6e0f33a2342dd882a523dad0da325c74a63a956385"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/repo_util/__pycache__/check_repo_standards.cpython-313.pyc": {
+      "bytes": 52766,
+      "sha256": "dc477bf64518414773c35364fc8b86556472cb9b11affb921931a17b9e8ddf1d"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/repo_util/__pycache__/clean_worktrees.cpython-313.pyc": {
+      "bytes": 4023,
+      "sha256": "726c59d68fc482a3bb143ddd3bc01bb8bfde0acbd0fd45d88b5493d15ff44cc5"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/repo_util/__pycache__/commit_across_repos.cpython-313.pyc": {
+      "bytes": 6334,
+      "sha256": "db31e36aa0d677ba0de5bfb1e4478d987d62da7521218c1f3de55686f933fc54"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/repo_util/__pycache__/common.cpython-313.pyc": {
+      "bytes": 4962,
+      "sha256": "ae050e22eca0c604471f12e85c4ee9bbb676140bfc893368c93ed1f0fb3c5b0a"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/repo_util/__pycache__/forest_environments.cpython-313.pyc": {
+      "bytes": 11629,
+      "sha256": "5a3750b11b2c6d1445395eaaddd867023af37d482dccb5e5f415d35209012ed3"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/repo_util/__pycache__/forest_sync.cpython-313.pyc": {
+      "bytes": 19704,
+      "sha256": "0f8a329dbd846fa9a5172bca737e1410fa7ceec342e5822f33ce1641f3303647"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/repo_util/__pycache__/git_worktree_cleanup.cpython-313.pyc": {
+      "bytes": 5796,
+      "sha256": "7ffa0977c6f1f6512e1c0eee4dfdbd7a2177a1655442f8520a830cf545770366"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/repo_util/__pycache__/maintenance_policy.cpython-313.pyc": {
+      "bytes": 6968,
+      "sha256": "db5af52dd64ca89cde20f796feb1136233c441e229a2b24af0bb88d02d65c2ed"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/repo_util/__pycache__/repo_selection.cpython-313.pyc": {
+      "bytes": 8191,
+      "sha256": "7a910acfa29790acbdbf056db4857e9cf668de5c3d2479cb064e09eaf4af11fc"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/repo_util/__pycache__/report_destination.cpython-313.pyc": {
+      "bytes": 8843,
+      "sha256": "e5841257973255cb40fc7e4551995985c571c0b3c94c208c7ceeeb4c033e24cf"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/repo_util/__pycache__/run_black.cpython-313.pyc": {
+      "bytes": 9736,
+      "sha256": "59efd4e55d029683fb2b671563910cbc9ece0e7780b9f218dec48113b9b78b5b"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/repo_util/__pycache__/user_config_sync.cpython-313.pyc": {
+      "bytes": 33106,
+      "sha256": "447593fb12615cdac74156b0ebc6b65271d16f9bf7323eb07a0b304af0c73208"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/repo_util/__pycache__/worktree_owners.cpython-313.pyc": {
+      "bytes": 8582,
+      "sha256": "5b261d3ad50ff872b76491c769cf557278446451cffe51b039b53c28483d848c"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/repo_util/__pycache__/worktree_retirement.cpython-313.pyc": {
+      "bytes": 1515,
+      "sha256": "f64d62bd32e811a415556d2865119d9a46448bbb7eeb0c911dc6260f27de7be9"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/repo_util/__pycache__/worktree_retirement_execution.cpython-313.pyc": {
+      "bytes": 16861,
+      "sha256": "f8e7d3bee8b44bf3a0076d05e91dc6ce95ec140b8a470425cc725cfec02e9fec"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/repo_util/__pycache__/worktree_retirement_git.cpython-313.pyc": {
+      "bytes": 6739,
+      "sha256": "02a78fc601114894a2fe05ce03c795fb9bb5b8568bb3cbcd16a8b0b8949dbe57"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/repo_util/__pycache__/worktree_retirement_inspection.cpython-313.pyc": {
+      "bytes": 38902,
+      "sha256": "e8c143e2550136182b074b2e82660e5362a424fb52ad22c3694b3ceb35eec734"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/repo_util/__pycache__/worktree_retirement_preflight.cpython-313.pyc": {
+      "bytes": 10315,
+      "sha256": "64414f817c1b00b8a9618c8b6db51de21b66069c1340b85d94c3a577ec7ae0ff"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/repo_util/__pycache__/worktree_retirement_relocation.cpython-313.pyc": {
+      "bytes": 7266,
+      "sha256": "5a40a68352686149a75d7f55a5f87f1e3f960daa1a1f13990dae669e5418b0bf"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/sigils/__pycache__/inventory.cpython-313.pyc": {
+      "bytes": 11952,
+      "sha256": "9a54e4d251e6b8eff30cc1207a371271e3d36d0904f419f9466c7b7c7dea36d4"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/subcommands/__pycache__/diff_ctr_vs_mam.cpython-313.pyc": {
+      "bytes": 5677,
+      "sha256": "1bfb937ed1b2c38d7c7c7496ada1d4e9da970a4d5daf3d5e4a1112569e12de21"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/subcommands/__pycache__/diff_mpplus.cpython-313.pyc": {
+      "bytes": 33761,
+      "sha256": "31a5bc0b05d650596be627f1e987c158e3aa04ff5a3bca0f839bdb563c3fb533"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/tests/__pycache__/test_near_aleppo.cpython-313-pytest-9.1.1.pyc": {
+      "bytes": 12935,
+      "sha256": "9f8d66ef51c20b34674b98185944dce4233e21a01336e841961548620cb4b756"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/tests/__pycache__/test_near_aleppo_note_content.cpython-313-pytest-9.1.1.pyc": {
+      "bytes": 16929,
+      "sha256": "e4b3ad95b91084c87a75ce09f214e7c15a04aeb486e2a5445d81843bbb6eb650"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/tmpl_survey/__pycache__/column_d_0_process_all_mpasuq_calls.cpython-313.pyc": {
+      "bytes": 4017,
+      "sha256": "731dd91b45fe79bef6bebfb781dd7990492552286fb26a17a690567e2ac87d33"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/tmpl_survey/__pycache__/column_d_0_store_the_mpasuq_call_plus.cpython-313.pyc": {
+      "bytes": 4315,
+      "sha256": "a1434829ceff349b9317361e06908f30409de5f87d256e1b8b7dea815c975034"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/tmpl_survey/__pycache__/column_d_alirec.cpython-313.pyc": {
+      "bytes": 2398,
+      "sha256": "de8985a1b5040c1326c4dad43254705d54066c7c249c007819e86bb80a99461f"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/tmpl_survey/__pycache__/column_d_glirec.cpython-313.pyc": {
+      "bytes": 3948,
+      "sha256": "7c0cc41cadf9fbab8e3e1ee81e1571702c0b54bf197b685152ee30f51c646023"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/tmpl_survey/__pycache__/dot_node_collapse.cpython-313.pyc": {
+      "bytes": 5587,
+      "sha256": "51d3260691e70d1663663a57b5b60e4844f057787f683d055d7cba0fa437ec57"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/tmpl_survey/__pycache__/nesting_normal_form.cpython-313.pyc": {
+      "bytes": 20219,
+      "sha256": "c6a69b7dc4cbe55b5d53f306e1cc8d0eeedf0280d099cbcd3298c6b935d3dc05"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/tmpl_survey/__pycache__/stack_path_lookup.cpython-313.pyc": {
+      "bytes": 8317,
+      "sha256": "eb683aa492e47296140e96fcefc08d4d34e760a7fa7c4753c8ceaf29734c6e60"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/tmpl_survey/__pycache__/stack_path_verbose_payload.cpython-313.pyc": {
+      "bytes": 3132,
+      "sha256": "3f46e62742ea96e9062b7cdd64fd1f4d028bff76e9193cb23e6f0ed1ff36e748"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/tmpl_survey/__pycache__/survey_dot.cpython-313.pyc": {
+      "bytes": 27302,
+      "sha256": "378d7def6baa98fb52b70dc39e78376406370a7a9a67397ac5ffbfc722490e27"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/tmpl_survey/__pycache__/survey_plus.cpython-313.pyc": {
+      "bytes": 12593,
+      "sha256": "6dd0ca4031f360d31cbaf5594307dd1543f35c9362772ff609447c90c67d0576"
+    },
+    "retained-ignored-review-hourly-20261028-notes-resume-basics/py/tmpl_survey/__pycache__/svg_provenance_norm.cpython-313.pyc": {
+      "bytes": 1340,
+      "sha256": "919e3561f6bf7ce549bbc024169219045d07de1211945e23fe4e59de022963bb"
+    },
+    "retirement-inspection-from-carrier.log": {
+      "bytes": 112,
+      "sha256": "826642b9d0b4c03daba28a00cca5cac1e1d25db32695b616c38b728bf362bec3"
+    },
+    "retirement-inspection.log": {
+      "bytes": 108,
+      "sha256": "97c1ccfa60f8eea7f4d7f7a130143175f82ca8c625f5787d4cde76ebb15f7275"
+    },
+    "review-hourly-20261028-notes-resume-basics-cleanup.json": {
+      "bytes": 36538,
+      "sha256": "ae77f9eb88d4dacd6bf9bc83b600a8c78dc3a5c6a33f576388f666b221f42bd7"
+    }
+  },
+  "privacy": "Owning repository only; ignored content retained byte-for-byte, archive CRC and membership verified."
+}

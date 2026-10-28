@@ -1,0 +1,299 @@
+{
+  "date": "2026-10-28",
+  "state": "completed bounded focused review; SVG reproduction differs as classified",
+  "receipt_parent": "23be8cf6536f5b4c364b0245705d71a397cfb10a",
+  "receipt_branch": "review-hourly-20261028-notes-complete-receipts",
+  "window": {
+    "exclusive_base": "4aca1d2e13f31edecff8dda8fd339348cb3e9ddb",
+    "frozen_main": "6835873fcb2ba63afec21846e5fc65f730e7757a",
+    "commits": 4,
+    "paths": 70
+  },
+  "prior_partial": "review-hourly-2026-10-28-note-refresh-partial.json",
+  "screened_through": "6835873fcb2ba63afec21846e5fc65f730e7757a",
+  "reviewed_through": "6835873fcb2ba63afec21846e5fc65f730e7757a",
+  "focused_checked_through": "6835873fcb2ba63afec21846e5fc65f730e7757a",
+  "broad_tested_through": "5c28eba09f95fd491afef38454149bde628ee2a7",
+  "classification": "Consequential documentation-note refresh and derived near-Aleppo/products reviewed; no new objective defect established. Editorial/source choices preserved.",
+  "source_findings": [
+    "Seven book mirrors carry eight changed notes and one new Psalms 42:3 note; the independent endpoint Scripture comparison reports zero raw changes.",
+    "Near-Aleppo adds one review row (1556 to 1557), retains current reading choices, and updates the existing omission-description classification plus quotations. No executable Python/policy/workflow changed.",
+    "Population/template/sigil/MWD and near-Aleppo output changes match the note scope. Change-log tree ID changes while its latest raw-change count stays 10."
+  ],
+  "results": {
+    "pytest": "3 selected tests passed in 44.44s: dataset/population currentness, all fresh note presentations, differential baked-note replay.",
+    "near_aleppo_html": "106 files current.",
+    "mwd": "Exodus, Numbers, Deuter, Jeremiah, Psalms, Ecclesiastes and Ezra reproduce with no tracked diff.",
+    "sigil": "Reproduced: 3871 notes scanned/matching, 1354 distinct expressions, 897 expression tokens, 578 prose tokens.",
+    "template_survey": "JSON and DOT reproduce. Pinned Graphviz exits zero but six SVGs differ; all XML elements/text/tails/attribute keys and non-layout values agree except exact Times New Roman,serif -> Times,serif alias. Both versions, patch and structural comparison retained. Restored only these six after triage; no baseline accepted.",
+    "change_log": "All maintained reports current; latest count 10.",
+    "selected_stage_seconds_sum": 80.803
+  },
+  "failures_and_rechecks": [
+    "Saved partial command used invalid --book39 Deuteronomy: KeyError, exit1, no writes. Correct maintained Deuter label passed; earlier stages not repeated.",
+    "Initial template survey selected system Graphviz2.42.4 because shell activation was missing: pin guard exit1 before SVG writes. Activated saved environment and retried only survey with pinned16.0.0.",
+    "Pinned survey produced six SVG differences, not byte-identical success. Structural helper first rejected Times alias; inspecting exact attribute pairs explained it. An attempted final-stage runner stopped at its dirty-tree precondition and did not launch change-log currentness. After evidence preservation and six-file restoration, that final check passed."
+  ],
+  "runtime_inputs": {
+    "Basics": "6835873fcb2ba63afec21846e5fc65f730e7757a",
+    "sibling_checkouts_used": []
+  },
+  "stages": [
+    {
+      "name": "01-main_diff",
+      "source_commit": "6835873fcb2ba63afec21846e5fc65f730e7757a",
+      "cwd": "/workspace/review-hourly-20261028-notes-resume-basics",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_diff.py",
+        "mpplus",
+        "--old",
+        "4aca1d2e13f31edecff8dda8fd339348cb3e9ddb",
+        "--new",
+        "6835873fcb2ba63afec21846e5fc65f730e7757a",
+        "--output",
+        "/workspace/scratch/review-hourly-20261028-notes-resume-basics/endpoint.html"
+      ],
+      "started_utc": "2026-10-28T22:58:54.421273+00:00",
+      "completed_utc": "2026-10-28T22:58:55.614064+00:00",
+      "seconds": 1.193,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "name": "02-main_test",
+      "source_commit": "6835873fcb2ba63afec21846e5fc65f730e7757a",
+      "cwd": "/workspace/review-hourly-20261028-notes-resume-basics",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        "py/tests/test_near_aleppo.py::test_dataset_and_population_baselines_are_current",
+        "py/tests/test_near_aleppo.py::test_all_changed_note_presentations_match_the_source_inventory",
+        "py/tests/test_near_aleppo_note_content.py::test_baked_clauses_match_reviews_and_preserve_current_pre_bake_book_content",
+        "-q"
+      ],
+      "started_utc": "2026-10-28T22:58:55.614436+00:00",
+      "completed_utc": "2026-10-28T22:59:40.304972+00:00",
+      "seconds": 44.691,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "name": "03-main_near_aleppo",
+      "source_commit": "6835873fcb2ba63afec21846e5fc65f730e7757a",
+      "cwd": "/workspace/review-hourly-20261028-notes-resume-basics",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_near_aleppo.py",
+        "--html",
+        "--check"
+      ],
+      "started_utc": "2026-10-28T22:59:40.305298+00:00",
+      "completed_utc": "2026-10-28T23:00:04.853207+00:00",
+      "seconds": 24.548,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "name": "04-main_mam_with_doc-Exodus",
+      "source_commit": "6835873fcb2ba63afec21846e5fc65f730e7757a",
+      "cwd": "/workspace/review-hourly-20261028-notes-resume-basics",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_mam_with_doc.py",
+        "--book39",
+        "Exodus"
+      ],
+      "started_utc": "2026-10-28T23:00:04.853552+00:00",
+      "completed_utc": "2026-10-28T23:00:05.216301+00:00",
+      "seconds": 0.363,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "name": "05-main_mam_with_doc-Numbers",
+      "source_commit": "6835873fcb2ba63afec21846e5fc65f730e7757a",
+      "cwd": "/workspace/review-hourly-20261028-notes-resume-basics",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_mam_with_doc.py",
+        "--book39",
+        "Numbers"
+      ],
+      "started_utc": "2026-10-28T23:00:05.216650+00:00",
+      "completed_utc": "2026-10-28T23:00:05.534469+00:00",
+      "seconds": 0.318,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "name": "06-main_mam_with_doc-Deuter",
+      "source_commit": "6835873fcb2ba63afec21846e5fc65f730e7757a",
+      "cwd": "/workspace/review-hourly-20261028-notes-resume-basics",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_mam_with_doc.py",
+        "--book39",
+        "Deuter"
+      ],
+      "started_utc": "2026-10-28T23:00:45.274258+00:00",
+      "completed_utc": "2026-10-28T23:00:45.638481+00:00",
+      "seconds": 0.364,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "name": "06-main_mam_with_doc-Deuteronomy",
+      "source_commit": "6835873fcb2ba63afec21846e5fc65f730e7757a",
+      "cwd": "/workspace/review-hourly-20261028-notes-resume-basics",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_mam_with_doc.py",
+        "--book39",
+        "Deuteronomy"
+      ],
+      "started_utc": "2026-10-28T23:00:05.534825+00:00",
+      "completed_utc": "2026-10-28T23:00:05.615997+00:00",
+      "seconds": 0.081,
+      "exit_code": 1,
+      "tracked_status_after": ""
+    },
+    {
+      "name": "07-main_mam_with_doc-Jeremiah",
+      "source_commit": "6835873fcb2ba63afec21846e5fc65f730e7757a",
+      "cwd": "/workspace/review-hourly-20261028-notes-resume-basics",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_mam_with_doc.py",
+        "--book39",
+        "Jeremiah"
+      ],
+      "started_utc": "2026-10-28T23:00:45.638961+00:00",
+      "completed_utc": "2026-10-28T23:00:46.070724+00:00",
+      "seconds": 0.432,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "name": "08-main_mam_with_doc-Psalms",
+      "source_commit": "6835873fcb2ba63afec21846e5fc65f730e7757a",
+      "cwd": "/workspace/review-hourly-20261028-notes-resume-basics",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_mam_with_doc.py",
+        "--book39",
+        "Psalms"
+      ],
+      "started_utc": "2026-10-28T23:00:46.071052+00:00",
+      "completed_utc": "2026-10-28T23:00:46.916979+00:00",
+      "seconds": 0.846,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "name": "09-main_mam_with_doc-Ecclesiastes",
+      "source_commit": "6835873fcb2ba63afec21846e5fc65f730e7757a",
+      "cwd": "/workspace/review-hourly-20261028-notes-resume-basics",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_mam_with_doc.py",
+        "--book39",
+        "Ecclesiastes"
+      ],
+      "started_utc": "2026-10-28T23:00:46.917327+00:00",
+      "completed_utc": "2026-10-28T23:00:47.056926+00:00",
+      "seconds": 0.14,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "name": "10-main_mam_with_doc-Ezra",
+      "source_commit": "6835873fcb2ba63afec21846e5fc65f730e7757a",
+      "cwd": "/workspace/review-hourly-20261028-notes-resume-basics",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_mam_with_doc.py",
+        "--book39",
+        "Ezra"
+      ],
+      "started_utc": "2026-10-28T23:00:47.057343+00:00",
+      "completed_utc": "2026-10-28T23:00:47.229242+00:00",
+      "seconds": 0.172,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "name": "11-main_sigil_inventory",
+      "source_commit": "6835873fcb2ba63afec21846e5fc65f730e7757a",
+      "cwd": "/workspace/review-hourly-20261028-notes-resume-basics",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_sigil_inventory.py"
+      ],
+      "started_utc": "2026-10-28T23:00:47.229566+00:00",
+      "completed_utc": "2026-10-28T23:00:48.088402+00:00",
+      "seconds": 0.859,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "name": "12-main_tmpl_survey",
+      "source_commit": "6835873fcb2ba63afec21846e5fc65f730e7757a",
+      "cwd": "/workspace/review-hourly-20261028-notes-resume-basics",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_tmpl_survey.py"
+      ],
+      "started_utc": "2026-10-28T23:00:48.088730+00:00",
+      "completed_utc": "2026-10-28T23:00:48.609442+00:00",
+      "seconds": 0.521,
+      "exit_code": 1,
+      "tracked_status_after": ""
+    },
+    {
+      "name": "12b-main_tmpl_survey-pinned-graphviz",
+      "source_commit": "6835873fcb2ba63afec21846e5fc65f730e7757a",
+      "cwd": "/workspace/review-hourly-20261028-notes-resume-basics",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_tmpl_survey.py"
+      ],
+      "started_utc": "2026-10-28T23:04:33.659415+00:00",
+      "completed_utc": "2026-10-28T23:04:34.164064+00:00",
+      "seconds": 0.505,
+      "exit_code": 0,
+      "tracked_status_after": " M gh-pages/MAM-parsed/plus/svg/plus-call-graph-c.svg\u0000 M gh-pages/MAM-parsed/plus/svg/plus-call-graph-d.svg\u0000 M gh-pages/MAM-parsed/plus/svg/plus-call-graph-e.svg\u0000 M gh-pages/MAM-parsed/plus/svg/plus-dexi-call-graph.svg\u0000 M gh-pages/MAM-parsed/plus/svg/plus-dualcant-call-graph.svg\u0000 M gh-pages/MAM-parsed/plus/svg/plus-kvq-call-graph.svg\u0000"
+    },
+    {
+      "name": "13-main_diff",
+      "source_commit": "6835873fcb2ba63afec21846e5fc65f730e7757a",
+      "cwd": "/workspace/review-hourly-20261028-notes-resume-basics",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_diff.py",
+        "mpplus",
+        "--check"
+      ],
+      "started_utc": "2026-10-28T23:07:08.668119+00:00",
+      "completed_utc": "2026-10-28T23:07:14.438107+00:00",
+      "seconds": 5.77,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    }
+  ],
+  "evidence": "review-hourly-2026-10-28-note-refresh-complete-evidence/manifest.json",
+  "execution_conformance": "Synchronous sequential focused processes; no broad mega/suite, network source bot, font generation, baseline acceptance, deployment or main/shared push. Author test claims remain attributed.",
+  "repair": null,
+  "pending_window": null,
+  "remote_preflight": {
+    "main": "6835873fcb2ba63afec21846e5fc65f730e7757a",
+    "new_isolated_branch_absent": true,
+    "deployment": "Only .github/workflows/pages.yml exists, manual workflow_dispatch only; no dispatch or Pages setting change."
+  },
+  "cleanup": {
+    "source_worktrees": "All task-owned source worktrees finished, clean and removed normally without force after preserving ignored files with SHA/byte verification. No active process cwd, Git lock/operation or installed runtime session/writer record found. Source commits remain in home objects and exact remote main ancestry.",
+    "evidence": "review-hourly-2026-10-28-note-refresh-complete-evidence/cleanup-manifest.json",
+    "maintained_inspector_limitation": "Inspector first refused to inspect its executing checkout; separate carrier invocation reports no default branch available. No main integration was performed solely for cleanup, under explicit branch-only/no-main instructions. Manual safety audit and remote-retention disposition recorded.",
+    "receipt_worktrees": "Remove normally after isolated branch push/readback; no local/remote branch deletion."
+  }
+}

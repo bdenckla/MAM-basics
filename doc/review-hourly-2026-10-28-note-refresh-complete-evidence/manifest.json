@@ -1,0 +1,219 @@
+{
+  "archive_bytes": 73888,
+  "archive_sha256": "763dcbfa22a6ffd9c6eb5df415148c46bd069522c67474da3a7ec6a39bc0cc99",
+  "members": {
+    "01-main_diff.json": {
+      "bytes": 657,
+      "sha256": "1318aca8a35281ef05acfc27baa8db0d4329f5e54715b879a22eb7c04bd28ea7"
+    },
+    "01-main_diff.log": {
+      "bytes": 311,
+      "sha256": "882a093f932fea7b402feb30eea6fb9df519ff4f167d200392ea2142ba379df9"
+    },
+    "02-main_test.json": {
+      "bytes": 746,
+      "sha256": "c5c8239dfc7e00933086630e86a9a533caf861ac36571931e2605d6dfb248562"
+    },
+    "02-main_test.log": {
+      "bytes": 99,
+      "sha256": "e43e39a83e6c0d3028b37893b78ba23144ba2b58bb3417231542850ea621b9f6"
+    },
+    "03-main_near_aleppo.json": {
+      "bytes": 466,
+      "sha256": "fe2958cc2cc4ff94bed3408f2ec0dd3ab6452b4636d56d0f8e5f707bade61498"
+    },
+    "03-main_near_aleppo.log": {
+      "bytes": 1316,
+      "sha256": "ec76d90a474d6678f5ab21e949e264087479d24967d456dc518979fd7cd8053d"
+    },
+    "04-main_mam_with_doc-Exodus.json": {
+      "bytes": 475,
+      "sha256": "3c0cc543d400f81dc3b935879aa4ea028965f8f6bc4cf77891764a4a11308788"
+    },
+    "04-main_mam_with_doc-Exodus.log": {
+      "bytes": 30,
+      "sha256": "394ee7d30dcf807ccc94dee871fc1170cf2d172cc4135c51b366ac05aa236390"
+    },
+    "05-main_mam_with_doc-Numbers.json": {
+      "bytes": 477,
+      "sha256": "7460275d5eeebf731e650141379ca852e82cb951b4e1959e8f9fb863c7c2b8af"
+    },
+    "05-main_mam_with_doc-Numbers.log": {
+      "bytes": 31,
+      "sha256": "1817db243442b6434e566e3f16a5e1c400524421f205f7f5ec097f19513bb645"
+    },
+    "06-main_mam_with_doc-Deuter.json": {
+      "bytes": 475,
+      "sha256": "bccb2c7b2cc646b52a0fcb0dcb692de43e0eb683e4c2665c16d9a81771f10ef4"
+    },
+    "06-main_mam_with_doc-Deuter.log": {
+      "bytes": 30,
+      "sha256": "6349652b805c34e8afd86c674b7a69420d3780541464a7137c4eada287f3bfe2"
+    },
+    "06-main_mam_with_doc-Deuteronomy.json": {
+      "bytes": 485,
+      "sha256": "ff61fa513ac254aabc4b22323670a50b6d63bd96e62febb051d1c4a56fda7ee1"
+    },
+    "06-main_mam_with_doc-Deuteronomy.log": {
+      "bytes": 1230,
+      "sha256": "1432293f146186135d420761ae8a21289596fe1a72019ea0f96c18d06ca6acb0"
+    },
+    "07-main_mam_with_doc-Jeremiah.json": {
+      "bytes": 479,
+      "sha256": "a622978f53b613d7374cf4e75cbe8394bcfdfd21ed377563a8fa26dad97d871d"
+    },
+    "07-main_mam_with_doc-Jeremiah.log": {
+      "bytes": 32,
+      "sha256": "37f50c663a0f0903dc1b4343cfbc4c5f802e39b4e06a63baa34cc0a9bfae4ddc"
+    },
+    "08-main_mam_with_doc-Psalms.json": {
+      "bytes": 475,
+      "sha256": "a765f989e52da9155fbe4a44de252bdb34ff7fab51f171090b920142b5b25321"
+    },
+    "08-main_mam_with_doc-Psalms.log": {
+      "bytes": 30,
+      "sha256": "1fe7fc20e207fcf179311146b84e5efb6bf55d05534c8c506e458f70e14ee459"
+    },
+    "09-main_mam_with_doc-Ecclesiastes.json": {
+      "bytes": 486,
+      "sha256": "43053ad2d6a83d2b20b02c7cd1702d4d0efdc13bd9e214b48612d2441037c4ba"
+    },
+    "09-main_mam_with_doc-Ecclesiastes.log": {
+      "bytes": 36,
+      "sha256": "fe563ef359a7633c131443ae0008229082fdf7055d07485101fc43a0a1a0cb88"
+    },
+    "10-main_mam_with_doc-Ezra.json": {
+      "bytes": 471,
+      "sha256": "b7526e35178e2e4f1867a16dccfa313c0ad25812faa13af536702cbd94f5d90c"
+    },
+    "10-main_mam_with_doc-Ezra.log": {
+      "bytes": 28,
+      "sha256": "fd06686dc4a059e18caeb1f46e8308e622938821a5751bfbcea910e372c534fc"
+    },
+    "11-main_sigil_inventory.json": {
+      "bytes": 444,
+      "sha256": "3d3bf22a022070d45fa71bb94bf25d670df55b2643d437699e554b5f6743ee1d"
+    },
+    "11-main_sigil_inventory.log": {
+      "bytes": 209,
+      "sha256": "72d219caeba3ec1f8b486d7a8bf7bb22e0d227c96b0e8eec245bd377cc4ce2f9"
+    },
+    "12-main_tmpl_survey.json": {
+      "bytes": 436,
+      "sha256": "a842ab5d623f25672ebd43a46bebf0d4f6969233ab53154158644b75a019a383"
+    },
+    "12-main_tmpl_survey.log": {
+      "bytes": 2998,
+      "sha256": "0945d431bf73eec459af92f26494794fd88febc7e33459bd584f9244ba4b1f79"
+    },
+    "12b-main_tmpl_survey-pinned-graphviz.json": {
+      "bytes": 819,
+      "sha256": "dc1d851bfb97ab0ed2cba0f4fd254ffc0b7fa9e9642c19dac780cc142aa8883a"
+    },
+    "12b-main_tmpl_survey-pinned-graphviz.log": {
+      "bytes": 573,
+      "sha256": "ffddcf48a2d18a1c0161754504f8166fed456fc297bf106bba4d7e8ee329d07b"
+    },
+    "12b-main_tmpl_survey-pinned-graphviz.patch": {
+      "bytes": 64434,
+      "sha256": "f7c1076a02972421a1ece05cb2c3d57dea68a1e69d45aa6893ef83fc2612091e"
+    },
+    "13-main_diff.json": {
+      "bytes": 450,
+      "sha256": "e69f0a7fa0565c98ef38a7c4415b13cbdec0b655165822f9b0adacc462bb4b51"
+    },
+    "13-main_diff.log": {
+      "bytes": 1489,
+      "sha256": "b5a5bc376df46f32d96925346e7517187a028426522406e24321f4de5ce5412b"
+    },
+    "committed-plus-call-graph-c.svg": {
+      "bytes": 3938,
+      "sha256": "45546ac232112011f18fce4232853b834a876d0d0abd2dc398bd4e6ba1d92cf5"
+    },
+    "committed-plus-call-graph-d.svg": {
+      "bytes": 3210,
+      "sha256": "d8ca8824b8506ef437be21f283004c53a12c5a32eae8027168753310f36104f7"
+    },
+    "committed-plus-call-graph-e.svg": {
+      "bytes": 10850,
+      "sha256": "2cedb708c55f170a00531d2a7765f612c7909a5bc5008f7c3dacced385a82273"
+    },
+    "committed-plus-dexi-call-graph.svg": {
+      "bytes": 6317,
+      "sha256": "c5801e0792a1598a65268459a3730ffafc50047e46381e26b10be1ab34a8117e"
+    },
+    "committed-plus-dualcant-call-graph.svg": {
+      "bytes": 8016,
+      "sha256": "455473dd313dd75d1478ba3ca482344cfb9aed168a3be82cfa0306342a1e51f9"
+    },
+    "committed-plus-kvq-call-graph.svg": {
+      "bytes": 5512,
+      "sha256": "a145b66a290ce29462f595f0c397cf93793af78c9fba6e0d43618f2e9660fb56"
+    },
+    "compare_svg.py": {
+      "bytes": 1687,
+      "sha256": "214ec0166d4c05ea53c9e2ba2f0b1b093526500050f6682df0dad38a0560160a"
+    },
+    "endpoint.html": {
+      "bytes": 1765,
+      "sha256": "3d854c690c43a1d414a0701ef20a91a178487e9dcd9f856a4e74389f4453cda2"
+    },
+    "endpoint.json": {
+      "bytes": 240,
+      "sha256": "d4bd11ab66e09f1304647cc74317f779b3b83afa94f9a9e7e01a46ab27d02e6d"
+    },
+    "filter.js": {
+      "bytes": 2903,
+      "sha256": "95ce6b330818008de8204e08c03826d9fe50a1f9428ec5255ac3db23323fce63"
+    },
+    "generated-plus-call-graph-c.svg": {
+      "bytes": 3946,
+      "sha256": "b058a1991874a547c3d260402667f7e3a4972df8b9528e8633d821ee96f746ed"
+    },
+    "generated-plus-call-graph-d.svg": {
+      "bytes": 3200,
+      "sha256": "03b97e25c4c39271bd126d7a0d46e16a39b63ac637d0952ef1fe25bef7b2092e"
+    },
+    "generated-plus-call-graph-e.svg": {
+      "bytes": 10889,
+      "sha256": "3bb233f9d879e914304a5bcc30ff4f6413f5523bc2bf077fa202f8ec9f8d58a7"
+    },
+    "generated-plus-dexi-call-graph.svg": {
+      "bytes": 6304,
+      "sha256": "5c4427190645801866616e0a5008673ae05af4809cde5d20431626f5344fbb36"
+    },
+    "generated-plus-dualcant-call-graph.svg": {
+      "bytes": 8134,
+      "sha256": "044e178113c5ee61ccd1e657a67f1fffc099863c60c2b597da28dea2461f391e"
+    },
+    "generated-plus-kvq-call-graph.svg": {
+      "bytes": 5483,
+      "sha256": "b3610fa3e1bb4e2a0a5fd28bf1befa3ba84b3f319bd8c01b7c7738c66f6d01b5"
+    },
+    "report-assets/report.css": {
+      "bytes": 2939,
+      "sha256": "74adf8bd4aa04862ffa516965d7cfc1b8c3513eb972a78549c75a7562007e3b8"
+    },
+    "run.py": {
+      "bytes": 2899,
+      "sha256": "4b5bec5329a6e3be084bc18c300f44368bc197a02276b374e9949d218d7310c7"
+    },
+    "stopped.json": {
+      "bytes": 819,
+      "sha256": "dc1d851bfb97ab0ed2cba0f4fd254ffc0b7fa9e9642c19dac780cc142aa8883a"
+    },
+    "style.css": {
+      "bytes": 6314,
+      "sha256": "cc220f7324d3167a7ea4f4ab0654514f48a42bfc049cfc7a5177e005c9275951"
+    },
+    "svg-comparison.json": {
+      "bytes": 2175,
+      "sha256": "c1f27dbf123e9a71e00886a39bc24c4dcd2271f0129b16ba94d5fda0495cb173"
+    },
+    "woff2/Taamey_D.woff2": {
+      "bytes": 22524,
+      "sha256": "388a38a23b22d038a8bc3b969158f79cb27aa5edaddddf2fead8969d07f21275"
+    }
+  },
+  "privacy": "Owning repository only; CRC and every member byte verified."
+}
