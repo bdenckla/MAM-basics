@@ -58,6 +58,7 @@ Tracked so far:
 | `mam-repository-topology` | The on-demand rules for GitRepos setup and maintenance, evacuated repositories, redirect hosts and frozen manifests, sibling-repository locations, and clone-retirement traps. The repository keeps a short routing pointer in `AGENTS.md`; detailed current and historical dispositions live with the skill. |
 | `mam-wikisource-refresh` | The safe end-to-end workflow for refreshing MAM book data from Hebrew Wikisource, including the dependent refresh after a live bot run, auditing generated products, and regenerating change logs only after the refreshed data has been committed. |
 | `prune-claude-state` | A manual review of this repository's global Claude draft plans against live tracked state and complete relevant issues; deletes only an exact approved list. |
+| `top-level-sessions` | For the Claude desktop app only: starts a session Ben asks for and detaches it at once, so that it neither nests under the session that started it nor is archived with that session. It loads the app's deferred session tools in one search, handles the permission-mode ceiling, and makes the detached session own its commits and pushes. Added 2026-10-28 by Ben's decision; not shared with Codex, which has no session tools. |
 | `verse-links` | Runs MAM-basics' `py/main_verse_links.py` for every link Ben asks for when he looks a verse or an atom up — mgketer.org, MAM-with-doc, MAM on Wikisource, masoretica.org for the Aleppo and Leningrad codices, mechon-mamre.org, tanach.us, Sefaria's image of the Leningrad Codex page with the estimator's column and line, and Chabad's CTR where MAM-basics records the chapter — and says how to present them. Added 2026-09-10 and shared with Codex, both Ben's decisions of that day. |
 
 ## Windows desktop diagnostics
@@ -104,8 +105,8 @@ branch. The hook remains network-free and does not overwrite a file already pres
 home. By Ben's 2026-09-29 decision it reads `shared-skills.txt` and installs every declared
 shared skill tree, including its references; the declaration grew from six skills to seven on
 2026-10-08, when `linked-worktrees` took the common body's worktree rules. It fills missing files in an incomplete tree
-while preserving existing files, and reports each resource independently. Claude-only pruning
-and Codex-only skills remain outside its inventory. Installation supplies rules, without
+while preserving existing files, and reports each resource independently. Claude-only and
+Codex-only skills remain outside its inventory. Installation supplies rules, without
 provisioning environments, siblings, credentials or permissions. The skills require the
 available Linux runtime, complete issue reads through supported transport and the full private
 dependency loop before a chapter refresh. The current issue-body helper remains unavailable

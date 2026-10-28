@@ -493,6 +493,13 @@ catalog's "fol." locators.
 - **For these two code points, ASCII internal labels use `sheva-na` and `dagesh-xazaq`.**
   These are Unicode-close names; they do not establish terminology for the abstract concepts.
 
+## CGJ, never a bare "joiner"
+
+Name U+034F **CGJ**, or COMBINING GRAPHEME JOINER, and any other joiner by its own name, such as
+ZWJ. A bare "joiner" is ambiguous wherever more than one is in view, as MAM's CGJs and the UXLC's
+ZWJs were in the Taamey D 1.1 work of 2026-10-28. Ben, that day: *"If you mean CGJ, say CGJ, not
+"joiner"."*
+
 ## Ungrammatical verses and checker statuses
 
 Use “ungrammatical verse” as the umbrella while preserving the distinct `error`, `no_parse`,
