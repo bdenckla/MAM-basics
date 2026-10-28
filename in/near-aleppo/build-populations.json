@@ -7,7 +7,7 @@
     "מ:לגרמיה-2": 1785,
     "מ:פסק": 508,
     "מ:מקף אפור": 116,
-    "נוסח": 3596,
+    "נוסח": 3597,
     "מ:הערה-2": 27,
     "מ:כפול": 34,
     "מ:קו״כ-אם-2": 149,
@@ -68,7 +68,7 @@
     "ole on the yored's letter: ole removed (unselected parameter)": 0,
     "ole on a letter without the yored, unchanged": 410,
     "ole on a letter without the yored, unchanged (unselected parameter)": 0,
-    "ole on the yored's letter: removal agreeing with the codex form its note quotes": 12,
+    "ole on the yored's letter: removal agreeing with the codex form its note quotes": 13,
     "ketiv/qere apparatus: template replaced by the codex form its note quotes": 13,
     "ketiv/qere apparatus: template replaced by its pointed ketiv": 4,
     "ketiv/qere apparatus: template replaced by its pointed qere, the spelling its note's prose gives the codex": 1,
@@ -167,9 +167,7 @@
       ["D3-Job", "29", "25"],
       ["D3-Job", "34", "20"]
     ],
-    "ole on the yored's letter: removal in no note's target": [
-      ["D1-Psalms", "42", "3"]
-    ],
+    "ole on the yored's letter: removal in no note's target": [],
     "ketiv/qere apparatus: template replaced by the codex form its note quotes": [
       ["A5-Deuter", "32", "13"],
       ["BA-Samuel שמ\"א", "10", "7"],
@@ -292,13 +290,13 @@
     ]
   },
   "phase5_counts": {
-    "codex readings: notes walked": 3596,
+    "codex readings: notes walked": 3597,
     "codex readings: empty clauses in note bodies": 1,
-    "codex readings: direct codex siglum elements": 1150,
-    "codex readings: direct differing clauses": 1142,
-    "codex readings: verses with a direct differing clause": 1062,
+    "codex readings: direct codex siglum elements": 1151,
+    "codex readings: direct differing clauses": 1143,
+    "codex readings: verses with a direct differing clause": 1063,
     "codex readings: prose-led heads ending in a codex siglum, held pending": 16,
-    "codex readings: apply-candidate (single-pointed-form)": 980,
+    "codex readings: apply-candidate (single-pointed-form)": 981,
     "codex readings: apply-candidate (single-pointed-form), bang-marked": 85,
     "codex readings: do-not-apply (doubt-siglum)": 46,
     "codex readings: do-not-apply (doubt-siglum), bang-marked": 0,
@@ -312,7 +310,7 @@
     "codex readings: policy-pending (candidate-form-punctuation), bang-marked": 0,
     "codex readings: policy-pending (candidate-form-count-0)": 1,
     "codex readings: policy-pending (candidate-form-count-0), bang-marked": 0,
-    "codex readings: apply-candidate already in place": 849,
+    "codex readings: apply-candidate already in place": 850,
     "codex readings: apply-candidate already in place, bang-marked": 7,
     "codex readings: apply-candidate in place, its form lacking the paseq glyph that ends the target": 2,
     "codex readings: apply-candidate in place, its form lacking the paseq glyph that ends the target, bang-marked": 0,
@@ -622,9 +620,9 @@
     ]
   },
   "phase6_counts": {
-    "נוסח: notes reached": 3596,
+    "נוסח: notes reached": 3597,
     "מ:הערה-2: notes reached": 27,
-    "נוסח: notes given MAM's target": 1551,
+    "נוסח: notes given MAM's target": 1552,
     "מ:הערה-2: notes given MAM's target": 5
   },
   "flag_counts": {
