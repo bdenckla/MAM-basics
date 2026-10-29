@@ -15,6 +15,17 @@ _LEADING_EQUALS_RE = re.compile(
     r"(?:^|[;:.\n])\s*=\s*([^<(\s][^<(\n=]{0,120}?)\s*(?=[(<\n=]|$)"
 )
 _LHS_EQUALS_RE = re.compile(r"(?:^|[;:.\n])\s*([^=<>\n]{1,120}?)\s*=")
+# A letter beside any of these is part of a longer word: a letter or digit of any script, a
+# Hebrew point, accent or maqaf, the combining grapheme joiner that MAM has between marks, the
+# hyphen of MAM's compounds, and the geresh and gershayim of its abbreviations and numerals, in
+# their ASCII, typographic and Hebrew forms.  The prose pattern's last alternative counts a
+# single letter only when none of them touches it, that is, when it stands alone, as a real
+# siglum does.  It thereby misses a siglum quoted between apostrophes, such as ''ל'' at Song of
+# Songs 5:2.
+_IN_WORD_CHARS = (
+    r"\w\u0591-\u05bd\u05bf\u05c1\u05c2\u05c4\u05c5\u05c7\u05be\ufb1e\u034f"
+    r"\-'\"\u2019\u201d\u05f3\u05f4"
+)
 _PROSE_ABBREV_RE = re.compile(
     r"(?:כתי[\"״']?[א-ת0-9]+(?:-[א-ת0-9]+)?|"
     r"[א-ת]+[\"״'][א-ת0-9]+(?:-[א-ת0-9]+)?|"
@@ -22,7 +33,7 @@ _PROSE_ABBREV_RE = re.compile(
     r"[א-ת]+-[א-ת0-9]+|"
     r"[א-ת]+\d+|"
     r"[א-ת]\?|[א-ת]!|"
-    r"[א-ת])"
+    rf"(?<![{_IN_WORD_CHARS}])[א-ת](?![{_IN_WORD_CHARS}]))"
 )
 _TOKEN_SPLIT_RE = re.compile(r"[\s,]+")
 _HEBREW_CLUSTER_RE = re.compile(

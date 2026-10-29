@@ -115,8 +115,8 @@ not-quite-reasoning".
    compares verse text, template names, structure and alternatives, not documentation
    notes, so a change confined to a note appears in neither the report nor the change
    log: predict it from `git diff`. A change to a note's unpointed prose also moves the
-   one-letter prose-token counts of `out/sigil-inventory.json`, by the letters of the
-   words it adds and removes.
+   prose-token counts of `out/sigil-inventory.json`, by the sigil-like tokens in the text
+   it adds and removes, counting a single letter only where it stands alone.
 3. **Judge.** After each regeneration, read every tracked diff and check (a) that every
    predicted change is present and (b) that nothing else changed. Explain anything else,
    or stop.
