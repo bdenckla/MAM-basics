@@ -20,4 +20,19 @@ OVERALL_EXPLANATION = (
             "characters and do not count here.",
         )
     ),
+    " ".join(
+        (
+            "In some forms, one letter has so many marks that not every font can",
+            "show it legibly. A note that gives such a font-stressing form should,",
+            "as a rule, also give a form that does not stress the font: “plus”",
+            "notation when a mark's owner is clear, or an artificial carrier letter",
+            "(alef, vav or dalet) between double guillemets when a mark has no",
+            "owner or its owner is unclear. A “plus” or guillemets form may stand",
+            "alone. Sometimes only the guillemets form is desirable: a",
+            "font-stressing form can imply that a mark belongs to the letter it",
+            "sits on, and where no such implication is wanted, the guillemets form",
+            "stands alone. The note's prose, which usually describes the marks as",
+            "well, is a further backup.",
+        )
+    ),
 )
