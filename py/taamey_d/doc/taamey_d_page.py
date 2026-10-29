@@ -62,7 +62,7 @@ _HEAD = (
 <p>
     Current font binaries, corresponding source archives, checksums, and the
     preserved historical release are available from the
-    <a href="https://bdenckla.github.io/hbofonts/downloads/">Taamey D downloads page</a>.
+    <a href="downloads/">Taamey D downloads page</a>.
 </p>
 """
 )
