@@ -52,6 +52,7 @@ import sys
 import time
 from typing import Callable
 
+from mb_cmn import git_process
 from mb_cmn import graphviz_pin
 from mb_cmn import paths
 
@@ -264,6 +265,41 @@ def _run_ac_gen_index_flat_annotated():
 
 def _run_taamey_d_doc():
     main_taamey_d.almost_main(["doc"])
+
+
+def _run_taamey_d_qa():
+    main_taamey_d.almost_main(["qa"])
+    _check_taamey_d_reports_against_index()
+
+
+def _check_taamey_d_reports_against_index():
+    """Raise if the shaping checks left their reports different from Git's index.
+
+    hbofonts' mega made this comparison with ``git diff --exit-code``: the reports are
+    tracked, so a difference is a change in the font's shaping that nobody has accepted.
+    It compares with the index rather than with HEAD, so a baseline that Ben has approved
+    passes once it is staged, and an untracked file there, such as the report of a new
+    test-case file, is a difference too.
+    """
+    reports = "Taamey-D/qa-out/Taamey_D"
+    listings = (
+        ("diff", "--name-only", "-z", "--", reports),
+        ("ls-files", "--others", "--exclude-standard", "-z", "--", reports),
+    )
+    differing = []
+    for args in listings:
+        listed = subprocess.run(
+            git_process.git_command(paths.repo_root(), *args),
+            check=True,
+            capture_output=True,
+        ).stdout.decode("utf-8")
+        differing.extend(path for path in listed.split("\0") if path)
+    if differing:
+        raise RuntimeError(
+            f"{len(differing)} Taamey D shaping-check report(s) differ from Git's index,"
+            f" {differing[0]} among them.  Read the shaping checks' results; stage a new"
+            " baseline only once Ben has approved it (Taamey-D/README.md)."
+        )
 
 
 _STEPS = [
@@ -781,6 +817,20 @@ _STEPS = [
         "runs py/main_taamey_d.py doc, which writes gh-pages/taamey-d/Taamey_D.html and"
         " Xolam_xaser_for_alef.html; refuses if a comparison cell no longer matches its"
         " record in the frozen gh-pages/taamey-d/img/comparison/PROVENANCE.json",
+    ),
+    # Added 2026-10-29, when Taamey D's shaping checks and their corpus moved here from
+    # hbofonts (Phase 3 of the same plan).  The checks shape the corpus in Taamey-D/qa-in/
+    # with the committed font, Taamey-D/font-m-TaD/Taamey_D.ttf, which no step writes,
+    # since the FontForge build is hand-run; so nothing orders this step either.  As in
+    # hbofonts' mega, the step fails if the rewritten reports differ from Git's index, so
+    # a new baseline that Ben has approved is staged before the mega runs.
+    StepRecord(
+        "taamey-d-qa",
+        _run_taamey_d_qa,
+        "runs py/main_taamey_d.py qa, Taamey D's shaping checks, on"
+        " Taamey-D/font-m-TaD/Taamey_D.ttf and the corpus in Taamey-D/qa-in/; rewrites"
+        " Taamey-D/qa-out/Taamey_D/; raises on a SKIP, an anchor-family FAIL, or a report"
+        " that differs from Git's index",
     ),
 ]
 

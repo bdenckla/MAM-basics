@@ -183,6 +183,7 @@ _MEGA_WRAPPER_DELEGATES = {
         "MAM-parsed/py-examples/main_tmpl_survey_toy_example.py"
     ),
     "_run_taamey_d_doc": "py/main_taamey_d.py",
+    "_run_taamey_d_qa": "py/main_taamey_d.py",
 }
 
 
