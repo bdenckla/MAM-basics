@@ -12,10 +12,10 @@ with that session; this run created no automation.
 | Anchor | Commit/result |
 | --- | --- |
 | Adopted baseline | `d66a3faf1403e945a0f41e5d25c86c3ac72b871f` |
-| Reviewed through | `b1ca848e08476b3d84174755566d640afce02367`; focused endpoint review complete, no confirmed consequential defect or repair. [Receipt](review-hourly-2026-10-29-harfbuzz-fragility.json). |
+| Reviewed through | `6ac28417a243447c24eefb168202585a9949a4ea`; endpoint review complete, no consequential defect confirmed. [Receipt](review-hourly-2026-10-29-taamey-phase2.json). |
 | Last tested | `5c28eba09f95fd491afef38454149bde628ee2a7`; October 28 cloud nightly: mega exit 0 in 495.841 s, all 61 steps/no skips; full suite exit 0 in 319.984 s: 1100 passed, 5 skipped, 82 subtests passed in 317.10s (0:05:17); eight explained SVG differences preserved and reversed. [Compact receipt](review-nightly-2026-10-28.json) |
-| Last focused checked | `b1ca848e08476b3d84174755566d640afce02367`; 9focused tests pass; UXLC all/fragile word outputs reproduce cleanly. Pinned uharfbuzz0.57/HarfBuzz15 verified; broad anchor unchanged. [Receipt](review-hourly-2026-10-29-harfbuzz-fragility.json). |
-| Pending endpoint | None at frozen remote mainb1ca848e. Newer tips require separate screening. Broad history and actual failure/skip limits remain unchanged. [Receipt](review-hourly-2026-10-29-harfbuzz-fragility.json). |
+| Last focused checked | `6ac28417a243447c24eefb168202585a9949a4ea`; 67 focused tests pass; direct doc and final mega doc step reproduce cleanly. Exactly61prior mega steps skipped; no font build/full suite. [Receipt](review-hourly-2026-10-29-taamey-phase2.json). |
+| Pending endpoint | None at frozen remote main `6ac28417a243447c24eefb168202585a9949a4ea`; newer tips need separate review. [Receipt](review-hourly-2026-10-29-taamey-phase2.json). |
 
 Run from an isolated repository root with its home clone's interpreter: `py/main_0_mega.py`,
 then `py/main_test.py`. Use each required private sibling's recorded committed checkout;
@@ -294,3 +294,5 @@ Hourly documentation/process review, 2026-10-28: continued isolated receipt `86e
 Hourly CGJ refresh review, 2026-10-28: continued `cbd5173ecedf6cdc987b7e371b41625951e670e7`. Reviewed `438ee6f1` → frozen `4aca1d2e`, preserving the intended note CGJs and existing near-Aleppo choices. After explicit parent clearance, all eight focused stages ran sequentially and passed, with no tracked output differences. No defect or source repair; no broad rerun, bot/source network, sibling work or deployment. Reviewed and focused anchors advance only to this frozen source; broad-tested remains `5c28eba0`. [Compact receipt](review-hourly-2026-10-28-cgj-refresh.json); [evidence](review-hourly-2026-10-28-cgj-refresh-evidence/README.md).
 
 Hourly note-refresh partial, 2026-10-28: continued `d5f2cc3c`. Inspected the seven source books, nine note changes, near-Aleppo record adaptations and derived product scope through frozen `6835873f`. No confirmed defect or repair; author generation/tests remain attributed. Stopped before all runtime checks for the parent’s exclusive integration handoff. [Receipt and exact remaining stages](review-hourly-2026-10-28-note-refresh-partial.json).
+
+Hourly endpoint review, 2026-10-29: continued `f40d7d3228c9c04b79d630d5f1e1d3d31716d63d` and closed only `b1ca848e08476b3d84174755566d640afce02367` through `6ac28417a243447c24eefb168202585a9949a4ea`. 67 focused tests pass; direct and targeted mega documentation generation reproduce. Only one of62mega steps ran, with61intentional skips. No fonts built or baselines accepted. No consequential defect or repair. Actual results, limits and nightly constraints are in the [compact receipt](review-hourly-2026-10-29-taamey-phase2.json) and [handoff](review-hourly-2026-10-29-taamey-phase2-evidence/nightly-handoff.md). Branch-only evidence; no main/deployment/migration action.

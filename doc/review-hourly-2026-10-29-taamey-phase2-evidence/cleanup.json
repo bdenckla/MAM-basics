@@ -1,0 +1,9 @@
+{
+  "completed_utc": "2026-10-29T04:58:59.557429+00:00",
+  "source_commit": "6ac28417a243447c24eefb168202585a9949a4ea",
+  "source_worktree": "Normal nonforced removal after evidence preservation.",
+  "source_runtime_jobs": "All focused stages stopped 04:46:43.641 UTC; no font/build/corpus process started.",
+  "preserved_ignored_files": 0,
+  "safety": "Clean tracked/untracked/ignored state; no active cwd, Git lock/operation, installed runtime session/writer record. Source reflog contains only frozen committed input; remote retains source. No force, branch deletion or integration.",
+  "integration_gate_disposition": "Saved home has no local default branch, the maintained-inspector limitation recorded in prior receipt ancestry. Explicit task requires isolated/no-main receipts and cleanup; source retained by remote/object refs, with manual activity/lock/state audit."
+}

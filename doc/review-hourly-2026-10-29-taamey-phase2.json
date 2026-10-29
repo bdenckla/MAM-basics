@@ -1,0 +1,138 @@
+{
+  "date": "2026-10-29",
+  "state": "completed endpoint review; no consequential defect confirmed",
+  "receipt_parent": "f40d7d3228c9c04b79d630d5f1e1d3d31716d63d",
+  "receipt_branch": "review-hourly-20261029-phase2-receipts",
+  "window": {
+    "exclusive_base": "b1ca848e08476b3d84174755566d640afce02367",
+    "frozen_main": "6ac28417a243447c24eefb168202585a9949a4ea",
+    "commits": 7,
+    "paths": 148
+  },
+  "reviewed_through": "6ac28417a243447c24eefb168202585a9949a4ea",
+  "focused_checked_through": "6ac28417a243447c24eefb168202585a9949a4ea",
+  "broad_tested_through": "5c28eba09f95fd491afef38454149bde628ee2a7",
+  "repair": null,
+  "pending_window": null,
+  "remote_preflight": {
+    "refs/heads/main": "6ac28417a243447c24eefb168202585a9949a4ea"
+  },
+  "evidence": "review-hourly-2026-10-29-taamey-phase2-evidence/manifest.json",
+  "nightly_handoff": "review-hourly-2026-10-29-taamey-phase2-evidence/nightly-handoff.md",
+  "execution_conformance": "No font build, template fill, frozen regeneration, baseline acceptance, publication, migration execution, main/shared integration, deployment or live config synchronization. Source and prior approval claims remain attributed. Runtime stages strictly sequential; last check finished 04:46:43.641 UTC. No Private writes or duplicate window.",
+  "cleanup": {
+    "source_worktree": "Normal nonforced removal after evidence preservation.",
+    "ignored_files": 0,
+    "detail": "review-hourly-2026-10-29-taamey-phase2-evidence/cleanup.json",
+    "receipt_worktree": "Normal removal after isolated branch push/readback; local and remote branch retained. Final confirmation reported to parent."
+  },
+  "classification": "Consequential Taamey D source/artifact copy, doc dispatcher, hand-run build wrapper, mega/product scopes and guard tests reviewed.",
+  "stages": [
+    {
+      "name": "01-focused",
+      "repository": "/workspace/review-hourly-20261029-phase2-basics",
+      "source_commit": "6ac28417a243447c24eefb168202585a9949a4ea",
+      "cwd": "/workspace/review-hourly-20261029-phase2-basics",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        "py/tests/test_taamey_d_build_imports.py",
+        "py/tests/test_mega_coverage.py",
+        "py/tests/test_product_scopes.py",
+        "py/tests/test_shared_html_styles.py",
+        "py/tests/test_graphviz_version_pin.py",
+        "py/tests/test_h_dot_below_nfc.py",
+        "py/tests/test_tracked_filenames.py",
+        "py/tests/test_prose_mark_order.py",
+        "py/tests/test_explicit_time_zones.py",
+        "py/tests/test_transliterations.py",
+        "py/tests/test_entry_point_subcommands.py",
+        "/workspace/scratch/review-hourly-20261029-phase2-basics/test_review_scope.py",
+        "-q"
+      ],
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "inputs": {
+        "Basics": "6ac28417a243447c24eefb168202585a9949a4ea",
+        "uharfbuzz": "0.57.0",
+        "Graphviz": "16.0.0",
+        "font_operations": "No builder/fill/FontForge entry invoked. Mechanical build-import lint, fail-fast mocked subprocess/build guard around actual documentation step, and committed artifact checks only."
+      },
+      "started_utc": "2026-10-29T04:44:51.073557+00:00",
+      "completed_utc": "2026-10-29T04:45:46.460745+00:00",
+      "seconds": 55.387,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "name": "02-doc-cli",
+      "repository": "/workspace/review-hourly-20261029-phase2-basics",
+      "source_commit": "6ac28417a243447c24eefb168202585a9949a4ea",
+      "cwd": "/workspace/review-hourly-20261029-phase2-basics",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_taamey_d.py",
+        "doc"
+      ],
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "inputs": {
+        "Basics": "6ac28417a243447c24eefb168202585a9949a4ea"
+      },
+      "started_utc": "2026-10-29T04:46:41.504670+00:00",
+      "completed_utc": "2026-10-29T04:46:41.571587+00:00",
+      "seconds": 0.067,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "name": "03-mega-doc-only",
+      "repository": "/workspace/review-hourly-20261029-phase2-basics",
+      "source_commit": "6ac28417a243447c24eefb168202585a9949a4ea",
+      "cwd": "/workspace/review-hourly-20261029-phase2-basics",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_0_mega.py",
+        "--resume-from",
+        "taamey-d-doc"
+      ],
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "inputs": {
+        "Basics": "6ac28417a243447c24eefb168202585a9949a4ea",
+        "scope": "Actual frozen step inventory places taamey-d-doc last: earlier61steps skipped; only documentation executes. Not a full mega pass."
+      },
+      "started_utc": "2026-10-29T04:46:41.772959+00:00",
+      "completed_utc": "2026-10-29T04:46:43.641132+00:00",
+      "seconds": 1.868,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    }
+  ],
+  "runtime_inputs": {
+    "Basics": "6ac28417a243447c24eefb168202585a9949a4ea",
+    "sibling_runtime_inputs": [],
+    "uharfbuzz": "0.57.0",
+    "HarfBuzz": "15.0.0",
+    "Graphviz": "16.0.0",
+    "requirements": "Identical to b1ca848e; retained prior hydrated environment; no dependency installation this window."
+  },
+  "results": {
+    "tests": "67 passed in 54.00s, no skips: maintained focused modules plus five reviewer contract tests. Negative probes are caught expected exceptions, not failures.",
+    "documentation": "Direct doc CLI exit0 in0.067s; targeted mega --resume-from taamey-d-doc exit0 in1.868s, exactly61 earlier steps intentionally skipped and only the final doc step run. All tracked outputs reproduce; this is not a full mega.",
+    "scope": "Actual doc step executes with builder/fill/FontForge/subprocess tripwires and font-byte snapshots. Hand-run build wrapper is excluded from mega. Parser rejects build; bad comparison provenance stops before HTML writes. All new local links/CSS font URL resolve. Removed CSS classes have zero uses in all3new pages.",
+    "artifacts": "12 imported font files inspected:11exact copies and one script-comment-only change;103comparison assets exact. Existing site font pin and existing Pages products unchanged. Paired private evidence retained in owning repository; allowed aggregate result only here.",
+    "failure_history": "No check failed in this window. Several navigation/display commands had bad paths or a scratch display syntax error; no test, generator, publication or Git mutation was attempted by those commands."
+  },
+  "limits": [
+    "No FontForge/Windows build or template expansion executed; source review is not a build correctness claim.",
+    "No full mega/suite or new shaping/browser exercise; copied font/image bytes preserve prior behavior, not a new visual judgment.",
+    "Licensing/path declarations were inspected against existing declarations and copy boundaries; no legal interpretation or new publication authority inferred."
+  ],
+  "remote_before_commit": {
+    "refs/heads/main": "6ac28417a243447c24eefb168202585a9949a4ea"
+  }
+}

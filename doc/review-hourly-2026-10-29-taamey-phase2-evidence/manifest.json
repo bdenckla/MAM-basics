@@ -1,0 +1,71 @@
+{
+  "archive_bytes": 93217,
+  "archive_sha256": "04951f3f666359147d969ede031c5929fdf31e5f6e42e4b257e032e6d32776fb",
+  "members": {
+    "01-focused.log": {
+      "bytes": 100,
+      "sha256": "93080e70eb84d41af23679c402ea5bd1b5a9f5abb074580e4dbe83b3c6f8371e"
+    },
+    "01-focused.result.json": {
+      "bytes": 1439,
+      "sha256": "2164433bdb478c7128421665fa1755e6a163bd3205755efb370cb8b497fb2dd8"
+    },
+    "01-focused.spec.json": {
+      "bytes": 1119,
+      "sha256": "dec3b06a442a65c59354774511d23ec27cdbe3b897c3556313f1273ab155fbf2"
+    },
+    "02-doc-cli.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "02-doc-cli.result.json": {
+      "bytes": 631,
+      "sha256": "02463560753c81f39a52008007f96fabfbe6a8dbce9cc20431947aa8e6b0a610"
+    },
+    "02-doc-cli.spec.json": {
+      "bytes": 390,
+      "sha256": "c46541e231188a958ed8b7596be88198cb733f98e4e171a3e207603d86a7895a"
+    },
+    "03-mega-doc-only.log": {
+      "bytes": 2211,
+      "sha256": "e4ba1c3e929ad86e583f33fc31b99f68fbf651e2adc68a29b7051fee9e2c2077"
+    },
+    "03-mega-doc-only.result.json": {
+      "bytes": 811,
+      "sha256": "000979bea563f5eb82c1c303143c6371e60c9f039ab10746823b3e04c1451b11"
+    },
+    "03-mega-doc-only.spec.json": {
+      "bytes": 559,
+      "sha256": "2fb9de96211ba9f0e4c24bd68d76c1724f8dfe7748a0e78d9d5dbd888c3754a8"
+    },
+    "commits.txt": {
+      "bytes": 20053,
+      "sha256": "0289fe6350b34c5d773ee6bd0c271d7b7e4b710cbbf841b0dfe8cf06edf97723"
+    },
+    "endpoint-code-doc.patch": {
+      "bytes": 349413,
+      "sha256": "c25a24f78b1ac5f8e6fb9a037dac6501d1814979d11bb8092b3bc8897631cddd"
+    },
+    "nightly-handoff.md": {
+      "bytes": 1475,
+      "sha256": "215be27569bcff5284e504c97ba7219a3578d73f6383ef0604b5b5ce21c5ab71"
+    },
+    "paths.nul": {
+      "bytes": 8914,
+      "sha256": "75ad45fb627b5ee6fad393b3c2b715a5460397a6a10351c19b13b08f73f6ba19"
+    },
+    "removed-CSS-class-counts.json": {
+      "bytes": 792,
+      "sha256": "0524ac9353698f8a9a4096e2f1bac52a6461168fa28fc1a335f453bf3e1815c9"
+    },
+    "stage-runner.py": {
+      "bytes": 1525,
+      "sha256": "7a76b7520fc6e107e4ec01ab502efd8f74ff116fd0f6c37e8efbd6bc43a90768"
+    },
+    "test_review_scope.py": {
+      "bytes": 3548,
+      "sha256": "da054ff7de71dad7c58f8a45c7a0aa8f3994f7b6abb4bcbc47f179bc817b9f7c"
+    }
+  },
+  "privacy": "Owning repository only. Private paired source audit retained only in hbofonts. Every member and ZIP CRC verified; no environments or font binaries archived."
+}
