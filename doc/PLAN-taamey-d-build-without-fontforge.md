@@ -106,8 +106,8 @@ Record each answer here, dated, before execution.
    `53ce684` (2026-10-23). Keep the string for continuity, or change it to one that no longer
    names FontForge, such as "Taamey D 1.3 : MAM-basics".
 6. **Retire the SFD files from the tree.** Recommended: delete `Taamey_D-nofea.sym.sfd`,
-   `Taamey_D-nofea.sfd`, `Taamey_D.sfd` and `ffscript_generate_sfd_n_ttf.py`; Git history and
-   hbofonts keep them. Alternative: keep `Taamey_D-nofea.sym.sfd` as a frozen reference that
+   `Taamey_D-nofea.sfd`, `Taamey_D.sfd` and `ffscript_generate_sfd_n_ttf.py`; Git history keeps
+   them. Alternative: keep `Taamey_D-nofea.sym.sfd` as a frozen reference that
    nothing builds from.
 7. **Release timing.** Make Taamey D 1.3 right after the migration (a tooling-only release whose
    notes say the shaping is unchanged), or wait for the next content change. The site's pages
@@ -122,8 +122,6 @@ Record each answer here, dated, before execution.
   Claude's primary forest; every command below runs from its root with
   `./.venv/Scripts/python.exe`. A linked worktree is possible under the `linked-worktrees`
   skill but not preferred (Ben, 2026-10-20: a full clone is the default checkout).
-- Read-only reference: `C:/Users/BenDe/GitRepos/hbofonts` (HEAD `3b59254`, 2026-10-29,
-  "Announce Taamey D's development freeze here"). Nothing is written there.
 - Baseline: this plan was written at MAM-basics HEAD `5c113154` (2026-10-29, "Check Taamey D's
   downloads before every Pages deploy, and correct the fresh read's points"), with a clean tree
   and `main` equal to `origin/main`. Precondition for Phase 2 onwards: `git status --porcelain`
