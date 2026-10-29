@@ -13,8 +13,9 @@ WHAT BREAKS IT, AND WHY THAT MATTERS
 
 Most stubs send an old URL to a MAM-basics subtree at the same relative path, a pure
 prefix rewrite. A row can instead declare an explicit old-path-to-target-path mapping.
-Both contracts keep working only while the declared target page remains published. Rename or drop that page and the stub keeps redirecting
-to a URL that 404s. Nothing in the target tree knows the manifest exists, so the break
+Both contracts keep working only while the declared target page remains published.
+Rename or drop that page and the stub keeps redirecting to a URL that 404s. Nothing in
+the target tree knows the manifest exists, so the break
 is silent, and it is exactly the shape ``py/tests/test_vendoring_policy_paths.py`` was
 written for after a manifest went stale unnoticed for a day. That lint was deleted with
 the vendoring audit on 2026-09-14.
@@ -28,14 +29,14 @@ A MISSING, MALFORMED OR EMPTY MANIFEST FAILS, IT DOES NOT SKIP.
 ``stubs.redirect_targets`` validates and rejects each case, so none can report green
 having verified nothing.
 
-EVERY ROW'S TARGET IS MAM-BASICS, SO EVERY ROW RUNS EVERYWHERE. From 2026-09-26 to
-2026-10-29 the Taamey_D row's target was the private hbofonts, which a cloud container cannot
-clone, so by Ben's decision of 2026-09-26 that row checked its manifest in a container and
-skipped before reading hbofonts. Taamey D's pages moved to this repository's
+EVERY ROW'S TARGET IS MAM-BASICS, SO EVERY ROW RUNS EVERYWHERE. From 2026-09-17 to
+2026-10-29 the Taamey_D row's target was the private hbofonts, which a cloud container
+cannot clone, so from Ben's decision of 2026-09-26 that row checked its manifest in a
+container and skipped before reading hbofonts. Taamey D's pages moved to this repository's
 ``gh-pages/taamey-d/``, and on 2026-10-29 Phase 5 of MAM-private's
 ``doc/PLAN-evacuate-hbofonts-into-MAM-basics.md`` retargeted the row there and retired the
-skip. ``_cloud_skip_reason`` still dispatches on each target repository, so a new one cannot
-run here without a decision about it.
+skip. ``_cloud_skip_reason`` still dispatches on each target repository, so a new one
+cannot run here without a decision about it.
 """
 
 from __future__ import annotations

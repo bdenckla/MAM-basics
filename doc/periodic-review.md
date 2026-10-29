@@ -216,11 +216,12 @@ Two properties of the series matter to every review in it.
    `py/repo_util/report_destination.py` "does not read what a human or an agent later types into a
    commit message or a doc/ file". A check whose tracked code reads a private sibling may still
    run: the mega reads MAM-private through its `phonetic-mam-export` step, and until 2026-10-29
-   the suite read hbofonts through `py/tests/test_redirect_manifest.py`. The review records only such a check's
-   result and the sibling's commit, never a path or any content from the sibling. Ben, on
-   2026-10-02, about the mega: "It seems harmless if we ignore the wasted time." On 2026-10-04 he
-   confirmed that use by the suite and the mega: "That extent of use is fine." This is
-   load-bearing for the Codex scoping rule in `doc/dual-agent-review.md`, not incidental.
+   the suite read hbofonts through `py/tests/test_redirect_manifest.py`. The review records
+   only such a check's result and the sibling's commit, never a path or any content from the
+   sibling. Ben, on 2026-10-02, about the mega: "It seems harmless if we ignore the wasted
+   time." On 2026-10-04 he confirmed that use by the suite and the mega: "That extent of use is
+   fine." This is load-bearing for the Codex scoping rule in `doc/dual-agent-review.md`, not
+   incidental.
 
    **Its one standing exception — the byte-compare of github-misc's instruction-file plumbing, which
    the review files record as row 22 and finding 5.6 — is SPENT as of 2026-09-09, and no future

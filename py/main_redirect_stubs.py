@@ -32,9 +32,10 @@ Subcommands:
                 declared published directory instead. It deletes nothing.
     check
                 Lint a selected row's stub tree against its frozen URLs: every URL has a
-                stub, every stub answers one, every declared target remains published,
-                404.html is present, and each stub names its declared target and no
-                other URL. --dir names the tree; its default, the selected source
+                stub, every other page is one that the row's manifest retains, every
+                declared target remains published, 404.html is present, and each stub
+                names its declared target and no other URL. --dir names the tree; its
+                default, the selected source
                 repo's published directory, takes a clone. Exits
                 non-zero on any problem.
 
