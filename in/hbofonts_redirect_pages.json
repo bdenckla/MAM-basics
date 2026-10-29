@@ -1,0 +1,15 @@
+{
+  "comment": "Every HTML path published at bdenckla.github.io/hbofonts/, frozen from source commit 3b59254aae9dcc31a4a638f0bd4f88a30dcde858 at the 2026-10-29 freeze (Phase 5 of MAM-private's doc/PLAN-evacuate-hbofonts-into-MAM-basics.md). This set can only shrink: each stub answers an old URL cited where Ben cannot reach the citation, including posts and sent email. The four pages listed have successors at the same relative paths under MAM-basics' gh-pages/taamey-d/, a pure prefix rewrite. Taamey_B.html stays a real page of hbofonts, frozen there by Ben's decision of 2026-10-28, so it is retained rather than stubbed: check accepts it and build never writes it. The downloads' archives, the WOFF2 files, the stylesheet and the image stay byte-for-byte static assets of the host, so they are deliberately not redirect-manifest entries. A citation Ben can edit is repointed to the MAM-basics site rather than kept as a reason for a stub.",
+  "source_repo": "hbofonts",
+  "source_commit": "3b59254aae9dcc31a4a638f0bd4f88a30dcde858",
+  "frozen_on": "2026-10-29",
+  "pages": [
+    "Taamey_D.html",
+    "Xolam_xaser_for_alef.html",
+    "downloads/index.html",
+    "index.html"
+  ],
+  "retained_pages": [
+    "Taamey_B.html"
+  ]
+}

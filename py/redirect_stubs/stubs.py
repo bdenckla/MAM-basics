@@ -61,10 +61,17 @@ the one direction the freeze leaves: a frozen page that is no longer published h
 stub now sends a reader to a page that is not there.
 
 Taamey_D is the first non-prefix row. Its manifest explicitly maps the old
-``index.html`` to hbofonts' ``Taamey_D.html``; its source host publishes from ``docs/``
-rather than ``gh-pages/``; and its catch-all goes to that fixed document rather than
-inventing an hbofonts path from an unknown legacy suffix. The row declares each of those
-facts. Manifest shape never chooses semantics.
+``index.html`` to MAM-basics' ``taamey-d/Taamey_D.html``; its source host publishes from
+``docs/`` rather than ``gh-pages/``; and its catch-all goes to that fixed document rather
+than inventing a path from an unknown legacy suffix. The row declares each of those
+facts. Manifest shape never chooses semantics. Until 2026-10-29 its target was hbofonts'
+``Taamey_D.html``; that page moved here, and hbofonts froze behind stubs of its own.
+
+hbofonts is the first source host that keeps a page of its own. Its manifest's optional
+``retained_pages`` lists the pages the host still serves itself: ``check`` accepts each
+one it finds among the stubs, and ``write_stubs`` never writes one, because
+``redirect_targets`` refuses a page that is both redirected and retained. The list sits
+in the manifest so that the page's name stays out of this module.
 
 Phonetic-hbo maps two legacy Tanakh trees to one maintained tree and maps Yeivin
 pages to a separate product. Its mapping targets name either ``path`` or
@@ -194,7 +201,7 @@ class RedirectRepo:
             raise ValueError(
                 f"{self.source_repo}: old_path_prefix must start and end with '/'."
             )
-        if self.target_repo not in {"MAM-basics", "hbofonts"}:
+        if self.target_repo != "MAM-basics":
             raise ValueError(
                 f"{self.source_repo}: unknown target repository {self.target_repo!r}."
             )
@@ -417,9 +424,9 @@ REDIRECT_REPOS = (
         manifest_path="in/taamey_d_redirect_pages.json",
         clone_url="https://github.com/bdenckla/Taamey_D.git",
         source_published_dir="docs/",
-        target_repo="hbofonts",
-        target_site="https://bdenckla.github.io/hbofonts/",
-        target_pages_prefix="gh-pages/",
+        target_repo="MAM-basics",
+        target_site="https://bdenckla.github.io/MAM-basics/taamey-d/",
+        target_pages_prefix="gh-pages/taamey-d/",
         manifest_kind="mapping",
         not_found_target=RedirectTarget(kind="path", path="Taamey_D.html"),
     ),
@@ -439,6 +446,19 @@ REDIRECT_REPOS = (
             path="phonetic-mam/index.html",
             query=(("pronunciation", "sephardic"),),
         ),
+    ),
+    RedirectRepo(
+        source_repo="hbofonts",
+        scratch_name="hbofonts",
+        old_path_prefix="/hbofonts/",
+        manifest_path="in/hbofonts_redirect_pages.json",
+        clone_url="https://github.com/bdenckla/hbofonts.git",
+        source_published_dir="gh-pages/",
+        target_repo="MAM-basics",
+        target_site="https://bdenckla.github.io/MAM-basics/taamey-d/",
+        target_pages_prefix="gh-pages/taamey-d/",
+        manifest_kind="prefix",
+        not_found_target=None,
     ),
 )
 
@@ -606,8 +626,24 @@ def redirect_targets(repo_root: Path, repo: RedirectRepo) -> dict[str, RedirectT
     Prefix rows deliberately retain the original list-shaped manifest and expand it
     to an identity mapping. Mapping rows must spell both sides explicitly. Dispatch is
     on the row's declared manifest kind, never on the JSON value's resemblance to one
-    of those shapes.
+    of those shapes. The manifest's retained pages are validated too, so no page is
+    both redirected and retained.
     """
+    return _manifest_entries(repo_root, repo)[0]
+
+
+def retained_pages(repo_root: Path, repo: RedirectRepo) -> list[str]:
+    """The pages ``repo``'s source host keeps serving itself, which no stub replaces.
+
+    Read from the manifest's optional ``retained_pages`` member; a manifest without one
+    retains nothing.
+    """
+    return _manifest_entries(repo_root, repo)[1]
+
+
+def _manifest_entries(
+    repo_root: Path, repo: RedirectRepo
+) -> tuple[dict[str, RedirectTarget], list[str]]:
     manifest = repo_root / repo.manifest_path
     try:
         data = json.loads(
@@ -655,7 +691,42 @@ def redirect_targets(repo_root: Path, repo: RedirectRepo) -> dict[str, RedirectT
             raise ValueError(
                 f"{manifest}: {NOT_FOUND_NAME} is reserved for the generated catch-all."
             )
-    return targets
+    retained = _retained_member(manifest, repo, data)
+    both = sorted(set(targets) & set(retained))
+    if both:
+        raise ValueError(
+            f"{manifest}: {both} both redirected and retained -- a stub would overwrite"
+            " the page the source host keeps."
+        )
+    return targets, retained
+
+
+def _retained_member(
+    manifest: Path, repo: RedirectRepo, data: dict[str, object]
+) -> list[str]:
+    """The manifest's ``retained_pages``, validated; an absent member retains nothing.
+
+    A present member must name at least one page, since a list that retains nothing
+    says nothing a missing member does not.
+    """
+    if "retained_pages" not in data:
+        return []
+    raw = data["retained_pages"]
+    if not isinstance(raw, list) or not all(isinstance(page, str) for page in raw):
+        raise ValueError(f"{manifest}: 'retained_pages' must be a list of strings.")
+    if not raw:
+        raise ValueError(
+            f"{manifest}: 'retained_pages' is empty; omit it to retain nothing."
+        )
+    if len(set(raw)) != len(raw):
+        raise ValueError(f"{manifest} retains a page more than once.")
+    for page in raw:
+        _validate_page_path(repo.source_repo, "retained page path", page)
+        if page == NOT_FOUND_NAME:
+            raise ValueError(
+                f"{manifest}: {NOT_FOUND_NAME} is reserved for the generated catch-all."
+            )
+    return sorted(raw)
 
 
 def redirected_pages(repo_root: Path, repo: RedirectRepo) -> list[str]:
@@ -673,9 +744,6 @@ def _target_repo_root(repo_root: Path, repo: RedirectRepo) -> Path:
     """Resolve the explicitly supported target repository for ``repo``."""
     if repo.target_repo == "MAM-basics":
         return repo_root
-    if repo.target_repo == "hbofonts":
-        target = paths.sibling_repo("hbofonts")
-        return paths.require_sibling("hbofonts", target)
     raise ValueError(
         f"{repo.source_repo}: unknown target repository {repo.target_repo!r}."
     )
@@ -773,7 +841,12 @@ def render_not_found(repo: RedirectRepo) -> str:
 
 
 def write_stubs(repo_root: Path, repo: RedirectRepo, out_dir: Path) -> list[str]:
-    """Write a stub per old URL plus ``404.html``; return the paths written, site-relative."""
+    """Write a stub per old URL plus ``404.html``; return the paths written, site-relative.
+
+    A retained page is never written: ``redirect_targets`` refuses a page that is both
+    redirected and retained, so publishing into the source host leaves the pages it keeps
+    as they are.
+    """
     written = []
     targets = redirect_targets(repo_root, repo)
     for page_path, target in sorted(targets.items()):
@@ -815,6 +888,10 @@ def check_problems(repo_root: Path, repo: RedirectRepo, stub_dir: Path) -> list[
       need not have had a URL in the old source repository, so a stub for it may answer
       nothing.
 
+    A page the manifest retains is accepted where it is found, since the source host
+    still serves it as its own page. Its absence is accepted too, so that a scratch tree
+    from ``build --out`` checks clean.
+
     Nothing here skips: an absent ``stub_dir``, an empty manifest and an empty published
     set are all failures.
     """
@@ -824,6 +901,7 @@ def check_problems(repo_root: Path, repo: RedirectRepo, stub_dir: Path) -> list[
             " Run `build --out <dir>` first, or name the tree that holds them."
         ]
     targets = redirect_targets(repo_root, repo)
+    retained = set(retained_pages(repo_root, repo))
     expected = sorted(targets)
     found = _found_html(stub_dir)
     published = set(published_pages(repo_root, repo))
@@ -837,7 +915,9 @@ def check_problems(repo_root: Path, repo: RedirectRepo, stub_dir: Path) -> list[
         f"{stub_path}: a stub in {stub_dir} answering no URL in {repo.manifest_path} --"
         f" delete it, or say there why that URL is one {repo.source_repo} published"
         for stub_path in found
-        if stub_path != NOT_FOUND_NAME and stub_path not in set(expected)
+        if stub_path != NOT_FOUND_NAME
+        and stub_path not in set(expected)
+        and stub_path not in retained
     ]
     problems += [
         f"{old_path} -> {target.path}: a frozen {repo.source_repo} URL whose target is no"

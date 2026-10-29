@@ -12,9 +12,8 @@ nothing schedules and nothing can currently run.
 WHAT BREAKS IT, AND WHY THAT MATTERS
 
 Most stubs send an old URL to a MAM-basics subtree at the same relative path, a pure
-prefix rewrite. A row can instead declare an explicit old-path-to-target-path mapping in
-another maintained repository. Both contracts keep working only while the declared
-target page remains published. Rename or drop that page and the stub keeps redirecting
+prefix rewrite. A row can instead declare an explicit old-path-to-target-path mapping.
+Both contracts keep working only while the declared target page remains published. Rename or drop that page and the stub keeps redirecting
 to a URL that 404s. Nothing in the target tree knows the manifest exists, so the break
 is silent, and it is exactly the shape ``py/tests/test_vendoring_policy_paths.py`` was
 written for after a manifest went stale unnoticed for a day. That lint was deleted with
@@ -29,34 +28,22 @@ A MISSING, MALFORMED OR EMPTY MANIFEST FAILS, IT DOES NOT SKIP.
 ``stubs.redirect_targets`` validates and rejects each case, so none can report green
 having verified nothing.
 
-IN A CLOUD CONTAINER, THE HBOFONTS ROW CHECKS ITS MANIFEST AND SKIPS THE REST. Ben's
-decision, 2026-09-26. The Taamey_D row's declared target repository is hbofonts, a private
-sibling that ``stubs.published_pages`` reads through ``paths.require_sibling``, and a cloud
-container cannot clone it: a container run of the suite on 2026-09-25, recorded in the message
-of ``ee0d66d5``, failed that row and no other test. So in a container the row still reads and
-validates its manifest, which is tracked here, and skips only before reading hbofonts. It
-asks ``graphviz_pin.in_cloud_session()``, the repository's one cloud predicate, so the read is
-skipped in a container whether or not hbofonts is attached there. When this skip was added it
-followed ``py/tests/test_final_stress_vs_phonetic_mam.py``, which then skipped in a container
-the tests that read MAM-private; since ``9a67d51b`` (2026-10-01) that module reads the tracked
-``Phonetic-MAM/`` release and runs everywhere. On any machine of Ben's the sibling stays
-REQUIRED, and a missing hbofonts fails here as before. The rows whose target is MAM-basics read
-only this repository and run everywhere. The skip's reason string is what tells it apart from a
-semantic skip under ``-rs``.
+EVERY ROW'S TARGET IS MAM-BASICS, SO EVERY ROW RUNS EVERYWHERE. From 2026-09-26 to
+2026-10-29 the Taamey_D row's target was the private hbofonts, which a cloud container cannot
+clone, so by Ben's decision of 2026-09-26 that row checked its manifest in a container and
+skipped before reading hbofonts. Taamey D's pages moved to this repository's
+``gh-pages/taamey-d/``, and on 2026-10-29 Phase 5 of MAM-private's
+``doc/PLAN-evacuate-hbofonts-into-MAM-basics.md`` retargeted the row there and retired the
+skip. ``_cloud_skip_reason`` still dispatches on each target repository, so a new one cannot
+run here without a decision about it.
 """
 
 from __future__ import annotations
 
 import pytest
 
-from mb_cmn import graphviz_pin
 from mb_cmn import paths
 from redirect_stubs import stubs
-
-_HBOFONTS_CLOUD_SKIP = (
-    "cloud container: this row's target, the private hbofonts sibling, cannot be cloned"
-    " here -- an environment skip, not this suite's semantic skip"
-)
 
 
 def _cloud_skip_reason(repo: stubs.RedirectRepo) -> str | None:
@@ -67,8 +54,6 @@ def _cloud_skip_reason(repo: stubs.RedirectRepo) -> str | None:
     """
     if repo.target_repo == "MAM-basics":
         return None
-    if repo.target_repo == "hbofonts":
-        return _HBOFONTS_CLOUD_SKIP if graphviz_pin.in_cloud_session() else None
     raise ValueError(
         f"{repo.source_repo}: no cloud rule for target repository {repo.target_repo!r}."
     )

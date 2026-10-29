@@ -1,9 +1,11 @@
 # Review and testing process
 
-State: live; revised 2026-10-16
+State: live; revised 2026-10-29
 
 Ben approved the proposed process on 2026-10-07: "I approve; let's try this new process."
-This process controls MAM-basics, MAM-private and occasional hbofonts review and repair work.
+This process controls MAM-basics and MAM-private review and repair work. It also controlled
+occasional hbofonts work until hbofonts froze on 2026-10-29, its Taamey D font having moved to
+MAM-basics.
 It supersedes the older obligatory Ben dispositions, fresh remediation-plan approval, D7's
 approval gate for routine internal editorial repairs, blanket finding rechecks, and ordinary
 pre-push/full-suite gates. Keep historical evidence, focused regeneration obligations and the
@@ -50,9 +52,9 @@ isolated checkouts, leaving interactive edits untouched. Since Ben's decision of
 (`doc/clone-forests.md`, “Forest ownership”), such a checkout is in a forest the running agent
 owns: by default a full clone that no interactive session is using, with its own environments,
 otherwise a linked worktree there with its home clone's environments.
-Review only new endpoint diffs; run MAM-basics and MAM-private's broad checks nightly. Check
-hbofonts for incoming commits and run its broad checks when its tip changed. Its maintained
-command includes its checks. Keep missing checks and unavailable environments explicit.
+Review only new endpoint diffs; run MAM-basics and MAM-private's broad checks nightly. Taamey
+D's checks, once hbofonts' broad checks, are MAM-basics mega steps; hbofonts, frozen on
+2026-10-29, has none left to run. Keep missing checks and unavailable environments explicit.
 When a run uses another repository as input, select and record its committed checkout too.
 
 Run generators and checks sequentially within a checkout. A failing check or unexplained output
@@ -122,13 +124,13 @@ Hourly screening freezes new main tips and examines meaningful endpoint changes 
 reviewed-through anchor. Unchanged tips need no repeated review. It uses the existing focused
 check and repair policy; broad checks remain nightly unless the already stated consequence
 requires an immediate run. Nightly checks run MAM-basics mega and suite and MAM-private
-regeneration and audit even when main is unchanged; hbofonts broad checks are due when its
-actual source tip changes. Reconcile later isolated receipts before deciding that a tip is new.
+regeneration and audit even when main is unchanged. Reconcile later isolated receipts before
+deciding that a tip is new.
 
 Receipt pushes must respect deployment triggers, including documentation-only main pushes.
-By Ben's decision of 2026-10-22, hbofonts' Pages deployment runs only when started by hand.
-Until that change reaches hbofonts' main, a push there still deploys, so hbofonts receipts stay
-on a separate branch; once it has, a receipt push to that main deploys nothing. The scheduler
+By Ben's decision of 2026-10-22, hbofonts' Pages deployment runs only when started by hand, so
+a push to its main deploys nothing; since its freeze on 2026-10-29 no check is due there and no
+receipt is owed to it. The scheduler
 is managed separately by the coordinating session; this document
 records its confirmed arrangement and creates no automation. Further scheduling changes need
 Ben's authorization. The renewal changes no substantive repair authority or publication policy.

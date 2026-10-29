@@ -171,8 +171,8 @@ SIBLINGS_REACHED: dict[str, str] = {
         " The maintained Phonetic MAM and Yeivin products use local MAM-basics paths."
     ),
     "hbofonts": (
-        "redirect_stubs/stubs.py reads the maintained target to prove each mapped"
-        " Taamey_D page remains tracked under hbofonts' published gh-pages directory."
+        "redirect_stubs/stubs.py only, to publish or check the frozen redirect stubs."
+        " Taamey D's sources, pages and checks use local MAM-basics paths."
     ),
 }
 
