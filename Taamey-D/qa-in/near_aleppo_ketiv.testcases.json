@@ -1,0 +1,12 @@
+{
+"configuration": "bible_words.cfg.json",
+"testcases": [
+{
+"input": "הִןֵּ֤",
+"provenance": "near-Aleppo ketiv Isaiah 54:16",
+"expected": {
+"Taamey_D.ttf": "mahapakh=2@-445,0+0|tsere=2@-29,0+0|dagesh=2@47,0+0|finalnun=2+459|xiriq=0@535,0+0|he=0+1071"
+}
+}
+]
+}

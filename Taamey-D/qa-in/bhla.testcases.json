@@ -1,0 +1,19 @@
+{
+"configuration": "bible_words.cfg.json",
+"testcases": [
+{
+"input": "א֥͏ֶהֱב֥וּ",
+"provenance": "BHLA Psalms 31:24; also UXLC 2.6's 2026.10.19 change, status Pending",
+"expected": {
+"Taamey_D.ttf": "vavdou=8+510|merkha=6@483,0+0|bet=6+967|xatafsegol=4@535,0+0|he=4+1071|segol=0@277,0+0|merkha=0@674,0+0|alef.con=0+1048"
+}
+},
+{
+"input": "וַאֲמַרְתּ֖͏ֶם",
+"provenance": "BHLA Malachi 2:17",
+"expected": {
+"Taamey_D.ttf": "finalmem=13+1004|segol=8@265,0+0|tipxa=8@663,0+0|tavdagesh=8+1026|sheva=6@441,0+0|resh=6+883|patax=4@547,0+0|mem=4+1094|xatafpatax=2@524,0+0|alef.con=2+1048|patax=0@255,0+0|vav=0+510"
+}
+}
+]
+}

@@ -1,0 +1,68 @@
+{
+"configuration": "bible_words.cfg.json",
+"testcases": [
+{
+"input": "נִזְרָ֔ע֯",
+"provenance": "M-doc Leviticus 25:20",
+"expected": {
+"Taamey_D.ttf": "masoracircle=7@460,0+0|ayin=7+920|zaqefqatan=4@441,0+0|qamats=4@441,0+0|resh=4+883|sheva=2@328,0+0|zayin=2+656|xiriq=0@307,0+0|nun=0+614"
+}
+},
+{
+"input": "הָיִ֛יתָהַ֯ מּ֯וֹצִ֥יא",
+"provenance": "M-doc 2 Samuel 5:2",
+"expected": {
+"Taamey_D.ttf": "alef=21+1048|yod=20+464|merkha=17@377,0+0|xiriq=17@634,0+0|tsadi=17+968|vavxolam=15+510|masoracircle=12@547,0+0|memdagesh=12+1094|space=11+682|masoracircle=8@535,0+0|patax.furtive=8@735,0+0|he=8+1071|qamats=6@513,0+0|tav=6+1026|yod=5+464|tevir=2@70,0+0|xiriq=2@382,0+0|yod=2+464|qamats=0@535,0+0|he=0+1071"
+}
+},
+{
+"input": "תְּלָוֻ֥֯ם שָׁםָּ֯ ה֙פְּלִשְׁתִּ֔ים",
+"provenance": "M-doc 2 Samuel 21:12",
+"expected": {
+"Taamey_D.ttf": "finalmem=34+1004|yod=33+464|zaqefqatan=29@513,0+0|xiriq=29@513,0+0|tavdagesh=29+1026|sheva=26@646,0+0|trueshin=26+1292|xiriq=24@450,0+0|lamed=24+901|sheva=21@456,0+0|pedagesh=21+912|pashta.hlp=19@535,0+0|he=19+1071|space=18+682|masoracircle=14@502,0+0|qamats=14@502,0+0|dagesh=14@502,0+0|finalmem=14+1004|qamats=11@646,0+0|trueshin=11+1292|space=10+682|finalmem=9+1004|masoracircle=5@255,0+0|merkha=5@-4,0+0|qubuts=5@405,0+0|vav=5+510|qamats=3@450,0+0|lamed=3+901|sheva=0@513,0+0|tavdagesh=0+1026"
+}
+},
+{
+"input": "אַל־יְהִי־[֯] פְּלֵיטָ֔ה",
+"provenance": "M-doc Jeremiah 50:29",
+"expected": {
+"Taamey_D.ttf": "he=23+1071|zaqefqatan=20@507,0+0|qamats=20@507,0+0|tet=20+1015|yod=19+464|tsere=17@450,0+0|lamed=17+901|sheva=14@456,0+0|pedagesh=14+912|space=13+682|bracketleft=12+568|masoracircle=10+0|bracketright=10+568|maqaf=9+631|yod=8+464|xiriq=6@535,0+0|he=6+1071|sheva=4@232,0+0|yod=4+464|maqaf=3+631|lamed=2+901|patax=0@524,0+0|alef.con=0+1048"
+}
+},
+{
+"input": "וְאֵ֣֯ילַמָּ֔יו֯",
+"provenance": "M-doc Ezekiel 40:24",
+"expected": {
+"Taamey_D.ttf": "masoracircle=14@255,0+0|vav=14+510|yod=13+464|zaqefqatan=9@547,0+0|qamats=9@547,0+0|memdagesh=9+1094|patax=7@450,0+0|lamed=7+901|yod=6+464|masoracircle=2@524,0+0|munax=2@275,0+0|tsere=2@674,0+0|alef.con=2+1048|sheva=0@255,0+0|vav=0+510"
+}
+},
+{
+"input": "וְאֵלַמָּ֖ו֯",
+"provenance": "M-doc Ezekiel 40:26",
+"expected": {
+"Taamey_D.ttf": "masoracircle=10@255,0+0|vav=10+510|tipxa=6@451,0+0|qamats=6@697,0+0|memdagesh=6+1094|patax=4@450,0+0|lamed=4+901|tsere=2@524,0+0|alef.con=2+1048|sheva=0@255,0+0|vav=0+510"
+}
+},
+{
+"input": "עֹֽלוֹתָ֔ו֯",
+"provenance": "M-doc Ezekiel 40:26",
+"expected": {
+"Taamey_D.ttf": "masoracircle=9@255,0+0|vav=9+510|zaqefqatan=6@513,0+0|qamats=6@513,0+0|tav=6+1026|vavxolam=4+510|lamed=3+901|meteg=0@460,0+0|xolam=0@162,0+0|ayin=0+920"
+}
+},
+{
+"input": "וּבַעְּפֹלִ֔ים",
+"provenance": "M-doc Deuteronomy 28:27",
+"expected": {
+"Taamey_D.ttf": "finalmem=13+1004|yod=12+464|zaqefqatan=9@600,0+0|xiriq=9@450,0+0|lamed=9+901|xolam=7@162,0+0|pe=7+912|sheva=4@460,0+0|dagesh=4@520,165+0|ayin=4+920|patax=2@483,0+0|bet=2+967|vavdou=0+510"
+}
+},
+{
+"input": "לְםַ רְבֵּ֨ה",
+"provenance": "M-doc Isaiah 9:6",
+"expected": {
+"Taamey_D.ttf": "he=11+1071|qadma=7@483,0+0|tsere=7@483,0+0|betdagesh=7+967|sheva=5@441,0+0|resh=5+883|space=4+682|patax=2@502,0+0|finalmem=2+1004|sheva=0@450,0+0|lamed=0+901"
+}
+}
+]
+}
