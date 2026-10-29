@@ -54,13 +54,18 @@ def _get_checkobjs(font_fna, one_check):
 
 
 def _run_anchor_family_lint(font_fna):
-    """Print the anchor-family lint's result, and return True if it failed."""
+    """Print the anchor-family lint's result, and return True if it failed.
+
+    hbofonts checked several fonts and skipped this lint for those with no exception
+    table.  The one font here has a table, so a missing one means the lint would check
+    nothing, and that raises rather than passing.
+    """
     outcome = anchor_families.lint(font_fna)
     if outcome is None:
-        print(
-            f"anchor families: not run for {font_fna.name}, which has no exception table"
+        raise RuntimeError(
+            f"anchor families: no exception table for {font_fna.name} in"
+            " anchor_families.py, so the lint would check nothing"
         )
-        return False
     findings, summary = outcome
     for finding in findings:
         print(f"anchor families: {finding}")
@@ -74,7 +79,8 @@ def run_checks(one_check=None):
     one_check, the short name mrun, plac, regr or coll, runs that shaping check alone;
     None runs all four.  Each check rewrites its reports.  A SKIP, an unknown status or
     an anchor-family FAIL raises; a shaping check's FAIL tuple does not, since its
-    report is a tracked file.
+    report is a tracked file.  Return the directory of the reports, qa-out/<font
+    stem>/, which the mega's taamey-d-qa step compares with Git's index.
     """
     font_fna = _TAAMEY_D_DIR / "font-m-TaD" / "Taamey_D.ttf"
     qadirs = dict(indir=_TAAMEY_D_DIR / "qa-in", outdir=_TAAMEY_D_DIR / "qa-out")
@@ -105,3 +111,5 @@ def run_checks(one_check=None):
         failures.append("one or more shaping checks skipped")
     if failures:
         raise SystemExit("; ".join(failures))
+    # Where shaping_checks and fails_filename put every report.
+    return qadirs["outdir"] / font_fna.stem

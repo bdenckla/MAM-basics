@@ -107,7 +107,10 @@ def run_a_check_across_all_tcases2(ctx):
     )
     if len(tcases_fnas) == 0:
         results.append((SKIP, "No JSON test case files found."))
-        return results
+        # With no failed test cases, so that the caller's unpacking holds and the SKIP
+        # reaches run_checks, which fails on it.  hbofonts returned the bare list, which
+        # made the caller raise a ValueError instead.
+        return results, []
     all_failed_tcases = []
     for tcases_fna in tcases_fnas:
         progcb = prefix_progcb(ctx["progcb"], tcases_fna)

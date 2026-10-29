@@ -268,37 +268,50 @@ def _run_taamey_d_doc():
 
 
 def _run_taamey_d_qa():
-    main_taamey_d.almost_main(["qa"])
-    _check_taamey_d_reports_against_index()
+    reports = main_taamey_d.almost_main(["qa"])
+    _check_taamey_d_reports_against_index(reports)
 
 
-def _check_taamey_d_reports_against_index():
+def _git_paths(*args):
+    """The paths that a Git command run in this repository lists, NUL-delimited by -z."""
+    listed = subprocess.run(
+        git_process.git_command(paths.repo_root(), *args),
+        check=True,
+        capture_output=True,
+    ).stdout.decode("utf-8")
+    return [path for path in listed.split("\0") if path]
+
+
+def _check_taamey_d_reports_against_index(reports):
     """Raise if the shaping checks left their reports different from Git's index.
 
     hbofonts' mega made this comparison with ``git diff --exit-code``: the reports are
     tracked, so a difference is a change in the font's shaping that nobody has accepted.
     It compares with the index rather than with HEAD, so a baseline that Ben has approved
     passes once it is staged, and an untracked file there, such as the report of a new
-    test-case file, is a difference too.
+    test-case file, is a difference too.  reports is the directory the checks wrote, as
+    py/taamey_d/qa/run_checks.py returns it, so that no second copy of its path can
+    drift; and a directory where Git tracks no report raises, since comparing it would
+    check nothing.
     """
-    reports = "Taamey-D/qa-out/Taamey_D"
-    listings = (
-        ("diff", "--name-only", "-z", "--", reports),
-        ("ls-files", "--others", "--exclude-standard", "-z", "--", reports),
-    )
-    differing = []
-    for args in listings:
-        listed = subprocess.run(
-            git_process.git_command(paths.repo_root(), *args),
-            check=True,
-            capture_output=True,
-        ).stdout.decode("utf-8")
-        differing.extend(path for path in listed.split("\0") if path)
-    if differing:
+    pathspec = reports.relative_to(paths.repo_root()).as_posix()
+    if not _git_paths("ls-files", "-z", "--", pathspec):
         raise RuntimeError(
-            f"{len(differing)} Taamey D shaping-check report(s) differ from Git's index,"
-            f" {differing[0]} among them.  Read the shaping checks' results; stage a new"
-            " baseline only once Ben has approved it (Taamey-D/README.md)."
+            f"Git tracks no Taamey D shaping-check report in {pathspec}, so the"
+            " reports the checks wrote cannot be compared with any"
+        )
+    differing = _git_paths("diff", "--name-only", "-z", "--", pathspec)
+    differing += _git_paths(
+        "ls-files", "--others", "--exclude-standard", "-z", "--", pathspec
+    )
+    if differing:
+        shown = "".join(f"\n    {path}" for path in differing[:20])
+        if len(differing) > 20:
+            shown += f"\n    ... and {len(differing) - 20} more"
+        raise RuntimeError(
+            f"{len(differing)} Taamey D shaping-check report(s) differ from Git's"
+            f" index:{shown}\nRead the shaping checks' results; stage a new baseline"
+            " only once Ben has approved it (Taamey-D/README.md)."
         )
 
 
@@ -849,8 +862,9 @@ _STEPS = [
         _run_taamey_d_qa,
         "runs py/main_taamey_d.py qa, Taamey D's shaping checks, on"
         " Taamey-D/font-m-TaD/Taamey_D.ttf and the corpus in Taamey-D/qa-in/; rewrites"
-        " Taamey-D/qa-out/Taamey_D/; raises on a SKIP, an anchor-family FAIL, or a report"
-        " that differs from Git's index",
+        " Taamey-D/qa-out/Taamey_D/; raises on a SKIP, an unknown status, an"
+        " anchor-family FAIL, or a report that differs from Git's index, an untracked"
+        " one included",
     ),
     # Added the same day, and last: after wordlist and uxlc-word-list, which write the two
     # word lists it reads, and so that a pending refresh ends the run's output, as in
