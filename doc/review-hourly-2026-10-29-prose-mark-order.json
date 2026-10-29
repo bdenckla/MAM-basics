@@ -1,0 +1,60 @@
+{
+  "scope": "Parent-requested follow-up to verify the owner-acknowledged prose-mark-order failure; no reopened endpoint review or broad rerun.",
+  "source_commit": "8339eb1352a745c5c2e16945a42b73b50aa30864",
+  "receipt_parent": "b8f8aff1c565506ccc080904e2325d80f5b013e0",
+  "reviewed_through": "8339eb1352a745c5c2e16945a42b73b50aa30864",
+  "focused_tested_through": "8339eb1352a745c5c2e16945a42b73b50aa30864",
+  "broad_tested_through": "6ac28417a243447c24eefb168202585a9949a4ea",
+  "required_sibling_inputs": [],
+  "prior_receipts": {
+    "2000": "82455561d84814411a684f77333bb1d2d91b1564",
+    "2100": "b8f8aff1c565506ccc080904e2325d80f5b013e0"
+  },
+  "actual_check": {
+    "source_commit": "8339eb1352a745c5c2e16945a42b73b50aa30864",
+    "command": [
+      "/workspace/MAM-basics/.venv/bin/python",
+      "py/main_test.py",
+      "py/tests/test_prose_mark_order.py",
+      "-q"
+    ],
+    "cwd": "/workspace/MAM-basics",
+    "started_utc": "2026-10-29T21:03:51.001621+00:00",
+    "completed_utc": "2026-10-29T21:03:51.311903+00:00",
+    "returncode": 1,
+    "status_after": ""
+  },
+  "result": "FAIL: 1failed in0.15s; exit1; sole offender py/ws/ws_bot_edit_history.md:490. No skip, collection failure or missing input.",
+  "provenance": {
+    "introduced_by": "4d72e9336ef2b57e59d17692b6646bbe19989c7b",
+    "owner_acknowledgement": "8339eb1352a745c5c2e16945a42b73b50aa30864 commit message: source/prose checks29passed/1failed; specifically names this pre-existing line.",
+    "independent_evidence": "Exact inline quote occurs once in edits.Deuter[0].new of the named committed bot JSON and in the committed raw A5-Deuter chapter; blame and parent comparison confirm introducing commit."
+  },
+  "classification": "Legitimate byte-verbatim raw-input quotation. The lint does not exempt this inline quotation; this is a bounded lint-scope mismatch, not evidence of an authored Hebrew transcription defect or a changed editorial interpretation.",
+  "disposition": "Known failure retained for nightly handoff. No source repair made. Preserve quote and raw captures; any later repair should scope exclusion to the verified literal while checking surrounding authored prose. No blanket normalization or file/line exclusion.",
+  "prior_receipt_clarification": "Earlier no-project-failure statements describe only their actually executed focused stages, which remain passing. Neither ran this lint, and their limitations excluded a full suite. They omitted the owner-reported failure; this separate follow-up now records it explicitly without rewriting finished receipts.",
+  "user_decision_required": null,
+  "source_and_generated_output_changes": [],
+  "evidence": {
+    "readme": "doc/review-hourly-2026-10-29-prose-mark-order-evidence/README.md",
+    "manifest": "doc/review-hourly-2026-10-29-prose-mark-order-evidence/manifest.json",
+    "archive": "doc/review-hourly-2026-10-29-prose-mark-order-evidence/focused-evidence.zip"
+  },
+  "limits": [
+    "Only the exact prose-lint module was executed, once. No full suite, mega, generator or sibling check.",
+    "No source repair, mark-order normalization, source/editorial change, font build/baseline, source network operation, hbofonts/Private/HP execution, deployment, release, main/shared push or new clone/worktree.",
+    "Focused failure does not invalidate the recorded earlier focused checks or retroactively change the historical passing broad-tested result."
+  ],
+  "checkout_restored": {
+    "utc": "2026-10-29T21:06:13.364045+00:00",
+    "head": "926a6e785be4236673ac4a5c8c34afe63ed417f4",
+    "branch": "work",
+    "status": "",
+    "worktree_registrations": 1
+  },
+  "remote_main_observed_before_receipt": "8339eb1352a745c5c2e16945a42b73b50aa30864",
+  "remaining_endpoint": null,
+  "remaining_check_failure": "test_prose_mark_order.py at the frozen source remains exit1 until a scoped repair is separately made.",
+  "receipt_tree_not_tested_source": true,
+  "completed_utc": "2026-10-29T21:06:14.405461+00:00"
+}

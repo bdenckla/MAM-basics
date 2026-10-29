@@ -1,0 +1,36 @@
+{
+  "source_commit": "8339eb1352a745c5c2e16945a42b73b50aa30864",
+  "members": [
+    {
+      "path": "verify.py",
+      "bytes": 4555,
+      "sha256": "272db352387740e72717baf48c51204425d6859c9e85e4cedf50cfff9d55f3e5"
+    },
+    {
+      "path": "prose-lint.log",
+      "bytes": 2775,
+      "sha256": "3d50aa74a7856f980c18bec8c05dd6928eff437d48857943b194b1c1b26ea824"
+    },
+    {
+      "path": "prose-lint.result.json",
+      "bytes": 388,
+      "sha256": "49f320f60e04185e525913cabdaa9ac2b1d87c4b8d50d9427dbb23971b3c6a94"
+    },
+    {
+      "path": "quotation-audit.json",
+      "bytes": 2374,
+      "sha256": "06828f71e94cf1ee366de2048fb804f979ab0e0bb4d6260650f979a08454eed9"
+    },
+    {
+      "path": "checkout-before.json",
+      "bytes": 138,
+      "sha256": "c75ec7722a2c71bf19034c2722b4f6ac0de181e8d86949225d4979f8455f9607"
+    },
+    {
+      "path": "checkout-restored.json",
+      "bytes": 169,
+      "sha256": "f3e315ff6ec981bef740ada82e0aa616f66096e9767912de64ce76405b19ddaa"
+    }
+  ],
+  "archive_sha256": "fc40f67bb97dd50a09f50d3cb8102714d51cd36ed7629aa4486cc5bd0d234de7"
+}
