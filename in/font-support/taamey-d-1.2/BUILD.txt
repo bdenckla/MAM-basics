@@ -1,0 +1,78 @@
+Taamey D 1.2 source package
+===========================
+
+This package supplies Taamey_D-sources.zip from the Taamey D release snapshot
+1.2-MAM-basics-1f1be97138d5, renamed Taamey_D-1.2-sources.zip and otherwise
+unchanged. The snapshot's provenance.json names its source commit in
+https://github.com/bdenckla/MAM-basics,
+1f1be97138d5b9ac5464c2de912299828bf9fccb. SOURCE-INVENTORY.json records every
+archive member's size and SHA-256.
+
+Build-input scope
+-----------------
+
+Taamey-D/font-m-TaD/Taamey_D-nofea.sym.sfd is the template of the editable glyph
+outlines, and Taamey-D/font-m-TaD/Taamey_D.sym.fea the template of the editable
+OpenType features. Taamey-D/font-m-TaD/license.sym.txt is the copyright/license
+template, and Taamey-D/font-m-TaD/license.txt is its expansion.
+py/taamey_d_build/fill_in_template.py expands the three templates, using
+py/taamey_d_build/font_version.py, which declares version 1.2, and
+py/taamey_d_build/my_open.py. Taamey-D/font-m-TaD/ffscript_generate_sfd_n_ttf.py
+uses FontForge to merge the features into the outlines and emit SFD, TTF, WOFF,
+and WOFF2 files. py/main_taamey_d_build.py drives those steps.
+
+The build's entry point and package import only each other and the Python
+standard library, and the outlines and features are entirely in the two
+templates.
+
+Build procedure and dependencies
+--------------------------------
+
+From the directory into which the archive is extracted, the build is:
+
+  python py/main_taamey_d_build.py
+
+It fills the three templates, then runs the FontForge script with Taamey-D/ as
+FontForge's working directory, and writes the filled templates and FontForge's
+outputs beside the sources in Taamey-D/font-m-TaD/. It finds FontForge through
+its --fontforge option, on PATH, or, on Windows, as FontForgeBuilds/fontforge.bat
+under ProgramFiles or ProgramFiles(x86), and on Windows it marks the filled
+templates read-only. It therefore needs Python and a FontForge installation with
+its Python module and WOFF2 support; these general-purpose tools are not
+included. Its Python imports are standard-library modules: argparse, json, os, pathlib, shutil, string, subprocess, and sys.
+
+Rebuild check
+-------------
+
+On 2026-10-29, on Windows, with Python 3.13.15 and FontForge 20251009, this
+build, run in a directory holding nothing but the archive's nine files, wrote
+all seven generated files byte for byte as the source commit holds them, among
+them the Taamey_D.woff2 below. The archive does not pin a build environment:
+another FontForge, compression library or runtime can write different bytes.
+
+Binary association
+------------------
+
+The Taamey_D.woff2 that MAM-basics publishes is 22,484 bytes, version 1.2,
+SHA-256 34e415bd2a28d4d0d407aa2138a43a1a87d9519a6df39933ec05976051032b2c.
+It is the Taamey_D/Taamey_D.woff2 member of the same snapshot's Taamey_D.zip,
+SHA-256 e767581fb1373ac23308b9592d9ad74d5e5a11cc3e4c9bccf236ae7ccbae7501.
+The snapshot's provenance.json lists both archives and their members under one
+source commit, and its SHA256SUMS.txt lists both archives.
+
+License and notices
+-------------------
+
+FONT-NOTICE.txt transcribes the copyright, GNU GPL version 2 grant, and font-
+embedding exception from the font's OpenType name table, name ID 0. Only
+whitespace on otherwise blank lines and the final newline differ from that
+extracted text. Name ID 0 is the same in 1.2 as in 1.1, 1.0 and 0.921.
+GPL-2.0.txt is the full, unmodified GNU GPL version 2 text from
+https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt.
+
+The source files retain their release bytes and notices. They are supplied as
+the corresponding editable font source and build inputs under the font's GNU
+GPL version 2 terms; the build's entry point and package are GPL version 2 or
+later, as their notices say. No new GPL version 3 or CC0 grant is made over that
+material, and the document-embedding exception is not a release from the
+redistribution obligations for the font itself.

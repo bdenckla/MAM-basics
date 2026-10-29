@@ -33,8 +33,8 @@ hbce-psalms/out/*.tsv whitespace=-trailing-space
 
 # Further binary files, declared here rather than copied from wlc-utils.
 MAM-parsed/historical/*.zip binary
-in/font-support/taamey-d-1.1/*.zip binary
-gh-pages/font-sources/taamey-d-1.1/*.zip binary
+in/font-support/taamey-d-1.2/*.zip binary
+gh-pages/font-sources/taamey-d-1.2/*.zip binary
 aleppo/aleppo-wiki/precursors/*.docx binary
 aleppo/aleppo-wiki/precursors/*.xlsx binary
 gh-pages/MAM-with-doc/misc/img/*.gif binary

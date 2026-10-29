@@ -241,10 +241,13 @@ general below-mark chain for main."
 ## Publication
 
 The site's pages that set Hebrew in Taamey D, `gh-pages/taamey-d/Taamey_D.html` among them, load
-the site's one copy of the font, `gh-pages/woff2/Taamey_D.woff2`. By Ben's decision of 2026-10-28, MAM-basics' pages take
-the font by pinning a released snapshot into `in/font-support/taamey-d-<version>/`; the pin is
-now Taamey D 1.1, in [`in/font-support/taamey-d-1.1/`](../in/font-support/taamey-d-1.1/README.md).
-So the build never writes that copy, and a new release reaches the pages only through a new pin.
+the site's one copy of the font, `gh-pages/woff2/Taamey_D.woff2`. By Ben's decision of
+2026-10-28, MAM-basics' pages take the font by pinning a released snapshot into
+`in/font-support/taamey-d-<version>/`; the pin is now Taamey D 1.2, the first release published
+from here, in [`in/font-support/taamey-d-1.2/`](../in/font-support/taamey-d-1.2/README.md). So
+the build never writes that copy, and a new release reaches the pages only through a new pin,
+which `py/py_html/taamey_d_assets.py` checks. `git log -- in/font-support/` lists the commits
+that made each pin, and so every file a new pin must change.
 
 New releases come from MAM-basics: "Yes, new releases should come from MAM-basics." (Ben,
 2026-10-28). "Publishing a release" above says how. Publishing a release is an outward-facing
