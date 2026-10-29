@@ -1,0 +1,58 @@
+{
+  "notification_label": "2026-10-30 00:00 UTC",
+  "notification_arrival": "2026-10-29 23:55 UTC, reported by parent",
+  "receipt_parent": "593e9a2f4531c9ee6c4ac883fdc5c1ff1afbf0b4",
+  "source_base": "8339eb1352a745c5c2e16945a42b73b50aa30864",
+  "source_commit": "10708b47582fbb7f895f415683f852afe80787bc",
+  "reviewed_through": "10708b47582fbb7f895f415683f852afe80787bc",
+  "focused_tested_through": "10708b47582fbb7f895f415683f852afe80787bc",
+  "broad_tested_through": "6ac28417a243447c24eefb168202585a9949a4ea",
+  "required_sibling_inputs": [],
+  "scope": "One commit/one path/one changed line: authored bot-run history plus-notation example.",
+  "classification": "Bounded authored-prose mark-order repair; no consequential new defect or reviewer repair.",
+  "actual_check": {
+    "source_commit": "10708b47582fbb7f895f415683f852afe80787bc",
+    "command": [
+      "/workspace/MAM-basics/.venv/bin/python",
+      "py/main_test.py",
+      "py/tests/test_prose_mark_order.py",
+      "-q"
+    ],
+    "cwd": "/workspace/MAM-basics",
+    "started_utc": "2026-10-29T23:57:24.201435+00:00",
+    "completed_utc": "2026-10-29T23:57:24.498851+00:00",
+    "returncode": 0,
+    "status_after": ""
+  },
+  "result": "1passed in0.12s; zero failures/skips. Previously failing prose lint independently passes at this frozen source. Endpoint whitespace passes.",
+  "preservation": "Only two tav dagesh/vowel swaps. Letters/marks and all non-dagesh relative order unchanged; every other file byte and tree path unchanged. Raw bot JSON and downloaded chapter preserve exact original bytes; no packed-form/CGJ change.",
+  "prior_failure_disposition": {
+    "receipt": "593e9a2f4531c9ee6c4ac883fdc5c1ff1afbf0b4",
+    "failed_source": "8339eb1352a745c5c2e16945a42b73b50aa30864",
+    "owner_repair_commit": "10708b47582fbb7f895f415683f852afe80787bc",
+    "status": "Resolved by this committed owner repair and independently passing decisive lint. Earlier failure/provenance records stay historical, unmodified.",
+    "earlier_suggestion": "Scoped raw-quotation exclusion was suggested, not implemented. Owner instead applies existing MAM-order rule to authored prose while retaining raw captures. No further exclusion needed."
+  },
+  "attribution": "Owner commit explains intent and reports its own checks; only the explicitly recorded focused command and independent byte/codepoint audit were executed here.",
+  "limits": [
+    "No full suite/mega, generator or broad-anchor advancement: no executable/data/product change.",
+    "No Private executor or input; no hbofonts access/check/receipt/recreation, HP change, font build/baseline, source bot/download, deployment/release, main/shared push or new clone/worktree."
+  ],
+  "checkout_restored": {
+    "utc": "2026-10-29T23:58:54.297208+00:00",
+    "head": "926a6e785be4236673ac4a5c8c34afe63ed417f4",
+    "branch": "work",
+    "status": "",
+    "worktree_registrations": 1
+  },
+  "deployment_boundary": "Only workflow is pages.yml with workflow_dispatch; isolated receipt push has no deployment trigger.",
+  "remote_main_observed_before_receipt": "10708b47582fbb7f895f415683f852afe80787bc",
+  "remaining_window": null,
+  "evidence": {
+    "readme": "doc/review-hourly-2026-10-30-0000-evidence/README.md",
+    "archive": "doc/review-hourly-2026-10-30-0000-evidence/focused-evidence.zip",
+    "manifest": "doc/review-hourly-2026-10-30-0000-evidence/manifest.json"
+  },
+  "receipt_tree_not_tested_source": true,
+  "completed_utc": "2026-10-29T23:58:55.236360+00:00"
+}

@@ -1,0 +1,41 @@
+{
+  "source_commit": "10708b47582fbb7f895f415683f852afe80787bc",
+  "members": [
+    {
+      "path": "verify.py",
+      "bytes": 4544,
+      "sha256": "fdaac46e7daf4d6873bf1014029948a9c390977609193d967ff6e1990381f400"
+    },
+    {
+      "path": "endpoint-audit.json",
+      "bytes": 2143,
+      "sha256": "dfddbd1ef46c53f5684b564d9d4d5b383fc9c69bc6ac64494cbf25d04038e663"
+    },
+    {
+      "path": "endpoint.patch",
+      "bytes": 1060,
+      "sha256": "70c33bf8364b1d18998a7c27acd3f58d21491acb37f796989c387c642a0b2cba"
+    },
+    {
+      "path": "prose-lint.log",
+      "bytes": 98,
+      "sha256": "3be6ffcaecf85b5bd3eef3693ab214b0e7c9eb4e36d117fcf1825652de5eb298"
+    },
+    {
+      "path": "prose-lint.result.json",
+      "bytes": 388,
+      "sha256": "bcea0c3512f99521a29f1e6915019e3788430da83d6012184f7ef347672a05cb"
+    },
+    {
+      "path": "checkout-before.json",
+      "bytes": 138,
+      "sha256": "2089059e958e60e7c56de114fcc8f27f391d61a9f53c0ff15a69fc2c4f2fb512"
+    },
+    {
+      "path": "checkout-restored.json",
+      "bytes": 169,
+      "sha256": "e924019ae91edaf77d91403da1f8db13a4b9de982c2c0400aea12f9d46923515"
+    }
+  ],
+  "archive_sha256": "32e4d46498efd39cf656ef2e721603487e6ae7398eb3157d4abb1d1e6305fe18"
+}
