@@ -111,7 +111,12 @@ not-quite-reasoning".
 2. **Predict.** Read the change verse by verse with `py/main_diff.py mpplus --old
    <starting HEAD> --new HEAD --output <scratch path>`. Write down what it should cause:
    which verses, in which products, of what kind (a renamed template, a reordered
-   ketiv/qere pair, a changed accent), and which counts move, by how much.
+   ketiv/qere pair, a changed accent), and which counts move, by how much. The report
+   compares verse text, template names, structure and alternatives, not documentation
+   notes, so a change confined to a note appears in neither the report nor the change
+   log: predict it from `git diff`. A change to a note's unpointed prose also moves the
+   one-letter prose-token counts of `out/sigil-inventory.json`, by the letters of the
+   words it adds and removes.
 3. **Judge.** After each regeneration, read every tracked diff and check (a) that every
    predicted change is present and (b) that nothing else changed. Explain anything else,
    or stop.
@@ -124,6 +129,11 @@ statement does not change when the data does, so no diff shows it going stale. W
 fails, repair the statement, or the derived record and what it records, in one
 reviewable edit. When the statement is Ben's published claim, stop for his approval and
 let the rest of the refresh proceed.
+
+Some hand-made statements have no check. `in/explicit-xataf-extras-annotations.json` gives
+English summaries of the notes it lists. When a refresh changes one of those notes, the diff of
+`out/explicit-xataf-extras.json` shows the note's new text beside its unchanged summary: reread
+the summary and repair it in the same way.
 
 ## Complete the dependent refresh
 
