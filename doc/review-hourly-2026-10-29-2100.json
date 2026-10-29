@@ -1,0 +1,132 @@
+{
+  "date": "2026-10-29",
+  "state": "Completed focused review; no consequential new defect or repair confirmed.",
+  "receipt_parent": "82455561d84814411a684f77333bb1d2d91b1564",
+  "receipt_branch": "review-hourly-20261029-2100-receipts",
+  "window": {
+    "exclusive_base": "40e5d37ccb0276a2dc13ab51444459baba858354",
+    "frozen_main": "8339eb1352a745c5c2e16945a42b73b50aa30864",
+    "commits": 1,
+    "paths": 3
+  },
+  "reviewed_through": "8339eb1352a745c5c2e16945a42b73b50aa30864",
+  "focused_tested_through": "8339eb1352a745c5c2e16945a42b73b50aa30864",
+  "broad_tested_through": "6ac28417a243447c24eefb168202585a9949a4ea",
+  "timing": {
+    "notification_label": "21:00 UTC",
+    "actual_start_utc": "2026-10-29T20:48:03.634367+00:00",
+    "project_checks_stopped_utc": "2026-10-29T20:51:08.871496+00:00"
+  },
+  "classification": "Consequential single-letter token boundary fix with generated inventory and matching refresh guidance; no source/editorial/other product change.",
+  "runtime_inputs": {
+    "Basics": "8339eb1352a745c5c2e16945a42b73b50aa30864",
+    "sibling_runtime_products": null
+  },
+  "stages": [
+    {
+      "name": "01-boundary-differential",
+      "repository": "/workspace/MAM-basics",
+      "source_commit": "8339eb1352a745c5c2e16945a42b73b50aa30864",
+      "cwd": "/workspace/MAM-basics",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        "/workspace/scratch/review-hourly-20261029-2100/test_sigil_boundaries.py",
+        "-q"
+      ],
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "inputs": {
+        "Basics": "8339eb1352a745c5c2e16945a42b73b50aa30864",
+        "sibling_runtime_products": null,
+        "scope": "Only sigil token boundaries and generated inventory; no Private/hbofonts/HP, font, deploy or broad job."
+      },
+      "started_utc": "2026-10-29T20:51:06.417065+00:00",
+      "completed_utc": "2026-10-29T20:51:07.863621+00:00",
+      "seconds": 1.447,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "name": "02-inventory-reproduction",
+      "repository": "/workspace/MAM-basics",
+      "source_commit": "8339eb1352a745c5c2e16945a42b73b50aa30864",
+      "cwd": "/workspace/MAM-basics",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_sigil_inventory.py"
+      ],
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "inputs": {
+        "Basics": "8339eb1352a745c5c2e16945a42b73b50aa30864",
+        "sibling_runtime_products": null,
+        "scope": "Only sigil token boundaries and generated inventory; no Private/hbofonts/HP, font, deploy or broad job."
+      },
+      "started_utc": "2026-10-29T20:51:07.923024+00:00",
+      "completed_utc": "2026-10-29T20:51:08.580121+00:00",
+      "seconds": 0.657,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "name": "03-formatting",
+      "repository": "/workspace/MAM-basics",
+      "source_commit": "8339eb1352a745c5c2e16945a42b73b50aa30864",
+      "cwd": "/workspace/MAM-basics",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "-m",
+        "black",
+        "--check",
+        "py/sigils/inventory.py"
+      ],
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "inputs": {
+        "Basics": "8339eb1352a745c5c2e16945a42b73b50aa30864",
+        "sibling_runtime_products": null,
+        "scope": "Only sigil token boundaries and generated inventory; no Private/hbofonts/HP, font, deploy or broad job."
+      },
+      "started_utc": "2026-10-29T20:51:08.655457+00:00",
+      "completed_utc": "2026-10-29T20:51:08.871496+00:00",
+      "seconds": 0.216,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    }
+  ],
+  "results": {
+    "tests": "4passed in1.24s, zero failures/skips. Declared neighbor-class sweep and standalone preservation, unchanged complex token rows/functions, and an independent full-corpus differential.",
+    "corpus": "All3871notes agree with an independent old-token-stream filter. 3681notes with matches;576distinct prose tokens.190notes lose only boundary-rejected single-letter tokens; no multicharacter token removed or changed. Authority expressions1354and expression tokens897, including every example, unchanged.",
+    "inventory": "Canonical generation reproduces the complete committed inventory byte-for-byte, with clean tracked status. Counts and example ordering verified by reproduction.",
+    "source": "All existing function ASTs and earlier regex alternatives unchanged. Ten product/font/site trees unchanged. Single-letter counts only decrease; נ and צ disappear as single-letter item types.",
+    "formatting": "Changed Python file passes Black; endpoint whitespace passes.",
+    "known_limit": "New word-neighbor contract intentionally excludes quotation-adjacent single letters, including the explicitly documented quoted-lamed case. Retained without claiming semantic completeness or repairing that separate limitation."
+  },
+  "evidence": "review-hourly-2026-10-29-2100-evidence/manifest.json",
+  "remote_before_commit": {
+    "refs/heads/main": "8339eb1352a745c5c2e16945a42b73b50aa30864"
+  },
+  "pending_window": null,
+  "execution": "Three project stages strictly awaited sequentially in exclusively owned existing saved clone on isolated source branch, then original work checkout restored. Receipt built with unique scratch Git index, no new checkout/worktree.",
+  "limits": [
+    "No full mega/suite or broad-anchor advancement. Token matching evidence is not a semantic/manuscript correctness claim.",
+    "Private unchanged per coordinating screen; no Private executor/access/receipt. No hbofonts or HP access/check/receipt, BHL work, font build/baseline, source download/bot, release/deployment, main/shared push or live config sync.",
+    "Author tests or intent remain attributed; only listed runtime checks were executed. Prior exact-window receipts retain their old scanner/count scope."
+  ],
+  "failure_history": "No project/harness failure or skip. No production repair.",
+  "repairs": [],
+  "receipt_tree_not_tested_source": true,
+  "checkout_restored": {
+    "path": "/workspace/MAM-basics",
+    "original_branch": "work",
+    "original_head": "926a6e785be4236673ac4a5c8c34afe63ed417f4",
+    "source_branch": "review-hourly-20261029-2100-source",
+    "source_commit": "8339eb1352a745c5c2e16945a42b73b50aa30864",
+    "restored_utc": "2026-10-29T20:53:28.144007+00:00",
+    "result": "Clean original saved checkout restored; source branch retained. No new clone/worktree/environment."
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "file": "focused-evidence.zip",
+  "bytes": 8097,
+  "sha256": "bee791590a7c39de6be14850ba3d238337f79b7f32b936dedd3ab3b463b03167",
+  "members": [
+    {
+      "path": "01-boundary-differential.log",
+      "bytes": 98,
+      "sha256": "89ef8124f4ca1b7c498c802eb6cd12125e4923832e29fd7cf991aaee82482fbd"
+    },
+    {
+      "path": "01-boundary-differential.result.json",
+      "bytes": 825,
+      "sha256": "8a0904d873aa10439031c6518de694130747fc6708df5adacac877199ac46c22"
+    },
+    {
+      "path": "01-boundary-differential.spec.json",
+      "bytes": 649,
+      "sha256": "e06ab2992f85e38149ffea33b67946d576ed4c7d0149f70bcf8accd798a89e1b"
+    },
+    {
+      "path": "02-inventory-reproduction.log",
+      "bytes": 209,
+      "sha256": "66db6668b9b41051c28ab92049afe0f347180fb71f1696e29d2b7e0f3a26127a"
+    },
+    {
+      "path": "02-inventory-reproduction.result.json",
+      "bytes": 748,
+      "sha256": "038c79d70b03a1b5c3c53afd8170f8f8218bc4fe8e669c5ceff771add37d4cb5"
+    },
+    {
+      "path": "02-inventory-reproduction.spec.json",
+      "bytes": 572,
+      "sha256": "752507c65431fac28f8366c5f1b5a3cb475da3eae059150cb4cb7cb10b6cf031"
+    },
+    {
+      "path": "03-formatting.log",
+      "bytes": 55,
+      "sha256": "1a56c7cd8457fd05d978cfbd139d7bfd86e86acaa9b57668e718ef8bccc0cf48"
+    },
+    {
+      "path": "03-formatting.result.json",
+      "bytes": 770,
+      "sha256": "e63efe19f55fb901f3f5e59185ec620b13692ecdb92f3308729e42ffd314eed5"
+    },
+    {
+      "path": "03-formatting.spec.json",
+      "bytes": 594,
+      "sha256": "c54335c713874eacf72369fd8f2656f4f962faae1ef56ed4646cbab1afa39a8a"
+    },
+    {
+      "path": "checkout-restored.json",
+      "bytes": 418,
+      "sha256": "53451c45e59f003e47f6c64c037139af70903c4f441a214fda9694af95b84239"
+    },
+    {
+      "path": "corpus-audit.json",
+      "bytes": 1809,
+      "sha256": "8e71440cfaec5e96d437265b4870723f8b7d93b959699a04f627fcd11d109479"
+    },
+    {
+      "path": "endpoint-audit.json",
+      "bytes": 1245,
+      "sha256": "02c8287179e3b64985284f8273fc0ab518e6b6625fd17e79e142a89e2b478762"
+    },
+    {
+      "path": "test_sigil_boundaries.py",
+      "bytes": 5619,
+      "sha256": "678b6b0baca7a2158837433631a62fb4b0c7e9dffc5c3e990ea0e19e27fbd163"
+    }
+  ],
+  "verification": "Every member byte and CRC read back."
+}
