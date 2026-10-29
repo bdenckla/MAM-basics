@@ -94,8 +94,8 @@ file or relay.
    paths, the reviewer's checkout, output path, line-3 `State:` and effort level, and the private
    repositories it must not read: those that `in/repo_maintenance_policy.json`'s `repo_visibility`
    lists, and the private repositories outside the workspace that the tree cites, today
-   `bdenckla/trope` and `bdenckla/al-hatorah`. It offers no view of the window's content. Both
-   prompts set the same reporting bar:
+   `bdenckla/hbofonts`, `bdenckla/trope` and `bdenckla/al-hatorah`. It offers no view of the
+   window's content. Both prompts set the same reporting bar:
    defects that the window introduced, and older defects that the window carries forward or that
    the reviewer notices, each labelled as one or the other, with each minor wording item in one
    line. Ben starts each reviewer's session with its prompt.
