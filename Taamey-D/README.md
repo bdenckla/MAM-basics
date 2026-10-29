@@ -178,10 +178,10 @@ Taamey D also does not accommodate a source's encoding errors. Ben, 2026-10-27, 
 zero-width joiner (ZWJ) where a combining grapheme joiner belongs in Job 32:6: "We don't need to
 (and should not) bend over backwards to support incorrectly encoded words in Taamey D." Such a
 word enters the corpus in its correct encoding instead, with a provenance suffix saying so; the
-corpus updater holds the corrections. Ben asked the same day for that updater to "reject future
+corpus refresh holds the corrections. Ben asked the same day for the refresh to "reject future
 wacky uses of ZWJ". It accepts a ZWJ only in a request for a meteg in the middle of a ḥataf vowel
 (ḥataf vowel, ZWJ, meteg), the one use the Unicode Standard's Hebrew section gives it; any other
-ZWJ that its corrections leave stops the update until someone decides the word's correct
+ZWJ that its corrections leave stops the refresh until someone decides the word's correct
 encoding.
 
 Below a letter, Taamey D places marks generally since 1.1: in `mkmk0BlwChainGeneral` every below

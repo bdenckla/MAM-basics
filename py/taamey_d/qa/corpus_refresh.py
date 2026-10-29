@@ -200,7 +200,7 @@ def _reject_wacky_zwjs(provenance):
     # The Unicode Standard's Hebrew section uses the ZWJ only to request a meteg
     # in the middle of a xataf vowel, which the UXLC encodes xataf vowel, ZWJ,
     # meteg. Any other ZWJ that _ENCODING_CORRECTIONS leaves is wacky, and it
-    # stops the update until someone decides the word's correct encoding.
+    # stops the refresh until someone decides the word's correct encoding.
     for word, prov in provenance.items():
         chars = word_chars(word)
         for request in _MEDIAL_METEG_REQUESTS:
@@ -222,7 +222,7 @@ _QUCPO_QMCPR = (
 )  # O (overmark) is R (revia)
 _QUCPO_QECPG = (
     "\N{HEBREW POINT QAMATS}"
-    + "\N{HEBREW ACCENT ETNAHTA}"  # U (undermark) is E (etnachta)  # translit-ok
+    + "\N{HEBREW ACCENT ETNAHTA}"  # U (undermark) is E (ETNAHTA, Unicode's atnax)
     + "\N{COMBINING GRAPHEME JOINER}"
     + "\N{HEBREW POINT PATAH}"
     + "\N{HEBREW ACCENT GERESH}"
@@ -236,7 +236,7 @@ _QUOCP_QMRCP = (
 )
 _QUOCP_QEGCP = (
     "\N{HEBREW POINT QAMATS}"
-    + "\N{HEBREW ACCENT ETNAHTA}"  # U (undermark) is E (etnachta)  # translit-ok
+    + "\N{HEBREW ACCENT ETNAHTA}"  # U (undermark) is E (ETNAHTA, Unicode's atnax)
     + "\N{HEBREW ACCENT GERESH}"  # O (overmark) is G (geresh)
     + "\N{COMBINING GRAPHEME JOINER}"
     + "\N{HEBREW POINT PATAH}"
@@ -320,7 +320,7 @@ def _without_slh_paseq(word):
 def _check_slh_words(provenance):
     # The multirun check splits an SLH word into one letter cluster per position of
     # its spine. Split every SLH word here first, so that a change in MAM-basics'
-    # SLH words stops the update rather than the shaping checks.
+    # SLH words stops the refresh rather than the shaping checks.
     for word, prov in provenance.items():
         if not isinstance(word, str):
             try:
@@ -362,7 +362,7 @@ _BIBLE_WORDS_FNA = re.compile(r"bible_words_(\d+)\.testcases\.json")
 
 
 def _bible_words_fnas():
-    # Only the bible_words_<n> files are this updater's. The other test case files
+    # Only the bible_words_<n> files are the refresh's. The other test case files
     # in Taamey-D/qa-in, such as mam_doc_notes and near_aleppo_ketiv, are written by
     # hand, and their inputs are in neither word list, so _remove_outdated would empty
     # them. Ordered by number, so that new test cases go to the highest-numbered.

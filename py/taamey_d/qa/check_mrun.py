@@ -24,7 +24,7 @@ def _tcase_input_slh(tcase):
 def mrun_split(slh_quad):
     slh_full, slh_spine, slh_types, slh_summary = slh_quad
     clpat = r"([א-ת־][^א-ת־]*)"
-    # These raise rather than assert, because the corpus updater also calls this
+    # These raise rather than assert, because the corpus refresh also calls this
     # function, to reject an SLH word that the multirun check could not split.
     if not re.fullmatch(f"{clpat}+", slh_full):
         raise ValueError(f"not a sequence of letter clusters: {slh_full}")
