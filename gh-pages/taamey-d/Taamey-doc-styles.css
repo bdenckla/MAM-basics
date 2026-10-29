@@ -1,0 +1,84 @@
+
+body {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 40em;
+    font-size: 14pt;
+}
+*.xataf_qamats_qatan {
+    font-feature-settings: 'ss01';
+}
+*.qamats_qatan_meteg_qatan {
+    font-feature-settings: 'ss01', 'ss02';
+}
+*.qamats_qatan_hafukh {
+    font-feature-settings: 'ss03';
+}
+*.xataf_qamats_qatan_hafukh {
+    font-feature-settings: 'ss04', 'ss03'; /* analogous to ss01 */
+}
+*.qamats_qatan_meteg_qatan_hafukh {
+    font-feature-settings: 'ss04', 'ss05'; /* analogous to ss01,ss02 */
+}
+*.wide-word-spacing {
+    word-spacing: 2rem;
+}
+*.wide-letter-spacing {
+    letter-spacing: .6rem;
+}
+*.normal-word-spacing {
+    word-spacing: normal;
+}
+@font-face {
+    font-family: "Taamey D WOFF2";
+    src: url("../woff2/Taamey_D.woff2");
+}
+*.font-family-taamey-d {
+    font-family: "Taamey D WOFF2";
+    font-size: 250%;
+}
+/* The comparison images of Taamey_D.html, in img/comparison/ (see its PROVENANCE.json).
+   Each cell keeps the font size its text had, one em of each image's font is that size,
+   each image's baseline sits on the row's, and negative margins cancel the image's pad,
+   so it takes up its text's advance width, and its ink overhangs as the text's did. */
+td.comparison-taamey-frank-clm { font-size: 250%; }
+td.comparison-sbl-hebrew { font-size: 250%; }
+td.comparison-ezra-sil { font-size: 195%; }
+td.comparison-taamey-frank-clm > img { height: 1.3501em; vertical-align: -0.4570em; margin: 0 -0.2461em; }
+td.comparison-sbl-hebrew > img { height: 1.4756em; vertical-align: -0.4805em; margin: 0 -0.2446em; }
+td.comparison-ezra-sil > img { height: 1.5088em; vertical-align: -0.4238em; margin: 0 -0.2212em; }
+span.attention { color: hsl(300, 87%, 59%); }
+span.mam-implicit-maqaf { color: gray; }
+span.romanized { font-style: italic }
+span.small-caps,
+span.unicode-code-point-name {
+    font-variant: small-caps;
+}
+span.unicode-code-point-name {
+    color: hsl(203, 92%, 42%);
+}
+span.hair-space-before:before {
+    content: "\200A"; /* hair space */
+}
+span.hair-space-after:after {
+    content: "\200A"; /* hair space */
+}
+table { margin-left: auto; margin-right: auto; }
+table.ruled-rows { border-collapse: collapse }
+/* Rules on the rows, not the cells, so that a cell's font size cannot thicken them. */
+table.ruled-rows tr {
+    border-top: 0.08em solid;
+    border-bottom: 0.08em solid;
+}
+p, ul { text-align: justify; }
+th, td {
+    padding-right: 0.4em;
+    padding-left: 0.4em;
+}
+td { vertical-align: baseline;}
+th { font-weight: normal; }
+td[rowspan] {
+    border: 0.08em solid;
+    vertical-align: middle;
+}
+pre, code { font-size: 85% }

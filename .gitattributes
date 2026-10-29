@@ -50,3 +50,21 @@ in/mam-ws-intro/*.mediawiki whitespace=-blank-at-eol
 
 # Preserve this frozen review's exact bytes, including its line-final spaces.
 doc/yod-holam-review-20261007.html -text whitespace=-blank-at-eol
+
+# Taamey D's font sources, moved from hbofonts. Its FontForge files are CRLF, and
+# Taamey_D-nofea.sym.sfd mixes line ends, so Git must keep their bytes: without -text the
+# rule at the top would rewrite them. Spelled -text, not the legacy -crlf, which does not
+# beat an earlier text=auto. FontForge writes line-final blanks in Taamey_D.sfd, and the
+# build's fill-in script writes whitespace-only lines in license.txt; both files are
+# generated, so `git diff --check` must not report those lines.
+Taamey-D/**/*.sfd -text whitespace=cr-at-eol,-blank-at-eol
+Taamey-D/**/*.fea -text whitespace=cr-at-eol
+Taamey-D/font-m-TaD/license.txt whitespace=-blank-at-eol
+Taamey-D/**/*.ttf binary
+Taamey-D/**/*.woff binary
+Taamey-D/**/*.woff2 binary
+Taamey-D/**/*.zip binary
+gh-pages/taamey-d/**/*.ttf binary
+gh-pages/taamey-d/**/*.woff binary
+gh-pages/taamey-d/**/*.woff2 binary
+gh-pages/taamey-d/**/*.zip binary

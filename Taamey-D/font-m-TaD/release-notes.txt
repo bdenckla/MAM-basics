@@ -1,0 +1,47 @@
+Taamey D 1.1
+
+These notes list the changes since Taamey D 1.0, published on
+2026-10-26. Each release replaces this file with its own notes.
+
+How marks below a letter are placed
+
+- Every below mark now hangs off the below mark before it, whatever
+  kind either mark is, with the gap the font already leaves between
+  two below accents. So an accent encoded before a vowel, a second
+  vowel on a letter, and any two below accents are placed side by
+  side without a rule for the pair. Before, an accent could hang off
+  a vowel, off six of the accents or off a meteg, and a vowel only
+  off an atnaḥ or a meteg; a pair the font had no rule for overlapped
+  at the letter's centre.
+- A pair whose first mark is an accent is centred under its letter,
+  as a pair whose first mark is a vowel already was. Two atoms of the
+  font's corpus (an atom is the letters between two spaces or maqaf
+  marks) have such a pair: an atnaḥ before a ḥiriq, held in that order
+  by a combining grapheme joiner, at Numbers 7:60 and at Job 32:6.
+  Their atnaḥ and ḥiriq now sit 150 units further right.
+- A second vowel on a letter again sits beside the first, as it did in
+  Taamey D 0.921. In 0.931 and 1.0 its ink overlapped the first
+  vowel's.
+- Every combining grapheme joiner (CGJ, U+034F) is now removed during
+  shaping, so the mark order it holds is placed whatever marks it
+  stands between. Before, the joiner was removed only between five
+  pairs of marks, and elsewhere it could leave the mark after it
+  unplaced or block a letter's contextual form.
+- A zero-width joiner (U+200D) is still not removed. Between a ḥataf
+  vowel and a meteg it still selects the form with the meteg inside
+  the ḥataf; elsewhere the font leaves it alone.
+- A deḥi or a yetiv, which sits at its letter's right edge, is not
+  covered: it keeps its placement, and another below mark on the same
+  letter can still collide with it.
+
+Other changes
+
+- The version number is now 1.1, and the font's unique-ID name ends
+  with it.
+- No glyph or character is added or removed, no advance width or
+  vertical metric changes, so line heights stay the same, and no
+  glyph's outline changes.
+
+Documentation: https://bdenckla.github.io/hbofonts/Taamey_D.html
+Downloads and corresponding source:
+https://bdenckla.github.io/hbofonts/downloads/

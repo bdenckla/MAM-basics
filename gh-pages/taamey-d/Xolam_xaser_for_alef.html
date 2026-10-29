@@ -1,0 +1,78 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="Taamey-doc-styles.css">
+    <title>Ḥolam ḥaser for alef</title>
+</head>
+<body>
+<h1><span class="romanized">Ḥolam ḥaser</span> for <span class="romanized">alef</span></h1>
+<p>Author: Ben Denckla</p>
+<!-- Hebrew date below can be gotten from https://www.hebcal.com/converter -->
+<p>Document version: 2023-03-13 / כ׳ בַּאֲדָר תשפ״ג</p>
+<p>
+Assuming these abbreviations:
+</p>
+<table>
+    <tr>
+    <th>short</th>
+    <th>long</th>
+    </tr><tr>
+    <td><span class="unicode-code-point-name">u-hhfv</span></td><td><span class="unicode-code-point-name">u-holam haser for vav</span></td></tr><tr>
+    <td><span class="romanized">alef</span>-con.</td><td><span class="romanized">alef</span> as a consonant</td></tr><tr>
+    <td>voa</td><td><span class="romanized">vav</span> or <span class="romanized">alef</span></td></tr><tr>
+    <td><span class="romanized">ḥm</span>-dot</td><td><span class="romanized">ḥolam male</span> dot</td></tr><tr>
+    <td><span class="romanized">ḥḥ</span>-dot</td><td><span class="romanized">ḥolam ḥaser</span> dot</td></tr>
+</table><p>
+Today we have this mess:
+</p>
+<table>
+    <tr>
+    <th>code point 1</th>
+    <th>code point 2</th>
+    <th>code point 3</th>
+    <th>interpretation (display) of code point 2</th>
+    </tr><tr>
+    <td><span class="romanized">vav</span></td><td><span class="unicode-code-point-name">u-holam</span></td><td></td><td><span class="romanized">ḥm</span>-dot on <span class="romanized">vav</span></td></tr><tr>
+    <td><span class="romanized">vav</span></td><td><span class="unicode-code-point-name">u-hhfv</span></td><td></td><td><span class="romanized">ḥḥ</span>-dot on <span class="romanized">vav</span></td></tr><tr>
+    <td>non-<span class="romanized">vav</span></td><td><span class="unicode-code-point-name">u-holam</span></td><td><span class="romanized">alef</span>-<span class="small-caps">ml</span></td><td><span class="romanized">ḥm</span>-dot on <span class="romanized">alef</span>-ML</td></tr><tr>
+    <td>non-<span class="romanized">vav</span></td><td><span class="unicode-code-point-name">u-holam</span></td><td><span class="romanized">alef</span>-con.</td><td><span class="romanized">ḥḥ</span>-dot on non-<span class="romanized">vav</span></td></tr><tr>
+    <td>non-<span class="romanized">vav</span></td><td><span class="unicode-code-point-name">u-hhfv</span></td><td></td><td>undefined</td></tr>
+</table><p>
+Now let’s imagine that we started interpreting <span class="unicode-code-point-name">u-holam haser for vav</span> as if it applied to not just <span class="romanized">vav</span> but <span class="romanized">alef</span>, too. Then we’d have this simpler situation:
+</p>
+<table>
+    <tr>
+    <th>code point 1</th>
+    <th>code point 2</th>
+    <th>interpretation (display) of code point 2</th>
+    </tr><tr>
+    <td>voa</td><td><span class="unicode-code-point-name">u-holam</span></td><td><span class="romanized">ḥm</span>-dot on voa</td></tr><tr>
+    <td>voa</td><td><span class="unicode-code-point-name">u-hhfv</span></td><td><span class="romanized">ḥḥ</span>-dot on voa</td></tr><tr>
+    <td>non-voa</td><td><span class="unicode-code-point-name">u-holam</span></td><td><span class="romanized">ḥḥ</span>-dot on non-voa</td></tr><tr>
+    <td>non-voa</td><td><span class="unicode-code-point-name">u-hhfv</span></td><td>undefined</td></tr>
+</table><p>
+As long as we’re indulging our fantasies, now let’s imagine things as they really should have been:
+</p>
+<table>
+    <tr>
+    <th>today’s name</th>
+    <th>fantasy name</th>
+    <th>applies to</th>
+    </tr><tr>
+    <td><span class="unicode-code-point-name">u-holam</span></td><td><span class="unicode-code-point-name">u-holam male</span></td><td><span class="romanized">vav</span> or <span class="romanized">alef</span></td></tr><tr>
+    <td><span class="unicode-code-point-name">u-holam haser for vav</span></td><td><span class="unicode-code-point-name">u-holam haser</span></td><td>any letter</td></tr>
+</table><p>
+Or, in the style of our tables above:
+</p>
+<table>
+    <tr>
+    <th>code point 1</th>
+    <th>code point 2</th>
+    <th>interpretation (display) of code point 2</th>
+    </tr><tr>
+    <td>voa</td><td><span class="unicode-code-point-name">u-holam</span></td><td><span class="romanized">ḥm</span>-dot on voa</td></tr><tr>
+    <td>non-voa</td><td><span class="unicode-code-point-name">u-holam</span></td><td>undefined</td></tr><tr>
+    <td>letter</td><td><span class="unicode-code-point-name">u-hhfv</span></td><td><span class="romanized">ḥḥ</span>-dot on letter</td></tr>
+</table>

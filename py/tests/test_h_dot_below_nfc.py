@@ -104,6 +104,9 @@ _H_CAP_WITH_DOT_BELOW = chr(0x1E24)
 
 _BINARY_EXTENSIONS = {
     ".png",
+    # Taamey D's WOFF build output, beside its .ttf and .woff2, arrived under Taamey-D/
+    # with the font's sources on 2026-10-28; read as text it raises UnicodeDecodeError.
+    ".woff",
     ".woff2",
     ".svg",
     ".jpg",
