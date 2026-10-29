@@ -59,13 +59,28 @@ def visible_wikitext(value):
     return re.sub(r"</?span(?:\s+[^>]*)?>", "", text)
 
 
-def at_pointer(value, pointer):
+def json_node(value, pointer):
     for part in pointer.strip("/").split("/") if pointer else []:
         part = part.replace("~1", "/").replace("~0", "~")
         value = value[int(part)] if isinstance(value, list) else value[part]
+    return value
+
+
+def at_pointer(value, pointer):
+    value = json_node(value, pointer)
     if not isinstance(value, str):
         raise ValueError("A displayed source pointer must select a string")
     return value
+
+
+def strings_in(value):
+    if isinstance(value, str):
+        return [value]
+    if isinstance(value, dict):
+        value = list(value.values())
+    if not isinstance(value, list):
+        return []
+    return [text for item in value for text in strings_in(item)]
 
 
 @cache
@@ -97,6 +112,7 @@ class Sources:
         self.notes = {n["id"]: n for n in read("notes.json")}
         self.checked = 0
         self.proposals_checked = 0
+        self.applications_checked = 0
 
     def resolve(self, passage):
         if "claim" in passage or passage.get("source") == "claim":
@@ -174,12 +190,24 @@ def mirror_headings(path):
     return headings
 
 
+# Linked snapshot headings that a later Introduction edit renamed, by page, each with
+# the current mirror's heading. 0cb9332a's mirror refresh brought this one: the
+# Westminster page's revision 3092678 corrects the spelling of Westminster.
+RENAMED_HEADINGS = {
+    (
+        "in/mam-ws-intro/westminster-typing.mediawiki",
+        "רשימת ההערות בהקלדת וסטמינטר ופירושם",
+    ): "רשימת ההערות בהקלדת וסטמינסטר ופירושם",
+}
+
+
 def section_link(path, line):
     """Link the live Introduction page at the snapshot heading at or above line.
 
     The heading comes from the recorded snapshot; its anchor comes from the current
-    mirror, which stands in for the live page. A heading the current mirror lacks
-    stops the build rather than leaving a dead anchor.
+    mirror, which stands in for the live page, through RENAMED_HEADINGS where a later
+    edit renamed it. A heading the current mirror lacks stops the build rather than
+    leaving a dead anchor.
     """
     if not re.fullmatch(r"in/mam-ws-intro/[a-z0-9-]+\.mediawiki", path):
         raise ValueError("An Introduction link needs a cached Introduction page")
@@ -195,10 +223,13 @@ def section_link(path, line):
     heading = above[-1]
     if re.search(r"[\[\]{}<>'&]", heading):
         raise ValueError(f"Heading markup needs its own anchor rule: {heading}")
-    anchors = [a for text, a in mirror_headings(path) if text == heading]
+    current = RENAMED_HEADINGS.get((path, heading), heading)
+    if current != heading and heading in (text for text, _ in mirror_headings(path)):
+        raise ValueError(f"A heading listed as renamed is still current: {heading!r}")
+    anchors = [a for text, a in mirror_headings(path) if text == current]
     occurrence = above.count(heading)
     if len(anchors) < occurrence:
-        raise ValueError(f"The current mirror lacks the heading {heading!r} in {path}")
+        raise ValueError(f"The current mirror lacks the heading {current!r} in {path}")
     url = he_page_url(title.replace(" ", "_"), anchors[occurrence - 1])
     return url, prose(heading, (heading,))
 
@@ -308,6 +339,65 @@ def membership_table(comparison, sources):
     )
 
 
+PROPOSED_LABELS = {
+    "unapplied": "Ben’s proposed corrected quotation — not applied",
+    "applied": "Ben’s proposed corrected quotation — applied",
+}
+
+
+def edited(quote, changes):
+    for change in changes:
+        if quote.count(change["before"]) != 1:
+            raise ValueError("A quotation edit needs one exact source occurrence")
+        quote = quote.replace(change["before"], change["after"], 1)
+    return quote
+
+
+def applied_row(entry, sources):
+    """Check an applied proposal against the later mirror commit that holds it."""
+    record, current = entry["application"], entry["current"]
+    expected = edited(
+        current["quote"], [entry["changes"][i] for i in record["applied_changes"]]
+    )
+    if visible_wikitext(record["quote"]) != expected:
+        raise ValueError("The applied quotation differs from its recorded edits")
+    commit, path = record["mirror_commit"], record["mirror_path"]
+    if "note" in current:
+        note = sources.notes[current["note"]]
+        if path != note["path"]:
+            raise ValueError("An applied doc-note is read in its note's parsed book")
+        book = json.loads(snapshot.text_at(commit, path))
+        texts = strings_in(json_node(book, note["json_pointer"]))
+        revisions = json.loads(snapshot.text_at(commit, "in/mam-ws-revisions.json"))
+        mirrored = [
+            chapter["revision_id"]
+            for chapters in revisions["books"].values()
+            for chapter in chapters.values()
+            if chapter["page_id"] == note["chapter_revision"]["page_id"]
+        ]
+    elif "claim" in current:
+        if path != sources.claims[current["claim"]]["path"]:
+            raise ValueError("An applied Introduction edit is read in its own page")
+        texts = [snapshot.text_at(commit, path)]
+        page = path.removeprefix("in/mam-ws-intro/").removesuffix(".mediawiki")
+        manifest = json.loads(snapshot.text_at(commit, "in/mam-ws-intro/manifest.json"))
+        mirrored = [manifest["pages"][page]["revid"]]
+    else:
+        raise ValueError(f"No mirror rule for an applied proposal: {entry['id']}")
+    if sum(text.count(record["quote"]) for text in texts) != 1 or any(
+        current["quote"] in text for text in texts
+    ):
+        raise ValueError("The mirror must have the applied text once, the old nowhere")
+    if (
+        mirrored != [record["mirror_revision_id"]]
+        or record["mirror_revision_id"] < record["revision_id"]
+    ):
+        raise ValueError("The mirror must hold the applying revision or a later one")
+    sources.applications_checked += 1
+    link = (record["diff_url"], f"Wikisource: revision {record['revision_id']}")
+    return record["label"], record["quote"], record["explanation"], link
+
+
 def adjudication_comparison(case, sources):
     entries = [a for a in read("adjudications.json") if a["id"] == case["adjudication"]]
     if len(entries) != 1:
@@ -319,35 +409,45 @@ def adjudication_comparison(case, sources):
     ):
         raise ValueError("Adjudication case or source snapshot does not match")
     sources.resolve(entry["current"])
-    proposed = entry["current"]["quote"]
-    for change in entry["changes"]:
-        if proposed.count(change["before"]) != 1:
-            raise ValueError(
-                "A proposed quotation edit needs one exact source occurrence"
-            )
-        proposed = proposed.replace(change["before"], change["after"], 1)
+    proposed = edited(entry["current"]["quote"], entry["changes"])
     if proposed != entry["proposed_quotation"]:
         raise ValueError("The proposed quotation differs from its recorded edits")
     sources.proposals_checked += 1
-    panels = []
-    for label, quote, explanation in (
+    status = entry["application_status"]
+    if status not in PROPOSED_LABELS:
+        raise ValueError(f"Unknown application status: {status}")
+    if (status == "applied") != ("application" in entry):
+        raise ValueError("Only an applied proposal carries an application record")
+    proposed_label = entry.get("proposed_label", PROPOSED_LABELS[status])
+    if status == "applied" and "not applied" in proposed_label:
+        raise ValueError("An applied proposal's label must not call it unapplied")
+    rows = [
         (
             entry.get("current_label", "Current cached doc-note quotation"),
             entry["current"]["quote"],
             entry.get("current_explanation", ""),
+            None,
         ),
-        (
-            entry.get(
-                "proposed_label", "Ben’s proposed corrected quotation — not applied"
-            ),
-            proposed,
-            entry.get("proposed_explanation", ""),
-        ),
-    ):
+        (proposed_label, proposed, entry.get("proposed_explanation", ""), None),
+    ]
+    if status == "applied":
+        rows.append(applied_row(entry, sources))
+    panels = []
+    for label, quote, explanation, link in rows:
         panels.append(
             '<div class="passage"><h4>'
             + escaped(label)
-            + '</h4><div class="he" lang="he" dir="rtl">'
+            + "</h4>"
+            + (
+                '<p class="source-link"><a href="'
+                + escaped(link[0])
+                + '">'
+                + escaped(link[1])
+                + "</a></p>"
+                if link
+                else ""
+            )
+            + '<div class="he" lang="he" dir="rtl">'
             + escaped(visible_wikitext(quote))
             + "</div>"
             + (
@@ -573,7 +673,9 @@ def reviewed_case_ids(cases):
     return reviewed
 
 
-def coverage_report(cases, literal_passages, proposed_quotations=0):
+def coverage_report(
+    cases, literal_passages, proposed_quotations=0, applied_quotations=0
+):
     """Account for retained cases; this is presentation coverage, not a verdict."""
     covered = {
         key: [case["id"] for case in cases if key in case["covers"]]
@@ -608,7 +710,7 @@ def coverage_report(cases, literal_passages, proposed_quotations=0):
     reviewed = reviewed_case_ids(cases)
     return {
         "source_base_commit": audit.pinned_commit(),
-        "purpose": "Presentation coverage and exact-quotation verification. User adjudications and unapplied proposals are recorded separately; rendering does not establish semantic consistency.",
+        "purpose": "Presentation coverage and exact-quotation verification. User adjudications, proposals and their applications are recorded separately; rendering does not establish semantic consistency.",
         "readable_cases": len(cases),
         "sections": {
             key: sum(case["section"] == key for case in cases)
@@ -633,6 +735,7 @@ def coverage_report(cases, literal_passages, proposed_quotations=0):
         },
         "literal_passages_checked": literal_passages,
         "proposed_quotations_checked": proposed_quotations,
+        "applied_quotations_checked": applied_quotations,
         "user_adjudicated_comparisons": len(reviewed),
         "reviewed_cases": [case["id"] for case in cases if case["id"] in reviewed],
         "unevaluated_cases": [
@@ -643,7 +746,7 @@ def coverage_report(cases, literal_passages, proposed_quotations=0):
         "limits": [
             "Exact substring validation does not establish manuscript truth or translation accuracy.",
             "Source reviewers and root reread translations and decisions; physical-source and quotation-scope questions remain explicit.",
-            "Rendering reads the recorded snapshot and writes research outputs only; it changes no source cache, scripture or published file.",
+            "Rendering reads the recorded snapshot, and for an applied proposal the later mirror commit that holds it, and writes research outputs only; it changes no source cache, scripture or published file.",
         ],
     }
 
@@ -655,11 +758,16 @@ def main(cases=None, output="review.html"):
     if len(ids) != len(set(ids)):
         raise ValueError("Duplicate readable case IDs")
     reviewed = reviewed_case_ids(cases)
-    if any(
-        record.get("application_status", "unapplied") != "unapplied"
-        for record in read("adjudications.json")
-    ):
-        raise ValueError("A proposal is recorded as applied; update the footer")
+    statuses = [record["application_status"] for record in read("adjudications.json")]
+    if unknown := set(statuses) - set(PROPOSED_LABELS):
+        raise ValueError(f"Unknown application status: {unknown}")
+    applied = statuses.count("applied")
+    if applied == 0:
+        applied_note = "no approved proposal is recorded as applied."
+    elif applied == 1:
+        applied_note = "one approved proposal is recorded as applied, with the Wikisource revision that applied it."
+    else:
+        applied_note = f"{applied} approved proposals are recorded as applied, each with the Wikisource revision that applied it."
     sections = []
     for key, title, lead in (
         (
@@ -711,12 +819,19 @@ def main(cases=None, output="review.html"):
         + ".reviewed{margin-top:42px;scroll-margin-top:85px}.reviewed>summary{cursor:pointer}.reviewed>summary h2{display:inline;margin:0}"
         + '</style></head><body><main><h1>MAM Introduction and doc-note discrepancies</h1><p class="intro">The comparison and question precede the quoted evidence. Explanatory Hebrew prose is translated; Scripture is retained in Hebrew.</p><div class="toolbar"><label for="size">Hebrew size <output id="value">30</output> px</label><input id="size" type="range" min="20" max="48" value="30" aria-label="Hebrew size"><nav><a href="#discrepancies">Discrepancies</a><a href="#questions">Questions</a><a href="#tracked">Tracked issues</a><a href="#reviewed">Reviewed</a></nav></div>'
         + "".join(sections)
-        + '<footer><p>Ben’s approvals identify proposals for Avi’s review. The Reviewed cases that say “Tracked in” an issue have been submitted to him, and no approved proposal is recorded as applied.</p><a href="METHODS.md">Methods, evidence and coverage</a></footer></main><script>const slider=document.getElementById("size");slider.addEventListener("input",()=>{document.documentElement.style.setProperty("--he-size",slider.value+"px");document.getElementById("value").textContent=slider.value});</script></body></html>'
+        + "<footer><p>Ben’s approvals identify proposals for Avi’s review. The Reviewed cases that say “Tracked in” an issue have been submitted to him, and "
+        + applied_note
+        + '</p><a href="METHODS.md">Methods, evidence and coverage</a></footer></main><script>const slider=document.getElementById("size");slider.addEventListener("input",()=>{document.documentElement.style.setProperty("--he-size",slider.value+"px");document.getElementById("value").textContent=slider.value});</script></body></html>'
     )
     if output == "review.html":
         audit.dump(
             "human-review-coverage.json",
-            coverage_report(cases, sources.checked, sources.proposals_checked),
+            coverage_report(
+                cases,
+                sources.checked,
+                sources.proposals_checked,
+                sources.applications_checked,
+            ),
         )
     (audit.OUT / output).write_text(output_html, encoding="utf-8", newline="\n")
     print(
@@ -725,6 +840,7 @@ def main(cases=None, output="review.html"):
                 "readable_cases": len(cases),
                 "literal_passages_checked": sources.checked,
                 "proposed_quotations_checked": sources.proposals_checked,
+                "applied_quotations_checked": sources.applications_checked,
                 "output": output,
             }
         )

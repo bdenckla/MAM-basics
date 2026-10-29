@@ -8,7 +8,7 @@
       "transcript_evidence": "Sentinel_a32e0898f09c8191bc489d5b907129fd",
       "source_thread_id": "01a0fe66-3397-70d3-b313-4f1dfaa190c4"
     },
-    "status": "doc-note-error-adjudicated-by-Ben; proposed-source-correction-not-applied; submitted-in-issue-313",
+    "status": "doc-note-error-adjudicated-by-Ben; submitted-in-issue-313; applied-in-revision-3092656",
     "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
     "chapter_revision": {
       "resolved_title": "ירמיהו לא/טעמים",
@@ -27,6 +27,7 @@
       "quote": "הִנֵּ֛ה יָמִ֥ים [] נְאֻם־יְהֹוָֽה"
     },
     "proposed_quotation": "הִנֵּ֛ה יָמִ֥ים [֯] נְאֻם־יְהוָ֑ה",
+    "proposed_label": "Ben’s proposed corrected quotation — applied without the optional circle",
     "changes": [
       {
         "before": "נְאֻם־יְהֹוָֽה",
@@ -115,7 +116,42 @@
         "quotation": "Sure, go ahead and file those 12 issues"
       }
     },
-    "application_status": "unapplied"
+    "application_status": "applied",
+    "application": {
+      "revision_id": 3092656,
+      "parent_revision_id": 3088451,
+      "diff_url": "https://he.wikisource.org/w/index.php?diff=3092656&oldid=3088451",
+      "report": {
+        "by": "skadish1",
+        "url": "https://github.com/bdenckla/MAM-basics/issues/313#issuecomment-6263734094",
+        "created_at": "2026-10-19T09:11:03Z"
+      },
+      "applied_changes": [
+        0,
+        1
+      ],
+      "quote": "הִנֵּ֛ה יָמִ֥ים [] נְאֻם־יְהוָ֑ה",
+      "mirror_commit": "fd0d1b1d8a363a1d4997c42e0c7d35b326ec6415",
+      "mirror_path": "MAM-parsed/plus/C2-Jeremiah.json",
+      "mirror_revision_id": 3092656,
+      "label": "Applied quotation, as MAM-basics mirrors it",
+      "explanation": "skadish1 reported this edit done in #313 on 2026-10-19, linking this revision. It makes the two required edits and leaves the optional circle out. MAM-basics mirrors the revision from fd0d1b1d.",
+      "issue_closed": {
+        "by": "a Claude Code session, at Ben’s request",
+        "at": "2026-10-29T11:54:05Z"
+      },
+      "recorded": {
+        "date": "2026-10-29",
+        "authority": {
+          "person": "Ben",
+          "date": "2026-10-29",
+          "source_agent": "Claude Code",
+          "source_thread_id": "afcee3ed-c349-4243-93c2-1eb41a3fec4c",
+          "question": "Record proposals 311–315 as applied in the Introduction audit?",
+          "quotation": "Yes, record them"
+        }
+      }
+    }
   },
   {
     "id": "NUM-9-7-BEN-20261014",
@@ -126,7 +162,7 @@
       "transcript_evidence": "Sentinel_ed2fbcd60d008191a26921b22a3c08d9",
       "source_thread_id": "01a0fe66-3397-70d3-b313-4f1dfaa190c4"
     },
-    "status": "doc-note-wording-correction-confirmed-by-Ben; proposed-source-correction-not-applied; submitted-in-issue-314",
+    "status": "doc-note-wording-correction-confirmed-by-Ben; submitted-in-issue-314; applied-in-revision-3092657",
     "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
     "chapter_revision": {
       "resolved_title": "במדבר ט/טעמים",
@@ -148,7 +184,7 @@
       }
     ],
     "current_label": "Current cached doc-note wording",
-    "proposed_label": "Ben’s confirmed corrected wording — not applied",
+    "proposed_label": "Ben’s confirmed corrected wording — applied",
     "current_explanation": "(Spelling with vav included.)",
     "proposed_explanation": "(Spelling with yod included.)",
     "research_note": "numbers-9-7-adjudication.md",
@@ -169,7 +205,41 @@
         "quotation": "Sure, go ahead and file those 12 issues"
       }
     },
-    "application_status": "unapplied"
+    "application_status": "applied",
+    "application": {
+      "revision_id": 3092657,
+      "parent_revision_id": 2987712,
+      "diff_url": "https://he.wikisource.org/w/index.php?diff=3092657&oldid=2987712",
+      "report": {
+        "by": "skadish1",
+        "url": "https://github.com/bdenckla/MAM-basics/issues/314#issuecomment-6263786158",
+        "created_at": "2026-10-19T09:13:52Z"
+      },
+      "applied_changes": [
+        0
+      ],
+      "quote": "(כתיב מלא יו\"ד)",
+      "mirror_commit": "fd0d1b1d8a363a1d4997c42e0c7d35b326ec6415",
+      "mirror_path": "MAM-parsed/plus/A4-Numbers.json",
+      "mirror_revision_id": 3092657,
+      "label": "Applied wording, as MAM-basics mirrors it",
+      "explanation": "skadish1 reported this edit done in #314 on 2026-10-19, linking this revision, and closed #314. MAM-basics mirrors the revision from fd0d1b1d.",
+      "issue_closed": {
+        "by": "skadish1",
+        "at": "2026-10-19T09:13:52Z"
+      },
+      "recorded": {
+        "date": "2026-10-29",
+        "authority": {
+          "person": "Ben",
+          "date": "2026-10-29",
+          "source_agent": "Claude Code",
+          "source_thread_id": "afcee3ed-c349-4243-93c2-1eb41a3fec4c",
+          "question": "Record proposals 311–315 as applied in the Introduction audit?",
+          "quotation": "Yes, record them"
+        }
+      }
+    }
   },
   {
     "id": "DEUT-32-34-BEN-20261014",
@@ -180,7 +250,7 @@
       "transcript_evidence": "Sentinel_04aee01833c88191be854758be2400a8",
       "source_thread_id": "01a0fe66-3397-70d3-b313-4f1dfaa190c4"
     },
-    "status": "doc-note-wording-correction-confirmed-by-Ben; proposed-source-correction-not-applied; submitted-in-issue-315",
+    "status": "doc-note-wording-correction-confirmed-by-Ben; submitted-in-issue-315; applied-in-revision-3092658",
     "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
     "chapter_revision": {
       "resolved_title": "דברים לב/טעמים",
@@ -202,7 +272,7 @@
       }
     ],
     "current_label": "Current cached doc-note wording",
-    "proposed_label": "Ben’s confirmed corrected wording — not applied",
+    "proposed_label": "Ben’s confirmed corrected wording — applied",
     "current_explanation": "(Spelling with yod included.)",
     "proposed_explanation": "(Spelling with vav included.)",
     "research_note": "deuteronomy-32-34-adjudication.md",
@@ -224,7 +294,41 @@
         "quotation": "Sure, go ahead and file those 12 issues"
       }
     },
-    "application_status": "unapplied"
+    "application_status": "applied",
+    "application": {
+      "revision_id": 3092658,
+      "parent_revision_id": 3079372,
+      "diff_url": "https://he.wikisource.org/w/index.php?diff=3092658&oldid=3079372",
+      "report": {
+        "by": "skadish1",
+        "url": "https://github.com/bdenckla/MAM-basics/issues/315#issuecomment-6263826127",
+        "created_at": "2026-10-19T09:16:07Z"
+      },
+      "applied_changes": [
+        0
+      ],
+      "quote": "(כתיב מלא וי\"ו)",
+      "mirror_commit": "fd0d1b1d8a363a1d4997c42e0c7d35b326ec6415",
+      "mirror_path": "MAM-parsed/plus/A5-Deuter.json",
+      "mirror_revision_id": 3092658,
+      "label": "Applied wording, as MAM-basics mirrors it",
+      "explanation": "skadish1 reported this edit done in #315 on 2026-10-19, linking this revision, and closed #315. MAM-basics mirrors the revision from fd0d1b1d.",
+      "issue_closed": {
+        "by": "skadish1",
+        "at": "2026-10-19T09:16:07Z"
+      },
+      "recorded": {
+        "date": "2026-10-29",
+        "authority": {
+          "person": "Ben",
+          "date": "2026-10-29",
+          "source_agent": "Claude Code",
+          "source_thread_id": "afcee3ed-c349-4243-93c2-1eb41a3fec4c",
+          "question": "Record proposals 311–315 as applied in the Introduction audit?",
+          "quotation": "Yes, record them"
+        }
+      }
+    }
   },
   {
     "id": "DEUT-6-21-BEN-20261014",
@@ -870,7 +974,7 @@
       "source_thread_id": "2f820cf6-3d3f-4301-bdb1-d71685173e13",
       "quotation": "I'm satisfied to treat the hebrew date (ז' טבת תשע\"ד) as definitive, since it is not the one in parens. And, the \"wrongness\" of the one in parens can be explained by an off-by-one typo in the year."
     },
-    "status": "approved-by-Ben-for-proposal-to-Avi; submitted-in-issue-311; not-applied",
+    "status": "approved-by-Ben-for-proposal-to-Avi; submitted-in-issue-311; applied-in-revision-3092644",
     "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
     "introduction_revision": 3088449,
     "current": {
@@ -886,7 +990,7 @@
       }
     ],
     "current_label": "Current Introduction date sentence",
-    "proposed_label": "Ben’s approved Gregorian year — not applied",
+    "proposed_label": "Ben’s approved Gregorian year — applied",
     "current_explanation": "7 Tevet 5774 paired with 10 December 2014, which was 18 Kislev 5775.",
     "proposed_explanation": "Only the year changes, from 14 to 13; the Hebrew date stays.",
     "research_note": "appendix-date-pair-history.md",
@@ -899,7 +1003,41 @@
       "filed": "2026-10-17",
       "read_back": "identical, 2580 code points"
     },
-    "application_status": "unapplied",
+    "application_status": "applied",
+    "application": {
+      "revision_id": 3092644,
+      "parent_revision_id": 3089143,
+      "diff_url": "https://he.wikisource.org/w/index.php?diff=3092644&oldid=3089143",
+      "report": {
+        "by": "skadish1",
+        "url": "https://github.com/bdenckla/MAM-basics/issues/311#issuecomment-6263535883",
+        "created_at": "2026-10-19T08:59:22Z"
+      },
+      "applied_changes": [
+        0
+      ],
+      "quote": "עוד שלב אחרון של עדכונים ותיקונים (בעיקר בהערות הנוסח) הסתיים בז' טבת תשע\"ד (10.12.13).",
+      "mirror_commit": "0cb9332aa20dce9b34460dbaffb8eed80c444655",
+      "mirror_path": "in/mam-ws-intro/appendices.mediawiki",
+      "mirror_revision_id": 3092644,
+      "label": "Applied sentence, as MAM-basics mirrors it",
+      "explanation": "skadish1 reported this edit done in #311 on 2026-10-19, linking this revision. MAM-basics’ Introduction mirror holds the revision from 0cb9332a.",
+      "issue_closed": {
+        "by": "a Claude Code session, at Ben’s request",
+        "at": "2026-10-29T11:54:12Z"
+      },
+      "recorded": {
+        "date": "2026-10-29",
+        "authority": {
+          "person": "Ben",
+          "date": "2026-10-29",
+          "source_agent": "Claude Code",
+          "source_thread_id": "afcee3ed-c349-4243-93c2-1eb41a3fec4c",
+          "question": "Record proposals 311–315 as applied in the Introduction audit?",
+          "quotation": "Yes, record them"
+        }
+      }
+    },
     "scope": "Ben authorized filing the proposal for Avi as an issue. No Wikisource edit is authorized or made here."
   },
   {
@@ -914,7 +1052,7 @@
       "source_thread_id": "2f820cf6-3d3f-4301-bdb1-d71685173e13",
       "quotation": "Regarding \"Job 9:10 — chapter and verse reversed in an example\", yeah this is pretty obviously a typo of the form you identify. Please create a github issue for it."
     },
-    "status": "approved-by-Ben-for-proposal-to-Avi; submitted-in-issue-312; not-applied",
+    "status": "approved-by-Ben-for-proposal-to-Avi; submitted-in-issue-312; applied-in-revision-3092653",
     "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
     "introduction_revision": 3087907,
     "current": {
@@ -930,7 +1068,7 @@
       }
     ],
     "current_label": "Current Introduction reference",
-    "proposed_label": "Ben’s approved reference — not applied",
+    "proposed_label": "Ben’s approved reference — applied",
     "current_explanation": "Names Job 10:9.",
     "proposed_explanation": "Names Job 9:10; only the order of the two numerals changes.",
     "research_note": "job-9-10-adjudication.md",
@@ -947,11 +1085,50 @@
           "posted": "2026-10-17",
           "read_back": "identical, 557 code points",
           "authority": "Ben, 2026-10-17: “Sure, add these to the issue”",
-          "summary": "The footnote's mgketer link uses book 30, which opens the Song of Songs, chapter 1; Job 9 is book 29. The footnote also misspells Westminster once, without samekh."
+          "summary": "The footnote's mgketer link uses book 30, which opens the Song of Songs, chapter 1; Job 9 is book 29. The footnote also misspells Westminster once, without samekh.",
+          "later_state": {
+            "checked": "2026-10-29",
+            "comment": "no longer exists: GitHub answers HTTP 404 for it",
+            "issue_body": "last edited 2026-10-18T14:28:29Z; it carries both of the comment's points"
+          }
         }
       ]
     },
-    "application_status": "unapplied",
+    "application_status": "applied",
+    "application": {
+      "revision_id": 3092653,
+      "parent_revision_id": 3087907,
+      "diff_url": "https://he.wikisource.org/w/index.php?diff=3092653&oldid=3087907",
+      "report": {
+        "by": "skadish1",
+        "url": "https://github.com/bdenckla/MAM-basics/issues/312#issuecomment-6263679431",
+        "created_at": "2026-10-19T09:08:01Z"
+      },
+      "applied_changes": [
+        0
+      ],
+      "quote": "לדוגמה: ב[[איוב ט/טעמים#ט י|איוב ט,י]] התיבה",
+      "mirror_commit": "0cb9332aa20dce9b34460dbaffb8eed80c444655",
+      "mirror_path": "in/mam-ws-intro/ch1.mediawiki",
+      "mirror_revision_id": 3095761,
+      "label": "Applied reference, as MAM-basics mirrors it",
+      "explanation": "skadish1 reported this edit done in #312 on 2026-10-19, linking this revision. MAM-basics’ Introduction mirror holds the later revision 3095761 from 0cb9332a; it has the reference, now a link to MAM’s Job 9:10, and the issue’s two further footnote fixes.",
+      "issue_closed": {
+        "by": "a Claude Code session, at Ben’s request",
+        "at": "2026-10-29T11:54:09Z"
+      },
+      "recorded": {
+        "date": "2026-10-29",
+        "authority": {
+          "person": "Ben",
+          "date": "2026-10-29",
+          "source_agent": "Claude Code",
+          "source_thread_id": "afcee3ed-c349-4243-93c2-1eb41a3fec4c",
+          "question": "Record proposals 311–315 as applied in the Introduction audit?",
+          "quotation": "Yes, record them"
+        }
+      }
+    },
     "scope": "Ben authorized filing the proposal for Avi as an issue. No Wikisource edit is authorized or made here."
   }
 ]

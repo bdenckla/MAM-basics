@@ -1,6 +1,6 @@
 # The appendix’s completion date — history and Ben’s decision
 
-State: live; Ben decided 2026-10-17; proposal submitted in #311, not applied.
+State: live; Ben decided 2026-10-17; proposal submitted in #311; applied on Wikisource in revision 3092644; #311 closed 2026-10-29.
 
 The appendix sentence that dates the last round of corrections in the project's
 second stage pairs 7 Tevet 5774 with “(10.12.14)”. 7 Tevet 5774 was 10 December 2013;
@@ -53,7 +53,17 @@ Ben, 2026-10-17 at 15:27 UTC, in Claude Code session `2f820cf6-3d3f-4301-bdb1-d7
 He asked for the issue “even without evidence one way or another”. The
 proposal changes only “(10.12.14)” to “(10.12.13)”.
 [adjudications.json](adjudications.json) records it as `APPENDIX-DATE-BEN-20261017`, and
-[#311](https://github.com/bdenckla/MAM-basics/issues/311) proposes it to Avi. Nothing here edits the Introduction.
+[#311](https://github.com/bdenckla/MAM-basics/issues/311) proposed it to Avi. Nothing here edits the Introduction.
+
+## Applied on Wikisource
+
+On 2026-10-19 skadish1 reported the change done in #311, linking
+[revision 3092644](https://he.wikisource.org/w/index.php?diff=3092644&oldid=3089143),
+whose parent is revision 3089143. The sentence now ends “(10.12.13)”, and its
+Hebrew date is unchanged. MAM-basics' Introduction mirror holds that revision from
+`0cb9332a`, of 2026-10-28. A Claude session checked this against the mirror and
+closed #311 on 2026-10-29 at Ben's request; [adjudications.json](adjudications.json)
+records the application.
 
 ## Scope
 

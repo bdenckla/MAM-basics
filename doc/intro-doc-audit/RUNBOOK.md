@@ -40,8 +40,9 @@ or Wikisource. Any later application or submission needs its own recorded scope.
   passage at the nearest heading at or above its snapshot line, a doc-note or
   verse at its verse anchor on MAM's chapter page. Ben chose live links on
   2026-10-17, accepting that a link can show text newer than the quotation. A
-  heading missing from the current mirror stops the rebuild; cases carry no
-  hand-made section links.
+  heading missing from the current mirror stops the rebuild until
+  `RENAMED_HEADINGS` in `py/intro_doc_audit/human_review.py` maps it to its
+  current text; cases carry no hand-made section links.
 - `history-completion.json`, `revision-history-inventory.json` and
   `revision-history-results.json` record history coverage. The final original
   pass has 94/94 dispositions, including explicitly inconclusive cases; this
@@ -73,7 +74,11 @@ are automatically authoritative. Bare "in the manuscript" does not name Aleppo.
 4. A Ben decision is recorded with its date, authority and exact scope in
    `adjudications.json`, linked by the case's `adjudication` ID. Its `current`,
    `changes` and `proposed_quotation` must agree exactly. Keep the proposal
-   unapplied until actual application is separately evidenced. Update its
+   unapplied until actual application is separately evidenced; then set its
+   `application_status` to `applied` and add an `application` record of the
+   applying Wikisource revision and its report, the edits applied, the applied
+   text, and the mirror commit, path and revision that hold it. The review build
+   checks that text against that commit. Update its
    companion note and any affected coverage/follow-up record without rewriting
    unrelated decisions. Follow the receipt rules for finished notes.
 5. Rebuild the review, read that case visually and inspect the focused diff.
