@@ -89,16 +89,15 @@ def is_hb_fragile(string):
 
 
 def hb_mark_order(string):
-    """Return the string with its marks in the order HarfBuzz gives a font.
+    """Return the string with its Hebrew marks in the order HarfBuzz gives a font.
 
     This models the reorder round of HarfBuzz 15.0.0's normalization,
-    src/hb-ot-shape-normalize.cc lines 372-402: each run of marks with a
-    nonzero class is sorted stably by _hb_class, unless it is longer than 32
-    marks, and then the Hebrew shaper's _hb_reorder_marks_hebrew applies to it.
-    Other shapers' reorderings are not modeled.
+    src/hb-ot-shape-normalize.cc lines 372-402, for Hebrew marks only: each run
+    of them is sorted stably by _hb_class, unless it is longer than 32 marks,
+    and then the Hebrew shaper's _hb_reorder_marks_hebrew applies to it.
     https://github.com/harfbuzz/harfbuzz/blob/15.0.0/src/hb-ot-shape-normalize.cc#L372-L402
     """
-    return _hb_mark_run_pattern().sub(_hb_reorder_run_match, string)
+    return _HB_MARK_RUN.sub(_hb_reorder_run_match, string)
 
 
 def _is_fragile_change(original, changed, class_of):
@@ -177,22 +176,21 @@ _ZONES = {
 
 
 def _hb_class(char):
-    """Return the class by which HarfBuzz 15.0.0 sorts char among its marks."""
-    if char in _HB_CLASSES_BY_MARK:
-        return _HB_CLASSES_BY_MARK[char]
+    """Return the class by which HarfBuzz 15.0.0 sorts a Hebrew mark."""
     unicode_class = _UNICODE_18_CLASSES.get(char) or unicodedata.combining(char)
     return _HB_CLASSES.get(unicode_class, unicode_class)
 
 
 # HarfBuzz sorts marks by its own permutation of Unicode's combining classes,
 # the table _hb_modified_combining_class, in HarfBuzz 15.0.0's
-# src/hb-unicode.cc lines 499-609, built from src/hb-unicode.hh lines 316-401.
-# Its comment there, lines 320-332, derives the order of the Hebrew points from
-# the SBL Hebrew Font User Manual and Mozilla bug 662055. Every class not listed
-# here maps to itself, among them the accents' classes 220, 222, 228 and 230
-# (hb-unicode.cc lines 573-608), so the sort puts every vowel and meteg before
-# every accent, and only _hb_reorder_marks_hebrew moves an accent back.
-# https://github.com/harfbuzz/harfbuzz/blob/15.0.0/src/hb-unicode.hh#L316-L401
+# src/hb-unicode.cc lines 499-609. Its Hebrew part, from src/hb-unicode.hh
+# lines 316-349, is copied here. The comment there, lines 320-332, derives the
+# order of the Hebrew points from the SBL Hebrew Font User Manual and Mozilla
+# bug 662055. HarfBuzz leaves the accents' classes 220, 222, 228 and 230 as
+# Unicode has them (hb-unicode.cc lines 573-608), so the sort puts every vowel
+# and meteg before every accent, and only _hb_reorder_marks_hebrew moves an
+# accent back.
+# https://github.com/harfbuzz/harfbuzz/blob/15.0.0/src/hb-unicode.hh#L316-L349
 _HB_CLASSES = {
     24: 10,  # shin dot
     25: 11,  # sin dot
@@ -211,24 +209,6 @@ _HB_CLASSES = {
     20: 24,  # qubuts
     22: 25,  # meteg
     26: 26,  # varika
-    27: 28,  # Arabic fathatan
-    28: 29,  # Arabic dammatan
-    29: 30,  # Arabic kasratan
-    30: 31,  # Arabic fatha
-    31: 32,  # Arabic damma
-    32: 33,  # Arabic kasra
-    33: 27,  # Arabic shadda
-    84: 4,  # Telugu length mark
-    91: 5,  # Telugu ai length mark
-    103: 3,  # Thai sara u and sara uu
-    130: 132,  # Tibetan sign i
-    132: 131,  # Tibetan sign u
-}
-# Three marks get a class by code point, hb-unicode.hh lines 105-116.
-_HB_CLASSES_BY_MARK = {
-    "\N{TAI THAM SIGN SAKOT}": 254,
-    "\N{TIBETAN SYMBOL PADMA GDAN}": 254,
-    "\N{TIBETAN MARK TSA -PHRU}": 127,
 }
 # HarfBuzz 15.0.0 has Unicode 18.0.0's character data (src/hb-ucd-table.hh
 # line 7), which gives sheva na class 10 and dagesh xazaq class 21, so HarfBuzz
@@ -245,21 +225,13 @@ _HB_SHEVA_OR_XIRIQ = {_HB_CLASSES[10], _HB_CLASSES[14]}
 _HB_METEG_OR_BELOW = {_HB_CLASSES[22], 220}
 
 
-@functools.cache
-def _hb_mark_run_pattern():
-    """Compile a pattern matching each run of two or more marks."""
-    marks = set(_UNICODE_18_CLASSES)
-    marks.update(c for c in map(chr, range(0x110000)) if unicodedata.combining(c))
-    ranges = []
-    for code in sorted(map(ord, marks)):
-        if ranges and ranges[-1][1] == code - 1:
-            ranges[-1][1] = code
-        else:
-            ranges.append([code, code])
-    char_class = "".join(
-        f"{re.escape(chr(lo))}-{re.escape(chr(hi))}" for lo, hi in ranges
-    )
-    return re.compile(f"[{char_class}]{{2,}}")
+# The Hebrew marks: the accents and points from atnax to meteg, then rafeh, the
+# shin and sin dots, the upper and lower dots, qamats qatan, sheva na, dagesh
+# xazaq and varika. hb_mark_order reorders each run of two or more of them.
+_HEBREW_MARKS = {chr(code) for code in range(ord(ha.ATN), ord(hpo.MTGOSLQ) + 1)}
+_HEBREW_MARKS |= {hpo.RAFE, hpo.SHIND, hpo.SIND, hpu.UPDOT, hpu.LODOT, hpo.QAMATS_Q}
+_HEBREW_MARKS |= {hpo.SHEVA_NA, hpo.DAGESH_XAZAQ, hpo.VARIKA}
+_HB_MARK_RUN = re.compile(f"[{''.join(sorted(_HEBREW_MARKS))}]{{2,}}")
 
 
 def _hb_reorder_run_match(match):
