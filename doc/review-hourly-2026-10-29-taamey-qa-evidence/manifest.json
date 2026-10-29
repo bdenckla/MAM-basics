@@ -1,0 +1,91 @@
+{
+  "archive_bytes": 60766,
+  "archive_sha256": "1ea8519e397711d4d0c97ca1641a58f2a57d1afde7fa3da999ec59462bc4b432",
+  "members": {
+    "03-changed-python-black.log": {
+      "bytes": 57,
+      "sha256": "09d551fe586041ca37fe3d2392f97626d02974eae6f4f5bd5b5ab8f61cd25614"
+    },
+    "03-changed-python-black.spec.json": {
+      "bytes": 1255,
+      "sha256": "e54c8550754de10f75b3e67e8f41265851a146c9c05d9f3303eae2266229e51b"
+    },
+    "02-mega-taamey-only.spec.json": {
+      "bytes": 719,
+      "sha256": "5d71ed258321efcbdd3770e357e32b574322e4461c66a947cf8afdb1f3580c24"
+    },
+    "02-mega-taamey-only.log": {
+      "bytes": 25411,
+      "sha256": "6b4ce465c52c652e73c99f75269952f5349e9bb83b797eafd2ae515ae344cc47"
+    },
+    "test_review_contracts.py": {
+      "bytes": 6991,
+      "sha256": "a60c72144e950aa4a649052f934c4db11f96b7be955f587c851e3320e62104e5"
+    },
+    "01-focused-contracts.result.json": {
+      "bytes": 1186,
+      "sha256": "662c6e120a902e7c35af23db55783283c2017b46ac80f935cec92d29a6bf4c4e"
+    },
+    "products-before.json": {
+      "bytes": 13175,
+      "sha256": "60a27b627af4df2248249b068186b984a9b2f98966e64cdf0d2411f7520f35f0"
+    },
+    "03-changed-python-black.result.json": {
+      "bytes": 1431,
+      "sha256": "c83b011a6495ae6904a92e3be0f1af4867b3af67b3bdb277af15d56d53ee495c"
+    },
+    "01-focused-contracts.spec.json": {
+      "bytes": 1010,
+      "sha256": "779b5c66a86b26ce31c1cde396012c5f74de21e6a5fa1c03c3d26232647f4e35"
+    },
+    "pip-check.log": {
+      "bytes": 30,
+      "sha256": "9261363b733079a641c2e4cc9bc46ffa1d8336945a87f807b6cf68847dbc9b09"
+    },
+    "02-mega-taamey-only.result.json": {
+      "bytes": 896,
+      "sha256": "6d8160b5cf4a121eedfbe0892cc5b70901731b9e31e27b4ae291909f0d55ac3d"
+    },
+    "01-focused-contracts.log": {
+      "bytes": 99,
+      "sha256": "b45d3136331583223d109353f004e1eebb27a8941923f51cef2bf0aa11ce04d6"
+    },
+    "setup_dependencies.py": {
+      "bytes": 1608,
+      "sha256": "c73f9f88b0f5ed99f067f80b4e875cfe065580e6dfb3bb44c0e1b74a3bd8581b"
+    },
+    "environment.json": {
+      "bytes": 1048,
+      "sha256": "500ff95b17b02ffaa2e43cd1c82c07d60160a3be562d591802143b74967b92f2"
+    },
+    "dependencies.log": {
+      "bytes": 9672,
+      "sha256": "250831aa68fb1e6d81f8b13313f191edb4ac2cc33a34105be55c58cd3debf821"
+    },
+    "output-comparison.json": {
+      "bytes": 6644,
+      "sha256": "4160a5fd4f91a51c497c5f81c67e4f6d4db64d6b3ee2f86e3b1a4706cbf1829d"
+    },
+    "paths.nul": {
+      "bytes": 4504,
+      "sha256": "aa97615cc4036ec614e7c247916596c5b9ab50370d99f8748484f3ff04e32680"
+    },
+    "commits.txt": {
+      "bytes": 24904,
+      "sha256": "4324abd098e0fe216446e12974b4486a25715025f5a5ec1836a49c3a012fff24"
+    },
+    "endpoint-code-doc.patch": {
+      "bytes": 115088,
+      "sha256": "cda4fcd34c41a31b3c2be9abb130abf0b7262e4c83e6ae17439160b3fb5509c8"
+    },
+    "stage-runner.py": {
+      "bytes": 1525,
+      "sha256": "7a76b7520fc6e107e4ec01ab502efd8f74ff116fd0f6c37e8efbd6bc43a90768"
+    },
+    "nightly-handoff.md": {
+      "bytes": 2373,
+      "sha256": "46982a2f78947ba20f68de26483eb00a2577ea61bab4c9b737be473c5c481cc6"
+    }
+  },
+  "privacy": "Owning repository only. Paired old hbofonts paths/code, migration audit and the initial helper failure are retained only in Private. Every ZIP member, byte/hash and CRC verified; no environment or font binary copied into receipts."
+}

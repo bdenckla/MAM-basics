@@ -1,0 +1,200 @@
+{
+  "date": "2026-10-29",
+  "state": "Completed bounded review; no consequential defect or repair confirmed.",
+  "receipt_parent": "9295522c3eff6e3fbe68764df460ccddc438f7ff",
+  "receipt_branch": "review-hourly-20261029-taamey-qa-receipts",
+  "window": {
+    "exclusive_base": "6ac28417a243447c24eefb168202585a9949a4ea",
+    "frozen_main": "bcfe749c68c144218f33821c9f95775a25ed032d",
+    "commits": 9,
+    "paths": 92
+  },
+  "reviewed_through": "bcfe749c68c144218f33821c9f95775a25ed032d",
+  "focused_tested_through": "bcfe749c68c144218f33821c9f95775a25ed032d",
+  "broad_tested_through": "6ac28417a243447c24eefb168202585a9949a4ea",
+  "repair": null,
+  "evidence": "review-hourly-2026-10-29-taamey-qa-evidence/manifest.json",
+  "remote_before_commit": {
+    "refs/heads/main": "bcfe749c68c144218f33821c9f95775a25ed032d"
+  },
+  "pending_window": null,
+  "execution_conformance": "All runtime stages and dependency operations awaited sequentially after parent reported no active writer/jobs. No font build, baseline writer invocation/acceptance, canonical corpus refresh/adoption, frozen generation, full mega/suite, main/shared push, deployment, workflow dispatch or live configuration sync. Owner editorial/license choices preserved; claimed approvals are attributed.",
+  "cleanup": {
+    "source_worktree": "Removed normally after evidence retention; no force, branch deletion or integration.",
+    "detail": "review-hourly-2026-10-29-taamey-qa-evidence/cleanup.json",
+    "receipt_worktree": "Normal removal after isolated push/readback, clean-state/activity/lock/reflog audit. Local and remote receipt branches retained; final confirmation reported to parent."
+  },
+  "classification": "Consequential migrated QA/corpus/check tooling, dependency environment, mega/report safety and refresh runbook reviewed against endpoint and original implementation.",
+  "setup": {
+    "source_commit": "bcfe749c68c144218f33821c9f95775a25ed032d",
+    "started_utc": "2026-10-29T14:26:38.326416+00:00",
+    "commands": [
+      {
+        "command": [
+          "/workspace/MAM-basics/.venv/bin/python",
+          "-m",
+          "pip",
+          "install",
+          "-r",
+          "requirements.txt",
+          "-c",
+          "constraints.txt"
+        ],
+        "exit_code": 0,
+        "seconds": 2.509
+      },
+      {
+        "command": [
+          "/workspace/MAM-basics/.venv/bin/python",
+          "-m",
+          "pip",
+          "check"
+        ],
+        "exit_code": 0,
+        "seconds": 0.227
+      }
+    ],
+    "packages": {
+      "uharfbuzz": "0.57.0",
+      "vharfbuzz": "0.3.1",
+      "collidoscope": "0.6.5",
+      "fonttools": "4.64.0",
+      "attrs": "26.1.0",
+      "babelfont": "3.1.3",
+      "kurbopy": "0.13.1",
+      "openstep_plist": "0.5.2",
+      "orjson": "3.12.0",
+      "skia-pathops": "0.9.2",
+      "tqdm": "4.70.0",
+      "ufoLib2": "0.18.1",
+      "ufomerge": "1.9.7"
+    },
+    "HarfBuzz": "15.0.0",
+    "completed_utc": "2026-10-29T14:26:41.092852+00:00",
+    "state": "completed"
+  },
+  "stages": [
+    {
+      "name": "01-focused-contracts",
+      "repository": "/workspace/review-hourly-20261029-taamey-qa",
+      "source_commit": "bcfe749c68c144218f33821c9f95775a25ed032d",
+      "cwd": "/workspace/review-hourly-20261029-taamey-qa",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        "py/tests/test_mega_coverage.py",
+        "py/tests/test_product_scopes.py",
+        "py/tests/test_entry_point_subcommands.py",
+        "py/tests/test_taamey_d_build_imports.py",
+        "/workspace/scratch/review-hourly-20261029-qa-basics/test_review_contracts.py",
+        "-q"
+      ],
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "inputs": {
+        "Basics": "bcfe749c68c144218f33821c9f95775a25ed032d",
+        "uharfbuzz": "0.57.0",
+        "HarfBuzz": "15.0.0",
+        "constraints": "Frozen tracked requirements/constraints installed; pip check passes.",
+        "scope": "Synthetic report/corpus fixture properties and changed failure boundaries only. No font builds, baseline writer or canonical corpus mutation."
+      },
+      "started_utc": "2026-10-29T14:30:48.335970+00:00",
+      "completed_utc": "2026-10-29T14:30:54.104144+00:00",
+      "seconds": 5.768,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "name": "02-mega-taamey-only",
+      "repository": "/workspace/review-hourly-20261029-taamey-qa",
+      "source_commit": "bcfe749c68c144218f33821c9f95775a25ed032d",
+      "cwd": "/workspace/review-hourly-20261029-taamey-qa",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_0_mega.py",
+        "--resume-from",
+        "taamey-d-doc"
+      ],
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "inputs": {
+        "Basics": "bcfe749c68c144218f33821c9f95775a25ed032d",
+        "uharfbuzz": "0.57.0",
+        "HarfBuzz": "15.0.0",
+        "scope": "Only last3of64steps: doc, committed-font QA and nonwriting corpus --check. Earlier61steps skipped. No font generation/baseline operation or canonical corpus refresh."
+      },
+      "started_utc": "2026-10-29T14:31:22.538475+00:00",
+      "completed_utc": "2026-10-29T14:31:43.537198+00:00",
+      "seconds": 20.999,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "name": "03-changed-python-black",
+      "repository": "/workspace/review-hourly-20261029-taamey-qa",
+      "source_commit": "bcfe749c68c144218f33821c9f95775a25ed032d",
+      "cwd": "/workspace/review-hourly-20261029-taamey-qa",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "-m",
+        "black",
+        "--check",
+        "py/main_0_mega.py",
+        "py/main_taamey_d.py",
+        "py/product_scopes.py",
+        "py/taamey_d/qa/accept_baseline.py",
+        "py/taamey_d/qa/anchor_families.py",
+        "py/taamey_d/qa/check_coll.py",
+        "py/taamey_d/qa/check_helpers.py",
+        "py/taamey_d/qa/check_mrun.py",
+        "py/taamey_d/qa/check_plac.py",
+        "py/taamey_d/qa/check_regr.py",
+        "py/taamey_d/qa/corpus_refresh.py",
+        "py/taamey_d/qa/fails_filename.py",
+        "py/taamey_d/qa/html_report.py",
+        "py/taamey_d/qa/placement_glyph_classes.py",
+        "py/taamey_d/qa/run_checks.py",
+        "py/taamey_d/qa/shaping_checks.py",
+        "py/taamey_d/qa/shaping_diff.py",
+        "py/tests/test_mega_coverage.py"
+      ],
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "inputs": {
+        "Basics": "bcfe749c68c144218f33821c9f95775a25ed032d",
+        "changed_Python_files": 18,
+        "scope": "Read-only formatting check of all changed Python files; no project checks repeated."
+      },
+      "started_utc": "2026-10-29T14:33:43.084208+00:00",
+      "completed_utc": "2026-10-29T14:33:43.547838+00:00",
+      "seconds": 0.464,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    }
+  ],
+  "results": {
+    "tests": "55 passed in4.05s: maintained entrypoint/mega/product/import lints plus13reviewer contract cases. No skips or test failures.",
+    "qa": "Actual final3of64mega steps exit0 in20.999s: doc, QA and corpus --check. Exactly61prior steps intentionally skipped. QA reports61PASS /0FAIL /0SKIP; all49reports reproduce byte for byte.",
+    "preservation": "All80snapshotted product files remain exact, including65copied corpus/report files,12font files, the site pin and2doc pages. The65copied files preserve blob IDs/modes against frozen source input3b59254a;120425Bible-word cases and120437total cases preserved.",
+    "corpus": "Actual checker prints selected committed sourcebcfe749c, reads its own worktree, drops/adds/relabels0cases, and reports no refresh pending. Synthetic dirty-list check remains nonwriting and reports pending; writing mode rejects the dirty input before any writer. Mega pending banner is nonfatal by design.",
+    "failure_contracts": "Missing anchor table, anchor failure, SKIP and unknown status fail; empty corpus produces a SKIP pair. Report guard compares with index and rejects altered/untracked reports and empty tracked scope. Baseline acceptance was not invoked: only a pure in-memory merge helper was exercised.",
+    "formatting": "All18changed Python files pass Black; endpoint whitespace passes.",
+    "failure_history": "No project test/generator failed. Initial static copy helper selected old files outside the declared moved subset and raised KeyError; corrected selection passes. Original helper/failure description retained privately. Some navigation/display reads had wrong paths or a display syntax error, with no mutation."
+  },
+  "runtime_inputs": {
+    "Basics": "bcfe749c68c144218f33821c9f95775a25ed032d",
+    "font": "Committed Taamey-D/font-m-TaD/Taamey_D.ttf in the same frozen source.",
+    "original_comparison_input": "3b59254aae9dcc31a4a638f0bd4f88a30dcde858",
+    "sibling_runtime_products": []
+  },
+  "limits": [
+    "No font generation, Windows build, browser or old-engine0.56QA rerun; Linux0.57QA and exact committed reports verified.",
+    "accept-baseline remains an explicit writer, with inherited partial updates possible before a later missing report. This is acknowledged in the owner record; no acceptance or repair performed.",
+    "Only final3mega steps and selected tests ran; author full-suite/Windows/30writer-fixture claims are not this run."
+  ],
+  "nightly_handoff": "review-hourly-2026-10-29-taamey-qa-evidence/nightly-handoff.md",
+  "receipt_tree_note": "This receipt history tree is not the source checkout used by the focused runtime stages."
+}
