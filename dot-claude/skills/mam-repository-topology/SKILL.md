@@ -19,8 +19,9 @@ topology decision.
 4. Read `references/evacuated-repositories.md` for the current disposition, exact explicit
    stub-publication procedure, and historical traps for every evacuated repository.
 5. Read `references/repository-maintenance.md` for a maintenance sweep, Black coverage, manual
-   document retirement, or retirement of selected linked worktrees, completed Codex task folders
-   and disposable cache data.
+   document retirement, or retirement of a linked worktree nobody can account for, completed
+   Codex task folders and disposable cache data. A session retires a worktree it knows
+   directly, as the `linked-worktrees` skill's `references/integration.md` says.
 
 Apply every clause of `gitrepos_setup_rule`: clone only the folders in
 `all-repos.code-workspace`; do not consult exclusion lists, enumerate GitHub repositories, or

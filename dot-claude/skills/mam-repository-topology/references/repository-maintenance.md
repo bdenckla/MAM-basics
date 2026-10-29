@@ -86,6 +86,12 @@ For each standalone task clone, establish all of the following:
 
 ## Completed linked worktrees
 
+This procedure is at most for a worktree you know nothing about: one whose creator, users or
+plans nobody can account for, such as a worktree a maintenance sweep turns up. Even there it is
+probably overkill, by Ben's judgment of 2026-10-29. A session retires a worktree it knows, one it
+created or whose task it took over, directly with `git worktree remove` and `git branch -d`, as
+the `linked-worktrees` skill's `references/integration.md` says.
+
 Claude-only, Codex-only and both are selection scopes. An exact path selects one registered
 worktree, including a worktree with no recognized owner. Every selected target uses
 `repo_util.worktree_retirement`; `worktree_owners` supplies only discovery, runtime provenance

@@ -22,6 +22,14 @@ verified worktree branch. Never replace a failed fast-forward or a refused push 
 the home clone, and never rewrite history or discard work to make the push pass.
 
 Removing the worktree and deleting its branch wait until the task has ended on Windows; never
-force removal around a live process. Retirement of a completed worktree follows
+force removal around a live process.
+
+A session retires a worktree it knows directly: one it created for its own task, or whose task
+it took over. Once the branch is integrated and pushed and nothing the task still needs is left
+in ignored files such as `.novc`, leave the worktree and, from the home clone, run
+`git worktree remove <path>` and `git branch -d <branch>`, neither forced. If either refuses,
+find out why rather than forcing it. The inspection, preflight and simulation in
 `mam-repository-topology/references/repository-maintenance.md`, “Completed linked worktrees”,
-for every agent and owner.
+are at most for a worktree nobody can account for, and probably overkill even there: Ben,
+2026-10-29, called that procedure one “intended for random worktrees you can't find any
+information about”.

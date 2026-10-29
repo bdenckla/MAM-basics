@@ -46,15 +46,21 @@ push is a normal fast-forward with no force.
 
 Follow the shared `linked-worktrees` skill's `references/integration.md`.
 
-## Retire a completed worktree through the shared policy
+## Retire a completed worktree
 
-Load `mam-repository-topology` and its `references/repository-maintenance.md`, section
-“Completed linked worktrees”. That reference is the common retirement policy for Claude,
-Codex, both owners, and an exact named target. `codex` is a candidate selector, not a separate
-cleanup system. Follow that reference's retirement eligibility, ownership evidence, approval gates,
-verified retention and executor procedure; do not duplicate its removal recipe here.
+A task retires a worktree it knows directly: one it created, or whose task it took over. Follow
+the shared `linked-worktrees` skill's `references/integration.md`: once the branch is integrated
+and pushed and nothing still needed is left in ignored files such as `.novc`, run
+`git worktree remove` and `git branch -d` from the home clone, neither forced.
 
-For Codex provenance, the adapter reads task IDs and cwd values from `state_*.sqlite` under
+The procedure in `mam-repository-topology`'s `references/repository-maintenance.md`, section
+“Completed linked worktrees”, is at most for a worktree nobody can account for, and probably
+overkill even there, by Ben's judgment of 2026-10-29. When it is used, `codex` is a candidate
+selector, not a separate cleanup system: follow that reference's eligibility, ownership
+evidence, approval gates, verified retention and executor, and do not duplicate its removal
+recipe here.
+
+For Codex provenance, that procedure's adapter reads task IDs and cwd values from `state_*.sqlite` under
 `CODEX_HOME` (default `$HOME/.codex`) and treats a corresponding `thread-writer-locks/<id>.lock`
 as a lease. A present lease blocks even after an ended-task attestation. Claude process records
 and desktop leases also block retirement of a Codex-selected worktree if a Claude session
