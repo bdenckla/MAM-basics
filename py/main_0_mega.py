@@ -773,7 +773,8 @@ _STEPS = [
     # comparison images' PROVENANCE.json, none of which a step writes, so nothing orders
     # it; the plan put it last.  The FontForge build of the font is not a step, by Ben's
     # decision of that day: "Yes, keep FontForge run out of MAM-basics mega."  So the pages
-    # follow the committed font version.
+    # follow the committed font version, and test_mega_coverage.py's NOT_IN_MEGA declares
+    # the build, py/main_taamey_d_build.py.
     StepRecord(
         "taamey-d-doc",
         _run_taamey_d_doc,

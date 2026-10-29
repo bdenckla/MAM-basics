@@ -118,7 +118,8 @@ def _comparison_img(cell):
 def comparison_cells():
     """Return a record for each comparison cell of Taamey_D.html, in page order.
 
-    main_render_comparison_svgs.py renders each cell's image from its record.
+    hbofonts' one-time main_render_comparison_svgs.py rendered each cell's image from
+    its record on 2026-10-28, before the move; the images are frozen since.
     """
     return [
         _comparison_cell(display_id, row_number, font_key, fw)

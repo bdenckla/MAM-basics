@@ -1,6 +1,6 @@
-# This script is driven by the portable Python workflow, for example:
+# This script is driven by the portable Python workflow, run from the repository root:
 #
-#    .venv/Scripts/python.exe py/main_mega.py --generate-only
+#    .venv/Scripts/python.exe py/main_taamey_d_build.py
 
 import fontforge  # pyright: reportMissingImports=false
 
