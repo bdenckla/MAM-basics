@@ -112,7 +112,8 @@ import main_pipeline_graph
 import main_search_final_hiriq_verse_text
 import main_search_holam_he_qere
 
-# Taamey D's page generator, which moved here from hbofonts on 2026-10-28.
+# Taamey D's page generator, which moved here from hbofonts on 2026-10-28, and its
+# shaping checks and corpus refresh, which followed on 2026-10-29.
 import main_taamey_d
 
 
@@ -840,7 +841,8 @@ _STEPS = [
     # (Phase 2 of MAM-private's doc/PLAN-evacuate-hbofonts-into-MAM-basics.md).  It reads
     # only its own code, the font version in py/taamey_d_build/font_version.py and the frozen
     # comparison images' PROVENANCE.json, none of which a step writes, so nothing orders
-    # it; the plan put it last.  The FontForge build of the font is not a step, by Ben's
+    # it; the plan put it last, and Phase 3's two steps follow it.  The FontForge build of
+    # the font is not a step, by Ben's
     # decision of that day: "Yes, keep FontForge run out of MAM-basics mega."  So the pages
     # follow the committed font version, and test_mega_coverage.py's NOT_IN_MEGA declares
     # the build, py/main_taamey_d_build.py.

@@ -528,8 +528,9 @@ NOT_IN_MEGA: dict[str, str] = {
         " font version.  Recorded in the comment above that step in py/main_0_mega.py."
     ),
     "py/main_taamey_d.py corpus without --check": (
-        "Ben's decision, 2026-10-28, in approving MAM-private's"
-        " doc/PLAN-evacuate-hbofonts-into-MAM-basics.md: a refresh of MAM's text only"
+        "Ben's decision of 2026-10-28, decision 3 of MAM-private's"
+        " doc/PLAN-evacuate-hbofonts-into-MAM-basics.md, which he approved the same"
+        " day: a refresh of MAM's text only"
         " reports that Taamey D's shaping-check corpus is due a refresh, which the mega's"
         " taamey-d-corpus step does with --check.  A refresh adds test cases without"
         " expected outputs, so a baseline acceptance follows it, and that needs Ben's"

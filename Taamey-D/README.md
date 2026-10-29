@@ -7,9 +7,9 @@ at https://bdenckla.github.io/MAM-basics/taamey-d/. Paths in this file are writt
 repository root, where every command below runs.
 
 Taamey D's sources, build and pages moved here from the private hbofonts repository on
-2026-10-28, and its shaping checks, their test corpus, the corpus refresh and the baseline
-acceptance on 2026-10-29; since then Taamey D work happens here. The release tool is still in
-hbofonts and follows later. The releases published so far stay in hbofonts' downloads, at
+2026-10-28, and since then Taamey D work happens here. Its shaping checks, their test corpus,
+the corpus refresh and the baseline acceptance followed on 2026-10-29. The release tool is still
+in hbofonts and follows later. The releases published so far stay in hbofonts' downloads, at
 https://bdenckla.github.io/hbofonts/downloads/, which remain Taamey D's downloads until the
 release tool arrives. By Ben's decision of 2026-10-28, issues opened before the move stay in
 hbofonts' tracker, and new Taamey D issues go to MAM-basics' tracker.
@@ -107,7 +107,7 @@ The shaping checks shape every test case in `Taamey-D/qa-in/` with
 print a result for each check and test-case file. They fail on a `SKIP`, and on a `FAIL` from the
 anchor-family lint, which checks statically that the glyphs of each letter agree on their
 mark-to-base anchors; a deliberate difference among a letter's glyphs goes, with its reason, in
-that lint's closed exception table, in `py/taamey_d/qa/anchor_families.py`. A corpus check's
+that lint's closed exception table, in `py/taamey_d/qa/anchor_families.py`. A shaping check's
 `FAIL` does not fail the run, but its failing cases go into the reports. Read every result: a
 `FAIL` or `SKIP` is a finding that needs explaining, not a green check.
 
@@ -160,7 +160,7 @@ sequences are significant to shaping tests, including deliberately constructed a
 orders. A baseline acceptance, which accepts observed Taamey D output as the shaping checks'
 expected output, needs Ben's approval.
 
-The corpus keeps its sources' exact code points, so a few of its words are not in MAM-normal
+The corpus keeps its exact code points, so a few of its words are not in MAM-normal
 order. It is outside `py/check_mark_order.py`'s scope, and `doc/mam-normal-mark-order.md` lists
 it among the trees that preserve another order on purpose.
 
