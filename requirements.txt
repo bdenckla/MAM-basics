@@ -19,8 +19,9 @@ numpy
 pygments
 pyspellchecker
 tzdata
-# Test-only: py/tests/test_uni_norm_fragile_harfbuzz.py checks the model of
-# HarfBuzz's mark order in py/mb_cmn/uni_norm_fragile.py against HarfBuzz itself.
+# A direct requirement only for a test: py/tests/test_uni_norm_fragile_harfbuzz.py checks
+# the model of HarfBuzz's mark order in py/mb_cmn/uni_norm_fragile.py against HarfBuzz
+# itself.  vharfbuzz and collidoscope, below, need it too.
 uharfbuzz
 # Taamey D's shaping checks, py/taamey_d/qa/, which moved here from hbofonts in 2026-10:
 # vharfbuzz shapes the corpus with HarfBuzz (uharfbuzz, above), collidoscope finds

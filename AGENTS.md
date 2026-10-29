@@ -167,12 +167,17 @@ rather than amending. Committing to or integrating into a local `main` needs no 
 that `main` is pushed. When the mega runs, a failing step or an unexplained tracked diff is a failure.
 The mega does not run the hand-run generators, so a hand-run generator can reach a product that
 no mega run checks. A change to a hand-run generator, or to any input it reads, requires
-rerunning every affected hand-run generator and inspecting its tracked outputs, with two
+rerunning every affected hand-run generator and inspecting its tracked outputs, with three
 exceptions that Ben decided. A refresh of MAM's text does not oblige rerunning
 `py/main_mam4sef.py` or `py/main_mam_osis.py` (his decision of 2026-09-30), so MAM-for-Sefaria
 and MAM-OSIS may lag MAM-simple, as their READMEs say; any other change to either generator or
 its inputs still does. A change to MAM's data does not oblige rerunning
-`py/main_hbce_psalms.py compare` (his decision of 2026-09-26, in the HBCE section above).
+`py/main_hbce_psalms.py compare` (his decision of 2026-09-26, in the HBCE section above). A
+refresh of MAM's text does not oblige refreshing Taamey D's shaping-check corpus with
+`py/main_taamey_d.py corpus` (his decision of 2026-10-28): the mega's `taamey-d-corpus` step
+reports `REFRESH PENDING` instead, and a refresh needs his baseline acceptance. That corpus,
+`Taamey-D/qa-in/`, is a pinned test population of MAM's text, the decision's deliberate
+exception to the next paragraph's rule.
 Product reach and whether an act is hard to undo are separate risk axes, as the user-level
 instructions explain.
 
