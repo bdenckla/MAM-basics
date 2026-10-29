@@ -1,0 +1,85 @@
+{
+  "date": "2026-10-29",
+  "source_commit": "6ac28417a243447c24eefb168202585a9949a4ea",
+  "reviewed_through": "6ac28417a243447c24eefb168202585a9949a4ea",
+  "receipt_parent": "d029bb31a763cd3bc9366d253e95e5054537119d",
+  "previous_nightly_preserved": "22fa34f1d2e3aa6bd265c69e865da3be7a10301f",
+  "receipt_branch": "review-nightly-20261029-cloud-receipts",
+  "review": "Frozen main equals the reconciled latest reviewed-through anchor; no new endpoint review or repeated earlier screening.",
+  "stages": [
+    {
+      "name": "basics-mega",
+      "cwd": "/workspace/MAM-basics",
+      "commit": "6ac28417a243447c24eefb168202585a9949a4ea",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_0_mega.py"
+      ],
+      "started_utc": "2026-10-29T06:12:28.586671+00:00",
+      "completed_utc": "2026-10-29T06:20:39.983063+00:00",
+      "state": "completed",
+      "exit_code": 0,
+      "elapsed_seconds": 491.381,
+      "changed_paths": [
+        "doc/process-documentation/MAM-process.dot.svg",
+        "doc/process-documentation/pipeline.svg",
+        "gh-pages/MAM-parsed/plus/svg/plus-call-graph-c.svg",
+        "gh-pages/MAM-parsed/plus/svg/plus-call-graph-d.svg",
+        "gh-pages/MAM-parsed/plus/svg/plus-call-graph-e.svg",
+        "gh-pages/MAM-parsed/plus/svg/plus-dexi-call-graph.svg",
+        "gh-pages/MAM-parsed/plus/svg/plus-dualcant-call-graph.svg",
+        "gh-pages/MAM-parsed/plus/svg/plus-kvq-call-graph.svg"
+      ],
+      "tracked_diff_before": false,
+      "allowed_committed_input_ids": [
+        "4ea28c1fe191ed18080f67dcb09924d0ec140bbf",
+        "3b59254aae9dcc31a4a638f0bd4f88a30dcde858"
+      ]
+    },
+    {
+      "name": "basics-suite",
+      "cwd": "/workspace/MAM-basics",
+      "commit": "6ac28417a243447c24eefb168202585a9949a4ea",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        "-q",
+        "-ra"
+      ],
+      "started_utc": "2026-10-29T06:21:04.824624+00:00",
+      "completed_utc": "2026-10-29T06:26:35.777632+00:00",
+      "state": "completed",
+      "exit_code": 0,
+      "elapsed_seconds": 330.94,
+      "changed_paths": [],
+      "tracked_diff_before": false,
+      "allowed_committed_input_ids": [
+        "4ea28c1fe191ed18080f67dcb09924d0ec140bbf",
+        "3b59254aae9dcc31a4a638f0bd4f88a30dcde858"
+      ]
+    }
+  ],
+  "result": "mega exit 0 in 491.381 s, all 62 steps/no skips; full suite exit 0 in 330.940 s: 1107 passed, 5 skipped, 82 subtests passed in 327.87s (0:05:27); eight explained SVG geometry/Times-alias differences preserved and reversed; no font build",
+  "limits": [
+    "Only recorded source and exact committed inputs were tested; receipt-tree code and later main are outside coverage.",
+    "No font build/FontForge or font-template regeneration, baseline acceptance, publication/deployment, main/shared integration or scheduling action.",
+    "No new Hebrew/editorial interpretation or source repair; earlier failures and focused scopes remain historical."
+  ],
+  "coverage": "complete maintained mega and suite",
+  "completed_mega_steps": 62,
+  "mega_skips": 0,
+  "suite_summary": "1107 passed, 5 skipped, 82 subtests passed in 327.87s (0:05:27)",
+  "skips": [
+    "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: koren_ex_elyon diverges from its Wikisource strand; the control needs an agreeing page",
+    "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: simtan_dt_taxton diverges from its Wikisource strand; the control needs an agreeing page",
+    "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: simtiq_dt_taxton diverges from its Wikisource strand; the control needs an agreeing page",
+    "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: simtiq_ex_elyon diverges from its Wikisource strand; the control needs an agreeing page",
+    "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: simtiq_ex_taxton diverges from its Wikisource strand; the control needs an agreeing page"
+  ],
+  "environment": {
+    "python": "3.13.15",
+    "uharfbuzz": "0.57.0",
+    "harfbuzz": "15.0.0"
+  },
+  "generated_difference_disposition": "Fresh XML comparison: geometry and known Times alias only; all other attributes/text/tails/links/comments agree. Complete snapshots and exact patch preserved privately, verified and reversed before clean suite. Every non-SVG product, including committed-font documentation and binaries, reproduces."
+}
