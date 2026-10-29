@@ -353,6 +353,56 @@ def edited(quote, changes):
     return quote
 
 
+def declared_spans(texts, contexts):
+    """Locate each declared context: once in the mirror, overlapping no other."""
+    spans = []
+    for context in contexts:
+        hits = [i for i, text in enumerate(texts) for _ in range(text.count(context))]
+        if len(hits) != 1:
+            raise ValueError("A declared context must occur once in the mirror")
+        start = texts[hits[0]].find(context)
+        spans.append((hits[0], start, start + len(context)))
+    spans.sort()
+    for (i, _, end), (j, start, _) in zip(spans, spans[1:]):
+        if i == j and start < end:
+            raise ValueError("Declared contexts must not overlap")
+
+
+def check_mirror_occurrences(record, old, texts):
+    """The applied text occurs once and the old nowhere, or each in a declared context."""
+    new = record["quote"]
+    if "context" not in record:
+        if "other_occurrences" in record:
+            raise ValueError("Other occurrences are declared only beside a context")
+        if sum(text.count(new) for text in texts) != 1 or any(
+            old in text for text in texts
+        ):
+            raise ValueError(
+                "The mirror must have the applied text once, the old nowhere"
+            )
+        return
+    context, others = record["context"], record.get("other_occurrences", [])
+    if context.count(new) != 1 or old in context:
+        raise ValueError("An applied text's context must hold it once, the old nowhere")
+    if not others or any(set(other) != {"context", "reason"} for other in others):
+        raise ValueError("Each other occurrence needs exactly a context and a reason")
+    if any(
+        new not in other["context"] and old not in other["context"] for other in others
+    ):
+        raise ValueError(
+            "A declared other occurrence must hold the applied or old text"
+        )
+    contexts = [context] + [other["context"] for other in others]
+    declared_spans(texts, contexts)
+    for needle in (new, old):
+        if sum(text.count(needle) for text in texts) != sum(
+            c.count(needle) for c in contexts
+        ):
+            raise ValueError(
+                "Every applied or old text in the mirror needs a declared context"
+            )
+
+
 def applied_row(entry, sources):
     """Check an applied proposal against the later mirror commit that holds it."""
     record, current = entry["application"], entry["current"]
@@ -384,10 +434,7 @@ def applied_row(entry, sources):
         mirrored = [manifest["pages"][page]["revid"]]
     else:
         raise ValueError(f"No mirror rule for an applied proposal: {entry['id']}")
-    if sum(text.count(record["quote"]) for text in texts) != 1 or any(
-        current["quote"] in text for text in texts
-    ):
-        raise ValueError("The mirror must have the applied text once, the old nowhere")
+    check_mirror_occurrences(record, current["quote"], texts)
     if (
         mirrored != [record["mirror_revision_id"]]
         or record["mirror_revision_id"] < record["revision_id"]

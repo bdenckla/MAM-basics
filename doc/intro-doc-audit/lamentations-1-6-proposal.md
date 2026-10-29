@@ -34,15 +34,25 @@ Evidence uses source commit `89cb865729b0876f1fd32a8a3579eaec80b4fc0c`:
 
 Ben requested a concrete proposal on 2026-10-14
 (`Sentinel_270f66758edc8191b846ed342c368317`). The source correction was initially an independently
-verified proposal. Ben subsequently approved it as recorded below; it remains
-**unapplied** in [adjudications.json](adjudications.json).
+verified proposal. Ben subsequently approved it as recorded below; Avi applied it on
+2026-10-29, as [adjudications.json](adjudications.json) records.
 
 Ben approved the existing correction on 2026-10-15 at 15:03 UTC
 (`Sentinel_d0a73e635cc48191afb8ad0bf4fa6a4f`). He identifies the discrepancy as a
 contradiction within the Introduction. The case is now in the collapsed Reviewed
 section, with its exact proposed wording and source quotations preserved. No source
-correction has been submitted or applied.
+correction had then been submitted or applied.
 
 ## Submitted to Avi
 
-On 2026-10-17 at 20:20 UTC Ben asked for an issue for each correction he had approved in this review: “Sure, go ahead and file those 12 issues”. #322 proposes this correction to Avi; it is not applied.
+On 2026-10-17 at 20:20 UTC Ben asked for an issue for each correction he had approved in this review: “Sure, go ahead and file those 12 issues”. #322 proposed this correction to Avi.
+
+## Applied on Wikisource
+
+On 2026-10-29 skadish1 reported the correction done in #322, linking
+[revision 3098993](https://he.wikisource.org/w/index.php?diff=3098993&oldid=3098992)
+of chapter 2, whose parent is revision 3098992. It makes exactly the proposed
+replacement and nothing else. MAM-basics' Introduction mirror holds the later
+revision 3099100 from `f82138dd`, where the sentence reads as proposed. A Claude
+session closed #322 at Ben's request on 2026-10-29 and recorded the application in
+[adjudications.json](adjudications.json) the same day.

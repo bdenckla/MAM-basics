@@ -418,7 +418,7 @@
       "source_thread_id": "01a0fe66-3397-70d3-b313-4f1dfaa190c4",
       "transcript_evidence": "Sentinel_5acb3b8ffb3c8191a3ac6cac00f3e4be"
     },
-    "status": "word-count-confirmed-by-Ben; proposed-source-correction-not-applied; submitted-in-issue-321",
+    "status": "word-count-confirmed-by-Ben; submitted-in-issue-321; applied-in-revision-3098995",
     "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
     "introduction_revision": 3087744,
     "current": {
@@ -434,7 +434,7 @@
       }
     ],
     "current_label": "Current Introduction heading",
-    "proposed_label": "Ben’s corrected word count — not applied",
+    "proposed_label": "Ben’s corrected word count — applied",
     "current_explanation": "(9 items.)",
     "proposed_explanation": "(12 items.)",
     "research_note": "deuter-hataf-scope.md",
@@ -455,7 +455,42 @@
         "quotation": "Sure, go ahead and file those 12 issues"
       }
     },
-    "application_status": "unapplied"
+    "application_status": "applied",
+    "application": {
+      "revision_id": 3098995,
+      "parent_revision_id": 3092677,
+      "diff_url": "https://he.wikisource.org/w/index.php?diff=3098995&oldid=3092677",
+      "report": {
+        "by": "skadish1",
+        "url": "https://github.com/bdenckla/MAM-basics/issues/321#issuecomment-6497484494",
+        "created_at": "2026-10-29T13:05:53Z"
+      },
+      "applied_changes": [
+        0
+      ],
+      "quote": "(12 פריטים)",
+      "mirror_commit": "f82138dd8f1fcc318a2ffa305974193af471695b",
+      "mirror_path": "in/mam-ws-intro/ch3.mediawiki",
+      "mirror_revision_id": 3099123,
+      "label": "Applied heading, as MAM-basics mirrors it",
+      "explanation": "skadish1 reported this edit done in #321 on 2026-10-29, linking this revision. Revisions 3098994 to 3099093 of MAM’s note at Deuteronomy 3:22, the same day, keep that verse out of the list: the note now concludes that the mark there is a meteg. MAM-basics’ Introduction mirror holds the later revision 3099123 from f82138dd.",
+      "issue_closed": {
+        "by": "a Claude Code session, at Ben’s request",
+        "at": "2026-10-29T14:55:15Z"
+      },
+      "recorded": {
+        "date": "2026-10-29",
+        "authority": {
+          "person": "Ben",
+          "date": "2026-10-29",
+          "source_agent": "Claude Code",
+          "source_thread_id": "4b3a7dc0-79a0-42fd-a22f-c85049035800",
+          "question": "Execute the .novc plan here once the CGJ session's Numbers refresh is pushed?",
+          "quotation": "Yes, as recommended",
+          "recommendation": "Record the applications of #311–#315 and #321–#324 in the Introduction audit; #311–#315 were already recorded by aa8de6fc."
+        }
+      }
+    }
   },
   {
     "id": "LAM-1-6-PROPOSAL-20261014",
@@ -468,7 +503,7 @@
       "kind": "substantive-approval",
       "transcript_evidence": "Sentinel_d0a73e635cc48191afb8ad0bf4fa6a4f"
     },
-    "status": "word-count-correction-approved-by-Ben; proposed-source-correction-not-applied; submitted-in-issue-322",
+    "status": "word-count-correction-approved-by-Ben; submitted-in-issue-322; applied-in-revision-3098993",
     "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
     "introduction_revision": 3087893,
     "current": {
@@ -484,7 +519,7 @@
       }
     ],
     "current_label": "Current Introduction example",
-    "proposed_label": "Approved by Ben — corrected Introduction example, not applied",
+    "proposed_label": "Approved by Ben — corrected Introduction example, applied",
     "current_explanation": "(מִן בַּת־: ketiv in one word; מִבַּת־: qere in two words.)",
     "proposed_explanation": "(מִן בַּת־: ketiv in two words; מִבַּת־: qere in one word.)",
     "research_note": "lamentations-1-6-proposal.md",
@@ -505,7 +540,42 @@
     ],
     "discrepancy_type": "internal-Introduction-contradiction",
     "submission_status": "submitted",
-    "application_status": "unapplied",
+    "application_status": "applied",
+    "application": {
+      "revision_id": 3098993,
+      "parent_revision_id": 3098992,
+      "diff_url": "https://he.wikisource.org/w/index.php?diff=3098993&oldid=3098992",
+      "report": {
+        "by": "skadish1",
+        "url": "https://github.com/bdenckla/MAM-basics/issues/322#issuecomment-6497311893",
+        "created_at": "2026-10-29T12:58:06Z"
+      },
+      "applied_changes": [
+        0
+      ],
+      "quote": "(\"מִן בַּת־\" כתיב בשתי תיבות, \"מִבַּת־\" קרי בתיבה אחת).",
+      "mirror_commit": "f82138dd8f1fcc318a2ffa305974193af471695b",
+      "mirror_path": "in/mam-ws-intro/ch2.mediawiki",
+      "mirror_revision_id": 3099100,
+      "label": "Applied example, as MAM-basics mirrors it",
+      "explanation": "skadish1 reported this edit done in #322 on 2026-10-29, linking this revision. It makes exactly the proposed replacement. MAM-basics’ Introduction mirror holds the later revision 3099100 from f82138dd.",
+      "issue_closed": {
+        "by": "a Claude Code session, at Ben’s request",
+        "at": "2026-10-29T14:55:19Z"
+      },
+      "recorded": {
+        "date": "2026-10-29",
+        "authority": {
+          "person": "Ben",
+          "date": "2026-10-29",
+          "source_agent": "Claude Code",
+          "source_thread_id": "4b3a7dc0-79a0-42fd-a22f-c85049035800",
+          "question": "Execute the .novc plan here once the CGJ session's Numbers refresh is pushed?",
+          "quotation": "Yes, as recommended",
+          "recommendation": "Record the applications of #311–#315 and #321–#324 in the Introduction audit; #311–#315 were already recorded by aa8de6fc."
+        }
+      }
+    },
     "submission": {
       "number": 322,
       "url": "https://github.com/bdenckla/MAM-basics/issues/322",
@@ -838,7 +908,7 @@
       "source_thread_id": "01a0fe66-3397-70d3-b313-4f1dfaa190c4",
       "transcript_evidence": "Sentinel_a0613408f38c8191804afc8c85a5733c"
     },
-    "status": "approved-by-Ben; proposed-source-correction-submitted-in-issue-323; not-applied",
+    "status": "approved-by-Ben; proposed-source-correction-submitted-in-issue-323; applied-in-revision-3098992",
     "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
     "introduction_revision": 3087893,
     "current": {
@@ -854,7 +924,7 @@
       }
     ],
     "current_label": "Current Introduction layout example — word pair",
-    "proposed_label": "Approved by Ben — proposed word pair with maqaf",
+    "proposed_label": "Approved by Ben — proposed word pair with maqaf, applied",
     "current_explanation": "The space-separated word pair in the layout example.",
     "proposed_explanation": "Replace only that space with maqaf.",
     "research_note": "proverbs-30-19-history.md",
@@ -863,7 +933,53 @@
     "proposed_full_example": "דֶּ֤רֶךְ הַנֶּ֨שֶׁר{{מ:לגרמיה}}בַּשָּׁמַיִם֮{{ר1}}דֶּ֥רֶךְ נָחָ֗שׁ {{נוסח|עֲלֵ֫י־צ֥וּר|2=א=עֲלֵ֫י־צ֥וּר (במקף)}}{{ר3}}דֶּֽרֶךְ־אֳנִיָּ֥ה בְלֶב־יָ֑ם{{ר1}}וְדֶ֖רֶךְ גֶּ֣בֶר בְּעַלְמָֽה׃",
     "history_basis": "proverbs-30-19-history.json",
     "submission_status": "submitted",
-    "application_status": "unapplied",
+    "application_status": "applied",
+    "application": {
+      "revision_id": 3098992,
+      "parent_revision_id": 3098991,
+      "diff_url": "https://he.wikisource.org/w/index.php?diff=3098992&oldid=3098991",
+      "report": {
+        "by": "skadish1",
+        "url": "https://github.com/bdenckla/MAM-basics/issues/323#issuecomment-6497206356",
+        "created_at": "2026-10-29T12:53:17Z"
+      },
+      "applied_changes": [
+        0
+      ],
+      "quote": "עֲלֵ֫י־צ֥וּר",
+      "context": "{{נוסח|עֲלֵ֫י־צ֥וּר|",
+      "other_occurrences": [
+        {
+          "context": "דפוסים=עֲלֵ֫י צ֥וּר}}",
+          "reason": "Revision 3098992 made the example’s note give the printed editions’ word pair, with a space, as MAM’s note on Proverbs 30:19 does."
+        },
+        {
+          "context": "[[משלי ל/טעמים#ל יט|ל,יט]] (עֲלֵ֫י־צ֥וּר)",
+          "reason": "A footnote in section עולה ויורד cites Proverbs 30:19 with the word pair, with maqaf; the audit snapshot already has it."
+        }
+      ],
+      "mirror_commit": "f82138dd8f1fcc318a2ffa305974193af471695b",
+      "mirror_path": "in/mam-ws-intro/ch2.mediawiki",
+      "mirror_revision_id": 3099100,
+      "label": "Applied word pair, as MAM-basics mirrors it",
+      "explanation": "skadish1 reported this edit done in #323 on 2026-10-29, linking this revision. It also made the whole example a copy of MAM’s Proverbs 30:19, revision 3008043, so the example’s note now gives the printed editions’ word pair, with a space. Each other occurrence of the old or the new word pair is declared with its reason. MAM-basics’ Introduction mirror holds the later revision 3099100 from f82138dd.",
+      "issue_closed": {
+        "by": "a Claude Code session, at Ben’s request",
+        "at": "2026-10-29T14:55:23Z"
+      },
+      "recorded": {
+        "date": "2026-10-29",
+        "authority": {
+          "person": "Ben",
+          "date": "2026-10-29",
+          "source_agent": "Claude Code",
+          "source_thread_id": "4b3a7dc0-79a0-42fd-a22f-c85049035800",
+          "question": "Execute the .novc plan here once the CGJ session's Numbers refresh is pushed?",
+          "quotation": "Yes, as recommended",
+          "recommendation": "Record the applications of #311–#315 and #321–#324 in the Introduction audit; #311–#315 were already recorded by aa8de6fc."
+        }
+      }
+    },
     "scope": "Proposal/report update only; no live source edit or submission is authorized. Ben later authorized submission: #323, filed 2026-10-17, proposes this correction to Avi.",
     "submission": {
       "number": 323,
@@ -914,7 +1030,7 @@
       "kind": "substantive-approval",
       "source_thread_id": "01a0fe66-3397-70d3-b313-4f1dfaa190c4"
     },
-    "status": "approved-by-Ben-for-proposal-to-Avi; submitted-in-issue-324; not-applied",
+    "status": "approved-by-Ben-for-proposal-to-Avi; submitted-in-issue-324; applied-in-revision-3098991",
     "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
     "introduction_revision": 3087893,
     "current": {
@@ -930,13 +1046,48 @@
       }
     ],
     "current_label": "Current cached chapter 2 count",
-    "proposed_label": "Ben’s approved chapter 2 count — not applied",
+    "proposed_label": "Ben’s approved chapter 2 count — applied",
     "current_explanation": "Eleven poetic verses.",
     "proposed_explanation": "Thirteen poetic verses. This counts listed verses, not supporting doc-notes.",
     "research_note": "oleh-count-history.md",
     "research_label": "Count history and the two filed spin-off issues",
     "submission_status": "submitted",
-    "application_status": "unapplied",
+    "application_status": "applied",
+    "application": {
+      "revision_id": 3098991,
+      "parent_revision_id": 3092676,
+      "diff_url": "https://he.wikisource.org/w/index.php?diff=3098991&oldid=3092676",
+      "report": {
+        "by": "skadish1",
+        "url": "https://github.com/bdenckla/MAM-basics/issues/324#issuecomment-6497127260",
+        "created_at": "2026-10-29T12:49:36Z"
+      },
+      "applied_changes": [
+        0
+      ],
+      "quote": "בכתר ארם צובה יש השמטה שיטתית ועקבית כזאת של ה\"עולה\" ב-13 פסוקי אמ\"ת",
+      "mirror_commit": "f82138dd8f1fcc318a2ffa305974193af471695b",
+      "mirror_path": "in/mam-ws-intro/ch2.mediawiki",
+      "mirror_revision_id": 3099100,
+      "label": "Applied count, as MAM-basics mirrors it",
+      "explanation": "skadish1 reported this edit done in #324 on 2026-10-29, linking this revision. MAM-basics’ Introduction mirror holds the later revision 3099100 from f82138dd.",
+      "issue_closed": {
+        "by": "a Claude Code session, at Ben’s request",
+        "at": "2026-10-29T14:55:27Z"
+      },
+      "recorded": {
+        "date": "2026-10-29",
+        "authority": {
+          "person": "Ben",
+          "date": "2026-10-29",
+          "source_agent": "Claude Code",
+          "source_thread_id": "4b3a7dc0-79a0-42fd-a22f-c85049035800",
+          "question": "Execute the .novc plan here once the CGJ session's Numbers refresh is pushed?",
+          "quotation": "Yes, as recommended",
+          "recommendation": "Record the applications of #311–#315 and #321–#324 in the Introduction audit; #311–#315 were already recorded by aa8de6fc."
+        }
+      }
+    },
     "spin_off_issues": [
       {
         "number": 309,

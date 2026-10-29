@@ -684,7 +684,7 @@
       }
     ],
     "explanation": "The 12 list words match all 12 definite Aleppo/Leningrad vocal-sheva words in those notes. One possible omission remains: 3:22 has an uncertain Leningrad ḥataf ḥiriq, תְִּירָא֑וּם, whose blurred sign the note says may instead be a meteg. The additional 32:6 vowel is on yod in Firkovich B17, לְיֲהוָה֙, outside the named-manuscript scope. The 32:13 qere בָּ֣מֳתֵי retains morphological ḥataf qamats, outside the vocal-sheva policy. The edition also retains יֱהֹוִ֗ה at 3:24 and 9:26 and קׇדְקֳדֶֽךָ at 28:35; these are divine-name qere pointing and morphological ḥataf qamats, respectively. These four edition occurrences therefore do not add list items. Of the 12 list words, nine have the edition’s varika marker; 15:22 and both 32:10 words have plain sheva.",
-    "decision": "Change (9 פריטים) to (12 פריטים). All 12 confirmed note words are listed, with no extra listed word; 3:22 remains an explicit uncertain omission. The cached evidence cannot exclude manuscript occurrences that were never documented.",
+    "decision": "Change (9 פריטים) to (12 פריטים). All 12 confirmed note words are listed, with no extra listed word; 3:22 remains an explicit uncertain omission. The cached evidence cannot exclude manuscript occurrences that were never documented. The correction has since been applied on Wikisource, and the applied heading follows; MAM’s note at 3:22 now concludes that the mark there is a meteg.",
     "reading_forms": [],
     "prose_quotes": [
       "תְִּירָא֑וּם",
@@ -871,7 +871,7 @@
       }
     ],
     "explanation": "Its word counts reverse both the section’s category, כתיב תרתין מילין וקרי מילה חדה, and MAM’s special ketiv/qere template: ketiv מן בת; qere מִבַּת־. There is no doc-note at this verse.",
-    "decision": "Ben approves the correction below: keep the Introduction’s forms and pointing, and reverse its one/two counts.",
+    "decision": "Ben approves the correction below: keep the Introduction’s forms and pointing, and reverse its one/two counts. It has since been applied on Wikisource exactly as proposed, and the applied example follows.",
     "reading_forms": [
       {
         "label": "MAM ketiv — two words",
@@ -953,7 +953,7 @@
         "full_width": true
       }
     ],
-    "decision": "Ben approves replacing the space with maqaf in the layout example, as shown below.",
+    "decision": "Ben approves replacing the space with maqaf in the layout example, as shown below. It has since been applied on Wikisource, where the whole example now copies MAM’s Proverbs 30:19, and the applied word pair follows.",
     "reading_forms": [],
     "revision_history": {
       "summary": "Added on 27 May 2013 with MAM’s then-current spaced form; the chapter changed to maqaf on 8 November 2020. The Introduction still has the space before and after that change and in its cached 2026 revision. This establishes an outdated example.",
@@ -1005,7 +1005,7 @@
       }
     ],
     "explanation": "The list has thirteen distinct verses: seven Psalms, two Proverbs and four Job verses. All thirteen MAM body forms have oleh and yored on the same letter. Of eighteen notes at these verses, twelve concern this pointing pair: eleven name omitted oleh; Psalm 30:12 instead calls the omitted sign revia. Psalm 42:3 has no doc-note, so its Aleppo attribution comes from the Introduction alone. The other six notes concern paseq, qamats alternatives, a small bet or a ḥataf vowel. The table shows all thirteen cases; these source quotations do not independently establish manuscript readings or list completeness.",
-    "decision": "Ben approves changing chapter 2’s count from eleven to thirteen. The proposed source correction is shown below and has not been applied. The two doc-note follow-ups are filed separately.",
+    "decision": "Ben approves changing chapter 2’s count from eleven to thirteen. The proposed source correction and the applied count are shown below. The two doc-note follow-ups are filed separately.",
     "reading_forms": [],
     "word_comparison": {
       "caption": "Thirteen listed verses and the twelve pertinent doc-notes. The Introduction and note quotations retain their own mark order.",

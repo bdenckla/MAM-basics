@@ -78,7 +78,12 @@ are automatically authoritative. Bare "in the manuscript" does not name Aleppo.
    `application_status` to `applied` and add an `application` record of the
    applying Wikisource revision and its report, the edits applied, the applied
    text, and the mirror commit, path and revision that hold it. The review build
-   checks that text against that commit. Update its
+   checks that text against that commit. Where the applied or the replaced text
+   also occurs elsewhere in the mirrored page, the record adds the applied text's
+   `context` and lists each other occurrence's `context` and `reason` under
+   `other_occurrences`; the build then requires every occurrence of either text to
+   lie in one of those contexts, each found once and none overlapping another.
+   Update its
    companion note and any affected coverage/follow-up record without rewriting
    unrelated decisions. Follow the receipt rules for finished notes.
 5. Rebuild the review, read that case visually and inspect the focused diff.

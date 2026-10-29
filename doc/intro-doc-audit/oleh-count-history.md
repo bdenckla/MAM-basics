@@ -35,4 +35,14 @@ remain in [review.html](review.html#oleh-omission-count);
 
 ## Submitted to Avi
 
-On 2026-10-17 at 20:20 UTC Ben asked for an issue for each correction he had approved in this review: “Sure, go ahead and file those 12 issues”. #324 proposes this correction to Avi; it is not applied.
+On 2026-10-17 at 20:20 UTC Ben asked for an issue for each correction he had approved in this review: “Sure, go ahead and file those 12 issues”. #324 proposed this correction to Avi.
+
+## Applied on Wikisource
+
+On 2026-10-29 skadish1 reported the correction done in #324, linking
+[revision 3098991](https://he.wikisource.org/w/index.php?diff=3098991&oldid=3092676)
+of chapter 2, whose parent is revision 3092676. It changes only the footnote's
+count, from 11 to 13. MAM-basics' Introduction mirror holds the later revision
+3099100 from `f82138dd`. A Claude session closed #324 at Ben's request on
+2026-10-29 and recorded the application in [adjudications.json](adjudications.json)
+the same day.

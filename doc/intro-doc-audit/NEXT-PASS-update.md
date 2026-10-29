@@ -28,7 +28,7 @@ now links to the live page at the heading above it, or at its verse
 proposal: #311 (the appendix's date) and #312 (the Job 9:10 reference), and
 #313–#324 for the twelve corrections approved earlier. Each
 decision record in [adjudications.json](adjudications.json) holds its issue and
-Ben's authorization; no proposal is applied. Proverbs 30:17's ḥataf addition
+Ben's authorization; no proposal was then applied. Proverbs 30:17's ḥataf addition
 still awaits Ben's review.
 
 ## 2026-10-18 — the Introduction's note templates
@@ -54,10 +54,34 @@ applications here the same day: “Yes, record them”.
 Each of those five decisions in [adjudications.json](adjudications.json) now holds
 its application, and its case in [review.html](review.html) shows the applied text
 after the proposal. The review build checks each applied text against the mirror
-commit that holds it. The other nine proposals, #316–#324, are still recorded as
-unapplied, and the audit's snapshot quotations are unchanged.
+commit that holds it. The other nine proposals, #316–#324, were then still recorded
+as unapplied, and the audit's snapshot quotations are unchanged.
 
 The same Introduction refresh corrected the spelling of Westminster in a heading of
 the Westminster page, and the review build stopped there. `RENAMED_HEADINGS` in
 `py/intro_doc_audit/human_review.py` now maps the snapshot heading to its current
 text for that page's links.
+
+## 2026-10-29 — four more proposals applied
+
+Later that day skadish1 reported four more of the submitted proposals done, each
+with a link to the Wikisource revision that made it: #321 (chapter 3, revision
+3098995), #322 (chapter 2, 3098993), #323 (3098992) and #324 (3098991). A Claude
+session checked each revision against its issue and closed the four issues at
+Ben's request. The Introduction mirror holds chapter 2 at revision 3099100 and
+chapter 3 at the later revision 3099123 from `f82138dd`. Ben approved recording
+the applications the same day, answering a plan that recommended it: “Yes, as
+recommended”.
+
+#321, #322 and #324 were applied exactly as proposed. #323 went further: the
+layout example's whole verse now copies MAM's Proverbs 30:19, whose note gives the
+printed editions' word pair with a space, and a footnote in section עולה ויורד had
+the maqaf form at the audit's snapshot. Its application record declares the
+context of each occurrence of the old and the new word pair, and the review build
+checks that every occurrence lies in one of them. Nine proposals are now recorded
+as applied, #311–#315 and #321–#324.
+
+#316–#320 are still recorded as unapplied. The same refresh took chapter 3's
+revision 3099123 and chapter 5's revision 3099114, which add Genesis 30:27 and
+2 Samuel 8:10 to their ḥataf lists as #320 and #318 propose; skadish1 reported
+both done later on 2026-10-29, and their applications are not yet recorded here.

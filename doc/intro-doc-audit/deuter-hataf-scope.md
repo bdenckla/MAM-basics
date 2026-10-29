@@ -2,7 +2,7 @@
 
 Ben selects **words** as the item unit (2026-10-14,
 `Sentinel_5acb3b8ffb3c8191a3ac6cac00f3e4be`). The current heading is
-`(9 פריטים)`; the proposed heading is `(12 פריטים)`. This proposal is unapplied.
+`(9 פריטים)`; the proposed heading is `(12 פריטים)`. Avi applied it on 2026-10-29, as the last section records.
 The list has 11 verse entries and 12 words: both words at 32:10 count;
 the unmarked prefix attached by maqaf at 32:36 does not add an item.
 
@@ -94,4 +94,16 @@ interpretation change was undertaken or is proposed here.
 
 ## Submitted to Avi
 
-On 2026-10-17 at 20:20 UTC Ben asked for an issue for each correction he had approved in this review: “Sure, go ahead and file those 12 issues”. #321 proposes this correction to Avi; it is not applied.
+On 2026-10-17 at 20:20 UTC Ben asked for an issue for each correction he had approved in this review: “Sure, go ahead and file those 12 issues”. #321 proposed this correction to Avi.
+
+## Applied on Wikisource
+
+On 2026-10-29 skadish1 reported the correction done in #321, linking
+[revision 3098995](https://he.wikisource.org/w/index.php?diff=3098995&oldid=3092677)
+of chapter 3, whose parent is revision 3092677. It changes only the heading, to
+`(12 פריטים)`. The same day, revisions 3098994 to 3099093 of MAM's note at
+Deuteronomy 3:22 concluded that the blurred mark there in the Leningrad Codex is a
+meteg, which keeps 3:22 out of the list and the count. MAM-basics' Introduction
+mirror holds the later revision 3099123 from `f82138dd`. A Claude session closed
+#321 at Ben's request on 2026-10-29 and recorded the application in
+[adjudications.json](adjudications.json) the same day.

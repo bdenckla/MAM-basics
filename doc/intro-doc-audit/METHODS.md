@@ -114,7 +114,7 @@ Regenerate the readable review and its presentation coverage record with
 specified below. No semantic census needs to be rerun for a presentation edit.
 
 State: finite reference and productive cached prose passes accounted for; external and editorial evidence boundaries retained.
-Ben authorized integration of the research into main on 2026-10-16; proposals remain unapplied.
+Ben authorized integration of the research into main on 2026-10-16, when no proposal was applied; [adjudications.json](adjudications.json) records each later application.
 
 This audit uses the repository snapshot at `89cb865729b0876f1fd32a8a3579eaec80b4fc0c`.
 It changes no Scripture input, edition, published page, or manuscript interpretation.
@@ -555,7 +555,7 @@ Psalm 30:12 names revia. Psalm 42:3 has no doc-note. Six of the eighteen candida
 concern other features. Psalm 30:12's exact form difference is U+05AB OLE; U+0597 REVIA
 occurs in neither form. Its terminology correction is filed as #309, and the absent
 Psalm 42:3 note as #310. Ben approved the chapter 2 count reconciliation on
-2026-10-15 at 16:48 UTC; the proposed source correction remains unapplied.
+2026-10-15 at 16:48 UTC; #324 submitted it, and Avi applied it on 2026-10-29.
 No manuscript scan interpretation is asserted.
 
 The [count history](oleh-count-history.json) retains five selected snapshots and their

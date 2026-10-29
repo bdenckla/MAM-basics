@@ -4,7 +4,7 @@ The Introduction’s example matched MAM’s spaced main form when it was added.
 The chapter later changed to maqaf. The older example remains in the audit’s
 Introduction snapshot. This establishes staleness of the example relative to
 MAM’s later main form. Ben approved the correction on 2026-10-15 at 16:11 UTC;
-the proposal remains unsubmitted and unapplied.
+it was submitted as #323 on 2026-10-17 and applied on 2026-10-29.
 
 | Event | Dated revision evidence (UTC) |
 | --- | --- |
@@ -87,12 +87,12 @@ The case is settled and appears in Reviewed. The exact proposal is retained in
 > עֲלֵ֫י צ֥וּר → עֲלֵ֫י־צ֥וּר
 
 Only the one boundary changes in the full proposed example. The separate Aleppo
-quotation and all historical source evidence are preserved. This approval records
-a proposal; no wiki edit or submission to Avi has occurred.
+quotation and all historical source evidence are preserved. This approval recorded
+a proposal; no wiki edit or submission to Avi had then occurred.
 
 ## Submitted to Avi
 
-On 2026-10-17 at 20:20 UTC Ben asked for an issue for each correction he had approved in this review: “Sure, go ahead and file those 12 issues”. #323 proposes this correction to Avi; it is not applied.
+On 2026-10-17 at 20:20 UTC Ben asked for an issue for each correction he had approved in this review: “Sure, go ahead and file those 12 issues”. #323 proposed this correction to Avi.
 
 ## The example's note template, 2026-10-18
 
@@ -101,3 +101,22 @@ form MAM's chapter pages use, with the note as parameter 2 written `2=`. In this
 example it changed only that ([chapter 2 revision 3090585](https://he.wikisource.org/w/index.php?diff=3090585&oldid=3087893)). The
 proposal's full example in [adjudications.json](adjudications.json) now has `2=`
 too, and #323's before and after show it.
+
+## Applied on Wikisource, 2026-10-29
+
+On 2026-10-29 skadish1 reported the correction done in #323, linking
+[revision 3098992](https://he.wikisource.org/w/index.php?diff=3098992&oldid=3098991)
+of chapter 2, whose parent is revision 3098991. It gives the example's main form
+maqaf, as proposed, and goes further: the example's whole verse is now identical,
+code point for code point, to Proverbs 30:19 on MAM's chapter page, revision
+3008043. So the example's note now gives the printed editions' word pair with a
+space, and the rest of the line follows the chapter page too.
+
+MAM-basics' Introduction mirror holds the later revision 3099100 from `f82138dd`.
+The page has the word pair in three places: the example's main form, the printed
+editions' form in its note, and a footnote in section עולה ויורד that already had
+the maqaf form at the audit's snapshot. The application record therefore declares
+the context of each occurrence, and the review build checks that every occurrence
+of the old or the new word pair lies in one of them. A Claude session closed #323
+at Ben's request on 2026-10-29 and recorded the application in
+[adjudications.json](adjudications.json) the same day.
