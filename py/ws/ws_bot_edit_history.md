@@ -438,7 +438,7 @@ infrastructure has changed enough to make them misleading examples:
   `.novc/mam-ws-bot-intro-runs/20261028-154221-003122-0400/`, dry run
   `.novc/mam-ws-bot-intro-runs/20261028-152218-893094-0400/`.
 
-### A CGJ that separated no marks, removed from the note on Numbers 7:60, 2026-10-29 — current
+### A CGJ that separated no marks, removed from the note on Numbers 7:60, 2026-10-29
 
 - **Purpose:** Remove one CGJ (U+034F, COMBINING GRAPHEME JOINER) that separated no marks.
   MAM's documentation note on Numbers 7:60 gives two forms of the atom בנימן. In the Leningrad
@@ -479,6 +479,38 @@ infrastructure has changed enough to make them misleading examples:
   `.novc/mam-ws-bot-real-runs/20261029-103358-664928-0400/`, dry run
   `.novc/mam-ws-bot-real-runs/20261029-100909-255431-0400/`, and the one-shot re-run
   `.novc/mam-ws-bot-real-runs/20261029-103519-818386-0400/`.
+
+### The tav's ḥiriq before its sheva in the note on Deuteronomy 3:22, 2026-10-29 — current
+
+- **Purpose:** Clause 2 of MAM's documentation note on Deuteronomy 3:22 gives the Leningrad
+  Codex's form of תיראום, after `ל?!=`, with a ḥataf-ḥiriq, its tav having a sheva and then a
+  ḥiriq. Ben read the codex's page F100B on 2026-10-28, as the dangling-CGJ plan records him:
+  "the xiriq comes before the sheva. So that is what MAM should have (with CGJ) in its note,
+  and it should also express this in plus notation, and it should also mention it in Hebrew
+  prose". The edit gives the form in plus notation, `תִּ+תְּירָא֑וּם`, and in a packed form
+  whose tav has a ḥiriq, a dagesh, a CGJ and a sheva, and calls the mark a reversed
+  ḥataf-ḥiriq, with the prose "דהיינו החיריק מימין לשווא". The rest of the clause is Dovi's
+  revision 3099093 of that morning, unchanged, including his conclusion that the sheva-like
+  mark is a blurred meteg stroke.
+- **Authorization:** Ben held this edit back from the Numbers 7:60 run and then dropped it,
+  having taken Dovi's revision to abandon the ḥataf-ḥiriq. Once he saw that clause 2 keeps it,
+  he chose to revive the edit as prepared, and gave the go-ahead for the save: "Yes, complete
+  the task, edit wikisource, then download it, whatever you need to do, get this task done!"
+  A Claude Code session wrote the files and ran them the same day.
+- **Saving run:** Deuteronomy 3, revision 3099093 → 3099130.
+- **Safety rule:** the edit's `old` occurs exactly once in revision 3099093. Two `--no-save`
+  dry runs, the second just before the save, gave the same page: the mirrored chapter with the
+  replacement applied, differing from it on verse 22's line alone. The saving run's page and
+  the post-run download equal the dry runs'.
+- **Post-run download:** refetched Deuteronomy 3 and all 36 declared special pages, none of
+  which had changed since the previous download, and the reparse of Deuteronomy passed all 59
+  MAM-parsed claims.
+- **Edit level:** Raw page text string replacement, chapter-targeted.
+- **JSON files:** `in/mam-ws-bot-edits/note-deuteronomy-3-22-reversed-hataf-hiriq.json` and its
+  selector, `note-deuteronomy-3-22-reversed-hataf-hiriq.chapters.json`; run artifacts
+  `.novc/mam-ws-bot-real-runs/20261029-150031-401070-0400/`, dry runs
+  `.novc/mam-ws-bot-real-runs/20261029-145140-988360-0400/` and
+  `.novc/mam-ws-bot-real-runs/20261029-150007-117426-0400/`.
 
 ## How to look up the original code
 

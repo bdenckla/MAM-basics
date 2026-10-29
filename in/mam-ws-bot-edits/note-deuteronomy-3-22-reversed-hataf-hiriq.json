@@ -1,0 +1,14 @@
+{
+  "summary": "Deut 3:22 note: give the Leningrad Codex form with the tav's ḥiriq before its sheva, in plus notation and in a packed form whose CGJ (U+034F) holds that order, with prose calling it a reversed ḥataf-ḥiriq",
+  "edit-kind": "explicit-replacement",
+  "edits": {
+    "Deuter": [
+      {
+        "ch": "ג",
+        "old": "ל?!=תְִּירָא֑וּם בחטף-חיריק (!)",
+        "new": "ל?!=תִּ+תְּירָא֑וּם (תִּ͏ְירָא֑וּם) בחטף-חיריק הפוך (!), דהיינו החיריק מימין לשווא,",
+        "comment": "Deuteronomy 3:22: the note's ל?! form of תיראום, whose tav the note says has a ḥataf-ḥiriq; give it with the ḥiriq before the sheva, in plus notation and in a packed form with a CGJ, and call it a reversed ḥataf-ḥiriq, the ḥiriq to the right of the sheva"
+      }
+    ]
+  }
+}
