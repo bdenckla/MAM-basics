@@ -7,8 +7,8 @@ returns bytes and performs no writes: the notices and ``SOURCE.txt`` that stand 
 in ``gh-pages/woff2/``, and the source package in ``gh-pages/font-sources/``. A publisher whose
 pages link that ``SOURCE.txt`` must include the complete returned mapping in the same
 publication; the Phonetic MAM and Yeivin ITM publishers both do. The source archive is the
-release's immutable input, not executable repository code or a claim of an independently
-reproduced font build.
+release's immutable input: its members are copies of this repository's build files at the
+release's source commit, which this module neither runs nor rebuilds the font from.
 """
 
 import hashlib
@@ -39,7 +39,7 @@ _SUPPORT_SHA256 = {
     "FONT-NOTICE.txt": "25f37bd8a9785e2112994bb0583e6068aab610546b195dfbeb8b93c4ef79b9e1",
     "GPL-2.0.txt": "edaef632cbb643e4e7a221717a6c441a4c1a7c918e6e4d56debc3d8739b233f6",
     "SOURCE-INVENTORY.json": "4258f29e112e00b8a9ae912503f1c156841d40e7b80057c66dfeabcdf4ab1609",
-    "BUILD.txt": "01d510f50b273db3cb694ff5b0c9580939554c765dc7f48dd03eb3c0f1231a10",
+    "BUILD.txt": "3322c1acf9b80f399bd3a41b806207fd187983370abc8d8977a673479f52192d",
     "SOURCE.txt": "88fbb9a955d8457f7952577b98cc952af4a18ba87a2d6b6cf55d3f76a04da34f",
     "PRODUCT-WOFF2-SOURCE.txt": "0eef02ddce7ec009d1bffa2462bf9b88d524c901154ca10e6989315f86f8afc9",
 }

@@ -72,9 +72,10 @@ returning the font's complete same-host support mapping, without writing files. 
 publisher that links the font's `woff2/SOURCE.txt`, as the Phonetic MAM index does,
 must copy the whole mapping.
 
-The support package's input closure and source identities have been checked.
-An exact font rebuild has not been established. The Phonetic target includes the
-font's complete same-host source-support tree.
+The support package's input closure and source identities have been checked, and
+on 2026-10-29 a build from nothing but its source archive's files reproduced the
+font byte for byte, in the one environment that the package's `BUILD.txt` names.
+The Phonetic target includes the font's complete same-host source-support tree.
 
 ## Public consumers and independent analysis
 

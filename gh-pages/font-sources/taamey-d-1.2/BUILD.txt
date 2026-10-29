@@ -35,11 +35,12 @@ From the directory into which the archive is extracted, the build is:
 It fills the three templates, then runs the FontForge script with Taamey-D/ as
 FontForge's working directory, and writes the filled templates and FontForge's
 outputs beside the sources in Taamey-D/font-m-TaD/. It finds FontForge through
-its --fontforge option, on PATH, or, on Windows, as FontForgeBuilds/fontforge.bat
-under ProgramFiles or ProgramFiles(x86), and on Windows it marks the filled
-templates read-only. It therefore needs Python and a FontForge installation with
-its Python module and WOFF2 support; these general-purpose tools are not
-included. Its Python imports are standard-library modules: argparse, json, os, pathlib, shutil, string, subprocess, and sys.
+its --fontforge option, on PATH, or, on Windows, as
+FontForgeBuilds/fontforge.bat under ProgramFiles or ProgramFiles(x86), and on
+Windows it marks the filled templates read-only. It therefore needs Python and
+a FontForge installation with its Python module and WOFF2 support; these
+general-purpose tools are not included. Its Python imports are standard-library
+modules: argparse, json, os, pathlib, shutil, string, subprocess, and sys.
 
 Rebuild check
 -------------
@@ -72,7 +73,9 @@ https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt.
 
 The source files retain their release bytes and notices. They are supplied as
 the corresponding editable font source and build inputs under the font's GNU
-GPL version 2 terms; the build's entry point and package are GPL version 2 or
-later, as their notices say. No new GPL version 3 or CC0 grant is made over that
-material, and the document-embedding exception is not a release from the
-redistribution obligations for the font itself.
+GPL version 2 terms. The build's scripts are GPL version 2 or later: its entry
+point and package say so in their notices, and MAM-basics' DATA-LICENSES.md
+says so of its FontForge script,
+Taamey-D/font-m-TaD/ffscript_generate_sfd_n_ttf.py. No new GPL version 3 or
+CC0 grant is made over that material, and the document-embedding exception is
+not a release from the redistribution obligations for the font itself.
