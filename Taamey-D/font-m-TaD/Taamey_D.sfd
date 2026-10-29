@@ -4,7 +4,7 @@ FullName: Taamey D
 FamilyName: Taamey D
 Weight: Medium
 Copyright: COPYRIGHT\n\n    Copyright (c) 2021, Ben Denckla (<bdenckla@alum.mit.edu>),\n    with Reserved Font Name 'Taamey D'.\n    \n    Taamey D's glyphs are derived from those of Taamey Frank CLM Medium.\n    Taamey D's OpenType mark positioning logic is original, i.e. *not* derived from that of Taamey Frank CLM Medium.\n    Below are the relevant parts of the copyright of Taamey Frank CLM Medium, with minor edits for clarity.\n    \n    Hebrew glyphs (letters, vowels, & cantillation marks)\n    copyright (c) 2009-2010, Yoram Gnat (<yoram.gnat@gmail.com>).\n    \n    Latin glyphs (letters and part of punctuation) taken from Century Schoolbook L font,\n    copyright (c) 1999 by (URW)++ Design & Development.\n\nLICENSE\n\n    This Font Software is licensed under the GNU Public License Version 2.\n    The license is available at http://www.gnu.org/licenses/old-licenses/gpl-2.0.html.\n    \n    As a special exception,\n    if you create a document which uses this font, and embed this font or unaltered portions of this font into the document,\n    this font does not by itself cause the resulting document to be covered by the GNU General Public License.\n    This exception does not however invalidate any other reasons why the document might be covered by the GNU General Public License.\n    If you modify this font, you may extend this exception to your version of the font, but you are not obligated to do so.\n    If you do not wish to do so, delete this exception statement from your version.
-Version: 1.1
+Version: 1.2
 ItalicAngle: 0
 UnderlinePosition: -170
 UnderlineWidth: 70
@@ -889,7 +889,7 @@ MacName: 0 0 7 "Cursive"
 MacName: 0 1 20 "Pleinement connectes"
 MacName: 0 4 7 "Cursief"
 EndMacFeatures
-LangName: 1033 "" "" "" "FontForge 2.0 : Taamey D : 1.1"
+LangName: 1033 "" "" "" "FontForge 2.0 : Taamey D : 1.2"
 GaspTable: 3 8 2 16 1 65535 3 0
 Encoding: Custom
 UnicodeInterp: none

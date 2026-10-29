@@ -75,8 +75,9 @@ FontForge must be installed separately, with its Python scripting support and WO
 The build uses the executable or batch file that `--fontforge` names, else `fontforge` on PATH,
 else, on Windows, `FontForgeBuilds/fontforge.bat` under `ProgramFiles` or `ProgramFiles(x86)`.
 It runs a Windows batch file through the Windows command processor. FontForge 20251009
-reproduces the tracked outputs byte for byte (checked 2026-10-28). A different FontForge can
-change the built bytes: explain such a difference rather than accepting it.
+reproduces the tracked outputs byte for byte (checked 2026-10-28, and on 2026-10-29 for 1.2,
+also from nothing but the files of its source archive). A different FontForge can change the
+built bytes: explain such a difference rather than accepting it.
 
 The build is a hand-run generator, which the mega does not run. Ben's decision of 2026-10-28:
 "Yes, keep FontForge run out of MAM-basics mega." So after a change to a source or to the build,
