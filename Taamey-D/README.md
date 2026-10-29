@@ -8,11 +8,11 @@ repository root, where every command below runs.
 
 Taamey D's sources, build and pages moved here from the private hbofonts repository on
 2026-10-28, and since then Taamey D work happens here. Its shaping checks, their test corpus,
-the corpus refresh and the baseline acceptance followed on 2026-10-29. The release tool is still
-in hbofonts and follows later. The releases published so far stay in hbofonts' downloads, at
-https://bdenckla.github.io/hbofonts/downloads/, which remain Taamey D's downloads until the
-release tool arrives. By Ben's decision of 2026-10-28, issues opened before the move stay in
-hbofonts' tracker, and new Taamey D issues go to MAM-basics' tracker.
+the corpus refresh and the baseline acceptance followed on 2026-10-29, and so did the release
+tool, so new releases are published from here. The releases published from hbofonts stay in
+hbofonts' downloads, at https://bdenckla.github.io/hbofonts/downloads/, and the downloads index
+that the release tool writes here links them. By Ben's decision of 2026-10-28, issues opened
+before the move stay in hbofonts' tracker, and new Taamey D issues go to MAM-basics' tracker.
 
 ## What is where
 
@@ -25,7 +25,10 @@ hbofonts' tracker, and new Taamey D issues go to MAM-basics' tracker.
   of two of the pages.
 - `py/main_taamey_d.py` `qa`, `corpus` and `accept-baseline`, and `py/taamey_d/qa/`: the
   shaping checks, the corpus refresh and the baseline acceptance.
+- `py/main_taamey_d.py` `release-check` and `release-publish`, and `py/taamey_d/release.py`:
+  the release tool.
 - `gh-pages/taamey-d/`: the pages, their stylesheet and the comparison images.
+- `gh-pages/taamey-d/downloads/`: the published releases, which the release tool writes.
 - [`Taamey-D/LICENSE.md`](LICENSE.md): the terms of all of these, path by path.
 
 ## Authored sources and generated outputs
@@ -153,6 +156,47 @@ cases of `Taamey-D/qa-in/` as Taamey D's expected output. It is an explicit base
 not a test, and it needs Ben's approval. Then run `qa` again, read every result, and commit the
 accepted test cases and reports together.
 
+## Publishing a release
+
+```powershell
+./.venv/Scripts/python.exe py/main_taamey_d.py release-check
+```
+
+`release-check` checks the published releases in `gh-pages/taamey-d/downloads/` and writes
+nothing. Each release is an immutable snapshot directory,
+`snapshots/<version>-MAM-basics-<first 12 hex digits of its source commit>/`, holding the binary
+archive `Taamey_D.zip`, the corresponding-source archive `Taamey_D-sources.zip`, their checksums
+and a provenance manifest. `latest/` is a byte-identical copy of the newest snapshot, and
+`index.html` lists them all. The check compares every snapshot's archives with the files of its
+source commit and checks the index's links, and it fails if a committed snapshot changed or
+disappeared, in the working tree or in Git's history. Before the first release it says that no
+snapshot is published. The mega runs it as its step `taamey-d-release-check`, which a cloud
+session skips when its shallow checkout lacks a snapshot's source commit.
+
+```powershell
+./.venv/Scripts/python.exe py/main_taamey_d.py release-publish --snapshot-commit <full HEAD>
+```
+
+`release-publish` is outward-facing release preparation, never a verification command, so the
+mega does not run it. Before it, set the version in `py/taamey_d_build/font_version.py`, rewrite
+the release notes, run the build, `doc` and `qa`, read every result, and commit. Then run
+`release-publish` with that commit in full. It refuses a commit other than `HEAD`, a release input
+that differs from its committed bytes, and release notes whose first line is not
+`Taamey D <version>`. It checks the existing releases, builds the snapshot twice in scratch
+directories and compares the two builds, installs the new snapshot, replaces `latest/` only after
+verifying it, and rewrites the index. Then run `release-check`, read both outputs, and commit the
+snapshot, `latest/` and the index together. Do not hand-edit those generated files: snapshot
+directories are append-only, and only `latest/` is ever replaced.
+
+The binary archive holds the TTF, WOFF and WOFF2 with `license.txt` and the release notes. The
+source archive holds the three templates, `license.txt`, the FontForge script and the build, each
+at its path in this repository, so that the build runs from the extracted archive's root; the
+tool refuses plain `.sfd` and `.fea` files there. The index lists this repository's snapshots
+first, then, by absolute URL, the releases published from hbofonts, whose `downloads/latest/`
+stays frozen at Taamey D 1.1. A release reaches the site only at the next Pages dispatch, which
+needs Ben's go-ahead, and the site's pages take it only through a new pin, as "Publication" below
+says.
+
 ## Hebrew safeguards
 
 Never apply Unicode normalization to Hebrew or casually reorder Hebrew marks. Exact code-point
@@ -201,6 +245,6 @@ the font by pinning a released snapshot into `in/font-support/taamey-d-<version>
 now Taamey D 1.1, in [`in/font-support/taamey-d-1.1/`](../in/font-support/taamey-d-1.1/README.md).
 So the build never writes that copy, and a new release reaches the pages only through a new pin.
 
-New releases are to come from MAM-basics: "Yes, new releases should come from MAM-basics." (Ben,
-2026-10-28). Until the release tool moves here, hbofonts' downloads index lists every release.
-Publishing a release is an outward-facing act.
+New releases come from MAM-basics: "Yes, new releases should come from MAM-basics." (Ben,
+2026-10-28). "Publishing a release" above says how. Publishing a release is an outward-facing
+act.

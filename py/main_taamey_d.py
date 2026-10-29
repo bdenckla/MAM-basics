@@ -1,4 +1,4 @@
-"""Taamey D's documentation pages, checks and corpus, in the py/taamey_d/ packages.
+"""Taamey D's documentation pages, checks, corpus and releases, in py/taamey_d/.
 
 Subcommands:
     doc
@@ -26,6 +26,22 @@ Subcommands:
         Taamey-D/qa-out/Taamey_D/ as Taamey D's expected outputs in the test cases of
         Taamey-D/qa-in/.  It is an explicit baseline operation that needs Ben's
         approval, not a test.
+    release-check
+        Check the published downloads tree, gh-pages/taamey-d/downloads/: every
+        snapshot and latest/ against the source commit that its provenance names,
+        the index's links, and that no committed snapshot changed or disappeared, in
+        the working tree against HEAD and in Git's history.  It takes no options.
+        Before the first release, when neither the tree nor any path under it in
+        Git's history exists, it says that no snapshot is published.  A missing
+        source commit raises, as SourceCommitOutsideShallowHistory in a shallow
+        clone.
+    release-publish
+        Build the snapshot of --snapshot-commit, HEAD as 40 lowercase hex digits,
+        whose release inputs must all be committed, twice in two scratch roots;
+        compare and check both builds; then install the snapshot under
+        gh-pages/taamey-d/downloads/snapshots/, replace latest/ with a copy of it,
+        and rewrite the index.  --published-date YYYY-MM-DD defaults to today's date
+        in New York.  Publishing a release is an outward-facing act.
 """
 
 import argparse
@@ -59,6 +75,24 @@ def build_parser():
         help="Accept the regression reports' actual outputs as Taamey D's expected"
         " outputs: an explicit baseline operation that needs Ben's approval, not a test",
     )
+    commands.add_parser(
+        "release-check",
+        help="Check Taamey D's published downloads tree, gh-pages/taamey-d/downloads/",
+    )
+    release_publish = commands.add_parser(
+        "release-publish",
+        help="Build, verify and install one immutable Taamey D snapshot, with latest/"
+        " and the downloads index: an outward-facing act",
+    )
+    release_publish.add_argument(
+        "--snapshot-commit",
+        required=True,
+        help="the snapshot's source commit, HEAD, as 40 lowercase hex digits",
+    )
+    release_publish.add_argument(
+        "--published-date",
+        help="the publication date, YYYY-MM-DD; by default today's date in New York",
+    )
     return parser
 
 
@@ -81,6 +115,14 @@ def almost_main(argv=None):
         from taamey_d.qa.accept_baseline import accept_baseline
 
         return accept_baseline()
+    if args.command == "release-check":
+        from taamey_d.release import release_check
+
+        return release_check()
+    if args.command == "release-publish":
+        from taamey_d.release import release_publish
+
+        return release_publish(args.snapshot_commit, args.published_date)
     raise ValueError("unknown Taamey D operation")
 
 
