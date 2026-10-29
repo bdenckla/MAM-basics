@@ -1,7 +1,7 @@
 ---
 name: verse-links
 description: Build the links Ben asks for when he looks a verse or an atom up — mgketer.org and masoretica.org for the Aleppo Codex; tanach.us, masoretica.org and Sefaria's image of the Leningrad Codex page with the atom's estimated column and line; MAM-with-doc and MAM on Hebrew Wikisource; and the rarer mechon-mamre.org and Chabad CTR links — by running MAM-basics' py/main_verse_links.py, never by writing a URL by hand.
-when_to_use: Load when Ben asks for any of those links, or for where an atom is in the Leningrad Codex — "the masoretica and mgketer links for 2 Chronicles 28:23", "a sefaria link and the atom estimate" — and before any message that names a verse for Ben to look up in a manuscript or an edition. Not needed for links a generated page already has, such as the mgketer diff cards'.
+when_to_use: Load when Ben asks for any of those links, or for where an atom is in the Leningrad Codex — "the masoretica and mgketer links for 2 Chronicles 28:23", "a sefaria link and the atom estimate" — and before any message that names a verse for Ben to look up in a manuscript or an edition. Not needed for links a generated page already has, such as the mgketer diff cards'. Also load before citing a UXLC change, whose tanach.us change link Ben wants.
 ---
 
 Ben, 2026-09-10: *"all the time I'm asking for one or more of the following: masoretica link,
@@ -110,6 +110,13 @@ One markdown link per line, in this order:
 7. **Never guess a Chabad article id.** A CTR chapter URL is an article id, and only ten are
    recorded. If Ben wants CTR links routinely, the fix is a table of every chapter's id fetched
    from chabad.org once, which is a download and so his decision.
+8. **Cite a UXLC change by its tanach.us change link.** Ben, 2026-10-28, of a report that
+   pointed to a UXLC change through local paths: *"you gave me two useless links and did not
+   give me the one link you should have known I would have wanted: the tanach.us link to the
+   relevant change proposal(s)."* Read the change's `release`, `changeset` and `n` from
+   `in/UXLC-misc/all_changes.json`, and compute the link by calling `expand_uxlc_change_ref`,
+   in `py/accgram/rtms_report.py`, on the compact form `<release>/<changeset>-<n>`; never
+   retype it. A path to the change record, or to the UXLC's XML, is no substitute.
 
 ## Where each piece lives in MAM-basics
 
