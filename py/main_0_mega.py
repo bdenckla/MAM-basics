@@ -905,11 +905,12 @@ _STEPS = [
     ),
     # Added the same day as taamey-d-qa, and last: after wordlist and uxlc-word-list,
     # which write the two word lists it reads, and so that a pending refresh ends the
-    # run's output, as in hbofonts' mega.  It writes nothing.  By Ben's decision of 2026-10-28 a refresh of
-    # MAM's text does not oblige refreshing the corpus, so a pending refresh goes into the
-    # run's closing summary instead of failing it, and only an error that would stop a
-    # refresh raises.  The refresh itself, py/main_taamey_d.py corpus without --check,
-    # and accept-baseline are declared in test_mega_coverage.py's NOT_IN_MEGA.
+    # run's output, as in hbofonts' mega.  It writes nothing.  By Ben's decision of
+    # 2026-10-28 a refresh of MAM's text does not oblige refreshing the corpus, so a
+    # pending refresh goes into the run's closing summary instead of failing it, and only
+    # an error that would stop a refresh raises.  The refresh itself, py/main_taamey_d.py
+    # corpus without --check, and accept-baseline are declared in test_mega_coverage.py's
+    # NOT_IN_MEGA.
     StepRecord(
         "taamey-d-corpus",
         _run_taamey_d_corpus,

@@ -167,8 +167,8 @@ accepted test cases and reports together.
 nothing. Each release is an immutable snapshot directory,
 `snapshots/<version>-MAM-basics-<first 12 hex digits of its source commit>/`, holding the binary
 archive `Taamey_D.zip`, the corresponding-source archive `Taamey_D-sources.zip`, their checksums
-and a provenance manifest. `latest/` is a byte-identical copy of the newest snapshot, and
-`index.html` lists them all. The check compares every snapshot's archives with the files of its
+and a provenance manifest. `latest/` is a byte-identical copy of the snapshot that
+`release-publish` installed last, and `index.html` lists them all. The check compares every snapshot's archives with the files of its
 source commit and checks the index's links, and it fails if a committed snapshot changed or
 disappeared, in the working tree or in Git's history. Before the first release it says that no
 snapshot is published. The mega runs it as its step `taamey-d-release-check`, which a cloud
@@ -184,8 +184,8 @@ the release notes, run the build, `doc` and `qa`, read every result, and commit.
 `release-publish` with that commit in full. It refuses a commit other than `HEAD`, a release input
 that differs from its committed bytes, and release notes whose first line is not
 `Taamey D <version>`. It checks the existing releases, builds the snapshot twice in scratch
-directories and compares the two builds, installs the new snapshot, replaces `latest/` only after
-verifying it, and rewrites the index. Then run `release-check`, read both outputs, and commit the
+directories and compares the two builds, installs the new snapshot, replaces `latest/` with a
+copy of it only once the new snapshot is verified, and rewrites the index. Then run `release-check`, read both outputs, and commit the
 snapshot, `latest/` and the index together. Do not hand-edit those generated files: snapshot
 directories are append-only, and only `latest/` is ever replaced.
 
