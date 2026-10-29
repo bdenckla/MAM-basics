@@ -39,5 +39,6 @@ ruff==0.16.5
 six==1.17.0
 typing_extensions==4.16.0
 tzdata==2026.4
+uharfbuzz==0.57.0
 urllib3==2.7.0
 xlsxwriter==3.2.9

@@ -20,10 +20,9 @@ def collect_uni(io_fois, wlc_id, bcv, velsod):
     word = _get_word(velsod)
     if word is None:
         return
-    fcomps = unf.get_fragile_comps(word)
-    dropped, dropped_n = fcomps
-    if dropped == dropped_n:
+    if not unf.is_fragile(word):
         return
+    fcomps = unf.get_fragile_comps(word)
     fragile_foi = io_fois["fragile_foi"]
     pattkey_found = None
     for pattkey, patt in _PATTS:
@@ -70,12 +69,13 @@ _PATTS = [
 
 
 def _mk_ffrec(bcv, word, fcomps, pattkey):
-    dropped, dropped_n = fcomps
+    dropped, dropped_n, dropped_hb = fcomps
     return {
         "bcv": bcv,
         "word": word,
         "dropped": dropped,
         "dropped_n": dropped_n,
+        "dropped_hb": dropped_hb,
         "pattkey": pattkey,
     }
 

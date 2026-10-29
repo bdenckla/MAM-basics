@@ -19,17 +19,20 @@ import mb_cmn.bib_locales as tbn
 
 
 def _is_uxlc_fragile(string):
-    # UXLC has a more lenient definition of fragile than we use for MAM
+    # UXLC has a more lenient definition of fragile than we use for MAM.
     #
-    # TODO: consider וַיִּקְבְֹּ֥ר (w,_,y,·,i,q,:,v,·,o,:,(me),r) to be robust
-    # because (o,:) i.e., (xolam,sheva) is actualy UXLC-standard order.
-    # I.e., it is extraordinary to have both of these vowels on a single
-    # letter, but if we allow this to happen, this is actually the
-    # UXLC-standard order for these vowel code points.
-    # And, getting to the deeper defintion of robust, I don't think
-    # order matters for this code point, for any font & text rendering stack.
+    # Some UXLC Jerusalem forms have patax or qamats before xiriq or sheva on
+    # the lamed, an order that NFC reverses. _lai_to_lia accepts that order by
+    # reversing it first, but only for the NFC comparison: its result has
+    # xiriq or sheva before patax or qamats, the very order that HarfBuzz
+    # reverses, so the HarfBuzz comparison gets the word as UXLC has it.
     #
-    return unf.is_fragile(_lai_to_lia(string))
+    # A TODO here once asked us to consider וַיִּקְבְֹּ֥ר (w,_,y,·,i,q,:,v,·,o,:,(me),r)
+    # robust, since (o,:), i.e. (xolam,sheva), is UXLC-standard order for
+    # those two vowels on one letter, and their order should not matter to
+    # any font or rendering stack. Fragility now ignores that case: NFC moves
+    # the sheva, a mark below the letter, only past the xolam, a mark above it.
+    return unf.is_nfc_fragile(_lai_to_lia(string)) or unf.is_hb_fragile(string)
 
 
 def _lai_to_lia(string):
@@ -64,6 +67,7 @@ def _annotate_word(fragile_word):
         "fragile_word_n_cs": uh.join_shunnas(f_w_n),
         "fragile_word_u_with_drops": fcs1[0],
         "fragile_word_n_with_drops": fcs1[1],
+        "fragile_word_hb_with_drops": fcs1[2],
     }
 
 

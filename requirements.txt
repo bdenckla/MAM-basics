@@ -19,3 +19,6 @@ numpy
 pygments
 pyspellchecker
 tzdata
+# Test-only: py/tests/test_uni_norm_fragile_harfbuzz.py checks the model of
+# HarfBuzz's mark order in py/mb_cmn/uni_norm_fragile.py against HarfBuzz itself.
+uharfbuzz

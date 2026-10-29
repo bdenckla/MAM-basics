@@ -106,3 +106,47 @@ copies of the deleted wording that pointed back at `uni_denorm.py` here; both re
 replaced those copies with evacuation breadcrumbs on 2026-09-04. On 2026-08-04, one day after the
 deletion, three NFC-ordered clusters were found in a hand-authored file here. That is why it is
 worth the tokens.
+
+## HarfBuzz hands a font a third order
+
+HarfBuzz, the shaping engine that its `README.md` lists in Android, Chrome, Firefox and many
+other systems, sorts the marks after each letter before a font sees them. It sorts by a
+permutation of Unicode's combining classes for the Hebrew points, in `src/hb-unicode.hh`,
+unchanged from HarfBuzz 0.9.1 (2012) through 15.0.0 (2026): shin dot, sin dot, dagesh or mapiq,
+rafeh, ḥolam, the three ḥataf vowels, tsere, segol, pataḥ, qamats, sheva, ḥiriq, qubuts, meteg
+and varika, then the accents in Unicode's order. Since 5.0.0 (2022), at Ben's request in
+https://github.com/harfbuzz/harfbuzz/issues/2947, it also puts a meteg, or an accent of class
+220 below the letter, before a sheva or ḥiriq that follows a pataḥ or qamats.
+
+HarfBuzz orders shin dot, sin dot, dagesh and rafeh as MAM-normal order does, and from the same
+source: Appendix B of the SBL Hebrew Font User Manual gives them the classes 10, 11, 21 and 23
+that `_NS_COMB_CLASSES` uses (manual version 1.5, June 2007, pp. 21–22,
+https://www.unicode.org/L2/L2019/19183-sbl-hebrew-man-v1-5.pdf). HarfBuzz 15.0.0 also sorts
+dagesh ḥazaq (U+05C9) with the dagesh, since Unicode 18 gives it the dagesh's class. The order
+of the vowels is not the manual's, which gives every below vowel, meteg and below accent one
+class. Mozilla bug 662055 moved sheva and ḥiriq after pataḥ and qamats in 2012, so that the
+Biblical spelling of Jerusalem would render without a CGJ, and judged the order of any other
+pair of vowels immaterial because none was known to share a letter (comments 30, 38 and 39). So
+HarfBuzz hands a font tsere before ḥiriq and before sheva even where Unicode normalization keeps
+the stored order. That happened to the ketiv atoms of דנאל and מדנאל that the notes quote at
+Ezekiel 14:14, 14:20 and 28:3, and to the combined atom in the note on 2 Kings 18:27, until the
+bot run of 2026-10-28 put a CGJ between the two vowels of each (“Ketiv forms with two vowels on
+one letter” in `py/ws/ws_bot_edit_history.md`). A CGJ between two vowels keeps their stored
+order in HarfBuzz, as it does under normalization.
+
+Since 2026-10-28, `is_fragile` in `py/mb_cmn/uni_norm_fragile.py` has checked a string against
+both orders. After dropping the marks in its `_DROP_TABLE`, it calls the string fragile when
+normalization to NFC or HarfBuzz's reordering would change the order of the marks below any
+letter, or of the marks above it. A change that only moves a mark below a letter past a mark
+above that letter does not count, because fonts position the marks below a letter independently
+of the marks above it. Its `hb_mark_order` models HarfBuzz 15.0.0's reordering, and
+`py/tests/test_uni_norm_fragile_harfbuzz.py` checks that model against HarfBuzz itself.
+
+Fragility is therefore stricter than MAM-normal order, which lets a vowel and an accent pass in
+either order (the scope note above). A vowel or meteg must come before an accent in the same
+zone, below the letter or above it, since NFC and HarfBuzz both put it first, while a mark below
+the letter and a mark above it may come in either order. And since NFC puts sheva and ḥiriq
+before the other vowels and HarfBuzz puts them after, two vowels on one letter have no robust
+order without a CGJ between them when one is sheva and the other is a ḥataf vowel, tsere,
+segol, pataḥ, qamats or qamats qatan, or when one is ḥiriq and the other is tsere, segol, pataḥ,
+qamats or qamats qatan.
