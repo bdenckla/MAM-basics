@@ -1,6 +1,6 @@
 # Job 9:10 — Ben’s decision on the reversed reference
 
-State: live; Ben decided 2026-10-17; proposal submitted in #312, not applied.
+State: live; Ben decided 2026-10-17; proposal submitted in #312; applied on Wikisource in revision 3092653; #312 closed 2026-10-29.
 
 A footnote in chapter 1 of the Introduction, under the heading below, gives as
 an example of a typing difference a word it places at Job 10:9. The word is in
@@ -24,8 +24,11 @@ revision on 2026-10-17):
   numbering (`py/mb_cmn/verse_external_links.py`) Job is book 29 and book 30 is
   the Song of Songs. On 2026-10-17 mgketer.org's page for that link was the
   Song of Songs, chapter 1, and its Job 9 page was book 29. At Ben's request
-  a [comment on #312](https://github.com/bdenckla/MAM-basics/issues/312#issuecomment-6240438440) reports this, together with
+  a comment on #312 reported this, together with
   the footnote's one misspelling of Westminster, `וסטמינטר`, without samekh.
+  That comment no longer exists; the
+  [body of #312](https://github.com/bdenckla/MAM-basics/issues/312), last edited
+  on 2026-10-18, carries both points.
 
 ## Ben's decision
 
@@ -33,5 +36,16 @@ Ben, 2026-10-17 at 18:47 UTC, in Claude Code session `2f820cf6-3d3f-4301-bdb1-d7
 “Regarding "Job 9:10 — chapter and verse reversed in an example", yeah this is pretty obviously a typo of the form you identify. Please create a github issue for it.”
 
 The proposal changes only the reference's two numerals, from Job 10:9 to
-Job 9:10, and [#312](https://github.com/bdenckla/MAM-basics/issues/312) proposes it to Avi. Nothing here edits the
+Job 9:10, and [#312](https://github.com/bdenckla/MAM-basics/issues/312) proposed it to Avi. Nothing here edits the
 Introduction.
+
+## Applied on Wikisource
+
+On 2026-10-19 skadish1 reported the change done in #312, linking
+[revision 3092653](https://he.wikisource.org/w/index.php?diff=3092653&oldid=3087907),
+whose parent is the audited revision 3087907. MAM-basics' Introduction mirror holds
+the later revision 3095761 from `0cb9332a`, of 2026-10-28. There the example names
+Job 9:10 through a link to MAM's verse, its mgketer link uses book 29, and the
+footnote spells Westminster `וסטמינסטר`. A Claude session checked this against the
+mirror and closed #312 on 2026-10-29 at Ben's request;
+[adjudications.json](adjudications.json) records the application.

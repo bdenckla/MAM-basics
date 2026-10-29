@@ -166,7 +166,7 @@
       }
     ],
     "explanation": "",
-    "decision": "The unchanged cached quotation and Ben’s proposed correction are shown below. This source correction has not been applied; the research note records his observations, the recent restoration and the copying hypothesis.",
+    "decision": "The unchanged cached quotation, Ben’s proposed correction and the applied quotation are shown below. The correction was applied on Wikisource without the optional circle; the research note records his observations, the recent restoration and the copying hypothesis.",
     "reading_forms": [],
     "adjudication": "JER-31-37-BEN-20261014",
     "revision_history": {
@@ -226,7 +226,7 @@
       }
     ],
     "explanation": "The Introduction and the note’s Leningrad clause both describe the yod difference.",
-    "decision": "The exact cached and corrected wording are shown below, preserving the stored quotation mark and parentheses. This source correction has not been applied.",
+    "decision": "The exact cached, corrected and applied wording are shown below, preserving the stored quotation mark and parentheses. The correction has since been applied on Wikisource.",
     "reading_forms": [
       {
         "label": "MAM: includes yod",
@@ -295,7 +295,7 @@
       }
     ],
     "explanation": "The Introduction and both quoted spellings agree on this vav difference.",
-    "decision": "This is the inverse of Numbers 9:7. The exact cached and corrected wording are shown below, preserving the stored quotation mark and parentheses. This source correction has not been applied.",
+    "decision": "This is the inverse of Numbers 9:7. The exact cached, corrected and applied wording are shown below, preserving the stored quotation mark and parentheses. The correction has since been applied on Wikisource.",
     "reading_forms": [],
     "adjudication": "DEUT-32-34-BEN-20261014",
     "revision_history": {
@@ -1551,7 +1551,7 @@
       }
     ],
     "explanation": "7 Tevet 5774 corresponds to 10 December 2013. Conversely, 10 December 2014 corresponds to 18 Kislev 5775. The local calendar conversions round-trip, so the stated pair cannot name one date.",
-    "decision": "Ben, 2026-10-17: treat the Hebrew date as definitive; an off-by-one typo in the year explains “(10.12.14)”. He approves changing it to “(10.12.13)”, as shown below, and #311 proposes that change to Avi.",
+    "decision": "Ben, 2026-10-17: treat the Hebrew date as definitive; an off-by-one typo in the year explains “(10.12.14)”. He approves changing it to “(10.12.13)”, as shown below; #311 proposed that change to Avi, and the applied sentence follows.",
     "reading_forms": [],
     "revision_history": {
       "summary": "Chapter 1 gained this sentence, with “(10.12.14)” already in it, in an edit saved at 14:22 UTC on 10 December 2013, the day of 7 Tevet 5774; the preceding revision, of 8 December 2013, lacks it. On 22 May 2019 the paragraph moved unchanged to the appendices, and the current revision, of 16 October 2026, still has “(10.12.14)”. A sentence written in December 2013 cannot report work ending in December 2014.",
@@ -1602,7 +1602,7 @@
       }
     ],
     "explanation": "The current cached text at Job 9:10 contains the word; Job 10:9 does not. The Westminster URL and Mechon Mamre chapter-9 path support the former reference. No external page was fetched, and this check does not verify the example’s historical transcription or manuscript claims.",
-    "decision": "Ben, 2026-10-17: an obvious typo. He approves changing באיוב י,ט to באיוב ט,י, as shown below, so that the example names Job 9:10; #312 proposes that change to Avi.",
+    "decision": "Ben, 2026-10-17: an obvious typo. He approves changing באיוב י,ט to באיוב ט,י, as shown below, so that the example names Job 9:10; #312 proposed that change to Avi, and the applied reference follows.",
     "reading_forms": [],
     "prose_quotes": [
       "באיוב י,ט",

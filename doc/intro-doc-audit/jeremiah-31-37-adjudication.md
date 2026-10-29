@@ -1,6 +1,6 @@
 # Jeremiah 31:37 — Ben’s adjudication of the doc-note quotation
 
-State: live; Ben adjudicated 2026-10-14; research proposal recorded, source correction not applied; proposal submitted in #313.
+State: live; Ben adjudicated 2026-10-14; proposal submitted in #313; correction applied on Wikisource in revision 3092656, without the optional circle; #313 closed 2026-10-29.
 
 This note records Ben’s direct adjudication and contextual observations from
 `Sentinel_a32e0898f09c8191bc489d5b907129fd`. Codex prepared the research record on
@@ -114,4 +114,18 @@ deployment, or screenshot publication is part of this research update.
 
 ## Submitted to Avi
 
-On 2026-10-17 at 20:20 UTC Ben asked for an issue for each correction he had approved in this review: “Sure, go ahead and file those 12 issues”. #313 proposes this correction to Avi; it is not applied.
+On 2026-10-17 at 20:20 UTC Ben asked for an issue for each correction he had approved in this review: “Sure, go ahead and file those 12 issues”. #313 proposed this correction to Avi.
+
+## Applied on Wikisource
+
+On 2026-10-19 skadish1 reported the correction done in #313, linking
+[revision 3092656](https://he.wikisource.org/w/index.php?diff=3092656&oldid=3088451),
+whose parent is the audited chapter revision **3088451**. MAM-basics' chapter
+mirror holds that revision from `fd0d1b1d`, of 2026-10-28, where the quotation reads:
+
+<div lang="he" dir="rtl">הִנֵּ֛ה יָמִ֥ים [] נְאֻם־יְהוָ֑ה</div>
+
+The divine name has atnaḥ and no ḥolam dot, as Ben asked, and the gap still has no
+masorah circle, which he left optional. A Claude session checked this against the
+mirror and closed #313 on 2026-10-29 at Ben's request;
+[adjudications.json](adjudications.json) records the application.

@@ -1,6 +1,6 @@
 {
   "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
-  "purpose": "Presentation coverage and exact-quotation verification. User adjudications and unapplied proposals are recorded separately; rendering does not establish semantic consistency.",
+  "purpose": "Presentation coverage and exact-quotation verification. User adjudications, proposals and their applications are recorded separately; rendering does not establish semantic consistency.",
   "readable_cases": 152,
   "sections": {
     "discrepancies": 90,
@@ -27,6 +27,7 @@
   },
   "literal_passages_checked": 718,
   "proposed_quotations_checked": 14,
+  "applied_quotations_checked": 5,
   "user_adjudicated_comparisons": 14,
   "reviewed_cases": [
     "jeremiah-accent",
@@ -606,6 +607,6 @@
   "limits": [
     "Exact substring validation does not establish manuscript truth or translation accuracy.",
     "Source reviewers and root reread translations and decisions; physical-source and quotation-scope questions remain explicit.",
-    "Rendering reads the recorded snapshot and writes research outputs only; it changes no source cache, scripture or published file."
+    "Rendering reads the recorded snapshot, and for an applied proposal the later mirror commit that holds it, and writes research outputs only; it changes no source cache, scripture or published file."
   ]
 }
