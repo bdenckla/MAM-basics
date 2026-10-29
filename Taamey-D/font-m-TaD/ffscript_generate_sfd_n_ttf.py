@@ -1,4 +1,5 @@
-# This script is driven by the portable Python workflow, run from the repository root:
+# FontForge runs this script with Taamey-D/ as its working directory, so that the base
+# path below resolves. The portable Python workflow drives it from the repository root:
 #
 #    .venv/Scripts/python.exe py/main_taamey_d_build.py
 

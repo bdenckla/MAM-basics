@@ -39,6 +39,7 @@ Run it inside the suite, or on its own:
   ./.venv/Scripts/python.exe py/main_test.py -k graphviz_version_pin
 """
 
+import json
 import subprocess
 import unittest
 from pathlib import Path
@@ -60,6 +61,21 @@ _EXPECTED_UNSTAMPED = frozenset(
         "gh-pages/favicon.svg",
     }
 )
+
+# The comparison images of gh-pages/taamey-d/Taamey_D.html are HarfBuzz renderings of
+# Hebrew in three fonts, not Graphviz output: they were rendered once, on 2026-10-28,
+# and moved here with Taamey D's pages that day. Their PROVENANCE.json records each
+# one, so exactly the files it records are expected unstamped. A Graphviz SVG that lost
+# its stamp, there or anywhere else, still fails, and so does a missing PROVENANCE.json.
+_COMPARISON_DIR = "gh-pages/taamey-d/img/comparison"
+
+
+def _comparison_images():
+    provenance = REPO_ROOT / _COMPARISON_DIR / "PROVENANCE.json"
+    records = json.loads(provenance.read_text(encoding="utf-8"))["images"]
+    assert records, f"{provenance} records no image"
+    return frozenset(f"{_COMPARISON_DIR}/{record['file']}" for record in records)
+
 
 # Eight tracked SVGs carry a stamp after the 2026-09-28 retirement of the six
 # plain-product call graphs: the six plus call graphs under
@@ -120,12 +136,13 @@ class TestGraphvizVersionPin(unittest.TestCase):
         )
         self.assertEqual(
             unstamped,
-            _EXPECTED_UNSTAMPED,
+            _EXPECTED_UNSTAMPED | _comparison_images(),
             "The set of tracked SVGs carrying no Graphviz stamp has changed. A "
             "newly unstamped file is either a Graphviz SVG that lost its stamp "
             "-- which would otherwise pass this lint by looking hand-made -- or "
             "a new hand-made SVG, which belongs in _EXPECTED_UNSTAMPED with its "
-            "reason.",
+            "reason. Taamey D's comparison images are expected exactly as their "
+            "PROVENANCE.json records them.",
         )
 
     def test_the_scan_read_the_tree(self):
