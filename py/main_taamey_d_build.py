@@ -14,8 +14,8 @@ Taamey_D.sfd, Taamey_D.ttf, Taamey_D.woff and Taamey_D.woff2. It finds FontForge
 --fontforge, then fontforge on PATH, then, on Windows, FontForgeBuilds/fontforge.bat under
 ProgramFiles or ProgramFiles(x86).
 
-This file and its package, py/taamey_d_build/, ship in the font's source archive under
-GPL-2.0-or-later, so they import only each other and the standard library.
+This file and its package, py/taamey_d_build/, are to ship in the font's source archives
+under GPL-2.0-or-later, so they import only each other and the standard library.
 """
 
 import argparse

@@ -525,7 +525,7 @@ NOT_IN_MEGA: dict[str, str] = {
         'Ben\'s decision, 2026-10-28: "Yes, keep FontForge run out of MAM-basics mega."'
         "  The FontForge build of Taamey D runs by hand when the font's sources or"
         " the build change, and the mega's taamey-d-doc step works from the committed"
-        " font.  Recorded in the comment above that step in py/main_0_mega.py."
+        " font version.  Recorded in the comment above that step in py/main_0_mega.py."
     ),
 }
 

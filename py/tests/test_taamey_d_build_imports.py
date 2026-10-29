@@ -1,6 +1,6 @@
 """Lint: Taamey D's build imports nothing but the standard library and itself.
 
-By Ben's decision of 2026-10-28, the scripts that ship in Taamey D's source archive,
+By Ben's decision of 2026-10-28, the scripts that are to ship in Taamey D's source archives,
 py/main_taamey_d_build.py and its package py/taamey_d_build/, are licensed GPL-2.0-or-later,
 while the rest of py/, mb_cmn included, is GPL-3.0. So these files may import nothing
 GPL-3.0: such an import would make the shipped build a GPL-3.0 program, and the archive,
@@ -10,7 +10,7 @@ and its modules. A relative import counts as the module it resolves to, and a dy
 import, through __import__ or importlib.import_module, must name its module with a string
 literal that this lint can read.
 
-Taamey-D/font-m-TaD/ffscript_generate_sfd_n_ttf.py, which ships in the archive too, is
+Taamey-D/font-m-TaD/ffscript_generate_sfd_n_ttf.py, which the archives carry too, is
 outside this lint: FontForge runs it, and it imports fontforge.
 
 This is a mechanical lint over source text, one of the two test shapes AGENTS.md sanctions.

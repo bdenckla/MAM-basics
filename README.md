@@ -28,6 +28,7 @@ Several of the directories below have a README of their own, beside the files it
 - [`MAM-with-doc/`](MAM-with-doc/README.md) — an HTML edition of MAM with documentation notes; its [published edition](https://bdenckla.github.io/MAM-basics/MAM-with-doc/) is in the site tree
 - [`MAM-OSIS/`](MAM-OSIS/README.md) — OSIS MAM exports for conversion to SWORD format, with configuration and documentation
 - [`Phonetic-MAM/`](Phonetic-MAM/README.md) — the Phonetic MAM display as JSON: MAM's displayed Hebrew with its Sephardic and Ashkenazic transcriptions; `main_phonetic_mam.py` exports it and renders its [published pages](https://bdenckla.github.io/MAM-basics/phonetic-mam/) in the site tree
+- [`Taamey-D/`](Taamey-D/README.md) — the Taamey D font for Biblical Hebrew: its sources and the files its hand-run FontForge build, `main_taamey_d_build.py`, generates from them; `main_taamey_d.py doc` renders its [published pages](https://bdenckla.github.io/MAM-basics/taamey-d/) in the site tree
 - [`Yeivin-ITM/`](Yeivin-ITM/README.md) — the exact fractions behind the meteg claims Ben Denckla added to his adaptation of selected excerpts from Israel Yeivin's *Introduction to the Tiberian Masorah*; `main_yeivin_itm.py` writes them and renders the [published excerpts](https://bdenckla.github.io/MAM-basics/yeivin-itm/yeivin_itm.html) in the site tree
 - [`aleppo/`](aleppo/) — Aleppo Codex page-location data
 - [`cam1753/`](cam1753/) — Cambridge MS Add. 1753 page-location data
