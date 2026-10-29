@@ -91,6 +91,14 @@ and whether to contact the INTF is Ben's decision. `hbce-psalms/out/` is a froze
 run: by Ben's decision of 2026-09-26, a change to MAM's data does not oblige rerunning
 `py/main_hbce_psalms.py compare`, as the hand-run rule below would otherwise require.
 
+## Taamey D work has local routing documentation
+
+Before touching `Taamey-D/`, `py/taamey_d*/`, `py/main_taamey_d*.py` or `gh-pages/taamey-d/`,
+read `Taamey-D/README.md`. The font's FontForge build, `py/main_taamey_d_build.py`, is a hand-run
+generator. Never normalize the Hebrew of the font's test corpus. Accepting observed output into
+the shaping checks' baseline needs Ben's approval, and publishing a Taamey D release is
+outward-facing.
+
 ## Issue citations in MAM-basics
 
 Load the `github-issues` skill for any issue operation or citation audit. The always-needed
@@ -147,7 +155,7 @@ temporary-stub procedures, and historical traps.
    at 4:17 AM, New York time. A push to `main` therefore reaches the site only at the next
    dispatch.
 2. **Distributed data:** `MAM-parsed/`, `MAM-simple/`, `MAM-for-Sefaria/`, `MAM-with-doc/`,
-   `MAM-OSIS/`, `Phonetic-MAM/`, `Yeivin-ITM/`, and `out/near-aleppo/`.
+   `MAM-OSIS/`, `Phonetic-MAM/`, `Taamey-D/`, `Yeivin-ITM/`, and `out/near-aleppo/`.
 3. **Generators:** the entry points run by `py/main_0_mega.py`.
 
 Before pushing `main` to `origin`, run the mega and the suite. Like most rules this one has
