@@ -21,8 +21,9 @@ Taamey D's files elsewhere in this repository:
 - `py/main_taamey_d_build.py` and `py/taamey_d_build/`, the build: GPL-2.0-or-later, an
   exception to the GPL-3.0 of the rest of `py/`.
 - `py/main_taamey_d.py` and `py/taamey_d/`, the page generator: GPL-3.0, like the rest of `py/`.
-- `gh-pages/taamey-d/`, except `img/comparison/`: GPL-3.0 for the authored pages and their
-  stylesheet. The Hebrew they quote keeps its source's terms.
+- `gh-pages/taamey-d/index.html`, `Taamey_D.html`, `Xolam_xaser_for_alef.html` and
+  `Taamey-doc-styles.css`: GPL-3.0 for the three pages and their stylesheet. The Hebrew they
+  quote keeps its source's terms.
 - `gh-pages/taamey-d/img/comparison/`: images made with Taamey Frank CLM, SBL Hebrew and Ezra
   SIL. No grant is made or implied over the fonts, whose terms remain their makers', as each
   font's name table states and `PROVENANCE.json` records. The texts keep their sources' terms.

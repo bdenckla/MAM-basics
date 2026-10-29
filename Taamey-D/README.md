@@ -7,11 +7,12 @@ at https://bdenckla.github.io/MAM-basics/taamey-d/. Paths in this file are writt
 repository root, where every command below runs.
 
 Taamey D's sources, build and pages moved here from the private hbofonts repository on
-2026-10-28, and since then Taamey D work happens here. Its shaping checks with their test
-corpus, and its release tool with the downloads it publishes, are still in hbofonts and follow
-later. Until the release tool arrives, Taamey D's downloads remain at
-https://bdenckla.github.io/hbofonts/downloads/. By Ben's decision of 2026-10-28, issues opened
-before the move stay in hbofonts' tracker, and new Taamey D issues go to MAM-basics' tracker.
+2026-10-28, and since then Taamey D work happens here. Its shaping checks, their test corpus,
+the corpus updater, the baseline-acceptance tool and the release tool are still in hbofonts and
+follow later. The releases published so far stay in hbofonts' downloads, at
+https://bdenckla.github.io/hbofonts/downloads/, which remain Taamey D's downloads until the
+release tool arrives. By Ben's decision of 2026-10-28, issues opened before the move stay in
+hbofonts' tracker, and new Taamey D issues go to MAM-basics' tracker.
 
 ## What is where
 
@@ -27,8 +28,8 @@ before the move stay in hbofonts' tracker, and new Taamey D issues go to MAM-bas
 
 The authored font inputs, in `Taamey-D/font-m-TaD/`, are `Taamey_D.sym.fea`,
 `Taamey_D-nofea.sym.sfd` and `license.sym.txt`, with the FontForge script
-`ffscript_generate_sfd_n_ttf.py`. The build generates these files beside them, which must not be
-hand-edited:
+`ffscript_generate_sfd_n_ttf.py`. The build generates the following files beside them; do not
+hand-edit these generated files:
 
 - `Taamey_D.fea`, `Taamey_D-nofea.sfd` and `license.txt`, the three templates filled in;
 - `Taamey_D.sfd`, `Taamey_D.ttf`, `Taamey_D.woff` and `Taamey_D.woff2`, FontForge's outputs.
@@ -75,8 +76,12 @@ The build is a hand-run generator, which the mega does not run. Ben's decision o
 rerun the build, read every generated diff, and commit the sources and outputs together. The
 build never writes `gh-pages/woff2/Taamey_D.woff2`, which "Publication" below explains.
 
-The build and its entry point import only each other and the Python standard library, so that
-they can ship in a source archive under GPL-2.0-or-later;
+A build that changes the font also owes a run of the Taamey D shaping checks, reading every
+result: a `FAIL` or `SKIP` is a finding that needs explaining. The checks are still in hbofonts
+and follow later, so until they arrive here, leave the font's sources unchanged.
+
+The build's package, `py/taamey_d_build/`, and its entry point import only each other and the
+Python standard library, so that they can ship in a source archive under GPL-2.0-or-later;
 `py/tests/test_taamey_d_build_imports.py` checks this.
 
 ## Generating the pages
@@ -125,8 +130,8 @@ general below-mark chain for main."
 
 ## Publication
 
-The site's pages that set Hebrew in Taamey D, these among them, load the site's one copy of the
-font, `gh-pages/woff2/Taamey_D.woff2`. By Ben's decision of 2026-10-28, MAM-basics' pages take
+The site's pages that set Hebrew in Taamey D, `gh-pages/taamey-d/Taamey_D.html` among them, load
+the site's one copy of the font, `gh-pages/woff2/Taamey_D.woff2`. By Ben's decision of 2026-10-28, MAM-basics' pages take
 the font by pinning a released snapshot into `in/font-support/taamey-d-<version>/`; the pin is
 now Taamey D 1.1, in [`in/font-support/taamey-d-1.1/`](../in/font-support/taamey-d-1.1/README.md).
 So the build never writes that copy, and a new release reaches the pages only through a new pin.

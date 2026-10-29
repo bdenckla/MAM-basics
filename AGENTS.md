@@ -95,9 +95,9 @@ run: by Ben's decision of 2026-09-26, a change to MAM's data does not oblige rer
 
 Before touching `Taamey-D/`, `py/taamey_d*/`, `py/main_taamey_d*.py` or `gh-pages/taamey-d/`,
 read `Taamey-D/README.md`. The font's FontForge build, `py/main_taamey_d_build.py`, is a hand-run
-generator. Never normalize the Hebrew of the font's test corpus. Accepting observed output into
-the shaping checks' baseline needs Ben's approval, and publishing a Taamey D release is
-outward-facing.
+generator. Never normalize or casually reorder the Hebrew in Taamey D's files. Accepting
+observed output into the shaping checks' baseline needs Ben's approval, and publishing a Taamey D
+release is outward-facing.
 
 ## Issue citations in MAM-basics
 
