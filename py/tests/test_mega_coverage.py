@@ -542,6 +542,14 @@ NOT_IN_MEGA: dict[str, str] = {
         " operation, not a test, and needs Ben's approval.  Recorded in"
         ' Taamey-D/README.md, under "Accepting a baseline".'
     ),
+    "py/main_taamey_d.py release-publish": (
+        "Ben's approval, 2026-10-28, of MAM-private's"
+        " doc/PLAN-evacuate-hbofonts-into-MAM-basics.md, whose Phase 4 declares it here:"
+        " publishing a Taamey D release is outward-facing release preparation, never a"
+        " verification command, and it needs the exact full source commit; the mega's"
+        " taamey-d-release-check step checks what it published.  Recorded in"
+        ' Taamey-D/README.md, under "Publishing a release".'
+    ),
 }
 
 # ---------------------------------------------------------------------------

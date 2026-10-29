@@ -1,0 +1,14 @@
+{
+  "summary": "Num 7:60 note: remove a CGJ (U+034F) that separates no marks, between the mem's atnaḥ and the final nun in the ש= form; nothing visible changes",
+  "edit-kind": "explicit-replacement",
+  "edits": {
+    "Numbers": [
+      {
+        "ch": "ז",
+        "old": "ש=בִנְיָמ֑͏ן (חסר חיריק)",
+        "new": "ש=בִנְיָמ֑ן (חסר חיריק)",
+        "comment": "Numbers 7:60: the note's ש= form of בנימן, which has no ḥiriq on the mem; remove the CGJ after the mem's atnaḥ, before the final nun, where it separates no marks"
+      }
+    ]
+  }
+}

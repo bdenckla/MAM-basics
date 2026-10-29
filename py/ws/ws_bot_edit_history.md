@@ -371,7 +371,7 @@ infrastructure has changed enough to make them misleading examples:
   `.novc/mam-ws-bot-intro-runs/20261018-121729-392296-0400/`, dry run
   `.novc/mam-ws-bot-intro-runs/20261018-121701-421342-0400/`.
 
-### Ketiv forms with two vowels on one letter: a CGJ between the vowels, 2026-10-28 — current
+### Ketiv forms with two vowels on one letter: a CGJ between the vowels, 2026-10-28
 
 - **Purpose:** Give a CGJ (U+034F, COMBINING GRAPHEME JOINER) to nine atoms whose letter had
   two vowels with no CGJ between them: five ketiv forms in four documentation notes, and the
@@ -437,6 +437,48 @@ infrastructure has changed enough to make them misleading examples:
   `.novc/mam-ws-bot-real-runs/20261028-152208-478727-0400/`, and
   `.novc/mam-ws-bot-intro-runs/20261028-154221-003122-0400/`, dry run
   `.novc/mam-ws-bot-intro-runs/20261028-152218-893094-0400/`.
+
+### A CGJ that separated no marks, removed from the note on Numbers 7:60, 2026-10-29 — current
+
+- **Purpose:** Remove one CGJ (U+034F, COMBINING GRAPHEME JOINER) that separated no marks.
+  MAM's documentation note on Numbers 7:60 gives two forms of the atom בנימן. In the Leningrad
+  Codex's form, after `ל!=`, the mem has an atnaḥ, a CGJ and a ḥiriq, and that CGJ keeps the
+  order the note states. The next form, for the sigil ש, which the note says lacks the ḥiriq
+  ("חסר חיריק"), had the same atnaḥ and CGJ followed directly by the final nun: a copy of the
+  first form with its ḥiriq deleted. That CGJ stood between a mark and a letter, so it did
+  nothing, and removing it changes nothing visible.
+- **Framing:** a code point that does nothing. Ben, 2026-10-28, on hearing of it: "Is it about a
+  dangling CGJ not separating any marks? If so, horrendous!" A census of the repository found
+  it the only CGJ in MAM's text without a mark on each side. `py/tests/test_cgj_between_marks.py`,
+  committed after this run's refresh, checks the mirrors and the products for any other.
+- **Authorization:** Ben said on 2026-10-29 to carry out the plan that included this run ("Yes,
+  after Phase 3"). He then chose to run this edit alone ("Numbers 7:60 only"), holding back a
+  change to the note on Deuteronomy 3:22, which Dovi had revised that morning, and gave the
+  go-ahead for the save: "Yes, save it". A Claude Code session wrote the files and ran them the
+  same day.
+- **Saving run:** Numbers 7, revision 2987710 → 3099098.
+- **Safety rule:** a script cut `old` from the live wikitext of revision 2987710, checking that
+  it occurs exactly once and holds exactly one CGJ, between HEBREW ACCENT ETNAHTA and HEBREW
+  LETTER FINAL NUN; `new` is `old` without it. The `--no-save` dry run's page equalled that
+  capture with the replacement applied, code point for code point, and differed from it on one
+  line by the CGJ alone. Just before the save the live page was byte for byte the capture. The
+  saved revision and the post-run download equal the dry run's page.
+- **Post-run download:** refetched Numbers 7 and all 36 declared special pages, none of which
+  had changed since the previous download, and the reparse of Numbers passed all 59 MAM-parsed
+  claims. In the mirror, `out/mam-ws-parsed-fmt-2/` and MAM-parsed, the note's ש form lost the
+  CGJ and nothing else changed. The note's Leningrad Codex form keeps its CGJ, now the only one
+  in Numbers.
+- **One-shot:** confirmed 2026-10-29, immediately after the run: a `--no-save` re-run raised
+  "Expected 1 occurrence".
+- **Near-Aleppo:** no record of `in/near-aleppo/doc-note-review.json` quotes this note.
+- **Left as they are:** `doc/intro-doc-audit/notes.json`, a record pinned to its source commit,
+  which quotes the note with the CGJ; and the held change to Deuteronomy 3:22's note.
+- **Edit level:** Raw page text string replacement, chapter-targeted.
+- **JSON files:** `in/mam-ws-bot-edits/note-numbers-7-60-dangling-cgj.json` and its selector,
+  `note-numbers-7-60-dangling-cgj.chapters.json`; run artifacts
+  `.novc/mam-ws-bot-real-runs/20261029-103358-664928-0400/`, dry run
+  `.novc/mam-ws-bot-real-runs/20261029-100909-255431-0400/`, and the one-shot re-run
+  `.novc/mam-ws-bot-real-runs/20261029-103519-818386-0400/`.
 
 ## How to look up the original code
 

@@ -184,6 +184,7 @@ _MEGA_WRAPPER_DELEGATES = {
     ),
     "_run_taamey_d_doc": "py/main_taamey_d.py",
     "_run_taamey_d_qa": "py/main_taamey_d.py",
+    "_run_taamey_d_release_check": "py/main_taamey_d.py",
     "_run_taamey_d_corpus": "py/main_taamey_d.py",
 }
 

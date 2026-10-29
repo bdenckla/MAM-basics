@@ -31,6 +31,11 @@ the marks of every yod before qof the same offsets; in every atom, with either
 font, this screen's font-added-space verdict matched whether the font added
 advance.
 
+1.2 keeps them as well. It changes only the font's version: a fontTools
+comparison of the 1.1 and 1.2 fonts on 2026-10-29 found every table but head
+and name byte-identical, and the feature source, Taamey_D.sym.fea, is 1.1's
+unchanged, so the line numbers cited below hold for both.
+
 HTML conversion sees contiguous text leaves after semantic rendering. Atoms split
 by special-letter or vowel-variant spans may be missed or only partly expanded;
 single-letter leaves are left alone. No source character or mark order changes.
@@ -130,8 +135,8 @@ def _font_below(marks, *, include_dehi=False):
 def _font_added_space(clusters):
     """The five kern1AddThin contexts and the observed second kern2AddThin rule.
 
-    Source: in/font-support/taamey-d-1.1/'s source archive,
-    font-m-TaD/Taamey_D.sym.fea, lines 200–213. The first kern2AddThin
+    Source: in/font-support/taamey-d-1.2/'s source archive,
+    Taamey-D/font-m-TaD/Taamey_D.sym.fea, lines 200–213. The first kern2AddThin
     rule (two below marks before a narrow letter with three) remains a trial:
     the selected-Scripture investigation found no occurrence to judge visually.
     """
@@ -208,7 +213,7 @@ def _font_added_space(clusters):
 
 
 def _yod_before_qof(clusters):
-    """Screen the exact vowel-raising context at line 419 of the 1.1 source's .fea."""
+    """Screen the exact vowel-raising context at line 419 of the 1.2 source's .fea."""
     for (first, a), (second, b) in zip(clusters, clusters[1:]):
         if first != "י" or second != "ק":
             continue

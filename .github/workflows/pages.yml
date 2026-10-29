@@ -20,8 +20,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # The full history, for the check below: it compares each Taamey D snapshot with its
+      # source commit and checks that no committed snapshot changed or disappeared.  In a
+      # shallow checkout it would fail rather than pass.
       - name: Checkout
         uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      # Ben's decision of 2026-10-29, when Taamey D's downloads moved here from hbofonts,
+      # whose own deploys ran the same check: deploy nothing unless Taamey D's published
+      # downloads, gh-pages/taamey-d/downloads/, pass it.  It needs only the standard
+      # library and Git.
+      - name: Check Taamey D's published downloads and their immutable history
+        run: python3 py/main_taamey_d.py release-check
 
       - name: Configure Pages
         uses: actions/configure-pages@v6

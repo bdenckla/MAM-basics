@@ -1,37 +1,37 @@
-Taamey D 1.1: license, source, and provenance
+Taamey D 1.2: license, source, and provenance
 =============================================
 
 This directory provides the source package and notices for the unmodified
-22,524-byte Taamey_D.woff2 that MAM-basics' published pages load.
-Font SHA-256: 388a38a23b22d038a8bc3b969158f79cb27aa5edaddddf2fead8969d07f21275
+22,484-byte Taamey_D.woff2 that MAM-basics' published pages load.
+Font SHA-256: 34e415bd2a28d4d0d407aa2138a43a1a87d9519a6df39933ec05976051032b2c
 
 Download the complete Taamey D build inputs from this directory:
-  Taamey_D-1.1-sources.zip
-Archive size: 76138 bytes
-Archive SHA-256: 97e33813adbfe17a9298696d3976bd6add82984e3b2c6f741527a6538a684d34
+  Taamey_D-1.2-sources.zip
+Archive size: 76197 bytes
+Archive SHA-256: a4b6eaad0a7335d1e878ac874fe52b6305c9d5204fd7c54f7358ff95da49cb89
 
 Companion files in this directory:
   FONT-NOTICE.txt: copyright, GNU GPL version 2 grant, and embedding exception
   GPL-2.0.txt: complete GNU GPL version 2 text
   SOURCE-INVENTORY.json: release identities and exact archive-member hashes
-  BUILD.txt: source scope, build procedure, dependencies, and limitations
+  BUILD.txt: source scope, build procedure, dependencies, and the rebuild check
 
 The downloadable ZIP is Taamey_D-sources.zip from the Taamey D release snapshot
-1.1-hbofonts-5d9d8d461f79, unchanged except for its file name. It holds nine
+1.2-MAM-basics-1f1be97138d5, unchanged except for its file name. It holds nine
 source and build files and contains no font binary and none of the companion
 files above. The font is the Taamey_D/Taamey_D.woff2 member of the same
 snapshot's Taamey_D.zip. The snapshot is published at:
-  https://bdenckla.github.io/hbofonts/downloads/snapshots/1.1-hbofonts-5d9d8d461f79/
+  https://bdenckla.github.io/MAM-basics/taamey-d/downloads/snapshots/1.2-MAM-basics-1f1be97138d5/
 
 The maintained MAM-basics copy of this directory is published alongside the font
-under font-sources/taamey-d-1.1/. Its purpose is to provide same-host, no-charge
-access to the source under GNU GPL version 2 section 3, rather than depending
-only on the release's own download. Keep the source ZIP and notices publicly
-available whenever the associated font is distributed.
+under font-sources/taamey-d-1.2/. Its purpose is to provide same-host, no-charge
+access to the source under GNU GPL version 2 section 3. Keep the source ZIP and
+notices publicly available whenever the associated font is distributed.
 
 The archive and its nine members were checked against the snapshot's
-SHA256SUMS.txt and provenance.json. No build script was run. Byte-for-byte
-reproduction of the WOFF2 has not been established; see BUILD.txt.
+SHA256SUMS.txt and provenance.json. A build from nothing but the archive's nine
+files reproduced the font byte for byte with FontForge 20251009; BUILD.txt says
+where and what that does not claim.
 
 The font is GNU GPL version 2 with the exception reproduced in FONT-NOTICE.txt.
 MAM-basics does not relicense it or the source bundle under GPL version 3.

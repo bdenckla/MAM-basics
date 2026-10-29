@@ -1,0 +1,95 @@
+{
+  "font": "Taamey D",
+  "version": "1.2",
+  "release_snapshot": {
+    "identifier": "1.2-MAM-basics-1f1be97138d5",
+    "url": "https://bdenckla.github.io/MAM-basics/taamey-d/downloads/snapshots/1.2-MAM-basics-1f1be97138d5/",
+    "published_date": "2026-10-29",
+    "source_repository": "https://github.com/bdenckla/MAM-basics",
+    "source_commit": "1f1be97138d5b9ac5464c2de912299828bf9fccb",
+    "sha256sums_sha256": "2b700bf28600854eb2439e68ce7d4e5fdb9e89c290ae65dc76fdab11ea5fb4cc",
+    "provenance_sha256": "2170c564a1b01fbdd0395818f08ba1b932f54e949a71306aa2a62afb05ac3e7e"
+  },
+  "binary": {
+    "filename": "Taamey_D.woff2",
+    "size": 22484,
+    "sha256": "34e415bd2a28d4d0d407aa2138a43a1a87d9519a6df39933ec05976051032b2c",
+    "git_blob": "ba869a73a821e308d355613748cba0983328a417",
+    "release_archive": "Taamey_D.zip",
+    "release_archive_sha256": "e767581fb1373ac23308b9592d9ad74d5e5a11cc3e4c9bccf236ae7ccbae7501",
+    "release_member": "Taamey_D/Taamey_D.woff2"
+  },
+  "source_archive": {
+    "filename": "Taamey_D-1.2-sources.zip",
+    "release_filename": "Taamey_D-sources.zip",
+    "size": 76197,
+    "sha256": "a4b6eaad0a7335d1e878ac874fe52b6305c9d5204fd7c54f7358ff95da49cb89",
+    "members": [
+      {
+        "path": "Taamey-D/font-m-TaD/Taamey_D-nofea.sym.sfd",
+        "sha256": "e2555f215630a84482b11ee454466a5cd2309a5ae5abc94f525ca791c24b4c70",
+        "size": 181510
+      },
+      {
+        "path": "Taamey-D/font-m-TaD/Taamey_D.sym.fea",
+        "sha256": "d1cde5c68393d1188eda8fcab51b187ce13e6d16a304f8d967905c7fe67dd0a5",
+        "size": 52000
+      },
+      {
+        "path": "Taamey-D/font-m-TaD/ffscript_generate_sfd_n_ttf.py",
+        "sha256": "8e7b97c8ddf0d7f9ef035007758f8a870bb8a6dcab1375b83258891ff87c08c9",
+        "size": 511
+      },
+      {
+        "path": "Taamey-D/font-m-TaD/license.sym.txt",
+        "sha256": "4da1233fb44bd05cfe777e363620563bc32c665611d824958b4fe55553c41d11",
+        "size": 37
+      },
+      {
+        "path": "Taamey-D/font-m-TaD/license.txt",
+        "sha256": "8ebfda3e92cfc3bbf20d8ef1ba12dd050aa04842f003fb321560835d01d1e58c",
+        "size": 1479
+      },
+      {
+        "path": "py/main_taamey_d_build.py",
+        "sha256": "79c69b90c6c8e5ed63c173c42b1022a7b44514b871cfaf25769a6db554488dff",
+        "size": 5119
+      },
+      {
+        "path": "py/taamey_d_build/fill_in_template.py",
+        "sha256": "2713decbe7b2be4879226be92c36b0626204f54fcd7598d7a8ea2a073219f577",
+        "size": 15833
+      },
+      {
+        "path": "py/taamey_d_build/font_version.py",
+        "sha256": "de655563e53d4470d16e0f2db743be688e17552d12ac159943168e5f5850a7f7",
+        "size": 314
+      },
+      {
+        "path": "py/taamey_d_build/my_open.py",
+        "sha256": "2d07f7a60d11866922e0d888fd8d10d9d69159a5cebd834641693e135f68d720",
+        "size": 1974
+      }
+    ]
+  },
+  "font_notice": {
+    "origin": "OpenType name ID 0 of the 1.2 TTF in the same Taamey_D.zip, identical to that of 1.1, 1.0 and 0.921",
+    "extracted_utf8_sha256": "a9f90ba574cebfe67c6941706daf03eaf5c49159c082c44adf3dc7b997060d62",
+    "packaged_sha256": "25f37bd8a9785e2112994bb0583e6068aab610546b195dfbeb8b93c4ef79b9e1",
+    "formatting": "Removed whitespace on otherwise blank lines and added a final LF; all copyright and license wording preserved."
+  },
+  "gpl_text": {
+    "url": "https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt",
+    "size": 17984,
+    "sha256": "edaef632cbb643e4e7a221717a6c441a4c1a7c918e6e4d56debc3d8739b233f6"
+  },
+  "checks": {
+    "release_archives": "Taamey_D.zip and Taamey_D-sources.zip match the snapshot's SHA256SUMS.txt and provenance.json, which py/main_taamey_d.py release-check verifies",
+    "source_archive_members": "All nine members match provenance.json's paths, sizes and SHA-256 values, and the files of the source commit",
+    "binary": "Taamey_D.woff2 is byte-identical to Taamey_D.zip's Taamey_D/Taamey_D.woff2 and has the Git blob of Taamey-D/font-m-TaD/Taamey_D.woff2 at the source commit",
+    "font_notice": "Name ID 0 of the 1.2 TTF, read with fontTools, is identical to that of the 1.1 TTF; FONT-NOTICE.txt is 1.1's, unchanged",
+    "source_input_closure": "The build's entry point and package import only each other and the Python standard library (py/tests/test_taamey_d_build_imports.py), and the outlines and features are entirely in the two templates",
+    "source_execution": "On 2026-10-29, on Windows, py/main_taamey_d_build.py with FontForge 20251009, run in a directory holding nothing but the archive's nine files",
+    "exact_binary_rebuild": "Established for that environment: the build wrote all seven generated files byte for byte as the source commit holds them, Taamey_D.woff2 among them"
+  }
+}
