@@ -1,4 +1,4 @@
-"""Taamey D's documentation pages and shaping checks, in the py/taamey_d/ packages.
+"""Taamey D's documentation pages, checks and corpus, in the py/taamey_d/ packages.
 
 Subcommands:
     doc
@@ -11,6 +11,21 @@ Subcommands:
         Taamey-D/qa-out/Taamey_D/.  --one-check {mrun,plac,regr,coll} runs one shaping
         check alone.  A SKIP, an unknown status or an anchor-family FAIL raises; a
         shaping check's FAIL does not, since its report is a tracked file.
+    corpus
+        Refresh the Taamey-D/qa-in/bible_words_*.testcases.json test cases from this
+        repository's word lists, out/mam-qere-words.json and uxlc/out/uxlc-words.json,
+        printing how many test cases each file drops, adds and relabels.  It refuses
+        while either list has uncommitted changes, and prints the commit it read.
+        --check computes the same refresh but writes nothing, and reads the lists in
+        the working tree, committed or not; when a refresh is pending, its last line
+        says REFRESH PENDING and almost_main returns True, for the mega's closing
+        summary, and otherwise False.  In either mode, an error that would stop a
+        refresh raises.
+    accept-baseline
+        Accept the actual outputs in the regression reports under
+        Taamey-D/qa-out/Taamey_D/ as Taamey D's expected outputs in the test cases of
+        Taamey-D/qa-in/.  It is an explicit baseline operation that needs Ben's
+        approval, not a test.
 """
 
 import argparse
@@ -30,6 +45,20 @@ def build_parser():
         choices=("mrun", "plac", "regr", "coll"),
         help="run only the shaping check with this short name",
     )
+    corpus = commands.add_parser(
+        "corpus",
+        help="Refresh the Bible-words test cases from this repository's word lists",
+    )
+    corpus.add_argument(
+        "--check",
+        action="store_true",
+        help="report what a refresh would change, writing nothing",
+    )
+    commands.add_parser(
+        "accept-baseline",
+        help="Accept the regression reports' actual outputs as Taamey D's expected"
+        " outputs: an explicit baseline operation that needs Ben's approval, not a test",
+    )
     return parser
 
 
@@ -44,6 +73,14 @@ def almost_main(argv=None):
         from taamey_d.qa.run_checks import run_checks
 
         return run_checks(args.one_check)
+    if args.command == "corpus":
+        from taamey_d.qa.corpus_refresh import refresh_corpus
+
+        return refresh_corpus(args.check)
+    if args.command == "accept-baseline":
+        from taamey_d.qa.accept_baseline import accept_baseline
+
+        return accept_baseline()
     raise ValueError("unknown Taamey D operation")
 
 

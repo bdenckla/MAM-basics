@@ -63,6 +63,13 @@ gives its own Hebrew examples in MAM-normal order.
 byte for byte, was added 2026-09-27 with 5,369 clusters in the other order in 25 of its 36
 `.mediawiki` files.
 
+`Taamey-D/qa-in/`, the corpus of Taamey D's shaping checks, moved here from hbofonts on
+2026-10-29 with 16 of its 556,525 clusters in the other order: 5 in five words from the UXLC's
+word list, in `bible_words_21.testcases.json`, and 11 in six test cases quoting MAM's
+documentation notes, in `mam_doc_notes.testcases.json`. A shaping test's input is its exact code
+points, so by Ben's decision of 2026-10-28 the corpus keeps them, deliberately constructed
+alternative orders included, and stays outside `py/check_mark_order.py`'s scope.
+
 **The other 7,247 clusters, in 152 files, are unclassified.** Nobody has established, file by
 file, whether each is a capture, an upstream intermediate, or a paste that should have been in
 MAM-normal order. The largest shares are in `uxlc/in/` and `uxlc/out/` (3,890), `in/accgram/`

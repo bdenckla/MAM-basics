@@ -527,6 +527,20 @@ NOT_IN_MEGA: dict[str, str] = {
         " the build change, and the mega's taamey-d-doc step works from the committed"
         " font version.  Recorded in the comment above that step in py/main_0_mega.py."
     ),
+    "py/main_taamey_d.py corpus without --check": (
+        "Ben's decision, 2026-10-28, in approving MAM-private's"
+        " doc/PLAN-evacuate-hbofonts-into-MAM-basics.md: a refresh of MAM's text only"
+        " reports that Taamey D's shaping-check corpus is due a refresh, which the mega's"
+        " taamey-d-corpus step does with --check.  A refresh adds test cases without"
+        " expected outputs, so a baseline acceptance follows it, and that needs Ben's"
+        ' approval.  Recorded in Taamey-D/README.md, under "Refreshing the corpus".'
+    ),
+    "py/main_taamey_d.py accept-baseline": (
+        "Ben's decision, 2026-10-28, in approving the same plan: accepting observed"
+        " Taamey D output as the shaping checks' expected output is an explicit baseline"
+        " operation, not a test, and needs Ben's approval.  Recorded in"
+        ' Taamey-D/README.md, under "Accepting a baseline".'
+    ),
 }
 
 # ---------------------------------------------------------------------------

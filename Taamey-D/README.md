@@ -7,9 +7,9 @@ at https://bdenckla.github.io/MAM-basics/taamey-d/. Paths in this file are writt
 repository root, where every command below runs.
 
 Taamey D's sources, build and pages moved here from the private hbofonts repository on
-2026-10-28, and since then Taamey D work happens here. Its shaping checks, their test corpus,
-the corpus updater, the baseline-acceptance tool and the release tool are still in hbofonts and
-follow later. The releases published so far stay in hbofonts' downloads, at
+2026-10-28, and its shaping checks, their test corpus, the corpus refresh and the baseline
+acceptance on 2026-10-29; since then Taamey D work happens here. The release tool is still in
+hbofonts and follows later. The releases published so far stay in hbofonts' downloads, at
 https://bdenckla.github.io/hbofonts/downloads/, which remain Taamey D's downloads until the
 release tool arrives. By Ben's decision of 2026-10-28, issues opened before the move stay in
 hbofonts' tracker, and new Taamey D issues go to MAM-basics' tracker.
@@ -17,10 +17,14 @@ hbofonts' tracker, and new Taamey D issues go to MAM-basics' tracker.
 ## What is where
 
 - `Taamey-D/font-m-TaD/`: the font's sources and the files the build generates from them.
+- `Taamey-D/qa-in/`: the shaping checks' corpus, test cases with their expected Taamey D output.
+- `Taamey-D/qa-out/Taamey_D/`: the shaping checks' reports on the font.
 - [`py/main_taamey_d_build.py`](../py/main_taamey_d_build.py) and `py/taamey_d_build/`: the
   build, run by hand.
 - [`py/main_taamey_d.py`](../py/main_taamey_d.py) `doc` and `py/taamey_d/doc/`: the generator
   of two of the pages.
+- `py/main_taamey_d.py` `qa`, `corpus` and `accept-baseline`, and `py/taamey_d/qa/`: the
+  shaping checks, the corpus refresh and the baseline acceptance.
 - `gh-pages/taamey-d/`: the pages, their stylesheet and the comparison images.
 - [`Taamey-D/LICENSE.md`](LICENSE.md): the terms of all of these, path by path.
 
@@ -76,9 +80,9 @@ The build is a hand-run generator, which the mega does not run. Ben's decision o
 rerun the build, read every generated diff, and commit the sources and outputs together. The
 build never writes `gh-pages/woff2/Taamey_D.woff2`, which "Publication" below explains.
 
-A build that changes the font also owes a run of the Taamey D shaping checks, reading every
-result: a `FAIL` or `SKIP` is a finding that needs explaining. The checks are still in hbofonts
-and follow later, so until they arrive here, leave the font's sources unchanged.
+A build that changes the font also owes a run of the shaping checks, as "Checking the font's
+shaping" below says, reading every result: a `FAIL` or `SKIP` is a finding that needs
+explaining.
 
 The build's package, `py/taamey_d_build/`, and its entry point import only each other and the
 Python standard library, so that they can ship in a source archive under GPL-2.0-or-later;
@@ -92,12 +96,73 @@ Python standard library, so that they can ship in a source archive under GPL-2.0
 
 The mega runs it as its step `taamey-d-doc`. Read both generated pages' diffs.
 
+## Checking the font's shaping
+
+```powershell
+./.venv/Scripts/python.exe py/main_taamey_d.py qa
+```
+
+The shaping checks shape every test case in `Taamey-D/qa-in/` with
+`Taamey-D/font-m-TaD/Taamey_D.ttf` and rewrite the reports in `Taamey-D/qa-out/Taamey_D/`. They
+print a result for each check and test-case file. They fail on a `SKIP`, and on a `FAIL` from the
+anchor-family lint, which checks statically that the glyphs of each letter agree on their
+mark-to-base anchors; a deliberate difference among a letter's glyphs goes, with its reason, in
+that lint's closed exception table, in `py/taamey_d/qa/anchor_families.py`. A corpus check's
+`FAIL` does not fail the run, but its failing cases go into the reports. Read every result: a
+`FAIL` or `SKIP` is a finding that needs explaining, not a green check.
+
+The mega runs the checks as its step `taamey-d-qa`, which also fails if the reports then differ
+from Git's index. So after an approved baseline acceptance, stage the accepted `Taamey-D/qa-in/`
+and `Taamey-D/qa-out/` files before running the mega.
+
+## Refreshing the corpus
+
+```powershell
+./.venv/Scripts/python.exe py/main_taamey_d.py corpus
+```
+
+The corpus refresh rewrites the `Taamey-D/qa-in/bible_words_*.testcases.json` test cases from
+this repository's word lists, `out/mam-qere-words.json` and `uxlc/out/uxlc-words.json`, which the
+mega's `wordlist` and `uxlc-word-list` steps write. It reads them in the checkout it runs in, a
+linked worktree's own files included. It refuses to run while either list has uncommitted
+changes, and it prints the commit it read, which the refresh's commit message records. It
+rewrites no other `Taamey-D/qa-in/` file, appends new test cases in sorted order to the
+highest-numbered `bible_words` file, and stops on an SLH word that the multirun check could not
+split. It computes every file's new contents before writing any, and prints how many test cases
+each file drops, adds and relabels.
+
+With `--check`, it computes the same refresh but writes nothing, and reads the word lists as they
+stand, committed or not. It exits 0 when its only finding is a pending refresh, which its last
+line calls `REFRESH PENDING`, and non-zero on any error that would stop a refresh. The mega runs
+it that way as its last step, `taamey-d-corpus`, and reports a pending refresh at the end of its
+output rather than failing. By Ben's decision of 2026-10-28, a refresh of MAM's text does not
+oblige refreshing the corpus: the corpus is a pinned test population, refreshed deliberately.
+
+New test cases arrive without expected outputs, so a refresh needs a baseline acceptance. The
+corpus holds expected outputs for Taamey D only.
+
+## Accepting a baseline
+
+```powershell
+./.venv/Scripts/python.exe py/main_taamey_d.py accept-baseline
+```
+
+A baseline acceptance takes the output that the last `qa` run observed for each failing
+regression case, from the reports in `Taamey-D/qa-out/Taamey_D/`, and writes it into the test
+cases of `Taamey-D/qa-in/` as Taamey D's expected output. It is an explicit baseline operation,
+not a test, and it needs Ben's approval. Then run `qa` again, read every result, and commit the
+accepted test cases and reports together.
+
 ## Hebrew safeguards
 
 Never apply Unicode normalization to Hebrew or casually reorder Hebrew marks. Exact code-point
 sequences are significant to shaping tests, including deliberately constructed alternative mark
 orders. A baseline acceptance, which accepts observed Taamey D output as the shaping checks'
 expected output, needs Ben's approval.
+
+The corpus keeps its sources' exact code points, so a few of its words are not in MAM-normal
+order. It is outside `py/check_mark_order.py`'s scope, and `doc/mam-normal-mark-order.md` lists
+it among the trees that preserve another order on purpose.
 
 ## Taamey D support scope
 

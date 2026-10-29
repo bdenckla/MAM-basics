@@ -302,6 +302,26 @@ def _check_taamey_d_reports_against_index():
         )
 
 
+# Each step that found a refresh pending, with what is pending, in the order run.
+# Appended to by _run_taamey_d_corpus and read by _report_pending_refreshes, which
+# reports them once at the end of the run.
+_PENDING_REFRESHES: list[tuple[str, str]] = []
+
+
+def _run_taamey_d_corpus():
+    # --check: by Ben's decision of 2026-10-28, a refresh of MAM's text only reports that
+    # Taamey D's corpus is due a refresh, which then needs his baseline acceptance.
+    if main_taamey_d.almost_main(["corpus", "--check"]):
+        _PENDING_REFRESHES.append(
+            (
+                "taamey-d-corpus",
+                "Taamey D's shaping-check corpus, Taamey-D/qa-in/, is due a refresh from"
+                " the word lists; Taamey-D/README.md says how, and the refresh needs"
+                " Ben's baseline acceptance",
+            )
+        )
+
+
 _STEPS = [
     StepRecord(
         "parse-ws",
@@ -832,6 +852,21 @@ _STEPS = [
         " Taamey-D/qa-out/Taamey_D/; raises on a SKIP, an anchor-family FAIL, or a report"
         " that differs from Git's index",
     ),
+    # Added the same day, and last: after wordlist and uxlc-word-list, which write the two
+    # word lists it reads, and so that a pending refresh ends the run's output, as in
+    # hbofonts' mega.  It writes nothing.  By Ben's decision of 2026-10-28 a refresh of
+    # MAM's text does not oblige refreshing the corpus, so a pending refresh goes into the
+    # run's closing summary instead of failing it, and only an error that would stop a
+    # refresh raises.  The refresh itself, py/main_taamey_d.py corpus without --check,
+    # and accept-baseline are declared in test_mega_coverage.py's NOT_IN_MEGA.
+    StepRecord(
+        "taamey-d-corpus",
+        _run_taamey_d_corpus,
+        "runs py/main_taamey_d.py corpus --check, which compares the corpus in"
+        " Taamey-D/qa-in/ with out/mam-qere-words.json and uxlc/out/uxlc-words.json and"
+        " writes nothing; reports REFRESH PENDING at the end of the run rather than"
+        " failing; must come after wordlist and uxlc-word-list",
+    ),
 ]
 
 _STEP_NAMES = [step.step_id for step in _STEPS]
@@ -890,6 +925,27 @@ def _report_cloud_skips():
         print()
         for svg_path in skipped_svgs:
             print(f"    {svg_path}")
+    print("=" * 80)
+
+
+def _report_pending_refreshes():
+    """Announce, once and at the end, every refresh that a step found pending.
+
+    Added 2026-10-29 with the taamey-d-corpus step.  By Ben's decision of 2026-10-28, a
+    refresh of MAM's text does not oblige refreshing Taamey D's shaping-check corpus, so
+    that step reports a pending refresh rather than failing, and the run's exit status
+    stays 0.  This banner keeps the report from being lost in the run's output.
+    """
+    if not _PENDING_REFRESHES:
+        return
+    print()
+    print("=" * 80)
+    print(
+        f"  REFRESH PENDING: {len(_PENDING_REFRESHES)} step(s) found a refresh pending"
+    )
+    print("=" * 80)
+    for step_id, what in _PENDING_REFRESHES:
+        print(f"    {step_id}: {what}")
     print("=" * 80)
 
 
@@ -1008,6 +1064,7 @@ def main():
         sys.argv = old_argv
         _report_step_times(time.perf_counter() - run_start)
     _report_cloud_skips()
+    _report_pending_refreshes()
     #
     # Download of ws (Wikisource) can be accomplished by running:
     #    py/main_download.py fr-wikisource
