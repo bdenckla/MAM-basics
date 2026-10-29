@@ -1,0 +1,97 @@
+{
+  "files": {
+    "Taamey_D-sources.zip": {
+      "member_count": 9,
+      "members": [
+        {
+          "path": "Taamey-D/font-m-TaD/Taamey_D-nofea.sym.sfd",
+          "sha256": "e2555f215630a84482b11ee454466a5cd2309a5ae5abc94f525ca791c24b4c70",
+          "size": 181510
+        },
+        {
+          "path": "Taamey-D/font-m-TaD/Taamey_D.sym.fea",
+          "sha256": "d1cde5c68393d1188eda8fcab51b187ce13e6d16a304f8d967905c7fe67dd0a5",
+          "size": 52000
+        },
+        {
+          "path": "Taamey-D/font-m-TaD/ffscript_generate_sfd_n_ttf.py",
+          "sha256": "8e7b97c8ddf0d7f9ef035007758f8a870bb8a6dcab1375b83258891ff87c08c9",
+          "size": 511
+        },
+        {
+          "path": "Taamey-D/font-m-TaD/license.sym.txt",
+          "sha256": "4da1233fb44bd05cfe777e363620563bc32c665611d824958b4fe55553c41d11",
+          "size": 37
+        },
+        {
+          "path": "Taamey-D/font-m-TaD/license.txt",
+          "sha256": "8ebfda3e92cfc3bbf20d8ef1ba12dd050aa04842f003fb321560835d01d1e58c",
+          "size": 1479
+        },
+        {
+          "path": "py/main_taamey_d_build.py",
+          "sha256": "79c69b90c6c8e5ed63c173c42b1022a7b44514b871cfaf25769a6db554488dff",
+          "size": 5119
+        },
+        {
+          "path": "py/taamey_d_build/fill_in_template.py",
+          "sha256": "2713decbe7b2be4879226be92c36b0626204f54fcd7598d7a8ea2a073219f577",
+          "size": 15833
+        },
+        {
+          "path": "py/taamey_d_build/font_version.py",
+          "sha256": "de655563e53d4470d16e0f2db743be688e17552d12ac159943168e5f5850a7f7",
+          "size": 314
+        },
+        {
+          "path": "py/taamey_d_build/my_open.py",
+          "sha256": "2d07f7a60d11866922e0d888fd8d10d9d69159a5cebd834641693e135f68d720",
+          "size": 1974
+        }
+      ],
+      "sha256": "a4b6eaad0a7335d1e878ac874fe52b6305c9d5204fd7c54f7358ff95da49cb89",
+      "size": 76197
+    },
+    "Taamey_D.zip": {
+      "member_count": 5,
+      "members": [
+        {
+          "path": "Taamey_D/Taamey_D.ttf",
+          "sha256": "16a412f4cf5d7d2725864bd55ce6a02d2e56d0650525aabea937fe3806ffed42",
+          "size": 55572
+        },
+        {
+          "path": "Taamey_D/Taamey_D.woff",
+          "sha256": "dc676b3452b8ac7ea9bad7b791ba041a2a8597d5f3465f92d300cf37873481b6",
+          "size": 28304
+        },
+        {
+          "path": "Taamey_D/Taamey_D.woff2",
+          "sha256": "34e415bd2a28d4d0d407aa2138a43a1a87d9519a6df39933ec05976051032b2c",
+          "size": 22484
+        },
+        {
+          "path": "Taamey_D/license.txt",
+          "sha256": "8ebfda3e92cfc3bbf20d8ef1ba12dd050aa04842f003fb321560835d01d1e58c",
+          "size": 1479
+        },
+        {
+          "path": "Taamey_D/release-notes.txt",
+          "sha256": "a1d8a75ccc6d9c75a55e2824edabf2bfe9ad6b367dab052f81c31e502302eb8d",
+          "size": 1079
+        }
+      ],
+      "sha256": "e767581fb1373ac23308b9592d9ad74d5e5a11cc3e4c9bccf236ae7ccbae7501",
+      "size": 80751
+    }
+  },
+  "identifier": "1.2-MAM-basics-1f1be97138d5",
+  "kind": "current-snapshot",
+  "projection": "taamey-d-only",
+  "published_date": "2026-10-29",
+  "schema_version": 2,
+  "source": {
+    "commit": "1f1be97138d5b9ac5464c2de912299828bf9fccb",
+    "repository": "https://github.com/bdenckla/MAM-basics"
+  }
+}
