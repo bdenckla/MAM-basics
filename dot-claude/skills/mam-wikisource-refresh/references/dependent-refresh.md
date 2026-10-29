@@ -166,6 +166,19 @@ them. Approval of the refresh approves nothing that they protect.
    the `verse-links` skill produces. Do not write a new pointed ketiv yourself. After his
    decision, change the record's value and parameters as he says, in a commit of their own
    quoting him, and resume from `near-aleppo-build`.
+5. **Taamey D's corpus waits for Ben.** A refresh that changes `out/mam-qere-words.json` can
+   leave the shaping-check corpus in `Taamey-D/qa-in/` due a refresh. The mega's last step,
+   `taamey-d-corpus`, then prints each corpus file's drop, add and relabel counts and ends the
+   run with a `REFRESH PENDING` banner, without failing it: by Ben's decision of 2026-10-28, a
+   refresh of MAM's text does not oblige refreshing that corpus. Finish the MAM refresh without
+   touching `Taamey-D/`, and give Ben those counts. Refreshing the corpus
+   (`py/main_taamey_d.py corpus`) and accepting the new test cases' expected outputs
+   (`py/main_taamey_d.py accept-baseline`) wait for his approval, as `Taamey-D/README.md` says.
+   The step does fail on a word that no corpus refresh could take: a ZWJ in a use that
+   `py/taamey_d/qa/corpus_refresh.py` does not accept, or an SLH word that the multirun check
+   cannot split. Give Ben the word, its verse and its forms, and wait for his decision on its
+   encoding; commit the resulting change to the corpus refresh on its own, quoting him, then
+   resume with `./.venv/Scripts/python.exe py/main_0_mega.py --resume-from taamey-d-corpus`.
 
 ## Required scenario behavior
 
