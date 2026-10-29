@@ -41,6 +41,7 @@ __all__ = [
 _DROP_TABLE = str.maketrans(
     {
         hpo.DAGOMOSD: None,
+        hpo.DAGESH_XAZAQ: None,  # Like the dagesh: Ben's decision, 2026-10-28
         hpo.RAFE: None,
         hpo.SHIND: None,
         hpo.SIND: None,
@@ -147,10 +148,8 @@ def _zone_orders(run):
 
 # The zone of each mark that a fragile comparison can see: below the letter or
 # above it. The table is closed: _zone_orders raises on any other mark in a run
-# that NFC or HarfBuzz reorders. The marks in _DROP_TABLE need no zone. Neither
-# does dagesh xazaq, which sits inside the letter like the dagesh; whether to
-# drop it like the dagesh or give it a zone is undecided, so a reordered run
-# that holds it raises.
+# that NFC or HarfBuzz reorders. The marks in _DROP_TABLE need no zone, among
+# them dagesh xazaq, which sits inside the letter like the dagesh.
 _BELOW = "below"
 _ABOVE = "above"
 _ZONES = {

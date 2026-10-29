@@ -182,11 +182,7 @@ def test_corpus_atoms():
 
 
 def test_zone_table_agrees_with_unicode_classes():
-    """Lint: each mark's zone fits its Unicode class, and only known marks lack one.
-
-    The marks fragility drops need no zone, and dagesh xazaq, which sits inside the
-    letter, has none on purpose.
-    """
+    """Lint: each mark's zone fits its Unicode class, and only dropped marks lack one."""
     wrong = []
     for mark, zone in unf._ZONES.items():
         unicode_class = unf._UNICODE_18_CLASSES.get(mark) or unicodedata.combining(mark)
@@ -196,8 +192,6 @@ def test_zone_table_agrees_with_unicode_classes():
     unzoned = [
         f"U+{ord(mark):04X}"
         for mark in _MARKS
-        if mark not in unf._ZONES
-        and mark.translate(unf._DROP_TABLE)
-        and mark != hpo.DAGESH_XAZAQ
+        if mark not in unf._ZONES and mark.translate(unf._DROP_TABLE)
     ]
     assert not wrong and not unzoned, (wrong, unzoned)
