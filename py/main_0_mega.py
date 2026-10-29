@@ -113,8 +113,10 @@ import main_search_final_hiriq_verse_text
 import main_search_holam_he_qere
 
 # Taamey D's page generator, which moved here from hbofonts on 2026-10-28, and its
-# shaping checks and corpus refresh, which followed on 2026-10-29.
+# shaping checks, corpus refresh and release tool, which followed on 2026-10-29.  The
+# release tool's exception for a shallow checkout lets a cloud session skip its check.
 import main_taamey_d
+from taamey_d.release import SourceCommitOutsideShallowHistory
 
 
 @dataclass(frozen=True)
@@ -313,6 +315,24 @@ def _check_taamey_d_reports_against_index(reports):
             f"{len(differing)} Taamey D shaping-check report(s) differ from Git's"
             f" index:{shown}\nRead the shaping checks' results; stage a new baseline"
             " only once Ben has approved it (Taamey-D/README.md)."
+        )
+
+
+def _run_taamey_d_release_check():
+    try:
+        main_taamey_d.almost_main(["release-check"])
+    except SourceCommitOutsideShallowHistory as error:
+        # release-check compares each snapshot's archives with the snapshot's source
+        # commit, which a cloud session's shallow checkout may lack (Phase 4 of
+        # MAM-private's doc/PLAN-evacuate-hbofonts-into-MAM-basics.md).  Anywhere else a
+        # missing source commit is a failure.
+        if not graphviz_pin.in_cloud_session():
+            raise
+        step_id = "taamey-d-release-check"
+        reason = str(error)
+        _CLOUD_SKIPPED_STEPS.append((step_id, reason))
+        print(
+            f"STEP SKIPPED in this cloud session: {step_id}: {reason}", file=sys.stderr
         )
 
 
@@ -707,10 +727,10 @@ _STEPS = [
         _run_phonetic_mam_render,
         "reads the tracked public release, its stylesheet and script in"
         " py/phonetic_mam/assets/, the five example images in in/phonetic-mam-images/,"
-        " the site's one font, gh-pages/woff2/Taamey_D.woff2 (Taamey D 1.1), which it"
-        " checks against its pin, and in/font-support/taamey-d-1.1/; writes the unified"
+        " the site's one font, gh-pages/woff2/Taamey_D.woff2 (Taamey D 1.2), which it"
+        " checks against its pin, and in/font-support/taamey-d-1.2/; writes the unified"
         " phonetic-mam site, the font's three notice and source files beside it in"
-        " gh-pages/woff2/ and the shared gh-pages/font-sources/taamey-d-1.1/ package,"
+        " gh-pages/woff2/ and the shared gh-pages/font-sources/taamey-d-1.2/ package,"
         " which yeivin-itm-render also writes; runs in cloud",
     ),
     StepRecord(
@@ -728,10 +748,10 @@ _STEPS = [
         _run_yeivin_itm_render,
         "reads the approved tracked claims, the adaptation and"
         " py/yeivin_itm/assets/style.css, the site's one font,"
-        " gh-pages/woff2/Taamey_D.woff2 (Taamey D 1.1), which it checks against its"
-        " pin, and in/font-support/taamey-d-1.1/; writes the 17 public Yeivin pages,"
+        " gh-pages/woff2/Taamey_D.woff2 (Taamey D 1.2), which it checks against its"
+        " pin, and in/font-support/taamey-d-1.2/; writes the 17 public Yeivin pages,"
         " gh-pages/yeivin-itm/style.css, and the font's three notice and source files"
-        " in gh-pages/woff2/ and the shared gh-pages/font-sources/taamey-d-1.1/"
+        " in gh-pages/woff2/ and the shared gh-pages/font-sources/taamey-d-1.2/"
         " package, both of which phonetic-mam-render also writes",
     ),
     # Added 2026-09-10, when Ben decided the survey "should join mega" on two conditions: a
@@ -841,11 +861,11 @@ _STEPS = [
     # (Phase 2 of MAM-private's doc/PLAN-evacuate-hbofonts-into-MAM-basics.md).  It reads
     # only its own code, the font version in py/taamey_d_build/font_version.py and the frozen
     # comparison images' PROVENANCE.json, none of which a step writes, so nothing orders
-    # it; the plan put it last, and Phase 3's two steps follow it.  The FontForge build of
-    # the font is not a step, by Ben's
-    # decision of that day: "Yes, keep FontForge run out of MAM-basics mega."  So the pages
-    # follow the committed font version, and test_mega_coverage.py's NOT_IN_MEGA declares
-    # the build, py/main_taamey_d_build.py.
+    # it; the plan put it last, and the three steps of Phases 3 and 4 follow it.  The
+    # FontForge build of the font is not a step, by Ben's decision of that day: "Yes, keep
+    # FontForge run out of MAM-basics mega."  So the pages follow the committed font
+    # version, and test_mega_coverage.py's NOT_IN_MEGA declares the build,
+    # py/main_taamey_d_build.py.
     StepRecord(
         "taamey-d-doc",
         _run_taamey_d_doc,
@@ -868,13 +888,29 @@ _STEPS = [
         " anchor-family FAIL, or a report that differs from Git's index, an untracked"
         " one included",
     ),
-    # Added the same day, and last: after wordlist and uxlc-word-list, which write the two
-    # word lists it reads, and so that a pending refresh ends the run's output, as in
-    # hbofonts' mega.  It writes nothing.  By Ben's decision of 2026-10-28 a refresh of
-    # MAM's text does not oblige refreshing the corpus, so a pending refresh goes into the
-    # run's closing summary instead of failing it, and only an error that would stop a
-    # refresh raises.  The refresh itself, py/main_taamey_d.py corpus without --check,
-    # and accept-baseline are declared in test_mega_coverage.py's NOT_IN_MEGA.
+    # Added 2026-10-29, when Taamey D's release tool moved here from hbofonts (Phase 4 of
+    # the same plan).  It reads only the tracked downloads tree,
+    # gh-pages/taamey-d/downloads/, and Git, which no step writes, so nothing orders it.
+    # It comes before taamey-d-corpus because hbofonts' mega checked its downloads before
+    # its corpus, so that a pending refresh ended the output.  Writing a snapshot,
+    # py/main_taamey_d.py release-publish, is outward-facing release preparation, which
+    # test_mega_coverage.py's NOT_IN_MEGA declares.
+    StepRecord(
+        "taamey-d-release-check",
+        _run_taamey_d_release_check,
+        "runs py/main_taamey_d.py release-check, which checks Taamey D's published"
+        " downloads, gh-pages/taamey-d/downloads/, against Git and writes nothing;"
+        " before the first snapshot it reports that none is published; a cloud session"
+        " skips it if its shallow checkout lacks a snapshot's source commit",
+    ),
+    # Added the same day as taamey-d-qa, and last: after wordlist and uxlc-word-list,
+    # which write the two word lists it reads, and so that a pending refresh ends the
+    # run's output, as in hbofonts' mega.  It writes nothing.  By Ben's decision of
+    # 2026-10-28 a refresh of MAM's text does not oblige refreshing the corpus, so a
+    # pending refresh goes into the run's closing summary instead of failing it, and only
+    # an error that would stop a refresh raises.  The refresh itself, py/main_taamey_d.py
+    # corpus without --check, and accept-baseline are declared in test_mega_coverage.py's
+    # NOT_IN_MEGA.
     StepRecord(
         "taamey-d-corpus",
         _run_taamey_d_corpus,
@@ -898,6 +934,9 @@ def _report_cloud_skips():
     step that uses private source inputs, phonetic-mam-export, is skipped
     altogether. Rendering and both meteg surveys run from the tracked public
     release, so gen-site receives the regenerated public survey in the cloud too.
+    Since 2026-10-29 taamey-d-release-check is skipped too, but only when the cloud
+    session's shallow checkout lacks the source commit of a Taamey D snapshot, against
+    which the step checks that snapshot's archives.
 
     Such a run is CLOUD-COMPLETE, meaning that no step failed, and that every step
     either ran or was skipped for the cloud, while some SVGs may have gone

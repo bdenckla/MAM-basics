@@ -20,8 +20,8 @@ _TAIL = """
 </body>
 </html>
 """
-# Until Taamey D's release tool and its downloads move to this repository, the
-# downloads link names hbofonts' downloads index.
+# The downloads link is relative, downloads/: since 2026-10-29 Taamey D's releases are
+# published in this repository, in gh-pages/taamey-d/downloads/.
 _HEAD = (
     headfun(
         gregorian_document_version="2026-10-27",
@@ -62,7 +62,7 @@ _HEAD = (
 <p>
     Current font binaries, corresponding source archives, checksums, and the
     preserved historical release are available from the
-    <a href="https://bdenckla.github.io/hbofonts/downloads/">Taamey D downloads page</a>.
+    <a href="downloads/">Taamey D downloads page</a>.
 </p>
 """
 )

@@ -64,17 +64,18 @@ verify the integrated local pages, not the deployed site.
 
 ## Font support
 
-`in/font-support/taamey-d-1.1/` holds the release's immutable source archive, license,
-copyright notice, and provenance for the site's font, Taamey D 1.1. The font itself is the
+`in/font-support/taamey-d-1.2/` holds the release's immutable source archive, license,
+copyright notice, and provenance for the site's font, Taamey D 1.2. The font itself is the
 site's one copy, `gh-pages/woff2/Taamey_D.woff2`, which the pure
 `py_html.taamey_d_assets.site_font_assets` helper checks against its pin before
 returning the font's complete same-host support mapping, without writing files. Each
 publisher that links the font's `woff2/SOURCE.txt`, as the Phonetic MAM index does,
 must copy the whole mapping.
 
-The support package's input closure and source identities have been checked.
-An exact font rebuild has not been established. The Phonetic target includes the
-font's complete same-host source-support tree.
+The support package's input closure and source identities have been checked, and
+on 2026-10-29 a build from nothing but its source archive's files reproduced the
+font byte for byte, in the one environment that the package's `BUILD.txt` names.
+The Phonetic target includes the font's complete same-host source-support tree.
 
 ## Public consumers and independent analysis
 
