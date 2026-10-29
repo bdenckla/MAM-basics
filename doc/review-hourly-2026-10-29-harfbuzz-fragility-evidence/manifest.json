@@ -1,0 +1,59 @@
+{
+  "archive_bytes": 20018,
+  "archive_sha256": "8d0eb6e83b19851b2c0f63e657aadf542ecce39c5096a7f8b63354b1bc19adb7",
+  "members": {
+    "01-classifier.log": {
+      "bytes": 98,
+      "sha256": "d8d2f41346a6942676e19881eb2521a010ce8a248d642a3d13939933cb671adc"
+    },
+    "01-classifier.result.json": {
+      "bytes": 741,
+      "sha256": "681c92cf09f3fd037e8678baf4895ab6c30c0633cc4193fb654bb23f2c3234b2"
+    },
+    "01-classifier.spec.json": {
+      "bytes": 510,
+      "sha256": "db5dd281b991bbbdfd2f34e0440f6970387e78e4b52e44a336df4b2081582de8"
+    },
+    "02-uxlc.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "02-uxlc.result.json": {
+      "bytes": 556,
+      "sha256": "1b4cf053c7e63c0442c45d85e7e5c61a0fc27021af2c540de7c832f94c865eac"
+    },
+    "02-uxlc.spec.json": {
+      "bytes": 352,
+      "sha256": "b22d0e67d6a6984ad735d235cc6bb5f9fa7508ea7197204c6d81f7d539a1e1eb"
+    },
+    "commits.txt": {
+      "bytes": 8750,
+      "sha256": "cf23298df8a8cc655edde326466582a6b59b401ba3ae55dc462c15cb5fd45387"
+    },
+    "dependencies.log": {
+      "bytes": 9130,
+      "sha256": "64ff5070a11e8114de460cdf15df4d00578631cca1f2157feab93cf96643a4ed"
+    },
+    "endpoint.patch": {
+      "bytes": 30981,
+      "sha256": "6c0c802b670f7f8a689e773201ffb3dc0f177e1acad2647864e710e987becf36"
+    },
+    "environment-observed.json": {
+      "bytes": 279,
+      "sha256": "cee1223f96bd5c5e1783b6d206571578483d5678dd150f15d7d92463465dfcc5"
+    },
+    "paths.nul": {
+      "bytes": 242,
+      "sha256": "9c452ecdcbb555e0c8d555b48e11af809316bdf851fd0b2b385ee728d28abe55"
+    },
+    "stage-runner.py": {
+      "bytes": 1525,
+      "sha256": "7a76b7520fc6e107e4ec01ab502efd8f74ff116fd0f6c37e8efbd6bc43a90768"
+    },
+    "test_contract.py": {
+      "bytes": 2194,
+      "sha256": "65c75d0a1b271f49c07ad8a92403ae0cc1a3f02532e408e9262a3eff782cff47"
+    }
+  },
+  "privacy": "Owning repository only; all members/bytes/SHA and ZIP CRC verified. No virtual environment, historical font binary or scratch-decompressed input archived."
+}

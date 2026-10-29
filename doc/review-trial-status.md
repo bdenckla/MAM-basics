@@ -12,10 +12,10 @@ with that session; this run created no automation.
 | Anchor | Commit/result |
 | --- | --- |
 | Adopted baseline | `d66a3faf1403e945a0f41e5d25c86c3ac72b871f` |
-| Reviewed through | `6835873fcb2ba63afec21846e5fc65f730e7757a`; four-commit / 70-path note refresh reviewed and focused checks completed; no confirmed consequential defect. Editorial choices preserved. [Receipt](review-hourly-2026-10-28-note-refresh-complete.json). |
+| Reviewed through | `b1ca848e08476b3d84174755566d640afce02367`; focused endpoint review complete, no confirmed consequential defect or repair. [Receipt](review-hourly-2026-10-29-harfbuzz-fragility.json). |
 | Last tested | `5c28eba09f95fd491afef38454149bde628ee2a7`; October 28 cloud nightly: mega exit 0 in 495.841 s, all 61 steps/no skips; full suite exit 0 in 319.984 s: 1100 passed, 5 skipped, 82 subtests passed in 317.10s (0:05:17); eight explained SVG differences preserved and reversed. [Compact receipt](review-nightly-2026-10-28.json) |
-| Last focused checked | `6835873fcb2ba63afec21846e5fc65f730e7757a`; zero endpoint Scripture changes, three selected tests pass, 106 near-Aleppo HTML files current, seven selected MWD books/sigil/change-log reproduce. Template JSON/DOT reproduce; six SVGs differ only in geometry/Times alias, preserved and restored after triage. Invocation and environment failures retained. Broad anchor unchanged. [Receipt](review-hourly-2026-10-28-note-refresh-complete.json). |
-| Pending endpoint | None at frozen remote main6835873f; earlier [partial handoff](review-hourly-2026-10-28-note-refresh-partial.json) continued by the [completed receipt](review-hourly-2026-10-28-note-refresh-complete.json). Later tips require a separate screen. |
+| Last focused checked | `b1ca848e08476b3d84174755566d640afce02367`; 9focused tests pass; UXLC all/fragile word outputs reproduce cleanly. Pinned uharfbuzz0.57/HarfBuzz15 verified; broad anchor unchanged. [Receipt](review-hourly-2026-10-29-harfbuzz-fragility.json). |
+| Pending endpoint | None at frozen remote mainb1ca848e. Newer tips require separate screening. Broad history and actual failure/skip limits remain unchanged. [Receipt](review-hourly-2026-10-29-harfbuzz-fragility.json). |
 
 Run from an isolated repository root with its home clone's interpreter: `py/main_0_mega.py`,
 then `py/main_test.py`. Use each required private sibling's recorded committed checkout;

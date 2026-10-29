@@ -1,0 +1,101 @@
+{
+  "date": "2026-10-29",
+  "state": "completed focused review; no production defect confirmed",
+  "receipt_parent": "24a0a24aa01a8e2ae6fd3fa50f33547838ef3d52",
+  "receipt_branch": "review-hourly-20261029-hb-fragile-receipts",
+  "window": {
+    "exclusive_base": "6835873fcb2ba63afec21846e5fc65f730e7757a",
+    "frozen_main": "b1ca848e08476b3d84174755566d640afce02367",
+    "commits": 3,
+    "paths": 8
+  },
+  "screened_through": "b1ca848e08476b3d84174755566d640afce02367",
+  "reviewed_through": "b1ca848e08476b3d84174755566d640afce02367",
+  "focused_checked_through": "b1ca848e08476b3d84174755566d640afce02367",
+  "broad_tested_through": "5c28eba09f95fd491afef38454149bde628ee2a7",
+  "setup": {
+    "setup": "pip installation exit0 from frozen requirements and constraints; dependency setup duration not separately captured. pip check reports No broken requirements found. Dependency log retained.",
+    "packages": {
+      "uharfbuzz": "0.57.0",
+      "HarfBuzz": "15.0.0"
+    }
+  },
+  "stages": [
+    {
+      "name": "01-classifier",
+      "repository": "/workspace/review-hourly-20261029-hb-basics",
+      "source_commit": "b1ca848e08476b3d84174755566d640afce02367",
+      "cwd": "/workspace/review-hourly-20261029-hb-basics",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        "py/tests/test_uni_norm_fragile_harfbuzz.py",
+        "/workspace/scratch/review-hourly-20261029-hb-basics/test_contract.py",
+        "-q"
+      ],
+      "inputs": {
+        "Basics": "b1ca848e08476b3d84174755566d640afce02367",
+        "uharfbuzz": "0.57.0",
+        "HarfBuzz": "15.0.0"
+      },
+      "started_utc": "2026-10-29T04:11:58.193714+00:00",
+      "completed_utc": "2026-10-29T04:12:02.291427+00:00",
+      "seconds": 4.098,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "name": "02-uxlc",
+      "repository": "/workspace/review-hourly-20261029-hb-basics",
+      "source_commit": "b1ca848e08476b3d84174755566d640afce02367",
+      "cwd": "/workspace/review-hourly-20261029-hb-basics",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_uxlc_word_list.py"
+      ],
+      "inputs": {
+        "Basics": "b1ca848e08476b3d84174755566d640afce02367"
+      },
+      "started_utc": "2026-10-29T04:12:18.887468+00:00",
+      "completed_utc": "2026-10-29T04:12:19.779404+00:00",
+      "seconds": 0.892,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    }
+  ],
+  "evidence": "review-hourly-2026-10-29-harfbuzz-fragility-evidence/manifest.json",
+  "repair": null,
+  "pending_window": null,
+  "remote_preflight": {
+    "refs/heads/main": "b1ca848e08476b3d84174755566d640afce02367"
+  },
+  "execution_conformance": "Read-only screen completed during HP overlap hold; runtime began only after parent released hold at04:07UTC. Dependency operations and all focused stages awaited sequentially. No full mega/suite, frozen font build/baseline acceptance, source scraping, migration, main/shared push, deployment or user-config sync. Author/plan approval and prior test claims remain attributed.",
+  "cleanup": {
+    "source_worktree": "Removed normally after evidence preservation; 18regenerable bytecode files retained and byte/CRC verified.",
+    "detail": "review-hourly-2026-10-29-harfbuzz-fragility-evidence/cleanup.json",
+    "receipt_worktree": "Normal removal after isolated branch push/readback; keep local/remote branch. No ignored evidence left in carrier."
+  },
+  "classification": "Consequential pure-Python NFC/HarfBuzz same-zone classifier,3tuple caller integration, test-only pinned dependency and derived UXLC diagnostics reviewed; editorial definition preserved.",
+  "results": {
+    "tests": "9passed in3.93s:4committed differential cases plus5reviewer contract tests. Includes actual HarfBuzz31/32/33/34-mark boundary behavior, CGJ, dropped marks, NFC composition, closed-zone rejection and actual WLC collector3tuple path. No skips.",
+    "regeneration": "py/main_uxlc_word_list.py exits0, tracked status clean. Seven fragile diagnostic records become one exactly as committed; ordinary all-word list is unchanged from base.",
+    "failure_history": "No failing check in this window. Expected exceptions are caught negative probes, not failed stages."
+  },
+  "runtime_inputs": {
+    "Basics": "b1ca848e08476b3d84174755566d640afce02367",
+    "sibling_checkouts_used": []
+  },
+  "source_review": [
+    "All get_fragile_comps callers inspected and converted to3values; is_fragile API still returnsbool.",
+    "The Hebrew-only model, closed zone table, class0/CGJ boundaries and run cap inspected against primary HarfBuzz15source; differential execution verifies model against bundled HarfBuzz15.0.0 on synthetic marks and declared current corpus atoms.",
+    "The UXLC-specific Jerusalem exception is applied only to NFC input; original input is used for the HarfBuzz comparison."
+  ],
+  "primary_sources": [
+    "https://github.com/harfbuzz/harfbuzz/blob/15.0.0/src/hb-unicode.hh",
+    "https://github.com/harfbuzz/harfbuzz/blob/15.0.0/src/hb-ot-shape-normalize.cc",
+    "https://github.com/harfbuzz/harfbuzz/blob/15.0.0/src/hb-ot-shaper-hebrew.cc"
+  ],
+  "remote_before_commit": {
+    "refs/heads/main": "b1ca848e08476b3d84174755566d640afce02367"
+  }
+}

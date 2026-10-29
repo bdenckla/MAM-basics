@@ -1,0 +1,78 @@
+{
+  "archive_sha256": "451170c303bb05772a2879b72a7dd8337c1ea542919c5f727f2b8c4f329cbae8",
+  "archive_bytes": 66472,
+  "members": {
+    "py/__pycache__/uxlc_paths.cpython-313.pyc": {
+      "bytes": 5976,
+      "sha256": "0412e8126e79d2d5eb041aef101b0c6fe024eade253a6aec5bd8b3720a9e0ac8"
+    },
+    "py/mb_cmn/__pycache__/bib_locales.cpython-313.pyc": {
+      "bytes": 23478,
+      "sha256": "8c88a74350b6ca8dc04c56f3de9f585a5c47d32eee7e8b63d9200294b5b9890f"
+    },
+    "py/mb_cmn/__pycache__/cantsys.cpython-313.pyc": {
+      "bytes": 517,
+      "sha256": "2574f58604aacb8f31bf3cbb384999c398643f179ad3ae2f9167c7cc7b916ce1"
+    },
+    "py/mb_cmn/__pycache__/file_io.cpython-313.pyc": {
+      "bytes": 4130,
+      "sha256": "e712b310003bdf156c270caaa3f603c9531f9150b8b944823201554bf853522f"
+    },
+    "py/mb_cmn/__pycache__/git_process.cpython-313.pyc": {
+      "bytes": 2893,
+      "sha256": "f6ce5b042e6f6802d5856884941eadeda4acd366de7a714bfa3f88e73f30cea3"
+    },
+    "py/mb_cmn/__pycache__/hebrew_accents.cpython-313.pyc": {
+      "bytes": 2106,
+      "sha256": "73779a27decafc75fe2892cb0fb2664362397bc08a6038aa9d2c6b077108c553"
+    },
+    "py/mb_cmn/__pycache__/hebrew_letters.cpython-313.pyc": {
+      "bytes": 1116,
+      "sha256": "a991edf477ddb5ded9e21e502420088259931d777a25a35d05307fd73c1b45e2"
+    },
+    "py/mb_cmn/__pycache__/hebrew_points.cpython-313.pyc": {
+      "bytes": 1292,
+      "sha256": "f174ab127234be801a0dcedc9ade383110871461345e0ac4d957bcf98cfbd563"
+    },
+    "py/mb_cmn/__pycache__/hebrew_punctuation.cpython-313.pyc": {
+      "bytes": 578,
+      "sha256": "e952d552407f2f5ada555a30cf1be06ca14b596a25b65dde3cd8ee31333e0b94"
+    },
+    "py/mb_cmn/__pycache__/paths.cpython-313.pyc": {
+      "bytes": 17597,
+      "sha256": "874d3e3fc8326624baf3b4c55895862e2e0ecd11594e59e1635bdd272576cc4e"
+    },
+    "py/mb_cmn/__pycache__/provenance.cpython-313.pyc": {
+      "bytes": 15769,
+      "sha256": "909bef50541eb6e0c3ddc05e80e6250b0974505c81e19ec85b120c03c9327c90"
+    },
+    "py/mb_cmn/__pycache__/str_defs.cpython-313.pyc": {
+      "bytes": 441,
+      "sha256": "9cc2fb701768ee38973ea6df635795defcc67475302caeed323fad818a264e39"
+    },
+    "py/mb_cmn/__pycache__/uni_heb.cpython-313.pyc": {
+      "bytes": 11045,
+      "sha256": "e9ca9d8e40a9a6554900add4f7660542bea5e3638f667fa50f862e534aac5137"
+    },
+    "py/mb_cmn/__pycache__/uni_norm_fragile.cpython-313.pyc": {
+      "bytes": 11003,
+      "sha256": "4b5754473ec6ec66f3ff466fd0736c977eaffe45e0cad11a81873b17b4d8b621"
+    },
+    "py/mb_cmn/__pycache__/unicode_data.cpython-313.pyc": {
+      "bytes": 2169,
+      "sha256": "d647458b336f5de806153a6286e7ee66822d1c0cc2aeecda1712fbbcd27e231a"
+    },
+    "py/py_wlc_json_and_unicode/__pycache__/wlc_foi_utils_uni.cpython-313.pyc": {
+      "bytes": 3723,
+      "sha256": "2412fbc1b9a1aa753e54c1c6da3931f0ef0bdc842dabff61f6b553ecab80d2ef"
+    },
+    "py/tests/__pycache__/test_uni_norm_fragile_harfbuzz.cpython-313-pytest-9.1.1.pyc": {
+      "bytes": 21255,
+      "sha256": "3903818193701ae3e11b93b0da7656d086d803e114bc2748141ad906740a60a0"
+    },
+    "py/uxlc_misc/__pycache__/my_uxlc.cpython-313.pyc": {
+      "bytes": 7803,
+      "sha256": "62eaef483673451d34b01392f47319d100528840be41f0d5ce32ba3b51fb7af0"
+    }
+  }
+}

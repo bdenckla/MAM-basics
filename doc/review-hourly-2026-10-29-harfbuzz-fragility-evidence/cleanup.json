@@ -1,0 +1,9 @@
+{
+  "completed_utc": "2026-10-29T04:26:59.506884+00:00",
+  "source_commit": "b1ca848e08476b3d84174755566d640afce02367",
+  "source_worktree_removed": "normal nonforced removal",
+  "safety": "Task-owned source investigation complete; clean tracked/untracked state, no active process cwd, Git lock/operation, or installed runtime session/writer records. Reflog only the committed source. No main integration or branch deletion.",
+  "ignored_regenerable_bytecode_retained": 18,
+  "receipt_harness_files_preserved_then_removed": [],
+  "integration_gate_disposition": "Saved home lacks local default branch, maintained-inspector limitation already recorded in this receipt ancestry. User expressly requires isolated/no-main receipts and cleanup; source objects/remote branches retained with manual activity/lock/state audit."
+}
