@@ -487,7 +487,7 @@ infrastructure has changed enough to make them misleading examples:
   ḥiriq. Ben read the codex's page F100B on 2026-10-28, as the dangling-CGJ plan records him:
   "the xiriq comes before the sheva. So that is what MAM should have (with CGJ) in its note,
   and it should also express this in plus notation, and it should also mention it in Hebrew
-  prose". The edit gives the form in plus notation, `תִּ+תְּירָא֑וּם`, and in a packed form
+  prose". The edit gives the form in plus notation, `תִּ+תְּירָא֑וּם`, and in a packed form
   whose tav has a ḥiriq, a dagesh, a CGJ and a sheva, and calls the mark a reversed
   ḥataf-ḥiriq, with the prose "דהיינו החיריק מימין לשווא". The rest of the clause is Dovi's
   revision 3099093 of that morning, unchanged, including his conclusion that the sheva-like
