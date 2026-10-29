@@ -111,6 +111,9 @@ import main_pipeline_graph
 import main_search_final_hiriq_verse_text
 import main_search_holam_he_qere
 
+# Taamey D's page generator, which moved here from hbofonts on 2026-10-28.
+import main_taamey_d
+
 
 @dataclass(frozen=True)
 class StepRecord:
@@ -257,6 +260,10 @@ def _run_find_uxlc_accent_changes():
 
 def _run_ac_gen_index_flat_annotated():
     main_ac_gen_index_flat_annotated.almost_main([])
+
+
+def _run_taamey_d_doc():
+    main_taamey_d.almost_main(["doc"])
 
 
 _STEPS = [
@@ -759,6 +766,20 @@ _STEPS = [
         "runs py/main_authored.py gen-mam-for-sefaria-doc, which writes"
         " gh-pages/MAM-for-Sefaria/index.html, unicode-names/index.html and"
         " ajf/index.html; must come after mam-simple",
+    ),
+    # Added 2026-10-28, when Taamey D's sources, build and pages moved here from hbofonts
+    # (Phase 2 of MAM-private's doc/PLAN-evacuate-hbofonts-into-MAM-basics.md).  It reads
+    # only its own code, the font version in py/taamey_d_build/font_version.py and the frozen
+    # comparison images' PROVENANCE.json, none of which a step writes, so nothing orders
+    # it; the plan put it last.  The FontForge build of the font is not a step, by Ben's
+    # decision of that day: "Yes, keep FontForge run out of MAM-basics mega."  So the pages
+    # follow the committed font version.
+    StepRecord(
+        "taamey-d-doc",
+        _run_taamey_d_doc,
+        "runs py/main_taamey_d.py doc, which writes gh-pages/taamey-d/Taamey_D.html and"
+        " Xolam_xaser_for_alef.html; refuses if a comparison cell no longer matches its"
+        " record in the frozen gh-pages/taamey-d/img/comparison/PROVENANCE.json",
     ),
 ]
 

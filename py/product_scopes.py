@@ -127,6 +127,7 @@ _GENERATOR_ENTRY_POINTS = (
     "py/main_search_final_hiriq_verse_text.py",
     "py/main_search_holam_he_qere.py",
     "py/main_sigil_inventory.py",
+    "py/main_taamey_d.py",
     "py/main_tmpl_survey.py",
     "py/main_tmpl_survey_toy.py",
     "py/main_uxlc_check_changes.py",
@@ -180,6 +181,7 @@ _MEGA_WRAPPER_DELEGATES = {
     "_run_vendored_tmpl_survey_toy": (
         "MAM-parsed/py-examples/main_tmpl_survey_toy_example.py"
     ),
+    "_run_taamey_d_doc": "py/main_taamey_d.py",
 }
 
 
