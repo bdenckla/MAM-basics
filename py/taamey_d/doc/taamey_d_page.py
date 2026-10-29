@@ -20,8 +20,8 @@ _TAIL = """
 </body>
 </html>
 """
-# Until Taamey D's release tool and its downloads move to this repository, the
-# downloads link names hbofonts' downloads index.
+# The downloads link is relative, downloads/: since 2026-10-29 Taamey D's releases are
+# published in this repository, in gh-pages/taamey-d/downloads/.
 _HEAD = (
     headfun(
         gregorian_document_version="2026-10-27",

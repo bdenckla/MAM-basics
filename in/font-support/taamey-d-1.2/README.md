@@ -49,8 +49,8 @@ members to be exactly those the inventory lists. Do not format or execute the ar
 part of publishing these assets.
 
 The font notice preserves the exact copyright, GPL version 2 grant, and document-embedding
-exception wording from the font's OpenType name table, which is unchanged since 0.921; it is
-1.1's `FONT-NOTICE.txt`, unchanged. Blank-line whitespace was removed and a final newline
+exception wording from name ID 0 of the font's OpenType name table, which is unchanged since
+0.921; it is 1.1's `FONT-NOTICE.txt`, unchanged. Blank-line whitespace was removed and a final newline
 added. The GPL text is an unmodified download from the Free Software Foundation. The GPL and
 font notice govern the font and its corresponding source; this repository makes no new GPL
 version 3 or CC0 grant over those bytes. The exception does not remove the distribution

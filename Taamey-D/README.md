@@ -168,11 +168,14 @@ nothing. Each release is an immutable snapshot directory,
 `snapshots/<version>-MAM-basics-<first 12 hex digits of its source commit>/`, holding the binary
 archive `Taamey_D.zip`, the corresponding-source archive `Taamey_D-sources.zip`, their checksums
 and a provenance manifest. `latest/` is a byte-identical copy of the snapshot that
-`release-publish` installed last, and `index.html` lists them all. The check compares every snapshot's archives with the files of its
-source commit and checks the index's links, and it fails if a committed snapshot changed or
-disappeared, in the working tree or in Git's history. Before the first release it says that no
-snapshot is published. The mega runs it as its step `taamey-d-release-check`, which a cloud
-session skips when its shallow checkout lacks a snapshot's source commit.
+`release-publish` installed last, and `index.html` lists them all. The check compares every
+snapshot's archives with the files of its source commit and checks the index's links, and it
+fails if a committed snapshot changed or disappeared, in the working tree or in Git's history.
+Before the first release it says that no snapshot is published. The mega runs it as its step
+`taamey-d-release-check`, which a cloud session skips when its shallow checkout lacks a
+snapshot's source commit. The Pages workflow, `.github/workflows/pages.yml`, runs it too, on the
+full history, before every deploy, and deploys nothing if it fails (Ben's decision of
+2026-10-29).
 
 ```powershell
 ./.venv/Scripts/python.exe py/main_taamey_d.py release-publish --snapshot-commit <full HEAD>
@@ -185,9 +188,10 @@ the release notes, run the build, `doc` and `qa`, read every result, and commit.
 that differs from its committed bytes, and release notes whose first line is not
 `Taamey D <version>`. It checks the existing releases, builds the snapshot twice in scratch
 directories and compares the two builds, installs the new snapshot, replaces `latest/` with a
-copy of it only once the new snapshot is verified, and rewrites the index. Then run `release-check`, read both outputs, and commit the
-snapshot, `latest/` and the index together. Do not hand-edit those generated files: snapshot
-directories are append-only, and only `latest/` is ever replaced.
+copy of it only once the new snapshot is verified, and rewrites the index. Then run
+`release-check`, read both outputs, and commit the snapshot, `latest/` and the index together.
+Do not hand-edit those generated files: snapshot directories are append-only, and only
+`latest/` is ever replaced.
 
 The binary archive holds the TTF, WOFF and WOFF2 with `license.txt` and the release notes. The
 source archive holds the three templates, `license.txt`, the FontForge script and the build, each
@@ -246,8 +250,9 @@ the site's one copy of the font, `gh-pages/woff2/Taamey_D.woff2`. By Ben's decis
 `in/font-support/taamey-d-<version>/`; the pin is now Taamey D 1.2, the first release published
 from here, in [`in/font-support/taamey-d-1.2/`](../in/font-support/taamey-d-1.2/README.md). So
 the build never writes that copy, and a new release reaches the pages only through a new pin,
-which `py/py_html/taamey_d_assets.py` checks. `git log -- in/font-support/` lists the commits
-that made each pin, and so every file a new pin must change.
+which `py/py_html/taamey_d_assets.py` checks. `git log --stat --full-diff -- in/font-support/`
+lists the commits that made each pin, with every file each one changed, and so every file a new
+pin must change.
 
 New releases come from MAM-basics: "Yes, new releases should come from MAM-basics." (Ben,
 2026-10-28). "Publishing a release" above says how. Publishing a release is an outward-facing

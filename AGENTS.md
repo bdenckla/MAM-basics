@@ -153,7 +153,8 @@ temporary-stub procedures, and historical traps.
 1. **Published:** `gh-pages/`, published from `main` only on manual dispatch of
    `.github/workflows/pages.yml`; by Ben's decision of 2026-10-22 it no longer also deploys daily
    at 4:17 AM, New York time. A push to `main` therefore reaches the site only at the next
-   dispatch.
+   dispatch. Since Ben's decision of 2026-10-29 the workflow first runs
+   `py/main_taamey_d.py release-check` on the full history, and deploys nothing if it fails.
 2. **Distributed data:** `MAM-parsed/`, `MAM-simple/`, `MAM-for-Sefaria/`, `MAM-with-doc/`,
    `MAM-OSIS/`, `Phonetic-MAM/`, `Taamey-D/`, `Yeivin-ITM/`, and `out/near-aleppo/`.
 3. **Generators:** the entry points run by `py/main_0_mega.py`.

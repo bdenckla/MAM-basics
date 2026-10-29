@@ -40,9 +40,9 @@ Taamey D's files elsewhere in this repository:
 - `gh-pages/taamey-d/downloads/`, the published releases: each release's archives hold the font
   and its sources under the font's GPL v2 terms with its font-embedding exception, and the
   build's scripts, its entry point and package and the FontForge script, under
-  GPL-2.0-or-later. The index, checksum files and
-  provenance manifests, which the release tool generates, are GPL-3.0; the release notes that
-  the index shows keep the terms of `Taamey-D/font-m-TaD/`.
+  GPL-2.0-or-later. The index, checksum files and provenance manifests, which the release tool
+  generates, are GPL-3.0, as Ben confirmed on 2026-10-29; the release notes that the index shows
+  keep the terms of `Taamey-D/font-m-TaD/`.
 - `gh-pages/woff2/Taamey_D.woff2`, the copy of the font that the site's pages load, and the
   pinned release in `in/font-support/taamey-d-1.2/`: the terms that `DATA-LICENSES.md` states
   for them.

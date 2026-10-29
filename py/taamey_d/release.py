@@ -4,10 +4,10 @@ This module was restructured on 2026-10-29 from hbofonts' py/main_release.py, at
 3b59254a, in Phase 4 of MAM-private's doc/PLAN-evacuate-hbofonts-into-MAM-basics.md.  It
 builds and checks Taamey D's public downloads tree, gh-pages/taamey-d/downloads/: the
 index, one immutable directory under snapshots/ for each release, and latest/, a
-byte-identical copy of the newest.  A snapshot is named
-<version>-MAM-basics-<first 12 hex digits of its source commit>.  It holds a binary
-archive, a corresponding-source archive, their checksums and a provenance manifest, whose
-format continues hbofonts' schema 2.
+byte-identical copy of the snapshot that release-publish installed last.  A snapshot is
+named <version>-MAM-basics-<first 12 hex digits of its source commit>.  It holds a
+binary archive, a corresponding-source archive, their checksums and a provenance
+manifest, whose format continues hbofonts' schema 2.
 
 hbofonts' rules came over unchanged.  A committed snapshot never changes or disappears,
 which is checked both in the working tree against HEAD and through Git's history.
