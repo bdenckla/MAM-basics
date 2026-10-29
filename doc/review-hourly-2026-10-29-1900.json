@@ -1,0 +1,149 @@
+{
+  "date": "2026-10-29",
+  "state": "Completed bounded review; no consequential defect or repair confirmed.",
+  "receipt_branch": "review-hourly-20261029-1900-receipts",
+  "evidence": "review-hourly-2026-10-29-1900-evidence/manifest.json",
+  "limits": [
+    "No full mega/suite, font build/shaping/baseline, release/deployment, source download/bot, live user-config sync, main/shared push or HP action.",
+    "No hbofonts access/check/receipt. Private prose-only window has no tests/generators; owner Windows retirement/move, external source edits, issue reports/closures and approval statements remain attributed.",
+    "Literal/application validation is not independent manuscript or translation proof. Two additional applications remain explicitly unrecorded in the maintained audit; this does not claim every proposal completed.",
+    "No browser/UI run; unchanged controls and focused deterministic HTML reproduction are the evidence."
+  ],
+  "repairs": [],
+  "receipt_tree_not_tested_source": true,
+  "pending_window": [
+    "df5eb61aaa16508d9f886d88ef47a00328be3777",
+    "40e5d37ccb0276a2dc13ab51444459baba858354"
+  ],
+  "execution": "Read-only committed-object triage first; one clean owned saved full clone on isolated source branch for four strictly sequential focused stages, then original checkout restored. Receipt Git objects built with unique scratch indexes; no new clones/worktrees.",
+  "receipt_parent": "6700d208d71291b4f3346862e0da426d26d00eb5",
+  "window": {
+    "exclusive_base": "e18e7b00e33b868e3542fff02c424959e950893a",
+    "frozen_main": "df5eb61aaa16508d9f886d88ef47a00328be3777",
+    "commits": 4,
+    "paths": 19
+  },
+  "reviewed_through": "df5eb61aaa16508d9f886d88ef47a00328be3777",
+  "focused_tested_through": "df5eb61aaa16508d9f886d88ef47a00328be3777",
+  "broad_tested_through": "6ac28417a243447c24eefb168202585a9949a4ea",
+  "classification": "Context-qualified applied quotation validation, Introduction mirror refresh and application records, selected notation-policy paragraph and refresh-runbook guidance.",
+  "stages": [
+    {
+      "name": "01-mirror-context-contracts",
+      "repository": "/workspace/MAM-basics",
+      "source_commit": "df5eb61aaa16508d9f886d88ef47a00328be3777",
+      "cwd": "/workspace/MAM-basics",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        "/workspace/scratch/review-hourly-20261029-1900/test_mirror_contexts.py",
+        "-q"
+      ],
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "inputs": {
+        "Basics": "df5eb61aaa16508d9f886d88ef47a00328be3777",
+        "Private_runtime_products": null,
+        "scope": "Only Introduction mirror/application presentation and selected notation page; no downloads, broad/Private/font/HP job."
+      },
+      "started_utc": "2026-10-29T19:13:05.130614+00:00",
+      "completed_utc": "2026-10-29T19:13:07.241659+00:00",
+      "seconds": 2.111,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "name": "02-introduction-review",
+      "repository": "/workspace/MAM-basics",
+      "source_commit": "df5eb61aaa16508d9f886d88ef47a00328be3777",
+      "cwd": "/workspace/MAM-basics",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_intro_doc_audit.py",
+        "review"
+      ],
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "inputs": {
+        "Basics": "df5eb61aaa16508d9f886d88ef47a00328be3777",
+        "Private_runtime_products": null,
+        "scope": "Only Introduction mirror/application presentation and selected notation page; no downloads, broad/Private/font/HP job."
+      },
+      "started_utc": "2026-10-29T19:13:07.296312+00:00",
+      "completed_utc": "2026-10-29T19:13:09.360923+00:00",
+      "seconds": 2.065,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "name": "03-selected-notation-foi",
+      "repository": "/workspace/MAM-basics",
+      "source_commit": "df5eb61aaa16508d9f886d88ef47a00328be3777",
+      "cwd": "/workspace/MAM-basics",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_foi_features_of_interest.py",
+        "--foi",
+        "args-foi-doc-note-notation",
+        "--single-threaded"
+      ],
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "inputs": {
+        "Basics": "df5eb61aaa16508d9f886d88ef47a00328be3777",
+        "Private_runtime_products": null,
+        "scope": "Only Introduction mirror/application presentation and selected notation page; no downloads, broad/Private/font/HP job."
+      },
+      "started_utc": "2026-10-29T19:13:09.422262+00:00",
+      "completed_utc": "2026-10-29T19:13:09.999203+00:00",
+      "seconds": 0.577,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "name": "04-formatting",
+      "repository": "/workspace/MAM-basics",
+      "source_commit": "df5eb61aaa16508d9f886d88ef47a00328be3777",
+      "cwd": "/workspace/MAM-basics",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "-m",
+        "black",
+        "--check",
+        "py/intro_doc_audit/human_review.py",
+        "py/foi/doc_note_notation_explanations.py"
+      ],
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "inputs": {
+        "Basics": "df5eb61aaa16508d9f886d88ef47a00328be3777",
+        "Private_runtime_products": null,
+        "scope": "Only Introduction mirror/application presentation and selected notation page; no downloads, broad/Private/font/HP job."
+      },
+      "started_utc": "2026-10-29T19:13:10.055644+00:00",
+      "completed_utc": "2026-10-29T19:13:10.355875+00:00",
+      "seconds": 0.3,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    }
+  ],
+  "runtime_inputs": {
+    "Basics": "df5eb61aaa16508d9f886d88ef47a00328be3777",
+    "private_runtime_products": null
+  },
+  "results": {
+    "tests": "13 passed in1.89s, zero failures/skips. All9applications resolve; independent exact occurrence partition, missing/overlapping/duplicate context and undeclared-occurrence rejection checked.",
+    "review": "Canonical Introduction review reproduces all tracked outputs:152cases,718literal passages,14proposals,9applied quotations.",
+    "foi": "Selected single-threaded doc-note-notation generation reproduces exactly, with no tracked difference. Endpoint page adds8paragraph lines and removes none; row/data products unchanged.",
+    "source": "Three mirror pages/7changed lines inspected; declared bytes match. Nine product/font trees, all14original decisions/proposals and five older application records preserved. Current224codepoint Proverbs30:19rawbody matches the full updated example once.",
+    "process": "Note-only mpplus/change-log and sigil/annotation guidance agrees with maintained projections and prior focused evidence; no new interpretation or blanket verification gate inferred.",
+    "formatting": "Both changed Python files pass Black; endpoint whitespace passes. No project-check failure or skip."
+  },
+  "remote_before_commit": {
+    "refs/heads/main": "40e5d37ccb0276a2dc13ab51444459baba858354"
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "file": "focused-evidence.zip",
+  "bytes": 8482,
+  "sha256": "adf1ab8490c5da8776723f8cb47699d22f9beecb4acb12b5f2ea3a0fdc4fa4ae",
+  "members": [
+    {
+      "path": "01-mirror-context-contracts.log",
+      "bytes": 99,
+      "sha256": "adfbe1c0f203c95a92bdad2d4f8195fe08dfe7436dd514179bf33caa0791c815"
+    },
+    {
+      "path": "01-mirror-context-contracts.result.json",
+      "bytes": 842,
+      "sha256": "8bdfced9541dade300350b8eb5cb600aa66240e3d1ccef8361b2d9ce38cd0ffd"
+    },
+    {
+      "path": "01-mirror-context-contracts.spec.json",
+      "bytes": 666,
+      "sha256": "812d39df24dc0ee875330286e0b034553d2137282927d15efa36f9ce14d0108f"
+    },
+    {
+      "path": "02-introduction-review.log",
+      "bytes": 150,
+      "sha256": "bc78e642032ce21341b2b8f3783730f2c612c12142f097d0b6a4640827131a99"
+    },
+    {
+      "path": "02-introduction-review.result.json",
+      "bytes": 774,
+      "sha256": "61fa80261cff22e722768329e272f117bbd1975d50fcefeabc818e7c7d19c3d0"
+    },
+    {
+      "path": "02-introduction-review.spec.json",
+      "bytes": 598,
+      "sha256": "20b8f022749cb7dea25c2b891da593a5dc764d068779925a43aa7f9987e4951a"
+    },
+    {
+      "path": "03-selected-notation-foi.log",
+      "bytes": 1789,
+      "sha256": "83928b37dc0b5d5395332eb81ccf10832d674e35f32c5f39c3989896ce593444"
+    },
+    {
+      "path": "03-selected-notation-foi.result.json",
+      "bytes": 843,
+      "sha256": "85e5d62a2a3b1f9a34d90b3c0bfd8761e53c920ae82aeb591abb538b5ed1bee1"
+    },
+    {
+      "path": "03-selected-notation-foi.spec.json",
+      "bytes": 667,
+      "sha256": "02ef684b47c3f8282597c1f2931c7a5fe818998379d89636920717559e0c348e"
+    },
+    {
+      "path": "04-formatting.log",
+      "bytes": 56,
+      "sha256": "b9cf511501d306d2bd8355ccb165c8ddc0a6fdd62d7c72c4a7b1795cf8934c8c"
+    },
+    {
+      "path": "04-formatting.result.json",
+      "bytes": 843,
+      "sha256": "aeff28546961185ea83af4cb36e4116a647f66a23c4f5bf27d69c2911cffd1e1"
+    },
+    {
+      "path": "04-formatting.spec.json",
+      "bytes": 669,
+      "sha256": "1d89bdd6b07a3ab0641dda7e2fc3a2659477b2f44a84e8d1a9fd5169b2b3223f"
+    },
+    {
+      "path": "Basics-whitespace.json",
+      "bytes": 40,
+      "sha256": "52ec8b1c08faa5684e5128b4adf676a160a0a562843621a2310a9ad858e28327"
+    },
+    {
+      "path": "checkout-restored.json",
+      "bytes": 338,
+      "sha256": "c110cb0dc1ca1813c3c87527376970e369b6fb4baf7ce3bfd15296ebcaafdbc7"
+    },
+    {
+      "path": "public-audit.json",
+      "bytes": 1743,
+      "sha256": "cd0e193c8223ae306b3fffdab70e948b8c6d6104a3fcbdbcfe01791d7698888d"
+    },
+    {
+      "path": "test_mirror_contexts.py",
+      "bytes": 4196,
+      "sha256": "46756c1481b82fcd6c34008efa335c6b8b3cddb42f7c07860271dd0abe6fb00a"
+    }
+  ],
+  "verification": "Every member byte and CRC read back."
+}
