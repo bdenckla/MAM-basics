@@ -1,0 +1,175 @@
+{
+  "date": "2026-10-29",
+  "state": "Completed focused review; no consequential defect or repair confirmed.",
+  "receipt_parent": "129d3bf8252ef2080976e991bc01cbf130fd851d",
+  "receipt_branch": "review-hourly-20261029-2000-receipts",
+  "window": {
+    "exclusive_base": "df5eb61aaa16508d9f886d88ef47a00328be3777",
+    "frozen_main": "40e5d37ccb0276a2dc13ab51444459baba858354",
+    "commits": 3,
+    "paths": 19
+  },
+  "reviewed_through": "40e5d37ccb0276a2dc13ab51444459baba858354",
+  "focused_tested_through": "40e5d37ccb0276a2dc13ab51444459baba858354",
+  "broad_tested_through": "6ac28417a243447c24eefb168202585a9949a4ea",
+  "timing": {
+    "notification_label": "20:00 UTC",
+    "actual_start_utc": "2026-10-29T19:35:06.604201+00:00",
+    "project_checks_stopped_utc": "2026-10-29T19:40:31.169124+00:00",
+    "note": "Notification arrived early; no claim that execution began at20:00."
+  },
+  "stages": [
+    {
+      "name": "01-note-products",
+      "repository": "/workspace/MAM-basics",
+      "source_commit": "40e5d37ccb0276a2dc13ab51444459baba858354",
+      "cwd": "/workspace/MAM-basics",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        "py/tests/test_cgj_between_marks.py",
+        "/workspace/scratch/review-hourly-20261029-2000/test_note_products.py",
+        "-q"
+      ],
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "inputs": {
+        "Basics": "40e5d37ccb0276a2dc13ab51444459baba858354",
+        "private_runtime_products": null,
+        "scope": "Only changed note encoding, selected products and derived inventories; no bot/download, font, broad, HP or Private job."
+      },
+      "started_utc": "2026-10-29T19:40:21.572415+00:00",
+      "completed_utc": "2026-10-29T19:40:23.869549+00:00",
+      "seconds": 2.297,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "name": "02-deuter-parse",
+      "repository": "/workspace/MAM-basics",
+      "source_commit": "40e5d37ccb0276a2dc13ab51444459baba858354",
+      "cwd": "/workspace/MAM-basics",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_parse.py",
+        "ws",
+        "--book39",
+        "Deuter"
+      ],
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "inputs": {
+        "Basics": "40e5d37ccb0276a2dc13ab51444459baba858354",
+        "private_runtime_products": null,
+        "scope": "Only changed note encoding, selected products and derived inventories; no bot/download, font, broad, HP or Private job."
+      },
+      "started_utc": "2026-10-29T19:40:23.920397+00:00",
+      "completed_utc": "2026-10-29T19:40:28.203657+00:00",
+      "seconds": 4.283,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "name": "03-notation-foi",
+      "repository": "/workspace/MAM-basics",
+      "source_commit": "40e5d37ccb0276a2dc13ab51444459baba858354",
+      "cwd": "/workspace/MAM-basics",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_foi_features_of_interest.py",
+        "--foi",
+        "args-foi-doc-note-notation",
+        "--single-threaded"
+      ],
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "inputs": {
+        "Basics": "40e5d37ccb0276a2dc13ab51444459baba858354",
+        "private_runtime_products": null,
+        "scope": "Only changed note encoding, selected products and derived inventories; no bot/download, font, broad, HP or Private job."
+      },
+      "started_utc": "2026-10-29T19:40:28.257097+00:00",
+      "completed_utc": "2026-10-29T19:40:28.836091+00:00",
+      "seconds": 0.579,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "name": "04-explicit-xataf",
+      "repository": "/workspace/MAM-basics",
+      "source_commit": "40e5d37ccb0276a2dc13ab51444459baba858354",
+      "cwd": "/workspace/MAM-basics",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_explicit_xataf.py"
+      ],
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "inputs": {
+        "Basics": "40e5d37ccb0276a2dc13ab51444459baba858354",
+        "private_runtime_products": null,
+        "scope": "Only changed note encoding, selected products and derived inventories; no bot/download, font, broad, HP or Private job."
+      },
+      "started_utc": "2026-10-29T19:40:28.892665+00:00",
+      "completed_utc": "2026-10-29T19:40:29.295985+00:00",
+      "seconds": 0.403,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "name": "05-sigil-inventory",
+      "repository": "/workspace/MAM-basics",
+      "source_commit": "40e5d37ccb0276a2dc13ab51444459baba858354",
+      "cwd": "/workspace/MAM-basics",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_sigil_inventory.py"
+      ],
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "inputs": {
+        "Basics": "40e5d37ccb0276a2dc13ab51444459baba858354",
+        "private_runtime_products": null,
+        "scope": "Only changed note encoding, selected products and derived inventories; no bot/download, font, broad, HP or Private job."
+      },
+      "started_utc": "2026-10-29T19:40:29.360574+00:00",
+      "completed_utc": "2026-10-29T19:40:30.225143+00:00",
+      "seconds": 0.865,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    }
+  ],
+  "evidence": "review-hourly-2026-10-29-2000-evidence/manifest.json",
+  "limits": [
+    "Focused execution only; no mega/full suite, font build/shaping/baseline, source bot/download, release/deployment, live config sync or main/shared push.",
+    "Owner manuscript reading, editorial decision, live saving/dry runs, approvals and broad checks remain attributed. This review verifies committed encoding and propagation, not manuscript truth.",
+    "No hbofonts access/check/receipt, HP checkout or BHL task. Unchanged Python code needs no repeated formatting run."
+  ],
+  "repairs": [],
+  "pending_window": null,
+  "receipt_tree_not_tested_source": true,
+  "execution": "Six project stages awaited strictly sequentially in existing exclusively owned saved clones on isolated source branches. Original checkouts restored; unique scratch indexes used for receipt commits, no new worktrees/clones.",
+  "failure_history": "Initial read-only letter-count helper expected dalet to be counted. The unchanged sigil-like one-letter whitelist excludes dalet and final forms; corrected prediction now matches all12changed letter counts exactly. Initial helper/log and corrected helper/log preserved privately. No project check failed or skipped.",
+  "classification": "Single documentation clause re-encoded in raw source, plus/packed forms, generated pages/notation row and matching annotation/inventories. No executable change.",
+  "runtime_inputs": {
+    "Basics": "40e5d37ccb0276a2dc13ab51444459baba858354",
+    "private_runtime_products": null
+  },
+  "results": {
+    "tests": "8passed in2.08s; zero project failures/skips. Exact plus/packed order, Unicode-FOI consequence, ninth-row preservation, CGJ lint and selected MAM-with-doc/near-Aleppo reproduction pass.",
+    "encoding": "MAM-normal packed prefix is U+05EA U+05BC U+05B4 U+034F U+05B0. Raw source order remains faithful; plus/packed spellings agree after the pipeline's MAM ordering, without editing captures.",
+    "parse": "Selected Deuter parse passes59maintained claims and reproduces intermediates/plus/support outputs.",
+    "foi": "Selected single-threaded notation FOI reproduces:9plus rows, zero double-guillemet rows, retained empty section, all8earlier rows exact. Other Unicode-FOI features unchanged for new forms.",
+    "surveys": "Explicit-xataf670mappings/zero failures,74extras including one unchanged uncategorized; sigil inventory3871notes reproduces. All12one-letter count deltas match the added prose under the existing whitelist.",
+    "preservation": "One parsed note string only; target and other fields unchanged. Seven scripture/font product trees unchanged. Change-log retains identical10entries with current plus-tree provenance.",
+    "formatting": "Both endpoint whitespace checks pass; no changed Python to format."
+  },
+  "remote_before_commit": {
+    "refs/heads/main": "40e5d37ccb0276a2dc13ab51444459baba858354"
+  }
+}
