@@ -1,0 +1,132 @@
+{
+  "date": "2026-10-29",
+  "state": "Completed focused review; no consequential defect or repair confirmed.",
+  "receipt_parent": "c574e8a3de1248740ddb1e3f0ca27f64a2ba05c8",
+  "receipt_branch": "review-hourly-20261029-phase5-receipts",
+  "window": {
+    "exclusive_base": "5c113154f500ba626a12e1638fb935a69335d8ac",
+    "frozen_main": "3a61c90f20e55fcddb6a610f4f6882bfbdfff73a",
+    "reachable_commits": 13,
+    "paths": 40
+  },
+  "reviewed_through": "3a61c90f20e55fcddb6a610f4f6882bfbdfff73a",
+  "focused_tested_through": "3a61c90f20e55fcddb6a610f4f6882bfbdfff73a",
+  "broad_tested_through": "6ac28417a243447c24eefb168202585a9949a4ea",
+  "classification": "Consequential redirect/retained-page handling, application-aware Introduction renderer, CGJ lint and note/product refresh; policy freeze and proposed font-tooling plan also screened.",
+  "results": {
+    "tests": "44 passed in 8.50s; no failure or skip. Includes all redirect-target rows, sibling reach, CGJ scan, exact applied-source checks and negative boundaries; committed host stubs and retained-page preservation, and5 Node URL probes verified.",
+    "regeneration": "Introduction review exit0 in 1.615s;152 cases,718 literal passages,14 proposals and5 applied quotations. All generated tracked outputs reproduce exactly.",
+    "data": "9 public note copies each delete exactly one U+034F between U+0591 and U+05DF; no other character changes.7 declared product/font trees unchanged; change-log remains the same10 changes with only source-tree provenance advancing.",
+    "decisions": "All14 original adjudication authorities, quoted sources, change lists and proposals retained. Five application records verified against recorded commits; original audit snapshot/claims/notes unchanged.",
+    "formatting": "All8 changed Python files pass Black. All3endpoint whitespace checks pass; private details retained privately."
+  },
+  "stages": [
+    {
+      "name": "01-focused-contracts",
+      "repository": "/workspace/review-hourly-20261029-phase5",
+      "source_commit": "3a61c90f20e55fcddb6a610f4f6882bfbdfff73a",
+      "cwd": "/workspace/review-hourly-20261029-phase5",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        "py/tests/test_cgj_between_marks.py",
+        "py/tests/test_redirect_manifest.py",
+        "py/tests/test_sibling_reach.py",
+        "py/tests/test_phonetic_redirect_contract.py",
+        "/workspace/scratch/review-hourly-20261029-phase5/test_review_contracts.py",
+        "-q"
+      ],
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "inputs": {
+        "Basics": "3a61c90f20e55fcddb6a610f4f6882bfbdfff73a",
+        "Fonts_read_only_committed_stubs": "15ab243cf1ff3b18b955c8ef5fb1f8de5a829c64",
+        "Private_runtime": null,
+        "scope": "Focused only; no frozen-host script, font build, publish, baseline, BHL or broad job."
+      },
+      "started_utc": "2026-10-29T16:43:36.952774+00:00",
+      "completed_utc": "2026-10-29T16:43:45.692878+00:00",
+      "seconds": 8.74,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "name": "02-introduction-review",
+      "repository": "/workspace/review-hourly-20261029-phase5",
+      "source_commit": "3a61c90f20e55fcddb6a610f4f6882bfbdfff73a",
+      "cwd": "/workspace/review-hourly-20261029-phase5",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_intro_doc_audit.py",
+        "review"
+      ],
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "inputs": {
+        "Basics": "3a61c90f20e55fcddb6a610f4f6882bfbdfff73a",
+        "Fonts_read_only_committed_stubs": "15ab243cf1ff3b18b955c8ef5fb1f8de5a829c64",
+        "Private_runtime": null,
+        "scope": "Focused only; no frozen-host script, font build, publish, baseline, BHL or broad job."
+      },
+      "started_utc": "2026-10-29T16:43:50.910421+00:00",
+      "completed_utc": "2026-10-29T16:43:52.525681+00:00",
+      "seconds": 1.615,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "name": "03-black",
+      "repository": "/workspace/review-hourly-20261029-phase5",
+      "source_commit": "3a61c90f20e55fcddb6a610f4f6882bfbdfff73a",
+      "cwd": "/workspace/review-hourly-20261029-phase5",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "-m",
+        "black",
+        "--check",
+        "py/intro_doc_audit/human_review.py",
+        "py/intro_doc_audit/snapshot.py",
+        "py/main_redirect_stubs.py",
+        "py/redirect_stubs/check.py",
+        "py/redirect_stubs/stubs.py",
+        "py/tests/test_cgj_between_marks.py",
+        "py/tests/test_redirect_manifest.py",
+        "py/tests/test_sibling_reach.py"
+      ],
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "inputs": {
+        "changed_python_files": 8
+      },
+      "started_utc": "2026-10-29T16:44:45.476507+00:00",
+      "completed_utc": "2026-10-29T16:44:45.795959+00:00",
+      "seconds": 0.319,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    }
+  ],
+  "runtime_inputs": {
+    "Basics": "3a61c90f20e55fcddb6a610f4f6882bfbdfff73a",
+    "read_only_host_stub_input": "15ab243cf1ff3b18b955c8ef5fb1f8de5a829c64",
+    "Private_runtime": null
+  },
+  "evidence": "review-hourly-2026-10-29-phase5-evidence/manifest.json",
+  "private_evidence": "Source-dependent helper and host-retirement evidence retained in the owning private repository, not this public archive.",
+  "conformance": "All project stages strictly awaited sequentially in one isolated committed Basics checkout. HP meteg/terminology branch and its jobs untouched; no Private project checkout or runtime used. Receipt carriers continue previous isolated history and are not the tested source.",
+  "limits": [
+    "No full mega/suite, font build/shaping, release publication, baseline/corpus operation, source bot/download, actual deployment or BHL job.",
+    "Owner bot saves, issue reports/closures, broad checks, approvals and deployment/retirement claims remain attributed. Exact local mirror/application evidence was independently checked, without interpreting manuscripts or granting future authority.",
+    "JavaScript URL behavior used Node VM on committed stubs, not a browser or live HTTP; no external host deployment assertion.",
+    "The new UFO build proposal was classified, not executed. Its future licensing/compiler/equivalence decisions remain the owner's."
+  ],
+  "repairs": [],
+  "cleanup": "Source removed after evidence retention and clean/activity/lock check; receipt worktrees removed normally only after push/readback. Branches retained; final outcomes reported in handoff.",
+  "pending_window": null,
+  "source_cleanup_completed_utc": "2026-10-29T16:50:37.630749+00:00",
+  "remote_before_commit": {
+    "refs/heads/main": "3a61c90f20e55fcddb6a610f4f6882bfbdfff73a"
+  }
+}

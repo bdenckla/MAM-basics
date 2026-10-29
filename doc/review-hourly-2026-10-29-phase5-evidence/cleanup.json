@@ -1,0 +1,12 @@
+{
+  "source": "/workspace/review-hourly-20261029-phase5",
+  "source_commit": "3a61c90f20e55fcddb6a610f4f6882bfbdfff73a",
+  "completed_utc": "2026-10-29T16:50:37.630749+00:00",
+  "result": "Normal git worktree remove after evidence preservation and clean/ignored/activity/lock/reflog audit. Source branch retained; no force, branch deletion or integration.",
+  "source_reflog": [
+    "3a61c90f20e55fcddb6a610f4f6882bfbdfff73a",
+    "3a61c90f20e55fcddb6a610f4f6882bfbdfff73a"
+  ],
+  "useful_evidence": "Retained outside source and in isolated receipt evidence ZIPs.",
+  "runtime": "Current task source has no active process; HP checkout/task never touched."
+}
