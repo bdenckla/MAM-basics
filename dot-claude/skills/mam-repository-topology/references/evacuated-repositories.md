@@ -62,7 +62,7 @@ needs no clone. Without the clone, `py/main_redirect_stubs.py` raises, through
 git clone --depth 1 https://github.com/bdenckla/wlc-utils.git $HOME/GitRepos/wlc-utils
 ```
 
-This command and the five like it below clone into the primary forest, `$HOME/GitRepos`.
+This command and the six like it below clone into the primary forest, `$HOME/GitRepos`.
 From a checkout whose home clone is in a secondary forest, write that forest instead, for
 example `$HOME/GitRepos2`. The forest holding the invoking checkout's home clone is where
 `py/redirect_stubs/stubs.py`'s `source_pages_dir` looks, through `paths.sibling_repo`; the
@@ -124,20 +124,23 @@ the clone out of the workspace rosters. A local preview needs no clone: use
 
 Ben's 2026-09-16 evacuation plan keeps `bdenckla/Taamey_D` public and unarchived. Its
 historical tags, releases, release assets, and issues remain at their original URLs. The
-maintained documentation and downloads live in hbofonts; the one legacy HTML URL maps
-from `index.html` to `https://bdenckla.github.io/hbofonts/Taamey_D.html`. The legacy
-stylesheet and four WOFF2 files remain byte-for-byte static assets in the source host's
-`docs/` tree rather than redirect-manifest entries.
+maintained documentation and downloads live in MAM-basics, under `gh-pages/taamey-d/`; the
+one legacy HTML URL maps from `index.html` to
+`https://bdenckla.github.io/MAM-basics/taamey-d/Taamey_D.html`. Until 2026-10-29 it
+mapped to hbofonts' `Taamey_D.html`; that day Taamey D finished moving from hbofonts into
+MAM-basics, and Taamey_D's stub was regenerated to the new target. The legacy stylesheet
+and four WOFF2 files remain byte-for-byte static assets in the source host's `docs/` tree
+rather than redirect-manifest entries.
 
 The frozen mapping is `in/taamey_d_redirect_pages.json`. MAM-basics' redirect row names
-hbofonts' `gh-pages/` as the maintained target and Taamey_D's `docs/` as the source
+its own `gh-pages/taamey-d/` as the maintained target and Taamey_D's `docs/` as the source
 published directory. Taamey_D is absent from `all-repos.code-workspace`,
 `repo_visibility`, and `vendoring_policy.json`, so routine setup and maintenance do not
 restore or sweep a clone. It needs no `frozen_repos` or `repos_to_keep_absent` entry;
 omission from the workspace roster is the mechanism. A Taamey_D clone belongs on no
 machine.
 
-After Phase 4, only explicitly selected redirect-host work wants a temporary clone:
+Only explicitly selected redirect-host work wants a temporary clone:
 
 ```powershell
 git clone --depth 1 https://github.com/bdenckla/Taamey_D.git $HOME/GitRepos/Taamey_D
@@ -148,6 +151,46 @@ From MAM-basics, run `py/main_redirect_stubs.py build --repo Taamey_D --publish`
 deployment, then safety-check and recycle the temporary clone again. A local preview
 needs no source clone: use `build --repo Taamey_D --out <scratch-directory>` and
 `check --repo Taamey_D --dir <scratch-directory>`.
+
+## hbofonts is a private, frozen redirect, download, and issue host
+
+Ben's 2026-10-28 plan, MAM-private's `doc/PLAN-evacuate-hbofonts-into-MAM-basics.md`,
+moved Taamey D, the only font `bdenckla/hbofonts` still maintained, into MAM-basics: its
+sources, build, pages, corpus, shaping checks, and release tool. New Taamey D releases and
+issues come from MAM-basics. hbofonts was frozen on 2026-10-29 and left
+`all-repos.code-workspace` and `repo_visibility` the same day. An hbofonts clone belongs on
+no machine.
+
+The repository stays unarchived, because its open issues stay in its tracker (Ben's
+decision of 2026-10-28), and private, because its history holds decompiles of SBL Hebrew,
+whose license forbids redistributing a modified version. Its frozen scripts may fail, since
+modules they import moved; nothing runs them. Its Pages site deploys only by manual
+dispatch and serves:
+
+- redirect stubs for `index.html`, `Taamey_D.html`, `Xolam_xaser_for_alef.html`, and
+  `downloads/index.html`, a prefix row mapping each to the same relative path under
+  `https://bdenckla.github.io/MAM-basics/taamey-d/`, and a `404.html` that forwards every
+  other missing path there;
+- `Taamey_B.html`, a real page that `in/hbofonts_redirect_pages.json` lists in its
+  `retained_pages`, so `check` accepts it and `build` never overwrites it, with the
+  stylesheet, WOFF2 files, and image that the frozen site keeps;
+- the historical downloads, which MAM-basics' downloads index links by absolute URL.
+
+The frozen mapping is `in/hbofonts_redirect_pages.json`. Only explicitly selected
+redirect-host work wants a temporary clone. hbofonts is private, so unlike the public hosts'
+clones this one needs authenticated GitHub access:
+
+```powershell
+git clone --depth 1 https://github.com/bdenckla/hbofonts.git $HOME/GitRepos/hbofonts
+```
+
+From MAM-basics, run `py/main_redirect_stubs.py build --repo hbofonts --publish` and
+`check --repo hbofonts`, then commit and push the host changes. A push deploys nothing, so
+dispatch the Pages workflow with `gh workflow run pages.yml --repo bdenckla/hbofonts --ref
+main`, an outward-facing act, and verify the deployment. Then safety-check and recycle the
+temporary clone again. A local preview needs no clone: use
+`build --repo hbofonts --out <scratch-directory>` and
+`check --repo hbofonts --dir <scratch-directory>`.
 
 ## codex-index-aleppo is a redirect host
 

@@ -39,8 +39,8 @@ uses a recency criterion, apply that criterion rather than widening it to every 
   synchronize or sweep only a forest your agent owns. Either agent may run the fetch-only
   checks over any forest.
 
-- An evacuated public repository can remain live as a Pages redirect host or issue tracker
-  while its clone belongs on no machine. Do not restore such a clone for ordinary development,
+- An evacuated repository, public or, like hbofonts, private, can remain live as a Pages
+  redirect or download host or issue tracker while its clone belongs on no machine. Do not restore such a clone for ordinary development,
   tests, issue work, or local previews.
 - Explicit redirect-stub publication may require a temporary shallow clone of the named host.
   Follow the repository-specific procedure in `references/evacuated-repositories.md`, publish

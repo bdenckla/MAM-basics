@@ -140,10 +140,10 @@ follow its reference routing.
 `in/repo_maintenance_policy.json` and `all-repos.code-workspace` are the sources of truth.
 Roster clones in the forests declared by `clone_forests` are expected. An evacuated or unlisted
 repository's clone is residue, not evidence that its disposition changed. Do not infer the
-desired clone set from `gh repo list` or a disk set difference. Evacuated public
-repositories can remain redirect hosts or issue trackers while belonging on no machine; the
-skill's `references/evacuated-repositories.md` carries their exact current dispositions,
-temporary-stub procedures, and historical traps.
+desired clone set from `gh repo list` or a disk set difference. Evacuated repositories, the
+public ones and the private hbofonts alike, can remain redirect hosts, download hosts or issue
+trackers while belonging on no machine; the skill's `references/evacuated-repositories.md`
+carries their exact current dispositions, temporary-stub procedures, and historical traps.
 
 ## What this repository's products are, and which check a change owes
 

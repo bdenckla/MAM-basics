@@ -127,19 +127,21 @@ the workflows:
 
 - MAM-basics invokes Graphviz `dot.exe` through `subprocess.run` in
   [`py/mb_cmn/graphviz_pin.py`](../py/mb_cmn/graphviz_pin.py).
-- hbofonts invokes FontForge through
-  `C:/Users/BenDe/GitRepos/hbofonts/ps1_ffscript_generate_sfd_n_ttf_solo.ps1`.
-- hbofonts invokes Tidy's `tidy.exe` through
-  `C:/Users/BenDe/GitRepos/hbofonts/ps1_html_tidy.ps1`.
-- hbofonts invokes HarfBuzz's `hb-view.exe` and `hb-shape.exe` through
-  `C:/Users/BenDe/GitRepos/hbofonts/ps1_run_hb_view_on_examples_using_my_font.ps1`
-  and
-  `C:/Users/BenDe/GitRepos/hbofonts/ps1_run_hb_view_on_examples_using_not_my_font.ps1`.
+- MAM-basics' hand-run Taamey D build invokes FontForge through
+  `subprocess.run` in `run_fontforge` of
+  [`py/main_taamey_d_build.py`](../py/main_taamey_d_build.py).
 
-Graphviz, FontForge, Tidy, and HarfBuzz compatibility above the legacy limit is
-unverified: none of these tools is known here either to work or to fail there.
+Graphviz and FontForge compatibility above the legacy limit is unverified:
+neither tool is known here either to work or to fail there.
 Git's one observed failure and success establish only the tested paths and
 configuration, not a general boundary for every Git operation.
+
+When this guide was written on 2026-09-19, the Taamey D font was maintained in
+hbofonts, whose scripts invoked FontForge and also Tidy's `tidy.exe` and
+HarfBuzz's `hb-view.exe` and `hb-shape.exe`. Taamey D moved into MAM-basics on
+2026-10-29. Its build runs FontForge as above, and its shaping checks call
+HarfBuzz in process through uharfbuzz, so no maintained workflow runs Tidy or
+HarfBuzz's executables.
 
 ## Future disposable probes
 
@@ -155,13 +157,9 @@ usable afterward.
    pack paths at both lengths, then read the resulting repository with Git.
 3. Exercise Graphviz `dot.exe` with a real DOT input path and SVG output path at
    both lengths, then parse or compare the SVG.
-4. Exercise FontForge through the hbofonts wrapper with disposable SFD and
-   feature inputs and disposable SFD, TTF, WOFF, and WOFF2 outputs at both
-   lengths, then reopen the generated fonts.
-5. Exercise Tidy `tidy.exe` with real HTML input and output paths at both
-   lengths, then read and validate the output.
-6. Exercise HarfBuzz `hb-view.exe` and `hb-shape.exe` with real font and text
-   inputs and SVG and trace outputs at both lengths, then read the outputs.
+4. Exercise FontForge as `run_fontforge` in `py/main_taamey_d_build.py` invokes
+   it, with disposable SFD and feature inputs and disposable SFD, TTF, WOFF, and
+   WOFF2 outputs at both lengths, then reopen the generated fonts.
 
 Only results from those executable-specific read/write probes can retire the
 corresponding compatibility concern.

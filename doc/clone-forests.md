@@ -117,7 +117,7 @@ environment's `-m pip freeze` output in a uniquely named scratch script and writ
 constraints; reinstall corresponding environments deliberately.
 `pip freeze` records installed packages and is not a cross-platform lockfile. Check each intended
 Python/platform combination rather than claiming Windows verification also proves cloud setup.
-MAM-private and hbofonts document their own environment setup. Forest synchronization never
+MAM-private documents its own environment setup. Forest synchronization never
 reinstalls an existing environment or silently regenerates its constraints.
 
 ## Work and verification

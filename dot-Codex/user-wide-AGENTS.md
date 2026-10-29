@@ -155,7 +155,7 @@ normally the handoff partner, not a precondition failure; prove non-collision th
 
 ## Verification cadence for multi-session work
 
-For the approved 2026-10-07 trial, MAM-basics, MAM-private and hbofonts follow the controlling
+For the approved 2026-10-07 trial, MAM-basics and MAM-private follow the controlling
 amendment in MAM-basics' `doc/review-trial.md`: ordinary focused checks and nightly broad checks,
 with immediate broad checks only for a specific consequence that cannot accept the delay.
 That amendment also authorizes bounded routine repairs and agent exception PRs. The cadence
