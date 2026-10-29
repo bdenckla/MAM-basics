@@ -1,0 +1,113 @@
+{
+  "file": "focused-evidence.zip",
+  "bytes": 11933,
+  "sha256": "fbb50fc42824cf915f2265c967b3295056c67e61ff3d2fdd87abab55d9db507f",
+  "members": [
+    {
+      "path": "01-focused-tests.log",
+      "bytes": 99,
+      "sha256": "7b32c06a4624a8484de20ef1f88f57fb657469a10a9dcec63c19cd6e8c50a07f"
+    },
+    {
+      "path": "01-focused-tests.result.json",
+      "bytes": 960,
+      "sha256": "c4a167df4555151e286174fac80d8e5feba8edc5321e419422fa9d86781cc057"
+    },
+    {
+      "path": "01-focused-tests.spec.json",
+      "bytes": 784,
+      "sha256": "aaca04c9512b7eec1d8b78b2603ca0dff3ecdf221def0f8d5a99ae8e0f111791"
+    },
+    {
+      "path": "02-parse-exodus.log",
+      "bytes": 3147,
+      "sha256": "ff8c19182d619b7f7ce0ba9f7a82bec273f34a546d03252c194b01454bdd56a5"
+    },
+    {
+      "path": "02-parse-exodus.result.json",
+      "bytes": 782,
+      "sha256": "28cafa430081a6189cf7694422c0dff762dde173d979c466db973d77697b663b"
+    },
+    {
+      "path": "02-parse-exodus.spec.json",
+      "bytes": 606,
+      "sha256": "b2cdd54682a8357b54351abc3e22302730774f477025ff5e7762623b18004a98"
+    },
+    {
+      "path": "03-parse-deuter.log",
+      "bytes": 3147,
+      "sha256": "a585b87cbc766f5de5e32484e1b41336b548c37a01a6593e1572d24c7488cb30"
+    },
+    {
+      "path": "03-parse-deuter.result.json",
+      "bytes": 782,
+      "sha256": "0f4cca47dba16a8d779edd721316056d2f5a432ee40823ac871dbdce7492e87e"
+    },
+    {
+      "path": "03-parse-deuter.spec.json",
+      "bytes": 606,
+      "sha256": "bf5f782c643306581abf9496232a583ebaf75b31f1be58511b7032f3adc6d511"
+    },
+    {
+      "path": "04-explicit-xataf.log",
+      "bytes": 315,
+      "sha256": "57c2fb663caae3390d8beab7649e3f099dab6c382e9273d86f27d9849910b566"
+    },
+    {
+      "path": "04-explicit-xataf.result.json",
+      "bytes": 753,
+      "sha256": "20f831de84e90d3907605eb8387c0d2b682824f85e3af74ddbd7ec0e94e9b1ee"
+    },
+    {
+      "path": "04-explicit-xataf.spec.json",
+      "bytes": 577,
+      "sha256": "8a66c63043f932025e366872b49608ef39c54747ba8643c2d18a8ff1d349de5b"
+    },
+    {
+      "path": "05-sigil-inventory.log",
+      "bytes": 209,
+      "sha256": "72d219caeba3ec1f8b486d7a8bf7bb22e0d227c96b0e8eec245bd377cc4ce2f9"
+    },
+    {
+      "path": "05-sigil-inventory.result.json",
+      "bytes": 755,
+      "sha256": "f79b40151b3715d21a39205a3364fa768af137bd37dcf861f7616ecdf2208cbd"
+    },
+    {
+      "path": "05-sigil-inventory.spec.json",
+      "bytes": 579,
+      "sha256": "64bec150ccc710a48106c190b1fa5e8636b65fcce7e83c7367498cb928535107"
+    },
+    {
+      "path": "06-formatting.log",
+      "bytes": 55,
+      "sha256": "1a56c7cd8457fd05d978cfbd139d7bfd86e86acaa9b57668e718ef8bccc0cf48"
+    },
+    {
+      "path": "06-formatting.result.json",
+      "bytes": 796,
+      "sha256": "8c741008ad4dfcd5cac1121605fc4402cfbae96a8d8d1588abb2f78227aa010f"
+    },
+    {
+      "path": "06-formatting.spec.json",
+      "bytes": 620,
+      "sha256": "abfea081bb43e06625ae2ab5d218d205e6eb81054dfc88f9e0cf8f98f1b546e5"
+    },
+    {
+      "path": "MAM-basics-whitespace.json",
+      "bytes": 40,
+      "sha256": "52ec8b1c08faa5684e5128b4adf676a160a0a562843621a2310a9ad858e28327"
+    },
+    {
+      "path": "public-audit.json",
+      "bytes": 10466,
+      "sha256": "b68c7859f183bdc6d558dbe4a7950977f9b729dc3abde239c0c374d4f8bdbce3"
+    },
+    {
+      "path": "test_focused_products.py",
+      "bytes": 1695,
+      "sha256": "511ef57fa4d0e4d7fd35cea820fff34c9d0fcfbbfbf03f9107c6bb4bc9b2bc40"
+    }
+  ],
+  "verification": "All member bytes and CRCs read back; evidence is not generated source or an accepted baseline."
+}

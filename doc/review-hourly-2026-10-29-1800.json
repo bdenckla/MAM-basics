@@ -1,0 +1,205 @@
+{
+  "date": "2026-10-29",
+  "state": "Completed bounded review; no consequential defect or repair confirmed.",
+  "receipt_branch": "review-hourly-20261029-1800-receipts",
+  "evidence": "review-hourly-2026-10-29-1800-evidence/manifest.json",
+  "repairs": [],
+  "limits": [
+    "No full mega/suite, font build/shaping, baseline/corpus acceptance, source bot/download, release publishing, deployment, main/shared integration or live config sync.",
+    "Owner refresh, historical approvals, Phase5 deployment, remote live-file comparisons and broad checks are attributed claims, not this run's execution.",
+    "Manuscript and Hebrew editorial decisions preserved; note translations checked against the complete changed clause, not treated as independently verified manuscript readings.",
+    "No hbofonts check or receipt; its frozen historical evidence remains in Private. No HP BHL branch, reader, source, generator or expensive test was touched."
+  ],
+  "execution": "All eight project stages strictly awaited sequentially; exact committed source worktrees and home interpreters, unchanged dependency declarations.",
+  "pending_window": null,
+  "cleanup": {
+    "source": {
+      "source_commit": "e18e7b00e33b868e3542fff02c424959e950893a",
+      "removed_utc": "2026-10-29T18:12:41.968977+00:00",
+      "result": "Normal git worktree remove after retained evidence and clean/ignored/activity/lock/reflog audit. Branch retained; no force or integration."
+    },
+    "receipt_worktree": "Remove normally after verified isolated push; retain local/remote branch. Final outcome in parent handoff."
+  },
+  "receipt_parent": "b9f81d9bfcb79da629dd356d0f54a802b8921588",
+  "window": {
+    "exclusive_base": "3a61c90f20e55fcddb6a610f4f6882bfbdfff73a",
+    "frozen_main": "e18e7b00e33b868e3542fff02c424959e950893a",
+    "reachable_commits": 9,
+    "paths": 36
+  },
+  "reviewed_through": "e18e7b00e33b868e3542fff02c424959e950893a",
+  "focused_tested_through": "e18e7b00e33b868e3542fff02c424959e950893a",
+  "broad_tested_through": "6ac28417a243447c24eefb168202585a9949a4ea",
+  "classification": "Consequential source-note and generated-product refresh plus retirement/topology/process updates. Sole changed Python file is a docstring-only edit; independent non-docstring AST is identical.",
+  "runtime_inputs": {
+    "Basics": "e18e7b00e33b868e3542fff02c424959e950893a",
+    "private_runtime_products": null
+  },
+  "stages": [
+    {
+      "name": "01-focused-tests",
+      "repository": "/workspace/review-hourly-20261029-1800-basics",
+      "source_commit": "e18e7b00e33b868e3542fff02c424959e950893a",
+      "cwd": "/workspace/review-hourly-20261029-1800-basics",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        "py/tests/test_repo_visibility_declared.py",
+        "py/tests/test_sibling_reach.py",
+        "py/tests/test_cgj_between_marks.py",
+        "/workspace/scratch/review-hourly-20261029-1800/test_focused_products.py",
+        "-q"
+      ],
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "inputs": {
+        "Basics": "e18e7b00e33b868e3542fff02c424959e950893a",
+        "private_runtime_products": null,
+        "scope": "Focused changed data/product or topology lint; no font/BHL/broad job."
+      },
+      "started_utc": "2026-10-29T18:07:40.562580+00:00",
+      "completed_utc": "2026-10-29T18:07:50.194116+00:00",
+      "seconds": 9.632,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "name": "02-parse-exodus",
+      "repository": "/workspace/review-hourly-20261029-1800-basics",
+      "source_commit": "e18e7b00e33b868e3542fff02c424959e950893a",
+      "cwd": "/workspace/review-hourly-20261029-1800-basics",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_parse.py",
+        "ws",
+        "--book39",
+        "Exodus"
+      ],
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "inputs": {
+        "Basics": "e18e7b00e33b868e3542fff02c424959e950893a",
+        "private_runtime_products": null,
+        "scope": "Focused changed data/product or topology lint; no font/BHL/broad job."
+      },
+      "started_utc": "2026-10-29T18:07:50.254724+00:00",
+      "completed_utc": "2026-10-29T18:07:54.276547+00:00",
+      "seconds": 4.022,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "name": "03-parse-deuter",
+      "repository": "/workspace/review-hourly-20261029-1800-basics",
+      "source_commit": "e18e7b00e33b868e3542fff02c424959e950893a",
+      "cwd": "/workspace/review-hourly-20261029-1800-basics",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_parse.py",
+        "ws",
+        "--book39",
+        "Deuter"
+      ],
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "inputs": {
+        "Basics": "e18e7b00e33b868e3542fff02c424959e950893a",
+        "private_runtime_products": null,
+        "scope": "Focused changed data/product or topology lint; no font/BHL/broad job."
+      },
+      "started_utc": "2026-10-29T18:07:54.324804+00:00",
+      "completed_utc": "2026-10-29T18:07:58.370274+00:00",
+      "seconds": 4.045,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "name": "04-explicit-xataf",
+      "repository": "/workspace/review-hourly-20261029-1800-basics",
+      "source_commit": "e18e7b00e33b868e3542fff02c424959e950893a",
+      "cwd": "/workspace/review-hourly-20261029-1800-basics",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_explicit_xataf.py"
+      ],
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "inputs": {
+        "Basics": "e18e7b00e33b868e3542fff02c424959e950893a",
+        "private_runtime_products": null,
+        "scope": "Focused changed data/product or topology lint; no font/BHL/broad job."
+      },
+      "started_utc": "2026-10-29T18:07:58.418901+00:00",
+      "completed_utc": "2026-10-29T18:07:58.817796+00:00",
+      "seconds": 0.399,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "name": "05-sigil-inventory",
+      "repository": "/workspace/review-hourly-20261029-1800-basics",
+      "source_commit": "e18e7b00e33b868e3542fff02c424959e950893a",
+      "cwd": "/workspace/review-hourly-20261029-1800-basics",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_sigil_inventory.py"
+      ],
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "inputs": {
+        "Basics": "e18e7b00e33b868e3542fff02c424959e950893a",
+        "private_runtime_products": null,
+        "scope": "Focused changed data/product or topology lint; no font/BHL/broad job."
+      },
+      "started_utc": "2026-10-29T18:07:58.868885+00:00",
+      "completed_utc": "2026-10-29T18:07:59.709728+00:00",
+      "seconds": 0.841,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "name": "06-formatting",
+      "repository": "/workspace/review-hourly-20261029-1800-basics",
+      "source_commit": "e18e7b00e33b868e3542fff02c424959e950893a",
+      "cwd": "/workspace/review-hourly-20261029-1800-basics",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "-m",
+        "black",
+        "--check",
+        "py/repo_util/report_destination.py"
+      ],
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "inputs": {
+        "Basics": "e18e7b00e33b868e3542fff02c424959e950893a",
+        "private_runtime_products": null,
+        "scope": "Focused changed data/product or topology lint; no font/BHL/broad job."
+      },
+      "started_utc": "2026-10-29T18:07:59.786489+00:00",
+      "completed_utc": "2026-10-29T18:07:59.940330+00:00",
+      "seconds": 0.154,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    }
+  ],
+  "results": {
+    "tests": "18 focused tests passed in 9.40s, no failure or skip. Topology/visibility guard, sibling reach, CGJ lint and selected MAM-with-doc/near-Aleppo reproduction.",
+    "parsers": "Exodus and Deuter selected canonical parses each pass all 59 maintained claims and leave no tracked difference, including faithful intermediates and plus/support products.",
+    "editions": "Both selected MAM-with-doc books (including long-note pages and stylesheet) and four near-Aleppo book/long-note pages reproduce exactly.",
+    "surveys": "Explicit-xataf reproduces 670 mappings/zero failures and 74 extras, including one unchanged uncategorized item; sigil inventory reproduces all output over 3871 notes.",
+    "data": "Exactly three changed note strings across two verses; note targets and all other plus structure preserved. Seven product/font trees unchanged. Annotation changes only one translation and generated extras only that translation/comment. Change-log keeps the same ten entries.",
+    "process": "Only hbofonts removed from workspace/visibility; existing MAM-private guard still holds. Maintained references now match the local Taamey D implementation; proposed UFO build remains unexecuted.",
+    "formatting": "Single changed Python file passes Black; endpoint whitespace passes.",
+    "failure_history": "Initial read-only comparison helper falsely equated faithful intermediate strings with MAM-normal plus strings. Inspection identified raw mark order and the serialized 2= prefix; the helper now records intermediates separately. Both canonical selected parser runs reproduce them exactly. Initial helper/log and corrected helper/log preserved privately. No project check failed."
+  },
+  "remote_before_commit": {
+    "refs/heads/main": "e18e7b00e33b868e3542fff02c424959e950893a"
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "source_commit": "e18e7b00e33b868e3542fff02c424959e950893a",
+  "removed_utc": "2026-10-29T18:12:41.968977+00:00",
+  "result": "Normal git worktree remove after retained evidence and clean/ignored/activity/lock/reflog audit. Branch retained; no force or integration."
+}
