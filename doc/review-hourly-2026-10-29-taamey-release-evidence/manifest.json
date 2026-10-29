@@ -1,0 +1,115 @@
+{
+  "archive_bytes": 93695,
+  "archive_sha256": "17bcad8a4a62ad402b0154651c65304bb9682b5e3b67f6135d78f589000160b6",
+  "members": {
+    "02-font-table-inspection.log": {
+      "bytes": 4529,
+      "sha256": "7f327b4e9ea89ff11dcb1f6692d13057df001292e120106c325e2e536f138e88"
+    },
+    "03-release-contracts.spec.json": {
+      "bytes": 1004,
+      "sha256": "4e47c3924d3f1624efe7be00b9a569edd340c743c02def7a653327433aee2f4c"
+    },
+    "01-stdlib-release-check.log": {
+      "bytes": 433,
+      "sha256": "7dabcf0f3ea699681ccc30ddd4377d35c8f89d90ed34e3c76b819d41bcd78dc3"
+    },
+    "02-font-table-inspection.result.json": {
+      "bytes": 937,
+      "sha256": "e899b073e4d61cfd58372509271cd3e157db497f94d5f3d3917119df611bbe08"
+    },
+    "03-release-contracts.log": {
+      "bytes": 180,
+      "sha256": "28a1bfc4ddfe74f613ae299772736420f987efbc2ba44ac690f345cdae3bf1dc"
+    },
+    "02-font-table-inspection.spec.json": {
+      "bytes": 761,
+      "sha256": "803c40290105b358cad24853df4f9cba1027348b0863f8f8f572f8a093f03687"
+    },
+    "05-changed-python-black.log": {
+      "bytes": 57,
+      "sha256": "2086e52d894c8a9e346b7e54cf4e6aa5bfc4894eadf08c9c1fefbf7390e718f1"
+    },
+    "font-table-comparison.json": {
+      "bytes": 4529,
+      "sha256": "7f327b4e9ea89ff11dcb1f6692d13057df001292e120106c325e2e536f138e88"
+    },
+    "test_release_contracts.py": {
+      "bytes": 8610,
+      "sha256": "fe8585dfb01dcebbac91329832e575699eece2d6d9506598f4e54fd22476ab70"
+    },
+    "environment-and-history.json": {
+      "bytes": 969,
+      "sha256": "f6358163874390dabde1578ceae7ff63269e78c16e49e277b0a21446bd94ee33"
+    },
+    "05-changed-python-black.spec.json": {
+      "bytes": 972,
+      "sha256": "fc93d644a43ee9834b4e7ddf4b8f53218f628f3946de9c808b3ed07150eba0d2"
+    },
+    "01-stdlib-release-check.result.json": {
+      "bytes": 877,
+      "sha256": "14ce67957bdcdf4bac1e1d2caa85e4e022fde8496b67649692779abf5152e568"
+    },
+    "test_link_page_reproduction.py": {
+      "bytes": 1031,
+      "sha256": "9f057a50308ac051389192364c726262beabb5f1e0bfeee615fd1116778b3a73"
+    },
+    "05-changed-python-black.result.json": {
+      "bytes": 1148,
+      "sha256": "f7892be9204ff0a540e144a712263a6a2babeef7708fce9d407a2d57a4422645"
+    },
+    "04-targeted-page-reproduction.result.json": {
+      "bytes": 937,
+      "sha256": "b7714936f5e807275a2f80286ab7c6b96f7bc4b7d73f8b5d3e5ab2ab9f64e4d3"
+    },
+    "01-stdlib-release-check.spec.json": {
+      "bytes": 701,
+      "sha256": "5e0ef868f6e67694dccd25b11eb367482419ca4cbca63a76cc9b363d72187e71"
+    },
+    "04-targeted-page-reproduction.log": {
+      "bytes": 98,
+      "sha256": "ed0d6c079627b8413ba6fa1e9b0419bf2bb3f2c7f1917b91d9f908f1f9a678d2"
+    },
+    "03-release-contracts.result.json": {
+      "bytes": 1181,
+      "sha256": "d4cd6f35e091a52a987f76f1edd95badb98e6a4cd23242a3a812028260d3e99f"
+    },
+    "audit_distribution.py": {
+      "bytes": 7029,
+      "sha256": "745440a6386256839f24395d29bed554d332ee9dffe41f2b97df9f16d91b86f7"
+    },
+    "inspect_font_tables.py": {
+      "bytes": 2644,
+      "sha256": "0830dc0833da3e333d667c09f7626fe8e7d07d283d1aa07c4fd015dd226ee63c"
+    },
+    "distribution-audit.json": {
+      "bytes": 3334,
+      "sha256": "fb10a62f6df397306fa10253e5fa6323c5e74a073aa3a75b2783a1a60e51214e"
+    },
+    "04-targeted-page-reproduction.spec.json": {
+      "bytes": 762,
+      "sha256": "0045843627ef5980296edf54f7cb7e3a367a64cb4b8b4dbf1f091ab7890768e7"
+    },
+    "paths.nul": {
+      "bytes": 2366,
+      "sha256": "2157e9ae1c40cb8fa98175bc8c56cc3aaaf3c601fc42e5d3ba5d1fe38f255c16"
+    },
+    "commits.txt": {
+      "bytes": 25765,
+      "sha256": "b3048da99634efbcd5edc5cc4b0ec9068cd8d3e5ebb2a1b8f761502193d2ff53"
+    },
+    "endpoint-code-doc.patch": {
+      "bytes": 229387,
+      "sha256": "c8f9d7f2ea4db2be9083146a805128d621cbfb5dbcfd577bbb7a93dbf517afeb"
+    },
+    "stage-runner.py": {
+      "bytes": 1525,
+      "sha256": "7a76b7520fc6e107e4ec01ab502efd8f74ff116fd0f6c37e8efbd6bc43a90768"
+    },
+    "nightly-handoff.md": {
+      "bytes": 2053,
+      "sha256": "cae0d46073aaf0e7a865a064b16e69845041a2d497f83838dc876e4849a81f3f"
+    }
+  },
+  "privacy": "Owning repository only. Paired old private release-tool diff remains in Private. Source fonts, archives, virtual environments and images are not duplicated; current public artifacts are identified by commits/hashes. Every archive member byte/hash and ZIP CRC verified."
+}

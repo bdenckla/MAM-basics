@@ -1,0 +1,194 @@
+{
+  "date": "2026-10-29",
+  "state": "Completed focused review; no consequential defect or repair confirmed.",
+  "receipt_parent": "5b25f95ba65c772335e5261f77ca8188e4756ae5",
+  "receipt_branch": "review-hourly-20261029-taamey-release-receipts",
+  "window": {
+    "exclusive_base": "bcfe749c68c144218f33821c9f95775a25ed032d",
+    "frozen_main": "5c113154f500ba626a12e1638fb935a69335d8ac",
+    "commits": 9,
+    "paths": 60
+  },
+  "reviewed_through": "5c113154f500ba626a12e1638fb935a69335d8ac",
+  "focused_tested_through": "5c113154f500ba626a12e1638fb935a69335d8ac",
+  "broad_tested_through": "6ac28417a243447c24eefb168202585a9949a4ea",
+  "repair": null,
+  "evidence": "review-hourly-2026-10-29-taamey-release-evidence/manifest.json",
+  "remote_before_commit": {
+    "refs/heads/main": "5c113154f500ba626a12e1638fb935a69335d8ac"
+  },
+  "pending_window": null,
+  "execution_conformance": "One reviewer; all focused stages sequential. Active HP BHL meteg/terminology work and its checkout/branch untouched. Only public release/archive checks, in-memory font-table reads and targeted public page reproduction ran. No font build/save, QA/baseline/corpus adoption, release publisher, full mega/suite, main/shared push, workflow dispatch, deployment or live configuration sync.",
+  "cleanup": {
+    "source_worktree": "Removed normally after evidence retention; no force, branch deletion or integration.",
+    "detail": "review-hourly-2026-10-29-taamey-release-evidence/cleanup.json",
+    "receipt_worktree": "Normal removal after isolated push/readback, clean-state/activity/lock/reflog audit. Local and remote receipt branches retained; final confirmation reported to parent."
+  },
+  "classification": "Consequential release-tool migration, immutable1.2snapshot, source/binary closure, site pin, links and manual Pages guard reviewed.",
+  "stages": [
+    {
+      "name": "01-stdlib-release-check",
+      "repository": "/workspace/review-hourly-20261029-taamey-release",
+      "source_commit": "5c113154f500ba626a12e1638fb935a69335d8ac",
+      "cwd": "/workspace/review-hourly-20261029-taamey-release",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "-S",
+        "py/main_taamey_d.py",
+        "release-check"
+      ],
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "inputs": {
+        "Basics": "5c113154f500ba626a12e1638fb935a69335d8ac",
+        "snapshot_source": "1f1be97138d5b9ac5464c2de912299828bf9fccb",
+        "scope": "Read-only release validation under Python -S, with no site-packages. No publisher, font build, QA or corpus/baseline operation."
+      },
+      "started_utc": "2026-10-29T15:26:17.119298+00:00",
+      "completed_utc": "2026-10-29T15:26:17.512154+00:00",
+      "seconds": 0.393,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "name": "02-font-table-inspection",
+      "repository": "/workspace/review-hourly-20261029-taamey-release",
+      "source_commit": "5c113154f500ba626a12e1638fb935a69335d8ac",
+      "cwd": "/workspace/review-hourly-20261029-taamey-release",
+      "command": [
+        "/workspace/scratch/review-hourly-20261029-hb-fonts/renderer-venv/bin/python",
+        "/workspace/scratch/review-hourly-20261029-release-basics/inspect_font_tables.py"
+      ],
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "inputs": {
+        "Basics_before": "bcfe749c68c144218f33821c9f95775a25ed032d",
+        "Basics_after": "5c113154f500ba626a12e1638fb935a69335d8ac",
+        "scope": "Read committed tables in memory only; separate existing Brotli-capable environment; no build/save/shaping operation."
+      },
+      "started_utc": "2026-10-29T15:27:00.967057+00:00",
+      "completed_utc": "2026-10-29T15:27:01.250843+00:00",
+      "seconds": 0.284,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "name": "03-release-contracts",
+      "repository": "/workspace/review-hourly-20261029-taamey-release",
+      "source_commit": "5c113154f500ba626a12e1638fb935a69335d8ac",
+      "cwd": "/workspace/review-hourly-20261029-taamey-release",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        "py/tests/test_mega_coverage.py",
+        "py/tests/test_product_scopes.py",
+        "py/tests/test_entry_point_subcommands.py",
+        "py/tests/test_taamey_d_build_imports.py",
+        "py/tests/test_shared_html_styles.py",
+        "/workspace/scratch/review-hourly-20261029-release-basics/test_release_contracts.py",
+        "-q"
+      ],
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "inputs": {
+        "Basics": "5c113154f500ba626a12e1638fb935a69335d8ac",
+        "snapshot_source": "1f1be97138d5b9ac5464c2de912299828bf9fccb",
+        "scope": "Focused read-only validation and synthetic corrupt fixtures. No font build, release writer/publish function, baseline/corpus operation, broad or BHL job."
+      },
+      "started_utc": "2026-10-29T15:33:59.121923+00:00",
+      "completed_utc": "2026-10-29T15:34:19.518980+00:00",
+      "seconds": 20.397,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "name": "04-targeted-page-reproduction",
+      "repository": "/workspace/review-hourly-20261029-taamey-release",
+      "source_commit": "5c113154f500ba626a12e1638fb935a69335d8ac",
+      "cwd": "/workspace/review-hourly-20261029-taamey-release",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        "/workspace/scratch/review-hourly-20261029-release-basics/test_link_page_reproduction.py",
+        "-q"
+      ],
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "inputs": {
+        "Basics": "5c113154f500ba626a12e1638fb935a69335d8ac",
+        "scope": "Only two Taamey D doc pages, site index and single changed essay. Direct producer functions under canonical test entrypoint; no survey, BHL, broad generation or release publisher."
+      },
+      "started_utc": "2026-10-29T15:37:02.653499+00:00",
+      "completed_utc": "2026-10-29T15:37:03.043211+00:00",
+      "seconds": 0.39,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "name": "05-changed-python-black",
+      "repository": "/workspace/review-hourly-20261029-taamey-release",
+      "source_commit": "5c113154f500ba626a12e1638fb935a69335d8ac",
+      "cwd": "/workspace/review-hourly-20261029-taamey-release",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "-m",
+        "black",
+        "--check",
+        "py/author_misc/urwotm_4_atnax_hafukh.py",
+        "py/author_site/site_data.py",
+        "py/main_0_mega.py",
+        "py/main_taamey_d.py",
+        "py/product_scopes.py",
+        "py/py_html/hebrew_letter_spacing.py",
+        "py/py_html/taamey_d_assets.py",
+        "py/taamey_d/doc/taamey_d_page.py",
+        "py/taamey_d/release.py",
+        "py/taamey_d_build/font_version.py",
+        "py/tests/test_mega_coverage.py"
+      ],
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "inputs": {
+        "Basics": "5c113154f500ba626a12e1638fb935a69335d8ac",
+        "changed_Python_files": 11,
+        "scope": "Read-only formatting verification of all changed Python files."
+      },
+      "started_utc": "2026-10-29T15:39:04.937280+00:00",
+      "completed_utc": "2026-10-29T15:39:05.426184+00:00",
+      "seconds": 0.489,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    }
+  ],
+  "results": {
+    "tests": "78tests passed in18.58s, plus3new targeted page reproduction tests in0.16s;81total, no failures/skips. Includes corrupt payload/ZIP cases, index/immutability, missing-source and cloud-skip boundaries, closed CLI dispatch, support mapping and manual full-history deploy guard.",
+    "stdlib_check": "Actual release-check passed under Python -S in0.393s, no site-packages;9published files checked against full source history, no skip or tracked diff. Direct safety tripwires also prove the check does not call any publisher/helper writer.",
+    "archives": "Independent ZIP/JSON/Git audit verifies5binary and9source members, exact source1f1be971bytes, fixed timestamps/regular modes, CRCs, sizes/hashes, provenance, checksums and exact latest/snapshot equality.",
+    "pin_and_links": "The1.2pin matches the snapshot WOFF2;9published support copies agree byte-for-byte and13new local/same-site link targets resolve. All24frozen-host archive links plus the original release tag link are retained; no live HTTP claim.",
+    "font_differential": "TTF/WOFF/WOFF2each preserve13of15tables. head changes only version/checksum adjustment, name only4records with IDs3and5. Symbolic/filled feature sources and all other name records unchanged. In-memory Brotli decoding only; no font serialization/build/shaping.",
+    "regeneration": "Two Taamey D documentation pages, site index and changed essay reproduce byte-for-byte. Source checkout remains Git-clean after each stage.",
+    "formatting": "All11changed Python files pass Black; endpoint whitespace passes.",
+    "failure_history": "No failing check in this window. Negative fixtures deliberately raise expected errors; navigation/display reads with wrong filenames were corrected without project mutation."
+  },
+  "runtime_inputs": {
+    "Basics": "5c113154f500ba626a12e1638fb935a69335d8ac",
+    "snapshot_source": "1f1be97138d5b9ac5464c2de912299828bf9fccb",
+    "prior_public_font_commit": "bcfe749c68c144218f33821c9f95775a25ed032d",
+    "original_release_tool_comparison": "3b59254aae9dcc31a4a638f0bd4f88a30dcde858",
+    "sibling_runtime_products": []
+  },
+  "limits": [
+    "FontForge/exact source-archive rebuild and author full mega/suite/QA claims were not reproduced. No font build, release publication, baseline operation or broad-anchor advance.",
+    "No actual GitHub workflow/Ubuntu-Python3.12runner or browser run. Actual Linux -S and source3.12grammar checks are narrower evidence.",
+    "History/source-availability failure branches use synthetic/mock inputs; actual full-history positive validation succeeded. Future build-source allowlist growth requires choosing it by snapshot source commit, as the maintained code already notes.",
+    "Rights/approval statements are attributed and compared with existing declarations/bytes; no new licensing or publication decision inferred."
+  ],
+  "nightly_handoff": "review-hourly-2026-10-29-taamey-release-evidence/nightly-handoff.md",
+  "publication_transport_incident": "Initial cleanup/push command could not create a process: exec-server transport disconnected. Minimal read recovered, then both original receipt parents, absent remote branches, existing source worktree and absent cleanup helper confirmed no action executed. One resumed attempt follows this materially new connectivity/state evidence. No project check failed and no approval denial occurred.",
+  "receipt_tree_note": "This receipt history tree is not the source checkout used by the focused runtime stages."
+}

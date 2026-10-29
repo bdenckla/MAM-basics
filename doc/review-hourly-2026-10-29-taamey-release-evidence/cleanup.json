@@ -1,0 +1,9 @@
+{
+  "completed_utc": "2026-10-29T15:48:18.574557+00:00",
+  "source_worktree": "Removed normally after evidence retention; no force, branch deletion or integration.",
+  "ignored_files": 0,
+  "project_runtime": "All dependency/check stages completed sequentially; last project check15:39:05.426184UTC. No font build or adoption operation.",
+  "retention": "Useful logs, helpers, output fingerprints and raw paired evidence preserved and archive bytes/hashes/CRC verified in owning receipt tree.",
+  "safety": "Clean tracked/untracked/ignored state, no active cwd, Git operation/lock, or installed runtime session/writer record. Source reflog only the frozen input, retained in origin/main.",
+  "integration_gate": "Existing saved-home limitation: no local default branch for maintained inspector. Explicit isolated/no-main cleanup uses retained source/remote history and manual activity/lock/state audit; no integration performed for retirement."
+}
