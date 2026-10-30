@@ -1,0 +1,31 @@
+{
+  "source_commit": "2274f922596c02a532c2225796af2efda77fe0ac",
+  "members": [
+    {
+      "path": "endpoint.patch",
+      "bytes": 1288,
+      "sha256": "809a04e8da3a9f644562f9023bffce28a2ae0d14af22ed60c783ab9fdda32a6f"
+    },
+    {
+      "path": "changed-paths.json",
+      "bytes": 49,
+      "sha256": "ecd6ac331ab524082eab347fdbc667b9be065b601639cdd26e5b666f62a30926"
+    },
+    {
+      "path": "checkout-before.json",
+      "bytes": 138,
+      "sha256": "705162d310da287ad4b6a6aa523a2a9b83ef6e80ecc712fba3dbbc72d45b08d6"
+    },
+    {
+      "path": "checkout-restored.json",
+      "bytes": 167,
+      "sha256": "db3003ac619d8a0b06e41713ceb8ee23af88f92c982354b2bff1fde02962607f"
+    },
+    {
+      "path": "actual-stages.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    }
+  ],
+  "archive_sha256": "1bae246a30c2930a3afd0f899370036d02e4f510eba6ecc46906cb39c0d3d04d"
+}

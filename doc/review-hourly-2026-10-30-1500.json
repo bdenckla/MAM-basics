@@ -1,0 +1,46 @@
+{
+  "schedule_label": "2026-10-30 15:00 UTC",
+  "reported_early_invocation": "around2026-10-30 14:32UTC, parent report",
+  "actual_first_clock_observation": "2026-10-30T14:33:48+00:00",
+  "receipt_parent": "80ed109f321f098208946ec7618d30caf64a9679",
+  "source_base": "be10b91c7b7127d884d55e0b9ce32b4c371b56f3",
+  "source_commit": "2274f922596c02a532c2225796af2efda77fe0ac",
+  "reviewed_through": "2274f922596c02a532c2225796af2efda77fe0ac",
+  "focused_tested_through": "573657b6d2847b5ddab11f4f9296b0cf11d4f46e",
+  "broad_tested_through": "fc9c6f14eea3b48bc152a394acc0ca1aef43aeb0",
+  "required_sibling_inputs": [],
+  "changed_paths": [
+    "dot-claude/skills/github-issues/SKILL.md"
+  ],
+  "result": "Documentation/process screen only: eleven added skill lines scope issue-only sessions to read-only Git and scratch writes. No consequential finding; no project tests or generators warranted or run.",
+  "details": {
+    "scope": "Issue-only session rule preserves the existing requested-operation/authorization and citation rules. It does not apply to this repository review session as an issue-only session, nor authorize a new issue operation.",
+    "owner_quote": "Attributed as a dated owner instruction in the maintained skill; no external operation, live config sync or tool behavior validation performed.",
+    "review_history": "Continues80ed109f and its newer connector-screened be10b91 boundary; does not revert to573657b6.",
+    "proportionate_disposition": "No executable, data, generator or font change; read-only content/context and endpoint whitespace checks suffice."
+  },
+  "actual_stages": [],
+  "failure_history": "No project checks attempted. Historical failures/limits remain recorded at their actual scopes.",
+  "reviewer_repair": null,
+  "limits": [
+    "Read-only documentation/process screen, no project tests or tool behavior claims.",
+    "No issue operation, source/editorial change, live config sync, broad run, main/shared push or deployment.",
+    "No font build/baseline/frozen regeneration, hbofonts action, HP/BHL work or new clone/worktree."
+  ],
+  "checkout_restored": {
+    "utc": "2026-10-30T14:42:17.398410+00:00",
+    "head": "926a6e785be4236673ac4a5c8c34afe63ed417f4",
+    "branch": "work",
+    "status": "",
+    "registered_worktrees": 1
+  },
+  "remote_main_before_receipt": "2274f922596c02a532c2225796af2efda77fe0ac",
+  "remaining_window": null,
+  "evidence": {
+    "readme": "doc/review-hourly-2026-10-30-1500-evidence/README.md",
+    "archive": "doc/review-hourly-2026-10-30-1500-evidence/focused-evidence.zip",
+    "manifest": "doc/review-hourly-2026-10-30-1500-evidence/manifest.json"
+  },
+  "receipt_tree_not_tested_source": true,
+  "completed_utc": "2026-10-30T14:42:18.160922+00:00"
+}
