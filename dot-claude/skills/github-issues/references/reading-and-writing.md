@@ -79,7 +79,23 @@ them merely because an issue links them; inspect only within the authorized task
       MAM-basics #233 is; the test is whether the issue says anything the review file does not.
 5. **The title names the work or the question**, as a heading names its subject: "Retire the MAM
    Google Sheet pipeline", "Give the poetic scanner the prose scanner's fast path, about 5 s a
-   mega run".
+   mega run". Space in a title is at a premium, so a title says nothing its reader already knows.
+   1. **A change to MAM is not said to be made on Wikisource.** The reader knows that MAM's text,
+      documentation notes and Introduction are edited there. Ben, 2026-10-30: *"assume that the
+      target audience understands that Wikisource is where such a change should be made. At least
+      don't mention it in the title/summary of the issue; space is at a premium there, so we don't
+      want to say something obvious there."* That day he retitled "Add the = missing before some
+      notes' opening sigla on Wikisource" as "Add the = missing before some notes' opening sigla".
+      The body's summary leaves the qualifier out too. A link to the Wikisource page that holds
+      the text to change is a locator, not that qualifier, and stays.
+   2. **A title cites a verse in short BCV notation**: `G4:3`, not `Genesis 4:3`. The book's short
+      name runs into the chapter with no space, deliberately. Ben, 2026-10-30: *"use very short
+      bcv (book-chapter-verse) notation, e.g. G4:3 not Genesis 4:3 (that's a hard-join between
+      "G" and 4:3 that is intentional, to save space)"*. MAM-basics' `short_bcv`, in
+      `py/mb_cmn/bib_locales.py`, writes this form from the short book names in that module's
+      `_SH_*` constants. That day Ben retitled "2 Kings 19:25 note on Wikisource: say that BHL's
+      Appendix A lists revia, with doubt" as "In the 2K19:25 doc-note, add that BHLA lists revia,
+      with doubt".
 6. **File it with** `gh issue create --repo bdenckla/<repo> --title "<title>" --body-file <file>`,
    the body file written as section 3 says, and give Ben the URL `gh` prints.
 
