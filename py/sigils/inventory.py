@@ -10,7 +10,6 @@ from mb_cmn import template_names
 from mb_cmn import ws_tmpl2 as wtp
 from explicit_xataf import extract as doc_extract
 
-_CLAUSE_BOUNDARY_RE = re.compile(r"(?:^|[;:.\n])\s*")
 _LEADING_EQUALS_RE = re.compile(
     r"(?:^|[;:.\n])\s*=\s*([^<(\s][^<(\n=]{0,120}?)\s*(?=[(<\n=]|$)"
 )
