@@ -148,6 +148,7 @@ Ben's undated rule, already present when MAM-basics became the canonical configu
 | Mikra'ot Gedolot ha-Keter (`מג"ה`); the Jerusalem Crown (`כתר ירושלים`); the Aleppo Codex (`כתר ארם צובה`) | a bare "the Keter edition", which can name Mikra'ot Gedolot ha-Keter or the Jerusalem Crown |
 | BIL / AIL | "preposed" (outside M-C quotes) |
 | the compound / the page / the edition | "reading" as a vague catch-all noun |
+| doc-part or clause, for a part of a MAM doc-note that the `ש` template separates | "line"; "paragraph", unless its `<p>` formatting is the subject |
 
 Each row's reasoning, exemptions and known holdouts: `references/terminology.md`.
 

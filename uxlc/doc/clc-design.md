@@ -651,7 +651,7 @@ only the word-level punctuation maqaf / sof-pasuq / legarmeh, so a heading reads
 `כל־`; a **supplied-mark** heading keeps the mark in **plain square brackets** with the green "added"
 formatting dropped, e.g. `פני[׃]`. The note's **first body follows on the same line**, set off by a
 space-surrounded **em dash**; any **further bodies spill into bullets** (`<ul class="clc-note-parts">`).
-This mirrors the layout MAM-with-doc uses for a multi-paragraph doc-note
+This mirrors the layout MAM-with-doc uses for a doc-note of several doc-parts
 (`mwd_utils._bido_or_self_contained`: lemma + first part inline, parts 1.. as a `<ul>` — §8's parallel
 `clc-*`/`mam-doc-*` vocabulary), CLC only swapping MAM's plain-space lemma/part join for an em dash.
 

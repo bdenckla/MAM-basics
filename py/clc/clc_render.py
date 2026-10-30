@@ -191,8 +191,8 @@ def _stripped_heading(word):
 def _headed_note(heading, bodies):
     # Assemble one target-as-heading note (§7.7). The demoted heading opens the note; the
     # FIRST note body follows on the SAME line, set off by a space-surrounded em dash; any
-    # SUBSEQUENT bodies become bullets. This is the layout MAM-with-doc uses for a
-    # multi-paragraph doc-note (mb_misc/py_misc mwd_utils._bido_or_self_contained: the lemma
+    # SUBSEQUENT bodies become bullets. This is the layout MAM-with-doc uses for a doc-note
+    # of several doc-parts (mb_misc/py_misc mwd_utils._bido_or_self_contained: the lemma
     # + first part render inline, parts 1.. as a <ul>) — CLC only swaps MAM's plain-space
     # lemma/part join for an em dash. ``bodies`` is a non-empty list; each body is itself a
     # list of inline pieces (str / htel).

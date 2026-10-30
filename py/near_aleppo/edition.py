@@ -48,7 +48,8 @@ class Mode:
     text_to_html: Callable | None = None  # optional typography after semantic rendering
 
 
-# The edition mapping includes MAM-with-doc's tags, added note lines and ruby.
+# The edition mapping includes MAM-with-doc's tags, the tags of the clauses the edition
+# adds to notes, and ruby.
 # A tag that no page uses is reported, in
 # out/render-tags-unused/near-aleppo.json, rather than raised.
 _EDITION_RENDER_TAGS = frozenset(hfrm.HT_TAC_FOR_RT_FOR_NEAR_ALEPPO_EDITION)

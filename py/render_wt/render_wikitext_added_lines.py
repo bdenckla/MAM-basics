@@ -1,8 +1,8 @@
 """Label preserved MAM context and the edition's evidence flags.
 
 MAM_TARGET introduces the original note and is rendered in Scripture context.
-Each flag follows as labelled note lines: one for each preserved source clause,
-or one for its fixed English sentence. The JSON value remains unchanged.
+Each flag follows as labelled clauses of the note: one for each preserved source
+clause, or one for its fixed English sentence. The JSON value remains unchanged.
 """
 
 from mb_cmn import ws_tmpl2 as wtp
@@ -25,7 +25,7 @@ def labelled_line(name, renseq, separator=": "):
     space."""
     _trailing, stripped = spacing.isolate_trailing(tuple(renseq))
     if not stripped:
-        raise ValueError(f"an empty line labelled {name}")
+        raise ValueError(f"an empty clause labelled {name}")
     lang = _LABEL_LANG[name]
     attr = {"lang": lang} if lang else {}
     label = renel.mk_ren_el_tc_and_attr(nap.LABEL_TAG, (name,), attr)
@@ -33,7 +33,7 @@ def labelled_line(name, renseq, separator=": "):
 
 
 def flag_lines(hctx, name, tmpl, parts_hctx):
-    """The lines of the flag ``name`` of ``tmpl``: one for each of its clauses.
+    """The flag ``name`` of ``tmpl`` as labelled clauses, one per clause of its value.
 
     A clause that is one of the build's fixed English sentences, the render option
     ro_english_flag_values, is shown as English; any other is rendered as a note
@@ -49,7 +49,7 @@ def flag_lines(hctx, name, tmpl, parts_hctx):
 
 
 def english_flag_lines(hctx, names, tmpl):
-    """The lines of the flags ``names`` of a template that is no note.
+    """The labelled clauses of the flags ``names`` of a template that is no note.
 
     Such a flag stands where no note has a clause about the site, so its value is
     one of the fixed English sentences, and anything else raises.

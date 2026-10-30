@@ -198,7 +198,7 @@ translation-policy glossary.)
 | ה | Codex Hilleli, Ms New York JTS 401 (= L44a); Toledo, Spain, 1241 | Confirmed | Wikisource | `ה` in Breuer, and `כתי"ה` in the appendix. A Sephardic manuscript, so it normally stands beside ש2, פריז 25 and תנ"ך ליסבון. 50 authority-expression occurrences. |
 | ו | The Washington Pentateuch, Museum of the Bible, Washington DC, Ms. 882 (Torah; Eastern script, 11th century) | Confirmed | Wikisource | `כתי"ו` in the appendix, `WP` at IHBMR. One of the seven manuscripts MAM checked through most of the Torah — 684 authority-expression occurrences, plus 30 of `ו?` — yet it had no entry here until 2026-08-06, which made it the most frequent sigil this file left undecoded. It is sixth by frequency overall, behind ל (1,922), א (1,497), ש1 (1,126), ש (791) and ק3 (767), each of which has a row above; this cell called it "the highest-frequency sigil in the whole inventory" until 2026-08-27, which those five counts contradict and always did. |
 | ותיקן-448 | Vatican Ms 448 | Confirmed | MAM-with-doc corpus evidence | The shelfmark is already explicit in the corpus form; prose notes also cite the same manuscript as `vat448`. |
-| ט3 | Ms Tbilisi 3, the "Keter Lailashi" / "Ḥumash Lailashi" (Torah; Eastern script, 10th or 11th century) | Confirmed | Wikisource | The appendix says MAM did not use it in preparing the edition, and cites it to enrich the documentation of the text. Five authority-expression occurrences: Genesis 45:14, Leviticus 26:43, Numbers 11:24, Numbers 16:18 and Deuteronomy 16:2. This cell said "One authority-expression occurrence, at Genesis 45:14" until 2026-08-27, and named four sites until 2026-10-29. Numbers 11:24, Numbers 16:18 and Deuteronomy 16:2 are notes the inventory did not reach until `e37b8ad` rebuilt it. At Leviticus 26:43 the sigil begins a line of its note, and the inventory ran that line into the one before it until `5cb06e2` (2026-09-11). |
+| ט3 | Ms Tbilisi 3, the "Keter Lailashi" / "Ḥumash Lailashi" (Torah; Eastern script, 10th or 11th century) | Confirmed | Wikisource | The appendix says MAM did not use it in preparing the edition, and cites it to enrich the documentation of the text. Five authority-expression occurrences: Genesis 45:14, Leviticus 26:43, Numbers 11:24, Numbers 16:18 and Deuteronomy 16:2. This cell said "One authority-expression occurrence, at Genesis 45:14" until 2026-08-27, and named four sites until 2026-10-29. Numbers 11:24, Numbers 16:18 and Deuteronomy 16:2 are notes the inventory did not reach until `e37b8ad` rebuilt it. At Leviticus 26:43 the sigil begins a doc-part of its note, and the inventory ran that doc-part into the one before it until `5cb06e2` (2026-09-11). |
 | ק | Cairo Codex of the Prophets | Confirmed | Accordance header, Wikisource | Also appears as כתי״ק in prose contexts. |
 | ק2 | Cairo 27 (Former Prophets), written by Samuel ben Jacob in the 10th or 11th century, close to Aleppo | Confirmed | Wikisource | `כת"יק2` in the appendix, which says MAM used it rarely. Added 2026-08-23. |
 | ק25 | Cairo 25 (Latter Prophets), c. 11th century; Isaiah 7:20 to Malachi 3:2 | Confirmed | Wikisource | `כת"יק25` in the appendix, which says MAM used it rarely and that its black-and-white photograph does not always capture the points and accents. Added 2026-08-23. |
@@ -754,10 +754,10 @@ tries to decode them:
   in the appendix and `גסטר1` in the corpus.
 - **Ordinary Hebrew words** — `כן` (157), `וכמו` (156), `וכך` (32), `לפי` (24), `ראו` (23),
   `של` (20), `אצל` (16), `יש` (12), `את` (6) and the like.
-- **Run-together tokens** such as `ובדפוסיםל`, 46 occurrences at `8fe3dff`, where one line of a
-  note ran into the next with no separator between them. That was an inventory defect rather
-  than a decoding question, and `5cb06e2` (2026-09-11) fixed it by rendering the line-break
-  template `{{ש}}` as a line break rather than as nothing. The build at `ae3072b` has no
+- **Run-together tokens** such as `ובדפוסיםל`, 46 occurrences at `8fe3dff`, where one doc-part
+  of a note ran into the next with no separator between them. That was an inventory defect
+  rather than a decoding question, and `5cb06e2` (2026-09-11) fixed it by rendering the doc-part
+  separator `{{ש}}` as a line break rather than as nothing. The build at `ae3072b` has no
   `ובדפוסיםל`.
 
 This is the same hazard `CLAUDE.md` records for issue citations, where `#NN` sometimes names a
@@ -820,17 +820,17 @@ Current inclination recorded for experimentation:
   `פרטבורג-EVR-II-B-55` 1, and MAM-parsed's 22 of `מ"ק-א`. Little of this is MAM's own change:
   run on today's data, `8fe3dff`'s code gives each of these token counts within eight of its
   2026-08-27 value, `ל` 1,151 for instance where `ae3072b` gives 1,922. Nearly all of it is
-  `5cb06e2` (2026-09-11), which rendered the line-break template `{{ש}}` as a line break rather
+  `5cb06e2` (2026-09-11), which rendered the doc-part separator `{{ש}}` as a line break rather
   than as nothing, ended a clause at a line break, and removed pointed Hebrew from an expression
-  before splitting it into tokens. Until then the lines of a note ran together, so a siglum
-  beginning a line was fused onto the last word of the line before, as in `ובדפוסיםל`, and an
-  expression ran on into the next line's prose, which is where 18 of the 34 `ח` and all 3 `ג`
-  came from. Of the 1,600 tokens that `8fe3dff`'s code finds in today's data and `ae3072b` does
-  not, 695 contain pointed Hebrew, and the other 905 are mostly fused tokens and swept-in prose
-  like those. The prose-pattern fixes of `8339eb1` and `ae3072b` moved none of these figures. The
-  qualifier table and the other corpus counts, each with its own MAM-parsed anchor, were not
-  re-measured. The size of the appendix mirror in "Source Hierarchy" was re-measured the same
-  day: 566 lines then, 574 now.
+  before splitting it into tokens. Until then the doc-parts of a note ran together, so a siglum
+  beginning a doc-part was fused onto the last word of the doc-part before, as in `ובדפוסיםל`,
+  and an expression ran on into the next doc-part's prose, which is where 18 of the 34 `ח` and
+  all 3 `ג` came from. Of the 1,600 tokens that `8fe3dff`'s code finds in today's data and
+  `ae3072b` does not, 695 contain pointed Hebrew, and the other 905 are mostly fused tokens and
+  swept-in prose like those. The prose-pattern fixes of `8339eb1` and `ae3072b` moved none of
+  these figures. The qualifier table and the other corpus counts, each with its own MAM-parsed
+  anchor, were not re-measured. The size of the appendix mirror in "Source Hierarchy" was
+  re-measured the same day: 566 lines then, 574 now.
 - **Re-measured on 2026-10-30 against `out/sigil-inventory.json` at `dca9aea`, which is built from
   `MAM-parsed/plus/` at the same commit.** No figure moved, the documented share of
   `expression_tokens`, 122 of 897, included. Three fixes rebuilt the inventory that day: `683c46b`

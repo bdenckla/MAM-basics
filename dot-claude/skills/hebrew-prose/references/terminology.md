@@ -355,6 +355,48 @@ MAM's prose for the manuscript reports a printed edition unless it excludes that
 `MAM-private/near-aleppo/census/qere_not_encoded.py` carries the exclusion as `NOT_THE_CODEX`, and
 `PLAN-near-aleppo.md`'s step 40 row records what it cost before it was there.
 
+## A doc-note's parts are doc-parts or clauses, never lines
+
+Ben's decision, 2026-10-30, about the parts of a MAM documentation note, a **doc-note**, that the
+`ש` template separates: *"The shin-template-separate parts of a doc-note shall be called
+"clauses" or "doc-parts". I believe "doc-parts" has existing precedent."* And: *"They shall not
+be called "lines"."* And: *"They shall not be called "paragraphs" except in contexts where they
+are formatted as such (e.g. using HTML `<p>`) and the specifics of that formatting is what is
+being discussed."* He had just edited MAM-basics#343 to remove "lines"; the issue now gives the
+note on Deuteronomy 4:3 "three clauses". MAM-parsed/plus has the `ש` template only inside
+parameter 2 of `נוסח`, the claim `mp.plus.templates.sh.only-in-docnote-param2`.
+
+- **"Doc-part" has the precedent.** MAM-basics' renderer keeps a doc-note's parts as `doc_parts`
+  (`render_wt/render_element.py`'s `mk_ren_el_tc_and_doc`), `py_misc/unbury_doc_parts.py` splits
+  parameter 2 at each `ש`, MAM-with-doc's pages give the first part the class `mam-doc-part-0`
+  and list the rest in a `<ul class="mam-doc-parts">`, and the FOI pages' stack qualifier is
+  `doc-part-n`. All of these were in that code's first snapshot in MAM-basics, 2026-03-09.
+  **"Clause"** is the word of the near-Aleppo code and plans, as in
+  `near_aleppo/phase3_policies.py`'s `_CLAUSE_SEPARATOR = "ש"`, and of MAM-basics#343 since Ben's
+  edit.
+- **Either name, and one name in one text.** Ben allows both. A text keeps to the name it chose,
+  as the common instruction body's “Prose names its subject” asks: the near-Aleppo code says
+  "clause", and the renderer's symbols say `doc_parts`.
+- **The rule is about what a doc-part is called, not about a layout.** Where a page's layout is
+  the subject, its real line breaks and `<p>` elements keep their names. The sigil inventory
+  renders each `ש` as a newline. `doc/near-aleppo-avi-ketiv-investigation.html` shows each
+  doc-part of a quoted note in a `<p>` and says that it "renders `{{ש}}` as a paragraph break",
+  the formatting case Ben allows. MAM-with-doc lists a note's later doc-parts in a `<ul>`, so a
+  doc-note there is never "multi-paragraph". Manuscript lines and lines of a file are not
+  doc-parts at all.
+
+Swept on adoption, 2026-10-30: the docstrings, comments and live documents of MAM-basics and
+MAM-private that called a doc-part a line or a paragraph. **Not swept, waiting on Ben's decision
+whether to rename or regenerate:** the identifiers of `render_wt/render_wikitext_added_lines.py`,
+the module's name included, and of `render_wt/render_wikitext_handlers.py` and
+`render_wt/render_wikitext_kq.py`, such as `labelled_line`, `flag_lines` and `_mam_target_line`;
+identifiers in MAM-private; and generator text that reaches published pages:
+`author_misc/mp_cmn_rows_other.py`'s "Paragraph separator" row,
+`author_misc/mpplus_template_call_graphs.py`'s "paragraph divider template",
+`foi/slh_word_explanations.py`'s "documentation line" and `near_aleppo/doc_choices.py`'s choices
+that call a doc-part a line. Receipts, executed plans, dated records, Ben's request files and
+pushed commit messages keep their words.
+
 ## "Reading" is a technical term here, not a catch-all noun
 
 Ben, 2026-07-28: *"You use 'reading', your favorite word for a lot of things, and one that is …

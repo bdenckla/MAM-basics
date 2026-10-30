@@ -40,7 +40,7 @@ def _make_doc_tmpl(
     # near-aleppo: doc_name and doc_added are the enclosing note's name and the
     # parameters the near-aleppo dataset adds to it, which the new note keeps, after
     # the trivial ketiv/qere's own added parameters, its flags. Each is shown as a
-    # line of the note (render_wikitext_handlers._handle_doc).
+    # doc-part of the note (render_wikitext_handlers._handle_doc).
     trivial_ketiv_qere = existing_doc_targ[tkq_idx]
     _tkq_keys, tkq_added = nap.split_params(trivial_ketiv_qere, _TKQ_KEYS, nap.FLAGS)
     tkq_targ = wtp.template_param_val(trivial_ketiv_qere, "1")

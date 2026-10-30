@@ -84,7 +84,7 @@ HT_TAC_FOR_RT_FOR_MAM_WITH_DOC: dict[str, tuple[str, Union[str, None]]] = {
     "mam-anchor": ("a", None),
 }
 # near-aleppo: the near-aleppo edition's mapping, MAM-with-doc's and the tags of the
-# lines it adds to a note, py_misc/near_aleppo_params.py's: a parameter's name, and a
+# clauses it adds to a note, py_misc/near_aleppo_params.py's: a parameter's name, and a
 # flag's fixed English sentence, each isolated.
 HT_TAC_FOR_RT_FOR_NEAR_ALEPPO_EDITION: dict[str, tuple[str, Union[str, None]]] = {
     **HT_TAC_FOR_RT_FOR_MAM_WITH_DOC,

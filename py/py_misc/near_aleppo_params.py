@@ -27,7 +27,7 @@ MARKS_WITHOUT_LETTER = orphan_marks.MARKS_WITHOUT_LETTER
 MARKS_WITHOUT_LETTER_OR_SPACE = orphan_marks.MARKS_WITHOUT_LETTER_OR_SPACE
 SPACE_WITHOUT_MARKS = orphan_marks.SPACE_WITHOUT_MARKS
 
-# The render tags of the lines the edition adds to a note: a parameter's name, and a
+# The render tags of the clauses the edition adds to a note: a parameter's name, and a
 # fixed English sentence that is a flag's value.
 LABEL_TAG = "near-aleppo-label"
 ENGLISH_TAG = "near-aleppo-english"

@@ -39,7 +39,7 @@ def _make_doc_tmpl(scrdfftar, existing_doc_parts, existing_added=None):
     # near-aleppo: a scroll-difference note of the near-aleppo dataset's own name,
     # RENAMED_SCRDFFTAR, becomes a note of its own name, RENAMED_DOC, keeping its
     # MAM_TARGET; existing_added are the enclosing note's added parameters, which
-    # follow. render_wikitext_handlers._handle_doc shows each as a line of the note.
+    # follow. render_wikitext_handlers._handle_doc shows each as a doc-part of the note.
     scrdfftar_keys, scrdfftar_added = nap.split_params(
         scrdfftar, _SCRDFFTAR_KEYS, _SCRDFFTAR_ADDED[wtp.template_name(scrdfftar)]
     )

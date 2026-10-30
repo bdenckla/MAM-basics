@@ -143,8 +143,8 @@ def _ruby(ketiv, qere, annotation_attrs=None, *, baseline_title="Ketiv"):
 def _flagged(hctx, tmpl, rendered, lemma):
     """
     near-aleppo: ``rendered`` as it stands, or, where the template has a flag of the
-    near-aleppo dataset, as the target of a note whose parts are the flags' lines,
-    labelled ``lemma``. A ketiv/qere template has a flag only where no note is about
+    near-aleppo dataset, as the target of a note labelled ``lemma`` that has a labelled
+    clause for each flag. A ketiv/qere template has a flag only where no note is about
     the site, so this note is the only place the flag is shown, and the flag's value
     is one of the dataset's fixed English sentences. The same wrapper preserves
     flags when near-Aleppo displays a trivial ketiv/qere as ruby rather than
