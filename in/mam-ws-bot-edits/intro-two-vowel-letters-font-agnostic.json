@@ -1,0 +1,50 @@
+{
+  "summary": "Font-agnostic forms for letters with two vowels, following the notes. Ch. 5: 1 Kgs 17:11, Ps 14:1 (two) and 53:2 (two), the ḥataf-ḥiriq in plus notation with the packed form in parentheses; Prov 6:24, the segol on an alef in double guillemets, with qamats-CGJ-segol in parentheses; 2 Kgs 4:7, the qubuts on an alef in double guillemets before the bet. Ch. 3: Deut 3:22 as its note now gives it, a reversed ḥataf-ḥiriq in plus notation with its packed form in parentheses",
+  "edit-kind": "explicit-replacement",
+  "pages": {
+    "ch3": [
+      {
+        "old": "(ל?!=תְִּירָא֑וּם): חטף-חיריק באות תי\"ו?",
+        "new": "(ל?!=תִּ+תְּירָא֑וּם (תִּ͏ְירָא֑וּם)): חטף-חיריק הפוך באות תי\"ו?",
+        "comment": "line 1051 of revision 3099123: the Deuteronomy 3:22 entry's ל?! form, as its note gives it since revision 3099130: the tav's ḥiriq before its sheva in plus notation, then the packed form with a CGJ in parentheses, and הפוך, reversed, after חטף-חיריק"
+      }
+    ],
+    "ch5": [
+      {
+        "old": "(א-כתיב=בֻ͏ָנַ֔יִכי [",
+        "new": "(א-כתיב=«אֻ»בָנַ֔יִכי [",
+        "comment": "line 424 of revision 3099114: the 2 Kings 4:7 entry's א-כתיב form, as in its note: the qubuts on an alef in double guillemets before the bet, and no CGJ"
+      },
+      {
+        "old": "(א?!=לֶָשׁ֥וֹן): קמץ",
+        "new": "(א?!=לָ«אֶ»שׁ֥וֹן (לָ͏ֶשׁ֥וֹן)): קמץ",
+        "comment": "line 654 of revision 3099114: the Proverbs 6:24 entry's א?! form, as in its note: the segol on an alef in double guillemets after the lamed's qamats, then, in parentheses, the lamed with qamats, CGJ and segol"
+      },
+      {
+        "old": "(א=לִֽקְִחִי־נָ֥א [",
+        "new": "(א=לִֽקְ+קִחִי־נָ֥א (לִֽקְִחִי־נָ֥א) [",
+        "comment": "line 700 of revision 3099114: the 1 Kings 17:11 entry's א form, as in its note: the ḥataf-ḥiriq in plus notation, followed by the unchanged form in parentheses"
+      },
+      {
+        "old": "(א=הִֽשְִׁחִ֗יתוּ [",
+        "new": "(א=הִֽשְׁ+שִׁחִ֗יתוּ (הִֽשְִׁחִ֗יתוּ) [",
+        "comment": "line 710 of revision 3099114: the Psalms 14:1 entry's first א form, as in its note: the ḥataf-ḥiriq in plus notation, followed by the unchanged form in parentheses"
+      },
+      {
+        "old": "(א=הִֽתְִעִ֥יבוּ [",
+        "new": "(א=הִֽתְ+תִעִ֥יבוּ (הִֽתְִעִ֥יבוּ) [",
+        "comment": "line 710 of revision 3099114: the Psalms 14:1 entry's second א form, as in its note: the ḥataf-ḥiriq in plus notation, followed by the unchanged form in parentheses"
+      },
+      {
+        "old": "(א=הִֽ֝שְִׁחִ֗יתוּ [",
+        "new": "(א=הִֽ֝שְׁ+שִׁחִ֗יתוּ (הִֽ֝שְִׁחִ֗יתוּ) [",
+        "comment": "line 710 of revision 3099114: the Psalms 53:2 entry's first א form, as in its note: the ḥataf-ḥiriq in plus notation, followed by the unchanged form in parentheses"
+      },
+      {
+        "old": "(א=וְהִֽתְִעִ֥יבוּ [",
+        "new": "(א=וְהִֽתְ+תִעִ֥יבוּ (וְהִֽתְִעִ֥יבוּ) [",
+        "comment": "line 710 of revision 3099114: the Psalms 53:2 entry's second א form, as in its note: the ḥataf-ḥiriq in plus notation, followed by the unchanged form in parentheses"
+      }
+    ]
+  }
+}

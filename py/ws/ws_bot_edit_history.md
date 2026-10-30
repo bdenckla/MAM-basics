@@ -480,7 +480,7 @@ infrastructure has changed enough to make them misleading examples:
   `.novc/mam-ws-bot-real-runs/20261029-100909-255431-0400/`, and the one-shot re-run
   `.novc/mam-ws-bot-real-runs/20261029-103519-818386-0400/`.
 
-### The tav's ḥiriq before its sheva in the note on Deuteronomy 3:22, 2026-10-29 — current
+### The tav's ḥiriq before its sheva in the note on Deuteronomy 3:22, 2026-10-29
 
 - **Purpose:** Clause 2 of MAM's documentation note on Deuteronomy 3:22 gives the Leningrad
   Codex's form of תיראום, after `ל?!=`, with a ḥataf-ḥiriq, its tav having a sheva and then a
@@ -511,6 +511,94 @@ infrastructure has changed enough to make them misleading examples:
   `.novc/mam-ws-bot-real-runs/20261029-150031-401070-0400/`, dry runs
   `.novc/mam-ws-bot-real-runs/20261029-145140-988360-0400/` and
   `.novc/mam-ws-bot-real-runs/20261029-150007-117426-0400/`.
+
+### Font-agnostic forms for letters with two vowels, in five notes and the Introduction, 2026-10-30 — current
+
+- **Purpose:** Give the six atoms of MAM's documentation notes whose letter had two vowels
+  and no CGJ, and which chapter 5 of the Introduction quotes, a form that does not depend on
+  how a font places two vowels on one letter, beside a form that keeps them on the letter,
+  in the notes and in chapter 5; give the qubuts of 2 Kings 4:7's pointed ketiv the same
+  treatment; and give the Introduction's entry for Deuteronomy 3:22 the two forms that its
+  note has had since revision 3099130. Fifteen replacements in all, seven on five chapter
+  pages and eight in the Introduction:
+  - **Five atoms with a ḥataf-ḥiriq**, a sheva and a ḥiriq on one letter: at 1 Kings 17:11
+    the first atom of the compound לִֽקְִחִי־נָ֥א, at Psalms 14:1 הִֽשְִׁחִ֗יתוּ and הִֽתְִעִ֥יבוּ, and
+    at Psalms 53:2 הִֽ֝שְִׁחִ֗יתוּ and וְהִֽתְִעִ֥יבוּ. Each note's clause, and its entry on line 700 or 710 of
+    the Introduction's chapter 5, now gives the plus form, the letter written twice and
+    joined by a plus sign, first with its sheva and then with its ḥiriq, followed by the
+    packed form, unchanged, in parentheses, as in `א=לִֽקְ+קִחִי־נָ֥א (לִֽקְִחִי־נָ֥א)`. Psalms 53:2's note
+    keeps its later prose quotation of the packed form.
+  - **Proverbs 6:24's lamed**, with a segol and a qamats: the note's clause and its entry
+    on line 654 of chapter 5 now give `לָ«אֶ»שׁ֥וֹן (לָ͏ֶשׁ֥וֹן)`, the segol on an alef between
+    double guillemets after the lamed's qamats, then, in parentheses, the lamed with its
+    qamats, a CGJ and the segol. This is option 3 of MAM-basics#332, which Ben chose on
+    2026-10-28.
+  - **2 Kings 4:7's pointed ketiv**: the note's clause and its entry on line 424 of chapter
+    5 now give `«אֻ»בָנַ֔יִכי`, the orphaned qubuts on an alef between double guillemets
+    before the bet, as MAM-basics#333 proposed, where they gave `בֻ͏ָנַ֔יִכי`, whose bet
+    had the qubuts, a CGJ and the qamats. It is the representation Ben chose for
+    near-Aleppo's dataset on 2026-10-08.
+  - **Deuteronomy 3:22's entry**, on line 1051 of chapter 3, now gives the note's plus form
+    and packed form, `תִּ+תְּירָא֑וּם (תִּ͏ְירָא֑וּם)`, and calls the mark חטף-חיריק הפוך, as the note
+    does.
+- **Framing:** a notation that does not rely on the font, in Ben's words that
+  MAM-basics#332's comment of 2026-10-29 quotes: "These notes need to be written in a way
+  that is font-agnostic; in particular in a way that assumes that letters overburdened with
+  marks may not be legible and therefore alternatives must always be present." The forms
+  follow the notation policy he approved on 2026-10-29, the last element of
+  `OVERALL_EXPLANATION` in `py/foi/doc_note_notation_explanations.py`: plus notation where
+  a mark's owner is clear, and double guillemets where it is absent or unclear. As in
+  Deuteronomy 3:22's note, `4d72e933`, the plus form comes first. The packed forms of the
+  ḥataf-ḥiriq atoms need no CGJ: Unicode's combining classes already put the sheva (10)
+  before the ḥiriq (14).
+- **Authorization:** Ben approved the plan of the session "Plan: two-vowel letters in
+  Introduction chapter 5" question by question on 2026-10-29, as the plan records his
+  answers: to the plus form first, as at Deuteronomy 3:22, "Yes"; to the Introduction's
+  entries following their notes, "I approve of all three bullets."; to MAM-basics#333
+  joining the run, "yes"; and to the saves, the near-Aleppo record carry-across, the
+  extractor change, the issue comments and closures and the push, "you have my go-ahead in
+  advance." On 2026-10-30 he asked the session that commands Claude's forests to execute
+  the plan, and a Claude Code session ran it that day from a frozen copy.
+- **Saving runs:** Proverbs 6, revision 3008040 → 3099292; 1 Kings 17, 3080375 → 3099293;
+  Psalms 14, 3007416 → 3099294 (two replacements); Psalms 53, 2988205 → 3099295 (two); 2
+  Kings 4, 3023455 → 3099296; introduction chapter 3, 3099123 → 3099297; chapter 5,
+  3099114 → 3099298 (seven).
+- **Safety rule:** a script cut each `old` from the live wikitext of the seven pages, read
+  before the dry runs and again, byte for byte the same, just before the saves. It built
+  each `new` from that capture, from the bodies of MAM-basics#332 and #333 and from
+  Deuteronomy 3's note at revision 3099130, and checked that each `old` occurs exactly once,
+  that each `new` is unchanged by NFC, that every CGJ stands between two marks, and that
+  each `new` differs from its `old` only as its group's rule says. The `--no-save` dry runs'
+  pages equalled that capture with the replacements applied, code point for code point,
+  and differed from it on the edited lines alone. The saving runs' pages equalled the dry
+  runs', and the post-run downloads equalled both.
+- **Rehearsal:** before any save, the replacements were applied to the local mirrors and a
+  full mega run showed the diffs that this record and the dependent refresh reproduce; the
+  local changes were then discarded.
+- **Post-run downloads:** the chapter run refetched the five chapters and all 36 declared
+  special pages, none of which had changed since the previous download, and the reparse of
+  1 and 2 Kings, Psalms and Proverbs passed all 59 MAM-parsed claims. The introduction
+  run's refresh rewrote all thirteen mirrored pages, of which only chapters 3 and 5 changed,
+  with the manifest.
+- **One-shot:** every `old` describes the pre-edit text. Confirmed 2026-10-30, immediately
+  after the runs: `--no-save` re-runs raised on Proverbs 6 and on chapter 3's `old`.
+- **Explicit ḥataf:** `fca780fc` taught `py/explicit_xataf/extract.py` the clause
+  `<sigla>=<plus form> (<packed form>)`, whose packed form it returns under the match kind
+  `sigla=plus-form`; without it the five ḥataf-ḥiriq notes would have failed extraction.
+- **Left as they are:** the packed forms of the five ḥataf-ḥiriq atoms, which keep the sheva
+  and the ḥiriq on one letter beside each plus form, as the policy asks; two more letters
+  with two vowels and no CGJ in MAM's notes on Deuteronomy 14 and 29, and eight on the
+  Introduction's Westminster page, none of which the plan named; and
+  `doc/intro-doc-audit/`, records pinned to their source commit, and `hbce-psalms/out/`, a
+  frozen record of one run, both of which quote notes as they were.
+- **Edit level:** Raw page text string replacement, chapter- and page-targeted.
+- **JSON files:** `in/mam-ws-bot-edits/note-two-vowel-letters-font-agnostic.json` and its
+  selector, `note-two-vowel-letters-font-agnostic.chapters.json`, and
+  `in/mam-ws-bot-edits/intro-two-vowel-letters-font-agnostic.json`; run artifacts
+  `.novc/mam-ws-bot-real-runs/20261030-144728-486890-0400/`, dry run
+  `.novc/mam-ws-bot-real-runs/20261030-144623-647569-0400/`, and
+  `.novc/mam-ws-bot-intro-runs/20261030-144933-673654-0400/`, dry run
+  `.novc/mam-ws-bot-intro-runs/20261030-144635-376992-0400/`.
 
 ## How to look up the original code
 

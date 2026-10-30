@@ -2146,8 +2146,8 @@
         "resolved_title": "מלכים א יז/טעמים",
         "page_id": 237160,
         "requested_title": "מלכים א_יז/טעמים",
-        "revision_id": 3080375,
-        "sha256": "b2e2f5785c11cb9da9a9e7e5c1d268ff626c1fd4edd5bdc5fd8bf6a4e96124d9"
+        "revision_id": 3099293,
+        "sha256": "ff0bec3d24d08b6613094d288f6b55b6273e0447e25c2bb3058d7b0db9bcb927"
       },
       "יח": {
         "resolved_title": "מלכים א יח/טעמים",
@@ -2211,8 +2211,8 @@
         "resolved_title": "מלכים ב ד/טעמים",
         "page_id": 237196,
         "requested_title": "מלכים ב_ד/טעמים",
-        "revision_id": 3023455,
-        "sha256": "9d4dba8522fc4b0c2eccc6082bd7a6cd6ce44d412174c728e528c2ef7f81cd18"
+        "revision_id": 3099296,
+        "sha256": "5f2f51801cf3fa0421e3b7977035e24cdde24d5648203eaf3f88dff78dc2a4f0"
       },
       "ה": {
         "resolved_title": "מלכים ב ה/טעמים",
@@ -4119,8 +4119,8 @@
         "resolved_title": "תהלים יד/טעמים",
         "page_id": 238302,
         "requested_title": "תהלים_יד/טעמים",
-        "revision_id": 3007416,
-        "sha256": "2d5c6c3fe16281c444cfc4c4a9482304fe5c804dd27d10e5840a2c2d303e346d"
+        "revision_id": 3099294,
+        "sha256": "e5098a9b91e8f9510b535e777ac3e14456c8ed8ca229d3bd802c82b5874012cd"
       },
       "טו": {
         "resolved_title": "תהלים טו/טעמים",
@@ -4392,8 +4392,8 @@
         "resolved_title": "תהלים נג/טעמים",
         "page_id": 238458,
         "requested_title": "תהלים_נג/טעמים",
-        "revision_id": 2988205,
-        "sha256": "5014f90c822d1a85caf69fc737c5700360ae598b60ca58b0e8e98b43574c7969"
+        "revision_id": 3099295,
+        "sha256": "675ff2c32c7f30f4131fd082008188baf82be2ea10b8137b3bcc5cc62bf6eefa"
       },
       "נד": {
         "resolved_title": "תהלים נד/טעמים",
@@ -5115,8 +5115,8 @@
         "resolved_title": "משלי ו/טעמים",
         "page_id": 238871,
         "requested_title": "משלי_ו/טעמים",
-        "revision_id": 3008040,
-        "sha256": "62b3213331aba8b91012f74f5ad4005af31995ad030d654d88d7a17f8181f3e4"
+        "revision_id": 3099292,
+        "sha256": "ba24ddddf51be8b7bb201b86286a31c2e56a39903111f5ddb85b53626886a75e"
       },
       "ז": {
         "resolved_title": "משלי ז/טעמים",

@@ -1,0 +1,56 @@
+{
+  "summary": "Font-agnostic forms for letters with two vowels. 1 Kgs 17:11, Ps 14:1 (two) and 53:2 (two): the ḥataf-ḥiriq in plus notation, the sheva's copy first, with the packed form after it in parentheses. Prov 6:24: the segol on an alef in double guillemets after the lamed's qamats, with qamats-CGJ-segol after it in parentheses. 2 Kgs 4:7: the qubuts before the bet, on an alef in double guillemets, without the CGJ",
+  "edit-kind": "explicit-replacement",
+  "edits": {
+    "Proverbs": [
+      {
+        "ch": "ו",
+        "old": "א?!=לֶָשׁ֥וֹן (קמץ",
+        "new": "א?!=לָ«אֶ»שׁ֥וֹן (לָ͏ֶשׁ֥וֹן) (קמץ",
+        "comment": "Proverbs 6:24: the note's א?! form of לשון, whose lamed had a segol and a qamats; give the lamed its qamats and the segol to an alef in double guillemets after it, then, in parentheses, the lamed with qamats, CGJ and segol (option 3 of MAM-basics issue 332)"
+      }
+    ],
+    "1Kings": [
+      {
+        "ch": "יז",
+        "old": "א=לִֽקְִחִי־נָ֥א (בחטף",
+        "new": "א=לִֽקְ+קִחִי־נָ֥א (לִֽקְִחִי־נָ֥א) (בחטף",
+        "comment": "1 Kings 17:11: the note's א form, of לקחי־נא, whose ḥataf-ḥiriq is a sheva then a ḥiriq on one letter; give it in plus notation, the letter with its sheva, then the letter with its ḥiriq, followed by the unchanged form in parentheses"
+      }
+    ],
+    "Psalms": [
+      {
+        "ch": "יד",
+        "old": "א=הִֽשְִׁחִ֗יתוּ (חטף",
+        "new": "א=הִֽשְׁ+שִׁחִ֗יתוּ (הִֽשְִׁחִ֗יתוּ) (חטף",
+        "comment": "Psalms 14:1: the note's first א form, of השחיתו, whose ḥataf-ḥiriq is a sheva then a ḥiriq on one letter; give it in plus notation, the letter with its sheva, then the letter with its ḥiriq, followed by the unchanged form in parentheses"
+      },
+      {
+        "ch": "יד",
+        "old": "א=הִֽתְִעִ֥יבוּ (חטף",
+        "new": "א=הִֽתְ+תִעִ֥יבוּ (הִֽתְִעִ֥יבוּ) (חטף",
+        "comment": "Psalms 14:1: the note's second א form, of התעיבו, whose ḥataf-ḥiriq is a sheva then a ḥiriq on one letter; give it in plus notation, the letter with its sheva, then the letter with its ḥiriq, followed by the unchanged form in parentheses"
+      },
+      {
+        "ch": "נג",
+        "old": "א=הִֽ֝שְִׁחִ֗יתוּ (חטף",
+        "new": "א=הִֽ֝שְׁ+שִׁחִ֗יתוּ (הִֽ֝שְִׁחִ֗יתוּ) (חטף",
+        "comment": "Psalms 53:2: the note's first א form, of השחיתו, whose ḥataf-ḥiriq is a sheva then a ḥiriq on one letter; give it in plus notation, the letter with its sheva, then the letter with its ḥiriq, followed by the unchanged form in parentheses; the note's later prose quotation of the form stays as it is"
+      },
+      {
+        "ch": "נג",
+        "old": "א=וְהִֽתְִעִ֥יבוּ (חטף",
+        "new": "א=וְהִֽתְ+תִעִ֥יבוּ (וְהִֽתְִעִ֥יבוּ) (חטף",
+        "comment": "Psalms 53:2: the note's second א form, of והתעיבו, whose ḥataf-ḥiriq is a sheva then a ḥiriq on one letter; give it in plus notation, the letter with its sheva, then the letter with its ḥiriq, followed by the unchanged form in parentheses"
+      }
+    ],
+    "2Kings": [
+      {
+        "ch": "ד",
+        "old": "א-כתיב=בֻ͏ָנַ֔יִכי (",
+        "new": "א-כתיב=«אֻ»בָנַ֔יִכי (",
+        "comment": "2 Kings 4:7: the note's א-כתיב form of בניכי, whose bet had a qubuts, a CGJ and a qamats; the qubuts, which the note puts before the bet, moves to an alef in double guillemets before it, and the CGJ goes (MAM-basics issue 333)"
+      }
+    ]
+  }
+}
