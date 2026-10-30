@@ -1,0 +1,110 @@
+{
+  "schedule_label": "2026-10-30 16:00 UTC",
+  "actual_invocation": "around15:45UTC, parent report",
+  "actual_first_clock_observation": "2026-10-30T15:46:05+00:00",
+  "receipt_parent": "861ce3c191010149c41f2b190a99e56fb0f3ab41",
+  "source_base": "2274f922596c02a532c2225796af2efda77fe0ac",
+  "source_commit": "c706d24d71b3213e5e4d9531e9d69dcba218c49a",
+  "reviewed_through": "c706d24d71b3213e5e4d9531e9d69dcba218c49a",
+  "focused_tested_through": "c706d24d71b3213e5e4d9531e9d69dcba218c49a",
+  "broad_tested_through": "fc9c6f14eea3b48bc152a394acc0ca1aef43aeb0",
+  "required_sibling_inputs": [],
+  "changed_paths": [
+    "doc/mam-normal-mark-order.md",
+    "doc/sigil-decoding.md",
+    "dot-claude/skills/hebrew-prose/SKILL.md",
+    "dot-claude/skills/hebrew-prose/references/core-rules.md",
+    "dot-claude/skills/hebrew-prose/references/terminology.md",
+    "py/clc/clc_render.py",
+    "py/near_aleppo/edition.py",
+    "py/py_misc/near_aleppo_params.py",
+    "py/py_misc/ren_html_from_ren_el_mapping.py",
+    "py/py_misc/scrdfftar_to_doc.py",
+    "py/py_misc/trivial_qere_to_doc.py",
+    "py/render_wt/render_wikitext_added_lines.py",
+    "py/render_wt/render_wikitext_kq.py",
+    "uxlc/doc/clc-design.md"
+  ],
+  "result": "3focused tests pass in0.36s;8file Black and endpoint whitespace pass. All changed Python ASTs equal baseline after removing docstrings/comments and the single expected diagnostic wording; valid renderer outputs and all product trees unchanged.",
+  "details": {
+    "code": {
+      "python_files": [
+        "py/clc/clc_render.py",
+        "py/near_aleppo/edition.py",
+        "py/py_misc/near_aleppo_params.py",
+        "py/py_misc/ren_html_from_ren_el_mapping.py",
+        "py/py_misc/scrdfftar_to_doc.py",
+        "py/py_misc/trivial_qere_to_doc.py",
+        "py/render_wt/render_wikitext_added_lines.py",
+        "py/render_wt/render_wikitext_kq.py"
+      ],
+      "only_documentation_comments_and_expected_exception_wording": true,
+      "product_trees_unchanged": true
+    },
+    "policy": "Latest owner guidance explicitly settles authored quotations in MAM-normal order unless claimed byte-accurate; doc-parts/clauses terminology adopted. Literal captures, historical receipts, identifiers and published generator wording retain their stated exceptions/deferred scope.",
+    "regeneration_disposition": "No valid-output behavior changes. Only exception wording changes from empty line to empty clause; focused error/valid-output differential passes, so no CLC/near-Aleppo/full generator run warranted.",
+    "owner_checks": "Owner-reported22lint tests are attributed, not included in this run count."
+  },
+  "actual_stages": [
+    {
+      "area": "basics",
+      "label": "focused-tests",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        "/workspace/scratch/review-hourly-20261030-1600/basics/test_terminology.py",
+        "py/tests/test_prose_mark_order.py",
+        "-q"
+      ],
+      "cwd": "/workspace/MAM-basics",
+      "started_utc": "2026-10-30T15:50:55.623446+00:00",
+      "completed_utc": "2026-10-30T15:50:56.229212+00:00",
+      "returncode": 0
+    },
+    {
+      "area": "basics",
+      "label": "format",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "-m",
+        "black",
+        "--check",
+        "py/clc/clc_render.py",
+        "py/near_aleppo/edition.py",
+        "py/py_misc/near_aleppo_params.py",
+        "py/py_misc/ren_html_from_ren_el_mapping.py",
+        "py/py_misc/scrdfftar_to_doc.py",
+        "py/py_misc/trivial_qere_to_doc.py",
+        "py/render_wt/render_wikitext_added_lines.py",
+        "py/render_wt/render_wikitext_kq.py"
+      ],
+      "cwd": "/workspace/MAM-basics",
+      "started_utc": "2026-10-30T15:50:56.235722+00:00",
+      "completed_utc": "2026-10-30T15:50:56.589444+00:00",
+      "returncode": 0
+    }
+  ],
+  "failure_history": "No focused project or reviewer failure/skip. No broad checks ran; owner test claims remain attributed.",
+  "reviewer_repair": null,
+  "limits": [
+    "Focused diagnostics/prose and code/product preservation only; no full suite/mega or generator rerun.",
+    "Owner quotations, decisions and earlier tests remain attributed; no live config sync or source editing.",
+    "No font/build/baseline/frozen, hbofonts, deployment/release, main/shared integration or HP/BHL work."
+  ],
+  "checkout_restored": {
+    "utc": "2026-10-30T15:59:41.813163+00:00",
+    "head": "926a6e785be4236673ac4a5c8c34afe63ed417f4",
+    "branch": "work",
+    "status": "",
+    "registered_worktrees": 1
+  },
+  "remote_main_before_receipt": "c706d24d71b3213e5e4d9531e9d69dcba218c49a",
+  "remaining_window": null,
+  "evidence": {
+    "readme": "doc/review-hourly-2026-10-30-1600-evidence/README.md",
+    "archive": "doc/review-hourly-2026-10-30-1600-evidence/focused-evidence.zip",
+    "manifest": "doc/review-hourly-2026-10-30-1600-evidence/manifest.json"
+  },
+  "receipt_tree_not_tested_source": true,
+  "completed_utc": "2026-10-30T15:59:44.990261+00:00"
+}
