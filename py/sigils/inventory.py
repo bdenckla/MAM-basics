@@ -47,8 +47,11 @@ _PROSE_ABBREV_RE = re.compile(
     rf"(?<![{_IN_WORD_CHARS}])[א-ת](?![{_IN_WORD_CHARS}]))"
 )
 _TOKEN_SPLIT_RE = re.compile(r"[\s,]+")
+# A run of Hebrew letters and marks, with the combining grapheme joiner that MAM puts between two
+# marks, so that a pointed word holding one is removed whole.  Until 2026-10-30 the joiner split
+# such a word in two, and the removal left the joiner behind.
 _HEBREW_CLUSTER_RE = re.compile(
-    r"[\u05d0-\u05ea\u0591-\u05bd\u05bf\u05c1\u05c2\u05c4\u05c5\u05c7\u05be\ufb1e]+"
+    r"[\u05d0-\u05ea\u0591-\u05bd\u05bf\u05c1\u05c2\u05c4\u05c5\u05c7\u05be\ufb1e\u034f]+"
 )
 _HAS_POINT_RE = re.compile(r"[\u0591-\u05bd\u05bf\u05c1\u05c2\u05c4\u05c5\u05c7\ufb1e]")
 
