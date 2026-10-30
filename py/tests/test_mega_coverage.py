@@ -157,6 +157,19 @@ _SEF_AND_OSIS_NOT_KEPT_CURRENT = (
 )
 
 # ---------------------------------------------------------------------------
+# A reason shared by the subcommands of one program, proposed by a Claude
+# session and not yet reviewed by Ben.
+# ---------------------------------------------------------------------------
+_PEN_STROKE_BY_HAND = (
+    "Claude-written proposal, not yet reviewed by Ben: the tool of the pen-stroke"
+    " exemplars, run by hand when a stroke-SVG's authored parts change.  Its stroke-SVGs"
+    " and overlay page under doc/pen-stroke-snips/ are no product, and the suite's"
+    " py/tests/test_pen_stroke_svgs.py derives every stroke-SVG again from its crop, so"
+    " a mega step would check nothing more.  Recorded in doc/pen-stroke-representation.md,"
+    ' under "Running the tool".'
+)
+
+# ---------------------------------------------------------------------------
 # THE DECLARATION.  Every program the mega does not run, keyed as the module
 # docstring says, with why the mega leaves it out and where that is recorded.
 #
@@ -550,6 +563,11 @@ NOT_IN_MEGA: dict[str, str] = {
         " taamey-d-release-check step checks what it published.  Recorded in"
         ' Taamey-D/README.md, under "Publishing a release".'
     ),
+    "py/main_pen_stroke.py init": _PEN_STROKE_BY_HAND,
+    "py/main_pen_stroke.py nibfit": _PEN_STROKE_BY_HAND,
+    "py/main_pen_stroke.py derive": _PEN_STROKE_BY_HAND,
+    "py/main_pen_stroke.py check": _PEN_STROKE_BY_HAND,
+    "py/main_pen_stroke.py render": _PEN_STROKE_BY_HAND,
 }
 
 # ---------------------------------------------------------------------------
