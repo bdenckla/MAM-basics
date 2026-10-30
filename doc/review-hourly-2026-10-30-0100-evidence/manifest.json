@@ -1,0 +1,81 @@
+{
+  "source_commit": "fc9c6f14eea3b48bc152a394acc0ca1aef43aeb0",
+  "members": [
+    {
+      "path": "test_sigil_followups.py",
+      "bytes": 7270,
+      "sha256": "069d9f9c6c52b0f56004e2346e57b17d6f2b065768e66b1b43d2c55bb328f4c2"
+    },
+    {
+      "path": "inventory-base.py",
+      "bytes": 11349,
+      "sha256": "9ab1dc53afde729e38414bc858ca247d930086c7c90c4e4db742f6fe5d0e8294"
+    },
+    {
+      "path": "corpus-audit.json",
+      "bytes": 634,
+      "sha256": "b4a6a25df05d07a33a470e0055705a93971676e657163dd39d552b1369e62078"
+    },
+    {
+      "path": "document-figures.json",
+      "bytes": 872,
+      "sha256": "20e0d33759c9fbb7e6d665d16518f3d7093a30685c6955092abf176fdf409484"
+    },
+    {
+      "path": "inventory.log",
+      "bytes": 209,
+      "sha256": "d49f31876f494b9e8a10e9564fc61c52f6a2b2762095a0d8f6d4fa574381a2ab"
+    },
+    {
+      "path": "inventory.result.json",
+      "bytes": 287,
+      "sha256": "a0249eba42b5fc4f8f7b7fa8a2bba830d610d5a5ea492a2609a49b4bba5597e5"
+    },
+    {
+      "path": "focused-tests.log",
+      "bytes": 98,
+      "sha256": "3671c9b415fffaaff24582d4b160379a7cd0aa2c63a06e8db9dcb804e9054d63"
+    },
+    {
+      "path": "focused-tests.result.json",
+      "bytes": 416,
+      "sha256": "b8d7c15f917feb8e5dfe712821703fcfd86ab52c1968011361bbe703eaea667f"
+    },
+    {
+      "path": "format.log",
+      "bytes": 55,
+      "sha256": "1a56c7cd8457fd05d978cfbd139d7bfd86e86acaa9b57668e718ef8bccc0cf48"
+    },
+    {
+      "path": "format.result.json",
+      "bytes": 318,
+      "sha256": "a3dd664a697a9a34665255eb1a20ba42b2db81f71758f68821eb69b28c6a7058"
+    },
+    {
+      "path": "actual-stages.json",
+      "bytes": 1171,
+      "sha256": "104abde6434d4f502f12d9070b807d928890923eec7bca28c876058a812c6d78"
+    },
+    {
+      "path": "endpoint.patch",
+      "bytes": 133692,
+      "sha256": "120fba6912ad35a8d42bd4cf6a5224b48b2aef268e36d4e0adacec6b294bf0bd"
+    },
+    {
+      "path": "changed-paths.json",
+      "bytes": 88,
+      "sha256": "43840810dad6ac0f22194638f836bf0d02ee4fd8f0652db486d68a584b7b8c2f"
+    },
+    {
+      "path": "checkout-before.json",
+      "bytes": 138,
+      "sha256": "5e29c2bddfe4b79d5d91bd3fbae786da19139b2c2a6e2b728c3c2e4cfc1263e8"
+    },
+    {
+      "path": "checkout-restored.json",
+      "bytes": 167,
+      "sha256": "0220fb13515a464cd234b9b466a01fe0f05c1a6e791adbe507d0e620d456a799"
+    }
+  ],
+  "archive_sha256": "4b62db29e5540fa62dfb82f79e1464da96988b2fa25ec1ae99416cda7c2fb0ce"
+}

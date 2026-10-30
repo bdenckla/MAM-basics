@@ -1,0 +1,172 @@
+{
+  "notification_label": "2026-10-30 01:00 UTC",
+  "actual_first_clock_observation": "2026-10-30T01:00:22+00:00",
+  "receipt_parent": "899e48ce74f436ca78535bfdc9b508d7b6797005",
+  "source_base": "10708b47582fbb7f895f415683f852afe80787bc",
+  "source_commit": "fc9c6f14eea3b48bc152a394acc0ca1aef43aeb0",
+  "reviewed_through": "fc9c6f14eea3b48bc152a394acc0ca1aef43aeb0",
+  "focused_tested_through": "fc9c6f14eea3b48bc152a394acc0ca1aef43aeb0",
+  "broad_tested_through": "6ac28417a243447c24eefb168202585a9949a4ea",
+  "required_sibling_inputs": [],
+  "changed_paths": [
+    "doc/sigil-decoding.md",
+    "out/sigil-inventory.json",
+    "py/sigils/inventory.py"
+  ],
+  "result": "5passed in0.95s; no failures/skips. All3871note token streams/counts/examples independently match; inventory reproduces; Black and whitespace pass.",
+  "details": {
+    "corpus": {
+      "notes": 3871,
+      "old_total_tokens": 17622,
+      "new_total_tokens": 16663,
+      "removed_count": 961,
+      "added_count": 2,
+      "removed_types": [
+        "ג!",
+        "ג?",
+        "ד!",
+        "ד?",
+        "ה!",
+        "ח!",
+        "ח?",
+        "י?",
+        "ך!",
+        "כתיב",
+        "כתיבה",
+        "כתיבים",
+        "כתיבת",
+        "כתיבתו",
+        "ם!",
+        "ם?",
+        "מ!",
+        "ן!",
+        "ן?",
+        "ס-ל",
+        "ע!",
+        "ע?",
+        "ף!",
+        "ף?",
+        "ץ?",
+        "ק?",
+        "ר!",
+        "ר?",
+        "ת!",
+        "ת?"
+      ],
+      "added_types": [
+        "בכתי”ל",
+        "ומ”ס-ל"
+      ],
+      "all_note_streams_counts_and_examples_match": true
+    },
+    "selected_document_figures": {
+      "selected_expression_counts": {
+        "ו": 684,
+        "ו?": 30,
+        "א": 1497,
+        "ל": 1922,
+        "ש1": 1126,
+        "ק3": 767,
+        "ש": 791,
+        "ה": 50,
+        "ט3": 5,
+        "ק-מ": 357,
+        "מ\"ק-א": 19,
+        "ומסורות-א": 62,
+        "פטרבורג-EVR-II-B-55": 10,
+        "ח": 16,
+        "כן": 157,
+        "וכמו": 156,
+        "וכך": 32,
+        "לפי": 24,
+        "ראו": 23,
+        "של": 20,
+        "אצל": 16,
+        "יש": 12,
+        "את": 6
+      },
+      "prose_parenthetical_sigil": 213,
+      "appendix_lines": 574,
+      "appendix_characters": 147734,
+      "header": {
+        "notes_scanned": 3871,
+        "notes_with_matches": 3679,
+        "distinct_expressions": 1354,
+        "distinct_expression_tokens": 897,
+        "distinct_prose_tokens": 548
+      },
+      "limits": "Historical causal comparisons and missing-equals source hypotheses remain attributed; no source edits or external contact."
+    },
+    "authority_sections_and_existing_function_asts": "unchanged",
+    "known_limits": "Quote-adjacent singles and the unchanged authority-like filter are preserved, not claimed complete. Five missing-equals notes remain owner-known source hypotheses; no source edit or external report.",
+    "prior_prose_lint": "remains resolved; maintained lint independently passes here"
+  },
+  "actual_stages": [
+    {
+      "area": "basics",
+      "label": "inventory",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_sigil_inventory.py"
+      ],
+      "cwd": "/workspace/MAM-basics",
+      "started_utc": "2026-10-30T01:06:34.844554+00:00",
+      "completed_utc": "2026-10-30T01:06:35.460941+00:00",
+      "returncode": 0
+    },
+    {
+      "area": "basics",
+      "label": "focused-tests",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        "/workspace/scratch/review-hourly-20261030-0100/basics/test_sigil_followups.py",
+        "py/tests/test_prose_mark_order.py",
+        "-q"
+      ],
+      "cwd": "/workspace/MAM-basics",
+      "started_utc": "2026-10-30T01:06:35.529644+00:00",
+      "completed_utc": "2026-10-30T01:06:36.671061+00:00",
+      "returncode": 0
+    },
+    {
+      "area": "basics",
+      "label": "format",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "-m",
+        "black",
+        "--check",
+        "py/sigils/inventory.py"
+      ],
+      "cwd": "/workspace/MAM-basics",
+      "started_utc": "2026-10-30T01:06:36.671473+00:00",
+      "completed_utc": "2026-10-30T01:06:36.903295+00:00",
+      "returncode": 0
+    }
+  ],
+  "failure_history": "No project or reviewer check failed or skipped. Deliberately unrun broad/generator work is described in limits; prior failure histories are preserved, not relabelled.",
+  "reviewer_repair": null,
+  "classification": "Review complete; no consequential new defect confirmed. Owner editorial/process decisions preserved.",
+  "limits": [
+    "No full suite/mega or broad-anchor advance.",
+    "Historical source/causal remeasurement and 122/897 documented-share comparison remain attributed; selected current figures were checked independently.",
+    "No source semantics/manuscript adjudication, source bot/download, external issue/message, font build/baseline, deployment/release, main/shared push, live config sync, hbofonts access/check/receipt/recreation or new clone/worktree."
+  ],
+  "evidence": {
+    "readme": "doc/review-hourly-2026-10-30-0100-evidence/README.md",
+    "archive": "doc/review-hourly-2026-10-30-0100-evidence/focused-evidence.zip",
+    "manifest": "doc/review-hourly-2026-10-30-0100-evidence/manifest.json"
+  },
+  "remote_main_before_receipt": "fc9c6f14eea3b48bc152a394acc0ca1aef43aeb0",
+  "remaining_window": null,
+  "checkout_restored": {
+    "utc": "2026-10-30T01:13:18.935190+00:00",
+    "head": "926a6e785be4236673ac4a5c8c34afe63ed417f4",
+    "branch": "work",
+    "status": "",
+    "registered_worktrees": 1
+  },
+  "receipt_tree_not_tested_source": true,
+  "completed_utc": "2026-10-30T01:13:20.480658+00:00"
+}
