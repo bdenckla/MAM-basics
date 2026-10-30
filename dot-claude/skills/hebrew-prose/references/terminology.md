@@ -386,16 +386,14 @@ parameter 2 of `נוסח`, the claim `mp.plus.templates.sh.only-in-docnote-param
   doc-parts at all.
 
 Swept on adoption, 2026-10-30: the docstrings, comments and live documents of MAM-basics and
-MAM-private that called a doc-part a line or a paragraph. **Not swept, waiting on Ben's decision
-whether to rename or regenerate:** the identifiers of `render_wt/render_wikitext_added_lines.py`,
-the module's name included, and of `render_wt/render_wikitext_handlers.py` and
-`render_wt/render_wikitext_kq.py`, such as `labelled_line`, `flag_lines` and `_mam_target_line`;
-identifiers in MAM-private; and generator text that reaches published pages:
-`author_misc/mp_cmn_rows_other.py`'s "Paragraph separator" row,
-`author_misc/mpplus_template_call_graphs.py`'s "paragraph divider template",
-`foi/slh_word_explanations.py`'s "documentation line" and `near_aleppo/doc_choices.py`'s choices
-that call a doc-part a line. Receipts, executed plans, dated records, Ben's request files and
-pushed commit messages keep their words.
+MAM-private that called a doc-part a line or a paragraph. Swept later that day, with Ben's
+approval: the near-Aleppo renderer's identifiers, among them the module now named
+`render_wt/render_wikitext_added_clauses.py`, its `labelled_clause` and `flag_clauses`, and
+`render_wt/render_wikitext_handlers.py`'s `_mam_target_clause`; the locals of MAM-private's
+`mgketer/py/python_modules/nusach_match.py`, now `doc_parts` and `doc_part`; and the generator
+text of four published pages, MAM-parsed's `mpplus.html` and `mpplus-template-call-graphs.html`,
+MAM-with-doc's `foi/foi-slh-word.html` and near-Aleppo's `choices.html`. Receipts, executed
+plans, dated records, Ben's request files and pushed commit messages keep their words.
 
 ## "Reading" is a technical term here, not a catch-all noun
 
