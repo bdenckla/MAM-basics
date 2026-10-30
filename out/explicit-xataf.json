@@ -1232,7 +1232,7 @@
       "ref": "1Kings 17:11",
       "varika_word": "לִֽקְﬞחִי־נָ֥א",
       "xataf_word": "לִֽקְִחִי־נָ֥א",
-      "match_kind": "sigla=word",
+      "match_kind": "sigla=plus-form",
       "sigla": "א"
     },
     {
@@ -2660,14 +2660,14 @@
       "ref": "Psalms 14:1",
       "varika_word": "הִֽשְׁﬞחִ֗יתוּ",
       "xataf_word": "הִֽשְִׁחִ֗יתוּ",
-      "match_kind": "sigla=word",
+      "match_kind": "sigla=plus-form",
       "sigla": "א"
     },
     {
       "ref": "Psalms 14:1",
       "varika_word": "הִֽתְﬞעִ֥יבוּ",
       "xataf_word": "הִֽתְִעִ֥יבוּ",
-      "match_kind": "sigla=word",
+      "match_kind": "sigla=plus-form",
       "sigla": "א"
     },
     {
@@ -2800,14 +2800,14 @@
       "ref": "Psalms 53:2",
       "varika_word": "הִֽ֝שְׁﬞחִ֗יתוּ",
       "xataf_word": "הִֽ֝שְִׁחִ֗יתוּ",
-      "match_kind": "sigla=word",
+      "match_kind": "sigla=plus-form",
       "sigla": "א"
     },
     {
       "ref": "Psalms 53:2",
       "varika_word": "וְהִֽתְﬞעִ֥יבוּ",
       "xataf_word": "וְהִֽתְִעִ֥יבוּ",
-      "match_kind": "sigla=word",
+      "match_kind": "sigla=plus-form",
       "sigla": "א"
     },
     {
