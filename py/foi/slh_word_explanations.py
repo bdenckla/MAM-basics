@@ -89,8 +89,8 @@ _STACK_EXPLANATIONS = {
     ),
     "doc-part-n": " ".join(
         (
-            "that the slh-word template occurs inside a documentation line rather than",
-            "directly in the running text",
+            "that the slh-word template occurs inside a doc-part of a documentation",
+            "note rather than directly in the running text",
         )
     ),
     "kq-ketiv": (
@@ -121,10 +121,10 @@ OVERALL_EXPLANATION = (
             "The same words are grouped in three different ways. slh-letter-count/n",
             "groups by how many special letters a word contains. stack/x groups by",
             "the local wrapper context in which the slh-word template occurs, such",
-            "as running text, documentation lines, scroll-difference notes, or the",
-            "ketiv side of a ketiv/qere. non-note/n/codes restricts to cases not",
-            "inside notes and then groups by both the number of special letters and",
-            "the code string describing their types.",
+            "as running text, doc-parts of documentation notes, scroll-difference",
+            "notes, or the ketiv side of a ketiv/qere. non-note/n/codes restricts to",
+            "cases not inside notes and then groups by both the number of special",
+            "letters and the code string describing their types.",
         )
     ),
     " ".join(

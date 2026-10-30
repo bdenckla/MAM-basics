@@ -5,7 +5,7 @@ from mb_cmn import hebrew_points as hpo
 from mb_cmn import kq_special_templates as kqst
 from py_misc import near_aleppo_params as nap  # near-aleppo
 from render_wt import render_element as renel
-from render_wt import render_wikitext_added_lines as added_lines  # near-aleppo
+from render_wt import render_wikitext_added_clauses as added_clauses  # near-aleppo
 from render_wt import render_wikitext_helpers as wt_help
 from mb_cmn import ws_tmpl2 as wtp
 from mb_cmn import template_names as tmpln
@@ -155,8 +155,8 @@ def _flagged(hctx, tmpl, rendered, lemma):
     if not flags:
         return rendered
     target = rendered if isinstance(rendered, tuple) else (rendered,)
-    lines = added_lines.english_flag_lines(hctx, flags, tmpl)
-    return (renel.mk_ren_el_tc_and_doc(target, lemma, lines),)
+    labelled = added_clauses.english_flag_clauses(hctx, flags, tmpl)
+    return (renel.mk_ren_el_tc_and_doc(target, lemma, labelled),)
 
 
 def _style_is_abstract(hctx):

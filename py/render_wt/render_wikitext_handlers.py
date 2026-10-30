@@ -22,7 +22,7 @@ from mb_cmn import template_names as tmpln
 from mb_cmn.silluq_before_meteg import validate_silluq_before_meteg
 from mb_cmn import ws_tmpl2 as wtp
 from render_wt import render_element as renel
-from render_wt import render_wikitext_added_lines as added_lines  # near-aleppo
+from render_wt import render_wikitext_added_clauses as added_clauses  # near-aleppo
 from render_wt import render_wikitext_dispatch as dispatch
 from render_wt import render_wikitext_handlers_for_qamats as qamats_variation
 from render_wt import render_wikitext_helpers as wt_help
@@ -62,7 +62,7 @@ def _handle_doc(hctx, tmpl):
     main_out = renel.mk_ren_el_tc_and_doc(
         doc_target_stripped,
         _doc_lemma_subhandler(hctx, doc_target_wtseq),
-        doc_parts + _added_lines(hctx, tmpl, added),
+        doc_parts + _added_clauses(hctx, tmpl, added),
     )
     return main_out, tr_space
 
@@ -70,37 +70,37 @@ def _handle_doc(hctx, tmpl):
 def _stored_doc_parts(hctx, tmpl, added, parts):
     """Format stored clause roles without consulting editorial review decisions."""
     if nap.MAM_TARGET in added:
-        mam_line = _mam_target_line(hctx, tmpl)
+        mam_clause = _mam_target_clause(hctx, tmpl)
         near = _doc_parts_subhandler(hctx, [part for part in parts if part])
         stored = wtp.template_param_val(tmpl, nap.MAM_NOTE)
         remaining = unbury.unbury_parts([stored]) if stored else []
         rest = _doc_parts_subhandler(hctx, remaining) if remaining else ()
-        mam_parts = ((*mam_line, " ", *rest[0]), *rest[1:]) if rest else (mam_line,)
+        mam_parts = ((*mam_clause, " ", *rest[0]), *rest[1:]) if rest else (mam_clause,)
         return (*near, *mam_parts)
     return _doc_parts_subhandler(hctx, parts)
 
 
-def _added_lines(hctx, tmpl, added):
+def _added_clauses(hctx, tmpl, added):
     """
     near-aleppo: flags in the template's order, after the original source clauses.
     MAM_TARGET introduces those clauses in _stored_doc_parts.
     """
-    lines = []
+    labelled = []
     for key in added:
         if key in (nap.MAM_TARGET, nap.MAM_NOTE):
             continue
         else:
             parts_hctx = hctx.mk_new_with_handler(_DOC_PARTS_HANDLERS)
-            lines.extend(added_lines.flag_lines(hctx, key, tmpl, parts_hctx))
-    return tuple(lines)
+            labelled.extend(added_clauses.flag_clauses(hctx, key, tmpl, parts_hctx))
+    return tuple(labelled)
 
 
-def _mam_target_line(hctx, tmpl):
+def _mam_target_clause(hctx, tmpl):
     # near-aleppo: MAM's text in Scripture context, with nested notes suppressed.
     renopts = {**(hctx.renopts or {}), "ro_no_doc": True}
     verse_hctx = wt_help.Hctx(_GEN_WT_HANDLERS, hctx.bcvt, renopts, hctx.io_renlog)
     mam_text = wt_help.render_named_param_val(verse_hctx, tmpl, nap.MAM_TARGET)
-    return added_lines.labelled_line(nap.MAM_TARGET, mam_text, separator="=")
+    return added_clauses.labelled_clause(nap.MAM_TARGET, mam_text, separator="=")
 
 
 def _handle_bold(hctx, tmpl):

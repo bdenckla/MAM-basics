@@ -139,7 +139,7 @@ _EDGE_COUNTS_ARE_LOW = [
 _CALL_GRAPH_FOR_COLUMN_D = [
     author.para(
         "The call graph below, for column D, is, as expected, much simpler than the one for column E."
-        " Recall that ש is the paragraph divider template, used exclusively in the second argument to נוסח."
+        " Recall that ש is the template that separates doc-parts, used exclusively in the second argument to נוסח."
     ),
 ]
 _CALL_GRAPH_FOR_COLUMN_C = [
