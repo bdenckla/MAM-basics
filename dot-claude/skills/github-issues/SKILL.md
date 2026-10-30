@@ -41,6 +41,17 @@ throughout:
   `references/mam-basics-trackers.md`. That reference carries the collision history, evacuated
   tracker exceptions, and data-rendering traps that do not belong in every issue task.
 
+## Issue-only sessions
+
+A session started only for issue operations changes no Git state. It never commits, stages,
+switches, stashes, resets, cleans, merges, fetches, pulls or pushes, and it writes files only in
+its scratch directory or a `.novc/` folder. Read-only Git is fine; origin's current state comes
+from `gh`, not `git fetch`. Such a session holds no checkout, so it may share one that another
+session is writing in. It runs outside Claude Code's plan mode, because filing is not read-only
+work. Ben, 2026-10-30: "should not need to do any git-impacting actions, and therefore should
+not do any git-impacting actions, using, if it needs to write any files, either its scratchpad
+or a .novc folder in some repo".
+
 ## Canonical copy
 
 This skill is canonical at `MAM-basics/dot-claude/skills/github-issues/` and is shared with
