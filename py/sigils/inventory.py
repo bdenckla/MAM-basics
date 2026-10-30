@@ -29,14 +29,19 @@ _IN_WORD_CHARS = (
     r"\w\u0591-\u05bd\u05bf\u05c1\u05c2\u05c4\u05c5\u05c7\u05be\ufb1e\u034f\-"
     + _GERESH_OR_GERSHAYIM
 )
+# One hyphenated part of a compound: letters or digits, with at most one geresh or gershayim
+# inside, as in the second part of א-מ"ק.
+_COMPOUND_PART = rf"[א-ת0-9]+(?:[{_GERESH_OR_GERSHAYIM}][א-ת0-9]+)?"
 # The first alternative needs an abbreviation's geresh or gershayim.  Until 2026-10-29 another
 # alternative, for כתי"ל and its kin, made the gershayim optional, and so it also counted the
-# words כתיב, כתיבה and כתיבת.
+# words כתיב, כתיבה and כתיבת.  The first, third and fourth alternatives take every hyphenated
+# part of a compound.  Until 2026-10-30 they took at most one, and none with a geresh or
+# gershayim, so that מ"ג-ק-מ was counted as מ"ג-ק, א-מ"ק as א-מ and ש1-כתיב as ש1.
 _PROSE_ABBREV_RE = re.compile(
-    rf"(?:[א-ת]+[{_GERESH_OR_GERSHAYIM}][א-ת0-9]+(?:-[א-ת0-9]+)?|"
+    rf"(?:[א-ת]+[{_GERESH_OR_GERSHAYIM}][א-ת0-9]+(?:-{_COMPOUND_PART})*|"
     r"[א-ת]+\([א-ת]+\)|"
-    r"[א-ת]+-[א-ת0-9]+|"
-    r"[א-ת]+\d+|"
+    rf"[א-ת]+(?:-{_COMPOUND_PART})+|"
+    rf"[א-ת]+\d+(?:-{_COMPOUND_PART})*|"
     rf"(?<![{_IN_WORD_CHARS}])[א-ת][?!]|"
     rf"(?<![{_IN_WORD_CHARS}])[א-ת](?![{_IN_WORD_CHARS}]))"
 )
