@@ -1,0 +1,127 @@
+{
+  "date": "2026-10-30",
+  "source_commit": "fc9c6f14eea3b48bc152a394acc0ca1aef43aeb0",
+  "reviewed_through": "fc9c6f14eea3b48bc152a394acc0ca1aef43aeb0",
+  "receipt_parent": "be9c92d45b912447adf9c483e47b328df433cbbe",
+  "previous_nightly_preserved": "9295522c3eff6e3fbe68764df460ccddc438f7ff",
+  "previous_broad_source": "6ac28417a243447c24eefb168202585a9949a4ea",
+  "receipt_branch": "review-nightly-20261030-cloud-receipts",
+  "review": "Frozen main equals the reconciled latest reviewed-through anchor; no new endpoint window or duplicated screening.",
+  "stages": [
+    {
+      "name": "basics-mega",
+      "cwd": "/workspace/MAM-basics",
+      "commit": "fc9c6f14eea3b48bc152a394acc0ca1aef43aeb0",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_0_mega.py"
+      ],
+      "started_utc": "2026-10-30T06:50:39.950882+00:00",
+      "completed_utc": "2026-10-30T06:59:32.341487+00:00",
+      "state": "completed",
+      "exit_code": 0,
+      "elapsed_seconds": 532.381,
+      "changed_paths": [
+        "doc/process-documentation/MAM-process.dot.svg",
+        "doc/process-documentation/pipeline.svg",
+        "gh-pages/MAM-parsed/plus/svg/plus-call-graph-c.svg",
+        "gh-pages/MAM-parsed/plus/svg/plus-call-graph-d.svg",
+        "gh-pages/MAM-parsed/plus/svg/plus-call-graph-e.svg",
+        "gh-pages/MAM-parsed/plus/svg/plus-dexi-call-graph.svg",
+        "gh-pages/MAM-parsed/plus/svg/plus-dualcant-call-graph.svg",
+        "gh-pages/MAM-parsed/plus/svg/plus-kvq-call-graph.svg"
+      ],
+      "tracked_diff_before": false,
+      "allowed_committed_input_ids": [
+        "5f645e2086945fc22b5de2f936b76aa4b5cd3e50"
+      ]
+    },
+    {
+      "name": "basics-suite",
+      "cwd": "/workspace/MAM-basics",
+      "commit": "fc9c6f14eea3b48bc152a394acc0ca1aef43aeb0",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py"
+      ],
+      "started_utc": "2026-10-30T06:59:50.341199+00:00",
+      "completed_utc": "2026-10-30T07:05:44.427843+00:00",
+      "state": "completed",
+      "exit_code": 0,
+      "elapsed_seconds": 354.076,
+      "changed_paths": [],
+      "tracked_diff_before": false,
+      "allowed_committed_input_ids": [
+        "5f645e2086945fc22b5de2f936b76aa4b5cd3e50"
+      ]
+    }
+  ],
+  "result": "mega exit 0 in 532.381 s, all 65 steps/no skips; full suite exit 0 in 354.076 s: 1111 passed, 5 skipped in 351.12s (0:05:51); 8 SVG geometry/Times-alias differences freshly explained, preserved and reversed; committed-font QA 61 PASS / 0 FAIL / 0 SKIP, full-history release-check 9 files, corpus current; no font build or baseline acceptance",
+  "limits": [
+    "Only the recorded source and exact committed inputs were tested; receipt-tree code and later main are outside coverage.",
+    "No font build, baseline/corpus refresh acceptance, release publication, deployment, main/shared integration, editorial/source repair or schedule action."
+  ],
+  "coverage": "complete maintained mega and suite",
+  "completed_mega_steps": 65,
+  "mega_skips": 0,
+  "suite_summary": "1111 passed, 5 skipped in 351.12s (0:05:51)",
+  "skips": [
+    "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: koren_ex_elyon diverges from its Wikisource strand; the control needs an agreeing page",
+    "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: simtan_dt_taxton diverges from its Wikisource strand; the control needs an agreeing page",
+    "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: simtiq_dt_taxton diverges from its Wikisource strand; the control needs an agreeing page",
+    "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: simtiq_ex_elyon diverges from its Wikisource strand; the control needs an agreeing page",
+    "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: simtiq_ex_taxton diverges from its Wikisource strand; the control needs an agreeing page"
+  ],
+  "skip_diagnostic": {
+    "name": "basics-skip-details",
+    "cwd": "/workspace/MAM-basics",
+    "commit": "fc9c6f14eea3b48bc152a394acc0ca1aef43aeb0",
+    "command": [
+      "/workspace/MAM-basics/.venv/bin/python",
+      "py/main_test.py",
+      "-q",
+      "-rs",
+      "py/tests/test_edition_transcriptions.py::test_the_synthesized_mark_body_reproduces_the_scanner_on_an_agreeing_page[koren_ex_elyon]",
+      "py/tests/test_edition_transcriptions.py::test_the_synthesized_mark_body_reproduces_the_scanner_on_an_agreeing_page[simtan_dt_taxton]",
+      "py/tests/test_edition_transcriptions.py::test_the_synthesized_mark_body_reproduces_the_scanner_on_an_agreeing_page[simtiq_dt_taxton]",
+      "py/tests/test_edition_transcriptions.py::test_the_synthesized_mark_body_reproduces_the_scanner_on_an_agreeing_page[simtiq_ex_elyon]",
+      "py/tests/test_edition_transcriptions.py::test_the_synthesized_mark_body_reproduces_the_scanner_on_an_agreeing_page[simtiq_ex_taxton]"
+    ],
+    "started_utc": "2026-10-30T07:12:00.650076+00:00",
+    "completed_utc": "2026-10-30T07:12:00.923971+00:00",
+    "exit_code": 0,
+    "elapsed_seconds": 0.265
+  },
+  "environment": {
+    "python": "3.13.15",
+    "uharfbuzz": "0.57.0",
+    "harfbuzz": "15.0.0",
+    "graphviz": "16.0.0 (20260814.1018)"
+  },
+  "taamey_d": {
+    "qa_result_tuples": {
+      "PASS": 61
+    },
+    "release_file_count": 9,
+    "release_snapshot": {
+      "full_history": true,
+      "snapshot_identifier": "1.2-MAM-basics-1f1be97138d5",
+      "declared_source": "1f1be97138d5b9ac5464c2de912299828bf9fccb",
+      "source_object_present": true,
+      "source_ancestor_of_frozen_main": true
+    },
+    "full_history": true,
+    "corpus_check": "current",
+    "baseline_accepted": false,
+    "font_built": false,
+    "report_comparison": "Mega checked every runner-owned report against the clean index, including detection of new untracked reports; all matched.",
+    "corpus_counts": {
+      "committed": 120425,
+      "current": 120425,
+      "drop": 0,
+      "add": 0,
+      "relabel": 0
+    }
+  },
+  "generated_difference_disposition": "Fresh XML comparison allows only geometry and the specifically recorded Times alias; every other attribute, tag, text, tail, link and comment agrees. Exact patches and before/after bytes preserved privately and reversed before the clean suite. No non-SVG tracked difference."
+}
