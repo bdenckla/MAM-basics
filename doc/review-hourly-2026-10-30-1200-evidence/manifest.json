@@ -1,0 +1,101 @@
+{
+  "source_commit": "573657b6d2847b5ddab11f4f9296b0cf11d4f46e",
+  "members": [
+    {
+      "path": "test_sigil_compounds.py",
+      "bytes": 6891,
+      "sha256": "bdf7d388889edf58a0ca8ed3d08aa5f40b13b9ce7cc43503f87b0986487abaa6"
+    },
+    {
+      "path": "inventory-base.py",
+      "bytes": 11736,
+      "sha256": "e4f807ec869249fd04b600450ed4b11a25d29373a1c93f0b2ff26af1899a3d96"
+    },
+    {
+      "path": "corpus-audit.json",
+      "bytes": 400,
+      "sha256": "263d1638f46e615ea6116b596d1fedf990a6c0fcb42a8c10e2be2a1a64866e2b"
+    },
+    {
+      "path": "marked-scope-audit.json",
+      "bytes": 613,
+      "sha256": "acf15c576a23028090276d65f34ae009416e9cd7dfe229bfb69f7a6411bd97f9"
+    },
+    {
+      "path": "inventory.log",
+      "bytes": 209,
+      "sha256": "b27b79420487cd5f432479a5438eae6bf6fb64b19ad1313ab0ad29bdcf2f1757"
+    },
+    {
+      "path": "inventory.result.json",
+      "bytes": 307,
+      "sha256": "afa17e5126751bebc9a997a253ba82c71cb22f1450d43470dfece7131c92ced1"
+    },
+    {
+      "path": "focused-tests.log",
+      "bytes": 98,
+      "sha256": "d161a71b963882cba02d9bdbbed80589c4c38da80a1833e2bfba476f94a0aebb"
+    },
+    {
+      "path": "focused-tests.result.json",
+      "bytes": 436,
+      "sha256": "180f085493b28dbce278ff70def90d1123efea8edadca6adb6cee8672221f95f"
+    },
+    {
+      "path": "rosters.log",
+      "bytes": 8528,
+      "sha256": "6e61c0217c7a96224b49c6e313576ca6c6f88cbafbffec6b04d2c965cd83952c"
+    },
+    {
+      "path": "rosters.result.json",
+      "bytes": 320,
+      "sha256": "593a104d9ff06378dcdf3313922fda1238fa7934848140bd57d1b284d31ad3db"
+    },
+    {
+      "path": "oleh-count.log",
+      "bytes": 291,
+      "sha256": "95fb5459b171576ad3a87f9fd633afe72609b112883ba6890480e7b91ea49163"
+    },
+    {
+      "path": "oleh-count.result.json",
+      "bytes": 326,
+      "sha256": "ac4fadad9286c2e252d7bbffbb17ee14ec0a840252b073cd14eaf392f4c84132"
+    },
+    {
+      "path": "format.log",
+      "bytes": 55,
+      "sha256": "1a56c7cd8457fd05d978cfbd139d7bfd86e86acaa9b57668e718ef8bccc0cf48"
+    },
+    {
+      "path": "format.result.json",
+      "bytes": 338,
+      "sha256": "5ff2b3f9d0cef43a5a48fd20aa0cafbabab33c9ee18366856e30bab3c91a7e44"
+    },
+    {
+      "path": "actual-stages.json",
+      "bytes": 1871,
+      "sha256": "d5c9b6bdaf8fed410d910a58d8a9315ff3b1c5f66163bebed51a22e2068d67ba"
+    },
+    {
+      "path": "endpoint.patch",
+      "bytes": 30161,
+      "sha256": "13cec1343a75c64065ea74c152dc6d5a1fe7e97be24bde828d7f13da45af0c31"
+    },
+    {
+      "path": "changed-paths.json",
+      "bytes": 88,
+      "sha256": "43840810dad6ac0f22194638f836bf0d02ee4fd8f0652db486d68a584b7b8c2f"
+    },
+    {
+      "path": "checkout-before.json",
+      "bytes": 138,
+      "sha256": "02af47aa3903ef8f608a96c796fc17c79f964237a158ce8a6f9d73c5f07f6f38"
+    },
+    {
+      "path": "checkout-restored.json",
+      "bytes": 167,
+      "sha256": "61256b49a43c659e6a3961f3bf80585d5870caaa98cf64af0202b0a9d6de3a95"
+    }
+  ],
+  "archive_sha256": "874d9b3aa352db6a9bb203b4d8f63b89ccddd589fc8e6f5810fda4873fba0b68"
+}

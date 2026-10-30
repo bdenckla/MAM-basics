@@ -1,0 +1,155 @@
+{
+  "notification_label": "2026-10-30 12:00 UTC",
+  "first_clock_observation": "2026-10-30T12:09:38+00:00",
+  "receipt_parent": "cbee8ff0ce35143a06f502f7a521d634e923577c",
+  "source_base": "fc9c6f14eea3b48bc152a394acc0ca1aef43aeb0",
+  "source_commit": "573657b6d2847b5ddab11f4f9296b0cf11d4f46e",
+  "reviewed_through": "573657b6d2847b5ddab11f4f9296b0cf11d4f46e",
+  "focused_tested_through": "573657b6d2847b5ddab11f4f9296b0cf11d4f46e",
+  "broad_tested_through": "fc9c6f14eea3b48bc152a394acc0ca1aef43aeb0",
+  "required_sibling_inputs": [],
+  "changed_paths": [
+    "doc/sigil-decoding.md",
+    "out/sigil-inventory.json",
+    "py/sigils/inventory.py"
+  ],
+  "result": "4passed in1.28s, zero failures/skips. All3871notes independently match; inventory, rosters and oleh-count outputs reproduce byte-for-byte; Black/whitespace pass.",
+  "details": {
+    "corpus": {
+      "notes": 3871,
+      "cgj_occurrences": 12,
+      "old_total_prose_tokens": 16663,
+      "new_total_prose_tokens": 16671,
+      "removed_occurrences": 22,
+      "added_occurrences": 30,
+      "all_streams_counts_examples_match": true,
+      "header": {
+        "notes_scanned": 3871,
+        "notes_with_matches": 3679,
+        "distinct_expressions": 1354,
+        "distinct_expression_tokens": 897,
+        "distinct_prose_tokens": 566
+      }
+    },
+    "authority_expression_sections": "unchanged byte-for-byte as JSON; notes_with_matches unchanged; quoted prose count also unchanged",
+    "shared_filter_outputs": "Both maintained focused Introduction subcommands reproduce without tracked differences. No pinned research-input enumeration.",
+    "known_policy_scope": {
+      "criterion": "Entire expression token is two or more Hebrew letters followed by question/exclamation mark, absent as an entire prose-token item.",
+      "count": 4,
+      "items": [
+        {
+          "item": "הקלדה!",
+          "count": 9
+        },
+        {
+          "item": "ממ!",
+          "count": 4
+        },
+        {
+          "item": "ממרא!",
+          "count": 1
+        },
+        {
+          "item": "עמידתן?",
+          "count": 1
+        }
+      ],
+      "disposition": "Already represented in authority expression tokens; their positional treatment in prose is an owner-known policy question, not an automatic repair or evidence of lost source data."
+    },
+    "owner_remeasurement": "New record reports no quoted count change. Authority sections and the quoted prose entry are independently unchanged; documented-share algorithm was not remeasured here."
+  },
+  "actual_stages": [
+    {
+      "area": "basics",
+      "label": "inventory",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_sigil_inventory.py"
+      ],
+      "cwd": "/workspace/MAM-basics",
+      "started_utc": "2026-10-30T12:16:47.981507+00:00",
+      "completed_utc": "2026-10-30T12:16:48.679331+00:00",
+      "returncode": 0
+    },
+    {
+      "area": "basics",
+      "label": "focused-tests",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        "/workspace/scratch/review-hourly-20261030-1200/basics/test_sigil_compounds.py",
+        "py/tests/test_prose_mark_order.py",
+        "-q"
+      ],
+      "cwd": "/workspace/MAM-basics",
+      "started_utc": "2026-10-30T12:16:49.213501+00:00",
+      "completed_utc": "2026-10-30T12:16:50.755722+00:00",
+      "returncode": 0
+    },
+    {
+      "area": "basics",
+      "label": "rosters",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_intro_doc_audit.py",
+        "rosters"
+      ],
+      "cwd": "/workspace/MAM-basics",
+      "started_utc": "2026-10-30T12:16:50.756131+00:00",
+      "completed_utc": "2026-10-30T12:16:51.285799+00:00",
+      "returncode": 0
+    },
+    {
+      "area": "basics",
+      "label": "oleh-count",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_intro_doc_audit.py",
+        "oleh-count"
+      ],
+      "cwd": "/workspace/MAM-basics",
+      "started_utc": "2026-10-30T12:16:51.316383+00:00",
+      "completed_utc": "2026-10-30T12:16:51.503120+00:00",
+      "returncode": 0
+    },
+    {
+      "area": "basics",
+      "label": "format",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "-m",
+        "black",
+        "--check",
+        "py/sigils/inventory.py"
+      ],
+      "cwd": "/workspace/MAM-basics",
+      "started_utc": "2026-10-30T12:16:51.546762+00:00",
+      "completed_utc": "2026-10-30T12:16:51.778460+00:00",
+      "returncode": 0
+    }
+  ],
+  "failure_history": "No unexpected check failure or skip. Prior lint-resolution and other historical receipts remain immutable.",
+  "reviewer_repair": null,
+  "disposition": "Review complete with recorded known limits; no new consequential defect confirmed or source/editorial decision changed.",
+  "limits": [
+    "Focused execution only; no full suite/mega or broad-anchor advance.",
+    "Marked-form positional capture remains an owner-known policy question; no automatic repair or source note/report/issue operation.",
+    "No source-bot/download, font build/baseline, frozen regeneration, deployment/release, main/shared push, hbofonts action or new clone/worktree."
+  ],
+  "evidence": {
+    "readme": "doc/review-hourly-2026-10-30-1200-evidence/README.md",
+    "manifest": "doc/review-hourly-2026-10-30-1200-evidence/manifest.json",
+    "archive": "doc/review-hourly-2026-10-30-1200-evidence/focused-evidence.zip"
+  },
+  "checkout_restored": {
+    "utc": "2026-10-30T12:22:34.554327+00:00",
+    "head": "926a6e785be4236673ac4a5c8c34afe63ed417f4",
+    "branch": "work",
+    "status": "",
+    "registered_worktrees": 1
+  },
+  "remote_main_before_receipt": "573657b6d2847b5ddab11f4f9296b0cf11d4f46e",
+  "remaining_window": null,
+  "receipt_tree_not_tested_source": true,
+  "completed_utc": "2026-10-30T12:22:35.393831+00:00"
+}
