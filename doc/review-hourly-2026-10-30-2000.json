@@ -1,0 +1,225 @@
+{
+  "schema": "mam-basics-hourly-focused-2026-10-30-2000-1",
+  "state": "completed",
+  "scheduled": "2026-10-30T20:00:00Z",
+  "actual_first_clock": "2026-10-30T20:15:04Z",
+  "completed": "2026-10-30T20:26:20.856705+00:00",
+  "receipt_parent": "5f8735d22794441f1b64062cd3d33ad27ca8cd21",
+  "reviewed_from": "bbb8a23a589358974c1257102bc395f466c4cd90",
+  "frozen_source": "83a88bf9117f5aa10d9418079d26166a7f463380",
+  "reviewed_through": "78ef0f480b3e5789950b58281e5a0eea515deee4",
+  "broad_tested_unchanged": "fc9c6f14eea3b48bc152a394acc0ca1aef43aeb0",
+  "outcome": "Two known pen-stroke maintenance defects fixed on main78ef0f48; no executable/product/editorial change. No other confirmed consequential defect.",
+  "focused": "13focused tests pass after2reproduced failures repaired;669old extraction cases/1024mask roundtrips pass; explicit-xataf,24book build/106HTML and4SVG/overlay outputs exact;18file Black.",
+  "details": {
+    "initial_tests": "2failed,7passed",
+    "recheck_tests": "9passed",
+    "command_coverage": "4passed",
+    "independent": {
+      "old_varika_note_cases_preserved": 669,
+      "mappings": 670,
+      "extraction_failures": 0,
+      "metadata_only_changes": [
+        "1Kings 17:11",
+        "Psalms 14:1",
+        "Psalms 14:1",
+        "Psalms 53:2",
+        "Psalms 53:2"
+      ],
+      "valid_new_plus_control": 1,
+      "invalid_fold_refusals": 3,
+      "exhaustive_mask_roundtrips": 1024,
+      "repair_entrypoint_executable_ast_unchanged": true,
+      "generated_outputs_byte_identical": true,
+      "tracked_diff": [
+        "py/main_pen_stroke.py",
+        "py/tests/test_graphviz_version_pin.py"
+      ],
+      "crop_provenance_limit": "Tracked crops checked; original remote JPEG claims attributed, no source-image downloads/research."
+    },
+    "regeneration": "explicit-xataf670mappings/0failures and74extras; near-Aleppo24files+population/1557note reviews,106HTMLfiles;4stroke-SVGs andoverlay unchanged.",
+    "repair": {
+      "commit": "78ef0f480b3e5789950b58281e5a0eea515deee4",
+      "parent": "83a88bf9117f5aa10d9418079d26166a7f463380",
+      "files": [
+        "py/main_pen_stroke.py",
+        "py/tests/test_graphviz_version_pin.py"
+      ],
+      "justification": "Existing bare-heading documentation convention and exact unstamped-SVG inventory, preserving the stroke-profile lint.",
+      "main_push": "Verified fast-forward; no automatic deployment event in the only workflow."
+    }
+  },
+  "source_inputs": {
+    "basics_frozen": "83a88bf9117f5aa10d9418079d26166a7f463380",
+    "basics_patch_tree_later_committed": "78ef0f480b3e5789950b58281e5a0eea515deee4",
+    "private": "651e66af1b254cff11ea4cc0ec794700a8e1c647"
+  },
+  "stages": [
+    {
+      "name": "command-coverage-check",
+      "cwd": "/workspace/MAM-basics",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        "py/tests/test_mega_coverage.py",
+        "-q"
+      ],
+      "started": "2026-10-30T20:23:11.838081+00:00",
+      "elapsed_seconds": 2.484,
+      "exit": 0
+    },
+    {
+      "name": "dependency-refresh",
+      "cwd": "/workspace/MAM-basics",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "-r",
+        "requirements.txt",
+        "-c",
+        "constraints.txt"
+      ],
+      "started": "2026-10-30T20:15:56.519191+00:00",
+      "elapsed_seconds": 1.37,
+      "exit": 0
+    },
+    {
+      "name": "explicit-xataf-regeneration",
+      "cwd": "/workspace/MAM-basics",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_explicit_xataf.py"
+      ],
+      "started": "2026-10-30T20:17:53.339401+00:00",
+      "elapsed_seconds": 0.379,
+      "exit": 0
+    },
+    {
+      "name": "independent-audit-corrected",
+      "cwd": "/workspace/MAM-basics",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/novc_review_2000.py"
+      ],
+      "started": "2026-10-30T20:21:51.467031+00:00",
+      "elapsed_seconds": 0.574,
+      "exit": 0
+    },
+    {
+      "name": "near-aleppo-build-check",
+      "cwd": "/workspace/MAM-basics",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_near_aleppo.py",
+        "--build",
+        "--check"
+      ],
+      "started": "2026-10-30T20:17:56.946552+00:00",
+      "elapsed_seconds": 21.08,
+      "exit": 0
+    },
+    {
+      "name": "near-aleppo-html-check",
+      "cwd": "/workspace/MAM-basics",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_near_aleppo.py",
+        "--html",
+        "--check"
+      ],
+      "started": "2026-10-30T20:18:24.341545+00:00",
+      "elapsed_seconds": 27.37,
+      "exit": 0
+    },
+    {
+      "name": "owner-tested-tree-equivalence",
+      "cwd": "/workspace/MAM-basics",
+      "command": [
+        "git",
+        "diff",
+        "--quiet",
+        "61744c3e",
+        "83a88bf9117f5aa10d9418079d26166a7f463380"
+      ],
+      "started": "2026-10-30T20:24:36.641384+00:00",
+      "elapsed_seconds": 0.003,
+      "exit": 0
+    },
+    {
+      "name": "pen-stroke-derive",
+      "cwd": "/workspace/MAM-basics",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_pen_stroke.py",
+        "derive"
+      ],
+      "started": "2026-10-30T20:19:04.045647+00:00",
+      "elapsed_seconds": 0.584,
+      "exit": 0
+    },
+    {
+      "name": "pen-stroke-initial",
+      "cwd": "/workspace/MAM-basics",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        "py/tests/test_entry_point_subcommands.py::test_every_subcommand_is_documented_and_every_entry_registered[main_pen_stroke]",
+        "py/tests/test_graphviz_version_pin.py",
+        "py/tests/test_pen_stroke_svgs.py",
+        "-q"
+      ],
+      "started": "2026-10-30T20:16:13.464142+00:00",
+      "elapsed_seconds": 1.152,
+      "exit": 1
+    },
+    {
+      "name": "pen-stroke-render",
+      "cwd": "/workspace/MAM-basics",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_pen_stroke.py",
+        "render"
+      ],
+      "started": "2026-10-30T20:19:04.661043+00:00",
+      "elapsed_seconds": 0.242,
+      "exit": 0
+    },
+    {
+      "name": "pen-stroke-repair-check",
+      "cwd": "/workspace/MAM-basics",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        "py/tests/test_entry_point_subcommands.py::test_every_subcommand_is_documented_and_every_entry_registered[main_pen_stroke]",
+        "py/tests/test_graphviz_version_pin.py",
+        "py/tests/test_pen_stroke_svgs.py",
+        "-q"
+      ],
+      "started": "2026-10-30T20:16:48.545027+00:00",
+      "elapsed_seconds": 1.068,
+      "exit": 0
+    }
+  ],
+  "attributed_evidence": "Owner83a88bf9 reports1116passed/5skipped/2failed on61744c3e. Tree equivalence independently verified; the broad run was not ours. Both known failures independently reproduced and narrowly repaired.",
+  "limits": [
+    "No full mega/suite, font build/baseline/frozen hbofonts work, release/deployment, remote source bot/image downloads or manuscript re-interpretation.",
+    "Original source JPEG/pixel-match and legal/provenance statements remain attributed. The prototype hand-run/mega declaration explicitly remains a proposal; this run adopts no new process policy.",
+    "Explicit-xataf extras reproduce74entries including1uncategorized; not treated as a new failure."
+  ],
+  "helper_failure": "Initial reviewer-only audit error retained with code/log; corrected audit passes. No new project defect inferred from it.",
+  "evidence": "doc/review-hourly-2026-10-30-2000-evidence/README.md",
+  "archive_sha256": "a19f4433ec118eea3df18fcd13f39c3501612735ab374cac8795b63f1324e70b",
+  "remote_main": "78ef0f480b3e5789950b58281e5a0eea515deee4",
+  "pending_window": null,
+  "cleanup": {
+    "original_branch": "work",
+    "head": "926a6e785be4236673ac4a5c8c34afe63ed417f4",
+    "clean": true,
+    "task_source_ref_deleted": true,
+    "new_clones_or_worktrees": 0,
+    "all_actual_project_stages_sequential_and_stopped": true,
+    "remote_main": "78ef0f480b3e5789950b58281e5a0eea515deee4"
+  }
+}
