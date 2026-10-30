@@ -95,7 +95,9 @@ them merely because an issue links them; inspect only within the authorized task
       `py/mb_cmn/bib_locales.py`, writes this form from the short book names in that module's
       `_SH_*` constants. That day Ben retitled "2 Kings 19:25 note on Wikisource: say that BHL's
       Appendix A lists revia, with doubt" as "In the 2K19:25 doc-note, add that BHLA lists revia,
-      with doubt".
+      with doubt". Isaiah's short name is `I`, as in `I56:10`, although MAM-basics #335 and #341,
+      as Ben retitled them that day, write `Is36:12` and `Is56:10`. Ben, the same day: *"No need to
+      change existing uses of Is in issue titles to I, but consider I to be the standard."*
 6. **File it with** `gh issue create --repo bdenckla/<repo> --title "<title>" --body-file <file>`,
    the body file written as section 3 says, and give Ben the URL `gh` prints.
 
