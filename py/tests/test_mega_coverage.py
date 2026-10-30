@@ -157,16 +157,17 @@ _SEF_AND_OSIS_NOT_KEPT_CURRENT = (
 )
 
 # ---------------------------------------------------------------------------
-# A reason shared by the subcommands of one program, proposed by a Claude
-# session and not yet reviewed by Ben.
+# A reason shared by the subcommands of one program: Ben's decision on a
+# Claude-written proposal.
 # ---------------------------------------------------------------------------
 _PEN_STROKE_BY_HAND = (
-    "Claude-written proposal, not yet reviewed by Ben: the tool of the pen-stroke"
-    " exemplars, run by hand when a stroke-SVG's authored parts change.  Its stroke-SVGs"
-    " and overlay page under doc/pen-stroke-snips/ are no product, and the suite's"
-    " py/tests/test_pen_stroke_svgs.py derives every stroke-SVG again from its crop, so"
-    " a mega step would check nothing more.  Recorded in doc/pen-stroke-representation.md,"
-    ' under "Running the tool".'
+    "Ben's decision, 2026-10-30, on a Claude-written proposal: the tool of the pen-stroke"
+    ' exemplars, run by hand.  Ben: "this is not an appropriate part of mega, this is a'
+    ' very early-stage experiment."  Its stroke-SVGs and overlay page under'
+    " doc/pen-stroke-snips/ are no product.  The suite's py/tests/test_pen_stroke_svgs.py"
+    " derives every stroke-SVG again from its crop; nothing checks that the overlay page"
+    " is current.  Recorded in doc/pen-stroke-representation.md, under"
+    ' "Running the tool".'
 )
 
 # ---------------------------------------------------------------------------

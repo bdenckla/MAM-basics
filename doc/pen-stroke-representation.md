@@ -14,7 +14,7 @@ four crops showed.
 
 All are of 2026-10-30. The first nine were made in the planning session "Investigate a
 pen-stroke manuscript representation", whose plan was not committed, so this list is their
-record here.
+record here. Decisions 11 and 12 were made while Ben reviewed the first exemplars.
 
 1. **The unit is one crop, not a page.** Ben: "This is not about whole manuscripts or even whole
    pages. At least not yet." No page, column or line geometry is in scope, and no
@@ -41,11 +41,57 @@ record here.
     images from Sefaria and one from the Internet Archive to compare them; potracer became a
     dependency; the files live in `doc/pen-stroke-snips/` with this note in `doc/`; and Claude,
     not Ben, traced the strokes.
+11. **The levels transcribe the image with the text in hand; they automate nothing.** Ben:
+    "What we're doing here is in no way related to automated transcription to various
+    intermediate levels of abstraction (intermediate between pixels and Unicode)." And: "What
+    we're doing here is we have pixels, plus a Unicode transcription plus often some remarks
+    about the image, and we want to transcribe the image to intermediate levels of
+    abstraction." The work does not climb the levels: "we're not working up a ladder of
+    abstraction, we're working "inward" (or jumping around inside, with arbitrary feedback from
+    different levels of abstraction, downward and upward) from two extremes of abstraction
+    (Unicode and pixels)." Only level 1 might be made without the text: "Only perhaps the first
+    level of filled beziers, that tries to describe ink, could be automated without reference to
+    Unicode or the remarks." Ink that no letter or mark of the transcription accounts for is
+    transcribed too. His example of such a remark is "there's an unexplained, seemingly-stray
+    mark above the letter ב that I think is ink so we better transcribe it even though it is
+    part of no letter or mark in the Unicode transcription". He framed the task three more ways
+    the same day:
+    1. **The unaged page.** The strokes say "here's what I think the image would look like, if
+       it hadn't aged at all and was written on a perfectly clean, white surface". Colour stays
+       the other view: "But also color to show different strokes is an important view still,
+       just to be clear."
+    2. **A history of the writing.** "I.e. part of this is proposing a history of how the text
+       was written, and maybe even animations showing some sort of abstract representation of
+       the nib drawing it out."
+    3. **A plausible history, not the real one.** The temporal aspects "just need to be a
+       plausible of sequence of events"; Ben confirmed that the words before that, "need to
+       correspond to reality", meant "don't need to". "Particularly with respect to overlaps, it
+       doesn't really matter who is "on top" of who. But it would be sort of perverse not to
+       show (1) letters before diacritics (because we strongly suspect that *is* the historical
+       order of things and (2) show each pass (letter-pass, diacritic-pass) in right-to-left
+       order."
+
+    The profile does not yet record a stroke's direction, its place in the writing or its pass,
+    and `py/main_pen_stroke.py render` draws no black-on-white view.
+12. **The nib model is calligraphic: a stroke's width may vary along its course.** Ben:
+    "Absolutely a "calligraphic" nib model is needed, by which I mean one in which stroke-width
+    is modulated (or can be modulated) throughout the course of a stroke. It doesn't matter what
+    the physical analogy is, or how close that analogy is to the historical quill or reed or
+    whatever. Width-modulation could even be done with a fine brush, for all we care (although
+    line endings would probably be different with a brush)." The stiff nib this profile
+    implements, below, is the special case in which nothing varies along a stroke. The bound on
+    the modulation is not yet set. In the planning session, behind decision 6, Ben asked for
+    pen strokes "where the frequency (and/or other characteristics) of the width modulation is
+    limited to what seems physically possible". Without a bound, a stroke could follow every
+    irregularity of its ink, and the excursions that decision 3 treats as information would
+    vanish.
 
 ## The ladder
 
-Each level adds one kind of interpretation and is authored or derived separately, so a
-disagreement at a higher level never rewrites a lower one.
+Each level holds one kind of interpretation and is authored or derived separately. The work
+does not climb the levels in order. It proceeds inward from the two ends, the crop's pixels and
+a Unicode transcription, and a reading at any level may send it back to revise another
+(decision 11).
 
 | Level | What it holds | Authored or derived |
 | --- | --- | --- |
@@ -160,6 +206,7 @@ From the repository root, with the clone's own environment, as
 6. `render` writes `doc/pen-stroke-snips/overlays.html`: each stroke-SVG over its crop, with
    every layer switchable, and each crop's and stroke's figures.
 
-The mega does not run the tool. `py/tests/test_mega_coverage.py` declares its subcommands, as a
-Claude-written proposal awaiting Ben's review: they are run by hand, and the suite's lint
-already derives every file again.
+The mega does not run the tool, by Ben's decision of 2026-10-30: "this is not an appropriate part
+of mega, this is a very early-stage experiment." `py/tests/test_mega_coverage.py` declares its
+subcommands with that reason. The suite's lint derives every stroke-SVG again, but nothing
+checks that `overlays.html` is current, so `render` is rerun by hand after any change.
