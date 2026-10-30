@@ -1,6 +1,7 @@
 """Extraction of explicit-xataf words from נוסח template arguments."""
 
 import re
+import unicodedata
 
 from mb_cmn import hebrew_points as hpo
 from mb_cmn import hebrew_punctuation as hpu
@@ -34,6 +35,19 @@ _BARE_WORD_RE = re.compile(
     r"(" + _HEB_WORD_CHARS + r"+)"  # capture group for the word
     r">?"  # optional closing angle bracket
     r"\s*[(<]"  # space then '(' or '<' for annotation/question
+)
+
+# Pattern 3: sigla=plus form (packed form) — plus notation writes one letter twice,
+# joined by '+', each copy with some of that letter's marks; the packed form after it,
+# in parentheses, writes the letter once with all of them, and is the word returned.
+_HEB_ATOM_CHARS = rf"[{hpo.RECC_HEBR}]"  # Hebrew, maqaf, CGJ and varika; no space
+_SIGLA_PLUS_FORM_RE = re.compile(
+    r"([^\s=]+)"  # capture 1: sigil(s), as in pattern 1
+    r"="  # equals sign separating sigla from the plus form
+    r"(" + _HEB_ATOM_CHARS + r"+\+" + _HEB_ATOM_CHARS + r"+)"  # capture 2: plus form
+    r" \("  # space then '(' before the packed form
+    r"(" + _HEB_ATOM_CHARS + r"+)"  # capture 3: the packed form
+    r"\)"  # and its closing parenthesis
 )
 
 
@@ -95,13 +109,51 @@ def _has_xataf(word):
 _MATCH_KINDS = {
     _SIGLA_WORD_RE: "sigla=word",
     _BARE_WORD_RE: "bare-word",
+    _SIGLA_PLUS_FORM_RE: "sigla=plus-form",
 }
+
+# The patterns in the order tried, each with the group holding its word.
+_PATTERN_WORD_GROUPS = (
+    (_SIGLA_WORD_RE, 2),
+    (_BARE_WORD_RE, 1),
+    (_SIGLA_PLUS_FORM_RE, 3),
+)
 
 
 def _sigla_detail(match):
-    """Build sigla_detail dict from a _SIGLA_WORD_RE match."""
+    """Build sigla_detail dict from a _SIGLA_WORD_RE or _SIGLA_PLUS_FORM_RE match."""
     sigil = match.group(1)
     return {"sigla": sigil}
+
+
+def _letters(form):
+    return "".join(ch for ch in form if unicodedata.category(ch) != "Mn")
+
+
+def _check_plus_form(match):
+    """Raise unless the plus form folds into the packed form: the letters on the two
+    sides of '+' are one letter, which the packed form writes once among the same
+    letters."""
+    plus_form, packed = match.group(2), match.group(3)
+    before, after = (_letters(part) for part in plus_form.split("+"))
+    if before[-1:] != after[:1] or before + after[1:] != _letters(packed):
+        raise ValueError(
+            f"plus form {plus_form!r} does not fold into its packed form {packed!r}"
+        )
+
+
+def _xataf_match(s, kind_suffix=""):
+    """The first pattern match in s whose word has a ḥataf, as extract_xataf_word
+    returns it, or None."""
+    for regex, word_group in _PATTERN_WORD_GROUPS:
+        for match in regex.finditer(s):
+            if regex is _SIGLA_PLUS_FORM_RE:
+                _check_plus_form(match)
+            word = match.group(word_group).strip()
+            if _has_xataf(word):
+                detail = _sigla_detail(match) if regex is not _BARE_WORD_RE else None
+                return word, _MATCH_KINDS[regex] + kind_suffix, detail
+    return None
 
 
 def extract_xataf_word(arg1):
@@ -112,24 +164,12 @@ def extract_xataf_word(arg1):
     sigla_detail is a dict with "sigil" and "operator" for sigla matches, else None.
     """
     # Try each individual string first
-    strings = flatten_arg1_strings(arg1)
-    for s in strings:
-        for regex in (_SIGLA_WORD_RE, _BARE_WORD_RE):
-            for match in regex.finditer(s):
-                word_group = 2 if regex is _SIGLA_WORD_RE else 1
-                word = match.group(word_group).strip()
-                if _has_xataf(word):
-                    detail = _sigla_detail(match) if regex is _SIGLA_WORD_RE else None
-                    return word, _MATCH_KINDS[regex], detail
+    for s in flatten_arg1_strings(arg1):
+        if found := _xataf_match(s):
+            return found
     # Try the joined string (handles angle brackets split across elements)
-    joined = join_arg1_strings(arg1)
-    for regex in (_SIGLA_WORD_RE, _BARE_WORD_RE):
-        for match in regex.finditer(joined):
-            word_group = 2 if regex is _SIGLA_WORD_RE else 1
-            word = match.group(word_group).strip()
-            if _has_xataf(word):
-                detail = _sigla_detail(match) if regex is _SIGLA_WORD_RE else None
-                return word, _MATCH_KINDS[regex] + "+joined", detail
+    if found := _xataf_match(join_arg1_strings(arg1), "+joined"):
+        return found
     return None, None, None
 
 
