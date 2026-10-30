@@ -1,0 +1,100 @@
+{
+  "schema": "mam-basics-hourly-focused-20261030-2300-1",
+  "state": "completed",
+  "scheduled": "2026-10-30T23:00:00Z",
+  "actual_first_clock": "2026-10-30T23:16:28Z",
+  "completed": "2026-10-30T23:17:57.639174+00:00",
+  "receipt_parent": "ac413fa91164485b3a26ff25f892acc94bd3b3e8",
+  "reviewed_from": "78ef0f480b3e5789950b58281e5a0eea515deee4",
+  "reviewed_through": "f1c7458a245a65a344c6be79139c9159020fd9a8",
+  "broad_tested_unchanged": "fc9c6f14eea3b48bc152a394acc0ca1aef43aeb0",
+  "source_scope": {
+    "commits": 1,
+    "paths": [
+      "doc/pen-stroke-representation.md",
+      "py/tests/test_mega_coverage.py"
+    ]
+  },
+  "classification": "Documentation/process clarification and a test rationale-string update; no product/generator behavior change.",
+  "disposition": "No consequential defect or repair. Preserve the intentional research decisions: pixels and Unicode together, unexplained ink included, only level1potentially automated, plausible history need not reproduce the actual sequence, variable width with bound undecided, experiment outside mega. No experiment work implemented.",
+  "independent_checks": {
+    "source": "f1c7458a245a65a344c6be79139c9159020fd9a8",
+    "base": "78ef0f480b3e5789950b58281e5a0eea515deee4",
+    "paths": [
+      "doc/pen-stroke-representation.md",
+      "py/tests/test_mega_coverage.py"
+    ],
+    "only_python_ast_change": "The constant _PEN_STROKE_BY_HAND rationale string; all other AST nodes unchanged.",
+    "commands": [
+      {
+        "name": "mega-coverage",
+        "command": [
+          ".venv/bin/python",
+          "py/main_test.py",
+          "py/tests/test_mega_coverage.py",
+          "-q"
+        ],
+        "cwd": "/workspace/MAM-basics",
+        "started": "2026-10-30T23:17:11.003182+00:00",
+        "elapsed_seconds": 3.245,
+        "exit": 0,
+        "output_sha256": "005a2110e74e7bd5a852364c499fba171b176dcebc0f7f6d545dcde053b3c748"
+      },
+      {
+        "name": "black",
+        "command": [
+          ".venv/bin/python",
+          "-m",
+          "black",
+          "--check",
+          "py/tests/test_mega_coverage.py"
+        ],
+        "cwd": "/workspace/MAM-basics",
+        "started": "2026-10-30T23:17:14.248110+00:00",
+        "elapsed_seconds": 0.314,
+        "exit": 0,
+        "output_sha256": "1a56c7cd8457fd05d978cfbd139d7bfd86e86acaa9b57668e718ef8bccc0cf48"
+      },
+      {
+        "name": "whitespace",
+        "command": [
+          "git",
+          "diff",
+          "--check",
+          "78ef0f480b3e5789950b58281e5a0eea515deee4",
+          "f1c7458a245a65a344c6be79139c9159020fd9a8"
+        ],
+        "cwd": "/workspace/MAM-basics",
+        "started": "2026-10-30T23:17:14.561973+00:00",
+        "elapsed_seconds": 0.006,
+        "exit": 0,
+        "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ],
+    "project_tests": "4passed,0failures,0skips",
+    "tracked_writes": 0,
+    "omitted": "No generator/product/experiment/font/browser/broad execution; no sibling commands or new source interpretation."
+  },
+  "outputs": {
+    "mega-coverage": "....                                                                     [100%]\n4 passed in 1.52s\n",
+    "black": "All done! ✨ 🍰 ✨\n1 file would be left unchanged.\n",
+    "whitespace": ""
+  },
+  "policy": "Current review-trial.md read; AGENTS, review policy and skill paths unchanged in endpoint. Prior ac413fa9 reviewed/focused and broad history preserved.",
+  "attribution": "The document records Ben decisions and quoted historical statements. Parent supplied these as intentional decisions; no new authority or historical/manuscript research inferred.",
+  "skips_and_limits": [
+    "No generator, full mega/suite, crop/experiment/browser run, font build/regeneration/baseline acceptance, publication/deployment or main push; none warranted by this text-only behavior scope.",
+    "Private unchanged per parent cheap check at651e66af; no Private executor/review/receipt work. Earlier limits and historical frozen hbofonts evidence retained, not rechecked."
+  ],
+  "failures": [],
+  "cleanup": {
+    "original_work_branch_restored": true,
+    "head": "926a6e785be4236673ac4a5c8c34afe63ed417f4",
+    "clean": true,
+    "new_clones_or_worktrees": 0,
+    "temporary_source_ref_created": false,
+    "all_owned_project_checks_stopped": true
+  },
+  "remote_main": "f1c7458a245a65a344c6be79139c9159020fd9a8",
+  "pending_window": null
+}
