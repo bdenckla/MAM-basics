@@ -29,3 +29,7 @@ uharfbuzz
 vharfbuzz
 collidoscope
 fonttools
+# The pen-stroke exemplars, py/pen_stroke/: a pure-Python port of Potrace traces a crop's
+# thresholded ink as filled Bezier outlines, the representation's level 1 (Ben's approval,
+# 2026-10-30).
+potracer
