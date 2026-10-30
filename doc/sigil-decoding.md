@@ -104,7 +104,7 @@ The main sources currently identified are:
    https://he.wikisource.org/wiki/ויקיטקסט:מבוא_למקרא_על_פי_המסורה/נספחים
 
    **A verbatim copy of this page is mirrored at `in/mam-ws-intro/appendices.mediawiki`**, so
-   read that rather than fetching anything: 566 lines and about 146,000 characters, of which the
+   read that rather than fetching anything: 574 lines and about 148,000 characters, of which the
    manuscript roster is the first hundred or so. `in/mam-ws-intro/manifest.json` records the
    revision and timestamp of the copy, and
    `.venv/Scripts/python.exe py/main_download.py fr-ws-intro` refreshes all thirteen pages of
@@ -187,7 +187,7 @@ translation-policy glossary.)
 |---|---|---|---|---|
 | א | Aleppo Codex | Confirmed | Accordance header, Wikisource | Also appears as כתי״א in prose contexts. |
 | א(ק) | Aleppo Codex according to Yehoshua Kimhi's testimony | Confirmed | JC3 sigil list, private annex §1 | This is not Aleppo corroborated by Cairo. The AI gloss that read it that way was incorrect. |
-| א(ס) | Aleppo Codex according to Jacob Sapir's notes in Me'orot Nathan | Confirmed | Wikisource, Accordance header | Both sources tie this specifically to Jacob Sapir and Me'orot Nathan. The appendix specifies "the second copy, in manuscript" (עותק שני, כתב־היד). In the corpus it appears mostly inside an angle-bracket query, `<א(ס)=חטף פתח? כן>` — "does Sapir record a hataf patah here? yes" — 193 prose occurrences. |
+| א(ס) | Aleppo Codex according to Jacob Sapir's notes in Me'orot Nathan | Confirmed | Wikisource, Accordance header | Both sources tie this specifically to Jacob Sapir and Me'orot Nathan. The appendix specifies "the second copy, in manuscript" (עותק שני, כתב־היד). In the corpus it appears mostly inside an angle-bracket query, `<א(ס)=חטף פתח? כן>` — "does Sapir record a hataf patah here? yes" — 213 prose occurrences. |
 | א(ו) | Aleppo Codex according to the notes of R. Shmuel Vital in the responsa *Be'er Mayim Ḥayyim* §27 | Confirmed | Wikisource | The appendix lists five "testimonies to the codex's text in its missing parts" (כינויים לעדויות על נוסח כתב־היד בחלקיו החסרים), each a letter in parentheses after א: ו for **ו**יטל, ס for **ס**פיר, ע for **ע**מאדי, ק for **ק**מחי, ר for Cassuto's **ר**שימות. Added 2026-08-23 when the near-Aleppo work needed to know which sigla count as testimony of Aleppo; before that only א(ק) and א(ס) had rows. |
 | א(ע) | Aleppo Codex according to the notes of Yishai Amadi, as published in Yitzhak Penkower, *Nusaḥ ha-Torah be-Keter Aram Tsova: Edut Ḥadasha* (Bar-Ilan, 1993) | Confirmed | Wikisource | Amadi's notes are in a printed Pentateuch; Penkower's book is based on them. |
 | א(ר) | Aleppo Codex according to the lists (רשימות) of M. D. Cassuto, as published by Yosef Ofer | Confirmed | Wikisource | The appendix says these lists carry, among other things, explicit testimony to the codex's Torah *ketiv*, which Cassuto copied from a slip R. Menashe Sathon had written after collating the codex against a printed Pentateuch and pasted onto its leather cover. |
@@ -195,10 +195,10 @@ translation-policy glossary.)
 | ב | Ms Or 4445 in the British Library (Torah) | Confirmed | Accordance header, Wikisource | Also appears as כתי״ב in prose contexts. |
 | ב1 | British Library Or. 2375 | Confirmed | JC3 sigil list, MAM-with-doc corpus evidence | Frequently cited in Ketuvim contexts; often described in prose as a Yemenite manuscript. |
 | ג | Ms Gaster 1, British Library Or. 9879 (fragments of Ketuvim; Egypt, 10th century) | Confirmed | Wikisource | The appendix writes this `כתי"ג` and bolds the ג of גסטר to explain the letter. The corpus spells the same manuscript `גסטר1`, which has its own row below; the two are one manuscript, not two. A bare `ג` in a note is more often a chapter number than this sigil — see "Not every frequent token is a sigil" below. |
-| ה | Codex Hilleli, Ms New York JTS 401 (= L44a); Toledo, Spain, 1241 | Confirmed | Wikisource | `ה` in Breuer, and `כתי"ה` in the appendix. A Sephardic manuscript, so it normally stands beside ש2, פריז 25 and תנ"ך ליסבון. 41 authority-expression occurrences. |
-| ו | The Washington Pentateuch, Museum of the Bible, Washington DC, Ms. 882 (Torah; Eastern script, 11th century) | Confirmed | Wikisource | `כתי"ו` in the appendix, `WP` at IHBMR. One of the seven manuscripts MAM checked through most of the Torah — 589 authority-expression occurrences, plus 22 of `ו?` — yet it had no entry here until 2026-08-06, which made it the most frequent sigil this file left undecoded. It is sixth by frequency overall, behind א (1,378), ל (1,148), ש1 (1,023), ק3 (706) and ש (704), each of which has a row above; this cell called it "the highest-frequency sigil in the whole inventory" until 2026-08-27, which those five counts contradict and always did. |
+| ה | Codex Hilleli, Ms New York JTS 401 (= L44a); Toledo, Spain, 1241 | Confirmed | Wikisource | `ה` in Breuer, and `כתי"ה` in the appendix. A Sephardic manuscript, so it normally stands beside ש2, פריז 25 and תנ"ך ליסבון. 50 authority-expression occurrences. |
+| ו | The Washington Pentateuch, Museum of the Bible, Washington DC, Ms. 882 (Torah; Eastern script, 11th century) | Confirmed | Wikisource | `כתי"ו` in the appendix, `WP` at IHBMR. One of the seven manuscripts MAM checked through most of the Torah — 684 authority-expression occurrences, plus 30 of `ו?` — yet it had no entry here until 2026-08-06, which made it the most frequent sigil this file left undecoded. It is sixth by frequency overall, behind ל (1,922), א (1,497), ש1 (1,126), ש (791) and ק3 (767), each of which has a row above; this cell called it "the highest-frequency sigil in the whole inventory" until 2026-08-27, which those five counts contradict and always did. |
 | ותיקן-448 | Vatican Ms 448 | Confirmed | MAM-with-doc corpus evidence | The shelfmark is already explicit in the corpus form; prose notes also cite the same manuscript as `vat448`. |
-| ט3 | Ms Tbilisi 3, the "Keter Lailashi" / "Ḥumash Lailashi" (Torah; Eastern script, 10th or 11th century) | Confirmed | Wikisource | The appendix says MAM did not use it in preparing the edition, and cites it to enrich the documentation of the text. Four authority-expression occurrences: Genesis 45:14, Numbers 11:24, Numbers 16:18 and Deuteronomy 16:2. This cell said "One authority-expression occurrence, at Genesis 45:14" until 2026-08-27; the other three sites are notes the inventory did not reach until `e37b8ad` rebuilt it. |
+| ט3 | Ms Tbilisi 3, the "Keter Lailashi" / "Ḥumash Lailashi" (Torah; Eastern script, 10th or 11th century) | Confirmed | Wikisource | The appendix says MAM did not use it in preparing the edition, and cites it to enrich the documentation of the text. Five authority-expression occurrences: Genesis 45:14, Leviticus 26:43, Numbers 11:24, Numbers 16:18 and Deuteronomy 16:2. This cell said "One authority-expression occurrence, at Genesis 45:14" until 2026-08-27, and named four sites until 2026-10-29. Numbers 11:24, Numbers 16:18 and Deuteronomy 16:2 are notes the inventory did not reach until `e37b8ad` rebuilt it. At Leviticus 26:43 the sigil begins a line of its note, and the inventory ran that line into the one before it until `5cb06e2` (2026-09-11). |
 | ק | Cairo Codex of the Prophets | Confirmed | Accordance header, Wikisource | Also appears as כתי״ק in prose contexts. |
 | ק2 | Cairo 27 (Former Prophets), written by Samuel ben Jacob in the 10th or 11th century, close to Aleppo | Confirmed | Wikisource | `כת"יק2` in the appendix, which says MAM used it rarely. Added 2026-08-23. |
 | ק25 | Cairo 25 (Latter Prophets), c. 11th century; Isaiah 7:20 to Malachi 3:2 | Confirmed | Wikisource | `כת"יק25` in the appendix, which says MAM used it rarely and that its black-and-white photograph does not always capture the points and accents. Added 2026-08-23. |
@@ -336,7 +336,9 @@ tracked here at `in/mam-ws/C1-Isaiah.json`, so the missing comma is MAM's rather
 MAM-parsed introduced. Anyone re-deriving the two rows from the corpus alone will therefore get
 `ל` 139, `ד` 5 and `לד` 1 — the figures this file carried on the morning of 2026-08-27 — and
 that gap is the correction, not a measurement error. Whether the comma is repaired in MAM itself
-is Ben's decision and nothing here presumes it; no live wiki was touched.
+was Ben's decision. On 2026-10-29 he had #341 filed, which asks Avi to write `מסורת-ל,ד` here
+and to write Psalms 80:16's run of sigla `אלש1ת` as the list `א,ל,ש1,ת`. Neither edit had been
+made on the wiki when #341 was filed.
 
 #### How a qualifier attaches
 
@@ -665,9 +667,9 @@ this section looking finished. Three St Petersburg shelfmarks are named as outst
 ### That table was wrong for months, and how the gap was found
 
 Until 2026-08-06 the table above listed ב2 alone, which read as "one sigil left to decode."
-The real backlog was larger, and `ו` was in it: 589 authority-expression occurrences, the most
-frequent sigil this file had no entry for. It is sixth in the inventory overall, behind `א`, `ל`,
-`ש1`, `ק3` and `ש`, each of which had an entry already. `ה` (41 occurrences, Codex
+The real backlog was larger, and `ו` was in it: 684 authority-expression occurrences, the most
+frequent sigil this file had no entry for. It is sixth in the inventory overall, behind `ל`, `א`,
+`ש1`, `ש` and `ק3`, each of which had an entry already. `ה` (50 occurrences, Codex
 Hilleli) and `ת451` were missing too, as were both Taj entries. All five are in the tables above
 now, from the Wikisource appendix.
 
@@ -682,25 +684,25 @@ rules in `~/.claude/CLAUDE.md`.
 #### The 2026-08-26 run, and one trap in the comparison itself
 
 **Parse the `###` headings as well as the tables, or the comparison's biggest gap is a false
-one.** `ק-מ` is the most frequent hyphenated token in the inventory, 337 occurrences, and it is
+one.** `ק-מ` is the most frequent hyphenated token in the inventory, 357 occurrences, and it is
 documented here under an "Important Uncertainties And Conflicts" heading and in no table at all;
 so are `ב2` and `ל-מ`. A table-only parse reports all three as undecoded. (`ב2` gained a table row
 on 2026-08-27, in "Retired sigla" above, when it was resolved; it keeps its `###` heading too, and
 the other two are unchanged, so the warning stands as written for `ק-מ` and `ל-מ`.)
 
-Of 2,370 `expression_tokens`, 151 are documented after stripping a prefix letter, a trailing
+Of 897 `expression_tokens`, 122 are documented after stripping a prefix letter, a trailing
 `?`, or both; the combined strip decides exactly one token, `(א?` — the rule stated here omitted
-that arm until 2026-09-01, and without it the count is 150. Most of the remainder is the prose
+that arm until 2026-09-01, and without it the count is 121. Most of the remainder is the prose
 noise the next section describes.
 
-**That 151 replaces a 177 that cannot be reproduced, and the reason is worth recording against the
-advice this section gives.** The 2026-08-26 run recorded 177 against the 2,363 `expression_tokens`
+**The rule's first figure, 151 of the 2,370 `expression_tokens` at `8fe3dff`, replaced a 177 that
+cannot be reproduced, and the reason is worth recording against the advice this section gives.** The 2026-08-26 run recorded 177 against the 2,363 `expression_tokens`
 the inventory held then, and wrote its comparison in a `.novc/` scratch script — which is what the
 paragraph above tells a run to use — so the algorithm behind 177 went into the bin with the script.
 Re-run on 2026-08-27 against that same historical inventory and against this file as it then stood,
 the comparison gives anything from 147 to 437, depending on how the documented set is parsed and on
 how far a token is stripped back; nine such combinations bracket 177 without reaching it. So 177 is
-not merely stale, it is unverifiable. The 151 above is measured by a rule stated here rather than
+not merely stale, it is unverifiable. That 151 was measured by a rule stated here rather than
 inherited: **the documented set is every table's first column plus every word of every `###` and
 `####` heading, and a token counts as documented when the token, or the token without a trailing
 `?`, or the token without its first letter, is in that set.** State the rule beside the number in
@@ -708,9 +710,9 @@ the next pass as well, or that pass hands the same problem on.
 
 What the 2026-08-26 run turned up that was real:
 
-- **Acted on in this pass**, all of it now covered by the qualifier section above: `מ"ק-א` (9),
-  `א-מ"ק` (2), `ומסורות-א` (63), `ומסורת-ש1` (4) and `וקונטרסי-א` (3).
-- **Left for a later pass**, three St Petersburg shelfmarks. `פטרבורג-EVR-II-B-55` (8) is the
+- **Acted on in this pass**, all of it now covered by the qualifier section above: `מ"ק-א` (19),
+  `א-מ"ק` (2), `ומסורות-א` (62), `ומסורת-ש1` (4) and `וקונטרסי-א` (3).
+- **Left for a later pass**, three St Petersburg shelfmarks. `פטרבורג-EVR-II-B-55` (10) is the
   manuscript already documented above as `ל-א`, but that spelling has no row, which is the same
   alias situation as `ג` and `גסטר1`; Job 23:5 also misspells it `פרטבורג-EVR-II-B-55`.
   `פטרבורג-EVR-II-B-81?` (2) and `פטרבורג-EVR-II-B-26` (1) both occur at Joshua 1:7 and have no
@@ -735,7 +737,7 @@ What the 2026-08-26 run turned up that was real:
   named printed edition where `דפוסים` is the broad set.
 
 **The inventory's counts are not corpus counts, so do not quote them as such.** It captures
-tokens near `=` rather than every occurrence: it records `מ"ק-א` 9 times where MAM-parsed has 22.
+tokens near `=` rather than every occurrence: it records `מ"ק-א` 19 times where MAM-parsed has 22.
 Use it to find candidates, and count them against `MAM-parsed/plus/` itself.
 
 ### Not every frequent token is a sigil
@@ -744,15 +746,19 @@ The subtraction above surfaces noise as well as sigils, because the inventory to
 punctuation and keeps whatever looks sigil-shaped. Confirmed non-sigils, so that no later pass
 tries to decode them:
 
-- **`ח`** (34 occurrences) — the chapter number in `ובספר טעמי המקרא פרק ח`, a citation of chapter
+- **`ח`** (16 occurrences) — the chapter number in `ובספר טעמי המקרא פרק ח`, a citation of chapter
   8 of Breuer's *Ṭaʿamei ha-Miqra*. Not a manuscript.
-- **A bare `ג`** (3 occurrences) — a chapter number in verse references such as `לעיל ג,יז`. The
-  manuscript sigil `ג` is always written `כתי"ג` in the appendix and `גסטר1` in the corpus.
-- **Ordinary Hebrew words** — `כן`, `וכמו`, `וכך`, `ראו`, `אצל`, `לפי`, `יש`, `את`, `של` and the
-  like all clear a count of 20.
-- **Run-together tokens** such as `ובדפוסיםל` (46 occurrences), where a note part ends and the
-  next begins with no separator between them. That one is an inventory defect rather than a
-  decoding question.
+- **A bare `ג`** — a chapter number in verse references such as `לעיל ג,יז`. It had 3
+  occurrences until `5cb06e2` (2026-09-11) stopped an expression from running on across a line
+  break, and the build at `ae3072b` has none. The manuscript sigil `ג` is always written `כתי"ג`
+  in the appendix and `גסטר1` in the corpus.
+- **Ordinary Hebrew words** — `כן` (157), `וכמו` (156), `וכך` (32), `לפי` (24), `ראו` (23),
+  `של` (20), `אצל` (16), `יש` (12), `את` (6) and the like.
+- **Run-together tokens** such as `ובדפוסיםל`, 46 occurrences at `8fe3dff`, where one line of a
+  note ran into the next with no separator between them. That was an inventory defect rather
+  than a decoding question, and `5cb06e2` (2026-09-11) fixed it by rendering the line-break
+  template `{{ש}}` as a line break rather than as nothing. The build at `ae3072b` has no
+  `ובדפוסיםל`.
 
 This is the same hazard `CLAUDE.md` records for issue citations, where `#NN` sometimes names a
 Yeivin section and sometimes a colour: read the surrounding sentence before deciding what a token
@@ -803,3 +809,25 @@ Current inclination recorded for experimentation:
   `plus/`, and neither the `ב2` repoint in Daniel nor the Chronicles note that now renders moves
   any qualifier's count inside a hyphenated compound (checked 2026-08-27, both files, all eleven
   qualifiers).
+- **Re-measured on 2026-10-29 against `out/sigil-inventory.json` at `ae3072b`, which is built from
+  `MAM-parsed/plus/` at the same commit.** These figures moved since `8fe3dff`: `ו` 589 to 684,
+  `ו?` 22 to 30, `א` 1,378 to 1,497, `ל` 1,148 to 1,922, `ש1` 1,023 to 1,126, `ק3` 706 to 767,
+  `ש` 704 to 791, `ה` 41 to 50, `ט3` 4 to 5, `ק-מ` 337 to 357, `מ"ק-א` 9 to 19, `ומסורות-א` 63
+  to 62, `פטרבורג-EVR-II-B-55` 8 to 10, `ח` 34 to 16, `ג` 3 to none, `ובדפוסיםל` 46 to none,
+  `א(ס)` 193 to 213 in prose, the ordinary words of "Not every frequent token is a sigil", and the
+  documented share of `expression_tokens`, from 151 of 2,370 to 122 of 897. Unchanged: `א-מ"ק` 2,
+  `ומסורת-ש1` 4, `וקונטרסי-א` 3, `פטרבורג-EVR-II-B-81?` 2, `פטרבורג-EVR-II-B-26` 1, Job 23:5's
+  `פרטבורג-EVR-II-B-55` 1, and MAM-parsed's 22 of `מ"ק-א`. Little of this is MAM's own change:
+  run on today's data, `8fe3dff`'s code gives each of these token counts within eight of its
+  2026-08-27 value, `ל` 1,151 for instance where `ae3072b` gives 1,922. Nearly all of it is
+  `5cb06e2` (2026-09-11), which rendered the line-break template `{{ש}}` as a line break rather
+  than as nothing, ended a clause at a line break, and removed pointed Hebrew from an expression
+  before splitting it into tokens. Until then the lines of a note ran together, so a siglum
+  beginning a line was fused onto the last word of the line before, as in `ובדפוסיםל`, and an
+  expression ran on into the next line's prose, which is where 18 of the 34 `ח` and all 3 `ג`
+  came from. Of the 1,600 tokens that `8fe3dff`'s code finds in today's data and `ae3072b` does
+  not, 695 contain pointed Hebrew, and the other 905 are mostly fused tokens and swept-in prose
+  like those. The prose-pattern fixes of `8339eb1` and `ae3072b` moved none of these figures. The
+  qualifier table and the other corpus counts, each with its own MAM-parsed anchor, were not
+  re-measured. The size of the appendix mirror in "Source Hierarchy" was re-measured the same
+  day: 566 lines then, 574 now.
