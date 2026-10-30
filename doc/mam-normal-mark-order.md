@@ -103,6 +103,16 @@ In the maintained Deuteronomy comparison, Jeremiah adjudication and Lamentations
 proposal notes, only their named literal-quotation containers are exempt. Their
 authored prose remains checked. Neither exception changes the preserved strings.
 
+**A quotation in authored prose takes MAM-normal order unless it claims to be byte-accurate.**
+Ben decided so on 2026-10-30, settling the plus-notation form of תיראום that
+`py/ws/ws_bot_edit_history.md` quotes from the Deuteronomy 3:22 bot edit, which a Codex
+review had classed as a byte-verbatim copy of the edit's text: "If this doesn't claim to
+literally be a byte-accurate record of what is up on Wikisource (as I recall what is
+literally up on wikisource is NFC), then show it in MAM-standard order, not NFC/Wikisource
+order." That entry makes no such claim, so its form keeps the MAM-normal order that
+`10708b47` gave it, and the lint has no exemption for it. A quotation that does make the
+claim is a capture, and needs a named exemption with its reason, like those above.
+
 Scope: only those five code points have a declared priority. A vowel and an accent pass in either order, so
 `has_std_mark_order` says nothing about which of them comes first.
 
