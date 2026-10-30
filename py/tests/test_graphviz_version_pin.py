@@ -55,10 +55,17 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 # as the source. It is kept as the historical original, carries no Graphviz
 # stamp, and never will. The shared site favicon is also hand-authored rather
 # than Graphviz output; its SVG contains only the icon's geometry and colors.
+# The four pen-stroke exemplars combine authored medians and judgments with
+# crop-derived outlines, not Graphviz output. test_pen_stroke_svgs.py checks
+# their profile and derived geometry against the adjacent PNG crops.
 _EXPECTED_UNSTAMPED = frozenset(
     {
         "doc/process-documentation/MAM process original.svg",
         "gh-pages/favicon.svg",
+        "doc/pen-stroke-snips/leningrad-043A-col2-Ex20v2-PNY.strokes.svg",
+        "doc/pen-stroke-snips/leningrad-043A-col2-Ex20v3-MFXF.strokes.svg",
+        "doc/pen-stroke-snips/leningrad-102A-col3-Deut5v6-3L0PNY.strokes.svg",
+        "doc/pen-stroke-snips/leningrad-102A-col3-Deut5v7-MFXF.strokes.svg",
     }
 )
 

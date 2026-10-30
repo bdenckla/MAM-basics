@@ -7,17 +7,21 @@ authored; this program derives the rest from the crop.  It reads only files in
 this repository.
 
 Subcommands:
-    init CROP [--set KEY=VALUE ...] [--threshold T]
+    init
+        Usage: init CROP [--set KEY=VALUE ...] [--threshold T]
         Write CROP's stroke-SVG beside it, with the provenance given, the crop's
         Otsu threshold unless one is given, nibs fitted to its ink, and the
         derived level-1 parts.  Refuses to overwrite an existing stroke-SVG.
-    nibfit CROP-OR-SVG [--threshold T] [--split PIXELS]
+    nibfit
+        Usage: nibfit CROP-OR-SVG [--threshold T] [--split PIXELS]
         Print the stiff nib that best fits the ink's width against its direction:
         for a crop, the letters and marks told apart by component size; for a
         stroke-SVG, the ink under each nib's strokes.  Writes nothing.
-    derive [SVG ...]
+    derive
+        Usage: derive [SVG ...]
         Recompute the derived parts of the stroke-SVGs given, or of all of them.
-    check [SVG ...]
+    check
+        Usage: check [SVG ...]
         Report every way the stroke-SVGs depart from the profile and their crops,
         as py/tests/test_pen_stroke_svgs.py does.  Writes nothing.
     render
