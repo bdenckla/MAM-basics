@@ -1,0 +1,175 @@
+{
+  "schedule_label": "2026-10-30 17:00 UTC",
+  "reported_invocation": "17:08UTC",
+  "actual_first_clock_observation": "2026-10-30T17:08:56+00:00",
+  "receipt_parent": "f3dbcd3d8bebe8a8a17c2ada7f1e14c0ec655759",
+  "source_base": "c706d24d71b3213e5e4d9531e9d69dcba218c49a",
+  "source_commit": "bbb8a23a589358974c1257102bc395f466c4cd90",
+  "reviewed_through": "bbb8a23a589358974c1257102bc395f466c4cd90",
+  "focused_tested_through": "bbb8a23a589358974c1257102bc395f466c4cd90",
+  "broad_tested_through": "fc9c6f14eea3b48bc152a394acc0ca1aef43aeb0",
+  "required_sibling_inputs": [],
+  "changed_paths": [
+    "doc/blind-dive-into-template-params-update.md",
+    "dot-claude/skills/github-issues/references/reading-and-writing.md",
+    "dot-claude/skills/hebrew-prose/references/terminology.md",
+    "gh-pages/MAM-parsed/plus/html/mpplus-template-call-graphs.html",
+    "gh-pages/MAM-parsed/plus/html/mpplus.html",
+    "gh-pages/MAM-with-doc/foi/foi-slh-word.html",
+    "gh-pages/near-aleppo/choices.html",
+    "py/author_misc/mp_cmn_rows_other.py",
+    "py/author_misc/mpplus_template_call_graphs.py",
+    "py/foi/slh_word_explanations.py",
+    "py/near_aleppo/doc_choices.py",
+    "py/render_wt/render_wikitext_added_clauses.py",
+    "py/render_wt/render_wikitext_handlers.py",
+    "py/render_wt/render_wikitext_kq.py",
+    "py/sigils/inventory.py"
+  ],
+  "result": "4focused tests pass in0.42s; MAM-parsed docs59claims pass; selected single-threaded FOI and106file near-Aleppo HTML reproduce with zero tracked differences. Eight-file Black/whitespace pass. Renderer alpha rename verified; four endpoint pages preserve markup/links/Hebrew/numbers.",
+  "details": {
+    "endpoint": {
+      "generated_pages": [
+        "gh-pages/MAM-parsed/plus/html/mpplus-template-call-graphs.html",
+        "gh-pages/MAM-parsed/plus/html/mpplus.html",
+        "gh-pages/MAM-with-doc/foi/foi-slh-word.html",
+        "gh-pages/near-aleppo/choices.html"
+      ],
+      "all_html_structure_attributes_links_comments_hebrew_and_numbers_equal": true,
+      "renderer_alpha_rename_verified": true,
+      "only_unused_sigil_constant_removed": true
+    },
+    "reachability": {
+      "retired_module_and_symbol_references_under_py": [],
+      "all_eight_changed_current_python_files_formatted": true,
+      "note": "The first formatter selection omitted rename-status paths; the renamed module was checked separately. No failing project check or source change."
+    },
+    "generators": [
+      "py/main_authored.py gen-mam-parsed-docs:59passed/0failed/0pending; all output and claims index exact",
+      "py/main_foi_features_of_interest.py --foi args-foi-slh-word --single-threaded: selected HTML/JSON and all unrelated tracked files exact",
+      "py/main_near_aleppo.py --html:106HTMLfiles plus render-tag output exact; no census/dataset rebuild"
+    ],
+    "source_scope": "Consistent symbol/module alpha rename plus removal of one unused constant; generator text changes on four pages only. Updated live audit links retain old names with until-date. No live old Python references.",
+    "skill_guidance": "Current shared source constants give G/Js/I as the cited short book names. Existing Is titles are explicitly retained. Owner issue/title history and approvals remain attributed; no issue operation or live config sync.",
+    "formatting_note": "Initial AM-only formatter selection excluded the rename-status path; renamed module checked separately, without repeating other checks."
+  },
+  "actual_stages": [
+    {
+      "area": "basics",
+      "label": "focused-tests",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        "/workspace/scratch/review-hourly-20261030-1700/basics/test_rename.py",
+        "py/tests/test_near_aleppo_note_content.py::test_edition_renderer_has_no_review_ledger_or_recipe_dependency",
+        "py/tests/test_prose_mark_order.py",
+        "-q"
+      ],
+      "cwd": "/workspace/MAM-basics",
+      "started_utc": "2026-10-30T17:14:16.057207+00:00",
+      "completed_utc": "2026-10-30T17:14:16.689339+00:00",
+      "returncode": 0
+    },
+    {
+      "area": "basics",
+      "label": "mam-parsed-docs",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_authored.py",
+        "gen-mam-parsed-docs"
+      ],
+      "cwd": "/workspace/MAM-basics",
+      "started_utc": "2026-10-30T17:14:16.690238+00:00",
+      "completed_utc": "2026-10-30T17:14:21.146617+00:00",
+      "returncode": 0
+    },
+    {
+      "area": "basics",
+      "label": "selected-foi-slh",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_foi_features_of_interest.py",
+        "--foi",
+        "args-foi-slh-word",
+        "--single-threaded"
+      ],
+      "cwd": "/workspace/MAM-basics",
+      "started_utc": "2026-10-30T17:14:21.425614+00:00",
+      "completed_utc": "2026-10-30T17:14:21.998351+00:00",
+      "returncode": 0
+    },
+    {
+      "area": "basics",
+      "label": "near-aleppo-html",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_near_aleppo.py",
+        "--html"
+      ],
+      "cwd": "/workspace/MAM-basics",
+      "started_utc": "2026-10-30T17:14:22.022969+00:00",
+      "completed_utc": "2026-10-30T17:14:49.354123+00:00",
+      "returncode": 0
+    },
+    {
+      "area": "basics",
+      "label": "format",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "-m",
+        "black",
+        "--check",
+        "py/author_misc/mp_cmn_rows_other.py",
+        "py/author_misc/mpplus_template_call_graphs.py",
+        "py/foi/slh_word_explanations.py",
+        "py/near_aleppo/doc_choices.py",
+        "py/render_wt/render_wikitext_handlers.py",
+        "py/render_wt/render_wikitext_kq.py",
+        "py/sigils/inventory.py"
+      ],
+      "cwd": "/workspace/MAM-basics",
+      "started_utc": "2026-10-30T17:14:49.465072+00:00",
+      "completed_utc": "2026-10-30T17:14:49.748464+00:00",
+      "returncode": 0
+    },
+    {
+      "area": "basics",
+      "label": "format-renamed-module",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "-m",
+        "black",
+        "--check",
+        "py/render_wt/render_wikitext_added_clauses.py"
+      ],
+      "cwd": "/workspace/MAM-basics",
+      "started_utc": "2026-10-30T17:16:18.012958+00:00",
+      "completed_utc": "2026-10-30T17:16:18.126649+00:00",
+      "returncode": 0
+    }
+  ],
+  "failure_history": "All6public stages exit0, no project/reviewer failure or skip. Renamed file formatting checked as a separate final stage after AM selection omitted it; no source changes or repeated tests.",
+  "reviewer_repair": null,
+  "limits": [
+    "Focused tests/regeneration only; no full suite/mega or broad-anchor advancement.",
+    "Near-Aleppo selected HTML only, no dataset/census rebuild or frozen-font generation.",
+    "Owner approvals/issue title history are attributed; no external issue action or config sync.",
+    "No source bot, font build/baseline, hbofonts, HP/BHL, main/shared push or deployment/release."
+  ],
+  "checkout_restored": {
+    "utc": "2026-10-30T17:18:48.359401+00:00",
+    "head": "926a6e785be4236673ac4a5c8c34afe63ed417f4",
+    "branch": "work",
+    "status": "",
+    "registered_worktrees": 1
+  },
+  "remote_main_before_receipt": "bbb8a23a589358974c1257102bc395f466c4cd90",
+  "remaining_window": null,
+  "evidence": {
+    "readme": "doc/review-hourly-2026-10-30-1700-evidence/README.md",
+    "archive": "doc/review-hourly-2026-10-30-1700-evidence/focused-evidence.zip",
+    "manifest": "doc/review-hourly-2026-10-30-1700-evidence/manifest.json"
+  },
+  "receipt_tree_not_tested_source": true,
+  "completed_utc": "2026-10-30T17:18:49.056796+00:00"
+}
