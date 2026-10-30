@@ -38,6 +38,10 @@ _COMPOUND_PART = rf"[א-ת0-9]+(?:[{_GERESH_OR_GERSHAYIM}][א-ת0-9]+)?"
 # words כתיב, כתיבה and כתיבת.  The first, third and fourth alternatives take every hyphenated
 # part of a compound.  Until 2026-10-30 they took at most one, and none with a geresh or
 # gershayim, so that מ"ג-ק-מ was counted as מ"ג-ק, א-מ"ק as א-מ and ש1-כתיב as ש1.
+# No alternative takes a siglum spelled like a plain word, such as ממ! or הקלדה!, because nothing
+# in its shape tells it from a word of the prose, such as מתג?.  On 2026-10-30 each of those two
+# stood left of an = wherever it occurred, among the expression tokens, and Ben chose not to
+# count them as prose tokens as well.
 _PROSE_ABBREV_RE = re.compile(
     rf"(?:[א-ת]+[{_GERESH_OR_GERSHAYIM}][א-ת0-9]+(?:-{_COMPOUND_PART})*|"
     r"[א-ת]+\([א-ת]+\)|"
