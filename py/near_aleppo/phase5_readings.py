@@ -67,7 +67,11 @@ QAMATS QATAN, HEBREW MARK MASORA CIRCLE or ZERO WIDTH NON-JOINER, Job 38:12's
 excepted, and neither configuration _PHASE3_CONFIGURATION_READINGS names. After
 writing, the reading must be in place. At Isaiah 36:12 the pointed ketiv holds the near-Aleppo dataset's rule
 8 template for marks written where no letter is, phase2.MARKS_WITHOUT_LETTER, which
-the in-place test reads as MAM's notes write such marks, in square brackets.
+the in-place test reads as MAM's notes write such marks, in square brackets. At 2 Kings
+4:7 the form itself opens with that template's carrier, an alef with the qubuts that the
+note puts before the bet, between double guillemets: the pointed ketiv holds the
+template directly before the bet, and the in-place test reads the guillemets as square
+brackets.
 
 The selected policies retain MAM's templates and original parameters, adding
 ``כתיב מנוקד`` for a pointed ketiv. _KETIV_LETTERS_READINGS names seven forms under
@@ -208,6 +212,16 @@ _RAFEH = "\N{HEBREW POINT RAFE}"
 _ZERO_WIDTH_NON_JOINER = "\N{ZERO WIDTH NON-JOINER}"
 # The near-Aleppo dataset's rule-8 carriers, in square brackets, then a space and the rest of a portion.
 _CARRIERS_THEN_TEXT = re.compile(r"\[([^\]]*)\] (.+)")
+# A note form's rule-8 carrier between double guillemets, then the rest of a portion with
+# no space between, as 2 Kings 4:7's note gives the qubuts before the bet. The in-place
+# test reads the guillemets as square brackets.
+_LEFT_GUILLEMET = "\N{LEFT-POINTING DOUBLE ANGLE QUOTATION MARK}"
+_RIGHT_GUILLEMET = "\N{RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK}"
+_GUILLEMET_CARRIER_THEN_TEXT = re.compile(
+    f"{_LEFT_GUILLEMET}([^{_LEFT_GUILLEMET}{_RIGHT_GUILLEMET}]+){_RIGHT_GUILLEMET}"
+    f"([^\\s{_LEFT_GUILLEMET}{_RIGHT_GUILLEMET}][^{_LEFT_GUILLEMET}{_RIGHT_GUILLEMET}]*)"
+)
+_GUILLEMETS_AS_BRACKETS = str.maketrans(_LEFT_GUILLEMET + _RIGHT_GUILLEMET, "[]")
 # A rendering in single guillemets, as 2 Kings 18:27's note gives two.
 _GUILLEMET_RUN = re.compile(
     "\N{SINGLE LEFT-POINTING ANGLE QUOTATION MARK}"
@@ -292,26 +306,24 @@ _POINTED_KETIV_ADJUSTMENTS = {
     ("C1-Isaiah", "36", "12"): (Site(2, 1), _CARRIERS_FIRST),
     ("C1-Isaiah", "44", "24"): (Site(1, 1), _MAQAF_FOR_KETIV_SPACE),
     ("D2-Proverbs", "3", "30"): (Site(1, 2), _SPACE_FOR_MAQAF_BEFORE),
-    ('BC-Kings מל"ב', "4", "7"): (Site(2, 1), _REVIEWED_ORPHAN),
     ("C3-Ezekiel", "14", "14"): (Site(1, 1), _REVIEWED_ORPHAN),
     ("C3-Ezekiel", "14", "20"): (Site(1, 1), _REVIEWED_ORPHAN),
     ("C3-Ezekiel", "28", "3"): (Site(1, 1), _REVIEWED_ORPHAN),
 }
 # Ben's decisions of 2026-10-08 preserve the complete quoted source form before
 # choosing an orphan representation. Each guard includes the whole ketiv and
-# qere. The 2 Kings CGJ separated qubuts from qamats on bet; separate carrier and
-# written-letter clusters need no such separator. The source note retains it.
-# Ben revised the three Ezekiel representations on 2026-10-13: nun matches
+# qere. Ben revised the three Ezekiel representations on 2026-10-13: nun matches
 # the qere nun, while the absent qere yod's complete mark cluster uses a
 # medial GD carrier. Its dagesh requires dalet rather than alef.
 # On 2026-10-28 a bot run that Ben approved put a CGJ between the nun's HEBREW
 # POINT HIRIQ and HEBREW POINT TSERE in the three Ezekiel source forms, in the
-# order their notes state. As at 2 Kings 4:7, the representation needs none.
+# order their notes state. Separate carrier and written-letter clusters need no
+# such separator, so the representations have none.
+# 2 Kings 4:7 had a guard here until 2026-10-30, when a bot run that Ben approved
+# gave its note his representation itself: the qubuts on an alef carrier between
+# double guillemets, before the bet, which _write_pointed_ketiv reads as the rule-8
+# template.
 _REVIEWED_ORPHAN_VALUES = {
-    ('BC-Kings מל"ב', "4", "7"): (
-        ("בניכי", "וּבָנַ֔יִךְ", "בֻ͏ָנַ֔יִכי"),
-        ("", "אֻ", "בָנַ֔יִכי", False),
-    ),
     ("C3-Ezekiel", "14", "14"): (
         ("דנאל", "דָּנִיֵּ֣אל", "דָּנִּ͏ֵ֣אל"),
         ("דָּנִ", "דֵּ֣", "אל", True),
@@ -957,8 +969,10 @@ class Readings:
         before and after the template, as phase3._note_form_less_target cuts it, and
         adjusted as _POINTED_KETIV_ADJUSTMENTS names, becomes
         phase2.POINTED_KETIV_PARAMETER, after MAM's parameters; at Proverbs 3:30 the
-        target's text before the template changes too. _check_pointed_ketiv checks
-        what is written.
+        target's text before the template changes too. A form that opens with a
+        carrier between double guillemets, as at 2 Kings 4:7, has that carrier written
+        as the near-Aleppo dataset's rule-8 template, directly before the rest of the
+        form. _check_pointed_ketiv checks what is written.
         """
         params = note["tmpl_params"]
         template, _, before, after = direct_target
@@ -1011,12 +1025,24 @@ class Readings:
                     "space, where the table assumes it does"
                 )
             carriers, portion = match.groups()
+        in_guillemets = _LEFT_GUILLEMET in portion or _RIGHT_GUILLEMET in portion
+        if in_guillemets:
+            match = _GUILLEMET_CARRIER_THEN_TEXT.fullmatch(portion)
+            if adjustment is not None or match is None:
+                raise AssertionError(
+                    f"{verse}: a form whose double guillemets are not one carrier "
+                    "opening it, or one with a named adjustment too"
+                )
+            carriers, portion = match.groups()
         trailing = self._check_pointed_ketiv(
             portion, carriers, ketiv, qere, adjustment, clause.site, verse
         )
         value = portion
         if carriers is not None:
-            value = [phase2.marks_without_letter(carriers, verse), " " + portion]
+            value = [
+                phase2.marks_without_letter(carriers, verse),
+                portion if in_guillemets else " " + portion,
+            ]
         template_params[phase2.POINTED_KETIV_PARAMETER] = value
         if before != original_before:
             params[_TARGET] = phase2._simplify(
@@ -1052,8 +1078,10 @@ class Readings:
         whose parameters 1 and 2 are ``ketiv`` and ``qere``; return whether it ends in
         the qere's trailing maqaf.
 
-        ``carriers`` is None, or at Isaiah 36:12 the carriers of the near-Aleppo dataset's rule-8 template,
-        which ``portion`` follows after a space. The carriers and ``portion`` must hold
+        ``carriers`` is None, or the carriers of the near-Aleppo dataset's rule-8
+        template, which ``portion`` follows: after a space at Isaiah 36:12, and directly
+        where the form gives them between double guillemets, as at 2 Kings 4:7. The
+        carriers and ``portion`` must hold
         letters, marks, spaces and maqaf marks alone, nothing of _NOT_IN_POINTED_KETIV, no
         ZERO WIDTH NON-JOINER but the one _ZERO_WIDTH_NON_JOINER_READINGS names, and
         neither configuration of _PHASE3_CONFIGURATION_READINGS. ``portion`` must have
@@ -1223,7 +1251,8 @@ def in_place(form, target, verse, note, side):
     place, at a note of _FORM_WITHOUT_PASEQ_READINGS, where it equals that text less
     the one HEBREW PUNCTUATION PASEQ that ends it, and at a note of
     _SUB_SPAN_READINGS, where it equals the named atoms of that text. The near-Aleppo dataset's rule-8 template
-    reads as MAM's notes write such marks, in square brackets. This is the one
+    reads as MAM's notes write such marks, in square brackets, and a form's double
+    guillemets, as at 2 Kings 4:7, read as square brackets too. This is the one
     in-place test: phase 5 applies the readings not in place, and phase6_flags.py's
     rules call it too.
     """
@@ -1232,7 +1261,7 @@ def in_place(form, target, verse, note, side):
 
 def _in_place_kind(form, target, verse, note, side):
     """How in_place finds ``form`` in place, or None where it is not."""
-    form = _canonical(form).rstrip("?")
+    form = _canonical(form).rstrip("?").translate(_GUILLEMETS_AS_BRACKETS)
     named = _POINTED_KETIV_ADJUSTMENTS.get(verse)
     if (
         side == _KETIV_SIDE

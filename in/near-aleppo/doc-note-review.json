@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "inventory_sha256": "081ae9cb52d471d63a76122a777cc4909522ce8316eabbe8abfe2df38092fcf5",
+  "inventory_sha256": "b8f3c6da4c0fef0a23f7e92f810e67c679e4c28aed52c5df50f26262dd389c29",
   "notes": [
     {
       "id": "A1-Genesis 1:1 note 1 נוסח",
@@ -26811,12 +26811,12 @@
       ],
       "note_ordinal": 1,
       "source_template": "נוסח",
-      "source_note_sha256": "d8f12f87501e7c90ae9524255f1ff480214210db74df23047aba5fea30103818",
+      "source_note_sha256": "4d85a40df1f918ff2d1bcd8f3ab4b73c9f475cf64231cc63ab0edc0dc9771453",
       "original_target": "לִֽקְﬞחִי־נָ֥א",
       "near_target": "לִֽקְִחִי־נָ֥א",
-      "original_body": "א=לִֽקְִחִי־נָ֥א (בחטף חיריק שסימנו אותו ע\"י שווא וחיריק); ראו ייבין ב.6 עמ' 21.",
+      "original_body": "א=לִֽקְ+קִחִי־נָ֥א (לִֽקְִחִי־נָ֥א) (בחטף חיריק שסימנו אותו ע\"י שווא וחיריק); ראו ייבין ב.6 עמ' 21.",
       "clauses": [
-        "א=לִֽקְִחִי־נָ֥א (בחטף חיריק שסימנו אותו ע\"י שווא וחיריק); ראו ייבין ב.6 עמ' 21."
+        "א=לִֽקְ+קִחִי־נָ֥א (לִֽקְִחִי־נָ֥א) (בחטף חיריק שסימנו אותו ע\"י שווא וחיריק); ראו ייבין ב.6 עמ' 21."
       ],
       "change_causes": [
         "representation policies"
@@ -26828,9 +26828,9 @@
         ],
         "partial_gap_boundaries": []
       },
-      "candidate_clause": 0,
-      "proposal_reason": "One literal full-target alternative; semantic review of its suffix and other clauses required.",
-      "evidence_sha256": "7f58db14cc7d3bb26ece9d1bc70aa27c2bf8a0fe586445ecd01327c9a1ab5431",
+      "candidate_clause": null,
+      "proposal_reason": "No unique plain clause quoting the complete target; retain the source note.",
+      "evidence_sha256": "d32f14fee19906785f4507a8c85e133cbe998da69b204a5b27660114a77a22f1",
       "review": {
         "status": "reviewed",
         "presentation": "framed-mam",
@@ -26839,7 +26839,7 @@
           "near_clause": null,
           "mam_clauses": [
             [
-              "א=לִֽקְִחִי־נָ֥א (בחטף חיריק שסימנו אותו ע\"י שווא וחיריק); ראו ייבין ב.6 עמ' 21."
+              "א=לִֽקְ+קִחִי־נָ֥א (לִֽקְִחִי־נָ֥א) (בחטף חיריק שסימנו אותו ע\"י שווא וחיריק); ראו ייבין ב.6 עמ' 21."
             ]
           ]
         },
@@ -27682,7 +27682,7 @@
       ],
       "note_ordinal": 2,
       "source_template": "נוסח",
-      "source_note_sha256": "48fc35d89c7bfa135d578bc7d4117bf2e8c2094104b7fd99a3ba341b493022e6",
+      "source_note_sha256": "2578bad7aa1c097000670b9cd4ca987ec0b3e19d2522e86dab025a758fe76a4a",
       "original_target": {
         "tmpl_name": "כו״ק",
         "tmpl_params": {
@@ -27706,9 +27706,9 @@
           ]
         }
       },
-      "original_body": "א-כתיב=בֻ͏ָנַ֔יִכי (נקודות הקובוץ עוד לפני האות בי\"ת מימין למטה, ואין שווא במקביל לקרי)",
+      "original_body": "א-כתיב=«אֻ»בָנַ֔יִכי (נקודות הקובוץ עוד לפני האות בי\"ת מימין למטה, ואין שווא במקביל לקרי)",
       "clauses": [
-        "א-כתיב=בֻ͏ָנַ֔יִכי (נקודות הקובוץ עוד לפני האות בי\"ת מימין למטה, ואין שווא במקביל לקרי)"
+        "א-כתיב=«אֻ»בָנַ֔יִכי (נקודות הקובוץ עוד לפני האות בי\"ת מימין למטה, ואין שווא במקביל לקרי)"
       ],
       "change_causes": [
         "note-derived readings"
@@ -27722,7 +27722,7 @@
       },
       "candidate_clause": null,
       "proposal_reason": "Structured or whitespace target; preserve explicit MAM context.",
-      "evidence_sha256": "127828acd380f32eda0a76888d214b8991e41b4e338d03595d2fcf5af58ec10c",
+      "evidence_sha256": "1868f965490355bd86bab3a74d61835b26611639cc9743bd1a7fa7d87d52c062",
       "review": {
         "status": "reviewed",
         "presentation": "framed-mam",
@@ -27731,7 +27731,7 @@
           "near_clause": null,
           "mam_clauses": [
             [
-              "א-כתיב=בֻ͏ָנַ֔יִכי (נקודות הקובוץ עוד לפני האות בי\"ת מימין למטה, ואין שווא במקביל לקרי)"
+              "א-כתיב=«אֻ»בָנַ֔יִכי (נקודות הקובוץ עוד לפני האות בי\"ת מימין למטה, ואין שווא במקביל לקרי)"
             ]
           ]
         },
@@ -46887,18 +46887,18 @@
       ],
       "note_ordinal": 2,
       "source_template": "נוסח",
-      "source_note_sha256": "6bfeb70168238cc8b37a266567f3f437462fdb975d2cd61447f8109741227dc1",
+      "source_note_sha256": "053336d9062e6b0c86006a4dd839176b0500116091b8c42b0d0c91836ee8f42e",
       "original_target": "הִֽשְׁﬞחִ֗יתוּ",
       "near_target": "הִֽשְִׁחִ֗יתוּ",
       "original_body": [
-        "א=הִֽשְִׁחִ֗יתוּ (חטף חיריק)",
+        "א=הִֽשְׁ+שִׁחִ֗יתוּ (הִֽשְִׁחִ֗יתוּ) (חטף חיריק)",
         {
           "tmpl_name": "ש"
         },
         "לגבי פיסוק הטעמים (רביע בתוך תחום שלטונו של רביע, שניהם בשמאלו של אתנחתא), ראו בהערת הנוסח על הפסוק המקביל (תהלים נג,ב)."
       ],
       "clauses": [
-        "א=הִֽשְִׁחִ֗יתוּ (חטף חיריק)",
+        "א=הִֽשְׁ+שִׁחִ֗יתוּ (הִֽשְִׁחִ֗יתוּ) (חטף חיריק)",
         "לגבי פיסוק הטעמים (רביע בתוך תחום שלטונו של רביע, שניהם בשמאלו של אתנחתא), ראו בהערת הנוסח על הפסוק המקביל (תהלים נג,ב)."
       ],
       "change_causes": [
@@ -46911,18 +46911,19 @@
         ],
         "partial_gap_boundaries": []
       },
-      "candidate_clause": 0,
-      "proposal_reason": "One literal full-target alternative; semantic review of its suffix and other clauses required.",
-      "evidence_sha256": "a53740645736926be48c079c7d7aa9658468b8b389833f39c00c117978a0b80a",
+      "candidate_clause": null,
+      "proposal_reason": "No unique plain clause quoting the complete target; retain the source note.",
+      "evidence_sha256": "35d631fe0f9b628af8a289e0783e1f58c567b2ccfd559b331660d2c233794972",
       "review": {
         "status": "reviewed",
-        "presentation": "recast",
-        "reason": "Reviewed literal source agreement: retain the complete source head and suffix; keep all remaining clauses in their original order under MAM's labelled target. This attributes agreement and does not explain near-Aleppo's selection.",
+        "presentation": "framed-mam",
+        "reason": "No unique plain clause quoting the complete target; retain the source note. Individual clause review confirms that explicit MAM context preserves the source's claims and qualifications without a new interpretation.",
         "proposed_parts": {
-          "near_clause": [
-            "=א (חטף חיריק)"
-          ],
+          "near_clause": null,
           "mam_clauses": [
+            [
+              "א=הִֽשְׁ+שִׁחִ֗יתוּ (הִֽשְִׁחִ֗יתוּ) (חטף חיריק)"
+            ],
             [
               "לגבי פיסוק הטעמים (רביע בתוך תחום שלטונו של רביע, שניהם בשמאלו של אתנחתא), ראו בהערת הנוסח על הפסוק המקביל (תהלים נג,ב)."
             ]
@@ -46931,13 +46932,13 @@
         "clauses": [
           {
             "index": 0,
-            "disposition": "near-subject",
-            "reason": "Complete literal form matches the near target; preserve the attributed source and every qualification verbatim."
+            "disposition": "mam-context",
+            "reason": "Keep this source clause verbatim with its original MAM subject, explanations, alternatives and cross-references. No unique plain clause quoting the complete target; retain the source note. Individual clause review confirms that explicit MAM context preserves the source's claims and qualifications without a new interpretation."
           },
           {
             "index": 1,
             "disposition": "mam-context",
-            "reason": "Keep this source clause verbatim with its original MAM subject, explanations, alternatives and cross-references. Reorganization changes only the independently reviewed literal agreement clause."
+            "reason": "Keep this source clause verbatim with its original MAM subject, explanations, alternatives and cross-references. No unique plain clause quoting the complete target; retain the source note. Individual clause review confirms that explicit MAM context preserves the source's claims and qualifications without a new interpretation."
           }
         ]
       }
@@ -46951,12 +46952,12 @@
       ],
       "note_ordinal": 3,
       "source_template": "נוסח",
-      "source_note_sha256": "77af3da98688830737eb32fdf812f6006177060e77afe7d772daec1bb9f43559",
+      "source_note_sha256": "b64d5064fcaf7f8fa299bcc0c51eda20e12fc6f81ec9a0801d995529e022c23b",
       "original_target": "הִֽתְﬞעִ֥יבוּ",
       "near_target": "הִֽתְִעִ֥יבוּ",
-      "original_body": "א=הִֽתְִעִ֥יבוּ (חטף חיריק)",
+      "original_body": "א=הִֽתְ+תִעִ֥יבוּ (הִֽתְִעִ֥יבוּ) (חטף חיריק)",
       "clauses": [
-        "א=הִֽתְִעִ֥יבוּ (חטף חיריק)"
+        "א=הִֽתְ+תִעִ֥יבוּ (הִֽתְִעִ֥יבוּ) (חטף חיריק)"
       ],
       "change_causes": [
         "representation policies"
@@ -46968,24 +46969,26 @@
         ],
         "partial_gap_boundaries": []
       },
-      "candidate_clause": 0,
-      "proposal_reason": "One literal full-target alternative; semantic review of its suffix and other clauses required.",
-      "evidence_sha256": "edb3018cd80a40d73bb3784105b6cbb37dd97f09dd0072dbc4090b8c5d02e6bb",
+      "candidate_clause": null,
+      "proposal_reason": "No unique plain clause quoting the complete target; retain the source note.",
+      "evidence_sha256": "0471dcc35e87578da5dbfefac2befb3355df7c8acc24a69a660cff14897ab567",
       "review": {
         "status": "reviewed",
-        "presentation": "recast",
-        "reason": "Reviewed literal source agreement: retain the complete source head and suffix; keep all remaining clauses in their original order under MAM's labelled target. This attributes agreement and does not explain near-Aleppo's selection.",
+        "presentation": "framed-mam",
+        "reason": "No unique plain clause quoting the complete target; retain the source note. Individual clause review confirms that explicit MAM context preserves the source's claims and qualifications without a new interpretation.",
         "proposed_parts": {
-          "near_clause": [
-            "=א (חטף חיריק)"
-          ],
-          "mam_clauses": []
+          "near_clause": null,
+          "mam_clauses": [
+            [
+              "א=הִֽתְ+תִעִ֥יבוּ (הִֽתְִעִ֥יבוּ) (חטף חיריק)"
+            ]
+          ]
         },
         "clauses": [
           {
             "index": 0,
-            "disposition": "near-subject",
-            "reason": "Complete literal form matches the near target; preserve the attributed source and every qualification verbatim."
+            "disposition": "mam-context",
+            "reason": "Keep this source clause verbatim with its original MAM subject, explanations, alternatives and cross-references. No unique plain clause quoting the complete target; retain the source note. Individual clause review confirms that explicit MAM context preserves the source's claims and qualifications without a new interpretation."
           }
         ]
       }
@@ -51701,18 +51704,18 @@
       ],
       "note_ordinal": 1,
       "source_template": "נוסח",
-      "source_note_sha256": "8a0fc2031b3d328cb68f5e82c63e7d7588477a31bda8baa0349cf97947b2e5a6",
+      "source_note_sha256": "42602dc5121e94951bffebcd6f1aeb915159c4fd5feb04d6a8219bb563d6c580",
       "original_target": "הִֽ֝שְׁﬞחִ֗יתוּ",
       "near_target": "הִֽ֝שְִׁחִ֗יתוּ",
       "original_body": [
-        "א=הִֽ֝שְִׁחִ֗יתוּ (חטף חיריק בשי\"ן)",
+        "א=הִֽ֝שְׁ+שִׁחִ֗יתוּ (הִֽ֝שְִׁחִ֗יתוּ) (חטף חיריק בשי\"ן)",
         {
           "tmpl_name": "ש"
         },
         "בכל מקום אחר, אין תחום שלטונו של רביע מוגרש מתחלק על ידי שום מפסיק. ואילו כאן נראה שיש רביע מוגרש (\"הִֽ֝שְִׁחִ֗יתוּ\") המחלק את תחומו של רביע מוגרש הבא אחריו (\"עָ֝וֶל\"). ברויאר כתב על הטעמה זו שהיא \"חריגה ביותר, ואיננה מובנת כלל\" (טעמי המקרא י.19, עמ' 254 הערה 16). והשוו תופעה דומה בפסוק המקביל (תהלים יד,א); שם מדובר על רביע הבא לחלק את שמאלו של אתנחתא (במקום רביע מוגרש!), ובעוד רביע הבא לפניו כדי לחלק את תחום שלטונו."
       ],
       "clauses": [
-        "א=הִֽ֝שְִׁחִ֗יתוּ (חטף חיריק בשי\"ן)",
+        "א=הִֽ֝שְׁ+שִׁחִ֗יתוּ (הִֽ֝שְִׁחִ֗יתוּ) (חטף חיריק בשי\"ן)",
         "בכל מקום אחר, אין תחום שלטונו של רביע מוגרש מתחלק על ידי שום מפסיק. ואילו כאן נראה שיש רביע מוגרש (\"הִֽ֝שְִׁחִ֗יתוּ\") המחלק את תחומו של רביע מוגרש הבא אחריו (\"עָ֝וֶל\"). ברויאר כתב על הטעמה זו שהיא \"חריגה ביותר, ואיננה מובנת כלל\" (טעמי המקרא י.19, עמ' 254 הערה 16). והשוו תופעה דומה בפסוק המקביל (תהלים יד,א); שם מדובר על רביע הבא לחלק את שמאלו של אתנחתא (במקום רביע מוגרש!), ובעוד רביע הבא לפניו כדי לחלק את תחום שלטונו."
       ],
       "change_causes": [
@@ -51725,18 +51728,19 @@
         ],
         "partial_gap_boundaries": []
       },
-      "candidate_clause": 0,
-      "proposal_reason": "One literal full-target alternative; semantic review of its suffix and other clauses required.",
-      "evidence_sha256": "db7641424f9e7b153d44c23fe3a615df0a9f0767050ad8899247332299b392ff",
+      "candidate_clause": null,
+      "proposal_reason": "No unique plain clause quoting the complete target; retain the source note.",
+      "evidence_sha256": "b0d83fba72f62f1a0b1eb9b18a268f7c74399c2b4ba4825975566664f86a356b",
       "review": {
         "status": "reviewed",
-        "presentation": "recast",
-        "reason": "Reviewed literal source agreement: retain the complete source head and suffix; keep all remaining clauses in their original order under MAM's labelled target. This attributes agreement and does not explain near-Aleppo's selection.",
+        "presentation": "framed-mam",
+        "reason": "No unique plain clause quoting the complete target; retain the source note. Individual clause review confirms that explicit MAM context preserves the source's claims and qualifications without a new interpretation.",
         "proposed_parts": {
-          "near_clause": [
-            "=א (חטף חיריק בשי\"ן)"
-          ],
+          "near_clause": null,
           "mam_clauses": [
+            [
+              "א=הִֽ֝שְׁ+שִׁחִ֗יתוּ (הִֽ֝שְִׁחִ֗יתוּ) (חטף חיריק בשי\"ן)"
+            ],
             [
               "בכל מקום אחר, אין תחום שלטונו של רביע מוגרש מתחלק על ידי שום מפסיק. ואילו כאן נראה שיש רביע מוגרש (\"הִֽ֝שְִׁחִ֗יתוּ\") המחלק את תחומו של רביע מוגרש הבא אחריו (\"עָ֝וֶל\"). ברויאר כתב על הטעמה זו שהיא \"חריגה ביותר, ואיננה מובנת כלל\" (טעמי המקרא י.19, עמ' 254 הערה 16). והשוו תופעה דומה בפסוק המקביל (תהלים יד,א); שם מדובר על רביע הבא לחלק את שמאלו של אתנחתא (במקום רביע מוגרש!), ובעוד רביע הבא לפניו כדי לחלק את תחום שלטונו."
             ]
@@ -51745,13 +51749,13 @@
         "clauses": [
           {
             "index": 0,
-            "disposition": "near-subject",
-            "reason": "Complete literal form matches the near target; preserve the attributed source and every qualification verbatim."
+            "disposition": "mam-context",
+            "reason": "Keep this source clause verbatim with its original MAM subject, explanations, alternatives and cross-references. No unique plain clause quoting the complete target; retain the source note. Individual clause review confirms that explicit MAM context preserves the source's claims and qualifications without a new interpretation."
           },
           {
             "index": 1,
             "disposition": "mam-context",
-            "reason": "Keep this source clause verbatim with its original MAM subject, explanations, alternatives and cross-references. Reorganization changes only the independently reviewed literal agreement clause."
+            "reason": "Keep this source clause verbatim with its original MAM subject, explanations, alternatives and cross-references. No unique plain clause quoting the complete target; retain the source note. Individual clause review confirms that explicit MAM context preserves the source's claims and qualifications without a new interpretation."
           }
         ]
       }
@@ -51765,12 +51769,12 @@
       ],
       "note_ordinal": 2,
       "source_template": "נוסח",
-      "source_note_sha256": "4e17e289e464c5ccc94fe3f681ac43598cd533c189c22b79ad1b87c2dc08e057",
+      "source_note_sha256": "b6ba734ea047e86537df9afc1539e0f6812d0fa39f90689fe6d17aeb87ba754f",
       "original_target": "וְהִֽתְﬞעִ֥יבוּ",
       "near_target": "וְהִֽתְִעִ֥יבוּ",
-      "original_body": "א=וְהִֽתְִעִ֥יבוּ (חטף חיריק בתי\"ו)",
+      "original_body": "א=וְהִֽתְ+תִעִ֥יבוּ (וְהִֽתְִעִ֥יבוּ) (חטף חיריק בתי\"ו)",
       "clauses": [
-        "א=וְהִֽתְִעִ֥יבוּ (חטף חיריק בתי\"ו)"
+        "א=וְהִֽתְ+תִעִ֥יבוּ (וְהִֽתְִעִ֥יבוּ) (חטף חיריק בתי\"ו)"
       ],
       "change_causes": [
         "representation policies"
@@ -51782,24 +51786,26 @@
         ],
         "partial_gap_boundaries": []
       },
-      "candidate_clause": 0,
-      "proposal_reason": "One literal full-target alternative; semantic review of its suffix and other clauses required.",
-      "evidence_sha256": "95e6bcf944e7f00a6026b916e8ab24e60fdb46c3a8a5fd54ab574bcf78cf0568",
+      "candidate_clause": null,
+      "proposal_reason": "No unique plain clause quoting the complete target; retain the source note.",
+      "evidence_sha256": "2d6d7e1579e83e8cb95b5213bf90f98882714b535ada9879885e845dfc9e7af9",
       "review": {
         "status": "reviewed",
-        "presentation": "recast",
-        "reason": "Reviewed literal source agreement: retain the complete source head and suffix; keep all remaining clauses in their original order under MAM's labelled target. This attributes agreement and does not explain near-Aleppo's selection.",
+        "presentation": "framed-mam",
+        "reason": "No unique plain clause quoting the complete target; retain the source note. Individual clause review confirms that explicit MAM context preserves the source's claims and qualifications without a new interpretation.",
         "proposed_parts": {
-          "near_clause": [
-            "=א (חטף חיריק בתי\"ו)"
-          ],
-          "mam_clauses": []
+          "near_clause": null,
+          "mam_clauses": [
+            [
+              "א=וְהִֽתְ+תִעִ֥יבוּ (וְהִֽתְִעִ֥יבוּ) (חטף חיריק בתי\"ו)"
+            ]
+          ]
         },
         "clauses": [
           {
             "index": 0,
-            "disposition": "near-subject",
-            "reason": "Complete literal form matches the near target; preserve the attributed source and every qualification verbatim."
+            "disposition": "mam-context",
+            "reason": "Keep this source clause verbatim with its original MAM subject, explanations, alternatives and cross-references. No unique plain clause quoting the complete target; retain the source note. Individual clause review confirms that explicit MAM context preserves the source's claims and qualifications without a new interpretation."
           }
         ]
       }
