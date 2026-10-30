@@ -112,7 +112,7 @@ OTHER_ROWS = [
     ],
     [
         author.hbo("ש"),
-        "Paragraph separator within the notes argument (param 2) of נוסח.",
+        "Doc-part separator within the notes argument (param 2) of נוסח.",
     ],
 ]
 
