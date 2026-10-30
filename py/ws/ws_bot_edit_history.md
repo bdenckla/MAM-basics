@@ -585,6 +585,19 @@ infrastructure has changed enough to make them misleading examples:
 - **Explicit ḥataf:** `fca780fc` taught `py/explicit_xataf/extract.py` the clause
   `<sigla>=<plus form> (<packed form>)`, whose packed form it returns under the match kind
   `sigla=plus-form`; without it the five ḥataf-ḥiriq notes would have failed extraction.
+- **Near-Aleppo:** near-Aleppo's build reads two of the edited notes, and its note-review
+  ledger quotes six, so the rehearsal's mega stopped at its near-Aleppo build. `e5fe4014`
+  taught `py/near_aleppo/phase5_readings.py` to read a note form's carrier between double
+  guillemets as the near-Aleppo dataset's rule-8 template, in the pointed-ketiv writer and
+  in the in-place test, and retired the `_REVIEWED_ORPHAN_VALUES` guard of 2 Kings 4:7,
+  whose note now gives Ben's representation itself; the pointed ketiv written there is
+  unchanged. The same commit carried six rows of `in/near-aleppo/doc-note-review.json`
+  across. 2 Kings 4:7 note 2 and 1 Kings 17:11 note 1 keep their reviews. The four Psalms
+  rows had recast reviews, which need a clause whose form begins with the near target; the
+  clause now opens with the plus form, so each takes the framed-MAM review that the 311
+  reviewed rows without such a clause share, and near-Aleppo now frames those four notes as
+  MAM context. Phase 5 counts the five ḥataf-ḥiriq readings as pending, a "+" being in the
+  form, where it counted them in place (`3a55eeb4`).
 - **Left as they are:** the packed forms of the five ḥataf-ḥiriq atoms, which keep the sheva
   and the ḥiriq on one letter beside each plus form, as the policy asks; two more letters
   with two vowels and no CGJ in MAM's notes on Deuteronomy 14 and 29, and eight on the
