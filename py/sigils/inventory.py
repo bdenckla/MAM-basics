@@ -16,8 +16,9 @@ _LEADING_EQUALS_RE = re.compile(
 )
 _LHS_EQUALS_RE = re.compile(r"(?:^|[;:.\n])\s*([^=<>\n]{1,120}?)\s*=")
 # The geresh and gershayim of MAM's abbreviations and numerals, in their ASCII, typographic and
-# Hebrew forms.
-_GERESH_OR_GERSHAYIM = r"'\"\u2019\u201d\u05f3\u05f4"
+# Hebrew forms.  It holds the six characters themselves, not regex escapes, so that it serves as
+# the body of a character class and as the list that _looks_authority_like_expression checks.
+_GERESH_OR_GERSHAYIM = "'\"\u2019\u201d\u05f3\u05f4"
 # A letter beside any of these is part of a longer word: a letter or digit of any script, a
 # Hebrew point, accent or maqaf, the combining grapheme joiner that MAM has between marks, the
 # hyphen of MAM's compounds, and a geresh or gershayim.  The prose pattern counts a single
@@ -238,8 +239,11 @@ def _clean_expression(expression):
 def _looks_authority_like_expression(expression):
     if expression == "":
         return False
+    # Until 2026-10-30 this accepted only the ASCII geresh and gershayim and the Hebrew
+    # gershayim, and so rejected שי”ן and ואח”כ, typed with a typographic gershayim.
     if any(
-        char in expression for char in ('"', "״", "'", "-", "(", ")", ",", "?", "!")
+        char in expression
+        for char in (*_GERESH_OR_GERSHAYIM, "-", "(", ")", ",", "?", "!")
     ):
         return True
     if re.search(r"\d", expression):
