@@ -831,3 +831,12 @@ Current inclination recorded for experimentation:
   qualifier table and the other corpus counts, each with its own MAM-parsed anchor, were not
   re-measured. The size of the appendix mirror in "Source Hierarchy" was re-measured the same
   day: 566 lines then, 574 now.
+- **Re-measured on 2026-10-30 against `out/sigil-inventory.json` at `dca9aea`, which is built from
+  `MAM-parsed/plus/` at the same commit.** No figure moved, the documented share of
+  `expression_tokens`, 122 of 897, included. Three fixes rebuilt the inventory that day: `683c46b`
+  counts a hyphenated compound whole, such as `ק-מ-כתיב` and `א-מ"ק`, which the prose pattern had
+  cut at a hyphen; `981eabf` lets the authority filter accept a typographic geresh or gershayim;
+  and `dca9aea` removes a pointed word whole when it holds a combining grapheme joiner. Between
+  them they made 21 cut-short compounds whole and added nine abbreviations typed with a
+  typographic gershayim, all of them prose tokens. No expression or expression token changed, and
+  `א(ס)`, the one prose count quoted here, is not among the changed tokens.
