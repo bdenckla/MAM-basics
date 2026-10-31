@@ -869,8 +869,13 @@ behavior, not part of the text, so CLC removes it.
 - **Done so far — only the dual-cant case.** The strand splitter already drops an **orphaned CGJ**
   (U+034F) that the combined form used merely to *sequence* two combined accents: once one accent is
   removed it has nothing left to sequence, so the strand omits it
-  ([py/clc/clc_dual_cant.py](../../py/clc/clc_dual_cant.py), §7.7). The general control-character
-  **audit/strip** across UXLC (the spacing-hack ZWJ, etc.) is **not started**.
+  ([py/clc/clc_dual_cant.py](../../py/clc/clc_dual_cant.py), §7.7). A CGJ that instead keeps an
+  early meteg before its vowel stays in a strand that keeps the meteg, since CLC keeps UXLC's early
+  meteg marks until §7.13 is done: the elyon strand of Exod 20:4.2 has UXLC's meteg, CGJ,
+  pataḥ on the tav. Until 2026-10-31 the splitter dropped that CGJ too, which stored the meteg
+  before the pataḥ ([doc/clc-changes-and-uxlc-caveats.md](../../doc/clc-changes-and-uxlc-caveats.md),
+  section 11). The general control-character **audit/strip** across UXLC (the spacing-hack ZWJ,
+  etc.) is **not started**.
 
 ### 7.15 Charitable restoration of "unsupported" dagesh (the `q` notes)
 UXLC's **`q` notes** (35×) are almost all UXLC *removing* an **"unsupported" dagesh** from a qere
