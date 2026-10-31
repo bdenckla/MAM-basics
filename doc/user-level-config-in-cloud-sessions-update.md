@@ -124,3 +124,13 @@ and receipt-update-link lint passed. Complete canonical deployment changed 12 ma
 the subsequent fetched comparison reported all 21 mappings clean with zero problems.
 The local deployment copies common instructions and skills. The project cloud hook itself
 arrives through the checkout and remains subject to the unverified real-cloud limits above.
+
+## 2026-10-31: cloud-session verification and REST issue-body editing are non-issues
+
+Recorded by Claude (Opus 5.5) on 2026-10-31, New York time, in the small-fixes session. The
+2026-09-29 entry's paragraph "**Cloud runtime remains unverified:**", and its statement that
+issue "body editing remains pending under the restricted proxy while the existing helper lacks
+REST transport", describe work that is no longer owed. Ben decided on 2026-10-31, answering the
+session that looked for records no issue points to: "Consider this a non-issue: we'll just fix
+whatever problems cloud sessions have as we go, i.e. as we try to use them." Both facts still
+hold; neither is pending work, and a later audit need not raise them again.

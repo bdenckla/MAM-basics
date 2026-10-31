@@ -196,8 +196,8 @@ separate from product reach.
 | Decision 6 canonical implementation, push and deployment | Implemented; verification and deployment evidence below. |
 | Decision 7 policy choice | Implemented; Ben approved the six-skill proposal with its stated cloud limits. |
 | Decision 7 canonical implementation, verification, integration, push and deployment | Implemented; completion evidence below. |
-| Actual Claude cloud startup and API-capability measurement | Deferred; cannot be established by this Windows-hosted verification. |
-| REST support in the existing issue-body helper | Deferred outside the approved instruction-installation scope. |
+| Actual Claude cloud startup and API-capability measurement | Superseded on 2026-10-31: Ben called it a non-issue, to be fixed as cloud sessions meet problems; see that day's entry. |
+| REST support in the existing issue-body helper | Superseded on 2026-10-31 in the same way; see that day's entry. |
 | Source-forest synchronization and other excluded work | Deferred outside this task's scope. |
 
 **Planning write-back verification:** a scratch comparison against the required commit verified
@@ -393,3 +393,16 @@ archived
 [update](https://github.com/bdenckla/MAM-basics/blob/be9c03961dcd970a620cd66b861b6aeaf0d58af3/doc/dual-agent-review-2026-09-29-turn-01-claude-update.md)
 of that review's
 [turn 01](https://github.com/bdenckla/MAM-basics/blob/be9c03961dcd970a620cd66b861b6aeaf0d58af3/doc/dual-agent-review-2026-09-29-turn-01-claude.md).
+
+## 2026-10-31: cloud-session verification and REST issue-body editing are non-issues
+
+Recorded by Claude (Opus 5.5) on 2026-10-31, New York time, in the small-fixes session. Two
+items this update recorded as deferred are no longer owed: "Actual Claude cloud startup and
+API-capability measurement" and "REST support in the existing issue-body helper", rows of the
+2026-09-29 "Cumulative disposition" table, which are also the first two items of the "Still
+deferred" list in "2026-09-29: Decision 7 integrated, pushed and deployed". Ben decided on
+2026-10-31, answering the session that looked for records no issue points to: "Consider this a
+non-issue: we'll just fix whatever problems cloud sessions have as we go, i.e. as we try to use
+them." The table's two rows now say so. The cloud runtime remains unverified and the helper
+still lacks REST transport; those are facts about the setup, not pending work, and a later
+audit need not raise them again.

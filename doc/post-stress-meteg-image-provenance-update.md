@@ -48,3 +48,14 @@ Recorded by Claude on 2026-09-30, New York time, under the approved remediation 
 2026-09-29 dual-agent review. Line 3, "State: open; the finished base remains tracked.", now
 reads "State: open, first entry 2026-09-28.", the recorded form of an update's State (finding
 9.1).
+
+## Ben's decision on the unidentified rights holders and sources, 2026-10-31
+
+Recorded by Claude (Opus 5.5) on 2026-10-31, New York time, in the small-fixes session. The
+base's last paragraph says "Rights-holder identification remains deferred where the table says
+so, as does source identification for the older crops where the public record does not name
+it." Ben decided on 2026-10-31, answering the session that looked for records no issue points
+to: "I don't consider it to important to identify these. Consider this a non-issue." Neither
+identification is owed, and a later audit need not raise it again. The table's "Not recorded"
+cells stand, and so does the base's statement that the license terms remain each rights
+holder's, with no grant made or implied.
