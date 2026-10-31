@@ -25,10 +25,10 @@
     "covered": 6,
     "total": 6
   },
-  "literal_passages_checked": 718,
-  "proposed_quotations_checked": 14,
+  "literal_passages_checked": 719,
+  "proposed_quotations_checked": 15,
   "applied_quotations_checked": 11,
-  "user_adjudicated_comparisons": 14,
+  "user_adjudicated_comparisons": 15,
   "reviewed_cases": [
     "jeremiah-accent",
     "numbers-yod-label",
@@ -43,7 +43,8 @@
     "proverbs-maqaf-illustration",
     "oleh-omission-count",
     "appendix-date-pair",
-    "job-chapter-verse"
+    "job-chapter-verse",
+    "HATAF-PROVERBS-ADDITION"
   ],
   "unevaluated_cases": [
     "different-qere-count",
@@ -134,7 +135,6 @@
     "EXOD-7-13-SCOPE",
     "HATAF-JEREMIAH-KETIV-QERE",
     "HATAF-EZEKIEL-SOURCE",
-    "HATAF-PROVERBS-ADDITION",
     "SEDER-DESCRIPTION-STRENGTH",
     "POETIC-COUNTS-TEXT",
     "LEGARMEH-LIST-SCOPE",

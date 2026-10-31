@@ -29,7 +29,7 @@ proposal: #311 (the appendix's date) and #312 (the Job 9:10 reference), and
 #313–#324 for the twelve corrections approved earlier. Each
 decision record in [adjudications.json](adjudications.json) holds its issue and
 Ben's authorization; no proposal was then applied. Proverbs 30:17's ḥataf addition
-still awaits Ben's review.
+then still awaited Ben's review.
 
 ## 2026-10-18 — the Introduction's note templates
 
@@ -81,7 +81,7 @@ context of each occurrence of the old and the new word pair, and the review buil
 checks that every occurrence lies in one of them. Nine proposals are now recorded
 as applied, #311–#315 and #321–#324.
 
-#316–#320 are still recorded as unapplied. The same refresh took chapter 3's
+#316–#320 were then still recorded as unapplied. The same refresh took chapter 3's
 revision 3099123 and chapter 5's revision 3099114, which add Genesis 30:27 and
 2 Samuel 8:10 to their ḥataf lists as #320 and #318 propose; skadish1 reported
 both done later on 2026-10-29, and the last 2026-10-31 entry below records their
@@ -118,4 +118,23 @@ recorded as applied: #311–#315, #318 and #320–#324.
 
 The same reports answer the other two additions: “Song of Songs 1:6 does not belong,
 the hataph is not in AC” (#317) and “Numbers 10:9 is not relevant” (#319). Both
-issues remain open, and #316, #317 and #319 are still recorded as unapplied.
+issues were then still open, and the next entry records their closing. #316, #317
+and #319 remain recorded as unapplied.
+
+## 2026-10-31 — two proposals declined, and Proverbs 30:17 not planned
+
+On 2026-10-29 skadish1 also answered on the two issues themselves, declining both
+additions: “Song of Songs 1:6 does not belong, the hataph is not in AC.” (#317) and
+“Num 10:9 does not belong here. It is off-topic, because it is a "typo" in LC that has
+nothing to do with showing that a shewa is vocal.” (#319). Ben decided on 2026-10-31:
+“Close issues 317 and 319 as not planned.” A Claude session closed both that day, and
+their decisions in [adjudications.json](adjudications.json) now record each reply and
+the closing. Both stay unapplied.
+
+Proverbs 30:17, the one all-book ḥataf candidate Ben had not yet decided, has no issue.
+Ben decided the same day that it is not planned either, citing the reasoning of Avi's
+answer for Song of Songs 1:6: “So let's just close it as "not planned", citing that
+reasoning.” Its decision, `PROV-30-17-BEN-20261031`, proposes no change, so its proposed
+quotation is its current heading, and the review now lists the case under Reviewed.
+[all-books-hataf.md](all-books-hataf.md) gives the doc-note evidence. Fifteen cases now
+have recorded Ben decisions, and eleven proposals remain recorded as applied.

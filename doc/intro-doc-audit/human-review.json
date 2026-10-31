@@ -415,7 +415,7 @@
     "issue": "The Introduction’s Song of Songs list omits שֶׁשֱּׁזָפַ֖תְנִי.",
     "context": "The doc-note assigns שֶׁשֱּׁזָפַ֖תְנִי to Leningrad (ל), with ḥataf segol on shin.",
     "explanation": "The Leningrad shin ḥataf segol marks vocal sheva, the function covered by the list.",
-    "decision": "Ben approves adding Song of Songs 1:6 for proposal to Avi. Use ל=שֶׁשֱּׁזָפַ֖תְנִי in the list, and change its heading from six to seven items, as shown below. The doc-note retains !=, meaning “surprisingly equals.”",
+    "decision": "Ben approves adding Song of Songs 1:6 for proposal to Avi. Use ל=שֶׁשֱּׁזָפַ֖תְנִי in the list, and change its heading from six to seven items, as shown below. The doc-note retains !=, meaning “surprisingly equals.” Avi declined the addition in #317: “Song of Songs 1:6 does not belong, the hataph is not in AC.” By Ben’s decision, #317 was closed as not planned on 2026-10-31.",
     "prose_quotes": [
       "ל=שֶׁשֱּׁזָפַ֖תְנִי"
     ],
@@ -539,7 +539,7 @@
     "issue": "The Introduction’s Numbers list omits וֲנִזְכַּרְתֶּ֗ם.",
     "context": "The doc-note assigns וֲנִזְכַּרְתֶּ֗ם to Leningrad (ל), with ḥataf pataḥ on vav.",
     "explanation": "Ben understands an initial sheva to be vocal already. He asks whether this vav ḥataf specifies pataḥ vowel quality, whether pataḥ quality is the default, and whether the following nun’s ḥiriq changes that default. He remains uncertain.",
-    "decision": "Ben approves adding Numbers 10:9 for proposal to Avi. Add ל=וֲנִזְכַּרְתֶּ֗ם after the Numbers 6:27 entry and change the heading from 18 to 19 items, as shown below.",
+    "decision": "Ben approves adding Numbers 10:9 for proposal to Avi. Add ל=וֲנִזְכַּרְתֶּ֗ם after the Numbers 6:27 entry and change the heading from 18 to 19 items, as shown below. Avi declined the addition in #319: “Num 10:9 does not belong here. It is off-topic, because it is a \"typo\" in LC that has nothing to do with showing that a shewa is vocal.” By Ben’s decision, #319 was closed as not planned on 2026-10-31.",
     "prose_quotes": [
       "ל=וֲנִזְכַּרְתֶּ֗ם"
     ],
@@ -6639,7 +6639,7 @@
     "issue": "The Introduction’s Proverbs list omits לִֽיקֲּהַ֫ת־אֵ֥ם.",
     "context": "The doc-note assigns לִֽיקֲּהַ֫ת־אֵ֥ם to Leningrad (ל), with ḥataf pataḥ on qoph.",
     "explanation": "The Proverbs list already lists Aleppo תִּ֥לֲעַ֣ג at 30:17; Leningrad’s additional לִֽיקֲּהַ֫ת has qoph ḥataf pataḥ.",
-    "decision": "Add the entry ל=לִֽיקֲּהַ֫ת־אֵ֥ם. This proposed addition is unapplied.",
+    "decision": "Ben decided on 2026-10-31 not to propose the entry ל=לִֽיקֲּהַ֫ת־אֵ֥ם, closing this candidate as not planned for the reason Avi gave in #317 for Song of Songs 1:6: “the hataph is not in AC.” The doc-note gives the ḥataf to Leningrad alone and says MAM’s text equals Aleppo there, and MAM’s text has plain sheva on qoph, with no varika. No issue was filed for it.",
     "prose_quotes": [
       "ל=לִֽיקֲּהַ֫ת־אֵ֥ם"
     ],
@@ -6673,6 +6673,7 @@
         "text": "לִֽיקְּהַ֫ת־אֵ֥ם"
       }
     ],
+    "adjudication": "PROV-30-17-BEN-20261031",
     "revision_history": {
       "summary": "On 9 August 2024 the note first explicitly documents Leningrad's ḥataf at Proverbs 30:17. The twelve-item Proverbs list remains literally unchanged in Introduction snapshots before and after the edit and omits that form. This establishes an unreflected note expansion, but does not date the reading's discovery or prove that the list was complete when assembled.",
       "links": [

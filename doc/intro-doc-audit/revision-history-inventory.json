@@ -619,8 +619,8 @@
       "scope": "excluded-internal-or-control",
       "scope_reason": "The two dates disagree within the appendix.",
       "comparison_kind": "Introduction-MAM",
-      "ben_reviewed": false,
-      "adjudication": null,
+      "ben_reviewed": true,
+      "adjudication": "APPENDIX-DATE-BEN-20261017",
       "introduction_claims": [
         "appendices:L476"
       ],
@@ -641,8 +641,8 @@
       "scope": "excluded-internal-or-control",
       "scope_reason": "The Introduction's reference label reverses its own link destination.",
       "comparison_kind": "Introduction-MAM",
-      "ben_reviewed": false,
-      "adjudication": null,
+      "ben_reviewed": true,
+      "adjudication": "JOB-9-10-BEN-20261017",
       "introduction_claims": [
         "ch1:L258"
       ],
@@ -3158,8 +3158,8 @@
       "scope": "applicable",
       "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
       "comparison_kind": "Introduction-MAM",
-      "ben_reviewed": false,
-      "adjudication": null,
+      "ben_reviewed": true,
+      "adjudication": "PROV-30-17-BEN-20261031",
       "introduction_claims": [
         "ch5:L712"
       ],

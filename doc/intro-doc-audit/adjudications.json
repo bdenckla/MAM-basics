@@ -601,7 +601,7 @@
       "workflow_evidence": "Sentinel_131b2b3098388191979e1058cfcfcfbd",
       "source_thread_id": "01a0fe66-3397-70d3-b313-4f1dfaa190c4"
     },
-    "status": "approved-by-Ben-for-proposal-to-Avi; submitted-in-issue-317; not-applied",
+    "status": "approved-by-Ben-for-proposal-to-Avi; submitted-in-issue-317; declined-by-Avi; closed-as-not-planned; not-applied",
     "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
     "introduction_revision": 3087740,
     "chapter_revision": {
@@ -649,6 +649,25 @@
         "source_agent": "Claude Code",
         "source_thread_id": "2f820cf6-3d3f-4301-bdb1-d71685173e13",
         "quotation": "Sure, go ahead and file those 12 issues"
+      },
+      "reply": {
+        "by": "skadish1",
+        "url": "https://github.com/bdenckla/MAM-basics/issues/317#issuecomment-6504008099",
+        "created_at": "2026-10-29T17:40:54Z",
+        "quotation": "Song of Songs 1:6 does not belong, the hataph is not in AC."
+      },
+      "issue_closed": {
+        "by": "a Claude Code session, at Ben’s request",
+        "at": "2026-10-31T15:29:49Z",
+        "state_reason": "not planned",
+        "comment_url": "https://github.com/bdenckla/MAM-basics/issues/317#issuecomment-6545412504",
+        "authority": {
+          "person": "Ben",
+          "date": "2026-10-31",
+          "source_agent": "Claude Code",
+          "source_thread_id": "d97cfd71-027b-4e88-90e0-d60bf46957f2",
+          "quotation": "Close issues 317 and 319 as not planned."
+        }
       }
     }
   },
@@ -758,7 +777,7 @@
       "source_thread_id": "01a0fe66-3397-70d3-b313-4f1dfaa190c4",
       "time": "08:02 UTC"
     },
-    "status": "approved-by-Ben-for-proposal-to-Avi; submitted-in-issue-319; not-applied",
+    "status": "approved-by-Ben-for-proposal-to-Avi; submitted-in-issue-319; declined-by-Avi; closed-as-not-planned; not-applied",
     "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
     "introduction_revision": 3087744,
     "chapter_revision": {
@@ -845,6 +864,25 @@
         "source_agent": "Claude Code",
         "source_thread_id": "2f820cf6-3d3f-4301-bdb1-d71685173e13",
         "quotation": "Sure, go ahead and file those 12 issues"
+      },
+      "reply": {
+        "by": "skadish1",
+        "url": "https://github.com/bdenckla/MAM-basics/issues/319#issuecomment-6504884556",
+        "created_at": "2026-10-29T18:21:06Z",
+        "quotation": "Num 10:9 does not belong here. It is off-topic, because it is a \"typo\" in LC that has nothing to do with showing that a shewa is vocal."
+      },
+      "issue_closed": {
+        "by": "a Claude Code session, at Ben’s request",
+        "at": "2026-10-31T15:29:52Z",
+        "state_reason": "not planned",
+        "comment_url": "https://github.com/bdenckla/MAM-basics/issues/319#issuecomment-6545413183",
+        "authority": {
+          "person": "Ben",
+          "date": "2026-10-31",
+          "source_agent": "Claude Code",
+          "source_thread_id": "d97cfd71-027b-4e88-90e0-d60bf46957f2",
+          "quotation": "Close issues 317 and 319 as not planned."
+        }
       }
     }
   },
@@ -1351,5 +1389,44 @@
       }
     },
     "scope": "Ben authorized filing the proposal for Avi as an issue. No Wikisource edit is authorized or made here."
+  },
+  {
+    "id": "PROV-30-17-BEN-20261031",
+    "case": "HATAF-PROVERBS-ADDITION",
+    "authority": {
+      "person": "Ben",
+      "date": "2026-10-31",
+      "source_agent": "Claude Code",
+      "source_thread_id": "d97cfd71-027b-4e88-90e0-d60bf46957f2",
+      "replying_to": "Proverbs 30:17, the audit’s one candidate still awaiting your review, is the same case as Song of Songs 1:6. Per its doc-note, MAM’s form is the Aleppo Codex’s, only the LC has the ḥataf, and MAM’s text has no varika. Dovi’s reasoning would exclude it too.",
+      "quotation": "So let's just close it as \"not planned\", citing that reasoning."
+    },
+    "status": "not-planned-by-Ben; no-proposal; no-issue",
+    "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
+    "introduction_revision": 3087740,
+    "chapter_revision": {
+      "resolved_title": "משלי ל/טעמים",
+      "page_id": 238967,
+      "requested_title": "משלי_ל/טעמים",
+      "revision_id": 3008043,
+      "sha256": "ccafd0a2809ce63646704ba84d8aa2335b276ba054cfe1b91840e78e1ede7526"
+    },
+    "current": {
+      "claim": "ch5:L712",
+      "quote": "(12 פריטים)"
+    },
+    "proposed_quotation": "(12 פריטים)",
+    "changes": [],
+    "current_label": "Current Introduction heading",
+    "proposed_label": "Not planned, by Ben’s decision of 2026-10-31 — no entry is added, and the heading is unchanged",
+    "current_explanation": "(12 items.)",
+    "proposed_explanation": "(12 items.)",
+    "research_note": "all-books-hataf.md",
+    "research_label": "Decision and source evidence",
+    "reasoning": "Avi declined the Song of Songs 1:6 addition in #317 because “the hataph is not in AC”. Proverbs 30:17’s doc-note likewise gives the ḥataf to Leningrad alone and says MAM’s text equals Aleppo there, and MAM’s text has plain sheva on qoph, with no varika. The attribution is the doc-note’s; no manuscript image was consulted.",
+    "scope": "Records Ben’s decision only. No issue was filed for this candidate, so none was closed, and no Wikisource page, source cache, dataset or edition changed. The record proposes no change: its current and proposed quotations are the same heading.",
+    "submission_status": "not-submitted",
+    "application_status": "unapplied",
+    "theme": "non-guttural ḥataf list completeness"
   }
 ]

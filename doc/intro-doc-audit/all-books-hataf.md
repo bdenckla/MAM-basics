@@ -1,17 +1,18 @@
 # All-book non-guttural ḥataf list check
 
 Five omitted words are verified from explicit Aleppo or Leningrad doc-notes. The
-Introduction’s lists did not include them at the audit’s snapshot; Avi has since
-added two, as the last section records. The [reader review](review.html) shows
-each word, source, vowel and proposed addition.
+Introduction’s lists did not include them at the audit’s snapshot. Avi has since
+added two and declined two, and Ben decided not to propose the fifth, as the last
+two sections record. The [reader review](review.html) shows each word, source,
+vowel and proposed addition.
 
 | Verse | Explicit doc-note form | Current list | Editorial state |
 | --- | --- | --- | --- |
 | Genesis 30:27 | ל=וַיְבָרֲכֵ֥נִי | [List](https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1126) omits this word | Approved by Ben; proposed to Avi in #320; applied in revision 3099123 |
-| Numbers 10:9 | ל!=וֲנִזְכַּרְתֶּ֗ם | [List](https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1132) omits this word | Approved by Ben; proposed to Avi in #319 |
+| Numbers 10:9 | ל!=וֲנִזְכַּרְתֶּ֗ם | [List](https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1132) omits this word | Approved by Ben; proposed to Avi in #319; declined by Avi; closed as not planned |
 | 2 Samuel 8:10 | א=וּֽלְבָרֲכ֗וֹ | [List](https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L698) omits this word | Approved by Ben; proposed to Avi in #318; applied in revision 3099114 |
-| Proverbs 30:17 | ל=לִֽיקֲּהַ֫ת־אֵ֥ם | [List](https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L712) omits this word | Ben’s review pending |
-| Song of Songs 1:6 | ל!=שֶׁשֱּׁזָפַ֖תְנִי | [List](https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L716) omits this word | Approved by Ben; proposed to Avi in #317 |
+| Proverbs 30:17 | ל=לִֽיקֲּהַ֫ת־אֵ֥ם | [List](https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L712) omits this word | Not planned, by Ben’s decision of 2026-10-31 |
+| Song of Songs 1:6 | ל!=שֶׁשֱּׁזָפַ֖תְנִי | [List](https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L716) omits this word | Approved by Ben; proposed to Avi in #317; declined by Avi; closed as not planned |
 
 Ben approves adding Song of Songs 1:6 (2026-10-14,
 `Sentinel_5cc0b84ada60819184ea0ba0de313702`). The list uses `ל=` at 8:2;
@@ -260,12 +261,12 @@ Genesis 30:38; change the heading from 33 to 34 items.
 
 The exact source forms, current/proposed lists, insertion checks, approval evidence and
 separate phonetic question are retained in [adjudications.json](adjudications.json).
-These additions had not then been submitted or applied. Proverbs 30:17 still awaits Ben’s
+These additions had not then been submitted or applied. Proverbs 30:17 then awaited Ben’s
 decision.
 
 ## Submitted to Avi
 
-On 2026-10-17 at 20:20 UTC Ben asked for an issue for each correction he had approved in this review: “Sure, go ahead and file those 12 issues”. #317 (Song of Songs 1:6), #318 (2 Samuel 8:10), #319 (Numbers 10:9) and #320 (Genesis 30:27) propose the four approved additions to Avi; none was then applied. Proverbs 30:17 still awaits Ben's review.
+On 2026-10-17 at 20:20 UTC Ben asked for an issue for each correction he had approved in this review: “Sure, go ahead and file those 12 issues”. #317 (Song of Songs 1:6), #318 (2 Samuel 8:10), #319 (Numbers 10:9) and #320 (Genesis 30:27) propose the four approved additions to Avi; none was then applied. Proverbs 30:17 then awaited Ben's review.
 
 ## Applied on Wikisource
 
@@ -283,4 +284,24 @@ from `f82138dd`, where each proposed full list occurs once. A Claude session clo
 
 The same reports answer the other two additions: “Song of Songs 1:6 does not belong,
 the hataph is not in AC” (#317) and “Numbers 10:9 is not relevant” (#319). Both
-issues remain open.
+issues were then still open; the next section records their closing.
+
+## Declined, and not planned
+
+On 2026-10-29 Avi also answered on each of the other two issues. On #317 he wrote
+“Song of Songs 1:6 does not belong, the hataph is not in AC.”, and on #319 “Num 10:9
+does not belong here. It is off-topic, because it is a "typo" in LC that has nothing to
+do with showing that a shewa is vocal.” Ben decided on 2026-10-31: “Close issues 317
+and 319 as not planned.” A Claude session closed both that day, each with a one-line
+comment pointing to Avi's reasons, and their decisions in
+[adjudications.json](adjudications.json) record his replies and the closing. Neither
+addition was applied.
+
+Proverbs 30:17 has no issue. On 2026-10-31 Ben decided that it is not planned either,
+for the reason Avi gave for Song of Songs 1:6: “So let's just close it as
+"not planned", citing that reasoning.” Its doc-note gives the ḥataf to Leningrad alone
+and says MAM's text equals Aleppo there, and MAM's text has plain sheva on qoph, with
+no varika. The attribution is the doc-note's; no manuscript image was consulted. Its
+decision, `PROV-30-17-BEN-20261031` in [adjudications.json](adjudications.json),
+proposes no change, so the reader review shows the Proverbs heading unchanged and
+lists the case under Reviewed.

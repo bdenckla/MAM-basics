@@ -28,7 +28,7 @@ or Wikisource. Any later application or submission needs its own recorded scope.
   translations, reading forms and history summaries. Edit a case here, not in HTML.
 - `adjudications.json` owns Ben's substantive decisions and their authority,
   exact proposed edits and application/submission status. Companion adjudication
-  notes provide context. Preserve all twelve existing decisions.
+  notes provide context. Preserve every existing decision.
 - `claims.json`, `notes.json`, the source captures and `source-pin.json` retain
   the original evidence at `89cb865729b0876f1fd32a8a3579eaec80b4fc0c`.
   `snapshot.py` reads raw passages and context from that Git commit. Newer files
