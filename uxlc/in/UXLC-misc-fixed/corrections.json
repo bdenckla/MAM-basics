@@ -154,9 +154,9 @@
       "field": "column",
       "uxlc": "",
       "mam_basics": "2",
-      "kind": "estimate",
-      "date": "2026-10-20",
-      "evidence": "The record gives page F043A and no column or line; the location estimator's value (869234b2)."
+      "kind": "reading",
+      "date": "2026-10-31",
+      "evidence": "Ex 20:3.2 begins line 19 of F043A's column 2, a column of 27 lines with no blank line; Charles Loder's TEI agrees."
     },
     {
       "list": "2026.10.19 - Changes.xml",
@@ -164,10 +164,10 @@
       "field": "line",
       "uxlc": "",
       "mam_basics": "19",
-      "line_ib": null,
-      "kind": "estimate",
-      "date": "2026-10-20",
-      "evidence": "The record gives page F043A and no column or line; the location estimator's value (869234b2)."
+      "line_ib": "19",
+      "kind": "reading",
+      "date": "2026-10-31",
+      "evidence": "Ex 20:3.2 begins line 19 of F043A's column 2, a column of 27 lines with no blank line; Charles Loder's TEI agrees."
     },
     {
       "list": "2026.10.19 - Changes.xml",
@@ -196,9 +196,9 @@
       "field": "column",
       "uxlc": "",
       "mam_basics": "2",
-      "kind": "estimate",
-      "date": "2026-10-20",
-      "evidence": "The record gives page F406B and no column or line; the location estimator's value (869234b2)."
+      "kind": "reading",
+      "date": "2026-10-31",
+      "evidence": "Job 34:20.4 is on line 27, the last, of F406B's column 2, a column of 27 lines with no blank line; the TEI's last page is F366A."
     },
     {
       "list": "2026.10.19 - Changes.xml",
@@ -206,10 +206,10 @@
       "field": "line",
       "uxlc": "",
       "mam_basics": "27",
-      "line_ib": null,
-      "kind": "estimate",
-      "date": "2026-10-20",
-      "evidence": "The record gives page F406B and no column or line; the location estimator's value (869234b2)."
+      "line_ib": "27",
+      "kind": "reading",
+      "date": "2026-10-31",
+      "evidence": "Job 34:20.4 is on line 27, the last, of F406B's column 2, a column of 27 lines with no blank line; the TEI's last page is F366A."
     },
     {
       "list": "2026.10.19 - Changes.xml",
@@ -217,20 +217,20 @@
       "field": "column",
       "uxlc": "",
       "mam_basics": "2",
-      "kind": "estimate",
-      "date": "2026-10-20",
-      "evidence": "The record gives page F367B and no column or line; the location estimator's value (869234b2)."
+      "kind": "reading",
+      "date": "2026-10-31",
+      "evidence": "Ps 14:7.1 begins the second half of line 21 of F367B's column 2, a column of 27 lines with no blank line, one line above the estimator's 22; the TEI's last page is F366A."
     },
     {
       "list": "2026.10.19 - Changes.xml",
       "record": "2026.08.05-47",
       "field": "line",
       "uxlc": "",
-      "mam_basics": "22",
-      "line_ib": null,
-      "kind": "estimate",
-      "date": "2026-10-20",
-      "evidence": "The record gives page F367B and no column or line; the location estimator's value (869234b2)."
+      "mam_basics": "21",
+      "line_ib": "21",
+      "kind": "reading",
+      "date": "2026-10-31",
+      "evidence": "Ps 14:7.1 begins the second half of line 21 of F367B's column 2, a column of 27 lines with no blank line, one line above the estimator's 22; the TEI's last page is F366A."
     }
   ]
 }

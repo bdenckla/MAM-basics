@@ -59,9 +59,9 @@ records, as hcanat.us served it that day, byte for byte the copy that tanach.us 
 1. 2026.08.05-27 (Job 11:6.3) gave its book as `job`, lowercase. The installed list gives `Job`.
 2. 2026.08.05-5 (Ex 20:3.2), 2026.08.05-10 (Lev 25:20.3) and 2026.08.05-25 (Job 34:20.4) give a
    page but an empty column and line, and so does 2026.08.05-47 (Ps 14:7.1), which the proposed
-   list lacked. MAM-basics rejects an empty line, so its override copy fills the four: 2026.08.05-10
-   with a reading of the photograph, and the other three with the location estimator's values.
-   Section 9 points to the manifest that records which is which.
+   list lacked. MAM-basics rejects an empty line, so its override copy fills the four, which held
+   the location estimator's values until 2026-10-31 and since then hold readings of Sefaria's
+   photographs. Section 9 points to the manifest that records them.
 3. 2026.08.05-19 (2 Sam 5:21.1), Daniel Holman's, described removing a maqaf, but its change text
    was the same as its reference text, maqaf included. In the installed list its change text lacks
    the maqaf, so the record proposes the removal that its description names.
@@ -225,8 +225,10 @@ lines, and `corrections.json` gives each corrected line IB as well. The two coun
 record, 2023.11.10-3, whose atom is on line 12/11 IB/NIB of page F109B's column 3.
 
 On 2026-10-31 the copies held the locators of sixteen records: twelve whose line the photographs
-show to be wrong, and the four of section 3 whose column and line the UXLC leaves empty. Three of
-the four, 2026.08.05-5, -25 and -47, still held the location estimator's values.
+show to be wrong, and the four of section 3 whose column and line the UXLC leaves empty. All
+sixteen are readings of the photographs. The last three of the four to be read, 2026.08.05-5, -25
+and -47, replaced the location estimator's values that day: the readings confirm the first two and
+put 2026.08.05-47 one line higher, at F367B 2:21.
 
 ## 10. Three problems recorded in a program's docstring, 2026-09-04
 

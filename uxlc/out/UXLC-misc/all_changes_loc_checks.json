@@ -14144,10 +14144,10 @@
     "change_cite": "Ps 14:7.1",
     "change_page": "367B",
     "change_column": 2,
-    "change_line": 22,
-    "change_fline": 49,
+    "change_line": 21,
+    "change_fline": 48,
     "guess_fline": 48.98,
-    "fline_diff": -0.02
+    "fline_diff": 0.98
   },
   {
     "change_release": "2026.10.19",
