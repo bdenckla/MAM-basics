@@ -29,79 +29,42 @@ image, and allow for that convention.
 
 ## 1. Three locators that disagree with the page images, found 2026-10-14
 
-A comparison of UXLC change records with Charles Loder's leningrad-codex-tei v0.5.0 found these.
-That edition is a TEI encoding of pages F001B–F091B, whose line breaks are Gemini's readings of
-Sefaria's photographs. For each record, a Claude session's reading of a crop of Sefaria's
-photograph, made on 2026-10-14, agrees with the TEI's line. Ben has not checked these three on
-the images. In the TEI, none of the three atoms has an empty line above it in its column.
-
-| Change record | Release | Citation | Locator | TEI and Claude's reading | Author |
-| --- | --- | --- | --- | --- | --- |
-| 2021.02.22-15 | 2021.04.01 | Lev 13:3.12 | F063A 2:20 | line 21 | Stephen Salisbury |
-| 2021.12.28-2 | 2022.04.01 | Lev 26:35.3 | F073A 1:1 | line 3 | Todd Shandelman |
-| 2022.04.04-6 | 2022.07.04 | Num 9:17.6 | F080B 3:26 | line 25 | Daniel Holman |
-
-The UXLC disagrees with itself about Lev 26:35.3: its earlier record 2021.02.22-17, by Stephen
-Salisbury, gives F073A 1:3, as the TEI and Claude's reading do.
-
-The comparison's working files were untracked, under `.novc/lc-tei-phase1/` in the primary
-forest's MAM-basics clone, with the crops in its `out/crops/`; they were gone by 2026-10-31. That
-day a Claude session reread all three atoms on Sefaria's photographs, finding each on the line the
-table gives, and MAM-basics began correcting the three in its override copies, as section 9 says.
+A comparison of UXLC change records with Charles Loder's leningrad-codex-tei v0.5.0, then a TEI
+encoding of pages F001B–F091B, found three records whose locators disagree with the TEI and with a
+Claude session's reading of Sefaria's photographs: 2021.02.22-15 (Lev 13:3.12, page F063A),
+2021.12.28-2 (Lev 26:35.3, F073A) and 2022.04.04-6 (Num 9:17.6, F080B). On 2026-10-31 a Claude
+session reread all three on the photographs, and MAM-basics corrected them in its override copies.
+Section 9 points to the manifest that gives each corrected value and its evidence, including, for
+2021.12.28-2, the UXLC's own earlier record that agrees with the correction.
 
 ## 2. A pending UXLC 2.6 record that cited the wrong position, found 2026-10-14
 
 Daniel Holman's record 2026.08.05-10, in the proposed UXLC 2.6 change list with file date
-2026.10.19, cites Lev 25:20.3 for "Remove mahapakh under the kaf. Remove note 'c'." Its
-reference text is at position 4 of the verse; position 3 holds the other atom of that maqaf
-compound. Ben's record 2020.12.22-2 cites the same atom as Lev 25:20.4.
-
-The record also leaves its column and line empty. Ben's 2020.12.22-2 gives Folio_71v 2:16 for the
-atom, which is page F071B, column 2, line 16, and the TEI and Claude's reading agree. MAM-basics'
-override copy of the change list, `uxlc/in/UXLC-misc-fixed/2026.10.19 - Changes.xml`, fills the
-empty fields with an estimate, 2:14; section 3 says why. Since 2026-10-31 it gives 2:16, the line
-that Ben's record, the TEI and a fresh reading of the photograph all give, as section 9 says.
-
-The change list as tanach.us served it on 2026-10-19, described at the end of section 3, cites
-Lev 25:20.4 for this record, so its position is now right. The record still leaves its column and
-line empty.
+2026.10.19, cited Lev 25:20.3 for "Remove mahapakh under the kaf. Remove note 'c'." Its reference
+text is at position 4 of the verse; position 3 holds the other atom of that maqaf compound. The
+installed list, as tanach.us served it on 2026-10-19, cites Lev 25:20.4, so the UXLC has fixed the
+position. The record still leaves its column and line empty. MAM-basics' override copy gives
+F071B 2:16, the line that Ben's record 2020.12.22-2, the TEI and a reading of the photograph all
+give; section 9 points to the manifest that records it.
 
 ## 3. Defects in the proposed UXLC 2.6 change list, noted 2026-08-12
 
 UXLC-utils commit
 [3435fc81](https://github.com/bdenckla/UXLC-utils/commit/3435fc8130642528cfc8a134a645bf4dc7af1141)
-recorded these in the copy of `2026.10.19 - Changes.xml` taken from hcanat.us on 2026-08-12, which
-`uxlc/in/UXLC-misc/2026.10.19 - Changes.xml` held until 2026-10-20. A later copy is compared at the
-end of this section.
+recorded these in the copy of `2026.10.19 - Changes.xml` taken from hcanat.us on 2026-08-12. On
+2026-10-20 `uxlc/in/UXLC-misc/2026.10.19 - Changes.xml` became the installed list, with 140
+records, as hcanat.us served it that day, byte for byte the copy that tanach.us served on
+2026-10-19. The UXLC had fixed items 1 and 3 there, but not item 2.
 
-1. 2026.08.05-27 (Job 11:6.3) gives its book as `job`, lowercase.
+1. 2026.08.05-27 (Job 11:6.3) gave its book as `job`, lowercase. The installed list gives `Job`.
 2. 2026.08.05-5 (Ex 20:3.2), 2026.08.05-10 (Lev 25:20.3) and 2026.08.05-25 (Job 34:20.4) give a
-   page but an empty column and line. MAM-basics' override copy fills each from the repository's
-   location estimator, so those three values are estimates, not readings of the manuscript.
-3. 2026.08.05-19 (2 Sam 5:21.1), Daniel Holman's, describes removing a maqaf, but its change text
-   equals its reference text, maqaf included, so the record proposes no change.
-
-A Claude session compared these items with the change list as tanach.us served it on 2026-10-19,
-when the list had 140 records and was marked installed rather than proposed. Items 1 and 3 are
-fixed there, and item 2 is not. Record 2026.08.05-27 gives its book as `Job`. Record
-2026.08.05-19's change text no longer has the maqaf that its reference text has, so the record
-now proposes the removal that its description names. Four records of the installed list give a
-page but an empty column and line: item 2's three, and 2026.08.05-47, which the proposed list
-lacked.
-
-| Record | Citation in the installed list | Page | Override's estimate |
-| --- | --- | --- | --- |
-| 2026.08.05-5 | Ex 20:3.2 | F043A | 2:19 |
-| 2026.08.05-10 | Lev 25:20.4 | F071B | 2:14 |
-| 2026.08.05-25 | Job 34:20.4 | F406B | 2:27 |
-| 2026.08.05-47 | Ps 14:7.1 | F367B | 2:22 |
-
-Since 2026-10-20, `uxlc/in/UXLC-misc/2026.10.19 - Changes.xml` has been the installed list, as
-hcanat.us served it that day, byte for byte the copy that tanach.us served on 2026-10-19. The
-override copy was rebuilt from it the same day. It fills the four empty locators with the location
-estimator's values in the table, the first three unchanged, and it no longer needs item 1's
-correction. Since 2026-10-31 it gives 2026.08.05-10 the line section 2 reports, 2:16, in place of
-the estimate; the other three remain estimates.
+   page but an empty column and line, and so does 2026.08.05-47 (Ps 14:7.1), which the proposed
+   list lacked. MAM-basics rejects an empty line, so its override copy fills the four: 2026.08.05-10
+   with a reading of the photograph, and the other three with the location estimator's values.
+   Section 9 points to the manifest that records which is which.
+3. 2026.08.05-19 (2 Sam 5:21.1), Daniel Holman's, described removing a maqaf, but its change text
+   was the same as its reference text, maqaf included. In the installed list its change text lacks
+   the maqaf, so the record proposes the removal that its description names.
 
 ## 4. Wrong letter name in a change-record note, found 2026-10-17
 
@@ -264,3 +227,24 @@ record, 2023.11.10-3, whose atom is on line 12/11 IB/NIB of page F109B's column 
 On 2026-10-31 the copies held the locators of sixteen records: twelve whose line the photographs
 show to be wrong, and the four of section 3 whose column and line the UXLC leaves empty. Three of
 the four, 2026.08.05-5, -25 and -47, still held the location estimator's values.
+
+## 10. Three problems recorded in a program's docstring, 2026-09-04
+
+The docstring of `py/main_map_changes_to_book_of_job.py`, under "FOUR PROBLEMS NOTICED IN REVIEW AND
+NOT RESOLVED", records four problems in changeset 2026.02.05 of the 2026.04.01 list, Chris
+Kimball's port of Ben's book-of-job work into the UXLC. They moved there on 2026-09-04, in
+`d8a63afd`, from a report that was then deleted. The fourth, 2026.02.05-115, is in section 8.
+None of the other three has been reported, and the docstring remains their fuller record.
+
+1. 2026.02.05-83 (Job 23:5.6, NoAction) examines the end of the word for a maqaf. The docstring
+   says that it discusses a different maqaf than intended, and that the question is an Aleppo
+   Codex quirk, not relevant to the UXLC.
+2. 2026.02.05-161 (Job 42:10.10, NoAction): the docstring says that the record's image link on
+   tanach.us is broken. The record itself holds no image, so the link belongs to the UXLC's web
+   pages. This was not rechecked on 2026-10-31.
+3. 2026.02.05-109 (Job 31:15.1, NoTextChange): the docstring says that the record misuses a ZWJ
+   against the Unicode Standard, and that its reference and change texts are identical, each with
+   the ZWJ. A check on 2026-10-31 found that this is probably not a problem. The ZWJ is between a
+   ḥataf pataḥ and a meteg, the request for a meteg in the middle of a ḥataf vowel, one of the 80
+   such joiners that section 8 counts in UXLC 2.6; and a NoTextChange record's two texts are
+   normally the same.
