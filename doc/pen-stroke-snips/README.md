@@ -4,7 +4,9 @@ Four crops of the Leningrad Codex, each with its stroke-SVG, and `overlays.html`
 every stroke-SVG over its crop. They are the first exemplars of the representation that
 [../pen-stroke-representation.md](../pen-stroke-representation.md) describes, and
 [../pen-stroke-exemplars-2026-10-30.md](../pen-stroke-exemplars-2026-10-30.md) reports what they
-showed. Claude traced every stroke and judged every residual piece; no human has reviewed them.
+showed. Claude traced every stroke by eye, a script of Claude's smoothed each into curves and
+fitted its widths to the ink, and Claude judged every residual piece. Ben has checked the
+readings of the marks in the two crops on page F043A; no human has reviewed the rest.
 
 ## The crops
 

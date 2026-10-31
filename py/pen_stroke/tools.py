@@ -17,7 +17,7 @@ SVG_SUFFIX = ".strokes.svg"
 DEFAULT_SPECK_SIZE = 8
 DEFAULT_HALO_BAND = 24
 # Ink components of at least this many pixels are taken for letters, and the
-# rest for marks, when a crop's nibs are fitted before any stroke is traced.
+# rest for marks, when nibfit measures a crop before any stroke is traced.
 DEFAULT_SPLIT = 300
 
 
@@ -51,16 +51,16 @@ def nib_fits(lum, threshold, split):
     return out
 
 
-def samples_by_strokes(svg_path, cls):
-    """Width samples of the ink under one nib's strokes, grown by two pixels."""
+def samples_by_strokes(svg_path, pass_name):
+    """Width samples of the ink under one pass's strokes, grown by two pixels."""
     sf = ssvg.read(svg_path)
     lum = raster.load_luminance(dv.crop_path(svg_path, sf))
     ink = lum < sf.threshold
     h, w = ink.shape
     polys = []
     for st in sf.strokes:
-        if st.nib == cls:
-            polys.extend(dv.sweep_polys(sf, st))
+        if st.pass_name == pass_name:
+            polys.extend(dv.sweep_polys(st))
     sel = raster.dilate8(raster.dilate8(geo.rasterize(polys, w, h, "nonzero")))
     return nibmod.width_samples(lum, ink, select=sel)
 
@@ -68,18 +68,18 @@ def samples_by_strokes(svg_path, cls):
 def nib_fits_by_strokes(svg_path):
     """Fits for the ink under the letters' strokes and under the marks' strokes."""
     out = {}
-    for cls in (level5.LETTERS, level5.MARKS):
-        samples = samples_by_strokes(svg_path, cls)
+    for pass_name in (level5.LETTERS, level5.MARKS):
+        samples = samples_by_strokes(svg_path, pass_name)
         nib, rms, rows = nibmod.fit(samples)
-        out[cls] = (nib, rms, rows, len(samples))
+        out[pass_name] = (nib, rms, rows, len(samples))
     return out
 
 
-def pooled_fit(svg_paths, cls):
-    """One fit for one nib's strokes in all the stroke-SVGs together."""
+def pooled_fit(svg_paths, pass_name):
+    """One fit for one pass's strokes in all the stroke-SVGs together."""
     samples = []
     for p in svg_paths:
-        samples.extend(samples_by_strokes(p, cls))
+        samples.extend(samples_by_strokes(p, pass_name))
     nib, rms, rows = nibmod.fit(samples)
     return nib, rms, rows, len(samples)
 
@@ -90,10 +90,9 @@ def init_file(
     threshold=None,
     speck_size=DEFAULT_SPECK_SIZE,
     halo_band=DEFAULT_HALO_BAND,
-    split=DEFAULT_SPLIT,
 ):
-    """A new stroke-SVG beside the crop: provenance, parameters, fitted nibs,
-    and the derived level-1 parts; no strokes yet."""
+    """A new stroke-SVG beside the crop: provenance, parameters and the
+    derived level-1 parts; no strokes yet."""
     png = Path(png)
     out_path = svg_path_for(png)
     if out_path.exists():
@@ -101,15 +100,6 @@ def init_file(
     lum = raster.load_luminance(png)
     if threshold is None:
         threshold = raster.otsu_threshold(lum)
-    fits = nib_fits(lum, threshold, split)
-    nibs = {}
-    for cls in (level5.LETTERS, level5.MARKS):
-        nib = fits[cls][0]
-        if nib is None:
-            raise ValueError(f"too few {cls} samples to fit a nib")
-        nibs[cls] = nibmod.Nib(
-            round(nib.width, 2), round(nib.angle, 1), round(nib.edge, 2)
-        )
     h, w = lum.shape
     sf = ssvg.StrokeFile(
         width=w,
@@ -119,7 +109,6 @@ def init_file(
         threshold=threshold,
         speck_size=speck_size,
         halo_band=halo_band,
-        nibs=nibs,
     )
     sf = dv.derive(sf, lum)
     ssvg.write(sf, out_path)

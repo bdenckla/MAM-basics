@@ -3,7 +3,8 @@
 A kind names a sign instance as a reader would, "tav letter" or "qamats vowel",
 without linking it to any transcription (Ben, 2026-10-30: linking is a later
 level).  Each kind gives the Unicode name it is congruent to, or None where the
-kind leaves the sign undetermined, and the nib a stroke of it is written with.
+kind leaves the sign undetermined, and the pass its strokes belong to: the
+letters, or the marks written over and under them.
 """
 
 import unicodedata
@@ -91,8 +92,8 @@ for _kind, (_uni, _nib) in KINDS.items():
         unicodedata.lookup(_uni)
 
 
-def nib_class(kind):
-    """The nib a stroke of this kind is written with; an unknown kind raises."""
+def pass_of(kind):
+    """The pass a stroke of this kind belongs to; an unknown kind raises."""
     if kind not in KINDS:
         raise ValueError(f"unknown stroke-group kind {kind!r}")
     return KINDS[kind][1]

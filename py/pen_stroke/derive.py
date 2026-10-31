@@ -1,11 +1,12 @@
 """Deriving a stroke-SVG's computed parts from its crop, and checking them.
 
-Authored: the root's provenance and parameters, the nibs, each stroke's median,
-nib, confidence and note, the frame, the groups, and the judgments of residual
-pieces and of fills that are not ink.  Derived: the fills, the image residual,
-each stroke's ink and shape, and the pen residual.  ``derive`` recomputes the
-derived parts and carries each judgment over to the piece or fill with exactly
-the same pixels; ``problems`` reports every way a file departs from its crop.
+Authored: the root's provenance and parameters, each stroke's median, widths,
+ends, pass, confidence and note, the frame, the groups, and the judgments of
+residual pieces and of fills that are not ink.  Derived: the fills, the image
+residual, each stroke's ink and shape, and the pen residual.  ``derive``
+recomputes the derived parts and carries each judgment over to the piece or
+fill with exactly the same pixels; ``problems`` reports every way a file
+departs from its crop.
 """
 
 from dataclasses import replace
@@ -13,11 +14,11 @@ from pathlib import Path
 
 import numpy as np
 
+from pen_stroke import curve
 from pen_stroke import geometry as geo
 from pen_stroke import level1
 from pen_stroke import level3
 from pen_stroke import level5
-from pen_stroke import nib as nibmod
 from pen_stroke import raster
 from pen_stroke import stroke_svg as ssvg
 
@@ -32,12 +33,14 @@ def crop_path(svg_path, sf):
     return Path(svg_path).parent / sf.image
 
 
-def median_points(stroke):
-    return geo.polyline_points(geo.parse_path(stroke.median))
+def median_segments(stroke):
+    """The stroke's median as cubic segments; a malformed median raises."""
+    return curve.segments(geo.parse_path(stroke.median))
 
 
-def sweep_polys(sf, stroke):
-    return nibmod.sweep(median_points(stroke), sf.nib_of(stroke))
+def sweep_polys(stroke):
+    """The stroke's ink: its median swept with its widths and ends."""
+    return curve.ink_pieces(median_segments(stroke), stroke.widths, stroke.ends)
 
 
 def ink_fill_ds(sf):
@@ -78,9 +81,9 @@ def derive(sf, lum):
     strokes = []
     sweeps = []
     for st in sf.strokes:
-        polys = sweep_polys(out, st)
+        polys = sweep_polys(st)
         sweeps.extend(polys)
-        shape = level3.shape_class(median_points(st), out.nib_of(st))
+        shape = level3.shape_class(median_segments(st), st.widths)
         strokes.append(
             replace(st, ink=geo.polygon_path(polys, INK_PLACES), shape=shape)
         )
@@ -114,22 +117,25 @@ def structural_problems(sf):
     for g in sf.groups:
         if not g.members:
             out.append(f"{g.id}: a group with no strokes")
-        cls = level5.nib_class(g.kind)
+        pass_name = level5.pass_of(g.kind)
         for m in g.members:
             if m not in strokes:
                 out.append(f"{g.id}: refers to {m!r}, which is no stroke of this file")
                 continue
             grouped.add(m)
-            if strokes[m].nib != cls:
+            if strokes[m].pass_name != pass_name:
                 out.append(
-                    f"{g.id} ({g.kind}) holds {m}, which is written with the"
-                    f" {strokes[m].nib} nib, not the {cls} nib"
+                    f"{g.id} ({g.kind}) holds {m}, which is in the"
+                    f" {strokes[m].pass_name} pass, not the {pass_name} pass"
                 )
     for s in sf.strokes:
         if s.id not in grouped:
             out.append(f"{s.id}: in no group")
         try:
-            median_points(s)
+            segs = median_segments(s)
+            curve.segment_widths(s.widths, len(segs))
+            for seg in segs:
+                curve.tangent(seg, 0.5)
         except ValueError as exc:
             out.append(f"{s.id}: {exc}")
     for p in sf.pieces:
@@ -171,7 +177,7 @@ def problems(svg_path):
             out.append(f"the {name} path is not what the crop gives")
     for old, new in zip(sf.strokes, fresh.strokes):
         if _mask_diff(old.ink, new.ink, w, h) > MASK_TOLERANCE:
-            out.append(f"{old.id}: its ink is not the sweep of its median")
+            out.append(f"{old.id}: its ink is not its median swept with its widths")
         if old.shape != new.shape:
             out.append(
                 f"{old.id}: shape {old.shape!r} where its median gives {new.shape!r}"

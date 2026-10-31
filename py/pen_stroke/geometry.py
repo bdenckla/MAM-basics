@@ -141,17 +141,6 @@ def flatten(subpaths, tolerance=0.25):
     return polys
 
 
-def polyline_points(subpaths):
-    """The vertices of an open or closed path of straight segments, in order.
-
-    A median is authored as one subpath of straight segments; a curve in it is
-    flattened first, so a vector editor's smoothing does not change its meaning.
-    """
-    if len(subpaths) != 1:
-        raise ValueError(f"a median has one subpath, not {len(subpaths)}")
-    return flatten(subpaths)[0]
-
-
 def signed_area(poly):
     """Twice-halved shoelace area; positive when clockwise on a y-down screen."""
     s = 0.0
