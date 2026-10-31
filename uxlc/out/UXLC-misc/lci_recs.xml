@@ -47,7 +47,7 @@
         <type-count col-name="stopc" integer="978" none="4" />
         <type-count col-name="stopv" integer="978" none="4" />
         <type-count col-name="stopp" integer="978" none="4" />
-        <type-count col-name="note" none="940" string="42" />
+        <type-count col-name="note" none="934" string="48" />
       </type-counts>
       <bkid-val-counts>
         <bkid-val-count bkid="Genesis" count="61" />
@@ -2986,7 +2986,7 @@
       <stopc>30</stopc>
       <stopv>16</stopv>
       <stopp>5</stopp>
-      <note />
+      <note>all 3 columns have 29 lines</note>
     </lci_rec>
     <lci_rec>
       <page>094B</page>
@@ -3001,7 +3001,7 @@
       <stopc>31</stopc>
       <stopv>28</stopv>
       <stopp>20</stopp>
-      <note />
+      <note>all 3 columns have 29 lines</note>
     </lci_rec>
     <lci_rec>
       <page>095A</page>
@@ -3376,7 +3376,7 @@
       <stopc>12</stopc>
       <stopv>10</stopv>
       <stopp>3</stopp>
-      <note />
+      <note>column 1 has 28 lines</note>
     </lci_rec>
     <lci_rec>
       <page>107A</page>
@@ -3556,7 +3556,7 @@
       <stopc>23</stopc>
       <stopv>13</stopv>
       <stopp>7</stopp>
-      <note />
+      <note>column 3 has 28 lines</note>
     </lci_rec>
     <lci_rec>
       <page>113A</page>
@@ -3915,7 +3915,7 @@
       <startp>25</startp>
       <stopc>7</stopc>
       <stopv>12</stopv>
-      <stopp>6</stopp>
+      <stopp>10</stopp>
       <note />
     </lci_rec>
     <lci_rec>
@@ -3927,7 +3927,7 @@
       <bkid>Joshua</bkid>
       <startc>7</startc>
       <startv>12</startv>
-      <startp>7</startp>
+      <startp>11</startp>
       <stopc>8</stopc>
       <stopv>4</stopv>
       <stopp>14</stopp>
@@ -4546,7 +4546,7 @@
       <stopc>13</stopc>
       <stopv>7</stopv>
       <stopp>21</stopp>
-      <note />
+      <note>column 3 has 28 lines</note>
     </lci_rec>
     <lci_rec>
       <page>145A</page>
@@ -5730,7 +5730,7 @@
       <startp>1</startp>
       <stopc>23</stopc>
       <stopv>3</stopv>
-      <stopp>8</stopp>
+      <stopp>11</stopp>
       <note>column 1 of 1 is about twice the width of a column on a normal 3-column page</note>
     </lci_rec>
     <lci_rec>
@@ -5742,7 +5742,7 @@
       <bkid>2Samuel</bkid>
       <startc>23</startc>
       <startv>3</startv>
-      <startp>9</startp>
+      <startp>12</startp>
       <stopc>23</stopc>
       <stopv>23</stopv>
       <stopp>11</stopp>
@@ -7141,7 +7141,7 @@
       <stopc>19</stopc>
       <stopv>21</stopv>
       <stopp>5</stopp>
-      <note />
+      <note>column 3 has 28 lines</note>
     </lci_rec>
     <lci_rec>
       <page>227B</page>
@@ -7230,7 +7230,7 @@
       <startp>8</startp>
       <stopc>28</stopc>
       <stopv>23</stopv>
-      <stopp>5</stopp>
+      <stopp>2</stopp>
       <note />
     </lci_rec>
     <lci_rec>
@@ -7242,7 +7242,7 @@
       <bkid>Isaiah</bkid>
       <startc>28</startc>
       <startv>23</startv>
-      <startp>6</startp>
+      <startp>3</startp>
       <stopc>29</stopc>
       <stopv>19</stopv>
       <stopp>5</stopp>
@@ -8475,7 +8475,7 @@
       <startp>16</startp>
       <stopc>46</stopc>
       <stopv>2</stopv>
-      <stopp>18</stopp>
+      <stopp>19</stopp>
       <note />
     </lci_rec>
     <lci_rec>
@@ -8487,7 +8487,7 @@
       <bkid>Jeremiah</bkid>
       <startc>46</startc>
       <startv>2</startv>
-      <startp>19</startp>
+      <startp>20</startp>
       <stopc>46</stopc>
       <stopv>28</stopv>
       <stopp>20</stopp>
@@ -9810,7 +9810,7 @@
       <startp>7</startp>
       <stopc>4</stopc>
       <stopv>11</stopv>
-      <stopp>9</stopp>
+      <stopp>10</stopp>
       <note>Jonah 4:11b is on folio 313B</note>
     </lci_rec>
     <lci_rec>
@@ -9822,7 +9822,7 @@
       <bkid>Jonah</bkid>
       <startc>4</startc>
       <startv>11</startv>
-      <startp>10</startp>
+      <startp>11</startp>
       <stopc>4</stopc>
       <stopv>11</stopv>
       <stopp>23</stopp>
@@ -11160,7 +11160,7 @@
       <startp>14</startp>
       <stopc>17</stopc>
       <stopv>13</stopv>
-      <stopp>8</stopp>
+      <stopp>7</stopp>
       <note />
     </lci_rec>
     <lci_rec>
@@ -11172,7 +11172,7 @@
       <bkid>2Chronicles</bkid>
       <startc>17</startc>
       <startv>13</startv>
-      <startp>9</startp>
+      <startp>8</startp>
       <stopc>18</stopc>
       <stopv>16</stopv>
       <stopp>8</stopp>
