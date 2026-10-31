@@ -8,9 +8,13 @@ alone.  One layer draws the strokes black, so that with the crop off they show
 the page unaged, black on white (decision 11 of the profile's note).  A
 supplied stroke (decision 15) is drawn in one style only, in every view: hatched
 and outlined in a colour no other layer of the page uses, never filled solid
-and never in a stroke's colour or black.  The crop is drawn smoothly, not as
-squares, unless its image's checkbox asks for squares.  Writes
-doc/pen-stroke-snips/overlays.html.
+and never in a stroke's colour or black.  Ink that is not the crop's subject's,
+of another word or line (decision 17), is drawn in a colour of its own in every
+view, on a layer of its own.  Where a file proposes how its ink was written
+(decision 11), each median ends in an arrowhead, and a button plays the
+writing: the strokes appear in their order, each along its median.  The crop
+is drawn smoothly, not as squares, unless its image's checkbox asks for
+squares.  Writes doc/pen-stroke-snips/overlays.html.
 """
 
 import html
@@ -27,7 +31,12 @@ from pen_stroke import stroke_svg as ssvg
 from pen_stroke import tools
 
 SCALE = 4
+# A crop wider than this many pixels, such as a whole line, is drawn at LINE_SCALE.
+WIDE_CROP = 320
+LINE_SCALE = 2
 STROKE_COLOURS = ("green", "red", "purple", "blue", "yellow")
+OTHER_INK_COLOUR = ssvg.OTHER_INK_COLOUR
+ARROW = "median-arrow"
 # Decision 15: a supplied stroke is never drawn as other strokes are.  This
 # colour is reserved for it on the page, with the hatching SUPPLIED_DEFS gives.
 SUPPLIED_COLOUR = "#ff6d00"
@@ -88,7 +97,13 @@ LAYERS = (
         True,
         SUPPLIED_SWATCH,
     ),
-    ("medians", "level 2: medians", True, None),
+    (
+        "others",
+        "level 5: other words' and lines' ink",
+        True,
+        f"background: {OTHER_INK_COLOUR}",
+    ),
+    ("medians", "level 2: medians, arrowed where the ductus is proposed", True, None),
     (
         "unexplained",
         "level 2: ink no stroke explains",
@@ -113,6 +128,8 @@ p.ai-caveat { border: 3px solid #b00020; padding: 0.6em 0.8em; }
 .layered fieldset { margin: 0; padding: 0.3em 0.7em; max-width: 21em; font-size: 0.9em; }
 .layered fieldset label { display: block; white-space: nowrap; }
 .layered fieldset p { margin: 0.2em 0 0.2em 1.4em; font-size: 0.9em; white-space: normal; }
+.layered .scroll { max-width: 100%; overflow-x: auto; min-width: 0; }
+.layered button { margin: 0.4em 0 0.2em 0; }
 svg.overlay { border: 1px solid #999; background: #fff; display: block; }
 svg.overlay image { image-rendering: auto; }
 .squares svg.overlay image { image-rendering: pixelated; }
@@ -142,6 +159,61 @@ for (const box of document.querySelectorAll('.layered input[data-squares]')) {
   const apply = () => fig.classList.toggle('squares', box.checked);
   box.addEventListener('change', apply);
   apply();
+}
+// Play the writing: each stroke's ink appears in the file's order, revealed along
+// its median by a mask whose wide line grows from the median's start to its end.
+const SVGNS = 'http://www.w3.org/2000/svg';
+let playId = 0;
+async function playWriting(fig, button) {
+  const svg = fig.querySelector('svg.overlay');
+  const medians = [...svg.querySelectorAll('g.play-medians path')];
+  button.disabled = true;
+  const defs = svg.querySelector('defs') || svg.insertBefore(document.createElementNS(SVGNS, 'defs'), svg.firstChild);
+  const vb = svg.viewBox.baseVal;
+  const runs = medians.map((m) => {
+    const id = 'play-' + (++playId);
+    const mask = document.createElementNS(SVGNS, 'mask');
+    mask.setAttribute('id', id);
+    mask.setAttribute('maskUnits', 'userSpaceOnUse');
+    for (const [k, v] of [['x', vb.x], ['y', vb.y], ['width', vb.width], ['height', vb.height]]) mask.setAttribute(k, v);
+    const line = m.cloneNode();
+    const len = m.getTotalLength();
+    line.setAttribute('fill', 'none');
+    line.setAttribute('stroke', '#fff');
+    line.setAttribute('stroke-width', m.dataset.reveal);
+    line.setAttribute('stroke-linecap', 'square');
+    line.setAttribute('stroke-dasharray', len + ' ' + len);
+    line.setAttribute('stroke-dashoffset', len);
+    mask.appendChild(line);
+    defs.appendChild(mask);
+    const inks = [...svg.querySelectorAll('[data-sid="' + m.dataset.sid + '"]')];
+    for (const ink of inks) ink.style.visibility = 'hidden';
+    return { id, mask, line, len, inks };
+  });
+  for (const r of runs) {
+    for (const ink of r.inks) {
+      ink.setAttribute('mask', 'url(#' + r.id + ')');
+      ink.style.visibility = '';
+    }
+    const ms = Math.max(120, r.len * 8);
+    const t0 = performance.now();
+    await new Promise((done) => {
+      const step = (now) => {
+        const f = Math.min(1, (now - t0) / ms);
+        r.line.setAttribute('stroke-dashoffset', r.len * (1 - f));
+        if (f < 1) requestAnimationFrame(step); else done();
+      };
+      requestAnimationFrame(step);
+    });
+  }
+  for (const r of runs) {
+    for (const ink of r.inks) ink.removeAttribute('mask');
+    r.mask.remove();
+  }
+  button.disabled = false;
+}
+for (const button of document.querySelectorAll('.layered button[data-play]')) {
+  button.addEventListener('click', () => playWriting(button.closest('.layered'), button));
 }
 """
 
@@ -210,12 +282,50 @@ def supplied_ink(st, scale):
     )
 
 
+def scale_of(sf):
+    """How many times its size the overlay page draws a crop."""
+    return SCALE if sf.width <= WIDE_CROP else LINE_SCALE
+
+
+def arrow_defs():
+    """Arrowheads for the medians, one per colour a median is drawn in."""
+    out = []
+    for name, colour in (
+        ("ink", "#000"),
+        ("supplied", SUPPLIED_COLOUR),
+        ("other", OTHER_INK_COLOUR),
+    ):
+        out.append(
+            f'<marker id="{ARROW}-{name}" viewBox="0 0 10 10" refX="7" refY="5"'
+            ' markerWidth="5" markerHeight="5" orient="auto">'
+            f'<path d="M0 1 L10 5 L0 9 Z" fill="{colour}"/></marker>'
+        )
+    return "".join(out)
+
+
+def _median(st, colour, arrow, dash=""):
+    """A median, ending in an arrowhead where the ductus is proposed, and a dot
+    at each point where its segments meet."""
+    segs = dv.median_segments(st)
+    end = f' marker-end="url(#{ARROW}-{arrow})"' if arrow else ""
+    out = [f'<path stroke="{colour}"{dash}{end} d="{st.median}"/>']
+    out += [
+        f'<circle cx="{geo.fmt(x, 2)}" cy="{geo.fmt(y, 2)}" r="0.6" fill="{colour}"/>'
+        for x, y in [segs[0][0]] + [seg[3] for seg in segs]
+    ]
+    return out
+
+
 def _svg(sf, groups_of):
     w, h = sf.width, sf.height
-    seen = [st for st in sf.strokes if not st.supplied]
+    scale = scale_of(sf)
+    others = set(ssvg.other_ink_ids(sf))
+    seen = [st for st in sf.strokes if not st.supplied and st.id not in others]
+    other_seen = [st for st in sf.strokes if not st.supplied and st.id in others]
     supplied = [st for st in sf.strokes if st.supplied]
+    arrowed = sf.ductus == "plausible"
     out = [
-        f'<svg class="overlay" width="{w * SCALE}" height="{h * SCALE}"'
+        f'<svg class="overlay" width="{w * scale}" height="{h * scale}"'
         f' viewBox="0 0 {w} {h}" xmlns="http://www.w3.org/2000/svg">'
     ]
     out.append(
@@ -247,7 +357,7 @@ def _svg(sf, groups_of):
     for k, st in enumerate(seen):
         kinds = ", ".join(groups_of.get(st.id, []))
         out.append(
-            f'<path fill="{stroke_colour(k)}" d="{st.ink}">'
+            f'<path data-sid="{st.id}" fill="{stroke_colour(k)}" d="{st.ink}">'
             f"<title>{_e(st.id)}: {_e(kinds)}</title></path>"
         )
     out.append("</g>")
@@ -256,31 +366,57 @@ def _svg(sf, groups_of):
         kinds = groups_of.get(st.id, [])
         family = kind_family(kinds[0]) if kinds else "undetermined"
         out.append(
-            f'<path fill="{KIND_COLOURS[family]}" d="{st.ink}"><title>{_e(", ".join(kinds))}</title></path>'
+            f'<path data-sid="{st.id}" fill="{KIND_COLOURS[family]}" d="{st.ink}">'
+            f'<title>{_e(", ".join(kinds))}</title></path>'
         )
     out.append("</g>")
     out.append('<g class="layer-black" fill="#000">')
-    out += [f'<path d="{st.ink}"/>' for st in seen]
+    out += [f'<path data-sid="{st.id}" d="{st.ink}"/>' for st in seen]
     out.append("</g>")
     out.append('<g class="layer-supplied">')
     for st in supplied:
         kinds = ", ".join(groups_of.get(st.id, []))
         out.append(
-            f"<g><title>{_e(st.id)}, supplied ({_e(st.supplied)}): {_e(kinds)}."
-            f" {_e(st.supplied_why)}</title>{supplied_ink(st, SCALE)}</g>"
+            f'<g data-sid="{st.id}"><title>{_e(st.id)}, supplied ({_e(st.supplied)}):'
+            f" {_e(kinds)}. {_e(st.supplied_why)}</title>{supplied_ink(st, scale)}</g>"
         )
+    out.append("</g>")
+    out.append(
+        f'<g class="layer-others" fill="{OTHER_INK_COLOUR}" fill-opacity="0.55">'
+    )
+    for st in other_seen:
+        kinds = ", ".join(groups_of.get(st.id, []))
+        out.append(f'<path d="{st.ink}"><title>{_e(st.id)}: {_e(kinds)}</title></path>')
     out.append("</g>")
     out.append('<g class="layer-medians" fill="none" stroke-width="0.5">')
     for st in sf.strokes:
-        segs = dv.median_segments(st)
-        colour = SUPPLIED_COLOUR if st.supplied else "#000"
-        dash = ' stroke-dasharray="1.5 1"' if st.supplied else ""
-        out.append(f'<path stroke="{colour}"{dash} d="{st.median}"/>')
-        out += [
-            f'<circle cx="{geo.fmt(x, 2)}" cy="{geo.fmt(y, 2)}" r="0.6" fill="{colour}"/>'
-            for x, y in [segs[0][0]] + [seg[3] for seg in segs]
-        ]
+        if st.id in others:
+            continue
+        if st.supplied:
+            out += _median(
+                st,
+                SUPPLIED_COLOUR,
+                "supplied" if arrowed else "",
+                ' stroke-dasharray="1.5 1"',
+            )
+        else:
+            out += _median(st, "#000", "ink" if arrowed else "")
     out.append("</g>")
+    out.append('<g class="layer-medians layer-others" fill="none" stroke-width="0.5">')
+    for st in sf.strokes:
+        if st.id in others:
+            out += _median(st, OTHER_INK_COLOUR, "other" if arrowed else "")
+    out.append("</g>")
+    if arrowed:
+        out.append('<g class="play-medians" visibility="hidden">')
+        for st in sf.strokes:
+            if st.id in others:
+                continue
+            reveal = geo.fmt(2 * max(st.widths) + 6, 1)
+            out.append(
+                f'<path data-sid="{st.id}" data-reveal="{reveal}" d="{st.median}"/>'
+            )
+        out.append("</g>")
     out.append(
         f'<path class="layer-unexplained" fill="{UNEXPLAINED_COLOUR}" fill-opacity="0.8" d="{sf.unexplained}"/>'
     )
@@ -309,9 +445,16 @@ def _svg(sf, groups_of):
     return "\n".join(out)
 
 
-def layer_controls():
-    """The checkboxes that switch one image's layers, with what each layer's colours mean."""
+def layer_controls(play=False):
+    """The checkboxes that switch one image's layers, with what each layer's colours
+    mean, and the button that plays the writing where the ductus is proposed."""
     out = ["<fieldset><legend>This image's layers</legend>"]
+    if play:
+        out.append(
+            '<button type="button" data-play>Play the writing</button>'
+            "<p>The strokes of the crop's subject appear in the file's order, each"
+            " along its median from where the pen began.</p>"
+        )
     for name, label, on, swatch in LAYERS:
         mark = _swatch(swatch) + " " if swatch else ""
         out.append(
@@ -358,37 +501,57 @@ def _section(svg_path):
     out.append(
         f"<tr><th>Verse in the UXLC</th><td>{_e(pv.get('uxlc-verse', ''))}</td></tr>"
     )
-    if "combined-chanted-word" in pv:
-        out.append(
-            "<tr><th>Chanted word, both strands combined: the primary transcription</th>"
-            f'<td dir="rtl" lang="hbo">{_e(pv["combined-chanted-word"])}</td></tr>'
-        )
-        out.append(
-            f"<tr><th>Its source</th><td>{_e(pv.get('combined-source', ''))}</td></tr>"
-        )
     for key, label in (
-        ("taxton-chanted-word", "תחתון"),
-        ("elyon-chanted-word", "עליון"),
+        (
+            "combined-chanted-word",
+            "Chanted word, both strands combined: the primary transcription",
+        ),
+        ("combined-line", "The line: the primary transcription"),
     ):
         if key in pv:
             out.append(
-                f'<tr><th>Chanted word, {label}</th><td dir="rtl" lang="hbo">{_e(pv[key])}</td></tr>'
+                f'<tr><th>{label}</th><td dir="rtl" lang="hbo">{_e(pv[key])}</td></tr>'
             )
+            out.append(
+                f"<tr><th>Its source</th><td>{_e(pv.get('combined-source', ''))}</td></tr>"
+            )
+    for key, label in (
+        ("taxton-chanted-word", "Chanted word, תחתון"),
+        ("elyon-chanted-word", "Chanted word, עליון"),
+        ("line-above", "The line above, as far as the crop reaches"),
+        ("line-below", "The line below, as far as the crop reaches"),
+    ):
+        if key in pv:
+            out.append(
+                f'<tr><th>{label}</th><td dir="rtl" lang="hbo">{_e(pv[key])}</td></tr>'
+            )
+    if "adjacent-source" in pv:
+        out.append(
+            f"<tr><th>Their source</th><td>{_e(pv['adjacent-source'])}</td></tr>"
+        )
     if "crop-note" in pv:
         out.append(f"<tr><th>Crop</th><td>{_e(pv['crop-note'])}</td></tr>")
     out.append(
         f"<tr><th>Source</th><td><a href=\"{_e(pv.get('source-url', ''))}\">{_e(pv.get('source-url', ''))}</a>,"
         f" box {_e(pv.get('crop-box', ''))}</td></tr>"
     )
+    ductus = (
+        "proposed: the strokes are in the order written, each median runs the way"
+        " the pen moved, and every head is a stroke of its own"
+        if sf.ductus == "plausible"
+        else "not recorded: the strokes' order and their medians' directions mean nothing"
+    )
+    out.append(f"<tr><th>Ductus</th><td>{_e(ductus)}</td></tr>")
     out.append("</table>")
     out.append('<div class="layered">')
-    out.append(_svg(sf, groups_of))
-    out.append(layer_controls())
+    out.append(f'<div class="scroll">{_svg(sf, groups_of)}</div>')
+    out.append(layer_controls(play=sf.ductus == "plausible"))
     out.append("</div>")
     swept = m["swept"] or 1
     ink = m["ink"] or 1
     judged = Counter(p.judged for p in sf.pieces)
     nsupplied = sum(1 for st in sf.strokes if st.supplied)
+    owners = ssvg.ink_of_strokes(sf)
     out.append("<table>")
     out.append(
         f"<tr><th>Threshold</th><td>luminance below {sf.threshold}; specks of up to"
@@ -421,16 +584,20 @@ def _section(svg_path):
     )
     out.append("</table>")
     out.append(
-        "<table><tr><th>Stroke</th><th>Groups</th><th>Pass</th><th>Ends</th>"
+        "<table><tr><th>Stroke</th><th>Groups</th><th>Ink of</th><th>Pass</th><th>Ends</th>"
         "<th>Shape</th><th>Segments</th><th>Length (px)</th><th>Width (px)</th>"
         "<th>Area (px)</th><th>Beyond the ink (px)</th><th>Confidence</th>"
         "<th>Supplied</th><th>Note</th></tr>"
     )
+    others = set(ssvg.other_ink_ids(sf))
     k = 0
     for st, length, area, over in m["strokes"]:
         if st.supplied:
             swatch = _swatch(SUPPLIED_SWATCH)
             supplied = f"{_e(st.supplied)}: {_e(st.supplied_why)}"
+        elif st.id in others:
+            swatch = _swatch(f"background:{OTHER_INK_COLOUR}")
+            supplied = ""
         else:
             swatch = f'<span class="swatch" style="background:{stroke_colour(k)};opacity:0.6"></span>'
             supplied = ""
@@ -438,9 +605,13 @@ def _section(svg_path):
         share = f"{over} ({100 * over / area:.0f}%)" if area else "0"
         nseg = len(dv.median_segments(st))
         widths = f"{min(st.widths):.1f} to {max(st.widths):.1f}"
+        ends = st.ends
+        if st.cuts:
+            ends += " at " + " and ".join(f"{c:g}°" for c in st.cuts)
         out.append(
             f"<tr><td>{swatch} {_e(st.id)}</td><td>{_e(', '.join(groups_of.get(st.id, [])))}</td>"
-            f"<td>{_e(st.pass_name)}</td><td>{_e(st.ends)}</td><td>{_e(st.shape)}</td>"
+            f"<td>{_e(', '.join(sorted(owners.get(st.id, []))))}</td>"
+            f"<td>{_e(st.pass_name)}</td><td>{_e(ends)}</td><td>{_e(st.shape)}</td>"
             f'<td class="num">{nseg}</td><td class="num">{length:.1f}</td>'
             f'<td class="num">{widths}</td><td class="num">{area}</td>'
             f'<td class="num">{share}</td><td>{_e(st.confidence)}</td>'
@@ -462,20 +633,23 @@ def page(svg_paths):
 </style>
 </head>
 <body>
-<svg width="0" height="0" style="position: absolute" aria-hidden="true"><defs>{SUPPLIED_DEFS}</defs></svg>
+<svg width="0" height="0" style="position: absolute" aria-hidden="true"><defs>{SUPPLIED_DEFS}{arrow_defs()}</defs></svg>
 <h1>Pen-stroke overlays</h1>
 <p class="ai-caveat"><strong>Strokes traced by an AI model, not yet reviewed by a human.</strong>
 Claude, an AI model, placed every stroke's median on this page by eye, had a script smooth it
 into curves and fit its widths and ends to the ink, and judged every residual piece, so read the
 strokes as a draft.</p>
-<p>Each crop of the Leningrad Codex is drawn four times its size, with its stroke-SVG over it.
-The checkboxes beside each image switch that image's layers. The profile, and what each layer
-means, are in <a href="../pen-stroke-representation.md">doc/pen-stroke-representation.md</a>;
-this page is generated by <code>py/main_pen_stroke.py render</code>.</p>
+<p>Each crop of the Leningrad Codex is drawn four times its size, or twice for a whole line,
+with its stroke-SVG over it. The checkboxes beside each image switch that image's layers. The
+profile, and what each layer means, are in
+<a href="../pen-stroke-representation.md">doc/pen-stroke-representation.md</a>; this page is
+generated by <code>py/main_pen_stroke.py render</code>.</p>
 <p>{_swatch(SUPPLIED_SWATCH)} <strong>Hatched orange, outlined with dashes: a supplied
 stroke.</strong> The crop shows little or no ink of it; it is there because the transcription
 or the layout implies it. No other stroke is ever drawn this way, and a supplied stroke is never
 drawn in a stroke's colour or in black.</p>
+<p>{_swatch(f"background: {OTHER_INK_COLOUR}")} <strong>Slate grey: ink of another word or
+line,</strong> which the crop holds but is not its subject. Its own checkbox hides it.</p>
 {sections}
 <script>{_JS}</script>
 </body>

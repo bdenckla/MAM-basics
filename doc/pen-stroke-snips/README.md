@@ -1,13 +1,15 @@
 # Crops for the pen-stroke exemplars
 
-Four crops of the Leningrad Codex, each with its stroke-SVG, and `overlays.html`, which draws
-every stroke-SVG over its crop. They are the first exemplars of the representation that
-[../pen-stroke-representation.md](../pen-stroke-representation.md) describes, and
-[../pen-stroke-exemplars-2026-10-30.md](../pen-stroke-exemplars-2026-10-30.md) reports what they
-showed. Claude traced every stroke by eye, a script of Claude's smoothed each into curves and
-fitted its widths to the ink, and Claude judged every residual piece. Ben has checked the
-readings of the marks in the two crops on page F043A and of the vowels under the nun of
-F102A's על־פני; no human has reviewed the rest.
+Six crops of the Leningrad Codex, each with its stroke-SVG, and `overlays.html`, which draws
+every stroke-SVG over its crop. Four are of one chanted word each, the first exemplars of the
+representation that [../pen-stroke-representation.md](../pen-stroke-representation.md)
+describes; two, added on 2026-10-31, are of whole lines that are well kept and sharply
+photographed. [../pen-stroke-exemplars-2026-10-30.md](../pen-stroke-exemplars-2026-10-30.md)
+and its update report what they showed. Claude traced every stroke by eye, a script of
+Claude's smoothed each into curves and fitted its widths and ends to the ink, and Claude judged
+every residual piece. Ben has checked the readings of the marks in the two crops on page F043A
+and of the vowels under the nun of F102A's על־פני; no human has reviewed the rest, and the two
+line crops await his review.
 
 A mark the crop shows little or no ink of, but that the transcription or the layout implies,
 is a **supplied stroke** (decision 15 of the schema note). `overlays.html` draws every supplied
@@ -54,6 +56,27 @@ lines in F043A's column 2, the fifteenth holding only the atom לאמר, and 27 
 atom-location estimator put the four atoms at lines 20.3, 23.0, 23.9 and 27.0. That is the
 line counted or one below it, as it has run low before.
 
+## The crops of whole lines
+
+Ben chose these two lines on 2026-10-31 from a survey of pages F043A and F102A that ranked
+their text lines by focus, flaking and contrast. Each crop holds its line's ink whole, so the
+feet of the line above and the marks under it reach in from the top, and the marks over the
+line below from the foot. Those strokes are traced and grouped as the other lines' ink.
+
+| Crop | Page, column, line | Verse | The line's atoms in the UXLC | Box in the source image |
+| --- | --- | --- | --- | --- |
+| `leningrad-043A-col2-line4-Ex19v23.png` | F043A, 2, 4 | Exodus 19:23 | atoms 5 to 10 of 20 | 1574 930 2332 1066 |
+| `leningrad-102A-col2-line2-Deut4v42.png` | F102A, 2, 2 | Deuteronomy 4:42 | atoms 18 to 22 of 22 | 1562 834 2309 966 |
+
+Unpointed, the first line is לא־יוכל העם לעלת אל־הר and the second אחת מן־הערים האל וחי׃; each stroke-SVG
+gives its line pointed, as the UXLC 2.6 has it, as `data-combined-line`, and the lines above
+and below as `data-line-above` and `data-line-below`. Neither verse has two cantillations, so
+the UXLC's text is the combined transcription. Each line is counted from the top of its
+column. Every column of the page begins on the same ruled line, and no line above either of
+these is blank, so the count is the same whether blank lines are counted or not. Charles
+Loder's TEI of the codex, at commit `15405046fe811d4e1064a7ebcd7cb92261ce72db`, numbers both
+lines the same and breaks their neighbours where the image does.
+
 ## The source images
 
 Every crop is cut from Sefaria's image without resampling and stored as lossless PNG, its pixels
@@ -65,7 +88,8 @@ unchanged from the decoded JPEG.
 | F102A | `https://manuscripts.sefaria.org/leningrad-color/BIB_LENCDX_F102A.jpg` | 5,634,809 bytes | 3943 × 4272 | `93C81513C1A21D0B11BD6D9461FA9679AED038C27104DBD7D8FF9182CF05D54E` |
 
 Both carry a Last-Modified date of 2021-01-13. The two images were downloaded on 2026-10-30 with
-Ben's approval and are not tracked. The host serves no robots.txt.
+Ben's approval and are not tracked. The host serves no robots.txt. The two line crops are cut
+from the same two images.
 
 **Sefaria's images are the best available copy.** The Internet Archive's item
 `Leningrad_Codex_Color_Images` has the same-named files in its raw zip, uploaded 2021-05-25.
@@ -86,7 +110,9 @@ A piece judged `ink` is ink that the threshold or the tracer left out: a speck o
 broken by the threshold, a pale spot inside a stroke, or the faint top of a letter of the next
 line. A piece judged `damage` is a pale spot where the ink round it has visibly flaked, as in
 F102A's מתחת. A one-pixel piece at a stroke's edge is `noise`. A dark dot that belongs to no
-stroke is a `speck`.
+stroke is a `speck`. In the line crops, a speck at the crop's edge that is the tip of another
+line's letter, which the edge cuts, is `ink`; a pale smudge on the parchment is a `stain`; and
+the filled hole in a ring of ink is `paper`.
 
 ## Regenerating
 

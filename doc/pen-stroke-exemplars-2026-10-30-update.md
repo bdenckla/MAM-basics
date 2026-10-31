@@ -95,6 +95,53 @@ Claude's forests", which quoted them into the brief of the session that applied 
    faint traces, and the sweep beyond the ink stayed at 12.3%, since a supplied stroke's sweep
    is not counted there. The other three crops' figures did not change.
 
+## Round 3: two well-kept lines, 2026-10-31
+
+Ben settled the round's questions on 2026-10-31; the schema note's decisions 15 to 17 quote his
+answers about the strokes. Asked "Which easy case should the fresh session start with?", he
+answered "Manuscript lines"; asked "Shall the fresh session trace F043A column 2 line 4 and
+F102A column 2 line 2?", he answered "Yes, those two".
+
+1. **Profile 4.** No end of a letter's stroke is round, and every head is a short stroke of its
+   own (decision 16); every group says whose ink it is, and other words' and lines' ink is drawn
+   in slate grey (decision 17); and a file may propose its ductus, the order and direction of
+   its strokes. The schema note describes the profile and how the four QUPO crops were moved to
+   it. Their heads are not yet strokes of their own.
+2. **Two crops of whole lines**, page F043A's column 2, line 4, of Exodus 19:23, and page
+   F102A's column 2, line 2, of Deuteronomy 4:42, have 123 and 105 strokes. Claude placed every
+   stroke by eye, in the order and direction it proposes them written: all the letters, right
+   to left, then all the marks. Each head is its own stroke, nineteen in the first line, and
+   each begins at the pointed tip where the pen's corner first touched. A script of Claude's
+   fitted the curves and widths and cut each end of a letter's stroke along an edge of the
+   stiff nib that `nibfit` measures in the crop's letters: 12.7 pixels wide with its long edge at
+   71° in F043A's line, 14.2 pixels at 80° in F102A's. The lines above and below are slate:
+   the feet and vowels of line 3 and the accents over line 5 in the first crop, the feet and
+   vowels of line 1 in the second. Line 3's letters reach into the second only as specks.
+3. **Ink that no transcription records.** On page F043A a small ring stands over the atom
+   לעלת, and on page F102A another over the atom האל. Claude takes both for circelli, the small
+   circles that point to notes in the margin, and gave them the kind "masora circle mark". On
+   page F043A a blot over the atom הר may be a third. On page F102A a small dot stands between
+   the foot of the diagonal of the alef of the atom אחת and its pataḥ. These are questions for
+   Ben.
+4. **The pen residual of all six crops under profile 4:**
+
+   | Crop | Strokes | Ink no stroke explains | Sweep beyond the ink |
+   | --- | --- | --- | --- |
+   | F043A פני | 13 | 6.7% | 13.4% |
+   | F043A מתחת | 26 | 9.4% | 9.1% |
+   | F043A, line 4 | 123 | 17.9% | 16.0% |
+   | F102A, line 2 | 105 | 17.9% | 14.2% |
+   | F102A על־פני | 31 | 14.2% | 13.6% |
+   | F102A מתחת | 26 | 14.9% | 15.9% |
+
+   In each of the four QUPO crops the ink no stroke explains rose under profile 4; under
+   profile 3 it was 5.8% to 13.1%. A cut along the pen's edge follows a stroke's end less
+   closely than a fitted round end did. In the two lines most of it is thin slivers along strokes' edges, where
+   a stroke stands about a pixel off its ink, and the corners where strokes meet. A head's
+   width is the stiff nib's, since the ink across a head cannot be measured apart from the
+   stroke it joins.
+
 Effective State of the base, 2026-10-31: executed 2026-10-30; Ben has checked the readings of
 the two crops on page F043A and of the vowels under the nun of F102A's על־פני, and the rest of
-the two crops on page F102A awaits his review.
+the two crops on page F102A awaits his review, as do the two crops of whole lines that round 3
+added.

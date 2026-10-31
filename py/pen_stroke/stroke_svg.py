@@ -15,7 +15,7 @@ from pen_stroke import level1
 from pen_stroke import level3
 from pen_stroke import level5
 
-PROFILE = "pen-stroke 3"
+PROFILE = "pen-stroke 4"
 _SVG = "http://www.w3.org/2000/svg"
 _XLINK = "http://www.w3.org/1999/xlink"
 _EDITOR_NAMESPACES = (
@@ -33,9 +33,13 @@ PROVENANCE_KEYS = (
     "mam-verse",
     "uxlc-verse",
     "combined-chanted-word",
+    "combined-line",
     "combined-source",
     "taxton-chanted-word",
     "elyon-chanted-word",
+    "line-above",
+    "line-below",
+    "adjacent-source",
     "crop-note",
     "source-url",
     "source-size",
@@ -48,7 +52,19 @@ CONFIDENCES = ("high", "medium", "low")
 # A supplied stroke is one the crop shows no ink of, or only faint traces of
 # (decision 15 of the profile's note); every other stroke models ink it shows.
 SUPPLIED = ("no-ink", "traces")
+# Whose ink a group is (decision 17): the crop's word or line, which is the
+# crop's subject, another word of the word's line, or the line above or below.
+THIS_WORD = "this-word"
+THIS_LINE = "this-line"
+INK_OWNERS = (THIS_WORD, "other-word", THIS_LINE, "line-above", "line-below")
+# Whether the strokes' order in the file and their medians' directions propose
+# how the subject's ink was written (decision 11).
+DUCTUS = ("plausible", "unrecorded")
 WIDTH_PLACES = 2
+CUT_PLACES = 1
+# Decision 17: ink that is not the subject's is drawn in this colour, which no
+# other layer uses, in every view.
+OTHER_INK_COLOUR = "#607d8b"
 
 STYLE = """
 .fills path { fill: #000; fill-opacity: 0.2 }
@@ -81,6 +97,7 @@ class Stroke:
     median: str
     widths: list
     ends: str
+    cuts: tuple = ()
     ink: str = ""
     shape: str = ""
     confidence: str = "high"
@@ -94,6 +111,7 @@ class Group:
     id: str
     kind: str
     members: list
+    ink_of: str
     note: str = ""
 
 
@@ -113,6 +131,7 @@ class StrokeFile:
     speck_size: int
     halo_band: int
     tracer: str = level1.TRACER
+    ductus: str = "unrecorded"
     fills: list = field(default_factory=list)
     pieces: list = field(default_factory=list)
     smoothing: str = ""
@@ -126,6 +145,39 @@ class StrokeFile:
 
 class ProfileError(ValueError):
     pass
+
+
+def subject(sf):
+    """The ink-of value of the crop's subject: its line, if it is a crop of a
+    line, else its word."""
+    return THIS_LINE if "combined-line" in sf.provenance else THIS_WORD
+
+
+def ink_of_strokes(sf):
+    """Each stroke's ink-of values, from the groups that hold it."""
+    out = {}
+    for g in sf.groups:
+        for m in g.members:
+            out.setdefault(m, set()).add(g.ink_of)
+    return out
+
+
+def other_ink_ids(sf):
+    """The ids of the strokes whose ink is not the crop's subject's."""
+    me = subject(sf)
+    owners = ink_of_strokes(sf)
+    return [s.id for s in sf.strokes if owners.get(s.id, {me}) != {me}]
+
+
+def style(sf):
+    """The stroke-SVG's own style: STYLE, and the strokes of other ink that are
+    not supplied in their own colour."""
+    supplied = {s.id for s in sf.strokes if s.supplied}
+    others = [sid for sid in other_ink_ids(sf) if sid not in supplied]
+    if not others:
+        return STYLE
+    sel = ", ".join(f"#{sid} .ink" for sid in others)
+    return STYLE + f"{sel} {{ fill: {OTHER_INK_COLOUR}; fill-opacity: 0.55 }}\n"
 
 
 def _tag(el):
@@ -180,11 +232,15 @@ def read(path):
     allowed = {"viewBox", "width", "height", "version", "data-profile", "data-channel"}
     allowed |= {f"data-{k}" for k in PROVENANCE_KEYS}
     allowed |= {"data-threshold", "data-speck-size", "data-halo-band", "data-tracer"}
+    allowed |= {"data-ductus"}
     a = _attrs(root, "root", allowed)
     if a.get("data-profile") != PROFILE:
         raise ProfileError(f"{path}: data-profile is not {PROFILE!r}")
     if a.get("data-channel") != "luminance":
         raise ProfileError(f"{path}: data-channel is not 'luminance'")
+    ductus = _require(a, "data-ductus", "root")
+    if ductus not in DUCTUS:
+        raise ProfileError(f"{path}: unknown data-ductus {ductus!r}")
     vb = [float(v) for v in _require(a, "viewBox", "root").split()]
     if vb[:2] != [0, 0] or vb[2] != int(vb[2]) or vb[3] != int(vb[3]):
         raise ProfileError(
@@ -199,6 +255,7 @@ def read(path):
         speck_size=int(_require(a, "data-speck-size", "root")),
         halo_band=int(_require(a, "data-halo-band", "root")),
         tracer=_require(a, "data-tracer", "root"),
+        ductus=ductus,
     )
     seen = []
     for tag, el in _children(root):
@@ -289,6 +346,7 @@ def _read_strokes(g, sf):
                 "id",
                 "data-pass",
                 "data-ends",
+                "data-cuts",
                 "data-widths",
                 "data-shape",
                 "data-confidence",
@@ -304,6 +362,20 @@ def _read_strokes(g, sf):
         ends = _require(a, "data-ends", sid)
         if ends not in curve.ENDS:
             raise ProfileError(f"{sid}: unknown ends {ends!r}")
+        cuts = ()
+        if ends == "cut":
+            try:
+                cuts = tuple(float(v) for v in _require(a, "data-cuts", sid).split())
+            except ValueError as exc:
+                raise ProfileError(
+                    f"{sid}: data-cuts is not a list of numbers"
+                ) from exc
+            if len(cuts) != 2 or not all(0 <= c < 180 for c in cuts):
+                raise ProfileError(
+                    f"{sid}: data-cuts is two angles from 0 up to 180 degrees"
+                )
+        elif "data-cuts" in a:
+            raise ProfileError(f"{sid}: only a stroke whose ends are cut has data-cuts")
         try:
             widths = [float(v) for v in _require(a, "data-widths", sid).split()]
         except ValueError as exc:
@@ -330,6 +402,7 @@ def _read_strokes(g, sf):
             "",
             widths,
             ends,
+            cuts=cuts,
             shape=shape,
             confidence=conf,
             note=a.get("data-note", ""),
@@ -374,10 +447,15 @@ def _read_groups(g, sf):
     for tag, el in _children(g):
         if tag != "g" or el.attrib.get("class") != "group":
             raise ProfileError("groups: every child is a g.group")
-        a = _attrs(el, "group", {"class", "id", "data-kind", "data-note"})
+        a = _attrs(
+            el, "group", {"class", "id", "data-kind", "data-ink-of", "data-note"}
+        )
         gid = _require(a, "id", "group")
         kind = _require(a, "data-kind", gid)
         level5.pass_of(kind)
+        ink_of = _require(a, "data-ink-of", gid)
+        if ink_of not in INK_OWNERS:
+            raise ProfileError(f"{gid}: unknown data-ink-of {ink_of!r}")
         members = []
         for ctag, child in _children(el):
             if ctag != "use":
@@ -389,7 +467,7 @@ def _read_groups(g, sf):
                     f"{gid}: href {href!r} is not a fragment of this file"
                 )
             members.append(href[1:])
-        sf.groups.append(Group(gid, kind, members, a.get("data-note", "")))
+        sf.groups.append(Group(gid, kind, members, ink_of, a.get("data-note", "")))
 
 
 def _esc(s):
@@ -420,12 +498,13 @@ def dumps(sf):
         f'data-speck-size="{sf.speck_size}"',
         f'data-halo-band="{sf.halo_band}"',
         f'data-tracer="{_esc(sf.tracer)}"',
+        f'data-ductus="{sf.ductus}"',
     ]
     lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
         "<svg " + "\n     ".join(root) + ">",
     ]
-    lines.append(f"  <style>{STYLE}  </style>")
+    lines.append(f"  <style>{style(sf)}  </style>")
     lines.append(
         f'  <image class="crop" href="{_esc(sf.image)}" x="0" y="0"'
         f' width="{sf.width}" height="{sf.height}"/>'
@@ -452,8 +531,11 @@ def dumps(sf):
             f'id="{s.id}"',
             f'data-pass="{s.pass_name}"',
             f'data-ends="{s.ends}"',
-            f'data-widths="{widths}"',
         ]
+        if s.cuts:
+            cuts = " ".join(geo.fmt(c, CUT_PLACES) for c in s.cuts)
+            attrs.append(f'data-cuts="{cuts}"')
+        attrs.append(f'data-widths="{widths}"')
         if s.shape:
             attrs.append(f'data-shape="{s.shape}"')
         if s.confidence != "high":
@@ -485,7 +567,8 @@ def dumps(sf):
     for g in sf.groups:
         note = f' data-note="{_esc(g.note)}"' if g.note else ""
         lines.append(
-            f'    <g class="group" id="{g.id}" data-kind="{_esc(g.kind)}"{note}>'
+            f'    <g class="group" id="{g.id}" data-kind="{_esc(g.kind)}"'
+            f' data-ink-of="{g.ink_of}"{note}>'
         )
         for m in g.members:
             lines.append(f'      <use href="#{m}"/>')

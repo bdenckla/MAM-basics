@@ -1,8 +1,9 @@
 """Deriving a stroke-SVG's computed parts from its crop, and checking them.
 
 Authored: the root's provenance and parameters, each stroke's median, widths,
-ends, pass, confidence, note and whether it is supplied, the frame, the groups,
-and the judgments of residual pieces and of fills that are not ink.  Derived:
+ends and their cuts, pass, confidence, note and whether it is supplied, the
+strokes' order, the frame, the groups and whose ink each is, and the judgments
+of residual pieces and of fills that are not ink.  Derived:
 the fills, the image residual, each stroke's ink and shape, and the pen
 residual.  A supplied stroke may explain ink, as faint traces of it, but its
 sweep beyond the ink is no overshoot: nothing fitted it to ink.  ``derive``
@@ -42,7 +43,12 @@ def median_segments(stroke):
 
 def sweep_polys(stroke):
     """The stroke's ink: its median swept with its widths and ends."""
-    return curve.ink_pieces(median_segments(stroke), stroke.widths, stroke.ends)
+    try:
+        return curve.ink_pieces(
+            median_segments(stroke), stroke.widths, stroke.ends, stroke.cuts
+        )
+    except ValueError as exc:
+        raise ValueError(f"{stroke.id}: {exc}") from exc
 
 
 def ink_fill_ds(sf):
@@ -137,18 +143,52 @@ def structural_problems(sf):
     for s in sf.strokes:
         if s.id not in grouped:
             out.append(f"{s.id}: in no group")
+        if s.pass_name == level5.LETTERS and s.ends == "round":
+            out.append(f"{s.id}: a letter's stroke never ends round (decision 16)")
         try:
             segs = median_segments(s)
             curve.segment_widths(s.widths, len(segs))
             for seg in segs:
                 curve.tangent(seg, 0.5)
+            if s.ends == "cut":
+                curve.cut_ends(segs, s.widths, s.cuts)
         except ValueError as exc:
             out.append(f"{s.id}: {exc}")
+    out += _ink_owner_problems(sf)
+    if sf.ductus == "plausible":
+        passes = [s.pass_name for s in sf.strokes]
+        if level5.LETTERS in passes[passes.count(level5.LETTERS) :]:
+            out.append(
+                "the ductus is proposed, but a stroke of the letters follows one of"
+                " the marks (decision 11)"
+            )
     for p in sf.pieces:
         if p.judged == "unjudged":
             out.append(f"{p.id}: residual piece not yet judged")
     if sf.frame is None:
         out.append("no frame")
+    return out
+
+
+def _ink_owner_problems(sf):
+    """What the groups' ink-of values get wrong (decision 17)."""
+    out = []
+    me = ssvg.subject(sf)
+    allowed = {me, "line-above", "line-below"}
+    if me == ssvg.THIS_WORD:
+        allowed.add("other-word")
+    for g in sf.groups:
+        if g.ink_of not in allowed:
+            out.append(f"{g.id}: ink of {g.ink_of!r} in a crop whose subject is {me!r}")
+    for sid, owners in sorted(ssvg.ink_of_strokes(sf).items()):
+        if len(owners) > 1:
+            out.append(
+                f"{sid}: its groups disagree on whose ink it is: {sorted(owners)}"
+            )
+    used = {g.ink_of for g in sf.groups}
+    for side in ("line-above", "line-below"):
+        if side in used and side not in sf.provenance:
+            out.append(f"ink of the {side.replace('-', ' ')} but no data-{side} text")
     return out
 
 

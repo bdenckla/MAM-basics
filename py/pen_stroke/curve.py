@@ -6,19 +6,27 @@ stroke's width at the segment's parameter t is the cubic Bernstein polynomial of
 those four.  The width is therefore smooth along each segment, continuous where
 two segments meet, and never outside the range of the widths given.
 
-The ink is a band of that width centred on the median, cut square to the median
-at its ends.  A stroke whose ends are "round" adds a disc of the end's width at
-each end and at each corner, as a round brush would; one whose ends are "flat"
-leaves its ends cut and fills each corner's outer side to a mitre.  The ink is a
-list of convex polygons, every one running clockwise on a y-down screen, so that
-their union is the stroke under either fill rule.
+The ink is a band of that width centred on the median.  A stroke whose ends are
+"round" is cut square at each end and adds a disc of the end's width there and at
+each corner, as a round brush would.  One whose ends are "cut" ends along a
+straight cut at each end, as a broad pen's edge ends a stroke, at an angle given
+for each end, and fills each corner's outer side to a mitre.  A cut passes
+through the median's end; where the band's two edges meet it are its corners,
+one beyond the band's square end and one short of it.  An angle is in degrees,
+counterclockwise on the page from the crop's x axis, from 0 up to but not
+including 180, so that 90 is upright.  The ink is a list of convex polygons,
+every one running clockwise on a y-down screen, so that their union is the
+stroke under either fill rule.
 """
 
 import math
 
 from pen_stroke import geometry as geo
 
-ENDS = ("round", "flat")
+ENDS = ("round", "cut")
+# A cut makes at least this many degrees with the median where it ends; nearer
+# the median's direction, its corner would run far beyond the band.
+MIN_CUT_DEGREES = 15.0
 
 # Samples per pixel of the segment's control polygon, along t.
 _SAMPLES_PER_PX = 2
@@ -212,14 +220,156 @@ def _mitre(join, ta, tb, w):
     return geo.convex_hull([join, a, m, b])
 
 
-def ink_pieces(segs, widths, ends):
+def end_frame(segs, which):
+    """The median's start (which=0) or end (which=1) and its unit tangent pointing
+    out of the stroke there."""
+    if which == 0:
+        tx, ty = tangent(segs[0], 0.0)
+        return segs[0][0], (-tx, -ty)
+    return segs[-1][3], tangent(segs[-1], 1.0)
+
+
+def angle_of(direction):
+    """A direction's angle as a cut's is given: degrees counterclockwise on the
+    page from the x axis, from 0 up to but not including 180."""
+    return math.degrees(math.atan2(-direction[1], direction[0])) % 180.0
+
+
+def square_cut(segs, which):
+    """The angle of the cut square to the median at its start (0) or end (1)."""
+    _p, (ox, oy) = end_frame(segs, which)
+    return angle_of((-oy, ox))
+
+
+class Cut:
+    """One cut end: the half-plane the band keeps, and the triangle it adds.
+
+    The band keeps the points q with m . q <= c, the cut's inner side, and gains
+    the triangle between the band's square end, its edge on the side whose
+    corner lies beyond that end, and the cut.  ``reach`` is how far the corners
+    lie from the square end, along the median.
+    """
+
+    def __init__(self, point, out, w, angle):
+        ux, uy = math.cos(math.radians(angle)), -math.sin(math.radians(angle))
+        ox, oy = out
+        nx, ny = -oy, ox
+        un = ux * nx + uy * ny
+        if abs(un) < math.sin(math.radians(MIN_CUT_DEGREES)):
+            raise ValueError(
+                f"a cut at {angle:g} degrees makes less than {MIN_CUT_DEGREES:g}"
+                " degrees with the median where it ends"
+            )
+        mx, my = -uy, ux
+        if mx * ox + my * oy < 0:
+            mx, my = -mx, -my
+        self.m = (mx, my)
+        self.c = mx * point[0] + my * point[1]
+        h = w / 2
+        lam = h * (ux * ox + uy * oy) / un
+        side = 1.0 if lam >= 0 else -1.0
+        edge = (point[0] + side * h * nx, point[1] + side * h * ny)
+        corner = (edge[0] + abs(lam) * ox, edge[1] + abs(lam) * oy)
+        self.triangle = geo.convex_hull([point, edge, corner])
+        self.reach = abs(lam)
+
+    def clip(self, poly):
+        """The convex polygon poly cut to the band's side of the cut."""
+        (mx, my), c = self.m, self.c
+        out = []
+        n = len(poly)
+        for k in range(n):
+            a, b = poly[k], poly[(k + 1) % n]
+            da = mx * a[0] + my * a[1] - c
+            db = mx * b[0] + my * b[1] - c
+            if da <= 0:
+                out.append(a)
+            if (da < 0 < db) or (db < 0 < da):
+                t = da / (da - db)
+                out.append((a[0] + t * (b[0] - a[0]), a[1] + t * (b[1] - a[1])))
+        return out
+
+
+def cut_ends(segs, widths, cuts):
+    """The two Cut ends of a stroke whose ends are cut at the angles in cuts."""
+    if len(cuts) != 2:
+        raise ValueError(f"a cut stroke has two cut angles, not {len(cuts)}")
+    for a in cuts:
+        if not 0 <= a < 180:
+            raise ValueError(f"a cut angle is from 0 up to 180 degrees, not {a:g}")
+    sws = segment_widths(widths, len(segs))
+    out = []
+    for which, w in ((0, sws[0][0]), (1, sws[-1][3])):
+        point, direction = end_frame(segs, which)
+        try:
+            out.append(Cut(point, direction, w, cuts[which]))
+        except ValueError as exc:
+            raise ValueError(f"at its {('start', 'end')[which]}: {exc}") from exc
+    return out
+
+
+def _cut_band_pieces(segs, sws, cuts):
+    """Convex pieces covering a cut stroke's band, segment by segment.
+
+    Within a cut's reach of its end, plus the end's width, along the median,
+    each quadrilateral between two samples is kept apart and clipped to the
+    cut's inner side; the rest are merged as ``_band_pieces`` merges them.
+    """
+    per_seg = [samples(seg, ws) for seg, ws in zip(segs, sws)]
+    arcs = []
+    start = 0.0
+    for smp in per_seg:
+        arc = [start]
+        for a, b in zip(smp, smp[1:]):
+            arc.append(arc[-1] + math.dist(a[0], b[0]))
+        arcs.append(arc)
+        start = arc[-1]
+    total = start
+    near_start = cuts[0].reach + sws[0][0]
+    near_end = total - (cuts[1].reach + sws[-1][3])
+    pieces = []
+    for smp, arc in zip(per_seg, arcs):
+        run = [0]
+        for i in range(len(smp) - 1):
+            clipping = []
+            if arc[i] <= near_start:
+                clipping.append(cuts[0])
+            if arc[i + 1] >= near_end:
+                clipping.append(cuts[1])
+            if not clipping:
+                run.append(i + 1)
+                continue
+            if len(run) > 1:
+                pieces.extend(_band_pieces([smp[k] for k in run]))
+            run = [i + 1]
+            a, b = _side_points(smp[i]), _side_points(smp[i + 1])
+            quad = geo.convex_hull([a[0], a[1], b[0], b[1]])
+            for c in clipping:
+                if len(quad) < 3:
+                    break
+                quad = c.clip(quad)
+            if len(quad) >= 3:
+                pieces.append(quad)
+        if len(run) > 1:
+            pieces.extend(_band_pieces([smp[k] for k in run]))
+    return pieces
+
+
+def ink_pieces(segs, widths, ends, cuts=()):
     """The stroke's ink: convex polygons whose union is the swept band."""
     if ends not in ENDS:
         raise ValueError(f"unknown ends {ends!r}")
     sws = segment_widths(widths, len(segs))
     pieces = []
-    for seg, ws in zip(segs, sws):
-        pieces.extend(_band_pieces(samples(seg, ws)))
+    if ends == "cut":
+        ce = cut_ends(segs, widths, cuts)
+        pieces.extend(_cut_band_pieces(segs, sws, ce))
+        pieces.extend(c.triangle for c in ce if abs(geo.signed_area(c.triangle)) > 1e-6)
+    else:
+        if cuts:
+            raise ValueError("only a stroke whose ends are cut has cut angles")
+        for seg, ws in zip(segs, sws):
+            pieces.extend(_band_pieces(samples(seg, ws)))
     for (a, wa), (b, _wb) in zip(zip(segs, sws), zip(segs[1:], sws[1:])):
         ta, tb = tangent(a, 1.0), tangent(b, 0.0)
         dot = max(-1.0, min(1.0, ta[0] * tb[0] + ta[1] * tb[1]))

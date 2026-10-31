@@ -1,6 +1,6 @@
 # The pen-stroke representation of a manuscript crop
 
-State: live; the profile of the stroke-SVGs in `doc/pen-stroke-snips/`: profile 1 implemented on 2026-10-30, profiles 2 and 3 on 2026-10-31
+State: live; the profile of the stroke-SVGs in `doc/pen-stroke-snips/`: profile 1 implemented on 2026-10-30, profiles 2 to 4 on 2026-10-31
 
 A crop of a manuscript page can be shown as pixels and read as a Unicode transcription. The
 pen-stroke representation sits between them. It describes the crop's ink as filled outlines,
@@ -12,10 +12,11 @@ four crops showed.
 
 ## Ben's decisions
 
-The first twelve are of 2026-10-30, and decisions 13 to 15 of 2026-10-31. The first nine
+The first twelve are of 2026-10-30, and decisions 13 to 17 of 2026-10-31. The first nine
 were made in the planning session "Investigate a pen-stroke manuscript representation", whose
 plan was not committed, so this list is their record here. Decisions 11 to 15 were made while
-Ben reviewed the first exemplars.
+Ben reviewed the first exemplars, and decisions 16 and 17 as he settled the third round of
+tracing, on two well-kept lines.
 
 1. **The unit is one crop, not a page.** Ben: "This is not about whole manuscripts or even whole
    pages. At least not yet." No page, column or line geometry is in scope, and no
@@ -74,8 +75,8 @@ Ben reviewed the first exemplars.
 
     The profile records each stroke's pass, letters or marks, as `data-pass`, and the overlay
     page has a layer of the strokes in black, which with the crop switched off shows the page
-    unaged. It does not yet record the direction in which a stroke was written or its place in
-    the writing.
+    unaged. Since profile 4 a file may also propose the direction in which each stroke was
+    written and its place in the writing, its ductus, which "The ductus" below describes.
 12. **The nib model is calligraphic: a stroke's width may vary along its course.** Ben:
     "Absolutely a "calligraphic" nib model is needed, by which I mean one in which stroke-width
     is modulated (or can be modulated) throughout the course of a stroke. It doesn't matter what
@@ -107,7 +108,8 @@ Ben reviewed the first exemplars.
     is a bound of the kind decision 12 leaves open. Profile 2, below, implements it in a form
     Claude chose and Ben has not yet reviewed: each segment is a cubic Bézier curve with a width
     at each of its four points, the width at the segment's parameter t is the cubic Bernstein
-    polynomial of those four, and a stroke ends round or flat.
+    polynomial of those four, and a stroke ends round or flat; profile 4 made the ends round or
+    cut (decision 16).
 15. **A mark the crop shows little or no ink of can be supplied, and a supplied mark is never
     drawn as the others are.** Under the nun of page F102A's על־פני, Ben sees "only the faintest
     remnants of where I think a qamats was. Mainly this qamats is (very implicitly) indicated by
@@ -118,10 +120,35 @@ Ben reviewed the first exemplars.
     colors them the same as other marks, to avoid any suggestion that they are based on strong
     evidence. And this color use is important because if that metadata saying "this mark
     provided ex nihilo" is in a caption or something, we can't rely on the reader to pay
-    attention to that." Profile 3 implements it in a form Claude chose and Ben has not yet
-    reviewed: a supplied stroke carries `data-supplied`, `no-ink` or `traces`, and
-    `data-supplied-why`, and every view of it is hatched in an orange reserved for it,
-    outlined with dashes.
+    attention to that." Profile 3 implements it in a form Claude chose, which Ben kept on
+    2026-10-31: asked "Keep the supplied strokes hatched orange, dashed, and left out of the
+    overshoot?", he answered "Keep it". A supplied stroke carries `data-supplied`, `no-ink` or
+    `traces`, and `data-supplied-why`, and every view of it is hatched in an orange reserved
+    for it, outlined with dashes.
+16. **No end of a letter's stroke is round, and every head is a short stroke of its own.** Of
+    a letter's stroke drawn ending in a disc, Ben wrote: "The diacritic-nib model should allow
+    a circle, i.e. the depositing of a drop (or micro-drop) of ink, but not, I think, the
+    letter-nib model." When research on how the letters are stroked had come in, he answered:
+    "Adopt no round heads on letters. Adopt each head a short pen stroke." Asked "Model every
+    head as its own stroke, with the pen lifted before its arm?", he answered "Yes, own
+    strokes". His aim, the same day: "we just need a model that works, not necessarily a model
+    that corresponds to reality." So every end of a stroke of the letters is cut, never round;
+    a head is a short stroke of its own, written before the arm or stem it joins; and a mark
+    may still end round. How an end is cut is Claude's design, which Ben has not yet reviewed:
+    profile 4 cuts it straight, at an angle the file records for each end, and round 3's
+    fitting cut each end along an edge of the stiff nib that `nibfit` measures in the crop's
+    letters.
+17. **Each group says whose ink it is, and other words' and lines' ink has a colour of its
+    own.** Ben: "it is often important to have a Unicode transcription of the text above and
+    below, in order to do a good job of determining what marks belong to what line. One of the
+    values of our stroke transcription is that we can eliminate marks from the above and below
+    lines. Or rather, we can show what we consider signal and what we consider noise, where
+    above- and below- marks are considered noise. Or we can choose to show them, but give them
+    a different color, to be "fully transparent" (in the truthfulness sense of transparent, not
+    the visual!) about our decisions". Asked "Adopt the design for other lines' ink: groups say
+    whose it is, own colour, hide checkbox?", he answered "Adopt it". Profile 4 implements it:
+    every group's `data-ink-of`, the lines above and below on the root, and slate grey for ink
+    that is not the crop's subject's, in every view, with a checkbox that hides it.
 
 ## The ladder
 
@@ -134,10 +161,10 @@ a Unicode transcription, and a reading at any level may send it back to revise a
 | --- | --- | --- |
 | 0 crop | the pixels, with their provenance | authored |
 | 1 fills | the ink as filled Bézier outlines, and the image residual | outlines derived; residual judgments authored |
-| 2 strokes | a smooth median per stroke with a width varying along it, whether it is supplied, and the pen residual | medians, widths, ends and supplied strokes authored; ink and residual derived |
+| 2 strokes | a smooth median per stroke with a width varying along it and its ends' cuts, whether it is supplied, the strokes' order, and the pen residual | medians, widths, ends, order and supplied strokes authored; ink and residual derived |
 | 3 shape classes | dot, bar, corner or curve, from a stroke's median and widths | derived |
 | 4 frame | the baseline and the letter-body height | authored |
-| 5 groups | strokes forming one sign, with a kind congruent to a code point | authored |
+| 5 groups | strokes forming one sign, with a kind congruent to a code point, and whose ink it is | authored |
 | 6 links | a group's place in a named, versioned transcription | parked (decision 4) |
 
 ## The file
@@ -146,15 +173,20 @@ The coordinates are the crop's pixels, x to the right and y down. Pixel (i, j) c
 [i, i + 1) × [j, j + 1), and a pixel is inside a shape when its centre is. The root's `viewBox`
 is `0 0 <width> <height>`, the crop's pixel size.
 
-**The root** carries `data-profile="pen-stroke 3"`; the provenance, as `data-manuscript`,
+**The root** carries `data-profile="pen-stroke 4"`; the provenance, as `data-manuscript`,
 `data-page`, `data-column`, `data-line`, `data-line-read-by`, `data-mam-verse`,
-`data-uxlc-verse`, `data-combined-chanted-word`, `data-combined-source`,
-`data-taxton-chanted-word`, `data-elyon-chanted-word`, `data-crop-note`, `data-source-url`,
-`data-source-size`, `data-source-sha256`, `data-crop-box` and `data-strokes-by`; and the
-threshold and tracer parameters. `data-combined-chanted-word` is the primary
-transcription (decision 13): the chanted word with both strands' marks, as the UXLC has it
-unless Ben has changed it, and `data-combined-source` says which. The two strands' chanted
-words are MAM's.
+`data-uxlc-verse`, `data-combined-chanted-word` or `data-combined-line`,
+`data-combined-source`, `data-taxton-chanted-word`, `data-elyon-chanted-word`,
+`data-line-above`, `data-line-below`, `data-adjacent-source`, `data-crop-note`,
+`data-source-url`, `data-source-size`, `data-source-sha256`, `data-crop-box` and
+`data-strokes-by`; the threshold and tracer parameters; and `data-ductus`.
+`data-combined-chanted-word` is the primary transcription (decision 13) of a crop of one
+chanted word, which is then the crop's subject: the chanted word with both strands' marks, as
+the UXLC has it unless Ben has changed it, and `data-combined-source` says which. The two
+strands' chanted words are MAM's. `data-combined-line` is the primary transcription of a crop
+of a whole line, which is then the subject. `data-line-above` and `data-line-below` hold the
+lines above and below as far as the crop reaches, and `data-adjacent-source` says where they
+come from (decision 17).
 
 **Level 1.** `data-channel="luminance"` is Pillow's ITU-R 601-2 luma. The ink is every pixel
 whose luminance is below `data-threshold`. Potrace's pure-Python port traces the ink, with the
@@ -178,10 +210,15 @@ At the segment's parameter t, the width is the cubic Bernstein polynomial of its
 as the point is of its four points. The width is therefore smooth along each segment,
 continuous where two segments meet, and never outside the range of the widths given; a
 segment's two middle widths, like its control points, need not be reached. The ink is a band of
-that width centred on the median and cut square to it at both ends. A stroke whose ends are
-`round` adds a disc of the end's width at each end and at each corner, as a round brush would.
-One whose ends are `flat` keeps its ends cut and fills the outer side of each corner to a
-mitre. Where two segments meet with a turn of less than 1°, there is no corner.
+that width centred on the median. A stroke whose ends are `round` is cut square at its ends and
+adds a disc of the end's width at each end and at each corner, as a round brush would. One
+whose ends are `cut` ends along a straight cut at each end, as a broad pen's edge ends a
+stroke, and fills the outer side of each corner to a mitre. A cut passes through the median's
+end, and where the band's two edges meet it are its corners, one beyond the band's square end
+and one short of it. Its angle is in degrees, counterclockwise on the page from the crop's x
+axis, from 0 up to but not including 180, so that 90 is upright, and it makes at least 15° with
+the median where it ends. Where two segments meet with a turn of less than 1°, there is no
+corner.
 
 **Level 2.** `<g class="strokes">` holds one `<g class="stroke" id="sN">` per stroke. Its
 authored parts are:
@@ -189,7 +226,8 @@ authored parts are:
 - a `median`, one open subpath of one or more `C` segments, with no straight segment;
 - `data-widths`, one positive width for each point of the median's path data: 1 + 3 × the
   number of segments;
-- `data-ends`, `round` or `flat`;
+- `data-ends`, `round` or `cut`; a stroke of the letters is cut (decision 16);
+- `data-cuts`, for a cut stroke only: the angles of its cuts at the median's start and end;
 - `data-pass`, `letters` or `marks`;
 - `data-confidence`, `data-note`;
 - for a supplied stroke only (decision 15), `data-supplied` and `data-supplied-why`, which
@@ -227,8 +265,24 @@ to two groups, as a bar that served both strands' vowels would. The kinds are a 
 `py/pen_stroke/level5.py`. Each kind names the Unicode character it is congruent to, or none,
 as the undetermined kinds "bar under the letter" and "dot over the letter" do. Every stroke is
 in a group, and a group's kind fixes the pass of its strokes. Ink of a neighbouring word or line
-is traced and grouped too, with a `data-note` that says whose it is. Where the crop cuts it too
-short to name, it takes "unidentified letter" or "unidentified mark".
+is traced and grouped too. Where the crop cuts it too short to name, it takes "unidentified
+letter" or "unidentified mark".
+
+**Whose ink.** Every group says whose ink it is, as `data-ink-of` (decision 17): `this-word`,
+the chanted word a word's crop is of; `other-word`, another word of that word's line;
+`this-line`, the line a line's crop is of; or `line-above` or `line-below`. A word's crop uses
+`this-word` for its subject and a line's crop `this-line`, and a stroke's groups agree. Ink of
+the line above or below needs that line's text on the root. Everything that draws a stroke-SVG
+draws the strokes that are not the subject's in slate grey, `#607d8b`, which no other layer
+uses, and the stroke-SVG's own style element does the same when the file is viewed alone.
+
+**The ductus.** `data-ductus` says whether a file proposes how its subject was written, its
+ductus: a term of palaeography for a letter's strokes, how many, in which direction and in
+which order. Where it is `plausible`, the strokes are listed in the order written, every
+stroke of the letters before every stroke of the marks (decision 11), and each median runs the
+way the pen moved; a head comes before the stroke it joins (decision 16). Other lines' strokes
+keep that order of the passes, but their directions propose nothing. Where it is `unrecorded`,
+as in the four QUPO crops, the strokes' order and their medians' directions mean nothing.
 
 ## Where the profile departs from the plan's
 
@@ -253,7 +307,7 @@ seven things, and profile 2 then replaced its stiff nib.
 7. **Residual geometry follows pixel edges exactly,** so the lint can compare masks pixel for
    pixel. Fills and sweeps are curves and polygons.
 
-## Profiles 1 to 3
+## Profiles 1 to 4
 
 Profile 1, of 2026-10-30, swept each crop's two stiff nibs, one for the letters and one for
 the marks, along medians of straight segments that Claude placed by eye. Profile 2, of
@@ -277,6 +331,19 @@ Moving the four stroke-SVGs to it changed only their profile and their style ele
 then page F102A's על־פני gained the qamats under its nun, supplied from faint traces as s30
 and s31.
 
+Profile 4, also of 2026-10-31, implements decisions 16 and 17 and the ductus. Ends are `round`
+or `cut`, and `flat` is gone. A script of Claude's, not tracked, moved the four QUPO crops to
+it:
+
+1. each flat end became a cut square to the median, which left its ink as it was;
+2. each round end of a stroke of the letters became a cut along an edge of the crop's stiff
+   nib, as `nibfit` measures it, with the end slid along the median to fit the ink;
+3. each group got its `data-ink-of` from its note, and each root the text of the lines above
+   and below as far as the crop reaches, and `data-ductus="unrecorded"`.
+
+Their heads are not yet strokes of their own. The two crops traced next, of whole lines, are
+the first under profile 4 throughout; the findings record's update describes them.
+
 ## Running the tool
 
 From the repository root, with the clone's own environment, as
@@ -295,8 +362,10 @@ From the repository root, with the clone's own environment, as
    `py/tests/test_pen_stroke_svgs.py` runs the same check in the suite.
 6. `render` writes `doc/pen-stroke-snips/overlays.html`: each stroke-SVG over its crop, drawn
    smoothly rather than as squares of pixels, with checkboxes beside each image that switch its
-   layers, among them the strokes in black and the supplied strokes, and each crop's and
-   stroke's figures.
+   layers, among them the strokes in black, the supplied strokes and other words' and lines'
+   ink, and each crop's and stroke's figures. Where a file proposes its ductus, each median
+   ends in an arrowhead, and a button beside the image plays the writing: the subject's
+   strokes appear in their order, each along its median.
 
 The mega does not run the tool, by Ben's decision of 2026-10-30: "this is not an appropriate part
 of mega, this is a very early-stage experiment." `py/tests/test_mega_coverage.py` declares its

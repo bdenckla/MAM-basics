@@ -11,11 +11,15 @@ them again and fails on any difference, so a median edited without a following
 WHAT IT CHECKS, for each stroke-SVG (``pen_stroke.derive.problems``)
 
 1. The profile's structure: its closed sets of elements, classes, attributes, passes,
-   ends, stroke-group kinds, judgments and shapes.
+   ends, stroke-group kinds, ink owners, ductus values, judgments and shapes.
 2. Ids are unique; every group holds strokes of the same file; every stroke is in a
    group; each stroke's pass is the pass of its groups' kinds; each median is one or
-   more cubic segments with a width for each of its points; every residual piece is
-   judged; the frame is there.
+   more cubic segments with a width for each of its points; no stroke of the letters
+   ends round, and every cut makes at least 15 degrees with its median; each group's
+   ink owner suits the crop's subject, a stroke's groups agree on it, and ink of the
+   line above or below has that line's text on the root; where the ductus is
+   proposed, every stroke of the letters comes before every stroke of the marks;
+   every residual piece is judged; the frame is there.
 3. The crop is beside the file, and its pixel size is the viewBox.
 4. The fills are the tracer's outlines of the crop's ink at the stated threshold and
    speck size.
