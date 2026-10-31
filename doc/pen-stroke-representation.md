@@ -1,6 +1,6 @@
 # The pen-stroke representation of a manuscript crop
 
-State: live; the profile of the stroke-SVGs in `doc/pen-stroke-snips/`: profile 1 implemented on 2026-10-30, profile 2 on 2026-10-31
+State: live; the profile of the stroke-SVGs in `doc/pen-stroke-snips/`: profile 1 implemented on 2026-10-30, profiles 2 and 3 on 2026-10-31
 
 A crop of a manuscript page can be shown as pixels and read as a Unicode transcription. The
 pen-stroke representation sits between them. It describes the crop's ink as filled outlines,
@@ -12,9 +12,9 @@ four crops showed.
 
 ## Ben's decisions
 
-The first twelve are of 2026-10-30, and decisions 13 and 14 of 2026-10-31. The first nine
+The first twelve are of 2026-10-30, and decisions 13 to 15 of 2026-10-31. The first nine
 were made in the planning session "Investigate a pen-stroke manuscript representation", whose
-plan was not committed, so this list is their record here. Decisions 11 to 14 were made while
+plan was not committed, so this list is their record here. Decisions 11 to 15 were made while
 Ben reviewed the first exemplars.
 
 1. **The unit is one crop, not a page.** Ben: "This is not about whole manuscripts or even whole
@@ -108,6 +108,20 @@ Ben reviewed the first exemplars.
     Claude chose and Ben has not yet reviewed: each segment is a cubic Bézier curve with a width
     at each of its four points, the width at the segment's parameter t is the cubic Bernstein
     polynomial of those four, and a stroke ends round or flat.
+15. **A mark the crop shows little or no ink of can be supplied, and a supplied mark is never
+    drawn as the others are.** Under the nun of page F102A's על־פני, Ben sees "only the faintest
+    remnants of where I think a qamats was. Mainly this qamats is (very implicitly) indicated by
+    the space under the nun that "pushes off" the patax to be "late"." He went on: "So we need a
+    way to supply (clearly indicated by annotations in metadata attached to our
+    stroke-transcription) marks "ex nihilo" or nearly "ex nihilo". And this would be an
+    important use of color; these marks should probably *never* be displayed in a way that
+    colors them the same as other marks, to avoid any suggestion that they are based on strong
+    evidence. And this color use is important because if that metadata saying "this mark
+    provided ex nihilo" is in a caption or something, we can't rely on the reader to pay
+    attention to that." Profile 3 implements it in a form Claude chose and Ben has not yet
+    reviewed: a supplied stroke carries `data-supplied`, `no-ink` or `traces`, and
+    `data-supplied-why`, and every view of it is hatched in an orange reserved for it,
+    outlined with dashes.
 
 ## The ladder
 
@@ -120,7 +134,7 @@ a Unicode transcription, and a reading at any level may send it back to revise a
 | --- | --- | --- |
 | 0 crop | the pixels, with their provenance | authored |
 | 1 fills | the ink as filled Bézier outlines, and the image residual | outlines derived; residual judgments authored |
-| 2 strokes | a smooth median per stroke with a width varying along it, and the pen residual | medians, widths and ends authored; ink and residual derived |
+| 2 strokes | a smooth median per stroke with a width varying along it, whether it is supplied, and the pen residual | medians, widths, ends and supplied strokes authored; ink and residual derived |
 | 3 shape classes | dot, bar, corner or curve, from a stroke's median and widths | derived |
 | 4 frame | the baseline and the letter-body height | authored |
 | 5 groups | strokes forming one sign, with a kind congruent to a code point | authored |
@@ -132,7 +146,7 @@ The coordinates are the crop's pixels, x to the right and y down. Pixel (i, j) c
 [i, i + 1) × [j, j + 1), and a pixel is inside a shape when its centre is. The root's `viewBox`
 is `0 0 <width> <height>`, the crop's pixel size.
 
-**The root** carries `data-profile="pen-stroke 2"`; the provenance, as `data-manuscript`,
+**The root** carries `data-profile="pen-stroke 3"`; the provenance, as `data-manuscript`,
 `data-page`, `data-column`, `data-line`, `data-line-read-by`, `data-mam-verse`,
 `data-uxlc-verse`, `data-combined-chanted-word`, `data-combined-source`,
 `data-taxton-chanted-word`, `data-elyon-chanted-word`, `data-crop-note`, `data-source-url`,
@@ -177,11 +191,28 @@ authored parts are:
   number of segments;
 - `data-ends`, `round` or `flat`;
 - `data-pass`, `letters` or `marks`;
-- `data-confidence`, `data-note`.
+- `data-confidence`, `data-note`;
+- for a supplied stroke only (decision 15), `data-supplied` and `data-supplied-why`, which
+  go together.
+
+**A supplied stroke** is one whose ink the crop does not show: `data-supplied="no-ink"` where
+no ink of it is seen, and `traces` where only faint traces are. Every other stroke models ink
+the crop shows, however flaked. `data-supplied-why` says what implies the stroke, such as the
+transcription, the layout or a reader's judgment, and who supplied it. A supplied stroke's
+median, widths and ends are authored like any other's, by analogy rather than by fitting.
 
 Its `ink` is derived: convex polygons, each running clockwise, whose union is the band with
 its discs or mitres. `<g class="pen-residual">` holds `unexplained`, the ink of the fills
-judged ink that no stroke sweeps, and `overshoot`, what the strokes sweep beyond that ink.
+judged ink that no stroke sweeps, and `overshoot`, what the strokes that are not supplied sweep
+beyond that ink. A supplied stroke can explain ink, as faint traces of it, but its sweep beyond
+the ink is no overshoot, since nothing fitted it to ink.
+
+**How a supplied stroke is drawn.** Everything that draws a stroke-SVG draws a supplied stroke
+in one style only: hatched in the orange `#ff6d00`, outlined with dashes, never filled solid,
+and never in a stroke's colour, a group's colour or black, as the strokes in black that show
+the page unaged are. No other layer uses that orange. `py/pen_stroke/render.py` holds the style,
+and the stroke-SVG's own style element outlines a supplied stroke the same way when the file is
+viewed alone.
 
 **Level 3.** `data-shape` on each stroke is derived. A median no longer than half its greatest
 width, or 2 pixels, is a `dot`. One that keeps within a tenth of its length, or 1 pixel, of
@@ -222,7 +253,7 @@ seven things, and profile 2 then replaced its stiff nib.
 7. **Residual geometry follows pixel edges exactly,** so the lint can compare masks pixel for
    pixel. Fills and sweeps are curves and polygons.
 
-## Profile 1 and profile 2
+## Profiles 1 to 3
 
 Profile 1, of 2026-10-30, swept each crop's two stiff nibs, one for the letters and one for
 the marks, along medians of straight segments that Claude placed by eye. Profile 2, of
@@ -241,6 +272,11 @@ not tracked, and its steps were these:
 The nibs are gone from the file. `nibfit` still measures them, as a statistic of the ink. The
 pen residual under each profile is in the findings record's update.
 
+Profile 3, also of 2026-10-31, adds supplied strokes (decision 15) and changes nothing else.
+Moving the four stroke-SVGs to it changed only their profile and their style element, and
+then page F102A's על־פני gained the qamats under its nun, supplied from faint traces as s30
+and s31.
+
 ## Running the tool
 
 From the repository root, with the clone's own environment, as
@@ -257,9 +293,10 @@ From the repository root, with the clone's own environment, as
    size in a crop, or by each pass's strokes in a stroke-SVG.
 5. `check` reports every way a stroke-SVG departs from this profile and its crop.
    `py/tests/test_pen_stroke_svgs.py` runs the same check in the suite.
-6. `render` writes `doc/pen-stroke-snips/overlays.html`: each stroke-SVG over its crop, with
-   every layer switchable, among them the strokes in black, and each crop's and stroke's
-   figures.
+6. `render` writes `doc/pen-stroke-snips/overlays.html`: each stroke-SVG over its crop, drawn
+   smoothly rather than as squares of pixels, with checkboxes beside each image that switch its
+   layers, among them the strokes in black and the supplied strokes, and each crop's and
+   stroke's figures.
 
 The mega does not run the tool, by Ben's decision of 2026-10-30: "this is not an appropriate part
 of mega, this is a very early-stage experiment." `py/tests/test_mega_coverage.py` declares its

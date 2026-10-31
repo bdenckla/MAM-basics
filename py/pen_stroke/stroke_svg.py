@@ -15,7 +15,7 @@ from pen_stroke import level1
 from pen_stroke import level3
 from pen_stroke import level5
 
-PROFILE = "pen-stroke 2"
+PROFILE = "pen-stroke 3"
 _SVG = "http://www.w3.org/2000/svg"
 _XLINK = "http://www.w3.org/1999/xlink"
 _EDITOR_NAMESPACES = (
@@ -45,12 +45,16 @@ PROVENANCE_KEYS = (
 )
 PASSES = (level5.LETTERS, level5.MARKS)
 CONFIDENCES = ("high", "medium", "low")
+# A supplied stroke is one the crop shows no ink of, or only faint traces of
+# (decision 15 of the profile's note); every other stroke models ink it shows.
+SUPPLIED = ("no-ink", "traces")
 WIDTH_PLACES = 2
 
 STYLE = """
 .fills path { fill: #000; fill-opacity: 0.2 }
 .image-residual, .pen-residual, .groups, .median { display: none }
 .stroke .ink { fill: #c0392b; fill-opacity: 0.4 }
+.stroke[data-supplied] .ink { fill: none; stroke: #ff6d00; stroke-width: 0.6; stroke-dasharray: 1.5 1 }
 .frame line { stroke: #2471a3; stroke-width: 0.5 }
 """
 
@@ -81,6 +85,8 @@ class Stroke:
     shape: str = ""
     confidence: str = "high"
     note: str = ""
+    supplied: str = ""
+    supplied_why: str = ""
 
 
 @dataclass
@@ -287,6 +293,8 @@ def _read_strokes(g, sf):
                 "data-shape",
                 "data-confidence",
                 "data-note",
+                "data-supplied",
+                "data-supplied-why",
             },
         )
         sid = _require(a, "id", "stroke")
@@ -308,6 +316,14 @@ def _read_strokes(g, sf):
         shape = a.get("data-shape", "")
         if shape and shape not in level3.SHAPES:
             raise ProfileError(f"{sid}: unknown shape {shape!r}")
+        supplied = a.get("data-supplied", "")
+        if supplied and supplied not in SUPPLIED:
+            raise ProfileError(f"{sid}: unknown data-supplied {supplied!r}")
+        supplied_why = a.get("data-supplied-why", "")
+        if bool(supplied) != bool(supplied_why):
+            raise ProfileError(
+                f"{sid}: data-supplied and data-supplied-why go together, or neither is given"
+            )
         st = Stroke(
             sid,
             pass_name,
@@ -317,6 +333,8 @@ def _read_strokes(g, sf):
             shape=shape,
             confidence=conf,
             note=a.get("data-note", ""),
+            supplied=supplied,
+            supplied_why=supplied_why,
         )
         for ctag, child in _children(el):
             cls = child.attrib.get("class", "")
@@ -442,6 +460,9 @@ def dumps(sf):
             attrs.append(f'data-confidence="{s.confidence}"')
         if s.note:
             attrs.append(f'data-note="{_esc(s.note)}"')
+        if s.supplied:
+            attrs.append(f'data-supplied="{s.supplied}"')
+            attrs.append(f'data-supplied-why="{_esc(s.supplied_why)}"')
         lines.append(f"    <g {' '.join(attrs)}>")
         lines.append(f'      <path class="median" d="{s.median}"/>')
         lines.append(f'      <path class="ink" d="{s.ink}"/>')

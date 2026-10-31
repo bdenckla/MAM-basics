@@ -1,9 +1,11 @@
 """Deriving a stroke-SVG's computed parts from its crop, and checking them.
 
 Authored: the root's provenance and parameters, each stroke's median, widths,
-ends, pass, confidence and note, the frame, the groups, and the judgments of
-residual pieces and of fills that are not ink.  Derived: the fills, the image
-residual, each stroke's ink and shape, and the pen residual.  ``derive``
+ends, pass, confidence, note and whether it is supplied, the frame, the groups,
+and the judgments of residual pieces and of fills that are not ink.  Derived:
+the fills, the image residual, each stroke's ink and shape, and the pen
+residual.  A supplied stroke may explain ink, as faint traces of it, but its
+sweep beyond the ink is no overshoot: nothing fitted it to ink.  ``derive``
 recomputes the derived parts and carries each judgment over to the piece or
 fill with exactly the same pixels; ``problems`` reports every way a file
 departs from its crop.
@@ -80,18 +82,22 @@ def derive(sf, lum):
     )
     strokes = []
     sweeps = []
+    seen_sweeps = []
     for st in sf.strokes:
         polys = sweep_polys(st)
         sweeps.extend(polys)
+        if not st.supplied:
+            seen_sweeps.extend(polys)
         shape = level3.shape_class(median_segments(st), st.widths)
         strokes.append(
             replace(st, ink=geo.polygon_path(polys, INK_PLACES), shape=shape)
         )
     out.strokes = strokes
     sweeps_px = geo.rasterize(sweeps, w, h, "nonzero")
+    seen_px = geo.rasterize(seen_sweeps, w, h, "nonzero")
     ink_px = level1.fill_mask(ink_fill_ds(out), w, h)
     out.unexplained = geo.mask_path(ink_px & ~sweeps_px)
-    out.overshoot = geo.mask_path(sweeps_px & ~ink_px)
+    out.overshoot = geo.mask_path(seen_px & ~ink_px)
     return out
 
 

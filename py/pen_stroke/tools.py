@@ -52,14 +52,15 @@ def nib_fits(lum, threshold, split):
 
 
 def samples_by_strokes(svg_path, pass_name):
-    """Width samples of the ink under one pass's strokes, grown by two pixels."""
+    """Width samples of the ink under one pass's strokes that are not supplied,
+    grown by two pixels."""
     sf = ssvg.read(svg_path)
     lum = raster.load_luminance(dv.crop_path(svg_path, sf))
     ink = lum < sf.threshold
     h, w = ink.shape
     polys = []
     for st in sf.strokes:
-        if st.pass_name == pass_name:
+        if st.pass_name == pass_name and not st.supplied:
             polys.extend(dv.sweep_polys(st))
     sel = raster.dilate8(raster.dilate8(geo.rasterize(polys, w, h, "nonzero")))
     return nibmod.width_samples(lum, ink, select=sel)

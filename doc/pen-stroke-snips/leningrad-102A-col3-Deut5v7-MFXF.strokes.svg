@@ -3,7 +3,7 @@
      viewBox="0 0 166 130"
      width="166"
      height="130"
-     data-profile="pen-stroke 2"
+     data-profile="pen-stroke 3"
      data-manuscript="Leningrad Codex"
      data-page="F102A"
      data-column="3"
@@ -30,6 +30,7 @@
 .fills path { fill: #000; fill-opacity: 0.2 }
 .image-residual, .pen-residual, .groups, .median { display: none }
 .stroke .ink { fill: #c0392b; fill-opacity: 0.4 }
+.stroke[data-supplied] .ink { fill: none; stroke: #ff6d00; stroke-width: 0.6; stroke-dasharray: 1.5 1 }
 .frame line { stroke: #2471a3; stroke-width: 0.5 }
   </style>
   <image class="crop" href="leningrad-102A-col3-Deut5v7-MFXF.png" x="0" y="0" width="166" height="130"/>

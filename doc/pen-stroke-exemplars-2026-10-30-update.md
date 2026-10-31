@@ -5,7 +5,8 @@ State: open; first entries 2026-10-31
 ## Ben's review of the two crops on page F043A, 2026-10-31
 
 Ben checked the readings of the marks in the two crops on page F043A. The two on page F102A
-still await his review. His answers are quoted from the review session's chat.
+awaited his review until his second review, below. His answers are quoted from the review
+session's chat.
 
 1. **F043A's פני has two bars under the nun, not one.** The base's item 1 reads: "Under the
    nun there are one long bar, a dot under the bar's right end, and a vertical stroke under its
@@ -39,8 +40,9 @@ still await his review. His answers are quoted from the review session's chat.
 
 ## Profile 2: smooth curves with fitted widths, 2026-10-31
 
-The stroke-SVGs now follow profile 2 of
-[pen-stroke-representation.md](pen-stroke-representation.md). Each stroke's median is one or a
+On 2026-10-31 the stroke-SVGs moved to profile 2 of
+[pen-stroke-representation.md](pen-stroke-representation.md), which profile 3, below, extends.
+Each stroke's median is one or a
 few cubic Bézier curves, with a width that varies smoothly along them, and its ends are round
 or flat. A script of Claude's converted the medians placed by eye and fitted the widths and
 ends to the ink. The schema note's "Profile 1 and profile 2" gives its steps. The base's
@@ -63,5 +65,36 @@ which a width varying along the stroke gives. What remains is where a smooth wid
 most of all in the flaked crop, and where strokes cross, since the widths there are carried
 over from the stroke's other parts rather than measured.
 
+## Ben's second review, of page F102A's על־פני, 2026-10-31
+
+Ben's words below are from his message of 2026-10-31 to the commander session "Commander for
+Claude's forests", which quoted them into the brief of the session that applied them.
+
+1. **Under the nun of F102A's על־פני, the bar is the pataḥ, written late, and the qamats is
+   all but lost.** The base's item 3 reads: "Under the nun there are one short bar and one
+   vertical stroke beginning at the bar's right end, and no dot." Ben: "there is only the
+   faintest remnants of where I think a qamats was. Mainly this qamats is (very implicitly)
+   indicated by the space under the nun that "pushes off" the patax to be "late"." So the short
+   bar, s12, is the עליון strand's pataḥ alone, left of the space where the תחתון strand's
+   qamats stood. The stroke-SVG now supplies that qamats as s30 and s31, a bar and a tick, over
+   faint traces right of the pataḥ, under decision 15 of the schema note. The base's "The
+   stroke-SVG puts the vertical stroke in a qamats group and in a silluq group" no longer holds:
+   the vertical stroke, s13, is in the silluq group alone. Whether it is instead the top of a
+   stroke of the next line's lamed is a question put to Ben.
+2. **Ben judged the strokes of that crop's letters poor, except the lamed's and the yod's.**
+   Ben: "Overall, for Page F102A, column 3, line 23: Deuteronomy 5:7, the strokes model did a
+   pretty poor job for all letters except lamed and yod." So the ayin's, the pe's and the nun's
+   strokes do not yet model their ink. He asked whether an alternative or additional approach
+   would do better: "to have a model of what strokes are involved in creating an idealized
+   version of this letter, and then stretch and tweak the parameters of that model to try to
+   fit to the ink that is there and the ink that is implied (that's the trickiest part, I
+   imagine) but flaked off areas!" No approach has been chosen.
+3. **Profile 3 adds supplied strokes, for that qamats.** A supplied stroke is one the crop
+   shows little or no ink of, and every view draws it in one style reserved for it. In F102A's
+   על־פני the ink no stroke explains fell from 11.8% to 11.6%, the supplied bar covering the
+   faint traces, and the sweep beyond the ink stayed at 12.3%, since a supplied stroke's sweep
+   is not counted there. The other three crops' figures did not change.
+
 Effective State of the base, 2026-10-31: executed 2026-10-30; Ben has checked the readings of
-the two crops on page F043A, and those of the two on page F102A await his review.
+the two crops on page F043A and of the vowels under the nun of F102A's על־פני, and the rest of
+the two crops on page F102A awaits his review.
