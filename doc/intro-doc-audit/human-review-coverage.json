@@ -607,6 +607,6 @@
   "limits": [
     "Exact substring validation does not establish manuscript truth or translation accuracy.",
     "Source reviewers and root reread translations and decisions; physical-source and quotation-scope questions remain explicit.",
-    "Rendering reads the recorded snapshot, and for an applied proposal the later mirror commit that holds it, and writes research outputs only; it changes no source cache, scripture or published file."
+    "Rendering reads the recorded snapshot, and for an applied proposal the later mirror commit that holds it. It writes research outputs and the page's published copy under gh-pages/, and changes no source cache or scripture."
   ]
 }

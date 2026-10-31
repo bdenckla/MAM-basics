@@ -85,3 +85,17 @@ as applied, #311–#315 and #321–#324.
 revision 3099123 and chapter 5's revision 3099114, which add Genesis 30:27 and
 2 Samuel 8:10 to their ḥataf lists as #320 and #318 propose; skadish1 reported
 both done later on 2026-10-29, and their applications are not yet recorded here.
+
+## 2026-10-31 — the page served from gh-pages
+
+Ben asked for an overall issue to track the possible issues this audit raised, pointing
+to its overall document, and asked that the document, being HTML, be served from
+gh-pages: “it doesn't need to be "official" in particular it doesn't need a link-path
+to it from gh-pages/index.html, i.e. it should be an "orphan" that you need to know its
+URL and that is the only way to get to it”. The `review` subcommand now also writes
+`gh-pages/intro-doc-audit/index.html`, served at
+<https://bdenckla.github.io/MAM-basics/intro-doc-audit/>. It differs from
+[review.html](review.html) only in its font path and in linking this directory's notes
+on GitHub, and no other page links to it. For this one page, this supersedes the base's
+exclusion of gh-pages edits; the site changes only when Ben dispatches the Pages
+workflow.

@@ -179,7 +179,9 @@ _PEN_STROKE_BY_HAND = (
 # ---------------------------------------------------------------------------
 NOT_IN_MEGA: dict[str, str] = {
     "py/main_intro_doc_audit.py": (
-        "Manual research over a fixed source snapshot, not a product generator."
+        "Manual research over a fixed source snapshot. Its review subcommand also"
+        " writes the review page's orphan published copy,"
+        " gh-pages/intro-doc-audit/index.html, served at Ben's request of 2026-10-31."
         " doc/intro-doc-audit/RUNBOOK.md, Commands and scope, prescribes focused"
         " review/history-inventory rebuilds and excludes broad enumeration on"
         " current main; original enumeration and history compilation need their"

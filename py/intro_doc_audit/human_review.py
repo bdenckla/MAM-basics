@@ -445,7 +445,7 @@ def applied_row(entry, sources):
     return record["label"], record["quote"], record["explanation"], link
 
 
-def adjudication_comparison(case, sources):
+def adjudication_comparison(case, sources, published):
     entries = [a for a in read("adjudications.json") if a["id"] == case["adjudication"]]
     if len(entries) != 1:
         raise ValueError("An adjudication must identify one retained research record")
@@ -508,7 +508,7 @@ def adjudication_comparison(case, sources):
         '<div class="comparison adjudication">'
         + "".join(panels)
         + '</div><p><a href="'
-        + escaped(entry["research_note"])
+        + escaped(note_href(entry["research_note"], published))
         + '">'
         + escaped(
             entry.get("research_label", "Ben’s adjudication and research context")
@@ -578,7 +578,7 @@ def word_comparison_table(comparison, sources):
     )
 
 
-def card(case, sources):
+def card(case, sources, published):
     for key in ("title", "issue", "decision", "panels"):
         if not case.get(key):
             raise ValueError(f"Incomplete readable case {case.get('id')}: {key}")
@@ -623,7 +623,9 @@ def card(case, sources):
             + "</div>"
         )
     adjudication = (
-        adjudication_comparison(case, sources) if case.get("adjudication") else ""
+        adjudication_comparison(case, sources, published)
+        if case.get("adjudication")
+        else ""
     )
     history = case.get("revision_history")
     history_note = (
@@ -631,7 +633,11 @@ def card(case, sources):
         + prose(history["summary"])
         + " "
         + "; ".join(
-            '<a href="' + escaped(link["url"]) + '">' + prose(link["label"]) + "</a>"
+            '<a href="'
+            + escaped(note_href(link["url"], published))
+            + '">'
+            + prose(link["label"])
+            + "</a>"
             for link in history["links"]
         )
         + ".</p>"
@@ -645,7 +651,11 @@ def card(case, sources):
     spin_offs = (
         "<p><strong>Spin-off issues.</strong> "
         + "; ".join(
-            '<a href="' + escaped(item["url"]) + '">' + prose(item["label"]) + "</a>"
+            '<a href="'
+            + escaped(note_href(item["url"], published))
+            + '">'
+            + prose(item["label"])
+            + "</a>"
             for item in case.get("spin_off_issues", [])
         )
         + ".</p>"
@@ -680,8 +690,34 @@ def card(case, sources):
     )
 
 
-STYLE = """@font-face{font-family:Taamey;src:url(../../gh-pages/woff2/Taamey_D.woff2)}
-:root{--he-size:30px;color-scheme:light}*{box-sizing:border-box}body{margin:0;background:#f5f6f4;color:#22332d;font:17px/1.65 Georgia,serif}main{max-width:1220px;margin:auto;padding:28px}h1,h2,h3,h4,label,nav,.reading-label,.source-link{font-family:system-ui,sans-serif}h1{font-size:29px;line-height:1.3}h2{font-size:24px;margin:42px 0 15px}h3{font-size:21px;margin:0 0 12px}h4{font-size:15px;line-height:1.45;margin:0 0 12px;color:#4e645a}.intro{max-width:850px}.toolbar{position:sticky;top:0;background:#f5f6f4f5;border-bottom:1px solid #d5dfd9;padding:12px 0;z-index:2;display:flex;align-items:center;gap:10px;flex-wrap:wrap}.toolbar nav{margin-left:auto;font-size:14px}a{color:#1f5b85}nav a{margin-left:14px}article{background:white;border:1px solid #d7e0da;border-radius:8px;padding:25px;margin:22px 0;scroll-margin-top:85px}.issue{font-weight:bold;font-size:18px}.comparison{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin:22px 0}.passage{border-left:3px solid #bdcfc2;background:#f6f8f5;padding:16px 18px;min-width:0}.he{font:var(--he-size)/1.9 Taamey,'SBL Hebrew',serif;font-weight:400;white-space:pre-wrap;overflow-wrap:anywhere}.translation{font-size:16px;line-height:1.65;white-space:pre-wrap;margin-bottom:10px}.source-link{font-size:13px}.readings{display:flex;gap:20px;flex-wrap:wrap;border-top:1px solid #dce5de;border-bottom:1px solid #dce5de;padding:14px 0}.reading{display:flex;flex-direction:column;min-width:220px;flex:1}.reading-label,.gloss{font-size:14px}.reading .he{align-self:flex-start}.decision{background:#eef4f0;padding:12px 16px}footer{margin-top:40px;border-top:1px solid #d5dfd9;padding-top:20px;font-size:15px}input{vertical-align:middle}@media(max-width:760px){main{padding:16px}.comparison{grid-template-columns:1fr}.toolbar nav{margin-left:0}nav a{margin-left:0;margin-right:12px}article{padding:18px}}"""
+# Ben asked on 2026-10-31 that this page be served from gh-pages as an orphan, a page no
+# other page links to, so that only its URL reaches it. The published copy differs from
+# review.html only in where its font and its links to this directory's notes resolve.
+PUBLISHED = audit.ROOT / "gh-pages/intro-doc-audit/index.html"
+NOTES_ON_GITHUB = (
+    "https://github.com/bdenckla/MAM-basics/blob/main/doc/intro-doc-audit/"
+)
+
+
+def note_href(url, published):
+    """A link as this directory's records write it, resolved for one copy of the page."""
+    if url.startswith("https://"):
+        return url
+    if "/" in url or not (audit.OUT / url).is_file():
+        raise ValueError(f"A relative link must name a file beside review.html: {url}")
+    return NOTES_ON_GITHUB + url if published else url
+
+
+def font_face(published):
+    url = (
+        "../woff2/Taamey_D.woff2"
+        if published
+        else "../../gh-pages/woff2/Taamey_D.woff2"
+    )
+    return "@font-face{font-family:Taamey;src:url(" + url + ")}\n"
+
+
+STYLE = """:root{--he-size:30px;color-scheme:light}*{box-sizing:border-box}body{margin:0;background:#f5f6f4;color:#22332d;font:17px/1.65 Georgia,serif}main{max-width:1220px;margin:auto;padding:28px}h1,h2,h3,h4,label,nav,.reading-label,.source-link{font-family:system-ui,sans-serif}h1{font-size:29px;line-height:1.3}h2{font-size:24px;margin:42px 0 15px}h3{font-size:21px;margin:0 0 12px}h4{font-size:15px;line-height:1.45;margin:0 0 12px;color:#4e645a}.intro{max-width:850px}.toolbar{position:sticky;top:0;background:#f5f6f4f5;border-bottom:1px solid #d5dfd9;padding:12px 0;z-index:2;display:flex;align-items:center;gap:10px;flex-wrap:wrap}.toolbar nav{margin-left:auto;font-size:14px}a{color:#1f5b85}nav a{margin-left:14px}article{background:white;border:1px solid #d7e0da;border-radius:8px;padding:25px;margin:22px 0;scroll-margin-top:85px}.issue{font-weight:bold;font-size:18px}.comparison{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin:22px 0}.passage{border-left:3px solid #bdcfc2;background:#f6f8f5;padding:16px 18px;min-width:0}.he{font:var(--he-size)/1.9 Taamey,'SBL Hebrew',serif;font-weight:400;white-space:pre-wrap;overflow-wrap:anywhere}.translation{font-size:16px;line-height:1.65;white-space:pre-wrap;margin-bottom:10px}.source-link{font-size:13px}.readings{display:flex;gap:20px;flex-wrap:wrap;border-top:1px solid #dce5de;border-bottom:1px solid #dce5de;padding:14px 0}.reading{display:flex;flex-direction:column;min-width:220px;flex:1}.reading-label,.gloss{font-size:14px}.reading .he{align-self:flex-start}.decision{background:#eef4f0;padding:12px 16px}footer{margin-top:40px;border-top:1px solid #d5dfd9;padding-top:20px;font-size:15px}input{vertical-align:middle}@media(max-width:760px){main{padding:16px}.comparison{grid-template-columns:1fr}.toolbar nav{margin-left:0}nav a{margin-left:0;margin-right:12px}article{padding:18px}}"""
 
 
 THEME_STYLE = """
@@ -793,28 +829,12 @@ def coverage_report(
         "limits": [
             "Exact substring validation does not establish manuscript truth or translation accuracy.",
             "Source reviewers and root reread translations and decisions; physical-source and quotation-scope questions remain explicit.",
-            "Rendering reads the recorded snapshot, and for an applied proposal the later mirror commit that holds it, and writes research outputs only; it changes no source cache, scripture or published file.",
+            "Rendering reads the recorded snapshot, and for an applied proposal the later mirror commit that holds it. It writes research outputs and the page's published copy under gh-pages/, and changes no source cache or scripture.",
         ],
     }
 
 
-def main(cases=None, output="review.html"):
-    cases = cases if cases is not None else read("human-review.json")
-    sources = Sources()
-    ids = [case["id"] for case in cases]
-    if len(ids) != len(set(ids)):
-        raise ValueError("Duplicate readable case IDs")
-    reviewed = reviewed_case_ids(cases)
-    statuses = [record["application_status"] for record in read("adjudications.json")]
-    if unknown := set(statuses) - set(PROPOSED_LABELS):
-        raise ValueError(f"Unknown application status: {unknown}")
-    applied = statuses.count("applied")
-    if applied == 0:
-        applied_note = "no approved proposal is recorded as applied."
-    elif applied == 1:
-        applied_note = "one approved proposal is recorded as applied, with the Wikisource revision that applied it."
-    else:
-        applied_note = f"{applied} approved proposals are recorded as applied, each with the Wikisource revision that applied it."
+def render_page(cases, reviewed, applied_note, sources, published):
     sections = []
     for key, title, lead in (
         (
@@ -846,7 +866,7 @@ def main(cases=None, output="review.html"):
         if entries:
             sections.append(
                 f'<section id="{key}"><h2>{title}</h2><p>{lead}</p>'
-                + "".join(card(case, sources) for case in entries)
+                + "".join(card(case, sources, published) for case in entries)
                 + "</section>"
             )
     if reviewed:
@@ -854,11 +874,16 @@ def main(cases=None, output="review.html"):
             '<details class="reviewed" id="reviewed"><summary><h2>Reviewed ('
             + str(len(reviewed))
             + ")</h2></summary><p>These cases have recorded substantive Ben decisions. Any remaining questions stay with their cases.</p>"
-            + "".join(card(case, sources) for case in cases if case["id"] in reviewed)
+            + "".join(
+                card(case, sources, published)
+                for case in cases
+                if case["id"] in reviewed
+            )
             + "</details>"
         )
-    output_html = (
+    return (
         '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MAM Introduction and doc-note discrepancies</title><style>'
+        + font_face(published)
         + STYLE
         + ".he-quote{display:inline-block;white-space:pre-wrap}.passage.full-width{grid-column:1/-1}.readings{display:grid;grid-template-columns:minmax(0,max-content)}.reading{min-width:0;flex:initial}.reading .he{align-self:stretch;text-align:right}.comparison.adjudication{grid-template-columns:1fr}.word-pair .reading+.reading{margin-top:12px}.word-pair .he{align-self:flex-end}"
         + ".case{background:white;border:1px solid #d7e0da;border-radius:8px;margin:18px 0;scroll-margin-top:85px}.case>summary{cursor:pointer;padding:20px 25px;list-style-position:outside;margin-left:20px}.case>summary h3{display:inline;margin:0}.case article{border:0;border-top:1px solid #d7e0da;border-radius:0;margin:0;padding-top:5px}bdi{unicode-bidi:isolate}.membership{overflow-x:auto;margin:24px 0}.membership table{width:100%;border-collapse:collapse}.membership caption{text-align:left;margin-bottom:12px}.membership th,.membership td{border:1px solid #d7e0da;padding:8px 12px;vertical-align:middle}.membership th{font:14px/1.5 system-ui,sans-serif;background:#f2f6f3}.membership .verse{white-space:nowrap;font:14px/1.5 system-ui,sans-serif}.annotation{font-size:14px}"
@@ -868,8 +893,31 @@ def main(cases=None, output="review.html"):
         + "".join(sections)
         + "<footer><p>Ben’s approvals identify proposals for Avi’s review. The Reviewed cases that say “Tracked in” an issue have been submitted to him, and "
         + applied_note
-        + '</p><a href="METHODS.md">Methods, evidence and coverage</a></footer></main><script>const slider=document.getElementById("size");slider.addEventListener("input",()=>{document.documentElement.style.setProperty("--he-size",slider.value+"px");document.getElementById("value").textContent=slider.value});</script></body></html>'
+        + '</p><a href="'
+        + escaped(note_href("METHODS.md", published))
+        + '">Methods, evidence and coverage</a></footer></main><script>const slider=document.getElementById("size");slider.addEventListener("input",()=>{document.documentElement.style.setProperty("--he-size",slider.value+"px");document.getElementById("value").textContent=slider.value});</script></body></html>'
     )
+
+
+def main(cases=None, output="review.html"):
+    cases = cases if cases is not None else read("human-review.json")
+    sources = Sources()
+    ids = [case["id"] for case in cases]
+    if len(ids) != len(set(ids)):
+        raise ValueError("Duplicate readable case IDs")
+    reviewed = reviewed_case_ids(cases)
+    statuses = [record["application_status"] for record in read("adjudications.json")]
+    if unknown := set(statuses) - set(PROPOSED_LABELS):
+        raise ValueError(f"Unknown application status: {unknown}")
+    applied = statuses.count("applied")
+    if applied == 0:
+        applied_note = "no approved proposal is recorded as applied."
+    elif applied == 1:
+        applied_note = "one approved proposal is recorded as applied, with the Wikisource revision that applied it."
+    else:
+        applied_note = f"{applied} approved proposals are recorded as applied, each with the Wikisource revision that applied it."
+    output_html = render_page(cases, reviewed, applied_note, sources, published=False)
+    published_copy = None
     if output == "review.html":
         audit.dump(
             "human-review-coverage.json",
@@ -880,6 +928,14 @@ def main(cases=None, output="review.html"):
                 sources.applications_checked,
             ),
         )
+        published_html = render_page(
+            cases, reviewed, applied_note, Sources(), published=True
+        )
+        if re.search(r'(?:href|src)="(?!https://|#)', published_html):
+            raise ValueError("The published copy must not keep a relative link")
+        PUBLISHED.parent.mkdir(exist_ok=True)
+        PUBLISHED.write_text(published_html, encoding="utf-8", newline="\n")
+        published_copy = PUBLISHED.relative_to(audit.ROOT).as_posix()
     (audit.OUT / output).write_text(output_html, encoding="utf-8", newline="\n")
     print(
         json.dumps(
@@ -889,6 +945,7 @@ def main(cases=None, output="review.html"):
                 "proposed_quotations_checked": sources.proposals_checked,
                 "applied_quotations_checked": sources.applications_checked,
                 "output": output,
+                "published_copy": published_copy,
             }
         )
     )
