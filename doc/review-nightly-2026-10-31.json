@@ -1,0 +1,568 @@
+{
+  "date": "2026-10-31",
+  "state": "completed",
+  "scheduled_utc": "2026-10-31T06:00:00Z",
+  "actual_first_clock": "2026-10-31T06:38:27Z",
+  "completed_utc": "2026-10-31T07:02:23.297448+00:00",
+  "source_commit": "f1c7458a245a65a344c6be79139c9159020fd9a8",
+  "reviewed_through": "f1c7458a245a65a344c6be79139c9159020fd9a8",
+  "receipt_parent": "f48b43ff283931e5d78eef6104a8adc79855305b",
+  "previous_nightly_preserved": "cbee8ff0ce35143a06f502f7a521d634e923577c",
+  "previous_broad_source": "fc9c6f14eea3b48bc152a394acc0ca1aef43aeb0",
+  "receipt_branch": "review-nightly-20261031-cloud-receipts",
+  "review": "Frozen main equals the reconciled latest reviewed-through anchor. No new window or duplicated prior review.",
+  "stages": [
+    {
+      "name": "basics-mega",
+      "cwd": "/workspace/MAM-basics",
+      "commit": "f1c7458a245a65a344c6be79139c9159020fd9a8",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_0_mega.py"
+      ],
+      "started_utc": "2026-10-31T06:41:10.600563+00:00",
+      "state": "completed",
+      "tracked_diff_before": false,
+      "allowed_committed_input_ids": [
+        "f1c7458a245a65a344c6be79139c9159020fd9a8",
+        "651e66af1b254cff11ea4cc0ec794700a8e1c647"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 477.088,
+      "completed_utc": "2026-10-31T06:49:07.688468+00:00",
+      "log_sha256": "b375581c9e1f50889328f02f0ea359dd4d7270d6b4c1b3145de393ef3f523f48",
+      "changed_paths": [
+        "doc/process-documentation/MAM-process.dot.svg",
+        "doc/process-documentation/pipeline.svg",
+        "gh-pages/MAM-parsed/plus/svg/plus-call-graph-c.svg",
+        "gh-pages/MAM-parsed/plus/svg/plus-call-graph-d.svg",
+        "gh-pages/MAM-parsed/plus/svg/plus-call-graph-e.svg",
+        "gh-pages/MAM-parsed/plus/svg/plus-dexi-call-graph.svg",
+        "gh-pages/MAM-parsed/plus/svg/plus-dualcant-call-graph.svg",
+        "gh-pages/MAM-parsed/plus/svg/plus-kvq-call-graph.svg"
+      ],
+      "preserved_changes": [
+        {
+          "path": "doc/process-documentation/MAM-process.dot.svg",
+          "before_sha256": "901e20e873bfc0f839a1cd0e3dffee85827e7d2cd5515683de176035f6d31353",
+          "after_sha256": "f8beae9d4567ee9485f21c663afff777bdeae0a2bcfebbf80672a56694ba1698",
+          "before_bytes": 10110,
+          "after_bytes": 9969
+        },
+        {
+          "path": "doc/process-documentation/pipeline.svg",
+          "before_sha256": "0b6564789fbe5bb58f077759eed18481d78492d0552ad40561d96af09c209204",
+          "after_sha256": "05abfba5131811ccff34728c4873264e69fb6f5ec8cc738dd92af22a23fd6b77",
+          "before_bytes": 15566,
+          "after_bytes": 15970
+        },
+        {
+          "path": "gh-pages/MAM-parsed/plus/svg/plus-call-graph-c.svg",
+          "before_sha256": "45546ac232112011f18fce4232853b834a876d0d0abd2dc398bd4e6ba1d92cf5",
+          "after_sha256": "b058a1991874a547c3d260402667f7e3a4972df8b9528e8633d821ee96f746ed",
+          "before_bytes": 3938,
+          "after_bytes": 3946
+        },
+        {
+          "path": "gh-pages/MAM-parsed/plus/svg/plus-call-graph-d.svg",
+          "before_sha256": "d8ca8824b8506ef437be21f283004c53a12c5a32eae8027168753310f36104f7",
+          "after_sha256": "03b97e25c4c39271bd126d7a0d46e16a39b63ac637d0952ef1fe25bef7b2092e",
+          "before_bytes": 3210,
+          "after_bytes": 3200
+        },
+        {
+          "path": "gh-pages/MAM-parsed/plus/svg/plus-call-graph-e.svg",
+          "before_sha256": "2cedb708c55f170a00531d2a7765f612c7909a5bc5008f7c3dacced385a82273",
+          "after_sha256": "3bb233f9d879e914304a5bcc30ff4f6413f5523bc2bf077fa202f8ec9f8d58a7",
+          "before_bytes": 10850,
+          "after_bytes": 10889
+        },
+        {
+          "path": "gh-pages/MAM-parsed/plus/svg/plus-dexi-call-graph.svg",
+          "before_sha256": "c5801e0792a1598a65268459a3730ffafc50047e46381e26b10be1ab34a8117e",
+          "after_sha256": "5c4427190645801866616e0a5008673ae05af4809cde5d20431626f5344fbb36",
+          "before_bytes": 6317,
+          "after_bytes": 6304
+        },
+        {
+          "path": "gh-pages/MAM-parsed/plus/svg/plus-dualcant-call-graph.svg",
+          "before_sha256": "455473dd313dd75d1478ba3ca482344cfb9aed168a3be82cfa0306342a1e51f9",
+          "after_sha256": "044e178113c5ee61ccd1e657a67f1fffc099863c60c2b597da28dea2461f391e",
+          "before_bytes": 8016,
+          "after_bytes": 8134
+        },
+        {
+          "path": "gh-pages/MAM-parsed/plus/svg/plus-kvq-call-graph.svg",
+          "before_sha256": "a145b66a290ce29462f595f0c397cf93793af78c9fba6e0d43618f2e9660fb56",
+          "after_sha256": "b3610fa3e1bb4e2a0a5fd28bf1befa3ba84b3f319bd8c01b7c7738c66f6d01b5",
+          "before_bytes": 5512,
+          "after_bytes": 5483
+        }
+      ],
+      "status_after": [
+        " M doc/process-documentation/MAM-process.dot.svg",
+        " M doc/process-documentation/pipeline.svg",
+        " M gh-pages/MAM-parsed/plus/svg/plus-call-graph-c.svg",
+        " M gh-pages/MAM-parsed/plus/svg/plus-call-graph-d.svg",
+        " M gh-pages/MAM-parsed/plus/svg/plus-call-graph-e.svg",
+        " M gh-pages/MAM-parsed/plus/svg/plus-dexi-call-graph.svg",
+        " M gh-pages/MAM-parsed/plus/svg/plus-dualcant-call-graph.svg",
+        " M gh-pages/MAM-parsed/plus/svg/plus-kvq-call-graph.svg"
+      ]
+    },
+    {
+      "name": "basics-suite",
+      "cwd": "/workspace/MAM-basics",
+      "commit": "f1c7458a245a65a344c6be79139c9159020fd9a8",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        "-ra"
+      ],
+      "started_utc": "2026-10-31T06:49:16.979535+00:00",
+      "state": "completed",
+      "tracked_diff_before": false,
+      "allowed_committed_input_ids": [
+        "f1c7458a245a65a344c6be79139c9159020fd9a8",
+        "651e66af1b254cff11ea4cc0ec794700a8e1c647"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 324.056,
+      "completed_utc": "2026-10-31T06:54:41.035947+00:00",
+      "log_sha256": "c8b2852285dc323bd352ce6f31bd3cf89a609806d1402805e55bc39a9192e9ac",
+      "changed_paths": [],
+      "preserved_changes": [],
+      "status_after": []
+    }
+  ],
+  "result": "Mega exit0 in477.088s, all65steps/no skips; full suite exit0 in324.056s:1118passed/5semantic control skips. Committed-font QA61PASS/0FAIL/0SKIP, full-history release-check complete,120425case corpus current.8SVG geometry/Times-alias differences freshly explained, preserved and restored.",
+  "outcomes": {
+    "completed_mega_steps": 65,
+    "mega_step_names": [
+      "parse-ws",
+      "foi-features-of-interest",
+      "mam-with-doc",
+      "diff-mpplus",
+      "diff-ctr-vs-mam",
+      "tmpl-survey",
+      "tmpl-survey-toy",
+      "vendored-tmpl-survey-toy",
+      "mam-simple",
+      "mam-simple-docs",
+      "letter-small-job",
+      "vendored-letter-small-job",
+      "decnreub",
+      "multimark",
+      "wordlist",
+      "search-final-hiriq-verse-text",
+      "search-holam-he-qere",
+      "explicit-xataf",
+      "ws-bot-proto",
+      "gen-misc",
+      "wlc-json-and-unicode",
+      "accgram-run-prose",
+      "accgram-test-fixes",
+      "accgram-run-dual-cant",
+      "accgram-run-poetic",
+      "accgram-xcheck-poetic",
+      "accgram-servi-xcheck",
+      "accgram-grammaticality",
+      "accgram-run-printed-decalogue",
+      "accgram-survey-chanted-word-accents",
+      "accgram-generate-html",
+      "uxlc-check-changes",
+      "uxlc-fois",
+      "uxlc-write-page-break-info",
+      "uxlc-amb-early-mtg",
+      "uxlc-word-list",
+      "clc",
+      "estimate-uxlc-locations",
+      "render-uxlc-corrections",
+      "verify-and-render-table",
+      "book-of-job-site",
+      "map-changes-to-book-of-job",
+      "find-uxlc-accent-changes",
+      "uxlc-grammar-test",
+      "wlc-diffs-420422",
+      "wlc-a-notes",
+      "sigil-inventory",
+      "phonetic-mam-export",
+      "phonetic-mam-render",
+      "accgram-survey-meteg-before-stress",
+      "yeivin-itm-survey-meteg-claims",
+      "yeivin-itm-render",
+      "accgram-survey-post-stress-meteg",
+      "gen-site",
+      "diffable-pointed-hebrew",
+      "ac-gen-index-flat-annotated",
+      "near-aleppo-census",
+      "near-aleppo-build",
+      "near-aleppo-html",
+      "pipeline-graph",
+      "mam-for-sefaria-doc",
+      "taamey-d-doc",
+      "taamey-d-qa",
+      "taamey-d-release-check",
+      "taamey-d-corpus"
+    ],
+    "mega_skips": 0,
+    "font_qa": {
+      "PASS": 61,
+      "FAIL": 0,
+      "SKIP": 0
+    },
+    "corpus": "120425cases unchanged; check only, no refresh pending",
+    "release_check": "Full-history release-check completed as a mega step; no release published.",
+    "suite_summary": "1118 passed, 5 skipped in 320.07s (0:05:20)",
+    "skips": [
+      "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: koren_ex_elyon diverges from its Wikisource strand; the control needs an agreeing page",
+      "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: simtan_dt_taxton diverges from its Wikisource strand; the control needs an agreeing page",
+      "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: simtiq_dt_taxton diverges from its Wikisource strand; the control needs an agreeing page",
+      "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: simtiq_ex_elyon diverges from its Wikisource strand; the control needs an agreeing page",
+      "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: simtiq_ex_taxton diverges from its Wikisource strand; the control needs an agreeing page"
+    ]
+  },
+  "failures": [],
+  "limits": [
+    "The5edition controls skip because their pages diverge from the Wikisource strand; the exact reasons are in outcomes.json. No unexecuted requested stage.",
+    "Exact source/committed sibling inputs only; receipt-tree code and later main are outside execution coverage.",
+    "No font build, frozen regeneration, baseline/corpus acceptance, release publication, deployment, main/shared integration or scheduling change. Pen-stroke stays outside mega."
+  ],
+  "allowed_committed_input_ids": [
+    "f1c7458a245a65a344c6be79139c9159020fd9a8",
+    "651e66af1b254cff11ea4cc0ec794700a8e1c647"
+  ],
+  "findings": "No new confirmed consequential defect; no repair commit.",
+  "repair_commits": [],
+  "output_comparison": {
+    "stage": "basics-mega",
+    "source": "f1c7458a245a65a344c6be79139c9159020fd9a8",
+    "explained": [
+      {
+        "path": "doc/process-documentation/MAM-process.dot.svg",
+        "before_sha256": "901e20e873bfc0f839a1cd0e3dffee85827e7d2cd5515683de176035f6d31353",
+        "after_sha256": "f8beae9d4567ee9485f21c663afff777bdeae0a2bcfebbf80672a56694ba1698",
+        "semantic_sha256": "77a1d81af6cdc7c45f88bb93e7a9a7e667ee5d0b1f6b57a9a7e8d4a9391812a8",
+        "differences": {
+          "width": 1,
+          "height": 1,
+          "viewBox": 1,
+          "transform": 1,
+          "points": 29,
+          "y": 17,
+          "font-family": 18,
+          "x": 18,
+          "d": 12
+        },
+        "disposition": "Same graph/text/styles; Graphviz geometry and explicit Times-family alias only."
+      },
+      {
+        "path": "doc/process-documentation/pipeline.svg",
+        "before_sha256": "0b6564789fbe5bb58f077759eed18481d78492d0552ad40561d96af09c209204",
+        "after_sha256": "05abfba5131811ccff34728c4873264e69fb6f5ec8cc738dd92af22a23fd6b77",
+        "semantic_sha256": "864cb1e1cb1f08d44813179949737287ed4b9c75bbfb0774e33fb9b355673bee",
+        "differences": {
+          "width": 1,
+          "height": 1,
+          "viewBox": 1,
+          "transform": 1,
+          "points": 26,
+          "y": 22,
+          "x": 22,
+          "d": 34
+        },
+        "disposition": "Same graph/text/styles; Graphviz geometry and explicit Times-family alias only."
+      },
+      {
+        "path": "gh-pages/MAM-parsed/plus/svg/plus-call-graph-c.svg",
+        "before_sha256": "45546ac232112011f18fce4232853b834a876d0d0abd2dc398bd4e6ba1d92cf5",
+        "after_sha256": "b058a1991874a547c3d260402667f7e3a4972df8b9528e8633d821ee96f746ed",
+        "semantic_sha256": "8fec4b196d9b6c78ce3396e85323e0dab304e894ef7d0f2c4a47333df0a705f7",
+        "differences": {
+          "width": 1,
+          "viewBox": 1,
+          "points": 8,
+          "x": 7,
+          "d": 4,
+          "y": 3
+        },
+        "disposition": "Same graph/text/styles; Graphviz geometry and explicit Times-family alias only."
+      },
+      {
+        "path": "gh-pages/MAM-parsed/plus/svg/plus-call-graph-d.svg",
+        "before_sha256": "d8ca8824b8506ef437be21f283004c53a12c5a32eae8027168753310f36104f7",
+        "after_sha256": "03b97e25c4c39271bd126d7a0d46e16a39b63ac637d0952ef1fe25bef7b2092e",
+        "semantic_sha256": "739b5412a0171ab68f8788ce66bc61e750ef4e9b2e7d077ca482551c661707b3",
+        "differences": {
+          "width": 1,
+          "viewBox": 1,
+          "points": 7,
+          "x": 6,
+          "d": 3,
+          "y": 3
+        },
+        "disposition": "Same graph/text/styles; Graphviz geometry and explicit Times-family alias only."
+      },
+      {
+        "path": "gh-pages/MAM-parsed/plus/svg/plus-call-graph-e.svg",
+        "before_sha256": "2cedb708c55f170a00531d2a7765f612c7909a5bc5008f7c3dacced385a82273",
+        "after_sha256": "3bb233f9d879e914304a5bcc30ff4f6413f5523bc2bf077fa202f8ec9f8d58a7",
+        "semantic_sha256": "8307ee61daeb59e7f7c46da77e6c8180b097f0630a2e99afd47545d63c6b06d2",
+        "differences": {
+          "width": 1,
+          "height": 1,
+          "viewBox": 1,
+          "transform": 1,
+          "points": 23,
+          "y": 23,
+          "font-family": 1,
+          "x": 23,
+          "d": 12
+        },
+        "disposition": "Same graph/text/styles; Graphviz geometry and explicit Times-family alias only."
+      },
+      {
+        "path": "gh-pages/MAM-parsed/plus/svg/plus-dexi-call-graph.svg",
+        "before_sha256": "c5801e0792a1598a65268459a3730ffafc50047e46381e26b10be1ab34a8117e",
+        "after_sha256": "5c4427190645801866616e0a5008673ae05af4809cde5d20431626f5344fbb36",
+        "semantic_sha256": "7ed1b9e2b719bf6e9f76ceaf74239b7a010142ad239c9f7979ecdd12d339ac11",
+        "differences": {
+          "width": 1,
+          "height": 1,
+          "viewBox": 1,
+          "transform": 1,
+          "points": 14,
+          "y": 14,
+          "font-family": 1,
+          "x": 14,
+          "d": 6
+        },
+        "disposition": "Same graph/text/styles; Graphviz geometry and explicit Times-family alias only."
+      },
+      {
+        "path": "gh-pages/MAM-parsed/plus/svg/plus-dualcant-call-graph.svg",
+        "before_sha256": "455473dd313dd75d1478ba3ca482344cfb9aed168a3be82cfa0306342a1e51f9",
+        "after_sha256": "044e178113c5ee61ccd1e657a67f1fffc099863c60c2b597da28dea2461f391e",
+        "semantic_sha256": "7102ee012ea0f2cd3f4e91ff2e74aab3f66ca9742bd3ac223131a671df0a0485",
+        "differences": {
+          "width": 1,
+          "height": 1,
+          "viewBox": 1,
+          "transform": 1,
+          "points": 19,
+          "y": 18,
+          "x": 17,
+          "d": 10
+        },
+        "disposition": "Same graph/text/styles; Graphviz geometry and explicit Times-family alias only."
+      },
+      {
+        "path": "gh-pages/MAM-parsed/plus/svg/plus-kvq-call-graph.svg",
+        "before_sha256": "a145b66a290ce29462f595f0c397cf93793af78c9fba6e0d43618f2e9660fb56",
+        "after_sha256": "b3610fa3e1bb4e2a0a5fd28bf1befa3ba84b3f319bd8c01b7c7738c66f6d01b5",
+        "semantic_sha256": "5b120e22f96d568329baa7a3dc9dc87a16b0d7380bdfd459aadd1feac125d6b1",
+        "differences": {
+          "width": 1,
+          "height": 1,
+          "viewBox": 1,
+          "transform": 1,
+          "points": 12,
+          "y": 12,
+          "font-family": 1,
+          "x": 11,
+          "d": 5
+        },
+        "disposition": "Same graph/text/styles; Graphviz geometry and explicit Times-family alias only."
+      }
+    ],
+    "restored_to_exact_committed_bytes": true,
+    "tracked_clean": true,
+    "no_baseline_or_source_acceptance": true
+  },
+  "environment": {
+    "at": "2026-10-31T06:40:37.879543+00:00",
+    "source": "f1c7458a245a65a344c6be79139c9159020fd9a8",
+    "allowed_input_commit_ids": [
+      "f1c7458a245a65a344c6be79139c9159020fd9a8",
+      "651e66af1b254cff11ea4cc0ec794700a8e1c647"
+    ],
+    "environments": [
+      {
+        "name": "basics",
+        "root": "/workspace/MAM-basics",
+        "python": "/workspace/MAM-basics/.venv/bin/python",
+        "version": "Python 3.13.15",
+        "pip_check": "No broken requirements found.",
+        "direct": [
+          {
+            "name": "black",
+            "version": "26.5.1"
+          },
+          {
+            "name": "packaging",
+            "version": "26.3"
+          },
+          {
+            "name": "playwright",
+            "version": "1.62.0"
+          },
+          {
+            "name": "pillow",
+            "version": "12.3.0"
+          },
+          {
+            "name": "pyluach",
+            "version": "2.3.0"
+          },
+          {
+            "name": "python-bidi",
+            "version": "0.6.11"
+          },
+          {
+            "name": "python-pptx",
+            "version": "1.0.2"
+          },
+          {
+            "name": "pywikibot",
+            "version": "11.7.0"
+          },
+          {
+            "name": "pyyaml",
+            "version": "6.0.3"
+          },
+          {
+            "name": "requests",
+            "version": "2.34.2"
+          },
+          {
+            "name": "lxml",
+            "version": "6.1.2"
+          },
+          {
+            "name": "matplotlib",
+            "version": "3.11.1"
+          },
+          {
+            "name": "pytest",
+            "version": "9.1.1"
+          },
+          {
+            "name": "ply",
+            "version": "3.11"
+          },
+          {
+            "name": "ruff",
+            "version": "0.16.5"
+          },
+          {
+            "name": "numpy",
+            "version": "2.5.2"
+          },
+          {
+            "name": "pygments",
+            "version": "2.21.0"
+          },
+          {
+            "name": "pyspellchecker",
+            "version": "0.9.0"
+          },
+          {
+            "name": "tzdata",
+            "version": "2026.4"
+          },
+          {
+            "name": "uharfbuzz",
+            "version": "0.57.0"
+          },
+          {
+            "name": "vharfbuzz",
+            "version": "0.3.1"
+          },
+          {
+            "name": "collidoscope",
+            "version": "0.6.5"
+          },
+          {
+            "name": "fonttools",
+            "version": "4.64.0"
+          },
+          {
+            "name": "potracer",
+            "version": "0.0.4"
+          }
+        ],
+        "constrained_installed": {
+          "attrs": "26.1.0",
+          "babelfont": "3.1.3",
+          "black": "26.5.1",
+          "certifi": "2026.7.22",
+          "charset-normalizer": "3.5.1",
+          "click": "8.5.0",
+          "collidoscope": "0.6.5",
+          "contourpy": "1.3.3",
+          "cycler": "0.12.1",
+          "fonttools": "4.64.0",
+          "greenlet": "3.5.5",
+          "idna": "3.19",
+          "iniconfig": "2.3.0",
+          "kiwisolver": "1.5.1",
+          "kurbopy": "0.13.1",
+          "lxml": "6.1.2",
+          "matplotlib": "3.11.1",
+          "mwparserfromhell": "0.7.2",
+          "mypy-extensions": "1.1.0",
+          "numpy": "2.5.2",
+          "openstep-plist": "0.5.2",
+          "orjson": "3.12.0",
+          "packaging": "26.3",
+          "pathspec": "1.1.1",
+          "pillow": "12.3.0",
+          "platformdirs": "4.11.5",
+          "playwright": "1.62.0",
+          "pluggy": "1.6.0",
+          "ply": "3.11",
+          "potracer": "0.0.4",
+          "pyee": "13.0.1",
+          "pygments": "2.21.0",
+          "pyluach": "2.3.0",
+          "pyparsing": "3.3.2",
+          "pyspellchecker": "0.9.0",
+          "pytest": "9.1.1",
+          "python-bidi": "0.6.11",
+          "python-dateutil": "2.9.0.post0",
+          "python-pptx": "1.0.2",
+          "pytokens": "0.4.1",
+          "pywikibot": "11.7.0",
+          "pyyaml": "6.0.3",
+          "requests": "2.34.2",
+          "ruff": "0.16.5",
+          "six": "1.17.0",
+          "skia-pathops": "0.9.2",
+          "tqdm": "4.70.0",
+          "typing-extensions": "4.16.0",
+          "tzdata": "2026.4",
+          "ufolib2": "0.18.1",
+          "ufomerge": "1.9.7",
+          "uharfbuzz": "0.57.0",
+          "urllib3": "2.7.0",
+          "vharfbuzz": "0.3.1",
+          "xlsxwriter": "3.2.9"
+        }
+      }
+    ],
+    "graphviz": "dot - graphviz version 16.0.0 (20260814.1018)"
+  },
+  "evidence": "doc/review-nightly-2026-10-31-evidence/README.md",
+  "archive_sha256": "1e38593915d407b0c169503f104659de2256abc40dcc917854390c963713eab9",
+  "cleanup": {
+    "branch": "work",
+    "head": "926a6e785be4236673ac4a5c8c34afe63ed417f4",
+    "clean": true,
+    "new_clones_or_worktrees": 0,
+    "source_selection": "Detached committed input in existing agent-owned clone, now restored.",
+    "all_owned_checks_stopped": true,
+    "remote_main": "f1c7458a245a65a344c6be79139c9159020fd9a8"
+  },
+  "remote_main": "f1c7458a245a65a344c6be79139c9159020fd9a8",
+  "pending_window": null
+}

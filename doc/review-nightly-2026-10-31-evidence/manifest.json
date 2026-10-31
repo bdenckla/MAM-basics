@@ -1,0 +1,140 @@
+{
+  "members": [
+    {
+      "path": "README.md",
+      "bytes": 1038,
+      "sha256": "a819e2ac6906f1e39c935f748c9065a47053af6cec9bbbf2b678040a5c6bfe91"
+    },
+    {
+      "path": "basics-mega-changes/after/doc/process-documentation/MAM-process.dot.svg",
+      "bytes": 9969,
+      "sha256": "f8beae9d4567ee9485f21c663afff777bdeae0a2bcfebbf80672a56694ba1698"
+    },
+    {
+      "path": "basics-mega-changes/after/doc/process-documentation/pipeline.svg",
+      "bytes": 15970,
+      "sha256": "05abfba5131811ccff34728c4873264e69fb6f5ec8cc738dd92af22a23fd6b77"
+    },
+    {
+      "path": "basics-mega-changes/after/gh-pages/MAM-parsed/plus/svg/plus-call-graph-c.svg",
+      "bytes": 3946,
+      "sha256": "b058a1991874a547c3d260402667f7e3a4972df8b9528e8633d821ee96f746ed"
+    },
+    {
+      "path": "basics-mega-changes/after/gh-pages/MAM-parsed/plus/svg/plus-call-graph-d.svg",
+      "bytes": 3200,
+      "sha256": "03b97e25c4c39271bd126d7a0d46e16a39b63ac637d0952ef1fe25bef7b2092e"
+    },
+    {
+      "path": "basics-mega-changes/after/gh-pages/MAM-parsed/plus/svg/plus-call-graph-e.svg",
+      "bytes": 10889,
+      "sha256": "3bb233f9d879e914304a5bcc30ff4f6413f5523bc2bf077fa202f8ec9f8d58a7"
+    },
+    {
+      "path": "basics-mega-changes/after/gh-pages/MAM-parsed/plus/svg/plus-dexi-call-graph.svg",
+      "bytes": 6304,
+      "sha256": "5c4427190645801866616e0a5008673ae05af4809cde5d20431626f5344fbb36"
+    },
+    {
+      "path": "basics-mega-changes/after/gh-pages/MAM-parsed/plus/svg/plus-dualcant-call-graph.svg",
+      "bytes": 8134,
+      "sha256": "044e178113c5ee61ccd1e657a67f1fffc099863c60c2b597da28dea2461f391e"
+    },
+    {
+      "path": "basics-mega-changes/after/gh-pages/MAM-parsed/plus/svg/plus-kvq-call-graph.svg",
+      "bytes": 5483,
+      "sha256": "b3610fa3e1bb4e2a0a5fd28bf1befa3ba84b3f319bd8c01b7c7738c66f6d01b5"
+    },
+    {
+      "path": "basics-mega-changes/before/doc/process-documentation/MAM-process.dot.svg",
+      "bytes": 10110,
+      "sha256": "901e20e873bfc0f839a1cd0e3dffee85827e7d2cd5515683de176035f6d31353"
+    },
+    {
+      "path": "basics-mega-changes/before/doc/process-documentation/pipeline.svg",
+      "bytes": 15566,
+      "sha256": "0b6564789fbe5bb58f077759eed18481d78492d0552ad40561d96af09c209204"
+    },
+    {
+      "path": "basics-mega-changes/before/gh-pages/MAM-parsed/plus/svg/plus-call-graph-c.svg",
+      "bytes": 3938,
+      "sha256": "45546ac232112011f18fce4232853b834a876d0d0abd2dc398bd4e6ba1d92cf5"
+    },
+    {
+      "path": "basics-mega-changes/before/gh-pages/MAM-parsed/plus/svg/plus-call-graph-d.svg",
+      "bytes": 3210,
+      "sha256": "d8ca8824b8506ef437be21f283004c53a12c5a32eae8027168753310f36104f7"
+    },
+    {
+      "path": "basics-mega-changes/before/gh-pages/MAM-parsed/plus/svg/plus-call-graph-e.svg",
+      "bytes": 10850,
+      "sha256": "2cedb708c55f170a00531d2a7765f612c7909a5bc5008f7c3dacced385a82273"
+    },
+    {
+      "path": "basics-mega-changes/before/gh-pages/MAM-parsed/plus/svg/plus-dexi-call-graph.svg",
+      "bytes": 6317,
+      "sha256": "c5801e0792a1598a65268459a3730ffafc50047e46381e26b10be1ab34a8117e"
+    },
+    {
+      "path": "basics-mega-changes/before/gh-pages/MAM-parsed/plus/svg/plus-dualcant-call-graph.svg",
+      "bytes": 8016,
+      "sha256": "455473dd313dd75d1478ba3ca482344cfb9aed168a3be82cfa0306342a1e51f9"
+    },
+    {
+      "path": "basics-mega-changes/before/gh-pages/MAM-parsed/plus/svg/plus-kvq-call-graph.svg",
+      "bytes": 5512,
+      "sha256": "a145b66a290ce29462f595f0c397cf93793af78c9fba6e0d43618f2e9660fb56"
+    },
+    {
+      "path": "basics-mega-svg-triage.json",
+      "bytes": 5412,
+      "sha256": "ca1ecd9d33c9fcf683d40d93a5700edf7076f175802c94d09f29395578898128"
+    },
+    {
+      "path": "basics-mega.json",
+      "bytes": 4187,
+      "sha256": "32786ecfa964a59d62c9e647134d596135876d5b39699cd93a0eb430972e41cc"
+    },
+    {
+      "path": "basics-mega.log",
+      "bytes": 86481,
+      "sha256": "b375581c9e1f50889328f02f0ea359dd4d7270d6b4c1b3145de393ef3f523f48"
+    },
+    {
+      "path": "basics-mega.patch",
+      "bytes": 109942,
+      "sha256": "d8fa29b4c341d5817ed7b778790a8947012dafdcdb737ea90553165089d9f0f0"
+    },
+    {
+      "path": "basics-suite.json",
+      "bytes": 721,
+      "sha256": "c77c96e8c7bcb4ec16f8eee1c350093ae6af7b8c72112e2e7749d93736944fbe"
+    },
+    {
+      "path": "basics-suite.log",
+      "bytes": 12770,
+      "sha256": "c8b2852285dc323bd352ce6f31bd3cf89a609806d1402805e55bc39a9192e9ac"
+    },
+    {
+      "path": "basics-suite.patch",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "cleanup.json",
+      "bytes": 318,
+      "sha256": "b7b7d822e651427525b4bfb1fe7f1426568e10a0dae186dc9bf98ff912750a9c"
+    },
+    {
+      "path": "environment.json",
+      "bytes": 4187,
+      "sha256": "85e991ce8b0e9bba617c8260cc65b205d17e36bb221b016486b36129b5d52bd3"
+    },
+    {
+      "path": "outcomes.json",
+      "bytes": 2851,
+      "sha256": "8311c2e4690778e1262286be2f2714e04cf6f4c7055f8aecfddbf68a481148de"
+    }
+  ],
+  "archive_sha256": "1e38593915d407b0c169503f104659de2256abc40dcc917854390c963713eab9"
+}
