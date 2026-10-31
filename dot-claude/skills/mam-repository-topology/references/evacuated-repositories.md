@@ -281,7 +281,7 @@ missing directory.
 **codex-index-leningrad is not in the roster.** Phase 1 of
 `doc/PLAN-evacuate-the-codex-index-trio-and-diffable-pointed-hebrew.md` moved its
 five retained files into `leningrad/`, repointed its Wikisource index generator to MAM-basics'
-canonical `uxlc/data/lci_augrecs.json`, and archived the empty source repository on 2026-09-03.
+`uxlc/data/lci_augrecs.json`, and archived the empty source repository on 2026-09-03.
 The archived repository keeps its history and closed issue tracker; new public-side issues belong
 in MAM-basics. No source Pages site or redirect manifest exists.
 
