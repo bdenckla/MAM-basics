@@ -90,7 +90,7 @@ screenshot.
   value, the line counted IB, whether the value is a reading or an estimate, and the evidence. The
   corrected line counts only lines holding text, NIB, as the UXLC's locators do.
   `py/tests/test_uxlc_misc_fixed.py` checks each copy against its original and the manifest, and
-  `doc/uxlc-potential-corrections.md`, section 9, points to the folder.
+  `doc/clc-changes-and-uxlc-caveats.md`, section 9, points to the folder.
 - **An error in the TEI:** a new issue in `charlesLoder/leningrad-codex-tei`, the one tracker
   outside MAM-basics and MAM-private that takes new issues (`github-issues`,
   `references/reading-and-writing.md`, section 2, item 2). Keep it short and in that tracker's

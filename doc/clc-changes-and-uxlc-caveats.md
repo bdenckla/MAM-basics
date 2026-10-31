@@ -1,30 +1,47 @@
-# Potential UXLC corrections
+# CLC changes and UXLC caveats
 
-State: live. Section 4's correction was sent to Chris Kimball, the UXLC's editor, on 2026-10-19,
-in Ben's report "Errors in BHL claims in UXLC change-record notes". Nothing else here has been
-sent to the UXLC, to its editor or to the author of any change record.
+State: live. Reframed by Ben's decision of 2026-10-28 to abandon any goal of changing the UXLC.
+Section 4's finding was sent to Chris Kimball, the UXLC's editor, on 2026-10-19, in Ben's report
+"Errors in BHL claims in UXLC change-record notes"; nothing else here has been sent to the UXLC.
 
-Ben decided on 2026-10-15 to report none of the UXLC problems in sections 1 and 2: "Leave all of
-this as is. I don't care about mistakes in UXLC any more." He then added: "who knows, maybe I'll start caring
-again at some point in the future. Which, come to think of it, suggests that maybe these UXLC
-potential corrections should be recorded in a file in the "doc" folder somewhere, in case I ever
-care to report them in the future." This file is that record. Add any later potential UXLC
-correction here.
+Ben, 2026-10-28:
 
-Ben's clarification of 2026-10-20: the file holds potential corrections that the UXLC's editor,
-Chris Kimball, might be interested in, "not the (rather huge) set of potential corrections we
-might want to make in CLC". A correction argued from grammar alone belongs with CLC, since the
-UXLC "does not often (if ever) accept grammatical arguments".
+> ditch all notion/hope of corrections to UXLC. reframe the issues of this word (and reframe the
+> whole file) in terms of what changes should be made to CLC. as for things not part of CLC that
+> are part of the broader tanach.us site, like I think change proposals would fall in this
+> category, e.g. false assertions about BHLA and/or BHLB, keep those but frame those as sort of
+> "caveats with which UXLC should be read with". This fits in with the general theme of abandoning
+> any goal of changing UXLC.
 
-On 2026-10-19 a Claude session rechecked every record below against its change list as tanach.us
-then served it. Five of the six lists matched MAM-basics' archived copies record for record. The
-sixth, the 2026.10.19 list, had changed, and sections 2 and 3 say how.
+Each section is therefore one of two kinds:
+
+1. A **CLC change**, a change CLC should make to the text it takes from the UXLC, or has made:
+   sections 8, 11 and 12.
+2. A **caveat**, tanach.us material outside the UXLC's text, such as a change record, change list
+   or note page, that a reader of the UXLC should not take at face value: sections 1 to 7, 9
+   and 10.
+
+The file began on 2026-10-15 as "Potential UXLC corrections", a record of problems Ben had
+decided not to report ("I don't care about mistakes in UXLC any more"), kept in case he ever
+wanted to. On 2026-10-20 he limited it to corrections the UXLC's editor might want. The reframing
+of 2026-10-28 replaces both purposes.
+
+MAM-basics' archive of the UXLC's change records, `in/UXLC-misc/all_changes.json`, lists Ben as
+the author of every record in changeset 2026.02.05, "Corrections from Ben Denckla's list of
+contended words in Job." The corrections are Chris Kimball's. Ben, 2026-10-28: "the corrections
+inspired by my list are Kimball's; by and large, my list is just a list, though I may in my
+review, offer an opinion, these change records more likely reflect Kimball's opinion, not mine".
+This file therefore calls them Kimball's.
+
+On 2026-10-19 a Claude session rechecked every record then in this file against its change list as
+tanach.us then served it. Five of the six lists matched MAM-basics' archived copies record for
+record. The sixth, the 2026.10.19 list, had changed, and sections 2 and 3 say how.
 
 A change record's **locator** is its page, column and line, written here as page, then
 column:line, such as F063A 2:20. The UXLC's locators count only lines that hold text, so a
 citation below blank lines has a line number lower, by the number of blank lines above it, than a
 count of every ruled line gives.
-Before reporting any locator below, count every ruled line from the column's top on the page
+Before relying on any locator below, count every ruled line from the column's top on the page
 image, and allow for that convention.
 
 ## 1. Three locators that disagree with the page images, found 2026-10-14
@@ -37,6 +54,9 @@ session reread all three on the photographs, and MAM-basics corrected them in it
 Section 9 points to the manifest that gives each corrected value and its evidence, including, for
 2021.12.28-2, the UXLC's own earlier record that agrees with the correction.
 
+Caveat: a change record's locator can be off by a line or two, as these three are; check it on the
+page image before relying on it.
+
 ## 2. A pending UXLC 2.6 record that cited the wrong position, found 2026-10-14
 
 Daniel Holman's record 2026.08.05-10, in the proposed UXLC 2.6 change list with file date
@@ -46,6 +66,9 @@ installed list, as tanach.us served it on 2026-10-19, cites Lev 25:20.4, so the 
 position. The record still leaves its column and line empty. MAM-basics' override copy gives
 F071B 2:16, the line that Ben's record 2020.12.22-2, the TEI and a reading of the photograph all
 give; section 9 points to the manifest that records it.
+
+Caveat: record 2026.08.05-10 gives no column or line, and the proposed list cited the wrong atom
+for it.
 
 ## 3. Defects in the proposed UXLC 2.6 change list, noted 2026-08-12
 
@@ -66,13 +89,16 @@ records, as hcanat.us served it that day, byte for byte the copy that tanach.us 
    was the same as its reference text, maqaf included. In the installed list its change text lacks
    the maqaf, so the record proposes the removal that its description names.
 
+Caveat: four records of the installed UXLC 2.6 list give a page but no column or line; MAM-basics'
+override copy fills them with readings of Sefaria's photographs.
+
 ## 4. Wrong letter name in a change-record note, found 2026-10-17
 
 Daniel Holman's record `UXLC2022.08.29#20` (also written 2022.08.29-20), released in 2022.12.07,
 cites 1 Sam 18:28.11. Its note
-says "patah under the ayin" where it should say "patah under the aleph". This is a correction to
-the letter named in the note: alef. It does not change the record's proposed vowel change or its
-Approved status. The note's exact wording is retained below.
+says "patah under the ayin" where it should say "patah under the aleph". Caveat: the note names the
+wrong letter; it means the alef. The record's vowel change and its Approved status are unaffected.
+The note's exact wording is retained below.
 
 <details>
 <summary>Exact UXLC note</summary>
@@ -99,11 +125,11 @@ MAM-basics clone, with the two files sent in its `sent-2026-10-19/`.
 
 Daniel Holman's record `UXLC2023.06.09#10` (also written 2023.06.09-10), released in 2023.10.19,
 cites Prov 12:10.7. Its first note says "The mark below the qof" where it should say "The mark
-below the resh": the word has no qof, and the record's description names the resh. This corrects
-only the letter named in the note. It does not change the record's proposed change or its Approved
-status. The note's exact wording is retained below. This correction has not been reported. The
-record's second note is in Ben's report of 2026-10-19 (section 4) for a different error: it says
-that BHLA has no entry for this verse, and the report finds that BHLA has an entry for this word.
+below the resh": the word has no qof, and the record's description names the resh. Caveat: the
+note names the wrong letter; it means the resh. The record's change and its Approved status are
+unaffected. The note's exact wording is retained below. The record's second note is in Ben's
+report of 2026-10-19 (section 4) for a different error: it says that BHLA has no entry for this
+verse, and the report finds that BHLA has an entry for this word.
 
 <details>
 <summary>Exact UXLC note</summary>
@@ -115,9 +141,12 @@ that BHLA has no entry for this verse, and the report finds that BHLA has an ent
 Source: [archived UXLC change records](../in/UXLC-misc/all_changes.json), record `/818`, note `/818/notes/0` (changeset
 `2023.06.09`, number `10`; release `2023.10.19`; manuscript locator `Folio_413B 2:10`).
 
+CLC's Proverbs page shows this note as tanach.us has it (`uxlc/doc/clc-design.md` §7.3); CLC has
+no way yet to mark an error in a note it shows.
+
 ## 6. Change texts that UXLC 2.6 did not install, found 2026-10-20
 
-Probably the UXLC's practice, and so not a correction to report. A check on 2026-10-31 found nine
+Probably the UXLC's practice. A check on 2026-10-31 found nine
 records of the two types that change no text, NoTextChange and NoAction, whose change text is a
 reading that the UXLC did not adopt: the two below; 2020.07.31-2 (Lam 3:33.6) and 2022.07.02-10
 (Ex 5:22.11); and 2024.04.12-14 (Ezek 43:15.4), 2024.04.12-36, -37 and -39 (Deut 22:25.7, 22:26.2
@@ -143,6 +172,9 @@ changes that the UXLC never made, and `out/accgram/uxlc_grammar_test.txt` counte
 in prose verses, Ex 5:22 and Ezra 8:18. Since then the finder dispatches on the record's type
 first, and a record of either type is never an accent change.
 
+Caveat: these nine records' change texts are not UXLC 2.6's text; read the installed text, not the
+change text.
+
 ## 7. Duplicate records in the installed UXLC 2.6 list, found 2026-10-20
 
 Two pairs of records in the installed UXLC 2.6 list make the same change at the same atom, with the
@@ -160,6 +192,9 @@ one.
    text. 2026.04.10-9 carries neither BHL tag, so its page says "The UXLC does not agree with
    either BHL text", though its note says that BHL has a meteg under the kaf.
 
+Caveat: each pair records one change twice, and 2026.04.10-9's page says the UXLC agrees with
+neither BHL text although its note says BHL has the meteg.
+
 ## 8. A ZWJ between two marks in three atoms of Job, found 2026-10-27
 
 Three atoms in Job have a zero-width joiner (ZWJ) between two marks. In Job 32:6 and 10:15 the
@@ -172,8 +207,8 @@ between ZWJ and CGJ, or at least, confused them in this case."
 | Citation | Atom | Locator | Marks in the UXLC's order | Record that added the ZWJ | Release |
 | --- | --- | --- | --- | --- | --- |
 | Job 32:6.11 | יְשִׁישׁ֑‍ִים | F406A 1:20 | shin dot, atnaḥ, ZWJ, ḥiriq, on the second shin | Daniel Holman's 2023.06.10-39 | 2023.10.19 |
-| Job 10:15.12 | עָנְי֥‍ִי׃ | F400A 1:14 | merkha, ZWJ, ḥiriq, on the first yod | Ben's 2026.02.05-35 | 2026.04.01 |
-| Job 19:16.6 | פִ֗‍֝י | F402B 1:9 | ḥiriq, revia, ZWJ, geresh muqdam, on the pe | Ben's 2026.02.05-65 | 2026.04.01 |
+| Job 10:15.12 | עָנְי֥‍ִי׃ | F400A 1:14 | merkha, ZWJ, ḥiriq, on the first yod | Kimball's 2026.02.05-35 | 2026.04.01 |
+| Job 19:16.6 | פִ֗‍֝י | F402B 1:9 | ḥiriq, revia, ZWJ, geresh muqdam, on the pe | Kimball's 2026.02.05-65 | 2026.04.01 |
 
 Both joiners have combining class 0, so the text survives normalization either way; the
 difference is meaning. The Unicode Standard 18.0 (section 23.2.4) gives the CGJ the job of
@@ -190,14 +225,14 @@ vowel and a meteg, the medial-meteg request, and these three. It has no ZWNJ.
 
 The one record that states a reason gives the display: 2026.02.05-65 says the ZWJ is there
 "to achieve the ordering in the display". 2026.02.05-35 replaced Job 10:15's existing CGJ
-(silluq, CGJ, ḥiriq) with a ZWJ when it changed the silluq to a merkha, and Ben's
+(silluq, CGJ, ḥiriq) with a ZWJ when it changed the silluq to a merkha, and Kimball's
 2026.02.05-115 re-examined the order at Job 32:6 and kept the ZWJ. The ZWJ gives that display
 only by breaking mark positioning: with HarfBuzz, the shaping engine Chrome and Firefox use,
 Taamey D leaves the mark after each ZWJ unpositioned, at its letter's edge. With a CGJ,
 Taamey D positions Job 32:6's ḥiriq under the shin, left of the atnaḥ.
 
-Correction: in Job 32:6 and 10:15, replace the ZWJ with a CGJ; in Job 19:16, remove it. CLC
-does not cover Job yet; it could make the same corrections if the UXLC does not.
+CLC change, when CLC covers Job: in Job 32:6 and 10:15, replace the ZWJ with a CGJ; in Job 19:16,
+remove it.
 
 ## 9. Locators corrected in override copies, 2026-10-31
 
@@ -236,8 +271,8 @@ The docstring of `py/main_map_changes_to_book_of_job.py`, under "FOUR PROBLEMS N
 NOT RESOLVED", records problems in changeset 2026.02.05 of the 2026.04.01 list, Chris Kimball's port
 of Ben's book-of-job work into the UXLC. They moved there on 2026-09-04, in `d8a63afd`, from a
 report that was then deleted. Of the four it lists, 2026.02.05-115 is in section 8, and
-2026.02.05-109 was withdrawn on 2026-10-31, as the end of this section says. Neither of the other
-two has been reported, and the docstring remains their fuller record.
+2026.02.05-109 was withdrawn on 2026-10-31, as the end of this section says. The docstring remains
+the fuller record of the other two.
 
 1. 2026.02.05-83 (Job 23:5.6, NoAction) examines the end of the word for a maqaf. The docstring
    says that it discusses a different maqaf than intended, and that the question is an Aleppo
@@ -252,3 +287,62 @@ Unicode Standard. It does not. Its he has ḥataf pataḥ, ZWJ, meteg, which the
 has 80 such joiners, as section 8 says. Its reference and change texts are the same, as a
 NoTextChange record's normally are. On 2026-10-31, at Ben's request, the docstring was corrected
 to say so.
+
+## 11. Three letters whose marks are stored out of order, found 2026-10-28
+
+| Citation | Atom | Letter | Marks as stored | CLC change |
+| --- | --- | --- | --- | --- |
+| Job 36:29.7 | סֻכָּֽתֽוֹ׃ | kaf | meteg, dagesh, qamats, in UXLC 2.6 | when CLC covers Job: no meteg; if one is kept, dagesh, qamats, meteg |
+| Ex 32:19.17 | וַיְּשַׁבֵּ֥ר | yod | sheva, dagesh, in UXLC 2.6 | when CLC covers Exodus 32: dagesh, sheva |
+| Ex 20:4.2, elyon strand | תֽ͏ַעֲשֶׂה־ | tav | meteg, pataḥ, in CLC until 2026-10-31 | made 2026-10-31: meteg, CGJ, pataḥ, as in UXLC 2.6 |
+
+This section writes each atom with its marks as its CLC change gives them, because this file's
+mark-order lint, `py/tests/test_prose_mark_order.py`, rejects a dagesh after another mark of its
+letter.
+
+A meteg has Unicode combining class 22, a dagesh 21 and every vowel a class from 10 to 20, so a
+meteg stored before its letter's vowel, with no CGJ between them, is canonically equivalent to the
+same marks with the meteg last. Normalization moves the meteg after the vowel, and so does
+HarfBuzz, the shaping engine Chrome and Firefox use, so Taamey D shows the meteg left of the vowel,
+a meteg's ordinary place. UXLC 2.6 keeps a meteg before a vowel with a CGJ between them, 871 times,
+as the Unicode Standard's Hebrew section (9.1, "Meteg") does; section 8 cites it.
+
+In Job 36:29.7, the only letter in UXLC 2.6's text with a meteg before its vowel and no CGJ, the
+meteg came from Kimball's 2026.02.05-136 (F407B 1:23, release 2026.04.01): "Examine whether kaf has
+a meteg. Add a meteg under the kaf and a transcription note 't'." Its change text puts the meteg
+directly after the kaf, and nothing in the record gives its position. MAM-basics' mark-grammar FOI
+page, `gh-pages/uxlc/fois/foi-mark-grammar.html`, shows the atom as UXLC 2.6 has it. Ben,
+2026-10-28: "if there's a meteg here at all (for the record, I think not), it is a perfectly
+normally-placed, i.e. after-vowel, i.e. after-qamats meteg." Of the stored order: "the encoding
+order is insane: of course dagesh should come before either qamats or meteg."
+
+That remark led to a search of UXLC 2.6's text for any other dagesh stored after a vowel, a meteg
+or an accent of its letter. The yod of Ex 32:19.17 is the only one; it displays as it would with
+the dagesh first.
+
+CLC's elyon strand of Ex 20:4.2 stored the tav's meteg before its pataḥ with no CGJ until
+2026-10-31, so Taamey D showed the meteg left of the pataḥ. UXLC 2.6 has meteg, CGJ, pataḥ there,
+an early meteg, as in תֽ͏ַעֲשֶׂ֨ה־, and CLC's combined row shows that. CLC's strand splitter
+kept the elyon strand's meteg but dropped the CGJ after it; it now keeps the CGJ in a strand that
+keeps the meteg (`py/clc/clc_dual_cant_oracle.py`).
+
+The scan that found the first and third, of the text on every page MAM-basics publishes, made while
+assessing Taamey D 1.1, also found three forms on MAM-basics' Holman pages with a meteg stored
+before a vowel and no CGJ: Ps 31:24.1, Prov 30:15.1 and Ezek 40:36.3's qere. They are copies of a
+UXLC text that has, or had before UXLC 2.6, the CGJ, and they need no CLC change; the Holman pages
+now show them with it, the two from Holman's emails as bracketed corrections. The scan's results
+are untracked, in `.novc/taamey-d-1.1-atoms/results/` (`reorder-scan.txt` and `reorder-scan.json`)
+in the `GitRepos2` forest's MAM-basics clone.
+
+## 12. The UXLC's fragile words, noted 2026-10-28
+
+`py/main_uxlc_word_list.py`, the mega's `uxlc-word-list` step, writes a list of fragile UXLC words,
+`uxlc/out/uxlc-words-fragile.json`. An atom is on it if normalization or HarfBuzz could change the
+order of its marks in a way a reader could see: `py/mb_cmn/uni_norm_fragile.py` gives the
+definition, and `_is_uxlc_fragile` in the word-list program adds an allowance for the UXLC's vowel
+order in Jerusalem. The list holds one atom, Job 36:29.7, which section 11 covers.
+
+Until `408377df`, on 2026-10-28, the definition considered normalization alone and counted any
+reordering, and the list held six more atoms. In each of the six, normalization moves a mark below
+a letter past a mark above it. Fonts place the marks below a letter independently of those above
+it, so that order cannot show, and CLC needs no change for the six.
