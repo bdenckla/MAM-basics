@@ -154,6 +154,13 @@ Source: [archived UXLC change records](../in/UXLC-misc/all_changes.json), record
 
 ## 6. Change texts that UXLC 2.6 did not install, found 2026-10-20
 
+Probably the UXLC's practice, and so not a correction to report. A check on 2026-10-31 found nine
+records of the two types that change no text, NoTextChange and NoAction, whose change text is a
+reading that the UXLC did not adopt: the two below; 2020.07.31-2 (Lam 3:33.6) and 2022.07.02-10
+(Ex 5:22.11); and 2024.04.12-14 (Ezek 43:15.4), 2024.04.12-36, -37 and -39 (Deut 22:25.7, 22:26.2
+and 22:27.6) and 2024.07.01-2 (Dan 5:10.19). They date from 2020 to 2026, and the five of 2024 are
+by CVK, the UXLC's editor.
+
 Two of Daniel Holman's records in the installed UXLC 2.6 list are typed NoTextChange, and each
 record's first note says the change it examines will not be made. UXLC 2.6's text has only the
 note each record adds, but each record's change text has the change:
@@ -165,6 +172,13 @@ note each record adds, but each record's change text has the change:
    says that the mark lacks the inclination "to be transcribed as a merkha", but its change text,
    וְשֵׁרֵ֥בְיָ֛ה, has a merkha under the resh where its reference text, וְשֵׁרֵֽבְיָ֛ה, has a meteg. UXLC 2.6
    adds an "m" note to the atom.
+
+These change texts misled MAM-basics until 2026-10-31. `py/main_find_uxlc_accent_changes.py`
+decided from a record's reference and change texts alone, so `in/accgram/uxlc_accent_changes.json`
+listed three of the nine records, 2022.07.02-10, 2026.08.05-81 and 2026.08.05-128, as accent
+changes that the UXLC never made, and `out/accgram/uxlc_grammar_test.txt` counted the two of them
+in prose verses, Ex 5:22 and Ezra 8:18. Since then the finder dispatches on the record's type
+first, and a record of either type is never an accent change.
 
 ## 7. Duplicate records in the installed UXLC 2.6 list, found 2026-10-20
 
