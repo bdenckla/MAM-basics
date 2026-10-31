@@ -225,6 +225,14 @@ def _section(svg_path):
     out.append(
         f"<tr><th>Verse in the UXLC</th><td>{_e(pv.get('uxlc-verse', ''))}</td></tr>"
     )
+    if "combined-chanted-word" in pv:
+        out.append(
+            "<tr><th>Chanted word, both strands combined: the primary transcription</th>"
+            f'<td dir="rtl" lang="hbo">{_e(pv["combined-chanted-word"])}</td></tr>'
+        )
+        out.append(
+            f"<tr><th>Its source</th><td>{_e(pv.get('combined-source', ''))}</td></tr>"
+        )
     for key, label in (
         ("taxton-chanted-word", "תחתון"),
         ("elyon-chanted-word", "עליון"),

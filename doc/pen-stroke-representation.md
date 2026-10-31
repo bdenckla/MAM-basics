@@ -12,9 +12,10 @@ four crops showed.
 
 ## Ben's decisions
 
-All are of 2026-10-30. The first nine were made in the planning session "Investigate a
-pen-stroke manuscript representation", whose plan was not committed, so this list is their
-record here. Decisions 11 and 12 were made while Ben reviewed the first exemplars.
+The first twelve are of 2026-10-30, and decisions 13 and 14 of 2026-10-31. The first nine
+were made in the planning session "Investigate a pen-stroke manuscript representation", whose
+plan was not committed, so this list is their record here. Decisions 11 to 14 were made while
+Ben reviewed the first exemplars.
 
 1. **The unit is one crop, not a page.** Ben: "This is not about whole manuscripts or even whole
    pages. At least not yet." No page, column or line geometry is in scope, and no
@@ -85,6 +86,24 @@ record here. Decisions 11 and 12 were made while Ben reviewed the first exemplar
     limited to what seems physically possible". Without a bound, a stroke could follow every
     irregularity of its ink, and the excursions that decision 3 treats as information would
     vanish.
+13. **The combined transcription is the primary one, and it says what to expect.** Ben: "The
+    combined is the primary transcription of concern here (it should come from UXLC or, where
+    I disagree with UXLC, it should come from how I tell you UXLC should be changed)." His
+    reason: "sometimes the manuscript doesn't superimpose taxton and elyon the way one would
+    expect." MAM's two strands stay beside it as secondary transcriptions. The combined
+    transcription sets what a reader of the crop expects. Its qamats and pataḥ on F043A's nun
+    made two bars there what Claude "should have taken as a given, or a near-given". It is not
+    the last word: "if you only look for what you're trying to find, that will lead, in general
+    to both false positives and false negatives. So the transcription is a starting place for
+    what you expect to find, not the "final statement" on what you should find." Decision 4
+    stands: no group is linked to a place in the transcription.
+14. **A stroke is one or a few smooth curves, and its width varies smoothly along them.** Ben:
+    "I don't like the way strokes are modeled as multiple connected line segments. I think they
+    should be one or a few smooth curves (bezier or others, whatever) whose width is smoothly
+    modulated along them (via the "time" parameter over which the curve is presumably
+    parameterized)". This makes decision 12 concrete, and smoothness along one or a few curves
+    is a bound of the kind decision 12 leaves open. The profile below, of straight segments
+    swept by a stiff nib, does not yet implement it.
 
 ## The ladder
 
@@ -111,9 +130,13 @@ is `0 0 <width> <height>`, the crop's pixel size.
 
 **The root** carries `data-profile="pen-stroke 1"`; the provenance, as `data-manuscript`,
 `data-page`, `data-column`, `data-line`, `data-line-read-by`, `data-mam-verse`,
-`data-uxlc-verse`, `data-taxton-chanted-word`, `data-elyon-chanted-word`, `data-crop-note`,
-`data-source-url`, `data-source-size`, `data-source-sha256`, `data-crop-box` and
-`data-strokes-by`; the threshold and tracer parameters; and the two nibs.
+`data-uxlc-verse`, `data-combined-chanted-word`, `data-combined-source`,
+`data-taxton-chanted-word`, `data-elyon-chanted-word`, `data-crop-note`, `data-source-url`,
+`data-source-size`, `data-source-sha256`, `data-crop-box` and `data-strokes-by`; the threshold
+and tracer parameters; and the two nibs. `data-combined-chanted-word` is the primary
+transcription (decision 13): the chanted word with both strands' marks, as the UXLC has it
+unless Ben has changed it, and `data-combined-source` says which. The two strands' chanted
+words are MAM's.
 
 **Level 1.** `data-channel="luminance"` is Pillow's ITU-R 601-2 luma. The ink is every pixel
 whose luminance is below `data-threshold`. Potrace's pure-Python port traces the ink, with the
@@ -159,7 +182,7 @@ its chord is a `bar`. One with exactly one turn of 60° or more is a `corner`. A
 
 **Level 5.** `<g class="groups">` holds one `<g class="group" id="gN" data-kind="…">` per sign
 instance, holding a `<use href="#sN"/>` for each of its strokes. A stroke can therefore belong
-to two groups, as the shared bar of a QUPO letter does. The kinds are a closed list, in
+to two groups, as a bar that served both strands' vowels would. The kinds are a closed list, in
 `py/pen_stroke/level5.py`. Each kind names the Unicode character it is congruent to, or none,
 as the undetermined kinds "bar under the letter" and "dot over the letter" do. Every stroke is
 in a group, and a group's kind fixes the nib of its strokes. Ink of a neighbouring word or line

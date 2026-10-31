@@ -32,6 +32,8 @@ PROVENANCE_KEYS = (
     "line-read-by",
     "mam-verse",
     "uxlc-verse",
+    "combined-chanted-word",
+    "combined-source",
     "taxton-chanted-word",
     "elyon-chanted-word",
     "crop-note",

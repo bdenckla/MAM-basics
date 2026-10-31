@@ -23,6 +23,14 @@ The filenames follow MAM's verse numbers, and their slugs are `consensus_to_asci
 consonants: PNY for פני, MFXF for מתחת and 3L0PNY for על־פני. In MAM, the תחתון strand has
 the chanted words עַל־פָּנָֽי׃ and מִתָּ֑חַת, and the עליון strand has עַל־פָּנַ֗י and מִתַּ֜חַת.
 
+**The primary transcription is the UXLC's,** which puts both strands' marks on one letter
+(decision 13 of the schema note). Each stroke-SVG gives it as `data-combined-chanted-word`:
+the form עַל־פָּנָֽ͏ַ֗י in both Exodus 20:3 and Deuteronomy 5:7, the UXLC's verse numbers;
+the form מִתָּ֑͏ַ֜חַת in Exodus 20:4; and the form מִתָּ֑֜חַת in Deuteronomy 5:8.
+In the first two, a combining grapheme joiner separates the תחתון strand's vowel and accent
+from the עליון strand's. The third has no pataḥ. Where Ben says the UXLC should be changed,
+the stroke-SVG takes his change, and its `data-combined-source` says so.
+
 1. **F043A's פני is one atom of a chanted word that a line break splits.** The atom opens line
    20 and על־ ends line 19, so the crop holds the atom alone.
 2. **F102A's על־פני ends line 23,** so its crop holds the whole chanted word.
