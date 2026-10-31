@@ -1,0 +1,194 @@
+{
+  "schema": "mam-basics-hourly-focused-20261031-1300-1",
+  "state": "completed",
+  "scheduled_utc": "2026-10-31T13:00:00Z",
+  "actual_first_clock": "2026-10-31T12:55:38Z",
+  "completed_utc": "2026-10-31T13:04:50.760332+00:00",
+  "receipt_parent": "e7d4f90387a024521d9d69e789727079d0c7b327",
+  "reviewed_from": "f1c7458a245a65a344c6be79139c9159020fd9a8",
+  "reviewed_through": "21852f741ce96dc0c06220c5ed3412b9491d65ea",
+  "focused_tested": "21852f741ce96dc0c06220c5ed3412b9491d65ea",
+  "broad_tested_unchanged": "f1c7458a245a65a344c6be79139c9159020fd9a8",
+  "scope": "One commit/10paths: approved near-Aleppo note recasts, literal matching/projection, review ledger and generated data/HTML.",
+  "review": "All changed code/call sites, ledger, baked data and generated HTML inspected. Import reach is doc_note_review only; unrelated renderers do not acquire a ledger/recipe dependency.",
+  "outcome": "No new confirmed consequential defect or repair; all5approved recasts preserved, including1Kings17:11.",
+  "stages": [
+    {
+      "name": "note-content-tests",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        "py/tests/test_near_aleppo_note_content.py",
+        "-q"
+      ],
+      "cwd": "/workspace/MAM-basics",
+      "source": "21852f741ce96dc0c06220c5ed3412b9491d65ea",
+      "started_utc": "2026-10-31T12:57:47.631193+00:00",
+      "elapsed_seconds": 7.458,
+      "exit": 0
+    },
+    {
+      "name": "independent-audit",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/novc_review_20261031_1300.py"
+      ],
+      "cwd": "/workspace/MAM-basics",
+      "source": "21852f741ce96dc0c06220c5ed3412b9491d65ea",
+      "started_utc": "2026-10-31T13:00:06.069675+00:00",
+      "elapsed_seconds": 0.209,
+      "exit": 0
+    },
+    {
+      "name": "near-aleppo-build-check",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_near_aleppo.py",
+        "--build",
+        "--check"
+      ],
+      "cwd": "/workspace/MAM-basics",
+      "source": "21852f741ce96dc0c06220c5ed3412b9491d65ea",
+      "started_utc": "2026-10-31T13:00:36.901136+00:00",
+      "elapsed_seconds": 20.481,
+      "exit": 0
+    },
+    {
+      "name": "near-aleppo-html-check",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_near_aleppo.py",
+        "--html",
+        "--check"
+      ],
+      "cwd": "/workspace/MAM-basics",
+      "source": "21852f741ce96dc0c06220c5ed3412b9491d65ea",
+      "started_utc": "2026-10-31T13:01:18.005590+00:00",
+      "elapsed_seconds": 26.776,
+      "exit": 0
+    },
+    {
+      "name": "formatting",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "-m",
+        "black",
+        "--check",
+        "py/near_aleppo/doc_choices.py",
+        "py/near_aleppo/doc_note_review.py",
+        "py/render_wt/doc_note_presentations.py"
+      ],
+      "cwd": "/workspace/MAM-basics",
+      "source": "21852f741ce96dc0c06220c5ed3412b9491d65ea",
+      "started_utc": "2026-10-31T13:02:19.336301+00:00",
+      "elapsed_seconds": 0.217,
+      "exit": 0
+    }
+  ],
+  "independent_audit": {
+    "ledger_notes": 1557,
+    "changed_notes": [
+      {
+        "id": "BC-Kings מל\"א 17:11 note 1 נוסח",
+        "ref": [
+          "BC-Kings מל\"א",
+          "17",
+          "11"
+        ],
+        "ordinal": 1,
+        "plus_form": "לִֽקְ+קִחִי־נָ֥א",
+        "near_target": "לִֽקְִחִי־נָ֥א",
+        "source_head": "א"
+      },
+      {
+        "id": "D1-Psalms 14:1 note 2 נוסח",
+        "ref": [
+          "D1-Psalms",
+          "14",
+          "1"
+        ],
+        "ordinal": 2,
+        "plus_form": "הִֽשְׁ+שִׁחִ֗יתוּ",
+        "near_target": "הִֽשְִׁחִ֗יתוּ",
+        "source_head": "א"
+      },
+      {
+        "id": "D1-Psalms 14:1 note 3 נוסח",
+        "ref": [
+          "D1-Psalms",
+          "14",
+          "1"
+        ],
+        "ordinal": 3,
+        "plus_form": "הִֽתְ+תִעִ֥יבוּ",
+        "near_target": "הִֽתְִעִ֥יבוּ",
+        "source_head": "א"
+      },
+      {
+        "id": "D1-Psalms 53:2 note 1 נוסח",
+        "ref": [
+          "D1-Psalms",
+          "53",
+          "2"
+        ],
+        "ordinal": 1,
+        "plus_form": "הִֽ֝שְׁ+שִׁחִ֗יתוּ",
+        "near_target": "הִֽ֝שְִׁחִ֗יתוּ",
+        "source_head": "א"
+      },
+      {
+        "id": "D1-Psalms 53:2 note 2 נוסח",
+        "ref": [
+          "D1-Psalms",
+          "53",
+          "2"
+        ],
+        "ordinal": 2,
+        "plus_form": "וְהִֽתְ+תִעִ֥יבוּ",
+        "near_target": "וְהִֽתְִעִ֥יבוּ",
+        "source_head": "א"
+      }
+    ],
+    "unchanged_old_recasts": 1044,
+    "presentations": {
+      "recast": 1049,
+      "framed-mam": 508
+    },
+    "literal_candidates": 1058,
+    "changed_baked_notes": 5,
+    "all_other_baked_fields_unchanged": true,
+    "guard_controls": 27,
+    "original_source_and_other_clauses_preserved": true
+  },
+  "failures": [
+    {
+      "stage": "initial receipt preparation",
+      "exception": "KeyError: guard_controls",
+      "cause": "Audit result and runner metadata used the same JSON filename.",
+      "recovery": "Recovered exact result from retained complete independent-audit.log into independent-results.json; no project rerun.",
+      "evidence": "Original receipt-initial.py preserved; error observed in terminal output, no separate raw failure log retained."
+    }
+  ],
+  "skips": [],
+  "repair_commits": [],
+  "output_comparison": "24dataset files and build-populations reproduce;1557note reviews agree with fresh inventory;106HTML files reproduce. No tracked writes.",
+  "attribution": "Owner commit reports34tests+4coverage and Ben decisions. These are attributed evidence, not our test runs. Parent explicitly supplies the five-note decision; no editorial reinterpretation performed.",
+  "inputs": "Public committed21852f74 only; near-Aleppo needs no sibling input. Private unchanged per parent651e66af check; no Private executor/review/receipt work.",
+  "limits": [
+    "Only2existing pytest cases,27independent controls, focused build/HTML and3file formatting ran; no full mega/suite or broad-anchor advance.",
+    "Prior scoped limitations and historical hbofonts evidence are retained. No font build/frozen regeneration, baseline acceptance, publication/deployment, main push or new source interpretation."
+  ],
+  "evidence": "doc/review-hourly-2026-10-31-1300-evidence/README.md",
+  "archive_sha256": "2d83dc017e2542336040e2b6ac09ea1975913bf4ac7ad69d60567295329b953c",
+  "cleanup": {
+    "branch": "work",
+    "head": "926a6e785be4236673ac4a5c8c34afe63ed417f4",
+    "clean": true,
+    "new_clones_or_worktrees": 0,
+    "temporary_source_ref_created": false,
+    "all_owned_generators_and_checks_stopped": true,
+    "remote_main": "21852f741ce96dc0c06220c5ed3412b9491d65ea"
+  },
+  "remote_main": "21852f741ce96dc0c06220c5ed3412b9491d65ea",
+  "pending_window": null
+}
