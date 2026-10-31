@@ -1,0 +1,151 @@
+{
+  "archive_sha256": "206730107003912e054681bfed934e6e18bbbca57595226d5ef41bc40b8782dc",
+  "archive_bytes": 61754,
+  "members": [
+    {
+      "name": "changed-black.stdout",
+      "bytes": 57,
+      "sha256": "06db5858ec95a9c3d47f489b293d1fa1b4e0b29290fdf90768bffad5260b451a"
+    },
+    {
+      "name": "focused-tests.stdout",
+      "bytes": 100,
+      "sha256": "b52045871ef89a1ee308a08b9bff0975cc3783a98377c7137ebf63d5a5f54683"
+    },
+    {
+      "name": "independent-curves-results.json",
+      "bytes": 6004,
+      "sha256": "a54c9eca502e7f515c6d15172897f6582d2e58eef3cbf11fe107891335f771c3"
+    },
+    {
+      "name": "independent-curves.stdout",
+      "bytes": 1283,
+      "sha256": "0aa371efdada84a9449cde04e7065ee353942429bfdf3eaa2e8388ba1da025a2"
+    },
+    {
+      "name": "independent-final.py",
+      "bytes": 15608,
+      "sha256": "9d062ec8c5688568282d11c5308932a46a5e35bdc81ba7d50cc4a415fba3c527"
+    },
+    {
+      "name": "independent-initial-results.json",
+      "bytes": 24164,
+      "sha256": "884b816695fa0dc597be473c621ec7715daf3de6ec3d4ffbf12492280b970a5e"
+    },
+    {
+      "name": "independent-initial.py",
+      "bytes": 13238,
+      "sha256": "307d8ca52aa2d1dea434d6871c23f6b3bd1ca6dcc4cc5c11ab85d80313cf97dc"
+    },
+    {
+      "name": "independent-provenance-init-results.json",
+      "bytes": 1249,
+      "sha256": "0f314e8bbfb93eb376bb024c0fcd79b0532f98b821a3e52a1100c3231f1f72ac"
+    },
+    {
+      "name": "independent-results.json",
+      "bytes": 24164,
+      "sha256": "884b816695fa0dc597be473c621ec7715daf3de6ec3d4ffbf12492280b970a5e"
+    },
+    {
+      "name": "independent.stdout",
+      "bytes": 24164,
+      "sha256": "884b816695fa0dc597be473c621ec7715daf3de6ec3d4ffbf12492280b970a5e"
+    },
+    {
+      "name": "init-control.png",
+      "bytes": 19961,
+      "sha256": "60ebb9cb17a9b48a92b8e7cf6d8b159d4ed0ec8093a59a89029caead823075ae"
+    },
+    {
+      "name": "init-control.strokes.svg",
+      "bytes": 11764,
+      "sha256": "1774c596b828cefd7dda376d135cb5404ab8587c30cf5bf73275618edbdc0c20"
+    },
+    {
+      "name": "intro-review.stdout",
+      "bytes": 208,
+      "sha256": "e0001813e8315e97cd856addf51b63dbc7e5c7eae0a9ea4d5cfc7cef9dc67e69"
+    },
+    {
+      "name": "outcomes.json",
+      "bytes": 9354,
+      "sha256": "50e894f81e730e403105f2e748c5c3309ed8fd9c3745cddc670c2df2fcee16b5"
+    },
+    {
+      "name": "pen-derive.stdout",
+      "bytes": 303,
+      "sha256": "0bdb54f61e2aeb12c14d1ef84ffe71d20e53dccf209a46016b02eebc6e192f3c"
+    },
+    {
+      "name": "pen-nibfit.stdout",
+      "bytes": 1533,
+      "sha256": "e9d1f82ce3b8e3cfd8c65f317217d8c77c527a378750165da198c4af9e9dfa74"
+    },
+    {
+      "name": "pen-render.stdout",
+      "bytes": 41,
+      "sha256": "7494bf28448369e7d45e9bc6886cc2abf10d0a7227040e5c7a240830f8e7493c"
+    },
+    {
+      "name": "provenance-init.stdout",
+      "bytes": 68,
+      "sha256": "4c7936d603c4a02248c077ad3c68ceedee969f69cd6de0e13281796739fdc38e"
+    },
+    {
+      "name": "receipt-publisher-initial-observation.json",
+      "bytes": 688,
+      "sha256": "6793dac412e1b4df211494fed218a1b0fabc6138c5cee2698f2c43f82a54ff8f"
+    },
+    {
+      "name": "run_stage.py",
+      "bytes": 1525,
+      "sha256": "cd92965aa283a462c8f68dc2821658c70cb9b8e0b7ba57954bbf66ab13a77961"
+    },
+    {
+      "name": "stage-changed-black.json",
+      "bytes": 799,
+      "sha256": "d441f587791f2c328824228c97c818db8a9d95682705804ef5570d88d79e47d4"
+    },
+    {
+      "name": "stage-focused-tests.json",
+      "bytes": 547,
+      "sha256": "78bc67c7353689e6e7a99d9c495aabf72f86e10832b2d68406267ab834935ad9"
+    },
+    {
+      "name": "stage-independent-curves.json",
+      "bytes": 356,
+      "sha256": "ddd57eef8988e97d7056653f064baaf6a34f0f5d84c7389e1e0e36c3b8934862"
+    },
+    {
+      "name": "stage-independent.json",
+      "bytes": 336,
+      "sha256": "db2d5afaebde8fc52800105b514482079252fcfc2fdf13fa7199815b6eada28e"
+    },
+    {
+      "name": "stage-intro-review.json",
+      "bytes": 345,
+      "sha256": "969955dfbb90ba09c5c5b4e5affce28cd8e9289163218ece3852ffab95963676"
+    },
+    {
+      "name": "stage-pen-derive.json",
+      "bytes": 338,
+      "sha256": "13877ef031449913b4e56ce03be7c23db12a507567ccada98e5ab4b74e1d2cc8"
+    },
+    {
+      "name": "stage-pen-nibfit.json",
+      "bytes": 409,
+      "sha256": "76c0c2c161febae7c096bd400100d2d73528613ef1cce970ac2b35d3146a82f1"
+    },
+    {
+      "name": "stage-pen-render.json",
+      "bytes": 338,
+      "sha256": "053bbf473d2213a435d9cca0cc99e98b00d51a800cc1cc9d66a8e32d22a0012b"
+    },
+    {
+      "name": "stage-provenance-init.json",
+      "bytes": 362,
+      "sha256": "8760b3d71390875774d6115b294909e45c337ccf3b2e0ec17ecbc4d73899c430"
+    }
+  ]
+}

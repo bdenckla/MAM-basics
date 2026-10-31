@@ -1,0 +1,60 @@
+{
+  "state": "executed",
+  "scheduled_utc": "2026-10-31T14:00:00+00:00",
+  "actual_first_clock_utc": "2026-10-31T13:51:46+00:00",
+  "completed_checks_utc": "2026-10-31T14:07:50.122870+00:00",
+  "repository": "bdenckla/MAM-basics",
+  "receipt_parent": "80aad412f7cefaab70822573a7d87a5c5d28a694",
+  "reviewed_from": "21852f741ce96dc0c06220c5ed3412b9491d65ea",
+  "reviewed_through": "6e2af0d3764afc7f0080ae9f997553b63e1103e6",
+  "focused_checked_commit": "6e2af0d3764afc7f0080ae9f997553b63e1103e6",
+  "broad_tested_commit_unchanged": "f1c7458a245a65a344c6be79139c9159020fd9a8",
+  "endpoint": {
+    "commits": 8,
+    "changed_paths": 33
+  },
+  "sibling_inputs": "None: these focused paths read only this committed public checkout and retained Git snapshots. Private remained untouched.",
+  "classification": "Consequential audit renderer/application validation and pen-stroke profile/generator changes; reviewed with focused checks. No consequential confirmed defect or repair.",
+  "independent": {
+    "intro_passed": 32,
+    "curve_passed": 44,
+    "provenance_init_passed": 10,
+    "intro_summary": "Local/published pages differ only in note URLs and CSS font path, with all quotation codepoints identical. Published fragments, note targets, font path and orphan status pass; slider 20/48/default30 preserved. Only two adjudications gain application fields. Both full-list applications and 14 malformed-record controls pass against recorded Git mirrors.",
+    "curve_summary": "Independent flat rectangle, variable-width trapezoid, mitred corner and round capsule masks match exactly (40,30,80,52 pixels). Width bounds/continuity, endpoint/tangent/length and malformed curve guards pass. All 94 committed strokes /175 cubic segments have positive finite widths and positive polygon winding. All four PNGs, level-1 fills and image-residual judgments/paths unchanged.",
+    "provenance_summary": "Four combined transcriptions and declared atom populations match retained UXLC 2.6 XML exactly. Init creates profile2 without nib fit and refuses overwrite; one committed SVG nib-fit CLI succeeds for both passes."
+  },
+  "project_results": {
+    "focused_pytest": "22 passed in27.95s, no failures/skips",
+    "intro_review": "152 cases,718 literal passages,14 proposals,11 recorded applications; all tracked outputs exact",
+    "pen_derive": "All4 stroke SVGs unchanged",
+    "pen_render": "Overlay HTML byte-identical",
+    "black": "14 changed Python files pass",
+    "endpoint_whitespace": "git diff --check base tip: exit0",
+    "tracked_differences_after_each_stage": 0,
+    "failures": 0,
+    "skips": 0
+  },
+  "reviewer_failures_and_rechecks": [
+    "Initial receipt publisher stopped before creating an index/commit/ref because it assumed an origin tracking ref existed after fetching an exact receipt object. Remote ls-remote independently confirmed the correct80aad412 parent. The publisher now validates that exact remote receipt ref and local commit object directly; no project rerun or receipt ancestry change.",
+    "Initial independent helper passed its complete Introduction section but failed a curve assertion using exact float equality: the fallback tangent is (1,-2.980464495638021e-13), rather than exact(1,0). Corrected the scratch oracle to1e-10 tolerance; reran only the curve section (44pass), retaining initial helper/results/stdout and corrected helper/results. No project code changed.",
+    "A stop-signal attempt raced the already completed helper and returned ESRCH. No process was interrupted, no execution outcome uncertain, and no duplicate runner launched."
+  ],
+  "limits_and_skips": [
+    "No broad mega/full suite, font build/baseline, deployment, live issue/source validation or manuscript research performed here. Recorded owner checks/decisions remain attributed; exact substring/crop reproduction is not editorial or manuscript proof.",
+    "Pen-stroke fitting/conversion was authored research; the untracked owner conversion script was not independently rerun or reconstructed. Committed median/widths and affected maintained derive/render paths were checked.",
+    "F102A mark readings and geometric traces retain their recorded unreviewed status; no editorial choice changed.",
+    "Private unchanged and frozen hbofonts: no checkout/check/receipt work."
+  ],
+  "repair_commit": null,
+  "pending_window": {
+    "from": "6e2af0d3764afc7f0080ae9f997553b63e1103e6",
+    "observed_remote_main": "cb878aef91e692d5561435f00021f73b75868e45",
+    "disposition": "Newer distinct window, unreviewed/untested; not chased."
+  },
+  "cleanup": "Original saved work checkout at926a6e78 restored clean; no new clone/worktree/source branch. All check processes exited. Expanded owned evidence removed only after ZIP integrity verification; no other checkout touched.",
+  "evidence": "doc/review-hourly-2026-10-31-1400-evidence/README.md",
+  "evidence_archive": {
+    "archive_sha256": "206730107003912e054681bfed934e6e18bbbca57595226d5ef41bc40b8782dc",
+    "archive_bytes": 61754
+  }
+}
