@@ -89,6 +89,11 @@ are automatically authoritative. Bare "in the manuscript" does not name Aleppo.
    `context` and lists each other occurrence's `context` and `reason` under
    `other_occurrences`; the build then requires every occurrence of either text to
    lie in one of those contexts, each found once and none overlapping another.
+   A proposal that adds a list entry away from the heading it changes, as #318 and
+   #320 do, sets the record's `mirror_check` to `full-list`: its applied text
+   repeats the proposal's own, and the build instead requires the mirror to hold the
+   decision's `proposed_full_list` once and its `current_full_list`, the snapshot's
+   whole list line, nowhere.
    Update its
    companion note and any affected coverage/follow-up record without rewriting
    unrelated decisions. Follow the receipt rules for finished notes.
@@ -145,6 +150,7 @@ chapters from drafts and selected Introduction snapshots from proven insertions.
 
 ## Remaining work and eventual submission
 
+#346 is the overall issue for the page's open discrepancies and questions.
 Outstanding questions include exact Masorah/edition support, manuscript attribution
 and uncertainty, illustration and sentence scope, vowel function/list eligibility,
 the counted source population, Dotan's convention, strand allocation and the

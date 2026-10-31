@@ -409,8 +409,21 @@ def applied_row(entry, sources):
     expected = edited(
         current["quote"], [entry["changes"][i] for i in record["applied_changes"]]
     )
-    if visible_wikitext(record["quote"]) != expected:
-        raise ValueError("The applied quotation differs from its recorded edits")
+    check = record.get("mirror_check", "quote")
+    if check == "quote":
+        if visible_wikitext(record["quote"]) != expected:
+            raise ValueError("The applied quotation differs from its recorded edits")
+    elif check == "full-list":
+        # An added list entry lands away from the heading shown with it, so the mirror
+        # is searched for the whole proposed list instead of one applied quotation.
+        if (
+            record["quote"] != expected
+            or "claim" not in current
+            or sources.claims[current["claim"]]["text"] != entry["current_full_list"]
+        ):
+            raise ValueError("A full-list application must match its proposal")
+    else:
+        raise ValueError(f"Unknown mirror check: {check}")
     commit, path = record["mirror_commit"], record["mirror_path"]
     if "note" in current:
         note = sources.notes[current["note"]]
@@ -434,7 +447,12 @@ def applied_row(entry, sources):
         mirrored = [manifest["pages"][page]["revid"]]
     else:
         raise ValueError(f"No mirror rule for an applied proposal: {entry['id']}")
-    check_mirror_occurrences(record, current["quote"], texts)
+    if check == "quote":
+        check_mirror_occurrences(record, current["quote"], texts)
+    else:
+        check_mirror_occurrences(
+            {"quote": entry["proposed_full_list"]}, entry["current_full_list"], texts
+        )
     if (
         mirrored != [record["mirror_revision_id"]]
         or record["mirror_revision_id"] < record["revision_id"]

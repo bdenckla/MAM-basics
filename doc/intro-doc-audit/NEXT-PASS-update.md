@@ -84,7 +84,8 @@ as applied, #311–#315 and #321–#324.
 #316–#320 are still recorded as unapplied. The same refresh took chapter 3's
 revision 3099123 and chapter 5's revision 3099114, which add Genesis 30:27 and
 2 Samuel 8:10 to their ḥataf lists as #320 and #318 propose; skadish1 reported
-both done later on 2026-10-29, and their applications are not yet recorded here.
+both done later on 2026-10-29, and the last 2026-10-31 entry below records their
+applications.
 
 ## 2026-10-31 — the page served from gh-pages
 
@@ -98,4 +99,23 @@ URL and that is the only way to get to it”. The `review` subcommand now also w
 [review.html](review.html) only in its font path and in linking this directory's notes
 on GitHub, and no other page links to it. For this one page, this supersedes the base's
 exclusion of gh-pages edits; the site changes only when Ben dispatches the Pages
-workflow.
+workflow. #346, filed the same day with Ben's approval, is the overall issue for the
+page's open discrepancies and questions.
+
+## 2026-10-31 — two more proposals applied
+
+A Claude session checked Avi's revisions against #318 and #320 and closed both at
+Ben's request. Revision 3099114 of chapter 5 adds 2 Samuel 8:10 to the Samuel list,
+and revision 3099123 of chapter 3 adds Genesis 30:27 to the Genesis list, each after
+the entry its proposal names and with its heading's count raised by one, exactly as
+proposed. Ben then asked that the applications be recorded: “File + record 318/320”.
+Each decision in [adjudications.json](adjudications.json) now holds its application,
+checked against `f82138dd`, the mirror commit that holds both revisions. Because an
+added entry lands away from the heading shown with it, these two records set
+`mirror_check` to `full-list`: the build requires the mirror to hold each decision's
+whole proposed list once and its snapshot list nowhere. Eleven proposals are now
+recorded as applied: #311–#315, #318 and #320–#324.
+
+The same reports answer the other two additions: “Song of Songs 1:6 does not belong,
+the hataph is not in AC” (#317) and “Numbers 10:9 is not relevant” (#319). Both
+issues remain open, and #316, #317 and #319 are still recorded as unapplied.
