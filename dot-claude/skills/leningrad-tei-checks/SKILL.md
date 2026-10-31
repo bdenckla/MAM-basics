@@ -54,6 +54,16 @@ view a fresh file name, close the previous tab, and use neither a query string n
 `loading="lazy"`, which keeps the snapshot's images from loading. A grid of lines every 50 or
 100 source pixels makes line heights comparable across columns.
 
+To find a column's lines, open a page image itself in the in-app browser, at its
+`https://manuscripts.sefaria.org/leningrad-color/` address. Script run on that page can draw any of
+Sefaria's page images into a canvas and read its pixels, since they share the page's origin. A
+row-by-row count of a column's dark pixels then shows each written line as a peak, 90 to 100 pixels
+from the next, so a blank line appears as a double gap and an empty first or last line as a missing
+peak. Some pages have 26 lines a column, as the index's notes record, so compare a short column with
+the other columns of its page. Check every finding by eye. The pane is about 400 by 300 pixels, at
+twice that resolution, so draw the crops you compare into one canvas of that size before taking a
+screenshot.
+
 ## Reporting to Ben
 
 - Show every text that needs his approval in the transcript itself, in full, and link every local
