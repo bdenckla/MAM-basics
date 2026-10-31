@@ -194,8 +194,18 @@ F102A column 2 line 2?", he answered "Yes, those two".
    | --- | --- | --- | --- |
    | F043A, line 4 | 129 (126) | 17.6% (17.8%) | 15.3% (15.4%) |
    | F102A, line 2 | 110 (108) | 16.6% (17.3%) | 14.5% (14.2%) |
+9. **The ring over the atom האל of page F102A's line 2 is a masora circle of that line.** Ben:
+   "that's an MC above alef, i.e. a normal above-MC". The file already had it so, and its
+   group's note now says so.
+10. **The dot by that line's first alef is likely stray ink,** decision 22. Its group's kind is
+    now "stray mark", and its note gives Ben's best guess and the mapiq he did not rule out.
+11. **The order of the writing.** Asked whether the order each line proposes looks plausible,
+    and which strokes look written the wrong way round, Ben answered: "I have no opinion as to
+    plausibility, but what you did seems fine". With that, round 3's nine questions are all
+    answered.
 
 Effective State of the base, 2026-10-31: executed 2026-10-30; Ben has checked the readings of
 the two crops on page F043A and of the vowels under the nun of F102A's על־פני, and the rest of
-the two crops on page F102A awaits his review, as do the two crops of whole lines that round 3
-added.
+the two crops on page F102A awaits his review. Of the two crops of whole lines that round 3
+added, Ben answered round 3's nine questions on 2026-10-31; the rest of their readings has had
+no human review.

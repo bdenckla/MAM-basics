@@ -13,11 +13,11 @@ PDFs that the work's research has cited.
 
 ## Ben's decisions
 
-The first twelve are of 2026-10-30, and decisions 13 to 21 of 2026-10-31. The first nine
+The first twelve are of 2026-10-30, and decisions 13 to 22 of 2026-10-31. The first nine
 were made in the planning session "Investigate a pen-stroke manuscript representation", whose
 plan was not committed, so this list is their record here. Decisions 11 to 15 were made while
 Ben reviewed the first exemplars, decisions 16 and 17 as he settled the third round of
-tracing, on two well-kept lines, and decisions 18 to 21 in the fourth round.
+tracing, on two well-kept lines, and decisions 18 to 22 in the fourth round.
 
 1. **The unit is one crop, not a page.** Ben: "This is not about whole manuscripts or even whole
    pages. At least not yet." No page, column or line geometry is in scope, and no
@@ -193,10 +193,24 @@ tracing, on two well-kept lines, and decisions 18 to 21 in the fourth round.
     confidence is still low!)" Of two circles at the foot of that crop, he added: "though I have
     seen the occasional masorah circle at or near the baseline, (a) those are rare and (b) I'e
     never seen ones this low (at below-vowel level). In other words, the vast majority of MC's
-    are above-marks". So a masora circle's group says whose ink it is, as every group does, and
-    a circle between two lines is taken for the lower line's, above its letters. That is a weak
-    guess unless the group's note gives the research behind it. Drawing the circles faintly,
-    and leaving a circle's line unassigned, are not yet implemented.
+    are above-marks". And then: "(but as I said, the main relevance of MCs for our work is to
+    identify them in order to ignore them, in particular in order to not confuse them with other
+    marks, and such identification luckily does not require ownership analysis (though in
+    difficult cases, ownership can be relevant because we may want to answer the question: is a
+    masorah circle EXPECTED on this word? but usually ownership isn't a a "which line" question".
+    So a circle is identified chiefly so that it can be set aside and not taken for another
+    mark. Its group says whose ink it is, as every group does, and a circle between two lines
+    is taken for the lower line's, above its letters. That is a weak guess unless the group's
+    note gives the research behind it, and where ownership matters, the question is usually
+    whether a circle is expected on a word. Drawing the circles faintly, which Ben put off ("Not
+    now"), and leaving a circle's line unassigned are not yet implemented.
+22. **Ink that is likely stray is transcribed, and its group says so.** Of a small dot that no
+    transcription records, between the foot of the diagonal of the alef of the atom אחת of page
+    F102A's line 2 and that alef's pataḥ, Ben wrote: "I suppose it could be a mapiq but my best
+    guess is that it is a stray bit of ink, so we would encode it (since it is ink) but mark it
+    as likely stray (unintentional). Only very slightly different from a mark we think is part
+    of the vellum." So such ink is a stroke like any other, in a group of the kind "stray mark",
+    which is congruent to no code point.
 
 ## The ladder
 
@@ -314,7 +328,8 @@ to two groups, as a bar that served both strands' vowels would. The kinds are a 
 as the undetermined kinds "bar under the letter" and "dot over the letter" do. Every stroke is
 in a group, and a group's kind fixes the pass of its strokes. Ink of a neighbouring word or line
 is traced and grouped too. Where the crop cuts it too short to name, it takes "unidentified
-letter" or "unidentified mark".
+letter" or "unidentified mark". Ink that is likely unintentional, a stray bit of ink rather than
+a sign, takes "stray mark" (decision 22).
 
 **Whose ink.** Every group says whose ink it is, as `data-ink-of` (decision 17): `this-word`,
 the chanted word a word's crop is of; `other-word`, another word of that word's line;

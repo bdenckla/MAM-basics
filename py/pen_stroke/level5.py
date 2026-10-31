@@ -80,6 +80,9 @@ _MARK_KINDS = {
     "dot under the letter": None,
     "dot over the letter": None,
     "unidentified mark": None,
+    # Ink that is likely unintentional, a stray bit of ink rather than a sign: transcribed,
+    # since it is ink, and marked as likely stray (Ben, 2026-10-31).
+    "stray mark": None,
 }
 
 KINDS = {

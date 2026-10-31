@@ -8,8 +8,8 @@ photographed. [../pen-stroke-exemplars-2026-10-30.md](../pen-stroke-exemplars-20
 and its update report what they showed. Claude traced every stroke by eye, a script of
 Claude's smoothed each into curves and fitted its widths and ends to the ink, and Claude judged
 every residual piece. Ben has checked the readings of the marks in the two crops on page F043A
-and of the vowels under the nun of F102A's על־פני; no human has reviewed the rest, and the two
-line crops await his review.
+and of the vowels under the nun of F102A's על־פני, and on 2026-10-31 he answered round 3's nine
+questions about the two line crops; no human has reviewed the rest.
 
 A mark the crop shows little or no ink of, but that the transcription or the layout implies,
 is a **supplied stroke** (decision 15 of the schema note). `overlays.html` draws every supplied
