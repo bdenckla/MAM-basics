@@ -178,11 +178,21 @@ F102A column 2 line 2?", he answered "Yes, those two".
    asked this. Where the top of the lamed of that line's atom לא meets line 3's qamats, Ben
    judged round 3's split right: "what you did with that tricky lamed-qamats collision seems
    right."
-6. **The pen residual after decision 19,** with the figures after decision 18 in parentheses:
+6. **The chanted word אל־הר of page F043A's line 4 has its maqaf.** Round 3 saw none there and
+   took the lamed's body to run straight into the he's roof. Ben: "there is a maqaf in both
+   places", the other being in the chanted word לא־יוכל, and of this one, what runs into the he
+   "is nowhere near as thick as the lamed's body (i'd say it is only about half as thick)". The
+   lamed's body now starts at its ascender, and a maqaf of its own joins it to the he's roof.
+7. **The curl over line 5's chanted word כי־אתה and the ring over its atom העדתה are masora
+   circles,** Ben: "those are both masorah circles". Nearly every masora circle stands above
+   its own line's letters, he added, so these are line 5's (decision 21). Round 3 had left both
+   unidentified. Their groups now have that kind and say so.
+8. **The pen residual after decision 19 and that maqaf,** with the figures after decision 18 in
+   parentheses:
 
    | Crop | Strokes | Ink no stroke explains | Sweep beyond the ink |
    | --- | --- | --- | --- |
-   | F043A, line 4 | 128 (126) | 17.7% (17.8%) | 15.4% (15.4%) |
+   | F043A, line 4 | 129 (126) | 17.6% (17.8%) | 15.3% (15.4%) |
    | F102A, line 2 | 110 (108) | 16.6% (17.3%) | 14.5% (14.2%) |
 
 Effective State of the base, 2026-10-31: executed 2026-10-30; Ben has checked the readings of

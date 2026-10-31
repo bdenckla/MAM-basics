@@ -190,9 +190,13 @@ tracing, on two well-kept lines, and decisions 18 to 21 in the fourth round.
     (or have a way to leave them unassigned), but it should be understood that these assignments
     in 99 to 100% of cases won't be accompanied by much confidence because they won't be
     accompanied by much research (and as I said, sometimes even with a lot of research, the
-    confidence is still low!)" So a masora circle's group says whose ink it is, as every group
-    does, and that is a weak guess unless its note gives the research behind it. Drawing the
-    circles faintly, and leaving a circle's line unassigned, are not yet implemented.
+    confidence is still low!)" Of two circles at the foot of that crop, he added: "though I have
+    seen the occasional masorah circle at or near the baseline, (a) those are rare and (b) I'e
+    never seen ones this low (at below-vowel level). In other words, the vast majority of MC's
+    are above-marks". So a masora circle's group says whose ink it is, as every group does, and
+    a circle between two lines is taken for the lower line's, above its letters. That is a weak
+    guess unless the group's note gives the research behind it. Drawing the circles faintly,
+    and leaving a circle's line unassigned, are not yet implemented.
 
 ## The ladder
 
