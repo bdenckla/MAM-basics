@@ -61,8 +61,10 @@ Each plan identifies:
 5. The actual file and a searchable passage as well as any line number for evidence or decisions.
 6. Preconditions, exact verification commands, commit discipline and the integration sequence.
 
-After substantial planning or investigation, prefer execution in a fresh worktree session.
-Use same-session execution when the work is small and repeating discovery would cost more.
+In Claude Code, Ben executes a plan in a fresh session, never in the session that wrote it (the
+common instruction body, “Planning remains planning until explicit execution”). Elsewhere, after
+substantial planning or investigation, prefer execution in a fresh session, and use same-session
+execution only when the work is small and repeating discovery would cost more.
 
 ## Finished receipts and maintained documents
 

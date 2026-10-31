@@ -158,7 +158,7 @@ _REVIA_GERESH_MUQDAM = "\N{HEBREW ACCENT REVIA}" + "\N{HEBREW ACCENT GERESH MUQD
 # corpus in its correct encoding instead, with a provenance suffix saying so.
 # Each row is (wrong sequence, correct sequence, provenance suffix). The rows
 # correct UXLC 2.6's three wacky ZWJs (see _reject_wacky_zwjs), each in one atom
-# of Job, as section 8 of MAM-basics' doc/uxlc-potential-corrections.md
+# of Job, as section 8 of MAM-basics' doc/clc-changes-and-uxlc-caveats.md
 # recommends by Ben's decision of 2026-10-27.
 _ENCODING_CORRECTIONS = (
     (_ATNAX_ZWJ_XIRIQ, _ATNAX_CGJ_XIRIQ, "-cgj"),  # Job 32:6

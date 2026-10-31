@@ -24,10 +24,13 @@ import mb_cmn.hebrew_punctuation as hpu
 from mb_cmn import str_defs as sd
 import mb_diff_mpu.describe_diff as describe_diff
 
-# Combining grapheme joiner: a control char (no textual meaning) used in the
-# combined form only to sequence two combined accents. Once a single accent
-# remains it has nothing to sequence, so a strand drops it (cf. §7.14). It lives
-# inside a divergence cluster (atom 14) and simply isn't in either resolution.
+# Combining grapheme joiner: a control char that keeps two marks in an order
+# normalization would change. The combined form uses it to sequence two combined
+# accents; once a single accent remains it has nothing to sequence, so a strand
+# drops it (cf. §7.14). It lives inside a divergence cluster (Gen 35:22 atom 14)
+# and simply isn't in either resolution. UXLC also uses it to keep an early meteg
+# before its vowel, and a strand that keeps that meteg keeps the CGJ (ex 20:4
+# atom 2's bet resolution).
 _CGJ = sd.CGJ
 
 _STRAND_ALEF = "alef"
@@ -239,6 +242,9 @@ _ORACLE = {
                 "bet": acc.MUN,
                 "add": {_STRAND_ALEF: [hpu.MAQ]},
             },
+            # Atom 2 (תעשה): UXLC has meteg, CGJ, patax on the tav, an early meteg. Elyon (bet)
+            # keeps the meteg and so the CGJ that holds it before the patax; taxton (alef) drops
+            # both.
             2: {
                 "cluster": hpo.MTGOSLQ
                 + _CGJ
@@ -260,6 +266,7 @@ _ORACLE = {
                 + acc.QOM
                 + hl.HE,
                 "bet": hpo.MTGOSLQ
+                + _CGJ
                 + hpo.PATAX
                 + hl.AYIN
                 + hpo.XPATAX

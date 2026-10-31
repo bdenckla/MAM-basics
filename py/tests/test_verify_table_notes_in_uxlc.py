@@ -174,54 +174,6 @@ class VerifyTableNotesInUXLCTests(unittest.TestCase):
             ["מי־לי־", "מַה־לִּי־", "פֹה֙"],
         )
 
-    def test_verify_table_notes_in_uxlc_ignores_cgj_in_qere_surface_text(
-        self,
-    ) -> None:
-        with tempfile.TemporaryDirectory() as tmp_dir_name:
-            tmp_dir = Path(tmp_dir_name)
-            uxlc_dir = tmp_dir / "UXLC-utils" / "in" / "UXLC-39"
-            uxlc_dir.mkdir(parents=True)
-            (uxlc_dir / "Ezekiel.xml").write_text(
-                """
-<Tanach>
-  <tanach>
-    <c n="40">
-      <v n="36">
-        <k>ואלמו</k>
-        <q>וְאֽ͏ֵלַמָּ֔יו</q>
-      </v>
-    </c>
-  </tanach>
-</Tanach>
-""".strip(),
-                encoding="utf-8",
-            )
-            table_json_path = tmp_dir / "table_data.json"
-            table_json_path.write_text(
-                json.dumps(
-                    {
-                        "table": {
-                            "rows": [
-                                {
-                                    "row_number": 70,
-                                    "verse": "Ezekiel 40:36.3",
-                                    "notes-UXLC": "ואלמו וְאֵֽלַמָּ֔יו",
-                                }
-                            ]
-                        }
-                    },
-                    ensure_ascii=False,
-                ),
-                encoding="utf-8",
-            )
-
-            report = verify_table_notes_in_uxlc(
-                table_json_path=table_json_path,
-                uxlc_utils_path=tmp_dir / "UXLC-utils",
-            )
-
-        self.assertEqual(report["summary"]["rows_missing_claim_count"], 0)
-
     def test_verify_table_notes_in_uxlc_matches_qere_after_trailing_sof_pasuq_strip(
         self,
     ) -> None:

@@ -6,7 +6,7 @@ replacements, each applied where it is filed and shown bracketed, which is the
 ordinary notation for an editor's word standing in a quotation. The page's
 intro says whose the brackets are, because the notation alone does not.
 
-Two entries so far, both from the Judges message of 7 August 2026:
+Four entries so far. Two are from the Judges message of 7 August 2026:
 
   * Its subject says Joshua, and its one case is Judges 11:24. Holman had sent
     four Joshua cases four hours earlier and the subject line did not follow him
@@ -15,6 +15,14 @@ Two entries so far, both from the Judges message of 7 August 2026:
   * Its Note says the munach is under the tet of אוֹתוֹ, a word whose letters are
     alef, vav, tav, vav. The mark is under the tav, which is what the change
     item the card links, 2026.04.10-7, calls it too.
+
+The other two are the "Current UXLC" forms of Psalms 31:24.1 and
+Proverbs 30:15.1 in Holman's messages. Each stores a meteg before its vowel
+with no CGJ between them, so a font shows the meteg left of the vowel. The
+UXLC had a CGJ after the meteg until UXLC 2.6 changed those atoms' marks
+(records 2026.08.05-53 and -94). Each bracketed form adds that CGJ, and its
+explanation says so, since the two forms differ only in where the meteg
+stands.
 
 Applying an entry is fail-fast in both directions. A replacement whose original
 is not in the text exactly once raises, so a reworded message cannot leave a
@@ -33,24 +41,88 @@ from dataclasses import dataclass, replace
 
 from hkq_cmn.uxlc_email_extract import CorrectionCase, SourceEmail
 from hkq_cmn.uxlc_external_links import book_display_name
+from mb_cmn import hebrew_accents as ha
+from mb_cmn import hebrew_letters as hl
+from mb_cmn import hebrew_points as hpo
+from mb_cmn import hebrew_punctuation as hpu
+from mb_cmn import str_defs as sd
 
 
 @dataclass(frozen=True)
 class BracketedCorrection:
-    """One word of Holman's, and the word shown in square brackets instead."""
+    """One word of Holman's, and the word shown in square brackets instead.
+
+    The explanation, if any, follows the correction in the intro's sentence.
+    """
 
     original: str
     replacement: str
+    explanation: str = ""
 
     @property
     def bracketed(self) -> str:
         return f"[{self.replacement}]"
 
 
+def _with_cgj_after_meteg(form: str) -> str:
+    """Return the form with a CGJ after its one meteg."""
+    if form.count(hpo.MTGOSLQ) != 1:
+        raise ValueError(f"{form!r} does not hold exactly one meteg")
+    return form.replace(hpo.MTGOSLQ, hpo.MTGOSLQ + sd.CGJ)
+
+
+# The "Current UXLC" forms of two cases as Holman's messages give them, each
+# with a meteg before its vowel and no CGJ between them. The Proverbs form keeps
+# the field's trailing paseq so that the closing bracket falls after it: between
+# the word and the paseq, the bracket would sit inside the page's right-to-left
+# element (py_render/uc_hebrew_runs) and display mirrored.
+_PSALMS_31_24_1 = (
+    hl.ALEF
+    + hpo.MTGOSLQ
+    + hpo.SEGOL_V
+    + hl.HE
+    + hpo.XSEGOL
+    + hl.BET
+    + ha.MER
+    + hl.VAV
+    + hpo.DAGOMOSD
+)
+_PROVERBS_30_15_1 = (
+    hl.LAMED
+    + hpo.MTGOSLQ
+    + hpo.PATAX
+    + hl.AYIN
+    + hpo.XPATAX
+    + hl.LAMED
+    + hl.VAV
+    + hpo.DAGOMOSD
+    + hl.QOF
+    + hpo.QAMATS
+    + ha.QOM
+    + hl.HE
+    + hpu.PASOLEG
+)
+
 # Keyed by (case reference, field label). The reference is spelled as
 # uxlc_email_extract.CaseRef.key spells it, and the label is the message's own.
 CASE_FIELD_CORRECTIONS = {
     ("Judges 11:24.7", "Note"): (BracketedCorrection("Tet", "Tav"),),
+    ("Psalms 31:24.1", "Current UXLC"): (
+        BracketedCorrection(
+            _PSALMS_31_24_1,
+            _with_cgj_after_meteg(_PSALMS_31_24_1),
+            "with a CGJ after the meteg, as the UXLC had it, so that the meteg"
+            " stands right of the segol",
+        ),
+    ),
+    ("Proverbs 30:15.1", "Current UXLC"): (
+        BracketedCorrection(
+            _PROVERBS_30_15_1,
+            _with_cgj_after_meteg(_PROVERBS_30_15_1),
+            "with a CGJ after the meteg, as the UXLC had it, so that the meteg"
+            " stands right of the pata\N{LATIN SMALL LETTER H WITH DOT BELOW}",
+        ),
+    ),
 }
 
 # Keyed by email key, which is the .eml filename slugged.
@@ -101,19 +173,25 @@ def bracketed_correction_phrases(
     """
     phrases = [
         f"on the subject of the message of {source_email.date_display},"
-        f" {correction.original} is shown as {correction.bracketed}"
+        f" {_shown_as(correction)}"
         for source_email in emails
         for correction in EMAIL_SUBJECT_CORRECTIONS.get(source_email.key, ())
     ]
     phrases.extend(
         f"on the {label} line of {book_display_name(case.ref.book)}"
-        f" {case.ref.chapter}:{case.ref.verse},"
-        f" {correction.original} is shown as {correction.bracketed}"
+        f" {case.ref.chapter}:{case.ref.verse}, {_shown_as(correction)}"
         for case in cases
         for label, _value in case.fields
         for correction in CASE_FIELD_CORRECTIONS.get((case.ref.key, label), ())
     )
     return tuple(phrases)
+
+
+def _shown_as(correction: BracketedCorrection) -> str:
+    phrase = f"{correction.original} is shown as {correction.bracketed}"
+    if correction.explanation:
+        return f"{phrase}, {correction.explanation}"
+    return phrase
 
 
 def _corrected_case_field(ref_key: str, label: str, value: str) -> str:

@@ -1284,7 +1284,9 @@
         "verse": "Ezekiel 40:36.3",
         "word": "וְאֵלַמָּ֔ו",
         "finding": "A - No Masorah Circle | L - Qere",
-        "notes-UXLC": "ואלמו וְאֵֽלַמָּ֔יו",
+        "notes-UXLC": "ואלמו וְאֽ͏ֵלַמָּ֔יו",
+        "notes-UXLC-as-extracted": "ואלמו וְאֵֽלַמָּ֔יו",
+        "notes-UXLC-correction": "CGJ added after the alef's meteg, as UXLC 2.6 has it (2026-10-31, at Ben Denckla's direction of 2026-10-31)",
         "notes-UXLC-yatir": null,
         "notes-HaKeter": null,
         "image_files": {
