@@ -47,7 +47,7 @@
         <type-count col-name="stopc" integer="978" none="4" />
         <type-count col-name="stopv" integer="978" none="4" />
         <type-count col-name="stopp" integer="978" none="4" />
-        <type-count col-name="note" none="934" string="48" />
+        <type-count col-name="note" none="921" string="61" />
       </type-counts>
       <bkid-val-counts>
         <bkid-val-count bkid="Genesis" count="61" />
@@ -991,7 +991,7 @@
       <stopc>50</stopc>
       <stopv>16</stopv>
       <stopp>3</stopp>
-      <note />
+      <note>all 3 columns have 26 lines</note>
     </lci_rec>
     <lci_rec>
       <page>031B</page>
@@ -1006,7 +1006,7 @@
       <stopc>50</stopc>
       <stopv>26</stopv>
       <stopp>11</stopp>
-      <note />
+      <note>columns 1 and 2 have 26 lines; column 3 has 27 lines</note>
     </lci_rec>
     <lci_rec>
       <page>031B</page>
@@ -1021,7 +1021,7 @@
       <stopc>1</stopc>
       <stopv>18</stopv>
       <stopp>1</stopp>
-      <note />
+      <note>columns 1 and 2 have 26 lines; column 3 has 27 lines</note>
     </lci_rec>
     <lci_rec>
       <page>032A</page>
@@ -1096,7 +1096,7 @@
       <stopc>6</stopc>
       <stopv>13</stopv>
       <stopp>20</stopp>
-      <note />
+      <note>all 3 columns have 26 lines</note>
     </lci_rec>
     <lci_rec>
       <page>034B</page>
@@ -1186,7 +1186,7 @@
       <stopc>10</stopc>
       <stopv>29</stopv>
       <stopp>9</stopp>
-      <note />
+      <note>all 3 columns have 26 lines</note>
     </lci_rec>
     <lci_rec>
       <page>037B</page>
@@ -1201,7 +1201,7 @@
       <stopc>12</stopc>
       <stopv>13</stopv>
       <stopp>4</stopp>
-      <note />
+      <note>all 3 columns have 26 lines</note>
     </lci_rec>
     <lci_rec>
       <page>038A</page>
@@ -1471,7 +1471,7 @@
       <stopc>23</stopc>
       <stopv>30</stopv>
       <stopp>10</stopp>
-      <note />
+      <note>all 3 columns have 26 lines</note>
     </lci_rec>
     <lci_rec>
       <page>045B</page>
@@ -1486,7 +1486,7 @@
       <stopc>25</stopc>
       <stopv>5</stopv>
       <stopp>3</stopp>
-      <note />
+      <note>all 3 columns have 26 lines</note>
     </lci_rec>
     <lci_rec>
       <page>046A</page>
@@ -1501,7 +1501,7 @@
       <stopc>25</stopc>
       <stopv>32</stopv>
       <stopp>13</stopp>
-      <note />
+      <note>all 3 columns have 26 lines</note>
     </lci_rec>
     <lci_rec>
       <page>046B</page>
@@ -1516,7 +1516,7 @@
       <stopc>26</stopc>
       <stopv>14</stopv>
       <stopp>10</stopp>
-      <note />
+      <note>all 3 columns have 26 lines</note>
     </lci_rec>
     <lci_rec>
       <page>047A</page>
@@ -4261,7 +4261,7 @@
       <stopc>24</stopc>
       <stopv>33</stopv>
       <stopp>14</stopp>
-      <note />
+      <note>column 3 lines 25-27 contain only a short Masorah note concluding the book of Joshua</note>
     </lci_rec>
     <lci_rec>
       <page>136A</page>
@@ -6766,7 +6766,7 @@
       <stopc>18</stopc>
       <stopv>28</stopv>
       <stopp>4</stopp>
-      <note />
+      <note>all 3 columns have 26 lines</note>
     </lci_rec>
     <lci_rec>
       <page>215B</page>
@@ -9646,7 +9646,7 @@
       <stopc>4</stopc>
       <stopv>21</stopv>
       <stopp>7</stopp>
-      <note />
+      <note>column 3 lines 26-27 contain only a short Masorah note concluding the book of Joel</note>
     </lci_rec>
     <lci_rec>
       <page>309A</page>

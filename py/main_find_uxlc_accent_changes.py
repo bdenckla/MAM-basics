@@ -29,6 +29,12 @@ Notes / deliberate scope decisions:
     silluq) are EXCLUDED.
   - The curated refuni/changeuni are sometimes stale (== each other) while the
     real change is in *_gen; we use `*_gen or *` for each side.
+  - A record's type decides first, by closed dispatch. A NoTextChange or NoAction
+    record is never an accent change, whatever its change text says: such a record's
+    change text can be the reading it examined and the UXLC did not adopt, as nine
+    records from 2020 to 2026 have it, five of them by the UXLC's editor. Each other
+    type is named in _TEXT_CLASSIFIED_TYPES and classified by its texts, and an
+    unknown type raises (Ben's decision, 2026-10-31).
 """
 
 import argparse
@@ -146,9 +152,40 @@ def maqaf_count(tokens):
     return sum(1 for t in tokens if t == "maqaf")
 
 
+# The two types of record that change no text, which are never accent changes.
+_NO_TEXT_TYPES = frozenset({"NoTextChange", "NoAction"})
+# The types classified by their texts. None is the type of the records that have no
+# <type>: the fake test record and six "[Display robustness]" records of 2024.01.17.
+_TEXT_CLASSIFIED_TYPES = frozenset(
+    {
+        "accent",
+        "consonant",
+        "consonant/RemoveQK",
+        "consonant/vowel",
+        "merge",
+        "merge/accent",
+        "merge/vowel",
+        "split",
+        "split/accent",
+        "tag",
+        "vowel",
+        "vowel/accent",
+        None,
+    }
+)
+
+
 def classify(d):
     """Return a reason label ('maqaf', 'accent', 'silluq', or '+'-joined combo)
     or None if the record is not an accent change."""
+    record_type = d.get("type")
+    if record_type in _NO_TEXT_TYPES:
+        return None
+    if record_type not in _TEXT_CLASSIFIED_TYPES:
+        raise ValueError(
+            f"UXLC change {record_key(d)} has type {record_type!r}, which"
+            " main_find_uxlc_accent_changes.py does not name"
+        )
     a, b = ref_chg(d)
     reasons = set()
     if maqaf_count(a) != maqaf_count(b):

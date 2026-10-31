@@ -1,19 +1,19 @@
 === OUT set: WLC-4.22 vs UXLC grammaticality (changes NOT in prose output) ===
 
-prose-corpus verses          : 231  (249 changes)
-  validated                  : 218 verses (233 changes)
+prose-corpus verses          : 229  (247 changes)
+  validated                  : 216 verses (231 changes)
   excluded                   : 13 verses (16 changes)
 
-  of validated: checker-VISIBLE change 154, no-op 64
+  of validated: checker-VISIBLE change 153, no-op 63
 
 2x2 over validated VERSES (all):
-  WLC-gram    -> UXLC-gram   : 148
+  WLC-gram    -> UXLC-gram   : 146
   WLC-gram    -> UXLC-ungram : 58
   WLC-ungram  -> UXLC-gram   : 8
   WLC-ungram  -> UXLC-ungram : 4
 
 2x2 over checker-VISIBLE verses (the meaningful denominator):
-  WLC-gram    -> UXLC-gram   : 84
+  WLC-gram    -> UXLC-gram   : 83
   WLC-gram    -> UXLC-ungram : 58
   WLC-ungram  -> UXLC-gram   : 8
   WLC-ungram  -> UXLC-ungram : 4
@@ -113,7 +113,7 @@ Excluded verses (synth could not be validated):
 By-kind breakdown of solo-change verses (confidence buckets):
   add_accent        : WLC-gram->[g  12 / u   1]   WLC-ungram->[g   2 / u   1]
   remove_terminator : WLC-gram->[g   0 / u   2]   WLC-ungram->[g   0 / u   0]
-  substitution      : WLC-gram->[g 129 / u  48]   WLC-ungram->[g   6 / u   3]
+  substitution      : WLC-gram->[g 127 / u  48]   WLC-ungram->[g   6 / u   3]
 
 
 === IN set: WLC-4.22 vs UXLC grammaticality (changes IN prose output) ===

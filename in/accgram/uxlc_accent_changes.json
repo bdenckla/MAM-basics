@@ -3017,45 +3017,6 @@
   {
     "release": "2022.10.19",
     "changeset": "2022.07.02",
-    "n": 10,
-    "citation": "Ex 5:22.11",
-    "description": "Add maqaf between the first he and the zayin.",
-    "lc": "Folio_034A 2:2",
-    "reftext": "לָ֥מָּה זֶּ֖ה",
-    "refuni": "lamed qamats merkha mem dagesh qamats he space zayin dagesh segol tipeha he",
-    "changetext": "לָ֥מָּה־זֶּ֖ה",
-    "changeuni": "lamed qamats merkha mem dagesh qamats he maqaf zayin dagesh segol tipeha he",
-    "notes": [
-      "The putative maqaf is very faint. A maqaf at this point would place two accents on a single poetic word.",
-      "The Miqra According to the Masorah (MAM) does not have a maqaf between these words."
-    ],
-    "approval": {
-      "name": null,
-      "mail": null,
-      "date": null
-    },
-    "status": "Approved",
-    "type": "NoAction",
-    "authors": [
-      "Daniel Holman"
-    ],
-    "lc_gen": null,
-    "aBHL": null,
-    "aBHLA": null,
-    "D2T": null,
-    "T2D": null,
-    "transnotes": null,
-    "refuni_gen": null,
-    "changeuni_gen": null,
-    "changeuni_erbs": false,
-    "bhla": false,
-    "accent_change_reason": "maqaf",
-    "prose_st_ref": null,
-    "prose_st_pending": null
-  },
-  {
-    "release": "2022.10.19",
-    "changeset": "2022.07.02",
     "n": 12,
     "citation": "Ex 12:7.4",
     "description": "Change meteg under nun to merkha. Add note 't'.",
@@ -16250,7 +16211,7 @@
     "n": 47,
     "citation": "Ps 14:7.1",
     "description": "Change merkha to meteg. Add note 'm'.",
-    "lc": "Folio_367B 2:22",
+    "lc": "Folio_367B 2:21",
     "reftext": "מִ֥י",
     "refuni": "mem hiriq merkha yod",
     "changetext": "מִֽי",
@@ -17057,44 +17018,6 @@
     "changeuni_erbs": false,
     "bhla": false,
     "accent_change_reason": "accent",
-    "prose_st_ref": null,
-    "prose_st_pending": null
-  },
-  {
-    "release": "2026.10.19",
-    "changeset": "2026.08.05",
-    "n": 81,
-    "citation": "Ps 105:40.1",
-    "description": "Consider possible maqaf at end of word. Add note 't'.",
-    "lc": "Folio_388A 1:18",
-    "image2": {
-      "title": "Ps 105:31.5 (Folio_388A, Col 1, Line 9)",
-      "credit": "Credit: Sefaria.org."
-    },
-    "reftext": "שָׁאַ֣ל",
-    "refuni": "shin shin-dot qamats alef patah munah lamed",
-    "changetext": "שָׁאַ֣ל־",
-    "changeuni": "shin shin-dot qamats alef patah munah lamed maqaf",
-    "notes": [
-      "The first image shows a short, dark, near-horizontal line on the left side of the lamed, a putative maqaf. Since this word is at the end of a line of text the maqaf cannot be seen touching another letter. The maqaf is out of position, compared to a maqaf on Ps 105.31.5, nine lines above it (second image). Both this word and the following word have munah primary accents, an unexpected occurence with words joined with a maqaf. The putative maqaf is relatively thin and ill-formed, it will not be added. Add note 't'.",
-      "BHL has no maqaf at the end of this word. BHL has a munah on this word and on the following word. BHLA has no entry for this verse."
-    ],
-    "transnotes": null,
-    "status": "Pending",
-    "type": "NoTextChange",
-    "authors": [
-      "Daniel Holman"
-    ],
-    "lc_gen": null,
-    "aBHL": null,
-    "aBHLA": null,
-    "D2T": null,
-    "T2D": null,
-    "refuni_gen": null,
-    "changeuni_gen": null,
-    "changeuni_erbs": false,
-    "bhla": false,
-    "accent_change_reason": "maqaf",
     "prose_st_ref": null,
     "prose_st_pending": null
   },
@@ -18005,40 +17928,6 @@
     ],
     "lc_gen": null,
     "aBHL": true,
-    "aBHLA": null,
-    "D2T": null,
-    "T2D": null,
-    "refuni_gen": null,
-    "changeuni_gen": null,
-    "changeuni_erbs": false,
-    "bhla": false,
-    "accent_change_reason": "accent",
-    "prose_st_ref": null,
-    "prose_st_pending": null
-  },
-  {
-    "release": "2026.10.19",
-    "changeset": "2026.08.05",
-    "n": 128,
-    "citation": "Ezra 8:18.15",
-    "description": "Examine meteg below the resh as possible merkha. Add note 'm'.",
-    "lc": "Folio_452A 3:21",
-    "reftext": "וְשֵׁרֵֽבְיָ֛ה",
-    "refuni": "vav sheva shin shin-dot tsere resh tsere meteg bet sheva yod qamats tevir he",
-    "changetext": "וְשֵׁרֵ֥בְיָ֛ה",
-    "changeuni": "vav sheva shin shin-dot tsere resh tsere merkha bet sheva yod qamats tevir he",
-    "notes": [
-      "The accent below the resh lacks sufficient northeast-to-southwest inclination to be transcribed as a merkha. Add note 'm'. The author reports that the BHS has a meteg under the resh.",
-      "BHL has a merkha below the resh. BHLA has no entry for this verse."
-    ],
-    "transnotes": null,
-    "status": "Pending",
-    "type": "NoTextChange",
-    "authors": [
-      "Daniel Holman"
-    ],
-    "lc_gen": null,
-    "aBHL": null,
     "aBHLA": null,
     "D2T": null,
     "T2D": null,
