@@ -230,13 +230,14 @@ sixteen are readings of the photographs. The last three of the four to be read, 
 and -47, replaced the location estimator's values that day: the readings confirm the first two and
 put 2026.08.05-47 one line higher, at F367B 2:21.
 
-## 10. Three problems recorded in a program's docstring, 2026-09-04
+## 10. Two problems recorded in a program's docstring, 2026-09-04
 
 The docstring of `py/main_map_changes_to_book_of_job.py`, under "FOUR PROBLEMS NOTICED IN REVIEW AND
-NOT RESOLVED", records four problems in changeset 2026.02.05 of the 2026.04.01 list, Chris
-Kimball's port of Ben's book-of-job work into the UXLC. They moved there on 2026-09-04, in
-`d8a63afd`, from a report that was then deleted. The fourth, 2026.02.05-115, is in section 8.
-None of the other three has been reported, and the docstring remains their fuller record.
+NOT RESOLVED", records problems in changeset 2026.02.05 of the 2026.04.01 list, Chris Kimball's port
+of Ben's book-of-job work into the UXLC. They moved there on 2026-09-04, in `d8a63afd`, from a
+report that was then deleted. Of the four it lists, 2026.02.05-115 is in section 8, and
+2026.02.05-109 was withdrawn on 2026-10-31, as the end of this section says. Neither of the other
+two has been reported, and the docstring remains their fuller record.
 
 1. 2026.02.05-83 (Job 23:5.6, NoAction) examines the end of the word for a maqaf. The docstring
    says that it discusses a different maqaf than intended, and that the question is an Aleppo
@@ -244,9 +245,10 @@ None of the other three has been reported, and the docstring remains their fulle
 2. 2026.02.05-161 (Job 42:10.10, NoAction): the docstring says that the record's image link on
    tanach.us is broken. The record itself holds no image, so the link belongs to the UXLC's web
    pages. This was not rechecked on 2026-10-31.
-3. 2026.02.05-109 (Job 31:15.1, NoTextChange): the docstring says that the record misuses a ZWJ
-   against the Unicode Standard, and that its reference and change texts are identical, each with
-   the ZWJ. A check on 2026-10-31 found that this is probably not a problem. The ZWJ is between a
-   ḥataf pataḥ and a meteg, the request for a meteg in the middle of a ḥataf vowel, one of the 80
-   such joiners that section 8 counts in UXLC 2.6; and a NoTextChange record's two texts are
-   normally the same.
+
+The docstring listed 2026.02.05-109 (Job 31:15.1, NoTextChange) as misusing a ZWJ against the
+Unicode Standard. It does not. Its he has ḥataf pataḥ, ZWJ, meteg, which the Unicode Standard
+18.0, section 9.1, under "Meteg", gives as its example of a medially positioned meteg; UXLC 2.6
+has 80 such joiners, as section 8 says. Its reference and change texts are the same, as a
+NoTextChange record's normally are. On 2026-10-31, at Ben's request, the docstring was corrected
+to say so.

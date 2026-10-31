@@ -55,18 +55,21 @@ MAM-basics issue, every one of these numbers collides with a real issue of
 that number, and renderers turn the bare form into a link to the wrong
 thing. This program's own stdout still prints the bare <n>.
 
-FOUR PROBLEMS NOTICED IN REVIEW AND NOT RESOLVED. These were recorded in a
-companion document, uxlc/out/UXLC-misc/map-changes-to-book-of-job.md, which
-was Claude-written with no regeneration path: nothing rebuilt it when the
-changeset moved underneath it, so its counts drifted from what this program
-prints and it was deleted on 2026-09-04. Its live content is this program's
-output; its surviving content is here.
+FOUR PROBLEMS NOTICED IN REVIEW AND NOT RESOLVED, ONE OF THEM WITHDRAWN ON
+2026-10-31. These were recorded in a companion document,
+uxlc/out/UXLC-misc/map-changes-to-book-of-job.md, which was Claude-written
+with no regeneration path: nothing rebuilt it when the changeset moved
+underneath it, so its counts drifted from what this program prints and it
+was deleted on 2026-09-04. Its live content is this program's output; its
+surviving content is here.
   2026.02.05-83   Job 23:5.6   Discusses a different maqaf than intended;
                   the question is an Aleppo quirk, not relevant to UXLC.
-  2026.02.05-109  Job 31:15.1  Misuses ZWJ against the Unicode Standard.
-                  reftext and changetext are identical and both have the
-                  ZWJ, so the entry no longer records an old form and a new
-                  one.
+  2026.02.05-109  Job 31:15.1  Withdrawn on 2026-10-31. It was listed as
+                  misusing ZWJ against the Unicode Standard, but its he has
+                  "<hataf patah, ZWJ, meteg>", the Standard's own example
+                  of a medially positioned meteg (Unicode 18.0, section
+                  9.1, "Meteg"), and identical reftext and changetext are
+                  normal for a NoTextChange record.
   2026.02.05-115  Job 32:6.11  Should use CGJ, not ZWJ, to order the marks
                   below the shin. Pre-existing; reftext and changetext are
                   again identical.
