@@ -217,3 +217,16 @@ Taamey D positions Job 32:6's ḥiriq under the shin, left of the atnaḥ.
 
 Correction: in Job 32:6 and 10:15, replace the ZWJ with a CGJ; in Job 19:16, remove it. CLC
 does not cover Job yet; it could make the same corrections if the UXLC does not.
+
+## 9. Nine locators corrected in override copies, found 2026-10-31
+
+A comparison of the UXLC change records with Charles Loder's leningrad-codex-tei found nine records
+whose locators disagree with Sefaria's photographs, on a Claude session's reading of crops of them.
+Ben decided on 2026-10-31 to "record them (i.e. record fixes to them) in uxlc/in/UXLC-misc-fixed",
+with only a pointer here. That folder holds MAM-basics' override copies of the change lists, which
+`py/uxlc_changes/uxlc_misc_path.py` reads in place of the copies in `uxlc/in/UXLC-misc/`; diff an
+override copy against its original to see its corrections. Eight of the nine are in
+`2020.02.19 - Changes.xml`, `2022.10.19 - Changes.xml`, `2023.10.19 - Changes.xml` and
+`2024.04.01 - Changes.xml`, override copies made for them, and the ninth is in
+`2026.10.19 - Changes.xml`, the override copy that section 3 describes. Each corrected line number
+counts only lines that hold text, as the UXLC's locators do.

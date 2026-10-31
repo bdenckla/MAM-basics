@@ -34,20 +34,20 @@
     "change_cite": "Deut 5:15.1",
     "change_page": "102B",
     "change_column": 1,
-    "change_line": 25,
-    "change_fline": 25,
+    "change_line": 24,
+    "change_fline": 24,
     "guess_fline": 22.57,
-    "fline_diff": -2.43
+    "fline_diff": -1.43
   },
   {
     "change_release": "2020.02.19",
     "change_cite": "Deut 5:15.11",
     "change_page": "102B",
     "change_column": 1,
-    "change_line": 27,
-    "change_fline": 27,
+    "change_line": 26,
+    "change_fline": 26,
     "guess_fline": 25.07,
-    "fline_diff": -1.93
+    "fline_diff": -0.93
   },
   {
     "change_release": "2020.02.19",
@@ -2854,10 +2854,10 @@
     "change_cite": "Num 11:20.19",
     "change_page": "082A",
     "change_column": 2,
-    "change_line": 4,
-    "change_fline": 31,
+    "change_line": 5,
+    "change_fline": 32,
     "guess_fline": 32.96,
-    "fline_diff": 1.96
+    "fline_diff": 0.96
   },
   {
     "change_release": "2022.10.19",
@@ -3064,10 +3064,10 @@
     "change_cite": "Deut 28:42.6",
     "change_page": "115B",
     "change_column": 3,
-    "change_line": 18,
-    "change_fline": 72,
+    "change_line": 20,
+    "change_fline": 74,
     "guess_fline": 73.85,
-    "fline_diff": 1.85
+    "fline_diff": -0.15
   },
   {
     "change_release": "2022.10.19",
@@ -9094,10 +9094,10 @@
     "change_cite": "2Chr 27:4.7",
     "change_page": "359A",
     "change_column": 2,
-    "change_line": 10,
-    "change_fline": 37,
+    "change_line": 9,
+    "change_fline": 36,
     "guess_fline": 35.89,
-    "fline_diff": -1.11
+    "fline_diff": -0.11
   },
   {
     "change_release": "2023.10.19",
@@ -10174,10 +10174,10 @@
     "change_cite": "2Chr 21:2.15",
     "change_page": "355B",
     "change_column": 1,
-    "change_line": 25,
-    "change_fline": 25,
+    "change_line": 24,
+    "change_fline": 24,
     "guess_fline": 22.74,
-    "fline_diff": -2.26
+    "fline_diff": -1.26
   },
   {
     "change_release": "2024.04.01",
@@ -10194,10 +10194,10 @@
     "change_cite": "2Chr 22:12.7",
     "change_page": "356A",
     "change_column": 3,
-    "change_line": 18,
-    "change_fline": 72,
+    "change_line": 17,
+    "change_fline": 71,
     "guess_fline": 73.57,
-    "fline_diff": 1.57
+    "fline_diff": 2.57
   },
   {
     "change_release": "2024.04.01",
@@ -10344,10 +10344,10 @@
     "change_cite": "Deut 17:9.12",
     "change_page": "109B",
     "change_column": 3,
-    "change_line": 9,
-    "change_fline": 63,
+    "change_line": 11,
+    "change_fline": 65,
     "guess_fline": 65.75,
-    "fline_diff": 2.75
+    "fline_diff": 0.75
   },
   {
     "change_release": "2024.04.01",
@@ -13614,10 +13614,10 @@
     "change_cite": "2Sam 11:11.10",
     "change_page": "174A",
     "change_column": 1,
-    "change_line": 7,
-    "change_fline": 7,
+    "change_line": 6,
+    "change_fline": 6,
     "guess_fline": 6.88,
-    "fline_diff": -0.12
+    "fline_diff": 0.88
   },
   {
     "change_release": "2026.10.19",
