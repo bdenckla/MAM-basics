@@ -141,6 +141,28 @@ F102A column 2 line 2?", he answered "Yes, those two".
    width is the stiff nib's, since the ink across a head cannot be measured apart from the
    stroke it joins.
 
+## Round 4: bases written as strokes of their own, 2026-10-31
+
+1. **Decision 18 of the schema note.** Asked "Re-trace the bases and the mem's left stroke as
+   figure 247 draws them?", Ben answered "Yes, as figure 247": figure 247 of Ada Yardeni's *The
+   Book of Hebrew Script*, an exercise in drawing the parts of the letters in the 10th-century
+   Eastern book-hand. In page F043A's line 4, the bases of the kaf of the atom יוכל and of the
+   final mem of the atom העם, and the foot of the tav of the atom לעלת, are now strokes of their
+   own, written after the strokes they meet, from left to right; round 3 drew each leftward as
+   the end of a stroke turning the letter's corners. In page F102A's line 2 the same holds for
+   the base of the mem of the atom מן, the base of the final mem of the atom הערים and the foot
+   of the tav of the atom אחת, and that mem's left stroke now runs upward to the right. Each line
+   has three strokes more, so every later stroke's id is higher than in round 3.
+2. **The pen residual of the two lines,** with round 3's figures in parentheses:
+
+   | Crop | Strokes | Ink no stroke explains | Sweep beyond the ink |
+   | --- | --- | --- | --- |
+   | F043A, line 4 | 126 (123) | 17.8% (17.9%) | 15.4% (16.0%) |
+   | F102A, line 2 | 108 (105) | 17.3% (17.9%) | 14.2% (14.2%) |
+
+   Both moved little: the change is chiefly to the order and direction in which the line is
+   proposed to have been written, not to how closely its strokes model the ink.
+
 Effective State of the base, 2026-10-31: executed 2026-10-30; Ben has checked the readings of
 the two crops on page F043A and of the vowels under the nun of F102A's על־פני, and the rest of
 the two crops on page F102A awaits his review, as do the two crops of whole lines that round 3

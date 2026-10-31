@@ -22,6 +22,7 @@ Every judgment below is the named agent's, not Ben's, and none was checked again
   feedback. That session checked two of its claims at their sources, as noted below.
 - **The commander:** the session above, which read one PDF on 2026-10-31.
 - **Round 3:** the session that traced two whole lines, 2026-10-31.
+- **Round 4:** the session that re-traced those lines' bases, 2026-10-31.
 
 A **read** source was read by the agent named. **Snippet only** means the agent knew it only
 from a search summary, a title or a catalogue listing; what such a summary said is reported as
@@ -42,7 +43,10 @@ open to ordering these, scanning, and doing OCR on them."
    what their parts are called. Not read: neither the planner nor the ductus research could read
    it online. A retailer's contents listing showed the planner's first sub-agent a chapter on hand
    movements and stroke direction, which it marked unverified; whether the book draws heads as
-   strokes of their own is the ductus research's unfinished question.
+   strokes of their own is the ductus research's unfinished question. **Read in part by round
+   4:** pages 216 to 218 and 293 to 297, in copies Ben supplied and keeps privately. Decision 18
+   of the schema note follows its figure 247, an exercise in drawing the parts of the letters in
+   the 10th-century Eastern book-hand.
 2. **Ada Yardeni, "Palaeography as a Tool"**, PDF:
    <https://www.adayardeni.com/paleo/Palaeography-as-a-Tool.pdf>. Bears on each letter's core
    strokes. Not read, by either agent; a search summary told both that it discusses stroke
@@ -211,7 +215,8 @@ open to ordering these, scanning, and doing OCR on them."
     sub-agent cited a copy of Keter YG's sources at <https://github.com/ibleaman/Keter-YG>. Bear on
     letter models for phase 2, from a font. Read by round 3: the Culmus page calls Keter YG a
     "Modern adaptation of Aleppo codex script" and Keter Aram Tsova "Based on Aleppo codex (10th
-    century C.E.)". Neither is downloaded.
+    century C.E.)". Round 3 downloaded both on 2026-10-31 with Ben's approval, after this list
+    was first written. They are kept, unextracted and untracked, in the same working folder.
 
 ## Left out
 

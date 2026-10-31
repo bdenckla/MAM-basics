@@ -13,11 +13,11 @@ PDFs that the work's research has cited.
 
 ## Ben's decisions
 
-The first twelve are of 2026-10-30, and decisions 13 to 17 of 2026-10-31. The first nine
+The first twelve are of 2026-10-30, and decisions 13 to 18 of 2026-10-31. The first nine
 were made in the planning session "Investigate a pen-stroke manuscript representation", whose
 plan was not committed, so this list is their record here. Decisions 11 to 15 were made while
-Ben reviewed the first exemplars, and decisions 16 and 17 as he settled the third round of
-tracing, on two well-kept lines.
+Ben reviewed the first exemplars, decisions 16 and 17 as he settled the third round of
+tracing, on two well-kept lines, and decision 18 in the fourth round.
 
 1. **The unit is one crop, not a page.** Ben: "This is not about whole manuscripts or even whole
    pages. At least not yet." No page, column or line geometry is in scope, and no
@@ -150,6 +150,16 @@ tracing, on two well-kept lines.
     whose it is, own colour, hide checkbox?", he answered "Adopt it". Profile 4 implements it:
     every group's `data-ink-of`, the lines above and below on the root, and slate grey for ink
     that is not the crop's subject's, in every view, with a checkbox that hides it.
+18. **A base is a stroke of its own, written from left to right, and a mem's left stroke is
+    written upward.** Round 3 drew the base of a kaf, a mem or a final mem, and the foot of a
+    tav, leftward, as the end of a stroke that turns the letter's corners, and the mem's left
+    stroke downward. Figure 247 of Ada Yardeni's *The Book of Hebrew Script* is an exercise in
+    drawing the parts of the letters in the 10th-century Eastern book-hand. Asked "Re-trace the
+    bases and the mem's left stroke as figure 247 draws them?", Ben answered "Yes, as figure
+    247". So where a file proposes its ductus, a base or a tav's foot is a stroke of its own,
+    written after the strokes it meets, from left to right, and a mem's left stroke runs upward
+    to the right. The figure teaches how to write that type of hand. It is no record of how the
+    Leningrad Codex's scribe wrote, and the ductus stays a plausible proposal (decision 11).
 
 ## The ladder
 
@@ -281,7 +291,8 @@ uses, and the stroke-SVG's own style element does the same when the file is view
 ductus: a term of palaeography for a letter's strokes, how many, in which direction and in
 which order. Where it is `plausible`, the strokes are listed in the order written, every
 stroke of the letters before every stroke of the marks (decision 11), and each median runs the
-way the pen moved; a head comes before the stroke it joins (decision 16). Other lines' strokes
+way the pen moved; a head comes before the stroke it joins (decision 16), and a base after the
+strokes it meets, written from left to right (decision 18). Other lines' strokes
 keep that order of the passes, but their directions propose nothing. Where it is `unrecorded`,
 as in the four QUPO crops, the strokes' order and their medians' directions mean nothing.
 
