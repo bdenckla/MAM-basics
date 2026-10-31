@@ -2928,7 +2928,7 @@
             "stopc": 30,
             "stopv": 16,
             "stopp": 5,
-            "note": null
+            "note": "all 3 columns have 29 lines"
         },
         {
             "page": "094B",
@@ -2943,7 +2943,7 @@
             "stopc": 31,
             "stopv": 28,
             "stopp": 20,
-            "note": null
+            "note": "all 3 columns have 29 lines"
         },
         {
             "page": "095A",
@@ -3318,7 +3318,7 @@
             "stopc": 12,
             "stopv": 10,
             "stopp": 3,
-            "note": null
+            "note": "column 1 has 28 lines"
         },
         {
             "page": "107A",
@@ -3498,7 +3498,7 @@
             "stopc": 23,
             "stopv": 13,
             "stopp": 7,
-            "note": null
+            "note": "column 3 has 28 lines"
         },
         {
             "page": "113A",
@@ -3857,7 +3857,7 @@
             "startp": 25,
             "stopc": 7,
             "stopv": 12,
-            "stopp": 6,
+            "stopp": 10,
             "note": null
         },
         {
@@ -3869,7 +3869,7 @@
             "bkid": "Joshua",
             "startc": 7,
             "startv": 12,
-            "startp": 7,
+            "startp": 11,
             "stopc": 8,
             "stopv": 4,
             "stopp": 14,
@@ -4488,7 +4488,7 @@
             "stopc": 13,
             "stopv": 7,
             "stopp": 21,
-            "note": null
+            "note": "column 3 has 28 lines"
         },
         {
             "page": "145A",
@@ -5672,7 +5672,7 @@
             "startp": 1,
             "stopc": 23,
             "stopv": 3,
-            "stopp": 8,
+            "stopp": 11,
             "note": "column 1 of 1 is about twice the width of a column on a normal 3-column page"
         },
         {
@@ -5684,7 +5684,7 @@
             "bkid": "2Samuel",
             "startc": 23,
             "startv": 3,
-            "startp": 9,
+            "startp": 12,
             "stopc": 23,
             "stopv": 23,
             "stopp": 11,
@@ -7083,7 +7083,7 @@
             "stopc": 19,
             "stopv": 21,
             "stopp": 5,
-            "note": null
+            "note": "column 3 has 28 lines"
         },
         {
             "page": "227B",
@@ -7172,7 +7172,7 @@
             "startp": 8,
             "stopc": 28,
             "stopv": 23,
-            "stopp": 5,
+            "stopp": 2,
             "note": null
         },
         {
@@ -7184,7 +7184,7 @@
             "bkid": "Isaiah",
             "startc": 28,
             "startv": 23,
-            "startp": 6,
+            "startp": 3,
             "stopc": 29,
             "stopv": 19,
             "stopp": 5,
@@ -8417,7 +8417,7 @@
             "startp": 16,
             "stopc": 46,
             "stopv": 2,
-            "stopp": 18,
+            "stopp": 19,
             "note": null
         },
         {
@@ -8429,7 +8429,7 @@
             "bkid": "Jeremiah",
             "startc": 46,
             "startv": 2,
-            "startp": 19,
+            "startp": 20,
             "stopc": 46,
             "stopv": 28,
             "stopp": 20,
@@ -9752,7 +9752,7 @@
             "startp": 7,
             "stopc": 4,
             "stopv": 11,
-            "stopp": 9,
+            "stopp": 10,
             "note": "Jonah 4:11b is on folio 313B"
         },
         {
@@ -9764,7 +9764,7 @@
             "bkid": "Jonah",
             "startc": 4,
             "startv": 11,
-            "startp": 10,
+            "startp": 11,
             "stopc": 4,
             "stopv": 11,
             "stopp": 23,
@@ -11102,7 +11102,7 @@
             "startp": 14,
             "stopc": 17,
             "stopv": 13,
-            "stopp": 8,
+            "stopp": 7,
             "note": null
         },
         {
@@ -11114,7 +11114,7 @@
             "bkid": "2Chronicles",
             "startc": 17,
             "startv": 13,
-            "startp": 9,
+            "startp": 8,
             "stopc": 18,
             "stopv": 16,
             "stopp": 8,

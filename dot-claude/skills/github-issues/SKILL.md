@@ -8,7 +8,9 @@ description: Ben's rules for reading, filing, commenting on, editing, closing, r
 Load the reference for the requested operation before touching GitHub. These rules apply
 throughout:
 
-1. Every `gh issue` command names its repository with `--repo bdenckla/<repo>`.
+1. Every `gh issue` command names its repository with `--repo bdenckla/<repo>`, or with
+   `--repo charlesLoder/leningrad-codex-tei` under the one filing exception that
+   `references/reading-and-writing.md`, section 2, item 2, records.
 2. On Ben's machines, `gh` acts through Ben's account; cloud authentication is discovered
    separately. Every issue, comment, body edit, or state-change comment
    written by a session says that it is agent-written and gives the date.

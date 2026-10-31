@@ -49,15 +49,20 @@ them merely because an issue links them; inspect only within the authorized task
    just want to keep the total issue volume down, too"*, so a label is no licence to file more.
    An issue about work in flight is unaffected, and so is recording a decision where it belongs:
    a docstring, an `AGENTS.md` section, a commit message.
-2. **A new issue goes in `bdenckla/MAM-basics` or `bdenckla/MAM-private`, and nowhere else.** Ben,
-   2026-08-26: *"I'm going to try to add no issues to trackers other than those for MAM-basics and
-   MAM-private, just as I am, long-term, aiming to have no unarchived repos other than MAM-basics
-   and MAM-private."* Commenting on and closing an existing issue in any other tracker is not
-   filing one, and is how those trackers wind down. MAM-private's `AGENTS.md`, "Issue citations
-   and issue routing", records this, and also which of the two a MAM change goes in: MAM-private
-   when the mgketer comparison suggested it, MAM-basics otherwise.
+2. **A new issue goes in `bdenckla/MAM-basics` or `bdenckla/MAM-private`, and nowhere else, with
+   one exception.** Ben, 2026-08-26: *"I'm going to try to add no issues to trackers other than
+   those for MAM-basics and MAM-private, just as I am, long-term, aiming to have no unarchived
+   repos other than MAM-basics and MAM-private."* Commenting on and closing an existing issue in
+   any other tracker is not filing one, and is how those trackers wind down. MAM-private's
+   `AGENTS.md`, "Issue citations and issue routing", records this, and also which of the two a MAM
+   change goes in: MAM-private when the mgketer comparison suggested it, MAM-basics otherwise.
    MAM-basics is public, so check a MAM-basics issue's text for anything about MAM-private's
    content before filing it.
+   The exception is Charles Loder's `charlesLoder/leningrad-codex-tei`, which takes new issues
+   about errors in its TEI encoding of the Leningrad Codex; its commands name
+   `--repo charlesLoder/leningrad-codex-tei`. Ben, 2026-10-31, of two such errors: *"let's add an
+   exception for whatever the relevant repo of Charles is that would receive such issues, and
+   create such issues."*
 3. **Open the body with an authorship line quoting what Ben asked for**, in the shape MAM-basics
    #272 uses: *"Written by a Claude session on 2026-09-11. Ben's instruction was: "…". Everything
    else below is that session's reconstruction."* A Codex session names itself.

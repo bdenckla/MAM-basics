@@ -48,6 +48,11 @@ in/mam-ws-special/*.mediawiki whitespace=-blank-at-eol
 # whether the source should have them.
 in/mam-ws-intro/*.mediawiki whitespace=-blank-at-eol
 
+# The UXLC change lists in uxlc/in/UXLC-misc/ are verbatim downloads, and many of their
+# lines end in spaces. Their override copies keep those bytes, so that each copy differs
+# from its original only in its deliberate corrections.
+uxlc/in/UXLC-misc-fixed/*.xml whitespace=-blank-at-eol
+
 # Preserve this frozen review's exact bytes, including its line-final spaces.
 doc/yod-holam-review-20261007.html -text whitespace=-blank-at-eol
 
