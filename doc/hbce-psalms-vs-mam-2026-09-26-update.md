@@ -26,3 +26,9 @@ Recorded by Claude on 2026-09-30, New York time, under the approved remediation 
    `in/meteg_after_silluq_cases.json`, `aleppo/line-breaks/`, `py/tests/test_transliterations.py`,
    `py/tests/test_prose_conventions.py`, `py/tests/test_prose_mark_order.py` and
    `py/main_verse_links.py`.
+
+## The report's thin pointer issue, 2026-10-31
+
+Recorded by Claude (Opus 5.5) on 2026-10-31, New York time, in the small-fixes session. #350,
+filed that day with Ben's approval, tracks this report: his review of it, and his decision
+whether to resume the work.

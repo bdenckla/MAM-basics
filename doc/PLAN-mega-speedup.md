@@ -1,8 +1,10 @@
 # PLAN — make the mega run faster
 
 State: live. Phase 2 executed 2026-09-14; the Google Sheet retirement was incorporated
-2026-09-27. The separate 2026-10-03 serial investigation implements item 3 on an
-isolated branch, pending integration; no other numbered phase has started.
+2026-09-27. Item 3, from the separate 2026-10-03 serial investigation, was integrated on
+2026-10-12; no other numbered phase has started.
+
+Tracked by #351, the thin pointer issue filed on 2026-10-31.
 
 Written by a Claude session on 2026-09-14. Ben's instructions that day, said of the changes to the
 mega since 2026-09-11 that the session had just listed for him: "Should other updates you mention
@@ -141,7 +143,8 @@ of the code the item names.
    in `d32a17b8`** on 2026-09-11, so that the mega writes nothing outside this repository.
 3. **Give the poetic scanner the prose scanner's fast path.** The historical estimate was about
    5 s of 7.54 s over five steps. **Integrated 2026-10-12 from `perf/serial-mega-20261003`;
-   no issue state changed in this integration.** The recorded all-call differential found identical tokens
+   no issue state changed in this integration.** #273, the item's issue, was closed as
+   completed on 2026-10-31. The recorded all-call differential found identical tokens
    and positions on 26,804 calls, with instrumented scanner time 4.56 s before and 1.59 s after.
    Repeated generator timings and verification are in
    [the serial performance record](mega-serial-performance-2026-10-03.md).

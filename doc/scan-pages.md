@@ -7,7 +7,8 @@ bcv is in Torah or haftarah), Simanim Tanakh, Dotan BHL)."*
 
 This file is the single plan-and-findings document for the undertaking (per Ben's
 one-tracked-plan rule). Findings replace plan text here as phases complete. It is written
-for a fresh session that has no other context.
+for a fresh session that has no other context. Its thin pointer issue is #349, filed on
+2026-10-31.
 
 ## Status
 

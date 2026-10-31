@@ -8,7 +8,8 @@ project HBCE, as that address does. The report of record is
 results, the research queue's tiers, and a workflow for the manuscript research if it resumes.
 
 **Claude sessions downloaded the snapshot, wrote the comparison, and wrote this directory's files
-on 2026-09-26. Ben has not reviewed any of it.**
+on 2026-09-26. Ben has not reviewed any of it.** #350, filed on 2026-10-31, tracks his review
+and his decision whether to resume the work.
 
 ## The download, and why it must not be repeated
 
