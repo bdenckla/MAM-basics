@@ -2,6 +2,8 @@
 # Runtime's Windows.Data.Pdf, so that an agent can read the pages as images without
 # installing a PDF tool. Claude Code's Read tool, for one, reads a small PDF whole when it
 # is not given pages, but given pages it renders them only through poppler's pdftoppm.
+# dot-Codex/user-wide-AGENTS.md, "Shell, scripts, and file operations", sends agents here
+# when pdftoppm is missing or they have no tool that shows a PDF's pages.
 #
 # Run it with Windows PowerShell 5.1, powershell.exe. PowerShell 7 cannot load the Windows
 # Runtime types used below, so the script refuses to run there. From the root of a

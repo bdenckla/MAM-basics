@@ -217,6 +217,16 @@ name. Read New York time with
 and state the zone with every clock reading. A POSIX shell remains correct in a Linux cloud
 session.
 
+Never call a PDF unreadable merely because a PDF tool is missing. Claude Code's Read tool reads
+a small PDF whole, page images included, when it is not given `pages`; given `pages`, it needs
+poppler's `pdftoppm`. When `pdftoppm` is missing, or an agent has no tool that shows a PDF's
+pages, render the pages to PNG files with MAM-basics' `misc/render-pdf-pages-windows.ps1` and
+read the PNGs; install nothing for this. The script uses Windows' built-in PDF renderer, whose
+Windows Runtime types PowerShell 7 cannot load, so the script runs under Windows PowerShell 5.1,
+an exception to the PowerShell 7 rule above. Any MAM-basics clone's copy works, and
+`-Pages 1-5` renders only those pages:
+`powershell.exe -NoProfile -File $HOME/GitRepos/MAM-basics/misc/render-pdf-pages-windows.ps1 -PdfPath <pdf> -OutDir <new directory>`.
+
 Write explicit UTF-8 with declared line endings; repository attributes and external-format
 exceptions govern rather than an unconditional all-files-LF rule.
 
