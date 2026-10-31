@@ -5013,7 +5013,7 @@
             "stopc": 20,
             "stopv": 12,
             "stopp": 3,
-            "note": null
+            "note": "column 1 has 28 lines"
         },
         {
             "page": "162A",
@@ -5177,7 +5177,7 @@
             "startp": 15,
             "stopc": 29,
             "stopv": 6,
-            "stopp": 27,
+            "stopp": 28,
             "note": null
         },
         {
@@ -5189,7 +5189,7 @@
             "bkid": "1Samuel",
             "startc": 29,
             "startv": 6,
-            "startp": 28,
+            "startp": 29,
             "stopc": 30,
             "stopv": 17,
             "stopp": 8,
@@ -5237,7 +5237,7 @@
             "startp": 1,
             "stopc": 1,
             "stopv": 20,
-            "stopp": 11,
+            "stopp": 10,
             "note": "no break in text"
         },
         {
@@ -5249,7 +5249,7 @@
             "bkid": "2Samuel",
             "startc": 1,
             "startv": 20,
-            "startp": 12,
+            "startp": 11,
             "stopc": 2,
             "stopv": 17,
             "stopp": 3,
@@ -5342,7 +5342,7 @@
             "startp": 1,
             "stopc": 6,
             "stopv": 19,
-            "stopp": 11,
+            "stopp": 10,
             "note": "column 2 starts 'late' due to a big erasure"
         },
         {
@@ -5354,7 +5354,7 @@
             "bkid": "2Samuel",
             "startc": 6,
             "startv": 19,
-            "startp": 12,
+            "startp": 11,
             "stopc": 7,
             "stopv": 20,
             "stopp": 8,
@@ -6587,7 +6587,7 @@
             "startp": 8,
             "stopc": 13,
             "stopv": 21,
-            "stopp": 16,
+            "stopp": 15,
             "note": null
         },
         {
@@ -6599,7 +6599,7 @@
             "bkid": "2Kings",
             "startc": 13,
             "startv": 21,
-            "startp": 17,
+            "startp": 16,
             "stopc": 14,
             "stopv": 15,
             "stopp": 11,

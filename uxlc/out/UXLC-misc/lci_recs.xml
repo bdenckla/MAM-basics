@@ -47,7 +47,7 @@
         <type-count col-name="stopc" integer="978" none="4" />
         <type-count col-name="stopv" integer="978" none="4" />
         <type-count col-name="stopp" integer="978" none="4" />
-        <type-count col-name="note" none="941" string="41" />
+        <type-count col-name="note" none="940" string="42" />
       </type-counts>
       <bkid-val-counts>
         <bkid-val-count bkid="Genesis" count="61" />
@@ -5071,7 +5071,7 @@
       <stopc>20</stopc>
       <stopv>12</stopv>
       <stopp>3</stopp>
-      <note />
+      <note>column 1 has 28 lines</note>
     </lci_rec>
     <lci_rec>
       <page>162A</page>
@@ -5235,7 +5235,7 @@
       <startp>15</startp>
       <stopc>29</stopc>
       <stopv>6</stopv>
-      <stopp>27</stopp>
+      <stopp>28</stopp>
       <note />
     </lci_rec>
     <lci_rec>
@@ -5247,7 +5247,7 @@
       <bkid>1Samuel</bkid>
       <startc>29</startc>
       <startv>6</startv>
-      <startp>28</startp>
+      <startp>29</startp>
       <stopc>30</stopc>
       <stopv>17</stopv>
       <stopp>8</stopp>
@@ -5295,7 +5295,7 @@
       <startp>1</startp>
       <stopc>1</stopc>
       <stopv>20</stopv>
-      <stopp>11</stopp>
+      <stopp>10</stopp>
       <note>no break in text</note>
     </lci_rec>
     <lci_rec>
@@ -5307,7 +5307,7 @@
       <bkid>2Samuel</bkid>
       <startc>1</startc>
       <startv>20</startv>
-      <startp>12</startp>
+      <startp>11</startp>
       <stopc>2</stopc>
       <stopv>17</stopv>
       <stopp>3</stopp>
@@ -5400,7 +5400,7 @@
       <startp>1</startp>
       <stopc>6</stopc>
       <stopv>19</stopv>
-      <stopp>11</stopp>
+      <stopp>10</stopp>
       <note>column 2 starts 'late' due to a big erasure</note>
     </lci_rec>
     <lci_rec>
@@ -5412,7 +5412,7 @@
       <bkid>2Samuel</bkid>
       <startc>6</startc>
       <startv>19</startv>
-      <startp>12</startp>
+      <startp>11</startp>
       <stopc>7</stopc>
       <stopv>20</stopv>
       <stopp>8</stopp>
@@ -6645,7 +6645,7 @@
       <startp>8</startp>
       <stopc>13</stopc>
       <stopv>21</stopv>
-      <stopp>16</stopp>
+      <stopp>15</stopp>
       <note />
     </lci_rec>
     <lci_rec>
@@ -6657,7 +6657,7 @@
       <bkid>2Kings</bkid>
       <startc>13</startc>
       <startv>21</startv>
-      <startp>17</startp>
+      <startp>16</startp>
       <stopc>14</stopc>
       <stopv>15</stopv>
       <stopp>11</stopp>
