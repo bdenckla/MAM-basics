@@ -1,4 +1,8 @@
-"""Build the offline Introduction/doc-note research inventory; no product writes."""
+"""Build the offline Introduction/doc-note research inventory.
+
+Its one product write is ``review``'s published copy of the review page,
+``gh-pages/intro-doc-audit/index.html``, an orphan page that no other page links to.
+"""
 
 import sys
 import ctypes

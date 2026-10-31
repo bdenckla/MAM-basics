@@ -36,6 +36,12 @@ or Wikisource. Any later application or submission needs its own recorded scope.
   available locally; rendering fails rather than substituting another version.
 - `review.html` and `human-review-coverage.json` are generated. Opening or
   collapsing a case is UI state only; it is neither a decision nor completion.
+- `review` also writes `gh-pages/intro-doc-audit/index.html`, the page's published
+  copy. It differs from `review.html` only in its font path and in linking this
+  directory's notes on GitHub. Ben asked on 2026-10-31 that the page be served from
+  gh-pages as an orphan: no page links to it, so only its URL,
+  <https://bdenckla.github.io/MAM-basics/intro-doc-audit/>, reaches it. A change to
+  it reaches the site at Ben's next dispatch of the Pages workflow.
 - Every quoted passage links to the live Wikisource page: an Introduction
   passage at the nearest heading at or above its snapshot line, a doc-note or
   verse at its verse anchor on MAM's chapter page. Ben chose live links on
@@ -110,7 +116,11 @@ git diff --check
 Linux uses `./.venv/bin/python`; a linked worktree uses its home clone's absolute
 interpreter. The entrypoint lowers its own Windows process priority. A prose or
 decision edit normally needs only `review`; run `history-inventory` when history
-dispositions change. Inspect every changed output. The original reproduction
+dispositions change. Inspect every changed output. The suite's lints over every
+published page cover the published copy, so after a rebuild that changes its prose,
+run `py/main_test.py` on `py/tests/test_prose_conventions.py`,
+`py/tests/test_transliterations.py` and `py/tests/test_no_machine_paths_in_artifacts.py`.
+The original reproduction
 checks 717 literal passages and twelve proposed quotations; explain any intentional
 change rather than treating a changed count as approval. No full mega or suite is
 needed for this documentation/research workflow without a specific consequence.

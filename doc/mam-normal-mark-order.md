@@ -99,6 +99,8 @@ prose lint, rather than normalized or treated as current authored examples.
 The Introduction/doc-note research also preserves original quotation order, as
 `doc/intro-doc-audit/RUNBOOK.md` requires. Its generated `review.html` is excluded
 by exact path; the review renderer validates the literal passages and proposals.
+The page's published copy, `gh-pages/intro-doc-audit/index.html`, carries the same
+quotations; the lint does not reach `gh-pages/`.
 In the maintained Deuteronomy comparison, Jeremiah adjudication and Lamentations
 proposal notes, only their named literal-quotation containers are exempt. Their
 authored prose remains checked. Neither exception changes the preserved strings.
