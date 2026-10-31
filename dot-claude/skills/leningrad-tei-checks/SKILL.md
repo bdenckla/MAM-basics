@@ -75,9 +75,12 @@ view a fresh file name, close the previous tab, and use neither a query string n
   mega steps that read the index, read every diff, and say in the commit what each regenerated file
   changes, as `cb878aef` and `05f51588` did. Then comment on issue 1076 with the commit's link.
 - **A wrong UXLC locator:** an override copy under `uxlc/in/UXLC-misc-fixed/`, a byte-for-byte copy
-  of the change list with only the corrected value changed, as `a961e13a` made; the corrected line
-  counts only lines holding text. `doc/uxlc-potential-corrections.md`, section 9, points to the
-  copies.
+  of the change list with only the corrected value changed, as `a961e13a` made, and an entry in
+  that folder's `corrections.json`: the list, the record, the field, the UXLC's value, the corrected
+  value, the line counted IB, whether the value is a reading or an estimate, and the evidence. The
+  corrected line counts only lines holding text, NIB, as the UXLC's locators do.
+  `py/tests/test_uxlc_misc_fixed.py` checks each copy against its original and the manifest, and
+  `doc/uxlc-potential-corrections.md`, section 9, points to the folder.
 - **An error in the TEI:** a new issue in `charlesLoder/leningrad-codex-tei`, the one tracker
   outside MAM-basics and MAM-private that takes new issues (`github-issues`,
   `references/reading-and-writing.md`, section 2, item 2). Keep it short and in that tracker's

@@ -1,0 +1,236 @@
+{
+  "about": {
+    "description": "MAM-basics' corrections to values in the UXLC's change lists. Each is held in this folder's override copy of its list, which py/uxlc_changes/uxlc_misc_path.py reads in place of the original in uxlc/in/UXLC-misc/. py/tests/test_uxlc_misc_fixed.py checks that each copy differs from its original exactly as this file says.",
+    "line_counts": "A line number here, as in the copies, counts only the column's lines that hold writing (NIB, not including blank lines), as the UXLC's locators do. line_ib gives the same line counted from the column's top with every ruled line, blank lines included (IB), as MAM-basics counts elsewhere; the two differ only where a blank line lies above the line.",
+    "retiring": "When the UXLC adopts a correction, its list's next download makes the original hold MAM-basics' value, and the test fails on that entry: retire the entry, and delete a copy that no longer holds any.",
+    "fields": {
+      "list": "The change list's file name.",
+      "record": "The change record: its changeset date, a hyphen and its number.",
+      "field": "The corrected element of the record's <lc>: column or line.",
+      "uxlc": "The value in the original, empty for an empty element.",
+      "mam_basics": "The value in the copy.",
+      "line_ib": "For a line, the same line counted IB; null for an estimate, which counts no lines.",
+      "kind": "reading: read on Sefaria's photograph of the page. estimate: the location estimator's value, standing in for a value the UXLC leaves empty.",
+      "date": "When MAM-basics' value was established.",
+      "evidence": "A summary; the commit named in it, or the commit that added the entry, has the details."
+    }
+  },
+  "corrections": [
+    {
+      "list": "2020.02.19 - Changes.xml",
+      "record": "2020.01.30-3",
+      "field": "line",
+      "uxlc": "25",
+      "mam_basics": "24",
+      "line_ib": "24",
+      "kind": "reading",
+      "date": "2026-10-31",
+      "evidence": "Deut 5:15.1 begins line 24 of column 1 of page F102B, a column of 27 lines with no blank line; Charles Loder's TEI agrees (a961e13a)."
+    },
+    {
+      "list": "2020.02.19 - Changes.xml",
+      "record": "2020.01.30-4",
+      "field": "line",
+      "uxlc": "27",
+      "mam_basics": "26",
+      "line_ib": "26",
+      "kind": "reading",
+      "date": "2026-10-31",
+      "evidence": "Deut 5:15.11 is the third atom of line 26 of F102B's column 1, the column's second-to-last line; the TEI agrees (a961e13a)."
+    },
+    {
+      "list": "2021.04.01 - Changes.xml",
+      "record": "2021.02.22-15",
+      "field": "line",
+      "uxlc": "20",
+      "mam_basics": "21",
+      "line_ib": "21",
+      "kind": "reading",
+      "date": "2026-10-31",
+      "evidence": "Lev 13:3.12 is on line 21 of F063A's column 2, with no blank line above it; line 20 begins with the verse's other copy of the word, atom 4; the TEI agrees (826d6775)."
+    },
+    {
+      "list": "2022.04.01 - Changes.xml",
+      "record": "2021.12.28-2",
+      "field": "line",
+      "uxlc": "1",
+      "mam_basics": "3",
+      "line_ib": "3",
+      "kind": "reading",
+      "date": "2026-10-31",
+      "evidence": "Lev 26:35.3 is on line 3 of F073A's column 1, with no blank line above it, as the UXLC's own earlier record 2021.02.22-17 and the TEI also say (826d6775)."
+    },
+    {
+      "list": "2022.07.04 - Changes.xml",
+      "record": "2022.04.04-6",
+      "field": "line",
+      "uxlc": "26",
+      "mam_basics": "25",
+      "line_ib": "25",
+      "kind": "reading",
+      "date": "2026-10-31",
+      "evidence": "Num 9:17.6 is on line 25 of F080B's column 3, with no blank line above it; the TEI agrees (826d6775)."
+    },
+    {
+      "list": "2022.10.19 - Changes.xml",
+      "record": "2022.07.02-20",
+      "field": "line",
+      "uxlc": "4",
+      "mam_basics": "5",
+      "line_ib": "5",
+      "kind": "reading",
+      "date": "2026-10-31",
+      "evidence": "Num 11:20.19 begins line 5 of F082A's column 2; the stain at the left end of line 4 does not read as this atom; the TEI agrees (a961e13a)."
+    },
+    {
+      "list": "2022.10.19 - Changes.xml",
+      "record": "2022.07.02-41",
+      "field": "line",
+      "uxlc": "18",
+      "mam_basics": "20",
+      "line_ib": "20",
+      "kind": "reading",
+      "date": "2026-10-31",
+      "evidence": "Deut 28:42.6 begins line 20 of F115B's column 3, a column of 27 lines with no blank line; the TEI agrees (a961e13a)."
+    },
+    {
+      "list": "2023.10.19 - Changes.xml",
+      "record": "2023.08.10-10",
+      "field": "line",
+      "uxlc": "10",
+      "mam_basics": "9",
+      "line_ib": "9",
+      "kind": "reading",
+      "date": "2026-10-31",
+      "evidence": "2 Chr 27:4.7 is the second atom of line 9 of F359A's column 2, and line 10 begins 2 Chr 27:5; the TEI agrees (a961e13a)."
+    },
+    {
+      "list": "2024.04.01 - Changes.xml",
+      "record": "2023.09.16-10",
+      "field": "line",
+      "uxlc": "25",
+      "mam_basics": "24",
+      "line_ib": "24",
+      "kind": "reading",
+      "date": "2026-10-31",
+      "evidence": "2 Chr 21:2.15 is the third atom of line 24 of F355B's column 1, a column of 27 lines; the TEI agrees (a961e13a)."
+    },
+    {
+      "list": "2024.04.01 - Changes.xml",
+      "record": "2023.09.16-12",
+      "field": "line",
+      "uxlc": "18",
+      "mam_basics": "17",
+      "line_ib": "17",
+      "kind": "reading",
+      "date": "2026-10-31",
+      "evidence": "2 Chr 22:12.7 ends line 17 of F356A's column 3; the column's blank line 19 is below it; the TEI agrees (a961e13a)."
+    },
+    {
+      "list": "2024.04.01 - Changes.xml",
+      "record": "2023.11.10-3",
+      "field": "line",
+      "uxlc": "9",
+      "mam_basics": "11",
+      "line_ib": "12",
+      "kind": "reading",
+      "date": "2026-10-31",
+      "evidence": "Deut 17:9.12 is on line 12/11 IB/NIB of F109B's column 3, whose line 3 is blank; the TEI, which leaves out that blank line, says 11 (a961e13a)."
+    },
+    {
+      "list": "2026.10.19 - Changes.xml",
+      "record": "2026.04.10-4",
+      "field": "line",
+      "uxlc": "7",
+      "mam_basics": "6",
+      "line_ib": "6",
+      "kind": "reading",
+      "date": "2026-10-31",
+      "evidence": "2 Sam 11:11.10, with its prefixed vav, is the third atom of line 6 of F174A's column 1; line 7 holds the verse's other copy of the word, without the vav; the TEI agrees (a961e13a)."
+    },
+    {
+      "list": "2026.10.19 - Changes.xml",
+      "record": "2026.08.05-5",
+      "field": "column",
+      "uxlc": "",
+      "mam_basics": "2",
+      "kind": "estimate",
+      "date": "2026-10-20",
+      "evidence": "The record gives page F043A and no column or line; the location estimator's value (869234b2)."
+    },
+    {
+      "list": "2026.10.19 - Changes.xml",
+      "record": "2026.08.05-5",
+      "field": "line",
+      "uxlc": "",
+      "mam_basics": "19",
+      "line_ib": null,
+      "kind": "estimate",
+      "date": "2026-10-20",
+      "evidence": "The record gives page F043A and no column or line; the location estimator's value (869234b2)."
+    },
+    {
+      "list": "2026.10.19 - Changes.xml",
+      "record": "2026.08.05-10",
+      "field": "column",
+      "uxlc": "",
+      "mam_basics": "2",
+      "kind": "reading",
+      "date": "2026-10-31",
+      "evidence": "Lev 25:20.4 is on line 16 of F071B's column 2, as Ben's record 2020.12.22-2 and the TEI also say (826d6775)."
+    },
+    {
+      "list": "2026.10.19 - Changes.xml",
+      "record": "2026.08.05-10",
+      "field": "line",
+      "uxlc": "",
+      "mam_basics": "16",
+      "line_ib": "16",
+      "kind": "reading",
+      "date": "2026-10-31",
+      "evidence": "Lev 25:20.4 is on line 16 of F071B's column 2, as Ben's record 2020.12.22-2 and the TEI also say (826d6775)."
+    },
+    {
+      "list": "2026.10.19 - Changes.xml",
+      "record": "2026.08.05-25",
+      "field": "column",
+      "uxlc": "",
+      "mam_basics": "2",
+      "kind": "estimate",
+      "date": "2026-10-20",
+      "evidence": "The record gives page F406B and no column or line; the location estimator's value (869234b2)."
+    },
+    {
+      "list": "2026.10.19 - Changes.xml",
+      "record": "2026.08.05-25",
+      "field": "line",
+      "uxlc": "",
+      "mam_basics": "27",
+      "line_ib": null,
+      "kind": "estimate",
+      "date": "2026-10-20",
+      "evidence": "The record gives page F406B and no column or line; the location estimator's value (869234b2)."
+    },
+    {
+      "list": "2026.10.19 - Changes.xml",
+      "record": "2026.08.05-47",
+      "field": "column",
+      "uxlc": "",
+      "mam_basics": "2",
+      "kind": "estimate",
+      "date": "2026-10-20",
+      "evidence": "The record gives page F367B and no column or line; the location estimator's value (869234b2)."
+    },
+    {
+      "list": "2026.10.19 - Changes.xml",
+      "record": "2026.08.05-47",
+      "field": "line",
+      "uxlc": "",
+      "mam_basics": "22",
+      "line_ib": null,
+      "kind": "estimate",
+      "date": "2026-10-20",
+      "evidence": "The record gives page F367B and no column or line; the location estimator's value (869234b2)."
+    }
+  ]
+}

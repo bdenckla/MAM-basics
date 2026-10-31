@@ -222,16 +222,31 @@ Taamey D positions Job 32:6's ḥiriq under the shin, left of the atnaḥ.
 Correction: in Job 32:6 and 10:15, replace the ZWJ with a CGJ; in Job 19:16, remove it. CLC
 does not cover Job yet; it could make the same corrections if the UXLC does not.
 
-## 9. Thirteen locators corrected in override copies, 2026-10-31
+## 9. Locators corrected in override copies, 2026-10-31
 
 A comparison of the UXLC change records with Charles Loder's leningrad-codex-tei found nine records
 whose locators disagree with Sefaria's photographs, on a Claude session's reading of crops of them.
 Ben decided on 2026-10-31 to "record them (i.e. record fixes to them) in uxlc/in/UXLC-misc-fixed",
 with only a pointer here. Later that day, asked whether the same should be done for section 1's
-three and for the estimate that section 2 finds two lines off, he answered "Yes, fix them". The
-folder holds MAM-basics' override copies of the change lists, which
-`py/uxlc_changes/uxlc_misc_path.py` reads in place of the copies in `uxlc/in/UXLC-misc/`; diff an
-override copy against its original to see its corrections. The thirteen are in the override copies
-of the 2020.02.19, 2021.04.01, 2022.04.01, 2022.07.04, 2022.10.19, 2023.10.19 and 2024.04.01
-lists, made for them, and of the 2026.10.19 list, the copy that section 3 describes. Each corrected
-line number counts only lines that hold text, as the UXLC's locators do.
+three and for the estimate that section 2 finds two lines off, he answered "Yes, fix them". Asked
+then to accept five recommendations, among them the manifest and test below, he answered "Accept
+all five".
+
+The folder holds MAM-basics' override copies of the change lists, which
+`py/uxlc_changes/uxlc_misc_path.py` reads in place of the copies in `uxlc/in/UXLC-misc/`. Its
+`corrections.json` lists every value in which a copy differs from its original: the list, the
+record, the field, the UXLC's value, MAM-basics' value, whether that value is a reading of
+Sefaria's photograph or the location estimator's estimate, and a summary of the evidence.
+`py/tests/test_uxlc_misc_fixed.py` checks that each copy differs from its original exactly as
+`corrections.json` says. When the UXLC adopts a correction and its list is downloaded again, the
+original holds MAM-basics' value and the test fails on that entry, which is then retired; a copy
+that no longer holds any correction is deleted.
+
+The copies and `corrections.json` count a column's lines as the UXLC's locators do, only those that
+hold writing: NIB, not including blank lines. MAM-basics elsewhere counts IB, including blank
+lines, and `corrections.json` gives each corrected line IB as well. The two counts differ for one
+record, 2023.11.10-3, whose atom is on line 12/11 IB/NIB of page F109B's column 3.
+
+On 2026-10-31 the copies held the locators of sixteen records: twelve whose line the photographs
+show to be wrong, and the four of section 3 whose column and line the UXLC leaves empty. Three of
+the four, 2026.08.05-5, -25 and -47, still held the location estimator's values.
