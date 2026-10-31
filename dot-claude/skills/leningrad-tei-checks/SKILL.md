@@ -25,7 +25,8 @@ image.
 - **The UXLC change records' locators**, the page, column and line in
   `in/UXLC-misc/all_changes.json`, are human readings and make a sparse index that is usually
   right. They count only lines that hold writing, so below a blank line a locator's line number is
-  smaller than a count of ruled lines; a few records also count a line of erased writing. A line
+  smaller than a count of ruled lines; a few records also count a line of erased writing. Give
+  such a line both ways, IB/NIB, as `hebrew-prose`'s terminology reference says. A line
   such as "1-2" is a range, and
   `py/uxlc_changes/uxlc_changes_loc.py` forces column 1 on F182A and F182B. Find a record's atom by
   its `reftext` as well as its position: the UXLC's positions count `<w>`, `<k>` and `<q>`, and an

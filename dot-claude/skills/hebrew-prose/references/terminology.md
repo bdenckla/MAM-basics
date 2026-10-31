@@ -514,6 +514,23 @@ follows a source's own term or citation form: the "LC folio index" that `in/lci_
 compiles, the "folio references" of MAM's daf-and-amud citations such as `(8ב)`, and a
 catalog's "fol." locators.
 
+## A manuscript line is counted with its blank lines, and given both ways where that differs
+
+Ben's decision, 2026-10-31: number a column's lines from its top, counting every ruled line, blank
+lines included (his "cartesian" count). Where a layout defeats a plain count, keep the count and
+add a description, in prose or in structured data. In his words: *"that doesn't mean the cartesian
+system isn't still the best default, to be supplemented with sometimes-freeform descriptions,
+sometimes-structured descriptions."* The page that prompted this was F094A: its column 1 has 27
+lines of text and two gaps after open paragraphs, which Charles Loder's TEI counts as blank lines
+17 and 25, in the height of column 3's 29 lines of text.
+
+Where a blank line lies above the line named, give both counts: "line 13 including two blank lines
+(line 11 if only non-blank lines are counted)", or "line 13/11 IB/NIB", IB including blank lines
+and NIB not. Define IB and NIB once wherever a reader may not know them. A blank line has no
+writing on it. A line holding only erased writing or only a Masorah note is not blank, and its
+description says what it holds. Charles Loder's TEI, MAM-basics' Leningrad index and its line
+data for other manuscripts count IB; the UXLC's change records count NIB.
+
 ## Sheva, shewa, and `MUDGASH`
 
 - **Use `sheva` only when the text stays close to a Unicode code point.** A short lowercase name
