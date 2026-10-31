@@ -2,21 +2,22 @@
 
 A stroke-SVG beside each crop in doc/pen-stroke-snips/ describes the crop's ink
 as filled outlines and as pen strokes, under the profile in
-doc/pen-stroke-representation.md.  Its medians, groups, frame and judgments are
-authored; this program derives the rest from the crop.  It reads only files in
-this repository.
+doc/pen-stroke-representation.md.  Its strokes' medians and widths, its groups,
+frame and judgments are authored; this program derives the rest from the crop.
+It reads only files in this repository.
 
 Subcommands:
     init
         Usage: init CROP [--set KEY=VALUE ...] [--threshold T]
         Write CROP's stroke-SVG beside it, with the provenance given, the crop's
-        Otsu threshold unless one is given, nibs fitted to its ink, and the
-        derived level-1 parts.  Refuses to overwrite an existing stroke-SVG.
+        Otsu threshold unless one is given, and the derived level-1 parts.
+        Refuses to overwrite an existing stroke-SVG.
     nibfit
         Usage: nibfit CROP-OR-SVG [--threshold T] [--split PIXELS]
-        Print the stiff nib that best fits the ink's width against its direction:
-        for a crop, the letters and marks told apart by component size; for a
-        stroke-SVG, the ink under each nib's strokes.  Writes nothing.
+        Print the stiff nib that best fits the ink's width against its direction,
+        a statistic of the ink: for a crop, the letters and marks told apart by
+        component size; for a stroke-SVG, the ink under each pass's strokes.
+        Writes nothing.
     derive
         Usage: derive [SVG ...]
         Recompute the derived parts of the stroke-SVGs given, or of all of them.

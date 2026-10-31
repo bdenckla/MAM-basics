@@ -1,22 +1,26 @@
-"""Level 3: a stroke's shape class, from its median and nib alone.
+"""Level 3: a stroke's shape class, from its median and widths alone.
 
 The classes need no frame of reference: a bar is straight, not horizontal.
 """
 
 import math
 
+from pen_stroke import curve
+
 SHAPES = ("dot", "bar", "corner", "curve")
 
-# A turn at one vertex of at least this many degrees makes a corner.
+# A turn of at least this many degrees where two segments meet makes a corner.
 _CORNER_DEGREES = 60.0
 
 
-def shape_class(points, nib):
+def shape_class(segs, widths):
     """The stroke's class: "dot", "bar", "corner" (one sharp turn) or "curve"."""
-    pts = [p for k, p in enumerate(points) if k == 0 or p != points[k - 1]]
-    length = sum(math.dist(a, b) for a, b in zip(pts, pts[1:]))
-    if length <= max(2.0, 0.5 * nib.width):
+    length = curve.length(segs)
+    sws = curve.segment_widths(widths, len(segs))
+    widest = max(curve.width(ws, k / 16) for ws in sws for k in range(17))
+    if length <= max(2.0, 0.5 * widest):
         return "dot"
+    pts = [curve.point(seg, k / 32) for seg in segs for k in range(33)]
     (x0, y0), (x1, y1) = pts[0], pts[-1]
     chord = math.dist(pts[0], pts[-1])
     if chord > 0:
@@ -25,11 +29,6 @@ def shape_class(points, nib):
         )
         if dev <= max(1.0, 0.1 * length):
             return "bar"
-    turns = []
-    for a, b, c in zip(pts, pts[1:], pts[2:]):
-        h1 = math.atan2(b[1] - a[1], b[0] - a[0])
-        h2 = math.atan2(c[1] - b[1], c[0] - b[0])
-        turns.append(abs(math.degrees((h2 - h1 + math.pi) % (2 * math.pi) - math.pi)))
-    if sum(t >= _CORNER_DEGREES for t in turns) == 1:
+    if sum(t >= _CORNER_DEGREES for t in curve.join_turns(segs)) == 1:
         return "corner"
     return "curve"

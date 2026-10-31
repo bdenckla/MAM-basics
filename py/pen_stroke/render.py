@@ -3,16 +3,18 @@
 The strokes are filled translucently, each in the next of the five colours
 Collidoscope's draw_overlaps gives glyphs (green, red, purple, blue, yellow),
 so that where two strokes overlap their colours mix; the other layers can be
-switched on and off.  Writes doc/pen-stroke-snips/overlays.html.
+switched on and off.  One layer draws the strokes black, so that with the crop
+off they show the page unaged, black on white (decision 11 of the profile's
+note).  Writes doc/pen-stroke-snips/overlays.html.
 """
 
 import html
-import math
 from collections import Counter
 from pathlib import Path
 
 import numpy as np
 
+from pen_stroke import curve
 from pen_stroke import derive as dv
 from pen_stroke import geometry as geo
 from pen_stroke import level5
@@ -46,6 +48,7 @@ LAYERS = (
     ("smoothing", "level 1: smoothing slivers", False),
     ("pieces", "level 1: residual pieces", False),
     ("strokes", "level 2: strokes", True),
+    ("black", "level 2: strokes in black, for the page unaged", False),
     ("medians", "level 2: medians", True),
     ("unexplained", "level 2: ink no stroke explains", False),
     ("overshoot", "level 2: sweep beyond the ink", False),
@@ -110,8 +113,7 @@ def _crop_metrics(sf):
         polys = geo.flatten(geo.parse_path(st.ink))
         mask = geo.rasterize(polys, w, h)
         union |= mask
-        pts = dv.median_points(st)
-        length = sum(math.dist(a, b) for a, b in zip(pts, pts[1:]))
+        length = curve.length(dv.median_segments(st))
         area = int(mask.sum())
         over = int((mask & ~ink_px).sum())
         rows.append((st, length, area, over))
@@ -173,15 +175,16 @@ def _svg(sf, groups_of):
             f'<path fill="{KIND_COLOURS[family]}" d="{st.ink}"><title>{_e(", ".join(kinds))}</title></path>'
         )
     out.append("</g>")
+    out.append('<g class="layer-black" fill="#000">')
+    out += [f'<path d="{st.ink}"/>' for st in sf.strokes]
+    out.append("</g>")
     out.append('<g class="layer-medians" fill="none" stroke="#000" stroke-width="0.5">')
     for st in sf.strokes:
-        pts = dv.median_points(st)
-        out.append(
-            f'<path d="{geo.format_path([(pts[0], [("L", p) for p in pts[1:]], False)], 2)}"/>'
-        )
+        segs = dv.median_segments(st)
+        out.append(f'<path d="{st.median}"/>')
         out += [
             f'<circle cx="{geo.fmt(x, 2)}" cy="{geo.fmt(y, 2)}" r="0.6" fill="#000"/>'
-            for x, y in pts
+            for x, y in [segs[0][0]] + [seg[3] for seg in segs]
         ]
     out.append("</g>")
     out.append(
@@ -201,7 +204,7 @@ def _svg(sf, groups_of):
         out.append("</g>")
     out.append('<g class="layer-labels" font-size="4" fill="#000">')
     for st in sf.strokes:
-        x, y = dv.median_points(st)[0]
+        x, y = dv.median_segments(st)[0][0]
         out.append(
             f'<text x="{geo.fmt(x + 0.8, 2)}" y="{geo.fmt(y - 0.8, 2)}">{_e(st.id)}</text>'
         )
@@ -225,6 +228,14 @@ def _section(svg_path):
     out.append(
         f"<tr><th>Verse in the UXLC</th><td>{_e(pv.get('uxlc-verse', ''))}</td></tr>"
     )
+    if "combined-chanted-word" in pv:
+        out.append(
+            "<tr><th>Chanted word, both strands combined: the primary transcription</th>"
+            f'<td dir="rtl" lang="hbo">{_e(pv["combined-chanted-word"])}</td></tr>'
+        )
+        out.append(
+            f"<tr><th>Its source</th><td>{_e(pv.get('combined-source', ''))}</td></tr>"
+        )
     for key, label in (
         ("taxton-chanted-word", "תחתון"),
         ("elyon-chanted-word", "עליון"),
@@ -241,7 +252,6 @@ def _section(svg_path):
     )
     out.append("</table>")
     out.append(_svg(sf, groups_of))
-    nl, nm = sf.nibs[level5.LETTERS], sf.nibs[level5.MARKS]
     swept = m["swept"] or 1
     ink = m["ink"] or 1
     judged = Counter(p.judged for p in sf.pieces)
@@ -250,11 +260,6 @@ def _section(svg_path):
         f"<tr><th>Threshold</th><td>luminance below {sf.threshold}; specks of up to"
         f" {sf.speck_size} pixels dropped; halo &#177;{sf.halo_band}</td></tr>"
     )
-    for name, nb in (("letters", nl), ("marks", nm)):
-        out.append(
-            f"<tr><th>Nib for {name}</th><td>width {geo.fmt(nb.width, 2)} px, angle"
-            f" {geo.fmt(nb.angle, 1)}&#176;, edge {geo.fmt(nb.edge, 2)} px</td></tr>"
-        )
     out.append(
         f"<tr><th>Ink</th><td>{m['ink']} pixels in the fills judged ink</td></tr>"
     )
@@ -275,18 +280,22 @@ def _section(svg_path):
     )
     out.append("</table>")
     out.append(
-        "<table><tr><th>Stroke</th><th>Groups</th><th>Nib</th><th>Shape</th>"
-        "<th>Length (px)</th><th>Area (px)</th><th>Beyond the ink (px)</th>"
-        "<th>Confidence</th><th>Note</th></tr>"
+        "<table><tr><th>Stroke</th><th>Groups</th><th>Pass</th><th>Ends</th>"
+        "<th>Shape</th><th>Segments</th><th>Length (px)</th><th>Width (px)</th>"
+        "<th>Area (px)</th><th>Beyond the ink (px)</th><th>Confidence</th>"
+        "<th>Note</th></tr>"
     )
     for k, (st, length, area, over) in enumerate(m["strokes"]):
         colour = STROKE_COLOURS[k % len(STROKE_COLOURS)]
         share = f"{over} ({100 * over / area:.0f}%)" if area else "0"
+        nseg = len(dv.median_segments(st))
+        widths = f"{min(st.widths):.1f} to {max(st.widths):.1f}"
         out.append(
             f'<tr><td><span class="swatch" style="background:{colour};opacity:0.6"></span>'
             f" {_e(st.id)}</td><td>{_e(', '.join(groups_of.get(st.id, [])))}</td>"
-            f"<td>{_e(st.nib)}</td><td>{_e(st.shape)}</td>"
-            f'<td class="num">{length:.1f}</td><td class="num">{area}</td>'
+            f"<td>{_e(st.pass_name)}</td><td>{_e(st.ends)}</td><td>{_e(st.shape)}</td>"
+            f'<td class="num">{nseg}</td><td class="num">{length:.1f}</td>'
+            f'<td class="num">{widths}</td><td class="num">{area}</td>'
             f'<td class="num">{share}</td><td>{_e(st.confidence)}</td><td>{_e(st.note)}</td></tr>'
         )
     out.append("</table>")
@@ -319,8 +328,9 @@ def page(svg_paths):
 <body>
 <h1>Pen-stroke overlays</h1>
 <p class="ai-caveat"><strong>Strokes traced by an AI model, not yet reviewed by a human.</strong>
-Claude, an AI model, placed every stroke's median on this page by eye and judged every residual
-piece, so read the strokes as a draft.</p>
+Claude, an AI model, placed every stroke's median on this page by eye, had a script smooth it
+into curves and fit its widths and ends to the ink, and judged every residual piece, so read the
+strokes as a draft.</p>
 <p>Each crop of the Leningrad Codex is drawn four times its size, with its stroke-SVG over it.
 The profile, and what each layer means, are in
 <a href="../pen-stroke-representation.md">doc/pen-stroke-representation.md</a>; this page is

@@ -9,13 +9,13 @@ always writes the same text for the same content, drops them.
 import xml.etree.ElementTree as ET
 from dataclasses import dataclass, field
 
+from pen_stroke import curve
 from pen_stroke import geometry as geo
 from pen_stroke import level1
 from pen_stroke import level3
 from pen_stroke import level5
-from pen_stroke.nib import Nib
 
-PROFILE = "pen-stroke 1"
+PROFILE = "pen-stroke 2"
 _SVG = "http://www.w3.org/2000/svg"
 _XLINK = "http://www.w3.org/1999/xlink"
 _EDITOR_NAMESPACES = (
@@ -32,6 +32,8 @@ PROVENANCE_KEYS = (
     "line-read-by",
     "mam-verse",
     "uxlc-verse",
+    "combined-chanted-word",
+    "combined-source",
     "taxton-chanted-word",
     "elyon-chanted-word",
     "crop-note",
@@ -41,8 +43,9 @@ PROVENANCE_KEYS = (
     "crop-box",
     "strokes-by",
 )
-NIB_CLASSES = (level5.LETTERS, level5.MARKS)
+PASSES = (level5.LETTERS, level5.MARKS)
 CONFIDENCES = ("high", "medium", "low")
+WIDTH_PLACES = 2
 
 STYLE = """
 .fills path { fill: #000; fill-opacity: 0.2 }
@@ -70,13 +73,14 @@ class Piece:
 @dataclass
 class Stroke:
     id: str
-    nib: str
+    pass_name: str
     median: str
+    widths: list
+    ends: str
     ink: str = ""
     shape: str = ""
     confidence: str = "high"
     note: str = ""
-    override: Nib | None = None
 
 
 @dataclass
@@ -102,7 +106,6 @@ class StrokeFile:
     threshold: int
     speck_size: int
     halo_band: int
-    nibs: dict
     tracer: str = level1.TRACER
     fills: list = field(default_factory=list)
     pieces: list = field(default_factory=list)
@@ -113,9 +116,6 @@ class StrokeFile:
     overshoot: str = ""
     frame: Frame | None = None
     groups: list = field(default_factory=list)
-
-    def nib_of(self, stroke):
-        return stroke.override or self.nibs[stroke.nib]
 
 
 class ProfileError(ValueError):
@@ -166,26 +166,14 @@ def _children(el):
     return out
 
 
-def _nib_attrs(a, prefix):
-    return Nib(
-        width=float(a[f"{prefix}-width"]),
-        angle=float(a[f"{prefix}-angle"]),
-        edge=float(a[f"{prefix}-edge"]),
-    )
-
-
 def read(path):
     """The stroke-SVG at path, checked against the profile's structure."""
     root = ET.parse(path).getroot()
     if _tag(root) != "svg":
         raise ProfileError(f"{path}: root is not svg")
-    nib_keys = {
-        f"data-nib-{c}-{p}" for c in NIB_CLASSES for p in ("width", "angle", "edge")
-    }
     allowed = {"viewBox", "width", "height", "version", "data-profile", "data-channel"}
     allowed |= {f"data-{k}" for k in PROVENANCE_KEYS}
     allowed |= {"data-threshold", "data-speck-size", "data-halo-band", "data-tracer"}
-    allowed |= nib_keys
     a = _attrs(root, "root", allowed)
     if a.get("data-profile") != PROFILE:
         raise ProfileError(f"{path}: data-profile is not {PROFILE!r}")
@@ -204,10 +192,6 @@ def read(path):
         threshold=int(_require(a, "data-threshold", "root")),
         speck_size=int(_require(a, "data-speck-size", "root")),
         halo_band=int(_require(a, "data-halo-band", "root")),
-        nibs={
-            level5.LETTERS: _nib_attrs(a, "data-nib-letters"),
-            level5.MARKS: _nib_attrs(a, "data-nib-marks"),
-        },
         tracer=_require(a, "data-tracer", "root"),
     )
     seen = []
@@ -291,36 +275,48 @@ def _read_strokes(g, sf):
     for tag, el in _children(g):
         if tag != "g" or el.attrib.get("class") != "stroke":
             raise ProfileError("strokes: every child is a g.stroke")
-        nib_keys = {f"data-nib-{p}" for p in ("width", "angle", "edge")}
         a = _attrs(
             el,
             "stroke",
-            {"class", "id", "data-nib", "data-shape", "data-confidence", "data-note"}
-            | nib_keys,
+            {
+                "class",
+                "id",
+                "data-pass",
+                "data-ends",
+                "data-widths",
+                "data-shape",
+                "data-confidence",
+                "data-note",
+            },
         )
         sid = _require(a, "id", "stroke")
-        nib = _require(a, "data-nib", sid)
-        if nib not in NIB_CLASSES:
-            raise ProfileError(f"{sid}: unknown nib {nib!r}")
+        pass_name = _require(a, "data-pass", sid)
+        if pass_name not in PASSES:
+            raise ProfileError(f"{sid}: unknown pass {pass_name!r}")
+        ends = _require(a, "data-ends", sid)
+        if ends not in curve.ENDS:
+            raise ProfileError(f"{sid}: unknown ends {ends!r}")
+        try:
+            widths = [float(v) for v in _require(a, "data-widths", sid).split()]
+        except ValueError as exc:
+            raise ProfileError(f"{sid}: data-widths is not a list of numbers") from exc
+        if not widths or min(widths) <= 0:
+            raise ProfileError(f"{sid}: every width is a positive number")
         conf = a.get("data-confidence", "high")
         if conf not in CONFIDENCES:
             raise ProfileError(f"{sid}: unknown confidence {conf!r}")
         shape = a.get("data-shape", "")
         if shape and shape not in level3.SHAPES:
             raise ProfileError(f"{sid}: unknown shape {shape!r}")
-        override = None
-        if any(k in a for k in nib_keys):
-            if not all(k in a for k in nib_keys):
-                raise ProfileError(f"{sid}: a nib override gives width, angle and edge")
-            override = _nib_attrs(a, "data-nib")
         st = Stroke(
             sid,
-            nib,
+            pass_name,
             "",
+            widths,
+            ends,
             shape=shape,
             confidence=conf,
             note=a.get("data-note", ""),
-            override=override,
         )
         for ctag, child in _children(el):
             cls = child.attrib.get("class", "")
@@ -363,7 +359,7 @@ def _read_groups(g, sf):
         a = _attrs(el, "group", {"class", "id", "data-kind", "data-note"})
         gid = _require(a, "id", "group")
         kind = _require(a, "data-kind", gid)
-        level5.nib_class(kind)
+        level5.pass_of(kind)
         members = []
         for ctag, child in _children(el):
             if ctag != "use":
@@ -388,14 +384,6 @@ def _esc(s):
     )
 
 
-def _nib_text(prefix, nib):
-    return [
-        f'{prefix}-width="{geo.fmt(nib.width, 2)}"',
-        f'{prefix}-angle="{geo.fmt(nib.angle, 1)}"',
-        f'{prefix}-edge="{geo.fmt(nib.edge, 2)}"',
-    ]
-
-
 def dumps(sf):
     """The stroke-SVG's text: the same content always gives the same text."""
     root = [
@@ -415,8 +403,6 @@ def dumps(sf):
         f'data-halo-band="{sf.halo_band}"',
         f'data-tracer="{_esc(sf.tracer)}"',
     ]
-    root += _nib_text("data-nib-letters", sf.nibs[level5.LETTERS])
-    root += _nib_text("data-nib-marks", sf.nibs[level5.MARKS])
     lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
         "<svg " + "\n     ".join(root) + ">",
@@ -442,9 +428,14 @@ def dumps(sf):
     lines.append("  </g>")
     lines.append('  <g class="strokes">')
     for s in sf.strokes:
-        attrs = ['class="stroke"', f'id="{s.id}"', f'data-nib="{s.nib}"']
-        if s.override is not None:
-            attrs += _nib_text("data-nib", s.override)
+        widths = " ".join(geo.fmt(w, WIDTH_PLACES) for w in s.widths)
+        attrs = [
+            'class="stroke"',
+            f'id="{s.id}"',
+            f'data-pass="{s.pass_name}"',
+            f'data-ends="{s.ends}"',
+            f'data-widths="{widths}"',
+        ]
         if s.shape:
             attrs.append(f'data-shape="{s.shape}"')
         if s.confidence != "high":

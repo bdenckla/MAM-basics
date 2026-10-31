@@ -1,18 +1,17 @@
-"""Level 2's pen: a flat nib swept along a median, and its fit to a crop's ink.
+"""A stiff flat nib fitted to a crop's ink: a statistic, not the strokes' model.
 
 A nib is a rectangle ``width`` long and ``edge`` thick, its long side at
 ``angle`` degrees counterclockwise from the crop's x axis as seen on the page.
 Moved in a direction at angle phi, it leaves a band of ink
-width * |sin(phi - angle)| + edge * |cos(phi - angle)| thick.  The nib is
-stiff: nothing modulates its width but direction.
+width * |sin(phi - angle)| + edge * |cos(phi - angle)| thick.  The fit says how
+well the ink's width follows its direction alone.  The strokes of profile 2 are
+not swept by it; each carries widths of its own (pen_stroke.curve).
 """
 
 import math
 from dataclasses import dataclass
 
 import numpy as np
-
-from pen_stroke import geometry as geo
 
 
 @dataclass(frozen=True)
@@ -25,37 +24,6 @@ class Nib:
         """The band of ink the nib leaves moving at angle phi, in degrees."""
         a = math.radians(phi - self.angle)
         return self.width * abs(math.sin(a)) + self.edge * abs(math.cos(a))
-
-
-def corners(nib):
-    """The nib's corners relative to its centre, in crop coordinates (y down)."""
-    t = math.radians(nib.angle)
-    ux, uy = math.cos(t), -math.sin(t)
-    vx, vy = -uy, ux
-    a, b = nib.width / 2, nib.edge / 2
-    return [
-        (a * ux + b * vx, a * uy + b * vy),
-        (a * ux - b * vx, a * uy - b * vy),
-        (-a * ux - b * vx, -a * uy - b * vy),
-        (-a * ux + b * vx, -a * uy + b * vy),
-    ]
-
-
-def sweep(points, nib):
-    """The ink of the nib swept along a polyline: one convex polygon per
-    segment, whose union is the stroke.  A single point is a dab of the nib."""
-    cs = corners(nib)
-    pts = [p for k, p in enumerate(points) if k == 0 or p != points[k - 1]]
-    if len(pts) == 1:
-        x, y = pts[0]
-        return [geo.convex_hull([(x + cx, y + cy) for cx, cy in cs])]
-    polys = []
-    for (x0, y0), (x1, y1) in zip(pts, pts[1:]):
-        hull = [(x0 + cx, y0 + cy) for cx, cy in cs] + [
-            (x1 + cx, y1 + cy) for cx, cy in cs
-        ]
-        polys.append(geo.convex_hull(hull))
-    return polys
 
 
 def _blur(a):

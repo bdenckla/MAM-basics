@@ -1,6 +1,7 @@
 # The first pen-stroke exemplars, 2026-10-30
 
 State: executed 2026-10-30; four crops traced, judged and checked; Claude's readings of the marks await Ben's review
+Updates and later status: [pen-stroke-exemplars-2026-10-30-update.md](pen-stroke-exemplars-2026-10-30-update.md).
 
 Claude (Opus 5.5) wrote this record. It covers the execution of option 2 of the planning
 session "Investigate a pen-stroke manuscript representation": four crops, a level-1 tracer, a
