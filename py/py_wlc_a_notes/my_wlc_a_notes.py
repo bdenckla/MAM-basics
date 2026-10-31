@@ -803,7 +803,7 @@ RECORD_35 = {
         "The above-marks is where it gets weird, since the qere צ’s ḥolam ḥaser dot "
         "is already present on the צ of the MPK. "
         "I would expect the ḥolam ḥaser dot to be on the ר of the MPK, i.e. I would expect it to be "
-        "in its qere POSITION, not on its qere LETTER. I.e. I would expect @תִּרֹֽצְנָה׃#.",
+        "in its qere POSITION, not on its qere LETTER. I.e. I would expect @תִּרֹֽצְנָה׃#.",
         #
         "Avi, in the MAM documentation, reports that the MPK of א follows this pattern more completely: "
         "for the two letters at issue in this ketiv/qere, i.e. for the two transposed letters, "
