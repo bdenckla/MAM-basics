@@ -643,9 +643,9 @@ lookup mkmk4AbvMarks {  # XXX Symbolize the various integer literals in this loo
 lookup mkmk0BlwChainGeneral {
   # Every below mark hangs off the previous below mark, whatever their kinds, leaving the gap
   # that mkmk2BlwMarks leaves; the anchors come from each glyph's ink extents, held in
-  # main_fill_in_template.py's _BELOW_INK table. mkmk1BlwMarks and mkmk2BlwMarks, defined
-  # after this lookup, still re-attach the pairs they know, so this lookup only reaches the
-  # pairs they do not. See "Note on the general below-mark chain".
+  # py/taamey_d_build/fill_in_template.py's _BELOW_INK table. mkmk1BlwMarks and
+  # mkmk2BlwMarks, defined after this lookup, still re-attach the pairs they know, so this
+  # lookup only reaches the pairs they do not. See "Note on the general below-mark chain".
   lookupflag UseMarkFilteringSet @blws;
   markClass atnax <anchor $gen_mc_atnax 0> @A_gen;
   markClass tipxa <anchor $gen_mc_tipxa 0> @A_gen;

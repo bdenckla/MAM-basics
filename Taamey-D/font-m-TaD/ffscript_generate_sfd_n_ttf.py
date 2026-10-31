@@ -1,3 +1,7 @@
+# SPDX-License-Identifier: GPL-2.0-or-later
+# Part of Taamey D's build, which may be redistributed and modified under the terms of
+# the GNU General Public License, version 2 or (at your option) any later version.
+
 # FontForge runs this script with Taamey-D/ as its working directory, so that the base
 # path below resolves. The portable Python workflow drives it from the repository root:
 #
