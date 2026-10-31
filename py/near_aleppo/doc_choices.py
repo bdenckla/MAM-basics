@@ -892,6 +892,16 @@ _CHOICES = (
             "A rafeh at Exodus 2:3 and Deuteronomy 14:21 too, from the testimony's question",
         ),
     ),
+    Choice(
+        "2026-10-30",
+        _BEN,
+        "A plus form before near-Aleppo's word in a note's clause",
+        "Where a clause gives, after its siglum, a form in plus notation, which shows two sets of marks on one letter by writing the letter twice, joined by a plus sign, and then near-Aleppo's word in parentheses, near-Aleppo recasts the clause as an agreement, as it does a clause that gives near-Aleppo's word alone, and keeps the plus form in parentheses after the siglum, leaving out only near-Aleppo's word, which the note's target shows. The plus form must give near-Aleppo's word exactly when its doubled letter is written once with the marks of both copies. Ben's reason, given for the codex's ḥataf ḥiriq at Psalms 14:1, is that the plus form explains what the codex has, as the clause's `חטף חיריק` does, only far less abstractly and far more explicitly.",
+        (
+            "The complete original note after MAM's labelled form, no clause recast",
+            "A recast that leaves out the plus form too",
+        ),
+    ),
 )
 
 

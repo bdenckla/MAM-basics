@@ -90,7 +90,7 @@ def _candidate(note, target):
         # qualifiers remain opaque; no claim is inferred from their spelling.
         if not equals or not head or " " in head or "=" in rest:
             continue
-        if rest == target or rest.startswith(target + " "):
+        if presentations.quoting(rest, target) is not None:
             found.append(number)
     if len(found) != 1:
         return (

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "inventory_sha256": "b8f3c6da4c0fef0a23f7e92f810e67c679e4c28aed52c5df50f26262dd389c29",
+  "inventory_sha256": "31802241e8789bd58292ae0f245ed0416726ca6b59f6cf5e467d344f7f46ac43",
   "notes": [
     {
       "id": "A1-Genesis 1:1 note 1 נוסח",
@@ -26828,26 +26828,24 @@
         ],
         "partial_gap_boundaries": []
       },
-      "candidate_clause": null,
-      "proposal_reason": "No unique plain clause quoting the complete target; retain the source note.",
-      "evidence_sha256": "d32f14fee19906785f4507a8c85e133cbe998da69b204a5b27660114a77a22f1",
+      "candidate_clause": 0,
+      "proposal_reason": "One literal full-target alternative; semantic review of its suffix and other clauses required.",
+      "evidence_sha256": "08ef293b1a29fbc28ea0dd50bee78fab7318711ae71d61850bf087570c4ba4f0",
       "review": {
         "status": "reviewed",
-        "presentation": "framed-mam",
-        "reason": "The matching clause says that MAM marked hataf hiriq using sheva and hiriq. Keep MAM's editorial action in MAM context.",
+        "presentation": "recast",
+        "reason": "Ben's decision of 2026-10-30: the clause gives the codex's form in plus notation, then the near target, its packed form, in parentheses. Recast the clause as agreement and keep the plus form in parentheses after the source head, since it explains what the codex has, as the clause's prose does. Keep all remaining clauses in their original order under MAM's labelled target. This attributes agreement and does not explain near-Aleppo's selection.",
         "proposed_parts": {
-          "near_clause": null,
-          "mam_clauses": [
-            [
-              "א=לִֽקְ+קִחִי־נָ֥א (לִֽקְִחִי־נָ֥א) (בחטף חיריק שסימנו אותו ע\"י שווא וחיריק); ראו ייבין ב.6 עמ' 21."
-            ]
-          ]
+          "near_clause": [
+            "=א (לִֽקְ+קִחִי־נָ֥א) (בחטף חיריק שסימנו אותו ע\"י שווא וחיריק); ראו ייבין ב.6 עמ' 21."
+          ],
+          "mam_clauses": []
         },
         "clauses": [
           {
             "index": 0,
-            "disposition": "mam-context",
-            "reason": "Keep this source clause verbatim with its original MAM subject, explanations, alternatives and cross-references. The matching clause says that MAM marked hataf hiriq using sheva and hiriq. Keep MAM's editorial action in MAM context."
+            "disposition": "near-subject",
+            "reason": "The parenthesized packed form matches the near target; keep the plus form in parentheses, the attributed source and every qualification verbatim."
           }
         ]
       }
@@ -46911,19 +46909,18 @@
         ],
         "partial_gap_boundaries": []
       },
-      "candidate_clause": null,
-      "proposal_reason": "No unique plain clause quoting the complete target; retain the source note.",
-      "evidence_sha256": "35d631fe0f9b628af8a289e0783e1f58c567b2ccfd559b331660d2c233794972",
+      "candidate_clause": 0,
+      "proposal_reason": "One literal full-target alternative; semantic review of its suffix and other clauses required.",
+      "evidence_sha256": "57a487c001c20f7147c5384a7e3301dbba5145fb2be40fad4bc793096be99a8e",
       "review": {
         "status": "reviewed",
-        "presentation": "framed-mam",
-        "reason": "No unique plain clause quoting the complete target; retain the source note. Individual clause review confirms that explicit MAM context preserves the source's claims and qualifications without a new interpretation.",
+        "presentation": "recast",
+        "reason": "Ben's decision of 2026-10-30: the clause gives the codex's form in plus notation, then the near target, its packed form, in parentheses. Recast the clause as agreement and keep the plus form in parentheses after the source head, since it explains what the codex has, as the clause's prose does. Keep all remaining clauses in their original order under MAM's labelled target. This attributes agreement and does not explain near-Aleppo's selection.",
         "proposed_parts": {
-          "near_clause": null,
+          "near_clause": [
+            "=א (הִֽשְׁ+שִׁחִ֗יתוּ) (חטף חיריק)"
+          ],
           "mam_clauses": [
-            [
-              "א=הִֽשְׁ+שִׁחִ֗יתוּ (הִֽשְִׁחִ֗יתוּ) (חטף חיריק)"
-            ],
             [
               "לגבי פיסוק הטעמים (רביע בתוך תחום שלטונו של רביע, שניהם בשמאלו של אתנחתא), ראו בהערת הנוסח על הפסוק המקביל (תהלים נג,ב)."
             ]
@@ -46932,13 +46929,13 @@
         "clauses": [
           {
             "index": 0,
-            "disposition": "mam-context",
-            "reason": "Keep this source clause verbatim with its original MAM subject, explanations, alternatives and cross-references. No unique plain clause quoting the complete target; retain the source note. Individual clause review confirms that explicit MAM context preserves the source's claims and qualifications without a new interpretation."
+            "disposition": "near-subject",
+            "reason": "The parenthesized packed form matches the near target; keep the plus form in parentheses, the attributed source and every qualification verbatim."
           },
           {
             "index": 1,
             "disposition": "mam-context",
-            "reason": "Keep this source clause verbatim with its original MAM subject, explanations, alternatives and cross-references. No unique plain clause quoting the complete target; retain the source note. Individual clause review confirms that explicit MAM context preserves the source's claims and qualifications without a new interpretation."
+            "reason": "Keep this source clause verbatim with its original MAM subject, explanations, alternatives and cross-references. Reorganization changes only the independently reviewed literal agreement clause."
           }
         ]
       }
@@ -46969,26 +46966,24 @@
         ],
         "partial_gap_boundaries": []
       },
-      "candidate_clause": null,
-      "proposal_reason": "No unique plain clause quoting the complete target; retain the source note.",
-      "evidence_sha256": "0471dcc35e87578da5dbfefac2befb3355df7c8acc24a69a660cff14897ab567",
+      "candidate_clause": 0,
+      "proposal_reason": "One literal full-target alternative; semantic review of its suffix and other clauses required.",
+      "evidence_sha256": "f4fdd3515d88acf48c88b02266f92087dc08d8ef7db4ecc7cfc91213514f3504",
       "review": {
         "status": "reviewed",
-        "presentation": "framed-mam",
-        "reason": "No unique plain clause quoting the complete target; retain the source note. Individual clause review confirms that explicit MAM context preserves the source's claims and qualifications without a new interpretation.",
+        "presentation": "recast",
+        "reason": "Ben's decision of 2026-10-30: the clause gives the codex's form in plus notation, then the near target, its packed form, in parentheses. Recast the clause as agreement and keep the plus form in parentheses after the source head, since it explains what the codex has, as the clause's prose does. Keep all remaining clauses in their original order under MAM's labelled target. This attributes agreement and does not explain near-Aleppo's selection.",
         "proposed_parts": {
-          "near_clause": null,
-          "mam_clauses": [
-            [
-              "א=הִֽתְ+תִעִ֥יבוּ (הִֽתְִעִ֥יבוּ) (חטף חיריק)"
-            ]
-          ]
+          "near_clause": [
+            "=א (הִֽתְ+תִעִ֥יבוּ) (חטף חיריק)"
+          ],
+          "mam_clauses": []
         },
         "clauses": [
           {
             "index": 0,
-            "disposition": "mam-context",
-            "reason": "Keep this source clause verbatim with its original MAM subject, explanations, alternatives and cross-references. No unique plain clause quoting the complete target; retain the source note. Individual clause review confirms that explicit MAM context preserves the source's claims and qualifications without a new interpretation."
+            "disposition": "near-subject",
+            "reason": "The parenthesized packed form matches the near target; keep the plus form in parentheses, the attributed source and every qualification verbatim."
           }
         ]
       }
@@ -51728,19 +51723,18 @@
         ],
         "partial_gap_boundaries": []
       },
-      "candidate_clause": null,
-      "proposal_reason": "No unique plain clause quoting the complete target; retain the source note.",
-      "evidence_sha256": "b0d83fba72f62f1a0b1eb9b18a268f7c74399c2b4ba4825975566664f86a356b",
+      "candidate_clause": 0,
+      "proposal_reason": "One literal full-target alternative; semantic review of its suffix and other clauses required.",
+      "evidence_sha256": "15b21c99f7aec32bfaed3b23ba72f0902a3f60cc37409a64876ec7587dedcaa7",
       "review": {
         "status": "reviewed",
-        "presentation": "framed-mam",
-        "reason": "No unique plain clause quoting the complete target; retain the source note. Individual clause review confirms that explicit MAM context preserves the source's claims and qualifications without a new interpretation.",
+        "presentation": "recast",
+        "reason": "Ben's decision of 2026-10-30: the clause gives the codex's form in plus notation, then the near target, its packed form, in parentheses. Recast the clause as agreement and keep the plus form in parentheses after the source head, since it explains what the codex has, as the clause's prose does. Keep all remaining clauses in their original order under MAM's labelled target. This attributes agreement and does not explain near-Aleppo's selection.",
         "proposed_parts": {
-          "near_clause": null,
+          "near_clause": [
+            "=א (הִֽ֝שְׁ+שִׁחִ֗יתוּ) (חטף חיריק בשי\"ן)"
+          ],
           "mam_clauses": [
-            [
-              "א=הִֽ֝שְׁ+שִׁחִ֗יתוּ (הִֽ֝שְִׁחִ֗יתוּ) (חטף חיריק בשי\"ן)"
-            ],
             [
               "בכל מקום אחר, אין תחום שלטונו של רביע מוגרש מתחלק על ידי שום מפסיק. ואילו כאן נראה שיש רביע מוגרש (\"הִֽ֝שְִׁחִ֗יתוּ\") המחלק את תחומו של רביע מוגרש הבא אחריו (\"עָ֝וֶל\"). ברויאר כתב על הטעמה זו שהיא \"חריגה ביותר, ואיננה מובנת כלל\" (טעמי המקרא י.19, עמ' 254 הערה 16). והשוו תופעה דומה בפסוק המקביל (תהלים יד,א); שם מדובר על רביע הבא לחלק את שמאלו של אתנחתא (במקום רביע מוגרש!), ובעוד רביע הבא לפניו כדי לחלק את תחום שלטונו."
             ]
@@ -51749,13 +51743,13 @@
         "clauses": [
           {
             "index": 0,
-            "disposition": "mam-context",
-            "reason": "Keep this source clause verbatim with its original MAM subject, explanations, alternatives and cross-references. No unique plain clause quoting the complete target; retain the source note. Individual clause review confirms that explicit MAM context preserves the source's claims and qualifications without a new interpretation."
+            "disposition": "near-subject",
+            "reason": "The parenthesized packed form matches the near target; keep the plus form in parentheses, the attributed source and every qualification verbatim."
           },
           {
             "index": 1,
             "disposition": "mam-context",
-            "reason": "Keep this source clause verbatim with its original MAM subject, explanations, alternatives and cross-references. No unique plain clause quoting the complete target; retain the source note. Individual clause review confirms that explicit MAM context preserves the source's claims and qualifications without a new interpretation."
+            "reason": "Keep this source clause verbatim with its original MAM subject, explanations, alternatives and cross-references. Reorganization changes only the independently reviewed literal agreement clause."
           }
         ]
       }
@@ -51786,26 +51780,24 @@
         ],
         "partial_gap_boundaries": []
       },
-      "candidate_clause": null,
-      "proposal_reason": "No unique plain clause quoting the complete target; retain the source note.",
-      "evidence_sha256": "2d6d7e1579e83e8cb95b5213bf90f98882714b535ada9879885e845dfc9e7af9",
+      "candidate_clause": 0,
+      "proposal_reason": "One literal full-target alternative; semantic review of its suffix and other clauses required.",
+      "evidence_sha256": "7c087f623ada8e71f9f4563f95d19c94d1910655445ccc77632af4b2827fcabc",
       "review": {
         "status": "reviewed",
-        "presentation": "framed-mam",
-        "reason": "No unique plain clause quoting the complete target; retain the source note. Individual clause review confirms that explicit MAM context preserves the source's claims and qualifications without a new interpretation.",
+        "presentation": "recast",
+        "reason": "Ben's decision of 2026-10-30: the clause gives the codex's form in plus notation, then the near target, its packed form, in parentheses. Recast the clause as agreement and keep the plus form in parentheses after the source head, since it explains what the codex has, as the clause's prose does. Keep all remaining clauses in their original order under MAM's labelled target. This attributes agreement and does not explain near-Aleppo's selection.",
         "proposed_parts": {
-          "near_clause": null,
-          "mam_clauses": [
-            [
-              "א=וְהִֽתְ+תִעִ֥יבוּ (וְהִֽתְִעִ֥יבוּ) (חטף חיריק בתי\"ו)"
-            ]
-          ]
+          "near_clause": [
+            "=א (וְהִֽתְ+תִעִ֥יבוּ) (חטף חיריק בתי\"ו)"
+          ],
+          "mam_clauses": []
         },
         "clauses": [
           {
             "index": 0,
-            "disposition": "mam-context",
-            "reason": "Keep this source clause verbatim with its original MAM subject, explanations, alternatives and cross-references. No unique plain clause quoting the complete target; retain the source note. Individual clause review confirms that explicit MAM context preserves the source's claims and qualifications without a new interpretation."
+            "disposition": "near-subject",
+            "reason": "The parenthesized packed form matches the near target; keep the plus form in parentheses, the attributed source and every qualification verbatim."
           }
         ]
       }
