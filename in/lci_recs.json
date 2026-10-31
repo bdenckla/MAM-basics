@@ -933,7 +933,7 @@
             "stopc": 50,
             "stopv": 16,
             "stopp": 3,
-            "note": null
+            "note": "all 3 columns have 26 lines"
         },
         {
             "page": "031B",
@@ -948,7 +948,7 @@
             "stopc": 50,
             "stopv": 26,
             "stopp": 11,
-            "note": null
+            "note": "columns 1 and 2 have 26 lines; column 3 has 27 lines"
         },
         {
             "page": "031B",
@@ -963,7 +963,7 @@
             "stopc": 1,
             "stopv": 18,
             "stopp": 1,
-            "note": null
+            "note": "columns 1 and 2 have 26 lines; column 3 has 27 lines"
         },
         {
             "page": "032A",
@@ -1038,7 +1038,7 @@
             "stopc": 6,
             "stopv": 13,
             "stopp": 20,
-            "note": null
+            "note": "all 3 columns have 26 lines"
         },
         {
             "page": "034B",
@@ -1128,7 +1128,7 @@
             "stopc": 10,
             "stopv": 29,
             "stopp": 9,
-            "note": null
+            "note": "all 3 columns have 26 lines"
         },
         {
             "page": "037B",
@@ -1143,7 +1143,7 @@
             "stopc": 12,
             "stopv": 13,
             "stopp": 4,
-            "note": null
+            "note": "all 3 columns have 26 lines"
         },
         {
             "page": "038A",
@@ -1413,7 +1413,7 @@
             "stopc": 23,
             "stopv": 30,
             "stopp": 10,
-            "note": null
+            "note": "all 3 columns have 26 lines"
         },
         {
             "page": "045B",
@@ -1428,7 +1428,7 @@
             "stopc": 25,
             "stopv": 5,
             "stopp": 3,
-            "note": null
+            "note": "all 3 columns have 26 lines"
         },
         {
             "page": "046A",
@@ -1443,7 +1443,7 @@
             "stopc": 25,
             "stopv": 32,
             "stopp": 13,
-            "note": null
+            "note": "all 3 columns have 26 lines"
         },
         {
             "page": "046B",
@@ -1458,7 +1458,7 @@
             "stopc": 26,
             "stopv": 14,
             "stopp": 10,
-            "note": null
+            "note": "all 3 columns have 26 lines"
         },
         {
             "page": "047A",
@@ -4203,7 +4203,7 @@
             "stopc": 24,
             "stopv": 33,
             "stopp": 14,
-            "note": null
+            "note": "column 3 lines 25-27 contain only a short Masorah note concluding the book of Joshua"
         },
         {
             "page": "136A",
@@ -6708,7 +6708,7 @@
             "stopc": 18,
             "stopv": 28,
             "stopp": 4,
-            "note": null
+            "note": "all 3 columns have 26 lines"
         },
         {
             "page": "215B",
@@ -9588,7 +9588,7 @@
             "stopc": 4,
             "stopv": 21,
             "stopp": 7,
-            "note": null
+            "note": "column 3 lines 26-27 contain only a short Masorah note concluding the book of Joel"
         },
         {
             "page": "309A",
