@@ -127,8 +127,8 @@ configuration.
 `dot-claude/skills/` is the canonical source for Claude skills. Every directory there deploys to
 `~/.claude/skills/`. `dot-claude/shared-skills.txt` names the skills that also deploy to
 `~/.agents/skills/`; the declaration currently names `github-issues`, `hebrew-prose`,
-`iterative-document-editing`, `linked-worktrees`, `mam-repository-topology`,
-`mam-wikisource-refresh` and `verse-links`.
+`iterative-document-editing`, `leningrad-tei-checks`, `linked-worktrees`,
+`mam-repository-topology`, `mam-wikisource-refresh` and `verse-links`.
 `dot-Codex/skills/` is the canonical source for Codex-specific skills and deploys only to
 `~/.agents/skills/`.
 
