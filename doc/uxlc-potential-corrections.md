@@ -44,8 +44,10 @@ the images. In the TEI, none of the three atoms has an empty line above it in it
 The UXLC disagrees with itself about Lev 26:35.3: its earlier record 2021.02.22-17, by Stephen
 Salisbury, gives F073A 1:3, as the TEI and Claude's reading do.
 
-The comparison's working files are untracked, under `.novc/lc-tei-phase1/` in the primary
-forest's MAM-basics clone, with the crops in its `out/crops/`.
+The comparison's working files were untracked, under `.novc/lc-tei-phase1/` in the primary
+forest's MAM-basics clone, with the crops in its `out/crops/`; they were gone by 2026-10-31. That
+day a Claude session reread all three atoms on Sefaria's photographs, finding each on the line the
+table gives, and MAM-basics began correcting the three in its override copies, as section 9 says.
 
 ## 2. A pending UXLC 2.6 record that cited the wrong position, found 2026-10-14
 
@@ -57,7 +59,8 @@ compound. Ben's record 2020.12.22-2 cites the same atom as Lev 25:20.4.
 The record also leaves its column and line empty. Ben's 2020.12.22-2 gives Folio_71v 2:16 for the
 atom, which is page F071B, column 2, line 16, and the TEI and Claude's reading agree. MAM-basics'
 override copy of the change list, `uxlc/in/UXLC-misc-fixed/2026.10.19 - Changes.xml`, fills the
-empty fields with an estimate, 2:14; section 3 says why.
+empty fields with an estimate, 2:14; section 3 says why. Since 2026-10-31 it gives 2:16, the line
+that Ben's record, the TEI and a fresh reading of the photograph all give, as section 9 says.
 
 The change list as tanach.us served it on 2026-10-19, described at the end of section 3, cites
 Lev 25:20.4 for this record, so its position is now right. The record still leaves its column and
@@ -97,7 +100,8 @@ Since 2026-10-20, `uxlc/in/UXLC-misc/2026.10.19 - Changes.xml` has been the inst
 hcanat.us served it that day, byte for byte the copy that tanach.us served on 2026-10-19. The
 override copy was rebuilt from it the same day. It fills the four empty locators with the location
 estimator's values in the table, the first three unchanged, and it no longer needs item 1's
-correction.
+correction. Since 2026-10-31 it gives 2026.08.05-10 the line section 2 reports, 2:16, in place of
+the estimate; the other three remain estimates.
 
 ## 4. Wrong letter name in a change-record note, found 2026-10-17
 
@@ -218,15 +222,16 @@ Taamey D positions Job 32:6's ḥiriq under the shin, left of the atnaḥ.
 Correction: in Job 32:6 and 10:15, replace the ZWJ with a CGJ; in Job 19:16, remove it. CLC
 does not cover Job yet; it could make the same corrections if the UXLC does not.
 
-## 9. Nine locators corrected in override copies, found 2026-10-31
+## 9. Thirteen locators corrected in override copies, 2026-10-31
 
 A comparison of the UXLC change records with Charles Loder's leningrad-codex-tei found nine records
 whose locators disagree with Sefaria's photographs, on a Claude session's reading of crops of them.
 Ben decided on 2026-10-31 to "record them (i.e. record fixes to them) in uxlc/in/UXLC-misc-fixed",
-with only a pointer here. That folder holds MAM-basics' override copies of the change lists, which
+with only a pointer here. Later that day, asked whether the same should be done for section 1's
+three and for the estimate that section 2 finds two lines off, he answered "Yes, fix them". The
+folder holds MAM-basics' override copies of the change lists, which
 `py/uxlc_changes/uxlc_misc_path.py` reads in place of the copies in `uxlc/in/UXLC-misc/`; diff an
-override copy against its original to see its corrections. Eight of the nine are in
-`2020.02.19 - Changes.xml`, `2022.10.19 - Changes.xml`, `2023.10.19 - Changes.xml` and
-`2024.04.01 - Changes.xml`, override copies made for them, and the ninth is in
-`2026.10.19 - Changes.xml`, the override copy that section 3 describes. Each corrected line number
-counts only lines that hold text, as the UXLC's locators do.
+override copy against its original to see its corrections. The thirteen are in the override copies
+of the 2020.02.19, 2021.04.01, 2022.04.01, 2022.07.04, 2022.10.19, 2023.10.19 and 2024.04.01
+lists, made for them, and of the 2026.10.19 list, the copy that section 3 describes. Each corrected
+line number counts only lines that hold text, as the UXLC's locators do.

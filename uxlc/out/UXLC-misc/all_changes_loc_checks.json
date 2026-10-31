@@ -704,10 +704,10 @@
     "change_cite": "Lev 13:3.12",
     "change_page": "063A",
     "change_column": 2,
-    "change_line": 20,
-    "change_fline": 47,
+    "change_line": 21,
+    "change_fline": 48,
     "guess_fline": 49.78,
-    "fline_diff": 2.78
+    "fline_diff": 1.78
   },
   {
     "change_release": "2021.04.01",
@@ -1634,10 +1634,10 @@
     "change_cite": "Lev 26:35.3",
     "change_page": "073A",
     "change_column": 1,
-    "change_line": 1,
-    "change_fline": 1,
+    "change_line": 3,
+    "change_fline": 3,
     "guess_fline": 3.85,
-    "fline_diff": 2.85
+    "fline_diff": 0.85
   },
   {
     "change_release": "2022.04.01",
@@ -2374,10 +2374,10 @@
     "change_cite": "Num 9:17.6",
     "change_page": "080B",
     "change_column": 3,
-    "change_line": 26,
-    "change_fline": 80,
+    "change_line": 25,
+    "change_fline": 79,
     "guess_fline": 78.85,
-    "fline_diff": -1.15
+    "fline_diff": -0.15
   },
   {
     "change_release": "2022.07.04",
@@ -13774,10 +13774,10 @@
     "change_cite": "Lev 25:20.4",
     "change_page": "071B",
     "change_column": 2,
-    "change_line": 14,
-    "change_fline": 41,
+    "change_line": 16,
+    "change_fline": 43,
     "guess_fline": 41.27,
-    "fline_diff": 0.27
+    "fline_diff": -1.73
   },
   {
     "change_release": "2026.10.19",

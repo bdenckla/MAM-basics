@@ -2456,7 +2456,7 @@
     "n": 15,
     "citation": "Lev 13:3.12",
     "description": "Change patah to segol on gimel.",
-    "lc": "Folio_63A 2:20",
+    "lc": "Folio_63A 2:21",
     "reftext": "הַנֶּ֙גַע֙",
     "refuni": "he patah nun dagesh segol pashta gimel patah ayin pashta",
     "changetext": "הַנֶּ֙גֶע֙",
@@ -2474,7 +2474,7 @@
     "authors": [
       "Stephen Salisbury"
     ],
-    "lc_gen": "Folio_063A 2:20",
+    "lc_gen": "Folio_063A 2:21",
     "aBHL": null,
     "aBHLA": null,
     "D2T": null,
@@ -5649,7 +5649,7 @@
     "n": 2,
     "citation": "Lev 26:35.3",
     "description": "Missing dagesh on shin; add note 'c'.",
-    "lc": "Folio_F073A 1:1",
+    "lc": "Folio_F073A 1:3",
     "reftext": "הָשַׁמָּ֖ה",
     "refuni": "he qamats shin shin-dot patah mem dagesh qamats tipeha he",
     "changetext": "הָשַׁמָּ֖ה",
@@ -5669,7 +5669,7 @@
     "authors": [
       "Todd Shandelman"
     ],
-    "lc_gen": "Folio_073A 1:1",
+    "lc_gen": "Folio_073A 1:3",
     "aBHL": null,
     "aBHLA": null,
     "D2T": null,
@@ -8188,7 +8188,7 @@
     "n": 6,
     "citation": "Num 9:17.6",
     "description": "Remove maqaf on yod; add 't' note.",
-    "lc": "Folio_080B 3:26",
+    "lc": "Folio_080B 3:25",
     "reftext": "וְאַ֣חֲרֵי־",
     "refuni": "vav sheva alef patah munah het hataf-patah resh tsere yod maqaf",
     "changetext": "וְאַ֣חֲרֵי",
@@ -44032,7 +44032,7 @@
     "n": 10,
     "citation": "Lev 25:20.4",
     "description": "Remove mahapakh under the kaf. Remove 'c' note.",
-    "lc": "Folio_071B 2:14",
+    "lc": "Folio_071B 2:16",
     "reftext": "נֹּאכַ֤֖ל",
     "refuni": "nun dagesh holam alef kaf patah mahapakh tipeha lamed",
     "changetext": "נֹּאכַ֖!ל",
