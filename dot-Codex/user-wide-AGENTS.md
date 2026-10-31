@@ -144,6 +144,10 @@ to execute. A transition out of Plan Mode, including one made only to persist a 
 authorize implementation. Later suggestions in that task revise the plan unless Ben explicitly
 says to implement them.
 
+Claude Code only: a planning session does not put up the plan-approval dialog unless Ben asks for
+it. He executes plans in other sessions, so every plan is written for a fresh executor, as “Plans
+and finished dated records” requires.
+
 ### Claude Code only: task-chip handoffs
 
 Offer a task chip when a coherent next phase is separable, but create the task chip only after
