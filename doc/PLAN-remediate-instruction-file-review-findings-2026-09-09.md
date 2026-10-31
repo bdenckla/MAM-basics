@@ -1,7 +1,8 @@
 # PLAN — remediate the 2026-09-09 review of the tracked agent-instruction files
 
-State: live. Proposed 2026-09-09, nothing acted on; Ben's decision, 2026-09-09, was to record
-the review as a plan rather than act on it in the reviewing session, which he called overwhelming.
+State: paused 2026-10-31; spent, by Ben's decision that day, so none of its work is to be done.
+Proposed 2026-09-09, it was never acted on; Ben's decision, 2026-09-09, was to record the review
+as a plan rather than act on it in the reviewing session, which he called overwhelming.
 
 **The review this plan remediates was a ONE-OFF, not an instalment of the periodic
 `doc/review-findings-<date>.md` series** — Ben's decision, 2026-09-09. That is why this file is
@@ -60,11 +61,18 @@ cannot run without a clone of it.
 
 ## Current execution boundary, corrected 2026-09-28
 
-The symmetric instruction conversion overtook parts of this September 9 plan. The plan remains
-live until Ben decides whether it is spent; this correction neither executes nor retires it.
-Read [the maintained conversion reconciliation](user-wide-instruction-conversion-reconciliation.md)
-and the current canonical user and repository instructions before selecting any still-applicable
-work. The old Claude body is historical evidence; the current Claude user-level file is a wrapper.
+The symmetric instruction conversion overtook parts of this September 9 plan. On 2026-09-28 the
+plan was to remain live until Ben decided whether it was spent, and this correction neither
+executed nor retired it. Ben decided on 2026-10-31 that it is spent, under
+`doc/review-trial.md`'s rule "No retrospective giant backlog is opened". Asked
+"Dismiss all three under that rule. I recommend this.", the three being this plan, the
+2026-09-26 review's remaining deferrals and the twelve legacy clauses that review deferred, he
+answered "this sounds good" and "I need this to be done". None of this plan's work is to be
+selected or done; the file stays as the record of the 2026-09-09 review. For current guidance,
+read
+[the maintained conversion reconciliation](user-wide-instruction-conversion-reconciliation.md)
+and the current canonical user and repository instructions. The old Claude body is historical
+evidence; the current Claude user-level file is a wrapper.
 
 ## 1. Preconditions and setup for the session that executes this plan
 

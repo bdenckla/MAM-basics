@@ -817,3 +817,21 @@ ledger" that this update's tables do not repeat are recorded here: 31.8's "Do no
 an EVR reading to the Psalms 72 report", and 35.4's "The optional three undated-rule label
 clarifications are left unimplemented because this plan proposes no finite replacement for
 them."
+
+## The remaining deferrals dismissed, 2026-10-31
+
+Recorded by Claude (Opus 5.5) on 2026-10-31, New York time, in the small-fixes session that the
+session "Commander for Claude's forests" started that day.
+
+Ben dismissed, on 2026-10-31, the 22 deferred items that this update records and that have no
+later outcome: 7.1, 11.1, 13.2, 17.2, 17.8, 18.8, 22, 25.4, 26, 27, 29.5–29.7, 30.4, 31.8, 35.1,
+35.2, 35.4–35.6, 35.8 and 35.9. The rule is `doc/review-trial.md`'s
+"No retrospective giant backlog is opened", under which his decision of 2026-10-09 dismissed the
+2026-09-29 review's deferrals, as `doc/PLAN-maintenance-follow-up-2026-10-08.md` records. Asked,
+in the session that looked for records no issue points to,
+"Dismiss all three under that rule. I recommend this.", the three being these items, finding
+11.1's twelve legacy clauses and finding 13.2's 2026-09-09 instruction-file plan, he answered
+"this sounds good" and "I need this to be done". None of the 22 is to be taken up, and a later
+audit need not raise them again. The twelve clauses stay out of the current instructions, as
+`doc/user-wide-instruction-conversion-reconciliation.md` now records, and the 2026-09-09 plan's
+State line now calls it spent.
