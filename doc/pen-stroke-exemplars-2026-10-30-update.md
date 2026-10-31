@@ -162,6 +162,28 @@ F102A column 2 line 2?", he answered "Yes, those two".
 
    Both moved little: the change is chiefly to the order and direction in which the line is
    proposed to have been written, not to how closely its strokes model the ink.
+3. **The alef's upper-left upright, decision 19.** Asked "Make each alef's upper-left upright a
+   short stroke of its own?", Ben answered "Yes, own stroke", in the spirit of modelling the
+   Leningrad Codex's script, which may differ in small ways from the hand Yardeni describes.
+   Each of the four alefs of the two lines now has its upright as a short stroke of its own,
+   written downward after the diagonal and before the left leg. Round 3 drew it as the top of
+   the left leg in page F043A's line and as the top of the diagonal in page F102A's. In the
+   second line each diagonal's start, cut along the pen's edge, still reaches up beside the
+   upright, so the two overlap; making those diagonals start lower left more ink unexplained
+   and swept more beyond it.
+4. **Ends stay strict for now, decision 20.** Every end of a letter's stroke is still cut along
+   an edge of the crop's one pen, so this changed no file.
+5. **The ring and the blot of page F043A's line 4 are masora circles of that line,** as Ben
+   reads them (decision 21), and their groups' notes now say so. Round 3's item 3, above,
+   asked this. Where the top of the lamed of that line's atom לא meets line 3's qamats, Ben
+   judged round 3's split right: "what you did with that tricky lamed-qamats collision seems
+   right."
+6. **The pen residual after decision 19,** with the figures after decision 18 in parentheses:
+
+   | Crop | Strokes | Ink no stroke explains | Sweep beyond the ink |
+   | --- | --- | --- | --- |
+   | F043A, line 4 | 128 (126) | 17.7% (17.8%) | 15.4% (15.4%) |
+   | F102A, line 2 | 110 (108) | 16.6% (17.3%) | 14.5% (14.2%) |
 
 Effective State of the base, 2026-10-31: executed 2026-10-30; Ben has checked the readings of
 the two crops on page F043A and of the vowels under the nun of F102A's על־פני, and the rest of

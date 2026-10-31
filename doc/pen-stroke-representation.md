@@ -13,11 +13,11 @@ PDFs that the work's research has cited.
 
 ## Ben's decisions
 
-The first twelve are of 2026-10-30, and decisions 13 to 18 of 2026-10-31. The first nine
+The first twelve are of 2026-10-30, and decisions 13 to 21 of 2026-10-31. The first nine
 were made in the planning session "Investigate a pen-stroke manuscript representation", whose
 plan was not committed, so this list is their record here. Decisions 11 to 15 were made while
 Ben reviewed the first exemplars, decisions 16 and 17 as he settled the third round of
-tracing, on two well-kept lines, and decision 18 in the fourth round.
+tracing, on two well-kept lines, and decisions 18 to 21 in the fourth round.
 
 1. **The unit is one crop, not a page.** Ben: "This is not about whole manuscripts or even whole
    pages. At least not yet." No page, column or line geometry is in scope, and no
@@ -135,10 +135,10 @@ tracing, on two well-kept lines, and decision 18 in the fourth round.
     strokes". His aim, the same day: "we just need a model that works, not necessarily a model
     that corresponds to reality." So every end of a stroke of the letters is cut, never round;
     a head is a short stroke of its own, written before the arm or stem it joins; and a mark
-    may still end round. How an end is cut is Claude's design, which Ben has not yet reviewed:
-    profile 4 cuts it straight, at an angle the file records for each end, and round 3's
-    fitting cut each end along an edge of the stiff nib that `nibfit` measures in the crop's
-    letters.
+    may still end round. How an end is cut is Claude's design: profile 4 cuts it straight, at
+    an angle the file records for each end, and round 3's fitting cut each end along an edge of
+    the stiff nib that `nibfit` measures in the crop's letters, which Ben chose to keep for now
+    (decision 20).
 17. **Each group says whose ink it is, and other words' and lines' ink has a colour of its
     own.** Ben: "it is often important to have a Unicode transcription of the text above and
     below, in order to do a good job of determining what marks belong to what line. One of the
@@ -160,6 +160,39 @@ tracing, on two well-kept lines, and decision 18 in the fourth round.
     written after the strokes it meets, from left to right, and a mem's left stroke runs upward
     to the right. The figure teaches how to write that type of hand. It is no record of how the
     Leningrad Codex's scribe wrote, and the ductus stays a plausible proposal (decision 11).
+19. **An alef's upper-left upright is a short stroke of its own.** Ben asked how round 3's
+    heads lined up with where Yardeni's book expects heads. They lined up, except at the alef's
+    upper left, where round 3 drew a short upright as the top of the left leg or of the
+    diagonal. Asked "Make each alef's upper-left upright a short stroke of its own?", Ben
+    answered "Yes, own stroke", and then: "I authorized that yes to that specific question about
+    alef (though I didn't engage with the details, I admit) just in the spirit of "do what you
+    need to do to develop a model of Leningrad's script, which may differ in some (probably
+    small) ways from the script Yardeni describes". So each alef's upright is a stroke of its
+    own, written downward after the diagonal and before the left leg. Where a diagonal's start,
+    cut along the pen's edge, reaches up beside the upright, as in both alefs of page F102A's
+    line 2, the two strokes overlap.
+20. **For now, every end of a letter's stroke keeps to the crop's one pen.** Decision 16 left
+    how an end is cut to Claude's design. Asked "Should every end keep to one pen per crop, or
+    should each end's angle be free to follow the ink?", Ben answered: "I guess my (non-)answer
+    is we'll have to gain some experience of what the error-penalty is for being strict about
+    sticking to the nib model at stroke ends vs what would be gained allowing the "angle [to] be
+    free to follow the ink". Let's start by being strict, just to choose arbitrarily". So each
+    end of a letter's stroke is cut along an edge of the one stiff nib that `nibfit` measures in
+    the crop's letters, as round 3's fitting cut it, and what freeing each end's angle would gain
+    is still to be measured.
+21. **A masora circle is transcribed and told apart from the marks that matter, and its line is
+    a weak guess.** Asked whether a ring over the atom לעלת and a blot over the atom הר of page
+    F043A's line 4 are circelli and that line's, Ben answered: "yeh I'd say they are masorah
+    circles and the do belong to this line." He went on: "I think that luckily we're not terribly
+    concerned with masorah circle ownership; though it is important to transcribe them (often to
+    remove them, to get them out of the way (or color them a very light color) the main thing is
+    distinguishing them from marks we consider important." And: "So, we should assign ownership
+    (or have a way to leave them unassigned), but it should be understood that these assignments
+    in 99 to 100% of cases won't be accompanied by much confidence because they won't be
+    accompanied by much research (and as I said, sometimes even with a lot of research, the
+    confidence is still low!)" So a masora circle's group says whose ink it is, as every group
+    does, and that is a weak guess unless its note gives the research behind it. Drawing the
+    circles faintly, and leaving a circle's line unassigned, are not yet implemented.
 
 ## The ladder
 
@@ -291,8 +324,9 @@ uses, and the stroke-SVG's own style element does the same when the file is view
 ductus: a term of palaeography for a letter's strokes, how many, in which direction and in
 which order. Where it is `plausible`, the strokes are listed in the order written, every
 stroke of the letters before every stroke of the marks (decision 11), and each median runs the
-way the pen moved; a head comes before the stroke it joins (decision 16), and a base after the
-strokes it meets, written from left to right (decision 18). Other lines' strokes
+way the pen moved; a head comes before the stroke it joins (decision 16), a base after the
+strokes it meets, written from left to right (decision 18), and an alef's upright before its
+left leg (decision 19). Other lines' strokes
 keep that order of the passes, but their directions propose nothing. Where it is `unrecorded`,
 as in the four QUPO crops, the strokes' order and their medians' directions mean nothing.
 
