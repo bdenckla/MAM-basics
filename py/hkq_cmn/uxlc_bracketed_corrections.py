@@ -20,9 +20,13 @@ The other two are the "Current UXLC" forms of Psalms 31:24.1 and
 Proverbs 30:15.1 in Holman's messages. Each stores a meteg before its vowel
 with no CGJ between them, so a font shows the meteg left of the vowel. The
 UXLC had a CGJ after the meteg until UXLC 2.6 changed those atoms' marks
-(records 2026.08.05-53 and -94). Each bracketed form adds that CGJ, and its
-explanation says so, since the two forms differ only in where the meteg
-stands.
+(records 2026.08.05-53 and -94). Each bracketed form adds that CGJ. The
+intro does not quote Holman's two forms, which would put forms lacking the
+CGJ back on the page: it shows each bracketed form and says what it adds.
+Ben, 2026-10-31, when the intro still quoted them: "dont' treat holman's
+text as so sacred as to present the originals: just present the fixed, and
+say you fixed it"; and, shown the wording the intro now has, "Yes, rewrite
+it".
 
 Applying an entry is fail-fast in both directions. A replacement whose original
 is not in the text exactly once raises, so a reworded message cannot leave a
@@ -53,11 +57,22 @@ class BracketedCorrection:
     """One word of Holman's, and the word shown in square brackets instead.
 
     The explanation, if any, follows the correction in the intro's sentence.
+    With quote_original false, that sentence leaves the original out and shows
+    only the bracketed word, so the explanation, which must then say what the
+    bracketed word changed, is required.
     """
 
     original: str
     replacement: str
     explanation: str = ""
+    quote_original: bool = True
+
+    def __post_init__(self) -> None:
+        if not self.quote_original and not self.explanation:
+            raise ValueError(
+                f"the correction to {self.replacement!r} quotes no original, so "
+                "it needs an explanation of what it changed"
+            )
 
     @property
     def bracketed(self) -> str:
@@ -111,16 +126,18 @@ CASE_FIELD_CORRECTIONS = {
         BracketedCorrection(
             _PSALMS_31_24_1,
             _with_cgj_after_meteg(_PSALMS_31_24_1),
-            "with a CGJ after the meteg, as the UXLC had it, so that the meteg"
+            "with a CGJ added after the meteg, as the UXLC had it, so that the meteg"
             " stands right of the segol",
+            quote_original=False,
         ),
     ),
     ("Proverbs 30:15.1", "Current UXLC"): (
         BracketedCorrection(
             _PROVERBS_30_15_1,
             _with_cgj_after_meteg(_PROVERBS_30_15_1),
-            "with a CGJ after the meteg, as the UXLC had it, so that the meteg"
+            "with a CGJ added after the meteg, as the UXLC had it, so that the meteg"
             " stands right of the pata\N{LATIN SMALL LETTER H WITH DOT BELOW}",
+            quote_original=False,
         ),
     ),
 }
@@ -188,6 +205,8 @@ def bracketed_correction_phrases(
 
 
 def _shown_as(correction: BracketedCorrection) -> str:
+    if not correction.quote_original:
+        return f"{correction.bracketed} is the message's word {correction.explanation}"
     phrase = f"{correction.original} is shown as {correction.bracketed}"
     if correction.explanation:
         return f"{phrase}, {correction.explanation}"
