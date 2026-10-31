@@ -26,3 +26,14 @@ The original opening's “Both sections follow ‘Decisions recorded on 2026-09-
 its subjects. The current executed opening names “Executed in part on 2026-09-26”, “Decisions
 recorded on 2026-09-26” and “Executed on 2026-09-26”. That current opening was already present
 at the execution handoff; no additional substantive base edit is authorized here.
+
+## 2026-10-31: the three unused accessors deleted
+
+Recorded by Claude (Opus 5.5) on 2026-10-31, New York time, in the small-fixes session that the
+session "Commander for Claude's forests" started that day. The base's finding 2, "**Left for
+Ben: `py/boj_paths.py` keeps three accessors that nothing calls.**", left `jobn_img_dir()`,
+`aleppo_img_dir()` and `enriched_quirkrecs_path()` in place. Ben decided on 2026-10-31, in the
+session that looked for records no issue points to: "delete these with prejudice, e.g. don't
+launch a whole new investigation to confirm that they are still not used, i.e. assume that the
+previous analysis still holds, i.e. assume that nothing has started using them." The commit
+that adds this entry deletes all three from `py/boj_paths.py`, with no new search for callers.

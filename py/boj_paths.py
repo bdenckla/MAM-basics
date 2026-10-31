@@ -204,22 +204,6 @@ def jobn_dir() -> Path:
     return gh_pages_dir() / "jobn"
 
 
-def jobn_img_dir() -> Path:
-    """The main document's image tree (``<jobn_dir>/img``), 487 tracked PNGs.
-
-    Retained inputs with no maintained producer: the programs that made the codex crops
-    were retired on 2026-09-26, and the authoring pipeline reads the images through
-    ``jobn_dir()``.
-    """
-    return jobn_dir() / "img"
-
-
-def aleppo_img_dir() -> Path:
-    """Aleppo crops (``<jobn_img_dir>/Aleppo``), 160 tracked PNGs, retained inputs that
-    no program here writes."""
-    return jobn_img_dir() / "Aleppo"
-
-
 def jobn_details_dir() -> Path:
     """The per-quirk detail pages (``<gh_pages_dir>/jobn-details``), 160 tracked HTML."""
     return gh_pages_dir() / D1D_DIR
@@ -234,15 +218,6 @@ def index_html_path() -> Path:
     overwritten a tracked file there rather than failing.
     """
     return gh_pages_dir() / "index.html"
-
-
-def enriched_quirkrecs_path() -> Path:
-    """The enriched quirk records (``<out_dir>/enriched-quirkrecs.json``).
-
-    Written by ``main_gen_misc_authored_english_documents``.  Its one reader here,
-    ``main_list_missing_aleppo_imgs``, was deleted on 2026-09-26.
-    """
-    return out_dir() / "enriched-quirkrecs.json"
 
 
 def cam1753_crops_path() -> Path:
