@@ -8,7 +8,8 @@ then as strokes of a pen, then as groups of strokes that a reader would call a l
 or an accent. It is kept as a **stroke-SVG**, `<crop>.strokes.svg`, beside each crop in
 `doc/pen-stroke-snips/`. That directory's `README.md` gives each crop's provenance, and
 [pen-stroke-exemplars-2026-10-30.md](pen-stroke-exemplars-2026-10-30.md) reports what the first
-four crops showed.
+four crops showed. [pen-stroke-sources.md](pen-stroke-sources.md) lists the books, articles and
+PDFs that the work's research has cited.
 
 ## Ben's decisions
 
