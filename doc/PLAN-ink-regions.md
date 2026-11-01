@@ -1,7 +1,7 @@
 # Plan: regions of ink in place of pen strokes, in the manuscript crops
 
-State: live; proposed 2026-11-01, awaiting Ben's answers to "Decisions for Ben" below; nothing
-executed.
+State: live; proposed 2026-11-01, and Ben answered its three decisions the same day; awaiting his
+word to execute; nothing executed.
 
 ## Context
 
@@ -10,7 +10,8 @@ pen-stroke exemplars to discuss its results. Ben's instruction behind it, asked 
 plan for regions of ink in place of strokes, for your review?", was his button answer "Yes, write
 the plan". His words below are quoted from `.novc/pen-stroke-exemplars/review/` in the
 MAM-basics clone `C:/Users/BenDe/GitRepos/MAM-basics`: `ben-statements-2026-11-01.md`, sections
-49 to 55, and the earlier files `ben-statements-2026-10-30.md` and `-31.md`. Everything else is
+49 to 58, and the earlier files `ben-statements-2026-10-30.md` and `-31.md`. His answers to the
+plan's three decisions are sections 56 to 58, under "Ben's decisions" below. Everything else is
 Claude's reconstruction and design, which Ben has not reviewed.
 
 The pen-stroke work, in `doc/pen-stroke-representation.md` (the schema note) and
@@ -54,6 +55,9 @@ Each is Ben's, from the statements file named above, and each is active as this 
   color should be used to show restored sections".
 - **R6, granularity by application** (section 51): what a region is does not matter in general,
   but "for any given application, it certainly does matter!"
+- **R7, feedback in words, by drawing, or both** (section 57): of boundaries and restorations
+  described in words or drawn on a page, "I'd like to be able to give feedback in one or both of
+  those forms, for any given crop".
 
 ## What carries over, and what is parked
 
@@ -67,32 +71,35 @@ in the new note that phase 1 writes, so that one number names one decision acros
    (supplied marks, never drawn as others are), 17 (whose ink each group is, other lines' ink in a
    colour of its own), 21 (masora circles told apart from the marks that matter) and 22 (likely
    stray ink transcribed and marked so).
-2. **Parked with the pen, if Ben answers decision 1 below as recommended:** 2, 3, 5, 7, 12, 14,
-   16, 18, 19 and 20, which concern the nib, a stroke's widths and ends, heads, bases, the alef's
-   upright and the ductus; and the history of the writing that Ben's section 4 framed ("maybe even
-   animations showing some sort of abstract representation of the nib drawing it out").
+2. **Parked with the pen, by Ben's decision 1 below:** 2, 3, 5, 7, 12, 14, 16, 18, 19 and 20,
+   which concern the nib, a stroke's widths and ends, heads, bases, the alef's upright and the
+   ductus; and the history of the writing that Ben's section 4 framed ("maybe even animations
+   showing some sort of abstract representation of the nib drawing it out").
 3. **Historical:** 8 (the first crops were the QUPO words).
 
-## Decisions for Ben
+## Ben's decisions
+
+Ben answered the plan's three decisions on 2026-11-01, after it was pushed in `5be71f6f`.
 
 1. **Regions of ink in place of strokes.** Each crop gets a region-SVG, designed below, and the
    six stroke-SVGs and `doc/pen-stroke-snips/overlays.html` are frozen as a record of the
-   pen-stroke work: no further edits, though the suite still checks them. Every requirement above
-   is met without a stroke; what is lost is the pen and the history of the writing, item 2 of the
-   section above. Claude recommends this. The alternative is to keep strokes as an optional
-   layer of the region-SVG, which keeps the pen's machinery alive with nothing above needing it.
-2. **How Ben gives boundaries and restorations.** Either in words, in the chat, such as a
-   sentence saying that a qamats's bar runs through a lamed's head and ends at its left edge,
-   which the executor turns into a cut or an outline and shows him in context; or by drawing, on
-   an untracked page that shows each place enlarged and smooth and turns his clicks into a path
-   to paste into the chat. Claude recommends words first, since they cost Ben least, with the
-   drawing page built only if words prove slow.
-3. **Restored ink drawn as supplied marks are.** Decision 15 draws a supplied mark hatched in the
-   orange `#ff6d00` and outlined with dashes, never filled solid and never in a group's colour or
-   black. Claude recommends drawing every kind of ink that the image does not show, a supplied mark
-   or a restored flake (R5), in that one style, so that a reader learns one sign for "added". The
-   alternative is a second reserved style for restorations, which would distinguish ink lost to
-   flaking from ink never seen.
+   pen-stroke work: no further edits, though the suite still checks them. What is given up is the
+   pen and the history of the writing, item 2 of the section above. Asked "Adopt regions of ink
+   in place of strokes, freezing the stroke files as a record?", Ben answered "Yes, regions"
+   (section 56).
+2. **Feedback in words, by drawing, or both, for any crop.** Asked "How will you give boundaries
+   and restorations?", with the choices of words in the chat and a drawing page, Ben answered:
+   "I'd like to be able to give feedback in one or both of those forms, for any given crop"
+   (section 57, R7). So at any time and for any crop he may describe a boundary or a restoration
+   in words, such as a sentence saying that a qamats's bar runs through a lamed's head and ends at
+   its left edge, which the executor turns into a cut or an outline and shows him in context; and
+   phase 3 builds the drawing page for all six crops. Claude had recommended words first, with the
+   drawing page built only if words proved slow.
+3. **Restored ink in a style of its own.** Asked "Draw restored ink in the same hatched orange as
+   supplied marks?", Ben answered "A style of its own" (section 58); Claude had recommended one
+   style for all added ink. So a supplied mark keeps decision 15's style, hatched in the orange
+   `#ff6d00` and outlined with dashes, and restored ink (R5) gets a second reserved style, which
+   "The design" proposes for his review.
 
 ## The design (Claude's, for Ben's review)
 
@@ -115,6 +122,11 @@ shows it has flaked, and `data-supplied-why`. Its added ink is derived: the outl
 the image shows, so supplied ink never claims ink that is there. Candidates for restoration are
 level 1's residual pieces judged `damage`, which the snips README defines as "a pale spot where
 the ink round it has visibly flaked".
+
+Supplied ink of `no-ink` or `traces` is drawn in decision 15's style. Restored ink, `flaked`,
+has a style of its own (Ben's decision 3), which Claude proposes for his review: stippled in the
+teal `#00897b` and outlined with dots, never filled solid, never in a group's colour or black,
+and in a colour that no other layer of the page uses.
 
 ### The region-SVG
 
@@ -179,9 +191,10 @@ section 49). The layers:
    R2); on by default;
 4. the ink by group, each group in the next of the five colours the overlay page uses,
    translucent, so that a region in two groups shows both (R4);
-5. the ink by region, each region a colour of its own (R1, R6);
-6. supplied ink, in decision 15's style, or in a second reserved style if Ben answers decision 3
-   that way (R5); on by default;
+5. the ink by region, each region a colour of its own, from a palette without decision 15's
+   orange, the restored ink's teal or decision 17's slate (R1, R6);
+6. supplied ink: a supplied mark in decision 15's style, and restored ink in its own (R5); on by
+   default;
 7. a checkbox that hides other words' and lines' ink, and one that hides masora circles and stray
    ink: faint by default, hidden by choice (R2);
 8. for checking: level 1's fills judged not ink and its residual pieces, and the cuts and seeds.
@@ -279,7 +292,7 @@ Each phase ends with its commit pushed and a report to Ben, its commits first.
 3. The test `py/tests/test_ink_region_svgs.py`.
 4. A new note, `doc/ink-region-representation.md`, with `State: live`: the region-SVG as
    "The design" above has it once Ben has reviewed it, the decisions carried over by number, and
-   decision 23 on, each quoting Ben, from his answers to "Decisions for Ben". The schema note's
+   decision 23 on, each quoting Ben, from "Ben's decisions" above. The schema note's
    State line and introduction say that the stroke-SVGs are frozen and where the regions are.
 5. Verify and commit. The new test fails while the directory holds no region-SVG, so phase 1's
    commit is pushed together with phase 2's.
@@ -320,12 +333,19 @@ and the snips README says what the region-SVGs are and how they were made.
    words, each with its letter or mark and its line; and its question beside its image (Ben,
    section 13), asking whether the boundary is right and, if not, where it runs.
 3. The same sheet shows each restoration candidate, asking whether to restore it.
-4. Ask decision 2's way: in words in the chat, or on the drawing page if Ben chose it.
+4. An untracked drawing page, `.novc/pen-stroke-exemplars/review/draw-regions.html`, for all six
+   crops (Ben's decision 2). It shows each crop enlarged and smooth, with its regions and cuts
+   drawn over it. Clicks add the points of a cut, or, closed, of an outline of restored ink, and
+   each drawn path takes a note. A text box gives every path, with its crop, its points in crop
+   pixels and its note, for Ben to paste into the chat. It needs no server and saves nothing by
+   itself.
+5. Ben answers in words, on the drawing page, or both, for any crop.
 
 ### Phase 4: Ben's answers
 
-Record each answer verbatim in the statements file, continuing its numbering; move each cut,
-add each restoration, regenerate, and show him each changed place in context. Record findings in
+Record each answer verbatim in the statements file, continuing its numbering, whether it came in
+words or from the drawing page; move each cut, add each restoration, regenerate, and show him
+each changed place in context. Record findings in
 the findings update and decisions in the new note. Verify, commit and push, and release the
 clone.
 
