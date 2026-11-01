@@ -119,10 +119,11 @@ shapes are proposed to share. Unlike a stroke's, a region's groups may disagree 
 is, since ink that two lines share is how a collision between them is proposed.
 
 **How the regions are derived.** The ink is level 1's as judged: the fills judged ink, less every
-residual piece judged something else, and then with every piece judged ink. A hole the tracer
-filled is a residual piece inside a fill, so a hole judged `paper`, such as the inside of a ring,
-or `damage` is left out of the regions; a speck the tracer dropped that is judged `ink` is in
-them. Then, at 3 samples a pixel each way, every step deterministic:
+residual piece judged `paper` or `damage`, and then with every piece judged `ink`. A hole the
+tracer filled is a residual piece inside a fill, so a hole judged `paper`, such as the inside of
+a ring, or `damage` is left out of the regions; a speck the tracer dropped, or faint ink, that is
+judged `ink` is in them; and a piece judged anything else, such as `noise`, leaves the fills as
+they are. Then, at 3 samples a pixel each way, every step deterministic:
 
 1. the ink is rasterized, a sample being inside when its centre is, so that the regions keep
    level 1's smooth outlines;

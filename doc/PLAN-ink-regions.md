@@ -1,7 +1,7 @@
 # Plan: regions of ink in place of pen strokes, in the manuscript crops
 
 State: live; proposed 2026-11-01, and Ben answered its three decisions the same day; phases 1
-and 2 executed 2026-11-01; phase 3 next.
+to 3 executed 2026-11-01; phase 4 awaits Ben's answers to phase 3's sheet.
 
 ## Context
 
@@ -374,7 +374,10 @@ that Ben has not reviewed.
 
 1. **A region's id is `rgN`, not `rN`:** level 1's residual pieces already have the ids `rN`.
 2. **The ink is level 1's as judged, not the fills judged ink alone:** the fills, less every
-   residual piece judged something other than ink, then with every piece judged ink. The four
+   residual piece judged `paper` or `damage`, then with every piece judged ink; a piece judged
+   anything else, such as `noise`, leaves the fills as they are. (Phase 1 first took away every
+   piece not judged ink, which turned two one-pixel holes judged `noise` into white dots inside
+   letters; phase 3's checking found it.) The four
    pieces judged `damage`, phase 2's restoration candidates, are holes that the tracer filled,
    inside the fills, as is the hole judged `paper` inside a masora circle of page F043A's line 4.
    From the fills alone, restored ink could add nothing at the candidates, and the circle would
@@ -408,3 +411,22 @@ that Ben has not reviewed.
 5. **The figures** are in the findings record's update, entry "Regions of ink: the six crops'
    drafts". The census gives the table under "Evidence" unchanged, and the drafts cut 25 pieces
    of ink, as many in each crop as the census counts, though not always the same ones.
+
+### Phase 3, 2026-11-01
+
+1. **A fix first.** Drawing a draft's regions beside its crop showed white dots inside two
+   letters: one-pixel holes judged `noise`, which phase 1's rule took out of the ink. The rule
+   is now the one in phase 1's item 2. The migration, run again, changed only those two regions'
+   outlines and seeds, in the region-SVGs of page F102A's two crops of one chanted word, and the
+   figures stayed as they were.
+2. **The sheet,** `.novc/pen-stroke-exemplars/review/regions-sheet-1.html`, made by
+   `review/make_regions_sheet.py` beside it, asks 29 questions, each beside its image: one for
+   each of the 25 pieces of ink the drafts cut, whether its boundaries are right and, if not,
+   where they run; and one for each of the 4 restoration candidates, whether to restore it.
+3. **The drawing page,** `review/draw-regions.html`, made by the same script, covers the six
+   crops. Its clicks were checked in the in-app browser: points come out in crop pixels, an
+   outline of restored ink closes, and the box gives every path as one JSON line with its crop,
+   kind, points and note. The browser there showed it as a snapshot, without the crops' images,
+   which load when the file is opened directly.
+4. **Ben's answers** are phase 4's input: record each in the statements file, then move the
+   cuts, add the restorations, regenerate and show him each change in context.

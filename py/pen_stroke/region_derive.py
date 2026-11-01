@@ -8,8 +8,10 @@ exactly as a stroke-SVG's are (pen_stroke.derive.derive_level1); each region's
 outline; and each supplied outline's added ink.
 
 The ink is level 1's as judged: the fills judged ink, less every residual piece
-judged something else, such as a hole the tracer filled that is paper or
-damage, and then with every piece judged ink.  The regions come from it in five
+judged paper or damage, which is a hole the tracer filled, and then with every
+piece judged ink, a speck the tracer dropped or faint ink; a piece judged
+anything else, such as noise, leaves the fills as they are.  The regions come
+from it in five
 steps, at SAMPLES samples a pixel each way, so that they keep level 1's smooth
 outlines:
 
@@ -47,6 +49,8 @@ from pen_stroke import stroke_svg as ssvg
 
 SAMPLES = 3
 OUTLINE_PLACES = 3
+# The judgments that take a residual piece's pixels out of the fills' ink.
+NOT_INK = ("paper", "damage")
 
 
 def scaled_mask(ds, width, height):
@@ -61,10 +65,10 @@ def scaled_mask(ds, width, height):
 
 def ink_samples(rf):
     """The ink as level 1 judges it, at SAMPLES samples a pixel: the fills judged
-    ink, less the residual pieces judged something else, with those judged ink."""
+    ink, less the residual pieces judged paper or damage, with those judged ink."""
     w, h = rf.width, rf.height
     ink = scaled_mask(dv.ink_fill_ds(rf), w, h)
-    not_ink = [p.d for p in rf.pieces if p.judged != "ink"]
+    not_ink = [p.d for p in rf.pieces if p.judged in NOT_INK]
     if not_ink:
         ink &= ~scaled_mask(not_ink, w, h)
     judged_ink = [p.d for p in rf.pieces if p.judged == "ink"]
