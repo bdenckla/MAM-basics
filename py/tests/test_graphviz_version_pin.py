@@ -57,7 +57,9 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 # than Graphviz output; its SVG contains only the icon's geometry and colors.
 # The six pen-stroke exemplars combine authored medians and judgments with
 # crop-derived outlines, not Graphviz output. test_pen_stroke_svgs.py checks
-# their profile and derived geometry against the adjacent PNG crops.
+# their profile and derived geometry against the adjacent PNG crops.  The six
+# region-SVGs beside them likewise combine authored cuts, seeds and groups with
+# crop-derived outlines; test_ink_region_svgs.py checks them.
 _EXPECTED_UNSTAMPED = frozenset(
     {
         "doc/process-documentation/MAM process original.svg",
@@ -68,6 +70,12 @@ _EXPECTED_UNSTAMPED = frozenset(
         "doc/pen-stroke-snips/leningrad-102A-col2-line2-Deut4v42.strokes.svg",
         "doc/pen-stroke-snips/leningrad-102A-col3-Deut5v6-3L0PNY.strokes.svg",
         "doc/pen-stroke-snips/leningrad-102A-col3-Deut5v7-MFXF.strokes.svg",
+        "doc/pen-stroke-snips/leningrad-043A-col2-Ex20v2-PNY.regions.svg",
+        "doc/pen-stroke-snips/leningrad-043A-col2-Ex20v3-MFXF.regions.svg",
+        "doc/pen-stroke-snips/leningrad-043A-col2-line4-Ex19v23.regions.svg",
+        "doc/pen-stroke-snips/leningrad-102A-col2-line2-Deut4v42.regions.svg",
+        "doc/pen-stroke-snips/leningrad-102A-col3-Deut5v6-3L0PNY.regions.svg",
+        "doc/pen-stroke-snips/leningrad-102A-col3-Deut5v7-MFXF.regions.svg",
     }
 )
 

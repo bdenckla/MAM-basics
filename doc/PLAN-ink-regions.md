@@ -1,7 +1,7 @@
 # Plan: regions of ink in place of pen strokes, in the manuscript crops
 
-State: live; proposed 2026-11-01, and Ben answered its three decisions the same day; phase 1
-executed 2026-11-01; phases 2 and 3 next.
+State: live; proposed 2026-11-01, and Ben answered its three decisions the same day; phases 1
+and 2 executed 2026-11-01; phase 3 next.
 
 ## Context
 
@@ -390,3 +390,21 @@ that Ben has not reviewed.
    checkbox script and provenance rows, and a labeller in `raster.py`, are shared with the new
    modules `region_svg.py`, `region_derive.py` and `region_render.py`. Afterwards `derive`,
    `check` and `render` left the six stroke-SVGs and `overlays.html` byte-identical.
+
+### Phase 2, 2026-11-01
+
+1. **`scripts/r6_migrate.py`** wrote the six drafts; `--write` also writes
+   `.novc/pen-stroke-exemplars/regions/migrate-<crop>.json`, which records each piece of ink it
+   cut, its labels before and after the merging below, its cuts, and the restoration candidates,
+   for phase 3's sheet. It is deterministic: run again, it rewrites the same files.
+2. **Small parts merged:** in a piece of ink of several labels, each part of one label smaller
+   than 4 pixels, the census's figure, first joins the neighbouring part it shares most edge
+   with. Without it, every place where two groups' strokes barely touch would be a region.
+3. **Cuts end where three parts meet,** as well as at the outline, and all the cuts that meet
+   there end at the same point, so that together they divide the ink.
+4. **New groups:** ink that no stroke reaches within 12 pixels got groups of its own, and the
+   crop of page F043A's מתחת gained the text of the line below; the findings record's update
+   gives the places.
+5. **The figures** are in the findings record's update, entry "Regions of ink: the six crops'
+   drafts". The census gives the table under "Evidence" unchanged, and the drafts cut 25 pieces
+   of ink, as many in each crop as the census counts, though not always the same ones.

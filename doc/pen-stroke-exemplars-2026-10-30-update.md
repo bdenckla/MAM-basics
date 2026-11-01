@@ -320,10 +320,62 @@ to discuss its results.
    squares", on the overlay page, which drew the photograph with each pixel enlarged as a
    hard-edged square instead of smoothly. Both pages no longer have it.
 
+## Regions of ink: the six crops' drafts, 2026-11-01
+
+Asked "Adopt regions of ink in place of strokes, freezing the stroke files as a record?", Ben
+answered "Yes, regions": decision 23 of
+[ink-region-representation.md](ink-region-representation.md), the profile of the new
+region-SVGs, which [PLAN-ink-regions.md](PLAN-ink-regions.md) built. The six stroke-SVGs and
+`overlays.html` are now a frozen record of the pen-stroke work.
+
+1. **Six region-SVGs, as drafts.** A script of Claude's wrote each crop's region-SVG from its
+   stroke-SVG, and the snips README gives its steps. Each region-SVG's level 1 is its
+   stroke-SVG's, derived again and found identical. Its regions are drawn from the strokes: a
+   cut runs where the ink that one group's strokes reach meets the ink that another's reach,
+   and no one has checked a cut against the image.
+2. **The figures,** for files that `regions-check` passes with no problem. A piece of ink is a
+   4-connected piece of the ink as level 1 judges it, at 3 samples a pixel: a fill, or a residual
+   piece judged ink that lies outside the fills. Labels are the groups whose strokes reach it.
+
+   | Crop | Pieces of ink | With several labels | Cut | Cuts | Regions | Regions in two groups or more |
+   | --- | --- | --- | --- | --- | --- | --- |
+   | F043A פני | 8 | 2 | 1 | 10 | 14 | 3 |
+   | F043A מתחת | 15 | 3 | 2 | 3 | 18 | 0 |
+   | F043A, line 4 | 76 | 12 | 11 | 38 | 101 | 11 |
+   | F102A, line 2 | 75 | 6 | 4 | 17 | 84 | 4 |
+   | F102A על־פני | 33 | 10 | 5 | 15 | 46 | 3 |
+   | F102A מתחת | 29 | 5 | 2 | 3 | 32 | 1 |
+
+   A piece with several labels kept only one where every other label's part was smaller than 4
+   pixels and joined its neighbour, as 13 did.
+3. **The census.** `r6_region_census.py`, rerun on the stroke-SVGs at `cc1e7ddd`, gives the
+   plan's table unchanged: 25 fills hold more than one group's ink. The drafts cut 25 pieces,
+   as many in each crop, though not always the same ones, since the census counts a group in a
+   fill from 4 pixels of ink that its strokes cover or come within 3 pixels of, and the drafts
+   count a label's parts.
+4. **Ink that no stroke reaches within 12 pixels** got groups of its own, of the kind
+   "unidentified letter", in four places. At the foot of page F043A's מתחת, the top of a letter
+   of line 23, which touches the atnaḥ over it, as Claude read the page image; its crop had no
+   text of the line below, and its region-SVG now gives as that text the atom under the crop,
+   the last of Exodus 20:4, copied by script from round 3's extract of the UXLC. At the top edge
+   of page F043A's line 4,
+   the foot of a letter of line 3, and at the foot of page F102A's line 2, the tops of four
+   letters of line 3: specks the tracer dropped and Claude judged ink. A speck at the top edge
+   of page F102A's על־פני, 12.3 pixels from a mark of the line above, joined that mark's group.
+5. **Restoration candidates.** The four residual pieces judged damage are all in page F102A's
+   מתחת, each a pale spot that the tracer filled, inside a fill: r3, 7 pixels, at x 99 to 101
+   and y 47 to 49 of the crop; r7, 4 pixels, at x 93 to 94 and y 66 to 67; r10, 2 pixels, at
+   x 63 and y 106 to 107; and r11, 3 pixels, at x 104 to 106 and y 114. Their ink is left out of
+   the regions, so that restored ink could fill them. No restoration has been added; each awaits
+   Ben's word.
+6. **Supplied ink.** The bar and the tick of the qamats under the nun of page F102A's על־פני,
+   strokes s30 and s31, are now supplied ink, each outline the outline of its stroke's ink.
+
 Effective State of the base, 2026-11-01: executed 2026-10-30; Ben has checked the readings of
 the two crops on page F043A and of the vowels under the nun of F102A's על־פני, and the rest of
 the two crops on page F102A awaits his review. Of the two crops of whole lines that round 3
 added, Ben answered round 3's nine questions on 2026-10-31; the rest of their readings has had
 no human review. Ben judged round 5's refit of their letters under profile 5 an incremental
-improvement on a fundamentally flawed approach on 2026-11-01, and how to work up from level 1
-instead is under discussion.
+improvement on a fundamentally flawed approach on 2026-11-01, and chose regions of ink in place
+of strokes the same day. The stroke-SVGs are a frozen record since then, and the six crops'
+region-SVGs, drafted by script from the strokes, await his review.
