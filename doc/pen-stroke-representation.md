@@ -180,8 +180,8 @@ tracing, on two well-kept lines, and decisions 18 to 22 in the fourth round.
     end of a letter's stroke is cut along an edge of the one stiff nib that `nibfit` measures in
     the crop's letters, as round 3's fitting cut it. Since profile 5, in the two crops of whole
     lines, each end of a letter's stroke is the swept nib's own edges. Round 5 measured what
-    freeing each end's angle would gain, and the findings record's update gives it; the
-    strictness stands until Ben decides.
+    freeing each end's angle would gain, and the findings record's update gives it. On
+    2026-11-01 Ben declined to choose among the freedoms measured, so the strictness stands.
 21. **A masora circle is transcribed and told apart from the marks that matter, and its line is
     a weak guess.** Asked whether a ring over the atom לעלת and a blot over the atom הר of page
     F043A's line 4 are circelli and that line's, Ben answered: "yeh I'd say they are masorah
@@ -432,9 +432,10 @@ Their heads are not yet strokes of their own. The two crops traced next, of whol
 the first under profile 4 throughout; the findings record's update describes them.
 
 Profile 5, of 2026-11-01, adds the swept stroke and changes nothing else, as profile 3 added
-supplied strokes. It is Claude's design, which Ben has not yet reviewed, for the round he chose
-on 2026-11-01: asked "Which should the next round build first?", he answered "Pen first, then
-letters". The four QUPO crops moved to it by their profile string alone, and deriving them
+supplied strokes. It is Claude's design for the round Ben chose on 2026-11-01: asked "Which
+should the next round build first?", he answered "Pen first, then letters". The same day he
+judged its result "incremental improvements on a fundamentally-flawed system", and the findings
+record's update gives his review. The four QUPO crops moved to it by their profile string alone, and deriving them
 again changed nothing more, so their strokes keep their widths. In the two crops of whole
 lines every stroke of the letters is swept by the crop's nib for the letters. Their marks keep
 the widths and ends round 3 fitted, and a mark may still end round (decision 16): a nib for

@@ -281,8 +281,49 @@ design of Claude's that Ben has not yet reviewed.
    stroke is what the Beit Yosef sheet's tilted vav asks for; turning it during a stroke, the
    sheet's wedge, was not measured.
 
+## Ben's review of round 5, 2026-11-01
+
+Ben's words below are from his message of 2026-11-01 to the session that took over from round 5
+to discuss its results.
+
+1. **Round 5 is an incremental improvement on a flawed approach.** Ben: "my basic message is
+   that round 5 seems like incremental improvements on a fundamentally-flawed system." He cited
+   the tav of the atom אחת of page F102A's line 2, whose ink is clean: "Image-wise, it seems a
+   fine signal (no flaking, good image quality, etc.). But stroke-matching is comically bad. If
+   we can't get that tav right, we have no hope for this approach". He declined to choose among
+   round 5's three freedoms, which would mean distinguishing "fine variations in "how
+   terrible", which I decline to do based on pointlessness." So no freedom is adopted, and
+   decision 20's strictness stands.
+2. **What went wrong in that tav.** Ben named two places a flaw may lie: "the nib model (writing
+   instrument model) is flawed", whether "too restrictive, too permissive" or otherwise, and
+   "the fitting procedure is flawed", whether by "following noise, failing to follow signal" or
+   otherwise. The tav shows both. Its four strokes are a head, the roof running into the right
+   leg, the left leg, and the foot, written from left to right (decision 18). In round 4 the
+   left leg's median, placed by eye, stood about 10 pixels left of the middle of its ink, which
+   is 6 to 8 pixels wide, so that only 15% of its sweep lay on ink. Round 5's fit lets each
+   point move at most 5 pixels from round 4's median, and it moves one point, or one smooth
+   join, at a time, never a whole stroke; it moved the leg about 2 pixels, and 32% of its sweep
+   now lies on ink. Most of the leg's ink is unexplained, and most of its stroke covers
+   paper. A fit that only polishes medians placed by eye keeps a gross error in their placement.
+   The rigid nib, for its part, cannot make the ink's sharp tips, the head's peak and the
+   foot's point: it sweeps the foot as a broad band with blunt ends. And where the ink runs the
+   leg into the foot in one curve, the strokes are two.
+3. **Letter models.** Of phase B, letter models fitted to the ink, Ben wrote: "perhaps worth a
+   try but i'm pessimistic." It has not begun.
+4. **A direction Ben finds more promising.** Ben: "I think a more promising direction is to try
+   to work up from a lower level ink-fill model (didn't we used to have that as level 1?)".
+   Level 1, the ink as filled outlines that potrace traces, is still in every stroke-SVG, and in
+   the tav it follows the ink closely, tips and all. How to work up from it is under discussion.
+5. **The photograph is no longer drawn as squares of pixels.** Ben: "btw what is "the page's
+   pixels as squares"? whatever it is, it seems useless; please get rid of it but tell me what it
+   was". It was a checkbox beside each image, on round 5's sheet and, as "the crop's pixels as
+   squares", on the overlay page, which drew the photograph with each pixel enlarged as a
+   hard-edged square instead of smoothly. Both pages no longer have it.
+
 Effective State of the base, 2026-11-01: executed 2026-10-30; Ben has checked the readings of
 the two crops on page F043A and of the vowels under the nun of F102A's על־פני, and the rest of
 the two crops on page F102A awaits his review. Of the two crops of whole lines that round 3
 added, Ben answered round 3's nine questions on 2026-10-31; the rest of their readings has had
-no human review, and round 5's refit of their letters under profile 5 awaits his review.
+no human review. Ben judged round 5's refit of their letters under profile 5 an incremental
+improvement on a fundamentally flawed approach on 2026-11-01, and how to work up from level 1
+instead is under discussion.

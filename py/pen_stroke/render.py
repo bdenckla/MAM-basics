@@ -13,8 +13,8 @@ of another word or line (decision 17), is drawn in a colour of its own in every
 view, on a layer of its own.  Where a file proposes how its ink was written
 (decision 11), each median ends in an arrowhead, and a button plays the
 writing: the strokes appear in their order, each along its median.  The crop
-is drawn smoothly, not as squares, unless its image's checkbox asks for
-squares.  Writes doc/pen-stroke-snips/overlays.html.
+is drawn smoothly, never as squares of pixels.  Writes
+doc/pen-stroke-snips/overlays.html.
 """
 
 import html
@@ -132,7 +132,6 @@ p.ai-caveat { border: 3px solid #b00020; padding: 0.6em 0.8em; }
 .layered button { margin: 0.4em 0 0.2em 0; }
 svg.overlay { border: 1px solid #999; background: #fff; display: block; }
 svg.overlay image { image-rendering: auto; }
-.squares svg.overlay image { image-rendering: pixelated; }
 table { border-collapse: collapse; margin: 0.6em 0; }
 td, th { border: 1px solid #bbb; padding: 0.15em 0.5em; text-align: left; vertical-align: middle; }
 td.num { text-align: right; font-variant-numeric: tabular-nums; }
@@ -151,12 +150,6 @@ _JS = """
 for (const box of document.querySelectorAll('.layered input[data-layer]')) {
   const fig = box.closest('.layered');
   const apply = () => fig.classList.toggle('hide-' + box.dataset.layer, !box.checked);
-  box.addEventListener('change', apply);
-  apply();
-}
-for (const box of document.querySelectorAll('.layered input[data-squares]')) {
-  const fig = box.closest('.layered');
-  const apply = () => fig.classList.toggle('squares', box.checked);
   box.addEventListener('change', apply);
   apply();
 }
@@ -488,9 +481,6 @@ def layer_controls(play=False):
                 )
                 + "</p>"
             )
-    out.append(
-        '<label><input type="checkbox" data-squares> the crop\'s pixels as squares</label>'
-    )
     out.append("</fieldset>")
     return "\n".join(out)
 

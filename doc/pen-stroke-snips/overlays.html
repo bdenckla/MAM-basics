@@ -14,7 +14,6 @@ p.ai-caveat { border: 3px solid #b00020; padding: 0.6em 0.8em; }
 .layered button { margin: 0.4em 0 0.2em 0; }
 svg.overlay { border: 1px solid #999; background: #fff; display: block; }
 svg.overlay image { image-rendering: auto; }
-.squares svg.overlay image { image-rendering: pixelated; }
 table { border-collapse: collapse; margin: 0.6em 0; }
 td, th { border: 1px solid #bbb; padding: 0.15em 0.5em; text-align: left; vertical-align: middle; }
 td.num { text-align: right; font-variant-numeric: tabular-nums; }
@@ -231,7 +230,6 @@ line,</strong> which the crop holds but is not its subject. Its own checkbox hid
 <label><input type="checkbox" data-layer="groups"> level 5: groups, by kind</label>
 <p><span class="swatch" style="background:#1f618d"></span> letter <span class="swatch" style="background:#1e8449"></span> vowel <span class="swatch" style="background:#b03a2e"></span> accent <span class="swatch" style="background:#7d3c98"></span> mark <span class="swatch" style="background:#566573"></span> undetermined</p>
 <label><input type="checkbox" data-layer="labels"> stroke ids</label>
-<label><input type="checkbox" data-squares> the crop's pixels as squares</label>
 </fieldset>
 </div>
 <table>
@@ -533,7 +531,6 @@ line,</strong> which the crop holds but is not its subject. Its own checkbox hid
 <label><input type="checkbox" data-layer="groups"> level 5: groups, by kind</label>
 <p><span class="swatch" style="background:#1f618d"></span> letter <span class="swatch" style="background:#1e8449"></span> vowel <span class="swatch" style="background:#b03a2e"></span> accent <span class="swatch" style="background:#7d3c98"></span> mark <span class="swatch" style="background:#566573"></span> undetermined</p>
 <label><input type="checkbox" data-layer="labels"> stroke ids</label>
-<label><input type="checkbox" data-squares> the crop's pixels as squares</label>
 </fieldset>
 </div>
 <table>
@@ -1677,7 +1674,6 @@ line,</strong> which the crop holds but is not its subject. Its own checkbox hid
 <label><input type="checkbox" data-layer="groups"> level 5: groups, by kind</label>
 <p><span class="swatch" style="background:#1f618d"></span> letter <span class="swatch" style="background:#1e8449"></span> vowel <span class="swatch" style="background:#b03a2e"></span> accent <span class="swatch" style="background:#7d3c98"></span> mark <span class="swatch" style="background:#566573"></span> undetermined</p>
 <label><input type="checkbox" data-layer="labels"> stroke ids</label>
-<label><input type="checkbox" data-squares> the crop's pixels as squares</label>
 </fieldset>
 </div>
 <table>
@@ -2814,7 +2810,6 @@ line,</strong> which the crop holds but is not its subject. Its own checkbox hid
 <label><input type="checkbox" data-layer="groups"> level 5: groups, by kind</label>
 <p><span class="swatch" style="background:#1f618d"></span> letter <span class="swatch" style="background:#1e8449"></span> vowel <span class="swatch" style="background:#b03a2e"></span> accent <span class="swatch" style="background:#7d3c98"></span> mark <span class="swatch" style="background:#566573"></span> undetermined</p>
 <label><input type="checkbox" data-layer="labels"> stroke ids</label>
-<label><input type="checkbox" data-squares> the crop's pixels as squares</label>
 </fieldset>
 </div>
 <table>
@@ -3258,7 +3253,6 @@ line,</strong> which the crop holds but is not its subject. Its own checkbox hid
 <label><input type="checkbox" data-layer="groups"> level 5: groups, by kind</label>
 <p><span class="swatch" style="background:#1f618d"></span> letter <span class="swatch" style="background:#1e8449"></span> vowel <span class="swatch" style="background:#b03a2e"></span> accent <span class="swatch" style="background:#7d3c98"></span> mark <span class="swatch" style="background:#566573"></span> undetermined</p>
 <label><input type="checkbox" data-layer="labels"> stroke ids</label>
-<label><input type="checkbox" data-squares> the crop's pixels as squares</label>
 </fieldset>
 </div>
 <table>
@@ -3599,7 +3593,6 @@ line,</strong> which the crop holds but is not its subject. Its own checkbox hid
 <label><input type="checkbox" data-layer="groups"> level 5: groups, by kind</label>
 <p><span class="swatch" style="background:#1f618d"></span> letter <span class="swatch" style="background:#1e8449"></span> vowel <span class="swatch" style="background:#b03a2e"></span> accent <span class="swatch" style="background:#7d3c98"></span> mark <span class="swatch" style="background:#566573"></span> undetermined</p>
 <label><input type="checkbox" data-layer="labels"> stroke ids</label>
-<label><input type="checkbox" data-squares> the crop's pixels as squares</label>
 </fieldset>
 </div>
 <table>
@@ -3643,12 +3636,6 @@ line,</strong> which the crop holds but is not its subject. Its own checkbox hid
 for (const box of document.querySelectorAll('.layered input[data-layer]')) {
   const fig = box.closest('.layered');
   const apply = () => fig.classList.toggle('hide-' + box.dataset.layer, !box.checked);
-  box.addEventListener('change', apply);
-  apply();
-}
-for (const box of document.querySelectorAll('.layered input[data-squares]')) {
-  const fig = box.closest('.layered');
-  const apply = () => fig.classList.toggle('squares', box.checked);
   box.addEventListener('change', apply);
   apply();
 }

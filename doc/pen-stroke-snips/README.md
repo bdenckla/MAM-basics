@@ -13,7 +13,9 @@ the crop's one nib, which gives its widths and ends, and a second script of Clau
 median, every point within 5 pixels of where round 4 left it, to fit the ink (profile 5 of the
 schema note). Ben has checked the readings of the marks in the two crops on page F043A
 and of the vowels under the nun of F102A's על־פני, and on 2026-10-31 he answered round 3's nine
-questions about the two line crops; no human has reviewed the rest.
+questions about the two line crops. On 2026-11-01 he judged the strokes of the line crops'
+letters, as round 5 left them, an incremental improvement on a fundamentally flawed approach. No
+human has reviewed the rest.
 
 A mark the crop shows little or no ink of, but that the transcription or the layout implies,
 is a **supplied stroke** (decision 15 of the schema note). `overlays.html` draws every supplied
