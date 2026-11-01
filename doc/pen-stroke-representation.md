@@ -1,6 +1,6 @@
 # The pen-stroke representation of a manuscript crop
 
-State: live; the profile of the stroke-SVGs in `doc/pen-stroke-snips/`: profile 1 implemented on 2026-10-30, profiles 2 to 4 on 2026-10-31, profile 5 on 2026-11-01
+State: live; the profile of the stroke-SVGs in `doc/pen-stroke-snips/`: profile 1 implemented on 2026-10-30, profiles 2 to 4 on 2026-10-31, profile 5 on 2026-11-01; since 2026-11-01 the stroke-SVGs are a frozen record, and regions of ink replace the strokes
 
 A crop of a manuscript page can be shown as pixels and read as a Unicode transcription. The
 pen-stroke representation sits between them. It describes the crop's ink as filled outlines,
@@ -10,6 +10,13 @@ or an accent. It is kept as a **stroke-SVG**, `<crop>.strokes.svg`, beside each 
 [pen-stroke-exemplars-2026-10-30.md](pen-stroke-exemplars-2026-10-30.md) reports what the first
 four crops showed. [pen-stroke-sources.md](pen-stroke-sources.md) lists the books, articles and
 PDFs that the work's research has cited.
+
+Since 2026-11-01 the six stroke-SVGs and `overlays.html` are a frozen record of this work, which
+the suite still checks but no one edits. Ben chose regions of ink in place of strokes that day,
+decision 23 of [ink-region-representation.md](ink-region-representation.md). Each crop now has a
+region-SVG beside it, `<crop>.regions.svg`, under that note's profile, with the same level 1 as
+its stroke-SVG, and `regions.html` draws them. That note carries this note's decisions over by
+number, and parks those that concern the pen.
 
 ## Ben's decisions
 

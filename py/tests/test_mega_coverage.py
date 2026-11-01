@@ -169,6 +169,17 @@ _PEN_STROKE_BY_HAND = (
     " is current.  Recorded in doc/pen-stroke-representation.md, under"
     ' "Running the tool".'
 )
+# The same tool's subcommands for its regions of ink, which replaced its strokes by
+# Ben's decision of 2026-11-01; the decision of 2026-10-30 covers the whole tool.
+_INK_REGION_BY_HAND = (
+    "Ben's decision, 2026-10-30, on a Claude-written proposal: the tool of the pen-stroke"
+    ' exemplars, run by hand.  Ben: "this is not an appropriate part of mega, this is a'
+    ' very early-stage experiment."  These subcommands make its regions of ink, and its'
+    " region-SVGs and region page under doc/pen-stroke-snips/ are no product.  The"
+    " suite's py/tests/test_ink_region_svgs.py derives every region-SVG again from its"
+    " crop; nothing checks that the region page is current.  Recorded in"
+    ' doc/ink-region-representation.md, under "Running the tool".'
+)
 
 # ---------------------------------------------------------------------------
 # THE DECLARATION.  Every program the mega does not run, keyed as the module
@@ -571,6 +582,9 @@ NOT_IN_MEGA: dict[str, str] = {
     "py/main_pen_stroke.py derive": _PEN_STROKE_BY_HAND,
     "py/main_pen_stroke.py check": _PEN_STROKE_BY_HAND,
     "py/main_pen_stroke.py render": _PEN_STROKE_BY_HAND,
+    "py/main_pen_stroke.py regions-derive": _INK_REGION_BY_HAND,
+    "py/main_pen_stroke.py regions-check": _INK_REGION_BY_HAND,
+    "py/main_pen_stroke.py regions-render": _INK_REGION_BY_HAND,
 }
 
 # ---------------------------------------------------------------------------

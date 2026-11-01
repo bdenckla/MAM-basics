@@ -3,7 +3,9 @@
 The reader accepts the profile's elements, classes and attributes and nothing
 else, so that a misspelt class cannot silently drop a stroke.  It ignores the
 Inkscape and Sodipodi namespaces a vector editor adds, and the writer, which
-always writes the same text for the same content, drops them.
+always writes the same text for the same content, drops them.  A region-SVG
+(pen_stroke.region_svg) shares the helpers that read and write level 1 and the
+groups.
 """
 
 import xml.etree.ElementTree as ET
@@ -189,7 +191,7 @@ def style(sf):
     return STYLE + f"{sel} {{ fill: {OTHER_INK_COLOUR}; fill-opacity: 0.55 }}\n"
 
 
-def _tag(el):
+def svg_tag(el):
     tag = el.tag
     if tag.startswith("{" + _SVG + "}"):
         return tag[len(_SVG) + 2 :]
@@ -200,7 +202,7 @@ def _is_editor(name):
     return any(name.startswith("{" + ns + "}") for ns in _EDITOR_NAMESPACES)
 
 
-def _attrs(el, where, allowed):
+def profile_attrs(el, where, allowed):
     out = {}
     for name, value in el.attrib.items():
         if _is_editor(name):
@@ -213,18 +215,18 @@ def _attrs(el, where, allowed):
     return out
 
 
-def _require(attrs, key, where):
+def require(attrs, key, where):
     if key not in attrs:
         raise ProfileError(f"{where}: missing {key!r}")
     return attrs[key]
 
 
-def _children(el):
+def svg_children(el):
     out = []
     for child in el:
         if _is_editor(child.tag):
             continue
-        tag = _tag(child)
+        tag = svg_tag(child)
         if tag in ("defs", "metadata", "title", "desc"):
             continue
         if tag is None:
@@ -236,21 +238,21 @@ def _children(el):
 def read(path):
     """The stroke-SVG at path, checked against the profile's structure."""
     root = ET.parse(path).getroot()
-    if _tag(root) != "svg":
+    if svg_tag(root) != "svg":
         raise ProfileError(f"{path}: root is not svg")
     allowed = {"viewBox", "width", "height", "version", "data-profile", "data-channel"}
     allowed |= {f"data-{k}" for k in PROVENANCE_KEYS}
     allowed |= {"data-threshold", "data-speck-size", "data-halo-band", "data-tracer"}
     allowed |= {"data-ductus"} | set(NIB_KEYS.values())
-    a = _attrs(root, "root", allowed)
+    a = profile_attrs(root, "root", allowed)
     if a.get("data-profile") != PROFILE:
         raise ProfileError(f"{path}: data-profile is not {PROFILE!r}")
     if a.get("data-channel") != "luminance":
         raise ProfileError(f"{path}: data-channel is not 'luminance'")
-    ductus = _require(a, "data-ductus", "root")
+    ductus = require(a, "data-ductus", "root")
     if ductus not in DUCTUS:
         raise ProfileError(f"{path}: unknown data-ductus {ductus!r}")
-    vb = [float(v) for v in _require(a, "viewBox", "root").split()]
+    vb = [float(v) for v in require(a, "viewBox", "root").split()]
     if vb[:2] != [0, 0] or vb[2] != int(vb[2]) or vb[3] != int(vb[3]):
         raise ProfileError(
             f"{path}: viewBox must be 0 0 <width> <height> in whole pixels"
@@ -260,27 +262,29 @@ def read(path):
         height=int(vb[3]),
         image="",
         provenance={k: a[f"data-{k}"] for k in PROVENANCE_KEYS if f"data-{k}" in a},
-        threshold=int(_require(a, "data-threshold", "root")),
-        speck_size=int(_require(a, "data-speck-size", "root")),
-        halo_band=int(_require(a, "data-halo-band", "root")),
-        tracer=_require(a, "data-tracer", "root"),
+        threshold=int(require(a, "data-threshold", "root")),
+        speck_size=int(require(a, "data-speck-size", "root")),
+        halo_band=int(require(a, "data-halo-band", "root")),
+        tracer=require(a, "data-tracer", "root"),
         ductus=ductus,
         nibs={p: _read_nib(a[k], k) for p, k in NIB_KEYS.items() if k in a},
     )
     seen = []
-    for tag, el in _children(root):
+    for tag, el in svg_children(root):
         cls = el.attrib.get("class", "")
         key = f"{tag}.{cls}" if cls else tag
         seen.append(key)
         if key == "style":
             continue
         if key == "image.crop":
-            ia = _attrs(el, "image", {"class", "href", "x", "y", "width", "height"})
-            sf.image = _require(ia, "href", "image")
+            ia = profile_attrs(
+                el, "image", {"class", "href", "x", "y", "width", "height"}
+            )
+            sf.image = require(ia, "href", "image")
         elif key == "g.fills":
-            _read_fills(el, sf)
+            read_fills(el, sf)
         elif key == "g.image-residual":
-            _read_image_residual(el, sf)
+            read_image_residual(el, sf)
         elif key == "g.strokes":
             _read_strokes(el, sf)
         elif key == "g.pen-residual":
@@ -288,7 +292,7 @@ def read(path):
         elif key == "g.frame":
             _read_frame(el, sf)
         elif key == "g.groups":
-            _read_groups(el, sf)
+            read_groups(el, sf)
         else:
             raise ProfileError(f"{path}: element {key!r} is not in the profile")
     for needed in (
@@ -316,52 +320,52 @@ def _read_nib(value, key):
     return nibmod.Nib(width=width, angle=angle, edge=edge)
 
 
-def _read_fills(g, sf):
-    for tag, el in _children(g):
+def read_fills(g, sf):
+    for tag, el in svg_children(g):
         if tag != "path":
             raise ProfileError(f"fills: {tag} is not a path")
-        a = _attrs(el, "fill", {"id", "d", "data-judged"})
+        a = profile_attrs(el, "fill", {"id", "d", "data-judged"})
         judged = a.get("data-judged")
         if judged is not None and judged not in level1.JUDGMENTS:
             raise ProfileError(f"fill {a.get('id')}: unknown judgment {judged!r}")
-        sf.fills.append(
-            Fill(_require(a, "id", "fill"), _require(a, "d", "fill"), judged)
-        )
+        sf.fills.append(Fill(require(a, "id", "fill"), require(a, "d", "fill"), judged))
 
 
-def _read_image_residual(g, sf):
-    for tag, el in _children(g):
+def read_image_residual(g, sf):
+    for tag, el in svg_children(g):
         cls = el.attrib.get("class", "")
         if tag != "path":
             raise ProfileError(f"image-residual: {tag} is not a path")
         if cls == "piece":
-            a = _attrs(el, "piece", {"class", "id", "d", "data-source", "data-judged"})
-            source = _require(a, "data-source", "piece")
-            judged = _require(a, "data-judged", "piece")
+            a = profile_attrs(
+                el, "piece", {"class", "id", "d", "data-source", "data-judged"}
+            )
+            source = require(a, "data-source", "piece")
+            judged = require(a, "data-judged", "piece")
             if source not in level1.PIECE_SOURCES:
                 raise ProfileError(f"piece {a.get('id')}: unknown source {source!r}")
             if judged not in level1.JUDGMENTS:
                 raise ProfileError(f"piece {a.get('id')}: unknown judgment {judged!r}")
             sf.pieces.append(
                 Piece(
-                    _require(a, "id", "piece"),
+                    require(a, "id", "piece"),
                     source,
                     judged,
-                    _require(a, "d", "piece"),
+                    require(a, "d", "piece"),
                 )
             )
         elif cls in ("smoothing", "halo"):
-            a = _attrs(el, cls, {"class", "d"})
+            a = profile_attrs(el, cls, {"class", "d"})
             setattr(sf, cls, a.get("d", ""))
         else:
             raise ProfileError(f"image-residual: class {cls!r} is not in the profile")
 
 
 def _read_strokes(g, sf):
-    for tag, el in _children(g):
+    for tag, el in svg_children(g):
         if tag != "g" or el.attrib.get("class") != "stroke":
             raise ProfileError("strokes: every child is a g.stroke")
-        a = _attrs(
+        a = profile_attrs(
             el,
             "stroke",
             {
@@ -379,8 +383,8 @@ def _read_strokes(g, sf):
                 "data-swept",
             },
         )
-        sid = _require(a, "id", "stroke")
-        pass_name = _require(a, "data-pass", sid)
+        sid = require(a, "id", "stroke")
+        pass_name = require(a, "data-pass", sid)
         if pass_name not in PASSES:
             raise ProfileError(f"{sid}: unknown pass {pass_name!r}")
         swept = a.get("data-swept", "")
@@ -416,12 +420,12 @@ def _read_strokes(g, sf):
             supplied_why=supplied_why,
             swept=swept,
         )
-        for ctag, child in _children(el):
+        for ctag, child in svg_children(el):
             cls = child.attrib.get("class", "")
             if ctag != "path" or cls not in ("median", "ink"):
                 raise ProfileError(f"{sid}: child {ctag}.{cls} is not in the profile")
             # A vector editor gives every path an id and a style; neither means anything here.
-            ca = _attrs(child, f"{sid} {cls}", {"class", "d", "id", "style"})
+            ca = profile_attrs(child, f"{sid} {cls}", {"class", "d", "id", "style"})
             setattr(st, cls, ca.get("d", ""))
         if not st.median:
             raise ProfileError(f"{sid}: no median")
@@ -443,13 +447,13 @@ def _read_swept(a, sid, swept):
 
 def _read_widths(a, sid):
     """The ends, cuts and widths of a stroke that carries widths of its own."""
-    ends = _require(a, "data-ends", sid)
+    ends = require(a, "data-ends", sid)
     if ends not in curve.ENDS:
         raise ProfileError(f"{sid}: unknown ends {ends!r}")
     cuts = ()
     if ends == "cut":
         try:
-            cuts = tuple(float(v) for v in _require(a, "data-cuts", sid).split())
+            cuts = tuple(float(v) for v in require(a, "data-cuts", sid).split())
         except ValueError as exc:
             raise ProfileError(f"{sid}: data-cuts is not a list of numbers") from exc
         if len(cuts) != 2 or not all(0 <= c < 180 for c in cuts):
@@ -459,7 +463,7 @@ def _read_widths(a, sid):
     elif "data-cuts" in a:
         raise ProfileError(f"{sid}: only a stroke whose ends are cut has data-cuts")
     try:
-        widths = [float(v) for v in _require(a, "data-widths", sid).split()]
+        widths = [float(v) for v in require(a, "data-widths", sid).split()]
     except ValueError as exc:
         raise ProfileError(f"{sid}: data-widths is not a list of numbers") from exc
     if not widths or min(widths) <= 0:
@@ -468,46 +472,46 @@ def _read_widths(a, sid):
 
 
 def _read_pen_residual(g, sf):
-    for tag, el in _children(g):
+    for tag, el in svg_children(g):
         cls = el.attrib.get("class", "")
         if tag != "path" or cls not in ("unexplained", "overshoot"):
             raise ProfileError(f"pen-residual: {tag}.{cls} is not in the profile")
-        a = _attrs(el, cls, {"class", "d"})
+        a = profile_attrs(el, cls, {"class", "d"})
         setattr(sf, cls, a.get("d", ""))
 
 
 def _read_frame(g, sf):
-    a = _attrs(g, "frame", {"class", "data-letter-height"})
+    a = profile_attrs(g, "frame", {"class", "data-letter-height"})
     lines = []
-    for tag, el in _children(g):
+    for tag, el in svg_children(g):
         if tag != "line" or el.attrib.get("class") != "baseline":
             raise ProfileError("frame: its one child is a line.baseline")
-        la = _attrs(el, "baseline", {"class", "x1", "y1", "x2", "y2"})
+        la = profile_attrs(el, "baseline", {"class", "x1", "y1", "x2", "y2"})
         lines.append(tuple(float(la[k]) for k in ("x1", "y1", "x2", "y2")))
     if len(lines) != 1:
         raise ProfileError("frame: exactly one baseline")
-    sf.frame = Frame(lines[0], float(_require(a, "data-letter-height", "frame")))
+    sf.frame = Frame(lines[0], float(require(a, "data-letter-height", "frame")))
 
 
-def _read_groups(g, sf):
-    for tag, el in _children(g):
+def read_groups(g, sf):
+    for tag, el in svg_children(g):
         if tag != "g" or el.attrib.get("class") != "group":
             raise ProfileError("groups: every child is a g.group")
-        a = _attrs(
+        a = profile_attrs(
             el, "group", {"class", "id", "data-kind", "data-ink-of", "data-note"}
         )
-        gid = _require(a, "id", "group")
-        kind = _require(a, "data-kind", gid)
+        gid = require(a, "id", "group")
+        kind = require(a, "data-kind", gid)
         level5.pass_of(kind)
-        ink_of = _require(a, "data-ink-of", gid)
+        ink_of = require(a, "data-ink-of", gid)
         if ink_of not in INK_OWNERS:
             raise ProfileError(f"{gid}: unknown data-ink-of {ink_of!r}")
         members = []
-        for ctag, child in _children(el):
+        for ctag, child in svg_children(el):
             if ctag != "use":
                 raise ProfileError(f"{gid}: child {ctag} is not a use")
-            ua = _attrs(child, f"{gid} use", {"href"})
-            href = _require(ua, "href", gid)
+            ua = profile_attrs(child, f"{gid} use", {"href"})
+            href = require(ua, "href", gid)
             if not href.startswith("#"):
                 raise ProfileError(
                     f"{gid}: href {href!r} is not a fragment of this file"
@@ -516,7 +520,7 @@ def _read_groups(g, sf):
         sf.groups.append(Group(gid, kind, members, ink_of, a.get("data-note", "")))
 
 
-def _esc(s):
+def esc(s):
     return (
         str(s)
         .replace("&", "&amp;")
@@ -537,13 +541,13 @@ def dumps(sf):
     ]
     for k in PROVENANCE_KEYS:
         if k in sf.provenance:
-            root.append(f'data-{k}="{_esc(sf.provenance[k])}"')
+            root.append(f'data-{k}="{esc(sf.provenance[k])}"')
     root += [
         'data-channel="luminance"',
         f'data-threshold="{sf.threshold}"',
         f'data-speck-size="{sf.speck_size}"',
         f'data-halo-band="{sf.halo_band}"',
-        f'data-tracer="{_esc(sf.tracer)}"',
+        f'data-tracer="{esc(sf.tracer)}"',
         f'data-ductus="{sf.ductus}"',
     ]
     for pass_name, key in NIB_KEYS.items():
@@ -555,23 +559,10 @@ def dumps(sf):
     ]
     lines.append(f"  <style>{style(sf)}  </style>")
     lines.append(
-        f'  <image class="crop" href="{_esc(sf.image)}" x="0" y="0"'
+        f'  <image class="crop" href="{esc(sf.image)}" x="0" y="0"'
         f' width="{sf.width}" height="{sf.height}"/>'
     )
-    lines.append('  <g class="fills">')
-    for f in sf.fills:
-        judged = f' data-judged="{f.judged}"' if f.judged else ""
-        lines.append(f'    <path id="{f.id}"{judged} d="{f.d}"/>')
-    lines.append("  </g>")
-    lines.append('  <g class="image-residual">')
-    for p in sf.pieces:
-        lines.append(
-            f'    <path class="piece" id="{p.id}" data-source="{p.source}"'
-            f' data-judged="{p.judged}" d="{p.d}"/>'
-        )
-    lines.append(f'    <path class="smoothing" d="{sf.smoothing}"/>')
-    lines.append(f'    <path class="halo" d="{sf.halo}"/>')
-    lines.append("  </g>")
+    lines += level1_lines(sf)
     lines.append('  <g class="strokes">')
     for s in sf.strokes:
         attrs = [
@@ -593,10 +584,10 @@ def dumps(sf):
         if s.confidence != "high":
             attrs.append(f'data-confidence="{s.confidence}"')
         if s.note:
-            attrs.append(f'data-note="{_esc(s.note)}"')
+            attrs.append(f'data-note="{esc(s.note)}"')
         if s.supplied:
             attrs.append(f'data-supplied="{s.supplied}"')
-            attrs.append(f'data-supplied-why="{_esc(s.supplied_why)}"')
+            attrs.append(f'data-supplied-why="{esc(s.supplied_why)}"')
         lines.append(f"    <g {' '.join(attrs)}>")
         lines.append(f'      <path class="median" d="{s.median}"/>')
         lines.append(f'      <path class="ink" d="{s.ink}"/>')
@@ -615,19 +606,44 @@ def dumps(sf):
             f'    <line class="baseline" x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}"/>'
         )
         lines.append("  </g>")
-    lines.append('  <g class="groups">')
-    for g in sf.groups:
-        note = f' data-note="{_esc(g.note)}"' if g.note else ""
+    lines += group_lines(sf.groups)
+    lines.append("</svg>")
+    return "\n".join(lines) + "\n"
+
+
+def level1_lines(sf):
+    """Level 1 as the profile writes it: the fills and the image residual."""
+    lines = ['  <g class="fills">']
+    for f in sf.fills:
+        judged = f' data-judged="{f.judged}"' if f.judged else ""
+        lines.append(f'    <path id="{f.id}"{judged} d="{f.d}"/>')
+    lines.append("  </g>")
+    lines.append('  <g class="image-residual">')
+    for p in sf.pieces:
         lines.append(
-            f'    <g class="group" id="{g.id}" data-kind="{_esc(g.kind)}"'
+            f'    <path class="piece" id="{p.id}" data-source="{p.source}"'
+            f' data-judged="{p.judged}" d="{p.d}"/>'
+        )
+    lines.append(f'    <path class="smoothing" d="{sf.smoothing}"/>')
+    lines.append(f'    <path class="halo" d="{sf.halo}"/>')
+    lines.append("  </g>")
+    return lines
+
+
+def group_lines(groups):
+    """The groups as the profile writes them."""
+    lines = ['  <g class="groups">']
+    for g in groups:
+        note = f' data-note="{esc(g.note)}"' if g.note else ""
+        lines.append(
+            f'    <g class="group" id="{g.id}" data-kind="{esc(g.kind)}"'
             f' data-ink-of="{g.ink_of}"{note}>'
         )
         for m in g.members:
             lines.append(f'      <use href="#{m}"/>')
         lines.append("    </g>")
     lines.append("  </g>")
-    lines.append("</svg>")
-    return "\n".join(lines) + "\n"
+    return lines
 
 
 def nib_text(nib):

@@ -1,10 +1,15 @@
-"""The pen-stroke representation of manuscript crops: make, derive, check and show.
+"""The pen-stroke and ink-region representations of manuscript crops: make,
+derive, check and show.
 
 A stroke-SVG beside each crop in doc/pen-stroke-snips/ describes the crop's ink
 as filled outlines and as pen strokes, under the profile in
 doc/pen-stroke-representation.md.  Its strokes' medians, their widths or the
 crop's nib that sweeps them, its groups, frame and judgments are authored; this
-program derives the rest from the crop.
+program derives the rest from the crop.  The stroke-SVGs are a frozen record
+since 2026-11-01.  A region-SVG beside each crop describes its ink as regions,
+under the profile in doc/ink-region-representation.md: its cuts, seeds,
+supplied ink, groups and judgments are authored, and this program derives the
+rest from the crop.
 It reads only files in this repository.
 
 Subcommands:
@@ -28,6 +33,16 @@ Subcommands:
         as py/tests/test_pen_stroke_svgs.py does.  Writes nothing.
     render
         Write doc/pen-stroke-snips/overlays.html, the stroke-SVGs over their crops.
+    regions-derive
+        Usage: regions-derive [SVG ...]
+        Recompute the derived parts of the region-SVGs given, or of all of them,
+        and report what their cuts and seeds leave unsettled.
+    regions-check
+        Usage: regions-check [SVG ...]
+        Report every way the region-SVGs depart from the profile and their crops,
+        as py/tests/test_ink_region_svgs.py does.  Writes nothing.
+    regions-render
+        Write doc/pen-stroke-snips/regions.html, the region-SVGs' ink in layers.
 """
 
 import argparse
@@ -36,6 +51,9 @@ from pathlib import Path
 
 from pen_stroke import derive as dv
 from pen_stroke import raster
+from pen_stroke import region_derive
+from pen_stroke import region_render
+from pen_stroke import region_svg
 from pen_stroke import render
 from pen_stroke import tools
 
@@ -105,6 +123,34 @@ def _run_render(_args):
     print(f"wrote {out.as_posix()}")
 
 
+def _run_regions_derive(args):
+    for svg in args.svgs or region_svg.all_svgs(tools.SNIPS_DIR):
+        changed, found = region_derive.derive_file(svg)
+        print(f"{'derived' if changed else 'unchanged'} {Path(svg).as_posix()}")
+        for line in found:
+            print("  " + line)
+
+
+def _run_regions_check(args):
+    svgs = args.svgs or region_svg.all_svgs(tools.SNIPS_DIR)
+    if not svgs:
+        sys.exit("no region-SVGs to check")
+    bad = 0
+    for svg in svgs:
+        found = region_derive.problems(svg)
+        print(f"{Path(svg).as_posix()}: {len(found)} problems")
+        for line in found:
+            print("  " + line)
+        bad += bool(found)
+    if bad:
+        sys.exit(1)
+
+
+def _run_regions_render(_args):
+    out = region_render.write_page(region_svg.all_svgs(tools.SNIPS_DIR))
+    print(f"wrote {out.as_posix()}")
+
+
 def build_parser():
     """Return the argument parser, buildable without running the program."""
     parser = argparse.ArgumentParser(
@@ -124,6 +170,15 @@ def build_parser():
     p = sub.add_parser("check", help="check the stroke-SVGs against their crops")
     p.add_argument("svgs", nargs="*")
     sub.add_parser("render", help="write the overlay page")
+    p = sub.add_parser(
+        "regions-derive", help="recompute the region-SVGs' derived parts"
+    )
+    p.add_argument("svgs", nargs="*")
+    p = sub.add_parser(
+        "regions-check", help="check the region-SVGs against their crops"
+    )
+    p.add_argument("svgs", nargs="*")
+    sub.add_parser("regions-render", help="write the region page")
     return parser
 
 
@@ -137,6 +192,9 @@ def main():
         "derive": _run_derive,
         "check": _run_check,
         "render": _run_render,
+        "regions-derive": _run_regions_derive,
+        "regions-check": _run_regions_check,
+        "regions-render": _run_regions_render,
     }[args.subcommand](args)
 
 

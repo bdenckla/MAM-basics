@@ -1,7 +1,7 @@
 # Plan: regions of ink in place of pen strokes, in the manuscript crops
 
-State: live; proposed 2026-11-01, and Ben answered its three decisions the same day; awaiting his
-word to execute; nothing executed.
+State: live; proposed 2026-11-01, and Ben answered its three decisions the same day; phase 1
+executed 2026-11-01; phases 2 and 3 next.
 
 ## Context
 
@@ -362,3 +362,31 @@ clone.
   the region page by R2, in which section 50 asks for them coloured lightly or removed; the
   frozen stroke views stay as they are.
 - Do not create or update Claude auto memory.
+
+## Execution record
+
+Dated entries by the executor, Claude (Opus 5.5), in the session that the commander session
+started on 2026-11-01 to execute phases 1 to 3. `doc/ink-region-representation.md` describes
+what was built; this records where it departs from the plan above, each a choice of Claude's
+that Ben has not reviewed.
+
+### Phase 1, 2026-11-01
+
+1. **A region's id is `rgN`, not `rN`:** level 1's residual pieces already have the ids `rN`.
+2. **The ink is level 1's as judged, not the fills judged ink alone:** the fills, less every
+   residual piece judged something other than ink, then with every piece judged ink. The four
+   pieces judged `damage`, phase 2's restoration candidates, are holes that the tracer filled,
+   inside the fills, as is the hole judged `paper` inside a masora circle of page F043A's line 4.
+   From the fills alone, restored ink could add nothing at the candidates, and the circle would
+   be a disc. The 22 specks and faint pieces judged ink, all outside the fills, become regions.
+3. **Crumbs:** a piece of ink the cuts leave that holds no seed and no more samples than the
+   speck size, which the tracer would drop, goes back to a region as the cuts' samples do,
+   rather than needing a seed of its own.
+4. **The root's `data-regions-by`** replaces `data-strokes-by`.
+5. **A region's groups may disagree on whose ink it is,** as a stroke's may not: ink that two
+   lines share is how their collision is proposed.
+6. **Shared code made public.** `py/pen_stroke/stroke_svg.py`'s readers and writers of level 1
+   and the groups, `derive.py`'s derivation and check of level 1, `render.py`'s stylesheet,
+   checkbox script and provenance rows, and a labeller in `raster.py`, are shared with the new
+   modules `region_svg.py`, `region_derive.py` and `region_render.py`. Afterwards `derive`,
+   `check` and `render` left the six stroke-SVGs and `overlays.html` byte-identical.

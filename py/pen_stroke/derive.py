@@ -80,6 +80,33 @@ def ink_fill_ds(sf):
 
 def derive(sf, lum):
     """A copy of sf with every derived part recomputed from the crop's luminance."""
+    out = derive_level1(sf, lum)
+    h, w = lum.shape
+    strokes = []
+    sweeps = []
+    seen_sweeps = []
+    for st in sf.strokes:
+        polys = sweep_polys(st, sf.nibs)
+        sweeps.extend(polys)
+        if not st.supplied:
+            seen_sweeps.extend(polys)
+        shape = level3.shape_class(median_segments(st), max(widths_along(st, sf.nibs)))
+        strokes.append(
+            replace(st, ink=geo.polygon_path(polys, INK_PLACES), shape=shape)
+        )
+    out.strokes = strokes
+    sweeps_px = geo.rasterize(sweeps, w, h, "nonzero")
+    seen_px = geo.rasterize(seen_sweeps, w, h, "nonzero")
+    ink_px = level1.fill_mask(ink_fill_ds(out), w, h)
+    out.unexplained = geo.mask_path(ink_px & ~sweeps_px)
+    out.overshoot = geo.mask_path(seen_px & ~ink_px)
+    return out
+
+
+def derive_level1(sf, lum):
+    """A copy of sf with level 1 recomputed from the crop's luminance: the fills
+    and the image residual, each judgment carried over to the fill or piece with
+    exactly the same pixels.  A region-SVG's level 1 is derived by this too."""
     h, w = lum.shape
     if (w, h) != (sf.width, sf.height):
         raise ValueError(f"crop is {w}x{h} but the viewBox is {sf.width}x{sf.height}")
@@ -101,32 +128,13 @@ def derive(sf, lum):
     for k, (source, mask) in enumerate(found, 1):
         judged = old_piece_judged.get(_key(mask), "unjudged")
         pieces.append(ssvg.Piece(f"r{k}", source, judged, geo.mask_path(mask)))
-    out = replace(
+    return replace(
         sf,
         fills=fills,
         pieces=pieces,
         smoothing=geo.mask_path(smoothing),
         halo=geo.mask_path(halo),
     )
-    strokes = []
-    sweeps = []
-    seen_sweeps = []
-    for st in sf.strokes:
-        polys = sweep_polys(st, sf.nibs)
-        sweeps.extend(polys)
-        if not st.supplied:
-            seen_sweeps.extend(polys)
-        shape = level3.shape_class(median_segments(st), max(widths_along(st, sf.nibs)))
-        strokes.append(
-            replace(st, ink=geo.polygon_path(polys, INK_PLACES), shape=shape)
-        )
-    out.strokes = strokes
-    sweeps_px = geo.rasterize(sweeps, w, h, "nonzero")
-    seen_px = geo.rasterize(seen_sweeps, w, h, "nonzero")
-    ink_px = level1.fill_mask(ink_fill_ds(out), w, h)
-    out.unexplained = geo.mask_path(ink_px & ~sweeps_px)
-    out.overshoot = geo.mask_path(seen_px & ~ink_px)
-    return out
 
 
 def _key(mask):
@@ -243,21 +251,12 @@ def problems(svg_path):
     except ValueError as exc:
         return out + [str(exc)]
     w, h = sf.width, sf.height
-    if len(sf.fills) != len(fresh.fills):
-        out.append(f"{len(sf.fills)} fills where the crop gives {len(fresh.fills)}")
-    else:
-        for old, new in zip(sf.fills, fresh.fills):
-            if old.id != new.id or not _same_numbers(old.d, new.d):
-                out.append(f"fill {old.id} is not the tracer's outline")
-    old_p = [(p.id, p.source, p.d) for p in sf.pieces]
-    new_p = [(p.id, p.source, p.d) for p in fresh.pieces]
-    if old_p != new_p:
-        out.append("the residual pieces are not those the crop gives")
-    for name in ("smoothing", "halo", "unexplained", "overshoot"):
-        if _mask_diff(getattr(sf, name), getattr(fresh, name), w, h) > MASK_TOLERANCE:
+    out += level1_problems(sf, fresh)
+    for name in ("unexplained", "overshoot"):
+        if mask_diff(getattr(sf, name), getattr(fresh, name), w, h) > MASK_TOLERANCE:
             out.append(f"the {name} path is not what the crop gives")
     for old, new in zip(sf.strokes, fresh.strokes):
-        if _mask_diff(old.ink, new.ink, w, h) > MASK_TOLERANCE:
+        if mask_diff(old.ink, new.ink, w, h) > MASK_TOLERANCE:
             out.append(f"{old.id}: its ink is not its median swept with its widths")
         if old.shape != new.shape:
             out.append(
@@ -266,7 +265,28 @@ def problems(svg_path):
     return out
 
 
-def _same_numbers(a, b):
+def level1_problems(sf, fresh):
+    """How sf's level 1 departs from fresh's, which its crop gives."""
+    out = []
+    w, h = sf.width, sf.height
+    if len(sf.fills) != len(fresh.fills):
+        out.append(f"{len(sf.fills)} fills where the crop gives {len(fresh.fills)}")
+    else:
+        for old, new in zip(sf.fills, fresh.fills):
+            if old.id != new.id or not same_numbers(old.d, new.d):
+                out.append(f"fill {old.id} is not the tracer's outline")
+    old_p = [(p.id, p.source, p.d) for p in sf.pieces]
+    new_p = [(p.id, p.source, p.d) for p in fresh.pieces]
+    if old_p != new_p:
+        out.append("the residual pieces are not those the crop gives")
+    for name in ("smoothing", "halo"):
+        if mask_diff(getattr(sf, name), getattr(fresh, name), w, h) > MASK_TOLERANCE:
+            out.append(f"the {name} path is not what the crop gives")
+    return out
+
+
+def same_numbers(a, b):
+    """Whether two paths have the same commands, each number within FILL_TOLERANCE."""
     sa, sb = geo.parse_path(a), geo.parse_path(b)
     if len(sa) != len(sb):
         return False
@@ -283,5 +303,6 @@ def _same_numbers(a, b):
     return True
 
 
-def _mask_diff(d0, d1, w, h):
+def mask_diff(d0, d1, w, h):
+    """How many pixels lie inside one of two paths but not the other."""
     return int((geo.path_mask(d0, w, h) ^ geo.path_mask(d1, w, h)).sum())

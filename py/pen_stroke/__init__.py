@@ -10,4 +10,11 @@ Medians, widths, ends, nibs, groups, the frame and the residual judgments are
 authored; everything else is
 derived by this package, and py/tests/test_pen_stroke_svgs.py checks every
 stroke-SVG in doc/pen-stroke-snips/ against its crop.
+
+The stroke-SVGs are a frozen record since 2026-11-01, when regions of ink
+replaced the strokes.  A region-SVG beside each crop, under the profile in
+doc/ink-region-representation.md, holds the same level 1, cuts across the ink,
+regions with authored seeds and derived outlines, supplied ink, and the groups,
+which hold regions in place of strokes; py/tests/test_ink_region_svgs.py checks
+every region-SVG against its crop.
 """

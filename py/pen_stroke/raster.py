@@ -34,15 +34,23 @@ _N8 = _N4 + ((-1, -1), (-1, 1), (1, -1), (1, 1))
 def components(mask, connectivity):
     """The mask's connected components, each a boolean mask, in raster order of
     their first pixel."""
+    label, n = labels(mask, connectivity)
+    return [label == k for k in range(1, n + 1)]
+
+
+def labels(mask, connectivity):
+    """The mask's connected components as one array, each pixel the number of its
+    component, counted from 1 in raster order of their first pixel, and 0 off the
+    mask; and how many components there are."""
     nbrs = {4: _N4, 8: _N8}[connectivity]
     h, w = mask.shape
     label = np.zeros((h, w), dtype=np.int32)
-    out = []
+    n = 0
     ys, xs = np.nonzero(mask)
     for y0, x0 in zip(ys.tolist(), xs.tolist()):
         if label[y0, x0]:
             continue
-        n = len(out) + 1
+        n += 1
         label[y0, x0] = n
         stack = [(y0, x0)]
         while stack:
@@ -52,8 +60,7 @@ def components(mask, connectivity):
                 if 0 <= yy < h and 0 <= xx < w and mask[yy, xx] and not label[yy, xx]:
                     label[yy, xx] = n
                     stack.append((yy, xx))
-        out.append(label == n)
-    return out
+    return label, n
 
 
 def dilate8(mask):

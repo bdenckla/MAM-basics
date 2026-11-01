@@ -121,7 +121,7 @@ LAYERS = (
     ("labels", "stroke ids", False, None),
 )
 
-_CSS = """
+CSS = """
 body { font-family: system-ui, sans-serif; margin: 1.5em; max-width: 72em; background: #fff; color: #111; }
 p.ai-caveat { border: 3px solid #b00020; padding: 0.6em 0.8em; }
 .layered { display: flex; flex-wrap: wrap; gap: 0.8em; align-items: flex-start; margin: 0.6em 0; }
@@ -146,14 +146,20 @@ def _hide_rules():
     )
 
 
-_JS = """
+# The checkboxes beside each image switch that image's layers; the region page
+# (pen_stroke.region_render) shares this script.
+LAYER_JS = """
 for (const box of document.querySelectorAll('.layered input[data-layer]')) {
   const fig = box.closest('.layered');
   const apply = () => fig.classList.toggle('hide-' + box.dataset.layer, !box.checked);
   box.addEventListener('change', apply);
   apply();
 }
-// Play the writing: each stroke's ink appears in the file's order, revealed along
+"""
+
+_JS = (
+    LAYER_JS
+    + """// Play the writing: each stroke's ink appears in the file's order, revealed along
 // its median by a mask whose wide line grows from the median's start to its end.
 const SVGNS = 'http://www.w3.org/2000/svg';
 let playId = 0;
@@ -209,6 +215,7 @@ for (const button of document.querySelectorAll('.layered button[data-play]')) {
   button.addEventListener('click', () => playWriting(button.closest('.layered'), button));
 }
 """
+)
 
 
 def kind_family(kind):
@@ -485,18 +492,17 @@ def layer_controls(play=False):
     return "\n".join(out)
 
 
-def _section(svg_path):
-    sf = ssvg.read(svg_path)
-    groups_of = {}
-    for g in sf.groups:
-        for m in g.members:
-            groups_of.setdefault(m, []).append(g.kind)
-    m = _crop_metrics(sf)
-    pv = sf.provenance
-    title = f"{pv.get('manuscript', '')}, page {pv.get('page', '')}, column {pv.get('column', '')}, line {pv.get('line', '')}"
-    out = [f'<section id="{_e(Path(svg_path).name)}">', f"<h2>{_e(title)}</h2>"]
-    out.append("<table>")
-    out.append(f"<tr><th>Verse in MAM</th><td>{_e(pv.get('mam-verse', ''))}</td></tr>")
+def title(pv):
+    """A crop's heading, from its provenance: the manuscript, page, column and line."""
+    return (
+        f"{pv.get('manuscript', '')}, page {pv.get('page', '')}, column"
+        f" {pv.get('column', '')}, line {pv.get('line', '')}"
+    )
+
+
+def provenance_rows(pv):
+    """The table rows that give a crop's provenance and transcriptions."""
+    out = [f"<tr><th>Verse in MAM</th><td>{_e(pv.get('mam-verse', ''))}</td></tr>"]
     out.append(
         f"<tr><th>Verse in the UXLC</th><td>{_e(pv.get('uxlc-verse', ''))}</td></tr>"
     )
@@ -534,6 +540,20 @@ def _section(svg_path):
         f"<tr><th>Source</th><td><a href=\"{_e(pv.get('source-url', ''))}\">{_e(pv.get('source-url', ''))}</a>,"
         f" box {_e(pv.get('crop-box', ''))}</td></tr>"
     )
+    return out
+
+
+def _section(svg_path):
+    sf = ssvg.read(svg_path)
+    groups_of = {}
+    for g in sf.groups:
+        for m in g.members:
+            groups_of.setdefault(m, []).append(g.kind)
+    m = _crop_metrics(sf)
+    pv = sf.provenance
+    out = [f'<section id="{_e(Path(svg_path).name)}">', f"<h2>{_e(title(pv))}</h2>"]
+    out.append("<table>")
+    out += provenance_rows(pv)
     ductus = (
         "proposed: the strokes are in the order written, each median runs the way"
         " the pen moved, and every head is a stroke of its own"
@@ -637,7 +657,7 @@ def page(svg_paths):
 <head>
 <meta charset="utf-8">
 <title>Pen-stroke overlays</title>
-<style>{_CSS}{_hide_rules()}
+<style>{CSS}{_hide_rules()}
 </style>
 </head>
 <body>
