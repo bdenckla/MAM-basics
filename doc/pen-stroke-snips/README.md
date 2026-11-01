@@ -126,11 +126,33 @@ the filled hole in a ring of ink is `paper`.
 
 ## The region-SVGs
 
-Each `<crop>.regions.svg` describes the crop's ink as regions, under
+Each `<crop>.regions.svg` describes the crop's ink as regions, under profile 2 of
 [../ink-region-representation.md](../ink-region-representation.md): level 1 as its stroke-SVG
-has it, cuts across the ink, regions with seeds, supplied ink, and the stroke-SVG's groups,
-which now hold regions. On 2026-11-01 a script of Claude's, not tracked, drafted all six from
-the stroke-SVGs, at 3 samples a pixel:
+has it; regions, each drawn from its seeds by a watershed on the photograph's luminance; strips
+of supplied vellum, overlaps and cuts; supplied ink; and the stroke-SVG's groups, which now hold
+regions and overlaps.
+
+On 2026-11-01 a script of Claude's, not tracked, re-drafted all six under profile 2 from the
+profile-1 drafts below, at the commit where Ben's first answers had been applied to them:
+
+1. it kept level 1, the groups, with their ids, kinds, owners and notes, and the supplied ink;
+2. it dropped every cut and every region of the draft, except that a region in one group lent
+   its seed: the seeds lent to a letter, or to a sign of one written part, were joined as one
+   region, and those of a sign of several parts stayed apart;
+3. it added the seeds, cuts, strips of vellum, overlaps and group changes that Claude wrote in an
+   input file beside it, placed by eye on the photograph with the transcription in hand, among
+   them Ben's readings of 2026-11-01;
+4. it proposed a strip of vellum along each stretch of the boundary between two signs' regions
+   where the median luminance of the paler samples across it is at least a third of the way from
+   the crop's median of ink to its median elsewhere, and listed restoration candidates for Ben,
+   adding none.
+
+The findings record's update, entry "Regions of ink re-drafted by rule", gives the figures, each
+seed Claude added and why, and the strips proposed. No human has reviewed the re-draft's seeds,
+overlaps, strips or the change of group g17 in F043A's מתחת to an alef.
+
+The profile-1 drafts, which no file now holds, were made the same day by an earlier script of
+Claude's from the stroke-SVGs, at 3 samples a pixel:
 
 1. it copied the root, level 1 and the groups, with their ids, kinds, owners and notes, and
    derived level 1 again, which gave each stroke-SVG's exactly;
@@ -150,10 +172,10 @@ the stroke-SVGs, at 3 samples a pixel:
 Ink that no stroke reaches within 12 pixels, all of it the tips of other lines' letters at a
 crop's edge, got groups of its own, of the kind "unidentified letter"; for one, at the foot of
 F043A's מתחת, the crop gained the text of the line below. The findings record's update gives the
-figures. Claude judged every residual piece. Ben has begun to review the cuts: each cut changed
-from his answers has a note saying so, and the findings record's update lists them. No human has
-reviewed the other cuts, the seeds or the new groups. A group's note or a supplied ink's reason that names a stroke, sN, names one of the
-frozen stroke-SVG's.
+figures. Claude judged every residual piece. Ben answered the drafts' first question, about
+F043A's פני, before the re-draft: his cut there is now a strip of vellum, and the cut drawn from
+his words stays a cut, each with a note saying so. A group's note or a supplied ink's reason
+that names a stroke, sN, names one of the frozen stroke-SVG's.
 
 ## Regenerating
 

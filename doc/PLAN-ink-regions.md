@@ -2,7 +2,8 @@
 
 State: live; proposed 2026-11-01, and Ben answered its three decisions the same day; phases 1
 to 3 executed 2026-11-01; phase 4 paused after its first round, 2026-11-01, for the re-draft
-that phases 5 to 7 plan, which Ben approved the same day; phase 5 executed 2026-11-01.
+that phases 5 to 7 plan, which Ben approved the same day; phases 5 and 6 executed 2026-11-01;
+phase 7 awaits Ben's answers to phase 6's sheet.
 
 ## Context
 
@@ -678,3 +679,27 @@ to execute phases 5 to 7, from `C:/Users/BenDe/GitRepos/MAM-basics` at `362f2d76
    profile has no derived part for it, and the file's own style draws the strip's line.
 6. **The page** draws every seed, each overlap's outline and each vellum line in the layer of
    cuts, and gives each crop a table of its overlaps, strips and cuts with their notes.
+
+### Phase 6, 2026-11-01
+
+1. **The script,** `scripts/r7_redraft.py`, reads each crop's profile-1 file from Git at
+   `362f2d76`, so that it starts from the same files however often it is run, and Claude's
+   additions from `scripts/r7_redraft_input.json` beside it; `--write` also writes
+   `regions/redraft-<crop>.json`. `scripts/r7_view.py` draws a crop's regions over its
+   photograph, which is how Claude checked each crop, and `scripts/r7_distance_check.py` is item
+   3's check, whose output is `regions/redraft-distance-check-2026-11-01.txt`.
+2. **Seeds joined:** the seeds lent to a letter's group, or to a group whose kind has one written
+   part, are joined as one region, of the lowest id among them; those of a group of several
+   parts, an unidentified mark or ink set aside stay apart. Without the joining, the watershed
+   would draw boundaries inside letters that a reader does not see.
+3. **The lamed of page F043A's מתחת** is a new group, g18, not g17, which is the top of the
+   alef's diagonal: the findings record's update, entry "Regions of ink re-drafted by rule",
+   item 4, gives Claude's reading of the page image. The sliver of g17's ink that the draft gave
+   the atnaḥ went back to g17, as "What the re-draft keeps, drops and adds" says, and a cut of
+   Claude's, c4, divides the mem's base from the lamed's ascender below the overlap ov1.
+4. **One proposed strip set aside,** in page F102A's מתחת, where it would have left a mark's ink
+   without a seed; the input file's `no-vellum` names it, with why.
+5. **Item 3's check passed:** at most 0.44 and 1.16 pixels from Ben's two lines, the prototype's
+   figures.
+6. **Item 5, the sheet,** comes after this commit: `review/regions-sheet-2.html` and the drawing
+   page are untracked.

@@ -427,3 +427,93 @@ the vowels under the nun.
 
 Effective State of the base, 2026-11-01: as the previous entry gives it, except that Ben has begun
 to review the region-SVGs, with question 1 of phase 3's sheet.
+
+## Regions of ink re-drafted by rule, 2026-11-01
+
+Asked "Approve the re-draft plan as written?", Ben answered "Approve the plan": decision 27 of
+[ink-region-representation.md](ink-region-representation.md), whose profile 2 the six
+region-SVGs now follow. A script of Claude's re-drafted each from its profile-1 draft, as the
+snips README says: it kept level 1, the groups and the supplied ink, dropped the draft's cuts and
+its regions in two groups, kept the seeds of its regions in one group, and added the seeds,
+overlaps, strips and cuts that the list below gives. A watershed on the photograph's luminance
+draws every region from its seeds.
+
+1. **The figures,** for files that `regions-check` passes with no problem. A piece of ink here
+   is a 4-connected piece of the ink as level 1 judges it, at 3 samples a pixel, less the strips
+   of vellum and the cuts.
+
+   | Crop | Pieces of ink | Seeds | Regions | Overlaps | Strips of vellum | Cuts | Restoration candidates |
+   | --- | --- | --- | --- | --- | --- | --- | --- |
+   | F043A פני | 10 | 13 | 11 | 0 | 1 | 1 | 0 |
+   | F043A מתחת | 17 | 27 | 19 | 1 | 1 | 1 | 0 |
+   | F043A, line 4 | 79 | 112 | 91 | 0 | 3 | 0 | 0 |
+   | F102A, line 2 | 76 | 84 | 80 | 0 | 1 | 0 | 0 |
+   | F102A על־פני | 37 | 51 | 28 | 0 | 4 | 0 | 0 |
+   | F102A מתחת | 29 | 33 | 18 | 0 | 0 | 0 | 5 |
+
+   The seeds lent to a letter, or to a sign of one written part, joined as one region, so a crop
+   of mostly letters, such as F102A's על־פני, has far fewer regions than its draft's 46.
+2. **The watershed on Ben's two lines.** In the crop of page F043A's פני, with Ben's strip v1,
+   the draft's cut c11, and the cut c12 left out, the watershed's boundary between the nun and
+   the pe lies at most 0.44 pixels from v1's line, median 0.10, over 24 pairs of samples, and
+   its boundary between the qamats's bar and its dot at most 1.16 pixels from c12, median 0.50,
+   over 14 pairs: within the 1.5 pixels that phase 6 required, and the figures that the plan's
+   prototype found (its Evidence, item 4).
+3. **Ben's readings, carried over.** In page F043A's פני, Ben's c11 is now the strip of vellum
+   v1, along the same line, and Claude's c12 stays a cut. In page F043A's מתחת, the qamats's dot
+   has a region of its own; the geresh keeps its region, and the script proposes a strip of
+   vellum between it and the tav; and the lamed of line 23 has a group of its own, g18, with
+   an overlap, ov1, where its tip crosses the base of the mem.
+4. **Which ink is the lamed's.** The plan took the group g17 for the lamed's "barbed spear tip".
+   On the page image, the piece at the crop's foot that g17 holds is the top of the alef's
+   diagonal, the next letter of line 23's atom, and the lamed's ascender is the stroke under the
+   mem's base, which the draft gave to the mem and which runs out of the crop's foot into line
+   23's lamed. So g17 is now that alef, holding also the sliver that the draft gave the atnaḥ
+   (phase 3's sheet, question 3), and the new g18 is the lamed. The watershed cannot divide the
+   dark ink that the mem's base and the lamed's tip share, so a cut of Claude's, c4, runs along
+   the foot of ov1: above it the mem's base, below it the ascender. Claude drew ov1 by eye, and
+   it awaits Ben's review.
+5. **Seeds Claude added,** each placed by eye on the photograph with the transcription in hand,
+   where the watershed from the draft's seeds gave a written part's ink to another sign, or
+   where a written part had no seed:
+
+   | Crop | Sign | Seeds | Why |
+   | --- | --- | --- | --- |
+   | F043A פני | the pe | 1, in its base | the qamats's bar took the base, past a paler stretch of the pe's stroke |
+   | F043A מתחת | the qamats under the tav | 2 for the bar, in place of the draft's 1, and 1 for its dot | the dot is a written part; the draft's seed lay at the neck between them |
+   | F043A מתחת | the mem | 3, in its roof and its base, in place of the draft's 1 | the draft's seed lay where the lamed crosses the base |
+   | F043A מתחת | line 23's lamed | 5, along its ascender and in the barb of its tip | a new group |
+   | F043A, line 4 | the he of הר | 3, in its roof's right end, its corner and its right leg | the maqaf took the leg |
+   | F043A, line 4 | the maqaf after אל | its 1 seed moved to its middle | its seed lay against the he's corner |
+   | F043A, line 4 | the first lamed of לעלת | 3, in its ascender and its flag | the base of line 3's shin, which its tip meets, took the ascender |
+   | F043A, line 4 | the final mem of העם | 4, in its sides, its base and its corner | the ayin, which meets that corner, took all but the roof |
+   | F043A, line 4 | the lamed of לא | 3, along its ascender | the ḥolam, and line 3's qamats, took the ascender |
+   | F043A, line 4 | line 3's two qamatses | for each, 2 or 5 for the bar, in place of the draft's 1, and 1 for its dot | the dot is a written part, and the bar under the vav of the first divine name lost its middle to the lamed of לא |
+   | F043A, line 4 | line 3's vav foot, g20, and sheva, g40 | 1 for the foot, and 1 for each of the sheva's dots | the foot's only region was in two groups; level 1 joins the sheva's dots |
+   | F102A, line 2 | line 1's munaḥ | 1, in its upright | the foot it hangs from took the upright |
+   | F102A, line 2 | line 1's segol, g42 | 1, for its lower dot | level 1 joins it to the upper left dot |
+   | F102A, line 2 | the qamats under the vav of וחי | 2 for the bar, in place of the draft's 1, and 1 for its dot | the dot is a written part |
+   | F102A על־פני | the pe | 4, in its base and its right side | the dagesh took them |
+   | F102A על־פני | the nun | 3, in its vertical and its base | the yod, whose long tail meets the base, took them |
+   | F102A על־פני | the yod | 1, in its tail | near where it meets the nun's base |
+   | F102A מתחת | the qamats under the tav | 2 for the bar, in place of the draft's 1, and 1 for its dot | the dot is a written part |
+
+   The input file beside the script, `r7_redraft_input.json`, gives every seed's place, and the
+   records under `.novc/pen-stroke-exemplars/regions/redraft-<crop>.json` what the script did.
+6. **Strips of vellum proposed by the script,** where the median luminance of the paler sample
+   of each pair across the boundary between two signs' regions is at least a third of the way
+   from the crop's median of ink to its median elsewhere, 101 to 113 in these crops: 9 strips.
+   Between the geresh and the tav of page F043A's מתחת, median 129; in line 4, between line 3's
+   alef and a lamed's tip, 128, between a foot of line 3's he and its qamats's bar, 115, and
+   between a segol of line 3 and the mem above it, 125; in line 2, between line 1's alef and the
+   lamed's head, 132; and in page F102A's על־פני, between the maqaf and the pe, 104, between the
+   nun and the yod's tail, 105, and two between pieces of the next line's letters, 109 and 143.
+   One proposal was set aside: in page F102A's מתחת, a strip between the qamats and the small
+   mark g14 would have taken out most of g14's ink, leaving it without a seed.
+7. **Restoration candidates,** listed for Ben and not added: all five are in page F102A's מתחת,
+   the four residual pieces judged damage, each a hole whose neighbouring ink is one sign's, and
+   one hole of 19.6 pixels in the left leg of the tav, at x 93 to 97 and y 71 to 78 of the crop.
+   No other crop has a hole of 30 pixels or fewer whose neighbouring ink is all one sign's.
+
+Effective State of the base, 2026-11-01: as the previous entry gives it, except that the six
+region-SVGs are re-drafted under profile 2 and await Ben's review, on phase 6's sheet.
