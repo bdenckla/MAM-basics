@@ -7,9 +7,9 @@ doc/pen-stroke-representation.md.  Its strokes' medians, their widths or the
 crop's nib that sweeps them, its groups, frame and judgments are authored; this
 program derives the rest from the crop.  The stroke-SVGs are a frozen record
 since 2026-11-01.  A region-SVG beside each crop describes its ink as regions,
-under the profile in doc/ink-region-representation.md: its cuts, seeds,
-supplied ink, groups and judgments are authored, and this program derives the
-rest from the crop.
+under the profile in doc/ink-region-representation.md: its seeds, cuts, strips
+of supplied vellum, overlaps' outlines, supplied ink, groups and judgments are
+authored, and this program derives the rest from the crop.
 It reads only files in this repository.
 
 Subcommands:
@@ -36,7 +36,7 @@ Subcommands:
     regions-derive
         Usage: regions-derive [SVG ...]
         Recompute the derived parts of the region-SVGs given, or of all of them,
-        and report what their cuts and seeds leave unsettled.
+        and report what their authored parts leave unsettled.
     regions-check
         Usage: regions-check [SVG ...]
         Report every way the region-SVGs depart from the profile and their crops,

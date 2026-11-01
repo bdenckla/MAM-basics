@@ -1,39 +1,51 @@
 """Deriving a region-SVG's computed parts from its crop, and checking them.
 
 Authored: the root's provenance and parameters; the judgments of level 1's
-residual pieces and of fills that are not ink; the cuts; each region's id and
-seed; each outline of supplied ink, with whether and why it is supplied; and the
-groups, with whose ink each is.  Derived: level 1's fills and image residual,
-exactly as a stroke-SVG's are (pen_stroke.derive.derive_level1); each region's
-outline; and each supplied outline's added ink.
+residual pieces and of fills that are not ink; the strips of supplied vellum;
+the cuts; each region's id and seeds; each overlap's outline; each outline of
+supplied ink, with whether and why it is supplied; and the groups, with whose
+ink each is.  Derived: level 1's fills and image residual, exactly as a
+stroke-SVG's are (pen_stroke.derive.derive_level1); each region's outline; each
+overlap's ink; and each supplied outline's added ink.
 
 The ink is level 1's as judged: the fills judged ink, less every residual piece
 judged paper or damage, which is a hole the tracer filled, and then with every
 piece judged ink, a speck the tracer dropped or faint ink; a piece judged
 anything else, such as noise, leaves the fills as they are.  The regions come
-from it in five
-steps, at SAMPLES samples a pixel each way, so that they keep level 1's smooth
-outlines:
+from it in eight steps, at SAMPLES samples a pixel each way, so that they keep
+level 1's smooth outlines:
 
-1. the ink is rasterized, a sample being inside when its centre is;
-2. every sample that a cut's segments cross is removed, each segment drawn as an
-   8-connected line of samples, so that no 4-connected path crosses it;
-3. of the 4-connected pieces of ink that remain, each must hold exactly one
-   region's seed, and every seed must lie in one, except that a crumb, a piece
-   that holds no seed and no more samples than the speck size, so that the
-   tracer would drop it, is removed as the cuts' samples are;
-4. each removed sample of ink goes back to the 4-adjacent region of lowest
-   number, round after round, until none is left that touches a region;
-5. each region's samples are traced with level 1's tracer and speck size, and
-   the outline is scaled to crop pixels.
+1. the ink is rasterized, a sample being inside when its centre is, and every
+   sample whose centre lies within half a strip of vellum's width of its line
+   leaves it;
+2. every sample that a cut's segments cross is set aside, each segment drawn as
+   an 8-connected line of samples, so that no 4-connected path crosses it;
+3. of the 4-connected pieces of ink that remain, each must hold a seed, and
+   every seed must lie in one, except that a crumb, a piece that holds no seed
+   and no more samples than the speck size, so that the tracer would drop it, is
+   set aside as the cuts' samples are;
+4. each seed moves to the darkest sample of its piece within SEED_REACH pixels,
+   the first in row order on a tie;
+5. the watershed: from all the seeds at once, the floods take the samples of
+   each piece in order of the photograph's luminance, darkest first, a tie
+   going to the sample reached first, each sample going to the seed whose flood
+   reaches it first; the luminance at a sample is interpolated bilinearly
+   between the centres of the crop's pixels;
+6. each sample set aside goes back to the 4-adjacent region of lowest number,
+   round after round, until none is left that touches a region;
+7. each overlap takes the ink of step 1 inside its outline out of the regions,
+   as one region of its own;
+8. each region's and each overlap's samples are traced with level 1's tracer
+   and speck size, and the outline is scaled to crop pixels.
 
 A supplied outline's added ink is its samples less the ink's, traced the same
 way, so that supplied ink never claims ink the image shows.  ``derive``
-recomputes the derived parts and reports what the cuts and seeds leave
+recomputes the derived parts and reports what the authored parts leave
 unsettled; ``problems`` reports every way a file departs from the profile and
 its crop.
 """
 
+import heapq
 import math
 from dataclasses import replace
 from pathlib import Path
@@ -43,6 +55,7 @@ import numpy as np
 from pen_stroke import derive as dv
 from pen_stroke import geometry as geo
 from pen_stroke import level1
+from pen_stroke import level5
 from pen_stroke import raster
 from pen_stroke import region_svg as rsvg
 from pen_stroke import stroke_svg as ssvg
@@ -51,6 +64,8 @@ SAMPLES = 3
 OUTLINE_PLACES = 3
 # The judgments that take a residual piece's pixels out of the fills' ink.
 NOT_INK = ("paper", "damage")
+# How far, in crop pixels, a seed moves to the darkest ink of its piece.
+SEED_REACH = 2
 
 
 def scaled_mask(ds, width, height):
@@ -77,17 +92,80 @@ def ink_samples(rf):
     return ink
 
 
+def sample_luminance(lum):
+    """The photograph's luminance at each sample's centre, interpolated bilinearly
+    between the centres of the crop's pixels, beyond which it is the edge pixel's,
+    and multiplied by SAMPLES squared: whole numbers, exact on every machine."""
+    lum = lum.astype(np.int64)
+
+    def axis(n):
+        # Sample i's centre lies (i + 0.5) / SAMPLES pixels from the edge, which is
+        # (i - (SAMPLES - 1) / 2) / SAMPLES past the centre of pixel 0.
+        off = np.arange(n * SAMPLES) - (SAMPLES - 1) // 2
+        k = off // SAMPLES
+        f = off - k * SAMPLES
+        return np.clip(k, 0, n - 1), np.clip(k + 1, 0, n - 1), f
+
+    y0, y1, fy = axis(lum.shape[0])
+    x0, x1, fx = axis(lum.shape[1])
+    fy, fx = fy[:, None], fx[None, :]
+    top = (SAMPLES - fx) * lum[np.ix_(y0, x0)] + fx * lum[np.ix_(y0, x1)]
+    bottom = (SAMPLES - fx) * lum[np.ix_(y1, x0)] + fx * lum[np.ix_(y1, x1)]
+    return (SAMPLES - fy) * top + fy * bottom
+
+
+def line_points(d, what):
+    """The points, in crop pixels, of one path of straight segments, its first
+    point again at the end if it is closed.  Anything else raises."""
+    subpaths = geo.parse_path(d)
+    if len(subpaths) != 1:
+        raise ValueError(f"a {what} is one path of straight segments")
+    start, segs, closed = subpaths[0]
+    if not segs or any(s[0] != "L" for s in segs):
+        raise ValueError(f"a {what} is one path of straight segments")
+    pts = [start] + [s[1] for s in segs]
+    return pts + [start] if closed else pts
+
+
 def cut_points(cut):
     """A cut's points in crop pixels, its first point again at the end of a closed
     cut.  A cut that is not one path of straight segments raises."""
-    subpaths = geo.parse_path(cut.d)
-    if len(subpaths) != 1:
-        raise ValueError("a cut is one path of straight segments")
-    start, segs, closed = subpaths[0]
-    if not segs or any(s[0] != "L" for s in segs):
-        raise ValueError("a cut is one path of straight segments")
-    pts = [start] + [s[1] for s in segs]
-    return pts + [start] if closed else pts
+    return line_points(cut.d, "cut")
+
+
+def vellum_points(v):
+    """A strip of vellum's line in crop pixels.  A line that is not one open path of
+    straight segments raises."""
+    if any(closed for _, _, closed in geo.parse_path(v.d)):
+        raise ValueError("a strip of vellum's line is open")
+    return line_points(v.d, "strip of vellum's line")
+
+
+def vellum_mask(v, width, height):
+    """The samples whose centres lie within half the strip's width of its line."""
+    cols, rows = width * SAMPLES, height * SAMPLES
+    out = np.zeros((rows, cols), dtype=bool)
+    half = v.width / 2
+    pts = vellum_points(v)
+    for (ax, ay), (bx, by) in zip(pts, pts[1:]):
+        lo_x = max(0, math.floor((min(ax, bx) - half) * SAMPLES))
+        hi_x = min(cols, math.ceil((max(ax, bx) + half) * SAMPLES) + 1)
+        lo_y = max(0, math.floor((min(ay, by) - half) * SAMPLES))
+        hi_y = min(rows, math.ceil((max(ay, by) + half) * SAMPLES) + 1)
+        if lo_x >= hi_x or lo_y >= hi_y:
+            continue
+        cx = (np.arange(lo_x, hi_x) + 0.5) / SAMPLES
+        cy = (np.arange(lo_y, hi_y) + 0.5) / SAMPLES
+        px, py = np.meshgrid(cx, cy)
+        dx, dy = bx - ax, by - ay
+        length2 = dx * dx + dy * dy
+        if length2:
+            t = np.clip(((px - ax) * dx + (py - ay) * dy) / length2, 0, 1)
+        else:
+            t = np.zeros_like(px)
+        ex, ey = px - (ax + t * dx), py - (ay + t * dy)
+        out[lo_y:hi_y, lo_x:hi_x] |= ex * ex + ey * ey <= half * half
+    return out
 
 
 def sample_of(pt):
@@ -135,10 +213,81 @@ def cut_cells(rf):
     return out
 
 
-def settle(rf, ink):
-    """Which region each sample of ink belongs to, as an array of region numbers
-    by rank (0 for none), each region's rank by id, and what the cuts and seeds
-    leave unsettled: steps 2 to 4 of this module's derivation."""
+def vellum_masks(rf):
+    """Each well-formed strip of vellum's samples, by id."""
+    out = {}
+    for v in rf.vellum:
+        try:
+            out[v.id] = vellum_mask(v, rf.width, rf.height)
+        except ValueError:
+            continue
+    return out
+
+
+def _within_reach(seed, piece_label, label, slum):
+    """The darkest sample of the piece within SEED_REACH pixels of the seed, the
+    first in row order on a tie, as (row, column).  The test is exact: the seed is
+    taken to its written hundredths of a pixel, and distances are whole numbers of
+    600ths of a pixel."""
+    sx, sy = (round(v * 100) for v in seed)
+    reach = SEED_REACH * SAMPLES
+    x, y = sample_of(seed)
+    rows, cols = label.shape
+    best = None
+    for j in range(max(0, y - reach - 1), min(rows, y + reach + 2)):
+        for i in range(max(0, x - reach - 1), min(cols, x + reach + 2)):
+            if label[j, i] != piece_label:
+                continue
+            ex = 100 * (2 * i + 1) - 2 * SAMPLES * sx
+            ey = 100 * (2 * j + 1) - 2 * SAMPLES * sy
+            if ex * ex + ey * ey > (200 * SAMPLES * SEED_REACH) ** 2:
+                continue
+            key = (int(slum[j, i]), j, i)
+            if best is None or key < best:
+                best = key
+    return best[1], best[2]
+
+
+def flood(remaining, slum, starts):
+    """The watershed: each sample of the remaining ink goes to the start whose
+    flood reaches it first.  The starts, (rank, row, column), are taken first, in
+    order, then the samples in order of luminance, darkest first, a tie going to
+    the sample reached first; a sample is given its rank when it is reached."""
+    rows, cols = remaining.shape
+    free = remaining.ravel().tolist()
+    lum = slum.ravel().tolist()
+    rank = [0] * (rows * cols)
+    heap = []
+    n = 0
+    for r, y, x in starts:
+        i = y * cols + x
+        rank[i] = r
+        free[i] = False
+        heap.append((-1, n, i))
+        n += 1
+    while heap:
+        _, _, i = heapq.heappop(heap)
+        r = rank[i]
+        y, x = divmod(i, cols)
+        for j in (
+            i - cols if y else -1,
+            i - 1 if x else -1,
+            i + 1 if x + 1 < cols else -1,
+            i + cols if y + 1 < rows else -1,
+        ):
+            if j >= 0 and free[j]:
+                free[j] = False
+                rank[j] = r
+                heapq.heappush(heap, (lum[j], n, j))
+                n += 1
+    return np.array(rank, dtype=np.int32).reshape(rows, cols)
+
+
+def settle(rf, level1_ink, ink, slum):
+    """Which region each sample of ink belongs to, as an array of region ranks (0
+    for none), each region's rank by id, and what the authored parts leave
+    unsettled: steps 2 to 6 of this module's derivation, given the ink as level 1
+    judges it and the ink of step 1."""
     problems = []
     rows, cols = ink.shape
     cut = np.zeros_like(ink)
@@ -146,26 +295,38 @@ def settle(rf, ink):
         if not ink[ys, xs].any():
             problems.append(f"{cid}: crosses no ink")
         cut[ys, xs] = True
-    label, n = raster.labels(ink & ~cut, 4)
+    remaining = ink & ~cut
+    label, n = raster.labels(remaining, 4)
     order = sorted(rf.regions, key=lambda r: rsvg.region_number(r.id))
     rank = {r.id: k for k, r in enumerate(order, 1)}
-    owner_of = np.zeros(n + 1, dtype=np.int32)
-    seeded = {}
-    for r in rf.regions:
-        x, y = sample_of(r.seed)
-        if not (0 <= x < cols and 0 <= y < rows) or not ink[y, x]:
-            problems.append(f"{r.id}: its seed lies outside the ink")
-            continue
-        k = int(label[y, x])
-        if cut[y, x]:
-            problems.append(f"{r.id}: its seed lies on a cut")
-        elif k in seeded:
-            problems.append(
-                f"{r.id}: its seed lies in the same piece of ink as {seeded[k]}'s"
-            )
-        else:
-            seeded[k] = r.id
-            owner_of[k] = rank[r.id]
+    starts = []
+    taken = {}
+    seeded = set()
+    for r in order:
+        for seed in r.seeds:
+            x, y = sample_of(seed)
+            where = f"{r.id}: its seed at {rsvg.seeds_text([seed])}"
+            if not (0 <= x < cols and 0 <= y < rows) or not level1_ink[y, x]:
+                problems.append(f"{where} lies outside the ink")
+                continue
+            if not ink[y, x]:
+                problems.append(f"{where} lies in a strip of vellum")
+                continue
+            if cut[y, x]:
+                problems.append(f"{where} lies on a cut")
+                continue
+            k = int(label[y, x])
+            y, x = _within_reach(seed, k, label, slum)
+            if (y, x) in taken:
+                if taken[(y, x)] != r.id:
+                    problems.append(
+                        f"{where} moves to the sample that a seed of"
+                        f" {taken[(y, x)]} moves to"
+                    )
+                continue
+            taken[(y, x)] = r.id
+            seeded.add(k)
+            starts.append((rank[r.id], y, x))
     flat = label.ravel()
     sizes = np.bincount(flat, minlength=n + 1)
     pieces, first = np.unique(flat, return_index=True)
@@ -181,7 +342,7 @@ def settle(rf, ink):
             f"{_pixels(sizes[k])} pixels of ink from ({_px(x)}, {_px(y)}) hold no"
             " region's seed"
         )
-    owner = owner_of[label]
+    owner = flood(remaining, slum, starts)
     pending = (ink & cut) | np.isin(label, crumbs)
     none = len(order) + 1
     while pending.any():
@@ -198,7 +359,8 @@ def settle(rf, ink):
         pending &= ~take
     if pending.any():
         problems.append(
-            f"{_pixels(pending.sum())} pixels of ink lie under cuts and touch no region"
+            f"{_pixels(pending.sum())} pixels of ink under cuts or in crumbs touch no"
+            " region"
         )
     return owner, rank, problems
 
@@ -235,21 +397,61 @@ def _to_crop(subpath, dx, dy):
     return (f(start), [(s[0],) + tuple(f(p) for p in s[1:]) for s in segs], closed)
 
 
+def region_ink(rf, lum):
+    """The ink of step 1, each sample's region by rank, each region's rank by id,
+    each overlap's samples by id, and what the authored parts leave unsettled."""
+    level1_ink = ink_samples(rf)
+    ink = level1_ink.copy()
+    problems = []
+    for vid, mask in vellum_masks(rf).items():
+        if not (mask & level1_ink).any():
+            problems.append(f"{vid}: takes out no ink")
+        ink &= ~mask
+    owner, rank, found = settle(rf, level1_ink, ink, sample_luminance(lum))
+    problems += found
+    flooded = set(owner[owner > 0].tolist())
+    overlaps = {}
+    claimed = np.zeros_like(ink)
+    for o in rf.overlaps:
+        if not all(closed for _, _, closed in geo.parse_path(o.outline)):
+            continue
+        mask = scaled_mask([o.outline], rf.width, rf.height) & ink
+        if not mask.any():
+            problems.append(f"{o.id}: takes no ink")
+        if (mask & claimed).any():
+            problems.append(f"{o.id}: shares ink with another overlap")
+        claimed |= mask
+        owner[mask] = 0
+        overlaps[o.id] = mask
+    held = set(owner[owner > 0].tolist())
+    for r in rf.regions:
+        if rank[r.id] in flooded and rank[r.id] not in held:
+            problems.append(f"{r.id}: overlaps take all its ink")
+    return ink, owner, rank, overlaps, problems
+
+
 def derive(rf, lum):
     """A copy of rf with every derived part recomputed from the crop's luminance,
-    and what its cuts and seeds leave unsettled."""
+    and what its authored parts leave unsettled."""
     out = dv.derive_level1(rf, lum)
-    ink = ink_samples(out)
-    owner, rank, problems = settle(out, ink)
-    seeded = set(owner[owner > 0].tolist())
+    ink, owner, rank, overlap_masks, problems = region_ink(out, lum)
+    held = set(owner[owner > 0].tolist())
     regions = []
     for r in rf.regions:
         d = ""
-        if rank[r.id] in seeded:
+        if rank[r.id] in held:
             d = trace_samples(owner == rank[r.id], rf.speck_size)
             if not d:
                 problems.append(f"{r.id}: its ink is too small to trace")
         regions.append(replace(r, d=d))
+    overlaps = []
+    for o in rf.overlaps:
+        d = ""
+        if o.id in overlap_masks and overlap_masks[o.id].any():
+            d = trace_samples(overlap_masks[o.id], rf.speck_size)
+            if not d:
+                problems.append(f"{o.id}: its ink is too small to trace")
+        overlaps.append(replace(o, ink=d))
     supplied = []
     for s in rf.supplied:
         added = scaled_mask([s.outline], rf.width, rf.height) & ~ink
@@ -258,41 +460,69 @@ def derive(rf, lum):
             problems.append(f"{s.id}: adds no ink: its outline holds only ink")
         supplied.append(replace(s, added=d))
     out.regions = regions
+    out.overlaps = overlaps
     out.supplied = supplied
     return out, problems
+
+
+def vellum_ink(rf):
+    """Each strip of vellum's ink, the ink as level 1 judges it that the strip
+    takes out, as path data in crop pixels, by id: what the region page draws."""
+    ink = ink_samples(rf)
+    return {vid: trace_samples(m & ink, 0) for vid, m in vellum_masks(rf).items()}
 
 
 def structural_problems(rf):
     """What the authored parts get wrong, whatever the crop."""
     out = []
     ids = [f.id for f in rf.fills] + [p.id for p in rf.pieces]
-    ids += [c.id for c in rf.cuts] + [r.id for r in rf.regions]
+    ids += [v.id for v in rf.vellum] + [c.id for c in rf.cuts]
+    ids += [r.id for r in rf.regions] + [o.id for o in rf.overlaps]
     ids += [s.id for s in rf.supplied] + [g.id for g in rf.groups]
     dupes = sorted({i for i in ids if ids.count(i) > 1})
     if dupes:
         out.append(f"ids used more than once: {dupes}")
-    members = {r.id for r in rf.regions} | {s.id for s in rf.supplied}
-    grouped = set()
+    regions = {r.id for r in rf.regions}
+    overlaps = {o.id for o in rf.overlaps}
+    members = regions | overlaps | {s.id for s in rf.supplied}
+    held = {}
     for g in rf.groups:
         if not g.members:
             out.append(f"{g.id}: a group that holds nothing")
         for m in g.members:
             if m in members:
-                grouped.add(m)
+                held.setdefault(m, []).append(g.id)
             else:
                 out.append(
-                    f"{g.id}: refers to {m!r}, which is no region or supplied ink"
-                    " of this file"
+                    f"{g.id}: refers to {m!r}, which is no region, overlap or supplied"
+                    " ink of this file"
                 )
-    for i in [r.id for r in rf.regions] + [s.id for s in rf.supplied]:
-        if i not in grouped:
+        out += _parts_problems(g)
+    ordered = [r.id for r in rf.regions] + [o.id for o in rf.overlaps]
+    for i in ordered + [s.id for s in rf.supplied]:
+        if i not in held:
             out.append(f"{i}: in no group")
+        elif i in regions and len(held[i]) > 1:
+            out.append(
+                f"{i}: a region in {len(held[i])} groups, {' '.join(held[i])}; ink"
+                " that signs share is an overlap"
+            )
+        elif i in overlaps and len(held[i]) < 2:
+            out.append(f"{i}: an overlap that only {held[i][0]} holds")
     out += _ink_owner_problems(rf)
+    for v in rf.vellum:
+        try:
+            vellum_points(v)
+        except ValueError as exc:
+            out.append(f"{v.id}: {exc}")
     for c in rf.cuts:
         try:
             cut_points(c)
         except ValueError as exc:
             out.append(f"{c.id}: {exc}")
+    for o in rf.overlaps:
+        if not all(closed for _, _, closed in geo.parse_path(o.outline)):
+            out.append(f"{o.id}: its outline is not closed")
     for s in rf.supplied:
         if not all(closed for _, _, closed in geo.parse_path(s.outline)):
             out.append(f"{s.id}: its outline is not closed")
@@ -302,9 +532,22 @@ def structural_problems(rf):
     return out
 
 
+def _parts_problems(g):
+    """The parts rule: a group whose kind has several written parts holds at least
+    as many regions, overlaps and supplied inks, unless its data-parts-note says
+    why it does not."""
+    parts = level5.parts_of(g.kind)
+    if parts is None or len(g.members) >= parts or g.parts_note:
+        return []
+    return [
+        f"{g.id}: a {g.kind} has {parts} written parts, but the group holds"
+        f" {len(g.members)} and no data-parts-note says why"
+    ]
+
+
 def _ink_owner_problems(rf):
     """What the groups' ink-of values get wrong (decision 17).  Unlike a stroke's,
-    a region's groups may disagree on whose ink it is: ink that two lines share
+    an overlap's groups may disagree on whose ink it is: ink that two lines share
     is how a collision between them is proposed."""
     out = []
     me = ssvg.subject(rf)
@@ -340,7 +583,13 @@ def problems(svg_path):
     out += found
     for old, new in zip(rf.regions, fresh.regions):
         if not dv.same_numbers(old.d, new.d):
-            out.append(f"{old.id}: its outline is not what its seed and the cuts give")
+            out.append(
+                f"{old.id}: its outline is not what the seeds, cuts, vellum and"
+                " overlaps give"
+            )
+    for old, new in zip(rf.overlaps, fresh.overlaps):
+        if not dv.same_numbers(old.ink, new.ink):
+            out.append(f"{old.id}: its ink is not the ink inside its outline")
     for old, new in zip(rf.supplied, fresh.supplied):
         if not dv.same_numbers(old.added, new.added):
             out.append(f"{old.id}: its added ink is not its outline less the ink")
@@ -349,7 +598,7 @@ def problems(svg_path):
 
 def derive_file(svg_path):
     """Recompute the region-SVG's derived parts in place.  Whether it changed, and
-    what its cuts and seeds leave unsettled."""
+    what its authored parts leave unsettled."""
     rf = rsvg.read(svg_path)
     lum = raster.load_luminance(dv.crop_path(svg_path, rf))
     fresh, found = derive(rf, lum)

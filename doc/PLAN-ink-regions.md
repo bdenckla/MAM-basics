@@ -2,7 +2,7 @@
 
 State: live; proposed 2026-11-01, and Ben answered its three decisions the same day; phases 1
 to 3 executed 2026-11-01; phase 4 paused after its first round, 2026-11-01, for the re-draft
-that phases 5 to 7 plan, written the same day for Ben's review.
+that phases 5 to 7 plan, which Ben approved the same day; phase 5 executed 2026-11-01.
 
 ## Context
 
@@ -123,6 +123,12 @@ Ben answered the plan's three decisions on 2026-11-01, after it was pushed in `5
    corrections?", Ben answered "Yes, plan the re-draft" (section 66). Phases 5 to 7 are that
    plan. His comment on Claude's design choices, colour alone for supplied ink, is decision 26
    of `doc/ink-region-representation.md`, made in phase 4.
+5. **The re-draft approved.** The revision that added phases 5 to 7 was pushed in `362f2d76`,
+   with five design choices put to Ben: regions from seeds by a watershed, with several seeds a
+   region and the 2-pixel move to the darkest ink; overlaps as authored outlines; supplied
+   vellum as authored lines, with strips proposed by script; the parts rule; and wider
+   restoration candidates. Asked "Approve the re-draft plan as written?", Ben answered "Approve
+   the plan" (section 67). It is decision 27 of `doc/ink-region-representation.md`.
 
 ## The design (Claude's, for Ben's review)
 
@@ -224,10 +230,11 @@ section 49). The layers:
 
 The colours of layer 3 are Claude's choice, seen in the demo; Ben may change them.
 
-## The re-draft (Claude's design, for Ben's review)
+## The re-draft (Claude's design, approved by Ben on 2026-11-01)
 
 Planned on 2026-11-01 by Claude (Opus 5.5), in the session that took over the discussion of
-phases 1 to 3 and phase 4, after Ben's statements 62 to 66. Phase 2 drafted the regions by a
+phases 1 to 3 and phase 4, after Ben's statements 62 to 66. Ben approved it as written the same
+day, decision 5 under "Ben's decisions". Phase 2 drafted the regions by a
 one-off conversion of the frozen strokes, which no new crop will have, so a correction of one of
 those drafts improves that file alone. The re-draft makes the regions from what every crop has:
 level 1, the photograph's luminance and the Unicode transcription, with seeds that Claude places
@@ -647,3 +654,27 @@ for the discussion of phases 1 to 3 and for phase 4.
    Phase 3's untracked sheet is left as it was, the record of what Ben was asked.
 5. **Paused after the first round.** Ben's comments on the crop of page F043A's מתחת, section
    64, are recorded and not applied: the re-draft that phases 5 to 7 plan carries them over.
+
+### Phase 5, 2026-11-01
+
+Entries by Claude (Opus 5.5), in the session that the commander session started on 2026-11-01
+to execute phases 5 to 7, from `C:/Users/BenDe/GitRepos/MAM-basics` at `362f2d76`.
+
+1. **The parts table** is `PARTS` in `py/pen_stroke/level5.py`, with `parts_of`, which raises on
+   an unknown kind; the module raises if the table and the kinds disagree. The bar and dot under
+   or over a letter count one part each, as the shapes they name; an unidentified mark has no
+   count. The counts are Claude's, from the signs' usual forms.
+2. **`data-parts-note` on a group** is read by `stroke_svg.py`'s shared group reader only when
+   the region reader asks for it, and written only when it says something, so a stroke-SVG cannot
+   have it. Afterwards `derive`, `check` and `render` left the six stroke-SVGs and
+   `overlays.html` byte-identical.
+3. **The luminance in whole numbers:** the bilinear value at a sample's centre, multiplied by 9,
+   from the crop's pixels by integer arithmetic. A sample takes its pixel's value beyond the
+   centres of the edge pixels.
+4. **What else the check reports:** a region in two groups, since ink that signs share is an
+   overlap; seeds of two regions that move to the same sample; an overlap that shares ink with
+   another; and a region whose ink overlaps take entirely.
+5. **Vellum on the page** is the ink that a strip takes out, traced when the page is written; the
+   profile has no derived part for it, and the file's own style draws the strip's line.
+6. **The page** draws every seed, each overlap's outline and each vellum line in the layer of
+   cuts, and gives each crop a table of its overlaps, strips and cuts with their notes.

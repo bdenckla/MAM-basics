@@ -123,6 +123,9 @@ class Group:
     members: list
     ink_of: str
     note: str = ""
+    # The ink-region profile only: why a group holds fewer regions than its kind
+    # has written parts.
+    parts_note: str = ""
 
 
 @dataclass
@@ -493,13 +496,16 @@ def _read_frame(g, sf):
     sf.frame = Frame(lines[0], float(require(a, "data-letter-height", "frame")))
 
 
-def read_groups(g, sf):
+def read_groups(g, sf, parts_notes=False):
+    """The groups; a group may have data-parts-note only where parts_notes is true,
+    as in the ink-region profile."""
+    allowed = {"class", "id", "data-kind", "data-ink-of", "data-note"}
+    if parts_notes:
+        allowed.add("data-parts-note")
     for tag, el in svg_children(g):
         if tag != "g" or el.attrib.get("class") != "group":
             raise ProfileError("groups: every child is a g.group")
-        a = profile_attrs(
-            el, "group", {"class", "id", "data-kind", "data-ink-of", "data-note"}
-        )
+        a = profile_attrs(el, "group", allowed)
         gid = require(a, "id", "group")
         kind = require(a, "data-kind", gid)
         level5.pass_of(kind)
@@ -517,7 +523,16 @@ def read_groups(g, sf):
                     f"{gid}: href {href!r} is not a fragment of this file"
                 )
             members.append(href[1:])
-        sf.groups.append(Group(gid, kind, members, ink_of, a.get("data-note", "")))
+        sf.groups.append(
+            Group(
+                gid,
+                kind,
+                members,
+                ink_of,
+                a.get("data-note", ""),
+                a.get("data-parts-note", ""),
+            )
+        )
 
 
 def esc(s):
@@ -635,6 +650,8 @@ def group_lines(groups):
     lines = ['  <g class="groups">']
     for g in groups:
         note = f' data-note="{esc(g.note)}"' if g.note else ""
+        if g.parts_note:
+            note += f' data-parts-note="{esc(g.parts_note)}"'
         lines.append(
             f'    <g class="group" id="{g.id}" data-kind="{esc(g.kind)}"'
             f' data-ink-of="{g.ink_of}"{note}>'

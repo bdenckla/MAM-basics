@@ -2,28 +2,33 @@
 
 WHY THIS EXISTS
 
-A region-SVG is part authored (cuts, seeds, supplied outlines, groups, judgments) and part
-derived (fills, image residual, each region's outline, each supplied outline's added ink),
-and the derived parts are true only of the crop and the authored parts they came from.  This
-lint derives them again and fails on any difference, so a cut or a seed edited without a
-following ``py/main_pen_stroke.py regions-derive`` cannot stand.  It is a mechanical lint over
-the tree.
+A region-SVG is part authored (seeds, cuts, strips of supplied vellum, overlaps' outlines,
+supplied outlines, groups, judgments) and part derived (fills, image residual, each region's
+outline, each overlap's ink, each supplied outline's added ink), and the derived parts are
+true only of the crop and the authored parts they came from.  This lint derives them again
+and fails on any difference, so a seed or a cut edited without a following
+``py/main_pen_stroke.py regions-derive`` cannot stand.  It is a mechanical lint over the tree.
 
 WHAT IT CHECKS, for each region-SVG (``pen_stroke.region_derive.problems``)
 
 1. The profile's structure: its closed sets of elements, classes, attributes, group kinds,
    ink owners, supplied values and judgments, and each region's id, rg and a number.
-2. Ids are unique; every group holds regions or supplied ink of the same file, and every
-   region and supplied ink is in a group; each group's ink owner suits the crop's subject,
-   and ink of the line above or below has that line's text on the root; every cut is one
-   path of straight segments; every supplied outline is closed and has a reason; every
-   residual piece is judged.
+2. Ids are unique; every group holds regions, overlaps or supplied ink of the same file;
+   every region is in one group, every overlap in two or more, and every supplied ink in
+   one or more; each group's ink owner suits the crop's subject, and ink of the line above
+   or below has that line's text on the root; a group whose kind has several written parts
+   holds as many members, or says why not; every cut and strip of vellum is one path of
+   straight segments; every overlap's and supplied outline is closed, and every supplied
+   outline has a reason; every residual piece is judged.
 3. The crop is beside the file, and its pixel size is the viewBox.
 4. Level 1 is what the crop gives, as a stroke-SVG's is.
-5. Every cut crosses ink; every seed lies in the ink and off the cuts; every piece of ink
-   the cuts leave holds exactly one seed; and the ink under the cuts goes back to a region.
-6. Each region's outline is what its seed and the cuts give, and each supplied outline's
-   added ink is the outline less the ink, and is not empty.
+5. Every strip of vellum takes out ink and every cut crosses it; every seed lies in the ink,
+   off the cuts and out of the vellum, and no two regions' seeds move to one sample; every
+   piece of ink the cuts leave holds a seed; the ink under the cuts goes back to a region;
+   and every overlap takes ink that no other overlap takes.
+6. Each region's outline is what the watershed from its seeds, the cuts, the vellum and the
+   overlaps give; each overlap's ink is the ink inside its outline; and each supplied
+   outline's added ink is the outline less the ink, and is not empty.
 
 A missing input fails: the directory must hold a region-SVG.
 
