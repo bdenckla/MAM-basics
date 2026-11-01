@@ -1,8 +1,8 @@
 # Plan: regions of ink in place of pen strokes, in the manuscript crops
 
 State: live; proposed 2026-11-01, and Ben answered its three decisions the same day; phases 1
-to 3 executed 2026-11-01; phase 4 under way from 2026-11-01, as Ben's answers to phase 3's sheet
-arrive.
+to 3 executed 2026-11-01; phase 4 paused after its first round, 2026-11-01, for the re-draft
+that phases 5 to 7 plan, written the same day for Ben's review.
 
 ## Context
 
@@ -60,6 +60,23 @@ Each is Ben's, from the statements file named above, and each is active as this 
   described in words or drawn on a page, "I'd like to be able to give feedback in one or both of
   those forms, for any given crop".
 
+- **R8, the transcription informs the regions** (section 64): "we need to let the Unicode
+  transcription "inform" the ink-transcription, in that again, a qamats and its dot should be
+  separate regions outside of some really extraordinary circumstance"; and "high-level
+  semantics require that there be a cut between the mark above the tav and the tav itself".
+- **R9, touching parts are not overlaps** (sections 62 and 63): a qamats's bar and its dot touch
+  "only in that the bar touches the dot below it as a tangent to a circle touches a circle.
+  I.e., I don't even think this should be coded as an overlap"; and of two letters that level 1
+  joins, "I see a thin strip of vellum".
+- **R10, overlaps as intersections** (section 63): "I would have expected those shapes to simply
+  be the intersection of reasonable shapes for the two (so far I've only seen a two-way
+  intersection!) marks in question."
+- **R11, supplied vellum** (section 62): for a strip of vellum that level 1's fill covers, "a
+  very thin "supplied vellum" (as opposed to "supplied ink") shape".
+- **R12, comments that improve the rule** (sections 65 and 66): Ben asked whether his comments
+  "inform changes to the generalized algorithm, or are they just the kind of comments that each
+  of these transcriptions is expected to need", and chose a re-draft by rule.
+
 ## What carries over, and what is parked
 
 The schema note's decisions are numbered 1 to 22. New decisions continue that numbering from 23,
@@ -101,6 +118,11 @@ Ben answered the plan's three decisions on 2026-11-01, after it was pushed in `5
    style for all added ink. So a supplied mark keeps decision 15's style, hatched in the orange
    `#ff6d00` and outlined with dashes, and restored ink (R5) gets a second reserved style, which
    "The design" proposes for his review.
+4. **A re-draft by rule before more hand corrections.** After his first answers to phase 3's
+   sheet, asked "Should I write a plan to re-draft all six crops by rule before any more hand
+   corrections?", Ben answered "Yes, plan the re-draft" (section 66). Phases 5 to 7 are that
+   plan. His comment on Claude's design choices, colour alone for supplied ink, is decision 26
+   of `doc/ink-region-representation.md`, made in phase 4.
 
 ## The design (Claude's, for Ben's review)
 
@@ -202,6 +224,101 @@ section 49). The layers:
 
 The colours of layer 3 are Claude's choice, seen in the demo; Ben may change them.
 
+## The re-draft (Claude's design, for Ben's review)
+
+Planned on 2026-11-01 by Claude (Opus 5.5), in the session that took over the discussion of
+phases 1 to 3 and phase 4, after Ben's statements 62 to 66. Phase 2 drafted the regions by a
+one-off conversion of the frozen strokes, which no new crop will have, so a correction of one of
+those drafts improves that file alone. The re-draft makes the regions from what every crop has:
+level 1, the photograph's luminance and the Unicode transcription, with seeds that Claude places
+by eye with the text in hand (decision 11). What no rule can know, a reading of one image, stays
+authored: overlaps, vellum, cuts and groups.
+
+### Profile 2: regions from seeds by a watershed
+
+The root carries `data-profile="ink-region 2"`. What changes from profile 1:
+
+1. **Seeds in every written part.** A sign's written parts are the shapes this manuscript writes
+   apart: a qamats is a bar and a dot under it, a segol three dots, a geresh one stroke (R8).
+   Each part's ink is a region of its own, and the regions of one sign are joined in the sign's
+   group, as now. A region has one seed or more, `data-seed="x1 y1 x2 y2 …"`, each in its part's
+   ink. Place one in the part's darkest ink near each place where it touches another part: the
+   flood follows the darkest connection, not the letter (Evidence, item 4).
+2. **The watershed.** Within each piece of ink, every sample goes to the seed whose flood reaches
+   it first. The floods start from all the seeds at once, each from the darkest sample of ink
+   within 2 pixels of its seed, and then take the piece's samples in order of the photograph's
+   luminance, darkest first, a tie going to the sample reached first. So the boundary between two
+   seeds' regions runs along the palest, narrowest line between them, as at the strip of vellum
+   between page F043A's pe and nun, or the neck between a qamats's bar and its dot (R9). The
+   luminance at a sample is interpolated bilinearly between the centres of the crop's pixels, by
+   NumPy, so that it is the same on every machine.
+3. **Cuts as corrections.** A cut is optional, authored only where the watershed's line is
+   wrong: the flood cannot cross it, and its samples go back afterwards to the adjacent region of
+   lowest number, as in profile 1.
+4. **Overlaps as authored outlines** (R4, R10). `<g class="overlaps">` holds one
+   `<g class="overlap" id="ovN" data-note="…">` per proposed overlap, with an authored closed
+   `<path class="outline">`, the intersection of two plausible shapes, and a derived
+   `<path class="ink">`, the ink inside it. That ink is taken out of the regions the watershed
+   gave and is one region of its own, which two groups or more hold. No region is shared
+   otherwise: two parts that touch share nothing unless an overlap is proposed (R9).
+5. **Supplied vellum** (R11). `<g class="vellum">` holds one
+   `<path class="vellum" id="vN" data-width="…" data-why="…" d="M … L …"/>` per strip: an
+   authored line of straight segments and a width in crop pixels, 1 unless stated. The samples
+   whose centres lie within half the width of the line leave the ink before anything else, so
+   that the strip divides it and shows as vellum in black on white.
+6. **The parts rule** (R8). A closed table, keyed by the kinds of `py/pen_stroke/level5.py`,
+   gives each kind's number of written parts in this manuscript and raises on a kind it does not
+   know. A group whose kind has more than one part holds at least that many regions, overlaps and
+   supplied inks, unless its `data-parts-note` says why, for what Ben called "some really
+   extraordinary circumstance". Letters, unidentified kinds and set-aside kinds have no count.
+
+The derivation, every step deterministic, at 3 samples a pixel:
+
+1. the ink as level 1 judges it, by profile 1's rule, less every vellum strip;
+2. less every cut's samples;
+3. the 4-connected pieces of what remains: each holds a seed, every seed lies in one, and a
+   crumb, a piece with no seed and no more samples than the speck size, is set aside;
+4. each seed moves to the darkest sample of its piece within 2 pixels, the first in row order
+   on a tie;
+5. the flood, piece by piece, as item 2 above gives it;
+6. the cuts' samples and the crumbs go back to the adjacent region of lowest number, round after
+   round, as in profile 1;
+7. each overlap takes the ink of step 1 inside its outline out of the regions, as one region;
+8. each region and each overlap is traced as in profile 1, and supplied ink is derived as there.
+
+The check adds to profile 1's: a seed outside the ink, on a cut or in a vellum strip; an overlap
+whose outline is not closed, that takes no ink, or that fewer than two groups hold; a vellum line
+not of straight segments, or that takes out no ink; and the parts rule. A piece may hold several
+seeds. On the region page an overlap shows in each of its groups' colours, translucent, as a
+shared region does now; vellum is drawn in the layer of supplied ink, in colour alone (decision
+26), in a light colour no other layer uses, which Claude picks and the representation note
+names, for Ben's review.
+
+### What the re-draft keeps, drops and adds
+
+- **Kept:** each crop's level 1 and judgments, its groups with their ids, kinds, owners and
+  notes, and its supplied ink.
+- **Dropped:** every cut and every region of profile 1, except as the next item says. A region in
+  one group lends its seed to the re-draft; a region in two groups, one of phase 2's "pebbles",
+  is dropped with its seed.
+- **Ben's readings, carried over.** In the crop of page F043A's פני, his cut c11 becomes a vellum
+  strip along the same line (section 62), and c12, between the qamats's bar and its dot, stays a
+  cut (section 63). In the crop of page F043A's מתחת (section 64): the qamats's dot gets a seed
+  of its own; the geresh keeps its region; and the group that the region-SVG calls the top of a
+  letter of the verse's last atom, which Ben reads as the "barbed spear tip" of a lamed, becomes
+  a lamed letter of the line below, with an overlap where it crosses the base of the mem, whose
+  outline Claude draws by eye for Ben's review. The sliver of it that phase 2 gave the atnaḥ,
+  sheet question 3, goes to it, since the atnaḥ stands about 12 pixels clear of it.
+- **Added by Claude, for Ben's review:** a seed for every written part that the parts rule
+  finds without one, and every seed the flood needs near a junction (Evidence, item 4), placed
+  by eye; vellum strips proposed by script where the boundary between two signs' regions is
+  pale, a strip along it 1 pixel wide wherever the median, over the pairs of 4-adjacent samples
+  it separates, of the paler sample's luminance is at least a third of the way from the crop's
+  median luminance of ink to its median luminance elsewhere; and restoration candidates, the
+  four residual pieces judged damage and every hole in the ink of 30 pixels or fewer, a
+  4-connected piece of what is not ink that touches no edge of the crop, whose neighbouring ink
+  is all one sign's, other than a set-aside kind's.
+
 ## Evidence, dated 2026-11-01
 
 Measured at MAM-basics commit `c93c6273`. These are dated observations; re-measure them with the
@@ -233,6 +350,26 @@ commands given rather than relying on them. Paths under `review/` and `scripts/`
 3. **The tav of page F102A's atom אחת,** which Ben cited in section 49, is exact in the demo
    because it is level 1's ink. `review/tav-F102A-line2-round5.png` shows its photograph, level
    1's outline and round 5's strokes.
+
+Items 4 to 6 were measured at `acf56d0b`, for the re-draft.
+
+4. **A seeded watershed on Ben's two readings.** Claude's scratch prototypes, not kept, flooded
+   the ink of the crop of page F043A's פני, at `acf56d0b`, from the seeds of the regions in one
+   group only, with luminance interpolated bilinearly and c11 and c12 ignored. Wherever the
+   seeds were, the boundaries lay on Ben's two lines: within 0.44 pixels of c11, median 0.10, and
+   within 1.16 pixels of c12, median 0.50. Which side took which ink depended on the seeds. With
+   one seed a part, as phase 2 placed them, the qamats's bar took the base of the pe, 999.9
+   pixels of ink in all, since the pe's own stroke has a paler stretch than its junction with the
+   bar. With each seed moved to the darkest ink within 2 pixels and a second seed for the pe in
+   its base, near the bar, the bar held 94.9 pixels and the pe kept its base. Hence profile 2's
+   several seeds a region and its 2 pixels. Phase 6 measures it again with the real derivation.
+5. **The strip of vellum.** Across c11, the luminance falls to 35 to 50 in the strokes on either
+   side and rises to 114, 125, 138 and 164 between them, against the crop's threshold of 142
+   (the findings record's update, entry "Ben's first answers on the regions"). In the six crops
+   the ink as level 1 judges it has a median luminance of 57 to 66, and the rest 175 to 225; in
+   that crop a third of the way from 60 to 219 is 113, below all four values.
+6. **The flood is quick.** In pure Python over a heap, the prototype's flood took 0.07 to 0.55
+   seconds a crop, over the 29,692 to 212,094 samples of ink a crop holds; SciPy is not needed.
 
 ## Checkout, Git and verification
 
@@ -268,7 +405,7 @@ commands given rather than relying on them. Paths under `review/` and `scripts/`
   ```
 
   Stage new files before running the last two, which read tracked files. At `c93c6273` the ten
-  without the new test passed 33.
+  without the new test passed 33. At `acf56d0b`, after phase 4's first round, the eleven passed 40.
 - **Expected unchanged:** the six stroke-SVGs, `overlays.html`, and every product; nothing outside
   `doc/pen-stroke-snips/`, the tool and its documents reads what changes.
 - **Expected changed paths:** a new module or two in `py/pen_stroke/`; `py/main_pen_stroke.py`;
@@ -349,6 +486,62 @@ words or from the drawing page; move each cut, add each restoration, regenerate,
 each changed place in context. Record findings in
 the findings update and decisions in the new note. Verify, commit and push, and release the
 clone.
+
+Phase 4 paused after its first round, by Ben's decision 4. The 25 questions of phase 3's sheet
+about cuts are superseded by the re-draft; its 4 questions about restoring the pieces judged
+damage carry over to phase 6's sheet.
+
+### Phase 5: profile 2 and its tool
+
+Phases 5 and 6 run only after Ben has reviewed "The re-draft" and approved the plan, and the
+commit that added phases 5 to 7 must be `HEAD` or its ancestor. Read Ben's statements 49 to 66
+first, in `.novc/pen-stroke-exemplars/review/ben-statements-2026-11-01.md`.
+
+1. In `py/pen_stroke/region_svg.py`, `region_derive.py` and `region_render.py`: profile 2 as
+   "The re-draft" gives it, the reader accepting `ink-region 2` only; seeds in lists, the
+   watershed, overlaps, vellum and the parts rule; the check's additions; and the page's drawing
+   of overlaps, vellum and every seed. The watershed is a priority flood over a heap in Python.
+2. The parts table, in `level5.py` or a module of its own, with an entry for every kind, each of
+   more than one part with a comment naming its parts, and raising on an unknown kind.
+3. `doc/ink-region-representation.md` describes profile 2, keeps profile 1 as a paragraph of
+   history, and gains the decisions Ben makes in reviewing this plan, from 27.
+4. Profile 1's files fail the new reader, so phase 5's commit is pushed with phase 6's, as
+   phase 1's was with phase 2's.
+
+### Phase 6: the six crops re-drafted
+
+1. An untracked script, `.novc/pen-stroke-exemplars/scripts/r7_redraft.py`, writes each crop's
+   profile-2 region-SVG from its profile-1 file, as "What the re-draft keeps, drops and adds"
+   gives it, reading the seeds that Claude adds from an input file beside it and recording what
+   it did in `.novc/pen-stroke-exemplars/regions/redraft-<crop>.json`. Never run phase 2's
+   `scripts/r6_migrate.py --write` again: it would overwrite Ben's readings.
+2. Claude looks at every crop beside its transcription and adds, in that input file, the seeds
+   the parts rule asks for and those the flood needs near junctions, then reruns the script and
+   checks each crop's regions against the image, until each written part has its own ink.
+3. With c11's strip and c12 left out, the watershed's boundaries must lie within 1.5 pixels of
+   them, in the crop of page F043A's פני, as Evidence item 4 found; report the distances, and
+   stop and report if they do not.
+4. `regions-derive`, `regions-check` and `regions-render`; verify as "Checkout, Git and
+   verification" gives it, with the eleven focused tests; commit and push with phase 5's work.
+   The findings record's update gets a dated entry with the figures, pieces, seeds, regions,
+   overlaps, vellum strips and candidates, and with every seed Claude added and why. Expected
+   changed: the three region modules, `level5.py` or the parts table's module,
+   `py/main_pen_stroke.py` if its help changes, the six `doc/pen-stroke-snips/*.regions.svg`,
+   `regions.html`, the representation note, the findings record's update, the snips README and
+   this plan's State line and execution record. Expected unchanged: the six stroke-SVGs,
+   `overlays.html` and every product.
+5. An updated `review/make_regions_sheet.py` writes `review/regions-sheet-2.html`: for each crop,
+   the page round it, drawn smoothly, with its regions in their groups' colours, their
+   boundaries thin, and each overlap, vellum strip and restoration candidate numbered for a
+   question. Its drawing page can also place a seed with its group, and draw an overlap's outline
+   or a vellum line.
+
+### Phase 7: Ben's review
+
+As phase 4: each answer recorded verbatim in the statements file, applied, regenerated and shown
+in context, findings in the update and decisions in the note. Where an answer is a rule rather
+than a reading of one image, Claude says so and proposes how the drafting changes, so that the
+next crop needs less of Ben's time (R12).
 
 ## Constraints
 
@@ -452,3 +645,5 @@ for the discussion of phases 1 to 3 and for phase 4.
 4. **Cuts without a white band.** The region page drew each cut as a pink line over a white
    band, which Ben read as white space between the regions; it now draws one thin pink line.
    Phase 3's untracked sheet is left as it was, the record of what Ben was asked.
+5. **Paused after the first round.** Ben's comments on the crop of page F043A's מתחת, section
+   64, are recorded and not applied: the re-draft that phases 5 to 7 plan carries them over.
