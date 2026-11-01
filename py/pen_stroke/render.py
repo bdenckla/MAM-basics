@@ -273,6 +273,15 @@ def stroke_colour(k):
     return STROKE_COLOURS[k % len(STROKE_COLOURS)]
 
 
+def width_range(sf, st):
+    """A stroke's least and greatest width: of its own widths, or of the
+    thicknesses its nib sweeps along it."""
+    if st.swept:
+        ws = dv.widths_along(st, sf.nibs)
+        return min(ws), max(ws)
+    return min(st.widths), max(st.widths)
+
+
 def supplied_ink(st, scale):
     """A supplied stroke's ink in the one style decision 15 allows it."""
     return (
@@ -412,7 +421,7 @@ def _svg(sf, groups_of):
         for st in sf.strokes:
             if st.id in others:
                 continue
-            reveal = geo.fmt(2 * max(st.widths) + 6, 1)
+            reveal = geo.fmt(2 * width_range(sf, st)[1] + 6, 1)
             out.append(
                 f'<path data-sid="{st.id}" data-reveal="{reveal}" d="{st.median}"/>'
             )
@@ -560,6 +569,12 @@ def _section(svg_path):
     out.append(
         f"<tr><th>Ink</th><td>{m['ink']} pixels in the fills judged ink</td></tr>"
     )
+    for pass_name, nib in sorted(sf.nibs.items()):
+        out.append(
+            f"<tr><th>Nib for the {_e(pass_name)}</th><td>{nib.width:g} pixels wide and"
+            f" {nib.edge:g} thick, its long side at {nib.angle:g}°; it sweeps every"
+            f" stroke of the {_e(pass_name)} marked swept below</td></tr>"
+        )
     out.append(
         f"<tr><th>Strokes</th><td>{len(sf.strokes) - nsupplied} that model ink the crop"
         f" shows, sweeping {m['swept']} pixels</td></tr>"
@@ -604,9 +619,12 @@ def _section(svg_path):
             k += 1
         share = f"{over} ({100 * over / area:.0f}%)" if area else "0"
         nseg = len(dv.median_segments(st))
-        widths = f"{min(st.widths):.1f} to {max(st.widths):.1f}"
+        lo, hi = width_range(sf, st)
+        widths = f"{lo:.1f} to {hi:.1f}"
         ends = st.ends
-        if st.cuts:
+        if st.swept:
+            ends = f"swept: the {st.swept} nib's edges"
+        elif st.cuts:
             ends += " at " + " and ".join(f"{c:g}°" for c in st.cuts)
         out.append(
             f"<tr><td>{swatch} {_e(st.id)}</td><td>{_e(', '.join(groups_of.get(st.id, [])))}</td>"
@@ -637,8 +655,9 @@ def page(svg_paths):
 <h1>Pen-stroke overlays</h1>
 <p class="ai-caveat"><strong>Strokes traced by an AI model, not yet reviewed by a human.</strong>
 Claude, an AI model, placed every stroke's median on this page by eye, had a script smooth it
-into curves and fit its widths and ends to the ink, and judged every residual piece, so read the
-strokes as a draft.</p>
+into curves, and judged every residual piece, so read the strokes as a draft. Where a stroke is
+swept by its crop's nib, a script then moved its median to fit the ink, and the nib gives its
+widths and ends; elsewhere the script fitted its widths and ends to the ink.</p>
 <p>Each crop of the Leningrad Codex is drawn four times its size, or twice for a whole line,
 with its stroke-SVG over it. The checkboxes beside each image switch that image's layers. The
 profile, and what each layer means, are in

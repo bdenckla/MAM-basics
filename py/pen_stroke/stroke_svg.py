@@ -14,8 +14,9 @@ from pen_stroke import geometry as geo
 from pen_stroke import level1
 from pen_stroke import level3
 from pen_stroke import level5
+from pen_stroke import nib as nibmod
 
-PROFILE = "pen-stroke 4"
+PROFILE = "pen-stroke 5"
 _SVG = "http://www.w3.org/2000/svg"
 _XLINK = "http://www.w3.org/1999/xlink"
 _EDITOR_NAMESPACES = (
@@ -62,6 +63,10 @@ INK_OWNERS = (THIS_WORD, "other-word", THIS_LINE, "line-above", "line-below")
 DUCTUS = ("plausible", "unrecorded")
 WIDTH_PLACES = 2
 CUT_PLACES = 1
+NIB_ANGLE_PLACES = 1
+# The crop's nibs on the root (profile 5), one for each pass that has strokes
+# swept by a nib (decision 7): width, edge and angle, as pen_stroke.nib has them.
+NIB_KEYS = {level5.LETTERS: "data-nib-letters", level5.MARKS: "data-nib-marks"}
 # Decision 17: ink that is not the subject's is drawn in this colour, which no
 # other layer uses, in every view.
 OTHER_INK_COLOUR = "#607d8b"
@@ -104,6 +109,9 @@ class Stroke:
     note: str = ""
     supplied: str = ""
     supplied_why: str = ""
+    # The pass whose nib, on the root, sweeps the stroke; a swept stroke has no
+    # widths, ends or cuts of its own.
+    swept: str = ""
 
 
 @dataclass
@@ -132,6 +140,7 @@ class StrokeFile:
     halo_band: int
     tracer: str = level1.TRACER
     ductus: str = "unrecorded"
+    nibs: dict = field(default_factory=dict)
     fills: list = field(default_factory=list)
     pieces: list = field(default_factory=list)
     smoothing: str = ""
@@ -232,7 +241,7 @@ def read(path):
     allowed = {"viewBox", "width", "height", "version", "data-profile", "data-channel"}
     allowed |= {f"data-{k}" for k in PROVENANCE_KEYS}
     allowed |= {"data-threshold", "data-speck-size", "data-halo-band", "data-tracer"}
-    allowed |= {"data-ductus"}
+    allowed |= {"data-ductus"} | set(NIB_KEYS.values())
     a = _attrs(root, "root", allowed)
     if a.get("data-profile") != PROFILE:
         raise ProfileError(f"{path}: data-profile is not {PROFILE!r}")
@@ -256,6 +265,7 @@ def read(path):
         halo_band=int(_require(a, "data-halo-band", "root")),
         tracer=_require(a, "data-tracer", "root"),
         ductus=ductus,
+        nibs={p: _read_nib(a[k], k) for p, k in NIB_KEYS.items() if k in a},
     )
     seen = []
     for tag, el in _children(root):
@@ -291,6 +301,19 @@ def read(path):
         if needed not in seen:
             raise ProfileError(f"{path}: missing {needed}")
     return sf
+
+
+def _read_nib(value, key):
+    """A root nib's width, edge and angle."""
+    try:
+        width, edge, angle = (float(v) for v in value.split())
+    except ValueError as exc:
+        raise ProfileError(f"root: {key} is a width, an edge and an angle") from exc
+    if width <= 0 or edge <= 0 or not 0 <= angle < 180:
+        raise ProfileError(
+            f"root: {key} needs a positive width and edge and an angle from 0 up to 180"
+        )
+    return nibmod.Nib(width=width, angle=angle, edge=edge)
 
 
 def _read_fills(g, sf):
@@ -353,35 +376,18 @@ def _read_strokes(g, sf):
                 "data-note",
                 "data-supplied",
                 "data-supplied-why",
+                "data-swept",
             },
         )
         sid = _require(a, "id", "stroke")
         pass_name = _require(a, "data-pass", sid)
         if pass_name not in PASSES:
             raise ProfileError(f"{sid}: unknown pass {pass_name!r}")
-        ends = _require(a, "data-ends", sid)
-        if ends not in curve.ENDS:
-            raise ProfileError(f"{sid}: unknown ends {ends!r}")
-        cuts = ()
-        if ends == "cut":
-            try:
-                cuts = tuple(float(v) for v in _require(a, "data-cuts", sid).split())
-            except ValueError as exc:
-                raise ProfileError(
-                    f"{sid}: data-cuts is not a list of numbers"
-                ) from exc
-            if len(cuts) != 2 or not all(0 <= c < 180 for c in cuts):
-                raise ProfileError(
-                    f"{sid}: data-cuts is two angles from 0 up to 180 degrees"
-                )
-        elif "data-cuts" in a:
-            raise ProfileError(f"{sid}: only a stroke whose ends are cut has data-cuts")
-        try:
-            widths = [float(v) for v in _require(a, "data-widths", sid).split()]
-        except ValueError as exc:
-            raise ProfileError(f"{sid}: data-widths is not a list of numbers") from exc
-        if not widths or min(widths) <= 0:
-            raise ProfileError(f"{sid}: every width is a positive number")
+        swept = a.get("data-swept", "")
+        if swept:
+            ends, cuts, widths = _read_swept(a, sid, swept)
+        else:
+            ends, cuts, widths = _read_widths(a, sid)
         conf = a.get("data-confidence", "high")
         if conf not in CONFIDENCES:
             raise ProfileError(f"{sid}: unknown confidence {conf!r}")
@@ -408,6 +414,7 @@ def _read_strokes(g, sf):
             note=a.get("data-note", ""),
             supplied=supplied,
             supplied_why=supplied_why,
+            swept=swept,
         )
         for ctag, child in _children(el):
             cls = child.attrib.get("class", "")
@@ -419,6 +426,45 @@ def _read_strokes(g, sf):
         if not st.median:
             raise ProfileError(f"{sid}: no median")
         sf.strokes.append(st)
+
+
+def _read_swept(a, sid, swept):
+    """A swept stroke's ends, cuts and widths, which are none: the nib gives them."""
+    if swept not in PASSES:
+        raise ProfileError(f"{sid}: data-swept names no pass's nib: {swept!r}")
+    for key in ("data-widths", "data-ends", "data-cuts"):
+        if key in a:
+            raise ProfileError(
+                f"{sid}: a stroke swept by a nib has no {key}; the nib gives its"
+                " widths and ends"
+            )
+    return "", (), []
+
+
+def _read_widths(a, sid):
+    """The ends, cuts and widths of a stroke that carries widths of its own."""
+    ends = _require(a, "data-ends", sid)
+    if ends not in curve.ENDS:
+        raise ProfileError(f"{sid}: unknown ends {ends!r}")
+    cuts = ()
+    if ends == "cut":
+        try:
+            cuts = tuple(float(v) for v in _require(a, "data-cuts", sid).split())
+        except ValueError as exc:
+            raise ProfileError(f"{sid}: data-cuts is not a list of numbers") from exc
+        if len(cuts) != 2 or not all(0 <= c < 180 for c in cuts):
+            raise ProfileError(
+                f"{sid}: data-cuts is two angles from 0 up to 180 degrees"
+            )
+    elif "data-cuts" in a:
+        raise ProfileError(f"{sid}: only a stroke whose ends are cut has data-cuts")
+    try:
+        widths = [float(v) for v in _require(a, "data-widths", sid).split()]
+    except ValueError as exc:
+        raise ProfileError(f"{sid}: data-widths is not a list of numbers") from exc
+    if not widths or min(widths) <= 0:
+        raise ProfileError(f"{sid}: every width is a positive number")
+    return ends, cuts, widths
 
 
 def _read_pen_residual(g, sf):
@@ -500,6 +546,9 @@ def dumps(sf):
         f'data-tracer="{_esc(sf.tracer)}"',
         f'data-ductus="{sf.ductus}"',
     ]
+    for pass_name, key in NIB_KEYS.items():
+        if pass_name in sf.nibs:
+            root.append(f'{key}="{nib_text(sf.nibs[pass_name])}"')
     lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
         "<svg " + "\n     ".join(root) + ">",
@@ -525,17 +574,20 @@ def dumps(sf):
     lines.append("  </g>")
     lines.append('  <g class="strokes">')
     for s in sf.strokes:
-        widths = " ".join(geo.fmt(w, WIDTH_PLACES) for w in s.widths)
         attrs = [
             'class="stroke"',
             f'id="{s.id}"',
             f'data-pass="{s.pass_name}"',
-            f'data-ends="{s.ends}"',
         ]
-        if s.cuts:
-            cuts = " ".join(geo.fmt(c, CUT_PLACES) for c in s.cuts)
-            attrs.append(f'data-cuts="{cuts}"')
-        attrs.append(f'data-widths="{widths}"')
+        if s.swept:
+            attrs.append(f'data-swept="{s.swept}"')
+        else:
+            attrs.append(f'data-ends="{s.ends}"')
+            if s.cuts:
+                cuts = " ".join(geo.fmt(c, CUT_PLACES) for c in s.cuts)
+                attrs.append(f'data-cuts="{cuts}"')
+            widths = " ".join(geo.fmt(w, WIDTH_PLACES) for w in s.widths)
+            attrs.append(f'data-widths="{widths}"')
         if s.shape:
             attrs.append(f'data-shape="{s.shape}"')
         if s.confidence != "high":
@@ -576,6 +628,14 @@ def dumps(sf):
     lines.append("  </g>")
     lines.append("</svg>")
     return "\n".join(lines) + "\n"
+
+
+def nib_text(nib):
+    """A root nib as the profile writes it: its width, edge and angle."""
+    return (
+        f"{geo.fmt(nib.width, WIDTH_PLACES)} {geo.fmt(nib.edge, WIDTH_PLACES)}"
+        f" {geo.fmt(nib.angle, NIB_ANGLE_PLACES)}"
+    )
 
 
 def write(sf, path):

@@ -61,7 +61,7 @@ def samples_by_strokes(svg_path, pass_name):
     polys = []
     for st in sf.strokes:
         if st.pass_name == pass_name and not st.supplied:
-            polys.extend(dv.sweep_polys(st))
+            polys.extend(dv.sweep_polys(st, sf.nibs))
     sel = raster.dilate8(raster.dilate8(geo.rasterize(polys, w, h, "nonzero")))
     return nibmod.width_samples(lum, ink, select=sel)
 

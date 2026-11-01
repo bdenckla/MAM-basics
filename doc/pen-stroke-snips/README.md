@@ -6,8 +6,12 @@ representation that [../pen-stroke-representation.md](../pen-stroke-representati
 describes; two, added on 2026-10-31, are of whole lines that are well kept and sharply
 photographed. [../pen-stroke-exemplars-2026-10-30.md](../pen-stroke-exemplars-2026-10-30.md)
 and its update report what they showed. Claude traced every stroke by eye, a script of
-Claude's smoothed each into curves and fitted its widths and ends to the ink, and Claude judged
-every residual piece. Ben has checked the readings of the marks in the two crops on page F043A
+Claude's smoothed each into curves, and Claude judged every residual piece. In the four crops of
+one chanted word, and for the marks of the two line crops, that script also fitted each stroke's
+widths and ends to the ink. In the two line crops each stroke of the letters is instead swept by
+the crop's one nib, which gives its widths and ends, and a second script of Claude's moved each
+median, every point within 5 pixels of where round 4 left it, to fit the ink (profile 5 of the
+schema note). Ben has checked the readings of the marks in the two crops on page F043A
 and of the vowels under the nun of F102A's על־פני, and on 2026-10-31 he answered round 3's nine
 questions about the two line crops; no human has reviewed the rest.
 

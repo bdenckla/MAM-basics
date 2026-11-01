@@ -1,6 +1,6 @@
 # Sources the pen-stroke work has cited
 
-State: live; the books, articles and PDFs cited up to 2026-10-31
+State: live; the books, articles and PDFs cited up to 2026-11-01
 
 This lists the books, articles and PDFs that the pen-stroke work's research cited, so that they
 outlive the sessions that found them. Ben asked for it on 2026-10-31, as the commander session
@@ -23,6 +23,8 @@ Every judgment below is the named agent's, not Ben's, and none was checked again
 - **The commander:** the session above, which read one PDF on 2026-10-31.
 - **Round 3:** the session that traced two whole lines, 2026-10-31.
 - **Round 4:** the session that re-traced those lines' bases, 2026-10-31.
+- **Round 5:** the session that swept those lines' letters with each crop's one nib,
+  2026-11-01.
 
 A **read** source was read by the agent named. **Snippet only** means the agent knew it only
 from a search summary, a title or a catalogue listing; what such a summary said is reported as
@@ -123,7 +125,12 @@ open to ordering these, scanning, and doing OCR on them."
     parallelograms, and the pen is pulled, never pushed. It corrected one: the fine details, such
     as beit's corners, tag and heel, are pulled out of the wet ink with the same nib's point
     tipped sideways, not with a smaller pen. A copy is kept, untracked, beside the ductus research
-    in the same working folder.
+    in the same working folder. **Read again by round 5** on 2026-11-01, for what it says about
+    the pen. Beyond what the commander found, it offers turning the nib during a stroke, to make a
+    wedge, as one way to make an asymmetric leg, and makes a tilted vav with the nib at a steep
+    angle to the line; its ayin's foot is two strokes or more, begun at the bottom and pulled
+    upward. It teaches modern Torah-scroll (STaM) practice in the Beit Yosef script, crowns
+    included, so what it says is that practice's, not the Leningrad Codex's scribe's.
 16. **Mishnat Soferim**, the Mishnah Berurah's rules for the letters, translated by Jen Taylor
     Friedman (2006): <https://www.hasoferet.com/halakha-for-scribes/mishnat-soferim/>. Bears on the
     letters' parts and heads. Read by the ductus research; the round-2 feedback session read again

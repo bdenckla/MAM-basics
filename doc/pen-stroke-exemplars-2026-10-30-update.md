@@ -45,7 +45,7 @@ On 2026-10-31 the stroke-SVGs moved to profile 2 of
 Each stroke's median is one or a
 few cubic Bézier curves, with a width that varies smoothly along them, and its ends are round
 or flat. A script of Claude's converted the medians placed by eye and fitted the widths and
-ends to the ink. The schema note's "Profile 1 and profile 2" gives its steps. The base's
+ends to the ink. The schema note's "Profiles 1 to 5" gives its steps. The base's
 sections "The nib" and "The pen residual" describe profile 1.
 
 | Crop | Strokes | Ink no stroke explains, profile 1 | Profile 2 | Sweep beyond the ink, profile 1 | Profile 2 |
@@ -204,8 +204,85 @@ F102A column 2 line 2?", he answered "Yes, those two".
     plausibility, but what you did seems fine". With that, round 3's nine questions are all
     answered.
 
-Effective State of the base, 2026-10-31: executed 2026-10-30; Ben has checked the readings of
+## Round 5: the letters swept by one pen, 2026-11-01
+
+After round 4 Ben judged the two lines' letters: "Overall, as far as letters, i've got to say,
+we are not doing great, for instance as measured by "ink no stroke explains" and "sweep beyond
+the ink" (we might think of these as false negatives and false posities)." And: "But also as
+helpful as those two diagnostics are, the writing just looks scrappy/wrong." Asked "Which should
+the next round build first?", he answered "Pen first, then letters". Round 5 built the pen, to a
+design of Claude's that Ben has not yet reviewed.
+
+1. **Profile 5 of the schema note.** In the two crops of whole lines every stroke of the letters
+   is now the crop's nib, a rectangle, carried along its median without turning, so that its
+   thickness comes from its direction alone and its ends are the nib's own edges. Round 4's
+   widths had been fitted to the ink measured across each stroke, so they followed flaking, the
+   threshold's edges and the places where strokes overlap. The four QUPO crops moved to profile
+   5 by their profile string alone and keep their strokes' widths.
+2. **The fit.** A script of Claude's moved each median to lower the ink no stroke explains plus
+   the sweep beyond the ink, weighed alike; the schema note's "Profiles 1 to 5" gives its steps.
+   Two of its bounds were found by trial. With every point within 3 pixels of round 4's medians,
+   the ink no stroke explains stayed near 9% and the sweep beyond the ink near 11%: the medians
+   could not reach ink that round 4 had traced a few pixels off, such as the left side of the
+   final mem of page F102A's atom הערים. Every point may now move 5 pixels. And with no floor
+   on how far a stroke may shrink, strokes that a head or a roof overlaps shrank almost to
+   nothing, among them the ascender of the second lamed of page F043A's atom לעלת and the left
+   leg of the tav of page F102A's atom אחת, since ink that another stroke covers is worth nothing
+   to a stroke. No segment or median now shrinks below 60% of its length.
+3. **The nib.** Each crop's nib for the letters started from `nibfit`'s and was refined by a
+   coordinate search round it, in steps of 1 pixel of width, 0.5 pixel of edge and 4°, then half
+   those, the medians fitted again from round 4's at each trial nib. Both nibs grew half a pixel
+   wider and thinner at the edge. With `nibfit`'s nib the same fit had left 5.7% of the ink
+   unexplained and swept 8.4% beyond it in page F043A's line, and 6.1% and 8.2% in page F102A's.
+
+   | Crop | `nibfit`'s nib | Chosen nib | How far it moved |
+   | --- | --- | --- | --- |
+   | F043A, line 4 | 12.71 × 3.15 pixels at 71° | 13.21 × 2.15 pixels at 73° | width +0.5, edge −1, angle +2° |
+   | F102A, line 2 | 14.18 × 4.63 pixels at 80° | 14.68 × 3.88 pixels at 80° | width +0.5, edge −0.75, angle 0° |
+
+4. **The marks keep their widths.** Swept by a nib for the marks that `nibfit` fitted to each
+   line's marks, 4.98 by 4.25 pixels at 97.5° in page F043A's line and 5.47 by 3.25 at 90° in
+   page F102A's, the lines fitted worse than with the marks' own widths: by the overlay page's
+   count, 70 pixels more of the two figures together in the first and 165 more in the second.
+5. **The pen residual,** with round 4's figures in parentheses:
+
+   | Crop | Strokes | Ink no stroke explains | Sweep beyond the ink |
+   | --- | --- | --- | --- |
+   | F043A, line 4 | 129 | 6.8% (17.6%) | 6.6% (15.3%) |
+   | F102A, line 2 | 110 | 6.5% (16.6%) | 7.3% (14.5%) |
+
+6. **Where the one pen still misses.** In page F043A's line the six strokes that end in a tail,
+   the five lameds' bodies and a yod's, leave 259 pixels of ink unexplained near them, almost as
+   many as the line's nineteen heads leave (294). A tail tapers to a point thinner than the nib
+   sweeps there, so its stroke stops short of the tip. Modern Torah-scroll practice draws such
+   fine lines with the nib's corner, pulling wet ink out of the stroke, as Jen Taylor Friedman's
+   Beit Yosef practice sheet teaches; whether the Leningrad Codex's scribe did is unknown. The
+   marks, which keep their fitted widths, carry 450 of the line's 1,565 pixels swept beyond the
+   ink. Page F102A's line shows the same less strongly: 77 pixels near its three tails, and 228
+   of its 1,726 beyond the ink at the marks.
+7. **What strictness costs, decision 20's measurement.** Ben, asked whether every end should keep
+   to one pen per crop: "we'll have to gain some experience of what the error-penalty is for
+   being strict about sticking to the nib model at stroke ends vs what would be gained allowing
+   the "angle [to] be free to follow the ink"." Each freedom below was measured alone from the
+   strict fit, every point keeping the strict fit's reach; none is adopted, and decision 20's
+   strictness stands until Ben decides. Each pair is the ink no stroke explains and the sweep
+   beyond the ink.
+
+   | Crop | Strict | Each end's cut free | Each stroke's own nib angle | Each stroke's own scale of the nib's width |
+   | --- | --- | --- | --- | --- |
+   | F043A, line 4 | 6.8%, 6.6% | 7.0%, 5.3% | 6.6%, 5.9% | 6.0%, 5.9% |
+   | F102A, line 2 | 6.5%, 7.3% | 6.5%, 5.7% | 6.2%, 6.2% | 6.0%, 6.2% |
+
+   A free end is cut by a straight line at an angle and an offset of its own, at least 15° from
+   the median; an own angle keeps within 20° of the crop's; an own scale is from 0.75 to 1.25.
+   Each freedom cuts the two figures' sum by 8% to 12%, free ends mostly the sweep beyond the
+   ink. The strokes' own angles centre on the crop's, most within 8° of it, and their own scales
+   on 1, most between 0.76 and 1.08. A nib held at an angle of its own for a
+   stroke is what the Beit Yosef sheet's tilted vav asks for; turning it during a stroke, the
+   sheet's wedge, was not measured.
+
+Effective State of the base, 2026-11-01: executed 2026-10-30; Ben has checked the readings of
 the two crops on page F043A and of the vowels under the nun of F102A's על־פני, and the rest of
 the two crops on page F102A awaits his review. Of the two crops of whole lines that round 3
 added, Ben answered round 3's nine questions on 2026-10-31; the rest of their readings has had
-no human review.
+no human review, and round 5's refit of their letters under profile 5 awaits his review.

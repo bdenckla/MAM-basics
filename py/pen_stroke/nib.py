@@ -1,11 +1,12 @@
-"""A stiff flat nib fitted to a crop's ink: a statistic, not the strokes' model.
+"""A stiff flat nib: the pen that sweeps a crop's strokes, and a statistic of its ink.
 
 A nib is a rectangle ``width`` long and ``edge`` thick, its long side at
 ``angle`` degrees counterclockwise from the crop's x axis as seen on the page.
 Moved in a direction at angle phi, it leaves a band of ink
-width * |sin(phi - angle)| + edge * |cos(phi - angle)| thick.  The fit says how
-well the ink's width follows its direction alone.  The strokes of profile 2 are
-not swept by it; each carries widths of its own (pen_stroke.curve).
+width * |sin(phi - angle)| + edge * |cos(phi - angle)| thick.  ``fit`` says how
+well the ink's width follows its direction alone.  Since profile 5 a stroke may
+be swept by the crop's nib, which the stroke-SVG's root carries
+(pen_stroke.curve.swept_pieces); a stroke that is not carries widths of its own.
 """
 
 import math
@@ -24,6 +25,20 @@ class Nib:
         """The band of ink the nib leaves moving at angle phi, in degrees."""
         a = math.radians(phi - self.angle)
         return self.width * abs(math.sin(a)) + self.edge * abs(math.cos(a))
+
+    def corners(self):
+        """The rectangle's four corners about its centre, in crop pixels with y
+        down, in order round it."""
+        a = math.radians(self.angle)
+        ux, uy = math.cos(a), -math.sin(a)
+        vx, vy = -uy, ux
+        hw, he = self.width / 2, self.edge / 2
+        return [
+            (hw * ux + he * vx, hw * uy + he * vy),
+            (hw * ux - he * vx, hw * uy - he * vy),
+            (-hw * ux - he * vx, -hw * uy - he * vy),
+            (-hw * ux + he * vx, -hw * uy + he * vy),
+        ]
 
 
 def _blur(a):

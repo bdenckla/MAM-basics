@@ -17,6 +17,10 @@ counterclockwise on the page from the crop's x axis, from 0 up to but not
 including 180, so that 90 is upright.  The ink is a list of convex polygons,
 every one running clockwise on a y-down screen, so that their union is the
 stroke under either fill rule.
+
+A swept stroke (profile 5) has no widths of its own: its ink is the crop's
+stiff nib, a rectangle, swept along the median without turning, so that its
+thickness comes from its direction alone and each end is the nib's own edges.
 """
 
 import math
@@ -38,6 +42,9 @@ _DISC_SIDE = 1.0
 _SMOOTH_JOIN_DEGREES = 1.0
 # A mitre longer than this many half-widths is cut off square.
 _MITRE_LIMIT = 4.0
+# A merged piece of a swept stroke turns by no more than this many degrees, so
+# that the area the nib sweeps along it is the sum of its steps' areas.
+_SWEEP_MERGE_TURN = 30.0
 
 
 def segments(subpaths):
@@ -384,3 +391,71 @@ def ink_pieces(segs, widths, ends, cuts=()):
         pieces.append(disc(segs[0][0], sws[0][0]))
         pieces.append(disc(segs[-1][3], sws[-1][3]))
     return [p for p in pieces if len(p) >= 3]
+
+
+def flattened(segs):
+    """The median's points, spaced along each segment as ``samples`` spaces them,
+    with no point repeated."""
+    pts = []
+    for seg in segs:
+        n = _sample_count(seg)
+        for k in range(n + 1):
+            p = point(seg, k / n)
+            if not pts or math.dist(p, pts[-1]) > 1e-9:
+                pts.append(p)
+    return pts
+
+
+def swept_pieces(segs, nib):
+    """A swept stroke's ink: convex polygons whose union is the nib swept along
+    the median.
+
+    Moved from one of the median's flattened points to the next, the nib covers
+    the convex hull of its rectangle at the two.  Neighbouring steps are merged
+    while the run turns by no more than _SWEEP_MERGE_TURN degrees and the convex
+    hull of the run exceeds the area the nib sweeps along it, the rectangle's
+    area and each step's length times the nib's thickness in its direction, by
+    no more than _MERGE_SLACK square pixels.
+    """
+    corners = nib.corners()
+
+    def placed(p):
+        return [(p[0] + cx, p[1] + cy) for cx, cy in corners]
+
+    pts = flattened(segs)
+    if len(pts) == 1:
+        return [geo.convex_hull(placed(pts[0]))]
+    areas, headings = [], []
+    for a, b in zip(pts, pts[1:]):
+        d = (b[0] - a[0], b[1] - a[1])
+        areas.append(math.hypot(*d) * nib.thickness(angle_of(d)))
+        headings.append(math.degrees(math.atan2(d[1], d[0])))
+    rect = nib.width * nib.edge
+    pieces = []
+    i = 0
+    while i < len(areas):
+        hull = geo.convex_hull(placed(pts[i]) + placed(pts[i + 1]))
+        band = rect + areas[i]
+        turned = 0.0
+        k = i + 1
+        while k < len(areas):
+            turn = abs((headings[k] - headings[k - 1] + 180.0) % 360.0 - 180.0)
+            if turned + turn > _SWEEP_MERGE_TURN:
+                break
+            grown = geo.convex_hull(hull + placed(pts[k + 1]))
+            if abs(geo.signed_area(grown)) - (band + areas[k]) > _MERGE_SLACK:
+                break
+            hull, band, turned = grown, band + areas[k], turned + turn
+            k += 1
+        pieces.append(hull)
+        i = k
+    return pieces
+
+
+def swept_widths(segs, nib, n=16):
+    """The thickness of the nib's sweep at n + 1 evenly spaced t along each segment."""
+    return [
+        nib.thickness(angle_of(tangent(seg, k / n)))
+        for seg in segs
+        for k in range(n + 1)
+    ]

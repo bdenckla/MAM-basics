@@ -2,8 +2,8 @@
 
 WHY THIS EXISTS
 
-A stroke-SVG is part authored (medians, widths, ends, groups, frame, judgments) and part
-derived (fills, image residual, each stroke's ink and shape, pen residual), and the derived
+A stroke-SVG is part authored (medians, widths, ends, nibs, groups, frame, judgments) and
+part derived (fills, image residual, each stroke's ink and shape, pen residual), and the derived
 parts are true only of the crop and the authored parts they came from.  This lint derives
 them again and fails on any difference, so a median edited without a following
 ``py/main_pen_stroke.py derive`` cannot stand.  It is a mechanical lint over the tree.
@@ -14,8 +14,10 @@ WHAT IT CHECKS, for each stroke-SVG (``pen_stroke.derive.problems``)
    ends, stroke-group kinds, ink owners, ductus values, judgments and shapes.
 2. Ids are unique; every group holds strokes of the same file; every stroke is in a
    group; each stroke's pass is the pass of its groups' kinds; each median is one or
-   more cubic segments with a width for each of its points; no stroke of the letters
-   ends round, and every cut makes at least 15 degrees with its median; each group's
+   more cubic segments, with a width for each of its points or swept by its own
+   pass's nib, which the root carries, and every nib the root carries sweeps a
+   stroke; no stroke of the letters ends round, and every cut makes at least 15
+   degrees with its median; each group's
    ink owner suits the crop's subject, a stroke's groups agree on it, and ink of the
    line above or below has that line's text on the root; where the ductus is
    proposed, every stroke of the letters comes before every stroke of the marks;
@@ -24,8 +26,8 @@ WHAT IT CHECKS, for each stroke-SVG (``pen_stroke.derive.problems``)
 4. The fills are the tracer's outlines of the crop's ink at the stated threshold and
    speck size.
 5. The residual pieces, smoothing slivers, halo and pen residual are what the crop gives.
-6. Each stroke's ink is its median swept with its widths and ends, and its shape is the
-   one its median and widths give.
+6. Each stroke's ink is its median swept with its widths and ends, or by its nib, and
+   its shape is the one its median and widths give.
 
 A missing input fails: the directory must hold a stroke-SVG.
 

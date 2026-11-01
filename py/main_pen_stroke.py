@@ -2,8 +2,9 @@
 
 A stroke-SVG beside each crop in doc/pen-stroke-snips/ describes the crop's ink
 as filled outlines and as pen strokes, under the profile in
-doc/pen-stroke-representation.md.  Its strokes' medians and widths, its groups,
-frame and judgments are authored; this program derives the rest from the crop.
+doc/pen-stroke-representation.md.  Its strokes' medians, their widths or the
+crop's nib that sweeps them, its groups, frame and judgments are authored; this
+program derives the rest from the crop.
 It reads only files in this repository.
 
 Subcommands:

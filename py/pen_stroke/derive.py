@@ -1,9 +1,10 @@
 """Deriving a stroke-SVG's computed parts from its crop, and checking them.
 
-Authored: the root's provenance and parameters, each stroke's median, widths,
-ends and their cuts, pass, confidence, note and whether it is supplied, the
-strokes' order, the frame, the groups and whose ink each is, and the judgments
-of residual pieces and of fills that are not ink.  Derived:
+Authored: the root's provenance and parameters and the crop's nibs, each
+stroke's median, its widths, ends and their cuts or the nib that sweeps it, its
+pass, confidence, note and whether it is supplied, the strokes' order, the
+frame, the groups and whose ink each is, and the judgments of residual pieces
+and of fills that are not ink.  Derived:
 the fills, the image residual, each stroke's ink and shape, and the pen
 residual.  A supplied stroke may explain ink, as faint traces of it, but its
 sweep beyond the ink is no overshoot: nothing fitted it to ink.  ``derive``
@@ -41,14 +42,35 @@ def median_segments(stroke):
     return curve.segments(geo.parse_path(stroke.median))
 
 
-def sweep_polys(stroke):
-    """The stroke's ink: its median swept with its widths and ends."""
+def sweep_polys(stroke, nibs):
+    """The stroke's ink: its median swept with its widths and ends, or by the
+    root's nib that sweeps it."""
     try:
+        if stroke.swept:
+            return curve.swept_pieces(median_segments(stroke), _nib(stroke, nibs))
         return curve.ink_pieces(
             median_segments(stroke), stroke.widths, stroke.ends, stroke.cuts
         )
     except ValueError as exc:
         raise ValueError(f"{stroke.id}: {exc}") from exc
+
+
+def _nib(stroke, nibs):
+    if stroke.swept not in nibs:
+        raise ValueError(
+            f"swept by the {stroke.swept} nib, which the root does not carry"
+        )
+    return nibs[stroke.swept]
+
+
+def widths_along(stroke, nibs):
+    """The stroke's width at evenly spaced points along each segment of its
+    median: its own widths there, or the thickness its nib sweeps there."""
+    segs = median_segments(stroke)
+    if stroke.swept:
+        return curve.swept_widths(segs, _nib(stroke, nibs))
+    sws = curve.segment_widths(stroke.widths, len(segs))
+    return [curve.width(ws, k / 16) for ws in sws for k in range(17)]
 
 
 def ink_fill_ds(sf):
@@ -90,11 +112,11 @@ def derive(sf, lum):
     sweeps = []
     seen_sweeps = []
     for st in sf.strokes:
-        polys = sweep_polys(st)
+        polys = sweep_polys(st, sf.nibs)
         sweeps.extend(polys)
         if not st.supplied:
             seen_sweeps.extend(polys)
-        shape = level3.shape_class(median_segments(st), st.widths)
+        shape = level3.shape_class(median_segments(st), max(widths_along(st, sf.nibs)))
         strokes.append(
             replace(st, ink=geo.polygon_path(polys, INK_PLACES), shape=shape)
         )
@@ -145,15 +167,28 @@ def structural_problems(sf):
             out.append(f"{s.id}: in no group")
         if s.pass_name == level5.LETTERS and s.ends == "round":
             out.append(f"{s.id}: a letter's stroke never ends round (decision 16)")
+        if s.swept and s.swept != s.pass_name:
+            out.append(
+                f"{s.id}: swept by the {s.swept} nib but in the {s.pass_name} pass"
+                " (decision 7)"
+            )
         try:
             segs = median_segments(s)
-            curve.segment_widths(s.widths, len(segs))
+            if s.swept:
+                _nib(s, sf.nibs)
+            else:
+                curve.segment_widths(s.widths, len(segs))
             for seg in segs:
                 curve.tangent(seg, 0.5)
             if s.ends == "cut":
                 curve.cut_ends(segs, s.widths, s.cuts)
         except ValueError as exc:
             out.append(f"{s.id}: {exc}")
+    for pass_name in sorted(sf.nibs):
+        if not any(s.swept == pass_name for s in sf.strokes):
+            out.append(
+                f"the root carries the {pass_name} nib, but no stroke is swept by it"
+            )
     out += _ink_owner_problems(sf)
     if sf.ductus == "plausible":
         passes = [s.pass_name for s in sf.strokes]

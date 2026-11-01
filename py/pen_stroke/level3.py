@@ -1,6 +1,7 @@
 """Level 3: a stroke's shape class, from its median and widths alone.
 
-The classes need no frame of reference: a bar is straight, not horizontal.
+The classes need no frame of reference: a bar is straight, not horizontal.  A
+swept stroke's widths are the thicknesses its nib sweeps along it.
 """
 
 import math
@@ -13,11 +14,10 @@ SHAPES = ("dot", "bar", "corner", "curve")
 _CORNER_DEGREES = 60.0
 
 
-def shape_class(segs, widths):
-    """The stroke's class: "dot", "bar", "corner" (one sharp turn) or "curve"."""
+def shape_class(segs, widest):
+    """The stroke's class: "dot", "bar", "corner" (one sharp turn) or "curve",
+    from its median and its greatest width along it."""
     length = curve.length(segs)
-    sws = curve.segment_widths(widths, len(segs))
-    widest = max(curve.width(ws, k / 16) for ws in sws for k in range(17))
     if length <= max(2.0, 0.5 * widest):
         return "dot"
     pts = [curve.point(seg, k / 32) for seg in segs for k in range(33)]

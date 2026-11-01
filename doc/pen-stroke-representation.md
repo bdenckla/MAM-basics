@@ -1,6 +1,6 @@
 # The pen-stroke representation of a manuscript crop
 
-State: live; the profile of the stroke-SVGs in `doc/pen-stroke-snips/`: profile 1 implemented on 2026-10-30, profiles 2 to 4 on 2026-10-31
+State: live; the profile of the stroke-SVGs in `doc/pen-stroke-snips/`: profile 1 implemented on 2026-10-30, profiles 2 to 4 on 2026-10-31, profile 5 on 2026-11-01
 
 A crop of a manuscript page can be shown as pixels and read as a Unicode transcription. The
 pen-stroke representation sits between them. It describes the crop's ink as filled outlines,
@@ -178,8 +178,10 @@ tracing, on two well-kept lines, and decisions 18 to 22 in the fourth round.
     sticking to the nib model at stroke ends vs what would be gained allowing the "angle [to] be
     free to follow the ink". Let's start by being strict, just to choose arbitrarily". So each
     end of a letter's stroke is cut along an edge of the one stiff nib that `nibfit` measures in
-    the crop's letters, as round 3's fitting cut it, and what freeing each end's angle would gain
-    is still to be measured.
+    the crop's letters, as round 3's fitting cut it. Since profile 5, in the two crops of whole
+    lines, each end of a letter's stroke is the swept nib's own edges. Round 5 measured what
+    freeing each end's angle would gain, and the findings record's update gives it; the
+    strictness stands until Ben decides.
 21. **A masora circle is transcribed and told apart from the marks that matter, and its line is
     a weak guess.** Asked whether a ring over the atom לעלת and a blot over the atom הר of page
     F043A's line 4 are circelli and that line's, Ben answered: "yeh I'd say they are masorah
@@ -223,7 +225,7 @@ a Unicode transcription, and a reading at any level may send it back to revise a
 | --- | --- | --- |
 | 0 crop | the pixels, with their provenance | authored |
 | 1 fills | the ink as filled Bézier outlines, and the image residual | outlines derived; residual judgments authored |
-| 2 strokes | a smooth median per stroke with a width varying along it and its ends' cuts, whether it is supplied, the strokes' order, and the pen residual | medians, widths, ends, order and supplied strokes authored; ink and residual derived |
+| 2 strokes | a smooth median per stroke with a width varying along it and its ends' cuts, or the crop's nib that sweeps it, whether it is supplied, the strokes' order, and the pen residual | medians, widths, ends, nibs, order and supplied strokes authored; ink and residual derived |
 | 3 shape classes | dot, bar, corner or curve, from a stroke's median and widths | derived |
 | 4 frame | the baseline and the letter-body height | authored |
 | 5 groups | strokes forming one sign, with a kind congruent to a code point, and whose ink it is | authored |
@@ -235,13 +237,14 @@ The coordinates are the crop's pixels, x to the right and y down. Pixel (i, j) c
 [i, i + 1) × [j, j + 1), and a pixel is inside a shape when its centre is. The root's `viewBox`
 is `0 0 <width> <height>`, the crop's pixel size.
 
-**The root** carries `data-profile="pen-stroke 4"`; the provenance, as `data-manuscript`,
+**The root** carries `data-profile="pen-stroke 5"`; the provenance, as `data-manuscript`,
 `data-page`, `data-column`, `data-line`, `data-line-read-by`, `data-mam-verse`,
 `data-uxlc-verse`, `data-combined-chanted-word` or `data-combined-line`,
 `data-combined-source`, `data-taxton-chanted-word`, `data-elyon-chanted-word`,
 `data-line-above`, `data-line-below`, `data-adjacent-source`, `data-crop-note`,
 `data-source-url`, `data-source-size`, `data-source-sha256`, `data-crop-box` and
-`data-strokes-by`; the threshold and tracer parameters; and `data-ductus`.
+`data-strokes-by`; the threshold and tracer parameters; `data-ductus`; and, where any stroke is
+swept by a nib, the crop's nibs, `data-nib-letters` and `data-nib-marks` (decision 7).
 `data-combined-chanted-word` is the primary transcription (decision 13) of a crop of one
 chanted word, which is then the crop's subject: the chanted word with both strands' marks, as
 the UXLC has it unless Ben has changed it, and `data-combined-source` says which. The two
@@ -282,10 +285,24 @@ axis, from 0 up to but not including 180, so that 90 is upright, and it makes at
 the median where it ends. Where two segments meet with a turn of less than 1°, there is no
 corner.
 
+**A swept stroke** (profile 5) has no widths, ends or cuts of its own: the crop's nib gives
+them. The nib is a rectangle, `width` long and `edge` thick, its long side at `angle` degrees,
+counted as a cut's angle is; the root's `data-nib-letters` gives the three numbers in that
+order, and `data-nib-marks` the marks' nib. The stroke's ink is that rectangle carried along
+the median without turning: the median is flattened to points about half a pixel apart, and
+the nib moving from one point to the next covers the convex hull of the rectangle at the two.
+So the stroke's thickness comes from its direction alone, width × |sin(φ − angle)| + edge ×
+|cos(φ − angle)| where it runs at angle φ, as decision 2 has it; its width varies smoothly
+along it wherever its direction does (decisions 12 and 14); and each end is the rectangle's own
+edges, as the pen leaves it when lifted, so that no rule chooses which edge cuts an end
+(decision 20). The derived ink is convex polygons running clockwise, as every stroke's is.
+
 **Level 2.** `<g class="strokes">` holds one `<g class="stroke" id="sN">` per stroke. Its
 authored parts are:
 
 - a `median`, one open subpath of one or more `C` segments, with no straight segment;
+- either `data-swept`, naming the pass whose nib on the root sweeps the stroke, which is the
+  stroke's own pass (decision 7), or `data-widths`, `data-ends` and `data-cuts`, never both:
 - `data-widths`, one positive width for each point of the median's path data: 1 + 3 × the
   number of segments;
 - `data-ends`, `round` or `cut`; a stroke of the letters is cut (decision 16);
@@ -314,8 +331,9 @@ the page unaged are. No other layer uses that orange. `py/pen_stroke/render.py` 
 and the stroke-SVG's own style element outlines a supplied stroke the same way when the file is
 viewed alone.
 
-**Level 3.** `data-shape` on each stroke is derived. A median no longer than half its greatest
-width, or 2 pixels, is a `dot`. One that keeps within a tenth of its length, or 1 pixel, of
+**Level 3.** `data-shape` on each stroke is derived. A swept stroke's widths are the
+thicknesses its nib sweeps along it. A median no longer than half its greatest width, or 2
+pixels, is a `dot`. One that keeps within a tenth of its length, or 1 pixel, of
 its chord is a `bar`. One whose segments meet at exactly one turn of 60° or more is a
 `corner`. Any other is a `curve`.
 
@@ -352,11 +370,13 @@ as in the four QUPO crops, the strokes' order and their medians' directions mean
 ## Where the profile departs from the plan's
 
 The planning session's profile was a draft for profile 1 of this file. Implementing it changed
-seven things, and profile 2 then replaced its stiff nib.
+seven things, and profile 2 then replaced its stiff nib, which profile 5 brought back for the
+letters.
 
 1. **Profile 1's nib had an edge.** The plan gave each nib a width and an angle. With an edge
    of zero thickness, a stroke moving along the nib's long side leaves no ink at all. The edge
-   was a third value of each nib, fitted like the others. Profile 2 has no nib.
+   was a third value of each nib, fitted like the others. Profile 2 had no nib; profile 5's
+   root carries the crop's nib, edge and all.
 2. **The pen residual belongs to the crop, not to each stroke.** The plan made level 1's
    fills the observed ink. The residual is therefore computed once, from the fills and every
    sweep. No stroke stores an excursion of its own.
@@ -366,13 +386,15 @@ seven things, and profile 2 then replaced its stiff nib.
    which nobody judges.
 5. **Profile 1's marks nib was fitted to all the crops' marks together.** Each crop has few
    marks, mostly dots and short bars, and no crop's marks determined a nib. Profile 2 fits each
-   stroke's widths to its own ink.
+   stroke's widths to its own ink. Round 5 tried a marks nib again in the two crops of whole
+   lines, which have more marks; it fitted no better than the marks' own widths, so profile 5
+   sweeps only the letters.
 6. **The kinds include undetermined ones and the two "unidentified" ones,** for bars the
    level cannot assign and for ink of other lines.
 7. **Residual geometry follows pixel edges exactly,** so the lint can compare masks pixel for
    pixel. Fills and sweeps are curves and polygons.
 
-## Profiles 1 to 4
+## Profiles 1 to 5
 
 Profile 1, of 2026-10-30, swept each crop's two stiff nibs, one for the letters and one for
 the marks, along medians of straight segments that Claude placed by eye. Profile 2, of
@@ -409,6 +431,37 @@ it:
 Their heads are not yet strokes of their own. The two crops traced next, of whole lines, are
 the first under profile 4 throughout; the findings record's update describes them.
 
+Profile 5, of 2026-11-01, adds the swept stroke and changes nothing else, as profile 3 added
+supplied strokes. It is Claude's design, which Ben has not yet reviewed, for the round he chose
+on 2026-11-01: asked "Which should the next round build first?", he answered "Pen first, then
+letters". The four QUPO crops moved to it by their profile string alone, and deriving them
+again changed nothing more, so their strokes keep their widths. In the two crops of whole
+lines every stroke of the letters is swept by the crop's nib for the letters. Their marks keep
+the widths and ends round 3 fitted, and a mark may still end round (decision 16): a nib for
+the marks, which decision 7 provides for, was tried in both lines and fitted no better than
+the marks' own widths, as profile 1 found in the QUPO crops (item 5 above). A script of
+Claude's, not tracked, fitted the two lines:
+
+1. It started from round 4's medians. Each end of a stroke of the letters first moved along
+   its median so that the nib's ink reaches beyond the end, on average across the stroke, as
+   far as round 4's cut did: the nib's two ends add its rectangle's area to the band.
+2. It then moved each median's points and control points, one stroke at a time with the
+   others held fixed, in the order written and again and again until a pass gained nothing,
+   to lower the ink no stroke explains plus the sweep beyond the ink. The two weighed alike,
+   counted on a grid of 4 × 4 samples a pixel over the fills judged ink. The search tried
+   moves of 2, 1, 1/2 and 1/4 pixel and kept those that lowered the sum.
+3. Each stroke kept its segments, corners and direction, so its ductus stands, and a smooth
+   join stayed smooth. Every point stayed within 5 pixels of where it started, no segment
+   reversed or folded back, and no segment or median shrank below 60% of its length. Ink
+   that another stroke covers is worth nothing to a stroke, and without that bound a stroke
+   that a head or a roof overlaps shrank almost to nothing.
+4. The crop's nib for the letters started from `nibfit`'s and was then refined by a small
+   search round it, the medians fitted again from round 4's at each trial nib.
+
+A supplied stroke never moves, since nothing fits it to ink (decision 15). The nib chosen for
+each line, the figures, and what freeing the nib at a stroke's ends or along it would gain,
+which decision 20 left to be measured, are in the findings record's update.
+
 ## Running the tool
 
 From the repository root, with the clone's own environment, as
@@ -416,13 +469,15 @@ From the repository root, with the clone's own environment, as
 
 1. `init <crop.png> --set key=value …` writes the stroke-SVG with its provenance, the crop's
    Otsu threshold and the derived level-1 parts.
-2. Trace: add each stroke's median, widths, ends and pass, the groups, the frame and the
-   judgments, in a vector editor or by hand. The reader ignores what Inkscape adds.
+2. Trace: add each stroke's median, its widths and ends or the nib that sweeps it, and its
+   pass, the groups, the frame and the judgments, in a vector editor or by hand. The reader
+   ignores what Inkscape adds.
 3. `derive` recomputes every derived part. A judgment carries over to the piece or fill with
    exactly the same pixels.
 4. `nibfit <crop.png or stroke-SVG>` prints the stiff nib that best fits the ink's width
    against its direction, a statistic of the ink. It reads the letters and marks by component
-   size in a crop, or by each pass's strokes in a stroke-SVG.
+   size in a crop, or by each pass's strokes in a stroke-SVG. A profile-5 root's nib starts
+   from it.
 5. `check` reports every way a stroke-SVG departs from this profile and its crop.
    `py/tests/test_pen_stroke_svgs.py` runs the same check in the suite.
 6. `render` writes `doc/pen-stroke-snips/overlays.html`: each stroke-SVG over its crop, drawn
