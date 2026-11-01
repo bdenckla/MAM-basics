@@ -34,8 +34,8 @@
 .region path { fill: #c0392b; fill-opacity: 0.4 }
 .cut { fill: none; stroke: #1f618d; stroke-width: 0.5 }
 .supplied-ink .outline { display: none }
-.supplied-ink .added { fill: none; stroke: #ff6d00; stroke-width: 0.6; stroke-dasharray: 1.5 1 }
-.supplied-ink[data-supplied="flaked"] .added { stroke: #00897b; stroke-dasharray: 0.2 0.8; stroke-linecap: round }
+.supplied-ink .added { fill: #ff6d00 }
+.supplied-ink[data-supplied="flaked"] .added { fill: #00897b }
 #rg1 path, #rg2 path, #rg3 path, #rg4 path, #rg17 path, #rg20 path, #rg22 path, #rg25 path, #rg26 path, #rg29 path, #rg32 path, #rg33 path, #rg34 path, #rg36 path, #rg37 path, #rg38 path, #rg39 path, #rg40 path, #rg41 path, #rg42 path, #rg43 path, #rg44 path, #rg45 path, #rg46 path { fill: #607d8b; fill-opacity: 0.55 }
   </style>
   <image class="crop" href="leningrad-102A-col3-Deut5v6-3L0PNY.png" x="0" y="0" width="267" height="129"/>

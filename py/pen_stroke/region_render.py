@@ -6,8 +6,9 @@ photograph drawn smoothly, never as squares of pixels.  The layers, as
 doc/ink-region-representation.md's "The page" gives them: the photograph; the
 ink, black on pure white; the ink by meaning; the ink by group, translucent, so
 that a region in two groups shows both; the ink by region; supplied ink, a
-supplied mark hatched in orange (decision 15) and restored ink stippled in teal
-(decision 25), each in a colour no other layer uses; and, for checking, level
+supplied mark in orange (decision 15) and restored ink in teal (decision 25),
+each filled with its colour alone (decision 26), a colour no other layer uses;
+and, for checking, level
 1's residual, the cuts and seeds, and the regions' ids.  Ink that is not the
 crop's subject's is slate in every layer (decision 17), and two checkboxes hide
 it, and masora circles and stray ink, in every layer.  Writes
@@ -45,19 +46,13 @@ MEANING_LABELS = {
     "set-aside": "masora circles and stray ink",
     "other": "other words' and lines' ink",
 }
-# Decision 25: restored ink is stippled in this teal and outlined with dots, never
-# filled solid, and no other layer uses the colour.
+# Supplied ink is filled with its colour alone, with no hatching, stipple or dashed or
+# dotted outline (decision 26): a supplied mark in decision 15's orange, and restored
+# ink in decision 25's teal.  No other layer uses either colour.
+SUPPLIED_COLOUR = render.SUPPLIED_COLOUR
+SUPPLIED_SWATCH = f"background: {SUPPLIED_COLOUR}"
 RESTORED_COLOUR = "#00897b"
-RESTORED_STIPPLE = "restored-stipple"
-RESTORED_DEFS = (
-    f'<pattern id="{RESTORED_STIPPLE}" patternUnits="userSpaceOnUse" width="1.5"'
-    f' height="1.5"><circle cx="0.75" cy="0.75" r="0.35" fill="{RESTORED_COLOUR}"/>'
-    "</pattern>"
-)
-RESTORED_SWATCH = (
-    f"background: radial-gradient(circle, {RESTORED_COLOUR} 0 1.2px, transparent"
-    f" 1.6px) 0 0 / 4px 4px; border: 1px dotted {RESTORED_COLOUR}"
-)
+RESTORED_SWATCH = f"background: {RESTORED_COLOUR}"
 # The ink by region: a palette without decision 15's orange, the restored ink's
 # teal or decision 17's slate.
 REGION_COLOURS = (
@@ -164,19 +159,10 @@ def hide_classes(groups, me):
 
 
 def supplied_ink(s):
-    """Supplied ink's added ink in the one style its kind allows: a supplied mark
-    as decision 15 draws it, and restored ink as decision 25's style does."""
-    if s.supplied == rsvg.RESTORED:
-        return (
-            f'<path d="{s.added}" fill="url(#{RESTORED_STIPPLE})" stroke="{RESTORED_COLOUR}"'
-            ' stroke-width="2" stroke-linecap="round" stroke-dasharray="0.1 3"'
-            ' vector-effect="non-scaling-stroke"/>'
-        )
-    return (
-        f'<path d="{s.added}" fill="url(#{render.SUPPLIED_HATCH})"'
-        f' stroke="{render.SUPPLIED_COLOUR}" stroke-width="1.5" stroke-dasharray="4 3"'
-        ' vector-effect="non-scaling-stroke"/>'
-    )
+    """Supplied ink's added ink, filled with the one colour its kind allows: a
+    supplied mark in orange and restored ink in teal (decision 26)."""
+    colour = RESTORED_COLOUR if s.supplied == rsvg.RESTORED else SUPPLIED_COLOUR
+    return f'<path d="{s.added}" fill="{colour}"/>'
 
 
 def _kinds(groups):
@@ -265,10 +251,9 @@ def _svg(rf, groups_of, zoom):
     out.append('<g class="layer-cuts" fill="none">')
     for c in rf.cuts:
         title = f"{c.id}: {c.note}" if c.note else c.id
+        # One thin line, with no white band beneath it, which would read as paper.
         out.append(
-            f'<path d="{c.d}" stroke="#fff" stroke-width="4" stroke-linejoin="round"'
-            ' vector-effect="non-scaling-stroke"/>'
-            f'<path d="{c.d}" stroke="{CUT_COLOUR}" stroke-width="2" stroke-linejoin="round"'
+            f'<path d="{c.d}" stroke="{CUT_COLOUR}" stroke-width="1.5" stroke-linejoin="round"'
             f' vector-effect="non-scaling-stroke"><title>{_e(title)}</title></path>'
         )
     for r in rf.regions:
@@ -314,7 +299,7 @@ def layer_controls(zoom):
             )
         elif name == "supplied":
             out.append(
-                f"<p>{_swatch(render.SUPPLIED_SWATCH)} a supplied mark"
+                f"<p>{_swatch(SUPPLIED_SWATCH)} a supplied mark"
                 f" {_swatch(RESTORED_SWATCH)} restored ink</p>"
             )
         elif name == "set-aside":
@@ -404,11 +389,7 @@ def _section(svg_path):
             "<th>Why</th></tr>"
         )
         for s in rf.supplied:
-            swatch = (
-                RESTORED_SWATCH
-                if s.supplied == rsvg.RESTORED
-                else render.SUPPLIED_SWATCH
-            )
+            swatch = RESTORED_SWATCH if s.supplied == rsvg.RESTORED else SUPPLIED_SWATCH
             out.append(
                 f"<tr><td>{_swatch(swatch)} {_e(s.id)}</td>"
                 f"<td>{_e(_kinds(groups_of.get(s.id, [])))}</td>"
@@ -430,24 +411,23 @@ def page(svg_paths):
 </style>
 </head>
 <body>
-<svg width="0" height="0" style="position: absolute" aria-hidden="true"><defs>{render.SUPPLIED_DEFS}{RESTORED_DEFS}</defs></svg>
 <h1>Regions of ink</h1>
-<p class="ai-caveat"><strong>Regions drafted by an AI model, not yet reviewed by a human.</strong>
-Claude, an AI model, drafted every cut, seed and group on this page by a script from the
-strokes of the pen-stroke work, and judged every residual piece of level 1, so read the
-regions as a draft.</p>
+<p class="ai-caveat"><strong>Regions drafted by an AI model, and only partly reviewed by a human so
+far.</strong> Claude, an AI model, drafted the cuts, seeds and groups on this page by a script
+from the strokes of the pen-stroke work, and judged every residual piece of level 1. Ben has
+begun to review them: each cut changed from his answers has a note that says so, shown when the
+pointer rests on it in the layer of cuts. Read the rest as a draft.</p>
 <p>Each crop of the Leningrad Codex is drawn with its region-SVG: its ink as regions, cut
 where things a reader tells apart touch, each region in one group or more. The checkboxes
 beside each image switch that image's layers, and its menu sets its size. The profile, and
 what each layer means, are in
 <a href="../ink-region-representation.md">doc/ink-region-representation.md</a>; this page
 is generated by <code>py/main_pen_stroke.py regions-render</code>.</p>
-<p>{_swatch(render.SUPPLIED_SWATCH)} <strong>Hatched orange, outlined with dashes: a
-supplied mark.</strong> The crop shows little or no ink of it; it is there because the
-transcription or the layout implies it.
-{_swatch(RESTORED_SWATCH)} <strong>Stippled teal, outlined with dots: restored
-ink,</strong> proposed where the image shows the ink has flaked. Neither is ever drawn in
-black or in a group's or a region's colour, and no other layer uses either colour.</p>
+<p>{_swatch(SUPPLIED_SWATCH)} <strong>Orange: a supplied mark.</strong> The crop shows
+little or no ink of it; it is there because the transcription or the layout implies it.
+{_swatch(RESTORED_SWATCH)} <strong>Teal: restored ink,</strong> proposed where the image
+shows the ink has flaked. Neither is ever drawn in black or in a group's or a region's
+colour, and no other layer uses either colour.</p>
 <p>{_swatch(f"background: {OTHER_INK_COLOUR}")} <strong>Slate: ink of another word or
 line,</strong> which the crop holds but is not its subject, in every layer; in the ink by
 meaning it is a faint tint of slate.</p>

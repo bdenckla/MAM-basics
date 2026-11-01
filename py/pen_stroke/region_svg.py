@@ -43,8 +43,8 @@ STYLE = """
 .region path { fill: #c0392b; fill-opacity: 0.4 }
 .cut { fill: none; stroke: #1f618d; stroke-width: 0.5 }
 .supplied-ink .outline { display: none }
-.supplied-ink .added { fill: none; stroke: #ff6d00; stroke-width: 0.6; stroke-dasharray: 1.5 1 }
-.supplied-ink[data-supplied="flaked"] .added { stroke: #00897b; stroke-dasharray: 0.2 0.8; stroke-linecap: round }
+.supplied-ink .added { fill: #ff6d00 }
+.supplied-ink[data-supplied="flaked"] .added { fill: #00897b }
 """
 
 

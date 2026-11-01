@@ -379,3 +379,51 @@ no human review. Ben judged round 5's refit of their letters under profile 5 an 
 improvement on a fundamentally flawed approach on 2026-11-01, and chose regions of ink in place
 of strokes the same day. The stroke-SVGs are a frozen record since then, and the six crops'
 region-SVGs, drafted by script from the strokes, await his review.
+
+## Ben's first answers on the regions, 2026-11-01
+
+Ben's words below are from his messages of 2026-11-01 to the session that took over the
+discussion of the regions and phase 4 of [PLAN-ink-regions.md](PLAN-ink-regions.md). Both concern
+question 1 of phase 3's sheet: the piece of ink of page F043A's פני that holds the pe, the nun and
+the vowels under the nun.
+
+1. **The pe and the nun do not touch.** Ben: "My perception is that the פ and נ of Ex20v2-PNY do
+   not intersect and thus there is no need for (or should not be a need for) a cut". He sees "a
+   thin strip of vellum" between them, which level 1's fill covers. He drew a cut along it, now
+   the region-SVG's c11, in place of the draft's cuts c7, c8 and c9 and its region rg6, which was
+   in both letters' groups. The ink on either side of c11 is now one letter's alone.
+2. **The strip is paler than the strokes but darker than the threshold.** Across the strip, at
+   four places along Ben's cut, the crop's luminance falls to 35 to 50 in the strokes on either
+   side and rises to a ridge of 114, 125, 138 and 164 between them, against the crop's threshold
+   of 142. So the threshold leaves the strip ink along most of its length, and the two letters
+   one piece of ink. A strip of vellum narrower than the photograph's blur can join letters that
+   do not touch, so other pieces of ink that hold two letters may be joined in the same way. Ben
+   proposed "a very thin "supplied vellum" (as opposed to "supplied ink") shape" for such a
+   place, which would take the strip out of the ink so that the letters stand apart even in black
+   on white. Whether the profile gains it awaits his decision.
+3. **The qamats under the nun: a dot and a bar that only touch.** Ben: "The nun's qamats should
+   have a separate qamats dot from its patax-like bar above it. I would code them as touching only
+   in that the bar touches the dot below it as a tangent to a circle touches a circle. I.e., I
+   don't even think this should be coded as an overlap". The dot is now a region of its own,
+   rg15, in the qamats's group, cut from the bar by c12, which runs along the bar's lower edge,
+   where the ink below it narrows towards the dot.
+4. **The shapes of the draft's overlaps.** Ben: "I would have expected those shapes to simply be
+   the intersection of reasonable shapes for the two (so far I've only seen a two-way
+   intersection!) marks in question. Instead, the two marks in question seem to end awkwardly and
+   there's a "pebble" sort of wedged in between them that doesn't fill the space between them,
+   i.e. there's whitespace!" The pebbles come from how the draft cut a piece of ink where three
+   labels met, one group's, the other's and both: its script ended the cuts at one point inside
+   the ink, so the shared part is a wedge in the middle of the junction, and the two marks still
+   touch above and below it. The white space is the drawing's rather than the regions': the sheet
+   drew each cut over a white band 4 screen pixels wide, as the region page did, while the
+   regions leave little ink uncovered beside the cuts, 2.2 pixels in this crop and 33 in all six.
+   The region page now draws each cut as one thin pink line. An overlap that is the intersection
+   of two shapes fits the profile as two cuts, each running across the junction from edge to
+   edge where one mark's shape ends, with the part between them in both groups.
+5. **Supplied ink in colour alone,** decision 26 of
+   [ink-region-representation.md](ink-region-representation.md), from Ben's comment on the design
+   choices: "I don't think we want to use stipple, bars, dotted outlines, or anything else other
+   than color, for now at least."
+
+Effective State of the base, 2026-11-01: as the previous entry gives it, except that Ben has begun
+to review the region-SVGs, with question 1 of phase 3's sheet.

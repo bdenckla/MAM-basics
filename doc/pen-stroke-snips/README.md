@@ -150,8 +150,9 @@ the stroke-SVGs, at 3 samples a pixel:
 Ink that no stroke reaches within 12 pixels, all of it the tips of other lines' letters at a
 crop's edge, got groups of its own, of the kind "unidentified letter"; for one, at the foot of
 F043A's מתחת, the crop gained the text of the line below. The findings record's update gives the
-figures. Claude judged every residual piece and no human has reviewed a cut, a seed or a new
-group. A group's note or a supplied ink's reason that names a stroke, sN, names one of the
+figures. Claude judged every residual piece. Ben has begun to review the cuts: each cut changed
+from his answers has a note saying so, and the findings record's update lists them. No human has
+reviewed the other cuts, the seeds or the new groups. A group's note or a supplied ink's reason that names a stroke, sN, names one of the
 frozen stroke-SVG's.
 
 ## Regenerating

@@ -1,7 +1,8 @@
 # Plan: regions of ink in place of pen strokes, in the manuscript crops
 
 State: live; proposed 2026-11-01, and Ben answered its three decisions the same day; phases 1
-to 3 executed 2026-11-01; phase 4 awaits Ben's answers to phase 3's sheet.
+to 3 executed 2026-11-01; phase 4 under way from 2026-11-01, as Ben's answers to phase 3's sheet
+arrive.
 
 ## Context
 
@@ -430,3 +431,24 @@ that Ben has not reviewed.
    which load when the file is opened directly.
 4. **Ben's answers** are phase 4's input: record each in the statements file, then move the
    cuts, add the restorations, regenerate and show him each change in context.
+
+### Phase 4, 2026-11-01
+
+Entries by Claude (Opus 5.5), in the session that the commander session started on 2026-11-01
+for the discussion of phases 1 to 3 and for phase 4.
+
+1. **How answers are applied.** Each is recorded verbatim in
+   `.novc/pen-stroke-exemplars/review/ben-statements-2026-11-01.md`, from section 62. Each
+   changed place is shown before and after on an untracked page,
+   `review/regions-changes-<n>.html`, which `review/make_regions_changes.py` writes from its list
+   of changes, with the region-SVGs at a given commit and as they now are.
+2. **The first round** applied Ben's answers to question 1, in the crop of page F043A's פני: his
+   cut between the pe and the nun, and a cut of Claude's, from his words, between the qamats's
+   dot and its bar. The findings record's update, entry "Ben's first answers on the regions",
+   gives them.
+3. **Statement 61, colour alone,** was made in the same round, as Ben asked, and also in the
+   region-SVGs' own style, which this plan did not name, so that a region-SVG opened by itself
+   draws supplied ink as the page does.
+4. **Cuts without a white band.** The region page drew each cut as a pink line over a white
+   band, which Ben read as white space between the regions; it now draws one thin pink line.
+   Phase 3's untracked sheet is left as it was, the record of what Ben was asked.

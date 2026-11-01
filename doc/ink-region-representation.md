@@ -1,6 +1,6 @@
 # The ink-region representation of a manuscript crop
 
-State: live; the profile of the region-SVGs in `doc/pen-stroke-snips/`: profile 1 implemented on 2026-11-01, to Claude's design, which Ben has not yet reviewed
+State: live; the profile of the region-SVGs in `doc/pen-stroke-snips/`: profile 1 implemented on 2026-11-01, to Claude's design, of which Ben has so far reviewed how supplied ink is drawn (decision 26)
 
 A crop of a manuscript page can be shown as pixels and read as a Unicode transcription. The
 ink-region representation sits between them. It describes the crop's ink as **regions**, cut
@@ -60,7 +60,8 @@ number names one decision across the work.
    history of the writing, which the pen-stroke note's decision 11 frames.
 3. **Historical:** 8 (the first crops were the QUPO words).
 
-The three below are Ben's answers of 2026-11-01 to the plan's three decisions.
+Decisions 23 to 25 are Ben's answers of 2026-11-01 to the plan's three decisions, and 26 on are
+his later word.
 
 23. **Regions of ink in place of strokes.** Asked "Adopt regions of ink in place of strokes,
     freezing the stroke files as a record?", Ben answered "Yes, regions". So each crop has a
@@ -76,6 +77,14 @@ The three below are Ben's answers of 2026-11-01 to the plan's three decisions.
     as supplied marks?", Ben answered "A style of its own". So a supplied mark keeps decision
     15's style, and restored ink has a second style, reserved for it, which "The page" below
     gives. Claude had recommended one style for all added ink.
+26. **Supplied ink in colour alone, for now.** Asked to comment on the design choices that were
+    Claude's, Ben wrote on 2026-11-01: "I don't think we want to use stipple, bars, dotted
+    outlines, or anything else other than color, for now at least. Those all introduce too much
+    high-spatial-frequency distracting information." So on the region page a supplied mark is
+    filled with decision 15's orange and restored ink with decision 25's teal, with no hatching,
+    stipple or dashed or dotted outline, and a region-SVG's own style draws them the same way;
+    the frozen overlay page keeps decision 15's hatching. He asked for the change to wait for the
+    next round of substantive changes, and it was made with his first answers to phase 3's sheet.
 
 ## The file
 
@@ -178,18 +187,18 @@ smoothly, never as squares of pixels. The layers, the first drawn lowest:
    page uses, translucent, so that a region in two groups shows both;
 5. the ink by region, each of the subject's regions in a colour of its own, from a palette
    without decision 15's orange, the restored ink's teal or decision 17's slate;
-6. supplied ink, on at first: a supplied mark hatched in the orange `#ff6d00` and outlined with
-   dashes (decision 15), and restored ink stippled in the teal `#00897b` and outlined with dots
-   (decision 25), neither ever filled solid or drawn in black or in a group's or a region's
-   colour, and each in a colour no other layer uses;
+6. supplied ink, on at first: a supplied mark filled with the orange `#ff6d00` (decision 15) and
+   restored ink with the teal `#00897b` (decision 25), each in its colour alone, with no
+   hatching, stipple or outline (decision 26), neither ever drawn in black or in a group's or a
+   region's colour, and each in a colour no other layer uses;
 7. two checkboxes, on at first, which hide in every layer other words' and lines' ink, and
    masora circles and stray ink: faint until hidden;
-8. for checking: level 1's residual pieces, by judgment; the cuts and each region's seed; and
-   the regions' ids.
+8. for checking: level 1's residual pieces, by judgment; the cuts, each one thin pink line, and
+   each region's seed; and the regions' ids.
 
 Ink of another word or line is slate in every layer, as decision 17 requires. The colours of the
-meanings, the palette of the regions, the stippled teal and the name and profile of the file are
-Claude's choices, which Ben has not yet reviewed.
+meanings, the palette of the regions, the teal and the name and profile of the file are Claude's
+choices, which Ben has not yet reviewed.
 
 ## Running the tool
 
