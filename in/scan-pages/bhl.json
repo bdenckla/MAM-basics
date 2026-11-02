@@ -8769,11 +8769,14 @@
     {
       "id": "body",
       "bkids": [
+        "Jonah",
         "Obadiah"
       ],
       "pages": [
         "0825-A-O.jpg",
-        "0826-O-Jn.jpg"
+        "0826-O-Jn.jpg",
+        "0827-Jn.jpg",
+        "0828-Jn.jpg"
       ]
     }
   ],
@@ -9016,15 +9019,16 @@
     {
       "page": "0826-O-Jn.jpg",
       "bkid": "Jonah",
+      "printed_page": 826,
+      "note": "Jonah begins below Obadiah. The final running-text atom is the opening ויאמר of Jonah 1:12.",
       "startc": 1,
       "startv": 1,
       "startp": 1,
-      "stopc": null,
-      "stopv": null,
-      "stopp": null,
-      "start_phrase": null,
-      "stop_phrase": null,
-      "note": "seeded by survey: a book starts at 1:1 atom 1"
+      "start_phrase": "ויהי דבר יהוה אל יונה",
+      "stopc": 1,
+      "stopv": 12,
+      "stopp": 1,
+      "stop_phrase": "ויאמר"
     },
     {
       "page": "0826-O-Jn.jpg",
@@ -9039,6 +9043,34 @@
       "stopv": 21,
       "stopp": 11,
       "stop_phrase": "והיתה ליהוה המלוכה"
+    },
+    {
+      "page": "0827-Jn.jpg",
+      "bkid": "Jonah",
+      "printed_page": 827,
+      "note": "Actual running text starts at Jonah 1:12 atom 2 despite the printed header beginning at 1:13, and stops at 3:7 atom 5.",
+      "startc": 1,
+      "startv": 12,
+      "startp": 2,
+      "start_phrase": "אליהם שאוני והטילני אל הים",
+      "stopc": 3,
+      "stopv": 7,
+      "stopp": 5,
+      "stop_phrase": "ויזעק ויאמר בנינוה מטעם המלך"
+    },
+    {
+      "page": "0828-Jn.jpg",
+      "bkid": "Jonah",
+      "printed_page": 828,
+      "note": "Actual running text continues Jonah 3:7 at atom 6 despite the header beginning at 3:8; the book ends on this page.",
+      "startc": 3,
+      "startv": 7,
+      "startp": 6,
+      "start_phrase": "וגדליו לאמר האדם והבהמה",
+      "stopc": 4,
+      "stopv": 11,
+      "stopp": 23,
+      "stop_phrase": "ובהמה רבה"
     },
     {
       "page": "0829-Mi.jpg",

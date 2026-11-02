@@ -59,13 +59,14 @@ def test_censused_books_agree_with_independent_simple_export():
                     if "text" in verse:
                         source_text = verse["text"]
                     else:
-                        assert all(
-                            node["type"] in {"text", "kq-trivial"}
-                            for node in verse["contents"]
-                        )
-                        source_text = "".join(
-                            node["text"] for node in verse["contents"]
-                        )
+                        parts = []
+                        for node in verse["contents"]:
+                            if node["type"] in {"text", "kq-trivial"}:
+                                parts.append(node["text"])
+                            else:
+                                assert node == {"type": "lp-legarmeih"}
+                                parts.append(" ")
+                        source_text = "".join(parts)
                     expected[int(c), int(v)] = tuple(
                         letters
                         for token in re.split(r"[\s־]+", source_text)

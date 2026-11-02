@@ -6345,11 +6345,14 @@
     {
       "id": "body",
       "bkids": [
+        "Jonah",
         "Obadiah"
       ],
       "pages": [
         "544-A-O.jpg",
-        "545-O-Jn.jpg"
+        "545-O-Jn.jpg",
+        "546-Jn.jpg",
+        "547-Jn-Mi.jpg"
       ]
     }
   ],
@@ -6592,15 +6595,16 @@
     {
       "page": "545-O-Jn.jpg",
       "bkid": "Jonah",
+      "printed_page": 545,
+      "note": "Jonah begins below Obadiah; the page ends after the first eight atoms of Jonah 1:14.",
       "startc": 1,
       "startv": 1,
       "startp": 1,
-      "stopc": null,
-      "stopv": null,
-      "stopp": null,
-      "start_phrase": null,
-      "stop_phrase": null,
-      "note": "seeded by survey: a book starts at 1:1 atom 1"
+      "start_phrase": "ויהי דבר יהוה אל יונה",
+      "stopc": 1,
+      "stopv": 14,
+      "stopp": 8,
+      "stop_phrase": "ויאמרו אנה יהוה אל נא"
     },
     {
       "page": "545-O-Jn.jpg",
@@ -6615,6 +6619,34 @@
       "stopv": 21,
       "stopp": 11,
       "stop_phrase": "והיתה ליהוה המלוכה"
+    },
+    {
+      "page": "546-Jn.jpg",
+      "bkid": "Jonah",
+      "printed_page": 546,
+      "note": "The running text continues Jonah 1:14 at atom 9 and ends within 4:8 after נפשו.",
+      "startc": 1,
+      "startv": 14,
+      "startp": 9,
+      "start_phrase": "נאבדה בנפש האיש הזה",
+      "stopc": 4,
+      "stopv": 8,
+      "stopp": 17,
+      "stop_phrase": "יונה ויתעלף וישאל את נפשו"
+    },
+    {
+      "page": "547-Jn-Mi.jpg",
+      "bkid": "Jonah",
+      "printed_page": 547,
+      "note": "Jonah 4:8 continues at atom 18; the book ends in the right column above Micah.",
+      "startc": 4,
+      "startv": 8,
+      "startp": 18,
+      "start_phrase": "למות ויאמר טוב מותי מחיי",
+      "stopc": 4,
+      "stopv": 11,
+      "stopp": 23,
+      "stop_phrase": "ובהמה רבה"
     },
     {
       "page": "547-Jn-Mi.jpg",

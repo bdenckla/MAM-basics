@@ -49,11 +49,16 @@ for a fresh session that has no other context. Its thin pointer issue is #349, f
   tooling, and none of its ten records entered `in/scan-pages/koren.json`.
 - 2026-11-02: **Phase 1's first-book pilot is implemented on an isolated research
   branch.** JC and BHL each have two verified Obadiah page portions, covering all
-  21 verses. The public catalogs now contain 158 records: four completed records
+  21 verses. At that checkpoint the catalogs contained 158 records: four completed records
   and 154 unread seeds. Exact `lookup` and whole-book `census` exist; `check`
   re-locates both edge cues and verifies complete adjacent-atom coverage for every
   declared book. This is the first-book review boundary, not a completed universal
   index. The commands, observed splits and remaining limitations are below.
+- 2026-11-02, next bounded batch: Jonah is fully censused in JC and BHL, adding
+  six book/page portions. The catalogs now contain 162 records: ten completed
+  records and 152 unread seeds. All 69 verses of Obadiah and Jonah are covered
+  in each edition. Both BHL Jonah page breaks continue verses excluded by the
+  new page's printed header; the adopted records use actual running text.
 
 ## Codex entry indexes
 
@@ -576,7 +581,8 @@ This preserves the existing plan's single contiguous body segment while making
 partial coverage explicit. Lookup never treats an unread seed as coverage.
 
 The first-phase text projection accepts Scripture strings, the target of a
-`נוסח` note, vowel alternatives whose consonantal atoms agree, and the main
+`נוסח` note, vowel alternatives whose consonantal atoms agree, the explicit
+legarmeh marker `מ:לגרמיה-2` as a boundary without an atom, and the main
 one-atom form of the modern trivial ketiv/qere template, matching MAM-simple.
 It rejects nontrivial ketiv/qere, other unimplemented templates and named
 Decalogue strands. Extending those cases needs explicit source alignment;
@@ -594,11 +600,41 @@ idempotent census regeneration, and cwd-independent CLI output. `survey` now
 refuses before overwriting any adopted census; census-preserving inventory
 refresh is not yet implemented. `check` validates without reading the scans.
 
-The next useful adjacent pilot is Jonah: JC pages 545–547 and BHL pages 826–828.
-Its first page in each edition is already shared with the adopted Obadiah
-portion. Four additional images, followed by native edge checks, would extend
-both runs. This is a proposed next batch, not adopted coverage. The first-book
-record-shape review below still precedes a large census.
+### Jonah continuation, 2026-11-02
+
+The authorized next bounded batch completed Jonah in both editions. The four
+additional original images were inspected, and native crops checked both sides
+of each internal page break. The beginning and end of the book were also checked
+at native size. Existing Obadiah coverage remains valid.
+
+| Edition | Scan filename | Observed printed page | Jonah interval in MAM atom positions |
+|---|---|---|---|
+| `jc1` | `545-O-Jn.jpg` | 545 | 1:1 atom 1 through 1:14 atom 8 |
+| `jc1` | `546-Jn.jpg` | 546 | 1:14 atom 9 through 4:8 atom 17 |
+| `jc1` | `547-Jn-Mi.jpg` | 547 | 4:8 atom 18 through 4:11 atom 23 |
+| `bhl` | `0826-O-Jn.jpg` | 826 | 1:1 atom 1 through 1:12 atom 1 |
+| `bhl` | `0827-Jn.jpg` | 827 | 1:12 atom 2 through 3:7 atom 5 |
+| `bhl` | `0828-Jn.jpg` | 828 | 3:7 atom 6 through 4:11 atom 23 |
+
+The JC breaks are after `אל נא` and `נפשו`, with the next pages starting
+`נאבדה בנפש האיש הזה` and `למות ויאמר`. BHL page 826 ends with the opening
+`ויאמר` of 1:12; page 827 starts `אליהם שאוני` despite its header beginning
+at 1:13. Page 827 ends with `מטעם המלך` in 3:7; page 828 starts `וגדליו לאמר`
+despite its header beginning at 3:8. The final cue in both editions is
+`ובהמה רבה`. The shared Micah portion of JC page 547 is not indexed yet.
+
+For example, `lookup Jonah 1:12 --edition bhl` returns 826 and 827, while adding
+the phrase `אליהם שאוני` returns only 827. Likewise, unqualified BHL 3:7 and JC
+1:14 and 4:8 return both pages, with phrase-qualified lookups resolving to the
+correct later page. All four breaks were checked directly.
+
+The independent MAM-simple comparison now checks all 48 Jonah verses and 688
+Jonah atoms as well as Obadiah. The six focused tests passed. Direct checks
+confirmed every split above, phrase resolution, idempotent Jonah regeneration,
+and the earlier Obadiah/refusal/write-neutrality checks. The full suite and mega
+were not run for this isolated bounded batch under the focused-check policy.
+This continuation does not authorize or imply a large census without the
+first-book record-shape review below.
 
 **Phase 0 — survey and tracked inventory. DONE, 2026-08-07.** The code is
 `py/main_scan_pages.py` (`survey`, `check`) over `py/scan_pages/`, with the lint at

@@ -2,7 +2,7 @@
 
 This initial projection accepts Scripture strings, a נוסח target, vowel
 alternatives with identical consonantal atoms, and the main one-atom form of
-the modern trivial ketiv/qere template. It
+the modern trivial ketiv/qere template, plus the explicit legarmeh marker. It
 does not assign atom numbers through nontrivial ketiv/qere or alternative
 strands: those need an explicit source-alignment policy before a later book
 can be censused.
@@ -66,6 +66,11 @@ def _body_text(elements):
             # Match the existing MAM-simple kq-trivial body's main form, not
             # an alternative spelling or a reading assembled from other fields.
             parts.append(params["1"])
+        elif isinstance(element, dict) and element["tmpl_name"] == "מ:לגרמיה-2":
+            params = template_names.validate_current_plus_template(element)
+            if params:
+                raise ValueError("Explicit legarmeh marker must have no parameters")
+            parts.append(" ")
         else:
             raise ValueError(
                 "scan-pages atom projection does not yet support this Scripture "
