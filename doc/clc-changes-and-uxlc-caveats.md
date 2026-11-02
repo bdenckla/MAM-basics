@@ -234,7 +234,7 @@ Taamey D positions Job 32:6's ḥiriq under the shin, left of the atnaḥ.
 CLC change, when CLC covers Job: in Job 32:6 and 10:15, replace the ZWJ with a CGJ; in Job 19:16,
 remove it.
 
-## 9. Locators corrected in override copies, 2026-10-31
+## 9. Locators corrected in override copies, 2026-10-31 and 2026-11-02
 
 A comparison of the UXLC change records with Charles Loder's leningrad-codex-tei found nine records
 whose locators disagree with Sefaria's photographs, on a Claude session's reading of crops of them.
@@ -256,14 +256,29 @@ that no longer holds any correction is deleted.
 
 The copies and `corrections.json` count a column's lines as the UXLC's locators do, only those that
 hold writing: NIB, not including blank lines. MAM-basics elsewhere counts IB, including blank
-lines, and `corrections.json` gives each corrected line IB as well. The two counts differ for one
-record, 2023.11.10-3, whose atom is on line 12/11 IB/NIB of page F109B's column 3.
+lines, and `corrections.json` gives each corrected line IB as well. The two counts differ for two
+records: 2023.11.10-3, whose atom is on line 12/11 IB/NIB of page F109B's column 3, and
+2026.02.05-97, whose atom is on line 27/25 of page F404B's column 2.
 
 On 2026-10-31 the copies held the locators of sixteen records: twelve whose line the photographs
 show to be wrong, and the four of section 3 whose column and line the UXLC leaves empty. All
 sixteen are readings of the photographs. The last three of the four to be read, 2026.08.05-5, -25
 and -47, replaced the location estimator's values that day: the readings confirm the first two and
 put 2026.08.05-47 one line higher, at F367B 2:21.
+
+On 2026-11-02 a review of Charles Loder's newer pages, F366B to F444B, found sixteen more records
+whose locators disagree with the TEI's, and a Claude session read all sixteen on the photographs.
+Asked to approve its four recommendations, Ben answered "Approve all four". The TEI was right on
+fifteen, and fourteen of those were corrected that day: eight of Kimball's records of changeset
+2026.02.05, and six of Daniel Holman's, one of which, 2026.08.05-27, gave the wrong column rather
+than the wrong line. Seven of Kimball's eight differ from the book-of-job quirkrecs they were
+ported from, which agree with the photographs; the quirkrec of the eighth, 2026.02.05-67, gave line
+28 of a 27-line column and was corrected the same day. The fifteenth, Moshe Greenberg's
+2022.08.22-3, stays as it is. Its atom, Prov 6:35.10, is on line 24 of page F411B's column 2, whose
+line 13 is blank and whose line 2 holds no text of Proverbs, only a small smudged marking.
+Greenberg's 23 counts that marking's line as one that holds writing, as Ben approved. The record
+was right on the sixteenth, Kimball's 2026.02.05-50, and the TEI wrong; that error is
+charlesLoder/leningrad-codex-tei#1141.
 
 ## 10. Two problems recorded in a program's docstring, 2026-09-04
 

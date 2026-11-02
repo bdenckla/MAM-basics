@@ -94,6 +94,17 @@
       "evidence": "Deut 28:42.6 begins line 20 of F115B's column 3, a column of 27 lines with no blank line; the TEI agrees (a961e13a)."
     },
     {
+      "list": "2023.07.04 - Changes.xml",
+      "record": "2023.03.25-24",
+      "field": "line",
+      "uxlc": "16",
+      "mam_basics": "15",
+      "line_ib": "15",
+      "kind": "reading",
+      "date": "2026-11-02",
+      "evidence": "Ps 28:1.8 ends line 15 of F370B's column 1, below line 14, which holds only the superscription; line 16 holds the verse's other copy of the word; the TEI agrees."
+    },
+    {
       "list": "2023.10.19 - Changes.xml",
       "record": "2023.08.10-10",
       "field": "line",
@@ -103,6 +114,28 @@
       "kind": "reading",
       "date": "2026-10-31",
       "evidence": "2 Chr 27:4.7 is the second atom of line 9 of F359A's column 2, and line 10 begins 2 Chr 27:5; the TEI agrees (a961e13a)."
+    },
+    {
+      "list": "2024.04.01 - Changes.xml",
+      "record": "2023.09.12-6",
+      "field": "line",
+      "uxlc": "2",
+      "mam_basics": "1",
+      "line_ib": "1",
+      "kind": "reading",
+      "date": "2026-11-02",
+      "evidence": "Dan 4:5.8 is the second atom of line 1 of F441A's column 1, a column of 27 lines; the TEI agrees."
+    },
+    {
+      "list": "2024.04.01 - Changes.xml",
+      "record": "2023.09.12-7",
+      "field": "line",
+      "uxlc": "17",
+      "mam_basics": "18",
+      "line_ib": "18",
+      "kind": "reading",
+      "date": "2026-11-02",
+      "evidence": "Dan 4:15.9 begins line 18 of F441A's column 2, after the ketiv that ends line 17; the TEI agrees."
     },
     {
       "list": "2024.04.01 - Changes.xml",
@@ -136,6 +169,94 @@
       "kind": "reading",
       "date": "2026-10-31",
       "evidence": "Deut 17:9.12 is on line 12/11 IB/NIB of F109B's column 3, whose line 3 is blank; the TEI, which leaves out that blank line, says 11 (a961e13a)."
+    },
+    {
+      "list": "2026.04.01 - Changes.xml",
+      "record": "2026.02.05-13",
+      "field": "line",
+      "uxlc": "5",
+      "mam_basics": "7",
+      "line_ib": "7",
+      "kind": "reading",
+      "date": "2026-11-02",
+      "evidence": "Job 6:10.1 begins the second half of line 7 of F398B's column 2, a column of 27 lines with no blank line; the book-of-job quirkrec and the TEI agree."
+    },
+    {
+      "list": "2026.04.01 - Changes.xml",
+      "record": "2026.02.05-52",
+      "field": "line",
+      "uxlc": "27",
+      "mam_basics": "26",
+      "line_ib": "26",
+      "kind": "reading",
+      "date": "2026-11-02",
+      "evidence": "Job 16:20.4 begins line 26 of F401B's column 2, a column of 27 lines with no blank line; the quirkrec's line -2, counted from the bottom, and the TEI agree."
+    },
+    {
+      "list": "2026.04.01 - Changes.xml",
+      "record": "2026.02.05-57",
+      "field": "line",
+      "uxlc": "23",
+      "mam_basics": "24",
+      "line_ib": "24",
+      "kind": "reading",
+      "date": "2026-11-02",
+      "evidence": "Job 18:4.4 begins line 24 of F402A's column 1, a column of 27 lines with no blank line; the quirkrec's line -4 and the TEI agree."
+    },
+    {
+      "list": "2026.04.01 - Changes.xml",
+      "record": "2026.02.05-67",
+      "field": "line",
+      "uxlc": "27",
+      "mam_basics": "26",
+      "line_ib": "26",
+      "kind": "reading",
+      "date": "2026-11-02",
+      "evidence": "Job 20:1.3 is on line 26 of F402B's column 1, the line that holds only Job 20:1, in a column of 27 lines with no blank line; the TEI agrees, as the book-of-job quirkrec does since its line 28 was corrected to 26 the same day."
+    },
+    {
+      "list": "2026.04.01 - Changes.xml",
+      "record": "2026.02.05-77",
+      "field": "line",
+      "uxlc": "21",
+      "mam_basics": "22",
+      "line_ib": "22",
+      "kind": "reading",
+      "date": "2026-11-02",
+      "evidence": "Job 22:21.3 begins line 22 of F403B's column 1, a column of 27 lines with no blank line; the quirkrec's line -6 and the TEI agree."
+    },
+    {
+      "list": "2026.04.01 - Changes.xml",
+      "record": "2026.02.05-78",
+      "field": "line",
+      "uxlc": "21",
+      "mam_basics": "22",
+      "line_ib": "22",
+      "kind": "reading",
+      "date": "2026-11-02",
+      "evidence": "Job 22:21.4 is the second atom of line 22 of F403B's column 1, a column of 27 lines with no blank line; the quirkrec's line -6 and the TEI agree."
+    },
+    {
+      "list": "2026.04.01 - Changes.xml",
+      "record": "2026.02.05-97",
+      "field": "line",
+      "uxlc": "26",
+      "mam_basics": "25",
+      "line_ib": "27",
+      "kind": "reading",
+      "date": "2026-11-02",
+      "evidence": "Job 28:26.1 ends line 27, the last, of F404B's column 2, whose lines 9 and 20 are blank; the quirkrec's line -1 and the TEI's 27 agree."
+    },
+    {
+      "list": "2026.04.01 - Changes.xml",
+      "record": "2026.02.05-107",
+      "field": "line",
+      "uxlc": "18",
+      "mam_basics": "19",
+      "line_ib": "19",
+      "kind": "reading",
+      "date": "2026-11-02",
+      "evidence": "Job 31:5.8 ends the first half of line 19 of F405B's column 1, whose blank line 23 is below it; the quirkrec's line -9, counted from the bottom with that blank line, and the TEI agree."
     },
     {
       "list": "2026.10.19 - Changes.xml",
@@ -213,6 +334,16 @@
     },
     {
       "list": "2026.10.19 - Changes.xml",
+      "record": "2026.08.05-27",
+      "field": "column",
+      "uxlc": "1",
+      "mam_basics": "2",
+      "kind": "reading",
+      "date": "2026-11-02",
+      "evidence": "Job 11:6.3 begins line 4 of F400A's column 2; the record's line is right; the TEI agrees."
+    },
+    {
+      "list": "2026.10.19 - Changes.xml",
       "record": "2026.08.05-47",
       "field": "column",
       "uxlc": "",
@@ -231,6 +362,28 @@
       "kind": "reading",
       "date": "2026-10-31",
       "evidence": "Ps 14:7.1 begins the second half of line 21 of F367B's column 2, a column of 27 lines with no blank line, one line above the estimator's 22; the TEI's last page is F366A."
+    },
+    {
+      "list": "2026.10.19 - Changes.xml",
+      "record": "2026.08.05-54",
+      "field": "line",
+      "uxlc": "12",
+      "mam_basics": "13",
+      "line_ib": "13",
+      "kind": "reading",
+      "date": "2026-11-02",
+      "evidence": "Ps 35:10.5 is on line 13 of F372A's column 1, whose line 1 holds only the superscription; the TEI agrees."
+    },
+    {
+      "list": "2026.10.19 - Changes.xml",
+      "record": "2026.08.05-55",
+      "field": "line",
+      "uxlc": "16",
+      "mam_basics": "17",
+      "line_ib": "17",
+      "kind": "reading",
+      "date": "2026-11-02",
+      "evidence": "Ps 37:14.2 is on line 17 of F372B's column 1, whose line 1 holds only the last atom of Psalm 36; the TEI agrees."
     }
   ]
 }

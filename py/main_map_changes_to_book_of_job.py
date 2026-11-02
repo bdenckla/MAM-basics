@@ -28,11 +28,17 @@ Line number conventions differ between the two sources:
     are included in a positive count. For negative counts, blank lines
     are already excluded.
   - That model does not explain everything. Of the 30 line discrepancies
-    this program reports, 20 differ by +1, 4 by +2 and 3 by +3, which fits
-    quirkrecs missing an "including-blank-lines" annotation -- only 8 of
-    the 160 have the field, every one with the value 1. The other 3
-    (change ids 2026.02.05-11, -52 and -64) differ by -1, which that
-    reading does not cover.
+    this program reports, 19 differ by +1, 4 by +2 and 3 by +3, and 4
+    (change ids 2026.02.05-11, -52, -64 and -67) by -1. Sefaria's images,
+    read on 2026-11-02, show eight of the 30 to be errors in the change
+    list's locators: 2026.02.05-13, -52, -57, -67, -77, -78, -97 and -107.
+    For all eight the quirkrec gives the image's line, -67's since it was
+    corrected that day from line 28, which its 27-line column does not
+    have. uxlc/in/UXLC-misc-fixed/ corrects the eight, but this program
+    reads the original list, so it still reports them. The other 22 were
+    not read on the images. A +1 among them fits a quirkrec missing an
+    "including-blank-lines" annotation -- only 8 of the 160 have the
+    field, every one with the value 1 -- and a -1 does not.
 
 WHAT THE CHANGESET IS. It is Chris Kimball's port of Ben Denckla's
 book-of-job work into UXLC's format. A record's <author> element names
