@@ -225,17 +225,20 @@ translation-policy glossary.)
 
 ### Retired sigla
 
-Sigla MAM has stopped using. The corpus no longer has these, so they are here to be decoded when
-met in older text, rather than to be looked up while reading MAM as it now stands.
+Sigla and abbreviations MAM has stopped using. The corpus no longer has these, so they are here
+to be decoded when met in older text, rather than to be looked up while reading MAM as it now
+stands.
 
 | Sigil | Means | Retired | Where it can still be met |
 |---|---|---|---|
 | ב2 | ת451 — the Yemenite Ketuvim manuscript by Joseph ben Benaya, 1484–85, formerly Meir Benayahu Ms T 451 | 2026-08-27, in 32 places over six chapters of Daniel — 17 in chapter 7, 2 in 8, 3 in 9, 3 in 10, 6 in 11, 1 in 12 | Wikisource page history; MAM's Sefaria and Accordance derivatives until each refreshes; this repo's git history before `8fe3dff`; and any prose written against MAM before that date, this file included |
+| ממ | מכון ממרא, Mechon Mamre's online edition, by the initials of its name | 2026-11-02, by #342, in 22 places over 19 chapters: 1 Samuel 11:10, 14:38, 23:26 and 29:2; Jeremiah 2:2, 3:12, 3:24, 8:3 and 37:16; Psalms 37:14, 37:36, 51:11, 51:16, 67:5, 86:9, 88:3, 127:2 and 140:4; Job 12:19 and 17:3; Daniel 4:21; and Ezra 5:10. A 23rd, at 2 Kings 19:25, went on 2026-10-31, when Avi Kadish rewrote that note's clauses for #345 | Wikisource page history; MAM's Sefaria and Accordance derivatives until each refreshes; this repo's git history before `55f5c399`, and before `35c60966` for 2 Kings 19:25; and records pinned to an earlier state, such as `doc/intro-doc-audit/` and `hbce-psalms/out/` |
+| מ"מ | מכון ממרא, Mechon Mamre, as the translation code and the Accordance header decode it; the translation code marks one mapping with a comment questioning it | 2026-11-02, by #342, in seven places: Deuteronomy 26:7, Joshua 9:23, 1 Samuel 1:23, 2 Samuel 22:40, and Psalms 24:4, 31:24 and 119:14 | Wikisource page history; MAM's Sefaria and Accordance derivatives until each refreshes; this repo's git history before `55f5c399`; and records pinned to an earlier state, such as `doc/intro-doc-audit/` |
 
 The distinction from `ד` in the edition table below is worth stating, because the two were resolved
 on the same day and look alike. The corpus still has `ד` at eleven sites, so its row there is a
 decoder a reader needs while reading MAM as it stands. The corpus has no ב2 at all any more, so
-this row is a decoder for older text only.
+the ב2 row is a decoder for older text only, as the rows for ממ and מ"מ are.
 
 ### Bibliographic And Edition Abbreviations
 
@@ -245,8 +248,7 @@ this row is a decoder for older text only.
 | מ"ג | Miqra'ot Gedolot, Venice edition | Confirmed | Accordance header, Wikisource | The corpus also uses `מ"ג` for masora gedolah, which is a qualifier rather than an edition, and it distinguishes `מ"ג-ונציה` from `מ"ג-ורשה`. See "Two things are spelled `מ"ג`" under the qualifier section below. |
 | ד | Miqra'ot Gedolot, Venice edition — an earlier layer of MAM's notation for the same edition the `מ"ג` row above names | Confirmed | #262 (Avi Kadish, 2026-08-27) | Avi Kadish, MAM's editor, decoding his sigil on #262: "It appears from what you found that at some stage, I used ד like Breuer did for the Venice edition of the Mikra'ot Gedolot. But as time went on I changed it to מ"ג, or more specifically to מ"ג דפוס ונציה." So `ד` is a spelling MAM moved off rather than a source of its own, which is why no appendix decodes it: the Wikisource appendix describes the finished edition, and this sigil did not survive into it. Undecoded here until 2026-08-27, when the question that #262 put about the `מסורת` qualifier drew the answer as an aside. It is not `דפוסים` shortened — Psalms 24:4 has `ד-כתיב` and then goes on `וכך בדפוסים וקורן`, naming them separately — and Avi's answer says why the two cannot collapse: `ד` is one named printed edition where `דפוסים` is the broad set. Eleven sites, measured 2026-08-27 against MAM-parsed `0128e69`, of which eight are counted in the qualifier table below and three are not. Under `מסורת`: Isaiah 56:10, which the corpus writes `לד` and which the two paragraphs under the qualifier table read as `ל,ד`; Zechariah 9:15, Daniel 4:7, Daniel 7:15, and twice at Daniel 3:25, once in the compound `ומסורת-ל,ד` and once in that note's quoted expansion `מסורת-ד`. Under `מסורות`: Daniel 3:25. Under `כתיב`: Psalms 24:4. The three uncounted sites are Daniel 3:25's `מסורת=ל,ד`, which has an `=` where every other site has the hyphen, and the two at Daniel 3:5, which lists `ק-מ,ד` as a bare authority with no qualifier at all. |
 | מג"ה | Miqra'ot Gedolot Ha-keter | Confirmed | Accordance header, translation code, Wikisource | |
-| מ"מ | Mechon Mamre | Confirmed | translation code, Accordance header | The translation code marks one mapping with a comment questioning it; the underlying expansion still appears intended. |
-| מכון ממרא | Mechon Mamre | Confirmed | Accordance header, Wikisource | |
+| מכון ממרא | Mechon Mamre | Confirmed | Accordance header, Wikisource | Since 2026-11-02 the only name the notes give the edition: ממ and מ"מ, which also stood for it, are under "Retired sigla" above. |
 | סימנים | Simanim edition | Confirmed | Accordance header, Wikisource | |
 | דפוסים | selected printed editions | Confirmed | Accordance header, Wikisource | Scope is broad rather than edition-specific. |
 | קורן | Koren edition | Confirmed | Accordance header, Wikisource | |

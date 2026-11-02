@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "inventory_sha256": "1b2f3312f158cd4dc42b6f7ed907894a9aa0e3b213474a098d2dd0a90ae0a727",
+  "inventory_sha256": "3a7c97a453fffe7091b1337549eb97cf4d7adba30775480d1d917e1083944f1d",
   "notes": [
     {
       "id": "A1-Genesis 1:1 note 1 נוסח",
@@ -8775,7 +8775,7 @@
       ],
       "note_ordinal": 1,
       "source_template": "נוסח",
-      "source_note_sha256": "8672fff6b47640c4cebe70b2e88a5cfece9e638b8cb6b7a89f1f8d753c472b25",
+      "source_note_sha256": "830cd2cf0fd9953243387ba0fefead1409e8cba820a5e303620622bd735128b1",
       "original_target": "וּֽלְﬞהַבְדִּ֔יל",
       "near_target": "וּֽלֲהַבְדִּ֔יל",
       "original_body": [
@@ -8787,12 +8787,12 @@
         {
           "tmpl_name": "ש"
         },
-        "קורן, ברויאר, סימנים, ממכון ממרא"
+        "קורן, ברויאר, סימנים, מכון ממרא"
       ],
       "clauses": [
         "=ב,ש,ש1,ק3,ו ומ\"ש",
         "ל,ל1=וּֽלֲהַבְדִּ֔יל (חטף)",
-        "קורן, ברויאר, סימנים, ממכון ממרא"
+        "קורן, ברויאר, סימנים, מכון ממרא"
       ],
       "change_causes": [
         "representation policies"
@@ -8804,7 +8804,7 @@
       },
       "candidate_clause": 1,
       "proposal_reason": "One literal full-target alternative; semantic review of its suffix and other clauses required.",
-      "evidence_sha256": "bc125c670f1add0579f47c2e86e89397e505eb26bb20b3a16738f6b1c646d663",
+      "evidence_sha256": "9f590f925b43ffc0d2f923f4f0f3131bda0729dd2b0e2d6171484c06fbe69c5e",
       "review": {
         "status": "reviewed",
         "presentation": "recast",
@@ -8818,7 +8818,7 @@
               "=ב,ש,ש1,ק3,ו ומ\"ש"
             ],
             [
-              "קורן, ברויאר, סימנים, ממכון ממרא"
+              "קורן, ברויאר, סימנים, מכון ממרא"
             ]
           ]
         },
@@ -20508,7 +20508,7 @@
       ],
       "note_ordinal": 1,
       "source_template": "נוסח",
-      "source_note_sha256": "405bee6b47ced541b48619edf4787353cc8bee1b21c9868207b66353b5d633e3",
+      "source_note_sha256": "8bae8a3801477cfb8b1ce63436ff4074b2fc30ece3fe74afae8f33034aae3722",
       "original_target": "עַד־גׇּמְלָ֖הּ",
       "near_target": "עַד־גָּמְלָ֖הּ",
       "original_body": [
@@ -20516,11 +20516,11 @@
         {
           "tmpl_name": "ש"
         },
-        "מ\"מ=עַד־גָמְלָ֖הּ (חסר דגש בגימ\"ל)"
+        "מכון ממרא=עַד־גָמְלָ֖הּ (חסר דגש בגימ\"ל)"
       ],
       "clauses": [
         "=א",
-        "מ\"מ=עַד־גָמְלָ֖הּ (חסר דגש בגימ\"ל)"
+        "מכון ממרא=עַד־גָמְלָ֖הּ (חסר דגש בגימ\"ל)"
       ],
       "change_causes": [
         "representation policies"
@@ -20534,7 +20534,7 @@
       },
       "candidate_clause": null,
       "proposal_reason": "No unique plain clause quoting the complete target; retain the source note.",
-      "evidence_sha256": "6c1056fb311d77d0805604444324e712ac1487792985a6a1ecdde1da340d7926",
+      "evidence_sha256": "524d7868b59c9aa87a4c42d2e1362b750d385f5336ee0ca8b430dd02f6258d8c",
       "review": {
         "status": "reviewed",
         "presentation": "framed-mam",
@@ -20546,7 +20546,7 @@
               "=א"
             ],
             [
-              "מ\"מ=עַד־גָמְלָ֖הּ (חסר דגש בגימ\"ל)"
+              "מכון ממרא=עַד־גָמְלָ֖הּ (חסר דגש בגימ\"ל)"
             ]
           ]
         },
@@ -50001,7 +50001,7 @@
       ],
       "note_ordinal": 1,
       "source_template": "נוסח",
-      "source_note_sha256": "bbd78153d1c9601ee269e45d57c5bf54d62283a68c8a04911978756f23f95422",
+      "source_note_sha256": "cb796dddb71a7ea85e90699d449153ea094bc9aaaeb5a6af7eba2aed6fadfe30",
       "original_target": {
         "tmpl_name": "מ:דחי",
         "tmpl_params": {
@@ -50015,11 +50015,11 @@
         {
           "tmpl_name": "ש"
         },
-        "ממ=וַ֭יַּֽעֲבֹר וכן בדפוסים"
+        "מכון ממרא=וַ֭יַּֽעֲבֹר וכן בדפוסים"
       ],
       "clauses": [
         "=א,ל",
-        "ממ=וַ֭יַּֽעֲבֹר וכן בדפוסים"
+        "מכון ממרא=וַ֭יַּֽעֲבֹר וכן בדפוסים"
       ],
       "change_causes": [
         "template resolution"
@@ -50033,7 +50033,7 @@
       },
       "candidate_clause": null,
       "proposal_reason": "No unique plain clause quoting the complete target; retain the source note.",
-      "evidence_sha256": "a83bd392bdbc402058c75387477b17356b09aab0c0b223ec8dc561855449ac60",
+      "evidence_sha256": "a9595b3ab74875e599cbc4f872be2394f2a42ebf0fbd4d93350f131f632aa6e7",
       "review": {
         "status": "reviewed",
         "presentation": "framed-mam",
@@ -50045,7 +50045,7 @@
               "=א,ל"
             ],
             [
-              "ממ=וַ֭יַּֽעֲבֹר וכן בדפוסים"
+              "מכון ממרא=וַ֭יַּֽעֲבֹר וכן בדפוסים"
             ]
           ]
         },
@@ -51490,7 +51490,7 @@
       ],
       "note_ordinal": 1,
       "source_template": "נוסח",
-      "source_note_sha256": "9ba52e6b03134f1d99e9684d62506e8d81009e6d7203f1e18818e07947a3d6cb",
+      "source_note_sha256": "9499821c84214349aa4c68f3101791e3397867005ab7bf85f4ebde607d043c46",
       "original_target": "וְֽכׇל־עֲוֺ֖נֹתַ֣י",
       "near_target": "וְֽכָל־עֲוֺ֖נֹתַ֣י",
       "original_body": [
@@ -51498,11 +51498,11 @@
         {
           "tmpl_name": "ש"
         },
-        "ממ!=וְֽכָל־עֲ֖וֹנֹתַ֣י (הטעם באות עי״ן ונקודת החולם רגילה)"
+        "מכון ממרא!=וְֽכָל־עֲ֖וֹנֹתַ֣י (הטעם באות עי״ן ונקודת החולם רגילה)"
       ],
       "clauses": [
         "=א",
-        "ממ!=וְֽכָל־עֲ֖וֹנֹתַ֣י (הטעם באות עי״ן ונקודת החולם רגילה)"
+        "מכון ממרא!=וְֽכָל־עֲ֖וֹנֹתַ֣י (הטעם באות עי״ן ונקודת החולם רגילה)"
       ],
       "change_causes": [
         "representation policies"
@@ -51516,7 +51516,7 @@
       },
       "candidate_clause": null,
       "proposal_reason": "No unique plain clause quoting the complete target; retain the source note.",
-      "evidence_sha256": "4593d53105c8b90704bd9857361f9a550d781ac02950e5aeaaaf75f4794fdf63",
+      "evidence_sha256": "668368bf03b51c53533c82afef244f367de776bb93258c075680ba1795c04d99",
       "review": {
         "status": "reviewed",
         "presentation": "framed-mam",
@@ -51528,7 +51528,7 @@
               "=א"
             ],
             [
-              "ממ!=וְֽכָל־עֲ֖וֹנֹתַ֣י (הטעם באות עי״ן ונקודת החולם רגילה)"
+              "מכון ממרא!=וְֽכָל־עֲ֖וֹנֹתַ֣י (הטעם באות עי״ן ונקודת החולם רגילה)"
             ]
           ]
         },
@@ -57921,7 +57921,7 @@
       ],
       "note_ordinal": 1,
       "source_template": "נוסח",
-      "source_note_sha256": "857ba6e7721cacfe17fbe04e8b2e0d32ef7b1efd58ae8d8945d89e275baafa85",
+      "source_note_sha256": "afa2bd2f66ef1b635484f6edad37b778d6ce713d98493b649e52b5fc9efec15c",
       "original_target": "הַטֵּ֥ה אׇ֝זְנְךָ֗",
       "near_target": "הַטֵּ֥ה אָ֝זְנְךָ֗",
       "original_body": [
@@ -57929,11 +57929,11 @@
         {
           "tmpl_name": "ש"
         },
-        "ממ=הַטֵּֽה־אׇ֝זְנְךָ֗ (\"הטה\" בגעיה ומוקפת) וכן בדפוסים"
+        "מכון ממרא=הַטֵּֽה־אׇ֝זְנְךָ֗ (\"הטה\" בגעיה ומוקפת) וכן בדפוסים"
       ],
       "clauses": [
         "=א,ל (\"הטה\" בטעם מרכא) וכן אצל ברואיר ומג\"ה ובקורן)",
-        "ממ=הַטֵּֽה־אׇ֝זְנְךָ֗ (\"הטה\" בגעיה ומוקפת) וכן בדפוסים"
+        "מכון ממרא=הַטֵּֽה־אׇ֝זְנְךָ֗ (\"הטה\" בגעיה ומוקפת) וכן בדפוסים"
       ],
       "change_causes": [
         "representation policies"
@@ -57947,7 +57947,7 @@
       },
       "candidate_clause": null,
       "proposal_reason": "No unique plain clause quoting the complete target; retain the source note.",
-      "evidence_sha256": "af59212291a3aa98fec05ebccfe15e93055a4a16928bac6e4df630f9b5dd3117",
+      "evidence_sha256": "0c88a222aa8b7eed23e19af30211dc01fc7e0364a5c89bbe27c817ecfea8a17c",
       "review": {
         "status": "reviewed",
         "presentation": "framed-mam",
@@ -57959,7 +57959,7 @@
               "=א,ל (\"הטה\" בטעם מרכא) וכן אצל ברואיר ומג\"ה ובקורן)"
             ],
             [
-              "ממ=הַטֵּֽה־אׇ֝זְנְךָ֗ (\"הטה\" בגעיה ומוקפת) וכן בדפוסים"
+              "מכון ממרא=הַטֵּֽה־אׇ֝זְנְךָ֗ (\"הטה\" בגעיה ומוקפת) וכן בדפוסים"
             ]
           ]
         },
@@ -65535,7 +65535,7 @@
       ],
       "note_ordinal": 1,
       "source_template": "נוסח",
-      "source_note_sha256": "f616e9417153acceb73eed82911c9da4ea0b9788ebe7315a3c8ba08a5fdb621b",
+      "source_note_sha256": "3d747f179d8d440e7552c931c818ae7a1b7579c53f64d31d3379bea8a6d9e079",
       "original_target": "שָׁ֥נְﬞנ֣וּ",
       "near_target": "שָׁ֥נֲנ֣וּ",
       "original_body": [
@@ -65543,11 +65543,11 @@
         {
           "tmpl_name": "ש"
         },
-        "ממ=שָֽׁנְנ֣וּ (געיה במקום מרכא)"
+        "מכון ממרא=שָֽׁנְנ֣וּ (געיה במקום מרכא)"
       ],
       "clauses": [
         "א=שָׁ֥נֲנ֣וּ (חטף)",
-        "ממ=שָֽׁנְנ֣וּ (געיה במקום מרכא)"
+        "מכון ממרא=שָֽׁנְנ֣וּ (געיה במקום מרכא)"
       ],
       "change_causes": [
         "representation policies"
@@ -65561,7 +65561,7 @@
       },
       "candidate_clause": 0,
       "proposal_reason": "One literal full-target alternative; semantic review of its suffix and other clauses required.",
-      "evidence_sha256": "346ced630b021587bd11d32622c26fbc841c022034215da9a1a62542cf37ae3b",
+      "evidence_sha256": "bce5a51f7f1770de104c8aa6046ee9b161e0551a920911ad11dc01e75dbc07cc",
       "review": {
         "status": "reviewed",
         "presentation": "recast",
@@ -65572,7 +65572,7 @@
           ],
           "mam_clauses": [
             [
-              "ממ=שָֽׁנְנ֣וּ (געיה במקום מרכא)"
+              "מכון ממרא=שָֽׁנְנ֣וּ (געיה במקום מרכא)"
             ]
           ]
         },
@@ -74488,7 +74488,7 @@
       ],
       "note_ordinal": 1,
       "source_template": "נוסח",
-      "source_note_sha256": "bdf7cbcbaa00182afbf2a145037c112e06fd194cccb17020283ef560a7eb0a72",
+      "source_note_sha256": "2411b80585d9442feb1c2753548e4f2150f37bd386463b61aedc27fc8dc0ca94",
       "original_target": "מִ֥י ה֝֗וּא",
       "near_target": "מִ֥י ה֝וּא",
       "original_body": [
@@ -74500,7 +74500,7 @@
         {
           "tmpl_name": "ש"
         },
-        "ממ=מִֽי ה֝֗וּא (\"מי\" בגעיה ובלתי-מוקפת!)",
+        "מכון ממרא=מִֽי ה֝֗וּא (\"מי\" בגעיה ובלתי-מוקפת!)",
         {
           "tmpl_name": "ש"
         },
@@ -74509,7 +74509,7 @@
       "clauses": [
         "=ל (\"מי\" בטעם מרכא) וכן הכריעו ברויאר ומג\"ה",
         "א=<מִ֥י ה֝וּא> (השמטת נקודת הרביע כשיטתו)",
-        "ממ=מִֽי ה֝֗וּא (\"מי\" בגעיה ובלתי-מוקפת!)",
+        "מכון ממרא=מִֽי ה֝֗וּא (\"מי\" בגעיה ובלתי-מוקפת!)",
         "קורן=מִי־ה֝֗וּא (\"מי\" מוקפת)"
       ],
       "change_causes": [
@@ -74524,7 +74524,7 @@
       },
       "candidate_clause": null,
       "proposal_reason": "No unique plain clause quoting the complete target; retain the source note.",
-      "evidence_sha256": "3762fa4e24183fcab257af5c1c60f527f6b67f017a083cd2c62993afa29ccb13",
+      "evidence_sha256": "e424ec7760359a922a154f8a9c4cd59400f7887fe28edd468a4f0db551e462dc",
       "review": {
         "status": "reviewed",
         "presentation": "framed-mam",
@@ -74539,7 +74539,7 @@
               "א=<מִ֥י ה֝וּא> (השמטת נקודת הרביע כשיטתו)"
             ],
             [
-              "ממ=מִֽי ה֝֗וּא (\"מי\" בגעיה ובלתי-מוקפת!)"
+              "מכון ממרא=מִֽי ה֝֗וּא (\"מי\" בגעיה ובלתי-מוקפת!)"
             ],
             [
               "קורן=מִי־ה֝֗וּא (\"מי\" מוקפת)"
