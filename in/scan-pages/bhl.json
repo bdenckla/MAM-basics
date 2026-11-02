@@ -14,7 +14,8 @@
     "stopp": "stop atom within the verse, 1-based (int or null)",
     "start_phrase": "letters-only phrase read off the top of the page (str or null)",
     "stop_phrase": "letters-only phrase read off the foot of the page (str or null)",
-    "note": "free-form text (str or null)"
+    "note": "free-form text (str or null)",
+    "printed_page": "printed footer number observed during census, separate from scan filename (int; absent on unread seeds)"
   },
   "pages": [
     {
@@ -8764,7 +8765,18 @@
       "kind": "cover"
     }
   ],
-  "segments": [],
+  "segments": [
+    {
+      "id": "body",
+      "bkids": [
+        "Obadiah"
+      ],
+      "pages": [
+        "0825-A-O.jpg",
+        "0826-O-Jn.jpg"
+      ]
+    }
+  ],
   "recs": [
     {
       "page": "0005-G.jpg",
@@ -8990,15 +9002,16 @@
     {
       "page": "0825-A-O.jpg",
       "bkid": "Obadiah",
+      "printed_page": 825,
+      "note": "Obadiah begins below Amos. The page ends after the first two atoms of verse 18; the printed header does not establish this atom boundary.",
       "startc": 1,
       "startv": 1,
       "startp": 1,
-      "stopc": null,
-      "stopv": null,
-      "stopp": null,
-      "start_phrase": null,
-      "stop_phrase": null,
-      "note": "seeded by survey: a book starts at 1:1 atom 1"
+      "start_phrase": "חזון עבדיה כה אמר",
+      "stopc": 1,
+      "stopv": 18,
+      "stopp": 2,
+      "stop_phrase": "והיה בית"
     },
     {
       "page": "0826-O-Jn.jpg",
@@ -9012,6 +9025,20 @@
       "start_phrase": null,
       "stop_phrase": null,
       "note": "seeded by survey: a book starts at 1:1 atom 1"
+    },
+    {
+      "page": "0826-O-Jn.jpg",
+      "bkid": "Obadiah",
+      "printed_page": 826,
+      "note": "Obadiah continues at the top, beginning with verse 18 atom 3, and ends above Jonah.",
+      "startc": 1,
+      "startv": 18,
+      "startp": 3,
+      "start_phrase": "יעקב אש ובית יוסף",
+      "stopc": 1,
+      "stopv": 21,
+      "stopp": 11,
+      "stop_phrase": "והיתה ליהוה המלוכה"
     },
     {
       "page": "0829-Mi.jpg",

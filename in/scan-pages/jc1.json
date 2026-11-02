@@ -14,7 +14,8 @@
     "stopp": "stop atom within the verse, 1-based (int or null)",
     "start_phrase": "letters-only phrase read off the top of the page (str or null)",
     "stop_phrase": "letters-only phrase read off the foot of the page (str or null)",
-    "note": "free-form text (str or null)"
+    "note": "free-form text (str or null)",
+    "printed_page": "printed footer number observed during census, separate from scan filename (int; absent on unread seeds)"
   },
   "pages": [
     {
@@ -6340,7 +6341,18 @@
       "kind": "cover"
     }
   ],
-  "segments": [],
+  "segments": [
+    {
+      "id": "body",
+      "bkids": [
+        "Obadiah"
+      ],
+      "pages": [
+        "544-A-O.jpg",
+        "545-O-Jn.jpg"
+      ]
+    }
+  ],
   "recs": [
     {
       "page": "001-G.jpg",
@@ -6566,15 +6578,16 @@
     {
       "page": "544-A-O.jpg",
       "bkid": "Obadiah",
+      "printed_page": 544,
+      "note": "Obadiah begins below Amos on this page. The last Obadiah atom is the opening atom of verse 9.",
       "startc": 1,
       "startv": 1,
       "startp": 1,
-      "stopc": null,
-      "stopv": null,
-      "stopp": null,
-      "start_phrase": null,
-      "stop_phrase": null,
-      "note": "seeded by survey: a book starts at 1:1 atom 1"
+      "start_phrase": "חזון עבדיה כה אמר",
+      "stopc": 1,
+      "stopv": 9,
+      "stopp": 1,
+      "stop_phrase": "וחתו"
     },
     {
       "page": "545-O-Jn.jpg",
@@ -6588,6 +6601,20 @@
       "start_phrase": null,
       "stop_phrase": null,
       "note": "seeded by survey: a book starts at 1:1 atom 1"
+    },
+    {
+      "page": "545-O-Jn.jpg",
+      "bkid": "Obadiah",
+      "printed_page": 545,
+      "note": "Obadiah continues at the top of the page and ends above Jonah. The page begins at verse 9 atom 2.",
+      "startc": 1,
+      "startv": 9,
+      "startp": 2,
+      "start_phrase": "גבוריך תימן למען",
+      "stopc": 1,
+      "stopv": 21,
+      "stopp": 11,
+      "stop_phrase": "והיתה ליהוה המלוכה"
     },
     {
       "page": "547-Jn-Mi.jpg",

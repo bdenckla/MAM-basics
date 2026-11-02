@@ -22,6 +22,7 @@ REC_FIELDS = {
     "start_phrase": "letters-only phrase read off the top of the page (str or null)",
     "stop_phrase": "letters-only phrase read off the foot of the page (str or null)",
     "note": "free-form text (str or null)",
+    "printed_page": "printed footer number observed during census, separate from scan filename (int; absent on unread seeds)",
 }
 
 _HEADER_NOTE = (

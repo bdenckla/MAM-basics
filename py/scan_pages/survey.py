@@ -173,6 +173,7 @@ def _bhl_bare_number_anomalies(pages):
 
 def survey_edition(edition_id):
     """Classify one edition's folder and write its index. Return a report dict."""
+    _require_unread_indexes((edition_id,))
     names = _listing(edition_id)
     pages = _classified(edition_id, names)
     recs = _seeded_recs(pages)
@@ -201,4 +202,20 @@ def survey_edition(edition_id):
 
 def survey_all():
     """Survey every edition. Return one report per edition, in the canonical order."""
+    _require_unread_indexes(editions.ALL_EDITION_IDS)
     return [survey_edition(edition_id) for edition_id in editions.ALL_EDITION_IDS]
+
+
+def _require_unread_indexes(edition_ids):
+    """An inventory refresh must not silently replace an adopted census with seeds."""
+    for edition_id in edition_ids:
+        if editions.index_path(edition_id).exists():
+            index = index_io.read_index(edition_id)
+            if index["segments"] or any(
+                rec["start_phrase"] is not None for rec in index["recs"]
+            ):
+                raise SurveyError(
+                    f"{edition_id}: survey refuses to overwrite an adopted census; "
+                    "use check for validation. Census-preserving inventory refresh "
+                    "is not implemented in this first phase."
+                )

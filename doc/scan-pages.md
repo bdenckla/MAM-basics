@@ -47,6 +47,13 @@ for a fresh session that has no other context. Its thin pointer issue is #349, f
   of session wall-clock a page, with all 20 edges located exactly — is recorded under
   Phase 1 below, in the paragraphs headed "Cost probe, 2026-09-10". The probe built no
   tooling, and none of its ten records entered `in/scan-pages/koren.json`.
+- 2026-11-02: **Phase 1's first-book pilot is implemented on an isolated research
+  branch.** JC and BHL each have two verified Obadiah page portions, covering all
+  21 verses. The public catalogs now contain 158 records: four completed records
+  and 154 unread seeds. Exact `lookup` and whole-book `census` exist; `check`
+  re-locates both edge cues and verifies complete adjacent-atom coverage for every
+  declared book. This is the first-book review boundary, not a completed universal
+  index. The commands, observed splits and remaining limitations are below.
 
 ## Codex entry indexes
 
@@ -511,6 +518,87 @@ keeps refusing rather than guessing, so partial progress is always safe to use.
   never by launching a viewer.
 
 ## Phases (each ends with a chat report and a commit; pause for Ben where marked)
+
+### Phase 1 pilot: exact Obadiah lookup in JC and BHL, 2026-11-02
+
+All four original images were inspected, their printed footer numbers were read,
+and the internal page breaks were re-read in native-pixel crops. The source cues
+below describe the Obadiah portion of a shared page, not all of that page's text.
+No image or crop is stored in this repository.
+
+| Edition | Scan filename | Observed printed page | Obadiah interval in MAM atom positions |
+|---|---|---|---|
+| `jc1` | `544-A-O.jpg` | 544 | 1:1 atom 1 through 1:9 atom 1 |
+| `jc1` | `545-O-Jn.jpg` | 545 | 1:9 atom 2 through the book's final atom |
+| `bhl` | `0825-A-O.jpg` | 825 | 1:1 atom 1 through 1:18 atom 2 |
+| `bhl` | `0826-O-Jn.jpg` | 826 | 1:18 atom 3 through the book's final atom |
+
+The JC break is between `וחתו` and `גבוריך`; the BHL break is between
+`והיה בית` and `יעקב אש`. Those readings were checked at native resolution.
+
+The first page in each edition also contains Amos; the second also contains Jonah.
+Those neighboring book portions remain uncensused. The BHL header on page 826
+starts its Obadiah range at 1:19, but the actual first running text continues
+1:18. The stored boundary follows the running text, not the header.
+
+Use the home clone's interpreter from a worktree. For example:
+
+```powershell
+python py/main_scan_pages.py lookup Obadiah 1:9 --edition jc1 --edition bhl
+python py/main_scan_pages.py lookup Obadiah 1:9 "גבוריך תימן" --edition jc1
+python py/main_scan_pages.py lookup Obadiah 1:18 "יעקב אש" --edition bhl
+python py/main_scan_pages.py check
+```
+
+An unqualified verse returns every page the verse touches: JC verse 9 returns
+544 and 545; BHL verse 18 returns 825 and 826. A unique phrase resolves to the
+page of its first atom: the two qualified examples return JC 545 and BHL 826.
+The library returns records without rendering or opening anything. The CLI's
+stdout contains only local file links; uncensused editions and strands are
+reported on stderr. A request with no covered edition exits with status 1.
+These commands also passed from outside the checkout.
+
+The census command is `census <edition> <book39> <edge-json>`. Its input is a JSON
+array with one entry per body page for that book, in scan order. Each entry has
+`page`, an independently observed integer `printed_page`, `note`, and `start`
+and `stop` arrays shaped `[chapter, verse, "letters-only cue"]`. The chapter
+and verse identify the MAM reference; matching its cue derives the atom number.
+The start uses the cue's first atom and the stop uses its last atom. A cue must
+match uniquely within its verse. Adoption checks all of the book's pages and
+its first and last atoms before writing anything. The stored records retain
+both cues; the input need not become a second tracked copy.
+
+The initial body segment explicitly lists its completed `bkids` and their page
+identities. It may cover only the Obadiah portions of its boundary pages. A later
+whole-book batch can extend this contiguous body run in either direction;
+adopting a distant book with intervening uncensused body pages is refused.
+This preserves the existing plan's single contiguous body segment while making
+partial coverage explicit. Lookup never treats an unread seed as coverage.
+
+The first-phase text projection accepts Scripture strings, the target of a
+`נוסח` note, vowel alternatives whose consonantal atoms agree, and the main
+one-atom form of the modern trivial ketiv/qere template, matching MAM-simple.
+It rejects nontrivial ketiv/qere, other unimplemented templates and named
+Decalogue strands. Extending those cases needs explicit source alignment;
+template names or argument shapes are not grounds for guessing it. An
+atoms-per-page advisory band remains deferred until representative full-page
+censuses exist. This pilot does not claim that every planned Phase 1 feature
+is finished.
+
+Verification: the focused scan-page and entry-point checks passed (six tests).
+An independent comparison against MAM-simple covers every verse and atom of
+the adopted book. Every source edge cue resolves back to its recorded page.
+Additional direct checks confirmed both split verses, phrase-qualified hits,
+uncensused and ambiguous-query refusals, failed-census write neutrality,
+idempotent census regeneration, and cwd-independent CLI output. `survey` now
+refuses before overwriting any adopted census; census-preserving inventory
+refresh is not yet implemented. `check` validates without reading the scans.
+
+The next useful adjacent pilot is Jonah: JC pages 545–547 and BHL pages 826–828.
+Its first page in each edition is already shared with the adopted Obadiah
+portion. Four additional images, followed by native edge checks, would extend
+both runs. This is a proposed next batch, not adopted coverage. The first-book
+record-shape review below still precedes a large census.
 
 **Phase 0 — survey and tracked inventory. DONE, 2026-08-07.** The code is
 `py/main_scan_pages.py` (`survey`, `check`) over `py/scan_pages/`, with the lint at

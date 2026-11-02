@@ -15,10 +15,10 @@ quietly passes when it cannot reach its input reports green having verified noth
 ``paths.mam_parsed_path`` fails instead, naming both environment overrides -- which is
 the answer a worktree needs, since its ``repo_root().parent`` is inside ``.claude``.
 
-Two checks the Design section lists are not here yet, because both need machinery
-Phase 1 builds and neither has any data to run on: re-locating a stored phrase in
-MAM's text, and the atoms-per-page band.  They arrive with the census that produces
-phrases and stop halves.
+Complete censused books additionally require both source phrases to relocate to
+their recorded atoms, complete page coverage and an exact adjacent-atom partition.
+The initial body segment names the completed books explicitly; unread seeds do not
+count as coverage. An atoms-per-page advisory band is still future work.
 """
 
 from mb_cmn import bib_locales as tbn
@@ -28,6 +28,8 @@ from scan_pages import classify
 from scan_pages import editions
 from scan_pages import index_io
 from scan_pages import page_kinds as pk
+from scan_pages import census
+from scan_pages import text
 
 
 class CheckError(Exception):
@@ -174,6 +176,37 @@ def check_all():
         counts["segments"] += _check_segments(
             edition_id, pages, index["segments"], problems
         )
+        declared = {book for segment in index["segments"] for book in segment["bkids"]}
+        completed = {rec["bkid"] for rec in recs if rec["stopc"] is not None}
+        if declared != completed:
+            problems.append(
+                f"{edition_id}: completed books differ from declared coverage"
+            )
+        for segment in index["segments"]:
+            expected_pages = sorted(
+                {
+                    name
+                    for book in segment["bkids"]
+                    for name in census.body_pages(index, book)
+                }
+            )
+            if segment["pages"] != expected_pages:
+                problems.append(
+                    f"{edition_id}: coverage pages do not match the declared books"
+                )
+            body_order = [page["file"] for page in pages if page["kind"] == pk.BODY]
+            if not expected_pages:
+                problems.append(f"{edition_id}: empty coverage segment")
+            else:
+                first = body_order.index(expected_pages[0])
+                last = body_order.index(expected_pages[-1])
+                if body_order[first : last + 1] != expected_pages:
+                    problems.append(f"{edition_id}: noncontiguous body segment")
+        for book in sorted(declared):
+            try:
+                census.validate_book(index, book, text.book_atoms(book, books))
+            except (ValueError, KeyError, TypeError) as error:
+                problems.append(f"{edition_id} {book}: {error}")
         counts["editions"] += 1
     if problems:
         raise CheckError(
