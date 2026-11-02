@@ -154,6 +154,7 @@ def _run_regions_derive(args):
         lib = glyph_library.copy_taamey_d(
             glyph_library.Library(), glyph_library.TAAMEY_D_FONT
         )
+        lib = glyph_library.with_drawn(lib)
         glyph_library.write(lib, library)
         print(f"wrote {library.as_posix()}")
     for svg in args.svgs or region_svg.all_svgs(tools.SNIPS_DIR):
