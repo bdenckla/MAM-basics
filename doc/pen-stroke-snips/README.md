@@ -200,6 +200,16 @@ final nun have no clean instance and no glyph of the scribe's. Taamey D's glyphs
 from `Taamey-D/font-m-TaD/Taamey_D.ttf`, at the SHA-256 that the root records, only when
 `regions-derive` is given `--copy-taamey-d`.
 
+## Showing images to Ben
+
+Each question for Ben goes right beside the image it is about, so that he need not move
+between windows (Ben, 2026-11-02). When a question or report concerns a place in an image,
+mark the place on the image itself, with a ring, an arrow or a letter at the same spot on
+every panel that shows it, and describe it by what can be seen there. Do not give him
+coordinates, pixel counts, angles or other figures that the image gives no way to read; keep
+those in the working record. Ben, the same day: "what possible use do you think I would make
+of those coordinates".
+
 ## Regenerating
 
 From the repository root:
