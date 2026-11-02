@@ -676,6 +676,21 @@ infrastructure has changed enough to make them misleading examples:
 - **One-shot:** every `old` describes the pre-edit text. Confirmed 2026-11-02, immediately after
   the runs: `--no-save` re-runs raised on Leviticus 10 ("Expected 1 occurrence of 'ממכון
   ממרא'") and on chapter 2's `old`.
+- **Near-Aleppo:** its note-review ledger quotes seven of the edited notes, note 1 at each of
+  Leviticus 10:10, 1 Samuel 1:23, Psalms 37:36, 51:11, 88:3 and 140:4, and Job 17:3, so the
+  refresh's mega stopped at its near-Aleppo build. `39406178` carried the seven reviews across
+  unchanged, their quoted MAM clauses recomputed. The ledger's literal-candidate rule takes no
+  clause whose sigla contain a space, so a clause headed מכון ממרא can never be a recast's
+  candidate; no edited clause was the candidate of its row.
+- **Other records:** `4efd95ef` moved ממ and מ"מ to "Retired sigla" in `doc/sigil-decoding.md`,
+  and `out/sigil-inventory.json` lost both. Record 35 of `py/uxlc_amb_early_mtg/amb_early_mtg.py`
+  quoted Jeremiah 3:12's note with ממ!=; `59f42ac1` gave it the note's new text. The FOI Unicode
+  page quotes the whitespace-delimited token around each feature, so its Psalms 88:3 row now
+  begins with ממרא= where it began with ממ=.
+- **Left as they are:** `doc/intro-doc-audit/` and `hbce-psalms/out/`, a record pinned to its
+  source commit and a frozen record of one run, which quote the notes as they were;
+  `py/py_misc/true_gershayim.py`'s entry for מ"מ, which no note now needs; and the comment on
+  ממ! in `py/sigils/inventory.py`, a dated record of Ben's choice of 2026-10-30.
 - **Edit level:** Raw page text string replacement, chapter- and page-targeted.
 - **JSON files:** `in/mam-ws-bot-edits/mechon-mamre-full-name.json` and its selector,
   `mechon-mamre-full-name.chapters.json`, and
