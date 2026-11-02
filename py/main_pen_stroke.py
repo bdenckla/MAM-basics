@@ -9,8 +9,11 @@ program derives the rest from the crop.  The stroke-SVGs are a frozen record
 since 2026-11-01.  A region-SVG beside each crop describes its ink as regions,
 under the profile in doc/ink-region-representation.md: its seeds, cuts, strips
 of supplied vellum, overlaps' outlines, supplied ink, groups and judgments are
-authored, and this program derives the rest from the crop.
-It reads only files in this repository.
+authored, and this program derives the rest from the crop.  Under profile 3, a
+region-SVG's glyphs, from the library of glyphs doc/pen-stroke-snips/glyphs.svg,
+are fitted to its ink by regions-fit, and its regions derived from them.
+It reads only files in this repository, and the page image that regions-fit is
+given.
 
 Subcommands:
     init
@@ -34,22 +37,35 @@ Subcommands:
     render
         Write doc/pen-stroke-snips/overlays.html, the stroke-SVGs over their crops.
     regions-derive
-        Usage: regions-derive [SVG ...]
-        Recompute the derived parts of the region-SVGs given, or of all of them,
-        and report what their authored parts leave unsettled.
+        Usage: regions-derive [SVG ...] [--copy-taamey-d]
+        Recompute the library's glyphs of the scribe's, then the derived parts of
+        the region-SVGs given, or of all of them, and report what their authored
+        parts leave unsettled.  --copy-taamey-d copies Taamey D's glyphs into the
+        library afresh from Taamey-D/font-m-TaD/Taamey_D.ttf.  A profile-3
+        region-SVG whose glyphs' outlines would change is left as it is.
     regions-check
         Usage: regions-check [SVG ...]
-        Report every way the region-SVGs depart from the profile and their crops,
-        as py/tests/test_ink_region_svgs.py does.  Writes nothing.
+        Report every way the library and the region-SVGs depart from the profile
+        and their crops, as py/tests/test_ink_region_svgs.py does, and list,
+        without failing, each profile-3 region-SVG's unexplained ink.  Writes
+        nothing; never reads Taamey D's font.
     regions-render
         Write doc/pen-stroke-snips/regions.html, the region-SVGs' ink in layers.
+    regions-fit
+        Usage: regions-fit SVG --page-image PATH
+        Fit the library's glyphs to the region-SVG's ink, write its glyphs and
+        their parameters, move it to profile 3, and derive it.  PATH is the page
+        image the crop was cut from, which the root's data-source-sha256 names.
+        Takes minutes.
 """
 
 import argparse
 import sys
+import time
 from pathlib import Path
 
 from pen_stroke import derive as dv
+from pen_stroke import glyph_library
 from pen_stroke import raster
 from pen_stroke import region_derive
 from pen_stroke import region_render
@@ -124,6 +140,19 @@ def _run_render(_args):
 
 
 def _run_regions_derive(args):
+    library = glyph_library.library_path(tools.SNIPS_DIR)
+    if library.exists():
+        font = glyph_library.TAAMEY_D_FONT if args.copy_taamey_d else None
+        changed, found = region_derive.library_derive_file(library, font)
+        print(f"{'derived' if changed else 'unchanged'} {library.as_posix()}")
+        for line in found:
+            print("  " + line)
+    elif args.copy_taamey_d:
+        lib = glyph_library.copy_taamey_d(
+            glyph_library.Library(), glyph_library.TAAMEY_D_FONT
+        )
+        glyph_library.write(lib, library)
+        print(f"wrote {library.as_posix()}")
     for svg in args.svgs or region_svg.all_svgs(tools.SNIPS_DIR):
         changed, found = region_derive.derive_file(svg)
         print(f"{'derived' if changed else 'unchanged'} {Path(svg).as_posix()}")
@@ -136,11 +165,20 @@ def _run_regions_check(args):
     if not svgs:
         sys.exit("no region-SVGs to check")
     bad = 0
+    library = glyph_library.library_path(tools.SNIPS_DIR)
+    if library.exists():
+        found = region_derive.library_problems(library)
+        print(f"{library.as_posix()}: {len(found)} problems")
+        for line in found:
+            print("  " + line)
+        bad += bool(found)
     for svg in svgs:
-        found = region_derive.problems(svg)
+        found, notes = region_derive.check(svg)
         print(f"{Path(svg).as_posix()}: {len(found)} problems")
         for line in found:
             print("  " + line)
+        for line in notes:
+            print("  note: " + line)
         bad += bool(found)
     if bad:
         sys.exit(1)
@@ -149,6 +187,19 @@ def _run_regions_check(args):
 def _run_regions_render(_args):
     out = region_render.write_page(region_svg.all_svgs(tools.SNIPS_DIR))
     print(f"wrote {out.as_posix()}")
+
+
+def _run_regions_fit(args):
+    start = time.perf_counter()
+    found, notes = region_derive.fit_file(
+        args.svg, args.page_image, lambda line: print(line, flush=True)
+    )
+    minutes = (time.perf_counter() - start) / 60
+    print(f"fitted {Path(args.svg).as_posix()} in {minutes:.1f} minutes")
+    for line in found:
+        print("  " + line)
+    for line in notes:
+        print("  note: " + line)
 
 
 def build_parser():
@@ -174,11 +225,15 @@ def build_parser():
         "regions-derive", help="recompute the region-SVGs' derived parts"
     )
     p.add_argument("svgs", nargs="*")
+    p.add_argument("--copy-taamey-d", action="store_true")
     p = sub.add_parser(
         "regions-check", help="check the region-SVGs against their crops"
     )
     p.add_argument("svgs", nargs="*")
     sub.add_parser("regions-render", help="write the region page")
+    p = sub.add_parser("regions-fit", help="fit glyphs to a region-SVG's ink")
+    p.add_argument("svg")
+    p.add_argument("--page-image", required=True)
     return parser
 
 
@@ -195,6 +250,7 @@ def main():
         "regions-derive": _run_regions_derive,
         "regions-check": _run_regions_check,
         "regions-render": _run_regions_render,
+        "regions-fit": _run_regions_fit,
     }[args.subcommand](args)
 
 

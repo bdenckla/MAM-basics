@@ -585,6 +585,7 @@ NOT_IN_MEGA: dict[str, str] = {
     "py/main_pen_stroke.py regions-derive": _INK_REGION_BY_HAND,
     "py/main_pen_stroke.py regions-check": _INK_REGION_BY_HAND,
     "py/main_pen_stroke.py regions-render": _INK_REGION_BY_HAND,
+    "py/main_pen_stroke.py regions-fit": _INK_REGION_BY_HAND,
 }
 
 # ---------------------------------------------------------------------------

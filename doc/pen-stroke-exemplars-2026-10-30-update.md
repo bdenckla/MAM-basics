@@ -517,3 +517,32 @@ draws every region from its seeds.
 
 Effective State of the base, 2026-11-01: as the previous entry gives it, except that the six
 region-SVGs are re-drafted under profile 2 and await Ben's review, on phase 6's sheet.
+
+## Regions from a fitted word: the tool, 2026-11-02
+
+Claude (Opus 5.5), phase 8 of `doc/PLAN-ink-regions.md`, which Ben approved the same day
+(decision 29 of `doc/ink-region-representation.md`). Profile 3, the library of glyphs
+`doc/pen-stroke-snips/glyphs.svg` and the fit, `regions-fit`, are built; no crop has moved to
+profile 3. The plan's execution record, "Phase 8, 2026-11-02", gives every figure; in short:
+
+1. **The port is exact.** Given the untracked trial's ink, starts and glyphs, the tracked fit
+   gives the trial's parameters to 4 decimals for all 24 glyphs of page F043A's two crops, and
+   takes 0.2 to 0.3 minutes a crop against the trial's 2 to 4.
+2. **Ben's readings of page F043A's פני hold** in a fresh fit, with his strip as vellum: no ink
+   inside the nun's glyph beyond his strip, the pe's and the nun's glyphs apart, the pe's and
+   the qamats's bar's glyphs touching with no overlap, the bar 0.67 pixels from its dot, and the
+   tip at the crop's foot in no glyph.
+3. **The geresh and the tav of page F043A's מתחת touch,** their glyphs sharing 2.9 pixels of ink
+   whose deepest sample lies 0.64 pixels inside the shallower glyph; so an overlap needs ink 1.5
+   pixels deep inside two glyphs, the depth D that phase 8 set.
+4. **Line 23's lamed rises into the mem without Claude's cut c4,** which the plan would drop: its
+   draft region then reaches up into the dark ink at the mem's base, and its fitted head lies
+   4.80 pixels deep in the mem's glyph, overlapping 129.9 pixels of ink, against 4.2 in the
+   trial, with dark ink below the head unexplained. Whether c4 stays is phase 9's question, and
+   whether this is the "BIG intersection" of Ben's section 64 is phase 10's.
+5. **Two of the trial's four letters touch other ink:** page F102A's pe touches its dagesh, and
+   line 4's lamed g32 the line above's shin. Each carries a note of Claude's saying why it
+   serves even so, for Ben's review.
+
+Effective State of the base, 2026-11-02: as the previous entry gives it, with the tool of profile
+3 built and the six region-SVGs still at profile 2.

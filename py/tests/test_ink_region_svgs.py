@@ -1,13 +1,17 @@
-"""Lint: every region-SVG in doc/pen-stroke-snips/ agrees with its crop and the profile.
+"""Lint: every region-SVG in doc/pen-stroke-snips/, and the library of glyphs there, agrees
+with its crops and the profile.
 
 WHY THIS EXISTS
 
 A region-SVG is part authored (seeds, cuts, strips of supplied vellum, overlaps' outlines,
-supplied outlines, groups, judgments) and part derived (fills, image residual, each region's
-outline, each overlap's ink, each supplied outline's added ink), and the derived parts are
-true only of the crop and the authored parts they came from.  This lint derives them again
-and fails on any difference, so a seed or a cut edited without a following
-``py/main_pen_stroke.py regions-derive`` cannot stand.  It is a mechanical lint over the tree.
+supplied outlines, groups, judgments, and under profile 3 each glyph's group, part, glyph
+and fit) and part derived (fills, image residual, each region's outline, each overlap's
+ink, each supplied outline's added ink, and under profile 3 each glyph's outline and ink
+and each overlap of glyphs), and the derived parts are true only of the crop and the
+authored parts they came from.  This lint derives them again and fails on any difference,
+so a seed or a cut edited without a following ``py/main_pen_stroke.py regions-derive``
+cannot stand.  The library's glyphs of the scribe's are derived from their crops in the
+same way.  It is a mechanical lint over the tree.
 
 WHAT IT CHECKS, for each region-SVG (``pen_stroke.region_derive.problems``)
 
@@ -29,8 +33,19 @@ WHAT IT CHECKS, for each region-SVG (``pen_stroke.region_derive.problems``)
 6. Each region's outline is what the watershed from its seeds, the cuts, the vellum and the
    overlaps give; each overlap's ink is the ink inside its outline; and each supplied
    outline's added ink is the outline less the ink, and is not empty.
+7. Under profile 3: every fitted group's written part has one glyph and no other group
+   has one; every glyph's glyph is in the library, of its group's kind and part, and its
+   fit has a letter's or a mark's numbers; every glyph holds ink, crosses no strip of
+   vellum or cut by more than a pixel, and has the outline its glyph and fit give; and
+   each glyph's ink, each overlap of glyphs and each region's ink inside no glyph are
+   what the glyphs give.
+8. The library: its closed table agrees with the parts rule; every glyph is of a fitted
+   kind and one of its written parts; Taamey D's glyphs cover every such part, under the
+   font's SHA-256; and each glyph of the scribe's is the outline its crop's draft gives
+   its group, a letter that meets no edge of its crop and touches no other group's ink,
+   or says why it serves even so.
 
-A missing input fails: the directory must hold a region-SVG.
+A missing input fails: the directory must hold a region-SVG and the library.
 
 Run:
     .venv/Scripts/python.exe py/main_test.py py/tests/test_ink_region_svgs.py
@@ -39,16 +54,24 @@ Run:
 import pytest
 
 from mb_cmn import paths
+from pen_stroke import glyph_library
 from pen_stroke import region_derive
 from pen_stroke import region_svg
 from pen_stroke import tools
 
 _SNIPS = paths.repo_root() / tools.SNIPS_DIR
 _SVGS = region_svg.all_svgs(_SNIPS)
+_LIBRARY = glyph_library.library_path(_SNIPS)
 
 
 def test_the_directory_holds_region_svgs() -> None:
     assert _SVGS, f"no region-SVGs in {_SNIPS}"
+
+
+def test_the_library_agrees_with_its_crops() -> None:
+    assert _LIBRARY.exists(), f"no library of glyphs at {_LIBRARY}"
+    found = region_derive.library_problems(_LIBRARY)
+    assert not found, f"{_LIBRARY.name}:\n  " + "\n  ".join(found)
 
 
 @pytest.mark.parametrize("svg", _SVGS, ids=[p.name for p in _SVGS])

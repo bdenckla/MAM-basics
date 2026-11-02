@@ -4,7 +4,8 @@ State: live; proposed 2026-11-01, and Ben answered its three decisions the same 
 to 3 executed 2026-11-01; phase 4 paused after its first round, 2026-11-01, for the re-draft
 that phases 5 to 7 plan, which Ben approved the same day; phases 5 and 6 executed 2026-11-01;
 phase 7 collected Ben's answers to phase 6's sheet; phases 8 to 11, regions from a fitted word,
-proposed 2026-11-02 for Ben's review, and phase 7 ends when he approves them.
+proposed 2026-11-02 and approved by Ben the same day, which ended phase 7; phase 8 executed
+2026-11-02; phases 9 to 11 to run in a fresh session.
 
 ## Context
 
@@ -156,6 +157,15 @@ Ben answered the plan's three decisions on 2026-11-01, after it was pushed in `5
    Taamey D's only where the library has none. Asked "Should I write the plan for building
    regions from fitted glyphs?", Ben answered on 2026-11-02, by the button labelled with his
    answer, "Yes, write the plan" (section 76). Phases 8 to 11 are that plan.
+7. **Phases 8 to 11 approved.** The revision that added them was pushed in `dc3ed1cc`, with
+   six design choices put to Ben: profile 3, with the watershed as the draft; the library of
+   glyphs, the scribe's clean letters with Taamey D's for the marks; an overlap only where ink
+   lies deep inside two glyphs, at a depth that phase 8 sets from his readings; the fit
+   proposing and the check never fitting; his lines binding the fit, with Claude's corrections
+   of the watershed in page F043A's מתחת dropped; and phase 7 ending on his approval. Asked
+   "Approve phases 8 to 11 as written?", Ben answered on 2026-11-02, by the button labelled with
+   his answer, "Approve the plan" (section 77). It is decision 29 of
+   `doc/ink-region-representation.md`, and his decision 6 is its decision 28.
 
 ## The design (Claude's, for Ben's review)
 
@@ -1028,3 +1038,101 @@ to execute phases 5 to 7, from `C:/Users/BenDe/GitRepos/MAM-basics` at `362f2d76
    figures.
 6. **Item 5, the sheet,** comes after this commit: `review/regions-sheet-2.html` and the drawing
    page are untracked.
+
+### Phase 8, 2026-11-02
+
+Entries by Claude (Opus 5.5), in the session that the commander session started on 2026-11-02
+to execute phases 8 to 11, from `C:/Users/BenDe/GitRepos/MAM-basics` at `24a393d4`, of which
+`dc3ed1cc` is an ancestor. Its untracked scripts and outputs are in
+`.novc/pen-stroke-exemplars/fitted-word/`.
+
+1. **Phase 7's ledger taken over** (item 1), unedited: section 68, that images label groups,
+   is met by R15, in the region page's legend and layer of group ids and in the images of phases
+   9 and 10; section 69's touching marks, the bump on the tav's roof and the lamed's head, by R9,
+   R13 and profile 3; the name of "supplied vellum", sections 69 and 71, by the word phase 10
+   asks Ben for; sections 70 and 71, the pe, the qamats's bar and its dot of page F043A's פני, by
+   profile 3; section 72, the tip at that crop's foot, in phase 9, item 3; and section 74 by
+   this plan.
+2. **The port checked against the trial** (item 5), by `fw_port_check.py`. From the trial's
+   final parameters in `fit-PNY-scribe-v3.json` and `fit-MFXF-scribe-lamed-v3.json`, the
+   tracked placement gives each of the 24 glyphs' outlines within 0.0054 pixels of the trial's,
+   each start exactly, and, with the trial's weights of stage A, exactly the score that the
+   trial's objective gives. Given the trial's ink, starts and glyphs, the tracked fit gives the
+   trial's parameters, to 4 decimals, for all 24, in 0.2 and 0.3 minutes against the trial's 2
+   to 4; its output is `port-rerun-PNY.txt` and `port-rerun-MFXF.txt`.
+3. **The fresh fits** (item 5), to untracked copies in `phase8/`, each in 0.2 minutes, with
+   Claude's ov1, c4 and v1 dropped from the copy of page F043A's מתחת and line 23's lamed, g18,
+   given `data-fit="yes"`, as profile 3's item 4 says. By the trial's definitions
+   (`fw_figures.py`, output `phase8/figures-*.txt`), the trial's figure in brackets:
+   - page F043A's פני: ink inside the nun's glyph beyond Ben's strip 0.0 (0.0); the nun's and
+     the pe's glyphs apart (apart); the pe's and the qamats's bar's glyphs touch with no overlap
+     (the same); the bar turned 7.0° (7.0°); the bar and its dot 0.67 pixels apart (0.67); ink
+     inside no glyph and over 1.3 pixels from one 84.8 (82.1), of which 44.6 at the pe's top
+     (44.6) and 31.7 along Ben's strip (27.6); the tip at the crop's foot in no glyph (no
+     glyph). The fit departs from the trial's only in the nun's stage B: Ben's strip is now
+     vellum.
+   - page F043A's מתחת: the geresh's and the tav's glyphs overlap on ink by 2.9 (2.8), the ḥet's
+     and the tav's by 13.9 (13.0), and the qamats's bar's and dot's by 10.2 (10.2).
+   - line 23's lamed: its top at y 65.5 (75.8); its ascender's ink outside it 57.4 (22.4); the
+     vellum inside it 22.3 in the crop and 74.4 beyond (18.8 and 40.0); its overlap with the mem
+     on ink 129.9 (4.2).
+4. **Without c4, line 23's lamed rises into the mem,** a finding (`fw_lamed_draft.py`). Without
+   Claude's cut c4 the watershed gives the lamed's draft region 652.2 pixels, reaching up to y
+   65 into the dark ink where it meets the mem's base, against 353.1 from y 81.7 with c4, so
+   the fit starts the lamed there and its head ends 10 pixels higher than the trial's, deep in
+   that dark ink, which may be the "BIG intersection" of section 64. But its hook covers vellum,
+   and the dark ink below it, 33.6 pixels at x 160.7 to 166.3 and y 84.3 to 91.3, is
+   unexplained (`phase8/MFXF-lamed-head-fresh.png`). Profile 3's item 4 counts c4 among the
+   corrections that the glyphs make unneeded; here they do not, and phase 9 decides with the
+   images whether c4 stays.
+5. **D is 1.5 pixels** (item 6), `OVERLAP_DEPTH` in `py/pen_stroke/region_derive.py`. Each
+   piece of ink inside two glyphs of the fresh fits, by the depth of its sample deepest inside
+   both, inside the shallower of the two: in page F043A's מתחת, the geresh and the tav 0.64;
+   the ḥet and the tav 0.90, 0.20 and 0.05; the qamats's bar and its dot 1.04; line 23's lamed
+   and the mem 4.80. In page F043A's פני, the pataḥ and the bar of the qamats under the nun,
+   three pieces of 0.10 to 0.17. So D makes the lamed and the mem an overlap and every other
+   pair touch, as Ben's readings ask of the geresh and the tav (section 69) and of a qamats
+   (sections 63 and 64). On the trial's fit, with c4, the lamed's head only grazes the mem,
+   0.35, less than the geresh's 0.68: there no D gives both readings, so D rests on item 4's
+   fit.
+6. **Two of the trial's letters are not clean,** a finding. Page F102A's pe, g4, touches its own
+   dagesh, g5, for 20 samples, and line 4's lamed g32 touches the shin of the line above, g13,
+   for 22 samples, where their drafts' watersheds divide them. Since this plan names both, each
+   has a `data-clean-note` of Claude's that says so, which the check accepts; the yod and the
+   nun are clean.
+7. **Choices of Claude's that the plan does not make:**
+   - a glyph of the scribe's is the ink that its crop's draft gives its group, so that fitting
+     that crop again does not change the library;
+   - a profile-3 region's derived outline is its draft ink less every glyph's, so that a fitted
+     group's regions hold what its glyphs leave, overfill and unexplained ink, which the check
+     and the page tell apart by their distance from the glyphs; overfill is not stored apart;
+   - "within 1.3 pixels" is the trial's 4 samples in 8-connected steps; a sample's depth is its
+     distance from the glyph's outline, and a piece is an overlap when one sample lies deeper
+     than D inside each of two glyphs;
+   - every strip and cut that a profile-3 file keeps binds the fit, and a glyph crosses one by
+     more than a pixel when some point of its line lies more than a pixel inside the glyph;
+   - the subject's letters' size is the median of their draft ink's heights over the heights of
+     Taamey D's glyphs for their kinds, whichever glyph each is fitted with, which for letters
+     all of Taamey D's is the trial's;
+   - another word's or line's letter starts with the part of its glyph that meets the crop's
+     edge over its ink: its top for the line below, as in the trial, its bottom for the line
+     above, its side for another word;
+   - the table matches the parts of a tsere, a segol and a gershayim from right to left, a ḥataf
+     pataḥ's bar first, at the right, and then its dots from top to bottom, and every other
+     kind's from top to bottom; a sheva's, a sof pasuq's and a zaqef's dots are ḥiriq dots; a
+     tevir is not fitted, since Taamey D has no character for its stroke alone;
+   - a group with no region of draft ink for each written part, such as the supplied qamats
+     under the nun of page F102A's על־פני, is not fitted, and the check says so without failing;
+   - `regions-derive` leaves unwritten a profile-3 file whose glyphs' outlines would change, so
+     that a changed glyph of the library keeps the check failing until the crop is fitted again;
+   - the fit counts a glyph's samples in a window round it, which gives the whole grid's sums
+     exactly;
+   - the region page draws the groups' ids on each image, a layer on at first, beside the
+     legend.
+8. **Paths beyond the plan's list:** `py/pen_stroke/stroke_svg.py`, whose shared reader and
+   writer of groups carry a group's `data-fit`, and `py/tests/test_graphviz_version_pin.py`,
+   which declares the library a hand-made SVG. Afterwards `derive`, `check` and `render` left
+   the six stroke-SVGs and `overlays.html` byte-identical, and `regions-derive` left the six
+   profile-2 region-SVGs so.
+9. **Phases 9 to 11 run in a fresh session,** since this session's context passed half; it wrote
+   the prompt for the commander session.
