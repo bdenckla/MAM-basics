@@ -157,7 +157,7 @@ _TRANSLATIONS = (
         "יִ֭מָּחֽ֭וּ",
         (
             (
-                "א?,ל (דחי וקו של געיה להורות על מקום הטעם); הקו קצת נטוי כמרכא אך גם יכול להיות געיה (וכך במג״ה).",
+                "=א?,ל (דחי וקו של געיה להורות על מקום הטעם); הקו קצת נטוי כמרכא אך גם יכול להיות געיה (וכך במג״ה).",
                 "MAM agrees with the Aleppo Codex (doubtfully) and the Leningrad Codex (deḥi, and a ga'ya stroke to show where the stress is); the stroke slants slightly, like a merkha, but it could also be a ga'ya (and so Mikra'ot Gedolot ha-Keter has it).",
             ),
             (
