@@ -8771,6 +8771,7 @@
       "bkids": [
         "Jonah",
         "Micah",
+        "Nahum",
         "Obadiah"
       ],
       "pages": [
@@ -8783,7 +8784,9 @@
         "0831-Mi.jpg",
         "0832-Mi.jpg",
         "0833-Mi.jpg",
-        "0834-Mi-Na.jpg"
+        "0834-Mi-Na.jpg",
+        "0835-Na.jpg",
+        "0836-Na-Hb.jpg"
       ]
     }
   ],
@@ -9166,15 +9169,30 @@
     {
       "page": "0834-Mi-Na.jpg",
       "bkid": "Nahum",
+      "printed_page": 834,
+      "note": "Nahum begins below Micah; the running text ends with the first atom of 2:3. The stop cue crosses 2:2 into 2:3 because כי occurs twice in 2:3.",
       "startc": 1,
       "startv": 1,
       "startp": 1,
-      "stopc": null,
-      "stopv": null,
-      "stopp": null,
-      "start_phrase": null,
-      "stop_phrase": null,
-      "note": "seeded by survey: a book starts at 1:1 atom 1"
+      "start_phrase": "משא נינוה ספר חזון נחום",
+      "stopc": 2,
+      "stopv": 3,
+      "stopp": 1,
+      "stop_phrase": "אמץ כח מאד כי"
+    },
+    {
+      "page": "0835-Na.jpg",
+      "bkid": "Nahum",
+      "printed_page": 835,
+      "note": "The printed header starts at 2:4, but the actual first text continues 2:3 at atom 2. The page ends within 3:11 after תבקשי.",
+      "startc": 2,
+      "startv": 3,
+      "startp": 2,
+      "start_phrase": "שב יהוה את גאון יעקב",
+      "stopc": 3,
+      "stopv": 11,
+      "stopp": 8,
+      "stop_phrase": "נעלמה גם את תבקשי"
     },
     {
       "page": "0836-Na-Hb.jpg",
@@ -9188,6 +9206,20 @@
       "start_phrase": null,
       "stop_phrase": null,
       "note": "seeded by survey: a book starts at 1:1 atom 1"
+    },
+    {
+      "page": "0836-Na-Hb.jpg",
+      "bkid": "Nahum",
+      "printed_page": 836,
+      "note": "The printed Nahum header starts at 3:12, but the actual first two atoms complete 3:11. Nahum ends above its verse count and the beginning of Habakkuk.",
+      "startc": 3,
+      "startv": 11,
+      "startp": 9,
+      "start_phrase": "מעוז מאויב",
+      "stopc": 3,
+      "stopv": 19,
+      "stopp": 18,
+      "stop_phrase": "עברה רעתך תמיד"
     },
     {
       "page": "0839-Ts.jpg",

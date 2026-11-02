@@ -31,11 +31,17 @@ def validate_book(index, bkid, verses):
         if ordinal[start] != expected or ordinal[stop] < ordinal[start]:
             raise ValueError(f"{rec['page']}: gap, overlap or reversed page interval")
         for end, atom_index in (("start", 0), ("stop", 1)):
-            located = text.locate_phrase(
-                verses, rec[f"{end}c"], rec[f"{end}v"], rec[f"{end}_phrase"]
-            )[atom_index]
-            if located != rec[f"{end}p"]:
+            span = text.locate_phrase_span(
+                verses,
+                rec[f"{end}c"],
+                rec[f"{end}v"],
+                rec[f"{end}_phrase"],
+                anchor=end,
+            )
+            if span[atom_index] != (start if end == "start" else stop):
                 raise ValueError(f"{rec['page']}: {end} cue disagrees with stored atom")
+            if not start <= span[0] <= span[1] <= stop:
+                raise ValueError(f"{rec['page']}: {end} cue extends outside its page")
         if not isinstance(rec["printed_page"], int) or rec["printed_page"] < 1:
             raise ValueError(f"{rec['page']}: missing observed printed page number")
         expected = ordinal[stop] + 1
@@ -63,7 +69,9 @@ def adopt(index, bkid, edges):
                 {
                     f"{end}c": c,
                     f"{end}v": v,
-                    f"{end}p": text.locate_phrase(verses, c, v, phrase)[atom_index],
+                    f"{end}p": text.locate_phrase_span(
+                        verses, c, v, phrase, anchor=end
+                    )[atom_index][2],
                     f"{end}_phrase": phrase,
                 }
             )

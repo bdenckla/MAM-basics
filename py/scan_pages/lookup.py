@@ -24,7 +24,8 @@ def resolve(index, bkid, chapter, verse, phrase=None, strand=None):
     atoms = verses[chapter, verse]
     first, last = 1, len(atoms)
     if phrase is not None:
-        first, _ = text.locate_phrase(verses, chapter, verse, phrase)
+        start, _ = text.locate_phrase_span(verses, chapter, verse, phrase)
+        first = start[2]
         last = first
     low, high = (chapter, verse, first), (chapter, verse, last)
     return [

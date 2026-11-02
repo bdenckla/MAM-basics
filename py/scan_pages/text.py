@@ -6,6 +6,8 @@ the modern trivial ketiv/qere template, plus the explicit legarmeh marker.
 Ordinary ketiv/qere uses the qere spelling only when both forms are one atom,
 so either printed form occupies the same position. Multi-atom ketiv/qere and
 alternative strands need explicit source alignment before a later census.
+The special-letter word wrapper and the small-letter template recurse into
+their Scripture parameter without inserting a word boundary or losing a letter.
 Documentation is never Scripture. Unknown templates fail rather than contribute
 guessed text. No pointed text or second Bible corpus is stored in the index.
 """
@@ -42,6 +44,14 @@ def _body_text(elements):
                 raise ValueError(f"Unexpected נוסח parameters: {params}")
             target = params["1"]
             parts.append(_target_text(target))
+        elif isinstance(element, dict) and element["tmpl_name"] in {
+            template_names.SLH_WORD,
+            "מ:אות-ק",
+        }:
+            params = template_names.validate_current_plus_template(element)
+            # These two explicit in-word templates contribute their Scripture
+            # parameter. Their descriptions are metadata; do not split the word.
+            parts.append(_target_text(params["1"]))
         elif (
             isinstance(element, dict)
             and element["tmpl_name"] == template_names.QAMATS_VARIANT
@@ -115,24 +125,47 @@ def book_atoms(bkid, books=None):
 
 
 def locate_phrase(verses, chapter, verse, phrase):
-    """Return the unique inclusive atom interval occupied by a source cue."""
+    """Return a unique phrase's atom interval when confined to the given verse."""
+    first, last = locate_phrase_span(verses, chapter, verse, phrase)
+    if last[:2] != (chapter, verse):
+        raise ValueError("Cross-verse phrase requires its full position span")
+    return first[2], last[2]
+
+
+def locate_phrase_span(verses, chapter, verse, phrase, *, anchor="start"):
+    """Locate a unique phrase, anchoring its first or last atom in a verse.
+
+    A source edge cue can cross a verse boundary on the same page. The start
+    reference names its first atom's verse; the stop reference names its last
+    atom's verse. Neither a repeated short cue nor a missing atom is guessed.
+    """
+    if anchor not in {"start", "stop"}:
+        raise ValueError(f"Unknown phrase anchor: {anchor}")
     needle = letters_atoms(phrase)
     if not needle or " ".join(needle) != phrase:
         raise ValueError(
             f"Cue must contain letters-only atoms separated by spaces: {phrase!r}"
         )
-    haystack = verses[chapter, verse]
+    verses[chapter, verse]  # A nonexistent reference still fails explicitly.
+    haystack = tuple(atom for atoms in verses.values() for atom in atoms)
+    atom_positions = positions(verses)
+    anchored = [
+        i
+        for i, position in enumerate(atom_positions)
+        if position[:2] == (chapter, verse)
+    ]
+    shift = 0 if anchor == "start" else len(needle) - 1
     starts = [
-        i + 1
-        for i in range(len(haystack) - len(needle) + 1)
-        if haystack[i : i + len(needle)] == needle
+        i - shift
+        for i in anchored
+        if i >= shift and haystack[i - shift : i - shift + len(needle)] == needle
     ]
     if len(starts) != 1:
         raise ValueError(
             f"{chapter}:{verse}: cue {phrase!r} has {len(starts)} matches; "
             "supply a longer unique cue"
         )
-    return starts[0], starts[0] + len(needle) - 1
+    return atom_positions[starts[0]], atom_positions[starts[0] + len(needle) - 1]
 
 
 def positions(verses):

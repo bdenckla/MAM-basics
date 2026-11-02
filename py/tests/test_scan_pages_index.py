@@ -63,6 +63,10 @@ def test_censused_books_agree_with_independent_simple_export():
                         for node in verse["contents"]:
                             if node["type"] in {"text", "kq-trivial"}:
                                 parts.append(node["text"])
+                            elif node["type"] == "slh-word":
+                                for child in node["contents"]:
+                                    assert child["type"] in {"text", "letter-small"}
+                                    parts.append(child["text"])
                             elif node["type"] == "kq":
                                 assert sorted(
                                     child["type"] for child in node["contents"]
@@ -96,11 +100,18 @@ def test_every_record_edge_resolves_to_its_observed_page():
             if rec["stopc"] is None:
                 continue
             for end in ("start", "stop"):
+                first, _ = text.locate_phrase_span(
+                    text.book_atoms(rec["bkid"]),
+                    rec[f"{end}c"],
+                    rec[f"{end}v"],
+                    rec[f"{end}_phrase"],
+                    anchor=end,
+                )
                 hits = lookup.resolve(
                     index,
                     rec["bkid"],
-                    rec[f"{end}c"],
-                    rec[f"{end}v"],
+                    first[0],
+                    first[1],
                     rec[f"{end}_phrase"],
                 )
                 assert [hit["page"] for hit in hits] == [rec["page"]]

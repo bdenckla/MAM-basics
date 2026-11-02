@@ -6347,6 +6347,7 @@
       "bkids": [
         "Jonah",
         "Micah",
+        "Nahum",
         "Obadiah"
       ],
       "pages": [
@@ -6356,7 +6357,9 @@
         "547-Jn-Mi.jpg",
         "548-Mi.jpg",
         "549-Mi.jpg",
-        "550-Mi-Na.jpg"
+        "550-Mi-Na.jpg",
+        "551-Na.jpg",
+        "552-Na-Hb.jpg"
       ]
     }
   ],
@@ -6711,15 +6714,30 @@
     {
       "page": "550-Mi-Na.jpg",
       "bkid": "Nahum",
+      "printed_page": 550,
+      "note": "Nahum begins below Micah in the left column; the page ends after the first atom of Nahum 1:6, לפני.",
       "startc": 1,
       "startv": 1,
       "startp": 1,
-      "stopc": null,
-      "stopv": null,
-      "stopp": null,
-      "start_phrase": null,
-      "stop_phrase": null,
-      "note": "seeded by survey: a book starts at 1:1 atom 1"
+      "start_phrase": "משא נינוה ספר חזון נחום",
+      "stopc": 1,
+      "stopv": 6,
+      "stopp": 1,
+      "stop_phrase": "לפני"
+    },
+    {
+      "page": "551-Na.jpg",
+      "bkid": "Nahum",
+      "printed_page": 551,
+      "note": "The running text continues Nahum 1:6 at atom 2 and ends before the final atom of 3:11, מאויב.",
+      "startc": 1,
+      "startv": 6,
+      "startp": 2,
+      "start_phrase": "זעמו מי יעמוד ומי יקום",
+      "stopc": 3,
+      "stopv": 11,
+      "stopp": 9,
+      "stop_phrase": "גם את תבקשי מעוז"
     },
     {
       "page": "552-Na-Hb.jpg",
@@ -6733,6 +6751,20 @@
       "start_phrase": null,
       "stop_phrase": null,
       "note": "seeded by survey: a book starts at 1:1 atom 1"
+    },
+    {
+      "page": "552-Na-Hb.jpg",
+      "bkid": "Nahum",
+      "printed_page": 552,
+      "note": "The first atom completes Nahum 3:11 before 3:12 begins; Nahum ends in the right column above Habakkuk.",
+      "startc": 3,
+      "startv": 11,
+      "startp": 10,
+      "start_phrase": "מאויב",
+      "stopc": 3,
+      "stopv": 19,
+      "stopp": 18,
+      "stop_phrase": "עברה רעתך תמיד"
     },
     {
       "page": "553-Hb-Ts.jpg",

@@ -64,6 +64,11 @@ for a fresh session that has no other context. Its thin pointer issue is #349, f
   edition. The catalogs contain 170 records: twenty completed records and
   150 unread seeds. Ordinary ketiv/qere is supported only when each form
   occupies one atom; phrase lookup uses its qere spelling.
+- 2026-11-02, Nahum batch: six further portions complete Nahum in both
+  editions, bringing coverage to 221 verses in four books per edition.
+  The catalogs contain 174 records: twenty-six completed records and
+  148 unread seeds. Explicit small-letter markup retains the letter within
+  its word. Unique edge cues may span verses on the same page.
 
 ## Codex entry indexes
 
@@ -574,9 +579,10 @@ The census command is `census <edition> <book39> <edge-json>`. Its input is a JS
 array with one entry per body page for that book, in scan order. Each entry has
 `page`, an independently observed integer `printed_page`, `note`, and `start`
 and `stop` arrays shaped `[chapter, verse, "letters-only cue"]`. The chapter
-and verse identify the MAM reference; matching its cue derives the atom number.
-The start uses the cue's first atom and the stop uses its last atom. A cue must
-match uniquely within its verse. Adoption checks all of the book's pages and
+and verse identify the cue's first atom for a start, or last atom for a stop;
+matching the cue derives its atom number. A cue may span neighboring verses,
+but must match uniquely with that endpoint in the given verse and must lie
+entirely within its observed page interval. Adoption checks all of the book's pages and
 its first and last atoms before writing anything. The stored records retain
 both cues; the input need not become a second tracked copy.
 
@@ -592,7 +598,9 @@ The first-phase text projection accepts Scripture strings, the target of a
 legarmeh marker `מ:לגרמיה-2` as a boundary without an atom, and the main
 one-atom form of the modern trivial ketiv/qere template, matching MAM-simple.
 The Micah continuation adds ordinary ketiv/qere when both forms are one atom,
-using the qere spelling at that common position. It rejects multi-atom
+using the qere spelling at that common position. The Nahum continuation adds
+the special-letter word wrapper and small-letter template, retaining their
+Scripture parameter without inserting a word boundary. It rejects multi-atom
 ketiv/qere, other unimplemented templates and named Decalogue strands.
 Extending those cases needs explicit source alignment;
 template names or argument shapes are not grounds for guessing it. An
@@ -690,6 +698,55 @@ page break, the complete-verse boundary at BHL 832/833, all four qere phrases
 in both editions, and idempotent census regeneration. The full suite and
 mega were not run under the focused-check policy. This remains a bounded
 continuation before the large-census review boundary below.
+
+### Nahum continuation, 2026-11-02
+
+All six Nahum portions were read, including four additional original images
+and the shared pages JC 550 and BHL 834. Native-pixel crops verify both page
+edges, the word at 1:3 and the book boundaries. Printed footers were checked
+separately from scan filenames. No image or crop is stored in this repository.
+
+| Edition | Scan filename | Observed printed page | Nahum interval in MAM atom positions |
+|---|---|---|---|
+| `jc1` | `550-Mi-Na.jpg` | 550 | 1:1 atom 1 through 1:6 atom 1 |
+| `jc1` | `551-Na.jpg` | 551 | 1:6 atom 2 through 3:11 atom 9 |
+| `jc1` | `552-Na-Hb.jpg` | 552 | 3:11 atom 10 through 3:19 atom 18 |
+| `bhl` | `0834-Mi-Na.jpg` | 834 | 1:1 atom 1 through 2:3 atom 1 |
+| `bhl` | `0835-Na.jpg` | 835 | 2:3 atom 2 through 3:11 atom 8 |
+| `bhl` | `0836-Na-Hb.jpg` | 836 | 3:11 atom 9 through 3:19 atom 18 |
+
+JC 550 ends with only the first atom of 1:6, `לפני`; JC 552 begins with only
+the last atom of 3:11, `מאויב`. BHL 835 and 836 begin with continuations of
+2:3 and 3:11 although their headers start at 2:4 and 3:12 respectively.
+The Habakkuk portions of JC 552 and BHL 836 remain uncensused.
+
+Nahum 1:3 contains a special-letter word wrapper (`מ:אות-מיוחדת-במילה`)
+with a nested small-letter template (`מ:אות-ק`). Their documented Scripture
+parameter is parameter 1. The reader validates these two explicit schemas and
+recurses into that parameter, joining `ב`, `ס` and `ופה` within one atom,
+`בסופה`. Descriptive fields contribute no text. This follows the existing
+MAM projection definitions and agrees with the independent MAM-simple
+`slh-word` / `letter-small` structure. It makes no inference about the printed
+letter's size. Other unfamiliar templates and multi-atom ketiv/qere still
+refuse explicitly.
+
+BHL 834 ends with the first `כי` of 2:3. That verse contains two occurrences,
+so a one-word cue fails the uniqueness check. Its visible preceding words
+give the unique stop cue `אמץ כח מאד כי`, crossing 2:2 into 2:3. The locator
+now supports such cross-verse cues: a start reference anchors the phrase's
+first atom, and a stop reference anchors its last. Both complete phrase spans
+must remain inside the recorded page. No new record fields or exception to
+unique matching is needed. Phrase lookup anchors its first atom's verse,
+so `lookup Nahum 2:2 "אמץ כח מאד כי" --edition bhl` returns 834;
+`lookup Nahum 2:3 "כי" --edition bhl` still refuses as ambiguous.
+
+All 47 Nahum verses and 558 atoms agree with the independent MAM-simple
+export. Six focused tests passed, now checking every adopted source cue as a
+full position span. Direct checks cover all four within-verse splits,
+qualified lookups, the intact one-atom word at 1:3, a phrase crossing a page
+break, the cross-verse stop cue, repeated short-phrase refusal and idempotent
+census regeneration. The full suite and mega were not run under the ordinary
+focused-check policy. The large-census review boundary below still applies.
 
 **Phase 0 — survey and tracked inventory. DONE, 2026-08-07.** The code is
 `py/main_scan_pages.py` (`survey`, `check`) over `py/scan_pages/`, with the lint at
