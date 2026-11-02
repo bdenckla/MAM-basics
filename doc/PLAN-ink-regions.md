@@ -1,6 +1,6 @@
 # Plan: regions of ink in place of pen strokes, in the manuscript crops
 
-State: live; proposed 2026-11-01, and Ben answered its three decisions the same day; phases 1
+State: paused 2026-11-02, at Ben's word (his section 92); proposed 2026-11-01, and Ben answered its three decisions the same day; phases 1
 to 3 executed 2026-11-01; phase 4 paused after its first round, 2026-11-01, for the re-draft
 that phases 5 to 7 plan, which Ben approved the same day; phases 5 and 6 executed 2026-11-01;
 phase 7 collected Ben's answers to phase 6's sheet; phases 8 to 11, regions from a fitted word,
@@ -8,7 +8,10 @@ proposed 2026-11-02 and approved by Ben the same day, which ended phase 7; phase
 2026-11-02; phases 9 and 10 executed 2026-11-02, in a fresh session; phase 11, Ben's review,
 began the same day in another, and his answers led to phases 12 to 16, the font of the
 manuscript's shapes, proposed 2026-11-02 and approved by Ben the same day, which ended phase 11;
-phase 12 executed 2026-11-02, in a fresh session.
+phase 12 executed 2026-11-02, in a fresh session, and phases 13 and 14 the same day there,
+phase 14 stopping at three failures of its checks, for Ben's report, and committed unfinished
+when the work paused, with phases 15 and 16 not begun; the execution record's "Paused,
+2026-11-02" says what stands and how to resume.
 
 ## Context
 
@@ -1622,3 +1625,154 @@ statements file, is "Ben's decisions", item 11, and decision 35 of the note.
    outline moved along its normal. The thirteen focused tests passed 265, once two comments of
    `glyph_library.py` that `py/tests/test_h_dot_below_nfc.py` caught spelled the marks' names
    with an x.
+
+### Phase 13, 2026-11-02
+
+Entries by the same session, after pushing phase 12 in `49a44184`. The scripts are named
+`p13_*.py`, and the views Claude judged by are in `phase13/`.
+
+1. **The drawn glyphs** (item 1): the library moved to profile 2 (`p13_library.py`), and
+   `regions-derive` made 44 drawn glyphs: 27 dots, 8 strokes, 7 bars, a bent stroke and an
+   inverted V.
+2. **The flaked letters out** (item 2): the trial's yod, nun and pe, groups g7, g6 and g4 of
+   page F102A's על־פני.
+3. **The rest judged** (item 3), each beside its crop's photograph (`phase13/judge-*.png`), and
+   none in doubt: line 4's lamed g32, alef g36, he g29, vav g26, ayin g33, resh g39 and tav
+   g35, and line 2's ḥet g32, mem g21 and final mem g27, each well preserved and well written.
+   The upper part of the tav's left leg is paler, but so is it in both tavs of page F043A's
+   מתחת (`phase13/peek-tavs.png`): a thinner stroke of the scribe's, not fading, which its
+   judgment says.
+4. **Six glyph crops** (item 4), from page F043A's column 2, chosen among each kind's
+   instances by eye beside the page image and each a separate piece of ink at line 4's
+   threshold, 145, except where said (`p13_glyph_crops.py`, the README's table):
+   - the pe of יפרץ, line 11, which has no dagesh; its sheva hangs from its base by one faint
+     pixel, so its lasso stops at the base's foot. The pe of פן, line 10, has a dagesh merged
+     with its tongue, and the pe of page F043A's פני meets the qamats's bar, Ben's junction of
+     section 70;
+   - the nun of סיני and the atom's first yod, line 5; line 4's yod g25 is not clean, its head
+     running into the maqaf of לא־יוכל and its tail a faint hairline;
+   - the kaf of כי, line 5, whose dagesh lies inside it apart from its ink;
+   - the shin of the line's last ואשר, line 22, apart from its shin dot. The shin of וקדשתו,
+     line 7, holds its dot merged in its right head, and that of משה, line 11, meets its mem;
+   - the final nun of ואהרן, line 8, over that of פן, line 10, whose head trails off in a faint
+     hairline.
+   Each lasso keeps a pixel clear of every other sign's ink, a choice of Claude's, which
+   `p13_glyph_crops.py` checks. Their outlines follow their letters
+   (`phase13/crops-outline-*.png`).
+5. **A fault of phase 12, fixed:** a glyph crop's `data-box` was written by a formatter that
+   drops trailing zeros, 1630 as 163, which the check caught; whole numbers are now written as
+   they are.
+
+### Phase 14, 2026-11-02: stopped for Ben's report
+
+Entries by the same session. The scripts are named `p14_*.py`, and the logs, figures and images
+are in `phase14/`. Phases 13 and 14 are not committed: by item 4 and item 6, the failures below
+stopped the phase for a report, and its changes wait in the clone's working tree.
+
+1. **The drafts** (items 1 and 2, `p14_drafts.py`): page F043A's מתחת's rg8 gained its five
+   seeds. In page F102A's מתחת the rafe is group g17, its region rg34 seeded along the bar; one
+   seed let the tav's flood climb through the dark neck between the bar and the tav's head, at
+   x 16 to 21 and y 29 to 31, and take the bar's left end, so the bar has four seeds, one just
+   above the neck, and the tav's rg2 one more in its head below it (`p14_rafe_seeds.py`). An
+   `area` break, Claude's, judged beside the photograph, is on every letter of page F102A's two
+   word crops, all flaked, and on six marks: על־פני's maqaf g3, qamats g8 and silluq g11,
+   faded, and מתחת's atnaḥ g11 and qamats g13, flaked. Line 2, crisp and unflaked, has none.
+   Each glyph was given profile 4's default (`p12_reset_glyphs.py`), except that the flaked ḥet
+   g2 of page F102A's מתחת keeps Taamey D's ḥet, named in phase 9 because the scribe's ḥet
+   cannot shrink to it.
+2. **The fits** (item 3), all six at once: 0.3 to 0.4 minutes a word crop and 1.4 a line crop.
+   `regions-check` found no problem in the library or the crops.
+3. **Ben's readings** (item 4, `p14_figures.py`, output `phase14/figures.txt`). Page F043A's
+   פני: no ink inside the nun's glyph beyond the strip v1; the nun's and the pe's glyphs apart;
+   the qamats's bar and dot apart, but **1.33 pixels apart, not within a pixel**, a failure, the
+   bar turned −18.7° toward the pe's base, against 7.0° in phase 9; the pe's and the bar's
+   glyphs share 4.9 pixels of ink, which lie 0.81 deep inside the shallower, a touch at D = 1.5
+   and not an overlap; the tip at the foot in no glyph. Page F043A's מתחת: the geresh's and the
+   tav's glyphs apart; line 23's lamed overlapping the mem by 30.4 pixels of ink, 1.85 deep,
+   against 37.8 and 2.03 in phase 11's trial; and **the ḥet's glyph, in its right leg's
+   columns, x 91 to 97, reaching y 72.1, against the leg's ink ending at 60.7, and sharing 7.3
+   pixels of ink with the tav's foot, 1.14 deep**, a failure (`p12_het.py`, `phase14/het.txt`).
+   Page F102A's מתחת: the rafe fitted, and no ink above the left tav unexplained.
+4. **The ḥet's leg, tried otherwise** (untracked, `p14_stageb_trial.py`): with stage B giving
+   ink that two stage-A glyphs share to the glyph whose draft holds it, the leg still reaches y
+   72.0, and with the warp's cost also cut to 0.1, y 70.1; and line 23's lamed then only touches
+   the mem, 1.48 and 0.54 deep. Phase 12's cheaper warps alone reached lower still. Guideline 3
+   as built does not shorten the leg.
+5. **The unexplained ink** (item 5), against phase 9's: page F043A's פני 43.3 pixels (86.3),
+   of which 40.0 at x 41.3 to 51, y 69.7 to 80, where the pe's base comes down toward the
+   qamats's bar under the nun, the junction of Ben's section 70, and 4.0 at x 42.7 to 46.3, y
+   87.7 to 90.3, at the bar's right end; its מתחת 7.9 (35.6); line 4 130.2 (187.9), of which
+   114.3 along the top of the kaf g27's roof, a thin bar that the photograph shows standing
+   apart from the roof but for its head, which may be a rafe over that kaf, without dagesh,
+   that the transcription lacks: a reading for Ben; line 2 73.7 (172.4), of which 31.3 the
+   piece below the lamed g30 that Ben approved leaving out; page F102A's על־פני 94.6 (60.0);
+   and its מתחת 139.6 (297.7), of which 82.2 round Taamey D's ḥet and 31.7 of the flaked atnaḥ,
+   whose drawn inverted V lies on one of its two fragments. Overfill: 125.1, 257.6, 596.3,
+   627.9, 369.7 and 307.0 pixels, in the same order.
+6. **D** (item 6): **no depth makes phase 9's three pairs touch while line 23's lamed overlaps
+   the mem**, a failure. The lamed and the mem lie 1.85 deep; line 4's lamed g37 and maqaf g64,
+   26.1 pixels of ink, 2.13; page F102A's מתחת's ḥet g2 and right tav g3, 24.4 pixels, 2.25,
+   and now its left tav g1 and ḥet, 54.7 pixels, 2.90; and that crop's qamats g13, its bar and
+   dot, 26.1 pixels, 1.76. And page F102A's על־פני's lamed g2 and maqaf g3, 14.8 pixels, lie
+   1.56 deep, just past D. D stays 1.5.
+7. **A bend that follows no ink** (the prompt's watch for section 82): the largest warp, 0.126
+   of its size, is on the flaked ḥet of page F102A's מתחת, Taamey D's, whose roof's left end
+   bends down to the flaked fragments of its left leg's top (`phase14/het-F102A.png`). The
+   next, 0.110, on על־פני's flaked yod, follows its ink. Every other glyph's warp is at most
+   0.074, and no other bend shows in the images (`phase14/img/`).
+8. **The library and the six crops' changes, uncommitted:** `doc/pen-stroke-snips/glyphs.svg`,
+   `glyph-crops/` (new), the six region-SVGs and `README.md`; the box fix in
+   `py/pen_stroke/glyph_library.py` and `region_derive.py`; and this record. `regions.html` is
+   not yet rendered again.
+9. **A fault of phase 12 that a review repaired:** origin's `2c990d3d`, of 2026-11-02, gives a
+   library that `regions-derive --copy-taamey-d` makes where none exists the drawn glyphs that
+   profile 2 requires, which phase 12's code left out, and adds
+   `py/tests/test_ink_region_library_bootstrap.py`. It touches no file of phases 13 and 14, and
+   its test's logic passes against their library (`p14_bootstrap_check.py`). The commit of
+   phases 13 and 14 merges it first, and their focused tests add that test.
+
+### Paused, 2026-11-02
+
+Entries by Claude (Opus 5.5), in the session that the commander session started on 2026-11-02 to
+put phase 14's questions to Ben beside their images and then finish phases 14 to 16, in
+`C:/Users/BenDe/GitRepos/MAM-basics`. Ben's sections 88 to 92 are in the statements file.
+
+1. **Ben's word** (section 92). The work made a lot of progress, doing surprisingly well where he
+   expected it to struggle and surprisingly badly elsewhere. Answering questions here and there
+   will not suffice: he has many comments that the questions do not reach, and needs a way to
+   express himself directly on the image, such as dragging the control points of a proposed
+   outline to where he sees the ink or, where it has flaked, infers it. He asks too whether the
+   work on a few small crops needs a wide survey of much more of the manuscript beside it, to
+   learn the average shapes of its letters and marks rather than fit a few instances, and
+   whether that would need AWS or hardware for machine learning. He paused the work: he may take
+   it up again, but it is not his priority.
+2. **What the pause commits:** phases 13 and 14 as they stood: the library under profile 2 with
+   its six glyph crops, the six region-SVGs under profile 4, the fix of a glyph crop's
+   `data-box`, and `regions.html` rendered from them, which the README and
+   `doc/ink-region-representation.md` now describe. Of phase 14's item 7, only the figures in
+   the findings record's update are not done; "Phase 14, 2026-11-02" above holds them.
+   Before this commit, `main` was fast-forwarded to origin's `2c990d3d`, and `1930f749` pushed
+   the README's "Showing images to Ben" (Ben's sections 88 to 91).
+3. **Phase 14's questions went unanswered.** They were put to Ben on one page, each beside its
+   image, untracked: `.novc/pen-stroke-exemplars/review/phase14-questions-2026-11-02.html`,
+   written by `fitted-word/p14_questions_page.py` from `fitted-word/phase14/questions/`. Its
+   first version gave coordinates, which Ben could not use (section 88), and said wrongly that
+   the draft gives the bar of the qamats under the nun of page F043A's פני the ink where the
+   bar meets the pe's base. That ink lies in the pe's draft region, rg2, which the pe's glyph
+   does not reach. The bar's draft lies flat, its ink slanting +1.6° against the pataḥ's −0.2°,
+   so the fit turned the bar to −18.7° by itself, for a reason not yet found. Ben reads the bar
+   as nearly parallel to the pataḥ (section 89).
+4. **A trial for question 5,** untracked (`fitted-word/p14_q5_limbs_trial.py`, output
+   `fitted-word/phase14/q5-limbs/`): with a break of the guideline limbs on the flaked ḥet g2 of
+   page F102A's מתחת, Taamey D's, the ḥet's roof lies straight, and its overlap with the left
+   tav, 2.90 deep, is gone.
+5. **To resume.** What the work becomes next is Ben's to choose, and needs a revision of this
+   plan. Section 92 points two ways: an editor in which he moves a fitted outline's control
+   points over the photograph, each edit kept in the region-SVG as a correction, as his lines
+   are, which might begin from `review/draw-regions.html`, the page on which he drew a cut on
+   2026-11-01; and a survey of many instances of each letter and mark across more of the
+   manuscript, toward glyphs made from many instances, which phase 16 lists among the font's
+   next steps. Only this clone holds the untracked page images, scripts, images and Ben's
+   statements, under `.novc/pen-stroke-exemplars/`. A fresh executor reads Ben's sections 80 to
+   92 there, this plan's "The font of the manuscript's shapes" and its execution record from
+   "Phase 12", and `doc/ink-region-representation.md`, first.

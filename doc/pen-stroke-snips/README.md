@@ -2,7 +2,7 @@
 
 Six crops of the Leningrad Codex, each with its stroke-SVG and its region-SVG; `overlays.html`,
 which draws every stroke-SVG over its crop; `regions.html`, which draws every region-SVG's
-ink in layers; and `glyphs.svg`, the library of glyphs that a region-SVG under profile 3 fits to
+ink in layers; and `glyphs.svg`, the library of glyphs that a region-SVG under profile 4 fits to
 its ink. Since 2026-11-01 the stroke-SVGs and `overlays.html` are a frozen record, and the
 region-SVGs, under [../ink-region-representation.md](../ink-region-representation.md), replace
 the strokes with regions of ink; "The region-SVGs" below says how they were made, and "The
@@ -89,10 +89,32 @@ these is blank, so the count is the same whether blank lines are counted or not.
 Loder's TEI of the codex, at commit `15405046fe811d4e1064a7ebcd7cb92261ce72db`, numbers both
 lines the same and breaks their neighbours where the image does.
 
+## The glyph crops
+
+Each glyph crop in `glyph-crops/` holds one letter of page F043A's column 2, which Claude chose
+on 2026-11-02, by eye beside the page image, as a well-preserved, well-written, clean instance
+of a letter kind of the six crops that had no such glyph in the library (phase 13 of
+[../PLAN-ink-regions.md](../PLAN-ink-regions.md)). Its box is its letter's ink and 6 pixels
+round it. Its lasso, in the library, runs 2 pixels outside the letter's ink and at least a pixel
+clear of every other sign's; the pe's stops at the foot of its base, where its sheva hangs.
+
+| Glyph crop | Letter | Page, column, line | Atom | Verse | Box in the source image |
+| --- | --- | --- | --- | --- | --- |
+| `F043A-pe-1.png` | pe | F043A, 2, 11 | יפרץ | Exodus 19:24 | 2265 1630 2318 1703 |
+| `F043A-nun-1.png` | nun | F043A, 2, 5 | סיני | Exodus 19:23 | 2203 1066 2254 1141 |
+| `F043A-yod-1.png` | yod, the atom's first | F043A, 2, 5 | סיני | Exodus 19:23 | 2240 1065 2270 1117 |
+| `F043A-kaf-1.png` | kaf | F043A, 2, 5 | כי | Exodus 19:23 | 2141 1063 2198 1139 |
+| `F043A-shin-1.png` | shin | F043A, 2, 22 | ואשר, the line's last atom | Exodus 20:3 in MAM, 20:4 in the UXLC | 1657 2681 1727 2745 |
+| `F043A-final-nun-1.png` | final nun | F043A, 2, 8 | ואהרן | Exodus 19:24 | 1606 1357 1637 1434 |
+
+Line 5 is the line below line 4's crop, and line 22 the line of the מתחת crop; lines 8 and 11
+are Claude's count down the column. The pe, of יפרץ, has no dagesh, and the kaf's dagesh lies
+inside it apart from its ink.
+
 ## The source images
 
-Every crop is cut from Sefaria's image without resampling and stored as lossless PNG, its pixels
-unchanged from the decoded JPEG.
+Every crop and glyph crop is cut from Sefaria's image without resampling and stored as lossless
+PNG, its pixels unchanged from the decoded JPEG.
 
 | Page | Source | Size | Pixels | SHA-256 |
 | --- | --- | --- | --- | --- |
@@ -128,14 +150,16 @@ the filled hole in a ring of ink is `paper`.
 
 ## The region-SVGs
 
-Each `<crop>.regions.svg` describes the crop's ink as regions, under profile 3 of
+Each `<crop>.regions.svg` describes the crop's ink as regions, under profile 4 of
 [../ink-region-representation.md](../ink-region-representation.md): level 1 as its stroke-SVG
 has it; regions, each drawn from its seeds by a watershed on the photograph's luminance, which
 are the draft; strips of supplied vellum, overlaps and cuts; supplied ink; the stroke-SVG's
 groups, which now hold regions and overlaps; and a glyph from the library for each written part
-of each fitted sign, fitted to the ink by `regions-fit`, the ink inside which is that sign's.
-All six moved from profile 2 to profile 3 on 2026-11-02; the plan's execution record, "Phase
-9, 2026-11-02", gives what changed in their drafts first.
+of each fitted sign, fitted to the ink by `regions-fit` under the five guidelines of the font of
+the manuscript's shapes, which a group or a glyph may break, the ink inside which is that
+sign's. All six moved from profile 2 to profile 3 on 2026-11-02, and to profile 4 the same day;
+the plan's execution record, "Phase 9, 2026-11-02" and "Phase 14, 2026-11-02", gives what
+changed in their drafts before each fit.
 
 On 2026-11-01 a script of Claude's, not tracked, re-drafted all six under profile 2 from the
 profile-1 drafts below, at the commit where Ben's first answers had been applied to them:
@@ -184,21 +208,26 @@ that names a stroke, sN, names one of the frozen stroke-SVG's.
 
 ## The library of glyphs
 
-`glyphs.svg` holds, on 2026-11-02, 86 glyphs: 13 of the scribe's, and 73 of Taamey D's, one
-for each written part of each kind that the library's table fits. A glyph of the scribe's is the
-ink that its crop's draft gives one group's regions, traced. The first four are the letters
-that the trial of the fitted word used: page F102A's yod, nun and pe, groups g7, g6 and g4 of
-`leningrad-102A-col3-Deut5v6-3L0PNY`, and the lamed of page F043A's line 4, group g32 of
-`leningrad-043A-col2-line4-Ex19v23`. The other nine, one for each other letter kind of the six
-crops with a clean instance, are line 4's alef g36, he g29, vav g26, ayin g33, resh g39 and tav
-g35, and the ḥet g32, mem g21 and final mem g27 of `leningrad-102A-col2-line2-Deut4v42`. Claude
-wrote their ids, kinds and sources; their outlines are derived. The pe touches its own dagesh
-and the maqaf, the nun and the yod each other, and the lamed's head a letter of the line above,
-so none of these four is clean by the profile's rule, and each carries a `data-clean-note`,
-Claude's, saying why it serves even so; the other nine are clean. The kaf, the shin and the
-final nun have no clean instance and no glyph of the scribe's. Taamey D's glyphs are copied
-from `Taamey-D/font-m-TaD/Taamey_D.ttf`, at the SHA-256 that the root records, only when
-`regions-derive` is given `--copy-taamey-d`.
+`glyphs.svg` holds, under profile 2 since 2026-11-02, 133 glyphs: 16 of the scribe's, 44
+drawn, and 73 of Taamey D's, one for each written part of each kind that the library's table
+fits under the region-SVGs' profile 3. Ten of the scribe's are the ink that a crop's draft gives
+one group's regions, traced: the lamed of page F043A's line 4, group g32 of
+`leningrad-043A-col2-line4-Ex19v23`, which the trial of the fitted word used; line 4's alef
+g36, he g29, vav g26, ayin g33, resh g39 and tav g35; and the ḥet g32, mem g21 and final mem
+g27 of `leningrad-102A-col2-line2-Deut4v42`. The lamed's head touches a letter of the line
+above, so it is not clean by the profile's rule, and it carries a `data-clean-note`, Claude's,
+saying why it serves even so; the other nine are clean. The other six are the glyph crops
+above. Each of the sixteen carries `data-judged`, Claude's judgment, made beside the photograph
+on 2026-11-02, that it is well preserved and well written. Claude wrote their ids, kinds,
+sources and judgments, and the glyph crops' boxes and lassos; their outlines are derived.
+
+The trial's yod, nun and pe, groups g7, g6 and g4 of `leningrad-102A-col3-Deut5v6-3L0PNY`, left
+the library on 2026-11-02, since their ink has flaked (Ben, section 82 of his statements:
+"Only well-preserved, well written examples should "generalize"!"). The drawn glyphs, one for
+each written part of each fitted kind that has a drawn shape, are made from the library's table
+of five shapes, a dot, a bar, a stroke, munaḥ's bent stroke and atnaḥ's inverted V; their
+outlines are derived. Taamey D's glyphs are copied from `Taamey-D/font-m-TaD/Taamey_D.ttf`, at
+the SHA-256 that the root records, only when `regions-derive` is given `--copy-taamey-d`.
 
 ## Showing images to Ben
 
@@ -222,8 +251,8 @@ From the repository root:
 ./.venv/Scripts/python.exe py/main_pen_stroke.py regions-render
 ```
 
-`regions-derive` derives the library's glyphs of the scribe's first; with `--copy-taamey-d`
-it also copies Taamey D's glyphs afresh. `regions-fit <region-SVG> --page-image <page image>`
+`regions-derive` derives the library's glyphs of the scribe's, from crops and glyph crops, and
+makes its drawn glyphs, first; with `--copy-taamey-d` it also copies Taamey D's glyphs afresh. `regions-fit <region-SVG> --page-image <page image>`
 fits a crop's glyphs, which takes minutes, and only this clone can run it, since the page images
 are untracked, under `.novc/pen-stroke-exemplars/sources/`.
 

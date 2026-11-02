@@ -1466,7 +1466,7 @@ def glyph_crop_glyph(src, snips_dir):
     if (x1 - x0, y1 - y0) != (w, h):
         out.append(
             f"{src.id}: its glyph crop is {w}x{h} pixels, but its box"
-            f" {geo.fmt(x1 - x0, 0)}x{geo.fmt(y1 - y0, 0)}"
+            f" {int(x1 - x0)}x{int(y1 - y0)}"
         )
     pts = list(zip(src.lasso[0::2], src.lasso[1::2]))
     if len(pts) < 3:

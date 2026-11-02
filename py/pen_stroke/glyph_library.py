@@ -868,7 +868,7 @@ def dumps(lib):
             note += f' data-break="{ssvg.esc(s.brk)}"'
         if s.is_glyph_crop:
             note += (
-                f' data-box="{" ".join(geo.fmt(v, 0) for v in s.box)}"'
+                f' data-box="{" ".join(str(int(v)) for v in s.box)}"'
                 f' data-source-sha256="{s.source_sha256}"'
                 f' data-lasso="{" ".join(geo.fmt(v, 2) for v in s.lasso)}"'
                 f' data-threshold="{s.threshold}" data-speck-size="{s.speck_size}"'
