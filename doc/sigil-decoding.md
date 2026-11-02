@@ -330,15 +330,18 @@ counts it. The note reads
 `מ"ש: צפיו קרי (=מסורת-לד, ואילו מסורת-א=ל' וחס') והצד"י רבתי`, and the comma visible in it is
 the sentence comma before `ואילו`, not the one Avi says is missing.
 
-**The corpus still writes it without the comma, and the table above deliberately does not.**
-Measured 2026-08-27: MAM-parsed `0128e69` has `מסורת-לד`, and so does the Wikisource-side input
-tracked here at `in/mam-ws/C1-Isaiah.json`, so the missing comma is MAM's rather than something
-MAM-parsed introduced. Anyone re-deriving the two rows from the corpus alone will therefore get
-`ל` 139, `ד` 5 and `לד` 1 — the figures this file carried on the morning of 2026-08-27 — and
-that gap is the correction, not a measurement error. Whether the comma is repaired in MAM itself
-was Ben's decision. On 2026-10-29 he had #341 filed, which asks Avi to write `מסורת-ל,ד` here
-and to write Psalms 80:16's run of sigla `אלש1ת` as the list `א,ל,ש1,ת`. Neither edit had been
-made on the wiki when #341 was filed.
+**Until 2026-10-30 the corpus wrote it without the comma, and the table above deliberately does not.**
+Measured 2026-08-27: MAM-parsed `0128e69` had `מסורת-לד`, and so did the Wikisource-side input
+tracked here at `in/mam-ws/C1-Isaiah.json`, so the missing comma was MAM's rather than something
+MAM-parsed introduced. Anyone re-deriving the two rows from the corpus alone then got `ל` 139,
+`ד` 5 and `לד` 1 — the figures this file carried on the morning of 2026-08-27 — and that gap
+was the correction, not a measurement error. Whether the comma is repaired in MAM itself was
+Ben's decision. On 2026-10-29 he had #341 filed, which asks Avi to write `מסורת-ל,ד` here and
+to write Psalms 80:16's run of sigla `אלש1ת` as the list `א,ל,ש1,ת`. Neither edit had been
+made on the wiki when #341 was filed. Avi made both on 2026-10-30, in revisions 3099196 and
+3099197 of Isaiah 56 and revision 3099195 of Psalms 80, and the Wikisource refresh `35c60966`
+of 2026-11-02 brought them into the mirror. The corpus now writes `מסורת-ל,ד` and `א,ל,ש1,ת`,
+so a re-derivation from it reads this site as `ל` and `ד` without the correction.
 
 #### How a qualifier attaches
 

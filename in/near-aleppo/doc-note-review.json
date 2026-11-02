@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "inventory_sha256": "31802241e8789bd58292ae0f245ed0416726ca6b59f6cf5e467d344f7f46ac43",
+  "inventory_sha256": "1b2f3312f158cd4dc42b6f7ed907894a9aa0e3b213474a098d2dd0a90ae0a727",
   "notes": [
     {
       "id": "A1-Genesis 1:1 note 1 נוסח",
@@ -33085,7 +33085,7 @@
       ],
       "note_ordinal": 1,
       "source_template": "נוסח",
-      "source_note_sha256": "6efade5b6d3d6634923b290b9b248b599a486e3f4ce117b5d970bca2171750a6",
+      "source_note_sha256": "707270f804259a8e26f44a342e296c1acd980e6a20de39532af6e50bb38cd53d",
       "original_target": {
         "tmpl_name": "מ:אות-מיוחדת-במילה",
         "tmpl_params": {
@@ -33110,7 +33110,7 @@
         {
           "tmpl_name": "ש"
         },
-        "מ\"ש: צפיו קרי (=מסורת-לד, ואילו מסורת-א=ל' וחס') והצד\"י רבתי. ואית דאמרי \"צופיה הליכות ביתה\" דסוף משלי, ואית דאמרי \"צא אתה וכל העם\", ואית דאמרי \"הצור תמים פעלו\".",
+        "מ\"ש: צפיו קרי (=מסורת-ל,ד; ואילו מסורת-א=ל' וחס') והצד\"י רבתי. ואית דאמרי \"צופיה הליכות ביתה\" דסוף משלי, ואית דאמרי \"צא אתה וכל העם\", ואית דאמרי \"הצור תמים פעלו\".",
         {
           "tmpl_name": "ש"
         },
@@ -33122,7 +33122,7 @@
       ],
       "clauses": [
         "=ל-גדולות ובדפוסים וקורן (אות צד\"י גדולה)",
-        "מ\"ש: צפיו קרי (=מסורת-לד, ואילו מסורת-א=ל' וחס') והצד\"י רבתי. ואית דאמרי \"צופיה הליכות ביתה\" דסוף משלי, ואית דאמרי \"צא אתה וכל העם\", ואית דאמרי \"הצור תמים פעלו\".",
+        "מ\"ש: צפיו קרי (=מסורת-ל,ד; ואילו מסורת-א=ל' וחס') והצד\"י רבתי. ואית דאמרי \"צופיה הליכות ביתה\" דסוף משלי, ואית דאמרי \"צא אתה וכל העם\", ואית דאמרי \"הצור תמים פעלו\".",
         "א,ל,ק,ש1=צֹפָ֞ו (אות רגילה), וכן במקראות גדולות הכתר (והשוו מד, יד).",
         "קורן, ברויאר, סימנים, מכון ממרא"
       ],
@@ -33138,7 +33138,7 @@
       },
       "candidate_clause": 2,
       "proposal_reason": "One literal full-target alternative; semantic review of its suffix and other clauses required.",
-      "evidence_sha256": "fd2b06ccbca5e279684eeb40913f60e38a709388d031383077cad30683669d42",
+      "evidence_sha256": "7dc65ef1dd6f2d56597059f259c3e636a2eef8dacec3f5806fe2288b9543ac31",
       "review": {
         "status": "reviewed",
         "presentation": "recast",
@@ -33152,7 +33152,7 @@
               "=ל-גדולות ובדפוסים וקורן (אות צד\"י גדולה)"
             ],
             [
-              "מ\"ש: צפיו קרי (=מסורת-לד, ואילו מסורת-א=ל' וחס') והצד\"י רבתי. ואית דאמרי \"צופיה הליכות ביתה\" דסוף משלי, ואית דאמרי \"צא אתה וכל העם\", ואית דאמרי \"הצור תמים פעלו\"."
+              "מ\"ש: צפיו קרי (=מסורת-ל,ד; ואילו מסורת-א=ל' וחס') והצד\"י רבתי. ואית דאמרי \"צופיה הליכות ביתה\" דסוף משלי, ואית דאמרי \"צא אתה וכל העם\", ואית דאמרי \"הצור תמים פעלו\"."
             ],
             [
               "קורן, ברויאר, סימנים, מכון ממרא"
@@ -54681,7 +54681,7 @@
       ],
       "note_ordinal": 1,
       "source_template": "נוסח",
-      "source_note_sha256": "e2a119ae32b1f08d30aa498337739c234b6f91e2489a49acfa6cf0244e80c230",
+      "source_note_sha256": "0f33e782bf77520c35730b592bec32bff40f3bdfdb7306ecdd332a0acbd2994d",
       "original_target": {
         "tmpl_name": "מ:דחי",
         "tmpl_params": {
@@ -54691,14 +54691,14 @@
       },
       "near_target": "יִ֭מָּחֽוּ",
       "original_body": [
-        "א?,ל (דחי וקו של געיה להורות על מקום הטעם); הקו קצת נטוי כמרכא אך גם יכול להיות געיה (וכך במג\"ה).",
+        "=א?,ל (דחי וקו של געיה להורות על מקום הטעם); הקו קצת נטוי כמרכא אך גם יכול להיות געיה (וכך במג\"ה).",
         {
           "tmpl_name": "ש"
         },
         "א?=יִ֭מָּח֥וּ (דחי ומרכא?); וכך הכריע ברויאר ובעקבותיו במכון ממרא"
       ],
       "clauses": [
-        "א?,ל (דחי וקו של געיה להורות על מקום הטעם); הקו קצת נטוי כמרכא אך גם יכול להיות געיה (וכך במג\"ה).",
+        "=א?,ל (דחי וקו של געיה להורות על מקום הטעם); הקו קצת נטוי כמרכא אך גם יכול להיות געיה (וכך במג\"ה).",
         "א?=יִ֭מָּח֥וּ (דחי ומרכא?); וכך הכריע ברויאר ובעקבותיו במכון ממרא"
       ],
       "change_causes": [
@@ -54713,7 +54713,7 @@
       },
       "candidate_clause": null,
       "proposal_reason": "No unique plain clause quoting the complete target; retain the source note.",
-      "evidence_sha256": "0284bc10be8a2a620bcda1f244db7cedf15babdcd7cddef9820a59a1c8249f9a",
+      "evidence_sha256": "5fc23e33a045e1d3d8d2e1c27b809ac76f3123db581680f7c52ded794d331176",
       "review": {
         "status": "reviewed",
         "presentation": "framed-mam",
@@ -54722,7 +54722,7 @@
           "near_clause": null,
           "mam_clauses": [
             [
-              "א?,ל (דחי וקו של געיה להורות על מקום הטעם); הקו קצת נטוי כמרכא אך גם יכול להיות געיה (וכך במג\"ה)."
+              "=א?,ל (דחי וקו של געיה להורות על מקום הטעם); הקו קצת נטוי כמרכא אך גם יכול להיות געיה (וכך במג\"ה)."
             ],
             [
               "א?=יִ֭מָּח֥וּ (דחי ומרכא?); וכך הכריע ברויאר ובעקבותיו במכון ממרא"
@@ -56617,7 +56617,7 @@
       ],
       "note_ordinal": 1,
       "source_template": "נוסח",
-      "source_note_sha256": "84dda42230485ca272c27fd1dcf9fb9ff8ec7bcbe87d7d4658b123223e9366fd",
+      "source_note_sha256": "d5065d444d3a4f56e0cd3187d4e767f83f369db6434d0a1b6d2b9f9e6fbc389a",
       "original_target": {
         "tmpl_name": "מ:דחי",
         "tmpl_params": {
@@ -56667,11 +56667,11 @@
         {
           "tmpl_name": "ש"
         },
-        "אלש1ת=וְ֭כַנָּה (אין אות גדולה)"
+        "א,ל,ש1,ת=וְ֭כַנָּה (אין אות גדולה)"
       ],
       "clauses": [
         "=ל-גדולות ומסורה ומ\"ש וקורן (אות כ\"ף גדולה)",
-        "אלש1ת=וְ֭כַנָּה (אין אות גדולה)"
+        "א,ל,ש1,ת=וְ֭כַנָּה (אין אות גדולה)"
       ],
       "change_causes": [
         "template resolution"
@@ -56685,14 +56685,14 @@
       },
       "candidate_clause": 1,
       "proposal_reason": "One literal full-target alternative; semantic review of its suffix and other clauses required.",
-      "evidence_sha256": "ecfcadcac596108c245fc637c0f7ae81f228220fb35af511474b90c9d48071ad",
+      "evidence_sha256": "418427ee40268c243d3234b8fb77bd0b4122cfa7161e43df845d1c9edc709d6b",
       "review": {
         "status": "reviewed",
         "presentation": "recast",
         "reason": "Reviewed literal source agreement: retain the complete source head and suffix; keep all remaining clauses in their original order under MAM's labelled target. This attributes agreement and does not explain near-Aleppo's selection.",
         "proposed_parts": {
           "near_clause": [
-            "=אלש1ת (אין אות גדולה)"
+            "=א,ל,ש1,ת (אין אות גדולה)"
           ],
           "mam_clauses": [
             [

@@ -98,8 +98,8 @@
         "resolved_title": "בראשית יד/טעמים",
         "page_id": 235958,
         "requested_title": "בראשית_יד/טעמים",
-        "revision_id": 2987600,
-        "sha256": "718138cf284e074f31f86bc5f738e38a35b732fff2ba5a186d496ca304e6ea5e"
+        "revision_id": 3099303,
+        "sha256": "fffd375274ce92367718eb61a7827ecdc323e12eaea2f484170a019ca1417a22"
       },
       "טו": {
         "resolved_title": "בראשית טו/טעמים",
@@ -252,8 +252,8 @@
         "resolved_title": "בראשית לו/טעמים",
         "page_id": 236081,
         "requested_title": "בראשית_לו/טעמים",
-        "revision_id": 2987623,
-        "sha256": "030eba23833858d5f5951248bcad36234a17d0c1667c73123756fc4c29bf61c4"
+        "revision_id": 3099490,
+        "sha256": "3124a0fc7aae67aeacf8e8a7cfa35f97de958660b78726a9292269496be81e31"
       },
       "לז": {
         "resolved_title": "בראשית לז/טעמים",
@@ -322,8 +322,8 @@
         "resolved_title": "בראשית מו/טעמים",
         "page_id": 236121,
         "requested_title": "בראשית_מו/טעמים",
-        "revision_id": 2990913,
-        "sha256": "d41b31cd965b3c7fa0e332eacd698211e68c92de23dd574f67fd37646e4aa30f"
+        "revision_id": 3099312,
+        "sha256": "8a3f78de59c169f41bcb223c14180ce1d5faf034a4f82cd748b80a44837e556b"
       },
       "מז": {
         "resolved_title": "בראשית מז/טעמים",
@@ -555,8 +555,8 @@
         "resolved_title": "שמות כט/טעמים",
         "page_id": 236253,
         "requested_title": "שמות_כט/טעמים",
-        "revision_id": 2987665,
-        "sha256": "36bac977029cc36f59bd4eb10be0394de5d2d67552b2467706725fa3238617b8"
+        "revision_id": 3099304,
+        "sha256": "3cdd78d86aa1c120db36b063533795829a7b1ed0364fe183e4106bddc89fe16b"
       },
       "ל": {
         "resolved_title": "שמות ל/טעמים",
@@ -704,8 +704,8 @@
         "resolved_title": "ויקרא י/טעמים",
         "page_id": 236337,
         "requested_title": "ויקרא_י/טעמים",
-        "revision_id": 3085113,
-        "sha256": "d98e2f768c627a8e0b9d320194cf0125231a591e1bbcb3568d9ee418cde575dc"
+        "revision_id": 3099305,
+        "sha256": "3584ccd76bad920160b2ddd7a29ea4400740abd483de6219bfd3cbe3a54d8524"
       },
       "יא": {
         "resolved_title": "ויקרא יא/טעמים",
@@ -1107,8 +1107,8 @@
         "resolved_title": "דברים ד/טעמים",
         "page_id": 236567,
         "requested_title": "דברים_ד/טעמים",
-        "revision_id": 2995296,
-        "sha256": "23c37ac73091ee8d7f4862f5793eb4692626c7bb527dad3ec536aa43121d1dcb"
+        "revision_id": 3099409,
+        "sha256": "bafc9d8028cabfe2423ab793cbc8263bfb5cc80d9f2255a95951c2820e018462"
       },
       "ה": {
         "resolved_title": "דברים ה/טעמים",
@@ -2316,8 +2316,8 @@
         "resolved_title": "מלכים ב יט/טעמים",
         "page_id": 237252,
         "requested_title": "מלכים ב_יט/טעמים",
-        "revision_id": 3008011,
-        "sha256": "1a84f3967c3a9997b1283f1af205e6ded175756c6c722ca1b048625ce5284221"
+        "revision_id": 3099301,
+        "sha256": "755f3f25640a5ea521c34c41ed2fe849a1cfc418495e444ad36ece5466607e94"
       },
       "כ": {
         "resolved_title": "מלכים ב כ/טעמים",
@@ -2752,8 +2752,8 @@
         "resolved_title": "ישעיהו נו/טעמים",
         "page_id": 237525,
         "requested_title": "ישעיהו_נו/טעמים",
-        "revision_id": 2987974,
-        "sha256": "0057da88c8ba33900fc7643bf682029fea386511e6018226e5df8de36ae601e0"
+        "revision_id": 3099197,
+        "sha256": "897fcf2f4184cb54eef3f607d72b1cfa2264514d24bf235222a93e0f721c3304"
       },
       "נז": {
         "resolved_title": "ישעיהו נז/טעמים",
@@ -4196,8 +4196,8 @@
         "resolved_title": "תהלים כה/טעמים",
         "page_id": 238346,
         "requested_title": "תהלים_כה/טעמים",
-        "revision_id": 2988177,
-        "sha256": "1fbecff3ad7470cf880fc24241f5ae6b0e526484686b4d1021f44de3ee73e9d4"
+        "revision_id": 3099306,
+        "sha256": "77d93d17d4b55ef3cd6c6ce170417ac8b47ee59342479121fff2f3533f0c9fac"
       },
       "כו": {
         "resolved_title": "תהלים כו/טעמים",
@@ -4504,8 +4504,8 @@
         "resolved_title": "תהלים סט/טעמים",
         "page_id": 238522,
         "requested_title": "תהלים_סט/טעמים",
-        "revision_id": 2988221,
-        "sha256": "de084667b708d6118efcdf474aa5c72a7adce2be04d18a0bbe351ddcd71c87b5"
+        "revision_id": 3099307,
+        "sha256": "bccdd70f731fb6376acc23bb96c65eb9c24048b02fb60a3279b3117ca1345f89"
       },
       "ע": {
         "resolved_title": "תהלים ע/טעמים",
@@ -4581,8 +4581,8 @@
         "resolved_title": "תהלים פ/טעמים",
         "page_id": 238566,
         "requested_title": "תהלים_פ/טעמים",
-        "revision_id": 2988232,
-        "sha256": "e95fbe7eea4fa849fabd703f64d53758028d034e8bd97af1c5526aae7868ba0d"
+        "revision_id": 3099195,
+        "sha256": "4fe0bb03f45b3b22e8e3d3cc57a721a293d4445dba551371556b3b060e26d7f5"
       },
       "פא": {
         "resolved_title": "תהלים פא/טעמים",
@@ -5704,8 +5704,8 @@
         "resolved_title": "איכה ד/טעמים",
         "page_id": 235987,
         "requested_title": "איכה_ד/טעמים",
-        "revision_id": 3010636,
-        "sha256": "3907c28bbee6e92dc6b9cd6c4b82875859c2d57c345ddbfc45baf468e5778cd0"
+        "revision_id": 3101000,
+        "sha256": "83903a3c3fb8a5563d10e38e04018f7f3fbabaf18082f68a5346447e51a1646f"
       },
       "ה": {
         "resolved_title": "איכה ה/טעמים",
