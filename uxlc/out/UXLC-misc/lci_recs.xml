@@ -47,7 +47,7 @@
         <type-count col-name="stopc" integer="978" none="4" />
         <type-count col-name="stopv" integer="978" none="4" />
         <type-count col-name="stopp" integer="978" none="4" />
-        <type-count col-name="note" none="921" string="61" />
+        <type-count col-name="note" none="892" string="90" />
       </type-counts>
       <bkid-val-counts>
         <bkid-val-count bkid="Genesis" count="61" />
@@ -12496,7 +12496,7 @@
       <stopc>150</stopc>
       <stopv>6</stopv>
       <stopp>6</stopp>
-      <note />
+      <note>column 2 lines 26-27 contain only a short Masorah note concluding the book of Psalms</note>
     </lci_rec>
     <lci_rec>
       <page>397A</page>
@@ -13126,7 +13126,7 @@
       <stopc>17</stopc>
       <stopv>2</stopv>
       <stopp>6</stopp>
-      <note />
+      <note>both columns have 26 lines</note>
     </lci_rec>
     <lci_rec>
       <page>415B</page>
@@ -13141,7 +13141,7 @@
       <stopc>18</stopc>
       <stopv>16</stopv>
       <stopp>2</stopp>
-      <note />
+      <note>both columns have 26 lines</note>
     </lci_rec>
     <lci_rec>
       <page>416A</page>
@@ -13351,7 +13351,7 @@
       <stopc>3</stopc>
       <stopv>13</stopv>
       <stopp>11</stopp>
-      <note />
+      <note>all 3 columns have 26 lines</note>
     </lci_rec>
     <lci_rec>
       <page>422B</page>
@@ -13366,7 +13366,7 @@
       <stopc>4</stopc>
       <stopv>13</stopv>
       <stopp>7</stopp>
-      <note />
+      <note>all 3 columns have 26 lines</note>
     </lci_rec>
     <lci_rec>
       <page>423A</page>
@@ -13381,7 +13381,7 @@
       <stopc>4</stopc>
       <stopv>22</stopv>
       <stopp>8</stopp>
-      <note />
+      <note>all 3 columns have 26 lines</note>
     </lci_rec>
     <lci_rec>
       <page>423A</page>
@@ -13396,7 +13396,7 @@
       <stopc>2</stopc>
       <stopv>5</stopv>
       <stopp>1</stopp>
-      <note />
+      <note>all 3 columns have 26 lines</note>
     </lci_rec>
     <lci_rec>
       <page>423B</page>
@@ -13411,7 +13411,7 @@
       <stopc>4</stopc>
       <stopv>1</stopv>
       <stopp>10</stopp>
-      <note />
+      <note>all 3 columns have 26 lines</note>
     </lci_rec>
     <lci_rec>
       <page>424A</page>
@@ -13426,7 +13426,7 @@
       <stopc>5</stopc>
       <stopv>13</stopv>
       <stopp>4</stopp>
-      <note />
+      <note>all 3 columns have 26 lines</note>
     </lci_rec>
     <lci_rec>
       <page>424B</page>
@@ -13441,7 +13441,7 @@
       <stopc>8</stopc>
       <stopv>1</stopv>
       <stopp>11</stopp>
-      <note />
+      <note>all 3 columns have 26 lines</note>
     </lci_rec>
     <lci_rec>
       <page>425A</page>
@@ -13456,7 +13456,7 @@
       <stopc>8</stopc>
       <stopv>14</stopv>
       <stopp>11</stopp>
-      <note />
+      <note>all 3 columns have 26 lines</note>
     </lci_rec>
     <lci_rec>
       <page>425A</page>
@@ -13471,7 +13471,7 @@
       <stopc>1</stopc>
       <stopv>13</stopv>
       <stopp>1</stopp>
-      <note />
+      <note>all 3 columns have 26 lines</note>
     </lci_rec>
     <lci_rec>
       <page>425B</page>
@@ -13486,7 +13486,7 @@
       <stopc>2</stopc>
       <stopv>16</stopv>
       <stopp>17</stopp>
-      <note />
+      <note>all 3 columns have 26 lines</note>
     </lci_rec>
     <lci_rec>
       <page>426A</page>
@@ -13501,7 +13501,7 @@
       <stopc>2</stopc>
       <stopv>24</stopv>
       <stopp>9</stopp>
-      <note />
+      <note>all 3 columns have 26 lines</note>
     </lci_rec>
     <lci_rec>
       <page>426A</page>
@@ -13516,7 +13516,7 @@
       <stopc>3</stopc>
       <stopv>2</stopv>
       <stopp>1</stopp>
-      <note />
+      <note>all 3 columns have 26 lines</note>
     </lci_rec>
     <lci_rec>
       <page>426A</page>
@@ -13531,7 +13531,7 @@
       <stopc>3</stopc>
       <stopv>6</stopv>
       <stopp>1</stopp>
-      <note />
+      <note>all 3 columns have 26 lines</note>
     </lci_rec>
     <lci_rec>
       <page>426A</page>
@@ -13546,7 +13546,7 @@
       <stopc>3</stopc>
       <stopv>9</stopv>
       <stopp>1</stopp>
-      <note />
+      <note>all 3 columns have 26 lines</note>
     </lci_rec>
     <lci_rec>
       <page>426A</page>
@@ -13561,7 +13561,7 @@
       <stopc>3</stopc>
       <stopv>13</stopv>
       <stopp>11</stopp>
-      <note />
+      <note>all 3 columns have 26 lines</note>
     </lci_rec>
     <lci_rec>
       <page>426B</page>
@@ -13576,7 +13576,7 @@
       <stopc>4</stopc>
       <stopv>13</stopv>
       <stopp>6</stopp>
-      <note />
+      <note>all 3 columns have 26 lines</note>
     </lci_rec>
     <lci_rec>
       <page>427A</page>
@@ -13591,7 +13591,7 @@
       <stopc>5</stopc>
       <stopv>19</stopv>
       <stopp>2</stopp>
-      <note />
+      <note>all 3 columns have 26 lines</note>
     </lci_rec>
     <lci_rec>
       <page>427B</page>
@@ -13606,7 +13606,7 @@
       <stopc>7</stopc>
       <stopv>17</stopv>
       <stopp>5</stopp>
-      <note />
+      <note>all 3 columns have 26 lines</note>
     </lci_rec>
     <lci_rec>
       <page>428A</page>
@@ -13621,7 +13621,7 @@
       <stopc>8</stopc>
       <stopv>14</stopv>
       <stopp>5</stopp>
-      <note />
+      <note>all 3 columns have 26 lines</note>
     </lci_rec>
     <lci_rec>
       <page>428B</page>
@@ -13636,7 +13636,7 @@
       <stopc>9</stopc>
       <stopv>12</stopv>
       <stopp>9</stopp>
-      <note />
+      <note>all 3 columns have 26 lines</note>
     </lci_rec>
     <lci_rec>
       <page>429A</page>
@@ -13651,7 +13651,7 @@
       <stopc>11</stopc>
       <stopv>3</stopv>
       <stopp>11</stopp>
-      <note />
+      <note>all 3 columns have 26 lines</note>
     </lci_rec>
     <lci_rec>
       <page>429B</page>
@@ -13666,7 +13666,7 @@
       <stopc>12</stopc>
       <stopv>1</stopv>
       <stopp>2</stopp>
-      <note />
+      <note>all 3 columns have 26 lines</note>
     </lci_rec>
     <lci_rec>
       <page>429B</page>
@@ -13681,7 +13681,7 @@
       <stopc>12</stopc>
       <stopv>6</stopv>
       <stopp>17</stopp>
-      <note />
+      <note>all 3 columns have 26 lines</note>
     </lci_rec>
     <lci_rec>
       <page>429B</page>
@@ -13696,7 +13696,7 @@
       <stopc>12</stopc>
       <stopv>14</stopv>
       <stopp>14</stopp>
-      <note />
+      <note>all 3 columns have 26 lines</note>
     </lci_rec>
     <lci_rec>
       <page>430A</page>
@@ -14055,7 +14055,7 @@
       <startp>6</startp>
       <stopc>3</stopc>
       <stopv>6</stopv>
-      <stopp>10</stopp>
+      <stopp>8</stopp>
       <note />
     </lci_rec>
     <lci_rec>
@@ -14067,7 +14067,7 @@
       <bkid>Daniel</bkid>
       <startc>3</startc>
       <startv>6</startv>
-      <startp>11</startp>
+      <startp>9</startp>
       <stopc>3</stopc>
       <stopv>22</stopv>
       <stopp>6</stopp>
@@ -14191,7 +14191,7 @@
       <stopc>8</stopc>
       <stopv>4</stopv>
       <stopp>3</stopp>
-      <note />
+      <note>column 1 has 28 lines</note>
     </lci_rec>
     <lci_rec>
       <page>444B</page>
@@ -14206,7 +14206,7 @@
       <stopc>8</stopc>
       <stopv>27</stopv>
       <stopp>10</stopp>
-      <note />
+      <note>column 3 has 28 lines</note>
     </lci_rec>
     <lci_rec>
       <page>445A</page>
