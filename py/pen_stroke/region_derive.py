@@ -745,8 +745,8 @@ def _order_regions(order, regs, masks):
         return sorted(regs, key=lambda r: rows[r])
     if order == glib.RIGHT_TO_LEFT:
         return sorted(regs, key=lambda r: -cols[r])
-    if order == glib.BAR_AT_RIGHT:
-        bar = max(regs, key=lambda r: cols[r])
+    if order == glib.BAR_AT_LEFT:
+        bar = min(regs, key=lambda r: cols[r])
         return [bar] + sorted((r for r in regs if r != bar), key=lambda r: rows[r])
     raise ValueError(f"unknown order {order!r}")
 

@@ -5,7 +5,7 @@ to 3 executed 2026-11-01; phase 4 paused after its first round, 2026-11-01, for 
 that phases 5 to 7 plan, which Ben approved the same day; phases 5 and 6 executed 2026-11-01;
 phase 7 collected Ben's answers to phase 6's sheet; phases 8 to 11, regions from a fitted word,
 proposed 2026-11-02 and approved by Ben the same day, which ended phase 7; phase 8 executed
-2026-11-02; phases 9 to 11 to run in a fresh session.
+2026-11-02; phase 9 executed 2026-11-02, in a fresh session, which goes on to phases 10 and 11.
 
 ## Context
 
@@ -1136,3 +1136,107 @@ to execute phases 8 to 11, from `C:/Users/BenDe/GitRepos/MAM-basics` at `24a393d
    profile-2 region-SVGs so.
 9. **Phases 9 to 11 run in a fresh session,** since this session's context passed half; it wrote
    the prompt for the commander session.
+
+### Phase 9, 2026-11-02
+
+Entries by Claude (Opus 5.5), in the session that the commander session started on 2026-11-02
+to execute phases 9 to 11, from `C:/Users/BenDe/GitRepos/MAM-basics` at `a411c507`, of which
+`f9630ff0` is an ancestor. Its untracked scripts, logs and images are in
+`.novc/pen-stroke-exemplars/fitted-word/`, the scripts named `p9_*.py` and the rest in `phase9/`.
+
+1. **The drafts changed before the library grew** (`p9_drafts.py`), so that each crop was fitted
+   with the glyphs it keeps:
+   - in page F043A's פני, the tip at the crop's foot (item 3) left the silluq's region rg12 for a
+     region rg16 and a group g10 of its own, an unidentified letter of the line below, and the
+     root gained line 21's text, the UXLC's atom 6 of Exodus 20:4, copied by script from round
+     3's extract; in the page image the tip is the top of that atom's first letter;
+   - in page F043A's מתחת, Claude's ov1, c4 and v1 were dropped, as profile 3's item 4 says, and
+     line 23's lamed, g18, has `data-fit="yes"`;
+   - in page F102A's על־פני, the script's strips v3, between the maqaf and the pe, and v4,
+     between the nun and the yod, were dropped. Claude reads "dropped where the glyphs make them
+     unneeded" as dropped where both signs a strip divides are fitted, since their glyphs then
+     divide the ink there. The other strips of the script's, line 4's v1 to v3, line 2's v1 and
+     page F102A's v1 and v2, each divide ink of which one side at least is not fitted, and are
+     kept. Ben's v1 and c12 in page F043A's פני are kept.
+2. **The library grew by nine glyphs of the scribe's** (item 2, `p9_library.py`), one for each
+   letter kind of the six crops with a clean instance and no glyph yet. Claude chose each by eye,
+   beside the photograph, as complete and typical, and between equals took page F043A's line 4,
+   the page of the two crops Ben has read:
+   - from line 4, `leningrad-043A-col2-line4-Ex19v23`: the alef g36, since g24's diagonal is pale
+     at its top; the he g29, the vav g26, the ayin g33, the resh g39 and the tav g35, each over
+     line 2's equal; the tav also over g1 of page F043A's מתחת, a crop of Ben's readings;
+   - from line 2, `leningrad-102A-col2-line2-Deut4v42`: the ḥet g32, since g19's left leg thins;
+     and the mem g21 and the final mem g27, the only clean ones;
+   - page F102A's מתחת has a clean tav and ḥet, g1 and g2, both badly flaked, and page F043A's
+     מתחת a clean vav, g16, only a sliver of another word's vav at the crop's edge: none serves.
+   The kaf, the shin and the final nun have no clean instance, so they keep Taamey D's glyphs.
+   Dropping v3 and v4 left three of the trial's letters touching another sign where the
+   watershed divides them: the nun and the yod each other, for 14 samples at x 69.3 to 74, y 75
+   to 76, and the pe the maqaf, for 19 samples, besides its dagesh. Their `data-clean-note`s say
+   so, and the ink of the yod, the nun and the pe grew by 2.8, 2.1 and 3.4 pixels.
+3. **The fits** (item 1), all run before any was looked at, six at once and later three at once,
+   so their times are longer than one fit alone takes: page F043A's פני 0.3 minutes and מתחת
+   0.4, page F102A's על־פני 0.4 and מתחת 0.3, line 4 1.2 and line 2 1.1. No fit came near 30
+   minutes.
+4. **Corrections of the drafts that the fits showed** (`p9_drafts2.py`), each crop then fitted
+   again:
+   - line 4's atom העם: the ayin g30 had a seed in its left arm only, so the watershed gave its
+     right arm and base to the final mem g31, whose glyph the fit then put on the ayin, and the
+     ayin's on the final mem, leaving 679.4 pixels of the final mem's draft unexplained. Its
+     region rg72 gained seeds in the right arm, where it meets the base, along the base, and
+     near where the base touches the final mem; afterwards each glyph lies on its letter, and
+     4.6 pixels of the ayin's ink are unexplained;
+   - line 2's qamats g50 held a third region, rg84, the top of a letter of line 3 that the crop's
+     foot cuts, so the qamats was not fitted; rg84 is now a group of the line below, g65, and
+     the qamats is fitted;
+   - page F102A's על־פני: the pe's qamats g8 had one seed in the faint left end of its bar and
+     the other in the rest of the bar, which also took the dot, so the fit put the bar's glyph
+     on the faint end and stretched the dot's over the bar, and left the dot unexplained. The
+     bar's region rg30 now has both seeds in the bar and rg31 one in the dot; afterwards 8.6
+     pixels at the bar's faint left end are unexplained.
+5. **A glyph named in place of the library's first:** page F102A's מתחת's ḥet g2 is fitted with
+   Taamey D's ḥet. That ḥet is flaked and about 33 pixels wide, against 46 for line 2's g32,
+   and the fit's limit of 0.15 on a scale lets the scribe's ḥet shrink only to about 40, so its
+   glyph took the left tav's right leg as an overlap of glyphs, and 91.3 pixels of the ḥet's
+   ink were unexplained. With Taamey D's, 68.9 are, but its right leg reaches the right tav's
+   foot, item 9.
+6. **A ḥataf pataḥ's bar is matched at the left of its dots.** Phase 8's table matched the
+   rightmost region of a ḥataf pataḥ to its bar, but the only one in the six crops, under line
+   4's ayin of the atom לעלת, writes its two dots at the right of the bar; so the fit put a
+   dot's glyph on the bar and the bar's on a dot. `glyph_library.py` and `region_derive.py` now
+   take the leftmost region as the bar, and line 4 was fitted again; afterwards each glyph lies
+   on its own part, and none of the sign's ink is unexplained.
+7. **Ben's readings as checks** (item 4) all hold, by `p9_figures.py`, whose output is
+   `phase9/figures-final.txt`. Page F043A's פני: no ink inside the nun's glyph beyond the strip
+   v1, 0.0 pixels; the pe's and the nun's glyphs apart; the qamats's bar and dot apart, 0.67
+   pixels from each other; the pe's and the bar's glyphs touching with no overlap; and the tip at
+   the foot in no glyph. Page F043A's מתחת: the geresh's and the tav's glyphs share 1.7 pixels of
+   ink, whose sample deepest inside both lies 0.50 pixels inside the shallower, so they only
+   touch; and line 23's lamed overlaps the mem, 214.2 pixels of ink, 6.59 pixels deep.
+8. **Without c4 and with it,** for phase 10 to show. An untracked copy of page F043A's
+   מתחת with c4 kept, `phase9/c4/`, fitted the same way: the lamed's head overlaps the mem by
+   41.0 pixels of ink, 2.16 deep, its glyph crosses c4 by 4.68 pixels, which the check reports,
+   and no ink below the head is unexplained. Without c4, as the tracked file has it, the head
+   lies far deeper in the mem's base, and 30.4 pixels of dark ink below it, at x 160.7 to
+   166.7, y 85.7 to 91.3, are unexplained. Both are overlaps at D = 1.5.
+9. **Overlaps of glyphs where the signs only touch,** a finding. At D = 1.5 three pairs of signs
+   that only touch, by Ben's sections 63, 64 and 69, are overlaps: line 4's lamed g37 and
+   maqaf g64 in the chanted word אל־הר, the maqaf wholly inside the library's lamed's hook,
+   30.2 pixels of ink, 2.39 deep; page F102A's מתחת's ḥet g2 and tav g3, 37.2 pixels, 2.71
+   deep; and that crop's qamats g13, its bar and dot, 26.1 pixels, 1.82 deep. A D above 2.71
+   would make all three touch and keep the overlap of the fit without c4, 6.59, but would make
+   the fit with c4 a touch, 2.16. So D rests on the fit without c4: no D both makes the three
+   touch and keeps the fit with c4 an overlap. A second glyph of a kind, such as a lamed with a
+   smaller hook, is for Ben to choose after phase 11.
+10. **Unexplained ink of note,** each listed by the check: line 4's kaf, Taamey D's, 124.1
+   pixels along the top of its roof; page F043A's פני's pe, 45.7 pixels at its top, as in phase
+   8; page F102A's מתחת's left tav g1, 134.2 pixels at x 10 to 38, y 23 to 30, a dark stroke
+   above the roof that no glyph explains, which is the roof or a mark of its own by Ben's reading,
+   not Claude's; and line 2's alef g29, 51.2 pixels in four pieces, and lamed g30, 31.9.
+11. **Groups not fitted:** page F102A's על־פני's g10, the supplied qamats under
+    the nun, which holds no region with ink, and line 2's tevir g46, which the table does not
+    fit; and, by the table, every masora circle, stray mark and unidentified letter or mark.
+12. **The figures** (item 5) are in the findings record's update, entry "Regions from a fitted
+    word: the six crops fitted". Afterwards `derive`, `check` and `render` left the six
+    stroke-SVGs and `overlays.html` byte-identical, and `regions-check` found no problem in the
+    library or the six crops.

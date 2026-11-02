@@ -546,3 +546,47 @@ profile 3. The plan's execution record, "Phase 8, 2026-11-02", gives every figur
 
 Effective State of the base, 2026-11-02: as the previous entry gives it, with the tool of profile
 3 built and the six region-SVGs still at profile 2.
+
+## Regions from a fitted word: the six crops fitted, 2026-11-02
+
+Claude (Opus 5.5), phase 9 of `doc/PLAN-ink-regions.md`. All six region-SVGs are at profile 3,
+and the library `doc/pen-stroke-snips/glyphs.svg` has 13 glyphs of the scribe's: the trial's
+four, and an alef, a he, a vav, an ayin, a resh and a tav from page F043A's line 4, and a ḥet,
+a mem and a final mem from page F102A's line 2. The plan's execution record, "Phase 9,
+2026-11-02", gives every change and its reason; in short:
+
+1. **Ben's readings of page F043A's two crops all hold.** In its פני, no ink lies inside the
+   nun's glyph beyond his strip; the nun's and the pe's glyphs are apart; the pe's and the
+   qamats's bar's touch with no overlap; the bar lies 0.67 pixels from its dot; and the tip at
+   the crop's foot, now a group of line 21's, is in no glyph. In its מתחת, the geresh's and the
+   tav's glyphs only touch, and line 23's lamed overlaps the mem by 214.2 pixels of ink.
+2. **Three drafts needed seeds or groups that the fits showed:** line 4's ayin of the atom העם,
+   whose arm and base the watershed had given the final mem; a tip of line 3's in a qamats of
+   line 2; and the seeds of the pe's qamats in page F102A's על־פני. And phase 8's table took a
+   ḥataf pataḥ's bar to be at the right of its dots; the only one in the six crops, in line 4,
+   writes it at the left, and the table now does.
+3. **Three overlaps of glyphs are false:** line 4's lamed and maqaf in the chanted word אל־הר,
+   and in page F102A's מתחת the ḥet and the tav, and a qamats's bar and dot, each 1.82 to 2.71
+   pixels deep against the depth of 1.5 that phase 8 set. A depth above 2.71 would make all
+   three touch and keep the lamed's head of page F043A's מתחת an overlap as the fit without
+   Claude's cut c4 places it, 6.59 deep, but not as an untracked fit with c4 kept places it,
+   2.16 deep.
+4. **Where the library has no fitting glyph:** the kaf, which has no clean instance, leaves the
+   top of its roof unexplained in Taamey D's glyph; and the flaked ḥet of page F102A's מתחת is
+   narrower than any ḥet the fit can shrink to, so it takes Taamey D's.
+
+| Crop | Glyphs, the scribe's | Fitted groups | Draft regions | Overlaps of glyphs | Overfill | Unexplained ink | Fit, minutes |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| `leningrad-043A-col2-Ex20v2-PNY` | 11, 3 | 9 | 12 | none | 261.2 | 86.3 | 0.3 |
+| `leningrad-043A-col2-Ex20v3-MFXF` | 13, 5 | 12 | 19 | the lamed and the mem, 214.2 | 284.6 | 35.6 | 0.4 |
+| `leningrad-043A-col2-line4-Ex19v23` | 40, 16 | 33 | 91 | the lamed and the maqaf, 30.2 | 723.6 | 187.9 | 1.2 |
+| `leningrad-102A-col2-line2-Deut4v42` | 39, 15 | 31 | 80 | none | 870.3 | 172.4 | 1.1 |
+| `leningrad-102A-col3-Deut5v6-3L0PNY` | 15, 5 | 13 | 28 | none | 257.4 | 60.0 | 0.4 |
+| `leningrad-102A-col3-Deut5v7-MFXF` | 14, 3 | 13 | 18 | the ḥet and the tav, 37.2; a qamats's bar and dot, 26.1 | 411.2 | 297.7 | 0.3 |
+
+Areas are in square crop pixels. Unexplained ink is every sample of a fitted group's draft that
+lies inside no glyph and more than 1.3 pixels from one; `regions-check` lists its pieces of a
+pixel or more. Each fit ran beside others, so its time is longer than it would be alone.
+
+Effective State of the base, 2026-11-02: as the previous entry gives it, with the six
+region-SVGs at profile 3, fitted, for Ben's review.

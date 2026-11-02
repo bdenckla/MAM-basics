@@ -56,11 +56,11 @@ LABEL_SIZE = 2.5
 
 # How a group's regions are matched to its kind's written parts, in the table's
 # order: by the mean row of each region's ink, or by its mean column from the
-# right, or the rightmost region first and the rest by mean row.
+# right, or the leftmost region first and the rest by mean row.
 TOP_TO_BOTTOM = "top to bottom"
 RIGHT_TO_LEFT = "right to left"
-BAR_AT_RIGHT = "the bar at the right, then top to bottom"
-ORDERS = (TOP_TO_BOTTOM, RIGHT_TO_LEFT, BAR_AT_RIGHT)
+BAR_AT_LEFT = "the bar at the left, then top to bottom"
+ORDERS = (TOP_TO_BOTTOM, RIGHT_TO_LEFT, BAR_AT_LEFT)
 
 _HIRIQ = "HEBREW POINT HIRIQ"
 _PATAH = "HEBREW POINT PATAH"
@@ -108,10 +108,11 @@ _MARK_GLYPHS = {
     "qamats vowel": Entry((Part("bar", _PATAH), Part("dot", _HIRIQ))),
     "ḥolam dot": _one("HEBREW POINT HOLAM"),
     "qubuts vowel": _dots("top dot", "middle dot", "bottom dot"),
-    # A bar and, beside it, the two dots of a sheva.
+    # A bar and, to its right, the two dots of a sheva, as page F043A's line 4 writes
+    # the only one in the six crops.
     "ḥataf pataḥ vowel": Entry(
         (Part("bar", _PATAH), Part("top dot", _HIRIQ), Part("bottom dot", _HIRIQ)),
-        BAR_AT_RIGHT,
+        BAR_AT_LEFT,
     ),
     "dagesh mark": _one("HEBREW POINT DAGESH OR MAPIQ"),
     "shuruq dot": _one("HEBREW POINT DAGESH OR MAPIQ"),
