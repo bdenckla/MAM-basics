@@ -290,7 +290,7 @@ _RECORD_35 = {
     "img": "Jer3v12.png",
     "dubious early mtg": _UNCLEAR,
     "initial-remark": "MAM notes with surprise that Mechon Mamre has meteg on qof.",
-    "further-remarks": ["MAM’s note is ממ!=@וְקָֽרָאתָ֩#"],
+    "further-remarks": ["MAM’s note is מכון ממרא!=@וְקָֽרָאתָ֩#"],
     "MAM-word": "וְֽקָרָ֩אתָ֩",
     "MAM-status": _MAM_STATUS_CNN_FIXED_LONG_AGO,
 }
