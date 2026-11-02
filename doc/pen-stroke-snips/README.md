@@ -128,11 +128,14 @@ the filled hole in a ring of ink is `paper`.
 
 ## The region-SVGs
 
-Each `<crop>.regions.svg` describes the crop's ink as regions, under profile 2 of
+Each `<crop>.regions.svg` describes the crop's ink as regions, under profile 3 of
 [../ink-region-representation.md](../ink-region-representation.md): level 1 as its stroke-SVG
-has it; regions, each drawn from its seeds by a watershed on the photograph's luminance; strips
-of supplied vellum, overlaps and cuts; supplied ink; and the stroke-SVG's groups, which now hold
-regions and overlaps.
+has it; regions, each drawn from its seeds by a watershed on the photograph's luminance, which
+are the draft; strips of supplied vellum, overlaps and cuts; supplied ink; the stroke-SVG's
+groups, which now hold regions and overlaps; and a glyph from the library for each written part
+of each fitted sign, fitted to the ink by `regions-fit`, the ink inside which is that sign's.
+All six moved from profile 2 to profile 3 on 2026-11-02; the plan's execution record, "Phase
+9, 2026-11-02", gives what changed in their drafts first.
 
 On 2026-11-01 a script of Claude's, not tracked, re-drafted all six under profile 2 from the
 profile-1 drafts below, at the commit where Ben's first answers had been applied to them:
@@ -181,16 +184,21 @@ that names a stroke, sN, names one of the frozen stroke-SVG's.
 
 ## The library of glyphs
 
-`glyphs.svg` holds, on 2026-11-02, 77 glyphs: four of the scribe's, the letters that the
-trial of the fitted word used, and 73 of Taamey D's, one for each written part of each kind
-that the library's table fits. A glyph of the scribe's is the ink that its crop's draft gives one
-group's regions, traced: page F102A's yod, nun and pe, groups g7, g6 and g4 of
+`glyphs.svg` holds, on 2026-11-02, 86 glyphs: 13 of the scribe's, and 73 of Taamey D's, one
+for each written part of each kind that the library's table fits. A glyph of the scribe's is the
+ink that its crop's draft gives one group's regions, traced. The first four are the letters
+that the trial of the fitted word used: page F102A's yod, nun and pe, groups g7, g6 and g4 of
 `leningrad-102A-col3-Deut5v6-3L0PNY`, and the lamed of page F043A's line 4, group g32 of
-`leningrad-043A-col2-line4-Ex19v23`. Claude wrote their ids, kinds and sources; their outlines
-are derived. The pe touches its own dagesh, and the lamed's head a letter of the line above, so
-neither is clean by the profile's rule, and each carries a `data-clean-note`, Claude's, saying
-why it serves even so. Taamey D's glyphs are copied from `Taamey-D/font-m-TaD/Taamey_D.ttf`, at
-the SHA-256 that the root records, only when `regions-derive` is given `--copy-taamey-d`.
+`leningrad-043A-col2-line4-Ex19v23`. The other nine, one for each other letter kind of the six
+crops with a clean instance, are line 4's alef g36, he g29, vav g26, ayin g33, resh g39 and tav
+g35, and the ḥet g32, mem g21 and final mem g27 of `leningrad-102A-col2-line2-Deut4v42`. Claude
+wrote their ids, kinds and sources; their outlines are derived. The pe touches its own dagesh
+and the maqaf, the nun and the yod each other, and the lamed's head a letter of the line above,
+so none of these four is clean by the profile's rule, and each carries a `data-clean-note`,
+Claude's, saying why it serves even so; the other nine are clean. The kaf, the shin and the
+final nun have no clean instance and no glyph of the scribe's. Taamey D's glyphs are copied
+from `Taamey-D/font-m-TaD/Taamey_D.ttf`, at the SHA-256 that the root records, only when
+`regions-derive` is given `--copy-taamey-d`.
 
 ## Regenerating
 

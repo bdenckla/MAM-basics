@@ -1,6 +1,6 @@
 # The ink-region representation of a manuscript crop
 
-State: live; the profile of the region-SVGs in `doc/pen-stroke-snips/`: profile 2 implemented on 2026-11-01, to Claude's design, which Ben approved as a plan the same day (decision 27); profile 3, regions from fitted glyphs, implemented on 2026-11-02, to Claude's design, which Ben approved as a plan the same day (decision 29), with no crop yet moved to it; of their details he has so far reviewed how supplied ink is drawn (decision 26)
+State: live; the profile of the region-SVGs in `doc/pen-stroke-snips/`: profile 2 implemented on 2026-11-01, to Claude's design, which Ben approved as a plan the same day (decision 27); profile 3, regions from fitted glyphs, implemented on 2026-11-02, to Claude's design, which Ben approved as a plan the same day (decision 29), with all six crops moved to it the same day; of their details he has so far reviewed how supplied ink is drawn (decision 26)
 
 A crop of a manuscript page can be shown as pixels and read as a Unicode transcription. The
 ink-region representation sits between them. It describes the crop's ink as **regions**, one or
@@ -271,7 +271,10 @@ The derivation, after the draft's eight steps, at the same samples:
 The depth of 1.5 pixels was set on 2026-11-02 from Ben's readings of page F043A's מתחת: the
 geresh and the tav only touch, the deepest sample inside both lying 0.64 pixels inside the
 shallower of the two, and line 23's lamed overlaps the mem, 4.80; a qamats's bar and its dot
-there, 1.04, also only touch. Every strip of vellum and every cut that a profile-3 file keeps
+there, 1.04, also only touch. The fits of all six crops later that day found three pairs of
+signs that only touch lying 1.82 to 2.71 pixels deep, so that D makes them overlaps, a finding
+for Ben's review that the plan's execution record, "Phase 9, 2026-11-02", gives. Every strip of
+vellum and every cut that a profile-3 file keeps
 binds the fit: the strips are vellum before it begins, and the check reports a glyph inside
 which some point of a strip's or a cut's line lies more than a pixel deep. An authored overlap
 or a region of an unfitted group that glyphs take entirely is a problem: it is to be dropped.
@@ -298,7 +301,8 @@ opened, with each id beneath its glyph. Its glyphs are of two sorts:
 A closed table in `py/pen_stroke/glyph_library.py`, keyed by every kind of `level5.py`, gives each
 kind's written parts, each part's name and Taamey D's character for it, and how a group's
 regions are matched to its parts: from top to bottom, from right to left, or the bar first, at
-the right, and then from top to bottom; or it says that the kind is not fitted, and why. The
+the left, and then from top to bottom, as page F043A's line 4 writes its ḥataf pataḥ; or it says
+that the kind is not fitted, and why. The
 module raises if its counts and `PARTS` disagree. A new glyph takes the first of the scribe's
 glyphs for its kind and part, in the library's order, or else Taamey D's; Claude may name
 another in its `data-glyph`, and the fit never chooses by itself.

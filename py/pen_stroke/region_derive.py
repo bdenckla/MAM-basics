@@ -745,8 +745,8 @@ def _order_regions(order, regs, masks):
         return sorted(regs, key=lambda r: rows[r])
     if order == glib.RIGHT_TO_LEFT:
         return sorted(regs, key=lambda r: -cols[r])
-    if order == glib.BAR_AT_RIGHT:
-        bar = max(regs, key=lambda r: cols[r])
+    if order == glib.BAR_AT_LEFT:
+        bar = min(regs, key=lambda r: cols[r])
         return [bar] + sorted((r for r in regs if r != bar), key=lambda r: rows[r])
     raise ValueError(f"unknown order {order!r}")
 
@@ -977,7 +977,10 @@ def _glyph_order(rf, glyphs):
 
     def key(k):
         gl = glyphs[k]
-        g = groups[gl.group]
+        g = groups.get(gl.group)
+        if g is None:
+            # place_glyphs already reports the invalid reference; it has no ink.
+            return (math.inf, math.inf, k)
         names = [p.name for p in glib.entry_of(g.kind).parts]
         n = rsvg.group_number(gl.group)
         part = names.index(gl.part) if gl.part in names else len(names)

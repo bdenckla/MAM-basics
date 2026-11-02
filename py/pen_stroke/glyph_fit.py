@@ -115,10 +115,10 @@ def window_of(polys, width, height, grow=0):
     pts = np.vstack(polys)
     lo, hi = pts.min(0), pts.max(0)
     return (
-        max(0, int(math.floor(lo[0])) - grow),
-        max(0, int(math.floor(lo[1])) - grow),
-        min(width, int(math.ceil(hi[0])) + 1 + grow),
-        min(height, int(math.ceil(hi[1])) + 1 + grow),
+        min(width, max(0, int(math.floor(lo[0])) - grow)),
+        min(height, max(0, int(math.floor(lo[1])) - grow)),
+        max(0, min(width, int(math.ceil(hi[0])) + 1 + grow)),
+        max(0, min(height, int(math.ceil(hi[1])) + 1 + grow)),
     )
 
 
