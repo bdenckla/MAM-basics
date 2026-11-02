@@ -13,6 +13,14 @@ agents, having been on the wrong end of it.
 the remote.** Closing before pushing leaves the issue marked resolved while the fix is still only
 local.
 
+**An issue whose work is a Wikisource edit is done when the saved revision does what the issue
+asks.** That revision is already public, so nothing is left only local. Close the issue once
+the live revision has been checked; do not wait for MAM-basics' mirror to take the revision at
+its next Wikisource refresh, which is routine work of its own. Ben, 2026-11-02, of four such
+closings made while the mirror still lagged (MAM-basics #343, #344, #345 and #354): *"closing
+these issues is not (and should not be, for similar cases in the future) gated by this
+refresh."*
+
 Read what remains before closing. A code move does not resolve an issue; a register citation
 alone does not require an issue to remain open. Preserve issue-specific published-state effects.
 
@@ -55,6 +63,7 @@ alone does not require an issue to remain open. Preserve issue-specific publishe
    common `~/.codex/AGENTS.md` body, so a report names it as one. Claude Code receives that body
    through `~/.claude/CLAUDE.md`.
 
-Apart from the push-before-closing rule, added on 2026-09-22, this section stood in both full
-instruction bodies until 2026-09-14, under the heading "Never change an issue's state without a
-comment saying why". The common body now keeps the pointer to this skill.
+Apart from the push-before-closing rule, added on 2026-09-22, and its exception for Wikisource
+edits, added on 2026-11-02, this section stood in both full instruction bodies until 2026-09-14,
+under the heading "Never change an issue's state without a comment saying why". The common body
+now keeps the pointer to this skill.
