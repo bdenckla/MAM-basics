@@ -1,6 +1,6 @@
 # The ink-region representation of a manuscript crop
 
-State: live; the profile of the region-SVGs in `doc/pen-stroke-snips/`: profile 2 implemented on 2026-11-01, to Claude's design, which Ben approved as a plan the same day (decision 27); profile 3, regions from fitted glyphs, implemented on 2026-11-02, to Claude's design, which Ben approved as a plan the same day (decision 29), with all six crops moved to it the same day; of their details he has so far reviewed how supplied ink is drawn (decision 26)
+State: live; the profile of the region-SVGs in `doc/pen-stroke-snips/`: profile 2 implemented on 2026-11-01, to Claude's design, which Ben approved as a plan the same day (decision 27); profile 3, regions from fitted glyphs, implemented on 2026-11-02, to Claude's design, which Ben approved as a plan the same day (decision 29), with all six crops moved to it the same day; of their details he has so far reviewed how supplied ink is drawn (decision 26); his review of the fitted crops on 2026-11-02 gave decisions 30 to 34 and a plan for the font of the manuscript's shapes, phases 12 to 16 of the plan, which await his approval
 
 A crop of a manuscript page can be shown as pixels and read as a Unicode transcription. The
 ink-region representation sits between them. It describes the crop's ink as **regions**, one or
@@ -115,6 +115,39 @@ his later word.
     ending on his approval. Asked "Approve phases 8 to 11 as written?", Ben answered on
     2026-11-02 "Approve the plan". So profile 3, which "Profile 3: regions from fitted glyphs"
     below gives, was implemented the same day.
+30. **Drawn marks.** Reviewing the fitted crops on 2026-11-02, Ben asked for "our overall
+    strategy of developing a font (or font-like information) that corresponds to the Leningrad
+    manuscript's shapes for letters and diacritics, rather than Taamey D's", whose printed shapes
+    he saw causing small problems. Claude recommended a library in which no glyph comes from a
+    print: first the marks, drawn to the manuscript's shapes; then every letter the scribe's own,
+    from many instances; and later the marks from the scribe's ink too. Ezra SIL's marks were the
+    alternative to the first step. Asked "Should the font's next plan draw the marks to the
+    manuscript's shapes?", Ben answered "Yes, drawn marks".
+31. **Five guidelines, broken per word.** After his comments on the fitted crops, Claude proposed
+    five rules for the font's plan: glyphs only from well-preserved, well-written instances; area
+    preserved where the ink is intact; a letter's limbs following its ink; drawn marks, with
+    munaḥ one curved stroke and geresh a simple bar; and rafe a mark of its own. Ben answered
+    "Yes, write the plan with those five rules. I sort of prefer to call them guidelines since I
+    have a feeling we'll often want to break them, at least on a per-word basis", and of the
+    system: "At the moment I'm conceiving of this system as a fully-automated way to come up
+    with results that will, in most cases, need to be human-tweaked." They are phases 12 to 16
+    of [PLAN-ink-regions.md](PLAN-ink-regions.md), which await his approval.
+32. **Rafe.** Ben: "we are going to need to transcribe rafeh but of course our Unicode sources
+    rarely do so". His expectations, for a later proposal of rafe where the Unicode source has
+    none: "except in very rare cases, a letter with a dagesh is not expected to have a rafeh";
+    "On gutturals that can get mapiq (mainly he but, rarely, alef), rafeh may be somewhat
+    common, to express (no mapiq). But I would expect rafeh never on either ayin or xet." Asked
+    whether the dark stroke above the left tav of page F102A's מתחת is a rafe, he answered "yes
+    it is a rafeh".
+33. **The name "overfill".** Asked what to call the ink that a sign's draft holds outside its
+    glyph but within 1.3 pixels of one, Ben answered "just choose a name; as long as it is fairly
+    unique, we can bulk-change it later if I don't like it". Claude kept "overfill", from his
+    "overfilled", which no other file of the repository uses.
+34. **Line 23's lamed's head.** Shown two fits of line 23's lamed at the mem's base in page
+    F043A's מתחת, Ben preferred the one with Claude's cut c4, "at least as far as the more
+    limited extent of the overlap it proposes, compared to the huge overlap of "without c4"". The
+    plan reaches that placement with seeds in the mem's base rather than the cut, which the
+    lamed's glyph crossed.
 
 ## The file
 

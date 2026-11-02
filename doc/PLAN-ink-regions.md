@@ -5,7 +5,9 @@ to 3 executed 2026-11-01; phase 4 paused after its first round, 2026-11-01, for 
 that phases 5 to 7 plan, which Ben approved the same day; phases 5 and 6 executed 2026-11-01;
 phase 7 collected Ben's answers to phase 6's sheet; phases 8 to 11, regions from a fitted word,
 proposed 2026-11-02 and approved by Ben the same day, which ended phase 7; phase 8 executed
-2026-11-02; phase 9 executed 2026-11-02, in a fresh session, which goes on to phases 10 and 11.
+2026-11-02; phases 9 and 10 executed 2026-11-02, in a fresh session; phase 11, Ben's review,
+began the same day in another, and his answers led to phases 12 to 16, the font of the
+manuscript's shapes, proposed 2026-11-02 for his approval, which will end phase 11.
 
 ## Context
 
@@ -42,6 +44,11 @@ commander session started on 2026-11-01 to try Ben's section 74 of the same stat
 session's trial is untracked; "The fitted word" below gives the design, Evidence items 7 to 11
 the trial's figures, and "Ben's decisions", item 6, his instruction. He has not reviewed the
 design.
+
+Claude (Opus 5.5) added the font of the manuscript's shapes, phases 12 to 16, on 2026-11-02, in
+the session that the commander session started that day for phase 11. Ben asked for it in
+sections 80 to 84 of the same statements file, and "Ben's decisions", items 8 to 10, give his
+words. He has not reviewed the design.
 
 ## Requirements
 
@@ -97,6 +104,28 @@ Each is Ben's, from the statements file named above, and each is active as this 
   what you find in ink-fills".
 - **R15, images label groups** (section 68): "I can't answer your question about g18 because I
   see that labelled on no image. I only see rgN-type images."
+- **R16, the manuscript's shapes, not a print's** (sections 80 and 82): "what is our overall
+  strategy of developing a font (or font-like information) that corresponds to the Leningrad
+  manuscript's shapes for letters and diacritics, rather than Taamey D's?" The marks of the
+  merkha, meteg and tipeḥa family "are straight bars, not curved"; atnaḥ is an inverted V; revia
+  "is best thought of as a circular dot rather than as a diamond"; geresh will be modelled "as a
+  simple bar rather than a curved shape"; and munaḥ is "formed from a single stroke and therefore
+  be curved as it makes the transition".
+- **R17, the ink-fill refined, not replaced** (section 82): "The idea here was to improve on
+  that ink-fill approach, perhaps incorporating it but refining it through the use of
+  letter-shapes and diacritic-shapes."
+- **R18, only good examples generalize** (section 82): "Only well-preserved, well written
+  examples should "generalize"!"
+- **R19, area preserved** (section 82): "in cases where we think most or all ink is still
+  present, our "shape transcription" should approximately preserve area", a dot transcribed "as
+  some kind of ellipse with area equal to the deposited ink and center(s) some how reflecting the
+  "centroid" of that ink".
+- **R20, guidelines, broken per word** (section 84): "I sort of prefer to call them guidelines
+  since I have a feeling we'll often want to break them, at least on a per-word basis"; the system
+  is "a fully-automated way to come up with results that will, in most cases, need to be
+  human-tweaked".
+- **R21, rafe transcribed** (section 82): "we are going to need to transcribe rafeh but of course
+  our Unicode sources rarely do so".
 
 ## What carries over, and what is parked
 
@@ -166,6 +195,24 @@ Ben answered the plan's three decisions on 2026-11-01, after it was pushed in `5
    "Approve phases 8 to 11 as written?", Ben answered on 2026-11-02, by the button labelled with
    his answer, "Approve the plan" (section 77). It is decision 29 of
    `doc/ink-region-representation.md`, and his decision 6 is its decision 28.
+8. **Drawn marks.** In phase 11 Ben asked for a strategy for a font of the manuscript's shapes
+   (R16). Claude recommended a library in which no glyph comes from a print: first the marks,
+   drawn to the manuscript's shapes in place of Taamey D's; then every letter the scribe's own,
+   from many instances; and later the marks from the scribe's ink too, with Ezra SIL's marks as
+   the alternative to the first step. Asked "Should the font's next plan draw the marks to the
+   manuscript's shapes?", Ben answered, by the button labelled with his answer, "Yes, drawn
+   marks" (section 81). It is decision 30 of the note.
+9. **Five guidelines for the font's plan.** After his comments on the fitted crops (sections 82
+   and 83), Claude proposed five rules: glyphs only from well-preserved, well-written instances;
+   area preserved where the ink is intact; a letter's limbs following its ink; drawn marks, with
+   munaḥ one curved stroke and geresh a simple bar; and rafe a mark of its own. Asked "Shall I
+   write the font's plan with these five rules?", Ben answered "Yes, write the plan with those
+   five rules", and asked that they be called guidelines (R20) (section 84). Phases 12 to 16 are
+   that plan. It is decision 31 of the note.
+10. **Phase 11's readings.** The dark stroke above the left tav of page F102A's מתחת "is a
+    rafeh" (section 84), decision 32 of the note. The light grey's name is Claude's to choose
+    (section 84), and Claude keeps "overfill", decision 33. Line 23's lamed's head in page
+    F043A's מתחת is placed as the fit with Claude's cut c4 placed it (section 82), decision 34.
 
 ## The design (Claude's, for Ben's review)
 
@@ -408,7 +455,8 @@ file holds, and its derivation begins with profile 2's, as the draft. What it ad
    5. ink that the draft gave a fitted group but that lies inside no glyph is **overfill** where
       it lies within 1.3 pixels of a glyph: level 1's fill reaching past the sign, such as the
       blur that Ben would not give the qamats's dot of page F043A's פני (section 71). The name
-      comes from his "overfilled" (section 62) and awaits his word. Farther from every glyph,
+      comes from his "overfilled" (section 62); he left it to Claude, who kept it ("Ben's
+      decisions", item 10). Farther from every glyph,
       such ink is unexplained, and the check lists it without failing;
    6. each region, overlap and piece of overfill is traced as in profile 1.
 4. **Authored lines.** Ben's lines stay as they are and bind the fit as well: in page F043A's פני,
@@ -489,6 +537,120 @@ parameters. It ports the trial's `tt_fit.py`, version 3, with its constants:
 
 Each stage is seeded, so a fit run twice on one machine gives the same parameters. On another
 machine the last digits may differ; the check cannot see that, since it never fits.
+
+## The font of the manuscript's shapes (Claude's design, for Ben's review)
+
+Planned on 2026-11-02 by Claude (Opus 5.5), in phase 11, after Ben's comments on the six fitted
+crops. He chose drawn marks and five guidelines ("Ben's decisions", items 8 and 9); he has not
+reviewed this design.
+
+Phase 11 found three things that the fit's glyphs got wrong (the execution record, "Phase 11,
+2026-11-02"):
+
+1. **Flaked letters generalized.** The library's yod, nun and pe were groups g7, g6 and g4 of
+   page F102A's על־פני, whose ink has flaked. They were judged clean but never judged for
+   preservation. Page F043A's פני, well preserved, was fitted with them, so its letters took
+   their notches and bumps, and the ink they left uncovered, black in the images, is ink that Ben
+   reads as legitimate.
+2. **A glyph cannot follow a limb shorter than its own.** The warp moves each of 9 control points
+   at most 12% of a glyph's size: about 6 pixels for the ḥet of page F043A's מתחת, whose glyph's
+   right leg runs 11.9 pixels past the leg's ink and onto the tav's foot. The flag of line 23's
+   lamed likewise runs about 3 pixels past its ink.
+3. **Taamey D's marks have a print's shapes** (R16).
+
+The system gives a first pass, which a person will usually tweak (R20). So the five guidelines
+below are defaults, and any of them may be broken for one word. The derivation of profile 3, its
+check, Ben's lines and the drafts stay as they are. The overlap depth D stays 1.5 until phase 14
+measures it again, since the three false overlaps of phase 9 involve glyphs that change.
+
+### Breaking a guideline
+
+A group or a glyph may carry `data-break`. It names a guideline by its short name below (`preserved`,
+`area`, `limbs`, `drawn` or `rafe`) and says why, whose word it is and when, such as
+`data-break="area: the ink has flaked (Claude, 2026-11-03)"`; several are separated by `; `. The
+fit and the derivation honour each break. The check lists every break as a note, without
+failing, and reports a break that names no guideline or gives no reason. A break is how a tweak
+to one word is written, alongside the corrections that already exist: seeds, `data-glyph`,
+`data-fit="yes"` and Ben's lines. A tweak is Ben's, in words or by drawing, or Claude's on his
+reading.
+
+### Profiles
+
+The region-SVGs move to `data-profile="ink-region 4"`: a letter's `data-fit` holds guideline 3's
+warp of 32 numbers and guideline 2's offset, and a group or glyph may carry `data-break`. The
+library moves to `data-profile="glyph-library 2"`, with a third sort of glyph, the drawn, and
+glyph crops. The reader accepts profiles 3 and 4, so that crops can move one at a time.
+
+### 1. `preserved`: glyphs from well-preserved, well-written instances (R18)
+
+1. Each glyph of the scribe's carries `data-judged`: who judged it, when, and that its instance
+   is well preserved and well written, judged beside the photograph. The check requires it.
+   Claude judges, and brings to Ben any instance in doubt.
+2. The yod, nun and pe of page F102A's על־פני leave the library, and the letters of that crop,
+   flaked, are fitted with well-preserved glyphs.
+3. **Glyph crops.** A new glyph of the scribe's may come from a small crop of one letter, cut from
+   a page image without resampling, as the crops are, and tracked as
+   `doc/pen-stroke-snips/glyph-crops/<page>-<kind>-<n>.png`. Its glyph-source records its box in
+   the page image and the page image's SHA-256; a lasso, a polygon that Claude draws round the
+   letter's ink, leaving out every other sign's; and a threshold, that of its page's line crop.
+   Its outline is the ink inside the lasso darker than the threshold, traced as a region is. It is
+   derived, so the check derives it again. The README's table of sources gains each glyph crop.
+4. A well-preserved letter of a crop may remain its kind's glyph and be fitted with itself, as
+   line 4's letters are. A flaked or faded letter is never a glyph.
+5. A break, `preserved`, lets a glyph not judged well preserved serve one group, for a kind that
+   has no well-preserved instance.
+
+### 2. `area`: area preserved where the ink is intact (R19)
+
+1. A mark's glyph starts as now, from its ink's centroid and second moments. After stage B it is
+   scaled about its centroid, keeping its shape, until its area equals the area of its written
+   part's draft ink. For a dot, that gives R19's ellipse.
+2. A letter's glyph, after stage B, has each point of its outline moved along the outline's normal
+   there by one distance, at most 1.5 pixels either way, chosen so that the glyph's area equals
+   that of its group's draft ink. The distance is written in `data-fit`.
+3. A break, `area`, leaves a group's glyphs as stage B placed them, where its ink has flaked or
+   faded, such as most of page F102A's two crops.
+
+### 3. `limbs`: a letter's limbs follow its ink (R17)
+
+1. Stage B's warp moves 16 control points, on a 4-by-4 grid over the glyph's box, each at most 25%
+   of the glyph's size, at the same cost for each square pixel of movement. So a limb may shorten
+   or lengthen by up to a quarter of the letter's size.
+2. A break, `limbs`, keeps phase 8's warp for one glyph: 9 control points, each moving at most
+   12%.
+
+### 4. `drawn`: marks drawn to the manuscript's shapes (R16)
+
+1. A third sort of glyph, with `data-from="drawn <shape>"`: an outline that `glyph_library.py`
+   makes from a closed table of shapes, each in a unit box, after Ben's descriptions. The fit's
+   move, scales, turn and shear give each instance its place, size, proportions and slant:
+   1. **a dot,** a circle: each dot of a vowel, the dagesh, the shuruq dot, the ḥolam dot, the
+      shin and sin dots, the dots of sof pasuq and zaqef, the dot of tevir, and revia;
+   2. **a bar,** a rectangle with rounded ends, lying flat: pataḥ, the bars of qamats and the
+      ḥataf vowels, maqaf, rafe, and the bars under or over a letter;
+   3. **a stroke,** the same rounded rectangle, standing: meteg and silluq, merkha and tipeḥa,
+      which the fit's turn slants, the stroke of tevir, and geresh, two of them for gershayim;
+   4. **munaḥ's stroke,** one stroke curving through its corner;
+   5. **atnaḥ's inverted V,** two strokes meeting in a rounded top.
+2. The closed table names a shape for each written part in place of Taamey D's character. Tevir
+   becomes a fitted kind, a stroke and a dot.
+3. Darga, pashta, qadma, mahapakh and paseq, which Ben has not described and the six crops do not
+   have, keep Taamey D's glyphs until a crop needs one; that shape is then drawn to his
+   description. So are the kinds that `level5.py` lacks, when a crop first has one: zarqa a
+   shepherd's crook, atnaḥ hafukh a V, and pazer in its manuscript form (section 80).
+4. Taamey D's glyphs stay in the library, and a break, `drawn`, may name one for a group.
+
+### 5. `rafe`: rafe a mark of its own (R21)
+
+1. `level5.py` gains the kind `rafe mark`, HEBREW POINT RAFE, of one written part, a drawn bar.
+2. Page F102A's מתחת: the dark stroke above its left tav, at x 10 to 38 and y 23 to 30, becomes a
+   group of that kind (decision 32 of the note).
+3. Ben's expectations, for a later proposal of rafe where the Unicode source has none (section
+   82): a letter with a dagesh is not expected to have one, except in very rare cases; on he,
+   and rarely alef, without mapiq, rafe "may be somewhat common"; and on ayin and ḥet, never.
+   The note records them; this plan builds no model of them.
+4. A break, `rafe`, records for one word that a bar where a rafe would be expected is something
+   else, or the reverse.
 
 ## Evidence, dated 2026-11-01
 
@@ -650,6 +812,22 @@ code. Areas are in square crop pixels.
   region-SVGs, `regions.html` and the snips README; the representation note; the findings
   record's update; and this plan. Expected unchanged: the six stroke-SVGs, `overlays.html`, every
   product and everything under `Taamey-D/`.
+- **Phases 12 to 16** run in a fresh session that the commander session starts after Ben
+  approves them, and the commit that added them must be `HEAD` or its ancestor. Their focused
+  tests are the twelve above with `py/tests/test_ink_region_glyph_references.py`:
+
+  ```powershell
+  ./.venv/Scripts/python.exe py/main_test.py py/tests/test_pen_stroke_svgs.py py/tests/test_ink_region_svgs.py py/tests/test_glyph_raster.py py/tests/test_ink_region_glyph_references.py py/tests/test_mega_coverage.py py/tests/test_graphviz_version_pin.py py/tests/test_receipt_update_links.py py/tests/test_prose_mark_order.py py/tests/test_h_dot_below_nfc.py py/tests/test_prose_conventions.py py/tests/test_no_machine_paths_in_artifacts.py py/tests/test_tracked_filenames.py py/tests/test_explicit_time_zones.py
+  ```
+
+  Run each `regions-fit` in the background; a word crop took 0.3 to 0.4 minutes in phase 9 and a
+  line crop 1.2, and the finer warp may take longer. Stop and report a crop whose fit takes more
+  than 30 minutes. Expected changed: `py/pen_stroke/level5.py`, `glyph_library.py`,
+  `glyph_fit.py`, the three region modules and `py/main_pen_stroke.py`; the region tests where
+  the new parts need them; `doc/pen-stroke-snips/glyphs.svg`, `glyph-crops/` (new), the six
+  region-SVGs, `regions.html` and the snips README; the representation note; the findings
+  record's update; and this plan. Expected unchanged: the six stroke-SVGs, `overlays.html`, every
+  product and everything under `Taamey-D/`. A new test is differential or lint-shaped only.
 
 ## Phases
 
@@ -881,7 +1059,84 @@ in context, findings in the update and decisions in the note. A reading of one i
 change to where the fit starts, or a line of Ben's; a rule becomes a change to the fit or the
 library, proposed to Ben first (R12). What the font becomes next, such as glyphs of the scribe's
 for marks, several glyphs a kind, or glyphs from other pages, is Ben's to choose after this
-phase, and this plan does not plan it.
+phase. He chose during it: drawn marks and five guidelines, which phases 12 to 16 plan, and
+whose approval ends this phase.
+
+### Phase 12: the guidelines in the code
+
+Phases 12 to 16 run only after Ben has reviewed "The font of the manuscript's shapes" and
+approved them. Read first Ben's sections 80 to 84 of the statements file; the execution record's
+"Phase 11, 2026-11-02"; and phase 11's untracked scripts and images in
+`.novc/pen-stroke-exemplars/fitted-word/`: `p11_lamed_seeds.py`, `p11_grid.py`, `p11_info.py`,
+`fw_draw.py`, `phase10b/` and `phase11/`.
+
+1. **The modules.** Profile 4 and the library's profile 2, as "Profiles" gives them, in
+   `region_svg.py`, `region_derive.py`, `region_render.py`, `glyph_library.py` and
+   `glyph_fit.py`: `data-break`; `data-judged`; glyph crops; the drawn shapes and the table's
+   shape for each written part; guideline 2's stage after stage B; guideline 3's warp; and the
+   kind `rafe mark` in `level5.py`, the table and the region page's names of signs.
+2. **The check** adds: a glyph of the scribe's without `data-judged`; a glyph crop whose outline
+   differs from its derivation, or whose PNG is missing; and a `data-break` that names no
+   guideline or gives no reason. It lists every break as a note.
+3. **The region page** names each group's breaks in its table and its tooltips.
+4. **The note.** `doc/ink-region-representation.md` describes the guidelines, breaks, profile 4
+   and the library's three sorts, and holds decisions 30 to 34.
+5. Verify as "Checkout, Git and verification" gives it, commit and push. No library glyph that a
+   crop uses changes yet: `regions-derive` must leave the six region-SVGs byte-identical, and in
+   `doc/pen-stroke-snips/` only `glyphs.svg`, which gains the drawn glyphs, and `regions.html`
+   change.
+
+### Phase 13: the library
+
+1. **The drawn glyphs,** made from the table.
+2. **The flaked letters out.** The yod, nun and pe of page F102A's על־פני leave the library.
+3. **The rest judged.** Each other glyph of the scribe's is looked at again beside its crop's
+   photograph and given `data-judged`. Any that Claude doubts goes to Ben, in a report that
+   stops the phase.
+4. **Glyph crops** for each letter kind of the six crops with no well-preserved, clean glyph: at
+   least the pe and the nun, from page F043A; the yod, unless line 4's yod g25 is judged
+   well preserved and clean; and the kaf, the shin and the final nun, where page F043A or F102A
+   has a clean, well-preserved instance. Claude chooses each by eye beside the page image, as
+   phase 9 chose, records each choice and why in the execution record, and adds each to the
+   README.
+5. **No commit yet.** A changed glyph keeps the check failing for each crop that uses it until
+   phase 14 fits that crop again, so phases 13 and 14 are committed together.
+
+### Phase 14: the six crops fitted again
+
+1. **Phase 11's readings.** In page F043A's מתחת, the mem's region rg8 gains five seeds in its
+   base, (157.5, 76.5), (162, 78.5), (167, 78.5), (172, 78.5) and (174, 78), as
+   `p11_lamed_seeds.py` gives them (decision 34). In page F102A's מתחת, the stroke above the left
+   tav becomes a rafe group with a region and a seed of its own (decision 32).
+2. **Breaks where the ink has flaked or faded:** `area` on each group whose ink has, chiefly in
+   page F102A's two crops, each judged beside the photograph and recorded.
+3. **Each crop fitted,** in the background, then derived and checked. Claude draws each crop's
+   three panels with `fw_draw.py` and looks at every glyph beside the crop's transcription and
+   photograph. A wrong glyph gets a change to where its fit starts, or a break, each recorded
+   with its reason.
+4. **Ben's readings as checks.** Each figure goes in the execution record, and any that fails
+   stops the phase for a report. Phase 9's item 4, for page F043A's two crops. In page F043A's
+   מתחת: the ḥet's glyph sharing no ink with the tav's foot, and ending within 1.5 pixels of its
+   right leg's ink (section 82); and line 23's lamed overlapping the mem, its figures beside
+   those of phase 11's fit with the mem's new seeds, 37.8 pixels of ink, 2.03 deep. In page
+   F102A's מתחת: the rafe fitted, and no ink above the left tav unexplained.
+5. **The unexplained ink,** each crop's, beside phase 9's, and each piece of a pixel or more in
+   page F043A's פני, which Ben reads as legitimate ink (section 82).
+6. **The depth D,** measured again as phase 8 measured it. If no D makes the three pairs of phase
+   9's item 9 touch while line 23's lamed overlaps the mem, stop and report rather than choose.
+7. **The figures** in the findings record's update, as phase 9 gave them; `regions-render`;
+   verify; commit phases 13 and 14 together, and push.
+
+### Phase 15: show Ben
+
+As phase 10, a few images, each naming every group (R15): the images of `phase10b/` drawn again
+from the new fits; and a sheet of the drawn marks, each beside the scribe's instances of its
+kinds in the six crops. Ask only what the images answer.
+
+### Phase 16: Ben's review
+
+As phase 11. What the font becomes next, such as glyphs made from many instances, several glyphs
+a kind, or the marks taken from the scribe's ink, is Ben's to choose after this phase.
 
 ## Constraints
 
@@ -1240,3 +1495,48 @@ to execute phases 9 to 11, from `C:/Users/BenDe/GitRepos/MAM-basics` at `a411c50
     word: the six crops fitted". Afterwards `derive`, `check` and `render` left the six
     stroke-SVGs and `overlays.html` byte-identical, and `regions-check` found no problem in the
     library or the six crops.
+
+### Phase 11, 2026-11-02
+
+Entries by Claude (Opus 5.5), in the session that the commander session started on 2026-11-02
+for phase 11, from `C:/Users/BenDe/GitRepos/MAM-basics` at `15f87bfb`, of which `f954b526` is an
+ancestor. Its untracked scripts and images are in `.novc/pen-stroke-exemplars/fitted-word/`: the
+scripts named `p11_*.py`, `fw_draw.py` as changed, and the images in `phase10b/` and `phase11/`.
+Ben's words are sections 80 to 84 of the statements file.
+
+1. **Phase 10's images named only the fitted groups.** Before showing them again, the session
+   found that they left unnamed every group not fitted: masora circles, line 2's tevir g46, stray
+   marks and other lines' ink. It also found that a legend line of page F102A's מתחת ran past its
+   image's edge. `fw_draw.py` now names every group and widens an image to its legend and title,
+   and `phase10b/` holds the eight images drawn again, their fits unchanged (R15).
+2. **Ben commented on the images rather than answering phase 10's questions** (section 80), and
+   asked first for a strategy for a font of the manuscript's shapes. He chose drawn marks
+   (section 81).
+3. **The library's yod, nun and pe were flaked,** a finding (section 82). They are groups g7, g6
+   and g4 of page F102A's על־פני, the trial's, chosen as clean but never judged for preservation.
+   Page F043A's פני was fitted with them, so its letters took their notches and bumps, and the ink
+   that they left uncovered, black in the images, is ink that Ben reads as legitimate. Page
+   F102A's letters were fitted with themselves, and follow its flaking.
+4. **Line 23's lamed, as Ben preferred** (section 82): the fit with Claude's cut c4, whose head
+   overlaps the mem far less than the fit without it. An untracked copy of page F043A's מתחת
+   without c4, its mem's region rg8 given five seeds in the dark ink of its base
+   (`p11_lamed_seeds.py`, `phase11/lamed-seeds/`), gave the lamed a draft from y 79.3, 376.3
+   pixels, against c4's from y 81.7, 353.1. Fitted in 0.3 minutes, its head overlaps the mem by
+   37.8 pixels of ink, 2.03 deep, against 41.0 and 2.16 with c4. The check finds no problem, and
+   the crop's unexplained ink is 4.4 pixels, against 35.6 in the tracked file. Its image is
+   `phase11/p11-1-F043A-MFXF-lamed-seeds.png`. Phase 14 applies the seeds.
+5. **The ḥet's right leg in page F043A's מתחת** (section 82). The draft already has the vellum
+   that Ben sees: rows y 61 to 64, at x 91 to 97, between the leg's ink, which ends at y 60, and
+   the tav's foot (`p11_grid.py`). The glyph, line 2's ḥet g32, has legs of equal length. The
+   warp can shorten the right leg by about 6 pixels, against the 11.9 needed, so the leg runs
+   onto the tav's foot, the two glyphs sharing 7.9 pixels of its ink, 1.17 deep. No line of Ben's
+   is needed; guideline 3 of "The font of the manuscript's shapes" is the remedy.
+6. **Ben's approvals** (sections 82 and 83): in page F043A's מתחת, the geresh kept apart from the
+   tav, and the qamats's large dot with its bar; the ayin of page F102A's על־פני; line 2's lamed
+   g30 leaving unexplained a piece of ink that he calls a "booger"; and line 2's alef g18.
+7. **Ben's answers** (section 84): the dark stroke above the left tav of page F102A's מתחת, which
+   phase 9's item 10 left unexplained, is a rafe; the name of overfill is Claude's to choose, and
+   it stays "overfill", which no other file of the repository uses; and the font's plan, with
+   five guidelines. Phases 12 to 16 were written on 2026-11-02 for his approval.
+8. **Not answered:** phase 10's questions on whether each crop's regions are right, beyond his
+   comments; and D, which waits for phase 14.

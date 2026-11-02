@@ -590,3 +590,32 @@ pixel or more. Each fit ran beside others, so its time is longer than it would b
 
 Effective State of the base, 2026-11-02: as the previous entry gives it, with the six
 region-SVGs at profile 3, fitted, for Ben's review.
+
+## Ben's review of the fitted crops, 2026-11-02
+
+Claude (Opus 5.5), phase 11 of `doc/PLAN-ink-regions.md`. Ben commented on phase 10's images
+instead of answering its questions; the plan's execution record, "Phase 11, 2026-11-02", gives
+each comment's disposition. In short:
+
+1. **The library's yod, nun and pe were flaked.** They are groups g7, g6 and g4 of page F102A's
+   על־פני, the trial's letters, judged clean but never judged for preservation. Page F043A's פני,
+   well preserved, was fitted with them, and Ben found its letters "a disaster": they took the
+   flaked letters' notches and bumps, and the ink that they left uncovered is, in his reading,
+   "100% legit ink". His rule: "Only well-preserved, well written examples should "generalize"!"
+2. **A glyph cannot follow a limb shorter than its own.** In page F043A's מתחת the ḥet's right
+   leg ends at y 60, with vellum before the tav's foot, as the draft already has it; the warp can
+   shorten the glyph's leg by about 6 pixels, against the 11.9 needed, so the leg runs onto the
+   tav's foot, where Ben sees "plenty of vellum".
+3. **Line 23's lamed's head, as Ben preferred,** with the limited overlap of the fit that kept
+   Claude's cut c4: seeds in the mem's base give it without the cut, the head overlapping the mem
+   by 37.8 pixels of ink, 2.03 deep, in an untracked fit.
+4. **What Ben approved:** the geresh kept apart from the tav, and the qamats's large dot with its
+   bar, in page F043A's מתחת; page F102A's ayin of על־פני; line 2's lamed leaving out a piece of
+   ink that he calls a "booger"; and line 2's alef at the line's start.
+5. **His decisions** are 30 to 34 of `doc/ink-region-representation.md`: drawn marks; five
+   guidelines for the font, each breakable for one word; the stroke above the left tav of page
+   F102A's מתחת a rafe; the name "overfill" kept; and the lamed's head placed as with c4.
+
+Effective State of the base, 2026-11-02: as the previous entry gives it, with Ben's review of the
+fitted crops in hand and the font of the manuscript's shapes, phases 12 to 16 of the plan,
+proposed for his approval.
