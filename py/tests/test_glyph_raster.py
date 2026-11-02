@@ -86,3 +86,15 @@ def test_the_fits_rasterizer_is_geometrys(case) -> None:
     win, m = grid.placed(polys)
     assert np.array_equal(grid.full(polys), oracle)
     assert m.sum() == oracle.sum(), f"the window {win} leaves out samples"
+
+
+@pytest.mark.parametrize("offset", [(-500, 0), (500, 0), (0, -500), (0, 500)])
+def test_an_off_grid_glyph_has_no_samples(offset) -> None:
+    """A fit can place a glyph outside the padded grid; its window must be empty."""
+    poly = np.array([(0.0, 0.0), (2.0, 0.0), (2.0, 2.0), (0.0, 2.0)]) + offset
+    grid = gf.Grid(20, 20)
+    oracle = geo.rasterize(
+        [[tuple(p) for p in q] for q in grid.samples([poly])], grid.gw, grid.gh
+    )
+    assert not oracle.any()
+    assert np.array_equal(grid.full([poly]), oracle)
