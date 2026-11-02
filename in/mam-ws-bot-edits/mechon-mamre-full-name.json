@@ -1,0 +1,206 @@
+{
+  "summary": "Write Mechon Mamre's name in full, מכון ממרא, where doc-notes gave the siglum ממ or the abbreviation מ\"מ, and correct ממכון ממרא at Lev 10:10, per MAM-basics#342",
+  "edit-kind": "explicit-replacement",
+  "edits": {
+    "Levit": [
+      {
+        "ch": "י",
+        "old": "ממכון ממרא",
+        "new": "מכון ממרא",
+        "comment": "Leviticus 10:10: the misspelling ממכון ממרא, with one mem too many, becomes מכון ממרא (MAM-basics issue 342)"
+      }
+    ],
+    "Deuter": [
+      {
+        "ch": "כו",
+        "old": "מ\"מ=וְאֶת־לַֽחֲצֵֽנוּ",
+        "new": "מכון ממרא=וְאֶת־לַֽחֲצֵֽנוּ",
+        "comment": "Deuteronomy 26:7: the abbreviation מ\"מ, for Mechon Mamre, becomes the full name מכון ממרא (MAM-basics issue 342)"
+      }
+    ],
+    "Joshua": [
+      {
+        "ch": "ט",
+        "old": "מ\"מ=וְשֹֽׁאֲבֵי־מַ֖יִם",
+        "new": "מכון ממרא=וְשֹֽׁאֲבֵי־מַ֖יִם",
+        "comment": "Joshua 9:23: the abbreviation מ\"מ, for Mechon Mamre, becomes the full name מכון ממרא (MAM-basics issue 342)"
+      }
+    ],
+    "1Samuel": [
+      {
+        "ch": "א",
+        "old": "מ\"מ=עַד־גָמְלָ֖הּ",
+        "new": "מכון ממרא=עַד־גָמְלָ֖הּ",
+        "comment": "1 Samuel 1:23: the abbreviation מ\"מ, for Mechon Mamre, becomes the full name מכון ממרא (MAM-basics issue 342)"
+      },
+      {
+        "ch": "יא",
+        "old": "ממ=וַֽיֹּאמְרוּ֙",
+        "new": "מכון ממרא=וַֽיֹּאמְרוּ֙",
+        "comment": "1 Samuel 11:10: the siglum ממ, for Mechon Mamre, becomes the full name מכון ממרא (MAM-basics issue 342)"
+      },
+      {
+        "ch": "יד",
+        "old": "ממ=הָֽיְתָ֛ה",
+        "new": "מכון ממרא=הָֽיְתָ֛ה",
+        "comment": "1 Samuel 14:38: the siglum ממ, for Mechon Mamre, becomes the full name מכון ממרא (MAM-basics issue 342)"
+      },
+      {
+        "ch": "כג",
+        "old": "ממ=עֹֽטְרִ֛ים",
+        "new": "מכון ממרא=עֹֽטְרִ֛ים",
+        "comment": "1 Samuel 23:26: the siglum ממ, for Mechon Mamre, becomes the full name מכון ממרא (MAM-basics issue 342)"
+      },
+      {
+        "ch": "כט",
+        "old": "ממ=עֹֽבְרִ֛ים",
+        "new": "מכון ממרא=עֹֽבְרִ֛ים",
+        "comment": "1 Samuel 29:2: the siglum ממ, for Mechon Mamre, becomes the full name מכון ממרא (MAM-basics issue 342)"
+      }
+    ],
+    "2Samuel": [
+      {
+        "ch": "כב",
+        "old": "ומ\"מ",
+        "new": "ומכון ממרא",
+        "comment": "2 Samuel 22:40: the abbreviation מ\"מ, for Mechon Mamre, becomes the full name מכון ממרא (MAM-basics issue 342)"
+      }
+    ],
+    "Jeremiah": [
+      {
+        "ch": "ב",
+        "old": "ממ=וְקָֽרָאתָ֩",
+        "new": "מכון ממרא=וְקָֽרָאתָ֩",
+        "comment": "Jeremiah 2:2: the siglum ממ, for Mechon Mamre, becomes the full name מכון ממרא (MAM-basics issue 342)"
+      },
+      {
+        "ch": "ג",
+        "old": "ממ!=וְקָֽרָאתָ֩",
+        "new": "מכון ממרא!=וְקָֽרָאתָ֩",
+        "comment": "Jeremiah 3:12: the siglum ממ, for Mechon Mamre, becomes the full name מכון ממרא (MAM-basics issue 342)"
+      },
+      {
+        "ch": "ג",
+        "old": "ממ=אָֽכְלָ֛ה",
+        "new": "מכון ממרא=אָֽכְלָ֛ה",
+        "comment": "Jeremiah 3:24: the siglum ממ, for Mechon Mamre, becomes the full name מכון ממרא (MAM-basics issue 342)"
+      },
+      {
+        "ch": "ח",
+        "old": "2=ממ!=מֵֽחַיִּי֔ם",
+        "new": "2=מכון ממרא!=מֵֽחַיִּי֔ם",
+        "comment": "Jeremiah 8:3: the siglum ממ, for Mechon Mamre, becomes the full name מכון ממרא (MAM-basics issue 342)"
+      },
+      {
+        "ch": "לז",
+        "old": "הקלדה!,ממ!=וְאֶל־הַֽחֲנֻ֑יוֹת",
+        "new": "הקלדה!,מכון ממרא!=וְאֶל־הַֽחֲנֻ֑יוֹת",
+        "comment": "Jeremiah 37:16: the siglum ממ, for Mechon Mamre, becomes the full name מכון ממרא (MAM-basics issue 342)"
+      }
+    ],
+    "Psalms": [
+      {
+        "ch": "כד",
+        "old": "ומ\"מ",
+        "new": "ומכון ממרא",
+        "comment": "Psalms 24:4: the abbreviation מ\"מ, for Mechon Mamre, becomes the full name מכון ממרא (MAM-basics issue 342)"
+      },
+      {
+        "ch": "לא",
+        "old": "ומ\"מ)",
+        "new": "ומכון ממרא)",
+        "comment": "Psalms 31:24: the abbreviation מ\"מ, for Mechon Mamre, becomes the full name מכון ממרא (MAM-basics issue 342)"
+      },
+      {
+        "ch": "לז",
+        "old": "ממ=פָּֽתְח֣וּ",
+        "new": "מכון ממרא=פָּֽתְח֣וּ",
+        "comment": "Psalms 37:14: the siglum ממ, for Mechon Mamre, becomes the full name מכון ממרא (MAM-basics issue 342)"
+      },
+      {
+        "ch": "לז",
+        "old": "ממ=וַ֭יַּֽעֲבֹר",
+        "new": "מכון ממרא=וַ֭יַּֽעֲבֹר",
+        "comment": "Psalms 37:36: the siglum ממ, for Mechon Mamre, becomes the full name מכון ממרא (MAM-basics issue 342)"
+      },
+      {
+        "ch": "נא",
+        "old": "ממ!=וְֽכָל־עֲ֖וֹנֹתַ֣י",
+        "new": "מכון ממרא!=וְֽכָל־עֲ֖וֹנֹתַ֣י",
+        "comment": "Psalms 51:11: the siglum ממ, for Mechon Mamre, becomes the full name מכון ממרא (MAM-basics issue 342)"
+      },
+      {
+        "ch": "נא",
+        "old": "2=ממ=לְשׁוֹנִ֗י",
+        "new": "2=מכון ממרא=לְשׁוֹנִ֗י",
+        "comment": "Psalms 51:16: the siglum ממ, for Mechon Mamre, becomes the full name מכון ממרא (MAM-basics issue 342)"
+      },
+      {
+        "ch": "סז",
+        "old": "דפוסים,ממ=יִֽשְׂמְח֥וּ",
+        "new": "דפוסים,מכון ממרא=יִֽשְׂמְח֥וּ",
+        "comment": "Psalms 67:5: the siglum ממ, for Mechon Mamre, becomes the full name מכון ממרא (MAM-basics issue 342)"
+      },
+      {
+        "ch": "פו",
+        "old": "ממ,הקלדה=וִֽיכַבְּד֣וּ",
+        "new": "מכון ממרא,הקלדה=וִֽיכַבְּד֣וּ",
+        "comment": "Psalms 86:9: the siglum ממ, for Mechon Mamre, becomes the full name מכון ממרא (MAM-basics issue 342)"
+      },
+      {
+        "ch": "פח",
+        "old": "ממ=הַטֵּֽה־אׇ֝זְנְךָ֗",
+        "new": "מכון ממרא=הַטֵּֽה־אׇ֝זְנְךָ֗",
+        "comment": "Psalms 88:3: the siglum ממ, for Mechon Mamre, becomes the full name מכון ממרא (MAM-basics issue 342)"
+      },
+      {
+        "ch": "קיט",
+        "old": "ומ\"מ",
+        "new": "ומכון ממרא",
+        "comment": "Psalms 119:14: the abbreviation מ\"מ, for Mechon Mamre, becomes the full name מכון ממרא (MAM-basics issue 342)"
+      },
+      {
+        "ch": "קכז",
+        "old": "2=ממ=מַשְׁכִּ֪ימֵי",
+        "new": "2=מכון ממרא=מַשְׁכִּ֪ימֵי",
+        "comment": "Psalms 127:2: the siglum ממ, for Mechon Mamre, becomes the full name מכון ממרא (MAM-basics issue 342)"
+      },
+      {
+        "ch": "קמ",
+        "old": "ממ=שָֽׁנְנ֣וּ",
+        "new": "מכון ממרא=שָֽׁנְנ֣וּ",
+        "comment": "Psalms 140:4: the siglum ממ, for Mechon Mamre, becomes the full name מכון ממרא (MAM-basics issue 342)"
+      }
+    ],
+    "Job": [
+      {
+        "ch": "יב",
+        "old": "ממ=וְאֵֽתָנִ֣ים",
+        "new": "מכון ממרא=וְאֵֽתָנִ֣ים",
+        "comment": "Job 12:19: the siglum ממ, for Mechon Mamre, becomes the full name מכון ממרא (MAM-basics issue 342)"
+      },
+      {
+        "ch": "יז",
+        "old": "ממ=מִֽי",
+        "new": "מכון ממרא=מִֽי",
+        "comment": "Job 17:3: the siglum ממ, for Mechon Mamre, becomes the full name מכון ממרא (MAM-basics issue 342)"
+      }
+    ],
+    "Daniel": [
+      {
+        "ch": "ד",
+        "old": "ממ=עַל־מַרִ֥אי",
+        "new": "מכון ממרא=עַל־מַרִ֥אי",
+        "comment": "Daniel 4:21: the siglum ממ, for Mechon Mamre, becomes the full name מכון ממרא (MAM-basics issue 342)"
+      }
+    ],
+    "Ezra": [
+      {
+        "ch": "ה",
+        "old": "ממ=לְהֹ֖ם",
+        "new": "מכון ממרא=לְהֹ֖ם",
+        "comment": "Ezra 5:10: the siglum ממ, for Mechon Mamre, becomes the full name מכון ממרא (MAM-basics issue 342)"
+      }
+    ]
+  }
+}

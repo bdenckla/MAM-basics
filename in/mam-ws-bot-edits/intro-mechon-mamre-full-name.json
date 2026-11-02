@@ -1,0 +1,30 @@
+{
+  "summary": "Correct misspellings: in chapter 3, Mechon Mamre's name, מכון ממרא (ממון ממרא, וממכון ממרא), per MAM-basics#342; in chapters 2 and 3, במהדורתנו for במהודרתנו",
+  "edit-kind": "explicit-replacement",
+  "pages": {
+    "ch2": [
+      {
+        "old": "במהודרתנו",
+        "new": "במהדורתנו",
+        "comment": "line 422 of revision 3099100: במהודרתנו becomes במהדורתנו, in our edition, in the sentence on the template מ:צינור (Ben, 2026-11-02: \"Yes, fix both\")"
+      }
+    ],
+    "ch3": [
+      {
+        "old": "ממון ממרא",
+        "new": "מכון ממרא",
+        "comment": "line 1347 of revision 3099297: ממון ממרא, a misspelling of the name מכון ממרא, in the paragraph on the verse numbers that other digital editions give the Decalogue (MAM-basics issue 342; Ben, 2026-11-02: \"Yes, include them\")"
+      },
+      {
+        "old": "במהודרתנו",
+        "new": "במהדורתנו",
+        "comment": "line 1349 of revision 3099297: במהודרתנו becomes במהדורתנו, in our edition, in the sentence on whose verse numbers MAM follows (Ben, 2026-11-02: \"Yes, fix both\")"
+      },
+      {
+        "old": "וממכון ממרא",
+        "new": "ומכון ממרא",
+        "comment": "line 1349 of revision 3099297: וממכון ממרא, with one mem too many, becomes ומכון ממרא, in the same sentence (MAM-basics issue 342; Ben, 2026-11-02: \"Yes, include them\")"
+      }
+    ]
+  }
+}

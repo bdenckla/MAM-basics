@@ -512,7 +512,7 @@ infrastructure has changed enough to make them misleading examples:
   `.novc/mam-ws-bot-real-runs/20261029-145140-988360-0400/` and
   `.novc/mam-ws-bot-real-runs/20261029-150007-117426-0400/`.
 
-### Font-agnostic forms for letters with two vowels, in five notes and the Introduction, 2026-10-30 — current
+### Font-agnostic forms for letters with two vowels, in five notes and the Introduction, 2026-10-30
 
 - **Purpose:** Give the six atoms of MAM's documentation notes whose letter had two vowels
   and no CGJ, and which chapter 5 of the Introduction quotes, a form that does not depend on
@@ -612,6 +612,79 @@ infrastructure has changed enough to make them misleading examples:
   `.novc/mam-ws-bot-real-runs/20261030-144623-647569-0400/`, and
   `.novc/mam-ws-bot-intro-runs/20261030-144933-673654-0400/`, dry run
   `.novc/mam-ws-bot-intro-runs/20261030-144635-376992-0400/`.
+
+### Mechon Mamre's name in full in 30 notes, and four misspellings in the Introduction, 2026-11-02 — current
+
+- **Purpose:** Write Mechon Mamre's name in full, מכון ממרא, in the 30 documentation notes
+  that did not, as MAM-basics#342 asked. About 300 notes already wrote the name, which is the one
+  the Introduction's appendices give the edition. 22 notes cited it by the siglum ממ, as the X of
+  an `X=Y` or `X!=Y` clause, alone, in a comma-joined list (`הקלדה!,ממ!=`, `דפוסים,ממ=`,
+  `ממ,הקלדה=`) or after גם. Seven wrote the abbreviation מ"מ, as the X of a clause in three and
+  in prose in four (`וסימנים ומ"מ`). Leviticus 10:10's note listed the edition as ממכון ממרא, with
+  one mem too many. A 23rd ממ, at 2 Kings 19:25, went in Avi's revision 3099301 of 2026-10-31,
+  which rewrote that clause for MAM-basics#345. The same day the bot corrected two misspellings
+  of the name in the Introduction's chapter 3, ממון ממרא and וממכון ממרא, and the misspelling
+  במהודרתנו, for במהדורתנו, in chapters 2 and 3.
+- **Authorization:** Avi on MAM-basics#342, 2026-11-01, answering Ben's offer to make the
+  changes by bot: "Yes, thanks. Please feel free to fix them via bot." Ben, 2026-11-02, to the
+  session that commands Claude's forests: "Ask the commander to spawn or queue a session that
+  will use BdencklaBot to implement #342", and, of the seven abbreviations and Leviticus 10:10's
+  misspelling, "Yes include those, too." Asked whether the run should also correct the
+  Introduction's two misspellings of the name, which the issue does not list, he answered "Yes,
+  include them"; asked the same of במהודרתנו, "Yes, fix both". A Claude Code session wrote the
+  files and ran them the same day, from `1e04139e`, after the Wikisource refresh `35c60966` had
+  taken Avi's edits of 2026-10-30 to 2026-11-02.
+- **Why explicit replacements:** the counted global replacement of the ב2 run above could not be
+  used. ממ begins ממרא, so a plain replacement would also have rewritten every מכון ממרא, 298
+  of them in the chapter mirror, besides ordinary words. Each `old` is instead the shortest
+  whitespace-delimited run around the form that occurs exactly once in its chapter, cut by a
+  script from the refreshed mirror's bytes, and each `new` differs from it by the form alone.
+  The script's census of every ממ standing alone, every מ"מ and every ממכון in the chapter
+  mirror found #342's list less 2 Kings 19:25: two in each of Jeremiah 3 and Psalms 37 and 51,
+  and one in each of the other 24 chapters.
+- **Saving runs:** Leviticus 10, revision 3099305 → 3101072; Deuteronomy 26, 2987765 → 3101073;
+  Joshua 9, 2997905 → 3101074; 1 Samuel 1, 3079730 → 3101075; 11, 2987827 → 3101076; 14,
+  2987830 → 3101077; 23, 3007994 → 3101078; 29, 3007996 → 3101079; 2 Samuel 22, 3008003 →
+  3101080; Jeremiah 2, 3008013 → 3101081; 3, 2987987 → 3101082 (two); 8, 3008014 → 3101083; 37,
+  2988021 → 3101084; Psalms 24, 2988176 → 3101085; 31, 2995849 → 3101086; 37, 2988189 → 3101087
+  (two); 51, 2988203 → 3101088 (two); 67, 2988219 → 3101089; 86, 2997830 → 3101090; 88, 2988240
+  → 3101091; 119, 2988271 → 3101092; 127, 2988279 → 3101093; 140, 2988292 → 3101094; Job 12,
+  2990830 → 3101095; 17, 2988350 → 3101096; Daniel 4, 3009299 → 3101097; Ezra 5, 3009300 →
+  3101098; introduction chapter 2, 3099100 → 3101099; chapter 3, 3099319 → 3101100 (three).
+- **Safety rule:** the chapters' `--no-save` dry run listed exactly the 27 chapters, and each of
+  its chapters equalled the mirror's with the replacements applied, code point for code point.
+  The saving run's chapters equalled the dry run's, and the post-run download equalled both. The
+  introduction's mirror held chapter 3 at revision 3099297, before Avi's revisions 3099313 to
+  3099319 of 2026-10-31, so a script read chapters 2 and 3 live through the API after the dry
+  run and again, byte for byte the same, just before the save. The dry run's pages equalled that
+  capture with the replacements applied, the saving run's pages equalled the dry run's, and the
+  refreshed mirror's pages equal both.
+- **Post-run downloads:** the chapter run refetched the 27 chapters and all 36 declared special
+  pages. Of the special pages only `2-samuel-22` changed, the chapter page שמואל ב כב/טעמים that
+  the run saved, and the reparse of the ten books passed all 59 MAM-parsed claims. The
+  introduction run's refresh rewrote all thirteen mirrored pages with the manifest. Five
+  changed: chapters 2 and 3 with this run's replacements; chapter 3 also with Avi's seven
+  revisions of 2026-10-31, which give its comparison of the Leningrad Codex with the Torah
+  scrolls of Yemen, Sepharad and Ashkenaz a list of the nine places where they differ, each with
+  its forms, add an anchor that the list links to, and reword two entries of a list of the
+  Leningrad Codex's forms, at Genesis 2:6 and 46:13; chapter 1, with
+  Avi's revisions 3099411 to 3099431 of 2026-11-01, rewording its passages on midrash, targum and
+  Mishnah; chapter 4, with his revision 3101065 of 2026-11-02, after which its Lamentations 4:7
+  entry's ל?! form has a qamats on the shin rather than a segol, the change MAM-basics#357 asked
+  about; and the appendices, with his revisions 3100992 and 3100994 of 2026-11-02, rewording the
+  Aleppo Codex's and the Leningrad Codex's index entries and adding links.
+- **One-shot:** every `old` describes the pre-edit text. Confirmed 2026-11-02, immediately after
+  the runs: `--no-save` re-runs raised on Leviticus 10 ("Expected 1 occurrence of 'ממכון
+  ממרא'") and on chapter 2's `old`.
+- **Edit level:** Raw page text string replacement, chapter- and page-targeted.
+- **JSON files:** `in/mam-ws-bot-edits/mechon-mamre-full-name.json` and its selector,
+  `mechon-mamre-full-name.chapters.json`, and
+  `in/mam-ws-bot-edits/intro-mechon-mamre-full-name.json`; run artifacts
+  `.novc/mam-ws-bot-real-runs/20261102-095504-617946-0500/`, dry run
+  `.novc/mam-ws-bot-real-runs/20261102-095244-343604-0500/`, one-shot re-run
+  `.novc/mam-ws-bot-real-runs/20261102-100120-658600-0500/`, and
+  `.novc/mam-ws-bot-intro-runs/20261102-100144-977161-0500/`, dry run
+  `.novc/mam-ws-bot-intro-runs/20261102-095333-353554-0500/`.
 
 ## How to look up the original code
 
