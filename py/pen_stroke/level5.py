@@ -59,6 +59,8 @@ _MARK_KINDS = {
     "meteg mark": "HEBREW POINT METEG",
     "silluq accent": "HEBREW POINT METEG",
     "maqaf mark": "HEBREW PUNCTUATION MAQAF",
+    # A bar over a letter, which the Unicode sources rarely transcribe (Ben, 2026-11-02).
+    "rafe mark": "HEBREW POINT RAFE",
     "sof pasuq mark": "HEBREW PUNCTUATION SOF PASUQ",
     "paseq mark": "HEBREW PUNCTUATION PASEQ",
     "atnaḥ accent": "HEBREW ACCENT ETNAHTA",
@@ -119,6 +121,7 @@ _MARK_PARTS = {
     "meteg mark": 1,
     "silluq accent": 1,
     "maqaf mark": 1,
+    "rafe mark": 1,
     "sof pasuq mark": 2,  # two dots, one over the other
     "paseq mark": 1,
     "atnaḥ accent": 1,

@@ -129,6 +129,9 @@ class Group:
     # The ink-region profile only: "yes" where a group of another word or line is
     # fitted with glyphs.
     fit: str = ""
+    # The ink-region profile 4 only: the guidelines of the font that this group
+    # breaks, each with why, whose word it is and when.
+    brk: str = ""
 
 
 @dataclass
@@ -499,14 +502,17 @@ def _read_frame(g, sf):
     sf.frame = Frame(lines[0], float(require(a, "data-letter-height", "frame")))
 
 
-def read_groups(g, sf, parts_notes=False, fit_flags=False):
+def read_groups(g, sf, parts_notes=False, fit_flags=False, breaks=False):
     """The groups; a group may have data-parts-note only where parts_notes is true,
-    and data-fit only where fit_flags is, as in the ink-region profile."""
+    data-fit only where fit_flags is, and data-break only where breaks is, as in
+    the ink-region profile."""
     allowed = {"class", "id", "data-kind", "data-ink-of", "data-note"}
     if parts_notes:
         allowed.add("data-parts-note")
     if fit_flags:
         allowed.add("data-fit")
+    if breaks:
+        allowed.add("data-break")
     for tag, el in svg_children(g):
         if tag != "g" or el.attrib.get("class") != "group":
             raise ProfileError("groups: every child is a g.group")
@@ -537,6 +543,7 @@ def read_groups(g, sf, parts_notes=False, fit_flags=False):
                 a.get("data-note", ""),
                 a.get("data-parts-note", ""),
                 a.get("data-fit", ""),
+                a.get("data-break", ""),
             )
         )
 
@@ -660,6 +667,8 @@ def group_lines(groups):
             note += f' data-parts-note="{esc(g.parts_note)}"'
         if g.fit:
             note += f' data-fit="{esc(g.fit)}"'
+        if g.brk:
+            note += f' data-break="{esc(g.brk)}"'
         lines.append(
             f'    <g class="group" id="{g.id}" data-kind="{esc(g.kind)}"'
             f' data-ink-of="{g.ink_of}"{note}>'

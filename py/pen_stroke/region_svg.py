@@ -13,8 +13,11 @@ overlaps and supplied ink in place of strokes.  Profile 3 adds glyphs: for each
 written part of each fitted group, a glyph of the library
 (pen_stroke.glyph_library) and the fit's parameters, which only the fit writes,
 with its placed outline and its ink derived; and the overlaps of glyphs, whose
-ink is derived.  The reader accepts profiles 2 and 3, their elements, classes
-and attributes and nothing else, as pen_stroke.stroke_svg's does, and the writer
+ink is derived.  Profile 4 follows the guidelines of the font of the
+manuscript's shapes: a letter's fit holds a finer warp and a distance along its
+outline's normal, and a group or a glyph may break a guideline, with
+data-break.  The reader accepts profiles 2 to 4, their elements, classes and
+attributes and nothing else, as pen_stroke.stroke_svg's does, and the writer
 always writes the same text for the same content.
 """
 
@@ -30,7 +33,10 @@ from pen_stroke import stroke_svg as ssvg
 PROFILE = "ink-region 2"
 # Profile 3: regions from fitted glyphs, its derivation beginning with profile 2's.
 PROFILE_3 = "ink-region 3"
-PROFILES = (PROFILE, PROFILE_3)
+# Profile 4: profile 3 under the guidelines of the font of the manuscript's shapes.
+PROFILE_4 = "ink-region 4"
+PROFILES = (PROFILE, PROFILE_3, PROFILE_4)
+FITTED = (PROFILE_3, PROFILE_4)
 SUFFIX = ".regions.svg"
 _SVG = "http://www.w3.org/2000/svg"
 # The provenance on the root, in the order it is written: the stroke-SVG's, with who
@@ -130,11 +136,15 @@ class Glyph:
     # Its glyph-source's id in the library.
     glyph: str
     # The fit's parameters: a move, two scales, a turn and a shear, and for a
-    # letter a warp of 18 numbers (pen_stroke.glyph_fit).
+    # letter a warp of 18 numbers, or under profile 4 a warp of 32, or of 18 where
+    # it breaks the guideline limbs, and a distance along its outline's normal
+    # (pen_stroke.glyph_fit).
     fit: tuple
     # Derived: the library's glyph placed by the parameters, and its ink.
     outline: str = ""
     ink: str = ""
+    # Profile 4: the guidelines that this glyph alone breaks.
+    brk: str = ""
 
 
 @dataclass
@@ -225,7 +235,7 @@ def style(rf):
     if others:
         sel = ", ".join(f"#{i} .ink" if i in overlaps else f"#{i} path" for i in others)
         out += f"{sel} {{ fill: {ssvg.OTHER_INK_COLOUR}; fill-opacity: 0.55 }}\n"
-    if rf.profile == PROFILE_3:
+    if rf.profile in FITTED:
         out += STYLE_3
     return out
 
@@ -261,7 +271,8 @@ def read(path):
         tracer=ssvg.require(a, "data-tracer", "root"),
         profile=a["data-profile"],
     )
-    third = rf.profile == PROFILE_3
+    third = rf.profile in FITTED
+    fourth = rf.profile == PROFILE_4
     seen = []
     for tag, el in ssvg.svg_children(root):
         cls = el.attrib.get("class", "")
@@ -289,11 +300,11 @@ def read(path):
         elif key == "g.supplied":
             _read_supplied(el, rf)
         elif key == "g.glyphs" and third:
-            _read_glyphs(el, rf)
+            _read_glyphs(el, rf, fourth)
         elif key == "g.glyph-overlaps" and third:
             _read_glyph_overlaps(el, rf)
         elif key == "g.groups":
-            ssvg.read_groups(el, rf, parts_notes=True, fit_flags=True)
+            ssvg.read_groups(el, rf, parts_notes=True, fit_flags=True, breaks=fourth)
         else:
             raise ssvg.ProfileError(
                 f"{path}: element {key!r} is not in profile {rf.profile!r}"
@@ -428,15 +439,14 @@ def _read_supplied(g, rf):
         )
 
 
-def _read_glyphs(g, rf):
+def _read_glyphs(g, rf, breaks):
+    allowed = {"class", "id", "data-group", "data-part", "data-glyph", "data-fit"}
+    if breaks:
+        allowed.add("data-break")
     for tag, el in ssvg.svg_children(g):
         if tag != "g" or el.attrib.get("class") != "glyph":
             raise ssvg.ProfileError("glyphs: every child is a g.glyph")
-        a = ssvg.profile_attrs(
-            el,
-            "glyph",
-            {"class", "id", "data-group", "data-part", "data-glyph", "data-fit"},
-        )
+        a = ssvg.profile_attrs(el, "glyph", allowed)
         gid = ssvg.require(a, "id", "glyph")
         glyph_number(gid)
         try:
@@ -453,6 +463,7 @@ def _read_glyphs(g, rf):
                 fit,
                 parts.get("outline", ""),
                 parts.get("ink", ""),
+                a.get("data-break", ""),
             )
         )
 
@@ -544,13 +555,14 @@ def dumps(rf):
         lines.append(f'      <path class="added" d="{s.added}"/>')
         lines.append("    </g>")
     lines.append("  </g>")
-    if rf.profile == PROFILE_3:
+    if rf.profile in FITTED:
         lines.append('  <g class="glyphs">')
         for gl in rf.glyphs:
             part = f' data-part="{ssvg.esc(gl.part)}"' if gl.part else ""
+            brk = f' data-break="{ssvg.esc(gl.brk)}"' if gl.brk else ""
             lines.append(
                 f'    <g class="glyph" id="{gl.id}" data-group="{gl.group}"{part}'
-                f' data-glyph="{gl.glyph}" data-fit="{fit_text(gl.fit)}">'
+                f' data-glyph="{gl.glyph}" data-fit="{fit_text(gl.fit)}"{brk}>'
             )
             lines.append(f'      <path class="outline" d="{gl.outline}"/>')
             lines.append(f'      <path class="ink" d="{gl.ink}"/>')

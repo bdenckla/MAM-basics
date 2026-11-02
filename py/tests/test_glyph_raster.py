@@ -12,10 +12,11 @@ which sorts each row's crossings, is the oracle.
 WHAT IT CHECKS
 
 For every glyph of the library doc/pen-stroke-snips/glyphs.svg, placed by a turn, a shear,
-two scales and, for a letter, a warp; and for every glyph of every profile-3 region-SVG,
-by its outline as written: the fit's rasterizer, over the whole grid and in the glyph's
-window, gives exactly the samples that geometry.rasterize gives.  It fails if it finds no
-glyph to compare.
+two scales and, for a letter, a warp, every other letter's that of guideline 3 with its
+outline moved along its normal, as profile 4 places a letter; and for every glyph of every
+fitted region-SVG, by its outline as written: the fit's rasterizer, over the whole grid and
+in the glyph's window, gives exactly the samples that geometry.rasterize gives.  It fails
+if it finds no glyph to compare.
 
 Run:
     .venv/Scripts/python.exe py/main_test.py py/tests/test_glyph_raster.py
@@ -48,10 +49,15 @@ def _library_cases():
     for k, src in enumerate(lib.sources):
         glyph = gf.Glyph(glib.contours(src))
         prm = np.array([20.0, 20.0, math.log(14.0), math.log(12.5), 0.2, 0.1])
-        warp = None
-        if level5.pass_of(src.kind) == level5.LETTERS:
+        if level5.pass_of(src.kind) != level5.LETTERS:
+            out.append((src.id, _SIDE, _SIDE, glyph.place(prm)))
+        elif k % 2:
             warp = 0.04 * np.sin(np.arange(gf.WARP_SIZE) + k)
-        out.append((src.id, _SIDE, _SIDE, glyph.place(prm, warp)))
+            out.append((src.id, _SIDE, _SIDE, glyph.place(prm, warp)))
+        else:
+            warp = 0.08 * np.sin(np.arange(gf.LIMBS_SIZE) + k)
+            polys = gf.offset_polys(glyph.place(prm, warp), 0.6)
+            out.append((src.id, _SIDE, _SIDE, polys))
     return out
 
 

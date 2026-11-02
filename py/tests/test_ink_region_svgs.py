@@ -33,17 +33,26 @@ WHAT IT CHECKS, for each region-SVG (``pen_stroke.region_derive.problems``)
 6. Each region's outline is what the watershed from its seeds, the cuts, the vellum and the
    overlaps give; each overlap's ink is the ink inside its outline; and each supplied
    outline's added ink is the outline less the ink, and is not empty.
-7. Under profile 3: every fitted group's written part has one glyph and no other group
-   has one; every glyph's glyph is in the library, of its group's kind and part, and its
-   fit has a letter's or a mark's numbers; every glyph holds ink, crosses no strip of
+7. Under profiles 3 and 4: every fitted group's written part has one glyph and no other
+   group has one; every glyph's glyph is in the library, of its group's kind and part, and
+   its fit has a letter's or a mark's numbers; every glyph holds ink, crosses no strip of
    vellum or cut by more than a pixel, and has the outline its glyph and fit give; and
    each glyph's ink, each overlap of glyphs and each region's ink inside no glyph are
    what the glyphs give.
-8. The library: its closed table agrees with the parts rule; every glyph is of a fitted
+8. Under profile 4: the library is of profile 2; every break of a group or a glyph names
+   a guideline and gives a reason with whose word it is and when; and a glyph that breaks
+   no guideline follows them: a mark's glyph is drawn where its part has a drawn shape, a
+   glyph of the scribe's that is not judged serves only a group that breaks preserved,
+   and a letter's outline moves along its normal at most its limit, and not at all where
+   it breaks area.
+9. The library: its closed table agrees with the parts rule; every glyph is of a fitted
    kind and one of its written parts; Taamey D's glyphs cover every such part, under the
-   font's SHA-256; and each glyph of the scribe's is the outline its crop's draft gives
-   its group, a letter that meets no edge of its crop and touches no other group's ink,
-   or says why it serves even so.
+   font's SHA-256; each glyph of the scribe's is the outline its crop's draft gives its
+   group, a letter that meets no edge of its crop and touches no other group's ink, or
+   says why it serves even so; and under profile 2, each glyph crop's outline is the ink
+   inside its lasso that its PNG gives, each drawn glyph is its shape's outline, the drawn
+   glyphs cover every part with a shape, and each glyph of the scribe's is judged, with
+   whose judgment it is and when, or breaks preserved.
 
 A missing input fails: the directory must hold a region-SVG and the library.
 

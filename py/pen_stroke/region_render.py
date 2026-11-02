@@ -15,10 +15,12 @@ subject's is slate in every layer (decision 17), and two checkboxes hide it,
 and masora circles and stray ink, in every layer.  Beside each image a legend
 names each group by its id, its kind and its letter or mark, and a layer draws
 the groups' ids on the image (Ben, section 68 of his statements: images label
-groups).  Under profile 3 a fitted group's ink is its glyphs' ink and the
-overlaps of its glyphs; a layer draws the glyphs' outlines, thin, and the layer
-for checking draws what the glyphs leave of a fitted group's draft, overfill in
-light grey and unexplained ink in black.  Writes
+groups).  Under profiles 3 and 4 a fitted group's ink is its glyphs' ink and
+the overlaps of its glyphs; a layer draws the glyphs' outlines, thin, and the
+layer for checking draws what the glyphs leave of a fitted group's draft,
+overfill in light grey and unexplained ink in black.  Under profile 4 the
+groups' table names the guidelines that each group and its glyphs break, and so
+do the tooltips of their ink and outlines.  Writes
 doc/pen-stroke-snips/regions.html.
 """
 
@@ -31,6 +33,7 @@ import numpy as np
 
 from pen_stroke import derive as dv
 from pen_stroke import geometry as geo
+from pen_stroke import glyph_library as glib
 from pen_stroke import level5
 from pen_stroke import raster
 from pen_stroke import region_derive as rdv
@@ -214,6 +217,26 @@ def _kinds(groups):
     return ", ".join(f"{g.id} {g.kind}" for g in groups)
 
 
+def breaks_text(brk):
+    """A data-break as the page names it: each guideline broken, with why."""
+    found, _ = glib.parse_breaks(brk)
+    return "; ".join(f"breaks {name}: {why}" for name, why in found)
+
+
+def _with_breaks(title, brk):
+    text = breaks_text(brk)
+    return f"{title}; {text}" if text else title
+
+
+def group_breaks(rf, g):
+    """The breaks of a group and of its glyphs, as the page names them."""
+    out = [breaks_text(g.brk)] if g.brk else []
+    for gl in rf.glyphs:
+        if gl.group == g.id and gl.brk:
+            out.append(f"{gl.id} {breaks_text(gl.brk)}")
+    return "; ".join(out)
+
+
 def sign_text(kind):
     """A kind's letter or mark, from the Unicode name it is congruent to, a mark
     that is written on a letter shown on a dotted circle; empty for a kind that
@@ -239,14 +262,16 @@ class _Ink:
             for m in g.members:
                 self.groups_of.setdefault(m, []).append(g)
         self.fitted = None
+        self.library = None
         self.left = []
-        if rf.profile != rsvg.PROFILE_3:
+        if rf.profile not in rsvg.FITTED:
             self.inks = [(r.id, r.d) for r in rf.regions]
             self.inks += [(o.id, o.ink) for o in rf.overlaps]
             self.members = {g.id: list(g.members) for g in rf.groups}
             return
         lum = raster.load_luminance(dv.crop_path(svg_path, rf))
-        _, _, fitted = rdv.derive(rf, lum, rdv.library_for(svg_path))
+        self.library = rdv.library_for(svg_path)
+        _, _, fitted = rdv.derive(rf, lum, self.library)
         self.fitted = fitted
         groups = {g.id: g for g in rf.groups}
         fitted_ids = fitted.fitted_groups
@@ -376,9 +401,10 @@ def _svg(rf, ink, zoom):
         colour = colours[g.id]
         for m in ink.members.get(g.id, []):
             if m in outline:
+                title = _with_breaks(f"{g.id} {g.kind}: {m}", g.brk)
                 out.append(
                     f'<path{hide_classes([g], me)} fill="{colour}" d="{outline[m]}">'
-                    f"<title>{_e(g.id)} {_e(g.kind)}: {_e(m)}</title></path>"
+                    f"<title>{_e(title)}</title></path>"
                 )
     out.append("</g>")
     out.append('<g class="layer-regions" fill-opacity="0.85">')
@@ -416,11 +442,12 @@ def _svg(rf, ink, zoom):
     for gl in rf.glyphs:
         g = groups[gl.group]
         part = f", its {gl.part}" if gl.part else ""
+        title = f"{gl.id}: {g.id} {g.kind}{part}, the glyph {gl.glyph}"
+        title = _with_breaks(_with_breaks(title, g.brk), gl.brk)
         out.append(
             f'<path{hide_classes([g], me)} d="{gl.outline}" stroke="{GLYPH_LINE_COLOUR}"'
             ' stroke-width="0.75" vector-effect="non-scaling-stroke">'
-            f"<title>{_e(gl.id)}: {_e(g.id)} {_e(g.kind)}{_e(part)}, the glyph"
-            f" {_e(gl.glyph)}</title></path>"
+            f"<title>{_e(title)}</title></path>"
         )
     out.append("</g>")
     out.append('<g class="layer-pieces">')
@@ -582,12 +609,19 @@ def _section(svg_path):
         f" {len(rf.cuts)} cuts</td></tr>"
     )
     out.append(f"<tr><th>Groups</th><td>{len(rf.groups)}</td></tr>")
-    if rf.profile == rsvg.PROFILE_3:
-        own = sum(1 for gl in rf.glyphs if not gl.glyph.startswith("taamey-d-"))
+    if rf.profile in rsvg.FITTED:
+        sources = ink.library.by_id()
+        sorts = [sources[gl.glyph] for gl in rf.glyphs if gl.glyph in sources]
+        own = sum(1 for s in sorts if s.is_scribes)
+        drawn = sum(1 for s in sorts if s.is_drawn)
+        printed = sum(1 for s in sorts if s.is_taamey_d)
+        if drawn:
+            sort_text = f"{own} the scribe's, {drawn} drawn and {printed} Taamey D's"
+        else:
+            sort_text = f"{own} of them the scribe's and the rest Taamey D's"
         out.append(
-            f"<tr><th>Glyphs</th><td>{len(rf.glyphs)}, {own} of them the scribe's"
-            f" and the rest Taamey D's; {len(rf.glyph_overlaps)} overlaps of"
-            " glyphs</td></tr>"
+            f"<tr><th>Glyphs</th><td>{len(rf.glyphs)}, {sort_text};"
+            f" {len(rf.glyph_overlaps)} overlaps of glyphs</td></tr>"
         )
     if rf.supplied:
         kinds = Counter(s.supplied for s in rf.supplied)
@@ -600,17 +634,22 @@ def _section(svg_path):
         f"<tr><th>Residual pieces</th><td>{len(rf.pieces)}: {_e(pieces)}</td></tr>"
     )
     out.append("</table>")
+    # The guidelines that each group and its glyphs break, in a column of their own
+    # where any does.
+    breaks = {g.id: group_breaks(rf, g) for g in rf.groups}
+    head = "<th>Guidelines broken</th>" if any(breaks.values()) else ""
     out.append(
         "<table><tr><th>Group</th><th>Kind</th><th>Ink of</th><th>Meaning</th>"
-        "<th>Regions and supplied ink</th><th>Note</th></tr>"
+        f"<th>Regions and supplied ink</th><th>Note</th>{head}</tr>"
     )
     for g in rf.groups:
         meaning = group_meaning(g, me)
+        cell = f"<td>{_e(breaks[g.id])}</td>" if head else ""
         out.append(
             f"<tr><td>{_e(g.id)}</td><td>{_e(g.kind)}</td><td>{_e(g.ink_of)}</td>"
             f"<td>{_swatch('background:' + MEANING_COLOURS[meaning])}"
             f" {_e(MEANING_LABELS[meaning])}</td>"
-            f"<td>{_e(' '.join(g.members))}</td><td>{_e(g.note)}</td></tr>"
+            f"<td>{_e(' '.join(g.members))}</td><td>{_e(g.note)}</td>{cell}</tr>"
         )
     out.append("</table>")
     if rf.supplied:

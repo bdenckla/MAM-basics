@@ -9,11 +9,12 @@ program derives the rest from the crop.  The stroke-SVGs are a frozen record
 since 2026-11-01.  A region-SVG beside each crop describes its ink as regions,
 under the profile in doc/ink-region-representation.md: its seeds, cuts, strips
 of supplied vellum, overlaps' outlines, supplied ink, groups and judgments are
-authored, and this program derives the rest from the crop.  Under profile 3, a
-region-SVG's glyphs, from the library of glyphs doc/pen-stroke-snips/glyphs.svg,
-are fitted to its ink by regions-fit, and its regions derived from them.
-It reads only files in this repository, and the page image that regions-fit is
-given.
+authored, and this program derives the rest from the crop.  Under profiles 3 and
+4, a region-SVG's glyphs, from the library of glyphs
+doc/pen-stroke-snips/glyphs.svg, are fitted to its ink by regions-fit, and its
+regions derived from them; profile 4 follows the guidelines of the font of the
+manuscript's shapes.  It reads only files in this repository, and the page image
+that regions-fit is given.
 
 Subcommands:
     init
@@ -38,23 +39,25 @@ Subcommands:
         Write doc/pen-stroke-snips/overlays.html, the stroke-SVGs over their crops.
     regions-derive
         Usage: regions-derive [SVG ...] [--copy-taamey-d]
-        Recompute the library's glyphs of the scribe's, then the derived parts of
-        the region-SVGs given, or of all of them, and report what their authored
-        parts leave unsettled.  --copy-taamey-d copies Taamey D's glyphs into the
-        library afresh from Taamey-D/font-m-TaD/Taamey_D.ttf.  A profile-3
-        region-SVG whose glyphs' outlines would change is left as it is.
+        Recompute the library's glyphs of the scribe's, from crops and glyph
+        crops, and its drawn glyphs, then the derived parts of the region-SVGs
+        given, or of all of them, and report what their authored parts leave
+        unsettled.  --copy-taamey-d copies Taamey D's glyphs into the library
+        afresh from Taamey-D/font-m-TaD/Taamey_D.ttf.  A fitted region-SVG whose
+        glyphs' outlines would change is left as it is.
     regions-check
         Usage: regions-check [SVG ...]
         Report every way the library and the region-SVGs depart from the profile
         and their crops, as py/tests/test_ink_region_svgs.py does, and list,
-        without failing, each profile-3 region-SVG's unexplained ink.  Writes
-        nothing; never reads Taamey D's font.
+        without failing, each fitted region-SVG's unexplained ink and each
+        profile-4 region-SVG's breaks of the guidelines.  Writes nothing; never
+        reads Taamey D's font.
     regions-render
         Write doc/pen-stroke-snips/regions.html, the region-SVGs' ink in layers.
     regions-fit
         Usage: regions-fit SVG --page-image PATH
         Fit the library's glyphs to the region-SVG's ink, write its glyphs and
-        their parameters, move it to profile 3, and derive it.  PATH is the page
+        their parameters, move it to profile 4, and derive it.  PATH is the page
         image the crop was cut from, which the root's data-source-sha256 names.
         Takes minutes.
 """

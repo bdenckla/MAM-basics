@@ -57,10 +57,15 @@ the library's glyph placed by its fit, at the same samples:
     unexplained ink farther away;
 13. each glyph's ink, each overlap of glyphs and each region is traced.
 
+Profile 4 derives as profile 3 does, under the guidelines of the font of the
+manuscript's shapes: a mark's glyph is drawn, a letter's outline is moved along
+its normal by the distance its fit gives, and a group or a glyph may break a
+guideline.
+
 ``derive`` recomputes the derived parts and reports what the authored parts
 leave unsettled; ``problems`` reports every way a file departs from the profile
 and its crop.  ``fit_file`` runs the fit (pen_stroke.glyph_fit), which writes a
-crop's glyphs and moves it to profile 3; ``library_derive_file`` and
+crop's glyphs and moves it to profile 4; ``library_derive_file`` and
 ``library_problems`` derive and check the library of glyphs.
 """
 
@@ -475,7 +480,7 @@ def derive(rf, lum, library=None):
     out = dv.derive_level1(rf, lum)
     ink, owner, rank, overlap_masks, problems = region_ink(out, lum)
     fitted = None
-    if rf.profile == rsvg.PROFILE_3:
+    if rf.profile in rsvg.FITTED:
         fitted = glyph_ink(out, ink, owner, rank, overlap_masks, library)
         problems += fitted.problems
     held = set(owner[owner > 0].tolist())
@@ -627,8 +632,9 @@ def library_for(svg_path):
 
 def check(svg_path):
     """Every way the region-SVG at svg_path departs from the profile and its crop;
-    and what the check lists without failing: a profile-3 file's unexplained ink
-    and its groups of a fitted kind that are not fitted."""
+    and what the check lists without failing: a fitted file's unexplained ink and
+    its groups of a fitted kind that are not fitted, and a profile-4 file's
+    breaks of the guidelines."""
     try:
         rf = rsvg.read(svg_path)
     except ValueError as exc:
@@ -639,11 +645,20 @@ def check(svg_path):
         return out + [f"crop {png.name} does not exist"], []
     lum = raster.load_luminance(png)
     library = None
-    if rf.profile == rsvg.PROFILE_3:
+    if rf.profile in rsvg.FITTED:
         try:
             library = library_for(svg_path)
         except (OSError, ValueError) as exc:
             return out + [f"the library of glyphs: {exc}"], []
+        if rf.profile == rsvg.PROFILE_4 and not library.drawn:
+            return (
+                out
+                + [
+                    f"a file of profile {rsvg.PROFILE_4!r} needs the library's profile"
+                    f" {glib.PROFILE!r}"
+                ],
+                [],
+            )
     try:
         fresh, found, fitted = derive(rf, lum, library)
     except ValueError as exc:
@@ -666,6 +681,10 @@ def check(svg_path):
     if fitted is not None:
         out += _glyph_problems(rf, fresh)
         notes = fitted.notes
+    if rf.profile == rsvg.PROFILE_4:
+        found, listed = guideline_problems(rf, library)
+        out += found
+        notes = listed + notes
     return out, notes
 
 
@@ -674,8 +693,60 @@ def problems(svg_path):
     return check(svg_path)[0]
 
 
+def guideline_problems(rf, library):
+    """A profile-4 file's breaks of the guidelines: what is wrong with each, and
+    each listed as a note; and where a glyph departs from a guideline that
+    neither it nor its group breaks: a mark's glyph that is not drawn where its
+    part has a drawn shape, a glyph of the scribe's that serves only a group that
+    breaks preserved, and a letter's distance along its outline's normal beyond
+    its limit, or other than 0 where it breaks area."""
+    out, notes = [], []
+    for g in rf.groups:
+        found, wrong = glib.parse_breaks(g.brk)
+        out += [f"{g.id}: {p}" for p in wrong]
+        notes += [f"{g.id} ({g.kind}) breaks {name}: {why}" for name, why in found]
+    groups = {g.id: g for g in rf.groups}
+    sources = library.by_id()
+    for gl in rf.glyphs:
+        found, wrong = glib.parse_breaks(gl.brk)
+        out += [f"{gl.id}: {p}" for p in wrong]
+        notes += [
+            f"{gl.id}, of {gl.group}, breaks {name}: {why}" for name, why in found
+        ]
+        g, src = groups.get(gl.group), sources.get(gl.glyph)
+        if g is None or src is None:
+            # place_glyphs already reports the invalid reference.
+            continue
+        breaks = glyph_breaks(gl, g)
+        part = next((p for p in glib.entry_of(g.kind).parts if p.name == gl.part), None)
+        if part is not None and part.shape and not src.is_drawn:
+            if glib.DRAWN_MARKS not in breaks:
+                out.append(
+                    f"{gl.id}: its glyph {src.id} is not drawn, and neither it nor"
+                    f" {g.id} breaks {glib.DRAWN_MARKS}"
+                )
+        if src.is_scribes and src.unjudged and glib.PRESERVED not in breaks:
+            out.append(
+                f"{gl.id}: its glyph {src.id} is not judged well preserved, and"
+                f" neither it nor {g.id} breaks {glib.PRESERVED}"
+            )
+        if level5.pass_of(g.kind) == level5.LETTERS and len(gl.fit) in gf.LETTER_FIT_4:
+            offset = gl.fit[-1]
+            if abs(offset) > gf.OFFSET_LIMIT:
+                out.append(
+                    f"{gl.id}: its outline moves {geo.fmt(offset, 4)} pixels along its"
+                    f" normal, beyond {geo.fmt(gf.OFFSET_LIMIT, 2)}"
+                )
+            if glib.AREA in breaks and offset:
+                out.append(
+                    f"{gl.id}: it breaks {glib.AREA}, but its outline moves along its"
+                    " normal"
+                )
+    return out, notes
+
+
 def _glyph_problems(rf, fresh):
-    """Where a profile-3 file's derived glyphs and overlaps of glyphs differ from
+    """Where a fitted file's derived glyphs and overlaps of glyphs differ from
     what derivation gives."""
     out = []
     for old, new in zip(rf.glyphs, fresh.glyphs):
@@ -705,7 +776,7 @@ def derive_file(svg_path):
     is left as it is, to be fitted again."""
     rf = rsvg.read(svg_path)
     lum = raster.load_luminance(dv.crop_path(svg_path, rf))
-    library = library_for(svg_path) if rf.profile == rsvg.PROFILE_3 else None
+    library = library_for(svg_path) if rf.profile in rsvg.FITTED else None
     fresh, found, _ = derive(rf, lum, library)
     stale = [
         old.id
@@ -757,16 +828,18 @@ def fitted_parts(rf, masks):
     regions); and each group that a group of its owner and kind would be fitted
     as, or that says it is, but is not, with why.  A fitted group is one of the
     crop's subject's, or one that has data-fit="yes", whose kind the table fits,
-    holding a region with draft ink for each written part of a sign of several."""
+    under profile 4 as profile 4 fits it and otherwise as profile 3 does, holding
+    a region with draft ink for each written part of a sign of several."""
     me = ssvg.subject(rf)
+    drawn = rf.profile == rsvg.PROFILE_4
     region_ids = {r.id for r in rf.regions}
     parts, skipped = [], []
     for g in rf.groups:
         entry = glib.entry_of(g.kind)
         asked = g.fit == rsvg.FIT_YES
-        if not entry.fitted:
+        if not entry.fitted(drawn):
             if asked:
-                skipped.append((g, f"its kind is not fitted: {entry.unfitted}"))
+                skipped.append((g, f"its kind is not fitted: {entry.why_not(drawn)}"))
             continue
         if g.ink_of != me and not asked:
             continue
@@ -894,6 +967,22 @@ def outline_text(polys):
     )
 
 
+def glyph_breaks(gl, group):
+    """The guidelines that a glyph breaks: its own and its group's."""
+    return glib.breaks_named(gl.brk) | glib.breaks_named(group.brk)
+
+
+def fit_length(rf, letter, breaks):
+    """How many numbers a glyph's data-fit holds: a mark's; a letter's under
+    profile 3; and under profile 4 a letter's with guideline 3's warp, or with
+    phase 8's where it breaks the guideline limbs."""
+    if not letter:
+        return gf.MARK_FIT
+    if rf.profile != rsvg.PROFILE_4:
+        return gf.LETTER_FIT_3
+    return gf.LETTER_FIT_4[0] if glib.LIMBS in breaks else gf.LETTER_FIT_4[1]
+
+
 def place_glyphs(rf, library):
     """Each glyph's contours in crop pixels, the library's glyph placed by its fit,
     by id; and what keeps a glyph from being placed."""
@@ -915,21 +1004,21 @@ def place_glyphs(rf, library):
                 f" not {g.kind!r}, part {gl.part!r}"
             )
             continue
-        try:
-            prm, warp = gf.split_fit(gl.fit)
-        except ValueError as exc:
-            out.append(f"{gl.id}: {exc}")
-            continue
         letter = level5.pass_of(g.kind) == level5.LETTERS
-        if (warp is not None) != letter:
+        want = fit_length(rf, letter, glyph_breaks(gl, g))
+        if len(gl.fit) != want:
             out.append(
-                f"{gl.id}: a {'letter' if letter else 'mark'}'s data-fit holds"
-                f" {'24' if letter else '6'} numbers"
+                f"{gl.id}: a {'letter' if letter else 'mark'}'s data-fit holds {want}"
+                f" numbers here, not {len(gl.fit)}"
             )
             continue
+        prm, warp, offset = gf.split_fit(gl.fit)
         if src.id not in cache:
             cache[src.id] = gf.Glyph(glib.contours(src))
-        placed[gl.id] = cache[src.id].place(prm, warp)
+        polys = cache[src.id].place(prm, warp)
+        if offset:
+            polys = gf.offset_polys(polys, offset)
+        placed[gl.id] = polys
     return placed, out
 
 
@@ -1184,11 +1273,21 @@ def fit_ink(rf, grid, ink, page_image):
     return ink_p, inside, known
 
 
+def _meets_edge(mask):
+    return bool(
+        mask[0].any() or mask[-1].any() or mask[:, 0].any() or mask[:, -1].any()
+    )
+
+
 def fit_instances(rf, masks, library, parts):
     """The fit's instances for the fitted parts, each with its glyph of the
     library: the glyph a glyph of the file already names, or the library's first
-    for its kind and part; and where each starts."""
+    for its kind and part; and where each starts.  Under profile 4 the
+    guidelines that a glyph and its group do not break: a letter's warp is
+    guideline 3's, and a glyph whose draft ink the crop's edge does not cut has
+    guideline 2's stage."""
     me = ssvg.subject(rf)
+    fourth = rf.profile == rsvg.PROFILE_4
     existing = {(gl.group, gl.part): gl for gl in rf.glyphs}
     sources = library.by_id()
     cache = {}
@@ -1202,7 +1301,7 @@ def fit_instances(rf, masks, library, parts):
     for g, p, regs in parts:
         old = existing.get((g.id, p.name))
         src = sources[old.glyph] if old and old.glyph in sources else None
-        src = src or library.default_for(g.kind, p.name)
+        src = src or library.default_for(g.kind, p.name, fourth)
         own = np.zeros_like(next(iter(masks.values())))
         for r in regs:
             own |= masks[r]
@@ -1219,6 +1318,11 @@ def fit_instances(rf, masks, library, parts):
             _edge_of(own, g.ink_of) if extra else "",
         )
         inst.source = src
+        inst.brk = old.brk if old else ""
+        if fourth:
+            breaks = glib.breaks_named(inst.brk) | glib.breaks_named(g.brk)
+            inst.follow_limbs(letter and glib.LIMBS not in breaks)
+            inst.area = glib.AREA not in breaks and not _meets_edge(own)
         insts.append(inst)
         if letter and not extra:
             # The subject's letters' size, in crop pixels a font unit: the median
@@ -1242,13 +1346,19 @@ def fit_instances(rf, masks, library, parts):
 
 def fit_file(svg_path, page_image, log=print):
     """Fit the library's glyphs to a region-SVG's crop, writing its glyphs and their
-    data-fit and moving it to profile 3: a glyph the file already has keeps its id
-    and its glyph of the library.  What the derivation then leaves unsettled, and
-    what the check lists without failing."""
+    data-fit and moving it to profile 4: a glyph the file already has keeps its id,
+    its glyph of the library and its breaks.  What the derivation then leaves
+    unsettled, and what the check lists without failing."""
     svg_path = Path(svg_path)
     rf = rsvg.read(svg_path)
     lum = raster.load_luminance(dv.crop_path(svg_path, rf))
     library = library_for(svg_path)
+    if not library.drawn:
+        raise ValueError(
+            f"the fit moves a crop to profile {rsvg.PROFILE_4!r}, which needs the"
+            f" library's profile {glib.PROFILE!r}"
+        )
+    rf.profile = rsvg.PROFILE_4
     ink, masks, found = draft_masks(rf, lum)
     if found:
         raise ValueError("the draft is unsettled: " + "; ".join(found))
@@ -1277,12 +1387,17 @@ def fit_file(svg_path, page_image, log=print):
             gid, nxt = f"gl{nxt}", nxt + 1
         else:
             gid = old.id
-        fit = gf.fit_numbers(inst.prm, inst.warp if inst.letter else None)
+        fit = gf.fit_numbers(
+            inst.prm,
+            inst.warp if inst.letter else None,
+            inst.offset if inst.letter else None,
+        )
         glyphs.append(
-            rsvg.Glyph(gid, inst.group, inst.part, inst.source.id, tuple(fit))
+            rsvg.Glyph(
+                gid, inst.group, inst.part, inst.source.id, tuple(fit), brk=inst.brk
+            )
         )
     rf.glyphs = glyphs
-    rf.profile = rsvg.PROFILE_3
     fresh, found, res = derive(rf, lum, library)
     rsvg.write(fresh, svg_path)
     return found, res.notes
@@ -1333,20 +1448,74 @@ def scribe_glyph(src, snips_dir):
     return trace_samples(mask, rf.speck_size), out
 
 
-def library_derive(lib, snips_dir, font_path=None):
+def glyph_crop_glyph(src, snips_dir):
+    """A glyph of the scribe's from a glyph crop: the outline of the ink inside its
+    lasso, its pixels darker than its threshold traced with level 1's tracer and
+    its speck size, at SAMPLES samples a pixel, and traced as a region is; and
+    what keeps it from serving, such as a missing glyph crop."""
+    try:
+        png = glib.glyph_crop_path(snips_dir, src)
+    except ValueError as exc:
+        return "", [str(exc)]
+    if not png.exists():
+        return "", [f"{src.id}: no glyph crop {glib.GLYPH_CROPS}/{png.name}"]
+    lum = raster.load_luminance(png)
+    h, w = lum.shape
+    out = []
+    x0, y0, x1, y1 = src.box
+    if (x1 - x0, y1 - y0) != (w, h):
+        out.append(
+            f"{src.id}: its glyph crop is {w}x{h} pixels, but its box"
+            f" {geo.fmt(x1 - x0, 0)}x{geo.fmt(y1 - y0, 0)}"
+        )
+    pts = list(zip(src.lasso[0::2], src.lasso[1::2]))
+    if len(pts) < 3:
+        return "", out + [f"{src.id}: its lasso has fewer than three points"]
+    fills = [
+        geo.format_path(comp, level1.FILL_PLACES)
+        for comp in level1.trace_fills(lum < src.threshold, src.speck_size)
+    ]
+    if not fills:
+        return "", out + [f"{src.id}: its glyph crop holds no ink"]
+    lasso = geo.polygon_path([pts], rsvg.SEED_PLACES)
+    mask = scaled_mask(fills, w, h) & scaled_mask([lasso], w, h)
+    if not mask.any():
+        return "", out + [f"{src.id}: no ink lies inside its lasso"]
+    if _meets_edge(mask):
+        out.append(f"{src.id}: its letter's ink meets its glyph crop's edge")
+    d = trace_samples(mask, src.speck_size)
+    if not d:
+        out.append(f"{src.id}: its ink is too small to trace")
+    return d, out
+
+
+def _library_fresh(lib, snips_dir, font_path=None):
     """A copy of the library with its glyphs of the scribe's derived from their
-    crops, and its glyphs of Taamey D's copied afresh from the font when a font is
-    given; and what keeps it from serving."""
+    crops and glyph crops, its drawn glyphs made afresh from the table under
+    profile 2, and its glyphs of Taamey D's copied afresh from the font when a font
+    is given; and what its derivation finds."""
     if font_path is not None:
         lib = glib.copy_taamey_d(lib, font_path)
+    if lib.drawn:
+        lib = glib.with_drawn(lib)
     out, sources = [], []
     for s in lib.sources:
-        if not s.is_taamey_d:
+        if s.is_glyph_crop:
+            d, found = glyph_crop_glyph(s, snips_dir)
+            out += found
+            s = replace(s, outline=d)
+        elif s.is_scribes:
             d, found = scribe_glyph(s, snips_dir)
             out += found
             s = replace(s, outline=d)
         sources.append(s)
-    fresh = glib.Library(sources, lib.taamey_d_sha256)
+    return glib.Library(sources, lib.taamey_d_sha256, lib.profile), out
+
+
+def library_derive(lib, snips_dir, font_path=None):
+    """A copy of the library with its derived glyphs made afresh, as
+    _library_fresh gives it; and what keeps it from serving."""
+    fresh, out = _library_fresh(lib, snips_dir, font_path)
     return fresh, glib.structural_problems(fresh) + out
 
 
@@ -1371,11 +1540,27 @@ def library_problems(path):
         lib = glib.read(path)
     except (OSError, ValueError) as exc:
         return [str(exc)]
-    fresh, out = library_derive(lib, path.parent)
-    for old, new in zip(lib.sources, fresh.sources):
-        if not old.is_taamey_d and not dv.same_numbers(old.outline, new.outline):
+    fresh, found = _library_fresh(lib, path.parent)
+    out = glib.structural_problems(lib) + found
+    if [s.id for s in lib.sources] != [s.id for s in fresh.sources]:
+        out.append(
+            "the drawn glyphs are not those the table gives, in its order, between"
+            " the scribe's and Taamey D's; derive the library again"
+        )
+    made = fresh.by_id()
+    for old in lib.sources:
+        new = made.get(old.id)
+        if old.is_taamey_d or new is None:
+            continue
+        if not dv.same_numbers(old.outline, new.outline):
+            if old.is_drawn:
+                what = "its shape gives; derive the library again, and"
+            elif old.is_glyph_crop:
+                what = "its glyph crop gives;"
+            else:
+                what = "its crop's draft gives;"
             out.append(
-                f"{old.id}: its outline is not what its crop's draft gives; fit again"
-                " every crop that uses it"
+                f"{old.id}: its outline is not what {what} fit again every crop that"
+                " uses it"
             )
     return out

@@ -20,6 +20,17 @@ start and the same ink give the trial's parameters exactly:
    each glyph, in stage A, toward its group's draft ink, and again, in stage B,
    toward the ink nearest it after stage A, a letter also warped.
 
+Profile 4 of the region-SVGs follows the guidelines of the font of the
+manuscript's shapes (doc/PLAN-ink-regions.md): guideline 3, a letter's limbs
+following its ink, warps a letter in stage B through 16 control points on a
+4-by-4 grid, each moving at most LIMBS_LIMIT of its size, unless the letter
+breaks that guideline, when it keeps the warp of 9; and guideline 2, area
+preserved where the ink is intact, adds a stage after stage B, which scales a
+mark about its centroid until its area is its written part's draft ink's, and
+moves each point of a letter's outline along the outline's normal by one
+distance, at most OFFSET_LIMIT pixels, until its area is its group's draft
+ink's.
+
 Every random draw is seeded, so a fit run twice on one machine gives the same
 parameters; on another machine the last digits may differ.
 """
@@ -53,9 +64,19 @@ FOREIGN_INK = -0.25
 # Stage B: how far, in samples, a glyph's own ink reaches (10 crop pixels).
 NEAREST_REACH = 30
 # A control point's largest move, in glyph sizes, and what a move costs: this
-# many square pixels of score for each square pixel of movement.
+# many square pixels of score for each square pixel of movement.  Guideline 3's
+# warp: 16 control points, each moving at most LIMBS_LIMIT, at the same cost.
 WARP_LIMIT = 0.12
 WARP_COST = 0.5
+LIMBS_GRID = 4
+LIMBS_LIMIT = 0.25
+# Guideline 2: the largest distance, in crop pixels, that a letter's outline moves
+# along its normal, either way; and the bisection's rounds that find it.
+OFFSET_LIMIT = 1.5
+OFFSET_ROUNDS = 40
+# The span of the outline, in its points either way, whose chord gives the
+# direction of its normal at a point.
+NORMAL_SPAN = 2
 # Beyond its limits a glyph's score falls by this much for each squared excess.
 LIMIT_COST = 1e4
 GENERATIONS_A = 100
@@ -65,10 +86,11 @@ SEED_A = 1000
 SEED_B = 2000
 # The steps CMA-ES first takes in each parameter: the move in pixels, the
 # logarithms of the scales, the turn in radians, the shear; and each of a warp's
-# 18 numbers, in glyph sizes.
+# 18 numbers, or 32 under guideline 3, in glyph sizes.
 AFFINE_STEPS = (1.0, 1.0, 0.05, 0.05, 0.04, 0.05)
 WARP_STEP = 0.02
 WARP_SIZE = 18
+LIMBS_SIZE = 2 * LIMBS_GRID * LIMBS_GRID
 FIT_PLACES = 4
 # The top or bottom band of a glyph, in its frame, that places another line's
 # letter by its part inside the crop.
@@ -243,14 +265,32 @@ class Glyph:
             [(sx * hx, sy * hy) for sy in (-1, 0, 1) for sx in (-1, 0, 1)]
         )
         self.tps = _tps_matrix(self.ctrl, self.pts)
+        self._tps4 = None
         self.area, self.centroid, self.cov = _moments(polys)
+
+    def tps_for(self, size):
+        """The thin-plate spline's map for a warp of size numbers: 9 control points
+        on a 3-by-3 grid, or guideline 3's 16 on a 4-by-4 grid, over the glyph's
+        box."""
+        if size == WARP_SIZE:
+            return self.tps
+        if size != LIMBS_SIZE:
+            raise ValueError(f"a warp holds {WARP_SIZE} or {LIMBS_SIZE} numbers")
+        if self._tps4 is None:
+            hx, hy = self.half
+            steps = np.linspace(-1, 1, LIMBS_GRID)
+            ctrl = np.array([(sx * hx, sy * hy) for sy in steps for sx in steps])
+            self._tps4 = _tps_matrix(ctrl, self.pts)
+        return self._tps4
 
     def place(self, prm, warp=None):
         """The glyph's contours in crop pixels for the parameters prm = (move x,
         move y, ln scale x, ln scale y, turn, shear) and the control points'
         moves warp."""
         tx, ty, lsx, lsy, th, sh = prm
-        u = self.pts if warp is None else self.pts + self.tps @ warp.reshape(9, 2)
+        u = self.pts
+        if warp is not None:
+            u = u + self.tps_for(len(warp)) @ warp.reshape(-1, 2)
         a = np.array([[math.exp(lsx), sh * math.exp(lsy)], [0.0, math.exp(lsy)]])
         r = np.array([[math.cos(th), -math.sin(th)], [math.sin(th), math.cos(th)]])
         p = u @ (r @ a).T + (tx, ty)
@@ -327,7 +367,21 @@ class Instance:
         self.ln_px_fu = 0.0
         self.init = None
         self.prm = None
+        # A letter's warp: 18 numbers, or guideline 3's 32; and how far each of its
+        # control points may move, in glyph sizes.
+        self.warp_size = WARP_SIZE
+        self.warp_limit = WARP_LIMIT
         self.warp = np.zeros(WARP_SIZE)
+        # Guideline 2: whether a stage after stage B matches the glyph's area to its
+        # draft ink's; and a letter's distance along its outline's normal.
+        self.area = False
+        self.offset = 0.0
+
+    def follow_limbs(self, limbs):
+        """Guideline 3's warp, or phase 8's where the letter breaks it."""
+        self.warp_size = LIMBS_SIZE if limbs else WARP_SIZE
+        self.warp_limit = LIMBS_LIMIT if limbs else WARP_LIMIT
+        self.warp = np.zeros(self.warp_size)
 
 
 def _target_moments(mask):
@@ -453,7 +507,7 @@ def objective(grid, inst, weights, warp):
         wv = v[6:] if warp else None
         pen = penalty(inst, prm)
         if warp:
-            ex = np.maximum(np.abs(wv) - WARP_LIMIT, 0)
+            ex = np.maximum(np.abs(wv) - inst.warp_limit, 0)
             pen += LIMIT_COST * (ex**2).sum() + WARP_COST * ((wv * size) ** 2).sum()
         (x0, y0, x1, y1), m = grid.placed(g.place(prm, wv))
         return pen - weights[y0:y1, x0:x1][m].sum() / SAMPLES**2
@@ -466,10 +520,11 @@ def fit_one(grid, inst, weights, warp, seed, gens):
     its score."""
     f = objective(grid, inst, weights, warp)
     sc_aff = np.array(AFFINE_STEPS)
+    n = inst.warp_size
     base = np.concatenate([inst.prm, inst.warp]) if warp else inst.prm
-    scale = np.concatenate([sc_aff, np.full(WARP_SIZE, WARP_STEP)]) if warp else sc_aff
+    scale = np.concatenate([sc_aff, np.full(n, WARP_STEP)]) if warp else sc_aff
     best, val = cmaes(f, base, scale, gens, seed)
-    return best[:6], (best[6:] if warp else np.zeros(WARP_SIZE)), -val
+    return best[:6], (best[6:] if warp else np.zeros(n)), -val
 
 
 def nearest(grid, masks, reach):
@@ -519,7 +574,7 @@ def run(grid, insts, ink, inside, known, unfitted, log=None):
         other = ink & ~own & inside
         wts = np.where(own, 1.0, np.where(other, OTHER_INK, np.where(ink, 0.0, -1.0)))
         wts = wts * known
-        inst.prm, inst.warp = inst.init.copy(), np.zeros(WARP_SIZE)
+        inst.prm, inst.warp = inst.init.copy(), np.zeros(inst.warp_size)
         inst.prm, _, sc = fit_one(grid, inst, wts, False, SEED_A + k, GENERATIONS_A)
         if log:
             log(f"A {inst.name:12s} score {sc:7.1f}")
@@ -544,19 +599,117 @@ def run(grid, insts, ink, inside, known, unfitted, log=None):
         inst.prm, inst.warp = prm, wv
         if log:
             log(f"B {inst.name:12s} score {sc:7.1f} warp {np.abs(wv).max():.3f}")
+    # Guideline 2: each glyph whose ink is intact given its draft ink's area.
+    for inst in insts:
+        if inst.area:
+            match_area(inst)
+            if log:
+                log(f"C {inst.name:12s} {area_text(inst)}")
 
 
-def fit_numbers(prm, warp):
-    """A glyph's data-fit: its 6 parameters, and for a letter its warp's 18
-    numbers, each to FIT_PLACES decimals."""
+def signed_area(p):
+    """A polygon's shoelace area, by the orientation of its points."""
+    x, y = p[:, 0], p[:, 1]
+    return float((x * np.roll(y, -1) - np.roll(x, -1) * y).sum() / 2)
+
+
+def polys_area(polys):
+    """The area inside polygons whose holes turn the other way, in square crop
+    pixels."""
+    return abs(sum(signed_area(p) for p in polys))
+
+
+def offset_polys(polys, distance):
+    """Polygons with each point moved along their outline's normal there by one
+    distance in crop pixels, outward where it is more than 0: the normal at a
+    point is square to the chord between the points NORMAL_SPAN either side."""
+    sign = 1.0 if sum(signed_area(p) for p in polys) > 0 else -1.0
+    out = []
+    for p in polys:
+        t = np.roll(p, -NORMAL_SPAN, axis=0) - np.roll(p, NORMAL_SPAN, axis=0)
+        n = np.stack([t[:, 1], -t[:, 0]], 1)
+        length = np.linalg.norm(n, axis=1)
+        n = n / np.where(length > 0, length, 1.0)[:, None]
+        out.append(p + sign * distance * n)
+    return out
+
+
+def placed(inst):
+    """An instance's contours in crop pixels, as its parameters place them."""
+    polys = inst.glyph.place(inst.prm, inst.warp if inst.letter else None)
+    return offset_polys(polys, inst.offset) if inst.offset else polys
+
+
+def match_area(inst):
+    """Guideline 2's stage: a mark scaled about its centroid, keeping its shape,
+    until its area is its written part's draft ink's; a letter's outline moved
+    along its normal by the one distance, within OFFSET_LIMIT pixels, that makes
+    its area its group's draft ink's."""
+    want = inst.own.sum() / SAMPLES**2
+    if not inst.letter:
+        polys = inst.glyph.place(inst.prm)
+        _, centroid, _ = _moments(polys)
+        k = math.sqrt(want / polys_area(polys))
+        tx, ty, lsx, lsy, th, sh = inst.prm
+        t = k * np.array([tx, ty]) + (1 - k) * centroid
+        inst.prm = np.array([t[0], t[1], lsx + math.log(k), lsy + math.log(k), th, sh])
+        return
+    polys = inst.glyph.place(inst.prm, inst.warp)
+
+    def area(d):
+        return polys_area(offset_polys(polys, d))
+
+    lo, hi = -OFFSET_LIMIT, OFFSET_LIMIT
+    if want <= area(lo):
+        inst.offset = lo
+    elif want >= area(hi):
+        inst.offset = hi
+    else:
+        for _ in range(OFFSET_ROUNDS):
+            mid = (lo + hi) / 2
+            lo, hi = (mid, hi) if area(mid) < want else (lo, mid)
+        inst.offset = (lo + hi) / 2
+    inst.offset = round(inst.offset, FIT_PLACES)
+
+
+def area_text(inst):
+    """The glyph's area against its draft ink's, as the fit's log gives it."""
+    return (
+        f"area {polys_area(placed(inst)):.1f} against {inst.own.sum() / SAMPLES**2:.1f}"
+        + (f", offset {inst.offset:.4f}" if inst.letter else "")
+    )
+
+
+def fit_numbers(prm, warp, offset=None):
+    """A glyph's data-fit: its 6 parameters; for a letter its warp's 18 numbers, or
+    guideline 3's 32; and under profile 4 a letter's distance along its outline's
+    normal; each to FIT_PLACES decimals."""
     vals = list(prm) + ([] if warp is None else list(warp))
+    vals += [] if offset is None else [offset]
     return [round(float(v), FIT_PLACES) for v in vals]
 
 
+# A data-fit's length: a mark's; a letter's under profile 3; and a letter's under
+# profile 4, with phase 8's warp where it breaks guideline 3, and with guideline
+# 3's.
+MARK_FIT = 6
+LETTER_FIT_3 = 6 + WARP_SIZE
+LETTER_FIT_4 = (6 + WARP_SIZE + 1, 6 + LIMBS_SIZE + 1)
+
+
 def split_fit(numbers):
-    """A data-fit's numbers as parameters and a warp, or None for a mark's."""
-    if len(numbers) not in (6, 6 + WARP_SIZE):
-        raise ValueError(f"a data-fit holds 6 or {6 + WARP_SIZE} numbers")
+    """A data-fit's numbers as parameters, a warp, or None for a mark's, and a
+    letter's distance along its outline's normal, or None under profile 3."""
+    n = len(numbers)
+    if n not in (MARK_FIT, LETTER_FIT_3) + LETTER_FIT_4:
+        raise ValueError(
+            "a data-fit holds "
+            + ", ".join(str(k) for k in (MARK_FIT, LETTER_FIT_3) + LETTER_FIT_4[:-1])
+            + f" or {LETTER_FIT_4[-1]} numbers"
+        )
     prm = np.array(numbers[:6], dtype=float)
-    warp = np.array(numbers[6:], dtype=float) if len(numbers) > 6 else None
-    return prm, warp
+    if n == MARK_FIT:
+        return prm, None, None
+    if n == LETTER_FIT_3:
+        return prm, np.array(numbers[6:], dtype=float), None
+    return prm, np.array(numbers[6:-1], dtype=float), float(numbers[-1])

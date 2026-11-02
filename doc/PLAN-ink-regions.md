@@ -7,7 +7,8 @@ phase 7 collected Ben's answers to phase 6's sheet; phases 8 to 11, regions from
 proposed 2026-11-02 and approved by Ben the same day, which ended phase 7; phase 8 executed
 2026-11-02; phases 9 and 10 executed 2026-11-02, in a fresh session; phase 11, Ben's review,
 began the same day in another, and his answers led to phases 12 to 16, the font of the
-manuscript's shapes, proposed 2026-11-02 for his approval, which will end phase 11.
+manuscript's shapes, proposed 2026-11-02 and approved by Ben the same day, which ended phase 11;
+phase 12 executed 2026-11-02, in a fresh session.
 
 ## Context
 
@@ -213,6 +214,13 @@ Ben answered the plan's three decisions on 2026-11-01, after it was pushed in `5
     rafeh" (section 84), decision 32 of the note. The light grey's name is Claude's to choose
     (section 84), and Claude keeps "overfill", decision 33. Line 23's lamed's head in page
     F043A's מתחת is placed as the fit with Claude's cut c4 placed it (section 82), decision 34.
+11. **Phases 12 to 16 approved.** The revision that added them was pushed in `a149c2f6` and
+    merged in `f7c7581b`, with its design choices put to Ben: breaks written as `data-break`;
+    glyphs judged well preserved, with glyph crops for new ones; area matched by scaling a mark
+    and moving a letter's outline; a finer warp; five drawn shapes; and rafe a kind of its own.
+    Asked "Approve phases 12 to 16 as written?", Ben answered on 2026-11-02, by the button
+    labelled with his answer, "Approve the plan" (section 85). It ended phase 11, and it is
+    decision 35 of `doc/ink-region-representation.md`.
 
 ## The design (Claude's, for Ben's review)
 
@@ -1540,3 +1548,77 @@ Ben's words are sections 80 to 84 of the statements file.
    five guidelines. Phases 12 to 16 were written on 2026-11-02 for his approval.
 8. **Not answered:** phase 10's questions on whether each crop's regions are right, beyond his
    comments; and D, which waits for phase 14.
+
+### Phase 12, 2026-11-02
+
+Entries by Claude (Opus 5.5), in the session that the commander session started on 2026-11-02
+to execute phases 12 to 16, from `C:/Users/BenDe/GitRepos/MAM-basics` at `f7c7581b`, of which
+`a149c2f6` is an ancestor. Its untracked scripts are in `.novc/pen-stroke-exemplars/fitted-word/`,
+named `p12_*.py`, and its outputs in `phase12/` there. Ben's approval, section 85 of the
+statements file, is "Ben's decisions", item 11, and decision 35 of the note.
+
+1. **The modules** (item 1): profile 4 in `region_svg.py`, `region_derive.py` and
+   `region_render.py`, whose reader accepts profiles 2 to 4; the library's profile 2 in
+   `glyph_library.py`, whose reader accepts profiles 1 and 2; guideline 3's warp and guideline
+   2's stage in `glyph_fit.py`; and the kind `rafe mark` in `level5.py`. A group's `data-break`
+   is read and written by `py/pen_stroke/stroke_svg.py`'s shared reader and writer of groups,
+   a path beyond the list in "Checkout, Git and verification", as in phase 8. `regions-fit` now
+   moves a crop to profile 4, and refuses a library of profile 1.
+2. **The library stays at profile 1 until phase 13,** a departure. Profile 2 requires
+   `data-judged` of every glyph of the scribe's, which phase 13 gives, and the yod, nun and pe
+   of page F102A's על־פני, which the crops still use, cannot be judged well preserved; so
+   `glyphs.svg` moves to profile 2, and gains the drawn glyphs, with phase 13's item 1, not in
+   phase 12's commit as item 5 here had it. Phase 12's commit changes only code and documents:
+   `regions-derive` left the library, the six region-SVGs and `regions.html` byte-identical.
+3. **The table's two views,** a choice of Claude's: under profile 3 a kind is fitted when each
+   of its written parts has Taamey D's character, so that a tevir still is not; under profile 4
+   when each has a drawn shape or Taamey D's character, so that a tevir is, a stroke and at its
+   left a dot, as page F102A's line 2 writes its only one, g46. A single view would have left a
+   profile-3 crop's tevir without the glyphs that the check then requires. A rafe's bar names
+   no character of Taamey D's, so that the library's glyphs of Taamey D's need no new copy from
+   the font; a break of `drawn` therefore cannot give a rafe Taamey D's glyph.
+4. **The drawn shapes,** Claude's after Ben's descriptions, in `glyph_library.py`'s constants: a
+   dot, a circle; a bar and a stroke, a rectangle with rounded ends a fifth as thick as it is
+   long; munaḥ's bent stroke, down its right side, round a corner of radius 0.3 of its box and
+   along its foot to the left, as the three munaḥs of the two line crops are written, g54 and
+   g67 of line 4 and g36 of line 2; and atnaḥ's inverted V, its legs meeting at about 58° in a
+   rounded top. Each is centred in its unit box, its larger side 1, and written to 4 decimals. A
+   dot under or over a letter takes the dot, as a bar under or over it takes the bar. Image:
+   `phase12/shapes.png`.
+5. **Guideline 2's stage,** choices of Claude's: it leaves a glyph whose draft ink meets the
+   crop's edge as stage B placed it, since the crop may not hold all its ink; a mark's area and
+   centroid are those of its placed outline; a letter's normal at a point is square to the
+   chord between the outline's points two either side of it; and the distance along it is
+   found by bisection, to 4 decimals.
+6. **Breaks and judgments,** choices of Claude's: a break's reason, and `data-judged`, end with
+   whose word it is and its date, in parentheses. A glyph of the scribe's that is not judged
+   well preserved carries `data-break="preserved: …"` in the library in place of `data-judged`;
+   no new glyph takes it, and a crop's glyph may name it only where the glyph or its group
+   breaks `preserved` too. In a profile-4 file the check also reports a mark's glyph that is not
+   drawn where its part has a shape and nothing breaks `drawn`, and a letter's distance along
+   its normal beyond 1.5 pixels, or other than 0 where it breaks `area`.
+7. **A glyph crop** also records the speck size of its page's line crop, which level 1's
+   tracer needs: its pixels darker than the threshold are traced as a crop's level 1 is, and
+   the lasso then takes the letter's ink from those fills. Its letter's ink meeting the glyph
+   crop's edge is a problem.
+8. **A trial of profile 4, a finding.** An untracked copy of the six crops and the library,
+   moved to profile 2 with placeholder judgments (`p12_trial_setup.py`, `phase12/trial/`), and
+   in it page F043A's מתחת given each glyph its new default (`p12_reset_glyphs.py`) and fitted:
+   in 0.2 minutes, with no problem found, each glyph's area its draft ink's, a letter's outline
+   moving between −1.02 and 0.14 pixels. But the ḥet's glyph, in the columns of its right leg,
+   x 91 to 97, still reaches y 72.1, against the leg's ink ending at 60.7, and shares 7.3
+   pixels of ink with the tav's (`p12_het.py`), as phase 11 found under profile 3; no control
+   point moved more than 0.06 of its glyph's size, against the 0.25 allowed. With the warp's
+   cost cut from 0.5 to 0.1 or 0.02 (`p12_cost_trial.py`), the glyph reaches lower still, y 73.3
+   and 74.4. Stage B gives each glyph as its own the ink nearest its stage-A glyph, and the ink
+   that both the ḥet's and the tav's stage-A glyphs cover is nearest both, so the ḥet's leg is
+   rewarded for lying on the tav's foot. Phase 14's item 4 measures it on the real fit and stops
+   for a report if it fails.
+9. **Verification:** `git diff --check`; Black on the eight changed modules and the raster
+   test; `derive`, `check` and `render` left the six stroke-SVGs and `overlays.html`
+   byte-identical; `regions-derive` left the library and the six region-SVGs so,
+   `regions-check` found no problem in them, and `regions-render` left `regions.html` so. The
+   raster test now places every other letter of the library with guideline 3's warp and its
+   outline moved along its normal. The thirteen focused tests passed 265, once two comments of
+   `glyph_library.py` that `py/tests/test_h_dot_below_nfc.py` caught spelled the marks' names
+   with an x.

@@ -1,6 +1,6 @@
 # The ink-region representation of a manuscript crop
 
-State: live; the profile of the region-SVGs in `doc/pen-stroke-snips/`: profile 2 implemented on 2026-11-01, to Claude's design, which Ben approved as a plan the same day (decision 27); profile 3, regions from fitted glyphs, implemented on 2026-11-02, to Claude's design, which Ben approved as a plan the same day (decision 29), with all six crops moved to it the same day; of their details he has so far reviewed how supplied ink is drawn (decision 26); his review of the fitted crops on 2026-11-02 gave decisions 30 to 34 and a plan for the font of the manuscript's shapes, phases 12 to 16 of the plan, which await his approval
+State: live; the profile of the region-SVGs in `doc/pen-stroke-snips/`: profile 2 implemented on 2026-11-01, to Claude's design, which Ben approved as a plan the same day (decision 27); profile 3, regions from fitted glyphs, implemented on 2026-11-02, to Claude's design, which Ben approved as a plan the same day (decision 29), with all six crops moved to it the same day; of their details he has so far reviewed how supplied ink is drawn (decision 26); his review of the fitted crops on 2026-11-02 gave decisions 30 to 34 and a plan for the font of the manuscript's shapes, phases 12 to 16 of the plan, which he approved the same day (decision 35); profile 4 and the library's profile 2, which follow that font's guidelines, implemented on 2026-11-02, before the library or any crop moved to them
 
 A crop of a manuscript page can be shown as pixels and read as a Unicode transcription. The
 ink-region representation sits between them. It describes the crop's ink as **regions**, one or
@@ -11,7 +11,8 @@ set aside. It is kept as a **region-SVG**, `<crop>.regions.svg`, beside each cro
 directory's `README.md` gives each crop's provenance. Under profile 3 the watershed's regions
 are only a draft: each written part of a sign gets a **glyph** from a library of glyphs,
 `glyphs.svg` there, placed at its ink and fitted to it, and a region is the ink inside one
-sign's glyph.
+sign's glyph. Under profile 4 the fit follows the five guidelines of the font of the
+manuscript's shapes, which a group or a glyph may break.
 
 It replaces the strokes of the pen-stroke representation,
 [pen-stroke-representation.md](pen-stroke-representation.md), whose six stroke-SVGs and
@@ -131,7 +132,7 @@ his later word.
     have a feeling we'll often want to break them, at least on a per-word basis", and of the
     system: "At the moment I'm conceiving of this system as a fully-automated way to come up
     with results that will, in most cases, need to be human-tweaked." They are phases 12 to 16
-    of [PLAN-ink-regions.md](PLAN-ink-regions.md), which await his approval.
+    of [PLAN-ink-regions.md](PLAN-ink-regions.md), which he approved (decision 35).
 32. **Rafe.** Ben: "we are going to need to transcribe rafeh but of course our Unicode sources
     rarely do so". His expectations, for a later proposal of rafe where the Unicode source has
     none: "except in very rare cases, a letter with a dagesh is not expected to have a rafeh";
@@ -148,6 +149,13 @@ his later word.
     limited extent of the overlap it proposes, compared to the huge overlap of "without c4"". The
     plan reaches that placement with seeds in the mem's base rather than the cut, which the
     lamed's glyph crossed.
+35. **Phases 12 to 16 approved.** The plan's revision put its design choices to Ben: breaks
+    written as `data-break`; glyphs judged well preserved, with glyph crops for new ones; area
+    matched by scaling a mark and moving a letter's outline; a finer warp; five drawn shapes;
+    and rafe a kind of its own. Asked "Approve phases 12 to 16 as written?", Ben answered on
+    2026-11-02 "Approve the plan". So profile 4 and the library's profile 2, which "Profile 4:
+    the guidelines of the font" and "The library of glyphs" below give, were implemented the
+    same day.
 
 ## The file
 
@@ -312,33 +320,117 @@ binds the fit: the strips are vellum before it begins, and the check reports a g
 which some point of a strip's or a cut's line lies more than a pixel deep. An authored overlap
 or a region of an unfitted group that glyphs take entirely is a problem: it is to be dropped.
 
+## Profile 4: the guidelines of the font
+
+Profile 4, `data-profile="ink-region 4"`, is profile 3 under the five guidelines of the font of
+the manuscript's shapes (decision 31). The system gives a first pass, which a person will
+usually tweak, so each guideline is a default that any group or glyph may break. A profile-4
+file holds everything a profile-3 file holds, its derivation is profile 3's, and the library
+must be of its profile 2. By their short names:
+
+1. **`preserved`:** glyphs only from well-preserved, well-written instances. Each glyph of the
+   scribe's in the library carries `data-judged`, below.
+2. **`area`:** area preserved where the ink is intact. After stage B a mark's glyph is scaled
+   about its centroid, keeping its shape, until its area is that of its written part's draft
+   ink, which for a dot gives an ellipse of the ink's area centred on its ink; and every point of
+   a letter's outline is moved along the outline's normal there by one distance, at most 1.5
+   pixels either way, until the glyph's area is that of its group's draft ink. The normal at a
+   point is square to the chord between the outline's points two either side of it. A glyph
+   whose draft ink meets the crop's edge, so that the crop may not hold all its ink, is left as
+   stage B placed it.
+3. **`limbs`:** a letter's limbs follow its ink. Stage B warps a letter through 16 control
+   points on a 4-by-4 grid over its glyph's box, each moving at most 25% of its size, at the
+   cost of profile 3's warp, so that a limb may shorten or lengthen by up to a quarter of the
+   letter's size.
+4. **`drawn`:** a mark's glyph is drawn, from the library's drawn shapes below, wherever its
+   written part has a shape.
+5. **`rafe`:** rafe is a mark of its own, the kind `rafe mark`, HEBREW POINT RAFE, of one written
+   part, a drawn bar. Ben's expectations of where a rafe is found, decision 32, are recorded
+   there; no rule proposes a rafe that the transcription lacks.
+
+A letter's `data-fit` therefore holds 39 numbers: the move, two scales, turn and shear; the warp
+of 32; and the distance along its normal. A mark's holds 6, as in profile 3.
+
+**Breaking a guideline.** A group, `<g class="group">`, or a glyph, `<g class="glyph">`, may
+carry `data-break`, which names a guideline by its short name and says why, whose word it is
+and when, ending with the two in parentheses, as in `area: the ink has flaked (Claude,
+2026-11-03)`; several are separated by `; `. A group's breaks hold for each of its glyphs. A
+break is how a tweak to one word is written, alongside the seeds, a glyph's `data-glyph`, a
+group's `data-fit="yes"` and Ben's lines. The fit honours each break: `limbs` keeps profile 3's
+warp of 9 control points, each moving at most 12%, for which a letter's `data-fit` holds 25
+numbers; `area` leaves the glyph as stage B placed it, a letter's distance 0; `drawn` lets a
+mark's glyph be Taamey D's; and `preserved` lets a glyph name a glyph of the scribe's that is
+not judged well preserved. A break of `rafe` records for one word that a bar where a rafe
+would be expected is something else, or the reverse, and changes nothing in the fit.
+
+**Which groups are fitted,** and with which glyphs: as under profile 3, but a kind is fitted
+when each of its written parts has a drawn shape or Taamey D's character, so that a tevir, a
+stroke and at its left a dot, and a rafe are fitted too. A new glyph takes the first glyph of
+the scribe's for its kind and part, in the library's order, that is judged well preserved; or
+else the drawn glyph for its part; or else Taamey D's. `regions-fit` moves a file to profile 4.
+
 ## The library of glyphs
 
-`glyphs.svg`, `data-profile="glyph-library 1"`, is the font that this work evolves. It holds one
+`glyphs.svg` is the font that this work evolves. It holds one
 `<g class="glyph-source" id="…" data-kind="…" data-part="…" data-from="…">` per glyph, with a
 `<path class="outline">`, laid out by a derived transform so that the file shows the font when
-opened, with each id beneath its glyph. Its glyphs are of two sorts:
+opened, with each id beneath its glyph. Under `data-profile="glyph-library 1"` its glyphs are of
+two sorts, the scribe's from crops' groups and Taamey D's; under `data-profile="glyph-library 2"`,
+which the region-SVGs' profile 4 needs, of three, the drawn too, and the scribe's may come from
+glyph crops:
 
 1. **The scribe's,** `data-from="<crop> <group>"`: the ink that the crop's draft gives the
    group's regions, traced as a region is, in that crop's pixels; its outline is derived. Only a
    clean letter serves: its ink meets no edge of its crop and touches no other group's ink,
    unless its `data-clean-note` says why it serves even so, and Claude has looked at it beside
-   the crop's photograph.
+   the crop's photograph. Under profile 2 a glyph of the scribe's may instead come from a
+   **glyph crop**, `data-from="glyph crop <stem>"`: a small crop of one letter, cut from a page
+   image without resampling, as the crops are, and kept as `glyph-crops/<stem>.png` beside the
+   library, its stem `<page>-<letter>-<n>`. Its glyph-source records its box in the page image,
+   `data-box`; the page image's SHA-256, `data-source-sha256`; a lasso, `data-lasso`, a polygon
+   in the glyph crop's pixels that Claude draws round the letter's ink, leaving out every other
+   sign's; and the threshold and speck size of its page's line crop, `data-threshold` and
+   `data-speck-size`. Its outline is derived: its pixels darker than the threshold, traced by
+   level 1's tracer, then the ink of those fills inside the lasso at 3 samples a pixel, traced
+   as a region is. The letter's ink may not meet the glyph crop's edge. Under profile 2 every
+   glyph of the scribe's carries `data-judged`: that its instance is well preserved and well
+   written, judged beside the photograph, ending with who judged it and when in parentheses.
+   A glyph that is not so judged carries instead `data-break="preserved: …"`, with why it is
+   kept; no new glyph takes it, and a region-SVG's glyph may name it only where that glyph or
+   its group breaks `preserved` too.
 2. **Taamey D's,** `data-from="Taamey D <Unicode name>"`: the glyph to which
    `Taamey-D/font-m-TaD/Taamey_D.ttf` maps the character, each curve cut into 8 straight
    segments, in font units, y up, which 7 decimals write exactly. They are copied, with the
    font file's SHA-256 on the root, only when `regions-derive` is given `--copy-taamey-d`, so a
    new build of Taamey D changes nothing here until then. A bar is Taamey D's pataḥ and a dot
-   its ḥiriq: a qamats is a pataḥ over a ḥiriq, a segol three ḥiriq dots.
+   its ḥiriq: a qamats is a pataḥ over a ḥiriq, a segol three ḥiriq dots. They stay in the
+   library under profile 2, for the kinds whose parts have no drawn shape and for a break of
+   `drawn`.
+3. **The drawn,** under profile 2, `data-from="drawn <shape>"`: one glyph for each written part
+   of each fitted kind whose part has a shape, its outline that shape's in a unit box, y down,
+   made by `glyph_library.py` and derived, so that `regions-derive` makes them all afresh, after
+   the scribe's and before Taamey D's. The shapes follow Ben's descriptions (decisions 30 and
+   31): a **dot**, a circle, for each dot of a vowel, the dagesh, the shuruq, ḥolam, shin and
+   sin dots, the dots of sof pasuq and zaqef, the dot of tevir, revia, and a dot under or over
+   a letter; a **bar**, a rectangle with rounded ends, lying flat, for pataḥ, the bars of qamats
+   and ḥataf pataḥ, maqaf, rafe and a bar under or over a letter; a **stroke**, the same,
+   standing, for meteg and silluq, merkha and tipeḥa, which the fit's turn slants, the stroke
+   of tevir, and geresh, two of them for gershayim; munaḥ's **bent stroke**, one stroke down
+   its right side, round a curved corner and along its foot to the left; and atnaḥ's **inverted
+   V**, two strokes meeting in a rounded top. Darga, pashta, qadma, mahapakh and paseq, which Ben
+   has not described, keep Taamey D's glyphs until a crop needs one.
 
 A closed table in `py/pen_stroke/glyph_library.py`, keyed by every kind of `level5.py`, gives each
-kind's written parts, each part's name and Taamey D's character for it, and how a group's
-regions are matched to its parts: from top to bottom, from right to left, or the bar first, at
-the left, and then from top to bottom, as page F043A's line 4 writes its ḥataf pataḥ; or it says
-that the kind is not fitted, and why. The
-module raises if its counts and `PARTS` disagree. A new glyph takes the first of the scribe's
-glyphs for its kind and part, in the library's order, or else Taamey D's; Claude may name
-another in its `data-glyph`, and the fit never chooses by itself.
+kind's written parts, each part's name, Taamey D's character for it and its drawn shape, and how
+a group's regions are matched to its parts: from top to bottom, from right to left, or the bar
+first, at the left, and then from top to bottom, as page F043A's line 4 writes its ḥataf pataḥ;
+or it says that the kind is not fitted, and why. It has two views: under the region-SVGs'
+profile 3 a kind is fitted when each of its parts has Taamey D's character, and under profile 4
+when each has a drawn shape or Taamey D's character. A rafe's bar has no character of Taamey
+D's in the table. The module raises if its counts and `PARTS` disagree. A new glyph takes the
+first of the scribe's glyphs for its kind and part, in the library's order, or else, under
+profile 4, its drawn glyph, or else Taamey D's; Claude may name another in its `data-glyph`, and
+the fit never chooses by itself.
 
 ## The fit
 
@@ -356,7 +448,10 @@ centroid and second moments, and another word's or line's letter with the part o
 that meets the crop's edge over its draft ink. Stage A then moves, scales, turns and shears
 each glyph by CMA-ES, seeded, toward its group's draft ink; stage B fits each glyph again
 toward the ink nearest it, a letter also warped by a thin-plate spline. The plan's "The fit"
-gives the weights and limits, which the module names.
+gives the weights and limits, which the module names. Under profile 4 stage B's warp is
+guideline 3's, and guideline 2's stage follows it, as "Profile 4: the guidelines of the font"
+gives them; the derivation places a letter's glyph by its fit and then moves its outline along
+its normal by the distance its `data-fit` ends with.
 
 ## The check
 
@@ -390,13 +485,23 @@ gives the weights and limits, which the module names.
   crop again; and a glyph's ink, an overlap of glyphs or a region's ink inside no glyph that
   differs from what the glyphs give. It lists, without failing, each fitted group's
   unexplained ink, by pieces of at least a pixel, and each group that its owner and kind would
-  have fitted but that is not.
+  have fitted but that is not;
+- under profile 4 also: a library that is not of profile 2; a `data-fit` whose length does not
+  suit a letter's breaks; a break that names no guideline, or gives no reason ending with whose
+  word it is and when; and, where neither a glyph nor its group breaks the guideline, a mark's
+  glyph that is not drawn though its part has a shape, a glyph naming a glyph of the scribe's
+  that is not judged well preserved, and a letter's outline moved along its normal by more than
+  1.5 pixels, or at all where it breaks `area`. It lists every break, without failing.
 
 `regions-check` also checks the library: its table against the parts rule; that every glyph is
 of a fitted kind and one of its written parts; that Taamey D's glyphs cover every such part,
 under the font's SHA-256; and that each glyph of the scribe's is the outline its crop's draft
-gives, of a clean letter or one whose `data-clean-note` says why it serves. It never reads the
-font. `py/tests/test_ink_region_svgs.py` runs the same check in the suite, and fails if the
+gives, of a clean letter or one whose `data-clean-note` says why it serves. Under profile 2 it
+also checks that each glyph crop's PNG is there, of its box's size, and that its outline is
+what its lasso, threshold and speck size give; that each drawn glyph's outline is its shape's,
+and the drawn glyphs those the table gives, in its order; and that each glyph of the scribe's
+carries `data-judged`, ending with who judged it and when, or else a break of `preserved`, and
+not both. It never reads the font. `py/tests/test_ink_region_svgs.py` runs the same check in the suite, and fails if the
 directory holds no region-SVG or no library. `py/tests/test_glyph_raster.py` checks that the
 fit's rasterizer gives exactly what `geometry.rasterize` gives, for every glyph of the library
 and of every profile-3 region-SVG.
@@ -433,9 +538,12 @@ smoothly, never as squares of pixels. The layers, the first drawn lowest:
 
 Beside each image a legend names each group by its id, its kind and its letter or mark, a mark
 on a dotted circle, with its colour in the ink by group: Ben, on 2026-11-01, "I can't answer
-your question about g18 because I see that labelled on no image". Under profile 3 a fitted
-group's ink, in every layer, is its glyphs' ink and the overlaps of its glyphs, an overlap of
-glyphs showing the colour of each group that holds it.
+your question about g18 because I see that labelled on no image". Under profiles 3 and 4 a
+fitted group's ink, in every layer, is its glyphs' ink and the overlaps of its glyphs, an
+overlap of glyphs showing the colour of each group that holds it. Under profile 4 the table of
+groups gains a column, "Guidelines broken", wherever a group or a glyph of the crop breaks one,
+naming each break of a group and of its glyphs with its reason, and the tooltips of the
+group's ink and of its glyphs' outlines name them too.
 
 Ink of another word or line is slate in every layer, as decision 17 requires. The colours of the
 meanings, the palette of the regions, the teal, the tan and the name and profile of the file are
@@ -449,13 +557,16 @@ From the repository root, with the clone's own environment, as
 1. Author a region-SVG's seeds, cuts, strips of vellum, overlaps' outlines, supplied outlines,
    groups and judgments in a vector editor or by hand. A script of Claude's, which the snips
    README describes, re-drafted the six under profile 2.
-2. `regions-derive` derives the library's glyphs of the scribe's, and then recomputes every
-   derived part of the region-SVGs and reports what the authored parts leave unsettled. With
-   `--copy-taamey-d` it copies Taamey D's glyphs into the library afresh. It leaves as it is a
-   profile-3 file whose glyphs' outlines would change, to be fitted again.
+2. `regions-derive` derives the library's glyphs of the scribe's, from crops and glyph crops,
+   and makes its drawn glyphs afresh, and then recomputes every derived part of the region-SVGs
+   and reports what the authored parts leave unsettled. With `--copy-taamey-d` it copies Taamey
+   D's glyphs into the library afresh. It leaves as it is a fitted file whose glyphs' outlines
+   would change, to be fitted again.
 3. `regions-fit <region-SVG> --page-image <page image>` fits a crop's glyphs, writes them,
-   moves the file to profile 3 and derives it. It takes minutes, and only the clone that holds
-   the untracked page images can run it.
+   moves the file to profile 4 and derives it; it needs the library's profile 2. It takes
+   minutes, and only the clone that holds the untracked page images can run it. A glyph crop
+   is cut from a page image by hand, or by an untracked script of Claude's, without
+   resampling; its glyph-source records its box and the page image's SHA-256.
 4. `regions-check` reports every way the library and a region-SVG depart from this profile and
    their crops.
 5. `regions-render` writes `doc/pen-stroke-snips/regions.html`.
