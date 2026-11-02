@@ -59,6 +59,11 @@ for a fresh session that has no other context. Its thin pointer issue is #349, f
   records and 152 unread seeds. All 69 verses of Obadiah and Jonah are covered
   in each edition. Both BHL Jonah page breaks continue verses excluded by the
   new page's printed header; the adopted records use actual running text.
+- 2026-11-02, Micah batch: ten further book/page portions are censused in JC
+  and BHL. All 174 verses of Obadiah, Jonah and Micah are covered in each
+  edition. The catalogs contain 170 records: twenty completed records and
+  150 unread seeds. Ordinary ketiv/qere is supported only when each form
+  occupies one atom; phrase lookup uses its qere spelling.
 
 ## Codex entry indexes
 
@@ -586,8 +591,10 @@ The first-phase text projection accepts Scripture strings, the target of a
 `נוסח` note, vowel alternatives whose consonantal atoms agree, the explicit
 legarmeh marker `מ:לגרמיה-2` as a boundary without an atom, and the main
 one-atom form of the modern trivial ketiv/qere template, matching MAM-simple.
-It rejects nontrivial ketiv/qere, other unimplemented templates and named
-Decalogue strands. Extending those cases needs explicit source alignment;
+The Micah continuation adds ordinary ketiv/qere when both forms are one atom,
+using the qere spelling at that common position. It rejects multi-atom
+ketiv/qere, other unimplemented templates and named Decalogue strands.
+Extending those cases needs explicit source alignment;
 template names or argument shapes are not grounds for guessing it. An
 atoms-per-page advisory band remains deferred until representative full-page
 censuses exist. This pilot does not claim that every planned Phase 1 feature
@@ -637,6 +644,52 @@ and the earlier Obadiah/refusal/write-neutrality checks. The full suite and mega
 were not run for this isolated bounded batch under the focused-check policy.
 This continuation does not authorize or imply a large census without the
 first-book record-shape review below.
+
+### Micah continuation, 2026-11-02
+
+All ten Micah book/page portions were inspected. Nine original images were new
+to this batch; shared JC 547 was re-read at the Micah opening and its final
+lines. Native-pixel crops verified every page edge, the book transitions and
+the four ordinary ketiv/qere positions. Printed footer numbers were read
+separately from filenames. No image or crop is stored in this repository.
+
+| Edition | Scan filename | Observed printed page | Micah interval in MAM atom positions |
+|---|---|---|---|
+| `jc1` | `547-Jn-Mi.jpg` | 547 | 1:1 atom 1 through 2:10 atom 3 |
+| `jc1` | `548-Mi.jpg` | 548 | 2:10 atom 4 through 4:9 atom 13 |
+| `jc1` | `549-Mi.jpg` | 549 | 4:9 atom 14 through 6:10 atom 8 |
+| `jc1` | `550-Mi-Na.jpg` | 550 | 6:10 atom 9 through 7:20 atom 10 |
+| `bhl` | `0829-Mi.jpg` | 829 | 1:1 atom 1 through 2:5 atom 3 |
+| `bhl` | `0830-Mi.jpg` | 830 | 2:5 atom 4 through 3:11 atom 15 |
+| `bhl` | `0831-Mi.jpg` | 831 | 3:11 atom 16 through 5:2 atom 11 |
+| `bhl` | `0832-Mi.jpg` | 832 | 5:2 atom 12 through 6:8 atom 19 |
+| `bhl` | `0833-Mi.jpg` | 833 | 6:9 atom 1 through 7:16 atom 4 |
+| `bhl` | `0834-Mi-Na.jpg` | 834 | 7:16 atom 5 through 7:20 atom 10 |
+
+BHL's headers on 830, 831, 832 and 834 begin at 2:6, 3:12, 5:3 and 7:17
+respectively, but their actual opening text continues the preceding verse.
+JC 549 begins with the final atom of 4:9, `כיולדה`; JC 550 begins with the
+final atom of 6:10, `זעומה`. A verse-only page boundary would miss these words.
+The ordinary body coverage now reaches Micah's end; the Nahum portions of
+JC 550 and BHL 834 remain uncensused.
+
+Micah's ordinary ketiv/qere occurs at 1:3, 1:8, 1:10 and 3:2. In both editions
+each form occupies one word position, verified in the images. The text reader
+accepts only the two explicit ordinary template names `כו״ק` and `קו״כ`,
+validates their current schema and requires one atom in each form. It uses
+parameter 2, the qere in either display order, matching the independent
+MAM-simple `kq-q` child. Phrase lookup therefore uses `במתי`, `שולל`,
+`התפלשי` and `רע` at those four positions; ketiv aliases are not implemented.
+Multi-atom forms still refuse, even when their atom counts agree. This batch
+does not choose an alignment rule for them.
+
+All 105 Micah verses and 1,396 atoms agree with the independent MAM-simple
+export. The six focused tests passed. Direct checks covered all seven
+within-verse splits, phrase-qualified lookups including a phrase spanning a
+page break, the complete-verse boundary at BHL 832/833, all four qere phrases
+in both editions, and idempotent census regeneration. The full suite and
+mega were not run under the focused-check policy. This remains a bounded
+continuation before the large-census review boundary below.
 
 **Phase 0 — survey and tracked inventory. DONE, 2026-08-07.** The code is
 `py/main_scan_pages.py` (`survey`, `check`) over `py/scan_pages/`, with the lint at

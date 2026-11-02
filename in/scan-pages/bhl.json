@@ -8770,13 +8770,20 @@
       "id": "body",
       "bkids": [
         "Jonah",
+        "Micah",
         "Obadiah"
       ],
       "pages": [
         "0825-A-O.jpg",
         "0826-O-Jn.jpg",
         "0827-Jn.jpg",
-        "0828-Jn.jpg"
+        "0828-Jn.jpg",
+        "0829-Mi.jpg",
+        "0830-Mi.jpg",
+        "0831-Mi.jpg",
+        "0832-Mi.jpg",
+        "0833-Mi.jpg",
+        "0834-Mi-Na.jpg"
       ]
     }
   ],
@@ -9075,15 +9082,86 @@
     {
       "page": "0829-Mi.jpg",
       "bkid": "Micah",
+      "printed_page": 829,
+      "note": "Micah starts at the top of this page; the running text ends within 2:5 after יהיה.",
       "startc": 1,
       "startv": 1,
       "startp": 1,
-      "stopc": null,
-      "stopv": null,
-      "stopp": null,
-      "start_phrase": null,
-      "stop_phrase": null,
-      "note": "seeded by survey: a book starts at 1:1 atom 1"
+      "start_phrase": "דבר יהוה אשר היה אל מיכה",
+      "stopc": 2,
+      "stopv": 5,
+      "stopp": 3,
+      "stop_phrase": "לכן לא יהיה"
+    },
+    {
+      "page": "0830-Mi.jpg",
+      "bkid": "Micah",
+      "printed_page": 830,
+      "note": "The printed header begins at 2:6, but the actual first text completes 2:5. The page ends within 3:11 after יהוה.",
+      "startc": 2,
+      "startv": 5,
+      "startp": 4,
+      "start_phrase": "לך משליך חבל בגורל בקהל יהוה",
+      "stopc": 3,
+      "stopv": 11,
+      "stopp": 15,
+      "stop_phrase": "לאמר הלוא יהוה"
+    },
+    {
+      "page": "0831-Mi.jpg",
+      "bkid": "Micah",
+      "printed_page": 831,
+      "note": "The printed header begins at 3:12, but the actual first text completes 3:11. The page ends before the final atom of 5:2, ישראל.",
+      "startc": 3,
+      "startv": 11,
+      "startp": 16,
+      "start_phrase": "בקרבנו לא תבוא עלינו רעה",
+      "stopc": 5,
+      "stopv": 2,
+      "stopp": 11,
+      "stop_phrase": "אחיו ישובון על בני"
+    },
+    {
+      "page": "0832-Mi.jpg",
+      "bkid": "Micah",
+      "printed_page": 832,
+      "note": "The printed header begins at 5:3, but the actual first atom completes 5:2. The last text is the end of 6:8.",
+      "startc": 5,
+      "startv": 2,
+      "startp": 12,
+      "start_phrase": "ישראל",
+      "stopc": 6,
+      "stopv": 8,
+      "stopp": 19,
+      "stop_phrase": "לכת עם אלהיך"
+    },
+    {
+      "page": "0833-Mi.jpg",
+      "bkid": "Micah",
+      "printed_page": 833,
+      "note": "The running text starts with 6:9 and ends within 7:16 after מכל.",
+      "startc": 6,
+      "startv": 9,
+      "startp": 1,
+      "start_phrase": "קול יהוה לעיר יקרא",
+      "stopc": 7,
+      "stopv": 16,
+      "stopp": 4,
+      "stop_phrase": "יראו גוים ויבשו מכל"
+    },
+    {
+      "page": "0834-Mi-Na.jpg",
+      "bkid": "Micah",
+      "printed_page": 834,
+      "note": "The printed Micah header begins at 7:17, but the actual first text completes 7:16. Micah ends above its verse count and the opening of Nahum.",
+      "startc": 7,
+      "startv": 16,
+      "startp": 5,
+      "start_phrase": "גבורתם ישימו יד על פה",
+      "stopc": 7,
+      "stopv": 20,
+      "stopp": 10,
+      "stop_phrase": "נשבעת לאבתינו מימי קדם"
     },
     {
       "page": "0834-Mi-Na.jpg",

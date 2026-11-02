@@ -6346,13 +6346,17 @@
       "id": "body",
       "bkids": [
         "Jonah",
+        "Micah",
         "Obadiah"
       ],
       "pages": [
         "544-A-O.jpg",
         "545-O-Jn.jpg",
         "546-Jn.jpg",
-        "547-Jn-Mi.jpg"
+        "547-Jn-Mi.jpg",
+        "548-Mi.jpg",
+        "549-Mi.jpg",
+        "550-Mi-Na.jpg"
       ]
     }
   ],
@@ -6651,15 +6655,58 @@
     {
       "page": "547-Jn-Mi.jpg",
       "bkid": "Micah",
+      "printed_page": 547,
+      "note": "Micah begins below Jonah in the right column; the left column ends within Micah 2:10 after כי.",
       "startc": 1,
       "startv": 1,
       "startp": 1,
-      "stopc": null,
-      "stopv": null,
-      "stopp": null,
-      "start_phrase": null,
-      "stop_phrase": null,
-      "note": "seeded by survey: a book starts at 1:1 atom 1"
+      "start_phrase": "דבר יהוה אשר היה אל מיכה",
+      "stopc": 2,
+      "stopv": 10,
+      "stopp": 3,
+      "stop_phrase": "קומו ולכו כי"
+    },
+    {
+      "page": "548-Mi.jpg",
+      "bkid": "Micah",
+      "printed_page": 548,
+      "note": "The running text continues 2:10 and stops before the final atom of 4:9, כיולדה.",
+      "startc": 2,
+      "startv": 10,
+      "startp": 4,
+      "start_phrase": "לא זאת המנוחה בעבור",
+      "stopc": 4,
+      "stopv": 9,
+      "stopp": 13,
+      "stop_phrase": "אבד כי החזיקך חיל"
+    },
+    {
+      "page": "549-Mi.jpg",
+      "bkid": "Micah",
+      "printed_page": 549,
+      "note": "The first atom completes 4:9 before 4:10 begins; the page ends before the final atom of 6:10, זעומה.",
+      "startc": 4,
+      "startv": 9,
+      "startp": 14,
+      "start_phrase": "כיולדה",
+      "stopc": 6,
+      "stopv": 10,
+      "stopp": 8,
+      "stop_phrase": "רשע ואיפת רזון"
+    },
+    {
+      "page": "550-Mi-Na.jpg",
+      "bkid": "Micah",
+      "printed_page": 550,
+      "note": "The first atom completes 6:10 before 6:11 begins; Micah ends in the left column above Nahum.",
+      "startc": 6,
+      "startv": 10,
+      "startp": 9,
+      "start_phrase": "זעומה",
+      "stopc": 7,
+      "stopv": 20,
+      "stopp": 10,
+      "stop_phrase": "נשבעת לאבתינו מימי קדם"
     },
     {
       "page": "550-Mi-Na.jpg",

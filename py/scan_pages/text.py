@@ -2,10 +2,10 @@
 
 This initial projection accepts Scripture strings, a נוסח target, vowel
 alternatives with identical consonantal atoms, and the main one-atom form of
-the modern trivial ketiv/qere template, plus the explicit legarmeh marker. It
-does not assign atom numbers through nontrivial ketiv/qere or alternative
-strands: those need an explicit source-alignment policy before a later book
-can be censused.
+the modern trivial ketiv/qere template, plus the explicit legarmeh marker.
+Ordinary ketiv/qere uses the qere spelling only when both forms are one atom,
+so either printed form occupies the same position. Multi-atom ketiv/qere and
+alternative strands need explicit source alignment before a later census.
 Documentation is never Scripture. Unknown templates fail rather than contribute
 guessed text. No pointed text or second Bible corpus is stored in the index.
 """
@@ -66,6 +66,18 @@ def _body_text(elements):
             # Match the existing MAM-simple kq-trivial body's main form, not
             # an alternative spelling or a reading assembled from other fields.
             parts.append(params["1"])
+        elif isinstance(element, dict) and element["tmpl_name"] in {"כו״ק", "קו״כ"}:
+            params = template_names.validate_current_plus_template(element)
+            if not all(
+                isinstance(params[key], str) and len(letters_atoms(params[key])) == 1
+                for key in ("1", "2")
+            ):
+                raise ValueError(
+                    "Ordinary ketiv/qere needs one atom in each form for scan alignment"
+                )
+            # Both template orders store ketiv in 1 and qere in 2. Match
+            # MAM-simple's selected qere; each source form has the same slot.
+            parts.append(params["2"])
         elif isinstance(element, dict) and element["tmpl_name"] == "מ:לגרמיה-2":
             params = template_names.validate_current_plus_template(element)
             if params:

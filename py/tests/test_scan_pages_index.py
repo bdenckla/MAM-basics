@@ -63,6 +63,16 @@ def test_censused_books_agree_with_independent_simple_export():
                         for node in verse["contents"]:
                             if node["type"] in {"text", "kq-trivial"}:
                                 parts.append(node["text"])
+                            elif node["type"] == "kq":
+                                assert sorted(
+                                    child["type"] for child in node["contents"]
+                                ) == ["kq-k", "kq-q"]
+                                qere = next(
+                                    child
+                                    for child in node["contents"]
+                                    if child["type"] == "kq-q"
+                                )
+                                parts.append(qere["text"])
                             else:
                                 assert node == {"type": "lp-legarmeih"}
                                 parts.append(" ")
