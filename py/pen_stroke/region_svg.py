@@ -9,9 +9,13 @@ authored id and one seed point or more, whose outline is derived; overlaps,
 authored outlines of ink that two signs are proposed to share, whose ink is
 derived; supplied ink, authored outlines of ink the crop does not show, whose
 added ink is derived; and groups, as a stroke-SVG has them, holding regions,
-overlaps and supplied ink in place of strokes.  The reader accepts the profile's
-elements, classes and attributes and nothing else, as pen_stroke.stroke_svg's
-does, and the writer always writes the same text for the same content.
+overlaps and supplied ink in place of strokes.  Profile 3 adds glyphs: for each
+written part of each fitted group, a glyph of the library
+(pen_stroke.glyph_library) and the fit's parameters, which only the fit writes,
+with its placed outline and its ink derived; and the overlaps of glyphs, whose
+ink is derived.  The reader accepts profiles 2 and 3, their elements, classes
+and attributes and nothing else, as pen_stroke.stroke_svg's does, and the writer
+always writes the same text for the same content.
 """
 
 import re
@@ -24,6 +28,9 @@ from pen_stroke import level1
 from pen_stroke import stroke_svg as ssvg
 
 PROFILE = "ink-region 2"
+# Profile 3: regions from fitted glyphs, its derivation beginning with profile 2's.
+PROFILE_3 = "ink-region 3"
+PROFILES = (PROFILE, PROFILE_3)
 SUFFIX = ".regions.svg"
 _SVG = "http://www.w3.org/2000/svg"
 # The provenance on the root, in the order it is written: the stroke-SVG's, with who
@@ -38,7 +45,13 @@ SUPPLIED = ssvg.SUPPLIED + (RESTORED,)
 # A region's id is rg and a number: removed samples go back to the region of lowest
 # number (pen_stroke.region_derive), and the residual pieces already use r.
 REGION_ID = re.compile(r"rg([1-9][0-9]*)")
+GLYPH_ID = re.compile(r"gl([1-9][0-9]*)")
+GROUP_ID = re.compile(r"g([1-9][0-9]*)")
 SEED_PLACES = 2
+# A group of another word or line is fitted when it says so (profile 3).
+FIT_YES = "yes"
+# A glyph's data-fit, each number to this many decimals.
+FIT_PLACES = 4
 # A strip of supplied vellum is 1 pixel wide unless its data-width says otherwise.
 VELLUM_WIDTH = 1.0
 WIDTH_PLACES = 2
@@ -56,6 +69,12 @@ STYLE = f"""
 .supplied-ink .outline {{ display: none }}
 .supplied-ink .added {{ fill: #ff6d00 }}
 .supplied-ink[data-supplied="flaked"] .added {{ fill: #00897b }}
+"""
+# Profile 3's additions to the file's own style: each glyph's ink, its outline thin,
+# and the overlaps of glyphs.
+STYLE_3 = """.glyph .ink { fill: #1f618d; fill-opacity: 0.5 }
+.glyph .outline { fill: none; stroke: #555; stroke-width: 0.2 }
+.glyph-overlap { fill: #7d3c98; fill-opacity: 0.6 }
 """
 
 
@@ -103,6 +122,31 @@ class SuppliedInk:
 
 
 @dataclass
+class Glyph:
+    id: str
+    # Its group's id, and its written part: empty for a sign of one part.
+    group: str
+    part: str
+    # Its glyph-source's id in the library.
+    glyph: str
+    # The fit's parameters: a move, two scales, a turn and a shear, and for a
+    # letter a warp of 18 numbers (pen_stroke.glyph_fit).
+    fit: tuple
+    # Derived: the library's glyph placed by the parameters, and its ink.
+    outline: str = ""
+    ink: str = ""
+
+
+@dataclass
+class GlyphOverlap:
+    id: str
+    # The glyphs inside each of which some of its ink lies deep.
+    glyphs: tuple
+    # Derived: its ink.
+    d: str = ""
+
+
+@dataclass
 class RegionFile:
     width: int
     height: int
@@ -112,6 +156,7 @@ class RegionFile:
     speck_size: int
     halo_band: int
     tracer: str = level1.TRACER
+    profile: str = PROFILE
     fills: list = field(default_factory=list)
     pieces: list = field(default_factory=list)
     smoothing: str = ""
@@ -121,6 +166,8 @@ class RegionFile:
     regions: list = field(default_factory=list)
     overlaps: list = field(default_factory=list)
     supplied: list = field(default_factory=list)
+    glyphs: list = field(default_factory=list)
+    glyph_overlaps: list = field(default_factory=list)
     groups: list = field(default_factory=list)
 
 
@@ -134,6 +181,20 @@ def region_number(rid):
     if not m:
         raise ssvg.ProfileError(f"{rid}: a region's id is rg and a number")
     return int(m.group(1))
+
+
+def glyph_number(gid):
+    """The number in a glyph's id."""
+    m = GLYPH_ID.fullmatch(gid)
+    if not m:
+        raise ssvg.ProfileError(f"{gid}: a glyph's id is gl and a number")
+    return int(m.group(1))
+
+
+def group_number(gid):
+    """The number in a group's id, or None for an id not g and a number."""
+    m = GROUP_ID.fullmatch(gid)
+    return int(m.group(1)) if m else None
 
 
 def owners(rf):
@@ -164,6 +225,8 @@ def style(rf):
     if others:
         sel = ", ".join(f"#{i} .ink" if i in overlaps else f"#{i} path" for i in others)
         out += f"{sel} {{ fill: {ssvg.OTHER_INK_COLOUR}; fill-opacity: 0.55 }}\n"
+    if rf.profile == PROFILE_3:
+        out += STYLE_3
     return out
 
 
@@ -176,8 +239,10 @@ def read(path):
     allowed |= {f"data-{k}" for k in PROVENANCE_KEYS}
     allowed |= {"data-threshold", "data-speck-size", "data-halo-band", "data-tracer"}
     a = ssvg.profile_attrs(root, "root", allowed)
-    if a.get("data-profile") != PROFILE:
-        raise ssvg.ProfileError(f"{path}: data-profile is not {PROFILE!r}")
+    if a.get("data-profile") not in PROFILES:
+        raise ssvg.ProfileError(
+            f"{path}: data-profile is not one of {', '.join(map(repr, PROFILES))}"
+        )
     if a.get("data-channel") != "luminance":
         raise ssvg.ProfileError(f"{path}: data-channel is not 'luminance'")
     vb = [float(v) for v in ssvg.require(a, "viewBox", "root").split()]
@@ -194,7 +259,9 @@ def read(path):
         speck_size=int(ssvg.require(a, "data-speck-size", "root")),
         halo_band=int(ssvg.require(a, "data-halo-band", "root")),
         tracer=ssvg.require(a, "data-tracer", "root"),
+        profile=a["data-profile"],
     )
+    third = rf.profile == PROFILE_3
     seen = []
     for tag, el in ssvg.svg_children(root):
         cls = el.attrib.get("class", "")
@@ -221,11 +288,17 @@ def read(path):
             _read_overlaps(el, rf)
         elif key == "g.supplied":
             _read_supplied(el, rf)
+        elif key == "g.glyphs" and third:
+            _read_glyphs(el, rf)
+        elif key == "g.glyph-overlaps" and third:
+            _read_glyph_overlaps(el, rf)
         elif key == "g.groups":
-            ssvg.read_groups(el, rf, parts_notes=True)
+            ssvg.read_groups(el, rf, parts_notes=True, fit_flags=True)
         else:
-            raise ssvg.ProfileError(f"{path}: element {key!r} is not in the profile")
-    for needed in (
+            raise ssvg.ProfileError(
+                f"{path}: element {key!r} is not in profile {rf.profile!r}"
+            )
+    needed = [
         "image.crop",
         "g.fills",
         "g.image-residual",
@@ -235,9 +308,15 @@ def read(path):
         "g.overlaps",
         "g.supplied",
         "g.groups",
-    ):
-        if needed not in seen:
-            raise ssvg.ProfileError(f"{path}: missing {needed}")
+    ]
+    if third:
+        needed += ["g.glyphs", "g.glyph-overlaps"]
+    for key in needed:
+        if key not in seen:
+            raise ssvg.ProfileError(f"{path}: missing {key}")
+    for g in rf.groups:
+        if g.fit not in ("", FIT_YES):
+            raise ssvg.ProfileError(f"{g.id}: data-fit is {FIT_YES!r} or absent")
     return rf
 
 
@@ -349,6 +428,52 @@ def _read_supplied(g, rf):
         )
 
 
+def _read_glyphs(g, rf):
+    for tag, el in ssvg.svg_children(g):
+        if tag != "g" or el.attrib.get("class") != "glyph":
+            raise ssvg.ProfileError("glyphs: every child is a g.glyph")
+        a = ssvg.profile_attrs(
+            el,
+            "glyph",
+            {"class", "id", "data-group", "data-part", "data-glyph", "data-fit"},
+        )
+        gid = ssvg.require(a, "id", "glyph")
+        glyph_number(gid)
+        try:
+            fit = tuple(float(v) for v in ssvg.require(a, "data-fit", gid).split())
+        except ValueError as exc:
+            raise ssvg.ProfileError(f"{gid}: data-fit is numbers") from exc
+        parts = _parts(el, gid, ("outline", "ink"))
+        rf.glyphs.append(
+            Glyph(
+                gid,
+                ssvg.require(a, "data-group", gid),
+                a.get("data-part", ""),
+                ssvg.require(a, "data-glyph", gid),
+                fit,
+                parts.get("outline", ""),
+                parts.get("ink", ""),
+            )
+        )
+
+
+def _read_glyph_overlaps(g, rf):
+    for tag, el in ssvg.svg_children(g):
+        if tag != "path" or el.attrib.get("class") != "glyph-overlap":
+            raise ssvg.ProfileError(
+                "glyph-overlaps: every child is a path.glyph-overlap"
+            )
+        a = ssvg.profile_attrs(el, "glyph-overlap", {"class", "id", "data-glyphs", "d"})
+        oid = ssvg.require(a, "id", "glyph-overlap")
+        glyphs = tuple(ssvg.require(a, "data-glyphs", oid).split())
+        rf.glyph_overlaps.append(GlyphOverlap(oid, glyphs, a.get("d", "")))
+
+
+def fit_text(fit):
+    """A glyph's data-fit as the profile writes it."""
+    return " ".join(geo.fmt(v, FIT_PLACES) for v in fit)
+
+
 def dumps(rf):
     """The region-SVG's text: the same content always gives the same text."""
     root = [
@@ -356,7 +481,7 @@ def dumps(rf):
         f'viewBox="0 0 {rf.width} {rf.height}"',
         f'width="{rf.width}"',
         f'height="{rf.height}"',
-        f'data-profile="{PROFILE}"',
+        f'data-profile="{rf.profile}"',
     ]
     for k in PROVENANCE_KEYS:
         if k in rf.provenance:
@@ -419,6 +544,25 @@ def dumps(rf):
         lines.append(f'      <path class="added" d="{s.added}"/>')
         lines.append("    </g>")
     lines.append("  </g>")
+    if rf.profile == PROFILE_3:
+        lines.append('  <g class="glyphs">')
+        for gl in rf.glyphs:
+            part = f' data-part="{ssvg.esc(gl.part)}"' if gl.part else ""
+            lines.append(
+                f'    <g class="glyph" id="{gl.id}" data-group="{gl.group}"{part}'
+                f' data-glyph="{gl.glyph}" data-fit="{fit_text(gl.fit)}">'
+            )
+            lines.append(f'      <path class="outline" d="{gl.outline}"/>')
+            lines.append(f'      <path class="ink" d="{gl.ink}"/>')
+            lines.append("    </g>")
+        lines.append("  </g>")
+        lines.append('  <g class="glyph-overlaps">')
+        for o in rf.glyph_overlaps:
+            lines.append(
+                f'    <path class="glyph-overlap" id="{o.id}"'
+                f' data-glyphs="{" ".join(o.glyphs)}" d="{o.d}"/>'
+            )
+        lines.append("  </g>")
     lines += ssvg.group_lines(rf.groups)
     lines.append("</svg>")
     return "\n".join(lines) + "\n"

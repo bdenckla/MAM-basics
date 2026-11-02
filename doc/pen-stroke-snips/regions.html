@@ -22,6 +22,9 @@ td[dir=rtl] { font-size: 1.6em; line-height: 1.8; }
 
 .layered select { margin: 0.4em 0 0.2em 0; }
 td.hint { color: #444; font-size: 0.9em; }
+.legend { columns: 14em; font-size: 0.9em; margin: 0.4em 0; }
+.legend div { break-inside: avoid; }
+.legend .sign { font-size: 1.6em; }
 .hide-photo .layer-photo { display: none; }
 .hide-black .layer-black { display: none; }
 .hide-meaning .layer-meaning { display: none; }
@@ -30,8 +33,11 @@ td.hint { color: #444; font-size: 0.9em; }
 .hide-supplied .layer-supplied { display: none; }
 .hide-others .layer-others { display: none; }
 .hide-set-aside .layer-set-aside { display: none; }
+.hide-glyphs .layer-glyphs { display: none; }
 .hide-pieces .layer-pieces { display: none; }
 .hide-cuts .layer-cuts { display: none; }
+.hide-left .layer-left { display: none; }
+.hide-group-labels .layer-group-labels { display: none; }
 .hide-labels .layer-labels { display: none; }
 </style>
 </head>
@@ -131,6 +137,8 @@ meaning it is a faint tint of slate.</p>
 <g class="layer-supplied">
 <path fill="#e6cf9c" d="M42.878 72.417 C43.539 71.362 44.301 70.146 44.571 69.714 C44.901 69.186 45.172 69.039 45.399 69.265 C45.901 69.767 43.109 74.333 42.299 74.333 C41.756 74.333 41.831 74.085 42.878 72.417 Z"><title>v1, supplied vellum: Ben&#x27;s, drawn on 2026-11-01 as the cut c11 (statement 62): the pe and the nun do not touch, and a thin strip of vellum, which level 1&#x27;s fill covers, runs between them; the re-draft makes his line a strip of vellum</title></path>
 </g>
+<g class="layer-glyphs" fill="none">
+</g>
 <g class="layer-pieces">
 <path fill="#1e8449" fill-opacity="0.85" d="M45 111H47V112H48V113H46V112H45Z"><title>r1: speck, judged ink</title></path>
 </g>
@@ -150,6 +158,19 @@ meaning it is a faint tint of slate.</p>
 <circle cx="46.5" cy="111.83" r="0.62" fill="#fff" stroke="#e91e63" stroke-width="1.5" vector-effect="non-scaling-stroke"><title>a seed of rg12</title></circle>
 <circle cx="78.5" cy="98.5" r="0.62" fill="#fff" stroke="#e91e63" stroke-width="1.5" vector-effect="non-scaling-stroke"><title>a seed of rg13</title></circle>
 <circle cx="39.5" cy="95" r="0.62" fill="#fff" stroke="#e91e63" stroke-width="1.5" vector-effect="non-scaling-stroke"><title>a seed of rg15</title></circle>
+</g>
+<g class="layer-left">
+</g>
+<g class="layer-group-labels" font-size="2.75" font-weight="bold" fill="#b00020" stroke="#fff" stroke-width="0.75" paint-order="stroke" text-anchor="middle">
+<text x="17.47" y="37.72">g1</text>
+<text x="34.28" y="54">g2</text>
+<text x="69.38" y="56.84">g3</text>
+<text x="76.33" y="57.48">g4</text>
+<text x="17.61" y="88.25">g5</text>
+<text x="37.46" y="89.37">g6</text>
+<text x="34.03" y="103.63">g7</text>
+<text x="76.13" y="92.58">g8</text>
+<text x="37.86" y="9.96">g9</text>
 </g>
 <g class="layer-labels" font-size="2.75" font-weight="bold" fill="#000" stroke="#fff" stroke-width="0.75" paint-order="stroke">
 <text x="37.83" y="9.83">rg1</text>
@@ -177,12 +198,27 @@ meaning it is a faint tint of slate.</p>
 <label><input type="checkbox" data-layer="others" checked> <span class="swatch" style="background: #607d8b"></span> other words&#x27; and lines&#x27; ink</label>
 <label><input type="checkbox" data-layer="set-aside" checked> <span class="swatch" style="background: #d7c8eb"></span> masora circles and stray ink</label>
 <p>Faint in the ink by meaning; unchecking either box hides that ink in every layer.</p>
+<label><input type="checkbox" data-layer="glyphs" checked> <span class="swatch" style="background: #6e6e6e"></span> profile 3: the glyphs&#x27; outlines, thin</label>
 <label><input type="checkbox" data-layer="pieces"> level 1: residual pieces, by judgment</label>
 <p><span class="swatch" style="background:#ff00ff"></span> unjudged <span class="swatch" style="background:#1e8449"></span> ink <span class="swatch" style="background:#566573"></span> speck <span class="swatch" style="background:#a0522d"></span> stain <span class="swatch" style="background:#7d3c98"></span> bleed-through <span class="swatch" style="background:#b03a2e"></span> damage <span class="swatch" style="background:#95a5a6"></span> noise <span class="swatch" style="background:#d4ac0d"></span> paper</p>
 <label><input type="checkbox" data-layer="cuts"> <span class="swatch" style="background: #e91e63"></span> the cuts, overlaps&#x27; outlines and vellum lines, and every seed</label>
+<label><input type="checkbox" data-layer="left"> profile 3: what the glyphs leave of a fitted group&#x27;s ink</label>
+<p><span class="swatch" style="background:#bebebe"></span> overfill, within about 1.3 pixels of a glyph <span class="swatch" style="background:#000000"></span> unexplained ink, farther from every glyph</p>
+<label><input type="checkbox" data-layer="group-labels" checked> group ids</label>
 <label><input type="checkbox" data-layer="labels"> region and overlap ids</label>
 <label>Size: <select data-zoom><option value="1">1×</option><option value="1.5">1.5×</option><option value="2">2×</option><option value="3">3×</option><option value="4" selected>4×</option><option value="6">6×</option><option value="8">8×</option></select></label>
 </fieldset>
+</div>
+<div class="legend"><strong>Groups</strong>
+<div><span class="swatch" style="background:green"></span> g1: yod letter <span class="sign" lang="he">י</span></div>
+<div><span class="swatch" style="background:red"></span> g2: nun letter <span class="sign" lang="he">נ</span></div>
+<div><span class="swatch" style="background:purple"></span> g3: pe letter <span class="sign" lang="he">פ</span></div>
+<div><span class="swatch" style="background:blue"></span> g4: dagesh mark <span class="sign" lang="he">◌ּ</span></div>
+<div><span class="swatch" style="background:yellow"></span> g5: pataḥ vowel <span class="sign" lang="he">◌ַ</span></div>
+<div><span class="swatch" style="background:green"></span> g6: qamats vowel <span class="sign" lang="he">◌ָ</span></div>
+<div><span class="swatch" style="background:red"></span> g7: silluq accent <span class="sign" lang="he">◌ֽ</span></div>
+<div><span class="swatch" style="background:purple"></span> g8: qamats vowel <span class="sign" lang="he">◌ָ</span></div>
+<div><span class="swatch" style="background:blue"></span> g9: revia accent <span class="sign" lang="he">◌֗</span></div>
 </div>
 <table>
 <tr><th>Threshold</th><td>luminance below 142; specks of up to 8 pixels dropped; halo &#177;24</td></tr>
@@ -318,6 +354,8 @@ meaning it is a faint tint of slate.</p>
 <g class="layer-supplied">
 <path fill="#e6cf9c" d="M117.213 24.167 C117.486 23.455 120.667 23.455 120.667 24.167 C120.667 24.55 120.242 24.667 118.844 24.667 C117.36 24.667 117.057 24.574 117.213 24.167 Z"><title>v1, supplied vellum: Proposed by Claude&#x27;s script, 2026-11-01, for Ben&#x27;s review: the boundary between the regions of g11 and g3 is pale here, its paler samples&#x27; median luminance 129 against 110, a third of the way from the crop&#x27;s median of ink, 59, to its median elsewhere, 213.</title></path>
 </g>
+<g class="layer-glyphs" fill="none">
+</g>
 <g class="layer-pieces">
 </g>
 <g class="layer-cuts" fill="none">
@@ -351,6 +389,28 @@ meaning it is a faint tint of slate.</p>
 <circle cx="175" cy="104" r="0.62" fill="#fff" stroke="#e91e63" stroke-width="1.5" vector-effect="non-scaling-stroke"><title>a seed of rg20</title></circle>
 <circle cx="178" cy="111" r="0.62" fill="#fff" stroke="#e91e63" stroke-width="1.5" vector-effect="non-scaling-stroke"><title>a seed of rg20</title></circle>
 <circle cx="162.2" cy="85.5" r="0.62" fill="#fff" stroke="#e91e63" stroke-width="1.5" vector-effect="non-scaling-stroke"><title>a seed of rg20</title></circle>
+</g>
+<g class="layer-left">
+</g>
+<g class="layer-group-labels" font-size="2.75" font-weight="bold" fill="#b00020" stroke="#fff" stroke-width="0.75" paint-order="stroke" text-anchor="middle">
+<text x="30.33" y="48.49">g1</text>
+<text x="75.72" y="44.42">g2</text>
+<text x="116.74" y="50.57">g3</text>
+<text x="123.91" y="48.37">g4</text>
+<text x="167.47" y="55.19">g5</text>
+<text x="181.47" y="90.24">g6</text>
+<text x="110.46" y="87.12">g7</text>
+<text x="135.81" y="83.74">g8</text>
+<text x="124.52" y="100.34">g9</text>
+<text x="72.91" y="81.4">g10</text>
+<text x="119.85" y="9.57">g11</text>
+<text class="layer-others" x="64.36" y="9.41">g12</text>
+<text class="layer-others" x="46.22" y="3.05">g13</text>
+<text class="layer-others" x="140.87" y="2.9">g14</text>
+<text class="layer-others" x="1.88" y="84.63">g15</text>
+<text class="layer-others" x="0.71" y="57.24">g16</text>
+<text class="layer-others" x="148.98" y="112.31">g17</text>
+<text class="layer-others" x="171.98" y="93.85">g18</text>
 </g>
 <g class="layer-labels" font-size="2.75" font-weight="bold" fill="#000" stroke="#fff" stroke-width="0.75" paint-order="stroke">
 <text x="46.17" y="2.83">rg1</text>
@@ -387,12 +447,36 @@ meaning it is a faint tint of slate.</p>
 <label><input type="checkbox" data-layer="others" checked> <span class="swatch" style="background: #607d8b"></span> other words&#x27; and lines&#x27; ink</label>
 <label><input type="checkbox" data-layer="set-aside" checked> <span class="swatch" style="background: #d7c8eb"></span> masora circles and stray ink</label>
 <p>Faint in the ink by meaning; unchecking either box hides that ink in every layer.</p>
+<label><input type="checkbox" data-layer="glyphs" checked> <span class="swatch" style="background: #6e6e6e"></span> profile 3: the glyphs&#x27; outlines, thin</label>
 <label><input type="checkbox" data-layer="pieces"> level 1: residual pieces, by judgment</label>
 <p><span class="swatch" style="background:#ff00ff"></span> unjudged <span class="swatch" style="background:#1e8449"></span> ink <span class="swatch" style="background:#566573"></span> speck <span class="swatch" style="background:#a0522d"></span> stain <span class="swatch" style="background:#7d3c98"></span> bleed-through <span class="swatch" style="background:#b03a2e"></span> damage <span class="swatch" style="background:#95a5a6"></span> noise <span class="swatch" style="background:#d4ac0d"></span> paper</p>
 <label><input type="checkbox" data-layer="cuts"> <span class="swatch" style="background: #e91e63"></span> the cuts, overlaps&#x27; outlines and vellum lines, and every seed</label>
+<label><input type="checkbox" data-layer="left"> profile 3: what the glyphs leave of a fitted group&#x27;s ink</label>
+<p><span class="swatch" style="background:#bebebe"></span> overfill, within about 1.3 pixels of a glyph <span class="swatch" style="background:#000000"></span> unexplained ink, farther from every glyph</p>
+<label><input type="checkbox" data-layer="group-labels" checked> group ids</label>
 <label><input type="checkbox" data-layer="labels"> region and overlap ids</label>
 <label>Size: <select data-zoom><option value="1">1×</option><option value="1.5">1.5×</option><option value="2">2×</option><option value="3">3×</option><option value="4" selected>4×</option><option value="6">6×</option><option value="8">8×</option></select></label>
 </fieldset>
+</div>
+<div class="legend"><strong>Groups</strong>
+<div><span class="swatch" style="background:green"></span> g1: tav letter <span class="sign" lang="he">ת</span></div>
+<div><span class="swatch" style="background:red"></span> g2: ḥet letter <span class="sign" lang="he">ח</span></div>
+<div><span class="swatch" style="background:purple"></span> g3: tav letter <span class="sign" lang="he">ת</span></div>
+<div><span class="swatch" style="background:blue"></span> g4: dagesh mark <span class="sign" lang="he">◌ּ</span></div>
+<div><span class="swatch" style="background:yellow"></span> g5: mem letter <span class="sign" lang="he">מ</span></div>
+<div><span class="swatch" style="background:green"></span> g6: ḥiriq vowel <span class="sign" lang="he">◌ִ</span></div>
+<div><span class="swatch" style="background:red"></span> g7: pataḥ vowel <span class="sign" lang="he">◌ַ</span></div>
+<div><span class="swatch" style="background:purple"></span> g8: qamats vowel <span class="sign" lang="he">◌ָ</span></div>
+<div><span class="swatch" style="background:blue"></span> g9: atnaḥ accent <span class="sign" lang="he">◌֑</span></div>
+<div><span class="swatch" style="background:yellow"></span> g10: pataḥ vowel <span class="sign" lang="he">◌ַ</span></div>
+<div><span class="swatch" style="background:green"></span> g11: geresh accent <span class="sign" lang="he">◌֜</span></div>
+<div><span class="swatch" style="background:#607d8b"></span> g12: ayin letter <span class="sign" lang="he">ע</span></div>
+<div><span class="swatch" style="background:#607d8b"></span> g13: unidentified mark</div>
+<div><span class="swatch" style="background:#607d8b"></span> g14: unidentified mark</div>
+<div><span class="swatch" style="background:#607d8b"></span> g15: pataḥ vowel <span class="sign" lang="he">◌ַ</span></div>
+<div><span class="swatch" style="background:#607d8b"></span> g16: vav letter <span class="sign" lang="he">ו</span></div>
+<div><span class="swatch" style="background:#607d8b"></span> g17: alef letter <span class="sign" lang="he">א</span></div>
+<div><span class="swatch" style="background:#607d8b"></span> g18: lamed letter <span class="sign" lang="he">ל</span></div>
 </div>
 <table>
 <tr><th>Threshold</th><td>luminance below 138; specks of up to 8 pixels dropped; halo &#177;24</td></tr>
@@ -820,6 +904,8 @@ meaning it is a faint tint of slate.</p>
 <path fill="#e6cf9c" d="M46 8.051 C46 7.019 49.67 6.594 50.853 7.489 C51.446 7.938 51.332 7.98 49.5 7.994 C48.4 8.002 47.163 8.1 46.75 8.21 C46.311 8.328 46 8.262 46 8.051 Z"><title>v2, supplied vellum: Proposed by Claude&#x27;s script, 2026-11-01, for Ben&#x27;s review: the boundary between the regions of g21 and g49 is pale here, its paler samples&#x27; median luminance 115 against 113, a third of the way from the crop&#x27;s median of ink, 57, to its median elsewhere, 225.</title></path>
 <path fill="#e6cf9c" d="M458.879 17.833 C458.72 17.418 459.083 17.333 461.01 17.333 C462.853 17.333 463.333 17.437 463.333 17.833 C463.333 18.557 459.157 18.557 458.879 17.833 Z"><title>v3, supplied vellum: Proposed by Claude&#x27;s script, 2026-11-01, for Ben&#x27;s review: the boundary between the regions of g45 and g9 is pale here, its paler samples&#x27; median luminance 125 against 113, a third of the way from the crop&#x27;s median of ink, 57, to its median elsewhere, 225.</title></path>
 </g>
+<g class="layer-glyphs" fill="none">
+</g>
 <g class="layer-pieces">
 <path fill="#1e8449" fill-opacity="0.85" d="M111 0H112V1H111Z"><title>r1: speck, judged ink</title></path>
 <path fill="#1e8449" fill-opacity="0.85" d="M356 0H359V1H358V3H356Z"><title>r2: speck, judged ink</title></path>
@@ -945,6 +1031,83 @@ meaning it is a faint tint of slate.</p>
 <circle cx="681" cy="24" r="1.25" fill="#fff" stroke="#e91e63" stroke-width="1.5" vector-effect="non-scaling-stroke"><title>a seed of rg104</title></circle>
 <circle cx="750.5" cy="20" r="1.25" fill="#fff" stroke="#e91e63" stroke-width="1.5" vector-effect="non-scaling-stroke"><title>a seed of rg105</title></circle>
 </g>
+<g class="layer-left">
+</g>
+<g class="layer-group-labels" font-size="5.5" font-weight="bold" fill="#b00020" stroke="#fff" stroke-width="1.5" paint-order="stroke" text-anchor="middle">
+<text class="layer-others" x="738.71" y="2.98">g1</text>
+<text class="layer-others" x="712.96" y="6.08">g2</text>
+<text class="layer-others" x="694.08" y="5.2">g3</text>
+<text class="layer-others" x="669.31" y="2.37">g4</text>
+<text class="layer-others" x="641.18" y="6.54">g5</text>
+<text class="layer-others" x="596.94" y="4.04">g6</text>
+<text class="layer-others" x="547.04" y="5.39">g7</text>
+<text class="layer-others" x="501.31" y="10.92">g8</text>
+<text class="layer-others" x="475.33" y="7.91">g9</text>
+<text class="layer-others" x="448.95" y="2.08">g10</text>
+<text class="layer-others" x="436.24" y="3.3">g11</text>
+<text class="layer-others" x="380.48" y="5.96">g12</text>
+<text class="layer-others" x="316.77" y="5.42">g13</text>
+<text class="layer-others" x="283.74" y="5.21">g14</text>
+<text class="layer-others" x="256.21" y="4.95">g15</text>
+<text class="layer-others" x="227.35" y="3.86">g16</text>
+<text class="layer-others" x="183.97" y="5.63">g17</text>
+<text class="layer-others" x="167.65" y="3.42">g18</text>
+<text class="layer-others" x="86.37" y="2.66">g19</text>
+<text class="layer-others" x="68.81" y="2.52">g20</text>
+<text class="layer-others" x="48.83" y="3.51">g21</text>
+<text class="layer-others" x="20.65" y="4.83">g22</text>
+<text x="717.66" y="50.5">g23</text>
+<text x="675.17" y="78.35">g24</text>
+<text x="632.19" y="67.85">g25</text>
+<text x="608.45" y="71.04">g26</text>
+<text x="577.11" y="73.08">g27</text>
+<text x="528.98" y="48.83">g28</text>
+<text x="486.77" y="74.64">g29</text>
+<text x="419.6" y="66.42">g30</text>
+<text x="404.7" y="78.14">g31</text>
+<text x="327.54" y="53.41">g32</text>
+<text x="276.4" y="77.37">g33</text>
+<text x="231.01" y="51.21">g34</text>
+<text x="192.46" y="80.46">g35</text>
+<text x="138.08" y="75.23">g36</text>
+<text x="87.68" y="48.39">g37</text>
+<text x="58.32" y="72.61">g38</text>
+<text x="23.86" y="69.43">g39</text>
+<text class="layer-others" x="750.77" y="14.84">g40</text>
+<text class="layer-others" x="682.75" y="18.18">g41</text>
+<text class="layer-others" x="662.1" y="25.32">g42</text>
+<text class="layer-others" x="598.22" y="11.57">g43</text>
+<text class="layer-others" x="572.37" y="19.04">g44</text>
+<text class="layer-others" x="468.17" y="24.91">g45</text>
+<text class="layer-others" x="330.34" y="21.39">g46</text>
+<text class="layer-others" x="195.89" y="24.65">g47</text>
+<text class="layer-others" x="135.31" y="18.08">g48</text>
+<text class="layer-others" x="56.71" y="13.36">g49</text>
+<text x="696.34" y="36.41">g50</text>
+<text x="654.59" y="59.89">g51</text>
+<text x="600.54" y="74.03">g52</text>
+<text x="590.95" y="119.1">g53</text>
+<text x="564.43" y="125.41">g54</text>
+<text x="486.55" y="115.67">g55</text>
+<text x="440.98" y="111.49">g56</text>
+<text x="427.11" y="42.08">g57</text>
+<text x="323.19" y="108.38">g58</text>
+<text x="291.34" y="109.95">g59</text>
+<text class="layer-set-aside" x="276.1" y="35.64">g60</text>
+<text x="212.31" y="45.11">g61</text>
+<text x="233.26" y="117.51">g62</text>
+<text x="137.54" y="114.87">g63</text>
+<text x="79.52" y="59.86">g64</text>
+<text x="69.88" y="111.59">g65</text>
+<text class="layer-set-aside" x="59.46" y="36.2">g66</text>
+<text x="49.19" y="123.74">g67</text>
+<text class="layer-others layer-set-aside" x="533.05" y="123.92">g68</text>
+<text class="layer-others" x="470.79" y="130.07">g69</text>
+<text class="layer-others layer-set-aside" x="279.71" y="127.62">g70</text>
+<text class="layer-others" x="115.75" y="131.81">g71</text>
+<text class="layer-others" x="66.27" y="134.08">g72</text>
+<text class="layer-others" x="111.47" y="0.5">g73</text>
+</g>
 <g class="layer-labels" font-size="5.5" font-weight="bold" fill="#000" stroke="#fff" stroke-width="1.5" paint-order="stroke">
 <text x="21.5" y="2.83">rg1</text>
 <text x="48.83" y="2.83">rg2</text>
@@ -1051,12 +1214,91 @@ meaning it is a faint tint of slate.</p>
 <label><input type="checkbox" data-layer="others" checked> <span class="swatch" style="background: #607d8b"></span> other words&#x27; and lines&#x27; ink</label>
 <label><input type="checkbox" data-layer="set-aside" checked> <span class="swatch" style="background: #d7c8eb"></span> masora circles and stray ink</label>
 <p>Faint in the ink by meaning; unchecking either box hides that ink in every layer.</p>
+<label><input type="checkbox" data-layer="glyphs" checked> <span class="swatch" style="background: #6e6e6e"></span> profile 3: the glyphs&#x27; outlines, thin</label>
 <label><input type="checkbox" data-layer="pieces"> level 1: residual pieces, by judgment</label>
 <p><span class="swatch" style="background:#ff00ff"></span> unjudged <span class="swatch" style="background:#1e8449"></span> ink <span class="swatch" style="background:#566573"></span> speck <span class="swatch" style="background:#a0522d"></span> stain <span class="swatch" style="background:#7d3c98"></span> bleed-through <span class="swatch" style="background:#b03a2e"></span> damage <span class="swatch" style="background:#95a5a6"></span> noise <span class="swatch" style="background:#d4ac0d"></span> paper</p>
 <label><input type="checkbox" data-layer="cuts"> <span class="swatch" style="background: #e91e63"></span> the cuts, overlaps&#x27; outlines and vellum lines, and every seed</label>
+<label><input type="checkbox" data-layer="left"> profile 3: what the glyphs leave of a fitted group&#x27;s ink</label>
+<p><span class="swatch" style="background:#bebebe"></span> overfill, within about 1.3 pixels of a glyph <span class="swatch" style="background:#000000"></span> unexplained ink, farther from every glyph</p>
+<label><input type="checkbox" data-layer="group-labels" checked> group ids</label>
 <label><input type="checkbox" data-layer="labels"> region and overlap ids</label>
 <label>Size: <select data-zoom><option value="1">1×</option><option value="1.5">1.5×</option><option value="2" selected>2×</option><option value="3">3×</option><option value="4">4×</option><option value="6">6×</option><option value="8">8×</option></select></label>
 </fieldset>
+</div>
+<div class="legend"><strong>Groups</strong>
+<div><span class="swatch" style="background:#607d8b"></span> g1: he letter <span class="sign" lang="he">ה</span></div>
+<div><span class="swatch" style="background:#607d8b"></span> g2: he letter <span class="sign" lang="he">ה</span></div>
+<div><span class="swatch" style="background:#607d8b"></span> g3: vav letter <span class="sign" lang="he">ו</span></div>
+<div><span class="swatch" style="background:#607d8b"></span> g4: he letter <span class="sign" lang="he">ה</span></div>
+<div><span class="swatch" style="background:#607d8b"></span> g5: he letter <span class="sign" lang="he">ה</span></div>
+<div><span class="swatch" style="background:#607d8b"></span> g6: vav letter <span class="sign" lang="he">ו</span></div>
+<div><span class="swatch" style="background:#607d8b"></span> g7: alef letter <span class="sign" lang="he">א</span></div>
+<div><span class="swatch" style="background:#607d8b"></span> g8: alef letter <span class="sign" lang="he">א</span></div>
+<div><span class="swatch" style="background:#607d8b"></span> g9: mem letter <span class="sign" lang="he">מ</span></div>
+<div><span class="swatch" style="background:#607d8b"></span> g10: resh letter <span class="sign" lang="he">ר</span></div>
+<div><span class="swatch" style="background:#607d8b"></span> g11: resh letter <span class="sign" lang="he">ר</span></div>
+<div><span class="swatch" style="background:#607d8b"></span> g12: mem letter <span class="sign" lang="he">מ</span></div>
+<div><span class="swatch" style="background:#607d8b"></span> g13: shin letter <span class="sign" lang="he">ש</span></div>
+<div><span class="swatch" style="background:#607d8b"></span> g14: he letter <span class="sign" lang="he">ה</span></div>
+<div><span class="swatch" style="background:#607d8b"></span> g15: he letter <span class="sign" lang="he">ה</span></div>
+<div><span class="swatch" style="background:#607d8b"></span> g16: alef letter <span class="sign" lang="he">א</span></div>
+<div><span class="swatch" style="background:#607d8b"></span> g17: alef letter <span class="sign" lang="he">א</span></div>
+<div><span class="swatch" style="background:#607d8b"></span> g18: lamed letter <span class="sign" lang="he">ל</span></div>
+<div><span class="swatch" style="background:#607d8b"></span> g19: he letter <span class="sign" lang="he">ה</span></div>
+<div><span class="swatch" style="background:#607d8b"></span> g20: vav letter <span class="sign" lang="he">ו</span></div>
+<div><span class="swatch" style="background:#607d8b"></span> g21: he letter <span class="sign" lang="he">ה</span></div>
+<div><span class="swatch" style="background:#607d8b"></span> g22: he letter <span class="sign" lang="he">ה</span></div>
+<div><span class="swatch" style="background:green"></span> g23: lamed letter <span class="sign" lang="he">ל</span></div>
+<div><span class="swatch" style="background:red"></span> g24: alef letter <span class="sign" lang="he">א</span></div>
+<div><span class="swatch" style="background:purple"></span> g25: yod letter <span class="sign" lang="he">י</span></div>
+<div><span class="swatch" style="background:blue"></span> g26: vav letter <span class="sign" lang="he">ו</span></div>
+<div><span class="swatch" style="background:yellow"></span> g27: kaf letter <span class="sign" lang="he">כ</span></div>
+<div><span class="swatch" style="background:green"></span> g28: lamed letter <span class="sign" lang="he">ל</span></div>
+<div><span class="swatch" style="background:red"></span> g29: he letter <span class="sign" lang="he">ה</span></div>
+<div><span class="swatch" style="background:purple"></span> g30: ayin letter <span class="sign" lang="he">ע</span></div>
+<div><span class="swatch" style="background:blue"></span> g31: final mem letter <span class="sign" lang="he">ם</span></div>
+<div><span class="swatch" style="background:yellow"></span> g32: lamed letter <span class="sign" lang="he">ל</span></div>
+<div><span class="swatch" style="background:green"></span> g33: ayin letter <span class="sign" lang="he">ע</span></div>
+<div><span class="swatch" style="background:red"></span> g34: lamed letter <span class="sign" lang="he">ל</span></div>
+<div><span class="swatch" style="background:purple"></span> g35: tav letter <span class="sign" lang="he">ת</span></div>
+<div><span class="swatch" style="background:blue"></span> g36: alef letter <span class="sign" lang="he">א</span></div>
+<div><span class="swatch" style="background:yellow"></span> g37: lamed letter <span class="sign" lang="he">ל</span></div>
+<div><span class="swatch" style="background:green"></span> g38: he letter <span class="sign" lang="he">ה</span></div>
+<div><span class="swatch" style="background:red"></span> g39: resh letter <span class="sign" lang="he">ר</span></div>
+<div><span class="swatch" style="background:#607d8b"></span> g40: sheva mark <span class="sign" lang="he">◌ְ</span></div>
+<div><span class="swatch" style="background:#607d8b"></span> g41: qamats vowel <span class="sign" lang="he">◌ָ</span></div>
+<div><span class="swatch" style="background:#607d8b"></span> g42: silluq accent <span class="sign" lang="he">◌ֽ</span></div>
+<div><span class="swatch" style="background:#607d8b"></span> g43: pataḥ vowel <span class="sign" lang="he">◌ַ</span></div>
+<div><span class="swatch" style="background:#607d8b"></span> g44: mahapakh accent <span class="sign" lang="he">◌֤</span></div>
+<div><span class="swatch" style="background:#607d8b"></span> g45: segol vowel <span class="sign" lang="he">◌ֶ</span></div>
+<div><span class="swatch" style="background:#607d8b"></span> g46: segol vowel <span class="sign" lang="he">◌ֶ</span></div>
+<div><span class="swatch" style="background:#607d8b"></span> g47: segol vowel <span class="sign" lang="he">◌ֶ</span></div>
+<div><span class="swatch" style="background:#607d8b"></span> g48: sheva mark <span class="sign" lang="he">◌ְ</span></div>
+<div><span class="swatch" style="background:#607d8b"></span> g49: qamats vowel <span class="sign" lang="he">◌ָ</span></div>
+<div><span class="swatch" style="background:purple"></span> g50: ḥolam dot <span class="sign" lang="he">◌ֹ</span></div>
+<div><span class="swatch" style="background:blue"></span> g51: maqaf mark <span class="sign" lang="he">־</span></div>
+<div><span class="swatch" style="background:yellow"></span> g52: shuruq dot <span class="sign" lang="he">◌ּ</span></div>
+<div><span class="swatch" style="background:green"></span> g53: pataḥ vowel <span class="sign" lang="he">◌ַ</span></div>
+<div><span class="swatch" style="background:red"></span> g54: munaḥ accent <span class="sign" lang="he">◌֣</span></div>
+<div><span class="swatch" style="background:purple"></span> g55: qamats vowel <span class="sign" lang="he">◌ָ</span></div>
+<div><span class="swatch" style="background:blue"></span> g56: qamats vowel <span class="sign" lang="he">◌ָ</span></div>
+<div><span class="swatch" style="background:yellow"></span> g57: zaqef accent <span class="sign" lang="he">◌֔</span></div>
+<div><span class="swatch" style="background:green"></span> g58: pataḥ vowel <span class="sign" lang="he">◌ַ</span></div>
+<div><span class="swatch" style="background:red"></span> g59: ḥataf pataḥ vowel <span class="sign" lang="he">◌ֲ</span></div>
+<div><span class="swatch" style="background:purple"></span> g60: masora circle mark <span class="sign" lang="he">◌֯</span></div>
+<div><span class="swatch" style="background:blue"></span> g61: ḥolam dot <span class="sign" lang="he">◌ֹ</span></div>
+<div><span class="swatch" style="background:yellow"></span> g62: tipeḥa accent <span class="sign" lang="he">◌֖</span></div>
+<div><span class="swatch" style="background:green"></span> g63: segol vowel <span class="sign" lang="he">◌ֶ</span></div>
+<div><span class="swatch" style="background:red"></span> g64: maqaf mark <span class="sign" lang="he">־</span></div>
+<div><span class="swatch" style="background:purple"></span> g65: pataḥ vowel <span class="sign" lang="he">◌ַ</span></div>
+<div><span class="swatch" style="background:blue"></span> g66: masora circle mark <span class="sign" lang="he">◌֯</span></div>
+<div><span class="swatch" style="background:yellow"></span> g67: munaḥ accent <span class="sign" lang="he">◌֣</span></div>
+<div><span class="swatch" style="background:#607d8b"></span> g68: masora circle mark <span class="sign" lang="he">◌֯</span></div>
+<div><span class="swatch" style="background:#607d8b"></span> g69: gershayim accent <span class="sign" lang="he">◌֞</span></div>
+<div><span class="swatch" style="background:#607d8b"></span> g70: masora circle mark <span class="sign" lang="he">◌֯</span></div>
+<div><span class="swatch" style="background:#607d8b"></span> g71: pashta accent <span class="sign" lang="he">◌֙</span></div>
+<div><span class="swatch" style="background:#607d8b"></span> g72: pashta accent <span class="sign" lang="he">◌֙</span></div>
+<div><span class="swatch" style="background:#607d8b"></span> g73: unidentified letter</div>
 </div>
 <table>
 <tr><th>Threshold</th><td>luminance below 145; specks of up to 8 pixels dropped; halo &#177;24</td></tr>
@@ -1493,6 +1735,8 @@ meaning it is a faint tint of slate.</p>
 <g class="layer-supplied">
 <path fill="#e6cf9c" d="M110.897 6.878 C110.676 6.303 113.871 3.154 115 2.834 C115.64 2.652 115.294 3.147 113.509 4.965 C112.231 6.268 111.159 7.333 111.128 7.333 C111.097 7.333 110.993 7.128 110.897 6.878 Z"><title>v1, supplied vellum: Proposed by Claude&#x27;s script, 2026-11-01, for Ben&#x27;s review: the boundary between the regions of g17 and g30 is pale here, its paler samples&#x27; median luminance 132 against 103, a third of the way from the crop&#x27;s median of ink, 58, to its median elsewhere, 194.</title></path>
 </g>
+<g class="layer-glyphs" fill="none">
+</g>
 <g class="layer-pieces">
 <path fill="#1e8449" fill-opacity="0.85" d="M112 4H114V5H113V6H112Z"><title>r1: hole, judged ink</title></path>
 <path fill="#566573" fill-opacity="0.85" d="M92 16H93V17H92Z"><title>r2: speck, judged speck</title></path>
@@ -1594,6 +1838,74 @@ meaning it is a faint tint of slate.</p>
 <circle cx="145" cy="23.5" r="1.25" fill="#fff" stroke="#e91e63" stroke-width="1.5" vector-effect="non-scaling-stroke"><title>a seed of rg85</title></circle>
 <circle cx="109.5" cy="119.5" r="1.25" fill="#fff" stroke="#e91e63" stroke-width="1.5" vector-effect="non-scaling-stroke"><title>a seed of rg86</title></circle>
 </g>
+<g class="layer-left">
+</g>
+<g class="layer-group-labels" font-size="5.5" font-weight="bold" fill="#b00020" stroke="#fff" stroke-width="1.5" paint-order="stroke" text-anchor="middle">
+<text class="layer-others" x="728.23" y="9.62">g1</text>
+<text class="layer-others" x="699.61" y="1.35">g2</text>
+<text class="layer-others" x="688.41" y="4.71">g3</text>
+<text class="layer-others" x="652.59" y="10.59">g4</text>
+<text class="layer-others" x="619.2" y="9.26">g5</text>
+<text class="layer-others" x="593.82" y="4.5">g6</text>
+<text class="layer-others" x="584.14" y="4.94">g7</text>
+<text class="layer-others" x="547.32" y="2.22">g8</text>
+<text class="layer-others" x="469.26" y="6.19">g9</text>
+<text class="layer-others" x="357.78" y="3.86">g10</text>
+<text class="layer-others" x="326.86" y="3.58">g11</text>
+<text class="layer-others" x="283.09" y="7.52">g12</text>
+<text class="layer-others" x="246.23" y="6.38">g13</text>
+<text class="layer-others" x="202.47" y="6.27">g14</text>
+<text class="layer-others" x="175.55" y="7.64">g15</text>
+<text class="layer-others" x="152.21" y="1.9">g16</text>
+<text class="layer-others" x="107.65" y="3.4">g17</text>
+<text x="714.44" y="76.04">g18</text>
+<text x="662.95" y="71.17">g19</text>
+<text x="607.08" y="76.14">g20</text>
+<text x="547.42" y="74.01">g21</text>
+<text x="507.69" y="77.25">g22</text>
+<text x="463.79" y="69.67">g23</text>
+<text x="404.02" y="73.87">g24</text>
+<text x="363.03" y="59.03">g25</text>
+<text x="326.08" y="61.89">g26</text>
+<text x="291.03" y="73.6">g27</text>
+<text x="231.37" y="74.52">g28</text>
+<text x="179.37" y="77.45">g29</text>
+<text x="134.37" y="50.52">g30</text>
+<text x="103.3" y="67.24">g31</text>
+<text x="66.75" y="67.28">g32</text>
+<text x="30.63" y="64.13">g33</text>
+<text class="layer-others" x="722.44" y="25">g34</text>
+<text class="layer-others" x="670.5" y="21.6">g35</text>
+<text class="layer-others" x="613.6" y="29.7">g36</text>
+<text class="layer-others" x="475.26" y="16.66">g37</text>
+<text class="layer-others" x="415.9" y="16.64">g38</text>
+<text class="layer-others" x="371.92" y="19.19">g39</text>
+<text class="layer-others" x="250.97" y="30.62">g40</text>
+<text class="layer-others" x="207.77" y="25.17">g41</text>
+<text class="layer-others" x="146.36" y="19.16">g42</text>
+<text class="layer-set-aside" x="720.75" y="102.81">g43</text>
+<text x="716.26" y="109.87">g44</text>
+<text x="667.37" y="112.38">g45</text>
+<text x="647.95" y="116.94">g46</text>
+<text x="543.87" y="117.84">g47</text>
+<text x="494.27" y="64.24">g48</text>
+<text x="472.1" y="108.7">g49</text>
+<text x="413.65" y="115.95">g50</text>
+<text x="362.77" y="100.93">g51</text>
+<text x="352.17" y="106.14">g52</text>
+<text x="239.18" y="114.65">g53</text>
+<text class="layer-set-aside" x="176.62" y="29.04">g54</text>
+<text x="194.01" y="115.46">g55</text>
+<text x="174.92" y="121.42">g56</text>
+<text x="109.46" y="114.46">g57</text>
+<text x="71.14" y="110.22">g58</text>
+<text x="52.96" y="117.34">g59</text>
+<text x="7.3" y="65.51">g60</text>
+<text class="layer-others" x="132.08" y="131.12">g61</text>
+<text class="layer-others" x="273.23" y="130.89">g62</text>
+<text class="layer-others" x="315.97" y="131">g63</text>
+<text class="layer-others" x="360.46" y="131.18">g64</text>
+</g>
 <g class="layer-labels" font-size="5.5" font-weight="bold" fill="#000" stroke="#fff" stroke-width="1.5" paint-order="stroke">
 <text x="106.17" y="3.5">rg1</text>
 <text x="151.5" y="56.83">rg2</text>
@@ -1689,12 +2001,82 @@ meaning it is a faint tint of slate.</p>
 <label><input type="checkbox" data-layer="others" checked> <span class="swatch" style="background: #607d8b"></span> other words&#x27; and lines&#x27; ink</label>
 <label><input type="checkbox" data-layer="set-aside" checked> <span class="swatch" style="background: #d7c8eb"></span> masora circles and stray ink</label>
 <p>Faint in the ink by meaning; unchecking either box hides that ink in every layer.</p>
+<label><input type="checkbox" data-layer="glyphs" checked> <span class="swatch" style="background: #6e6e6e"></span> profile 3: the glyphs&#x27; outlines, thin</label>
 <label><input type="checkbox" data-layer="pieces"> level 1: residual pieces, by judgment</label>
 <p><span class="swatch" style="background:#ff00ff"></span> unjudged <span class="swatch" style="background:#1e8449"></span> ink <span class="swatch" style="background:#566573"></span> speck <span class="swatch" style="background:#a0522d"></span> stain <span class="swatch" style="background:#7d3c98"></span> bleed-through <span class="swatch" style="background:#b03a2e"></span> damage <span class="swatch" style="background:#95a5a6"></span> noise <span class="swatch" style="background:#d4ac0d"></span> paper</p>
 <label><input type="checkbox" data-layer="cuts"> <span class="swatch" style="background: #e91e63"></span> the cuts, overlaps&#x27; outlines and vellum lines, and every seed</label>
+<label><input type="checkbox" data-layer="left"> profile 3: what the glyphs leave of a fitted group&#x27;s ink</label>
+<p><span class="swatch" style="background:#bebebe"></span> overfill, within about 1.3 pixels of a glyph <span class="swatch" style="background:#000000"></span> unexplained ink, farther from every glyph</p>
+<label><input type="checkbox" data-layer="group-labels" checked> group ids</label>
 <label><input type="checkbox" data-layer="labels"> region and overlap ids</label>
 <label>Size: <select data-zoom><option value="1">1×</option><option value="1.5">1.5×</option><option value="2" selected>2×</option><option value="3">3×</option><option value="4">4×</option><option value="6">6×</option><option value="8">8×</option></select></label>
 </fieldset>
+</div>
+<div class="legend"><strong>Groups</strong>
+<div><span class="swatch" style="background:#607d8b"></span> g1: unidentified letter</div>
+<div><span class="swatch" style="background:#607d8b"></span> g2: unidentified letter</div>
+<div><span class="swatch" style="background:#607d8b"></span> g3: unidentified letter</div>
+<div><span class="swatch" style="background:#607d8b"></span> g4: unidentified letter</div>
+<div><span class="swatch" style="background:#607d8b"></span> g5: unidentified letter</div>
+<div><span class="swatch" style="background:#607d8b"></span> g6: unidentified letter</div>
+<div><span class="swatch" style="background:#607d8b"></span> g7: unidentified letter</div>
+<div><span class="swatch" style="background:#607d8b"></span> g8: unidentified letter</div>
+<div><span class="swatch" style="background:#607d8b"></span> g9: unidentified letter</div>
+<div><span class="swatch" style="background:#607d8b"></span> g10: unidentified letter</div>
+<div><span class="swatch" style="background:#607d8b"></span> g11: unidentified letter</div>
+<div><span class="swatch" style="background:#607d8b"></span> g12: unidentified letter</div>
+<div><span class="swatch" style="background:#607d8b"></span> g13: unidentified letter</div>
+<div><span class="swatch" style="background:#607d8b"></span> g14: unidentified letter</div>
+<div><span class="swatch" style="background:#607d8b"></span> g15: unidentified letter</div>
+<div><span class="swatch" style="background:#607d8b"></span> g16: unidentified letter</div>
+<div><span class="swatch" style="background:#607d8b"></span> g17: alef letter <span class="sign" lang="he">א</span></div>
+<div><span class="swatch" style="background:green"></span> g18: alef letter <span class="sign" lang="he">א</span></div>
+<div><span class="swatch" style="background:red"></span> g19: ḥet letter <span class="sign" lang="he">ח</span></div>
+<div><span class="swatch" style="background:purple"></span> g20: tav letter <span class="sign" lang="he">ת</span></div>
+<div><span class="swatch" style="background:blue"></span> g21: mem letter <span class="sign" lang="he">מ</span></div>
+<div><span class="swatch" style="background:yellow"></span> g22: final nun letter <span class="sign" lang="he">ן</span></div>
+<div><span class="swatch" style="background:green"></span> g23: he letter <span class="sign" lang="he">ה</span></div>
+<div><span class="swatch" style="background:red"></span> g24: ayin letter <span class="sign" lang="he">ע</span></div>
+<div><span class="swatch" style="background:purple"></span> g25: resh letter <span class="sign" lang="he">ר</span></div>
+<div><span class="swatch" style="background:blue"></span> g26: yod letter <span class="sign" lang="he">י</span></div>
+<div><span class="swatch" style="background:yellow"></span> g27: final mem letter <span class="sign" lang="he">ם</span></div>
+<div><span class="swatch" style="background:green"></span> g28: he letter <span class="sign" lang="he">ה</span></div>
+<div><span class="swatch" style="background:red"></span> g29: alef letter <span class="sign" lang="he">א</span></div>
+<div><span class="swatch" style="background:purple"></span> g30: lamed letter <span class="sign" lang="he">ל</span></div>
+<div><span class="swatch" style="background:blue"></span> g31: vav letter <span class="sign" lang="he">ו</span></div>
+<div><span class="swatch" style="background:yellow"></span> g32: ḥet letter <span class="sign" lang="he">ח</span></div>
+<div><span class="swatch" style="background:green"></span> g33: yod letter <span class="sign" lang="he">י</span></div>
+<div><span class="swatch" style="background:#607d8b"></span> g34: ḥiriq vowel <span class="sign" lang="he">◌ִ</span></div>
+<div><span class="swatch" style="background:#607d8b"></span> g35: sheva mark <span class="sign" lang="he">◌ְ</span></div>
+<div><span class="swatch" style="background:#607d8b"></span> g36: munaḥ accent <span class="sign" lang="he">◌֣</span></div>
+<div><span class="swatch" style="background:#607d8b"></span> g37: ḥiriq vowel <span class="sign" lang="he">◌ִ</span></div>
+<div><span class="swatch" style="background:#607d8b"></span> g38: sheva mark <span class="sign" lang="he">◌ְ</span></div>
+<div><span class="swatch" style="background:#607d8b"></span> g39: atnaḥ accent <span class="sign" lang="he">◌֑</span></div>
+<div><span class="swatch" style="background:#607d8b"></span> g40: sheva mark <span class="sign" lang="he">◌ְ</span></div>
+<div><span class="swatch" style="background:#607d8b"></span> g41: qamats vowel <span class="sign" lang="he">◌ָ</span></div>
+<div><span class="swatch" style="background:#607d8b"></span> g42: segol vowel <span class="sign" lang="he">◌ֶ</span></div>
+<div><span class="swatch" style="background:red"></span> g43: stray mark</div>
+<div><span class="swatch" style="background:purple"></span> g44: pataḥ vowel <span class="sign" lang="he">◌ַ</span></div>
+<div><span class="swatch" style="background:blue"></span> g45: pataḥ vowel <span class="sign" lang="he">◌ַ</span></div>
+<div><span class="swatch" style="background:yellow"></span> g46: tevir accent <span class="sign" lang="he">◌֛</span></div>
+<div><span class="swatch" style="background:green"></span> g47: ḥiriq vowel <span class="sign" lang="he">◌ִ</span></div>
+<div><span class="swatch" style="background:red"></span> g48: maqaf mark <span class="sign" lang="he">־</span></div>
+<div><span class="swatch" style="background:purple"></span> g49: segol vowel <span class="sign" lang="he">◌ֶ</span></div>
+<div><span class="swatch" style="background:blue"></span> g50: qamats vowel <span class="sign" lang="he">◌ָ</span></div>
+<div><span class="swatch" style="background:yellow"></span> g51: ḥiriq vowel <span class="sign" lang="he">◌ִ</span></div>
+<div><span class="swatch" style="background:green"></span> g52: merkha accent <span class="sign" lang="he">◌֥</span></div>
+<div><span class="swatch" style="background:red"></span> g53: qamats vowel <span class="sign" lang="he">◌ָ</span></div>
+<div><span class="swatch" style="background:purple"></span> g54: masora circle mark <span class="sign" lang="he">◌֯</span></div>
+<div><span class="swatch" style="background:blue"></span> g55: tsere vowel <span class="sign" lang="he">◌ֵ</span></div>
+<div><span class="swatch" style="background:yellow"></span> g56: tipeḥa accent <span class="sign" lang="he">◌֖</span></div>
+<div><span class="swatch" style="background:green"></span> g57: qamats vowel <span class="sign" lang="he">◌ָ</span></div>
+<div><span class="swatch" style="background:red"></span> g58: qamats vowel <span class="sign" lang="he">◌ָ</span></div>
+<div><span class="swatch" style="background:purple"></span> g59: silluq accent <span class="sign" lang="he">◌ֽ</span></div>
+<div><span class="swatch" style="background:blue"></span> g60: sof pasuq mark <span class="sign" lang="he">׃</span></div>
+<div><span class="swatch" style="background:#607d8b"></span> g61: unidentified letter</div>
+<div><span class="swatch" style="background:#607d8b"></span> g62: unidentified letter</div>
+<div><span class="swatch" style="background:#607d8b"></span> g63: unidentified letter</div>
+<div><span class="swatch" style="background:#607d8b"></span> g64: unidentified letter</div>
 </div>
 <table>
 <tr><th>Threshold</th><td>luminance below 129; specks of up to 8 pixels dropped; halo &#177;24</td></tr>
@@ -1920,6 +2302,8 @@ meaning it is a faint tint of slate.</p>
 <g><title>sup1, a supplied mark (traces): g10 qamats vowel. Ben, 2026-10-31, reads a qamats here, of which he sees only the faintest remnants; it is indicated mainly by the space under the nun that pushes the pataḥ late. Claude placed it over the faint traces at x 90 to 97, y 97 to 104, and copied its shape and widths from the qamats under the pe in this crop.</title><path d="M87.187 102.023 C84.882 101.546 83.764 99.135 84.817 96.914 C85.726 94.999 86.388 94.833 93.134 94.833 C98.466 94.833 99.273 94.905 100.081 95.453 C102.022 96.77 102.014 100.25 100.066 101.542 C99.31 102.044 98.316 102.152 93.833 102.217 C90.9 102.259 87.909 102.172 87.187 102.023 Z M93.663 99.504 C94.258 98.788 93.858 98.081 92.492 97.429 C90.465 96.462 89.369 97.979 91.056 99.417 C91.894 100.13 93.11 100.171 93.663 99.504 Z" fill="#ff6d00"/></g>
 <g><title>sup2, a supplied mark (traces): g10 qamats vowel. The tick of the qamats Ben reads here, supplied with s30; see s30.</title><path d="M93.769 108.862 C92.867 108.087 92.833 107.944 92.833 104.931 C92.833 100.888 93.314 100 95.5 100 C97.686 100 98.167 100.888 98.167 104.931 C98.167 107.944 98.133 108.087 97.231 108.862 C96.045 109.883 94.955 109.883 93.769 108.862 Z" fill="#ff6d00"/></g>
 </g>
+<g class="layer-glyphs" fill="none">
+</g>
 <g class="layer-pieces">
 <path fill="#1e8449" fill-opacity="0.85" d="M264 0H267V2H266V1H264Z"><title>r1: speck, judged ink</title></path>
 <path fill="#1e8449" fill-opacity="0.85" d="M170 17H171V18H172V20H170Z"><title>r2: hole, judged ink</title></path>
@@ -1990,6 +2374,35 @@ meaning it is a faint tint of slate.</p>
 <circle cx="101.5" cy="127.83" r="0.62" fill="#fff" stroke="#e91e63" stroke-width="1.5" vector-effect="non-scaling-stroke"><title>a seed of rg42</title></circle>
 <circle cx="53.83" cy="126.83" r="0.62" fill="#fff" stroke="#e91e63" stroke-width="1.5" vector-effect="non-scaling-stroke"><title>a seed of rg44</title></circle>
 </g>
+<g class="layer-left">
+</g>
+<g class="layer-group-labels" font-size="2.75" font-weight="bold" fill="#b00020" stroke="#fff" stroke-width="0.75" paint-order="stroke" text-anchor="middle">
+<text x="221.18" y="59.49">g1</text>
+<text x="184.15" y="33.37">g2</text>
+<text x="163.91" y="42.39">g3</text>
+<text x="137.72" y="60.36">g4</text>
+<text x="139.07" y="70.03">g5</text>
+<text x="93.82" y="63.52">g6</text>
+<text x="70.53" y="47.79">g7</text>
+<text x="127.51" y="105.39">g8</text>
+<text x="73.48" y="101.67">g9</text>
+<text x="93.62" y="100.5">g10</text>
+<text x="87.64" y="106.97">g11</text>
+<text x="98.56" y="16.11">g12</text>
+<text x="9.13" y="56.77">g13</text>
+<text x="236.07" y="95.79">g14</text>
+<text class="layer-others" x="57.68" y="92.38">g15</text>
+<text class="layer-others" x="164.09" y="110.43">g16</text>
+<text class="layer-others" x="154.07" y="114.2">g17</text>
+<text class="layer-others" x="44.88" y="126.52">g18</text>
+<text class="layer-others" x="145.07" y="11.34">g19</text>
+<text class="layer-others" x="187.02" y="2.65">g20</text>
+<text class="layer-others" x="254.35" y="5.96">g21</text>
+<text class="layer-others" x="263.37" y="124.05">g22</text>
+<text class="layer-others" x="26.7" y="126.03">g23</text>
+<text class="layer-others" x="89.49" y="125.06">g24</text>
+<text class="layer-others" x="106.44" y="127.21">g25</text>
+</g>
 <g class="layer-labels" font-size="2.75" font-weight="bold" fill="#000" stroke="#fff" stroke-width="0.75" paint-order="stroke">
 <text x="145.17" y="5.17">rg1</text>
 <text x="187.17" y="2.5">rg2</text>
@@ -2033,12 +2446,43 @@ meaning it is a faint tint of slate.</p>
 <label><input type="checkbox" data-layer="others" checked> <span class="swatch" style="background: #607d8b"></span> other words&#x27; and lines&#x27; ink</label>
 <label><input type="checkbox" data-layer="set-aside" checked> <span class="swatch" style="background: #d7c8eb"></span> masora circles and stray ink</label>
 <p>Faint in the ink by meaning; unchecking either box hides that ink in every layer.</p>
+<label><input type="checkbox" data-layer="glyphs" checked> <span class="swatch" style="background: #6e6e6e"></span> profile 3: the glyphs&#x27; outlines, thin</label>
 <label><input type="checkbox" data-layer="pieces"> level 1: residual pieces, by judgment</label>
 <p><span class="swatch" style="background:#ff00ff"></span> unjudged <span class="swatch" style="background:#1e8449"></span> ink <span class="swatch" style="background:#566573"></span> speck <span class="swatch" style="background:#a0522d"></span> stain <span class="swatch" style="background:#7d3c98"></span> bleed-through <span class="swatch" style="background:#b03a2e"></span> damage <span class="swatch" style="background:#95a5a6"></span> noise <span class="swatch" style="background:#d4ac0d"></span> paper</p>
 <label><input type="checkbox" data-layer="cuts"> <span class="swatch" style="background: #e91e63"></span> the cuts, overlaps&#x27; outlines and vellum lines, and every seed</label>
+<label><input type="checkbox" data-layer="left"> profile 3: what the glyphs leave of a fitted group&#x27;s ink</label>
+<p><span class="swatch" style="background:#bebebe"></span> overfill, within about 1.3 pixels of a glyph <span class="swatch" style="background:#000000"></span> unexplained ink, farther from every glyph</p>
+<label><input type="checkbox" data-layer="group-labels" checked> group ids</label>
 <label><input type="checkbox" data-layer="labels"> region and overlap ids</label>
 <label>Size: <select data-zoom><option value="1">1×</option><option value="1.5">1.5×</option><option value="2">2×</option><option value="3">3×</option><option value="4" selected>4×</option><option value="6">6×</option><option value="8">8×</option></select></label>
 </fieldset>
+</div>
+<div class="legend"><strong>Groups</strong>
+<div><span class="swatch" style="background:green"></span> g1: ayin letter <span class="sign" lang="he">ע</span></div>
+<div><span class="swatch" style="background:red"></span> g2: lamed letter <span class="sign" lang="he">ל</span></div>
+<div><span class="swatch" style="background:purple"></span> g3: maqaf mark <span class="sign" lang="he">־</span></div>
+<div><span class="swatch" style="background:blue"></span> g4: pe letter <span class="sign" lang="he">פ</span></div>
+<div><span class="swatch" style="background:yellow"></span> g5: dagesh mark <span class="sign" lang="he">◌ּ</span></div>
+<div><span class="swatch" style="background:green"></span> g6: nun letter <span class="sign" lang="he">נ</span></div>
+<div><span class="swatch" style="background:red"></span> g7: yod letter <span class="sign" lang="he">י</span></div>
+<div><span class="swatch" style="background:purple"></span> g8: qamats vowel <span class="sign" lang="he">◌ָ</span></div>
+<div><span class="swatch" style="background:blue"></span> g9: pataḥ vowel <span class="sign" lang="he">◌ַ</span></div>
+<div><span class="swatch" style="background:yellow"></span> g10: qamats vowel <span class="sign" lang="he">◌ָ</span></div>
+<div><span class="swatch" style="background:green"></span> g11: silluq accent <span class="sign" lang="he">◌ֽ</span></div>
+<div><span class="swatch" style="background:red"></span> g12: revia accent <span class="sign" lang="he">◌֗</span></div>
+<div><span class="swatch" style="background:purple"></span> g13: sof pasuq mark <span class="sign" lang="he">׃</span></div>
+<div><span class="swatch" style="background:blue"></span> g14: pataḥ vowel <span class="sign" lang="he">◌ַ</span></div>
+<div><span class="swatch" style="background:#607d8b"></span> g15: lamed letter <span class="sign" lang="he">ל</span></div>
+<div><span class="swatch" style="background:#607d8b"></span> g16: lamed letter <span class="sign" lang="he">ל</span></div>
+<div><span class="swatch" style="background:#607d8b"></span> g17: unidentified mark</div>
+<div><span class="swatch" style="background:#607d8b"></span> g18: maqaf mark <span class="sign" lang="he">־</span></div>
+<div><span class="swatch" style="background:#607d8b"></span> g19: unidentified mark</div>
+<div><span class="swatch" style="background:#607d8b"></span> g20: unidentified mark</div>
+<div><span class="swatch" style="background:#607d8b"></span> g21: unidentified mark</div>
+<div><span class="swatch" style="background:#607d8b"></span> g22: unidentified letter</div>
+<div><span class="swatch" style="background:#607d8b"></span> g23: unidentified letter</div>
+<div><span class="swatch" style="background:#607d8b"></span> g24: unidentified letter</div>
+<div><span class="swatch" style="background:#607d8b"></span> g25: unidentified letter</div>
 </div>
 <table>
 <tr><th>Threshold</th><td>luminance below 124; specks of up to 8 pixels dropped; halo &#177;24</td></tr>
@@ -2186,6 +2630,8 @@ meaning it is a faint tint of slate.</p>
 </g>
 <g class="layer-supplied">
 </g>
+<g class="layer-glyphs" fill="none">
+</g>
 <g class="layer-pieces">
 <path fill="#1e8449" fill-opacity="0.85" d="M53 38H54V41H53Z"><title>r1: speck, judged ink</title></path>
 <path fill="#1e8449" fill-opacity="0.85" d="M165 45H166V48H165Z"><title>r2: speck, judged ink</title></path>
@@ -2235,6 +2681,26 @@ meaning it is a faint tint of slate.</p>
 <circle cx="139.83" cy="128.83" r="0.62" fill="#fff" stroke="#e91e63" stroke-width="1.5" vector-effect="non-scaling-stroke"><title>a seed of rg32</title></circle>
 <circle cx="102" cy="122" r="0.62" fill="#fff" stroke="#e91e63" stroke-width="1.5" vector-effect="non-scaling-stroke"><title>a seed of rg33</title></circle>
 </g>
+<g class="layer-left">
+</g>
+<g class="layer-group-labels" font-size="2.75" font-weight="bold" fill="#b00020" stroke="#fff" stroke-width="0.75" paint-order="stroke" text-anchor="middle">
+<text x="29.3" y="59.87">g1</text>
+<text x="66.65" y="56.54">g2</text>
+<text x="98.07" y="66.1">g3</text>
+<text x="107.1" y="63.15">g4</text>
+<text x="142.96" y="65.43">g5</text>
+<text x="140.2" y="109.1">g6</text>
+<text x="115.42" y="23.69">g7</text>
+<text x="43.7" y="107.51">g8</text>
+<text x="60.68" y="106.47">g9</text>
+<text x="74.9" y="105.83">g10</text>
+<text x="68.44" y="121.49">g11</text>
+<text x="79.72" y="114.93">g12</text>
+<text x="103.01" y="115.15">g13</text>
+<text x="117.78" y="115.32">g14</text>
+<text class="layer-others" x="163.37" y="100.89">g15</text>
+<text class="layer-others" x="139.85" y="128.74">g16</text>
+</g>
 <g class="layer-labels" font-size="2.75" font-weight="bold" fill="#000" stroke="#fff" stroke-width="0.75" paint-order="stroke">
 <text x="115.17" y="27.17">rg1</text>
 <text x="25.83" y="41.17">rg2</text>
@@ -2268,12 +2734,34 @@ meaning it is a faint tint of slate.</p>
 <label><input type="checkbox" data-layer="others" checked> <span class="swatch" style="background: #607d8b"></span> other words&#x27; and lines&#x27; ink</label>
 <label><input type="checkbox" data-layer="set-aside" checked> <span class="swatch" style="background: #d7c8eb"></span> masora circles and stray ink</label>
 <p>Faint in the ink by meaning; unchecking either box hides that ink in every layer.</p>
+<label><input type="checkbox" data-layer="glyphs" checked> <span class="swatch" style="background: #6e6e6e"></span> profile 3: the glyphs&#x27; outlines, thin</label>
 <label><input type="checkbox" data-layer="pieces"> level 1: residual pieces, by judgment</label>
 <p><span class="swatch" style="background:#ff00ff"></span> unjudged <span class="swatch" style="background:#1e8449"></span> ink <span class="swatch" style="background:#566573"></span> speck <span class="swatch" style="background:#a0522d"></span> stain <span class="swatch" style="background:#7d3c98"></span> bleed-through <span class="swatch" style="background:#b03a2e"></span> damage <span class="swatch" style="background:#95a5a6"></span> noise <span class="swatch" style="background:#d4ac0d"></span> paper</p>
 <label><input type="checkbox" data-layer="cuts"> <span class="swatch" style="background: #e91e63"></span> the cuts, overlaps&#x27; outlines and vellum lines, and every seed</label>
+<label><input type="checkbox" data-layer="left"> profile 3: what the glyphs leave of a fitted group&#x27;s ink</label>
+<p><span class="swatch" style="background:#bebebe"></span> overfill, within about 1.3 pixels of a glyph <span class="swatch" style="background:#000000"></span> unexplained ink, farther from every glyph</p>
+<label><input type="checkbox" data-layer="group-labels" checked> group ids</label>
 <label><input type="checkbox" data-layer="labels"> region and overlap ids</label>
 <label>Size: <select data-zoom><option value="1">1×</option><option value="1.5">1.5×</option><option value="2">2×</option><option value="3">3×</option><option value="4" selected>4×</option><option value="6">6×</option><option value="8">8×</option></select></label>
 </fieldset>
+</div>
+<div class="legend"><strong>Groups</strong>
+<div><span class="swatch" style="background:green"></span> g1: tav letter <span class="sign" lang="he">ת</span></div>
+<div><span class="swatch" style="background:red"></span> g2: ḥet letter <span class="sign" lang="he">ח</span></div>
+<div><span class="swatch" style="background:purple"></span> g3: tav letter <span class="sign" lang="he">ת</span></div>
+<div><span class="swatch" style="background:blue"></span> g4: dagesh mark <span class="sign" lang="he">◌ּ</span></div>
+<div><span class="swatch" style="background:yellow"></span> g5: mem letter <span class="sign" lang="he">מ</span></div>
+<div><span class="swatch" style="background:green"></span> g6: ḥiriq vowel <span class="sign" lang="he">◌ִ</span></div>
+<div><span class="swatch" style="background:red"></span> g7: geresh accent <span class="sign" lang="he">◌֜</span></div>
+<div><span class="swatch" style="background:purple"></span> g8: bar under the letter</div>
+<div><span class="swatch" style="background:blue"></span> g9: bar under the letter</div>
+<div><span class="swatch" style="background:yellow"></span> g10: bar under the letter</div>
+<div><span class="swatch" style="background:green"></span> g11: atnaḥ accent <span class="sign" lang="he">◌֑</span></div>
+<div><span class="swatch" style="background:red"></span> g12: dot under the letter</div>
+<div><span class="swatch" style="background:purple"></span> g13: qamats vowel <span class="sign" lang="he">◌ָ</span></div>
+<div><span class="swatch" style="background:blue"></span> g14: unidentified mark</div>
+<div><span class="swatch" style="background:#607d8b"></span> g15: unidentified mark</div>
+<div><span class="swatch" style="background:#607d8b"></span> g16: unidentified letter</div>
 </div>
 <table>
 <tr><th>Threshold</th><td>luminance below 121; specks of up to 8 pixels dropped; halo &#177;24</td></tr>

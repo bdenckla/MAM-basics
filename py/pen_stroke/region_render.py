@@ -12,15 +12,27 @@ filled with its colour alone (decision 26), a colour no other layer uses; and,
 for checking, level 1's residual, the cuts, overlaps' outlines, vellum lines
 and every seed, and the regions' and overlaps' ids.  Ink that is not the crop's
 subject's is slate in every layer (decision 17), and two checkboxes hide it,
-and masora circles and stray ink, in every layer.  Writes
+and masora circles and stray ink, in every layer.  Beside each image a legend
+names each group by its id, its kind and its letter or mark, and a layer draws
+the groups' ids on the image (Ben, section 68 of his statements: images label
+groups).  Under profile 3 a fitted group's ink is its glyphs' ink and the
+overlaps of its glyphs; a layer draws the glyphs' outlines, thin, and the layer
+for checking draws what the glyphs leave of a fitted group's draft, overfill in
+light grey and unexplained ink in black.  Writes
 doc/pen-stroke-snips/regions.html.
 """
 
 import html
+import unicodedata
 from collections import Counter
 from pathlib import Path
 
+import numpy as np
+
+from pen_stroke import derive as dv
 from pen_stroke import geometry as geo
+from pen_stroke import level5
+from pen_stroke import raster
 from pen_stroke import region_derive as rdv
 from pen_stroke import region_svg as rsvg
 from pen_stroke import render
@@ -73,6 +85,10 @@ REGION_COLOURS = (
     "#ffe119",
 )
 CUT_COLOUR = "#e91e63"
+# Profile 3, for checking: what a fitted group's glyphs leave of its draft.
+OVERFILL_COLOUR = "#bebebe"
+UNEXPLAINED_COLOUR = "#000000"
+GLYPH_LINE_COLOUR = "#6e6e6e"
 # (layer, label, on at first, the swatch's style or None)
 LAYERS = (
     ("photo", "the photograph", False, None),
@@ -103,6 +119,12 @@ LAYERS = (
         True,
         f"background: {MEANING_COLOURS['set-aside']}",
     ),
+    (
+        "glyphs",
+        "profile 3: the glyphs' outlines, thin",
+        True,
+        f"background: {GLYPH_LINE_COLOUR}",
+    ),
     ("pieces", "level 1: residual pieces, by judgment", False, None),
     (
         "cuts",
@@ -110,12 +132,22 @@ LAYERS = (
         False,
         f"background: {CUT_COLOUR}",
     ),
+    (
+        "left",
+        "profile 3: what the glyphs leave of a fitted group's ink",
+        False,
+        None,
+    ),
+    ("group-labels", "group ids", True, None),
     ("labels", "region and overlap ids", False, None),
 )
 
 _CSS = """
 .layered select { margin: 0.4em 0 0.2em 0; }
 td.hint { color: #444; font-size: 0.9em; }
+.legend { columns: 14em; font-size: 0.9em; margin: 0.4em 0; }
+.legend div { break-inside: avoid; }
+.legend .sign { font-size: 1.6em; }
 """
 
 _ZOOM_JS = """
@@ -182,10 +214,77 @@ def _kinds(groups):
     return ", ".join(f"{g.id} {g.kind}" for g in groups)
 
 
-def _inks(rf):
-    """Each region's and overlap's id and ink, regions first: an overlap is a
-    region that two groups or more hold."""
-    return [(r.id, r.d) for r in rf.regions] + [(o.id, o.ink) for o in rf.overlaps]
+def sign_text(kind):
+    """A kind's letter or mark, from the Unicode name it is congruent to, a mark
+    that is written on a letter shown on a dotted circle; empty for a kind that
+    leaves the sign undetermined."""
+    uni = level5.KINDS[kind][0]
+    if uni is None:
+        return ""
+    ch = unicodedata.lookup(uni)
+    if unicodedata.category(ch) == "Mn":
+        return "\N{DOTTED CIRCLE}" + ch
+    return ch
+
+
+class _Ink:
+    """What a region-SVG's layers draw: each region's and overlap's id and ink, an
+    overlap being a region that two groups or more hold; the groups that hold
+    each; and, under profile 3, a fitted group's ink as its glyphs' ink and the
+    overlaps of its glyphs, with what its glyphs leave of its draft set apart."""
+
+    def __init__(self, svg_path, rf):
+        self.groups_of = {}
+        for g in rf.groups:
+            for m in g.members:
+                self.groups_of.setdefault(m, []).append(g)
+        self.fitted = None
+        self.left = []
+        if rf.profile != rsvg.PROFILE_3:
+            self.inks = [(r.id, r.d) for r in rf.regions]
+            self.inks += [(o.id, o.ink) for o in rf.overlaps]
+            self.members = {g.id: list(g.members) for g in rf.groups}
+            return
+        lum = raster.load_luminance(dv.crop_path(svg_path, rf))
+        _, _, fitted = rdv.derive(rf, lum, rdv.library_for(svg_path))
+        self.fitted = fitted
+        groups = {g.id: g for g in rf.groups}
+        fitted_ids = fitted.fitted_groups
+        self.inks = [(gl.id, gl.ink) for gl in rf.glyphs]
+        self.inks += [(o.id, o.d) for o in rf.glyph_overlaps]
+        self.members = {}
+        for gl in rf.glyphs:
+            self.groups_of[gl.id] = [groups[gl.group]]
+            self.members.setdefault(gl.group, []).append(gl.id)
+        group_of_glyph = {gl.id: gl.group for gl in rf.glyphs}
+        for o in rf.glyph_overlaps:
+            held = list(dict.fromkeys(group_of_glyph[k] for k in o.glyphs))
+            self.groups_of[o.id] = [groups[k] for k in held]
+            for k in held:
+                self.members.setdefault(k, []).append(o.id)
+        for g in rf.groups:
+            if g.id in fitted_ids:
+                continue
+            self.members[g.id] = list(g.members)
+        for r in rf.regions:
+            if not any(g.id in fitted_ids for g in self.groups_of.get(r.id, [])):
+                self.inks.append((r.id, r.d))
+        self.inks += [(o.id, o.ink) for o in rf.overlaps]
+        for g in rf.groups:
+            if g.id not in fitted_ids:
+                continue
+            left = np.zeros_like(fitted.ink)
+            for m in g.members:
+                if m in fitted.masks and not m.startswith("ov"):
+                    left |= fitted.masks[m]
+            left &= ~fitted.covered
+            self.left.append(
+                (
+                    g,
+                    rdv.trace_samples(left & fitted.near, 0),
+                    rdv.trace_samples(left & ~fitted.near, 0),
+                )
+            )
 
 
 def _centre(d):
@@ -194,10 +293,59 @@ def _centre(d):
     return (sum(x for x, _ in pts) / len(pts), sum(y for _, y in pts) / len(pts))
 
 
-def _svg(rf, groups_of, zoom):
+def group_colours(rf):
+    """Each group's colour in the ink by group: the subject's groups each the next
+    of the overlay page's colours, and other ink slate (decision 17)."""
+    me = ssvg.subject(rf)
+    out, k = {}, 0
+    for g in rf.groups:
+        if g.ink_of == me:
+            out[g.id] = render.stroke_colour(k)
+            k += 1
+        else:
+            out[g.id] = OTHER_INK_COLOUR
+    return out
+
+
+def _group_places(rf, ink):
+    """Where each group's id is drawn: the mean of its inks' outlines' points."""
+    outline = dict(ink.inks)
+    out = {}
+    for g in rf.groups:
+        pts = []
+        for m in ink.members.get(g.id, []):
+            d = outline.get(m) or next((s.added for s in rf.supplied if s.id == m), "")
+            if d:
+                pts += [p for poly in geo.flatten(geo.parse_path(d)) for p in poly]
+        if pts:
+            out[g.id] = (
+                sum(x for x, _ in pts) / len(pts),
+                sum(y for _, y in pts) / len(pts),
+            )
+    return out
+
+
+def legend(rf):
+    """Each group named by its id, its kind and its letter or mark, with its colour
+    in the ink by group."""
+    colours = group_colours(rf)
+    out = ['<div class="legend"><strong>Groups</strong>']
+    for g in rf.groups:
+        sign = sign_text(g.kind)
+        sign_html = f' <span class="sign" lang="he">{_e(sign)}</span>' if sign else ""
+        out.append(
+            f"<div>{_swatch('background:' + colours[g.id])} {_e(g.id)}:"
+            f" {_e(g.kind)}{sign_html}</div>"
+        )
+    out.append("</div>")
+    return "\n".join(out)
+
+
+def _svg(rf, ink, zoom):
     w, h = rf.width, rf.height
     me = ssvg.subject(rf)
-    inks = _inks(rf)
+    groups_of = ink.groups_of
+    inks = ink.inks
     outline = dict(inks)
     out = [
         f'<svg class="overlay" width="{geo.fmt(w * zoom, 1)}" height="{geo.fmt(h * zoom, 1)}"'
@@ -223,14 +371,10 @@ def _svg(rf, groups_of, zoom):
         )
     out.append("</g>")
     out.append('<g class="layer-groups" fill-opacity="0.45">')
-    k = 0
+    colours = group_colours(rf)
     for g in rf.groups:
-        if g.ink_of == me:
-            colour = render.stroke_colour(k)
-            k += 1
-        else:
-            colour = OTHER_INK_COLOUR
-        for m in g.members:
+        colour = colours[g.id]
+        for m in ink.members.get(g.id, []):
             if m in outline:
                 out.append(
                     f'<path{hide_classes([g], me)} fill="{colour}" d="{outline[m]}">'
@@ -267,6 +411,18 @@ def _svg(rf, groups_of, zoom):
             f" {_e(_kinds(gs))}. {_e(s.supplied_why)}</title>{supplied_ink(s)}</g>"
         )
     out.append("</g>")
+    out.append('<g class="layer-glyphs" fill="none">')
+    groups = {g.id: g for g in rf.groups}
+    for gl in rf.glyphs:
+        g = groups[gl.group]
+        part = f", its {gl.part}" if gl.part else ""
+        out.append(
+            f'<path{hide_classes([g], me)} d="{gl.outline}" stroke="{GLYPH_LINE_COLOUR}"'
+            ' stroke-width="0.75" vector-effect="non-scaling-stroke">'
+            f"<title>{_e(gl.id)}: {_e(g.id)} {_e(g.kind)}{_e(part)}, the glyph"
+            f" {_e(gl.glyph)}</title></path>"
+        )
+    out.append("</g>")
     out.append('<g class="layer-pieces">')
     for p in rf.pieces:
         out.append(
@@ -299,8 +455,32 @@ def _svg(rf, groups_of, zoom):
                 f' vector-effect="non-scaling-stroke"><title>a seed of {_e(r.id)}</title></circle>'
             )
     out.append("</g>")
+    out.append('<g class="layer-left">')
+    for g, over, unexplained in ink.left:
+        for d, colour, what in (
+            (over, OVERFILL_COLOUR, "overfill"),
+            (unexplained, UNEXPLAINED_COLOUR, "unexplained ink"),
+        ):
+            if d:
+                out.append(
+                    f'<path{hide_classes([g], me)} fill="{colour}" d="{d}">'
+                    f"<title>{_e(g.id)} {_e(g.kind)}: {what}</title></path>"
+                )
+    out.append("</g>")
     size = geo.fmt(11 / zoom, 2)
     halo = geo.fmt(3 / zoom, 2)
+    out.append(
+        f'<g class="layer-group-labels" font-size="{size}" font-weight="bold"'
+        f' fill="#b00020" stroke="#fff" stroke-width="{halo}" paint-order="stroke"'
+        ' text-anchor="middle">'
+    )
+    for gid, (x, y) in _group_places(rf, ink).items():
+        g = groups[gid]
+        out.append(
+            f'<text{hide_classes([g], me)} x="{geo.fmt(x, 2)}" y="{geo.fmt(y, 2)}">'
+            f"{_e(gid)}</text>"
+        )
+    out.append("</g>")
     out.append(
         f'<g class="layer-labels" font-size="{size}" font-weight="bold" fill="#000"'
         f' stroke="#fff" stroke-width="{halo}" paint-order="stroke">'
@@ -353,6 +533,12 @@ def layer_controls(zoom):
                 )
                 + "</p>"
             )
+        elif name == "left":
+            out.append(
+                f"<p>{_swatch('background:' + OVERFILL_COLOUR)} overfill, within about"
+                f" 1.3 pixels of a glyph {_swatch('background:' + UNEXPLAINED_COLOUR)}"
+                " unexplained ink, farther from every glyph</p>"
+            )
     zooms = "".join(
         f'<option value="{z:g}"{" selected" if z == zoom else ""}>{z:g}×</option>'
         for z in ZOOMS
@@ -365,10 +551,8 @@ def layer_controls(zoom):
 def _section(svg_path):
     rf = rsvg.read(svg_path)
     me = ssvg.subject(rf)
-    groups_of = {}
-    for g in rf.groups:
-        for m in g.members:
-            groups_of.setdefault(m, []).append(g)
+    ink = _Ink(svg_path, rf)
+    groups_of = ink.groups_of
     zoom = render.scale_of(rf)
     out = [f'<section id="{_e(Path(svg_path).name)}">']
     out.append(f"<h2>{_e(render.title(rf.provenance))}</h2>")
@@ -380,9 +564,10 @@ def _section(svg_path):
         )
     out.append("</table>")
     out.append('<div class="layered">')
-    out.append(f'<div class="scroll">{_svg(rf, groups_of, zoom)}</div>')
+    out.append(f'<div class="scroll">{_svg(rf, ink, zoom)}</div>')
     out.append(layer_controls(zoom))
     out.append("</div>")
+    out.append(legend(rf))
     seeds = sum(len(r.seeds) for r in rf.regions)
     judged = Counter(p.judged for p in rf.pieces)
     pieces = ", ".join(f"{n} {k}" for k, n in sorted(judged.items())) or "none"
@@ -397,6 +582,13 @@ def _section(svg_path):
         f" {len(rf.cuts)} cuts</td></tr>"
     )
     out.append(f"<tr><th>Groups</th><td>{len(rf.groups)}</td></tr>")
+    if rf.profile == rsvg.PROFILE_3:
+        own = sum(1 for gl in rf.glyphs if not gl.glyph.startswith("taamey-d-"))
+        out.append(
+            f"<tr><th>Glyphs</th><td>{len(rf.glyphs)}, {own} of them the scribe's"
+            f" and the rest Taamey D's; {len(rf.glyph_overlaps)} overlaps of"
+            " glyphs</td></tr>"
+        )
     if rf.supplied:
         kinds = Counter(s.supplied for s in rf.supplied)
         out.append(
