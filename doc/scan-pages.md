@@ -542,7 +542,9 @@ The JC break is between `וחתו` and `גבוריך`; the BHL break is between
 `והיה בית` and `יעקב אש`. Those readings were checked at native resolution.
 
 The first page in each edition also contains Amos; the second also contains Jonah.
-Those neighboring book portions remain uncensused. The BHL header on page 826
+Those neighboring book portions were uncensused at this pilot checkpoint. Jonah
+was subsequently completed in the continuation below; Amos remains uncensused.
+The BHL header on page 826
 starts its Obadiah range at 1:19, but the actual first running text continues
 1:18. The stored boundary follows the running text, not the header.
 
