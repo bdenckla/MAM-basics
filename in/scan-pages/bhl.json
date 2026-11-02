@@ -8769,6 +8769,7 @@
     {
       "id": "body",
       "bkids": [
+        "Habakkuk",
         "Jonah",
         "Micah",
         "Nahum",
@@ -8786,7 +8787,9 @@
         "0833-Mi.jpg",
         "0834-Mi-Na.jpg",
         "0835-Na.jpg",
-        "0836-Na-Hb.jpg"
+        "0836-Na-Hb.jpg",
+        "0837-Hb.jpg",
+        "0838-Hb.jpg"
       ]
     }
   ],
@@ -9197,15 +9200,16 @@
     {
       "page": "0836-Na-Hb.jpg",
       "bkid": "Habakkuk",
+      "printed_page": 836,
+      "note": "Habakkuk begins below Nahum; the running text ends within 1:13 after אל.",
       "startc": 1,
       "startv": 1,
       "startp": 1,
-      "stopc": null,
-      "stopv": null,
-      "stopp": null,
-      "start_phrase": null,
-      "stop_phrase": null,
-      "note": "seeded by survey: a book starts at 1:1 atom 1"
+      "start_phrase": "המשא אשר חזה חבקוק הנביא",
+      "stopc": 1,
+      "stopv": 13,
+      "stopp": 6,
+      "stop_phrase": "טהור עינים מראות רע והביט אל"
     },
     {
       "page": "0836-Na-Hb.jpg",
@@ -9220,6 +9224,34 @@
       "stopv": 19,
       "stopp": 18,
       "stop_phrase": "עברה רעתך תמיד"
+    },
+    {
+      "page": "0837-Hb.jpg",
+      "bkid": "Habakkuk",
+      "printed_page": 837,
+      "note": "The printed header starts at 1:14, but the actual first text continues 1:13. The last text is the first two atoms of 2:18.",
+      "startc": 1,
+      "startv": 13,
+      "startp": 7,
+      "start_phrase": "עמל לא תוכל למה תביט",
+      "stopc": 2,
+      "stopv": 18,
+      "stopp": 2,
+      "stop_phrase": "מה הועיל"
+    },
+    {
+      "page": "0838-Hb.jpg",
+      "bkid": "Habakkuk",
+      "printed_page": 838,
+      "note": "The printed header starts at 2:19, but the actual first text continues 2:18 at atom 3. Habakkuk ends above its verse count on this page.",
+      "startc": 2,
+      "startv": 18,
+      "startp": 3,
+      "start_phrase": "פסל כי פסלו יצרו",
+      "stopc": 3,
+      "stopv": 19,
+      "stopp": 11,
+      "stop_phrase": "למנצח בנגינותי"
     },
     {
       "page": "0839-Ts.jpg",

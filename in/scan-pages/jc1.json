@@ -6345,6 +6345,7 @@
     {
       "id": "body",
       "bkids": [
+        "Habakkuk",
         "Jonah",
         "Micah",
         "Nahum",
@@ -6359,7 +6360,8 @@
         "549-Mi.jpg",
         "550-Mi-Na.jpg",
         "551-Na.jpg",
-        "552-Na-Hb.jpg"
+        "552-Na-Hb.jpg",
+        "553-Hb-Ts.jpg"
       ]
     }
   ],
@@ -6742,15 +6744,16 @@
     {
       "page": "552-Na-Hb.jpg",
       "bkid": "Habakkuk",
+      "printed_page": 552,
+      "note": "Habakkuk begins below Nahum in the right column; the left column ends with the complete verse 2:7.",
       "startc": 1,
       "startv": 1,
       "startp": 1,
-      "stopc": null,
-      "stopv": null,
-      "stopp": null,
-      "start_phrase": null,
-      "stop_phrase": null,
-      "note": "seeded by survey: a book starts at 1:1 atom 1"
+      "start_phrase": "המשא אשר חזה חבקוק הנביא",
+      "stopc": 2,
+      "stopv": 7,
+      "stopp": 9,
+      "stop_phrase": "והיית למשסות למו"
     },
     {
       "page": "552-Na-Hb.jpg",
@@ -6765,6 +6768,20 @@
       "stopv": 19,
       "stopp": 18,
       "stop_phrase": "עברה רעתך תמיד"
+    },
+    {
+      "page": "553-Hb-Ts.jpg",
+      "bkid": "Habakkuk",
+      "printed_page": 553,
+      "note": "The first text begins the complete verse 2:8; Habakkuk ends in the left column above the beginning of Zephaniah.",
+      "startc": 2,
+      "startv": 8,
+      "startp": 1,
+      "start_phrase": "כי אתה שלות גוים רבים",
+      "stopc": 3,
+      "stopv": 19,
+      "stopp": 11,
+      "stop_phrase": "למנצח בנגינותי"
     },
     {
       "page": "553-Hb-Ts.jpg",

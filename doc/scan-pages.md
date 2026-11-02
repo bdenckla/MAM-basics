@@ -69,6 +69,10 @@ for a fresh session that has no other context. Its thin pointer issue is #349, f
   The catalogs contain 174 records: twenty-six completed records and
   148 unread seeds. Explicit small-letter markup retains the letter within
   its word. Unique edge cues may span verses on the same page.
+- 2026-11-02, Habakkuk batch: five further portions complete Habakkuk in both
+  editions, bringing coverage to 277 verses in five books per edition.
+  The catalogs contain 177 records: thirty-one completed records and
+  146 unread seeds. No text-projection changes were needed for this batch.
 
 ## Codex entry indexes
 
@@ -678,8 +682,8 @@ BHL's headers on 830, 831, 832 and 834 begin at 2:6, 3:12, 5:3 and 7:17
 respectively, but their actual opening text continues the preceding verse.
 JC 549 begins with the final atom of 4:9, `כיולדה`; JC 550 begins with the
 final atom of 6:10, `זעומה`. A verse-only page boundary would miss these words.
-The ordinary body coverage now reaches Micah's end; the Nahum portions of
-JC 550 and BHL 834 remain uncensused.
+The ordinary body coverage reached Micah's end at this checkpoint. The Nahum
+portions of JC 550 and BHL 834 were completed in the following continuation.
 
 Micah's ordinary ketiv/qere occurs at 1:3, 1:8, 1:10 and 3:2. In both editions
 each form occupies one word position, verified in the images. The text reader
@@ -718,7 +722,8 @@ separately from scan filenames. No image or crop is stored in this repository.
 JC 550 ends with only the first atom of 1:6, `לפני`; JC 552 begins with only
 the last atom of 3:11, `מאויב`. BHL 835 and 836 begin with continuations of
 2:3 and 3:11 although their headers start at 2:4 and 3:12 respectively.
-The Habakkuk portions of JC 552 and BHL 836 remain uncensused.
+The Habakkuk portions of JC 552 and BHL 836 were uncensused at this checkpoint;
+the following continuation completed them.
 
 Nahum 1:3 contains a special-letter word wrapper (`מ:אות-מיוחדת-במילה`)
 with a nested small-letter template (`מ:אות-ק`). Their documented Scripture
@@ -747,6 +752,34 @@ qualified lookups, the intact one-atom word at 1:3, a phrase crossing a page
 break, the cross-verse stop cue, repeated short-phrase refusal and idempotent
 census regeneration. The full suite and mega were not run under the ordinary
 focused-check policy. The large-census review boundary below still applies.
+
+### Habakkuk continuation, 2026-11-02
+
+All five Habakkuk portions were read, including three additional original
+images and the shared pages JC 552 and BHL 836. Native-pixel crops verify
+each start/stop cue and the book boundaries. Printed footers were checked
+separately from scan filenames. No image or crop is stored in this repository.
+
+| Edition | Scan filename | Observed printed page | Habakkuk interval in MAM atom positions |
+|---|---|---|---|
+| `jc1` | `552-Na-Hb.jpg` | 552 | 1:1 atom 1 through 2:7 atom 9 |
+| `jc1` | `553-Hb-Ts.jpg` | 553 | 2:8 atom 1 through 3:19 atom 11 |
+| `bhl` | `0836-Na-Hb.jpg` | 836 | 1:1 atom 1 through 1:13 atom 6 |
+| `bhl` | `0837-Hb.jpg` | 837 | 1:13 atom 7 through 2:18 atom 2 |
+| `bhl` | `0838-Hb.jpg` | 838 | 2:18 atom 3 through 3:19 atom 11 |
+
+JC's break falls between the complete verses 2:7 and 2:8. BHL 837 and 838
+begin with continuations of 1:13 and 2:18 although their headers start at
+1:14 and 2:19 respectively. BHL 837 ends with just `מה הועיל`, the first two
+atoms of 2:18. The Zephaniah portion of JC 553 remains uncensused.
+
+The existing reader projects all 56 Habakkuk verses and 671 atoms without a
+new template rule; the complete stream agrees with the independent MAM-simple
+export. Six focused tests passed. Direct checks cover both BHL within-verse
+splits and their unique phrase hits, JC's complete-verse boundary, a phrase
+spanning a BHL page break, and idempotent census regeneration in both editions.
+The full suite and mega were not run under the ordinary focused-check policy.
+The large-census review boundary below still applies.
 
 **Phase 0 — survey and tracked inventory. DONE, 2026-08-07.** The code is
 `py/main_scan_pages.py` (`survey`, `check`) over `py/scan_pages/`, with the lint at
