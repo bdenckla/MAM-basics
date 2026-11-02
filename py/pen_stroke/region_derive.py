@@ -977,7 +977,10 @@ def _glyph_order(rf, glyphs):
 
     def key(k):
         gl = glyphs[k]
-        g = groups[gl.group]
+        g = groups.get(gl.group)
+        if g is None:
+            # place_glyphs already reports the invalid reference; it has no ink.
+            return (math.inf, math.inf, k)
         names = [p.name for p in glib.entry_of(g.kind).parts]
         n = rsvg.group_number(gl.group)
         part = names.index(gl.part) if gl.part in names else len(names)
