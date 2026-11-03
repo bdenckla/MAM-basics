@@ -736,7 +736,7 @@ infrastructure has changed enough to make them misleading examples:
   `20261102-100941-161360-0500/`, `20261102-101024-673504-0500/`, `20261102-101138-794535-0500/`
   and `20261102-101217-673677-0500/`.
 
-### Varika marks at Deuteronomy 15:22 and 32:10, and the letter's name in the note on Psalms 25:3, 2026-11-03 — current
+### Varika marks at Deuteronomy 15:22 and 32:10, and the letter's name in the note on Psalms 25:3, 2026-11-03
 
 - **Purpose:** Give a varika to the three atoms in MAM's text that lacked one among the atoms of
   the Introduction's chapter 3 list of ḥataf vowels on non-guttural letters in the Torah, as
@@ -821,6 +821,44 @@ infrastructure has changed enough to make them misleading examples:
   `.novc/mam-ws-bot-real-runs/20261103-094120-316824-0500/`, dry run
   `.novc/mam-ws-bot-real-runs/20261103-094018-108619-0500/`, and the one-shot re-run
   `.novc/mam-ws-bot-real-runs/20261103-094407-857140-0500/`.
+
+### Miqra Mevoar's pilot: the bot's first base chapter, Joshua 2, 2026-11-03 — current
+
+- **Purpose:** Create the base-chapter pages of Rabbi David Kokhav's Miqra Mevoar, his paraphrase
+  of the Bible, on Hebrew Wikisource from the Word files that Avi keeps in a pCloud folder, as
+  `doc/PLAN-miqra-mevoar.md` plans: Joshua 1 and 2 first, as a pilot, then the other 54 pages of
+  the six books there. Avi had created Joshua 1 himself, early on 2026-11-03, from the page
+  attached to Ben's reply (revision 3101153, by Dovi), and it equalled the generated text, so the
+  run left it alone and created Joshua 2.
+- **Authorization:** Ben, 2026-11-02, answering "Which route should the pages take to
+  Wikisource?": "Bot, after a pilot". Avi's email of 2026-11-03, which Ben relayed, asks that the
+  bot work quietly, without cluttering Wikisource's recent changes, and gives its edit summary:
+  פרק חדש במקרא מבואר. Ben, 2026-11-03, answering "On your word here, I'll ask the commander for
+  the clone, run a fresh dry run, then the save, and write Stage 7's history entry.": "yes go
+  ahead and do that".
+- **New mode:** the chapter bot edits MAM's chapters, so this run's plan added
+  `main_ws_bot.py miqra-mevoar` (`py/subcommands/ws_bot_miqra_mevoar.py`). It reads no edit
+  file: it generates each selected chapter's page from the tracked JSON in `in/miqra-mevoar/`,
+  which `py/main_miqra_mevoar.py` extracts from the Word files, with the converter's own
+  function. It creates a page that does not exist, with `createonly`; leaves alone a page whose
+  text equals the generated text; updates, with `nocreate`, only a page whose every revision is
+  BDencklaBot's, pinned since PR 366 to the newest revision it checked; and refuses any other.
+- **Saving run:** Joshua 2, `מקרא מבואר/פרקי בסיס/ספר יהושע/ב`, created as revision 3101196,
+  8,112 bytes, with the summary פרק חדש במקרא מבואר; Joshua 1 unchanged.
+- **Safety rule:** before the run, a download of Joshua's Word file from the folder equalled, by
+  SHA-256, the file the tracked JSON was extracted from. The folder also held a LibreOffice lock
+  file for it, created at 00:31 New York time, two minutes after Avi's revision. The `--no-save`
+  dry run gave one create and one unchanged page. The saving run's pages equalled the dry run's,
+  and both equal the Phase 1 prototype's byte for byte. The saving run read revision 3101196 back
+  through the API, uncached, and its bytes equalled the generated text. Its creation and its
+  category entry in the recent changes carry the bot flag, which hides them by default.
+- **One-shot:** no. Confirmed 2026-11-03, immediately after the run: a `--no-save` rerun found
+  both pages unchanged and exited zero
+  (`.novc/mam-ws-bot-miqra-mevoar-runs/20261103-100923-278924-0500/`).
+- **Edit level:** Whole page text, generated; page-targeted by book and chapter.
+- **JSON file:** `in/miqra-mevoar/yehoshua.json`; run artifacts
+  `.novc/mam-ws-bot-miqra-mevoar-runs/20261103-100801-090980-0500/`, dry run
+  `.novc/mam-ws-bot-miqra-mevoar-runs/20261103-100625-873410-0500/`.
 
 ## How to look up the original code
 
