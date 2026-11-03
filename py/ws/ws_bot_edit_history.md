@@ -860,7 +860,7 @@ infrastructure has changed enough to make them misleading examples:
   `.novc/mam-ws-bot-miqra-mevoar-runs/20261103-100801-090980-0500/`, dry run
   `.novc/mam-ws-bot-miqra-mevoar-runs/20261103-100625-873410-0500/`.
 
-### The remark on the ḥataf in the note on Deuteronomy 15:22, 2026-11-03 — current
+### The remark on the ḥataf in the note on Deuteronomy 15:22, 2026-11-03
 
 - **Purpose:** Give clause 2 of the doc-note on Deuteronomy 15:22, which quotes the form of the
   Leningrad Codex and ק3, the remark (חטף) after the form, as the same clause of 15:20's note on
@@ -903,6 +903,50 @@ infrastructure has changed enough to make them misleading examples:
   `.novc/mam-ws-bot-real-runs/20261103-110318-866152-0500/`; the layout page's dry run
   `.novc/mam-ws-bot-special-runs/20261103-110053-062417-0500/` and refused save
   `.novc/mam-ws-bot-special-runs/20261103-110140-044503-0500/`.
+
+### Miqra Mevoar's base-chapter index: links to all 929 chapters, 2026-11-03 — current
+
+- **Purpose:** Complete the index of Miqra Mevoar's base chapters, the page
+  `מקרא מבואר/פרקי בסיס`, so that it links every one of MAM's 929 chapters, as Avi asked on
+  2026-11-03; most of the links stay red until their pages exist. This is Stage 9 of
+  `doc/PLAN-miqra-mevoar.md`. The bot rewrote only the page's book sections: eleven books gained
+  a section, and the Twelve's section gained the runs of ten prophets. The 13 old sections, the
+  framing above them and the category line below them kept their bytes.
+- **Authorization:** Ben, 2026-11-03, on the index that Avi asked to have finished: "I think this
+  is a great task for a bot"; of Avi's count of 972 chapters, "Let's assume he meant 929"; and,
+  answering "For Samuel, Kings, Ezra–Nehemiah and Chronicles: one section per book, or one per
+  part?", "One per book". Answering "Stage 9, the index of all 929 chapters: only your word to
+  execute it. I'll then send the commander a standalone prompt for a fresh session. The edit
+  summary gets your approval when its save comes.": "Please do this, and then compose an email to
+  Avi describing what we've done and asking for his approval and anything else that seems like it
+  should be part of the process he outlines." For this run, answering "Save the index with
+  --base-revid 3084327 and the proposed Hebrew summary?": "Yes, save it".
+- **New mode:** `main_ws_bot.py miqra-mevoar-index` (`py/subcommands/ws_bot_miqra_mevoar_index.py`).
+  It reads no edit file. It reads the index's latest revision through the API, byte for byte, and
+  generates the new text with `py/miqra_mevoar/index_page.py`, whose closed parser requires every
+  old section to reappear. A save needs `--base-revid`, the reviewed revision, and refuses unless
+  that revision is still the latest; it saves with `nocreate`, `baserevid` and `basetimestamp`.
+- **Saving run:** the index, revision 3084327 → 3101215, 22,242 → 71,895 bytes, with the summary
+  השלמת רשימת פרקי הבסיס לכל ספרי המקרא, "completing the list of base chapters for all the books
+  of the Bible", which Ben approved with the run.
+- **Safety rule:** the reviewed dry run's old text equalled Phase 1's capture of revision 3084327,
+  Dovi's of 2026-09-23, then the page's latest revision. Its new text has 929 links in 24
+  sections, against 267 in 13, and its unified diff adds 34 lines and removes one, the Twelve's
+  line, whose old runs for Obadiah and Jonah reappear unchanged in the new line. A fresh dry run
+  just before the save, from `5eab0965`, gave the same old text, new text and diff byte for byte,
+  and so did the saving run. It read revision 3101215 back through the API, uncached, and its
+  bytes equalled the generated text. A read after the run found 3101215 the page's latest
+  revision, by BDencklaBot, not minor, with the approved summary, and with the bot flag in the
+  recent changes.
+- **One-shot:** no. Confirmed 2026-11-03, immediately after the run, without a further bot run:
+  the generator, given revision 3101215, returns its text unchanged, so a `--no-save` rerun would
+  find nothing to change.
+- **Edit level:** Whole page text, generated from the live text; page-targeted by title.
+- **Input:** `MAM-simple/json-vtrad-mam/`; run artifacts
+  `.novc/mam-ws-bot-miqra-mevoar-index-runs/20261103-125326-032449-0500/`, with the read after
+  the run in its `misc/post-save-check.txt`; dry runs
+  `.novc/mam-ws-bot-miqra-mevoar-index-runs/20261103-113936-837559-0500/`, the one Ben reviewed,
+  and `.novc/mam-ws-bot-miqra-mevoar-index-runs/20261103-125252-950458-0500/`.
 
 ## How to look up the original code
 

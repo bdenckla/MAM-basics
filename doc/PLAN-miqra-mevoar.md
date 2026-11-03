@@ -4,8 +4,8 @@ State: live, written 2026-11-02; Ben gave his word to execute it the same day. S
 that evening, and Stage 7 on 2026-11-03: Avi had himself created Joshua 1, and BDencklaBot created
 Joshua 2. Stage 8 waits on Avi's look at Joshua 2 and on Ben's word. Stage 9, the base-chapter
 index, was added on 2026-11-03 at Ben's request. He gave his word to execute it the same day, and
-a fresh session built it and ran its dry run; its save waits on his word for that run. The
-execution ledger below records each finished stage.
+a fresh session built it and, on his word for the run, saved the index as revision 3101215, which
+links all 929 chapters. The execution ledger below records each finished stage.
 
 Written 2026-11-02 by Claude (Opus 5.5) in the Phase 1 session that the session "Commander for
 Claude's forests" started for Avi's email "Mikra Mevo'ar at Wikisource". The quoted decisions are
@@ -225,6 +225,17 @@ byte-for-byte copy of that frozen plan; this ledger and the State line are the e
   (run `.novc/mam-ws-bot-miqra-mevoar-index-runs/20261103-113936-837559-0500/`). The save waits
   on Ben's word for that run, with `--base-revid 3084327` and its summary (decisions ledger
   entry 12).
+- **Stage 9's save, 2026-11-03:** Ben's word, answering "Save the index with --base-revid 3084327
+  and the proposed Hebrew summary?": "Yes, save it". The commander confirmed that no other
+  BDencklaBot run was in progress and returned the clone, which was fast-forwarded from
+  `96d13d1c` to origin's `5eab0965`, the varika refresh's six commits, which touch neither
+  MAM-simple nor this plan's code. A fresh dry run at 12:52 New York time gave the reviewed dry
+  run's old text, new text and diff byte for byte. The saving run at 12:53, with the summary
+  השלמת רשימת פרקי הבסיס לכל ספרי המקרא, saved revision 3101215 over 3084327, read it back equal
+  to the generated text, and exited zero. A read after the run found 3101215 the latest
+  revision, BDencklaBot's, not minor, with the summary and the bot flag, and found that
+  regenerating from it changes nothing. `py/ws/ws_bot_edit_history.md` has the entry, with the
+  run directories.
 
 ## Background for a fresh executor
 
