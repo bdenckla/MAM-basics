@@ -10,7 +10,8 @@ Each file goes into .novc/miqra-mevoar/pcloud/<timestamp>/, a directory that mus
 exist yet, with manifest.json: each file's name, pCloud file id, size, modification time
 and SHA-256. A download whose size differs from the listing's is refused, and so is a
 .docx that is not a sound zip or that would expand to more than _MAX_EXPANSION times its
-own size.
+own size. A lock file that LibreOffice or Word leaves beside an open document is skipped
+and named, and any other file name that is not a plain one stops the fetch.
 """
 
 import datetime
@@ -88,7 +89,7 @@ def _listing(downloader, spacer, code):
 
 
 def _files(folder):
-    """The folder's files; a subfolder, or a name that is not a plain file name, is refused."""
+    """The folder's files but lock files; a subfolder, or any other odd name, is refused."""
     if not folder.get("isfolder"):
         raise SystemExit("The pCloud link is not a folder's link")
     names = set()
@@ -96,6 +97,9 @@ def _files(folder):
         name = meta["name"]
         if meta.get("isfolder"):
             raise SystemExit(f"The pCloud folder has a subfolder, {name!r}")
+        if _LOCK_FILE.fullmatch(name):
+            print(f"skipped {name}: a lock file, left while its document is open")
+            continue
         if not _FILE_NAME.fullmatch(name) or name in names:
             raise SystemExit(
                 f"The pCloud folder has a file name fetch refuses: {name!r}"
@@ -167,6 +171,9 @@ _MAX_FILE_BYTES = 20_000_000
 _MAX_EXPANSION = 50
 _CODE = re.compile("[A-Za-z0-9]+")
 _FILE_NAME = re.compile(r"[A-Za-z0-9][A-Za-z0-9 ._-]*")
+# The lock files that LibreOffice (.~lock.<name>#) and Word (~$ and the name's tail) leave
+# beside a document while it is open. On 2026-11-03 the folder held .~lock.yehoshua.docx#.
+_LOCK_FILE = re.compile(r"\.~lock\..+#|~\$.+")
 _CONFIG = polite_download.PoliteDownloadConfig(
     user_agent="MAM-basics Miqra Mevoar fetch (https://github.com/bdenckla/MAM-basics)",
     # Requests to one host within a call, such as a robots.txt read and the download

@@ -1,9 +1,9 @@
 # Plan: Miqra Mevoar base chapters from Rabbi Kokhav's Word files
 
 State: live, written 2026-11-02; Ben gave his word to execute it the same day. Stages 1 to 6 ran
-that evening. Avi answered on 2026-11-03 and had himself created Joshua 1, so Stage 7 waits on
-Ben's word alone, and on his choice of what it now saves. The execution ledger below records each
-finished stage.
+that evening, and Stage 7 on 2026-11-03: Avi had himself created Joshua 1, and BDencklaBot created
+Joshua 2. Stage 8 waits on Avi's look at Joshua 2 and on Ben's word. The execution ledger below
+records each finished stage.
 
 Written 2026-11-02 by Claude (Opus 5.5) in the Phase 1 session that the session "Commander for
 Claude's forests" started for Avi's email "Mikra Mevo'ar at Wikisource". The quoted decisions are
@@ -68,9 +68,9 @@ Deferred, each until its own decision:
   - **The raw-text pages** are to go once the work is done; he plans to delete them himself, so
     nothing here touches them.
   - **The base-chapter index** should be finished first, listing every chapter of the Bible, most
-    of them as red links. He wrote 972 chapters; MAM-simple has 929, in 39 books, so the count
-    needs confirming with him. This is new work for the bot or for a person, and it needs Ben's
-    decision and a revision of this plan.
+    of them as red links. He wrote 972 chapters; MAM-simple has 929, in 39 books, and Ben
+    decided on 2026-11-03: "Let's assume he meant 929". This is new work for the bot or for a
+    person, and it needs Ben's decision and a revision of this plan.
 - A book that arrives as one file for two parts, such as Samuel: question 7. The converter raises
   on a second title row; revise this plan when such a file arrives. Avi expects Samuel, Kings and
   Chronicles each as a single file, as the whole Torah once came.
@@ -149,6 +149,18 @@ byte-for-byte copy of that frozen plan; this ledger and the State line are the e
   fast-forwarded into `main`, and GitHub shows it merged at 07:37:40 New York time. A follow-up
   commit relabels its test as one of the ws_bot tests that AGENTS.md excepts from the
   differential-or-lint rule, since the test is example-based, and asserts `baserevid` as well.
+- **Stage 7, 2026-11-03:** Ben's word, answering "On your word here, I'll ask the commander for
+  the clone, run a fresh dry run, then the save, and write Stage 7's history entry.": "yes go
+  ahead and do that". The commander returned the clone for it. A read-only listing of the folder
+  showed `yehoshua.docx` unchanged, and a download of it equalled, by SHA-256, the file the
+  tracked JSON came from. The folder also held `.~lock.yehoshua.docx#`, a LibreOffice lock file,
+  which stopped `fetch`. This stage's commit makes `fetch` skip and name such lock files. A full
+  fetch then found all seven files unchanged, and `check` passed. The dry run at 10:06 New York
+  time gave Joshua 1 unchanged and Joshua 2 a create. The saving run at 10:08, with Avi's summary
+  פרק חדש במקרא מבואר, created Joshua 2 as revision 3101196. It read the revision back equal to
+  the generated text and exited zero, and the edit carries the bot flag. A dry rerun found both
+  pages unchanged. `py/ws/ws_bot_edit_history.md` has the entry, with the run directories. Stage 8
+  waits on Avi's look at Joshua 2 and on Ben's word.
 
 ## Background for a fresh executor
 
