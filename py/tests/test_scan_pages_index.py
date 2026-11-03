@@ -41,6 +41,82 @@ def test_every_edition_has_a_tracked_index():
         assert index["pages"], edition_id
 
 
+def _independent_simple_atoms(book):
+    """Decode the separate simple export under the maintained written-slot policy."""
+
+    def flatten(node):
+        kind = node["type"]
+        if kind in {
+            "text",
+            "kq-trivial",
+            "kq-k-velo-q",
+            "letter-small",
+            "letter-large",
+        }:
+            assert set(node) == {"type", "text"}
+            assert isinstance(node["text"], str)
+            return node["text"]
+        if kind in {"kq-q-velo-k", "good-ending"}:
+            assert set(node) == {"type", "text"}
+            assert isinstance(node["text"], str)
+            # The maintained written-atom reader omits a qere-only word and
+            # the repeated good ending. A written-only word above remains.
+            return " "
+        if kind == "slh-word":
+            assert set(node) == {
+                "type",
+                "contents",
+                "slhw-desc-0",
+                "slhw-desc-1",
+                "slhw-desc-2",
+                "slhw-desc-3",
+            }
+            assert all(
+                n["type"] in {"text", "letter-small", "letter-large"}
+                for n in node["contents"]
+            )
+            return "".join(map(flatten, node["contents"]))
+        if kind == "kq":
+            assert sorted(n["type"] for n in node["contents"]) == ["kq-k", "kq-q"]
+            qere = next(n for n in node["contents"] if n["type"] == "kq-q")
+            if set(qere) == {"type", "text"}:
+                assert isinstance(qere["text"], str)
+                return qere["text"]
+            assert set(qere) == {"type", "contents"}
+            assert all(n["type"] in {"text", "lp-paseq"} for n in qere["contents"])
+            return "".join(map(flatten, qere["contents"]))
+        assert node in (
+            {"type": "lp-legarmeih"},
+            {"type": "lp-paseq"},
+            {"type": "spi-pe2"},
+            {"type": "spi-pe3"},
+            {"type": "spi-samekh2"},
+            {"type": "spi-samekh3"},
+        )
+        return " "
+
+    simple_path = mam_simple_verse.mam_simple_json_path(
+        paths.repo_root() / "MAM-simple" / "json-vtrad-mam", book
+    )
+    expected = {}
+    prefix = osis_book_abbrevs.BOOK_ABBREVS[book] + "."
+    for verse in mam_simple_json.verses(mam_simple_json.read_book_group(simple_path)):
+        if not verse["osisID"].startswith(prefix):
+            continue
+        _, c, v = verse["osisID"].split(".")
+        source_text = (
+            verse["text"]
+            if "text" in verse
+            else "".join(map(flatten, verse["contents"]))
+        )
+        expected[int(c), int(v)] = tuple(
+            letters
+            for token in re.split(r"[\s־]+", source_text)
+            if (letters := "".join(ch for ch in token if "א" <= ch <= "ת"))
+        )
+    return expected
+
+
 def test_censused_books_agree_with_independent_simple_export():
     """Compare every adopted book's atom stream with the separate simple product."""
     checked = set()
@@ -50,72 +126,65 @@ def test_censused_books_agree_with_independent_simple_export():
             for book in segment["bkids"]:
                 if book in checked:
                     continue
-                simple_path = mam_simple_verse.mam_simple_json_path(
-                    paths.repo_root() / "MAM-simple" / "json-vtrad-mam", book
+                assert _independent_simple_atoms(book) == text.book_atoms(book), (
+                    edition,
+                    book,
                 )
-                root = mam_simple_json.read_book_group(simple_path)
-                expected = {}
-                prefix = osis_book_abbrevs.BOOK_ABBREVS[book] + "."
-                for verse in mam_simple_json.verses(root):
-                    if not verse["osisID"].startswith(prefix):
-                        continue
-                    _, c, v = verse["osisID"].split(".")
-                    # The separate export carries its chosen main form explicitly.
-                    if "text" in verse:
-                        source_text = verse["text"]
-                    else:
-                        parts = []
-                        for node in verse["contents"]:
-                            if node["type"] in {"text", "kq-trivial"}:
-                                parts.append(node["text"])
-                            elif node["type"] == "kq-k-velo-q":
-                                assert set(node) == {"type", "text"}
-                                assert isinstance(node["text"], str)
-                                # Written atoms include this unpointed word;
-                                # it is absent only from a reading projection.
-                                parts.append(node["text"])
-                            elif node["type"] == "slh-word":
-                                for child in node["contents"]:
-                                    assert child["type"] in {
-                                        "text",
-                                        "letter-small",
-                                        "letter-large",
-                                    }
-                                    parts.append(child["text"])
-                            elif node["type"] == "kq":
-                                assert sorted(
-                                    child["type"] for child in node["contents"]
-                                ) == ["kq-k", "kq-q"]
-                                qere = next(
-                                    child
-                                    for child in node["contents"]
-                                    if child["type"] == "kq-q"
-                                )
-                                parts.append(qere["text"])
-                            elif node["type"] == "good-ending":
-                                assert set(node) == {"type", "text"}
-                                assert isinstance(node["text"], str)
-                                # The maintained simple reader excludes the
-                                # repeated ending from the final verse's atoms.
-                                parts.append(" ")
-                            else:
-                                assert node in (
-                                    {"type": "lp-legarmeih"},
-                                    {"type": "lp-paseq"},
-                                    {"type": "spi-pe2"},
-                                    {"type": "spi-pe3"},
-                                    {"type": "spi-samekh2"},
-                                )
-                                parts.append(" ")
-                        source_text = "".join(parts)
-                    expected[int(c), int(v)] = tuple(
-                        letters
-                        for token in re.split(r"[\s־]+", source_text)
-                        if (letters := "".join(ch for ch in token if "א" <= ch <= "ת"))
-                    )
-                assert expected == text.book_atoms(book), (edition, book)
                 checked.add(book)
     assert checked, "No adopted book was cross-checked"
+
+
+def test_frontier_jeremiah_atoms_agree_and_malformed_forms_refuse():
+    """Check all frontier text independently without declaring page coverage."""
+    assert _independent_simple_atoms("Jeremiah") == text.book_atoms("Jeremiah")
+    book = plus.read_parsed_plus_bk39s(
+        ["Jeremiah"], mam_parsed_path=paths.mam_parsed_path()
+    )["Jeremiah"]
+
+    def templates(node):
+        if isinstance(node, dict):
+            if "tmpl_name" in node:
+                yield node
+            for child in node.values():
+                yield from templates(child)
+        elif isinstance(node, (list, tuple)):
+            for child in node:
+                yield from templates(child)
+
+    checked = 0
+    for row in book["verses_plus"].values():
+        for wrapper in templates(row.EP):
+            name, params = wrapper["tmpl_name"], wrapper.get("tmpl_params", {})
+            corruptions = []
+            if name == "קרי ולא כתיב":
+                for key in ("1", "2"):
+                    bad = deepcopy(wrapper)
+                    bad["tmpl_params"][key] += "א"
+                    corruptions.append(bad)
+                    bad = deepcopy(wrapper)
+                    bad["tmpl_params"][key] = [params[key]]
+                    corruptions.append(bad)
+                    bad = deepcopy(wrapper)
+                    bad["tmpl_params"][key] += " " + params[key]
+                    corruptions.append(bad)
+            elif name == "מ:כו״ק מיוחד" and isinstance(params["2"], list):
+                bad = deepcopy(wrapper)
+                bad["tmpl_params"]["2"][1]["tmpl_name"] = "unsupported"
+                corruptions.append(bad)
+                bad = deepcopy(wrapper)
+                bad["tmpl_params"]["2"][1]["tmpl_params"] = {"1": "annotation"}
+                corruptions.append(bad)
+                bad = deepcopy(wrapper)
+                del bad["tmpl_params"]["2"][1]
+                corruptions.append(bad)
+                bad = deepcopy(wrapper)
+                bad["tmpl_params"]["2"][0] += " " + params["2"][0]
+                corruptions.append(bad)
+            for bad in corruptions:
+                with pytest.raises((ValueError, TypeError)):
+                    text._body_text([bad])
+                checked += 1
+    assert checked, "No new frontier form was fault-checked"
 
 
 def test_every_record_edge_resolves_to_its_observed_page():

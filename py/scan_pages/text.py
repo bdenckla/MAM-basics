@@ -9,9 +9,11 @@ Ordinary ketiv/qere uses the qere spelling only when both forms are one atom,
 so either printed form occupies the same position. Its named vowel-alternative
 wrapper may select consonant-identical string forms. The explicitly named
 two-word special form likewise preserves two ordered slots in both forms.
-Two explicitly verified one-written/two-qere forms select the qere pair and
+Explicitly verified one-written/two-qere forms select the qere pair and
 declare its span indivisible at page boundaries. Other multi-atom ketiv/qere
 and alternative strands need source alignment.
+Read-but-not-written words contribute no atom under the maintained written-atom
+policy. A named two-word qere may contain a parameterless paseq between its words.
 The special-letter word wrapper and the small/large-letter templates recurse into
 their Scripture parameter without inserting a word boundary or losing a letter.
 Documentation is never Scripture. Unknown templates fail rather than contribute
@@ -26,8 +28,12 @@ from mb_cmn import read_books_from_mam_parsed_plus as plus
 from mb_cmn import template_names
 
 _UNEQUAL_KQ_FORMS = {
-    'כו"ק כתיב מילה חדה וקרי תרתין מילין': (("מהם",), ("מה", "הם")),
-    'כו"ק קרי שונה מהכתיב בשתי מילים': (("כאשר",), ("ככל", "אשר")),
+    'כו"ק כתיב מילה חדה וקרי תרתין מילין': {
+        (("מהם",), ("מה", "הם")),
+        (("מאשתם",), ("מאש", "תם")),
+        (("והנהו",), ("והנה", "הוא")),
+    },
+    'כו"ק קרי שונה מהכתיב בשתי מילים': {(("כאשר",), ("ככל", "אשר"))},
 }
 
 
@@ -65,6 +71,16 @@ def _body_text(elements, *, protected=None):
             # The maintained written-atom policy in mam_json_verses includes
             # kq-k-velo-q. Parentheses in the display form are not letters.
             parts.append(params["2"])
+        elif isinstance(element, dict) and element["tmpl_name"] == "קרי ולא כתיב":
+            params = template_names.validate_current_plus_template(element)
+            if not all(isinstance(params[key], str) for key in ("1", "2")):
+                raise ValueError("Read-but-not-written word needs string forms")
+            displayed, reading = (letters_atoms(params[key]) for key in ("1", "2"))
+            if len(reading) != 1 or displayed != reading:
+                raise ValueError("Read-but-not-written forms must share one atom")
+            # Ben's maintained written-atom policy in mam_json_verses excludes
+            # kq-q-velo-k. Keep neighboring written words separate at its slot.
+            parts.append(" ")
         elif isinstance(element, dict) and element["tmpl_name"] in {
             template_names.SLH_WORD,
             "מ:אות-ק",
@@ -101,22 +117,27 @@ def _body_text(elements, *, protected=None):
             parts.append(params["1"])
         elif isinstance(element, dict) and element["tmpl_name"] == "מ:כו״ק מיוחד":
             params = template_names.validate_current_plus_template(element)
-            if not all(isinstance(params[key], str) for key in ("1", "2")):
-                raise ValueError("Special ketiv/qere needs string forms")
-            forms = tuple(letters_atoms(params[key]) for key in ("1", "2"))
             if params["סוג"] == 'כו"ק של שתי מילים בהערה אחת':
-                if not all(len(form) == 2 for form in forms):
+                if (
+                    not isinstance(params["1"], str)
+                    or len(letters_atoms(params["1"])) != 2
+                ):
                     raise ValueError("Special ketiv/qere needs the named two-word form")
+                qere = _two_word_special_qere(params["2"])
             elif params["סוג"] in _UNEQUAL_KQ_FORMS:
-                if forms != _UNEQUAL_KQ_FORMS[params["סוג"]]:
+                if not all(isinstance(params[key], str) for key in ("1", "2")):
+                    raise ValueError("Unequal ketiv/qere needs string forms")
+                forms = tuple(letters_atoms(params[key]) for key in ("1", "2"))
+                if forms not in _UNEQUAL_KQ_FORMS[params["סוג"]]:
                     raise ValueError("Unverified unequal ketiv/qere forms")
                 if protected is not None:
                     protected.append(" ".join(forms[1]))
+                qere = params["2"]
             else:
                 raise ValueError("Unsupported special ketiv/qere subtype")
             # Maintained projection selects qere parameter 2. A single written
             # word mapped to a pair must keep both qere atoms on the same page.
-            parts.append(params["2"])
+            parts.append(qere)
         elif isinstance(element, dict) and element["tmpl_name"] in {"כו״ק", "קו״כ"}:
             params = template_names.validate_current_plus_template(element)
             _ketiv, qere = (_ordinary_kq_form(params[key]) for key in ("1", "2"))
@@ -127,6 +148,7 @@ def _body_text(elements, *, protected=None):
             "פפ",
             "פפפ",
             "סס",
+            "ססס",
         }:
             template_names.validate_current_plus_template(element)
             # Maintained NO_ATOM semantics separate the neighboring words.
@@ -150,6 +172,28 @@ def _body_text(elements, *, protected=None):
                 f"element: {element!r}"
             )
     return "".join(parts)
+
+
+def _two_word_special_qere(form):
+    if isinstance(form, str):
+        rendered = form
+    elif (
+        isinstance(form, list)
+        and len(form) == 3
+        and isinstance(form[0], str)
+        and isinstance(form[2], str)
+        and all(len(letters_atoms(form[i])) == 1 for i in (0, 2))
+        and isinstance(form[1], dict)
+        and form[1].get("tmpl_name") == "מ:פסק"
+    ):
+        # The named parent still has two ordered written/qere slots. Only
+        # this explicit parameterless separator is admitted inside the qere.
+        rendered = _body_text(form)
+    else:
+        raise ValueError("Unsupported two-word special qere storage")
+    if len(letters_atoms(rendered)) != 2:
+        raise ValueError("Special qere must preserve exactly two ordered atoms")
+    return rendered
 
 
 def _ordinary_kq_form(form):

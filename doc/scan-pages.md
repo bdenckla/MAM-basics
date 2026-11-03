@@ -229,6 +229,18 @@ for a fresh session that has no other context. Its thin pointer issue is #349, f
   portions and 130 unread seeds across the five catalogs (361 records).
   These results are on the isolated research branch; main is unchanged.
 
+- 2026-11-03, first Jeremiah checkpoint: all six text-projection refusals are
+  resolved against native scans and maintained semantics. All 1,364 verses /
+  21,833 atoms agree with the independent MAM-simple export. Two further
+  exact one-written-atom/two-qere-atom mappings retain indivisible page spans;
+  qere-only words contribute no written atom, following the maintained policy.
+  Native closing-page evidence covers JC 476-480 and BHL 724-730: twelve
+  complete physical portions, including all chapters 51-52 (98 verses /
+  1,453 atoms per edition) and differing partial spans of chapter 50.
+  These remain private boundary evidence, with 51 JC and 73 BHL portions
+  still unverified. Jeremiah is not adopted into whole-book lookup; accepted
+  coverage remains 13 books / 2,323 verses per edition.
+
 ## Codex entry indexes
 
 `in/lci_recs.json` is the public Leningrad Codex entry index. Its canonical top level
@@ -766,12 +778,18 @@ inserting a word boundary. Hosea adds the named `פפ` paragraph-break template,
 which contributes a separator while its optional annotation contributes no
 Scripture. Ezekiel also supports the explicitly named special two-word
 ketiv/qere subtype with exactly two ordered atoms in both forms, and the
-matching one-atom written-but-not-read form. The two native-verified unequal
-forms at Ezekiel 8:6 and 9:11 select the maintained qere pair and declare
+matching one-atom written-but-not-read form. A read-but-not-written word
+contributes no atom, following the maintained written-atom reader; its
+matching one-atom display/reading forms are checked before omission.
+The four native-verified unequal forms at Ezekiel 8:6 and 9:11 and
+Jeremiah 6:29 and 18:3 select the maintained qere pair and declare
 both canonical atoms an indivisible source-written-word span. The template
 subtype and both consonantal forms must match exactly; unknown forms and
 ambiguous span locations are refused. Census, check and lookup reject a
-page start or end inside either pair. Other multi-atom ketiv/qere,
+page start or end inside a mapped pair. The named two-word special subtype
+also admits an explicit parameterless paseq between its two qere atoms;
+other nested forms refuse. The named three-samekh break is a separator
+without an atom, following the maintained definitions. Other multi-atom ketiv/qere,
 unimplemented templates and named Decalogue strands remain unsupported.
 Extending those cases needs explicit source alignment;
 template names or argument shapes are not grounds for guessing it. An
@@ -1262,6 +1280,56 @@ deferred under the ordinary focused-check policy. Universal completion still
 requires 26 ordinary-body books per edition, source-classification reconciliation,
 strand handling and the deferred refresh/density work. Main integration and
 deployment are separate from this research-branch adoption.
+
+### First Jeremiah boundary checkpoint, 2026-11-03
+
+Native semantic inspection covers the six previously refused cases in both
+editions. At 6:29 and 18:3, one written atom maps to a canonical qere pair.
+Only these exact subtype/form combinations join the existing closed mapping
+table. Their protected spans are 6:29 atoms 3-4 and 18:3 atoms 4-5. A maqaf
+between the latter pair does not combine its two atoms.
+
+At 31:37 and 50:29, the scans have blank body slots and qere annotations.
+The maintained written-atom reader explicitly excludes `kq-q-velo-k`, as
+recorded for Ben's 2026-09-26 decision. The scan projection follows that
+policy: checked matching one-atom display/reading forms contribute a separator
+and no body atom. The annotations remain source evidence, without introducing
+virtual word positions. The explicit three-samekh separator at 38:17 follows
+the maintained NO_ATOM definitions. At 48:20, both native forms retain two
+ordered atoms; its qere's parameterless paseq is accepted in that named
+two-word subtype only. Unknown subtypes, nested shapes and unequal forms refuse.
+
+All 1,364 Jeremiah verses / 21,833 atoms agree with independently decoded
+MAM-simple under these written-slot rules. No projection refusals remain.
+This is text support, not whole-book source-page coverage.
+
+The first native boundary group verifies five JC portions (476-480) and
+seven BHL portions (724-730). It covers all chapters 51-52: 98 verses /
+1,453 atoms per edition. The JC suffix begins at 50:28 atom 13; the BHL
+suffix begins at 50:19 atom 7; both reach 52:34 atom 17. Ten adjacent joins
+and nine split-verse qualified/cross-page checks pass. Each edition refuses
+96 repeated-atom queries in the two complete chapters. All seven BHL headers
+omit physical opening continuations, which are derived from body text instead.
+
+These twelve complete physical portions remain a private boundary checkpoint.
+Jeremiah has 56 JC and 80 BHL inventoried portions, leaving 51 and 73
+unverified respectively. The semantic-case pages outside this closing group
+are not counted as boundary-censused portions. Whole-book lookup remains
+refused, and the public catalogs retain 361 records, 231 completed portions,
+130 unread seeds and two segments. All thirteen previously adopted books
+remain covered; main is unchanged.
+
+The first focused run passed seven cases and found two failures in a new
+independent-decoder assertion that omitted existing special-letter description
+fields. That assertion was corrected; the two affected comparisons then passed
+in a targeted rerun. Together they cover all nine relevant cases, including
+every adopted edge, the protected-boundary regression, complete independent
+Jeremiah atom agreement, and malformed qere-only/nested-paseq refusals.
+Fourteen additional malformed unequal forms and two ambiguous mapped pairs
+also refuse. Black and whitespace checks passed. Broad suite/mega remain
+deferred under the ordinary focused-check policy. No scan is changed and no
+image or private provenance enters the public repository. Work stops at this
+bounded checkpoint for the scheduled nightly slot.
 
 **Phase 0 - survey and tracked inventory. DONE, 2026-08-07.** The code is
 `py/main_scan_pages.py` (`survey`, `check`) over `py/scan_pages/`, with the lint at
