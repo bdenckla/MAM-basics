@@ -904,7 +904,7 @@ infrastructure has changed enough to make them misleading examples:
   `.novc/mam-ws-bot-special-runs/20261103-110053-062417-0500/` and refused save
   `.novc/mam-ws-bot-special-runs/20261103-110140-044503-0500/`.
 
-### Miqra Mevoar's base-chapter index: links to all 929 chapters, 2026-11-03 — current
+### Miqra Mevoar's base-chapter index: links to all 929 chapters, 2026-11-03
 
 - **Purpose:** Complete the index of Miqra Mevoar's base chapters, the page
   `מקרא מבואר/פרקי בסיס`, so that it links every one of MAM's 929 chapters, as Avi asked on
@@ -947,6 +947,47 @@ infrastructure has changed enough to make them misleading examples:
   the run in its `misc/post-save-check.txt`; dry runs
   `.novc/mam-ws-bot-miqra-mevoar-index-runs/20261103-113936-837559-0500/`, the one Ben reviewed,
   and `.novc/mam-ws-bot-miqra-mevoar-index-runs/20261103-125252-950458-0500/`.
+
+### Miqra Mevoar's base chapters: the other 54 chapters of the six books, 2026-11-03 — current
+
+- **Purpose:** Create the rest of the base chapters of Rabbi David Kokhav's Miqra Mevoar from the
+  six Word files in Avi's pCloud folder: Joshua 3–24 and all of Hosea, Joel, Amos, Obadiah and
+  Jonah, 54 pages. This is Stage 8 of `doc/PLAN-miqra-mevoar.md`. With Joshua 1, which Avi
+  created, and Joshua 2, which the pilot above created, every chapter of the six books now has
+  its base chapter.
+- **Authorization:** Avi's email of 2026-11-03, which Ben relayed to the session that commands
+  Claude's forests at 14:52 New York time: Joshua 2 "looks fine", and "let's finish the available
+  chapters" of Miqra Mevoar as base chapters. The commanding session read Avi's "the available
+  chapters" as Avi's confirmation that the Word files in the folder are final. Ben's word, the
+  first line of that message: "Launch a session that will act upon the following email from Avi
+  (notably, I think this unblocks some Miqra Mevoar work):". The summary is the one Avi gave for
+  new chapters, as in the pilot.
+- **Mode:** `main_ws_bot.py miqra-mevoar`, as in the pilot, over all six books.
+- **Saving run:** 54 pages created, from 15:00 to 15:09 New York time, 335,826 bytes in all, with
+  the summary פרק חדש במקרא מבואר: Joshua 3–24 as revisions 3101229 to 3101250, Hosea 1–14 as
+  3101251 to 3101264, Joel 1–4 as 3101265 to 3101268, Amos 1–9 as 3101269 to 3101277, Obadiah as
+  3101278, and Jonah 1–4 as 3101279 to 3101282. Joshua 1 and 2 unchanged.
+- **Safety rule:** before the run, a fresh fetch of the folder
+  (`.novc/miqra-mevoar/pcloud/20261103-145602-860752-0500/`) gave a manifest byte-identical to the
+  pilot's, so each Word file equalled, by SHA-256, the one the tracked JSON came from, and `check`
+  passed again. The LibreOffice lock file beside Joshua's Word file was the one the pilot found,
+  unchanged since 00:31 New York time. The commander confirmed before the dry run, and again
+  before the save, that no other BDencklaBot run was in progress. The `--no-save` dry run gave 54
+  creates, no refusal, and Joshua 1 and 2 unchanged, and its 56 pages equal the Phase 1
+  prototype's byte for byte; the saving run's pages equal the dry run's. The saving run read each
+  new revision back through the API, uncached, and its bytes equalled the generated text; one
+  read-back waited out a `maxlag` refusal and retried. In the recent changes every creation, and
+  its entry in the category, carries the bot flag, and every creation has the approved summary
+  and is not minor.
+- **One-shot:** no. Confirmed 2026-11-03, immediately after the run: a `--no-save` rerun found all
+  56 pages unchanged and exited zero
+  (`.novc/mam-ws-bot-miqra-mevoar-runs/20261103-151144-642996-0500/`). An earlier rerun,
+  `20261103-151107-829032-0500`, found the same, but its exit code went unrecorded: its output was
+  piped into `Select-Object -First 2`.
+- **Edit level:** Whole page text, generated; page-targeted by book and chapter.
+- **JSON files:** `in/miqra-mevoar/`, the files of `yehoshua`, `hoshea`, `yoel`, `amos`, `ovadya`
+  and `yona`; run artifacts `.novc/mam-ws-bot-miqra-mevoar-runs/20261103-150012-160259-0500/`, dry
+  run `.novc/mam-ws-bot-miqra-mevoar-runs/20261103-145749-000351-0500/`.
 
 ## How to look up the original code
 

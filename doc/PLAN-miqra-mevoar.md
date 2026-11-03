@@ -1,11 +1,12 @@
 # Plan: Miqra Mevoar base chapters from Rabbi Kokhav's Word files
 
 State: live, written 2026-11-02; Ben gave his word to execute it the same day. Stages 1 to 6 ran
-that evening, and Stage 7 on 2026-11-03: Avi had himself created Joshua 1, and BDencklaBot created
-Joshua 2. Stage 8 waits on Avi's look at Joshua 2 and on Ben's word. Stage 9, the base-chapter
-index, was added on 2026-11-03 at Ben's request. He gave his word to execute it the same day, and
-a fresh session built it and, on his word for the run, saved the index as revision 3101215, which
-links all 929 chapters. The execution ledger below records each finished stage.
+that evening, and Stages 7 to 9 on 2026-11-03: Avi had himself created Joshua 1, BDencklaBot
+created the other 55 base chapters of the six books, and the base-chapter index, which Stage 9
+added at Ben's request, links all 929 chapters as revision 3101215. Avi wrote the same day how the
+short books are to be displayed (Deferred, “Display pages”). Who makes those pages waits on Ben's
+decision; this plan is executed unless he gives them to the bot as a new stage. The execution
+ledger below records each finished stage.
 
 Written 2026-11-02 by Claude (Opus 5.5) in the Phase 1 session that the session "Commander for
 Claude's forests" started for Avi's email "Mikra Mevo'ar at Wikisource". The quoted decisions are
@@ -83,6 +84,11 @@ Deferred, each until its own decision:
   revision of this plan. Avi answered on 2026-11-03:
   - **Display pages** come later, as a further step that needs explanation; he and Rabbi Kokhav
     have agreed on how they should look in the Prophets and the Writings.
+  - **Display pages, in Avi's later email of 2026-11-03,** which Ben relayed with Stage 8's word:
+    the books other than Joshua are "short enough" to be "displayed on a single page, one page per
+    book, in a similar fashion to the five megillot", and "For Joshua, I'll need to create an
+    example." Who makes the five pages, Avi or the bot, waits on Ben's decision; Joshua's waits on
+    Avi's example.
   - **The raw-text pages** are to go once the work is done; he plans to delete them himself, so
     nothing here touches them.
   - **The base-chapter index** should be finished first, listing every chapter of the Bible, most
@@ -236,6 +242,28 @@ byte-for-byte copy of that frozen plan; this ledger and the State line are the e
   revision, BDencklaBot's, not minor, with the summary and the bot flag, and found that
   regenerating from it changes nothing. `py/ws/ws_bot_edit_history.md` has the entry, with the
   run directories.
+- **Stage 8's word, 2026-11-03:** Ben relayed Avi's answer to the commander session at 14:52 New
+  York time, under his own first line: "Launch a session that will act upon the following email
+  from Avi (notably, I think this unblocks some Miqra Mevoar work):". Avi wrote that Joshua 2
+  "looks fine" and "let's finish the available chapters" of Miqra Mevoar as base chapters; the
+  commander read that as Avi's confirmation that the Word files in the folder are final. The
+  commander started a fresh Claude (Opus 5.5) session for the stage, with a brief whose Part A is
+  the Phase 2 session's prompt, frozen at SHA-256
+  `25511F3E24190CED119B7A61C9D68FB82DCD0EE0D105A236CCE9F828809FEF24`.
+- **Stage 8's checkout:** `C:/Users/BenDe/GitRepos2/MAM-basics`, assigned by the commander.
+  Verified 2026-11-03, before a fetch at 14:56 New York time: on `main`, clean, at origin's
+  `23b7e24f00ce78ab45c475df94f9f57cd8dcaead`, of which `75bb5ef1` is an ancestor.
+- **Stage 8, 2026-11-03:** the fetch's manifest was byte-identical to Stage 7's, so no Word file
+  had changed, and `check` passed. The commander confirmed before the dry run, and again before
+  the save, that no other BDencklaBot run was in progress. The dry run at 14:57 New York time gave
+  54 creates and Joshua 1 and 2 unchanged, with no refusal, and its 56 pages equal the prototype's
+  byte for byte. The saving run, from 15:00 to 15:09 with Avi's summary, created the 54 pages as
+  revisions 3101229 to 3101282, read each back equal to the generated text, and exited zero; its
+  pages equal the dry run's. Every creation carries the bot flag. A dry rerun found all 56 pages
+  unchanged and exited zero. `py/ws/ws_bot_edit_history.md` has the entry, with the run
+  directories. Stage 8 sets this plan's State to executed once Stage 9 is done, as it is, but the
+  State stays live: the commander's brief adds a stage to this plan for the display pages if Ben
+  gives them to the bot, and an executed plan is not reopened.
 
 ## Background for a fresh executor
 
