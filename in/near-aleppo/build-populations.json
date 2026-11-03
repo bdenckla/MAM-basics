@@ -7,7 +7,7 @@
     "מ:לגרמיה-2": 1785,
     "מ:פסק": 508,
     "מ:מקף אפור": 116,
-    "נוסח": 3597,
+    "נוסח": 3596,
     "מ:הערה-2": 27,
     "מ:כפול": 34,
     "מ:קו״כ-אם-2": 149,
@@ -77,10 +77,10 @@
     "ketiv/qere apparatus: transplant agreeing with the codex form a note quotes": 12,
     "ketiv/qere apparatus: transplant agreeing with MAM's pointed ketiv": 4,
     "ketiv/qere apparatus: pointed qere equal to the form its note's prose gives the codex, less the form's masorah circles": 1,
-    "hataf on a non-guttural: sheva and varika replaced by a hataf patah": 616,
+    "hataf on a non-guttural: sheva and varika replaced by a hataf patah": 619,
     "hataf on a non-guttural: sheva and varika replaced by a hataf qamats": 50,
     "hataf on a non-guttural: varika replaced by a hiriq, the sheva kept": 5,
-    "hataf on a non-guttural: restoration agreeing with a form its note quotes": 671,
+    "hataf on a non-guttural: restoration agreeing with a form its note quotes": 674,
     "stress helpers: pashta's stress helper stripped": 197,
     "stress helpers: pashta's stress helper kept, a letter standing between": 3627,
     "stress helpers: pashta's stress helper kept by a note whose agreeing clause cites the codex for the doubling": 0,
@@ -290,7 +290,7 @@
     ]
   },
   "phase5_counts": {
-    "codex readings: notes walked": 3597,
+    "codex readings: notes walked": 3596,
     "codex readings: empty clauses in note bodies": 1,
     "codex readings: direct codex siglum elements": 1152,
     "codex readings: direct differing clauses": 1144,
@@ -310,11 +310,11 @@
     "codex readings: policy-pending (candidate-form-punctuation), bang-marked": 0,
     "codex readings: policy-pending (candidate-form-count-0)": 1,
     "codex readings: policy-pending (candidate-form-count-0), bang-marked": 0,
-    "codex readings: apply-candidate already in place": 846,
+    "codex readings: apply-candidate already in place": 847,
     "codex readings: apply-candidate already in place, bang-marked": 7,
     "codex readings: apply-candidate in place, its form lacking the paseq glyph that ends the target": 2,
     "codex readings: apply-candidate in place, its form lacking the paseq glyph that ends the target, bang-marked": 0,
-    "codex readings: applied, the form replacing the whole of a plain target": 116,
+    "codex readings: applied, the form replacing the whole of a plain target": 115,
     "codex readings: applied, the form replacing the whole of a plain target, bang-marked": 76,
     "codex readings: applied, the form replacing named atoms of a plain target": 2,
     "codex readings: applied, the form replacing named atoms of a plain target, bang-marked": 1,
@@ -337,7 +337,7 @@
     "codex readings: pending, the form stopping at the codex's space for a qere without ketiv, bang-marked": 0,
     "codex readings: not applied, and flagged": 1,
     "codex readings: not applied, and flagged, bang-marked": 0,
-    "codex readings: note targets changed": 191,
+    "codex readings: note targets changed": 190,
     "codex readings: note targets changed, bang-marked": 80,
     "codex readings: applied readings with a configuration a phase 3 policy removes": 3,
     "codex readings: differing clauses whose head names שיטת-א": 13,
@@ -358,7 +358,6 @@
     ],
     "codex readings: applied, the form replacing the whole of a plain target": [
       ["A5-Deuter", "29", "25"],
-      ["A5-Deuter", "32", "10"],
       ["B1-Joshua", "21", "5"],
       ["B1-Joshua", "21", "22"],
       ["B1-Joshua", "23", "7"],
@@ -620,9 +619,9 @@
     ]
   },
   "phase6_counts": {
-    "נוסח: notes reached": 3597,
+    "נוסח: notes reached": 3596,
     "מ:הערה-2: notes reached": 27,
-    "נוסח: notes given MAM's target": 1552,
+    "נוסח: notes given MAM's target": 1553,
     "מ:הערה-2: notes given MAM's target": 5
   },
   "flag_counts": {

@@ -1865,6 +1865,26 @@
     "r": "לָראֿוּבֵנִ֣י"
   },
   {
+    "bcv_short": "N26:7",
+    "fp": "rare/rafeh/alef/doc-part-n",
+    "r": "ל=הָרֻֽאֿוּבֵנִ֑י"
+  },
+  {
+    "bcv_short": "D3:12",
+    "fp": "rare/rafeh/alef/doc-part-n",
+    "r": "ל=לָרֻֽאֿוּבֵנִ֖י"
+  },
+  {
+    "bcv_short": "D3:16",
+    "fp": "rare/rafeh/alef/doc-part-n",
+    "r": "ל=וְלָרֻאֿוּבֵנִ֨י"
+  },
+  {
+    "bcv_short": "D4:43",
+    "fp": "rare/rafeh/alef/doc-part-n",
+    "r": "ל,ק3=לָרֻֽאֿוּבֵנִ֑י"
+  },
+  {
     "bcv_short": "Jb19:2",
     "fp": "rare/rafeh/alef/doc-part-n",
     "r": "(\"דִכִּ֣אֿתָ\")."
@@ -2313,6 +2333,11 @@
     "bcv_short": "D5:16",
     "fp": "rare/rafeh-with-dagesh/doc-part-n",
     "r": "ל!=תִּֿנְאָֽ֑ף"
+  },
+  {
+    "bcv_short": "D12:31",
+    "fp": "rare/rafeh-with-dagesh/doc-part-n",
+    "r": "ל?!=כָּֿל־תּוֹעֲבַ֨ת"
   },
   {
     "bcv_short": "Je44:19",
@@ -2835,6 +2860,11 @@
     "r": "תֹאכְﬞלֶ֙נּוּ֙"
   },
   {
+    "bcv_short": "D15:22",
+    "fp": "varika",
+    "r": "תֹּאכְﬞלֶ֑נּוּ"
+  },
+  {
     "bcv_short": "D24:13",
     "fp": "varika",
     "r": "וּבֵֽרְﬞכֶ֑ךָּ"
@@ -2848,6 +2878,16 @@
     "bcv_short": "D29:7",
     "fp": "varika",
     "r": "הַֽמְﬞנַשִּֽׁי"
+  },
+  {
+    "bcv_short": "D32:10",
+    "fp": "varika",
+    "r": "יְסֹבְﬞבֶ֙נְהוּ֙"
+  },
+  {
+    "bcv_short": "D32:10",
+    "fp": "varika",
+    "r": "יְב֣וֹנְﬞנֵ֔הוּ"
   },
   {
     "bcv_short": "D32:18",

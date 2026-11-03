@@ -12463,7 +12463,7 @@
       "wtel_subtype": "נוסח",
       "count_C": 274,
       "count_D": 35,
-      "count_E": 3597
+      "count_E": 3596
     },
     {
       "wtel_type": "tmpl",
@@ -12821,7 +12821,7 @@
     },
     {
       "stack": "E/נוסח",
-      "count": 3555
+      "count": 3554
     },
     {
       "stack": "E/נוסח/כו״ק",
@@ -13278,7 +13278,7 @@
     {
       "wtel_subtype": "נוסח",
       "arg_count": 2,
-      "count": 3906,
+      "count": 3905,
       "variations": 1
     },
     {
