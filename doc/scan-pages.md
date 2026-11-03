@@ -294,6 +294,14 @@ for a fresh session that has no other context. Its thin pointer issue is #349, f
   spelling evidence. Eighty-five joins and 76 split-verse checks pass.
   Whole-book Jeremiah lookup and adopted coverage remain unchanged.
 
+- 2026-11-03, eighth Jeremiah checkpoint: ten additional native portions
+  (JC 441-444; BHL 674-679) extend private evidence to complete chapters
+  18-52: 926 verses / 15,333 atoms per edition. Chapters 18-22 add 100 verses /
+  1,611 atoms. Ninety-seven of 136 portions are verified; 39 remain (16 JC,
+  23 BHL). Both atoms of the 18:3 mapped pair remain on the same native page
+  in each edition; explicit rejection fixtures confirm the boundary guard.
+  All 87 earlier records remain unchanged. Public adoption is unchanged.
+
 ## Codex entry indexes
 
 `in/lci_recs.json` is the public Leningrad Codex entry index. Its canonical top level
@@ -1636,6 +1644,53 @@ forms and two ambiguous mapped pairs refuse. Catalog check passes for 5
 editions, 5,720 pages, 361 records and 2 segments. No code or adopted index
 changed. **Whole-book Jeremiah lookup remains refused**; accepted coverage
 stays 13 books / 2,323 verses per edition. Forty-nine Jeremiah portions remain.
+
+### Jeremiah chapters 18-22 boundary checkpoint, 2026-11-03
+
+Native scope checks locate the chapter-18 opening on BHL 674, after a probe
+of 673 showed only chapters 16-17. Ten further portions are verified: JC
+441-444 and BHL 674-679. Their twenty first/last body bands, ten printed page
+numbers and six headers were inspected. Three extra native details retain the
+18:3 written word and reading; two clarify the spelling at BHL 675's edges.
+All 87 earlier records relocate unchanged, including literal source fields.
+
+Complete private coverage is **chapters 18-52: 926 verses / 15,333 atoms per
+edition**. Chapters 18-22 add 100 verses / 1,611 atoms. JC starts at 17:13
+atom 13, covering 15,568 atoms; BHL starts at 17:14 atom 3, covering 15,562
+atoms. Both end at 52:34 atom 17. Differing chapter-17 prefixes remain explicit.
+
+| Edition | Verified Jeremiah portions | Remaining | Public Jeremiah adoption |
+|---|---:|---:|---|
+| JC | 40 / 56 | 16 | No |
+| BHL | 57 / 80 | 23 | No |
+
+At 18:3 both scans show one written word `והנהו` and the reading `והנה הוא`.
+The established closed mapping places the two canonical atoms at positions
+4-5. Native interval checks put both atoms on JC 441 and BHL 674; no boundary
+enters the pair. Four deliberately invalid, in-memory fixtures split the known
+mapped spans at 6:29 and 18:3 in the two editions. The public validator rejects
+all four specifically for a boundary inside a mapped written-word span. These
+fixtures test rejection and supply no source coverage or adopted records.
+
+BHL 675 ends at 18:23 with written `והיו` and marginal qere `ויהיו`. Its
+canonical cue follows the existing ordinary one-word qere policy at atom 17;
+the native written and reading forms remain separate. The three earlier
+literal spelling correspondences remain unchanged. No generic aliases or
+production projection changes were introduced.
+
+All 95 cumulative joins and 85 split-verse qualified/cross-page checks pass.
+Ten joins are new: nine split verses and the BHL 674/675 complete-verse break
+at 18:4/18:5. Every declared suffix atom belongs to exactly one portion; each
+edition refuses 968 repeated-atom queries in complete chapters 18-52. Five of
+six BHL headers omit opening continuations; 676 begins in 18:23 under a
+chapter-19 header. Page 675 begins at the full verse named by its header.
+
+Fresh frontier testing passes (1 passed, 6 deselected). All 1,364 verses /
+21,833 atoms agree with independent MAM-simple; malformed and ambiguous
+unequal forms still refuse. Catalog check passes for 5 editions, 5,720 pages,
+361 records and 2 segments. No code or adopted index changed. **Whole-book
+Jeremiah lookup remains refused**; accepted coverage stays 13 books / 2,323
+verses per edition. Thirty-nine Jeremiah portions remain.
 
 **Phase 0 - survey and tracked inventory. DONE, 2026-08-07.** The code is
 `py/main_scan_pages.py` (`survey`, `check`) over `py/scan_pages/`, with the lint at
