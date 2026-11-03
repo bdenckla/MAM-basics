@@ -1,8 +1,9 @@
 # Plan: Miqra Mevoar base chapters from Rabbi Kokhav's Word files
 
 State: live, written 2026-11-02; Ben gave his word to execute it the same day. Stages 1 to 6 ran
-that evening, and Stage 7 waits on Avi's answer and on Ben's word for the pilot's save. The
-execution ledger below records each finished stage.
+that evening. Avi answered on 2026-11-03 and had himself created Joshua 1, so Stage 7 waits on
+Ben's word alone, and on his choice of what it now saves. The execution ledger below records each
+finished stage.
 
 Written 2026-11-02 by Claude (Opus 5.5) in the Phase 1 session that the session "Commander for
 Claude's forests" started for Avi's email "Mikra Mevo'ar at Wikisource". The quoted decisions are
@@ -36,7 +37,9 @@ in entry 3.
 4. **Avi's agreement before the pilot.** The pilot waits for Avi's answer, relayed by Ben, to the
    first question of the draft reply in
    `C:/Users/BenDe/GitRepos2/MAM-basics/.novc/miqra-mevoar-2026-11-02/reply-to-avi-draft.md`.
-   Unresolved.
+   Answered on 2026-11-03 in Avi's email, which Ben relayed. Avi asks that the bot work quietly,
+   without cluttering Wikisource's recent changes, and gives its edit summary (entry 9). The
+   executor reads this as his agreement; Ben's word for each run settles it.
 5. **Where the code lives: MAM-basics.** It follows from entry 1: BDencklaBot, its login check
    and its run conventions are already here. Active.
 6. **Mark order.** The tracked JSON keeps each Word file's own mark order, as `AGENTS.md`'s
@@ -51,15 +54,30 @@ in entry 3.
    to `fetch` by file. Active.
 9. **Edit summaries in English,** like the summaries of the 23 edit files in
    `in/mam-ws-bot-edits/`, unless Ben or Avi asks for Hebrew. Each saving run's summary is given
-   on its command line and approved with the run. Active.
+   on its command line and approved with the run. Avi asked on 2026-11-03 for the Hebrew summary
+   פרק חדש במקרא מבואר, "a new chapter in Miqra Mevoar", so the exception applies; Ben approves
+   the summary with each run.
 
 Deferred, each until its own decision:
 
 - Display pages for the Prophets, Avi's raw-text pages, and adding Hosea, Joel and Amos to the
   base-chapter index: questions 2, 3 and 4 of the draft reply. Each needs Avi's answer and then a
-  revision of this plan.
+  revision of this plan. Avi answered on 2026-11-03:
+  - **Display pages** come later, as a further step that needs explanation; he and Rabbi Kokhav
+    have agreed on how they should look in the Prophets and the Writings.
+  - **The raw-text pages** are to go once the work is done; he plans to delete them himself, so
+    nothing here touches them.
+  - **The base-chapter index** should be finished first, listing every chapter of the Bible, most
+    of them as red links. He wrote 972 chapters; MAM-simple has 929, in 39 books, so the count
+    needs confirming with him. This is new work for the bot or for a person, and it needs Ben's
+    decision and a revision of this plan.
 - A book that arrives as one file for two parts, such as Samuel: question 7. The converter raises
-  on a second title row; revise this plan when such a file arrives.
+  on a second title row; revise this plan when such a file arrives. Avi expects Samuel, Kings and
+  Chronicles each as a single file, as the whole Torah once came.
+- Revisions after the pages exist: Avi wrote on 2026-11-03 that once the bot has created a book's
+  base chapters, Rabbi Kokhav revises them on Wikisource and the Word files no longer matter. So
+  the bot's update outcome should not be needed. Until then, Avi keeps revised files in the
+  folder, and the copy there is always the current one.
 
 ## Execution ledger
 
@@ -110,6 +128,27 @@ byte-for-byte copy of that frozen plan; this ledger and the State line are the e
   finding. Run `.novc/mam-ws-bot-miqra-mevoar-runs/20261102-211949-962974-0500/`. Stage 7 waits
   on Avi's answer to the draft reply's first question, which Ben relays, and on Ben's word for the
   save and its summary.
+- **Avi's Joshua 1, 2026-11-03:** Avi created the Joshua 1 base chapter himself, from the page
+  attached to the reply, before he saw that the bot was to do it: revision 3101153, by Dovi, at
+  00:29 New York time, its only revision. He wrote that it looks fine. A dry run from `66f8fae1`
+  at 07:37 New York time found Joshua 1 unchanged, equal to the generated text, and Joshua 2 still
+  a create (run `.novc/mam-ws-bot-miqra-mevoar-runs/20261103-073724-645077-0500/`). So a saving
+  run would leave Joshua 1 alone. BDencklaBot's six latest edits, of 2026-11-02, all carry the bot
+  flag, which keeps them out of Wikisource's recent changes by default, as Avi asks.
+- **PR 366, 2026-11-03:** Codex's focused review found that an update could save against a
+  revision the ownership check never read. Loading a page's history moves pywikibot 11.7.0's
+  `latest_revision_id` to the newest revision. If that revision's content is not cached,
+  `editpage` fetches the latest revision again while building the request, and that revision's
+  timestamp becomes `basetimestamp`. A human edit made after the check would then be overwritten
+  with no edit conflict. The window needs a second bot edit between two reads, so it is narrow.
+  `66f8fae1` passes `baserevid` and `basetimestamp` of the newest checked revision instead, so that
+  such an edit makes MediaWiki detect a conflict. Whether MediaWiki then refuses the save or
+  merges it, which no live test has shown, the run fails: a refusal stops it, and a merged text
+  fails its read-back check. Ben asked
+  through the commander for the PR to be examined and merged if approved. It was approved and
+  fast-forwarded into `main`, and GitHub shows it merged at 07:37:40 New York time. A follow-up
+  commit relabels its test as one of the ws_bot tests that AGENTS.md excepts from the
+  differential-or-lint rule, since the test is example-based, and asserts `baserevid` as well.
 
 ## Background for a fresh executor
 

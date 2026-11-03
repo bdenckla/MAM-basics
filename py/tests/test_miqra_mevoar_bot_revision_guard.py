@@ -1,4 +1,8 @@
-"""Differential: bot update guards remain tied to the ownership-checked revision.
+"""The Miqra Mevoar bot's update guards remain tied to the ownership-checked revision.
+
+This test is example-based, not differential: like the ws_bot tests, it falls under the
+exception that AGENTS.md's "Writing tests" section makes for them, since a live
+Wikisource edit is an outward-facing act with no regeneratable artifact to compare.
 
 WHY THIS EXISTS
 
@@ -123,6 +127,7 @@ def test_an_update_uses_the_checked_revision(
         bot.run(["yona"], "1-1", [], summary="offline request capture")
 
     assert site.request is not None
+    assert site.request["baserevid"] == checked_revision
     assert str(site.request["basetimestamp"]) == (
         f"2026-11-03T00:00:0{checked_revision}Z"
     )
