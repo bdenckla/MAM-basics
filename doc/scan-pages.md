@@ -310,6 +310,14 @@ for a fresh session that has no other context. Its thin pointer issue is #349, f
   explicit source forms, protected mappings and the numbering reconciliation.
   Public adoption remains unchanged.
 
+- 2026-11-03, tenth Jeremiah checkpoint: eleven additional native portions
+  (JC 432-435; BHL 661-667) extend private evidence to complete chapters
+  8-52: 1,157 verses / 18,838 atoms per edition. Chapters 8-12 add 113
+  verses / 1,688 atoms. Verified portions total 119 of 136; 17 remain
+  (7 JC, 10 BHL). All 108 previous records relocate unchanged, preserving
+  explicit source forms, protected mappings and the numbering reconciliation.
+  Public adoption remains unchanged.
+
 ## Codex entry indexes
 
 `in/lci_recs.json` is the public Leningrad Codex entry index. Its canonical top level
@@ -1735,6 +1743,44 @@ unequal forms still refuse. Catalog check passes for 5 editions, 5,720 pages,
 361 records and 2 segments. No code or adopted index changed. **Whole-book
 Jeremiah lookup remains refused**; accepted coverage stays 13 books / 2,323
 verses per edition. Twenty-eight Jeremiah portions remain.
+
+### Jeremiah chapters 8-12 boundary checkpoint, 2026-11-03
+
+Native scope inspection confirms that BHL 661 contains 8:1 and begins with
+a continuation of 7:20. Eleven further portions are verified: JC 432-435 and
+BHL 661-667. Their twenty-two first/last body bands, eleven printed page
+numbers and seven headers were inspected. All 108 earlier records relocate
+unchanged, retaining the explicit source forms and mapping safeguards.
+
+Complete private coverage is **chapters 8-52: 1,157 verses / 18,838 atoms
+per edition**. Chapters 8-12 add 113 verses / 1,688 atoms. JC starts at
+7:22 atom 16, covering 19,040 atoms; BHL starts at 7:20 atom 14, covering
+19,079 atoms. Both end at 52:34 atom 17. These different chapter-7 prefixes
+remain explicit; complete common coverage begins at 8:1.
+
+| Edition | Verified Jeremiah portions | Remaining | Public Jeremiah adoption |
+|---|---:|---:|---|
+| JC | 49 / 56 | 7 | No |
+| BHL | 70 / 80 | 10 | No |
+
+All 117 cumulative joins and 104 split-verse qualified/cross-page checks pass.
+The eleven new joins comprise nine split verses and the JC complete-verse
+breaks at 9:15/9:16 and 10:18/10:19. Every declared suffix atom belongs to
+exactly one portion; each edition refuses 1,137 repeated-atom queries in
+complete chapters 8-52. All seven BHL headers omit opening continuations:
+actual first words belong to 7:20, 8:2, 8:19, 9:16, 10:10, 11:5 and 11:20.
+The final word on BHL 667 is the first word of 12:15; its continuation is
+preserved on 668. Body text establishes these bounds.
+
+Prior protected mappings, the four explicit source/canonical records and the
+corrected JC numbering finding remain unchanged preserved evidence. No new
+mapping or generic alias was introduced. Fresh frontier testing passes
+(1 passed, 6 deselected). All 1,364 verses / 21,833 atoms agree with
+independent MAM-simple; malformed and ambiguous unequal forms still refuse.
+Catalog check passes for 5 editions, 5,720 pages, 361 records and 2 segments.
+No code or adopted index changed. **Whole-book Jeremiah lookup remains
+refused**; accepted coverage stays 13 books / 2,323 verses per edition.
+Seventeen Jeremiah portions remain.
 
 **Phase 0 - survey and tracked inventory. DONE, 2026-08-07.** The code is
 `py/main_scan_pages.py` (`survey`, `check`) over `py/scan_pages/`, with the lint at
