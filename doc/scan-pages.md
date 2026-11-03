@@ -191,6 +191,19 @@ for a fresh session that has no other context. Its thin pointer issue is #349, f
   Seven focused tests pass, and accepted whole-book lookup and catalog
   counts remain unchanged.
 
+- 2026-11-03, eighth Ezekiel checkpoint: ten further whole-page portions
+  (JC 488–491; BHL 743–748) and two explicitly partial opening-page fragments
+  (JC 487; BHL 742, beginning at 10:1) extend private verse coverage to
+  chapters 10–48: 1,104 verses / 16,158 atoms per edition. Chapters 10–14 add
+  121 complete verses / 1,807 atoms, using the preserved chapter-14 continuations.
+  Fully verified portions total 102 of 119; 17 are not fully verified
+  (7 JC, 10 BHL), including the two partial opening pages. Their physical
+  prefixes contain unsupported 9:11, a one-written-word/two-qere-word form.
+  Those prefixes remain unaligned; no interval bridges the refused verse.
+  The supported suffix has 104 candidate intervals, 102 adjacent joins and
+  93 checked split verses. No projection or accepted catalog changes were
+  made; 8:6 and 9:11 remain refused, and whole-book lookup stays unavailable.
+
 ## Codex entry indexes
 
 `in/lci_recs.json` is the public Leningrad Codex entry index. Its canonical top level
