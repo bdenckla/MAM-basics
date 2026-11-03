@@ -22,6 +22,10 @@ def validate_book(index, bkid, verses):
         )
     all_positions = text.positions(verses)
     ordinal = {position: i for i, position in enumerate(all_positions)}
+    protected = text.book_alignment_spans(bkid)
+    for first, last in protected:
+        if first not in ordinal or last not in ordinal:
+            raise ValueError("Mapped written-word span disagrees with book projection")
     expected = 0
     for rec in recs:
         start = (rec["startc"], rec["startv"], rec["startp"])
@@ -30,6 +34,11 @@ def validate_book(index, bkid, verses):
             raise ValueError(f"{rec['page']}: invalid atom position")
         if ordinal[start] != expected or ordinal[stop] < ordinal[start]:
             raise ValueError(f"{rec['page']}: gap, overlap or reversed page interval")
+        for first, last in protected:
+            if first < start <= last or first <= stop < last:
+                raise ValueError(
+                    f"{rec['page']}: page boundary inside a mapped written-word span"
+                )
         for end, atom_index in (("start", 0), ("stop", 1)):
             span = text.locate_phrase_span(
                 verses,

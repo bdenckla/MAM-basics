@@ -9,7 +9,9 @@ Ordinary ketiv/qere uses the qere spelling only when both forms are one atom,
 so either printed form occupies the same position. Its named vowel-alternative
 wrapper may select consonant-identical string forms. The explicitly named
 two-word special form likewise preserves two ordered slots in both forms.
-Other multi-atom ketiv/qere and alternative strands need source alignment.
+Two explicitly verified one-written/two-qere forms select the qere pair and
+declare its span indivisible at page boundaries. Other multi-atom ketiv/qere
+and alternative strands need source alignment.
 The special-letter word wrapper and the small/large-letter templates recurse into
 their Scripture parameter without inserting a word boundary or losing a letter.
 Documentation is never Scripture. Unknown templates fail rather than contribute
@@ -23,6 +25,11 @@ from mb_cmn import paths
 from mb_cmn import read_books_from_mam_parsed_plus as plus
 from mb_cmn import template_names
 
+_UNEQUAL_KQ_FORMS = {
+    'כו"ק כתיב מילה חדה וקרי תרתין מילין': (("מהם",), ("מה", "הם")),
+    'כו"ק קרי שונה מהכתיב בשתי מילים': (("כאשר",), ("ככל", "אשר")),
+}
+
 
 def letters_atoms(text):
     """Letters-only atoms between whitespace or maqaf; marks retain their atom."""
@@ -33,7 +40,7 @@ def letters_atoms(text):
     )
 
 
-def _body_text(elements):
+def _body_text(elements, *, protected=None):
     if not isinstance(elements, (list, tuple)):
         raise TypeError(f"Scripture sequence expected, received {elements!r}")
     parts = []
@@ -47,7 +54,7 @@ def _body_text(elements):
             if "1" not in params or not set(params) <= {"1", "2"}:
                 raise ValueError(f"Unexpected נוסח parameters: {params}")
             target = params["1"]
-            parts.append(_target_text(target))
+            parts.append(_target_text(target, protected=protected))
         elif isinstance(element, dict) and element["tmpl_name"] == "כתיב ולא קרי":
             params = template_names.validate_current_plus_template(element)
             if not all(isinstance(params[key], str) for key in ("1", "2")):
@@ -66,13 +73,14 @@ def _body_text(elements):
             params = template_names.validate_current_plus_template(element)
             # These explicit in-word templates contribute their Scripture
             # parameter. Their descriptions are metadata; do not split the word.
-            parts.append(_target_text(params["1"]))
+            parts.append(_target_text(params["1"], protected=protected))
         elif (
             isinstance(element, dict)
             and element["tmpl_name"] == template_names.QAMATS_VARIANT
         ):
             params = template_names.validate_current_plus_template(element)
-            dalet, samekh = (_target_text(params[key]) for key in ("ד", "ס"))
+            dalet = _target_text(params["ד"], protected=protected)
+            samekh = _target_text(params["ס"])
             if letters_atoms(dalet) != letters_atoms(samekh):
                 raise ValueError("Vowel alternatives have different consonantal atoms")
             parts.append(dalet)
@@ -93,14 +101,21 @@ def _body_text(elements):
             parts.append(params["1"])
         elif isinstance(element, dict) and element["tmpl_name"] == "מ:כו״ק מיוחד":
             params = template_names.validate_current_plus_template(element)
-            if params["סוג"] != 'כו"ק של שתי מילים בהערה אחת' or not all(
-                isinstance(params[key], str) and len(letters_atoms(params[key])) == 2
-                for key in ("1", "2")
-            ):
-                raise ValueError("Special ketiv/qere needs the named two-word form")
-            # Maintained projection selects qere parameter 2. Both native
-            # editions at Ezekiel 42:9 retain two ordered written/qere slots;
-            # no one-to-two or other special subtype is silently flattened.
+            if not all(isinstance(params[key], str) for key in ("1", "2")):
+                raise ValueError("Special ketiv/qere needs string forms")
+            forms = tuple(letters_atoms(params[key]) for key in ("1", "2"))
+            if params["סוג"] == 'כו"ק של שתי מילים בהערה אחת':
+                if not all(len(form) == 2 for form in forms):
+                    raise ValueError("Special ketiv/qere needs the named two-word form")
+            elif params["סוג"] in _UNEQUAL_KQ_FORMS:
+                if forms != _UNEQUAL_KQ_FORMS[params["סוג"]]:
+                    raise ValueError("Unverified unequal ketiv/qere forms")
+                if protected is not None:
+                    protected.append(" ".join(forms[1]))
+            else:
+                raise ValueError("Unsupported special ketiv/qere subtype")
+            # Maintained projection selects qere parameter 2. A single written
+            # word mapped to a pair must keep both qere atoms on the same page.
             parts.append(params["2"])
         elif isinstance(element, dict) and element["tmpl_name"] in {"כו״ק", "קו״כ"}:
             params = template_names.validate_current_plus_template(element)
@@ -159,27 +174,46 @@ def _ordinary_kq_form(form):
     return selected
 
 
-def _target_text(target):
+def _target_text(target, *, protected=None):
     if isinstance(target, (str, dict)):
-        return _body_text([target])
+        return _body_text([target], protected=protected)
     if isinstance(target, (list, tuple)):
-        return _body_text(target)
+        return _body_text(target, protected=protected)
     raise TypeError(f"Unsupported Scripture target storage: {target!r}")
 
 
 def book_atoms(bkid, books=None):
     """Return (chapter, verse) -> atoms, reading the landed parsed product."""
+    return _book_projection(bkid, books)[0]
+
+
+def book_alignment_spans(bkid, books=None):
+    """Indivisible canonical spans mapped to one source-written word."""
+    return _book_projection(bkid, books)[1]
+
+
+def _book_projection(bkid, books):
     if books is None:
         books = plus.read_parsed_plus_bk39s(
             [bkid], mam_parsed_path=paths.mam_parsed_path()
         )
-    verses = {}
+    verses, spans = {}, []
     for bcvt, minirow in books[bkid]["verses_plus"].items():
         cv = tbn.bcvt_get_chnu(bcvt), tbn.bcvt_get_vrnu(bcvt)
-        verses[cv] = letters_atoms(_body_text(minirow.EP))
+        protected = []
+        verses[cv] = letters_atoms(_body_text(minirow.EP, protected=protected))
         if not verses[cv]:
             raise ValueError(f"{bkid} {cv}: no Scripture atoms")
-    return verses
+        for phrase in protected:
+            # Refuse an ambiguous pair instead of guessing which occurrence
+            # corresponds to the mapped source word. Search only this verse.
+            first, last = locate_phrase_span({cv: verses[cv]}, *cv, phrase)
+            if first[:2] != last[:2] or last[2] != first[2] + 1:
+                raise ValueError(
+                    "Unequal mapping must cover exactly two adjacent atoms"
+                )
+            spans.append((first, last))
+    return verses, tuple(spans)
 
 
 def locate_phrase(verses, chapter, verse, phrase):

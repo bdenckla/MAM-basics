@@ -8,6 +8,7 @@ it, per the repo's missing-input rule.
 """
 
 from scan_pages import check
+from scan_pages import census
 from scan_pages import editions
 from scan_pages import index_io
 from scan_pages import lookup
@@ -143,6 +144,59 @@ def test_every_record_edge_resolves_to_its_observed_page():
                 assert [hit["page"] for hit in hits] == [rec["page"]]
                 count += 1
     assert count, "No observed page edges were queried"
+
+
+def test_adopted_partitions_refuse_boundaries_inside_mapped_written_words():
+    """An otherwise contiguous canonical partition cannot split one written word."""
+    checked = 0
+    for edition in editions.ALL_EDITION_IDS:
+        index = index_io.read_index(edition)
+        for segment in index["segments"]:
+            for book in segment["bkids"]:
+                verses = text.book_atoms(book)
+                for first, last in text.book_alignment_spans(book):
+                    records = census.validate_book(index, book, verses)
+                    i = next(
+                        i
+                        for i, rec in enumerate(records)
+                        if tuple(rec["start" + s] for s in "cvp") <= first
+                        and last <= tuple(rec["stop" + s] for s in "cvp")
+                    )
+                    assert first[:2] == last[:2] and last[2] == first[2] + 1
+                    c, v = first[:2]
+                    pair = " ".join(verses[c, v][first[2] - 1 : last[2]])
+                    assert [
+                        hit["page"] for hit in lookup.resolve(index, book, c, v, pair)
+                    ] == [records[i]["page"]]
+                    assert i + 1 < len(records)
+                    bad = deepcopy(index)
+                    left = next(r for r in bad["recs"] if r == records[i])
+                    right = next(r for r in bad["recs"] if r == records[i + 1])
+                    # Move a real page boundary into the mapped pair. Both cues
+                    # are unique, and every canonical atom still occurs once.
+                    for side, rec, pos in (
+                        ("stop", left, first),
+                        ("start", right, last),
+                    ):
+                        rec.update({side + key: n for key, n in zip("cvp", pos)})
+                    left["stop_phrase"] = " ".join(verses[c, v][: first[2]])
+                    right["start_phrase"] = " ".join(verses[c, v][last[2] - 1 :])
+                    assert (
+                        text.locate_phrase_span(
+                            verses, c, v, left["stop_phrase"], anchor="stop"
+                        )[1]
+                        == first
+                    )
+                    assert (
+                        text.locate_phrase_span(verses, c, v, right["start_phrase"])[0]
+                        == last
+                    )
+                    with pytest.raises(
+                        ValueError, match="inside a mapped written-word span"
+                    ):
+                        census.validate_book(bad, book, verses)
+                    checked += 1
+    assert checked, "No adopted unequal mapping was boundary-checked"
 
 
 def test_nested_vowel_ketiv_qere_agrees_with_independent_simple_export():

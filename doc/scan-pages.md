@@ -217,6 +217,18 @@ for a fresh session that has no other context. Its thin pointer issue is #349, f
   The 116 candidate intervals pass 110 within-run joins and 100 split-verse
   checks. Accepted whole-book lookup and catalog counts remain unchanged.
 
+- 2026-11-03, Ezekiel completion: the seven remaining opening portions
+  (JC 481-483; BHL 733-736) are verified, completing chapters 1-4 (82 verses /
+  1,213 atoms). Both unequal ketiv/qere cases now have explicit, closed
+  one-written-word/two-qere-word mappings with indivisible page spans.
+  All 119 Ezekiel portions are adopted: 49 JC and 70 BHL, covering all
+  1,273 verses / 18,732 atoms per edition without gaps. The independent
+  MAM-simple comparison agrees for every verse. All 116 prior interval
+  observations relocate unchanged; four formerly partial pages are closed.
+  The accepted total is 13 books / 2,323 verses per edition, with 231 completed
+  portions and 130 unread seeds across the five catalogs (361 records).
+  These results are on the isolated research branch; main is unchanged.
+
 ## Codex entry indexes
 
 `in/lci_recs.json` is the public Leningrad Codex entry index. Its canonical top level
@@ -754,7 +766,12 @@ inserting a word boundary. Hosea adds the named `פפ` paragraph-break template,
 which contributes a separator while its optional annotation contributes no
 Scripture. Ezekiel also supports the explicitly named special two-word
 ketiv/qere subtype with exactly two ordered atoms in both forms, and the
-matching one-atom written-but-not-read form. Other multi-atom ketiv/qere,
+matching one-atom written-but-not-read form. The two native-verified unequal
+forms at Ezekiel 8:6 and 9:11 select the maintained qere pair and declare
+both canonical atoms an indivisible source-written-word span. The template
+subtype and both consonantal forms must match exactly; unknown forms and
+ambiguous span locations are refused. Census, check and lookup reject a
+page start or end inside either pair. Other multi-atom ketiv/qere,
 unimplemented templates and named Decalogue strands remain unsupported.
 Extending those cases needs explicit source alignment;
 template names or argument shapes are not grounds for guessing it. An
@@ -1196,7 +1213,57 @@ The explicit פפ rule follows maintained WHITESPACE_TMPL_NAMES/NO_ATOM_TMPL_NAM
 
 Six focused tests passed (30 deselected), including complete independent atom comparison. Direct checks cover all nine within-verse breaks, qualified and cross-page lookup, repeated-atom refusal and idempotent adoption. The annotated-break check confirms separate adjacent words, excludes annotation atoms, and refuses an unknown template name or invalid parameter schema. Black and catalog/whitespace checks passed. Cue checks rejected transcription slips before any index write. The full suite and mega were omitted under the ordinary focused-check policy. The catalog check reports five editions, 5,720 pages, 244 records and two segments without problems. No main integration or deployment occurred. The large-census review boundary below still applies.
 
-**Phase 0 — survey and tracked inventory. DONE, 2026-08-07.** The code is
+### Ezekiel completion, 2026-11-03
+
+Ten bounded native-inspection checkpoints complete all 49 JC and 70 BHL
+ordinary-body portions of Ezekiel. The final opening group adds these
+directly observed intervals; earlier checkpoints supply every later page.
+
+| Edition | Scan image | Printed page | Observed interval |
+|---|---|---:|---|
+| JC | `481-Ee.jpg` | 481 | 1:1 atom 1 through 1:28 atom 9 |
+| JC | `482-Ee.jpg` | 482 | 1:28 atom 10 through 3:16 atom 1 |
+| JC | `483-Ee.jpg` | 483 | 3:16 atom 2 through 4:14 atom 1 |
+| BHL | `0733-Ee.jpg` | 733 | 1:1 atom 1 through 1:21 atom 9 |
+| BHL | `0734-Ee.jpg` | 734 | 1:21 atom 10 through 2:10 atom 5 |
+| BHL | `0735-Ee.jpg` | 735 | 2:10 atom 6 through 3:19 atom 5 |
+| BHL | `0736-Ee.jpg` | 736 | 3:19 atom 6 through 4:9 atom 10 |
+
+BHL headers omit the physical opening continuations on 734 (1:21),
+735 (2:10) and 736 (3:19). The body text supplies the exact boundaries.
+The seven new portions join the previously inspected chapter-4 continuations
+without gaps. Printed page numbers were checked separately from image identities.
+
+The native forms and maintained selected-qere semantics establish one written
+word corresponding to two canonical qere atoms at 8:6 (atoms 7-8) and 9:11
+(atoms 12-13). JC486/BHL741 contain the first whole pair; JC487/BHL742 contain
+the second. Both native written forms and their qere annotations were already
+inspected in the preceding checkpoints, and those originals were rehashed.
+Only the exact two subtype/form combinations are admitted. Protected spans
+propagate through the selected Scripture target, including 9:11's enclosing
+note; documentation contributes no atoms. A repeated pair within a verse
+is refused rather than assigned an occurrence. This closes the four partial
+physical pages without changing the older fragment observations.
+
+All 1,273 verses / 18,732 atoms match the independently decoded MAM-simple
+export. Whole-book partitions pass 117 adjacent joins and 107 split-verse
+checks. Four deliberately invalid page partitions, one per mapping and edition,
+remain canonically contiguous but split a protected pair; all are rejected.
+Fourteen malformed-form checks and two ambiguous-span checks also refuse.
+Each edition refuses 1,131 repeated-atom queries. Original scans and detailed
+source provenance remain private; no image enters either repository.
+
+The whole book is now available through `lookup` on the research branch.
+The catalog check passes for five editions, 5,720 pages, 361 records and two
+segments. Eight focused tests passed (30 deselected, 122.55 seconds), covering
+every adopted edge, independent atom agreement and the invalid-boundary
+regression. Black and whitespace checks passed. Full suite and mega remain
+deferred under the ordinary focused-check policy. Universal completion still
+requires 26 ordinary-body books per edition, source-classification reconciliation,
+strand handling and the deferred refresh/density work. Main integration and
+deployment are separate from this research-branch adoption.
+
+**Phase 0 - survey and tracked inventory. DONE, 2026-08-07.** The code is
 `py/main_scan_pages.py` (`survey`, `check`) over `py/scan_pages/`, with the lint at
 `py/tests/test_scan_pages_index.py`. Re-derive everything below with:
 
