@@ -701,6 +701,41 @@ infrastructure has changed enough to make them misleading examples:
   `.novc/mam-ws-bot-intro-runs/20261102-100144-977161-0500/`, dry run
   `.novc/mam-ws-bot-intro-runs/20261102-095333-353554-0500/`.
 
+### Rafeh over alef in four Leningrad Codex forms of the word Reuveni, 2026-11-02
+
+- **Purpose:** Give the Leningrad Codex's form of the word Reuveni, Reubenite, in four doc-notes
+  a rafeh (HEBREW POINT RAFE, U+05BF) over its alef, as MAM-basics#361 suggested: at Numbers
+  26:7, Deuteronomy 3:12 and 3:16, and Deuteronomy 4:43, whose clause gives the form for ל,ק3.
+  At Numbers 26:7, for example, ל=הָרֻֽאוּבֵנִ֑י became ל=הָרֻֽאֿוּבֵנִ֑י. MAM's own text
+  already had the rafeh at all four places.
+- **Authorization:** Avi on MAM-basics#361, 2026-11-02: "Feel free to add all four. In terms of
+  the fourth item, I checked and C3 has rafe too." A Codex session made the edits that day at
+  Ben's request, as its closing comment on the issue says; this record does not have his words
+  to that session.
+- **Recorded after the fact:** the run added no entry here and committed no post-run download.
+  Ben, 2026-11-03, on hearing so: "Okay then please record it "posthumously"". A Claude Code
+  session wrote this entry that day from the run's artifacts, the saved revisions and the issue.
+- **Saving runs:** one per edit, each with its own summary, such as "Numbers 26:7 doc-note: add
+  rafeh over alef in the Leningrad transcription (MAM-basics#361; Codex, 2026-11-02)": Numbers
+  26, revision 2995289 → 3101101; Deuteronomy 3, 3099130 → 3101102 (3:12) → 3101103 (3:16);
+  Deuteronomy 4, 3099409 → 3101104.
+- **Safety rule:** each saving run followed a `--no-save` dry run of its edit, and each dry
+  run's chapter differed from the mirror on that note's line alone. The session's closing
+  comment on #361 says that each saved revision's comparison showed one U+05BF and nothing else.
+  Checked on 2026-11-03: each saving run's chapter differs from the mirror at `fa92c11f` by
+  U+05BF insertions alone, one for each edit, and the last run on each chapter equals the mirror
+  at `5f20811b`, which took the saved revisions.
+- **Post-run download:** none was committed. The four chapters reached the mirror in `5f20811b`,
+  the refresh of 2026-11-03, whose message describes them, and their products were regenerated
+  in `337195ff`, where the FOI Unicode page's rafeh on alef in a doc-part went from 6 to 10.
+- **Edit level:** Raw page text string replacement, chapter-targeted, by `py/main_ws_bot.py
+  real`. The edit files were not committed.
+- **Run artifacts:** in Codex's GitRepos4/MAM-basics, under `.novc/mam-ws-bot-real-runs/`: dry
+  runs `20261102-100817-676937-0500/`, `20261102-100818-413823-0500/`,
+  `20261102-100819-474312-0500/` and `20261102-100820-755783-0500/`; saving runs
+  `20261102-100941-161360-0500/`, `20261102-101024-673504-0500/`, `20261102-101138-794535-0500/`
+  and `20261102-101217-673677-0500/`.
+
 ### Varika marks at Deuteronomy 15:22 and 32:10, and the letter's name in the note on Psalms 25:3, 2026-11-03 — current
 
 - **Purpose:** Give a varika to the three atoms in MAM's text that lacked one among the atoms of
@@ -757,10 +792,29 @@ infrastructure has changed enough to make them misleading examples:
   all 59 MAM-parsed claims and regenerated the documentation and the claims index unchanged.
 - **One-shot:** every `old` describes the pre-edit text. Confirmed 2026-11-03, immediately after
   the run: a `--no-save` re-run raised "Expected 1 occurrence" at Deuteronomy 15.
-- **Not edited:** the Song of Ha'azinu's layout page, שירת האזינו/צורת השיר, keeps its own copy
-  of 32:10's two atoms without a varika, though its copies of 32:18's and 32:36's atoms have
-  theirs. No one has authorized an edit there, and no bot mode selects the page; whether to
-  change it is Ben's decision.
+- **Not edited by this run:** the Song of Ha'azinu's layout page, שירת האזינו/צורת השיר, kept
+  its own copy of 32:10's two atoms without a varika, though its copies of 32:18's and 32:36's
+  atoms have theirs, and no bot mode selects the page. Ben, 2026-11-03: "We should keep this
+  page in sync with the chapter sources, at least for the ways it isn't supposed to vary
+  (presumably there are some ways it is supposed to vary: whitespace? other?). Varika is not a
+  way it is supposed to vary. Make this change by bot please."
+- **Near-Aleppo:** its ḥataf policy restores a ḥataf at every varika in a note's target, so its
+  text now has the Aleppo Codex's form at 32:10, as before, and the Leningrad Codex's ḥataf at
+  15:22, where the Aleppo Codex is lost. The mega's ledger refresh marked the two notes' rows
+  pending, among four; `dee8fd9d` kept 32:10's recast review, its change cause now the
+  representation policies rather than the note-derived readings, and gave 15:22's new row the
+  recast review of 15:20's note, which has the same clauses and evidence.
+- **Explicit ḥataf:** `out/explicit-xataf.json` maps 32:10's two atoms, and
+  `out/explicit-xataf-extras.json` no longer lists the verse. 15:22 became that file's only
+  failure: its `sigla=word` pattern needs a parenthesis or angle bracket after the form, which
+  15:20's note has and 15:22's lacks; `337195ff` records the deviation. Ben chose the note's
+  wording as the fix, on 2026-11-03: "Let's change Wikisource to have the standard wording, the
+  one in which חטף appears in parens. Doc-notes are semi-structured data and we want to keep
+  them as structured as possible."
+- **Left as they are:** `doc/intro-doc-audit/deuter-hataf-scope.md`, a record pinned to its
+  source commit, which noted the three atoms without a varika; and 32:10's entry in
+  `in/explicit-xataf-extras-annotations.json`, now unused, like the two entries for Psalms 14:1
+  before it.
 - **Edit level:** Raw page text string replacement, chapter-targeted.
 - **JSON files:** `in/mam-ws-bot-edits/deut-varika-and-ps-25-3-note.json` and its selector,
   `deut-varika-and-ps-25-3-note.chapters.json`; run artifacts
