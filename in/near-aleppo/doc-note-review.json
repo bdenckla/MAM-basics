@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "inventory_sha256": "3a7c97a453fffe7091b1337549eb97cf4d7adba30775480d1d917e1083944f1d",
+  "inventory_sha256": "b94c56d6a5fea22e29fc43fa92d876c618974288f95282d2bf2e4d09abe64be2",
   "notes": [
     {
       "id": "A1-Genesis 1:1 note 1 נוסח",
@@ -14123,7 +14123,7 @@
       ],
       "note_ordinal": 1,
       "source_template": "נוסח",
-      "source_note_sha256": "8a38989a053dd3ab9197abe9e3d4eb1d592fb6148e578e2b354a165262526b51",
+      "source_note_sha256": "73e5b9be0e14500638e8819cd8457bdaca30d6e0e23eb00ef6da2d25d811e405",
       "original_target": "כׇל־תּוֹעֲבַ֨ת",
       "near_target": "כָל־תּוֹעֲבַ֨ת",
       "original_body": [
@@ -14131,11 +14131,11 @@
         {
           "tmpl_name": "ש"
         },
-        "ל?!=כָּל־תּוֹעֲבַ֨ת (כ\"ף דגושה?) לפי דותן וברויאר בספק, ושניהם ציינו תיקון ל-\"כָל־\" (בכ”ף רפה); אך הנקודה די ברורה בצילום כתי\"ל בצבע."
+        "ל?!=כָּֿל־תּוֹעֲבַ֨ת (כ\"ף דגושה או רפה?); לפי דותן וברויאר האות כ\"ף דגושה בספק, ושניהם ציינו תיקון ל-\"כָל־\" (בכ\"ף רפה). הנקודה די ברורה בצילום, אך לפי צבעה וצורתה ייתכן מאוד שמדובר על כתם בקלף, מה עוד שהסופר כתב סימן רפה קצר מעל האות."
       ],
       "clauses": [
         "=ל1?,ש,ש1,ו,ל3,ל9 (כ\"ף רפה) וכמו כן בדפוסים וקורן",
-        "ל?!=כָּל־תּוֹעֲבַ֨ת (כ\"ף דגושה?) לפי דותן וברויאר בספק, ושניהם ציינו תיקון ל-\"כָל־\" (בכ”ף רפה); אך הנקודה די ברורה בצילום כתי\"ל בצבע."
+        "ל?!=כָּֿל־תּוֹעֲבַ֨ת (כ\"ף דגושה או רפה?); לפי דותן וברויאר האות כ\"ף דגושה בספק, ושניהם ציינו תיקון ל-\"כָל־\" (בכ\"ף רפה). הנקודה די ברורה בצילום, אך לפי צבעה וצורתה ייתכן מאוד שמדובר על כתם בקלף, מה עוד שהסופר כתב סימן רפה קצר מעל האות."
       ],
       "change_causes": [
         "representation policies"
@@ -14147,7 +14147,7 @@
       },
       "candidate_clause": null,
       "proposal_reason": "No unique plain clause quoting the complete target; retain the source note.",
-      "evidence_sha256": "804a226902469ee6d8714aa77954949387a7a61b9d07461a8a16a4280a2de40e",
+      "evidence_sha256": "73e4b11d9fb5cb33db1cf51ecd9ced76d0c06114fbcd4d71270a3e1d995272d1",
       "review": {
         "status": "reviewed",
         "presentation": "framed-mam",
@@ -14159,7 +14159,7 @@
               "=ל1?,ש,ש1,ו,ל3,ל9 (כ\"ף רפה) וכמו כן בדפוסים וקורן"
             ],
             [
-              "ל?!=כָּל־תּוֹעֲבַ֨ת (כ\"ף דגושה?) לפי דותן וברויאר בספק, ושניהם ציינו תיקון ל-\"כָל־\" (בכ”ף רפה); אך הנקודה די ברורה בצילום כתי\"ל בצבע."
+              "ל?!=כָּֿל־תּוֹעֲבַ֨ת (כ\"ף דגושה או רפה?); לפי דותן וברויאר האות כ\"ף דגושה בספק, ושניהם ציינו תיקון ל-\"כָל־\" (בכ\"ף רפה). הנקודה די ברורה בצילום, אך לפי צבעה וצורתה ייתכן מאוד שמדובר על כתם בקלף, מה עוד שהסופר כתב סימן רפה קצר מעל האות."
             ]
           ]
         },
@@ -14344,6 +14344,68 @@
         "proposed_parts": {
           "near_clause": [
             "=ל,ק3 (חטף) וכמו כן בקורן"
+          ],
+          "mam_clauses": [
+            [
+              "=ל1,ש,ש1,ו,ל3,ל9 וכמו כן בחלק מהדפוסים"
+            ]
+          ]
+        },
+        "clauses": [
+          {
+            "index": 0,
+            "disposition": "mam-context",
+            "reason": "Keep this source clause verbatim with its original MAM subject, explanations, alternatives and cross-references. Reorganization changes only the independently reviewed literal agreement clause."
+          },
+          {
+            "index": 1,
+            "disposition": "near-subject",
+            "reason": "Complete literal form matches the near target; preserve the attributed source and every qualification verbatim."
+          }
+        ]
+      }
+    },
+    {
+      "id": "A5-Deuter 15:22 note 1 נוסח",
+      "ref": [
+        "A5-Deuter",
+        "15",
+        "22"
+      ],
+      "note_ordinal": 1,
+      "source_template": "נוסח",
+      "source_note_sha256": "3dc0f0b95f82b796e792a2cd8d9ec66ae8332705cb277bb928ae1d50eefa357c",
+      "original_target": "תֹּאכְﬞלֶ֑נּוּ",
+      "near_target": "תֹּאכֲלֶ֑נּוּ",
+      "original_body": [
+        "=ל1,ש,ש1,ו,ל3,ל9 וכמו כן בחלק מהדפוסים",
+        {
+          "tmpl_name": "ש"
+        },
+        "ל,ק3=תֹּאכֲלֶ֑נּוּ וכמו כן בקורן"
+      ],
+      "clauses": [
+        "=ל1,ש,ש1,ו,ל3,ל9 וכמו כן בחלק מהדפוסים",
+        "ל,ק3=תֹּאכֲלֶ֑נּוּ וכמו כן בקורן"
+      ],
+      "change_causes": [
+        "representation policies"
+      ],
+      "coverage": {
+        "category": "missing",
+        "pages": [],
+        "partial_gap_boundaries": []
+      },
+      "candidate_clause": 1,
+      "proposal_reason": "One literal full-target alternative; semantic review of its suffix and other clauses required.",
+      "evidence_sha256": "9b0742b447ab691ef6d0505caae59d80f26d8f3d4c5436eb7f6149bbac719345",
+      "review": {
+        "status": "reviewed",
+        "presentation": "recast",
+        "reason": "Reviewed literal source agreement: retain the complete source head and suffix; keep all remaining clauses in their original order under MAM's labelled target. This attributes agreement and does not explain near-Aleppo's selection.",
+        "proposed_parts": {
+          "near_clause": [
+            "=ל,ק3 וכמו כן בקורן"
           ],
           "mam_clauses": [
             [
@@ -16388,8 +16450,8 @@
       ],
       "note_ordinal": 1,
       "source_template": "נוסח",
-      "source_note_sha256": "57f5e802ad5f0afa9501be8fb3b8bb6ef8293c5cb323266c309fc89678c536a6",
-      "original_target": "יְסֹבְבֶ֙נְהוּ֙ יְב֣וֹנְנֵ֔הוּ",
+      "source_note_sha256": "0d40a7afe7777e5bfbc064925c1d020466286570c3fb000cb1d9e09e177ddfcc",
+      "original_target": "יְסֹבְﬞבֶ֙נְהוּ֙ יְב֣וֹנְﬞנֵ֔הוּ",
       "near_target": "יְסֹבֲבֶ֙נְהוּ֙ יְב֣וֹנֲנֵ֔הוּ",
       "original_body": [
         "=ל1?,ש,ש1,ק3,ל3?,ל9 וכמו כן בדפוסים וקורן (אין געיה ואין חטפים)",
@@ -16408,7 +16470,7 @@
         "ל=יְסֹֽבְבֶ֙נְהוּ֙ יְב֣וֹנְנֵ֔הוּ (געיה באות סמ\"ך ואין חטפים)"
       ],
       "change_causes": [
-        "note-derived readings"
+        "representation policies"
       ],
       "coverage": {
         "category": "surviving",
@@ -16419,7 +16481,7 @@
       },
       "candidate_clause": 1,
       "proposal_reason": "One literal full-target alternative; semantic review of its suffix and other clauses required.",
-      "evidence_sha256": "3cf2c60fc1f20c4bec75f23fac0ec26fafdc77a41f86d67d4ecdbe01801c4163",
+      "evidence_sha256": "1b8af053df6409831d7dec04d378b0ea790bde57c1d0491e19bfeb96364e36dd",
       "review": {
         "status": "reviewed",
         "presentation": "recast",
@@ -48260,7 +48322,7 @@
       ],
       "note_ordinal": 1,
       "source_template": "נוסח",
-      "source_note_sha256": "959d9068bcc162ef7a164f1781e37dea227869dcab1c42647b8cd92a12759d8e",
+      "source_note_sha256": "7c54fa6375e849edb1a1f1274f6bb363d2408fa32bb8b9f7fb606cd0ba7618fd",
       "original_target": {
         "tmpl_name": "מ:דחי",
         "tmpl_params": {
@@ -48274,7 +48336,7 @@
         {
           "tmpl_name": "ש"
         },
-        "ל!=כָּל־קֹ֭ויֶךָ (הסגול כנראה באות יו\"ד)",
+        "ל!=כָּל־קֹ֭ויֶךָ (הסגול כנראה באות יו\"ד); לפי דותן בנספח למהדורתו יש לשייך את נקודת החולם לאות וי\"ו, וכך ל!=כָּל־ק֭וֹיֶךָ.",
         {
           "tmpl_name": "ש"
         },
@@ -48282,7 +48344,7 @@
       ],
       "clauses": [
         "=א,ש1 ובדפוסים",
-        "ל!=כָּל־קֹ֭ויֶךָ (הסגול כנראה באות יו\"ד)",
+        "ל!=כָּל־קֹ֭ויֶךָ (הסגול כנראה באות יו\"ד); לפי דותן בנספח למהדורתו יש לשייך את נקודת החולם לאות וי\"ו, וכך ל!=כָּל־ק֭וֹיֶךָ.",
         "הערות ברויאר ודותן והמקליד"
       ],
       "change_causes": [
@@ -48298,7 +48360,7 @@
       },
       "candidate_clause": null,
       "proposal_reason": "No unique plain clause quoting the complete target; retain the source note.",
-      "evidence_sha256": "2317ff15f27dbeb7c7fca91e5047bde727c6e42e4015f65aee112bfa12b8ac58",
+      "evidence_sha256": "db9703bac42110ec512670c165f1c8df63ca22f07a421eb7c7376b470f579218",
       "review": {
         "status": "reviewed",
         "presentation": "framed-mam",
@@ -48310,7 +48372,7 @@
               "=א,ש1 ובדפוסים"
             ],
             [
-              "ל!=כָּל־קֹ֭ויֶךָ (הסגול כנראה באות יו\"ד)"
+              "ל!=כָּל־קֹ֭ויֶךָ (הסגול כנראה באות יו\"ד); לפי דותן בנספח למהדורתו יש לשייך את נקודת החולם לאות וי\"ו, וכך ל!=כָּל־ק֭וֹיֶךָ."
             ],
             [
               "הערות ברויאר ודותן והמקליד"
