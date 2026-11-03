@@ -277,6 +277,15 @@ for a fresh session that has no other context. Its thin pointer issue is #349, f
   55 cumulative joins and 49 split-verse checks pass. Public Jeremiah lookup
   and adopted coverage remain unchanged.
 
+- 2026-11-03, sixth Jeremiah checkpoint: sixteen additional native portions
+  (JC 451-456; BHL 688-697) extend private evidence to complete chapters
+  28-52: 692 verses / 11,461 atoms per edition. Chapters 28-32 add 157 verses /
+  2,550 atoms. Seventy-three of 136 portions are verified; 63 remain (26 JC,
+  37 BHL). Native inspection establishes BHL's chapter-28 starting image;
+  eight JC numbering checks agree with MAM without an offset. All 57 earlier
+  records relocate unchanged; 71 joins and 63 split-verse checks pass.
+  Whole-book Jeremiah lookup and adopted coverage remain unchanged.
+
 ## Codex entry indexes
 
 `in/lci_recs.json` is the public Leningrad Codex entry index. Its canonical top level
@@ -1531,6 +1540,54 @@ Catalog check remains clean: 5 editions, 5,720 pages, 361 records and 2 segments
 No projection code or adopted index changed. **Whole-book Jeremiah lookup
 remains refused**; accepted coverage stays 13 books / 2,323 verses per edition.
 The remaining 79 Jeremiah portions require native verification before adoption.
+
+### Jeremiah chapters 28-32 boundary checkpoint, 2026-11-03
+
+The chapter-28 opening is visibly present on BHL 688, established by native
+inspection before selecting the batch. Sixteen additional portions are verified:
+JC 451-456 and BHL 688-697. Their thirty-two first/last body bands, sixteen
+printed page numbers and ten BHL headers were inspected. Three native details
+establish JC numbering at the chapter transitions and closing labels; another
+clarifies a BHL edge spelling. All 57 preserved records relocate unchanged.
+
+Complete private coverage is **chapters 28-52: 692 verses / 11,461 atoms per
+edition**. Chapters 28-32 add 157 verses / 2,550 atoms. JC starts at 27:13
+atom 8, covering 11,643 atoms; BHL starts at 27:9 atom 5, covering 11,718 atoms.
+Both end at 52:34 atom 17. Differing partial chapter-27 prefixes remain explicit.
+
+| Edition | Verified Jeremiah portions | Remaining | Public Jeremiah adoption |
+|---|---:|---:|---|
+| JC | 30 / 56 | 26 | No |
+| BHL | 43 / 80 | 37 | No |
+
+Native JC labels agree with canonical MAM references at eight specified points:
+30:25, 31:1, 31:13, 31:14, 31:37, 31:38, 31:39 and 32:1. No numbering offset
+is applied. The first atom of 31:39 is on JC 455, with the remainder on 456.
+Its short repeated atom requires a cue spanning 31:38-39, wholly on 455.
+The qere-only annotation at 31:37 follows the established written-slot policy;
+it does not add a body atom.
+
+BHL 688/689 divides 28:1 between canonical atoms 9 and 10. The printed words
+are `בשנת` and `הרביעית`; MAM's corresponding words are `בשנה` and `הרבעית`.
+Their one-to-one correspondence is established from the adjacent visible text.
+The private evidence retains both literal source forms and canonical cues, with
+exact positions. This is a specific observed correspondence, with no production
+spelling aliases or generic substitution rule added.
+
+All 71 cumulative joins and 63 split-verse qualified/cross-page checks pass.
+Sixteen joins are new: fourteen split verses and complete-verse breaks at
+JC 454/455 (31:13/31:14) and BHL 697/698 (32:40/32:41). Every declared suffix
+atom belongs to exactly one physical portion. Each edition refuses 718
+repeated-atom queries in complete chapters 28-52. All ten new BHL headers omit
+opening continuations; page 692 even begins in chapter 29 under a chapter-30
+header. Visible body text supplies the exact boundaries.
+
+Fresh frontier testing passes (1 passed, 6 deselected). All 1,364 verses /
+21,833 atoms agree with independent MAM-simple; fourteen malformed unequal
+forms and two ambiguous mapped pairs refuse. Catalog check passes for 5
+editions, 5,720 pages, 361 records and 2 segments. No projection code or adopted
+index changed. **Whole-book Jeremiah lookup remains refused**; accepted coverage
+stays 13 books / 2,323 verses per edition. Sixty-three Jeremiah portions remain.
 
 **Phase 0 - survey and tracked inventory. DONE, 2026-08-07.** The code is
 `py/main_scan_pages.py` (`survey`, `check`) over `py/scan_pages/`, with the lint at
