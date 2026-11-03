@@ -71,7 +71,25 @@ byte-for-byte copy of that frozen plan; this ledger and the State line are the e
   Verified 2026-11-02 at 20:27 New York time: on `main`, clean, fast-forwarded from `6415da3b` to
   origin's `ed66e0af7f77accac633c580ab6c30de97f9a4a1`, of which `6415da3b` is an ancestor. No
   commit since `6415da3b` touches `py/main_ws_bot.py` or `py/subcommands/`.
-- **Stage 1:** this file, committed.
+- **Stage 1:** this file, committed as `147053a8`.
+- **Stage 2:** `py/main_miqra_mevoar.py` and `py/miqra_mevoar/`, committed with Stage 3. The
+  closed dispatch over Word XML is stricter than the prototype's. It reads the direct children of
+  the table, its rows and its cells by name. It accepts a content control outside the table only
+  when Word built it as a table of contents, as Joshua's file has after its table. It makes an
+  error of every anomaly the prototype only noted: text outside the table, a second title row, a
+  heading after a heading, a numbering gap, a heading with no verse after it, and a paraphrase
+  cell of two paragraphs. `fetch` uses `py/mb_cmn/polite_download.py` and obeys `robots.txt`;
+  pCloud's two API hosts had none on 2026-11-02.
+- **Stage 3:** fetched 2026-11-02 into `.novc/miqra-mevoar/pcloud/20261102-203936-209217-0500/`.
+  The seven files equal Phase 1's manifest in name, size, file id, modification time and SHA-256,
+  so there is no new material from Rabbi Kokhav. `extract` and `check` passed, with the report
+  `.novc/miqra-mevoar/checks/20261102-204029-102761-0500.txt`: the measurements below hold, and
+  the smallest margin is that of Joshua 12:14 and 12:15, 1.000 against 0.769, in the list of
+  kings. All 56 pages that `pages` wrote equal the prototype's byte for byte, and the tracked
+  JSON's text equals the prototype's extraction, in the Word files' own mark order.
+- **Stage 4:** `git diff --check`, Black, the targeted tests with the tree-wide lints that scan
+  new files (89 passed), and the full suite (1,422 passed, 5 skipped, none of them the new
+  test's). The mega was skipped, as this plan expects.
 
 ## Background for a fresh executor
 

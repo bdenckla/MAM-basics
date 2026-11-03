@@ -586,6 +586,29 @@ NOT_IN_MEGA: dict[str, str] = {
     "py/main_pen_stroke.py regions-check": _INK_REGION_BY_HAND,
     "py/main_pen_stroke.py regions-render": _INK_REGION_BY_HAND,
     "py/main_pen_stroke.py regions-fit": _INK_REGION_BY_HAND,
+    "py/main_miqra_mevoar.py fetch": (
+        "Claude-written on 2026-11-02, in Stage 3 of doc/PLAN-miqra-mevoar.md, the plan"
+        " Ben gave his word to execute: it downloads Rabbi Kokhav's Word files from a"
+        " third-party host, Avi's pCloud folder, into .novc/.  Recorded in"
+        " in/miqra-mevoar/README.md."
+    ),
+    "py/main_miqra_mevoar.py extract": (
+        "Claude-written on 2026-11-02, in Stage 3 of doc/PLAN-miqra-mevoar.md, the plan"
+        " Ben gave his word to execute: it reads Word files that exist only where fetch"
+        " ran, under .novc/.  The suite's py/tests/test_miqra_mevoar_versification.py"
+        " checks the JSON it writes against MAM-simple.  Recorded in"
+        " in/miqra-mevoar/README.md."
+    ),
+    "py/main_miqra_mevoar.py check": (
+        "Claude-written on 2026-11-02, in Stage 3 of doc/PLAN-miqra-mevoar.md, the plan"
+        " Ben gave his word to execute: it reads Word files that exist only where fetch"
+        " ran, and writes nothing tracked.  Recorded in in/miqra-mevoar/README.md."
+    ),
+    "py/main_miqra_mevoar.py pages": (
+        "Claude-written on 2026-11-02, in Stage 3 of doc/PLAN-miqra-mevoar.md, the plan"
+        " Ben gave his word to execute: it writes untracked previews of the pages only."
+        "  Recorded in in/miqra-mevoar/README.md."
+    ),
 }
 
 # ---------------------------------------------------------------------------
