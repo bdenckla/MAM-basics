@@ -326,6 +326,14 @@ for a fresh session that has no other context. Its thin pointer issue is #349, f
   page in each edition. All 119 earlier records relocate unchanged. Public
   adoption remains unchanged.
 
+- 2026-11-03, Jeremiah completion: all 136 ordinary-body portions are now
+  adopted on the isolated research branch after explicit approval: 56 JC
+  and 80 BHL, covering 1,364 verses / 21,833 atoms per edition. Accepted
+  lookup reaches 14 books / 3,687 verses per edition. The five catalogs
+  contain 495 records: 367 completed portions and 128 unread seeds, with
+  two body segments. Exact guarded mappings and source correspondences
+  remain intact. No main integration or deployment occurred.
+
 ## Codex entry indexes
 
 `in/lci_recs.json` is the public Leningrad Codex entry index. Its canonical top level
@@ -1838,6 +1846,57 @@ unequal forms still refuse. Catalog check passes for 5 editions, 5,720 pages,
 361 records and 2 segments. No code or adopted index changed. **Whole-book
 Jeremiah lookup remains refused**; accepted coverage stays 13 books / 2,323
 verses per edition. Only the opening three portions remain unverified.
+
+### Jeremiah completion, 2026-11-03
+
+The three remaining opening portions complete the earlier boundary groups.
+All **136 Jeremiah portions** are now available through `lookup` on the
+isolated research branch, following explicit approval. Each edition covers
+**1,364 verses / 21,833 canonical atoms**, from 1:1 atom 1 through 52:34
+atom 17, with no gaps or overlaps.
+
+| Edition | Adopted Jeremiah portions | First scan | Last scan |
+|---|---:|---|---|
+| JC | 56 | `425-Je.jpg` | `480-Je.jpg` |
+| BHL | 80 | `0651-Je.jpg` | `0730-Je.jpg` |
+
+The final opening pages are JC 425 (1:1 atom 1 through 2:8 atom 5),
+BHL 651 (1:1 atom 1 through 1:19 atom 3) and BHL 652 (1:19 atom 4
+through 2:20 atom 17). Their running Scripture, printed numbers and
+continuations were inspected directly. Printed header ranges do not replace
+body boundaries. Canonical cues retain the verified source-to-MAM atom
+correspondences; source orthography or numbering can differ from the query.
+Original scans and detailed source provenance remain private.
+
+The exact one-written-word/two-reading-word mappings at 6:29 and 18:3
+remain indivisible. Both atoms of each pair stay on the same source page;
+an internal page start or stop is rejected. Selected Scripture targets,
+ordinary one-word qere and read-without-written-word behavior retain their
+existing maintained semantics. Unknown or ambiguous forms still refuse.
+No projection or lookup implementation changed for adoption.
+
+Whole-book partitions preserve every verified interval and pass **134 adjacent
+joins / 120 split-verse checks**. Each atom belongs to exactly one page per
+edition. Independent MAM-simple comparison agrees on the complete book.
+Lookup supports unqualified verses, unique phrases and lone unique atoms;
+ambiguous repeated-atom queries still refuse. For example:
+
+```powershell
+python py/main_scan_pages.py lookup Jeremiah 1:19 --edition jc1 --edition bhl
+python py/main_scan_pages.py lookup Jeremiah 6:29 --edition jc1 --edition bhl
+python py/main_scan_pages.py lookup Jeremiah 39:13 --edition jc1 --edition bhl
+```
+
+Accepted coverage is now **14 books / 3,687 verses per edition**. Across the
+five catalogs there are **5,720 pages, 495 records, 367 completed portions,
+128 unread seeds and two segments**. Nine focused tests passed (30 deselected),
+including independent adopted-book atoms, every adopted edge query, guarded
+mapping regressions and CLI wiring; the catalog check also passes. Full suite
+and mega remain deferred under the focused-check policy. Universal completion still needs 25
+ordinary-body books per edition, source-classification reconciliation,
+strand handling and deferred refresh/density work. Other incomplete books
+remain unavailable through lookup. Main integration and deployment are
+separate from this research-branch adoption.
 
 **Phase 0 - survey and tracked inventory. DONE, 2026-08-07.** The code is
 `py/main_scan_pages.py` (`survey`, `check`) over `py/scan_pages/`, with the lint at
