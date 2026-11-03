@@ -96,6 +96,10 @@ for a fresh session that has no other context. Its thin pointer issue is #349, f
   editions, bringing coverage to 780 verses in 10 books per edition. The
   catalogs contain 224 records: 88 completed records and 136 unread seeds.
 
+- 2026-11-03, Joel batch: 9 further portions complete Joel in both
+  editions, bringing coverage to 853 verses in 11 books per edition. The
+  catalogs contain 231 records: 97 completed records and 134 unread seeds.
+
 ## Codex entry indexes
 
 `in/lci_recs.json` is the public Leningrad Codex entry index. Its canonical top level
@@ -1010,6 +1014,32 @@ All five JC breaks and seven of eight BHL breaks split verses. BHL headers omit 
 No new projection rule was needed; all 146 verses and 2,042 atoms match independent MAM-simple.
 
 Six focused tests passed (30 deselected), including complete independent atom comparison. Direct checks cover all twelve within-verse breaks, qualified and cross-page lookup, repeated-atom refusal and idempotent adoption. Cue checks rejected three transcription slips before the first index write; the corrected source-visible cues are unique across the book. The full suite and mega were omitted under the ordinary focused-check policy. The catalog check reports five editions, 5,720 pages, 224 records and two segments without problems. No main integration or deployment occurred. The large-census review boundary below still applies.
+
+### Joel continuation, 2026-11-03
+
+All 9 Joel portions were read in native edge bands, including
+7 additional images. Full-page previews were used at book
+transitions. Printed footer numbers and BHL running headers were read
+separately from filenames. Exact original identities, hashes and crop boxes
+are retained privately.
+
+| Edition | Scan filename | Observed printed page | Joel interval in MAM atom positions |
+|---|---|---:|---|
+| JC | `536-Ho-Jl.jpg` | 536 | 1:1 atom 1 through 1:3 atom 1 |
+| JC | `537-Jl.jpg` | 537 | 1:3 atom 2 through 2:15 atom 5 |
+| JC | `538-Jl.jpg` | 538 | 2:15 atom 6 through 4:10 atom 1 |
+| JC | `539-Jl-A.jpg` | 539 | 4:10 atom 2 through 4:21 atom 7 |
+| BHL | `0813-Ho-Jl.jpg` | 813 | 1:1 atom 1 through 1:6 atom 11 |
+| BHL | `0814-Jl.jpg` | 814 | 1:6 atom 12 through 2:8 atom 9 |
+| BHL | `0815-Jl.jpg` | 815 | 2:8 atom 10 through 2:27 atom 7 |
+| BHL | `0816-Jl.jpg` | 816 | 2:27 atom 8 through 4:16 atom 6 |
+| BHL | `0817-Jl-A.jpg` | 817 | 4:16 atom 7 through 4:21 atom 7 |
+
+All three JC breaks and all four BHL breaks split verses. JC 536 ends at 1:3 atom 1, and JC 538 ends at 4:10 atom 1; each following page continues that verse. BHL headers omit opening continuations on 814 (1:6), 815 (2:8), 816 (2:27) and 817 (4:16). JC 536 and BHL 813 still contain uncensused Hosea; Amos portions on JC 539/BHL 817 are already indexed.
+
+No new projection rule was needed; all 73 verses and 957 atoms match independent MAM-simple.
+
+Six focused tests passed (30 deselected), including complete independent atom comparison. Direct checks cover all seven within-verse breaks, qualified and cross-page lookup, repeated-atom refusal and idempotent adoption. The cue check rejected a missing initial vav before any index write; the corrected source-visible cue is unique. The full suite and mega were omitted under the ordinary focused-check policy. The catalog check reports five editions, 5,720 pages, 231 records and two segments without problems. No main integration or deployment occurred. The large-census review boundary below still applies.
 
 **Phase 0 — survey and tracked inventory. DONE, 2026-08-07.** The code is
 `py/main_scan_pages.py` (`survey`, `check`) over `py/scan_pages/`, with the lint at

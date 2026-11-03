@@ -6348,6 +6348,7 @@
         "Amos",
         "Habakkuk",
         "Haggai",
+        "Joel",
         "Jonah",
         "Malachi",
         "Micah",
@@ -6357,6 +6358,9 @@
         "Zechariah"
       ],
       "pages": [
+        "536-Ho-Jl.jpg",
+        "537-Jl.jpg",
+        "538-Jl.jpg",
         "539-Jl-A.jpg",
         "540-A.jpg",
         "541-A.jpg",
@@ -6588,15 +6592,44 @@
     {
       "page": "536-Ho-Jl.jpg",
       "bkid": "Joel",
+      "printed_page": 536,
+      "note": "Native edge bands and printed footer verified by Codex, 2026-11-03; private source hashes and crop coordinates retained.",
       "startc": 1,
       "startv": 1,
       "startp": 1,
-      "stopc": null,
-      "stopv": null,
-      "stopp": null,
-      "start_phrase": null,
-      "stop_phrase": null,
-      "note": "seeded by survey: a book starts at 1:1 atom 1"
+      "start_phrase": "דבר יהוה אשר היה אל יואל",
+      "stopc": 1,
+      "stopv": 3,
+      "stopp": 1,
+      "stop_phrase": "ואם בימי אבתיכם עליה"
+    },
+    {
+      "page": "537-Jl.jpg",
+      "bkid": "Joel",
+      "printed_page": 537,
+      "note": "Native edge bands and printed footer verified by Codex, 2026-11-03; private source hashes and crop coordinates retained.",
+      "startc": 1,
+      "startv": 3,
+      "startp": 2,
+      "start_phrase": "לבניכם ספרו ובניכם לבניהם ובניהם לדור",
+      "stopc": 2,
+      "stopv": 15,
+      "stopp": 5,
+      "stop_phrase": "תקעו שופר בציון קדשו צום"
+    },
+    {
+      "page": "538-Jl.jpg",
+      "bkid": "Joel",
+      "printed_page": 538,
+      "note": "Native edge bands and printed footer verified by Codex, 2026-11-03; private source hashes and crop coordinates retained.",
+      "startc": 2,
+      "startv": 15,
+      "startp": 6,
+      "start_phrase": "קראו עצרה אספו עם קדשו קהל",
+      "stopc": 4,
+      "stopv": 10,
+      "stopp": 1,
+      "stop_phrase": "יעלו כל אנשי המלחמה כתו"
     },
     {
       "page": "539-Jl-A.jpg",
@@ -6611,6 +6644,20 @@
       "stopv": 14,
       "stopp": 10,
       "stop_phrase": "רבה ואכלה ארמנותיה בתרועה ביום מלחמה בסער"
+    },
+    {
+      "page": "539-Jl-A.jpg",
+      "bkid": "Joel",
+      "printed_page": 539,
+      "note": "Native edge bands and printed footer verified by Codex, 2026-11-03; private source hashes and crop coordinates retained.",
+      "startc": 4,
+      "startv": 10,
+      "startp": 2,
+      "start_phrase": "אתיכם לחרבות ומזמרתיכם לרמחים החלש יאמר",
+      "stopc": 4,
+      "stopv": 21,
+      "stopp": 7,
+      "stop_phrase": "ונקיתי דמם לא נקיתי ויהוה שכן בציון"
     },
     {
       "page": "540-A.jpg",
