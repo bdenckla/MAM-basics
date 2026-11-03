@@ -104,6 +104,22 @@ for a fresh session that has no other context. Its thin pointer issue is #349, f
   editions, bringing coverage to 1050 verses in 12 books per edition. The
   catalogs contain 244 records: 112 completed records and 132 unread seeds.
 
+- 2026-11-03, first Ezekiel checkpoint: native page bounds are verified for
+  JC 524–529 and BHL 796–802. They cover chapters 45–48 completely (107
+  verses, 1,670 atoms per edition), plus differing partial spans of chapter 44.
+  These thirteen portions are retained as a private boundary checkpoint;
+  they have **not** entered the whole-book census or public lookup. Accepted
+  coverage and catalog counts above are unchanged. The remaining Ezekiel
+  inventory has 43 JC and 63 BHL portions still to verify.
+  Named three-petucha/two-samekh breaks follow the maintained separator
+  semantics. The written-but-not-read word follows the maintained written-atom
+  policy, with strict matching one-atom forms. Both scans print the extra word
+  at 48:16. All 1,269 projectable Ezekiel verses were independently compared
+  with MAM-simple; 8:6, 9:11, 23:42 and 42:9 remain refused pending explicit
+  multi-atom ketiv/qere alignment. The supported verses are a text-projection
+  result, not verified page coverage. Continue in bounded chapter groups;
+  whole-book adoption still requires all pages and all atoms.
+
 ## Codex entry indexes
 
 `in/lci_recs.json` is the public Leningrad Codex entry index. Its canonical top level

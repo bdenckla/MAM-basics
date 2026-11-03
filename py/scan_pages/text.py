@@ -3,7 +3,8 @@
 This initial projection accepts Scripture strings, a נוסח target, vowel
 alternatives with identical consonantal atoms, and the main one-atom form of
 the modern trivial ketiv/qere template, plus explicit paseq/legarmeh and
-the named petucha marker.
+the named paragraph markers. A written-but-not-read word contributes its
+unpointed written atom, following the maintained MAM-simple atom policy.
 Ordinary ketiv/qere uses the qere spelling only when both forms are one atom,
 so either printed form occupies the same position. Multi-atom ketiv/qere and
 alternative strands need explicit source alignment before a later census.
@@ -45,6 +46,16 @@ def _body_text(elements):
                 raise ValueError(f"Unexpected נוסח parameters: {params}")
             target = params["1"]
             parts.append(_target_text(target))
+        elif isinstance(element, dict) and element["tmpl_name"] == "כתיב ולא קרי":
+            params = template_names.validate_current_plus_template(element)
+            if not all(isinstance(params[key], str) for key in ("1", "2")):
+                raise ValueError("Written-but-not-read word needs string forms")
+            displayed, written = (letters_atoms(params[key]) for key in ("1", "2"))
+            if len(written) != 1 or displayed != written:
+                raise ValueError("Written-but-not-read forms must share one atom")
+            # The maintained written-atom policy in mam_json_verses includes
+            # kq-k-velo-q. Parentheses in the display form are not letters.
+            parts.append(params["2"])
         elif isinstance(element, dict) and element["tmpl_name"] in {
             template_names.SLH_WORD,
             "מ:אות-ק",
@@ -90,7 +101,11 @@ def _body_text(elements):
             # Both template orders store ketiv in 1 and qere in 2. Match
             # MAM-simple's selected qere; each source form has the same slot.
             parts.append(params["2"])
-        elif isinstance(element, dict) and element["tmpl_name"] == "פפ":
+        elif isinstance(element, dict) and element["tmpl_name"] in {
+            "פפ",
+            "פפפ",
+            "סס",
+        }:
             template_names.validate_current_plus_template(element)
             # Maintained NO_ATOM semantics separate the neighboring words.
             # Optional parameter 1 describes the break; it is not Scripture.

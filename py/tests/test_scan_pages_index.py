@@ -63,6 +63,12 @@ def test_censused_books_agree_with_independent_simple_export():
                         for node in verse["contents"]:
                             if node["type"] in {"text", "kq-trivial"}:
                                 parts.append(node["text"])
+                            elif node["type"] == "kq-k-velo-q":
+                                assert set(node) == {"type", "text"}
+                                assert isinstance(node["text"], str)
+                                # Written atoms include this unpointed word;
+                                # it is absent only from a reading projection.
+                                parts.append(node["text"])
                             elif node["type"] == "slh-word":
                                 for child in node["contents"]:
                                     assert child["type"] in {
@@ -92,6 +98,8 @@ def test_censused_books_agree_with_independent_simple_export():
                                     {"type": "lp-legarmeih"},
                                     {"type": "lp-paseq"},
                                     {"type": "spi-pe2"},
+                                    {"type": "spi-pe3"},
+                                    {"type": "spi-samekh2"},
                                 )
                                 parts.append(" ")
                         source_text = "".join(parts)
