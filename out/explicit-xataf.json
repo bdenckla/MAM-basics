@@ -27,17 +27,7 @@
     "non-inferrable": 0,
     "neither-lc-nor-ac-mentioned": 2
   },
-  "failures": [
-    {
-      "ref": "Deuter 15:22",
-      "varika_word": "תֹּאכְﬞלֶ֑נּוּ",
-      "reason": "no ḥataf in alternative reading",
-      "arg1_strings": [
-        "=ל1,ש,ש1,ו,ל3,ל9 וכמו כן בחלק מהדפוסים",
-        "ל,ק3=תֹּאכֲלֶ֑נּוּ וכמו כן בקורן"
-      ]
-    }
-  ],
+  "failures": [],
   "mappings": [
     {
       "ref": "Genesis 1:18",
@@ -576,6 +566,13 @@
       "ref": "Deuter 15:20",
       "varika_word": "תֹאכְﬞלֶ֙נּוּ֙",
       "xataf_word": "תֹאכֲלֶ֙נּוּ֙",
+      "match_kind": "sigla=word",
+      "sigla": "ל,ק3"
+    },
+    {
+      "ref": "Deuter 15:22",
+      "varika_word": "תֹּאכְﬞלֶ֑נּוּ",
+      "xataf_word": "תֹּאכֲלֶ֑נּוּ",
       "match_kind": "sigla=word",
       "sigla": "ל,ק3"
     },
