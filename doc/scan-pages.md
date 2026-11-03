@@ -318,6 +318,14 @@ for a fresh session that has no other context. Its thin pointer issue is #349, f
   explicit source forms, protected mappings and the numbering reconciliation.
   Public adoption remains unchanged.
 
+- 2026-11-03, eleventh Jeremiah checkpoint: fourteen additional native portions
+  (JC 426-431; BHL 653-660) extend private evidence to complete chapters
+  3-52: 1,308 verses / 21,055 atoms per edition. Chapters 3-7 add 151
+  verses / 2,217 atoms. Verified portions total 133 of 136; three remain
+  (1 JC, 2 BHL). Both atoms of the 6:29 mapped pair stay on the same native
+  page in each edition. All 119 earlier records relocate unchanged. Public
+  adoption remains unchanged.
+
 ## Codex entry indexes
 
 `in/lci_recs.json` is the public Leningrad Codex entry index. Its canonical top level
@@ -1781,6 +1789,55 @@ Catalog check passes for 5 editions, 5,720 pages, 361 records and 2 segments.
 No code or adopted index changed. **Whole-book Jeremiah lookup remains
 refused**; accepted coverage stays 13 books / 2,323 verses per edition.
 Seventeen Jeremiah portions remain.
+
+### Jeremiah chapters 3-7 boundary checkpoint, 2026-11-03
+
+Native scope inspection confirms that BHL 653 contains 3:1 and begins with
+a continuation of 2:20. Fourteen further portions are verified: JC 426-431
+and BHL 653-660. Their twenty-eight first/last body bands, fourteen printed
+page numbers and eight headers were inspected. Three extra native details
+retain the written word and reading at 6:29; another records an ordinary
+ketiv/qere at BHL 655's start. All 119 earlier records relocate unchanged.
+
+Complete private coverage is **chapters 3-52: 1,308 verses / 21,055 atoms
+per edition**. Chapters 3-7 add 151 verses / 2,217 atoms. JC starts at
+2:8 atom 6, covering 21,459 atoms; BHL starts at 2:20 atom 18, covering
+21,293 atoms. Both end at 52:34 atom 17. Different chapter-2 prefixes remain
+explicit; complete common coverage begins at 3:1.
+
+| Edition | Verified Jeremiah portions | Remaining | Public Jeremiah adoption |
+|---|---:|---:|---|
+| JC | 55 / 56 | 1 | No |
+| BHL | 78 / 80 | 2 | No |
+
+At 6:29 both scans show one written word corresponding to the two-word
+reading. The established closed mapping places the canonical atoms at
+positions 3-4. Native interval checks keep both on JC 431 / BHL 659; no
+boundary enters the pair. Four deliberately invalid, in-memory fixtures split
+the known mapped spans at 6:29 and 18:3 across two synthetic pages. The public
+validator rejects all four specifically for an internal mapped-word boundary.
+These fixtures test rejection and supply no source coverage or adopted records.
+
+BHL 655 begins at 3:19 atom 16 with a one-word written/qere correspondence.
+The written and marginal reading forms remain separately recorded; the
+canonical locator uses the maintained ordinary one-word qere policy. This
+is distinct from the unequal protected pair at 6:29. Four earlier explicit
+source/canonical records and the corrected JC numbering finding remain
+unchanged. No generic aliases or projection changes were introduced.
+
+All 131 cumulative joins and 117 split-verse qualified/cross-page checks pass.
+The fourteen new joins comprise thirteen split verses and the JC complete-verse
+break at 4:1/4:2. Each edition refuses 1,229 repeated-atom queries in complete
+chapters 3-52. All eight BHL headers omit opening continuations; actual starts
+belong to 2:20, 3:2, 3:19, 4:14, 5:3, 5:22, 6:12 and 7:3. Body text supplies
+the bounds. The repeated stop phrase at 5:22 required a longer unique cue.
+
+Fresh frontier testing passes (1 passed, 6 deselected). All 1,364 verses /
+21,833 atoms agree with independent MAM-simple; malformed and ambiguous
+unequal forms still refuse. Catalog check passes for 5 editions, 5,720 pages,
+361 records and 2 segments. No code or adopted index changed. **Whole-book
+Jeremiah lookup remains refused**; accepted coverage stays 13 books / 2,323
+verses per edition. Only the opening three portions remain unverified.
 
 **Phase 0 - survey and tracked inventory. DONE, 2026-08-07.** The code is
 `py/main_scan_pages.py` (`survey`, `check`) over `py/scan_pages/`, with the lint at
