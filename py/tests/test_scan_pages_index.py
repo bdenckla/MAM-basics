@@ -65,7 +65,11 @@ def test_censused_books_agree_with_independent_simple_export():
                                 parts.append(node["text"])
                             elif node["type"] == "slh-word":
                                 for child in node["contents"]:
-                                    assert child["type"] in {"text", "letter-small"}
+                                    assert child["type"] in {
+                                        "text",
+                                        "letter-small",
+                                        "letter-large",
+                                    }
                                     parts.append(child["text"])
                             elif node["type"] == "kq":
                                 assert sorted(
@@ -77,6 +81,12 @@ def test_censused_books_agree_with_independent_simple_export():
                                     if child["type"] == "kq-q"
                                 )
                                 parts.append(qere["text"])
+                            elif node["type"] == "good-ending":
+                                assert set(node) == {"type", "text"}
+                                assert isinstance(node["text"], str)
+                                # The maintained simple reader excludes the
+                                # repeated ending from the final verse's atoms.
+                                parts.append(" ")
                             else:
                                 assert node in (
                                     {"type": "lp-legarmeih"},

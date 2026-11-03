@@ -8772,6 +8772,7 @@
         "Habakkuk",
         "Haggai",
         "Jonah",
+        "Malachi",
         "Micah",
         "Nahum",
         "Obadiah",
@@ -8809,7 +8810,11 @@
         "0852-Zc.jpg",
         "0853-Zc.jpg",
         "0854-Zc.jpg",
-        "0855-Zc-Ma.jpg"
+        "0855-Zc-Ma.jpg",
+        "0856-Ma.jpg",
+        "0857-Ma.jpg",
+        "0858-Ma.jpg",
+        "0859-Ma.jpg"
       ]
     }
   ],
@@ -9528,15 +9533,16 @@
     {
       "page": "0855-Zc-Ma.jpg",
       "bkid": "Malachi",
+      "printed_page": 855,
+      "note": "Native edges, full-page preview and printed footer verified by Codex, 2026-11-03; private source hashes and crop coordinates retained.",
       "startc": 1,
       "startv": 1,
       "startp": 1,
-      "stopc": null,
-      "stopv": null,
-      "stopp": null,
-      "start_phrase": null,
-      "stop_phrase": null,
-      "note": "seeded by survey: a book starts at 1:1 atom 1"
+      "start_phrase": "משא דבר יהוה אל ישראל ביד",
+      "stopc": 1,
+      "stopv": 3,
+      "stopp": 8,
+      "stop_phrase": "ואשים את הריו שממה ואת"
     },
     {
       "page": "0855-Zc-Ma.jpg",
@@ -9551,6 +9557,62 @@
       "stopv": 21,
       "stopp": 24,
       "stop_phrase": "ולא יהיה כנעני עוד בבית יהוה צבאות ביום ההוא"
+    },
+    {
+      "page": "0856-Ma.jpg",
+      "bkid": "Malachi",
+      "printed_page": 856,
+      "note": "Native edges, full-page preview and printed footer verified by Codex, 2026-11-03; private source hashes and crop coordinates retained.",
+      "startc": 1,
+      "startv": 3,
+      "startp": 9,
+      "start_phrase": "נחלתו לתנות מדבר כי תאמר אדום",
+      "stopc": 2,
+      "stopv": 5,
+      "stopp": 8,
+      "stop_phrase": "החיים והשלום ואתנם לו מורא"
+    },
+    {
+      "page": "0857-Ma.jpg",
+      "bkid": "Malachi",
+      "printed_page": 857,
+      "note": "Native edges, full-page preview and printed footer verified by Codex, 2026-11-03; private source hashes and crop coordinates retained.",
+      "startc": 2,
+      "startv": 5,
+      "startp": 9,
+      "start_phrase": "וייראני ומפני שמי נחת הוא תורת",
+      "stopc": 3,
+      "stopv": 4,
+      "stopp": 4,
+      "stop_phrase": "וערבה ליהוה מנחת יהודה"
+    },
+    {
+      "page": "0858-Ma.jpg",
+      "bkid": "Malachi",
+      "printed_page": 858,
+      "note": "Native edges, full-page preview and printed footer verified by Codex, 2026-11-03; private source hashes and crop coordinates retained.",
+      "startc": 3,
+      "startv": 4,
+      "startp": 5,
+      "start_phrase": "וירושלם כימי עולם וכשנים קדמנית וקרבתי",
+      "stopc": 3,
+      "stopv": 21,
+      "stopp": 15,
+      "stop_phrase": "ביום אשר אני עשה אמר יהוה צבאות"
+    },
+    {
+      "page": "0859-Ma.jpg",
+      "bkid": "Malachi",
+      "printed_page": 859,
+      "note": "Native edges, full-page preview and printed footer verified by Codex, 2026-11-03; private source hashes and crop coordinates retained. Stop marks the canonical 3:24 ending; an unnumbered repetition of 3:23 follows on this same page. Both occurrences of 3:23 map to this page; the index stores no occurrence geometry.",
+      "startc": 3,
+      "startv": 22,
+      "startp": 1,
+      "start_phrase": "זכרו תורת משה עבדי אשר צויתי",
+      "stopc": 3,
+      "stopv": 24,
+      "stopp": 15,
+      "stop_phrase": "פן אבוא והכיתי את הארץ חרם"
     },
     {
       "page": "0865-Ps.jpg",

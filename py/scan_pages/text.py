@@ -6,7 +6,7 @@ the modern trivial ketiv/qere template, plus explicit paseq/legarmeh markers.
 Ordinary ketiv/qere uses the qere spelling only when both forms are one atom,
 so either printed form occupies the same position. Multi-atom ketiv/qere and
 alternative strands need explicit source alignment before a later census.
-The special-letter word wrapper and the small-letter template recurse into
+The special-letter word wrapper and the small/large-letter templates recurse into
 their Scripture parameter without inserting a word boundary or losing a letter.
 Documentation is never Scripture. Unknown templates fail rather than contribute
 guessed text. No pointed text or second Bible corpus is stored in the index.
@@ -47,9 +47,10 @@ def _body_text(elements):
         elif isinstance(element, dict) and element["tmpl_name"] in {
             template_names.SLH_WORD,
             "מ:אות-ק",
+            "מ:אות-ג",
         }:
             params = template_names.validate_current_plus_template(element)
-            # These two explicit in-word templates contribute their Scripture
+            # These explicit in-word templates contribute their Scripture
             # parameter. Their descriptions are metadata; do not split the word.
             parts.append(_target_text(params["1"]))
         elif (

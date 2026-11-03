@@ -6348,6 +6348,7 @@
         "Habakkuk",
         "Haggai",
         "Jonah",
+        "Malachi",
         "Micah",
         "Nahum",
         "Obadiah",
@@ -6376,7 +6377,9 @@
         "562-Zc.jpg",
         "563-Zc.jpg",
         "564-Zc.jpg",
-        "565-Zc-Ma.jpg"
+        "565-Zc-Ma.jpg",
+        "566-Ma.jpg",
+        "567-Ma.jpg"
       ]
     }
   ],
@@ -6997,15 +7000,16 @@
     {
       "page": "565-Zc-Ma.jpg",
       "bkid": "Malachi",
+      "printed_page": 565,
+      "note": "Native edges, full-page preview and printed footer verified by Codex, 2026-11-03; private source hashes and crop coordinates retained.",
       "startc": 1,
       "startv": 1,
       "startp": 1,
-      "stopc": null,
-      "stopv": null,
-      "stopp": null,
-      "start_phrase": null,
-      "stop_phrase": null,
-      "note": "seeded by survey: a book starts at 1:1 atom 1"
+      "start_phrase": "משא דבר יהוה אל ישראל ביד",
+      "stopc": 1,
+      "stopv": 12,
+      "stopp": 11,
+      "stop_phrase": "מגאל הוא וניבו נבזה אכלו"
     },
     {
       "page": "565-Zc-Ma.jpg",
@@ -7020,6 +7024,34 @@
       "stopv": 21,
       "stopp": 24,
       "stop_phrase": "ולא יהיה כנעני עוד בבית יהוה צבאות ביום ההוא"
+    },
+    {
+      "page": "566-Ma.jpg",
+      "bkid": "Malachi",
+      "printed_page": 566,
+      "note": "Native edges, full-page preview and printed footer verified by Codex, 2026-11-03; private source hashes and crop coordinates retained.",
+      "startc": 1,
+      "startv": 13,
+      "startp": 1,
+      "start_phrase": "ואמרתם הנה מתלאה והפחתם אותו אמר",
+      "stopc": 3,
+      "stopv": 5,
+      "stopp": 10,
+      "stop_phrase": "עד ממהר במכשפים ובמנאפים ובנשבעים לשקר"
+    },
+    {
+      "page": "567-Ma.jpg",
+      "bkid": "Malachi",
+      "printed_page": 567,
+      "note": "Native edges, full-page preview and printed footer verified by Codex, 2026-11-03; private source hashes and crop coordinates retained.",
+      "startc": 3,
+      "startv": 5,
+      "startp": 11,
+      "start_phrase": "ובעשקי שכר שכיר אלמנה ויתום ומטי",
+      "stopc": 3,
+      "stopv": 24,
+      "stopp": 15,
+      "stop_phrase": "פן אבוא והכיתי את הארץ חרם"
     },
     {
       "page": "571-Ps.jpg",

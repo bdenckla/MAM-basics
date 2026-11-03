@@ -86,6 +86,11 @@ for a fresh session that has no other context. Its thin pointer issue is #349, f
   in both editions, bringing coverage to 579 verses in eight books per edition.
   The catalogs contain 205 records: sixty-five completed records and
   140 unread seeds. No text-projection changes were needed for this batch.
+- 2026-11-03, Malachi batch: eight further portions complete Malachi in both
+  editions, bringing coverage to 634 verses in nine books per edition. The
+  catalogs contain 211 records: seventy-three completed records and 138 unread
+  seeds. Explicit large-letter markup retains its letter within the word;
+  BHL's repeated closing verse is recorded as same-page display evidence.
 
 ## Codex entry indexes
 
@@ -616,8 +621,9 @@ legarmeh marker `מ:לגרמיה-2` and paseq `מ:פסק` as boundaries without 
 one-atom form of the modern trivial ketiv/qere template, matching MAM-simple.
 The Micah continuation adds ordinary ketiv/qere when both forms are one atom,
 using the qere spelling at that common position. The Nahum continuation adds
-the special-letter word wrapper and small-letter template, retaining their
-Scripture parameter without inserting a word boundary. It rejects multi-atom
+the special-letter word wrapper and small-letter template; Malachi adds the
+explicit large-letter template. All retain their Scripture parameter without
+inserting a word boundary. It rejects multi-atom
 ketiv/qere, other unimplemented templates and named Decalogue strands.
 Extending those cases needs explicit source alignment;
 template names or argument shapes are not grounds for guessing it. An
@@ -909,8 +915,8 @@ Seven of eight JC breaks and ten of eleven BHL breaks split verses. The BHL
 headers omit the opening continuations on 845 (1:14), 846 (2:17), 847 (4:9),
 848 (6:5), 850 (8:12), 851 (9:8), 852 (10:10), 853 (11:17), 854 (13:2) and
 855 (14:10); 849 begins at 7:8, matching its header. Headers alone would miss
-these first atoms. JC 565 and BHL 855 also open Malachi, uncensused at this
-checkpoint.
+these first atoms. JC 565 and BHL 855 also open Malachi, uncensused at that
+checkpoint; the following continuation completed those portions.
 
 The existing reader projects all 211 verses and 3,127 atoms, independently
 matching MAM-simple. Six focused tests passed (30 deselected); the catalog
@@ -920,6 +926,54 @@ cross-page phrase lookup, refusal of the twice-occurring word in 14:9,
 and idempotent regeneration. Initial transcription slips and a repeated short
 cue were rejected before any index write; lengthened, source-visible cues
 resolve uniquely. No projection rule or record field changed.
+
+### Malachi continuation, 2026-11-03
+
+All eight Malachi portions were read in native edge bands and full-page
+previews, including six additional images and shared JC 565/BHL 855.
+Printed footers and BHL headers were checked separately from filenames.
+Private evidence retains exact original identities, hashes and crop boxes.
+
+| Edition | Scan filename | Observed printed page | Malachi interval in MAM atom positions |
+|---|---|---:|---|
+| JC | `565-Zc-Ma.jpg` | 565 | 1:1 atom 1 through 1:12 atom 11 |
+| JC | `566-Ma.jpg` | 566 | 1:13 atom 1 through 3:5 atom 10 |
+| JC | `567-Ma.jpg` | 567 | 3:5 atom 11 through 3:24 atom 15 |
+| BHL | `0855-Zc-Ma.jpg` | 855 | 1:1 atom 1 through 1:3 atom 8 |
+| BHL | `0856-Ma.jpg` | 856 | 1:3 atom 9 through 2:5 atom 8 |
+| BHL | `0857-Ma.jpg` | 857 | 2:5 atom 9 through 3:4 atom 4 |
+| BHL | `0858-Ma.jpg` | 858 | 3:4 atom 5 through 3:21 atom 15 |
+| BHL | `0859-Ma.jpg` | 859 | 3:22 atom 1 through 3:24 atom 15 |
+
+One of two JC breaks and three of four BHL breaks split verses. BHL 856,
+857 and 858 begin with continuations of 1:3, 2:5 and 3:4; their headers
+start at 1:4, 2:6 and 3:5. BHL 859 begins at 3:22, matching its header.
+
+Malachi 3:22 contains the explicit large-letter template `מ:אות-ג` within
+`SLH_WORD`. Its maintained `IN_WORD_TMPL_NAMES` membership and exact
+parameter-1 schema establish its contribution. The reader now validates and
+recurses into that parameter, preserving the zayin in `זכרו` as one atom.
+The independent MAM-simple comparison handles its explicit `letter-large`
+node and agrees on all 55 verses and 876 atoms. This projection says nothing
+about a source edition's printed letter size.
+
+BHL 859 prints 3:23 again, unnumbered, after 3:24. Its record's stop cue
+marks the canonical 3:24 ending, and its note preserves the following
+repetition. Both occurrences of 3:23 are on the same page, so verse-to-page
+lookup remains exact; this index has no occurrence coordinates. Following
+`mb_cmn/mam_json_verses.py`, the independent comparison explicitly validates
+and excludes MAM-simple's `good-ending` node from the final verse's atoms.
+It contributes no additional verse or atom interval. JC 567 ends with 3:24
+without that following repetition.
+
+Six focused tests pass (30 deselected), including complete independent atom
+comparison; the catalog check reports five editions, 5,720 pages, 211 records
+and two segments without problems. Direct checks cover all four within-verse
+splits, qualified and cross-page lookups, ambiguous-phrase refusal, intact
+3:22 word/lookup, both final verses and idempotent regeneration. Black and
+whitespace checks pass. The full suite and mega were not run under the
+ordinary focused-check policy. No main integration or deployment occurred.
+The large-census review boundary below still applies.
 
 **Phase 0 — survey and tracked inventory. DONE, 2026-08-07.** The code is
 `py/main_scan_pages.py` (`survey`, `check`) over `py/scan_pages/`, with the lint at
