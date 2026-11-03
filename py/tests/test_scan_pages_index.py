@@ -16,6 +16,10 @@ from mb_cmn import paths
 from mb_cmn import mam_simple_json
 from accgram import mam_simple_verse
 from mb_misc import osis_book_abbrevs
+from mb_cmn import bib_locales as tbn, read_books_from_mam_parsed_plus as plus
+from mb_cmn import template_names
+from copy import deepcopy
+import pytest
 import re
 
 
@@ -139,3 +143,90 @@ def test_every_record_edge_resolves_to_its_observed_page():
                 assert [hit["page"] for hit in hits] == [rec["page"]]
                 count += 1
     assert count, "No observed page edges were queried"
+
+
+def test_nested_vowel_ketiv_qere_agrees_with_independent_simple_export():
+    """Cross-check each newly supported nested form in the Ezekiel source corpus."""
+    book = plus.read_parsed_plus_bk39s(
+        ["Ezekiel"], mam_parsed_path=paths.mam_parsed_path()
+    )["Ezekiel"]
+    simple_path = mam_simple_verse.mam_simple_json_path(
+        paths.repo_root() / "MAM-simple" / "json-vtrad-mam", "Ezekiel"
+    )
+    exported = {
+        tuple(map(int, verse["osisID"].split(".")[1:])): verse
+        for verse in mam_simple_json.verses(
+            mam_simple_json.read_book_group(simple_path)
+        )
+    }
+    checked = 0
+    for bcvt, row in book["verses_plus"].items():
+        nested = [
+            element
+            for element in row.EP
+            if isinstance(element, dict)
+            and element["tmpl_name"] in {"כו״ק", "קו״כ"}
+            and any(
+                isinstance(form, dict)
+                and form.get("tmpl_name") == template_names.QAMATS_VARIANT
+                for form in element["tmpl_params"].values()
+            )
+        ]
+        if not nested:
+            continue
+        cv = tbn.bcvt_get_chnu(bcvt), tbn.bcvt_get_vrnu(bcvt)
+        parts = []
+        for node in exported[cv]["contents"]:
+            if node["type"] == "text":
+                parts.append(node["text"])
+            else:
+                assert node["type"] == "kq"
+                assert sorted(child["type"] for child in node["contents"]) == [
+                    "kq-k",
+                    "kq-q",
+                ]
+                parts.append(
+                    next(
+                        child["text"]
+                        for child in node["contents"]
+                        if child["type"] == "kq-q"
+                    )
+                )
+        expected = tuple(
+            letters
+            for token in re.split(r"[\s־]+", "".join(parts))
+            if (letters := "".join(ch for ch in token if "א" <= ch <= "ת"))
+        )
+        assert text.letters_atoms(text._body_text(row.EP)) == expected, cv
+        for wrapper in nested:
+            # Mutate the independently captured form: accepting an unknown
+            # wrapper, unequal alternatives or extra slots would invalidate
+            # this one-to-one physical alignment even if the verse still parsed.
+            key = next(
+                key
+                for key, form in wrapper["tmpl_params"].items()
+                if isinstance(form, dict)
+            )
+            form = wrapper["tmpl_params"][key]
+            corrupt_forms = []
+            bad = deepcopy(form)
+            bad["tmpl_name"] = "unsupported"
+            corrupt_forms.append(bad)
+            bad = deepcopy(form)
+            bad["tmpl_params"]["ד"] += "א"
+            corrupt_forms.append(bad)
+            bad = deepcopy(form)
+            for alternative in ("ד", "ס"):
+                bad["tmpl_params"][alternative] += " " + bad["tmpl_params"][alternative]
+            corrupt_forms.append(bad)
+            bad = deepcopy(form)
+            del bad["tmpl_params"]["ס"]
+            corrupt_forms.append(bad)
+            corrupt_forms.append([deepcopy(form)])
+            for bad_form in corrupt_forms:
+                bad_wrapper = deepcopy(wrapper)
+                bad_wrapper["tmpl_params"][key] = bad_form
+                with pytest.raises((ValueError, TypeError)):
+                    text._body_text([bad_wrapper])
+        checked += 1
+    assert checked, "No nested vowel ketiv/qere was cross-checked"

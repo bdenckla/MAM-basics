@@ -167,6 +167,20 @@ for a fresh session that has no other context. Its thin pointer issue is #349, f
   Accepted whole-book lookup and catalog counts are unchanged. The next
   chapter group reaches the unresolved 23:42 alignment case.
 
+- 2026-11-03, sixth Ezekiel checkpoint: seventeen further native portions
+  (JC 497–503; BHL 756–765) complete private evidence for chapters 20–48:
+  842 verses / 12,402 atoms per edition. Chapters 20–24 add 188 complete
+  verses / 2,649 atoms, using the preserved chapter-24 continuations.
+  Eighty of 119 Ezekiel portions are verified; 39 remain (16 JC, 23 BHL).
+  All 78 cumulative page joins and 73 split-verse cases pass exact checks.
+  At 23:42, both native editions establish one written/qere slot. The qere's
+  named vowel-alternative wrapper now uses the existing consonant-identical
+  branch rule, with strict string-form and single-atom guards. Independent
+  MAM-simple comparison passes for 1,271 Ezekiel verses / 18,694 atoms;
+  8:6 and 9:11 remain explicitly unsupported. Seven focused tests pass,
+  including an independent nested-form comparison and malformed-form refusals.
+  Accepted whole-book lookup and catalog counts remain unchanged.
+
 ## Codex entry indexes
 
 `in/lci_recs.json` is the public Leningrad Codex entry index. Its canonical top level
@@ -695,13 +709,17 @@ The first-phase text projection accepts Scripture strings, the target of a
 legarmeh marker `מ:לגרמיה-2` and paseq `מ:פסק` as boundaries without atoms, and the main
 one-atom form of the modern trivial ketiv/qere template, matching MAM-simple.
 The Micah continuation adds ordinary ketiv/qere when both forms are one atom,
-using the qere spelling at that common position. The Nahum continuation adds
+using the qere spelling at that common position. Ezekiel adds the named
+vowel-alternative wrapper inside such a form, only with string alternatives
+whose consonantal atoms agree and preserve a single slot. The Nahum continuation adds
 the special-letter word wrapper and small-letter template; Malachi adds the
 explicit large-letter template. All retain their Scripture parameter without
 inserting a word boundary. Hosea adds the named `פפ` paragraph-break template,
 which contributes a separator while its optional annotation contributes no
-Scripture. It rejects multi-atom
-ketiv/qere, other unimplemented templates and named Decalogue strands.
+Scripture. Ezekiel also supports the explicitly named special two-word
+ketiv/qere subtype with exactly two ordered atoms in both forms, and the
+matching one-atom written-but-not-read form. Other multi-atom ketiv/qere,
+unimplemented templates and named Decalogue strands remain unsupported.
 Extending those cases needs explicit source alignment;
 template names or argument shapes are not grounds for guessing it. An
 atoms-per-page advisory band remains deferred until representative full-page

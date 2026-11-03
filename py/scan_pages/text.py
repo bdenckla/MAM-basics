@@ -6,7 +6,8 @@ the modern trivial ketiv/qere template, plus explicit paseq/legarmeh and
 the named paragraph markers. A written-but-not-read word contributes its
 unpointed written atom, following the maintained MAM-simple atom policy.
 Ordinary ketiv/qere uses the qere spelling only when both forms are one atom,
-so either printed form occupies the same position. The explicitly named
+so either printed form occupies the same position. Its named vowel-alternative
+wrapper may select consonant-identical string forms. The explicitly named
 two-word special form likewise preserves two ordered slots in both forms.
 Other multi-atom ketiv/qere and alternative strands need source alignment.
 The special-letter word wrapper and the small/large-letter templates recurse into
@@ -103,16 +104,10 @@ def _body_text(elements):
             parts.append(params["2"])
         elif isinstance(element, dict) and element["tmpl_name"] in {"כו״ק", "קו״כ"}:
             params = template_names.validate_current_plus_template(element)
-            if not all(
-                isinstance(params[key], str) and len(letters_atoms(params[key])) == 1
-                for key in ("1", "2")
-            ):
-                raise ValueError(
-                    "Ordinary ketiv/qere needs one atom in each form for scan alignment"
-                )
+            _ketiv, qere = (_ordinary_kq_form(params[key]) for key in ("1", "2"))
             # Both template orders store ketiv in 1 and qere in 2. Match
             # MAM-simple's selected qere; each source form has the same slot.
-            parts.append(params["2"])
+            parts.append(qere)
         elif isinstance(element, dict) and element["tmpl_name"] in {
             "פפ",
             "פפפ",
@@ -140,6 +135,28 @@ def _body_text(elements):
                 f"element: {element!r}"
             )
     return "".join(parts)
+
+
+def _ordinary_kq_form(form):
+    if isinstance(form, str):
+        selected = form
+    elif (
+        isinstance(form, dict)
+        and form.get("tmpl_name") == template_names.QAMATS_VARIANT
+    ):
+        params = template_names.validate_current_plus_template(form)
+        if not all(isinstance(params[key], str) for key in ("ד", "ס")):
+            raise ValueError("Ketiv/qere vowel alternatives need string forms")
+        # Reuse the closed vowel rule: both branches must have identical
+        # consonantal atoms. This does not admit other nested template families.
+        selected = _body_text([form])
+    else:
+        raise ValueError("Unsupported ordinary ketiv/qere form")
+    if len(letters_atoms(selected)) != 1:
+        raise ValueError(
+            "Ordinary ketiv/qere needs one atom in each form for scan alignment"
+        )
+    return selected
 
 
 def _target_text(target):
