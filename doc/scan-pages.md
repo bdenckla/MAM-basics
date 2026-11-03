@@ -146,6 +146,17 @@ for a fresh session that has no other context. Its thin pointer issue is #349, f
   passes for 1,270 Ezekiel verses, with the same three explicit refusals.
   Accepted catalog counts and whole-book lookup coverage are unchanged.
 
+- 2026-11-03, fourth Ezekiel checkpoint: thirteen further native portions
+  (JC 508–512; BHL 772–779) extend the private evidence to complete chapters
+  30–48: 533 verses / 8,084 atoms per edition. Chapters 30–34 add 140 verses /
+  2,110 atoms, using the preserved chapter-34 continuations. Fifty-three of
+  119 Ezekiel portions are verified; 66 remain (27 JC, 39 BHL). All 51
+  cumulative page joins and 47 split-verse cases pass exact checks. A repeated
+  clause at 32:24–25 requires a longer unique boundary cue. BHL774 begins with
+  a continuation of chapter 30 although its running header starts at 31:1.
+  No projection changes were needed, and the three explicit refusals remain.
+  Accepted whole-book lookup and catalog counts are unchanged.
+
 ## Codex entry indexes
 
 `in/lci_recs.json` is the public Leningrad Codex entry index. Its canonical top level
