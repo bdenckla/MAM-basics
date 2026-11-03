@@ -204,6 +204,19 @@ for a fresh session that has no other context. Its thin pointer issue is #349, f
   93 checked split verses. No projection or accepted catalog changes were
   made; 8:6 and 9:11 remain refused, and whole-book lookup stays unavailable.
 
+- 2026-11-03, ninth Ezekiel checkpoint: eight further native sources
+  (JC 484–486; BHL 737–741), together with new fragments on the two retained
+  opening pages, add 85 supported verses / 1,323 atoms in chapters 5–9.
+  Native inspection confirms both refused cases are one-written-word/two-qere-word
+  forms. No unequal-count alignment rule was added. Three separate supported
+  runs end at 8:5, cover 8:7–9:10, and resume at 10:1; no interval bridges
+  either refused verse. Private coverage in chapters 5–48, excluding those
+  two verses, totals 1,189 verses / 17,481 atoms per edition.
+  Fully verified portions total 108 of 119; eleven remain incomplete:
+  four partially verified pages and seven with no verified span yet.
+  The 116 candidate intervals pass 110 within-run joins and 100 split-verse
+  checks. Accepted whole-book lookup and catalog counts remain unchanged.
+
 ## Codex entry indexes
 
 `in/lci_recs.json` is the public Leningrad Codex entry index. Its canonical top level
