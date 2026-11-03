@@ -135,6 +135,17 @@ for a fresh session that has no other context. Its thin pointer issue is #349, f
   refusals are 8:6, 9:11 and 23:42. Twenty-five cumulative page joins,
   including twenty-three split-verse cases, pass exact atom checks.
 
+- 2026-11-03, third Ezekiel checkpoint: thirteen further native portions
+  (JC 513–517; BHL 780–787) join the preserved evidence. Complete chapters
+  35–48 now cover 393 verses / 5,974 atoms per edition in private evidence.
+  Forty of 119 Ezekiel portions are verified; 79 remain (32 JC, 47 BHL).
+  Chapters 35–39 add 133 complete verses / 2,009 atoms, reusing the JC518
+  continuation. The differing partial chapter-34 spans remain explicit.
+  All 38 cumulative page joins and 35 split-verse cases pass exact checks.
+  No projection changes were needed; independent text comparison still
+  passes for 1,270 Ezekiel verses, with the same three explicit refusals.
+  Accepted catalog counts and whole-book lookup coverage are unchanged.
+
 ## Codex entry indexes
 
 `in/lci_recs.json` is the public Leningrad Codex entry index. Its canonical top level
