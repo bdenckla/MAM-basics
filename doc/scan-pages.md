@@ -157,6 +157,16 @@ for a fresh session that has no other context. Its thin pointer issue is #349, f
   No projection changes were needed, and the three explicit refusals remain.
   Accepted whole-book lookup and catalog counts are unchanged.
 
+- 2026-11-03, fifth Ezekiel checkpoint: ten further native portions
+  (JC 504–507; BHL 766–771) complete private evidence for chapters 25–48:
+  654 verses / 9,753 atoms per edition. Chapters 25–29 add 121 complete
+  verses / 1,669 atoms, using preserved chapter-29 continuations. Sixty-three
+  of 119 Ezekiel portions are verified; 56 remain (23 JC, 33 BHL). All 61
+  cumulative page joins and 57 split-verse cases pass exact checks. No
+  projection changes were needed; 8:6, 9:11 and 23:42 remain refused.
+  Accepted whole-book lookup and catalog counts are unchanged. The next
+  chapter group reaches the unresolved 23:42 alignment case.
+
 ## Codex entry indexes
 
 `in/lci_recs.json` is the public Leningrad Codex entry index. Its canonical top level
