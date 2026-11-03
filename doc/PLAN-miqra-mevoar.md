@@ -3,8 +3,9 @@
 State: live, written 2026-11-02; Ben gave his word to execute it the same day. Stages 1 to 6 ran
 that evening, and Stage 7 on 2026-11-03: Avi had himself created Joshua 1, and BDencklaBot created
 Joshua 2. Stage 8 waits on Avi's look at Joshua 2 and on Ben's word. Stage 9, the base-chapter
-index, was added on 2026-11-03 at Ben's request. It waits on his word to execute it, in a fresh
-session. The execution ledger below records each finished stage.
+index, was added on 2026-11-03 at Ben's request. He gave his word to execute it the same day, and
+a fresh session built it and ran its dry run; its save waits on his word for that run. The
+execution ledger below records each finished stage.
 
 Written 2026-11-02 by Claude (Opus 5.5) in the Phase 1 session that the session "Commander for
 Claude's forests" started for Avi's email "Mikra Mevo'ar at Wikisource". The quoted decisions are
@@ -23,8 +24,8 @@ MAM's chapters.
 
 ## Decisions ledger
 
-Entries 1 to 3, 10 and 11 are Ben's decisions. Entries 5 to 9 were Claude's proposals, approved
-by Ben's word in entry 3.
+Entries 1 to 3 and 10 to 12 are Ben's decisions. Entries 5 to 9 were Claude's proposals,
+approved by Ben's word in entry 3.
 
 1. **Route: the bot, after a pilot.** Ben, 2026-11-02, answering "Which route should the pages
    take to Wikisource?" with "Bot, after a pilot" rather than "Avi pastes them". Active.
@@ -68,6 +69,12 @@ by Ben's word in entry 3.
     Ezra–Nehemiah and Chronicles: one section per book, or one per part?": "One per book". Each
     such book gets one section with a labelled run per part, as the Twelve has; Stage 9's design
     item 2 follows it. Active.
+12. **The index's save does not wait for Avi.** Ben, 2026-11-03, about 11:07 New York time, in
+    the Phase 2 session, answering "The email to Avi is ready to send, as in my last message;
+    it’s saved at email-to-avi-2026-11-03.md.": "I don't think it is ready to send until we
+    complete all Miqra Mevoar work that is not gated on his approval (and report it in that
+    email); in particular the 929-chapter index work". So the index's save needs only Ben's word
+    for that run, with its summary, and the email reports it. Active.
 
 Deferred, each until its own decision:
 
@@ -172,6 +179,52 @@ byte-for-byte copy of that frozen plan; this ledger and the State line are the e
   the generated text and exited zero, and the edit carries the bot flag. A dry rerun found both
   pages unchanged. `py/ws/ws_bot_edit_history.md` has the entry, with the run directories. Stage 8
   waits on Avi's look at Joshua 2 and on Ben's word.
+- **Stage 9's word, 2026-11-03:** Ben, answering "Stage 9, the index of all 929 chapters: only
+  your word to execute it. I'll then send the commander a standalone prompt for a fresh session.
+  The edit summary gets your approval when its save comes.": "Please do this, and then compose
+  an email to Avi describing what we've done and asking for his approval and anything else that
+  seems like it should be part of the process he outlines." The commander started a fresh Claude
+  (Opus 5.5) session for the stage, with a brief whose Part A is the Phase 2 session's prompt,
+  frozen at SHA-256 `561854C99BA606EF96475AA00D922A702549606DB024CFA8FA2A9221D8BD415B`.
+- **Stage 9's checkout:** `C:/Users/BenDe/GitRepos2/MAM-basics`, assigned by the commander.
+  Verified 2026-11-03 at about 11:14 New York time: on `main`, clean, at `75bb5ef1`, then
+  fast-forwarded to origin's `901574086130b4b961b9e1889171f72cfe5f207a`, the varika run's push,
+  of which `75bb5ef1` is an ancestor.
+- **Stage 9's code:** `py/miqra_mevoar/index_page.py`, the mode `py/main_ws_bot.py
+  miqra-mevoar-index` in `py/subcommands/ws_bot_miqra_mevoar_index.py`, and
+  `py/tests/test_miqra_mevoar_index.py`. Beyond the design:
+  - `wikitext.page_title` takes a book's `BS_` pair, so that it titles any of MAM's chapters, and
+    `wikitext.INDEX_TITLE` and `wikitext.CATEGORY` are new public names. `pages` then wrote all 56
+    pages and `titles.tsv` equal byte for byte to Stage 3's output.
+  - `mam_simple.py` reads MAM-simple's book level by a closed dispatch. The files of Samuel,
+    Ezra–Nehemiah and Chronicles have a petuha break between their two books, on which the old
+    reading would have failed. `spi-samekh3`, a setuma break found in eight books outside the
+    six, joins the breaks.
+  - The test's oracle is independent of the index's table: it orders the books by
+    `bib_locales.ALL_BK39_IDS`, finds each in MAM-simple by its OSIS abbreviation in
+    `osis_book_abbrevs`, and takes each chapter from its chapter element's osisID.
+  - The parser requires each line of links to read back as itself, and the index to begin with
+    its information section. A run also writes its diff as `index.diff` and its facts as
+    `misc/index-run.json`.
+  - Offline, on Phase 1's capture of revision 3084327, the generator kept all 13 old sections and
+    wrote 24, with 929 links where there were 267. The framing and the category line kept their
+    bytes, and the page grew from 22,242 bytes to 71,895. The unified diff adds 34 lines and
+    removes one, the Twelve's line, whose two old runs reappear unchanged in the new one. A
+    second pass over the new text changes nothing.
+  - Checks: `git diff --check`, Black, and the targeted tests with the tree-wide lints (91
+    passed); the full suite (1,426 passed, 5 skipped, none of them the new test's). The mega was
+    skipped, as in Stage 4.
+- **Stage 9's dry run, 2026-11-03 at 11:39 New York time,** from the tree that this stage's
+  commit records, after the commander confirmed that no other BDencklaBot run was in progress.
+  `miqra-mevoar --no-save` for Joshua 1 and 2 found both pages unchanged and exited zero (run
+  `.novc/mam-ws-bot-miqra-mevoar-runs/20261103-113923-412155-0500/`), so generalizing the title
+  function changed no title. `miqra-mevoar-index --no-save` read the index's latest revision,
+  3084327, Dovi's of 2026-09-23 at 07:21:02 UTC, on page id 375628; its bytes equal Phase 1's
+  capture, and the new text equals the offline result. Every old section reappears, the Twelve's
+  two old runs within its new section. The run exited non-zero, as a dry run before a save does
+  (run `.novc/mam-ws-bot-miqra-mevoar-index-runs/20261103-113936-837559-0500/`). The save waits
+  on Ben's word for that run, with `--base-revid 3084327` and its summary (decisions ledger
+  entry 12).
 
 ## Background for a fresh executor
 

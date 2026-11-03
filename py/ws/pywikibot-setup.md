@@ -158,6 +158,29 @@ changes, so there is no post-run download. Each run writes the generated pages t
 `misc/outcomes.json` there, and the saved pages' revision ids and diff links to
 `misc/saved-pages.json`.
 
+## Miqra Mevoar's base-chapter index
+
+`main_ws_bot.py miqra-mevoar-index` completes the index of the base chapters, the page
+`מקרא מבואר/פרקי בסיס`, so that it links every chapter that MAM-simple has, 929 in 39 books.
+`py/miqra_mevoar/index_page.py` generates the new text from the live text: the framing above
+the book sections and the category line below them keep their bytes, every old section
+reappears, and the Twelve's old runs reappear within its new section. Every run reads the
+index's latest revision through the API, uncached, and writes `old.wiki`, `new.wiki`,
+`index.diff` and `misc/index-run.json` to `.novc/mam-ws-bot-miqra-mevoar-index-runs/<timestamp>/`:
+
+       .venv/Scripts/python.exe py/main_ws_bot.py miqra-mevoar-index --no-save -dir:$env:USERPROFILE/.pywikibot
+
+       .venv/Scripts/python.exe py/main_ws_bot.py miqra-mevoar-index --base-revid <revision id> --summary "<summary>" -dir:$env:USERPROFILE/.pywikibot
+
+`--no-save` prints the base revision id and the number of links, saves nothing, and, before
+the save, is expected to exit non-zero, since the index would change. A saving run needs
+`--base-revid`, the revision whose diff Ben reviewed, and `--summary`, both approved with the
+run. It refuses unless that revision is still the latest, saves with `nocreate` and with
+that revision as `baserevid` and its time as `basetimestamp`, so that an edit made since makes
+MediaWiki detect a conflict, then reads the saved revision back and exits non-zero unless its
+bytes equal the generated text's. The saved revision's ids and diff link go to
+`misc/saved-pages.json`.
+
 ## Real-run artifact layout
 
 Each `main_ws_bot.py real` run now writes artifacts to a fresh timestamped

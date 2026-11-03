@@ -19,7 +19,8 @@ def run(out_dir):
         for chapter in tracked.read_record(book)["chapters"]:
             rel = f"{book.stem}/{chapter['chapter']:02d}.wiki"
             _write(out / rel, wikitext.chapter_wikitext(chapter))
-            titles.append(f"{rel}\t{wikitext.page_title(book, chapter['chapter'])}")
+            title = wikitext.page_title(book.mam_book, chapter["chapter"])
+            titles.append(f"{rel}\t{title}")
     _write(out / "titles.tsv", "\n".join(titles) + "\n")
     print(f"{len(titles)} pages: {out}")
 

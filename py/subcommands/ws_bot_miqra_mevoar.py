@@ -58,7 +58,7 @@ def run(stems, chapter_range, pywikibot_args, summary=None, no_save=False):
     outcomes, saved, texts, failures = [], [], {}, []
     try:
         for book, chapter in selected:
-            title = wikitext.page_title(book, chapter["chapter"])
+            title = wikitext.page_title(book.mam_book, chapter["chapter"])
             texts[title] = wikitext.chapter_wikitext(chapter)
             _write_text_file(run_root, "pages", book.stem, chapter, texts[title])
             page = pywikibot.Page(site, title)
