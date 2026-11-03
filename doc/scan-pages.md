@@ -181,6 +181,16 @@ for a fresh session that has no other context. Its thin pointer issue is #349, f
   including an independent nested-form comparison and malformed-form refusals.
   Accepted whole-book lookup and catalog counts remain unchanged.
 
+- 2026-11-03, seventh Ezekiel checkpoint: twelve further native portions
+  (JC 492–496; BHL 749–755) complete private evidence for chapters 15–48:
+  983 verses / 14,351 atoms per edition. Chapters 15–19 add 141 complete
+  verses / 1,949 atoms, using the preserved chapter-19 continuations.
+  Ninety-two of 119 Ezekiel portions are verified; 27 remain (11 JC, 16 BHL).
+  All 90 cumulative joins and 83 split-verse cases pass exact checks.
+  No projection changes were needed; 8:6 and 9:11 remain unsupported.
+  Seven focused tests pass, and accepted whole-book lookup and catalog
+  counts remain unchanged.
+
 ## Codex entry indexes
 
 `in/lci_recs.json` is the public Leningrad Codex entry index. Its canonical top level
