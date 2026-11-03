@@ -624,6 +624,15 @@ being drafted; the other rows were proposed for his approval.
 | Ḥilluf | variants | | |
 | Ta'am | accents | | |
 
+**Shuruq and shuruq dot.** The table's shuruq is a vav plus its shuruq dot; the shuruq dot is
+the mark alone, and *"a shuruq dot is not any kind of vowel, under or otherwise"* (Ben,
+2026-11-03). Keep a ḥolam male, a vav plus its ḥolam male dot, apart from the ḥolam male dot in
+the same way; that dot is not any kind of vowel either. Ben, the same day: *"Both you (Claude)
+and Codex constantly confuse 'shuruq' (vav plus shuruq dot) with shuruq dot."* A Claude session
+made the confusion both ways that day. Its table of the letters before stress helpers gave a
+vav the vowel "shuruq", as if the dot were a vowel point on it. It then read Ben's ruling on
+the dot as a reason to take shuruq out of this table's vowels.
+
 **Stroke.** Ben, 2026-10-13: *"Any straight mark can be referred to as a stroke, in the context
 of describing a manuscript. But it can also be described as a mark, whether in manuscript or
 typographic (screen or paper) form. narpas stroke, legarmeh stroke, silluq stroke, meteg stroke,

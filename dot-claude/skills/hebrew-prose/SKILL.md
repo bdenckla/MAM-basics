@@ -38,6 +38,9 @@ the repository-specific reference before writing. Load only the references neede
    secondary stress, and do not infer vowels from secondary-stress placement. Treat
    stress-helper templates as choices among strands, not as a license to traverse all
    branches. Reserve `MUDGASH` and `mudgash` for literal Unicode code-point names.
+   Never confuse a **shuruq**, a vav plus its shuruq dot, with the **shuruq dot** alone,
+   which is not any kind of vowel; keep a **ḥolam male** and its **ḥolam male dot** apart in
+   the same way.
 8. **Show the Hebrew form in Unicode.** Do not replace the form with a transliteration or an
    English gloss. In mixed-direction prose, the first strong character of a line must be Latin;
    give Hebrew an English runway or its own RTL table cell. A section sign and a backtick are
