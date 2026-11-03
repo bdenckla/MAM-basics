@@ -286,6 +286,14 @@ for a fresh session that has no other context. Its thin pointer issue is #349, f
   records relocate unchanged; 71 joins and 63 split-verse checks pass.
   Whole-book Jeremiah lookup and adopted coverage remain unchanged.
 
+- 2026-11-03, seventh Jeremiah checkpoint: fourteen additional native portions
+  (JC 445-450; BHL 680-687) extend private evidence to complete chapters
+  23-52: 826 verses / 13,722 atoms per edition. Chapters 23-27 add 134 verses /
+  2,261 atoms. Eighty-seven of 136 portions are verified; 49 remain (20 JC,
+  29 BHL). All 73 earlier records relocate unchanged, including their literal
+  spelling evidence. Eighty-five joins and 76 split-verse checks pass.
+  Whole-book Jeremiah lookup and adopted coverage remain unchanged.
+
 ## Codex entry indexes
 
 `in/lci_recs.json` is the public Leningrad Codex entry index. Its canonical top level
@@ -1588,6 +1596,46 @@ forms and two ambiguous mapped pairs refuse. Catalog check passes for 5
 editions, 5,720 pages, 361 records and 2 segments. No projection code or adopted
 index changed. **Whole-book Jeremiah lookup remains refused**; accepted coverage
 stays 13 books / 2,323 verses per edition. Sixty-three Jeremiah portions remain.
+
+### Jeremiah chapters 23-27 boundary checkpoint, 2026-11-03
+
+Native inspection establishes that BHL 680 contains the chapter-23 opening.
+Fourteen further physical portions are verified: JC 445-450 and BHL 680-687.
+Their twenty-eight first/last body bands, fourteen printed page numbers and
+eight BHL headers were inspected. All 73 earlier records relocate unchanged,
+including the two literal BHL spellings recorded at the preceding checkpoint.
+
+Complete private coverage is **chapters 23-52: 826 verses / 13,722 atoms per
+edition**. Chapters 23-27 add 134 verses / 2,261 atoms. JC starts at 22:11
+atom 19, covering 14,006 atoms; BHL starts at 22:17 atom 10, covering 13,923
+atoms. Both end at 52:34 atom 17. Differing chapter-22 prefixes remain explicit.
+
+| Edition | Verified Jeremiah portions | Remaining | Public Jeremiah adoption |
+|---|---:|---:|---|
+| JC | 36 / 56 | 20 | No |
+| BHL | 51 / 80 | 29 | No |
+
+All 85 cumulative joins and 76 split-verse qualified/cross-page checks pass.
+Fourteen joins are new: thirteen split verses and the complete-verse break
+at JC 446/447 (23:33/23:34). Each declared suffix atom belongs to exactly one
+physical portion. Each edition refuses 890 repeated-atom queries in complete
+chapters 23-52. All eight new BHL headers omit opening continuations; page 683
+starts inside 24:1 although its header starts at 24:2.
+
+BHL 687's opening word is printed `וירושלם`, corresponding to canonical
+`וירושלים` at 26:18 atom 22. Adjacent quotation text establishes one ordered
+word on each side. The private record keeps the literal source phrase separate
+from the canonical lookup cue, with exact position and spelling assertions.
+The previous two literal correspondences at 28:1 remain unchanged. No generic
+spelling aliases or production projection changes were introduced. The eight
+previous JC numbering checks remain preserved evidence, without a new offset.
+
+Fresh frontier testing passes (1 passed, 6 deselected). All 1,364 verses /
+21,833 atoms agree with independent MAM-simple; fourteen malformed unequal
+forms and two ambiguous mapped pairs refuse. Catalog check passes for 5
+editions, 5,720 pages, 361 records and 2 segments. No code or adopted index
+changed. **Whole-book Jeremiah lookup remains refused**; accepted coverage
+stays 13 books / 2,323 verses per edition. Forty-nine Jeremiah portions remain.
 
 **Phase 0 - survey and tracked inventory. DONE, 2026-08-07.** The code is
 `py/main_scan_pages.py` (`survey`, `check`) over `py/scan_pages/`, with the lint at
