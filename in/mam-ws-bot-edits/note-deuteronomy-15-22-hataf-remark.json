@@ -1,0 +1,14 @@
+{
+  "summary": "Deut 15:22 doc-note: the standard wording, with the remark on the ḥataf after the form, as at 15:20",
+  "edit-kind": "explicit-replacement",
+  "edits": {
+    "Deuter": [
+      {
+        "ch": "טו",
+        "old": "ל,ק3=תֹּאכֲלֶ֑נּוּ וכמו כן בקורן}}",
+        "new": "ל,ק3=תֹּאכֲלֶ֑נּוּ (חטף) וכמו כן בקורן}}",
+        "comment": "Deuteronomy 15:22: clause 2 of the doc-note, the form for ל,ק3, takes (חטף) after the form, as the same clause of 15:20's note has it, so that the note has the standard wording"
+      }
+    ]
+  }
+}

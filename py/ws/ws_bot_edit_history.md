@@ -822,7 +822,7 @@ infrastructure has changed enough to make them misleading examples:
   `.novc/mam-ws-bot-real-runs/20261103-094018-108619-0500/`, and the one-shot re-run
   `.novc/mam-ws-bot-real-runs/20261103-094407-857140-0500/`.
 
-### Miqra Mevoar's pilot: the bot's first base chapter, Joshua 2, 2026-11-03 — current
+### Miqra Mevoar's pilot: the bot's first base chapter, Joshua 2, 2026-11-03
 
 - **Purpose:** Create the base-chapter pages of Rabbi David Kokhav's Miqra Mevoar, his paraphrase
   of the Bible, on Hebrew Wikisource from the Word files that Avi keeps in a pCloud folder, as
@@ -859,6 +859,50 @@ infrastructure has changed enough to make them misleading examples:
 - **JSON file:** `in/miqra-mevoar/yehoshua.json`; run artifacts
   `.novc/mam-ws-bot-miqra-mevoar-runs/20261103-100801-090980-0500/`, dry run
   `.novc/mam-ws-bot-miqra-mevoar-runs/20261103-100625-873410-0500/`.
+
+### The remark on the ḥataf in the note on Deuteronomy 15:22, 2026-11-03 — current
+
+- **Purpose:** Give clause 2 of the doc-note on Deuteronomy 15:22, which quotes the form of the
+  Leningrad Codex and ק3, the remark (חטף) after the form, as the same clause of 15:20's note on
+  the same word has it: `ל,ק3=תֹּאכֲלֶ֑נּוּ וכמו כן בקורן`
+  became `ל,ק3=תֹּאכֲלֶ֑נּוּ (חטף) וכמו כן בקורן`. The varika run above had found that
+  py/main_explicit_xataf.py could not read the ḥataf form of 15:22's note, since its
+  `sigla=word` pattern needs a parenthesis or angle bracket after the form.
+- **Authorization:** Ben, 2026-11-03, choosing among a manual mapping, the note's wording and
+  the extractor: "Let's change Wikisource to have the standard wording, the one in which חטף
+  appears in parens. Doc-notes are semi-structured data and we want to keep them as structured
+  as possible. I think in this case it helps both human and machine readers, but there may be
+  other cases where what is good for human is not good for a machine, and we'll have to make a
+  judgment call as to which to prioritize." The varika run's Claude Code session wrote the files
+  and ran them the same day.
+- **Saving run:** Deuteronomy 15, revision 3101191 → 3101198.
+- **Safety rule:** a script cut `old` from the mirror at `90157408`, from the end of the
+  clause's form through the note's closing braces, and copied the remark from 15:20's clause,
+  whose prose after the remark equals 15:22's; `old` occurs exactly once in the chapter. The
+  `--no-save` dry run listed exactly Deuteronomy 15, and its chapter equalled the mirror with
+  the replacement applied, code point for code point, differing from it on verse 22's line
+  alone. Just before the save the page's live revision was still the mirror's. The saving run's
+  chapter equals the dry run's, and the post-run download equals both.
+- **Post-run download:** refetched Deuteronomy 15 and all 36 declared special pages, none of
+  which had changed, and the reparse of Deuteronomy passed all 59 MAM-parsed claims.
+- **One-shot:** `old` describes the pre-edit text. Confirmed 2026-11-03, immediately after the
+  run: a `--no-save` re-run raised "Expected 1 occurrence".
+- **Not saved:** the Song of Ha'azinu's layout page, שירת האזינו/צורת השיר, which Ben had asked
+  the same day to have the varika marks of 32:10 by bot. A one-off script modeled on
+  `py/subcommands/ws_bot_intro.py`, selecting the page by its key in
+  `in/mam-ws-special/manifest.json`, found in its dry run that the live page, revision 2808225,
+  equalled the mirror byte for byte, and that the edit changed its line 47 alone. Its save was
+  refused: the page is protected, for editing and moving, at the sysop level with no expiry, and
+  BDencklaBot is not an administrator. Nothing changed there, and the script and its edit file
+  are not committed.
+- **Edit level:** Raw page text string replacement, chapter-targeted.
+- **JSON files:** `in/mam-ws-bot-edits/note-deuteronomy-15-22-hataf-remark.json` and its
+  selector, `note-deuteronomy-15-22-hataf-remark.chapters.json`; run artifacts
+  `.novc/mam-ws-bot-real-runs/20261103-110232-051401-0500/`, dry run
+  `.novc/mam-ws-bot-real-runs/20261103-110049-583141-0500/`, and the one-shot re-run
+  `.novc/mam-ws-bot-real-runs/20261103-110318-866152-0500/`; the layout page's dry run
+  `.novc/mam-ws-bot-special-runs/20261103-110053-062417-0500/` and refused save
+  `.novc/mam-ws-bot-special-runs/20261103-110140-044503-0500/`.
 
 ## How to look up the original code
 
