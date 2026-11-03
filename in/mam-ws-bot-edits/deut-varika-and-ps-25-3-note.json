@@ -1,0 +1,28 @@
+{
+  "summary": "Varika at Deut 15:22 and, twice, at 32:10, on the letters where the doc-note gives a manuscript a ḥataf, as at 15:20 and 32:18 (MAM-basics#348, #352); Ps 25:3 doc-note: Dotan's ḥolam dot goes to the vav, as in the form the note gives (MAM-basics#356)",
+  "edit-kind": "explicit-replacement",
+  "edits": {
+    "Deuter": [
+      {
+        "ch": "טו",
+        "old": "{{נוסח|תֹּאכְלֶ֑נּוּ|",
+        "new": "{{נוסח|תֹּאכְﬞלֶ֑נּוּ|",
+        "comment": "Deuteronomy 15:22: give the verse's atom תֹּאכְלֶ֑נּוּ a varika after the sheva of its kaf, the letter on which the doc-note's ל,ק3 form has a ḥataf, as the same atom at 15:20 has (MAM-basics issue 348)"
+      },
+      {
+        "ch": "לב",
+        "old": "{{נוסח|יְסֹבְבֶ֙נְהוּ֙ יְב֣וֹנְנֵ֔הוּ|",
+        "new": "{{נוסח|יְסֹבְﬞבֶ֙נְהוּ֙ יְב֣וֹנְﬞנֵ֔הוּ|",
+        "comment": "Deuteronomy 32:10: give each of the verse's two atoms יְסֹבְבֶ֙נְהוּ֙ יְב֣וֹנְנֵ֔הוּ a varika after the sheva of the letter on which the doc-note's א forms have a ḥataf, the first bet of the first atom and the first nun of the second, as 32:18's atom has (MAM-basics issue 352)"
+      }
+    ],
+    "Psalms": [
+      {
+        "ch": "כה",
+        "old": "לאות יו\"ד,",
+        "new": "לאות וי\"ו,",
+        "comment": "Psalms 25:3: in clause 2 of the doc-note, the words now give Dotan's ḥolam dot to the letter vav, לאות וי\"ו, where they said לאות יו\"ד, so that they agree with the form after them, whose ḥolam is on the vav; the form stays as it is (MAM-basics issue 356)"
+      }
+    ]
+  }
+}

@@ -613,7 +613,7 @@ infrastructure has changed enough to make them misleading examples:
   `.novc/mam-ws-bot-intro-runs/20261030-144933-673654-0400/`, dry run
   `.novc/mam-ws-bot-intro-runs/20261030-144635-376992-0400/`.
 
-### Mechon Mamre's name in full in 30 notes, and four misspellings in the Introduction, 2026-11-02 — current
+### Mechon Mamre's name in full in 30 notes, and four misspellings in the Introduction, 2026-11-02
 
 - **Purpose:** Write Mechon Mamre's name in full, מכון ממרא, in the 30 documentation notes
   that did not, as MAM-basics#342 asked. About 300 notes already wrote the name, which is the one
@@ -700,6 +700,73 @@ infrastructure has changed enough to make them misleading examples:
   `.novc/mam-ws-bot-real-runs/20261102-100120-658600-0500/`, and
   `.novc/mam-ws-bot-intro-runs/20261102-100144-977161-0500/`, dry run
   `.novc/mam-ws-bot-intro-runs/20261102-095333-353554-0500/`.
+
+### Varika marks at Deuteronomy 15:22 and 32:10, and the letter's name in the note on Psalms 25:3, 2026-11-03 — current
+
+- **Purpose:** Give a varika to the three atoms in MAM's text that lacked one among the atoms of
+  the Introduction's chapter 3 list of ḥataf vowels on non-guttural letters in the Torah, as
+  MAM-basics#348 and #352 asked; and make the words of a clause in the note on Psalms 25:3 agree
+  with its form. Chapter 2 of the Introduction says that where a manuscript has such a ḥataf to
+  mark vocal shewa, MAM's text has a plain sheva with a varika above the letter. The varika is
+  HEBREW POINT JUDEO-SPANISH VARIKA (U+FB1E), written straight after the sheva, as in the atoms
+  that already had one.
+  - **Deuteronomy 15:22**, תֹּאכְלֶ֑נּוּ became תֹּאכְﬞלֶ֑נּוּ: the varika is on the kaf, where
+    the note's ל,ק3 form, תֹּאכֲלֶ֑נּוּ, has the ḥataf. 15:20's atom, תֹאכְﬞלֶ֙נּוּ֙, whose note
+    gives the same evidence, already had it.
+  - **Deuteronomy 32:10**, יְסֹבְבֶ֙נְהוּ֙ יְב֣וֹנְנֵ֔הוּ
+    became יְסֹבְﬞבֶ֙נְהוּ֙ יְב֣וֹנְﬞנֵ֔הוּ: a varika is on the first bet of the first atom and
+    on the first nun of the second, where the note's א forms, יְסֹבֲבֶ֙נְהוּ֙ יְב֣וֹנֲנֵ֔הוּ,
+    have the ḥataf vowels. 32:18's atom, מְחֹלְﬞלֶֽךָ, whose note also gives the ḥataf to the
+    Aleppo Codex alone, already had one.
+  - **Psalms 25:3**, clause 2 of the note on כׇּל־קֹ֭וֶיךָ: after the Leningrad Codex's form and
+    its remark `(הסגול כנראה באות יו"ד)`, Avi's revision 3101155 had
+    appended `לפי דותן בנספח למהדורתו יש לשייך את נקודת החולם לאות יו"ד, וכך ל!=כָּל־ק֭וֹיֶךָ.`
+    Its words gave Dotan's ḥolam dot to the yod, `לאות יו"ד`, while the form after
+    them, ל!=כָּל־ק֭וֹיֶךָ, has it on the vav, as BHL's Appendix A does by the UXLC's account in
+    change 2023.03.25-22. The words now say `לאות וי"ו`. The form, which equals the one
+    MAM-basics#356 proposed, stays, and so does the remark about the segol. Before this run
+    MAM's notes spelled the vav's name `וי"ו` 667 times in the chapter mirror.
+- **Authorization:** Avi on MAM-basics#348, 2026-11-03: "Both of them should have varika. Feel
+  free to implement. Won't have a screen for this until evening."; on #352: "Yes, they should
+  have varika. Feel free to implement." Ben, 2026-11-03, in the session that closes Avi's
+  issues: "Queue a bot run for 348 and 352, and also just fix the contradiction "The new clause
+  also contradicts itself: its words assign the ḥolam to the yod, but the form it quotes puts it
+  on vav."" and "Fix it by fixing its "words" (Hebrew prose describing the pointed Hebrew) and
+  leaving the (pointed Hebrew) form it "quotes" (presents) alone (since that form is the form I
+  suggested, right?)". He then answered "Yes, start it" in the session that commands Claude's
+  forests. A Claude Code session wrote the files and ran them the same day, from `5f20811b`, the
+  refresh that took Avi's revision 3101155.
+- **Saving run:** Deuteronomy 15, revision 2987754 → 3101191; Deuteronomy 32, 3092658 → 3101192;
+  Psalms 25, 3101155 → 3101193.
+- **Safety rule:** a script built each `old` and `new` from the refreshed mirror. Each
+  Deuteronomy `old` is a note's opening through its lemma, and Psalms 25's is the two words
+  around the letter's name; each occurs exactly once in its chapter. The script put each varika
+  on the letter at which the note's form with the ḥataf has HEBREW POINT HATAF PATAH, required
+  that letter to have a lone sheva, and checked that 15:20's and 32:18's atoms have their varika
+  on the corresponding letter. The `--no-save` dry run listed exactly the three chapters, and
+  each of its chapters equalled the mirror's with the replacements applied, code point for code
+  point, and differed from it on the edited verse's line alone. Just before the save, each
+  page's live revision was still the mirror's. The saving run's chapters equal the dry run's,
+  and the post-run download equals both.
+- **Post-run download:** refetched the three chapters and all 36 declared special pages. Of the
+  special pages only `deuteronomy-32` changed, the chapter page דברים לב/טעמים that the run
+  saved, by its two varika marks. The shell cut the run's output off during the reparse's claims
+  check, by a `Select-Object -First 30` on its pipe, after the downloaded files had been written
+  whole. An unforced `py/main_download.py fr-wikisource --book-chapters-json` over the run's
+  `misc/modified-chapters.json` then fetched nothing, reparsed Deuteronomy and Psalms, passed
+  all 59 MAM-parsed claims and regenerated the documentation and the claims index unchanged.
+- **One-shot:** every `old` describes the pre-edit text. Confirmed 2026-11-03, immediately after
+  the run: a `--no-save` re-run raised "Expected 1 occurrence" at Deuteronomy 15.
+- **Not edited:** the Song of Ha'azinu's layout page, שירת האזינו/צורת השיר, keeps its own copy
+  of 32:10's two atoms without a varika, though its copies of 32:18's and 32:36's atoms have
+  theirs. No one has authorized an edit there, and no bot mode selects the page; whether to
+  change it is Ben's decision.
+- **Edit level:** Raw page text string replacement, chapter-targeted.
+- **JSON files:** `in/mam-ws-bot-edits/deut-varika-and-ps-25-3-note.json` and its selector,
+  `deut-varika-and-ps-25-3-note.chapters.json`; run artifacts
+  `.novc/mam-ws-bot-real-runs/20261103-094120-316824-0500/`, dry run
+  `.novc/mam-ws-bot-real-runs/20261103-094018-108619-0500/`, and the one-shot re-run
+  `.novc/mam-ws-bot-real-runs/20261103-094407-857140-0500/`.
 
 ## How to look up the original code
 
