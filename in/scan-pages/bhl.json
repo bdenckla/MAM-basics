@@ -8773,7 +8773,8 @@
         "Jonah",
         "Micah",
         "Nahum",
-        "Obadiah"
+        "Obadiah",
+        "Tsefaniah"
       ],
       "pages": [
         "0825-A-O.jpg",
@@ -8789,7 +8790,10 @@
         "0835-Na.jpg",
         "0836-Na-Hb.jpg",
         "0837-Hb.jpg",
-        "0838-Hb.jpg"
+        "0838-Hb.jpg",
+        "0839-Ts.jpg",
+        "0840-Ts.jpg",
+        "0841-Ts-Hg.jpg"
       ]
     }
   ],
@@ -9256,15 +9260,30 @@
     {
       "page": "0839-Ts.jpg",
       "bkid": "Tsefaniah",
+      "printed_page": 839,
+      "note": "Zephaniah starts at the top; the page ends after the first two atoms of 2:2, בטרם לדת.",
       "startc": 1,
       "startv": 1,
       "startp": 1,
-      "stopc": null,
-      "stopv": null,
-      "stopp": null,
-      "start_phrase": null,
-      "stop_phrase": null,
-      "note": "seeded by survey: a book starts at 1:1 atom 1"
+      "start_phrase": "דבר יהוה אשר היה אל צפניה",
+      "stopc": 2,
+      "stopv": 2,
+      "stopp": 2,
+      "stop_phrase": "בטרם לדת"
+    },
+    {
+      "page": "0840-Ts.jpg",
+      "bkid": "Tsefaniah",
+      "printed_page": 840,
+      "note": "The printed header starts at 2:3, but the actual first text continues 2:2 at atom 3. The page ends after the first atom of 3:7, אמרתי.",
+      "startc": 2,
+      "startv": 2,
+      "startp": 3,
+      "start_phrase": "חק כמץ עבר יום",
+      "stopc": 3,
+      "stopv": 7,
+      "stopp": 1,
+      "stop_phrase": "אמרתי"
     },
     {
       "page": "0841-Ts-Hg.jpg",
@@ -9278,6 +9297,20 @@
       "start_phrase": null,
       "stop_phrase": null,
       "note": "seeded by survey: a book starts at 1:1 atom 1"
+    },
+    {
+      "page": "0841-Ts-Hg.jpg",
+      "bkid": "Tsefaniah",
+      "printed_page": 841,
+      "note": "The printed Zephaniah header starts at 3:8, but the actual first text continues 3:7 at atom 2. Zephaniah ends above its verse count and the opening of Haggai.",
+      "startc": 3,
+      "startv": 7,
+      "startp": 2,
+      "start_phrase": "אך תיראי אותי תקחי מוסר",
+      "stopc": 3,
+      "stopv": 20,
+      "stopp": 21,
+      "stop_phrase": "לעיניכם אמר יהוה"
     },
     {
       "page": "0844-Hg-Zc.jpg",

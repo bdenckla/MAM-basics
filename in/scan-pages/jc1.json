@@ -6349,7 +6349,8 @@
         "Jonah",
         "Micah",
         "Nahum",
-        "Obadiah"
+        "Obadiah",
+        "Tsefaniah"
       ],
       "pages": [
         "544-A-O.jpg",
@@ -6361,7 +6362,9 @@
         "550-Mi-Na.jpg",
         "551-Na.jpg",
         "552-Na-Hb.jpg",
-        "553-Hb-Ts.jpg"
+        "553-Hb-Ts.jpg",
+        "554-Ts.jpg",
+        "555-Ts-Hg.jpg"
       ]
     }
   ],
@@ -6786,15 +6789,30 @@
     {
       "page": "553-Hb-Ts.jpg",
       "bkid": "Tsefaniah",
+      "printed_page": 553,
+      "note": "Zephaniah begins below Habakkuk in the left column; the page ends within 1:1 after חזקיה.",
       "startc": 1,
       "startv": 1,
       "startp": 1,
-      "stopc": null,
-      "stopv": null,
-      "stopp": null,
-      "start_phrase": null,
-      "stop_phrase": null,
-      "note": "seeded by survey: a book starts at 1:1 atom 1"
+      "start_phrase": "דבר יהוה אשר היה אל צפניה",
+      "stopc": 1,
+      "stopv": 1,
+      "stopp": 14,
+      "stop_phrase": "בן אמריה בן חזקיה"
+    },
+    {
+      "page": "554-Ts.jpg",
+      "bkid": "Tsefaniah",
+      "printed_page": 554,
+      "note": "The running text continues 1:1 at בימי and ends with the complete verse 2:11.",
+      "startc": 1,
+      "startv": 1,
+      "startp": 15,
+      "start_phrase": "בימי יאשיהו בן אמון מלך",
+      "stopc": 2,
+      "stopv": 11,
+      "stopp": 16,
+      "stop_phrase": "כל איי הגוים"
     },
     {
       "page": "555-Ts-Hg.jpg",
@@ -6808,6 +6826,20 @@
       "start_phrase": null,
       "stop_phrase": null,
       "note": "seeded by survey: a book starts at 1:1 atom 1"
+    },
+    {
+      "page": "555-Ts-Hg.jpg",
+      "bkid": "Tsefaniah",
+      "printed_page": 555,
+      "note": "The first text begins the complete verse 2:12; Zephaniah ends in the left column above Haggai.",
+      "startc": 2,
+      "startv": 12,
+      "startp": 1,
+      "start_phrase": "גם אתם כושים חללי חרבי",
+      "stopc": 3,
+      "stopv": 20,
+      "stopp": 21,
+      "stop_phrase": "לעיניכם אמר יהוה"
     },
     {
       "page": "557-Hg-Zc.jpg",

@@ -78,7 +78,10 @@ def test_censused_books_agree_with_independent_simple_export():
                                 )
                                 parts.append(qere["text"])
                             else:
-                                assert node == {"type": "lp-legarmeih"}
+                                assert node in (
+                                    {"type": "lp-legarmeih"},
+                                    {"type": "lp-paseq"},
+                                )
                                 parts.append(" ")
                         source_text = "".join(parts)
                     expected[int(c), int(v)] = tuple(

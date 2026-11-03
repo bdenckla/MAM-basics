@@ -73,6 +73,11 @@ for a fresh session that has no other context. Its thin pointer issue is #349, f
   editions, bringing coverage to 277 verses in five books per edition.
   The catalogs contain 177 records: thirty-one completed records and
   146 unread seeds. No text-projection changes were needed for this batch.
+- 2026-11-03, Zephaniah batch: six further portions complete Zephaniah in
+  both editions, bringing coverage to 330 verses in six books per edition.
+  The catalogs contain 181 records: thirty-seven completed records and
+  144 unread seeds. The explicit paseq template keeps neighboring words
+  separate, following the maintained atom definitions.
 
 ## Codex entry indexes
 
@@ -599,7 +604,7 @@ partial coverage explicit. Lookup never treats an unread seed as coverage.
 
 The first-phase text projection accepts Scripture strings, the target of a
 `נוסח` note, vowel alternatives whose consonantal atoms agree, the explicit
-legarmeh marker `מ:לגרמיה-2` as a boundary without an atom, and the main
+legarmeh marker `מ:לגרמיה-2` and paseq `מ:פסק` as boundaries without atoms, and the main
 one-atom form of the modern trivial ketiv/qere template, matching MAM-simple.
 The Micah continuation adds ordinary ketiv/qere when both forms are one atom,
 using the qere spelling at that common position. The Nahum continuation adds
@@ -771,7 +776,8 @@ separately from scan filenames. No image or crop is stored in this repository.
 JC's break falls between the complete verses 2:7 and 2:8. BHL 837 and 838
 begin with continuations of 1:13 and 2:18 although their headers start at
 1:14 and 2:19 respectively. BHL 837 ends with just `מה הועיל`, the first two
-atoms of 2:18. The Zephaniah portion of JC 553 remains uncensused.
+atoms of 2:18. The Zephaniah portion of JC 553 was uncensused at this
+checkpoint; the following continuation completed it.
 
 The existing reader projects all 56 Habakkuk verses and 671 atoms without a
 new template rule; the complete stream agrees with the independent MAM-simple
@@ -780,6 +786,46 @@ splits and their unique phrase hits, JC's complete-verse boundary, a phrase
 spanning a BHL page break, and idempotent census regeneration in both editions.
 The full suite and mega were not run under the ordinary focused-check policy.
 The large-census review boundary below still applies.
+
+### Zephaniah continuation, 2026-11-03
+
+All six Zephaniah portions were read, including five additional original
+images and the shared page JC 553. Native-pixel crops verify both page edges,
+book transitions and the adjacent words at 3:15. Printed footers were checked
+separately from scan filenames. No image or crop is stored in this repository.
+The internal book ID used by the commands and index is `Tsefaniah`.
+
+| Edition | Scan filename | Observed printed page | Zephaniah interval in MAM atom positions |
+|---|---|---|---|
+| `jc1` | `553-Hb-Ts.jpg` | 553 | 1:1 atom 1 through 1:1 atom 14 |
+| `jc1` | `554-Ts.jpg` | 554 | 1:1 atom 15 through 2:11 atom 16 |
+| `jc1` | `555-Ts-Hg.jpg` | 555 | 2:12 atom 1 through 3:20 atom 21 |
+| `bhl` | `0839-Ts.jpg` | 839 | 1:1 atom 1 through 2:2 atom 2 |
+| `bhl` | `0840-Ts.jpg` | 840 | 2:2 atom 3 through 3:7 atom 1 |
+| `bhl` | `0841-Ts-Hg.jpg` | 841 | 3:7 atom 2 through 3:20 atom 21 |
+
+JC 553 ends within the opening verse, after `חזקיה`; JC 554 continues with
+`בימי`. JC's next break is between the complete verses 2:11 and 2:12.
+BHL 840 and 841 continue 2:2 and 3:7 although their headers start at 2:3 and
+3:8 respectively. BHL 840 ends with only the first atom of 3:7, `אמרתי`.
+The Haggai portions of JC 555 and BHL 841 remain uncensused.
+
+The existing maintained rules in `mb_cmn/template_names.py`'s
+`NO_ATOM_TMPL_NAMES` and `hkq_cmn/qere_projection.py` establish that the
+explicit paseq template `מ:פסק` separates its neighbors without contributing
+an atom. The scan-page reader validates its parameterless schema and emits
+a separator, just as for its supported legarmeh marker. This preserves
+`ישראל` and `יהוה` as distinct atoms 7 and 8 at 3:15; dropping the template
+without a separator would join them. The independent MAM-simple export
+represents the boundary as `lp-paseq`. This adopts the maintained convention;
+it introduces no new editorial interpretation or generic template fallback.
+
+All 53 Zephaniah verses and 767 atoms agree with MAM-simple. Six focused
+tests passed. Direct checks cover all three within-verse splits, unique
+phrase hits, JC's whole-verse boundary, a phrase crossing a BHL page break,
+the intact adjacent words at 3:15 in both editions, and idempotent census
+regeneration. The full suite and mega were not run under the ordinary
+focused-check policy. The large-census review boundary below still applies.
 
 **Phase 0 — survey and tracked inventory. DONE, 2026-08-07.** The code is
 `py/main_scan_pages.py` (`survey`, `check`) over `py/scan_pages/`, with the lint at
