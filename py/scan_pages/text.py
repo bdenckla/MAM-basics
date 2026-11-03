@@ -2,7 +2,8 @@
 
 This initial projection accepts Scripture strings, a נוסח target, vowel
 alternatives with identical consonantal atoms, and the main one-atom form of
-the modern trivial ketiv/qere template, plus explicit paseq/legarmeh markers.
+the modern trivial ketiv/qere template, plus explicit paseq/legarmeh and
+the named petucha marker.
 Ordinary ketiv/qere uses the qere spelling only when both forms are one atom,
 so either printed form occupies the same position. Multi-atom ketiv/qere and
 alternative strands need explicit source alignment before a later census.
@@ -89,6 +90,11 @@ def _body_text(elements):
             # Both template orders store ketiv in 1 and qere in 2. Match
             # MAM-simple's selected qere; each source form has the same slot.
             parts.append(params["2"])
+        elif isinstance(element, dict) and element["tmpl_name"] == "פפ":
+            template_names.validate_current_plus_template(element)
+            # Maintained NO_ATOM semantics separate the neighboring words.
+            # Optional parameter 1 describes the break; it is not Scripture.
+            parts.append(" ")
         elif isinstance(element, dict) and element["tmpl_name"] in {
             "מ:לגרמיה-2",
             "מ:פסק",

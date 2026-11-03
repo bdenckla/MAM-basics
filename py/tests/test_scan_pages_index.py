@@ -91,6 +91,7 @@ def test_censused_books_agree_with_independent_simple_export():
                                 assert node in (
                                     {"type": "lp-legarmeih"},
                                     {"type": "lp-paseq"},
+                                    {"type": "spi-pe2"},
                                 )
                                 parts.append(" ")
                         source_text = "".join(parts)

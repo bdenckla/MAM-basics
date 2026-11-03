@@ -100,6 +100,10 @@ for a fresh session that has no other context. Its thin pointer issue is #349, f
   editions, bringing coverage to 853 verses in 11 books per edition. The
   catalogs contain 231 records: 97 completed records and 134 unread seeds.
 
+- 2026-11-03, Hosea batch: 15 further portions complete Hosea in both
+  editions, bringing coverage to 1050 verses in 12 books per edition. The
+  catalogs contain 244 records: 112 completed records and 132 unread seeds.
+
 ## Codex entry indexes
 
 `in/lci_recs.json` is the public Leningrad Codex entry index. Its canonical top level
@@ -631,7 +635,9 @@ The Micah continuation adds ordinary ketiv/qere when both forms are one atom,
 using the qere spelling at that common position. The Nahum continuation adds
 the special-letter word wrapper and small-letter template; Malachi adds the
 explicit large-letter template. All retain their Scripture parameter without
-inserting a word boundary. It rejects multi-atom
+inserting a word boundary. Hosea adds the named `פפ` paragraph-break template,
+which contributes a separator while its optional annotation contributes no
+Scripture. It rejects multi-atom
 ketiv/qere, other unimplemented templates and named Decalogue strands.
 Extending those cases needs explicit source alignment;
 template names or argument shapes are not grounds for guessing it. An
@@ -1040,6 +1046,38 @@ All three JC breaks and all four BHL breaks split verses. JC 536 ends at 1:3 ato
 No new projection rule was needed; all 73 verses and 957 atoms match independent MAM-simple.
 
 Six focused tests passed (30 deselected), including complete independent atom comparison. Direct checks cover all seven within-verse breaks, qualified and cross-page lookup, repeated-atom refusal and idempotent adoption. The cue check rejected a missing initial vav before any index write; the corrected source-visible cue is unique. The full suite and mega were omitted under the ordinary focused-check policy. The catalog check reports five editions, 5,720 pages, 231 records and two segments without problems. No main integration or deployment occurred. The large-census review boundary below still applies.
+
+### Hosea continuation, 2026-11-03
+
+All 15 Hosea portions were read in native edge bands, including
+13 additional images. Full-page previews were used at book
+transitions. Printed footer numbers and BHL running headers were read
+separately from filenames. Exact original identities, hashes and crop boxes
+are retained privately.
+
+| Edition | Scan filename | Observed printed page | Hosea interval in MAM atom positions |
+|---|---|---:|---|
+| JC | `531-Ho.jpg` | 531 | 1:1 atom 1 through 2:19 atom 1 |
+| JC | `532-Ho.jpg` | 532 | 2:19 atom 2 through 5:1 atom 17 |
+| JC | `533-Ho.jpg` | 533 | 5:1 atom 18 through 7:13 atom 5 |
+| JC | `534-Ho.jpg` | 534 | 7:13 atom 6 through 9:17 atom 9 |
+| JC | `535-Ho.jpg` | 535 | 10:1 atom 1 through 12:8 atom 6 |
+| JC | `536-Ho-Jl.jpg` | 536 | 12:9 atom 1 through 14:10 atom 16 |
+| BHL | `0805-Ho.jpg` | 805 | 1:1 atom 1 through 2:10 atom 8 |
+| BHL | `0806-Ho.jpg` | 806 | 2:10 atom 9 through 3:5 atom 2 |
+| BHL | `0807-Ho.jpg` | 807 | 3:5 atom 3 through 5:4 atom 2 |
+| BHL | `0808-Ho.jpg` | 808 | 5:4 atom 3 through 7:3 atom 3 |
+| BHL | `0809-Ho.jpg` | 809 | 7:3 atom 4 through 8:13 atom 10 |
+| BHL | `0810-Ho.jpg` | 810 | 8:13 atom 11 through 10:3 atom 15 |
+| BHL | `0811-Ho.jpg` | 811 | 10:4 atom 1 through 11:10 atom 11 |
+| BHL | `0812-Ho.jpg` | 812 | 11:11 atom 1 through 13:10 atom 12 |
+| BHL | `0813-Ho-Jl.jpg` | 813 | 13:10 atom 13 through 14:10 atom 16 |
+
+Three of five JC breaks and six of eight BHL breaks split verses. BHL headers omit opening continuations on 806 (2:10), 807 (3:5), 808 (5:4), 809 (7:3), 810 (8:13) and 813 (13:10); 811 and 812 match their opening references, 10:4 and 11:11. All shared Joel portions are already indexed, so every listed book on the Twelve's source images is now censused.
+
+The explicit פפ rule follows maintained WHITESPACE_TMPL_NAMES/NO_ATOM_TMPL_NAMES and the current optional parameter-1 schema. It emits a separator and excludes the annotation; independent MAM-simple represents this as spi-pe2. Hosea 1:2 retains בהושע and ויאמר as separate atoms 4 and 5, with 21 atoms and no annotation words. All 197 verses and 2,381 atoms agree with independent MAM-simple. No generic fallback or new editorial convention was introduced.
+
+Six focused tests passed (30 deselected), including complete independent atom comparison. Direct checks cover all nine within-verse breaks, qualified and cross-page lookup, repeated-atom refusal and idempotent adoption. The annotated-break check confirms separate adjacent words, excludes annotation atoms, and refuses an unknown template name or invalid parameter schema. Black and catalog/whitespace checks passed. Cue checks rejected transcription slips before any index write. The full suite and mega were omitted under the ordinary focused-check policy. The catalog check reports five editions, 5,720 pages, 244 records and two segments without problems. No main integration or deployment occurred. The large-census review boundary below still applies.
 
 **Phase 0 — survey and tracked inventory. DONE, 2026-08-07.** The code is
 `py/main_scan_pages.py` (`survey`, `check`) over `py/scan_pages/`, with the lint at
