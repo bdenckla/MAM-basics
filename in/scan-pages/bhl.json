@@ -8770,6 +8770,7 @@
       "id": "body",
       "bkids": [
         "Habakkuk",
+        "Haggai",
         "Jonah",
         "Micah",
         "Nahum",
@@ -8793,7 +8794,10 @@
         "0838-Hb.jpg",
         "0839-Ts.jpg",
         "0840-Ts.jpg",
-        "0841-Ts-Hg.jpg"
+        "0841-Ts-Hg.jpg",
+        "0842-Hg.jpg",
+        "0843-Hg.jpg",
+        "0844-Hg-Zc.jpg"
       ]
     }
   ],
@@ -9288,15 +9292,16 @@
     {
       "page": "0841-Ts-Hg.jpg",
       "bkid": "Haggai",
+      "printed_page": 841,
+      "note": "Haggai begins below Zephaniah; the page ends after the first four atoms of 1:2.",
       "startc": 1,
       "startv": 1,
       "startp": 1,
-      "stopc": null,
-      "stopv": null,
-      "stopp": null,
-      "start_phrase": null,
-      "stop_phrase": null,
-      "note": "seeded by survey: a book starts at 1:1 atom 1"
+      "start_phrase": "בשנת שתים לדריוש המלך בחדש",
+      "stopc": 1,
+      "stopv": 2,
+      "stopp": 4,
+      "stop_phrase": "כה אמר יהוה צבאות"
     },
     {
       "page": "0841-Ts-Hg.jpg",
@@ -9311,6 +9316,48 @@
       "stopv": 20,
       "stopp": 21,
       "stop_phrase": "לעיניכם אמר יהוה"
+    },
+    {
+      "page": "0842-Hg.jpg",
+      "bkid": "Haggai",
+      "printed_page": 842,
+      "note": "The printed header starts at 1:3, but the actual first text continues 1:2. The page ends within 2:4 after עם, before הארץ.",
+      "startc": 1,
+      "startv": 2,
+      "startp": 5,
+      "start_phrase": "לאמר העם הזה אמרו",
+      "stopc": 2,
+      "stopv": 4,
+      "stopp": 14,
+      "stop_phrase": "וחזק כל עם"
+    },
+    {
+      "page": "0843-Hg.jpg",
+      "bkid": "Haggai",
+      "printed_page": 843,
+      "note": "The printed header starts at 2:5, but the actual first text continues 2:4. The page ends within 2:22 before איש בחרב אחיו.",
+      "startc": 2,
+      "startv": 4,
+      "startp": 15,
+      "start_phrase": "הארץ נאם יהוה ועשו",
+      "stopc": 2,
+      "stopv": 22,
+      "stopp": 13,
+      "stop_phrase": "וירדו סוסים ורכביהם"
+    },
+    {
+      "page": "0844-Hg-Zc.jpg",
+      "bkid": "Haggai",
+      "printed_page": 844,
+      "note": "The printed Haggai header starts at 2:23, but the actual first three atoms complete 2:22. Haggai ends above its verse count and the opening of Zechariah; the stop cue disambiguates the repeated final formula.",
+      "startc": 2,
+      "startv": 22,
+      "startp": 14,
+      "start_phrase": "איש בחרב אחיו",
+      "stopc": 2,
+      "stopv": 23,
+      "stopp": 20,
+      "stop_phrase": "כי בך בחרתי נאם יהוה צבאות"
     },
     {
       "page": "0844-Hg-Zc.jpg",

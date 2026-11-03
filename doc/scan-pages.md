@@ -78,6 +78,10 @@ for a fresh session that has no other context. Its thin pointer issue is #349, f
   The catalogs contain 181 records: thirty-seven completed records and
   144 unread seeds. The explicit paseq template keeps neighboring words
   separate, following the maintained atom definitions.
+- 2026-11-03, Haggai batch: seven further portions complete Haggai in both
+  editions, bringing coverage to 368 verses in seven books per edition.
+  The catalogs contain 186 records: forty-four completed records and
+  142 unread seeds. No text-projection changes were needed for this batch.
 
 ## Codex entry indexes
 
@@ -808,7 +812,8 @@ JC 553 ends within the opening verse, after `חזקיה`; JC 554 continues with
 `בימי`. JC's next break is between the complete verses 2:11 and 2:12.
 BHL 840 and 841 continue 2:2 and 3:7 although their headers start at 2:3 and
 3:8 respectively. BHL 840 ends with only the first atom of 3:7, `אמרתי`.
-The Haggai portions of JC 555 and BHL 841 remain uncensused.
+The Haggai portions of JC 555 and BHL 841 were uncensused at this checkpoint;
+the following continuation completed them.
 
 The existing maintained rules in `mb_cmn/template_names.py`'s
 `NO_ATOM_TMPL_NAMES` and `hkq_cmn/qere_projection.py` establish that the
@@ -826,6 +831,42 @@ phrase hits, JC's whole-verse boundary, a phrase crossing a BHL page break,
 the intact adjacent words at 3:15 in both editions, and idempotent census
 regeneration. The full suite and mega were not run under the ordinary
 focused-check policy. The large-census review boundary below still applies.
+
+### Haggai continuation, 2026-11-03
+
+All seven Haggai portions were read, including five additional original
+images and the shared pages JC 555 and BHL 841. Native-pixel crops verify
+both page edges and the book transitions. Printed footer numbers were checked
+separately from scan filenames. No image or crop is stored in this repository.
+
+| Edition | Scan filename | Observed printed page | Haggai interval in MAM atom positions |
+|---|---|---|---|
+| `jc1` | `555-Ts-Hg.jpg` | 555 | 1:1 atom 1 through 1:2 atom 8 |
+| `jc1` | `556-Hg.jpg` | 556 | 1:2 atom 9 through 2:12 atom 14 |
+| `jc1` | `557-Hg-Zc.jpg` | 557 | 2:12 atom 15 through 2:23 atom 20 |
+| `bhl` | `0841-Ts-Hg.jpg` | 841 | 1:1 atom 1 through 1:2 atom 4 |
+| `bhl` | `0842-Hg.jpg` | 842 | 1:2 atom 5 through 2:4 atom 14 |
+| `bhl` | `0843-Hg.jpg` | 843 | 2:4 atom 15 through 2:22 atom 13 |
+| `bhl` | `0844-Hg-Zc.jpg` | 844 | 2:22 atom 14 through 2:23 atom 20 |
+
+All five internal page breaks split verses. BHL 842, 843 and 844 continue
+1:2, 2:4 and 2:22 although their headers begin at 1:3, 2:5 and 2:23.
+The ending formula `נאם יהוה צבאות` occurs twice in 2:23, so the observed
+stop cue is the longer unique `כי בך בחרתי נאם יהוה צבאות`. The shorter
+formula still refuses as an ambiguous phrase query. The Zechariah portions
+of JC 557 and BHL 844 remain uncensused.
+
+The existing reader projects all 38 Haggai verses and 600 atoms without a
+new rule; the entire stream agrees with MAM-simple. Six focused tests passed.
+Direct checks cover every split, unique phrase hits, a phrase crossing a
+page break, refusal of the repeated short formula, and idempotent census
+regeneration in both editions. The full suite and mega were not run under
+the ordinary focused-check policy. The large-census review boundary below
+still applies.
+
+The next natural adjacent group is Zechariah and Malachi, completing the
+forward end of the Twelve. Grouping their shared images does not change the
+whole-book adoption gates or per-page native verification.
 
 **Phase 0 — survey and tracked inventory. DONE, 2026-08-07.** The code is
 `py/main_scan_pages.py` (`survey`, `check`) over `py/scan_pages/`, with the lint at

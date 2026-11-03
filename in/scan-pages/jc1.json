@@ -6346,6 +6346,7 @@
       "id": "body",
       "bkids": [
         "Habakkuk",
+        "Haggai",
         "Jonah",
         "Micah",
         "Nahum",
@@ -6364,7 +6365,9 @@
         "552-Na-Hb.jpg",
         "553-Hb-Ts.jpg",
         "554-Ts.jpg",
-        "555-Ts-Hg.jpg"
+        "555-Ts-Hg.jpg",
+        "556-Hg.jpg",
+        "557-Hg-Zc.jpg"
       ]
     }
   ],
@@ -6817,15 +6820,16 @@
     {
       "page": "555-Ts-Hg.jpg",
       "bkid": "Haggai",
+      "printed_page": 555,
+      "note": "Haggai begins below Zephaniah in the left column; the page ends within 1:2 after אמרו.",
       "startc": 1,
       "startv": 1,
       "startp": 1,
-      "stopc": null,
-      "stopv": null,
-      "stopp": null,
-      "start_phrase": null,
-      "stop_phrase": null,
-      "note": "seeded by survey: a book starts at 1:1 atom 1"
+      "start_phrase": "בשנת שתים לדריוש המלך בחדש",
+      "stopc": 1,
+      "stopv": 2,
+      "stopp": 8,
+      "stop_phrase": "לאמר העם הזה אמרו"
     },
     {
       "page": "555-Ts-Hg.jpg",
@@ -6840,6 +6844,34 @@
       "stopv": 20,
       "stopp": 21,
       "stop_phrase": "לעיניכם אמר יהוה"
+    },
+    {
+      "page": "556-Hg.jpg",
+      "bkid": "Haggai",
+      "printed_page": 556,
+      "note": "The first text continues 1:2 at לא; the left column ends within 2:12 after ואל, before היין.",
+      "startc": 1,
+      "startv": 2,
+      "startp": 9,
+      "start_phrase": "לא עת בא עת בית יהוה",
+      "stopc": 2,
+      "stopv": 12,
+      "stopp": 14,
+      "stop_phrase": "אל הלחם ואל הנזיד ואל"
+    },
+    {
+      "page": "557-Hg-Zc.jpg",
+      "bkid": "Haggai",
+      "printed_page": 557,
+      "note": "The first text continues 2:12 at היין; Haggai ends in the middle column above Zechariah. The stop cue distinguishes the repeated final formula within 2:23.",
+      "startc": 2,
+      "startv": 12,
+      "startp": 15,
+      "start_phrase": "היין ואל שמן ואל כל מאכל",
+      "stopc": 2,
+      "stopv": 23,
+      "stopp": 20,
+      "stop_phrase": "כי בך בחרתי נאם יהוה צבאות"
     },
     {
       "page": "557-Hg-Zc.jpg",
