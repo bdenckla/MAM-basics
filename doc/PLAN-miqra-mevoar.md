@@ -2,8 +2,10 @@
 
 State: live, written 2026-11-02; Ben gave his word to execute it the same day. Stages 1 to 6 ran
 that evening, and Stage 7 on 2026-11-03: Avi had himself created Joshua 1, and BDencklaBot created
-Joshua 2. Stage 8 waits on Avi's look at Joshua 2 and on Ben's word. The execution ledger below
-records each finished stage.
+Joshua 2. Stage 8 waits on Avi's look at Joshua 2 and on Ben's word. Stage 9, the base-chapter
+index, was added on 2026-11-03 at Ben's request. It waits on his decision on the layout of books
+in two parts and on his word to execute it, in a fresh session. The execution ledger below records
+each finished stage.
 
 Written 2026-11-02 by Claude (Opus 5.5) in the Phase 1 session that the session "Commander for
 Claude's forests" started for Avi's email "Mikra Mevo'ar at Wikisource". The quoted decisions are
@@ -16,12 +18,14 @@ A hand-run converter in MAM-basics turns each Word file of Rabbi David Kokhav's 
 Mevoar, into base-chapter pages for Hebrew Wikisource, and BDencklaBot creates those pages:
 Joshua 1 and 2 first, as a pilot for Avi to check, then the rest. The six books now in Avi's
 pCloud folder (Joshua, Hosea, Joel, Amos, Obadiah and Jonah) make 56 pages. The converter's
-extracted text is tracked in MAM-basics; the Word files and the Wikisource pages are not.
+extracted text is tracked in MAM-basics; the Word files and the Wikisource pages are not. Stage 9,
+added on 2026-11-03, has the bot complete the base-chapter index so that it links all 929 of
+MAM's chapters.
 
 ## Decisions ledger
 
-Entries 1 to 3 are Ben's decisions. Entries 5 to 9 were Claude's proposals, approved by Ben's word
-in entry 3.
+Entries 1 to 3 and 10 are Ben's decisions. Entries 5 to 9 were Claude's proposals, approved by
+Ben's word in entry 3.
 
 1. **Route: the bot, after a pilot.** Ben, 2026-11-02, answering "Which route should the pages
    take to Wikisource?" with "Bot, after a pilot" rather than "Avi pastes them". Active.
@@ -57,6 +61,10 @@ in entry 3.
    on its command line and approved with the run. Avi asked on 2026-11-03 for the Hebrew summary
    פרק חדש במקרא מבואר, "a new chapter in Miqra Mevoar", so the exception applies; Ben approves
    the summary with each run.
+10. **The index by bot.** Ben, 2026-11-03, on the base-chapter index that Avi asked to have
+    finished: "I think this is a great task for a bot". Of Avi's count of 972 chapters he said
+    "Let's assume he meant 929". Asked "Shall I write the bot's index stage into the plan?", he
+    answered "Yes, write it"; Stage 9 is that stage. Active.
 
 Deferred, each until its own decision:
 
@@ -69,8 +77,8 @@ Deferred, each until its own decision:
     nothing here touches them.
   - **The base-chapter index** should be finished first, listing every chapter of the Bible, most
     of them as red links. He wrote 972 chapters; MAM-simple has 929, in 39 books, and Ben
-    decided on 2026-11-03: "Let's assume he meant 929". This is new work for the bot or for a
-    person, and it needs Ben's decision and a revision of this plan.
+    decided on 2026-11-03: "Let's assume he meant 929". Ben chose the bot (entry 10), and Stage 9
+    plans the work.
 - A book that arrives as one file for two parts, such as Samuel: question 7. The converter raises
   on a second title row; revise this plan when such a file arrives. Avi expects Samuel, Kings and
   Chronicles each as a single file, as the whole Torah once came.
@@ -384,7 +392,105 @@ push, and report the two pages' links to Ben for Avi.
 
 After Avi has looked at the pilot and Ben gives his word: a dry run over all six books, expecting
 54 creates and 2 unchanged pages; the saving run and its check; a history entry; this plan's
-State set to executed; commit and push.
+State set to executed, if Stage 9 is done too; commit and push.
+
+## Stage 9. The base-chapter index, on Ben's word
+
+The executing session wrote this stage on 2026-11-03. Ben had decided "I think this is a great
+task for a bot" (ledger entry 10), and asked for the stage with "Yes, write it", answering "Shall
+I write the bot's index stage into the plan?". It may run before or after Stage 8. By Ben's rule a
+fresh session executes it, not the session that wrote it, and it stays planning only until he
+gives his word to execute it. The session that hears his word then sends the commander session a
+standalone prompt for that fresh session.
+
+**What it does.** BDencklaBot completes the base-chapter index, the page `מקרא מבואר/פרקי בסיס`, so
+that it links every one of MAM's 929 chapters, as Avi asked in his email of 2026-11-03 (ledger
+entry 4). Most of the links stay red until their pages exist. The bot rewrites only the page's
+book sections; the framing above them and the category line below them keep their bytes.
+
+**The page as read on 2026-11-03.** Page id 375628. Its latest revision, 3084327, is Dovi's of
+2026-09-23 at 07:21 UTC: 22,242 bytes, equal to Phase 1's capture
+`C:/Users/BenDe/GitRepos2/MAM-basics/.novc/miqra-mevoar-2026-11-02/wikisource-2026-11-02/מקרא_מבואר_פרקי_בסיס.wiki`.
+Its eight latest revisions are seven by Dovi, of 2026-09-06 to 2026-09-23, and one by
+ShalomOrobot, of 2022. Its layout:
+
+- **The framing:** an information section, whose heading begins `==מידע על פרקי הבסיס`; a list of
+  the books already encoded; and numbered working steps for editors. Avi keeps that list, so the
+  bot leaves the framing alone.
+- **One section per book:** a heading line, `==<heading>==`; one line
+  `*{{ג|'''{{קו תחתי|פרקים:}} <links>'''}}`; and a blank line. Each link is
+  `[[מקרא מבואר/פרקי בסיס/ספר <MAM's bk39 name>/<numeral>|<numeral>]]`, and the links are joined
+  by ` · `.
+- **The Twelve** share one section, headed `==תרי עשר==`. Its line gives each prophet as
+  `<label>: <links>;`, and the runs are joined by a space.
+- **The last line** is `[[קטגוריה:מקרא מבואר]]`.
+- **The sections present** are Genesis to Deuteronomy, Joshua, the Twelve (Obadiah and Jonah
+  only), Song of Songs, Ruth, Lamentations, Ecclesiastes, Esther and Daniel. They follow the order
+  of printed Bibles, which is also the order of the `BS_` pairs in `py/mb_cmn/mam_bknas.py`.
+- **Display names:** the headings are MAM's 24-book names, the first parts of `mam_bknas`'s `BS_`
+  pairs, with two exceptions. The Twelve's heading lacks "ספר", and Ecclesiastes' heading,
+  `מגילת קֹהלת`, has a holam. The Twelve's labels are MAM's sub-book names, except Obadiah's,
+  `עֹבדיה`, which also has a holam. The link targets use MAM's bk39 names (`he_bk39_name`), so
+  Obadiah's target has a vav.
+
+**The design.** These are the executing session's proposals. Ben's word to execute this stage
+approves them, and he may change any of them first.
+
+1. **Generator,** `py/miqra_mevoar/index_page.py`. Its book table lists all 39 books in
+   `mam_bknas`'s order, each with its `BS_` pair, OSIS id, MAM-simple file, and display heading
+   or label. The three exceptions above are explicit entries, their Hebrew copied from the live
+   page by script, never typed. Chapters come from MAM-simple through `mam_simple.py`'s closed
+   dispatch. A MAM-simple book missing from the table raises, and so does a table book missing
+   from MAM-simple. Link targets come from the converter's own title function, generalized from
+   the six-book table to every book; the six books' titles must not change.
+2. **The one new layout, which Ben decides before the generator is written:** a book of two parts
+   other than the Twelve (Samuel, Kings, Ezra and Nehemiah, and Chronicles) gets one section
+   under its 24-book heading. That section has a labelled run for each part, as the Twelve has,
+   and the labels are the bk39 names, such as `שמואל א`. The alternative is a section for each
+   part. Ben may ask Avi.
+3. **The page's text:** the live revision's text up to the heading of its first book section,
+   unchanged; then the generated sections; then the live revision's text from its category line
+   on, unchanged. It is generated in NFC with no final newline, as the base chapters are. A
+   closed parser of the two line shapes above reads the old page's sections and the new. Each old
+   section must reappear unchanged, except the Twelve's, whose old runs must reappear unchanged
+   within it. Any other line in the old sections stops the run.
+4. **Bot mode,** `py/main_ws_bot.py miqra-mevoar-index`, in
+   `py/subcommands/ws_bot_miqra_mevoar_index.py`, with the chapter mode's login check:
+   - `--no-save` reads the live page and writes `old.wiki`, `new.wiki` and a unified diff into
+     `.novc/mam-ws-bot-miqra-mevoar-index-runs/<timestamp>/`. It prints the base revision id and
+     the number of links, 929, and exits non-zero if the page would change.
+   - A saving run requires `--base-revid`, the revision whose diff Ben reviewed, and `--summary`.
+     It refuses unless that revision is still the page's latest. It then regenerates the text and
+     saves it with `nocreate`, `baserevid` and that revision's `basetimestamp`. It reads the
+     saved revision back through `ws_revision_api.ChapterClient`, requires its bytes to equal the
+     generated text, and writes `misc/saved-pages.json`.
+   - The mode is declared in `NOT_IN_MEGA`, as `miqra-mevoar` is, and documented in
+     `py/main_ws_bot.py`'s docstring and in `py/ws/pywikibot-setup.md`.
+5. **Test,** `py/tests/test_miqra_mevoar_index.py`, differential. The generated sections, read
+   back by the closed parser, must link exactly MAM-simple's 929 chapters, in order, each to the
+   title that the converter's function gives.
+
+**Verification,** as in Stages 4 and 5: `git diff --check`; Black; the targeted tests
+(`test_miqra_mevoar_index.py`, `test_miqra_mevoar_versification.py`,
+`test_miqra_mevoar_bot_revision_guard.py`, `test_mega_coverage.py`,
+`test_entry_point_subcommands.py`, and the tree-wide lints `source_hygiene_test.py`,
+`test_prose_conventions.py`, `test_transliterations.py`, `test_explicit_time_zones.py`,
+`test_stderr_error_handler.py` and `test_h_dot_below_nfc.py`); then the full suite. The mega is
+skipped, as in Stage 4. Finally, a `miqra-mevoar --no-save` run for Joshua 1 and 2 must find both
+pages unchanged, which shows that generalizing the title function changed no title.
+
+**The dry run and the save.** Run `--no-save` and read its diff. Report to Ben the base revision,
+the diff's size, and that every section of the old page reappears in the new; then stop. The save
+needs Ben's explicit word for that run, with its `--base-revid` and its summary. Avi's summary for
+new chapters does not fit an edit of the index, so ask Ben for one, offering a Hebrew one in Avi's
+manner. After the save, add an entry to `py/ws/ws_bot_edit_history.md` and record the stage in the
+execution ledger. Then commit, fetch, merge `origin/main` if it moved, and push.
+
+**Checkout and coordination,** as for the plan's other stages: a full MAM-basics clone that the
+commander session assigns, verified clean on `main`, and its own `.venv/Scripts/python.exe`, run
+from its root. Every Git call gets `-c safe.directory=<clone>`. Ask the commander before any
+Git-impacting change, and release the clone while waiting on Ben. The stage needs no untracked
+input, since it reads the live page itself.
 
 ## Later Word files
 
