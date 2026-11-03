@@ -82,6 +82,10 @@ for a fresh session that has no other context. Its thin pointer issue is #349, f
   editions, bringing coverage to 368 verses in seven books per edition.
   The catalogs contain 186 records: forty-four completed records and
   142 unread seeds. No text-projection changes were needed for this batch.
+- 2026-11-03, Zechariah batch: twenty-one further portions complete Zechariah
+  in both editions, bringing coverage to 579 verses in eight books per edition.
+  The catalogs contain 205 records: sixty-five completed records and
+  140 unread seeds. No text-projection changes were needed for this batch.
 
 ## Codex entry indexes
 
@@ -854,7 +858,7 @@ All five internal page breaks split verses. BHL 842, 843 and 844 continue
 The ending formula `נאם יהוה צבאות` occurs twice in 2:23, so the observed
 stop cue is the longer unique `כי בך בחרתי נאם יהוה צבאות`. The shorter
 formula still refuses as an ambiguous phrase query. The Zechariah portions
-of JC 557 and BHL 844 remain uncensused.
+of JC 557 and BHL 844 were uncensused at that checkpoint.
 
 The existing reader projects all 38 Haggai verses and 600 atoms without a
 new rule; the entire stream agrees with MAM-simple. Six focused tests passed.
@@ -864,9 +868,58 @@ regeneration in both editions. The full suite and mega were not run under
 the ordinary focused-check policy. The large-census review boundary below
 still applies.
 
-The next natural adjacent group is Zechariah and Malachi, completing the
-forward end of the Twelve. Grouping their shared images does not change the
-whole-book adoption gates or per-page native verification.
+The next natural adjacent group at that checkpoint was Zechariah and Malachi,
+completing the forward end of the Twelve. Grouping their shared images does
+not change the whole-book adoption gates or per-page native verification.
+
+### Zechariah continuation, 2026-11-03
+
+All twenty-one Zechariah portions were read in native edge bands, including
+nineteen additional original images and the shared Haggai pages JC 557 and
+BHL 844. Book-transition layouts were checked in full-page previews. Printed
+footers were checked independently of filenames. Each cue is unique in the
+whole book and lies entirely within its source page. The private evidence
+retains source hashes, dimensions, crop coordinates and navigation pointers.
+
+| Edition | Scan filename | Observed printed page | Zechariah interval in MAM atom positions |
+|---|---|---:|---|
+| JC | `557-Hg-Zc.jpg` | 557 | 1:1 atom 1 through 1:12 atom 13 |
+| JC | `558-Zc.jpg` | 558 | 1:12 atom 14 through 3:7 atom 6 |
+| JC | `559-Zc.jpg` | 559 | 3:7 atom 7 through 5:11 atom 12 |
+| JC | `560-Zc.jpg` | 560 | 6:1 atom 1 through 7:14 atom 3 |
+| JC | `561-Zc.jpg` | 561 | 7:14 atom 4 through 8:23 atom 12 |
+| JC | `562-Zc.jpg` | 562 | 8:23 atom 13 through 10:12 atom 3 |
+| JC | `563-Zc.jpg` | 563 | 10:12 atom 4 through 12:8 atom 17 |
+| JC | `564-Zc.jpg` | 564 | 12:8 atom 18 through 14:10 atom 22 |
+| JC | `565-Zc-Ma.jpg` | 565 | 14:10 atom 23 through 14:21 atom 24 |
+| BHL | `0844-Hg-Zc.jpg` | 844 | 1:1 atom 1 through 1:14 atom 1 |
+| BHL | `0845-Zc.jpg` | 845 | 1:14 atom 2 through 2:17 atom 2 |
+| BHL | `0846-Zc.jpg` | 846 | 2:17 atom 3 through 4:9 atom 6 |
+| BHL | `0847-Zc.jpg` | 847 | 4:9 atom 7 through 6:5 atom 2 |
+| BHL | `0848-Zc.jpg` | 848 | 6:5 atom 3 through 7:7 atom 18 |
+| BHL | `0849-Zc.jpg` | 849 | 7:8 atom 1 through 8:12 atom 16 |
+| BHL | `0850-Zc.jpg` | 850 | 8:12 atom 17 through 9:8 atom 4 |
+| BHL | `0851-Zc.jpg` | 851 | 9:8 atom 5 through 10:10 atom 5 |
+| BHL | `0852-Zc.jpg` | 852 | 10:10 atom 6 through 11:17 atom 10 |
+| BHL | `0853-Zc.jpg` | 853 | 11:17 atom 11 through 13:2 atom 6 |
+| BHL | `0854-Zc.jpg` | 854 | 13:2 atom 7 through 14:10 atom 7 |
+| BHL | `0855-Zc-Ma.jpg` | 855 | 14:10 atom 8 through 14:21 atom 24 |
+
+Seven of eight JC breaks and ten of eleven BHL breaks split verses. The BHL
+headers omit the opening continuations on 845 (1:14), 846 (2:17), 847 (4:9),
+848 (6:5), 850 (8:12), 851 (9:8), 852 (10:10), 853 (11:17), 854 (13:2) and
+855 (14:10); 849 begins at 7:8, matching its header. Headers alone would miss
+these first atoms. JC 565 and BHL 855 also open Malachi, uncensused at this
+checkpoint.
+
+The existing reader projects all 211 verses and 3,127 atoms, independently
+matching MAM-simple. Six focused tests passed (30 deselected); the catalog
+check reports five editions, 5,720 pages, 205 records and two segments without
+problems. Direct checks cover all seventeen within-verse breaks, qualified and
+cross-page phrase lookup, refusal of the twice-occurring word in 14:9,
+and idempotent regeneration. Initial transcription slips and a repeated short
+cue were rejected before any index write; lengthened, source-visible cues
+resolve uniquely. No projection rule or record field changed.
 
 **Phase 0 — survey and tracked inventory. DONE, 2026-08-07.** The code is
 `py/main_scan_pages.py` (`survey`, `check`) over `py/scan_pages/`, with the lint at

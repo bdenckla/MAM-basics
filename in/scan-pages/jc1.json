@@ -6351,7 +6351,8 @@
         "Micah",
         "Nahum",
         "Obadiah",
-        "Tsefaniah"
+        "Tsefaniah",
+        "Zechariah"
       ],
       "pages": [
         "544-A-O.jpg",
@@ -6367,7 +6368,15 @@
         "554-Ts.jpg",
         "555-Ts-Hg.jpg",
         "556-Hg.jpg",
-        "557-Hg-Zc.jpg"
+        "557-Hg-Zc.jpg",
+        "558-Zc.jpg",
+        "559-Zc.jpg",
+        "560-Zc.jpg",
+        "561-Zc.jpg",
+        "562-Zc.jpg",
+        "563-Zc.jpg",
+        "564-Zc.jpg",
+        "565-Zc-Ma.jpg"
       ]
     }
   ],
@@ -6876,15 +6885,114 @@
     {
       "page": "557-Hg-Zc.jpg",
       "bkid": "Zechariah",
+      "printed_page": 557,
+      "note": "Native start/stop bands and printed footer verified by Codex, 2026-11-03; private source hashes and crop coordinates retained.",
       "startc": 1,
       "startv": 1,
       "startp": 1,
-      "stopc": null,
-      "stopv": null,
-      "stopp": null,
-      "start_phrase": null,
-      "stop_phrase": null,
-      "note": "seeded by survey: a book starts at 1:1 atom 1"
+      "start_phrase": "בחדש השמיני בשנת שתים לדריוש היה",
+      "stopc": 1,
+      "stopv": 12,
+      "stopp": 13,
+      "stop_phrase": "אתה לא תרחם את ירושלם"
+    },
+    {
+      "page": "558-Zc.jpg",
+      "bkid": "Zechariah",
+      "printed_page": 558,
+      "note": "Native start/stop bands and printed footer verified by Codex, 2026-11-03; private source hashes and crop coordinates retained.",
+      "startc": 1,
+      "startv": 12,
+      "startp": 14,
+      "start_phrase": "ואת ערי יהודה אשר זעמתה זה",
+      "stopc": 3,
+      "stopv": 7,
+      "stopp": 6,
+      "stop_phrase": "כה אמר יהוה צבאות אם בדרכי"
+    },
+    {
+      "page": "559-Zc.jpg",
+      "bkid": "Zechariah",
+      "printed_page": 559,
+      "note": "Native start/stop bands and printed footer verified by Codex, 2026-11-03; private source hashes and crop coordinates retained.",
+      "startc": 3,
+      "startv": 7,
+      "startp": 7,
+      "start_phrase": "תלך ואם את משמרתי תשמר וגם",
+      "stopc": 5,
+      "stopv": 11,
+      "stopp": 12,
+      "stop_phrase": "בארץ שנער והוכן והניחה שם על מכנתה"
+    },
+    {
+      "page": "560-Zc.jpg",
+      "bkid": "Zechariah",
+      "printed_page": 560,
+      "note": "Native start/stop bands and printed footer verified by Codex, 2026-11-03; private source hashes and crop coordinates retained.",
+      "startc": 6,
+      "startv": 1,
+      "startp": 1,
+      "start_phrase": "ואשב ואשא עיני ואראה והנה ארבע",
+      "stopc": 7,
+      "stopv": 14,
+      "stopp": 3,
+      "stop_phrase": "אמר יהוה צבאות ואסערם על כל"
+    },
+    {
+      "page": "561-Zc.jpg",
+      "bkid": "Zechariah",
+      "printed_page": 561,
+      "note": "Native start/stop bands and printed footer verified by Codex, 2026-11-03; private source hashes and crop coordinates retained.",
+      "startc": 7,
+      "startv": 14,
+      "startp": 4,
+      "start_phrase": "הגוים אשר לא ידעום והארץ נשמה",
+      "stopc": 8,
+      "stopv": 23,
+      "stopp": 12,
+      "stop_phrase": "אשר יחזיקו עשרה אנשים מכל לשנות"
+    },
+    {
+      "page": "562-Zc.jpg",
+      "bkid": "Zechariah",
+      "printed_page": 562,
+      "note": "Native start/stop bands and printed footer verified by Codex, 2026-11-03; private source hashes and crop coordinates retained.",
+      "startc": 8,
+      "startv": 23,
+      "startp": 13,
+      "start_phrase": "הגוים והחזיקו בכנף איש יהודי לאמר",
+      "stopc": 10,
+      "stopv": 12,
+      "stopp": 3,
+      "stop_phrase": "וגברתים ביהוה ובשמו"
+    },
+    {
+      "page": "563-Zc.jpg",
+      "bkid": "Zechariah",
+      "printed_page": 563,
+      "note": "Native start/stop bands and printed footer verified by Codex, 2026-11-03; private source hashes and crop coordinates retained.",
+      "startc": 10,
+      "startv": 12,
+      "startp": 4,
+      "start_phrase": "יתהלכו נאם יהוה פתח לבנון דלתיך",
+      "stopc": 12,
+      "stopv": 8,
+      "stopp": 17,
+      "stop_phrase": "ובית דויד כאלהים כמלאך"
+    },
+    {
+      "page": "564-Zc.jpg",
+      "bkid": "Zechariah",
+      "printed_page": 564,
+      "note": "Native start/stop bands and printed footer verified by Codex, 2026-11-03; private source hashes and crop coordinates retained.",
+      "startc": 12,
+      "startv": 8,
+      "startp": 18,
+      "start_phrase": "יהוה לפניהם והיה ביום ההוא אבקש",
+      "stopc": 14,
+      "stopv": 10,
+      "stopp": 22,
+      "stop_phrase": "עד שער הפנים ומגדל חננאל"
     },
     {
       "page": "565-Zc-Ma.jpg",
@@ -6898,6 +7006,20 @@
       "start_phrase": null,
       "stop_phrase": null,
       "note": "seeded by survey: a book starts at 1:1 atom 1"
+    },
+    {
+      "page": "565-Zc-Ma.jpg",
+      "bkid": "Zechariah",
+      "printed_page": 565,
+      "note": "Native start/stop bands and printed footer verified by Codex, 2026-11-03; private source hashes and crop coordinates retained.",
+      "startc": 14,
+      "startv": 10,
+      "startp": 23,
+      "start_phrase": "עד יקבי המלך וישבו בה וחרם",
+      "stopc": 14,
+      "stopv": 21,
+      "stopp": 24,
+      "stop_phrase": "ולא יהיה כנעני עוד בבית יהוה צבאות ביום ההוא"
     },
     {
       "page": "571-Ps.jpg",
