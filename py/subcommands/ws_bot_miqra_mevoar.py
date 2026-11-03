@@ -62,7 +62,7 @@ def run(stems, chapter_range, pywikibot_args, summary=None, no_save=False):
             texts[title] = wikitext.chapter_wikitext(chapter)
             _write_text_file(run_root, "pages", book.stem, chapter, texts[title])
             page = pywikibot.Page(site, title)
-            outcome, others = _outcome(page, texts[title])
+            outcome, others, baseline = _outcome(page, texts[title])
             outcomes.append(
                 {
                     "stem": book.stem,
@@ -76,7 +76,9 @@ def run(stems, chapter_range, pywikibot_args, summary=None, no_save=False):
             if no_save or outcome in ("unchanged", "refuse"):
                 continue
             try:
-                saved.append(_save(page, title, texts[title], outcome, summary))
+                saved.append(
+                    _save(page, title, texts[title], outcome, summary, baseline)
+                )
             except pywikibot.exceptions.Error as error:
                 failures.append(f"{title}: the save failed: {error!r}")
                 break
@@ -122,25 +124,39 @@ def _range(text, count):
 
 
 def _outcome(page, text):
-    """The chapter's outcome, and the revisions of editors other than the bot."""
+    """Outcome, other editors' revisions, and an update's checked revision and time."""
     if not page.exists():
-        return "create", []
+        return "create", [], None
     if page.text == text:
-        return "unchanged", []
+        return "unchanged", [], None
+    revisions = list(page.revisions())
     others = [
         {
             "revid": revision.revid,
             "user": revision.user,
             "timestamp": revision.timestamp.isoformat(),
         }
-        for revision in page.revisions()
+        for revision in revisions
         if revision.user != _BOT
     ]
-    return ("refuse", others) if others else ("update", [])
+    if others:
+        return "refuse", others, None
+    if not revisions:
+        raise ValueError("An existing page has no revision history to check")
+    checked = max(revisions, key=lambda revision: revision.revid)
+    return "update", [], (checked.revid, checked.timestamp)
 
 
-def _save(page, title, text, outcome, summary):
-    oldrevid = None if outcome == "create" else page.latest_revision_id
+def _save(page, title, text, outcome, summary, baseline=None):
+    guard = {}
+    oldrevid = None
+    if outcome == "update":
+        if baseline is None:
+            raise ValueError("An update needs its ownership-checked revision")
+        oldrevid, timestamp = baseline
+        # Pywikibot may fetch a newer revision while building its request. Keep
+        # both guards tied to the history whose ownership was actually checked.
+        guard = {"baserevid": oldrevid, "basetimestamp": timestamp}
     page.text = text
     # Whatever pywikibot's configuration says, the text goes out exactly as generated.
     page.save(
@@ -149,6 +165,7 @@ def _save(page, title, text, outcome, summary):
         apply_cosmetic_changes=False,
         createonly=outcome == "create",
         nocreate=outcome == "update",
+        **guard,
     )
     newrevid = page.latest_revision_id
     return {
