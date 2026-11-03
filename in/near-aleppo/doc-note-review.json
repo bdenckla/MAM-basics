@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "inventory_sha256": "b94c56d6a5fea22e29fc43fa92d876c618974288f95282d2bf2e4d09abe64be2",
+  "inventory_sha256": "69961f80a37d6d133b08d3e7fc86d36c323947e3cd09635eafea3029cbae1409",
   "notes": [
     {
       "id": "A1-Genesis 1:1 note 1 נוסח",
@@ -14374,7 +14374,7 @@
       ],
       "note_ordinal": 1,
       "source_template": "נוסח",
-      "source_note_sha256": "3dc0f0b95f82b796e792a2cd8d9ec66ae8332705cb277bb928ae1d50eefa357c",
+      "source_note_sha256": "8bcdbc85dcd1366dfa4e925961b54f217d03cc348a325c74a6aed14c3ea26b50",
       "original_target": "תֹּאכְﬞלֶ֑נּוּ",
       "near_target": "תֹּאכֲלֶ֑נּוּ",
       "original_body": [
@@ -14382,11 +14382,11 @@
         {
           "tmpl_name": "ש"
         },
-        "ל,ק3=תֹּאכֲלֶ֑נּוּ וכמו כן בקורן"
+        "ל,ק3=תֹּאכֲלֶ֑נּוּ (חטף) וכמו כן בקורן"
       ],
       "clauses": [
         "=ל1,ש,ש1,ו,ל3,ל9 וכמו כן בחלק מהדפוסים",
-        "ל,ק3=תֹּאכֲלֶ֑נּוּ וכמו כן בקורן"
+        "ל,ק3=תֹּאכֲלֶ֑נּוּ (חטף) וכמו כן בקורן"
       ],
       "change_causes": [
         "representation policies"
@@ -14398,14 +14398,14 @@
       },
       "candidate_clause": 1,
       "proposal_reason": "One literal full-target alternative; semantic review of its suffix and other clauses required.",
-      "evidence_sha256": "9b0742b447ab691ef6d0505caae59d80f26d8f3d4c5436eb7f6149bbac719345",
+      "evidence_sha256": "8afb7842693a7edb75f0bcec2fdfbc1f65ec1982bb5f8630366dea0c53c8f2bf",
       "review": {
         "status": "reviewed",
         "presentation": "recast",
         "reason": "Reviewed literal source agreement: retain the complete source head and suffix; keep all remaining clauses in their original order under MAM's labelled target. This attributes agreement and does not explain near-Aleppo's selection.",
         "proposed_parts": {
           "near_clause": [
-            "=ל,ק3 וכמו כן בקורן"
+            "=ל,ק3 (חטף) וכמו כן בקורן"
           ],
           "mam_clauses": [
             [
