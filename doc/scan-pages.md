@@ -120,6 +120,21 @@ for a fresh session that has no other context. Its thin pointer issue is #349, f
   result, not verified page coverage. Continue in bounded chapter groups;
   whole-book adoption still requires all pages and all atoms.
 
+- 2026-11-03, second Ezekiel checkpoint: fourteen further native page portions
+  (JC 518–523; BHL 788–795) join the preserved first group. Chapters 40–48
+  are now fully covered in private boundary evidence: 260 verses / 3,965
+  atoms per edition, with 27 of 119 Ezekiel portions verified and 92 left
+  (37 JC, 55 BHL). The new group completes chapters 40–44 (153 verses /
+  2,295 atoms), reusing the inspected continuation pages in the first group.
+  Whole-book lookup and accepted catalog counts remain unchanged.
+  Ezekiel 42:9 is resolved: both scans show two ordered written words and
+  two ordered qere words. Only that explicitly named special two-word
+  subtype, with exactly two atoms in each stored form, is supported; qere
+  spelling follows the maintained projection. Independent MAM-simple
+  comparison now passes for 1,270 verses / 18,675 atoms. The three remaining
+  refusals are 8:6, 9:11 and 23:42. Twenty-five cumulative page joins,
+  including twenty-three split-verse cases, pass exact atom checks.
+
 ## Codex entry indexes
 
 `in/lci_recs.json` is the public Leningrad Codex entry index. Its canonical top level

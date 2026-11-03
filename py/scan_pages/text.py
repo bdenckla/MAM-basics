@@ -6,8 +6,9 @@ the modern trivial ketiv/qere template, plus explicit paseq/legarmeh and
 the named paragraph markers. A written-but-not-read word contributes its
 unpointed written atom, following the maintained MAM-simple atom policy.
 Ordinary ketiv/qere uses the qere spelling only when both forms are one atom,
-so either printed form occupies the same position. Multi-atom ketiv/qere and
-alternative strands need explicit source alignment before a later census.
+so either printed form occupies the same position. The explicitly named
+two-word special form likewise preserves two ordered slots in both forms.
+Other multi-atom ketiv/qere and alternative strands need source alignment.
 The special-letter word wrapper and the small/large-letter templates recurse into
 their Scripture parameter without inserting a word boundary or losing a letter.
 Documentation is never Scripture. Unknown templates fail rather than contribute
@@ -89,6 +90,17 @@ def _body_text(elements):
             # Match the existing MAM-simple kq-trivial body's main form, not
             # an alternative spelling or a reading assembled from other fields.
             parts.append(params["1"])
+        elif isinstance(element, dict) and element["tmpl_name"] == "מ:כו״ק מיוחד":
+            params = template_names.validate_current_plus_template(element)
+            if params["סוג"] != 'כו"ק של שתי מילים בהערה אחת' or not all(
+                isinstance(params[key], str) and len(letters_atoms(params[key])) == 2
+                for key in ("1", "2")
+            ):
+                raise ValueError("Special ketiv/qere needs the named two-word form")
+            # Maintained projection selects qere parameter 2. Both native
+            # editions at Ezekiel 42:9 retain two ordered written/qere slots;
+            # no one-to-two or other special subtype is silently flattened.
+            parts.append(params["2"])
         elif isinstance(element, dict) and element["tmpl_name"] in {"כו״ק", "קו״כ"}:
             params = template_names.validate_current_plus_template(element)
             if not all(
