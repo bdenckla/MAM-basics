@@ -130,6 +130,34 @@ read its whole diff. Each run writes the edited page texts to
 `.novc/mam-ws-bot-intro-runs/<timestamp>/pages/` and the saved pages' diff links to
 `misc/saved-pages.json` there.
 
+## Miqra Mevoar base chapters
+
+`main_ws_bot.py miqra-mevoar` creates the base-chapter pages of Rabbi David Kokhav's Miqra
+Mevoar from the tracked JSON in `in/miqra-mevoar/`, which `py/main_miqra_mevoar.py` writes; it
+reads no edit file. `--book` names a book by its Word file's stem, such as `yehoshua`, and may be
+given more than once; `--chapters FIRST-LAST` narrows the chapters of a single book. A saving
+run needs `--summary`, the edit summary, which Ben approves with the run:
+
+       .venv/Scripts/python.exe py/main_ws_bot.py miqra-mevoar --book yehoshua --chapters 1-2 --no-save -dir:$env:USERPROFILE/.pywikibot
+
+       .venv/Scripts/python.exe py/main_ws_bot.py miqra-mevoar --book yehoshua --chapters 1-2 --summary "<summary>" -dir:$env:USERPROFILE/.pywikibot
+
+Each chapter has one of four outcomes. It is a create when its page does not exist, saved with
+`createonly`, so that a page someone else made in the meantime is not overwritten. It is
+unchanged when the live text equals the generated text. It is an update when the texts differ
+and every revision of the page is BDencklaBot's, saved with `nocreate`. It is refused when the
+texts differ and someone else has edited the page: nothing is saved for it, and the run exits
+non-zero, listing the other editors' revisions, since people, not the bot, reconcile a revision
+from Rabbi Kokhav with an edit made on Wikisource.
+
+`--no-save` saves nothing and, before a save, is expected to exit non-zero, listing each page
+that a save would create or update. A saving run reads each saved revision back through the
+API, uncached, and exits non-zero unless its bytes equal the generated text's. No MAM page
+changes, so there is no post-run download. Each run writes the generated pages to
+`.novc/mam-ws-bot-miqra-mevoar-runs/<timestamp>/pages/`, each chapter's outcome to
+`misc/outcomes.json` there, and the saved pages' revision ids and diff links to
+`misc/saved-pages.json`.
+
 ## Real-run artifact layout
 
 Each `main_ws_bot.py real` run now writes artifacts to a fresh timestamped

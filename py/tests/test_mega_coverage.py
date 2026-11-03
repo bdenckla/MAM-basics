@@ -425,6 +425,13 @@ NOT_IN_MEGA: dict[str, str] = {
         " account, so every run is a deliberate act.  Recorded in"
         " py/ws/pywikibot-setup.md and py/ws/ws_bot_edit_history.md."
     ),
+    "py/main_ws_bot.py miqra-mevoar": (
+        "Claude-written on 2026-11-02, in Stage 5 of doc/PLAN-miqra-mevoar.md, the plan"
+        " Ben gave his word to execute: it creates and updates Miqra Mevoar's pages on"
+        " live Hebrew Wikisource under Ben's bot account, so every run is a deliberate"
+        " act, each saving run on Ben's word.  Recorded in py/ws/pywikibot-setup.md and"
+        " doc/PLAN-miqra-mevoar.md."
+    ),
     "py/main_tmpl_survey.py --write-expanded-stack-grammar-lock": (
         "Claude-written, accepted by Ben on 2026-09-10: every survey run is checked"
         " against the plus lock, so rewriting it on every run would make that check pass"

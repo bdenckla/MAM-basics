@@ -89,7 +89,19 @@ byte-for-byte copy of that frozen plan; this ledger and the State line are the e
   JSON's text equals the prototype's extraction, in the Word files' own mark order.
 - **Stage 4:** `git diff --check`, Black, the targeted tests with the tree-wide lints that scan
   new files (89 passed), and the full suite (1,422 passed, 5 skipped, none of them the new
-  test's). The mega was skipped, as this plan expects.
+  test's). The mega was skipped, as this plan expects. Pushed as `8680140e`; origin's `main` had
+  not moved.
+- **Stage 5:** `py/main_ws_bot.py miqra-mevoar`, in `py/subcommands/ws_bot_miqra_mevoar.py`.
+  Beyond the plan, a saving run saves with `minor=False` and cosmetic changes off, so that the
+  text goes out exactly as generated. It reads each saved revision back through
+  `py/ws/ws_revision_api.py`'s `ChapterClient` and tries up to four times over 35 seconds, in case
+  a replica has not yet seen the revision. Every run, not only a dry run, writes its pages and
+  `misc/outcomes.json`. Read-only trials on 2026-11-02, saving nothing: the pilot's dry run gave two
+  creates and a non-zero exit, with pages equal to the prototype's byte for byte (run
+  `.novc/mam-ws-bot-miqra-mevoar-runs/20261102-210216-168317-0500/`), and the outcome logic, run
+  on the live Genesis 1 base chapter, refused a differing text, listing three revisions by other
+  editors, and found the page's own text unchanged. Checks: the targeted tests with the
+  tree-wide lints (98 passed) and the full suite (1,422 passed, 5 skipped).
 
 ## Background for a fresh executor
 
