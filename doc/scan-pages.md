@@ -260,6 +260,14 @@ for a fresh session that has no other context. Its thin pointer issue is #349, f
   between complete verses. No code or adopted-index change was needed;
   public Jeremiah lookup remains refused.
 
+- 2026-11-03, fourth Jeremiah checkpoint: twelve additional native portions
+  (JC 463-467; BHL 706-712) extend private evidence to complete chapters
+  38-52: 415 verses / 6,751 atoms per edition. Chapters 38-42 add 102 verses /
+  1,981 atoms. Forty-three of 136 portions are verified; 93 remain (38 JC,
+  55 BHL). All 31 earlier records relocate unchanged. Forty-one cumulative
+  adjacent joins and 37 split-verse checks pass. No code or adopted-index
+  change was needed; public Jeremiah lookup remains refused.
+
 ## Codex entry indexes
 
 `in/lci_recs.json` is the public Leningrad Codex entry index. Its canonical top level
@@ -1432,6 +1440,47 @@ Jeremiah remains private partial evidence: 31 of 136 portions verified, with
 thirteen books / 2,323 verses per edition and 231 completed portions. The two
 earlier Jeremiah receipts and all Ezekiel receipts remain unchanged, with
 exact source provenance retained privately. Main and deployment are untouched.
+
+### Jeremiah chapters 38-42 boundary checkpoint, 2026-11-03
+
+Twelve further native source portions are verified: JC 463-467 and BHL 706-712.
+Their twenty-four first/last body bands, twelve printed page numbers and seven
+BHL headers were inspected. All 31 preserved records relocate unchanged under
+the current projection. Earlier semantic-only observations on JC 464 and BHL
+707 established the named separator at 38:17; this batch separately verifies
+their complete page bounds.
+
+Complete private coverage is now **chapters 38-52: 415 verses / 6,751 atoms
+per edition**. Chapters 38-42 add 102 verses / 1,981 atoms. The JC suffix
+starts at 37:11 atom 4, covering 6,930 atoms; BHL starts at 37:17 atom 21,
+covering 6,825 atoms. Both end at 52:34 atom 17. Differing partial chapter-37
+prefixes remain explicit.
+
+| Edition | Verified Jeremiah portions | Remaining | Public Jeremiah adoption |
+|---|---:|---:|---|
+| JC | 18 / 56 | 38 | No |
+| BHL | 25 / 80 | 55 | No |
+
+All 41 cumulative adjacent joins and 37 split-verse qualified/cross-page
+checks pass. Twelve joins are new: eleven split verses and one complete-verse
+break between JC 464 and 465 at 39:4/39:5. Each declared suffix atom belongs
+to exactly one physical portion. Each edition refuses 410 repeated-atom
+queries within complete chapters 38-52. The BHL 711/712 break leaves the final
+atom of 41:18 on page 712, before chapter 42 begins.
+
+All seven new BHL headers omit physical opening continuations: 706 begins
+37:17, 707 begins 38:11, 708 begins 38:24, 709 begins 39:12, 710 begins 40:8,
+711 begins 41:5 and 712 begins 41:18. Header 712 starts at chapter 42 although
+its first body atom completes chapter 41. The records use visible body text.
+
+Fresh validation: the Jeremiah frontier test passes (1 passed, 6 deselected).
+Independent MAM-simple comparison again agrees for all 1,364 verses / 21,833
+atoms; fourteen malformed unequal forms and two ambiguous mapped pairs refuse.
+Catalog check remains clean: 5 editions, 5,720 pages, 361 records and 2 segments.
+No projection code or adopted index changed. **Whole-book Jeremiah lookup
+remains refused**, and accepted coverage stays 13 books / 2,323 verses per
+edition. Continue in bounded groups with native evidence; the remaining 93
+Jeremiah portions have not been verified.
 
 **Phase 0 - survey and tracked inventory. DONE, 2026-08-07.** The code is
 `py/main_scan_pages.py` (`survey`, `check`) over `py/scan_pages/`, with the lint at
