@@ -1,7 +1,8 @@
 # Plan: Miqra Mevoar base chapters from Rabbi Kokhav's Word files
 
-State: live, written 2026-11-02; Ben gave his word to execute it the same day, and its execution
-began that evening. The execution ledger below records each finished stage.
+State: live, written 2026-11-02; Ben gave his word to execute it the same day. Stages 1 to 6 ran
+that evening, and Stage 7 waits on Avi's answer and on Ben's word for the pilot's save. The
+execution ledger below records each finished stage.
 
 Written 2026-11-02 by Claude (Opus 5.5) in the Phase 1 session that the session "Commander for
 Claude's forests" started for Avi's email "Mikra Mevo'ar at Wikisource". The quoted decisions are
@@ -101,7 +102,14 @@ byte-for-byte copy of that frozen plan; this ledger and the State line are the e
   `.novc/mam-ws-bot-miqra-mevoar-runs/20261102-210216-168317-0500/`), and the outcome logic, run
   on the live Genesis 1 base chapter, refused a differing text, listing three revisions by other
   editors, and found the page's own text unchanged. Checks: the targeted tests with the
-  tree-wide lints (98 passed) and the full suite (1,422 passed, 5 skipped).
+  tree-wide lints (98 passed) and the full suite (1,422 passed, 5 skipped). Pushed as
+  `a0fa8979`; origin's `main` had not moved.
+- **Stage 6:** the pilot's dry run, from `a0fa8979`, on 2026-11-02 at 21:19 New York time: two
+  creates and a non-zero exit, as expected, saving nothing. Both pages equal the prototype's
+  `pages/yehoshua/01.wiki` and `02.wiki` byte for byte. Neither title existed, so there is no
+  finding. Run `.novc/mam-ws-bot-miqra-mevoar-runs/20261102-211949-962974-0500/`. Stage 7 waits
+  on Avi's answer to the draft reply's first question, which Ben relays, and on Ben's word for the
+  save and its summary.
 
 ## Background for a fresh executor
 
