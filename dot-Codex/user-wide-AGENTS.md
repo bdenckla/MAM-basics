@@ -265,6 +265,15 @@ bare `~`. Put one command in each fenced block, with no `&&` or semicolon chain.
 command can run while the current Windows task and worktree are still live before handing it to
 Ben.
 
+## Emails written for Ben to send
+
+Draft an email that Ben will send as Markdown with no hard line wraps: each paragraph and each
+list item is one line, since an email client turns a wrapped line into a broken paragraph or an
+extra bullet. Put every link under English words, as in `[Joshua 2](<url>)`, never as a bare URL:
+a percent-encoded Hebrew URL is not for human eyes. Build each URL with code, never by hand.
+Render the draft to an HTML page that copies the email's body, and give Ben its `file:///` link,
+so that he pastes the rendered email, links included, into his email client.
+
 ## Plans and finished dated records
 
 Every executable plan must stand alone for a fresh executor. Load `iterative-document-editing`
