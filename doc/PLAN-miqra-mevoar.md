@@ -4,9 +4,9 @@ State: live, written 2026-11-02; Ben gave his word to execute it the same day. S
 that evening, and Stages 7 to 9 on 2026-11-03: Avi had himself created Joshua 1, BDencklaBot
 created the other 55 base chapters of the six books, and the base-chapter index, which Stage 9
 added at Ben's request, links all 929 chapters as revision 3101215. Avi wrote the same day how the
-short books are to be displayed (Deferred, “Display pages”). Who makes those pages waits on Ben's
-decision; this plan is executed unless he gives them to the bot as a new stage. The execution
-ledger below records each finished stage.
+short books are to be displayed (Deferred, “Display pages”), and Ben decided to offer Avi the bot
+for those pages (decisions ledger entry 13): a display stage is written here if Avi accepts, and
+otherwise this plan is executed. The execution ledger below records each finished stage.
 
 Written 2026-11-02 by Claude (Opus 5.5) in the Phase 1 session that the session "Commander for
 Claude's forests" started for Avi's email "Mikra Mevo'ar at Wikisource". The quoted decisions are
@@ -25,7 +25,7 @@ MAM's chapters.
 
 ## Decisions ledger
 
-Entries 1 to 3 and 10 to 12 are Ben's decisions. Entries 5 to 9 were Claude's proposals,
+Entries 1 to 3 and 10 to 13 are Ben's decisions. Entries 5 to 9 were Claude's proposals,
 approved by Ben's word in entry 3.
 
 1. **Route: the bot, after a pilot.** Ben, 2026-11-02, answering "Which route should the pages
@@ -76,6 +76,14 @@ approved by Ben's word in entry 3.
     complete all Miqra Mevoar work that is not gated on his approval (and report it in that
     email); in particular the 929-chapter index work". So the index's save needs only Ben's word
     for that run, with its summary, and the email reports it. Active.
+13. **Display pages: offer Avi the bot.** Ben, 2026-11-03, about 17:55 New York time, in the
+    Stage 8 session, answering the recommendation "I recommend offering Avi the bot, once he has
+    made his choices for titles and breaks.": "yes offer Avi the bot and draft an email reporting
+    on progress and asking questions about next steps". The draft, for Ben to send, is
+    `C:/Users/BenDe/GitRepos2/MAM-basics/.novc/miqra-mevoar/email-to-avi-2026-11-03-six-books.md`.
+    It offers a bot-made display page for each of Hosea, Joel, Amos, Obadiah and Jonah, and asks
+    Avi's choices of titles, breaks, other content and links. A display stage is written into
+    this plan only if he accepts. Active.
 
 Deferred, each until its own decision:
 
@@ -87,8 +95,10 @@ Deferred, each until its own decision:
   - **Display pages, in Avi's later email of 2026-11-03,** which Ben relayed with Stage 8's word:
     the books other than Joshua are "short enough" to be "displayed on a single page, one page per
     book, in a similar fashion to the five megillot", and "For Joshua, I'll need to create an
-    example." Who makes the five pages, Avi or the bot, waits on Ben's decision; Joshua's waits on
-    Avi's example.
+    example." Ben decided to offer Avi the bot for the five pages (decisions ledger entry 13);
+    Joshua's waits on Avi's example. The Stage 8 session's read-only survey of the megillot's
+    display pages, and of what the five books would need, is
+    `C:/Users/BenDe/AppData/Local/Claude-Data/claude_pzs8sxrjxfjjc/side-session-notes/local_a80ded65-f78e-4280-8493-9dab3b8c5686/miqra-mevoar-display-survey-2026-11-03.md`.
   - **The raw-text pages** are to go once the work is done; he plans to delete them himself, so
     nothing here touches them.
   - **The base-chapter index** should be finished first, listing every chapter of the Bible, most
