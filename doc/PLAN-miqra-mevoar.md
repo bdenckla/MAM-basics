@@ -3,9 +3,8 @@
 State: live, written 2026-11-02; Ben gave his word to execute it the same day. Stages 1 to 6 ran
 that evening, and Stage 7 on 2026-11-03: Avi had himself created Joshua 1, and BDencklaBot created
 Joshua 2. Stage 8 waits on Avi's look at Joshua 2 and on Ben's word. Stage 9, the base-chapter
-index, was added on 2026-11-03 at Ben's request. It waits on his decision on the layout of books
-in two parts and on his word to execute it, in a fresh session. The execution ledger below records
-each finished stage.
+index, was added on 2026-11-03 at Ben's request. It waits on his word to execute it, in a fresh
+session. The execution ledger below records each finished stage.
 
 Written 2026-11-02 by Claude (Opus 5.5) in the Phase 1 session that the session "Commander for
 Claude's forests" started for Avi's email "Mikra Mevo'ar at Wikisource". The quoted decisions are
@@ -24,8 +23,8 @@ MAM's chapters.
 
 ## Decisions ledger
 
-Entries 1 to 3 and 10 are Ben's decisions. Entries 5 to 9 were Claude's proposals, approved by
-Ben's word in entry 3.
+Entries 1 to 3, 10 and 11 are Ben's decisions. Entries 5 to 9 were Claude's proposals, approved
+by Ben's word in entry 3.
 
 1. **Route: the bot, after a pilot.** Ben, 2026-11-02, answering "Which route should the pages
    take to Wikisource?" with "Bot, after a pilot" rather than "Avi pastes them". Active.
@@ -65,6 +64,10 @@ Ben's word in entry 3.
     finished: "I think this is a great task for a bot". Of Avi's count of 972 chapters he said
     "Let's assume he meant 929". Asked "Shall I write the bot's index stage into the plan?", he
     answered "Yes, write it"; Stage 9 is that stage. Active.
+11. **The index's books in two parts.** Ben, 2026-11-03, answering "For Samuel, Kings,
+    Ezra–Nehemiah and Chronicles: one section per book, or one per part?": "One per book". Each
+    such book gets one section with a labelled run per part, as the Twelve has; Stage 9's design
+    item 2 follows it. Active.
 
 Deferred, each until its own decision:
 
@@ -443,11 +446,10 @@ approves them, and he may change any of them first.
    dispatch. A MAM-simple book missing from the table raises, and so does a table book missing
    from MAM-simple. Link targets come from the converter's own title function, generalized from
    the six-book table to every book; the six books' titles must not change.
-2. **The one new layout, which Ben decides before the generator is written:** a book of two parts
-   other than the Twelve (Samuel, Kings, Ezra and Nehemiah, and Chronicles) gets one section
-   under its 24-book heading. That section has a labelled run for each part, as the Twelve has,
-   and the labels are the bk39 names, such as `שמואל א`. The alternative is a section for each
-   part. Ben may ask Avi.
+2. **The one new layout, as Ben chose it (ledger entry 11):** a book of two parts other than the
+   Twelve (Samuel, Kings, Ezra and Nehemiah, and Chronicles) gets one section under its 24-book
+   heading. That section has a labelled run for each part, as the Twelve has, and the labels are
+   the bk39 names, such as `שמואל א`. Ben chose this over a section for each part.
 3. **The page's text:** the live revision's text up to the heading of its first book section,
    unchanged; then the generated sections; then the live revision's text from its category line
    on, unchanged. It is generated in NFC with no final newline, as the base chapters are. A
