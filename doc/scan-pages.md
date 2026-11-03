@@ -92,6 +92,10 @@ for a fresh session that has no other context. Its thin pointer issue is #349, f
   seeds. Explicit large-letter markup retains its letter within the word;
   BHL's repeated closing verse is recorded as same-page display evidence.
 
+- 2026-11-03, Amos batch: 15 further portions complete Amos in both
+  editions, bringing coverage to 780 verses in 10 books per edition. The
+  catalogs contain 224 records: 88 completed records and 136 unread seeds.
+
 ## Codex entry indexes
 
 `in/lci_recs.json` is the public Leningrad Codex entry index. Its canonical top level
@@ -974,6 +978,38 @@ splits, qualified and cross-page lookups, ambiguous-phrase refusal, intact
 whitespace checks pass. The full suite and mega were not run under the
 ordinary focused-check policy. No main integration or deployment occurred.
 The large-census review boundary below still applies.
+
+### Amos continuation, 2026-11-03
+
+All 15 Amos portions were read in native edge bands, including
+13 additional images. Full-page previews were used at book
+transitions. Printed footer numbers and BHL running headers were read
+separately from filenames. Exact original identities, hashes and crop boxes
+are retained privately.
+
+| Edition | Scan filename | Observed printed page | Amos interval in MAM atom positions |
+|---|---|---:|---|
+| JC | `539-Jl-A.jpg` | 539 | 1:1 atom 1 through 1:14 atom 10 |
+| JC | `540-A.jpg` | 540 | 1:14 atom 11 through 3:12 atom 13 |
+| JC | `541-A.jpg` | 541 | 3:12 atom 14 through 5:11 atom 17 |
+| JC | `542-A.jpg` | 542 | 5:11 atom 18 through 7:2 atom 10 |
+| JC | `543-A.jpg` | 543 | 7:2 atom 11 through 8:13 atom 3 |
+| JC | `544-A-O.jpg` | 544 | 8:13 atom 4 through 9:15 atom 14 |
+| BHL | `0817-Jl-A.jpg` | 817 | 1:1 atom 1 through 1:10 atom 2 |
+| BHL | `0818-A.jpg` | 818 | 1:10 atom 3 through 2:13 atom 7 |
+| BHL | `0819-A.jpg` | 819 | 2:13 atom 8 through 4:2 atom 9 |
+| BHL | `0820-A.jpg` | 820 | 4:2 atom 10 through 5:6 atom 14 |
+| BHL | `0821-A.jpg` | 821 | 5:7 atom 1 through 6:2 atom 17 |
+| BHL | `0822-A.jpg` | 822 | 6:2 atom 18 through 7:10 atom 11 |
+| BHL | `0823-A.jpg` | 823 | 7:10 atom 12 through 8:11 atom 17 |
+| BHL | `0824-A.jpg` | 824 | 8:11 atom 18 through 9:14 atom 2 |
+| BHL | `0825-A-O.jpg` | 825 | 9:14 atom 3 through 9:15 atom 14 |
+
+All five JC breaks and seven of eight BHL breaks split verses. BHL headers omit opening continuations on 818 (1:10), 819 (2:13), 820 (4:2), 822 (6:2), 823 (7:10), 824 (8:11) and 825 (9:14). BHL 821 begins at 5:7, matching its header. Shared JC 539/BHL 817 still contain uncensused Joel; the Obadiah portions of JC 544/BHL 825 were already indexed.
+
+No new projection rule was needed; all 146 verses and 2,042 atoms match independent MAM-simple.
+
+Six focused tests passed (30 deselected), including complete independent atom comparison. Direct checks cover all twelve within-verse breaks, qualified and cross-page lookup, repeated-atom refusal and idempotent adoption. Cue checks rejected three transcription slips before the first index write; the corrected source-visible cues are unique across the book. The full suite and mega were omitted under the ordinary focused-check policy. The catalog check reports five editions, 5,720 pages, 224 records and two segments without problems. No main integration or deployment occurred. The large-census review boundary below still applies.
 
 **Phase 0 — survey and tracked inventory. DONE, 2026-08-07.** The code is
 `py/main_scan_pages.py` (`survey`, `check`) over `py/scan_pages/`, with the lint at
