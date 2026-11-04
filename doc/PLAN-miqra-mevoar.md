@@ -5,10 +5,11 @@ that evening, and Stages 7 to 9 on 2026-11-03: Avi had himself created Joshua 1,
 created the other 55 base chapters of the six books, and the base-chapter index, which Stage 9
 added at Ben's request, links all 929 chapters as revision 3101215. Ben offered Avi the bot for
 the display pages (decisions ledger entry 13), and Avi accepted, in an answer that Ben relayed on
-2026-11-04 (Deferred, “Display pages”). Stage 10, written that day, has the bot create the seven
-of those pages whose base chapters exist. Ben gave his word to execute it the same day, and a
-fresh session is executing it; its save waits on his word for that run. The execution ledger
-below records each finished stage.
+2026-11-04 (Deferred, “Display pages”). Stage 10, written that day and executed on Ben's word the
+same day, had the bot create the seven of those pages whose base chapters exist, as revisions
+3101357 to 3101363. The State stays live: the display pages of the other seven books of the
+Twelve wait for their base chapters (Stage 10, “Left out”, and “Later Word files”). The execution
+ledger below records each finished stage.
 
 Written 2026-11-02 by Claude (Opus 5.5) in the Phase 1 session that the session "Commander for
 Claude's forests" started for Avi's email "Mikra Mevo'ar at Wikisource". The quoted decisions are
@@ -382,6 +383,20 @@ byte-for-byte copy of that frozen plan; this ledger and the State line are the e
   transcluded pages on Jonah's page and 365 and 44 on Joshua's second part, all of them existing.
   Run `.novc/mam-ws-bot-miqra-mevoar-display-runs/20261104-112021-866392-0500/`. The save waits on
   Ben's word for that run, with its summary.
+- **Stage 10's save, 2026-11-04:** Ben's word, answering "Save the seven display pages with the
+  proposed Hebrew summary?": "Yes, save them". The commander confirmed that no other BDencklaBot
+  run was in progress and returned the clone, still at `b391b856`. The precondition again found
+  all 56 base chapters unchanged (run
+  `.novc/mam-ws-bot-miqra-mevoar-runs/20261104-112830-348954-0500/`). The saving run, at 11:29 and
+  11:30 New York time with the summary דף תצוגה חדש במקרא מבואר, "a new display page in Miqra Mevoar", created
+  the seven pages as revisions 3101357 to 3101363, read each back equal to the generated text, and
+  exited zero; its pages equal the dry run's. A read after the run found each page with one
+  revision, BDencklaBot's, not minor, with that summary, and each creation and its category entry
+  with the bot flag. A dry rerun found all seven pages unchanged, with no missing link or
+  transcluded page, and exited zero. `py/ws/ws_bot_edit_history.md` has the entry, with the run
+  directories. The State stays live, as Stage 10 provides while display work that Ben has given
+  to the bot remains: the pages of Micah to Malachi, which Stage 10 leaves for after their base
+  chapters.
 
 ## Background for a fresh executor
 

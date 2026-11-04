@@ -948,7 +948,7 @@ infrastructure has changed enough to make them misleading examples:
   `.novc/mam-ws-bot-miqra-mevoar-index-runs/20261103-113936-837559-0500/`, the one Ben reviewed,
   and `.novc/mam-ws-bot-miqra-mevoar-index-runs/20261103-125252-950458-0500/`.
 
-### Miqra Mevoar's base chapters: the other 54 chapters of the six books, 2026-11-03 — current
+### Miqra Mevoar's base chapters: the other 54 chapters of the six books, 2026-11-03
 
 - **Purpose:** Create the rest of the base chapters of Rabbi David Kokhav's Miqra Mevoar from the
   six Word files in Avi's pCloud folder: Joshua 3–24 and all of Hosea, Joel, Amos, Obadiah and
@@ -988,6 +988,50 @@ infrastructure has changed enough to make them misleading examples:
 - **JSON files:** `in/miqra-mevoar/`, the files of `yehoshua`, `hoshea`, `yoel`, `amos`, `ovadya`
   and `yona`; run artifacts `.novc/mam-ws-bot-miqra-mevoar-runs/20261103-150012-160259-0500/`, dry
   run `.novc/mam-ws-bot-miqra-mevoar-runs/20261103-145749-000351-0500/`.
+
+### Miqra Mevoar's display pages: Joshua's two parts and five books of the Twelve, 2026-11-04 — current
+
+- **Purpose:** Create seven of the display pages that the main page of Miqra Mevoar links, each
+  setting MAM's verses beside Rabbi David Kokhav's paraphrase in the form of Avi's pages for the
+  five megillot: Joshua's two parts, chapters 1–12 and 13–24, as Avi divided the book, and all of
+  Hosea, Joel, Amos, Obadiah and Jonah, the five books of the Twelve whose base chapters exist.
+  This is Stage 10 of `doc/PLAN-miqra-mevoar.md`. The main page has no link for Amos, but Avi's
+  email named it among the titles, so the bot made its page too. The other seven books of the
+  Twelve wait for their base chapters.
+- **Authorization:** Avi's answer, which Ben relayed on 2026-11-04, asked the bot to "use the
+  currently red links for the Twelve Prophets to create full-book-pages, one per book", and
+  divided Joshua into two parts. Ben, 2026-11-04, answering "Do you give your word to execute
+  Stage 10 as written, in a fresh session?": "Yes, execute it". For this run, answering "Save the
+  seven display pages with the proposed Hebrew summary?": "Yes, save them".
+- **New mode:** `main_ws_bot.py miqra-mevoar-display` (`py/subcommands/ws_bot_miqra_mevoar_display.py`).
+  It reads no edit file: `py/miqra_mevoar/display_page.py` generates each page from MAM-simple,
+  for its verses and their petuhot and setumot, and from the tracked JSON in `in/miqra-mevoar/`,
+  for the places of the headings, which each page transcludes from its base chapter. The mode
+  only creates pages, with `createonly`; a page that exists with another text is refused.
+- **Saving run:** seven pages created, at 11:29 and 11:30 New York time, 64,131 bytes in all, with
+  the summary דף תצוגה חדש במקרא מבואר, "a new display page in Miqra Mevoar", which Ben approved with the run:
+  Joshua 1–12 as revision 3101357, Joshua 13–24 as 3101358, Hosea as 3101359, Joel as 3101360,
+  Amos as 3101361, Obadiah as 3101362 and Jonah as 3101363.
+- **Safety rule:** before the dry run and again before the save, a `miqra-mevoar --no-save` run
+  over the six books found all 56 base chapters unchanged, so the places of the headings, which
+  come from the tracked JSON, still match the base chapters. The commander confirmed before each
+  bot run that no other BDencklaBot run was in progress. The `--no-save` dry run gave seven
+  creates, each page with exactly the counts of Stage 10's table, and its parse check found no
+  missing link or transcluded page. The saving run's pages equal the dry run's byte for byte, and
+  it read each new revision back through the API, uncached, and its bytes equalled the generated
+  text. A read after the run found each page with one revision, BDencklaBot's, not minor, with the
+  approved summary and the dry run's bytes, and each creation and its entry in the category with
+  the bot flag in the recent changes.
+- **One-shot:** no. Confirmed 2026-11-04, immediately after the run: a `--no-save` rerun found all
+  seven pages unchanged, with no missing link or transcluded page, and exited zero
+  (`.novc/mam-ws-bot-miqra-mevoar-display-runs/20261104-113055-061561-0500/`).
+- **Edit level:** Whole page text, generated; page-targeted by key.
+- **Input:** `MAM-simple/json-vtrad-mam/` and `in/miqra-mevoar/`; run artifacts
+  `.novc/mam-ws-bot-miqra-mevoar-display-runs/20261104-112907-174971-0500/`, with the read after
+  the run in its `misc/post-save-check.txt`; dry run
+  `.novc/mam-ws-bot-miqra-mevoar-display-runs/20261104-112021-866392-0500/`; the precondition's
+  runs `.novc/mam-ws-bot-miqra-mevoar-runs/20261104-111943-509759-0500/`, before the dry run, and
+  `.novc/mam-ws-bot-miqra-mevoar-runs/20261104-112830-348954-0500/`, before the save.
 
 ## How to look up the original code
 
