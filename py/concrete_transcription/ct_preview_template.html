@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!-- Made by Claude (Opus 5.5) on @@MADE@@ for Ben's review, not yet reviewed by a human: the
+concrete transcription trial's production preview of @@DRAFT@@, written by
+py/concrete_transcription/ct_preview.py from ct_preview_template.html beside it; the page itself
+is not tracked.  It has no visible text, since Ben asked for no controls: a click on the image
+shows the next view, and each view's name is the image's tooltip. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Concrete transcription preview: Psalms 119:175</title>
+<style>
+body { margin: 1.5em; background: #fff; }
+#view { display: block; max-width: 100%; height: auto; cursor: pointer; }
+/* A click focuses the image, and Chrome rings a focused SVG element even then;
+   only the keyboard's focus is ringed. */
+#view:focus:not(:focus-visible) { outline: none; }
+</style>
+</head>
+<body>
+@@SVG@@
+<script>
+"use strict";
+// A click on the image, or Enter or Space while it has the focus, shows the next
+// view, and the last view is followed by the first.
+const view = document.getElementById("view"), tip = document.getElementById("view-tip");
+const views = [...view.querySelectorAll(":scope > g[data-name]")];
+let shown = 0;
+function next() {
+  views[shown].setAttribute("display", "none");
+  shown = (shown + 1) % views.length;
+  views[shown].removeAttribute("display");
+  tip.textContent = views[shown].getAttribute("data-name");
+}
+view.addEventListener("click", next);
+view.addEventListener("keydown", (evt) => {
+  if (evt.key === "Enter" || evt.key === " ") { evt.preventDefault(); next(); }
+});
+</script>
+</body>
+</html>

@@ -180,6 +180,18 @@ _INK_REGION_BY_HAND = (
     " crop; nothing checks that the region page is current.  Recorded in"
     ' doc/ink-region-representation.md, under "Running the tool".'
 )
+# The concrete transcription trial's program, whose subcommands were the trial's
+# untracked scripts until Ben asked on 2026-11-04 that the trial be saved in Git.
+_CONCRETE_TRANSCRIPTION_BY_HAND = (
+    'Claude-written on 2026-11-04, when Ben asked for "saving whatever needs to be'
+    ' saved in a git-tracked fashion": the scripts of the concrete transcription'
+    " trial, item 12 of doc/PLAN-ink-regions.md, run by hand on its one image, as"
+    " py/main_pen_stroke.py is, which Ben's decision of 2026-10-30 keeps out of the"
+    ' mega as "a very early-stage experiment".  Nothing it writes is tracked or read'
+    " by a product, and its fetch downloads from tanach.us.  Recorded in"
+    ' doc/concrete-transcription-2026-11-03/README.md, under "Tracked since'
+    ' 2026-11-04".'
+)
 
 # ---------------------------------------------------------------------------
 # THE DECLARATION.  Every program the mega does not run, keyed as the module
@@ -617,6 +629,20 @@ NOT_IN_MEGA: dict[str, str] = {
     "py/main_pen_stroke.py regions-check": _INK_REGION_BY_HAND,
     "py/main_pen_stroke.py regions-render": _INK_REGION_BY_HAND,
     "py/main_pen_stroke.py regions-fit": _INK_REGION_BY_HAND,
+    "py/main_concrete_transcription.py fetch": _CONCRETE_TRANSCRIPTION_BY_HAND,
+    "py/main_concrete_transcription.py level1": _CONCRETE_TRANSCRIPTION_BY_HAND,
+    "py/main_concrete_transcription.py draft": _CONCRETE_TRANSCRIPTION_BY_HAND,
+    "py/main_concrete_transcription.py shapes": _CONCRETE_TRANSCRIPTION_BY_HAND,
+    "py/main_concrete_transcription.py fold": _CONCRETE_TRANSCRIPTION_BY_HAND,
+    "py/main_concrete_transcription.py page": _CONCRETE_TRANSCRIPTION_BY_HAND,
+    "py/main_concrete_transcription.py preview": _CONCRETE_TRANSCRIPTION_BY_HAND,
+    "py/main_concrete_transcription.py edges": _CONCRETE_TRANSCRIPTION_BY_HAND,
+    "py/main_concrete_transcription.py edges-chart": _CONCRETE_TRANSCRIPTION_BY_HAND,
+    "py/main_concrete_transcription.py area": _CONCRETE_TRANSCRIPTION_BY_HAND,
+    "py/main_concrete_transcription.py measure": _CONCRETE_TRANSCRIPTION_BY_HAND,
+    "py/main_concrete_transcription.py look": _CONCRETE_TRANSCRIPTION_BY_HAND,
+    "py/main_concrete_transcription.py look2": _CONCRETE_TRANSCRIPTION_BY_HAND,
+    "py/main_concrete_transcription.py look3": _CONCRETE_TRANSCRIPTION_BY_HAND,
     "py/main_miqra_mevoar.py fetch": (
         "Claude-written on 2026-11-02, in Stage 3 of doc/PLAN-miqra-mevoar.md, the plan"
         " Ben gave his word to execute: it downloads Rabbi Kokhav's Word files from a"

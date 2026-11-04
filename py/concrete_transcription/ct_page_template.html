@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Concrete transcription trial</title>
+<style>
+:root { --ink: #111; --muted: #555; --line: #bbb; --accent: #b00020; --panel: #f6f6f4; }
+body { font-family: system-ui, sans-serif; margin: 1.2em 1.5em; background: #fff; color: var(--ink); }
+h1 { font-size: 1.5em; margin: 0.2em 0 0.4em; }
+h2 { font-size: 1.15em; margin: 1.2em 0 0.4em; }
+p { max-width: 62em; line-height: 1.45; }
+p.ai-caveat { border: 3px solid var(--accent); padding: 0.5em 0.8em; max-width: 60em; }
+.heb { font-size: 1.7em; line-height: 1.6; }
+.work { display: flex; flex-wrap: wrap; gap: 1em; align-items: flex-start; }
+.scroll { max-width: 100%; overflow: auto; border: 1px solid #999; }
+svg.view { display: block; background: #fff; touch-action: none; user-select: none; }
+svg.view image { image-rendering: auto; }
+.side { flex: 1 1 22em; max-width: 30em; font-size: 0.92em; }
+.side details { margin: 0 0 0.7em; padding: 0.3em 0.7em 0.5em; border: 1px solid var(--line); }
+.side summary { font-weight: 600; cursor: pointer; }
+summary.h2 { font-size: 1.15em; font-weight: 700; margin: 1.2em 0 0.4em; cursor: pointer; }
+.side label { display: block; }
+.side ol { margin: 0.2em 0; padding-left: 1.4em; }
+.side ol.questions { list-style: none; padding-left: 0; }
+.side li { margin: 0.25em 0; }
+.controls { display: flex; flex-wrap: wrap; gap: 0.4em 1.2em; align-items: center; margin: 0.4em 0; font-size: 0.92em; }
+.controls label { white-space: nowrap; }
+table.list { border-collapse: collapse; width: 100%; }
+table.list td { padding: 0.08em 0.35em; border-bottom: 1px solid #eee; cursor: pointer; }
+table.list tr.sel td { background: #fff3b0; }
+table.list tr.changed td.name::after { content: " (edited)"; color: var(--accent); font-size: 0.85em; }
+.sw { display: inline-block; width: 0.9em; height: 0.9em; vertical-align: -0.1em; border: 1px solid #555; }
+textarea { width: 100%; box-sizing: border-box; font-family: inherit; }
+#export { font-family: ui-monospace, monospace; font-size: 0.85em; }
+.status { color: #00695c; font-weight: 600; min-height: 1.2em; }
+.q { color: var(--accent); font-weight: 700; }
+.legend span { margin-right: 1em; white-space: nowrap; }
+#clean-legend .for { display: none; }
+#clean-legend[data-colours="tones"] .for-tones, #clean-legend[data-colours="meaning"] .for-meaning,
+#clean-legend[data-colours="clusters"] .for-clusters { display: inline; }
+#clean-legend.hide-stray .l-stray, #clean-legend.hide-other .l-other, #clean-legend.hide-unexp .l-unexp { display: none; }
+.h { cursor: grab; }
+#L-labels, #L-questions, #L-sign, #L-vellum, #L-unexp, #L-draw { pointer-events: none; }
+.hide-photo #L-photo, .hide-sign #L-sign, .hide-vellum #L-vellum, .hide-unexp #L-unexp,
+.hide-outlines #L-outline, .hide-labels #L-labels, .hide-questions #L-questions { display: none; }
+#clean.hide-stray .m-stray, #clean.hide-other .m-other, #clean.hide-other .m-setaside,
+#clean.hide-unexp #C-unexp { display: none; }
+#diff { image-rendering: pixelated; display: block; }
+kbd { border: 1px solid #aaa; border-radius: 3px; padding: 0 0.25em; font-size: 0.9em; background: #fafafa; }
+</style>
+</head>
+<body>
+<h1>Concrete transcription trial: Psalms 119:175</h1>
+<p class="ai-caveat"><strong>Made by an AI model for Ben's review, not yet reviewed by a human.</strong>
+Claude (Opus 5.5) made this page on @@MADE@@ for a trial of the concrete transcriber, the paused ink-region work; the page itself is not tracked.</p>
+<p>The image is the one on the tanach.us page of <a href="@@CHANGE_URL@@">UXLC change 2023.03.25-112</a>,
+of the atom <span class="heb" dir="rtl" lang="hbo">@@WORD@@</span> on page F392B of the Leningrad Codex
+(<a href="@@LC_URL@@">Sefaria's image of the page</a>), column 2, line 10 as the change record counts lines.
+Each letter, mark and other piece of ink has an outline that Claude drew round its ink. The stray stroke
+that runs from within the resh through the nun is drawn as a stroke, a centerline with one width. Ink
+inside two outlines is ink the two share.@@DRAFT_NOTE@@</p>
+
+<div class="controls">
+  <label>Size <select id="zoom"></select></label>
+  <label>Photograph <input type="range" id="photo-opacity" min="0" max="100" value="100"></label>
+  <label><input type="checkbox" data-hide="hide-photo" checked> photograph</label>
+  <label><input type="checkbox" data-hide="hide-outlines" checked> outlines</label>
+  <label><input type="checkbox" data-hide="hide-sign"> ink by sign</label>
+  <label><input type="checkbox" data-hide="hide-unexp" checked> ink no outline holds, red</label>
+  <label><input type="checkbox" data-hide="hide-vellum"> where an outline holds no ink</label>
+  <label><input type="checkbox" data-hide="hide-labels"> names</label>
+  <label><input type="checkbox" data-hide="hide-questions" checked> the letters @@QUESTION_LETTERS@@</label>
+</div>
+<div class="work">
+  <div class="scroll" id="editor-scroll"><svg id="editor" class="view" xmlns="http://www.w3.org/2000/svg"></svg></div>
+  <div class="side">
+    <details><summary>Where Claude is least sure</summary>
+      <ol class="questions">
+@@QUESTION_ITEMS@@
+      </ol>
+    </details>
+    <details><summary>Editing</summary>
+      <ol>
+        <li>Click a shape, or its name under Shapes at the foot of the page, to show its points; <kbd>Alt</kbd>-click for the shape under it.</li>
+        <li>Drag a point. <kbd>Shift</kbd>-click adds a point to the selection, and a drag with <kbd>Shift</kbd> held off the points selects every point in a rectangle; the arrow keys move the selected points.</li>
+        <li>Double-click the outline to add a point there; double-click a point to make it a corner, or smooth again; <kbd>Delete</kbd> removes the selected points.</li>
+        <li>The stroke: drag its centerline's points, and the diamond for its width.</li>
+        <li><kbd>Ctrl</kbd>+<kbd>Z</kbd> undoes, <kbd>Ctrl</kbd>+<kbd>Y</kbd> redoes.</li>
+      </ol>
+    </details>
+    <details id="sel-box"><summary>Selected</summary><div id="sel-info">Nothing selected.</div></details>
+    <details><summary>New shape</summary>
+      <label>Kind <select id="new-kind"></select></label>
+      <label>Whose ink <select id="new-owner"></select></label>
+      <button type="button" id="new-outline">New outline</button>
+      <button type="button" id="new-stroke">New stroke</button>
+      <div id="draw-status" class="status"></div>
+    </details>
+  </div>
+</div>
+
+<h2>The transcription on a clean page</h2>
+<div class="controls">
+  <label>Size <select id="zoom2"></select></label>
+  <label><input type="checkbox" id="c-stray" checked> the stray stroke</label>
+  <label><input type="checkbox" id="c-other"> the masora circle, and other atoms' and lines' ink</label>
+  <label><input type="checkbox" id="c-unexp"> ink no outline holds, red</label>
+</div>
+<div class="controls">
+  <span>Colours:</span>
+  <label><input type="radio" name="colours" value="tones" checked> the image's ink and vellum</label>
+  <label><input type="radio" name="colours" value="meaning"> letters black, marks blue, the stray stroke violet</label>
+  <label><input type="radio" name="colours" value="clusters"> each letter with its marks, two colours by turns</label>
+</div>
+<div class="controls">
+  <span>Edges:</span>
+  <label><input type="radio" name="edges" value="soft" checked> soft</label>
+  <label><input type="radio" name="edges" value="sharp"> sharp</label>
+</div>
+<p class="legend" id="clean-legend" data-colours="tones">
+<span class="for for-tones"><span class="sw" id="sw-ink"></span> ink and <span class="sw" id="sw-vellum"></span> vellum, the image's own colours</span>
+<span class="for for-meaning"><span class="sw" style="background:#000"></span> the atom's letters</span>
+<span class="for for-meaning"><span class="sw" style="background:#143caa"></span> its marks</span>
+<span class="for for-clusters">Each letter with its marks: <span class="sw" style="background:#000"></span>
+<span class="sw" style="background:#c05800"></span> by turns from the right</span>
+<span class="for for-meaning for-clusters l-stray"><span class="sw" style="background:#8e24aa;opacity:0.65"></span> the stray stroke, darker where it lies over a letter</span>
+<span class="for for-meaning for-clusters l-other"><span class="sw" style="background:#d7c8eb"></span> the masora circle</span>
+<span class="for for-meaning for-clusters l-other"><span class="sw" style="background:#c4d2d9"></span> other atoms' and lines' ink</span>
+<span class="l-unexp"><span class="sw" style="background:#ff1744"></span> ink no outline holds</span></p>
+<div class="scroll"><svg id="clean" class="view" xmlns="http://www.w3.org/2000/svg"></svg></div>
+<p class="legend" id="diff-legend">Below, the difference between the shapes, each whole, and the
+image's ink: white where they agree;
+<span class="sw" style="background:#d73027"></span> red where the shapes have more ink than the image;
+<span class="sw" style="background:#2166ac"></span> blue where the image has ink that the shapes lack;
+the deeper the colour, the larger the difference. The shapes are those the clean page now shows,
+their edges soft or sharp as it shows them, and always the masora circle and other atoms' and
+lines' ink. The image's ink is measured from its vellum's colour to its ink's.</p>
+<div class="scroll" id="diff-box"><canvas id="diff" class="view"></canvas></div>
+
+<h2>Your edits</h2>
+<div style="max-width: 46em">
+  <p>Anything you want to say about the whole atom, in your own words:</p>
+  <textarea id="general-note" rows="5"></textarea>
+  <p>Your edits are kept in this browser. When you are done, press Copy and paste what it copies into
+  the chat; Download saves the same as a file.</p>
+  <button type="button" id="copy">Copy</button>
+  <button type="button" id="download">Download</button>
+  <button type="button" id="reset">Reset to Claude's draft</button>
+  <span id="io-status" class="status"></span>
+  <textarea id="export" rows="8" readonly></textarea>
+</div>
+<details><summary class="h2">Shapes</summary>
+<div style="max-width: 34em"><table class="list" id="list"></table></div>
+</details>
+
+<svg id="defs-svg" width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden" xmlns="http://www.w3.org/2000/svg"><defs id="defs"></defs></svg>
+<script type="application/json" id="data">@@DATA@@</script>
+<script>
+"use strict";
+const D = JSON.parse(document.getElementById("data").textContent);
+const W = D.width, H = D.height;
+const NS = "http://www.w3.org/2000/svg";
+const KEY = D.store_key;
+const ZOOMS = [1.5, 2, 2.5, 3, 4, 5, 6, 8];
+const NEAR = 2.6; // twice 1.3 px: ink this near an outline is its blur, not unexplained
+const MEANING = { letter: "#000000", mark: "#143caa", stray: "#8e24aa", setaside: "#d7c8eb", other: "#c4d2d9" };
+
+let shapes = null, generalNote = "";
+let past = [], future = [];
+let sel = null;            // the selected shape's id
+let selPts = new Set();    // "c:i" for an outline's points, "i" for a stroke's
+let zoom = 1.5;
+let drawing = null;        // {type, pts} while a new shape is drawn
+let newCount = 0;
+
+const $ = (id) => document.getElementById(id);
+const editor = $("editor"), clean = $("clean"), defs = $("defs");
+
+function el(parent, name, attrs) {
+  const e = document.createElementNS(NS, name);
+  for (const [k, v] of Object.entries(attrs || {})) e.setAttribute(k, v);
+  if (parent) parent.appendChild(e);
+  return e;
+}
+const clone = (x) => JSON.parse(JSON.stringify(x));
+const f3 = (v) => { const s = (Math.round(v * 1000) / 1000).toFixed(3).replace(/\.?0+$/, ""); return s === "-0" ? "0" : s; };
+const r2 = (v) => Math.round(v * 100) / 100;
+
+// ---- geometry: the same construction as ct_geometry.py ----
+function outlineD(contours) {
+  let d = "";
+  for (const P of contours) {
+    const n = P.length;
+    if (n < 2) continue;
+    const T = P.map((p, i) => {
+      if (p[2]) return [0, 0];
+      const a = P[(i - 1 + n) % n], b = P[(i + 1) % n];
+      return [(b[0] - a[0]) / 2, (b[1] - a[1]) / 2];
+    });
+    d += `M${f3(P[0][0])} ${f3(P[0][1])}`;
+    for (let i = 0; i < n; i++) {
+      const p = P[i], q = P[(i + 1) % n], tp = T[i], tq = T[(i + 1) % n];
+      d += `C${f3(p[0] + tp[0] / 3)} ${f3(p[1] + tp[1] / 3)} ${f3(q[0] - tq[0] / 3)} ${f3(q[1] - tq[1] / 3)} ${f3(q[0])} ${f3(q[1])}`;
+    }
+    d += "Z";
+  }
+  return d;
+}
+function bez(p, c1, c2, q, t) {
+  const u = 1 - t;
+  return [u*u*u*p[0] + 3*u*u*t*c1[0] + 3*u*t*t*c2[0] + t*t*t*q[0],
+          u*u*u*p[1] + 3*u*u*t*c1[1] + 3*u*t*t*c2[1] + t*t*t*q[1]];
+}
+const STROKE_SAMPLES = 12, CAP_SAMPLES = 10;
+function centerSamples(P) {
+  const n = P.length, T = [];
+  for (let i = 0; i < n; i++) {
+    const a = P[Math.max(i - 1, 0)], b = P[Math.min(i + 1, n - 1)];
+    const k = (i === 0 || i === n - 1) ? 1 : 0.5;
+    T.push([(b[0] - a[0]) * k, (b[1] - a[1]) * k]);
+  }
+  const out = [];
+  for (let i = 0; i < n - 1; i++) {
+    const p = P[i], q = P[i + 1];
+    const c1 = [p[0] + T[i][0] / 3, p[1] + T[i][1] / 3], c2 = [q[0] - T[i + 1][0] / 3, q[1] - T[i + 1][1] / 3];
+    for (let s = 0; s < STROKE_SAMPLES; s++) out.push(bez(p, c1, c2, q, s / STROKE_SAMPLES));
+  }
+  out.push([P[n - 1][0], P[n - 1][1]]);
+  return out;
+}
+function strokeFrame(P) {
+  const s = centerSamples(P), m = s.length, U = [];
+  for (let k = 0; k < m; k++) {
+    const a = s[Math.max(k - 1, 0)], b = s[Math.min(k + 1, m - 1)];
+    const dx = b[0] - a[0], dy = b[1] - a[1], len = Math.hypot(dx, dy) || 1;
+    U.push([dx / len, dy / len]);
+  }
+  return { s, U, N: U.map(([ux, uy]) => [-uy, ux]) };
+}
+function halfCircle(c, u, n, r, forward) {
+  const out = [];
+  for (let j = 1; j < CAP_SAMPLES; j++) {
+    const th = Math.PI * j / CAP_SAMPLES, co = Math.cos(th), si = Math.sin(th);
+    const vx = forward ? n[0] * co + u[0] * si : -n[0] * co - u[0] * si;
+    const vy = forward ? n[1] * co + u[1] * si : -n[1] * co - u[1] * si;
+    out.push([c[0] + vx * r, c[1] + vy * r]);
+  }
+  return out;
+}
+function strokeD(st) {
+  const { s, U, N } = strokeFrame(st.centerline), m = s.length, r = st.width / 2;
+  const left = s.map((p, k) => [p[0] + N[k][0] * r, p[1] + N[k][1] * r]);
+  const right = s.map((p, k) => [p[0] - N[k][0] * r, p[1] - N[k][1] * r]);
+  let poly = left.slice();
+  if (st.caps[1] === "round") poly = poly.concat(halfCircle(s[m - 1], U[m - 1], N[m - 1], r, true));
+  poly = poly.concat(right.reverse());
+  if (st.caps[0] === "round") poly = poly.concat(halfCircle(s[0], U[0], N[0], r, false));
+  return `M${f3(poly[0][0])} ${f3(poly[0][1])}` + poly.slice(1).map(([x, y]) => `L${f3(x)} ${f3(y)}`).join("") + "Z";
+}
+const shapeD = (s) => s.type === "outline" ? outlineD(s.contours) : strokeD(s);
+const rule = (s) => s.type === "outline" ? "evenodd" : "nonzero";
+
+// ---- the shapes' meaning and colour ----
+function meaning(s) {
+  if (s.owner !== "this-word") return "other";
+  if (s.kind === "stray mark") return "stray";
+  if (s.kind === "masora circle mark") return "setaside";
+  if (s.kind.endsWith(" letter")) return "letter";
+  return "mark";
+}
+function meaningOf(s) { return s.kind === "masora circle mark" ? "setaside" : meaning(s); }
+const groupColour = {};
+for (const s of D.shapes) if (!(s.group in groupColour)) groupColour[s.group] = D.palette[Object.keys(groupColour).length % D.palette.length];
+function colourOf(s) {
+  if (!(s.group in groupColour)) groupColour[s.group] = D.palette[Object.keys(groupColour).length % D.palette.length];
+  return groupColour[s.group];
+}
+const ORDER = { other: 0, setaside: 1, letter: 2, mark: 3, stray: 4 };
+const ordered = () => shapes.slice().sort((a, b) => ORDER[meaningOf(a)] - ORDER[meaningOf(b)]);
+const byId = (id) => shapes.find((s) => s.id === id);
+
+// ---- state ----
+function save() {
+  try { localStorage.setItem(KEY, JSON.stringify({ shapes, note: generalNote })); } catch (e) { /* storage may be blocked */ }
+}
+function load() {
+  try {
+    const raw = localStorage.getItem(KEY);
+    if (!raw) return false;
+    const v = JSON.parse(raw);
+    if (!Array.isArray(v.shapes)) return false;
+    shapes = v.shapes; generalNote = v.note || "";
+    return true;
+  } catch (e) { return false; }
+}
+function remember() { past.push(clone(shapes)); if (past.length > 300) past.shift(); future = []; }
+function undo() { if (!past.length) return; future.push(clone(shapes)); shapes = past.pop(); afterBulkChange(); }
+function redo() { if (!future.length) return; past.push(clone(shapes)); shapes = future.pop(); afterBulkChange(); }
+function afterBulkChange() {
+  if (sel && !byId(sel)) sel = null;
+  selPts = new Set([...selPts].filter((k) => pointAt(k)));
+  build(); save();
+}
+
+// ---- building the views ----
+function build() {
+  defs.innerHTML = "";
+  el(defs, "path", { id: "ink", d: D.ink_d, "fill-rule": "nonzero", "clip-rule": "nonzero" });
+  const box = { maskUnits: "userSpaceOnUse", x: -2, y: -2, width: W + 4, height: H + 4 };
+  const mNone = el(defs, "mask", Object.assign({ id: "m-none" }, box));
+  el(mNone, "rect", { x: -2, y: -2, width: W + 4, height: H + 4, fill: "white" });
+  const mNoInk = el(defs, "mask", Object.assign({ id: "m-noink" }, box));
+  el(mNoInk, "rect", { x: -2, y: -2, width: W + 4, height: H + 4, fill: "white" });
+  el(mNoInk, "use", { href: "#ink", fill: "black", stroke: "black", "stroke-width": NEAR, "stroke-linejoin": "round" });
+  for (const s of shapes) {
+    el(defs, "path", { id: "sh-" + s.id, "fill-rule": rule(s), "clip-rule": rule(s) });
+    const cp = el(defs, "clipPath", { id: "cp-" + s.id, clipPathUnits: "userSpaceOnUse" });
+    el(cp, "use", { href: "#sh-" + s.id });
+    el(mNone, "use", { href: "#sh-" + s.id, fill: "black", stroke: "black", "stroke-width": NEAR, "stroke-linejoin": "round" });
+  }
+  // the editor
+  editor.innerHTML = "";
+  editor.setAttribute("viewBox", `0 0 ${W} ${H}`);
+  const photo = el(editor, "g", { id: "L-photo", style: `opacity:${photoOpacity}` });
+  el(photo, "rect", { x: 0, y: 0, width: W, height: H, fill: "#fff" });
+  el(photo, "image", { href: D.photo, x: 0, y: 0, width: W, height: H, id: "photo" });
+  const Lsign = el(editor, "g", { id: "L-sign" });
+  const Lvellum = el(editor, "g", { id: "L-vellum" });
+  el(editor, "use", { id: "L-unexp", href: "#ink", fill: "#ff1744", mask: "url(#m-none)" });
+  const Lout = el(editor, "g", { id: "L-outline" });
+  el(editor, "g", { id: "L-labels" });
+  const Lq = el(editor, "g", { id: "L-questions" });
+  el(editor, "g", { id: "L-draw" });
+  el(editor, "g", { id: "L-handles" });
+  el(editor, "rect", { id: "band", fill: "rgba(0,120,255,0.12)", stroke: "#0078ff", "stroke-width": 1, "vector-effect": "non-scaling-stroke", visibility: "hidden" });
+  for (const s of ordered()) {
+    const c = colourOf(s);
+    el(Lsign, "use", { href: "#ink", "clip-path": `url(#cp-${s.id})`, fill: c, "fill-opacity": 0.55 });
+    el(Lvellum, "use", { href: "#sh-" + s.id, fill: c, "fill-opacity": 0.45, mask: "url(#m-noink)" });
+    el(Lout, "use", { href: "#sh-" + s.id, class: "outline", "data-id": s.id, fill: "transparent", stroke: c,
+      "stroke-width": 1.4, "vector-effect": "non-scaling-stroke" });
+  }
+  for (const q of D.questions) {
+    el(Lq, "circle", { cx: q.ring[0], cy: q.ring[1], r: q.ring[2], fill: "none", stroke: "#b00020", "stroke-width": 2, "vector-effect": "non-scaling-stroke" });
+    const t = el(Lq, "text", { x: q.text[0], y: q.text[1], fill: "#b00020", stroke: "#fff", "stroke-width": 2.2, "paint-order": "stroke",
+      "font-size": 11, "font-weight": 700, "font-family": "system-ui, sans-serif", "text-anchor": "middle", "dominant-baseline": "central" });
+    t.textContent = q.letter;
+  }
+  const soft = el(defs, "filter", { id: "f-soft", filterUnits: "userSpaceOnUse", x: -4, y: -4, width: W + 8, height: H + 8 });
+  el(soft, "feGaussianBlur", { stdDeviation: D.soft_edge || 1 });
+  // (The clean page's own blur fades the ink that the image's edge cuts; only the
+  // difference image carries the edge outward first.)
+  buildClean();
+  for (const s of shapes) $("sh-" + s.id).setAttribute("d", shapeD(s));
+  applyZoom(); drawLabels(); drawHandles(); buildList(); showSelected(); refreshExport();
+}
+// The clean page: each shape filled whole, in the image's ink and vellum colours, by
+// meaning on white, or each letter with its marks in two colours by turns on white
+// (D.clusters numbers the groups from the right); with soft edges or sharp ones.  The
+// stray mark's shapes are drawn as one group, so that where they meet is not darker.
+let cleanClusters = false, cleanTones = true, cleanSoft = true;
+function cleanColour(s, m) {
+  const clusters = D.clusters || {};
+  if (cleanClusters && m !== "stray" && s.owner === "this-word" && s.group in clusters)
+    return D.cluster_colours[(clusters[s.group] - 1) % D.cluster_colours.length];
+  return cleanTones ? D.ink_rgb : MEANING[m];
+}
+function buildClean() {
+  clean.innerHTML = "";
+  clean.setAttribute("viewBox", `0 0 ${W} ${H}`);
+  el(clean, "rect", { x: 0, y: 0, width: W, height: H, fill: cleanTones ? D.vellum_rgb : "#fff" });
+  const body = el(clean, "g", cleanSoft ? { filter: "url(#f-soft)" } : {});
+  let stray = null;
+  for (const s of ordered()) {
+    const m = meaningOf(s), col = cleanColour(s, m);
+    let parent = body;
+    if (m === "stray") {
+      if (!stray) stray = el(body, "g", { opacity: cleanTones ? 1 : 0.65 });
+      parent = stray;
+    }
+    el(parent, "use", { href: "#sh-" + s.id, fill: col, class: `m-${m}` });
+  }
+  el(clean, "use", { id: "C-unexp", href: "#ink", fill: "#ff1744", mask: "url(#m-none)" });
+  drawDiff();
+}
+
+// The difference image: the shapes, each whole, drawn black on white at the
+// image's size (the stray mark by its checkbox, and the masora circle and other
+// atoms' and lines' ink always, so that their ink reads white whether the clean
+// page shows them or not; soft edges blurred), less the image's ink, each pixel's
+// (vellum - lum) / (vellum - ink) by the image's median vellum and ink; red where
+// the shapes have more ink, blue where they have less, white where they agree.
+let photoLum = null;
+function withPhotoLum(then) {
+  if (photoLum) { then(); return; }
+  const img = new Image();
+  img.onload = () => {
+    const c = document.createElement("canvas"); c.width = W; c.height = H;
+    const g = c.getContext("2d"); g.drawImage(img, 0, 0);
+    const px = g.getImageData(0, 0, W, H).data;
+    photoLum = new Float32Array(W * H);
+    for (let i = 0; i < W * H; i++) photoLum[i] = (px[4 * i] * 299 + px[4 * i + 1] * 587 + px[4 * i + 2] * 114) / 1000;
+    then();
+  };
+  img.src = D.photo;
+}
+function shapesCoverage() {
+  const c = document.createElement("canvas"); c.width = W; c.height = H;
+  const g = c.getContext("2d");
+  g.fillStyle = "#fff"; g.fillRect(0, 0, W, H); g.fillStyle = "#000";
+  for (const s of shapes) {
+    if (meaningOf(s) === "stray" && !$("c-stray").checked) continue;
+    g.fill(new Path2D(shapeD(s)), rule(s));
+  }
+  const src = cleanSoft ? blurred(c, D.soft_edge || 1) : c;
+  const px = src.getContext("2d").getImageData(0, 0, W, H).data;
+  const cov = new Float32Array(W * H);
+  for (let i = 0; i < W * H; i++) cov[i] = (255 - px[4 * i]) / 255;
+  return cov;
+}
+// A Gaussian blur of an image-sized canvas whose edge pixels are carried outward
+// first, as ct_edges.py's blur does, so that ink the image's edge cuts does not
+// fade there.
+function blurred(c, sigma) {
+  const M = Math.ceil(3 * sigma) + 1, BW = W + 2 * M, BH = H + 2 * M;
+  const big = document.createElement("canvas"); big.width = BW; big.height = BH;
+  const g = big.getContext("2d");
+  g.imageSmoothingEnabled = false;
+  g.drawImage(c, M, M);
+  g.drawImage(c, 0, 0, 1, H, 0, M, M, H);
+  g.drawImage(c, W - 1, 0, 1, H, M + W, M, M, H);
+  g.drawImage(big, 0, M, BW, 1, 0, 0, BW, M);
+  g.drawImage(big, 0, M + H - 1, BW, 1, 0, M + H, BW, M);
+  const soft = document.createElement("canvas"); soft.width = BW; soft.height = BH;
+  const gs = soft.getContext("2d");
+  gs.fillStyle = "#fff"; gs.fillRect(0, 0, BW, BH);
+  gs.filter = `blur(${sigma}px)`; gs.drawImage(big, 0, 0);
+  const out = document.createElement("canvas"); out.width = W; out.height = H;
+  out.getContext("2d").drawImage(soft, -M, -M);
+  return out;
+}
+function drawDiff() {
+  withPhotoLum(() => {
+    const cov = shapesCoverage(), canvas = $("diff");
+    canvas.width = W; canvas.height = H;
+    const g = canvas.getContext("2d"), out = g.createImageData(W, H);
+    const V = D.vellum_lum, K = D.ink_lum, RED = [215, 48, 39], BLUE = [33, 102, 172];
+    for (let i = 0; i < W * H; i++) {
+      const e = Math.max(-1, Math.min(1, cov[i] - (V - photoLum[i]) / (V - K)));
+      const to = e >= 0 ? RED : BLUE, a = Math.abs(e);
+      out.data[4 * i] = 255 + (to[0] - 255) * a;
+      out.data[4 * i + 1] = 255 + (to[1] - 255) * a;
+      out.data[4 * i + 2] = 255 + (to[2] - 255) * a;
+      out.data[4 * i + 3] = 255;
+    }
+    g.putImageData(out, 0, 0);
+    applyZoom();
+  });
+}
+function updateShape(s) {
+  $("sh-" + s.id).setAttribute("d", shapeD(s));
+}
+function drawLabels() {
+  const g = $("L-labels"); g.innerHTML = "";
+  const seen = new Set();
+  for (const s of shapes) {
+    if (seen.has(s.group)) continue;
+    seen.add(s.group);
+    const pts = shapes.filter((t) => t.group === s.group).flatMap((t) => t.type === "outline" ? t.contours.flat() : t.centerline);
+    const x = Math.min(...pts.map((p) => p[0])), y = Math.min(...pts.map((p) => p[1]));
+    const t = el(g, "text", { x, y: Math.max(y - 2, 7), fill: colourOf(s), stroke: "#fff", "stroke-width": 2.5 / zoom, "paint-order": "stroke",
+      "font-size": 12 / zoom, "font-family": "system-ui, sans-serif" });
+    t.textContent = D.group_short[s.group] || s.short || s.label;
+  }
+}
+
+// ---- handles ----
+function pointAt(key) {
+  const s = byId(sel);
+  if (!s) return null;
+  if (s.type === "outline") { const [c, i] = key.split(":").map(Number); return (s.contours[c] || [])[i] || null; }
+  return s.centerline[Number(key)] || null;
+}
+function widthHandle(s) {
+  const { s: smp, N } = strokeFrame(s.centerline), k = Math.floor(smp.length / 2);
+  return { mid: smp[k], n: N[k], at: [smp[k][0] + N[k][0] * s.width / 2, smp[k][1] + N[k][1] * s.width / 2] };
+}
+function drawHandles() {
+  const g = $("L-handles"); g.innerHTML = "";
+  const s = byId(sel);
+  if (!s) return;
+  const r = 4.2 / zoom, sw = 1.2;
+  const put = (x, y, key, corner) => {
+    const on = selPts.has(key);
+    const attrs = { class: "h", "data-key": key, fill: on ? "#ffd400" : "#fff", stroke: "#000", "stroke-width": sw, "vector-effect": "non-scaling-stroke" };
+    if (corner) el(g, "rect", Object.assign(attrs, { x: x - r, y: y - r, width: 2 * r, height: 2 * r }));
+    else el(g, "circle", Object.assign(attrs, { cx: x, cy: y, r }));
+  };
+  if (s.type === "outline") {
+    s.contours.forEach((C, c) => C.forEach((p, i) => put(p[0], p[1], `${c}:${i}`, p[2])));
+  } else {
+    el(g, "polyline", { points: centerSamples(s.centerline).map((p) => `${f3(p[0])},${f3(p[1])}`).join(" "), fill: "none",
+      stroke: "#000", "stroke-width": 1, "vector-effect": "non-scaling-stroke", "pointer-events": "none" });
+    s.centerline.forEach((p, i) => put(p[0], p[1], String(i), false));
+    const wh = widthHandle(s), q = 5.2 / zoom;
+    el(g, "line", { x1: wh.mid[0], y1: wh.mid[1], x2: wh.at[0], y2: wh.at[1], stroke: "#000", "stroke-width": 1, "vector-effect": "non-scaling-stroke", "pointer-events": "none" });
+    el(g, "polygon", { class: "h", "data-key": "width", points: `${wh.at[0]},${wh.at[1] - q} ${wh.at[0] + q},${wh.at[1]} ${wh.at[0]},${wh.at[1] + q} ${wh.at[0] - q},${wh.at[1]}`,
+      fill: "#00e5ff", stroke: "#000", "stroke-width": 1, "vector-effect": "non-scaling-stroke" });
+  }
+}
+
+// ---- pointer handling ----
+function svgPoint(evt) {
+  const p = editor.createSVGPoint(); p.x = evt.clientX; p.y = evt.clientY;
+  const q = p.matrixTransform(editor.getScreenCTM().inverse());
+  return [q.x, q.y];
+}
+let drag = null, frame = 0;
+function scheduleRender(s) {
+  if (frame) return;
+  frame = requestAnimationFrame(() => { frame = 0; updateShape(s); drawHandles(); });
+}
+editor.addEventListener("pointerdown", (evt) => {
+  if (evt.button !== 0) return;
+  const at = svgPoint(evt);
+  if (drawing) { drawing.pts.push([r2(at[0]), r2(at[1])]); drawDrawing(); return; }
+  const h = evt.target.closest(".h");
+  const s = byId(sel);
+  if (h && s) {
+    const key = h.getAttribute("data-key");
+    if (key === "width") {
+      drag = { kind: "width", s, before: clone(shapes), moved: false };
+    } else {
+      if (evt.shiftKey) { if (selPts.has(key)) selPts.delete(key); else selPts.add(key); }
+      else if (!selPts.has(key)) selPts = new Set([key]);
+      const orig = new Map([...selPts].map((k) => [k, pointAt(k).slice()]));
+      drag = { kind: "points", s, start: at, orig, before: clone(shapes), moved: false };
+    }
+    editor.setPointerCapture(evt.pointerId);
+    drawHandles();
+    evt.preventDefault();
+    return;
+  }
+  if (evt.shiftKey && s) {
+    drag = { kind: "band", start: at, add: new Set(selPts) };
+    editor.setPointerCapture(evt.pointerId);
+    evt.preventDefault();
+    return;
+  }
+  drag = { kind: "click", start: at, client: [evt.clientX, evt.clientY] };
+});
+editor.addEventListener("pointermove", (evt) => {
+  if (!drag) return;
+  const at = svgPoint(evt);
+  if (drag.kind === "points") {
+    const dx = at[0] - drag.start[0], dy = at[1] - drag.start[1];
+    if (!drag.moved && Math.hypot(dx, dy) * zoom < 1) return;
+    drag.moved = true;
+    for (const [k, o] of drag.orig) { const p = pointAt(k); p[0] = r2(o[0] + dx); p[1] = r2(o[1] + dy); }
+    scheduleRender(drag.s);
+  } else if (drag.kind === "width") {
+    const wh = widthHandle(drag.s);
+    const w = 2 * Math.abs((at[0] - wh.mid[0]) * wh.n[0] + (at[1] - wh.mid[1]) * wh.n[1]);
+    drag.s.width = r2(Math.max(1, w)); drag.moved = true;
+    scheduleRender(drag.s);
+  } else if (drag.kind === "band") {
+    const b = $("band"), x0 = Math.min(at[0], drag.start[0]), y0 = Math.min(at[1], drag.start[1]);
+    const x1 = Math.max(at[0], drag.start[0]), y1 = Math.max(at[1], drag.start[1]);
+    Object.entries({ x: x0, y: y0, width: x1 - x0, height: y1 - y0, visibility: "visible" }).forEach(([k, v]) => b.setAttribute(k, v));
+    const s = byId(sel), next = new Set(drag.add);
+    const inside = (p) => p[0] >= x0 && p[0] <= x1 && p[1] >= y0 && p[1] <= y1;
+    if (s.type === "outline") s.contours.forEach((C, c) => C.forEach((p, i) => { if (inside(p)) next.add(`${c}:${i}`); }));
+    else s.centerline.forEach((p, i) => { if (inside(p)) next.add(String(i)); });
+    selPts = next; drawHandles();
+  }
+});
+editor.addEventListener("pointerup", (evt) => {
+  if (!drag) return;
+  const d = drag; drag = null;
+  if (d.kind === "points" || d.kind === "width") {
+    if (d.moved) { past.push(d.before); if (past.length > 300) past.shift(); future = []; afterEdit(d.s); }
+  } else if (d.kind === "band") {
+    $("band").setAttribute("visibility", "hidden");
+  } else if (d.kind === "click") {
+    if (Math.hypot(evt.clientX - d.client[0], evt.clientY - d.client[1]) > 4) return;
+    const hits = document.elementsFromPoint(evt.clientX, evt.clientY)
+      .filter((e) => e.classList && e.classList.contains("outline")).map((e) => e.getAttribute("data-id"));
+    const s = byId(sel);
+    if (evt.altKey && hits.length) {
+      const k = hits.indexOf(sel);
+      select(k >= 0 ? hits[(k + 1) % hits.length] : hits[0]);
+      return;
+    }
+    // A click on or near the selected shape keeps it, so that a double-click on
+    // its outline can add a point there.
+    if (s && (hits.includes(sel) || nearest(s, d.start).dist * zoom <= 8)) return;
+    select(hits.length ? hits[0] : null);
+  }
+});
+editor.addEventListener("dblclick", (evt) => {
+  const s = byId(sel);
+  if (!s || drawing) return;
+  const h = evt.target.closest(".h");
+  if (h) {
+    const key = h.getAttribute("data-key");
+    if (s.type === "outline" && key !== "width") { remember(); const p = pointAt(key); p[2] = p[2] ? 0 : 1; afterEdit(s); }
+    return;
+  }
+  insertPoint(s, svgPoint(evt));
+});
+function insertPoint(s, at) {
+  const best = nearest(s, at);
+  if (!best.apply || best.dist * zoom > 10) return;
+  remember();
+  const key = best.apply();
+  selPts = new Set([key]);
+  afterEdit(s);
+}
+// The point of a shape's outline, or of a stroke's centerline, nearest to at, and
+// how to insert a control point there.
+function nearest(s, at) {
+  let best = { dist: Infinity, apply: null };
+  const consider = (dist, apply) => { if (dist < best.dist) best = { dist, apply }; };
+  if (s.type === "outline") {
+    s.contours.forEach((P, c) => {
+      const n = P.length;
+      const T = P.map((p, i) => p[2] ? [0, 0] : [(P[(i + 1) % n][0] - P[(i - 1 + n) % n][0]) / 2, (P[(i + 1) % n][1] - P[(i - 1 + n) % n][1]) / 2]);
+      for (let i = 0; i < n; i++) {
+        const p = P[i], q = P[(i + 1) % n];
+        const c1 = [p[0] + T[i][0] / 3, p[1] + T[i][1] / 3], c2 = [q[0] - T[(i + 1) % n][0] / 3, q[1] - T[(i + 1) % n][1] / 3];
+        for (let k = 1; k < 16; k++) {
+          const b = bez(p, c1, c2, q, k / 16);
+          consider(Math.hypot(b[0] - at[0], b[1] - at[1]), () => { P.splice(i + 1, 0, [r2(b[0]), r2(b[1]), 0]); return `${c}:${i + 1}`; });
+        }
+      }
+    });
+  } else {
+    const smp = centerSamples(s.centerline);
+    smp.forEach((b, k) => {
+      const seg = Math.min(Math.floor(k / STROKE_SAMPLES), s.centerline.length - 2);
+      if (k % STROKE_SAMPLES === 0) return;
+      consider(Math.hypot(b[0] - at[0], b[1] - at[1]), () => { s.centerline.splice(seg + 1, 0, [r2(b[0]), r2(b[1])]); return String(seg + 1); });
+    });
+  }
+  return best;
+}
+function afterEdit(s) {
+  updateShape(s); drawHandles(); drawLabels(); markChanged(); showSelected(); save(); refreshExport();
+}
+
+// ---- keys ----
+document.addEventListener("keydown", (evt) => {
+  const tag = (evt.target.tagName || "").toLowerCase();
+  if (tag === "textarea" || tag === "input" || tag === "select") return;
+  if ((evt.ctrlKey || evt.metaKey) && evt.key.toLowerCase() === "z") { evt.preventDefault(); evt.shiftKey ? redo() : undo(); return; }
+  if ((evt.ctrlKey || evt.metaKey) && evt.key.toLowerCase() === "y") { evt.preventDefault(); redo(); return; }
+  if (drawing) {
+    if (evt.key === "Enter") { evt.preventDefault(); finishDrawing(); }
+    else if (evt.key === "Escape") { evt.preventDefault(); drawing = null; drawDrawing(); }
+    return;
+  }
+  const s = byId(sel);
+  if (evt.key === "Escape") { select(null); return; }
+  if (!s || !selPts.size) return;
+  const step = evt.shiftKey ? 1 : 0.25;
+  const moves = { ArrowLeft: [-step, 0], ArrowRight: [step, 0], ArrowUp: [0, -step], ArrowDown: [0, step] };
+  if (moves[evt.key]) {
+    evt.preventDefault(); remember();
+    for (const k of selPts) { const p = pointAt(k); p[0] = r2(p[0] + moves[evt.key][0]); p[1] = r2(p[1] + moves[evt.key][1]); }
+    afterEdit(s);
+  } else if (evt.key === "Delete" || evt.key === "Backspace") {
+    evt.preventDefault();
+    if (s.type === "outline") {
+      const drop = new Map();
+      for (const k of selPts) { const [c, i] = k.split(":").map(Number); if (!drop.has(c)) drop.set(c, new Set()); drop.get(c).add(i); }
+      for (const [c, idx] of drop) if (s.contours[c].length - idx.size < 3) { flash("io-status", "An outline keeps at least three points."); return; }
+      remember();
+      for (const [c, idx] of drop) s.contours[c] = s.contours[c].filter((_, i) => !idx.has(i));
+    } else {
+      const idx = new Set([...selPts].map(Number));
+      if (s.centerline.length - idx.size < 2) { flash("io-status", "A stroke keeps at least two points."); return; }
+      remember();
+      s.centerline = s.centerline.filter((_, i) => !idx.has(i));
+    }
+    selPts = new Set(); afterEdit(s);
+  }
+});
+
+// ---- selection, the list and the selected panel ----
+function select(id) {
+  if (sel !== id) selPts = new Set();
+  sel = id; drawHandles(); showSelected();
+  for (const tr of $("list").querySelectorAll("tr")) tr.classList.toggle("sel", tr.getAttribute("data-id") === id);
+}
+function isChanged(s) {
+  const o = D.shapes.find((t) => t.id === s.id);
+  return !o || JSON.stringify(o) !== JSON.stringify(s);
+}
+function markChanged() {
+  for (const tr of $("list").querySelectorAll("tr[data-id]")) {
+    const s = byId(tr.getAttribute("data-id"));
+    tr.classList.toggle("changed", !!s && isChanged(s));
+  }
+}
+function buildList() {
+  const t = $("list"); t.innerHTML = "";
+  for (const s of shapes) {
+    const tr = document.createElement("tr");
+    tr.setAttribute("data-id", s.id);
+    tr.innerHTML = `<td><span class="sw" style="background:${colourOf(s)}"></span></td><td class="name"></td>`;
+    tr.querySelector(".name").textContent = s.label;
+    tr.addEventListener("click", () => { select(s.id); });
+    t.appendChild(tr);
+  }
+  markChanged();
+  for (const tr of t.querySelectorAll("tr")) tr.classList.toggle("sel", tr.getAttribute("data-id") === sel);
+}
+function showSelected() {
+  const box = $("sel-info"), s = byId(sel);
+  if (!s) { box.textContent = "Nothing selected."; return; }
+  box.innerHTML = "";
+  const p = document.createElement("p"); p.style.margin = "0.2em 0";
+  p.innerHTML = `<span class="sw" style="background:${colourOf(s)}"></span> <strong></strong><br><span class="kind"></span>`;
+  p.querySelector("strong").textContent = s.label;
+  p.querySelector(".kind").textContent = `${s.kind}; ink of ${D.owner_names[s.owner] || s.owner}`;
+  box.appendChild(p);
+  if (s.type === "stroke") {
+    const w = document.createElement("label");
+    w.innerHTML = `Width <input type="number" step="0.5" min="1" style="width:5em"> pixels of the image`;
+    const wi = w.querySelector("input"); wi.value = s.width;
+    wi.addEventListener("change", () => { const v = parseFloat(wi.value); if (v > 0) { remember(); s.width = r2(v); afterEdit(s); } });
+    box.appendChild(w);
+    for (const [k, name] of [[0, "the start (right end)"], [1, "the end (left end)"]]) {
+      const c = document.createElement("label");
+      c.innerHTML = `<input type="checkbox"> round ${name}`;
+      const ci = c.querySelector("input"); ci.checked = s.caps[k] === "round";
+      ci.addEventListener("change", () => { remember(); s.caps[k] = ci.checked ? "round" : "flat"; afterEdit(s); });
+      box.appendChild(c);
+    }
+  }
+  const nl = document.createElement("label"); nl.textContent = "Your note on this shape:";
+  const ta = document.createElement("textarea"); ta.rows = 3; ta.value = s.note || "";
+  ta.addEventListener("input", () => { s.note = ta.value; markChanged(); save(); refreshExport(); });
+  box.appendChild(nl); box.appendChild(ta);
+  const del = document.createElement("button"); del.type = "button"; del.textContent = "Delete this shape";
+  del.addEventListener("click", () => {
+    if (!confirm(`Delete “${s.label}”?`)) return;
+    remember(); shapes = shapes.filter((t) => t !== s); sel = null; selPts = new Set(); build(); save();
+  });
+  box.appendChild(del);
+}
+
+// ---- new shapes ----
+function drawDrawing() {
+  const g = $("L-draw"); g.innerHTML = "";
+  $("draw-status").textContent = drawing ? `Click the image to add points (${drawing.pts.length} so far); press Enter to finish, Escape to stop.` : "";
+  if (!drawing || !drawing.pts.length) return;
+  el(g, "polyline", { points: drawing.pts.map((p) => p.join(",")).join(" "), fill: "none", stroke: "#0078ff", "stroke-width": 2, "vector-effect": "non-scaling-stroke" });
+  for (const p of drawing.pts) el(g, "circle", { cx: p[0], cy: p[1], r: 3 / zoom, fill: "#0078ff" });
+}
+function startDrawing(type) { drawing = { type, pts: [] }; select(null); drawDrawing(); }
+function finishDrawing() {
+  const need = drawing.type === "outline" ? 3 : 2;
+  if (drawing.pts.length < need) { $("draw-status").textContent = `A new ${drawing.type} needs at least ${need} points.`; return; }
+  remember();
+  newCount += 1;
+  while (shapes.some((s) => s.id === `new${newCount}`)) newCount += 1;
+  const kind = $("new-kind").value, owner = $("new-owner").value, id = `new${newCount}`;
+  const base = { id, group: `new-group-${newCount}`, kind, owner, label: `new ${kind} (${id})`, short: `new ${newCount}`, note: "" };
+  const s = drawing.type === "outline"
+    ? Object.assign(base, { type: "outline", contours: [drawing.pts.map((p) => [p[0], p[1], 0])] })
+    : Object.assign(base, { type: "stroke", centerline: drawing.pts, width: 6, caps: ["flat", "flat"] });
+  shapes.push(s); drawing = null; drawDrawing(); sel = id; selPts = new Set(); build(); save();
+}
+
+// ---- export ----
+function exportObj() {
+  const draft = new Map(D.shapes.map((s) => [s.id, s]));
+  const now = new Set(shapes.map((s) => s.id));
+  const withD = (s) => Object.assign(clone(s), { d: shapeD(s) });
+  return {
+    trial: D.trial, draft: D.draft_version, image: D.image_name,
+    changed: shapes.filter((s) => draft.has(s.id) && isChanged(s)).map(withD),
+    added: shapes.filter((s) => !draft.has(s.id)).map(withD),
+    deleted: [...draft.keys()].filter((id) => !now.has(id)),
+    note: generalNote,
+  };
+}
+let exportTimer = 0;
+function refreshExport() {
+  clearTimeout(exportTimer);
+  exportTimer = setTimeout(() => { $("export").value = JSON.stringify(exportObj()); }, 150);
+}
+function flash(id, text) { $(id).textContent = text; setTimeout(() => { if ($(id).textContent === text) $(id).textContent = ""; }, 4000); }
+
+// ---- zoom and toggles ----
+function applyZoom() {
+  for (const [svg, z] of [[editor, zoom], [clean, zoom2]]) { svg.setAttribute("width", W * z); svg.setAttribute("height", H * z); }
+  const dc = $("diff"); dc.style.width = `${W * zoom2}px`; dc.style.height = `${H * zoom2}px`;
+}
+let zoom2 = 1.5, photoOpacity = 1;
+function fillZooms(id, value, onChange) {
+  const s = $(id);
+  for (const z of ZOOMS) { const o = document.createElement("option"); o.value = z; o.textContent = `${z}×`; if (z === value) o.selected = true; s.appendChild(o); }
+  s.addEventListener("change", () => onChange(parseFloat(s.value)));
+}
+
+function init() {
+  const cleanOptions = () => {
+    const colours = document.querySelector("input[name=colours]:checked").value;
+    cleanClusters = colours === "clusters"; cleanTones = colours === "tones";
+    cleanSoft = document.querySelector("input[name=edges]:checked").value === "soft";
+    $("clean-legend").setAttribute("data-colours", colours);
+  };
+  cleanOptions();
+  for (const r of document.querySelectorAll("input[name=colours], input[name=edges]"))
+    r.addEventListener("change", () => { cleanOptions(); buildClean(); });
+  $("sw-ink").style.background = D.ink_rgb; $("sw-vellum").style.background = D.vellum_rgb;
+  const restored = load();
+  if (!restored) shapes = clone(D.shapes);
+  fillZooms("zoom", zoom, (z) => { zoom = z; applyZoom(); drawHandles(); drawLabels(); drawDrawing(); });
+  fillZooms("zoom2", zoom2, (z) => { zoom2 = z; applyZoom(); });
+  for (const cb of document.querySelectorAll("input[data-hide]")) {
+    const apply = () => editor.classList.toggle(cb.getAttribute("data-hide"), !cb.checked);
+    cb.addEventListener("change", apply); apply();
+  }
+  $("photo-opacity").addEventListener("input", (e) => { photoOpacity = e.target.value / 100; $("L-photo").style.opacity = photoOpacity; });
+  const cleanToggle = (id, cls) => { const cb = $(id), apply = () => { for (const e of [clean, $("clean-legend")]) e.classList.toggle(cls, !cb.checked); drawDiff(); }; cb.addEventListener("change", apply); apply(); };
+  cleanToggle("c-stray", "hide-stray"); cleanToggle("c-other", "hide-other"); cleanToggle("c-unexp", "hide-unexp");
+  for (const k of D.kinds) { const o = document.createElement("option"); o.value = k; o.textContent = k; if (k === "unidentified mark") o.selected = true; $("new-kind").appendChild(o); }
+  for (const [k, v] of Object.entries(D.owner_names)) { const o = document.createElement("option"); o.value = k; o.textContent = v; $("new-owner").appendChild(o); }
+  $("new-outline").addEventListener("click", () => startDrawing("outline"));
+  $("new-stroke").addEventListener("click", () => startDrawing("stroke"));
+  $("general-note").value = generalNote;
+  $("general-note").addEventListener("input", (e) => { generalNote = e.target.value; save(); refreshExport(); });
+  $("copy").addEventListener("click", () => {
+    const text = JSON.stringify(exportObj());
+    $("export").value = text;
+    const done = () => flash("io-status", "Copied. Paste it into the chat.");
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, () => { $("export").select(); document.execCommand("copy"); done(); });
+    else { $("export").select(); document.execCommand("copy"); done(); }
+  });
+  $("download").addEventListener("click", () => {
+    const blob = new Blob([JSON.stringify(exportObj(), null, 1)], { type: "application/json" });
+    const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = D.download_name; a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+  });
+  $("reset").addEventListener("click", () => {
+    if (!confirm("Discard your edits and start again from Claude's draft?")) return;
+    remember(); shapes = clone(D.shapes); generalNote = ""; $("general-note").value = ""; sel = null; selPts = new Set(); build(); save();
+  });
+  build();
+  if (restored) flash("io-status", "Your earlier edits in this browser were restored.");
+}
+init();
+</script>
+</body>
+</html>
