@@ -73,10 +73,11 @@ def run(pywikibot_args, base_revid=None, summary=None, no_save=False):
             f" not --base-revid {base_revid}"
         )
     saved = _save(identity, base, new_text, summary)
+    saved_path = os.path.join(run_root, "misc", "saved-pages.json")
+    # Preserve known saved revision IDs if verification raises.
+    file_io.json_dump_to_file_path([saved], saved_path)
     failure = _verify(saved, new_text)
-    file_io.json_dump_to_file_path(
-        [saved], os.path.join(run_root, "misc", "saved-pages.json")
-    )
+    file_io.json_dump_to_file_path([saved], saved_path)
     print(f"saved revision {saved['newrevid']}: {saved['diff']}")
     if failure is not None:
         raise SystemExit(f"miqra-mevoar-index run: {wikitext.INDEX_TITLE}: {failure}")

@@ -88,7 +88,7 @@ def run(keys, pywikibot_args, summary=None, no_save=False):
             outcomes, os.path.join(run_root, "misc", "outcomes.json")
         )
         saved_path = os.path.join(run_root, "misc", "saved-pages.json")
-        # Keep creation ids even if transport fails while reading the revisions back.
+        # Preserve known saved revision IDs if verification raises.
         file_io.json_dump_to_file_path(saved, saved_path)
         if saved:
             failures.extend(_verify(saved, texts))
