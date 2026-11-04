@@ -187,10 +187,12 @@ _CONCRETE_TRANSCRIPTION_BY_HAND = (
     ' saved in a git-tracked fashion": the scripts of the concrete transcription'
     " trial, item 12 of doc/PLAN-ink-regions.md, run by hand on its one image, as"
     " py/main_pen_stroke.py is, which Ben's decision of 2026-10-30 keeps out of the"
-    ' mega as "a very early-stage experiment".  Nothing it writes is tracked or read'
-    " by a product, and its fetch downloads from tanach.us.  Recorded in"
-    ' doc/concrete-transcription-2026-11-03/README.md, under "Tracked since'
-    ' 2026-11-04".'
+    ' mega as "a very early-stage experiment".  Nothing it writes is read by a'
+    " product, and its fetch downloads from tanach.us.  Of what it writes, only the"
+    " production images under doc/concrete-transcription-2026-11-03/production/ are"
+    " tracked; they are no product, and nothing checks that they are current."
+    ' Recorded in doc/concrete-transcription-2026-11-03/README.md, under "Tracked'
+    ' since 2026-11-04" and "The production images, 2026-11-04".'
 )
 
 # ---------------------------------------------------------------------------
@@ -636,6 +638,7 @@ NOT_IN_MEGA: dict[str, str] = {
     "py/main_concrete_transcription.py fold": _CONCRETE_TRANSCRIPTION_BY_HAND,
     "py/main_concrete_transcription.py page": _CONCRETE_TRANSCRIPTION_BY_HAND,
     "py/main_concrete_transcription.py preview": _CONCRETE_TRANSCRIPTION_BY_HAND,
+    "py/main_concrete_transcription.py production": _CONCRETE_TRANSCRIPTION_BY_HAND,
     "py/main_concrete_transcription.py edges": _CONCRETE_TRANSCRIPTION_BY_HAND,
     "py/main_concrete_transcription.py edges-chart": _CONCRETE_TRANSCRIPTION_BY_HAND,
     "py/main_concrete_transcription.py area": _CONCRETE_TRANSCRIPTION_BY_HAND,

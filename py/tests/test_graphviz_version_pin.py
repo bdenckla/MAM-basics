@@ -61,7 +61,11 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 # region-SVGs beside them likewise combine authored cuts, seeds and groups with
 # crop-derived outlines; test_ink_region_svgs.py checks them.  Their library of
 # glyphs, glyphs.svg, holds outlines derived from the crops and copied from
-# Taamey D's font; test_ink_region_svgs.py checks it too.
+# Taamey D's font; test_ink_region_svgs.py checks it too.  The concrete
+# transcription trial's two production images are written by
+# py/concrete_transcription/ct_preview.py from the trial's draft 3, not by Graphviz;
+# the README beside them says how to regenerate them, and nothing checks that they
+# are current.
 _EXPECTED_UNSTAMPED = frozenset(
     {
         "doc/process-documentation/MAM process original.svg",
@@ -79,6 +83,10 @@ _EXPECTED_UNSTAMPED = frozenset(
         "doc/pen-stroke-snips/leningrad-102A-col3-Deut5v6-3L0PNY.regions.svg",
         "doc/pen-stroke-snips/leningrad-102A-col3-Deut5v7-MFXF.regions.svg",
         "doc/pen-stroke-snips/glyphs.svg",
+        "doc/concrete-transcription-2026-11-03/production/"
+        "concrete-transcription-3-with-stray-stroke.svg",
+        "doc/concrete-transcription-2026-11-03/production/"
+        "concrete-transcription-3-without-stray-stroke.svg",
     }
 )
 

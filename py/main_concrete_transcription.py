@@ -7,7 +7,8 @@ doc/concrete-transcription-2026-11-03/, whose README.md gives the order in which
 these subcommands rebuild the trial.  Every subcommand but fetch reads only that
 directory, other files of this repository and the paths it is given, and writes
 only into the work directory or the paths it is given; the work directory and the
-pages are not tracked.
+pages are not tracked, but the production images are, in that directory's
+production/.
 
 Subcommands:
     fetch
@@ -37,6 +38,11 @@ Subcommands:
         Usage: preview WORK-DIR OUT DRAFT
         Write a draft's production preview: one image, whose views a click
         cycles.
+    production
+        Usage: production WORK-DIR OUT-DIR DRAFT
+        Write a draft's production images into OUT-DIR: the preview's views
+        of the transcription, with the stray stroke and without it, each an
+        SVG file the image's size.
     edges
         Usage: edges WORK-DIR DRAFT [PROFILE]
         Compare the edges of a draft's shapes with the image's, and write
@@ -110,6 +116,10 @@ def _run_preview(args):
     ct_preview.run(args.work, args.out, args.draft)
 
 
+def _run_production(args):
+    ct_preview.production(args.work, args.out_dir, args.draft)
+
+
 def _run_edges(args):
     ct_edges.run(args.work, args.draft, args.profile)
 
@@ -180,6 +190,10 @@ def build_parser():
     p.add_argument("work", type=Path)
     p.add_argument("out", type=Path)
     p.add_argument("draft")
+    p = sub.add_parser("production", help="write a draft's production images")
+    p.add_argument("work", type=Path)
+    p.add_argument("out_dir", type=Path)
+    p.add_argument("draft")
     p = sub.add_parser("edges", help="compare the shapes' edges with the image's")
     p.add_argument("work", type=Path)
     p.add_argument("draft")
@@ -231,6 +245,7 @@ def main():
         "fold": _run_fold,
         "page": _run_page,
         "preview": _run_preview,
+        "production": _run_production,
         "edges": _run_edges,
         "edges-chart": _run_edges_chart,
         "area": _run_area,

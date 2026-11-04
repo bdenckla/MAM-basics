@@ -17,7 +17,8 @@ trial's files were untracked, in `.novc/concrete-transcription-2026-11-03/` of t
 
 1. **Tracked in this directory:** this README; `download-image/112-Detail.jpg`, the trial's one
    input, with its fetch record, under the terms that `DATA-LICENSES.md` gives it; and
-   `edits/ben-edits-1.json`, Ben's edits of draft 1.
+   `edits/ben-edits-1.json`, Ben's edits of draft 1. Later the same day the production images
+   joined them, in `production/`: the last section.
 2. **Tracked as code:** the scripts, each `ct_….py` that this README names, are the package
    `py/concrete_transcription/`, with the two page templates beside them, and one program,
    `py/main_concrete_transcription.py`, runs them: each script is the subcommand of its name
@@ -34,8 +35,8 @@ trial's files were untracked, in `.novc/concrete-transcription-2026-11-03/` of t
 
 The program is run by hand, not by the mega, as `py/main_pen_stroke.py` is, which Ben's decision
 of 2026-10-30 keeps out of the mega as "a very early-stage experiment": it works on this one
-image, and nothing it writes is tracked or read by a product. `py/tests/test_mega_coverage.py`
-declares it so.
+image, and nothing it writes is read by a product; of what it writes, only the production images
+of the last section are tracked. `py/tests/test_mega_coverage.py` declares it so.
 
 The move changed no output. The trial was rebuilt twice from the image and Ben's edits alone,
 into fresh directories, once by the untracked scripts and once by the tracked program: every
@@ -68,6 +69,9 @@ the present soft edge.
 ./.venv/Scripts/python.exe py/main_concrete_transcription.py edges .novc/concrete-transcription-2026-11-03/work 3 .novc/concrete-transcription-2026-11-03/work/draft3-edge-profile.json
 ./.venv/Scripts/python.exe py/main_concrete_transcription.py edges-chart .novc/concrete-transcription-2026-11-03/work/draft3-edge-profile.json .novc/concrete-transcription-2026-11-03/look/draft3-edge-profile.png
 ```
+
+The tracked production images, which `production` writes after draft 3's commands, have their
+command in the last section.
 
 ## The image
 
@@ -454,3 +458,47 @@ Regenerate both pages, from the clone's root, after draft 3's commands:
 ./.venv/Scripts/python.exe py/main_concrete_transcription.py page .novc/concrete-transcription-2026-11-03/work .novc/concrete-transcription-2026-11-03/concrete-transcription-3.html 3
 ./.venv/Scripts/python.exe py/main_concrete_transcription.py preview .novc/concrete-transcription-2026-11-03/work .novc/concrete-transcription-2026-11-03/concrete-transcription-3-preview.html 3
 ```
+
+## The production images, 2026-11-04
+
+At 17:32 New York time on 2026-11-04 Ben asked the commander session for the production version
+in a form that Codex can incorporate in a page it maintains outside this repository: "if you get
+the image(s) committed to MAM-basics somewhere appropriate". The session that the commander
+started for it committed them here, in `production/`:
+
+1. `concrete-transcription-3-with-stray-stroke.svg` and
+   `concrete-transcription-3-without-stray-stroke.svg`, 21,606 and 19,210 bytes: the production
+   preview's second and third views, the concrete transcription with the stray stroke and
+   without it. Each is a standalone SVG file of the image's size, 530 by 250, in its pixels; the
+   preview shows them at 1.5×, 795 by 375. Each draws what its view draws: the vellum,
+   `#d5cbae`, and over it draft 3's shapes as Claude drew them, in the ink, `#403931`, under one
+   Gaussian blur of 2.4 px. Neither embeds the image, and each file's filter has an id of its
+   own, its filename's stem with `-soft` added, so that both can be inlined in one page.
+2. The first view, the image, is `download-image/112-Detail.jpg` itself, of the same size; the
+   preview shows the lossless decoding of it that level 1 writes, `work/112-Detail.png`.
+
+`ct_preview.py` writes the preview and the production images alike, from the same construction
+of each view, and the program's `production` subcommand runs it. Regenerate them, from the
+clone's root, after level 1 and draft 3's `draft` and `shapes` commands above:
+
+```powershell
+./.venv/Scripts/python.exe py/main_concrete_transcription.py production .novc/concrete-transcription-2026-11-03/work doc/concrete-transcription-2026-11-03/production 3
+```
+
+They are no product, and nothing checks that they are current: a change to the trial's code, to
+the code of `py/pen_stroke/` that it imports, or to its image obliges the rerun, by `AGENTS.md`'s
+rule for hand-run generators, and the regenerated files' diff is the check. `DATA-LICENSES.md`
+gives their terms, those of the image they are traced from.
+
+Checked on 2026-11-04:
+
+1. Level 1 and draft 3, rebuilt from the image alone into a fresh work directory, gave
+   `level1.json`, `112-Detail.png` and `draft3-shapes.json` byte for byte as the trial's own.
+2. The preview page, written again from that directory by the changed `ct_preview.py`, is byte
+   for byte the page it wrote before.
+3. Parsed, each image's paths, in order and with their fill rules, and its vellum, ink, filter
+   region, blur and viewBox, equal those of its view in the preview page as it was before the
+   change: 21 paths with the stray stroke, 19 without it.
+4. In the built-in browser, the JPEG and the two images, each embedded as a `data:` URL in a page
+   whose Content-Security-Policy admits images only as `data:` URLs, loaded at 530 by 250 and
+   drew as the preview's views do, with no console message.
