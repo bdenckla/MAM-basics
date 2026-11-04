@@ -6,8 +6,9 @@ created the other 55 base chapters of the six books, and the base-chapter index,
 added at Ben's request, links all 929 chapters as revision 3101215. Ben offered Avi the bot for
 the display pages (decisions ledger entry 13), and Avi accepted, in an answer that Ben relayed on
 2026-11-04 (Deferred, “Display pages”). Stage 10, written that day, has the bot create the seven
-of those pages whose base chapters exist; it waits on Ben's word to execute it. The execution
-ledger below records each finished stage.
+of those pages whose base chapters exist. Ben gave his word to execute it the same day, and a
+fresh session is executing it; its save waits on his word for that run. The execution ledger
+below records each finished stage.
 
 Written 2026-11-02 by Claude (Opus 5.5) in the Phase 1 session that the session "Commander for
 Claude's forests" started for Avi's email "Mikra Mevo'ar at Wikisource". The quoted decisions are
@@ -324,6 +325,16 @@ byte-for-byte copy of that frozen plan; this ledger and the State line are the e
   `76583ffa727636a20f4c6496370aa94038fb6535`, whose four new commits add MAM-morphhb and touch
   nothing of this plan's. The session read the live pages, saving nothing (Deferred, “Display
   pages”), wrote Stage 10 and drafted Ben's reply to Avi. It ran no BDencklaBot command.
+- **Stage 10's word, 2026-11-04:** Ben, answering "Do you give your word to execute Stage 10 as
+  written, in a fresh session?" in the session that wrote the stage: "Yes, execute it", at 09:59
+  New York time. He then answered "Yes, start it" in the commander session, to its question about
+  starting the executing session. The commander started a fresh Claude (Opus 5.5) session for the
+  stage, with a brief whose Part A is the writing session's prompt, frozen at SHA-256
+  `F441BB0AE0A5430C99F992DB4AA360BBFFE89211A99BF3CA8CB46FC6D8415712`.
+- **Stage 10's checkout:** `C:/Users/BenDe/GitRepos2/MAM-basics`, assigned by the commander.
+  Verified 2026-11-04, before the stage's first edit: on `main`, clean, at origin's
+  `210affe3ac2931473bead0de839be0de08309e3d`, the push of this stage, of which `f0d2f2e6`, the
+  commit that added it, is an ancestor.
 
 ## Background for a fresh executor
 
