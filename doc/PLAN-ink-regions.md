@@ -230,9 +230,14 @@ Ben answered the plan's three decisions on 2026-11-01, after it was pushed in `5
     the purposes of seeing whether we can, with considerable manual assistance, create a concrete
     transcription of the word/image of" UXLC change
     [2023.03.25-112](https://tanach.us/Changes/2023.07.04%20-%20Changes/2023.07.04%20-%20Changes.xml?2023.03.25-112).
-    The trial that followed took up none of this plan's phases, and the plan stays paused; its
-    material is untracked, under `.novc/concrete-transcription-2026-11-03/` in the clone
-    `C:/Users/BenDe/GitRepos2/MAM-basics`. On 2026-11-04, to the line "The name “concrete
+    The trial that followed took up none of this plan's phases, and the plan stays paused. Its
+    material was untracked, under `.novc/concrete-transcription-2026-11-03/` in the clone
+    `C:/Users/BenDe/GitRepos2/MAM-basics`, until 2026-11-04, when Ben asked for "saving whatever
+    needs to be saved in a git-tracked fashion": its record, its one image and Ben's edits of its
+    draft 1 are in `doc/concrete-transcription-2026-11-03/`, whose README.md is the place to
+    start, and its scripts are the package `py/concrete_transcription/`, run by
+    `py/main_concrete_transcription.py`. Its work files and pages stay untracked in that folder,
+    and the README's commands rebuild them. On 2026-11-04, to the line "The name “concrete
     transcriber”. I have renamed nothing." in the trial's report on its draft 3, Ben answered "let's
     go with that name." So the project is called the concrete transcriber. Ben's words in this item
     are copied by script from the transcripts of the commander session and of the trial, not from
