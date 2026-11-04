@@ -18,6 +18,11 @@ The special-letter word wrapper and the small/large-letter templates recurse int
 their Scripture parameter without inserting a word boundary or losing a letter.
 Documentation is never Scripture. Unknown templates fail rather than contribute
 guessed text. No pointed text or second Bible corpus is stored in the index.
+
+Poetic-space and gray-maqaf templates are explicit separators. Stress helpers
+and vowel variants select one branch only after consonants and atom boundaries
+agree across both branches. A leading inverted nun has no Scripture atom; only
+its exact sign-plus-space payload is accepted at the start of a verse.
 """
 
 import re
@@ -32,6 +37,9 @@ _UNEQUAL_KQ_FORMS = {
         (("מהם",), ("מה", "הם")),
         (("מאשתם",), ("מאש", "תם")),
         (("והנהו",), ("והנה", "הוא")),
+        (("חלכאים",), ("חל", "כאים")),
+        (("ישימות",), ("ישי", "מות")),
+        (("לגאיונים",), ("לגאי", "יונים")),
     },
     'כו"ק קרי שונה מהכתיב בשתי מילים': {(("כאשר",), ("ככל", "אשר"))},
 }
@@ -81,40 +89,84 @@ def _body_text(elements, *, protected=None):
             # Ben's maintained written-atom policy in mam_json_verses excludes
             # kq-q-velo-k. Keep neighboring written words separate at its slot.
             parts.append(" ")
+        elif (
+            isinstance(element, dict)
+            and element["tmpl_name"] == template_names.SLH_WORD
+        ):
+            params = template_names.validate_current_plus_template(element)
+            selected = _target_text(params["1"], protected=protected)
+            if (
+                not all(isinstance(params[key], str) for key in ("2", "3", "4", "5"))
+                or len(letters_atoms(selected)) != 1
+                or _consonantal_layout(selected) != _consonantal_layout(params["2"])
+                or any(ch.isspace() or ch == "\u05be" for ch in selected)
+            ):
+                raise ValueError("Special-letter word lost a letter or atom boundary")
+            parts.append(selected)
         elif isinstance(element, dict) and element["tmpl_name"] in {
-            template_names.SLH_WORD,
             "מ:אות-ק",
             "מ:אות-ג",
+            "מ:אות תלויה",
         }:
             params = template_names.validate_current_plus_template(element)
-            # These explicit in-word templates contribute their Scripture
-            # parameter. Their descriptions are metadata; do not split the word.
-            parts.append(_target_text(params["1"], protected=protected))
+            marked = params["1"]
+            if (
+                not isinstance(marked, str)
+                or len(atoms := letters_atoms(marked)) != 1
+                or len(atoms[0]) != 1
+                or any(ch.isspace() or ch == "\u05be" for ch in marked)
+            ):
+                raise ValueError("Marked letter must preserve one in-word letter")
+            parts.append(marked)
         elif (
             isinstance(element, dict)
             and element["tmpl_name"] == template_names.QAMATS_VARIANT
         ):
             params = template_names.validate_current_plus_template(element)
-            dalet = _target_text(params["ד"], protected=protected)
-            samekh = _target_text(params["ס"])
-            if letters_atoms(dalet) != letters_atoms(samekh):
-                raise ValueError("Vowel alternatives have different consonantal atoms")
+            dalet = _variant_text(params["ד"])
+            samekh = _variant_text(params["ס"])
+            _require_same_layout(dalet, samekh)
             parts.append(dalet)
+        elif (
+            isinstance(element, dict)
+            and element["tmpl_name"] in template_names.STRESS_HELPER_TMPL_NAMES
+        ):
+            params = template_names.validate_current_plus_template(element)
+            forms = []
+            for key in ("1", "2"):
+                form = params[key]
+                if isinstance(form, str):
+                    forms.append(form)
+                elif (
+                    isinstance(form, dict)
+                    and form.get("tmpl_name") == template_names.SLH_WORD
+                ):
+                    forms.append(_body_text([form]))
+                else:
+                    raise ValueError("Unsupported stress-helper alternative storage")
+            _require_same_layout(*forms)
+            parts.append(forms[0])
         elif (
             isinstance(element, dict)
             and element["tmpl_name"] == template_names.TRIVIAL_QERE
         ):
             params = template_names.validate_current_plus_template(element)
-            if not all(
-                isinstance(params[key], str) and len(letters_atoms(params[key])) == 1
-                for key in ("1", "2", "3")
-            ):
-                raise ValueError(
-                    "Trivial ketiv/qere must contain one atom in each form"
-                )
+            forms = tuple(_trivial_form(params[key]) for key in ("1", "2", "3"))
+            if any(not isinstance(params[key], str) for key in ("1", "2", "3")):
+                if (
+                    tuple(map(letters_atoms, forms))
+                    != (("דרכו",), ("דרכו",), ("דרכיו",))
+                    or not isinstance(params["1"], list)
+                    or not isinstance(params["2"], str)
+                    or not isinstance(params["3"], list)
+                    or set(params) != {"1", "2", "3", "מקורות", "סוג"}
+                    or params["מקורות"] != "א-קרי"
+                    or params["סוג"] != 'כתיב חסר יו"ד בסיומת של קמץ ואחריו וי"ו'
+                ):
+                    raise ValueError("Unverified nested trivial ketiv/qere")
             # Match the existing MAM-simple kq-trivial body's main form, not
             # an alternative spelling or a reading assembled from other fields.
-            parts.append(params["1"])
+            parts.append(forms[0])
         elif isinstance(element, dict) and element["tmpl_name"] == "מ:כו״ק מיוחד":
             params = template_names.validate_current_plus_template(element)
             if params["סוג"] == 'כו"ק של שתי מילים בהערה אחת':
@@ -125,14 +177,14 @@ def _body_text(elements, *, protected=None):
                     raise ValueError("Special ketiv/qere needs the named two-word form")
                 qere = _two_word_special_qere(params["2"])
             elif params["סוג"] in _UNEQUAL_KQ_FORMS:
-                if not all(isinstance(params[key], str) for key in ("1", "2")):
-                    raise ValueError("Unequal ketiv/qere needs string forms")
-                forms = tuple(letters_atoms(params[key]) for key in ("1", "2"))
+                if not isinstance(params["1"], str):
+                    raise ValueError("Unequal ketiv/qere needs a string written form")
+                qere = _unequal_qere_form(params["2"])
+                forms = letters_atoms(params["1"]), letters_atoms(qere)
                 if forms not in _UNEQUAL_KQ_FORMS[params["סוג"]]:
                     raise ValueError("Unverified unequal ketiv/qere forms")
                 if protected is not None:
                     protected.append(" ".join(forms[1]))
-                qere = params["2"]
             else:
                 raise ValueError("Unsupported special ketiv/qere subtype")
             # Maintained projection selects qere parameter 2. A single written
@@ -147,6 +199,12 @@ def _body_text(elements, *, protected=None):
         elif isinstance(element, dict) and element["tmpl_name"] in {
             "פפ",
             "פפפ",
+            "ר0",
+            "ר1",
+            "ר2",
+            "ר3",
+            "ר4",
+            "מ:מקף אפור",
             "סס",
             "ססס",
         }:
@@ -174,6 +232,80 @@ def _body_text(elements, *, protected=None):
     return "".join(parts)
 
 
+def _consonantal_layout(value):
+    """Retain consonants and every atom boundary, including the outer edges."""
+    letters_and_boundaries = "".join(
+        ch for ch in value if "א" <= ch <= "ת" or ch.isspace() or ch == "\u05be"
+    )
+    return re.sub(r"[\s\u05be]+", " ", letters_and_boundaries)
+
+
+def _require_same_layout(first, second):
+    if not letters_atoms(first) or _consonantal_layout(first) != _consonantal_layout(
+        second
+    ):
+        raise ValueError("Alternatives have different consonants or atom boundaries")
+
+
+def _variant_text(form):
+    if isinstance(form, str):
+        return form
+    if (
+        isinstance(form, dict)
+        and form.get("tmpl_name") in template_names.STRESS_HELPER_TMPL_NAMES
+    ):
+        return _body_text([form])
+    if (
+        isinstance(form, list)
+        and len(form) == 2
+        and isinstance(form[0], str)
+        and isinstance(form[1], dict)
+        and form[1].get("tmpl_name") == "מ:מקף אפור"
+    ):
+        return _body_text(form)
+    raise ValueError("Unsupported vowel-alternative storage")
+
+
+def _trivial_form(form):
+    rendered = form if isinstance(form, str) else _trailing_legarmeh_form(form)
+    if len(letters_atoms(rendered)) != 1:
+        raise ValueError("Trivial ketiv/qere must preserve one atom per form")
+    return rendered
+
+
+def _trailing_legarmeh_form(form):
+    if (
+        not isinstance(form, list)
+        or len(form) != 2
+        or not isinstance(form[0], str)
+        or not isinstance(form[1], dict)
+        or form[1].get("tmpl_name") != "מ:לגרמיה-2"
+    ):
+        raise ValueError("Unsupported trailing legarmeh storage")
+    return _body_text(form)
+
+
+def _unequal_qere_form(form):
+    return form if isinstance(form, str) else _trailing_legarmeh_form(form)
+
+
+def _verse_text(elements, *, protected=None):
+    if (
+        isinstance(elements, (list, tuple))
+        and elements
+        and isinstance(elements[0], dict)
+        and elements[0].get("tmpl_name") == template_names.INVERTED_NUN
+    ):
+        params = template_names.validate_current_plus_template(elements[0])
+        if params != {"1": "\u05c6 "}:
+            raise ValueError("Unverified leading inverted-nun payload")
+        rendered = _body_text(elements[1:], protected=protected)
+        if not letters_atoms(rendered):
+            raise ValueError("Leading inverted nun requires following Scripture")
+        return rendered
+    return _body_text(elements, protected=protected)
+
+
 def _two_word_special_qere(form):
     if isinstance(form, str):
         rendered = form
@@ -199,16 +331,16 @@ def _two_word_special_qere(form):
 def _ordinary_kq_form(form):
     if isinstance(form, str):
         selected = form
-    elif (
-        isinstance(form, dict)
-        and form.get("tmpl_name") == template_names.QAMATS_VARIANT
-    ):
+    elif isinstance(form, dict) and form.get("tmpl_name") in {
+        template_names.QAMATS_VARIANT,
+        *template_names.STRESS_HELPER_TMPL_NAMES,
+    }:
         params = template_names.validate_current_plus_template(form)
-        if not all(isinstance(params[key], str) for key in ("ד", "ס")):
-            raise ValueError("Ketiv/qere vowel alternatives need string forms")
         # Reuse the closed vowel rule: both branches must have identical
         # consonantal atoms. This does not admit other nested template families.
         selected = _body_text([form])
+    elif isinstance(form, list):
+        selected = _trailing_legarmeh_form(form)
     else:
         raise ValueError("Unsupported ordinary ketiv/qere form")
     if len(letters_atoms(selected)) != 1:
@@ -245,7 +377,7 @@ def _book_projection(bkid, books):
     for bcvt, minirow in books[bkid]["verses_plus"].items():
         cv = tbn.bcvt_get_chnu(bcvt), tbn.bcvt_get_vrnu(bcvt)
         protected = []
-        verses[cv] = letters_atoms(_body_text(minirow.EP, protected=protected))
+        verses[cv] = letters_atoms(_verse_text(minirow.EP, protected=protected))
         if not verses[cv]:
             raise ValueError(f"{bkid} {cv}: no Scripture atoms")
         for phrase in protected:

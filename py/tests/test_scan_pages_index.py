@@ -46,12 +46,19 @@ def _independent_simple_atoms(book):
 
     def flatten(node):
         kind = node["type"]
+        if kind == "kq-trivial" and "contents" in node:
+            assert set(node) == {"type", "contents"}
+            assert isinstance(node["contents"], list) and len(node["contents"]) == 2
+            word, separator = node["contents"]
+            assert word["type"] == "text" and separator == {"type": "lp-legarmeih"}
+            return flatten(word) + " "
         if kind in {
             "text",
             "kq-trivial",
             "kq-k-velo-q",
             "letter-small",
             "letter-large",
+            "letter-hung",
         }:
             assert set(node) == {"type", "text"}
             assert isinstance(node["text"], str)
@@ -72,7 +79,7 @@ def _independent_simple_atoms(book):
                 "slhw-desc-3",
             }
             assert all(
-                n["type"] in {"text", "letter-small", "letter-large"}
+                n["type"] in {"text", "letter-small", "letter-large", "letter-hung"}
                 for n in node["contents"]
             )
             return "".join(map(flatten, node["contents"]))
@@ -83,11 +90,15 @@ def _independent_simple_atoms(book):
                 assert isinstance(qere["text"], str)
                 return qere["text"]
             assert set(qere) == {"type", "contents"}
-            assert all(n["type"] in {"text", "lp-paseq"} for n in qere["contents"])
+            assert all(
+                n["type"] in {"text", "lp-paseq", "lp-legarmeih"}
+                for n in qere["contents"]
+            )
             return "".join(map(flatten, qere["contents"]))
         assert node in (
             {"type": "lp-legarmeih"},
             {"type": "lp-paseq"},
+            {"type": "implicit-maqaf"},
             {"type": "spi-pe2"},
             {"type": "spi-pe3"},
             {"type": "spi-samekh2"},
@@ -104,10 +115,16 @@ def _independent_simple_atoms(book):
         if not verse["osisID"].startswith(prefix):
             continue
         _, c, v = verse["osisID"].split(".")
+        contents = verse.get("contents", [])
+        if contents and contents[0].get("type") == "spi-invnun":
+            assert contents[0] == {
+                "type": "spi-invnun",
+                "class": "including-trailing-space",
+            }
+            contents = contents[1:]
+            assert contents
         source_text = (
-            verse["text"]
-            if "text" in verse
-            else "".join(map(flatten, verse["contents"]))
+            verse["text"] if "text" in verse else "".join(map(flatten, contents))
         )
         expected[int(c), int(v)] = tuple(
             letters
@@ -185,6 +202,164 @@ def test_frontier_jeremiah_atoms_agree_and_malformed_forms_refuse():
                     text._body_text([bad])
                 checked += 1
     assert checked, "No new frontier form was fault-checked"
+
+
+def _psalms_source():
+    return plus.read_parsed_plus_bk39s(
+        ["Psalms"], mam_parsed_path=paths.mam_parsed_path()
+    )["Psalms"]
+
+
+def _templates(node):
+    if isinstance(node, dict):
+        if "tmpl_name" in node:
+            yield node
+        for child in node.values():
+            yield from _templates(child)
+    elif isinstance(node, (list, tuple)):
+        for child in node:
+            yield from _templates(child)
+
+
+def test_frontier_psalms_atoms_agree_with_independent_simple_export():
+    """Compare the whole candidate text without declaring native page coverage."""
+    assert _independent_simple_atoms("Psalms") == text.book_atoms("Psalms")
+
+
+def test_frontier_psalms_malformed_forms_refuse():
+    """Fault-check the new closed shapes throughout the actual source corpus."""
+    checked = set()
+    separators = {"ר0", "ר1", "ר2", "ר3", "ר4", "מ:מקף אפור"}
+    letters = {"מ:אות-ק", "מ:אות-ג", "מ:אות תלויה"}
+    variants = {template_names.QAMATS_VARIANT, *template_names.STRESS_HELPER_TMPL_NAMES}
+    for row in _psalms_source()["verses_plus"].values():
+        for wrapper in _templates(row.EP):
+            name, params = wrapper["tmpl_name"], wrapper.get("tmpl_params", {})
+            corruptions = []
+            if name in separators | variants | letters | {template_names.SLH_WORD}:
+                bad = deepcopy(wrapper)
+                bad.setdefault("tmpl_params", {})["extra"] = "metadata"
+                corruptions.append(bad)
+            if name in separators:
+                bad = deepcopy(wrapper)
+                bad["tmpl_params"] = {"1": "א"}
+                corruptions.append(bad)
+            elif name in variants:
+                key = "ס" if name == template_names.QAMATS_VARIANT else "2"
+                bad = deepcopy(wrapper)
+                bad["tmpl_params"][key] = "א"
+                corruptions.append(bad)
+                bad = deepcopy(wrapper)
+                bad["tmpl_params"][key] = [params[key]]
+                corruptions.append(bad)
+                if isinstance(params[key], str):
+                    bad = deepcopy(wrapper)
+                    value = params[key]
+                    # Toggle a real outer boundary, preserving all letters.
+                    if value[-1].isspace() or value[-1] == "\u05be":
+                        value = value.rstrip().rstrip("\u05be").rstrip()
+                    else:
+                        value += " "
+                    bad["tmpl_params"][key] = value
+                    corruptions.append(bad)
+            elif name in letters:
+                for value in (params["1"] + "א", params["1"] + " ", [params["1"]]):
+                    bad = deepcopy(wrapper)
+                    bad["tmpl_params"]["1"] = value
+                    corruptions.append(bad)
+            elif name == template_names.SLH_WORD:
+                bad = deepcopy(wrapper)
+                bad["tmpl_params"]["2"] += "א"
+                corruptions.append(bad)
+                for key in ("3", "4", "5"):
+                    bad = deepcopy(wrapper)
+                    bad["tmpl_params"][key] = []
+                    corruptions.append(bad)
+            elif name == "מ:כו״ק מיוחד":
+                bad = deepcopy(wrapper)
+                bad["tmpl_params"]["1"] += "א"
+                corruptions.append(bad)
+                bad = deepcopy(wrapper)
+                bad["tmpl_params"]["סוג"] = "unsupported"
+                corruptions.append(bad)
+            elif name in {"כו״ק", "קו״כ", template_names.TRIVIAL_QERE}:
+                for key, form in params.items():
+                    if isinstance(form, list):
+                        bad = deepcopy(wrapper)
+                        bad["tmpl_params"][key][-1] = {"tmpl_name": "unsupported"}
+                        corruptions.append(bad)
+                    elif isinstance(form, dict):
+                        bad = deepcopy(wrapper)
+                        bad["tmpl_params"][key]["tmpl_name"] = "unsupported"
+                        corruptions.append(bad)
+            for bad in corruptions:
+                with pytest.raises((ValueError, TypeError, KeyError)):
+                    text._body_text([bad])
+                checked.add(name)
+    assert separators - {"ר4"} <= checked
+    assert (
+        variants
+        | letters
+        | {template_names.SLH_WORD, "מ:כו״ק מיוחד", template_names.TRIVIAL_QERE, "כו״ק"}
+        <= checked
+    )
+
+
+def test_frontier_psalms_inverted_nuns_remain_leading_and_exact():
+    """A source sign cannot contribute letters, hide an interior node or join atoms."""
+    checked = 0
+    for row in _psalms_source()["verses_plus"].values():
+        nodes = row.EP
+        if not (
+            isinstance(nodes[0], dict)
+            and nodes[0].get("tmpl_name") == template_names.INVERTED_NUN
+        ):
+            continue
+        assert text._verse_text(nodes) == text._body_text(nodes[1:])
+        for value in ("\u05c6", "\u05c6  ", "\u05c6 א", " ", ["\u05c6 "]):
+            bad = deepcopy(nodes[0])
+            bad["tmpl_params"]["1"] = value
+            with pytest.raises((ValueError, TypeError)):
+                text._verse_text([bad, *nodes[1:]])
+        for bad in (
+            [nodes[0]],
+            [nodes[0], *nodes],
+            [*nodes[1:], nodes[0]],
+            [{"tmpl_name": "נוסח", "tmpl_params": {"1": nodes[0]}}],
+        ):
+            with pytest.raises((ValueError, TypeError)):
+                text._verse_text(bad)
+        checked += 1
+    assert checked, "No leading sign was checked"
+
+
+def test_frontier_psalms_unequal_mappings_preserve_spans_and_refuse_ambiguity():
+    """Derive mapped pairs from source and independently decoded verse atoms."""
+    from types import SimpleNamespace
+
+    expected = _independent_simple_atoms("Psalms")
+    book = _psalms_source()
+    actual = text.book_alignment_spans("Psalms", {"Psalms": book})
+    derived = []
+    for bcvt, row in book["verses_plus"].items():
+        phrases = []
+        text._verse_text(row.EP, protected=phrases)
+        cv = tbn.bcvt_get_chnu(bcvt), tbn.bcvt_get_vrnu(bcvt)
+        for phrase in phrases:
+            pair = tuple(phrase.split(" "))
+            matches = [
+                i
+                for i in range(len(expected[cv]) - 1)
+                if expected[cv][i : i + 2] == pair
+            ]
+            assert len(pair) == 2 and len(matches) == 1
+            first = matches[0] + 1
+            derived.append(((*cv, first), (*cv, first + 1)))
+            bad = [*row.EP, " " + phrase]
+            mutated = {"Psalms": {"verses_plus": {bcvt: SimpleNamespace(EP=bad)}}}
+            with pytest.raises(ValueError, match="supply a longer unique cue"):
+                text.book_alignment_spans("Psalms", mutated)
+    assert derived and tuple(derived) == actual
 
 
 def test_every_record_edge_resolves_to_its_observed_page():

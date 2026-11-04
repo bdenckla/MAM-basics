@@ -334,6 +334,22 @@ for a fresh session that has no other context. Its thin pointer issue is #349, f
   two body segments. Exact guarded mappings and source correspondences
   remain intact. No main integration or deployment occurred.
 
+- 2026-11-04, Psalms projection candidate: the isolated research branch supports
+  the public parsed text's explicit poetic-space and gray-maqaf separators,
+  consonant-identical stress/vowel alternatives, hung-letter markup, and named
+  nested ketiv/qere forms. Alternative branches must agree on consonants and atom
+  boundaries, including their outer edges. The three named unequal Psalms forms
+  declare indivisible spans; unknown forms and ambiguous locations refuse.
+  Inverted-nun support is limited to the exact leading sign-plus-space payload
+  with following Scripture; interior, repeated and malformed signs refuse.
+  Candidate source support does **not** declare page coverage: the catalogs and
+  segments are unchanged, and Psalms lookup remains uncensused. No main
+  integration or deployment is part of this candidate work. All 2,527 verses /
+  19,586 canonical atoms agree with the independent MAM-simple export; the three
+  mapped spans are preserved. Ten focused index tests pass, with the repetitive
+  existing page-edge lookup test deselected. Initial failures and experimental
+  diagnostics are retained outside the public source tree.
+
 ## Codex entry indexes
 
 `in/lci_recs.json` is the public Leningrad Codex entry index. Its canonical top level
