@@ -515,8 +515,12 @@ NOT_IN_MEGA: dict[str, str] = {
     "py/main_mam_morphhb.py": (
         'Ben approved building it on 2026-11-03 ("Yes, as recommended"), as exploratory'
         " work: it writes MAM-morphhb, today's MAM in the 2014 form of morphhb's MAPM.xml,"
-        " and runs by hand.  Adding it to the mega waits for his word.  Recorded in"
-        ' MAM-morphhb/README.md, under "How current this product is".'
+        " and runs by hand.  Offered the same day a mega step, an exemption like"
+        " MAM-OSIS's or the hand-run rule as it stood, Ben chose the exemption"
+        ' ("Yes, exempt it"), so a refresh of'
+        " MAM's text does not oblige rerunning it.  Recorded in AGENTS.md, among the"
+        " hand-run rule's exceptions, and in MAM-morphhb/README.md, under"
+        ' "How current this product is".'
     ),
     "py/main_mam_simple.py all": (
         "The mega runs its two halves as two steps, mam-simple for the export and"

@@ -171,9 +171,10 @@ The mega does not run the hand-run generators, so a hand-run generator can reach
 no mega run checks. A change to a hand-run generator, or to any input it reads, requires
 rerunning every affected hand-run generator and inspecting its tracked outputs, with three
 exceptions that Ben decided. A refresh of MAM's text does not oblige rerunning
-`py/main_mam4sef.py` or `py/main_mam_osis.py` (his decision of 2026-09-30), so MAM-for-Sefaria
-and MAM-OSIS may lag MAM-simple, as their READMEs say; any other change to either generator or
-its inputs still does. A change to MAM's data does not oblige rerunning
+`py/main_mam4sef.py` or `py/main_mam_osis.py` (his decision of 2026-09-30) or
+`py/main_mam_morphhb.py` (his decision of 2026-11-03), so MAM-for-Sefaria, MAM-OSIS and
+MAM-morphhb may lag MAM-simple, as their READMEs say; any other change to one of those
+generators or to its inputs still does. A change to MAM's data does not oblige rerunning
 `py/main_hbce_psalms.py compare` (his decision of 2026-09-26, in the HBCE section above). A
 refresh of MAM's text does not oblige refreshing Taamey D's shaping-check corpus with
 `py/main_taamey_d.py corpus` (his decision of 2026-10-28): the mega's `taamey-d-corpus` step

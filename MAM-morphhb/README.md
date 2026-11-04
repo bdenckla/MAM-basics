@@ -16,7 +16,10 @@ division titles, the parashot and the poetic line breaks. `header.xml` is hand-w
 
 ## How current this product is
 
-It is regenerated only when someone runs, from the MAM-basics repository root:
+**This product is not kept continuously current.** It is regenerated only when someone runs
+`py/main_mam_morphhb.py` deliberately, so it can lag `MAM-simple/` and `MAM-parsed/plus/` by
+any amount: a refresh of MAM's text does not oblige a rerun. To bring it up to date, for
+example before offering morphhb a new `MAPM.xml`, run, from the MAM-basics repository root:
 
 ```
 .venv/Scripts/python.exe py/main_mam_morphhb.py
