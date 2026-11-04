@@ -1,0 +1,114 @@
+Patch for app/services/importers/oshb_features_importer.rb in OpenScriptorium/OpenScriptorium,
+https://github.com/OpenScriptorium/OpenScriptorium, against the file's Git blob
+5a6c6b519e3794a9392ed5d2adede1e303fe94a5, as GitHub had it on 2026-11-03 and 2026-11-04.
+Apply it with git apply from the root of a copy of that repository; git apply skips this
+header. The patch's context and removed lines are OpenScriptorium's code, under its licence:
+
+ISC License
+
+Copyright (c) 2026 Seth Kushniryk
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted, provided that the above
+copyright notice and this permission notice appear in all copies.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+--- a/app/services/importers/oshb_features_importer.rb
++++ b/app/services/importers/oshb_features_importer.rb
+@@ -3,14 +3,20 @@
+   # the OSHB "Miqra according to the Mesorah" (MAPM) XML.
+   #
+   # Source: OpenScriptures Hebrew Bible — MAPM.xml
+-  # License: CC BY-SA 3.0
++  # License: CC BY-SA 4.0
++  # Attribution: "Miqra according to the Masorah" was prepared by Seth (Avi)
++  #   Kadish from materials he developed at Hebrew Wikisource. Attribution in
++  #   languages other than Hebrew is to "Hebrew Wikisource", with a link to
++  #   https://en.wikisource.org/wiki/User:Dovi/Miqra_according_to_the_Masorah#beginning
+   # Coverage: 39 OT books (full Hebrew Bible / Tanakh)
+   #
+   # Features imported:
+-  #   - Ketiv/Qere notes (953 instances) → WorkUnitNote (textual)
++  #   - Ketiv/Qere notes (959 instances) → WorkUnitNote (textual)
+   #   - Parashot / Torah sections (59) → Pericope (parashah, jewish_liturgical)
+   #   - Paragraph breaks (petuhah/setumah) → work_units.markup["paragraph_break"]
+   class OshbFeaturesImporter < BaseImporter
++    # Downloaded only if missing: delete a cached tmp/oshb/MAPM.xml to pick
++    # up a newer MAPM.xml.
+     DEFAULT_PATH = Rails.root.join("tmp/oshb/MAPM.xml")
+
+     OSIS_TO_SLUG = {
+@@ -86,6 +92,10 @@
+     def parse_mapm
+       xml = File.read(@path, encoding: "utf-8")
+
++      # A newer MAPM.xml marks each qere with <seg type="x-qere">; the 2014
++      # file has the qere as plain text after the ketiv seg.
++      @qere_segs = xml.include?('<seg type="x-qere">')
++
+       # Extract parashot (Torah sections)
+       extract_parashot(xml)
+
+@@ -134,16 +144,35 @@
+           extract_ketiv_qere(line, slug, chapter, verse)
+         end
+
+-        # Reset paragraph flag on non-lb, non-blank lines
+-        pending_paragraph_break = false if line.strip != "" && !line.include?("<lb/>") && !line.include?("verse")
+-      end
+-    end
++        # Reset paragraph flag on lines holding text but no verse start;
++        # tag-only lines such as <chapter>, <p> and <lg> leave it pending
++        pending_paragraph_break = false if line !~ /verse osisID="[^"]+" sID/ && line.gsub(/<[^>]*>/, "").strip != ""
++      end
++    end
++
++    # Text of a ketiv or qere seg, which may hold inline elements one level
++    # deep: an x-paseq or x-small seg, or an x-slh-word note
++    SEG_TEXT = /(?:[^<]|<[a-z]+[^>]*>[^<]*<\/[a-z]+>)*/
++    KETIV_SEG = /<seg type="x-ketiv">(#{SEG_TEXT})<\/seg>/
++    QERE_SEG = /<seg type="x-qere">(#{SEG_TEXT})<\/seg>/
++    # A ketiv seg and its qere seg, in either order, separated by a space or a
++    # maqaf (U+05BE)
++    KETIV_QERE_PAIR = /#{KETIV_SEG}[ \u05BE]#{QERE_SEG}|#{QERE_SEG}[ \u05BE]#{KETIV_SEG}/
+
+     def extract_ketiv_qere(line, slug, chapter, verse)
+-      # Pattern: <seg type="x-ketiv">KETIV</seg> QERE_FOLLOWS
+-      # The ketiv (written) form is inside the seg tag.
+-      # The qere (read) form follows immediately after the closing tag.
+-      line.scan(/<seg type="x-ketiv">([^<]+)<\/seg>\s*(\S+)/) do |ketiv, qere|
++      if @qere_segs
++        # Pattern: <seg type="x-ketiv">KETIV</seg> <seg type="x-qere">QERE</seg>,
++        # or the qere seg first
++        pairs = line.scan(KETIV_QERE_PAIR).map do |ketiv1, qere1, qere2, ketiv2|
++          [seg_text(ketiv1 || ketiv2), seg_text(qere1 || qere2)]
++        end
++      else
++        # Pattern: <seg type="x-ketiv">KETIV</seg> QERE_FOLLOWS
++        # The ketiv (written) form is inside the seg tag.
++        # The qere (read) form follows immediately after the closing tag.
++        pairs = line.scan(/<seg type="x-ketiv">([^<]+)<\/seg>\s*(\S+)/)
++      end
++      pairs.each do |ketiv, qere|
+         # Clean up qere: strip cantillation/vowels for display but keep as-is
+         work_unit = find_work_unit(slug, chapter, verse)
+         next unless work_unit
+@@ -159,6 +188,11 @@
+         note.save!
+         bump(:ketiv_qere_notes)
+       end
++    end
++
++    # A ketiv or qere seg's text: any note removed, then the remaining tags
++    def seg_text(text)
++      text.gsub(/<note[^>]*>.*?<\/note>/, "").gsub(/<[^>]*>/, "")
+     end
+
+     def mark_paragraph_break(slug, chapter, verse)
