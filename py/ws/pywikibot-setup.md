@@ -104,6 +104,12 @@ the save a re-run fails at the first chapter whose guard it checks. That
 failure shows that the old text is gone, not that the saved text is right;
 compare the saving run's `chapters/` files with the dry run's instead.
 
+Before that rerun, or any other bot run, confirm that the saving run has
+ended, with no `python.exe` that it started still running. On 2026-11-04 the
+Claude Code app reported a saving run that it had started in the background
+as finished, exit code 0, about a minute before it was, while six of its
+seven pages were still to be saved.
+
 `--identity-run` is a null bot. It reads no edit file, although the parser
 still requires `--edits`; it gives each selected chapter back its own text
 and saves nothing, so it cannot fail on a change. Use it only to exercise a
