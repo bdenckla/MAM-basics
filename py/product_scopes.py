@@ -20,8 +20,8 @@ THE THREE TIERS
    outward-facing in the ordinary sense.
 2. DISTRIBUTED DATA.  ``MAM-parsed/`` (whose current parsed payload is
    ``MAM-parsed/plus/``), ``MAM-simple/``, ``MAM-for-Sefaria/``, ``MAM-with-doc/``,
-   ``MAM-OSIS/``, ``Phonetic-MAM/``, ``Taamey-D/``, ``Yeivin-ITM/`` and
-   ``out/near-aleppo/``. These are consumed by git URL whether or not Pages serves
+   ``MAM-OSIS/``, ``MAM-morphhb/``, ``Phonetic-MAM/``, ``Taamey-D/``, ``Yeivin-ITM/``
+   and ``out/near-aleppo/``. These are consumed by git URL whether or not Pages serves
    them, so "not published" is not the same as "not distributed": a consumer pinning a
    path in one of these trees sees a change here without any deploy at all.
 3. GENERATORS.  The entry points listed in ``_GENERATOR_ENTRY_POINTS`` below.  This
@@ -43,7 +43,8 @@ tiers 1 and 2, and not the only one.  The hand-run generators write products too
 ``py/main_mam4sef.py`` writes ``MAM-for-Sefaria/``, and ``py/main_mam_osis.py``
 writes ``MAM-OSIS/`` and ``gh-pages/MAM-OSIS/``.  Ben took both out of the mega on
 2026-09-12, and ``py/tests/test_mega_coverage.py`` declares each, with that reason, in
-``NOT_IN_MEGA``.  So "this program is not a mega step" answers a different question
+``NOT_IN_MEGA``, as it declares ``py/main_mam_morphhb.py``, which writes
+``MAM-morphhb/``.  So "this program is not a mega step" answers a different question
 from "this change reaches no product", and reading the first as the second is the
 mistake this paragraph exists to stop.
 
@@ -78,6 +79,7 @@ _PRODUCT_DIR_NAMES = (
     "MAM-for-Sefaria",
     "MAM-with-doc",
     "MAM-OSIS",
+    "MAM-morphhb",
     "Phonetic-MAM",
     "Taamey-D",
     "Yeivin-ITM",

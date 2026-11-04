@@ -46,6 +46,7 @@ _SCANNED_PRODUCT_DIRS = (
     "MAM-for-Sefaria",
     "MAM-with-doc",
     "MAM-OSIS",
+    "MAM-morphhb",
     "Phonetic-MAM",
     "Yeivin-ITM",
     "out/near-aleppo",

@@ -134,14 +134,18 @@ def _write_osis(header, proots, paths):
     root.append(osis_text)
     _write_xml(root, out_path)
     if paths["xsd_path"] is not None:
-        _assert_is_valid_osis_according_to_xsd(
+        assert_is_valid_osis_according_to_xsd(
             out_path, paths["xsd_path"], paths.get("xml_xsd_path")
         )
 
 
-def _assert_is_valid_osis_according_to_xsd(
+def assert_is_valid_osis_according_to_xsd(
     xml_path: str, xsd_path: str, xml_xsd_path: str | None = None
 ):
+    """Raise unless the file at xml_path is valid against the OSIS schema at xsd_path.
+
+    Public because py/mam_morphhb/morphhb_runner.py validates MAM-morphhb with it too.
+    """
     xmlschema_doc = lxml_etree.parse(xsd_path, _xsd_parser(xml_xsd_path))
     xmlschema = lxml_etree.XMLSchema(xmlschema_doc)
     #

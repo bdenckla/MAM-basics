@@ -512,6 +512,12 @@ NOT_IN_MEGA: dict[str, str] = {
     ),
     "py/main_mam4sef.py": _SEF_AND_OSIS_NOT_KEPT_CURRENT,
     "py/main_mam_osis.py": _SEF_AND_OSIS_NOT_KEPT_CURRENT,
+    "py/main_mam_morphhb.py": (
+        'Ben approved building it on 2026-11-03 ("Yes, as recommended"), as exploratory'
+        " work: it writes MAM-morphhb, today's MAM in the 2014 form of morphhb's MAPM.xml,"
+        " and runs by hand.  Adding it to the mega waits for his word.  Recorded in"
+        ' MAM-morphhb/README.md, under "How current this product is".'
+    ),
     "py/main_mam_simple.py all": (
         "The mega runs its two halves as two steps, mam-simple for the export and"
         " mam-simple-docs for the docs.  Recorded in item 1 of phase 5b of"

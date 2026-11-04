@@ -116,6 +116,7 @@ away:**
 | `MAM-OSIS/`, except `MAPM-orig/` and `MAPM-orig-24/` | current OSIS book and combined exports, header, SWORD configuration and command example, README, license, product attributes and ignore rules | MAM's CC-BY-SA 4.0, as `MAM-OSIS/LICENSE.md` states. The product landed here from its source repository on 2026-09-10 |
 | `MAM-OSIS/MAPM-orig/` and `MAM-OSIS/MAPM-orig-24/` | the historical `MAPM.xml` snapshot, its provenance and readme, and its split book files; `MAPM-orig/provenance.txt` names openscriptures/morphhb as the source | CC-BY-SA **3.0 Unported**, as the preserved `MAM-OSIS/MAPM-orig/readme.txt`, dated 2014-02-19, states. These historical files retain their separate source terms; the current product's CC-BY-SA 4.0 statement does not replace that notice |
 | `gh-pages/MAM-OSIS/` | the generated MAM OSIS documentation page, stylesheet, and PNG screen captures | MAM's CC-BY-SA 4.0, inherited from the current MAM-OSIS product |
+| `MAM-morphhb/` | the OSIS export `MAPM.xml`, in the form of the 2014 `MAPM.xml` in openscriptures/morphhb, its hand-written header, README, license, product attributes and ignore rules | MAM's CC-BY-SA 4.0, as `MAM-morphhb/LICENSE.md` states. The product was first generated on 2026-11-03 |
 | `out/near-aleppo/` | the near-Aleppo dataset: 24 book files in MAM-parsed-plus's layout, with its README and licence statement | MAM's CC-BY-SA 4.0, as `out/near-aleppo/LICENSE.md` states: the dataset is derived from MAM |
 | `gh-pages/near-aleppo/`, except `img/` | the near-Aleppo example edition and its documentation pages, with their stylesheet and script | MAM's CC-BY-SA 4.0, inherited from the near-Aleppo dataset. The coverage figures on `coverage-and-status.html` come from J. David Stark's Aleppo Codex index, whose terms the `aleppo/aleppo-wiki/` row below gives |
 | `gh-pages/near-aleppo/img/`, `in/near-aleppo/img/` | four crops, each in both directories: three labelled as Aleppo Codex crops, of 2 Samuel 5:2, Ezekiel 42:9 and Job 38:12, and one from page 442v of the Leningrad Codex, at Daniel 5:21 | **each rights holder's; no grant is made or implied here.** The crops are reproduced as evidence for the documentation pages that display them |
@@ -169,7 +170,8 @@ became a frozen historical archive on September 12, 2026. The statement is copie
 Here it applies to the MAM paths named in the table above, not to everything in MAM-basics; in it,
 ignore the references to "in this spreadsheet" (English) and שבגליון הנתונים הזה (Hebrew). Each of
 the landed `MAM-parsed/`, `MAM-simple/`, `MAM-with-doc/`, `MAM-for-Sefaria/`, `MAM-OSIS/` and
-`Phonetic-MAM/` product directories holds a `LICENSE.md` that repeats the statement after a short
+`Phonetic-MAM/` product directories, and `MAM-morphhb/`, holds a `LICENSE.md` that repeats the
+statement after a short
 preface saying that it applies equally to the data in that directory, or, for `MAM-with-doc/`, the
 edition MAM-basics publishes from `gh-pages/MAM-with-doc/`, or, for `Phonetic-MAM/`, the MAM text
 and its derivative display in `Phonetic-MAM/data/` and the MAM Hebrew that

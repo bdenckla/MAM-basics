@@ -156,7 +156,8 @@ carries their exact current dispositions, temporary-stub procedures, and histori
    dispatch. Since Ben's decision of 2026-10-29 the workflow first runs
    `py/main_taamey_d.py release-check` on the full history, and deploys nothing if it fails.
 2. **Distributed data:** `MAM-parsed/`, `MAM-simple/`, `MAM-for-Sefaria/`, `MAM-with-doc/`,
-   `MAM-OSIS/`, `Phonetic-MAM/`, `Taamey-D/`, `Yeivin-ITM/`, and `out/near-aleppo/`.
+   `MAM-OSIS/`, `MAM-morphhb/`, `Phonetic-MAM/`, `Taamey-D/`, `Yeivin-ITM/`, and
+   `out/near-aleppo/`.
 3. **Generators:** the entry points run by `py/main_0_mega.py`.
 
 Before pushing `main` to `origin`, run the mega and the suite. Like most rules this one has
