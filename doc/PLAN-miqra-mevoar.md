@@ -7,9 +7,10 @@ added at Ben's request, links all 929 chapters as revision 3101215. Ben offered 
 the display pages (decisions ledger entry 13), and Avi accepted, in an answer that Ben relayed on
 2026-11-04 (Deferred, “Display pages”). Stage 10, written that day and executed on Ben's word the
 same day, had the bot create the seven of those pages whose base chapters exist, as revisions
-3101357 to 3101363. The State stays live: the display pages of the other seven books of the
-Twelve wait for their base chapters (Stage 10, “Left out”, and “Later Word files”). The execution
-ledger below records each finished stage.
+3101357 to 3101363, and Ben then sent Avi a reply about them with three questions (execution
+ledger, “The reply to Avi”). The State stays live: the display pages of the other seven books of
+the Twelve wait for their base chapters (Stage 10, “Left out”, and “Later Word files”), and the
+next display work waits on Avi's answer. The execution ledger below records each finished stage.
 
 Written 2026-11-02 by Claude (Opus 5.5) in the Phase 1 session that the session "Commander for
 Claude's forests" started for Avi's email "Mikra Mevo'ar at Wikisource". The quoted decisions are
@@ -134,6 +135,7 @@ Deferred, each until its own decision:
     - Stage 10 creates the seven pages whose base chapters exist. The other seven wait for their
       base chapters, as the reply drafted for Ben on 2026-11-04 proposes to Avi:
       `C:/Users/BenDe/GitRepos2/MAM-basics/.novc/miqra-mevoar/email-to-avi-2026-11-04-display-pages.md`.
+      Ben sent its v2 (execution ledger, “The reply to Avi”).
   - **The index after the bot.** Avi edited the index eleven times after the bot's revision
     3101215, between 19:00 and 19:52 New York time on 2026-11-03, ending with revision 3101312.
     He removed the information section's list of ready base chapters and its pointer to the raw
@@ -397,6 +399,45 @@ byte-for-byte copy of that frozen plan; this ledger and the State line are the e
   directories. The State stays live, as Stage 10 provides while display work that Ben has given
   to the bot remains: the pages of Micah to Malachi, which Stage 10 leaves for after their base
   chapters.
+- **Codex's review of Stage 10, 2026-11-04:** Codex found a defect in the bot's records, and its
+  reads of the seven saved revisions were refused with a 403 by its cloud tunnel. Claude answered
+  the review in a session that the commander started, and Ben relayed the answer.
+  - **The defect.** Each bot mode of this plan read its saved revisions back before it wrote
+    `misc/saved-pages.json`, and caught only `ChapterResponseError`. So when a read-back raised, as
+    it does on a network failure, no record of the revisions already saved was written. Stage 10's
+    run did not take that path: its record holds all seven pages, each verified. Codex's repair,
+    PR 368, began as a draft for the display mode. Claude reproduced the defect and found the same
+    order in the base-chapter and index modes. Codex extended the repair to all three modes, with
+    the ws_bot test `py/tests/test_miqra_mevoar_save_receipts.py`, and merged it as `f6585c7f`, on
+    Ben's authorization, as the merge commit records. Each mode now writes its record before the
+    read-back and again after it. After the merge, Claude ran that test from a scratch copy: it
+    fails its four cases of a raising read-back against the modes as they were before PR 368, and
+    passes all eight of its cases against the merged ones.
+  - **A narrower window remains,** which both agents left out of scope: after a creation,
+    pywikibot 11.7.0's `BasePage._save` reads the page's info over the network, so a failure there
+    ends the save with an error for a page that exists, and leaves no record. A rerun would find
+    such a page unchanged.
+  - **The seven revisions.** On Ben's word, Claude read revisions 3101357 to 3101363 anonymously
+    at 14:12 New York time and kept each response byte for byte, with SHA-256 hashes, in
+    `.novc/codex-stage-10-review-2026-11-04/read-20261104-141253-0500/` of
+    `C:/Users/BenDe/GitRepos2/MAM-basics`; that folder's `README.md` says how to check them. Each
+    revision's content equals the generated page of all three Stage 10 runs byte for byte, and
+    MediaWiki's SHA-1 of it matches. Each revision is BDencklaBot's, is not minor, is its page's
+    first revision, and carries Stage 10's summary.
+- **The reply to Avi, 2026-11-04:** Ben, at about 17:20 New York time: "I've sent
+  email-to-avi-2026-11-04-display-pages-v2.html to Avi via email." That is v2 of the reply drafted
+  with Stage 10, made by script in the session that answered Codex's review, from the draft in
+  `.novc/miqra-mevoar/`, which stays unchanged. Its source is
+  `C:/Users/BenDe/GitRepos2/MAM-basics/.novc/codex-stage-10-review-2026-11-04/email-to-avi-2026-11-04-display-pages-v2.md`.
+  - **What v2 adds to the draft:** it asks for Amos's link only if the list still skips Amos.
+    It also adds a paragraph, “Your look at the pages”, which asks Avi to look the seven pages
+    over before the bot makes the later books' pages in the same form. That paragraph tells him
+    that each heading's words are transcluded from its base chapter, but that each heading line's
+    place was fixed when the bot made the page. So a heading that Rabbi Kokhav adds at another
+    verse, or moves, does not appear on the display page until someone adds its line.
+  - **Its three questions to Avi:** Amos's link; the display pages of Micah to Malachi now, or
+    after their base chapters, as the reply proposes; and any change to the pages' form. The next
+    display work waits on his answer.
 
 ## Background for a fresh executor
 
