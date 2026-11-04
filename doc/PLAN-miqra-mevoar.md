@@ -365,6 +365,23 @@ byte-for-byte copy of that frozen plan; this ledger and the State line are the e
   - An offline exercise with stand-ins for pywikibot, which no tracked test keeps, ran the mode's
     dry run, its save and its refusal, and checked that a save is not minor, has cosmetic changes
     off and the bot flag, and is `createonly`.
+  - Checks: `git diff --check`, Black, and the verification command above (93 passed). The full
+    suite and the mega were skipped, as this stage expects. Pushed as `48d811f1`; origin's `main`
+    had not moved.
+- **Stage 10's dry run, 2026-11-04 at 11:20 New York time,** from `48d811f1`, after the commander
+  confirmed that no other BDencklaBot run was in progress. The main page's latest revision was
+  still 3101310, before the run and again after it, so no title had changed and Amos still had no
+  link. The precondition, `miqra-mevoar --no-save` over the six books at 11:19, found all 56 base
+  chapters unchanged and exited zero (run
+  `.novc/mam-ws-bot-miqra-mevoar-runs/20261104-111943-509759-0500/`). `miqra-mevoar-display
+  --no-save` gave seven creates and exited non-zero, as a dry run before a save does. Each page has
+  exactly the table's counts and equals a fresh generation byte for byte, and Joshua's second part
+  opens with the one break line that carries both the petuha before 13:1 and the heading of 13:1.
+  The parse check found no missing link or transcluded page on any page. A read-only parse after
+  the run, without the bot's login, found that the check had pages to check: 52 links and 21
+  transcluded pages on Jonah's page and 365 and 44 on Joshua's second part, all of them existing.
+  Run `.novc/mam-ws-bot-miqra-mevoar-display-runs/20261104-112021-866392-0500/`. The save waits on
+  Ben's word for that run, with its summary.
 
 ## Background for a fresh executor
 
