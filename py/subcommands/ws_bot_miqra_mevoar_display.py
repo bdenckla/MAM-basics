@@ -87,11 +87,12 @@ def run(keys, pywikibot_args, summary=None, no_save=False):
         file_io.json_dump_to_file_path(
             outcomes, os.path.join(run_root, "misc", "outcomes.json")
         )
+        saved_path = os.path.join(run_root, "misc", "saved-pages.json")
+        # Preserve known saved revision IDs if verification raises.
+        file_io.json_dump_to_file_path(saved, saved_path)
         if saved:
             failures.extend(_verify(saved, texts))
-        file_io.json_dump_to_file_path(
-            saved, os.path.join(run_root, "misc", "saved-pages.json")
-        )
+        file_io.json_dump_to_file_path(saved, saved_path)
     _exit_if_any(outcomes, failures, no_save)
 
 
