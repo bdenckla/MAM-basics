@@ -40,7 +40,7 @@ def chapter_wikitext(chapter):
         where = f"chapter {chapter['chapter']} verse {verse['verse']}"
         if verse["heading"] is not None:
             heading = _plain(verse["heading"], f"the heading before {where}")
-            section = f"{_HEADING_SECTION}{numeral}"
+            section = f"{HEADING_SECTION}{numeral}"
             lines.append(f"*<{_START}{section}/>{heading}<{_END}{section}/>")
         paraphrase = _plain(verse["paraphrase"], f"the paraphrase of {where}")
         lines.append(f"<{_START}{numeral}/>{paraphrase}<{_END}{numeral}/>")
@@ -76,6 +76,8 @@ CATEGORY = "[[קטגוריה:מקרא מבואר]]"
 _TITLE_PREFIX = f"{INDEX_TITLE}/ספר "
 _START = "קטע התחלה="
 _END = "קטע סוף="
-_HEADING_SECTION = "כותרת "
+# A heading's section is named by this and its verse's numeral, the name by which a
+# display page transcludes the heading from its base chapter.
+HEADING_SECTION = "כותרת "
 # Links, templates, tags, signatures, italics and bold, magic words and entities.
 _HAZARDS = ("[[", "]]", "{{", "}}", "<", ">", "~~~", "''", "__", "&")

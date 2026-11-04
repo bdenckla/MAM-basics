@@ -335,6 +335,36 @@ byte-for-byte copy of that frozen plan; this ledger and the State line are the e
   Verified 2026-11-04, before the stage's first edit: on `main`, clean, at origin's
   `210affe3ac2931473bead0de839be0de08309e3d`, the push of this stage, of which `f0d2f2e6`, the
   commit that added it, is an ancestor.
+- **Stage 10's code:** `py/miqra_mevoar/display_page.py`; `verse_breaks` in
+  `py/miqra_mevoar/mam_simple.py`; the mode `py/main_ws_bot.py miqra-mevoar-display`, in
+  `py/subcommands/ws_bot_miqra_mevoar_display.py`; and `py/tests/test_miqra_mevoar_display.py`.
+  Beyond the design:
+  - The main page's latest revision, read just before the code was written, was still 3101310,
+    and its bytes equal the writing session's capture. The table's names and the line shapes'
+    templates and parameters were copied from that revision and from the megillot's pages by
+    script, each checked against a second source, such as a template's own parameter names.
+  - The test's oracle for the breaks is MAM-simple's `starts-with-sampe` field, its own record of
+    the break before a verse, so it does not share the generator's reading of the break elements.
+    Across all of MAM-simple, every break element between two books, chapters or verses has that
+    field on the verse after it and `ends-with-sampe` on the verse before it, except three
+    elements nested in an `sdt-target`, before Exodus 34:1 and Leviticus 7:22 and 7:28, outside
+    these books, whose neighbours have neither field; and no break element is a verse's first or
+    last child.
+  - The closed parser, `display_page.read_page`, lives in the generator's module, as the index's
+    does, and requires a page to read back as itself. The mode also counts each page's lines with
+    it in `misc/outcomes.json`, in the columns of the table above.
+  - The parse check of `--no-save` asks for the transcluded pages as well as the links, and fails
+    on a missing one of either.
+  - The mode generates every selected page before it reads any live one, so that a page that the
+    generator refuses stops the run before anything is saved. It saves with the bot flag given
+    explicitly.
+  - Offline, the seven pages have exactly the table's counts, and Joshua's second part opens with
+    the one break line that has both parameters. The same rendering, given Ruth, Song of Songs and
+    Esther from MAM-simple with no headings, gives Avi's live pages of 2026-11-04 for Ruth and Song
+    of Songs byte for byte, and Esther's apart from its note at the top and its notes section.
+  - An offline exercise with stand-ins for pywikibot, which no tracked test keeps, ran the mode's
+    dry run, its save and its refusal, and checked that a save is not minor, has cosmetic changes
+    off and the bot flag, and is `createonly`.
 
 ## Background for a fresh executor
 

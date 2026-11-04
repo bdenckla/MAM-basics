@@ -18,6 +18,10 @@ Subcommands:
                 Complete Miqra Mevoar's base-chapter index via pywikibot, so that
                 it links every chapter that MAM-simple has, saving only over the
                 reviewed revision that --base-revid names.
+    miqra-mevoar-display
+                Create Miqra Mevoar's display pages via pywikibot, each a book or a
+                part of one, from MAM-simple and the tracked JSON, selecting them by
+                --page; it never edits a page that exists.
 
 Examples:
     .venv/Scripts/python.exe py/main_ws_bot.py proto --edits path.json
@@ -26,6 +30,8 @@ Examples:
     .venv/Scripts/python.exe py/main_ws_bot.py miqra-mevoar --book yehoshua --chapters 1-2 -dir:$env:USERPROFILE/.pywikibot --summary "..."
     .venv/Scripts/python.exe py/main_ws_bot.py miqra-mevoar-index -dir:$env:USERPROFILE/.pywikibot --no-save
     .venv/Scripts/python.exe py/main_ws_bot.py miqra-mevoar-index -dir:$env:USERPROFILE/.pywikibot --base-revid 3084327 --summary "..."
+    .venv/Scripts/python.exe py/main_ws_bot.py miqra-mevoar-display -dir:$env:USERPROFILE/.pywikibot --no-save
+    .venv/Scripts/python.exe py/main_ws_bot.py miqra-mevoar-display -dir:$env:USERPROFILE/.pywikibot --summary "..."
     .venv/Scripts/python.exe py/main_ws_bot.py real --edits path.json -dir:$env:USERPROFILE/.pywikibot
     .venv/Scripts/python.exe py/main_ws_bot.py real --edits path.json -dir:$env:USERPROFILE/.pywikibot --no-post-download
     .venv/Scripts/python.exe py/main_ws_bot.py real --edits path.json -dir:$env:USERPROFILE/.pywikibot --no-save
@@ -37,6 +43,7 @@ import sys
 
 from subcommands import ws_bot_intro
 from subcommands import ws_bot_miqra_mevoar
+from subcommands import ws_bot_miqra_mevoar_display
 from subcommands import ws_bot_miqra_mevoar_index
 from subcommands import ws_bot_proto
 from subcommands import ws_bot_real
@@ -55,8 +62,8 @@ def main() -> None:
     if extra_args and not getattr(args, "allow_extra_args", False):
         parser.error(f"unrecognized arguments: {' '.join(extra_args)}")
     # The intro subcommand selects pages by key, miqra-mevoar by its own --book and
-    # --chapters, and miqra-mevoar-index has one page; none has the chapter bot's
-    # selector.
+    # --chapters, miqra-mevoar-display by its own --page, and miqra-mevoar-index has
+    # one page; none has the chapter bot's selector.
     if args.selector_parser is not None:
         wsds.validate_selector_args(args, args.selector_parser)
     args.func(args, extra_args)
@@ -197,6 +204,37 @@ def build_parser() -> argparse.ArgumentParser:
         allow_extra_args=True,
         selector_parser=None,
     )
+
+    miqra_mevoar_display_parser = subparsers.add_parser(
+        "miqra-mevoar-display",
+        help="Create Miqra Mevoar's display pages via pywikibot.",
+    )
+    miqra_mevoar_display_parser.add_argument(
+        "--page",
+        action="append",
+        metavar="KEY",
+        help=(
+            "A display page by its key, such as hoshea or yehoshua-1; may be"
+            " repeated; every page when none is given"
+        ),
+    )
+    miqra_mevoar_display_parser.add_argument(
+        "--no-save",
+        action="store_true",
+        help=(
+            "Save nothing; fail if any page would be created or if a generated page"
+            " shows a missing page"
+        ),
+    )
+    miqra_mevoar_display_parser.add_argument(
+        "--summary",
+        help="The edit summary, required unless --no-save",
+    )
+    miqra_mevoar_display_parser.set_defaults(
+        func=_run_miqra_mevoar_display,
+        allow_extra_args=True,
+        selector_parser=None,
+    )
     return parser
 
 
@@ -238,6 +276,15 @@ def _run_miqra_mevoar_index(args: argparse.Namespace, pywikibot_args) -> None:
     ws_bot_miqra_mevoar_index.run(
         pywikibot_args,
         base_revid=args.base_revid,
+        summary=args.summary,
+        no_save=args.no_save,
+    )
+
+
+def _run_miqra_mevoar_display(args: argparse.Namespace, pywikibot_args) -> None:
+    ws_bot_miqra_mevoar_display.run(
+        args.page or [],
+        pywikibot_args,
         summary=args.summary,
         no_save=args.no_save,
     )

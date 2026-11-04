@@ -181,6 +181,34 @@ MediaWiki detect a conflict, then reads the saved revision back and exits non-ze
 bytes equal the generated text's. The saved revision's ids and diff link go to
 `misc/saved-pages.json`.
 
+## Miqra Mevoar's display pages
+
+`main_ws_bot.py miqra-mevoar-display` creates Miqra Mevoar's display pages, each of which sets
+the verses of a book, or of a part of one, in MAM's text beside Rabbi Kokhav's paraphrase, in
+the form of Avi's pages for the five megillot. `py/miqra_mevoar/display_page.py` generates them
+from MAM-simple and the tracked JSON in `in/miqra-mevoar/`: a line for each verse, a break line
+before a verse that follows a petuha or a setuma or that has a heading, which is transcluded from
+its base chapter, and the category line. `--page` names a page by its key, such as `hoshea` or
+`yehoshua-1`, and may be given more than once; without it the run takes every page of the
+generator's table. A saving run needs `--summary`, the edit summary, which Ben approves with the
+run:
+
+       .venv/Scripts/python.exe py/main_ws_bot.py miqra-mevoar-display --no-save -dir:$env:USERPROFILE/.pywikibot
+
+       .venv/Scripts/python.exe py/main_ws_bot.py miqra-mevoar-display --summary "<summary>" -dir:$env:USERPROFILE/.pywikibot
+
+The mode only creates pages, with `createonly`. A page whose live text equals the generated text
+is unchanged, and a page that exists with another text is refused: nothing is saved for it, and
+the run exits non-zero, listing the editors of its revisions. `--no-save` also renders each
+generated page through the API's `parse` action, which saves nothing, and exits non-zero if a
+link or a transcluded page on it is missing, as a misspelled book name or a missing base chapter
+would make one; before the save it is expected to exit non-zero, listing each page that a save
+would create. A saving run reads each saved revision back through the API, uncached, and exits
+non-zero unless its bytes equal the generated text's. Each run writes the generated pages to
+`.novc/mam-ws-bot-miqra-mevoar-display-runs/<timestamp>/pages/`, each page's outcome and counts
+to `misc/outcomes.json` there, and the saved pages' revision ids and diff links to
+`misc/saved-pages.json`.
+
 ## Real-run artifact layout
 
 Each `main_ws_bot.py real` run now writes artifacts to a fresh timestamped
