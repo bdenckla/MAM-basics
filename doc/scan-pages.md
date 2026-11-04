@@ -350,6 +350,22 @@ for a fresh session that has no other context. Its thin pointer issue is #349, f
   existing page-edge lookup test deselected. Initial failures and experimental
   diagnostics are retained outside the public source tree.
 
+- 2026-11-04, approved Psalms adoption: **173 ordinary-body portions** are now
+  adopted on the isolated research branch: **93 JC and 80 BHL**, covering all
+  **150 psalms /2,527 verses /19,586 canonical atoms** per edition. Accepted
+  coverage reaches **15 books /6,214 verses** per edition. The five catalogs
+  contain **666 records: 540 completed portions and 126 unread seeds**, with two
+  body segments. New records contain the approved relative filenames, printed
+  page numbers, canonical ranges and consonantal boundary cues; every new note
+  is null. No scans, crops or private research files are included.
+  Persisted records exactly match the approved fields. Actual lookup passes all
+  **56 split-verse cases** and seven CLI cases, including BHL145:18 on printed
+  pages942-943 and phrase-qualified lookup on either side of that split. The
+  maintained catalog check and ten focused index tests pass (one repetitive
+  existing edge-query test deselected). The other three editions remain
+  uncensused for Psalms. Main integration and
+  deployment remain outside this research-branch adoption.
+
 ## Codex entry indexes
 
 `in/lci_recs.json` is the public Leningrad Codex entry index. Its canonical top level
