@@ -224,6 +224,22 @@ Ben answered the plan's three decisions on 2026-11-01, after it was pushed in `5
     Asked "Approve phases 12 to 16 as written?", Ben answered on 2026-11-02, by the button
     labelled with his answer, "Approve the plan" (section 85). It ended phase 11, and it is
     decision 35 of `doc/ink-region-representation.md`.
+12. **The project's name: the concrete transcriber.** On 2026-11-03, with the work paused, Ben asked
+    the commander session to "create a session that will temporarily resurrect the
+    stroke-transcriber (or what maybe we should call the "concrete transcriber") project just for
+    the purposes of seeing whether we can, with considerable manual assistance, create a concrete
+    transcription of the word/image of" UXLC change
+    [2023.03.25-112](https://tanach.us/Changes/2023.07.04%20-%20Changes/2023.07.04%20-%20Changes.xml?2023.03.25-112).
+    The trial that followed took up none of this plan's phases, and the plan stays paused; its
+    material is untracked, under `.novc/concrete-transcription-2026-11-03/` in the clone
+    `C:/Users/BenDe/GitRepos2/MAM-basics`. On 2026-11-04, to the line "The name “concrete
+    transcriber”. I have renamed nothing." in the trial's report on its draft 3, Ben answered "let's
+    go with that name." So the project is called the concrete transcriber. Ben's words in this item
+    are copied by script from the transcripts of the commander session and of the trial, not from
+    the statements file. Nothing is renamed. This plan's title, State line and prose stay as they
+    are, as do the names of `doc/ink-region-representation.md`, the `doc/pen-stroke-*` files,
+    `doc/pen-stroke-snips/`, `py/pen_stroke/` and `py/main_pen_stroke.py`; whether any of them
+    should take the new name is Ben's to decide.
 
 ## The design (Claude's, for Ben's review)
 
