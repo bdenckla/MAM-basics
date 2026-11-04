@@ -647,6 +647,7 @@ function nearest(s, at) {
 }
 function afterEdit(s) {
   updateShape(s); drawHandles(); drawLabels(); markChanged(); showSelected(); save(); refreshExport();
+  drawDiff();
 }
 
 // ---- keys ----
