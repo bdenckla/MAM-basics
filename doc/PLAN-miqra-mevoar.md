@@ -8,9 +8,13 @@ the display pages (decisions ledger entry 13), and Avi accepted, in an answer th
 2026-11-04 (Deferred, “Display pages”). Stage 10, written that day and executed on Ben's word the
 same day, had the bot create the seven of those pages whose base chapters exist, as revisions
 3101357 to 3101363, and Ben then sent Avi a reply about them with three questions (execution
-ledger, “The reply to Avi”). The State stays live: the display pages of the other seven books of
-the Twelve wait for their base chapters (Stage 10, “Left out”, and “Later Word files”), and the
-next display work waits on Avi's answer. The execution ledger below records each finished stage.
+ledger, “The reply to Avi”). Avi answered on 2026-11-05: he had added Amos's link to the main
+page and renamed Joshua's two display pages, and he is building a model for the parts of large
+books (execution ledger, “Avi's answer to the reply”). The State stays live: the display pages
+of the other seven books of the Twelve wait for their base chapters (Stage 10, “Left out”, and
+“Later Word files”); the model waits on Avi and then on Ben's decision (Deferred, “The parts of
+large books”); and whether the display mode's table takes the new titles of Joshua's pages
+waits on Ben's decision. The execution ledger below records each finished stage.
 
 Written 2026-11-02 by Claude (Opus 5.5) in the Phase 1 session that the session "Commander for
 Claude's forests" started for Avi's email "Mikra Mevo'ar at Wikisource". The quoted decisions are
@@ -136,6 +140,11 @@ Deferred, each until its own decision:
       base chapters, as the reply drafted for Ben on 2026-11-04 proposes to Avi:
       `C:/Users/BenDe/GitRepos2/MAM-basics/.novc/miqra-mevoar/email-to-avi-2026-11-04-display-pages.md`.
       Ben sent its v2 (execution ledger, “The reply to Avi”).
+  - **Display pages, in Avi's answer of 2026-11-05 to that reply,** which Ben relayed that day
+    (execution ledger, “Avi's answer to the reply”). Avi wrote "All of this looks great". He had
+    renamed Joshua's two parts with the digits 1 and 2 in place of the letters alef and bet, "in
+    order to avoid confusion", and he is building, in the first part, "a model for title and
+    navigation in parts of large books" (“The parts of large books”, below).
   - **The index after the bot.** Avi edited the index eleven times after the bot's revision
     3101215, between 19:00 and 19:52 New York time on 2026-11-03, ending with revision 3101312.
     He removed the information section's list of ready base chapters and its pointer to the raw
@@ -157,6 +166,26 @@ Deferred, each until its own decision:
   base chapters, Rabbi Kokhav revises them on Wikisource and the Word files no longer matter. So
   the bot's update outcome should not be needed. Until then, Avi keeps revised files in the
   folder, and the copy there is always the current one.
+- **The parts of large books.** Avi wrote on 2026-11-05 that in Joshua's first part he is
+  "building a model for title and navigation in parts of large books, based on the contents of
+  the page", which "presumably will become a template" and "in the future could presumably be
+  built by AI". He expects that the model "will presumably be implemented for the five books of
+  the Torah, too, in addition to the currently existing pages for the weekly portions". Nothing
+  here builds the model: it waits on Avi's model and then on Ben's decision whether the bot has
+  a part in it, and no stage is written for it. As read at revision 3101512 (execution ledger,
+  “Avi's answer to the reply”), the model is a centred block of three lines above the bot's
+  text, which it leaves unchanged, with a horizontal rule after it:
+  1. the part's name, pointed, as the main page labels its link, without the label's chapter
+     range;
+  2. its topics: Rabbi Kokhav's 18 headings in the part, in the page's order, each equal after
+     NFC to the tracked JSON's heading and linked within the page to its verse;
+  3. its chapters, each numeral linked within the page to the chapter's first verse.
+  - **Its sources.** Everything but the part's name comes from the page's contents, and from
+    data that the display generator already reads: the headings and their places from the
+    tracked JSON, and the chapters from MAM-simple.
+  - **The topics are copies,** not transclusions, so a heading that Rabbi Kokhav revises on its
+    base chapter changes on the page's break line but not among its topics.
+  - **Part two** has no such block yet.
 
 ## Execution ledger
 
@@ -438,6 +467,63 @@ byte-for-byte copy of that frozen plan; this ledger and the State line are the e
   - **Its three questions to Avi:** Amos's link; the display pages of Micah to Malachi now, or
     after their base chapters, as the reply proposes; and any change to the pages' form. The next
     display work waits on his answer.
+- **Avi's answer to the reply, 2026-11-05:** Ben pasted it, undated, into the commander session
+  at 10:29 New York time, under his own first line: "spawn a session to reflect (perhaps in
+  whatever miqra mevoar plan exists) this feedback from Avi (perhaps looking at his changes to
+  make sure we know what he's talking about)". He did not say what it answers; the commander
+  took it, as this entry does, for Avi's answer to the reply of 2026-11-04, whose pages it
+  discusses (Deferred, “Display pages”). The commander started a fresh Claude (Opus 5.5)
+  session, with a brief saved as
+  `C:/Users/BenDe/GitRepos/MAM-basics/.novc/commander-session/miqra-mevoar-avi-feedback-brief-2026-11-05.md`,
+  SHA-256 `B657391CB0799391308A9F86005568CF0BDA1B9E12A06FFF9B5F7DB9974AC855`. Its checkout,
+  `C:/Users/BenDe/GitRepos2/MAM-basics`, was verified at 10:36 New York time: on `main`, clean,
+  at `5a6ce47752d01af360b0489e10184c500f378949`. The session ran no BDencklaBot command and
+  edited nothing on Wikisource.
+  - **The read.** On Ben's words, the session read anonymously at 10:41 New York time, in 18
+    requests through `polite_download.PoliteDownloader`: the seven pages and their histories,
+    the old titles and their move logs, the main page's revisions from 3101310, and the log
+    events and contributions since 2026-11-04 at 11:00 New York time of Dovi, Avi's account.
+    The responses are kept byte for byte, with a README, in
+    `C:/Users/BenDe/GitRepos2/MAM-basics/.novc/miqra-mevoar-avi-feedback-2026-11-05/`.
+  - **The rename.** Dovi moved Joshua's two parts, which keep their page ids and histories.
+    Each move left a redirect at the old title, and the main page links the new titles from its
+    revision 3101502. Part two's text is still the bot's byte for byte, and each part's category
+    line still sorts it under Stage 10's name. The moves:
+    1. part one, page 1756989, at 06:03 New York time: from `מקרא מבואר/תצוגה/ספר יהושע א`
+       to `מקרא מבואר/תצוגה/ספר יהושע 1`, the redirect being revision 3101499;
+    2. part two, page 1756990, at 06:04: from `מקרא מבואר/תצוגה/ספר יהושע ב`
+       to `מקרא מבואר/תצוגה/ספר יהושע 2`, the redirect being revision 3101501.
+  - **Part one** has six edits by Dovi after the move, from 06:11 to 07:21 New York time, ending
+    at revision 3101512. They add Avi's model above the bot's text, which stays byte for byte as
+    the bot made it (Deferred, “The parts of large books”). At 05:58, before the move, he had
+    also marked the bot's revision of part one as reviewed, in Wikisource's review log.
+  - **The main page** is at revision 3101507, after six revisions by Dovi from 05:56 to 06:25
+    New York time. Its lists of the Prophets and the Writings are no longer numbered; the
+    Twelve's links stand on one line, with Amos's between Joel's and Obadiah's from revision
+    3101494; and revision 3101507 adds vowel points to Joshua's name and to its parts' labels.
+    The API's parse of that revision finds all seven display pages linked and existing, and the
+    links of Micah to Malachi still red.
+  - **Nothing else changed.** The other five pages have only the bot's revision. Dovi's
+    contributions since 2026-11-04 at 11:00 New York time are those twelve edits and the four
+    revisions that the moves made, and his log events are the two moves and the review.
+  - **The reply's three questions.** The live main page answers the first, since it links
+    Amos. The email does not answer the second, on the display pages of Micah to Malachi, but
+    it asks for none of them now, and it begins "All of this looks great"; so each is still made
+    after its base chapters, as Stage 10, “Left out”, provides. On the third, the pages' form,
+    Avi asks no change to the seven pages, and adds his model to Joshua's part one.
+  - **The tracked code keeps Stage 10's titles.** `py/miqra_mevoar/display_page.py`'s `PAGES`
+    keeps Joshua's two old names, which its docstring and a comment say were copied from the
+    main page's revision 3101310. The keys `yehoshua-1` and `yehoshua-2` are unchanged, so
+    `py/main_ws_bot.py`'s help and `py/ws/pywikibot-setup.md` stay true. A run of
+    `miqra-mevoar-display`, dry or saving, given no `--page` or either Joshua key, meets the
+    old titles. pywikibot 11.7.0's `Page.exists()` is true of a redirect, and `Page.text` gives
+    the redirect's own text, so the mode refuses both pages, lists each redirect's revision by
+    Dovi, saves nothing for them and exits non-zero; the other five pages are unchanged. While
+    the redirects stand, no run can create a page at an old title. Giving the table the new
+    names would not make Joshua's pages unchanged: part one now carries Avi's model, and the
+    generator takes each page's category sort key from the table's name, so part two would be
+    unchanged only if Stage 10's name stayed its sort key. Whether the table takes the new
+    titles now, or with its next change, waits on Ben's decision.
 
 ## Background for a fresh executor
 
@@ -936,7 +1022,9 @@ A new or revised book repeats Stage 3's fetch, extract and check, and a reading 
 JSON's diff, and then Stages 6 to 8 for its pages, each saving run again on Ben's word. An update
 goes through only for pages that nobody but BDencklaBot has edited. A book of the Twelve whose
 base chapters arrive this way then gets its display page through Stage 10's mode, added to that
-mode's table, again on Ben's word for each saving run.
+mode's table, again on Ben's word for each saving run. Such a run names its pages with `--page`:
+a run over the whole table now refuses Joshua's two pages, which Avi has moved and, in part one,
+edited (execution ledger, “Avi's answer to the reply”).
 
 ## Measurements of 2026-11-02
 
