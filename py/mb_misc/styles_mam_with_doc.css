@@ -40,3 +40,24 @@ th, td { padding-right: 0.4em; padding-left: 0.4em; }
 *.top-n-bot-bordered { border-top: 1px solid; border-bottom: 1px solid; }
 *.small { font-size: 85%; }
 *.end-aligned { text-align: end; }
+/* A chapter's heading stays at the top of the window while its chapter scrolls
+   under it. It is only as wide as its text, at the left, so that text beside it
+   can still be selected, and it has the page's own background, so that the text
+   under it is hidden rather than drawn through. The near-Aleppo edition's link
+   arrows are masked, and a masked element paints as a positioned one does, so the
+   heading's z-index keeps it above the arrows of the links that follow it. */
+h2.mam-chapter-heading {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    width: fit-content;
+    margin-right: auto;
+    padding: 0 0.25em;
+    border: 1px solid light-dark(#bbb, #555);
+    border-radius: 0.25em;
+    background-color: Canvas;
+}
+/* A link to a verse lands below its chapter's heading rather than under it. */
+h2.mam-chapter-heading + table td[id] {
+    scroll-margin-top: 2em;
+}

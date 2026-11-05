@@ -52,14 +52,10 @@ def mk_chapter_heading_level_2(chnu):
     return mb_html.heading_level_2("פרק " + he_ch_str, _h2_attr)
 
 
-_h2_style_statements = (
-    "position: sticky",
-    "top: 0",
-    "text-align: left",
-)
+# The class's rules, in py/mb_misc/styles_mam_with_doc.css, keep the heading at the
+# top of the window while its chapter scrolls under it.
 _h2_attr = {
-    "class": "border-collapse",
-    "style": "; ".join(_h2_style_statements),
+    "class": "mam-chapter-heading",
     "lang": "hbo",
     "dir": "rtl",
 }
