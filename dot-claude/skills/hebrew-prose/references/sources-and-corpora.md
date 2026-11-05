@@ -142,6 +142,38 @@ and the Hebrew Ofer edition `Yeivin_המסורה למקרא_Ofer-edition_2003.pd
   exceptions are 1 Kings 7:37 and Job 4:12. Do not reopen that finding merely because the
   noncanonical PDF has no searchable text.
 
+## Breuer's lists in the Jerusalem Crown
+
+- **The back of the Jerusalem Crown holds Breuer's lists of the manuscript's text.** Ben
+  pointed to them on 2026-11-05, likening them to BHL's Appendix A. The scan is
+  `C:/Users/BenDe/OneDrive/Documents/ScansOfBooks/JC1 Jerusalem Crown`, whose files
+  `879-05.jpg` to `897-23.jpg` are the back matter's bracketed pages [5] to [23]. Page [5] is
+  Yosef Ofer's preface. Breuer's essay "על עקרונות הנוסח במהדורה זו" begins on page [6], and
+  on page [10] its section "רשימות נוסח כתב היד" introduces the lists: book by book, the
+  manuscript's reading wherever the edition departs from it, the Aleppo Codex's (א) where it
+  survives and the Leningrad Codex's (ל) elsewhere. The lists end on page [23] with
+  2 Chronicles. Their footnotes give Breuer's reasons in his first person. The worked case,
+  read on 2026-11-05, is note 6 on page [23], at 2 Chronicles 35:9: it says that the Aleppo
+  Codex has a tear where the meteg would be and that he followed the Leningrad Codex.
+- **Yosef Ofer edited the Jerusalem Crown, according to Breuer's method; Breuer did not.**
+  Ofer's preface on page [5] says that the edition was founded on the text and principles of
+  the editions Breuer edited, and that its changes to Breuer's text, mainly in meteg marks,
+  were made in consultation with Breuer and with his agreement. So prose citing these lists
+  says what Breuer relied on, or what his editions have, and never that Breuer decided the
+  Jerusalem Crown's text (Ben, 2026-11-05).
+- **Breuer's 2003 book on the Jerusalem Crown's text treats the letters and the Masorah.**
+  *נוסח המקרא בכתר ירושלים* (*The Biblical Text in the Jerusalem Crown Edition and its
+  Sources in the Masora and Manuscripts*, Jerusalem: Keren Ha-Masora, 2003) is scanned as
+  `C:/Users/BenDe/OneDrive/Documents/ScansOfBooks/JC3 The Biblical Text in the JC Edition`,
+  and MAM's doc-notes cite it as "ברויאר, נוסח המקרא בכתר ירושלים". Its 2 Chronicles lists,
+  pages 373 to 388, and the first page of its supplements, page 389, treat only the letter
+  text and the Masorah, so a question about a vowel, an accent or a meteg goes first to the
+  Jerusalem Crown's own lists. Only those pages were checked, on 2026-11-05.
+- **No edition that Breuer himself edited is among the scans.** MAM's Introduction, in a
+  footnote of its appendices, names his lists "בסוף שלושת מהדורותיו של המקרא" alongside
+  Da'at Miqra's "הנוסח ומקורותיו". Which three editions it means, and whether it counts the
+  Jerusalem Crown among them, was not checked.
+
 ## Breuer, *The Cantillation of Scripture* (CoS, English)
 
 - **CoS page numbers are from Wengrov's English translation.** In an isolated citation, put the
