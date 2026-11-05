@@ -989,7 +989,7 @@ infrastructure has changed enough to make them misleading examples:
   and `yona`; run artifacts `.novc/mam-ws-bot-miqra-mevoar-runs/20261103-150012-160259-0500/`, dry
   run `.novc/mam-ws-bot-miqra-mevoar-runs/20261103-145749-000351-0500/`.
 
-### Miqra Mevoar's display pages: Joshua's two parts and five books of the Twelve, 2026-11-04 — current
+### Miqra Mevoar's display pages: Joshua's two parts and five books of the Twelve, 2026-11-04
 
 - **Purpose:** Create seven of the display pages that the main page of Miqra Mevoar links, each
   setting MAM's verses beside Rabbi David Kokhav's paraphrase in the form of Avi's pages for the
@@ -1032,6 +1032,73 @@ infrastructure has changed enough to make them misleading examples:
   `.novc/mam-ws-bot-miqra-mevoar-display-runs/20261104-112021-866392-0500/`; the precondition's
   runs `.novc/mam-ws-bot-miqra-mevoar-runs/20261104-111943-509759-0500/`, before the dry run, and
   `.novc/mam-ws-bot-miqra-mevoar-runs/20261104-112830-348954-0500/`, before the save.
+
+### The Leningrad Codex index: a link to each page's image page on Commons, 2026-11-05 — current
+
+- **Purpose:** Give each of the 999 lines of the Leningrad Codex index, the introduction page
+  mirrored as `in/mam-ws-intro/index-leningrad.mediawiki`, a link to its page's image page on
+  Wikimedia Commons. Each of the codex's 982 pages, F001A to F491B, has exactly one image in
+  Commons' `Category:Leningrad Codex, color JPG images`, named in the form
+  `Leningrad Codex Folio 001b.jpg`; the Commons user Colohisto made them from Sefaria's or the
+  Internet Archive's color photographs and uploaded them from 2024-11-24 to 2025-05-10. The
+  link is written as Avi already wrote Commons links on the page, with his label, the Hebrew name
+  of Wikimedia Commons:
+  `[[:COMMONS:File:Leningrad Codex Folio 001b.jpg|ויקישיתוף]]`. It goes between the line's range
+  link, to the Internet Archive, and its Sefaria link, joined by the index's separator ` / `, so
+  that the page label still comes last; the 17 pages listed under two books, where one ends and
+  the next begins, have it on both lines. This was BDencklaBot's first edit of the page, whose
+  179 earlier revisions are all Avi's.
+- **Authorization:** Avi's email, which Ben relayed on 2026-11-05, asked for "the Commons image
+  page links", placed before Sefaria's, "not after", since this collection is "both better
+  cropped and more complete than the Sefaria images". Asked about that form and place, Avi's
+  label, the separator, BDencklaBot as the saver and the summary below, Ben answered "Yes, as
+  recommended". For this run, having sent Avi a reply, he wrote "Sent; save it now".
+- **Mapping:** by name alone: page F001B is `Leningrad Codex Folio 001b.jpg`. A scoping session
+  that morning compared each index line's range with the uploader's description of the page's
+  image and found no misnamed image: 874 pages agree exactly, and the 62 colophon, masorah and
+  carpet pages have no range on either side. The other 46 differ only where one book ends and
+  another begins (30), by typos in the descriptions (3), in the Decalogue's verse numbers (5), by
+  MAM's verse numbers at Jeremiah 31 and 1 Samuel 24 (`py/py_misc/vtrad_data.py`; 4), or where a
+  description starts a verse early (4), as Sefaria's photographs show.
+- **Safety rule:** a script read the page's latest revision, Avi's 3083919 of 2026-09-20,
+  through the API, uncached, just before the dry run; it equalled the mirror. A closed dispatch
+  recognized every line of the page: a preamble; 25 sections, each a heading, at most one prose
+  line, the three-column opener, index lines and the closer; then the notes. Each index line has
+  one shape, a range link to the Internet Archive, ` / `, the Sefaria link and the page label, and
+  one of five tails: none on 943 lines, an asterisk on 35, a link to a song's page on 16, the word
+  for colophon on 4 and a footnote on F001A's. On every line the Internet Archive page number and
+  the page label agree with the Sefaria image's name, and the pages run in the codex's order. The
+  Commons listing, read the same way, gave exactly one image per page and none left over, with
+  titles, page ids and latest revisions unchanged since the scoping session's listing. Each `old`
+  is a line of revision 3083919 with its newline, cut from it by the script, and occurs once. The
+  generated page is that revision with 999 insertions, each between a range link and the Sefaria
+  link to the same page, and removing them restores it byte for byte. The `--no-save` dry run's
+  page equalled the generated page byte for byte. Just before the save the page was still
+  revision 3083919, and the saving run's page equalled the dry run's. The commander confirmed
+  before each bot run that no other BDencklaBot run was in progress.
+- **Saving run:** revision 3083919 → 3101676, at 14:02 New York time, 233,157 → 303,087 bytes, with
+  the summary "Link each page's image page on Wikimedia Commons, before its Sefaria link, as Dovi
+  asked", which Ben approved with the run; the recent changes show the edit with the bot and minor
+  flags.
+- **Read after the run:** revision 3101676 is BDencklaBot's, with the approved summary and parent
+  3083919, and its bytes equal the generated page's. Its parse through the API gives no warnings;
+  982 interwiki links to Commons image pages, whose URLs are exactly the 982 image pages' own; a
+  post-expand include size of 300,039 and a template argument size of 291,300, each against a
+  limit of 2,097,152 (230,109 and 221,370 before the edit); and no expensive function.
+- **Post-run download:** the refresh rewrote all thirteen mirrored pages with the manifest. Two
+  changed: the index, with this run's edit, and the appendices, with Avi's revisions 3101120 and
+  3101121 of 2026-11-02, made after that day's refresh. In the section on the templates for
+  ketiv and qere, the entry for the template for a qere without a ketiv drops 2 Samuel 8:3, its
+  count going from 10 to 9, and its Jeremiah 31 entry moves from verse 38 to verse 37; MAM
+  numbers Jeremiah 31 one lower than BHS from verse 2 on (`py/py_misc/vtrad_data.py`).
+- **One-shot:** yes. No `old` occurs in the saved text, checked on the refreshed mirror's bytes,
+  so a `--no-save` re-run would raise at the first edit; none was run, since that check needs no
+  bot login.
+- **Edit level:** Raw page text string replacement, page-targeted.
+- **JSON file:** `in/mam-ws-bot-edits/intro-leningrad-commons-links.json`, 999 edits, each
+  `comment` naming its line of revision 3083919 and its page; run artifacts
+  `.novc/mam-ws-bot-intro-runs/20261105-140150-342254-0500/`, dry run
+  `.novc/mam-ws-bot-intro-runs/20261105-134356-447583-0500/`.
 
 ## How to look up the original code
 
