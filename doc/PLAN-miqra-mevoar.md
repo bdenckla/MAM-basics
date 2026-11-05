@@ -12,9 +12,10 @@ ledger, “The reply to Avi”). Avi answered on 2026-11-05: he had added Amos's
 page and renamed Joshua's two display pages, and he is building a model for the parts of large
 books (execution ledger, “Avi's answer to the reply”). The State stays live: the display pages
 of the other seven books of the Twelve wait for their base chapters (Stage 10, “Left out”, and
-“Later Word files”); the model waits on Avi and then on Ben's decision (Deferred, “The parts of
-large books”); and whether the display mode's table takes the new titles of Joshua's pages
-waits on Ben's decision. The execution ledger below records each finished stage.
+“Later Word files”); and the model waits on Avi and then on Ben's decision (Deferred, “The
+parts of large books”). The display mode's table keeps Stage 10's titles of Joshua's pages
+until its next change (decisions ledger entry 14). The execution ledger below records each
+finished stage.
 
 Written 2026-11-02 by Claude (Opus 5.5) in the Phase 1 session that the session "Commander for
 Claude's forests" started for Avi's email "Mikra Mevo'ar at Wikisource". The quoted decisions are
@@ -34,7 +35,7 @@ whose base chapters exist: Joshua's two parts and five books of the Twelve.
 
 ## Decisions ledger
 
-Entries 1 to 3 and 10 to 13 are Ben's decisions. Entries 5 to 9 were Claude's proposals,
+Entries 1 to 3 and 10 to 14 are Ben's decisions. Entries 5 to 9 were Claude's proposals,
 approved by Ben's word in entry 3.
 
 1. **Route: the bot, after a pilot.** Ben, 2026-11-02, answering "Which route should the pages
@@ -94,6 +95,13 @@ approved by Ben's word in entry 3.
     Avi's choices of titles, breaks, other content and links. A display stage is written into
     this plan only if he accepts. He accepted, in the answer that Ben relayed on 2026-11-04
     (Deferred, “Display pages”), and Stage 10 is that stage. Active.
+14. **Joshua's titles in the display mode's table: later.** Ben, 2026-11-05, answering "Should
+    the display table take Joshua's new titles now, or with its next change?" with "Later, as
+    recommended". The recommendation was to leave `display_page.PAGES` with Stage 10's titles of
+    Joshua's two pages, now redirects (execution ledger, “Avi's answer to the reply”), since no
+    run is due and a change now would change nothing on Wikisource, and to make any change with
+    the table's next change, when the later books of the Twelve are added. That change also
+    settles whether part two keeps Stage 10's name as its category sort key. Active.
 
 Deferred, each until its own decision:
 
@@ -524,6 +532,8 @@ byte-for-byte copy of that frozen plan; this ledger and the State line are the e
     generator takes each page's category sort key from the table's name, so part two would be
     unchanged only if Stage 10's name stayed its sort key. Whether the table takes the new
     titles now, or with its next change, waits on Ben's decision.
+  - **Ben's decision on the titles,** the same day: "Later, as recommended" (decisions ledger
+    entry 14).
 
 ## Background for a fresh executor
 
@@ -1024,7 +1034,9 @@ goes through only for pages that nobody but BDencklaBot has edited. A book of th
 base chapters arrive this way then gets its display page through Stage 10's mode, added to that
 mode's table, again on Ben's word for each saving run. Such a run names its pages with `--page`:
 a run over the whole table now refuses Joshua's two pages, which Avi has moved and, in part one,
-edited (execution ledger, “Avi's answer to the reply”).
+edited (execution ledger, “Avi's answer to the reply”). The change that adds a book to the table
+also takes up Joshua's two entries: whether they take their new titles, and whether part two's
+sort key stays Stage 10's name (decisions ledger entry 14).
 
 ## Measurements of 2026-11-02
 
