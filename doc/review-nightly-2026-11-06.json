@@ -1,0 +1,257 @@
+{
+  "state": "completed continuing nightly broad run",
+  "recorded_utc": "2026-11-06T07:30:28.305483+00:00",
+  "receipt_branch": "review-nightly-20261106-cloud-receipts",
+  "input_repository_commits": {
+    "MAM-basics": "6d3426fda4176a9a69f948761490988d8ba43e25",
+    "MAM-private": "bd1d289779bd100e72b0b2c87c7d9443548b687b"
+  },
+  "overall_review_not_advanced": true,
+  "repairs": [],
+  "coordination": "One maintained job at a time, each awaited; clean committed sibling input; no duplicate endpoint review.",
+  "publication": "Isolated research branch only; no main integration or push, workflow dispatch, deployment or product publication.",
+  "continuing_schedule": "Read-only automation lookup confirms continuing daily nightly and hourly screening enabled; no end date or scheduling change. API next_run_time is null, so no next-run timestamp is asserted.",
+  "frozen_scope": "No hbofonts check or receipt; no font rebuild, corpus refresh, baseline acceptance, source refresh or automation change.",
+  "repository": "bdenckla/MAM-basics",
+  "source": "6d3426fda4176a9a69f948761490988d8ba43e25",
+  "receipt_parent": "6d3426fda4176a9a69f948761490988d8ba43e25",
+  "reviewed_through": "210affe3ac2931473bead0de839be0de08309e3d",
+  "broad_tested": "6d3426fda4176a9a69f948761490988d8ba43e25",
+  "commands": [
+    {
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_0_mega.py"
+      ],
+      "cwd": "/workspace/MAM-basics",
+      "source": "6d3426fda4176a9a69f948761490988d8ba43e25",
+      "started_utc": "2026-11-06T07:09:19.598056+00:00",
+      "elapsed_seconds": 523.321,
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        "-q",
+        "-ra"
+      ],
+      "cwd": "/workspace/MAM-basics",
+      "source": "6d3426fda4176a9a69f948761490988d8ba43e25",
+      "started_utc": "2026-11-06T07:18:14.528458+00:00",
+      "elapsed_seconds": 376.371,
+      "exit_code": 0
+    }
+  ],
+  "outcome": "Mega all 65 steps, exit 0 in 523.321 s. Full suite 1,445 passed / 5 declared skips / 82 subtests passed, 376.371 s (372.71 s pytest). Taamey D 61 PASS / 0 FAIL / 0 SKIP; release check passed; read-only corpus REFRESH PENDING. Eight SVG geometry/Times-alias differences independently explained, preserved and restored; suite write-neutral.",
+  "suite": {
+    "passed": 1445,
+    "skipped": 5,
+    "subtests_passed": 82,
+    "pytest_seconds": 372.71,
+    "skip_reasons": [
+      "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: koren_ex_elyon diverges from its Wikisource strand; the control needs an agreeing page",
+      "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: simtan_dt_taxton diverges from its Wikisource strand; the control needs an agreeing page",
+      "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: simtiq_dt_taxton diverges from its Wikisource strand; the control needs an agreeing page",
+      "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: simtiq_ex_elyon diverges from its Wikisource strand; the control needs an agreeing page",
+      "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: simtiq_ex_taxton diverges from its Wikisource strand; the control needs an agreeing page"
+    ]
+  },
+  "mega": {
+    "steps_completed": 65,
+    "exit_code": 0,
+    "qa": {
+      "PASS": 61,
+      "FAIL": 0,
+      "SKIP": 0
+    },
+    "release_check": "passed",
+    "corpus": "Read-only REFRESH PENDING: 120425 -> 120426 cases, drop 1/add 2/relabel 1; no acceptance."
+  },
+  "output_triage": [
+    {
+      "stage": "basics-mega",
+      "changed_paths": [
+        "doc/process-documentation/MAM-process.dot.svg",
+        "doc/process-documentation/pipeline.svg",
+        "gh-pages/MAM-parsed/plus/svg/plus-call-graph-c.svg",
+        "gh-pages/MAM-parsed/plus/svg/plus-call-graph-d.svg",
+        "gh-pages/MAM-parsed/plus/svg/plus-call-graph-e.svg",
+        "gh-pages/MAM-parsed/plus/svg/plus-dexi-call-graph.svg",
+        "gh-pages/MAM-parsed/plus/svg/plus-dualcant-call-graph.svg",
+        "gh-pages/MAM-parsed/plus/svg/plus-kvq-call-graph.svg"
+      ],
+      "comparisons": [
+        {
+          "path": "doc/process-documentation/MAM-process.dot.svg",
+          "before_sha256": "901e20e873bfc0f839a1cd0e3dffee85827e7d2cd5515683de176035f6d31353",
+          "after_sha256": "f8beae9d4567ee9485f21c663afff777bdeae0a2bcfebbf80672a56694ba1698",
+          "differing_attributes": {
+            "width": 1,
+            "viewBox": 1,
+            "height": 1,
+            "transform": 1,
+            "points": 29,
+            "y": 17,
+            "x": 18,
+            "font-family": 18,
+            "d": 12
+          },
+          "semantic_xml_equal": true,
+          "unexplained": []
+        },
+        {
+          "path": "doc/process-documentation/pipeline.svg",
+          "before_sha256": "0b6564789fbe5bb58f077759eed18481d78492d0552ad40561d96af09c209204",
+          "after_sha256": "05abfba5131811ccff34728c4873264e69fb6f5ec8cc738dd92af22a23fd6b77",
+          "differing_attributes": {
+            "width": 1,
+            "viewBox": 1,
+            "height": 1,
+            "transform": 1,
+            "points": 26,
+            "y": 22,
+            "x": 22,
+            "d": 34
+          },
+          "semantic_xml_equal": true,
+          "unexplained": []
+        },
+        {
+          "path": "gh-pages/MAM-parsed/plus/svg/plus-call-graph-c.svg",
+          "before_sha256": "45546ac232112011f18fce4232853b834a876d0d0abd2dc398bd4e6ba1d92cf5",
+          "after_sha256": "b058a1991874a547c3d260402667f7e3a4972df8b9528e8633d821ee96f746ed",
+          "differing_attributes": {
+            "width": 1,
+            "viewBox": 1,
+            "points": 8,
+            "x": 7,
+            "d": 4,
+            "y": 3
+          },
+          "semantic_xml_equal": true,
+          "unexplained": []
+        },
+        {
+          "path": "gh-pages/MAM-parsed/plus/svg/plus-call-graph-d.svg",
+          "before_sha256": "d8ca8824b8506ef437be21f283004c53a12c5a32eae8027168753310f36104f7",
+          "after_sha256": "03b97e25c4c39271bd126d7a0d46e16a39b63ac637d0952ef1fe25bef7b2092e",
+          "differing_attributes": {
+            "width": 1,
+            "viewBox": 1,
+            "points": 7,
+            "x": 6,
+            "d": 3,
+            "y": 3
+          },
+          "semantic_xml_equal": true,
+          "unexplained": []
+        },
+        {
+          "path": "gh-pages/MAM-parsed/plus/svg/plus-call-graph-e.svg",
+          "before_sha256": "2cedb708c55f170a00531d2a7765f612c7909a5bc5008f7c3dacced385a82273",
+          "after_sha256": "3bb233f9d879e914304a5bcc30ff4f6413f5523bc2bf077fa202f8ec9f8d58a7",
+          "differing_attributes": {
+            "width": 1,
+            "viewBox": 1,
+            "height": 1,
+            "transform": 1,
+            "points": 23,
+            "y": 23,
+            "x": 23,
+            "font-family": 1,
+            "d": 12
+          },
+          "semantic_xml_equal": true,
+          "unexplained": []
+        },
+        {
+          "path": "gh-pages/MAM-parsed/plus/svg/plus-dexi-call-graph.svg",
+          "before_sha256": "c5801e0792a1598a65268459a3730ffafc50047e46381e26b10be1ab34a8117e",
+          "after_sha256": "5c4427190645801866616e0a5008673ae05af4809cde5d20431626f5344fbb36",
+          "differing_attributes": {
+            "width": 1,
+            "viewBox": 1,
+            "height": 1,
+            "transform": 1,
+            "points": 14,
+            "y": 14,
+            "x": 14,
+            "font-family": 1,
+            "d": 6
+          },
+          "semantic_xml_equal": true,
+          "unexplained": []
+        },
+        {
+          "path": "gh-pages/MAM-parsed/plus/svg/plus-dualcant-call-graph.svg",
+          "before_sha256": "455473dd313dd75d1478ba3ca482344cfb9aed168a3be82cfa0306342a1e51f9",
+          "after_sha256": "044e178113c5ee61ccd1e657a67f1fffc099863c60c2b597da28dea2461f391e",
+          "differing_attributes": {
+            "width": 1,
+            "viewBox": 1,
+            "height": 1,
+            "transform": 1,
+            "points": 19,
+            "y": 18,
+            "x": 17,
+            "d": 10
+          },
+          "semantic_xml_equal": true,
+          "unexplained": []
+        },
+        {
+          "path": "gh-pages/MAM-parsed/plus/svg/plus-kvq-call-graph.svg",
+          "before_sha256": "a145b66a290ce29462f595f0c397cf93793af78c9fba6e0d43618f2e9660fb56",
+          "after_sha256": "b3610fa3e1bb4e2a0a5fd28bf1befa3ba84b3f319bd8c01b7c7738c66f6d01b5",
+          "differing_attributes": {
+            "width": 1,
+            "viewBox": 1,
+            "height": 1,
+            "transform": 1,
+            "points": 12,
+            "y": 12,
+            "x": 11,
+            "font-family": 1,
+            "d": 5
+          },
+          "semantic_xml_equal": true,
+          "unexplained": []
+        }
+      ],
+      "unexplained": [],
+      "restored_to_source": true
+    },
+    {
+      "stage": "basics-suite",
+      "changed_paths": [],
+      "comparisons": [],
+      "unexplained": [],
+      "restored_to_source": true
+    }
+  ],
+  "reconciled_receipts": [
+    "https://github.com/bdenckla/MAM-basics/blob/16527478f9a344bf2d772eae411b04c3c91303ae/doc/review-nightly-2026-11-05.json",
+    "https://github.com/bdenckla/MAM-basics/blob/b5e1d96e35e48a117b036e4cd1223e794b0b2890/doc/review-trial-status.md"
+  ],
+  "review_scope": "No duplicate endpoint review: November 5 docs, heading and intro subwindows already screened through frozen main. Full maintained mega now independently reruns both heading generators, main_mam_with_doc and main_near_aleppo --html, with exact tracked HTML reproduction. This supplies their previously omitted full-generator result; rendered behavior remains outside the run. Broad completion advances only the broad-tested anchor.",
+  "heading_generator_continuation": {
+    "runner": "py/main_0_mega.py",
+    "steps": [
+      "mam-with-doc",
+      "near-aleppo-html"
+    ],
+    "invocation": "Maintained in-process generator calls; no duplicate independent CLI invocation.",
+    "result": "Both full steps completed; no tracked HTML differences after mega. Browser/pixel behavior not verified."
+  },
+  "remaining_limits": [
+    "Overall 210affe3..df4580cf Stage 10 window remains pending. Original Word/source/live-save evidence and independent external metadata are not established by broad checks.",
+    "Current state/bot flags, 56 base identities/comparisons and raw parse/link/template gaps remain. HP historical raw-snapshot checks remain parent-attributed, not rerun or independently inspected here.",
+    "Later scoped documentation/concrete/production reviews retain their recorded dispositions; approved PR368 merge does not close Stage 10 source/live gaps.",
+    "Draft PR369 redraw repair remains unintegrated; earlier administrator-denied rendered browser verification was not retried. Broad tests do not establish pixel behavior.",
+    "Heading width, selection, light/dark paint, arrow overlap and scroll landing remain owner-attributed browser evidence; source/HTML reproduction does not establish pixels.",
+    "Introduction link source live revision authenticity, Commons correspondence and parse results remain attributed. The completed 8-check offline review of all 999 edits/982 identities/13 manifest entries was reconciled, not repeated. Jerusalem Crown scan readings remain attributed.",
+    "All earlier historical failures, edition-control skips and scoped source/image/editorial limitations remain in the prior linked maintained records."
+  ],
+  "evidence": "Exact patches, before/after bytes, logs and checker retained in the private evidence archive; public comparisons above contain only public paths and hashes."
+}
