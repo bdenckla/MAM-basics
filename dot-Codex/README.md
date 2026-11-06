@@ -66,6 +66,24 @@ Discover the configured runtime when it is needed. In the desktop app, use
 libraries; otherwise inspect the actual installed runtime. Old fleet versions and claims that
 Node.js is absent are dated observations, not current configuration or environment-pinning policy.
 
+## Previewing local HTML in Windows Codex
+
+On 2026-11-06, Codex's built-in browser rendered a standalone synthetic HTML page served
+from `127.0.0.1`. Codex inspected the two-column layout in a screenshot and clicked a button
+that updated the page through JavaScript. The browser timed out with the server launched inside
+the command sandbox. After an approved retry outside the sandbox, a host request returned
+HTTP 200 and the browser loaded the page in a fresh tab.
+
+For a local preview, use `@Browser` with a temporary server bound only to loopback and scoped
+to the files under review. Follow “Show local artifacts with file links” in the common
+instruction body before starting a server or opening a tab. If the sandbox prevents the server
+from being reached, use the normal approval flow for a scoped retry. Inspect the rendered state
+and stop the server after the check. [OpenAI Browser documentation](https://learn.chatgpt.com/docs/browser#computer-use-in-the-browser)
+
+Browser Use previously refused direct `file:` navigation. The documented origin rules accept
+HTTP and HTTPS. Respect a refusal that prohibits reaching the denied material through another
+route. [OpenAI configuration reference](https://learn.chatgpt.com/docs/config-file/config-reference#requirementstoml)
+
 ## Machine-local project-instruction budget
 
 Each machine's `~/.codex/config.toml` must set:
