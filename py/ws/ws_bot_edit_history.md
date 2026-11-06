@@ -1100,7 +1100,7 @@ infrastructure has changed enough to make them misleading examples:
   `.novc/mam-ws-bot-intro-runs/20261105-140150-342254-0500/`, dry run
   `.novc/mam-ws-bot-intro-runs/20261105-134356-447583-0500/`.
 
-### The UXLC's name and site in the Introduction: UXCL corrected, hcanat.us links moved to tanach.us, 2026-11-06 — current
+### The UXLC's name and site in the Introduction: UXCL corrected, hcanat.us links moved to tanach.us, 2026-11-06
 
 - **Purpose:** Correct the UXLC's name where the Introduction spelled it UXCL, and link the UXLC
   at its public site, tanach.us, rather than at hcanat.us, its development host. A search of the
@@ -1156,6 +1156,65 @@ infrastructure has changed enough to make them misleading examples:
   naming its line of the base revision and what changes on it; run artifacts
   `.novc/mam-ws-bot-intro-runs/20261106-154548-738017-0500/`, dry run
   `.novc/mam-ws-bot-intro-runs/20261106-124152-048978-0500/`.
+
+### The UXLC's site on the index pages of the Torah, the Prophets and the Writings: hcanat.us links moved to tanach.us, 2026-11-06 — current
+
+- **Purpose:** Link the UXLC at tanach.us on the four main-namespace pages that the Introduction's
+  run, in the entry above, could not select: the English Decalogue page, whose line 9 has 2 links
+  to `https://hcanat.us/`, and the index pages of the Torah, the Prophets and the Writings, whose
+  22 links to `https://www.hcanat.us/Tanach.xml` are on 5, 10 and 7 lines. These are the first
+  edits made through `main_ws_bot.py pages`, the mode Ben chose for these pages. Only the three
+  index pages were saved: the Decalogue page may be edited only by administrators, so its two links
+  remain.
+- **Authorization:** Ben's instruction and his answer "Yes, as recommended", both quoted in the
+  entry above, one of whose recommendations was a new mode for these four pages. Shown the mode's
+  dry run, he answered "Yes, save them". When MediaWiki refused the save at the Decalogue page, he
+  chose to have the four pages' protection read and the three index pages saved if BDencklaBot may
+  edit all three: "Check, then save three". The commander confirmed before each bot run that no
+  other BDencklaBot run was in progress.
+- **Mapping:** as in the entry above, `https://hcanat.us/` and `https://www.hcanat.us/` to
+  `https://tanach.us/`, keeping each link's path. Each link on the three index pages becomes
+  `https://tanach.us/Tanach.xml`, and its label, the same on all 22, is unchanged.
+- **Safety rule:** a script read each page's latest revision through the API, uncached; the
+  Decalogue page's equalled its mirror, `in/mam-ws-special/decalogue-en.mediawiki`. Each `old` is a
+  whole line of that revision with its newline, cut from it by the script, and occurs once. The
+  generated pages are those revisions with 23 lines changed; undoing the edits restores each
+  revision byte for byte, no generated page holds hcanat in either case, and each page's count of
+  `https://tanach.us/`, zero before, rose by exactly the number of links replaced. The mode refuses
+  a redirect, a chapter page, an Introduction page and any page whose latest revision is not its
+  `base-revid`. Its `--no-save` dry run, at 15:58 New York time with all four pages, produced the
+  generated pages byte for byte.
+- **Refused run:** the first saving run, at 17:10 New York time with all four pages, passed every
+  base-revision check, and MediaWiki refused its first save, the Decalogue page's, as protected
+  (`protectedpage`, which pywikibot raises as `LockedPageError`). The mode stops at its first
+  failure, so the run saved nothing. Two anonymous API requests, which Ben approved with his
+  choice, then read the protection. The Decalogue page may be edited and moved only by
+  administrators, indefinitely, a protection that moved with the page when Dovi moved it from the
+  title `Decalogue` on 2025-01-02. The index pages of the Torah and the Prophets are semi-protected
+  (`autoconfirmed`), which BDencklaBot meets, and that of the Writings is unprotected. No page had a
+  newer revision.
+- **Saving run:** three revisions from 17:41:42 to 17:42:02 New York time, with the summary "Link
+  the UXLC at its public site, tanach.us, rather than at its development host, hcanat.us", which
+  Ben approved with the run: Torah 2904789 → 3101877, Prophets 3018553 → 3101878 and Writings
+  3020401 → 3101879. They went from 28,065 to 28,045, 64,507 to 64,467 and 64,335 to 64,307 bytes,
+  four bytes for each `www.`.
+- **Read after the run:** each new revision is BDencklaBot's, marked minor, with the approved
+  summary and its base revision as its parent, and its bytes equal the generated page's.
+- **Post-run download:** none, since the mode has none. No mirror holds the three index pages, and
+  the Decalogue page, which `in/mam-ws-special/` mirrors, is still at revision 3088722.
+- **Left as it is:** the Decalogue page's two links to `https://hcanat.us/`, on its line 9, which an
+  administrator can change.
+- **One-shot:** yes. A re-run, with or without `--no-save`, refuses at once, since no page's latest
+  revision is its `base-revid` any longer; and no `old` occurs in the saved text, which holds no
+  hcanat.
+- **Edit level:** Raw page text string replacement, page-targeted.
+- **JSON file:** `in/mam-ws-bot-edits/pages-uxlc-host.json`, 22 edits to the three index pages,
+  each `comment` naming its line of the base revision and what changes on it. A script wrote it
+  from the file of the dry run and the refused run by removing the Decalogue page's entry, leaving
+  the other three unchanged. Run artifacts
+  `.novc/mam-ws-bot-pages-runs/20261106-174131-961722-0500/`, refused run
+  `.novc/mam-ws-bot-pages-runs/20261106-171009-267831-0500/`, dry run
+  `.novc/mam-ws-bot-pages-runs/20261106-155850-573136-0500/`.
 
 ## How to look up the original code
 
