@@ -16,6 +16,8 @@ from foi import sec_yyy_explanations as sec_merk_e
 from foi import dml_an_explanations as dml_e
 from foi import dexi_stress_meteg_explanations as dexi_stress_meteg_e
 from foi import doc_note_notation_explanations as doc_note_notation_e
+from foi import foiz_wt_holam_before_vav as holam_foi
+from foi import holam_before_vav_explanations as holam_e
 from foi import kq_simple_explanations as kq_simple_e
 from foi import kq_complex_explanations as kq_complex_e
 from foi import mtgmtg_explanations as mtgmtg_e
@@ -109,13 +111,21 @@ def _write_finals3(args_foi, all_fois, outspec):
     html_tables = {tuple(foi_path): [] for foi_path in listed}
     outs = {"rowdics": [], "html_tables": html_tables}
     for foi_path in listed:
-        for foi_struct in all_fois[foi_path]:
+        cases = all_fois[foi_path]
+        if foi_path in holam_foi.DIVINE_NAME_PATHS:
+            cases = cases[:1]
+        for foi_struct in cases:
             fpfs = foi_path, foi_struct
             _make_final_for_foi_struct(fpfs, outs)
     if outfile_stem == "mtgmtg":
         mtgmtg_e.validate_quoted_mam_atoms(outs["rowdics"])
     _write_json(outfile_stem, outs["rowdics"])
-    _write_html(args_foi, outfile_stem, outs["html_tables"], census)
+    overall_head = (
+        holam_e.introduction(outs["rowdics"])
+        if outfile_stem == holam_foi.STEM
+        else _overall_head(outfile_stem, census)
+    )
+    _write_html(args_foi, outfile_stem, outs["html_tables"], overall_head)
 
 
 def _make_final_for_foi_struct(fpfs, outs):
@@ -149,7 +159,8 @@ def _get_rows(foi_path, foi_struct):
     else:
         assert False, foi_target_type
     row_dic_for_json = _row_dic_for_json(foi_path, bcv_short, qualifier, html_contents)
-    row_dic_for_html = _row_dic_for_html(bcv_anchor, qualifier, html_contents)
+    html_qualifier = {} if foi_path[0] == holam_foi.STEM else qualifier
+    row_dic_for_html = _row_dic_for_html(bcv_anchor, html_qualifier, html_contents)
     return row_dic_for_json, row_dic_for_html
 
 
@@ -191,6 +202,8 @@ def _make_table_row(foi_path, row_dic):
         return mb_html.table_row(dexi_stress_meteg_e.html_row_cells(row_dic))
     if foi_path[0] == "slh-word":
         target_tds = slh_word_e.html_target_cells(row_dic["html_contents"])
+    elif foi_path[0] == holam_foi.STEM:
+        target_tds = holam_e.html_target_cells(row_dic["html_contents"])
     else:
         td_attrs = {"lang": "hbo", "dir": "rtl"}
         target_tds = (mb_html.table_datum(row_dic["html_contents"], td_attrs),)
@@ -229,20 +242,21 @@ def _outfilename_for_json(outfile_stem):
     return f"foi-{outfile_stem}.json"
 
 
-def _write_html(args_foi, outfile_stem, html_tables, census):
+def _write_html(args_foi, outfile_stem, html_tables, overall_head):
     body1, body2 = _get_html_body1_and_2(outfile_stem, html_tables)
     if not body1:
         assert args_foi
         return
-    overall_head = _overall_head(outfile_stem, census)
     body_contents = _foi_body_wrapper(overall_head + body1 + body2)
     script = _SCRIPTS.get(outfile_stem)
     if script is not None:  # After the tables, so that it finds their elements.
         body_contents.append(mb_html.script(script))
-    title = f"{outfile_stem} (MAM features of interest)"
+    title_stem = holam_e.TITLE if outfile_stem == holam_foi.STEM else outfile_stem
+    title = f"{title_stem} (MAM features of interest)"
     write_ctx = mb_html.WriteCtx(
         title,
         _out_path_for_html(outfile_stem),
+        head_style=holam_e.STYLE if outfile_stem == holam_foi.STEM else None,
         css_hrefs=(_CSS_HREF,),
         html_comment=provenance.generated_html_comment(__file__),
     )
@@ -442,7 +456,13 @@ def _section_heads(outfile_stem, tuple_foi_path, len_trs):
         part1 = [the_1st, *part1b]
     elif len_trs:
         count1 = len_trs
-        part1 = [f"all {len_trs} are shown."]
+        part1 = [
+            (
+                "one example is shown."
+                if tuple_foi_path in holam_foi.DIVINE_NAME_PATHS
+                else f"all {len_trs} are shown."
+            )
+        ]
         part2 = None
     else:  # A declared category with no rows
         count1 = 0

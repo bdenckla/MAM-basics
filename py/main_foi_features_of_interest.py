@@ -22,6 +22,7 @@ from foi.foi_find_wt_fois_for_1_bk import find_wt_fois_for_1_bk
 from foi import foiz_wt_dexi_stress_meteg as foi_dexi_stress_meteg
 from foi import foiz_wt_doc_note_notation as foi_doc_note_notation
 from foi import foiz_wt_dual_ml_alef as foi_dual_ml_alef
+from foi import foiz_wt_holam_before_vav as foi_holam_before_vav
 from foi import foiz_wt_kq_1 as foi_kq_1
 from foi import foiz_wt_kq_2 as foi_kq_2
 from foi import foiz_wt_oleh_yored as foi_oleh_yored
@@ -95,6 +96,7 @@ _WIKITEXT_FOIS_FUN_FOR_CLARG = {
     "args-foi-dexi-stress-meteg": foi_dexi_stress_meteg.find_fois_wt,
     "args-foi-doc-note-notation": foi_doc_note_notation.find_fois_wt,
     "args-foi-dual-ml-alef": foi_dual_ml_alef.find_fois_wt,
+    "args-foi-holam-before-vav": foi_holam_before_vav.find_fois_wt,
     "args-foi-kq-1": foi_kq_1.find_fois_wt,
     "args-foi-kq-2": foi_kq_2.find_fois_wt,
     "args-foi-oleh-yored": foi_oleh_yored.find_fois_wt,
