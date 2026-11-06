@@ -1033,7 +1033,7 @@ infrastructure has changed enough to make them misleading examples:
   runs `.novc/mam-ws-bot-miqra-mevoar-runs/20261104-111943-509759-0500/`, before the dry run, and
   `.novc/mam-ws-bot-miqra-mevoar-runs/20261104-112830-348954-0500/`, before the save.
 
-### The Leningrad Codex index: a link to each page's image page on Commons, 2026-11-05 — current
+### The Leningrad Codex index: a link to each page's image page on Commons, 2026-11-05
 
 - **Purpose:** Give each of the 999 lines of the Leningrad Codex index, the introduction page
   mirrored as `in/mam-ws-intro/index-leningrad.mediawiki`, a link to its page's image page on
@@ -1099,6 +1099,63 @@ infrastructure has changed enough to make them misleading examples:
   `comment` naming its line of revision 3083919 and its page; run artifacts
   `.novc/mam-ws-bot-intro-runs/20261105-140150-342254-0500/`, dry run
   `.novc/mam-ws-bot-intro-runs/20261105-134356-447583-0500/`.
+
+### The UXLC's name and site in the Introduction: UXCL corrected, hcanat.us links moved to tanach.us, 2026-11-06 — current
+
+- **Purpose:** Correct the UXLC's name where the Introduction spelled it UXCL, and link the UXLC
+  at its public site, tanach.us, rather than at hcanat.us, its development host. A search of the
+  whole wiki through the API, `exturlusage` for `hcanat.us` and `*.hcanat.us` over http and https
+  and `insource:` searches for `UXCL` and `hcanat` in every namespace, found 52 links to
+  hcanat.us on 17 pages, and 3 UXCLs, all three in the Introduction. This run edits the seven
+  Introduction pages that had either: 19 links, 15 to `https://hcanat.us/` and 4 to
+  `https://www.hcanat.us/`, and the 3 UXCLs, two of them a link's label and one in the prose of
+  chapter 5. Of the other 33 links, 24 are on four main-namespace pages that no mode could select,
+  the English Decalogue page and the index pages of the Torah, the Prophets and the Writings, for
+  which Ben chose a new mode, `main_ws_bot.py pages`. The other 9 are on six talk and user pages,
+  which Ben chose to leave as they are, since they are Avi's signed comments and his own user
+  page.
+- **Authorization:** Ben, on 2026-11-06, in the session "Leningrad index: record Avi's edit
+  3101783": "Use BDencklaBot to fix all UXCL typos to UXLC and to fix all hcanat.us to
+  tanach.us." He had written earlier that hcanat.us is the development server and tanach.us the
+  production one, so he doubted that the links were intended. Shown the dry run's changes with
+  five recommendations, that the `www.` links also become `https://tanach.us/`, that a new mode
+  edit the four main-namespace pages, that the talk and user pages stay as they are, that the save
+  go ahead and Avi hear of it afterwards, and the summary below, he answered "Yes, as
+  recommended". The commander confirmed before each bot run that no other BDencklaBot run was in
+  progress.
+- **Mapping:** `https://hcanat.us/` and `https://www.hcanat.us/` to `https://tanach.us/`, keeping
+  each link's path and query, and UXCL to UXLC. The three paths linked, `/Tanach.xml`,
+  `/License.html` and `/Supplements/Decalogues.html`, each resolved on tanach.us that day with no
+  redirect, read once each with its robots.txt obeyed. None of the Introduction's 29 links to
+  tanach.us before the run had `www.`. The repository's own downloads still fetch from hcanat.us,
+  `py/uxlc_misc/my_uxlc.py`'s `UXLC_DOWNLOAD_HOST`, which this run leaves alone.
+- **Safety rule:** a script read each page's latest revision through the API, uncached; each
+  equalled the mirror. Each `old` is a whole line of that revision with its newline, cut from it
+  by the script. Lines 41, 78 and 93 of the appendices are identical, so each is cut with the line
+  or lines after it, and every `old` occurs once. The generated pages are those revisions with 18
+  lines changed; undoing the edits restores each revision byte for byte, no generated page holds
+  hcanat or UXCL in either case, and each page's counts of `https://tanach.us/` and of UXLC rose by
+  exactly the numbers replaced. The `--no-save` dry run's pages equalled the generated pages byte
+  for byte, and just before the save no page had a newer revision.
+- **Saving run:** seven revisions from 15:45:57 to 15:46:57 New York time, with the summary
+  "Correct UXCL to UXLC, and link the UXLC at its public site, tanach.us, rather than at its
+  development host, hcanat.us", which Ben approved with the run: summary 3085154 → 3101870, ch1
+  3099431 → 3101871, ch2 3101099 → 3101872, ch3 3101100 → 3101873, ch5 3099298 → 3101874,
+  appendices 3101789 → 3101875 and index-leningrad 3101815 → 3101876. ch2 went from 418,318 to
+  418,314 bytes and the appendices from 221,398 to 221,386, four bytes for each `www.` link; the
+  other five pages keep their sizes, since the replacements have the lengths of what they replace.
+- **Read after the run:** each new revision is BDencklaBot's, marked minor, with the approved
+  summary and its base revision as its parent, and its bytes equal the generated page's.
+- **Post-run download:** the refresh rewrote all thirteen mirrored pages with the manifest.
+  Exactly the seven saved pages changed, each now equal to its generated page, and the manifest
+  records their new revisions; the other six are unchanged.
+- **One-shot:** yes. None of the seven pages holds hcanat or UXCL now, so no `old` occurs in the
+  saved text and a `--no-save` re-run would raise at the first edit; none was run.
+- **Edit level:** Raw page text string replacement, page-targeted.
+- **JSON file:** `in/mam-ws-bot-edits/intro-uxlc-name-and-host.json`, 18 edits, each `comment`
+  naming its line of the base revision and what changes on it; run artifacts
+  `.novc/mam-ws-bot-intro-runs/20261106-154548-738017-0500/`, dry run
+  `.novc/mam-ws-bot-intro-runs/20261106-124152-048978-0500/`.
 
 ## How to look up the original code
 
