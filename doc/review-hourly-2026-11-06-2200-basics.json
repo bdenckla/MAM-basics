@@ -1,0 +1,302 @@
+{
+  "state": "Bounded review completed; no consequential defect or new repair confirmed.",
+  "recorded_utc": "2026-11-06T23:39:22.032864+00:00",
+  "scheduled_label": "November 6, 22:00 UTC; resumed after coordinator ownership check",
+  "base": "b85275921e02f4b1475446908d5cb997ca0083f7",
+  "tip": "3ae838d11db68b99c1d7a7019026470657b41fef",
+  "receipt_parent": "2172db136f18d38488d69c5083832cdc490f9f37",
+  "policy_blob": "429b896939570ad0ffd2a8518f9c114c0ff9ec8b",
+  "endpoint": "Eight reachable commits and 25 paths; earlier 0acf51d8 source triage was not treated as completed review.",
+  "independent_checks": {
+    "pages_mode": "25 offline cases passed in 1.36 s. All network and save surfaces were mocked; no bot entry point or live dry run invoked. Covers invalid specs, exact-title/revision/chapter/intro refusals, save guards, stop-on-save-error, bounded readback, byte mismatch and early receipt preservation.",
+    "foi": "13 cases passed in 0.90 s, including nested projection choices and an independent closed MAM-simple scan. All 17 ordinary occurrences in 16 verses and both divine-name examples agree; forbidden vav pair count is zero. No source normalization.",
+    "native": "30 passed / 34 deliberately deselected in 2.76 s: pages entry-point declarations, mega scope and existing ketiv/qere FOI contracts.",
+    "regeneration": [
+      {
+        "stage": "foi-selected",
+        "command": [
+          ".venv/bin/python",
+          "py/main_foi_features_of_interest.py",
+          "--foi",
+          "args-foi-holam-before-vav",
+          "--single-threaded"
+        ],
+        "exit_code": 0,
+        "seconds": 2.053,
+        "finished_utc": "2026-11-06T23:31:32.615578+00:00"
+      },
+      {
+        "stage": "foi-full",
+        "command": [
+          ".venv/bin/python",
+          "py/main_foi_features_of_interest.py",
+          "--single-threaded"
+        ],
+        "exit_code": 0,
+        "seconds": 14.995,
+        "finished_utc": "2026-11-06T23:31:47.627099+00:00"
+      },
+      {
+        "stage": "editor-level1",
+        "command": [
+          ".venv/bin/python",
+          "py/main_concrete_transcription.py",
+          "level1",
+          "doc/concrete-transcription-2026-11-03/download-image/112-Detail.jpg",
+          "/workspace/scratch/review-20261106-2200/editor-work"
+        ],
+        "exit_code": 0,
+        "seconds": 3.016,
+        "finished_utc": "2026-11-06T23:31:50.698271+00:00"
+      },
+      {
+        "stage": "editor-draft1",
+        "command": [
+          ".venv/bin/python",
+          "py/main_concrete_transcription.py",
+          "draft",
+          "/workspace/scratch/review-20261106-2200/editor-work",
+          "1"
+        ],
+        "exit_code": 0,
+        "seconds": 3.247,
+        "finished_utc": "2026-11-06T23:31:53.976811+00:00"
+      },
+      {
+        "stage": "editor-shapes1",
+        "command": [
+          ".venv/bin/python",
+          "py/main_concrete_transcription.py",
+          "shapes",
+          "/workspace/scratch/review-20261106-2200/editor-work",
+          "1"
+        ],
+        "exit_code": 0,
+        "seconds": 4.155,
+        "finished_utc": "2026-11-06T23:31:58.159022+00:00"
+      },
+      {
+        "stage": "editor-page1",
+        "command": [
+          ".venv/bin/python",
+          "py/main_concrete_transcription.py",
+          "page",
+          "/workspace/scratch/review-20261106-2200/editor-work",
+          "/workspace/scratch/review-20261106-2200/editor-page1.html",
+          "1"
+        ],
+        "exit_code": 0,
+        "seconds": 1.563,
+        "finished_utc": "2026-11-06T23:31:59.747938+00:00"
+      },
+      {
+        "stage": "editor-fold",
+        "command": [
+          ".venv/bin/python",
+          "py/main_concrete_transcription.py",
+          "fold",
+          "/workspace/scratch/review-20261106-2200/editor-work",
+          "doc/concrete-transcription-2026-11-03/edits/ben-edits-1.json",
+          "/workspace/scratch/review-20261106-2200/editor-work/folded-ben-1.json"
+        ],
+        "exit_code": 0,
+        "seconds": 2.404,
+        "finished_utc": "2026-11-06T23:32:02.191663+00:00"
+      },
+      {
+        "stage": "editor-draft2",
+        "command": [
+          ".venv/bin/python",
+          "py/main_concrete_transcription.py",
+          "draft",
+          "/workspace/scratch/review-20261106-2200/editor-work",
+          "2"
+        ],
+        "exit_code": 0,
+        "seconds": 3.181,
+        "finished_utc": "2026-11-06T23:32:05.399795+00:00"
+      },
+      {
+        "stage": "editor-shapes2",
+        "command": [
+          ".venv/bin/python",
+          "py/main_concrete_transcription.py",
+          "shapes",
+          "/workspace/scratch/review-20261106-2200/editor-work",
+          "2"
+        ],
+        "exit_code": 0,
+        "seconds": 4.261,
+        "finished_utc": "2026-11-06T23:32:09.696585+00:00"
+      },
+      {
+        "stage": "editor-page2",
+        "command": [
+          ".venv/bin/python",
+          "py/main_concrete_transcription.py",
+          "page",
+          "/workspace/scratch/review-20261106-2200/editor-work",
+          "/workspace/scratch/review-20261106-2200/editor-page2.html",
+          "2"
+        ],
+        "exit_code": 0,
+        "seconds": 1.706,
+        "finished_utc": "2026-11-06T23:32:11.433020+00:00"
+      },
+      {
+        "stage": "editor-draft3",
+        "command": [
+          ".venv/bin/python",
+          "py/main_concrete_transcription.py",
+          "draft",
+          "/workspace/scratch/review-20261106-2200/editor-work",
+          "3"
+        ],
+        "exit_code": 0,
+        "seconds": 3.417,
+        "finished_utc": "2026-11-06T23:32:14.876240+00:00"
+      },
+      {
+        "stage": "editor-shapes3",
+        "command": [
+          ".venv/bin/python",
+          "py/main_concrete_transcription.py",
+          "shapes",
+          "/workspace/scratch/review-20261106-2200/editor-work",
+          "3"
+        ],
+        "exit_code": 0,
+        "seconds": 4.519,
+        "finished_utc": "2026-11-06T23:32:19.424723+00:00"
+      },
+      {
+        "stage": "editor-page3",
+        "command": [
+          ".venv/bin/python",
+          "py/main_concrete_transcription.py",
+          "page",
+          "/workspace/scratch/review-20261106-2200/editor-work",
+          "/workspace/scratch/review-20261106-2200/editor-page3.html",
+          "3"
+        ],
+        "exit_code": 0,
+        "seconds": 1.749,
+        "finished_utc": "2026-11-06T23:32:21.201000+00:00"
+      }
+    ],
+    "output_comparison": "Selected and complete single-threaded FOI runs reproduce every tracked output exactly. Eleven focused trial commands rebuilt three editor pages from the committed image and Ben edits; 23 output hashes retained. No tracked writes.",
+    "pr369": "Merged template blob exactly matches prior reviewed head 66ad7750196fcff55abcef09b038fb54e0889d39. The three rebuilt pages use the same callback. Node executes the actual callback with instrumented dependencies: exactly one final drawDiff call, with existing call order preserved; old callback has none. No pixels or browser interactions claimed.",
+    "source_facts": {
+      "recorded_utc": "2026-11-06T23:37:39.070108+00:00",
+      "base": "b85275921e02f4b1475446908d5cb997ca0083f7",
+      "tip": "3ae838d11db68b99c1d7a7019026470657b41fef",
+      "reachable_commits": [
+        "7f43a3c837196e1d59ddee9cc3422212702e302d",
+        "fb65ceab0ed74cd2862691bb00704ceadb47ef38",
+        "a646bee3cd0d384f920eb6a3b847f4390e4be537",
+        "af37ff584541d597f178d5cc29c497df8520d66a",
+        "cf9929f2313da1e92536656c4b04d8da9fb0737a",
+        "8972ac3c36be36f0c0a7ffe73b312cc6e3446391",
+        "0acf51d837e5052960f0aa998d3e1cd53a6a42cf",
+        "3ae838d11db68b99c1d7a7019026470657b41fef"
+      ],
+      "paths": 25,
+      "mirror_reconstruction": {
+        "summary": 1,
+        "ch1": 2,
+        "ch2": 2,
+        "ch3": 1,
+        "ch5": 2,
+        "appendices": 9,
+        "index-leningrad": 1
+      },
+      "mirror_sizes_match": 13,
+      "pages_payload": {
+        "torah": {
+          "base_revision": 2904789,
+          "edits": 5,
+          "links": 5
+        },
+        "neviim": {
+          "base_revision": 3018553,
+          "edits": 10,
+          "links": 10
+        },
+        "ketuvim": {
+          "base_revision": 3020401,
+          "edits": 7,
+          "links": 7
+        }
+      },
+      "draft_pr369_template_blob_matches": true,
+      "editor_output_files_hashed": 23,
+      "source_diff_check": "passed",
+      "fixture_failures": "Initial FOI fixture used an invalid BCVT tuple and assumed 39 JSON files instead of 39 books in 24 files. Its first census then stopped on an unclassified cant-all-three node. Corrected the fixture using the canonical locale constructor and explicit combined-cantillation projection. Original diagnostics retained; no product/source repair.",
+      "live_evidence": "Owner-reported bot saves/protection/revision/flag checks and Windows browser results remain attributed. No bot command, external source request or browser route was executed by this review."
+    }
+  },
+  "initial_failures": "Reviewer fixtures initially used an invalid BCVT tuple and assumed 39 files instead of 39 books in 24 files; the independent projector then stopped on cant-all-three until its explicit combined branch was added. Initial results were 11 passed / two failed, then 12 passed / one failed, finally 13 passed. Metadata preparation also initially assumed the earlier four-page proposal rather than the committed three-page selection. Original diagnostics retained; no source, payload, expected product or baseline changed.",
+  "attributed_and_unrun": "Owner bot saves, protection/readback/revision/author/flags and Windows Chrome evidence remain attributed. Current payload has three index pages, 22 host-only edits/links; the protected Decalogue page is excluded. Full index-page bases and raw live readbacks were not available here. No live request, bot run, browser/server, denied-route retry, source fetch, mega or full suite. Preview docs explicitly respect refusals and supplied no new authority. Ink-region plans remain paused.",
+  "remaining_save_outcome_limit": "The previously excluded narrow uncertainty in a remotely successful save before pywikibot exposes its revision identity remains untested and unrepaired. Mocked save failures establish only the recorded offline contracts, not remote atomicity.",
+  "anchors": {
+    "overall_reviewed_unchanged": "210affe3ac2931473bead0de839be0de08309e3d",
+    "broad_tested_unchanged": "6d3426fda4176a9a69f948761490988d8ba43e25",
+    "bounded_review_completed_through": "3ae838d11db68b99c1d7a7019026470657b41fef",
+    "focused_source": "3ae838d11db68b99c1d7a7019026470657b41fef"
+  },
+  "earlier_gaps": "Stage 10 Word/base/current-live/parse/bot-flag limits remain separate; seven historical snapshots remain verified. PR369 is now merged and its code/rebuild verified, while independent rendered verification remains unperformed. Heading browser limits remain unchanged.",
+  "coordination": "The initial ownership hold was resolved by the coordinator: commander and relevant workers idle, allocation released and HP inventory clear. Own cloud processes/checkouts rechecked; all checks sequential and awaited. No HP lease or work, main push, deployment, font/baseline/hbofonts or schedule action.",
+  "evidence": {
+    "archive": "doc/review-hourly-2026-11-06-2200-basics-evidence.zip",
+    "archive_sha256": "689c2484967fb910a33e7069ad42fe22a94dc98f2bac8e97025446ac69571e0e",
+    "members_sha256": {
+      "editor-contract.json": "e7cf58a982811339f7df24fb8924922256c2ff179eda03a3883eec301e451e9a",
+      "editor-contract.log": "e7cf58a982811339f7df24fb8924922256c2ff179eda03a3883eec301e451e9a",
+      "editor-draft1-tracked.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "editor-draft1.log": "23528b13c9272cfe178b156e5de03b59f46eab9fd2fac04038df51cb20492c7e",
+      "editor-draft2-tracked.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "editor-draft2.log": "fde7d53e07a7c542867a601cdc222e71c99fe7f2772d926e68120a056ab94102",
+      "editor-draft3-tracked.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "editor-draft3.log": "462bdb9e2e9499a38abe49feab13718689284eb8ba206fce63cf00abc471dde3",
+      "editor-fold-tracked.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "editor-fold.log": "443291376ecbfcdb2a3efa72787f85cf34d49e51d1d079037ad045b90315ffc5",
+      "editor-level1-tracked.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "editor-level1.log": "0459d6e15ac11d6f538adb4f537e5bcd3de2295981b0be10d5b363e572feba62",
+      "editor-output-hashes.json": "32f1dfedf701533dc6178dbd93987aeda154b89cee7a031ea747868d9c63aaa8",
+      "editor-page1-tracked.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "editor-page1.log": "887d7405517892300c95e609474497f765c1ea8526d39b92c9e5e62ab831906e",
+      "editor-page2-tracked.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "editor-page2.log": "ffc53e281ca4f53b268fc74ac6ac362bf6790dc3d1bc243d1ca205c8f85cb3aa",
+      "editor-page3-tracked.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "editor-page3.log": "b5d99b0a2609730f28cc9b99dfee9160a8f0af0dbc86df0188c434060a9a075f",
+      "editor-shapes1-tracked.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "editor-shapes1.log": "17e40f5fc75525122581bfe2c80844400c5dde8010fcc9135eac853fc27c3b55",
+      "editor-shapes2-tracked.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "editor-shapes2.log": "41399c87557a2ab7714469a2ef707d086752b676d171bf5b4824120d2699e58e",
+      "editor-shapes3-tracked.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "editor-shapes3.log": "e0607fe85922e30a6d380eeb41529d22c00f9562c9366f24b4c0b9436948f0f0",
+      "editor_contract.cjs": "9001e4374967aae5b0a9f8bd6e6b953ecf3b6b9b1189dd0f44e1821569311dee",
+      "foi-full-tracked.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "foi-full.log": "83928b37dc0b5d5395332eb81ccf10832d674e35f32c5f39c3989896ce593444",
+      "foi-initial-failure.log": "f510d16b8a210fab004470863228c0a32ea43c0cda0db63c82e9d2a4f4811d7a",
+      "foi-projection-shape-failure.log": "85c3210203957885533464adb8b5eec0760d30366fbd6207bf4fce60beb534cc",
+      "foi-selected-tracked.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "foi-selected.log": "83928b37dc0b5d5395332eb81ccf10832d674e35f32c5f39c3989896ce593444",
+      "foi-tests.log": "d8e029d469e06563745d0506c1995ed4a1180b90284949e4c7521643a1049015",
+      "independent-census.json": "df359fb632b4717f62ea420e34341fa27c05aa79a784168541d022220c636ade",
+      "metadata-initial-failure.txt": "d57bba958b4f1fdf52060dc732f9a4e2d6ccdcda1dba9231805c32eaeea1e7d6",
+      "native-tests.log": "55d66abc436221d7e09d824d49f8c8bd1e2a22bce5c767004c908457acadc933",
+      "pages-tests.log": "ca0acfe71383f434e1999fb2129cf46ef49f6d9af7e6ae7ec0824e5acaa8dc23",
+      "record_facts.py": "ca793db524e1deb1c68f5c64345210e414143d9c09d2e2e5efbeaa0b2299ac6a",
+      "record_facts_initial.py": "cda40c86fd0aad84d3ecfc7b71770abff2dcbe55756369ecbd8bd453ee303bf1",
+      "regeneration-execution.json": "1f16785aa3102fd6c347d14503c33923f9bab9f28b3f95eb80232760626cce10",
+      "run_regeneration.py": "5eee288858d5ce11be036613d7e6521e7427aee5a678f2663010b987aa830685",
+      "source-facts.json": "8af84b6a912de3f955faf32cabc909ed2597ec8e32b6ac3aef8901bf54b9e4f0",
+      "test_foi_initial.py": "e2b33b08fda64e3fa66c85aa0ea259428f22b18df2e936687fb49049ae92fcf2",
+      "test_foi_offline.py": "25c5c60575d37203a1d52301fbb94b4618b3b4423d5a5b422a2ea2517bfe4f24",
+      "test_pages_offline.py": "1b03a1847210997e5ef252e17b15d4e038c2e807ae5d738d87393d35294b7503",
+      "initial-handoff.json": "5d5a6af00508ead2ba907196459cabdc8c75d41ca8afd0dbbec50c0ab0bebb32"
+    }
+  },
+  "cleanup": "Original clean owned checkout restored after remote receipt/archive verification; completed scratch removed after useful evidence preservation."
+}
