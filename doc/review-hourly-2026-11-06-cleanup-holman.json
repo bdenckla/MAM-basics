@@ -1,0 +1,99 @@
+{
+  "state": "Bounded endpoint review and focused execution completed; no consequential defect confirmed.",
+  "recorded_utc": "2026-11-06T16:48:05.464548+00:00",
+  "source_base": "6449404315f45a2185c45ea0e69c83f10297a9b9",
+  "source_tip": "b85275921e02f4b1475446908d5cb997ca0083f7",
+  "receipt_parent": "cbc210ebec3095a61114a4e5e0cc19410db76e4a",
+  "current_source_policy_blob": "429b896939570ad0ffd2a8518f9c114c0ff9ec8b",
+  "current_source_policy_url": "https://github.com/bdenckla/MAM-basics/blob/b85275921e02f4b1475446908d5cb997ca0083f7/doc/review-trial.md",
+  "source_commits": [
+    "2567b7f4d2e29f20198803b9fe9989bff5edb52a",
+    "f4de636d3b44689f80bdbab16b8dd68c3c393599",
+    "4f22f71772123441029df100cb9f7cea0743fa2f",
+    "b85275921e02f4b1475446908d5cb997ca0083f7"
+  ],
+  "classification": "68 paths: 27 modified, 38 deleted, three added. The authorized cleanup retires process records and a turn-only lint, routes ordinary review rules to periodic-review.md, preserves historical source citations and removes process-only passages from mixed October 4 records. The later Holman change is a reader-facing URL-host correction. No new editorial, font, publication or repair authority was inferred.",
+  "independent_source_audit": {
+    "source_base": "6449404315f45a2185c45ea0e69c83f10297a9b9",
+    "source_tip": "b85275921e02f4b1475446908d5cb997ca0083f7",
+    "endpoint_paths": 68,
+    "status_counts": {
+      "M": 27,
+      "D": 38,
+      "A": 3
+    },
+    "deleted_paths_preserved_in_archive": 38,
+    "python_modified": [
+      "py/hkq_cmn/uxlc_change_records.py",
+      "py/repo_util/check_repo_standards.py",
+      "py/tests/test_h_dot_below_nfc.py",
+      "py/tests/test_tracked_filenames.py"
+    ],
+    "ast_result": "Executable ASTs identical after the single URL-host change; remaining Python differences are comments/docstrings. The deleted test is specifically the retired turn-file lint.",
+    "holman": {
+      "reader_links_changed_only_by_host": 124,
+      "record_fragments_preserved": true,
+      "json_change": "One top-level URL host only; every other byte preserved.",
+      "html_sha256": "c7c2ab998a1e046ea9ea8c9aae09deb9013a0b52ead62f9e154c45defb4f8874",
+      "json_sha256": "688b475d0ceafde33c45e3bc5b07016ec0f8308d4ae2b591102fee67c0e77711",
+      "download_host": "hcanat.us unchanged"
+    },
+    "new_unique_archival_blob_links_verified_locally": 15,
+    "review_status_source_unchanged": true,
+    "limits": "No remote page read, live anchor validation, browser check or new editorial interpretation. Cleanup authorization comes from the parent; owner test and target-site observations remain attributed."
+  },
+  "actually_run": [
+    {
+      "stage": "renderer",
+      "command": [
+        ".venv/bin/python",
+        "py/main_render_uxlc_corrections.py"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.255
+    },
+    {
+      "stage": "focused-tests",
+      "command": [
+        ".venv/bin/python",
+        "py/main_test.py",
+        "py/tests/test_receipt_update_links.py",
+        "py/tests/test_tracked_filenames.py",
+        "py/tests/test_prose_conventions.py",
+        "py/tests/test_shared_html_styles.py",
+        "-ra"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 42.505
+    }
+  ],
+  "native_test_result": "9 passed, no failures or skips, in 42.09 s; runner elapsed 42.505 s.",
+  "regeneration_result": "Maintained Holman renderer exit 0 in 0.255 s; 14 emails, 125 cases, 136 images and 124 change records. HTML, JSON and support assets reproduce; no tracked differences after renderer or tests.",
+  "audit_failure_and_recheck": "The initial reviewer script wrongly assumed one tracked my_uxlc.py filename and failed its census assertion. Two files exist. The corrected audit verifies both are unchanged and identifies the actual download-host declaration in py/uxlc_misc/my_uxlc.py. Initial script and diagnostic are retained. No source, data, expectation or baseline was changed.",
+  "limits_and_skips": "No full suite, mega, live target-site/anchor read, browser check, private-input check, user-config synchronization, issue operation or new manuscript interpretation. Exact host-only outputs, AST comparison, archive checks, focused regeneration and nine native tests cover the changed technical surface; a broad rerun is not warranted before nightly. Owner integration checks and tanach.us availability/anchor observations remain attributed.",
+  "anchors": {
+    "overall_reviewed_through": "210affe3ac2931473bead0de839be0de08309e3d",
+    "broad_tested_unchanged": "6d3426fda4176a9a69f948761490988d8ba43e25",
+    "bounded_review_completed_through": "b85275921e02f4b1475446908d5cb997ca0083f7",
+    "focused_tested_source": "b85275921e02f4b1475446908d5cb997ca0083f7"
+  },
+  "prior_gaps": "Stage 10 Word/base/current-live/parse/bot-flag and PR 369 rendered-verification limits stay separate. The seven historical Stage 10 snapshots remain verified. The nightly already closed heading full-generator coverage; independent heading browser coverage remains limited.",
+  "ownership_and_safeguards": "Clean owned saved cloud clone, no competing Python/test/generator/browser process at start. All stages strictly sequential and awaited. Private, HP, frozen hbofonts, fonts/baselines and other branches untouched. No main push, deployment, external publishing or schedule action. Isolated receipt lineage only, without integrating source or cleanup branches.",
+  "cleanup": "Original clean work checkout restored after remote receipt/archive verification; completed task scratch removed after preservation. No new clone or worktree.",
+  "evidence": {
+    "archive": "doc/review-hourly-2026-11-06-cleanup-holman-evidence.zip",
+    "archive_sha256": "f38e52fbf656161c76fbe55a22db03d407493e2720a60a2333f9f71158433433",
+    "members_sha256": {
+      "audit.py": "e974738fe89836b877bf82dcb8a2f1dfadac60459f3ea187b80b07e0ffb65017",
+      "audit-initial.py": "043ea3ad6cace7ed6d2a82c1bb2403b1903f411768376327b07c166440eb4381",
+      "audit-initial-failure.txt": "2fd061e5c8582ec726ab66db2eae726a5af691a32768d75fc1d5b10f7ee50df0",
+      "audit-result.json": "d5d7668ccdeef13034274bae856aac14bfec8ff063f0620c376f81fcc200a04f",
+      "run_checks.py": "d98728665536351e674f72241d130dd920c23152b759dfe815045cd69d522404",
+      "execution.json": "38e74afd14f54d9f19e48c13f96c0f5b0b0b6c0fe390096a5d0640f9afcf944d",
+      "renderer.log": "0db828138e851523ca9fb6d4c6a0b5c4d25697993f4b9e76af2a746eb5665758",
+      "renderer-tracked.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "focused-tests.log": "f39397f1af90fff0a89d5a2214543236c5cd1fbaa3fb5ed47c641f65c51ed64c",
+      "focused-tests-tracked.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}
