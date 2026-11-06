@@ -2,8 +2,8 @@
 
 State: open; first entries 2026-10-05.
 
-Every entry here corrects or supplements `doc/review-findings-2026-10-04.md`, which is left as
-written apart from its line-4 pointer to this file.
+Every entry here corrects or supplements `doc/review-findings-2026-10-04.md`. Its substantive
+findings remain; Ben's 2026-11-06 cleanup request removes the process-only passages as recorded below.
 
 ## The fixes that needed no decision, and every item's disposition, 2026-10-05
 
@@ -115,20 +115,12 @@ cannot read. Item 3.5 is itself that question.
    content-exempt" now reads "A linked worktree's integration runs the mega and the suite as
    `AGENTS.md`'s rule for a push of `main` decides". A `git grep` for "content-exempt" and
    "content-based" now finds them only in the review that quotes them.
-2. **5.2 Awaiting Ben's decision:** whether D11's final integration should run the suite or record
-   a skip, which changes his approved procedure wording.
 3. **5.3 Awaiting Ben's decision:** where a skip note goes when the decision follows the last
    commit pushed.
 4. **5.4 Awaiting Ben's decision:** `py/product_scopes.py`'s "does not restate" beside its restated
    hand-run rule; the remedy is either deleting the claim or the restatement.
 5. **5.5 Awaiting Ben's decision:** whether a change to tracked product files is excluded from the
    judged skip.
-
-### Finding 6: the review procedure documents
-
-**Awaiting Ben's decision, all five items.** Items 6.1 and 6.3 are questions, and the wording of
-items 6.2, 6.4 and 6.5 is his approved wording of 2026-10-03, so changing it is an editorial
-proposal under D7.
 
 ### Finding 7: checks and tools that do less than they say
 
@@ -244,25 +236,6 @@ proposal under D7.
     `py/accgram/breuer_word_length.py:105`.
 26. **9.26 Fixed in `3ad2ada2`.** The reference names `py/main_redirect_stubs.py`, through
     `source_pages_dir`, as what raises with the clone command.
-27. **9.27 Fixed in `f1a8189e`, in place.** `doc/dual-agent-review.md` calls the relay software
-    what Ben "then hoped to discard soon", and points to D13's record of its removal.
-28. **9.28 Fixed in `f1a8189e`, in place in both files.** `doc/dual-agent-review.md` calls
-    `cbd405b1` "the parent of the commit that removed them", which "holds them all", and the
-    October 1 update says that it "holds every removed file": `d168e22e`, whose parent is also
-    `074af13a` and which `f0c50473` merged, holds all ten as well (`git ls-tree` here).
-29. **9.29 Fixed in `f1a8189e`** by a dated entry appended to the October 1 update: every cited
-    path resolves at `cbd405b1`, but 303 of the round's 311 line citations into the removed files
-    point at other text there; each holds where its record measured it.
-30. **9.30 Fixed in `f1a8189e`, in place.** The October 1 round is the relay's "only production
-    round", beside the isolated rehearsal round and two synthetic probe rounds that the runbook
-    at `cbd405b1` records.
-31. **9.31 Fixed in `f1a8189e`.** The turn-file lint's docstring names both checks it dropped:
-    the census comparison and `lint_automated_round_headers` (read at `cbd405b1`).
-32. **9.32 Fixed in `f1a8189e`, in place.** D10's item 4 preserves the October 1 round's `Next:`
-    lines in a clause of their own, no longer among filenames and State lines.
-33. **9.33 Fixed in `f1a8189e`, in place.** The October 1 update says that the close-out's
-    evidence was retained in the development worktree until that worktree, with its `.novc`, was
-    removed on 2026-10-04.
 34. **9.34 Fixed in `b100ae79`.** Both alt texts say "pataḥ"; the regenerated details page and
     `book-of-job/out/enriched-quirkrecs.json` changed on those two strings alone.
 35. **9.35 Fixed in `b100ae79`.** `qr-footnotes` is in `doc/boj-quirkrec-comments.md`'s list and
@@ -295,13 +268,6 @@ are unchanged.
 
 No item names these, so this work left them as they are.
 
-1. Two more passages carry item 9.28's claim or item 9.33's. In
-   `doc/review-findings-2026-10-02-update.md`, "Remediation implemented; final gates pending,
-   2026-10-03" calls `cbd405b1` "the archive commit, the last whose tree holds every file that the
-   relay's removal deleted", and `4573b007`'s commit message says the same. In
-   `doc/dual-agent-review-2026-10-01-turn-01-claude-update.md`, "Remediation execution by Codex,
-   2026-10-01" says "Public verification evidence is retained under this worktree's ignored
-   `.novc/`", of the development worktree removed on 2026-10-04.
 2. The `accgram-survey-post-stress-meteg` step record in `py/main_0_mega.py` names public
    Phonetic-MAM and MAM-simple's `json-vtrad-mam` as the survey's inputs; the survey also reads
    `MAM-parsed/plus/` (`py/accgram/post_stress_meteg_sources.py`, through
@@ -489,9 +455,6 @@ Each disposition here is the session's recommendation, adopted under Ben's instr
 
 Each disposition here is the session's recommendation, adopted under Ben's instruction above.
 
-1. **5.2: fix.** D11's final integration in `doc/dual-agent-review.md` gains, before "Then fetch in
-   the designated full integration clone": "Run the suite there too, or record a judged skip, as
-   `AGENTS.md`'s rule for a push of `main` asks."
 2. **5.3: fix.** `AGENTS.md`'s rule for a push of `main` gains: "If that decision follows the last
    commit, as when a worktree branch is fast-forwarded unchanged, push an empty commit
    (`git commit --allow-empty`) whose message says it, rather than amending."
@@ -502,31 +465,6 @@ Each disposition here is the session's recommendation, adopted under Ben's instr
 4. **5.5: leave as is.** The judged skip stays available for a change to tracked product files. The
    consumer-notice commits of 2026-10-05, `fe85cd55` and `d8435412`, used it, and the second
    regenerated the change log that finding 1 found stale.
-
-### Finding 6: the review procedure documents
-
-Each disposition here is the session's recommendation, adopted under Ben's instruction above. The
-wording of items 6.2, 6.4 and 6.5 is Ben's approved wording of 2026-10-03, so the plan gives each
-replacement in full.
-
-1. **6.1: fix.** Both documents say that the MAM-basics instance of the 2026-10-02 trial ran on
-   2026-10-02, and that the procedure for a later two-agent window of MAM-basics is Ben's choice
-   when he starts one: `doc/periodic-review.md`'s opening paragraph, and
-   `doc/dual-agent-review.md`'s opening and its section "Next review: independent reviews and one
-   disposition list". What they say of MAM-private's instance is unchanged.
-2. **6.2: fix by narrowing.** The two sentences saying that `doc/dual-agent-review.md` records only
-   what pairing adds gain an exception for D10's filename and State rules and D12's rule for
-   correcting a finished document, which every review follows and which other instructions cite
-   there; `doc/periodic-review.md`'s "Read `doc/dual-agent-review.md` as well only when the window
-   is to be reviewed by two agents" gains the same exception. No section moves.
-3. **6.3: fix.** The rule that a brief names the private repositories, in both documents, names
-   beside `repo_visibility`'s list the private repositories outside the workspace that the tree
-   cites, today `bdenckla/trope` and `bdenckla/al-hatorah`.
-4. **6.4: fix.** `doc/periodic-review.md`'s sentence keeps "goes to Ben in chat rather than into the
-   file" and credits D9 and D11 only with what they say: that such a claim stays out of a tracked
-   turn.
-5. **6.5: fix.** D9's gloss of "public evidence only" follows property 2 of
-   `doc/periodic-review.md`: the turn reads no repository that property 2 names as private.
 
 ### Finding 7: checks and tools that do less than they say
 
@@ -686,14 +624,6 @@ Each disposition here is the session's recommendation, adopted under Ben's instr
 
 Each disposition here is the session's recommendation, adopted under Ben's instruction above.
 
-1. **Fix in place.** Two stale claims in live update files are corrected in place, as items 9.28 and
-   9.33 were elsewhere. In `doc/review-findings-2026-10-02-update.md`'s entry "Remediation
-   implemented; final gates pending, 2026-10-03": "the archive commit, the last whose tree holds
-   every file that the relay's removal deleted", since `d168e22e` holds them too. In
-   `doc/dual-agent-review-2026-10-01-turn-01-claude-update.md`'s entry "Remediation execution by
-   Codex, 2026-10-01": "Public verification evidence is retained under this worktree's ignored
-   `.novc/`", since that worktree and its `.novc` were removed on 2026-10-04. `4573b007`'s commit
-   message stays as written.
 2. **Fix.** The `accgram-survey-post-stress-meteg` step record in `py/main_0_mega.py`, and the
    comment above it, name `MAM-parsed/plus/` among the survey's inputs. Re-read after Ben's commits
    of 2026-10-06: the record still omits it.
@@ -941,29 +871,11 @@ the policy file's comments. No item is left unfixed.
 
 ### Finding 5: texts that `AGENTS.md`'s new push rule left behind
 
-1. **5.2: fixed in `e66ce85b`.** D11's final integration runs the suite there too, or records a
-   judged skip.
 2. **5.3: fixed in `1ba7bfa3`.** `AGENTS.md` sends a skip decision that follows the last commit to
    an empty commit rather than an amend.
 3. **5.4: fixed in `ca6f818b`.** `py/product_scopes.py`'s docstring no longer restates the hand-run
    rule, so its "this docstring does not restate it" holds; `test_product_scopes.py` passes.
 4. **5.5: left as it is.**
-
-### Finding 6: the review procedure documents
-
-1. **6.1: fixed in `e66ce85b`.** Both documents say that MAM-basics' instance of the 2026-10-02
-   trial ran, and that the procedure for a later two-agent window is Ben's choice when he starts
-   one.
-2. **6.2: fixed in `e66ce85b`.** The two sentences saying that `doc/dual-agent-review.md` records
-   only what pairing adds, and `doc/periodic-review.md`'s advice to read that document only for a
-   two-agent window, make an exception of D10's filename and State rules and D12's rule for
-   correcting a finished dated document.
-3. **6.3: fixed in `e66ce85b`.** In both documents a brief names the private repositories outside
-   the workspace that the tree cites, today `bdenckla/trope` and `bdenckla/al-hatorah`.
-4. **6.4: fixed in `e66ce85b`.** `doc/periodic-review.md` credits D9 and D11 only with keeping a
-   transcript-only claim out of a tracked turn.
-5. **6.5: fixed in `e66ce85b`.** D9 glosses "public evidence only" by property 2 of
-   `doc/periodic-review.md`: the turn reads no repository that property 2 names as private.
 
 ### Finding 7: checks and tools that do less than they say
 
@@ -1054,9 +966,6 @@ the policy file's comments. No item is left unfixed.
 
 ### "Noticed while fixing", items 1 and 2
 
-1. **W1: fixed in place in `72fc4097`.** The archive commit is "the removal commit's parent", and
-   the Codex remediation's evidence "was retained ... until the worktree and its `.novc/` were
-   removed on 2026-10-04".
 2. **W2: fixed in `ca6f818b`.** The step record and its comment name MAM-parsed's `plus/` tree,
    which `py/accgram/post_stress_meteg_sources.py` reads through
    `read_books_from_mam_parsed_plus`.
@@ -1370,3 +1279,14 @@ families remain at `6d3426fda4176a9a69f948761490988d8ba43e25`:
 Current review and testing policy is `doc/review-trial.md`; ordinary review records
 follow `doc/periodic-review.md`. The substantive work and decisions in this receipt
 are unchanged.
+
+## Process-only passages removed at Ben's request, 2026-11-06
+
+Recorded by Codex. Ben requested: “Get rid of everything to do with the dual-agent review
+process. it is all in git history if we need it.” This deletion applies to the process-only
+parts of these mixed receipts as well as whole process files. It deliberately removes finding 6,
+finding 5's D11 item and one-line items 27–33 and their process-only disposition text, retaining
+the independent product, licensing, privacy, tool and data findings. Original numbering remains
+so surviving substantive citations retain their meaning. The complete original review and update
+remain at the immutable links in the preceding archival entry. This request is the exception to
+the usual rule that a tracked finished base stays unchanged.

@@ -593,11 +593,6 @@ the mega and the suite", subject to a judged and recorded skip (`AGENTS.md:161�
    and its "Current execution boundary"
    (`doc/PLAN-remediate-instruction-file-review-findings-2026-09-09.md:61–67`) sends the executor to
    the current instructions first.
-2. **Question.** D11's final integration (`doc/dual-agent-review.md:396–405`) runs the mega but no
-   suite on the merged tree and records no skip before it pushes `main`; the new rule asks for both
-   or a recorded skip. D11's final-integration paragraph is unchanged in the window (`4573b007`
-   edited only D11's relay passages, `:334–353` and `:366`) and matched the old "Running the suite
-   too is optional".
 3. **Question.** The skip note goes "in the message of the last commit you push"
    (`AGENTS.md:162–164`); when the decision follows that commit, as when a worktree branch is
    fast-forwarded unchanged, only an extra commit or an amend, which needs Ben's say-so, can carry
@@ -607,51 +602,6 @@ the mega and the suite", subject to a judged and recorded skip (`AGENTS.md:161�
 5. **Question.** `25ff446f` followed the rule as written and left the suite failing and every mega
    run rewriting two published files (finding 1). Whether a change to tracked product files, as that
    one was, should be excluded from the judged skip is Ben's call.
-
-### 6. The review procedure documents disagree with themselves and with each other, and omit a private repository
-
-Unfixed at `139e2d63`. Stream F's evidence; every citation and quotation re-read by a checker, and
-items 1, 2 and 4 re-read here. `4b795109`'s message says that Ben approved its edits as drafted, so
-the wording of items 2, 4 and 5 is approved wording, and changing it is an editorial proposal under
-D7.
-
-1. **Question; consequential for the next two-agent window.** Both documents still give Ben's
-   2026-10-02 trial as the procedure for "the next review in each of MAM-basics and MAM-private"
-   (`doc/periodic-review.md:11–17`; `doc/dual-agent-review.md:9–10`, `:29–31`), though the
-   MAM-basics trial ran on 2026-10-02 and `doc/dual-agent-review.md` records it as finished
-   (`:124–167`). The trial's precedence holds "For this trial" (`doc/dual-agent-review.md:50`; "for
-   that trial", `doc/periodic-review.md:14`), which points a later two-agent window of MAM-basics
-   back to D9's alternating round (`doc/dual-agent-review.md:230–233`), but Ben's three changes of
-   2026-10-03 refined the trial's steps after it ran, and `doc/dual-agent-review.md:62` still calls
-   the process "a next-review trial". No tracked record holds a decision of his on which governs.
-   The sentences date from `db59ef5e`; six window commits edited these sections without marking the
-   MAM-basics instance spent. Single-agent reviews are unaffected.
-2. **Introduced by `4b795109`.** `doc/periodic-review.md:19–23` says that every rule about how one
-   reviewer finds, checks and records findings belongs there and that `doc/dual-agent-review.md`
-   "records only what pairing adds" (`doc/dual-agent-review.md:26–27`, from the same commit,
-   agrees). Yet `doc/dual-agent-review.md` still holds single-agent rules: D10's filename and line-3
-   State rules (`doc/dual-agent-review.md:703–712`), to which `AGENTS.md:125–127` and
-   `doc/periodic-review.md:192`, `:223–225` and `:292` send a single-agent reviewer, although
-   `doc/periodic-review.md:11–12` (older, `a2af0c1b`) says to read that document only for a
-   two-agent window; and D12 (`doc/dual-agent-review.md:311–325`). This review needed D10.
-3. **Question.** The rule that a reviewer's brief names the private repositories takes them from
-   `repo_visibility` (`doc/dual-agent-review.md:84–87`; `doc/periodic-review.md:198–202`,
-   `:236–238`), which declares only MAM-private and hbofonts private; it omits the private
-   `bdenckla/trope`, which the tree cites (`trope#NN (private tracker)` on 13 lines of six
-   `py/yeivin_itm/content/` modules) and finding 3.3 reaches, and al-hatorah, whose remote the same
-   policy file calls "live, private and complete" (`in/repo_maintenance_policy.json:69`). For a
-   MAM-private window the list would also name the window's repository. The wording is Ben's
-   approved change 3 of 2026-10-03.
-4. **Introduced by `4b795109`.** `doc/periodic-review.md:260–262` says a claim that only a
-   transcript can check "goes to Ben in chat rather than into the file, as D9 and D11 of
-   `doc/dual-agent-review.md` require of a turn". D9 says such a claim "stays out of a tracked turn
-   under D11" (`doc/dual-agent-review.md:294–295`), and D11 requires a turn to record enough to
-   check a claim without scratch (`:374–381`); neither says it goes to Ben in chat.
-5. **Introduced by `4b795109`.** D9 glosses "public evidence only" as reading nothing in MAM-private
-   (`doc/dual-agent-review.md:291–294`), citing property 2 of `doc/periodic-review.md`, which
-   `4b795109` widened to every repository `repo_visibility` declares private, hbofonts included
-   (`doc/periodic-review.md:198–201`), so the two texts now define "public evidence only"
-   differently.
 
 ### 7. Checks and tools that do less than they say
 
@@ -921,27 +871,6 @@ All unfixed at `139e2d63`; "introduced" unless marked older.
     was a comment (`7bd5ee8c`, the plan's wording; stream G).
 26. `evacuated-repositories.md:58`'s "It raises with the command that fixes it" follows a clause
     whose subject is a test that prints no command (older; stream G).
-27. `doc/dual-agent-review.md:151` still says the relay is software Ben "hopes to discard soon",
-    beside `:433–434`'s record of its removal (`742aaf41`, left by `4573b007`; stream I).
-28. `doc/dual-agent-review.md:434` and the October 1 update
-    (`doc/dual-agent-review-2026-10-01-turn-01-claude-update.md:363`) call `cbd405b1` "the last
-    commit whose tree holds" the removed files; `d168e22e`, merged by `f0c50473`, holds all ten
-    (`4573b007`; stream F).
-29. The October 1 update (`doc/dual-agent-review-2026-10-01-turn-01-claude-update.md:363–364`) says
-    every path and line the round's records cite in the removed files resolves at `cbd405b1`; the
-    paths do, but the line numbers point at other code there (`4573b007`; stream F).
-30. `doc/dual-agent-review.md:429–430` and `:444` call the October 1 round the relay's "only round";
-    the runbook records an isolated rehearsal round and two probe rounds (at `cbd405b1`,
-    `doc/dual-agent-review-automation.md:229–233`, `:271–279`, `:295–316`) (`4573b007`, the plan's
-    R6 wording; stream F).
-31. `py/tests/test_review_turn_files.py:4–7` names one of the two checks it dropped, not
-    `lint_automated_round_headers`, the `Next:`-header check (`4573b007`; stream F).
-32. D10's item 4 (`doc/dual-agent-review.md:716–719`) lists `Next:` lines among filenames and State
-    lines (`4573b007`, R6.9's wording; stream F).
-33. The October 1 update (`doc/dual-agent-review-2026-10-01-turn-01-claude-update.md:331–332`) still
-    says evidence "is retained" in a worktree that the same file records as removed on 2026-10-04:
-    `184ecd15` wrote it true, and `b61481ff`, which records the removal and corrected two other
-    passages of the file in place, left it (stream F).
 34. The two crops' alt texts romanize פתח as "patah" (`py/author_boj_qr/qr_38.py:94`, `:139`), where
     the Job pages' romanization table has "pataḥ" (`py/author_boj_util/author.py:490`) (`14baabe3`,
     `3e446584`; stream H).

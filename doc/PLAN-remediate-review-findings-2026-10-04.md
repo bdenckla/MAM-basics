@@ -43,7 +43,7 @@ MAM-private or hbofonts was read, nor in the private `bdenckla/trope` or `bdenck
 **Citations.** Review items are cited by the review's numbers, 1.3 to 9.39. The review's section
 "Noticed outside the diff, not findings" supplies N2 (`_reference_matches`) and N3 (the break
 markers at Genesis 35:22, Exodus 20:13 and Deuteronomy 5:17); the first update entry's "Noticed
-while fixing, not acted on" supplies W1 and W2; finding 3's governing question is G. Line numbers are
+while fixing, not acted on" supplies W2; finding 3's governing question is G. Line numbers are
 those of `aef25641`; a passage's own quoted words, not its number, identify it. This plan names no
 path inside a private repository, under Ben's rule of 2026-08-27 in
 `in/repo_maintenance_policy.json`'s `repo_visibility` comment.
@@ -129,7 +129,7 @@ beyond what the suite's and the mega's tracked code read; running `py/main_mam4s
    Item 1.3 is not a text refresh, so wave 5 reruns both, in scratch.
 4. **The 16 items left as they are and item 8.10's deferral** stand ("Not in this remediation").
 
-## The 39 items, re-measured at `aef25641`
+## Retained items from the 39-item historical inventory at `aef25641`
 
 Every item below was re-read on the current tree. None has gone stale or been resolved since the
 review's end commit `139e2d63`, though some files changed: Ben's near-Aleppo commits of 2026-10-05
@@ -147,14 +147,8 @@ qere-first documentation of 2026-10-06 rewrote parts of `MAM-simple/README.md` a
 | 4.5 | The exporter's time limit holds whatever the adapter starts | code | 3 | 2 |
 | 4.6 | Strand-labelled marker rows; Exodus 20 and Deuteronomy 5 regenerated | public data and pages | 1, 2, 3 | 6 |
 | 4.7 | A tracked list of approved display corrections leaves the comparison | code, documents | 1, 3 | 6 |
-| 5.2 | D11's final integration runs the suite or records a skip | procedure document | 3 | 1 |
 | 5.3 | `AGENTS.md`: a skip note that follows the last commit goes in an empty commit | instructions | 3 | 1 |
 | 5.4 | `py/product_scopes.py`'s docstring stops restating the hand-run rule | docstring | 3 | 1 |
-| 6.1 | The two procedure documents say that MAM-basics' trial instance ran | procedure documents | 3 | 1 |
-| 6.2 | "Records only what pairing adds" gains the D10 and D12 exception | procedure documents | 3 | 1 |
-| 6.3 | A brief names the private repositories outside the workspace too | procedure documents | 3 | 1 |
-| 6.4 | `doc/periodic-review.md` credits D9 and D11 only with what they say | procedure document | 3 | 1 |
-| 6.5 | D9's "public evidence only" follows property 2 | procedure document | 3 | 1 |
 | 7.2 | The parser-stage lint's docstring says what it reads | test docstring | 3 | 1 |
 | 7.5 | `doc/clone-forests.md` and the module docstring follow the code's skip | document, docstring | 3 | 1 |
 | 7.8 | Repository maintenance goes on after step 2 fails | code | 3 | 2 |
@@ -176,7 +170,6 @@ qere-first documentation of 2026-10-06 rewrote parts of `MAM-simple/README.md` a
 | 3.5 | The `repo_visibility` comment records the rule's scope | policy comment | 3 | 1 |
 | N2 | `_reference_matches` counts `path:line` citations | code | 3 | 2 |
 | N3 | Break markers at Genesis 35:22, Exodus 20:13 and Deuteronomy 5:17 assessed and corrected | public data and pages | 2, 3 | 6 |
-| W1 | Two stale claims in live update files corrected in place | records | 3 | 1 |
 | W2 | The post-stress-meteg step record names `MAM-parsed/plus/` | code comment | 3 | 1 |
 
 ## 1. Reader-facing documents and pages (high risk)
@@ -509,11 +502,9 @@ meteg-before-stress files on their hashes, and the three chapter pages; nothing 
    (8.1) and `rendered-prose.md` (8.9); `mam-wikisource-refresh`'s `dependent-refresh.md` (4.4,
    4.7); `mam-repository-topology`'s `repository-maintenance.md` (9.22).
 2. **Policy file comments:** two sentences in `in/repo_maintenance_policy.json` (G, 3.5).
-3. **Procedure and maintained documents under `doc/`:** `doc/dual-agent-review.md` and
-   `doc/periodic-review.md` (5.2, 6.1 to 6.5); `doc/clone-forests.md` (7.5);
+3. **Maintained documents under `doc/`:** `doc/clone-forests.md` (7.5);
    `doc/PLAN-mega-speedup.md` (8.7); `doc/phonetic-mam-compute.md` (9.39); eight command blocks in
    four documents (9.22).
-4. **Dated records corrected in place:** one passage in each of two live update files (W1).
 5. **Python docstrings and comments:** `py/product_scopes.py` (5.4),
    `py/tests/test_parser_stage_node_keys.py` (7.2), `py/repo_util/forest_sync.py` (7.5),
    `py/main_0_mega.py` (W2), and the docstrings that item 4.6's and 4.7's code changes touch.
@@ -580,63 +571,6 @@ instruction.
 
 ### Procedure and maintained documents
 
-1. **Item 5.2, `doc/dual-agent-review.md`**, D11's final integration. Before "Then fetch in the
-   designated full integration clone" insert: "Run the suite there too, or record a judged skip, as
-   `AGENTS.md`'s rule for a push of `main` asks."
-2. **Items 6.1 and 6.2, `doc/periodic-review.md`'s opening paragraph, lines 11 to 17.** Current:
-   "Read this before starting a periodic review. Read `doc/dual-agent-review.md` as well only when the
-   window is to be reviewed by two agents. Its **Next review: independent reviews and one disposition
-   list** section records Ben's 2026-10-02 choice for the next review in each of MAM-basics and
-   MAM-private and takes precedence over D9's alternating procedure for that trial." Proposed: "Read
-   this before starting a periodic review. Read `doc/dual-agent-review.md` as well only when the
-   window is to be reviewed by two agents, apart from two rules there that every review follows: D10's
-   filename and State rules, in "Review filenames and State lines", and D12's rule for correcting a
-   finished dated document. Its **Next review: independent reviews and one disposition list** section
-   records Ben's 2026-10-02 choice for the next review in each of MAM-basics and MAM-private and takes
-   precedence over D9's alternating procedure for that trial. MAM-basics' instance ran on 2026-10-02;
-   the procedure for a later two-agent window of MAM-basics is Ben's choice when he starts one." The
-   paragraph's last two sentences are unchanged.
-3. **Item 6.2, `doc/periodic-review.md:22–23`.** Current: "`doc/dual-agent-review.md` records only
-   what pairing adds." Proposed: "`doc/dual-agent-review.md` records only what pairing adds, apart
-   from two rules that every review follows and that other instructions cite there: D10's filename
-   and State rules and D12's rule for correcting a finished dated document."
-4. **Item 6.2, `doc/dual-agent-review.md:26–27`.** Current: "A rule about how one reviewer finds,
-   checks or records findings goes there too, even when a dual-agent round taught it." Proposed: "A
-   rule about how one reviewer finds, checks or records findings goes there too, even when a
-   dual-agent round taught it, apart from D10's filename and State rules and D12's rule for correcting
-   a finished dated document, which every review follows and which other instructions cite here."
-5. **Item 6.1, `doc/dual-agent-review.md`'s opening, lines 9 to 10.** Current: "**For the next review,
-   Ben selected the simplified independent-review trial below on 2026-10-02.**" Proposed: the same
-   sentence followed by "Its MAM-basics instance ran on 2026-10-02; the procedure for a later
-   two-agent window of MAM-basics is Ben's choice when he starts one."
-6. **Item 6.1, `doc/dual-agent-review.md:31`**, the section "Next review: independent reviews and
-   one disposition list". After "**Use this simplified process for the next review in each of
-   MAM-basics and MAM-private.**" insert: "MAM-basics' instance ran on 2026-10-02, as "The MAM-basics
-   trial review, kicked off 2026-10-02" below records; for a later two-agent window of MAM-basics, the
-   procedure is Ben's choice when he starts one." What both documents say of MAM-private's instance
-   is unchanged.
-7. **Item 6.3, both documents.** `doc/dual-agent-review.md:86–87`, current: "and the private
-   repositories it must not read, as `in/repo_maintenance_policy.json`'s `repo_visibility` lists
-   them." Proposed: "and the private repositories it must not read: those that
-   `in/repo_maintenance_policy.json`'s `repo_visibility` lists, and the private repositories outside
-   the workspace that the tree cites, today `bdenckla/trope` and `bdenckla/al-hatorah`."
-   `doc/periodic-review.md:198–200`, current: "nor any other repository that
-   `in/repo_maintenance_policy.json`'s `repo_visibility` declares private." Proposed: "nor any other
-   repository that `in/repo_maintenance_policy.json`'s `repo_visibility` declares private, nor a
-   private repository outside the workspace that the tree cites, today `bdenckla/trope` and
-   `bdenckla/al-hatorah`." The brief rule that follows, "Every brief the reviewer gives a sub-agent
-   names those repositories", and item 1 of "What a reviewer reads, runs and records", which cites
-   "the private repositories of property 2", then cover both.
-8. **Item 6.4, `doc/periodic-review.md:260–262`.** Current: "and a claim that only a transcript can
-   check goes to Ben in chat rather than into the file, as D9 and D11 of `doc/dual-agent-review.md`
-   require of a turn." Proposed: "and a claim that only a transcript can check goes to Ben in chat
-   rather than into the file; D9 and D11 of `doc/dual-agent-review.md` likewise keep such a claim out
-   of a tracked turn."
-9. **Item 6.5, `doc/dual-agent-review.md:293–295`.** Current: ""Public evidence only" means that the
-   turn reads nothing in MAM-private: the series' public-only property, as `doc/periodic-review.md`,
-   "Two standing properties of the series", states it." Proposed: ""Public evidence only" means that
-   the turn reads no repository that the series' public-only property, property 2 of
-   `doc/periodic-review.md`, "Two standing properties of the series", names as private."
 10. **Item 7.5, second half, `doc/clone-forests.md:49–50`.** Current: "One occupied clone is skipped
     rather than refused: the clone that only the calling Claude session occupies." Proposed: "One
     occupied clone is skipped rather than refused, even when it is dirty, off `main`, mid-operation
@@ -704,23 +638,6 @@ instruction.
     7. `doc/edition-transcription-workflow.md:279`:
        `build <stem> --export <path>... --corrections <path>` becomes
        `build "<stem>" --export "<path>..." --corrections "<path>"`.
-
-### Dated records corrected in place (W1)
-
-As items 9.28 and 9.33 were corrected in place elsewhere:
-
-1. `doc/review-findings-2026-10-02-update.md:530–531`, "Remediation implemented; final gates
-   pending, 2026-10-03". Current: "Wave 0's `cbd405b11ef990040031ccf19699db54a69a489d` is the archive
-   commit, the last whose tree holds every file that the relay's removal deleted, and" Proposed:
-   "Wave 0's `cbd405b11ef990040031ccf19699db54a69a489d` is the archive commit, the removal commit's
-   parent, whose tree holds every file that the relay's removal deleted, and". Re-measured:
-   `4573b007`'s parent is `cbd405b1`, and `d168e22e`, whose parent is `074af13a`, also holds the ten
-   files, so "the last" was false. `4573b007`'s commit message stays as written.
-2. `doc/dual-agent-review-2026-10-01-turn-01-claude-update.md:241`, "Remediation execution by Codex,
-   2026-10-01". Current: "Public verification evidence is retained under this worktree's ignored
-   `.novc/`:" Proposed: "Public verification evidence was retained under this worktree's ignored
-   `.novc/`, until the worktree and its `.novc/` were removed on 2026-10-04:". The same file's "The
-   relay's end on BENS-HP-MINI, 2026-10-04" records that removal.
 
 ### Python docstrings and comments
 
@@ -982,16 +899,14 @@ approves. Set this plan's State to "live; approved by Ben on <date>; executing".
 changes a wording or withholds an item, revise this plan to match in the same commit. Commit:
 "Record Ben's approval of the 2026-10-04 remediation plan".
 
-**Wave 1: text outside the products,** four commits.
+**Wave 1: text outside the products.**
 
-1. Procedure documents: items 5.2 and 6.1 to 6.5. Check:
-   `py/main_test.py py/tests/test_review_turn_files.py`.
 2. Instructions, skills and policy comments: items 5.3, 8.8, 8.1's skill half, 8.9, 4.4, 9.22's
    skill block, G and 3.5. Checks: `in/repo_maintenance_policy.json` still parses as JSON;
    `py/main_test.py py/tests/test_repo_visibility_declared.py py/tests/test_prose_conventions.py`;
    the changed block parses.
 3. Maintained documents and records: items 7.5's page sentence, 8.7, 9.39, 9.22's eight document
-   blocks and W1. Check: every changed `powershell` block, and the unlabelled block, parses with
+   blocks. Check: every changed `powershell` block, and the unlabelled block, parses with
    `[System.Management.Automation.Language.Parser]::ParseInput`, run from a scratch script.
 4. Docstrings and comments: items 5.4, 7.2, 7.5's docstring and W2. Check:
    `py/main_test.py py/tests/test_product_scopes.py py/tests/test_parser_stage_node_keys.py py/tests/test_mega_coverage.py`.
