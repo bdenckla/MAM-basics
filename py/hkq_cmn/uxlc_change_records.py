@@ -83,8 +83,13 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
+# A reader follows this link, so it names tanach.us, the UXLC's public site. The
+# downloaders fetch from hcanat.us (my_uxlc.UXLC_DOWNLOAD_HOST), but that is not a
+# host for links: Ben, 2026-11-06, "hcanat is the "dev" server related to tanach.us
+# being "prod"". On 2026-11-06 tanach.us served this page with every record id the
+# Holman page links to as an anchor.
 CHANGES_PAGE_URL = (
-    "https://hcanat.us/Changes/2026.10.19%20-%20Changes/2026.10.19%20-%20Changes.html"
+    "https://tanach.us/Changes/2026.10.19%20-%20Changes/2026.10.19%20-%20Changes.html"
 )
 CHANGES_PAGE_LABEL = "2026.10.19 - Changes"
 CHANGES_PAGE_DESCRIPTION = "the change list for UXLC 2.6"
