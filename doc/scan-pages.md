@@ -1,5 +1,7 @@
 # Scan-pages index: bring up five scanned editions at a bcv — plan
 
+State: live
+
 Ben's ask, 2026-08-06: *"index important editions I have scanned (in 'ScansOfBooks') so
 that, given a bcv (book-chapter-verse) reference, I can run a program that will bring up the
 relevant page in all those editions (JC1 (Jerusalem crown), Koren, Simanim Tiqqun (if the
@@ -366,6 +368,12 @@ for a fresh session that has no other context. Its thin pointer issue is #349, f
   uncensused for Psalms. Main integration and
   deployment remain outside this research-branch adoption.
 
+- 2026-11-06, **Ben adopted local letter-only OCR followed by visual review for
+  all future scan indexing.** The trial found the verified break as the sole best
+  suggestion for 22 of 23 joins, including all six joins in the fresh sample.
+  The scan crops resolved the remaining tie. The workflow below supersedes
+  reading and transcribing each scan before locating its boundaries in MAM.
+
 ## Codex entry indexes
 
 `in/lci_recs.json` is the public Leningrad Codex entry index. Its canonical top level
@@ -457,22 +465,12 @@ about a page's layout.
   strands' differing verse divisions never enter the records. bhl's `Appendix` ×5 and
   koren's `V` ×55 are natural places for a second strand's Decalogue to surface; Phase
   0's classification should look.
-- **Records are captured from page-edge phrases, located in MAM's text.** The Leningrad
-  records were derived from an existing index (tanach.us' LCIndex); no such index exists
-  for these five printed editions, so each record here gets read off the scan: the
-  phrase at each edge of the page — its first and its last few atoms — stored as
-  `start_phrase` / `stop_phrase` evidence. **Phrases are stored letters-only** (no
-  vowels, no accents): a phrase read off a scan is typed by the model reading it, and
-  model transcription of pointed Hebrew silently reorders marks (proven in the Metsudah
-  comparison, `doc/metsudah-vs-ctr.md` — all 39 chapter hashes mismatched — and warned
-  about in this repo's `CLAUDE.md` mark-order section), while letters survive
-  transcription. Letters-only also makes locating a phrase in MAM-parsed text a plain
-  search over accent-and-vowel-stripped text. The `census` tooling locates each phrase in MAM-parsed text and derives the
-  atom numbers from it — no hand-counting of atoms, no reading of printed verse numbers —
-  and demands a longer phrase whenever the current one fails to pin a unique position in
-  the candidate neighborhood (Ben's "verse-unique phrase" requirement). The stored phrase
-  keeps every record independently re-verifiable, against the image and against the
-  text, forever after.
+- **Records are captured from visually verified page-edge phrases, located in MAM's
+  text.** Following Ben's 2026-11-06 decision, use the [OCR workflow](#ocr-workflow-for-future-censuses)
+  to propose the first and last atoms on each page. Store letters-only `start_phrase`
+  and `stop_phrase` evidence confirmed on the scans. `census` locates each phrase in
+  MAM-parsed and derives the atom numbers. Lengthen a cue when needed to resolve its
+  position uniquely. Each stored phrase can be checked against the scan and the text.
 - **Finding the page is separated from showing it, and `lookup` prints its answer on
   stdout (Ben's decision, 2026-09-10).** The resolution — a bcv, an optional strand suffix
   and an optional phrase in; a page record or records out — is a library function under
@@ -825,8 +823,8 @@ keeps refusing rather than guessing, so partial progress is always safe to use.
   black on every touched `.py`; commit and push per the global rules; load the
   `hebrew-prose` skill before writing findings prose into this doc (parasha names,
   megillot, "the Simanim Tiqqun" never a bare "Simanim").
-- Image reads: the executing session verifies scan-page claims by `Read` on the JPG —
-  never by launching a viewer.
+- Scan evidence: the executing session reads local image crops or original JPGs to verify
+  OCR suggestions and printed page numbers. Batch the paired crops for review.
 
 ## Phases (each ends with a chat report and a commit; pause for Ben where marked)
 
@@ -2173,16 +2171,62 @@ ten pages with a timestamp at the start and end of each render and each locate; 
 positions, by locating the records table's phrases under step 3's atom definition, or, once
 `census` exists, by feeding it the phrases.
 
+### OCR workflow for future censuses
+
+Ben's decision, 2026-11-06: “use this workflow for all future work.” Apply it to
+future scan-indexing batches in every edition, including the Simanim Tiqqun. Use a
+scan-capable local checkout and the edition's known inventory. Resume from the latest
+verified checkpoint for that edition.
+
+1. Batch local OCR over the outer body lines on each side of a join. Choose body
+   regions by edition, page parity and column order, and check the regions on a few
+   representative pages before using them across a new layout. Keep raw text and
+   coordinates in scratch space. The trial used Tesseract 5.5.3 via `tesserocr` 2.12.0
+   and the official `tessdata_best` Hebrew model. It segmented lines by dark-pixel
+   density, cropped each line around the bulk of the letter shapes, scaled to 65%,
+   and recognized each band in single-line mode.
+2. Compare letters from the two sides with the projected MAM text. Rank candidate
+   joins using both edges, with the stop and start at adjacent reference atoms.
+   Retain ties and the reference positions. OCR and approximate matching supply
+   suggestions for review. Validate the production projection through the maintained
+   scan-pages code and resolve unsupported forms explicitly.
+3. Review both scan crops together for every join. Confirm the exact boundary cues
+   against the visible running text. Check both ends of each book and the relevant
+   text on any shared page. Read the wider scan when a crop misses a line, a repeated phrase
+   is ambiguous, or the edition differs from MAM. Verify printed page numbers
+   separately. Keep an unresolved join out of the census until the evidence supports
+   an exact placement.
+4. Give the verified cues and printed page numbers to `census`. Run `check` and the
+   focused scan-pages tests from the repository root before committing the verified
+   metadata. Inspect the catalog diff. Keep scans, crops, raw OCR and candidate lists
+   in local scratch space.
+
+The trial covered 30 scans and 23 joins in Koren, Jerusalem Crown and Dotan BHL.
+It tuned the OCR settings on 22 scans and kept eight Psalms scans for a fresh check.
+Only two joins met the strict exact-match rule. The approximate match ranked the
+verified break uniquely first at 22 joins and tied first at Dotan BHL 941/942.
+Visual review confirmed all 23. The six fresh joins took about 17 seconds for OCR,
+matching, preparation and visual review after setup. The timing covers joins with
+existing reference answers and excludes printed page-number verification and census
+adoption. The trial used MAM-simple to match Genesis because the maintained
+scan-pages projection rejects a template outside the sampled passage.
+
+On the trial checkout, `C:/Users/BenDe/GitRepos3/MAM-basics`, the measured scripts,
+Hebrew model and result breakdown are in `.novc/scan-ocr-trial-20261106/`. The scripts
+use fixed sample manifests and crop rules. Read `results.md` and adapt the scratch
+runner to the next batch before running it. The procedure above is the portable
+record for a checkout without the trial scratch files.
+
 **Phase 2 — the censuses, edition by edition.** For each of jc1, bhl, koren,
-simanim-tanakh: read every body page's edges, one book-sized chunk at a time — lints, a
-chat report and a commit per chunk. Edition order is Ben's call (open question below).
+simanim-tanakh, use the OCR workflow on each book-sized batch. Run the focused checks,
+report and commit each completed batch. Edition order is Ben's call (open question below).
 
 **Phase 3 — simanim-tiqqun.** Find the printed ToC in the B (or A) section and read the
 haftarah/megillot start pages straight off it (C scan numbers equal printed numbers, so
 the ToC maps the whole C body in a handful of image reads); fall back to bisection sweeps
-of C only if the ToC disappoints. Fill `segments`, then census the C body — Torah, the
-haftarot (each with the name and bcv range the book has for it, in the haftarah table),
-and the three full-text megillot (שיר השירים, רות, איכה; Ecclesiastes and Esther have
+of C only if the ToC disappoints. Fill `segments`, then use the OCR workflow to census the C
+body — Torah, the haftarot (each with the name and bcv range the book has for it, in the
+haftarah table), and the three full-text megillot (שיר השירים, רות, איכה; Ecclesiastes and Esther have
 notes only, so no census there, and the ~C410–C444 notes tail is not censused at all) —
 and extend `lookup` so a Nakh bcv inside a printed haftarah yields the simanim-tiqqun
 hit(s). The unpointed D section is out (Ben, 2026-08-07). Report the haftarah inventory
