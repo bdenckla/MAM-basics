@@ -1,0 +1,16 @@
+td[lang="hbo"] {
+    font-size: 200%;
+    line-height: 1.8;
+    white-space: nowrap;
+}
+.holam-normal-spacing {
+    letter-spacing: normal;
+}
+.holam-expanded-spacing {
+    letter-spacing: 0.1em;
+}
+td:last-child {
+    vertical-align: middle;
+    white-space: nowrap;
+    padding-left: 0.6em;
+}
