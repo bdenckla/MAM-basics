@@ -1,0 +1,61 @@
+{
+  "state": "Bounded offline mirror review completed; no consequential defect confirmed.",
+  "recorded_utc": "2026-11-06T16:10:34.719274+00:00",
+  "scheduled_label_utc": "2026-11-06T16:00:00+00:00",
+  "source_base": "6d3426fda4176a9a69f948761490988d8ba43e25",
+  "source_tip": "6449404315f45a2185c45ea0e69c83f10297a9b9",
+  "receipt_parent": "3abe6c93fcb4b94210ee7cb64dca8eb6f181bd33",
+  "policy_blob": "7687e36826fa700b746671db1cd6560387512155",
+  "classification": "One source-mirror refresh, four paths. No executable, generator, product, font or policy change. The preamble and three manuscript descriptions remain attributed external prose, not new editorial judgments by the reviewer.",
+  "checks_actually_run": {
+    "command": ".venv/bin/python /workspace/scratch/review-mirror-20261106-1600/check_mirror.py",
+    "result": "All offline assertions passed; no repository test suite or generator invoked.",
+    "elapsed_seconds": 1.461,
+    "index_rows_byte_identical": 999,
+    "distinct_page_names": 982,
+    "genesis_onward_bytes_identical": 296571,
+    "manifest_pages_checked": 13,
+    "changed_page_sizes": [
+      {
+        "slug": "appendices",
+        "before": 221277,
+        "after": 221398,
+        "stored_revid": 3101789
+      },
+      {
+        "slug": "index-aleppo",
+        "before": 107077,
+        "after": 107092,
+        "stored_revid": 3101811
+      },
+      {
+        "slug": "index-leningrad",
+        "before": 303087,
+        "after": 304083,
+        "stored_revid": 3101815
+      }
+    ],
+    "other_pages": "All ten other mirror pages and their metadata are byte-identical. All titles and stored sizes reconcile.",
+    "other_scope": "Aleppo changes only its reciprocal see-also label; appendices changes exactly three manuscript-description lines. Endpoint diff --check passes. No source normalization applied."
+  },
+  "not_run": "No repository tests, full suite, mega, generator, source refresh, bot, live API request, scan opening or browser check. A source-only mirror change with independently checked byte/metadata scope needs no expensive rerun. Owner-reported 26 tests and anonymous revision reads remain attributed, not repeated or adopted.",
+  "limits": "Manifest consistency does not authenticate live revision authorship/content, freshness or the manuscript/image assertions in the prose. No external verification was attempted, denied or routed around.",
+  "anchors": {
+    "overall_reviewed_through": "210affe3ac2931473bead0de839be0de08309e3d",
+    "broad_tested_unchanged": "6d3426fda4176a9a69f948761490988d8ba43e25",
+    "bounded_review_completed_through": "6449404315f45a2185c45ea0e69c83f10297a9b9",
+    "offline_source_checked": "6449404315f45a2185c45ea0e69c83f10297a9b9"
+  },
+  "prior_gaps": "Earlier Stage 10 Word/base/current-live/parse/bot-flag limits and PR 369 rendered verification remain separate. Seven historical Stage 10 snapshots stay verified. The nightly closed the heading full-generator gap; independent heading browser limits remain. No old limitation was silently reopened or closed.",
+  "ownership": "Existing clean cloud clone only; no active Python/test/generator/browser process found. The independent cleanup branch, HP/BHL work and Private checkout were not touched. No new worktree or clone.",
+  "publication": "Isolated receipt branch only. Pages is workflow_dispatch only; no main push, workflow dispatch, deployment, font baseline/regeneration, frozen hbofonts or schedule change.",
+  "cleanup": "Restore the original clean work checkout after remote receipt/archive verification and remove this task scratch after durable preservation; all checks are completed.",
+  "evidence": {
+    "archive": "doc/review-hourly-2026-11-06-1600-mirror-evidence.zip",
+    "archive_sha256": "d3e718b77ff2410ed616d96374913edd4e5770c9a80214a18dc9a02c2d6dac99",
+    "members_sha256": {
+      "check_mirror.py": "a4fc57a88e4f81cf12281c708601c9cc335623a59a764045573820e6802077f0",
+      "result.json": "135366a0dc8b28c7b103166c7c33ab4d30cbf9003b95024ce759bc0fe790b678"
+    }
+  }
+}
