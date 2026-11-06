@@ -1,6 +1,7 @@
 # PLAN — follow-up to the 2026-10-07 repository maintenance
 
 State: executed 2026-10-11; written 2026-10-08. Workstream A executed 2026-10-08 and 2026-10-09;
+Updates and later status: [PLAN-maintenance-follow-up-2026-10-08-update.md](PLAN-maintenance-follow-up-2026-10-08-update.md).
 Ben decided on 2026-10-09 to keep `collect` and `text_of`. Workstream B executed 2026-10-08; Ben
 reported on 2026-10-09 that its live deployment on his Windows machines is done. Workstream C
 executed 2026-10-09: the public half after Ben approved the list in “C1. Public audit result,

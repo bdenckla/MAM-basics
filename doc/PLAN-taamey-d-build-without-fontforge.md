@@ -59,8 +59,9 @@ Measured at MAM-basics commit `95dc8ddd`; the quoted passages were re-checked at
 3. **FontForge's quadratic conversion drifts between FontForge versions.** hbofonts'
    `doc/PLAN-move-MAM-basics-off-Taamey_D-0.921.md`, "Invisible or non-shaping changes": "36
    glyphs' TrueType outlines differ by at most 5.3 units of the 2,048-unit em ... a newer
-   FontForge converted the same curves." MAM-basics' `doc/review-findings-2026-10-02.md`, "The
-   font's exact rebuild": "21 of 278 glyphs differ in quadratic-conversion points".
+   FontForge converted the same curves." MAM-basics' [archived review](https://github.com/bdenckla/MAM-basics/blob/6d3426fda4176a9a69f948761490988d8ba43e25/doc/review-findings-2026-10-02.md),
+   "The font's exact rebuild": "21 of 278 glyphs differ in quadratic-conversion points".
+   Its [update](https://github.com/bdenckla/MAM-basics/blob/6d3426fda4176a9a69f948761490988d8ba43e25/doc/review-findings-2026-10-02-update.md) preserves the later dispositions.
    `Taamey-D/README.md`, "Building the font", pins the claim to one FontForge: it "reproduces
    the tracked outputs byte for byte", and "A different FontForge can change the built bytes".
 4. **The oracle exists.** `Taamey-D/qa-in/` holds 120,437 test cases, each with Taamey D's

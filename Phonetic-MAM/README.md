@@ -72,7 +72,8 @@ The transcriptions have each acute or breve vowel decomposed, as a base letter
 followed by U+0301 or U+0306, while their ḥ is the precomposed U+1E25. Elsewhere
 the repository keeps Latin letters with diacritics in NFC; these are the bytes
 of the previously published pages, which Ben's decision of 2026-10-03, recorded
-in `doc/review-findings-2026-10-02-update.md`, keeps.
+in the [archived review](https://github.com/bdenckla/MAM-basics/blob/6d3426fda4176a9a69f948761490988d8ba43e25/doc/review-findings-2026-10-02.md)
+and its [decision update](https://github.com/bdenckla/MAM-basics/blob/6d3426fda4176a9a69f948761490988d8ba43e25/doc/review-findings-2026-10-02-update.md#bens-close-out-decisions-2026-10-03), keeps.
 
 ## Silluq before a later meteg
 

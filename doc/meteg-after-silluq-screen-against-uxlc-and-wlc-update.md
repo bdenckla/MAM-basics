@@ -10,7 +10,7 @@ sibling file named `<stem>-update.md`, which is what this file is for that scree
 ## The two opening terms are a numbered list
 
 Recorded by Codex on 2026-09-12, for finding 20.4 of
-`doc/review-findings-2026-09-10.md`. The opening sentence beginning “Two terms” defines both terms
+[review-findings-2026-09-10.md](https://github.com/bdenckla/MAM-basics/blob/6d3426fda4176a9a69f948761490988d8ba43e25/doc/review-findings-2026-09-10.md). The opening sentence beginning “Two terms” defines both terms
 in running prose. The two definitions should be read as this numbered list:
 
 1. An **atom** is one written word between spaces or maqafs.
@@ -22,7 +22,7 @@ two definitions.
 ## The four remaining summary leads put their dispositions first
 
 Recorded by Codex on 2026-09-12, for finding 20.5 of
-`doc/review-findings-2026-09-10.md`. The four cited leads are the report's analytic prose, not
+[review-findings-2026-09-10.md](https://github.com/bdenckla/MAM-basics/blob/6d3426fda4176a9a69f948761490988d8ba43e25/doc/review-findings-2026-09-10.md). The four cited leads are the report's analytic prose, not
 protected quotations. Each disposition is already supported by the screen or the explanation
 that follows the lead. The leads should be read as follows:
 
@@ -61,3 +61,10 @@ The corrected readings are:
 The finished screen report's substantive bytes match historical blob
 `a46dbf0f9b384afa072878584c1dace2328dc179`; its only additional line is the authorized update
 pointer.
+
+## Historical review family, 2026-11-06
+
+Recorded by Codex at Ben's request. The complete cited family remains in Git history:
+
+- [review-findings-2026-09-10-update.md](https://github.com/bdenckla/MAM-basics/blob/6d3426fda4176a9a69f948761490988d8ba43e25/doc/review-findings-2026-09-10-update.md)
+- [review-findings-2026-09-10.md](https://github.com/bdenckla/MAM-basics/blob/6d3426fda4176a9a69f948761490988d8ba43e25/doc/review-findings-2026-09-10.md)

@@ -29,3 +29,16 @@ The passage “Scans and parses the WLC 4.22 prose books, 19,531 verse bodies”
 prose verses and 19,531 scanner calls: 18,724 verse bodies plus 807 dual-cantillation rescans.
 The step writes 18,725 records to `out/accgram/prose/`. These are corrections to the dated
 measurement's units, not a new timing or private-corpus measurement.
+
+## Historical review citations, 2026-11-06
+
+Recorded by Codex while removing the retired review process at Ben's request.
+The review references in the finished base are historical evidence. Their complete
+families remain at `6d3426fda4176a9a69f948761490988d8ba43e25`:
+
+- [review-findings-2026-09-10-update.md](https://github.com/bdenckla/MAM-basics/blob/6d3426fda4176a9a69f948761490988d8ba43e25/doc/review-findings-2026-09-10-update.md)
+- [review-findings-2026-09-10.md](https://github.com/bdenckla/MAM-basics/blob/6d3426fda4176a9a69f948761490988d8ba43e25/doc/review-findings-2026-09-10.md)
+
+Current review and testing policy is `doc/review-trial.md`; ordinary review records
+follow `doc/periodic-review.md`. The substantive work and decisions in this receipt
+are unchanged.

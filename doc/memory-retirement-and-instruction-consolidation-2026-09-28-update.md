@@ -84,3 +84,15 @@ Commit `0e254fdc` added all 36 on 2026-09-28. Each row restates only what its de
 
 Also corrected in place in this file: line 3, “State: open; first entry 2026-09-29.”, now reads
 “State: open, first entry 2026-09-29.”, the recorded form of an update's State.
+
+## Historical review citations, 2026-11-06
+
+Recorded by Codex while removing the retired review process at Ben's request.
+The review references in the finished base are historical evidence. Their complete
+families remain at `6d3426fda4176a9a69f948761490988d8ba43e25`:
+
+- [dual-agent-review.md](https://github.com/bdenckla/MAM-basics/blob/6d3426fda4176a9a69f948761490988d8ba43e25/doc/dual-agent-review.md)
+
+Current review and testing policy is `doc/review-trial.md`; ordinary review records
+follow `doc/periodic-review.md`. The substantive work and decisions in this receipt
+are unchanged.

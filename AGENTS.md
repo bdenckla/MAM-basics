@@ -120,9 +120,8 @@ encountered by past sweeps, read the skill's `references/mam-basics-trackers.md`
 
 ## Review filenames and finished dated documents
 
-Follow `doc/dual-agent-review.md`, “Review filenames and State lines”, for the filename matching
-the agent and review round, author and turn ownership, and review State exceptions. Private
-review records stay in MAM-private; `doc/periodic-review.md` owns the series procedure.
+Follow `doc/periodic-review.md`, “Review filenames and State lines”, for ordinary review
+records. Private review records stay in MAM-private.
 
 Load `iterative-document-editing`, “Finished receipts and maintained documents” and
 “MAM-basics and MAM-private State conventions”, for receipt corrections and non-review State.

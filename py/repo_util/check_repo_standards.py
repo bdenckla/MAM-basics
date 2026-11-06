@@ -256,7 +256,7 @@ State conventions and receipt corrections
 ----------------------------------------
 The iterative-document-editing skill's "MAM-basics and MAM-private State conventions"
 and "Finished receipts and maintained documents" sections own plan and update policy.
-`doc/dual-agent-review.md`, "Review filenames and State lines", owns review exceptions.
+`doc/periodic-review.md`, "Review filenames and State lines", owns ordinary review records.
 This checker does not mechanically validate State shapes or decide whether a document
 is spent. The historical inbound-reference screen above remains unimplemented.
 
@@ -278,8 +278,8 @@ on 2026-09-14 he approved limiting the retirement to review files.  The
 github-issues skill, dot-claude/skills/github-issues/SKILL.md, states both.
 
 AND "DOC-ONLY" NAMES THE RECORD, NEVER THE READING.  doc/periodic-review.md
-calls the series "doc-only since 2026-09-01" and points here for the
-convention, so the phrase is worth pinning: what became doc-only is where a
+keeps ordinary review records without a thin tracking issue. Historically,
+what became doc-only on 2026-09-01 is where a
 review is WRITTEN DOWN -- the doc alone, the thin issue retired, the State
 line carrying the open/closed state.  It says nothing about which files a
 review may read, and a review reads whatever its window changed in a public

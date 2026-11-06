@@ -1,6 +1,7 @@
 # PLAN — remediate the 2026-09-09 review of the tracked agent-instruction files
 
 State: paused 2026-10-31; spent, by Ben's decision that day, so none of its work is to be done.
+Updates and later status: [PLAN-remediate-instruction-file-review-findings-2026-09-09-update.md](PLAN-remediate-instruction-file-review-findings-2026-09-09-update.md).
 Proposed 2026-09-09, it was never acted on; Ben's decision, 2026-09-09, was to record the review
 as a plan rather than act on it in the reviewing session, which he called overwhelming.
 

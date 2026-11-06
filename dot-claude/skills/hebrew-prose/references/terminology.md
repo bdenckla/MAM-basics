@@ -496,9 +496,10 @@ parenthesized meaning of "(folio 57)a""*, the A page of folio 57. A quotation or
 such a source keeps its wording, as a catalog's "fol. 78b" does where the catalog is cited;
 this repository's own prose avoids the form.
 
-The decision's record is item 4 of the first entry of MAM-basics'
-`doc/dual-agent-review-2026-09-26-turn-01-claude-update.md`, which also says why Ben's first
-statement there is not quoted as exact.
+The decision's [archived record](https://github.com/bdenckla/MAM-basics/blob/6d3426fda4176a9a69f948761490988d8ba43e25/doc/dual-agent-review-2026-09-26-turn-01-claude-update.md)
+is item 4 of its first entry; it also says why Ben's first statement there is not quoted as exact.
+The [base review](https://github.com/bdenckla/MAM-basics/blob/6d3426fda4176a9a69f948761490988d8ba43e25/doc/dual-agent-review-2026-09-26-turn-01-claude.md)
+remains beside that update in Git history.
 
 Swept on adoption: the maintained prose, skills and tool messages that called a page a folio
 or a leaf. **Not** swept, and worth offering when touched: the generated Holman

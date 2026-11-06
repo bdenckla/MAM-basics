@@ -6,8 +6,8 @@ Ben approved the proposed process on 2026-10-07: "I approve; let's try this new 
 This process controls MAM-basics and MAM-private review and repair work. It also controlled
 occasional hbofonts work until hbofonts froze on 2026-10-29, its Taamey D font having moved to
 MAM-basics.
-It supersedes the older obligatory Ben dispositions, fresh remediation-plan approval, D7's
-approval gate for routine internal editorial repairs, blanket finding rechecks, and ordinary
+It supersedes obligatory Ben dispositions, fresh remediation-plan approval, approval gates
+for routine internal editorial repairs, blanket finding rechecks, and ordinary
 pre-push/full-suite gates. Keep historical evidence, focused regeneration obligations and the
 privacy, product, environment and one-writer safeguards. It changes no permissions or releases.
 
@@ -76,7 +76,7 @@ mpplus hash movement alone are not defects or approval gates; triage actual fail
 unexplained output changes without automatically rolling back new source data. Preserve
 maintained source integrity checks for concrete corruption. Do not preserve or reintroduce
 retired hash/sealing/replay gates. Use the resulting maintained commands and proportionate
-confidence evidence rather than replacement process machinery. No review relay is introduced.
+confidence evidence rather than replacement process machinery.
 
 ## Anchors and compact receipts
 

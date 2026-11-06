@@ -1,686 +1,104 @@
-# The periodic review: one repository, one commit window, one responsible reviewer, one findings file
-
-The approved [2026-10-07 trial](review-trial.md) controls current review, repair and checking
-work. Its agent triage replaces the obligatory Ben dispositions, separate remediation-plan
-approval and blanket per-finding rechecks below. Preserve the older records and private boundaries.
-
-This document describes the periodic review as a procedure in its own right: what the series is,
-what a review file contains, how a review is checked before it is acted on, and how its findings
-reach dispositions. It was split out of `doc/dual-agent-review.md` on 2026-09-12 (Ben's
-instruction that day), which now covers only the pairing of Claude and Codex on one window. **A
-citation written before 2026-09-12 may name `doc/dual-agent-review.md` for material that is now
-here**; such citations are left as written, as the stale `../masorah-books/` and `al-hatorah`
-paths in `py/accgram/` are.
-
-Read this before starting a periodic review. Read `doc/dual-agent-review.md` as well only when the
-window is to be reviewed by two agents, apart from two rules there that every review follows: D10's
-filename and State rules, in "Review filenames and State lines", and D12's rule for correcting a
-finished dated document. Its **Next review: independent reviews and one disposition list** section
-records Ben's 2026-10-02 choice for the next review in each of MAM-basics and MAM-private and takes
-precedence over D9's alternating procedure for that trial. MAM-basics' instance ran on 2026-10-02;
-the procedure for a later two-agent window of MAM-basics is Ben's choice when he starts one.
-The trial's owner verifies the findings in place of the blanket per-finding sub-agent rechecks
-below; targeted delegation remains available.
-This choice does not require every later window to have two reviewers.
-
-**Every rule about how one reviewer finds, checks and records findings belongs in this document**,
-including what the dual-agent rounds learned. Each of those rounds' first turns was written and
-checked by one reviewer before the other agent read it, so a later turn's correction of it is
-evidence about a single reviewer's review. `doc/dual-agent-review.md` records only what pairing
-adds, apart from two rules that every review follows and that other instructions cite there: D10's
-filename and State rules and D12's rule for correcting a finished dated document.
-
-## Delegation during a periodic review — Ben's decision, 2026-09-15
-
-Whether a window has one responsible reviewer or two, each review turn may be an orchestrated
-multi-agent task. The root reviewer and any sub-agent may delegate bounded, independently
-checkable work to another sub-agent, either in parallel or as a sequential handoff. The root
-reviewer remains responsible for the review: the root reviewer sets the scope, reconciles the
-reports, verifies the claims it adopts, and owns the findings file and commit.
-
-Within any one checkout, only one agent writes, stages or commits at a time. A procedure with a
-shared remote branch may impose a stricter one-writer rule across separate checkouts as well. Other
-sub-agents report without editing unless writing responsibility is explicitly handed to one
-sub-agent. Use delegation when it can save time, protect the root reviewer's context or improve
-confidence, not merely to create another task. The mandatory pre-commit check under "Reviewing the
-review, with the same agent and with Ben" still applies.
-
-## The checkout a review uses — Ben's decision, 2026-09-29
-
-**By default a review runs in whatever checkout its session is already in; a linked worktree is
-optional.** Ben's instruction of 2026-09-29, given while the 2026-09-29 dual-agent round was being
-set up in a linked worktree made for it: "While the DAR process should continue to be able to use
-a worktree, both this session and the DAR procedure (and the single-agent procedure) should now say
-that the default is to just use whatever directory, be it a clone in GitRepos, GitRepos2, GitRepos3,
-etc. or some worktree dependent on those (or maybe even some day a cloud session)."
-
-That checkout may be a full clone in any forest — `$HOME/GitRepos`, `$HOME/GitRepos2`,
-`$HOME/GitRepos3` and so on, as `doc/clone-forests.md` describes — or a linked worktree of one of
-those clones, and perhaps some day a cloud session's checkout. A review may still use a linked
-worktree made for it, but nothing in this procedure or in `doc/dual-agent-review.md` requires one.
-Since Ben's decision of 2026-10-20, the forest is one that the session's own agent owns, as
-`doc/clone-forests.md`, “Forest ownership”, says. The one-writer rule above applies to whichever
-checkout the review uses.
-
-## The effort a review runs at — Ben's decision, 2026-09-30
-
-**Whether a window has one responsible reviewer or two, the session writing each review turn runs
-at its agent's top effort level: `max` for Claude and `xhigh`, extra high, for Codex.** Ben's
-instruction of 2026-09-30, given when a Claude session proposed that review turns run at `max`:
-"Yes, add the max-effort line to the procedure docs. But 'max' is the level for Claude. The level
-for Codex is 'xhigh' (extra high)."
-
-The case was turn 03 of MAM-private's 2026-09-29 dual-agent round. It ran at Claude's `medium`
-level, took about four minutes and used no sub-agents, and later turns corrected two of its claims.
-For a Claude session the level can be told afterwards: the Claude desktop app's session record
-holds it, and the session's transcript records it with each response. The two can disagree: on
-2026-09-30 the app's record of a close-out session gave `high` while every transcript record gave
-`max`, so a review file states the level its session was started at.
-
-## What the periodic review is
-
-Every four to eight days one Claude session reads a commit range in one public repository and
-writes `doc/review-findings-<date>.md`. The cadence is observed, not prescribed.
-
-That filename is the single-agent Claude-series convention. A standard sequential dual-agent round
-uses the neutral numbered turn filenames in `doc/dual-agent-review.md`; the first reviewer may be
-Claude or Codex. Blind Design B retains its author-based pair of filenames.
-
-**A second series, which this repository's reviews call the private series, follows this same
-procedure in MAM-private**, a private repository holding Python code, data and documents of the
-same kinds as this repository's, and records its reviews there. Where the two need telling apart,
-this document calls the series in this repository the public series. The section "The private
-series, recorded in MAM-private" below says what differs.
-
-**A periodic review is of one diff: the changes in files between the window's start commit and its
-end commit.** Ben's decision, 2026-09-15, during his walk-through of
-`doc/review-findings-2026-09-14.md`, whose finding 5 described a `MAM-parsed/plus/` rewrite made and
-undone on a side branch inside the window: "The review is, conceptually, of a single diff, between
-the start commit and the end commit. If the reviewing agent wants to 'understand' that review by
-looking at the path taken through git to get there, fine, but that's an internal decision about how
-that single, big diff can best be understood." So reading the commits, reflogs and `--full-history`
-between the two anchors is a way to understand the diff, not a second subject: a state made and
-undone inside the window, commit-message contents and trailers, merge shapes, and leftover branches
-and worktrees are not what a review looks for. Something of that kind noticed while understanding
-the diff may be mentioned; Ben, the same day: "don't turn a blind eye to something you notice, but
-don't go 'looking for trouble' in details beyond the narrow focus". A review of the process followed
-across a series of commits, for better instruction files or linters, is a different review, and
-there individual commits matter.
-
-Ben approved this method on 2026-09-17 in the September 16 review's close-out decision for
-finding 20. Establish the window from endpoint commits, not commit dates.
-For a cloned repository, carry
-forward the previous review's recorded end commit and compare `<previous-end>..<current-end>`.
-A review of some other window, such as the October 1 round of the relay's own window,
-`303bf239..1bfceff4`, leaves the series' anchor where it was and says so; carrying that round's end
-commit forward would have skipped 12 commits.
-For a GitHub-only repository, record the previous and current default-branch commit IDs and
-compare those endpoints through the API. Repository-level `pushed_at` can establish that some
-push occurred; when the arrival of a particular commit matters, corroborate it with a direct
-ref update or PushEvent that names the before and after commits. GitHub's events feed omits pushes,
-so a missing PushEvent proves nothing; its activity record,
-`gh api "repos/<owner>/<repo>/activity?ref=refs/heads/<branch>"`, lists every ref update.
-Do not use `git log --since`
-or `commits?since=` as a completeness check: both filter by commit date and can miss an older
-commit pushed during the current review window.
-
-The unprefixed dated review series is selected by the exact date-shaped pathspec below. Re-establish
-the census and read the states rather than inferring them. The broader
-`doc/review-findings-*.md` pattern also matches live update files and is not the series census.
-
-```powershell
-git ls-files -- "doc/review-findings-????-??-??.md"
-```
-
-```powershell
-git grep -n "^State:" HEAD -- "doc/review-findings-????-??-??.md"
-```
-
-### The window is one repository — Ben's decision, 2026-09-20
-
-**A window covers one repository, so a window is one repository and one `(start, end)` pair.** Ben
-raised the defect on 2026-09-17, while MAM-private's catch-up rounds were being scoped: the
-definition above is singular, while other passages of these two documents presupposed a set of
-repositories each carrying its own commit range, and giving each repository its own commit window
-was "a road I don't want to go down". His remedy that day: "maybe this is a needed mam-basics fix:
-to constrain this process to a single repo (and therefore a single commit window)." He decided on
-2026-09-20 to make the amendment; #286 states the defect it closes.
-
-Three things follow.
-
-1. **The unprefixed dated series in this repository's `doc/` reviews MAM-basics.** Its start anchor
-   is the previous review's recorded end commit in MAM-basics, and nothing else is in the window.
-2. **A commit in another public repository is not in the window.** It waits for a window of its
-   own, and where that window's record goes and what it is called are settled when Ben asks for
-   one. The cost is real: before this decision a round could carry a small sibling along with the
-   main repository. The 2026-09-16 round's window was MAM-basics `bca64824..71f96ca3` plus
-   phonetic-hbo `10de7970..8b134b6b`, stated as "98 commits in two public repos" in its turn-01
-   file `doc/dual-agent-review-2026-09-16-turn-01-claude.md`, now tracked on `main`, and
-   `doc/review-findings-2026-09-10.md`
-   covered "252 commits across three public repos". Those files record their windows as they
-   were scoped and are not rewritten.
-3. **Each series carries its own anchors forward**, so no series hands another one a repository
-   name without a starting commit for it. That is what the public series did when it handed
-   MAM-private and hbofonts to the private series.
-
-### A prior round's own records inside a successor window — Ben's decision, 2026-09-21
-
-**A review's records are in a successor window's diff like any other file, and the
-successor's first turn says in writing which of them it reads as a subject and which it
-treats as evidence.** Neither disposition is the default: the turn states the one it takes
-and its reason, and a boundary that rests on nothing but a setup session's recommendation
-is not a boundary. Ben decides any case the turn cannot settle, and his decision is
-recorded before close-out proceeds.
-
-Ben's decision of 2026-09-20 is the worked case. Window 2 of MAM-private's 2026-09-20
-round contained the whole of window 1's own records — its five turn files, its turn-01
-update file, its remediation plan with that plan's update file, and the series' catch-up
-plan — at 5,605 insertions and no deletions, 23.3% of that window's non-generated
-insertions; window 1's code and data remediation was in the window too. He accepted
-window 1's prior round as coverage of those nine files, in his words "accept W1's prior
-round as coverage", so no supplemental read was required. That decision is about that
-window; this rule is what generalizes from it, and it generalizes the requirement to
-state the boundary, not the disposition he chose.
-
-A prior round's code and data remediation is ordinary window content, because no review
-has read it.
-
-## Two standing properties of the series
-
-Two properties of the series matter to every review in it.
-
-1. **The series is doc-only since 2026-09-01** (`5b89033`). **"Doc-only" says where a review is
-   RECORDED, never what it may READ** — a distinction worth spelling out, because two documents
-   written on 2026-09-09 both took it the other way, and either reading would send a session to Ben
-   for a scope decision he does not owe. A review reads whatever the window changed in a public
-   repository:
-   [`doc/review-findings-2026-09-08.md`](https://github.com/bdenckla/MAM-basics/blob/40395aa3d44608e9f63a75897cd8e42e1b1a7338/doc/review-findings-2026-09-08.md)
-   is headed "review of the public repos" and
-   accounts for 99 commits and 513 changed paths across Python, pages and data. What went doc-only
-   is the RECORD. Each file carries a `State:` line at line 3 directly under the H1. The initial
-   review records what was true when the review finished; later remediation State belongs in its
-   single live update file. Later turns record review completion, under D10 in
-   `doc/dual-agent-review.md`. The
-   thin tracking issue every review used to file — wlc-utils#87, then MAM-basics #219, #228, #231,
-   #232, #261, #263 — is retired, because every comment on all seven was agent-written from Ben's
-   account and only #219 was ever adopted as a citation handle. A review that finds work somebody
-   must do still files a real issue with a real body; #233 is that shape.
-2. **The series is public-only since 2026-08-26.** It reads no private repository: neither
-   MAM-private, which the private series reviews instead, nor hbofonts, nor any other repository
-   that `in/repo_maintenance_policy.json`'s `repo_visibility` declares private, nor a private
-   repository outside the workspace that the tree cites, today `bdenckla/trope` and
-   `bdenckla/al-hatorah`. Every brief the reviewer gives a sub-agent names those repositories,
-   since on 2026-10-02 a stream brief called hbofonts public and two streams read in it before the
-   error was caught. A reviewer that reads private material and then writes into this repository's
-   `doc/` publishes it:
-   `py/repo_util/report_destination.py` "does not read what a human or an agent later types into a
-   commit message or a doc/ file". A check whose tracked code reads a private sibling may still
-   run: the mega reads MAM-private through its `phonetic-mam-export` step, and until 2026-10-29
-   the suite read hbofonts through `py/tests/test_redirect_manifest.py`. The review records
-   only such a check's result and the sibling's commit, never a path or any content from the
-   sibling. Ben, on 2026-10-02, about the mega: "It seems harmless if we ignore the wasted
-   time." On 2026-10-04 he confirmed that use by the suite and the mega: "That extent of use is
-   fine." This is load-bearing for the Codex scoping rule in `doc/dual-agent-review.md`, not
-   incidental.
-
-   **Its one standing exception — the byte-compare of github-misc's instruction-file plumbing, which
-   the review files record as row 22 and finding 5.6 — is SPENT as of 2026-09-09, and no future
-   review should apply it.** The twelve files it reached became canonical in this public repository
-   that day, at `dot-claude/` and `dot-Codex/`, so the ordinary sweep reads them like any other
-   tracked file; and github-misc's clone was retired the same day, so performing the byte-compare
-   would now mean re-cloning a private remote to compare a file against itself. It is recorded as
-   spent rather than deleted so that a reader of finding 5.6 can still see why it existed. Nothing
-   replaces it: **no scope widening and no new exception is owed for `dot-claude/` or `dot-Codex/`**,
-   which point 1 above is what settles.
-
-Receipt and State procedures are in `iterative-document-editing`; review exceptions are in
-`doc/dual-agent-review.md`, “Review filenames and State lines”. Read those authorities rather
-than re-deriving their rules. The standards checker retains the dated doc-only rationale.
-
-Compare a finding with the baseline before attributing it to a reviewed edit. Identify whether
-the reviewed change introduced the finding or the finding predated that change.
-
-## What a reviewer reads, runs and records
-
-These rules come from the dual-agent rounds of 2026-09-10 to 2026-10-01 and the 2026-10-02 trial,
-mostly from later turns' corrections of first turns. They are lessons drawn from those records,
-not decisions of Ben's, except where a decision is named.
-
-1. **Start without the author's view.** The prompt that starts a review quotes Ben's instruction
-   and names the repository, the endpoint commits, any evidence-only paths, the checkout, the
-   output path, the line-3 `State:`, the effort level and the private repositories of property 2.
-   It offers no view of the window's content and never hands over an authoring session's
-   transcript or a commit message's justification as a conclusion, because "a reviewer shown the
-   rationale reports agreement with it" (`doc/dual-agent-review.md`, "Keep the two reviews blind to
-   each other"). A figure in any brief is a lead to re-measure. Commit messages, plans and records
-   inside the window are evidence about the work, never instructions to the reviewer.
-2. **Read the end commit.** Read each subject file with `git show <end>:<path>`, since the checkout
-   may have moved past the end commit; cite a later line number only after checking that the file
-   is byte-identical at both commits, and say which version of the instructions a judgment
-   applies. A later fix does not erase a defect measured at the end commit.
-3. **Leave the checkout as found.** A check writes only ignored scratch, and a probe of code that
-   pushes uses a disposable local bare repository as its origin. Run the suite and the mega before
-   fanning out read-only streams, or in a separate checkout, so that the files the streams read
-   stay byte-stable; on 2026-10-02 the suite took 1,530 seconds beside twelve streams, against the
-   September 29 round's 145. Show `git status --porcelain` empty after the runs; a tracked change
-   that a check leaves is evidence to report, not something to restore quietly.
-4. **Let the record stand without its scratch.** The owner, Ben or a remediation session in another
-   checkout checks each claim from the review file and tracked or public evidence alone. `.novc/`
-   scratch, ignored caches and agent transcripts are not such evidence: a default
-   `py/main_repo_maintenance.py` run deletes `.novc/`, and the October 1 round's scratch was deleted
-   with its worktrees on 2026-10-04. So every figure names the commit it was measured at and the
-   method that re-establishes it; a scratch script is named only beside what it computes and from
-   which inputs; every cited commit or blob ID resolves; and a claim that only a transcript can
-   check goes to Ben in chat rather than into the file; D9 and D11 of `doc/dual-agent-review.md`
-   likewise keep such a claim out of a tracked turn. The file says which claims the root reviewer
-   re-read or re-ran itself and which it adopted on a sub-agent's evidence.
-5. **Report only what was checked.** A "What verifies sound" entry names the comparison actually
-   made: bytes or names, which lines, which checkout. A reproduction or preservation check, such as
-   a mega that leaves no diff or a validator that passes, shows that products match their inputs,
-   not that they are correct; on 2026-10-02 every Codex "verifies sound" statement that bore on a
-   Claude finding was of that kind. Tree health reports only what this review ran: a required check
-   that was denied, could not run or was interrupted is listed under "What this review did not
-   check", and a result quoted from another record is labelled as quoted.
-6. **Report to one bar.** Report defects that the window introduced or restated, and older defects
-   that it carries forward or that the reviewer notices, labelling each as one or the other; an
-   older defect that the window restated is a finding, not a noticed item. Where a finding is one
-   site of a recurring defect, run the census over every spelling of the pattern, state its pathspec
-   exclusions and whether the list is complete, and give every site it finds a disposition with the
-   finding. Give each minor wording item one line, and spend the review's effort on substantive
-   defects in the code, data and products, the bar Ben set for the trial on 2026-10-02 and
-   2026-10-03.
-
-## What a review file contains
-
-Nothing prescribes a review file's sections. The shape below is what the files share, and it has
-travelled by imitation from one dated file to the next, so this section records it rather than
-founding it. A review that departs from it should say why in its opening paragraphs.
-
-1. **The H1 names the window**: "Findings of the <date> review of <repository> since <date of
-   the previous review>". Through 2026-09-20, while a window could cover more than one
-   repository, it read "of the public repos since <date>", and through 2026-08-22 "of the work
-   since <date>".
-2. **Line 3 is the `State:` line**, directly under the H1, recording what was true when the review
-   finished. Later remediation State and every disposition go in the review's single live update
-   file. `doc/dual-agent-review.md`, “Review filenames and State lines”, owns review vocabulary.
-3. **The opening paragraphs say how the file was written**: which session, with its agent, model
-   and effort level; the instruction that started it, quoted; which commit it was frozen at; and
-   anything that happened to it on the way into the tree. A time given for the review's own work
-   comes from a named clock reading, and the commit records when the work finished.
-4. **`## Scope, anchors and census`**: the window's repository and its commit range, named by
-   start and end commit, and a count of what the window changed.
-5. **`## Tree health at <commit>`**: the suite's count and the lints, with the commit they ran on
-   in the heading.
-6. **`## What verifies sound, stream by stream`**: what the review checked and found no defect in,
-   so that nobody re-derives it.
-7. **`## Findings`**, numbered, with sub-findings numbered under them (4.2, 11.5). **Each finding's
-   lead says what happened to it** — unfixed, fixed by a named commit, or raised and not fixed
-   because of a stated reason — per `~/.claude/CLAUDE.md`'s prose section on dispositions.
-8. **`## Open ends the window itself declares (not findings)`**: work the window's own commits say
-   is unfinished, which is not a defect of the window.
-9. **`## What this review did not check`**.
-
-Items 4, 5, 6 and 9 first appear together in
-[`doc/review-findings-2026-09-04.md`](https://github.com/bdenckla/MAM-basics/blob/40395aa3d44608e9f63a75897cd8e42e1b1a7338/doc/review-findings-2026-09-04.md).
-From 2026-08-03
-to 2026-09-01 a review usually fixed some findings during the review itself and said so under
-`## How the review was acted on (<date>)`, and
-[`doc/review-findings-2026-07-29.md`](https://github.com/bdenckla/MAM-basics/blob/40395aa3d44608e9f63a75897cd8e42e1b1a7338/doc/review-findings-2026-07-29.md)
-groups its
-findings under `## Major` and `## Minor — <area>` headings. In a standard two-agent window, Agent
-1's turn-01 file also carries the inputs for reconciliation and, after turn 02, Agent 2's
-reconciliation; `doc/dual-agent-review.md` owns both. Historical author-named headings remain as
-written.
-
-## The private series, recorded in MAM-private
-
-On 2026-08-26, when this repository's series stopped reviewing private repositories, those reviews
-became the private series, recorded in MAM-private's `doc/`; its first review is
-`doc/review-findings-2026-08-26.md` there. That review's opening paragraph adopted the public
-series' conventions "transposed", and it was the private series' only statement of them until
-2026-09-14. That day Ben asked whether MAM-private could borrow the public series' process "rather
-than have redundant process documentation here in MAM-private that will get stale", said yes, and
-added: "I would like the MAM-private review process to be potentially dual-agent." So a private
-review follows this document, and a two-agent private window follows `doc/dual-agent-review.md` as
-well, with five differences:
-
-1. **Every record of a private window is a file in MAM-private's `doc/`**: the single-agent review,
-   every numbered turn of a standard alternating round, every blind counterpart, and any update
-   file. None goes into this public repository or its tracker, because a public record of
-   private work can disclose what a private repository exists to keep private. The first of the
-   two standing properties above, doc-only, holds for each completed private review, which has
-   no individual tracking issue. Separate follow-up work uses the maintained private register
-   and its single thin pointer issue under the close-out rule below.
-2. **The window is one private repository**, whose start anchor is the previous private review's
-   recorded end commit in that repository. Until 2026-09-20 the window was the private clones that
-   the latest review of the public series handed to the private series, a handover that named a
-   repository without naming a starting commit for it. A private review may read a public
-   repository for evidence about a private commit, but gives no verdict on a public commit.
-3. **The H1 names the private repository**, where item 1 of "What a review file contains" names
-   the public one.
-4. **The suite, the mega, the instructions and the paths are MAM-private's.** Where this document
-   or `doc/dual-agent-review.md` names this repository's, a private review uses what MAM-private's
-   `CLAUDE.md` gives instead, so read that file before the first check. Codex does not load it on
-   its own.
-5. **The section "Present remediation by public-facing risk" takes MAM-private's products from
-   MAM-private's `CLAUDE.md`.** This repository declares its own in `py/product_scopes.py`. Where
-   MAM-private's `CLAUDE.md` declares none, a private remediation presentation says so, and names
-   any route into a published tree that the file does record.
-
-## Reviewing the review, with the same agent and with Ben
-
-### The check runs autonomously, and Ben sees the findings once — Ben's decision, 2026-09-15
-
-**Before a review is committed, the session writing it has sub-agents check every finding; nobody
-walks Ben through the findings before close-out; and at close-out step 1 Ben gets one list covering
-every finding.** Ben, 2026-09-15, after the walk-through of `doc/review-findings-2026-09-14.md`:
-"the basic process is just way too slow." That review was written in about an hour, from 07:45 to
-08:44 on 2026-09-14. Its walk-through's 22 commits ran from 10:14 that day to 17:15 on 2026-09-15,
-each finding was re-verified while Ben waited, and 6 of the 22 commits changed this document rather
-than the review. The decision has three parts:
-
-1. **The writing session checks the review before committing it.** It gives each finding to a
-   sub-agent, which reports without editing: it reruns the scripts the finding cites, recounts every
-   count against its own list, establishes that the finding is about the window's diff (the section
-   "What the periodic review is"), checks that each lead states the finding's disposition, finds the
-   other passages of the file that restate the finding, and looks for the claim traps listed below.
-   The writing session re-runs a report's measurements where that is cheap before applying it.
-   Later rounds showed what that check must also cover. The checkers read the whole file, not only
-   the findings: a checker of the sections other than the findings made 15 corrections of
-   substance in the September 26 first turn, and another made 11 in the September 29 first turn.
-   One checker sweeps the window for what the review missed, since a check of each finding cannot
-   see an omission; in the October 1 first turn such a sweep produced two of its twelve findings.
-   A checker's correction is itself a claim, so the writing session checks each one, and the
-   findings against one another, before adopting it: in that same turn a correction adopted from a
-   checker left finding 5 contradicting finding 10, although ten checkers had run. The writing
-   session confirms that every finding had a checker, waits for every checker to finish, and
-   re-checks any text written after the check, its own corrections included. When a checker finds
-   one error of a kind, every instance of the kind is rechecked: after three attributions read from
-   `git blame`, the September 29 first turn rechecked all 95 by pickaxe.
-2. **No walk-through of the findings happens before close-out.** In a round under
-   `doc/dual-agent-review.md` that means none before Agent 2's turn 02, and a correction found after
-   the review is committed goes in a later turn. The rules under "How Ben walks through a review's
-   findings" below apply only when Ben asks for a walk-through.
-3. **At close-out step 1, Ben gets one list covering every finding**: a sentence each, each fix
-   defaulting to "later, in the remediation phase", and a question only where his judgment is
-   needed, asked in dialogs. Something pressing, such as a mega that fails on `main`, is raised with
-   him at once rather than held for the list.
-
-The claim traps are the ways the 2026-09-14 review's own claims came out false, each found during
-its walk-through:
-
-1. a timing across branches, stated without finding which branch each commit was on
-   (`git merge-base --is-ancestor`) and when the commits first shared a tree;
-2. merge resolutions counted with `git diff-tree --cc --name-only`, which also lists files git
-   merged cleanly, where a resolution needs `--cc -p`;
-3. a local time read off a UTC timestamp, where `git log --date=iso-local` gives local time;
-4. a count not re-counted, or a source not re-read;
-5. a per-file history census run without `--full-history`;
-6. an absolute such as "the one" or "every" that its own cited source contradicts;
-7. a finding credited to the wrong stream or author.
-
-Later turns of the dual-agent rounds, from 2026-09-10 to 2026-10-01, found these further traps in
-first turns:
-
-8. a count taken with a single-line search over hard-wrapped Markdown, re-counted by the method
-   that produced it, labelled with a population other than the one measured, or made of raw search
-   hits not yet classified as quotation, term of art, receipt, negative example or command record;
-9. a recurring defect reported from a sample, without a census of every spelling or a statement of
-   whether the list is complete;
-10. a behaviour, consequence or cause stated as fact without running the code or following every
-    path, exceptions and recovery included; or a matcher, parser or test judged by a few examples
-    or by one comparison, rather than over the whole population against an independent reference
-    or by a replay against an injected fault;
-11. a heading, lead or "verifies sound" entry that claims more than its body, its comparison or the
-    case its evidence covers; that generalizes from one observed denial or success; or that
-    describes untracked, private or machine state, or an unread source, from evidence that cannot
-    show it;
-12. a paraphrase presented as a source's words, or a rule quoted without its object, its exceptions
-    or its judgment clause;
-13. a breach claimed beyond the rule's own text, meaning its condition, effective date,
-    preservation clause, subject or a more specific procedure; a defect that names no rule it
-    breaks; or a borderline case, a conflict between governing texts or a documented trade-off
-    presented as a violation, where each is a question for Ben;
-14. a rule applied to text written before the rule existed, or today's instructions read as
-    evidence about an older rule;
-15. an absence claim from a search that could not have found the thing, such as ignored files,
-    which exist only in the checkout that made them, or one that does not say where it searched;
-16. authorship read from `git blame`, which names the last commit to touch a line, where
-    `git log -S` finds the commit that introduced it; a path census run without rename detection;
-    or an author date read as the time a commit reached a branch, which its committer date gives;
-17. a time for the review's own work that no named clock gave, or that falls after the review's
-    own commit; or a push dated from this clone's reflog of `refs/remotes/origin/*`, or from
-    GitHub's events feed, which omits pushes;
-18. words, a rule or a decision attributed to Ben beyond what he wrote or selected: an auto-memory
-    note or an agent-written commit is evidence, and a dialog's option wording is the session's,
-    his part being the selection.
-
-The decision was first applied to that review itself: Ben decided on 2026-09-15 that its
-walk-through would end with finding 9, that sub-agents would check findings 10 and 11 instead, and
-that Codex's turn 2 would follow.
-
-### The evidence from 2026-09-12
-
-**A review file was reviewed again by the same agent before it was acted on, once, and both passes
-found real defects.** That rests on one review, `doc/review-findings-2026-09-10.md`, reviewed twice
-by Claude on 2026-09-12. Ben asked for both passes, and for this section, on that day.
-
-1. **Pass 1, `99ac89a7` (10:30).** It read the commits that had edited the file since it was first
-   committed as `301d0fcc`, and corrected six passages: the `State:` line's shape; a lead saying
-   "Nothing was fixed" that the dispositions table contradicted; finding 11.4 announcing 8 sites
-   and enumerating 9; finding 11.5's count including the review file's own occurrence; a word in
-   finding 20's lead that a terminology commit had missed; and a dispositions preamble naming the
-   wrong branch. No finding's substance changed.
-2. **Pass 2, `c8de6abc` (14:06).** It audited the whole document rather than the edits, and
-   corrected four passages: finding 4 item 2 announced 7,247 clusters in 152 files and enumerated
-   7,243 in 151; finding 7 item 3 said six earlier files carry `.novc` pointers where 41 do; a row
-   of the dispositions table used a construction the review itself reports in three other files and
-   carried a clause that had gone stale; and line 3 said the dispositions table "has a row per fix",
-   which was wrong three ways. It reported two further items without an edit.
-
-**The two passes found different things because they read different things.** Pass 1 read the edits
-and checked them against each other. Pass 2 read the whole file and checked its arithmetic, and
-that is what found the two census errors, both present since `301d0fcc` and so available to pass 1,
-which never read those passages. Pass 2 also caught two defects in text written after the
-original: the construction in the dispositions row, which `b5d5d8b1` wrote and pass 1 read without
-catching, and the "row per fix" clause on line 3, which pass 1 itself wrote. **Every one of the ten
-corrections is the kind of defect that survives the writing pass because the writer knows what was
-meant**: a count that does not match its own list, a census that understates, a clause true when
-written.
-
-**Ben's part was a fact about the environment, not a judgment about the content.** During pass 2,
-at 13:58, Ben wrote: "I fear that the the 2026-09-10 review file may have been updated during your
-review. Look at any commits since your review and see if that influences your plan for edits to the
-review file." Three commits had landed during the pass — `575114dc` and `39cdd0e3` on `main` and
-`5f336b75` on the review branch — and between them they settled one of the items pass 2 had
-planned to edit, and made line 3 wrong in a third way. The session had no reason to look. **A long
-review pass does not see its tree move**, and a one-line prompt from a person who can see it is
-enough. The standing safeguard is the
-non-collision check `~/.claude/CLAUDE.md` already requires before a commit — `HEAD` at the start
-equals `HEAD` immediately before committing — applied to the whole reading window of a review pass
-and not only to its commit.
-
-**Being wrong in a review of a review is cheap.** Pass 2 recommended replacing `State: open` with
-`live` in the update files, and withdrew the recommendation on reading `39cdd0e3`, which had
-declared `open` better. Nothing had been edited on the strength of the recommendation.
-
-### How Ben walks through a review's findings
-
-Ben's rules for an interactive walk through a review's findings, given on 2026-09-11 while the
-2026-09-10 review was walked through and on 2026-09-14 while the 2026-09-14 review was. Since
-2026-09-15 a walk-through happens only when Ben asks for one, under the decision at the head of this
-section, and these rules govern it then.
-
-**What the walk-through is for.** Ben, 2026-09-14: it is mainly about Ben identifying what the
-review findings are, to see whether he wants to weigh in on them, for example by suggesting a
-different remediation or questioning a finding, and about the agent fixing up the findings' language
-or, in extreme cases, weighing in as Ben does, for example by suggesting a remediation different
-from those already present or questioning the finding itself. In his words: "Notably, this process
-is unlikely to be about me fixing up review finding language, nor is it likely to be about me
-questioning your proposed fix-ups to review finding language."
-
-1. **Say which of two things is meant: the wording of finding N, or the problem finding N
-   describes.** Never write a bare "fix finding N". Fixing the wording is the agent's part of a
-   walk-through; fixing the problem is a separate decision Ben makes per finding.
-2. **Say what a finding is before saying anything about it.** Ben, 2026-09-11: "You need to not
-   just say something like 'I fixed finding 6.' that requires me to have in my head what finding 6
-   is."
-3. **Change nothing beyond what Ben asks.** Presenting a finding is not authorization to fix it, and
-   where a fix he does ask for goes is rule 8's question.
-4. **Use one word for one thing.** The case: "record" was naming both a post-stress-meteg survey
-   entry and a document's written account, until `3f962e62`.
-5. **Summarize a finding's wording changes and offer the detail, rather than presenting each
-   change.** Say what the finding is about and that there are wording changes to it, and offer to
-   detail them. Ben, 2026-09-14, after finding 3 of the 2026-09-14 review was presented with
-   eighteen wording corrections, each quoted as it stood and as proposed: "For the record it would
-   have been sufficient for you to summarize what finding 3 was about and say you had various
-   wording changes to it, and *offered* to detail them to me, which I would have likely declined yet
-   still told you to go ahead and implement." Where the agent also weighs in, with a different
-   remediation or a doubt about the finding itself, it says so plainly, since weighing in is what
-   the walk-through is for.
-6. **Write a prompt that presents the next finding in a fresh session from what is already known,
-   and measure nothing for it.** The prompt names the finding, the passages that restate it, where
-   its evidence is and the checks to repeat. It runs no measurement to prepare leads, because the
-   fresh session verifies every claim it presents. Ben, 2026-09-14, while a session was measuring
-   leads for the prompt that presents finding 4 of the 2026-09-14 review: "But is the prompt's
-   session just going to turn around and re-measure this stuff anyway? If so, it feels like a waste
-   of time to do it when forming the prompt."
-7. **Put the questions for Ben at the end of the message that presents a finding, and only
-   there.** They are the message's last item, numbered, each naming what it asks about. A direct
-   answer to a question Ben asked still comes first, under the report's heading. Ben, 2026-09-14,
-   after the session presenting finding 4 of the 2026-09-14 review put three numbered questions
-   directly under its report's heading, as the Claude-written prompt for that session instructed,
-   and closed by saying it was waiting for his answer: "waiting for my answer to what? Please
-   either repeat the questions at the bottom, or in future, don't even ask them at the top, just
-   ask them at the bottom".
-8. **When Ben approves a fix, ask where it goes, unless he has said: fixed later, in the remediation
-   phase; fixed now, on the review branch; or fixed now, on `main`.** A fix made now on `main`, on a
-   branch of its own that is integrated at once, is for something pressing, such as a mega that
-   fails on `main`. Ben, 2026-09-15, after the session presenting finding 7 of the 2026-09-14 review
-   took his approval of a procedure change for finding 7.1 as an instruction to make it at once on
-   `main`: "Either is fine, but it would have been nice to have been asked for clarification, as
-   'fix now' is usually reserved for things [that] are usually quite pressing (e.g. mega is found to
-   be broken on main)." And later that day: "there are actually (at least) 3 dispositions for a fix:
-   fix later in remediation, fix now on the review branch, and fix now on the main branch."
+# Periodic review: one repository, one endpoint diff, one responsible reviewer
+
+State: live; revised 2026-11-06
+
+[review-trial.md](review-trial.md) controls current triage, routine repair authority, focused
+verification, hourly screening and nightly broad checks. Its compact maintained run notes are
+the normal record. This document keeps the ordinary review rules that also apply when Ben asks
+for a separate dated review. It creates no schedule or additional approval gate.
+
+## Scope and evidence
+
+A review covers one repository and the single diff between its recorded start and end commits.
+Carry forward that repository's reviewed-through anchor, rather than selecting commits by date.
+History can help explain the endpoint diff; an intermediate change undone before the endpoint
+is not itself a defect in that diff. A separately requested window leaves the ongoing series'
+anchor unchanged unless it supplies the missing coverage. Each repository keeps its own anchors.
+
+Use a verified checkout in a forest the running agent owns. Leave interactive work untouched,
+keep one writer per checkout and run generators and checks sequentially. A full clone is the
+default; a linked worktree uses its home clone's corresponding environment. Follow
+`doc/clone-forests.md`, the shared `linked-worktrees` skill and the repository's `AGENTS.md`.
+
+Concentrate on consequential, evidenced defects. Distinguish what the endpoint change introduced
+from an older defect. Read the actual source and applicable instructions at the measured commit;
+label later evidence as later evidence. Check a technical uncertainty by targeted investigation
+or independent checking. Reproduce a disputed claim before adopting it. A passing generator or
+preservation check shows consistency with inputs, not editorial correctness.
+
+Name the repository, endpoint commits, checkout, commands actually run, result and material
+limitations. Record enough evidence to assess each consequential finding without depending on
+ignored scratch, a cache or an agent transcript. A figure names its population and method;
+support a recurring defect with its actual affected sites. Report blocked, interrupted or
+unexecuted checks honestly. An unexplained generated diff is evidence to investigate, not
+something to restore silently. Keep the amount of checking and recording proportionate to
+the defect, under the focused and nightly policy in `review-trial.md`.
+
+## Public and private boundaries
+
+MAM-basics' review records cover its public tree and read no private repository as review
+material. `in/repo_maintenance_policy.json` declares visibility; private repositories outside
+the roster remain private too. A check whose maintained code reads a private sibling may run,
+but a public record gives only its allowed result and input commit ID. Private source paths,
+findings, logs and other content stay private. The report-destination guard cannot inspect
+what an agent later types into prose or a commit message.
+
+MAM-private follows the same ordinary review and testing policy with its own instructions,
+commands, environments, anchors and records. Read its `AGENTS.md` before the first check.
+A private review may consult public evidence about a private change, but does not thereby
+review that public repository's window. Every private review record stays in MAM-private.
+
+## Review filenames and State lines
+
+For a separately requested dated review, keep the established author-based filenames:
+`doc/review-findings-<date>.md` for the Claude series and
+`doc/codex-review-findings-<date>.md` for a Codex report. Name the author, model, effort level,
+scope and endpoint commits in the opening. The requested review effort remains `max` for
+Claude and `xhigh` for Codex (Ben, 2026-09-30).
+
+Put `State:` on line 3 under the H1. The initial report records what was true when it finished,
+for example `State: not yet acted on`; a report limited to review can use
+`State: completed <date>; review only`. Historical names and State declarations stay as written.
+Later remediation State and dispositions belong in the report's single live update file.
+Use the shared `iterative-document-editing` skill's “Finished receipts and maintained documents”
+for corrections, the line-four update pointer and retirement-family treatment. Maintained run
+notes under `review-trial.md` stay true in place.
+
+A review gets no thin tracking issue. File a substantive issue for a consequential confirmed
+defect without a credible repair, or use an exception PR for a prepared repair that remains
+uncertain, as `review-trial.md` directs. Use the shared `github-issues` skill. A review record
+does not authorize policy, interpretation, data-semantic, licensing or publication changes.
 
 ## Close-out: from findings to dispositions
 
-After a review is written, and after any review of it:
+Triage each consequential finding under `review-trial.md`: repair within routine authority,
+reject with reasons, defer explicitly, or name its issue or PR. Call a repair fixed only after
+checking the decisive evidence. Routine work needs neither Ben's per-finding decisions nor
+a separately approved remediation plan. Do not reopen settled decisions or a dismissed backlog
+without new evidence. Explain genuine policy choices and concrete proposed wording to Ben.
 
-1. Record Ben's decisions on every finding, asked as one list as the section "Reviewing the review,
-   with the same agent and with Ben" sets out, in the review's live update file as he gives them.
-   Where he answers a dialog, the option wording is the session's and his part is the selection.
-2. Write and approve a fresh-task remediation plan with concrete editorial wording. The findings
-   describe the end commit, so the plan re-measures each on the current tree, gives each sub-item
-   its own disposition, keeps every remedy option a finding records, and checks each remedy
-   against standing instructions; a deferral is not a drop.
-3. Execute remediation and put later State and every disposition in the review's one live update
-   file, leaving the base's historical State untouched apart from its line-4 pointer. Write "fixed"
-   or "already resolved" only after re-running the finding's own measurement and checking every
-   site the plan named against the commits that changed it; a documentation change that describes
-   a defect chooses a policy and fixes nothing. The September 16 close-out record misstated 5 of
-   its 20 dispositions, and the September 26 execution table called six findings fixed whose
-   approved changes had not landed in full.
-4. Run the required final integration gate.
+### Private follow-up after completed remediation
 
-### Private follow-up after completed remediation - Ben's decision, 2026-10-01
+Keep MAM-private's recorded unfinished work and approved deferrals in its maintained
+`doc/review-follow-up.md`. Preserve the substantive disposition, source and searchable passage,
+and the decision or condition needed to revisit it. Recording does not authorize implementation
+or reopen a settled decision; do not collect unrequested ideas. The contents remain private.
 
-Before declaring a MAM-private close-out complete, carry its deferred proposals and declared
-open ends that still need a decision or future work into the maintained private follow-up
-register. Preserve each entry's disposition, source file and searchable passage, and the
-decision or condition needed to revisit it. Carry only the round's recorded unfinished work
-and Ben's approved deferrals, rather than collecting unrequested interesting ideas. Recording
-an entry does not authorize implementation or reopen a settled decision. The review's
-completed State and its remediation dispositions remain in their existing records.
+Reuse the register's single thin pointer issue, following `github-issues`; push the register to
+main before linking it. Keep that issue open while the register alone holds unresolved work.
+Close it only after every entry is resolved, dismissed or moved to named separately tracked work;
+reopen that same issue if later close-out adds unresolved work. Subsequent reviews need not
+re-triage the unchanged backlog. This rule creates no reminder or automation.
 
-Keep the register and its single thin pointer issue in MAM-private. Before filing, read any
-issue already recorded in the register and search the tracker for an existing issue covering
-that register; reuse its open issue across rounds. Push the register to main before filing
-so the issue's document link resolves, then read the issue back and record its identity in
-the register and the review's one live update. Follow the github-issues skill for authorship,
-links and issue operations. The issue tracks triage of the register, not the completed review
-or an instruction to implement every entry. Work retained only in the register keeps the
-pointer issue open; close it only when every entry is resolved, dismissed, or moved to named
-work with separate tracking. If later close-out adds unresolved work after the pointer issue
-closes, reopen that same issue with the dated explanatory comment required by github-issues;
-do not create a second pointer issue.
+### Present remediation by public-facing risk
 
-Ben chose eventual attention through the GitHub issue. Subsequent periodic reviews have no
-added duty to consult or re-triage the unchanged backlog; this addition creates no reminder,
-automation, or broader review window. The public procedure records the mechanism only; the
-register's contents, private paths and private issue identity stay in MAM-private.
+When Ben's decision is needed, present reader-facing documents and exact proposed wording
+first, then public data and affected values or structure, then a concise summary of other
+changes. Classify generator edits by their effect on published documents and data. An ordinary
+internal plan or review record does not become reader-facing merely because its Git repository
+is public. Product reach and difficulty of undoing an act remain separate considerations.
 
-### Verification cadence during remediation — Ben's decision, 2026-09-13
-
-Follow the common instruction body's “Verification cadence for multi-session work” section.
-Repository-specific and user-explicit checks still apply; MAM-basics' final integration gate
-is in `AGENTS.md`. Verification follows test-breakage risk independently of product reach
-and the difficulty of undoing an act.
-
-The 2026-09-10 remediation is the case that produced the rule. At the time of Ben's decision, the
-live update summarized 18 successful full-suite runs; the known actual lower bound was 20 because
-an earlier finding-10 run had been replaced in the live section and the finding-10
-final-disposition task ran the suite twice. No remediation-chain mega had run, and one mega
-remained reserved for final integration. Those figures are historical evidence that the per-unit
-full-suite cadence was disproportionate, not a count a future close-out must re-measure.
-
-### Separate defects from editorial proposals — Ben's decision, 2026-09-09 (D7)
-
-For every remediation proposal, separate reproducible data or code defects from proposed
-editorial changes to terminology, organization, interpretation or attribution. Present concrete
-wording for each editorial change for Ben's approval before applying it. Follow already-recorded
-decisions without asking again. Agreement between reviewers does not approve an editorial change.
-
-The September 8 MAS-page reversals are the worked example, not the scope boundary. The broad
-instructions at `47edbee6` made editorial rewrites executable without identifying approved
-wording; `1095f029` and `a9edd4f9` record Ben's reversal of unrequested rewrites. Those decisions
-require dated corrections to the earlier remediation records, not reinstatement of the reversed
-prose. The retired counter-argument's "MAS decisions and the scope of future remediation" section and
-the close-out plan's D7 decision record the evidence and Ben's generalization of the rule. Their
-complete archive families are [codex-review-findings-2026-09-08.md](https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/codex-review-findings-2026-09-08.md);
-[PLAN-close-out-review-2026-09-08.md](https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-close-out-review-2026-09-08.md) and [PLAN-close-out-review-2026-09-08-update.md](https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-close-out-review-2026-09-08-update.md).
-
-### Present remediation by public-facing risk — Ben's decision, 2026-09-09
-
-For future remediations (actions based on review findings), Ben wants proposed changes
-presented in the following order and at the following level of detail. The categories
-express the risk Ben assigns to changing what readers see or consumers receive.
-
-1. **Public-facing documents — high risk.** Present changes to rendered HTML and to
-   Markdown intended for readers, such as README and license pages. Show the current and
-   proposed wording; identify formatting changes separately. Ordinary plans and review
-   records under `doc/` do not enter this category merely because the repository is public.
-2. **Public-facing data — high risk.** Present changes to published corpus data, such as
-   MAM-parsed-plus JSON, with the affected text, values, or structure. Trace generated
-   effects: an analysis JSON change and a Phonetic MAM JSON change that produces no change
-   in Phonetic MAM HTML belong with the lower-risk changes in Ben's distinction. Say when
-   no public-facing data change is proposed, and distinguish an unchanged regenerated
-   file from a proposed content change.
-3. **All remaining changes — lower risk.** Start with a summary by type, at the granularity
-   of "wording changes to Markdown files in doc directories", "Python comments and
-   docstrings", "agent instructions", or "code and tests". Ben will
-   ask for finer detail where he wants it; do not begin by requiring him to inspect every
-   internal wording replacement.
-
-Classify a change by its effect on the published document or data, including effects of
-edits in a generator. A Python filename does not make a change lower risk if the change
-alters published HTML or corpus JSON. A public Git repository does not make every file
-public-facing in the sense Ben means here.
-
-Use these categories for the approval presentation even when the written plan also has
-finding-number references, separate editorial and technical items, and implementation waves
-ordered by dependencies. Keep that execution detail available in the plan. The presentation
-preference does not itself approve a proposed change or alter a decision already recorded.
-
-The worked case is Ben's September 9 inspection of the September 8 remediation plan: he
-first requested the HTML and reader-facing Markdown changes, then the public JSON changes,
-then a summary of the remaining change types. The earlier presentation grouped editorial
-proposals by MAS versus non-MAS subject matter and led with implementation waves, mixing
-reader-facing wording with internal documentation. Future presentations use Ben's risk
-categories first.
-
-## What this document deliberately does not settle
-
-1. **The cadence.** "Every four to eight days" describes the series; nothing requires it.
-2. **Whether a window has one reviewer or two.** D9 in `doc/dual-agent-review.md` settles the
-   procedure for a two-agent window and leaves the choice open.
+When Ben requests a walk-through, identify the finding before discussing its disposition and
+distinguish correcting the report's wording from repairing the underlying problem. Summarize
+wording changes and give detail when useful. Put questions at the end of that presentation;
+follow existing authorization and decisions without asking again.

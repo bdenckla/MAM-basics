@@ -49,8 +49,8 @@ matters; clearing one axis does not clear the other.
 - Commit finished work without asking. A commit is an ordinary implementation step.
 - In any full clone, commit directly to `main` and push `main` normally. Do not create a
   feature branch merely because work has begun. A repository procedure that explicitly names a
-  shared branch on `origin`, such as a dual-agent review round, is an exception: a full clone
-  may temporarily use a local carrier for that branch under the procedure's handoff and integration
+  shared branch on `origin` is an exception: a full clone may temporarily use a local carrier
+  for that branch under the procedure's handoff and integration
   rules.
 - Ask before rewriting history or discarding work: force-push, amend, rebase, hard reset, branch
   deletion, stash drop, or equivalent operations.

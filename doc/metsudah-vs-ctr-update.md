@@ -11,8 +11,7 @@ here edits the document it corrects.
 ## The module named beside the Sefaria download endpoint is gone
 
 Recorded by a Claude session on 2026-09-12, for finding 19.1 of
-`doc/review-findings-2026-09-10.md` (on branch `dual-agent-review-2026-09-10` until that review
-round integrates).
+[review-findings-2026-09-10.md](https://github.com/bdenckla/MAM-basics/blob/6d3426fda4176a9a69f948761490988d8ba43e25/doc/review-findings-2026-09-10.md).
 
 The sources section describes the Metsudah CSV as fetched from
 `https://www.sefaria.org/download/version/<book> - he - <versionTitle>.csv`, and adds "(the same
@@ -34,3 +33,10 @@ destination of the former `doc/ms-snips/README.md` is
 
 The base's phrase `prose-book tipḥas` should read `tipḥas in prose verses`; the prose and poetic
 systems classify verses, not books.
+
+## Historical review family, 2026-11-06
+
+Recorded by Codex at Ben's request. The complete cited family remains in Git history:
+
+- [review-findings-2026-09-10-update.md](https://github.com/bdenckla/MAM-basics/blob/6d3426fda4176a9a69f948761490988d8ba43e25/doc/review-findings-2026-09-10-update.md)
+- [review-findings-2026-09-10.md](https://github.com/bdenckla/MAM-basics/blob/6d3426fda4176a9a69f948761490988d8ba43e25/doc/review-findings-2026-09-10.md)

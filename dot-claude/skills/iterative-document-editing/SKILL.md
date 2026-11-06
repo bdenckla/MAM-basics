@@ -102,8 +102,8 @@ An update file uses `State: open` with its first-entry date; “first entry” a
 are the recorded forms (declared 2026-09-12). Its own State has no terminal form while its base
 is tracked. Later base-State changes follow “Finished receipts and maintained documents”.
 
-Review filenames, author and turn ownership, and review State exceptions are maintained only in
-MAM-basics' `doc/dual-agent-review.md`, “Review filenames and State lines”. Private review scope
+Ordinary review filenames and State conventions are maintained in MAM-basics'
+`doc/periodic-review.md`, “Review filenames and State lines”. Private review scope
 remains private. `py/repo_util/check_repo_standards.py` does not mechanically validate State
 shapes or decide document retirement.
 

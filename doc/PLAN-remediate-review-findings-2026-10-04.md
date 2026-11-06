@@ -1,6 +1,7 @@
 # Remediate the 2026-10-04 review of MAM-basics
 
 State: executed 2026-10-07; approved by Ben on 2026-10-06.
+Updates and later status: [PLAN-remediate-review-findings-2026-10-04-update.md](PLAN-remediate-review-findings-2026-10-04-update.md).
 
 Written on 2026-10-06, New York time, by a Claude session (Claude Opus 5.5 in the Claude desktop
 app) as close-out step 2 of the 2026-10-04 review (`doc/periodic-review.md`, "Close-out: from

@@ -10,8 +10,7 @@ here edits the document it corrects.
 
 ## Every disposition the assessment leaves to Ben was taken the same afternoon
 
-Recorded by a Claude session on 2026-09-12, for finding 14 of `doc/review-findings-2026-09-10.md`
-(on branch `dual-agent-review-2026-09-10` until that review round integrates).
+Recorded by a Claude session on 2026-09-12, for finding 14 of [review-findings-2026-09-10.md](https://github.com/bdenckla/MAM-basics/blob/6d3426fda4176a9a69f948761490988d8ba43e25/doc/review-findings-2026-09-10.md).
 
 The assessment's State line says that "every disposition below is Ben's to choose", and its §8
 offers four recommendations and two items under "Left for Ben, because each is a decision rather
@@ -41,7 +40,7 @@ four items are right; the word "three" is wrong.
 ## Section 6's three reasons are a numbered list
 
 Recorded by Codex on 2026-09-12, for finding 20.4 of
-`doc/review-findings-2026-09-10.md`. Section 6 says that “Three things argue for closing it
+[review-findings-2026-09-10.md](https://github.com/bdenckla/MAM-basics/blob/6d3426fda4176a9a69f948761490988d8ba43e25/doc/review-findings-2026-09-10.md). Section 6 says that “Three things argue for closing it
 anyway” but presents the three reasons in running prose. The passage should be read as this
 numbered list:
 
@@ -56,7 +55,7 @@ reasons.
 ## The edition-transcription headers are Ben-written
 
 Recorded by Codex on 2026-09-12, for finding 20.1 of
-`doc/review-findings-2026-09-10.md`.
+[review-findings-2026-09-10.md](https://github.com/bdenckla/MAM-basics/blob/6d3426fda4176a9a69f948761490988d8ba43e25/doc/review-findings-2026-09-10.md).
 
 The assessment's sentence beginning “Every offending cluster sits on a `#` comment line” calls
 the edition-transcription header “hand-written” and immediately identifies the header's contents
@@ -66,3 +65,10 @@ Under the authorship vocabulary recorded by commit `b4706759`, the phrase should
 capture or generated output; those uses retain the established term of art.
 
 The finished assessment remains unchanged; this entry corrects only the header's attribution.
+
+## Historical review family, 2026-11-06
+
+Recorded by Codex at Ben's request. The complete cited family remains in Git history:
+
+- [review-findings-2026-09-10-update.md](https://github.com/bdenckla/MAM-basics/blob/6d3426fda4176a9a69f948761490988d8ba43e25/doc/review-findings-2026-09-10-update.md)
+- [review-findings-2026-09-10.md](https://github.com/bdenckla/MAM-basics/blob/6d3426fda4176a9a69f948761490988d8ba43e25/doc/review-findings-2026-09-10.md)

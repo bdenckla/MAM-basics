@@ -1,7 +1,9 @@
 """Lint tracked filenames and programmatic Git filename parsing.
 
-Finding 18.2 of ``doc/review-findings-2026-09-10.md`` reported two Holman
-pages as untracked. Both pages were tracked: line-based parsing had treated
+Finding 18.2 of the archived review reported two Holman pages as untracked:
+https://github.com/bdenckla/MAM-basics/blob/6d3426fda4176a9a69f948761490988d8ba43e25/doc/review-findings-2026-09-10.md
+Its later dispositions remain beside it in ``review-findings-2026-09-10-update.md``.
+Both pages were tracked: line-based parsing had treated
 Git's quoted output as paths. Ben's decision of 2026-09-12 addresses the
 failure on two independent sides:
 

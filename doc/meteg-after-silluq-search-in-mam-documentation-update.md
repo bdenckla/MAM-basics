@@ -159,7 +159,7 @@ note declares “meteg.” The passages that report MAM's introduction, Yeivin's
 Breuer's `ga'aya` remain unchanged. All twelve `ga'ya` sites in
 `doc/foi-mtgmtg-empty-cell.md` also remain unchanged because each reports Yeivin or his
 categories. Finding 11.5's choice was recorded on 2026-09-13 in
-`doc/review-findings-2026-09-10-update.md`: use `ḥataf` in narrative Unicode prose and `xataf` in
+[review-findings-2026-09-10-update.md](https://github.com/bdenckla/MAM-basics/blob/6d3426fda4176a9a69f948761490988d8ba43e25/doc/review-findings-2026-09-10-update.md): use `ḥataf` in narrative Unicode prose and `xataf` in
 ASCII-oriented contexts.
 
 Product axis: this correction changes documentation only and reaches no generator or product.
@@ -268,3 +268,10 @@ Product axis: this correction changes documentation only and reaches no generato
 Act axis: this update file preserves the finished report rather than rewriting it; no
 outward-facing act, destructive local act, external configuration write or receipt rewrite
 occurred.
+
+## Historical review family, 2026-11-06
+
+Recorded by Codex at Ben's request. The complete cited family remains in Git history:
+
+- [review-findings-2026-09-10-update.md](https://github.com/bdenckla/MAM-basics/blob/6d3426fda4176a9a69f948761490988d8ba43e25/doc/review-findings-2026-09-10-update.md)
+- [review-findings-2026-09-10.md](https://github.com/bdenckla/MAM-basics/blob/6d3426fda4176a9a69f948761490988d8ba43e25/doc/review-findings-2026-09-10.md)
