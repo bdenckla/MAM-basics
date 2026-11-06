@@ -10,6 +10,10 @@ Subcommands:
     intro
                 Edit pages of MAM's introduction via pywikibot, selecting them by
                 their in/mam-ws-intro/manifest.json keys rather than by book.
+    pages
+                Edit other pages of MAM via pywikibot, such as the books' index
+                pages, naming each by its exact title, and saving only over the
+                revision that its edits were cut from.
     miqra-mevoar
                 Create or update the base-chapter pages of Miqra Mevoar via
                 pywikibot, from the tracked JSON in in/miqra-mevoar/, selecting
@@ -26,6 +30,7 @@ Subcommands:
 Examples:
     .venv/Scripts/python.exe py/main_ws_bot.py proto --edits path.json
     .venv/Scripts/python.exe py/main_ws_bot.py intro --edits path.json -dir:$env:USERPROFILE/.pywikibot --no-save
+    .venv/Scripts/python.exe py/main_ws_bot.py pages --edits path.json -dir:$env:USERPROFILE/.pywikibot --no-save
     .venv/Scripts/python.exe py/main_ws_bot.py miqra-mevoar --book yehoshua --chapters 1-2 -dir:$env:USERPROFILE/.pywikibot --no-save
     .venv/Scripts/python.exe py/main_ws_bot.py miqra-mevoar --book yehoshua --chapters 1-2 -dir:$env:USERPROFILE/.pywikibot --summary "..."
     .venv/Scripts/python.exe py/main_ws_bot.py miqra-mevoar-index -dir:$env:USERPROFILE/.pywikibot --no-save
@@ -45,6 +50,7 @@ from subcommands import ws_bot_intro
 from subcommands import ws_bot_miqra_mevoar
 from subcommands import ws_bot_miqra_mevoar_display
 from subcommands import ws_bot_miqra_mevoar_index
+from subcommands import ws_bot_pages
 from subcommands import ws_bot_proto
 from subcommands import ws_bot_real
 from ws import ws_download_selector as wsds
@@ -61,9 +67,10 @@ def main() -> None:
     args, extra_args = parser.parse_known_args()
     if extra_args and not getattr(args, "allow_extra_args", False):
         parser.error(f"unrecognized arguments: {' '.join(extra_args)}")
-    # The intro subcommand selects pages by key, miqra-mevoar by its own --book and
-    # --chapters, miqra-mevoar-display by its own --page, and miqra-mevoar-index has
-    # one page; none has the chapter bot's selector.
+    # The intro subcommand selects pages by key, pages by the titles its edit file
+    # names, miqra-mevoar by its own --book and --chapters, miqra-mevoar-display by its
+    # own --page, and miqra-mevoar-index has one page; none has the chapter bot's
+    # selector.
     if args.selector_parser is not None:
         wsds.validate_selector_args(args, args.selector_parser)
     args.func(args, extra_args)
@@ -145,6 +152,22 @@ def build_parser() -> argparse.ArgumentParser:
     )
     intro_parser.set_defaults(
         func=_run_intro,
+        allow_extra_args=True,
+        selector_parser=None,
+    )
+
+    pages_parser = subparsers.add_parser(
+        "pages",
+        help="Edit other pages of MAM, named by exact title, via pywikibot.",
+    )
+    pages_parser.add_argument("--edits", required=True)
+    pages_parser.add_argument(
+        "--no-save",
+        action="store_true",
+        help="Apply the edits without saving; fail if any page would change",
+    )
+    pages_parser.set_defaults(
+        func=_run_pages,
         allow_extra_args=True,
         selector_parser=None,
     )
@@ -260,6 +283,10 @@ def _run_intro(args: argparse.Namespace, pywikibot_args) -> None:
         post_download=not args.no_post_download,
         no_save=args.no_save,
     )
+
+
+def _run_pages(args: argparse.Namespace, pywikibot_args) -> None:
+    ws_bot_pages.run(args.edits, pywikibot_args, no_save=args.no_save)
 
 
 def _run_miqra_mevoar(args: argparse.Namespace, pywikibot_args) -> None:

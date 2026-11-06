@@ -136,6 +136,33 @@ read its whole diff. Each run writes the edited page texts to
 `.novc/mam-ws-bot-intro-runs/<timestamp>/pages/` and the saved pages' diff links to
 `misc/saved-pages.json` there.
 
+## Other pages of MAM
+
+`main_ws_bot.py pages` edits pages of MAM that neither the chapter bot nor `intro` selects,
+such as the index pages of the Torah, the Prophets and the Writings. Its edit file has
+`"summary"`, `"edit-kind": "explicit-replacement"` and `"pages"`, which maps a key of
+lowercase ASCII letters, digits and hyphens to an object with `"title"`, the page's exact
+title; `"base-revid"`, the revision that its edits were cut from; and `"edits"`, a list of
+`{"old", "new", "comment"}` objects, each `old` occurring exactly once in its page. It
+refuses a redirect, a chapter page and an introduction page, since `real` and `intro`
+refresh their mirrors after a save. It takes the same `-dir:` argument:
+
+       .venv/Scripts/python.exe py/main_ws_bot.py pages --edits path.json -dir:$env:USERPROFILE/.pywikibot --no-save
+
+Every run reads each page's latest revision through the API, uncached, and refuses unless
+it is the page's `"base-revid"`. `--no-save` saves nothing and, before a save, is expected
+to exit non-zero, listing exactly the pages the edit file targets. A saving run saves each
+changed page with `nocreate`, giving its base revision as `baserevid` and that revision's
+time as `basetimestamp`, so that an edit made since makes MediaWiki detect a conflict; it
+then reads each saved revision back through the API, uncached, and exits non-zero unless
+its bytes equal the edited text's. There is no post-run download. A saved page that
+`in/mam-ws-special/manifest.json` records, such as the English Decalogue page, leaves that
+mirror behind the wiki until the next `py/main_download.py fr-wikisource` refreshes it, and
+the run ends by naming each such page. Each run writes the base and edited page texts to
+`.novc/mam-ws-bot-pages-runs/<timestamp>/base/` and `pages/`, the base revisions' facts to
+`misc/bases.json`, and the saved pages' revision ids and diff links to
+`misc/saved-pages.json` there.
+
 ## Miqra Mevoar base chapters
 
 `main_ws_bot.py miqra-mevoar` creates the base-chapter pages of Rabbi David Kokhav's Miqra
