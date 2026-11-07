@@ -383,6 +383,11 @@ his own words.
 
 These rules apply to pages, docstrings, comments, commit messages, issues, plans, and chat.
 
+## Tables
+
+Center tables horizontally by default in authored pages and documents, while preserving
+their natural content width. Apply a different alignment when Ben requests it.
+
 ## Unicode in source and at runtime
 
 Never write an orphan combining mark as a raw code literal. Use a named escape such as
@@ -393,6 +398,9 @@ character or to genuine text data.
 Ben's repositories use NFC for Latin letters with diacritics. Write precomposed ḥ (U+1E25), not
 `h` plus COMBINING DOT BELOW. In `#` comments about Hebrew sounds, use ASCII `x` or `X` rather
 than either Unicode form.
+
+Use `x` for ḥet in authored ASCII filenames and identifiers, as in `xolam`. Preserve
+`HOLAM` when citing a literal Unicode code-point name.
 
 A Windows Python entry point that may emit non-ASCII reconfigures stdout to UTF-8, and stderr to
 UTF-8 with `errors="backslashreplace"`, at the start of `main()`. Prefer writing substantial or
