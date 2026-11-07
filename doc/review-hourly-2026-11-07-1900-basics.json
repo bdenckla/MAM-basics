@@ -1,0 +1,115 @@
+{
+  "state": "completed; bounded connector-only documentation screen; no consequential introduced defect found",
+  "scheduled_window_utc": "2026-11-07T19:00:00+00:00",
+  "recorded_utc": "2026-11-07T18:56:10.175Z",
+  "repository": "bdenckla/MAM-basics",
+  "receipt_parent": "c046515bddf72ddaa0d832d5afcaf7d72646e337",
+  "receipt_branch": "review-hourly-20261107-1900-basics",
+  "endpoint": {
+    "base": "44e5af84818d78558d38ecde051c2d116c5a5587",
+    "tip": "011f25a723771e1f3f1c9ea64fab384525774672",
+    "commits": [
+      "011f25a723771e1f3f1c9ea64fab384525774672"
+    ],
+    "paths": [
+      "dot-claude/skills/hebrew-prose/SKILL.md",
+      "dot-claude/skills/hebrew-prose/references/core-rules.md",
+      "dot-claude/skills/hebrew-prose/references/terminology.md",
+      "dot-claude/skills/hebrew-prose/references/verifying.md"
+    ]
+  },
+  "anchors": {
+    "screened_through": "011f25a723771e1f3f1c9ea64fab384525774672",
+    "reviewed_through": "210affe3ac2931473bead0de839be0de08309e3d",
+    "broad_tested": "1e57cd4dbe763798e33449728ccf572c39327c1a",
+    "focused_tested": "3ae838d11db68b99c1d7a7019026470657b41fef"
+  },
+  "anchor_meaning": "Only this one-commit documentation subwindow is newly screened. Series reviewed, broad-tested and native focused-tested anchors retain their exact earlier meaning and gaps.",
+  "method": "GitHub connector fetched the complete endpoint compare and exact file contents at both commits. In-memory JavaScript applied every patch hunk forward and backward, asserted exact complete-file equality, compared the complete Hebrew codepoint sequence and URL sequence, and checked added lines for trailing whitespace. No source normalization.",
+  "checks": [
+    {
+      "path": "dot-claude/skills/hebrew-prose/SKILL.md",
+      "base_blob": "84549e6e45ffca065bae523c3c66b25439d5ba97",
+      "tip_blob": "41452d1b00114fa39bacf7fc34adef7506321831",
+      "patch_forward_exact": true,
+      "hebrew_codepoints_unchanged": true,
+      "urls_unchanged": true,
+      "added_trailing_whitespace": 0,
+      "patch_reverse_exact": true
+    },
+    {
+      "path": "dot-claude/skills/hebrew-prose/references/core-rules.md",
+      "base_blob": "719e92f73f4366f83473ebae307c91787e32f9cc",
+      "tip_blob": "f605dea9b5e74a0d5bd051978a1515f3c49f18ad",
+      "patch_forward_exact": true,
+      "hebrew_codepoints_unchanged": true,
+      "urls_unchanged": true,
+      "added_trailing_whitespace": 0,
+      "patch_reverse_exact": true
+    },
+    {
+      "path": "dot-claude/skills/hebrew-prose/references/terminology.md",
+      "base_blob": "09efa1943f59b07de372b9d57ae035f08450e5e5",
+      "tip_blob": "3ef185d15a882abd8948923f7c8390cdb71ed140",
+      "patch_forward_exact": true,
+      "hebrew_codepoints_unchanged": true,
+      "urls_unchanged": true,
+      "added_trailing_whitespace": 0,
+      "patch_reverse_exact": true
+    },
+    {
+      "path": "dot-claude/skills/hebrew-prose/references/verifying.md",
+      "base_blob": "d7f1ef8ff3f4914b31683b56c672cf41e9d31f6e",
+      "tip_blob": "33b0fd748012858ee2aa12ff7d735c8111c96d52",
+      "patch_forward_exact": true,
+      "hebrew_codepoints_unchanged": true,
+      "urls_unchanged": true,
+      "added_trailing_whitespace": 0,
+      "patch_reverse_exact": true
+    }
+  ],
+  "glyph_inventory": {
+    "method": "Case-insensitive glyph search over all seven Markdown files in the canonical hebrew-prose skill at the frozen tip.",
+    "matches": [
+      {
+        "path": "dot-claude/skills/hebrew-prose/SKILL.md",
+        "line": 23,
+        "text": "   A glyph is a shape that a font or a page draws; text and a text layer hold code points, and a"
+      },
+      {
+        "path": "dot-claude/skills/hebrew-prose/references/terminology.md",
+        "line": 265,
+        "text": "  near-identical marks, so \"-shaped\" reads as a claim about the glyph rather than about which"
+      },
+      {
+        "path": "dot-claude/skills/hebrew-prose/references/terminology.md",
+        "line": 472,
+        "text": "at the start of the atom, (3) the right-biased glyph placement. Keep \"prepositive\" strictly for"
+      },
+      {
+        "path": "dot-claude/skills/hebrew-prose/references/sources-and-corpora.md",
+        "line": 55,
+        "text": "  glyph level. Printed editions transcribed by hand off a page (SimTiq, Koren) are primary"
+      }
+    ]
+  },
+  "review": "The four changed documentation/instruction paths consistently distinguish encoded code points from rendered glyphs, with U+05C0 explicitly identified. The silluq/meteg and paseq/legarmeh grammatical conditions are retained, as are all Hebrew text and URLs. Three pre-existing drawn-shape uses and the new glyph definition are the only remaining glyph lines. The shared deployment roster still includes hebrew-prose. No executable, source data, product or font file changes.",
+  "owner_evidence": "The commit reports seven selected repository lint tests passing and Markdown readback. These remain owner-attributed; this screen did not independently run repository lints or inspect deployed live copies.",
+  "commands_run": [],
+  "repository_tests_run": false,
+  "generators_run": false,
+  "findings": [],
+  "repairs": [],
+  "limitations": [
+    "No repository-native lint/test, broad suite, mega, generator, browser or local configuration deployment was run.",
+    "Stage 10 live/base/parse checks, remote-save identity and browser/editorial gaps remain separate and unchanged.",
+    "The series reviewed-through anchor was not advanced; the older baseline is not a claim that this run re-reviewed historical content."
+  ],
+  "coordination": "The saved cloud runner was completed before this screen and then assigned only separate work, explicitly excluding this Basics review and receipt. Connector-only checks used no checkout or interactive files. The previous receipt branch still resolved to c046515bddf72ddaa0d832d5afcaf7d72646e337; branch searches found no duplicate new receipt.",
+  "policy_blobs": {
+    "AGENTS.md": "d3ec8f0f27fca27c1d3d4045e96cc0a33f951e6a",
+    "doc/review-trial.md": "429b896939570ad0ffd2a8518f9c114c0ff9ec8b",
+    "doc/periodic-review.md": "2361ed9d216650ccbde241e3eecfc2695e48491c"
+  },
+  "publication": "New isolated receipt branch only; preserve completed receipts and reconcile the maintained status from c046515bddf72ddaa0d832d5afcaf7d72646e337. Sole Pages workflow is manual-dispatch only (blob 18ceb19405424710bda47d9a38c470cc2ed9c385). No main/shared branch update, workflow dispatch, deployment, font/hbofonts work or schedule change."
+}
