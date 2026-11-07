@@ -15,7 +15,7 @@ with that session; this run created no automation.
 | Reviewed through | `210affe3ac2931473bead0de839be0de08309e3d` retained. Stage10 technical code review through `df4580cf762b569ef6fd83b48626364457468e76` had one confirmed receipt-loss defect, now fixed by approved merged PR368 (`f6585c7f`); independent live evidence is blocked, so the full window remains pending. [Partial receipt](https://github.com/bdenckla/MAM-basics/blob/1f3267305ea22883f792b3a00735101066dc69d2/doc/review-hourly-2026-11-04-stage10.json). |
 | Last tested | `1e57cd4dbe763798e33449728ccf572c39327c1a`; November 7 cloud nightly. Mega all 65 steps, exit 0 in 480.026 s. Full suite 1,444 passed / 5 declared skips / 82 subtests passed, 349.934 s (346.55 s pytest). Taamey D 61 PASS / 0 FAIL / 0 SKIP; release check passed; read-only corpus REFRESH PENDING. Eight SVG geometry/Times-alias differences independently explained, preserved and restored; suite write-neutral. [Receipt](review-nightly-2026-11-07.json). |
 | Last focused checked | `3ae838d11db68b99c1d7a7019026470657b41fef`: 25 mocked pages-mode cases, 13 FOI/census cases and 30 selected native checks passed. Selected/full FOI output exact; three editor pages rebuilt with an offline callback contract. No live bot or browser check. [Receipt](https://github.com/bdenckla/MAM-basics/blob/10df0138e52708b61c855f115652b414f1f09159/doc/review-hourly-2026-11-06-2200-basics.json). |
-| Latest screened subwindow | `3ae838d11db68b99c1d7a7019026470657b41fef` -> `1e57cd4dbe763798e33449728ccf572c39327c1a`: one commit, only `py/ws/ws_bot_edit_history.md` (+6/-3). Connector-only prose review; no consequential defect or repair. No test anchor advances. |
+| Latest screened subwindow | `1e57cd4dbe763798e33449728ccf572c39327c1a` -> `5b5c5c58ea1bd08c3bceb6108795d8c0b10d4e8a`: one commit and four paths. Connector-only source/data review: the one label replacement reconstructs and reverses the entire mirror exactly; only line 13 changes, and both manifest sizes reconcile. No consequential finding or repair. No repository test anchor advances. |
 | Cleanup/Holman focused result | `b85275921e02f4b1475446908d5cb997ca0083f7`: maintained Holman renderer reproduces without tracked changes (0.255 s); nine targeted receipt, filename, prose and stylesheet checks pass (42.09 s). Independent AST/data audit confirms only the reader-link host changes executable behavior. Initial reviewer census error and corrected audit are preserved. [Receipt](https://github.com/bdenckla/MAM-basics/blob/10df0138e52708b61c855f115652b414f1f09159/doc/review-hourly-2026-11-06-cleanup-holman.json). |
 | Introduction focused result | `6d3426fda4176a9a69f948761490988d8ba43e25`: 8 offline checks passed in 2.02 s. All 999 edits reconstruct the refreshed index exactly and reverse to the prior bytes; all page identities and thirteen manifest entries reconcile. No live bot, source refresh, network authenticity check or scan reading. [Receipt](https://github.com/bdenckla/MAM-basics/blob/b5e1d96e35e48a117b036e4cd1223e794b0b2890/doc/review-hourly-2026-11-05-2000-intro.json). |
 | Heading focused result | `4aea0413c0d8eb31ab5886e384f5bf00e1ea7b58`: 6 lightweight differential/dependency checks passed in 18.53 s. The actual heading helper reconstructs all 929 headings in each of the 39-page sets; all other page bytes are unchanged. The CSS deployment reproduces exactly. Full generators and independent browser checks were not run. [Receipt](https://github.com/bdenckla/MAM-basics/blob/b5e1d96e35e48a117b036e4cd1223e794b0b2890/doc/review-hourly-2026-11-05-1900-heading.json). |
@@ -195,3 +195,39 @@ adds no FOI or other branch, production change, generated output or workflow cha
 has no push trigger; no workflow is dispatched.
 
 Continuing nightly, 2026-11-07: reconciled the later isolated [maintained status](https://github.com/bdenckla/MAM-basics/blob/10df0138e52708b61c855f115652b414f1f09159/doc/review-trial-status.md) before selecting anchors. The earlier dated outcomes and limitations remain historical evidence; today advances only the actually completed broad-tested anchor. All stages ran sequentially in agent-owned full clones. Exact generated differences were preserved and independently explained before restoration; no generated output was committed. No main integration, deployment, source refresh, font build/baseline, hbofonts check or schedule change.
+
+Hourly screening, November 7 at 09:00, New York time (14:00 UTC run): reconciled the
+November 7 nightly receipt at `1d4b77e261f4327eb263da4d830c420410fe698c` and reviewed
+the complete [four-file endpoint diff](https://github.com/bdenckla/MAM-basics/compare/1e57cd4dbe763798e33449728ccf572c39327c1a...5b5c5c58ea1bd08c3bceb6108795d8c0b10d4e8a).
+The English UXLC image-link label, its single-use edit payload, mirrored page metadata
+and retained bot history agree. No consequential implementation defect or repair.
+
+Independent in-memory checks on the exact GitHub file contents confirm one selected page
+and one replacement: the old and new whole lines each occur exactly once in their respective
+versions, applying the replacement reconstructs the entire new mirror, and reversing it
+recovers the entire old mirror. The replacement changes only `LC fascimile` to
+`Sefaria: Color image of Leningrad Codex`. Only line 13 differs; line count and all other
+page content are unchanged. UTF-8 sizes are 304,083 and 304,110 bytes, exactly the manifest
+values. All thirteen page keys and titles are unchanged; only the Leningrad entry's revision
+(3101876 to 3101880), timestamp and size differ. The endpoint inventory contains no other
+mirrored page change. Source bytes were not normalized. No repository test, generator,
+bot, source refresh, live request or browser check ran. Owner tests, authorization, live
+save/readback and target-site label observations remain attributed, not independently
+repeated. This static label-and-history change needs no broad run; those checks stay nightly.
+
+Overall reviewed-through remains `210affe3ac2931473bead0de839be0de08309e3d`,
+broad-tested remains `1e57cd4dbe763798e33449728ccf572c39327c1a`, and native
+focused-tested remains `3ae838d11db68b99c1d7a7019026470657b41fef`. Only this bounded
+source/data screen advances. The earlier Stage 10, live/base/parse, remote-save identity
+and browser/editorial gaps remain separate. Policies read at the frozen endpoint are
+`429b896939570ad0ffd2a8518f9c114c0ff9ec8b` (review-trial) and
+`2361ed9d216650ccbde241e3eecfc2695e48491c` (periodic-review).
+
+The existing cloud nightly task was complete before screening; its continuation was assigned
+separate work and explicitly excluded this receipt branch. The local commander's current
+state could not be independently read, so this is bounded independent review, not a claim
+of exclusive cross-machine ownership. No interactive checkout or repository job was touched.
+Publication continues only `review-nightly-20261107-cloud-receipts` from the immutable
+nightly receipt above. Its sole workflow is manual-dispatch Pages, so this push triggers no
+deployment. Only this maintained status changes; finished receipts remain untouched.
+No main integration, workflow dispatch, font/hbofonts work or schedule change.
