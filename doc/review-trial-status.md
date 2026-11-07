@@ -15,7 +15,8 @@ with that session; this run created no automation.
 | Reviewed through | `210affe3ac2931473bead0de839be0de08309e3d` retained. Stage10 technical code review through `df4580cf762b569ef6fd83b48626364457468e76` had one confirmed receipt-loss defect, now fixed by approved merged PR368 (`f6585c7f`); independent live evidence is blocked, so the full window remains pending. [Partial receipt](https://github.com/bdenckla/MAM-basics/blob/1f3267305ea22883f792b3a00735101066dc69d2/doc/review-hourly-2026-11-04-stage10.json). |
 | Last tested | `1e57cd4dbe763798e33449728ccf572c39327c1a`; November 7 cloud nightly. Mega all 65 steps, exit 0 in 480.026 s. Full suite 1,444 passed / 5 declared skips / 82 subtests passed, 349.934 s (346.55 s pytest). Taamey D 61 PASS / 0 FAIL / 0 SKIP; release check passed; read-only corpus REFRESH PENDING. Eight SVG geometry/Times-alias differences independently explained, preserved and restored; suite write-neutral. [Receipt](review-nightly-2026-11-07.json). |
 | Last focused checked | `3ae838d11db68b99c1d7a7019026470657b41fef`: 25 mocked pages-mode cases, 13 FOI/census cases and 30 selected native checks passed. Selected/full FOI output exact; three editor pages rebuilt with an offline callback contract. No live bot or browser check. [Receipt](https://github.com/bdenckla/MAM-basics/blob/10df0138e52708b61c855f115652b414f1f09159/doc/review-hourly-2026-11-06-2200-basics.json). |
-| Latest screened subwindow | `1e57cd4dbe763798e33449728ccf572c39327c1a` -> `5b5c5c58ea1bd08c3bceb6108795d8c0b10d4e8a`: one commit and four paths. Connector-only source/data review: the one label replacement reconstructs and reverses the entire mirror exactly; only line 13 changes, and both manifest sizes reconcile. No consequential finding or repair. No repository test anchor advances. |
+| Latest screened subwindow | `5b5c5c58ea1bd08c3bceb6108795d8c0b10d4e8a` -> `44e5af84818d78558d38ecde051c2d116c5a5587`: two commits and two documentation/instruction paths. Connector-only endpoint review and exact forward/reverse text comparisons pass. No consequential finding or repair; no repository tests, generators, local configuration deployment or reviewed/tested-anchor advance. See the November 7 15:00 UTC record below. |
+| Previous screened subwindow | `1e57cd4dbe763798e33449728ccf572c39327c1a` -> `5b5c5c58ea1bd08c3bceb6108795d8c0b10d4e8a`: one commit and four paths. Connector-only source/data review: the one label replacement reconstructs and reverses the entire mirror exactly; only line 13 changes, and both manifest sizes reconcile. No consequential finding or repair. No repository test anchor advances. |
 | Cleanup/Holman focused result | `b85275921e02f4b1475446908d5cb997ca0083f7`: maintained Holman renderer reproduces without tracked changes (0.255 s); nine targeted receipt, filename, prose and stylesheet checks pass (42.09 s). Independent AST/data audit confirms only the reader-link host changes executable behavior. Initial reviewer census error and corrected audit are preserved. [Receipt](https://github.com/bdenckla/MAM-basics/blob/10df0138e52708b61c855f115652b414f1f09159/doc/review-hourly-2026-11-06-cleanup-holman.json). |
 | Introduction focused result | `6d3426fda4176a9a69f948761490988d8ba43e25`: 8 offline checks passed in 2.02 s. All 999 edits reconstruct the refreshed index exactly and reverse to the prior bytes; all page identities and thirteen manifest entries reconcile. No live bot, source refresh, network authenticity check or scan reading. [Receipt](https://github.com/bdenckla/MAM-basics/blob/b5e1d96e35e48a117b036e4cd1223e794b0b2890/doc/review-hourly-2026-11-05-2000-intro.json). |
 | Heading focused result | `4aea0413c0d8eb31ab5886e384f5bf00e1ea7b58`: 6 lightweight differential/dependency checks passed in 18.53 s. The actual heading helper reconstructs all 929 headings in each of the 39-page sets; all other page bytes are unchanged. The CSS deployment reproduces exactly. Full generators and independent browser checks were not run. [Receipt](https://github.com/bdenckla/MAM-basics/blob/b5e1d96e35e48a117b036e4cd1223e794b0b2890/doc/review-hourly-2026-11-05-1900-heading.json). |
@@ -231,3 +232,19 @@ Publication continues only `review-nightly-20261107-cloud-receipts` from the imm
 nightly receipt above. Its sole workflow is manual-dispatch Pages, so this push triggers no
 deployment. Only this maintained status changes; finished receipts remain untouched.
 No main integration, workflow dispatch, font/hbofonts work or schedule change.
+
+
+Scheduled hourly screen, 2026-11-07 10:00, New York time (15:00 UTC): examined the
+[complete two-commit endpoint](https://github.com/bdenckla/MAM-basics/compare/5b5c5c58ea1bd08c3bceb6108795d8c0b10d4e8a...44e5af84818d78558d38ecde051c2d116c5a5587).
+Only `dot-Codex/user-wide-AGENTS.md` and `doc/PLAN-ink-regions.md` change. The former adds
+default table centering and an ASCII naming convention with an explicit literal-Unicode-name
+exception; the latter replaces the retired branch reference with its archive-tag spelling
+while retaining the paused plan and privacy boundary. Each file is reconstructed exactly from
+the old text by the declared insertions/replacement and reverses to the old text; added lines
+have no trailing whitespace. These were connector-content checks in the coordinator, not
+repository test commands. The archive's contents and local configuration deployment are not
+public review evidence and were not checked here. No executable, product, font, baseline or
+source-data file changes. No consequential defect, repair, new editorial decision, generator,
+full suite, live site request or configuration deployment. Reviewed-through, last-tested and all
+historical gaps remain unchanged. The existing manual-only Pages workflow was inspected;
+this receipt is published only on an isolated branch, with no main integration or dispatch.
