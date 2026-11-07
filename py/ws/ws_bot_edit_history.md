@@ -1159,7 +1159,7 @@ infrastructure has changed enough to make them misleading examples:
   `.novc/mam-ws-bot-intro-runs/20261106-154548-738017-0500/`, dry run
   `.novc/mam-ws-bot-intro-runs/20261106-124152-048978-0500/`.
 
-### The UXLC's site on the index pages of the Torah, the Prophets and the Writings: hcanat.us links moved to tanach.us, 2026-11-06 — current
+### The UXLC's site on the index pages of the Torah, the Prophets and the Writings: hcanat.us links moved to tanach.us, 2026-11-06
 
 - **Purpose:** Link the UXLC at tanach.us on the four main-namespace pages that the Introduction's
   run, in the entry above, could not select: the English Decalogue page, whose line 9 has 2 links
@@ -1218,6 +1218,56 @@ infrastructure has changed enough to make them misleading examples:
   `.novc/mam-ws-bot-pages-runs/20261106-174131-961722-0500/`, refused run
   `.novc/mam-ws-bot-pages-runs/20261106-171009-267831-0500/`, dry run
   `.novc/mam-ws-bot-pages-runs/20261106-155850-573136-0500/`.
+
+### The UXLC's link label in the Leningrad Codex index's footnote: "LC fascimile" replaced by the current label, 2026-11-07 — current
+
+- **Purpose:** Make the footnote on line 13 of the Leningrad Codex index quote the label that the
+  UXLC's site, tanach.us, now gives its link to the codex's page images. The footnote tells the
+  reader that on that site one can choose any verse, chapter or run of verses and then see and
+  download its page of the codex by clicking "Go" beside "LC fascimile". That label misspelled
+  "LC facsimile", a name that the site's scripts still use in their comments but that none of its
+  seven link names contains; the link is now named "Sefaria: Color image of Leningrad Codex".
+  Only the quoted English label changes, and the Hebrew sentence around it is as it was.
+- **Authorization:** Ben, on 2026-11-06, in the session "Leningrad index: record Avi's edit
+  3101783": "Just to be clear, the only question is whether to say 'fascimile [sic]' or correct
+  to 'facsimile'. In no world do we keep, silently, 'fascimile'." Asked which label the footnote
+  should quote, the link's current label or the corrected spelling "LC facsimile", he answered
+  "Current label". Shown the dry run's change and the summary below, he answered "Yes, save it"
+  on 2026-11-07. The commander gave its go-ahead before each bot run, the dry run and the save.
+- **Mapping:** the quoted label `LC fascimile` to `Sefaria: Color image of Leningrad Codex`,
+  inside the quotation marks already there. The session "Leningrad index: record Avi's edit
+  3101783" read four of tanach.us's files once each on 2026-11-06, each after the host's
+  robots.txt, with Ben's word. The new label is the first of the seven link names in
+  `XSL/Links.xml`, and `Javascript/TanachBook.js` opens the page image when that name is selected;
+  none of the four files, the others being `XSL/Tanach.xsl.xml` and `Javascript/LCFacsimile.js`,
+  spells fascimile. The Introduction's two other fascimiles, in the names of Internet Archive items
+  on line 16 of the appendices and line 7 of the Aleppo Codex index, and three in Commons file
+  names on the mirrored special pages `song-deborah-alternates`, `song-david-alternates` and
+  `song-asaph-alternates`, are parts of addresses and stay as they are.
+- **Safety rule:** a script read the page's latest revision through the API, uncached:
+  BDencklaBot's 3101876, the save of the Introduction's run two entries above, which equalled the
+  mirror. The `old` is line 13 of that revision with its newline, cut from it by the script, and
+  occurs once. The generated page is that revision with that line changed: undoing the edit
+  restores the revision byte for byte, the page's count of fascimile goes from 1 to 0 and of the
+  new label from 0 to 1, and the page grows by 27 bytes, the difference in the labels' lengths.
+  The `--no-save` dry run's page equalled the generated page byte for byte, and just before the
+  save the page was still revision 3101876, its bytes still the mirror's.
+- **Saving run:** revision 3101876 → 3101880, at 08:06:43 New York time, 304,083 → 304,110 bytes,
+  with the summary `Quote the current label of the UXLC site's link to the Leningrad Codex page
+  images, "Sefaria: Color image of Leningrad Codex", rather than "LC fascimile"`, which Ben
+  approved with the run.
+- **Read after the run:** the new revision is BDencklaBot's, marked minor, with the approved
+  summary and parent 3101876, and its bytes equal the generated page's.
+- **Post-run download:** the refresh rewrote all thirteen mirrored pages with the manifest. Only
+  the index changed, on line 13 alone, and it now equals the generated page; the manifest records
+  its new revision, timestamp and size, and the other twelve pages are unchanged.
+- **One-shot:** yes. The saved page holds no fascimile, so the `old` occurs nowhere in it and a
+  `--no-save` re-run would raise at the edit; none was run.
+- **Edit level:** Raw page text string replacement, page-targeted.
+- **JSON file:** `in/mam-ws-bot-edits/intro-uxlc-image-link-label.json`, 1 edit, its `comment`
+  naming line 13 of revision 3101876 and what changes on it; run artifacts
+  `.novc/mam-ws-bot-intro-runs/20261107-080633-460011-0500/`, dry run
+  `.novc/mam-ws-bot-intro-runs/20261106-231954-754862-0500/`.
 
 ## How to look up the original code
 
