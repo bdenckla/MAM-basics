@@ -234,8 +234,8 @@ rule; it does not override the repository's subsequently declared cloud exceptio
   and real Hebrew text data, are fine.
 - **Edit-match hazard.** The decomposed-ḥ problem is gone since #49 (the repo is precomposed NFC,
   so a typed ḥ matches). Still live: **curly apostrophe U+2019** and **em dash U+2014**. After
-  **one** failed match, stop retyping the glyph — either re-scope the Edit to pure-ASCII anchors,
-  or write a temp `.py` that builds each needle from `chr(0x2019)` / `chr(0x2014)` and does
+  **one** failed match, stop retyping the character — either re-scope the Edit to pure-ASCII
+  anchors, or write a temp `.py` that builds each needle from `chr(0x2019)` / `chr(0x2014)` and does
   `read_bytes()` → `replace(OLD, NEW, 1)` → `write_bytes()` with a `count == 1` assertion (bytes
   I/O preserves LF endings and normalization).
 - **The Edit and Write tools can reorder Hebrew marks.** On 2026-10-27 an Edit that pasted the

@@ -17,9 +17,11 @@ the repository-specific reference before writing. Load only the references neede
 2. **Use one scale of separating force.** Disjunctives, conjunctives, then maqaf. Maqaf has the
    weakest *separating* force and binds most tightly. Count a maqaf difference once and state it
    as an exchange with both markings named. Do not create a separate "word division" ledger.
-3. **Distinguish grammar from glyphs.** The paseq glyph can be narrow-sense **paseq** or
-   **legarmeh**. U+05BD is **silluq** only on the stressed syllable of the verse's final word
-   before sof pasuq; elsewhere it is **meteg**. A maqaf-joined atom is not verse-final.
+3. **Distinguish grammar from code points.** The paseq code point (U+05C0) can be narrow-sense
+   **paseq** or **legarmeh**. U+05BD is **silluq** only on the stressed syllable of the verse's
+   final word before sof pasuq; elsewhere it is **meteg**. A maqaf-joined atom is not verse-final.
+   A glyph is a shape that a font or a page draws; text and a text layer hold code points, and a
+   regular expression matches them.
 4. **Write prose and poetic verses, never prose and poetic books.** Psalms, Job, and Proverbs
    contain both systems. Identify the system of the verse being discussed.
 5. **Describe structure, not transformation.** An accent does not turn into another accent,

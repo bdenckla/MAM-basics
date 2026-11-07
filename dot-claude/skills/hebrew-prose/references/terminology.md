@@ -40,7 +40,7 @@ chanted because it is clear from context."*
   stays short: accgram's one-letter appendix heading is `Word` with `title="The chanted
   word; …"`.
 
-Call base glyphs letters. Name the specific printed tradition rather than generalizing a
+Call base characters letters. Name the specific printed tradition rather than generalizing a
 finding to all printed editions. “Paseq vs legarmeh” below distinguishes Unicode PASEQ from
 the grammatical term.
 
@@ -112,8 +112,8 @@ is why code that names the constant broadly spells it `MTGOSLQ`.
 
 - **Meteg** (= ga'ya) is a purely metrical mark, not an accent, not part of the cantillation
   system; it can sit on any word anywhere in a verse.
-- **Silluq** is the same glyph *only* on the stressed syllable of the verse's own **last word**,
-  paired with sof pasuq. There is no silluq on a non-verse-final word, however accented.
+- **Silluq** is the same code point *only* on the stressed syllable of the verse's own **last
+  word**, paired with sof pasuq. There is no silluq on a non-verse-final word, however accented.
 - **Check verse-finality before naming a bare U+05BD "silluq."** A word joined by maqaf to a
   following word is by definition not verse-final, so a U+05BD there is always an ordinary meteg.
   This is the commonest way the mistake happens, and it has reached rendered output before (a
@@ -133,7 +133,7 @@ is why the shared constant in `mb_cmn/hebrew_punctuation.py` is called `PASOLEG`
 
 - **Narrow-sense paseq** — an ordinary separating stroke, not an accent, not part of the musical
   system; a reader's cue to pause slightly. "Not part of the accent grammar, not tracked."
-- **Legarmeh** — the same glyph after a conjunctive (usually *munaḥ* in the prose system; *azla
+- **Legarmeh** — the same code point after a conjunctive (usually *munaḥ* in the prose system; *azla
   legarmeh* / *mahapakh legarmeh* in the poetic) **transforms that accent into a disjunctive**,
   with its own melody and its own servants (typically *merkha*). Graphically identical to a
   genuine conjunctive munaḥ plus an independent paseq; the difference is grammatical, adjudicated

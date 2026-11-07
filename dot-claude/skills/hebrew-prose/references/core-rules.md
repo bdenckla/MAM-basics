@@ -138,7 +138,7 @@ Ben's undated rule, already present when MAM-basics became the canonical configu
 | a non-final atom of a compound | "proclitic"; a lone atom "maqaf-joined" |
 | chanted verse (sof pasuq span when unchantable) | pasuq |
 | meteg (silluq only verse-finally) | ga'ya, "ga'ya meteg" |
-| legarmeh; broad-sense paseq / Unicode PASEQ | an unqualified "paseq" for the glyph |
+| legarmeh; broad-sense paseq / Unicode PASEQ | an unqualified "paseq" for the code point |
 | punctuation / grouping | "word-division" |
 | accent | "cantillation accent" |
 | strand; unpaired; marooned; orphaned | thread; stranded; unattached |
