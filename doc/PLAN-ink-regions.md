@@ -1180,8 +1180,9 @@ a kind, or the marks taken from the scribe's ink, is Ben's to choose after this 
   line gives, after checking its SHA-256.
 - Put pointed Hebrew into tracked files only by script from data, never by typing it.
 - A new test is differential or lint-shaped only.
-- The Yardeni material on MAM-private's branch `research-yardeni-stroke-transcription-20261031`
-  stays private (Ben, section 31); this plan needs none of it.
+- The Yardeni material is retained under MAM-private's archive tag
+  `archive/research-yardeni-stroke-transcription-20261031` and stays private (Ben, section 31).
+  This plan needs none of it.
 - Ben's "Not now" of section 42, asked whether to draw masora circles faintly, is overtaken for
   the region page by R2, in which section 50 asks for them coloured lightly or removed; the
   frozen stroke views stay as they are.
