@@ -1112,8 +1112,10 @@ infrastructure has changed enough to make them misleading examples:
   chapter 5. Of the other 33 links, 24 are on four main-namespace pages that no mode could select,
   the English Decalogue page and the index pages of the Torah, the Prophets and the Writings, for
   which Ben chose a new mode, `main_ws_bot.py pages`. The other 9 are on six talk and user pages,
-  which Ben chose to leave as they are, since they are Avi's signed comments and his own user
-  page.
+  which Ben chose to leave as they are: 3 on Avi's own user page, 5 in comments that Avi signed on
+  four talk pages, and 1 in a comment that another editor signed, on the talk page of the textual
+  notes to Genesis 26 (page id 1734717). This bullet first said, as the message of commit
+  `7f43a3c8` still does, that all 9 are in Avi's signed comments or on his own user page.
 - **Authorization:** Ben, on 2026-11-06, in the session "Leningrad index: record Avi's edit
   3101783": "Use BDencklaBot to fix all UXCL typos to UXLC and to fix all hcanat.us to
   tanach.us." He had written earlier that hcanat.us is the development server and tanach.us the
@@ -1203,7 +1205,8 @@ infrastructure has changed enough to make them misleading examples:
 - **Post-run download:** none, since the mode has none. No mirror holds the three index pages, and
   the Decalogue page, which `in/mam-ws-special/` mirrors, is still at revision 3088722.
 - **Left as it is:** the Decalogue page's two links to `https://hcanat.us/`, on its line 9, which an
-  administrator can change.
+  administrator can change. Ben emailed Avi on 2026-11-06, from a draft that told him of this save
+  and the Introduction's and asked him to change these two links.
 - **One-shot:** yes. A re-run, with or without `--no-save`, refuses at once, since no page's latest
   revision is its `base-revid` any longer; and no `old` occurs in the saved text, which holds no
   hcanat.
