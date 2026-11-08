@@ -1,0 +1,146 @@
+{
+  "repository": "bdenckla/MAM-basics",
+  "state": "completed 2026-11-08; focused review only",
+  "author": "Codex",
+  "recorded_at": "2026-11-08T18:14:14.173658+00:00",
+  "endpoint": {
+    "base": "011f25a723771e1f3f1c9ea64fab384525774672",
+    "source": "e8e75686b1c7281bf4b1ad0913655152bf376a7c",
+    "commits": 1,
+    "paths": 13
+  },
+  "status_reconciled_from": "abcf5e0612060a113f7cb31d9fd3bf79ec439006",
+  "previous_screen": "230fb2988f7575fb4b73df436259f2afa58f7087",
+  "anchors": {
+    "series_reviewed_through": "210affe3ac2931473bead0de839be0de08309e3d",
+    "broad_tested": "011f25a723771e1f3f1c9ea64fab384525774672",
+    "bounded_focused_checked": "e8e75686b1c7281bf4b1ad0913655152bf376a7c",
+    "bounded_screened": "e8e75686b1c7281bf4b1ad0913655152bf376a7c"
+  },
+  "runtime": {
+    "checkout": "/workspace/MAM-basics",
+    "interpreter": "/workspace/MAM-basics/.venv/bin/python",
+    "python": "3.13.15",
+    "own_cloud": true,
+    "preflight": "clean owned work branch; one worktree; no active checks or held Git writer locks; remote main exactly source",
+    "desktop_coordination": "Parent exact-environment read confirmed commander completed archival coordination, no active overlap found; no HP operation used"
+  },
+  "commands": [
+    {
+      "name": "gen-misc",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_authored.py",
+        "gen-misc"
+      ],
+      "cwd": "/workspace/MAM-basics",
+      "started": "2026-11-08T18:08:55.849471+00:00",
+      "exit": 0,
+      "seconds": 1.683
+    },
+    {
+      "name": "gen-site",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_authored.py",
+        "gen-site"
+      ],
+      "cwd": "/workspace/MAM-basics",
+      "started": "2026-11-08T18:08:57.565297+00:00",
+      "exit": 0,
+      "seconds": 135.975
+    },
+    {
+      "name": "focused-tests",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        "-q",
+        "-ra",
+        "py/tests/test_site_index_links.py",
+        "py/tests/test_prose_conventions.py",
+        "py/tests/test_transliterations.py",
+        "py/tests/test_shared_html_styles.py",
+        "py/tests/test_tracked_filenames.py",
+        "py/tests/test_prose_mark_order.py"
+      ],
+      "cwd": "/workspace/MAM-basics",
+      "started": "2026-11-08T18:11:13.571722+00:00",
+      "exit": 0,
+      "seconds": 45.168
+    },
+    {
+      "name": "black-check",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "-m",
+        "black",
+        "--check",
+        "py/author_misc/review_of_hebrew_reader_for_the_pentateuch.py",
+        "py/author_site/site_data.py",
+        "py/main_authored.py"
+      ],
+      "cwd": "/workspace/MAM-basics",
+      "started": "2026-11-08T18:11:58.754924+00:00",
+      "exit": 0,
+      "seconds": 0.377
+    },
+    {
+      "name": "whitespace",
+      "command": [
+        "git",
+        "diff",
+        "--check",
+        "011f25a723771e1f3f1c9ea64fab384525774672",
+        "e8e75686b1c7281bf4b1ad0913655152bf376a7c"
+      ],
+      "cwd": "/workspace/MAM-basics",
+      "started": "2026-11-08T18:11:59.147706+00:00",
+      "exit": 0,
+      "seconds": 0.006
+    }
+  ],
+  "independent_check": {
+    "command": [
+      "/workspace/MAM-basics/.venv/bin/python",
+      "/workspace/scratch/check_hebrew_reader_20261108.py"
+    ],
+    "exit": 0,
+    "seconds": 0.291,
+    "summary": "283 ordered literal Hebrew runs / 1179 clusters; 2 tables / 8 RTL cells / 4 large pointed forms / 2 gray rows; 14 bidirectional footnote pairs / 28 unique IDs; 49 local or site hrefs resolve including fragments; 7 unique PNGs pass CRC and IDAT decoding; source filenames and widths, both index entries, UTF-8 and whitespace pass",
+    "evidence": "independent-check.json"
+  },
+  "regeneration": "Both actual maintained authored CLI commands exit zero with every tracked output byte-identical, including the new 46356-byte page and both indices. Every stage has an empty preserved diff; no unexpected generated difference, failure or repair.",
+  "selected_tests": "17 passed, zero skipped, 45.00 s pytest / 45.168 s recorder; six selected modules only",
+  "source_port": {
+    "independent_coordinator_evidence": "coordinator-evidence.json",
+    "result": "Current native document body, tables, all footnotes and hyperlinks match with exactly the declared changes; source structure and all converted image widths reconcile",
+    "local_export": "No source export available in owned public checkout; no independent external download",
+    "owner_claims": "Earlier ZIP/published-copy word-for-word match and 143 export NBSPs are attributed, not re-executed here"
+  },
+  "finding": "No consequential introduced defect confirmed; no change to authored prose, Hebrew interpretations, data or images",
+  "assets": "Seven committed PNGs decoded and visually inspected as existing crops; integrity and reference checks do not prove image-byte provenance or independently adjudicate manuscript/editorial claims",
+  "limitations": [
+    "No browser/rendered-pixel verification",
+    "No source-image-byte provenance comparison; original ZIP/pub bytes unavailable here",
+    "No manuscript rereading or new Hebrew/editorial interpretation",
+    "Series Stage 10 external/live/source/save/parse limits, PR369 browser gap and earlier heading/browser limits stay open",
+    "No mega/full-suite rerun; November 8 broad result at base remains separate"
+  ],
+  "publication": {
+    "branch": "review-hourly-20261108-hebrew-reader-e8e75686-receipts",
+    "scope": [
+      "doc/review-hourly-2026-11-08-hebrew-reader-evidence.zip",
+      "doc/review-hourly-2026-11-08-hebrew-reader.json",
+      "doc/review-trial-status.md"
+    ],
+    "safeguard": "Only workflow is pages.yml, triggered solely by workflow_dispatch; isolated new branch has no prior remote ref or dependent job; no main integration, dispatch or deployment",
+    "verification": "Remote commit/tree/archive verification and original work-branch restoration performed after push; final result reports confirmed commit"
+  },
+  "evidence": {
+    "archive": "doc/review-hourly-2026-11-08-hebrew-reader-evidence.zip",
+    "sha256": "a0b2b633993ea38e9f929d7841c87d2f9316a16d38f52859fdce9567a5db6001",
+    "files": 19
+  },
+  "historical_nightly": "https://github.com/bdenckla/MAM-basics/blob/abcf5e0612060a113f7cb31d9fd3bf79ec439006/doc/review-nightly-2026-11-08.json"
+}
