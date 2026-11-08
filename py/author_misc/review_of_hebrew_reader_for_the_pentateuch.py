@@ -25,6 +25,14 @@ Each fix substitutes one named letter for another within one atom:
   that begins "(This is all in 20:12 in some editions.)", have the atom רפה
   instead, the name of the mark: HEBREW LETTER HE for HEBREW LETTER HET.
 
+TWO MORE EDITS ARE BEN'S, made on 2026-11-08 after he read the port:
+
+* in "should have been colored gray (as the מנח and", the atom is now מונח, the
+  spelling of the review's four other occurrences of that accent's name, as Ben
+  asked: "standardize on the majority spelling".
+* in "These errors (and some others like it I will describe separately)", the
+  pronoun is now "them", which agrees with "errors", as Ben asked.
+
 TWO HEBREW FORMS ARE REORDERED, NOT REWRITTEN. In both rows of the second
 table, the atom תעשה had its sin dot after its segol. MAM-normal mark order
 puts the sin dot first (mb_cmn/uni_denorm.py), and by Ben's decision of
@@ -892,7 +900,7 @@ _DEFIC_P26 = author.emphasis(
     ]
 )
 _DEFIC_P27 = [
-    "These errors (and some others like it I will describe separately) do not",
+    "These errors (and some others like them I will describe separately) do not",
     " directly stem from $WLC since it makes no distinction between ",
     _hbo_checked("תחתון"),
     " and ",
@@ -1053,7 +1061,7 @@ _DEFIC_P36 = [
     " and therefore, according to the ",
     _READER,
     "’s scheme, should have been colored gray (as the ",
-    _hbo_checked("מנח"),
+    _hbo_checked("מונח"),
     " and ",
     _hbo_checked("תלישא"),
     " were) rather than black:",
