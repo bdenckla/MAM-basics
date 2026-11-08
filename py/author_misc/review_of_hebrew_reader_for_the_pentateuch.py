@@ -75,9 +75,11 @@ THE REST IS HOUSE STYLE, not rewording:
 * Google's type sizes are not reproduced, except that the tables' pointed forms
   are big. The gray rows of the tables stay gray (author.span_gray), as the
   document has them.
-* each footnote's marker is a superscript link to its note, and the note's
-  marker a link back, after he_ws_intro_to_mam_gray_maqaf_1.py's
-  _footnote_marker. The notes follow a horizontal rule, as in the document.
+* each footnote's marker is a link to its note, and the note's marker a link
+  back, after he_ws_intro_to_mam_gray_maqaf_1.py's _footnote_marker. A marker
+  in the text sits on the baseline rather than raised as in the document, by
+  Ben's decision of 2026-11-08: "Superscript footnote callouts create weird
+  line spacing." The notes follow a horizontal rule, as in the document.
 * each image keeps the width it had on the document's page, at the urwotm
   importer's 40em for Google's 624px, and its file is named for its verse, its
   Hebrew in consensus_to_ascii (py/author_boj_util/author.py) and its source.
@@ -246,9 +248,12 @@ def _hbo_checked(text, big=False):
 
 
 def _fn_ref(n):
-    """Footnote n's marker in the text: a superscript link to the note."""
-    marker = mb_html.anchor(f"[{n}]", {"id": f"fnref-{n}", "href": f"#fn-{n}"})
-    return mb_html.sup(marker)
+    """Footnote n's marker in the text: a link to the note, on the baseline.
+
+    Not superscript, as the document has it: a raised marker makes its line
+    taller than its neighbours (Ben's decision of 2026-11-08).
+    """
+    return mb_html.anchor(f"[{n}]", {"id": f"fnref-{n}", "href": f"#fn-{n}"})
 
 
 def _note(n, contents):
