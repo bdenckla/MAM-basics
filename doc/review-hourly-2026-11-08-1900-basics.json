@@ -1,0 +1,133 @@
+{
+  "repository": "bdenckla/MAM-basics",
+  "state": "completed 2026-11-08; bounded 19:00 UTC screen",
+  "author": "Codex",
+  "recorded_at": "2026-11-08T18:41:50.334246+00:00",
+  "endpoint": {
+    "base": "e8e75686b1c7281bf4b1ad0913655152bf376a7c",
+    "source": "84ad02264fce66d2b41ca0b4ac3fd3522d85e22e",
+    "commits": 1,
+    "paths": 2
+  },
+  "maintenance_parent": "80efadaf4e318a62089943fdd8e5923b8b820c28",
+  "anchors": {
+    "reviewed_through": "210affe3ac2931473bead0de839be0de08309e3d",
+    "broad_tested": "011f25a723771e1f3f1c9ea64fab384525774672",
+    "bounded_screened": "84ad02264fce66d2b41ca0b4ac3fd3522d85e22e",
+    "bounded_focused_checked": "84ad02264fce66d2b41ca0b4ac3fd3522d85e22e"
+  },
+  "runtime": {
+    "checkout": "/workspace/MAM-basics",
+    "interpreter": "/workspace/MAM-basics/.venv/bin/python",
+    "python": "3.13.15",
+    "preflight": "Clean owned full clone, one worktree, actual local Python job inventory clear, remote main matched frozen source; no interactive or HP checkout used",
+    "sequential": true
+  },
+  "commands": [
+    {
+      "name": "gen-misc",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_authored.py",
+        "gen-misc"
+      ],
+      "cwd": "/workspace/MAM-basics",
+      "started": "2026-11-08T18:35:24.538526+00:00",
+      "exit": 0,
+      "seconds": 1.624
+    },
+    {
+      "name": "focused-tests",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        "-q",
+        "-ra",
+        "py/tests/test_prose_conventions.py",
+        "py/tests/test_transliterations.py"
+      ],
+      "cwd": "/workspace/MAM-basics",
+      "started": "2026-11-08T18:35:26.189469+00:00",
+      "exit": 0,
+      "seconds": 22.859
+    },
+    {
+      "name": "black-check",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "-m",
+        "black",
+        "--check",
+        "py/author_misc/review_of_hebrew_reader_for_the_pentateuch.py"
+      ],
+      "cwd": "/workspace/MAM-basics",
+      "started": "2026-11-08T18:35:49.064679+00:00",
+      "exit": 0,
+      "seconds": 0.25
+    },
+    {
+      "name": "whitespace",
+      "command": [
+        "git",
+        "diff",
+        "--check",
+        "e8e75686b1c7281bf4b1ad0913655152bf376a7c",
+        "84ad02264fce66d2b41ca0b4ac3fd3522d85e22e"
+      ],
+      "cwd": "/workspace/MAM-basics",
+      "started": "2026-11-08T18:35:49.332527+00:00",
+      "exit": 0,
+      "seconds": 0.005
+    }
+  ],
+  "results": {
+    "source_consistency": "Exactly two requested substitutions reconstruct the complete HTML and executable generator AST; docstring separately records the owner decisions. Evidence endpoint-preservation.json.",
+    "regeneration": "Actual maintained gen-misc exit zero, 1.624 s; every tracked output byte-identical, including new 46,360-byte page and unchanged misc index. No gen-site rerun because the registration and both index entries are unchanged.",
+    "native_tests": "9 passed, zero skipped, 22.71 s pytest / 22.859 s recorder: only test_prose_conventions.py and test_transliterations.py via py/main_test.py -q -ra.",
+    "independent_check": {
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "/workspace/scratch/check_basics_1900_20261108.py"
+      ],
+      "exit": 0,
+      "seconds": 0.267,
+      "summary": "283 literal Hebrew runs, 1180 clusters, 2 tables / 8 RTL cells, 14 two-way footnote pairs, 49 local/site hrefs including fragments, 7 PNG CRC/IDAT checks, source image names/widths, both index targets, UTF-8/whitespace pass. Only checker evidence-directory constant changed; assumptions inspected against exact endpoint."
+    },
+    "format": "Black --check on the changed generator and endpoint git diff --check exit zero, 0.250 s and 0.005 s.",
+    "output_triage": "Every preserved generated diff empty; no repair or generated acceptance. Full commands and literal/DOM proofs retained in evidence."
+  },
+  "coordinator_review": {
+    "attribution": "Independent coordinating reviewer via GitHub connector; not execution in this cloud checkout",
+    "result": "Public patch independently confirms exactly the two owner-approved substitutions in source and generated HTML, plus their docstring record.",
+    "limits": "Earlier native Google Doc/source-port comparison remains at immutable 80efadaf receipt. No new source-export/image provenance or browser/editorial judgment."
+  },
+  "finding": "No consequential introduced defect confirmed; no repair or source-data change",
+  "failures": [],
+  "limits": [
+    "No mega/full-suite rerun; November 8 broad result at 011f25a7 remains separate.",
+    "No source refresh, source-export or image-byte provenance comparison, manuscript interpretation, browser/pixel or live verification.",
+    "Stage 10 source/live/save/base/parse gaps, PR369 browser gap and earlier heading/browser limitations remain open.",
+    "No main/shared write, deployment/dispatch, font/hbofonts or schedule operation."
+  ],
+  "policy": {
+    "AGENTS_blob": "d3ec8f0f27fca27c1d3d4045e96cc0a33f951e6a",
+    "review_trial_blob": "429b896939570ad0ffd2a8518f9c114c0ff9ec8b",
+    "periodic_review_blob": "2361ed9d216650ccbde241e3eecfc2695e48491c",
+    "shared_skills": "Canonical routed Hebrew prose/repository topology/receipt instructions carried forward; no relevant policy change in endpoint"
+  },
+  "evidence": {
+    "path": "doc/review-hourly-2026-11-08-1900-basics-evidence.zip",
+    "sha256": "19f086c88d2ac2e3e2829a3a961322b2aaea325dc60be021d7716e8fb24f744b",
+    "files": 17
+  },
+  "publication": {
+    "branch": "review-hourly-20261108-1900-basics-receipts",
+    "paths": [
+      "doc/review-hourly-2026-11-08-1900-basics-evidence.zip",
+      "doc/review-hourly-2026-11-08-1900-basics.json",
+      "doc/review-trial-status.md"
+    ],
+    "safeguard": "Unique isolated new receipt branch; no push/deployment trigger or known dependent job. No main/shared write or dispatch. Exact remote SHA, scope and archive verified after push.",
+    "closeout": "Restore original owned work branch clean after remote verification; no added worktree; preserve evidence"
+  }
+}
