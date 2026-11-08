@@ -65,7 +65,7 @@ def build_body(*, claims: ClaimCollection):
     )
     return [
         author.heading_level_1(
-            ["Targeted scroll-difference note — ", author.hbo("מ:הערה-2")]
+            ["Targeted scroll-difference note — ", author.unpointed("מ:הערה-2")]
         ),
         author.para(["← Back to ", back_link]),
         author.para(semantic_shape_claim),
@@ -81,9 +81,9 @@ def build_body(*, claims: ClaimCollection):
         author.para(
             [
                 "The non-targeted template ",
-                author.hbo("מ:הערה"),
+                author.unpointed("מ:הערה"),
                 " is no longer retained alongside ",
-                author.hbo("מ:הערה-2"),
+                author.unpointed("מ:הערה-2"),
                 "."
                 " This intentionally drops one edge-case distinction at Deut 11:21:"
                 " the star marker can indicate pre-word or post-word position"

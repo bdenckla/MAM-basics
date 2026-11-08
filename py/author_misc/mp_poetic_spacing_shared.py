@@ -21,7 +21,9 @@ def build_body(*, claims: ClaimCollection, back_doc: str, back_label: str):
     poetic_rows = cmn.poetic_rows_for_templates(_POETIC_TEMPLATE_NAMES)
     back_link = author.anchor_h(back_label, back_doc)
     return [
-        author.heading_level_1(["Poetic spacing templates — ", author.hbo("ר0–ר4")]),
+        author.heading_level_1(
+            ["Poetic spacing templates — ", author.unpointed("ר0–ר4")]
+        ),
         author.para(["← Back to ", back_link]),
         author.para(
             "These templates control line placement and indentation in poetic verses."

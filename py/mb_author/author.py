@@ -120,18 +120,57 @@ def heading_level_3(contents, attr=None):
     return mb_html.heading_level_3(dollar_sub(contents), attr)
 
 
-def hbo(contents, attr=None):
+def hbo(contents, attr=None, *, lifted=False):
+    """Pointed Hebrew, in the pointed-Hebrew font.
+
+    That is lang="hbo", which the stylesheets set in Taamey D at 140% so that
+    points and accents are legible. Hebrew with no point or accent keeps the
+    surrounding font instead, so this raises on it: give it to unpointed. Ben
+    has asked for that on 2026-07-28, 2026-10-26 and 2026-11-08; the hebrew-prose
+    skill's references/rendered-prose.md, "Unpointed Hebrew keeps the surrounding
+    font", gives his words.
+
+    The one exception is a form lifted whole from a text or an edition and set
+    beside the forms it is compared with, which keeps their font, pointed or
+    not: pass lifted=True for it (Ben, 2026-10-26, of the MAM-for-Sefaria
+    examples: "keep those in one font (namely the font for pointed hebreW)").
+    """
+    if not lifted and _is_unpointed_hebrew(contents):
+        raise ValueError(
+            "unpointed Hebrew in the pointed-Hebrew font:"
+            f" {_text_of(contents)!r}; use author.unpointed"
+        )
     return mb_html.bdi(contents, _awl(attr, "hbo"))
 
 
-def hbo_with_ellipsis_title(abbrev_with_ellipsis: str, full_label: str, attr=None):
-    """Render an abbreviated Hebrew label with dotted underline on ellipsis only."""
+def unpointed(contents, attr=None):
+    """Unpointed Hebrew: isolated for its direction, in the surrounding font.
+
+    A <bdi> without lang, as mam4sef_common.unpointed renders it; see hbo for
+    why. Raises on Hebrew with a point or an accent, which belongs in hbo.
+    """
+    if _HEBREW_MARK_RE.search(_text_of(contents)):
+        raise ValueError(
+            f"pointed Hebrew given to author.unpointed: {_text_of(contents)!r}"
+        )
+    return mb_html.bdi(contents, attr)
+
+
+def unpointed_with_ellipsis_title(
+    abbrev_with_ellipsis: str, full_label: str, attr=None
+):
+    """An abbreviated unpointed Hebrew label, its ellipsis dotted-underlined.
+
+    The full label is the title, shown on hover. Its callers abbreviate template
+    names, which are unpointed, so it is unpointed's; it was
+    hbo_with_ellipsis_title until 2026-11-08.
+    """
     assert abbrev_with_ellipsis.count("...") == 1, abbrev_with_ellipsis
     prefix, suffix = abbrev_with_ellipsis.split("...")
     attr_nn = attr or {}
     assert "title" not in attr_nn, attr_nn
     attr_with_title = {"title": full_label, **attr_nn}
-    return hbo(
+    return unpointed(
         [
             prefix,
             mb_html.span("...", {"class": "ellipsis-title"}),
@@ -319,10 +358,29 @@ def _std_row_of_headers(cells, thattrs=None):
 
 
 def _std_cell(htel):
+    """A cell of std_table. An all-Hebrew string cell is isolated for its
+    direction, and in the pointed-Hebrew font only if it is pointed."""
     if isinstance(htel, str):
         if re.search(r"[א-ת]", htel) and not re.search(r"[A-Za-z]", htel):
-            return hbo(htel)
+            return unpointed(htel) if _is_unpointed_hebrew(htel) else hbo(htel)
     return dollar_sub(htel)
+
+
+def _text_of(contents):
+    """The text of contents, through any elements nested in it."""
+    if isinstance(contents, str):
+        return contents
+    if isinstance(contents, (list, tuple)):
+        return "".join(_text_of(item) for item in contents)
+    if mb_html.is_htel(contents):
+        return _text_of(contents.get("contents") or [])
+    return ""
+
+
+def _is_unpointed_hebrew(contents):
+    """Whether contents has a Hebrew letter and no point or accent."""
+    text = _text_of(contents)
+    return bool(_HEBREW_LETTER_RE.search(text)) and not _HEBREW_MARK_RE.search(text)
 
 
 def _romanized(string: str):
@@ -427,6 +485,13 @@ def _norm_stem(path):
 def _anc_h(contents, href_val):
     return mb_html.anchor_h(contents, href_val)
 
+
+# A point or an accent: what makes Hebrew pointed, as
+# accgram.almost_errors_html_shared._HEBREW_MARK_RE has it. Maqaf, paseq and
+# sof pasuq are punctuation, not pointing. Numeric escapes, because a bare
+# combining mark in a literal floats on its quote.
+_HEBREW_MARK_RE = re.compile("[֑-ׇֽֿׁׂׅׄ-׉]")
+_HEBREW_LETTER_RE = re.compile("[א-ת]")
 
 _AID = "https://www.chabad.org/library/bible_cdo/aid"
 _G = "https://docs.google.com/document/u/0"

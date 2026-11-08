@@ -45,11 +45,11 @@ _CALL_GRAPH_FOR_COLUMN_E = [
         " This is to keep it more readable."
     ),
 ]
-_KQ = author.hbo("כו״ק")
-_TRIV_KQ = author.hbo("מ:קו״כ-אם-2")
-_QK = author.hbo("קו״כ")
-_KQ_ELLIPSIS = author.dquote(author.hbo("כו״ק, …"))
-_QMC = author.hbo("מ:קמץ")
+_KQ = author.unpointed("כו״ק")
+_TRIV_KQ = author.unpointed("מ:קו״כ-אם-2")
+_QK = author.unpointed("קו״כ")
+_KQ_ELLIPSIS = author.dquote(author.unpointed("כו״ק, …"))
+_QMC = author.unpointed("מ:קמץ")
 _EDGE_FROM_KQ_TO_QMC = ["edge from ", _KQ_ELLIPSIS, " to ", _QMC]
 _TEN_CASES = ["10 cases where ", _QMC, " nests within ", _KQ]
 _TWO_CASES = ["2 cases where ", _QMC, " nests within ", _TRIV_KQ]
@@ -60,8 +60,8 @@ _KQ_TO_QMC_BREAKDOWN = [
     _ZERO_CASES,
 ]
 _KQ_TO_QMC_EXAMPLES_PROPER = (
-    author.hbo("{{כו״ק|קסומי|{{מ:קמץ|...}}}}"),
-    author.hbo("{{מ:קו״כ-אם-2|{{מ:קמץ|...}}|אהלה|{{מ:קמץ|...}}|...}}"),
+    author.unpointed("{{כו״ק|קסומי|{{מ:קמץ|...}}}}"),
+    author.unpointed("{{מ:קו״כ-אם-2|{{מ:קמץ|...}}|אהלה|{{מ:קמץ|...}}|...}}"),
 )
 _KQ_TO_QMC_EXAMPLES = (
     ["1 Sam 28:8 ", _KQ_TO_QMC_EXAMPLES_PROPER[0]],

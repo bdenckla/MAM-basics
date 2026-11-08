@@ -8,7 +8,7 @@ from author_misc import mp_table_helpers as tblh
 class TestAuthorStdTable(unittest.TestCase):
     def test_std_table_applies_explicit_th_and_td_attrs(self):
         table = author.std_table(
-            [[author.hbo("כו״ק"), "Example usage"]],
+            [[author.unpointed("כו״ק"), "Example usage"]],
             arg_to_troh=["Template", "Purpose"],
             tdattrs=[{"class": "template-col"}, {"class": "wide-col"}],
             thattrs=[{"class": "template-col"}, {"class": "wide-col"}],
@@ -25,7 +25,7 @@ class TestAuthorStdTable(unittest.TestCase):
 
     def test_std_table_does_not_infer_template_purpose_classes(self):
         table = author.std_table(
-            [[author.hbo("כו״ק"), "Example usage"]],
+            [[author.unpointed("כו״ק"), "Example usage"]],
             arg_to_troh=["Template", "Purpose"],
         )
 
@@ -52,7 +52,7 @@ class TestAuthorStdTable(unittest.TestCase):
         self.assertNotIn("attr", data_cells[2])
 
     def test_tmpl_purp_table_applies_expected_attrs(self):
-        table = tblh.tmpl_purp_table([[author.hbo("כו״ק"), "Example usage"]])
+        table = tblh.tmpl_purp_table([[author.unpointed("כו״ק"), "Example usage"]])
 
         rows = table["contents"]
         header_cells = rows[0]["contents"]

@@ -35,7 +35,9 @@ def build_body(
         subject=claim_subject,
     )
     return [
-        author.heading_level_1(["Trivial $ketiv_qere — ", author.hbo("מ:קו״כ-אם-2")]),
+        author.heading_level_1(
+            ["Trivial $ketiv_qere — ", author.unpointed("מ:קו״כ-אם-2")]
+        ),
         author.para(["← Back to ", back_link]),
         author.para(
             [
@@ -49,9 +51,9 @@ def build_body(
         author.para(
             [
                 "Current values observed for optional ",
-                author.hbo("סוג="),
+                author.unpointed("סוג="),
                 " in ",
-                author.hbo("מ:קו״כ-אם-2"),
+                author.unpointed("מ:קו״כ-אם-2"),
                 ":",
             ]
         ),

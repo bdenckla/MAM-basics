@@ -16,7 +16,7 @@ _NO_PAR_AT_STA_OF_WEEKLY_ABBREV = "מ:אין רווח ... השבוע"
 
 
 def _first_verse_two_line_label(base_label: str, full_label: str):
-    return author.hbo(
+    return author.unpointed(
         [
             base_label,
             mb_html.line_break(),
@@ -39,14 +39,14 @@ _NO_PAR_WEEKLY_ROW_TEXT = (
 
 STRUCTURAL_ROWS = [
     [
-        author.hbo("מ:ספר חדש"),
+        author.unpointed("מ:ספר חדש"),
         _NEW_BOOK_ROW_TEXT,
         # The text above used to conclude with the following, but I deemed it implied already
         # and I wanted to keep the text short:
         # Not used for 2 Sam., 2 Kgs., Neh., 2 Chr., nor for the 11 Minor Prophets after Hosea.
     ],
     [
-        author.hbo("מ:רווח בתרי עשר"),
+        author.unpointed("מ:רווח בתרי עשר"),
         "The \u201cverse 0\u201d partner to מ:רווח בתרי עשר בפסוק הראשון.",
     ],
     [
@@ -57,7 +57,7 @@ STRUCTURAL_ROWS = [
         "First-verse spacing marker for minor-prophetic book-parts. Parameter is the prophet name.",
     ],
     [
-        author.hbo("מ:רווח לספר בתהלים"),
+        author.unpointed("מ:רווח לספר בתהלים"),
         "The \u201cverse 0\u201d partner to מ:רווח לספר בתהלים בפסוק הראשון.",
     ],
     [
@@ -68,46 +68,46 @@ STRUCTURAL_ROWS = [
         "First-verse spacing marker for each Psalms division. Parameter is the division designation (e.g. ספר שני).",
     ],
     [
-        author.hbo_with_ellipsis_title(
+        author.unpointed_with_ellipsis_title(
             _NO_PAR_AT_STA_OF_CHAP21_ABBREV,
             tmpln.NO_PAR_AT_STA_OF_CHAP21,
         ),
         "No-$parashah chapter start (21 books). Tags chapters that begin without a coinciding $parashah division, so a space can be added before the first verse when presenting sequential text.",
     ],
     [
-        author.hbo_with_ellipsis_title(
+        author.unpointed_with_ellipsis_title(
             _NO_PAR_AT_STA_OF_CHAP03_ABBREV,
             tmpln.NO_PAR_AT_STA_OF_CHAP03,
         ),
         "No-$parashah chapter start (poetic books). Analogous to the previous template for Ps, Prov, and Job; redirects to ר4.",
     ],
     [
-        author.hbo_with_ellipsis_title(
+        author.unpointed_with_ellipsis_title(
             _NO_PAR_AT_STA_OF_WEEKLY_ABBREV,
             tmpln.NO_PAR_AT_STA_OF_WEEKLY,
         ),
         _NO_PAR_WEEKLY_ROW_TEXT,
     ],
     [
-        author.hbo("מ:עלייה"),
+        author.unpointed("מ:עלייה"),
         "Aliyah division marker. Identifies the Torah aliyah. Appears as an optional named parameter of מ:פסוק (עלייה=) and also as a standalone template.",
     ],
     [
-        author.hbo("מ:יישור-בשני-הצדדים"),
+        author.unpointed("מ:יישור-בשני-הצדדים"),
         "Full-justification block. Content following this template is justified on both sides (CSS distribution), including the last line. Used for content adjacent to song sections in the 21 books.",
     ],
     [
-        author.hbo("מ:יישור-בשני-הצדדים-סוף"),
+        author.unpointed("מ:יישור-בשני-הצדדים-סוף"),
         "Closes the full-justification block opened by מ:יישור-בשני-הצדדים.",
     ],
 ]
 
 NOTE_ROW = [
-    [author.hbo(tmpln.SCRDFF_TAR)],
+    [author.unpointed(tmpln.SCRDFF_TAR)],
     [
         "Targeted scroll-difference note (Torah and Esther only). See ",
         author.anchor_h(
-            ["dedicated page for ", author.hbo("מ:הערה-2")],
+            ["dedicated page for ", author.unpointed("מ:הערה-2")],
             _HAARAH_2_DOC,
         ),
         ".",
@@ -116,11 +116,11 @@ NOTE_ROW = [
 
 NOTE_LINKS_ROW = [
     [
-        author.hbo("מ:קישור בהערה"),
+        author.unpointed("מ:קישור בהערה"),
         "External URL link within the notes argument (param 2) of נוסח.",
     ],
     [
-        author.hbo("מ:קישור פנימי בהערה"),
+        author.unpointed("מ:קישור פנימי בהערה"),
         "Internal Wikisource link within the notes argument (param 2) of נוסח.",
     ],
 ]
@@ -133,47 +133,47 @@ NOTE_LINK_INTERNAL_ONLY_IN_DOCNOTE_PARAM2 = "Template מ:קישור פנימי �
 
 NAVIGATION_ROWS = [
     [
-        author.hbo("מ:פסוק"),
+        author.unpointed("מ:פסוק"),
         "Main navigation template. Appears before every verse (Column D). Required params: book name, chapter, verse (Hebrew letters). Optional: סדר= (seder), עלייה= (aliyah).",
     ],
     [
-        author.hbo("מ:שוליים"),
+        author.unpointed("מ:שוליים"),
         "Margin creator. Produces left and right margins for navigation symbols. Single parameter is the margin size (always 5 in Wikisource).",
     ],
     [
-        author.hbo("מ:שוליים-סוף"),
+        author.unpointed("מ:שוליים-סוף"),
         "Closes the margin block opened by מ:שוליים.",
     ],
     [
-        author.hbo("טעמי המקרא באינטרנט"),
+        author.unpointed("טעמי המקרא באינטרנט"),
         "Page header. Appears at the top of every page; links to TOC, introductions, and cantillation-font information.",
     ],
     [
-        author.hbo("מ:טעמי המקרא"),
+        author.unpointed("מ:טעמי המקרא"),
         "Font/style setter. Sets font and styling for pointed Hebrew. Optional parameter is font size (default 23pt; 18pt inside song-format tables).",
     ],
     [
-        author.hbo("מ:טעמי המקרא-סוף"),
+        author.unpointed("מ:טעמי המקרא-סוף"),
         "Closes the font/style block opened by מ:טעמי המקרא.",
     ],
     [
-        author.hbo("ניווט טעמים"),
+        author.unpointed("ניווט טעמים"),
         "Cantillation navigation template.",
     ],
     [
-        author.hbo("בסיס-משתמש"),
+        author.unpointed("בסיס-משתמש"),
         "Page-footer attribution. Notes that the page was originally edited elsewhere. Parameter is a link to the source page. Used mainly for Neviʼim/Ketuvim pages reconstructed from the Aleppo Codex.",
     ],
     [
-        author.hbo("קק"),
+        author.unpointed("קק"),
         "Dual-trope section link. Displays a link (↓↑) to one of the three dual-trope sections (two Decalogues + Saga of Reuben). Parameter is the link markup.",
     ],
     [
-        author.hbo("עוגן בשורה"),
+        author.unpointed("עוגן בשורה"),
         "In-line page anchor. Used for the three dual-trope sections and the bracketed nun-hafukha verses (Num 10:35–36).",
     ],
     [
-        author.hbo("צורות כתיבה בספרי אמ״ת"),
+        author.unpointed("צורות כתיבה בספרי אמ״ת"),
         "Page-footer note listing alternative poetic-book formatting versions. Used for 11 Psalms.",
     ],
 ]

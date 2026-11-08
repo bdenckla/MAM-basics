@@ -47,7 +47,7 @@ def build_body(*, claims: ClaimCollection):
         author.para(
             [
                 ["The ", mb_html.code("good_ending_plus"), " field houses"],
-                [" the ", author.hbo("מ:סיום בטוב"), " template,"],
+                [" the ", author.unpointed("מ:סיום בטוב"), " template,"],
                 " which is documented on ",
                 author.anchor_h("a dedicated page", _GOOD_ENDING_TMPL_DOC),
                 ".",

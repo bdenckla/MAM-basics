@@ -362,11 +362,11 @@ def s_chapter_verse(*, claims: ClaimCollection):
                     "The ",
                     mb_html.code("tmpl_params"),
                     " object is absent when the template has no parameters (e.g. ",
-                    author.hbo("פפ"),
+                    author.unpointed("פפ"),
                     ", ",
-                    author.hbo("סס"),
+                    author.unpointed("סס"),
                     ", ",
-                    author.hbo("מ:פסק"),
+                    author.unpointed("מ:פסק"),
                     ").",
                 ],
                 kind="format",
@@ -408,9 +408,9 @@ def s_chapter_verse(*, claims: ClaimCollection):
             semantics_payload=[
                 "Column D is an array that, if not empty, contains exactly"
                 " one element: either a ",
-                [author.hbo("מ:פסוק"), " template or "],
-                [author.hbo("מ:פסוק"), " wrapped in a "],
-                [author.hbo("נוסח"), " template."],
+                [author.unpointed("מ:פסוק"), " template or "],
+                [author.unpointed("מ:פסוק"), " wrapped in a "],
+                [author.unpointed("נוסח"), " template."],
                 " Column D is sparse: it omits source boundary records that do not "
                 "supply retained label data:",
             ],
@@ -423,7 +423,7 @@ def s_chapter_verse(*, claims: ClaimCollection):
             extra_bullets=[
                 [
                     "When Column D contains a direct (unwrapped) ",
-                    author.hbo("מ:פסוק"),
+                    author.unpointed("מ:פסוק"),
                     ", it always has at least one of the ",
                     mb_html.code("סדר"),
                     " or ",
@@ -433,18 +433,18 @@ def s_chapter_verse(*, claims: ClaimCollection):
                 ],
                 [
                     "When Column D contains a ",
-                    author.hbo("נוסח"),
+                    author.unpointed("נוסח"),
                     "-wrapped ",
-                    author.hbo("מ:פסוק"),
+                    author.unpointed("מ:פסוק"),
                     ", the ",
-                    author.hbo("נוסח"),
+                    author.unpointed("נוסח"),
                     " wrapper itself makes the entry interesting even if the inner ",
-                    author.hbo("מ:פסוק"),
+                    author.unpointed("מ:פסוק"),
                     " lacks named params.",
                 ],
                 [
                     "When there are neither named params nor ",
-                    author.hbo("נוסח"),
+                    author.unpointed("נוסח"),
                     " wrapping, the array is empty.",
                 ],
             ],
@@ -532,7 +532,7 @@ def s_common_templates(*, claims: ClaimCollection):
             special_letter_rows
             + [
                 [
-                    author.hbo("מ:אות-מיוחדת-במילה"),
+                    author.unpointed("מ:אות-מיוחדת-במילה"),
                     [
                         "Marks a whole word containing a special letter."
                         " (By “special” we mean large, small, or hung.)"
@@ -596,7 +596,7 @@ def s_common_templates(*, claims: ClaimCollection):
         author.para(
             [
                 "The template ",
-                author.hbo("מ:סילוק לפני געיה"),
+                author.unpointed("מ:סילוק לפני געיה"),
                 " identifies ",
                 _SILLUQ,
                 " before $meteg without changing $MAM’s text. "
@@ -607,11 +607,11 @@ def s_common_templates(*, claims: ClaimCollection):
         author.para(
             [
                 "Parameter 1 contains the full marked atom. Here, the stroke on ",
-                author.hbo("מ"),
+                author.unpointed("מ"),
                 " is ",
                 _SILLUQ,
                 ", and the later stroke on ",
-                author.hbo("ה"),
+                author.unpointed("ה"),
                 " is $meteg. Both strokes use U+05BD.",
             ]
         ),

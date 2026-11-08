@@ -65,11 +65,11 @@ def qere_first_details_para():
     return author.para(
         [
             "For ",
-            author.hbo("קו״כ"),
+            author.unpointed("קו״כ"),
             ", $MAM's rendered Wikisource page has the $qere first, then the $ketiv. "
             "This template is used where the pair follows a $maqaf, and in three "
             "verses where the pair follows a narrow-sense $paseq (",
-            author.hbo("מ:פסק"),
+            author.unpointed("מ:פסק"),
             f"): {_QK_AFTER_PASEQ_TEXT}.",
         ]
     )
@@ -77,42 +77,42 @@ def qere_first_details_para():
 
 KQ_ROWS = [
     [
-        author.hbo("כו״ק"),
+        author.unpointed("כו״ק"),
         [
             "Standard $ketiv_qere. Param 1 = unpointed $ketiv,"
             " param 2 = pointed $qere.",
         ],
     ],
     [
-        author.hbo("קו״כ"),
+        author.unpointed("קו״כ"),
         [
             "$Qere-first $ketiv_qere. Param 1 = unpointed $ketiv,"
             " param 2 = pointed $qere, as in ",
-            author.hbo("כו״ק"),
+            author.unpointed("כו״ק"),
             ".",
         ],
     ],
     [
-        author.hbo("מ:קו״כ-אם-2"),
+        author.unpointed("מ:קו״כ-אם-2"),
         [
             "Trivial $ketiv_qere. Param 1 = pointed $ketiv, param 2 = unpointed $ketiv,"
             " param 3 = pointed $qere.",
         ],
     ],
     [
-        author.hbo("כתיב ולא קרי"),
+        author.unpointed("כתיב ולא קרי"),
         [
             "$Ketiv without $qere. Param 1 = the $ketiv.",
         ],
     ],
     [
-        author.hbo("קרי ולא כתיב"),
+        author.unpointed("קרי ולא כתיב"),
         [
             "$Qere without $ketiv. Param 1 = the $qere.",
         ],
     ],
     [
-        author.hbo("מ:כו״ק מיוחד"),
+        author.unpointed("מ:כו״ק מיוחד"),
         [
             "Special $ketiv_qere. See ",
             author.anchor_h(
@@ -125,26 +125,26 @@ KQ_ROWS = [
 ]
 
 KQ_AM2_SUG_LIST = [
-    author.hbo('אל"ף נחה באמצע תיבה ולא נקראת'),
-    author.hbo('כתיב ה"א בסיומת של חולם'),
-    author.hbo("כתיב הוא קרי היא"),
-    author.hbo('כתיב חסר יו"ד בסיומת של קמץ ואחריו וי"ו'),
-    author.hbo("כתיב נער קרי נערה"),
+    author.unpointed('אל"ף נחה באמצע תיבה ולא נקראת'),
+    author.unpointed('כתיב ה"א בסיומת של חולם'),
+    author.unpointed("כתיב הוא קרי היא"),
+    author.unpointed('כתיב חסר יו"ד בסיומת של קמץ ואחריו וי"ו'),
+    author.unpointed("כתיב נער קרי נערה"),
 ]
 
 SPECIAL_LETTER_ROWS = [
     [
         [
-            author.hbo("מ:אות-ג"),
+            author.unpointed("מ:אות-ג"),
             mb_html.line_break(),
-            author.hbo("מ:אות-ק"),
+            author.unpointed("מ:אות-ק"),
             mb_html.line_break(),
-            author.hbo("מ:אות תלויה"),
+            author.unpointed("מ:אות תלויה"),
         ],
         "Large, small, or hung letter. Parameter is the letter along with any diacritical marks.",
     ],
     [
-        author.hbo("מ:נו״ן הפוכה"),
+        author.unpointed("מ:נו״ן הפוכה"),
         "Reversed (inverted) $nun.",
     ],
 ]
@@ -153,28 +153,28 @@ _ACCENT_TEMPLATE_NAMES_BY_ROW = (
     (
         ("מ:לגרמיה-2",),
         [
-            author.hbo("מ:לגרמיה-2"),
+            author.unpointed("מ:לגרמיה-2"),
             "$Legarmeh. The vertical line ׀ as $legarmeh (part of the word\u2019s cantillation). Shares Unicode with $paseq but differs in function.",
         ],
     ),
     (
         ("מ:פסק",),
         [
-            author.hbo("מ:פסק"),
+            author.unpointed("מ:פסק"),
             "$Paseq. The vertical line ׀ as $paseq in the narrow sense, i.e. $paseq as distinct from $legarmeh.",
         ],
     ),
     (
         ("מ:מקף אפור",),
         [
-            author.hbo("מ:מקף אפור"),
+            author.unpointed("מ:מקף אפור"),
             "Gray $maqaf. A $maqaf that is only implicit in the manuscript. Appears only in poetic verses.",
         ],
     ),
     (
         (tmpln.SILLUQ_BEFORE_METEG,),
         [
-            author.hbo(tmpln.SILLUQ_BEFORE_METEG),
+            author.unpointed(tmpln.SILLUQ_BEFORE_METEG),
             [
                 "Annotates ",
                 _SILLUQ,
@@ -189,16 +189,16 @@ _ACCENT_TEMPLATE_NAMES_BY_ROW = (
         ("מ:דחי", "מ:צינור"),
         [
             [
-                author.hbo("מ:דחי"),
+                author.unpointed("מ:דחי"),
                 mb_html.line_break(),
-                author.hbo("מ:צינור"),
+                author.unpointed("מ:צינור"),
             ],
             [
                 "$Dexi and $tsinnor variation. Presents both stress-helped and"
                 " non-stress-helped versions of a word: param 1 without the stress"
                 " helper and param 2 with it. Param 2 does not always stand on its"
                 " own. In a few calls of ",
-                author.hbo("מ:דחי"),
+                author.unpointed("מ:דחי"),
                 ", param 1 has a $meteg on the letter where param 2 has the $dexi"
                 " stress helper, and param 2 lacks that $meteg. Only with param 1"
                 " can an application tell that this helper is a special kind: one"
@@ -211,33 +211,33 @@ _ACCENT_TEMPLATE_NAMES_BY_ROW = (
     (
         ("גלגל-2",),
         [
-            author.hbo("גלגל-2"),
+            author.unpointed("גלגל-2"),
             "$Galgal. Distinguishes poetic from prose uses of Unicode $YBY.",
         ],
     ),
     (
         ("ירח בן יומו-2",),
         [
-            author.hbo("ירח בן יומו-2"),
+            author.unpointed("ירח בן יומו-2"),
             "$icap_Yby. Distinguishes prose from poetic uses of Unicode $YBY.",
         ],
     ),
     (
         ("אתנח הפוך",),
         [
-            author.hbo("אתנח הפוך"),
+            author.unpointed("אתנח הפוך"),
             "Atnaḥ hafukh. Helps distinguish this accent from $galgal/$yby.",
         ],
     ),
     (
         ("מ:קמץ",),
         [
-            author.hbo("מ:קמץ"),
+            author.unpointed("מ:קמץ"),
             [
                 "$Qamats variation. Named params: ",
-                author.hbo("ד="),
+                author.unpointed("ד="),
                 " (grammatical) and ",
-                author.hbo("ס="),
+                author.unpointed("ס="),
                 " (Sephardic tradition).",
             ],
         ],
@@ -245,10 +245,10 @@ _ACCENT_TEMPLATE_NAMES_BY_ROW = (
     (
         ("מ:טעם",),
         [
-            author.hbo("מ:טעם"),
+            author.unpointed("מ:טעם"),
             [
                 "Accent extractor. Drops the first code point of its argument, allowing an accent to be specified on a dummy letter for readability. Currently only used inside ",
-                author.hbo(
+                author.unpointed(
                     _TWO_ACCENTS_OF_QUPO_ABBREV,
                     {"title": tmpln.TWO_ACCENTS_OF_QUPO},
                 ),
@@ -259,7 +259,7 @@ _ACCENT_TEMPLATE_NAMES_BY_ROW = (
     (
         ("מ:כפול",),
         [
-            author.hbo("מ:כפול"),
+            author.unpointed("מ:כפול"),
             [
                 "Dual-trope span. See ",
                 author.anchor_h(
@@ -273,7 +273,7 @@ _ACCENT_TEMPLATE_NAMES_BY_ROW = (
     (
         (tmpln.TWO_ACCENTS_OF_QUPO,),
         [
-            author.hbo(
+            author.unpointed(
                 _TWO_ACCENTS_OF_QUPO_ABBREV,
                 {"title": tmpln.TWO_ACCENTS_OF_QUPO},
             ),
@@ -320,16 +320,16 @@ _R1_ROW_TEXT = (
 )
 
 POETIC_ROWS = [
-    [author.hbo("ר1"), _R1_ROW_TEXT],
-    [author.hbo("ר2"), "Following stich on its own line, two indents."],
-    [author.hbo("ר3"), "Following stich at line start, no indent."],
-    [author.hbo("ר4"), "New verse at line start, no indent."],
+    [author.unpointed("ר1"), _R1_ROW_TEXT],
+    [author.unpointed("ר2"), "Following stich on its own line, two indents."],
+    [author.unpointed("ר3"), "Following stich at line start, no indent."],
+    [author.unpointed("ר4"), "New verse at line start, no indent."],
     [
-        author.hbo("ר0"),
+        author.unpointed("ר0"),
         "Extra division point when a verse has an odd number of stiches, for even-column display.",
     ],
     [
-        author.hbo("פרשה-מרכז"),
+        author.unpointed("פרשה-מרכז"),
         "Centered title. For \u201ctitles\u201d in Job and Proverbs. Parameter is the title text.",
     ],
 ]

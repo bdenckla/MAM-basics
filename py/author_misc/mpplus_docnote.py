@@ -36,7 +36,9 @@ def build_body(*, claims: ClaimCollection):
     )
     plus_back_link = author.anchor_h("Reading $MAM-parsed-plus", _PLUS_DOC)
     return [
-        author.heading_level_1(["Documentation template (", author.hbo("נוסח"), ")"]),
+        author.heading_level_1(
+            ["Documentation template (", author.unpointed("נוסח"), ")"]
+        ),
         author.para(["← Back to ", plus_back_link]),
         author.para(
             [
@@ -61,31 +63,31 @@ def build_body(*, claims: ClaimCollection):
                 ],
                 [
                     "Paragraph and poetic-spacing markers: ",
-                    author.hbo("סס, ססס, פפ, פפפ, ר0, ר1, ר3, ר4"),
+                    author.unpointed("סס, ססס, פפ, פפפ, ר0, ר1, ר3, ר4"),
                     ".",
                 ],
                 [
                     "Explicit absence of a paragraph break: ",
-                    author.hbo("מ:אין פרשה בתחילת פרק"),
+                    author.unpointed("מ:אין פרשה בתחילת פרק"),
                     " or ",
-                    author.hbo("מ:אין פרשה בתחילת פרק בספרי אמ״ת"),
+                    author.unpointed("מ:אין פרשה בתחילת פרק בספרי אמ״ת"),
                     ".",
                 ],
                 [
                     "Punctuation: the literal string ",
                     author.hbo("׃"),
                     " (U+05C3, Hebrew punctuation $sof_pasuq) or the template ",
-                    author.hbo("מ:פסק"),
+                    author.unpointed("מ:פסק"),
                     ".",
                 ],
-                ["Inverted-$nun signs: ", author.hbo("מ:נו״ן הפוכה"), "."],
-                ["Verse labels: ", author.hbo("מ:פסוק"), " in column D."],
+                ["Inverted-$nun signs: ", author.unpointed("מ:נו״ן הפוכה"), "."],
+                ["Verse labels: ", author.unpointed("מ:פסוק"), " in column D."],
             ]
         ),
         author.para(
             [
                 "A target can also wrap one of these forms in ",
-                author.hbo("מ:הערה-2"),
+                author.unpointed("מ:הערה-2"),
                 ".",
             ]
         ),

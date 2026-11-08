@@ -46,20 +46,22 @@ def build_body(
     )
     dualcant_params = [
         [
-            author.hbo("כפול"),
+            author.unpointed("כפול"),
             "The content with dual trope (as found in the great codexes)",
         ],
         [
-            author.hbo("א"),
+            author.unpointed("א"),
             "First singly-accented strand (for Reuben: פשוטה; for Decalogues: תחתון cantillation)",
         ],
         [
-            author.hbo("ב"),
+            author.unpointed("ב"),
             "Second singly-accented strand (for Reuben: מדרשית; for Decalogues: עליון cantillation)",
         ],
     ]
     return [
-        author.heading_level_1(["Dual-trope — ", author.hbo("מ:כפול"), heading_suffix]),
+        author.heading_level_1(
+            ["Dual-trope — ", author.unpointed("מ:כפול"), heading_suffix]
+        ),
         author.para(["← Back to ", back_link]),
         author.para(
             [

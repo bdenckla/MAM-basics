@@ -203,7 +203,7 @@ has exactly 22 keys, <code>"1"</code> through <code>"22"</code>.</p>
 Non-numeric keys (e.g. <code>"ד"</code>, <code>"ס"</code>, <code>"סדר"</code>) represent named
 parameters like <code>ד=...</code> in the Wikitext.</p>
 <p>The <code>tmpl_params</code> object is absent when the template has no parameters (e.g.
-<bdi lang="hbo">פפ</bdi>, <bdi lang="hbo">סס</bdi>, <bdi lang="hbo">מ:פסק</bdi>).</p>
+<bdi>פפ</bdi>, <bdi>סס</bdi>, <bdi>מ:פסק</bdi>).</p>
 <h3>Template parameter values can be complex</h3>
 <p>Parameter values can themselves be strings, nested template objects, or arrays mixing strings and
 templates. See the dedicated page on <a href="mpplus-template-call-graphs.html">template
@@ -245,19 +245,16 @@ space.</li>
 Whitespace templates section below.)</li>
 </ul>
 <h3>D column (index 1): Verse label</h3>
-<p>Column D is an array that, if not empty, contains exactly one element: either a
-<bdi lang="hbo">מ:פסוק</bdi> template or <bdi lang="hbo">מ:פסוק</bdi> wrapped in a
-<bdi lang="hbo">נוסח</bdi> template. Column D is sparse: it omits source boundary records that do
-not supply retained label data:</p>
+<p>Column D is an array that, if not empty, contains exactly one element: either a <bdi>מ:פסוק</bdi>
+template or <bdi>מ:פסוק</bdi> wrapped in a <bdi>נוסח</bdi> template. Column D is sparse: it omits
+source boundary records that do not supply retained label data:</p>
 <ul>
-<li>When Column D contains a direct (unwrapped) <bdi lang="hbo">מ:פסוק</bdi>, it always has at least
-one of the <code>סדר</code> or <code>עלייה</code> named params. Direct calls without named params do
-not appear, as they are considered uninteresting.</li>
-<li>When Column D contains a <bdi lang="hbo">נוסח</bdi>-wrapped <bdi lang="hbo">מ:פסוק</bdi>, the
-<bdi lang="hbo">נוסח</bdi> wrapper itself makes the entry interesting even if the inner
-<bdi lang="hbo">מ:פסוק</bdi> lacks named params.</li>
-<li>When there are neither named params nor <bdi lang="hbo">נוסח</bdi> wrapping, the array is
-empty.</li>
+<li>When Column D contains a direct (unwrapped) <bdi>מ:פסוק</bdi>, it always has at least one of the
+<code>סדר</code> or <code>עלייה</code> named params. Direct calls without named params do not
+appear, as they are considered uninteresting.</li>
+<li>When Column D contains a <bdi>נוסח</bdi>-wrapped <bdi>מ:פסוק</bdi>, the <bdi>נוסח</bdi> wrapper
+itself makes the entry interesting even if the inner <bdi>מ:פסוק</bdi> lacks named params.</li>
+<li>When there are neither named params nor <bdi>נוסח</bdi> wrapping, the array is empty.</li>
 </ul>
 <p>For example, here is the D column value for Job 1:1, kept because of its <code>סדר</code>
 param:</p>
@@ -282,13 +279,13 @@ the maintained textual source.</p>
 <th class="wide-col">Purpose</th>
 </tr>
 <tr>
-<td class="template-col"><bdi lang="hbo">מ:פסוק</bdi></td>
+<td class="template-col"><bdi>מ:פסוק</bdi></td>
 <td class="wide-col">Verse label. Takes book name, chapter, and verse as positional params. Optional
-named params include <bdi lang="hbo">סדר=</bdi> (seder number) and <bdi lang="hbo">עלייה=</bdi>
-(value is a <bdi lang="hbo">מ:עלייה</bdi> template).</td>
+named params include <bdi>סדר=</bdi> (seder number) and <bdi>עלייה=</bdi> (value is a
+<bdi>מ:עלייה</bdi> template).</td>
 </tr>
 <tr>
-<td class="template-col"><bdi lang="hbo">מ:עלייה</bdi></td>
+<td class="template-col"><bdi>מ:עלייה</bdi></td>
 <td class="wide-col">Torah <span class="romanized">aliyah</span> identifier. See
 <a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/misc/notes_on_aliyot.html">notes on
 <span class="romanized">aliyah</span> portions</a>.</td>
@@ -301,44 +298,44 @@ named params include <bdi lang="hbo">סדר=</bdi> (seder number) and <bdi lang=
 <th class="wide-col">Purpose</th>
 </tr>
 <tr>
-<td class="template-col"><bdi lang="hbo">כו״ק</bdi></td>
+<td class="template-col"><bdi>כו״ק</bdi></td>
 <td class="wide-col">Standard <span class="romanized">ketiv/qere</span>. Param 1 = unpointed
 <span class="romanized">ketiv</span>, param 2 = pointed <span class="romanized">qere</span>.</td>
 </tr>
 <tr>
-<td class="template-col"><bdi lang="hbo">קו״כ</bdi></td>
+<td class="template-col"><bdi>קו״כ</bdi></td>
 <td class="wide-col"><span class="romanized">Qere</span>-first
 <span class="romanized">ketiv/qere</span>. Param 1 = unpointed <span class="romanized">ketiv</span>,
-param 2 = pointed <span class="romanized">qere</span>, as in <bdi lang="hbo">כו״ק</bdi>.</td>
+param 2 = pointed <span class="romanized">qere</span>, as in <bdi>כו״ק</bdi>.</td>
 </tr>
 <tr>
-<td class="template-col"><bdi lang="hbo">מ:קו״כ-אם-2</bdi></td>
+<td class="template-col"><bdi>מ:קו״כ-אם-2</bdi></td>
 <td class="wide-col">Trivial <span class="romanized">ketiv/qere</span>. Param 1 = pointed
 <span class="romanized">ketiv</span>, param 2 = unpointed <span class="romanized">ketiv</span>,
 param 3 = pointed <span class="romanized">qere</span>. See <a href="mpplus_kq_am2.html">its
 dedicated page</a>.</td>
 </tr>
 <tr>
-<td class="template-col"><bdi lang="hbo">כתיב ולא קרי</bdi></td>
+<td class="template-col"><bdi>כתיב ולא קרי</bdi></td>
 <td class="wide-col"><span class="romanized">Ketiv</span> without
 <span class="romanized">qere</span>. Param 1 = the <span class="romanized">ketiv</span>.</td>
 </tr>
 <tr>
-<td class="template-col"><bdi lang="hbo">קרי ולא כתיב</bdi></td>
+<td class="template-col"><bdi>קרי ולא כתיב</bdi></td>
 <td class="wide-col"><span class="romanized">Qere</span> without
 <span class="romanized">ketiv</span>. Param 1 = the <span class="romanized">qere</span>.</td>
 </tr>
 <tr>
-<td class="template-col"><bdi lang="hbo">מ:כו״ק מיוחד</bdi></td>
+<td class="template-col"><bdi>מ:כו״ק מיוחד</bdi></td>
 <td class="wide-col">Special <span class="romanized">ketiv/qere</span>. See
 <a href="mpplus_kq_special.html">its dedicated page</a>.</td>
 </tr>
 </table>
-<p>For <bdi lang="hbo">קו״כ</bdi>, <abbr class="small-caps">MAM</abbr>'s rendered Wikisource page
-has the <span class="romanized">qere</span> first, then the <span class="romanized">ketiv</span>.
-This template is used where the pair follows a <span class="romanized">maqaf</span>, and in three
-verses where the pair follows a narrow-sense <span class="romanized">paseq</span>
-(<bdi lang="hbo">מ:פסק</bdi>): 1 Samuel 2:16, Jeremiah 4:19 and Ezekiel 35:12.</p>
+<p>For <bdi>קו״כ</bdi>, <abbr class="small-caps">MAM</abbr>'s rendered Wikisource page has the
+<span class="romanized">qere</span> first, then the <span class="romanized">ketiv</span>. This
+template is used where the pair follows a <span class="romanized">maqaf</span>, and in three verses
+where the pair follows a narrow-sense <span class="romanized">paseq</span> (<bdi>מ:פסק</bdi>): 1
+Samuel 2:16, Jeremiah 4:19 and Ezekiel 35:12.</p>
 <p>Example of standard <span class="romanized">ketiv/qere</span> (Genesis 8:17):</p>
 <pre class="json-block"><span class="tok-punct">{</span><span class="tok-punct"></span>
 <span class="tok-punct">    </span><span class="tok-key">&quot;tmpl_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;כו״ק&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
@@ -351,18 +348,18 @@ letter templates</h3>
 <th class="wide-col">Purpose</th>
 </tr>
 <tr>
-<td class="template-col"><bdi lang="hbo">מ:אות-ג</bdi><br>
-<bdi lang="hbo">מ:אות-ק</bdi><br>
-<bdi lang="hbo">מ:אות תלויה</bdi></td>
+<td class="template-col"><bdi>מ:אות-ג</bdi><br>
+<bdi>מ:אות-ק</bdi><br>
+<bdi>מ:אות תלויה</bdi></td>
 <td class="wide-col">Large, small, or hung letter. Parameter is the letter along with any
 diacritical marks.</td>
 </tr>
 <tr>
-<td class="template-col"><bdi lang="hbo">מ:נו״ן הפוכה</bdi></td>
+<td class="template-col"><bdi>מ:נו״ן הפוכה</bdi></td>
 <td class="wide-col">Reversed (inverted) <span class="romanized">nun</span>.</td>
 </tr>
 <tr>
-<td class="template-col"><bdi lang="hbo">מ:אות-מיוחדת-במילה</bdi></td>
+<td class="template-col"><bdi>מ:אות-מיוחדת-במילה</bdi></td>
 <td class="wide-col">Marks a whole word containing a special letter. (By “special” we mean large,
 small, or hung.) See <a href="mpplus_aot.html">its dedicated page</a>.</td>
 </tr>
@@ -374,25 +371,25 @@ small, or hung.) See <a href="mpplus_aot.html">its dedicated page</a>.</td>
 <th class="wide-col">Purpose</th>
 </tr>
 <tr>
-<td class="template-col"><bdi lang="hbo">מ:לגרמיה-2</bdi></td>
+<td class="template-col"><bdi>מ:לגרמיה-2</bdi></td>
 <td class="wide-col"><span class="romanized">Legarmeh</span>. The vertical line ׀ as
 <span class="romanized">legarmeh</span> (part of the word’s cantillation). Shares Unicode with
 <span class="romanized">paseq</span> but differs in function.</td>
 </tr>
 <tr>
-<td class="template-col"><bdi lang="hbo">מ:פסק</bdi></td>
+<td class="template-col"><bdi>מ:פסק</bdi></td>
 <td class="wide-col"><span class="romanized">Paseq</span>. The vertical line ׀ as
 <span class="romanized">paseq</span> in the narrow sense, i.e. <span class="romanized">paseq</span>
 as distinct from <span class="romanized">legarmeh</span>.</td>
 </tr>
 <tr>
-<td class="template-col"><bdi lang="hbo">מ:מקף אפור</bdi></td>
+<td class="template-col"><bdi>מ:מקף אפור</bdi></td>
 <td class="wide-col">Gray <span class="romanized">maqaf</span>. A
 <span class="romanized">maqaf</span> that is only implicit in the manuscript. Appears only in poetic
 verses.</td>
 </tr>
 <tr>
-<td class="template-col"><bdi lang="hbo">מ:סילוק לפני געיה</bdi></td>
+<td class="template-col"><bdi>מ:סילוק לפני געיה</bdi></td>
 <td class="wide-col">Annotates <span class="romanized">silluq</span> before
 <span class="romanized">meteg</span>. Param 1 is the full marked atom; param 2 has its letters and
 one U+05BD identifying <span class="romanized">silluq</span>, without other marks or
@@ -408,13 +405,13 @@ templates.</p>
 <th class="wide-col">Purpose</th>
 </tr>
 <tr>
-<td class="template-col"><bdi lang="hbo">מ:דחי</bdi><br>
-<bdi lang="hbo">מ:צינור</bdi></td>
+<td class="template-col"><bdi>מ:דחי</bdi><br>
+<bdi>מ:צינור</bdi></td>
 <td class="wide-col"><span class="romanized">Deḥi</span> and <span class="romanized">tsinnor</span>
 variation. Presents both stress-helped and non-stress-helped versions of a word: param 1 without the
 stress helper and param 2 with it. Param 2 does not always stand on its own. In a few calls of
-<bdi lang="hbo">מ:דחי</bdi>, param 1 has a <span class="romanized">meteg</span> on the letter where
-param 2 has the <span class="romanized">deḥi</span> stress helper, and param 2 lacks that
+<bdi>מ:דחי</bdi>, param 1 has a <span class="romanized">meteg</span> on the letter where param 2 has
+the <span class="romanized">deḥi</span> stress helper, and param 2 lacks that
 <span class="romanized">meteg</span>. Only with param 1 can an application tell that this helper is
 a special kind: one whose stress a <span class="romanized">meteg</span> already indicates. Some
 applications may want to read param 2's helper with param 1's help, as
@@ -422,76 +419,72 @@ applications may want to read param 2's helper with param 1's help, as
 <span class="romanized">meteg</span> kept; others may not.</td>
 </tr>
 <tr>
-<td class="template-col"><bdi lang="hbo">מ:קמץ</bdi></td>
-<td class="wide-col"><span class="romanized">Qamats</span> variation. Named params:
-<bdi lang="hbo">ד=</bdi> (grammatical) and <bdi lang="hbo">ס=</bdi> (Sephardic tradition).</td>
+<td class="template-col"><bdi>מ:קמץ</bdi></td>
+<td class="wide-col"><span class="romanized">Qamats</span> variation. Named params: <bdi>ד=</bdi>
+(grammatical) and <bdi>ס=</bdi> (Sephardic tradition).</td>
 </tr>
 <tr>
-<td class="template-col"><bdi lang="hbo">מ:כפול</bdi></td>
+<td class="template-col"><bdi>מ:כפול</bdi></td>
 <td class="wide-col">Dual-trope span. See <a href="mpplus_dualcant.html">its dedicated
 page</a>.</td>
 </tr>
 </table>
 <h3>Whitespace templates</h3>
 <p>A whitespace template can be the only separator between adjacent Scripture strings: the strings
-before and after <bdi lang="hbo">מ:ששש</bdi> or <bdi lang="hbo">ססס</bdi> can contain no literal
-whitespace at that boundary. A plain-text projection that does not preserve layout must therefore
-supply at least one separator; a layout-preserving renderer implements the documented space or
-break. Dropping the template fuses separate atoms, while collecting a descriptive parameter such as
-<bdi lang="hbo">פסקא באמצע פסוק</bdi> inserts documentation into Scripture. This rule does not apply
-to narpas: <bdi lang="hbo">מ:פסק</bdi> is a punctuation template, and its missing literal whitespace
-prescribes no display spacing.</p>
+before and after <bdi>מ:ששש</bdi> or <bdi>ססס</bdi> can contain no literal whitespace at that
+boundary. A plain-text projection that does not preserve layout must therefore supply at least one
+separator; a layout-preserving renderer implements the documented space or break. Dropping the
+template fuses separate atoms, while collecting a descriptive parameter such as <bdi>פסקא באמצע
+פסוק</bdi> inserts documentation into Scripture. This rule does not apply to narpas:
+<bdi>מ:פסק</bdi> is a punctuation template, and its missing literal whitespace prescribes no display
+spacing.</p>
 <table class="center">
 <tr>
 <th class="template-col">Template</th>
 <th class="wide-col">Purpose</th>
 </tr>
 <tr>
-<td class="template-col"><bdi lang="hbo">פפ</bdi> / <bdi lang="hbo">פפפ</bdi> /
-<bdi lang="hbo">סס</bdi> / <bdi lang="hbo">ססס</bdi></td>
+<td class="template-col"><bdi>פפ</bdi> / <bdi>פפפ</bdi> / <bdi>סס</bdi> / <bdi>ססס</bdi></td>
 <td class="wide-col"><span class="romanized">Parashah</span> <span class="romanized">petuḥah</span>
 / <span class="romanized">setumah</span> variants.</td>
 </tr>
 <tr>
-<td class="template-col"><bdi lang="hbo">מ:ששש</bdi></td>
+<td class="template-col"><bdi>מ:ששש</bdi></td>
 <td class="wide-col"><span class="romanized">Setumah</span>-like section divider for the 8 shirah
 (song) sections in the 21 prose books; analogous to ססס.</td>
 </tr>
 <tr>
-<td class="template-col"><bdi lang="hbo">ר0–ר4</bdi></td>
+<td class="template-col"><bdi>ר0–ר4</bdi></td>
 <td class="wide-col">Poetic spacing: See <a href="mpplus_poetic_spacing.html">their dedicated
 page</a>.</td>
 </tr>
 <tr>
-<td class="template-col"><bdi lang="hbo">מ:ספר חדש</bdi></td>
+<td class="template-col"><bdi>מ:ספר חדש</bdi></td>
 <td class="wide-col">New-book marker. Placed at the start of each of the 24 books. Parameter is the
 book name.</td>
 </tr>
 <tr>
-<td class="template-col"><bdi lang="hbo" title="מ:רווח בתרי עשר בפסוק הראשון">מ:רווח בתרי עשר<br>
+<td class="template-col"><bdi title="מ:רווח בתרי עשר בפסוק הראשון">מ:רווח בתרי עשר<br>
 בפסוק הראשון</bdi></td>
 <td class="wide-col">First-verse spacing marker for minor-prophetic book-parts. Parameter is the
 prophet name.</td>
 </tr>
 <tr>
-<td class="template-col"><bdi lang="hbo" title="מ:רווח לספר בתהלים בפסוק הראשון">מ:רווח לספר
-בתהלים<br>
+<td class="template-col"><bdi title="מ:רווח לספר בתהלים בפסוק הראשון">מ:רווח לספר בתהלים<br>
 בפסוק הראשון</bdi></td>
 <td class="wide-col">First-verse spacing marker for each Psalms division. Parameter is the division
 designation (e.g. ספר שני).</td>
 </tr>
 </table>
-<p>When <bdi lang="hbo">פפ</bdi>, <bdi lang="hbo">פפפ</bdi>, <bdi lang="hbo">סס</bdi> or
-<bdi lang="hbo">ססס</bdi> marks a <span class="romanized">parashah</span> break within a verse
-(rather than between verses), it takes the argument <bdi lang="hbo">פסקא באמצע פסוק</bdi>, with
-three rule-based exceptions in column E:</p>
+<p>When <bdi>פפ</bdi>, <bdi>פפפ</bdi>, <bdi>סס</bdi> or <bdi>ססס</bdi> marks a
+<span class="romanized">parashah</span> break within a verse (rather than between verses), it takes
+the argument <bdi>פסקא באמצע פסוק</bdi>, with three rule-based exceptions in column E:</p>
 <ul>
-<li>a <bdi lang="hbo">ססס</bdi> between the items of a list (as in 2 Samuel 23; noted in
+<li>a <bdi>ססס</bdi> between the items of a list (as in 2 Samuel 23; noted in
 <abbr class="small-caps">MAM</abbr>'s Introduction)</li>
-<li>a break inside <bdi lang="hbo">מ:כפול</bdi>, tagged only in the strand where it falls within a
-verse</li>
-<li>the <bdi lang="hbo">ססס</bdi> beside an inverted <span class="romanized">nun</span>, at the edge
-of a verse (Numbers 10:35–36)</li>
+<li>a break inside <bdi>מ:כפול</bdi>, tagged only in the strand where it falls within a verse</li>
+<li>the <bdi>ססס</bdi> beside an inverted <span class="romanized">nun</span>, at the edge of a verse
+(Numbers 10:35–36)</li>
 </ul>
 <p>Many editions will choose to skip poetic formatting by treating ר0–ר4 as simple word spaces.</p>
 <h3>Lack-of-whitespace templates</h3>
@@ -501,20 +494,20 @@ of a verse (Numbers 10:35–36)</li>
 <th class="wide-col">Purpose</th>
 </tr>
 <tr>
-<td class="template-col"><bdi lang="hbo" title="מ:אין פרשה בתחילת פרק">מ:אין פרשה
+<td class="template-col"><bdi title="מ:אין פרשה בתחילת פרק">מ:אין פרשה
 <span class="ellipsis-title">...</span> פרק</bdi></td>
 <td class="wide-col">No-<span class="romanized">parashah</span> chapter start (21 books). Tags
 chapters that begin without a coinciding <span class="romanized">parashah</span> division, so a
 space can be added before the first verse when presenting sequential text.</td>
 </tr>
 <tr>
-<td class="template-col"><bdi lang="hbo" title="מ:אין פרשה בתחילת פרק בספרי אמ״ת">מ:אין פרשה
+<td class="template-col"><bdi title="מ:אין פרשה בתחילת פרק בספרי אמ״ת">מ:אין פרשה
 <span class="ellipsis-title">...</span> אמ״ת</bdi></td>
 <td class="wide-col">No-<span class="romanized">parashah</span> chapter start (poetic books).
 Analogous to the previous template for Ps, Prov, and Job; redirects to ר4.</td>
 </tr>
 <tr>
-<td class="template-col"><bdi lang="hbo" title="מ:אין רווח של פרשה בתחילת פרשת השבוע">מ:אין רווח
+<td class="template-col"><bdi title="מ:אין רווח של פרשה בתחילת פרשת השבוע">מ:אין רווח
 <span class="ellipsis-title">...</span> השבוע</bdi></td>
 <td class="wide-col">No-<span class="romanized">parashah</span> weekly-portion start. Used only at
 Gen 47:28 (the only Torah weekly portion that begins without a
@@ -528,9 +521,9 @@ Gen 47:28 (the only Torah weekly portion that begins without a
 <th class="wide-col">Purpose</th>
 </tr>
 <tr>
-<td class="template-col"><bdi lang="hbo">מ:הערה-2</bdi></td>
+<td class="template-col"><bdi>מ:הערה-2</bdi></td>
 <td class="wide-col">Targeted scroll-difference note (Torah and Esther only). See
-<a href="mpplus_haarah_2.html">dedicated page for <bdi lang="hbo">מ:הערה-2</bdi></a>.</td>
+<a href="mpplus_haarah_2.html">dedicated page for <bdi>מ:הערה-2</bdi></a>.</td>
 </tr>
 </table>
 <h3>Documentation templates</h3>
@@ -540,39 +533,38 @@ Gen 47:28 (the only Torah weekly portion that begins without a
 <th class="wide-col">Purpose</th>
 </tr>
 <tr>
-<td class="template-col"><bdi lang="hbo">נוסח</bdi></td>
+<td class="template-col"><bdi>נוסח</bdi></td>
 <td class="wide-col">Documentation template. See <a href="mpplus_docnote.html">its dedicated
 page</a>.</td>
 </tr>
 <tr>
-<td class="template-col"><bdi lang="hbo">ש</bdi></td>
+<td class="template-col"><bdi>ש</bdi></td>
 <td class="wide-col">Doc-part separator within the notes argument (param 2) of נוסח.</td>
 </tr>
 <tr>
-<td class="template-col"><bdi lang="hbo">מודגש</bdi></td>
+<td class="template-col"><bdi>מודגש</bdi></td>
 <td class="wide-col">Bold styling within the notes argument (param 2) of נוסח.</td>
 </tr>
 <tr>
-<td class="template-col"><bdi lang="hbo">מ:קישור בהערה</bdi></td>
+<td class="template-col"><bdi>מ:קישור בהערה</bdi></td>
 <td class="wide-col">External URL link within the notes argument (param 2) of נוסח.</td>
 </tr>
 <tr>
-<td class="template-col"><bdi lang="hbo">מ:קישור פנימי בהערה</bdi></td>
+<td class="template-col"><bdi>מ:קישור פנימי בהערה</bdi></td>
 <td class="wide-col">Internal Wikisource link within the notes argument (param 2) of נוסח.</td>
 </tr>
 </table>
-<p>For <bdi lang="hbo">מ:קישור פנימי בהערה</bdi>, parameter 1 is a Wikisource-internal target (path
-or fragment) rendered under <code>https://he.wikisource.org/wiki/</code>; for
-<bdi lang="hbo">מ:קישור בהערה</bdi>, parameter 1 is an external URL used as-is.</p>
+<p>For <bdi>מ:קישור פנימי בהערה</bdi>, parameter 1 is a Wikisource-internal target (path or
+fragment) rendered under <code>https://he.wikisource.org/wiki/</code>; for <bdi>מ:קישור בהערה</bdi>,
+parameter 1 is an external URL used as-is.</p>
 <h3><span class="romanized">Silluq</span> before <span class="romanized">meteg</span></h3>
 <p>Currently <abbr class="small-caps">MAM</abbr> has two annotated cases of
 <span class="romanized">silluq</span> before <span class="romanized">meteg</span>: 1 Kings 7:37 and
 Job 4:12. Each has exactly one <span class="romanized">meteg</span> after
 <span class="romanized">silluq</span>.</p>
-<p>The template <bdi lang="hbo">מ:סילוק לפני געיה</bdi> identifies
-<span class="romanized">silluq</span> before <span class="romanized">meteg</span> without changing
-<abbr class="small-caps">MAM</abbr>’s text. For example, <abbr class="small-caps">MAM</abbr>’s
-annotation for Job 4:12 is:</p>
+<p>The template <bdi>מ:סילוק לפני געיה</bdi> identifies <span class="romanized">silluq</span> before
+<span class="romanized">meteg</span> without changing <abbr class="small-caps">MAM</abbr>’s text.
+For example, <abbr class="small-caps">MAM</abbr>’s annotation for Job 4:12 is:</p>
 <pre class="json-block"><span class="tok-punct">{</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-key">&quot;tmpl_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;מ:סילוק לפני געיה&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-key">&quot;tmpl_params&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="tok-punct"></span>
@@ -580,8 +572,8 @@ annotation for Job 4:12 is:</p>
 <span class="tok-punct">    </span><span class="tok-key">&quot;2&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb pointed">&quot;מֽנהו&quot;</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-punct">}</span><span class="tok-punct"></span>
 <span class="tok-punct">}</span><span class="tok-punct"></span></pre><p>Parameter
-1 contains the full marked atom. Here, the stroke on <bdi lang="hbo">מ</bdi> is
-<span class="romanized">silluq</span>, and the later stroke on <bdi lang="hbo">ה</bdi> is
+1 contains the full marked atom. Here, the stroke on <bdi>מ</bdi> is
+<span class="romanized">silluq</span>, and the later stroke on <bdi>ה</bdi> is
 <span class="romanized">meteg</span>. Both strokes use U+05BD.</p>
 <p>Parameter 2 repeats the Hebrew letters with only the <span class="romanized">silluq</span>
 stroke, identifying which stroke marks the stressed syllable.</p>

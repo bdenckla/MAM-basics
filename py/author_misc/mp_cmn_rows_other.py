@@ -12,7 +12,7 @@ _DOCNOTE_DOC = "mpplus_docnote.html"
 
 def _docnote_row(docnote_doc):
     return [
-        author.hbo("נוסח"),
+        author.unpointed("נוסח"),
         [
             "Documentation template. See ",
             author.anchor_h(
@@ -27,11 +27,11 @@ def _docnote_row(docnote_doc):
 def _docnote_note_links_rows():
     return [
         [
-            author.hbo("מ:קישור בהערה"),
+            author.unpointed("מ:קישור בהערה"),
             "External URL link within the notes argument (param 2) of נוסח.",
         ],
         [
-            author.hbo("מ:קישור פנימי בהערה"),
+            author.unpointed("מ:קישור פנימי בהערה"),
             "Internal Wikisource link within the notes argument (param 2) of נוסח.",
         ],
     ]
@@ -39,7 +39,7 @@ def _docnote_note_links_rows():
 
 def _good_ending_row(good_ending_doc):
     return [
-        author.hbo("מ:סיום בטוב"),
+        author.unpointed("מ:סיום בטוב"),
         [
             "Good ending. See ",
             author.anchor_h(
@@ -65,53 +65,53 @@ _SHIRAH_ROW_TEXT = (
 
 OTHER_ROWS = [
     [
-        [author.hbo("פפ"), " / ", author.hbo("סס")],
+        [author.unpointed("פפ"), " / ", author.unpointed("סס")],
         "$Parashah $petuxah / $setumah (in column C, the verse separator, or column E, the verse proper; never in column D)",
     ],
     [
-        author.hbo("מ:אות מנוקדת"),
+        author.unpointed("מ:אות מנוקדת"),
         "Dotted letter/word. Marks words with masoretic dots above/below.",
     ],
     _good_ending_row(_GOOD_ENDING_TMPL_DOC),
     [
-        author.hbo("מ:טעם ומתג באות אחת"),
+        author.unpointed("מ:טעם ומתג באות אחת"),
         _METEG_ACCENT_ROW_TEXT,
     ],
     [
-        author.hbo("מ:גרש ותלישא גדולה"),
+        author.unpointed("מ:גרש ותלישא גדולה"),
         "Combined $geresh + $telisha gedolah (2 words, 3 uses). No parameters.",
     ],
     [
-        author.hbo("מ:גרשיים ותלישא גדולה"),
+        author.unpointed("מ:גרשיים ותלישא גדולה"),
         "Combined gershayim + $telisha gedolah (3 words, 4 uses). No parameters.",
     ],
     [
-        author.hbo("ססס"),
+        author.unpointed("ססס"),
         "Closed $parashah ($setumah) variant appearing mid-line after a blank space, rather than at the start of the next line.",
     ],
     [
-        author.hbo("פפפ"),
+        author.unpointed("פפפ"),
         "Open $parashah ($petuxah) variant starting at the very top of the next line, without an intervening blank line.",
     ],
     [
-        author.hbo("רווח בסוף שורה"),
+        author.unpointed("רווח בסוף שורה"),
         "Large end-of-line spacers supporting פפפ; fills remaining line space so the next $parashah can start at the top of the following line.",
     ],
     [
-        author.hbo("מ:ששש"),
+        author.unpointed("מ:ששש"),
         _SHIRAH_ROW_TEXT,
     ],
     [
-        author.hbo("מ:כל קמץ קטן מרכא"),
+        author.unpointed("מ:כל קמץ קטן מרכא"),
         "Font-rendering workaround for the word כל with $qamats qatan and $merkha in Taamey Frank CLM (2 occurrences: Ps 35:10, Prov 19:7).",
     ],
     _docnote_row(_DOCNOTE_DOC),
     [
-        author.hbo("מודגש"),
+        author.unpointed("מודגש"),
         "Bold styling within the notes argument (param 2) of נוסח.",
     ],
     [
-        author.hbo("ש"),
+        author.unpointed("ש"),
         "Doc-part separator within the notes argument (param 2) of נוסח.",
     ],
 ]
@@ -235,13 +235,13 @@ def whitespace_rows_shared():
     return [
         [
             [
-                author.hbo("פפ"),
+                author.unpointed("פפ"),
                 " / ",
-                author.hbo("פפפ"),
+                author.unpointed("פפפ"),
                 " / ",
-                author.hbo("סס"),
+                author.unpointed("סס"),
                 " / ",
-                author.hbo("ססס"),
+                author.unpointed("ססס"),
             ],
             "$Parashah $petuxah / $setumah variants.",
         ],
@@ -254,16 +254,16 @@ def parashah_break_details_block():
         author.para(
             [
                 "When ",
-                author.hbo("פפ"),
+                author.unpointed("פפ"),
                 ", ",
-                author.hbo("פפפ"),
+                author.unpointed("פפפ"),
                 ", ",
-                author.hbo("סס"),
+                author.unpointed("סס"),
                 " or ",
-                author.hbo("ססס"),
+                author.unpointed("ססס"),
                 " marks a $parashah break within a verse (rather than between "
                 "verses), it takes the argument ",
-                author.hbo("פסקא באמצע פסוק"),
+                author.unpointed("פסקא באמצע פסוק"),
                 ", with three rule-based exceptions in column E:",
             ]
         ),
@@ -271,18 +271,18 @@ def parashah_break_details_block():
             [
                 [
                     "a ",
-                    author.hbo("ססס"),
+                    author.unpointed("ססס"),
                     " between the items of a list"
                     " (as in 2 Samuel 23; noted in $MAM's Introduction)",
                 ],
                 [
                     "a break inside ",
-                    author.hbo("מ:כפול"),
+                    author.unpointed("מ:כפול"),
                     ", tagged only in the strand where it falls within a verse",
                 ],
                 [
                     "the ",
-                    author.hbo("ססס"),
+                    author.unpointed("ססס"),
                     " beside an inverted $nun, at the edge of a verse"
                     " (Numbers 10:35–36)",
                 ],

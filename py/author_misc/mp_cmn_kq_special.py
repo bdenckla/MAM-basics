@@ -40,7 +40,7 @@ _claim_def = _claims_core.claim_def
 
 KQ_SPECIAL_ROWS = [
     [
-        author.hbo("כו״ק בין שני מקפים"),
+        author.unpointed("כו״ק בין שני מקפים"),
         [
             "$icap_Ketiv_qere between two $maqaf marks." " See FOI section ",
             _kq_simple_foi_link_for_sug("כו״ק בין שני מקפים"),
@@ -48,7 +48,7 @@ KQ_SPECIAL_ROWS = [
         ],
     ],
     [
-        author.hbo("כו״ק כתיב מילה חדה וקרי תרתין מילין"),
+        author.unpointed("כו״ק כתיב מילה חדה וקרי תרתין מילין"),
         [
             "1-atom $ketiv, 2-atom $qere. See the rows of FOI section ",
             _kq_simple_foi_link_for_sug("כו״ק כתיב מילה חדה וקרי תרתין מילין"),
@@ -56,7 +56,7 @@ KQ_SPECIAL_ROWS = [
         ],
     ],
     [
-        author.hbo("כו״ק כתיב מילה חדה וקרי תרתין מילין בין שני מקפים"),
+        author.unpointed("כו״ק כתיב מילה חדה וקרי תרתין מילין בין שני מקפים"),
         [
             "Same as above but between $maqaf marks." " See the rows of FOI section ",
             _kq_simple_foi_link_for_sug(
@@ -66,7 +66,7 @@ KQ_SPECIAL_ROWS = [
         ],
     ],
     [
-        author.hbo("כו״ק כתיב תרתין מילין וקרי מילה חדה"),
+        author.unpointed("כו״ק כתיב תרתין מילין וקרי מילה חדה"),
         [
             "2-atom $ketiv, 1-atom $qere. See FOI section ",
             _kq_simple_foi_link_for_sug("כו״ק כתיב תרתין מילין וקרי מילה חדה"),
@@ -74,10 +74,10 @@ KQ_SPECIAL_ROWS = [
         ],
     ],
     [
-        author.hbo("קו״כ כתיב מילה חדה וקרי תרתין מילין"),
+        author.unpointed("קו״כ כתיב מילה חדה וקרי תרתין מילין"),
         [
             "1-atom $ketiv, 2-atom $qere, following a $maqaf. As with ",
-            author.hbo("קו״כ"),
+            author.unpointed("קו״כ"),
             ", the parameters have the $ketiv first and $MAM's rendered Wikisource"
             " page has the $qere first. See the rows of FOI section ",
             _kq_simple_foi_link_for_sug("קו״כ כתיב מילה חדה וקרי תרתין מילין"),
@@ -85,7 +85,7 @@ KQ_SPECIAL_ROWS = [
         ],
     ],
     [
-        author.hbo("כו״ק קרי שונה מהכתיב בשתי מילים"),
+        author.unpointed("כו״ק קרי שונה מהכתיב בשתי מילים"),
         [
             "1-atom $ketiv not strongly related to its 2-atom $qere."
             " See FOI section ",
@@ -94,11 +94,11 @@ KQ_SPECIAL_ROWS = [
         ],
     ],
     [
-        author.hbo("קו״כ קרי שונה מהכתיב בשתי מילים"),
+        author.unpointed("קו״כ קרי שונה מהכתיב בשתי מילים"),
         [
             "1-atom $ketiv not strongly related to its 2-atom $qere,"
             " following a $maqaf. As with ",
-            author.hbo("קו״כ"),
+            author.unpointed("קו״כ"),
             ", the parameters have the $ketiv first and $MAM's rendered Wikisource"
             " page has the $qere first. See FOI section ",
             _kq_simple_foi_link_for_sug("קו״כ קרי שונה מהכתיב בשתי מילים"),
@@ -106,7 +106,7 @@ KQ_SPECIAL_ROWS = [
         ],
     ],
     [
-        author.hbo("כו״ק של שתי מילים בהערה אחת"),
+        author.unpointed("כו״ק של שתי מילים בהערה אחת"),
         [
             "2-atom $ketiv, 2-atom $qere. See FOI section ",
             _kq_simple_foi_link_for_sug("כו״ק של שתי מילים בהערה אחת"),
@@ -114,7 +114,7 @@ KQ_SPECIAL_ROWS = [
         ],
     ],
     [
-        author.hbo("כו״ק של שלוש מילים בהערה אחת"),
+        author.unpointed("כו״ק של שלוש מילים בהערה אחת"),
         [
             "3-atom $ketiv, 3-atom $qere. See FOI section ",
             _kq_simple_foi_link_for_sug("כו״ק של שלוש מילים בהערה אחת"),

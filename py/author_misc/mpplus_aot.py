@@ -80,7 +80,7 @@ def build_body(*, claims: ClaimCollection):
     )
     return [
         author.heading_level_1(
-            ["Word with special letter(s) — ", author.hbo("מ:אות-מיוחדת-במילה")]
+            ["Word with special letter(s) — ", author.unpointed("מ:אות-מיוחדת-במילה")]
         ),
         author.para(["← Back to ", back_link]),
         author.para(_aot_intro(claims=claims)),
@@ -94,11 +94,11 @@ def build_body(*, claims: ClaimCollection):
                 "A dot-mask showing the position of the special letter(s)",
                 [
                     "The size/type code (",
-                    author.hbo("ג"),
+                    author.unpointed("ג"),
                     " = large, ",
-                    author.hbo("ק"),
+                    author.unpointed("ק"),
                     " = small, ",
-                    author.hbo("ת"),
+                    author.unpointed("ת"),
                     " = hung (suspended))",
                 ],
                 "Letter/type summary",
@@ -107,7 +107,7 @@ def build_body(*, claims: ClaimCollection):
         author.para(
             [
                 "When the word is followed by a $legarmeh, the ",
-                author.hbo("מ:לגרמיה-2"),
+                author.unpointed("מ:לגרמיה-2"),
                 " template is included at the end of argument 1,"
                 " and the $paseq/$legarmeh character is appended to argument 2.",
             ]

@@ -5,8 +5,8 @@ from mb_cmn import template_names as tmpln
 from author_misc import mp_cmn_rows_core as rows_core
 from mb_author import author
 
-_KQ_SPECIAL_NAME = author.hbo("מ:כו״ק מיוחד")
-_DUALCANT_NAME = author.hbo("מ:כפול")
+_KQ_SPECIAL_NAME = author.unpointed("מ:כו״ק מיוחד")
+_DUALCANT_NAME = author.unpointed("מ:כפול")
 _TWO_ACCENTS_ABBREV = "שני טעמים ..."
 
 
@@ -22,11 +22,11 @@ def _replace_obj_in_lists(node, old_obj, new_obj):
 
 def _normalize_two_accents_abbrev_title_scope():
     """Move dotted-underline affordance from full label to ellipsis suffix only."""
-    old_obj = author.hbo(
+    old_obj = author.unpointed(
         _TWO_ACCENTS_ABBREV,
         {"title": tmpln.TWO_ACCENTS_OF_QUPO},
     )
-    new_obj = author.hbo_with_ellipsis_title(
+    new_obj = author.unpointed_with_ellipsis_title(
         _TWO_ACCENTS_ABBREV,
         tmpln.TWO_ACCENTS_OF_QUPO,
     )

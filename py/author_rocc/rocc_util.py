@@ -73,14 +73,17 @@ def _instead_f(instead, normal, weird):
     return f"{instead} of ", normal, ", $CTR uses ", weird, "."
 
 
+# The forms these two build are compared with each other in rocc_3's tables,
+# some pointed and some not, so each keeps the pointed-Hebrew font: lifted=True,
+# the exception author.hbo's docstring gives.
 def _gray_10(gray_part, normal_part, whbo):
     inner = [author.span_gray(gray_part), normal_part]
-    return author.hbo(inner) if whbo else inner
+    return author.hbo(inner, lifted=True) if whbo else inner
 
 
 def _gray_01(normal_part, gray_part, whbo):
     inner = [normal_part, author.span_gray(gray_part)]
-    return author.hbo(inner) if whbo else inner
+    return author.hbo(inner, lifted=True) if whbo else inner
 
 
 def _anc_ia(url):

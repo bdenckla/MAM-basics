@@ -14,7 +14,7 @@ from author_misc import mp_table_helpers as tblh
 
 
 def find_template_row(rows, template_name):
-    expected = author.hbo(template_name)
+    expected = author.unpointed(template_name)
     for row in rows:
         if row[0] == expected:
             return row
@@ -186,18 +186,18 @@ def whitespace_template_consumer_para():
         [
             "A whitespace template can be the only separator between adjacent"
             " Scripture strings: the strings before and after ",
-            author.hbo("מ:ששש"),
+            author.unpointed("מ:ששש"),
             " or ",
-            author.hbo("ססס"),
+            author.unpointed("ססס"),
             " can contain no literal whitespace at that boundary. A plain-text"
             " projection that does not preserve layout must therefore supply at"
             " least one separator; a layout-preserving renderer implements the"
             " documented space or break. Dropping the template fuses separate atoms,"
             " while collecting a descriptive parameter such as ",
-            author.hbo("פסקא באמצע פסוק"),
+            author.unpointed("פסקא באמצע פסוק"),
             " inserts documentation into Scripture. This rule does not apply to"
             " narpas: ",
-            author.hbo("מ:פסק"),
+            author.unpointed("מ:פסק"),
             " is a punctuation template, and its missing literal whitespace"
             " prescribes no display spacing.",
         ]
@@ -210,17 +210,17 @@ def verse_label_templates_block():
         tblh.tmpl_purp_table(
             [
                 [
-                    author.hbo("מ:פסוק"),
+                    author.unpointed("מ:פסוק"),
                     [
                         "Verse label. Takes book name, chapter, and verse as positional"
                         " params. Optional named params include ",
-                        [author.hbo("סדר="), " (seder number) and "],
-                        [author.hbo("עלייה="), " (value is a "],
-                        [author.hbo("מ:עלייה"), " template)."],
+                        [author.unpointed("סדר="), " (seder number) and "],
+                        [author.unpointed("עלייה="), " (value is a "],
+                        [author.unpointed("מ:עלייה"), " template)."],
                     ],
                 ],
                 [
-                    author.hbo("מ:עלייה"),
+                    author.unpointed("מ:עלייה"),
                     [
                         "Torah $aliyah identifier. See ",
                         author.anchor_h(
@@ -256,12 +256,12 @@ def note_links_param1_explanation_para():
     return author.para(
         [
             "For ",
-            author.hbo("מ:קישור פנימי בהערה"),
+            author.unpointed("מ:קישור פנימי בהערה"),
             ", parameter 1 is a Wikisource-internal target (path or fragment) "
             "rendered under ",
             mb_html.code("https://he.wikisource.org/wiki/"),
             "; for ",
-            author.hbo("מ:קישור בהערה"),
+            author.unpointed("מ:קישור בהערה"),
             ", parameter 1 is an external URL used as-is.",
         ]
     )
@@ -269,7 +269,7 @@ def note_links_param1_explanation_para():
 
 def poetic_spacing_row(*, doc_name: str):
     return [
-        author.hbo("ר0–ר4"),
+        author.unpointed("ר0–ר4"),
         [
             "Poetic spacing: See ",
             author.anchor_h("their dedicated page", doc_name),

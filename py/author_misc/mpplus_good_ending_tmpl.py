@@ -44,7 +44,7 @@ def build_body(*, claims: ClaimCollection):
     nested_claim = claims.claim(
         "mp.plus.good-ending-plus.nested-in-docnote",
         [
-            ["In practice, it is always nested inside ", author.hbo("נוסח")],
+            ["In practice, it is always nested inside ", author.unpointed("נוסח")],
             [" in the ", mb_html.code("good_ending_plus")],
             [" field of the book39 header."],
         ],
@@ -59,7 +59,7 @@ def build_body(*, claims: ClaimCollection):
     )
     return [
         author.heading_level_1(
-            ["Good-ending template (", author.hbo("מ:סיום בטוב"), ")"]
+            ["Good-ending template (", author.unpointed("מ:סיום בטוב"), ")"]
         ),
         author.para(["← Back to ", plus_back_link]),
         author.para(mp_good_ending_common.MAIN_DESCRIPTION),

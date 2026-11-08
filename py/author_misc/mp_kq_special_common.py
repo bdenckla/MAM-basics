@@ -43,7 +43,7 @@ def build_body(
         author.heading_level_1(
             [
                 "Special $ketiv_qere — ",
-                author.hbo("מ:כו״ק מיוחד"),
+                author.unpointed("מ:כו״ק מיוחד"),
                 heading_suffix,
             ]
         ),
@@ -63,9 +63,9 @@ def build_body(
         author.para(
             [
                 "The following ",
-                author.hbo("סוג="),
+                author.unpointed("סוג="),
                 " values are used with the ",
-                author.hbo("מ:כו״ק מיוחד"),
+                author.unpointed("מ:כו״ק מיוחד"),
                 " template:",
             ]
         ),
