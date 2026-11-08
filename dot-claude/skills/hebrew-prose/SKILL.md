@@ -47,6 +47,14 @@ the repository-specific reference before writing. Load only the references neede
    English gloss. In mixed-direction prose, the first strong character of a line must be Latin;
    give Hebrew an English runway or its own RTL table cell. A section sign and a backtick are
    neutral; an ASCII digit has a weak directional type. None is a strong character.
+9. **Give the pointed-Hebrew font only to pointed Hebrew.** On a rendered page, `lang="hbo"`
+   sets Taamey D at 140% so that points and accents are legible. Hebrew with no point or
+   accent, such as a vowel's or accent's name in an English sentence, a template name, a strand
+   name or a table's label, keeps the surrounding font: isolate it for direction with a `<bdi>`
+   that has no `lang`. In MAM-basics that is `author.unpointed`; `author.hbo` raises on
+   unpointed Hebrew, and `author.std_table` puts only pointed cells in `lang="hbo"`. Ben has
+   asked for this on 2026-07-28, 2026-10-26 and 2026-11-08; `references/rendered-prose.md`,
+   "Unpointed Hebrew keeps the surrounding font", gives his words and the one exception.
 
 ## Load only the references the task needs
 

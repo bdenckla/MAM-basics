@@ -80,9 +80,40 @@ is a checker error name.
 
 When adjacent Hebrew spans' order matters, separate them with strong Latin text or appropriate
 HTML isolation. Neutral punctuation alone can join the RTL run. Use isolation for an observed
-ordering problem. For unpointed-Hebrew font behavior, follow
-`MAM-basics/py/accgram/almost_errors_html_shared.py`'s `wrap_hebrew_runs`; the helper owns the
-detailed classification.
+ordering problem. Which font a Hebrew run takes is the next section's subject.
+
+## Unpointed Hebrew keeps the surrounding font
+
+`lang="hbo"` is for pointed Hebrew. Its stylesheet rule sets Taamey D at 140% so that points
+and accents are legible; a run with neither has nothing for that font and size to show, and in
+an English sentence they only make it shout. So Hebrew with no point or accent keeps the font of
+the text around it, whatever the browser shows Hebrew in by default: a term or name in prose, a
+template name, a strand name, a table's label, a heading's bare letters. Isolate it for
+direction with a `<bdi>` that has no `lang`, or leave it bare where nothing needs isolating.
+Bare letters with a maqaf or sof pasuq count as unpointed.
+
+The one exception is a form lifted whole from a text and shown with the forms it is compared
+with: it keeps their font, its unpointed parts included. Ben, 2026-10-26, of the MAM-for-Sefaria
+examples: "keep those in one font (namely the font for pointed hebreW)".
+
+Ben has asked for the rule at least three times, each time of a different page:
+
+- 2026-07-28, of a strand name on an accgram page: "just let it stay in whatever the default
+  font is for surrounding Latin-alphabet (English-language) text";
+- 2026-10-26, of the MAM-for-Sefaria pages, that "unpointed Hebrew words" not be put "in
+  pointed-Hebrew styling";
+- 2026-11-08, of the Hebrew Reader review: "don't break into styling intended for pointed
+  Hebrew. Just let whatever the browser's default way of showing hebrew kick in."
+
+Before the third time, the rule lived only inside single page families: `wrap_hebrew_runs` in
+`py/accgram/almost_errors_html_shared.py`, `unpointed` in `py/author_misc/mam4sef_common.py`,
+`py/near_aleppo/doc_style.py` and `py/clc/clc_render.py`. The shared helpers that a new page
+reaches for applied it to nothing, and each new page repeated the error. Since 2026-11-08 they
+enforce it in MAM-basics: `author.unpointed` is the `<bdi>` without `lang`, `author.hbo` raises
+on unpointed Hebrew unless `lifted=True` marks the exception above, and `author.std_table` puts
+only pointed cells in `lang="hbo"`. rocc_3's comparison tables use `lifted=True` for wholly
+unpointed forms set beside pointed versions of the same words. A page that writes its own
+`lang="hbo"` markup still has to apply the rule itself.
 
 ## Cite the two books as ITM and CoS, with the full title on hover
 
