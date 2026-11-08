@@ -265,8 +265,7 @@ _REVIEWS = Section(
         ),
         _entry(
             "Review of A Hebrew Reader for the Pentateuch",
-            f"{_GDOC}/2PACX-1vQ6QyxCbui3JRF2II6QYnF4ZMbjCDXGsQQ3qCheRAKCGvvdp1_TYeXTIies"
-            "DNmM-KWxvmW3dlM2ipV8/pub",
+            f"{_MWD_MISC}review_of_hebrew_reader_for_the_pentateuch.html",
         ),
         _entry(
             "Review of the Job fascicle of BHQ",
