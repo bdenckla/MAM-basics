@@ -37,8 +37,8 @@ TWO HEBREW FORMS ARE REORDERED, NOT REWRITTEN. In both rows of the second
 table, the atom תעשה had its sin dot after its segol. MAM-normal mark order
 puts the sin dot first (mb_cmn/uni_denorm.py), and by Ben's decision of
 2026-10-30, recorded in doc/mam-normal-mark-order.md, a quotation in authored
-prose takes that order unless it claims to be byte-accurate. _hbo_checked below
-keeps every Hebrew form here in that order.
+prose takes that order unless it claims to be byte-accurate. _pointed below
+asserts that order for every pointed form here.
 
 FOUR KINDS OF LINK TO RETIRED HOSTS ARE REPOINTED:
 
@@ -60,8 +60,8 @@ boundaries of its spans, not where a line break would be wrong. Its six
 left-to-right marks are dropped. Each followed a Hebrew atom that a comma then
 followed, in a list of atoms within an English sentence, and gave that comma
 the paragraph's left-to-right direction, so that the atoms read in list order.
-Here each Hebrew run is an hbo <bdi>, which isolates it, so the comma after it
-takes the paragraph's direction without help.
+Here each Hebrew run is a <bdi>, which isolates it, so the comma after it takes
+the paragraph's direction without help.
 
 THE REST IS HOUSE STYLE, not rewording:
 
@@ -72,6 +72,10 @@ THE REST IS HOUSE STYLE, not rewording:
   render the same spellings.
 * bold is author.emphasis, and the italic titles, the Reader's short title
   included, are author.book_title.
+* unpointed Hebrew, which is all the Hebrew of the prose and of the tables'
+  labels, is a <bdi> without lang (_unpointed), in the surrounding font, by
+  Ben's decision of 2026-11-08. Only the tables' four pointed forms take
+  lang="hbo" and its font (_pointed).
 * Google's type sizes are not reproduced, except that the tables' pointed forms
   are big. The gray rows of the tables stay gray (author.span_gray), as the
   document has them.
@@ -84,6 +88,8 @@ THE REST IS HOUSE STYLE, not rewording:
   importer's 40em for Google's 624px, and its file is named for its verse, its
   Hebrew in consensus_to_ascii (py/author_boj_util/author.py) and its source.
 """
+
+import re
 
 from mb_author import author
 from mb_cmn import uni_denorm
@@ -230,21 +236,36 @@ def gen_html_file(tdm_ch):
     return author.help_gen_html_file(__file__, tdm_ch, _FNAME, _TITLE, cbody)
 
 
-def _hbo_checked(text, big=False):
-    """Hebrew lifted from the document, guarded against a normalizing round trip.
+def _pointed(text):
+    """Pointed Hebrew lifted from the document, big, in the pointed-Hebrew font.
 
-    MAM-normal mark order gives priority to shin dot, sin dot,
-    dagesh/mapiq/shuruq dot, dagesh ḥazaq (U+05C9), and rafe. The two dagesh
-    code points share a priority; every other mark keeps its relative order.
-    Unicode-normal order sorts by canonical combining class instead, which puts
-    a sin dot after the vowel of its letter. The two orders render identically,
-    so a paste through anything that normalizes is invisible on the page and
-    shows up only where something compares bytes. The two forms in the second
-    table arrived in the other order, and the module docstring says what was
-    done with them.
+    Guarded against a normalizing round trip. MAM-normal mark order gives
+    priority to shin dot, sin dot, dagesh/mapiq/shuruq dot, dagesh ḥazaq
+    (U+05C9), and rafe. The two dagesh code points share a priority; every other
+    mark keeps its relative order. Unicode-normal order sorts by canonical
+    combining class instead, which puts a sin dot after the vowel of its letter.
+    The two orders render identically, so a paste through anything that
+    normalizes is invisible on the page and shows up only where something
+    compares bytes. The two forms in the second table arrived in the other
+    order, and the module docstring says what was done with them.
     """
+    assert _MARK_RE.search(text), text
     assert uni_denorm.has_std_mark_order(text), text
-    return author.hbo_big(text) if big else author.hbo(text)
+    return author.hbo_big(text)
+
+
+def _unpointed(text):
+    """Unpointed Hebrew: isolated for its direction, in the surrounding font.
+
+    Only pointed Hebrew takes lang="hbo", whose stylesheet rule sets Taamey D at
+    140% so that points and accents are legible; an unpointed term has none to
+    show. Ben's decision, last restated on 2026-11-08 of this page's list of the
+    aids the Reader lacks: "don't break into styling intended for pointed
+    Hebrew. Just let whatever the browser's default way of showing hebrew kick
+    in." This is the form mam4sef_common.unpointed gives unpointed Hebrew.
+    """
+    assert not _MARK_RE.search(text), text
+    return mb_html.bdi(text)
 
 
 def _fn_ref(n):
@@ -269,6 +290,8 @@ _FNAME = "review_of_hebrew_reader_for_the_pentateuch.html"
 _ANCHOR = author.anchor_h("document", f"./{_FNAME}")
 _COLDIRS_RTL = ("rtl", "rtl")
 _READER = author.book_title("Reader")
+# A point or an accent, as accgram.almost_errors_html_shared._HEBREW_MARK_RE.
+_MARK_RE = re.compile("[\u0591-\u05bd\u05bf\u05c1\u05c2\u05c4\u05c5\u05c7-\u05c9]")
 
 _URL_WS_MAM = "https://he.wikisource.org/wiki/%D7%9E%D7%A7%D7%A8%D7%90_%D7%A2%D7%9C_%D7%A4%D7%99_%D7%94%D7%9E%D7%A1%D7%95%D7%A8%D7%94#%D7%A8%D7%90%D7%A9"
 _URL_UXLC_2021_02_22_1 = "https://tanach.us/Changes/2021.04.01%20-%20Changes/2021.04.01%20-%20Changes.xml?2021.02.22-1"
@@ -457,23 +480,23 @@ _INTRO_OL01 = [
     "“Stress helpers” for prepositive and postpositive accents.",
     [
         "A ",
-        _hbo_checked("קמץ קטן"),
+        _unpointed("קמץ קטן"),
         " symbol distinct from ",
-        _hbo_checked("קמץ גדול"),
+        _unpointed("קמץ גדול"),
         ".",
     ],
     [
         "A mobile simple ",
-        _hbo_checked("שווא"),
+        _unpointed("שווא"),
         " symbol distinct from resting ",
-        _hbo_checked("שווא"),
+        _unpointed("שווא"),
         ".",
     ],
     [
         "A ",
-        _hbo_checked("פסק"),
+        _unpointed("פסק"),
         " symbol distinct from ",
-        _hbo_checked("לגרמיה"),
+        _unpointed("לגרמיה"),
         ". (Not exactly pronunciation.)",
     ],
 ]
@@ -483,9 +506,9 @@ _INTRO_P12 = [
     " present in this ",
     _READER,
     " is the separation of the ",
-    _hbo_checked("תחתון"),
+    _unpointed("תחתון"),
     " cantillation from the ",
-    _hbo_checked("עליון"),
+    _unpointed("עליון"),
     " cantillation in the Decalogues. This is not exactly a pronunciation aid; it",
     " is more of a chanting aid.",
     _fn_ref(6),
@@ -496,9 +519,9 @@ _INTRO_P12 = [
     " disjunctive accents. So it is not entirely surprising that, laudably, the ",
     _READER,
     " does (attempt to) provide the aid of separation of ",
-    _hbo_checked("תחתון"),
+    _unpointed("תחתון"),
     " from ",
-    _hbo_checked("עליון"),
+    _unpointed("עליון"),
     ". Few verbatim-$WLC editions attempt this.",
     _fn_ref(7),
 ]
@@ -507,18 +530,18 @@ _INTRO_P13 = [
     _READER,
     " takes an approach to separation I have not seen before. While it uses the",
     " classic unfriendly approach where ",
-    _hbo_checked("תחתון"),
+    _unpointed("תחתון"),
     " and ",
-    _hbo_checked("עליון"),
+    _unpointed("עליון"),
     " marks appear on a single set of letters, it uses gray for the marks it",
     " deems exclusive to the ",
-    _hbo_checked("עליון"),
+    _unpointed("עליון"),
     ", leaving in black the marks it deems either exclusive to the ",
-    _hbo_checked("תחתון"),
+    _unpointed("תחתון"),
     " or shared by both cantillations.",
     _fn_ref(8),
     " While this approach still leaves some ambiguity (between ",
-    _hbo_checked("תחתון"),
+    _unpointed("תחתון"),
     " and shared), if it had been carried out with more care it would have been a",
     " big help.",
 ]
@@ -542,45 +565,45 @@ _H3_DEFIC = "$WLC-inherited deficiencies"
 _DEFIC_P01 = author.emphasis(
     [
         "In Gn 1:11 ",
-        _hbo_checked("דשא"),
+        _unpointed("דשא"),
         ", the ",
         _READER,
         " has ",
-        _hbo_checked("זקף"),
+        _unpointed("זקף"),
         " rather than ",
-        _hbo_checked("רביע"),
+        _unpointed("רביע"),
         ".",
     ]
 )
 _DEFIC_P02 = [
     "There is some printed and manuscript precedent for ",
-    _hbo_checked("זקף"),
+    _unpointed("זקף"),
     ". But, ",
-    _hbo_checked("רביע"),
+    _unpointed("רביע"),
     " is generally agreed to be not only the Masoretic consensus but also the",
     " most likely contents of the $LC there. See ",
     author.anchor_h("$UXLC change 2021.02.22-1", _URL_UXLC_2021_02_22_1),
     " and ",
     author.anchor_h("$MAM with doc", _URL_MWD_GEN_1_11),
     ". Even $BHQ Genesis (2016) has been updated to have ",
-    _hbo_checked("רביע"),
+    _unpointed("רביע"),
     " rather than ",
-    _hbo_checked("זקף"),
+    _unpointed("זקף"),
     ", though oddly it still has ",
-    _hbo_checked("זקף"),
+    _unpointed("זקף"),
     " in its apparatus.",
 ]
 _DEFIC_P03 = [
     author.emphasis(
         [
             "In Gn 2:8 ",
-            _hbo_checked("גן־בעדן"),
+            _unpointed("גן־בעדן"),
             ", the ",
             _READER,
             " has ",
-            _hbo_checked("ב"),
+            _unpointed("ב"),
             " without ",
-            _hbo_checked("דגש"),
+            _unpointed("דגש"),
             ".",
         ]
     ),
@@ -588,33 +611,33 @@ _DEFIC_P03 = [
 ]
 _DEFIC_P04 = [
     "The $LC’s ",
-    _hbo_checked("ב"),
+    _unpointed("ב"),
     " is most likely free of ",
-    _hbo_checked("דגש"),
+    _unpointed("דגש"),
     " (contra ",
     author.anchor_h("$UXLC change 2021.02.22-2", _URL_UXLC_2021_02_22_2),
     "). But whether the $LC has a ",
-    _hbo_checked("דגש"),
+    _unpointed("דגש"),
     " here or not is irrelevant; what is relevant is that the consensus is that",
     " there should be a ",
-    _hbo_checked("דגש"),
+    _unpointed("דגש"),
     " here. ",
     author.anchor_h("$MAM with doc", _URL_MWD_GEN_2_8),
     " discusses the question of this ",
-    _hbo_checked("דגש"),
+    _unpointed("דגש"),
     " as well as other issues with this word.",
 ]
 _DEFIC_P05 = [
     author.emphasis(
         [
             "In Gn 2:18 ",
-            _hbo_checked("אעשה־לו"),
+            _unpointed("אעשה־לו"),
             ", the ",
             _READER,
             " has a ",
-            _hbo_checked("דגש"),
+            _unpointed("דגש"),
             " in the ",
-            _hbo_checked("ה"),
+            _unpointed("ה"),
             ".",
         ]
     ),
@@ -623,14 +646,14 @@ _DEFIC_P05 = [
 _DEFIC_P06 = [
     "The $LC is in bad shape here. This is one of its many sections that were",
     " re-inked by a later hand. Nonetheless, the ",
-    _hbo_checked("דגש"),
+    _unpointed("דגש"),
     " in question is pretty clear (page ",
     author.anchor_h("2A", _URL_LC_F002A),
     ", column 3, line 5 from the bottom):",
 ]
 _DEFIC_P07 = [
     "Yet, it is also clear that this ",
-    _hbo_checked("דגש"),
+    _unpointed("דגש"),
     " is just an anomaly of the $LC (perhaps only present in the re-inked hand),",
     " and thus is inappropriate for a reader’s edition. See the discussion in ",
     author.anchor_h("$MAM with doc", _URL_MWD_GEN_2_18),
@@ -642,15 +665,15 @@ _DEFIC_P08 = [
     author.emphasis(
         [
             "In Gn 7:19 ",
-            _hbo_checked("גברו"),
+            _unpointed("גברו"),
             ", the ",
             _READER,
             " has ",
-            _hbo_checked("געיה"),
+            _unpointed("געיה"),
             " rather than ",
-            _hbo_checked("מרכא"),
+            _unpointed("מרכא"),
             " (on ",
-            _hbo_checked("ג"),
+            _unpointed("ג"),
             ").",
         ]
     ),
@@ -658,9 +681,9 @@ _DEFIC_P08 = [
 ]
 _DEFIC_P09 = [
     "The distinction of ",
-    _hbo_checked("געיה"),
+    _unpointed("געיה"),
     " from ",
-    _hbo_checked("מרכא"),
+    _unpointed("מרכא"),
     " is a vexing problem, particularly in the $LC. Yet, in this case it is",
     " reasonable to apply Dotan’s policy to resolve the problem:",
 ]
@@ -675,9 +698,9 @@ _DEFIC_QUOTE01 = (
 _DEFIC_P10 = [
     author.anchor_h("$UXLC change 2022.07.02-2", _URL_UXLC_2022_07_02_2),
     " acknowledges this ",
-    _hbo_checked("מרכא-געיה"),
+    _unpointed("מרכא-געיה"),
     " uncertainty with an m-note, though, unlike Dotan, it considers ",
-    _hbo_checked("געיה"),
+    _unpointed("געיה"),
     " to be the most likely (or at least the most literal) reading of the $LC. As",
     " usual, ",
     author.anchor_h("$MAM with doc", _URL_MWD_GEN_7_19),
@@ -687,13 +710,13 @@ _DEFIC_P11 = [
     author.emphasis(
         [
             "In Gn 7:23 ",
-            _hbo_checked("וישאר"),
+            _unpointed("וישאר"),
             ", the ",
             _READER,
             " has ",
-            _hbo_checked("י"),
+            _unpointed("י"),
             " without ",
-            _hbo_checked("דגש"),
+            _unpointed("דגש"),
             ".",
         ]
     ),
@@ -701,7 +724,7 @@ _DEFIC_P11 = [
 ]
 _DEFIC_P12 = [
     "This lack of ",
-    _hbo_checked("דגש"),
+    _unpointed("דגש"),
     " is just an anomaly of the $LC, and thus is inappropriate for a reader’s",
     " edition. See the discussion in ",
     author.anchor_h("$MAM with doc", _URL_MWD_GEN_7_23),
@@ -711,13 +734,13 @@ _DEFIC_P13 = [
     author.emphasis(
         [
             "In Gn 15:10 ",
-            _hbo_checked("הצפר"),
+            _unpointed("הצפר"),
             ", the ",
             _READER,
             " has ",
-            _hbo_checked("צ"),
+            _unpointed("צ"),
             " without ",
-            _hbo_checked("דגש"),
+            _unpointed("דגש"),
             ".",
         ]
     ),
@@ -725,7 +748,7 @@ _DEFIC_P13 = [
 ]
 _DEFIC_P14 = [
     "Though the Sassoon 1053 manuscript possibly supports it, this lack of ",
-    _hbo_checked("דגש"),
+    _unpointed("דגש"),
     " is likely just an anomaly of the $LC, and thus is inappropriate for a",
     " reader’s edition. See the discussion in ",
     author.anchor_h("$MAM with doc", _URL_MWD_GEN_15_10),
@@ -735,13 +758,13 @@ _DEFIC_P15 = [
     author.emphasis(
         [
             "In Gn 18:15 ",
-            _hbo_checked("ויאמר לא"),
+            _unpointed("ויאמר לא"),
             ", the ",
             _READER,
             " has no ",
-            _hbo_checked("געיה"),
+            _unpointed("געיה"),
             " (on ",
-            _hbo_checked("מ"),
+            _unpointed("מ"),
             ").",
         ]
     ),
@@ -752,23 +775,23 @@ _DEFIC_P16 = [
     " is made in ",
     author.anchor_h("$MAM with doc", _URL_MWD_GEN_18_15),
     ") that ",
-    _hbo_checked("מ"),
+    _unpointed("מ"),
     " should have a ",
-    _hbo_checked("געיה"),
+    _unpointed("געיה"),
     " in any general-purpose Hebrew Bible. There is even an argument that the $LC",
     " has the remnants of such a ",
-    _hbo_checked("געיה"),
+    _unpointed("געיה"),
     ". ",
     author.anchor_h("$UXLC change 2024.09.29-1", _URL_UXLC_2024_09_29_1),
     " interprets these remnants as a ",
-    _hbo_checked("מרכא"),
+    _unpointed("מרכא"),
     ", albeit with a t-note indicating some uncertainty as to its existence.",
     " While a ",
-    _hbo_checked("מרכא"),
+    _unpointed("מרכא"),
     " may be the most literal reading of these remnants, I find ",
-    _hbo_checked("געיה"),
+    _unpointed("געיה"),
     " rather than ",
-    _hbo_checked("מרכא"),
+    _unpointed("מרכא"),
     " to be the most likely reading of these remnants. See section 325 of Israel",
     " Yeivin’s ",
     author.book_title("Introduction to the Tiberian Masorah"),
@@ -780,13 +803,13 @@ _DEFIC_P17 = [
     author.emphasis(
         [
             "In Gn 22:12 ",
-            _hbo_checked("מאומה"),
+            _unpointed("מאומה"),
             ", the ",
             _READER,
             " has a ",
-            _hbo_checked("דגש"),
+            _unpointed("דגש"),
             " in the second ",
-            _hbo_checked("מ"),
+            _unpointed("מ"),
             ".",
         ]
     ),
@@ -794,12 +817,12 @@ _DEFIC_P17 = [
 ]
 _DEFIC_P18 = [
     "The $LC pretty clearly has a ",
-    _hbo_checked("דגש"),
+    _unpointed("דגש"),
     " in the ",
-    _hbo_checked("מ"),
+    _unpointed("מ"),
     " in question. But that anomaly is irrelevant to a reader’s edition, which",
     " should not have such a ",
-    _hbo_checked("דגש"),
+    _unpointed("דגש"),
     ". See ",
     author.anchor_h("$MAM with doc", _URL_MWD_GEN_22_12),
     ". Again, it is irrelevant, but for the curious, here’s an image of the $LC",
@@ -811,11 +834,11 @@ _DEFIC_P19 = [
     author.emphasis(
         [
             "In Gn 32:24 ",
-            _hbo_checked("את־אשר־לו"),
+            _unpointed("את־אשר־לו"),
             ", the ",
             _READER,
             " lacks a ",
-            _hbo_checked("סילוק"),
+            _unpointed("סילוק"),
             ".",
         ]
     ),
@@ -823,9 +846,9 @@ _DEFIC_P19 = [
 ]
 _DEFIC_P20 = [
     "The ",
-    _hbo_checked("סילוק"),
+    _unpointed("סילוק"),
     " is expected on ",
-    _hbo_checked("ל"),
+    _unpointed("ל"),
     ". This is likely an accidental error in the $LC, not an intentional but",
     " nonstandard (lack of) pointing. Those wishing to speculate to the contrary",
     " have many diplomatic versions of the $LC to work from, as well as the",
@@ -835,7 +858,7 @@ _DEFIC_P20 = [
     " reader’s edition with such an anomaly. See ",
     author.anchor_h("$MAM with doc", _URL_MWD_GEN_32_24),
     ". A ",
-    _hbo_checked("סילוק"),
+    _unpointed("סילוק"),
     " is similarly missing in the ",
     _READER,
     " in Ex 32:17. See below.",
@@ -844,13 +867,13 @@ _DEFIC_P21 = [
     author.emphasis(
         [
             "In Gn 45:6 ",
-            _hbo_checked("וקציר"),
+            _unpointed("וקציר"),
             ", the ",
             _READER,
             " has a ",
-            _hbo_checked("דגש"),
+            _unpointed("דגש"),
             " in the ",
-            _hbo_checked("צ"),
+            _unpointed("צ"),
             ".",
         ]
     ),
@@ -858,16 +881,16 @@ _DEFIC_P21 = [
 ]
 _DEFIC_P22 = [
     "The $LC pretty clearly has a ",
-    _hbo_checked("דגש"),
+    _unpointed("דגש"),
     " on the ",
-    _hbo_checked("צ"),
+    _unpointed("צ"),
     " in question (page ",
     author.anchor_h("28A", _URL_LC_F028A),
     ", column 2, 3 lines up from the bottom):",
 ]
 _DEFIC_P23 = [
     "But, as usual, whether the ",
-    _hbo_checked("דגש"),
+    _unpointed("דגש"),
     " is clear or not is irrelevant. It is anomalous. See ",
     author.anchor_h("$MAM with doc", _URL_MWD_GEN_45_6),
     ".",
@@ -876,13 +899,13 @@ _DEFIC_P24 = [
     author.emphasis(
         [
             "In Ex 14:13 ",
-            _hbo_checked("התיצבו"),
+            _unpointed("התיצבו"),
             ", the ",
             _READER,
             " has ",
-            _hbo_checked("צ"),
+            _unpointed("צ"),
             " without ",
-            _hbo_checked("דגש"),
+            _unpointed("דגש"),
             ".",
         ]
     ),
@@ -898,42 +921,42 @@ _DEFIC_P26 = author.emphasis(
         "In Ex 20:2, the ",
         _READER,
         " fully reverses ",
-        _hbo_checked("תחתון"),
+        _unpointed("תחתון"),
         " and ",
-        _hbo_checked("עליון"),
+        _unpointed("עליון"),
         ".",
     ]
 )
 _DEFIC_P27 = [
     "These errors (and some others like them I will describe separately) do not",
     " directly stem from $WLC since it makes no distinction between ",
-    _hbo_checked("תחתון"),
+    _unpointed("תחתון"),
     " and ",
-    _hbo_checked("עליון"),
+    _unpointed("עליון"),
     ". They stem indirectly from $WLC in the sense that because it provides no",
     " help, the editors of the ",
     _READER,
     " had to “go it alone,” an error-prone enterprise. I will merely list the",
     " four words involved, without getting into the details: ",
-    _hbo_checked("אנכי … אלהיך … מבית עבדים"),
+    _unpointed("אנכי … אלהיך … מבית עבדים"),
     ". Not only the ",
-    _hbo_checked("סילוק"),
+    _unpointed("סילוק"),
     " of ",
-    _hbo_checked("עבדים"),
+    _unpointed("עבדים"),
     " but also its ",
-    _hbo_checked("סוף פסוק"),
+    _unpointed("סוף פסוק"),
     " should be gray. I.e. the span of words between the ",
-    _hbo_checked("ב"),
+    _unpointed("ב"),
     " and ",
-    _hbo_checked("ג"),
+    _unpointed("ג"),
     " verse numerals in the ",
     _READER,
     " should be notated as a complete chanted verse only in the ",
-    _hbo_checked("עליון"),
+    _unpointed("עליון"),
     ". In the ",
-    _hbo_checked("תחתון"),
+    _unpointed("תחתון"),
     ", this span of words is merely a half-verse, i.e. reaches merely up to the ",
-    _hbo_checked("אתנח"),
+    _unpointed("אתנח"),
     ".",
 ]
 _DEFIC_P28 = "A similar full reversal of the cantillations happens in 20:13–15."
@@ -942,11 +965,11 @@ _DEFIC_P29 = [
     _READER,
     " of what gray is supposed to mean, and have simply inferred that it is",
     " supposed to mark the ",
-    _hbo_checked("עליון"),
+    _unpointed("עליון"),
     ". In an alternate interpretation, where gray marks the ",
-    _hbo_checked("תחתון"),
+    _unpointed("תחתון"),
     " rather than the ",
-    _hbo_checked("עליון"),
+    _unpointed("עליון"),
     ", these four verses (20:2, 13–15) would be correct, and all other verses",
     " having dual cantillation would be wrong.",
 ]
@@ -956,24 +979,24 @@ _DEFIC_P30 = author.emphasis(
 _DEFIC_P31 = [
     "In the Exodus Decalogue, when there are two below-accents or two",
     " above-accents on a letter, the $LC often frustrates expectations of ",
-    _hbo_checked("תחתון"),
+    _unpointed("תחתון"),
     "-then-",
-    _hbo_checked("עליון"),
+    _unpointed("עליון"),
     " ordering. While the ",
     _READER,
     "’s use of gray makes these anomalies mostly harmless, I still see no reason",
     " to reproduce them in a reader’s edition. One early example is the $LC’s ",
-    _hbo_checked("פזר"),
+    _unpointed("פזר"),
     "-then-",
-    _hbo_checked("זקף"),
+    _unpointed("זקף"),
     " ordering on ",
-    _hbo_checked("תמונה"),
+    _unpointed("תמונה"),
     " in 20:4.",
     _fn_ref(9),
     " This is ",
-    _hbo_checked("עליון"),
+    _unpointed("עליון"),
     "-then-",
-    _hbo_checked("תחתון"),
+    _unpointed("תחתון"),
     " ordering, i.e. the anomalous ordering, which shows up in the ",
     _READER,
     " as gray-then-black ordering. I will not list other examples. There are",
@@ -983,13 +1006,13 @@ _DEFIC_P32 = [
     author.emphasis(
         [
             "In Ex 20:3 ",
-            _hbo_checked("לא יהיה לך"),
+            _unpointed("לא יהיה לך"),
             ", the ",
             _READER,
             "’s ",
-            _hbo_checked("תחתון"),
+            _unpointed("תחתון"),
             " and ",
-            _hbo_checked("עליון"),
+            _unpointed("עליון"),
             " are anomalous.",
         ]
     ),
@@ -998,11 +1021,11 @@ _DEFIC_P32 = [
 _DEFIC_P33 = [
     "(This is in 20:2 in some editions.) In its representation of the two",
     " cantillations of the three “atoms” ",
-    _hbo_checked("לא"),
+    _unpointed("לא"),
     ", ",
-    _hbo_checked("יהיה"),
+    _unpointed("יהיה"),
     ", and ",
-    _hbo_checked("לך"),
+    _unpointed("לך"),
     ", the ",
     _READER,
     " lacks two marks and colors two marks wrong.",
@@ -1010,12 +1033,12 @@ _DEFIC_P33 = [
 _DEFIC_P34 = "The full, consensus cantillations are as follows."
 _DEFIC_TABLE01 = [
     [
-        author.span_gray(_hbo_checked("לֹ֣א יִהְיֶֽה־לְךָ֩", big=True)),
-        _hbo_checked("(עליון)"),
+        author.span_gray(_pointed("לֹ֣א יִהְיֶֽה־לְךָ֩")),
+        _unpointed("(עליון)"),
     ],
     [
-        _hbo_checked("לֹֽא־יִהְיֶ֥ה לְךָ֛", big=True),
-        _hbo_checked("(תחתון)"),
+        _pointed("לֹֽא־יִהְיֶ֥ה לְךָ֛"),
+        _unpointed("(תחתון)"),
     ],
 ]
 _DEFIC_P35 = [
@@ -1029,17 +1052,17 @@ _DEFIC_OL01 = [
         "The ",
         _READER,
         " lacks the ",
-        _hbo_checked("מקף"),
+        _unpointed("מקף"),
         " after ",
-        _hbo_checked("לא"),
+        _unpointed("לא"),
         " in the ",
-        _hbo_checked("תחתון"),
+        _unpointed("תחתון"),
         ". (Had the ",
         _READER,
         " added this ",
-        _hbo_checked("מקף"),
+        _unpointed("מקף"),
         ", it would suffer from the shared vs ",
-        _hbo_checked("תחתון"),
+        _unpointed("תחתון"),
         " ambiguity of the ",
         _READER,
         "’s scheme.)",
@@ -1048,47 +1071,47 @@ _DEFIC_OL01 = [
         "The ",
         _READER,
         " lacks ",
-        _hbo_checked("מרכא"),
+        _unpointed("מרכא"),
         " on ",
-        _hbo_checked("יהיה"),
+        _unpointed("יהיה"),
         " in the ",
-        _hbo_checked("תחתון"),
+        _unpointed("תחתון"),
         ". (That is, unless the ",
         _READER,
         " makes deliberate but inadvisable use of ",
-        _hbo_checked("מרכא-געיה"),
+        _unpointed("מרכא-געיה"),
         " uncertainty, letting a single stroke stand for both marks.)",
     ],
 ]
 _DEFIC_P36 = [
     "The following two marks are exclusive to the ",
-    _hbo_checked("עליון"),
+    _unpointed("עליון"),
     " and therefore, according to the ",
     _READER,
     "’s scheme, should have been colored gray (as the ",
-    _hbo_checked("מונח"),
+    _unpointed("מונח"),
     " and ",
-    _hbo_checked("תלישא"),
+    _unpointed("תלישא"),
     " were) rather than black:",
 ]
 _DEFIC_OL02 = [
     [
         "The ",
-        _hbo_checked("געיה"),
+        _unpointed("געיה"),
         " should have been gray. (That is, unless the ",
         _READER,
         " makes deliberate but inadvisable use of ",
-        _hbo_checked("מרכא-געיה"),
+        _unpointed("מרכא-געיה"),
         " uncertainty, letting a single stroke stand for both marks. In that case the",
         " ",
-        _hbo_checked("געיה"),
+        _unpointed("געיה"),
         " is shared and therefore is already correctly colored (black).)",
     ],
     [
         "The ",
-        _hbo_checked("מקף"),
+        _unpointed("מקף"),
         " after ",
-        _hbo_checked("יהיה"),
+        _unpointed("יהיה"),
         " should have been gray. See ",
         author.anchor_h("$MAM with doc", _URL_MWD_EXOD_20_2),
         ".",
@@ -1097,13 +1120,13 @@ _DEFIC_OL02 = [
 _DEFIC_P37 = author.emphasis(
     [
         "In Ex 20:3 ",
-        _hbo_checked("פני"),
+        _unpointed("פני"),
         ", the ",
         _READER,
         "’s ",
-        _hbo_checked("פתח"),
+        _unpointed("פתח"),
         " appears to belong to the ",
-        _hbo_checked("י"),
+        _unpointed("י"),
         ".",
     ]
 )
@@ -1113,22 +1136,22 @@ _DEFIC_P38 = [
     author.anchor_h("2021.05.19-8", _URL_UXLC_2021_05_19_8),
     ". Typographically, this is a challenging word, but something should be done",
     " to suggest that the ",
-    _hbo_checked("פתח"),
+    _unpointed("פתח"),
     " belongs to the ",
-    _hbo_checked("נ"),
+    _unpointed("נ"),
     ".",
 ]
 _DEFIC_P39 = [
     author.emphasis(
         [
             "In Ex 20:4 ",
-            _hbo_checked("לא תעשה לך"),
+            _unpointed("לא תעשה לך"),
             ", the ",
             _READER,
             "’s ",
-            _hbo_checked("תחתון"),
+            _unpointed("תחתון"),
             " and ",
-            _hbo_checked("עליון"),
+            _unpointed("עליון"),
             " are anomalous.",
         ]
     ),
@@ -1137,11 +1160,11 @@ _DEFIC_P39 = [
 _DEFIC_P40 = [
     "(This is 20:3 in some editions.) In its representation of the two",
     " cantillations of the three “atoms” ",
-    _hbo_checked("לא"),
+    _unpointed("לא"),
     ", ",
-    _hbo_checked("תעשה"),
+    _unpointed("תעשה"),
     ", and ",
-    _hbo_checked("לך"),
+    _unpointed("לך"),
     ", the ",
     _READER,
     " lacks one mark, colors two marks wrong, and, arguably, misplaces one mark.",
@@ -1149,27 +1172,27 @@ _DEFIC_P40 = [
 _DEFIC_P41 = "The full, consensus cantillations are as follows."
 _DEFIC_TABLE02 = [
     [
-        author.span_gray(_hbo_checked("לֹ֣א תַעֲשֶֽׂה־לְךָ֣", big=True)),
-        _hbo_checked("(עליון)"),
+        author.span_gray(_pointed("לֹ֣א תַעֲשֶֽׂה־לְךָ֣")),
+        _unpointed("(עליון)"),
     ],
     [
-        _hbo_checked("לֹֽא־תַעֲשֶׂ֨ה לְךָ֥", big=True),
-        _hbo_checked("(תחתון)"),
+        _pointed("לֹֽא־תַעֲשֶׂ֨ה לְךָ֥"),
+        _unpointed("(תחתון)"),
     ],
 ]
 _DEFIC_P42 = [
     "As above in ",
-    _hbo_checked("לא יהיה לך"),
+    _unpointed("לא יהיה לך"),
     ", here in ",
-    _hbo_checked("לא תעשה לך"),
+    _unpointed("לא תעשה לך"),
     " the ",
     _READER,
     " lacks the ",
-    _hbo_checked("מקף"),
+    _unpointed("מקף"),
     " after ",
-    _hbo_checked("לא"),
+    _unpointed("לא"),
     " in the ",
-    _hbo_checked("תחתון"),
+    _unpointed("תחתון"),
     ", reproducing an anomaly (or at least, a regrettably implicit notation) in",
     " the $LC (via $WLC).",
 ]
@@ -1177,13 +1200,13 @@ _DEFIC_P43 = [
     "Also as above, the ",
     _READER,
     " should have used gray for two marks on ",
-    _hbo_checked("תעשה"),
+    _unpointed("תעשה"),
     ": the ",
-    _hbo_checked("מקף"),
+    _unpointed("מקף"),
     " after it and its ",
-    _hbo_checked("געיה"),
+    _unpointed("געיה"),
     ", wherever that ",
-    _hbo_checked("געיה"),
+    _unpointed("געיה"),
     " is located (see below).",
 ]
 _DEFIC_P44 = [
@@ -1191,19 +1214,19 @@ _DEFIC_P44 = [
     _READER,
     ", like several estimable (but in my opinion mistaken) modern printed",
     " editions, reproduces an anomalous location for the ",
-    _hbo_checked("געיה"),
+    _unpointed("געיה"),
     " on ",
-    _hbo_checked("תעשה"),
+    _unpointed("תעשה"),
     " in the ",
-    _hbo_checked("עליון"),
+    _unpointed("עליון"),
     ", namely, on the ",
-    _hbo_checked("ת"),
+    _unpointed("ת"),
     ". The consensus formed from consulting other manuscripts is that this ",
-    _hbo_checked("געיה"),
+    _unpointed("געיה"),
     " should be on the ",
-    _hbo_checked("ש"),
+    _unpointed("ש"),
     ", the letter where, not coincidentally, the $qadma is in the ",
-    _hbo_checked("תחתון"),
+    _unpointed("תחתון"),
     ". The $LC’s own Deuteronomy Decalogue supports this consensus as well. See ",
     author.anchor_h("$MAM with doc", _URL_MWD_EXOD_20_3),
     ".",
@@ -1211,45 +1234,45 @@ _DEFIC_P44 = [
 _DEFIC_P45 = author.emphasis(
     [
         "In Ex 20:4 ",
-        _hbo_checked("בארץ מתחת"),
+        _unpointed("בארץ מתחת"),
         ", the ",
         _READER,
         "’s ",
-        _hbo_checked("פתח"),
+        _unpointed("פתח"),
         " (on ",
-        _hbo_checked("ת"),
+        _unpointed("ת"),
         ") should be gray.",
     ]
 )
 _DEFIC_P46 = [
     "(This is 20:3 in some editions.) The ",
-    _hbo_checked("פתח"),
+    _unpointed("פתח"),
     " here should be colored gray, as it is, correctly, in Ex 20:3 ",
-    _hbo_checked("פני"),
+    _unpointed("פני"),
     ". (There the ",
-    _hbo_checked("פתח"),
+    _unpointed("פתח"),
     " belongs to the wrong letter but has the right color (gray).)",
 ]
 _DEFIC_P47 = author.emphasis(
     [
         "In Ex 20:4 ",
-        _hbo_checked("ואשר במים"),
+        _unpointed("ואשר במים"),
         ", the ",
         _READER,
         " has ",
-        _hbo_checked("מונח"),
+        _unpointed("מונח"),
         " in the ",
-        _hbo_checked("עליון"),
+        _unpointed("עליון"),
         ".",
     ]
 )
 _DEFIC_P48 = [
     "(This is 20:3 in some editions.) Arguably, the consensus is that both ",
-    _hbo_checked("תחתון"),
+    _unpointed("תחתון"),
     " and ",
-    _hbo_checked("עליון"),
+    _unpointed("עליון"),
     " have ",
-    _hbo_checked("מרכא"),
+    _unpointed("מרכא"),
     ". See ",
     author.anchor_h("$MAM with doc", _URL_MWD_EXOD_20_3),
     ".",
@@ -1258,13 +1281,13 @@ _DEFIC_P49 = [
     author.emphasis(
         [
             "In Ex 20:5 ",
-            _hbo_checked("לא־תשתחוה"),
+            _unpointed("לא־תשתחוה"),
             ", the ",
             _READER,
             " has a simple ",
-            _hbo_checked("שווא"),
+            _unpointed("שווא"),
             " on ",
-            _hbo_checked("ח"),
+            _unpointed("ח"),
             ".",
         ]
     ),
@@ -1272,9 +1295,9 @@ _DEFIC_P49 = [
 ]
 _DEFIC_P50 = [
     "(This is 20:4 in some editions.) The consensus pointing is ",
-    _hbo_checked("חטף פתח"),
+    _unpointed("חטף פתח"),
     " on ",
-    _hbo_checked("ח"),
+    _unpointed("ח"),
     ". See ",
     author.anchor_h("$MAM with doc", _URL_MWD_EXOD_20_4),
     ".",
@@ -1282,11 +1305,11 @@ _DEFIC_P50 = [
 _DEFIC_P51 = author.emphasis(
     [
         "In Ex 20:10 ",
-        _hbo_checked("אתה ובנך ובתך"),
+        _unpointed("אתה ובנך ובתך"),
         ", the ",
         _READER,
         "’s ",
-        _hbo_checked("לגרמיה"),
+        _unpointed("לגרמיה"),
         " is ambiguous.",
     ]
 )
@@ -1294,52 +1317,52 @@ _DEFIC_P52 = [
     "(This is 20:9 in some editions.) Mostly, the ",
     _READER,
     " gets away with using black for both ",
-    _hbo_checked("תחתון"),
+    _unpointed("תחתון"),
     " and shared symbols. It gets away with it because most black symbols that",
     " are exclusive to the ",
-    _hbo_checked("תחתון"),
+    _unpointed("תחתון"),
     " have a gray symbol that the astute reader can identify as excluding that",
     " black symbol from the ",
-    _hbo_checked("עליון"),
+    _unpointed("עליון"),
     ". In such cases, it is clear to the astute reader that we are dealing with",
     " an “either/or” situation. For instance even in 20:8 ",
-    _hbo_checked("זכור"),
+    _unpointed("זכור"),
     ",",
     _fn_ref(10),
     " though the accents are not vying for the same letter, the astute reader can",
     " identify that the gray ",
-    _hbo_checked("תלישא"),
+    _unpointed("תלישא"),
     " excludes the black ",
-    _hbo_checked("תביר"),
+    _unpointed("תביר"),
     " from the ",
-    _hbo_checked("עליון"),
+    _unpointed("עליון"),
     ":",
 ]
 _DEFIC_P53 = [
     "But it takes a real expert, not just an astute reader, to identify that,",
     " though the ",
-    _hbo_checked("מונח"),
+    _unpointed("מונח"),
     " on ",
-    _hbo_checked("אתה"),
+    _unpointed("אתה"),
     " is shared, the ",
-    _hbo_checked("תלישא"),
+    _unpointed("תלישא"),
     " in ",
-    _hbo_checked("ובנך"),
+    _unpointed("ובנך"),
     " excludes the ",
-    _hbo_checked("לגרמיה"),
+    _unpointed("לגרמיה"),
     " from the ",
-    _hbo_checked("עליון"),
+    _unpointed("עליון"),
     " in the following:",
 ]
 _DEFIC_P54 = [
     "I.e. the ",
-    _hbo_checked("תחתון"),
+    _unpointed("תחתון"),
     " has ",
-    _hbo_checked("מונח לגרמיה"),
+    _unpointed("מונח לגרמיה"),
     " whereas the ",
-    _hbo_checked("עליון"),
+    _unpointed("עליון"),
     " merely has ",
-    _hbo_checked("מונח"),
+    _unpointed("מונח"),
     ". As far as I can see, the ",
     _READER,
     " has no way to notate that within its scheme of gray and black.",
@@ -1349,51 +1372,51 @@ _DEFIC_P55 = author.emphasis(
         "In Ex 20:13–15, the ",
         _READER,
         " fully reverses ",
-        _hbo_checked("תחתון"),
+        _unpointed("תחתון"),
         " and ",
-        _hbo_checked("עליון"),
+        _unpointed("עליון"),
         ".",
     ]
 )
 _DEFIC_P56 = [
     "(This is all in 20:12 in some editions.) These are the distinctively-short",
     " verses of the ",
-    _hbo_checked("עליון"),
+    _unpointed("עליון"),
     ", that should each be cantillated with ",
-    _hbo_checked("טפחא"),
+    _unpointed("טפחא"),
     " and ",
-    _hbo_checked("סילוק"),
+    _unpointed("סילוק"),
     ". A similar full reversal of the cantillations happens in 20:2. The ",
-    _hbo_checked("דגש"),
+    _unpointed("דגש"),
     " marks inside of each of the following words should have been gray since",
     " they belong only to the ",
-    _hbo_checked("עליון"),
+    _unpointed("עליון"),
     ": verse 13 ",
-    _hbo_checked("תרצח"),
+    _unpointed("תרצח"),
     ", verse 14 ",
-    _hbo_checked("תנאף"),
+    _unpointed("תנאף"),
     ", and verse 15 ",
-    _hbo_checked("תגנב"),
+    _unpointed("תגנב"),
     ". It is unclear whether, pragmatically, a mark as tiny as a ",
-    _hbo_checked("דגש"),
+    _unpointed("דגש"),
     " can be recognized to be gray, particularly with the not-very-convincing",
     " halftoning of this volume. It is possible that the use of a ",
-    _hbo_checked("רפה"),
+    _unpointed("רפה"),
     " bar in black above each of these letters might help, indicating a ",
-    _hbo_checked("רפה"),
+    _unpointed("רפה"),
     " exclusive to the ",
-    _hbo_checked("תחתון"),
+    _unpointed("תחתון"),
     ".",
 ]
 _DEFIC_P57 = [
     author.emphasis(
         [
             "In Ex 32:17 ",
-            _hbo_checked("במחנה"),
+            _unpointed("במחנה"),
             ", the ",
             _READER,
             " lacks a ",
-            _hbo_checked("סילוק"),
+            _unpointed("סילוק"),
             ".",
         ]
     ),
@@ -1401,20 +1424,20 @@ _DEFIC_P57 = [
 ]
 _DEFIC_P58 = [
     "The ",
-    _hbo_checked("סילוק"),
+    _unpointed("סילוק"),
     " is expected on ",
-    _hbo_checked("נ"),
+    _unpointed("נ"),
     ". As in Gn 32:24, this is likely an accidental error in the $LC, and thus",
     " unlikely to be even of scholarly interest. But, as usual, the source of the",
     " anomaly is irrelevant: even anomalies of scholarly interest have no place",
     " in a reader’s edition. Unlike the Gn 32:24 case, there is a ",
-    _hbo_checked("געיה"),
+    _unpointed("געיה"),
     " on the word, which makes the lack of ",
-    _hbo_checked("סילוק"),
+    _unpointed("סילוק"),
     " more dangerous, since the ",
-    _hbo_checked("געיה"),
+    _unpointed("געיה"),
     " could be taken to be a ",
-    _hbo_checked("סילוק"),
+    _unpointed("סילוק"),
     " by an inexperienced reader. See ",
     author.anchor_h("$MAM with doc", _URL_MWD_EXOD_32_17),
     ".",
@@ -1423,13 +1446,13 @@ _DEFIC_P59 = [
     author.emphasis(
         [
             "In Ex 33:16 ",
-            _hbo_checked("ונפלינו"),
+            _unpointed("ונפלינו"),
             ", the ",
             _READER,
             " has ",
-            _hbo_checked("צירה"),
+            _unpointed("צירה"),
             " on ",
-            _hbo_checked("ל"),
+            _unpointed("ל"),
             ".",
         ]
     ),
@@ -1437,7 +1460,7 @@ _DEFIC_P59 = [
 ]
 _DEFIC_P60 = [
     "The consensus pointing is ",
-    _hbo_checked("חיריק"),
+    _unpointed("חיריק"),
     ". See ",
     author.anchor_h("$MAM with doc", _URL_MWD_EXOD_33_16),
     ".",
@@ -1446,11 +1469,11 @@ _DEFIC_P61 = [
     author.emphasis(
         [
             "In Nm 12:9 ",
-            _hbo_checked("ויחר אף"),
+            _unpointed("ויחר אף"),
             ", the ",
             _READER,
             " lacks a ",
-            _hbo_checked("מקף"),
+            _unpointed("מקף"),
             ".",
         ]
     ),
@@ -1458,9 +1481,9 @@ _DEFIC_P61 = [
 ]
 _DEFIC_P62 = [
     "This leaves ",
-    _hbo_checked("ויחר"),
+    _unpointed("ויחר"),
     " with no accent, only a ",
-    _hbo_checked("געיה"),
+    _unpointed("געיה"),
     ", which, as one might imagine, is not the consensus pointing of this word.",
     " See ",
     author.anchor_h("$MAM with doc", _URL_MWD_NUM_12_9),
@@ -1484,32 +1507,32 @@ _CONCL_P02 = [
     "The $LC contains many anomalies that may confuse or mislead students.",
     " Beginners are likely to be misled; intermediate students may know enough to",
     " be confused. While the unexpected presence or absence of a ",
-    _hbo_checked("דגש"),
+    _unpointed("דגש"),
     " here and there does no great harm, there is no reason to accept these",
     " anomalies, and many other editions outside the “cult of $BHS” do better,",
     " including $MAM and Hendrickson’s own BHL and Psalms ",
     _READER,
     ". In rare cases, such as a missing ",
-    _hbo_checked("סילוק"),
+    _unpointed("סילוק"),
     " on a word with a ",
-    _hbo_checked("געיה"),
+    _unpointed("געיה"),
     ",",
     _fn_ref(11),
     " the harm is greater than in the more typical ",
-    _hbo_checked("דגש"),
+    _unpointed("דגש"),
     "-related cases.",
 ]
 _CONCL_P03 = [
     "The ",
     _READER,
     " attempted to impose a “gray for ",
-    _hbo_checked("עליון"),
+    _unpointed("עליון"),
     "” reading aid upon the unfriendly $WLC base text for the Exodus Decalogue.",
     " Though the attempt was laudable, its many serious errors made it, overall,",
     " a failure. The use of a base text like $MAM, which supplies separated ",
-    _hbo_checked("תחתון"),
+    _unpointed("תחתון"),
     " and ",
-    _hbo_checked("עליון"),
+    _unpointed("עליון"),
     " Decalogues, would have avoided such a failure.",
 ]
 _H3_APPX = "Appendix: Felicitous failures of $BHS"
@@ -1528,34 +1551,34 @@ _APPX_P01 = [
 _APPX_OL01 = [
     [
         "In Gn 16:2 ",
-        _hbo_checked("ממנה"),
+        _unpointed("ממנה"),
         ", there is strong evidence for the two dots that would make an anomalous ",
-        _hbo_checked("צירה"),
+        _unpointed("צירה"),
         ". There is little or no evidence of a third, centered, lower dot that would",
         " make the consensus ",
-        _hbo_checked("סגול"),
+        _unpointed("סגול"),
         ". Luckily, $WLC fails to reflect that anomaly. See $UXLC change ",
         author.anchor_h("2023.05.17-1", _URL_UXLC_2023_05_17_1),
         ".",
     ],
     [
         "In Ex 14:9 ",
-        _hbo_checked("וישיגו"),
+        _unpointed("וישיגו"),
         ", the $LC lacks ",
-        _hbo_checked("דגש"),
+        _unpointed("דגש"),
         " in ",
-        _hbo_checked("ש"),
+        _unpointed("ש"),
         ". Luckily, $WLC fails to reflect that anomaly. See ",
         author.anchor_h("$UXLC change 2022.04.01-5", _URL_UXLC_2022_04_01_5),
         ".",
     ],
     [
         "In Ex 16:9 ",
-        _hbo_checked("ויאמר"),
+        _unpointed("ויאמר"),
         ", the $LC lacks ",
-        _hbo_checked("דגש"),
+        _unpointed("דגש"),
         " in ",
-        _hbo_checked("י"),
+        _unpointed("י"),
         ". Luckily, $WLC fails to reflect that anomaly. See ",
         author.anchor_h("$UXLC change 2022.04.01-6", _URL_UXLC_2022_04_01_6),
         ".",
@@ -1566,11 +1589,11 @@ _APPX_OL01 = [
         " and 20:11",
         _fn_ref(13),
         " ",
-        _hbo_checked("השבת"),
+        _unpointed("השבת"),
         ", the $LC lacks ",
-        _hbo_checked("דגש"),
+        _unpointed("דגש"),
         " in ",
-        _hbo_checked("ש"),
+        _unpointed("ש"),
         ". Luckily, $WLC fails to reflect those anomalies. See $UXLC changes ",
         author.anchor_h("2022.04.01-7", _URL_UXLC_2022_04_01_7),
         ", ",
@@ -1581,58 +1604,58 @@ _APPX_OL01 = [
     ],
     [
         "See above regarding Ex 20:8 ",
-        _hbo_checked("השבת"),
+        _unpointed("השבת"),
         ".",
     ],
     [
         "See above regarding Ex 20:11 ",
-        _hbo_checked("השבת"),
+        _unpointed("השבת"),
         ".",
     ],
     [
         "In Ex 20:10",
         _fn_ref(14),
         " ",
-        _hbo_checked("אלהיך"),
+        _unpointed("אלהיך"),
         ", the $LC appears to have two ",
-        _hbo_checked("אתנח"),
+        _unpointed("אתנח"),
         " marks, one before (!) the ",
-        _hbo_checked("סגול"),
+        _unpointed("סגול"),
         " on ",
-        _hbo_checked("ה"),
+        _unpointed("ה"),
         " and one in the expected location, after that ",
-        _hbo_checked("סגול"),
+        _unpointed("סגול"),
         ". Luckily, $WLC fails to reflect that anomaly.",
     ],
     [
         "In Ex 32:19 ",
-        _hbo_checked("וישבר"),
+        _unpointed("וישבר"),
         ", the $LC has ",
-        _hbo_checked("דגש"),
+        _unpointed("דגש"),
         " in ",
-        _hbo_checked("י"),
+        _unpointed("י"),
         ". Luckily, $WLC fails to reflect that anomaly. See $UXLC change ",
         author.anchor_h("2022.04.01-17", _URL_UXLC_2022_04_01_17),
         ".",
     ],
     [
         "In Nm 12:9 ",
-        _hbo_checked("ויחר אף"),
+        _unpointed("ויחר אף"),
         ", the $LC has a simple ",
-        _hbo_checked("שווא"),
+        _unpointed("שווא"),
         " on ",
-        _hbo_checked("ר"),
+        _unpointed("ר"),
         ", indicating that these six letters form a single non-compound word: ",
-        _hbo_checked("ויחראף"),
+        _unpointed("ויחראף"),
         ". Luckily, $WLC fails to reflect both the anomalous ",
-        _hbo_checked("שווא"),
+        _unpointed("שווא"),
         " and the six-letter word that it implies. Unluckily, $WLC does reflect the",
         " $LC’s lack of a ",
-        _hbo_checked("מקף"),
+        _unpointed("מקף"),
         " joining ",
-        _hbo_checked("ויחר"),
+        _unpointed("ויחר"),
         " and ",
-        _hbo_checked("אף"),
+        _unpointed("אף"),
         ", giving these letters a “worst of both worlds” mix of both poor fidelity to",
         " the $LC and nonconformance with the Masoretic consensus. See $UXLC change ",
         author.anchor_h("2022.07.02-21", _URL_UXLC_2022_07_02_21),
@@ -1652,7 +1675,7 @@ _NOTE_03 = [
     "Note that numbered verses do not necessarily correspond to chanted verses.",
     " E.g. the span of text labelled by a verse number may contain more than one",
     " or less than one chanted ",
-    _hbo_checked("סוף פסוק"),
+    _unpointed("סוף פסוק"),
     ". Also note that the number of chanted verses is not well defined in the ",
     _READER,
     " because it has a dually-cantillated passage (the Exodus Decalogue). Note",
@@ -1677,32 +1700,32 @@ _NOTE_05 = [
 _NOTE_06 = [
     "Although cantillation separation is not primarily a pronunciation aid, many",
     " people are unaware that the cantillations cause ",
-    _hbo_checked("דגש"),
+    _unpointed("דגש"),
     " and vowel differences in some places. I.e., the differences between the",
     " cantillations are not limited to the accents and the marks most closely",
     " associated with the accents (",
-    _hbo_checked("געיה"),
+    _unpointed("געיה"),
     ", ",
-    _hbo_checked("מקף"),
+    _unpointed("מקף"),
     ", ",
-    _hbo_checked("פסק"),
+    _unpointed("פסק"),
     ", ",
-    _hbo_checked("לגרמיה"),
+    _unpointed("לגרמיה"),
     ", and ",
-    _hbo_checked("סוף פסוק"),
+    _unpointed("סוף פסוק"),
     "). But, the ",
-    _hbo_checked("דגש"),
+    _unpointed("דגש"),
     " and vowel differences in question will not result in different",
     " pronunciations for some Hebrew readers. The ",
-    _hbo_checked("דגש"),
+    _unpointed("דגש"),
     " differences are on the letter ",
-    _hbo_checked("ת"),
+    _unpointed("ת"),
     ", which, for some readers, is pronounced the same whether or not it has a ",
-    _hbo_checked("דגש קל"),
+    _unpointed("דגש קל"),
     ". Similarly, the vowel differences are between ",
-    _hbo_checked("קמץ גדול"),
+    _unpointed("קמץ גדול"),
     " and ",
-    _hbo_checked("פתח"),
+    _unpointed("פתח"),
     ", which, for some readers, are pronounced the same. Note, though, that there",
     " are living readers who ",
     author.emphasis("do"),
@@ -1719,22 +1742,22 @@ _NOTE_07 = [
     " conscious choice or an accident. Timothy Lee’s ",
     author.book_title("The Book of Deuteronomy: A Hebrew Reader"),
     ", another verbatim-$WLC edition, attempts to present only the ",
-    _hbo_checked("תחתון"),
+    _unpointed("תחתון"),
     " but does an incomplete job of it.",
 ]
 _NOTE_08 = [
     "This “",
-    _hbo_checked("עליון"),
+    _unpointed("עליון"),
     " in gray” scheme is reversed in Exodus verses 20:2 and 13–15. There it is",
     " the ",
-    _hbo_checked("תחתון"),
+    _unpointed("תחתון"),
     " that is in gray.",
 ]
 _NOTE_09 = "In some editions this is 20:3 not 20:4."
 _NOTE_10 = "In some editions this is 20:7 not 20:8."
 _NOTE_11 = [
     "Ex 32:17 ",
-    _hbo_checked("במחנה"),
+    _unpointed("במחנה"),
     ".",
 ]
 _NOTE_12 = "In some editions this is 20:7 not 20:8."
