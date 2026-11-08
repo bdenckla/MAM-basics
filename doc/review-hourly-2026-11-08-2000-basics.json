@@ -1,0 +1,225 @@
+{
+  "repository": "bdenckla/MAM-basics",
+  "state": "completed 2026-11-08; bounded 20:00 UTC screen",
+  "author": "Codex",
+  "recorded_at": "2026-11-08T20:05:55.161156+00:00",
+  "endpoint": {
+    "base": "84ad02264fce66d2b41ca0b4ac3fd3522d85e22e",
+    "source": "e8c8ca748f4cab99255782b787f95ed7ccd30e28",
+    "commits": 5,
+    "paths": 35
+  },
+  "maintenance_parent": "71fc1ec34cf4306df89389a7ffde4dbdc7d7e947",
+  "anchors": {
+    "reviewed_through": "210affe3ac2931473bead0de839be0de08309e3d",
+    "broad_tested": "011f25a723771e1f3f1c9ea64fab384525774672",
+    "bounded_screened": "e8c8ca748f4cab99255782b787f95ed7ccd30e28",
+    "bounded_focused_checked": "e8c8ca748f4cab99255782b787f95ed7ccd30e28"
+  },
+  "runtime": {
+    "checkout": "/workspace/MAM-basics",
+    "interpreter": "/workspace/MAM-basics/.venv/bin/python",
+    "python": "3.13.15",
+    "preflight": "Clean owned full clone, one worktree, actual local Python job inventory clear, remote main matched frozen source; no interactive or HP checkout used",
+    "sequential": true
+  },
+  "commands": [
+    {
+      "name": "environment",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "cwd": "/workspace/MAM-basics",
+      "source": "e8c8ca748f4cab99255782b787f95ed7ccd30e28",
+      "started": "2026-11-08T19:57:07.946044+00:00",
+      "exit": 0,
+      "seconds": 0.303
+    },
+    {
+      "name": "gen-misc",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_authored.py",
+        "gen-misc"
+      ],
+      "cwd": "/workspace/MAM-basics",
+      "source": "e8c8ca748f4cab99255782b787f95ed7ccd30e28",
+      "started": "2026-11-08T19:57:08.260169+00:00",
+      "exit": 0,
+      "seconds": 1.931
+    },
+    {
+      "name": "gen-mam-parsed-docs",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_authored.py",
+        "gen-mam-parsed-docs"
+      ],
+      "cwd": "/workspace/MAM-basics",
+      "source": "e8c8ca748f4cab99255782b787f95ed7ccd30e28",
+      "started": "2026-11-08T19:57:10.213597+00:00",
+      "exit": 0,
+      "seconds": 3.67
+    },
+    {
+      "name": "gen-mam-for-sefaria-doc",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_authored.py",
+        "gen-mam-for-sefaria-doc"
+      ],
+      "cwd": "/workspace/MAM-basics",
+      "source": "e8c8ca748f4cab99255782b787f95ed7ccd30e28",
+      "started": "2026-11-08T19:57:13.906538+00:00",
+      "exit": 0,
+      "seconds": 8.85
+    },
+    {
+      "name": "gen-site",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_authored.py",
+        "gen-site"
+      ],
+      "cwd": "/workspace/MAM-basics",
+      "source": "e8c8ca748f4cab99255782b787f95ed7ccd30e28",
+      "started": "2026-11-08T19:57:22.780707+00:00",
+      "exit": 0,
+      "seconds": 140.033
+    },
+    {
+      "name": "focused-tests",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        "-q",
+        "-ra",
+        "py/tests/test_author_std_table.py",
+        "py/tests/test_prose_conventions.py",
+        "py/tests/test_transliterations.py",
+        "py/tests/test_shared_html_styles.py",
+        "py/tests/test_prose_mark_order.py",
+        "py/tests/test_explicit_claims.py",
+        "py/tests/test_verify_mp_payload_examples.py",
+        "py/tests/test_undollared_check.py"
+      ],
+      "cwd": "/workspace/MAM-basics",
+      "source": "e8c8ca748f4cab99255782b787f95ed7ccd30e28",
+      "started": "2026-11-08T19:59:42.833676+00:00",
+      "exit": 0,
+      "seconds": 38.677
+    },
+    {
+      "name": "black-check",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "-m",
+        "black",
+        "--check",
+        "py/author_misc/mp_body_shared.py",
+        "py/author_misc/mp_cmn_dedicated_rows.py",
+        "py/author_misc/mp_cmn_groups_misc.py",
+        "py/author_misc/mp_cmn_kq_special.py",
+        "py/author_misc/mp_cmn_rows_core.py",
+        "py/author_misc/mp_cmn_rows_other.py",
+        "py/author_misc/mp_dualcant_common.py",
+        "py/author_misc/mp_kq_am2_common.py",
+        "py/author_misc/mp_kq_special_common.py",
+        "py/author_misc/mp_poetic_spacing_shared.py",
+        "py/author_misc/mpplus_aot.py",
+        "py/author_misc/mpplus_body.py",
+        "py/author_misc/mpplus_docnote.py",
+        "py/author_misc/mpplus_good_ending_plus_field.py",
+        "py/author_misc/mpplus_good_ending_tmpl.py",
+        "py/author_misc/mpplus_haarah_2.py",
+        "py/author_misc/mpplus_template_call_graphs.py",
+        "py/author_misc/review_of_hebrew_reader_for_the_pentateuch.py",
+        "py/author_rocc/rocc_util.py",
+        "py/mb_author/author.py",
+        "py/tests/test_author_std_table.py"
+      ],
+      "cwd": "/workspace/MAM-basics",
+      "source": "e8c8ca748f4cab99255782b787f95ed7ccd30e28",
+      "started": "2026-11-08T20:00:21.518459+00:00",
+      "exit": 0,
+      "seconds": 0.381
+    },
+    {
+      "name": "endpoint-whitespace",
+      "command": [
+        "git",
+        "diff",
+        "--check",
+        "84ad02264fce66d2b41ca0b4ac3fd3522d85e22e",
+        "e8c8ca748f4cab99255782b787f95ed7ccd30e28"
+      ],
+      "cwd": "/workspace/MAM-basics",
+      "source": "e8c8ca748f4cab99255782b787f95ed7ccd30e28",
+      "started": "2026-11-08T20:00:21.907689+00:00",
+      "exit": 0,
+      "seconds": 0.01
+    }
+  ],
+  "results": {
+    "regeneration": "All four actual maintained authored entrypoints run sequentially: gen-misc 1.931 s; gen-mam-parsed-docs 3.670 s with 59 passed / 0 failed / 0 pending claims; gen-mam-for-sefaria-doc 8.850 s; gen-site 140.033 s. All tracked outputs byte-identical after each stage, including all MPplus/reader/ROCC/index consumers. No unexplained output diff.",
+    "native_tests": "75 passed, 8 subtests passed, zero skipped; eight selected modules through maintained py/main_test.py -q -ra; 38.49 s pytest / 38.677 s recorder.",
+    "reader_check": {
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "/workspace/MAM-basics/.novc/review-hourly-20261108-2000-basics/reader-check.py"
+      ],
+      "exit": 0,
+      "seconds": 0.264,
+      "result": "283 ordered literal Hebrew runs / 1180 clusters; 279 unpointed runs have no lang, exactly 4 pointed runs keep lang=hbo; all 14 footnotes reciprocal and baseline; both tables, 8 RTL cells, 49 local/site targets, seven existing PNGs and index links pass. Changed checker assumptions and patch preserved."
+    },
+    "output_comparison": {
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "/workspace/scratch/compare_span_outputs_2000.py"
+      ],
+      "exit": 0,
+      "seconds": 0.113,
+      "result": "All 12 changed HTML files have exact codepoint-visible text and DOM after only 433 unpointed lang removals (154 MPplus + 279 reader), 14 reader superscript-wrapper removals, and serializer whitespace folding. Every other node/attribute/link unchanged. No Hebrew normalization."
+    },
+    "format": "Black --check on all 21 changed Python files exit 0, 0.381 s; endpoint git diff --check exit 0, 0.010 s.",
+    "environment": "Owning Python 3.13.15; pip check passes (0.303 s); committed requirements/constraints unchanged in endpoint.",
+    "finding": "No consequential introduced defect; shared author guards, nested text classifier, ellipsis helper, table dispatch and explicit lifted ROCC exception inspected. No repair."
+  },
+  "coordinator_review": {
+    "attribution": "Independent coordinating reviewer via connector; distinct from executed generators/tests",
+    "result": "All 70 endpoint file blobs verified; 17 MP/MPplus module ASTs identical after 176 declared helper attribute renames; all 12 HTML DOMs independently agree after only the 433 lang and 14 sup removals. Reader executable AST otherwise identical after reversing 279 unpointed and four pointed calls and helper/docstring changes; ROCC differs only in two lifted=True keywords; table tests only three helper calls; author module otherwise identical outside seven affected helper names and two regex constants. Affected shared helpers manually reviewed.",
+    "limits": "Source-port and image/browser/editorial limits of earlier reader review remain unchanged; no skill deployment or local user-configuration write."
+  },
+  "finding": "No consequential introduced defect confirmed; no repair or source-data change",
+  "failures": [],
+  "limits": [
+    "No mega/full-suite rerun; November 8 broad result at 011f25a7 remains separate.",
+    "No source refresh, source-export or image-byte provenance comparison, manuscript interpretation, browser/pixel or live verification.",
+    "Stage 10 source/live/save/base/parse gaps, PR369 browser gap and earlier heading/browser limitations remain open.",
+    "No main/shared write, deployment/dispatch, font/hbofonts or schedule operation."
+  ],
+  "policy": {
+    "AGENTS_blob": "d3ec8f0f27fca27c1d3d4045e96cc0a33f951e6a",
+    "review_trial_blob": "429b896939570ad0ffd2a8518f9c114c0ff9ec8b",
+    "periodic_review_blob": "2361ed9d216650ccbde241e3eecfc2695e48491c",
+    "shared_skills": "Current AGENTS, review-trial, periodic-review and clone-forests read; routed canonical skills applied. Hebrew-prose skill gains explicit unpointed-default-font rule and lifted-form exception; current instruction diff inspected. No skill installation/deployment."
+  },
+  "evidence": {
+    "path": "doc/review-hourly-2026-11-08-2000-basics-evidence.zip",
+    "sha256": "3b4b2c6fe48276f85a5a16f88cd8ff8bfa112c83ddbbba119437d6c19e21c451",
+    "files": 29
+  },
+  "publication": {
+    "branch": "review-hourly-20261108-2000-basics-receipts",
+    "paths": [
+      "doc/review-hourly-2026-11-08-2000-basics-evidence.zip",
+      "doc/review-hourly-2026-11-08-2000-basics.json",
+      "doc/review-trial-status.md"
+    ],
+    "safeguard": "Unique isolated new receipt branch; no push/deployment trigger or known dependent job. No main/shared write or dispatch. Exact remote SHA, scope and archive verified after push.",
+    "closeout": "Restore original owned work branch clean after remote verification; no added worktree; preserve evidence"
+  }
+}
