@@ -488,9 +488,16 @@ def _anc_h(contents, href_val):
 
 # A point or an accent: what makes Hebrew pointed, as
 # accgram.almost_errors_html_shared._HEBREW_MARK_RE has it. Maqaf, paseq and
-# sof pasuq are punctuation, not pointing. Numeric escapes, because a bare
-# combining mark in a literal floats on its quote.
-_HEBREW_MARK_RE = re.compile("[֑-ׇֽֿׁׂׅׄ-׉]")
+# sof pasuq are punctuation, not pointing. Escapes, because a bare combining
+# mark in a literal floats on its quote; U+05C8 and U+05C9, Phonetic MAM's
+# annotation marks, have no Unicode names.
+_HEBREW_MARK_RE = re.compile(
+    "[\N{HEBREW ACCENT ETNAHTA}-\N{HEBREW POINT METEG}"
+    "\N{HEBREW POINT RAFE}"
+    "\N{HEBREW POINT SHIN DOT}\N{HEBREW POINT SIN DOT}"
+    "\N{HEBREW MARK UPPER DOT}\N{HEBREW MARK LOWER DOT}"
+    "\N{HEBREW POINT QAMATS QATAN}-\U000005c9]"
+)
 _HEBREW_LETTER_RE = re.compile("[א-ת]")
 
 _AID = "https://www.chabad.org/library/bible_cdo/aid"
