@@ -102,19 +102,20 @@ def with_attached_marks(wtseq):
        string before it and which the string after it continues, so that the atoms it
        joins are one form.  After a template, the stand-in ends the last form of each
        parameter that _PARAMS_TAKING_A_MARK_AFTER names for that template instead.
-    3. A sof pasuq that begins a string after a template becomes the stand-in
-       foi_gray_marks.GRAY_SOF_PASUQ, at the end of the last form of each parameter
-       that _PARAMS_TAKING_A_MARK_AFTER names for that template, through any template
-       that ends such a parameter.  A template without an entry raises.  So does a
-       maqaf that begins a string after a template: no FOI has needed one yet, and
-       how to show a maqaf supplied from outside a template's argument is undecided.
+    3. A sof pasuq or maqaf that begins a string after a template moves to the end of
+       the last form of each parameter that _PARAMS_TAKING_A_MARK_AFTER names for that
+       template, through any template that ends such a parameter.  A template without
+       an entry raises.
 
-    Ben Denckla decided rules 2 and 3 on 2026-11-09.  Where a form is a template's
-    argument, which narrowly speaking does not include the sof pasuq after the
-    template, he asked to "supply the sof pasuq in gray and add a column saying "GSP"
-    in those cases with a hover-explain that this is a gray sof pasuq added for
-    context".  And he asked that a form include MAM's gray maqaf, shown gray, perhaps
-    noted in a GM column of its own.  foi_gray_marks shows both.
+    Ben Denckla decided rule 2 on 2026-11-09: a form includes MAM's gray maqaf, shown
+    gray and perhaps noted in a GM column of its own, which foi_gray_marks does.  The
+    same day he asked for a supplied sof pasuq to be gray, in a GSP column, "for cases
+    where, narrowly speaking, the phenomenon in question does not include sof pasuq
+    (e.g. the argument of a template being "studied" (listed))".  He then ruled out
+    the Unicode and dual-ml-alef FOIs: "These FOIs are not studying/listing something
+    like all uses of the X template."  Nor does rule 3 move a mark into a note's body,
+    the documentation that the doc-note-notation FOI lists.  So the mark that rule 3
+    moves is shown as it is.
 
     A mark that begins its sequence follows no template, so it stays where it is: the
     sof pasuq that is itself the target of a documentation note, at Genesis 35:22 and
@@ -174,9 +175,7 @@ def _with_mark_moved_back(prev, string):
     """Return prev and string, with the mark that begins string moved back into prev."""
     if isinstance(prev, str):
         raise ValueError(f"a string directly after a string: {prev!r}, {string!r}")
-    if string[0] == hpu.MAQ:
-        raise ValueError(f"a maqaf begins a string after a template: {prev!r}")
-    attached = _with_mark_after(prev, gray_marks.GRAY_SOF_PASUQ)
+    attached = _with_mark_after(prev, string[0])
     if attached is None:
         return [prev, string]
     rest = string[1:]

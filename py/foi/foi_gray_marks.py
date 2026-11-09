@@ -1,17 +1,16 @@
 """Show the marks that the FOIs reading by forms show gray.
 
 foi_wikitext_helpers.with_attached_marks writes a stand-in for each mark that these
-FOIs show gray.  GRAY_SOF_PASUQ stands for a sof pasuq that the reading supplies, for
-context, to a form that is a template's argument, from outside that argument.
-GRAY_MAQAF stands for MAM's gray maqaf, the template מ:מקף אפור, which the reading
-takes as a maqaf joining the atoms on either side of it into one form.  A stand-in
-is a Private Use code point, which with_attached_marks raises on meeting in MAM's
-text, and none leaves the FOIs: a FOI finds its features in a form's text, in which
-each stand-in is the mark it stands for, and records the form as a target in which
-each such mark is a span that the shared stylesheet shows gray.  The FOI pages then give a row that shows such a mark a
-cell naming it, GSP or GM, whose title explains it on hover, and give its JSON row a
-flag of the same name.  Ben Denckla asked for both on 2026-11-09, taking the term GSP
-from BHLA work; foi_wikitext_helpers.with_attached_marks records his decision.
+FOIs show gray.  The one such mark is MAM's gray maqaf, the template מ:מקף אפור,
+which the reading takes as a maqaf joining the atoms on either side of it into one
+form; GRAY_MAQAF stands for it.  A stand-in is a Private Use code point, which
+with_attached_marks raises on meeting in MAM's text, and none leaves the FOIs: a FOI
+finds its features in a form's text, in which each stand-in is the mark it stands
+for, and records the form as a target in which each such mark is a span that the
+shared stylesheet shows gray.  The FOI pages then give a row that shows such a mark a
+cell naming it, GM, whose title explains it on hover, and give its JSON row a flag of
+the same name.  Ben Denckla asked for this on 2026-11-09, as the docstring of
+foi_wikitext_helpers.with_attached_marks records.
 """
 
 from typing import NamedTuple
@@ -19,9 +18,8 @@ from typing import NamedTuple
 from mb_cmn import hebrew_punctuation as hpu
 from mb_misc import mb_html
 
-GRAY_SOF_PASUQ = "\U0000e000"  # A Private Use code point
 GRAY_MAQAF = "\U0000e001"  # A Private Use code point
-STAND_INS = GRAY_SOF_PASUQ + GRAY_MAQAF
+STAND_INS = GRAY_MAQAF
 
 
 class _Kind(NamedTuple):
@@ -33,14 +31,6 @@ class _Kind(NamedTuple):
 
 # In the order of the columns that name them.
 _KINDS = {
-    GRAY_SOF_PASUQ: _Kind(
-        hpu.SOPA,
-        "foi-gray-sof-pasuq",
-        "GSP",
-        "Gray sof pasuq: this page adds it, in gray, for context. The form is a"
-        " template's argument, and the sof pasuq follows the template rather than"
-        " belonging to the argument.",
-    ),
     GRAY_MAQAF: _Kind(
         hpu.MAQ,
         "mam-implicit-maqaf",
