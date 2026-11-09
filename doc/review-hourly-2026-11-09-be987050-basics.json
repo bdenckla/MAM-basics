@@ -1,0 +1,131 @@
+{
+  "kind": "bounded endpoint screen",
+  "repository": "bdenckla/MAM-basics",
+  "window": {
+    "base": "ea19ea15dafde6843a9880931558ccdb9c1b7907",
+    "head": "be9870504fdfeea07f7358e886200e5215d96a79",
+    "commits": 3,
+    "paths": 15
+  },
+  "reconciled_status": "989f76a88f90ab6c389b73108f1cb483e032ba85",
+  "disposition": "No consequential defect evidenced; no source repair or editorial decision.",
+  "independent_checks": {
+    "base": "ea19ea15dafde6843a9880931558ccdb9c1b7907",
+    "head": "be9870504fdfeea07f7358e886200e5215d96a79",
+    "scope": "Sparse independent endpoint and extracted-function probes, not repository suite or regeneration",
+    "outputs": {
+      "foi-unicode": {
+        "rows": 2151,
+        "delta": {
+          "gsp_removed": 81
+        },
+        "html_rows": 426,
+        "html_gray_rows": {
+          "GM": 4
+        },
+        "gray_tables": 2
+      },
+      "foi-alef-dual-ml-alef-second": {
+        "rows": 684,
+        "delta": {
+          "gsp_removed": 2
+        },
+        "html_rows": 33,
+        "html_gray_rows": {},
+        "gray_tables": 0
+      },
+      "foi-kq-simple": {
+        "rows": 1213,
+        "delta": {
+          "gsp_added": 20,
+          "legarmeh_added_pqere": 1
+        },
+        "html_rows": 118,
+        "html_gray_rows": {
+          "GSP": 6
+        },
+        "gray_tables": 3
+      },
+      "foi-qamats-variants": {
+        "rows": 752,
+        "delta": {
+          "gsp_added": 106
+        },
+        "html_rows": 100,
+        "html_gray_rows": {
+          "GSP": 7
+        },
+        "gray_tables": 4
+      }
+    },
+    "changed_python_parses": 6,
+    "function_probes": "passed: gray labels and JSON omission, qualifiers, template identity and nesting, literal punctuation attachment, unchanged input, closed unknown-template failure, silluq-before-meteg None, qamats eligibility, kq pqere, three projection policies; explicit HTML constructor substitutes"
+  },
+  "review_notes": [
+    "All 4,800 JSON rows retain identity/order and existing text/fields except Psalms 10:5 pqere's deliberate U+05C0 addition; complete other changes are the recorded GSP flags.",
+    "Contextual GSP is excluded from JSON argument text; GM remains text. The change follows the documented scope and legarmeh decisions.",
+    "Additional discovered QereProjectionPolicy caller foiz_wt_holam_before_vav at the exact endpoint uses existing named fields. Discovery search indexed later main, not an exhaustive exact-head caller census."
+  ],
+  "replay": {
+    "command": "python review-hourly-2026-11-09-be987050-basics-check.py",
+    "setup": "Download checker and comparison input together into owned scratch; rename the comparison input compare.json. Materialize the following files at exact window base/head into base/ and head/ beside the checker. It writes result.json. Semantic checks tolerate a transport-added final newline.",
+    "files": {
+      "base": [
+        "doc/PLAN-deferred-template-projection-decisions.md",
+        "gh-pages/MAM-with-doc/foi/foi-alef-dual-ml-alef-second.html",
+        "gh-pages/MAM-with-doc/foi/foi-alef-dual-ml-alef-second.json",
+        "gh-pages/MAM-with-doc/foi/foi-kq-simple.html",
+        "gh-pages/MAM-with-doc/foi/foi-kq-simple.json",
+        "gh-pages/MAM-with-doc/foi/foi-qamats-variants.html",
+        "gh-pages/MAM-with-doc/foi/foi-qamats-variants.json",
+        "gh-pages/MAM-with-doc/foi/foi-unicode.html",
+        "gh-pages/MAM-with-doc/foi/foi-unicode.json",
+        "py/foi/foi_finals.py",
+        "py/foi/foi_gray_marks.py",
+        "py/foi/foi_wikitext_helpers.py",
+        "py/foi/foiz_wt_kq_1.py",
+        "py/foi/foiz_wt_qamats_var.py",
+        "py/hkq_cmn/qere_projection.py"
+      ],
+      "head": [
+        "doc/PLAN-deferred-template-projection-decisions.md",
+        "dot-claude/skills/hebrew-prose/references/rendered-prose.md",
+        "dot-claude/skills/hebrew-prose/references/verifying.md",
+        "gh-pages/MAM-with-doc/foi/foi-alef-dual-ml-alef-second.html",
+        "gh-pages/MAM-with-doc/foi/foi-alef-dual-ml-alef-second.json",
+        "gh-pages/MAM-with-doc/foi/foi-kq-simple.html",
+        "gh-pages/MAM-with-doc/foi/foi-kq-simple.json",
+        "gh-pages/MAM-with-doc/foi/foi-qamats-variants.html",
+        "gh-pages/MAM-with-doc/foi/foi-qamats-variants.json",
+        "gh-pages/MAM-with-doc/foi/foi-unicode.html",
+        "gh-pages/MAM-with-doc/foi/foi-unicode.json",
+        "py/foi/foi_finals.py",
+        "py/foi/foi_gray_marks.py",
+        "py/foi/foi_struct.py",
+        "py/foi/foi_wikitext_helpers.py",
+        "py/foi/foiz_wt_holam_before_vav.py",
+        "py/foi/foiz_wt_kq_1.py",
+        "py/foi/foiz_wt_qamats_var.py",
+        "py/hkq_cmn/qere_projection.py",
+        "py/mb_cmn/template_names.py",
+        "py/mb_cmn/ws_tmpl2.py",
+        "py/mb_cmn/ws_tmpl_named_params.py",
+        "py/mb_misc/mb_html.py",
+        "py/py_misc/analyze_qamats_variant.py"
+      ]
+    }
+  },
+  "limitations": [
+    "Sparse fetched-file scratch, not a hydrated checkout or Git-blob byte verification.",
+    "Extracted exact source definitions use explicitly substituted HTML constructors and lightweight dependency wiring, not repository test execution.",
+    "No actual FOI/MAM-with-doc generator, repository tests, browser, mega or full suite ran.",
+    "Owner regeneration, preservation comparisons and 97 focused tests are attributed, not independently reproduced.",
+    "Optional bs4 unavailable; standard-library checks used without installation. Later scratch-read environment interruption resolved without a product check failure.",
+    "Historical overall review and broad-tested anchors and all wider/live/browser gaps remain unchanged."
+  ],
+  "anchors_preserved": {
+    "reviewed_through": "210affe3ac2931473bead0de839be0de08309e3d",
+    "last_broad_tested": "e686160a167bd1f50ccf058137760fdd075c42d8"
+  },
+  "publication": "New isolated public receipt branch descending prior receipt; no main/shared integration or deployment. Only pages.yml exists, identical blob 18ceb19405424710bda47d9a38c470cc2ed9c385 at receipt base and endpoint, workflow_dispatch only and no main-only guard. No dispatch or hbofonts work."
+}

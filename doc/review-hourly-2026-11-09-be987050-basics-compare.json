@@ -1,0 +1,142 @@
+{
+  "repository_full_name": "bdenckla/MAM-basics",
+  "base": "ea19ea15dafde6843a9880931558ccdb9c1b7907",
+  "head": "be9870504fdfeea07f7358e886200e5215d96a79",
+  "status": "ahead",
+  "ahead_by": 3,
+  "behind_by": 0,
+  "total_commits": 3,
+  "too_large": null,
+  "base_commit": {
+    "sha": "ea19ea15dafde6843a9880931558ccdb9c1b7907",
+    "url": "https://api.github.com/repos/bdenckla/MAM-basics/commits/ea19ea15dafde6843a9880931558ccdb9c1b7907",
+    "html_url": "https://github.com/bdenckla/MAM-basics/commit/ea19ea15dafde6843a9880931558ccdb9c1b7907"
+  },
+  "merge_base_commit": {
+    "sha": "ea19ea15dafde6843a9880931558ccdb9c1b7907",
+    "url": "https://api.github.com/repos/bdenckla/MAM-basics/commits/ea19ea15dafde6843a9880931558ccdb9c1b7907",
+    "html_url": "https://github.com/bdenckla/MAM-basics/commit/ea19ea15dafde6843a9880931558ccdb9c1b7907"
+  },
+  "files": [
+    {
+      "filename": "doc/PLAN-deferred-template-projection-decisions.md",
+      "status": "modified",
+      "additions": 12,
+      "deletions": 0,
+      "changes": 12,
+      "previous_filename": null
+    },
+    {
+      "filename": "gh-pages/MAM-with-doc/foi/foi-alef-dual-ml-alef-second.html",
+      "status": "modified",
+      "additions": 2,
+      "deletions": 18,
+      "changes": 20,
+      "previous_filename": null
+    },
+    {
+      "filename": "gh-pages/MAM-with-doc/foi/foi-alef-dual-ml-alef-second.json",
+      "status": "modified",
+      "additions": 2,
+      "deletions": 4,
+      "changes": 6,
+      "previous_filename": null
+    },
+    {
+      "filename": "gh-pages/MAM-with-doc/foi/foi-kq-simple.html",
+      "status": "modified",
+      "additions": 46,
+      "deletions": 6,
+      "changes": 52,
+      "previous_filename": null
+    },
+    {
+      "filename": "gh-pages/MAM-with-doc/foi/foi-kq-simple.json",
+      "status": "modified",
+      "additions": 41,
+      "deletions": 21,
+      "changes": 62,
+      "previous_filename": null
+    },
+    {
+      "filename": "gh-pages/MAM-with-doc/foi/foi-qamats-variants.html",
+      "status": "modified",
+      "additions": 91,
+      "deletions": 7,
+      "changes": 98,
+      "previous_filename": null
+    },
+    {
+      "filename": "gh-pages/MAM-with-doc/foi/foi-qamats-variants.json",
+      "status": "modified",
+      "additions": 212,
+      "deletions": 106,
+      "changes": 318,
+      "previous_filename": null
+    },
+    {
+      "filename": "gh-pages/MAM-with-doc/foi/foi-unicode.html",
+      "status": "modified",
+      "additions": 10,
+      "deletions": 91,
+      "changes": 101,
+      "previous_filename": null
+    },
+    {
+      "filename": "gh-pages/MAM-with-doc/foi/foi-unicode.json",
+      "status": "modified",
+      "additions": 81,
+      "deletions": 162,
+      "changes": 243,
+      "previous_filename": null
+    },
+    {
+      "filename": "py/foi/foi_finals.py",
+      "status": "modified",
+      "additions": 10,
+      "deletions": 3,
+      "changes": 13,
+      "previous_filename": null
+    },
+    {
+      "filename": "py/foi/foi_gray_marks.py",
+      "status": "modified",
+      "additions": 89,
+      "deletions": 58,
+      "changes": 147,
+      "previous_filename": null
+    },
+    {
+      "filename": "py/foi/foi_wikitext_helpers.py",
+      "status": "modified",
+      "additions": 70,
+      "deletions": 16,
+      "changes": 86,
+      "previous_filename": null
+    },
+    {
+      "filename": "py/foi/foiz_wt_kq_1.py",
+      "status": "modified",
+      "additions": 53,
+      "deletions": 18,
+      "changes": 71,
+      "previous_filename": null
+    },
+    {
+      "filename": "py/foi/foiz_wt_qamats_var.py",
+      "status": "modified",
+      "additions": 49,
+      "deletions": 21,
+      "changes": 70,
+      "previous_filename": null
+    },
+    {
+      "filename": "py/hkq_cmn/qere_projection.py",
+      "status": "modified",
+      "additions": 16,
+      "deletions": 12,
+      "changes": 28,
+      "previous_filename": null
+    }
+  ]
+}
