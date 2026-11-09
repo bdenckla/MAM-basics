@@ -70,7 +70,7 @@ _INTRO = [
 _KINGS_INTRO = [
     ["In $2Kings_4_7 (", *_links_to_u_and_m(tbn.BK_SND_KGS, 4, 7), "),"],
     [" there is a קרי of ", author.hbo("וּבָנַ֔יִךְ")],
-    [" corresponding to a כתיב of ", author.hbo("בניכי"), "."],
+    [" corresponding to a כתיב of ", author.unpointed("בניכי"), "."],
 ]
 _KINGS_DISCUSSION_1 = [
     "This is hard to show in the “pointed כתיב”",
@@ -111,10 +111,10 @@ _KINGS_DISCUSSION_5 = [
     [" (", *_links_to_u_and_m(tbn.BK_FST_SAM, 12, 10), ")"],
     " where, in Tiberian manuscripts,",
     [" a pointed כתיב of ", author.hbo("וַיֹּאמְרֻ֣")],
-    [" is paired with an unpointed קרי of ", author.hbo("ויאמרו"), "."],
+    [" is paired with an unpointed קרי of ", author.unpointed("ויאמרו"), "."],
     #
     " In many printed editions, this would be shown as",
-    [" an unpointed כתיב of ", author.hbo("ויאמר")],
+    [" an unpointed כתיב of ", author.unpointed("ויאמר")],
     [" paired with a pointed קרי of ", author.hbo("וַיֹּאמְר֣וּ"), "."],
 ]
 _KINGS_DISCUSSION_6 = [
@@ -132,7 +132,7 @@ _KINGS_DISCUSSION_6 = [
 _LAMENTATIONS_INTRO = [
     ["In $Lamentations_4_16 (", *_links_to_u_and_m(tbn.BK_LAMENT, 4, 16), "),"],
     [" there is a קרי of ", author.hbo("וּזְקֵנִ֖ים")],
-    [" corresponding to a כתיב of ", author.hbo("זקנים"), "."],
+    [" corresponding to a כתיב of ", author.unpointed("זקנים"), "."],
 ]
 _LAMENTATIONS_DISCUSSION_1 = [
     "As in $2Kings_4_7,",

@@ -93,8 +93,39 @@ def heading_level_2(contents, attr=None):
     return boj_html.heading_level_2(dollar_sub(contents), attr)
 
 
-def hbo(contents, attr=None):
+def hbo(contents, attr=None, *, lifted=False):
+    """Pointed Hebrew, in the pointed-Hebrew font.
+
+    That is lang="hbo", which book-of-job/style.css sets in Taamey D at 175% so
+    that points and accents are legible. Hebrew with no point or accent keeps
+    the surrounding font instead, so this raises on it: give it to unpointed.
+    mb_author.author.hbo has the same guard, and the hebrew-prose skill's
+    references/rendered-prose.md, "Unpointed Hebrew keeps the surrounding font",
+    gives Ben's words. The one exception is a form lifted whole from a text and
+    set beside the forms it is compared with, which keeps their font, pointed or
+    not: pass lifted=True for it.
+    """
+    if not lifted and _is_unpointed_hebrew(contents):
+        raise ValueError(
+            "unpointed Hebrew in the pointed-Hebrew font:"
+            f" {_text_of(contents)!r}; use author.unpointed"
+        )
     return boj_html.bdi(contents, _awl(attr, "hbo"))
+
+
+def unpointed(contents, attr=None):
+    """Unpointed Hebrew from the Tanakh, in the surrounding font.
+
+    A <bdi> without lang isolates its direction. The unpointed-tanakh span inside
+    it, which a "%" word in dollar_sub also makes, is what check_spelling_in_html.py
+    counts apart from the English. See hbo for why. Raises on Hebrew with a point
+    or an accent, which belongs in hbo.
+    """
+    if _HEBREW_MARK_RE.search(_text_of(contents)):
+        raise ValueError(
+            f"pointed Hebrew given to author.unpointed: {_text_of(contents)!r}"
+        )
+    return boj_html.bdi(span_unpointed_tanakh(contents), attr)
 
 
 def para_hbo(contents, attr=None):
@@ -350,6 +381,38 @@ def _add_attr(attrdic, attrkey, attrval):
     attrdic_nn = attrdic or {}  # nn: non-None
     assert attrkey not in attrdic_nn
     return {attrkey: attrval, **attrdic_nn}
+
+
+def _is_unpointed_hebrew(contents):
+    """Whether contents has a Hebrew letter and no point or accent."""
+    text = _text_of(contents)
+    return bool(_HEBREW_LETTER_RE.search(text)) and not _HEBREW_MARK_RE.search(text)
+
+
+def _text_of(contents):
+    """The text of contents, through any elements nested in it."""
+    if isinstance(contents, str):
+        return contents
+    if isinstance(contents, (list, tuple)):
+        return "".join(_text_of(item) for item in contents)
+    if boj_html.is_htel(contents):
+        return _text_of(contents.get("contents") or [])
+    return ""
+
+
+# A point or an accent: what makes Hebrew pointed, as mb_author.author and
+# accgram.almost_errors_html_shared have it. Maqaf, paseq and sof pasuq are
+# punctuation, not pointing. Escapes, because a bare combining mark in a literal
+# floats on its quote; U+05C8 and U+05C9, Phonetic MAM's annotation marks, have
+# no Unicode names.
+_HEBREW_MARK_RE = re.compile(
+    "[\N{HEBREW ACCENT ETNAHTA}-\N{HEBREW POINT METEG}"
+    "\N{HEBREW POINT RAFE}"
+    "\N{HEBREW POINT SHIN DOT}\N{HEBREW POINT SIN DOT}"
+    "\N{HEBREW MARK UPPER DOT}\N{HEBREW MARK LOWER DOT}"
+    "\N{HEBREW POINT QAMATS QATAN}-\U000005c9]"
+)
+_HEBREW_LETTER_RE = re.compile("[\N{HEBREW LETTER ALEF}-\N{HEBREW LETTER TAV}]")
 
 
 def _rom_with_cap(locase_key: str, locase_val: str):
