@@ -1,0 +1,150 @@
+{
+  "repository": "bdenckla/MAM-basics",
+  "screen_started_utc": "2026-11-09T16:05:18Z",
+  "screen_finished_utc": "2026-11-09T16:09:18Z",
+  "base": "e686160a167bd1f50ccf058137760fdd075c42d8",
+  "head": "653b84198a6ea646c83b7b249370722e6fe2cf38",
+  "commits": 3,
+  "changed_paths": 16,
+  "disposition": "No consequential defect confirmed in endpoint source/generated review. Existing editorial choices preserved; no repair made.",
+  "verification": [
+    "Read endpoint changes in all 16 paths and the three commit explanations.",
+    "Standard-library scratch check of connector-fetched committed artifacts: all 2139 existing Unicode FOI rows preserve feature/verse order; exactly 757 changed targets occur in documentation notes and are a form of the prior target.",
+    "Twelve new alef-with-mapiq rows: four text and eight note rows. Every target contains the required alef/dot sequence. All twelve appear in HTML, and all 426 parsed two-cell HTML rows match JSON records.",
+    "AST-extracted unchanged/new dispatch functions uniquely group all 160 committed enriched Job records into 11 groups. The two singleton prose declarations match records 2908 and 3115; committed article links target existing detail pages.",
+    "Both custom dictionary artifacts change only BHQ +2, BHS +1, WLC +1, and Greek-mu L +1, matching the new prose.",
+    "Python syntax parses for all 11 changed modules and two supporting modules. Scratch checker exits 0.",
+    "Four focused negative probes of actual extracted dispatch functions reject no matching group, missing prose declarations, an unlisted group and a stale declaration with expected record identities."
+  ],
+  "limitations": [
+    "Initial isolated git clone failed before creation because the noninteractive transport lacked username credentials. This is an environment limitation, not a product failure.",
+    "No current hydrated project checkout was available. No real FOI or Job CLI regeneration, project test suite, mega, Black, or runtime dependency verification is claimed. Committed author verification is distinct from this independent scratch check.",
+    "This incremental screen does not reconcile the historical review gap or advance the overall reviewed-through anchor. Preserve parent-reported reviewed anchor 210affe3 and nightly-tested e686160a separately."
+  ],
+  "publication": "Receipt/status only on a new isolated public work branch. No main/shared integration, source repair, deployment or workflow dispatch.",
+  "reconciled_status": "5c0e10f41def24efd1a78af10446bc5295fc27e7",
+  "anchors_preserved": {
+    "reviewed_through": "210affe3ac2931473bead0de839be0de08309e3d",
+    "last_broad_tested": "e686160a167bd1f50ccf058137760fdd075c42d8"
+  },
+  "independent_result": {
+    "foi_rows": {
+      "base": 2139,
+      "head": 2151,
+      "punctuation_only_note_rows": 757,
+      "new_categories": {
+        "rare/alef-with-mapiq": 4,
+        "rare/alef-with-mapiq/doc-part-n": 8
+      }
+    },
+    "new_category_locations": {
+      "G43:26": 2,
+      "L23:17": 1,
+      "Jb33:21": 6,
+      "Er8:18": 1,
+      "R2:10": 1,
+      "R2:11": 1
+    },
+    "dictionary_deltas": {
+      "BHQ": 2,
+      "BHS": 1,
+      "WLC": 1,
+      "μL": 1
+    },
+    "job_grouping": {
+      "records": 160,
+      "groups": {
+        "g:xbhq_and_n3": 34,
+        "g:nbhq_and_n3": 11,
+        "g:tbhq_and_zdw": 26,
+        "g:tbhq_and_n3": 61,
+        "g:tbhq_and_zmw": 6,
+        "g:tbhq_and_zuxlc": 9,
+        "g:nbhq_and_x3": 7,
+        "g:adm": 2,
+        "g:xbhq_and_nuxlc": 2,
+        "g:tbhq_and_twlc": 1,
+        "g:xbhq_and_twlc": 1
+      },
+      "prose_declarations": {
+        "2908": "g:tbhq_and_twlc",
+        "3115": "g:xbhq_and_twlc"
+      }
+    },
+    "python_syntax_files": 13,
+    "two_cell_html_rows_match_json": 426,
+    "all_12_new_rows_rendered": true
+  },
+  "materialized_files": {
+    "base": {
+      "book-of-job/out/custom-dict-freqs-ordered-by-count.json": "a7ce233901ac140ea3a32609ef8989fea496d49ee4e7b8aa6c14bf8f9c4d5e37",
+      "book-of-job/out/custom-dict-freqs-ordered-by-entry.json": "b842b41d884c84de04b6958482740cd958f4e4ed2fa8650eacda22e9d6df4461",
+      "gh-pages/MAM-with-doc/foi/foi-unicode.html": "bbf5a7177141b345eefc202ebacb455244649fa3898cf10b264462e6ff7ba1d6",
+      "gh-pages/MAM-with-doc/foi/foi-unicode.json": "7528de1dc7fd44e819782e474c71f283e1625eff3d29ec6bda24a761ecc10eb4",
+      "gh-pages/book-of-job/jobn/job2_main_article.html": "55ed344769073db621046579f771cfdcac0108c8ffa3dfc8d6f649ae0146fa9f",
+      "py/author_boj/job2_main_article.py": "7cb100df00d3066855a2474fb4acbd42c8dad3d2a07d077e7527c2869a7a6252",
+      "py/author_boj_util/all_quirks.py": "a2fc3f36e664027dc8b4284ae153a9698a798fcdeb708056c9f3375d58605b64",
+      "py/author_boj_util/author.py": "496bc56d3aaa9be6e68644bdd4c36a766b6835f1e64829024e83a08d25942037",
+      "py/author_boj_util/get_qr_groups.py": "e3b6970382840ac6ef26f397f595edc1b123f90e7aacb3332ab1d72dc9d95ccd",
+      "py/author_boj_util/para_and_table.py": "1eee0a12745f60cf0199b5df1ba568724903dc428651a009d4cf04c66fa76097",
+      "py/foi/foi_wikitext_helpers.py": "3d4b4c48eecdb990cd3c5094f6de5aa2b0462a8132412ebf5c1b22a205f9f3e8",
+      "py/foi/foiz_wt_doc_note_notation.py": "c527fe9fe3a256a303fc853c0998f9cc82fe11017b2db73e7f9852699fe4844f",
+      "py/foi/foiz_wt_dual_ml_alef.py": "42c952b635224395e15d9bf17c5c3f81e756ed34c7082af9a0d73d0e2d336233",
+      "py/foi/foiz_wt_unicode.py": "be003281a76ebf34d2da4030fc07689a90a9ac540674e0b60ea23373ef34dbca",
+      "py/foi/unicode_explanations.py": "d819f86420a1f5b52926b16c6761ab25f653ba0d69174abd26c58e61b2a730ad",
+      "py/main_gen_misc_authored_english_documents.py": "b03650934d1d18fb63b644ac0ee37ad541c457e976bdb732d39372358115b851"
+    },
+    "head": {
+      "book-of-job/out/custom-dict-freqs-ordered-by-count.json": "eec063769184a043514c75b51ac948eff086a82dd54a31d32b5abec8056e0f8f",
+      "book-of-job/out/custom-dict-freqs-ordered-by-entry.json": "93b921e1ddf3c424316b582aef5c793be5abc0b2df5f0df88940a5c44413e65c",
+      "book-of-job/out/enriched-quirkrecs.json": "3159fd2e451329996a1aea08c26c9671cd75b25585ebaf1bbcdd5618bc65dc19",
+      "doc/boj-quirkrec-comments.md": "94fd0da24c10a0806c75ef26f403d1453dfdc8ecbb068243f6c500aa8f214db1",
+      "dot-claude/skills/hebrew-prose/references/verifying.md": "3c4cc1b36a6e078081a49b6a870904eae9fbf31df67c22f03b376cf4dc3e4350",
+      "gh-pages/MAM-with-doc/foi/foi-unicode.html": "8127b7431fc73c6f66b439cb3b97ce667eb317744ea7aab7bde0794db6e228e4",
+      "gh-pages/MAM-with-doc/foi/foi-unicode.json": "4d80a2503ed7161b57c542a2a1021fb85f9d379a057a5e8cbb561dc56bafea69",
+      "gh-pages/book-of-job/jobn/job2_main_article.html": "601063b1ab89efa85b5b3454903a3902ca0096e93c2001457efc1f19122d2ee9",
+      "gh-pages/book-of-job/jobn-details/2908.html": "b0922bef4e6d40098d955d6391814a5bf90151a9bf7bda3e99549f8a131c3b5a",
+      "gh-pages/book-of-job/jobn-details/3115.html": "2cb75ca8c6eea490c24a2664ef335b28ec1b7f512ca1f020489be4cd04b559b9",
+      "py/author_boj/job2_main_article.py": "9c43075d2e9661bbd737f2dc93bad49eba977b9628f97c4de999aee310927ddc",
+      "py/author_boj_util/all_quirks.py": "d15ab5176ca81a58d435c151f72009b76eb3bfca42fc37f83d0d9bffd9aa2f01",
+      "py/author_boj_util/author.py": "7f71d75072faef9948f72ab969aece33f1a66dde599abb1936ef7bd21cc4f909",
+      "py/author_boj_util/get_qr_groups.py": "abe47d5ced6cb0ff787cbed0b14f5c83f3d7bb6437f537248e17375f91a02f0e",
+      "py/author_boj_util/noted_by.py": "f95da99dba309d5d53b277c824ddc36981490f1a76321d3b6fea58bad5141365",
+      "py/author_boj_util/para_and_table.py": "6fa6d249a68daca839483088c8d92a382c33a75d936c0022cbdfae0c38dc9d74",
+      "py/author_boj_util/short_id_etc.py": "cb893064141b2dd19dc3b58869dbfc606c580aa20998b7b529d8f92cdf10dbf8",
+      "py/foi/foi_wikitext_helpers.py": "65feb5b60f9062750fc577b91329bea1d28afd51dd5e1756a1b8b4fb1a05b3e9",
+      "py/foi/foiz_wt_doc_note_notation.py": "69b4bc3e03fb374b66282524d306bd2320d6f88d33c32da4bdcb9c3edbf09321",
+      "py/foi/foiz_wt_dual_ml_alef.py": "fc3ebfe36b7b83b3f1a808fef1b6b8b58657c85797593f8c752f4ef0b95818a1",
+      "py/foi/foiz_wt_unicode.py": "012edff9fdb69ddef76bfe9d65baa702d105a6f0702614a654fdab8dc752fdd2",
+      "py/foi/unicode_explanations.py": "5f7cc89a83eabc2c21a1367fb966caca26e18120df1bfc7c997a763b0124ad02",
+      "py/main_gen_misc_authored_english_documents.py": "2c1d2506823e06f512459a68cc5aa866de857da899fb52cff7302ffedf33384a"
+    }
+  },
+  "negative_probes": [
+    {
+      "probe": "no matching presentation group",
+      "result": "pass: rejected with ValueError",
+      "message": "2908 matches 0 presentation groups, not 1: []; nbd={'e:BHQ': 'xBHQ', 'e:BHL': 'xBHL', 'e:DM': 'xDM', 'e:WLC': 'xWLC', 'e:UXLC': 'xUXLC'}"
+    },
+    {
+      "probe": "missing prose declarations",
+      "result": "pass: rejected with ValueError",
+      "message": "Quirkrecs that no page lists and no page presents in prose: 2908 (g:tbhq_and_twlc), 3115 (g:xbhq_and_twlc)"
+    },
+    {
+      "probe": "unlisted existing group",
+      "result": "pass: rejected with ValueError",
+      "message": "Quirkrecs that no page lists and no page presents in prose: 1916-BMV0PY (g:adm), 2305 (g:adm)"
+    },
+    {
+      "probe": "stale prose declaration",
+      "result": "pass: rejected with ValueError",
+      "message": "Declared as presented in prose but not in an unlisted group: ['1916-BMV0PY']"
+    }
+  ],
+  "commands": [
+    "python review-hourly-2026-11-09-653b8419-basics-check.py",
+    "python review-hourly-2026-11-09-653b8419-basics-negative-check.py"
+  ],
+  "replay_inputs": "Materialize the listed files at their exact base/head commits into base/ and head/ beside each checker, preserving repository-relative paths; verify the recorded SHA-256 values. Checkers write only result JSON alongside themselves."
+}
