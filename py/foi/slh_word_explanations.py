@@ -8,6 +8,8 @@ def html_target_cells(html_contents):
     (description,) = html_contents
     compact, explanation = description.rsplit(" (", 1)
     assert explanation.endswith(")"), description
+    # The compact description keeps lang="hbo" even when its word is an unpointed
+    # ketiv, as Job 7:5's is, so that its column has one font (Ben, 2026-11-09).
     return (
         mb_html.table_datum(compact, {"lang": "hbo", "dir": "rtl"}),
         mb_html.table_datum(explanation[:-1], {"lang": "he", "dir": "rtl"}),

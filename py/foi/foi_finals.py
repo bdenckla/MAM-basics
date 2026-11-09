@@ -265,7 +265,7 @@ _LABEL_PATHS = frozenset(
 # which has none in MAM, and which MAM-for-Sefaria's examples keep in the
 # pointed-Hebrew font (Ben, 2026-10-26); and a scroll-difference note's
 # arguments, whose target may be a parashah sign or __, the placeholder for none,
-# beside a note with no pointing.
+# beside a note with no pointing, which Ben kept in that font on 2026-11-09.
 _LIFTED_UNPOINTED_PATHS = frozenset(
     {
         ("kq-simple", "x-velo-y-k-velo-q"),
