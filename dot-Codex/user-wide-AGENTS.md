@@ -388,6 +388,24 @@ These rules apply to pages, docstrings, comments, commit messages, issues, plans
 Center tables horizontally by default in authored pages and documents, while preserving
 their natural content width. Apply a different alignment when Ben requests it.
 
+## Taamey D is the default font for pointed Hebrew
+
+Wherever an agent chooses the font of pointed Hebrew, in a page, a document or an image, in any
+repository, the choice is Taamey D, Ben's own font. Another font, such as SBL Hebrew or Ezra
+SIL, may only follow it in a fallback list. Hebrew with no point or accent keeps the font of the
+text around it; `hebrew-prose/references/rendered-prose.md`, “Unpointed Hebrew keeps the
+surrounding font”, gives that rule and its one exception. Ben, 2026-11-08: "It is somewhere
+between insulting and amusing that you seem to frequently use SBL Hebrew rather than my own
+Taamey D as a default font."
+
+A MAM-basics page loads the font as MAM-basics' `doc/html-styles.md`, “Hebrew font”, says.
+Another page with no copy of its own loads the published one,
+`https://bdenckla.github.io/MAM-basics/woff2/Taamey_D.woff2`, through an `@font-face` rule with
+no `local()` source, since an installed Taamey D may be older than the copy MAM-basics pins: on
+2026-11-08 the copy installed for Ben's Windows account was version 0.921, and the pinned copy
+1.2. Software that draws the text itself, such as an image renderer, takes the font from a
+MAM-basics checkout's `Taamey-D/font-m-TaD/Taamey_D.ttf` rather than from an installed copy.
+
 ## Unicode in source and at runtime
 
 Never write an orphan combining mark as a raw code literal. Use a named escape such as

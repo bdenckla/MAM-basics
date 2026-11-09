@@ -115,6 +115,11 @@ only pointed cells in `lang="hbo"`. rocc_3's comparison tables use `lifted=True`
 unpointed forms set beside pointed versions of the same words. A page that writes its own
 `lang="hbo"` markup still has to apply the rule itself.
 
+Pointed Hebrew's font is the other half of this rule: wherever an agent chooses it, in any
+repository, it is Taamey D. The common `~/.codex/AGENTS.md` body says so in its section "Taamey
+D is the default font for pointed Hebrew", with Ben's words of 2026-11-08 and how a page outside
+MAM-basics loads the font.
+
 ## Cite the two books as ITM and CoS, with the full title on hover
 
 Ben, 2026-07-28: *"'Breuer, Chapter 9' doesn't say what breuer book … use CoS and ITM
