@@ -135,7 +135,7 @@ def hbo(contents, attr=None, *, lifted=False):
     not: pass lifted=True for it (Ben, 2026-10-26, of the MAM-for-Sefaria
     examples: "keep those in one font (namely the font for pointed hebreW)").
     """
-    if not lifted and _is_unpointed_hebrew(contents):
+    if not lifted and is_unpointed_hebrew(contents):
         raise ValueError(
             "unpointed Hebrew in the pointed-Hebrew font:"
             f" {_text_of(contents)!r}; use author.unpointed"
@@ -362,7 +362,7 @@ def _std_cell(htel):
     direction, and in the pointed-Hebrew font only if it is pointed."""
     if isinstance(htel, str):
         if re.search(r"[א-ת]", htel) and not re.search(r"[A-Za-z]", htel):
-            return unpointed(htel) if _is_unpointed_hebrew(htel) else hbo(htel)
+            return unpointed(htel) if is_unpointed_hebrew(htel) else hbo(htel)
     return dollar_sub(htel)
 
 
@@ -377,8 +377,11 @@ def _text_of(contents):
     return ""
 
 
-def _is_unpointed_hebrew(contents):
-    """Whether contents has a Hebrew letter and no point or accent."""
+def is_unpointed_hebrew(contents):
+    """Whether contents has a Hebrew letter and no point or accent.
+
+    Public for the pages that write their own lang="hbo" markup, so that they
+    apply hbo's rule with the same test."""
     text = _text_of(contents)
     return bool(_HEBREW_LETTER_RE.search(text)) and not _HEBREW_MARK_RE.search(text)
 

@@ -6,6 +6,7 @@ from mb_cmn import paths
 from mb_cmn import provenance
 
 from py_misc import mwd_utils as mwdu
+from mb_author import author
 from mb_misc import mb_html
 
 from foi import pasoleg_1_labels
@@ -225,15 +226,61 @@ def _make_table_cells(foi_path, row_dic):
     elif foi_path[0] == holam_foi.STEM:
         target_tds = holam_e.html_target_cells(row_dic["html_contents"])
     else:
-        td_attrs = {"lang": "hbo", "dir": "rtl"}
-        target_tds = (mb_html.table_datum(row_dic["html_contents"], td_attrs),)
+        target_tds = (_target_td(tuple(foi_path), row_dic["html_contents"]),)
     other_tds = tuple(_my_td(k, v) for k, v in row_dic.items() if k != "html_contents")
     return (*target_tds, *other_tds)
+
+
+def _target_td(foi_path, html_contents):
+    """Return the cell of a row's target, in the pointed-Hebrew font unless a label.
+
+    lang="hbo" sets Taamey D at 140%, which is for pointed Hebrew: by the
+    hebrew-prose skill's rule "Unpointed Hebrew keeps the surrounding font", a
+    label, which names a template or the parameters around one, keeps the
+    surrounding font. Any other target is MAM's text, lifted whole and shown with
+    the other rows' forms, so it keeps their font even where it has no point or
+    accent; a path whose targets may be wholly unpointed is declared in
+    _LIFTED_UNPOINTED_PATHS, and any other unpointed target raises.
+    """
+    if foi_path in _LABEL_PATHS:
+        assert author.is_unpointed_hebrew(html_contents), (foi_path, html_contents)
+        return mb_html.table_datum(html_contents, {"dir": "rtl"})
+    if author.is_unpointed_hebrew(html_contents):
+        if foi_path not in _LIFTED_UNPOINTED_PATHS:
+            raise ValueError(f"unpointed target in {foi_path}: {html_contents!r}")
+    return mb_html.table_datum(html_contents, {"lang": "hbo", "dir": "rtl"})
+
+
+# The paths whose targets are labels: the template stack around a dexi stress
+# helper, or a template inside its arguments, as a tuple or a name, and the name
+# of a column E divider template, whose letters are the divider's.
+_LABEL_PATHS = frozenset(
+    {
+        ("poetic-stress-helpers", "dexi-with-tmpl-above"),
+        ("poetic-stress-helpers", "dexi-with-tmpl-below"),
+        ("rare-tmpls", "col-e-sampe"),
+    }
+)
+# The paths whose lifted targets may have no point or accent: a ketiv velo qere,
+# which has none in MAM, and which MAM-for-Sefaria's examples keep in the
+# pointed-Hebrew font (Ben, 2026-10-26); and a scroll-difference note's
+# arguments, whose target may be a parashah sign or __, the placeholder for none,
+# beside a note with no pointing.
+_LIFTED_UNPOINTED_PATHS = frozenset(
+    {
+        ("kq-simple", "x-velo-y-k-velo-q"),
+        ("rare-tmpls", "na-note"),
+    }
+)
 
 
 def _my_td(key, htseq_or_str_or_none):
     td_attrs = None
     if key == "pqere":
+        # A pointed qere: pointed Hebrew, in the pointed-Hebrew font.
+        assert not author.is_unpointed_hebrew(
+            htseq_or_str_or_none
+        ), htseq_or_str_or_none
         td_attrs = {"lang": "hbo", "dir": "rtl"}
     return mb_html.table_datum(htseq_or_str_or_none, td_attrs)
 
