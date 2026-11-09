@@ -20,7 +20,13 @@ for it "for cases where, narrowly speaking, the phenomenon in question does not
 include sof pasuq (e.g. the argument of a template being "studied" (listed))", and
 foi_wikitext_helpers.templates_before_sof_pasuq finds those templates.  A gray sof
 pasuq is not part of the argument, so a row's JSON leaves it out of the argument's
-text.
+text.  The same day he approved, "proceed as you recommend", a GSP in every FOI that
+lists a template's argument, wherever a sof pasuq follows that template and is no
+part of the FOI's feature.  So foi-kq-simple, foi-qamats-variants, foi-slh-word and
+foi-rare-tmpls add one.  foi-kq-complex already showed such a sof pasuq, black,
+where one ends its run of two ketiv/qere templates, and now shows it gray.  It keeps
+black the sof pasuq of a k1q1-qk-sp, whose feature is a qere-first ketiv/qere
+template before a sof pasuq.
 """
 
 from typing import NamedTuple
@@ -93,9 +99,18 @@ def target(form):
     return tuple(htseq)
 
 
-def gray_sof_pasuq():
-    """Return a gray sof pasuq, a span to follow an argument that a FOI lists."""
-    return _span(_GSP)
+def gray_sof_pasuq(lang=None):
+    """Return a gray sof pasuq, a span to follow an argument that a FOI lists.
+
+    Give lang where the cell that shows the span has no lang of its own, so that the
+    span has the font of the pointed Hebrew it follows.
+    """
+    return _span(_GSP, lang)
+
+
+def is_gray_mark(html_el):
+    """Return whether html_el is a gray mark."""
+    return _kind_of(html_el) is not None
 
 
 def is_left_out_of_json_text(html_el):
@@ -131,8 +146,11 @@ def cells(row_labels, table_labels):
     )
 
 
-def _span(kind):
-    return mb_html.span(kind.mark, {"class": kind.span_class})
+def _span(kind, lang=None):
+    attr = {"class": kind.span_class}
+    if lang is not None:
+        attr["lang"] = lang
+    return mb_html.span(kind.mark, attr)
 
 
 def _kind_of(html_el):

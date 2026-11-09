@@ -1,3 +1,4 @@
+from foi import foi_gray_marks as gray_marks
 from mb_cmn import ws_tmpl2 as wtp
 from mb_cmn import str_defs as sd
 from mb_cmn import bib_locales as tbn
@@ -70,6 +71,10 @@ def _simplify(irps):  # irp: idx/run_el pair; irps: many irp
 def _feature(verse, runsdic_item):
     idx, run = runsdic_item
     if foi_path := _FEATURES[tuple(run)]:
+        if tuple(run) in _RUNS_ENDING_IN_A_GRAY_SOF_PASUQ:
+            *init, last = verse[idx : idx + len(run)]
+            assert last == hpu.SOPA, last
+            return [(foi_path, ("".join(init), gray_marks.gray_sof_pasuq()))]
         foi_target = "".join(verse[idx : idx + len(run)])
         if foi_target.startswith(sd.NBSP + sd.DOUB_VERT_LINE):
             foi_target = foi_target[1:]
@@ -158,3 +163,9 @@ _FEATURES = {
     ("k1q1-kq", "paseq", "paseq"): None,
     ("k1q1-qk",): None,
 }
+# The runs that end with a sof pasuq that is no part of their feature, which a row
+# shows gray, as foi_gray_marks shows: two ketiv/qere templates in a row are the
+# feature whether or not a sof pasuq follows them.  A k1q1-qk-sp row shows its sof
+# pasuq black, since that feature is a qere-first ketiv/qere template before a sof
+# pasuq.
+_RUNS_ENDING_IN_A_GRAY_SOF_PASUQ = {("k1q1-kq", " ", "k1q1-kq", hpu.SOPA)}

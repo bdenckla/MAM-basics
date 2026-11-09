@@ -1,3 +1,6 @@
+from functools import partial
+
+from foi import foi_gray_marks as gray_marks
 from foi import foi_struct as fct
 from foi import foi_wikitext_helpers as fwh
 from py_misc import ren_html_from_ren_el_mapping as hfrm
@@ -13,10 +16,12 @@ from mb_cmn.my_utils import first_and_only
 
 def find_fois_wt(mroge):
     """Find slh word templates: they are the feature of interest."""
-    return fwh.find_fois_in_minirow_ep(_FOILERS, mroge)
+    minirow = mroge.get("mroge-minirow")
+    before_sof_pasuq = fwh.templates_before_sof_pasuq(minirow.EP) if minirow else set()
+    return fwh.find_fois_in_minirow_ep(_foilers(before_sof_pasuq), mroge)
 
 
-def _record_slh_word_as_foi(_foilers, stack, tmpl):
+def _record_slh_word_as_foi(before_sof_pasuq, _foilers, stack, tmpl):
     desc_parts = slh_description.get_parts(wtp.template_element(tmpl, 1))
     desc_str = slh_description.desc_parts_shown_as_a_str(desc_parts)
     slh_count = len(desc_parts[2])
@@ -24,7 +29,7 @@ def _record_slh_word_as_foi(_foilers, stack, tmpl):
     slh_parts_htseq = (desc_str,)
     stack_summary = fwh.stack_summary(_STACK_SUMMARIES, stack)
     foi_qualifier = {
-        "html": _html_for_wtseq((tmpl,)),
+        "html": _html_in_context(before_sof_pasuq, tmpl),
         "stack_str": stack_summary,
     }
     foi_target = fct.make_qtarget(slh_parts_htseq, foi_qualifier)
@@ -43,6 +48,21 @@ def _maybe_foi3(foi3, stack):
     return [foi3]
 
 
+def _html_in_context(before_sof_pasuq, tmpl):
+    """Return MAM's rendering of tmpl, followed by a gray sof pasuq if one follows tmpl.
+
+    The html column lists the template's argument as MAM renders it, so where a sof
+    pasuq follows the template, the row adds one there, for context, as
+    foi_gray_marks shows.  That column's cells have no lang of their own, so the
+    gray sof pasuq takes the rendering's.
+    """
+    html = _html_for_wtseq((tmpl,))
+    assert isinstance(html, tuple), html
+    if id(tmpl) not in before_sof_pasuq:
+        return html
+    return *html, gray_marks.gray_sof_pasuq("hbo")
+
+
 def _html_for_wtseq(wtseq):
     hctx = handlers.default_hctx()
     renseq = wt_help.render_wtseq(hctx, wtseq)
@@ -56,15 +76,19 @@ def _html_for_wtseq(wtseq):
     return hfr.html_for_ren_el(hfr_ctx, new_renseq)
 
 
-_FOILERS = fwh.all_branch_foilers(
-    {
-        tmpln.SLH_WORD: _record_slh_word_as_foi,
-        "כו״ק": fwh.label_args_of_ketiv_qere,
-        "נוסח": fwh.label_args_of_doc,
-        tmpln.SCRDFF_TAR: fwh.label_args_of_scrdfftar,
-        tmpln.SCRDFF_NO_TAR: fwh.fail_on_unexpected_template_in_plus,
-    }
-)
+def _foilers(before_sof_pasuq):
+    """Return the handlers for one verse, given its templates that a sof pasuq follows."""
+    return fwh.all_branch_foilers(
+        {
+            tmpln.SLH_WORD: partial(_record_slh_word_as_foi, before_sof_pasuq),
+            "כו״ק": fwh.label_args_of_ketiv_qere,
+            "נוסח": fwh.label_args_of_doc,
+            tmpln.SCRDFF_TAR: fwh.label_args_of_scrdfftar,
+            tmpln.SCRDFF_NO_TAR: fwh.fail_on_unexpected_template_in_plus,
+        }
+    )
+
+
 _STACK_SUMMARIES = {
     tuple(): None,
     ("doc-target",): None,

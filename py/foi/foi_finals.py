@@ -194,8 +194,16 @@ def _row_dic_for_json(foi_path, bcv_short, qualifier, html_contents):
 
 
 def _json_value(value):
-    # A qualifier that shows a gray mark goes to the JSON as its text.
-    return _rm_html(value) if gray_marks.labels(value) else value
+    # A qualifier that shows a gray mark goes to the JSON without the gray marks that
+    # the JSON leaves out: as its text if it holds only text and gray marks, like
+    # foi-kq-simple's pqere, and otherwise as the HTML it is, like foi-slh-word's
+    # html, which keeps its markup.
+    if not gray_marks.labels(value):
+        return value
+    assert isinstance(value, (tuple, list)), value
+    if all(isinstance(el, str) or gray_marks.is_gray_mark(el) for el in value):
+        return _rm_html(value)
+    return tuple(el for el in value if not gray_marks.is_left_out_of_json_text(el))
 
 
 def _append_table_row(io_html_tables, foi_path, row_dic):

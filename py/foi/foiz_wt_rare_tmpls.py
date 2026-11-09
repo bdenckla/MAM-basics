@@ -1,9 +1,12 @@
+from functools import partial
+
 from mb_cmn import template_names as tmpln
 from py_misc import ren_html_for_renel as hfr
 from mb_cmn import ws_tmpl2 as wtp
 from render_wt import render_wikitext_handlers as handlers
 from render_wt import render_wikitext_helpers as wt_help
 from py_misc import ren_html_from_ren_el_mapping as hfrm
+from foi import foi_gray_marks as gray_marks
 from foi import foi_wikitext_helpers as fwh
 from foi import foi_struct as fct
 from mb_cmn.my_utils import intersperse
@@ -15,26 +18,27 @@ def find_fois_wt(mroge):
     """Find uses of rare templates."""
     # mroge: minirow or good ending
     if minirow := mroge.get("mroge-minirow"):
-        fois_cp = fwh.find_fois_in_wtseq(_FOILERS_FOR_COLUMN_C, minirow.CP)
-        fois_ep = fwh.find_fois_in_wtseq(_FOILERS_FOR_COLUMN_E, minirow.EP)
+        foilers_c = _foilers_for_column_c(fwh.templates_before_sof_pasuq(minirow.CP))
+        foilers_e = _foilers_for_column_e(fwh.templates_before_sof_pasuq(minirow.EP))
+        fois_cp = fwh.find_fois_in_wtseq(foilers_c, minirow.CP)
+        fois_ep = fwh.find_fois_in_wtseq(foilers_e, minirow.EP)
         return fois_cp + fois_ep
     return _find_fois_in_good_ending(mroge)
 
 
 def _find_fois_in_good_ending(mroge):
     gewe = mroge["mroge-good-ending"]["wikitext_element"]
-    return fwh.find_fois_in_wtseq(_FOILERS_FOR_COLUMN_E, [gewe])
+    # The good ending's handler lists no template's argument.
+    return fwh.find_fois_in_wtseq(_foilers_for_column_e(set()), [gewe])
 
 
-def _record_scrdff_in_col_e(foilers, stack, tmpl):
-    return _record_scrdff_in_col_x("E", foilers, stack, tmpl)
+def _record_scrdff_in_col_x(column, before_sof_pasuq, foilers, stack, tmpl):
+    """Record a targeted scroll-difference note: its target, note and star position.
 
-
-def _record_scrdff_in_col_c(foilers, stack, tmpl):
-    return _record_scrdff_in_col_x("C", foilers, stack, tmpl)
-
-
-def _record_scrdff_in_col_x(column, foilers, stack, tmpl):
+    Where a sof pasuq follows the template, it follows the template's parameter 1,
+    the note's target, so the row adds one after the target, for context, as
+    foi_gray_marks shows.
+    """
     # column is a string, expected to be either 'E' or 'C'
     assert (
         wtp.template_len(tmpl) == 4
@@ -45,6 +49,10 @@ def _record_scrdff_in_col_x(column, foilers, stack, tmpl):
         wtp.template_param_val(tmpl, "3"),
     ]
     foi_display_parts = [_html_for_wtseq(arg, column=column) for arg in args]
+    if id(tmpl) in before_sof_pasuq:
+        target = foi_display_parts[0]
+        assert isinstance(target, tuple), target
+        foi_display_parts[0] = *target, gray_marks.gray_sof_pasuq()
     foi_display = intersperse((" / ",), foi_display_parts)
     foi_display = sum_of_tuples(foi_display)
     # XXX TODO qualify with column
@@ -106,29 +114,37 @@ def _html_for_wtseq(wtseq, column="E"):
     return hfr.html_for_ren_el(hfr_ctx, renseq)
 
 
-_FOILERS_FOR_COLUMN_E = fwh.all_branch_foilers(
-    {
-        tmpln.SCRDFF_TAR: _record_scrdff_in_col_e,
-        "מ:נו״ן הפוכה": _record_inverted_nun,
-        "מ:סיום בטוב": _record_good_ending,
-        "מ:מקף אפור": _record_implicit_maqaf,
-        "סס": _record_sampe_in_col_e,
-        "ססס": _record_sampe_in_col_e,
-        "פפ": _record_sampe_in_col_e,
-        "פפפ": _record_sampe_in_col_e,
-        #
-        "מ:כפול": fwh.label_args_of_dualcant,
-        "נוסח": fwh.label_args_of_doc,
-        # label_args_of_scrdfftar is called in _record_scrdff_in_col_x
-        # tmpln.SCRDFF_TAR: fwh.label_args_of_scrdfftar,
-        tmpln.SCRDFF_NO_TAR: fwh.fail_on_unexpected_template_in_plus,
-    }
-)
-_FOILERS_FOR_COLUMN_C = fwh.all_branch_foilers(
-    {
-        tmpln.SCRDFF_TAR: _record_scrdff_in_col_c,
-    }
-)
+def _foilers_for_column_e(before_sof_pasuq):
+    """Return column E's handlers, given its templates that a sof pasuq follows."""
+    return fwh.all_branch_foilers(
+        {
+            tmpln.SCRDFF_TAR: partial(_record_scrdff_in_col_x, "E", before_sof_pasuq),
+            "מ:נו״ן הפוכה": _record_inverted_nun,
+            "מ:סיום בטוב": _record_good_ending,
+            "מ:מקף אפור": _record_implicit_maqaf,
+            "סס": _record_sampe_in_col_e,
+            "ססס": _record_sampe_in_col_e,
+            "פפ": _record_sampe_in_col_e,
+            "פפפ": _record_sampe_in_col_e,
+            #
+            "מ:כפול": fwh.label_args_of_dualcant,
+            "נוסח": fwh.label_args_of_doc,
+            # label_args_of_scrdfftar is called in _record_scrdff_in_col_x
+            # tmpln.SCRDFF_TAR: fwh.label_args_of_scrdfftar,
+            tmpln.SCRDFF_NO_TAR: fwh.fail_on_unexpected_template_in_plus,
+        }
+    )
+
+
+def _foilers_for_column_c(before_sof_pasuq):
+    """Return column C's handlers, given its templates that a sof pasuq follows."""
+    return fwh.all_branch_foilers(
+        {
+            tmpln.SCRDFF_TAR: partial(_record_scrdff_in_col_x, "C", before_sof_pasuq),
+        }
+    )
+
+
 _STACK_SUMMARIES = {
     tuple(): None,
     ("doc-target",): None,
