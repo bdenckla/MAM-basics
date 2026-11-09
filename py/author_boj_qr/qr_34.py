@@ -45,6 +45,23 @@ _COMMENT_PARA3 = [
     " a great boon to students of cantillation who cannot easily read",
     [" the ", _COS_HEB_ANC, " in its modern Hebrew.)"],
 ]
+_COMMENT_PARA4 = [
+    "In μY, the mark in question is absent: the א just has פתח.",
+    " Also in μY, the נ has only a simple שווא rather than a חטף פתח,",
+    " although presumably that is unrelated to μY’s lack of the mark in question,",
+    " which is the main point here.",
+]
+_COMMENT_PARA5 = [
+    "Two things about μL cannot go unmentioned.",
+    " First, the mark in question is very oddly shaped",
+    " for either a מרכא or a געיה.",
+    " Second, the marks under the נ are charitably transcribed",
+    " as forming a חטף פתח.",
+    " In truth, there is evidence of only the lower of the two dots",
+    " of the שווא-like part of a חטף פתח,",
+    " and that dot is oddly placed,",
+    " being mostly under the bar of the פתח-like part.",
+]
 RECORD_3410 = {
     "qr-cv": "34:10",
     "qr-lc-proposed": "אַֽנֲשֵׁ֥י",
@@ -54,7 +71,8 @@ RECORD_3410 = {
         author.para(_COMMENT_PARA1),
         author.para(_COMMENT_PARA2),
         author.para(_COMMENT_PARA3),
-        "In μY, the mark in question is absent: the א just has פתח.",
+        author.para(_COMMENT_PARA4),
+        author.para(_COMMENT_PARA5),
     ],
     "qr-highlight": 1,
     "qr-lc-loc": {"page": "406B", "column": 2, "line": 14},

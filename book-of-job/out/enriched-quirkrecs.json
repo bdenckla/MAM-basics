@@ -6725,7 +6725,18 @@
           " in its modern Hebrew.)"
         ]
       },
-      "In μY, the mark in question is absent: the א just has פתח."
+      {
+        "_htel_tag": "p",
+        "contents": [
+          "In μY, the mark in question is absent: the א just has פתח. Also in μY, the נ has only a simple שווא rather than a חטף פתח, although presumably that is unrelated to μY’s lack of the mark in question, which is the main point here."
+        ]
+      },
+      {
+        "_htel_tag": "p",
+        "contents": [
+          "Two things about μL cannot go unmentioned. First, the mark in question is very oddly shaped for either a מרכא or a געיה. Second, the marks under the נ are charitably transcribed as forming a חטף פתח. In truth, there is evidence of only the lower of the two dots of the שווא-like part of a חטף פתח, and that dot is oddly placed, being mostly under the bar of the פתח-like part."
+        ]
+      }
     ],
     "qr-highlight": 1,
     "qr-lc-loc": {
