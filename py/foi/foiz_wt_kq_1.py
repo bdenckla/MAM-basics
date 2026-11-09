@@ -1,3 +1,6 @@
+from functools import partial
+
+from foi import foi_gray_marks as gray_marks
 from foi import foi_struct as fct
 from foi import foi_wikitext_helpers as fwh
 from py_misc import ren_html_from_ren_el_mapping as hfrm
@@ -13,7 +16,32 @@ from foi import kq_trivial_sug
 
 def find_fois_wt(mroge):
     """Find ketiv/qere template uses: they are the feature of interest."""
-    return fwh.find_fois_in_minirow_ep(_FOILERS, mroge)
+    minirow = mroge.get("mroge-minirow")
+    before_sof_pasuq = fwh.templates_before_sof_pasuq(minirow.EP) if minirow else set()
+    return fwh.find_fois_in_minirow_ep(_foilers(before_sof_pasuq), mroge)
+
+
+def _record_kq_in_context(before_sof_pasuq, foilers, stack, tmpl):
+    fois = _record_kq_as_foi(foilers, stack, tmpl)
+    if id(tmpl) not in before_sof_pasuq:
+        return fois
+    return [
+        (foi_path, _with_gray_sof_pasuq(foi_target)) for foi_path, foi_target in fois
+    ]
+
+
+def _with_gray_sof_pasuq(foi_target):
+    """Add a gray sof pasuq after the pointed qere that a trivial ketiv/qere's row lists.
+
+    The pqere column lists the template's parameter 3, and a sof pasuq follows the
+    template, so the row adds it there, for context, as foi_gray_marks shows.  The cell
+    that shows MAM's rendering of a ketiv/qere template is left as it is.
+    """
+    if not isinstance(foi_target, dict) or "pqere" not in fct.qtar_qual(foi_target):
+        return foi_target
+    qualifier = fct.qtar_qual(foi_target)
+    pqere = qualifier["pqere"], gray_marks.gray_sof_pasuq()
+    return fct.make_qtarget(fct.qtar_proper(foi_target), {**qualifier, "pqere": pqere})
 
 
 def _record_kq_as_foi(_foilers, stack, tmpl):
@@ -83,24 +111,31 @@ _FOI_PATH = {
     #
     "kq-trivial": "z-trivial",
 }
-_FOILERS_FOR_KETIV_QERE = {
-    "כו״ק": _record_kq_as_foi,
-    "קו״כ": _record_kq_as_foi,
-    kqst.UNIFIED_SPECIAL_KQ_TEMPLATE_NAME: _record_kq_as_foi,
-    "מ:קו״כ-אם-2": _record_kq_as_foi,
-    "קרי ולא כתיב": _record_kq_as_foi,
-    "כתיב ולא קרי": _record_kq_as_foi,
-}
-_FOILERS = fwh.all_branch_foilers(
-    {
-        **_FOILERS_FOR_KETIV_QERE,
-        #
-        "מ:כפול": fwh.label_args_of_dualcant,
-        "נוסח": fwh.label_args_of_doc,
-        tmpln.SCRDFF_TAR: fwh.label_args_of_scrdfftar,
-        tmpln.SCRDFF_NO_TAR: fwh.fail_on_unexpected_template_in_plus,
-    }
+_KETIV_QERE_TMPL_NAMES = (
+    "כו״ק",
+    "קו״כ",
+    kqst.UNIFIED_SPECIAL_KQ_TEMPLATE_NAME,
+    "מ:קו״כ-אם-2",
+    "קרי ולא כתיב",
+    "כתיב ולא קרי",
 )
+
+
+def _foilers(before_sof_pasuq):
+    """Return the handlers for one verse, given its templates that a sof pasuq follows."""
+    record = partial(_record_kq_in_context, before_sof_pasuq)
+    return fwh.all_branch_foilers(
+        {
+            **{tmpl_name: record for tmpl_name in _KETIV_QERE_TMPL_NAMES},
+            #
+            "מ:כפול": fwh.label_args_of_dualcant,
+            "נוסח": fwh.label_args_of_doc,
+            tmpln.SCRDFF_TAR: fwh.label_args_of_scrdfftar,
+            tmpln.SCRDFF_NO_TAR: fwh.fail_on_unexpected_template_in_plus,
+        }
+    )
+
+
 _STACK_SUMMARIES = {
     tuple(): None,
     ("doc-target",): None,

@@ -222,6 +222,61 @@ def _with_mark_on_last_form(string, mark):
     return string + mark
 
 
+def templates_before_sof_pasuq(wtseq):
+    """Return the ids of the templates in wtseq, at any depth, that a sof pasuq follows.
+
+    A template counts if a string beginning with a sof pasuq directly follows it, or if
+    it ends a parameter that _PARAMS_TAKING_A_MARK_AFTER names for a template that
+    counts.  These are the templates on whose parameters' last forms rule 3 of
+    with_attached_marks puts that sof pasuq, and the same closed table raises on any
+    other template before a sof pasuq.  A FOI that lists the argument of such a
+    template adds the sof pasuq after it, gray, as foi_gray_marks.gray_sof_pasuq.  An
+    id names its template while the FOI's traversal holds the same template objects,
+    as it does within one call.
+    """
+    found = set()
+    _add_templates_before_sof_pasuq(wtseq, found)
+    return found
+
+
+def _add_templates_before_sof_pasuq(wtseq, io_found):
+    seq = list(wtseq)
+    for index, wtel in enumerate(seq):
+        if isinstance(wtel, str):
+            continue
+        for param_val in wtp.template_param_vals(wtel):
+            _add_templates_before_sof_pasuq(param_val, io_found)
+        after = seq[index + 1] if index + 1 < len(seq) else None
+        if isinstance(after, str) and after.startswith(hpu.SOPA):
+            if (reached := _templates_taking_a_mark_after(wtel)) is not None:
+                io_found.update(id(tmpl) for tmpl in reached)
+
+
+def _templates_taking_a_mark_after(tmpl):
+    """Return tmpl and each template that ends a parameter of it that takes a mark.
+
+    Return None if the mark stays apart, as _with_mark_after does.
+    """
+    tmpl_name = wtp.template_name(tmpl)
+    if tmpl_name not in _PARAMS_TAKING_A_MARK_AFTER:
+        raise ValueError(f"no parameter is named to take a mark after {tmpl!r}")
+    if (param_names := _PARAMS_TAKING_A_MARK_AFTER[tmpl_name]) is None:
+        return None
+    reached = [tmpl]
+    for param_name in param_names:
+        param_val = wtp.template_param_val(tmpl, param_name)
+        if not param_val:
+            raise ValueError(
+                f"parameter {param_name} is empty, to take a mark: {tmpl!r}"
+            )
+        if isinstance(last := param_val[-1], str):
+            continue
+        if (more := _templates_taking_a_mark_after(last)) is None:
+            return None
+        reached.extend(more)
+    return reached
+
+
 def find_fois_in_minirow_ep(foilers, mroge):
     # mroge: minirow or good ending
     if minirow := mroge.get("mroge-minirow"):

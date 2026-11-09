@@ -71,6 +71,8 @@ def _rm_html(contents):
 def _rm_html_single(html_el):
     if isinstance(html_el, str):
         return html_el
+    if gray_marks.is_left_out_of_json_text(html_el):
+        return ""
     return _rm_html(html_el.get("contents", ()))
 
 
@@ -184,18 +186,23 @@ def _row_dic_for_html(bcv_anchor, qualifier, html_contents):
 def _row_dic_for_json(foi_path, bcv_short, qualifier, html_contents):
     return {
         "bcv_short": bcv_short,
-        **qualifier,
+        **{key: _json_value(value) for key, value in qualifier.items()},
         "fp": _slash_str_from_path_parts(foi_path[1:]),
         "r": _rm_html(html_contents),
-        **gray_marks.json_flags(html_contents),
+        **gray_marks.json_flags(html_contents, *qualifier.values()),
     }
+
+
+def _json_value(value):
+    # A qualifier that shows a gray mark goes to the JSON as its text.
+    return _rm_html(value) if gray_marks.labels(value) else value
 
 
 def _append_table_row(io_html_tables, foi_path, row_dic):
     # A row is its cells and the labels of the gray marks it shows, from which its
     # table's columns of gray marks are made.
     cells = _make_table_cells(foi_path, row_dic)
-    labels = gray_marks.labels(row_dic["html_contents"])
+    labels = gray_marks.labels(*row_dic.values())
     tfp = tuple(foi_path)
     if tfp not in io_html_tables:
         io_html_tables[tfp] = []

@@ -1,16 +1,26 @@
-"""Show the marks that the FOIs reading by forms show gray.
+"""Show the marks that FOI pages show gray.
 
-foi_wikitext_helpers.with_attached_marks writes a stand-in for each mark that these
-FOIs show gray.  The one such mark is MAM's gray maqaf, the template מ:מקף אפור,
-which the reading takes as a maqaf joining the atoms on either side of it into one
-form; GRAY_MAQAF stands for it.  A stand-in is a Private Use code point, which
-with_attached_marks raises on meeting in MAM's text, and none leaves the FOIs: a FOI
-finds its features in a form's text, in which each stand-in is the mark it stands
-for, and records the form as a target in which each such mark is a span that the
-shared stylesheet shows gray.  The FOI pages then give a row that shows such a mark a
-cell naming it, GM, whose title explains it on hover, and give its JSON row a flag of
-the same name.  Ben Denckla asked for this on 2026-11-09, as the docstring of
-foi_wikitext_helpers.with_attached_marks records.
+A FOI page shows two kinds of mark gray, each in a span of a class that the shared
+stylesheet shows gray.  It gives a row that shows one a cell naming its kind, whose
+title explains it on hover, and gives the row's JSON a flag of the same name.  Ben
+Denckla asked for both on 2026-11-09.
+
+GM, a gray maqaf, is MAM's own gray maqaf, the template מ:מקף אפור.  The FOIs that read
+MAM's text by forms take it as a maqaf joining the atoms on either side of it into one
+form, and foi_wikitext_helpers.with_attached_marks writes it as the stand-in
+GRAY_MAQAF, a Private Use code point.  That function raises on meeting a stand-in in
+MAM's text, and none leaves the FOIs: a FOI finds its features in a form's text, in
+which each stand-in is the mark it stands for, and records the form as a target in
+which each such mark is a span.  A gray maqaf is part of the text, so a row's JSON
+keeps it, as a maqaf.
+
+GSP, a gray sof pasuq, is a sof pasuq that a FOI listing a template's argument adds
+after that argument, for context, where the sof pasuq follows the template.  Ben asked
+for it "for cases where, narrowly speaking, the phenomenon in question does not
+include sof pasuq (e.g. the argument of a template being "studied" (listed))", and
+foi_wikitext_helpers.templates_before_sof_pasuq finds those templates.  A gray sof
+pasuq is not part of the argument, so a row's JSON leaves it out of the argument's
+text.
 """
 
 from typing import NamedTuple
@@ -27,20 +37,32 @@ class _Kind(NamedTuple):
     span_class: str
     label: str
     explanation: str
+    # Whether a row's JSON keeps the mark in the text that shows it.
+    in_json_text: bool
 
 
-# In the order of the columns that name them.
-_KINDS = {
-    GRAY_MAQAF: _Kind(
-        hpu.MAQ,
-        "mam-implicit-maqaf",
-        "GM",
-        "Gray maqaf: a maqaf that MAM itself shows in gray. This page reads it as a"
-        " maqaf, joining the atoms on either side of it into one form.",
-    ),
-}
-_KIND_OF_SPAN_CLASS = {kind.span_class: kind for kind in _KINDS.values()}
-_TEXT_TABLE = str.maketrans({stand_in: kind.mark for stand_in, kind in _KINDS.items()})
+_GSP = _Kind(
+    hpu.SOPA,
+    "foi-gray-sof-pasuq",
+    "GSP",
+    "Gray sof pasuq: this page adds it, in gray, for context. It follows the template"
+    " whose argument this row lists, rather than belonging to that argument.",
+    False,
+)
+_GM = _Kind(
+    hpu.MAQ,
+    "mam-implicit-maqaf",
+    "GM",
+    "Gray maqaf: a maqaf that MAM itself shows in gray. This page reads it as a"
+    " maqaf, joining the atoms on either side of it into one form.",
+    True,
+)
+_KINDS = _GSP, _GM  # In the order of the columns that name them
+_KIND_OF_STAND_IN = {GRAY_MAQAF: _GM}
+_KIND_OF_SPAN_CLASS = {kind.span_class: kind for kind in _KINDS}
+_TEXT_TABLE = str.maketrans(
+    {stand_in: kind.mark for stand_in, kind in _KIND_OF_STAND_IN.items()}
+)
 
 
 def text(form):
@@ -59,34 +81,46 @@ def target(form):
     htseq = []
     run = []
     for char in form:
-        if (kind := _KINDS.get(char)) is None:
+        if (kind := _KIND_OF_STAND_IN.get(char)) is None:
             run.append(char)
             continue
         if run:
             htseq.append("".join(run))
             run = []
-        htseq.append(mb_html.span(kind.mark, {"class": kind.span_class}))
+        htseq.append(_span(kind))
     if run:
         htseq.append("".join(run))
     return tuple(htseq)
 
 
-def labels(html_contents):
-    """Return the labels of the gray marks that a row's target shows, in order."""
+def gray_sof_pasuq():
+    """Return a gray sof pasuq, a span to follow an argument that a FOI lists."""
+    return _span(_GSP)
+
+
+def is_left_out_of_json_text(html_el):
+    """Return whether html_el is a gray mark that a row's JSON text leaves out."""
+    kind = _kind_of(html_el)
+    return kind is not None and not kind.in_json_text
+
+
+def labels(*contents):
+    """Return the labels of the gray marks that any of contents show, in order."""
     found = set()
-    _collect_labels(html_contents, found)
-    return tuple(kind.label for kind in _KINDS.values() if kind.label in found)
+    for item in contents:
+        _collect_labels(item, found)
+    return tuple(kind.label for kind in _KINDS if kind.label in found)
 
 
 def labels_of_table(rows_labels):
     """Return the labels of the gray marks that any of a table's rows show."""
     found = set().union(*rows_labels)
-    return tuple(kind.label for kind in _KINDS.values() if kind.label in found)
+    return tuple(kind.label for kind in _KINDS if kind.label in found)
 
 
-def json_flags(html_contents):
-    """Return the flags that a row's JSON gets for the gray marks its target shows."""
-    return {label.lower(): True for label in labels(html_contents)}
+def json_flags(*contents):
+    """Return the flags that a row's JSON gets for the gray marks it shows."""
+    return {label.lower(): True for label in labels(*contents)}
 
 
 def cells(row_labels, table_labels):
@@ -97,19 +131,26 @@ def cells(row_labels, table_labels):
     )
 
 
+def _span(kind):
+    return mb_html.span(kind.mark, {"class": kind.span_class})
+
+
+def _kind_of(html_el):
+    if not mb_html.is_htel(html_el):
+        return None
+    return _KIND_OF_SPAN_CLASS.get(html_el.get("attr", {}).get("class"))
+
+
 def _collect_labels(contents, found):
-    if isinstance(contents, str):
-        return
-    for item in contents:
-        if not mb_html.is_htel(item):
-            continue
-        kind = _KIND_OF_SPAN_CLASS.get(item.get("attr", {}).get("class"))
-        if kind is not None:
+    if mb_html.is_htel(contents):
+        if (kind := _kind_of(contents)) is not None:
             found.add(kind.label)
-        _collect_labels(item.get("contents", ()), found)
+        _collect_labels(contents.get("contents"), found)
+    elif isinstance(contents, (list, tuple)):
+        for item in contents:
+            _collect_labels(item, found)
 
 
 _ABBRS = {
-    kind.label: mb_html.abbr(kind.label, {"title": kind.explanation})
-    for kind in _KINDS.values()
+    kind.label: mb_html.abbr(kind.label, {"title": kind.explanation}) for kind in _KINDS
 }

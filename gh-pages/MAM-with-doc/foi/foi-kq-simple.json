@@ -5486,7 +5486,8 @@
     "bcv_short": "1S21:12",
     "pqere": "בְּרִבְבֹתָֽיו",
     "fp": "z-trivial/QyV",
-    "r": "בְּרִבְבֹתָֽו"
+    "r": "בְּרִבְבֹתָֽו",
+    "gsp": true
   },
   {
     "bcv_short": "1S23:5",
@@ -5498,7 +5499,8 @@
     "bcv_short": "1S26:5",
     "pqere": "סְבִיבֹתָֽיו",
     "fp": "z-trivial/QyV",
-    "r": "סְבִיבֹתָֽו"
+    "r": "סְבִיבֹתָֽו",
+    "gsp": true
   },
   {
     "bcv_short": "1S26:7",
@@ -5510,7 +5512,8 @@
     "bcv_short": "1S26:7",
     "pqere": "סְבִיבֹתָֽיו",
     "fp": "z-trivial/QyV",
-    "r": "סְבִיבֹתָֽו"
+    "r": "סְבִיבֹתָֽו",
+    "gsp": true
   },
   {
     "bcv_short": "1S26:11",
@@ -5522,13 +5525,15 @@
     "bcv_short": "1S26:16",
     "pqere": "מְרַאֲשֹׁתָֽיו",
     "fp": "z-trivial/QyV",
-    "r": "מְרַאֲשֹׁתָֽו"
+    "r": "מְרַאֲשֹׁתָֽו",
+    "gsp": true
   },
   {
     "bcv_short": "1S29:5",
     "pqere": "בְּרִבְבֹתָֽיו",
     "fp": "z-trivial/QyV",
-    "r": "בְּרִבְבֹתָֽו"
+    "r": "בְּרִבְבֹתָֽו",
+    "gsp": true
   },
   {
     "bcv_short": "2S2:23",
@@ -5588,7 +5593,8 @@
     "bcv_short": "1K18:42",
     "pqere": "בִּרְכָּֽיו",
     "fp": "z-trivial/QyV",
-    "r": "בִּרְכָּֽו"
+    "r": "בִּרְכָּֽו",
+    "gsp": true
   },
   {
     "bcv_short": "2K5:9",
@@ -5606,7 +5612,8 @@
     "bcv_short": "2K14:12",
     "pqere": "לְאֹהָלָֽיו",
     "fp": "z-trivial/QyV",
-    "r": "לְאֹהָלָֽו"
+    "r": "לְאֹהָלָֽו",
+    "gsp": true
   },
   {
     "bcv_short": "Je15:8",
@@ -5666,7 +5673,8 @@
     "bcv_short": "Ee37:16",
     "pqere": "חֲבֵרָֽיו",
     "fp": "z-trivial/QyV",
-    "r": "חֲבֵרָֽו"
+    "r": "חֲבֵרָֽו",
+    "gsp": true
   },
   {
     "bcv_short": "Ee37:19",
@@ -5738,13 +5746,15 @@
     "bcv_short": "Ee40:31",
     "pqere": "מַעֲלָֽיו",
     "fp": "z-trivial/QyV",
-    "r": "מַעֲלָֽו"
+    "r": "מַעֲלָֽו",
+    "gsp": true
   },
   {
     "bcv_short": "Ee40:37",
     "pqere": "מַעֲלָֽיו",
     "fp": "z-trivial/QyV",
-    "r": "מַעֲלָֽו"
+    "r": "מַעֲלָֽו",
+    "gsp": true
   },
   {
     "bcv_short": "Ee43:11",
@@ -5768,7 +5778,8 @@
     "bcv_short": "Ee43:26",
     "pqere": "יָדָֽיו",
     "fp": "z-trivial/QyV",
-    "r": "יָדָֽו"
+    "r": "יָדָֽו",
+    "gsp": true
   },
   {
     "bcv_short": "Ee44:5",
@@ -5822,7 +5833,8 @@
     "bcv_short": "Ps106:45",
     "pqere": "חֲסָדָֽיו",
     "fp": "z-trivial/QyV",
-    "r": "חֲסָדָֽו"
+    "r": "חֲסָדָֽו",
+    "gsp": true
   },
   {
     "bcv_short": "Ps147:19",
@@ -5834,7 +5846,8 @@
     "bcv_short": "Ps148:2",
     "pqere": "צְבָאָֽיו",
     "fp": "z-trivial/QyV",
-    "r": "צְבָאָֽו"
+    "r": "צְבָאָֽו",
+    "gsp": true
   },
   {
     "bcv_short": "Pr6:13",
@@ -5942,7 +5955,8 @@
     "bcv_short": "La3:39",
     "pqere": "חֲטָאָֽיו",
     "fp": "z-trivial/QyV",
-    "r": "חֲטָאָֽו"
+    "r": "חֲטָאָֽו",
+    "gsp": true
   },
   {
     "bcv_short": "Ec5:17",
@@ -6032,7 +6046,8 @@
     "bcv_short": "Ee27:6",
     "pqere": "כִּתִּיִּֽים",
     "fp": "z-trivial/misc",
-    "r": "כִּתִּיִּֽם"
+    "r": "כִּתִּיִּֽם",
+    "gsp": true
   },
   {
     "bcv_short": "Ps18:51",
@@ -6080,7 +6095,8 @@
     "bcv_short": "D22:20",
     "pqere": "לַֽנַּעֲרָֽה",
     "fp": "z-trivial/n3rh-spelled-n3r",
-    "r": "לַֽנַּעֲרָֽ"
+    "r": "לַֽנַּעֲרָֽ",
+    "gsp": true
   },
   {
     "bcv_short": "D22:21",
@@ -6158,7 +6174,8 @@
     "bcv_short": "G49:11",
     "pqere": "סוּתֽוֹ",
     "fp": "z-trivial/xolam-he",
-    "r": "סוּתֹֽה"
+    "r": "סוּתֹֽה",
+    "gsp": true
   },
   {
     "bcv_short": "E22:4",
@@ -6230,7 +6247,8 @@
     "bcv_short": "Ee48:15",
     "pqere": "בְּתוֹכֽוֹ",
     "fp": "z-trivial/xolam-he",
-    "r": "בְּתוֹכֹֽה"
+    "r": "בְּתוֹכֹֽה",
+    "gsp": true
   },
   {
     "bcv_short": "Ee48:18",
@@ -6242,12 +6260,14 @@
     "bcv_short": "Ee48:21",
     "pqere": "בְּתוֹכֽוֹ",
     "fp": "z-trivial/xolam-he",
-    "r": "בְּתוֹכֹֽה"
+    "r": "בְּתוֹכֹֽה",
+    "gsp": true
   },
   {
     "bcv_short": "Da11:10",
     "pqere": "מָעֻזּֽוֹ",
     "fp": "z-trivial/xolam-he",
-    "r": "מָעֻזֹּֽה"
+    "r": "מָעֻזֹּֽה",
+    "gsp": true
   }
 ]

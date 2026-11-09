@@ -1,10 +1,13 @@
 import re
+from functools import partial
+
 from mb_cmn import template_names as tmpln
 from mb_cmn import ws_tmpl2 as wtp
 from mb_cmn import uni_heb as uh
 from mb_cmn import hebrew_points as hpo
 from py_misc import analyze_qamats_variant as aqv
 from hkq_cmn.qere_projection import XATAF_QAMATS_POLICY, project_qere_atoms
+from foi import foi_gray_marks as gray_marks
 from foi import foi_struct as fct
 from foi import foi_wikitext_helpers as fwh
 from foi import regexp_helpers as rh
@@ -13,8 +16,9 @@ from mb_cmn.my_utils import sl_map
 
 def find_fois_wt(mroge):
     """Find מ:קמץ template uses: they are the feature of interest."""
-    structural = fwh.find_fois_in_minirow_ep(_FOILERS, mroge)
     minirow = mroge.get("mroge-minirow")
+    before_sof_pasuq = fwh.templates_before_sof_pasuq(minirow.EP) if minirow else set()
+    structural = fwh.find_fois_in_minirow_ep(_foilers(before_sof_pasuq), mroge)
     if minirow is None:
         return structural
     selected_text = "".join(
@@ -28,10 +32,18 @@ def find_fois_wt(mroge):
     return structural + _record_xataf_qamats(tuple(), selected_text)
 
 
-def _record_qamats_variation_as_foi(_foilers, stack, tmpl):
+def _record_qamats_variation_as_foi(before_sof_pasuq, _foilers, stack, tmpl):
     dalsam = _dalsam(tmpl)
     dsa = aqv.analyze_dalsam(dalsam)
-    return _handle_qq_analysis(stack, dsa)
+    gray_sof_pasuq = id(tmpl) in before_sof_pasuq and _disputed_part_ends_both(dsa)
+    return _handle_qq_analysis(stack, dsa, gray_sof_pasuq)
+
+
+def _disputed_part_ends_both(dsa):
+    """Return whether the disputed part that a row lists ends both variants."""
+    return not (
+        dsa["dsa-undisputed-suffix"] or dsa["dsa-dal-endpunc"] or dsa["dsa-sam-endpunc"]
+    )
 
 
 _PATT_XQ_WORD = r"\S*" + hpo.XQAMATS + r"\S*"
@@ -75,12 +87,24 @@ def _dalsam(tmpl):
     return dal_list, sam_list
 
 
-def _dalsam_htseq(dalsam):
-    daleq_and_sameq = "ד=" + dalsam[0] + " " + "ס=" + dalsam[1]
-    return (daleq_and_sameq,)
+def _dalsam_htseq(dalsam, gray_sof_pasuq):
+    """Return the disputed part of each variant, ד= before dalet's and ס= before samekh's.
+
+    Where a sof pasuq follows the template and the disputed part ends each variant,
+    each part is followed by that sof pasuq, gray, added for context as foi_gray_marks
+    shows: the row lists the template's arguments, which do not include it.
+    """
+    if not gray_sof_pasuq:
+        return ("ד=" + dalsam[0] + " " + "ס=" + dalsam[1],)
+    return (
+        "ד=" + dalsam[0],
+        gray_marks.gray_sof_pasuq(),
+        " ס=" + dalsam[1],
+        gray_marks.gray_sof_pasuq(),
+    )
 
 
-def _handle_qq_analysis(stack, dsa):
+def _handle_qq_analysis(stack, dsa, gray_sof_pasuq):
     dalsep, _samsep, accent, m2_lett, m3_zmnl = dsa["dsa-disputed-part"]
     qq_count = (len(dalsep) - 1) // 2
     accent_strq = uh.shunna(accent) if accent else None
@@ -93,13 +117,13 @@ def _handle_qq_analysis(stack, dsa):
         "m2_lett": m2_lett,
         "m3_zmnl": uh.join_shunnas(m3_zmnl),
     }
-    return _finish_handling_analysis(dsa, foi_qualifier)
+    return _finish_handling_analysis(dsa, foi_qualifier, gray_sof_pasuq)
 
 
-def _finish_handling_analysis(dsa, foi_qualifier):
+def _finish_handling_analysis(dsa, foi_qualifier, gray_sof_pasuq):
     dalsep, samsep, accent, _m2_lett, _m3_zmnl = dsa["dsa-disputed-part"]
     dalsam = "".join(dalsep), "".join(samsep)
-    foi_target = fct.make_qtarget(_dalsam_htseq(dalsam), foi_qualifier)
+    foi_target = fct.make_qtarget(_dalsam_htseq(dalsam, gray_sof_pasuq), foi_qualifier)
     foi1_path = "qamats-variants", _acc_qqc(accent, foi_qualifier)
     foi2_path = "qamats-variants", "all"
     foi1 = foi1_path, foi_target
@@ -120,17 +144,21 @@ def _acc_qqc(accent, foi_qualifier):
 # The accent is geresh muqdam (without a coincident revia).
 
 
-_FOILERS = fwh.all_branch_foilers(
-    {
-        "מ:קמץ": _record_qamats_variation_as_foi,
-        #
-        "מ:כפול": fwh.label_args_of_dualcant,
-        "נוסח": fwh.label_args_of_doc,
-        "מ:קו״כ-אם-2": fwh.label_args_of_kq_triv,
-        tmpln.SCRDFF_TAR: fwh.label_args_of_scrdfftar,
-        tmpln.SCRDFF_NO_TAR: fwh.fail_on_unexpected_template_in_plus,
-    }
-)
+def _foilers(before_sof_pasuq):
+    """Return the handlers for one verse, given its templates that a sof pasuq follows."""
+    return fwh.all_branch_foilers(
+        {
+            "מ:קמץ": partial(_record_qamats_variation_as_foi, before_sof_pasuq),
+            #
+            "מ:כפול": fwh.label_args_of_dualcant,
+            "נוסח": fwh.label_args_of_doc,
+            "מ:קו״כ-אם-2": fwh.label_args_of_kq_triv,
+            tmpln.SCRDFF_TAR: fwh.label_args_of_scrdfftar,
+            tmpln.SCRDFF_NO_TAR: fwh.fail_on_unexpected_template_in_plus,
+        }
+    )
+
+
 _STACK_SUMMARIES = {
     tuple(): None,
     ("kq-triv-pketiv",): None,
