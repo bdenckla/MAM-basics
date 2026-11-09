@@ -1,0 +1,179 @@
+{
+  "repository": "bdenckla/MAM-basics",
+  "state": "completed 2026-11-09; bounded 03:00 UTC screen",
+  "author": "Codex",
+  "recorded_at": "2026-11-09T03:41:37.280073+00:00",
+  "endpoint": {
+    "base": "e8c8ca748f4cab99255782b787f95ed7ccd30e28",
+    "source": "e686160a167bd1f50ccf058137760fdd075c42d8",
+    "commits": 7,
+    "paths": 15
+  },
+  "maintenance_parent": "bbb976083f333ea28e489d4feae62f7013991347",
+  "anchors": {
+    "reviewed_through": "210affe3ac2931473bead0de839be0de08309e3d",
+    "broad_tested": "011f25a723771e1f3f1c9ea64fab384525774672",
+    "bounded_screened": "e686160a167bd1f50ccf058137760fdd075c42d8",
+    "bounded_focused_checked": "e686160a167bd1f50ccf058137760fdd075c42d8"
+  },
+  "runtime": {
+    "checkout": "/workspace/MAM-basics",
+    "interpreter": "/workspace/MAM-basics/.venv/bin/python",
+    "python": "3.13.15",
+    "preflight": "Clean owned full clone, one worktree, actual local Python job inventory clear, remote main matched frozen source; no interactive or HP checkout used",
+    "sequential": true
+  },
+  "commands": [
+    {
+      "name": "environment",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "cwd": "/workspace/MAM-basics",
+      "source": "e686160a167bd1f50ccf058137760fdd075c42d8",
+      "exit": 0,
+      "seconds": 0.224,
+      "finished": "2026-11-09T03:32:44.243702+00:00"
+    },
+    {
+      "name": "boj-authored",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_gen_misc_authored_english_documents.py"
+      ],
+      "cwd": "/workspace/MAM-basics",
+      "source": "e686160a167bd1f50ccf058137760fdd075c42d8",
+      "exit": 0,
+      "seconds": 1.387,
+      "finished": "2026-11-09T03:32:45.636516+00:00"
+    },
+    {
+      "name": "holman-published",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_verify_and_render_table.py"
+      ],
+      "cwd": "/workspace/MAM-basics",
+      "source": "e686160a167bd1f50ccf058137760fdd075c42d8",
+      "exit": 0,
+      "seconds": 0.821,
+      "finished": "2026-11-09T03:32:46.480361+00:00"
+    },
+    {
+      "name": "misc-authored",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_authored.py",
+        "gen-misc"
+      ],
+      "cwd": "/workspace/MAM-basics",
+      "source": "e686160a167bd1f50ccf058137760fdd075c42d8",
+      "exit": 0,
+      "seconds": 1.649,
+      "finished": "2026-11-09T03:32:48.155533+00:00"
+    },
+    {
+      "name": "focused-tests",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        "-q",
+        "-ra",
+        "py/tests/test_shared_html_styles.py",
+        "py/tests/source_hygiene_test.py",
+        "py/tests/test_prose_mark_order.py",
+        "/workspace/MAM-basics/.novc/review-hourly-20261109-0300-basics/test_span_and_assets.py"
+      ],
+      "cwd": "/workspace/MAM-basics",
+      "source": "e686160a167bd1f50ccf058137760fdd075c42d8",
+      "exit": 0,
+      "seconds": 45.334,
+      "finished": "2026-11-09T03:33:33.510224+00:00"
+    },
+    {
+      "name": "black-check",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "-m",
+        "black",
+        "--check",
+        "py/author_boj/job5_orphan_qere_points.py",
+        "py/author_boj_util/author.py",
+        "py/mb_author/author.py",
+        "py/py_render/rt_assets.py"
+      ],
+      "cwd": "/workspace/MAM-basics",
+      "source": "e686160a167bd1f50ccf058137760fdd075c42d8",
+      "exit": 0,
+      "seconds": 0.196,
+      "finished": "2026-11-09T03:33:33.713780+00:00"
+    },
+    {
+      "name": "endpoint-whitespace",
+      "command": [
+        "git",
+        "diff",
+        "--check",
+        "e8c8ca748f4cab99255782b787f95ed7ccd30e28",
+        "e686160a167bd1f50ccf058137760fdd075c42d8"
+      ],
+      "cwd": "/workspace/MAM-basics",
+      "source": "e686160a167bd1f50ccf058137760fdd075c42d8",
+      "exit": 0,
+      "seconds": 0.006,
+      "finished": "2026-11-09T03:33:33.728786+00:00"
+    }
+  ],
+  "results": {
+    "regeneration": "Actual maintained main_gen_misc_authored_english_documents.py (Book of Job and spelling), 1.387 s; main_verify_and_render_table.py (77-row Holman report), 0.821 s; main_authored.py gen-misc, 1.649 s. All tracked outputs byte-identical after every stage. Aleppo gap/Avi pages are hand-authored, checked independently; their generators were not invented or resurrected.",
+    "native_tests": "20 passed, zero skipped, 45.18 s pytest / 45.334 s recorder. Three maintained lint modules plus eight requested guard/asset cases through maintained py/main_test.py. Nested and list/tuple/element content, lifted=True, punctuation-only unpointed classification, pointed rejection, U+05C8/U+05C9, regex equivalence over full Hebrew block, and Holman published/standalone packaging covered.",
+    "independent": {
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "/workspace/scratch/check_basics_0300_20261109.py"
+      ],
+      "exit": 0,
+      "seconds": 0.044,
+      "result": "Both Avi pages reconstruct byte-exactly by seven unpointed lang removals each. Both Aleppo gap pages have byte-identical non-style content, correct pointed selectors, no font on unpointed Hebrew column, and existing pinned relative asset. Book of Job full visible text and DOM unchanged after only four intended unpointed wrappers. Both spelling JSONs have exactly the corresponding four new unpointed occurrences, net +4; all other categories equal."
+    },
+    "format": "Black --check on four changed Python files passes, 0.196 s; endpoint git diff --check passes, 0.006 s.",
+    "environment": "Owning Python 3.13.15 and pip check pass, 0.224 s; requirements/constraints unchanged.",
+    "output_triage": "Every generated diff empty. Standalone asset tests copy the existing pinned WOFF2/base stylesheet into disposable test output; no font rebuild/baseline/shape check. Shared mb_author regex named-escape change compiles character-for-character identically to base. No repair."
+  },
+  "coordinator_review": {
+    "attribution": "Independent coordinating reviewer connector comparison, distinct from this cloud execution",
+    "result": "Both Avi pages reconstruct exactly after only seven lang removals per file. Both Aleppo gap pages become byte-identical after style block removal; font href correct. Entry-ordered frequency JSON changes only four words_unpointed_tanakh counts: one 1 to 2 and three 0 to 1, net +4. No content or interpretation change found; Holman source agrees with existing prepare_report_font contract.",
+    "scope": "Actual Basics window is Book of Job guard/spelling, equivalent shared mark regex escapes, Avi wrappers, and Holman/Aleppo font assets plus instructions. No new shared footnote implementation in this public endpoint."
+  },
+  "finding": "No consequential introduced defect confirmed; no repair or source-data change",
+  "failures": [],
+  "limits": [
+    "Series Stage 10 original source/live/save/base/parse gaps, PR369 browser gap, earlier heading and source/editorial limits remain open.",
+    "No browser/pixel/font-rendering or manuscript/sourcebook judgment; source mirror and instruction/escape-probe assertions retain their scope and attribution.",
+    "No mega/full-suite rerun, source refresh, deployment/dispatch, main/shared branch write, hbofonts/font rebuild/baseline or schedule operation."
+  ],
+  "policy": {
+    "AGENTS_blob": "d3ec8f0f27fca27c1d3d4045e96cc0a33f951e6a",
+    "review_trial_blob": "429b896939570ad0ffd2a8518f9c114c0ff9ec8b",
+    "periodic_review_blob": "2361ed9d216650ccbde241e3eecfc2695e48491c",
+    "shared_skills": "Current AGENTS verified unchanged; controlling review-trial/periodic-review blobs read and retained. Relevant canonical Hebrew-prose and Book of Job/Holman routing applied. New shared default-font/escape-trap instruction text reviewed as source; no installation or synchronization of live user configuration."
+  },
+  "evidence": {
+    "path": "doc/review-hourly-2026-11-09-0300-basics-evidence.zip",
+    "sha256": "e1f6e4bebd3c70dab8c5308e768c72e25c4190712e36a3e27d18aa501ed2afcd",
+    "files": 22
+  },
+  "publication": {
+    "branch": "review-hourly-20261109-0300-basics-receipts",
+    "paths": [
+      "doc/review-hourly-2026-11-09-0300-basics-evidence.zip",
+      "doc/review-hourly-2026-11-09-0300-basics.json",
+      "doc/review-trial-status.md"
+    ],
+    "safeguard": "Unique isolated new receipt branch; no push/deployment trigger or known dependent job. No main/shared write or dispatch. Exact remote SHA, scope and archive verified after push.",
+    "closeout": "Restore original owned work branch clean after remote verification; no added worktree; preserve evidence"
+  }
+}
