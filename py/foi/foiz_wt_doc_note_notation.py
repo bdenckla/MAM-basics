@@ -32,6 +32,7 @@ interrupts would be missed, or shown only in part.  None is today.
 
 import re
 
+from foi import foi_gray_marks as gray_marks
 from foi import foi_wikitext_helpers as fwh
 
 FOI_PATHS = (
@@ -58,10 +59,12 @@ def _find_fois_in_string(stack, string):
         return []
     fois = []
     for form in fwh.forms(string):
-        if _PLUS_BETWEEN.search(form):
-            fois.append((_FP_PLUS, form))
-        if _DOUBLE_GUILLEMET.search(form):
-            fois.append((_FP_DOUBLE_GUILLEMETS, form))
+        # A form's notation is found in its text, and its row shows its gray marks.
+        text, target = gray_marks.text(form), gray_marks.target(form)
+        if _PLUS_BETWEEN.search(text):
+            fois.append((_FP_PLUS, target))
+        if _DOUBLE_GUILLEMET.search(text):
+            fois.append((_FP_DOUBLE_GUILLEMETS, target))
     return fois
 
 

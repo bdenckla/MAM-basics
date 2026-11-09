@@ -4053,13 +4053,15 @@
     "bcv_short": "Je37:4",
     "stack_str": null,
     "fp": "c-shuruq-alef",
-    "r": "הַכְּלֽוּא׃"
+    "r": "הַכְּלֽוּא׃",
+    "gsp": true
   },
   {
     "bcv_short": "Je52:31",
     "stack_str": null,
     "fp": "c-shuruq-alef",
-    "r": "הַכְּלֽוּא׃"
+    "r": "הַכְּלֽוּא׃",
+    "gsp": true
   },
   {
     "bcv_short": "Ps139:20",

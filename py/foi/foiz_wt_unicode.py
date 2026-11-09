@@ -7,6 +7,7 @@ from mb_cmn import hebrew_punctuation as hpu
 from mb_cmn import hebrew_letters as hl
 from mb_cmn import uni_heb as uh
 from mb_cmn import template_names as tmpln
+from foi import foi_gray_marks as gray_marks
 from foi import foi_wikitext_helpers as fwh
 from foi import regexp_helpers as rh
 from mb_cmn.my_utils import sl_map
@@ -21,10 +22,13 @@ def find_fois_wt(mroge):
 def _find_fois_in_string(stack, string):
     # A documentation note attaches punctuation to the forms it gives, as in a list
     # of sigla, an equals sign and a pointed form.  The forms that fwh.forms finds
-    # leave that punctuation out.
+    # leave that punctuation out.  A form's features are found in its text, and its
+    # row shows its gray marks.
     fois = []
     for form in fwh.forms(string):
-        fois.extend(_find_fois_in_str(form))
+        target = gray_marks.target(form)
+        for foi_path, _text in _find_fois_in_str(gray_marks.text(form)):
+            fois.append((foi_path, target))
     qual_fois = sl_map((_qualify, stack), fois)
     return qual_fois
 

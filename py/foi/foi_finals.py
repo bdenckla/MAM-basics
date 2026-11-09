@@ -9,6 +9,7 @@ from py_misc import mwd_utils as mwdu
 from mb_misc import mb_html
 
 from foi import pasoleg_1_labels
+from foi import foi_gray_marks as gray_marks
 from foi import foi_struct as fct
 from foi import tsinnorit_explanations as tsinnorit_e
 from foi import ole_yored_explanations as ole_yored_e
@@ -186,20 +187,24 @@ def _row_dic_for_json(foi_path, bcv_short, qualifier, html_contents):
         **qualifier,
         "fp": _slash_str_from_path_parts(foi_path[1:]),
         "r": _rm_html(html_contents),
+        **gray_marks.json_flags(html_contents),
     }
 
 
 def _append_table_row(io_html_tables, foi_path, row_dic):
-    table_row = _make_table_row(foi_path, row_dic)
+    # A row is its cells and the labels of the gray marks it shows, from which its
+    # table's columns of gray marks are made.
+    cells = _make_table_cells(foi_path, row_dic)
+    labels = gray_marks.labels(row_dic["html_contents"])
     tfp = tuple(foi_path)
     if tfp not in io_html_tables:
         io_html_tables[tfp] = []
-    io_html_tables[tfp].append(table_row)
+    io_html_tables[tfp].append((cells, labels))
 
 
-def _make_table_row(foi_path, row_dic):
+def _make_table_cells(foi_path, row_dic):
     if foi_path[0] == "dexi-stress-meteg":
-        return mb_html.table_row(dexi_stress_meteg_e.html_row_cells(row_dic))
+        return tuple(dexi_stress_meteg_e.html_row_cells(row_dic))
     if foi_path[0] == "slh-word":
         target_tds = slh_word_e.html_target_cells(row_dic["html_contents"])
     elif foi_path[0] == holam_foi.STEM:
@@ -208,7 +213,7 @@ def _make_table_row(foi_path, row_dic):
         td_attrs = {"lang": "hbo", "dir": "rtl"}
         target_tds = (mb_html.table_datum(row_dic["html_contents"], td_attrs),)
     other_tds = tuple(_my_td(k, v) for k, v in row_dic.items() if k != "html_contents")
-    return mb_html.table_row((*target_tds, *other_tds))
+    return (*target_tds, *other_tds)
 
 
 def _my_td(key, htseq_or_str_or_none):
@@ -290,9 +295,15 @@ def _get_html_body1_and_2(outfile_stem, html_tables):
     return body1, body2
 
 
-def _html_for_section(head, trs):
-    if not trs:  # A declared category with no rows has no table.
+def _html_for_section(head, rows):
+    if not rows:  # A declared category with no rows has no table.
         return head
+    # A table has a column for each kind of gray mark that one of its rows shows.
+    table_labels = gray_marks.labels_of_table(labels for _cells, labels in rows)
+    trs = [
+        mb_html.table_row((*cells, *gray_marks.cells(labels, table_labels)))
+        for cells, labels in rows
+    ]
     return head + [mb_html.table(trs, {"class": "border-collapse"})]
 
 

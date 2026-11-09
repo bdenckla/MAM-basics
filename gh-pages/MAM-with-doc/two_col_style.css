@@ -30,6 +30,8 @@ span.mam-letter-hung { vertical-align: super; }
 span.mam-lp-legarmeih { font-weight: bold; }
 span.mam-lp-paseq { font-size: 85%; }
 span.mam-implicit-maqaf { color: gray; }
+/* A sof pasuq that a FOI page adds for context: py/foi/foi_gray_marks.py. */
+span.foi-gray-sof-pasuq { color: gray; }
 span.mam-note-callout { color: light-dark(red, pink); }
 span.mam-doc-callout { color: light-dark(red, pink); }
 span.mam-doc-lemma { color: light-dark(blue, lightblue); }
