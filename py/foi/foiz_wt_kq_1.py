@@ -31,17 +31,32 @@ def _record_kq_in_context(before_sof_pasuq, foilers, stack, tmpl):
 
 
 def _with_gray_sof_pasuq(foi_target):
-    """Add a gray sof pasuq after the pointed qere that a trivial ketiv/qere's row lists.
+    """Add a gray sof pasuq after the cells of a ketiv/qere row that show its arguments.
 
-    The pqere column lists the template's parameter 3, and a sof pasuq follows the
-    template, so the row adds it there, for context, as foi_gray_marks shows.  The cell
-    that shows MAM's rendering of a ketiv/qere template is left as it is.
+    A sof pasuq follows the template, so the row adds one, for context, as
+    foi_gray_marks shows.  It adds one after the first cell, MAM's rendering of the
+    template, and one after the pqere cell of a trivial ketiv/qere, which lists the
+    template's parameter 3.  In the first cell it follows the whole rendering, as the
+    sof pasuq does in MAM: after the ketiv of a קו״כ, whose rendering has the qere
+    first.  Ben Denckla asked for the first cell's on 2026-11-09.  The same day he left two
+    questions to Claude's recommendations, which this follows: whether it goes after
+    the whole rendering of a קו״כ or after its qere, and whether a trivial
+    ketiv/qere's row keeps the pqere cell's as well.  His words: "Just do something
+    reasonable; whatever you recommend."
     """
-    if not isinstance(foi_target, dict) or "pqere" not in fct.qtar_qual(foi_target):
-        return foi_target
+    if not isinstance(foi_target, dict):
+        return _with_gray_sof_pasuq_after(foi_target)
+    proper = _with_gray_sof_pasuq_after(fct.qtar_proper(foi_target))
     qualifier = fct.qtar_qual(foi_target)
-    pqere = qualifier["pqere"], gray_marks.gray_sof_pasuq()
-    return fct.make_qtarget(fct.qtar_proper(foi_target), {**qualifier, "pqere": pqere})
+    if "pqere" in qualifier:
+        pqere = qualifier["pqere"], gray_marks.gray_sof_pasuq()
+        qualifier = {**qualifier, "pqere": pqere}
+    return fct.make_qtarget(proper, qualifier)
+
+
+def _with_gray_sof_pasuq_after(htseq):
+    assert isinstance(htseq, tuple), htseq
+    return *htseq, gray_marks.gray_sof_pasuq()
 
 
 def _record_kq_as_foi(_foilers, stack, tmpl):
