@@ -1,0 +1,84 @@
+{
+  "kind": "bounded comment-only endpoint screen",
+  "window": {
+    "base": "08abd66a1452ba654e19aefc55ea0589fcd936c3",
+    "head": "bc8d7ed3bbbabd0c23a56a76447ca7e76790f45f",
+    "commits": 1,
+    "paths": 2
+  },
+  "reconciled_receipt_parent": "ba2fc844808c85e65ade5e44136288ee9ad4ce1e",
+  "disposition": "No consequential evidenced defect; no repair.",
+  "source_summary": "Both complete patches record the owner's existing font choices in comments only. Exact base/head blob checks and complete patch reconstruction pass; both Python ASTs, all non-comment token type/value pairs and Hebrew codepoint sequences are unchanged. Added comment lines have no trailing whitespace. No consequential defect or repair.",
+  "independent_checks": {
+    "result": "pass",
+    "window": {
+      "base": "08abd66a1452ba654e19aefc55ea0589fcd936c3",
+      "head": "bc8d7ed3bbbabd0c23a56a76447ca7e76790f45f",
+      "commits": 1,
+      "paths": 2
+    },
+    "files": [
+      {
+        "path": "py/foi/foi_finals.py",
+        "base_blob": "5686df0cbfadfd36b27599c4f79123152f11f902",
+        "head_blob": "bf8004ad95e51eca3656f7f8040a095d4ae1908d",
+        "patch_reconstructs_exactly": true,
+        "ast_equal": true,
+        "non_comment_tokens_equal": true,
+        "hebrew_codepoints_equal": true,
+        "only_comment_lines_changed": true,
+        "added_lines_have_no_trailing_whitespace": true
+      },
+      {
+        "path": "py/foi/slh_word_explanations.py",
+        "base_blob": "90e80eb6f2d121a65f398fa82a737bc893c9968d",
+        "head_blob": "1b327500fda0057a85747af0fb7d0df57c8cf1e1",
+        "patch_reconstructs_exactly": true,
+        "ast_equal": true,
+        "non_comment_tokens_equal": true,
+        "hebrew_codepoints_equal": true,
+        "only_comment_lines_changed": true,
+        "added_lines_have_no_trailing_whitespace": true
+      }
+    ],
+    "scope": "Standard-library scratch comparison; no project tests or regeneration."
+  },
+  "owner_claims": "The commit attributes both existing font choices to Ben's November 9 decision and reports unchanged FOI regeneration, Black and 4 passing prose-convention tests. Those assertions remain attributed, not new independent execution evidence.",
+  "verification_scope": "Sparse exact-source standard-library checks. The complete two-path endpoint is comment-only, so no product behavior or generated-output change is introduced. No project imports, generator, repository tests, Black, mega, full suite or browser check ran for this screen.",
+  "anchors_preserved": {
+    "reviewed_through": "210affe3ac2931473bead0de839be0de08309e3d",
+    "broad_tested": "e686160a167bd1f50ccf058137760fdd075c42d8",
+    "last_focused_checked": "08abd66a1452ba654e19aefc55ea0589fcd936c3"
+  },
+  "policies": {
+    "review_trial": "429b896939570ad0ffd2a8518f9c114c0ff9ec8b",
+    "periodic_review": "2361ed9d216650ccbde241e3eecfc2695e48491c",
+    "agents": "d3ec8f0f27fca27c1d3d4045e96cc0a33f951e6a"
+  },
+  "coordination": "Prior execution owner reported completed work, clean home checkouts and no active checks. No duplicate repository job or external-agent contact; no claim of exclusive ownership across unobserved machines.",
+  "ci": {
+    "source_head": "bc8d7ed3bbbabd0c23a56a76447ca7e76790f45f",
+    "reported_statuses": 0,
+    "reported_check_runs": 0,
+    "interpretation": "No CI pass inferred."
+  },
+  "deployment": {
+    "workflow": ".github/workflows/pages.yml",
+    "blob": "18ceb19405424710bda47d9a38c470cc2ed9c385",
+    "same_at_parent_and_source": true,
+    "events": [
+      "workflow_dispatch"
+    ],
+    "push_trigger": false
+  },
+  "checker_replay": "Fetch the two exact base/head file pairs under base/ and head/ beside the checker, and save the complete compare JSON as compare-full.json. The checker verifies four blob IDs before comparisons and makes no network calls.",
+  "limits": [
+    "Historical Stage10, source/live/browser/editorial gaps remain open.",
+    "No new editorial decision or validation of the owner conversation; source comments and commit history are the evidence reviewed.",
+    "A local orchestration syntax error occurred before any reads or writes and was corrected. The scratch checker passed its first run."
+  ],
+  "publication": {
+    "branch": "review-hourly-20261109-bc8d7ed3-basics-receipts",
+    "scope": "Only a new isolated receipt branch descending the prior receipt. All finished receipts and exact tested/reviewed anchors preserved; no main/shared integration, deployment, schedule or hbofonts work."
+  }
+}
