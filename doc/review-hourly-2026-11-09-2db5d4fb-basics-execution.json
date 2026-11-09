@@ -1,0 +1,135 @@
+{
+  "state": "completed 2026-11-09; focused execution only",
+  "recorded_utc": "2026-11-09T20:38:33.224578+00:00",
+  "source_review": "Owned by a separate reviewer; endpoint source/output comparisons and extracted-function probes were not repeated.",
+  "scope": "Only explicitly requested focused execution. No mega/full suite, source refresh, font/baseline work, main/shared integration, deployment/dispatch, external-agent communication, new chat or schedule change. Maintained status and all prior finished receipts remain unchanged.",
+  "publication": "New isolated receipt branch only; coordinator will append the combined maintained status after remote verification and branch release.",
+  "repository": "bdenckla/MAM-basics",
+  "source": "2db5d4fbe24dab0509a4fb5e92511de1535b3a6f",
+  "receipt_parent": "3aa30d807500b2e5f538322a533905c6874e6af7",
+  "branch": "review-hourly-20261109-2db5d4fb-basics-receipts",
+  "anchors_preserved": {
+    "reviewed_through": "210affe3ac2931473bead0de839be0de08309e3d",
+    "broad_tested": "e686160a167bd1f50ccf058137760fdd075c42d8"
+  },
+  "preflight": {
+    "source": "2db5d4fbe24dab0509a4fb5e92511de1535b3a6f",
+    "worktree": "/workspace/scratch/basics-2db5d4fb-focused",
+    "home_clone": "/workspace/MAM-basics",
+    "interpreter": "/workspace/MAM-basics/.venv/bin/python",
+    "verified_environment": "Python3.13.15; constrained versions/direct requirements/pip check; no unpinned application packages or system/user sites.",
+    "instructions": {
+      "AGENTS.md": "d3ec8f0f27fca27c1d3d4045e96cc0a33f951e6a",
+      "doc/review-trial.md": "429b896939570ad0ffd2a8518f9c114c0ff9ec8b",
+      "doc/periodic-review.md": "2361ed9d216650ccbde241e3eecfc2695e48491c"
+    },
+    "scope": "Four explicitly requested focused commands only; source/output review and extracted-function probes owned by another reviewer. No private inputs selected, mega, full suite, source refresh, baseline or publication.",
+    "commands": [
+      [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "/workspace/scratch/preflight_nightly_20261108.py",
+        "/workspace/scratch/basics-2db5d4fb-focused"
+      ],
+      [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "/workspace/scratch/verify_env_scope_20261109.py",
+        "/workspace/scratch/basics-2db5d4fb-focused"
+      ]
+    ]
+  },
+  "commands": [
+    {
+      "source": "2db5d4fbe24dab0509a4fb5e92511de1535b3a6f",
+      "cwd": "/workspace/scratch/basics-2db5d4fb-focused",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_foi_features_of_interest.py",
+        "--single-threaded"
+      ],
+      "started_utc": "2026-11-09T20:33:10.694856+00:00",
+      "elapsed_seconds": 16.759943,
+      "exit_code": 0,
+      "tracked_changes": [],
+      "untracked": [],
+      "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "removed_inherited_path_overrides": [],
+      "source_review": "Not repeated; commands executed independently in this exact checkout."
+    },
+    {
+      "source": "2db5d4fbe24dab0509a4fb5e92511de1535b3a6f",
+      "cwd": "/workspace/scratch/basics-2db5d4fb-focused",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_mam_with_doc.py"
+      ],
+      "started_utc": "2026-11-09T20:34:15.412713+00:00",
+      "elapsed_seconds": 6.498353,
+      "exit_code": 0,
+      "tracked_changes": [],
+      "untracked": [],
+      "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "removed_inherited_path_overrides": [],
+      "source_review": "Not repeated; commands executed independently in this exact checkout."
+    },
+    {
+      "source": "2db5d4fbe24dab0509a4fb5e92511de1535b3a6f",
+      "cwd": "/workspace/scratch/basics-2db5d4fb-focused",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_near_aleppo.py",
+        "--html",
+        "--check"
+      ],
+      "started_utc": "2026-11-09T20:34:56.414727+00:00",
+      "elapsed_seconds": 26.278754,
+      "exit_code": 0,
+      "tracked_changes": [],
+      "untracked": [],
+      "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "removed_inherited_path_overrides": [],
+      "source_review": "Not repeated; commands executed independently in this exact checkout."
+    },
+    {
+      "source": "2db5d4fbe24dab0509a4fb5e92511de1535b3a6f",
+      "cwd": "/workspace/scratch/basics-2db5d4fb-focused",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        "py/tests/test_author_std_table.py",
+        "py/tests/test_shared_html_styles.py"
+      ],
+      "started_utc": "2026-11-09T20:35:54.680309+00:00",
+      "elapsed_seconds": 14.305722,
+      "exit_code": 0,
+      "tracked_changes": [],
+      "untracked": [],
+      "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "removed_inherited_path_overrides": [],
+      "source_review": "Not repeated; commands executed independently in this exact checkout."
+    }
+  ],
+  "selected_tests": {
+    "passed": 7,
+    "skipped": 0,
+    "failed": 0,
+    "pytest_seconds": 14.14,
+    "files": [
+      "py/tests/test_author_std_table.py",
+      "py/tests/test_shared_html_styles.py"
+    ]
+  },
+  "near_aleppo_html": "All 106 files current; --html --check only, no build/census refresh.",
+  "output_triage": "Zero tracked or untracked differences after each of all four commands. Every empty full binary patch retained; no restoration or acceptance.",
+  "diagnostic_failures": [],
+  "evidence": {
+    "path": "doc/review-hourly-2026-11-09-2db5d4fb-basics-execution-evidence.zip",
+    "sha256": "0d793eeee05153bf6700130caad601d56142ee09a741c192bec47e5f803248db",
+    "members": 19,
+    "manifest": "manifest.json"
+  },
+  "checker": "doc/review-hourly-2026-11-09-2db5d4fb-basics-execution-check.py",
+  "limits": [
+    "This is neither a full suite nor a broad-tested/overall-reviewed advance.",
+    "No browser/font rendering, manuscript, live-source or editorial validation. Historical limits remain with the unchanged prior maintained status."
+  ]
+}
