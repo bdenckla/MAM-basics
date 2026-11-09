@@ -51,7 +51,10 @@ class QereProjectionPolicy:
     qamats_argument_keys: tuple[str, ...]
     dual_cantillation_argument_keys: tuple[str, ...]
     whitespace_text: str = " "
-    paseq_legarmeh_text: str = PASOLEG
+    # The text of a narrow-sense paseq, the template מ:פסק.
+    paseq_text: str = PASOLEG
+    # The text of a legarmeh, the template מ:לגרמיה-2.
+    legarmeh_text: str = PASOLEG
     gray_maqaf_text: str = MAQ
     excluded_qamats_text: str = " "
 
@@ -79,18 +82,19 @@ XATAF_QAMATS_POLICY = QereProjectionPolicy(
     dual_cantillation_argument_keys=("כפול",),
 )
 
-# The historical foi-kq-simple pqere field omits the paseq/legarmeh glyph.  The
-# unresolved question of whether that field should retain it is deferred in the
-# same plan document.  Whitespace and the gray maqaf take the defaults: giving
-# either nothing would run two atoms together, which Ben Denckla ruled out for the
-# gray maqaf on 2026-10-20.
+# The foi-kq-simple pqere field keeps a legarmeh, with the default PASEQ code point,
+# and gives a narrow-sense paseq a space.  Ben Denckla decided the legarmeh on
+# 2026-11-09, settling item 8 of the same plan document, under his rule of that day
+# that a form keeps its legarmeh "but NOT paseq in the narrow sense".  Whitespace and
+# the gray maqaf take the defaults: giving either nothing would run two atoms
+# together, which Ben Denckla ruled out for the gray maqaf on 2026-10-20.
 FOI_KQ_SIMPLE_MAIN_COMPATIBLE_POLICY = QereProjectionPolicy(
     name="foi-kq-simple-main-compatible",
     trivial_qere_argument_key="3",
     stress_helper_argument_keys=("1",),
     qamats_argument_keys=("ד",),
     dual_cantillation_argument_keys=("כפול",),
-    paseq_legarmeh_text="",
+    paseq_text="",
     excluded_qamats_text="",
 )
 
@@ -249,13 +253,13 @@ def project_qere_atoms(
     if cmp_name in WHITESPACE_TEMPLATE_NAMES or cmp_name == "ש":
         return [_text_atom(policy.whitespace_text, source)]
 
-    if cmp_name in {"מ:פסק", "מ:לגרמיה-2"}:
-        text = policy.paseq_legarmeh_text
+    if cmp_name == "מ:פסק":
         # MAM has no space on either side of a narrow-sense paseq, so a policy
         # that omits the glyph still keeps the atoms apart there.
-        if not text and cmp_name == "מ:פסק":
-            text = " "
-        return [_text_atom(text, source)]
+        return [_text_atom(policy.paseq_text or " ", source)]
+
+    if cmp_name == "מ:לגרמיה-2":
+        return [_text_atom(policy.legarmeh_text, source)]
 
     if cmp_name == "מ:מקף אפור":
         return [_text_atom(policy.gray_maqaf_text, source)]

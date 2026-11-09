@@ -321,6 +321,18 @@ ketiv/qere template, `מ:קו״כ-אם-2`, holds a whitespace template, a gray m
 or a narrow-sense paseq, and the Psalms 10:5 legarmeh still gives nothing, so
 the command above regenerated its artifacts unchanged.
 
+Settled on 2026-11-09. Asked "Should foi-kq-simple's pqere keep its legarmeh
+too?", Ben answered "Yes, keep it". The question followed his rule of the same
+day, for the FOIs that read MAM's text by forms, that a form keeps its legarmeh
+"but NOT paseq in the narrow sense". `QereProjectionPolicy` now has a field for
+each template, `paseq_text` and `legarmeh_text`, and
+`FOI_KQ_SIMPLE_MAIN_COMPATIBLE_POLICY` takes the default paseq code point for a
+legarmeh while still giving a narrow-sense paseq a space. The full FOI
+regeneration changed only `gh-pages/MAM-with-doc/foi/foi-kq-simple.json`: the
+Psalms 10:5 row's `pqere` now ends with its legarmeh's paseq code point, and its
+subtype, `z-trivial/QyV`, and the HTML page, which does not show that row, are
+unchanged.
+
 ### 9. RTMS Scripture projection
 
 Consumer and searchable anchors:
