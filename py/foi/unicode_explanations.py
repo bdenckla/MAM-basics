@@ -88,6 +88,9 @@ def _xatef_on_non_gutt_explanation(path_parts):
 
 
 _RARE_EXPLANATIONS = {
+    ("alef-with-mapiq",): (
+        "that the word contains Unicode DAGESH OR MAPIQ on Hebrew letter alef"
+    ),
     ("geresh-telisha-gedolah",): " ".join(
         (
             "that the word contains the rare Unicode sequence geresh plus telisha",
@@ -131,10 +134,11 @@ OVERALL_EXPLANATION = (
         (
             "This page collects assorted Unicode-oriented categories in the MAM",
             "corpus. Some highlight unusual but intentional characters or character",
-            "combinations, such as varika, rafeh, or the extraordinary upper and",
-            "lower dots. Others collect patterns that are most naturally described",
-            "in Unicode terms, such as qamats qatan followed immediately by another",
-            "non-letter mark or ḥataf vowels on non-guttural letters. One",
+            "combinations, such as varika, rafeh, alef with mapiq, or the",
+            "extraordinary upper and lower dots. Others collect patterns that are",
+            "most naturally described in Unicode terms, such as qamats qatan",
+            "followed immediately by another non-letter mark or ḥataf vowels on",
+            "non-guttural letters. One",
             "category, NON_STANDARD_MARK_ORDER, is an internal check for this",
             "project's standard combining-mark order.",
         )

@@ -1,4 +1,5 @@
 import re
+import unicodedata
 from mb_cmn import uni_denorm as ud
 from mb_cmn import hebrew_points as hpo
 from mb_cmn import hebrew_accents as ha
@@ -65,6 +66,11 @@ _SPECIALS = (
     ha.G1_TG,
     ha.G2_TG,
 )
+# Unlike the specials above, which are substrings, alef with mapiq is found through
+# the letter that carries the dot, since DAGESH OR MAPIQ alone is no rarity.  It
+# joins a word's specials after them, so that _SP_SUMMARY's keys cover it too and a
+# combination of it with another special raises.
+_ALEF_WITH_MAPIQ = "alef with mapiq"
 _SP_SUMMARY = {
     (_LU, _LU[0], _LU[1]): ("rare", "udot-with-ldot"),
     (_DR, _DR[1]): ("rare", "rafeh-with-dagesh"),
@@ -73,12 +79,33 @@ _SP_SUMMARY = {
     (_DR[1],): ("rare", "rafeh"),
     (ha.G1_TG,): ("rare", "geresh-telisha-gedolah"),
     (ha.G2_TG,): ("rare", "gershayim-telisha-gedolah"),
+    (_ALEF_WITH_MAPIQ,): ("rare", "alef-with-mapiq"),
     tuple(): None,
 }
 
 
+def _specials_in_str(string):
+    specials = tuple(filter(None, (_special_in_str(string, s) for s in _SPECIALS)))
+    if _has_alef_with_mapiq(string):
+        return *specials, _ALEF_WITH_MAPIQ
+    return specials
+
+
 def _special_in_str(string, special):
     return special if special in string else None
+
+
+def _has_alef_with_mapiq(string):
+    """Whether DAGESH OR MAPIQ is among the nonspacing marks after an alef."""
+    letter = None
+    for char in string:
+        if "א" <= char <= "ת":
+            letter = char
+        elif char == hpo.DAGOMOSD and letter == hl.ALEF:
+            return True
+        elif unicodedata.category(char) != "Mn":
+            letter = None
+    return False
 
 
 def _letters_with_rafeh(string):
@@ -141,9 +168,7 @@ def _find_fois_in_str(string):
     if not ud.has_std_mark_order(string):
         ns_order_fp = "unicode", "NON_STANDARD_MARK_ORDER"
         _my_append(features, ns_order_fp, string)
-    sps_in_wc = (_special_in_str(string, s) for s in _SPECIALS)
-    sps_in_wc_f = tuple(filter(None, sps_in_wc))
-    if sp_summary := _SP_SUMMARY[sps_in_wc_f]:
+    if sp_summary := _SP_SUMMARY[_specials_in_str(string)]:
         if sp_summary == ("rare", "rafeh"):
             sp_fp = _rafeh_fp(string)
         else:
