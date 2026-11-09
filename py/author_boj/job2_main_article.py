@@ -69,6 +69,7 @@ def _make_cbody(aq: AllQuirks):
         para_and_table(
             aq, _implications, implications_group_info(the_lens["g:tbhq_and_n3"])
         ),
+        author.para(_AFTER_IMPLICATIONS),
         para_and_table(
             aq, _bad_news_1, xbhq_and_n3_group_info(the_lens["g:xbhq_and_n3"])
         ),
@@ -77,6 +78,7 @@ def _make_cbody(aq: AllQuirks):
         author.para(bad_news_2(len_wlc_dexi, len_wlc_misc)),
         para_and_table(aq, wlc_dexi, wlc_dexi_group_info(len_wlc_dexi)),
         para_and_table(aq, wlc_misc, wlc_misc_group_info(len_wlc_misc)),
+        author.para(_ROLES_REVERSED),
         author.para_ul(_CONCLUSION, _conclusion_list(the_lens)),
         author.heading_level_2("Postscript 1: $UXLC"),
         author.para(_POSTSCRIPT_UXLC),
@@ -412,6 +414,25 @@ def _implications(the_len):
         #
         " Those quirks implied by $BHQ are as follows:",
     ]
+
+
+_AFTER_IMPLICATIONS = [
+    "$BHQ also transcribes but does not note one quirk in μL",
+    " that none of the other three editions notes: the one in $link_29_8.",
+]
+_ROLES_REVERSED = [
+    "In one case the roles are reversed: in $link_31_15,",
+    " $BHQ has silently removed a likely-false quirk",
+    " that $BHS had and that $WLC still has.",
+]
+# Ben's decision of 2026-11-09: the records of 29:8 and 31:15, each the only member of a
+# group that no page lists, are presented by the two sentences above, which link their
+# details pages, rather than by group pages of one entry.  The site's generator checks
+# that every other record is in a group that some page lists.
+PRESENTED_IN_PROSE = {
+    "2908": "g:tbhq_and_twlc",
+    "3115": "g:xbhq_and_twlc",
+}
 
 
 _CONCLUSION = [

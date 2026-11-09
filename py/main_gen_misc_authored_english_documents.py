@@ -19,7 +19,10 @@ from author_boj import (
 from author_boj_util.all_quirks import AllQuirks
 from author_boj_util.common_titles_etc import d2_anchor, d6_anchor
 from author_boj_util.job_ov_and_de import make_ov_and_de
-from author_boj_util.get_qr_groups import get_qr_groups
+from author_boj_util.get_qr_groups import (
+    check_every_quirkrec_presented,
+    get_qr_groups,
+)
 import check_spelling_in_html
 
 __all__ = ["main"]
@@ -49,6 +52,9 @@ def main():
     job2_main_article.gen_html_file(aq)
     job3_uxlc.gen_html_file(aq)
     job4_quirks_in_mu_a.gen_html_file(aq)
+    check_every_quirkrec_presented(
+        qr_groups, aq.listed_groups, job2_main_article.PRESENTED_IN_PROSE
+    )
     job5_orphan_qere_points.gen_html_file(tdm_ch)
     job6_cam1753_mentions.gen_html_file(tdm_ch, eqrs)
     _write_index_dot_html(("../document.css", css_href), boj_paths.index_html_path())

@@ -12,6 +12,8 @@ __all__ = ["para_and_table"]
 def para_and_table(aq: AllQuirks, para_func, group_info):
     """Generate intro paragraph(s) and a linked quirk table for a group.
 
+    Also adds the group's key to aq.listed_groups.
+
     Args:
         aq: AllQuirks dataclass holding all quirkrec data.
         para_func: callable that takes a record count and returns
@@ -21,6 +23,7 @@ def para_and_table(aq: AllQuirks, para_func, group_info):
     """
     group_key = _group_key(group_info)
     group_of_quirkrecs = aq.qr_groups[group_key]
+    aq.listed_groups.add(group_key)
     record_count = len(group_of_quirkrecs)
     link = _table_of_quirks(aq.tdm_ch, group_info, aq.ov_and_de, group_of_quirkrecs)
     pf_out = para_func(record_count)
