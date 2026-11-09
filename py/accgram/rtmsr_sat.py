@@ -381,6 +381,10 @@ def _sat_row_from_source(
 
 
 def _sat_value_cell_attr(label: str, value: str) -> dict[str, str] | None:
+    # A token lifted whole from the transcription and compared with MAM's keeps the
+    # pointed-Hebrew font even where it has no accent, which is often the point of
+    # its row: the one exception to the hebrew-prose rule "Unpointed Hebrew keeps
+    # the surrounding font".
     if label in _WLC_FOCUS_ROW_KEYS and rtmsr_diff_format.contains_hebrew(value):
         return {"lang": "hbo", "dir": "rtl"}
 

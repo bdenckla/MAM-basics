@@ -23,7 +23,13 @@ from pathlib import Path
 
 from accgram import rtms_report
 from accgram import telg_mam_doc_notes
-from accgram.almost_errors_html_shared import hbo, link, ref_display, verse_links
+from accgram.almost_errors_html_shared import (
+    hbo,
+    link,
+    ref_display,
+    unpointed,
+    verse_links,
+)
 from mb_cmn import paths
 from mb_cmn import provenance
 from py_html import wlc_utils_html as H
@@ -44,42 +50,42 @@ _EN: dict[str, dict[str, object]] = {
     "gn5:29": {
         "intro": (
             "MAM follows ",
-            hbo("ל"),
+            unpointed("ל"),
             ", ",
-            hbo("ל1"),
+            unpointed("ל1"),
             ", ",
-            hbo("ק3"),
+            unpointed("ק3"),
             ", and the practice of Aleppo (",
-            hbo("שיטת-א"),
+            unpointed("שיטת-א"),
             "): gershayim and telisha gedola together on the first letter,"
             " because the gershayim's accent is the one read first. So too in"
             " Dotan (",
-            hbo("דותן"),
+            unpointed("דותן"),
             "), in BHS, and in the WLC transcript (",
-            hbo("המקליד"),
+            unpointed("המקליד"),
             ") since version 4.20 — all following the Leningrad" " manuscript (",
-            hbo("כתי״ל"),
+            unpointed("כתי״ל"),
             "), whose reading Breuer also records;" " and so too in ",
-            hbo("מג״ה"),
+            unpointed("מג״ה"),
             " (Miqra’ot Gedolot Ha-keter), per the practice of the Keter. Jacob"
             " Sapir's note on the Aleppo Codex (",
-            hbo("א(ס)"),
+            unpointed("א(ס)"),
             ") records only that the word has “two accents” (",
-            hbo("תרי טעמי"),
+            unpointed("תרי טעמי"),
             "), which may register their presence without fixing their order.",
         ),
         "parts": [
             (
                 "Manuscript ",
-                hbo("ו"),
+                unpointed("ו"),
                 " (",
-                hbo("כתי״ו"),
+                unpointed("כתי״ו"),
                 ", a sigil left undecoded here), the Yemenite manuscripts (",
-                hbo("תיגאן"),
+                unpointed("תיגאן"),
                 "), the Sephardic manuscripts, the printed editions" " (",
-                hbo("דפוסים"),
+                unpointed("דפוסים"),
                 "), and Koren (",
-                hbo("קורן"),
+                unpointed("קורן"),
                 ") instead write the telisha gedola first and the gershayim"
                 " second, because the proper place for the prepositive telisha"
                 " gedola is at the very start of the first letter; so too the"
@@ -87,7 +93,7 @@ _EN: dict[str, dict[str, object]] = {
             ),
             (
                 "The WLC typed text (",
-                hbo("הקלדה"),
+                unpointed("הקלדה"),
                 ") anomalously carries the telisha alone — as was even remarked"
                 " in earlier versions — although the gershayim can in fact be"
                 " seen in the Leningrad manuscript.",
@@ -97,12 +103,12 @@ _EN: dict[str, dict[str, object]] = {
     "zp2:15": {
         "intro": (
             "MAM follows ",
-            hbo("א"),
+            unpointed("א"),
             " (Aleppo) and ",
-            hbo("ל"),
+            unpointed("ל"),
             " (Leningrad): gershayim and telisha gedola on the first letter, as"
             " is MAM's custom (",
-            hbo("כדרכו"),
+            unpointed("כדרכו"),
             ").",
         ),
         "parts": [
@@ -110,9 +116,9 @@ _EN: dict[str, dict[str, object]] = {
                 "The printed editions and Koren put the telisha first and the"
                 " gershayim second on the first letter, as does the Breuer"
                 " edition — and here even ",
-                hbo("מג״ה"),
+                unpointed("מג״ה"),
                 " does so, against the Keter, and against ",
-                hbo("מג״ה"),
+                unpointed("מג״ה"),
                 "’s own practice at Genesis 5:29 and 2 Kings 17:13(!).",
             ),
         ],
@@ -120,30 +126,30 @@ _EN: dict[str, dict[str, object]] = {
     "2k17:13": {
         "intro": (
             "MAM follows ",
-            hbo("ל"),
+            unpointed("ל"),
             " and the practice of Aleppo (",
-            hbo("שיטת-א"),
+            unpointed("שיטת-א"),
             "): a geresh and a telisha gedola at the head of the word in the"
             " Keter, per the Keter's practice — and compare Ezekiel 48:10 and"
             " Zephaniah 2:15 — and ",
-            hbo("מג״ה"),
+            unpointed("מג״ה"),
             " follows them.",
         ),
         "parts": [
             (
                 "The Cairo Codex of the Prophets (",
-                hbo("ק"),
+                unpointed("ק"),
                 ") puts the telisha first and the geresh second; so too Koren,"
                 " the printed editions, and the Breuer edition.",
             ),
             (
                 "The WLC typed text (",
-                hbo("הקלדה"),
+                unpointed("הקלדה"),
                 ") read telisha-then-geresh per the transcriber up to version"
                 " 4.16, and geresh-then-telisha from version 4.18 — and per"
                 " Breuer and Dotan, according to the context. There is also a"
                 " masorah circle (",
-                hbo("עיגול מסורה"),
+                unpointed("עיגול מסורה"),
                 ") on this word; apparently Breuer and Dotan reported the second"
                 " circle while the transcriber, in the earlier versions,"
                 " reported the first.",
@@ -153,38 +159,38 @@ _EN: dict[str, dict[str, object]] = {
     "lv10:4": {
         "intro": (
             "Sassoon 1053 (",
-            hbo("ש1"),
+            unpointed("ש1"),
             ") and the practice of Aleppo (",
-            hbo("שיטת-א"),
+            unpointed("שיטת-א"),
             ") put both accents on the first letter — gershayim before telisha"
             " gedola; compare Ezekiel 48:10. Jacob Sapir's note on the Aleppo"
             " Codex (",
-            hbo("א(ס)"),
+            unpointed("א(ס)"),
             ") again records only “two accents” (",
-            hbo("תרין טעמים"),
+            unpointed("תרין טעמים"),
             ").",
         ),
         "parts": [
             (
-                hbo("ל"),
+                unpointed("ל"),
                 ", ",
-                hbo("ל1"),
+                unpointed("ל1"),
                 ", ",
-                hbo("ב"),
+                unpointed("ב"),
                 " (Or. 4445), ",
-                hbo("ש"),
+                unpointed("ש"),
                 " (Sassoon 507), and manuscript ",
-                hbo("ו"),
+                unpointed("ו"),
                 "(?) put each accent on the letter proper to it — the telisha"
                 " gedola at the head of the word and the gershayim on the"
                 " stressed letter — and so do the printed editions, Koren, and"
                 " the Breuer editions; even ",
-                hbo("מג״ה"),
+                unpointed("מג״ה"),
                 " does so, against the practice of the Keter(!).",
             ),
             (
                 "The Cairo 18 manuscript (",
-                hbo("ק3"),
+                unpointed("ק3"),
                 ") anomalously swaps them, with the gershayim at the head and"
                 " the telisha gedola on the stressed letter.",
             ),
@@ -193,26 +199,26 @@ _EN: dict[str, dict[str, object]] = {
     "ek48:10": {
         "intro": (
             "Aleppo (",
-            hbo("א"),
+            unpointed("א"),
             ") reads both accents at the head of the word, as is its custom (",
-            hbo("כדרכו"),
+            unpointed("כדרכו"),
             ").",
         ),
         "parts": [
             (
                 "The Cairo Codex of the Prophets (",
-                hbo("ק"),
+                unpointed("ק"),
                 ") puts the telisha gedola at the head and the geresh on a later"
                 " letter; so too the printed editions, Koren, and the Breuer"
                 " edition — and even ",
-                hbo("מג״ה"),
+                unpointed("מג״ה"),
                 ", against the Keter(!). The WLC typed text does the same"
                 " (probably following BHS), against the Leningrad manuscript (",
-                hbo("כתי״ל"),
+                unpointed("כתי״ל"),
                 ").",
             ),
             (
-                hbo("ל"),
+                unpointed("ל"),
                 " (Leningrad) carries a doubled geresh — one on the vav and one"
                 " on the alef — where the first (at the head of the chanted word)"
                 " marks that its reading takes precedence in sequence, and the second"
@@ -277,7 +283,7 @@ def _intro_section() -> tuple[object, ...]:
         H.para(
             (
                 "An English rendering of MAM's documentation (",
-                hbo("נוסח"),
+                unpointed("נוסח"),
                 ", text-variant) notes on the five chanted words that carry both a"
                 " telisha gedola (“telg”) and a geresh or gershayim (a"
                 " “gerstar”). It is the deep-dive companion to the ",
@@ -326,7 +332,8 @@ def _intro_section() -> tuple[object, ...]:
 
 def _key_section() -> tuple[object, ...]:
     def _term_node(term: str) -> object:
-        return hbo(term) if any("֐" <= ch <= "׿" for ch in term) else term
+        # A sigil or a term has no point or accent: it keeps the surrounding font.
+        return unpointed(term) if any("֐" <= ch <= "׿" for ch in term) else term
 
     def _key_table(pairs: tuple[tuple[str, str], ...]) -> object:
         rows = [H.table_row_of_headers(("sigil", "meaning"))]

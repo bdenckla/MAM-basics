@@ -340,6 +340,9 @@ def _word_cell(d) -> object:
         pieces = (before, "[", H.span_c(glyph, cls), "]", after)
     else:
         pieces = (body, H.span_c(glyph, cls))
+    # A strand word lifted whole, in a column of them, keeps the pointed-Hebrew font
+    # even where it has no point or accent: the one exception to the hebrew-prose
+    # rule "Unpointed Hebrew keeps the surrounding font".
     return H.span(pieces, {"lang": "hbo"})
 
 

@@ -15,6 +15,7 @@ from accgram import ob_tree_table
 from accgram import rtms_report
 from accgram.uni_to_marks import is_accent, is_base_letter
 from wlc_cmn.wlc_book_codes import wlc_bb_to_bk39id
+from mb_author import author
 from mb_cmn import bib_locales as bl
 from mb_misc import osis_book_abbrevs as oba
 from py_html import wlc_utils_html as H
@@ -83,8 +84,28 @@ def render_tree(tree_text: str) -> object:
     )
 
 
-def hbo(text: str) -> object:
+def hbo(text: str, *, lifted: bool = False) -> object:
+    """Pointed Hebrew, in the pointed-Hebrew font that lang="hbo" selects.
+
+    Raises on Hebrew with no point or accent, which keeps the surrounding font: give
+    it to unpointed. The one exception is a form lifted whole from a text and shown
+    with the forms it is compared with, which keeps their font: pass lifted=True.
+    mb_author.author.hbo has the same rule; the hebrew-prose skill's
+    references/rendered-prose.md, "Unpointed Hebrew keeps the surrounding font",
+    gives Ben's words.
+    """
+    if not lifted and author.is_unpointed_hebrew(text):
+        raise ValueError(f"unpointed Hebrew in the pointed-Hebrew font: {text!r}")
     return H.span(text, {"lang": "hbo"})
+
+
+def unpointed(text: str) -> object:
+    """Unpointed Hebrew, such as a siglum or an accent's name: isolated for its
+    direction in a <bdi> without lang, so it keeps the surrounding font. Raises on
+    Hebrew with a point or an accent, which belongs in hbo."""
+    if _HEBREW_MARK_RE.search(text):
+        raise ValueError(f"pointed Hebrew given to unpointed: {text!r}")
+    return H.bdi(text)
 
 
 # A run of Hebrew-block characters -- letters, points, accents, and the maqaf / sof pasuq

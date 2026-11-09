@@ -18,6 +18,7 @@ from accgram.almost_errors_html_shared import (
     ref_display,
     ref_short,
     render_tree,
+    unpointed,
     uxlc_change_link,
     verse_links,
 )
@@ -469,7 +470,7 @@ def double_tsinnor_section() -> tuple[object, ...]:
         H.para(
             (
                 "Psalms 17:14 carries two ",
-                hbo("צנור"),
+                unpointed("צנור"),
                 " (tsinnor) marks in a row — on the adjacent chanted words ",
                 hbo("בַּחַיִּים"),
                 " and the qere ",

@@ -3,6 +3,7 @@ from __future__ import annotations
 import re
 from collections.abc import Callable
 
+from mb_author import author
 from py_html import my_html_for_img
 from py_html import wlc_utils_html
 
@@ -15,7 +16,6 @@ _GOERWITZ_TMS_IMAGE_CAPTION_CLASS = "goerwitz-tms-image-caption"
 _IMG_BASE = "img/"
 
 _POINTED_HEBREW_SEGMENT_RE = re.compile(r"[\u0590-\u05FF]+")
-_HEBREW_POINTING_MARK_RE = re.compile(r"[\u0591-\u05C9]")
 _HEBREW_LETTER_RE = re.compile(r"[\u05D0-\u05EA]")
 _LC_IMAGE_NAME_RE = re.compile(r"LC-([0-9]+[A-Za-z])-col-([0-9]+)-line-([0-9]+)")
 
@@ -230,6 +230,6 @@ def _wrap_pointed_hebrew_substrings(text: str) -> object:
 
 
 def _is_pointed_hebrew_segment(text: str) -> bool:
-    return bool(
-        _HEBREW_LETTER_RE.search(text) and _HEBREW_POINTING_MARK_RE.search(text)
-    )
+    # A maqaf, a paseq or a sof pasuq is punctuation, not pointing: a segment with
+    # a letter and only those is unpointed, and keeps the surrounding font.
+    return bool(_HEBREW_LETTER_RE.search(text)) and not author.is_unpointed_hebrew(text)

@@ -369,9 +369,11 @@ def _pa38_note_section() -> tuple[object, ...]:
             width=None,
         ),
         H.heading_level_3("Transcription"),
+        # The note has no point or accent, so it has no lang="hbo", whose font is
+        # for pointed Hebrew: it keeps the surrounding font.
         H.blockquote(
             _lines_with_breaks(_PA38_NOTE_LINES),
-            {"dir": "rtl", "lang": "hbo"},
+            {"dir": "rtl"},
         ),
         H.heading_level_3("Translation"),
         H.blockquote(

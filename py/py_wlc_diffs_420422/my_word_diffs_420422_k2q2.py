@@ -54,6 +54,9 @@ _SND_SAM_5_2_VMG_ARCHIVE_DOT_ORG_URL = "https://archive.org/details/The_Second_R
 _SND_SAM_5_2_VMG_ARCHIVE_DOT_ORG_ANC = wlc_utils_html.anchor(
     "full page", {"href": _SND_SAM_5_2_VMG_ARCHIVE_DOT_ORG_URL}
 )
+# A ketiv set beside the qere it is compared with keeps their pointed-Hebrew font,
+# though it has no point or accent: the one exception to the hebrew-prose rule
+# "Unpointed Hebrew keeps the surrounding font".
 _HBO_RTL_BIG = {"lang": "hbo", "dir": "rtl", "class": "big"}
 _ONE_NONE_3_BIG = [None, _HBO_RTL_BIG, _HBO_RTL_BIG, _HBO_RTL_BIG]
 _GAYA_PAREN_METEG = [rmn("gaʿya"), " (", rmn("meteg"), ")"]

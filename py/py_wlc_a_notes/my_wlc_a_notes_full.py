@@ -5,6 +5,7 @@ import py_html.my_html_for_img as img
 import py_wlc.my_wlc_bcv_str as my_wlc_bcv_str
 import py_wlc_a_notes.my_wlc_a_notes_utils as my_wlc_a_notes_utils
 import py_wlc_a_notes.my_wlc_a_notes_full_nav as nav
+from mb_author import author
 from mb_cmn import paths
 
 
@@ -89,7 +90,15 @@ def _hebrew_spanify2(string: str):
     pre, sep, post = string.partition("#")
     assert sep
     assert sep == "#"
-    return [wlc_utils_html.span(pre, {"lang": "hbo"}), *_hebrew_spanify(post)]
+    return [_hebrew_span(pre), *_hebrew_spanify(post)]
+
+
+def _hebrew_span(hebrew: str):
+    # lang="hbo" selects the pointed-Hebrew font, so a form with no point or accent,
+    # such as a ketiv, is a <bdi> without lang instead: it keeps the surrounding font.
+    if author.is_unpointed_hebrew(hebrew):
+        return wlc_utils_html.bdi(hebrew)
+    return wlc_utils_html.span(hebrew, {"lang": "hbo"})
 
 
 def _initial_rows(record):
@@ -106,6 +115,9 @@ def _initial_rows(record):
     rows.append(_make_key_value_row("qere", qere, hbo=True))
     if qere_a := record.get("qere-atom-at-issue"):
         rows.append(_make_key_value_row("qere-atom-at-issue", qere_a, hbo=True))
+    # The letter at issue, lifted from the forms above it and compared with them,
+    # keeps their pointed-Hebrew font even with no point: the one exception to the
+    # hebrew-prose rule "Unpointed Hebrew keeps the surrounding font".
     rows.append(_make_key_value_row("at issue", atiss, hbo=True))
     rows.append(_make_key_value_row("at issue English", reason))
     return rows

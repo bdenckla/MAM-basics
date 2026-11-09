@@ -44,6 +44,9 @@ def _row_cell_for_hdr_str(record, hdr_str):
     if hdr_str == "4.20 uword":
         ab_uword = record["ab-uword"]
         a_uword, _b_uword = ab_uword.split("\n")
+        # A word lifted whole from WLC, in a column of them, keeps the pointed-Hebrew
+        # font even as a ketiv with no point or accent: the one exception to the
+        # hebrew-prose rule "Unpointed Hebrew keeps the surrounding font".
         attr = {"lang": "hbo", "dir": "rtl"}
         return wlc_utils_html.table_datum(a_uword, attr)
     if hdr_str == "difftype":

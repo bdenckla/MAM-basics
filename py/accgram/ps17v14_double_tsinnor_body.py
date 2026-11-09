@@ -27,8 +27,7 @@ BODY = [
         "contents": [
             "Psalms 17:14 carries a feature unique in the Three Books: two\n",
             {
-                "_htel_tag": "span",
-                "attr": {"lang": "hbo"},
+                "_htel_tag": "bdi",
                 "lb1": "",
                 "lb2": "",
                 "contents": ["צנור"],
@@ -187,8 +186,7 @@ BODY = [
             "secondary\n"
             "merkha plus ga’ya, a ",
             {
-                "_htel_tag": "span",
-                "attr": {"lang": "hbo"},
+                "_htel_tag": "bdi",
                 "lb1": "",
                 "lb2": "",
                 "contents": ["חטף"],

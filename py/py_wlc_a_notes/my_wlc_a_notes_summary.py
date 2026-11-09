@@ -150,6 +150,9 @@ def _row_cell_for_hdr_str(no_ucp, record, hdr_str):
         anchor = wlc_utils_html.anchor(val, {"href": href})
         return wlc_utils_html.table_datum(anchor)
     if rec_key in ("qere", "MPK", "at issue") or _HBO_VALS.get(val):
+        # The letter at issue, lifted from the row's forms and compared with them,
+        # keeps their pointed-Hebrew font even with no point: the one exception to
+        # the hebrew-prose rule "Unpointed Hebrew keeps the surrounding font".
         attr = {"lang": "hbo", "dir": "rtl"}
     else:
         attr = None
