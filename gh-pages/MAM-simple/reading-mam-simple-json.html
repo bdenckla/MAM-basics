@@ -134,7 +134,7 @@ eight, as at Lam.1.18:</p>
   &quot;type&quot;: &quot;kq&quot;,
   &quot;contents&quot;: [
     { &quot;type&quot;: &quot;kq-q&quot;, &quot;text&quot;: &quot;<bdi lang="hbo" dir="rtl">הָֽעַמִּ֗ים</bdi>&quot; },
-    { &quot;type&quot;: &quot;kq-k&quot;, &quot;text&quot;: &quot;<bdi lang="hbo" dir="rtl">עמים</bdi>&quot; }
+    { &quot;type&quot;: &quot;kq-k&quot;, &quot;text&quot;: &quot;<bdi dir="rtl">עמים</bdi>&quot; }
   ]
 }
 </code></pre>
@@ -441,7 +441,7 @@ atom. Narrow-sense paseq (<code>lp-paseq</code>) is not part of the preceding at
 unpointed and the qere is pointed.</p>
 <p>The two children are in the order that MAM's rendered pages on Hebrew Wikisource have. Those
 pages have the ketiv first, except in 133 of the 1,047 pairs, counted on 2026-10-06, where they
-have the qere first: the pairs marked with MAM's <bdi lang="hbo" dir="rtl">קו״כ</bdi> template, and three marked with a special
+have the qere first: the pairs marked with MAM's <bdi dir="rtl">קו״כ</bdi> template, and three marked with a special
 template of the same kind. These pairs follow a maqaf or, in three verses, a narrow-sense
 paseq. MAM's introduction gives the reason for the maqaf case:
 the reading should not break after the maqaf. In Lam.1.18, for example, the qere completes the
@@ -460,7 +460,7 @@ maqaf compound <bdi lang="hbo" dir="rtl">כׇל־הָֽעַמִּ֗ים</bdi>:</
       },
       {
         &quot;type&quot;: &quot;kq-k&quot;,
-        &quot;text&quot;: &quot;<bdi lang="hbo" dir="rtl">עמים</bdi>&quot;
+        &quot;text&quot;: &quot;<bdi dir="rtl">עמים</bdi>&quot;
       }
     ]
   },
@@ -474,7 +474,7 @@ maqaf compound <bdi lang="hbo" dir="rtl">כׇל־הָֽעַמִּ֗ים</bdi>:</
 the qere by object type, never by position. A reader that wants the rendered pages' order
 keeps the document order; one with its own convention, such as the ketiv first throughout, can
 impose it. MAM's wikitext, and so MAM-parsed, differ: every ketiv/qere template there lists the
-ketiv first, and only the template's name, <code><bdi lang="hbo" dir="rtl">קו״כ</bdi></code> or a <code><bdi lang="hbo" dir="rtl">סוג</bdi></code> beginning <code><bdi lang="hbo" dir="rtl">קו״כ</bdi></code>, says that the
+ketiv first, and only the template's name, <code><bdi dir="rtl">קו״כ</bdi></code> or a <code><bdi dir="rtl">סוג</bdi></code> beginning <code><bdi dir="rtl">קו״כ</bdi></code>, says that the
 rendered page has the qere first.</p>
 <p>Both children usually have a <code>text</code> field, but not always:</p>
 <ul>
@@ -490,22 +490,22 @@ rendered page has the qere first.</p>
       &quot;contents&quot;: [
         {
           &quot;type&quot;: &quot;slh-word&quot;,
-          &quot;slhw-desc-0&quot;: &quot;<bdi lang="hbo" dir="rtl">וגיש</bdi>&quot;,
-          &quot;slhw-desc-1&quot;: &quot;.<bdi lang="hbo" dir="rtl">ג</bdi>..&quot;,
-          &quot;slhw-desc-2&quot;: &quot;<bdi lang="hbo" dir="rtl">ק</bdi>&quot;,
-          &quot;slhw-desc-3&quot;: &quot;<bdi lang="hbo" dir="rtl">ג</bdi>/<bdi lang="hbo" dir="rtl">ק</bdi>&quot;,
+          &quot;slhw-desc-0&quot;: &quot;<bdi dir="rtl">וגיש</bdi>&quot;,
+          &quot;slhw-desc-1&quot;: &quot;.<bdi dir="rtl">ג</bdi>..&quot;,
+          &quot;slhw-desc-2&quot;: &quot;<bdi dir="rtl">ק</bdi>&quot;,
+          &quot;slhw-desc-3&quot;: &quot;<bdi dir="rtl">ג</bdi>/<bdi dir="rtl">ק</bdi>&quot;,
           &quot;contents&quot;: [
             {
               &quot;type&quot;: &quot;text&quot;,
-              &quot;text&quot;: &quot;<bdi lang="hbo" dir="rtl">ו</bdi>&quot;
+              &quot;text&quot;: &quot;<bdi dir="rtl">ו</bdi>&quot;
             },
             {
               &quot;type&quot;: &quot;letter-small&quot;,
-              &quot;text&quot;: &quot;<bdi lang="hbo" dir="rtl">ג</bdi>&quot;
+              &quot;text&quot;: &quot;<bdi dir="rtl">ג</bdi>&quot;
             },
             {
               &quot;type&quot;: &quot;text&quot;,
-              &quot;text&quot;: &quot;<bdi lang="hbo" dir="rtl">יש</bdi>&quot;
+              &quot;text&quot;: &quot;<bdi dir="rtl">יש</bdi>&quot;
             }
           ]
         }
@@ -525,8 +525,8 @@ display. <code>kq-k-velo-q</code> and <code>kq-q-velo-k</code> are the singleton
 and a qere that is not written. <code>kq-k-velo-q-maq</code> is a maqaf after a ketiv that is not
 read, and occurs at 2Kgs.5.18 and 2Sam.13.33.</p>
 <h3 id="suspended-letter-words-slh-word">Suspended-letter words: <code>slh-word</code></h3>
-<p><code>slh-word</code> wraps an atom one or more of whose letters is small (<bdi lang="hbo" dir="rtl">קטנה</bdi>), large (<bdi lang="hbo" dir="rtl">גדולה</bdi>),
-or hung (<bdi lang="hbo" dir="rtl">תלויה</bdi>). Its children spell the atom out, with each such letter in a
+<p><code>slh-word</code> wraps an atom one or more of whose letters is small (<bdi dir="rtl">קטנה</bdi>), large (<bdi dir="rtl">גדולה</bdi>),
+or hung (<bdi dir="rtl">תלויה</bdi>). Its children spell the atom out, with each such letter in a
 <code>letter-small</code>, <code>letter-large</code>, or <code>letter-hung</code> object. It also has four
 description fields:</p>
 <table>
@@ -545,17 +545,17 @@ description fields:</p>
 <tr>
 <td><code>slhw-desc-1</code></td>
 <td>One character per letter: the letter itself where it is small, large, or hung, and <code>.</code> elsewhere; maqaf marks kept</td>
-<td dir="rtl" lang="hbo"><code>..פ.פ..</code></td>
+<td dir="rtl"><code>..פ.פ..</code></td>
 </tr>
 <tr>
 <td><code>slhw-desc-2</code></td>
 <td dir="ltr" lang="en">One code per marked letter: <code><bdi dir="rtl" lang="he">ק</bdi></code> small, <code><bdi dir="rtl" lang="he">ג</bdi></code> large, <code><bdi dir="rtl" lang="he">ת</bdi></code> hung</td>
-<td dir="rtl" lang="hbo"><code>קג</code></td>
+<td dir="rtl"><code>קג</code></td>
 </tr>
 <tr>
 <td><code>slhw-desc-3</code></td>
 <td><code>letter/code</code> pairs, comma-separated</td>
-<td dir="rtl" lang="hbo"><code>פ/ק,פ/ג</code></td>
+<td dir="rtl"><code>פ/ק,פ/ג</code></td>
 </tr>
 </tbody></table>
 <p><code>slhw-desc-0</code> is the field to reach for when you want the atom as text and do not
@@ -582,14 +582,14 @@ atom-form is enough; never append both to the running text.</p>
       &quot;contents&quot;: [
         {
           &quot;type&quot;: &quot;text&quot;,
-          &quot;text&quot;: &quot;<bdi lang="hbo" dir="rtl">בספרי תימן</bdi> &quot;
+          &quot;text&quot;: &quot;<bdi dir="rtl">בספרי תימן</bdi> &quot;
         },
         {
           &quot;type&quot;: &quot;slh-word&quot;,
           &quot;slhw-desc-0&quot;: &quot;<bdi lang="hbo" dir="rtl">הָאָֽרֶץ</bdi>&quot;,
-          &quot;slhw-desc-1&quot;: &quot;...<bdi lang="hbo" dir="rtl">ץ</bdi>&quot;,
-          &quot;slhw-desc-2&quot;: &quot;<bdi lang="hbo" dir="rtl">ג</bdi>&quot;,
-          &quot;slhw-desc-3&quot;: &quot;<bdi lang="hbo" dir="rtl">ץ</bdi>/<bdi lang="hbo" dir="rtl">ג</bdi>&quot;,
+          &quot;slhw-desc-1&quot;: &quot;...<bdi dir="rtl">ץ</bdi>&quot;,
+          &quot;slhw-desc-2&quot;: &quot;<bdi dir="rtl">ג</bdi>&quot;,
+          &quot;slhw-desc-3&quot;: &quot;<bdi dir="rtl">ץ</bdi>/<bdi dir="rtl">ג</bdi>&quot;,
           &quot;contents&quot;: [
             {
               &quot;type&quot;: &quot;text&quot;,
@@ -597,13 +597,13 @@ atom-form is enough; never append both to the running text.</p>
             },
             {
               &quot;type&quot;: &quot;letter-large&quot;,
-              &quot;text&quot;: &quot;<bdi lang="hbo" dir="rtl">ץ</bdi>&quot;
+              &quot;text&quot;: &quot;<bdi dir="rtl">ץ</bdi>&quot;
             }
           ]
         },
         {
           &quot;type&quot;: &quot;text&quot;,
-          &quot;text&quot;: &quot; <bdi lang="hbo" dir="rtl">בצד״י גדולה</bdi>&quot;
+          &quot;text&quot;: &quot; <bdi dir="rtl">בצד״י גדולה</bdi>&quot;
         }
       ]
     }
@@ -613,10 +613,10 @@ atom-form is enough; never append both to the running text.</p>
 <h3 id="dual-cantillation-cant-all-three">Dual cantillation: <code>cant-all-three</code></h3>
 <p><code>cant-all-three</code> has exactly three children, <code>cant-combined</code>, <code>cant-alef</code>, and
 <code>cant-bet</code>, giving two strands and their combined representation of the same consonantal text. It appears in the
-two Decalogues, Exod.20 and Deut.5, where MAM has both the <bdi lang="hbo" dir="rtl">תחתון</bdi> cantillation
-(<code>cant-alef</code>) and the <bdi lang="hbo" dir="rtl">עליון</bdi> one (<code>cant-bet</code>). It also appears at Gen.35.22, where MAM
-has both the <bdi lang="hbo" dir="rtl">פשוטה</bdi> cantillation (<code>cant-alef</code>), whose chanted verse ends before the
-petuḥah inside the numbered verse, and the <bdi lang="hbo" dir="rtl">מדרשית</bdi> one (<code>cant-bet</code>), whose chanted verse
+two Decalogues, Exod.20 and Deut.5, where MAM has both the <bdi dir="rtl">תחתון</bdi> cantillation
+(<code>cant-alef</code>) and the <bdi dir="rtl">עליון</bdi> one (<code>cant-bet</code>). It also appears at Gen.35.22, where MAM
+has both the <bdi dir="rtl">פשוטה</bdi> cantillation (<code>cant-alef</code>), whose chanted verse ends before the
+petuḥah inside the numbered verse, and the <bdi dir="rtl">מדרשית</bdi> one (<code>cant-bet</code>), whose chanted verse
 runs on past it. Wherever it appears, <code>cant-combined</code> is a combined representation of the two strands;
 it need not include every mark of each strand.</p>
 <h3 id="repeated-endings-good-ending">Repeated endings: <code>good-ending</code></h3>

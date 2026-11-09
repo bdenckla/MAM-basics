@@ -97,8 +97,11 @@ def render_bhs_generated_sections_html(books_mpu, headings):
             )
         )
         for row in section.rows:
+            # A range label is consonantal, so it has no lang="hbo": that would set
+            # it in the pointed-Hebrew font, and unpointed Hebrew keeps the
+            # surrounding one.
             lines.append(
-                f'<tr><td dir="rtl" lang="hbo">{escape(row.hebrew_range)}</td>'
+                f'<tr><td dir="rtl">{escape(row.hebrew_range)}</td>'
                 f'<td class="cv">{row.mam_label}</td>'
                 f'<td class="cv">{row.other_label}</td></tr>'
             )

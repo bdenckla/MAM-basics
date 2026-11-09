@@ -246,10 +246,12 @@ def _render_group_lines(group):
         "    </tr>",
     ]
     for row in group.rows:
+        # A range label is consonantal, so it has no lang="hbo": that would set it
+        # in the pointed-Hebrew font, and unpointed Hebrew keeps the surrounding one.
         lines.extend(
             (
                 "    <tr>",
-                f'      <td dir="rtl" lang="hbo">{escape(row.hebrew_range)}</td>',
+                f'      <td dir="rtl">{escape(row.hebrew_range)}</td>',
                 f'      <td class="cv">{row.mam_label}</td>',
             )
         )
