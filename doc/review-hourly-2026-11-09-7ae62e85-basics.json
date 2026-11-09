@@ -1,0 +1,183 @@
+{
+  "state": "completed 2026-11-09; bounded endpoint review",
+  "repository": "bdenckla/MAM-basics",
+  "window": {
+    "base": "bc8d7ed3bbbabd0c23a56a76447ca7e76790f45f",
+    "head": "7ae62e8589f7ce9d7d4e9a05cc5f146ac9294a8f",
+    "commits": 1,
+    "changed_paths": [
+      "book-of-job/out/custom-dict-freqs-ordered-by-count.json",
+      "book-of-job/out/custom-dict-freqs-ordered-by-entry.json",
+      "book-of-job/out/enriched-quirkrecs.json",
+      "gh-pages/book-of-job/jobn-details/3410.html",
+      "py/author_boj_qr/qr_34.py"
+    ]
+  },
+  "prior_receipt": "1a48035c07e6f61d66bfb4e2f06f7e5924e9efc9",
+  "disposition": "No consequential introduced defect established at this bounded depth; no product repair or editorial change.",
+  "review": {
+    "result": "PASS",
+    "endpoint": "bc8d7ed3..7ae62e85",
+    "exact_blobs": {
+      "base/book-of-job/out/custom-dict-freqs-ordered-by-count.json": {
+        "blob": "e19c15090057047a7c291c570fae9aaaac275dce",
+        "bytes": 3801,
+        "sha256": "ccab3fac92c9e0bdc5cf317c53f2e01e501fea75a9843277b23afba7e9d88fb9"
+      },
+      "head/book-of-job/out/custom-dict-freqs-ordered-by-count.json": {
+        "blob": "0b9d983945bb3c5b25fbf5883a97c0545b0d0ec4",
+        "bytes": 3801,
+        "sha256": "91246fb641fb3e16a4c2164bb8c32dc11ddd4ab851daf6e1f50a6cfc7ca031c2"
+      },
+      "base/book-of-job/out/custom-dict-freqs-ordered-by-entry.json": {
+        "blob": "170849ef275fb770b77076979e18d9188cf10585",
+        "bytes": 3801,
+        "sha256": "f5dbab468351d3db811d24134efc4a4ff2f92d892bd8868fc518066be254a1d4"
+      },
+      "head/book-of-job/out/custom-dict-freqs-ordered-by-entry.json": {
+        "blob": "94938a70e339fa4d0be5b3617fdefa6fb5589b48",
+        "bytes": 3801,
+        "sha256": "89a8d9276c81b28c7ee2c87c5c2e3e0765a07c9919e1b56e5528d47cbfa961fe"
+      },
+      "base/book-of-job/out/enriched-quirkrecs.json": {
+        "blob": "4eb2ee2221e7b3fdbff60e6aadf70de60e43c3ea",
+        "bytes": 259452,
+        "sha256": "0c967ca547a7267497bcd1e099af24237d3632a072ed960594ddd6d9d4a403d6"
+      },
+      "head/book-of-job/out/enriched-quirkrecs.json": {
+        "blob": "13bfac8da442eb2dc6338f67b574489ec076057d",
+        "bytes": 260208,
+        "sha256": "ac0ecf9a0556106fe93bf6ca43ba6fc248036c01de24e008a3e238cb994e290a"
+      },
+      "base/gh-pages/book-of-job/jobn-details/3410.html": {
+        "blob": "c4c3b10297248123556769536aa4de5d3db97342",
+        "bytes": 2671,
+        "sha256": "3b34f40449bfa7bd8cc61a37c2e977d26353122c9c776a0d02a394aefef5c5c2"
+      },
+      "head/gh-pages/book-of-job/jobn-details/3410.html": {
+        "blob": "be1f5cf436598879de177171675c76e01afedd3d",
+        "bytes": 3277,
+        "sha256": "16d7c0444ecfffd4fbe6784d05753f842f0690ef039ad63c979126fdcb5d384d"
+      },
+      "base/py/author_boj_qr/qr_34.py": {
+        "blob": "7e8537e22c9451ef5670b2b9c6d1fbbb14908e7b",
+        "bytes": 8144,
+        "sha256": "a4cddc5b5fe2a32d0b46f2a0b450445f6dd0b5e3197ba1ab91ce6d1a540f94f6"
+      },
+      "head/py/author_boj_qr/qr_34.py": {
+        "blob": "3252eaeeeb6f804f845049d054b1be8c97bdadc3",
+        "bytes": 8942,
+        "sha256": "dd93a31113f0a8736042cb923cd7f4a6fa954939c06d281ca2fcf5f0652a5439"
+      }
+    },
+    "checks": {
+      "python_ast": "Only two paragraph constants and their use in the Job 34:10 comment change.",
+      "records": 160,
+      "changed_records": 1,
+      "all_other_record_fields": "Identical",
+      "source_json_html_paragraphs": 2,
+      "outside_paragraphs": "Byte-identical except the one generated newline after the new final paragraph",
+      "links_and_images": "Identical",
+      "dictionary_deltas": {
+        "words_exact/μL": 1,
+        "words_exact/μY": 1,
+        "words_exact/μY's": 1,
+        "words_hebrew/געיה": 1,
+        "words_hebrew/חטף": 3,
+        "words_hebrew/מרכא": 1,
+        "words_hebrew/פתח": 4,
+        "words_hebrew/שווא": 2,
+        "names_of_hebrew_letters/נ": 2
+      }
+    },
+    "limits": [
+      "Consistency checks do not independently verify Ben's manuscript readings.",
+      "Real producers and repository tests belong to the separate execution receipt.",
+      "No browser, live-site, manuscript image or broad suite check."
+    ]
+  },
+  "execution": {
+    "commit": "ce1cf77c6eb3ff55597ab4f6203152b21a4e110e",
+    "receipt": "review-hourly-2026-11-09-7ae62e85-basics-execution.json",
+    "evidence": "review-hourly-2026-11-09-7ae62e85-basics-execution-evidence.zip",
+    "result": {
+      "commands": [
+        {
+          "command": [
+            "py/main_gen_misc_authored_english_documents.py"
+          ],
+          "exit": 0,
+          "seconds": 1.654605,
+          "tracked_changes": [],
+          "untracked": []
+        },
+        {
+          "command": [
+            "py/check_spelling_in_html.py"
+          ],
+          "exit": 0,
+          "seconds": 0.353534,
+          "tracked_changes": [],
+          "untracked": []
+        },
+        {
+          "command": [
+            "-m",
+            "black",
+            "--check",
+            "py/author_boj_qr/qr_34.py"
+          ],
+          "exit": 0,
+          "seconds": 0.151421,
+          "tracked_changes": [],
+          "untracked": []
+        },
+        {
+          "command": [
+            "py/main_test.py",
+            "py/tests/test_prose_conventions.py",
+            "py/tests/test_hebrew_letter_spacing.py"
+          ],
+          "exit": 0,
+          "seconds": 24.843471,
+          "tracked_changes": [],
+          "untracked": []
+        }
+      ],
+      "selected_tests": {
+        "passed": 5,
+        "skipped": 0,
+        "failed": 0,
+        "pytest_seconds": 24.69,
+        "files": [
+          "py/tests/test_prose_conventions.py",
+          "py/tests/test_hebrew_letter_spacing.py"
+        ]
+      }
+    },
+    "cleanup": "Execution task confirms clean unchanged home checkouts, removed temporary worktrees, no active checks and released receipt branches."
+  },
+  "checker": "review-hourly-2026-11-09-7ae62e85-basics-check.py",
+  "checker_reproduction": "Materialize the exact base and head text blobs named in review.exact_blobs into base/ and head/ directories, preserving UTF-8 bytes. Run the linked checker with that directory as its only argument. Git blob checks precede the content comparisons.",
+  "checker_formatting": "Black 26.5.1 formatted the new checker; its final run passed.",
+  "reviewer_probe_notes": [
+    "An initial comparison rejected paragraph-boundary whitespace introduced by the intended paragraph wrapper. The corrected checker verifies byte-identical prefixes and suffixes except one generated boundary newline; no product change.",
+    "The scratch runtime initially lacked Black; a temporary uv installation succeeded after directing its cache/tool directories to writable scratch. This was tooling setup, not a product failure."
+  ],
+  "anchors_preserved": {
+    "reviewed_through": "210affe3ac2931473bead0de839be0de08309e3d",
+    "broad_tested": "e686160a167bd1f50ccf058137760fdd075c42d8"
+  },
+  "limits": [
+    "Ben's manuscript readings remain attributed; no image, manuscript, browser, live site, deployment or independent source interpretation check.",
+    "Historical source/HP/cache and wider review limitations remain open; no overall reviewed or broad-tested anchor advance.",
+    "Broad mega and suite remain nightly; this is only new-endpoint review plus separately recorded focused execution.",
+    "The owner's downstream map-changes-to-book-of-job run remains attributed; it was not repeated in this focused execution."
+  ],
+  "publication_scope": "Only isolated receipt/status/checker work; no main/shared integration, deployment/dispatch, owner-checkout change, external-agent contact, schedule change or hbofonts work.",
+  "ci": {
+    "source_statuses": 0,
+    "source_check_runs": 0,
+    "deployment": "Only workflow_dispatch; inspected current source and receipt-parent workflow blob 18ceb19405424710bda47d9a38c470cc2ed9c385."
+  }
+}
