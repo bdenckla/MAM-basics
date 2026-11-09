@@ -1,0 +1,77 @@
+{
+  "kind": "bounded endpoint screen",
+  "repository": "bdenckla/MAM-basics",
+  "window": {
+    "base": "653b84198a6ea646c83b7b249370722e6fe2cf38",
+    "head": "ea19ea15dafde6843a9880931558ccdb9c1b7907",
+    "commits": 2,
+    "paths": 12
+  },
+  "reconciled_status": "f570869536d1f3872b3df8684f674088adcaf445",
+  "disposition": "No consequential defect evidenced; no source repair or editorial decision.",
+  "independent_checks": {
+    "scope": "Independent sparse scratch checks; not repository tests or generator execution",
+    "base": "653b84198a6ea646c83b7b249370722e6fe2cf38",
+    "head": "ea19ea15dafde6843a9880931558ccdb9c1b7907",
+    "syntax_files": [
+      "py/foi/foi_gray_marks.py",
+      "py/foi/foiz_wt_doc_note_notation.py",
+      "py/foi/foi_wikitext_helpers.py",
+      "py/foi/foiz_wt_dual_ml_alef.py",
+      "py/foi/foi_finals.py",
+      "py/foi/foiz_wt_unicode.py"
+    ],
+    "outputs": {
+      "foi-unicode": {
+        "rows": 2151,
+        "delta": {
+          "gm": 15,
+          "changed_form": 116,
+          "gray_maqaf_form": 15,
+          "gsp": 81,
+          "appended_0x5c3": 81,
+          "appended_0x5c0": 20
+        },
+        "html_rows_checked": 426,
+        "html_gray_rows": {
+          "GM": 4,
+          "GSP": 10
+        },
+        "tables_with_gray_columns": 7
+      },
+      "foi-alef-dual-ml-alef-second": {
+        "rows": 684,
+        "delta": {
+          "changed_form": 11,
+          "appended_0x5c0": 9,
+          "gsp": 2,
+          "appended_0x5c3": 2
+        },
+        "html_rows_checked": 33,
+        "html_gray_rows": {
+          "GSP": 2
+        },
+        "tables_with_gray_columns": 1
+      }
+    },
+    "css_only_expected_addition": true,
+    "gray_helper_scratch_probes": "passed with explicit HTML constructor stand-in; 4 forms plus column ordering/empty-cell checks"
+  },
+  "review_notes": [
+    "Complete endpoint and both commit reports inspected; policy and repository instructions read.",
+    "Legarmeh remains distinct from narrow-sense paseq. Latest head resolves three earlier deferred attachment cases; silluq-before-meteg None and template-boundary splitting remain deliberate."
+  ],
+  "command": "python doc/review-hourly-2026-11-09-ea19ea15-basics-check.py",
+  "replay": "Materialize the compare-listed files at the exact base/head commits into base/ and head/ beside the checker, preserving repository-relative paths. Checker writes result.json beside itself. These semantic checks tolerate a transport-added final newline.",
+  "limitations": [
+    "Sparse connector-fetched scratch, not a hydrated clone; text materialization can add a final newline, so no Git-blob byte verification claimed.",
+    "No real generator, repository pytest, browser, mega or full suite. Gray-helper probes use explicit HTML-constructor stand-ins.",
+    "Owner full/single-reader regeneration, 85 focused tests and 25 additional checks are attributed, not independently rerun.",
+    "Historical overall reviewed and broad-tested anchors and all live/source/browser gaps remain unchanged."
+  ],
+  "anchors_preserved": {
+    "reviewed_through": "210affe3ac2931473bead0de839be0de08309e3d",
+    "last_broad_tested": "e686160a167bd1f50ccf058137760fdd075c42d8"
+  },
+  "publication": "Isolated public receipt/status/checker only, descending prior isolated receipt; no main/shared integration or deployment. Sole Pages workflow is manual-only, not ref-restricted. No workflow dispatch or hbofonts work."
+}
