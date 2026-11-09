@@ -53,10 +53,11 @@ def mk_chapter_heading_level_2(chnu):
 
 
 # The class's rules, in py/mb_misc/styles_mam_with_doc.css, keep the heading at the
-# top of the window while its chapter scrolls under it.
+# top of the window while its chapter scrolls under it. The heading has no lang="hbo":
+# its Hebrew has no point or accent, so it keeps the browser's default Hebrew font
+# rather than the pointed-Hebrew font that lang="hbo" selects.
 _h2_attr = {
     "class": "mam-chapter-heading",
-    "lang": "hbo",
     "dir": "rtl",
 }
 
