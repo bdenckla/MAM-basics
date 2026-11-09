@@ -4,7 +4,7 @@ from __future__ import annotations
 from pathlib import Path
 
 import hkq_paths
-from mb_misc.report_stylesheet import prepare_report_stylesheet
+from mb_misc.report_stylesheet import prepare_report_font, prepare_report_stylesheet
 
 # The authored CSS uses ``light-dark()`` custom-property pairs under one
 # ``color-scheme: light dark`` declaration. Keep dark values in those pairs;
@@ -44,6 +44,7 @@ ASSETS_DIR = hkq_paths.assets_dir()
 CSS_TEMPLATE_PATH = ASSETS_DIR / "mam-suggestions-report.css"
 JS_TEMPLATE_PATH = ASSETS_DIR / "mam-suggestions-report.js"
 CSS_COLOR_PLACEHOLDER = "/* __FINDING_COLORS__ */"
+CSS_FONT_URL_PLACEHOLDER = "__TAAMEY_D_WOFF2__"
 
 
 def write_report_assets(
@@ -57,13 +58,24 @@ def write_report_assets(
         css_output_path.parent,
         shared_href=report_css_href,
     )
+    # The published report loads the site's one Taamey D font; a standalone one,
+    # whose report_css_href is None, gets its own copy.
+    font_href = prepare_report_font(
+        css_output_path.parent, report_css_href=report_css_href
+    )
     color_rules = "\n".join(
         f".cat-{finding_id} {{ background: {PALETTE[idx % len(PALETTE)]}; }}"
         for idx, finding_id in enumerate(finding_ids)
     )
 
     css_template = CSS_TEMPLATE_PATH.read_text(encoding="utf-8")
-    css_text = css_template.replace(CSS_COLOR_PLACEHOLDER, color_rules)
+    if css_template.count(CSS_FONT_URL_PLACEHOLDER) != 1:
+        raise ValueError(
+            f"{CSS_TEMPLATE_PATH.name} must name {CSS_FONT_URL_PLACEHOLDER} exactly once"
+        )
+    css_text = css_template.replace(CSS_COLOR_PLACEHOLDER, color_rules).replace(
+        CSS_FONT_URL_PLACEHOLDER, font_href
+    )
     js_text = JS_TEMPLATE_PATH.read_text(encoding="utf-8")
 
     css_output_path.parent.mkdir(parents=True, exist_ok=True)

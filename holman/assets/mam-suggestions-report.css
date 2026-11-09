@@ -11,10 +11,17 @@
 .category-badges { display: flex; gap: .35rem; flex-wrap: wrap; }
 
 .record-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: .6rem; margin-top: .45rem; }
+/* Taamey D, the default font for pointed Hebrew, served from this repo rather than
+   asked of the reader's machine. The rest of the list is the fallback for a reader
+   whose browser will not load the woff2. */
 .pointed-heb {
-  font-family: "SBL Hebrew", "Ezra SIL", "David", "Times New Roman", serif;
+  font-family: "Taamey D WOFF2", "SBL Hebrew", "Ezra SIL", "David", "Times New Roman", serif;
   font-size: 20pt;
   direction: rtl;
+}
+@font-face {
+  font-family: "Taamey D WOFF2";
+  src: url("__TAAMEY_D_WOFF2__");
 }
 .hebrew-word { display: block; margin-top: .05rem; }
 .note-line { margin-top: .28rem; font-size: .9rem; }

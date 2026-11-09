@@ -65,7 +65,6 @@
       text-align: right;
       direction: rtl;
       width: 50%;
-      font-family: 'SBL Hebrew', 'Ezra SIL', 'David', 'Times New Roman', serif;
     }
     .title-row td {
       font-weight: bold;
@@ -73,14 +72,23 @@
       background: #f0e6cc !important;
       border-bottom: 2px solid #8b6914;
     }
+    /* The verse quotations, verse and verse-he, are pointed Hebrew, in Taamey D,
+       the default font for pointed Hebrew: the site's one copy, with a fallback list
+       for a browser that will not load the woff2. The Hebrew column's unpointed
+       prose keeps the browser's default font. */
     .verse {
       color: #555;
+      font-family: "Taamey D WOFF2", 'SBL Hebrew', 'Ezra SIL', 'David', 'Times New Roman', serif;
       font-size: 24pt;
     }
     .verse-he {
       color: #555;
-      font-family: 'SBL Hebrew', 'Ezra SIL', 'David', 'Times New Roman', serif;
+      font-family: "Taamey D WOFF2", 'SBL Hebrew', 'Ezra SIL', 'David', 'Times New Roman', serif;
       font-size: 24pt;
+    }
+    @font-face {
+      font-family: "Taamey D WOFF2";
+      src: url("../woff2/Taamey_D.woff2");
     }
     .ref {
       font-size: 0.88em;
