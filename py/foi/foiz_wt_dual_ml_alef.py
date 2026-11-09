@@ -9,7 +9,7 @@ from mb_cmn.my_utils import sl_map
 
 def find_fois_wt(mroge):
     """Find "dual mater lectionis" involving alef."""
-    return fwh.find_fois_in_minirow_ep(_FOILERS, mroge)
+    return fwh.find_fois_by_forms_in_minirow_ep(_FOILERS, mroge)
 
 
 def _find_fois_in_string(stack, string):

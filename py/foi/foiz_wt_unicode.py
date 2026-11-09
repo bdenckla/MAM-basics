@@ -15,7 +15,7 @@ from mb_cmn.my_utils import first_and_only
 
 def find_fois_wt(mroge):
     """Find interesting uses of Unicode."""
-    return fwh.find_fois_in_minirow_ep(_FOILERS, mroge)
+    return fwh.find_fois_by_forms_in_minirow_ep(_FOILERS, mroge)
 
 
 def _find_fois_in_string(stack, string):

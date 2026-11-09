@@ -16,12 +16,14 @@ FORMS.  In a note body, a form is one of the maximal runs that
 foi_wikitext_helpers.forms finds: a run of Hebrew letters, Hebrew marks and
 joiners, square brackets, plus signs and the two double guillemets, which that
 function's docstring and constants define exactly.  The Unicode FOI reads note
-bodies by the same forms.  A form is recorded under "plus" when one of its plus
-signs has a Hebrew letter, Hebrew mark or joiner on each side.  It is recorded
-under "double-guillemets" when it contains a LEFT-POINTING or RIGHT-POINTING
-DOUBLE ANGLE QUOTATION MARK.  Each form is one row, and a form with both
-notations appears in both categories.  No classification of plus forms is
-inferred.
+bodies by the same forms.  Both read their strings as
+foi_wikitext_helpers.with_attached_marks returns them, so a form keeps a
+legarmeh, sof pasuq or maqaf that MAM-parsed-plus writes apart from it.  A form is
+recorded under "plus" when one of its plus signs has a Hebrew letter, Hebrew
+mark or joiner on each side.  It is recorded under "double-guillemets" when it
+contains a LEFT-POINTING or RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK.  Each
+form is one row, and a form with both notations appears in both categories.  No
+classification of plus forms is inferred.
 
 LIMITATION.  A template inside a note body splits the text around it into
 separate strings, and each string is read alone.  So a form that a template
@@ -44,9 +46,11 @@ def find_fois_wt(mroge):
     # mroge: minirow or good ending
     if minirow := mroge.get("mroge-minirow"):
         # Not minirow.next_CP, which repeats the next verse's column C.
-        return fwh.find_fois_in_wtseq(_FOILERS, (*minirow.CP, *minirow.DP, *minirow.EP))
+        cells = minirow.CP, minirow.DP, minirow.EP
+        wtseq = [wtel for cell in cells for wtel in fwh.with_attached_marks(cell)]
+        return fwh.find_fois_in_wtseq(_FOILERS, wtseq)
     gewe = mroge["mroge-good-ending"]["wikitext_element"]
-    return fwh.find_fois_in_wtseq(_FOILERS, [gewe])
+    return fwh.find_fois_in_wtseq(_FOILERS, fwh.with_attached_marks([gewe]))
 
 
 def _find_fois_in_string(stack, string):

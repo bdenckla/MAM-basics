@@ -501,7 +501,7 @@
     "bcv_short": "Js22:20",
     "stack_str": null,
     "fp": "a-misc",
-    "r": "הֲל֣וֹא"
+    "r": "הֲל֣וֹא׀"
   },
   {
     "bcv_short": "Js23:4",
@@ -1149,7 +1149,7 @@
     "bcv_short": "1K10:22",
     "stack_str": null,
     "fp": "a-misc",
-    "r": "תָּב֣וֹא"
+    "r": "תָּב֣וֹא׀"
   },
   {
     "bcv_short": "1K11:17",
@@ -1989,7 +1989,7 @@
     "bcv_short": "Je15:11",
     "stack_str": null,
     "fp": "a-misc",
-    "r": "אִם־ל֣וֹא"
+    "r": "אִם־ל֣וֹא׀"
   },
   {
     "bcv_short": "Je16:5",
@@ -2421,7 +2421,7 @@
     "bcv_short": "Ee38:8",
     "stack_str": null,
     "fp": "a-misc",
-    "r": "תָּב֣וֹא"
+    "r": "תָּב֣וֹא׀"
   },
   {
     "bcv_short": "Ee38:9",
@@ -2439,7 +2439,7 @@
     "bcv_short": "Ee38:14",
     "stack_str": null,
     "fp": "a-misc",
-    "r": "הֲל֣וֹא"
+    "r": "הֲל֣וֹא׀"
   },
   {
     "bcv_short": "Ee38:18",
@@ -2973,7 +2973,7 @@
     "bcv_short": "Ps52:2",
     "stack_str": null,
     "fp": "a-misc",
-    "r": "בְּב֤וֹא"
+    "r": "בְּב֤וֹא׀"
   },
   {
     "bcv_short": "Ps66:13",
@@ -3345,7 +3345,7 @@
     "bcv_short": "Es2:12",
     "stack_str": null,
     "fp": "a-misc",
-    "r": "לָב֣וֹא"
+    "r": "לָב֣וֹא׀"
   },
   {
     "bcv_short": "Es2:13",
@@ -3957,7 +3957,7 @@
     "bcv_short": "Es1:5",
     "stack_str": null,
     "fp": "b-not-final",
-    "r": "וּבִמְל֣וֹאת"
+    "r": "וּבִמְל֣וֹאת׀"
   },
   {
     "bcv_short": "Es4:4",
@@ -3975,7 +3975,7 @@
     "bcv_short": "2C9:21",
     "stack_str": null,
     "fp": "b-not-final",
-    "r": "תָּב֣וֹאנָה"
+    "r": "תָּב֣וֹאנָה׀"
   },
   {
     "bcv_short": "G30:32",
@@ -4053,13 +4053,13 @@
     "bcv_short": "Je37:4",
     "stack_str": null,
     "fp": "c-shuruq-alef",
-    "r": "הַכְּלֽוּא"
+    "r": "הַכְּלֽוּא׃"
   },
   {
     "bcv_short": "Je52:31",
     "stack_str": null,
     "fp": "c-shuruq-alef",
-    "r": "הַכְּלֽוּא"
+    "r": "הַכְּלֽוּא׃"
   },
   {
     "bcv_short": "Ps139:20",
