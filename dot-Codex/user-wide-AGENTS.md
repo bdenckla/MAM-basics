@@ -413,6 +413,11 @@ Never write an orphan combining mark as a raw code literal. Use a named escape s
 adjacent Unicode-name comment. This restriction does not apply to a mark anchored on a base
 character or to genuine text data.
 
+Claude Code's Edit and Write tools turn a typed `\uXXXX` escape into the character itself;
+`\N{...}` and `\U0000XXXX` escapes survive. Write the name, or the long form for a code point
+without one, and read the written line back through Python's `ascii()`, where an escape shows a
+doubled backslash.
+
 Ben's repositories use NFC for Latin letters with diacritics. Write precomposed ḥ (U+1E25), not
 `h` plus COMBINING DOT BELOW. In `#` comments about Hebrew sounds, use ASCII `x` or `X` rather
 than either Unicode form.
