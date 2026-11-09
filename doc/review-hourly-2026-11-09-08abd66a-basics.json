@@ -1,0 +1,308 @@
+{
+  "kind": "bounded endpoint screen",
+  "window": {
+    "base": "2db5d4fbe24dab0509a4fb5e92511de1535b3a6f",
+    "head": "08abd66a1452ba654e19aefc55ea0589fcd936c3",
+    "commits": 3,
+    "paths": 25
+  },
+  "reconciled_receipt_parent": "cdb3e413e4a9438e43fd56d0a59398237fe04a63",
+  "disposition": "No consequential evidenced defect found at this bounded depth; no repair.",
+  "source_summary": "All 16 Python and nine HTML diffs plus three commit records reviewed. Complete patches reconstruct all captures. The nine HTML pages preserve text/codepoints after formatting-whitespace folding and structure under only intended unpointed wrappers; 220 unpointed lang attributes removed, all 474 pointed elements preserved. Six source files are AST-equivalent comment-only changes; 112 exact-head helper probes pass with explicitly doubled HTML constructors.",
+  "independent_source_checks": {
+    "result": "pass",
+    "files": [
+      {
+        "path": "gh-pages/MAM-simple/reading-mam-simple-json.html",
+        "head_blob_verified": true,
+        "complete_patch_reconstruction": true,
+        "hbo_removed": 31,
+        "pointed_elements_preserved": 18,
+        "canonical_markup_equal": true
+      },
+      {
+        "path": "gh-pages/MAM-simple/versification-differences.html",
+        "head_blob_verified": true,
+        "complete_patch_reconstruction": true,
+        "hbo_removed": 74,
+        "pointed_elements_preserved": 0,
+        "canonical_markup_equal": true
+      },
+      {
+        "path": "gh-pages/wlc/accgram/almost-errors.html",
+        "head_blob_verified": true,
+        "complete_patch_reconstruction": true,
+        "hbo_removed": 1,
+        "pointed_elements_preserved": 19,
+        "canonical_markup_equal": true
+      },
+      {
+        "path": "gh-pages/wlc/accgram/goerwitz.html",
+        "head_blob_verified": true,
+        "complete_patch_reconstruction": true,
+        "hbo_removed": 3,
+        "pointed_elements_preserved": 398,
+        "canonical_markup_equal": true
+      },
+      {
+        "path": "gh-pages/wlc/accgram/printed-decalogue-koren.html",
+        "head_blob_verified": true,
+        "complete_patch_reconstruction": true,
+        "hbo_removed": 1,
+        "pointed_elements_preserved": 2,
+        "canonical_markup_equal": true
+      },
+      {
+        "path": "gh-pages/wlc/accgram/ps17v14-double-tsinnor.html",
+        "head_blob_verified": true,
+        "complete_patch_reconstruction": true,
+        "hbo_removed": 2,
+        "pointed_elements_preserved": 3,
+        "canonical_markup_equal": true
+      },
+      {
+        "path": "gh-pages/wlc/accgram/ps17v14-mam-doc-notes.html",
+        "head_blob_verified": true,
+        "complete_patch_reconstruction": true,
+        "hbo_removed": 38,
+        "pointed_elements_preserved": 11,
+        "canonical_markup_equal": true
+      },
+      {
+        "path": "gh-pages/wlc/accgram/telg-doc-notes.html",
+        "head_blob_verified": true,
+        "complete_patch_reconstruction": true,
+        "hbo_removed": 69,
+        "pointed_elements_preserved": 10,
+        "canonical_markup_equal": true
+      },
+      {
+        "path": "gh-pages/wlc/wlc-a-notes/full-record/wlc_a_note_16.html",
+        "head_blob_verified": true,
+        "complete_patch_reconstruction": true,
+        "hbo_removed": 1,
+        "pointed_elements_preserved": 13,
+        "canonical_markup_equal": true
+      },
+      {
+        "path": "py/accgram/almost_errors_html_shared.py",
+        "head_blob_verified": true,
+        "complete_patch_reconstruction": true,
+        "ast_equal": false
+      },
+      {
+        "path": "py/accgram/almost_errors_oddities.py",
+        "head_blob_verified": true,
+        "complete_patch_reconstruction": true,
+        "ast_equal": false
+      },
+      {
+        "path": "py/accgram/printed_decalogue_koren_page.py",
+        "head_blob_verified": true,
+        "complete_patch_reconstruction": true,
+        "ast_equal": false
+      },
+      {
+        "path": "py/accgram/ps17v14_double_tsinnor_body.py",
+        "head_blob_verified": true,
+        "complete_patch_reconstruction": true,
+        "ast_equal": false
+      },
+      {
+        "path": "py/accgram/ps17v14_mam_doc_notes_body.py",
+        "head_blob_verified": true,
+        "complete_patch_reconstruction": true,
+        "ast_equal": false
+      },
+      {
+        "path": "py/accgram/rtmsr_media.py",
+        "head_blob_verified": true,
+        "complete_patch_reconstruction": true,
+        "ast_equal": false
+      },
+      {
+        "path": "py/accgram/rtmsr_sat.py",
+        "head_blob_verified": true,
+        "complete_patch_reconstruction": true,
+        "ast_equal": true
+      },
+      {
+        "path": "py/accgram/supplied_marks.py",
+        "head_blob_verified": true,
+        "complete_patch_reconstruction": true,
+        "ast_equal": true
+      },
+      {
+        "path": "py/accgram/telg_doc_notes.py",
+        "head_blob_verified": true,
+        "complete_patch_reconstruction": true,
+        "ast_equal": false
+      },
+      {
+        "path": "py/py_wlc_a_notes/my_wlc_a_notes_full.py",
+        "head_blob_verified": true,
+        "complete_patch_reconstruction": true,
+        "ast_equal": false
+      },
+      {
+        "path": "py/py_wlc_a_notes/my_wlc_a_notes_summary.py",
+        "head_blob_verified": true,
+        "complete_patch_reconstruction": true,
+        "ast_equal": true
+      },
+      {
+        "path": "py/py_wlc_diffs_420422/my_word_diffs_420422_k2q2.py",
+        "head_blob_verified": true,
+        "complete_patch_reconstruction": true,
+        "ast_equal": true
+      },
+      {
+        "path": "py/py_wlc_diffs_420422/my_word_diffs_420422_summary.py",
+        "head_blob_verified": true,
+        "complete_patch_reconstruction": true,
+        "ast_equal": true
+      },
+      {
+        "path": "py/uxlc_fois/fois_html.py",
+        "head_blob_verified": true,
+        "complete_patch_reconstruction": true,
+        "ast_equal": true
+      },
+      {
+        "path": "py/versification_differences/combined.py",
+        "head_blob_verified": true,
+        "complete_patch_reconstruction": true,
+        "ast_equal": false
+      },
+      {
+        "path": "py/versification_differences/doc.py",
+        "head_blob_verified": true,
+        "complete_patch_reconstruction": true,
+        "ast_equal": false
+      }
+    ],
+    "helper_codepoint_cases": 112,
+    "limits": "Sparse AST/markup/codepoint checks only; constructors doubled. No project imports, real generators, project tests, visual QA, or live-source research."
+  },
+  "source_attempts": "Initial connector schema probes failed before retrieval and were corrected. A local patch transport closed before its update; a read confirmed no write before a successful retry. No checker failure, access denial or uncertain external write. Head blobs checked, allowing the capture writer's one terminal newline; exact-ref base captures also reconcile through all complete patches.",
+  "execution": {
+    "head": "08abd66a1452ba654e19aefc55ea0589fcd936c3",
+    "commit": "4f4150d06f9e4a06309fc729bb94bb2fa20ba054",
+    "receipt": "doc/review-hourly-2026-11-09-08abd66a-basics-execution.json",
+    "status_text": "Five maintained producers reproduce exactly; 4 selected tests pass. All six commands leave zero tracked/untracked differences. No broad or browser claim.",
+    "commands": [
+      {
+        "command": [
+          "/workspace/MAM-basics/.venv/bin/python",
+          "py/main_accgram.py",
+          "generate-html"
+        ],
+        "elapsed_seconds": 26.874598,
+        "exit_code": 0,
+        "tracked_changes": [],
+        "untracked": []
+      },
+      {
+        "command": [
+          "/workspace/MAM-basics/.venv/bin/python",
+          "py/main_mam_simple.py",
+          "doc-only"
+        ],
+        "elapsed_seconds": 0.238503,
+        "exit_code": 0,
+        "tracked_changes": [],
+        "untracked": []
+      },
+      {
+        "command": [
+          "/workspace/MAM-basics/.venv/bin/python",
+          "py/main_fois.py"
+        ],
+        "elapsed_seconds": 11.730553,
+        "exit_code": 0,
+        "tracked_changes": [],
+        "untracked": []
+      },
+      {
+        "command": [
+          "/workspace/MAM-basics/.venv/bin/python",
+          "py/main_wlc_a_notes.py"
+        ],
+        "elapsed_seconds": 0.133566,
+        "exit_code": 0,
+        "tracked_changes": [],
+        "untracked": []
+      },
+      {
+        "command": [
+          "/workspace/MAM-basics/.venv/bin/python",
+          "py/main_wlc_diffs_420422.py"
+        ],
+        "elapsed_seconds": 0.536815,
+        "exit_code": 0,
+        "tracked_changes": [],
+        "untracked": []
+      },
+      {
+        "command": [
+          "/workspace/MAM-basics/.venv/bin/python",
+          "py/main_test.py",
+          "py/tests/test_versification_differences_doc.py",
+          "py/tests/test_mam_simple_html_links.py",
+          "py/tests/test_shared_html_styles.py"
+        ],
+        "elapsed_seconds": 14.46118,
+        "exit_code": 0,
+        "tracked_changes": [],
+        "untracked": []
+      }
+    ],
+    "selected_tests": {
+      "passed": 4,
+      "skipped": 0,
+      "failed": 0,
+      "pytest_seconds": 14.27,
+      "files": [
+        "py/tests/test_versification_differences_doc.py",
+        "py/tests/test_mam_simple_html_links.py",
+        "py/tests/test_shared_html_styles.py"
+      ]
+    },
+    "diagnostic_failures": [
+      "Two harmless ownership lookup errors before product execution, plus an expected no-match discovery result; preserved in lookup-diagnostics.txt. All six real commands pass."
+    ],
+    "evidence": {
+      "path": "doc/review-hourly-2026-11-09-08abd66a-basics-execution-evidence.zip",
+      "sha256": "2e648e2efb70346d91ae4c00668bef064bf8b1b73d8ad28b7554f3e3acae307a",
+      "members": 26,
+      "manifest": "manifest.json"
+    }
+  },
+  "anchors_preserved": {
+    "reviewed_through": "210affe3ac2931473bead0de839be0de08309e3d",
+    "broad_tested": "e686160a167bd1f50ccf058137760fdd075c42d8"
+  },
+  "ci": {
+    "status": {
+      "sha": "08abd66a1452ba654e19aefc55ea0589fcd936c3",
+      "state": "pending",
+      "status_count": 0,
+      "statuses": []
+    },
+    "check_runs": {
+      "total_count": 0,
+      "check_runs": []
+    }
+  },
+  "ci_interpretation": "No status or check runs were reported for this exact source head; no CI pass is inferred.",
+  "limits": [
+    "Source checks are sparse AST/markup/codepoint and extracted-function checks, not full project imports or generator execution. Real execution is recorded separately.",
+    "No broad mega/full suite, browser/pixel/font, live-source or independent editorial validation. Historical Stage10/live/source/browser limits remain.",
+    "The JSON-reading documentation page is hand-maintained and was reviewed directly. No private review material is included."
+  ],
+  "checker_replay": "Place exact base/head captures under base/ and head/ beside the checker, including head/py/mb_author/author.py, and the complete GitHub compare JSON as compare-full.json. Run the checker with Python. It makes no network call.",
+  "publication": {
+    "branch": "review-hourly-20261109-08abd66a-basics-receipts",
+    "scope": "Prior completed receipts and exact overall reviewed/broad-tested anchors remain unchanged. Only a new isolated receipt branch is published; no main/shared integration, deployment, owner-checkout change, outside-agent contact, schedule change or hbofonts work."
+  }
+}
