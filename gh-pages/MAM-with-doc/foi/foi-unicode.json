@@ -382,7 +382,7 @@
   {
     "bcv_short": "Ps88:3",
     "fp": "qq/(ger_m)/doc-part-n",
-    "r": "ממרא=הַטֵּֽה־אׇ֝זְנְךָ֗"
+    "r": "הַטֵּֽה־אׇ֝זְנְךָ֗"
   },
   {
     "bcv_short": "Ps35:10",
@@ -1307,22 +1307,22 @@
   {
     "bcv_short": "L22:3",
     "fp": "qq/(mos)/doc-part-n",
-    "r": "ב\"א,ותיקן448,מ\"ק-ותיקן448=מִכׇּֽל־זַרְעֲכֶ֗ם"
+    "r": "מִכׇּֽל־זַרְעֲכֶ֗ם"
   },
   {
     "bcv_short": "L27:28",
     "fp": "qq/(mos)/doc-part-n",
-    "r": "ל,ל1=קֹֽדֶשׁ־קׇֽדָשִׁ֥ים"
+    "r": "קֹֽדֶשׁ־קׇֽדָשִׁ֥ים"
   },
   {
     "bcv_short": "Ee16:33",
     "fp": "qq/(mos)/doc-part-n",
-    "r": "ק=לְכׇֽל־מְאַהֲבַ֔יִךְ"
+    "r": "לְכׇֽל־מְאַהֲבַ֔יִךְ"
   },
   {
     "bcv_short": "1C5:16",
     "fp": "qq/(mos)/doc-part-n",
-    "r": "א=וּבְכׇֽל־מִגְרֲשֵׁ֥י"
+    "r": "וּבְכׇֽל־מִגְרֲשֵׁ֥י"
   },
   {
     "bcv_short": "Js3:14",
@@ -1657,7 +1657,7 @@
   {
     "bcv_short": "Ee16:33",
     "fp": "qq/(qom)/doc-part-n",
-    "r": "א=לְכׇ֨ל־מְאַֽהֲבַ֔יִךְ"
+    "r": "לְכׇ֨ל־מְאַֽהֲבַ֔יִךְ"
   },
   {
     "bcv_short": "N18:9",
@@ -1682,12 +1682,12 @@
   {
     "bcv_short": "Ee48:10",
     "fp": "rare/geresh-telisha-gedolah/doc-part-n",
-    "r": "א=<וּ֜֠לְאֵלֶּה>,"
+    "r": "וּ֜֠לְאֵלֶּה"
   },
   {
     "bcv_short": "Ee48:10",
     "fp": "rare/geresh-telisha-gedolah/doc-part-n",
-    "r": "ל=<וּ֜֠לְאֵ֜לֶּה>,"
+    "r": "וּ֜֠לְאֵ֜לֶּה"
   },
   {
     "bcv_short": "G5:29",
@@ -1707,17 +1707,17 @@
   {
     "bcv_short": "G5:29",
     "fp": "rare/gershayim-telisha-gedolah/doc-part-n",
-    "r": "<זֶ֞֠ה>)"
+    "r": "זֶ֞֠ה"
   },
   {
     "bcv_short": "L10:4",
     "fp": "rare/gershayim-telisha-gedolah/doc-part-n",
-    "r": "ושיטת-א=קִ֞֠רְבוּ"
+    "r": "קִ֞֠רְבוּ"
   },
   {
     "bcv_short": "Ts2:15",
     "fp": "rare/gershayim-telisha-gedolah/doc-part-n",
-    "r": "<זֹ֞֠את>"
+    "r": "זֹ֞֠את"
   },
   {
     "bcv_short": "N26:7",
@@ -1867,52 +1867,52 @@
   {
     "bcv_short": "N26:7",
     "fp": "rare/rafeh/alef/doc-part-n",
-    "r": "ל=הָרֻֽאֿוּבֵנִ֑י"
+    "r": "הָרֻֽאֿוּבֵנִ֑י"
   },
   {
     "bcv_short": "D3:12",
     "fp": "rare/rafeh/alef/doc-part-n",
-    "r": "ל=לָרֻֽאֿוּבֵנִ֖י"
+    "r": "לָרֻֽאֿוּבֵנִ֖י"
   },
   {
     "bcv_short": "D3:16",
     "fp": "rare/rafeh/alef/doc-part-n",
-    "r": "ל=וְלָרֻאֿוּבֵנִ֨י"
+    "r": "וְלָרֻאֿוּבֵנִ֨י"
   },
   {
     "bcv_short": "D4:43",
     "fp": "rare/rafeh/alef/doc-part-n",
-    "r": "ל,ק3=לָרֻֽאֿוּבֵנִ֑י"
+    "r": "לָרֻֽאֿוּבֵנִ֑י"
   },
   {
     "bcv_short": "Jb19:2",
     "fp": "rare/rafeh/alef/doc-part-n",
-    "r": "(\"דִכִּ֣אֿתָ\")."
+    "r": "דִכִּ֣אֿתָ"
   },
   {
     "bcv_short": "Jb19:2",
     "fp": "rare/rafeh/alef/doc-part-n",
-    "r": "ל-א!=וּֽתְדכּאֿוּנַ֥נִי"
+    "r": "וּֽתְדכּאֿוּנַ֥נִי"
   },
   {
     "bcv_short": "Jb19:2",
     "fp": "rare/rafeh/alef/doc-part-n",
-    "r": "ק13?!=וּֽתְדַכְּאֿוּנַ֥נִי"
+    "r": "וּֽתְדַכְּאֿוּנַ֥נִי"
   },
   {
     "bcv_short": "Jb19:2",
     "fp": "rare/rafeh/alef/doc-part-n",
-    "r": "וּֽתְדַכֻּאֿוּנַ֥נִי;"
+    "r": "וּֽתְדַכֻּאֿוּנַ֥נִי"
   },
   {
     "bcv_short": "Da1:4",
     "fp": "rare/rafeh/alef/doc-part-n",
-    "r": "ל-כתיב=מֻאֿוּם֩"
+    "r": "מֻאֿוּם֩"
   },
   {
     "bcv_short": "Da1:4",
     "fp": "rare/rafeh/alef/doc-part-n",
-    "r": "ק13-כתיב=מֻאֿום֩"
+    "r": "מֻאֿום֩"
   },
   {
     "bcv_short": "E2:3",
@@ -2182,22 +2182,22 @@
   {
     "bcv_short": "L26:43",
     "fp": "rare/rafeh/he/doc-part-n",
-    "r": "ט3=בָּהּשַׁמָּהֿ֙"
+    "r": "בָּהּשַׁמָּהֿ֙"
   },
   {
     "bcv_short": "N32:42",
     "fp": "rare/rafeh/he/doc-part-n",
-    "r": "לָ֦הֿ?"
+    "r": "לָ֦הֿ"
   },
   {
     "bcv_short": "N32:42",
     "fp": "rare/rafeh/he/doc-part-n",
-    "r": "ב\"לָ֦הֿ\")"
+    "r": "לָ֦הֿ"
   },
   {
     "bcv_short": "D22:29",
     "fp": "rare/rafeh/he/doc-part-n",
-    "r": "ל!=שַׁלְּחָ֖הֿ"
+    "r": "שַׁלְּחָ֖הֿ"
   },
   {
     "bcv_short": "2K8:6",
@@ -2207,7 +2207,7 @@
   {
     "bcv_short": "Je44:19",
     "fp": "rare/rafeh/he/doc-part-n",
-    "r": "(לְהַ֣עֲצִבָ֔הֿ"
+    "r": "לְהַ֣עֲצִבָ֔הֿ"
   },
   {
     "bcv_short": "L6:2",
@@ -2237,17 +2237,17 @@
   {
     "bcv_short": "E1:10",
     "fp": "rare/rafeh/misc/doc-part-n",
-    "r": "א(ס),ל1,ב,ש,ק3=נִֽתְֿחַכְּמָ֖ה"
+    "r": "נִֽתְֿחַכְּמָ֖ה"
   },
   {
     "bcv_short": "E2:3",
     "fp": "rare/rafeh/misc/doc-part-n",
-    "r": "<הצפֿינו"
+    "r": "הצפֿינו"
   },
   {
     "bcv_short": "E7:27",
     "fp": "rare/rafeh/misc/doc-part-n",
-    "r": "\"הַֽצְֿפַרְדְּעִ֗ים\"?"
+    "r": "הַֽצְֿפַרְדְּעִ֗ים"
   },
   {
     "bcv_short": "D14:21",
@@ -2257,17 +2257,17 @@
   {
     "bcv_short": "Ps68:18",
     "fp": "rare/rafeh/misc/doc-part-n",
-    "r": "א=בָֿ֝ם"
+    "r": "בָֿ֝ם"
   },
   {
     "bcv_short": "1C4:9",
     "fp": "rare/rafeh/misc/doc-part-n",
-    "r": "א!=נִכְּבָֿ֖דֿ"
+    "r": "נִכְּבָֿ֖דֿ"
   },
   {
     "bcv_short": "2C33:25",
     "fp": "rare/rafeh/misc/doc-part-n",
-    "r": "א!=תַֿחְתָּֽיו"
+    "r": "תַֿחְתָּֽיו"
   },
   {
     "bcv_short": "E20:8",
@@ -2312,47 +2312,47 @@
   {
     "bcv_short": "G32:18",
     "fp": "rare/rafeh-with-dagesh/doc-part-n",
-    "r": "ל!=יִֽפְגָּֿשְׁךָ֞"
+    "r": "יִֽפְגָּֿשְׁךָ֞"
   },
   {
     "bcv_short": "E20:12",
     "fp": "rare/rafeh-with-dagesh/doc-part-n",
-    "r": "ובדפוסים=תִּֿרְצַ֖+צָֽח"
+    "r": "תִּֿרְצַ֖+צָֽח"
   },
   {
     "bcv_short": "E20:12",
     "fp": "rare/rafeh-with-dagesh/doc-part-n",
-    "r": "(תִּֿרְצַ֖͏ָֽח)"
+    "r": "תִּֿרְצַ֖͏ָֽח"
   },
   {
     "bcv_short": "D5:16",
     "fp": "rare/rafeh-with-dagesh/doc-part-n",
-    "r": "ל=תִּֿרְצָֽח"
+    "r": "תִּֿרְצָֽח"
   },
   {
     "bcv_short": "D5:16",
     "fp": "rare/rafeh-with-dagesh/doc-part-n",
-    "r": "ל!=תִּֿנְאָֽ֑ף"
+    "r": "תִּֿנְאָֽ֑ף"
   },
   {
     "bcv_short": "D12:31",
     "fp": "rare/rafeh-with-dagesh/doc-part-n",
-    "r": "ל?!=כָּֿל־תּוֹעֲבַ֨ת"
+    "r": "כָּֿל־תּוֹעֲבַ֨ת"
   },
   {
     "bcv_short": "Je44:19",
     "fp": "rare/rafeh-with-dagesh/doc-part-n",
-    "r": "ל=לְהַ֣עֲצִבָ֔הּֿ"
+    "r": "לְהַ֣עֲצִבָ֔הּֿ"
   },
   {
     "bcv_short": "Mi1:15",
     "fp": "rare/rafeh-with-dagesh/doc-part-n",
-    "r": "ל!=עַד־עֲדֻּֿלָּ֥ם"
+    "r": "עַד־עֲדֻּֿלָּ֥ם"
   },
   {
     "bcv_short": "Pr6:3",
     "fp": "rare/rafeh-with-dagesh/doc-part-n",
-    "r": "א?!=בְכַף־רֵעֶֽיךָּֿ"
+    "r": "בְכַף־רֵעֶֽיךָּֿ"
   },
   {
     "bcv_short": "G16:5",
@@ -2437,27 +2437,27 @@
   {
     "bcv_short": "G18:9",
     "fp": "rare/udot/doc-part-n",
-    "r": "ל,ק3,ו=אֵׄלָ֔ׄיׄוׄ"
+    "r": "אֵׄלָ֔ׄיׄוׄ"
   },
   {
     "bcv_short": "G19:33",
     "fp": "rare/udot/doc-part-n",
-    "r": "הקלדה=וּבְקׄוּמָֽהּ"
+    "r": "וּבְקׄוּמָֽהּ"
   },
   {
     "bcv_short": "D29:28",
     "fp": "rare/udot/doc-part-n",
-    "r": "\"עַׄד־\");"
+    "r": "עַׄד־"
   },
   {
     "bcv_short": "D29:28",
     "fp": "rare/udot/doc-part-n",
-    "r": "א=וּׄלְׄבָׄנֵׄיׄנׄוּ֙ׄ"
+    "r": "וּׄלְׄבָׄנֵׄיׄנׄוּ֙ׄ"
   },
   {
     "bcv_short": "2S19:20",
     "fp": "rare/udot/doc-part-n",
-    "r": "ל,ק=יָׄצָ֥ׄאׄ"
+    "r": "יָׄצָ֥ׄאׄ"
   },
   {
     "bcv_short": "Ps27:13",
@@ -2467,12 +2467,12 @@
   {
     "bcv_short": "Ps27:13",
     "fp": "rare/udot-with-ldot/doc-part-n",
-    "r": "לש1=לׅׄוּלֵׅ֗ׄאׅׄ"
+    "r": "לׅׄוּלֵׅ֗ׄאׅׄ"
   },
   {
     "bcv_short": "Ps27:13",
     "fp": "rare/udot-with-ldot/doc-part-n",
-    "r": "ק-מ=לׅׄוּׄלֵׅ֗ׄאׅׄ"
+    "r": "לׅׄוּׄלֵׅ֗ׄאׅׄ"
   },
   {
     "bcv_short": "G1:18",
@@ -5917,7 +5917,7 @@
   {
     "bcv_short": "N5:19",
     "fp": "varika/doc-part-n",
-    "r": "ב\"הַֽמְאָרְﬞרִ֖ים\""
+    "r": "הַֽמְאָרְﬞרִ֖ים"
   },
   {
     "bcv_short": "Ju7:7",
@@ -5927,357 +5927,357 @@
   {
     "bcv_short": "G1:18",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א(ס),ל=וּֽלֲהַבְדִּ֔יל"
+    "r": "וּֽלֲהַבְדִּ֔יל"
   },
   {
     "bcv_short": "G2:12",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א(ס),ל,ל1,ק3,ה,ש2=וּֽזֲהַ֛ב"
+    "r": "וּֽזֲהַ֛ב"
   },
   {
     "bcv_short": "G3:17",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א(ס),ל,ל1,ק3,ה,ש2=תֹּֽאכֲלֶ֔נָּה"
+    "r": "תֹּֽאכֲלֶ֔נָּה"
   },
   {
     "bcv_short": "G10:3",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל=אַשְׁכֲּנַ֥ז"
+    "r": "אַשְׁכֲּנַ֥ז"
   },
   {
     "bcv_short": "G12:3",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל,ק3?=וַאֲבָֽרֲכָה֙"
+    "r": "וַאֲבָֽרֲכָה֙"
   },
   {
     "bcv_short": "G18:17",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "מג\"ה=הַֽמֲכַסֶּ֤ה"
+    "r": "הַֽמֲכַסֶּ֤ה"
   },
   {
     "bcv_short": "G18:21",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א(ס),ל,ק3=אֵֽרֲדָה־נָּ֣א"
+    "r": "אֵֽרֲדָה־נָּ֣א"
   },
   {
     "bcv_short": "G22:18",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל,ל1=וְהִתְבָּרֲכ֣וּ"
+    "r": "וְהִתְבָּרֲכ֣וּ"
   },
   {
     "bcv_short": "G24:60",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל,ל1=וַיְבָרֲכ֤וּ"
+    "r": "וַיְבָרֲכ֤וּ"
   },
   {
     "bcv_short": "G25:22",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל,ל1=וַיִּתְרֹֽצֲצ֤וּ"
+    "r": "וַיִּתְרֹֽצֲצ֤וּ"
   },
   {
     "bcv_short": "G26:4",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל,ק3=וְהִתְבָּרֲכ֣וּ"
+    "r": "וְהִתְבָּרֲכ֣וּ"
   },
   {
     "bcv_short": "G26:12",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל,ה,ש2=וַֽיְבָרֲכֵ֖הוּ"
+    "r": "וַֽיְבָרֲכֵ֖הוּ"
   },
   {
     "bcv_short": "G27:19",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל,ש=תְּבָרֲכַ֥נִּי"
+    "r": "תְּבָרֲכַ֥נִּי"
   },
   {
     "bcv_short": "G27:26",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "<א(ס)=\"וּשֲקָה\""
+    "r": "וּשֲקָה"
   },
   {
     "bcv_short": "G27:27",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל,ל1=וַֽיְבָרֲכֵ֑הוּ"
+    "r": "וַֽיְבָרֲכֵ֑הוּ"
   },
   {
     "bcv_short": "G27:27",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל,ל1,ש1,ק3=בֵּרֲכ֖וֹ"
+    "r": "בֵּרֲכ֖וֹ"
   },
   {
     "bcv_short": "G27:29",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל,ל1=וּֽמְבָרֲכֶ֖יךָ"
+    "r": "וּֽמְבָרֲכֶ֖יךָ"
   },
   {
     "bcv_short": "G27:31",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל,ל1=תְּבָרֲכַ֥נִּי"
+    "r": "תְּבָרֲכַ֥נִּי"
   },
   {
     "bcv_short": "G27:33",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל,ל1=וָאֲבָרֲכֵ֑הוּ"
+    "r": "וָאֲבָרֲכֵ֑הוּ"
   },
   {
     "bcv_short": "G27:34",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל,ל1=בָּרֲכֵ֥נִי"
+    "r": "בָּרֲכֵ֥נִי"
   },
   {
     "bcv_short": "G27:38",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א(ס)=הַֽבֲרָכָ֨ה"
+    "r": "הַֽבֲרָכָ֨ה"
   },
   {
     "bcv_short": "G27:38",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל,ל1=בָּרֲכֵ֥נִי"
+    "r": "בָּרֲכֵ֥נִי"
   },
   {
     "bcv_short": "G27:41",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל,ל1,ש1,ק3=בֵּרֲכ֖וֹ"
+    "r": "בֵּרֲכ֖וֹ"
   },
   {
     "bcv_short": "G28:6",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א(ס),ל,ל1,ק3=בְּבָרֲכ֣וֹ"
+    "r": "בְּבָרֲכ֣וֹ"
   },
   {
     "bcv_short": "G28:14",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל=וְנִבְרֲכ֥וּ"
+    "r": "וְנִבְרֲכ֥וּ"
   },
   {
     "bcv_short": "G29:3",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א(ס),ל,ק3=וְגָלֲל֤וּ"
+    "r": "וְגָלֲל֤וּ"
   },
   {
     "bcv_short": "G29:8",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל,ק3=וְגָֽלֲלוּ֙"
+    "r": "וְגָֽלֲלוּ֙"
   },
   {
     "bcv_short": "G30:27",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל=וַיְבָרֲכֵ֥נִי"
+    "r": "וַיְבָרֲכֵ֥נִי"
   },
   {
     "bcv_short": "G30:38",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א(ס),ל,ל1,ש1=בְּשִֽׁקֲת֣וֹת"
+    "r": "בְּשִֽׁקֲת֣וֹת"
   },
   {
     "bcv_short": "G38:12",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל,ל1=עַל־גֹּֽזֲזֵ֤י"
+    "r": "עַל־גֹּֽזֲזֵ֤י"
   },
   {
     "bcv_short": "G48:9",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל,ל1,ב=וַאֲבָרֲכֵֽם"
+    "r": "וַאֲבָרֲכֵֽם"
   },
   {
     "bcv_short": "G48:20",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל,ל1,ב=וַיְבָ֨רֲכֵ֜ם"
+    "r": "וַיְבָ֨רֲכֵ֜ם"
   },
   {
     "bcv_short": "G49:23",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל,ב=וַֽיְמָרֲרֻ֖הוּ"
+    "r": "וַֽיְמָרֲרֻ֖הוּ"
   },
   {
     "bcv_short": "E3:18",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל,ל1,ב,ק3,ו=<נֵֽלֲכָה־נָּ֞א>"
+    "r": "נֵֽלֲכָה־נָּ֞א"
   },
   {
     "bcv_short": "E4:18",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל,ל1,ב,ש1,ק3,ו=אֵ֣לֲכָה"
+    "r": "אֵ֣לֲכָה"
   },
   {
     "bcv_short": "E5:3",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל,ל1,ב,ש1,ק3,ו=<נֵ֣לֲכָה"
+    "r": "נֵ֣לֲכָה"
   },
   {
     "bcv_short": "E7:27",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א(ס),ב=בַּֽצֲפַרְדְּעִֽים"
+    "r": "בַּֽצֲפַרְדְּעִֽים"
   },
   {
     "bcv_short": "E7:29",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א(ס),ב=הַֽצֲפַרְדְּעִֽים"
+    "r": "הַֽצֲפַרְדְּעִֽים"
   },
   {
     "bcv_short": "E8:1",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א(ס),ב=אֶת־הַֽצֲפַרְדְּעִ֖ים"
+    "r": "אֶת־הַֽצֲפַרְדְּעִ֖ים"
   },
   {
     "bcv_short": "E8:3",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א(ס)=אֶת־הַֽצֲפַרְדְּעִ֖ים"
+    "r": "אֶת־הַֽצֲפַרְדְּעִ֖ים"
   },
   {
     "bcv_short": "E8:4",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א(ס),ב=הַֽצֲפַרְדְּעִ֔ים"
+    "r": "הַֽצֲפַרְדְּעִ֔ים"
   },
   {
     "bcv_short": "E8:5",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א(ס),ל,ב=הַֽצֲפַרְדְּעִ֔ים"
+    "r": "הַֽצֲפַרְדְּעִ֔ים"
   },
   {
     "bcv_short": "E8:7",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א(ס),ב=הַֽצֲפַרְדְּעִ֗ים"
+    "r": "הַֽצֲפַרְדְּעִ֗ים"
   },
   {
     "bcv_short": "E8:8",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א(ס),ב=הַֽצֲפַרְדְּעִ֖ים"
+    "r": "הַֽצֲפַרְדְּעִ֖ים"
   },
   {
     "bcv_short": "E8:9",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א(ס),ב=הַֽצֲפַרְדְּעִ֔ים"
+    "r": "הַֽצֲפַרְדְּעִ֔ים"
   },
   {
     "bcv_short": "E8:11",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א(ס),ב=הָֽרֲוָחָ֔ה"
+    "r": "הָֽרֲוָחָ֔ה"
   },
   {
     "bcv_short": "E15:10",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל,ל1,ב,ק3=צָֽלֲלוּ֙"
+    "r": "צָֽלֲלוּ֙"
   },
   {
     "bcv_short": "E23:29",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א(ס),ב,ש1,ק3,ו=אֲגָרֲשֶׁ֛נּוּ"
+    "r": "אֲגָרֲשֶׁ֛נּוּ"
   },
   {
     "bcv_short": "E23:30",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א(ס),ב,ש1,ק3,ו=אֲגָרֲשֶׁ֖נּוּ"
+    "r": "אֲגָרֲשֶׁ֖נּוּ"
   },
   {
     "bcv_short": "L6:11",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל,ב=יֹֽאכֲלֶ֔נָּה"
+    "r": "יֹֽאכֲלֶ֔נָּה"
   },
   {
     "bcv_short": "L6:19",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל,ב=יֹאכֲלֶ֑נָּה"
+    "r": "יֹאכֲלֶ֑נָּה"
   },
   {
     "bcv_short": "L9:23",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל,ל1,ב=וַֽיְבָרֲכ֖וּ"
+    "r": "וַֽיְבָרֲכ֖וּ"
   },
   {
     "bcv_short": "L10:10",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל,ל1=וּֽלֲהַבְדִּ֔יל"
+    "r": "וּֽלֲהַבְדִּ֔יל"
   },
   {
     "bcv_short": "N5:18",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל,ב=הַמְאָֽרֲרִֽים"
+    "r": "הַמְאָֽרֲרִֽים"
   },
   {
     "bcv_short": "N5:18",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "\"הַמְאָֽרֲרִים\""
+    "r": "הַמְאָֽרֲרִים"
   },
   {
     "bcv_short": "N5:19",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל,ב=הַֽמְאָרֲרִ֖ים"
+    "r": "הַֽמְאָרֲרִ֖ים"
   },
   {
     "bcv_short": "N5:24",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל,ב,ק3=הַמְאָֽרֲרִ֑ים"
+    "r": "הַמְאָֽרֲרִ֑ים"
   },
   {
     "bcv_short": "N5:24",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל,ב=הַֽמְאָרֲרִ֖ים"
+    "r": "הַֽמְאָרֲרִ֖ים"
   },
   {
     "bcv_short": "N5:27",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל=הַמְאָֽרֲרִים֙"
+    "r": "הַמְאָֽרֲרִים֙"
   },
   {
     "bcv_short": "N6:23",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל,ל1=תְבָרֲכ֖וּ"
+    "r": "תְבָרֲכ֖וּ"
   },
   {
     "bcv_short": "N6:27",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל,ל1,ב=אֲבָרֲכֵֽם"
+    "r": "אֲבָרֲכֵֽם"
   },
   {
     "bcv_short": "N10:9",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל!=וֲנִזְכַּרְתֶּ֗ם"
+    "r": "וֲנִזְכַּרְתֶּ֗ם"
   },
   {
     "bcv_short": "N11:1",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "<כמתאנֲנים?"
+    "r": "כמתאנֲנים"
   },
   {
     "bcv_short": "N16:32",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל,ב=כׇּל־הָרֲכֽוּשׁ"
+    "r": "כׇּל־הָרֲכֽוּשׁ"
   },
   {
     "bcv_short": "N18:2",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א(ס)=<\"וִֽישָֽׁרֲת֑וּךָ\""
+    "r": "וִֽישָֽׁרֲת֑וּךָ"
   },
   {
     "bcv_short": "N18:2",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "וקורן=וִֽישָֽׁרֲת֑וּךָ"
+    "r": "וִֽישָֽׁרֲת֑וּךָ"
   },
   {
     "bcv_short": "N18:10",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל,ב,ק3=תֹּאכֲלֶ֑נּוּ"
+    "r": "תֹּאכֲלֶ֑נּוּ"
   },
   {
     "bcv_short": "N18:13",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל,ב,ק3=יֹאכֲלֶֽנּוּ"
+    "r": "יֹאכֲלֶֽנּוּ"
   },
   {
     "bcv_short": "N23:18",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל,ל1,ב,ק3,ו?=וּֽשֲׁמָ֔ע"
+    "r": "וּֽשֲׁמָ֔ע"
   },
   {
     "bcv_short": "N23:25",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל,ל1,ב=תְבָרֲכֶֽנּוּ"
+    "r": "תְבָרֲכֶֽנּוּ"
   },
   {
     "bcv_short": "N24:9",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל,ב=מְבָרֲכֶ֣יךָ"
+    "r": "מְבָרֲכֶ֣יךָ"
   },
   {
     "bcv_short": "N25:18",
@@ -6287,57 +6287,57 @@
   {
     "bcv_short": "N25:18",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "<כִּי־צֹרֲרִ֥ים"
+    "r": "כִּי־צֹרֲרִ֥ים"
   },
   {
     "bcv_short": "N25:18",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "כִּי־צֹרֲרִ֥ים)"
+    "r": "כִּי־צֹרֲרִ֥ים"
   },
   {
     "bcv_short": "N33:55",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל,ב,ל3=וְצָרֲר֣וּ"
+    "r": "וְצָרֲר֣וּ"
   },
   {
     "bcv_short": "D5:23",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א(צילום)?,ל,ל1,ק3=וּֽשֲׁמָ֔ע"
+    "r": "וּֽשֲׁמָ֔ע"
   },
   {
     "bcv_short": "D8:2",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל=הֹלִֽיכֲךָ֜"
+    "r": "הֹלִֽיכֲךָ֜"
   },
   {
     "bcv_short": "D8:15",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל,ק3,ל9=הַמּוֹלִ֨יכֲךָ֜"
+    "r": "הַמּוֹלִ֨יכֲךָ֜"
   },
   {
     "bcv_short": "D15:20",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל,ק3=תֹאכֲלֶ֙נּוּ֙"
+    "r": "תֹאכֲלֶ֙נּוּ֙"
   },
   {
     "bcv_short": "D15:22",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל,ק3=תֹּאכֲלֶ֑נּוּ"
+    "r": "תֹּאכֲלֶ֑נּוּ"
   },
   {
     "bcv_short": "D24:13",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל,ל1,ש1,ל9=וּבֵֽרֲכֶ֑ךָּ"
+    "r": "וּבֵֽרֲכֶ֑ךָּ"
   },
   {
     "bcv_short": "D28:39",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=תֹאכֲלֶ֖נּוּ"
+    "r": "תֹאכֲלֶ֖נּוּ"
   },
   {
     "bcv_short": "D29:7",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽמֲנַשִּֽׁי"
+    "r": "הַֽמֲנַשִּֽׁי"
   },
   {
     "bcv_short": "D32:6",
@@ -6347,7 +6347,7 @@
   {
     "bcv_short": "D32:10",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=יְסֹבֲבֶ֙נְהוּ֙"
+    "r": "יְסֹבֲבֶ֙נְהוּ֙"
   },
   {
     "bcv_short": "D32:10",
@@ -6357,527 +6357,527 @@
   {
     "bcv_short": "D32:18",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=מְחֹלֲלֶֽךָ"
+    "r": "מְחֹלֲלֶֽךָ"
   },
   {
     "bcv_short": "D32:36",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א,ל3=כִּֽי־אָ֣זֲלַת"
+    "r": "כִּֽי־אָ֣זֲלַת"
   },
   {
     "bcv_short": "D32:36",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ש1,ל9=כִּי־אָ֣זֲלַת"
+    "r": "כִּי־אָ֣זֲלַת"
   },
   {
     "bcv_short": "Js1:12",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽמֲנַשֶּׁ֑ה"
+    "r": "הַֽמֲנַשֶּׁ֑ה"
   },
   {
     "bcv_short": "Js4:12",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽמֲנַשֶּׁה֙"
+    "r": "הַֽמֲנַשֶּׁה֙"
   },
   {
     "bcv_short": "Js6:9",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וְהַֽמֲאַסֵּ֗ף"
+    "r": "וְהַֽמֲאַסֵּ֗ף"
   },
   {
     "bcv_short": "Js6:13",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וְהַֽמֲאַסֵּ֗ף"
+    "r": "וְהַֽמֲאַסֵּ֗ף"
   },
   {
     "bcv_short": "Js6:15",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=סָבֲב֥וּ"
+    "r": "סָבֲב֥וּ"
   },
   {
     "bcv_short": "Js6:22",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽמֲרַגְּלִ֤ים"
+    "r": "הַֽמֲרַגְּלִ֤ים"
   },
   {
     "bcv_short": "Js6:23",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽמֲרַגְּלִ֗ים"
+    "r": "הַֽמֲרַגְּלִ֗ים"
   },
   {
     "bcv_short": "Js8:27",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=בָּזֲז֥וּ"
+    "r": "בָּזֲז֥וּ"
   },
   {
     "bcv_short": "Js11:2",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=כִּֽנֲר֖וֹת"
+    "r": "כִּֽנֲר֖וֹת"
   },
   {
     "bcv_short": "Js11:14",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=בָּזֲז֥וּ"
+    "r": "בָּזֲז֥וּ"
   },
   {
     "bcv_short": "Js12:6",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽמֲנַשֶּֽׁה"
+    "r": "הַֽמֲנַשֶּֽׁה"
   },
   {
     "bcv_short": "Js13:7",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽמֲנַשֶּֽׁה"
+    "r": "הַֽמֲנַשֶּֽׁה"
   },
   {
     "bcv_short": "Js14:13",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וַֽיְבָרֲכֵ֖הוּ"
+    "r": "וַֽיְבָרֲכֵ֖הוּ"
   },
   {
     "bcv_short": "Js17:14",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=בֵּרֲכַ֥נִי"
+    "r": "בֵּרֲכַ֥נִי"
   },
   {
     "bcv_short": "Js18:7",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽמֲנַשֶּׁ֜ה"
+    "r": "הַֽמֲנַשֶּׁ֜ה"
   },
   {
     "bcv_short": "Js22:6",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וַֽיְבָרֲכֵ֖ם"
+    "r": "וַֽיְבָרֲכֵ֖ם"
   },
   {
     "bcv_short": "Js22:7",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וַֽיְבָרֲכֵֽם"
+    "r": "וַֽיְבָרֲכֵֽם"
   },
   {
     "bcv_short": "Js22:21",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽמֲנַשֶּׁ֑ה"
+    "r": "הַֽמֲנַשֶּׁ֑ה"
   },
   {
     "bcv_short": "Js22:33",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וַיְבָרֲכ֥וּ"
+    "r": "וַיְבָרֲכ֥וּ"
   },
   {
     "bcv_short": "Ju5:2",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=בָּֽרֲכ֖וּ"
+    "r": "בָּֽרֲכ֖וּ"
   },
   {
     "bcv_short": "Ju5:9",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=לְחוֹקֲקֵ֣י"
+    "r": "לְחוֹקֲקֵ֣י"
   },
   {
     "bcv_short": "Ju5:9",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=בָּרֲכ֖וּ"
+    "r": "בָּרֲכ֖וּ"
   },
   {
     "bcv_short": "Ju5:11",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=מְחַֽצֲצִ֗ים"
+    "r": "מְחַֽצֲצִ֗ים"
   },
   {
     "bcv_short": "Ju5:12",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וּֽשֲׁבֵ֥ה"
+    "r": "וּֽשֲׁבֵ֥ה"
   },
   {
     "bcv_short": "Ju5:14",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=מְחֹ֣קֲקִ֔ים"
+    "r": "מְחֹ֣קֲקִ֔ים"
   },
   {
     "bcv_short": "Ju7:6",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽמְלַקֲקִ֤ים"
+    "r": "הַֽמְלַקֲקִ֤ים"
   },
   {
     "bcv_short": "Ju8:2",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=עֹלֲל֥וֹת"
+    "r": "עֹלֲל֥וֹת"
   },
   {
     "bcv_short": "Ju9:13",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽמֲשַׂמֵּ֥חַ"
+    "r": "הַֽמֲשַׂמֵּ֥חַ"
   },
   {
     "bcv_short": "Ju9:37",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=מְעוֹנֲנִֽים"
+    "r": "מְעוֹנֲנִֽים"
   },
   {
     "bcv_short": "Ju9:54",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וּמ֣וֹתֲתֵ֔נִי"
+    "r": "וּמ֣וֹתֲתֵ֔נִי"
   },
   {
     "bcv_short": "Ju9:57",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=קִֽלֲלַ֖ת"
+    "r": "קִֽלֲלַ֖ת"
   },
   {
     "bcv_short": "Ju10:8",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וַיְרֹֽצֲצוּ֙"
+    "r": "וַיְרֹֽצֲצוּ֙"
   },
   {
     "bcv_short": "Ju13:24",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וַֽיְבָרֲכֵ֖הוּ"
+    "r": "וַֽיְבָרֲכֵ֖הוּ"
   },
   {
     "bcv_short": "Ju16:16",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וַתְּאַֽלֲצֵ֑הוּ"
+    "r": "וַתְּאַֽלֲצֵ֑הוּ"
   },
   {
     "bcv_short": "Ju16:24",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וַֽיְהַלֲל֖וּ"
+    "r": "וַֽיְהַלֲל֖וּ"
   },
   {
     "bcv_short": "Ju20:31",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=בַּֽמֲסִלּוֹת֙"
+    "r": "בַּֽמֲסִלּוֹת֙"
   },
   {
     "bcv_short": "Ju20:32",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=אֶל־הַֽמֲסִלּֽוֹת"
+    "r": "אֶל־הַֽמֲסִלּֽוֹת"
   },
   {
     "bcv_short": "Ju20:45",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וַיְעֹלֲלֻ֙הוּ֙"
+    "r": "וַיְעֹלֲלֻ֙הוּ֙"
   },
   {
     "bcv_short": "Ju20:45",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=בַּֽמֲסִלּ֔וֹת"
+    "r": "בַּֽמֲסִלּ֔וֹת"
   },
   {
     "bcv_short": "Ju21:23",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=מִן־הַמְּחֹלֲל֖וֹת"
+    "r": "מִן־הַמְּחֹלֲל֖וֹת"
   },
   {
     "bcv_short": "1S2:25",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וּפִֽלֲל֣וֹ"
+    "r": "וּפִֽלֲל֣וֹ"
   },
   {
     "bcv_short": "1S3:13",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=כִּֽי־מְקַלֲלִ֤ים"
+    "r": "כִּֽי־מְקַלֲלִ֤ים"
   },
   {
     "bcv_short": "1S4:17",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽמֲבַשֵּׂ֜ר"
+    "r": "הַֽמֲבַשֵּׂ֜ר"
   },
   {
     "bcv_short": "1S7:3",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=מִתּוֹכֲכֶ֖ם"
+    "r": "מִתּוֹכֲכֶ֖ם"
   },
   {
     "bcv_short": "1S9:6",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=נֵ֣לֲכָה"
+    "r": "נֵ֣לֲכָה"
   },
   {
     "bcv_short": "1S13:10",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=לְבָרֲכֽוֹ"
+    "r": "לְבָרֲכֽוֹ"
   },
   {
     "bcv_short": "1S17:51",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וַיְמֹ֣תֲתֵ֔הוּ"
+    "r": "וַיְמֹ֣תֲתֵ֔הוּ"
   },
   {
     "bcv_short": "1S17:52",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=חַֽלֲלֵ֤י"
+    "r": "חַֽלֲלֵ֤י"
   },
   {
     "bcv_short": "1S18:23",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽנֲקַלָּ֤ה"
+    "r": "הַֽנֲקַלָּ֤ה"
   },
   {
     "bcv_short": "1S24:10",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א,ל=לַהֲרָגֲךָ֖"
+    "r": "לַהֲרָגֲךָ֖"
   },
   {
     "bcv_short": "1S24:10",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "(לַהֲרָגֲךָ֖),"
+    "r": "לַהֲרָגֲךָ֖"
   },
   {
     "bcv_short": "1S25:7",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=גֹזֲזִ֖ים"
+    "r": "גֹזֲזִ֖ים"
   },
   {
     "bcv_short": "1S25:11",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=לְגֹֽזֲזָ֑י"
+    "r": "לְגֹֽזֲזָ֑י"
   },
   {
     "bcv_short": "1S25:26",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וְהַֽמֲבַקְשִׁ֥ים"
+    "r": "וְהַֽמֲבַקְשִׁ֥ים"
   },
   {
     "bcv_short": "1S26:11",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וְנֵלֲכָה־לָּֽנוּ"
+    "r": "וְנֵלֲכָה־לָּֽנוּ"
   },
   {
     "bcv_short": "1S30:16",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וְחֹ֣גֲגִ֔ים"
+    "r": "וְחֹ֣גֲגִ֔ים"
   },
   {
     "bcv_short": "2S1:9",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וּמֹ֣תֲתֵ֔נִי"
+    "r": "וּמֹ֣תֲתֵ֔נִי"
   },
   {
     "bcv_short": "2S8:10",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וּֽלְבָרֲכ֗וֹ"
+    "r": "וּֽלְבָרֲכ֗וֹ"
   },
   {
     "bcv_short": "2S10:3",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽמֲכַבֵּ֨ד"
+    "r": "הַֽמֲכַבֵּ֨ד"
   },
   {
     "bcv_short": "2S13:23",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=גֹֽזֲזִים֙"
+    "r": "גֹֽזֲזִים֙"
   },
   {
     "bcv_short": "2S13:25",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וַֽיְבָרֲכֵֽהוּ"
+    "r": "וַֽיְבָרֲכֵֽהוּ"
   },
   {
     "bcv_short": "2S14:10",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽמֲדַבֵּ֤ר"
+    "r": "הַֽמֲדַבֵּ֤ר"
   },
   {
     "bcv_short": "2S15:7",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=אֵ֣לֲכָה"
+    "r": "אֵ֣לֲכָה"
   },
   {
     "bcv_short": "2S16:7",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=בְּקַֽלֲל֑וֹ"
+    "r": "בְּקַֽלֲל֑וֹ"
   },
   {
     "bcv_short": "2S19:6",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽמֲמַלְּטִ֤ים"
+    "r": "הַֽמֲמַלְּטִ֤ים"
   },
   {
     "bcv_short": "2S19:40",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וַיְבָ֣רֲכֵ֔הוּ"
+    "r": "וַיְבָ֣רֲכֵ֔הוּ"
   },
   {
     "bcv_short": "2S20:12",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽמֲסִלָּ֑ה"
+    "r": "הַֽמֲסִלָּ֑ה"
   },
   {
     "bcv_short": "2S20:12",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=מִן־הַֽמֲסִלָּ֤ה"
+    "r": "מִן־הַֽמֲסִלָּ֤ה"
   },
   {
     "bcv_short": "2S20:13",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=מִן־הַֽמֲסִלָּ֑ה"
+    "r": "מִן־הַֽמֲסִלָּ֑ה"
   },
   {
     "bcv_short": "2S20:15",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=סֹֽלֲלָה֙"
+    "r": "סֹֽלֲלָה֙"
   },
   {
     "bcv_short": "2S21:3",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וּבָרֲכ֖וּ"
+    "r": "וּבָרֲכ֖וּ"
   },
   {
     "bcv_short": "2S22:12",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=חַֽשֲׁרַת־מַ֖יִם"
+    "r": "חַֽשֲׁרַת־מַ֖יִם"
   },
   {
     "bcv_short": "2S24:16",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א-כתיב=הָאֲוְרֲ֥נָה"
+    "r": "הָאֲוְרֲ֥נָה"
   },
   {
     "bcv_short": "1K6:37",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הָרֲבִיעִ֔ית"
+    "r": "הָרֲבִיעִ֔ית"
   },
   {
     "bcv_short": "1K7:24",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=סֹבֲבִ֣ים"
+    "r": "סֹבֲבִ֣ים"
   },
   {
     "bcv_short": "1K8:33",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ק=וְהִתְפַּלֲל֧וּ"
+    "r": "וְהִתְפַּלֲל֧וּ"
   },
   {
     "bcv_short": "1K8:35",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וְהִֽתְפַּלֲל֞וּ"
+    "r": "וְהִֽתְפַּלֲל֞וּ"
   },
   {
     "bcv_short": "1K8:44",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וְהִתְפַּלֲל֣וּ"
+    "r": "וְהִתְפַּלֲל֣וּ"
   },
   {
     "bcv_short": "1K8:48",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וְהִתְפַּלֲל֣וּ"
+    "r": "וְהִתְפַּלֲל֣וּ"
   },
   {
     "bcv_short": "1K8:66",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וַֽיְבָרֲכ֖וּ"
+    "r": "וַֽיְבָרֲכ֖וּ"
   },
   {
     "bcv_short": "1K14:21",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וּֽשֲׁבַ֨ע"
+    "r": "וּֽשֲׁבַ֨ע"
   },
   {
     "bcv_short": "1K18:28",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וַיִּתְגֹּֽדֲדוּ֙"
+    "r": "וַיִּתְגֹּֽדֲדוּ֙"
   },
   {
     "bcv_short": "1K19:20",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ק=אֶשֲּׂקָה־נָּא֙"
+    "r": "אֶשֲּׂקָה־נָּא֙"
   },
   {
     "bcv_short": "1K21:19",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=לָקֲק֤וּ"
+    "r": "לָקֲק֤וּ"
   },
   {
     "bcv_short": "1K21:20",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽמֲצָאתַ֖נִי"
+    "r": "הַֽמֲצָאתַ֖נִי"
   },
   {
     "bcv_short": "2K2:24",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וַֽיְקַלֲלֵ֖ם"
+    "r": "וַֽיְקַלֲלֵ֖ם"
   },
   {
     "bcv_short": "2K3:15",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽמֲנַגֵּ֔ן"
+    "r": "הַֽמֲנַגֵּ֔ן"
   },
   {
     "bcv_short": "2K4:29",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=תְבָרֲכֶ֔נּוּ"
+    "r": "תְבָרֲכֶ֔נּוּ"
   },
   {
     "bcv_short": "2K6:2",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=נֵלֲכָה־נָּ֣א"
+    "r": "נֵלֲכָה־נָּ֣א"
   },
   {
     "bcv_short": "2K6:28",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וְנֹאכֲלֶ֣נּוּ"
+    "r": "וְנֹאכֲלֶ֣נּוּ"
   },
   {
     "bcv_short": "2K6:29",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וְנֹ֣אכֲלֶ֔נּוּ"
+    "r": "וְנֹ֣אכֲלֶ֔נּוּ"
   },
   {
     "bcv_short": "2K6:32",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=בֶּן־הַֽמֲרַצֵּ֤חַ"
+    "r": "בֶּן־הַֽמֲרַצֵּ֤חַ"
   },
   {
     "bcv_short": "2K7:8",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽמֲצֹרָעִ֨ים"
+    "r": "הַֽמֲצֹרָעִ֨ים"
   },
   {
     "bcv_short": "2K8:12",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וְעֹלֲלֵיהֶ֣ם"
+    "r": "וְעֹלֲלֵיהֶ֣ם"
   },
   {
     "bcv_short": "2K9:17",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וּֽשֲׁלַ֥ח"
+    "r": "וּֽשֲׁלַ֥ח"
   },
   {
     "bcv_short": "2K10:15",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וַֽיְבָרֲכֵ֗הוּ"
+    "r": "וַֽיְבָרֲכֵ֗הוּ"
   },
   {
     "bcv_short": "2K10:33",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וְהַֽמֲנַשִּׁ֑י"
+    "r": "וְהַֽמֲנַשִּׁ֑י"
   },
   {
     "bcv_short": "2K12:12",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽמֲתֻכָּ֔ן"
+    "r": "הַֽמֲתֻכָּ֔ן"
   },
   {
     "bcv_short": "2K19:16",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וּֽשֲׁמָ֔ע"
+    "r": "וּֽשֲׁמָ֔ע"
   },
   {
     "bcv_short": "I1:23",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=סוֹרֲרִ֗ים"
+    "r": "סוֹרֲרִ֗ים"
   },
   {
     "bcv_short": "I1:30",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וּֽכֲגַנָּ֔ה"
+    "r": "וּֽכֲגַנָּ֔ה"
   },
   {
     "bcv_short": "I2:6",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וְעֹנֲנִ֖ים"
+    "r": "וְעֹנֲנִ֖ים"
   },
   {
     "bcv_short": "I10:1",
@@ -6887,1857 +6887,1857 @@
   {
     "bcv_short": "I10:31",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=נָֽדֲדָ֖ה"
+    "r": "נָֽדֲדָ֖ה"
   },
   {
     "bcv_short": "I11:13",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וְצֹרֲרֵ֥י"
+    "r": "וְצֹרֲרֵ֥י"
   },
   {
     "bcv_short": "I17:14",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=לְבֹזֲזֵֽינוּ"
+    "r": "לְבֹזֲזֵֽינוּ"
   },
   {
     "bcv_short": "I19:6",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=דָּלֲל֥וּ"
+    "r": "דָּלֲל֥וּ"
   },
   {
     "bcv_short": "I19:25",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=בֵּרֲכ֛וֹ"
+    "r": "בֵּרֲכ֛וֹ"
   },
   {
     "bcv_short": "I21:6",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽמֲצַפֶּ֔ה"
+    "r": "הַֽמֲצַפֶּ֔ה"
   },
   {
     "bcv_short": "I22:3",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=נָֽדֲדוּ־יַ֖חַד"
+    "r": "נָֽדֲדוּ־יַ֖חַד"
   },
   {
     "bcv_short": "I22:16",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=חֹקֲקִ֥י"
+    "r": "חֹקֲקִ֥י"
   },
   {
     "bcv_short": "I23:13",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=עֽוֹרֲרוּ֙"
+    "r": "עֽוֹרֲרוּ֙"
   },
   {
     "bcv_short": "I24:19",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הִֽתְפּוֹרֲרָה֙"
+    "r": "הִֽתְפּוֹרֲרָה֙"
   },
   {
     "bcv_short": "I24:19",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הִֽתְמוֹטֲטָ֖ה"
+    "r": "הִֽתְמוֹטֲטָ֖ה"
   },
   {
     "bcv_short": "I24:20",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וְהִֽתְנוֹדֲדָ֖ה"
+    "r": "וְהִֽתְנוֹדֲדָ֖ה"
   },
   {
     "bcv_short": "I26:20",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וּֽסֲגֹ֥ר"
+    "r": "וּֽסֲגֹ֥ר"
   },
   {
     "bcv_short": "I30:1",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=סֽוֹרֲרִים֙"
+    "r": "סֽוֹרֲרִים֙"
   },
   {
     "bcv_short": "I31:8",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=תֹּאכֲלֶ֑נּוּ"
+    "r": "תֹּאכֲלֶ֑נּוּ"
   },
   {
     "bcv_short": "I33:3",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=נָדֲד֖וּ"
+    "r": "נָדֲד֖וּ"
   },
   {
     "bcv_short": "I33:22",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=מְחֹקֲקֵ֑נוּ"
+    "r": "מְחֹקֲקֵ֑נוּ"
   },
   {
     "bcv_short": "I33:23",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=בָּ֥זֲזוּ"
+    "r": "בָּ֥זֲזוּ"
   },
   {
     "bcv_short": "I34:16",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וּֽקֲרָ֔אוּ"
+    "r": "וּֽקֲרָ֔אוּ"
   },
   {
     "bcv_short": "I37:17",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וּֽשֲׁמָ֔ע"
+    "r": "וּֽשֲׁמָ֔ע"
   },
   {
     "bcv_short": "I37:33",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=סֹלֲלָֽה"
+    "r": "סֹלֲלָֽה"
   },
   {
     "bcv_short": "I38:18",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=יְהַלֲלֶ֑ךָּ"
+    "r": "יְהַלֲלֶ֑ךָּ"
   },
   {
     "bcv_short": "I40:4",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וְהָרֲכָסִ֖ים"
+    "r": "וְהָרֲכָסִ֖ים"
   },
   {
     "bcv_short": "I40:20",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽמֲסֻכָּ֣ן"
+    "r": "הַֽמֲסֻכָּ֣ן"
   },
   {
     "bcv_short": "I42:24",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=לְבֹזֲזִ֖ים"
+    "r": "לְבֹזֲזִ֖ים"
   },
   {
     "bcv_short": "I45:14",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וּֽסֲחַר־כּוּשׁ֮"
+    "r": "וּֽסֲחַר־כּוּשׁ֮"
   },
   {
     "bcv_short": "I45:18",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=כֽוֹנֲנָ֔הּ"
+    "r": "כֽוֹנֲנָ֔הּ"
   },
   {
     "bcv_short": "I45:20",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וּמִֽתְפַּלֲלִ֔ים"
+    "r": "וּמִֽתְפַּלֲלִ֔ים"
   },
   {
     "bcv_short": "I47:10",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=שׁוֹבֲבָ֑תֶךְ"
+    "r": "שׁוֹבֲבָ֑תֶךְ"
   },
   {
     "bcv_short": "I48:14",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וּֽשֲׁמָ֔עוּ"
+    "r": "וּֽשֲׁמָ֔עוּ"
   },
   {
     "bcv_short": "I48:17",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=מַדְרִֽיכֲךָ֖"
+    "r": "מַדְרִֽיכֲךָ֖"
   },
   {
     "bcv_short": "I51:2",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וַאֲבָרֲכֵ֖הוּ"
+    "r": "וַאֲבָרֲכֵ֖הוּ"
   },
   {
     "bcv_short": "I51:17",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הִתְעוֹרֲרִ֣י"
+    "r": "הִתְעוֹרֲרִ֣י"
   },
   {
     "bcv_short": "I51:17",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הִֽתְעוֹרֲרִ֗י"
+    "r": "הִֽתְעוֹרֲרִ֗י"
   },
   {
     "bcv_short": "I51:20",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽמֲלֵאִ֥ים"
+    "r": "הַֽמֲלֵאִ֥ים"
   },
   {
     "bcv_short": "I52:6",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽמֲדַבֵּ֖ר"
+    "r": "הַֽמֲדַבֵּ֖ר"
   },
   {
     "bcv_short": "I53:7",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=גֹזֲזֶ֖יהָ"
+    "r": "גֹזֲזֶ֖יהָ"
   },
   {
     "bcv_short": "I57:3",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=עֹנֲנָ֑ה"
+    "r": "עֹנֲנָ֑ה"
   },
   {
     "bcv_short": "I57:20",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וְהָרֲשָׁעִ֖ים"
+    "r": "וְהָרֲשָׁעִ֖ים"
   },
   {
     "bcv_short": "I58:9",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=מִתּֽוֹכֲךָ֙"
+    "r": "מִתּֽוֹכֲךָ֙"
   },
   {
     "bcv_short": "I59:10",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=נְגַשֲׁשָׁ֤ה"
+    "r": "נְגַשֲׁשָׁ֤ה"
   },
   {
     "bcv_short": "I59:19",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=נֹ֥סֲסָה"
+    "r": "נֹ֥סֲסָה"
   },
   {
     "bcv_short": "I62:9",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וְהִֽלֲל֖וּ"
+    "r": "וְהִֽלֲל֖וּ"
   },
   {
     "bcv_short": "I62:10",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽמֲסִלָּה֙"
+    "r": "הַֽמֲסִלָּה֙"
   },
   {
     "bcv_short": "I63:18",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=בּוֹסֲס֖וּ"
+    "r": "בּוֹסֲס֖וּ"
   },
   {
     "bcv_short": "I64:10",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הִֽלֲל֙וּךָ֙"
+    "r": "הִֽלֲל֙וּךָ֙"
   },
   {
     "bcv_short": "I65:11",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וְהַֽמֲמַלְאִ֖ים"
+    "r": "וְהַֽמֲמַלְאִ֖ים"
   },
   {
     "bcv_short": "I66:16",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=חַֽלֲלֵ֥י"
+    "r": "חַֽלֲלֵ֥י"
   },
   {
     "bcv_short": "Je3:25",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וּֽתֲכַסֵּנוּ֮"
+    "r": "וּֽתֲכַסֵּנוּ֮"
   },
   {
     "bcv_short": "Je4:7",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=מִֽסֻּבֲּכ֔וֹ"
+    "r": "מִֽסֻּבֲּכ֔וֹ"
   },
   {
     "bcv_short": "Je5:1",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=שׁוֹטֲט֞וּ"
+    "r": "שׁוֹטֲט֞וּ"
   },
   {
     "bcv_short": "Je5:5",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=אֵֽלֲכָה־לִּ֤י"
+    "r": "אֵֽלֲכָה־לִּ֤י"
   },
   {
     "bcv_short": "Je6:6",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=סֹֽלֲלָ֑ה"
+    "r": "סֹֽלֲלָ֑ה"
   },
   {
     "bcv_short": "Je6:9",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=יְעוֹלֲל֥וּ"
+    "r": "יְעוֹלֲל֥וּ"
   },
   {
     "bcv_short": "Je6:28",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=סוֹרֲרִ֔ים"
+    "r": "סוֹרֲרִ֔ים"
   },
   {
     "bcv_short": "Je8:5",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=שׁוֹבֲבָ֜ה"
+    "r": "שׁוֹבֲבָ֜ה"
   },
   {
     "bcv_short": "Je8:23",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=חַֽלֲלֵ֥י"
+    "r": "חַֽלֲלֵ֥י"
   },
   {
     "bcv_short": "Je9:9",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=נָדֲד֖וּ"
+    "r": "נָדֲד֖וּ"
   },
   {
     "bcv_short": "Je9:16",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=לַמְקוֹנֲנ֖וֹת"
+    "r": "לַמְקוֹנֲנ֖וֹת"
   },
   {
     "bcv_short": "Je11:15",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽמֲזִמָּ֙תָה֙"
+    "r": "הַֽמֲזִמָּ֙תָה֙"
   },
   {
     "bcv_short": "Je11:21",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽמֲבַקְשִׁ֥ים"
+    "r": "הַֽמֲבַקְשִׁ֥ים"
   },
   {
     "bcv_short": "Je12:10",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=בֹּסֲס֖וּ"
+    "r": "בֹּסֲס֖וּ"
   },
   {
     "bcv_short": "Je12:12",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=שֹֽׁדֲדִ֔ים"
+    "r": "שֹֽׁדֲדִ֔ים"
   },
   {
     "bcv_short": "Je20:17",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=לֹא־מוֹתֲתַ֖נִי"
+    "r": "לֹא־מוֹתֲתַ֖נִי"
   },
   {
     "bcv_short": "Je22:15",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הֲתִֽמֲלֹ֔ךְ"
+    "r": "הֲתִֽמֲלֹ֔ךְ"
   },
   {
     "bcv_short": "Je22:28",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הֽוּטֲלוּ֙"
+    "r": "הֽוּטֲלוּ֙"
   },
   {
     "bcv_short": "Je25:33",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=חַֽלֲלֵ֤י"
+    "r": "חַֽלֲלֵ֤י"
   },
   {
     "bcv_short": "Je25:36",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וִֽילֲלַ֖ת"
+    "r": "וִֽילֲלַ֖ת"
   },
   {
     "bcv_short": "Je29:18",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "לְזַוֲעָה,"
+    "r": "לְזַוֲעָה"
   },
   {
     "bcv_short": "Je31:32",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל=אֶכְתֲּבֶ֑נָּה"
+    "r": "אֶכְתֲּבֶ֑נָּה"
   },
   {
     "bcv_short": "Je32:9",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל,ק=וָֽאֶשְׁקֲלָה־לּוֹ֙"
+    "r": "וָֽאֶשְׁקֲלָה־לּוֹ֙"
   },
   {
     "bcv_short": "Je33:10",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽנֲשַׁמּ֗וֹת"
+    "r": "הַֽנֲשַׁמּ֗וֹת"
   },
   {
     "bcv_short": "Je40:15",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=אֵ֤לֲכָה"
+    "r": "אֵ֤לֲכָה"
   },
   {
     "bcv_short": "Je41:5",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וּמִתְגֹּֽדֲדִ֑ים"
+    "r": "וּמִתְגֹּֽדֲדִ֑ים"
   },
   {
     "bcv_short": "Je44:9",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽשֲׁכַחְתֶּם֩"
+    "r": "הַֽשֲׁכַחְתֶּם֩"
   },
   {
     "bcv_short": "Je46:9",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וְהִתְהֹלֲל֣וּ"
+    "r": "וְהִתְהֹלֲל֣וּ"
   },
   {
     "bcv_short": "Je48:32",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=מִבֲּכִ֨י"
+    "r": "מִבֲּכִ֨י"
   },
   {
     "bcv_short": "Je49:4",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=מַה־תִּתְהַֽלֲלִי֙"
+    "r": "מַה־תִּתְהַֽלֲלִי֙"
   },
   {
     "bcv_short": "Je50:6",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א-כתיב=שׁוֹבֲב֑יּם"
+    "r": "שׁוֹבֲב֑יּם"
   },
   {
     "bcv_short": "Je50:10",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=כָּל־שֹׁלֲלֶ֥יהָ"
+    "r": "כָּל־שֹׁלֲלֶ֥יהָ"
   },
   {
     "bcv_short": "Je51:2",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וִיבֹקֲק֖וּ"
+    "r": "וִיבֹקֲק֖וּ"
   },
   {
     "bcv_short": "Je51:7",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=יִתְהֹלֲל֥וּ"
+    "r": "יִתְהֹלֲל֥וּ"
   },
   {
     "bcv_short": "Je51:49",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=חַֽלֲלֵ֥י"
+    "r": "חַֽלֲלֵ֥י"
   },
   {
     "bcv_short": "Je51:53",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=שֹׁדֲדִ֛ים"
+    "r": "שֹׁדֲדִ֛ים"
   },
   {
     "bcv_short": "Ee1:7",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וְנֹ֣צֲצִ֔ים"
+    "r": "וְנֹ֣צֲצִ֔ים"
   },
   {
     "bcv_short": "Ee3:18",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הָרֲשָׁעָ֖ה"
+    "r": "הָרֲשָׁעָ֖ה"
   },
   {
     "bcv_short": "Ee3:19",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הָרֲשָׁעָ֑ה"
+    "r": "הָרֲשָׁעָ֑ה"
   },
   {
     "bcv_short": "Ee4:2",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=סֹלֲלָ֑ה"
+    "r": "סֹלֲלָ֑ה"
   },
   {
     "bcv_short": "Ee4:9",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=תֹּאכֲלֶֽנּוּ"
+    "r": "תֹּאכֲלֶֽנּוּ"
   },
   {
     "bcv_short": "Ee4:10",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=תֹּאכֲלֶ֔נּוּ"
+    "r": "תֹּאכֲלֶ֔נּוּ"
   },
   {
     "bcv_short": "Ee4:10",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=תֹּאכֲלֶֽנּוּ"
+    "r": "תֹּאכֲלֶֽנּוּ"
   },
   {
     "bcv_short": "Ee4:12",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=תֹּאכֲלֶ֑נָּה"
+    "r": "תֹּאכֲלֶ֑נָּה"
   },
   {
     "bcv_short": "Ee4:12",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=בְּגֶֽלֲלֵי֙"
+    "r": "בְּגֶֽלֲלֵי֙"
   },
   {
     "bcv_short": "Ee4:15",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=גֶּלֲלֵ֣י"
+    "r": "גֶּלֲלֵ֣י"
   },
   {
     "bcv_short": "Ee6:7",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=בְּתוֹכֲכֶ֑ם"
+    "r": "בְּתוֹכֲכֶ֑ם"
   },
   {
     "bcv_short": "Ee7:15",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=יֹאכֲלֶֽנּוּ"
+    "r": "יֹאכֲלֶֽנּוּ"
   },
   {
     "bcv_short": "Ee9:8",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וְנֵֽאשֲׁאַ֖ר"
+    "r": "וְנֵֽאשֲׁאַ֖ר"
   },
   {
     "bcv_short": "Ee13:20",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=מְצֹדֲד֨וֹת"
+    "r": "מְצֹדֲד֨וֹת"
   },
   {
     "bcv_short": "Ee13:20",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=מְצֹדֲד֥וֹת"
+    "r": "מְצֹדֲד֥וֹת"
   },
   {
     "bcv_short": "Ee16:51",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וַתְּצַדֲּקִי֙"
+    "r": "וַתְּצַדֲּקִי֙"
   },
   {
     "bcv_short": "Ee17:17",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=סֹלֲלָ֖ה"
+    "r": "סֹלֲלָ֖ה"
   },
   {
     "bcv_short": "Ee21:27",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=סֹלֲלָ֖ה"
+    "r": "סֹלֲלָ֖ה"
   },
   {
     "bcv_short": "Ee26:8",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=סֹֽלֲלָ֔ה"
+    "r": "סֹֽלֲלָ֔ה"
   },
   {
     "bcv_short": "Ee26:12",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וְשָׁלֲל֣וּ"
+    "r": "וְשָׁלֲל֣וּ"
   },
   {
     "bcv_short": "Ee26:12",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וּבָֽזֲזוּ֙"
+    "r": "וּבָֽזֲזוּ֙"
   },
   {
     "bcv_short": "Ee26:16",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וְשָׁמֲמ֖וּ"
+    "r": "וְשָׁמֲמ֖וּ"
   },
   {
     "bcv_short": "Ee26:21",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וּֽתֲבֻקְשִׁ֗י"
+    "r": "וּֽתֲבֻקְשִׁ֗י"
   },
   {
     "bcv_short": "Ee27:4",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=כָּלֲל֖וּ"
+    "r": "כָּלֲל֖וּ"
   },
   {
     "bcv_short": "Ee27:32",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וְקוֹנֲנ֖וּ"
+    "r": "וְקוֹנֲנ֖וּ"
   },
   {
     "bcv_short": "Ee27:35",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=שָׁמֲמ֖וּ"
+    "r": "שָׁמֲמ֖וּ"
   },
   {
     "bcv_short": "Ee28:9",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=מְחַלֲלֶֽיךָ"
+    "r": "מְחַלֲלֶֽיךָ"
   },
   {
     "bcv_short": "Ee28:16",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=תוֹכֲךָ֛"
+    "r": "תוֹכֲךָ֛"
   },
   {
     "bcv_short": "Ee28:18",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=מִתּֽוֹכֲךָ֙"
+    "r": "מִתּֽוֹכֲךָ֙"
   },
   {
     "bcv_short": "Ee28:19",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=שָׁמֲמ֖וּ"
+    "r": "שָׁמֲמ֖וּ"
   },
   {
     "bcv_short": "Ee31:4",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=רֹמֲמָ֑תְהוּ"
+    "r": "רֹמֲמָ֑תְהוּ"
   },
   {
     "bcv_short": "Ee31:6",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=קִֽנֲנוּ֙"
+    "r": "קִֽנֲנוּ֙"
   },
   {
     "bcv_short": "Ee32:10",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=בְּעוֹפֲפִ֥י"
+    "r": "בְּעוֹפֲפִ֥י"
   },
   {
     "bcv_short": "Ee32:12",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וְשָֽׁדֲדוּ֙"
+    "r": "וְשָֽׁדֲדוּ֙"
   },
   {
     "bcv_short": "Ee32:16",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וְק֣וֹנֲנ֔וּהָ"
+    "r": "וְק֣וֹנֲנ֔וּהָ"
   },
   {
     "bcv_short": "Ee33:28",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וְשָׁ֥מֲמ֛וּ"
+    "r": "וְשָׁ֥מֲמ֛וּ"
   },
   {
     "bcv_short": "Ee35:6",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=יִרְדֲּפֶ֑ךָ"
+    "r": "יִרְדֲּפֶ֑ךָ"
   },
   {
     "bcv_short": "Ee35:6",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=יִרְדֲּפֶֽךָ"
+    "r": "יִרְדֲּפֶֽךָ"
   },
   {
     "bcv_short": "Ee35:7",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=לְשִֽׁמֲמָ֖ה"
+    "r": "לְשִֽׁמֲמָ֖ה"
   },
   {
     "bcv_short": "Ee35:9",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=שִֽׁמֲמ֤וֹת"
+    "r": "שִֽׁמֲמ֤וֹת"
   },
   {
     "bcv_short": "Ee35:11",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=אֶשְׁפֲּטֶֽךָ"
+    "r": "אֶשְׁפֲּטֶֽךָ"
   },
   {
     "bcv_short": "Ee36:4",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַשֹּֽׁמֲמוֹת֙"
+    "r": "הַשֹּֽׁמֲמוֹת֙"
   },
   {
     "bcv_short": "Ee36:35",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וְהַֽנֲשַׁמּ֥וֹת"
+    "r": "וְהַֽנֲשַׁמּ֥וֹת"
   },
   {
     "bcv_short": "Ee39:10",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וְשָׁלֲל֣וּ"
+    "r": "וְשָׁלֲל֣וּ"
   },
   {
     "bcv_short": "Ee39:10",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=אֶת־שֹׁלֲלֵיהֶ֗ם"
+    "r": "אֶת־שֹׁלֲלֵיהֶ֗ם"
   },
   {
     "bcv_short": "Ee39:10",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וּבָֽזֲזוּ֙"
+    "r": "וּבָֽזֲזוּ֙"
   },
   {
     "bcv_short": "Ee39:10",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=אֶת־בֹּ֣זֲזֵיהֶ֔ם"
+    "r": "אֶת־בֹּ֣זֲזֵיהֶ֔ם"
   },
   {
     "bcv_short": "Ee39:27",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=בְּשׁוֹבֲבִ֤י"
+    "r": "בְּשׁוֹבֲבִ֤י"
   },
   {
     "bcv_short": "Ee40:43",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וְהַֽשֲׁפַתַּ֗יִם"
+    "r": "וְהַֽשֲׁפַתַּ֗יִם"
   },
   {
     "bcv_short": "Ee43:10",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וּמָדֲד֖וּ"
+    "r": "וּמָדֲד֖וּ"
   },
   {
     "bcv_short": "Ee47:22",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=בְּתוֹכֲכֶ֔ם"
+    "r": "בְּתוֹכֲכֶ֔ם"
   },
   {
     "bcv_short": "Ee48:11",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽמֲקֻדָּשׁ֙"
+    "r": "הַֽמֲקֻדָּשׁ֙"
   },
   {
     "bcv_short": "Ho7:5",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=אֶת־לֹצֲצִֽים"
+    "r": "אֶת־לֹצֲצִֽים"
   },
   {
     "bcv_short": "Ho7:13",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=כִּֽי־נָדֲד֣וּ"
+    "r": "כִּֽי־נָדֲד֣וּ"
   },
   {
     "bcv_short": "Ho9:15",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=סֹרֲרִֽים"
+    "r": "סֹרֲרִֽים"
   },
   {
     "bcv_short": "Ho9:17",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=נֹדֲדִ֖ים"
+    "r": "נֹדֲדִ֖ים"
   },
   {
     "bcv_short": "Jl3:3",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וְתִֽימֲר֖וֹת"
+    "r": "וְתִֽימֲר֖וֹת"
   },
   {
     "bcv_short": "A2:13",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽמֲלֵאָ֥ה"
+    "r": "הַֽמֲלֵאָ֥ה"
   },
   {
     "bcv_short": "A4:1",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הָרֹצֲצ֖וֹת"
+    "r": "הָרֹצֲצ֖וֹת"
   },
   {
     "bcv_short": "A5:12",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=צֹרֲרֵ֤י"
+    "r": "צֹרֲרֵ֤י"
   },
   {
     "bcv_short": "A6:3",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽמֲנַדִּ֖ים"
+    "r": "הַֽמֲנַדִּ֖ים"
   },
   {
     "bcv_short": "Mi3:9",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל=הַֽמֲתַעֲבִ֣ים"
+    "r": "הַֽמֲתַעֲבִ֣ים"
   },
   {
     "bcv_short": "Mi5:11",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וּֽמְעוֹנֲנִ֖ים"
+    "r": "וּֽמְעוֹנֲנִ֖ים"
   },
   {
     "bcv_short": "Mi6:7",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=בְּרִֽבֲב֖וֹת"
+    "r": "בְּרִֽבֲב֖וֹת"
   },
   {
     "bcv_short": "Mi7:1",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=אַ֣לֲלַי"
+    "r": "אַ֣לֲלַי"
   },
   {
     "bcv_short": "Mi7:1",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=כְּעֹלֲלֹ֖ת"
+    "r": "כְּעֹלֲלֹ֖ת"
   },
   {
     "bcv_short": "Na2:3",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=בֹּֽקֲקִ֔ים"
+    "r": "בֹּֽקֲקִ֔ים"
   },
   {
     "bcv_short": "Na2:5",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=יִתְהוֹלֲל֣וּ"
+    "r": "יִתְהוֹלֲל֣וּ"
   },
   {
     "bcv_short": "Na2:8",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=מְתֹפֲפֹ֖ת"
+    "r": "מְתֹפֲפֹ֖ת"
   },
   {
     "bcv_short": "Hb3:6",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וַיִּתְפֹּֽצֲצוּ֙"
+    "r": "וַיִּתְפֹּֽצֲצוּ֙"
   },
   {
     "bcv_short": "Hb3:16",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=צָלֲל֣וּ"
+    "r": "צָלֲל֣וּ"
   },
   {
     "bcv_short": "Ts1:9",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽמֲמַלְאִ֛ים"
+    "r": "הַֽמֲמַלְאִ֛ים"
   },
   {
     "bcv_short": "Ts2:1",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הִֽתְקוֹשֲׁשׁ֖וּ"
+    "r": "הִֽתְקוֹשֲׁשׁ֖וּ"
   },
   {
     "bcv_short": "Ts2:12",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=חַֽלֲלֵ֥י"
+    "r": "חַֽלֲלֵ֥י"
   },
   {
     "bcv_short": "Zc4:12",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל=שִׁבֲּלֵ֣י"
+    "r": "שִׁבֲּלֵ֣י"
   },
   {
     "bcv_short": "Zc11:3",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=יִֽלֲלַ֣ת"
+    "r": "יִֽלֲלַ֣ת"
   },
   {
     "bcv_short": "Ps5:6",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=ה֭וֹלֲלִים"
+    "r": "ה֭וֹלֲלִים"
   },
   {
     "bcv_short": "Ps5:9",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=שׁוֹרֲרָ֑י"
+    "r": "שׁוֹרֲרָ֑י"
   },
   {
     "bcv_short": "Ps6:8",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=עָשֲׁשָׁ֣ה"
+    "r": "עָשֲׁשָׁ֣ה"
   },
   {
     "bcv_short": "Ps6:8",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=בְּכׇל־צוֹרֲרָֽי"
+    "r": "בְּכׇל־צוֹרֲרָֽי"
   },
   {
     "bcv_short": "Ps7:5",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=צוֹרֲרִ֣י"
+    "r": "צוֹרֲרִ֣י"
   },
   {
     "bcv_short": "Ps7:7",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=צוֹרֲרָ֑י"
+    "r": "צוֹרֲרָ֑י"
   },
   {
     "bcv_short": "Ps7:8",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=תְּסֽוֹבֲבֶ֑ךָּ"
+    "r": "תְּסֽוֹבֲבֶ֑ךָּ"
   },
   {
     "bcv_short": "Ps8:3",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=<עוֹלֲלִ֨ים"
+    "r": "עוֹלֲלִ֨ים"
   },
   {
     "bcv_short": "Ps8:3",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=צוֹרֲרֶ֑יךָ"
+    "r": "צוֹרֲרֶ֑יךָ"
   },
   {
     "bcv_short": "Ps9:14",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=חָֽנֲנֵ֬נִי"
+    "r": "חָֽנֲנֵ֬נִי"
   },
   {
     "bcv_short": "Ps9:14",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=מְ֝רוֹמֲמִ֗י"
+    "r": "מְ֝רוֹמֲמִ֗י"
   },
   {
     "bcv_short": "Ps10:5",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=כׇּל־צ֝וֹרֲרָ֗יו"
+    "r": "כׇּל־צ֝וֹרֲרָ֗יו"
   },
   {
     "bcv_short": "Ps11:2",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=כּוֹנֲנ֣וּ"
+    "r": "כּוֹנֲנ֣וּ"
   },
   {
     "bcv_short": "Ps12:7",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=אִ֥מֲר֣וֹת"
+    "r": "אִ֥מֲר֣וֹת"
   },
   {
     "bcv_short": "Ps17:14",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "<מִ֥מֲתִֽים־יָדְךָ֨"
+    "r": "מִ֥מֲתִֽים־יָדְךָ֨"
   },
   {
     "bcv_short": "Ps17:14",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ושיטת-א=מִֽמֲתִ֬ים"
+    "r": "מִֽמֲתִ֬ים"
   },
   {
     "bcv_short": "Ps18:7",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל,ל-א,גסטר1,שיטת-א=אֶ֥קֲרָ֣א"
+    "r": "אֶ֥קֲרָ֣א"
   },
   {
     "bcv_short": "Ps18:7",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "הקלדה=אֶֽקֲרָ֣א"
+    "r": "אֶֽקֲרָ֣א"
   },
   {
     "bcv_short": "Ps26:6",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וַאֲסֹבֲבָ֖ה"
+    "r": "וַאֲסֹבֲבָ֖ה"
   },
   {
     "bcv_short": "Ps27:5",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א!=יְרוֹמֲמֵֽנִּי"
+    "r": "יְרוֹמֲמֵֽנִּי"
   },
   {
     "bcv_short": "Ps27:11",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=שֽׁוֹרֲרָֽי"
+    "r": "שֽׁוֹרֲרָֽי"
   },
   {
     "bcv_short": "Ps31:10",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=עָשֲׁשָׁ֖ה"
+    "r": "עָשֲׁשָׁ֖ה"
   },
   {
     "bcv_short": "Ps31:12",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=מִכׇּל־צֹרֲרַ֨י"
+    "r": "מִכׇּל־צֹרֲרַ֨י"
   },
   {
     "bcv_short": "Ps31:12",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=<וְלִ֥שֲׁכֵנַ֨י"
+    "r": "וְלִ֥שֲׁכֵנַ֨י"
   },
   {
     "bcv_short": "Ps31:12",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=נָדֲד֥וּ"
+    "r": "נָדֲד֥וּ"
   },
   {
     "bcv_short": "Ps32:7",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=תְּס֖וֹבֲבֵ֣נִי"
+    "r": "תְּס֖וֹבֲבֵ֣נִי"
   },
   {
     "bcv_short": "Ps32:10",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=יְסוֹבֲבֶֽנּוּ"
+    "r": "יְסוֹבֲבֶֽנּוּ"
   },
   {
     "bcv_short": "Ps34:1",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וַ֝יְגָרֲשֵׁ֗הוּ"
+    "r": "וַ֝יְגָרֲשֵׁ֗הוּ"
   },
   {
     "bcv_short": "Ps34:2",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=אֲבָרֲכָ֣ה"
+    "r": "אֲבָרֲכָ֣ה"
   },
   {
     "bcv_short": "Ps34:4",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וּנְרוֹמֲמָ֖ה"
+    "r": "וּנְרוֹמֲמָ֖ה"
   },
   {
     "bcv_short": "Ps35:18",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=אֲהַלֲלֶֽךָּ"
+    "r": "אֲהַלֲלֶֽךָּ"
   },
   {
     "bcv_short": "Ps39:13",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "<שִׁ֥מֲעָֽה"
+    "r": "שִׁ֥מֲעָֽה"
   },
   {
     "bcv_short": "Ps40:13",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=אָפֲפֽוּ־עָלַ֨י"
+    "r": "אָפֲפֽוּ־עָלַ֨י"
   },
   {
     "bcv_short": "Ps42:11",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=צוֹרֲרָ֑י"
+    "r": "צוֹרֲרָ֑י"
   },
   {
     "bcv_short": "Ps55:11",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=יְסוֹבֲבֻ֥הָ"
+    "r": "יְסוֹבֲבֻ֥הָ"
   },
   {
     "bcv_short": "Ps55:22",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וּֽקֲרָב־לִ֫בּ֥וֹ"
+    "r": "וּֽקֲרָב־לִ֫בּ֥וֹ"
   },
   {
     "bcv_short": "Ps56:3",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=שׁ֭וֹרֲרַי"
+    "r": "שׁ֭וֹרֲרַי"
   },
   {
     "bcv_short": "Ps59:7",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וִיס֥וֹבֲבוּ"
+    "r": "וִיס֥וֹבֲבוּ"
   },
   {
     "bcv_short": "Ps59:15",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וִיס֥וֹבֲבוּ"
+    "r": "וִיס֥וֹבֲבוּ"
   },
   {
     "bcv_short": "Ps60:9",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=מְחֹֽקֲקִֽי"
+    "r": "מְחֹֽקֲקִֽי"
   },
   {
     "bcv_short": "Ps62:4",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=תְּה֥וֹתֲת֣וּ"
+    "r": "תְּה֥וֹתֲת֣וּ"
   },
   {
     "bcv_short": "Ps62:5",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=יְקַֽלֲלוּ־סֶֽלָה"
+    "r": "יְקַֽלֲלוּ־סֶֽלָה"
   },
   {
     "bcv_short": "Ps64:9",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=יִ֝תְנֹדֲד֗וּ"
+    "r": "יִ֝תְנֹדֲד֗וּ"
   },
   {
     "bcv_short": "Ps64:11",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וְ֝יִתְהַלֲל֗וּ"
+    "r": "וְ֝יִתְהַלֲל֗וּ"
   },
   {
     "bcv_short": "Ps65:5",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=תִּ֥בֲחַ֣ר"
+    "r": "תִּ֥בֲחַ֣ר"
   },
   {
     "bcv_short": "Ps65:10",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וַתְּשֹׁ֪קֲקֶ֡הָ"
+    "r": "וַתְּשֹׁ֪קֲקֶ֡הָ"
   },
   {
     "bcv_short": "Ps65:11",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=תְּ֝מֹגֲגֶ֗נָּה"
+    "r": "תְּ֝מֹגֲגֶ֗נָּה"
   },
   {
     "bcv_short": "Ps66:7",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=<הַסּוֹרֲרִ֓ים"
+    "r": "הַסּוֹרֲרִ֓ים"
   },
   {
     "bcv_short": "Ps66:8",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=בָּרֲכ֖וּ"
+    "r": "בָּרֲכ֖וּ"
   },
   {
     "bcv_short": "Ps66:12",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=לָרֲוָיָֽה"
+    "r": "לָרֲוָיָֽה"
   },
   {
     "bcv_short": "Ps67:2",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וִיבָרֲכֵ֑נוּ"
+    "r": "וִיבָרֲכֵ֑נוּ"
   },
   {
     "bcv_short": "Ps67:7",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=יְ֝בָרֲכֵ֗נוּ"
+    "r": "יְ֝בָרֲכֵ֗נוּ"
   },
   {
     "bcv_short": "Ps67:8",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=יְבָרֲכֵ֥נוּ"
+    "r": "יְבָרֲכֵ֥נוּ"
   },
   {
     "bcv_short": "Ps68:7",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=ס֝וֹרֲרִ֗ים"
+    "r": "ס֝וֹרֲרִ֗ים"
   },
   {
     "bcv_short": "Ps68:19",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=ס֝וֹרֲרִ֗ים"
+    "r": "ס֝וֹרֲרִ֗ים"
   },
   {
     "bcv_short": "Ps68:24",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=תִּ֥מֲחַ֥ץ"
+    "r": "תִּ֥מֲחַ֥ץ"
   },
   {
     "bcv_short": "Ps68:27",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=בָּרֲכ֣וּ"
+    "r": "בָּרֲכ֣וּ"
   },
   {
     "bcv_short": "Ps69:20",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=כׇּל־צוֹרֲרָֽי"
+    "r": "כׇּל־צוֹרֲרָֽי"
   },
   {
     "bcv_short": "Ps69:31",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=אֲהַלֲלָ֣ה"
+    "r": "אֲהַלֲלָ֣ה"
   },
   {
     "bcv_short": "Ps69:35",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=יְֽ֭הַלֲלוּהוּ"
+    "r": "יְֽ֭הַלֲלוּהוּ"
   },
   {
     "bcv_short": "Ps72:15",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=יְבָרֲכֶֽנְהוּ"
+    "r": "יְבָרֲכֶֽנְהוּ"
   },
   {
     "bcv_short": "Ps73:3",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=בַּהוֹלֲלִ֑ים"
+    "r": "בַּהוֹלֲלִ֑ים"
   },
   {
     "bcv_short": "Ps73:28",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=קִ֥רֲבַ֥ת"
+    "r": "קִ֥רֲבַ֥ת"
   },
   {
     "bcv_short": "Ps74:4",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=צֹ֭רֲרֶיךָ"
+    "r": "צֹ֭רֲרֶיךָ"
   },
   {
     "bcv_short": "Ps74:5",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=בִּסֲבָךְ־עֵ֝ץ"
+    "r": "בִּסֲבָךְ־עֵ֝ץ"
   },
   {
     "bcv_short": "Ps74:21",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=יְֽהַלֲל֥וּ"
+    "r": "יְֽהַלֲל֥וּ"
   },
   {
     "bcv_short": "Ps74:23",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=צֹרֲרֶ֑יךָ"
+    "r": "צֹרֲרֶ֑יךָ"
   },
   {
     "bcv_short": "Ps75:5",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=לַ֭הוֹלֲלִים"
+    "r": "לַ֭הוֹלֲלִים"
   },
   {
     "bcv_short": "Ps76:6",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=<אֶשְׁתּֽוֹלֲל֨וּ"
+    "r": "אֶשְׁתּֽוֹלֲל֨וּ"
   },
   {
     "bcv_short": "Ps76:12",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=נִ֥דֲר֣וּ"
+    "r": "נִ֥דֲר֣וּ"
   },
   {
     "bcv_short": "Ps80:3",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=עוֹרֲרָ֥ה"
+    "r": "עוֹרֲרָ֥ה"
   },
   {
     "bcv_short": "Ps80:11",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=אַֽרֲזֵי־אֵֽל"
+    "r": "אַֽרֲזֵי־אֵֽל"
   },
   {
     "bcv_short": "Ps83:13",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=נִ֣ירֲשָׁה"
+    "r": "נִ֣ירֲשָׁה"
   },
   {
     "bcv_short": "Ps84:5",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=יְֽהַלֲל֥וּךָ"
+    "r": "יְֽהַלֲל֥וּךָ"
   },
   {
     "bcv_short": "Ps87:5",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=<וּ֥לֲצִיּ֨וֹן"
+    "r": "וּ֥לֲצִיּ֨וֹן"
   },
   {
     "bcv_short": "Ps87:7",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=כְּחֹלֲלִ֑ים"
+    "r": "כְּחֹלֲלִ֑ים"
   },
   {
     "bcv_short": "Ps90:17",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=כּוֹנֲנָ֥ה"
+    "r": "כּוֹנֲנָ֥ה"
   },
   {
     "bcv_short": "Ps90:17",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=כּוֹנֲנֵֽהוּ"
+    "r": "כּוֹנֲנֵֽהוּ"
   },
   {
     "bcv_short": "Ps94:10",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽמֲלַמֵּ֖ד"
+    "r": "הַֽמֲלַמֵּ֖ד"
   },
   {
     "bcv_short": "Ps96:2",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=בָּרֲכ֣וּ"
+    "r": "בָּרֲכ֣וּ"
   },
   {
     "bcv_short": "Ps97:7",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַמִּֽתְהַלֲלִ֥ים"
+    "r": "הַמִּֽתְהַלֲלִ֥ים"
   },
   {
     "bcv_short": "Ps99:5",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=רוֹמֲמ֡וּ"
+    "r": "רוֹמֲמ֡וּ"
   },
   {
     "bcv_short": "Ps99:9",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=רוֹמֲמ֡וּ"
+    "r": "רוֹמֲמ֡וּ"
   },
   {
     "bcv_short": "Ps100:4",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א,ל=בָּרֲכ֥וּ"
+    "r": "בָּרֲכ֥וּ"
   },
   {
     "bcv_short": "Ps103:1",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=בָּרֲכִ֣י"
+    "r": "בָּרֲכִ֣י"
   },
   {
     "bcv_short": "Ps103:2",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=בָּרֲכִ֣י"
+    "r": "בָּרֲכִ֣י"
   },
   {
     "bcv_short": "Ps103:20",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=בָּרֲכ֥וּ"
+    "r": "בָּרֲכ֥וּ"
   },
   {
     "bcv_short": "Ps103:21",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=בָּרֲכ֣וּ"
+    "r": "בָּרֲכ֣וּ"
   },
   {
     "bcv_short": "Ps103:22",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=בָּרֲכ֤וּ"
+    "r": "בָּרֲכ֤וּ"
   },
   {
     "bcv_short": "Ps103:22",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=בָּרֲכִ֥י"
+    "r": "בָּרֲכִ֥י"
   },
   {
     "bcv_short": "Ps104:1",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=בָּרֲכִ֥י"
+    "r": "בָּרֲכִ֥י"
   },
   {
     "bcv_short": "Ps104:3",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַ֥מֲקָרֶ֥ה"
+    "r": "הַ֥מֲקָרֶ֥ה"
   },
   {
     "bcv_short": "Ps104:3",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽ֝מֲהַלֵּ֗ךְ"
+    "r": "הַֽ֝מֲהַלֵּ֗ךְ"
   },
   {
     "bcv_short": "Ps104:10",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽמֲשַׁלֵּ֣חַ"
+    "r": "הַֽמֲשַׁלֵּ֣חַ"
   },
   {
     "bcv_short": "Ps104:18",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=לַֽשֲׁפַנִּֽים"
+    "r": "לַֽשֲׁפַנִּֽים"
   },
   {
     "bcv_short": "Ps104:35",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=בָּרֲכִ֣י"
+    "r": "בָּרֲכִ֣י"
   },
   {
     "bcv_short": "Ps104:35",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽלֲלוּ־יָֽהּ"
+    "r": "הַֽלֲלוּ־יָֽהּ"
   },
   {
     "bcv_short": "Ps105:3",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הִֽ֭תְהַלֲלוּ"
+    "r": "הִֽ֭תְהַלֲלוּ"
   },
   {
     "bcv_short": "Ps105:45",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽלֲלוּ־יָֽהּ"
+    "r": "הַֽלֲלוּ־יָֽהּ"
   },
   {
     "bcv_short": "Ps106:1",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=<הַ֥לֲלוּ"
+    "r": "הַ֥לֲלוּ"
   },
   {
     "bcv_short": "Ps107:36",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וַ֝יְכוֹנֲנ֗וּ"
+    "r": "וַ֝יְכוֹנֲנ֗וּ"
   },
   {
     "bcv_short": "Ps107:38",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וַיְבָרֲכֵ֣ם"
+    "r": "וַיְבָרֲכֵ֣ם"
   },
   {
     "bcv_short": "Ps107:43",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וְ֝יִתְבּוֹנֲנ֗וּ"
+    "r": "וְ֝יִתְבּוֹנֲנ֗וּ"
   },
   {
     "bcv_short": "Ps108:9",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=מְחֹקֲקִֽי"
+    "r": "מְחֹקֲקִֽי"
   },
   {
     "bcv_short": "Ps109:28",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=יְקַֽלֲלוּ־הֵמָּה֮"
+    "r": "יְקַֽלֲלוּ־הֵמָּה֮"
   },
   {
     "bcv_short": "Ps109:30",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=אֲהַלֲלֶֽנּוּ"
+    "r": "אֲהַלֲלֶֽנּוּ"
   },
   {
     "bcv_short": "Ps111:1",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=<הַ֥לֲלוּ"
+    "r": "הַ֥לֲלוּ"
   },
   {
     "bcv_short": "Ps112:1",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=<הַ֥לֲלוּ"
+    "r": "הַ֥לֲלוּ"
   },
   {
     "bcv_short": "Ps113:1",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=<הַ֥לֲלוּ"
+    "r": "הַ֥לֲלוּ"
   },
   {
     "bcv_short": "Ps113:1",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַ֭לֲלוּ"
+    "r": "הַ֭לֲלוּ"
   },
   {
     "bcv_short": "Ps113:1",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽ֝לֲל֗וּ"
+    "r": "הַֽ֝לֲל֗וּ"
   },
   {
     "bcv_short": "Ps113:9",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽלֲלוּ־יָֽהּ"
+    "r": "הַֽלֲלוּ־יָֽהּ"
   },
   {
     "bcv_short": "Ps115:18",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽלֲלוּ־יָֽהּ"
+    "r": "הַֽלֲלוּ־יָֽהּ"
   },
   {
     "bcv_short": "Ps118:28",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=אֲרוֹמֲמֶֽךָּ"
+    "r": "אֲרוֹמֲמֶֽךָּ"
   },
   {
     "bcv_short": "Ps119:115",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וְ֝אֶצֲּרָ֗ה"
+    "r": "וְ֝אֶצֲּרָ֗ה"
   },
   {
     "bcv_short": "Ps119:175",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וּֽתְהַלֲלֶ֑ךָּ"
+    "r": "וּֽתְהַלֲלֶ֑ךָּ"
   },
   {
     "bcv_short": "Ps134:1",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=בָּרֲכ֣וּ"
+    "r": "בָּרֲכ֣וּ"
   },
   {
     "bcv_short": "Ps134:2",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וּ֝בָרֲכ֗וּ"
+    "r": "וּ֝בָרֲכ֗וּ"
   },
   {
     "bcv_short": "Ps135:1",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=<הַ֥לֲלוּ"
+    "r": "הַ֥לֲלוּ"
   },
   {
     "bcv_short": "Ps135:1",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽ֭לֲלוּ"
+    "r": "הַֽ֭לֲלוּ"
   },
   {
     "bcv_short": "Ps135:1",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽ֝לֲל֗וּ"
+    "r": "הַֽ֝לֲל֗וּ"
   },
   {
     "bcv_short": "Ps135:3",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽלֲלוּ־יָ֭הּ"
+    "r": "הַֽלֲלוּ־יָ֭הּ"
   },
   {
     "bcv_short": "Ps135:19",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=בָּרֲכ֣וּ"
+    "r": "בָּרֲכ֣וּ"
   },
   {
     "bcv_short": "Ps135:19",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=בָּרֲכ֥וּ"
+    "r": "בָּרֲכ֥וּ"
   },
   {
     "bcv_short": "Ps135:20",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=בָּרֲכ֣וּ"
+    "r": "בָּרֲכ֣וּ"
   },
   {
     "bcv_short": "Ps135:20",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=בָּרֲכ֥וּ"
+    "r": "בָּרֲכ֥וּ"
   },
   {
     "bcv_short": "Ps135:21",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽלֲלוּ־יָֽהּ"
+    "r": "הַֽלֲלוּ־יָֽהּ"
   },
   {
     "bcv_short": "Ps139:21",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וּ֝בִתְקוֹמֲמֶ֗יךָ"
+    "r": "וּ֝בִתְקוֹמֲמֶ֗יךָ"
   },
   {
     "bcv_short": "Ps140:4",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=שָׁ֥נֲנ֣וּ"
+    "r": "שָׁ֥נֲנ֣וּ"
   },
   {
     "bcv_short": "Ps143:12",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=כׇּל־צֹרֲרֵ֣י"
+    "r": "כׇּל־צֹרֲרֵ֣י"
   },
   {
     "bcv_short": "Ps144:1",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽמֲלַמֵּ֣ד"
+    "r": "הַֽמֲלַמֵּ֣ד"
   },
   {
     "bcv_short": "Ps144:15",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל!=שֶׁיֲהֹוָ֥ה"
+    "r": "שֶׁיֲהֹוָ֥ה"
   },
   {
     "bcv_short": "Ps145:1",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וַאֲבָרֲכָ֥ה"
+    "r": "וַאֲבָרֲכָ֥ה"
   },
   {
     "bcv_short": "Ps145:2",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=אֲבָרֲכֶ֑ךָּ"
+    "r": "אֲבָרֲכֶ֑ךָּ"
   },
   {
     "bcv_short": "Ps145:2",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וַאֲהַלֲלָ֥ה"
+    "r": "וַאֲהַלֲלָ֥ה"
   },
   {
     "bcv_short": "Ps145:10",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=יְבָרֲכֽוּכָה"
+    "r": "יְבָרֲכֽוּכָה"
   },
   {
     "bcv_short": "Ps146:1",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽלֲלוּ־יָ֡הּ"
+    "r": "הַֽלֲלוּ־יָ֡הּ"
   },
   {
     "bcv_short": "Ps146:1",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽלֲלִ֥י"
+    "r": "הַֽלֲלִ֥י"
   },
   {
     "bcv_short": "Ps146:2",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=אֲהַלֲלָ֣ה"
+    "r": "אֲהַלֲלָ֣ה"
   },
   {
     "bcv_short": "Ps146:10",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽלֲלוּ־יָֽהּ"
+    "r": "הַֽלֲלוּ־יָֽהּ"
   },
   {
     "bcv_short": "Ps147:1",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=<הַ֥לֲלוּ"
+    "r": "הַ֥לֲלוּ"
   },
   {
     "bcv_short": "Ps147:8",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽמֲכַסֶּ֬ה"
+    "r": "הַֽמֲכַסֶּ֬ה"
   },
   {
     "bcv_short": "Ps147:12",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽלֲלִ֖י"
+    "r": "הַֽלֲלִ֖י"
   },
   {
     "bcv_short": "Ps147:20",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽלֲלוּ־יָֽהּ"
+    "r": "הַֽלֲלוּ־יָֽהּ"
   },
   {
     "bcv_short": "Ps148:1",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=<הַ֥לֲלוּ"
+    "r": "הַ֥לֲלוּ"
   },
   {
     "bcv_short": "Ps148:1",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽלֲל֣וּ"
+    "r": "הַֽלֲל֣וּ"
   },
   {
     "bcv_short": "Ps148:1",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽ֝לֲל֗וּהוּ"
+    "r": "הַֽ֝לֲל֗וּהוּ"
   },
   {
     "bcv_short": "Ps148:2",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽלֲל֥וּהוּ"
+    "r": "הַֽלֲל֥וּהוּ"
   },
   {
     "bcv_short": "Ps148:3",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽ֭לֲלוּהוּ"
+    "r": "הַֽ֭לֲלוּהוּ"
   },
   {
     "bcv_short": "Ps148:3",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽ֝לֲל֗וּהוּ"
+    "r": "הַֽ֝לֲל֗וּהוּ"
   },
   {
     "bcv_short": "Ps148:4",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽ֭לֲלוּהוּ"
+    "r": "הַֽ֭לֲלוּהוּ"
   },
   {
     "bcv_short": "Ps148:5",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=יְֽ֭הַלֲלוּ"
+    "r": "יְֽ֭הַלֲלוּ"
   },
   {
     "bcv_short": "Ps148:7",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽלֲל֣וּ"
+    "r": "הַֽלֲל֣וּ"
   },
   {
     "bcv_short": "Ps148:13",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=<יְהַלֲל֤וּ"
+    "r": "יְהַלֲל֤וּ"
   },
   {
     "bcv_short": "Ps148:14",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽלֲלוּ־יָֽהּ"
+    "r": "הַֽלֲלוּ־יָֽהּ"
   },
   {
     "bcv_short": "Ps149:1",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=<הַ֥לֲלוּ"
+    "r": "הַ֥לֲלוּ"
   },
   {
     "bcv_short": "Ps149:3",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=יְהַלֲל֣וּ"
+    "r": "יְהַלֲל֣וּ"
   },
   {
     "bcv_short": "Ps149:6",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=רוֹמֲמ֣וֹת"
+    "r": "רוֹמֲמ֣וֹת"
   },
   {
     "bcv_short": "Ps149:9",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽלֲלוּ־יָֽהּ"
+    "r": "הַֽלֲלוּ־יָֽהּ"
   },
   {
     "bcv_short": "Ps150:1",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=<הַ֥לֲלוּ"
+    "r": "הַ֥לֲלוּ"
   },
   {
     "bcv_short": "Ps150:1",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽלֲלוּ־אֵ֥ל"
+    "r": "הַֽלֲלוּ־אֵ֥ל"
   },
   {
     "bcv_short": "Ps150:1",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽ֝לֲל֗וּהוּ"
+    "r": "הַֽ֝לֲל֗וּהוּ"
   },
   {
     "bcv_short": "Ps150:2",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַלֲל֥וּהוּ"
+    "r": "הַלֲל֥וּהוּ"
   },
   {
     "bcv_short": "Ps150:2",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַ֝לֲל֗וּהוּ"
+    "r": "הַ֝לֲל֗וּהוּ"
   },
   {
     "bcv_short": "Ps150:3",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַ֭לֲלוּהוּ"
+    "r": "הַ֭לֲלוּהוּ"
   },
   {
     "bcv_short": "Ps150:3",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַ֝לֲל֗וּהוּ"
+    "r": "הַ֝לֲל֗וּהוּ"
   },
   {
     "bcv_short": "Ps150:4",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַ֭לֲלוּהוּ"
+    "r": "הַ֭לֲלוּהוּ"
   },
   {
     "bcv_short": "Ps150:4",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽ֝לֲל֗וּהוּ"
+    "r": "הַֽ֝לֲל֗וּהוּ"
   },
   {
     "bcv_short": "Ps150:5",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַלֲל֥וּהוּ"
+    "r": "הַלֲל֥וּהוּ"
   },
   {
     "bcv_short": "Ps150:5",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽ֝לֲל֗וּהוּ"
+    "r": "הַֽ֝לֲל֗וּהוּ"
   },
   {
     "bcv_short": "Ps150:6",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽלֲלוּ־יָֽהּ"
+    "r": "הַֽלֲלוּ־יָֽהּ"
   },
   {
     "bcv_short": "Pr8:15",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=יְחֹ֣קֲקוּ"
+    "r": "יְחֹ֣קֲקוּ"
   },
   {
     "bcv_short": "Pr23:20",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=בְּזֹלֲלֵ֖י"
+    "r": "בְּזֹלֲלֵ֖י"
   },
   {
     "bcv_short": "Pr24:19",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=בָּֽרֲשָׁעִֽים"
+    "r": "בָּֽרֲשָׁעִֽים"
   },
   {
     "bcv_short": "Pr26:2",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=קִֽלֲלַ֥ת"
+    "r": "קִֽלֲלַ֥ת"
   },
   {
     "bcv_short": "Pr28:4",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=יְהַלֲל֣וּ"
+    "r": "יְהַלֲל֣וּ"
   },
   {
     "bcv_short": "Pr28:7",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=ז֝וֹלֲלִ֗ים"
+    "r": "ז֝וֹלֲלִ֗ים"
   },
   {
     "bcv_short": "Pr30:17",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=תִּ֥לֲעַ֣ג"
+    "r": "תִּ֥לֲעַ֣ג"
   },
   {
     "bcv_short": "Pr30:17",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל=לִֽיקֲּהַ֫ת־אֵ֥ם"
+    "r": "לִֽיקֲּהַ֫ת־אֵ֥ם"
   },
   {
     "bcv_short": "Pr31:4",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=לַֽמֲלָכִ֣ים"
+    "r": "לַֽמֲלָכִ֣ים"
   },
   {
     "bcv_short": "Pr31:16",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=זָמֲמָ֣ה"
+    "r": "זָמֲמָ֣ה"
   },
   {
     "bcv_short": "Pr31:28",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וַֽיְהַלֲלָֽהּ"
+    "r": "וַֽיְהַלֲלָֽהּ"
   },
   {
     "bcv_short": "Pr31:31",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וִיהַלֲל֖וּהָ"
+    "r": "וִיהַלֲל֖וּהָ"
   },
   {
     "bcv_short": "Jb1:5",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וּבֵרֲכ֥וּ"
+    "r": "וּבֵרֲכ֥וּ"
   },
   {
     "bcv_short": "Jb1:11",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=יְבָרֲכֶֽךָּ"
+    "r": "יְבָרֲכֶֽךָּ"
   },
   {
     "bcv_short": "Jb2:5",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=יְבָרֲכֶֽךָּ"
+    "r": "יְבָרֲכֶֽךָּ"
   },
   {
     "bcv_short": "Jb3:8",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=אֹֽרֲרֵי־י֑וֹם"
+    "r": "אֹֽרֲרֵי־י֑וֹם"
   },
   {
     "bcv_short": "Jb3:15",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽמֲמַלְאִ֖ים"
+    "r": "הַֽמֲמַלְאִ֖ים"
   },
   {
     "bcv_short": "Jb3:16",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=כְּ֝עֹלֲלִ֗ים"
+    "r": "כְּ֝עֹלֲלִ֗ים"
   },
   {
     "bcv_short": "Jb3:21",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽמֲחַכִּ֣ים"
+    "r": "הַֽמֲחַכִּ֣ים"
   },
   {
     "bcv_short": "Jb5:14",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=יְֽמַשֲׁשׁ֥וּ"
+    "r": "יְֽמַשֲׁשׁ֥וּ"
   },
   {
     "bcv_short": "Jb10:11",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=תְּשֹׂכֲכֵֽנִי"
+    "r": "תְּשֹׂכֲכֵֽנִי"
   },
   {
     "bcv_short": "Jb12:6",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=לְשֹׁ֥דֲדִ֗ים"
+    "r": "לְשֹׁ֥דֲדִ֗ים"
   },
   {
     "bcv_short": "Jb12:25",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=יְמַֽשֲׁשׁוּ־חֹ֥שֶׁךְ"
+    "r": "יְמַֽשֲׁשׁוּ־חֹ֥שֶׁךְ"
   },
   {
     "bcv_short": "Jb20:7",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=כְּֽ֭גֶלֲלוֹ"
+    "r": "כְּֽ֭גֶלֲלוֹ"
   },
   {
     "bcv_short": "Jb26:13",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=חֹלֲלָ֥ה"
+    "r": "חֹלֲלָ֥ה"
   },
   {
     "bcv_short": "Jb27:7",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וּמִתְקוֹמֲמִ֥י"
+    "r": "וּמִתְקוֹמֲמִ֥י"
   },
   {
     "bcv_short": "Jb29:25",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=אֶ֥בֲחַ֣ר"
+    "r": "אֶ֥בֲחַ֣ר"
   },
   {
     "bcv_short": "Jb30:22",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וּ֝תְמֹגֲגֵ֗נִי"
+    "r": "וּ֝תְמֹגֲגֵ֗נִי"
   },
   {
     "bcv_short": "Jb31:20",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=בֵרֲכ֣וּנִי"
+    "r": "בֵרֲכ֣וּנִי"
   },
   {
     "bcv_short": "Jb31:37",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=אֲקָֽרֲבֶֽנּוּ"
+    "r": "אֲקָֽרֲבֶֽנּוּ"
   },
   {
     "bcv_short": "Jb33:22",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=לַֽמֲמִתִֽים"
+    "r": "לַֽמֲמִתִֽים"
   },
   {
     "bcv_short": "Jb33:25",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=רֻֽטֲפַ֣שׁ"
+    "r": "רֻֽטֲפַ֣שׁ"
   },
   {
     "bcv_short": "Jb34:10",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=אַ֥נֲשֵׁ֥י"
+    "r": "אַ֥נֲשֵׁ֥י"
   },
   {
     "bcv_short": "Jb36:24",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=שֹׁרֲר֣וּ"
+    "r": "שֹׁרֲר֣וּ"
   },
   {
     "bcv_short": "Jb38:31",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽ֭תֲקַשֵּׁר"
+    "r": "הַֽ֭תֲקַשֵּׁר"
   },
   {
     "bcv_short": "Jb38:35",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽתֲשַׁלַּ֣ח"
+    "r": "הַֽתֲשַׁלַּ֣ח"
   },
   {
     "bcv_short": "Jb40:22",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=צִֽלֲל֑וֹ"
+    "r": "צִֽלֲל֑וֹ"
   },
   {
     "bcv_short": "Jb40:31",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽתֲמַלֵּ֣א"
+    "r": "הַֽתֲמַלֵּ֣א"
   },
   {
     "bcv_short": "Jb42:10",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=בְּהִֽתְפַּֽלֲל֖וֹ"
+    "r": "בְּהִֽתְפַּֽלֲל֖וֹ"
   },
   {
     "bcv_short": "S2:7",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=תְּע֥וֹרֲר֛וּ"
+    "r": "תְּע֥וֹרֲר֛וּ"
   },
   {
     "bcv_short": "S2:7",
@@ -8747,182 +8747,182 @@
   {
     "bcv_short": "S2:7",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "(וְֽאִם־תְּע֥וֹרֲר֛וּ)"
+    "r": "וְֽאִם־תְּע֥וֹרֲר֛וּ"
   },
   {
     "bcv_short": "S3:2",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וַאֲסוֹבֲבָ֣ה"
+    "r": "וַאֲסוֹבֲבָ֣ה"
   },
   {
     "bcv_short": "S3:3",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַסֹּבֲבִ֖ים"
+    "r": "הַסֹּבֲבִ֖ים"
   },
   {
     "bcv_short": "S3:5",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=תְּע֥וֹרֲר֛וּ"
+    "r": "תְּע֥וֹרֲר֛וּ"
   },
   {
     "bcv_short": "S3:6",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א,ל=כְּתִֽימֲר֖וֹת"
+    "r": "כְּתִֽימֲר֖וֹת"
   },
   {
     "bcv_short": "S5:16",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל?!=מַחֲּמַדִּ֑ים"
+    "r": "מַחֲּמַדִּ֑ים"
   },
   {
     "bcv_short": "S8:2",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל=אֶנְהָֽגֲךָ֗"
+    "r": "אֶנְהָֽגֲךָ֗"
   },
   {
     "bcv_short": "S8:4",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "שיטת-א=תְּעֹ֥רֲר֛וּ"
+    "r": "תְּעֹ֥רֲר֛וּ"
   },
   {
     "bcv_short": "R2:2",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א,ל=אֵלֲכָה־נָּ֤א"
+    "r": "אֵלֲכָה־נָּ֤א"
   },
   {
     "bcv_short": "La2:20",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל=עֹלֲלֵ֣י"
+    "r": "עֹלֲלֵ֣י"
   },
   {
     "bcv_short": "Ec2:13",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ש1,ק13,ש2=כִּֽיתֲר֥וֹן"
+    "r": "כִּֽיתֲר֥וֹן"
   },
   {
     "bcv_short": "Ec6:2",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל=יֹֽאכֲלֶ֑נּוּ"
+    "r": "יֹֽאכֲלֶ֑נּוּ"
   },
   {
     "bcv_short": "Ec9:7",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל=וּֽשֲׁתֵ֥ה"
+    "r": "וּֽשֲׁתֵ֥ה"
   },
   {
     "bcv_short": "Es1:6",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "פטרבורג-EVR-II-B-55=רִֽצֲפַ֥ת"
+    "r": "רִֽצֲפַ֥ת"
   },
   {
     "bcv_short": "Da1:4",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל=וּֽלֲלַמְּדָ֥ם"
+    "r": "וּֽלֲלַמְּדָ֥ם"
   },
   {
     "bcv_short": "Da2:19",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל,ש1,ק-מ,ב1,ש2=גֲלִ֑י"
+    "r": "גֲלִ֑י"
   },
   {
     "bcv_short": "Da2:35",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל=לָא־הִשְׁתֲּכַ֣ח"
+    "r": "לָא־הִשְׁתֲּכַ֣ח"
   },
   {
     "bcv_short": "Da4:9",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל=צִפֲּרֵ֣י"
+    "r": "צִפֲּרֵ֣י"
   },
   {
     "bcv_short": "Da4:18",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל=צִפֲּרֵ֥י"
+    "r": "צִפֲּרֵ֥י"
   },
   {
     "bcv_short": "Da6:23",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל=וּֽסֲגַ֛ר"
+    "r": "וּֽסֲגַ֛ר"
   },
   {
     "bcv_short": "Da7:19",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל=מַדֲּקָ֔ה"
+    "r": "מַדֲּקָ֔ה"
   },
   {
     "bcv_short": "Da9:18",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל=וּֽשֲׁמָע֒"
+    "r": "וּֽשֲׁמָע֒"
   },
   {
     "bcv_short": "Da9:19",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל=הַֽקֲשִׁ֥יבָה"
+    "r": "הַֽקֲשִׁ֥יבָה"
   },
   {
     "bcv_short": "Da11:15",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל=סֽוֹלֲלָ֔ה"
+    "r": "סֽוֹלֲלָ֔ה"
   },
   {
     "bcv_short": "Da12:2",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל?=מִיֲּשֵׁנֵ֥י"
+    "r": "מִיֲּשֵׁנֵ֥י"
   },
   {
     "bcv_short": "Da12:10",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל=יִ֠תְבָּֽרֲרוּ"
+    "r": "יִ֠תְבָּֽרֲרוּ"
   },
   {
     "bcv_short": "Er8:26",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל=וָאֶשְׁקֲלָ֨ה"
+    "r": "וָאֶשְׁקֲלָ֨ה"
   },
   {
     "bcv_short": "Ne2:6",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל=מַֽהֲלָכֲךָ֖"
+    "r": "מַֽהֲלָכֲךָ֖"
   },
   {
     "bcv_short": "Ne3:13",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל=הָשֲׁפֽוֹת"
+    "r": "הָשֲׁפֽוֹת"
   },
   {
     "bcv_short": "Ne6:19",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל?=לְיָֽרֲאֵֽנִי"
+    "r": "לְיָֽרֲאֵֽנִי"
   },
   {
     "bcv_short": "Ne7:67",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל=מְשֹֽׁרֲרִים֙"
+    "r": "מְשֹֽׁרֲרִים֙"
   },
   {
     "bcv_short": "Ne7:67",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל=וּמְשֹׁ֣רֲר֔וֹת"
+    "r": "וּמְשֹׁ֣רֲר֔וֹת"
   },
   {
     "bcv_short": "Ne9:5",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל=בָּרֲכוּ֙"
+    "r": "בָּרֲכוּ֙"
   },
   {
     "bcv_short": "Ne11:2",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל=וַֽיְבָרֲכ֖וּ"
+    "r": "וַֽיְבָרֲכ֖וּ"
   },
   {
     "bcv_short": "Ne12:29",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל=הַמְשֹׁ֣רֲרִ֔ים"
+    "r": "הַמְשֹׁ֣רֲרִ֔ים"
   },
   {
     "bcv_short": "Ne12:36",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל=מִֽלֲלַ֡י"
+    "r": "מִֽלֲלַ֡י"
   },
   {
     "bcv_short": "Ne12:36",
@@ -8932,227 +8932,227 @@
   {
     "bcv_short": "Ne13:19",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "ל=צָֽלֲלוּ֩"
+    "r": "צָֽלֲלוּ֩"
   },
   {
     "bcv_short": "1C4:10",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=תְּבָרֲכֵ֜נִי"
+    "r": "תְּבָרֲכֵ֜נִי"
   },
   {
     "bcv_short": "1C5:16",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וּבְכׇֽל־מִגְרֲשֵׁ֥י"
+    "r": "וּבְכׇֽל־מִגְרֲשֵׁ֥י"
   },
   {
     "bcv_short": "1C15:18",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וֶאֱלִ֨יפֲלֵ֜הוּ"
+    "r": "וֶאֱלִ֨יפֲלֵ֜הוּ"
   },
   {
     "bcv_short": "1C15:19",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וְהַמְשֹׁ֣רֲרִ֔ים"
+    "r": "וְהַמְשֹׁ֣רֲרִ֔ים"
   },
   {
     "bcv_short": "1C15:21",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וֶאֱלִֽיפֲלֵ֗הוּ"
+    "r": "וֶאֱלִֽיפֲלֵ֗הוּ"
   },
   {
     "bcv_short": "1C15:27",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וְהַמְשֹׁ֣רֲרִ֔ים"
+    "r": "וְהַמְשֹׁ֣רֲרִ֔ים"
   },
   {
     "bcv_short": "1C15:27",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַמְשֹׁרֲרִ֑ים"
+    "r": "הַמְשֹׁרֲרִ֑ים"
   },
   {
     "bcv_short": "1C16:5",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=בַּֽמֲצִלְתַּ֥יִם"
+    "r": "בַּֽמֲצִלְתַּ֥יִם"
   },
   {
     "bcv_short": "1C16:10",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הִֽתְהַלֲלוּ֙"
+    "r": "הִֽתְהַלֲלוּ֙"
   },
   {
     "bcv_short": "1C18:10",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וּֽלְבָרֲכ֗וֹ"
+    "r": "וּֽלְבָרֲכ֗וֹ"
   },
   {
     "bcv_short": "1C19:3",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽמֲכַבֵּ֨ד"
+    "r": "הַֽמֲכַבֵּ֨ד"
   },
   {
     "bcv_short": "1C26:5",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=בֵרֲכ֖וֹ"
+    "r": "בֵרֲכ֖וֹ"
   },
   {
     "bcv_short": "1C26:16",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=בַּֽמֲסִלָּ֖ה"
+    "r": "בַּֽמֲסִלָּ֖ה"
   },
   {
     "bcv_short": "1C26:18",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=לַֽמֲסִלָּ֔ה"
+    "r": "לַֽמֲסִלָּ֔ה"
   },
   {
     "bcv_short": "1C26:32",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽמֲנַשִּׁ֔י"
+    "r": "הַֽמֲנַשִּׁ֔י"
   },
   {
     "bcv_short": "1C27:21",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽמֲנַשֶּׁה֙"
+    "r": "הַֽמֲנַשֶּׁה֙"
   },
   {
     "bcv_short": "1C27:31",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הָרֲכ֔וּשׁ"
+    "r": "הָרֲכ֔וּשׁ"
   },
   {
     "bcv_short": "1C28:18",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וְסֹכֲכִ֖ים"
+    "r": "וְסֹכֲכִ֖ים"
   },
   {
     "bcv_short": "1C29:2",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וּֽכֲכָל־כֹּחִ֞י"
+    "r": "וּֽכֲכָל־כֹּחִ֞י"
   },
   {
     "bcv_short": "1C29:20",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וַיְבָרֲכ֣וּ"
+    "r": "וַיְבָרֲכ֣וּ"
   },
   {
     "bcv_short": "2C5:12",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַמְשֹׁרֲרִ֣ים"
+    "r": "הַמְשֹׁרֲרִ֣ים"
   },
   {
     "bcv_short": "2C5:13",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וְלַמְשֹׁרֲרִ֜ים"
+    "r": "וְלַמְשֹׁרֲרִ֜ים"
   },
   {
     "bcv_short": "2C6:21",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=יִֽתְפַּלֲל֖וּ"
+    "r": "יִֽתְפַּלֲל֖וּ"
   },
   {
     "bcv_short": "2C6:24",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וְהִתְפַּֽלֲל֧וּ"
+    "r": "וְהִתְפַּֽלֲל֧וּ"
   },
   {
     "bcv_short": "2C6:38",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וְהִֽתְפַּֽלֲל֗וּ"
+    "r": "וְהִֽתְפַּֽלֲל֗וּ"
   },
   {
     "bcv_short": "2C7:14",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וְיִֽתְפַּֽלֲלוּ֙"
+    "r": "וְיִֽתְפַּֽלֲלוּ֙"
   },
   {
     "bcv_short": "2C12:13",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וּֽשֲׁבַ֨ע"
+    "r": "וּֽשֲׁבַ֨ע"
   },
   {
     "bcv_short": "2C16:9",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=מְשֹׁטֲט֤וֹת"
+    "r": "מְשֹׁטֲט֤וֹת"
   },
   {
     "bcv_short": "2C20:21",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=מְשֹֽׁרֲרִים֙"
+    "r": "מְשֹֽׁרֲרִים֙"
   },
   {
     "bcv_short": "2C20:21",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וּֽמְהַלֲלִ֖ים"
+    "r": "וּֽמְהַלֲלִ֖ים"
   },
   {
     "bcv_short": "2C20:25",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=בֹּזֲזִ֥ים"
+    "r": "בֹּזֲזִ֥ים"
   },
   {
     "bcv_short": "2C20:26",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=בֵּרֲכ֣וּ"
+    "r": "בֵּרֲכ֣וּ"
   },
   {
     "bcv_short": "2C21:17",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=כׇּל־הָרֲכוּשׁ֙"
+    "r": "כׇּל־הָרֲכוּשׁ֙"
   },
   {
     "bcv_short": "2C23:12",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וְהַֽמְהַלֲלִ֖ים"
+    "r": "וְהַֽמְהַלֲלִ֖ים"
   },
   {
     "bcv_short": "2C23:13",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וְהַמְשֽׁוֹרֲרִים֙"
+    "r": "וְהַמְשֽׁוֹרֲרִים֙"
   },
   {
     "bcv_short": "2C24:14",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וּֽכֲכַלּוֹתָ֡ם"
+    "r": "וּֽכֲכַלּוֹתָ֡ם"
   },
   {
     "bcv_short": "2C29:30",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וַֽיְהַלֲלוּ֙"
+    "r": "וַֽיְהַלֲלוּ֙"
   },
   {
     "bcv_short": "2C30:27",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וַיְבָרֲכ֣וּ"
+    "r": "וַיְבָרֲכ֣וּ"
   },
   {
     "bcv_short": "2C31:8",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וַֽיְבָרֲכוּ֙"
+    "r": "וַֽיְבָרֲכוּ֙"
   },
   {
     "bcv_short": "2C32:31",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽמֲשַׁלְּחִ֤ים"
+    "r": "הַֽמֲשַׁלְּחִ֤ים"
   },
   {
     "bcv_short": "2C33:18",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=הַֽמֲדַבְּרִ֣ים"
+    "r": "הַֽמֲדַבְּרִ֣ים"
   },
   {
     "bcv_short": "2C35:7",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=מֵרֲכ֥וּשׁ"
+    "r": "מֵרֲכ֥וּשׁ"
   },
   {
     "bcv_short": "2C35:15",
     "fp": "xatef-on-non-gutt/patax/doc-part-n",
-    "r": "א=וְהַמְשֹׁרֲרִ֨ים"
+    "r": "וְהַמְשֹׁרֲרִ֨ים"
   },
   {
     "bcv_short": "Ju7:7",
     "fp": "xatef-on-non-gutt/patax×2/doc-part-n",
-    "r": "א=הַֽמֲלַֽקֲקִים֙"
+    "r": "הַֽמֲלַֽקֲקִים֙"
   },
   {
     "bcv_short": "G16:13",
@@ -10312,242 +10312,242 @@
   {
     "bcv_short": "G2:23",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "ל,ה,ש2=לֻֽקֳחָה־זֹּֽאת"
+    "r": "לֻֽקֳחָה־זֹּֽאת"
   },
   {
     "bcv_short": "G30:38",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "ל=בָּרֳהָטִ֖ים"
+    "r": "בָּרֳהָטִ֖ים"
   },
   {
     "bcv_short": "G30:41",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "ל=בָּרֳהָטִ֑ים"
+    "r": "בָּרֳהָטִ֑ים"
   },
   {
     "bcv_short": "G41:7",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "ל!=הַֽשִׁבֳּלִ֔ים"
+    "r": "הַֽשִׁבֳּלִ֔ים"
   },
   {
     "bcv_short": "G41:24",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "ל!=הָשִׁבֳּלִ֣ים"
+    "r": "הָשִׁבֳּלִ֣ים"
   },
   {
     "bcv_short": "G41:24",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "ל?=הַֽשִׁבֳּלִ֖ים"
+    "r": "הַֽשִׁבֳּלִ֖ים"
   },
   {
     "bcv_short": "G41:27",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "ל!=הַֽשִׁבֳּלִים֙"
+    "r": "הַֽשִׁבֳּלִים֙"
   },
   {
     "bcv_short": "E37:25",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "ל=רֳחְבּ֜וֹ"
+    "r": "רֳחְבּ֜וֹ"
   },
   {
     "bcv_short": "N3:27",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "א(ס),ק3=הַקֳּהָתִֽי"
+    "r": "הַקֳּהָתִֽי"
   },
   {
     "bcv_short": "N4:7",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "א(ס)=אֶת־הַקֳּעָרֹ֤ת"
+    "r": "אֶת־הַקֳּעָרֹ֤ת"
   },
   {
     "bcv_short": "N5:28",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "ב,ו=וְנִזְרֳעָ֥ה"
+    "r": "וְנִזְרֳעָ֥ה"
   },
   {
     "bcv_short": "N32:35",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "ל=וְיָגְבֳּהָֽה"
+    "r": "וְיָגְבֳּהָֽה"
   },
   {
     "bcv_short": "D32:13",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "א=<עַל־בָּ֣מֳותֵי>"
+    "r": "עַל־בָּ֣מֳותֵי"
   },
   {
     "bcv_short": "Js21:4",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "א=הַקֳּהָתִ֑י"
+    "r": "הַקֳּהָתִ֑י"
   },
   {
     "bcv_short": "Js21:5",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "א=קֳהָ֜ת"
+    "r": "קֳהָ֜ת"
   },
   {
     "bcv_short": "Js21:10",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "א=הַקֳּהָתִ֖י"
+    "r": "הַקֳּהָתִ֖י"
   },
   {
     "bcv_short": "Js21:20",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "א=בְּנֵֽי־קֳהָת֙"
+    "r": "בְּנֵֽי־קֳהָת֙"
   },
   {
     "bcv_short": "Js21:20",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "א=קֳהָ֑ת"
+    "r": "קֳהָ֑ת"
   },
   {
     "bcv_short": "Js21:26",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "א=בְּנֵי־קֳהָ֖ת"
+    "r": "בְּנֵי־קֳהָ֖ת"
   },
   {
     "bcv_short": "Js21:34",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "א=אֶֽת־יָקְנֳעָ֖ם"
+    "r": "אֶֽת־יָקְנֳעָ֖ם"
   },
   {
     "bcv_short": "Ju3:26",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "א=הִֽתְמַהְמֳהָ֑ם"
+    "r": "הִֽתְמַהְמֳהָ֑ם"
   },
   {
     "bcv_short": "2S24:18",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "א-כתיב=אֲרַ֥נֳיה"
+    "r": "אֲרַ֥נֳיה"
   },
   {
     "bcv_short": "1K4:12",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "א=לְיָקְמֳעָֽם"
+    "r": "לְיָקְמֳעָֽם"
   },
   {
     "bcv_short": "1K13:7",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "א=וּֽסֳעָ֑דָה"
+    "r": "וּֽסֳעָ֑דָה"
   },
   {
     "bcv_short": "1K19:20",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "וקורן=אֶשֳּׂקָה־נָּא֙"
+    "r": "אֶשֳּׂקָה־נָּא֙"
   },
   {
     "bcv_short": "2K2:1",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "א=בַּֽסֳעָרָ֖ה"
+    "r": "בַּֽסֳעָרָ֖ה"
   },
   {
     "bcv_short": "2K2:11",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "א=בַּֽסֳעָרָ֖ה"
+    "r": "בַּֽסֳעָרָ֖ה"
   },
   {
     "bcv_short": "I18:4",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "א=אֶשְׁקֳוטָ֖ה"
+    "r": "אֶשְׁקֳוטָ֖ה"
   },
   {
     "bcv_short": "I27:8",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "א=בְּסַאסֳּאָ֖ה"
+    "r": "בְּסַאסֳּאָ֖ה"
   },
   {
     "bcv_short": "I58:14",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "א=עַל־בָּ֣מֳותֵי"
+    "r": "עַל־בָּ֣מֳותֵי"
   },
   {
     "bcv_short": "Je7:11",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "א=הַֽמֳעָרַ֣ת"
+    "r": "הַֽמֳעָרַ֣ת"
   },
   {
     "bcv_short": "Je22:20",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "א=וּֽצֳעָ֔קִי"
+    "r": "וּֽצֳעָ֔קִי"
   },
   {
     "bcv_short": "Je31:32",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "וקורן=אֶכְתֳּבֶ֑נָּה"
+    "r": "אֶכְתֳּבֶ֑נָּה"
   },
   {
     "bcv_short": "Je48:20",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "א-כתיב=וּֽזֳעָ֑קיּ"
+    "r": "וּֽזֳעָ֑קיּ"
   },
   {
     "bcv_short": "Je49:28",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "א=וְשֳׁדְד֖וּ"
+    "r": "וְשֳׁדְד֖וּ"
   },
   {
     "bcv_short": "Ee26:9",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "דפוסים=קָבֳלּ֔וֹ"
+    "r": "קָבֳלּ֔וֹ"
   },
   {
     "bcv_short": "Ee27:27",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "א=וּבְכׇל־קֳהָלֵךְ֙"
+    "r": "וּבְכׇל־קֳהָלֵךְ֙"
   },
   {
     "bcv_short": "Ee27:34",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "א=וְכׇל־קֳהָלֵ֖ךְ"
+    "r": "וְכׇל־קֳהָלֵ֖ךְ"
   },
   {
     "bcv_short": "Ee32:20",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "א=מֳשְׁכ֥וּ"
+    "r": "מֳשְׁכ֥וּ"
   },
   {
     "bcv_short": "Ee32:22",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "א=וְכָל־קֳהָלָ֔הּ"
+    "r": "וְכָל־קֳהָלָ֔הּ"
   },
   {
     "bcv_short": "A8:8",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "א-כתיב=וְנִשְׁקֳהָ֖"
+    "r": "וְנִשְׁקֳהָ֖"
   },
   {
     "bcv_short": "Ps39:13",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "א=<שִׁ֥מֳעָֽה"
+    "r": "שִׁ֥מֳעָֽה"
   },
   {
     "bcv_short": "Pr28:22",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "א=נִ֥בֳהָֽל"
+    "r": "נִ֥בֳהָֽל"
   },
   {
     "bcv_short": "Jb17:9",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "א=וּֽטֳהָר־יָ֝דַ֗יִם"
+    "r": "וּֽטֳהָר־יָ֝דַ֗יִם"
   },
   {
     "bcv_short": "R2:2",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "ל!=וַאֲלַקֳטָּ֣ה"
+    "r": "וַאֲלַקֳטָּ֣ה"
   },
   {
     "bcv_short": "R2:2",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "ל=בַשִׁבֳּלִ֔ים"
+    "r": "בַשִׁבֳּלִ֔ים"
   },
   {
     "bcv_short": "R2:7",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "ל?=אֲלַקֳטָה־נָּא֙?"
+    "r": "אֲלַקֳטָה־נָּא֙"
   },
   {
     "bcv_short": "1C2:44",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "א=יָרְקֳעָ֑ם"
+    "r": "יָרְקֳעָ֑ם"
   },
   {
     "bcv_short": "1C5:27",
@@ -10557,97 +10557,97 @@
   {
     "bcv_short": "1C5:28",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "א=קֳהָ֑ת"
+    "r": "קֳהָ֑ת"
   },
   {
     "bcv_short": "1C6:1",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "א=קֳהָ֖ת"
+    "r": "קֳהָ֖ת"
   },
   {
     "bcv_short": "1C6:3",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "א=קֳהָ֑ת"
+    "r": "קֳהָ֑ת"
   },
   {
     "bcv_short": "1C6:7",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "א=קֳהָ֑ת"
+    "r": "קֳהָ֑ת"
   },
   {
     "bcv_short": "1C6:18",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "א=הַקֳּהָתִ֔י"
+    "r": "הַקֳּהָתִ֔י"
   },
   {
     "bcv_short": "1C6:23",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "א=בֶּן־קֳהָ֔ת"
+    "r": "בֶּן־קֳהָ֔ת"
   },
   {
     "bcv_short": "1C6:39",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "א=הַקֳּהָתִ֔י"
+    "r": "הַקֳּהָתִ֔י"
   },
   {
     "bcv_short": "1C6:46",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "א=קֳהָ֜ת"
+    "r": "קֳהָ֜ת"
   },
   {
     "bcv_short": "1C6:51",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "א=קֳהָ֑ת"
+    "r": "קֳהָ֑ת"
   },
   {
     "bcv_short": "1C6:53",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "א=וְאֶֽת־יָקְמֳעָם֙"
+    "r": "וְאֶֽת־יָקְמֳעָם֙"
   },
   {
     "bcv_short": "1C6:55",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "א=לִבְנֵֽי־קֳהָ֖ת"
+    "r": "לִבְנֵֽי־קֳהָ֖ת"
   },
   {
     "bcv_short": "1C9:32",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "א=הַקֳּהָתִ֛י"
+    "r": "הַקֳּהָתִ֛י"
   },
   {
     "bcv_short": "1C15:5",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "א=קֳהָ֑ת"
+    "r": "קֳהָ֑ת"
   },
   {
     "bcv_short": "1C23:6",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "א=קֳהָ֥ת"
+    "r": "קֳהָ֥ת"
   },
   {
     "bcv_short": "1C23:12",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "א=קֳהָ֗ת"
+    "r": "קֳהָ֗ת"
   },
   {
     "bcv_short": "2C6:42",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "א,ש1=זֳכְרָ֕ה"
+    "r": "זֳכְרָ֕ה"
   },
   {
     "bcv_short": "2C20:19",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "א=הַקֳּהָתִ֖ים"
+    "r": "הַקֳּהָתִ֖ים"
   },
   {
     "bcv_short": "2C29:12",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "א=הַקֳּהָתִי֒"
+    "r": "הַקֳּהָתִי֒"
   },
   {
     "bcv_short": "2C34:12",
     "fp": "xatef-on-non-gutt/qamats/doc-part-n",
-    "r": "א=הַקֳּהָתִ֖ים"
+    "r": "הַקֳּהָתִ֖ים"
   },
   {
     "bcv_short": "2S6:5",
@@ -10692,6 +10692,6 @@
   {
     "bcv_short": "S1:6",
     "fp": "xatef-on-non-gutt/segol/doc-part-n",
-    "r": "ל!=שֶׁשֱּׁזָפַ֖תְנִי"
+    "r": "שֶׁשֱּׁזָפַ֖תְנִי"
   }
 ]

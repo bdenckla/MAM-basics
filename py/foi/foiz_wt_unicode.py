@@ -18,11 +18,12 @@ def find_fois_wt(mroge):
 
 
 def _find_fois_in_string(stack, string):
-    words = string.split(" ")
+    # A documentation note attaches punctuation to the forms it gives, as in a list
+    # of sigla, an equals sign and a pointed form.  The forms that fwh.forms finds
+    # leave that punctuation out.
     fois = []
-    for word in words:
-        fois_for_this_word = _find_fois_in_str(word)
-        fois.extend(fois_for_this_word)
+    for form in fwh.forms(string):
+        fois.extend(_find_fois_in_str(form))
     qual_fois = sl_map((_qualify, stack), fois)
     return qual_fois
 

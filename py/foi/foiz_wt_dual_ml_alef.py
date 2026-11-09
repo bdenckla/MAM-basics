@@ -15,14 +15,13 @@ def find_fois_wt(mroge):
 def _find_fois_in_string(stack, string):
     if stack and stack[-1] == "doc-part-n":
         return []
-    words = string.split(" ")
-    fois = reduce(_add_fois_in_str, words, [])
+    fois = reduce(_add_fois_in_str, fwh.forms(string), [])
     qual_fois = sl_map((_qualify, stack), fois)
     return qual_fois
 
 
-def _add_fois_in_str(accum, word):
-    fois_in_str = dml.find_fois_in_str(word)
+def _add_fois_in_str(accum, form):
+    fois_in_str = dml.find_fois_in_str(form)
     return accum + fois_in_str
 
 

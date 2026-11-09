@@ -12,15 +12,16 @@ template stays recognized by name, through all_branch_foilers.  MAM's
 scroll-difference notes, the מ:הערה-2 template, are outside the population
 unless one sits inside a documentation note's body.
 
-FORMS.  In a note body, a form is a maximal run of these characters: Hebrew
-letters, Hebrew marks (the block's range from HEBREW ACCENT ETNAHTA to HEBREW
-POINT QAMATS QATAN), COMBINING GRAPHEME JOINER, ZERO WIDTH NON-JOINER, ZERO
-WIDTH JOINER, square brackets, plus signs and the two double guillemets.  A form
-is recorded under "plus" when one of its plus signs has a Hebrew letter, Hebrew
-mark or joiner on each side.  It is recorded under "double-guillemets" when it
-contains a LEFT-POINTING or RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK.  Each
-form is one row, and a form with both notations appears in both categories.
-No classification of plus forms is inferred.
+FORMS.  In a note body, a form is one of the maximal runs that
+foi_wikitext_helpers.forms finds: a run of Hebrew letters, Hebrew marks and
+joiners, square brackets, plus signs and the two double guillemets, which that
+function's docstring and constants define exactly.  The Unicode FOI reads note
+bodies by the same forms.  A form is recorded under "plus" when one of its plus
+signs has a Hebrew letter, Hebrew mark or joiner on each side.  It is recorded
+under "double-guillemets" when it contains a LEFT-POINTING or RIGHT-POINTING
+DOUBLE ANGLE QUOTATION MARK.  Each form is one row, and a form with both
+notations appears in both categories.  No classification of plus forms is
+inferred.
 
 LIMITATION.  A template inside a note body splits the text around it into
 separate strings, and each string is read alone.  So a form that a template
@@ -52,7 +53,7 @@ def _find_fois_in_string(stack, string):
     if "doc-part-n" not in stack:
         return []
     fois = []
-    for form in _FORM.findall(string):
+    for form in fwh.forms(string):
         if _PLUS_BETWEEN.search(form):
             fois.append((_FP_PLUS, form))
         if _DOUBLE_GUILLEMET.search(form):
@@ -67,21 +68,7 @@ _FOILERS = fwh.all_branch_foilers(
     }
 )
 
-# Character-class contents: Hebrew letters, Hebrew marks and the three joiners.
-_LETTERS_MARKS_JOINERS = (
-    "\N{HEBREW LETTER ALEF}-\N{HEBREW LETTER TAV}"
-    "\N{HEBREW ACCENT ETNAHTA}-\N{HEBREW POINT QAMATS QATAN}"
-    "\N{COMBINING GRAPHEME JOINER}"
-    "\N{ZERO WIDTH NON-JOINER}"
-    "\N{ZERO WIDTH JOINER}"
-)
-# Character-class contents: the two double guillemets.
-_DOUBLE_GUILLEMETS = (
-    "\N{LEFT-POINTING DOUBLE ANGLE QUOTATION MARK}"
-    "\N{RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK}"
-)
-_FORM = re.compile("[" + _LETTERS_MARKS_JOINERS + _DOUBLE_GUILLEMETS + r"\[\]+]+")
 _PLUS_BETWEEN = re.compile(
-    "[" + _LETTERS_MARKS_JOINERS + r"]\+[" + _LETTERS_MARKS_JOINERS + "]"
+    "[" + fwh.LETTERS_MARKS_JOINERS + r"]\+[" + fwh.LETTERS_MARKS_JOINERS + "]"
 )
-_DOUBLE_GUILLEMET = re.compile("[" + _DOUBLE_GUILLEMETS + "]")
+_DOUBLE_GUILLEMET = re.compile("[" + fwh.DOUBLE_GUILLEMETS + "]")

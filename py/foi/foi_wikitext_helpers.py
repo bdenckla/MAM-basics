@@ -1,6 +1,44 @@
+import re
+
 from mb_cmn import ws_tmpl2 as wtp
 from mb_cmn import template_names as tmpln
 from mb_cmn.my_utils import sum_of_map
+
+# Character-class contents: Hebrew letters, Hebrew marks and the three joiners.
+# The Hebrew marks are the Hebrew block's range from HEBREW ACCENT ETNAHTA to
+# HEBREW POINT QAMATS QATAN, a range that also holds four punctuation code points,
+# MAQAF, PASEQ, SOF PASUQ and NUN HAFUKHA, together with HEBREW POINT
+# JUDEO-SPANISH VARIKA, which Unicode encodes outside that block.
+LETTERS_MARKS_JOINERS = (
+    "\N{HEBREW LETTER ALEF}-\N{HEBREW LETTER TAV}"
+    "\N{HEBREW ACCENT ETNAHTA}-\N{HEBREW POINT QAMATS QATAN}"
+    "\N{HEBREW POINT JUDEO-SPANISH VARIKA}"
+    "\N{COMBINING GRAPHEME JOINER}"
+    "\N{ZERO WIDTH NON-JOINER}"
+    "\N{ZERO WIDTH JOINER}"
+)
+# Character-class contents: the two double guillemets.
+DOUBLE_GUILLEMETS = (
+    "\N{LEFT-POINTING DOUBLE ANGLE QUOTATION MARK}"
+    "\N{RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK}"
+)
+_FORM = re.compile("[" + LETTERS_MARKS_JOINERS + DOUBLE_GUILLEMETS + r"\[\]+]+")
+
+
+def forms(string):
+    """Return the forms of a string, its maximal runs of form characters, in order.
+
+    The form characters are those of LETTERS_MARKS_JOINERS and the characters of the
+    notation that MAM's documentation notes use within a form: square brackets, plus
+    signs and the two double guillemets.  Every other character separates forms: a
+    space, and punctuation such as a parenthesis, an angle bracket, a comma, a full
+    stop or an equals sign.  So where a note gives a list of sigla, an equals sign and
+    a pointed form, that pointed form is a form of its own, with none of the list's
+    punctuation attached.  In a string of Scripture, a form is a chanted word, or as
+    much of one as the string holds, together with any PASEQ or SOF PASUQ written
+    against it, since LETTERS_MARKS_JOINERS includes those punctuation code points.
+    """
+    return _FORM.findall(string)
 
 
 def find_fois_in_minirow_ep(foilers, mroge):
