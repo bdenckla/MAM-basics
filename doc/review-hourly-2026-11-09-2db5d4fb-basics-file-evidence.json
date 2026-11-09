@@ -1,0 +1,326 @@
+[
+  {
+    "path": "gh-pages/MAM-with-doc/A1-Genesis.html",
+    "attribute_removals": 50
+  },
+  {
+    "path": "gh-pages/MAM-with-doc/A2-Exodus.html",
+    "attribute_removals": 40
+  },
+  {
+    "path": "gh-pages/MAM-with-doc/A3-Levit.html",
+    "attribute_removals": 27
+  },
+  {
+    "path": "gh-pages/MAM-with-doc/A4-Numbers.html",
+    "attribute_removals": 36
+  },
+  {
+    "path": "gh-pages/MAM-with-doc/A5-Deuter.html",
+    "attribute_removals": 34
+  },
+  {
+    "path": "gh-pages/MAM-with-doc/B1-Joshua.html",
+    "attribute_removals": 24
+  },
+  {
+    "path": "gh-pages/MAM-with-doc/B2-Judges.html",
+    "attribute_removals": 21
+  },
+  {
+    "path": "gh-pages/MAM-with-doc/BA-1Samuel.html",
+    "attribute_removals": 31
+  },
+  {
+    "path": "gh-pages/MAM-with-doc/BB-2Samuel.html",
+    "attribute_removals": 24
+  },
+  {
+    "path": "gh-pages/MAM-with-doc/BC-1Kings.html",
+    "attribute_removals": 22
+  },
+  {
+    "path": "gh-pages/MAM-with-doc/BD-2Kings.html",
+    "attribute_removals": 25
+  },
+  {
+    "path": "gh-pages/MAM-with-doc/C1-Isaiah.html",
+    "attribute_removals": 66
+  },
+  {
+    "path": "gh-pages/MAM-with-doc/C2-Jeremiah.html",
+    "attribute_removals": 52
+  },
+  {
+    "path": "gh-pages/MAM-with-doc/C3-Ezekiel.html",
+    "attribute_removals": 48
+  },
+  {
+    "path": "gh-pages/MAM-with-doc/CA-Hosea.html",
+    "attribute_removals": 14
+  },
+  {
+    "path": "gh-pages/MAM-with-doc/CB-Joel.html",
+    "attribute_removals": 4
+  },
+  {
+    "path": "gh-pages/MAM-with-doc/CC-Amos.html",
+    "attribute_removals": 9
+  },
+  {
+    "path": "gh-pages/MAM-with-doc/CD-Obadiah.html",
+    "attribute_removals": 1
+  },
+  {
+    "path": "gh-pages/MAM-with-doc/CE-Jonah.html",
+    "attribute_removals": 4
+  },
+  {
+    "path": "gh-pages/MAM-with-doc/CF-Micah.html",
+    "attribute_removals": 7
+  },
+  {
+    "path": "gh-pages/MAM-with-doc/CG-Nahum.html",
+    "attribute_removals": 3
+  },
+  {
+    "path": "gh-pages/MAM-with-doc/CH-Habakkuk.html",
+    "attribute_removals": 3
+  },
+  {
+    "path": "gh-pages/MAM-with-doc/CI-Tsefaniah.html",
+    "attribute_removals": 3
+  },
+  {
+    "path": "gh-pages/MAM-with-doc/CJ-Haggai.html",
+    "attribute_removals": 2
+  },
+  {
+    "path": "gh-pages/MAM-with-doc/CK-Zechariah.html",
+    "attribute_removals": 14
+  },
+  {
+    "path": "gh-pages/MAM-with-doc/CL-Malachi.html",
+    "attribute_removals": 3
+  },
+  {
+    "path": "gh-pages/MAM-with-doc/D1-Psalms.html",
+    "attribute_removals": 150
+  },
+  {
+    "path": "gh-pages/MAM-with-doc/D2-Proverbs.html",
+    "attribute_removals": 31
+  },
+  {
+    "path": "gh-pages/MAM-with-doc/D3-Job.html",
+    "attribute_removals": 42
+  },
+  {
+    "path": "gh-pages/MAM-with-doc/E1-Song of Songs.html",
+    "attribute_removals": 8
+  },
+  {
+    "path": "gh-pages/MAM-with-doc/E2-Ruth.html",
+    "attribute_removals": 4
+  },
+  {
+    "path": "gh-pages/MAM-with-doc/E3-Lamentations.html",
+    "attribute_removals": 5
+  },
+  {
+    "path": "gh-pages/MAM-with-doc/E4-Ecclesiastes.html",
+    "attribute_removals": 12
+  },
+  {
+    "path": "gh-pages/MAM-with-doc/E5-Esther.html",
+    "attribute_removals": 10
+  },
+  {
+    "path": "gh-pages/MAM-with-doc/F1-Daniel.html",
+    "attribute_removals": 12
+  },
+  {
+    "path": "gh-pages/MAM-with-doc/FA-Ezra.html",
+    "attribute_removals": 10
+  },
+  {
+    "path": "gh-pages/MAM-with-doc/FB-Nehemiah.html",
+    "attribute_removals": 13
+  },
+  {
+    "path": "gh-pages/MAM-with-doc/FC-1Chronicles.html",
+    "attribute_removals": 29
+  },
+  {
+    "path": "gh-pages/MAM-with-doc/FD-2Chronicles.html",
+    "attribute_removals": 36
+  },
+  {
+    "path": "gh-pages/MAM-with-doc/foi/foi-poetic-stress-helpers.html",
+    "attribute_removals": 72
+  },
+  {
+    "path": "gh-pages/MAM-with-doc/foi/foi-rare-tmpls.html",
+    "attribute_removals": 5
+  },
+  {
+    "path": "gh-pages/MAM-with-doc/sigil-decoding.html",
+    "attribute_removals": 52
+  },
+  {
+    "path": "gh-pages/near-aleppo/edition/A1-Genesis.html",
+    "attribute_removals": 50
+  },
+  {
+    "path": "gh-pages/near-aleppo/edition/A2-Exodus.html",
+    "attribute_removals": 40
+  },
+  {
+    "path": "gh-pages/near-aleppo/edition/A3-Levit.html",
+    "attribute_removals": 27
+  },
+  {
+    "path": "gh-pages/near-aleppo/edition/A4-Numbers.html",
+    "attribute_removals": 36
+  },
+  {
+    "path": "gh-pages/near-aleppo/edition/A5-Deuter.html",
+    "attribute_removals": 34
+  },
+  {
+    "path": "gh-pages/near-aleppo/edition/B1-Joshua.html",
+    "attribute_removals": 24
+  },
+  {
+    "path": "gh-pages/near-aleppo/edition/B2-Judges.html",
+    "attribute_removals": 21
+  },
+  {
+    "path": "gh-pages/near-aleppo/edition/BA-1Samuel.html",
+    "attribute_removals": 31
+  },
+  {
+    "path": "gh-pages/near-aleppo/edition/BB-2Samuel.html",
+    "attribute_removals": 24
+  },
+  {
+    "path": "gh-pages/near-aleppo/edition/BC-1Kings.html",
+    "attribute_removals": 22
+  },
+  {
+    "path": "gh-pages/near-aleppo/edition/BD-2Kings.html",
+    "attribute_removals": 25
+  },
+  {
+    "path": "gh-pages/near-aleppo/edition/C1-Isaiah.html",
+    "attribute_removals": 66
+  },
+  {
+    "path": "gh-pages/near-aleppo/edition/C2-Jeremiah.html",
+    "attribute_removals": 52
+  },
+  {
+    "path": "gh-pages/near-aleppo/edition/C3-Ezekiel.html",
+    "attribute_removals": 48
+  },
+  {
+    "path": "gh-pages/near-aleppo/edition/CA-Hosea.html",
+    "attribute_removals": 14
+  },
+  {
+    "path": "gh-pages/near-aleppo/edition/CB-Joel.html",
+    "attribute_removals": 4
+  },
+  {
+    "path": "gh-pages/near-aleppo/edition/CC-Amos.html",
+    "attribute_removals": 9
+  },
+  {
+    "path": "gh-pages/near-aleppo/edition/CD-Obadiah.html",
+    "attribute_removals": 1
+  },
+  {
+    "path": "gh-pages/near-aleppo/edition/CE-Jonah.html",
+    "attribute_removals": 4
+  },
+  {
+    "path": "gh-pages/near-aleppo/edition/CF-Micah.html",
+    "attribute_removals": 7
+  },
+  {
+    "path": "gh-pages/near-aleppo/edition/CG-Nahum.html",
+    "attribute_removals": 3
+  },
+  {
+    "path": "gh-pages/near-aleppo/edition/CH-Habakkuk.html",
+    "attribute_removals": 3
+  },
+  {
+    "path": "gh-pages/near-aleppo/edition/CI-Tsefaniah.html",
+    "attribute_removals": 3
+  },
+  {
+    "path": "gh-pages/near-aleppo/edition/CJ-Haggai.html",
+    "attribute_removals": 2
+  },
+  {
+    "path": "gh-pages/near-aleppo/edition/CK-Zechariah.html",
+    "attribute_removals": 14
+  },
+  {
+    "path": "gh-pages/near-aleppo/edition/CL-Malachi.html",
+    "attribute_removals": 3
+  },
+  {
+    "path": "gh-pages/near-aleppo/edition/D1-Psalms.html",
+    "attribute_removals": 150
+  },
+  {
+    "path": "gh-pages/near-aleppo/edition/D2-Proverbs.html",
+    "attribute_removals": 31
+  },
+  {
+    "path": "gh-pages/near-aleppo/edition/D3-Job.html",
+    "attribute_removals": 42
+  },
+  {
+    "path": "gh-pages/near-aleppo/edition/E1-Song of Songs.html",
+    "attribute_removals": 8
+  },
+  {
+    "path": "gh-pages/near-aleppo/edition/E2-Ruth.html",
+    "attribute_removals": 4
+  },
+  {
+    "path": "gh-pages/near-aleppo/edition/E3-Lamentations.html",
+    "attribute_removals": 5
+  },
+  {
+    "path": "gh-pages/near-aleppo/edition/E4-Ecclesiastes.html",
+    "attribute_removals": 12
+  },
+  {
+    "path": "gh-pages/near-aleppo/edition/E5-Esther.html",
+    "attribute_removals": 10
+  },
+  {
+    "path": "gh-pages/near-aleppo/edition/F1-Daniel.html",
+    "attribute_removals": 12
+  },
+  {
+    "path": "gh-pages/near-aleppo/edition/FA-Ezra.html",
+    "attribute_removals": 10
+  },
+  {
+    "path": "gh-pages/near-aleppo/edition/FB-Nehemiah.html",
+    "attribute_removals": 13
+  },
+  {
+    "path": "gh-pages/near-aleppo/edition/FC-1Chronicles.html",
+    "attribute_removals": 29
+  },
+  {
+    "path": "gh-pages/near-aleppo/edition/FD-2Chronicles.html",
+    "attribute_removals": 36
+  }
+]
