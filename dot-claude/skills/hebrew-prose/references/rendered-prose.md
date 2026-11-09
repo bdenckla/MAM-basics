@@ -93,7 +93,7 @@ direction with a `<bdi>` that has no `lang`, or leave it bare where nothing need
 Bare letters with a maqaf or sof pasuq count as unpointed.
 
 The one exception is a form lifted whole from a text and shown with the forms it is compared
-with: it keeps their font, its unpointed parts included. Ben, 2026-10-26, of the MAM-for-Sefaria
+with: it keeps their font, pointed or not. Ben, 2026-10-26, of the MAM-for-Sefaria
 examples: "keep those in one font (namely the font for pointed hebreW)".
 
 Ben has asked for the rule at least three times, each time of a different page:
