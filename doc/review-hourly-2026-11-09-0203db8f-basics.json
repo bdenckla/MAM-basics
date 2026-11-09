@@ -1,0 +1,481 @@
+{
+  "kind": "bounded endpoint screen",
+  "window": {
+    "base": "be9870504fdfeea07f7358e886200e5215d96a79",
+    "head": "0203db8fe6fb816eddc5880bd588c2d6f010a213",
+    "commits": 2,
+    "paths": 14
+  },
+  "reconciled_receipt_parent": "d63ca9c4d9b73a2f9ad9b742f164a0da7bd14236",
+  "disposition": "No consequential defect found in the inspected scope; no repair.",
+  "independent_checks": {
+    "base": "be9870504fdfeea07f7358e886200e5215d96a79",
+    "head": "0203db8fe6fb816eddc5880bd588c2d6f010a213",
+    "outputs": {
+      "kq-simple": {
+        "rows": 1213,
+        "new_gsp": 82,
+        "gsp_rows": 102,
+        "html_rows": 118,
+        "html_gsp_rows": 11,
+        "html_gsp_spans": 17,
+        "new_gsp_by_feature": {
+          "k1q1": 70,
+          "k1q1-qk": 7,
+          "k1q2sr": 2,
+          "k1q2wr": 1,
+          "k2q1": 1,
+          "k2q2": 1
+        },
+        "changed_rows": [
+          [
+            "G27:3",
+            "k1q1"
+          ],
+          [
+            "G43:28",
+            "k1q1"
+          ],
+          [
+            "E37:8",
+            "k1q1"
+          ],
+          [
+            "D5:9",
+            "k1q1"
+          ],
+          [
+            "Ju7:21",
+            "k1q1"
+          ],
+          [
+            "Ju11:37",
+            "k1q1"
+          ],
+          [
+            "Ju16:21",
+            "k1q1"
+          ],
+          [
+            "1S5:9",
+            "k1q1"
+          ],
+          [
+            "1S19:18",
+            "k1q1"
+          ],
+          [
+            "1S25:3",
+            "k1q1"
+          ],
+          [
+            "2S14:22",
+            "k1q1"
+          ],
+          [
+            "2S18:3",
+            "k1q1"
+          ],
+          [
+            "2S22:15",
+            "k1q1"
+          ],
+          [
+            "2S22:33",
+            "k1q1"
+          ],
+          [
+            "2S23:8",
+            "k1q1"
+          ],
+          [
+            "1K5:17",
+            "k1q1"
+          ],
+          [
+            "2K4:5",
+            "k1q1"
+          ],
+          [
+            "2K11:20",
+            "k1q1"
+          ],
+          [
+            "2K14:6",
+            "k1q1"
+          ],
+          [
+            "2K17:31",
+            "k1q1"
+          ],
+          [
+            "I13:16",
+            "k1q1"
+          ],
+          [
+            "Je3:19",
+            "k1q1"
+          ],
+          [
+            "Je6:21",
+            "k1q1"
+          ],
+          [
+            "Je21:12",
+            "k1q1"
+          ],
+          [
+            "Je22:6",
+            "k1q1"
+          ],
+          [
+            "Je37:4",
+            "k1q1"
+          ],
+          [
+            "Je48:4",
+            "k1q1"
+          ],
+          [
+            "Je48:7",
+            "k1q1"
+          ],
+          [
+            "Je49:36",
+            "k1q1"
+          ],
+          [
+            "Je51:34",
+            "k1q1"
+          ],
+          [
+            "Je52:31",
+            "k1q1"
+          ],
+          [
+            "Ee7:21",
+            "k1q1"
+          ],
+          [
+            "Ee16:20",
+            "k1q1"
+          ],
+          [
+            "Ee16:51",
+            "k1q1"
+          ],
+          [
+            "Ee25:9",
+            "k1q1"
+          ],
+          [
+            "Ee46:9",
+            "k1q1"
+          ],
+          [
+            "Ho10:10",
+            "k1q1"
+          ],
+          [
+            "Mi1:10",
+            "k1q1"
+          ],
+          [
+            "Ts2:7",
+            "k1q1"
+          ],
+          [
+            "Zc11:2",
+            "k1q1"
+          ],
+          [
+            "Zc14:6",
+            "k1q1"
+          ],
+          [
+            "Ps9:13",
+            "k1q1"
+          ],
+          [
+            "Ps10:12",
+            "k1q1"
+          ],
+          [
+            "Ps60:7",
+            "k1q1"
+          ],
+          [
+            "Ps71:12",
+            "k1q1"
+          ],
+          [
+            "Ps129:3",
+            "k1q1"
+          ],
+          [
+            "Ps140:10",
+            "k1q1"
+          ],
+          [
+            "Pr4:16",
+            "k1q1"
+          ],
+          [
+            "Pr11:3",
+            "k1q1"
+          ],
+          [
+            "Pr19:16",
+            "k1q1"
+          ],
+          [
+            "Pr23:26",
+            "k1q1"
+          ],
+          [
+            "Pr27:24",
+            "k1q1"
+          ],
+          [
+            "Jb19:29",
+            "k1q1"
+          ],
+          [
+            "Jb30:22",
+            "k1q1"
+          ],
+          [
+            "Es8:7",
+            "k1q1"
+          ],
+          [
+            "Da4:14",
+            "k1q1"
+          ],
+          [
+            "Da4:16",
+            "k1q1"
+          ],
+          [
+            "Da5:21",
+            "k1q1"
+          ],
+          [
+            "Da5:30",
+            "k1q1"
+          ],
+          [
+            "Da6:29",
+            "k1q1"
+          ],
+          [
+            "Er2:50",
+            "k1q1"
+          ],
+          [
+            "Er10:29",
+            "k1q1"
+          ],
+          [
+            "Er10:35",
+            "k1q1"
+          ],
+          [
+            "Er10:37",
+            "k1q1"
+          ],
+          [
+            "Ne7:52",
+            "k1q1"
+          ],
+          [
+            "Ne10:20",
+            "k1q1"
+          ],
+          [
+            "1C1:46",
+            "k1q1"
+          ],
+          [
+            "1C7:31",
+            "k1q1"
+          ],
+          [
+            "1C12:6",
+            "k1q1"
+          ],
+          [
+            "1C24:24",
+            "k1q1"
+          ],
+          [
+            "2S3:15",
+            "k1q1-qk"
+          ],
+          [
+            "2S19:32",
+            "k1q1-qk"
+          ],
+          [
+            "I30:32",
+            "k1q1-qk"
+          ],
+          [
+            "Je48:21",
+            "k1q1-qk"
+          ],
+          [
+            "Ee16:25",
+            "k1q1-qk"
+          ],
+          [
+            "Ps105:28",
+            "k1q1-qk"
+          ],
+          [
+            "Ne11:17",
+            "k1q1-qk"
+          ],
+          [
+            "Ps10:10",
+            "k1q2sr"
+          ],
+          [
+            "Ps123:4",
+            "k1q2sr"
+          ],
+          [
+            "2S8:3",
+            "k1q2wr"
+          ],
+          [
+            "I44:24",
+            "k2q1"
+          ],
+          [
+            "Pr21:29",
+            "k2q2"
+          ]
+        ]
+      },
+      "kq-complex": {
+        "rows": 24,
+        "new_gsp": 1,
+        "gsp_rows": 1,
+        "html_rows": 24,
+        "html_gsp_rows": 1,
+        "html_gsp_spans": 1,
+        "new_gsp_by_feature": {
+          "k1q1\u00d72": 1
+        },
+        "changed_rows": [
+          [
+            "2K17:31",
+            "k1q1\u00d72"
+          ]
+        ]
+      },
+      "rare-tmpls": {
+        "rows": 346,
+        "new_gsp": 4,
+        "gsp_rows": 4,
+        "html_rows": 55,
+        "html_gsp_rows": 4,
+        "html_gsp_spans": 4,
+        "new_gsp_by_feature": {
+          "na-note": 4
+        },
+        "changed_rows": [
+          [
+            "G4:13",
+            "na-note"
+          ],
+          [
+            "N1:17",
+            "na-note"
+          ],
+          [
+            "N25:12",
+            "na-note"
+          ],
+          [
+            "D11:21",
+            "na-note"
+          ]
+        ]
+      },
+      "slh-word": {
+        "rows": 245,
+        "new_gsp": 9,
+        "gsp_rows": 9,
+        "html_rows": 159,
+        "html_gsp_rows": 8,
+        "html_gsp_spans": 8,
+        "new_gsp_by_feature": {
+          "non-note/1/\u05d2": 1,
+          "non-note/1/\u05e7": 1,
+          "non-note/2/\u05d2\u05e7": 1,
+          "slh-letter-count/1": 2,
+          "slh-letter-count/2": 1,
+          "stack/None": 3
+        },
+        "changed_rows": [
+          [
+            "D6:4",
+            "non-note/1/\u05d2"
+          ],
+          [
+            "G23:2",
+            "non-note/1/\u05e7"
+          ],
+          [
+            "Es9:9",
+            "non-note/2/\u05d2\u05e7"
+          ],
+          [
+            "G23:2",
+            "slh-letter-count/1"
+          ],
+          [
+            "D6:4",
+            "slh-letter-count/1"
+          ],
+          [
+            "Es9:9",
+            "slh-letter-count/2"
+          ],
+          [
+            "G23:2",
+            "stack/None"
+          ],
+          [
+            "D6:4",
+            "stack/None"
+          ],
+          [
+            "Es9:9",
+            "stack/None"
+          ]
+        ]
+      }
+    },
+    "limits": "Sparse output comparison and extracted-function probes with explicit substitutes. Not repository suite, renderer execution, source-corpus survey, browser QA or regeneration.",
+    "changed_python_parses": 6,
+    "extracted_function_probes": "passed: qualifier preservation and GSP omission, GM retention, simple/qualified/trivial kq and nonmutation, slh context/lang, all 14 complex dispatch signatures, rare-template target-only mark in columns C and E without input mutation",
+    "complex_dispatch_signatures": 14
+  },
+  "limits": [
+    "Owned sparse standard-library output checks and exact extracted-function probes with explicit substitutes, not hydrated project tests or regeneration.",
+    "Owner reports 97 tests with 8 subtests, Black and focused generations; not independently rerun.",
+    "No actual renderer, browser, new source-corpus census, mega or full suite. All historical Stage10/live/source/browser and other gaps remain.",
+    "No private source paths, findings, logs or new private anchors are added to this public receipt."
+  ],
+  "anchors_preserved": {
+    "reviewed_through": "210affe3ac2931473bead0de839be0de08309e3d",
+    "last_broad_tested": "e686160a167bd1f50ccf058137760fdd075c42d8"
+  },
+  "publication": {
+    "branch": "review-hourly-20261109-0203db8f-basics-receipts",
+    "scope": "Isolated receipt/status/checker only; no main/shared integration, deployment, owner checkout, external agent contact, schedule change or hbofonts work."
+  }
+}
