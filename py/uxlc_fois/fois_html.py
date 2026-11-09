@@ -175,6 +175,11 @@ def _kq_case_row(case_dic):
         if field_name == "bcvp":
             row_cells.append(uxlc_utils_html.table_datum(cell_value))
             continue
+        # A ketiv cell has no point or accent, yet it keeps the pointed-Hebrew font:
+        # it is a form lifted whole from UXLC and set beside the qere it is compared
+        # with, the one exception to the hebrew-prose rule "Unpointed Hebrew keeps the
+        # surrounding font". A ketiv with no qere keeps it too, in its column, as
+        # MAM-for-Sefaria's example of a ketiv velo qere does (Ben, 2026-10-26).
         attr = {"lang": "hbo", "dir": "rtl"} if cell_value else None
         row_cells.append(uxlc_utils_html.table_datum(cell_value, attr))
     return uxlc_utils_html.table_row(tuple(row_cells))
