@@ -63,6 +63,15 @@ from author_site.post_stress_meteg_post_silluq_data import (
 _POST_SILLUQ_STROKE_ANGLES_FOOTNOTE_ID = "stroke-angles-footnote"
 _POST_SILLUQ_BROADER_AMBIGUITY_FOOTNOTE_ID = "broader-ambiguity-footnote"
 
+# The section that phi4 links for MAM-for-Sefaria's omission of both meteg marks after
+# silluq.  The mega's mam-for-sefaria-doc step generates that section's table from
+# MAM-for-Sefaria's own files, and author_misc.mam4sef_survey._silluq_cases raises unless
+# their atoms are MAM-simple's less each meteg after the silluq, so this page states the
+# omission without a check of its own.
+_MAM_FOR_SEFARIA_SILLUQ_URL = (
+    "https://bdenckla.github.io/MAM-basics/MAM-for-Sefaria/#meteg-after-silluq"
+)
+
 _ROM_MERKHA = _author_romanization("merkha")
 _ROM_YORED = _author_romanization("yored")
 _ROM_MAYELA = rmn("mayela")
@@ -1157,6 +1166,23 @@ def build_post_silluq_body(
                 " and ",
                 _ref_link("jb4:12"),
                 ".",
+            )
+        ),
+        mb_html.para(
+            (
+                "Though the MAM dataset preserves (and notes) these two cases of ",
+                _ROM_METEG,
+                " after ",
+                _ROM_SILLUQ,
+                ", these two ",
+                _ROM_METEG,
+                " marks may not be appropriate for all editions. In particular, they are "
+                "not likely to be appropriate for an edition that has no way to note the "
+                "pitfall. So, for example, ",
+                mb_html.anchor_h("MAM-for-Sefaria", _MAM_FOR_SEFARIA_SILLUQ_URL),
+                " omits both ",
+                _ROM_METEG,
+                " marks.",
             )
         ),
     ]
