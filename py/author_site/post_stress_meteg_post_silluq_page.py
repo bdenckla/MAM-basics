@@ -1134,20 +1134,21 @@ def build_post_silluq_body(
             )
         ),
         mb_html.heading_level_2(
-            "φ4 — MAM's use of Aleppo",
+            "φ4 — The MAM dataset's use of Aleppo",
             {"id": _POST_SILLUQ_MAM_POLICY_FOOTNOTE_ID},
         ),
         mb_html.para(
             (
-                "MAM diverges from Aleppo only when a specific editorial policy requires "
-                "a different form or, in a rare case, when Aleppo is fairly clearly "
-                "erroneous or fairly clearly outside the manuscript tradition of which "
-                "Aleppo is generally the greatest example. Because ",
+                "The MAM dataset diverges from Aleppo only when a specific editorial "
+                "policy requires a different form or, in a rare case, when Aleppo is "
+                "fairly clearly erroneous or fairly clearly outside the manuscript "
+                "tradition of which Aleppo is generally the greatest example. Because ",
                 _ROM_METEG,
                 " after ",
                 _ROM_SILLUQ,
                 " is so rare, such a judgment is difficult here, so it makes sense that "
-                "MAM follows Aleppo in the two of our seven cases in which Aleppo has ",
+                "the MAM dataset follows Aleppo in the two of our seven cases in which "
+                "Aleppo has ",
                 _ROM_METEG,
                 " after ",
                 _ROM_SILLUQ,
