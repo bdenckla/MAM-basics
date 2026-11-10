@@ -121,7 +121,7 @@ _BHS_FAILS = [
     #
     "It often fails to note where μL disagrees with other Tiberian manuscripts.",
     #
-    "It emphasizes manuscript quantity over quality.",
+    "Its notes emphasize manuscript quantity over quality.",
 ]
 _BHQ_AS_BHS_ALTERNATIVE = [
     "My first candidate for a $BHS alternative was $BHQ (Biblia Hebraica Quinta).",
