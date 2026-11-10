@@ -1,0 +1,257 @@
+{
+  "schema": "bounded-hourly-screen-v1",
+  "created_utc": "2026-11-10T04:32:57.140311+00:00",
+  "repository": "bdenckla/MAM-basics",
+  "window": {
+    "base": "7ae62e8589f7ce9d7d4e9a05cc5f146ac9294a8f",
+    "head": "73fbf0406b8cf843b2aabcbb8ef0b558d0fa7148"
+  },
+  "receipt_parent": "da72ff7002f608638d4b9e91abcfbef371445136",
+  "reconciliation": {
+    "repository": "MAM-basics",
+    "base": "7ae62e8589f7ce9d7d4e9a05cc5f146ac9294a8f",
+    "head": "73fbf0406b8cf843b2aabcbb8ef0b558d0fa7148",
+    "prior_receipt": "da72ff7002f608638d4b9e91abcfbef371445136",
+    "receipt_branch": "review-hourly-20261110-73fbf040-receipts",
+    "home_head": "cb878aef91e692d5561435f00021f73b75868e45",
+    "status_blob": "29af9ed191027af2a036704c21e3d7708ff032f9",
+    "latest_status_rows": [
+      "| Latest screened subwindow | `bc8d7ed3bbbabd0c23a56a76447ca7e76790f45f` -> `7ae62e8589f7ce9d7d4e9a05cc5f146ac9294a8f`, one commit / five paths. Job 34:10's two authored paragraphs reconcile across source, enriched JSON and HTML; all 159 other records and nine dictionary deltas checked. No consequential defect or repair. [Receipt](review-hourly-2026-11-09-7ae62e85-basics.json). |",
+      "| Reviewed through | `210affe3ac2931473bead0de839be0de08309e3d` retained. Stage10 technical code review through `df4580cf762b569ef6fd83b48626364457468e76` had one confirmed receipt-loss defect, now fixed by approved merged PR368 (`f6585c7f`); independent live evidence is blocked, so the full window remains pending. [Partial receipt](https://github.com/bdenckla/MAM-basics/blob/1f3267305ea22883f792b3a00735101066dc69d2/doc/review-hourly-2026-11-04-stage10.json). |",
+      "| Last tested | `e686160a167bd1f50ccf058137760fdd075c42d8`; November 9 cloud nightly. Mega all 65 steps, exit 0 in 540.593 s. Full suite 1,444 passed / 5 declared skips / 82 subtests passed, 378.212 s (374.65 s pytest). Taamey D 61 PASS / 0 FAIL / 0 SKIP, release-check passed; read-only corpus REFRESH PENDING. 8 SVG geometry/Times-alias differences independently explained, preserved and restored; suite write-neutral. [Receipt](https://github.com/bdenckla/MAM-basics/blob/5c0e10f41def24efd1a78af10446bc5295fc27e7/doc/review-nightly-2026-11-09.json). |"
+    ]
+  },
+  "failed_assigned_checks": [],
+  "disposition": "No consequential introduced defect or repair in the complete frozen bounded endpoint. No source/editorial correctness inferred from preservation.",
+  "publication": {
+    "branch": "review-hourly-20261110-73fbf040-receipts",
+    "prior_receipts_immutable": true,
+    "safeguard": "Only Pages workflow at receipt parent is workflow_dispatch-only; isolated branch has no known owner/deployment dependency."
+  },
+  "commands": [
+    {
+      "source": "73fbf0406b8cf843b2aabcbb8ef0b558d0fa7148",
+      "cwd": "/workspace/scratch/basics-73fbf040-focused",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_gen_misc_authored_english_documents.py"
+      ],
+      "started_utc": "2026-11-10T04:25:24.170066+00:00",
+      "elapsed_seconds": 1.481531,
+      "exit_code": 0,
+      "tracked_changes": [],
+      "untracked": [],
+      "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "removed_inherited_path_overrides": [],
+      "source_review": "Exact endpoint source/output deltas inspected in this task; no fresh manuscript/editorial adjudication."
+    },
+    {
+      "source": "73fbf0406b8cf843b2aabcbb8ef0b558d0fa7148",
+      "cwd": "/workspace/scratch/basics-73fbf040-focused",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/check_spelling_in_html.py"
+      ],
+      "started_utc": "2026-11-10T04:25:29.424726+00:00",
+      "elapsed_seconds": 0.300551,
+      "exit_code": 0,
+      "tracked_changes": [],
+      "untracked": [],
+      "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "removed_inherited_path_overrides": [],
+      "source_review": "Exact endpoint source/output deltas inspected in this task; no fresh manuscript/editorial adjudication."
+    },
+    {
+      "source": "73fbf0406b8cf843b2aabcbb8ef0b558d0fa7148",
+      "cwd": "/workspace/scratch/basics-73fbf040-focused",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "-m",
+        "black",
+        "--check",
+        "py/author_boj_qr/qr_34.py",
+        "py/author_boj/job2_main_article.py"
+      ],
+      "started_utc": "2026-11-10T04:25:34.130668+00:00",
+      "elapsed_seconds": 0.171039,
+      "exit_code": 0,
+      "tracked_changes": [],
+      "untracked": [],
+      "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "removed_inherited_path_overrides": [],
+      "source_review": "Exact endpoint source/output deltas inspected in this task; no fresh manuscript/editorial adjudication."
+    },
+    {
+      "source": "73fbf0406b8cf843b2aabcbb8ef0b558d0fa7148",
+      "cwd": "/workspace/scratch/basics-73fbf040-focused",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        "py/tests/test_prose_conventions.py",
+        "py/tests/test_hebrew_letter_spacing.py"
+      ],
+      "started_utc": "2026-11-10T04:25:34.492093+00:00",
+      "elapsed_seconds": 24.569993,
+      "exit_code": 0,
+      "tracked_changes": [],
+      "untracked": [],
+      "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "removed_inherited_path_overrides": [],
+      "source_review": "Exact endpoint source/output deltas inspected in this task; no fresh manuscript/editorial adjudication."
+    }
+  ],
+  "tests": {
+    "passed": 5,
+    "failed": 0,
+    "skipped": 0,
+    "pytest_seconds": 24.42
+  },
+  "environment": {
+    "source": "73fbf0406b8cf843b2aabcbb8ef0b558d0fa7148",
+    "worktree": "/workspace/scratch/basics-73fbf040-focused",
+    "home_clone": "/workspace/MAM-basics",
+    "interpreter": "/workspace/MAM-basics/.venv/bin/python",
+    "verified_environment": "Python3.13.15; constrained versions/direct requirements/pip check; no unpinned application packages or system/user sites.",
+    "instructions": {
+      "AGENTS.md": "d3ec8f0f27fca27c1d3d4045e96cc0a33f951e6a",
+      "doc/review-trial.md": "429b896939570ad0ffd2a8518f9c114c0ff9ec8b",
+      "doc/periodic-review.md": "2361ed9d216650ccbde241e3eecfc2695e48491c"
+    },
+    "scope": "Affected Book of Job and dictionary producers, changed-source format check and existing prose/spacing tests only. Source change inspected; manuscript readings remain owner-attributed. No private input, broad suite/mega, source refresh, baseline or main/status change.",
+    "commands": [
+      [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "/workspace/scratch/preflight_nightly_20261108.py",
+        "/workspace/scratch/basics-73fbf040-focused"
+      ],
+      [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "/workspace/scratch/verify_env_scope_20261109.py",
+        "/workspace/scratch/basics-73fbf040-focused"
+      ]
+    ]
+  },
+  "native_check": {
+    "command": [
+      "/workspace/MAM-basics/.venv/bin/python",
+      "/workspace/scratch/check_basics_73fbf040.py",
+      "/workspace/MAM-basics",
+      "/workspace/scratch/basics-73fbf040-evidence"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": null,
+    "result": {
+      "result": "PASS",
+      "window": {
+        "base": "7ae62e8589f7ce9d7d4e9a05cc5f146ac9294a8f",
+        "head": "73fbf0406b8cf843b2aabcbb8ef0b558d0fa7148"
+      },
+      "identities": {
+        "base/book-of-job/out/custom-dict-freqs-ordered-by-count.json": {
+          "blob": "0b9d983945bb3c5b25fbf5883a97c0545b0d0ec4",
+          "sha256": "91246fb641fb3e16a4c2164bb8c32dc11ddd4ab851daf6e1f50a6cfc7ca031c2"
+        },
+        "base/book-of-job/out/custom-dict-freqs-ordered-by-entry.json": {
+          "blob": "94938a70e339fa4d0be5b3617fdefa6fb5589b48",
+          "sha256": "89a8d9276c81b28c7ee2c87c5c2e3e0765a07c9919e1b56e5528d47cbfa961fe"
+        },
+        "base/book-of-job/out/enriched-quirkrecs.json": {
+          "blob": "13bfac8da442eb2dc6338f67b574489ec076057d",
+          "sha256": "ac0ecf9a0556106fe93bf6ca43ba6fc248036c01de24e008a3e238cb994e290a"
+        },
+        "base/gh-pages/book-of-job/jobn-details/3410.html": {
+          "blob": "be1f5cf436598879de177171675c76e01afedd3d",
+          "sha256": "16d7c0444ecfffd4fbe6784d05753f842f0690ef039ad63c979126fdcb5d384d"
+        },
+        "base/gh-pages/book-of-job/jobn/job2_main_article.html": {
+          "blob": "f6aa13982f74da1a2013b3bd4b3dd45099e6cab9",
+          "sha256": "c618dac945dbb88f7156ff32c43038cddf769c863bce4a752f33199d74d4e0ed"
+        },
+        "base/py/author_boj/job2_main_article.py": {
+          "blob": "7bf984c8a5c6ce113fd985d69f7bdc5d3ee79932",
+          "sha256": "9b8e1a22e30267a52179cd11e4539d530515defc049dff1fe730181ca0d765a7"
+        },
+        "base/py/author_boj_qr/qr_34.py": {
+          "blob": "3252eaeeeb6f804f845049d054b1be8c97bdadc3",
+          "sha256": "dd93a31113f0a8736042cb923cd7f4a6fa954939c06d281ca2fcf5f0652a5439"
+        },
+        "head/book-of-job/out/custom-dict-freqs-ordered-by-count.json": {
+          "blob": "7bc2ea964de9b3eae3b746e474123459f1b07d9e",
+          "sha256": "c7c9e55817521905d2570e4b2f8f654b94e78c334d451d3c908d9f3f3d6c3020"
+        },
+        "head/book-of-job/out/custom-dict-freqs-ordered-by-entry.json": {
+          "blob": "eefa141cdfba3aca7a6a3c629d5423bc8bd41eec",
+          "sha256": "7a118dc8c468dfe773f5853770af84df09f347ae267d2c5bf8626a3308db5572"
+        },
+        "head/book-of-job/out/enriched-quirkrecs.json": {
+          "blob": "962444e5fbe9286ef911de9ce00dbd07166fc617",
+          "sha256": "d5278bee93c68c61781cafb4234f65857ac8f9ee3f33290cf3a4259711ed4aff"
+        },
+        "head/gh-pages/book-of-job/jobn-details/3410.html": {
+          "blob": "66ba87ee5bd07256c653c1e8ef37ef8a3360c2ab",
+          "sha256": "1a39a111dbde0e4c243befc0faf8be067a7bf99d1ec1a329c8bd34a29d7d9b78"
+        },
+        "head/gh-pages/book-of-job/jobn/job2_main_article.html": {
+          "blob": "48fbe4fa4980a9fa63f5e2186159f6682e698e7d",
+          "sha256": "c089b125de9522bb1a86f1ffa126adede5cf9fc8f3aed213e719ca5bb5f88d61"
+        },
+        "head/py/author_boj/job2_main_article.py": {
+          "blob": "40797bfec230a7cbccc29c7705cc52846f334b89",
+          "sha256": "c9f4ed964f58510f70a1a5837b2c7fa5b0142a4086243c489534170bb4bf300f"
+        },
+        "head/py/author_boj_qr/qr_34.py": {
+          "blob": "36c3910103addfa2dc23cb1d18ca0867602aafa8",
+          "sha256": "69e6fd2982920fe0ceae038a5ddeb312964964f0900b7c01bc42898598ff7751"
+        }
+      },
+      "checks": {
+        "paths": 7,
+        "preserved_other_records": 159,
+        "changed_record": "34:10",
+        "changed_fields": [
+          "qr-generic-comment"
+        ],
+        "added_comment": " Continuing in the charitable mood, we could “explain away” the odd placement of the lower dot and the absence of the upper dot by speculating that the missing dot disappeared into the פתח-like bar.",
+        "dictionary_deltas": {
+          "book-of-job/out/custom-dict-freqs-ordered-by-count.json": [
+            [
+              "words_hebrew",
+              "פתח",
+              70,
+              71
+            ]
+          ],
+          "book-of-job/out/custom-dict-freqs-ordered-by-entry.json": [
+            [
+              "words_hebrew",
+              "פתח",
+              70,
+              71
+            ]
+          ]
+        },
+        "html": "Exactly the declared comment addition and article sentence; all link/image tags unchanged.",
+        "limits": "No manuscript/source interpretation or browser claim."
+      }
+    }
+  },
+  "output_triage": "Zero tracked/untracked differences after each of four sequential commands; empty binary patches retained. No restoration/acceptance.",
+  "anchors_preserved": {
+    "overall_reviewed": "210affe3ac2931473bead0de839be0de08309e3d",
+    "broad_tested": "e686160a167bd1f50ccf058137760fdd075c42d8"
+  },
+  "checkers": [
+    "doc/review-hourly-2026-11-10-73fbf040-basics-check.py"
+  ],
+  "limits": [
+    "Two owner-authored prose edits checked for exact propagation, not independently adjudicated manuscript or apparatus claims.",
+    "Stage10/PR369, Word/source/live-save, external metadata and heading/browser/editorial gaps remain unchanged.",
+    "No broad mega/suite, source refresh, font/baseline/hbofonts, deployment/dispatch or main/shared write."
+  ],
+  "evidence": {
+    "path": "doc/review-hourly-2026-11-10-73fbf040-basics-evidence.zip",
+    "bytes": 136797,
+    "sha256": "d207c76b1615746e061e33f5b0e9b1a8ff829b8296c291eda9d28501afbf1dfa",
+    "members": 36
+  }
+}
