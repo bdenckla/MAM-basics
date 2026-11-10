@@ -61,6 +61,10 @@ _COMMENT_PARA5 = [
     " of the שווא-like part of a חטף פתח,",
     " and that dot is oddly placed,",
     " being mostly under the bar of the פתח-like part.",
+    " Continuing in the charitable mood,",
+    " we could “explain away” the odd placement of the lower dot",
+    " and the absence of the upper dot",
+    " by speculating that the missing dot disappeared into the פתח-like bar.",
 ]
 RECORD_3410 = {
     "qr-cv": "34:10",
