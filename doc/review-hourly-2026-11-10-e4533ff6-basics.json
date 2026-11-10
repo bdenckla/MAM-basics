@@ -1,0 +1,138 @@
+{
+  "schema": "bounded-hourly-screen-v1",
+  "recorded_utc": "2026-11-10T23:33:20.646611+00:00",
+  "repository": "bdenckla/MAM-basics",
+  "source_window": {
+    "base": "9a0ec239d7f45faff7487e4dfae8369f269a5f2d",
+    "head": "e4533ff6844355d3dcb47f9b7e2e4d3d926e9267",
+    "commits": 1,
+    "paths": [
+      "gh-pages/post-stress-meteg-post-silluq.html",
+      "py/author_site/post_stress_meteg_post_silluq_page.py"
+    ]
+  },
+  "receipt_parent": "e4533ff6844355d3dcb47f9b7e2e4d3d926e9267",
+  "reconciled_status": "948ecbe0eae25ef22ca47d4a90567f0309b7e023",
+  "disposition": "PASS at bounded depth; no consequential introduced defect or product repair.",
+  "anchors_preserved": {
+    "overall_reviewed": "210affe3ac2931473bead0de839be0de08309e3d",
+    "broad_tested": "73fbf0406b8cf843b2aabcbb8ef0b558d0fa7148"
+  },
+  "execution": [
+    {
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_authored.py",
+        "gen-site",
+        "--trust-surveys"
+      ],
+      "cwd": "/workspace/scratch/screen-e4533ff6-checkout",
+      "exit_code": 0,
+      "elapsed_seconds": 5.512656,
+      "recorded_utc": "2026-11-10T23:26:37.425731+00:00",
+      "status": ""
+    },
+    {
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        "py/tests/test_post_stress_meteg_annotations.py",
+        "py/tests/test_post_stress_meteg_plain_word.py",
+        "py/tests/test_prose_mark_order.py",
+        "py/tests/test_prose_conventions.py",
+        "py/tests/test_transliterations.py",
+        "-q"
+      ],
+      "cwd": "/workspace/scratch/screen-e4533ff6-checkout",
+      "exit_code": 0,
+      "elapsed_seconds": 30.465197,
+      "recorded_utc": "2026-11-10T23:27:07.910026+00:00",
+      "status": ""
+    },
+    {
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "-m",
+        "black",
+        "--check",
+        "py/author_site/post_stress_meteg_post_silluq_page.py"
+      ],
+      "cwd": "/workspace/scratch/screen-e4533ff6-checkout",
+      "exit_code": 0,
+      "elapsed_seconds": 0.271912,
+      "recorded_utc": "2026-11-10T23:27:08.198215+00:00",
+      "status": ""
+    }
+  ],
+  "coordinator_review": {
+    "attribution": "Coordinator connector endpoint source classification and static review; executor separately read and bounded the two-path source/output delta.",
+    "disposition": "No consequential defect found.",
+    "review": "One commit/two paths adds yored after merkha and dehi last in the similar-stroke list. Owner-reported 19 tests remain attributed; executor ran a different explicit 13-test focused population."
+  },
+  "ci": {
+    "attribution": "Coordinator read-only GitHub observations for this frozen head",
+    "statuses": 0,
+    "check_runs": 0,
+    "meaning": "Absence observations, not a CI pass; no workflow dispatched."
+  },
+  "diagnostics": {
+    "assigned_failures": [],
+    "source_differences": [],
+    "original_builder_repeated": false
+  },
+  "checkers": [
+    "doc/review-hourly-2026-11-10-e4533ff6-basics-execution-check.py"
+  ],
+  "evidence": {
+    "path": "doc/review-hourly-2026-11-10-e4533ff6-basics-evidence.zip",
+    "bytes": 8541,
+    "sha256": "f22175683166b757c70dfd66d201d97a1a7bd3347c5ebbc6a36bfbea0ef89022",
+    "members": 15,
+    "integrity": "CRC and every manifest byte size/SHA-256 verified."
+  },
+  "status_import": {
+    "source_commit": "948ecbe0eae25ef22ca47d4a90567f0309b7e023",
+    "immutable_link_repairs": [
+      {
+        "old": "review-hourly-2026-11-10-9a0ec239-basics.json",
+        "new": "https://github.com/bdenckla/MAM-basics/blob/948ecbe0eae25ef22ca47d4a90567f0309b7e023/doc/review-hourly-2026-11-10-9a0ec239-basics.json"
+      },
+      {
+        "old": "review-hourly-2026-11-10-9a0ec239-basics.json",
+        "new": "https://github.com/bdenckla/MAM-basics/blob/948ecbe0eae25ef22ca47d4a90567f0309b7e023/doc/review-hourly-2026-11-10-9a0ec239-basics.json"
+      },
+      {
+        "old": "review-hourly-2026-11-10-9a0ec239-basics.json",
+        "new": "https://github.com/bdenckla/MAM-basics/blob/948ecbe0eae25ef22ca47d4a90567f0309b7e023/doc/review-hourly-2026-11-10-9a0ec239-basics.json"
+      },
+      {
+        "old": "review-hourly-2026-11-10-9a0ec239-basics-evidence.zip",
+        "new": "https://github.com/bdenckla/MAM-basics/blob/948ecbe0eae25ef22ca47d4a90567f0309b7e023/doc/review-hourly-2026-11-10-9a0ec239-basics-evidence.zip"
+      }
+    ],
+    "former_latest_rows_retained_as_history": true,
+    "historical_reviewed_and_tested_rows_unchanged_except_links": true
+  },
+  "publication": {
+    "branch": "review-hourly-20261110-e4533ff6-basics-receipts",
+    "parent": "e4533ff6844355d3dcb47f9b7e2e4d3d926e9267",
+    "safeguard": "Manual-only Pages workflow",
+    "fresh_isolated_branch": true
+  },
+  "limits": "Focused offline checks only; historical source/live/browser/font/editorial gaps remain, with no broad-suite or overall-reviewed advance, external-agent contact, main/shared integration, deployment/dispatch, hbofonts or schedule work.",
+  "independent_delta": {
+    "result": "PASS",
+    "source_ast": "Exact base AST recovered after removing only two new romanization assignments and two list elements with their separators.",
+    "html": "Only the declared six-name list replaces the old four-name list; every other HTML byte and all Hebrew codepoints unchanged.",
+    "generated_html_sha256": "b7710463b752b607581b99f643ba03d2e86968461f28d53ec55dd13492f1efee",
+    "elapsed_seconds": 0.036265,
+    "output_differences": [],
+    "owner_test_count": "Owner-reported 19 is attributed; actual selected independent test count is in focused-tests.log."
+  },
+  "test_counts": {
+    "passed": 13,
+    "pytest_seconds": 30.28,
+    "owner_reported_tests": 19,
+    "owner_result_independently_repeated": false
+  }
+}
