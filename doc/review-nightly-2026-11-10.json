@@ -1,0 +1,615 @@
+{
+  "state": "completed continuing nightly maintained broad run",
+  "scheduled_window_utc": "2026-11-10T07:00:00+00:00",
+  "recorded_utc": "2026-11-10T08:07:53.819948+00:00",
+  "first_broad_started_utc": "2026-11-10T07:45:45.199794+00:00",
+  "input_repository_commits": {
+    "MAM-basics": "73fbf0406b8cf843b2aabcbb8ef0b558d0fa7148",
+    "MAM-private": "7b5ec8a90a96cc661e35b434e91685b56f415023"
+  },
+  "receipt_branch": "review-nightly-20261110-cloud-receipts",
+  "overall_review_not_advanced": true,
+  "repairs": [],
+  "current_run_failures": [],
+  "coordination": "Owned isolated exact committed worktrees, verified clean homes and five owning constrained environments; all expensive stages sequential under one recorder lease. Separate clean committed public input for Private, with no generated-input contamination.",
+  "publication": "Authorized fresh isolated receipt branches only; no main/shared/deployment integration, workflow dispatch or deployment.",
+  "schedule": "Coordinator reports continuing nightly automation enabled; no schedule operation or inferred next-run timestamp.",
+  "frozen_scope": "No hbofonts check/receipt, frozen-font rebuild, baseline acceptance, source/corpus refresh or external source publication.",
+  "repository": "bdenckla/MAM-basics",
+  "source": "73fbf0406b8cf843b2aabcbb8ef0b558d0fa7148",
+  "broad_tested": "73fbf0406b8cf843b2aabcbb8ef0b558d0fa7148",
+  "reviewed_through": "210affe3ac2931473bead0de839be0de08309e3d",
+  "receipt_parent": "ca5f5c84d476aca50f3ca1b336d6f74b05c4250f",
+  "reconciled_status": "https://github.com/bdenckla/MAM-basics/blob/ca5f5c84d476aca50f3ca1b336d6f74b05c4250f/doc/review-trial-status.md",
+  "outcome": "Mega 65 completed steps, exit 0 in 513.676 s. Full suite 1,444 passed / 5 declared skips / 82 subtests passed, 371.369 s (367.86 s pytest). Taamey D 61 PASS / 0 FAIL / 0 SKIP; release-check passed, read-only corpus REFRESH PENDING. 8 SVG geometry/Times-alias differences preserved, independently compared and restored; suite write-neutral.",
+  "review": "Frozen main equals the endpoint already covered by the latest completed bounded screen. No source/content review duplicated; only the actually completed broad-tested anchor advances. Source/live/browser/editorial limits remain open.",
+  "commands": [
+    {
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_0_mega.py"
+      ],
+      "cwd": "/workspace/scratch/nightly-20261110/MAM-basics",
+      "source": "73fbf0406b8cf843b2aabcbb8ef0b558d0fa7148",
+      "started_utc": "2026-11-10T07:45:45.199794+00:00",
+      "elapsed_seconds": 513.676,
+      "exit_code": 0,
+      "input_repository_commits": {
+        "MAM-basics": "73fbf0406b8cf843b2aabcbb8ef0b558d0fa7148",
+        "MAM-private": "7b5ec8a90a96cc661e35b434e91685b56f415023"
+      },
+      "environment": {
+        "PYTHONUNBUFFERED": "1",
+        "REPOS_ROOT": "/workspace",
+        "REPO_MAM_BASICS_DIR": "/workspace/scratch/nightly-20261110/MAM-basics",
+        "REPO_MAM_PARSED_DIR": "/workspace/scratch/nightly-20261110/MAM-basics/MAM-parsed"
+      },
+      "path_prefix": "/workspace/.cloud-setup/bin",
+      "public_input_checkout": "/workspace/scratch/nightly-20261110/MAM-basics",
+      "input_note": "Committed sibling input identity is provenance only; private logs and details are retained privately."
+    },
+    {
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        "-q",
+        "-ra"
+      ],
+      "cwd": "/workspace/scratch/nightly-20261110/MAM-basics",
+      "source": "73fbf0406b8cf843b2aabcbb8ef0b558d0fa7148",
+      "started_utc": "2026-11-10T07:55:07.698407+00:00",
+      "elapsed_seconds": 371.369,
+      "exit_code": 0,
+      "input_repository_commits": {
+        "MAM-basics": "73fbf0406b8cf843b2aabcbb8ef0b558d0fa7148",
+        "MAM-private": "7b5ec8a90a96cc661e35b434e91685b56f415023"
+      },
+      "environment": {
+        "PYTHONUNBUFFERED": "1",
+        "REPOS_ROOT": "/workspace",
+        "REPO_MAM_BASICS_DIR": "/workspace/scratch/nightly-20261110/MAM-basics",
+        "REPO_MAM_PARSED_DIR": "/workspace/scratch/nightly-20261110/MAM-basics/MAM-parsed"
+      },
+      "path_prefix": "/workspace/.cloud-setup/bin",
+      "public_input_checkout": "/workspace/scratch/nightly-20261110/MAM-basics",
+      "input_note": "Committed sibling input identity is provenance only; private logs and details are retained privately."
+    }
+  ],
+  "mega": {
+    "steps_completed": 65,
+    "step_times": [
+      [
+        "parse-ws",
+        "9.7 s"
+      ],
+      [
+        "foi-features-of-interest",
+        "6.4 s"
+      ],
+      [
+        "mam-with-doc",
+        "5.7 s"
+      ],
+      [
+        "diff-mpplus",
+        "6.3 s"
+      ],
+      [
+        "diff-ctr-vs-mam",
+        "0.1 s"
+      ],
+      [
+        "tmpl-survey",
+        "0.4 s"
+      ],
+      [
+        "tmpl-survey-toy",
+        "0.0 s"
+      ],
+      [
+        "vendored-tmpl-survey-toy",
+        "0.0 s"
+      ],
+      [
+        "mam-simple",
+        "7.4 s"
+      ],
+      [
+        "mam-simple-docs",
+        "0.1 s"
+      ],
+      [
+        "letter-small-job",
+        "0.0 s"
+      ],
+      [
+        "vendored-letter-small-job",
+        "0.0 s"
+      ],
+      [
+        "decnreub",
+        "0.0 s"
+      ],
+      [
+        "multimark",
+        "10.3 s"
+      ],
+      [
+        "wordlist",
+        "1.0 s"
+      ],
+      [
+        "search-final-hiriq-verse-text",
+        "0.4 s"
+      ],
+      [
+        "search-holam-he-qere",
+        "1.0 s"
+      ],
+      [
+        "explicit-xataf",
+        "0.4 s"
+      ],
+      [
+        "ws-bot-proto",
+        "3.6 s"
+      ],
+      [
+        "gen-misc",
+        "0.7 s"
+      ],
+      [
+        "wlc-json-and-unicode",
+        "14.6 s"
+      ],
+      [
+        "accgram-run-prose",
+        "7.4 s"
+      ],
+      [
+        "accgram-test-fixes",
+        "1.3 s"
+      ],
+      [
+        "accgram-run-dual-cant",
+        "0.3 s"
+      ],
+      [
+        "accgram-run-poetic",
+        "1.4 s"
+      ],
+      [
+        "accgram-xcheck-poetic",
+        "1.0 s"
+      ],
+      [
+        "accgram-servi-xcheck",
+        "0.8 s"
+      ],
+      [
+        "accgram-grammaticality",
+        "1.4 s"
+      ],
+      [
+        "accgram-run-printed-decalogue",
+        "0.2 s"
+      ],
+      [
+        "accgram-survey-chanted-word-accents",
+        "15.1 s"
+      ],
+      [
+        "accgram-generate-html",
+        "10.5 s"
+      ],
+      [
+        "uxlc-check-changes",
+        "0.7 s"
+      ],
+      [
+        "uxlc-fois",
+        "11.1 s"
+      ],
+      [
+        "uxlc-write-page-break-info",
+        "0.4 s"
+      ],
+      [
+        "uxlc-amb-early-mtg",
+        "1.1 s"
+      ],
+      [
+        "uxlc-word-list",
+        "0.9 s"
+      ],
+      [
+        "clc",
+        "0.7 s"
+      ],
+      [
+        "estimate-uxlc-locations",
+        "0.8 s"
+      ],
+      [
+        "render-uxlc-corrections",
+        "0.0 s"
+      ],
+      [
+        "verify-and-render-table",
+        "0.6 s"
+      ],
+      [
+        "book-of-job-site",
+        "1.3 s"
+      ],
+      [
+        "map-changes-to-book-of-job",
+        "0.0 s"
+      ],
+      [
+        "find-uxlc-accent-changes",
+        "0.0 s"
+      ],
+      [
+        "uxlc-grammar-test",
+        "1.0 s"
+      ],
+      [
+        "wlc-diffs-420422",
+        "0.4 s"
+      ],
+      [
+        "wlc-a-notes",
+        "0.1 s"
+      ],
+      [
+        "sigil-inventory",
+        "0.7 s"
+      ],
+      [
+        "phonetic-mam-export",
+        "68.1 s"
+      ],
+      [
+        "phonetic-mam-render",
+        "34.1 s"
+      ],
+      [
+        "accgram-survey-meteg-before-stress",
+        "44.7 s"
+      ],
+      [
+        "yeivin-itm-survey-meteg-claims",
+        "0.1 s"
+      ],
+      [
+        "yeivin-itm-render",
+        "0.4 s"
+      ],
+      [
+        "accgram-survey-post-stress-meteg",
+        "139.1 s"
+      ],
+      [
+        "gen-site",
+        "4.8 s"
+      ],
+      [
+        "diffable-pointed-hebrew",
+        "0.0 s"
+      ],
+      [
+        "ac-gen-index-flat-annotated",
+        "0.0 s"
+      ],
+      [
+        "near-aleppo-census",
+        "3.9 s"
+      ],
+      [
+        "near-aleppo-build",
+        "33.5 s"
+      ],
+      [
+        "near-aleppo-html",
+        "27.6 s"
+      ],
+      [
+        "pipeline-graph",
+        "0.1 s"
+      ],
+      [
+        "mam-for-sefaria-doc",
+        "7.7 s"
+      ],
+      [
+        "taamey-d-doc",
+        "0.0 s"
+      ],
+      [
+        "taamey-d-qa",
+        "17.7 s"
+      ],
+      [
+        "taamey-d-release-check",
+        "0.1 s"
+      ],
+      [
+        "taamey-d-corpus",
+        "1.3 s"
+      ]
+    ],
+    "qa": {
+      "PASS": 61,
+      "FAIL": 0,
+      "SKIP": 0
+    },
+    "release_check": "passed",
+    "corpus": "Read-only REFRESH PENDING; no source refresh or baseline acceptance.",
+    "corpus_population": {
+      "before": 120425,
+      "after": 120426,
+      "drop": 1,
+      "add": 2,
+      "relabel": 1
+    },
+    "skipped_steps": []
+  },
+  "suite": {
+    "passed": 1444,
+    "skipped": 5,
+    "subtests_passed": 82,
+    "pytest_seconds": 367.86,
+    "skip_reasons": [
+      "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: koren_ex_elyon diverges from its Wikisource strand; the control needs an agreeing page",
+      "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: simtan_dt_taxton diverges from its Wikisource strand; the control needs an agreeing page",
+      "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: simtiq_dt_taxton diverges from its Wikisource strand; the control needs an agreeing page",
+      "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: simtiq_ex_elyon diverges from its Wikisource strand; the control needs an agreeing page",
+      "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: simtiq_ex_taxton diverges from its Wikisource strand; the control needs an agreeing page"
+    ]
+  },
+  "output_triage": [
+    {
+      "source": "73fbf0406b8cf843b2aabcbb8ef0b558d0fa7148",
+      "changed_paths": [
+        "doc/process-documentation/MAM-process.dot.svg",
+        "doc/process-documentation/pipeline.svg",
+        "gh-pages/MAM-parsed/plus/svg/plus-call-graph-c.svg",
+        "gh-pages/MAM-parsed/plus/svg/plus-call-graph-d.svg",
+        "gh-pages/MAM-parsed/plus/svg/plus-call-graph-e.svg",
+        "gh-pages/MAM-parsed/plus/svg/plus-dexi-call-graph.svg",
+        "gh-pages/MAM-parsed/plus/svg/plus-dualcant-call-graph.svg",
+        "gh-pages/MAM-parsed/plus/svg/plus-kvq-call-graph.svg"
+      ],
+      "untracked": [],
+      "classified": [
+        {
+          "path": "doc/process-documentation/MAM-process.dot.svg",
+          "before_sha256": "901e20e873bfc0f839a1cd0e3dffee85827e7d2cd5515683de176035f6d31353",
+          "after_sha256": "f8beae9d4567ee9485f21c663afff777bdeae0a2bcfebbf80672a56694ba1698",
+          "differing_attributes": {
+            "height": 1,
+            "width": 1,
+            "viewBox": 1,
+            "transform": 1,
+            "points": 29,
+            "font-family": 18,
+            "y": 17,
+            "x": 18,
+            "d": 12
+          },
+          "semantic_xml_equal": true,
+          "unexplained": []
+        },
+        {
+          "path": "doc/process-documentation/pipeline.svg",
+          "before_sha256": "0b6564789fbe5bb58f077759eed18481d78492d0552ad40561d96af09c209204",
+          "after_sha256": "05abfba5131811ccff34728c4873264e69fb6f5ec8cc738dd92af22a23fd6b77",
+          "differing_attributes": {
+            "height": 1,
+            "width": 1,
+            "viewBox": 1,
+            "transform": 1,
+            "points": 26,
+            "y": 22,
+            "x": 22,
+            "d": 34
+          },
+          "semantic_xml_equal": true,
+          "unexplained": []
+        },
+        {
+          "path": "gh-pages/MAM-parsed/plus/svg/plus-call-graph-c.svg",
+          "before_sha256": "45546ac232112011f18fce4232853b834a876d0d0abd2dc398bd4e6ba1d92cf5",
+          "after_sha256": "b058a1991874a547c3d260402667f7e3a4972df8b9528e8633d821ee96f746ed",
+          "differing_attributes": {
+            "width": 1,
+            "viewBox": 1,
+            "points": 8,
+            "x": 7,
+            "d": 4,
+            "y": 3
+          },
+          "semantic_xml_equal": true,
+          "unexplained": []
+        },
+        {
+          "path": "gh-pages/MAM-parsed/plus/svg/plus-call-graph-d.svg",
+          "before_sha256": "d8ca8824b8506ef437be21f283004c53a12c5a32eae8027168753310f36104f7",
+          "after_sha256": "03b97e25c4c39271bd126d7a0d46e16a39b63ac637d0952ef1fe25bef7b2092e",
+          "differing_attributes": {
+            "width": 1,
+            "viewBox": 1,
+            "points": 7,
+            "x": 6,
+            "d": 3,
+            "y": 3
+          },
+          "semantic_xml_equal": true,
+          "unexplained": []
+        },
+        {
+          "path": "gh-pages/MAM-parsed/plus/svg/plus-call-graph-e.svg",
+          "before_sha256": "2cedb708c55f170a00531d2a7765f612c7909a5bc5008f7c3dacced385a82273",
+          "after_sha256": "3bb233f9d879e914304a5bcc30ff4f6413f5523bc2bf077fa202f8ec9f8d58a7",
+          "differing_attributes": {
+            "height": 1,
+            "width": 1,
+            "viewBox": 1,
+            "transform": 1,
+            "points": 23,
+            "font-family": 1,
+            "y": 23,
+            "x": 23,
+            "d": 12
+          },
+          "semantic_xml_equal": true,
+          "unexplained": []
+        },
+        {
+          "path": "gh-pages/MAM-parsed/plus/svg/plus-dexi-call-graph.svg",
+          "before_sha256": "c5801e0792a1598a65268459a3730ffafc50047e46381e26b10be1ab34a8117e",
+          "after_sha256": "5c4427190645801866616e0a5008673ae05af4809cde5d20431626f5344fbb36",
+          "differing_attributes": {
+            "height": 1,
+            "width": 1,
+            "viewBox": 1,
+            "transform": 1,
+            "points": 14,
+            "font-family": 1,
+            "y": 14,
+            "x": 14,
+            "d": 6
+          },
+          "semantic_xml_equal": true,
+          "unexplained": []
+        },
+        {
+          "path": "gh-pages/MAM-parsed/plus/svg/plus-dualcant-call-graph.svg",
+          "before_sha256": "455473dd313dd75d1478ba3ca482344cfb9aed168a3be82cfa0306342a1e51f9",
+          "after_sha256": "044e178113c5ee61ccd1e657a67f1fffc099863c60c2b597da28dea2461f391e",
+          "differing_attributes": {
+            "height": 1,
+            "width": 1,
+            "viewBox": 1,
+            "transform": 1,
+            "points": 19,
+            "y": 18,
+            "x": 17,
+            "d": 10
+          },
+          "semantic_xml_equal": true,
+          "unexplained": []
+        },
+        {
+          "path": "gh-pages/MAM-parsed/plus/svg/plus-kvq-call-graph.svg",
+          "before_sha256": "a145b66a290ce29462f595f0c397cf93793af78c9fba6e0d43618f2e9660fb56",
+          "after_sha256": "b3610fa3e1bb4e2a0a5fd28bf1befa3ba84b3f319bd8c01b7c7738c66f6d01b5",
+          "differing_attributes": {
+            "height": 1,
+            "width": 1,
+            "viewBox": 1,
+            "transform": 1,
+            "points": 12,
+            "font-family": 1,
+            "y": 12,
+            "x": 11,
+            "d": 5
+          },
+          "semantic_xml_equal": true,
+          "unexplained": []
+        }
+      ],
+      "unexplained": [],
+      "archive": "basics-mega-evidence.zip",
+      "archive_sha256": "f00f2bfe08b1ccdee4d1966cf4da88073c4c8a6a3bc7505402b6674246752a4a",
+      "verified": true
+    },
+    {
+      "source": "73fbf0406b8cf843b2aabcbb8ef0b558d0fa7148",
+      "changed_paths": [],
+      "untracked": [],
+      "classified": [],
+      "unexplained": [],
+      "archive": "basics-suite-evidence.zip",
+      "archive_sha256": "beefa4601d6ac3edc10e844c6084917c2c1e36b3edc919d48558b084409cdb30",
+      "verified": true
+    }
+  ],
+  "independent_svg_comparison": {
+    "result": "PASS",
+    "source": "73fbf0406b8cf843b2aabcbb8ef0b558d0fa7148",
+    "comparisons": [
+      {
+        "path": "doc/process-documentation/MAM-process.dot.svg",
+        "graph_nodes": 15,
+        "graph_edges": 12,
+        "stamp": "16.0.0 (20260814.1018)",
+        "canonical_non_layout_equal": true
+      },
+      {
+        "path": "doc/process-documentation/pipeline.svg",
+        "graph_nodes": 15,
+        "graph_edges": 18,
+        "stamp": "16.0.0 (20260814.1018)",
+        "canonical_non_layout_equal": true
+      },
+      {
+        "path": "gh-pages/MAM-parsed/plus/svg/plus-call-graph-c.svg",
+        "graph_nodes": 4,
+        "graph_edges": 4,
+        "stamp": "16.0.0 (20260814.1018)",
+        "canonical_non_layout_equal": true
+      },
+      {
+        "path": "gh-pages/MAM-parsed/plus/svg/plus-call-graph-d.svg",
+        "graph_nodes": 4,
+        "graph_edges": 3,
+        "stamp": "16.0.0 (20260814.1018)",
+        "canonical_non_layout_equal": true
+      },
+      {
+        "path": "gh-pages/MAM-parsed/plus/svg/plus-call-graph-e.svg",
+        "graph_nodes": 10,
+        "graph_edges": 12,
+        "stamp": "16.0.0 (20260814.1018)",
+        "canonical_non_layout_equal": true
+      },
+      {
+        "path": "gh-pages/MAM-parsed/plus/svg/plus-dexi-call-graph.svg",
+        "graph_nodes": 7,
+        "graph_edges": 6,
+        "stamp": "16.0.0 (20260814.1018)",
+        "canonical_non_layout_equal": true
+      },
+      {
+        "path": "gh-pages/MAM-parsed/plus/svg/plus-dualcant-call-graph.svg",
+        "graph_nodes": 8,
+        "graph_edges": 10,
+        "stamp": "16.0.0 (20260814.1018)",
+        "canonical_non_layout_equal": true
+      },
+      {
+        "path": "gh-pages/MAM-parsed/plus/svg/plus-kvq-call-graph.svg",
+        "graph_nodes": 6,
+        "graph_edges": 5,
+        "stamp": "16.0.0 (20260814.1018)",
+        "canonical_non_layout_equal": true
+      }
+    ],
+    "non_svg_tracked_changes": [],
+    "interpretation": "Graph node/edge IDs and titles, every text/tail, non-layout attribute and pinned stamp unchanged. Only recorded geometric attributes and the explicit Times-family alias differ; no browser/pixel equivalence is claimed."
+  },
+  "remaining_limits": [
+    "Overall reviewed anchor remains 210affe3; Stage10 original Word/source/live-save, live current/base/parse and independent external-metadata gaps remain.",
+    "PR369, heading/introduction source-authenticity, rendered/browser/editorial limitations and earlier denied routes remain unchanged.",
+    "No broad pass is editorial proof; all historical failures and declared skips remain at the reconciled status and immutable receipts."
+  ],
+  "evidence": {
+    "path": "doc/review-nightly-2026-11-10-basics-evidence.zip",
+    "bytes": 59144,
+    "sha256": "3855d8a28acdba6b55d315613db745f0eb31b3360c3caee5a618a1cee36ea46b",
+    "members": 12,
+    "integrity": "Outer member CRCs, byte/SHA-256 manifest and nested evidence ZIP CRCs verified."
+  }
+}
