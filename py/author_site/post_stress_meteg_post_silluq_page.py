@@ -64,9 +64,11 @@ _POST_SILLUQ_STROKE_ANGLES_FOOTNOTE_ID = "stroke-angles-footnote"
 _POST_SILLUQ_BROADER_AMBIGUITY_FOOTNOTE_ID = "broader-ambiguity-footnote"
 
 _ROM_MERKHA = _author_romanization("merkha")
+_ROM_YORED = _author_romanization("yored")
 _ROM_MAYELA = rmn("mayela")
 _ROM_TIPEHA = _author_romanization("tipexa")
 _ROM_TARHA = _author_romanization("tarxa")
+_ROM_DEXI = _author_romanization("dexi")
 
 
 def _post_silluq_table_row(contents: tuple, attrs: tuple) -> object:
@@ -1089,17 +1091,25 @@ def build_post_silluq_body(
             "φ3 — Other accents with a similar stroke",
             {"id": _POST_SILLUQ_BROADER_AMBIGUITY_FOOTNOTE_ID},
         ),
+        # The list is grouped by printed (not necessarily manuscript) shape and angle, as
+        # Ben asked on 2026-11-10 when he asked for yored and any other accent the list
+        # lacked: merkha's shape (merkha, yored), then tipexa's (mayela, tipexa, tarxa,
+        # dexi).
         mb_html.para(
             (
                 "In this document, we set aside the broader set of accents that a "
                 "similar stroke can represent: ",
                 _ROM_MERKHA,
                 ", ",
+                _ROM_YORED,
+                ", ",
                 _ROM_MAYELA,
                 ", ",
                 _ROM_TIPEHA,
-                ", and ",
+                ", ",
                 _ROM_TARHA,
+                ", and ",
+                _ROM_DEXI,
                 ". In prose verses, Yeivin, ",
                 itm(),
                 " §210, describes a secondary accent with the form of ",
