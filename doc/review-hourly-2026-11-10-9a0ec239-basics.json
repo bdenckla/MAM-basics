@@ -1,0 +1,559 @@
+{
+  "schema": "bounded-offline-downloader-screen-v1",
+  "recorded_utc": "2026-11-10T19:10:56.395093+00:00",
+  "source_window": {
+    "base": "73fbf0406b8cf843b2aabcbb8ef0b558d0fa7148",
+    "head": "9a0ec239d7f45faff7487e4dfae8369f269a5f2d",
+    "commits": 2,
+    "paths": [
+      "py/mb_cmn/polite_download.py",
+      "py/tests/test_polite_download.py"
+    ]
+  },
+  "source_identities": [
+    {
+      "path": "py/mb_cmn/polite_download.py",
+      "blob": "0eecf430c2bf177cd4bb394f212f107867f7588a",
+      "bytes": 25077,
+      "sha256": "ff9004d3c3c5b0cedd52bef4f5255d01a6889b10fcc502c42f397de4bbc6f1b8"
+    },
+    {
+      "path": "py/tests/test_polite_download.py",
+      "blob": "086b634e68a271dfc7b722a016dc2136cff08196",
+      "bytes": 11546,
+      "sha256": "f99bd575b960197b9f019993e37b7f8f217433fffdd680f1a697047b1399a3d1"
+    }
+  ],
+  "receipt_parent": "9a0ec239d7f45faff7487e4dfae8369f269a5f2d",
+  "reconciled_status": "f3276dd6fc7541d7a6a246f63778cd3453e19fc1",
+  "disposition": "PASS at bounded depth; no consequential introduced defect or product repair.",
+  "historical_anchors_preserved": {
+    "overall_reviewed": "210affe3ac2931473bead0de839be0de08309e3d",
+    "broad_tested": "73fbf0406b8cf843b2aabcbb8ef0b558d0fa7148"
+  },
+  "execution": [
+    {
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        "py/tests/test_polite_download.py",
+        "py/tests/test_main_download_fr_wikisource.py",
+        "-p",
+        "novc_downloader_offline_guard",
+        "-q"
+      ],
+      "cwd": "/workspace/scratch/downloader-basics-checkout",
+      "exit_code": 0,
+      "elapsed_seconds": 1.694904,
+      "recorded_utc": "2026-11-10T19:04:51.292118+00:00",
+      "tracked_status": ""
+    },
+    {
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "-m",
+        "black",
+        "--check",
+        "py/mb_cmn/polite_download.py",
+        "py/tests/test_polite_download.py"
+      ],
+      "cwd": "/workspace/scratch/downloader-basics-checkout",
+      "exit_code": 0,
+      "elapsed_seconds": 0.211993,
+      "recorded_utc": "2026-11-10T19:05:57.682516+00:00",
+      "tracked_status": ""
+    },
+    {
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "/workspace/scratch/check_downloader_spacing_20261110.py",
+        "/workspace/scratch/downloader-basics-checkout/py/mb_cmn/polite_download.py",
+        "/workspace/scratch/downloader-basics-evidence/base-polite_download.py",
+        "/workspace/scratch/downloader-basics-evidence/spacing-probes.json"
+      ],
+      "cwd": "/workspace/scratch/downloader-basics-checkout",
+      "exit_code": 0,
+      "elapsed_seconds": 0.166813,
+      "recorded_utc": "2026-11-10T19:05:57.860740+00:00",
+      "tracked_status": ""
+    }
+  ],
+  "caller_census": {
+    "result": "PASS",
+    "source_commit": "9a0ec239d7f45faff7487e4dfae8369f269a5f2d",
+    "production_modules_parsed": 1269,
+    "downloader_calls": [
+      {
+        "path": "py/concrete_transcription/ct_fetch.py",
+        "line": 39,
+        "call": "polite_download.PoliteDownloader(config)"
+      },
+      {
+        "path": "py/main_clc_download_notes.py",
+        "line": 106,
+        "call": "polite_download.PoliteDownloader(_notes_config(args.host))"
+      },
+      {
+        "path": "py/main_uxlc_download_changes.py",
+        "line": 111,
+        "call": "polite_download.PoliteDownloader(_download_config(args.host))"
+      },
+      {
+        "path": "py/miqra_mevoar/fetch.py",
+        "line": 41,
+        "call": "polite_download.PoliteDownloader(_CONFIG)"
+      },
+      {
+        "path": "py/subcommands/download_wikisource.py",
+        "line": 25,
+        "call": "polite_download.PoliteDownloader(_WIKISOURCE_DOWNLOAD_CONFIG, session=session)"
+      },
+      {
+        "path": "py/subcommands/download_wikisource_intro.py",
+        "line": 102,
+        "call": "polite_download.PoliteDownloader(_DOWNLOAD_CONFIG)"
+      },
+      {
+        "path": "py/subcommands/ws_bot_miqra_mevoar.py",
+        "line": 186,
+        "call": "polite_download.PoliteDownloader(_CHECK_CONFIG)"
+      },
+      {
+        "path": "py/subcommands/ws_bot_miqra_mevoar_display.py",
+        "line": 192,
+        "call": "polite_download.PoliteDownloader(_CHECK_CONFIG)"
+      },
+      {
+        "path": "py/subcommands/ws_bot_miqra_mevoar_index.py",
+        "line": 89,
+        "call": "polite_download.PoliteDownloader(_CHECK_CONFIG)"
+      },
+      {
+        "path": "py/subcommands/ws_bot_miqra_mevoar_index.py",
+        "line": 190,
+        "call": "polite_download.PoliteDownloader(_CHECK_CONFIG)"
+      },
+      {
+        "path": "py/subcommands/ws_bot_pages.py",
+        "line": 175,
+        "call": "polite_download.PoliteDownloader(_CHECK_CONFIG)"
+      },
+      {
+        "path": "py/subcommands/ws_bot_pages.py",
+        "line": 257,
+        "call": "polite_download.PoliteDownloader(_CHECK_CONFIG)"
+      }
+    ],
+    "supplied_session_calls": [
+      {
+        "path": "py/subcommands/download_wikisource.py",
+        "line": 25,
+        "call": "polite_download.PoliteDownloader(_WIKISOURCE_DOWNLOAD_CONFIG, session=session)"
+      }
+    ],
+    "explicit_stream_true_configurations": [],
+    "conclusion": "Maintained tracked callers use default non-streaming sessions; the sole supplied session is CountingSession, which does not change streaming.",
+    "limit": "Static tracked-call-site/configuration census; arbitrary external supplied sessions with stream=True may return before body consumption and are outside this verified caller population. No live requests."
+  },
+  "coordinator_review": {
+    "attribution": "Coordinating reviewer supplied independent endpoint source inspection; no product execution by coordinator and no duplicate full source review here.",
+    "disposition": "No consequential introduced defect found.",
+    "identities": "All materialized endpoint text inputs Git-blob verified by coordinator.",
+    "checks": [
+      "Complete two-path endpoint diff: hostname/clock-shared turns, response-end spacing, manually gated redirect hops and robots reads, and eight-chain Requests differential oracle.",
+      "Lock release is in finally; robots and redirect transitions acquire host turns separately; both changed Python files parse."
+    ],
+    "caveat": "Body-inclusive completion assumes default non-streaming sessions. Tracked caller census finds 12 production calls, one supplied CountingSession with no streaming override and no explicit stream=True configuration. Arbitrary external streaming sessions are outside verified caller coverage."
+  },
+  "diagnostics": {
+    "recorder_failure": "After 19 tests / 8 subtests passed, the recorder asserted that all socket-event counts were zero. The guard had blocked exactly one socket.__new__ event; no socket.connect/getaddrinfo/sendto event occurred. Recorder stopped before later checks; original reports retained.",
+    "recovery": "A separate guarded urllib3 import diagnostic identifies its IPv6 loopback ::1 capability probe. Corrected recorder resumed after the successful tests without rerunning them. No product failure or repair.",
+    "assigned_product_failures": [],
+    "maintained_tests_repeated": false
+  },
+  "output_differences": [],
+  "checkers": [
+    "doc/review-hourly-2026-11-10-9a0ec239-basics-spacing-check.py",
+    "doc/review-hourly-2026-11-10-9a0ec239-basics-offline-guard.py"
+  ],
+  "evidence": {
+    "path": "doc/review-hourly-2026-11-10-9a0ec239-basics-evidence.zip",
+    "bytes": 44574,
+    "sha256": "f915e6a84d5ae6d7eecbcfe994dbfbbb63d1bdc498f00fff56d95c0fbb0fda07",
+    "members": 25,
+    "integrity": "CRC and all manifest bytes/SHA-256 verified."
+  },
+  "status_import": {
+    "source_commit": "f3276dd6fc7541d7a6a246f63778cd3453e19fc1",
+    "historical_anchor_rows_unchanged_except_link_destinations": true,
+    "immutable_link_repairs": [
+      {
+        "old": "review-hourly-2026-11-10-73fbf040-basics.json",
+        "new": "https://github.com/bdenckla/MAM-basics/blob/f3276dd6fc7541d7a6a246f63778cd3453e19fc1/doc/review-hourly-2026-11-10-73fbf040-basics.json"
+      },
+      {
+        "old": "review-hourly-2026-11-10-73fbf040-basics.json",
+        "new": "https://github.com/bdenckla/MAM-basics/blob/f3276dd6fc7541d7a6a246f63778cd3453e19fc1/doc/review-hourly-2026-11-10-73fbf040-basics.json"
+      },
+      {
+        "old": "review-hourly-2026-11-09-bc8d7ed3-basics.json",
+        "new": "https://github.com/bdenckla/MAM-basics/blob/f3276dd6fc7541d7a6a246f63778cd3453e19fc1/doc/review-hourly-2026-11-09-bc8d7ed3-basics.json"
+      },
+      {
+        "old": "review-hourly-2026-11-09-08abd66a-basics.json",
+        "new": "https://github.com/bdenckla/MAM-basics/blob/f3276dd6fc7541d7a6a246f63778cd3453e19fc1/doc/review-hourly-2026-11-09-08abd66a-basics.json"
+      },
+      {
+        "old": "review-hourly-2026-11-09-08abd66a-basics-execution.json",
+        "new": "https://github.com/bdenckla/MAM-basics/blob/f3276dd6fc7541d7a6a246f63778cd3453e19fc1/doc/review-hourly-2026-11-09-08abd66a-basics-execution.json"
+      },
+      {
+        "old": "review-hourly-2026-11-09-2db5d4fb-basics.json",
+        "new": "https://github.com/bdenckla/MAM-basics/blob/f3276dd6fc7541d7a6a246f63778cd3453e19fc1/doc/review-hourly-2026-11-09-2db5d4fb-basics.json"
+      },
+      {
+        "old": "review-hourly-2026-11-09-2db5d4fb-basics-execution.json",
+        "new": "https://github.com/bdenckla/MAM-basics/blob/f3276dd6fc7541d7a6a246f63778cd3453e19fc1/doc/review-hourly-2026-11-09-2db5d4fb-basics-execution.json"
+      },
+      {
+        "old": "review-hourly-2026-11-09-0203db8f-basics.json",
+        "new": "https://github.com/bdenckla/MAM-basics/blob/f3276dd6fc7541d7a6a246f63778cd3453e19fc1/doc/review-hourly-2026-11-09-0203db8f-basics.json"
+      },
+      {
+        "old": "review-hourly-2026-11-09-be987050-basics.json",
+        "new": "https://github.com/bdenckla/MAM-basics/blob/f3276dd6fc7541d7a6a246f63778cd3453e19fc1/doc/review-hourly-2026-11-09-be987050-basics.json"
+      },
+      {
+        "old": "review-hourly-2026-11-09-ea19ea15-basics.json",
+        "new": "https://github.com/bdenckla/MAM-basics/blob/f3276dd6fc7541d7a6a246f63778cd3453e19fc1/doc/review-hourly-2026-11-09-ea19ea15-basics.json"
+      },
+      {
+        "old": "review-hourly-2026-11-09-653b8419-basics.json",
+        "new": "https://github.com/bdenckla/MAM-basics/blob/f3276dd6fc7541d7a6a246f63778cd3453e19fc1/doc/review-hourly-2026-11-09-653b8419-basics.json"
+      },
+      {
+        "old": "review-nightly-2026-11-10.json",
+        "new": "https://github.com/bdenckla/MAM-basics/blob/f3276dd6fc7541d7a6a246f63778cd3453e19fc1/doc/review-nightly-2026-11-10.json"
+      },
+      {
+        "old": "review-hourly-2026-11-09-653b8419-basics.json",
+        "new": "https://github.com/bdenckla/MAM-basics/blob/f3276dd6fc7541d7a6a246f63778cd3453e19fc1/doc/review-hourly-2026-11-09-653b8419-basics.json"
+      },
+      {
+        "old": "review-hourly-2026-11-09-653b8419-basics-check.py",
+        "new": "https://github.com/bdenckla/MAM-basics/blob/f3276dd6fc7541d7a6a246f63778cd3453e19fc1/doc/review-hourly-2026-11-09-653b8419-basics-check.py"
+      },
+      {
+        "old": "review-hourly-2026-11-09-653b8419-basics-negative-check.py",
+        "new": "https://github.com/bdenckla/MAM-basics/blob/f3276dd6fc7541d7a6a246f63778cd3453e19fc1/doc/review-hourly-2026-11-09-653b8419-basics-negative-check.py"
+      },
+      {
+        "old": "review-hourly-2026-11-09-ea19ea15-basics.json",
+        "new": "https://github.com/bdenckla/MAM-basics/blob/f3276dd6fc7541d7a6a246f63778cd3453e19fc1/doc/review-hourly-2026-11-09-ea19ea15-basics.json"
+      },
+      {
+        "old": "review-hourly-2026-11-09-ea19ea15-basics-check.py",
+        "new": "https://github.com/bdenckla/MAM-basics/blob/f3276dd6fc7541d7a6a246f63778cd3453e19fc1/doc/review-hourly-2026-11-09-ea19ea15-basics-check.py"
+      },
+      {
+        "old": "review-hourly-2026-11-09-be987050-basics.json",
+        "new": "https://github.com/bdenckla/MAM-basics/blob/f3276dd6fc7541d7a6a246f63778cd3453e19fc1/doc/review-hourly-2026-11-09-be987050-basics.json"
+      },
+      {
+        "old": "review-hourly-2026-11-09-be987050-basics-check.py",
+        "new": "https://github.com/bdenckla/MAM-basics/blob/f3276dd6fc7541d7a6a246f63778cd3453e19fc1/doc/review-hourly-2026-11-09-be987050-basics-check.py"
+      },
+      {
+        "old": "review-hourly-2026-11-09-be987050-basics-compare.json",
+        "new": "https://github.com/bdenckla/MAM-basics/blob/f3276dd6fc7541d7a6a246f63778cd3453e19fc1/doc/review-hourly-2026-11-09-be987050-basics-compare.json"
+      },
+      {
+        "old": "review-hourly-2026-11-09-0203db8f-basics.json",
+        "new": "https://github.com/bdenckla/MAM-basics/blob/f3276dd6fc7541d7a6a246f63778cd3453e19fc1/doc/review-hourly-2026-11-09-0203db8f-basics.json"
+      },
+      {
+        "old": "review-hourly-2026-11-09-0203db8f-basics-check.py",
+        "new": "https://github.com/bdenckla/MAM-basics/blob/f3276dd6fc7541d7a6a246f63778cd3453e19fc1/doc/review-hourly-2026-11-09-0203db8f-basics-check.py"
+      },
+      {
+        "old": "review-hourly-2026-11-09-2db5d4fb-basics.json",
+        "new": "https://github.com/bdenckla/MAM-basics/blob/f3276dd6fc7541d7a6a246f63778cd3453e19fc1/doc/review-hourly-2026-11-09-2db5d4fb-basics.json"
+      },
+      {
+        "old": "review-hourly-2026-11-09-2db5d4fb-basics-check.py",
+        "new": "https://github.com/bdenckla/MAM-basics/blob/f3276dd6fc7541d7a6a246f63778cd3453e19fc1/doc/review-hourly-2026-11-09-2db5d4fb-basics-check.py"
+      },
+      {
+        "old": "review-hourly-2026-11-09-2db5d4fb-basics-execution.json",
+        "new": "https://github.com/bdenckla/MAM-basics/blob/f3276dd6fc7541d7a6a246f63778cd3453e19fc1/doc/review-hourly-2026-11-09-2db5d4fb-basics-execution.json"
+      },
+      {
+        "old": "review-hourly-2026-11-09-08abd66a-basics.json",
+        "new": "https://github.com/bdenckla/MAM-basics/blob/f3276dd6fc7541d7a6a246f63778cd3453e19fc1/doc/review-hourly-2026-11-09-08abd66a-basics.json"
+      },
+      {
+        "old": "review-hourly-2026-11-09-bc8d7ed3-basics.json",
+        "new": "https://github.com/bdenckla/MAM-basics/blob/f3276dd6fc7541d7a6a246f63778cd3453e19fc1/doc/review-hourly-2026-11-09-bc8d7ed3-basics.json"
+      },
+      {
+        "old": "review-hourly-2026-11-09-bc8d7ed3-basics-check.py",
+        "new": "https://github.com/bdenckla/MAM-basics/blob/f3276dd6fc7541d7a6a246f63778cd3453e19fc1/doc/review-hourly-2026-11-09-bc8d7ed3-basics-check.py"
+      },
+      {
+        "old": "review-hourly-2026-11-09-7ae62e85-basics.json",
+        "new": "https://github.com/bdenckla/MAM-basics/blob/f3276dd6fc7541d7a6a246f63778cd3453e19fc1/doc/review-hourly-2026-11-09-7ae62e85-basics.json"
+      },
+      {
+        "old": "review-hourly-2026-11-10-73fbf040-basics.json",
+        "new": "https://github.com/bdenckla/MAM-basics/blob/f3276dd6fc7541d7a6a246f63778cd3453e19fc1/doc/review-hourly-2026-11-10-73fbf040-basics.json"
+      },
+      {
+        "old": "review-hourly-2026-11-10-73fbf040-basics-check.py",
+        "new": "https://github.com/bdenckla/MAM-basics/blob/f3276dd6fc7541d7a6a246f63778cd3453e19fc1/doc/review-hourly-2026-11-10-73fbf040-basics-check.py"
+      },
+      {
+        "old": "review-hourly-2026-11-10-73fbf040-basics-evidence.zip",
+        "new": "https://github.com/bdenckla/MAM-basics/blob/f3276dd6fc7541d7a6a246f63778cd3453e19fc1/doc/review-hourly-2026-11-10-73fbf040-basics-evidence.zip"
+      },
+      {
+        "old": "review-nightly-2026-11-10.json",
+        "new": "https://github.com/bdenckla/MAM-basics/blob/f3276dd6fc7541d7a6a246f63778cd3453e19fc1/doc/review-nightly-2026-11-10.json"
+      },
+      {
+        "old": "review-nightly-2026-11-10-basics-evidence.zip",
+        "new": "https://github.com/bdenckla/MAM-basics/blob/f3276dd6fc7541d7a6a246f63778cd3453e19fc1/doc/review-nightly-2026-11-10-basics-evidence.zip"
+      }
+    ]
+  },
+  "publication": {
+    "branch": "review-hourly-20261110-9a0ec239-basics-receipts",
+    "parent": "9a0ec239d7f45faff7487e4dfae8369f269a5f2d",
+    "source_products_unchanged": true,
+    "safeguard": "Manual-only Pages workflow",
+    "coordinator_publication_authorized": true
+  },
+  "limits": "Focused offline coverage only; no broad/nightly duplication, live network/source/browser/editorial validation, main/shared integration, deployment/dispatch, schedule, HP denied-route retry or hbofonts work. Existing historical gaps and failures retained.",
+  "independent_offline_probes": {
+    "result": "PASS",
+    "source": "/workspace/scratch/downloader-basics-checkout/py/mb_cmn/polite_download.py",
+    "source_sha256": "ff9004d3c3c5b0cedd52bef4f5255d01a6889b10fcc502c42f397de4bbc6f1b8",
+    "base_source_sha256": "da9eeb7f21c995c12eea27fc4da0c03748cdbbc6fa78cf54462e684db3d36efe",
+    "cases": 9,
+    "checks": [
+      {
+        "case": "long-response completion spacing, differential against exact base",
+        "result": "PASS",
+        "observations": {
+          "base": {
+            "completion_gap": 0.0,
+            "records": [
+              {
+                "url": "https://sequential.test/a",
+                "host": "sequential.test",
+                "start": 0.0,
+                "end": 5.0
+              },
+              {
+                "url": "https://sequential.test/b",
+                "host": "sequential.test",
+                "start": 5.0,
+                "end": 10.0
+              }
+            ],
+            "sleeps": []
+          },
+          "head": {
+            "completion_gap": 2.0,
+            "records": [
+              {
+                "url": "https://sequential.test/a",
+                "host": "sequential.test",
+                "start": 0.0,
+                "end": 5.0
+              },
+              {
+                "url": "https://sequential.test/b",
+                "host": "sequential.test",
+                "start": 7.0,
+                "end": 12.0
+              }
+            ],
+            "sleeps": [
+              2.0
+            ]
+          }
+        }
+      },
+      {
+        "case": "early/late sleep, first scale 0.125",
+        "result": "PASS",
+        "records": [
+          {
+            "url": "https://sleep.test/a",
+            "host": "sleep.test",
+            "start": 0.0,
+            "end": 5.0
+          },
+          {
+            "url": "https://sleep.test/b",
+            "host": "sleep.test",
+            "start": 7.0,
+            "end": 12.0
+          }
+        ],
+        "sleeps": [
+          2.0,
+          1.75
+        ]
+      },
+      {
+        "case": "early/late sleep, first scale 2",
+        "result": "PASS",
+        "records": [
+          {
+            "url": "https://sleep.test/a",
+            "host": "sleep.test",
+            "start": 0.0,
+            "end": 5.0
+          },
+          {
+            "url": "https://sleep.test/b",
+            "host": "sleep.test",
+            "start": 9.0,
+            "end": 14.0
+          }
+        ],
+        "sleeps": [
+          2.0
+        ]
+      },
+      {
+        "case": "shared clock across downloader instances, zero-delay predecessor and normalized host/ports",
+        "result": "PASS",
+        "records": [
+          {
+            "url": "http://EXAMPLE.test/a",
+            "host": "example.test",
+            "start": 0.0,
+            "end": 7.0
+          },
+          {
+            "url": "https://example.test:8443/b",
+            "host": "example.test",
+            "start": 10.0,
+            "end": 17.0
+          }
+        ]
+      },
+      {
+        "case": "separate injected clocks remain isolated",
+        "result": "PASS"
+      },
+      {
+        "case": "failed response completion still spaces retry, independently of backoff",
+        "result": "PASS",
+        "records": [
+          {
+            "url": "https://retry.test/a",
+            "host": "retry.test",
+            "start": 0.0,
+            "end": 5.0
+          },
+          {
+            "url": "https://retry.test/a",
+            "host": "retry.test",
+            "start": 7.0,
+            "end": 12.0
+          }
+        ],
+        "sleeps": [
+          1,
+          1.0
+        ]
+      },
+      {
+        "case": "robots reads and cross-host redirect hops all respect completion spacing",
+        "result": "PASS",
+        "records": [
+          {
+            "url": "https://a.test/robots.txt",
+            "host": "a.test",
+            "start": 0.0,
+            "end": 3.0
+          },
+          {
+            "url": "https://a.test/start",
+            "host": "a.test",
+            "start": 5.0,
+            "end": 12.0
+          },
+          {
+            "url": "https://b.test/robots.txt",
+            "host": "b.test",
+            "start": 12.0,
+            "end": 15.0
+          },
+          {
+            "url": "https://b.test/hop",
+            "host": "b.test",
+            "start": 17.0,
+            "end": 24.0
+          },
+          {
+            "url": "https://a.test/final",
+            "host": "a.test",
+            "start": 24.0,
+            "end": 31.0
+          }
+        ]
+      },
+      {
+        "case": "same host serializes concurrent downloader instances through response completion",
+        "result": "PASS",
+        "second_entered_while_first_held": false,
+        "records": [
+          {
+            "url": "https://held.test/a",
+            "host": "held.test",
+            "start": 0.0,
+            "end": 5.0
+          },
+          {
+            "url": "http://HELD.test:8080/b",
+            "host": "held.test",
+            "start": 7.0,
+            "end": 8.0
+          }
+        ]
+      },
+      {
+        "case": "different hosts progress independently",
+        "result": "PASS",
+        "second_entered_while_first_held": true,
+        "records": [
+          {
+            "url": "https://held.test/a",
+            "host": "held.test",
+            "start": 0.0,
+            "end": 6.0
+          },
+          {
+            "url": "https://other.test/b",
+            "host": "other.test",
+            "start": 0.0,
+            "end": 1.0
+          }
+        ]
+      }
+    ],
+    "elapsed_seconds": 0.056184,
+    "socket_attempts": [],
+    "limits": "Offline fake sessions and controlled clocks/events only; no live-host, interprocess, or arbitrary external session request guarantee."
+  },
+  "test_counts": {
+    "passed": 19,
+    "subtests_passed": 8,
+    "pytest_seconds": 1.42,
+    "tests_repeated": false
+  }
+}
