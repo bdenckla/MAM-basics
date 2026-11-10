@@ -5,22 +5,27 @@ THE SPACING A POLITEDOWNLOADER GUARANTEES
 
 Every request that a PoliteDownloader sends to a host starts at least the delay that its
 ThrottleConfig gives, never less than min_delay_s, after the latest request to that host
-started.  That covers every first attempt and every retry, every robots.txt read, and
+ended.  That covers every first attempt and every retry, every robots.txt read, and
 every hop of a redirect.  The downloader follows a redirect itself, one hop at a time:
-it sends a hop only once the throttle allows it and, when robots.txt is obeyed, only
-once the robots.txt of the hop's target allows it.
+it sends a hop only once the hop's turn comes and, when robots.txt is obeyed, only once
+the robots.txt of the hop's target allows it.
 
-A request starts when the throttle lets it go, just before the downloader hands it to
-its requests session, and its start is the clock's reading then, after any wait.  The
-latest request is the latest that any PoliteDownloader in the process sent, on the same
-clock.  Downloaders share one record of request starts for each monotonic_fun, and
-every downloader not given a monotonic_fun of its own uses time.monotonic, so the first
-request of a second downloader waits for the first downloader's last request to that
-host.  A host is a URL's hostname, in lowercase: http://example.org/ and
-https://example.org:8443/ have one host, and https://archive.org/ and
-https://web.archive.org/ have two.  A lock makes the record safe for threads; a thread
-holds it while it waits, so threads that request different hosts still wait for each
-other.
+A request starts when its turn comes, just before the downloader hands it to its
+requests session, and it ends when the session returns its response, body included, or
+raises.  A host has each request before its response ends, so the host too sees each
+request at least the delay after the request before it, however long a connection took
+to open.  Ben chose the end on 2026-11-10 for that reason: until then the delay counted
+from the start of the latest request, and a host could see less than the delay.
+
+The latest request is the latest that any PoliteDownloader in the process sent, on the
+same clock.  Downloaders with the same monotonic_fun share each host's turns and the
+end of its latest request, and every downloader not given a monotonic_fun of its own
+uses time.monotonic, so the first request of a second downloader waits for the first
+downloader's last request to that host.  A host is a URL's hostname, in lowercase:
+http://example.org/ and https://example.org:8443/ have one host, and
+https://archive.org/ and https://web.archive.org/ have two.  The requests to one host
+take turns, from any thread: a request holds its host's turn from its wait until it
+ends.  Requests to different hosts do not wait for each other.
 
 WHERE THE GUARANTEE STOPS
 
@@ -30,15 +35,11 @@ WHERE THE GUARANTEE STOPS
    requests session that a downloader was given, is neither spaced nor recorded.
 3. At each downloader's own delay.  If downloader A's delay is 5 seconds and downloader
    B's is 1.5 seconds, B's request may start 1.5 seconds after A's request to the same
-   host.
+   host ended.
 4. At the clock.  Downloaders given different monotonic_fun keep separate records.
-5. At the session.  A request reaches its host a little after it starts: requests
-   must send it, after opening a connection if it needs a new one, and another thread
-   may run first.  So a host can see a request less than the delay after the request
-   before it, by up to the time that the earlier request took to reach the host, such
-   as the time its new connection took to open.
 """
 
+import contextlib
 from dataclasses import dataclass, field
 import hashlib
 import json
@@ -53,11 +54,25 @@ import requests
 
 _RETRYABLE_STATUS_CODES = (408, 429, 500, 502, 503, 504)
 
-# The latest request start recorded for each host, by clock: see the module docstring.
-# The readings of two clocks cannot be compared, so each monotonic_fun has its own
-# record.
-_REQUEST_STARTS_BY_CLOCK = {}
-_REQUEST_STARTS_LOCK = threading.Lock()
+
+class _HostTurns:
+    """The turns of the requests to one host on one clock: see the module docstring."""
+
+    def __init__(self):
+        # Held from a request's wait until it ends.
+        self.lock = threading.Lock()
+        self.latest_end = None
+
+
+# The turns of each host, by clock.  The readings of two clocks cannot be compared, so
+# each monotonic_fun has turns of its own.
+_HOST_TURNS = {}
+_HOST_TURNS_LOCK = threading.Lock()
+
+
+def _host_turns(monotonic_fun, host):
+    with _HOST_TURNS_LOCK:
+        return _HOST_TURNS.setdefault((monotonic_fun, host), _HostTurns())
 
 
 class RobotsDisallowedError(RuntimeError):
@@ -76,7 +91,7 @@ class RetryConfig:
 
 @dataclass(frozen=True)
 class ThrottleConfig:
-    """Per-host spacing of request starts, as the module docstring describes."""
+    """Per-host spacing of requests, as the module docstring describes."""
 
     min_delay_s: float = 0.0
     mean_delay_s: float = 0.0
@@ -285,16 +300,16 @@ class PoliteDownloader:
                     request_headers["If-None-Match"] = cache_entry.etag
                 if cache_entry.last_modified is not None:
                     request_headers["If-Modified-Since"] = cache_entry.last_modified
-            self._throttle(prepared_url)
             try:
-                response = self._session.request(
-                    method,
-                    url,
-                    params=params,
-                    headers=request_headers or None,
-                    timeout=timeout,
-                    allow_redirects=False,
-                )
+                with self._turn(prepared_url):
+                    response = self._session.request(
+                        method,
+                        url,
+                        params=params,
+                        headers=request_headers or None,
+                        timeout=timeout,
+                        allow_redirects=False,
+                    )
                 response = self._follow_redirects(response, timeout, check_robots)
             except (requests.ConnectionError, requests.Timeout):
                 if attempt == attempts:
@@ -335,8 +350,8 @@ class PoliteDownloader:
         requests would follow the chain at once, inside the call that sent its first
         request.  Here each hop is the request that requests would send next,
         response.next, sent with the settings that Session.request would merge for it,
-        once the throttle allows it and, if check_robots, once robots.txt allows its
-        target.  The chain is limited to the session's max_redirects, as in requests.
+        once its turn comes and, if check_robots, once robots.txt allows its target.
+        The chain is limited to the session's max_redirects, as in requests.
         """
         hops = 0
         while (next_request := response.next) is not None:
@@ -347,35 +362,39 @@ class PoliteDownloader:
             hops += 1
             if check_robots:
                 self._assert_allowed_by_robots(next_request.url, next_request.path_url)
-            self._throttle(next_request.url)
             settings = self._session.merge_environment_settings(
                 next_request.url, {}, None, None, None
             )
-            response = self._session.send(
-                next_request, allow_redirects=False, timeout=timeout, **settings
-            )
+            with self._turn(next_request.url):
+                response = self._session.send(
+                    next_request, allow_redirects=False, timeout=timeout, **settings
+                )
         return response
 
-    def _throttle(self, url):
-        """Wait until a request to url's host may start, and record its start.
+    @contextlib.contextmanager
+    def _turn(self, url):
+        """Wait for the turn of a request to url's host, and hold it until the
+        request ends; the caller sends the request inside the with statement.
 
-        It may start once this downloader's next delay has passed since the latest
-        start recorded for that host on this downloader's clock.  Each start is
-        recorded, even with no delay, since another downloader's delay may be longer.
-        The clock is read again after each sleep, and the start recorded is that
-        reading, so that a sleep that ends early or late cannot shorten the spacing.
+        The turn comes once this downloader's next delay has passed since the latest
+        request to that host ended, on this downloader's clock.  The clock is read
+        again after each sleep, so that a sleep that ends early or late cannot shorten
+        the spacing.  The request's end is recorded however the with statement ends,
+        and even with no delay, since another downloader's delay may be longer.
         """
         delay_s = self._config.throttle.give_delay_s(self._expovariate_fun)
-        host = urlsplit(url).hostname
-        with _REQUEST_STARTS_LOCK:
-            starts = _REQUEST_STARTS_BY_CLOCK.setdefault(self._monotonic_fun, {})
-            now = self._monotonic_fun()
-            if host in starts:
-                due = starts[host] + delay_s
+        turns = _host_turns(self._monotonic_fun, urlsplit(url).hostname)
+        with turns.lock:
+            if turns.latest_end is not None:
+                due = turns.latest_end + delay_s
+                now = self._monotonic_fun()
                 while now < due:
                     self._sleep_fun(due - now)
                     now = self._monotonic_fun()
-            starts[host] = now
+            try:
+                yield
+            finally:
+                turns.latest_end = self._monotonic_fun()
 
     def _sleep_retry_backoff(self, attempt):
         retry = self._config.retry
@@ -398,10 +417,10 @@ class PoliteDownloader:
     def _read_robots_groups(self, scheme, netloc):
         robots_url = urlunsplit((scheme, netloc, "/robots.txt", "", ""))
         timeout = self._config.default_timeout_s
-        self._throttle(robots_url)
-        response = self._session.request(
-            "GET", robots_url, timeout=timeout, allow_redirects=False
-        )
+        with self._turn(robots_url):
+            response = self._session.request(
+                "GET", robots_url, timeout=timeout, allow_redirects=False
+            )
         # RFC 9309, section 2.3.1.2: a robots.txt read follows redirects, even to
         # another host, and the file they reach governs the authority first asked.
         # No robots.txt governs the redirects, as none governs the read itself.

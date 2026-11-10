@@ -324,8 +324,9 @@ class PoliteDownloadTests(unittest.TestCase):
             ]
         )
         sleep_calls = []
-        # The third reading is the throttle's, after its sleep.
-        monotonic_values = iter([0.0, 0.5, 2.5])
+        # The readings: the first request's end; the second's wait, before and after
+        # its sleep; and the second request's end.
+        monotonic_values = iter([0.0, 0.5, 2.5, 3.0])
         config = polite_download.PoliteDownloadConfig(
             user_agent="TestBot/1.0",
             throttle=polite_download.ThrottleConfig(min_delay_s=1.5, mean_delay_s=3.0),
