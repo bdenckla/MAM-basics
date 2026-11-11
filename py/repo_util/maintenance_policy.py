@@ -12,7 +12,11 @@ Three separate questions, deliberately answered by two separate files:
   foreign_vendored sections; foreign_vendored can name copies whose source is a
   repo other than MAM-basics. A vendored copy is maintained in its source repo;
   if it arrives non-black-compliant, that is the source's business, and
-  reformatting the copy only makes the next vendoring sync noisier.
+  reformatting the copy only makes the next vendoring sync noisier. The same
+  file's record_dirs section names whole folders of records in a swept repo,
+  such as an archive whose manifest pins each file's SHA-256, or dated
+  provenance. A record's bytes are the record, so the sweep skips each such
+  folder's whole subtree.
 
 - Repo visibility comes from in/repo_maintenance_policy.json too, as a second
   section beside the frozen list. It answers a question the freeze does not:
@@ -73,17 +77,50 @@ def vendored_package_names(policy_path: Path | None = None) -> list[str]:
     return sorted(payload["global"]["source_pkg_dirs"])
 
 
+def _record_dirs(payload: dict) -> dict[str, list[str]]:
+    """Map of repo name to the folders the policy's record_dirs section names in it.
+
+    Each folder is a path relative to the repo root that ends in "/", the mark by
+    which vendored_exclude_regex tells a folder from a file. Raises ValueError on
+    a malformed section or entry, and on a folder without that trailing slash.
+    """
+    section = payload["record_dirs"]
+    if not isinstance(section, list):
+        raise ValueError(f"record_dirs must be a list, not {section!r}")
+    by_repo: dict[str, list[str]] = {}
+    for entry in section:
+        if not isinstance(entry, dict) or set(entry) != {"dest_repo", "dest_dirs"}:
+            raise ValueError(
+                f"A record_dirs entry needs exactly dest_repo and dest_dirs: {entry!r}"
+            )
+        repo = entry["dest_repo"]
+        dirs = entry["dest_dirs"]
+        if not isinstance(repo, str) or not isinstance(dirs, list) or not dirs:
+            raise ValueError(
+                "A record_dirs entry needs a repo name and a nonempty list of"
+                f" folders: {entry!r}"
+            )
+        for rel_dir in dirs:
+            if not isinstance(rel_dir, str) or not rel_dir.endswith("/"):
+                raise ValueError(
+                    f"record_dirs folder {rel_dir!r} in {repo} does not end in '/'"
+                )
+        by_repo.setdefault(repo, []).extend(dirs)
+    return by_repo
+
+
 def vendored_overrides(policy_path: Path | None = None) -> dict[str, list[str]]:
-    """Map of repo name to individually vendored file paths within it.
+    """Map of repo name to the files and folders within it that the sweep leaves alone.
 
     Whole vendored packages are found by directory name, but the policy can also
     record single files copied to paths of their own. Those files are just as
     vendored and just as much not this repo's to reformat.
 
-    Merges the policy's two per-file sections: overrides (sourced from
-    MAM-basics) and foreign_vendored (sourced outside MAM-basics). For the black
-    sweep the distinction is nothing:
-    neither kind is this repo's to reformat.
+    Merges the policy's two per-file sections, overrides (sourced from
+    MAM-basics) and foreign_vendored (sourced outside MAM-basics), with the
+    folders of its record_dirs section, each of which keeps its trailing slash.
+    For the black sweep the three differ only in that a folder's path ends in
+    "/": none of them is the sweep's to reformat.
     """
     payload = read_json(policy_path or DEFAULT_VENDORING_POLICY)
     by_repo: dict[str, list[str]] = {}
@@ -91,22 +128,31 @@ def vendored_overrides(policy_path: Path | None = None) -> dict[str, list[str]]:
         by_repo.setdefault(override["dest_repo"], []).append(override["dest_path"])
     for entry in payload["foreign_vendored"]:
         by_repo.setdefault(entry["dest_repo"], []).extend(entry["dest_paths"])
+    for repo, dirs in _record_dirs(payload).items():
+        by_repo.setdefault(repo, []).extend(dirs)
     return by_repo
 
 
 def vendored_exclude_regex(
     package_names: list[str], override_paths: list[str] | None = None
 ) -> str:
-    """A black --extend-exclude regex covering vendored packages and files.
+    """A black --extend-exclude regex covering vendored packages, files and folders.
 
     black re.searches this against the path relative to the project root, in
-    forward slashes with a leading one. Bracketing the package alternation in
-    slashes matches a whole path component at any depth (py/mb_cmn/,
-    py-examples/mb_misc/); anchoring each override path with a leading slash and a
-    trailing end-of-string matches that one file and nothing else.
+    forward slashes with a leading one, and gives a directory's path a trailing
+    slash as well. Bracketing the package alternation in slashes matches a whole
+    path component at any depth (py/mb_cmn/, py-examples/mb_misc/). An entry of
+    override_paths is a folder when it ends in "/" and a file otherwise.
+    Anchoring a file's path with a leading slash and a trailing end-of-string
+    matches that one file and nothing else. A folder's path takes the leading
+    slash and keeps its own trailing one, with no end-of-string, so it matches
+    the folder itself and black skips the folder's whole subtree.
     """
     packages = "|".join(re.escape(name) for name in package_names)
     branches = [f"/({packages})/"]
     for rel_path in sorted(override_paths or []):
-        branches.append(f"/{re.escape(rel_path)}$")
+        if rel_path.endswith("/"):
+            branches.append(f"/{re.escape(rel_path)}")
+        else:
+            branches.append(f"/{re.escape(rel_path)}$")
     return "|".join(branches)
