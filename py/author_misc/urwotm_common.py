@@ -8,8 +8,8 @@ this instead, and nothing here imports them.
 Two spellings of every title are needed, and mixing them up is the easy
 mistake. Anything that reaches ``author.dollar_sub`` (headings, link text)
 must carry ``$`` keys, since ``dollar_sub_g._check_no_undollared`` raises on a
-bare "qadma". Anything that does not (the HTML ``<title>``, the
-``misc/index.html`` entry, which go through ``mb_html`` directly) must be
+bare "qadma". Anything that does not (the HTML ``<title>``, and the title that
+``gen_html_file`` returns, both of which go through ``mb_html`` directly) must be
 plain text, since an unsubstituted ``$qadma`` would reach the reader verbatim.
 """
 
@@ -53,7 +53,7 @@ def heading_2(part: int) -> str:
 
 
 def plain_title(part: int) -> str:
-    """The two halves rejoined, for ``<title>`` and ``misc/index.html``."""
+    """The two halves rejoined, for ``<title>`` and gen_html_file's title."""
     return f"{heading_1(part)}: {SUBTITLES_PLAIN[part]}"
 
 

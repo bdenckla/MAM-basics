@@ -12,8 +12,9 @@ source's wording and drops only its links and its display templates.
 
 The English translation is AI-generated. Claude, an AI model, wrote it on 2026-09-25, at
 Ben Denckla's request, and no human has reviewed it yet. The page says so in a box after
-the H1, the site index says so beside the link, and the misc index includes the caveat
-in the link text. Remove all three caveats and this paragraph only once a human has
+the H1, and the site index says so beside the link. The title that gen_html_file returns
+carries the caveat too, for the misc index, which lists the page only while the site
+index does not link it. Remove all three caveats and this paragraph only once a human has
 reviewed the translation.
 """
 
@@ -28,8 +29,9 @@ def gen_html_file(tdm_ch, body_class=None):
     """Write the page and return its misc-index entry.
 
     The entry's label is the page title followed by the caveat, so that the misc index,
-    like the page and the site index, says that the translation is unreviewed. Remove
-    this label caveat together with the page and site-index caveats only after human review.
+    like the page and the site index, says that the translation is unreviewed whenever it
+    lists the page, which it does only while the site index does not link it. Remove this
+    label caveat together with the page and site-index caveats only after human review.
     """
     fname, title = author.help_gen_html_file(
         __file__, tdm_ch, _FNAME, _TITLE, _CBODY, body_class

@@ -110,7 +110,7 @@ def almost_main():
     #
     # notes_on_aliyot is linked from the top level, not from misc/index.html
     notes_on_aliyot.gen_html_file(tdm_ch_aliyot)  # return intentionally ignored
-    index_entries = [
+    pages = [
         tsinnorit_and_oleh_on_ivs.gen_html_file(tdm_ch, top_dir_old),
         tsinnorit_and_oleh_facts.gen_html_file(tdm_ch),
         tsinnorit_in_psalm_32v5.gen_html_file(tdm_ch),
@@ -131,7 +131,15 @@ def almost_main():
         pasleg.gen_html_file(tdm_ch, body_class="wide"),
         gaya_text.gen_html_file(tdm_ch, body_class="wide"),
     ]
-    _gen_index_html(top_dir_misc, index_entries)
+    # misc/index.html lists only the pages that the site index does not link, so that it
+    # repeats nothing of the site index (Ben, 2026-11-10: "trim out from that misc index
+    # everything already represented in the top-level index").  Every page is still
+    # generated.
+    linked = site_data.misc_fnames_linked()
+    _gen_index_html(
+        top_dir_misc,
+        [(fname, title) for fname, title in pages if fname not in linked],
+    )
 
 
 def cmd_gen_misc(_args):
