@@ -806,7 +806,8 @@ _STEPS = [
         " gh-pages/post-stress-meteg/, nine post-stress-meteg pages from the"
         " survey JSON and one post-silluq case page per entry of"
         " site_data.POST_STRESS_METEG_POST_SILLUQ_IMAGE_PAGES; and the forwarding"
-        " stub gh-pages/post-stress-meteg.html; must come after"
+        " stubs gh-pages/post-stress-meteg.html and"
+        " gh-pages/post-stress-meteg-post-silluq-1s17v5.html; must come after"
         " accgram-survey-post-stress-meteg; also reads MAM-simple and"
         " out/wlc422/1verses_03_jsju1s.json",
     ),

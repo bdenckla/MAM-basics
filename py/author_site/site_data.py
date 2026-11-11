@@ -53,12 +53,12 @@ UNICODE_PROPOSALS_TITLE = "Unicode and ISO Proposals"
 # POST_STRESS_METEG_*_FNAME below, and each case page of
 # POST_STRESS_METEG_POST_SILLUQ_IMAGE_PAGES, names a file in it.  The pages sat at the deploy
 # root until 2026-11-11, when Ben asked to "move all the post-stress-meteg* files down into
-# their own folder"; py/author_site/post_stress_meteg.py also writes the forwarding stub that
-# answers the main page's old address.
+# their own folder"; py/author_site/post_stress_meteg.py also writes the forwarding stubs that
+# answer the old addresses of the main page and of the 1 Samuel 17:5 case page.
 POST_STRESS_METEG_DIR = "post-stress-meteg"
 POST_STRESS_METEG_FNAME = "post-stress-meteg.html"
-# The main page's path below the deploy root, which the index, the forwarding stub and
-# Holman's M23 card link.
+# The main page's path below the deploy root, which the index, the main page's forwarding
+# stub and Holman's M23 card link.
 POST_STRESS_METEG_HREF = f"{POST_STRESS_METEG_DIR}/{POST_STRESS_METEG_FNAME}"
 POST_STRESS_METEG_TITLE = "Meteg after the stress"
 POST_STRESS_METEG_METHODS_FNAME = "post-stress-meteg-methods.html"

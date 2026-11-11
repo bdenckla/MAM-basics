@@ -44,6 +44,10 @@ _UNLISTED_DEPLOY_ROOT_PAGES = (
     # the pages moved into post-stress-meteg/.  It stays for links from outside the site; the
     # index names the page in its folder.
     "post-stress-meteg.html",
+    # The forwarding stub at the 1 Samuel 17:5 post-silluq case page's address until the same
+    # move.  It stays for MAM-private's review of BHL Appendix A, which links that address; no
+    # entry names a case page, which the post-silluq page's case register links.
+    "post-stress-meteg-post-silluq-1s17v5.html",
 )
 
 

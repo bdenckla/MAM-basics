@@ -72,7 +72,12 @@ _PAGES_FOR_OUTSIDE_LINKS = {
     "post-stress-meteg.html": (
         "the forwarding stub left at the main post-stress-meteg page's address when the"
         " pages moved into post-stress-meteg/ on 2026-11-11, the one page of theirs that Ben"
-        " thinks may be linked from outside the site"
+        " thought might be linked from outside the site"
+    ),
+    "post-stress-meteg-post-silluq-1s17v5.html": (
+        "the forwarding stub left at the address of the 1 Samuel 17:5 post-silluq case page"
+        " when the pages moved into post-stress-meteg/ on 2026-11-11, an address that"
+        " MAM-private's review of BHL Appendix A links"
     ),
     # The seven CLC stubs that py/clc/clc_index.py's write_legacy_redirects writes.  Ben,
     # 2026-11-11, of a report recommending these entries: "I authorize you to do those

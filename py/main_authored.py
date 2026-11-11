@@ -11,9 +11,10 @@ Subcommands:
                 at the deploy root, and every post-stress-meteg page into
                 gh-pages/post-stress-meteg/, including one post-silluq case
                 page per entry of
-                site_data.POST_STRESS_METEG_POST_SILLUQ_IMAGE_PAGES, with the
-                forwarding stub at the main page's old address,
-                gh-pages/post-stress-meteg.html.
+                site_data.POST_STRESS_METEG_POST_SILLUQ_IMAGE_PAGES, with
+                forwarding stubs at two pages' old addresses,
+                gh-pages/post-stress-meteg.html and
+                gh-pages/post-stress-meteg-post-silluq-1s17v5.html.
                 --trust-surveys lets the post-stress pages that read the survey
                 load it from the tracked out/accgram/post-stress-meteg.json
                 instead of recomputing it from the tracked Phonetic-MAM
@@ -209,8 +210,8 @@ assert _SURVEY_READING_PAGES <= {
 def gen_site(*, trust_surveys: bool = False):
     """Write the deploy root's index and Unicode proposals, and the post-stress-meteg pages.
 
-    The post-stress-meteg pages go into their own folder, with a forwarding stub at the main
-    page's old address.  ``trust_surveys`` is passed by ``main_0_mega.py``; see
+    The post-stress-meteg pages go into their own folder, with forwarding stubs at two pages'
+    old addresses.  ``trust_surveys`` is passed by ``main_0_mega.py``; see
     ``_SURVEY_READING_PAGES``.  The index runs last, so it sees whatever the pages before it
     have written.
     """

@@ -45,10 +45,11 @@ post-stress-meteg work lives**, so do not go looking for those pages under `accg
    `post-stress-meteg-*.html` sub-documents — and no accgram subcommand renders them.
    `py/main_authored.py gen-site` does. Into the same folder it also writes one post-silluq case
    page per entry of `site_data.POST_STRESS_METEG_POST_SILLUQ_IMAGE_PAGES`, and at the deploy
-   root `gh-pages/index.html`, `gh-pages/unicode-proposals.html` and the forwarding stub at the
-   main page's address before 2026-11-11, `gh-pages/post-stress-meteg.html`; the case pages
-   render from `in/meteg_after_silluq_cases.json`, not from the survey. The survey reads the
-   tracked public `Phonetic-MAM/` release and public MAM. `--trust-surveys` lets
+   root `gh-pages/index.html`, `gh-pages/unicode-proposals.html` and the forwarding stubs at the
+   addresses that the main page and the 1 Samuel 17:5 case page had before 2026-11-11,
+   `gh-pages/post-stress-meteg.html` and `gh-pages/post-stress-meteg-post-silluq-1s17v5.html`;
+   the case pages render from `in/meteg_after_silluq_cases.json`, not from the survey. The
+   survey reads the tracked public `Phonetic-MAM/` release and public MAM. `--trust-surveys` lets
    `gen-site` read its tracked JSON instead of calculating the same survey twice;
    the mega runs the public survey in cloud sessions too.
 2. **`survey-breuer-zaqef-units` writes `.novc/breuer-zaqef-units.json` and nothing tracked at

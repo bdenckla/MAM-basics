@@ -10,13 +10,15 @@ which is the shape
 IN A FOLDER OF THEIR OWN, ``gh-pages/post-stress-meteg/`` (``site_data.POST_STRESS_METEG_DIR``),
 since 2026-11-11, when Ben asked to "move all the post-stress-meteg* files down into their own
 folder, with a forwarding stub for the top-level post-stress-meteg.html file", the one page he
-thinks may be linked from outside the site.  The pages kept their file names.  Until then they
-sat at the deploy root, beside ``index.html`` and ``unicode-proposals.html``, by Ben's decision
-of 2026-09-03 (``doc/PLAN-post-stress-meteg-page-and-holman-m23.md``).
-``_write_forwarding_stub`` answers the main page's old address; no other page has a stub.  Not
-under ``gh-pages/wlc/``: that prefix exists so wlc-utils' frozen redirect stubs can rewrite
-onto ``MAM-basics/wlc/<path>``, a page published here after the 2026-08-17 move earns no stub,
-and this page's corpus is MAM rather than WLC.
+thought might be linked from outside the site.  The pages kept their file names.  Until then
+they sat at the deploy root, beside ``index.html`` and ``unicode-proposals.html``, by Ben's
+decision of 2026-09-03 (``doc/PLAN-post-stress-meteg-page-and-holman-m23.md``).
+``_write_forwarding_stubs`` answers two old addresses: the main page's, and the 1 Samuel 17:5
+case page's, which MAM-private's review of BHL Appendix A links.  Ben chose the same day to
+keep that address working with a stub rather than to change the review.  No other page has a
+stub.  Not under ``gh-pages/wlc/``: that prefix exists so wlc-utils' frozen redirect stubs can
+rewrite onto ``MAM-basics/wlc/<path>``, a page published here after the 2026-08-17 move earns
+no stub, and this page's corpus is MAM rather than WLC.
 
 The pages link ``gh-pages/document.css`` for English prose, ``gh-pages/style.css`` for
 the deploy-root extension, and ``gh-pages/wlc/style.css`` for the Hebrew font, specialized
@@ -105,6 +107,7 @@ from author_site import post_stress_meteg_validation as _validation_module
 from mb_author import author
 from mb_cmn import paths
 from mb_cmn import provenance
+from mb_cmn import site_links
 from mb_misc import mb_html
 
 from author_site.post_stress_meteg_shared import (
@@ -205,10 +208,10 @@ _AUTHOR_SOURCE_PATHS = (
 def gen_html_files(
     deploy_root: Path | None = None, *, trust_survey: bool = False
 ) -> tuple[str, ...]:
-    """Write the main page and its supporting pages, then the main page's forwarding stub.
+    """Write the main page and its supporting pages, then the two forwarding stubs.
 
     The pages go into ``site_data.POST_STRESS_METEG_DIR`` below ``deploy_root``, the site's own
-    by default, and the stub to the main page's old address, directly in ``deploy_root``.
+    by default, and the stubs to two pages' old addresses, directly in ``deploy_root``.
     ``trust_survey`` reads the tracked ``out/accgram/post-stress-meteg.json`` instead of
     recomputing.  ``main_0_mega.py`` passes it because its survey step, which runs in a cloud
     session too, has just written that JSON.  Off by hand, so a standalone run still derives
@@ -246,8 +249,7 @@ def gen_html_files(
             _write_page(
                 top_dir
                 / site_data.POST_STRESS_METEG_POST_SILLUQ_IMAGE_PAGES[case["bcv"]][0],
-                f"{_POST_SILLUQ_TITLE}: manuscript images for the verse-final word at "
-                f"{site_data.POST_STRESS_METEG_POST_SILLUQ_IMAGE_PAGES[case['bcv']][1]}",
+                _post_silluq_image_title(case["bcv"]),
                 build_post_silluq_image_body(case),
             )
             for case in post_silluq_cases
@@ -264,7 +266,7 @@ def gen_html_files(
         ),
     )
     assert_no_phonetic_mam_annotations(out_paths, survey, post_silluq_cases)
-    return (*out_paths, _write_forwarding_stub(deploy_root))
+    return (*out_paths, *_write_forwarding_stubs(deploy_root))
 
 
 def assert_no_phonetic_mam_annotations(page_paths, survey, post_silluq_cases=None):
@@ -330,18 +332,27 @@ def _write_page(path: Path, title: str, body: list) -> str:
     return str(path)
 
 
-# The main page's address until 2026-11-11, when the pages moved into
-# site_data.POST_STRESS_METEG_DIR.  A fact about the past, so it is spelled out here rather
-# than taken from site_data.POST_STRESS_METEG_FNAME: renaming the page later must not move
-# the address that links from outside the site name.
-_OLD_MAIN_PAGE_FNAME = "post-stress-meteg.html"
+def _post_silluq_image_title(bcv: str) -> str:
+    """The title of the manuscript-image page for the post-silluq case at ``bcv``."""
+    _fname, ref = site_data.POST_STRESS_METEG_POST_SILLUQ_IMAGE_PAGES[bcv]
+    return f"{_POST_SILLUQ_TITLE}: manuscript images for the verse-final word at {ref}"
 
-# The stub at that address carries its target in the four places that the stubs of
+
+# Two pages' addresses until 2026-11-11, when the pages moved into
+# site_data.POST_STRESS_METEG_DIR: the main page's, and the 1 Samuel 17:5 case page's, which
+# MAM-private's review of BHL Appendix A links.  Facts about the past, so they are spelled out
+# here rather than taken from site_data: renaming a page later must not move an address that
+# links from outside the site name.
+_OLD_MAIN_PAGE_FNAME = "post-stress-meteg.html"
+_OLD_1S17V5_PAGE_FNAME = "post-stress-meteg-post-silluq-1s17v5.html"
+_1S17V5_BCV = "1s17:5"
+
+# The stub at each of those addresses carries its target in the four places that the stubs of
 # py/redirect_stubs/stubs.py do: a canonical link, a meta refresh, a script that keeps the
 # incoming query and fragment, and a visible link.  Its target is relative, the page having
-# moved within this site, so py/check_html_syntax_and_sanity.py resolves the visible link.
-# Its title and sentence follow this site's other moved-page stub, the one that
-# py/author_misc/tsinnorit_and_oleh_on_ivs.py writes.
+# moved within this site (mb_cmn/site_links.py), so py/check_html_syntax_and_sanity.py
+# resolves the visible link.  Its title and sentence follow this site's other moved-page stub,
+# the one that py/author_misc/tsinnorit_and_oleh_on_ivs.py writes.
 _FORWARDING_STUB_TEMPLATE = """<!doctype html>
 <!-- {comment} -->
 <html lang="en">
@@ -361,15 +372,35 @@ location.replace({href_js} + location.search + location.hash);
 """
 
 
-def _write_forwarding_stub(deploy_root: Path) -> str:
-    """Write the stub that sends the main page's old address on to the page in its folder."""
-    path = deploy_root / _OLD_MAIN_PAGE_FNAME
+def _write_forwarding_stubs(deploy_root: Path) -> tuple[str, str]:
+    """Write the stubs that send the two old addresses on to their pages in the folder."""
+    case_fname, _ref = site_data.POST_STRESS_METEG_POST_SILLUQ_IMAGE_PAGES[_1S17V5_BCV]
+    return (
+        _write_forwarding_stub(
+            deploy_root, _OLD_MAIN_PAGE_FNAME, _TITLE, site_data.POST_STRESS_METEG_HREF
+        ),
+        _write_forwarding_stub(
+            deploy_root,
+            _OLD_1S17V5_PAGE_FNAME,
+            _post_silluq_image_title(_1S17V5_BCV),
+            f"{site_data.POST_STRESS_METEG_DIR}/{case_fname}",
+        ),
+    )
+
+
+def _write_forwarding_stub(
+    deploy_root: Path, old_fname: str, title: str, target: str
+) -> str:
+    """Write the stub at ``old_fname``, directly in ``deploy_root``, that sends its reader on
+    to ``target``, a path below the deploy root, whose page is titled ``title``."""
+    href = site_links.site_href(old_fname, target)
+    path = deploy_root / old_fname
     path.write_text(
         _FORWARDING_STUB_TEMPLATE.format(
             comment=provenance.generated_html_comment(__file__),
-            title=html.escape(f"Redirect for {_TITLE}"),
-            href=html.escape(site_data.POST_STRESS_METEG_HREF),
-            href_js=json.dumps(site_data.POST_STRESS_METEG_HREF),
+            title=html.escape(f"Redirect for {title}"),
+            href=html.escape(href),
+            href_js=json.dumps(href),
         ),
         encoding="utf-8",
         newline="\n",
