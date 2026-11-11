@@ -16,13 +16,13 @@
 		<p>Begin converting Miqra according to the Mesorah content to OSIS book files.</p>
 	</revisionDesc>
 	<work osisWork="MAPM" xml:lang="he">
-		<title>Miqra according to the Mesorah</title>
+		<title>Miqra according to the Masorah</title>
 		<contributor role="edt">Ben Denckla</contributor>
 		<contributor role="edt">David Troidl</contributor>
 		<creator role="edt">Seth (Avi) Kadish</creator>
 		<date>2013.8.16</date>
-		<description>Miqra `al pi ha-Mesorah is an edition of the Tanakh in digital online format, available as a carefully corrected draft of the entire Tanakh. It is based on the Aleppo Codex and related manuscripts, and consults the full range of masoretic scholarship.</description>
-		<identifier type="URL">http://en.wikisource.org/wiki/User:Dovi/Miqra_according_to_the_Mesorah</identifier>
+		<description>Miqra `al pi ha-Masorah is an edition of the Tanakh in digital online format, available as a carefully corrected draft of the entire Tanakh. It is based on the Aleppo Codex and related manuscripts, and consults the full range of masoretic scholarship.</description>
+		<identifier type="URL">https://en.wikisource.org/wiki/User:Dovi/Miqra_according_to_the_Masorah</identifier>
 		<rights type="x-CC_BY-SA_4.0">Creative Commons Attribution-ShareAlike 4.0</rights>
 		<refSystem>MT</refSystem>
 	</work>
