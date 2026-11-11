@@ -50,9 +50,9 @@ their specialized layout rather than loading the prose base.
 All generated near-Aleppo pages load
 `gh-pages/near-aleppo/link-presentation.css` after their existing styles: its
 documentation, its features of interest in `gh-pages/near-aleppo/foi/`, and its
-edition. So does the index of MAM-with-doc's features of interest,
-`gh-pages/MAM-with-doc/foi/index.html`, which `py/foi/foi_finals.py` writes; the
-feature pages it lists keep plain links. The stylesheet's authored source is
+edition. So do MAM-with-doc's features of interest in
+`gh-pages/MAM-with-doc/foi/`, index and pages, which `py/foi/foi_finals.py`
+writes. The stylesheet's authored source is
 `py/near_aleppo/link_presentation.css`; `py/near_aleppo/link_presentation.py`
 supplies the generated banner and inserts link attributes without reserializing
 page text. Relative stylesheet paths follow each page's directory depth.

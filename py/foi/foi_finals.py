@@ -360,7 +360,9 @@ def _write_html(args_foi, outfile_stem, html_tables, overall_head):
         css_hrefs=(_CSS_HREF,),
         html_comment=provenance.generated_html_comment(__file__),
     )
-    mb_html.write_html_to_file(body_contents, write_ctx)
+    _write_with_arrow_links(
+        body_contents, write_ctx, _outfilename_for_html(outfile_stem)
+    )
 
 
 def _foi_body_wrapper(contents):
