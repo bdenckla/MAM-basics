@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "inventory_sha256": "69961f80a37d6d133b08d3e7fc86d36c323947e3cd09635eafea3029cbae1409",
+  "inventory_sha256": "95e6a64d6e3b42540d4f02585e8ef9fb8389140e5c4ed07f21d5238c7977087d",
   "notes": [
     {
       "id": "A1-Genesis 1:1 note 1 נוסח",
@@ -24880,7 +24880,7 @@
       ],
       "note_ordinal": 1,
       "source_template": "נוסח",
-      "source_note_sha256": "a20be59b19e384db66c1152ff4a25952cfe012231a94d173cf3492ee22d7b34b",
+      "source_note_sha256": "0cc487b73b7b6acdd94c7666bcf4ed01d9bbde61d1b2aa7b80d18f263202c38f",
       "original_target": {
         "tmpl_name": "מ:אות-מיוחדת-במילה",
         "tmpl_params": {
@@ -24902,15 +24902,15 @@
       },
       "near_target": "בֶּן־יַעְרֵ֨י",
       "original_body": [
-        "=דפוסים וקורן (אות רי\"ש גדולה)",
+        "=דפוסים וקורן (אות רי\"ש קטנה)",
         {
           "tmpl_name": "ש"
         },
-        "א=בֶּן־יַעְרֵ֨י (אין אות גדולה)"
+        "א=בֶּן־יַעְרֵ֨י (אין אות קטנה)"
       ],
       "clauses": [
-        "=דפוסים וקורן (אות רי\"ש גדולה)",
-        "א=בֶּן־יַעְרֵ֨י (אין אות גדולה)"
+        "=דפוסים וקורן (אות רי\"ש קטנה)",
+        "א=בֶּן־יַעְרֵ֨י (אין אות קטנה)"
       ],
       "change_causes": [
         "template resolution"
@@ -24924,19 +24924,18 @@
       },
       "candidate_clause": 1,
       "proposal_reason": "One literal full-target alternative; semantic review of its suffix and other clauses required.",
-      "evidence_sha256": "3fa1f70fd56f845be66bceb544a6516f42e31705e720ce70dc9ea0f2e8142f3b",
+      "evidence_sha256": "fabda6e5d694ce94a1c2ebdd37110ee36e5d1c9923565b2cbc90876c11cb7dff",
       "review": {
         "status": "reviewed",
-        "presentation": "framed-mam",
-        "reason": "Inherited source inconsistency: MAM's target encodes small resh, but its opening clause describes large resh. Keep the complete MAM context; do not resolve the discrepancy editorially.",
+        "presentation": "recast",
+        "reason": "Reviewed literal source agreement: retain the complete source head and suffix; keep all remaining clauses in their original order under MAM's labelled target. This attributes agreement and does not explain near-Aleppo's selection.",
         "proposed_parts": {
-          "near_clause": null,
+          "near_clause": [
+            "=א (אין אות קטנה)"
+          ],
           "mam_clauses": [
             [
-              "=דפוסים וקורן (אות רי\"ש גדולה)"
-            ],
-            [
-              "א=בֶּן־יַעְרֵ֨י (אין אות גדולה)"
+              "=דפוסים וקורן (אות רי\"ש קטנה)"
             ]
           ]
         },
@@ -24944,12 +24943,12 @@
           {
             "index": 0,
             "disposition": "mam-context",
-            "reason": "Keep this source clause verbatim with its original MAM subject, explanations, alternatives and cross-references. Inherited source inconsistency: MAM's target encodes small resh, but its opening clause describes large resh. Keep the complete MAM context; do not resolve the discrepancy editorially."
+            "reason": "Keep this source clause verbatim with its original MAM subject, explanations, alternatives and cross-references. Reorganization changes only the independently reviewed literal agreement clause."
           },
           {
             "index": 1,
-            "disposition": "mam-context",
-            "reason": "Keep this source clause verbatim with its original MAM subject, explanations, alternatives and cross-references. Inherited source inconsistency: MAM's target encodes small resh, but its opening clause describes large resh. Keep the complete MAM context; do not resolve the discrepancy editorially."
+            "disposition": "near-subject",
+            "reason": "Complete literal form matches the near target; preserve the attributed source and every qualification verbatim."
           }
         ]
       }
@@ -37017,7 +37016,7 @@
       ],
       "note_ordinal": 1,
       "source_template": "נוסח",
-      "source_note_sha256": "996024499deceac1e188485f579a792e2559b94ca77657f1af5daa94a0eb6891",
+      "source_note_sha256": "3eca995c973340fe07557cf53cea7fc087e5c2abc50a5581c7b6f7be8922d944",
       "original_target": {
         "tmpl_name": "מ:אות-מיוחדת-במילה",
         "tmpl_params": {
@@ -37038,14 +37037,14 @@
       },
       "near_target": "וּנְבֽוּשַׁזְבָּן֙",
       "original_body": [
-        "=דפוסים וקורן (אות נו\"ן סופית גדולה)",
+        "=דפוסים וקורן (אות נו\"ן סופית קטנה)",
         {
           "tmpl_name": "ש"
         },
         "א=וּנְבֽוּשַׁזְבָּן֙ (אות רגילה)"
       ],
       "clauses": [
-        "=דפוסים וקורן (אות נו\"ן סופית גדולה)",
+        "=דפוסים וקורן (אות נו\"ן סופית קטנה)",
         "א=וּנְבֽוּשַׁזְבָּן֙ (אות רגילה)"
       ],
       "change_causes": [
@@ -37060,19 +37059,18 @@
       },
       "candidate_clause": 1,
       "proposal_reason": "One literal full-target alternative; semantic review of its suffix and other clauses required.",
-      "evidence_sha256": "82f4e8447b92878c3ddccaef0813098d86f853621e8da82aff74f298a7910f76",
+      "evidence_sha256": "5634f867b8b797575d6330c5d98edab0627f9d7b6b94cf47ad8b06c2b3130129",
       "review": {
         "status": "reviewed",
-        "presentation": "framed-mam",
-        "reason": "Inherited source inconsistency: MAM's target encodes small final nun, but its opening clause describes large final nun. Keep the complete MAM context; do not resolve the discrepancy editorially.",
+        "presentation": "recast",
+        "reason": "Reviewed literal source agreement: retain the complete source head and suffix; keep all remaining clauses in their original order under MAM's labelled target. This attributes agreement and does not explain near-Aleppo's selection.",
         "proposed_parts": {
-          "near_clause": null,
+          "near_clause": [
+            "=א (אות רגילה)"
+          ],
           "mam_clauses": [
             [
-              "=דפוסים וקורן (אות נו\"ן סופית גדולה)"
-            ],
-            [
-              "א=וּנְבֽוּשַׁזְבָּן֙ (אות רגילה)"
+              "=דפוסים וקורן (אות נו\"ן סופית קטנה)"
             ]
           ]
         },
@@ -37080,12 +37078,12 @@
           {
             "index": 0,
             "disposition": "mam-context",
-            "reason": "Keep this source clause verbatim with its original MAM subject, explanations, alternatives and cross-references. Inherited source inconsistency: MAM's target encodes small final nun, but its opening clause describes large final nun. Keep the complete MAM context; do not resolve the discrepancy editorially."
+            "reason": "Keep this source clause verbatim with its original MAM subject, explanations, alternatives and cross-references. Reorganization changes only the independently reviewed literal agreement clause."
           },
           {
             "index": 1,
-            "disposition": "mam-context",
-            "reason": "Keep this source clause verbatim with its original MAM subject, explanations, alternatives and cross-references. Inherited source inconsistency: MAM's target encodes small final nun, but its opening clause describes large final nun. Keep the complete MAM context; do not resolve the discrepancy editorially."
+            "disposition": "near-subject",
+            "reason": "Complete literal form matches the near target; preserve the attributed source and every qualification verbatim."
           }
         ]
       }
