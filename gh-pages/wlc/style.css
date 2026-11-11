@@ -103,6 +103,12 @@ p { max-width: 40em; }
 blockquote { max-width: 40em; }
 td.big-for-amb-early-mtg { font-size: 250%; letter-spacing: 0.1em; text-align: left;}
 table.limited-width { max-width: 40em; }
+/* On a centered page, body.centered-page table above outranks the plain class, so the class
+   needs this prefix to cap a table there at 40em; the min() keeps the breakout bound from
+   ../document.css in a window too narrow for 40em. */
+body.centered-page table.limited-width {
+    max-width: min(40em, var(--breakout-table-max-width));
+}
 /* Counts and other numbers: right-justified, so digits line up on the units column. */
 th.numeric, td.numeric { text-align: right; }
 /* Short labels under a row label rather than in a column of prose -- an edition name, a book
