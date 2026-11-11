@@ -310,3 +310,234 @@ deletion list and corrections that day. The entry "The persisted plain product a
 "Recorded by Codex on 2026-09-28 during execution of `doc/PLAN-retire-mam-parsed-plain.md`".
 That completed receipt has been retired from the tracked tree and remains at
 [MAM-parsed plain retirement plan](https://github.com/bdenckla/MAM-basics/blob/38a8db9ae851b83d43b5c5ad42c007943b54d724/doc/PLAN-retire-mam-parsed-plain.md).
+
+## The 2026-11-11 maintenance audit found one mislabelled projection in new or changed walkers
+
+Recorded by Claude (Opus 5.5) on 2026-11-11, New York time, during repository maintenance, under
+step 6 of `doc/PLAN-repo-maintenance-across-GitRepos.md`. A delegated read-only review covered
+every Python file added, renamed or changed between `61ab4e3b3f8c9eec5ee4d1f618a34b92c3abb020`,
+where the 2026-10-07 audit ended, and `d957048a20f671fbadea37325c91dd9c9bfe4ee9`: 554 files (366
+modified, 185 added, 3 renamed) over 856 commits. It screened them with a reference graph over
+all tracked Python for direct and mutual recursion across modules, with the runbook's anchors, with
+a scan of added lines for calls to walker helpers, and with a screen for explicit-stack loops, then
+read every hit in a MAM or Wikisource consumer and followed each shared helper with a new caller to
+that caller's output. The recording session re-read C1 and latent items L1, L2 and L6 in the code
+and confirmed that `4e9e7b84` is the commit that closed the 2026-10-07 latent item 3. The deferred
+decisions in `doc/PLAN-deferred-template-projection-decisions.md` were not re-raised.
+
+One item is confirmed, C1: a mislabel that changes no count. S1 and S2 are suspected and need
+Ben's answers; L1 to L6 are latent. The range's largest change for this audit is the template
+מ:סילוק לפני געיה (`49b0baf7`, 2026-10-12), whose parameter 1 is a full atom and parameter 2 the
+same letters with one HEBREW POINT METEG marking the silluq. Every consumer reviewed that reaches
+its two calls, 1 Kings 7:37 and Job 4:12, names the template and reads parameter 1, or reads
+through `py/py_misc/wt_qere.py`'s `HANDLERS`, which does.
+
+"(new)" marks a function added in the range. "Seen again" means recursion unchanged since
+`61ab4e3b`, the file edited elsewhere.
+
+| Source and searchable function anchors | Classification and disposition |
+|---|---|
+| `py/mpplus/mpplus_boring_tmpls.py`: `evaluate`, `_preserve_silluq_before_meteg` (new), `_just_take_arg_1`, `_handle_bold`, `_handle_qupo`, `_handle_pseudo_title`, `_handle_word_with_puncta_extraordinaria` | Valid named structural transform (MAM-parsed-plus). The new handler validates the template, evaluates Scripture parameter 1 and keeps parameter 2 as metadata. |
+| `py/mb_cmn/template_names.py`: `CURRENT_PLUS_TMPL_NAMES`, `CURRENT_PLUS_PARAM_POLICY`, `validate_current_plus_template`; `py/mb_cmn/silluq_before_meteg.py`: `validate_silluq_before_meteg`, `drop_post_silluq_metegs`; `py/mb_cmn/parser_stage_template_schema.py`; the identical copies in `MAM-parsed/py-examples/mb_cmn/` | Roster and closed schema: the silluq template has exactly parameters 1 and 2 and a validated position. |
+| `py/render_wt/render_wikitext_helpers.py`: `render_wtseq`, `_handle_sequence` (new), `render_tmpl_el`, `render_named_param_val`; `py/render_wt/render_wikitext_kq.py`: `handle_qere_with_body` (new), `handle_kq`, `_flagged`, `_ruby` | Closed renderer with named roles. `_handle_sequence` pairs a body template, validated by `orphan_marks.validate_body`, with the following קרי ולא כתיב only when `ro_ketiv_qere_ruby` is set; `handle_qere_with_body` requires the complete qere-only call and renders its parameter 2. |
+| `py/render_wt/render_wikitext_handlers.py`: `_handle_doc`, `_stored_doc_parts`, `_added_clauses`, `_mam_target_clause` (until 2026-10-30 `_added_lines`, `_mam_target_line`), `_doc_lemma_subhandler`, `_doc_parts_subhandler`; `py/render_wt/render_wikitext_added_clauses.py`: `flag_clauses` | Closed handlers with named roles; `b992842e` renamed lines to clauses and changed no role. |
+| `py/render_wt/render_wikitext_handlers.py`: `_handle_stress_helper_word` (new), `_stress_helper_forms`, `_with_kept_meteg`, `_uninterrupted_word`, `_handle_silluq_before_meteg` (new), `_handle_space_without_marks` (new), `_handle_marks_without_letter` | Closed and validating. The deḥi and tsinnor form is now the caller's `ro_stress_helper` option, which raises on an unknown value: MAM-with-doc states parameter 2 keeping parameter 1's meteg (`mwd_write_book.RENOPTS_MAM_WITH_DOC`, Ben, 2026-10-26 and 2026-10-27), near-Aleppo states parameter 1, an unset option gives parameter 1 (L4, S2). The silluq handler renders parameter 1 and carries parameter 2 only as the `letters-with-silluq` attribute. |
+| `py/mb_xml/xml_render.py`: `render_to_xml`, `_RENOPTS_MAM_XML` | MAM-simple's renderer call states cantillation and qamats and leaves the stress-helper form to the default (L4). |
+| `py/mb_cmn/mam_simple_json.py` (new; identical copy in `MAM-simple/py-examples/mb_cmn/`): `attributes`, `children`, `find_child`, `structural_children`, `verses`, `read_book_group` | Valid structural readers; `verses` walks only the book24, book39 and chapter hierarchy and raises on a node out of place. |
+| `py/mb_cmn/mam_json_verses.py` (ported from XML by `e6a85b43`): `get_verse_words`, `_scribal_difference_target_text`, `_form_words`, `_cant_combined_words`, `_trivial_kq_words`, `_silluq_before_meteg_text` | Not recursive. Closed dispatch whose module docstring declares each element's contribution: a kq's unpointed ketiv, a kq-trivial's displayed pointed form, the combined cantillation, a silluq annotation's text with its scaffold validated and not read. Permissive branches carried over from the XML reader: L3. |
+| `py/osis/osis_runner.py`: `_handle`; `py/osis/osis_handlers.py`: `_silluq_before_meteg`, `_ketiv_qere`, `_scrdfftar` | Closed dispatch ported to JSON, now raising explicitly on an unhandled type and class; projection unchanged; the silluq handler emits the text and a note, never the scaffold. |
+| `py/mb_sefaria/mam4sef_or_ajf.py`: `_handle` (seen again), `_iter_verses`; `mam4sef_handlers.py`, `mam4ajf_handlers.py`: `_silluq_before_meteg` | Closed dispatch; `_iter_verses` goes through `mam_simple_json.verses` (`4e9e7b84`); the silluq handlers drop only the later meteg marks, as Ben approved on 2026-10-12. |
+| `py/mam_morphhb/morphhb_inline.py` (new): `render`, `to_xml`, `verse_children`, `HANDLERS`, `_HANDLERS_INSIDE_NOTE` | Closed dispatch on MAM-simple type and class, raising on any other: combined cantillation (`cant-alef` and `cant-bet` give nothing), ketiv and qere both marked, a scroll-difference note as an OSIS note. Declared in `MAM-morphhb/README.md`, item 5 of "Where MAM-morphhb differs from the 2014 form". `to_xml` is a serializer. |
+| `py/mam_morphhb/morphhb_plus.py` (new): `plus_stream`, `_has_line_break`, `_column_c_levels`, `_verse_templates`, `_first_aliyah_name` | `plus_stream` is closed by name and raises on an unknown name; it reads parameter 1 of מ:דחי, מ:צינור and נוסח and ד of מ:קמץ, and takes ketiv/qere, special-letter and silluq templates as opaque tokens. These choices only place line breaks among tokens, and `morphhb_poetry.poetic_lines` checks the tokens against MAM-simple's one for one. It validates no template's shape: L2. `_has_line_break` is a maximal structural guard whose every hit raises. |
+| `py/mam_morphhb/morphhb_poetry.py` (new): `_simple_items`, `_tokens`, `poetic_lines` | Closed projection of MAM-simple's children matching `plus_stream`'s, entering only a scroll difference's `sdt-target`; a token mismatch raises. |
+| `py/mb_misc/letter_small_job.py` (identical copy in `MAM-simple/py-examples/mb_misc/`): `_small_letters`, `_check_container` | Declared annotation inventory that includes every alternative and note, with closed shape checks; an unknown type raises. |
+| `py/mb_diff_mpu/mpplus_structure.py`: `collect_template_names`, `_structure_occurrences`, `_classified_param_items_for_structure` | Fixed in the range: a mapping without `tmpl_name` raises instead of having its values walked (`c2ec0a7a`, 2026-10-21). The silluq template is a parameter-1 role target. `_alternative_text` and `_alternative_instances.visit` seen again. |
+| `py/mb_diff_mpu/mpplus_flatten.py`: `_flatten_diff_template_words_only`, `_flatten_diff_element_words_only`, `is_parashah_template`, `_PARAM1_BODY_NAMES` | Closed named dispatch; the silluq template gives parameter 1; a positional-punctuation template now gives a space (`3121f60a`, 2026-10-21); `is_parashah_template` lists its nine names instead of matching a resh followed by digits (`c2ec0a7a`). `flatten_element`, `_flatten_template`, `_flatten_diff_element`, `_flatten_diff_template` and the `_flatten_tracking` pairs seen again. |
+| `py/mb_diff_mpu/mpplus_display.py`: `postprocess_kq_html`; `_kq_position_walk`, `_kq_position_walk_template`, `_collect_paseq_types` | Fixed: an unpaired ketiv/qere sentinel raises instead of being stripped (`c2ec0a7a`). The walkers are seen again. |
+| `py/hkq_cmn/qere_projection.py`: `project_qere_atoms`, `_project_argument_keys`, `QereProjectionPolicy`, `FOI_KQ_SIMPLE_MAIN_COMPATIBLE_POLICY` | Named caller policies. The silluq template reads parameter 1; narrow-sense paseq and legarmeh have separate policy fields, and foi-kq-simple's pqere keeps its legarmeh (Ben, 2026-11-09, settling deferred item 8). `word_atoms_from_qere_atoms` seen again. |
+| `py/hkq_cmn/mam_plus_verse_data.py`: `_collect_text_fragments` | Changed only to read the silluq template's parameter 1; its trivial ketiv/qere arm remains deferred decision 11. `_collect_template_argument_records` and `_render_template_like_text` seen again. |
+| `py/foi/foi_wikitext_helpers.py`: `with_attached_marks`, `_with_attached_marks_in_params`, `_add_gray_maqaf`, `_with_mark_moved_back`, `_with_legarmeh`, `_with_mark_after`, `_templates_taking_a_mark_after`, `forms` (all new) | Structure-preserving transformation that validates each template and maps every parameter. It writes a legarmeh's PASEQ code point and the gray-maqaf stand-in onto their forms at every depth, and moves a following sof pasuq or maqaf only into the parameters `_PARAMS_TAKING_A_MARK_AFTER` names (Ben, 2026-11-09): a note's target, never its body. An unnamed template before such a mark raises. |
+| `py/foi/foi_wikitext_helpers.py`: `templates_before_sof_pasuq`, `_add_templates_before_sof_pasuq` (new) | Positional structural search at every depth through `template_param_vals`; it checks a template only where a sof pasuq follows it: L1. |
+| `py/foi/foi_wikitext_helpers.py`: `all_branch_foilers`, `_foiler_for_silluq_before_meteg` (new), `_foiler_for_all_named_params`, `_find_fois_in_wtel`, the `label_args_of_*` functions | Declared whole-dataset inventory; the silluq scaffold is excluded by name. |
+| `py/foi/foiz_wt_dexi_stress_meteg.py` (new): `find_fois_wt`, `_handle_dexi`, `_handle_doc`, `_with_note`, `_mam_with_doc_form`, `_note_html`, `_text`, `_kind` | Declared population: every מ:דחי call in columns C, D and E and in good endings, at any depth. Named parameter roles; the MAM-with-doc column renders with `RENOPTS_MAM_WITH_DOC`. |
+| `py/foi/foiz_wt_doc_note_notation.py` (new): `find_fois_wt`, `_find_fois_in_string` | Declared population: the strings of note bodies at any depth (`doc-part-n` in the stack), read by forms. |
+| `py/foi/foiz_wt_holam_before_vav.py` (new): `find_fois_wt` | Declared single stream through `project_qere_atoms` with its own policy: qere, a trivial ketiv/qere's pointed ketiv, stress-helper parameter 1, ד, combined cantillation, each named in the module docstring. |
+| `py/foi/foiz_wt_kq_1.py`, `foiz_wt_qamats_var.py`, `foiz_wt_slh_word.py`, `foiz_wt_rare_tmpls.py`, `foiz_wt_unicode.py`, `foiz_wt_kq_2.py`, `foiz_wt_pasoleg_2.py`, `foiz_wt_poetic_sh.py`, `foiz_wt_poetic_len.py`, `foiz_wt_rev_mug.py` | Seen again: populations unchanged; the range added the gray sof pasuq, reading by forms and index descriptions. `_html_for_wtseq` in the first three renders with the renderer's default options: S2. |
+| `py/foi/foiz_wt_dual_ml_alef.py`: `_find_fois_in_string` | Population code unchanged since before 61ab4e3b; the range changed only its tokenization: S1. |
+| `py/foi/foi_gray_marks.py` (new): `_collect_labels`; `py/foi/foi_finals.py`: `_rm_html`, `_rm_html_single`, `_json_value` | Walk rendered HTML, not MAM data; outside this classification. |
+| `py/near_aleppo/census/adonai_census.py`, `divine_name_split.py`, `stress_helper_census.py`: `render`; `qamats_params.py`: `render`, `find`; `nusach_aleppo_readings.py`: `each_nusach`, `flatten`, `clauses`; `template_inventory.py`: `main.walk_raw`, `main.walk_settled`; `edition_projection.py`: `_EDITION_KEYS`, `_EDITION_KEYSETS` | Fixed in the range: each walker raises on a mapping that is not a template (`4e9e7b84`, 2026-10-21), closing the 2026-10-07 latent item 3. `clauses` reads note prose through phase 3's `_clauses` (2026-10-08). The silluq template projects to parameter 1, its key set declared from the template's contract. |
+| `py/near_aleppo/phase6_flags.py`: `_matching_templates` | Fixed: raises on a template with no phase-2 rule and on a phase-2 action it does not name (`4e9e7b84`). `Flags._walk` seen again. |
+| `py/near_aleppo/phase2_templates.py`: `Resolver._template`, `_sequence`, `_kept`, `_RULES`, `selected_keys`, `carriers_text`; `py/py_misc/orphan_marks.py`: `carriers`, `validate_space`, `validate_body` | Closed dispatch: the silluq template dissolves to parameter 1 and joins `TEMPLATES_ABSENT_FROM_DATASET`; the near-Aleppo body templates raise in MAM's text; the carrier validators are closed. `_flatten`, `_contains_mark`, `_assert_no_marks`, `_assert_marks_flattenable`, `_replace_marks` and `assert_templates_absent` seen again. |
+| `py/near_aleppo/phase3_policies.py`: `Policies._template`, `Policies._value` | Closed dispatch; the change recognizes one reviewed note at 1 Kings 8:11 by verse and exact text. `_selected_text`, `_holds_template` and `_longest_matchings` seen again. |
+| `py/near_aleppo/qere_without_ketiv.py` (new): `BodyEncodings.apply.walk`, `BodyEncodings.apply.expand` | Closed transformation over phase 2's rules: it enters only `phase2.selected_keys` of notes and ketiv/qere templates ("excluding note bodies and apparatus alternatives") and raises on an unknown or unresolved template. |
+| `py/near_aleppo/ketiv_checks.py` (new): `check_e_cell`, `_check_value` | Structural lint entering only note targets; `phase2._RULES[name]` raises on an unknown name; a ketiv/qere template is checked where it stands. |
+| `py/near_aleppo/doc_figures.py`: `_walk`, `_walk.enter`, `_special_letter_word_1` | Zone-classified walk; the change validates the body-space template and confines it to dataset text. `_rename_back`, `_templates.visit` and `_characters.visit` seen again. |
+| `py/near_aleppo/doc_note_review.py`: `inventory`, `check`; `py/near_aleppo/main_build.py`: `build` | A call cycle of build orchestration, not a data walker: `build` calls `check`, whose `inventory` calls `build(bake_notes=False)`. `_data_notes.walk` seen again. |
+| `py/near_aleppo/features_of_interest.py` (new): `_verses`, `_rubies`; `foi_spacing.py` (new): `_chunks`, `_atoms`, `resolved_examples`, `counts_by_family`; `foi_qere_without_ketiv.py` (new): `_qere_nodes`, `_text`, `mam_examples`, `_naee_excerpt.projection`, `_naee_excerpt.cut`, `_validate_near_aleppo_encodings` | Walk the shared renderer's output, rendered with the edition mode's options or, in `mam_examples`, with MAM-with-doc's and the stress-helper form stated. Notes are separated by `mam_doc_utils` before any search; `_chunks` and `_naee_excerpt` raise on an unexpected tag or role. `_validate_crop` walks crop records, not templates. |
+| `py/near_aleppo/doc_changes.py` | Screen false positive (a parameter named `section`); page assembly. |
+| `py/accgram/mam_poetic_accents.py`: `_walk`, `_walk_kq`, `_verse_events`, `_iter_verse_nodes` | Closed event projection of MAM-simple: the qere only, a gray maqaf read as a maqaf (Ben, 2026-10-20), a silluq annotation read with the sof pasuq after it. Closed further on 2026-10-21 (`67237cdb`): an unclassified ketiv/qere child raises, and verses come through `mam_simple_json.verses`. |
+| `py/accgram/mam_simple_verse.py`: `_mam_simple_fragments`, `_mam_simple_kq_qere_fragments`, `load_mam_simple_for_refs`, `string_vels` | Named text projection whose strand the caller chooses; a dual-cantillation node with other children and an unclassified ketiv/qere child raise (`67237cdb`); silluq annotations come from the qere and `cant-alef` stream, as the docstring says. `_iter_dict_nodes`: L5. |
+| `py/accgram/post_stress_meteg_sources.py`: `_post_silluq_source_annotations`, `_written_stress_helpers` | Declared: annotations from the qere and `cant-alef` projection; `_written_stress_helpers` indexes top-level stress helpers and descends into no template, as before. |
+| `py/accgram/breuer_word_length.py`: `tree_leaves.walk`, `zaqef_realms.walk`; `dual_cant_detangle.py`, `prose_run.py`: `_tree_has_error`; `rtms_report.py`: `_leaf_node_name_counts`; `fix_apply.py`: `_collect_unit_setters`; `maqaf_nonfinal_accents.py`: `_mam_simple_gray_maqafs_by_verse.walk`, `uxlc_text`; `rtmsr_sat.py`: `render_sat_value`, `_render_token_like_dict` | Seen again: parse-tree, WLC and UXLC walkers, and the RTMS display, whose population remains deferred decision 9. |
+| `py/explicit_xataf/extract.py`: `flatten_text`, `flatten_arg1_strings`; `find_docnote_tmpls`, `join_arg1_strings` | Closed. A separator gives a space (`3dbad806`, 2026-10-21); the silluq template gives parameter 1; `flatten_arg1_strings` passes each template through `join_arg1_strings`, so an unknown one raises (`4e9e7b84`). The two inventories are seen again. |
+| `py/verify_mp/corpus.py`: `iter_template_objects`; `py/verify_mp/verifiers_templates.py`: `verify_mp_plus_templates_silluq_before_meteg_cases` (new), `_iter_template_occurrences_with_ancestors` | The structural iterator raises on any node other than a string, a list or a template (`4e9e7b84`); the new verifier is a declared all-column inventory of the template's calls; the ancestor iterator is seen again. |
+| `py/versification_and_cantillation/strands.py`: `_el_text`, `_word_template_text` | The silluq template joins the parameter-1 arm; a separator gives a space (`46dfd37f`); the page's projection remains deferred decision 7. |
+| `py/versification_differences/hebrew.py`: `_flatten_wtseq`, `_flatten_wtel`, `_recurse_on_keys` and its three callers, `_hnd_return_space`; `py/py_misc/wt_qere.py`: `HANDLERS` | Alternatives are set apart by a space and a narrow-sense paseq gives a space (`46dfd37f`); which alternatives a label reads remains deferred decision 4. The first stage, `wt_qere.HANDLERS`, reads the silluq template's parameter 1. |
+| `py/ws/ws_plain.py`: `_element`, `_sequence`, `_is_spacing_template` | Raw parser-stage conversion, lossless structural recursion that claims no Scripture; the change keeps the space after an inverted nun. |
+| `py/diff_ctr_vs_mam/massage_mpu_verse.py`: `_massage_mpu_wtseq`, `_massage_mpu_ep_wtel`, `_massage_arg_1` | Seen again; the closed table gained the silluq template's parameter 1. |
+| `py/hbce_psalms/compare.py`: `hbce_tokens`, `mam_children_tokens` | Closed readers ported to JSON; a mark with no chanted word before it now raises, on MAM's side and on HBCE's (`a24e81a9` and `ceb9c197`, 2026-10-21). The frozen `hbce-psalms/out/` is not rerun, by Ben's decision of 2026-09-26. |
+| `py/py_misc/mam_doc_utils.py`: `_does_not_need_callout`, `_has_pointed_string_within`; `py/py_misc/ren_html_for_renel.py`: `html_for_ren_el` | Render-element processing; the callout check now enters the near-Aleppo ruby box, and `_has_pointed_string_within` tests for a letter directly (`3a1bbe34`). `extract_docs`, `mark_doc_targets` and `_pointed_sum` seen again. |
+| `py/mb_misc/hebrew_letter_words.py`: `letters_and_maqafs` | Closed character dispatch (`3a1bbe34`): a gray maqaf is a maqaf, edge punctuation is allowed only at either end, any other character raises. |
+| `py/tmpl_survey/nesting_normal_form.py`: `_grammar_edges_and_order`, `RANK_GROUPS_FOR_PLUS_E` | Nesting grammar: two declared edges for the silluq template. |
+| `py/intro_doc_audit/census_scope.py` (new): `selected_parts`, `selected_template_paths`; `all_books_hataf.py`: `selected_text`; `poetic_rosters.py`: `selected_leaves`; `structures.py`: `main.walk` | The near-Aleppo edition projection through `edition_parameter_keys_for`, closed by name and measured key set; a separator gives a space (`418e1304`). The labels these outputs give the projection: C1. |
+| `py/intro_doc_audit/deuter_hataf_scope.py`: `templates`; `all_books_hataf.py`: `parameter_words` | Validated whole-structure template inventory that records a JSON pointer for each template and reports ketiv and qere apart. In Deuteronomy's column E the nested ketiv/qere templates are four, all in note targets (measured). |
+| `py/intro_doc_audit/audit.py`: `inventory_notes`, `object_address` | Note inventory through `find_docnote_tmpls`; target text through `flatten_text`, recording that function's error instead of raising for the 35 notes whose target holds a מ:פסוק. C1. |
+| `py/intro_doc_audit/human_review.py`: `strings_in` (in `applied_row`) | Maximal string search in one note object, for a check that raises on any occurrence without a declared context. |
+| `py/intro_doc_audit/history_inventory.py`: `dictionaries`; `human_review.py`: `prose`; `history_batch2.py`: `physical_argument`, `note_templates` | The first two walk the audit's own records and prose; the last two are a raw Wikisource parse layer that finds נוסח calls by name in historical revisions. |
+| `py/intro_doc_audit/review.py`: `source_node` | Uncalled: L6. |
+| `py/miqra_mevoar/mam_simple.py` (new): `_projected`, `_holds_break`, `verse_breaks` | `_projected` is closed (an unknown element raises) and keeps a ketiv and its qere both, for a comparison of letters, as its module docstring says; `_holds_break` is a raising structural guard. |
+| `py/author_misc/mam4sef_survey.py` (new): `_nodes`, `_silluq_cases`, `listing_entries` | `_nodes` is an annotation inventory with closed dispatch on the Sefaria handlers' keys; `listing_entries` re-derives the Unicode-name listings, a serializer. |
+| `py/tests/test_mam_json_verses.py`: `_selected_parts`; `test_israel_bible_review_mam_forms.py`: `_text`, `_own_text`; `test_sefaria_silluq_documentation.py`: `_inventory`; `test_uni_norm_fragile_harfbuzz.py`: `_strings`; `test_mpplus_alternative_oracle.py`: `_scripture`, `_source_roles.traverse` | An independent oracle of the reader's declared nodes; a closed oracle that states side and strand for each row and raises on a dual cantillation without a strand; a declared annotation inventory; a declared maximal string inventory for a differential test; seen again with the silluq role added. |
+| `py/sigils/inventory.py`: `_note_node_to_text`; `py/phonetic_mam/display_schema.py`: `validate_tokens`; `py/phonetic_mam/renderer.py`: `_tokens`; `py/py_misc/mwd_utils.py`: `_length_of_renel`, `_shrink_join`; `py/render_wt/render_wikitext_handlers.py`: `_equal`; `py/render_wt/render_wikitext_kq.py`: `_pointing_display_order`; `py/near_aleppo/phase5_readings.py`: `_walk`; `py/near_aleppo/doc_pages.py`: `_route_links` | Seen again. |
+
+**Excluded, with reasons.** Not MAM or Wikisource consumers: `py/pen_stroke/` and
+`py/concrete_transcription/` (glyph geometry and manuscript images); `py/taamey_d/`,
+`py/taamey_d_build/` and `Taamey-D/font-m-TaD/` (the font's build, checks and pages;
+`qa/corpus_refresh.py` reads the word lists `out/mam-qere-words.json` and
+`uxlc/out/uxlc-words.json`, not templates); `py/mb_cmn/polite_download.py` (robots rules and
+redirects); `py/repo_util/` and `py/redirect_stubs/`; `py/clc/`, `py/main_clc_ruby_review.py`,
+the UXLC and WLC readers (`py/uxlc_*`, `py/py_wlc*`, `py/accgram/uni_to_marks.py`,
+`chanted_word_accents_units.py`, `maqaf_nonfinal_accents.py`'s `_wlc_*`, closed on 2026-10-21 by
+`ceb9c197`); `py/yeivin_itm/renderer.py` (the ITM adaptation). Not data walkers: HTML authoring
+and output (`py/author_site/site_index.py`, `py/mb_misc/mb_html.py`, `py/mb_misc/write_utils.py`,
+`py/author_misc/mp_cmn_dedicated_rows.py`, `py/author_misc/mam4sef_common.py`'s lints over the
+generated page, `_text_of` in `py/author_boj_util/author.py` and `py/mb_author/author.py`,
+`py/miqra_mevoar/docx_table.py`, `py/tests/test_hebrew_letter_spacing.py`), Python-source lints
+(`py/tests/test_mega_coverage.py`, `py/tests/test_sibling_reach.py`),
+`py/tests/test_uxlc_misc_fixed.py` (UXLC XML), the Wikisource bot's `py/subcommands/ws_bot_*.py`
+(loops over its own specification records) and `py/phonetic_mam/compute.py` (`_phrase` reads a
+named protocol field).
+
+**C1. The Introduction audit's outputs call a pointed-ketiv projection "qere".** **Disposition: confirmed, unfixed** (this audit is read-only). Restating the labels to say what
+is selected would choose no new policy; choosing another branch is Ben's decision.
+
+- **Callers.** `py/intro_doc_audit/audit.py`: `inventory_notes` writes each note's
+  `target_survey_text` with `explicit_xataf.extract.flatten_text` and the
+  `target_projection_notice` "Existing hataf survey projection: qere and primary stress only;
+  …". `py/intro_doc_audit/structures.py`: `main` writes the `projection` field "Existing
+  edition_projection: qere, primary stress, qamats ד, combined cantillation; …", which
+  `catalogues.py` copies. `py/intro_doc_audit/census_scope.py`: `main` gives `two_atom_oleh` the
+  predicate "Selected atom has OLE without MERKHA …; qere selected …".
+- **Question.** The audit's evidence for the Introduction's claims: the text of each
+  documentation note's target, and populations of templates and rare marks in the selected
+  stream.
+- **Branch included against the label.** For the trivial ketiv/qere template מ:קו״כ-אם-2 all
+  three take parameter 1, the pointed ketiv: `flatten_text` through `_RETURN_ARG1_TMPL_NAMES`,
+  the edition projection through `_EDITION_KEYS`, and the MAM-simple stream through
+  `kq-trivial`, which `render_wikitext_handlers._handle_kq_trivial` fills from parameter 1. For
+  כתיב ולא קרי both plus-based projections include the ketiv that is not read
+  (`flatten_text` its parameter 2, the edition projection its parameter 1, which holds that
+  ketiv in parentheses). The audit's own `doc/intro-doc-audit/METHODS.md` says that its "MAM qere
+  labels identify the actual selected source".
+- **Tracked outputs.** `doc/intro-doc-audit/notes.json`: 15 of its 3,905 records have a target
+  holding a trivial ketiv/qere, so their `target_survey_text` is a pointed ketiv under a notice
+  that says qere, for example line 4683, Genesis 13:3's ketiv with final he where the qere has
+  vav; 2 more hold the unpointed ketiv of a כתיב ולא קרי. Both counts are the same at HEAD and at
+  the audit's pinned source `89cb865729b0876f1fd32a8a3579eaec80b4fc0c`
+  (`doc/intro-doc-audit/source-pin.json`). The `projection` field of
+  `structural-populations.json`, `rare-mark-populations.json` and `catalogue-comparison.json`,
+  and the `two_atom_oleh` predicate of `next-pass-census.json`.
+- **Effect: none measured beyond the labels.** None of the 15 targets' ḥataf vowels differs
+  between parameters 1 and 3. At all 149 trivial ketiv/qere templates in the edition
+  projection's column-E stream, parameters 1 and 3 carry the same numbers of deḥi, ole, merkha,
+  shalshelet, merkha kefula, qarney para, yerah ben yomo, telisha gedola, geresh and gershayim.
+  All 8 כתיב ולא קרי calls in that stream, and both in note targets, are unpointed.
+- **Reproduction.** Read `doc/intro-doc-audit/notes.json` line 4683 beside Genesis 13:3's מ:קו״כ-אם-2 call in
+  `MAM-parsed/plus/A1-Genesis.json`.
+- **Relation to earlier findings.** The same class as finding 1 of
+  `doc/blind-dive-into-template-params.md`, in a consumer added after it; deferred decisions 7
+  and 11 name other consumers and are not re-raised.
+- **Put to Ben** on 2026-11-11, with S1 and S2.
+
+**S1. The dual-mater FOI reads a scroll-difference note's prose.** **Disposition: suspected, unconfirmed; pre-existing**, unchanged in this range except for its
+tokenization. `py/foi/foiz_wt_dual_ml_alef.py`: `_find_fois_in_string` drops a string only when
+the stack's last label is `doc-part-n`, so its all-branch population also searches the note of
+a targeted scroll difference (parameter 2 of מ:הערה-2, labelled `scrdfftar-note`) and the
+strings of a template inside a documentation note's body. Its page explanations in
+`py/foi/dml_an_explanations.py` state no population. Tracked evidence:
+`gh-pages/MAM-with-doc/foi/foi-alef-dual-ml-alef-second.json` has one such row, Genesis 4:13 with
+`stack_str` "scrdfftar-note", a form quoted in the note; it was already there at 61ab4e3b. The
+other labelled row, Lamentations 1:12's special-letter word, is in a note's target. The label,
+and `_NOTE_STACK_PARTS`'s naming of scroll-difference note parts, suggest the inclusion is
+deliberate. **What would settle it:** Ben stating whether the two dual-mater pages survey
+Scripture strings only or also forms quoted in scroll-difference notes; if only Scripture,
+`py/main_foi_features_of_interest.py` regenerates the pages for the diff.
+
+**S2. FOI fragments show deḥi and tsinnor by the renderer's default.** **Disposition: suspected, unconfirmed; a display question that the range introduced.**
+`py/foi/foiz_wt_kq_1.py`, `foiz_wt_slh_word.py` and `foiz_wt_rare_tmpls.py` render in
+`_html_for_wtseq` with `handlers.default_hctx()`. A מ:דחי or מ:צינור inside such a fragment
+therefore shows parameter 1, while MAM-with-doc's verse column has shown parameter 2 keeping
+parameter 1's meteg since Ben's decisions of 2026-10-26 and 2026-10-27. Measured: 15
+stress-helper templates in MAM-parsed-plus sit inside ketiv/qere templates (7 in כו״ק, 8 in
+מ:קו״כ-אם-2), and none inside a special-letter word or a targeted scroll difference, so up to
+15 rows of foi-kq-simple, whose first cell is "MAM's rendering of the template", differ from
+MAM-with-doc's column. `foiz_wt_dexi_stress_meteg.py` states `RENOPTS_MAM_WITH_DOC` instead.
+**What would settle it:** Ben deciding whether FOI renderings under `gh-pages/MAM-with-doc/foi/`
+follow MAM-with-doc's stress-helper form; either way the three callers can state
+`ro_stress_helper`, and `py/main_foi_features_of_interest.py --foi args-foi-kq-1
+--single-threaded` would show the rows that change.
+
+Latent items, recorded so that a later change cannot make them live unnoticed:
+
+1. **L1, unfixed: `py/foi/foi_wikitext_helpers.py`: `_add_templates_before_sof_pasuq`** recurses
+   through `template_param_vals` into every parameter of every template and checks a template's
+   name only where a sof pasuq follows it, so an unknown template elsewhere is entered without
+   raising, which Ben's closed-dispatch rule asks a shared helper not to do. Nothing escapes
+   today: each of its four callers (`foiz_wt_kq_1`, `foiz_wt_qamats_var`, `foiz_wt_slh_word`,
+   `foiz_wt_rare_tmpls`) then walks the same cell through `all_branch_foilers`, whose
+   `_find_fois_in_wtel` validates every template.
+2. **L2, unfixed: `py/mam_morphhb/morphhb_plus.py`: `plus_stream`** is closed by name but calls
+   no shape validator (`node.get("tmpl_params") or {}`); an added parameter of מ:דחי, מ:צינור,
+   נוסח or מ:קמץ would be discarded silently in MAM-morphhb, a distributed product.
+   `validate_current_plus_template`, which other readers of the same files call, would close
+   it.
+3. **L3, unfixed, carried over from `mam_xml_verses.py` at 61ab4e3b:
+   `py/mb_cmn/mam_json_verses.py`: `get_verse_words`** passes over a `kq` with no `kq-k`, a
+   `scrdfftar` with no `sdt-target`, a `text` child with empty text, an `slh-word` with an empty
+   `slhw-desc-0` and a paseq-family child with no word before it. No current verse reaches
+   these branches: `py/tests/test_mam_json_verses.py`'s full-corpus differential
+   `test_reader_atom_content_matches_selected_source_nodes_over_the_full_corpus` asserts each
+   missing child and the word before a paseq-family mark.
+4. **L4, unfixed: the stress-helper default.** `py/render_wt/render_wikitext_handlers.py`:
+   `_STRESS_HELPER_FORMS` gives parameter 1 to a caller that sets no `ro_stress_helper`, and the
+   comment above it declares that default as the renderer's behavior before the option existed.
+   `py/mb_xml/xml_render.py`: `_RENOPTS_MAM_XML`, MAM-simple's call and through it MAM-OSIS's,
+   MAM-for-Sefaria's and MAM-morphhb's, states cantillation (`rv-cant-all-three`) and qamats
+   (`rv-dalet`) but not the stress-helper form, and MAM-simple's README and guides mention
+   neither stress helpers nor the qamats choice (searched `MAM-simple/` outside its JSON and
+   `gh-pages/MAM-simple/`). Output is unchanged by the range. Ben's rule asks each caller to
+   state its stress-helper alternative; `"ro_stress_helper": "rv-without-stress-helper"` there
+   would be output-neutral. `py/tests/test_mpplus_latest_note_schema.py` and the S2 callers also
+   rely on the default.
+5. **L5, unfixed; recursion unchanged: `py/accgram/mam_simple_verse.py`: `_iter_dict_nodes`**
+   yields every dictionary of a MAM-simple file wherever it stands, and its callers
+   `load_mam_simple_for_refs` and `mam_simple_refs` pass over a verse whose osisID is not a
+   string. The matching locator in `mam_poetic_accents.py`, `_iter_verse_nodes`, was closed on
+   2026-10-21 (`67237cdb`) through `mam_simple_json.verses`. It selects no text, so it cannot
+   project; it could only leave a malformed verse unread.
+6. **L6, uncalled walker code.** `py/intro_doc_audit/review.py`: `source_node` has no caller
+   (its only references are its own recursion); it serializes every parameter of any template
+   without checking its name. `py/near_aleppo/census/nusach_aleppo_readings.py`: `collect`
+   remains uncalled, kept as declared population code by Ben's decision of 2026-10-09; not
+   re-raised.
+
+**The 2026-10-07 latent item 3 is no longer present as described.** `4e9e7b84` ("Close the census,
+phase-6, verify_mp, explicit_xataf and mam4sef walkers", 2026-10-21) made the four census `render`
+functions, `qamats_params.find`, `nusach_aleppo_readings.each_nusach` and `flatten`, and
+`template_inventory`'s `walk_raw` and `walk_settled` raise on a mapping that is not a template,
+and made `phase6_flags._matching_templates` raise on a template without a phase-2 rule and on an
+action it does not name, on Ben's instruction that day: "Close them all. Even if they are getting
+away with it, they set a bad precedent."
+
+Verification for this audit: none was owed beyond reading, since it changed nothing; the clone was
+clean on `main` at `d957048a` before and after the review.
