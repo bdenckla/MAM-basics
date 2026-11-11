@@ -1,4 +1,7 @@
+from typing import NamedTuple
+
 import py_html.wlc_utils_html as wlc_utils_html
+from mb_author import author
 import mb_cmn.hebrew_accents as ha
 import mb_cmn.hebrew_points as hpo
 import mb_cmn.hebrew_punctuation as hpu
@@ -21,7 +24,7 @@ def diff_type_span_with_title(record):
 
 def diff_type_long(record):
     diff_type = record["diff-type"]
-    return _DIFF_TYPES[diff_type]
+    return _plain_definition(_DIFF_TYPES[diff_type])
 
 
 def diff_type_abbreviation_table():
@@ -35,19 +38,55 @@ def diff_type_abbreviation_table():
 def _diff_type_abbreviation_row(ad_pair):
     abbrev, definition = ad_pair
     datum_for_abbrev = wlc_utils_html.table_datum(abbrev, {"class": "nowrap"})
-    datum_for_defn = wlc_utils_html.table_datum(definition)
+    datum_for_defn = wlc_utils_html.table_datum(_definition_contents(definition))
     return wlc_utils_html.table_row([datum_for_abbrev, datum_for_defn])
 
 
+class _Example(NamedTuple):
+    """A change type's definition with an example: one form before the change, one after."""
+
+    english: str
+    before: str
+    after: str
+
+
+def _plain_definition(definition):
+    """A definition as one plain string, as a title attribute needs, which takes no font."""
+    if isinstance(definition, str):
+        return definition
+    assert isinstance(definition, _Example), definition
+    return f"{definition.english}: {definition.before} to {definition.after}"
+
+
+def _definition_contents(definition):
+    """A definition as the table of abbreviations shows it.
+
+    An example's two forms share one font: Taamey D (lang="hbo") if either is pointed, since
+    Ben decided on 2026-11-11 that "when comparing a pointed to an unpointed string, both
+    should use the same font (in this case Taamey D)"; the surrounding font if neither is, as
+    for any unpointed Hebrew (the hebrew-prose skill's references/rendered-prose.md,
+    "Unpointed Hebrew keeps the surrounding font"). A paseq or maqaf is not a point.
+    """
+    if isinstance(definition, str):
+        return definition
+    assert isinstance(definition, _Example), definition
+    forms = definition.before, definition.after
+    if all(map(author.is_unpointed_hebrew, forms)):
+        return _plain_definition(definition)
+    before, after = (wlc_utils_html.span(form, {"lang": "hbo"}) for form in forms)
+    return [f"{definition.english}: ", before, " to ", after]
+
+
 def _example(english, mark1, mark2):
-    return f"{english}: א{mark1} to א{mark2}"
+    return _Example(english, f"א{mark1}", f"א{mark2}")
 
 
 def _example_quad(english, mq1, mq2):
-    x_to_y = (
-        f"א{mq1[0]}א{mq1[1]}א{mq1[2]}א{mq1[3]} to א{mq2[0]}א{mq2[1]}א{mq2[2]}א{mq2[3]}"
+    return _Example(
+        english,
+        f"א{mq1[0]}א{mq1[1]}א{mq1[2]}א{mq1[3]}",
+        f"א{mq2[0]}א{mq2[1]}א{mq2[2]}א{mq2[3]}",
     )
-    return f"{english}: {x_to_y}"
 
 
 MQ1 = hpo.SHEVA, hpo.XPATAX, hpo.XQAMATS, hpo.XSEGOL
@@ -56,8 +95,8 @@ _DMS_EXAMPLE_1 = "וּלְרׇחְבָּ֑הּ"
 _DMS_EXAMPLE_2 = "וּלְרׇחְבָּ֑הּ".replace(hpo.DAGOMOSD, "")
 _DMS = "dagesh, mapiq, or shuruq dot"
 _DIFF_TYPES = {
-    "-dms": f"remove {_DMS}: {_DMS_EXAMPLE_1} to {_DMS_EXAMPLE_2}",
-    "+dms": f"add {_DMS}: {_DMS_EXAMPLE_2} to {_DMS_EXAMPLE_1}",
+    "-dms": _Example(f"remove {_DMS}", _DMS_EXAMPLE_1, _DMS_EXAMPLE_2),
+    "+dms": _Example(f"add {_DMS}", _DMS_EXAMPLE_2, _DMS_EXAMPLE_1),
     "-rfh": _example("remove rafeh", hpo.RAFE, ""),
     "-pashta": _example("remove pashta accent", ha.PASH, ""),
     "+rev": _example("add revia accent", "", ha.REV),
