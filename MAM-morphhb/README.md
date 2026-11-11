@@ -1,14 +1,17 @@
 # MAM-morphhb
 
 This product directory has `MAPM.xml`: MAM's current text in the form of the 2014 OSIS file
-that openscriptures/morphhb keeps as `MAPM/MAPM.xml`. That file is David Troidl's conversion of
-MAM, finished on 2014-02-19; MAM-basics keeps a byte-identical copy in `MAM-OSIS/MAPM-orig/`.
-`MAPM.xml` here is named as there so that it can replace morphhb's file byte for byte.
+that openscriptures/morphhb kept as `MAPM/MAPM.xml` until 2026-11-10, when it merged this
+product's file of `83caf168` in its place (openscriptures/morphhb#114). The 2014 file is David
+Troidl's conversion of MAM, finished on 2014-02-19, with the Hebrew numbers of chapters 15
+and 16 corrected in 2023 (openscriptures/morphhb#98). MAM-basics keeps a byte-identical copy,
+morphhb's file at its commit `3d15126f`, in `MAM-OSIS/MAPM-orig/`. `MAPM.xml` here is named
+as there so that it can replace morphhb's file byte for byte.
 
-The one program found that reads the 2014 file is OpenScriptorium's
+The one program found that reads morphhb's `MAPM/MAPM.xml` is OpenScriptorium's
 `app/services/importers/oshb_features_importer.rb`, which reads it line by line. So MAM-morphhb
 keeps the 2014 file's line layout, and the few places where its form deliberately differs call
-for a small change to that importer.
+for a small change to that importer, offered as OpenScriptorium/OpenScriptorium#1.
 
 Its sources are MAM-simple's BHS JSON, with MAM-simple's MAM JSON for the book groups that have
 no BHS file, for the text, and `MAM-parsed/plus/`, for what MAM-simple lacks: the book and
