@@ -512,6 +512,18 @@ _STEPS = [
         " gh-pages/MAM-with-doc/; not py/main_gen_misc_authored_english_documents.py,"
         " which book-of-job-site runs",
     ),
+    # Added 2026-11-11, when the review of the Israel Bible left gh-pages/MAM-with-doc/misc/,
+    # which gen-misc writes, for a folder of its own at Ben's word (py/main_authored.py's
+    # docstring, "WHERE A NEW PAGE GOES").  It reads only in/israel-bible-review/ and the
+    # stylesheet beside its module, which no step writes, so nothing orders it; it stands
+    # after gen-misc, which ran it until then.
+    StepRecord(
+        "israel-bible-review",
+        main_authored.gen_israel_bible_review,
+        "runs py/main_authored.py gen-israel-bible-review, which writes"
+        " gh-pages/israel-bible-review/index.html and its style.css from"
+        " in/israel-bible-review/",
+    ),
     # The wlc steps, in the order wlc-utils' own mega ran them until it was
     # absorbed here on 2026-08-01.  They are LAST rather than free-standing because
     # accgram reads MAM-simple's json-vtrad-bhs, which mam-simple above regenerates:

@@ -1,12 +1,19 @@
-"""Exports gen_html_file and CSS_HREFS, and, for the lint of MAM's forms in
+"""Exports gen_html_file, and, for the lint of MAM's forms in
 py/tests/test_israel_bible_review_mam_forms.py, review_lines, forms, data_table_rows and
 stripped.
 
-gen_html_file writes review_of_israel_bible.html, Ben's review "The Israel Bible: this ain't
-no Koren edition", and its stylesheet into gh-pages/MAM-with-doc/misc/.  Ben drafted the
-review elsewhere; at his word it was ported here on 2026-11-10 and is edited here from then
-on.  in/israel-bible-review/README.md says which file to edit for what, and keeps the
+gen_html_file writes Ben's review "The Israel Bible: this ain't no Koren edition" as
+gh-pages/israel-bible-review/index.html, and its stylesheet as style.css beside it.  Ben
+drafted the review elsewhere; at his word it was ported here on 2026-11-10 and is edited here
+from then on.  in/israel-bible-review/README.md says which file to edit for what, and keeps the
 review's decisions.
+
+THE REVIEW'S OWN FOLDER, 2026-11-11.  Until then the page was
+gh-pages/MAM-with-doc/misc/review_of_israel_bible.html and this module was
+review_of_israel_bible.py.  Ben asked that day for the review to move "to its own folder in
+gh-pages" (the README's Decision 2); py/main_authored.py's docstring, "WHERE A NEW PAGE GOES",
+gives his note on why misc/ was an outdated precedent.  This module's name ends in "index"
+because mb_author.author.help_gen_html_file asks that of the generator of an index.html.
 
 THE INPUTS are tracked files of this repository, and this module reads nothing outside it:
 
@@ -14,7 +21,7 @@ THE INPUTS are tracked files of this repository, and this module reads nothing o
   tables, the tour's five rows whose notes are Markdown and the Decalogues' eight rows;
 * in/israel-bible-review/forms.json, the forms of the tour's other 43 rows, each with its
   verse and its page in the Israel Bible, whose notes are TOP, TRANSLIT and NEXT below;
-* review_of_israel_bible.css beside this module, the page's styles.
+* israel_bible_review_index.css beside this module, the page's styles.
 
 Every Hebrew form was lifted from a text by a script, the Israel Bible's from the text layer
 of its PDF and MAM's from MAM-simple; none is typed.  English notes are authored here, except
@@ -63,9 +70,9 @@ recorded in doc/mam-normal-mark-order.md, asks of a quotation in authored prose.
 the bytes of two shown forms, in mark order alone: the Israel Bible's at Judges 15:14, whose
 shin dot now precedes the shin's ḥiriq and whose dagesh now precedes the tav's ḥiriq, and MAM's
 at Nehemiah 9:14, whose dagesh now precedes its qamats.  The draft's inline styles are now
-review_of_israel_bible.css, which loads Taamey D from the site's one copy; the arrow links load
-the shared near-aleppo/link-presentation.css, of which the draft held a copy; and the crop of
-Deuteronomy 3:22 is published under an ASCII name (IMAGES).  The lint in
+the stylesheet beside this module, which loads Taamey D from the site's one copy; the arrow
+links load the shared near-aleppo/link-presentation.css, of which the draft held a copy; and
+the crop of Deuteronomy 3:22 is published under an ASCII name (IMAGES).  The lint in
 py/tests/test_israel_bible_review_mam_forms.py checks MAM's forms against MAM-simple, at Ben's
 word of 2026-11-10.
 """
@@ -84,16 +91,18 @@ from mb_cmn import uni_denorm
 from mb_misc import mb_html
 
 _TITLE = "The Israel Bible: this ain't no Koren edition"
-_FNAME = "review_of_israel_bible.html"
-_CSS_FNAME = "review_of_israel_bible.css"
+_FNAME = "index.html"
+_CSS_FNAME = "style.css"
+# The review's own folder of the site, a peer of gh-pages/book-of-job/ and gh-pages/clc/.
+_OUT_DIR = paths.gh_pages_dir() / "israel-bible-review"
 # The page's stylesheets, in order: the prose base first, as doc/html-styles.md asks of every
 # prose page; then this page's own, written by gen_html_file from the .css beside this module;
 # then the shared stylesheet of the arrow links that go marks (doc/html-styles.md, "Arrow
-# links").  main_authored.py passes them as tdm_ch's hrefs.
-CSS_HREFS = (
-    "../../document.css",
+# links").
+_CSS_HREFS = (
+    "../document.css",
     _CSS_FNAME,
-    "../../near-aleppo/link-presentation.css",
+    "../near-aleppo/link-presentation.css",
 )
 _CSS_SOURCE = Path(__file__).with_suffix(".css")
 _INPUT_DIR = paths.in_dir() / "israel-bible-review"
@@ -391,7 +400,7 @@ def form_html(form_units, hot):
 # text, instead of making the arrow symbol *be* the link text?"; and then "Yes, make this
 # analogous to MAM-basics links."  So every link on the page is marked as MAM-basics' link
 # helper marks its links (py/near_aleppo/link_presentation.py): data-na-link says where the link
-# goes, and that helper's shared stylesheet, which the page loads (CSS_HREFS), draws the link's
+# goes, and that helper's shared stylesheet, which the page loads (_CSS_HREFS), draws the link's
 # text in the link color, not underlined, followed by an arrow in the same color: right to
 # another MAM-basics page, a boxed outward arrow to any other site, down to a later place on
 # this page.  The arrow is drawn, not written, so it is not part of the text that a reader
@@ -662,7 +671,7 @@ def footnotes_html(defs):
 
 
 # The images that review.md names, each with the name of its file in
-# gh-pages/MAM-with-doc/misc/img/israel_bible/.  review.md names an image as the draft did; its
+# gh-pages/israel-bible-review/img/.  review.md names an image as the draft did; its
 # published file is named as the review of A Hebrew Reader for the Pentateuch names its images,
 # by its verse, its atom in consensus_to_ascii (py/author_boj_util/author.py) and its source,
 # since no tracked filename holds a Hebrew letter.
@@ -677,7 +686,7 @@ def image_src(src):
     if src not in IMAGES:
         raise ValueError(f"an image that IMAGES does not name: {src!r}")
     # The file's name has spaces, which a URL may not hold as they are.
-    return quote(f"img/israel_bible/{IMAGES[src]}", safe="/")
+    return quote(f"img/{IMAGES[src]}", safe="/")
 
 
 def inline(text, footnotes=True):
@@ -1266,10 +1275,10 @@ DIVISIONS = [
 
 # ---------------------------------------------------------------- page
 
-# The page's styles are review_of_israel_bible.css beside this module, where the draft's inline
-# styles went at the port.  Pointed Hebrew is in Taamey D (Ben, 2026-11-08), which that sheet
-# loads from the site's one copy, gh-pages/woff2/Taamey_D.woff2, by a relative URL and with no
-# local() source (doc/html-styles.md, "Hebrew font").
+# The page's styles are israel_bible_review_index.css beside this module, where the draft's
+# inline styles went at the port.  Pointed Hebrew is in Taamey D (Ben, 2026-11-08), which that
+# sheet loads from the site's one copy, gh-pages/woff2/Taamey_D.woff2, by a relative URL and
+# with no local() source (doc/html-styles.md, "Hebrew font").
 
 
 def stylesheet():
@@ -1561,17 +1570,14 @@ def body_html():
     return explain_abbreviations(review_html(lines, flat, section))
 
 
-def gen_html_file(tdm_ch):
-    """Write the page and its stylesheet into tdm_ch's directory, and return the page's
-    (fname, title).  tdm_ch's hrefs must be CSS_HREFS, the stylesheets that the page needs.
-    """
-    top_dir, css_hrefs = tdm_ch
-    if tuple(css_hrefs) != CSS_HREFS:
-        raise ValueError(f"the page needs the stylesheets {CSS_HREFS}, not {css_hrefs}")
+def gen_html_file():
+    """Write the page and its stylesheet into the review's folder, and return the page's
+    path."""
     body = body_html()
-    with open(f"{top_dir}/{_CSS_FNAME}", "w", encoding="utf-8", newline="\n") as out_fp:
+    with open(_OUT_DIR / _CSS_FNAME, "w", encoding="utf-8", newline="\n") as out_fp:
         out_fp.write(stylesheet())
     cbody = [mb_html.raw_html(body)]
-    return author.help_gen_html_file(
-        __file__, tdm_ch, _FNAME, _TITLE, cbody, viewport=True
+    fname, _title = author.help_gen_html_file(
+        __file__, (_OUT_DIR, _CSS_HREFS), _FNAME, _TITLE, cbody, viewport=True
     )
+    return _OUT_DIR / fname

@@ -705,6 +705,10 @@ _RUNNER_CALLS: dict[str, tuple[str, ...]] = {
     "main_authored.gen_mam_for_sefaria_doc": (
         "py/main_authored.py gen-mam-for-sefaria-doc",
     ),
+    # What cmd_gen_israel_bible_review runs.
+    "main_authored.gen_israel_bible_review": (
+        "py/main_authored.py gen-israel-bible-review",
+    ),
     # The export core-only runs, which ends by calling the function copy-support-files
     # calls, mam_simple_copy_py_files.copy_support_files().
     "main_mam_simple.almost_main": (

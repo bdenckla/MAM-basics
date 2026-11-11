@@ -26,6 +26,10 @@ Subcommands:
                 for Sefaria", its unicode-names/index.html and ajf/index.html,
                 from the tracked files of MAM-for-Sefaria/
                 (py/author_misc/mam4sef_*index.py).
+    gen-israel-bible-review
+                Write gh-pages/israel-bible-review/index.html, Ben's review of
+                the Israel Bible, and its style.css, from in/israel-bible-review/
+                (py/author_misc/israel_bible_review_index.py).
     verify-mp
                 Run MAM-parsed claim verification without rewriting
                 MAM-parsed authored HTML/CSS outputs.
@@ -39,6 +43,43 @@ Examples:
     .venv/Scripts/python.exe py/main_authored.py
     .venv/Scripts/python.exe py/main_authored.py gen-mam-parsed-docs
     .venv/Scripts/python.exe py/main_authored.py verify-mp
+
+WHERE A NEW PAGE GOES
+
+Not into gh-pages/MAM-with-doc/misc/ merely because the reviews and notes that gen-misc writes
+are there.  Ben, 2026-11-11, asking for the review of the Israel Bible to move to a folder of
+its own: "Note somewhere that though you were following existing precedent by putting the
+israel bible review in MAM-with-doc/misc or whatever, that location reflects a very old
+situation where MAM-with-doc was its own repo with its own gh-pages and I'm not sure MAM-basics
+even had a gh-pages (and might have even pre-dated the whole existence of MAM-basics, i.e.
+those reviews might date back to the "trope" repo days!)"  So the review now has
+gh-pages/israel-bible-review/, a peer of gh-pages/book-of-job/ and gh-pages/clc/, which
+gen-israel-bible-review writes, as gen-mam-for-sefaria-doc writes gh-pages/MAM-for-Sefaria/.
+
+What this repository's history shows, read on 2026-11-11:
+
+* MAM-basics' first commit, d86e5779 of 2026-03-09, is "Initial commit — history-free
+  snapshot of trope repo code".  bdenckla/trope is the repository MAM-basics replaced; the
+  entry for it in in/repo_maintenance_policy.json says "Discontinued 2026-03-19 in favour of
+  MAM-basics, per the repo's own README".
+* In that snapshot this program, then py/main_gen_misc_authored_english_documents.py, wrote
+  its pages, the five of the review of Chabad's web Tanakh (rocc_0 to rocc_4) among them, into
+  ../MAM-with-doc/docs/misc, in the sibling MAM-with-doc repository.  From b47f0d22
+  (2026-04-10), "Update output paths to use GitHub Pages directory", it wrote them into
+  ../MAM-with-doc/gh-pages/misc.
+* MAM-basics had no gh-pages/ until f99996f3 (2026-08-12), when wlc-utils' pages came in.
+  MAM-with-doc's pages followed on 2026-09-06 (5a28bc0e; in/mam_with_doc_redirect_pages.json
+  freezes their old paths), and this program has written gh-pages/MAM-with-doc/misc/ since
+  3c8c9750, that day.
+* Later pages followed the precedent into misc/: the four parts of "Undoing and redoing the
+  work of the Masoretes" (2026-07-27), the reviews of Hebrew World's Phonetic Bible and of
+  ArtScroll's Transliterated Linear Siddur (both 2026-08-31), the review of A Hebrew Reader
+  for the Pentateuch (2026-11-08) and the review of the Israel Bible (2026-11-10).
+
+What these records cannot settle is when the misc pages began.  The first commit carries no
+history, so how long before 2026-03-09 the review of Chabad's web Tanakh and its folder
+existed is recorded only in trope's history and MAM-with-doc's; no clone here holds either,
+and this note was written without reading them.
 """
 
 import argparse
@@ -63,7 +104,7 @@ from author_misc import urwotm_4_atnax_hafukh as urwotm_4
 from author_misc import review_of_hebrew_worlds_phonetic_bible as hw_review
 from author_misc import review_of_artscroll_transliterated_linear_siddur as as_review
 from author_misc import review_of_hebrew_reader_for_the_pentateuch as hr_review
-from author_misc import review_of_israel_bible as ib_review
+from author_misc import israel_bible_review_index as ib_review
 from author_misc import he_ws_intro_to_mam_gray_maqaf_1 as gray_maqaf
 from author_misc import he_ws_intro_to_mam_pasleg as pasleg
 from author_misc import he_ws_intro_to_mam_gaya_text as gaya_text
@@ -94,7 +135,8 @@ def almost_main():
     #
     # The folder has no index page.  misc/index.html, which listed most of these pages,
     # was deleted on 2026-11-10 at Ben's word: "This misc/index.html is not important to
-    # maintain".  The return values are ignored.
+    # maintain".  The return values are ignored.  A new page does not join these merely by
+    # their precedent: the module docstring, "WHERE A NEW PAGE GOES", says why.
     notes_on_aliyot.gen_html_file(tdm_ch_aliyot)
     tsinnorit_and_oleh_on_ivs.gen_html_file(tdm_ch, top_dir_old)
     tsinnorit_and_oleh_facts.gen_html_file(tdm_ch)
@@ -112,8 +154,6 @@ def almost_main():
     hw_review.gen_html_file(tdm_ch)
     as_review.gen_html_file(tdm_ch)
     hr_review.gen_html_file(tdm_ch)
-    # The review of the Israel Bible loads its own stylesheet, not style.css.
-    ib_review.gen_html_file((top_dir_misc, ib_review.CSS_HREFS))
     gray_maqaf.gen_html_file(tdm_ch, body_class="wide")
     pasleg.gen_html_file(tdm_ch, body_class="wide")
     gaya_text.gen_html_file(tdm_ch, body_class="wide")
@@ -195,6 +235,16 @@ def cmd_gen_mam_for_sefaria_doc(_args):
     gen_mam_for_sefaria_doc()
 
 
+def gen_israel_bible_review():
+    """Write the review of the Israel Bible and its stylesheet into its own folder,
+    gh-pages/israel-bible-review/."""
+    print(f"Generated {ib_review.gen_html_file()}")
+
+
+def cmd_gen_israel_bible_review(_args):
+    gen_israel_bible_review()
+
+
 def _run_verify_mp(*, claims) -> None:
     """Run MAM-parsed claim verification against the loaded plus corpus."""
     verify_driver.run(Context(corpus=load_plus_corpus()), claims=claims)
@@ -264,6 +314,13 @@ def build_parser():
         ),
     )
     sub.add_parser(
+        "gen-israel-bible-review",
+        help=(
+            "Generate gh-pages/israel-bible-review/index.html, the review of the Israel"
+            " Bible, and its style.css, from in/israel-bible-review/."
+        ),
+    )
+    sub.add_parser(
         "gen-mp-claims-index",
         help=(
             "Generate doc/mp-claims.md from explicit claims and verifier functions "
@@ -287,6 +344,8 @@ def main():
         cmd_gen_mam_parsed_docs(args)
     elif args.subcommand == "gen-mam-for-sefaria-doc":
         cmd_gen_mam_for_sefaria_doc(args)
+    elif args.subcommand == "gen-israel-bible-review":
+        cmd_gen_israel_bible_review(args)
     elif args.subcommand == "gen-mp-claims-index":
         cmd_gen_mp_claims_index(args)
     elif args.subcommand == "verify-mp":

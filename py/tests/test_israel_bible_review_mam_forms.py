@@ -1,10 +1,10 @@
 """Lint: every MAM form that the review of the Israel Bible shows occurs in MAM-simple.
 
 Ben's decision of 2026-11-10: MAM's forms on the page
-gh-pages/MAM-with-doc/misc/review_of_israel_bible.html are "Stored as quotations and checked".
+gh-pages/israel-bible-review/index.html are "Stored as quotations and checked".
 They are stored in in/israel-bible-review/forms.json (the tour's 43 rows whose notes
-py/author_misc/review_of_israel_bible.py holds) and in in/israel-bible-review/review.md's two
-data tables (the tour's rows whose notes are Markdown, and the Decalogues' rows).  This lint
+py/author_misc/israel_bible_review_index.py holds) and in in/israel-bible-review/review.md's
+two data tables (the tour's rows whose notes are Markdown, and the Decalogues' rows).  This lint
 checks each of them against MAM-simple, the tracked extract of MAM's text: the form, stripped
 as the page strips it (the module's own stripped), must occur in MAM-simple's text of its
 verse, stripped alike, beginning and ending at the boundaries of atoms.  A miss fails, naming
@@ -42,7 +42,7 @@ with that rafeh kept, form and verse alike, as the page strips them.
 
 import re
 
-from author_misc import review_of_israel_bible as ib_review
+from author_misc import israel_bible_review_index as ib_review
 from mb_cmn import mam_simple_json
 from mb_cmn import paths
 from mb_cmn.mam_simple_book_group import resolve_book_group_path
