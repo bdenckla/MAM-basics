@@ -81,10 +81,32 @@ from verify_mp import driver as verify_driver
 from verify_mp.corpus import Context, load_plus_corpus
 
 
-def _gen_index_html(top_dir_misc, index_entries):
+def _gen_index_html(top_dir_misc, index_entries, ctr_review):
+    """Write misc/index.html: a sentence saying what it is, then its list of pages.
+
+    The sentence is Ben's request of 2026-11-10: "add to it a brief explanation of what
+    it is (providing a flat, compact list of documents that otherwise would be "hidden"
+    beneath the CTR review?)".  That day, the site index reached every page that this
+    index lists through the CTR review, whose file name and title ``ctr_review`` holds;
+    a page listed here that the CTR review does not lead to wants the sentence reworded.
+    """
+    ctr_fname, ctr_title = ctr_review
+    intro = mb_html.para(
+        [
+            "This page provides a flat, compact list of miscellaneous documents that"
+            " the site\N{RIGHT SINGLE QUOTATION MARK}s ",
+            mb_html.anchor_h("main index", "../../index.html"),
+            " does not list: documents that otherwise would be"
+            " \N{LEFT DOUBLE QUOTATION MARK}hidden\N{RIGHT DOUBLE QUOTATION MARK}"
+            " beneath the ",
+            mb_html.anchor_h(ctr_title, ctr_fname),
+            ".",
+        ]
+    )
     items = [mb_html.anchor_h(title, fname) for fname, title in index_entries]
     cbody = [
         mb_html.heading_level_1("Miscellaneous Documents"),
+        intro,
         mb_html.unordered_list(items),
     ]
     write_ctx = mb_html.WriteCtx(
@@ -110,12 +132,14 @@ def almost_main():
     #
     # notes_on_aliyot is linked from the top level, not from misc/index.html
     notes_on_aliyot.gen_html_file(tdm_ch_aliyot)  # return intentionally ignored
+    # The CTR review is generated first so that misc/index.html's sentence can name it.
+    ctr_review = rocc_0_review_of_ctr.gen_html_file(tdm_ch)
     pages = [
         tsinnorit_and_oleh_on_ivs.gen_html_file(tdm_ch, top_dir_old),
         tsinnorit_and_oleh_facts.gen_html_file(tdm_ch),
         tsinnorit_in_psalm_32v5.gen_html_file(tdm_ch),
         tsinnorit_and_the_xxd_in_bhs.gen_html_file(tdm_ch),
-        rocc_0_review_of_ctr.gen_html_file(tdm_ch),
+        ctr_review,
         rocc_1_on_the_provenance_of_ctr.gen_html_file(tdm_ch),
         rocc_2_pre_vowel_accents_in_ctr.gen_html_file(tdm_ch),
         rocc_3_where_other_sources_stand.gen_html_file(tdm_ch),
@@ -139,6 +163,7 @@ def almost_main():
     _gen_index_html(
         top_dir_misc,
         [(fname, title) for fname, title in pages if fname not in linked],
+        ctr_review,
     )
 
 
