@@ -44,10 +44,8 @@ Examples:
 import argparse
 import sys
 
-from mb_misc import mb_html
 from mb_misc import styles_authored
 from mb_cmn import paths
-from mb_cmn import provenance
 from author_misc import notes_on_aliyot
 from author_misc import tsinnorit_and_oleh_on_ivs
 from author_misc import tsinnorit_and_oleh_facts
@@ -81,43 +79,6 @@ from verify_mp import driver as verify_driver
 from verify_mp.corpus import Context, load_plus_corpus
 
 
-def _gen_index_html(top_dir_misc, index_entries, ctr_review):
-    """Write misc/index.html: a sentence saying what it is, then its list of pages.
-
-    The sentence is Ben's request of 2026-11-10: "add to it a brief explanation of what
-    it is (providing a flat, compact list of documents that otherwise would be "hidden"
-    beneath the CTR review?)".  That day, the site index reached every page that this
-    index lists through the CTR review, whose file name and title ``ctr_review`` holds;
-    a page listed here that the CTR review does not lead to wants the sentence reworded.
-    """
-    ctr_fname, ctr_title = ctr_review
-    intro = mb_html.para(
-        [
-            "This page provides a flat, compact list of miscellaneous documents that"
-            " the site\N{RIGHT SINGLE QUOTATION MARK}s ",
-            mb_html.anchor_h("main index", "../../index.html"),
-            " does not list: documents that otherwise would be"
-            " \N{LEFT DOUBLE QUOTATION MARK}hidden\N{RIGHT DOUBLE QUOTATION MARK}"
-            " beneath the ",
-            mb_html.anchor_h(ctr_title, ctr_fname),
-            ".",
-        ]
-    )
-    items = [mb_html.anchor_h(title, fname) for fname, title in index_entries]
-    cbody = [
-        mb_html.heading_level_1("Miscellaneous Documents"),
-        intro,
-        mb_html.unordered_list(items),
-    ]
-    write_ctx = mb_html.WriteCtx(
-        "Miscellaneous Documents",
-        f"{top_dir_misc}/index.html",
-        css_hrefs=("../../document.css",),
-        html_comment=provenance.generated_html_comment(__file__),
-    )
-    mb_html.write_html_to_file(cbody, write_ctx)
-
-
 def almost_main():
     # XXX TODO: rm *.html (to avoid stale files when output names change)
     pages_dir = str(paths.repo_root() / "gh-pages" / "MAM-with-doc")
@@ -130,41 +91,29 @@ def almost_main():
     tdm_ch = top_dir_misc, ("../../document.css", css_href)
     tdm_ch_aliyot = top_dir_misc, ("../../document.css", "aliyot-styles.css")
     #
-    # notes_on_aliyot is linked from the top level, not from misc/index.html
-    notes_on_aliyot.gen_html_file(tdm_ch_aliyot)  # return intentionally ignored
-    # The CTR review is generated first so that misc/index.html's sentence can name it.
-    ctr_review = rocc_0_review_of_ctr.gen_html_file(tdm_ch)
-    pages = [
-        tsinnorit_and_oleh_on_ivs.gen_html_file(tdm_ch, top_dir_old),
-        tsinnorit_and_oleh_facts.gen_html_file(tdm_ch),
-        tsinnorit_in_psalm_32v5.gen_html_file(tdm_ch),
-        tsinnorit_and_the_xxd_in_bhs.gen_html_file(tdm_ch),
-        ctr_review,
-        rocc_1_on_the_provenance_of_ctr.gen_html_file(tdm_ch),
-        rocc_2_pre_vowel_accents_in_ctr.gen_html_file(tdm_ch),
-        rocc_3_where_other_sources_stand.gen_html_file(tdm_ch),
-        rocc_4_mid_word_ga3ya_with_shewa.gen_html_file(tdm_ch),
-        urwotm_1.gen_html_file(tdm_ch),
-        urwotm_2.gen_html_file(tdm_ch),
-        urwotm_3.gen_html_file(tdm_ch),
-        urwotm_4.gen_html_file(tdm_ch),
-        hw_review.gen_html_file(tdm_ch),
-        as_review.gen_html_file(tdm_ch),
-        hr_review.gen_html_file(tdm_ch),
-        gray_maqaf.gen_html_file(tdm_ch, body_class="wide"),
-        pasleg.gen_html_file(tdm_ch, body_class="wide"),
-        gaya_text.gen_html_file(tdm_ch, body_class="wide"),
-    ]
-    # misc/index.html lists only the pages that the site index does not link, so that it
-    # repeats nothing of the site index (Ben, 2026-11-10: "trim out from that misc index
-    # everything already represented in the top-level index").  Every page is still
-    # generated.
-    linked = site_data.misc_fnames_linked()
-    _gen_index_html(
-        top_dir_misc,
-        [(fname, title) for fname, title in pages if fname not in linked],
-        ctr_review,
-    )
+    # The folder has no index page.  misc/index.html, which listed most of these pages,
+    # was deleted on 2026-11-10 at Ben's word: "This misc/index.html is not important to
+    # maintain".  The return values are ignored.
+    notes_on_aliyot.gen_html_file(tdm_ch_aliyot)
+    tsinnorit_and_oleh_on_ivs.gen_html_file(tdm_ch, top_dir_old)
+    tsinnorit_and_oleh_facts.gen_html_file(tdm_ch)
+    tsinnorit_in_psalm_32v5.gen_html_file(tdm_ch)
+    tsinnorit_and_the_xxd_in_bhs.gen_html_file(tdm_ch)
+    rocc_0_review_of_ctr.gen_html_file(tdm_ch)
+    rocc_1_on_the_provenance_of_ctr.gen_html_file(tdm_ch)
+    rocc_2_pre_vowel_accents_in_ctr.gen_html_file(tdm_ch)
+    rocc_3_where_other_sources_stand.gen_html_file(tdm_ch)
+    rocc_4_mid_word_ga3ya_with_shewa.gen_html_file(tdm_ch)
+    urwotm_1.gen_html_file(tdm_ch)
+    urwotm_2.gen_html_file(tdm_ch)
+    urwotm_3.gen_html_file(tdm_ch)
+    urwotm_4.gen_html_file(tdm_ch)
+    hw_review.gen_html_file(tdm_ch)
+    as_review.gen_html_file(tdm_ch)
+    hr_review.gen_html_file(tdm_ch)
+    gray_maqaf.gen_html_file(tdm_ch, body_class="wide")
+    pasleg.gen_html_file(tdm_ch, body_class="wide")
+    gaya_text.gen_html_file(tdm_ch, body_class="wide")
 
 
 def cmd_gen_misc(_args):
