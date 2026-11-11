@@ -24,9 +24,15 @@ site, which the site index lists under "Reviews". The review is edited here, in 
   it, with MAM's rafeh on the alef kept at the rows of the module's `RAFEH_REFS`, and in
   MAM-normal mark order. The rows are in the Israel Bible's order, by page, then chapter and
   verse. The module checks all of this, and that its entries draw every row once.
-- The page's styles are
+- The page's own styles are
   [`py/author_misc/israel_bible_review_index.css`](../../py/author_misc/israel_bible_review_index.css),
-  which the module publishes beside the page as `style.css`.
+  which the module publishes beside the page as `style.css`. It holds only what this page
+  alone has: the tables of forms and their highlighted differences, the notes' details,
+  the hovers, the footnotes' paragraphs and the crop. The page takes the rest from the
+  sheets that the site's other reviews load before it, `gh-pages/document.css` and
+  `gh-pages/MAM-with-doc/misc/style.css`, the second of which loads Taamey D for pointed
+  Hebrew; after it, `gh-pages/near-aleppo/link-presentation.css` draws the arrow links
+  (Decision 3).
 - The page's one image, a crop of Deuteronomy 3:22's atom from page 457 of the Israel Bible's
   PDF, is
   `gh-pages/israel-bible-review/img/Deut 3v22 FYRAV6 -- Israel Bible PDF page 457.png`.
@@ -40,7 +46,8 @@ site, which the site index lists under "Reviews". The review is edited here, in 
 - The notes of the other rows of the tour, their groups, the tour's divisions (`DIVISIONS`)
   and the hovers (`ABBREVIATIONS`): the module.
 - `forms.json`: only when a row whose note is in the module is added or removed.
-- The styles: the module's stylesheet.
+- The styles: the module's stylesheet, for what this page alone has; a change to the look
+  that the reviews share belongs in the shared sheets.
 - Never the generated page or its published stylesheet: both are rewritten by every build.
 
 Hebrew is copied by a script, never retyped, and kept in MAM-normal order. Replaced text is
@@ -101,6 +108,20 @@ changed.
    the same message Ben asked for a note that the misc folder was an outdated precedent;
    `py/main_authored.py`'s docstring, "WHERE A NEW PAGE GOES", quotes it, with what this
    repository's history shows and what it cannot settle.
+3. **The reviews' look.** Ben, 2026-11-11: "the israel-bible review has overall styling
+   (notably the font but maybe other things too) inconsistent with other documents in
+   gh-pages. Please make it consistent and report any other ways beyond the font in which
+   you found it to be inconsistent and made changes towards consistency with other
+   documents in gh-pages (particularly, it should be consistent with other review
+   documents)". The page now loads the two sheets that the site's other reviews load, and
+   its own sheet lost every rule that only differed from them: the prose's sans-serif
+   font, its size of 16px, its width of 1200px with prose limited to 48rem, its line
+   height, the page's own palette, the heading sizes, the notes' and footnotes' 15px and
+   the size of code. Pointed Hebrew takes the reviews' rule, Taamey D at 140% with the
+   stylistic set ss01, in place of 30px with fallback fonts, and the forms take
+   `document.css`'s extra letter spacing, as the review of Chabad's CTR gives the forms it
+   compares, in place of 0.2em. The arrow links, which Ben asked for on this page on
+   2026-11-09, and the viewport meta stay.
 
 ## Open decisions
 

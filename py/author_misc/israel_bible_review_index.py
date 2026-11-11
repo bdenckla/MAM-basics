@@ -75,6 +75,14 @@ links load the shared near-aleppo/link-presentation.css, of which the draft held
 the crop of Deuteronomy 3:22 is published under an ASCII name (IMAGES).  The lint in
 py/tests/test_israel_bible_review_mam_forms.py checks MAM's forms against MAM-simple, at Ben's
 word of 2026-11-10.
+
+THE REVIEWS' LOOK, 2026-11-11.  Ben: "the israel-bible review has overall styling (notably
+the font but maybe other things too) inconsistent with other documents in gh-pages. Please
+make it consistent" (the README's Decision 3).  The page now loads the sheets that the
+site's other reviews load, document.css and MAM-with-doc/misc/style.css, and its own sheet
+keeps only what this page alone has: its prose takes their font, size, width and colours,
+and its forms the shared size of pointed Hebrew, in the extra letter spacing that the review
+of Chabad's CTR gives the forms it compares.
 """
 
 import html
@@ -100,13 +108,17 @@ _OUT_DIR = paths.gh_pages_dir() / "israel-bible-review"
 # computed (mb_cmn/site_links.py).
 _PAGE = (_OUT_DIR / _FNAME).relative_to(paths.gh_pages_dir()).as_posix()
 # The page's stylesheets, in order: the prose base first, as doc/html-styles.md asks of every
-# prose page; then this page's own, written by gen_html_file from the .css beside this module;
-# then the shared stylesheet of the arrow links that go marks (doc/html-styles.md, "Arrow
-# links").
+# prose page; then the sheet that the site's other reviews load, MAM-with-doc/misc/style.css,
+# for their pointed Hebrew in Taamey D and their emphasis, linked where it is published so
+# that its font URL resolves (Ben, 2026-11-11: "Please make it consistent ...
+# (particularly, it should be consistent with other review documents)"); then this page's
+# own, written by gen_html_file from the .css beside this module; then the shared stylesheet
+# of the arrow links that go marks (doc/html-styles.md, "Arrow links").
 _CSS_HREFS = (
-    "../document.css",
+    site_links.site_href(_PAGE, "document.css"),
+    site_links.site_href(_PAGE, "MAM-with-doc/misc/style.css"),
     _CSS_FNAME,
-    "../near-aleppo/link-presentation.css",
+    site_links.site_href(_PAGE, "near-aleppo/link-presentation.css"),
 )
 _CSS_SOURCE = Path(__file__).with_suffix(".css")
 _INPUT_DIR = paths.in_dir() / "israel-bible-review"
@@ -376,7 +388,8 @@ def context_units(form_units, hot):
 
 def form_html(form_units, hot):
     """One form, each hot unit in its own span, which marks it as a cluster that differs, and
-    each context atom in a gray span."""
+    each context atom in a gray span.  The form is in document.css's extra letter spacing,
+    as the review of Chabad's CTR spaces the forms it compares (Ben, 2026-11-11)."""
     ctx = context_units(form_units, hot)
     out, run = [], []
     for k, u in enumerate(form_units):
@@ -392,7 +405,7 @@ def form_html(form_units, hot):
         out.append(text)
     if run:
         out.append(f'<span class="context">{"".join(run)}</span>')
-    return f'<span class="he" lang="hbo">{"".join(out)}</span>'
+    return f'<span class="extra-letter-spacing" lang="hbo">{"".join(out)}</span>'
 
 
 # ---------------------------------------------------------------- cells and order
@@ -604,7 +617,7 @@ def isolate_hebrew(s):
     for k in range(0, len(parts), 2):
         parts[k] = HEB_RUN.sub(
             lambda m: (
-                f'<span class="hi" lang="hbo" dir="rtl">{m.group(0)}</span>'
+                f'<span lang="hbo" dir="rtl">{m.group(0)}</span>'
                 if POINT_OR_ACCENT.search(m.group(0))
                 else f"<bdi>{m.group(0)}</bdi>"
             ),
@@ -1281,10 +1294,12 @@ DIVISIONS = [
 
 # ---------------------------------------------------------------- page
 
-# The page's styles are israel_bible_review_index.css beside this module, where the draft's
-# inline styles went at the port.  Pointed Hebrew is in Taamey D (Ben, 2026-11-08), which that
-# sheet loads from the site's one copy, gh-pages/woff2/Taamey_D.woff2, by a relative URL and
-# with no local() source (doc/html-styles.md, "Hebrew font").
+# The page's own styles are israel_bible_review_index.css beside this module, where the draft's
+# inline styles went at the port; since 2026-11-11 it holds only what this page alone has, and
+# the page takes the rest from the sheets that the site's other reviews load (_CSS_HREFS).
+# Pointed Hebrew is in Taamey D (Ben, 2026-11-08), which MAM-with-doc/misc/style.css loads
+# from the site's one copy, gh-pages/woff2/Taamey_D.woff2, by a relative URL and with no
+# local() source (doc/html-styles.md, "Hebrew font").
 
 
 def stylesheet():
