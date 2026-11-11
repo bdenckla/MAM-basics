@@ -1,7 +1,8 @@
 """Write MAM-morphhb: today's MAM in the 2014 form of morphhb's MAPM/MAPM.xml.
 
-openscriptures/morphhb's ``MAPM/MAPM.xml`` is David Troidl's OSIS conversion of MAM from
-2014, kept in this repository as ``MAM-OSIS/MAPM-orig/MAPM.xml``.  This hand-run
+Until 2026-11-10, openscriptures/morphhb's ``MAPM/MAPM.xml`` was David Troidl's OSIS
+conversion of MAM from 2014, kept in this repository as ``MAM-OSIS/MAPM-orig/MAPM.xml``;
+morphhb then merged this generator's output of ``83caf168`` in its place.  This hand-run
 generator writes ``MAM-morphhb/MAPM.xml``: the same form, with today's text from
 MAM-simple's BHS JSON and the structure that only ``MAM-parsed/plus/`` holds.
 MAM-morphhb/README.md says where the form departs from 2014's, and why.
