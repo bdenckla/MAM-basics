@@ -271,6 +271,10 @@ _REVIEWS = Section(
             "Review of the Job fascicle of BHQ",
             "book-of-job/jobn/job2_main_article.html",
         ),
+        _entry(
+            "Review of the Israel Bible",
+            f"{_MWD_MISC}review_of_israel_bible.html",
+        ),
     ),
 )
 

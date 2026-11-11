@@ -63,6 +63,7 @@ from author_misc import urwotm_4_atnax_hafukh as urwotm_4
 from author_misc import review_of_hebrew_worlds_phonetic_bible as hw_review
 from author_misc import review_of_artscroll_transliterated_linear_siddur as as_review
 from author_misc import review_of_hebrew_reader_for_the_pentateuch as hr_review
+from author_misc import review_of_israel_bible as ib_review
 from author_misc import he_ws_intro_to_mam_gray_maqaf_1 as gray_maqaf
 from author_misc import he_ws_intro_to_mam_pasleg as pasleg
 from author_misc import he_ws_intro_to_mam_gaya_text as gaya_text
@@ -111,6 +112,8 @@ def almost_main():
     hw_review.gen_html_file(tdm_ch)
     as_review.gen_html_file(tdm_ch)
     hr_review.gen_html_file(tdm_ch)
+    # The review of the Israel Bible loads its own stylesheet, not style.css.
+    ib_review.gen_html_file((top_dir_misc, ib_review.CSS_HREFS))
     gray_maqaf.gen_html_file(tdm_ch, body_class="wide")
     pasleg.gen_html_file(tdm_ch, body_class="wide")
     gaya_text.gen_html_file(tdm_ch, body_class="wide")

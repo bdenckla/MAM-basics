@@ -13,6 +13,7 @@ _PROSE_SHEETS = (
     "MAM-for-Sefaria/styles.css",
     "MAM-with-doc/misc/style.css",
     "MAM-with-doc/misc/aliyot-styles.css",
+    "MAM-with-doc/misc/review_of_israel_bible.css",
     "book-of-job/style.css",
     "near-aleppo/style.css",
     "phonetic-mam/style.css",
