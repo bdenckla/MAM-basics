@@ -18,6 +18,15 @@ EXPLANATIONS = {
 }
 
 
+# The tsinnorit page's description on MAM-with-doc's FOI index.
+INDEX_DESCRIPTION = " ".join(
+    (
+        "chanted words with tsinnorit, grouped by the accents, maqaf marks and meteg",
+        "marks after the tsinnorit, or before it",
+    )
+)
+
+
 OVERALL_EXPLANATION = (
     " ".join(
         (

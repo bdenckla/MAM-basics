@@ -1,3 +1,11 @@
+# The doc-note-notation page's description on MAM-with-doc's FOI index.
+INDEX_DESCRIPTION = " ".join(
+    (
+        "words in MAM's documentation notes written in plus notation or with a",
+        "carrier letter between double guillemets",
+    )
+)
+
 OVERALL_EXPLANATION = (
     " ".join(
         (

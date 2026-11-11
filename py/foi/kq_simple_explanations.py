@@ -17,6 +17,15 @@ def _explanation_for_trivial_path(path_parts):
     return None
 
 
+# The kq-simple page's description on MAM-with-doc's FOI index.
+INDEX_DESCRIPTION = " ".join(
+    (
+        "ketiv/qere cases identified from their template and its immediate",
+        "surroundings, grouped by their numbers of ketiv and qere words",
+    )
+)
+
+
 OVERALL_EXPLANATION = (
     " ".join(
         (

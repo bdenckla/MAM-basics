@@ -2,6 +2,14 @@ from mb_cmn import ws_tmpl2 as wtp
 from foi import foi_wikitext_helpers as fwh
 from mb_cmn.my_utils import sum_of_seqs
 
+# The poetic-stress-helpers page's description on MAM-with-doc's FOI index.
+INDEX_DESCRIPTION = " ".join(
+    (
+        "places where MAM's template for deḥi's stress helper is inside another",
+        "template or holds one, and tsinnor's forms with its stress helper",
+    )
+)
+
 
 def find_fois_wt(mroge):
     """

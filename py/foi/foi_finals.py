@@ -8,6 +8,7 @@ from mb_cmn import provenance
 from py_misc import mwd_utils as mwdu
 from mb_author import author
 from mb_misc import mb_html
+from near_aleppo import link_presentation
 
 from foi import pasoleg_1_labels
 from foi import foi_gray_marks as gray_marks
@@ -19,6 +20,11 @@ from foi import dml_an_explanations as dml_e
 from foi import dexi_stress_meteg_explanations as dexi_stress_meteg_e
 from foi import doc_note_notation_explanations as doc_note_notation_e
 from foi import foiz_wt_holam_before_vav as holam_foi
+from foi import foiz_wt_pasoleg_2 as pasoleg_2_foi
+from foi import foiz_wt_poetic_len as poetic_len_foi
+from foi import foiz_wt_poetic_sh as poetic_sh_foi
+from foi import foiz_wt_qamats_var as qamats_var_foi
+from foi import foiz_wt_rev_mug as rev_mug_foi
 from foi import holam_before_vav_explanations as holam_e
 from foi import kq_simple_explanations as kq_simple_e
 from foi import kq_complex_explanations as kq_complex_e
@@ -30,7 +36,6 @@ from foi import slh_word_explanations as slh_word_e
 from foi import unicode_explanations as unicode_e
 
 # XXX TODO show a "table of contents"
-# XXX TODO show friendlier descriptions of the FOIs
 # XXX TODO show broader category counts, not just fine-grained
 # XXX TODO show upper or lower (cantillation) where applicable
 # XXX TODO show underlying Unicode where applicable (e.g. CGJ)
@@ -58,6 +63,10 @@ def write(args_foi, all_fois):
 
 _OUT_DIR_PATH = str(paths.repo_root() / "gh-pages" / "MAM-with-doc" / "foi")
 _CSS_HREF = "../two_col_style.css"
+# The arrow links of doc/html-styles.md, "Arrow links": the shared stylesheet, from this
+# directory, and this directory's place in the site.
+_ARROW_CSS_HREF = "../../near-aleppo/" + link_presentation.STYLESHEET
+_SITE_DIRECTORY = "MAM-with-doc/foi"
 
 
 def _slash_str_from_path_parts(path_parts):
@@ -80,7 +89,8 @@ def _rm_html_single(html_el):
 def _licont_for_outspec(outspec):
     outfile_stem, _foi_paths = outspec
     outfilename_for_html = _outfilename_for_html(outfile_stem)
-    return mb_html.anchor_h(outfile_stem, outfilename_for_html)
+    link = mb_html.anchor_h(outfile_stem, outfilename_for_html)
+    return [link, " — ", _INDEX_DESCRIPTIONS[outfile_stem]]
 
 
 def _unordered_list_of_links_to_html(outspecs):
@@ -90,6 +100,7 @@ def _unordered_list_of_links_to_html(outspecs):
 
 def _write_index_dot_html(outspecs):
     outspecs = sorted(outspecs)
+    _check_index_descriptions(outspecs)
     body_contents = _foi_body_wrapper(_unordered_list_of_links_to_html(outspecs))
     write_ctx = mb_html.WriteCtx(
         "MAM features of interest",
@@ -97,7 +108,29 @@ def _write_index_dot_html(outspecs):
         css_hrefs=(_CSS_HREF,),
         html_comment=provenance.generated_html_comment(__file__),
     )
-    mb_html.write_html_to_file(body_contents, write_ctx)
+    _write_with_arrow_links(body_contents, write_ctx, "index.html")
+
+
+def _check_index_descriptions(outspecs):
+    """Raise unless every page has a description and every description a page."""
+    stems = {outfile_stem for outfile_stem, _foi_paths in outspecs}
+    undescribed = sorted(stems - set(_INDEX_DESCRIPTIONS))
+    unlisted = sorted(set(_INDEX_DESCRIPTIONS) - stems)
+    if undescribed or unlisted:
+        raise ValueError(
+            f"FOI pages with no index description: {undescribed};"
+            f" index descriptions with no FOI page: {unlisted}"
+        )
+
+
+def _write_with_arrow_links(body_contents, write_ctx, page_name):
+    page = link_presentation.apply(
+        mb_html.html_text(body_contents, write_ctx),
+        page_name,
+        css_href=_ARROW_CSS_HREF,
+        site_directory=_SITE_DIRECTORY,
+    )
+    file_io.with_tmp_openw(write_ctx.path, {}, lambda out_fp: out_fp.write(page))
 
 
 def _write_finals3(args_foi, all_fois, outspec):
@@ -502,6 +535,37 @@ _OVERALL_EXPLANATIONS = {
     "unicode": unicode_e.OVERALL_EXPLANATION,
 }
 
+
+# Each page's description on the index: a module constant beside its page's opening
+# explanation or, for a page with none, beside its stem's FOI path in its finder.
+_INDEX_DESCRIPTIONS = {
+    "alef-dual-ml-alef-first": dml_e.INDEX_DESCRIPTION_DML_A1,
+    "alef-dual-ml-alef-second": dml_e.INDEX_DESCRIPTION_DML_A2,
+    "dexi-stress-meteg": dexi_stress_meteg_e.INDEX_DESCRIPTION,
+    "doc-note-notation": doc_note_notation_e.INDEX_DESCRIPTION,
+    "holam-before-vav": holam_e.INDEX_DESCRIPTION,
+    "kq-complex": kq_complex_e.INDEX_DESCRIPTION,
+    "kq-simple": kq_simple_e.INDEX_DESCRIPTION,
+    "mtgmtg": mtgmtg_e.INDEX_DESCRIPTION,
+    "oleh-yored": ole_yored_e.INDEX_DESCRIPTION,
+    "pasoleg-1": pasoleg_1_labels.INDEX_DESCRIPTION,
+    "pasoleg-2": pasoleg_2_foi.INDEX_DESCRIPTION,
+    "poetic-stress-helpers": poetic_sh_foi.INDEX_DESCRIPTION,
+    "poetic-verlen": poetic_len_foi.INDEX_DESCRIPTION,
+    "qamats-variants": qamats_var_e.INDEX_DESCRIPTION,
+    "quick-brown-fox": quick_brown_e.INDEX_DESCRIPTION,
+    "rare-tmpls": rare_tmpls_e.INDEX_DESCRIPTION,
+    "revia-mugrash": rev_mug_foi.INDEX_DESCRIPTION,
+    "sec-merk": sec_merk_e.INDEX_DESCRIPTION_SEC_MERK,
+    "sec-misc": sec_merk_e.INDEX_DESCRIPTION_SEC_MISC,
+    "sec-merk-shewa": sec_merk_e.INDEX_DESCRIPTION_SEC_MERK_SHEWA,
+    "sec-misc-shewa": sec_merk_e.INDEX_DESCRIPTION_SEC_MISC_SHEWA,
+    "sec-star-breuer-cos": sec_merk_e.INDEX_DESCRIPTION_REF,
+    "slh-word": slh_word_e.INDEX_DESCRIPTION,
+    "tsinnorit": tsinnorit_e.INDEX_DESCRIPTION,
+    "unicode": unicode_e.INDEX_DESCRIPTION,
+    "xataf-qamats": qamats_var_foi.INDEX_DESCRIPTION_XATAF_QAMATS,
+}
 
 # The foi_paths of a stem whose rows go to its page's introduction rather than to a
 # table; its explanation then takes those rows and returns the introduction's HTML.

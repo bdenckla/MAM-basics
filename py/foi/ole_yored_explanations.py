@@ -6,6 +6,15 @@ EXPLANATIONS = {
 }
 
 
+# The oleh-yored page's description on MAM-with-doc's FOI index.
+INDEX_DESCRIPTION = " ".join(
+    (
+        "oleh-weyored, grouped by where its oleh and yored are: on one letter, in one",
+        "atom, in one chanted word, or in separate chanted words",
+    )
+)
+
+
 OVERALL_EXPLANATION = (
     " ".join(
         (

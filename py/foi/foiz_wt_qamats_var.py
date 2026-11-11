@@ -68,6 +68,12 @@ _LETT_AICAM = rh.par(rh.LETT + _DOTQ + _DAGQ)
 #    a dagesh, or nothing
 
 
+# The xataf-qamats page's description on MAM-with-doc's FOI index.
+INDEX_DESCRIPTION_XATAF_QAMATS = (
+    "chanted words with ḥataf qamats, each with the letter that has it"
+)
+
+
 def _make_xq_foi(stack_summary, word):
     match = re.search(_LETT_AICAM + hpo.XQAMATS, word)
     assert match is not None

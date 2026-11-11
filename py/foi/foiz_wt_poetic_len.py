@@ -1,6 +1,9 @@
 from mb_cmn import bib_locales as tbn
 from py_misc import wt_qere
 
+# The poetic-verlen page's description on MAM-with-doc's FOI index.
+INDEX_DESCRIPTION = "poetic verses grouped by their length in chanted words"
+
 
 def find_fois_wt(mroge):
     """Find poetic verses of different lengths (as measured in number of chanted words)."""

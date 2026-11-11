@@ -20,6 +20,15 @@ def explanation_for_path(path_parts):
     return _EXPLANATIONS_BY_LABEL.get(path_parts[-1])
 
 
+# The pasoleg-1 page's description on MAM-with-doc's FOI index.
+INDEX_DESCRIPTION = " ".join(
+    (
+        "munaḥ legarmeh, and munaḥ followed by a narrow-sense paseq, grouped by the",
+        "accent that ends the pattern and the accents in between",
+    )
+)
+
+
 OVERALL_EXPLANATION = (
     "This page groups pasoleg-related accent patterns, especially munaḥ legarmeih and munaḥ paseq sequences together with their most characteristic stopping accents.",
     "The compact labels summarize the starting pattern, the stopping pattern, and how many accents intervene. Prefixes such as dualcant/upper and dualcant/lower mark the upper and lower cantillation systems in the dual-cantillation passages.",

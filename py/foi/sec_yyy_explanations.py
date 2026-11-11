@@ -1,5 +1,8 @@
 import re
 
+from accgram.almost_errors_html_shared import COS_TITLE
+from mb_misc import mb_html
+
 
 def explanation_for_path(path_parts):
     if len(path_parts) != 3:
@@ -201,6 +204,22 @@ _SHEWA_PATTERN_PARTS = {
     "varika": "varika",
 }
 
+# The sec-merk page's description on MAM-with-doc's FOI index.
+INDEX_DESCRIPTION_SEC_MERK = " ".join(
+    (
+        "chanted words with merkha and another accent or a meteg, grouped by the",
+        "pattern of their accents, maqaf marks and meteg marks",
+    )
+)
+
+# The sec-misc page's description on MAM-with-doc's FOI index.
+INDEX_DESCRIPTION_SEC_MISC = " ".join(
+    (
+        "chanted words grouped as in sec-merk, but with mahapakh, or tarḥa in a",
+        "poetic verse, instead of merkha",
+    )
+)
+
 OVERALL_EXPLANATION = (
     " ".join(
         (
@@ -227,6 +246,22 @@ OVERALL_EXPLANATION = (
     ),
 )
 
+# The sec-merk-shewa page's description on MAM-with-doc's FOI index.
+INDEX_DESCRIPTION_SEC_MERK_SHEWA = " ".join(
+    (
+        "the sec-merk chanted words whose merkha is followed by a letter with shewa",
+        "or a ḥataf vowel, grouped by that letter's marks",
+    )
+)
+
+# The sec-misc-shewa page's description on MAM-with-doc's FOI index.
+INDEX_DESCRIPTION_SEC_MISC_SHEWA = " ".join(
+    (
+        "the sec-misc chanted words whose mahapakh is followed by a letter with shewa",
+        "or a ḥataf vowel, grouped by that letter's marks",
+    )
+)
+
 OVERALL_EXPLANATION_SHEWA = (
     " ".join(
         (
@@ -249,6 +284,15 @@ OVERALL_EXPLANATION_SHEWA = (
             "following consonant, not the marked one.",
         )
     ),
+)
+
+# The sec-star-breuer-cos page's description on MAM-with-doc's FOI index: HTML contents,
+# naming Breuer's book as CoS with its full title on hover.
+INDEX_DESCRIPTION_REF = (
+    "the sec-merk and sec-misc chanted words again, grouped by the passage of"
+    " Breuer's ",
+    mb_html.abbr("CoS", {"title": COS_TITLE}),
+    " cited for each",
 )
 
 OVERALL_EXPLANATION_REF = (

@@ -54,6 +54,15 @@ def _simplify(irps):  # irp: idx/run_el pair; irps: many irp
     return irps[0][0], list(pair[1] for pair in irps)
 
 
+# The pasoleg-2 page's description on MAM-with-doc's FOI index.
+INDEX_DESCRIPTION = " ".join(
+    (
+        "legarmeh and narrow-sense paseq marks, alone or in runs over two or three",
+        "consecutive chanted words",
+    )
+)
+
+
 _FEATURE_PATH = {
     ("paseq",): ("lp-paseq",),
     ("paseq", "paseq"): ("lp-paseq×2",),

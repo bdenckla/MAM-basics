@@ -105,6 +105,15 @@ _VOWP_NAMES = {
 }
 
 
+# The quick-brown-fox page's description on MAM-with-doc's FOI index.
+INDEX_DESCRIPTION = " ".join(
+    (
+        "pangram-like verses, with an unusually wide variety of letters, final-form",
+        "letters, vowel points or stress helpers",
+    )
+)
+
+
 OVERALL_EXPLANATION = (
     " ".join(
         (

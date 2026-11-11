@@ -129,6 +129,15 @@ _XATEF_ON_NON_GUTT_EXPLANATIONS = {
 }
 
 
+# The unicode page's description on MAM-with-doc's FOI index.
+INDEX_DESCRIPTION = " ".join(
+    (
+        "unusual characters and mark sequences, such as varika, rafeh, alef with",
+        "mapiq, the extraordinary dots, and ḥataf vowels on non-guttural letters",
+    )
+)
+
+
 OVERALL_EXPLANATION = (
     " ".join(
         (

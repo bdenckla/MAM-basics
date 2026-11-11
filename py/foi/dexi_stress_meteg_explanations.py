@@ -39,6 +39,15 @@ for (const button of document.querySelectorAll({json.dumps(f"button.{_TOGGLE_CLA
 """
 
 
+# The dexi-stress-meteg page's description on MAM-with-doc's FOI index.
+INDEX_DESCRIPTION = " ".join(
+    (
+        "chanted words in which the letter with deḥi's stress helper also has a",
+        "meteg, each with MAM's documentation note on it",
+    )
+)
+
+
 def overall_explanation(census):
     """Return the introduction's HTML; census gives, for each census foi_path, the
     rows of the מ:דחי calls of its kind, in the order of the books."""

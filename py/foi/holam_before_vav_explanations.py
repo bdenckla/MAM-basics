@@ -5,6 +5,14 @@ from pathlib import Path
 from foi import foiz_wt_holam_before_vav as holam_foi
 from mb_misc import mb_html
 
+# The holam-before-vav page's description on MAM-with-doc's FOI index.
+INDEX_DESCRIPTION = " ".join(
+    (
+        "a ḥolam dot on a letter other than vav just before a vav, grouped by whether",
+        "the vav has a mark above it",
+    )
+)
+
 TITLE = "Ḥolam before vav"
 STYLE = Path(__file__).with_suffix(".css").read_text(encoding="utf-8")
 

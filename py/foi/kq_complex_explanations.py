@@ -7,6 +7,15 @@ def explanation_for_path(path_parts):
     return _EXPLANATIONS_BY_LABEL.get(path_parts[-1])
 
 
+# The kq-complex page's description on MAM-with-doc's FOI index.
+INDEX_DESCRIPTION = " ".join(
+    (
+        "ketiv/qere cases identified from their context: qere before ketiv after a",
+        "narrow-sense paseq or before sof pasuq, and two or three cases in a row",
+    )
+)
+
+
 OVERALL_EXPLANATION = (
     " ".join(
         (

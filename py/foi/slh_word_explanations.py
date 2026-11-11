@@ -111,6 +111,15 @@ _CODE_DESCRIPTIONS = {
 }
 
 
+# The slh-word page's description on MAM-with-doc's FOI index.
+INDEX_DESCRIPTION = " ".join(
+    (
+        "words with a small, large or hung letter, grouped three ways: by the number",
+        "of such letters, by context, and by kind",
+    )
+)
+
+
 OVERALL_EXPLANATION = (
     " ".join(
         (

@@ -21,6 +21,15 @@ _EXPLANATIONS_BY_LABEL = {
 }
 
 
+# The rare-tmpls page's description on MAM-with-doc's FOI index.
+INDEX_DESCRIPTION = " ".join(
+    (
+        "verses with one of MAM's rare templates, such as the inverted nun, the",
+        "scroll-difference note and the “good ending”",
+    )
+)
+
+
 OVERALL_EXPLANATION = (
     " ".join(
         (

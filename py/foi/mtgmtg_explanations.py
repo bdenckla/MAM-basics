@@ -51,6 +51,15 @@ def _flag_description(feature_name, yn_flag):
     return f"{feature_name} {state}"
 
 
+# The mtgmtg page's description on MAM-with-doc's FOI index.
+INDEX_DESCRIPTION = " ".join(
+    (
+        "chanted words with two or more Unicode METEG marks, counting any silluq,",
+        "grouped by the presence of sof pasuq and of maqaf",
+    )
+)
+
+
 OVERALL_EXPLANATION = (
     " ".join(
         (

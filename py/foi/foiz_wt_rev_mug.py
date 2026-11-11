@@ -24,6 +24,15 @@ _HANDLERS = {
 ######################################################################
 
 
+# The revia-mugrash page's description on MAM-with-doc's FOI index.
+INDEX_DESCRIPTION = " ".join(
+    (
+        "chanted words in poetic verses whose revia mugrash has its geresh muqdam and",
+        "its revia on one letter",
+    )
+)
+
+
 def _get_features(word: str):
     gmci = word.find(ha.GER_M)
     if gmci != -1:

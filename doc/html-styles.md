@@ -47,12 +47,15 @@ their specialized layout rather than loading the prose base.
 
 ## Arrow links
 
-All generated near-Aleppo documentation, FOI and edition pages load
-`gh-pages/near-aleppo/link-presentation.css` after their existing styles.
-Its authored source is `py/near_aleppo/link_presentation.css`;
-`py/near_aleppo/link_presentation.py` supplies the generated banner and inserts
-link attributes without reserializing page text. Relative stylesheet paths
-follow each page's directory depth.
+All generated near-Aleppo pages load
+`gh-pages/near-aleppo/link-presentation.css` after their existing styles: its
+documentation, its features of interest in `gh-pages/near-aleppo/foi/`, and its
+edition. So does the index of MAM-with-doc's features of interest,
+`gh-pages/MAM-with-doc/foi/index.html`, which `py/foi/foi_finals.py` writes; the
+feature pages it lists keep plain links. The stylesheet's authored source is
+`py/near_aleppo/link_presentation.css`; `py/near_aleppo/link_presentation.py`
+supplies the generated banner and inserts link attributes without reserializing
+page text. Relative stylesheet paths follow each page's directory depth.
 
 The shared rules remove link underlines and add decorative arrows. Same-page
 targets earlier in document order get an up arrow; later targets get a down
@@ -66,10 +69,16 @@ link helper with the website root as its page directory. Its source remains
 `py/author_site/site_index.py`; regenerate it with `py/main_authored.py gen-site`.
 Other deploy-root pages retain their existing link presentation.
 
-Regenerate the near-Aleppo pages with `py/main_near_aleppo.py --html` when
-changing these rules, and regenerate the top-level index with
-`py/main_authored.py gen-site`. The completed offline final-punctuation review
-extract was retired on 2026-10-11.
+The review of the Israel Bible, `gh-pages/israel-bible-review/index.html`, loads
+the stylesheet too; `py/author_misc/israel_bible_review_index.py` marks its
+links itself, as the helper would.
+
+When changing these rules, regenerate the near-Aleppo pages with
+`py/main_near_aleppo.py --html`, the top-level index with
+`py/main_authored.py gen-site`, MAM-with-doc's features of interest with
+`py/main_foi_features_of_interest.py`, and the review of the Israel Bible with
+`py/main_authored.py gen-israel-bible-review`. The completed offline
+final-punctuation review extract was retired on 2026-10-11.
 
 ## Reports and standalone bundles
 

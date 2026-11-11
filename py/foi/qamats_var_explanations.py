@@ -83,6 +83,15 @@ _ACCENT_NAMES = {
 }
 
 
+# The qamats-variants page's description on MAM-with-doc's FOI index.
+INDEX_DESCRIPTION = " ".join(
+    (
+        "words that MAM has in two forms, one with qamats qatan where the other has",
+        "plain qamats",
+    )
+)
+
+
 OVERALL_EXPLANATION = (
     " ".join(
         (
