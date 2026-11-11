@@ -40,7 +40,7 @@ def _row_cell_for_hdr_str(record, hdr_str):
         return wlc_utils_html.table_datum(datum_contents)
     if hdr_str == "bcv":
         anchor = urlg.bcv_with_link_to_tdu(record)
-        return wlc_utils_html.table_datum(anchor)
+        return wlc_utils_html.table_datum(anchor, {"class": "nowrap"})
     if hdr_str == "4.20 uword":
         ab_uword = record["ab-uword"]
         a_uword, _b_uword = ab_uword.split("\n")
@@ -51,7 +51,7 @@ def _row_cell_for_hdr_str(record, hdr_str):
         return wlc_utils_html.table_datum(a_uword, attr)
     if hdr_str == "difftype":
         dity_span = wd_utils.diff_type_span_with_title(record)
-        return wlc_utils_html.table_datum(dity_span)
+        return wlc_utils_html.table_datum(dity_span, {"class": "nowrap"})
     assert False
 
 

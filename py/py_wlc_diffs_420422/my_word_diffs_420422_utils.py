@@ -34,7 +34,7 @@ def diff_type_abbreviation_table():
 
 def _diff_type_abbreviation_row(ad_pair):
     abbrev, definition = ad_pair
-    datum_for_abbrev = wlc_utils_html.table_datum(abbrev)
+    datum_for_abbrev = wlc_utils_html.table_datum(abbrev, {"class": "nowrap"})
     datum_for_defn = wlc_utils_html.table_datum(definition)
     return wlc_utils_html.table_row([datum_for_abbrev, datum_for_defn])
 

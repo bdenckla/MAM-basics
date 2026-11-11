@@ -2,22 +2,27 @@
    tracked file is the source of truth. */
 body { max-width: none; width: auto; margin: 8px; }
 body.post-stress-meteg-page { width: 90%; }
-/* Centered page layout (issue #57): center the content column on the page, but let wide
-   tables break out of the text measure and be as wide as they want, still centered. Opt-in
-   via <body class="centered-page"> (WriteCtx.centered) — used by printed-decalogue,
-   wlc-a-notes, and 420422 and their sub-pages. The body content box is centered
+/* Centered page layout (issue wlc-utils#57): center the content column on the page, but let
+   wide tables break out of the text measure, still centered. Opt-in via
+   <body class="centered-page"> (WriteCtx.centered) — used by printed-decalogue, wlc-a-notes,
+   420422 and post-stress-meteg and their sub-pages. The body content box is centered
    (margin-inline:auto) at the text measure; a table then puts its left edge at that box's
-   center (margin-left:50%) and translateX(-50%) pulls it back by half its own width, so it
-   re-centers on the page however wide it grows (width:max-content, no cap). */
+   center (margin-left:50%) and a translateX pulls it back by half its own width, so it
+   re-centers on the page however wide it grows (width:max-content). The table takes the two
+   bounds ../document.css defines: it grows no wider than the window less 2em, so that its
+   prose cells wrap, and a table that cannot wrap that narrow starts at the window's left
+   gutter rather than reaching past the window's left edge, where no scrolling reaches. In a
+   window narrower than the measure, the body's min() keeps the text 8px from the window's
+   edges, the margin of this family's other pages. */
 body.centered-page {
-    max-width: 40em;
+    max-width: min(40em, 100% - 16px);
     margin-inline: auto;
 }
 body.centered-page table {
     width: max-content;
-    max-width: none;
+    max-width: var(--breakout-table-max-width);
     margin-left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(var(--breakout-table-shift));
 }
 *[lang="hbo"] {
     font-family: "Taamey D WOFF2";
@@ -105,6 +110,10 @@ th.numeric, td.numeric { text-align: right; }
    three parallel answers to the row's question rather than as a ragged line of text. Same shape
    as the numeric rule above: a class on the cell, no per-table selector. */
 th.centered, td.centered { text-align: center; }
+/* Short labels that a narrow window must not break: a verse reference, or an abbreviated
+   change type such as acc-chng, after whose hyphen a browser may otherwise break. Same shape
+   as the numeric and centered rules above: a class on the cell, no per-table selector. */
+th.nowrap, td.nowrap { white-space: nowrap; }
 table.centered-table { margin-left: auto; margin-right: auto; }
 /* maqaf-nonfinal-accents.html: the accent-pair table's headings are abbreviated so five columns
    fit without the counts drifting apart, with the full wording on hover.  Same affordance as
@@ -314,13 +323,17 @@ table.printed-decalogue-pausal tr td { background-color: transparent; }
    two appendix rows and read as if it encoded that rather than merely counting rows. The last two
    columns are prose, so both are left-aligned against the shared centering.
    The max-width is what keeps those prose columns readable: body.centered-page above gives every
-   table width:max-content and max-width:none, which for a prose cell means the whole sentence on
-   ONE line -- these tables came out ~2000px wide, so at any ordinary window the left columns fell
-   off the page entirely and could not be scrolled back to. Capping the table lets the prose wrap
-   instead. Needs the body.centered-page prefix to outrank that rule. */
+   table width:max-content, which for a prose cell means the whole sentence on ONE line. Before
+   that rule had any cap, these tables came out ~2000px wide, so at any ordinary window the left
+   columns fell off the page entirely and could not be scrolled back to. Now 52em keeps the prose
+   at a readable measure in a wide window, and the shared bound from ../document.css keeps the
+   table within the window in a narrow one. Needs the body.centered-page prefix to outrank that
+   rule. */
 table.printed-decalogue-transcription-verdict tr td { background-color: transparent; }
 table.printed-decalogue-transcription-verdict td:nth-child(n+4) { text-align: left; }
-body.centered-page table.printed-decalogue-transcription-verdict { max-width: 52em; }
+body.centered-page table.printed-decalogue-transcription-verdict {
+    max-width: min(52em, var(--breakout-table-max-width));
+}
 
 /* maqaf-nonfinal-accents.html: a pointed Hebrew form set on a line of its own, between the
    sentences that lead into and out of it. The page's question is the difference between two such
@@ -333,15 +346,17 @@ p.hebrew-specimen { text-align: center; margin: 0.6em 0; }
    cantillation strand, ported from MAM-simple's TEMBte tables. Two of them share this style:
    the four-strands table (one row per strand, first…last range cells) and the merged-verse
    table (transposed: rows = strands + gradient bars; columns = the taḥton verse ranges). Each
-   grows as wide as its cells want, re-centered on the page: margin-left:50% + translateX(-50%).
+   grows as wide as its cells want, re-centered on the page: margin-left:50% + a translateX back
+   by half its width, within the two bounds ../document.css defines for a table that breaks out
+   of the text column.
    Colors/gradient/abbr match MAM-simple byte-for-byte; the zebra-neutralization is a wlc-utils
    extra (MAM-simple's page has no global odd-row striping to undo). */
 table.strand-table {
     border-collapse: collapse;
     width: max-content;
-    max-width: none;
+    max-width: var(--breakout-table-max-width);
     margin-left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(var(--breakout-table-shift));
 }
 table.strand-table th,
 table.strand-table td {

@@ -25,15 +25,19 @@ table[dir="rtl"] tr.cv td { text-align: center; }
    shared prose column. Their Hebrew example words, taken across the row, can run wider
    than the body text — most of all the five-column early-split table — and squeezing
    them to prose width wraps cells and cramps the layout. width:max-content lets each
-   table grow as wide as its cells want (no cap — as wide as it "wants"); the body
+   table grow as wide as its cells want, up to the two bounds ../document.css defines
+   for a table that breaks out of the text column: no wider than the window less 2em,
+   and, for a table that cannot wrap that narrow, a start at the window's left gutter
+   rather than past the window's left edge, where no scrolling reaches. The body
    content box is itself viewport-centered (margin:auto), so margin-left:50% puts the
-   table's left edge at the viewport center and translateX(-50%) pulls it back by half
+   table's left edge at the viewport center and the translateX pulls it back by half
    its own width, re-centering the now-wider-than-parent table on the page. Only the
    top/bottom margins from the general `table` rule are kept. */
 table[dir="rtl"] {
   width: max-content;
+  max-width: var(--breakout-table-max-width);
   margin-left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(var(--breakout-table-shift));
 }
 /* A quoted Hebrew verse. "Right-aligned and centered" are not contradictory here:
    the box shrink-wraps to its widest line (fit-content) and is centered on the page

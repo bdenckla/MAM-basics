@@ -24,6 +24,14 @@ their browser-default text size; specialized wide pages retain their width.
 Phonetic MAM loads the Yeivin ITM extension before its pronunciation controls and
 print styles. Book of Job prose pages share `book-of-job/style.css`.
 
+A table that breaks out of the text column, centered by `margin-left: 50%` and
+`translateX(-50%)`, takes the two bounds `document.css` defines,
+`--breakout-table-max-width` and `--breakout-table-shift`. Without them, a table
+wider than the window reaches past the window's left edge, where no scrolling
+reaches; with them, the table wraps to the window's width or, if it cannot wrap
+that narrow, starts just inside the window's left edge. Ben asked on 2026-11-11
+that such tables adapt to a narrow window.
+
 The base lives directly in the published tree and has no deployment copy.
 Family extensions have their existing source locations: authored CSS under
 `py/`, or hand-authored sheets in `gh-pages/` for root, WLC and UXLC pages.

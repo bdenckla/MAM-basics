@@ -2,6 +2,20 @@
    This hand-authored tracked file is the source of truth. Document families
    link it before their own styles for Hebrew, examples and specialized tables. */
 :root { color-scheme: light dark; }
+/* Bounds for a table that breaks out of the text column and is centered by margin-left:50% and
+   translateX(-50%). Centered by its own width, a table wider than the window reaches past both
+   of the window's edges, and no scrolling reaches what lies left of a page. So such a table takes
+   max-width: var(--breakout-table-max-width), the window's width less 2em, so that its prose
+   cells wrap, and translateX(var(--breakout-table-shift)), which starts a table that cannot wrap
+   so narrow 1em from the window's left edge, from where the page scrolls to the rest. Where the
+   whole table fits, neither changes anything. Ben asked on 2026-11-11 that such tables adapt to
+   a narrow window. Used by gh-pages/wlc/style.css and MAM-simple's
+   versification-and-cantillation.css. The em resolves on the table; 100vw counts a classic
+   scrollbar, so beside one the gutters come to about 10px. */
+:root {
+    --breakout-table-max-width: calc(100vw - 2em);
+    --breakout-table-shift: max(-50%, 1em - 50vw);
+}
 body {
     max-width: 40em;
     width: 90%;

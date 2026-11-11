@@ -18,7 +18,8 @@ class WriteCtx:
     add_wbr: bool = False
     html_comment: Union[str, None] = None
     # When set, the <body> gets class="centered-page": the content column is centered on the
-    # page and wide tables break out of the text measure but stay centered (issue wlc-utils#57).
+    # page, and wide tables break out of the text measure as far as the window allows, still
+    # centered (issue wlc-utils#57). gh-pages/wlc/style.css holds the rules.
     centered: bool = False
 
 
