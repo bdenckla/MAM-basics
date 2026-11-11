@@ -9,6 +9,12 @@ session confirmed enabled hourly new-main screening from October 16 at 13:00 and
 checks around 02:00 from October 17, America/New_York, with no end date. Scheduling remains
 with that session; this run created no automation.
 
+## Pending port screen, 2026-11-11 (UTC), 354cc0b7
+
+Static examination of `7542d5636edeec99e7493249130df7a298b1144a..354cc0b7077cb46ba5d7cfc8dd9b453ff68c7bf0` accounts for one commit and 13 paths. Sixteen text blobs match Git identities; five Python files parse. The 56 displayed form pairs match the public inputs, seven tables and ten notes reconcile, 143 hovers are present, 25 local link/asset targets resolve, and the stylesheet is the source copy after its generated banner. No consequential defect was established. The first checker assertion assumed a relative index URL; after inspecting the intentional absolute same-site URL, the corrected artifact checker passed without product changes.
+
+No repository generator, maintained test or browser run was started. Execution is deferred to the imminent nightly owner to avoid overlapping jobs; owner-reported focused and visual checks remain attributed. The latest completed bounded/focused rows and historical overall reviewed and broad-tested anchors below stay unchanged. No main integration or deployment. [Partial receipt](review-hourly-2026-11-11-354cc0b7-basics.json).
+
 | Anchor | Commit/result |
 | --- | --- |
 | Adopted baseline | `d66a3faf1403e945a0f41e5d25c86c3ac72b871f` |

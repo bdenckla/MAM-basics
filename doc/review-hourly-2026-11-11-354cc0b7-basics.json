@@ -1,0 +1,209 @@
+{
+  "state": "partial screen; static examination completed 2026-11-11, runtime verification deferred to nightly",
+  "repository": "bdenckla/MAM-basics",
+  "base": "7542d5636edeec99e7493249130df7a298b1144a",
+  "head": "354cc0b7077cb46ba5d7cfc8dd9b453ff68c7bf0",
+  "commits": 1,
+  "changed_paths": [
+    {
+      "path": "gh-pages/MAM-with-doc/misc/review_of_israel_bible.css",
+      "blob": "f022fd11650f103f8e9e816e662550b22888171f"
+    },
+    {
+      "path": "gh-pages/MAM-with-doc/misc/review_of_israel_bible.html",
+      "blob": "f8120dc2a9eb708725dc62b68545e0266fcbc8e1"
+    },
+    {
+      "path": "gh-pages/index.html",
+      "blob": "491237b760c4670689f148a6ebb84d4b68b53256"
+    },
+    {
+      "path": "in/israel-bible-review/README.md",
+      "blob": "f46fd33dd99d7feb38b61f68d174739de4d4899c"
+    },
+    {
+      "path": "in/israel-bible-review/forms.json",
+      "blob": "7d571c980dcc8d1557e8ad64625669ec7222fee3"
+    },
+    {
+      "path": "in/israel-bible-review/review.md",
+      "blob": "51ab728ddd5224375f67b1f7d8aa70e207c334ee"
+    },
+    {
+      "path": "py/author_misc/review_of_israel_bible.css",
+      "blob": "a7662a4c0f7eb80c8063f3151f4e5c6467cdfdff"
+    },
+    {
+      "path": "py/author_misc/review_of_israel_bible.py",
+      "blob": "11bf98a14e2e479e06749785751c926eab11cb95"
+    },
+    {
+      "path": "py/author_site/site_data.py",
+      "blob": "eed69c0e6a856b6f6a5e9b7e73af2e8184bd0754"
+    },
+    {
+      "path": "py/main_authored.py",
+      "blob": "dbc726ffb22943ee38bcc7749bfc41362f95b907"
+    },
+    {
+      "path": "py/tests/test_israel_bible_review_mam_forms.py",
+      "blob": "d5fab740cec525af2199408d2526907d539ebbbd"
+    },
+    {
+      "path": "py/tests/test_shared_html_styles.py",
+      "blob": "57fdddf37de409392e9705f0dda540c1dca2673e"
+    },
+    {
+      "path": "gh-pages/MAM-with-doc/misc/img/israel_bible/Deut 3v22 FYRAV6 -- Israel Bible PDF page 457.png",
+      "blob": "885337ae55d5f4773ae29f060559ec2c695d5c22"
+    }
+  ],
+  "disposition": "No consequential introduced defect established in the bounded static examination. Public Israel Bible review, its stored visible forms, generator, stylesheet, lint and site wiring inspected. Preserve recorded editorial decisions. Regeneration, maintained checks and visual/source evidence are not independently established by this screen.",
+  "independent_evidence": {
+    "result": "PASS",
+    "source": "354cc0b7077cb46ba5d7cfc8dd9b453ff68c7bf0",
+    "independent_check": "static artifact accounting only",
+    "text_blobs_verified": 16,
+    "tree_paths": 7178,
+    "python_files_parsed": 5,
+    "displayed_pairs": 56,
+    "json_pairs": 43,
+    "markdown_pairs": 13,
+    "tables": 7,
+    "footnotes": 10,
+    "abbreviation_hovers": 143,
+    "links": 21,
+    "css": "exact source copy after generated banner",
+    "imports": [
+      "import html",
+      "import json",
+      "import re",
+      "from difflib import SequenceMatcher",
+      "from pathlib import Path",
+      "from urllib.parse import quote, urlsplit",
+      "from mb_author import author",
+      "from mb_cmn import paths",
+      "from mb_cmn import provenance",
+      "from mb_cmn import uni_denorm",
+      "from mb_misc import mb_html"
+    ],
+    "elapsed_seconds": 0.126278,
+    "limitations": "No repository code import, generator, maintained test, browser, live-site, image-pixel, manuscript or source-research verification. No private review material. Focused regeneration and tests deferred to the nightly owner.",
+    "internal_targets_checked": 25,
+    "internal_target_blobs": {
+      "gh-pages/MAM-with-doc/misc/review_of_israel_bible.html": "f8120dc2a9eb708725dc62b68545e0266fcbc8e1",
+      "gh-pages/MAM-with-doc/foi/foi-alef-dual-ml-alef-first.html": "ca3665d1577bbe6dc95c0c829a9e6f0bdb7dad3b",
+      "gh-pages/MAM-with-doc/misc/urwotm_2_saying_the_quiet_part_out_loud.html": "fdea240fa23bc6775ed06d0fa2b91594a18ec5de",
+      "gh-pages/clc/Deuter-5-long-notes.html": "7d221bbbed8f5cce578767c626303088e4e90295",
+      "gh-pages/MAM-with-doc/misc/review_of_hebrew_reader_for_the_pentateuch.html": "91c8472122030267fc072c9b33860418069b5ace",
+      "gh-pages/yeivin-itm/yeivin_itm-376_393.html": "e01b8ef9c1b1461cfc7a751befa25350f29af54f",
+      "gh-pages/MAM-with-doc/misc/urwotm_1_tale_of_the_qadma.html": "a9fdb06e5318dd96327865cfcd7b2b53a2065e9c",
+      "gh-pages/index.html": "491237b760c4670689f148a6ebb84d4b68b53256",
+      "gh-pages/near-aleppo/editorial-policies.html": "99e5b4ddbc3c994a38e8a02cd413d9f468b50f39",
+      "gh-pages/wlc/420422/full-record/420422-33.html": "2344f279653bb0c4b58aa8ddc6a300623549f870",
+      "gh-pages/document.css": "5c4a2145a228f59565f67fb14f4e681e5ef1535d",
+      "gh-pages/MAM-with-doc/misc/review_of_israel_bible.css": "f022fd11650f103f8e9e816e662550b22888171f",
+      "gh-pages/near-aleppo/link-presentation.css": "039c103bb97364cada777a32f1e1de58eccc8d59",
+      "gh-pages/MAM-with-doc/misc/img/israel_bible/Deut 3v22 FYRAV6 -- Israel Bible PDF page 457.png": "885337ae55d5f4773ae29f060559ec2c695d5c22",
+      "gh-pages/woff2/Taamey_D.woff2": "ba869a73a821e308d355613748cba0983328a417"
+    }
+  },
+  "source_blobs": [
+    {
+      "path": "gh-pages/MAM-with-doc/misc/review_of_israel_bible.css",
+      "blob": "f022fd11650f103f8e9e816e662550b22888171f",
+      "url": "https://github.com/bdenckla/MAM-basics/blob/354cc0b7077cb46ba5d7cfc8dd9b453ff68c7bf0/gh-pages/MAM-with-doc/misc/review_of_israel_bible.css"
+    },
+    {
+      "path": "gh-pages/MAM-with-doc/misc/review_of_israel_bible.html",
+      "blob": "f8120dc2a9eb708725dc62b68545e0266fcbc8e1",
+      "url": "https://github.com/bdenckla/MAM-basics/blob/354cc0b7077cb46ba5d7cfc8dd9b453ff68c7bf0/gh-pages/MAM-with-doc/misc/review_of_israel_bible.html"
+    },
+    {
+      "path": "gh-pages/index.html",
+      "blob": "491237b760c4670689f148a6ebb84d4b68b53256",
+      "url": "https://github.com/bdenckla/MAM-basics/blob/354cc0b7077cb46ba5d7cfc8dd9b453ff68c7bf0/gh-pages/index.html"
+    },
+    {
+      "path": "in/israel-bible-review/README.md",
+      "blob": "f46fd33dd99d7feb38b61f68d174739de4d4899c",
+      "url": "https://github.com/bdenckla/MAM-basics/blob/354cc0b7077cb46ba5d7cfc8dd9b453ff68c7bf0/in/israel-bible-review/README.md"
+    },
+    {
+      "path": "in/israel-bible-review/forms.json",
+      "blob": "7d571c980dcc8d1557e8ad64625669ec7222fee3",
+      "url": "https://github.com/bdenckla/MAM-basics/blob/354cc0b7077cb46ba5d7cfc8dd9b453ff68c7bf0/in/israel-bible-review/forms.json"
+    },
+    {
+      "path": "in/israel-bible-review/review.md",
+      "blob": "51ab728ddd5224375f67b1f7d8aa70e207c334ee",
+      "url": "https://github.com/bdenckla/MAM-basics/blob/354cc0b7077cb46ba5d7cfc8dd9b453ff68c7bf0/in/israel-bible-review/review.md"
+    },
+    {
+      "path": "py/author_misc/review_of_israel_bible.css",
+      "blob": "a7662a4c0f7eb80c8063f3151f4e5c6467cdfdff",
+      "url": "https://github.com/bdenckla/MAM-basics/blob/354cc0b7077cb46ba5d7cfc8dd9b453ff68c7bf0/py/author_misc/review_of_israel_bible.css"
+    },
+    {
+      "path": "py/author_misc/review_of_israel_bible.py",
+      "blob": "11bf98a14e2e479e06749785751c926eab11cb95",
+      "url": "https://github.com/bdenckla/MAM-basics/blob/354cc0b7077cb46ba5d7cfc8dd9b453ff68c7bf0/py/author_misc/review_of_israel_bible.py"
+    },
+    {
+      "path": "py/author_site/site_data.py",
+      "blob": "eed69c0e6a856b6f6a5e9b7e73af2e8184bd0754",
+      "url": "https://github.com/bdenckla/MAM-basics/blob/354cc0b7077cb46ba5d7cfc8dd9b453ff68c7bf0/py/author_site/site_data.py"
+    },
+    {
+      "path": "py/main_authored.py",
+      "blob": "dbc726ffb22943ee38bcc7749bfc41362f95b907",
+      "url": "https://github.com/bdenckla/MAM-basics/blob/354cc0b7077cb46ba5d7cfc8dd9b453ff68c7bf0/py/main_authored.py"
+    },
+    {
+      "path": "py/tests/test_israel_bible_review_mam_forms.py",
+      "blob": "d5fab740cec525af2199408d2526907d539ebbbd",
+      "url": "https://github.com/bdenckla/MAM-basics/blob/354cc0b7077cb46ba5d7cfc8dd9b453ff68c7bf0/py/tests/test_israel_bible_review_mam_forms.py"
+    },
+    {
+      "path": "py/tests/test_shared_html_styles.py",
+      "blob": "57fdddf37de409392e9705f0dda540c1dca2673e",
+      "url": "https://github.com/bdenckla/MAM-basics/blob/354cc0b7077cb46ba5d7cfc8dd9b453ff68c7bf0/py/tests/test_shared_html_styles.py"
+    },
+    {
+      "path": "gh-pages/MAM-with-doc/foi/foi-alef-dual-ml-alef-first.html",
+      "blob": "ca3665d1577bbe6dc95c0c829a9e6f0bdb7dad3b",
+      "url": "https://github.com/bdenckla/MAM-basics/blob/354cc0b7077cb46ba5d7cfc8dd9b453ff68c7bf0/gh-pages/MAM-with-doc/foi/foi-alef-dual-ml-alef-first.html"
+    },
+    {
+      "path": "gh-pages/clc/Deuter-5-long-notes.html",
+      "blob": "7d221bbbed8f5cce578767c626303088e4e90295",
+      "url": "https://github.com/bdenckla/MAM-basics/blob/354cc0b7077cb46ba5d7cfc8dd9b453ff68c7bf0/gh-pages/clc/Deuter-5-long-notes.html"
+    },
+    {
+      "path": "gh-pages/yeivin-itm/yeivin_itm-376_393.html",
+      "blob": "e01b8ef9c1b1461cfc7a751befa25350f29af54f",
+      "url": "https://github.com/bdenckla/MAM-basics/blob/354cc0b7077cb46ba5d7cfc8dd9b453ff68c7bf0/gh-pages/yeivin-itm/yeivin_itm-376_393.html"
+    },
+    {
+      "path": "gh-pages/near-aleppo/editorial-policies.html",
+      "blob": "99e5b4ddbc3c994a38e8a02cd413d9f468b50f39",
+      "url": "https://github.com/bdenckla/MAM-basics/blob/354cc0b7077cb46ba5d7cfc8dd9b453ff68c7bf0/gh-pages/near-aleppo/editorial-policies.html"
+    }
+  ],
+  "owner_attributed_evidence": {
+    "source": "https://github.com/bdenckla/MAM-basics/commit/354cc0b7077cb46ba5d7cfc8dd9b453ff68c7bf0",
+    "summary": "Owner reports gen-misc/gen-site limited outputs, 88 focused tests passing, Black, mark-order, HTML and visual comparisons. This screen does not turn those claims into independent execution or verify source research."
+  },
+  "nightly_handoff": {
+    "status": "pending; no duplicate execution started",
+    "work": "Run maintained nightly mega/full suite against the nightly owner's independently frozen exact source. Ensure gen-misc/gen-site regeneration, the new MAM-form lint, shared styles/site links and HTML checks are covered. Treat unexplained output differences and failures as evidence. Preserve source changes and do not deploy."
+  },
+  "reviewer_diagnostic": "First artifact-check attempt assumed a relative site-index href and failed its assertion. Inspection found the intended absolute same-site href. The checker was corrected to parse the index link; the second attempt passed. No product changed. Original diagnostic was retained locally; the failing assertion and correction are recorded here.",
+  "anchors": {
+    "reviewed_through": "210affe3ac2931473bead0de839be0de08309e3d",
+    "last_broad_tested": "73fbf0406b8cf843b2aabcbb8ef0b558d0fa7148",
+    "last_focused_checked": "7542d5636edeec99e7493249130df7a298b1144a",
+    "policy": "All unchanged; this is not a completed runtime screen or broad-tested advance."
+  },
+  "constraints": "Public repository material only. No private review material, external-agent communication, repository execution, source acquisition, main/shared integration, deployment, font baseline acceptance, hbofonts work or schedule change."
+}
