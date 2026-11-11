@@ -12,7 +12,8 @@ Checks performed:
   7. Font file existence: woff2 font files referenced from CSS exist
   8. Stale files: unexpected files (e.g., extensionless, 0-byte)
   9. Duplicate IDs: no duplicate id attributes within a single file
- 10. Orphan HTML: HTML files not linked from any other HTML file
+ 10. Orphan HTML: HTML files that no page of the sub-site, and no page directly at the
+     deploy root, links
  11. W3C Nu HTML conformance (optional, via --w3c flag)
 
 Exit codes:
@@ -30,6 +31,8 @@ root, however many there are, and runs the stale-file check over every file at t
 level. It folds no sub-site's pages or CSS vocabulary into the root, although a root
 page's link into a sub-site must still resolve.
 Without ``--deploy-root``, the root is refused and one sub-site is checked recursively.
+The orphan-HTML check alone also reads the pages directly at the deploy root, such as
+the site index, because they link into the sub-sites by the site's own absolute URLs.
 Undefined CSS classes are informational because the current ownership model cannot
 distinguish a shared or external CSS vocabulary from a defect.
 The --w3c flag sends each HTML file to the W3C Nu HTML Checker API
@@ -49,6 +52,21 @@ from urllib.parse import unquote, urlsplit
 
 import boj_paths
 from mb_cmn import paths
+
+# The published site's own address.  The site index links into the sub-sites by absolute
+# URLs below it, which _linked_targets reads as the files they serve.
+_SITE_URL = "https://bdenckla.github.io/MAM-basics/"
+
+# Pages that no page of the site links by design, because they are kept for links from
+# outside it: each path below the deploy root, with the reason it stays.  The orphan-HTML
+# check exempts them and reports an entry whose page is gone.  Ben, 2026-11-10, of the
+# first entry: "can you make this a known exception?"
+_PAGES_FOR_OUTSIDE_LINKS = {
+    "MAM-with-doc/tsinnorit_oleh/tsinnorit_and_oleh_on_ivs.html": (
+        "a moved-page stub kept at its old URL, which Unicode's L2/25-242,"
+        " https://www.unicode.org/L2/L2025/25242-hebrew-accents.pdf, links"
+    ),
+}
 
 
 def main(argv=None):
@@ -126,10 +144,12 @@ def main(argv=None):
     for hf, info in parsed.items():
         all_ids[hf.resolve()] = info.ids
 
-    # Build internal-hrefs map for orphan-HTML check
-    all_internal_hrefs: dict[Path, list[tuple[str | None, str | None]]] = {}
-    for hf, info in parsed.items():
-        all_internal_hrefs[hf] = info.internal_hrefs
+    # The pages whose links the orphan-HTML check counts: the sub-site's, and those
+    # directly at the deploy root, the site index among them.
+    linkers: dict[Path, _HTMLInfo] = {hf.resolve(): info for hf, info in parsed.items()}
+    for root_page in sorted(deploy_root.glob("*.html")):
+        if root_page.resolve() not in linkers:
+            linkers[root_page.resolve()] = _parse_html(root_page)
 
     # Collect CSS classes from all CSS files
     css_classes: set[str] = set()
@@ -160,7 +180,11 @@ def main(argv=None):
         _check_orphan_images(docs_dir, referenced_images, recursive=recursive)
     )
     all_issues.extend(_check_stale_files(docs_dir, recursive=recursive))
-    all_issues.extend(_check_orphan_html(docs_dir, html_files, all_internal_hrefs))
+    all_issues.extend(
+        _check_orphan_html(
+            docs_dir, html_files, linkers, deploy_root, recursive=recursive
+        )
+    )
 
     # Optional W3C conformance check
     if args.w3c:
@@ -442,10 +466,15 @@ def _check_font_files(css_path: Path, docs_dir: Path) -> list[str]:
 def _check_stale_files(docs_dir: Path, *, recursive: bool) -> list[str]:
     """Flag unexpected files: 0-byte, extensionless, etc."""
     issues = []
+    # JSON is published as data, such as each FOI page's JSON output and the change log's
+    # per-release diffs, and Markdown as a directory's provenance note or README.  Ben,
+    # 2026-11-10: "please update the check's extension list".
     expected_exts = {
         ".html",
         ".css",
         ".js",
+        ".json",
+        ".md",
         ".txt",
         ".png",
         ".jpg",
@@ -470,17 +499,21 @@ def _check_stale_files(docs_dir: Path, *, recursive: bool) -> list[str]:
 def _check_orphan_html(
     docs_dir: Path,
     html_files: list[Path],
-    all_internal_hrefs: dict[Path, list[tuple[str | None, str | None]]],
+    linkers: dict[Path, _HTMLInfo],
+    deploy_root: Path,
+    *,
+    recursive: bool,
 ) -> list[str]:
-    """Find HTML files not linked from any other HTML file."""
-    # Collect the set of HTML files that are linked to
-    linked_targets: set[Path] = set()
-    for source_path, hrefs in all_internal_hrefs.items():
-        source_dir = source_path.parent
-        for path_part, _frag in hrefs:
-            if path_part is not None:
-                target = (source_dir / path_part).resolve()
-                linked_targets.add(target)
+    """Find HTML files that no page of ``linkers`` links.
+
+    ``linkers`` holds the sub-site's pages and the pages directly at the deploy root.
+    Until 2026-11-10 only the sub-site's own pages counted, so a page that only the site
+    index lists was reported as an orphan.  Ben, 2026-11-10, of five such pages: "can you
+    change the scope or keep the scope but add these as particular exceptions?"  The
+    sub-site's landing page and the pages that ``_PAGES_FOR_OUTSIDE_LINKS`` names are
+    exempt.
+    """
+    linked_targets = _linked_targets(linkers, deploy_root)
     # Preserve the Yeivin product's canonical historical landing filename.
     # Every other site's directory landing remains index.html.
     landing = "index.html"
@@ -492,10 +525,48 @@ def _check_orphan_html(
         resolved = html_file.resolve()
         if resolved == index_path:
             continue
+        if _deploy_rel(resolved, deploy_root) in _PAGES_FOR_OUTSIDE_LINKS:
+            continue
         if resolved not in linked_targets:
             rel = html_file.relative_to(docs_dir)
             issues.append(f"orphan HTML (not linked from any page): {rel}")
+    if recursive:
+        # An entry whose page is gone would exempt nothing, silently.
+        scope = docs_dir.resolve()
+        for rel in sorted(_PAGES_FOR_OUTSIDE_LINKS):
+            page = (deploy_root / rel).resolve()
+            if page.is_relative_to(scope) and not page.is_file():
+                issues.append(f"_PAGES_FOR_OUTSIDE_LINKS names a missing page: {rel}")
     return issues
+
+
+def _linked_targets(linkers: dict[Path, _HTMLInfo], deploy_root: Path) -> set[Path]:
+    """Every file that a page of ``linkers`` links, by relative path or by the site's URL.
+
+    A site URL that ends in a slash names that directory's index.html, which is what the
+    server sends for it.
+    """
+    targets = set()
+    for source_path, info in linkers.items():
+        for path_part, _frag in info.internal_hrefs:
+            if path_part is not None:
+                targets.add((source_path.parent / path_part).resolve())
+        for href in info.external_hrefs:
+            if href.startswith(_SITE_URL):
+                # Split before decoding, as _categorize_href does.
+                rel = unquote(urlsplit(href[len(_SITE_URL) :]).path)
+                if rel == "" or rel.endswith("/"):
+                    rel += "index.html"
+                targets.add((deploy_root / rel).resolve())
+    return targets
+
+
+def _deploy_rel(path: Path, deploy_root: Path) -> str | None:
+    """``path`` below the deploy root, with forward slashes, or None if outside it."""
+    try:
+        return path.relative_to(deploy_root).as_posix()
+    except ValueError:
+        return None
 
 
 # ── W3C Nu HTML Checker ───────────────────────────────────────────────

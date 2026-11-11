@@ -30,6 +30,9 @@ def gen_html_file(tdm_ch):
         author.para_for_img("BHS/Job 39v25 YAMR -- BHS.jpg", "width10em"),
         author.para_for_img("BHS/Psalm 9v10 VYHY -- BHS.jpg", "width10em"),
         author.para_for_img("BHS/Psalm 10v3 NA9 -- BHS.jpg", "width10em"),
+        # These two images are in doc/mam-with-doc-unpublished-img/BHS/ since
+        # 2026-11-10.  To restore a line, first move its image back to
+        # gh-pages/MAM-with-doc/misc/img/BHS/.
         # para_for_img("BHS/Psalm 10v5 YXYLV -- BHS.jpg", "width10em"),
         # para_for_img("BHS/Psalm 96v4 GDVL -- BHS.jpg", "width10em"),
         author.para(_CONT_PARA_16),
