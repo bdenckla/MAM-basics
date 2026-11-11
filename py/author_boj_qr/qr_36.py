@@ -1,11 +1,12 @@
 from author_boj_util import author
+from author_boj_util import boj_site
 from boj_render import boj_html
 from author_boj_util.job_common import (
     CAM1753_PAGE_URL_BASE,
     correctly_ignores,
 )
 
-_URL = "https://bdenckla.github.io/MAM-basics/MAM-with-doc/misc/tsinnorit_and_oleh_on_ivs.html"
+_URL = boj_site.jobn_details_href("MAM-with-doc/misc/tsinnorit_and_oleh_on_ivs.html")
 doc = author.anc_h("document", _URL)
 
 RECORD_3611 = {

@@ -4,6 +4,7 @@ from pathlib import Path
 from collections.abc import Callable
 from urllib.parse import quote
 
+from accgram import accgram_site
 from accgram import ob_tree_parse
 from accgram import ob_tree_table
 from accgram import rtmsr_media
@@ -17,6 +18,7 @@ from py_html import wlc_utils_html
 from py_wlc import my_wlc_bcv_str
 
 from mb_cmn import paths
+from mb_cmn import site_links
 
 _SELF_LINK_SYMBOL = "🔗"
 
@@ -286,7 +288,7 @@ def _render_ref_links(
     section_anchor_id: str,
     structured_text_lookup: StructuredTextLookup,
 ) -> tuple[object, ...]:
-    mam_url = _mam_with_doc_url(bb=bb, chnu=chnu, vrnu=vrnu)
+    mam_url = mam_with_doc_href(folder=accgram_site.FOLDER, bb=bb, chnu=chnu, vrnu=vrnu)
     tanach_us_url = my_wlc_bcv_str.get_tanach_dot_us_url(bcv)
     summary = structured_text_lookup(row, "st-summary")
     uxlc_change = expand_uxlc_change_ref(structured_text_lookup(row, "uxlc_change"))
@@ -417,9 +419,13 @@ def parse_ref_to_wlc_bcv(ref: str) -> tuple[str, int, int, str]:
     return bb, chnu, vrnu, bcv
 
 
-def mam_with_doc_url(*, bb: str, chnu: int, vrnu: int) -> str:
-    """Public MAM-with-doc verse URL, shared with the poetic ungrammatical-verse report."""
-    return _mam_with_doc_url(bb=bb, chnu=chnu, vrnu=vrnu)
+def mam_with_doc_href(*, folder: str, bb: str, chnu: int, vrnu: int) -> str:
+    """The relative href to the verse in MAM-with-doc from a page in ``folder``, a path
+    below the deploy root: accgram_site.FOLDER for this report and the other accgram pages,
+    or the post-stress-meteg pages' folder."""
+    return site_links.site_href_from_folder(
+        folder, _mam_with_doc_target(bb=bb, chnu=chnu, vrnu=vrnu)
+    )
 
 
 def _remap_mam_with_doc_chapter_verse(bb: str, chnu: int, vrnu: int) -> tuple[int, int]:
@@ -429,13 +435,14 @@ def _remap_mam_with_doc_chapter_verse(bb: str, chnu: int, vrnu: int) -> tuple[in
     return chnu, vrnu
 
 
-def _mam_with_doc_url(bb: str, chnu: int, vrnu: int) -> str:
+def _mam_with_doc_target(bb: str, chnu: int, vrnu: int) -> str:
+    """The verse's page and anchor in MAM-with-doc, as a path below the deploy root."""
     bk39id = wlc_bb_to_bk39id(bb)
     osdf = tbn.ordered_short_dash_full_39(bk39id)
     mam_chnu, mam_vrnu = _remap_mam_with_doc_chapter_verse(bb, chnu, vrnu)
     # quote matters for exactly one osdf: "E1-Song of Songs" has a space in it.
     page = quote(f"{osdf}.html")
-    return f"https://bdenckla.github.io/MAM-basics/MAM-with-doc/{page}#c{mam_chnu}v{mam_vrnu}"
+    return f"MAM-with-doc/{page}#c{mam_chnu}v{mam_vrnu}"
 
 
 def _derive_html_out_from_out_path(out_path: Path) -> Path | None:

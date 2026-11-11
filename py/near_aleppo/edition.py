@@ -114,7 +114,10 @@ def _edition_index(edition, css_hrefs):
         ),
         mwdwidh.license_para(),
         mb_html.horizontal_rule(),
-        mb_html.anchor_h("MAM-with-doc's sigil decoding", doc_page.SIGIL_DECODING),
+        mb_html.anchor_h(
+            "MAM-with-doc's sigil decoding",
+            build_paths.site_href(doc_page.SIGIL_DECODING, "edition"),
+        ),
     )
     write_ctx = mb_html.WriteCtx(
         edition + ": Book Links",

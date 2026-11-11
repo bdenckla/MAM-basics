@@ -23,6 +23,11 @@ import clc.clc_note as clc_note
 import clc.clc_strip as clc_strip
 import uxlc_misc.uxlc_utils_html as H
 import uxlc_paths
+from mb_cmn import site_links
+
+# The folder of the long-note pages, where these links are drawn: a link to another page
+# of the site is relative to it (mb_cmn/site_links.py).
+_CLC_FOLDER = site_links.folder_below_root(uxlc_paths.clc_pages_dir())
 
 _HBO_ATTR = {"lang": "hbo", "dir": "rtl"}
 
@@ -236,8 +241,8 @@ def _strand_note_header(note):
     return H.span(bare, {"dir": "rtl"})
 
 
-_LC_CORROBORATED_LINK = (
-    "https://bdenckla.github.io/MAM-basics/wlc/accgram/supplied-marks.html"
+_LC_CORROBORATED_LINK = site_links.site_href_from_folder(
+    _CLC_FOLDER, "wlc/accgram/supplied-marks.html"
 )
 
 # The exact URL-fragment on that page for each corroborated case's own "Supplied accents"
@@ -715,8 +720,8 @@ def _dt_5_13_taxton_extra(_spec, _book, notes):
 # Yeivin, Introduction to the Tiberian Masorah §355 (the special "phonetic" gaʿya of
 # היה/חיה-root forms), in Ben's public adaptation at py/yeivin_itm/content/.
 # House style for such deep links is a "section NNN" anchor (cf. MAM-basics rocc_4_mid_word_ga3ya_with_shewa).
-_YEIVIN_ITM_355_URL = (
-    "https://bdenckla.github.io/MAM-basics/yeivin-itm/yeivin_itm-345_357.html#ns355"
+_YEIVIN_ITM_355_URL = site_links.site_href_from_folder(
+    _CLC_FOLDER, "yeivin-itm/yeivin_itm-345_357.html#ns355"
 )
 
 

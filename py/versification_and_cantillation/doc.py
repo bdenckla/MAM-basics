@@ -39,34 +39,39 @@ example words are not authored here — they come from strands.gather_examples; 
 from pathlib import Path
 
 from mb_cmn import provenance
+from mb_cmn import site_links
 from versification_and_cantillation import strands
 
 _GENERATOR_FILE = Path(__file__).with_name("generate_doc.py")
+
+# The folder of this page and its sibling below the deploy root: a link to another page
+# of the site is relative to it (mb_cmn/site_links.py).
+_FOLDER = "MAM-simple"
+
+
+def _site_href(target):
+    return site_links.site_href_from_folder(_FOLDER, target)
+
 
 # Both versification documents are served from the same Pages directory.
 _VDIFF_URL = "versification-differences.html"
 
 # The MAM-with-doc FOI page listing verses with a פסקא באמצע פסוק (mid-verse
 # samekh/pe divider); linked from the body as the catalogue of such verses.
-_PBP_FOI_URL = "https://bdenckla.github.io/MAM-basics/MAM-with-doc/foi/foi-rare-tmpls.html#intro-col-e-sampe"
+_PBP_FOI_URL = _site_href("MAM-with-doc/foi/foi-rare-tmpls.html#intro-col-e-sampe")
 
 # The MAM-with-doc rendering of 1 Samuel 16:12, the {petuxah}-form פסקא באמצע פסוק
 # cited in the body as a plainer counterpart to the Numbers case. Per-verse anchors
 # on those book pages are "c{chapter}v{verse}".
-_1SAM_16_12_URL = (
-    "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BA-1Samuel.html#c16v12"
-)
+_1SAM_16_12_URL = _site_href("MAM-with-doc/BA-1Samuel.html#c16v12")
 
 # This repo's own report on whether the printed tradition's Decalogue cantillation is
-# grammatical, under gh-pages/wlc/ since the 2026-08 evacuation. The URL stayed absolute
-# when it was repointed off bdenckla.github.io/wlc-utils on 2026-08-22 (Ben's decision --
-# a citation he can edit gets the new URL rather than leaning on wlc-utils' redirect
-# stub), because this page is published under MAM-basics' MAM-simple subtree, so the link is still
-# cross-repo (the gh-pages/ segment is dropped in the served URL). Linked from the
-# Decalogue-background aside.
-_PRINTED_DECALOGUE_URL = (
-    "https://bdenckla.github.io/MAM-basics/wlc/accgram/printed-decalogue.html"
-)
+# grammatical, under gh-pages/wlc/ since the 2026-08 evacuation. It was repointed off
+# bdenckla.github.io/wlc-utils on 2026-08-22 (Ben's decision -- a citation he can edit gets
+# the new URL rather than leaning on wlc-utils' redirect stub). It stayed absolute then,
+# and became relative on 2026-11-11, when Ben asked for every link within the site to
+# be relative. Linked from the Decalogue-background aside.
+_PRINTED_DECALOGUE_URL = _site_href("wlc/accgram/printed-decalogue.html")
 
 
 # Romanized (transliterated) Hebrew terms named throughout the body and tables. Each is

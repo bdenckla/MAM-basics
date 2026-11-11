@@ -21,6 +21,7 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
+from accgram import accgram_site
 from accgram import rtms_report
 from accgram import telg_mam_doc_notes
 from accgram.almost_errors_html_shared import (
@@ -293,7 +294,7 @@ def _intro_section() -> tuple[object, ...]:
                 " about each word. Source: ",
                 link(
                     "MAM-with-doc",
-                    "https://bdenckla.github.io/MAM-basics/MAM-with-doc/",
+                    accgram_site.href("MAM-with-doc/index.html"),
                 ),
                 ".",
             )

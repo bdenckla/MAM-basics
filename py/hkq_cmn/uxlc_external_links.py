@@ -12,6 +12,12 @@ from dataclasses import dataclass
 from urllib.parse import quote
 
 from mb_cmn import bib_locales as tbn
+from mb_cmn import site_links
+
+# Its MwD link is drawn only on a holman page, uxlc_corrections.html.
+# The holman pages' folder below the deploy root: a page's link to another page of the
+# site is relative to it (mb_cmn/site_links.py).
+_HOLMAN_FOLDER = "holman"
 
 # The book code tanach.us puts in a Tanach.xml query, e.g. Tanach.xml?Ex7:20.
 # Copied whole from MAM-basics py/uxlc_fois/fois_mark_grammar_html.py's
@@ -83,9 +89,9 @@ def verse_links(book: str, chapter: int, verse: int) -> tuple[VerseLink, ...]:
         ),
         VerseLink(
             label="MwD",
-            href=(
-                "https://bdenckla.github.io/MAM-basics/MAM-with-doc/"
-                f"{quote(f'{osdf}.html')}#c{chapter}v{verse}"
+            href=site_links.site_href_from_folder(
+                _HOLMAN_FOLDER,
+                f"MAM-with-doc/{quote(f'{osdf}.html')}#c{chapter}v{verse}",
             ),
             title="This verse in MAM-with-doc",
         ),

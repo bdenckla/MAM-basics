@@ -3,9 +3,9 @@
 from boj_render import boj_html
 from mb_cmn import bib_locales as tbn
 from author_boj_util import author
+from author_boj_util import boj_site
 from author_boj_util.common_titles_etc import D5_TITLE, D5_H1_CONTENTS, D5_FNAME
 
-_MWD = "https://bdenckla.github.io/MAM-basics/MAM-with-doc"
 _UXLC = "https://tanach.us/Tanach.xml"
 
 
@@ -20,7 +20,9 @@ def _links_to_u_and_m(bkid, ch, vr):
     cn_v_vn = f"c{ch}v{vr}"
     osdf = tbn.ordered_short_dash_full_39(bkid)
     u = boj_html.anchor_h("U", f"{_UXLC}?{bkid}{cv}")
-    m = boj_html.anchor_h("M", f"{_MWD}/{osdf}.html#{cn_v_vn}")
+    m = boj_html.anchor_h(
+        "M", boj_site.jobn_href(f"MAM-with-doc/{osdf}.html#{cn_v_vn}")
+    )
     return u, ", ", m
 
 
@@ -78,7 +80,7 @@ _KINGS_DISCUSSION_1 = [
     " In such a style, a קובוץ floats before the ב of %בניכי.",
     " The קובוץ is an orphan: it belongs to no letter of the כתיב word.",
 ]
-_WLCAU = "https://bdenckla.github.io/MAM-basics/wlc/wlc-a-notes/"
+_WLCAU = boj_site.jobn_href("wlc/wlc-a-notes/index.html")
 _KINGS_DISCUSSION_2 = [
     "Actually, it belongs to no letter of the קרי word either!",
     #

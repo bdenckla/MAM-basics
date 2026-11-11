@@ -2,6 +2,7 @@
 """Shared helpers for the MAM-parsed-plus documentation modules."""
 
 from mb_author import author
+from mb_cmn import site_links
 from mb_author import json_block
 from mb_author.claim import ClaimCollection
 from mb_misc import mb_html
@@ -225,7 +226,10 @@ def verse_label_templates_block():
                         "Torah $aliyah identifier. See ",
                         author.anchor_h(
                             "notes on $aliyot",
-                            "https://bdenckla.github.io/MAM-basics/MAM-with-doc/misc/notes_on_aliyot.html",
+                            site_links.site_href_from_folder(
+                                "MAM-parsed/plus/html",
+                                "MAM-with-doc/misc/notes_on_aliyot.html",
+                            ),
                         ),
                         ".",
                     ],

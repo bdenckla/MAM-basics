@@ -6,6 +6,7 @@ reproduced verbatim; the only deliberate changes are the ``$`` keys that
 the sibling pages rather than at the Google Docs.
 """
 
+from author_misc import misc_site
 from mb_author import author
 from author_misc import urwotm_common
 
@@ -76,12 +77,8 @@ _PART = 4
 _TITLE = urwotm_common.plain_title(_PART)
 _FNAME = urwotm_common.FNAMES[_PART]
 
-_URL_BDENCKLA_GITHUB_IO_1 = (
-    "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c5v10"
-)
-_URL_BDENCKLA_GITHUB_IO_2 = (
-    "https://bdenckla.github.io/MAM-basics/taamey-d/Taamey_D.html"
-)
+_URL_BDENCKLA_GITHUB_IO_1 = misc_site.href("MAM-with-doc/D1-Psalms.html#c5v10")
+_URL_BDENCKLA_GITHUB_IO_2 = misc_site.href("taamey-d/Taamey_D.html")
 _URL_TANACH_US_1 = "https://tanach.us/"
 
 _PARA_002 = """This is the fourth article in a series. The series is about errors in $BHS and/or

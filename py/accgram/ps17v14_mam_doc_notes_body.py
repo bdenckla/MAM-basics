@@ -14,6 +14,8 @@ a newline straight after those block-level open tags.  No browser renders the di
 and it is what makes this page break like the other 151.  See that module's table comment.
 """
 
+from accgram import accgram_site
+
 TITLE = "MAM documentation notes on Psalms 17:14 — translation"
 
 BODY = [
@@ -35,7 +37,7 @@ BODY = [
             {
                 "_htel_tag": "a",
                 "attr": {
-                    "href": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c17v14"
+                    "href": accgram_site.href("MAM-with-doc/D1-Psalms.html#c17v14")
                 },
                 "lb1": "",
                 "lb2": "",

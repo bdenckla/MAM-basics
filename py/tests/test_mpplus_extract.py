@@ -10,7 +10,7 @@ from mb_diff_mpu import (
     mpplus_json,
     mpplus_structure,
 )
-from mb_diff_mpu.mpplus_book_urls import mam_with_doc_url, ref_str, wikisource_url
+from mb_diff_mpu.mpplus_book_urls import mam_with_doc_href, ref_str, wikisource_url
 
 
 def _ezek_40_26_old_ep():
@@ -737,13 +737,10 @@ class SpecialKqUnifiedDiffEquivalenceTests(unittest.TestCase):
 
 
 class CanonicalBookIdTests(unittest.TestCase):
-    def test_mam_with_doc_url_accepts_canonical_book_id(self):
-        url = mam_with_doc_url(tbn.BK_FST_SAM, 3, 4)
+    def test_mam_with_doc_href_accepts_canonical_book_id(self):
+        href = mam_with_doc_href(tbn.BK_FST_SAM, 3, 4)
 
-        self.assertEqual(
-            url,
-            "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BA-1Samuel.html#c3v4",
-        )
+        self.assertEqual(href, "../BA-1Samuel.html#c3v4")
 
     def test_wikisource_url_accepts_canonical_book_id(self):
         url = wikisource_url(tbn.BK_LEVIT, 2)

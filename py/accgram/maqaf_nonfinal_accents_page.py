@@ -37,6 +37,7 @@ from functools import lru_cache
 from pathlib import Path
 
 from accgram import accent_marks as am
+from accgram import accgram_site
 from accgram import maqaf_nonfinal_accents as mpa
 from accgram import printed_decalogue as pd
 from accgram import rtms_report
@@ -460,7 +461,7 @@ _ONE_LETTER_HREF = f"#{_ONE_LETTER_ID}"
 # "yes please do that linking").  Same URL shape ``prose_ob_notes_is`` already uses for
 # foi-pasoleg-1.  NO COUNTS ARE QUOTED from them: they are another repo's numbers, regenerated on
 # another schedule, and this page splices only its own survey.
-_FOI = "https://bdenckla.github.io/MAM-basics/MAM-with-doc/foi/foi-{}.html"
+_FOI = "MAM-with-doc/foi/foi-{}.html"
 
 # sec-merk and sec-misc are the two that catalogue this page's phenomenon per instance -- a
 # merkha, and a mahapakh, standing beside the chanted word's other accent.  Their sibling
@@ -470,13 +471,13 @@ _FOI = "https://bdenckla.github.io/MAM-basics/MAM-with-doc/foi/foi-{}.html"
 # made of; ``foiz_wt_sec_merk_and_friends.py`` carries that as an explicit TODO at its top, and
 # for metigah and mayela it could hardly do otherwise, each sharing a codepoint with the accent
 # it is a positional name for.  So the sentence claims coverage of two accents, not of the table.
-_FOI_SEC_MERK = _FOI.format("sec-merk")
-_FOI_SEC_MISC = _FOI.format("sec-misc")
+_FOI_SEC_MERK = accgram_site.href(_FOI.format("sec-merk"))
+_FOI_SEC_MISC = accgram_site.href(_FOI.format("sec-misc"))
 # The ``unicode`` list has "geresh plus telisha gedolah" and the gershayim counterpart as two of
 # its rare-sequence sections -- the very words the one-letter appendix shows.
-_FOI_UNICODE = _FOI.format("unicode")
+_FOI_UNICODE = accgram_site.href(_FOI.format("unicode"))
 # The gray maqaf is the ``implicit-maqaf`` section of ``rare-tmpls``.
-_FOI_RARE_TMPLS = _FOI.format("rare-tmpls")
+_FOI_RARE_TMPLS = accgram_site.href(_FOI.format("rare-tmpls"))
 
 
 def _split_pair(pair: str) -> tuple[str, str]:
@@ -2448,12 +2449,17 @@ def _mwd_link(bcv: str) -> object:
 
     Ben, 2026-07-29: "add a column with a link to the MAM with doc edition, (text 'Mwd') where
     the reader can see the notes for each of these words".  The URL comes from
-    ``rtms_report.mam_with_doc_url``, which the poetic ungrammatical-verse report already labels
+    ``rtms_report.mam_with_doc_href``, which the poetic ungrammatical-verse report already labels
     "Mwd" too, and which carries the one-time Numbers 25:19 -> 26:1 remap; building the URL here
     would get that wrong.
     """
     bb, chnu, vrnu = mpa.split_bcv(bcv)
-    return link("Mwd", rtms_report.mam_with_doc_url(bb=bb, chnu=chnu, vrnu=vrnu))
+    return link(
+        "Mwd",
+        rtms_report.mam_with_doc_href(
+            folder=accgram_site.FOLDER, bb=bb, chnu=chnu, vrnu=vrnu
+        ),
+    )
 
 
 def _one_letter_appendix_section(survey: dict) -> tuple[object, ...]:

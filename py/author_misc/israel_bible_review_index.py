@@ -87,6 +87,7 @@ from urllib.parse import quote, urlsplit
 from mb_author import author
 from mb_cmn import paths
 from mb_cmn import provenance
+from mb_cmn import site_links
 from mb_cmn import uni_denorm
 from mb_misc import mb_html
 
@@ -95,6 +96,9 @@ _FNAME = "index.html"
 _CSS_FNAME = "style.css"
 # The review's own folder of the site, a peer of gh-pages/book-of-job/ and gh-pages/clc/.
 _OUT_DIR = paths.gh_pages_dir() / "israel-bible-review"
+# The page's path below the deploy root, from which its links to the site's other pages are
+# computed (mb_cmn/site_links.py).
+_PAGE = (_OUT_DIR / _FNAME).relative_to(paths.gh_pages_dir()).as_posix()
 # The page's stylesheets, in order: the prose base first, as doc/html-styles.md asks of every
 # prose page; then this page's own, written by gen_html_file from the .css beside this module;
 # then the shared stylesheet of the arrow links that go marks (doc/html-styles.md, "Arrow
@@ -406,8 +410,11 @@ def form_html(form_units, hot):
 # this page.  The arrow is drawn, not written, so it is not part of the text that a reader
 # copies.  A hover title is given only where it says more than the text: the title of the page
 # it links to.
-MAM_BASICS_HOST = "bdenckla.github.io"
-MAM_BASICS_ROOT = "/MAM-basics/"
+#
+# A link is written as its address, as review.md writes it for a reader on GitHub, and an
+# address on MAM-basics' site becomes the page's relative href to it as the page is drawn
+# (go): Ben, 2026-11-11, "Fix it to be a relative link and fix any other
+# inappropriately-absolute links please" (mb_cmn/site_links.py).
 
 
 def link_kind(href):
@@ -416,15 +423,15 @@ def link_kind(href):
     are its footnote references (footnote_ref)."""
     address = urlsplit(href)
     assert address.scheme == "https" and address.netloc, href
-    on_site = address.hostname == MAM_BASICS_HOST and address.path.startswith(
-        MAM_BASICS_ROOT
-    )
-    return "page" if on_site else "external"
+    return "page" if href.startswith(site_links.SITE_URL) else "external"
 
 
 def go(href, text, title=None):
+    """A link to ``href``, an address; one on MAM-basics' site gets the relative href."""
     hover = f' title="{html.escape(title)}"' if title else ""
     kind = link_kind(href)
+    if kind == "page":
+        href = site_links.site_href_from_url(_PAGE, href)
     return f'<a href="{html.escape(href)}" data-na-link="{kind}"{hover}>{text}</a>'
 
 
@@ -955,7 +962,7 @@ TOP = [
 # thereof) into the discussion".  The alef-vav page's group d-alef-rafeh-shuruq holds 26 words with
 # a quiescent alef just before a shuruq, the Reubenite words among them, none labeled "no rafeh";
 # since 2026-11-09 the Reubenite group's note ends "See MAM's relevant FOI" with a link to it.
-FOI = "https://bdenckla.github.io/MAM-basics/MAM-with-doc/foi/"
+FOI = site_links.site_url("MAM-with-doc/foi/")
 FOI_ALEF_FIRST = FOI + "foi-alef-dual-ml-alef-first.html"
 FOI_ALEF_RAFEH_SHURUQ = FOI_ALEF_FIRST + "#intro-d-alef-rafeh-shuruq"
 # Ben, 2026-11-09, of the Reubenite word: "which also appears in near-consensus form in IB [N]
@@ -979,9 +986,8 @@ REUVENI = (
 # usual hebrew spelling of this phrase is".  Written by its letters' names, as MUM_WITH_ALEF is.
 # Ben, 2026-11-08: "Regarding 2 Sam 15:21 and 2 Sam 13:33, are one or more of these the topic of
 # my "saying the silent part out loud"? If so please link to it."  Both are: Part 2 of his series.
-QUIET_PART = (
-    "https://bdenckla.github.io/MAM-basics/MAM-with-doc/misc/"
-    "urwotm_2_saying_the_quiet_part_out_loud.html"
+QUIET_PART = site_links.site_url(
+    "MAM-with-doc/misc/urwotm_2_saying_the_quiet_part_out_loud.html"
 )
 KETIV_VELO_QERE = isolate_hebrew(
     "\N{HEBREW LETTER KAF}\N{HEBREW LETTER TAV}\N{HEBREW LETTER YOD}\N{HEBREW LETTER BET} "

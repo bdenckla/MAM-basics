@@ -6,8 +6,8 @@ studies, excerpts, technical resources, and reviews by subject.  The structure s
 except for the named four-part Masoretes series.  Unicode and Taamey D are linked headings
 because each heading is itself the sole destination for that topic.
 
-Internal hrefs include relative paths and absolute published URLs. Relative links
-work in a local checkout; absolute links target the published pages.
+An href to a page of this site is relative, so that it works in a local checkout and in a
+preview as well as on the published site; only a page elsewhere has an absolute URL.
 ``py/tests/test_site_index_links.py`` walks all typed anchors, including
 heading links and grouped entries, to verify tracked targets and deploy-root reachability.
 
@@ -32,11 +32,16 @@ _RSQM = "\N{RIGHT SINGLE QUOTATION MARK}"
 _EM_DASH = "\N{EM DASH}"
 _ELLIPSIS = "\N{HORIZONTAL ELLIPSIS}"
 
-_MWD = "https://bdenckla.github.io/MAM-basics/MAM-with-doc/"
+# Folders and pages of this site, as paths below the deploy root, where the index itself sits,
+# so each is the index's relative href to its page.  Until 2026-11-11 these five were the
+# published pages' absolute URLs, a relic of the sites that lived in other repositories
+# before they moved into this one; Ben asked that day for links within the site to be
+# relative (mb_cmn/site_links.py).
+_MWD = "MAM-with-doc/"
 _MWD_MISC = f"{_MWD}misc/"
-_PHONETIC = "https://bdenckla.github.io/MAM-basics/phonetic-mam/"
-_YEIVIN = "https://bdenckla.github.io/MAM-basics/yeivin-itm/yeivin_itm.html"
-_TAAMEY_D = "https://bdenckla.github.io/MAM-basics/taamey-d/Taamey_D.html"
+_PHONETIC = "phonetic-mam/index.html"
+_YEIVIN = "yeivin-itm/yeivin_itm.html"
+_TAAMEY_D = "taamey-d/Taamey_D.html"
 _GDOC = "https://docs.google.com/document/d/e"
 _REPO = "https://github.com/bdenckla/MAM-basics"
 _REPO_MAIN = f"{_REPO}/blob/main"
@@ -106,11 +111,10 @@ CSS_HREF = "style.css"
 # resolves from the post-stress-meteg pages' folder as it does from gh-pages/wlc/.
 ACCGRAM_CSS_HREF = "wlc/style.css"
 
-# Hrefs below include relative paths within the deploy root and absolute URLs to
-# published pages, including MAM-with-doc and other repositories.
-# py/tests/test_site_index_links.py resolves each relative href, and each absolute one
-# under https://bdenckla.github.io/MAM-basics/, against the files tracked under
-# gh-pages/, and checks no other URL; it fetches nothing.
+# Hrefs below are relative paths within the deploy root, for the pages of this site, and
+# absolute URLs, for pages elsewhere, such as GitHub's views of this repository.
+# py/tests/test_site_index_links.py resolves each relative href against the files tracked
+# under gh-pages/, and checks no other URL; it fetches nothing.
 #
 # AND IT NAMES index.html EXPLICITLY where document-index wrote a bare directory URL.
 # GitHub Pages serves both, but py/check_html_syntax_and_sanity.py does not resolve a
@@ -146,7 +150,7 @@ _EDITIONS = Section(
             "https://www.sefaria.org/Genesis.1?lang=bi&vhe=hebrew%7C"
             "Miqra_according_to_the_Masorah",
         ),
-        _entry("MAM with doc", _MWD),
+        _entry("MAM with doc", f"{_MWD}index.html"),
         _entry(
             "MAM for SWORD (CrossWire MapM)",
             "https://ftp.crosswire.org/sword/modules/ModInfo.jsp?modName=MapM",

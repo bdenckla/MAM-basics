@@ -1,6 +1,7 @@
 """Exports gen_html_file and anchor"""
 
 from boj_render import boj_html
+from author_boj_util import boj_site
 from author_boj.m_contributions_base import contributions_base
 from author_boj.m_reiterations_base import reiterations_base
 from author_boj.m_implications_base import implications_base
@@ -492,7 +493,7 @@ _POSTSCRIPT_QUIRKS_IN_MU_A = [
 # not a README.
 _DOCUMENT_INDEX = author.anc_h(
     "index of my documents",
-    "https://bdenckla.github.io/MAM-basics/",
+    boj_site.jobn_href("index.html"),
 )
 _RELATED_WORKS_BY_ME = [
     "Other works by me about the Masoretic Text can be found in this",

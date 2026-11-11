@@ -8,6 +8,7 @@ Ezekiel 20:31 exhibits are backed by live trees and verdicts from
 
 from __future__ import annotations
 
+from accgram import accgram_site
 from accgram import almost_errors_trees as aet
 from accgram import rtms_report
 from accgram import rtmsr_media
@@ -105,7 +106,12 @@ def _qadma_gaya_links(*, supplied: bool) -> tuple[object, ...]:
         if nodes:
             nodes.append("; ")
         nodes.append(
-            link(display, rtms_report.mam_with_doc_url(bb=bb, chnu=chnu, vrnu=vrnu))
+            link(
+                display,
+                rtms_report.mam_with_doc_href(
+                    folder=accgram_site.FOLDER, bb=bb, chnu=chnu, vrnu=vrnu
+                ),
+            )
         )
     return tuple(nodes)
 
@@ -375,7 +381,7 @@ def ek2031_section(index, parser, has_legarmeh: HasLegarmeh) -> tuple[object, ..
                 ". See the full note on the ",
                 link(
                     "MAM-with-doc Ezekiel page",
-                    "https://bdenckla.github.io/MAM-basics/MAM-with-doc/C3-Ezekiel.html#c20v31",
+                    accgram_site.href("MAM-with-doc/C3-Ezekiel.html#c20v31"),
                 ),
                 ". Because the manuscripts agree, this double accent is whitelisted"
                 " rather than treated an error.",

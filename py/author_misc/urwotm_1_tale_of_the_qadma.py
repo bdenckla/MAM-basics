@@ -7,6 +7,7 @@ the sibling pages rather than at the Google Docs.
 """
 
 from mb_misc import mb_html
+from author_misc import misc_site
 from mb_author import author
 from author_misc import urwotm_common
 
@@ -101,9 +102,7 @@ _URL_TANACH_US_1 = (
     "20Changes.xml?2020.09.22-1"
 )
 _URL_IHBMR_COM_1 = "https://ihbmr.com/"
-_URL_BDENCKLA_GITHUB_IO_1 = (
-    "https://bdenckla.github.io/MAM-basics/MAM-with-doc/A5-Deuter.html#c12v30"
-)
+_URL_BDENCKLA_GITHUB_IO_1 = misc_site.href("MAM-with-doc/A5-Deuter.html#c12v30")
 _URL_TANACH_US_2 = (
     "https://tanach.us/Changes/2020.02.19%20-%20Changes/2020.02.19%20-%"
     "20Changes.xml?2019.09.01-1"

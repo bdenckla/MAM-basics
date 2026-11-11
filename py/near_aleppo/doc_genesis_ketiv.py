@@ -35,7 +35,7 @@ NOTE_BODY = [
     },
     "הערות ברויאר ודותן והמקליד",
 ]
-MAM_URL = "https://bdenckla.github.io/MAM-basics/MAM-with-doc/A1-Genesis.html#c43v28"
+MAM_URL = build_paths.site_href("MAM-with-doc/A1-Genesis.html#c43v28")
 
 
 def section():

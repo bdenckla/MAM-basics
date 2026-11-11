@@ -50,6 +50,7 @@ import argparse
 from datetime import datetime
 from pathlib import Path
 
+from accgram import accgram_site
 from accgram import printed_decalogue as pd
 from accgram import printed_decalogue_strands as pds
 from accgram import printed_decalogue_taxton_diff as pdt
@@ -80,9 +81,7 @@ _SIMANIM_PAGE = "printed-decalogue-simanim.html"
 # cites at ובנך, where the two satellites' editions and the Wikisource p-trad עליון disagree.
 _UVINKHA_PAGE = "printed-decalogue-uvinkha.html"
 
-_CTR_REVIEW_URL = (
-    "https://bdenckla.github.io/MAM-basics/MAM-with-doc/misc/rocc_0_review_of_ctr.html"
-)
+_CTR_REVIEW_URL = accgram_site.href("MAM-with-doc/misc/rocc_0_review_of_ctr.html")
 
 # CTR (The Complete Tanach with Rashi) on Chabad.org, deep-linked to Deuteronomy 5 -- the
 # Sabbath-commandment chapter whose p-trad תחתון cantillation the appendix above dissects.

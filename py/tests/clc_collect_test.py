@@ -147,10 +147,7 @@ def test_long_note_relegation():
         "Further discussion: Regarding the meteg that might be expected on"
         in meteg_html
     )
-    assert (
-        'href="https://bdenckla.github.io/MAM-basics/yeivin-itm/yeivin_itm-345_357.html#ns355"'
-        in meteg_html
-    )
+    assert 'href="../yeivin-itm/yeivin_itm-345_357.html#ns355"' in meteg_html
     assert 'src="../uxlc/img/Deuter.5.7.2.LC-102A-col3-line22.jpg"' in meteg_html
     assert "Credit: Sefaria.org." in meteg_html
     # The radically-shortened note keeps only a Yeivin pointer + the yod aside; the old
@@ -181,7 +178,7 @@ def test_long_note_relegation():
     # (clc_render._SUPPLIED_MARKS_ANCHOR), not just the page top -- and the fragment is
     # wlc-utils's supplied-side naming, which inverts CLC's omitted-side naming (5:17's
     # "elyon silluq" is there the "taxton tipexa" it supplied: ...-alef-tipexa).
-    _SUPPLIED = "https://bdenckla.github.io/MAM-basics/wlc/accgram/supplied-marks.html"
+    _SUPPLIED = "../wlc/accgram/supplied-marks.html"
     for anchor, fragment in (
         (
             "long-Deuter-5-6-elyon-tipeha",  # translit-ok: anchor-id slug

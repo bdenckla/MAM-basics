@@ -4,17 +4,23 @@ from taamey_d.doc import tad_floating_xolam_xaser
 from taamey_d.doc import tad_corpus
 from taamey_d_build.font_version import VERSION
 from mb_cmn.he_wikisource_url import he_page_url
+from mb_cmn import site_links
 from taamey_d.doc.html_helpers import *
 from taamey_d.doc.book_chapter_verse import BOOK_PROPERTIES, cv_str_html
 
 _TANACH_DOT_US = anchor("https://tanach.us", "tanach.us")
 _MAM_HE_WIKISOURCE_URL = he_page_url("מקרא_על_פי_המסורה")
 _MAM_HE_WIKISOURCE = anchor(_MAM_HE_WIKISOURCE_URL, "Hebrew Wikisource")
+# The page's folder below the deploy root: a link to another page of the site is
+# relative to it (mb_cmn/site_links.py).
+_FOLDER = "taamey-d"
 _MAM_WITH_DOC = anchor(
-    "https://bdenckla.github.io/MAM-basics/MAM-with-doc/", "$MAM’s documentation notes"
+    site_links.site_href_from_folder(_FOLDER, "MAM-with-doc/index.html"),
+    "$MAM’s documentation notes",
 )
 _NEAR_ALEPPO_EDITION = anchor(
-    "https://bdenckla.github.io/MAM-basics/near-aleppo/edition/", "near-Aleppo edition"
+    site_links.site_href_from_folder(_FOLDER, "near-aleppo/edition/index.html"),
+    "near-Aleppo edition",
 )
 _TAIL = """
 </body>

@@ -15,6 +15,7 @@ from hkq_cmn import uxlc_external_links
 from mb_cmn import bib_locales as tbn
 from mb_cmn import provenance
 from mb_cmn import read_books_from_mam_parsed_plus as plus
+from mb_cmn import site_links
 from mb_cmn import verse_external_links as vel
 from mb_author import author
 from mb_misc import mb_html
@@ -839,7 +840,10 @@ def _links(reference):
         if link.label in labels:
             if result:
                 result.append(" · ")
-            result.append(mb_html.anchor_h(labels[link.label], link.href))
+            # The MwD link is an address on this site, made for chat as well, so this
+            # page in foi/ links it relatively (mb_cmn/site_links.py).
+            href = site_links.href_in_folder(build_paths.site_folder("foi"), link.href)
+            result.append(mb_html.anchor_h(labels[link.label], href))
     return mb_html.para(result)
 
 

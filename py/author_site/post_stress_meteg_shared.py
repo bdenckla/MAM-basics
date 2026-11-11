@@ -6,6 +6,7 @@ import re
 
 from accgram import post_stress_meteg_model as psm
 from mb_cmn import hebrew_punctuation as hpu
+from mb_cmn import site_links
 from accgram import printed_decalogue_strands as pds
 from accgram.almost_errors_html_shared import ref_abbrev, wrap_hebrew_runs
 from accgram import rtms_report
@@ -51,7 +52,17 @@ _NEXT_CONJUNCTIVE_FNAME = site_data.POST_STRESS_METEG_NEXT_CONJUNCTIVE_FNAME
 
 _NEXT_CONJUNCTIVE_TITLE = site_data.POST_STRESS_METEG_NEXT_CONJUNCTIVE_TITLE
 
-_PHONETIC_MAM_URL = "https://bdenckla.github.io/MAM-basics/phonetic-mam/"
+# Every post-stress-meteg page sits in this folder below the deploy root, and builds its
+# links before it names its page, so a link to another page of the site is computed from
+# the folder (mb_cmn/site_links.py).
+_FOLDER = site_data.POST_STRESS_METEG_DIR
+
+
+def _site_href(target: str) -> str:
+    return site_links.site_href_from_folder(_FOLDER, target)
+
+
+_PHONETIC_MAM_URL = _site_href("phonetic-mam/index.html")
 
 _POST_SILLUQ_FOOTNOTE_ID = "footnote-1"
 
@@ -543,10 +554,10 @@ _CHRONICLES_8_11_LENINGRAD_GLOSSES = {
 }
 
 _ITM_ADAPTATION_URL_BY_SECTION = {
-    325: "https://bdenckla.github.io/MAM-basics/yeivin-itm/yeivin_itm-318_344.html#ns325",
-    332: "https://bdenckla.github.io/MAM-basics/yeivin-itm/yeivin_itm-318_344.html#ns332",
-    338: "https://bdenckla.github.io/MAM-basics/yeivin-itm/yeivin_itm-318_344.html#ns338",
-    354: "https://bdenckla.github.io/MAM-basics/yeivin-itm/yeivin_itm-345_357.html#ns354",
+    325: _site_href("yeivin-itm/yeivin_itm-318_344.html#ns325"),
+    332: _site_href("yeivin-itm/yeivin_itm-318_344.html#ns332"),
+    338: _site_href("yeivin-itm/yeivin_itm-318_344.html#ns338"),
+    354: _site_href("yeivin-itm/yeivin_itm-345_357.html#ns354"),
 }
 
 _ITM_SECTION_REFERENCE = re.compile(r"§(?P<section>[0-9]+)")
@@ -931,7 +942,7 @@ def _ref_link(bcv: str, text: str | None = None) -> object:
     bb, chnu, vrnu = _split(bcv)
     return mb_html.anchor_h(
         text or ref_abbrev(bcv),
-        rtms_report.mam_with_doc_url(bb=bb, chnu=chnu, vrnu=vrnu),
+        rtms_report.mam_with_doc_href(folder=_FOLDER, bb=bb, chnu=chnu, vrnu=vrnu),
     )
 
 

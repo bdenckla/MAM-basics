@@ -14,6 +14,7 @@ from hkq_cmn import uxlc_external_links
 from mb_cmn import bib_locales as tbn
 from mb_cmn import provenance
 from mb_cmn import read_books_from_mam_parsed_plus as plus
+from mb_cmn import site_links
 from mb_cmn import verse_external_links as vel
 from mb_misc import mb_html
 from near_aleppo import build_paths, edition
@@ -250,7 +251,10 @@ def _case_contents(case, verses, shin_image):
             mb_html.para(
                 mb_html.anchor_h(
                     "Compare this verse in MAM-with-doc",
-                    vel.mam_with_doc_url(*case.references[0]),
+                    site_links.href_in_folder(
+                        build_paths.site_folder("foi"),
+                        vel.mam_with_doc_url(*case.references[0]),
+                    ),
                 )
             )
         )

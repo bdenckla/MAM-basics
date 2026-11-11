@@ -32,7 +32,7 @@ level. It folds no sub-site's pages or CSS vocabulary into the root, although a 
 page's link into a sub-site must still resolve.
 Without ``--deploy-root``, the root is refused and one sub-site is checked recursively.
 The orphan-HTML check alone also reads the pages directly at the deploy root, such as
-the site index, because they link into the sub-sites by the site's own absolute URLs.
+the site index, because they link into the sub-sites.
 Undefined CSS classes are informational because the current ownership model cannot
 distinguish a shared or external CSS vocabulary from a defect.
 The --w3c flag sends each HTML file to the W3C Nu HTML Checker API
@@ -52,10 +52,13 @@ from urllib.parse import unquote, urlsplit
 
 import boj_paths
 from mb_cmn import paths
+from mb_cmn import site_links
 
-# The published site's own address.  The site index links into the sub-sites by absolute
-# URLs below it, which _linked_targets reads as the files they serve.
-_SITE_URL = "https://bdenckla.github.io/MAM-basics/"
+# The published site's own address.  Until 2026-11-11 the site index linked into the
+# sub-sites by absolute URLs below it, and _linked_targets still reads such a URL as the file
+# it serves.  Links within the site are relative now (mb_cmn/site_links.py), and
+# py/tests/test_site_links_relative.py keeps them so.
+_SITE_URL = site_links.SITE_URL
 
 # Pages that no page of the site links by design, because they are kept for links from
 # outside it: each path below the deploy root, with the reason it stays.  The orphan-HTML
@@ -165,6 +168,9 @@ def main(argv=None):
     all_issues: list[str] = []
     unknown_css_references: list[str] = []
     referenced_images: set[Path] = set()
+    # The IDs of each page outside the checked pages that a fragment link reaches, parsed
+    # once however many links reach it: hundreds of verse links reach one book's page.
+    outside_ids: dict[Path, set[str]] = {}
 
     for hf in html_files:
         info = parsed[hf]
@@ -173,7 +179,9 @@ def main(argv=None):
 
         all_issues.extend(_check_structure(rel, info))
         all_issues.extend(_check_duplicate_ids(rel, info))
-        all_issues.extend(_check_internal_links(rel, info, html_dir, all_ids))
+        all_issues.extend(
+            _check_internal_links(rel, info, html_dir, all_ids, outside_ids)
+        )
         all_issues.extend(_check_images(rel, info, html_dir, referenced_images))
         unknown_css_references.extend(_check_css_classes(rel, info, css_classes))
         all_issues.extend(_check_css_links(rel, info, html_dir))
@@ -355,8 +363,12 @@ def _check_internal_links(
     info: _HTMLInfo,
     html_dir: Path,
     all_ids: dict[Path, list[str]],
+    outside_ids: dict[Path, set[str]],
 ) -> list[str]:
-    """Check internal hrefs resolve to files, and fragments to IDs."""
+    """Check internal hrefs resolve to files, and fragments to IDs.
+
+    ``outside_ids`` caches the IDs of pages outside ``all_ids``, filled as links reach them.
+    """
     issues = []
     for path_part, fragment in info.internal_hrefs:
         if path_part is not None:
@@ -368,10 +380,12 @@ def _check_internal_links(
             if fragment is not None:
                 target_ids = all_ids.get(target_path)
                 if target_ids is None and target_path.suffix.lower() == ".html":
-                    target_ids = _parse_html(target_path).ids
+                    if target_path not in outside_ids:
+                        outside_ids[target_path] = set(_parse_html(target_path).ids)
+                    target_ids = outside_ids[target_path]
                 if target_ids is None:
                     target_ids = []
-                if fragment not in target_ids:
+                if not _fragment_found(fragment, target_ids):
                     issues.append(
                         f"{rel}: broken fragment #{fragment}" f' in "{path_part}"'
                     )
@@ -380,9 +394,18 @@ def _check_internal_links(
             if fragment is not None:
                 same_path = (html_dir / Path(rel).name).resolve()
                 target_ids = all_ids.get(same_path, [])
-                if fragment not in target_ids:
+                if not _fragment_found(fragment, target_ids):
                     issues.append(f"{rel}: broken fragment #{fragment}" " (same-file)")
     return issues
+
+
+def _fragment_found(fragment: str, ids) -> bool:
+    """Whether a browser finds ``fragment`` among ``ids``.  The HTML standard, "find a
+    potential indicated element", tries the fragment as written and then its UTF-8
+    percent-decoding, so an id with non-ASCII characters or parentheses may be linked either
+    way.  Found 2026-11-11, when the links that the FOI pages' percent-encoded fragments
+    reach became relative and so faced this check."""
+    return fragment in ids or unquote(fragment) in ids
 
 
 def _check_images(

@@ -61,6 +61,7 @@ import argparse
 from collections.abc import Callable
 from pathlib import Path
 
+from accgram import accgram_site
 from accgram import ob_error_context
 from accgram import ob_page
 from accgram import ob_report
@@ -551,7 +552,12 @@ def _render_ref_links(
 
     links: list[object] = [
         wlc_utils_html.anchor(
-            "Mwd", {"href": rtms_report.mam_with_doc_url(bb=bb, chnu=chnu, vrnu=vrnu)}
+            "Mwd",
+            {
+                "href": rtms_report.mam_with_doc_href(
+                    folder=accgram_site.FOLDER, bb=bb, chnu=chnu, vrnu=vrnu
+                )
+            },
         ),
         " | ",
         wlc_utils_html.anchor(

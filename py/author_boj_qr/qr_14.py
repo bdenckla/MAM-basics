@@ -1,5 +1,6 @@
 from author_boj_util import (
     author,
+    boj_site,
     cos_urls,
 )
 from author_boj_util.job_common import core_ignores
@@ -68,8 +69,9 @@ _COMMENT_1413_PARA1 = [
     " if the מהפך is secondary, as it is here, according to Breuer.",
 ]
 _FOI_H2 = "foi-sec-star-breuer-cos.html#intro-11.66.rn1"
-_FOI_H1 = "https://bdenckla.github.io/MAM-basics/MAM-with-doc/foi/"
-_FOI_ANC = author.anc_h("here", f"{_FOI_H1}{_FOI_H2}")
+_FOI_ANC = author.anc_h(
+    "here", boj_site.jobn_details_href(f"MAM-with-doc/foi/{_FOI_H2}")
+)
 _MAM_ANC = author.anc_h("$MAM", "https://purl.org/mam/hebrew-wikisource")
 _COMMENT_1413_PARA2 = [
     ["The consensus word ", author.hbo("תָּ֤שִֽׁית"), " may be easier to understand"],

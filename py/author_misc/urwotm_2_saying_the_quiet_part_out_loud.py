@@ -7,6 +7,7 @@ the sibling pages rather than at the Google Docs.
 """
 
 from mb_misc import mb_html
+from author_misc import misc_site
 from mb_author import author
 from author_misc import urwotm_common
 
@@ -152,10 +153,9 @@ _URL_TANACH_US_2 = (
 _URL_MANUSCRIPTS_SEFARIA_ORG_1 = (
     "https://manuscripts.sefaria.org/leningrad-color/BIB_LENCDX_F274B.jpg"
 )
-_URL_BDENCKLA_GITHUB_IO_1 = "https://bdenckla.github.io/MAM-basics/MAM-with-doc/"
-_URL_BDENCKLA_GITHUB_IO_2 = (
-    "https://bdenckla.github.io/MAM-basics/MAM-with-doc/foi/foi-kq-simple.html#int"
-    "ro-x-velo-y-k-velo-q"
+_URL_BDENCKLA_GITHUB_IO_1 = misc_site.href("MAM-with-doc/index.html")
+_URL_BDENCKLA_GITHUB_IO_2 = misc_site.href(
+    "MAM-with-doc/foi/foi-kq-simple.html#int" "ro-x-velo-y-k-velo-q"
 )
 
 _PARA_002 = """This is the second article in a series. The series is about errors in $BHS and/or

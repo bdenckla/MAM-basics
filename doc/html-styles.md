@@ -5,6 +5,12 @@ State: runbook
 The published tree shares styles through relative links. Directory depth changes
 the link prefix; it does not require a stylesheet copy in every family.
 
+A page's link to another page of the same site is relative too, never the site's
+address, `https://bdenckla.github.io/MAM-basics/` (Ben, 2026-11-11).
+`py/mb_cmn/site_links.py` computes such a link from the two pages' paths below
+`gh-pages/`, and `py/tests/test_site_links_relative.py` fails on a page that links
+the site by its address without a stated reason.
+
 ## Prose documents
 
 `gh-pages/document.css` is the hand-authored prose base. It supplies the ordinary

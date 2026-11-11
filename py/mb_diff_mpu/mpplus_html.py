@@ -35,7 +35,7 @@ from mb_diff_mpu.mpplus_display import (
     postprocess_paseq_html,
     postprocess_kq_html,
 )
-from mb_diff_mpu.mpplus_book_urls import mam_with_doc_url, wikisource_url, ref_str
+from mb_diff_mpu.mpplus_book_urls import mam_with_doc_href, wikisource_url, ref_str
 from mb_diff_mpu.mpplus_subtitle import render_subtitle_table
 
 
@@ -251,7 +251,7 @@ def _render_card(diff):
     cat = diff["category"]
     label, _ = CATEGORY_INFO.get(cat, (cat, "#888"))
     ref = ref_str(diff)
-    mwd_url = mam_with_doc_url(diff["book"], diff["chapter"], diff["verse"])
+    mwd_href = mam_with_doc_href(diff["book"], diff["chapter"], diff["verse"])
     ws_url = wikisource_url(diff["book"], diff["chapter"])
     desc_html = ""
     # Compute description first so it can go on the top line
@@ -341,7 +341,7 @@ def _render_card(diff):
     lines = [f'<div class="diff-card" data-categories="{_esc(cat)}">']
     lines.append(
         f'<div class="verse-ref"><span class="ref-text">{_esc(ref)}'
-        f' <a class="ref-link" href="{_esc(mwd_url)}" target="_blank" rel="noopener">MwD</a>'
+        f' <a class="ref-link" href="{_esc(mwd_href)}" target="_blank" rel="noopener">MwD</a>'
         f' <a class="ref-link" href="{_esc(ws_url)}" target="_blank" rel="noopener">WS</a>'
         f"</span>"
         f'<span class="cat-badge cat-{cat}">{_esc(label)}</span>'

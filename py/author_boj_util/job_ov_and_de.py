@@ -1,6 +1,7 @@
 """Overview and details generation for quirkrecs."""
 
 from boj_render import boj_html
+from author_boj_util import boj_site
 from author_boj_util.is_lop import is_lop
 from mb_cmn import my_utils
 from mb_cmn.my_utils import intersperse, sl_map
@@ -291,9 +292,7 @@ def _ancs(quirkrec):
     uxlc_href = f"https://tanach.us/Tanach.xml?Job{cv}"
     uxlc_anc = boj_html.anchor_h("U", uxlc_href)
     cn_v_vn = "c" + cv.replace(":", "v")
-    mwd_href = (
-        f"https://bdenckla.github.io/MAM-basics/MAM-with-doc/D3-Job.html#{cn_v_vn}"
-    )
+    mwd_href = boj_site.jobn_details_href(f"MAM-with-doc/D3-Job.html#{cn_v_vn}")
     mwd_anc = boj_html.anchor_h("M", mwd_href)
     return uxlc_anc, mwd_anc
 

@@ -6,6 +6,11 @@ from urllib.parse import quote
 
 from mb_cmn import bib_locales as tbn
 from mb_cmn.he_wikisource_url import he_taamim_url
+from mb_cmn import site_links
+
+# The holman pages' folder below the deploy root: a page's link to another page of the
+# site is relative to it (mb_cmn/site_links.py).
+_HOLMAN_FOLDER = "holman"
 
 VERSE_REFERENCE_RE = re.compile(
     r"^(?P<book>\S+)\s+(?P<chapter>\d+):(?P<verse>\d+)(?:\.\d+)?$"
@@ -70,7 +75,10 @@ def verse_external_links(verse_text: str) -> VerseExternalLinks:
 
     return VerseExternalLinks(
         mgketer_url=f"https://www.mgketer.org/mikra/{mgketer_id}/{chapter}/1/mg/106",
-        mwd_url=f"https://bdenckla.github.io/MAM-basics/MAM-with-doc/{quote(f'{osdf}.html')}#c{chapter}v{verse}",
+        mwd_url=site_links.site_href_from_folder(
+            _HOLMAN_FOLDER,
+            f"MAM-with-doc/{quote(f'{osdf}.html')}#c{chapter}v{verse}",
+        ),
         mam_ws_url=he_taamim_url(BOOK_HEBREW_NAMES[book], chapter_he),
     )
 

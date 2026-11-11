@@ -41,9 +41,9 @@ from near_aleppo.phase6_rename import RENAMED_NOTES
 TITLE = "The near-Aleppo dataset"
 
 MPPLUS_DOC = "../MAM-parsed/plus/html/mpplus.html"
-SIGIL_DECODING = (
-    "https://bdenckla.github.io/MAM-basics/MAM-with-doc/sigil-decoding.html"
-)
+# MAM-with-doc's decoding of the sigla, as a path below the deploy root: the pages that
+# link it sit at two depths, and each computes its own href (build_paths.site_href).
+SIGIL_DECODING = "MAM-with-doc/sigil-decoding.html"
 ALEPPO_INDEX = (
     "https://github.com/bdenckla/MAM-basics/blob/main/aleppo/"
     "index-flat-annotated.json"
@@ -826,7 +826,10 @@ def _survives(numbers):
                 he_name("שיטת-א"),
                 ", whose inferred forms near-Aleppo admits only where the "
                 "codex is lost. ",
-                link("MAM-with-doc's decoding of the sigla", SIGIL_DECODING),
+                link(
+                    "MAM-with-doc's decoding of the sigla",
+                    build_paths.site_href(SIGIL_DECODING),
+                ),
                 " says what each means. The clauses of MAM's notes that differ from "
                 "MAM's text cite testimony or a photograph ",
                 numbers.fig("testimony_citations_at_lost_verses"),

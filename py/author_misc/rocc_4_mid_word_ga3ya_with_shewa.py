@@ -1,5 +1,6 @@
 """Exports main"""
 
+from author_misc import misc_site
 from mb_cmn import my_utils
 from mb_cmn import hebrew_punctuation as hpu
 from mb_author import author
@@ -33,9 +34,7 @@ _TITLE = "Mid-word געיה with Shewa"
 _H1_CONTENTS = "Mid-word געיה with $Shewa"
 _FNAME = "rocc_4_mid_word_ga3ya_with_shewa.html"
 _ANCHOR = author.anchor_h("document", f"./{_FNAME}")
-_Y_URL_YEIVIN = (
-    "https://bdenckla.github.io/MAM-basics/yeivin-itm/yeivin_itm-318_344.html#ns335"
-)
+_Y_URL_YEIVIN = misc_site.href("yeivin-itm/yeivin_itm-318_344.html#ns335")
 _Y_ANC_YEIVIN = author.anchor_h("section 335", _Y_URL_YEIVIN)
 _X_050_CPARA = [
     ["(This document is a sort of appendix to a parent ", rocc_0.anchor(), ")"],

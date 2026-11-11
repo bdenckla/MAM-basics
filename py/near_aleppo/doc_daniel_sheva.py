@@ -117,7 +117,7 @@ def section():
             [
                 link(
                     "MAM with doc — Daniel 5:21",
-                    "https://bdenckla.github.io/MAM-basics/MAM-with-doc/F1-Daniel.html#c5v21",
+                    build_paths.site_href("MAM-with-doc/F1-Daniel.html#c5v21"),
                 ),
                 ". “Is consistent with” allows for the difference in presentation: "
                 "manuscripts normally have pointed ketiv and unpointed qere, whereas "
@@ -207,12 +207,12 @@ def _yod_vav():
                 ", which has vav after mem, before nun. See the Hebrew notes at ",
                 link(
                     "MAM with doc — Daniel 5:7",
-                    "https://bdenckla.github.io/MAM-basics/MAM-with-doc/F1-Daniel.html#c5v7",
+                    build_paths.site_href("MAM-with-doc/F1-Daniel.html#c5v7"),
                 ),
                 " and ",
                 link(
                     "MAM with doc — Daniel 5:29",
-                    "https://bdenckla.github.io/MAM-basics/MAM-with-doc/F1-Daniel.html#c5v29",
+                    build_paths.site_href("MAM-with-doc/F1-Daniel.html#c5v29"),
                 ),
                 ".",
             ]
@@ -242,7 +242,7 @@ def _note_translations():
                 "(version unspecified in the MAM note). ",
                 link(
                     "MAM with doc — Daniel 5:7",
-                    "https://bdenckla.github.io/MAM-basics/MAM-with-doc/F1-Daniel.html#c5v7",
+                    build_paths.site_href("MAM-with-doc/F1-Daniel.html#c5v7"),
                 ),
                 ".",
             ]
@@ -273,12 +273,12 @@ def _note_translations():
                 "a spelling in the notes, so they are not included in the spelling tables. ",
                 link(
                     "MAM with doc — Daniel 5:7",
-                    "https://bdenckla.github.io/MAM-basics/MAM-with-doc/F1-Daniel.html#c5v7",
+                    build_paths.site_href("MAM-with-doc/F1-Daniel.html#c5v7"),
                 ),
                 " and ",
                 link(
                     "MAM with doc — Daniel 5:29",
-                    "https://bdenckla.github.io/MAM-basics/MAM-with-doc/F1-Daniel.html#c5v29",
+                    build_paths.site_href("MAM-with-doc/F1-Daniel.html#c5v29"),
                 ),
                 ".",
             ]

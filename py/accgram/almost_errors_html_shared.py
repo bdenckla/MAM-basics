@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import re
 
+from accgram import accgram_site
 from accgram import ob_error_context
 from accgram import ob_tree_table
 from accgram import rtms_report
@@ -65,7 +66,12 @@ def verse_links(bcv: str) -> object:
         H.anchor("UXLC", {"href": my_wlc_bcv_str.get_tanach_dot_us_url(bcv)}),
         " | ",
         H.anchor(
-            "MAM", {"href": rtms_report.mam_with_doc_url(bb=bb, chnu=chnu, vrnu=vrnu)}
+            "MAM",
+            {
+                "href": rtms_report.mam_with_doc_href(
+                    folder=accgram_site.FOLDER, bb=bb, chnu=chnu, vrnu=vrnu
+                )
+            },
         ),
     )
     return H.para(links)

@@ -4,6 +4,15 @@ import uxlc_misc.uxlc_utils_html as uxlc_utils_html
 import mb_cmn.bib_locales as tbn
 import uxlc_misc.my_uxlc_book_abbreviations as u_bk_abbr
 from mb_cmn.uxlc_change_url import uxlc_change_url
+from mb_cmn import site_links
+import uxlc_paths
+
+# The folder of the pages whose MAM-with-doc links this module builds, the full records
+# of the ambiguous early meteg cases: a link to another page of the site is relative to
+# it (mb_cmn/site_links.py).
+_FULL_RECORD_FOLDER = site_links.folder_below_root(
+    uxlc_paths.amb_early_mtg_pages_dir() / "full-record"
+)
 
 
 def bcv_with_link_to_tdu(record):
@@ -47,7 +56,9 @@ def _mam_with_doc_url(record):
     # quote matters for exactly one osdf: "E1-Song of Songs" has a space in it.
     page = quote(f"{osdf}.html")
     bcv_part = f"{page}#c{chnu}v{vrnu}"
-    return f"https://bdenckla.github.io/MAM-basics/MAM-with-doc/{bcv_part}"
+    return site_links.site_href_from_folder(
+        _FULL_RECORD_FOLDER, f"MAM-with-doc/{bcv_part}"
+    )
 
 
 def _url_for_uxlc_change(release_and_id):

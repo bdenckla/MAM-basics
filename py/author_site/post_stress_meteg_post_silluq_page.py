@@ -14,6 +14,7 @@ from html import escape
 from accgram import post_stress_meteg_model as psm
 from accgram.almost_errors_html_shared import wrap_hebrew_runs
 from author_site import site_data
+from mb_cmn import site_links
 from mb_author import author
 from mb_misc import mb_html
 from py_html.my_html_span_romanized import rmn
@@ -68,8 +69,8 @@ _POST_SILLUQ_BROADER_AMBIGUITY_FOOTNOTE_ID = "broader-ambiguity-footnote"
 # MAM-for-Sefaria's own files, and author_misc.mam4sef_survey._silluq_cases raises unless
 # their atoms are MAM-simple's less each meteg after the silluq, so this page states the
 # omission without a check of its own.
-_MAM_FOR_SEFARIA_SILLUQ_URL = (
-    "https://bdenckla.github.io/MAM-basics/MAM-for-Sefaria/#meteg-after-silluq"
+_MAM_FOR_SEFARIA_SILLUQ_URL = site_links.site_href_from_folder(
+    site_data.POST_STRESS_METEG_DIR, "MAM-for-Sefaria/index.html#meteg-after-silluq"
 )
 
 _ROM_MERKHA = _author_romanization("merkha")

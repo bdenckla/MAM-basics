@@ -43,16 +43,17 @@ asserts that order for every pointed form here.
 FOUR KINDS OF LINK TO RETIRED HOSTS ARE REPOINTED:
 
 * the 18 links to a verse of the retired MAM-with-doc site go to the same page
-  and anchor under https://bdenckla.github.io/MAM-basics/MAM-with-doc/;
+  and anchor in this site's MAM-with-doc/;
 * footnote 5's link to the review of Chabad's web Tanakh goes to the sibling
   page in this directory;
 * the link to section 325 of the adaptation of Yeivin's Introduction goes to
-  that section's page under https://bdenckla.github.io/MAM-basics/yeivin-itm/;
+  that section's page in this site's yeivin-itm/;
 * footnote 6's link to Exodus 20 in the Ashkenazic version of Phonetic MAM goes
-  to its page under https://bdenckla.github.io/MAM-basics/phonetic-mam/, with
+  to its page in this site's phonetic-mam/, with
   ?pronunciation=ashkenazic, the form the ArtScroll review's link takes.
 
-Every other link is reproduced as it is.
+Every other link is reproduced as it is.  The links into this site are relative
+(misc_site.href), as Ben asked on 2026-11-11 of every link within the site.
 
 INVISIBLE CHARACTERS. The document's 143 no-break spaces are ordinary spaces
 here, as the urwotm series' importer made them: Google left them at the
@@ -89,6 +90,7 @@ THE REST IS HOUSE STYLE, not rewording:
   Hebrew in consensus_to_ascii (py/author_boj_util/author.py) and its source.
 """
 
+from author_misc import misc_site
 from mb_author import author
 from mb_cmn import uni_denorm
 from mb_misc import mb_html
@@ -276,67 +278,31 @@ _READER = author.book_title("Reader")
 
 _URL_WS_MAM = "https://he.wikisource.org/wiki/%D7%9E%D7%A7%D7%A8%D7%90_%D7%A2%D7%9C_%D7%A4%D7%99_%D7%94%D7%9E%D7%A1%D7%95%D7%A8%D7%94#%D7%A8%D7%90%D7%A9"
 _URL_UXLC_2021_02_22_1 = "https://tanach.us/Changes/2021.04.01%20-%20Changes/2021.04.01%20-%20Changes.xml?2021.02.22-1"
-_URL_MWD_GEN_1_11 = (
-    "https://bdenckla.github.io/MAM-basics/MAM-with-doc/A1-Genesis.html#c1v11"
-)
+_URL_MWD_GEN_1_11 = misc_site.href("MAM-with-doc/A1-Genesis.html#c1v11")
 _URL_UXLC_2021_02_22_2 = "https://tanach.us/Changes/2021.04.01%20-%20Changes/2021.04.01%20-%20Changes.xml?2021.02.22-2"
-_URL_MWD_GEN_2_8 = (
-    "https://bdenckla.github.io/MAM-basics/MAM-with-doc/A1-Genesis.html#c2v8"
-)
+_URL_MWD_GEN_2_8 = misc_site.href("MAM-with-doc/A1-Genesis.html#c2v8")
 _URL_LC_F002A = "https://manuscripts.sefaria.org/leningrad-color/BIB_LENCDX_F002A.jpg"
-_URL_MWD_GEN_2_18 = (
-    "https://bdenckla.github.io/MAM-basics/MAM-with-doc/A1-Genesis.html#c2v18"
-)
+_URL_MWD_GEN_2_18 = misc_site.href("MAM-with-doc/A1-Genesis.html#c2v18")
 _URL_UXLC_2022_07_02_2 = "https://tanach.us/Changes/2022.10.19%20-%20Changes/2022.10.19%20-%20Changes.xml?2022.07.02-2"
-_URL_MWD_GEN_7_19 = (
-    "https://bdenckla.github.io/MAM-basics/MAM-with-doc/A1-Genesis.html#c7v19"
-)
-_URL_MWD_GEN_7_23 = (
-    "https://bdenckla.github.io/MAM-basics/MAM-with-doc/A1-Genesis.html#c7v23"
-)
-_URL_MWD_GEN_15_10 = (
-    "https://bdenckla.github.io/MAM-basics/MAM-with-doc/A1-Genesis.html#c15v10"
-)
-_URL_MWD_GEN_18_15 = (
-    "https://bdenckla.github.io/MAM-basics/MAM-with-doc/A1-Genesis.html#c18v15"
-)
+_URL_MWD_GEN_7_19 = misc_site.href("MAM-with-doc/A1-Genesis.html#c7v19")
+_URL_MWD_GEN_7_23 = misc_site.href("MAM-with-doc/A1-Genesis.html#c7v23")
+_URL_MWD_GEN_15_10 = misc_site.href("MAM-with-doc/A1-Genesis.html#c15v10")
+_URL_MWD_GEN_18_15 = misc_site.href("MAM-with-doc/A1-Genesis.html#c18v15")
 _URL_UXLC_2024_09_29_1 = "https://tanach.us/Changes/2024.10.19%20-%20Changes/2024.10.19%20-%20Changes.xml?2024.09.29-1"
-_URL_YEIVIN_ITM_325 = (
-    "https://bdenckla.github.io/MAM-basics/yeivin-itm/yeivin_itm-318_344.html#ns325"
-)
-_URL_MWD_GEN_22_12 = (
-    "https://bdenckla.github.io/MAM-basics/MAM-with-doc/A1-Genesis.html#c22v12"
-)
+_URL_YEIVIN_ITM_325 = misc_site.href("yeivin-itm/yeivin_itm-318_344.html#ns325")
+_URL_MWD_GEN_22_12 = misc_site.href("MAM-with-doc/A1-Genesis.html#c22v12")
 _URL_LC_F012A = "https://manuscripts.sefaria.org/leningrad-color/BIB_LENCDX_F012A.jpg"
-_URL_MWD_GEN_32_24 = (
-    "https://bdenckla.github.io/MAM-basics/MAM-with-doc/A1-Genesis.html#c32v24"
-)
+_URL_MWD_GEN_32_24 = misc_site.href("MAM-with-doc/A1-Genesis.html#c32v24")
 _URL_LC_F028A = "https://manuscripts.sefaria.org/leningrad-color/BIB_LENCDX_F028A.jpg"
-_URL_MWD_GEN_45_6 = (
-    "https://bdenckla.github.io/MAM-basics/MAM-with-doc/A1-Genesis.html#c45v6"
-)
-_URL_MWD_EXOD_14_13 = (
-    "https://bdenckla.github.io/MAM-basics/MAM-with-doc/A2-Exodus.html#c14v13"
-)
-_URL_MWD_EXOD_20_2 = (
-    "https://bdenckla.github.io/MAM-basics/MAM-with-doc/A2-Exodus.html#c20v2"
-)
+_URL_MWD_GEN_45_6 = misc_site.href("MAM-with-doc/A1-Genesis.html#c45v6")
+_URL_MWD_EXOD_14_13 = misc_site.href("MAM-with-doc/A2-Exodus.html#c14v13")
+_URL_MWD_EXOD_20_2 = misc_site.href("MAM-with-doc/A2-Exodus.html#c20v2")
 _URL_UXLC_2021_05_19_8 = "https://tanach.us/Changes/2021.10.19%20-%20Changes/2021.10.19%20-%20Changes.xml?2021.05.19-8"
-_URL_MWD_EXOD_20_3 = (
-    "https://bdenckla.github.io/MAM-basics/MAM-with-doc/A2-Exodus.html#c20v3"
-)
-_URL_MWD_EXOD_20_4 = (
-    "https://bdenckla.github.io/MAM-basics/MAM-with-doc/A2-Exodus.html#c20v4"
-)
-_URL_MWD_EXOD_32_17 = (
-    "https://bdenckla.github.io/MAM-basics/MAM-with-doc/A2-Exodus.html#c32v17"
-)
-_URL_MWD_EXOD_33_16 = (
-    "https://bdenckla.github.io/MAM-basics/MAM-with-doc/A2-Exodus.html#c33v16"
-)
-_URL_MWD_NUM_12_9 = (
-    "https://bdenckla.github.io/MAM-basics/MAM-with-doc/A4-Numbers.html#c12v9"
-)
+_URL_MWD_EXOD_20_3 = misc_site.href("MAM-with-doc/A2-Exodus.html#c20v3")
+_URL_MWD_EXOD_20_4 = misc_site.href("MAM-with-doc/A2-Exodus.html#c20v4")
+_URL_MWD_EXOD_32_17 = misc_site.href("MAM-with-doc/A2-Exodus.html#c32v17")
+_URL_MWD_EXOD_33_16 = misc_site.href("MAM-with-doc/A2-Exodus.html#c33v16")
+_URL_MWD_NUM_12_9 = misc_site.href("MAM-with-doc/A4-Numbers.html#c12v9")
 _URL_UXLC_2023_05_17_1 = "https://tanach.us/Changes/2023.07.04%20-%20Changes/2023.07.04%20-%20Changes.xml?2023.05.17-1"
 _URL_UXLC_2022_04_01_5 = "https://tanach.us/Changes/2022.07.04%20-%20Changes/2022.07.04%20-%20Changes.xml?2022.04.01-5"
 _URL_UXLC_2022_04_01_6 = "https://tanach.us/Changes/2022.07.04%20-%20Changes/2022.07.04%20-%20Changes.xml?2022.04.01-6"
@@ -347,7 +313,9 @@ _URL_UXLC_2022_04_01_17 = "https://tanach.us/Changes/2022.07.04%20-%20Changes/20
 _URL_UXLC_2022_07_02_21 = "https://tanach.us/Changes/2022.10.19%20-%20Changes/2022.10.19%20-%20Changes.xml?2022.07.02-21"
 _URL_CHABAD_CTR = "https://www.chabad.org/torah-texts/63255/Tanakh-The-Hebrew-Bible"
 _URL_REVIEW_OF_CTR = "./rocc_0_review_of_ctr.html"
-_URL_PHONETIC_MAM_EXOD_20 = "https://bdenckla.github.io/MAM-basics/phonetic-mam/tnkh/A2-Exodus/20.html?pronunciation=ashkenazic"
+_URL_PHONETIC_MAM_EXOD_20 = misc_site.href(
+    "phonetic-mam/tnkh/A2-Exodus/20.html?pronunciation=ashkenazic"
+)
 
 _H3_INTRO = "Introduction"
 _INTRO_P01 = (
