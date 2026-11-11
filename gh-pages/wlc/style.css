@@ -114,6 +114,12 @@ th.centered, td.centered { text-align: center; }
    change type such as acc-chng, after whose hyphen a browser may otherwise break. Same shape
    as the numeric and centered rules above: a class on the cell, no per-table selector. */
 th.nowrap, td.nowrap { white-space: nowrap; }
+/* A verse reference just right of its pointed-Hebrew form, as Ben's rule of 2026-09-20 arranges
+   such a table (the hebrew-prose skill's references/rendered-prose.md, "A pointed-Hebrew table
+   keeps its Hebrew/BCV pair together"): modest left padding separates the reference from the
+   Hebrew without breaking up the pair. The 420422 lists pair it with nowrap above, which keeps
+   the reference on one line. */
+th.bcv-beside-hebrew, td.bcv-beside-hebrew { padding-left: 0.7em; }
 table.centered-table { margin-left: auto; margin-right: auto; }
 /* maqaf-nonfinal-accents.html: the accent-pair table's headings are abbreviated so five columns
    fit without the counts drifting apart, with the full wording on hover.  Same affordance as

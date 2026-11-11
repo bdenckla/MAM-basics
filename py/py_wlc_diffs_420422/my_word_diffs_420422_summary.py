@@ -40,7 +40,7 @@ def _row_cell_for_hdr_str(record, hdr_str):
         return wlc_utils_html.table_datum(datum_contents)
     if hdr_str == "bcv":
         anchor = urlg.bcv_with_link_to_tdu(record)
-        return wlc_utils_html.table_datum(anchor, {"class": "nowrap"})
+        return wlc_utils_html.table_datum(anchor, {"class": "nowrap bcv-beside-hebrew"})
     if hdr_str == "4.20 uword":
         ab_uword = record["ab-uword"]
         a_uword, _b_uword = ab_uword.split("\n")
@@ -85,4 +85,7 @@ def _row_for_header():
     return wlc_utils_html.table_row(cells_for_header)
 
 
-_STRS_FOR_CELLS_FOR_HEADER = ["bcv", "difftype", "4.20 uword", "remark"]
+# The pointed Hebrew just left of its verse, then the Latin-alphabet columns: Ben's rule of
+# 2026-09-20, in the hebrew-prose skill's references/rendered-prose.md, "A pointed-Hebrew
+# table keeps its Hebrew/BCV pair together".
+_STRS_FOR_CELLS_FOR_HEADER = ["4.20 uword", "bcv", "difftype", "remark"]
