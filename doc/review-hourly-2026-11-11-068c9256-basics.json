@@ -1,0 +1,162 @@
+{
+  "schema": "bounded-public-page-omission-screen-v1",
+  "recorded_utc": "2026-11-11T00:20:18.460281+00:00",
+  "source_window": {
+    "base": "e4533ff6844355d3dcb47f9b7e2e4d3d926e9267",
+    "head": "068c9256038a98150d75ed3553a64745a49d38fb",
+    "commits": 2,
+    "paths": [
+      "py/author_site/post_stress_meteg_post_silluq_page.py",
+      "gh-pages/post-stress-meteg-post-silluq.html"
+    ]
+  },
+  "receipt_parent": "068c9256038a98150d75ed3553a64745a49d38fb",
+  "reconciled_status": "832e020b40101a4016927c14dc3742d84600fbd5",
+  "disposition": "PASS at bounded depth; no consequential defect or product repair.",
+  "anchors_preserved": {
+    "overall_reviewed": "210affe3ac2931473bead0de839be0de08309e3d",
+    "broad_tested": "73fbf0406b8cf843b2aabcbb8ef0b558d0fa7148"
+  },
+  "execution": [
+    {
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_authored.py",
+        "gen-site",
+        "--trust-surveys"
+      ],
+      "cwd": "/workspace/scratch/basics-068c9256-checkout",
+      "exit_code": 0,
+      "elapsed_seconds": 5.817456,
+      "recorded_utc": "2026-11-11T00:16:51.814504+00:00",
+      "status": ""
+    },
+    {
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_authored.py",
+        "gen-mam-for-sefaria-doc"
+      ],
+      "cwd": "/workspace/scratch/basics-068c9256-checkout",
+      "exit_code": 0,
+      "elapsed_seconds": 8.188207,
+      "recorded_utc": "2026-11-11T00:17:00.025387+00:00",
+      "status": ""
+    },
+    {
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        "py/tests/test_post_stress_meteg_annotations.py",
+        "py/tests/test_post_stress_meteg_plain_word.py",
+        "py/tests/test_prose_mark_order.py",
+        "py/tests/test_prose_conventions.py",
+        "py/tests/test_transliterations.py",
+        "py/tests/test_sefaria_silluq_documentation.py",
+        "-q"
+      ],
+      "cwd": "/workspace/scratch/basics-068c9256-checkout",
+      "exit_code": 0,
+      "elapsed_seconds": 25.896233,
+      "recorded_utc": "2026-11-11T00:17:25.939090+00:00",
+      "status": ""
+    },
+    {
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "-m",
+        "black",
+        "--check",
+        "py/author_site/post_stress_meteg_post_silluq_page.py"
+      ],
+      "cwd": "/workspace/scratch/basics-068c9256-checkout",
+      "exit_code": 0,
+      "elapsed_seconds": 0.247863,
+      "recorded_utc": "2026-11-11T00:17:26.201636+00:00",
+      "status": ""
+    }
+  ],
+  "test_counts": {
+    "passed": 14,
+    "pytest_seconds": 25.73,
+    "owner_reported_tests": 20,
+    "populations_not_conflated": true
+  },
+  "independent_delta_and_target": {
+    "result": "PASS",
+    "source_head": "068c9256038a98150d75ed3553a64745a49d38fb",
+    "delta": "Only the new URL constant and final phi4 heading/two paragraphs differ; every other source AST and HTML byte outside phi4 is unchanged.",
+    "hebrew_codepoints_preserved": true,
+    "old_ids_and_links_preserved": true,
+    "only_added_link": "https://bdenckla.github.io/MAM-basics/MAM-for-Sefaria/#meteg-after-silluq",
+    "target": {
+      "path": "gh-pages/MAM-for-Sefaria/index.html",
+      "blob": "a2f710859b6d3054743136c8f1803c42ff4b7c45",
+      "bytes": 43103,
+      "sha256": "b4683d3e9b498982e766580344044e5b56464df06fa0c3367a5b16bcd2aea763",
+      "fragment": "meteg-after-silluq",
+      "case_refs": [
+        "1Kgs.7.37",
+        "Job.4.12"
+      ]
+    },
+    "omission_check": "Maintained gen-mam-for-sefaria-doc executes author_misc.mam4sef_survey.survey/_silluq_cases against committed CSV/CSV-AJF and canonical MAM-simple; selected maintained documentation test independently compares all annotation branches/exporter projections to the rendered case table.",
+    "page_sha256": "d9f499e319b161cf3d9cf719182bbacb7c9d429390f14f8d7d52702a112bfd5a",
+    "elapsed_seconds": 0.056453,
+    "output_differences": [],
+    "limits": "Committed public data/structural consistency only; no manuscript/editorial, live website/browser, fresh export, broad-suite or historical-anchor claim. Owner-reported 20 tests remains attributed; actual selection is recorded separately."
+  },
+  "coordinator_review": {
+    "attribution": "Coordinating connector reviewer supplied frozen endpoint disposition and read-only GitHub CI observations; execution and independent delta/target checks are this executor's evidence.",
+    "disposition": "No consequential introduced defect.",
+    "source_scope": "Two commits/two paths: phi4 now says the MAM dataset and explains/links the MAM-for-Sefaria omissions. Resolved owner prose kept exactly; no naming/manuscript question reopened.",
+    "ci": {
+      "statuses": 0,
+      "check_runs": 0,
+      "meaning": "Absence observations, not a CI pass."
+    }
+  },
+  "diagnostics": {
+    "failures": [],
+    "output_differences": [],
+    "completed_checks_repeated": false
+  },
+  "checker": "doc/review-hourly-2026-11-11-068c9256-basics-execution-check.py",
+  "evidence": {
+    "path": "doc/review-hourly-2026-11-11-068c9256-basics-evidence.zip",
+    "bytes": 20172,
+    "sha256": "68abe24e6c745c2e49c71df566d144ffd871e66af7ac1592b84a58a8a72c5179",
+    "members": 16,
+    "integrity": "All CRCs and manifest sizes/SHA-256 verified."
+  },
+  "status_import": {
+    "source_commit": "832e020b40101a4016927c14dc3742d84600fbd5",
+    "immutable_link_repairs": [
+      {
+        "old": "review-hourly-2026-11-10-e4533ff6-basics.json",
+        "new": "https://github.com/bdenckla/MAM-basics/blob/832e020b40101a4016927c14dc3742d84600fbd5/doc/review-hourly-2026-11-10-e4533ff6-basics.json"
+      },
+      {
+        "old": "review-hourly-2026-11-10-e4533ff6-basics.json",
+        "new": "https://github.com/bdenckla/MAM-basics/blob/832e020b40101a4016927c14dc3742d84600fbd5/doc/review-hourly-2026-11-10-e4533ff6-basics.json"
+      },
+      {
+        "old": "review-hourly-2026-11-10-e4533ff6-basics.json",
+        "new": "https://github.com/bdenckla/MAM-basics/blob/832e020b40101a4016927c14dc3742d84600fbd5/doc/review-hourly-2026-11-10-e4533ff6-basics.json"
+      },
+      {
+        "old": "review-hourly-2026-11-10-e4533ff6-basics-evidence.zip",
+        "new": "https://github.com/bdenckla/MAM-basics/blob/832e020b40101a4016927c14dc3742d84600fbd5/doc/review-hourly-2026-11-10-e4533ff6-basics-evidence.zip"
+      }
+    ],
+    "all_historical_rows_preserved": true,
+    "former_latest_rows_retained_as_history": true
+  },
+  "publication": {
+    "branch": "review-hourly-20261111-068c9256-basics-receipts",
+    "parent": "068c9256038a98150d75ed3553a64745a49d38fb",
+    "manual_only_pages_workflow_verified": true,
+    "fresh_isolated_branch": true
+  },
+  "limits": "Committed public-data/structural checks only; no manuscript/editorial/live-site/browser or broad-suite result, fresh export/source refresh, font/baseline/hbofonts, outside-agent communication, main/shared integration, deployment/dispatch or scheduling. Historical gaps unchanged."
+}
