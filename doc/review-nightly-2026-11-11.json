@@ -1,0 +1,90 @@
+{
+  "date_utc": "2026-11-11",
+  "repository": "bdenckla/MAM-basics",
+  "source": "354cc0b7077cb46ba5d7cfc8dd9b453ff68c7bf0",
+  "receipt_parent": "745d79ecb17a37a9ed005ae7930485cd9bc831e6",
+  "result": "Maintained mega, complete suite and changed-source Black pass. Initial runtime activation error recovered; no product repair.",
+  "reviewed_through": "210affe3ac2931473bead0de839be0de08309e3d",
+  "last_broad_tested": "354cc0b7077cb46ba5d7cfc8dd9b453ff68c7bf0",
+  "input_scope": "Exact committed source and a separate committed sibling input; private identity/details retained privately. Home and interactive work preserved.",
+  "commands": [
+    {
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "-B",
+        "py/main_0_mega.py"
+      ],
+      "exit": 1,
+      "seconds": 2.060969,
+      "started_utc": "2026-11-11T07:33:28.002126+00:00",
+      "finished_utc": "2026-11-11T07:33:30.063267+00:00",
+      "clean_after_command": true
+    },
+    {
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "-B",
+        "py/main_0_mega.py"
+      ],
+      "exit": 0,
+      "seconds": 508.271814,
+      "started_utc": "2026-11-11T07:34:40.085815+00:00",
+      "finished_utc": "2026-11-11T07:43:08.357909+00:00",
+      "clean_after_command": false
+    },
+    {
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "-B",
+        "py/main_test.py"
+      ],
+      "exit": 0,
+      "seconds": 376.894867,
+      "started_utc": "2026-11-11T07:47:13.691556+00:00",
+      "finished_utc": "2026-11-11T07:53:30.586788+00:00",
+      "clean_after_command": true
+    },
+    {
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "-B",
+        "-m",
+        "black",
+        "--check",
+        "py/author_misc/review_of_israel_bible.py",
+        "py/author_site/site_data.py",
+        "py/main_authored.py",
+        "py/tests/test_israel_bible_review_mam_forms.py",
+        "py/tests/test_shared_html_styles.py"
+      ],
+      "exit": 0,
+      "seconds": 0.344085,
+      "started_utc": "2026-11-11T07:53:42.175151+00:00",
+      "finished_utc": "2026-11-11T07:53:42.519581+00:00",
+      "clean_after_command": true
+    }
+  ],
+  "counts": {
+    "mega_completed_steps": 65,
+    "suite_passed": 1447,
+    "suite_skipped": 5,
+    "suite_failed": 0,
+    "taamey_d_pass": 61,
+    "taamey_d_fail": 0,
+    "taamey_d_skip": 0,
+    "black_files": 5
+  },
+  "taamey_d": "QA and immutable release-check passed; read-only corpus reports REFRESH PENDING. No refresh, baseline acceptance or font build.",
+  "skips": "Five edition-transcription controls intentionally skip known divergent strands; they are existing findings, not missing-data coverage or passes.",
+  "recovery": "First mega exited 1 before step one: inactive saved shell selected system Graphviz 2.42.4. Restored existing .cloud-setup activation and verified exact pinned 16.0.0 (20260814.1018); the one corrected mega completed. No package install or pin change.",
+  "outputs": "Eight SVGs preserved with exact before/after bytes. Six passed strict geometry/Times-alias comparison; two needed recognition of three longer existing cubic edge routes. Every element, label, ID, link, color and nongeometric attribute agrees. Conservative scratch assertion failures remain recorded as reviewer errors. Only these explained outputs restored; suite and Black write-neutral.",
+  "bounded_port": "Closes pending 354cc0b7 runtime checks at this tested source: gen-misc/gen-site reproduce the page and indexes; both MAM-form tests and shared-style/site/HTML checks passed in the complete suite. Coordinator static review remains attributed; no new source/editorial/browser judgment.",
+  "limits": "Overall reviewed anchor and prior source/live/browser/editorial gaps stay unchanged. Regeneration is not manuscript or substantive editorial proof. No hbofonts work, source refresh, bot publication, main integration or deployment.",
+  "evidence": {
+    "path": "review-nightly-2026-11-11-evidence.zip",
+    "bytes": 87741,
+    "sha256": "3bf7a71e1edd4b953f8a39d88864fe85d9bf62ac05750df58daeca8bf335a295",
+    "payload_files": 31
+  },
+  "publication_preflight": "Remote branch absent, one owned writer, receipt/source workflow manual-only; no dependent job or deployment. No dispatch made."
+}
