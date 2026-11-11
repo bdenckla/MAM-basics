@@ -15,10 +15,10 @@
       "resolved_title": "מקרא על פי המסורה/Decalogue",
       "page_id": 377858,
       "requested_title": "Decalogue",
-      "revision_id": 3088722,
-      "revision_timestamp": "2026-10-14T18:50:57Z",
+      "revision_id": 3101884,
+      "revision_timestamp": "2026-11-07T16:07:40Z",
       "byte_size": 19695,
-      "sha256": "44403c25961c55d0f3297d44c81ea9785940ccba638a4eb6371c4e1264e4bae4"
+      "sha256": "dac5df211e376abe85081e8deab21cdc0df8bc7ebd417f9e717250ae99bbd3ff"
     },
     "decalogue-base": {
       "resolved_title": "עשרת הדברות בסיס/טעמים",
@@ -78,10 +78,10 @@
       "resolved_title": "שירת האזינו/צורת השיר",
       "page_id": 314798,
       "requested_title": "שירת האזינו/צורת השיר",
-      "revision_id": 2808225,
-      "revision_timestamp": "2023-10-09T19:16:56Z",
-      "byte_size": 25396,
-      "sha256": "28c41dee6ce9d4fe524f815b7f858eb72cff4ddecaf9652158dc61d22bc3a6dd"
+      "revision_id": 3101219,
+      "revision_timestamp": "2026-11-03T18:11:03Z",
+      "byte_size": 25402,
+      "sha256": "e10147dcdf2bda34294838646d67f83c8e913f37b8624af4e035215da6f9f05d"
     },
     "song-haazinu-alternates": {
       "resolved_title": "שירת האזינו/צורות נוספות",
