@@ -118,3 +118,11 @@ without such a line to him.
    repository's code writes from Ben's prose do, the post-stress-meteg pages among them, or
    CC-BY-SA 4.0? The module's notes are GPL-3.0 already, as part of `py/`, and this folder,
    `in/israel-bible-review/`, has had no row since the port.
+
+   Answered on 2026-11-11. Ben first asked: "What was the license question about? The
+   one-word image? Don't sweat it, isn't that obviously fair use? The 60-or-so words from IB
+   also seem clearly fair use, but they are WLC not really IB anyway." Told that the question
+   concerned the terms of his own prose, since the crop's row and the terms of the quoted forms
+   already covered those two points, he answered "GPL-3.0". `DATA-LICENSES.md` now gives the
+   page and its stylesheet GPL-3.0, and this folder a GPL-3.0 row of its own; the crop's row is
+   unchanged.
