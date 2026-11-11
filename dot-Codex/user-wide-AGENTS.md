@@ -354,6 +354,10 @@ Begin every final message with `# Report: <subject>`, with nothing above it, and
 in the turn. Put the direct answer immediately below that heading. The heading names the report's
 subject rather than using a bare `# Report`.
 
+End every final message with what remains: each next step, who takes it and what starts it, or a
+plain statement that nothing remains. Ben, 2026-11-10: "Please move things forward with suggested
+next steps, or definitively say there are no next steps?"
+
 ### Claude Code only: decisions go in the chat message
 
 Put each decision Ben must make in the chat message itself: what raises it, what each choice
