@@ -74,6 +74,26 @@ _PAGES_FOR_OUTSIDE_LINKS = {
         " pages moved into post-stress-meteg/ on 2026-11-11, the one page of theirs that Ben"
         " thinks may be linked from outside the site"
     ),
+    # The seven CLC stubs that py/clc/clc_index.py's write_legacy_redirects writes.  Ben,
+    # 2026-11-11, of a report recommending these entries: "I authorize you to do those
+    # improvements you recommend."
+    **{
+        f"uxlc/clc/{name}": (
+            "a stub that py/main_clc.py all writes at the address this CLC page had from"
+            " 2026-09-03 until its move to clc/ on 2026-10-08; UXLC-utils' frozen redirect"
+            " stubs (in/uxlc_utils_redirect_pages.json) forward the page's older address"
+            " here, so py/tests/test_redirect_manifest.py requires it"
+        )
+        for name in (
+            "Genesis.html",
+            "Exodus-20.html",
+            "Exodus-20-long-notes.html",
+            "Deuter-5.html",
+            "Deuter-5-long-notes.html",
+            "2Samuel.html",
+            "Proverbs.html",
+        )
+    },
 }
 
 
