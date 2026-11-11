@@ -68,6 +68,17 @@ _CSS_HREF = "../two_col_style.css"
 _ARROW_CSS_HREF = "../../near-aleppo/" + link_presentation.STYLESHEET
 _SITE_DIRECTORY = "MAM-with-doc/foi"
 
+_INDEX_STYLE = """\
+table { margin-inline: auto; }
+th, td {
+    text-align: start;
+    vertical-align: top;
+    padding-block: 0.3em;
+    overflow-wrap: anywhere;
+}
+th { border-bottom: 1px solid; }
+"""
+
 
 def _slash_str_from_path_parts(path_parts):
     assert not any(("/" in x for x in path_parts))
@@ -86,29 +97,29 @@ def _rm_html_single(html_el):
     return _rm_html(html_el.get("contents", ()))
 
 
-def _licont_for_outspec(outspec):
+def _index_row(outspec):
     outfile_stem, _foi_paths = outspec
     outfilename_for_html = _outfilename_for_html(outfile_stem)
     link = mb_html.anchor_h(outfile_stem, outfilename_for_html)
-    return [link, " — ", _INDEX_DESCRIPTIONS[outfile_stem]]
-
-
-def _unordered_list_of_links_to_html(outspecs):
-    liconts_for_outspecs = tuple(map(_licont_for_outspec, outspecs))
-    return mb_html.unordered_list(liconts_for_outspecs)
+    return mb_html.table_row_of_data((link, _INDEX_DESCRIPTIONS[outfile_stem]))
 
 
 def _write_index_dot_html(outspecs):
     outspecs = sorted(outspecs)
     _check_index_descriptions(outspecs)
-    body_contents = _foi_body_wrapper(_unordered_list_of_links_to_html(outspecs))
+    headers = mb_html.table_row_of_headers(("Feature", "Description"))
+    table = mb_html.table(
+        (headers, *map(_index_row, outspecs)), {"class": "border-collapse"}
+    )
     write_ctx = mb_html.WriteCtx(
         "MAM features of interest",
         f"{_OUT_DIR_PATH}/index.html",
+        head_style=_INDEX_STYLE,
         css_hrefs=(_CSS_HREF,),
         html_comment=provenance.generated_html_comment(__file__),
+        viewport=True,
     )
-    _write_with_arrow_links(body_contents, write_ctx, "index.html")
+    _write_with_arrow_links(_foi_body_wrapper(table), write_ctx, "index.html")
 
 
 def _check_index_descriptions(outspecs):
