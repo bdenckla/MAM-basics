@@ -57,7 +57,14 @@ def _require_page(name):
 
 
 def write_legacy_redirects():
-    """Preserve the old reading and apparatus URLs, including verse fragments."""
+    """Preserve the old reading and apparatus URLs, including verse fragments.
+
+    The CLC was published at these addresses from 2026-09-03 until its move to
+    gh-pages/clc/ on 2026-10-08, and UXLC-utils' frozen redirect stubs
+    (in/uxlc_utils_redirect_pages.json) forward its older addresses to them, so
+    py/tests/test_redirect_manifest.py requires every stub.  No page of the site links
+    them; the HTML checker's _PAGES_FOR_OUTSIDE_LINKS exempts them from its orphan rule.
+    """
     legacy_dir = paths.gh_pages_dir() / "uxlc" / "clc"
     legacy_dir.mkdir(parents=True, exist_ok=True)
     for name in _LEGACY_HTML_NAMES:
