@@ -90,7 +90,9 @@ words are the searchable anchors.
 
 ## Ben reopened finding 11.2 on 2026-10-08
 
-Recorded by Claude on 2026-10-08, executing `doc/PLAN-maintenance-follow-up-2026-10-08.md`,
+Recorded by Claude on 2026-10-08, executing
+[`doc/PLAN-maintenance-follow-up-2026-10-08.md`](https://github.com/bdenckla/MAM-basics/blob/462984bb567a6498fd4f2d7ef00e3186fcd00f02/doc/PLAN-maintenance-follow-up-2026-10-08.md)
+([update](https://github.com/bdenckla/MAM-basics/blob/462984bb567a6498fd4f2d7ef00e3186fcd00f02/doc/PLAN-maintenance-follow-up-2026-10-08-update.md)),
 workstream B, in a Claude cloud session. Finding 11.2 had put five safeguards in the shared
 body's “Linked-worktree safeguards shared by Claude and Codex”. Ben's reply to the 2026-10-07
 maintenance report, "pursue all of those trims", approved moving that section and the

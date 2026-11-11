@@ -822,7 +822,8 @@ the policy file's comments. No item is left unfixed.
    `provenance` named page id 344500 and revision 3025606, which `in/mam-ws-special/manifest.json`
    records for the same page. Later on 2026-10-07 the file and its row were deleted, and its
    readers moved to that page's mirror, `in/mam-ws-special/decalogue-base.mediawiki`, which the
-   `in/mam-ws-special/` row covers ([PLAN-refresh-by-judgment.md](PLAN-refresh-by-judgment.md),
+   `in/mam-ws-special/` row covers
+   ([PLAN-refresh-by-judgment.md](https://github.com/bdenckla/MAM-basics/blob/462984bb567a6498fd4f2d7ef00e3186fcd00f02/doc/PLAN-refresh-by-judgment.md),
    wave 5, item 2).
 2. **2.2: fixed in `2efd5de5`.** Rows 84 and 91 give MAM's CC-BY-SA 4.0 to the Hebrew that a file or
    page quotes from MAM.
@@ -1290,3 +1291,38 @@ the independent product, licensing, privacy, tool and data findings. Original nu
 so surviving substantive citations retain their meaning. The complete original review and update
 remain at the immutable links in the preceding archival entry. This request is the exception to
 the usual rule that a tracked finished base stays unchanged.
+
+## Archived receipt references, 2026-11-11
+
+Recorded by Claude (Opus 5.5) on 2026-11-11, New York time, after Ben approved the retirement that
+day. Three finished plans that entries above cite have been retired from the tracked tree
+with their updates. Each family remains at `462984bb567a6498fd4f2d7ef00e3186fcd00f02`:
+
+- The entries "Archived receipt references, 2026-10-09" and "Archived receipt references,
+  2026-10-11" were recorded "in the cloud session that executed workstream C of
+  `doc/PLAN-maintenance-follow-up-2026-10-08.md`" and "in the session that executed item 2 of
+  the list under "Ben's decision of 2026-10-09 on that answer" in
+  `doc/PLAN-maintenance-follow-up-2026-10-08.md`". That plan remains as the archived
+  [maintenance follow-up plan](https://github.com/bdenckla/MAM-basics/blob/462984bb567a6498fd4f2d7ef00e3186fcd00f02/doc/PLAN-maintenance-follow-up-2026-10-08.md)
+  with its [update](https://github.com/bdenckla/MAM-basics/blob/462984bb567a6498fd4f2d7ef00e3186fcd00f02/doc/PLAN-maintenance-follow-up-2026-10-08-update.md).
+- Item 2.1 under "Finding 2: `DATA-LICENSES.md`" in the entry "Remediation executed,
+  2026-10-07" ends "which the `in/mam-ws-special/` row covers", citing
+  `PLAN-refresh-by-judgment.md`, "wave 5, item 2". That link was relative; it now leads to the
+  archived
+  [refresh-by-judgment plan](https://github.com/bdenckla/MAM-basics/blob/462984bb567a6498fd4f2d7ef00e3186fcd00f02/doc/PLAN-refresh-by-judgment.md),
+  whose [update](https://github.com/bdenckla/MAM-basics/blob/462984bb567a6498fd4f2d7ef00e3186fcd00f02/doc/PLAN-refresh-by-judgment-update.md) is beside it.
+- Three entries cite `doc/PLAN-remediate-review-findings-2026-10-04.md`. "The four
+  post-maqaf ketiv-first templates renamed on Wikisource, 2026-10-06" says "`efe58d21` gave
+  them MAM's order, and line 491 of `doc/PLAN-remediate-review-findings-2026-10-04.md` the
+  same". "Ben's approval of the remediation plan, 2026-10-06" was recorded by "the session
+  that wrote `doc/PLAN-remediate-review-findings-2026-10-04.md`, pushed as `2af21b46`", and
+  "Remediation executed, 2026-10-07" by "the session that wrote
+  `doc/PLAN-remediate-review-findings-2026-10-04.md` and the entry above". That plan remains
+  as the archived
+  [2026-10-04 remediation plan](https://github.com/bdenckla/MAM-basics/blob/462984bb567a6498fd4f2d7ef00e3186fcd00f02/doc/PLAN-remediate-review-findings-2026-10-04.md)
+  with its [update](https://github.com/bdenckla/MAM-basics/blob/462984bb567a6498fd4f2d7ef00e3186fcd00f02/doc/PLAN-remediate-review-findings-2026-10-04-update.md).
+  The "line 491" of "The four post-maqaf ketiv-first templates renamed on Wikisource,
+  2026-10-06" counts the plan's lines as
+  [`efe58d21`](https://github.com/bdenckla/MAM-basics/blob/efe58d2111d96b63da3e17271db757a4fbe00a15/doc/PLAN-remediate-review-findings-2026-10-04.md)
+  left them. The same line is line 486 at the archive, and line 492 at
+  `6d3426fda4176a9a69f948761490988d8ba43e25`, the full original that the plan's update links.

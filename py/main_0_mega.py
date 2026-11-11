@@ -856,7 +856,8 @@ _STEPS = [
         " tmpl-survey's",
     ),
     # Added 2026-10-26, when gh-pages/MAM-for-Sefaria/index.html stopped being hand-authored
-    # (doc/PLAN-rewrite-MAM-for-Sefaria-encoding-page.md); the same day its listings and its
+    # (https://github.com/bdenckla/MAM-basics/blob/462984bb567a6498fd4f2d7ef00e3186fcd00f02/doc/PLAN-rewrite-MAM-for-Sefaria-encoding-page.md);
+    # the same day its listings and its
     # AJF variant got pages of their own, unicode-names/index.html and ajf/index.html.  The
     # pages read only tracked files, MAM-for-Sefaria/'s and, for the meteg-after-silluq table,
     # MAM-simple/json-vtrad-mam/, so they follow any later rerun of the hand-run

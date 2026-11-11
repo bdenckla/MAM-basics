@@ -86,8 +86,9 @@ and verified.
 
 **Authorization:** Ben instructed Codex on 2026-10-06: “Please make a plan to bake the
 transformations in and execute it across whatever set of sessions and/or sub-agents it needs.”
-The undertaking is recorded in `doc/PLAN-near-aleppo-note-content.md`. Ben's request file
-remains unchanged.
+The undertaking is recorded in
+[`doc/PLAN-near-aleppo-note-content.md`](https://github.com/bdenckla/MAM-basics/blob/462984bb567a6498fd4f2d7ef00e3186fcd00f02/doc/PLAN-near-aleppo-note-content.md).
+Ben's request file remains unchanged.
 
 **Change:** All 1,548 changed notes now contain the reviewed content in the book JSON.
 Parameter 1 remains the near-Aleppo Scripture target. Parameter 2 contains the reviewed
@@ -118,7 +119,9 @@ edition book/long-note HTML remain unchanged. Root Codex independently passed th
 near-Aleppo check, a three-check migration comparison against the execution baseline, and
 the full mega's 60 steps. The full suite passed: 1,054 tests and 60 subtests, with five skips
 and one warning about permission to write pytest's cache. Unrelated products remained
-unchanged. `doc/PLAN-near-aleppo-note-content.md` is marked executed and records the completed
+unchanged.
+[`doc/PLAN-near-aleppo-note-content.md`](https://github.com/bdenckla/MAM-basics/blob/462984bb567a6498fd4f2d7ef00e3186fcd00f02/doc/PLAN-near-aleppo-note-content.md)
+is marked executed and records the completed
 gates and the documentation-only origin update encountered during integration.
 
 ## A97–A101 — Retained-feature list and example, 2026-10-06

@@ -31,3 +31,14 @@ in the archived
 [update](https://github.com/bdenckla/MAM-basics/blob/be9c03961dcd970a620cd66b861b6aeaf0d58af3/doc/dual-agent-review-2026-09-29-turn-01-claude-update.md)
 of that review's
 [turn 01](https://github.com/bdenckla/MAM-basics/blob/be9c03961dcd970a620cd66b861b6aeaf0d58af3/doc/dual-agent-review-2026-09-29-turn-01-claude.md).
+
+## Archived receipt references, 2026-11-11
+
+Recorded by Claude (Opus 5.5) on 2026-11-11, New York time, after Ben approved the retirement that
+day. The 2026-10-11 entry above was recorded "in the session that executed item 2 of the list
+under "Ben's decision of 2026-10-09 on that answer" in
+`doc/PLAN-maintenance-follow-up-2026-10-08.md`". The maintenance follow-up plan has been
+retired from the tracked tree with its update. Both remain at
+`462984bb567a6498fd4f2d7ef00e3186fcd00f02`: the archived
+[maintenance follow-up plan](https://github.com/bdenckla/MAM-basics/blob/462984bb567a6498fd4f2d7ef00e3186fcd00f02/doc/PLAN-maintenance-follow-up-2026-10-08.md)
+and its [update](https://github.com/bdenckla/MAM-basics/blob/462984bb567a6498fd4f2d7ef00e3186fcd00f02/doc/PLAN-maintenance-follow-up-2026-10-08-update.md).

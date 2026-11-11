@@ -541,3 +541,15 @@ away with it, they set a bad precedent."
 
 Verification for this audit: none was owed beyond reading, since it changed nothing; the clone was
 clean on `main` at `d957048a` before and after the review.
+
+## Archived receipt references, 2026-11-11
+
+Recorded by Claude (Opus 5.5) on 2026-11-11, New York time, after Ben approved the retirement that
+day. The entry "The census reads note prose with phase 3's reader, 2026-10-08" says that
+"`doc/PLAN-maintenance-follow-up-2026-10-08.md`, workstream A, carried it out", and the entry
+"Archived receipt references, 2026-10-09" was recorded "in the cloud session that executed
+workstream C of `doc/PLAN-maintenance-follow-up-2026-10-08.md`". The maintenance follow-up
+plan has been retired from the tracked tree with its update. Both remain at
+`462984bb567a6498fd4f2d7ef00e3186fcd00f02`: the archived
+[maintenance follow-up plan](https://github.com/bdenckla/MAM-basics/blob/462984bb567a6498fd4f2d7ef00e3186fcd00f02/doc/PLAN-maintenance-follow-up-2026-10-08.md)
+and its [update](https://github.com/bdenckla/MAM-basics/blob/462984bb567a6498fd4f2d7ef00e3186fcd00f02/doc/PLAN-maintenance-follow-up-2026-10-08-update.md).

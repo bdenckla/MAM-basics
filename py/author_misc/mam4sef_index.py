@@ -1,6 +1,8 @@
 """The encoding of MAM for Sefaria: writes ``gh-pages/MAM-for-Sefaria/index.html``.
 
-Ben's decision of 2026-10-24, which ``doc/PLAN-rewrite-MAM-for-Sefaria-encoding-page.md``
+Ben's decision of 2026-10-24, which the plan
+https://github.com/bdenckla/MAM-basics/blob/462984bb567a6498fd4f2d7ef00e3186fcd00f02/doc/PLAN-rewrite-MAM-for-Sefaria-encoding-page.md
+(update https://github.com/bdenckla/MAM-basics/blob/462984bb567a6498fd4f2d7ef00e3186fcd00f02/doc/PLAN-rewrite-MAM-for-Sefaria-encoding-page-update.md)
 records, was to rewrite this page "from fresh perspective of just documenting what MAM for
 Sefaria contains".  Until then it was a hand-authored page that documented MAM-for-Sefaria by
 its differences from Sefaria's earlier Tanakh, with the figures of Sefaria's 2021 copy of MAM.

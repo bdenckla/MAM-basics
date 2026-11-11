@@ -418,3 +418,14 @@ families remain at `6d3426fda4176a9a69f948761490988d8ba43e25`:
 Current review and testing policy is `doc/review-trial.md`; ordinary review records
 follow `doc/periodic-review.md`. The substantive work and decisions in this receipt
 are unchanged.
+
+## Archived receipt references, 2026-11-11
+
+Recorded by Claude (Opus 5.5) on 2026-11-11, New York time, after Ben approved the retirement that
+day. The entry "Archived receipt references, 2026-10-11" was recorded "in the session that
+executed item 2 of the list under "Ben's decision of 2026-10-09 on that answer" in
+`doc/PLAN-maintenance-follow-up-2026-10-08.md`". The maintenance follow-up plan has been
+retired from the tracked tree with its update. Both remain at
+`462984bb567a6498fd4f2d7ef00e3186fcd00f02`: the archived
+[maintenance follow-up plan](https://github.com/bdenckla/MAM-basics/blob/462984bb567a6498fd4f2d7ef00e3186fcd00f02/doc/PLAN-maintenance-follow-up-2026-10-08.md)
+and its [update](https://github.com/bdenckla/MAM-basics/blob/462984bb567a6498fd4f2d7ef00e3186fcd00f02/doc/PLAN-maintenance-follow-up-2026-10-08-update.md).
