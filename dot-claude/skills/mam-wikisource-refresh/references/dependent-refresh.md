@@ -152,7 +152,17 @@ them. Approval of the refresh approves nothing that they protect.
    post-stress-meteg page checks, Holman's table, and the like. Repair the statement, or the
    derived record and what it records, in one reviewable edit, naming in the commit message the
    change in MAM's text that made it false.
-4. **Ben's published claims wait for him.** (a) The Yeivin fraction pins and quoted forms: if the
+4. **Near-Aleppo's note-review ledger**, `in/near-aleppo/doc-note-review.json`, keeps a reviewed
+   presentation of each MAM note whose target near-Aleppo changes, with a hash of that note's
+   evidence. When a refresh changes such a note, the mega's `near-aleppo-build` step resets the
+   note's row to pending and stops. If the row's committed review does not depend on the changed
+   text, carry it across the edit; if it does, review the row again under the ledger's existing
+   rules, as its other rows of the same shape are reviewed. Commit the ledger on its own, with
+   the reason, check it with
+   `./.venv/Scripts/python.exe py/main_near_aleppo.py --check-note-review`, and resume with
+   `./.venv/Scripts/python.exe py/main_0_mega.py --resume-from near-aleppo-build`. The ledger is
+   not one of Ben's published claims.
+5. **Ben's published claims wait for him.** (a) The Yeivin fraction pins and quoted forms: if the
    mega stops at `yeivin-itm-survey-meteg-claims`, leave `claim_schema.py`, `quoted_forms.py`,
    the footnote modules, `Yeivin-ITM/meteg-claims.json` and `gh-pages/yeivin-itm/` unchanged,
    give Ben `py/main_yeivin_itm.py review-claims`'s report, and finish the refresh locally with
@@ -166,7 +176,7 @@ them. Approval of the refresh approves nothing that they protect.
    the `verse-links` skill produces. Do not write a new pointed ketiv yourself. After his
    decision, change the record's value and parameters as he says, in a commit of their own
    quoting him, and resume from `near-aleppo-build`.
-5. **Taamey D's corpus waits for Ben.** A refresh that changes `out/mam-qere-words.json` can
+6. **Taamey D's corpus waits for Ben.** A refresh that changes `out/mam-qere-words.json` can
    leave the shaping-check corpus in `Taamey-D/qa-in/` due a refresh. The mega's last step,
    `taamey-d-corpus`, then prints each corpus file's drop, add and relabel counts and ends the
    run with a `REFRESH PENDING` banner, without failing it: by Ben's decision of 2026-10-28, a
