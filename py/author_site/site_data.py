@@ -200,13 +200,13 @@ _INTRODUCTION_EXCERPTS = Section(
     entries=(
         _mwd_misc("Gray maqaf", "he_ws_intro_to_mam_gray_maqaf_1.html"),
         _mwd_misc("Paseq and legarmeh", "he_ws_intro_to_mam_pasleg.html"),
-        # Remove this note together with the page caveat only once a human has reviewed
-        # the translation.
-        _mwd_misc(
-            "The געיה marks in MAM",
-            "he_ws_intro_to_mam_gaya_text.html",
-            note=(" (AI-generated translation, not yet reviewed by a human)",),
-        ),
+        # No caveat beside this link: the page opens with its own, saying that its
+        # translation is AI-generated and not yet reviewed by a human.  Ben, 2026-11-11:
+        # "There is no need for this qualification at the index.html level; the
+        # existing qualification if and when the reader gets to the document is fine".
+        # Remove this comment together with the page's caveat, once a human has
+        # reviewed the translation.
+        _mwd_misc("The געיה marks in MAM", "he_ws_intro_to_mam_gaya_text.html"),
         _entry(f"Aleppo Codex {_EM_DASH} Missing Sections", "aleppo/index.html"),
     ),
 )

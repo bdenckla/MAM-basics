@@ -12,8 +12,9 @@ source's wording and drops only its links and its display templates.
 
 The English translation is AI-generated. Claude, an AI model, wrote it on 2026-09-25, at
 Ben Denckla's request, and no human has reviewed it yet. The page says so in a box after
-the H1, and the site index says so beside the link. Remove both caveats and this
-paragraph only once a human has reviewed the translation.
+the H1. The site index gives no caveat beside its link, by Ben's decision of 2026-11-11,
+which the comment above the page's entry in py/author_site/site_data.py quotes. Remove
+the box, this paragraph and that comment only once a human has reviewed the translation.
 """
 
 from dataclasses import dataclass

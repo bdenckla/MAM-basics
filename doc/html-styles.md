@@ -94,6 +94,15 @@ publishers write its `FONT-NOTICE.txt`, `GPL-2.0.txt` and `SOURCE.txt` beside it
 and their landing pages link that `SOURCE.txt`. Pages under `doc/` that use the
 font reach the same file by a relative path into `gh-pages/woff2/`.
 
+## Caveats on AI-generated content
+
+Where a page carries a caveat that its AI-generated content has not been
+reviewed by a human, as `gh-pages/MAM-with-doc/misc/he_ws_intro_to_mam_gaya_text.html`
+does in the box that `p.ai-caveat` in `py/mb_misc/styles_authored.css` draws, an
+index that links the page does not repeat the caveat beside the link. Ben,
+2026-11-11: "There is no need for this qualification at the index.html level;
+the existing qualification if and when the reader gets to the document is fine".
+
 ## Regeneration and verification
 
 Run the affected generators, then the mega and suite required by `AGENTS.md`.
