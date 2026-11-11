@@ -59,3 +59,15 @@ to: "I don't consider it to important to identify these. Consider this a non-iss
 identification is owed, and a later audit need not raise it again. The table's "Not recorded"
 cells stand, and so does the base's statement that the license terms remain each rights
 holder's, with no grant made or implied.
+
+## The pages moved into their own folder, 2026-11-11
+
+Recorded by Claude (Opus 5.5) on 2026-11-11, New York time, in the session that moved the
+pages at Ben's request. The base's opening sentence links "the captions in the Methods,
+post-silluq, and 2 Chronicles 8:11 pages" at their addresses directly under `gh-pages/`. On
+2026-11-11 the sixteen post-stress-meteg pages moved, keeping their file names, into
+`gh-pages/post-stress-meteg/`, so those three pages are now
+[Methods](../gh-pages/post-stress-meteg/post-stress-meteg-methods.html),
+[post-silluq](../gh-pages/post-stress-meteg/post-stress-meteg-post-silluq.html) and
+[2 Chronicles 8:11](../gh-pages/post-stress-meteg/post-stress-meteg-2chr-8-11.html). The crops
+stayed in `gh-pages/img/`, so the move changes none of the table's filenames.

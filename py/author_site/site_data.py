@@ -44,7 +44,17 @@ _REPO_MAIN = f"{_REPO}/blob/main"
 UNICODE_PROPOSALS_FNAME = "unicode-proposals.html"
 UNICODE_PROPOSALS_TITLE = "Unicode and ISO Proposals"
 
+# The folder below the deploy root that holds every post-stress-meteg page: each
+# POST_STRESS_METEG_*_FNAME below, and each case page of
+# POST_STRESS_METEG_POST_SILLUQ_IMAGE_PAGES, names a file in it.  The pages sat at the deploy
+# root until 2026-11-11, when Ben asked to "move all the post-stress-meteg* files down into
+# their own folder"; py/author_site/post_stress_meteg.py also writes the forwarding stub that
+# answers the main page's old address.
+POST_STRESS_METEG_DIR = "post-stress-meteg"
 POST_STRESS_METEG_FNAME = "post-stress-meteg.html"
+# The main page's path below the deploy root, which the index, the forwarding stub and
+# Holman's M23 card link.
+POST_STRESS_METEG_HREF = f"{POST_STRESS_METEG_DIR}/{POST_STRESS_METEG_FNAME}"
 POST_STRESS_METEG_TITLE = "Meteg after the stress"
 POST_STRESS_METEG_METHODS_FNAME = "post-stress-meteg-methods.html"
 POST_STRESS_METEG_METHODS_TITLE = "Meteg after the stress: methods"
@@ -81,7 +91,8 @@ POST_STRESS_METEG_NEXT_CONJUNCTIVE_TITLE = (
 # prefix. The pages first load gh-pages/document.css for English prose, and style.css
 # preserves the root indexes' browser-default font size. The post-stress-meteg pages
 # also link gh-pages/wlc/style.css for pointed Hebrew, tables and controls; its font
-# URL resolves relative to that stylesheet.
+# URL resolves relative to that stylesheet. Those pages sit one level down, in
+# POST_STRESS_METEG_DIR, so they put "../" before each of their three stylesheet hrefs.
 # Ben asked for the switching on
 # 2026-08-31, having noticed the two deploy-root pages that existed then staying white on a
 # dark display.
@@ -92,7 +103,7 @@ CSS_HREF = "style.css"
 # lang="hbo" font at the size that makes accents legible and the numeric-cell
 # alignment. Romanizations inherit the shared document.css rule.
 # Its @font-face URL is relative to the stylesheet, so the font
-# resolves from the deploy root as it does from gh-pages/wlc/.
+# resolves from the post-stress-meteg pages' folder as it does from gh-pages/wlc/.
 ACCGRAM_CSS_HREF = "wlc/style.css"
 
 # Hrefs below include relative paths within the deploy root and absolute URLs to
@@ -225,7 +236,7 @@ _URWOTM = EntryGroup(
 _POINTING_AND_CANTILLATION = Section(
     heading="Pointing and cantillation",
     entries=(
-        _entry(POST_STRESS_METEG_TITLE, POST_STRESS_METEG_FNAME),
+        _entry(POST_STRESS_METEG_TITLE, POST_STRESS_METEG_HREF),
         _entry(
             (
                 "Excerpts from ",

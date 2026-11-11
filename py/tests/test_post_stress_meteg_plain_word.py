@@ -77,8 +77,12 @@ _PAGE_FNAMES = (
 )
 
 
+def _pages_dir() -> Path:
+    return paths.repo_root() / "gh-pages" / site_data.POST_STRESS_METEG_DIR
+
+
 def _page_path(fname: str) -> Path:
-    return paths.repo_root() / "gh-pages" / fname
+    return _pages_dir() / fname
 
 
 class TestPostStressMetegPlainWord(unittest.TestCase):
@@ -93,11 +97,8 @@ class TestPostStressMetegPlainWord(unittest.TestCase):
             f"{missing}",
         )
         expected = set(_PAGE_FNAMES)
-        rendered = {
-            path.name
-            for path in (paths.repo_root() / "gh-pages").glob("post-stress-meteg*.html")
-            if path.is_file()
-        }
+        # Every page in the folder, since the folder holds the pages and nothing else.
+        rendered = {path.name for path in _pages_dir().glob("*.html") if path.is_file()}
         declared = {
             value
             for name, value in vars(site_data).items()

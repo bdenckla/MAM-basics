@@ -802,10 +802,11 @@ _STEPS = [
     StepRecord(
         "gen-site",
         _run_gen_site,
-        "writes the deploy-root pages: gh-pages/index.html,"
-        " gh-pages/unicode-proposals.html, nine post-stress-meteg pages from the"
-        " survey JSON, and one post-silluq case page per entry of"
-        " site_data.POST_STRESS_METEG_POST_SILLUQ_IMAGE_PAGES; must come after"
+        "writes gh-pages/index.html and gh-pages/unicode-proposals.html; into"
+        " gh-pages/post-stress-meteg/, nine post-stress-meteg pages from the"
+        " survey JSON and one post-silluq case page per entry of"
+        " site_data.POST_STRESS_METEG_POST_SILLUQ_IMAGE_PAGES; and the forwarding"
+        " stub gh-pages/post-stress-meteg.html; must come after"
         " accgram-survey-post-stress-meteg; also reads MAM-simple and"
         " out/wlc422/1verses_03_jsju1s.json",
     ),

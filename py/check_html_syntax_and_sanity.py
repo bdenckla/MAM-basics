@@ -66,6 +66,11 @@ _PAGES_FOR_OUTSIDE_LINKS = {
         "a moved-page stub kept at its old URL, which Unicode's L2/25-242,"
         " https://www.unicode.org/L2/L2025/25242-hebrew-accents.pdf, links"
     ),
+    "post-stress-meteg.html": (
+        "the forwarding stub left at the main post-stress-meteg page's address when the"
+        " pages moved into post-stress-meteg/ on 2026-11-11, the one page of theirs that Ben"
+        " thinks may be linked from outside the site"
+    ),
 }
 
 
@@ -530,13 +535,14 @@ def _check_orphan_html(
         if resolved not in linked_targets:
             rel = html_file.relative_to(docs_dir)
             issues.append(f"orphan HTML (not linked from any page): {rel}")
-    if recursive:
-        # An entry whose page is gone would exempt nothing, silently.
-        scope = docs_dir.resolve()
-        for rel in sorted(_PAGES_FOR_OUTSIDE_LINKS):
-            page = (deploy_root / rel).resolve()
-            if page.is_relative_to(scope) and not page.is_file():
-                issues.append(f"_PAGES_FOR_OUTSIDE_LINKS names a missing page: {rel}")
+    # An entry whose page is gone would exempt nothing, silently.  A sub-site run checks the
+    # entries below the sub-site, and a deploy-root run the entries directly at the root.
+    scope = docs_dir.resolve()
+    for rel in sorted(_PAGES_FOR_OUTSIDE_LINKS):
+        page = (deploy_root / rel).resolve()
+        in_scope = page.is_relative_to(scope) if recursive else page.parent == scope
+        if in_scope and not page.is_file():
+            issues.append(f"_PAGES_FOR_OUTSIDE_LINKS names a missing page: {rel}")
     return issues
 
 

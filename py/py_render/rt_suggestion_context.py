@@ -35,12 +35,13 @@ class ContextLink:
 # M23's card learns what kind of meteg the case is about and how common that kind is.
 #
 # The href is a sibling-directory hop: the Holman pages are published under gh-pages/holman/
-# and the survey at the deploy root, so ``../`` reaches it.  Its filename and label are the
-# site's own constants rather than strings typed here, so a rename of the page cannot leave this
-# pointing at nothing.
+# and the survey's pages under gh-pages/post-stress-meteg/, so ``../`` and the main page's path
+# below the deploy root reach it.  That path and the label are the site's own constants rather
+# than strings typed here, so a rename or move of the page cannot leave this pointing at
+# nothing.
 _POST_STRESS_METEG = ContextLink(
     label=site_data.POST_STRESS_METEG_TITLE,
-    href=f"../{site_data.POST_STRESS_METEG_FNAME}",
+    href=f"../{site_data.POST_STRESS_METEG_HREF}",
 )
 
 CONTEXT_BY_REF: dict[str, ContextLink] = {

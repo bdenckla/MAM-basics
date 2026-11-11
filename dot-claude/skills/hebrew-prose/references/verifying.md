@@ -41,12 +41,13 @@ Others: `generate-html-poetic`, `-goerwitz`, `-almost-errors`, `-supplied-marks`
 post-stress-meteg work lives**, so do not go looking for those pages under `accgram/`:
 
 1. **`survey-post-stress-meteg` writes only its JSON, `out/accgram/post-stress-meteg.json`. Its
-   nine pages are at the DEPLOY ROOT** — `gh-pages/post-stress-meteg.html` and eight of its
-   `gh-pages/post-stress-meteg-*.html` sub-documents — and no accgram subcommand renders them.
-   `py/main_authored.py gen-site` does. It also writes `gh-pages/index.html`,
-   `gh-pages/unicode-proposals.html`, and one post-silluq case page per entry of
-   `site_data.POST_STRESS_METEG_POST_SILLUQ_IMAGE_PAGES`; the case pages render from
-   `in/meteg_after_silluq_cases.json`, not from the survey. The survey reads the
+   nine pages are in `gh-pages/post-stress-meteg/`** — `post-stress-meteg.html` and eight
+   `post-stress-meteg-*.html` sub-documents — and no accgram subcommand renders them.
+   `py/main_authored.py gen-site` does. Into the same folder it also writes one post-silluq case
+   page per entry of `site_data.POST_STRESS_METEG_POST_SILLUQ_IMAGE_PAGES`, and at the deploy
+   root `gh-pages/index.html`, `gh-pages/unicode-proposals.html` and the forwarding stub at the
+   main page's address before 2026-11-11, `gh-pages/post-stress-meteg.html`; the case pages
+   render from `in/meteg_after_silluq_cases.json`, not from the survey. The survey reads the
    tracked public `Phonetic-MAM/` release and public MAM. `--trust-surveys` lets
    `gen-site` read its tracked JSON instead of calculating the same survey twice;
    the mega runs the public survey in cloud sessions too.
@@ -59,7 +60,7 @@ rendering, the independent pre-stress analysis and the Yeivin claim/render/check
 commands consume public data. The full Yeivin OCR remains a private research
 source, distinct from the selected public adaptation.
 
-The `gh-pages/post-stress-meteg*.html` pages, those nine and the case pages alike, are also the
+The pages in `gh-pages/post-stress-meteg/`, those nine and the case pages alike, are also the
 one place the skill's "never a loose word" rule is suspended: `references/mam-basics.md`
 §'The post-stress-meteg pages say plain "word"' records Ben's decision of 2026-09-08, and
 `py/tests/test_post_stress_meteg_plain_word.py` enforces it by forbidding "chanted" in every one.

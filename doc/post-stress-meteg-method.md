@@ -6,7 +6,7 @@ post-stress-meteg page explains the cantillation findings without this implement
 ## Current totals
 
 This document explains how the populations are computed; it does not duplicate their changing
-totals. Read the [generated post-stress-meteg page](../gh-pages/post-stress-meteg.html) for the
+totals. Read the [generated post-stress-meteg page](../gh-pages/post-stress-meteg/post-stress-meteg.html) for the
 current reader-facing tables and [`out/accgram/post-stress-meteg.json`](../out/accgram/post-stress-meteg.json)
 for the current survey records and summaries. Regenerate both before reporting a current figure.
 

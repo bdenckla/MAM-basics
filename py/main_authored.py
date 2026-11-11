@@ -7,11 +7,13 @@ Subcommands:
                 (default) Write misc authored HTML docs to
                 gh-pages/MAM-with-doc/misc/.
     gen-site
-                Write the published pages at the deploy root:
-                gh-pages/index.html, gh-pages/unicode-proposals.html, and every
-                gh-pages/post-stress-meteg*.html page, including one post-silluq
-                case page per entry of
-                site_data.POST_STRESS_METEG_POST_SILLUQ_IMAGE_PAGES.
+                Write gh-pages/index.html and gh-pages/unicode-proposals.html
+                at the deploy root, and every post-stress-meteg page into
+                gh-pages/post-stress-meteg/, including one post-silluq case
+                page per entry of
+                site_data.POST_STRESS_METEG_POST_SILLUQ_IMAGE_PAGES, with the
+                forwarding stub at the main page's old address,
+                gh-pages/post-stress-meteg.html.
                 --trust-surveys lets the post-stress pages that read the survey
                 load it from the tracked out/accgram/post-stress-meteg.json
                 instead of recomputing it from the tracked Phonetic-MAM
@@ -163,7 +165,7 @@ def cmd_gen_misc(_args):
     almost_main()
 
 
-# The deploy-root pages that can be rendered from a tracked JSON instead of recomputing their
+# The gen-site pages that can be rendered from a tracked JSON instead of recomputing their
 # survey, by name.  A SET rather than the scalar py/main_accgram.py's --trust-survey routes to
 # one report: this one starts with a member and is expected to grow, and a second member added
 # to a scalar would have had to become this anyway.
@@ -201,14 +203,16 @@ assert _SURVEY_READING_PAGES <= {
     site_data.POST_STRESS_METEG_2CHRONICLES_8_11_FNAME,
     site_data.POST_STRESS_METEG_NEXT_CONJUNCTIVE_FNAME,
     site_data.UNICODE_PROPOSALS_FNAME,
-}, "a name here that no deploy-root page has would silently render nothing from its JSON"
+}, "a name here that no gen-site page has would silently render nothing from its JSON"
 
 
 def gen_site(*, trust_surveys: bool = False):
-    """Write the pages published by this repository at the deploy root.
+    """Write the deploy root's index and Unicode proposals, and the post-stress-meteg pages.
 
-    ``trust_surveys`` is passed by ``main_0_mega.py``; see ``_SURVEY_READING_PAGES``.  The
-    index runs last, so it sees whatever the pages before it have written.
+    The post-stress-meteg pages go into their own folder, with a forwarding stub at the main
+    page's old address.  ``trust_surveys`` is passed by ``main_0_mega.py``; see
+    ``_SURVEY_READING_PAGES``.  The index runs last, so it sees whatever the pages before it
+    have written.
     """
     trusted = (
         trust_surveys and site_data.POST_STRESS_METEG_FNAME in _SURVEY_READING_PAGES
@@ -286,7 +290,10 @@ def build_parser():
     sub.add_parser("gen-misc", help="Generate miscellaneous authored HTML documents")
     sub.add_parser(
         "gen-site",
-        help="Generate this repository's published pages at the gh-pages deploy root.",
+        help=(
+            "Generate the deploy root's index and Unicode proposals, and the"
+            " post-stress-meteg pages in gh-pages/post-stress-meteg/."
+        ),
     ).add_argument(
         "--trust-surveys",
         action="store_true",

@@ -194,8 +194,12 @@ _NOT_A_SIBLING_PATH: dict[tuple[str, str], str] = {
     ),
     (
         "py/py_render/rt_suggestion_context.py",
-        "f'../{site_data.POST_STRESS_METEG_FNAME}'",
+        "f'../{site_data.POST_STRESS_METEG_HREF}'",
     ): "a site-relative href to another page of the same site",
+    ("py/author_site/post_stress_meteg.py", "f'../{href}'"): (
+        "site-relative hrefs from the post-stress-meteg pages' folder to the site's"
+        " stylesheets"
+    ),
     ("py/author_misc/mam4sef_ajf_index.py", "f'../{mc.LISTINGS_DIR}/index.html'"): (
         "a site-relative href; LISTINGS_DIR is a directory of the MAM-for-Sefaria pages"
     ),

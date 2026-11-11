@@ -7,17 +7,22 @@ survey's internal consistency and re-derives the categorical and relational clai
 which is the shape
 ``maqaf_nonfinal_accents_page.pin_claims`` established.
 
-A LOOSE PAGE AT THE DEPLOY ROOT, beside ``index.html`` and ``unicode-proposals.html``, which
-is Ben's decision of 2026-09-03 (``doc/PLAN-post-stress-meteg-page-and-holman-m23.md``).  Not
+IN A FOLDER OF THEIR OWN, ``gh-pages/post-stress-meteg/`` (``site_data.POST_STRESS_METEG_DIR``),
+since 2026-11-11, when Ben asked to "move all the post-stress-meteg* files down into their own
+folder, with a forwarding stub for the top-level post-stress-meteg.html file", the one page he
+thinks may be linked from outside the site.  The pages kept their file names.  Until then they
+sat at the deploy root, beside ``index.html`` and ``unicode-proposals.html``, by Ben's decision
+of 2026-09-03 (``doc/PLAN-post-stress-meteg-page-and-holman-m23.md``).
+``_write_forwarding_stub`` answers the main page's old address; no other page has a stub.  Not
 under ``gh-pages/wlc/``: that prefix exists so wlc-utils' frozen redirect stubs can rewrite
 onto ``MAM-basics/wlc/<path>``, a page published here after the 2026-08-17 move earns no stub,
 and this page's corpus is MAM rather than WLC.
 
 The pages link ``gh-pages/document.css`` for English prose, ``gh-pages/style.css`` for
 the deploy-root extension, and ``gh-pages/wlc/style.css`` for the Hebrew font, specialized
-tables and controls. A stylesheet's ``@font-face`` URL
-resolves against the stylesheet, so its ``../woff2/Taamey_D.woff2`` reaches the site's one
-copy of the font from here too.
+tables and controls, each through ``../``, as they reach their crops in ``gh-pages/img/``.  A
+stylesheet's ``@font-face`` URL resolves against the stylesheet, so its
+``../woff2/Taamey_D.woff2`` reaches the site's one copy of the font from here too.
 
 WHY THIS PAGE SHOWS POINTED HEBREW where the accgram pages show letters and accents alone.
 ``accents_and_letters`` drops U+05BD along with the vowels, and U+05BD is this page's whole
@@ -79,6 +84,8 @@ populations are not source-code constants.
 
 from __future__ import annotations
 
+import html
+import json
 from pathlib import Path
 
 from accgram import post_stress_meteg as psm
@@ -196,10 +203,12 @@ _AUTHOR_SOURCE_PATHS = (
 
 
 def gen_html_files(
-    out_dir: Path | None = None, *, trust_survey: bool = False
+    deploy_root: Path | None = None, *, trust_survey: bool = False
 ) -> tuple[str, ...]:
-    """Write the main page and its supporting pages.
+    """Write the main page and its supporting pages, then the main page's forwarding stub.
 
+    The pages go into ``site_data.POST_STRESS_METEG_DIR`` below ``deploy_root``, the site's own
+    by default, and the stub to the main page's old address, directly in ``deploy_root``.
     ``trust_survey`` reads the tracked ``out/accgram/post-stress-meteg.json`` instead of
     recomputing.  ``main_0_mega.py`` passes it because its survey step, which runs in a cloud
     session too, has just written that JSON.  Off by hand, so a standalone run still derives
@@ -209,7 +218,8 @@ def gen_html_files(
     pin_claims(survey)
     post_silluq_cases = load_post_silluq_cases()
     koren_observations = load_post_silluq_koren_observations()
-    top_dir = paths.gh_pages_dir() if out_dir is None else Path(out_dir)
+    deploy_root = paths.gh_pages_dir() if deploy_root is None else Path(deploy_root)
+    top_dir = deploy_root / site_data.POST_STRESS_METEG_DIR
     out_paths = (
         _write_page(top_dir / _FNAME, _TITLE, build_body(survey)),
         _write_page(
@@ -254,7 +264,7 @@ def gen_html_files(
         ),
     )
     assert_no_phonetic_mam_annotations(out_paths, survey, post_silluq_cases)
-    return out_paths
+    return (*out_paths, _write_forwarding_stub(deploy_root))
 
 
 def assert_no_phonetic_mam_annotations(page_paths, survey, post_silluq_cases=None):
@@ -299,17 +309,71 @@ def assert_no_phonetic_mam_annotations(page_paths, survey, post_silluq_cases=Non
     )
 
 
+# The pages' three stylesheets, reached from their folder one level below the deploy root.
+_CSS_HREFS = tuple(
+    f"../{href}"
+    for href in ("document.css", site_data.CSS_HREF, site_data.ACCGRAM_CSS_HREF)
+)
+
+
 def _write_page(path: Path, title: str, body: list) -> str:
     write_ctx = mb_html.WriteCtx(
         title,
         str(path),
-        css_hrefs=("document.css", site_data.CSS_HREF, site_data.ACCGRAM_CSS_HREF),
+        css_hrefs=_CSS_HREFS,
         body_class=(
             "centered-page post-stress-meteg-page " f"{_HEBREW_SPACING_BODY_CLASS}"
         ),
         html_comment=provenance.generated_html_comment(__file__),
     )
     mb_html.write_html_to_file(body, write_ctx)
+    return str(path)
+
+
+# The main page's address until 2026-11-11, when the pages moved into
+# site_data.POST_STRESS_METEG_DIR.  A fact about the past, so it is spelled out here rather
+# than taken from site_data.POST_STRESS_METEG_FNAME: renaming the page later must not move
+# the address that links from outside the site name.
+_OLD_MAIN_PAGE_FNAME = "post-stress-meteg.html"
+
+# The stub at that address carries its target in the four places that the stubs of
+# py/redirect_stubs/stubs.py do: a canonical link, a meta refresh, a script that keeps the
+# incoming query and fragment, and a visible link.  Its target is relative, the page having
+# moved within this site, so py/check_html_syntax_and_sanity.py resolves the visible link.
+# Its title and sentence follow this site's other moved-page stub, the one that
+# py/author_misc/tsinnorit_and_oleh_on_ivs.py writes.
+_FORWARDING_STUB_TEMPLATE = """<!doctype html>
+<!-- {comment} -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{title}</title>
+<link rel="canonical" href="{href}">
+<meta http-equiv="refresh" content="0; url={href}">
+<script>
+location.replace({href_js} + location.search + location.hash);
+</script>
+</head>
+<body>
+<p>This page has moved to <a href="{href}">a different location</a>.</p>
+</body>
+</html>
+"""
+
+
+def _write_forwarding_stub(deploy_root: Path) -> str:
+    """Write the stub that sends the main page's old address on to the page in its folder."""
+    path = deploy_root / _OLD_MAIN_PAGE_FNAME
+    path.write_text(
+        _FORWARDING_STUB_TEMPLATE.format(
+            comment=provenance.generated_html_comment(__file__),
+            title=html.escape(f"Redirect for {_TITLE}"),
+            href=html.escape(site_data.POST_STRESS_METEG_HREF),
+            href_js=json.dumps(site_data.POST_STRESS_METEG_HREF),
+        ),
+        encoding="utf-8",
+        newline="\n",
+    )
     return str(path)
 
 

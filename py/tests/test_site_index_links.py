@@ -40,23 +40,10 @@ _MIN_DEPLOY_ROOT_PAGES = 2
 _UNLISTED_DEPLOY_ROOT_PAGES = (
     # The index itself.  An entry for it would be the page linking to itself.
     "index.html",
-    # These eight child pages are reachable from post-stress-meteg pages, not the index.
-    "post-stress-meteg-2chr-8-11.html",
-    "post-stress-meteg-cases.html",
-    "post-stress-meteg-lacks-mas.html",
-    "post-stress-meteg-methods.html",
-    "post-stress-meteg-misc.html",
-    "post-stress-meteg-next-conjunctive.html",
-    "post-stress-meteg-not-fit.html",
-    "post-stress-meteg-post-silluq.html",
-    # The post-silluq case pages sit a level further down: the case register of
-    # post-stress-meteg-post-silluq.html links each one, and the index does not.  Their
-    # names come from the dict that generates the pages, so a case page added there needs
-    # no entry here.
-    *(
-        fname
-        for fname, _ref in site_data.POST_STRESS_METEG_POST_SILLUQ_IMAGE_PAGES.values()
-    ),
+    # The forwarding stub at the main post-stress-meteg page's address until 2026-11-11, when
+    # the pages moved into post-stress-meteg/.  It stays for links from outside the site; the
+    # index names the page in its folder.
+    "post-stress-meteg.html",
 )
 
 
