@@ -123,6 +123,14 @@ changed.
    compares, in place of 0.2em. The arrow links, which Ben asked for on this page on
    2026-11-09, and the viewport meta stay.
 
+   Asked the same day, with copies of the page from before and after the change, whether a
+   row's two forms were still as easy to compare at the reviews' size and spacing, Ben
+   answered:
+
+   > "after" looks fine
+
+   So the forms keep them.
+
 ## Open decisions
 
 Questions put to Ben, numbered from 1. Each gets an "Answered" line, with his words and the
