@@ -12,9 +12,8 @@ prose and no Hebrew was retyped. The prose is verbatim except as listed below.
 THE PAGE HAS A SUBTITLE. The h1 is the document's own title. The h2 is the
 subtitle Ben chose on 2026-11-08, as urwotm_common.py makes each part's
 subtitle the h2 of an urwotm page, so the document's four section headings are
-h3. The <title>, like the title that gen_html_file returns, joins title and
-subtitle with a colon, in the spelling without $ keys, since neither passes
-through dollar_sub.
+h3. The <title> joins title and subtitle with a colon, in the spelling
+without $ keys, since it does not pass through dollar_sub.
 
 THREE SLIPS ARE FIXED, by Ben's decision of 2026-11-08 to fix obvious slips.
 Each fix substitutes one named letter for another within one atom:

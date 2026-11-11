@@ -20,16 +20,13 @@ retyping one side.
 destinations directly, while the frozen redirect manifest preserves the old wlc-utils
 route.  The Almost-errors page is likewise not a top-level entry because Goerwitz Run on
 WLC links to it.
-
-``misc_fnames_linked`` names the pages of ``MAM-with-doc/misc/`` that this index links,
-which ``py/main_authored.py`` therefore leaves out of ``misc/index.html``.
 """
 
 from __future__ import annotations
 
 from mb_cmn import str_defs as sd
 
-from author_site.entries import Anchor, Entry, EntryGroup, Italic, Section, anchors_in
+from author_site.entries import Anchor, Entry, EntryGroup, Italic, Section
 
 _RSQM = "\N{RIGHT SINGLE QUOTATION MARK}"
 _EM_DASH = "\N{EM DASH}"
@@ -37,8 +34,6 @@ _ELLIPSIS = "\N{HORIZONTAL ELLIPSIS}"
 
 _MWD = "https://bdenckla.github.io/MAM-basics/MAM-with-doc/"
 _MWD_MISC = f"{_MWD}misc/"
-# The same directory as a path relative to the deploy root, where this index is published.
-_MWD_MISC_RELATIVE = "MAM-with-doc/misc/"
 _PHONETIC = "https://bdenckla.github.io/MAM-basics/phonetic-mam/"
 _YEIVIN = "https://bdenckla.github.io/MAM-basics/yeivin-itm/yeivin_itm.html"
 _TAAMEY_D = "https://bdenckla.github.io/MAM-basics/taamey-d/Taamey_D.html"
@@ -190,8 +185,8 @@ _INTRODUCTION_EXCERPTS = Section(
     entries=(
         _mwd_misc("Gray maqaf", "he_ws_intro_to_mam_gray_maqaf_1.html"),
         _mwd_misc("Paseq and legarmeh", "he_ws_intro_to_mam_pasleg.html"),
-        # Remove this note together with the page caveat and misc-index label caveat
-        # only once a human has reviewed the translation.
+        # Remove this note together with the page caveat only once a human has reviewed
+        # the translation.
         _mwd_misc(
             "The געיה marks in MAM",
             "he_ws_intro_to_mam_gaya_text.html",
@@ -338,21 +333,3 @@ INTRO_MAM_SOURCE_MODULES = tuple(
     entry.anchor.href[len(_MWD_MISC) :].removesuffix(".html")
     for entry in INTRO_MAM_MWD_ENTRIES
 )
-
-
-def misc_fnames_linked() -> frozenset[str]:
-    """The pages of ``MAM-with-doc/misc/`` that this index links, by file name.
-
-    ``py/main_authored.py`` leaves each of them out of ``misc/index.html``, so that the
-    misc index repeats nothing that this index lists: Ben, 2026-11-10, "trim out from that
-    misc index everything already represented in the top-level index".  An href names
-    such a page by its published URL, under ``_MWD_MISC``, or by its path relative to the
-    deploy root; a fragment does not change the page it names.
-    """
-    names = set()
-    for anchor in anchors_in(SECTIONS):
-        page = anchor.href.split("#", 1)[0]
-        for prefix in (_MWD_MISC, _MWD_MISC_RELATIVE):
-            if page.startswith(prefix):
-                names.add(page.removeprefix(prefix))
-    return frozenset(names)

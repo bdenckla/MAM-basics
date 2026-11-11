@@ -1,5 +1,5 @@
 {
-  "comment": "MAM-with-doc HTML paths frozen for the 2026-09-06 Phase 4 move from source commit 0fe406c44c1b51e7c540574475830d6169256e73. Each old path redirects to the same suffix under MAM-basics/MAM-with-doc/.",
+  "comment": "MAM-with-doc HTML paths frozen for the 2026-09-06 Phase 4 move from source commit 0fe406c44c1b51e7c540574475830d6169256e73. Each old path redirects to the same suffix under MAM-basics/MAM-with-doc/. misc/index.html left this list on 2026-11-10, when its MAM-basics copy was deleted at Ben's word.",
   "pages": [
     "A1-Genesis-big-doc.html",
     "A1-Genesis.html",
@@ -95,7 +95,6 @@
     "index.html",
     "misc/he_ws_intro_to_mam_gray_maqaf_1.html",
     "misc/he_ws_intro_to_mam_pasleg.html",
-    "misc/index.html",
     "misc/notes_on_aliyot.html",
     "misc/review_of_artscroll_transliterated_linear_siddur.html",
     "misc/review_of_hebrew_worlds_phonetic_bible.html",
