@@ -56708,7 +56708,7 @@
       "א-כתיב=יִסְלַח־נא יְהוָ֥ה"
     ],
     "body_text": "מ\"ק-א=<נא כתב' ולא קרי'> וערכנו בשני מקפים בדומה לקורן (הראשון רגיל ע\"פ הכתר, והשני בצבע אפור של \"כתיב\") כדי לשמור על רציפות הקריאה בטעמים, שהרי \"יסלח\" מוקפת בקריאתה אל ה'.\nא-כתיב=יִסְלַח־נא יְהוָ֥ה",
-    "target_survey_text": "יִסְלַח־נאיְהֹוָ֥ה",
+    "target_survey_text": "יִסְלַח־נא־יְהֹוָ֥ה",
     "target_projection_notice": "Existing hataf survey projection: qere, except that a trivial ketiv/qere (מ:קו״כ-אם-2) gives its pointed ketiv and כתיב ולא קרי gives its unread ketiv; primary stress only; structural marks may be omitted, but every separator between two atoms, the gray maqaf included, gives a space. Use target_node for evidence.",
     "target_projection_error": null,
     "chapter_revision": {

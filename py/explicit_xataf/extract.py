@@ -191,7 +191,21 @@ _RETURN_ARG1_TMPL_NAMES = _SLH_TMPL_NAMES + (
     "מ:קו״כ-אם-2",
 )
 # Templates where arg 2 is the primary word
-_RETURN_ARG2_TMPL_NAMES = ("קרי ולא כתיב", "כתיב ולא קרי")
+_RETURN_ARG2_TMPL_NAMES = ("קרי ולא כתיב",)
+# The template כתיב ולא קרי holds a ketiv that is not read: parameter 1 writes it in
+# parentheses, parameter 2 without them, and parameter 3, where present, is the mark
+# MAM writes after that ketiv.  This projection gives parameter 2 followed by
+# parameter 3, so that the unread ketiv keeps the maqaf after it and stays apart from
+# the next atom.  Ben chose this on 2026-11-12, fixing the defect recorded under C1 in
+# that day's entry of doc/blind-dive-into-template-params-update.md; until then
+# parameter 3 was left out, and 2 Kings 5:18's note target ran its unread ketiv into
+# the next atom.  That day MAM-parsed-plus had a parameter 3 at two calls, 2 Samuel
+# 13:33 and 2 Kings 5:18, each a maqaf alone; any other value raises until it is
+# classified here.
+_KETIV_WITHOUT_QERE = {short: name for name, short in tmpln.LATIN_SHORTS.items()}[
+    "kq-k-velo-q"
+]
+_KETIV_WITHOUT_QERE_PARAM3_VALUES = ([hpu.MAQ],)
 # Templates that contribute no Hebrew text (structural marks).  MAM has whitespace after
 # every legarmeh, and the three chapter tags never stand between two atoms.
 _ZERO_CONTENT_TMPL_NAMES = (
@@ -217,6 +231,10 @@ def flatten_text(wtel):
     For מ:דחי and מ:צינור (stress-variant) templates, returns only the
     first arg, since the second arg is the same word with different stress.
 
+    For כתיב ולא קרי, returns the ketiv that is not read, without its parentheses,
+    from parameter 2, followed by parameter 3 where the template has one: the maqaf
+    that MAM writes after that ketiv.  _ketiv_without_qere_text validates the call.
+
     A whitespace template or one of _SEPARATOR_TMPL_NAMES returns a space.
     """
     if isinstance(wtel, str):
@@ -238,6 +256,8 @@ def flatten_text(wtel):
             return flatten_text(wtp.template_element(wtel, 1))
         if wtp.is_template_with_name_in(wtel, _RETURN_ARG2_TMPL_NAMES):
             return flatten_text(wtp.template_element(wtel, 2))
+        if wtp.is_template_with_name(wtel, _KETIV_WITHOUT_QERE):
+            return _ketiv_without_qere_text(wtel)
         if wtp.is_template_with_name(wtel, "מ:קמץ"):
             return flatten_text(wtp.template_param_val(wtel, "ד"))
         if wtp.is_template_with_name_in(wtel, tmpln.WHITESPACE_TMPL_NAMES):
@@ -248,6 +268,25 @@ def flatten_text(wtel):
             return ""
         raise ValueError(f"Unexpected template in flatten_text: {wtel}")
     raise TypeError(f"Unexpected node in flatten_text: {type(wtel).__name__}")
+
+
+def _ketiv_without_qere_text(tmpl):
+    """Return a כתיב ולא קרי's parameter 2, followed by its parameter 3 if it has one.
+
+    Raises unless the call has parameters 1 and 2 and no other but 3, and unless its
+    parameter 3 is one of _KETIV_WITHOUT_QERE_PARAM3_VALUES.  Parameter 1, which
+    writes the same ketiv in parentheses, is not read.
+    """
+    keys = set(wtp.template_param_keys(tmpl))
+    if not {"1", "2"} <= keys <= {"1", "2", "3"}:
+        raise ValueError(f"unexpected {_KETIV_WITHOUT_QERE} parameters: {tmpl!r}")
+    ketiv = flatten_text(wtp.template_param_val(tmpl, "2"))
+    if "3" not in keys:
+        return ketiv
+    after = wtp.template_param_val(tmpl, "3")
+    if after not in _KETIV_WITHOUT_QERE_PARAM3_VALUES:
+        raise ValueError(f"unexpected {_KETIV_WITHOUT_QERE} parameter 3: {tmpl!r}")
+    return ketiv + flatten_text(after)
 
 
 def _validate_special_kq_if_needed(tmpl):
