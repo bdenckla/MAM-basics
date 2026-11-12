@@ -32,10 +32,6 @@ _RENOPTS_MAM_XML = {
     #
     "ro_cantillation": "rv-cant-all-three",
     "ro_qamats_var": "rv-dalet",
-    # Parameter 1 of מ:דחי and מ:צינור, the chanted word without its stress helper,
-    # which MAM-simple has always given; stated since 2026-11-12, when the renderer
-    # stopped giving it by default.
-    "ro_stress_helper": "rv-without-stress-helper",
     "ro_no_varika": True,
     "ro_no_doc": True,
     #

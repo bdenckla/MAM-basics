@@ -326,8 +326,8 @@ and confirmed that `4e9e7b84` is the commit that closed the 2026-10-07 latent it
 decisions in `doc/PLAN-deferred-template-projection-decisions.md` were not re-raised.
 
 One item is confirmed, C1: a mislabel that changes no count. S1 and S2 are suspected and need
-Ben's answers. L1 to L6 were latent; all six were closed on 2026-11-12 in `93eb8686`, as their
-list below records. The range's largest change for this audit is the template
+Ben's answers. L1 to L6 were latent; on 2026-11-12 `93eb8686` closed five of them, and L4
+stays open, as their list below records. The range's largest change for this audit is the template
 מ:סילוק לפני געיה (`49b0baf7`, 2026-10-12), whose parameter 1 is a full atom and parameter 2 the
 same letters with one HEBREW POINT METEG marking the silluq. Every consumer reviewed that reaches
 its two calls, 1 Kings 7:37 and Job 4:12, names the template and reads parameter 1, or reads
@@ -484,15 +484,14 @@ stress-helper templates in MAM-parsed-plus sit inside ketiv/qere templates (7 in
 15 rows of foi-kq-simple, whose first cell is "MAM's rendering of the template", differ from
 MAM-with-doc's column. `foiz_wt_dexi_stress_meteg.py` states `RENOPTS_MAM_WITH_DOC` instead.
 **What would settle it:** Ben deciding whether FOI renderings under `gh-pages/MAM-with-doc/foi/`
-follow MAM-with-doc's stress-helper form. Since `93eb8686` the three callers state
-`ro_stress_helper` as `"rv-without-stress-helper"`, the form they show, so either answer
-changes that one value; `py/main_foi_features_of_interest.py --foi args-foi-kq-1
+follow MAM-with-doc's stress-helper form; either way the three callers can state
+`ro_stress_helper`, and `py/main_foi_features_of_interest.py --foi args-foi-kq-1
 --single-threaded` would show the rows that change.
 
 Latent items, recorded so that a later change cannot make them live unnoticed. Each describes
-the code as the audit found it at `d957048a`, as the table above does. All six were closed on
-2026-11-12 in `93eb8686`, under Ben's instruction of 2026-10-21 quoted below, without changing
-a tracked output:
+the code as the audit found it at `d957048a`, as the table above does. On 2026-11-12
+`93eb8686` closed L1, L2, L3, L5 and L6, under Ben's instruction of 2026-10-21 quoted below,
+without changing a tracked output; L4 stays open:
 
 1. **L1, closed: `py/foi/foi_wikitext_helpers.py`: `_add_templates_before_sof_pasuq`** recursed
    through `template_param_vals` into every parameter of every template and checked a template's
@@ -518,19 +517,21 @@ a tracked output:
    every other child's shape is checked. Two cases give no word and are named: a `text` child
    holding only whitespace, of which there are 28, and a scroll-difference target that is empty,
    at Exodus 26:6 and Deuteronomy 27:19, or holds only a parashah break, at three sites.
-4. **L4, closed: the stress-helper default.** `py/render_wt/render_wikitext_handlers.py`:
-   `_STRESS_HELPER_FORMS` gave parameter 1 to a caller that set no `ro_stress_helper`, and the
-   comment above it declared that default as the renderer's behavior before the option existed.
+4. **L4, open: the stress-helper default.** `py/render_wt/render_wikitext_handlers.py`:
+   `_STRESS_HELPER_FORMS` gives parameter 1 to a caller that sets no `ro_stress_helper`, and the
+   comment above it declares that default as the renderer's behavior before the option existed.
    `py/mb_xml/xml_render.py`: `_RENOPTS_MAM_XML`, MAM-simple's call and through it MAM-OSIS's,
-   MAM-for-Sefaria's and MAM-morphhb's, stated cantillation (`rv-cant-all-three`) and qamats
+   MAM-for-Sefaria's and MAM-morphhb's, states cantillation (`rv-cant-all-three`) and qamats
    (`rv-dalet`) but not the stress-helper form, and MAM-simple's README and guides mention
    neither stress helpers nor the qamats choice (searched `MAM-simple/` outside its JSON and
-   `gh-pages/MAM-simple/`). Output was unchanged by the range. Ben's rule asks each caller to
-   state its stress-helper alternative. The table now has no default, and a caller that meets
-   מ:דחי or מ:צינור without stating the option raises. `_RENOPTS_MAM_XML` and the three S2
-   callers state `"rv-without-stress-helper"`, the form they showed, so S2 stays open.
-   `py/tests/test_mpplus_latest_note_schema.py` renders no stress-helper template, so it states
-   nothing.
+   `gh-pages/MAM-simple/`). Output is unchanged by the range. Ben's rule asks each caller to
+   state its stress-helper alternative. The S2 callers rely on the default;
+   `py/tests/test_mpplus_latest_note_schema.py` renders no stress-helper template, so it needs
+   no form. `93eb8686` removed the default and had MAM-simple's call and the three S2 callers
+   state the form they showed; before it was pushed, the commit that records this put all six
+   files it had changed for L4 back as they were. Stating any form in the three S2 callers
+   would answer S2, which is Ben's question, and no recorded decision covers MAM-simple's form,
+   so Ben was asked for it on 2026-11-12. L4 can close once both are answered.
 5. **L5, closed; its recursion was unchanged until then: `py/accgram/mam_simple_verse.py`:
    `_iter_dict_nodes`** yielded every dictionary of a MAM-simple file wherever it stood, and
    its callers `load_mam_simple_for_refs` and `mam_simple_refs` passed over a verse whose

@@ -101,14 +101,8 @@ def _record_sampe_in_col_e(_foilers, stack, tmpl):
     return [(_FP_RT_CES, qual_target)]
 
 
-# Parameter 1 of a מ:דחי or מ:צינור in a fragment, the form the renderer gave callers
-# that stated none until 2026-11-12. Whether FOI pages should show MAM-with-doc's
-# form instead is question S2 of doc/blind-dive-into-template-params-update.md.
-_RENOPTS = {"ro_stress_helper": "rv-without-stress-helper"}
-
-
 def _html_for_wtseq(wtseq, column="E"):
-    hctx = handlers.default_hctx(renopts=_RENOPTS)
+    hctx = handlers.default_hctx()
     if column == "C":
         if tuple(wtseq) == ("__",):
             return ("__",)
