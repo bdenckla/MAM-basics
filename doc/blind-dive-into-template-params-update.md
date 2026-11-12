@@ -325,9 +325,9 @@ that caller's output. The recording session re-read C1 and latent items L1, L2 a
 and confirmed that `4e9e7b84` is the commit that closed the 2026-10-07 latent item 3. The deferred
 decisions in `doc/PLAN-deferred-template-projection-decisions.md` were not re-raised.
 
-One item is confirmed, C1: a mislabel that changes no count. S1 and S2 are suspected and need
-Ben's answers. L1 to L6 were latent; on 2026-11-12 `93eb8686` closed five of them, and L4
-stays open, as their list below records. The range's largest change for this audit is the template
+One item is confirmed, C1: a mislabel that changes no count. S1 and S2 were suspected; Ben
+answered them, with C1, on 2026-11-12. L1 to L6 were latent; on 2026-11-12 `93eb8686` closed
+five of them, and `345a0332` closed L4 later that day, as their list below records. The range's largest change for this audit is the template
 מ:סילוק לפני געיה (`49b0baf7`, 2026-10-12), whose parameter 1 is a full atom and parameter 2 the
 same letters with one HEBREW POINT METEG marking the silluq. Every consumer reviewed that reaches
 its two calls, 1 Kings 7:37 and Job 4:12, names the template and reads parameter 1, or reads
@@ -419,7 +419,7 @@ generated page, `_text_of` in `py/author_boj_util/author.py` and `py/mb_author/a
 (loops over its own specification records) and `py/phonetic_mam/compute.py` (`_phrase` reads a
 named protocol field).
 
-**C1. The Introduction audit's outputs call a pointed-ketiv projection "qere".** **Disposition: confirmed, unfixed** (this audit is read-only). Restating the labels to say what
+**C1. The Introduction audit's outputs call a pointed-ketiv projection "qere".** **Disposition: confirmed; this read-only audit left it unfixed, and `eb52ecd5` fixed it on 2026-11-12, by Ben's option A.** Restating the labels to say what
 is selected would choose no new policy; choosing another branch is Ben's decision.
 
 - **Callers.** `py/intro_doc_audit/audit.py`: `inventory_notes` writes each note's
@@ -460,7 +460,7 @@ is selected would choose no new policy; choosing another branch is Ben's decisio
   and 11 name other consumers and are not re-raised.
 - **Put to Ben** on 2026-11-11, with S1 and S2.
 
-**S1. The dual-mater FOI reads a scroll-difference note's prose.** **Disposition: suspected, unconfirmed; pre-existing**, unchanged in this range except for its
+**S1. The dual-mater FOI reads a scroll-difference note's prose.** **Disposition: settled on 2026-11-12 by Ben's option B, which keeps the row, in `d6a93d9c`; pre-existing**, unchanged in this range except for its
 tokenization. `py/foi/foiz_wt_dual_ml_alef.py`: `_find_fois_in_string` drops a string only when
 the stack's last label is `doc-part-n`, so its all-branch population also searches the note of
 a targeted scroll difference (parameter 2 of מ:הערה-2, labelled `scrdfftar-note`) and the
@@ -474,7 +474,7 @@ deliberate. **What would settle it:** Ben stating whether the two dual-mater pag
 Scripture strings only or also forms quoted in scroll-difference notes; if only Scripture,
 `py/main_foi_features_of_interest.py` regenerates the pages for the diff.
 
-**S2. FOI fragments show deḥi and tsinnor by the renderer's default.** **Disposition: suspected, unconfirmed; a display question that the range introduced.**
+**S2. FOI fragments show deḥi and tsinnor by the renderer's default.** **Disposition: settled on 2026-11-12 by Ben's option A, MAM-with-doc's form in both cells, in `345a0332`; a display question that the range introduced.**
 `py/foi/foiz_wt_kq_1.py`, `foiz_wt_slh_word.py` and `foiz_wt_rare_tmpls.py` render in
 `_html_for_wtseq` with `handlers.default_hctx()`. A מ:דחי or מ:צינור inside such a fragment
 therefore shows parameter 1, while MAM-with-doc's verse column has shown parameter 2 keeping
@@ -491,7 +491,7 @@ follow MAM-with-doc's stress-helper form; either way the three callers can state
 Latent items, recorded so that a later change cannot make them live unnoticed. Each describes
 the code as the audit found it at `d957048a`, as the table above does. On 2026-11-12
 `93eb8686` closed L1, L2, L3, L5 and L6, under Ben's instruction of 2026-10-21 quoted below,
-without changing a tracked output; L4 stays open:
+without changing a tracked output; `345a0332` closed L4 later that day, after Ben's answers to S2 and L4:
 
 1. **L1, closed: `py/foi/foi_wikitext_helpers.py`: `_add_templates_before_sof_pasuq`** recursed
    through `template_param_vals` into every parameter of every template and checked a template's
@@ -517,7 +517,7 @@ without changing a tracked output; L4 stays open:
    every other child's shape is checked. Two cases give no word and are named: a `text` child
    holding only whitespace, of which there are 28, and a scroll-difference target that is empty,
    at Exodus 26:6 and Deuteronomy 27:19, or holds only a parashah break, at three sites.
-4. **L4, open: the stress-helper default.** `py/render_wt/render_wikitext_handlers.py`:
+4. **L4, closed on 2026-11-12 by `345a0332`: the stress-helper default.** `py/render_wt/render_wikitext_handlers.py`:
    `_STRESS_HELPER_FORMS` gives parameter 1 to a caller that sets no `ro_stress_helper`, and the
    comment above it declares that default as the renderer's behavior before the option existed.
    `py/mb_xml/xml_render.py`: `_RENOPTS_MAM_XML`, MAM-simple's call and through it MAM-OSIS's,
@@ -569,3 +569,125 @@ plan has been retired from the tracked tree with its update. Both remain at
 `462984bb567a6498fd4f2d7ef00e3186fcd00f02`: the archived
 [maintenance follow-up plan](https://github.com/bdenckla/MAM-basics/blob/462984bb567a6498fd4f2d7ef00e3186fcd00f02/doc/PLAN-maintenance-follow-up-2026-10-08.md)
 and its [update](https://github.com/bdenckla/MAM-basics/blob/462984bb567a6498fd4f2d7ef00e3186fcd00f02/doc/PLAN-maintenance-follow-up-2026-10-08-update.md).
+
+## C1, S1, S2 and L4 were settled and carried out, 2026-11-12
+
+Recorded by Claude (Opus 5.5) on 2026-11-12, New York time, during repository maintenance, by a
+sub-agent of the session that owns its integration. The entry "The 2026-11-11 maintenance audit
+found one mislabelled projection in new or changed walkers" put C1, S1 and S2 to Ben, and its
+latent item 4 says that he was asked for MAM-simple's stress-helper form. He answered on
+2026-11-12:
+
+1. At 14:26 New York time he answered "Take my recommendations for decisions 3 to 6?" with "Yes,
+   all four". Decisions 3, 4 and 5 were C1's option A, S1's option B and S2's option A.
+2. At 14:23 New York time, in another session, he answered "Your answers to F1, L4 and L8: A or B
+   each?" with "A for all three". Of the three, L4 is this record's: its option A is that
+   MAM-simple states parameter 1, the form without the stress helper, which every MAM-simple
+   release has shipped.
+
+**C1, fixed by `eb52ecd5`.** Option A, "Correct the labels": "rewords the notes' notice, the
+populations' projection field and the census predicate to say what is read: the qere, except a
+trivial ketiv/qere's pointed ketiv and the unread ketiv of כתיב ולא קרי. Then regenerates.
+Only label text changes." Each label now says what its own projection reads, taking the template
+names from `py/mb_cmn/template_names.py` through two constants in `py/intro_doc_audit/audit.py`:
+
+- `audit.py`, the `target_projection_notice` of `doc/intro-doc-audit/notes.json`:
+  "Existing hataf survey projection: qere, except that a trivial ketiv/qere (מ:קו״כ-אם-2) gives its pointed ketiv and כתיב ולא קרי gives its unread ketiv; primary stress only; structural marks may be omitted, but every separator between two atoms, the gray maqaf included, gives a space. Use target_node for evidence."
+- `structures.py`, the `projection` field of `structural-populations.json`, which
+  `rare-mark-populations.json` and `catalogue-comparison.json` copy: "Existing edition_projection: qere, except that a trivial ketiv/qere (מ:קו״כ-אם-2) gives its pointed ketiv and כתיב ולא קרי gives its unread ketiv in parentheses; primary stress, qamats ד, combined cantillation; note target only. Structure counted before selecting its child. No note-body recursion and no all-parameters fallback."
+- `census_scope.py`, the `two_atom_oleh` predicate of `next-pass-census.json`:
+  "Selected atom has OLE without MERKHA, and the immediately following atom has MERKHA; qere selected, except that a trivial ketiv/qere (מ:קו״כ-אם-2, MAM-simple's kq-trivial) gives its pointed ketiv and כתיב ולא קרי (kq-k-velo-q) gives no atom; fragments reassembled, paseq tokens excluded from atom adjacency. This is a current MAM predicate, not a physical-manuscript count." The census's atoms come from MAM-simple through accgram's
+  `mam_simple_verse`, which reads a `kq-trivial`'s text, the pointed ketiv, and gives a
+  `kq-k-velo-q` a boundary and no text, so this label says that כתיב ולא קרי gives no
+  atom.
+
+The outputs keep the evidence pinned at `89cb865729b0876f1fd32a8a3579eaec80b4fc0c`, so the
+generator ran in a scratch worktree of `df516a00` in which these inputs had their `89cb8657`
+content: the five that `doc/intro-doc-audit/source-pin.json` pins, every blob checked against it,
+and the three MAM-simple files that `census-scope` reads, whose blobs equal those of `fb566021`,
+the commit that `next-pass-census.json` records for them. With the old code,
+`py/main_intro_doc_audit.py`, run with no subcommand and with `structures`, `catalogues` and
+`census-scope`, rewrote byte for byte all nine files those runs write. With the change, only the
+labels changed: each of the 3,905 notices in `notes.json`, among them those of the 15 records
+whose target holds a trivial ketiv/qere and of the 2 whose target holds a כתיב ולא קרי,
+at 2 Kings 5:18 and Ruth 3:12; the `projection` field of the three population files; and the
+census predicate. No count changed, and `py/main_intro_doc_audit.py review` rewrote its outputs
+unchanged.
+
+**S1, settled by `d6a93d9c`.** Option B, "Keep them, and say so": "keeps the row, and states
+on both pages that spellings quoted in scroll-difference notes are included and labelled. It also
+makes the documentation-note exclusion whole, so that the text inside a template in a note's body
+is skipped too. No row changes." `py/foi/foiz_wt_dual_ml_alef.py`: `_find_fois_in_string` skips a
+string wherever `doc-part-n` stands in its stack. `py/foi/dml_an_explanations.py`: the overall
+explanation of both dual-mater pages gains the paragraph "Besides MAM's running text, including
+the targets of documentation notes, this search reads scroll-difference notes, so a spelling
+quoted in one is included, with scrdfftar-note in the last column of its row. The bodies of
+documentation notes are not searched." Measured: the two pages gained that paragraph and nothing
+else; their JSON is unchanged, 110 rows in `foi-alef-dual-ml-alef-first.json` and 684 in
+`foi-alef-dual-ml-alef-second.json`, whose row 2 is still Genesis 4:13 with `stack_str`
+"scrdfftar-note".
+
+**S2, settled by `345a0332`.** Option A, "Follow MAM-with-doc in both cells": "the three
+generators state MAM-with-doc's stress-helper option, the pqere policy takes the same form, and
+the FOI pages are regenerated. 11 rows gain the stress helper, 4 of them in both cells."
+`py/foi/foiz_wt_kq_1.py`, `foiz_wt_slh_word.py` and `foiz_wt_rare_tmpls.py` render their
+fragments with the value of `ro_stress_helper` that `mwd_write_book.RENOPTS_MAM_WITH_DOC` states,
+parameter 2 keeping parameter 1's meteg. In `py/hkq_cmn/qere_projection.py` a policy names the
+forms of a stress-helper template that it reads in a validated field, `stress_helper_forms`,
+which replaces `stress_helper_argument_keys` and raises on a name it does not know.
+`FOI_KQ_SIMPLE_MAIN_COMPATIBLE_POLICY`, which gives foi-kq-simple's pqere cell, names parameter 2
+keeping parameter 1's meteg and keeps its legarmeh setting; the other policies name the
+parameters they read before. The renderer's code that checks the two parameters and derives that
+third form moved to `py/mb_cmn/stress_helper_forms.py`, which the renderer and the policies share.
+Measured by one run of `py/main_foi_features_of_interest.py` for S1 and S2 together:
+`foi-kq-simple.json` keeps its 1,213 rows, and 11 of them gain a deḥi stress helper, in 15 cells:
+the first cell, MAM's rendering of the template, of the seven כו״ק rows at Psalms 49:15, 74:6
+and 77:20, Proverbs 24:17 and Job 16:16, 33:28 and 42:2, and both that cell and the pqere cell of
+the four מ:קו״כ-אם-2 rows at Proverbs 6:13 and 26:24 and Job 27:15 and 38:41. These are all 15
+stress-helper templates inside ketiv/qere templates in MAM-parsed-plus, each a מ:דחי, and in
+none does parameter 2 lack a meteg that parameter 1 has, so no meteg is kept. No other FOI file
+changed: no stress-helper template stands in a fragment of foi-slh-word or foi-rare-tmpls.
+
+**L4, closed by `345a0332`.** `py/render_wt/render_wikitext_handlers.py`:
+`_STRESS_HELPER_FORMS` has no default, so a caller that meets מ:דחי or מ:צינור without
+stating `ro_stress_helper` raises. `py/mb_xml/xml_render.py`: `_RENOPTS_MAM_XML`, MAM-simple's
+call, states "rv-without-stress-helper", Ben's L4 answer, and `MAM-simple/README.md` says that
+MAM-simple gives the form without the stress helper. The renderer's other callers state their
+forms already: MAM-with-doc, near-Aleppo's edition mode, `py/near_aleppo/foi_qere_without_ketiv.py`
+and `py/foi/foiz_wt_dexi_stress_meteg.py`; `py/tests/test_mpplus_latest_note_schema.py` renders no
+stress-helper template. Measured: in the mega that followed, the generators of MAM-simple, MAM-with-doc and
+near-Aleppo changed no tracked file.
+
+Checks: each of the three commits above had Black, `git diff --check` and a mark-order
+check of every added line, and `py/main_test.py` over the files its message names: 5 passed for C1, and 69 passed
+with 8 subtests for S1 and S2 together, the lints over published pages among them; Ruff passed
+on the changed modules. After the last code change `py/main_0_mega.py` exited 0, 66 steps in
+886 seconds, with no tracked change beyond these commits'; its `taamey-d-corpus` step reported
+the refresh pending that needs Ben's baseline acceptance and that these changes do not cause.
+`py/main_test.py` then gave 1449 passed, 5 skipped. The one hand-run generator rerun was
+`py/main_intro_doc_audit.py`, as C1 above describes. MAM-OSIS, MAM-for-Sefaria and MAM-morphhb
+read MAM-simple, which did not change, so their generators were not rerun; `hbce-psalms/out/`
+stays frozen, and the Taamey D corpus was not refreshed.
+
+This entry corrected seven passages of the entry "The 2026-11-11 maintenance audit found one
+mislabelled projection in new or changed walkers" in place:
+
+1. "S1 and S2 are suspected and need Ben's answers." now reads "S1 and S2 were suspected; Ben
+   answered them, with C1, on 2026-11-12."
+2. "on 2026-11-12 `93eb8686` closed five of them, and L4 stays open, as their list below
+   records." now reads "on 2026-11-12 `93eb8686` closed five of them, and `345a0332` closed L4
+   later that day, as their list below records."
+3. C1's "**Disposition: confirmed, unfixed** (this audit is read-only)." now reads
+   "**Disposition: confirmed; this read-only audit left it unfixed, and `eb52ecd5` fixed it on
+   2026-11-12, by Ben's option A.**"
+4. S1's "**Disposition: suspected, unconfirmed; pre-existing**" now reads "**Disposition:
+   settled on 2026-11-12 by Ben's option B, which keeps the row, in `d6a93d9c`;
+   pre-existing**".
+5. S2's "**Disposition: suspected, unconfirmed; a display question that the range
+   introduced.**" now reads "**Disposition: settled on 2026-11-12 by Ben's option A, MAM-with-doc's
+   form in both cells, in `345a0332`; a display question that the range introduced.**"
+6. The latent items' "without changing a tracked output; L4 stays open:" now reads "without
+   changing a tracked output; `345a0332` closed L4 later that day, after Ben's answers to S2 and
+   L4:".
+7. Latent item 4's "**L4, open: the stress-helper default.**" now reads "**L4, closed on
+   2026-11-12 by `345a0332`: the stress-helper default.**"
