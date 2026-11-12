@@ -14,7 +14,13 @@ def find_fois_wt(mroge):
 
 
 def _find_fois_in_string(stack, string):
-    if stack and stack[-1] == "doc-part-n":
+    # A documentation note's body is not searched at any depth: a string in a template
+    # inside the body is skipped as well as one directly in it.  The spellings quoted
+    # in scroll-difference notes are searched, and their rows say scrdfftar-note.  Ben
+    # chose both on 2026-11-12 (S1 of the 2026-11-11 audit in
+    # doc/blind-dive-into-template-params-update.md); until then only a string directly
+    # in a note's body was skipped.
+    if "doc-part-n" in stack:
         return []
     fois = reduce(_add_fois_in_str, fwh.forms(string), [])
     qual_fois = sl_map((_qualify, stack), fois)
