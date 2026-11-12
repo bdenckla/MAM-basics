@@ -318,7 +318,15 @@ def main():
             "input_files": simple_inputs,
         },
         "two_atom_oleh": {
-            "predicate": "Selected atom has OLE without MERKHA, and the immediately following atom has MERKHA; qere selected, fragments reassembled, paseq tokens excluded from atom adjacency. This is a current MAM predicate, not a physical-manuscript count.",
+            "predicate": (
+                "Selected atom has OLE without MERKHA, and the immediately following"
+                " atom has MERKHA; qere selected, except that a trivial ketiv/qere"
+                f" ({audit.TRIVIAL_KQ_NAME}, MAM-simple's kq-trivial) gives its pointed"
+                f" ketiv and {audit.KETIV_WITHOUT_QERE_NAME} (kq-k-velo-q) gives no"
+                " atom; fragments reassembled, paseq tokens excluded from atom"
+                " adjacency. This is a current MAM predicate, not a physical-manuscript"
+                " count."
+            ),
             "same_atom_cases": same_atom,
             "two_atom_cases": len(two_atom),
             "two_atom_verses": len(actual),

@@ -11076,7 +11076,7 @@
     ]
   },
   "two_atom_oleh": {
-    "predicate": "Selected atom has OLE without MERKHA, and the immediately following atom has MERKHA; qere selected, fragments reassembled, paseq tokens excluded from atom adjacency. This is a current MAM predicate, not a physical-manuscript count.",
+    "predicate": "Selected atom has OLE without MERKHA, and the immediately following atom has MERKHA; qere selected, except that a trivial ketiv/qere (מ:קו״כ-אם-2, MAM-simple's kq-trivial) gives its pointed ketiv and כתיב ולא קרי (kq-k-velo-q) gives no atom; fragments reassembled, paseq tokens excluded from atom adjacency. This is a current MAM predicate, not a physical-manuscript count.",
     "same_atom_cases": 368,
     "two_atom_cases": 55,
     "two_atom_verses": 55,

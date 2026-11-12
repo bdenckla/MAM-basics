@@ -22,6 +22,7 @@ from explicit_xataf import extract
 from mb_cmn import bib_locales as bl
 from mb_cmn import hebrew_verse_numerals as hvn
 from mb_cmn import mam_bknas_and_std_bknas as bn
+from mb_cmn import template_names as tn
 from mb_cmn import uni_denorm
 from mb_cmn import verse_external_links as links
 from sigils import inventory as sigils
@@ -35,6 +36,21 @@ FORMS = re.compile(
 )
 WORD = re.compile(r"[\u0591-\u05ea\u034f\ufb1e]+(?:[ −-][\u0591-\u05ea\u034f\ufb1e]+)*")
 HE_BOOKS = {bn.he_bk39_name(book): book for book in bl.ALL_BK39_IDS}
+# The two ketiv/qere templates whose projection in this audit's labelled outputs is not
+# the qere: a trivial ketiv/qere gives its pointed ketiv, and a ketiv without qere gives
+# a ketiv that is not read.  The labels in this module, structures.py and census_scope.py
+# name both, taking the names from template_names rather than spelling them out.
+TRIVIAL_KQ_NAME = tn.TRIVIAL_QERE
+KETIV_WITHOUT_QERE_NAME = {short: name for name, short in tn.LATIN_SHORTS.items()}[
+    "kq-k-velo-q"
+]
+TARGET_PROJECTION_NOTICE = (
+    "Existing hataf survey projection: qere, except that a trivial ketiv/qere"
+    f" ({TRIVIAL_KQ_NAME}) gives its pointed ketiv and {KETIV_WITHOUT_QERE_NAME}"
+    " gives its unread ketiv; primary stress only; structural marks may be omitted,"
+    " but every separator between two atoms, the gray maqaf included, gives a space."
+    " Use target_node for evidence."
+)
 
 
 def dump(name, value):
@@ -287,7 +303,7 @@ def inventory_notes():
                                     "body_node": params["2"],
                                     "body_text": body,
                                     "target_survey_text": target_text,
-                                    "target_projection_notice": "Existing hataf survey projection: qere and primary stress only; structural marks may be omitted, but every separator between two atoms, the gray maqaf included, gives a space. Use target_node for evidence.",
+                                    "target_projection_notice": TARGET_PROJECTION_NOTICE,
                                     "target_projection_error": target_projection_error,
                                     "chapter_revision": revisions[bkid][
                                         hvn.INT_TO_STR_DIC[int(chapter)]

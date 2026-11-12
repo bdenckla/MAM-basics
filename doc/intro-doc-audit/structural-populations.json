@@ -1,5 +1,5 @@
 {
-  "projection": "Existing edition_projection: qere, primary stress, qamats ד, combined cantillation; note target only. Structure counted before selecting its child. No note-body recursion and no all-parameters fallback.",
+  "projection": "Existing edition_projection: qere, except that a trivial ketiv/qere (מ:קו״כ-אם-2) gives its pointed ketiv and כתיב ולא קרי gives its unread ketiv in parentheses; primary stress, qamats ד, combined cantillation; note target only. Structure counted before selecting its child. No note-body recursion and no all-parameters fallback.",
   "verses_scanned": 23202,
   "instances": {
     "מ:קו״כ-אם-2": 149,

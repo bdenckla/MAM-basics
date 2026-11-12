@@ -127,7 +127,14 @@ def main():
         cat: len({r["ref"] for r in records if r["category"] == cat}) for cat in counts
     }
     result = {
-        "projection": "Existing edition_projection: qere, primary stress, qamats ד, combined cantillation; note target only. Structure counted before selecting its child. No note-body recursion and no all-parameters fallback.",
+        "projection": (
+            "Existing edition_projection: qere, except that a trivial ketiv/qere"
+            f" ({audit.TRIVIAL_KQ_NAME}) gives its pointed ketiv and"
+            f" {audit.KETIV_WITHOUT_QERE_NAME} gives its unread ketiv in parentheses;"
+            " primary stress, qamats ד, combined cantillation; note target only."
+            " Structure counted before selecting its child. No note-body recursion"
+            " and no all-parameters fallback."
+        ),
         "verses_scanned": verse_count,
         "instances": counts,
         "distinct_verses": verse_counts,

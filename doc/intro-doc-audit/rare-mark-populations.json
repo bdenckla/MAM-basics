@@ -3117,7 +3117,7 @@
       ]
     }
   },
-  "projection": "Existing edition_projection: qere, primary stress, qamats ד, combined cantillation; note target only. Structure counted before selecting its child. No note-body recursion and no all-parameters fallback.",
+  "projection": "Existing edition_projection: qere, except that a trivial ketiv/qere (מ:קו״כ-אם-2) gives its pointed ketiv and כתיב ולא קרי gives its unread ketiv in parentheses; primary stress, qamats ד, combined cantillation; note target only. Structure counted before selecting its child. No note-body recursion and no all-parameters fallback.",
   "poetic_predicate": "bib_locales.is_poetcant(mk_bcvtmam(...)), including Job's prose sections",
   "limits": "Counts describe selected edition strings, not manuscript populations. Combined atoms are literal Hebrew runs inside selected leaf strings; the five qualifying atoms are retained with source pointers.",
   "characters": [
