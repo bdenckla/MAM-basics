@@ -63,8 +63,14 @@ def _html_in_context(before_sof_pasuq, tmpl):
     return *html, gray_marks.gray_sof_pasuq("hbo")
 
 
+# Parameter 1 of a מ:דחי or מ:צינור in a fragment, the form the renderer gave callers
+# that stated none until 2026-11-12. Whether FOI pages should show MAM-with-doc's
+# form instead is question S2 of doc/blind-dive-into-template-params-update.md.
+_RENOPTS = {"ro_stress_helper": "rv-without-stress-helper"}
+
+
 def _html_for_wtseq(wtseq):
-    hctx = handlers.default_hctx()
+    hctx = handlers.default_hctx(renopts=_RENOPTS)
     renseq = wt_help.render_wtseq(hctx, wtseq)
     hfr_ctx = hfr.HfrCtx(hfrm.HT_TAC_FOR_RT_FOR_SLH_WORD_FOI)
     the_renel = first_and_only(renseq)

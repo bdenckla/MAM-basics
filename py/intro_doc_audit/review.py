@@ -33,24 +33,6 @@ def roster_items():
     }
 
 
-def source_node(value):
-    """Serialize retained parsed structure without projecting or interpreting it."""
-    if isinstance(value, str):
-        return value
-    if isinstance(value, list):
-        return "".join(source_node(v) for v in value)
-    # The source inventory validated the current template schema before this
-    # structural serialization; parameters remain labeled rather than flattened.
-    name = value["tmpl_name"]
-    params = value.get("tmpl_params", {})
-    return (
-        "{{"
-        + name
-        + "".join(f"|{key}={source_node(child)}" for key, child in params.items())
-        + "}}"
-    )
-
-
 @cache
 def raw_book(book):
     from intro_doc_audit import snapshot

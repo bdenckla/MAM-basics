@@ -20,6 +20,7 @@ import dataclasses
 
 from mb_cmn import bib_locales as tbn
 from mb_cmn import read_books_from_mam_parsed_plus as plus
+from mb_cmn import template_names as tmpln
 from mb_misc import osis_book_abbrevs
 
 _NEW_BOOK = "מ:ספר חדש"
@@ -111,15 +112,19 @@ def is_poetic(osis_id):
 
 def plus_stream(node, out):
     """Project plus/ column content to ("text", s), ("atom", token), ("sep", None)
-    and ("break", level) items, by explicit template name."""
+    and ("break", level) items, by explicit template name.
+
+    Each template's name and parameters are first checked by
+    validate_current_plus_template, so a parameter this projection would not read
+    raises rather than being discarded."""
     if isinstance(node, str):
         out.append(("text", node))
     elif isinstance(node, (list, tuple)):
         for item in node:
             plus_stream(item, out)
     elif isinstance(node, dict):
+        params = tmpln.validate_current_plus_template(node)
         name = node["tmpl_name"]
-        params = node.get("tmpl_params") or {}
         if name in LINE_LEVELS:
             out.append(("break", LINE_LEVELS[name]))
         elif name in _SEP_TMPLS:

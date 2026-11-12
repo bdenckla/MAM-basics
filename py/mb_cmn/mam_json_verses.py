@@ -68,8 +68,14 @@ then contribute, keeping the atoms what is written on the page:
     entries include לֹ֣א־יִהְיֶ֥͏ֽה־לְךָ֛֩.
 
 Each of those seven elements has its shape checked against the one it has in every
-occurrence in MAM-simple on 2026-09-26, and any other shape raises ValueError. No
-MAM-simple verse is refused: ``py/tests/test_mam_json_verses.py`` runs
+occurrence in MAM-simple on 2026-09-26, and any other shape raises ValueError. Since
+2026-11-12 the other elements are checked too: a <text> must be a text= alone, and one
+holding only whitespace gives no word; a paseq-family element, <implicit-maqaf>,
+<shirah-space> and a break within a verse must be bare, and <spi-invnun> bare or of
+class including-trailing-space; and a paseq-family element with no word before it, a
+<kq> with no ketiv text, an <slh-word> with no slhw-desc-0, a <scrdfftar> with no
+<sdt-target>, and a target that gives no text yet holds more than parashah breaks
+raise instead of being passed over. No MAM-simple verse is refused: ``py/tests/test_mam_json_verses.py`` runs
 ``get_verse_atoms`` over every verse of MAM-simple/json-vtrad-mam/ and checks that no
 atom is empty.
 
@@ -118,6 +124,7 @@ _PARASHAH_TAGS = frozenset(_SAMPE_PARASHAH.values())
 
 _CANT_FORMS = ["cant-combined", "cant-alef", "cant-bet"]
 _NU10_INVNUN_NEIGHBOR = {"class": "nu10-invnun-neighbor"}
+_INVNUN_WITH_TRAILING_SPACE = {"class": "including-trailing-space"}
 
 
 def _scribal_difference_target_text(sdt, verse_osis):
@@ -270,9 +277,8 @@ def get_verse_words(verse_el):
         words: list of str — the verse's entries, atoms joined across each maqaf
         ketiv_indices: list of int — indices in `words` of the entries holding a ketiv
 
-    Raises ValueError on an unknown child element, or on a shape of a
-    <kq-k-velo-q>, <kq-k-velo-q-maq>, <kq-q-velo-k>, <good-ending>, <spi-pe3>,
-    <spi-samekh3> or <cant-all-three> that MAM-simple does not have.
+    Raises ValueError on an unknown child element, or on a shape of any child
+    element other than the one the module docstring gives it.
     """
     verse_osis = _attributes(verse_el).get("osisID", "?")
     raw_words = []
@@ -291,31 +297,40 @@ def get_verse_words(verse_el):
                 raw_words.extend(ws)
                 ketiv_flags.extend([False] * len(ws))
             elif tag == "text":
-                text = _attributes(child).get("text", "").strip()
-                if text:
-                    ws = text.split()
-                    raw_words.extend(ws)
-                    ketiv_flags.extend([False] * len(ws))
+                # A text= alone; one holding only whitespace, as 28 do between
+                # other elements, gives no word.
+                if set(_attributes(child)) != {"text"} or len(_children(child)):
+                    raise ValueError(
+                        f"<text> in {verse_osis} is not a text= alone: "
+                        f"attributes {_attributes(child)}, "
+                        f"{len(_children(child))} children"
+                    )
+                ws = _attributes(child)["text"].split()
+                raw_words.extend(ws)
+                ketiv_flags.extend([False] * len(ws))
             elif tag in ("lp-legarmeih", "lp-paseq"):
                 # Append paseq to the last word
-                if raw_words:
-                    raw_words[-1] = raw_words[-1] + PASEQ
+                _check_bare(child, verse_osis)
+                if not raw_words:
+                    raise ValueError(f"<{tag}> in {verse_osis} follows no word")
+                raw_words[-1] = raw_words[-1] + PASEQ
             elif tag == "kq":
                 # Non-trivial ketiv/qere — use ketiv text (unpointed)
                 kq_k = _find_child(child, "kq-k")
-                if kq_k is not None:
-                    kt = _attributes(kq_k).get("text", "").strip()
-                    if not kt:
-                        slh = _find_child(kq_k, "slh-word")
-                        if slh is not None:
-                            kt = _attributes(slh).get("slhw-desc-0", "").strip()
-                    assert kt, (
-                        f"<kq-k> has no text= and no slh-word child "
-                        f"in {_attributes(verse_el).get('osisID', '?')}"
+                if kq_k is None:
+                    raise ValueError(f"<kq> in {verse_osis} has no <kq-k>")
+                kt = _attributes(kq_k).get("text", "").strip()
+                if not kt:
+                    slh = _find_child(kq_k, "slh-word")
+                    if slh is not None:
+                        kt = _attributes(slh).get("slhw-desc-0", "").strip()
+                if not kt:
+                    raise ValueError(
+                        f"<kq-k> has no text= and no slh-word child in {verse_osis}"
                     )
-                    ws = kt.split()
-                    raw_words.extend(ws)
-                    ketiv_flags.extend([True] * len(ws))
+                ws = kt.split()
+                raw_words.extend(ws)
+                ketiv_flags.extend([True] * len(ws))
             elif tag == "kq-trivial":
                 ws = _trivial_kq_words(child, verse_osis)
                 raw_words.extend(ws)
@@ -323,27 +338,35 @@ def get_verse_words(verse_el):
             elif tag == "slh-word":
                 # Suspended-letter word — use desc-0 (full pointed word)
                 text = _attributes(child).get("slhw-desc-0", "").strip()
-                if text:
-                    ws = text.split()
-                    raw_words.extend(ws)
-                    ketiv_flags.extend([False] * len(ws))
+                if not text:
+                    raise ValueError(f"<slh-word> in {verse_osis} has no slhw-desc-0")
+                ws = text.split()
+                raw_words.extend(ws)
+                ketiv_flags.extend([False] * len(ws))
             elif tag == "scrdfftar":
                 # Scribal difference target — extract visible text in document order.
                 sdt = _find_child(child, "sdt-target")
-                if sdt is not None:
-                    text = _scribal_difference_target_text(sdt, verse_osis)
-                    if text:
-                        ws = text.split()
-                        raw_words.extend(ws)
-                        ketiv_flags.extend([False] * len(ws))
+                if sdt is None:
+                    raise ValueError(f"<scrdfftar> in {verse_osis} has no <sdt-target>")
+                text = _scribal_difference_target_text(sdt, verse_osis)
+                # A target with no text gives no word: two are empty (Exod 26:6 and
+                # Deut 27:19) and three hold only a parashah break.
+                if not text and any(kid["type"] != "spi-pe2" for kid in _children(sdt)):
+                    raise ValueError(f"<sdt-target> in {verse_osis} gives no text")
+                ws = text.split()
+                raw_words.extend(ws)
+                ketiv_flags.extend([False] * len(ws))
             elif tag == "implicit-maqaf":
-                pass  # No visible text
+                _check_bare(child, verse_osis)  # No visible text
             elif tag == "shirah-space":
-                pass  # Visual spacing in song layout, no text
+                # Visual spacing in song layout, no text
+                _check_bare(child, verse_osis)
             elif tag == "spi-invnun":
-                pass  # Inverted nun (nun hafukha) — a scribal mark, no text
+                # Inverted nun (nun hafukha) — a scribal mark, no text
+                _check_bare(child, verse_osis, _INVNUN_WITH_TRAILING_SPACE)
             elif tag in ("spi-pe2", "spi-samekh2", "spi-pe1", "spi-samekh1"):
-                pass  # A break within a verse contributes nothing
+                # A break within a verse contributes nothing
+                _check_bare(child, verse_osis)
             elif tag == "spi-pe3":
                 # Ben, 2026-09-26: a break within a verse contributes nothing.
                 _check_bare(child, verse_osis)

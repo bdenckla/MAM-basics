@@ -233,6 +233,10 @@ def templates_before_sof_pasuq(wtseq):
     template adds the sof pasuq after it, gray, as foi_gray_marks.gray_sof_pasuq.  An
     id names its template while the FOI's traversal holds the same template objects,
     as it does within one call.
+
+    The search enters every parameter of every template, at any depth, as
+    with_attached_marks does, and like it validates each template first with
+    validate_current_plus_template, so an unknown template or parameter raises.
     """
     found = set()
     _add_templates_before_sof_pasuq(wtseq, found)
@@ -244,6 +248,7 @@ def _add_templates_before_sof_pasuq(wtseq, io_found):
     for index, wtel in enumerate(seq):
         if isinstance(wtel, str):
             continue
+        tmpln.validate_current_plus_template(wtel)
         for param_val in wtp.template_param_vals(wtel):
             _add_templates_before_sof_pasuq(param_val, io_found)
         after = seq[index + 1] if index + 1 < len(seq) else None

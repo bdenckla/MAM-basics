@@ -276,15 +276,23 @@ def _handle_stress_helper_word(hctx, tmpl):
     if set(wtp.template_param_keys(tmpl)) != {"1", "2"}:
         raise ValueError(f"{hctx.bcvt}: unexpected stress-helper parameters: {tmpl!r}")
     choice = wt_help.get_renopt(hctx, "ro_stress_helper")
+    if choice is None:
+        raise ValueError(
+            f"{hctx.bcvt}: a caller rendering {wtp.template_name(tmpl)} states no "
+            f"ro_stress_helper"
+        )
     if choice not in _STRESS_HELPER_FORMS:
         raise ValueError(f"{hctx.bcvt}: unknown ro_stress_helper value: {choice!r}")
     forms = _stress_helper_forms(hctx, tmpl)
     return wt_help.render_wtseq(hctx, forms[_STRESS_HELPER_FORMS[choice]])
 
 
-# The form of מ:דחי and מ:צינור that each value of ro_stress_helper shows. None,
-# the value of a caller that does not set the option, shows parameter 1, as every
-# caller did before the option existed. The last value is for pages set in Taamey
+# The form of מ:דחי and מ:צינור that each value of ro_stress_helper shows. A caller
+# that can meet either template states one; until 2026-11-12 a caller that stated
+# none was shown parameter 1, as every caller was before the option existed, and
+# the callers that relied on that now state "rv-without-stress-helper", which
+# shows the same form (doc/blind-dive-into-template-params-update.md, latent item
+# L4 of its 2026-11-11 audit). The last value is for pages set in Taamey
 # D, which draws a dexi stress helper as a "top meteg", above its letter, so that
 # they can also show a meteg below that letter, one that MAM's parameter 2 lacks
 # where parameter 1 has it. Ben, 2026-10-27: "in contexts like "MAM with doc",
@@ -294,7 +302,6 @@ def _handle_stress_helper_word(hctx, tmpl):
 # release, whose readers choose their own fonts, and that release keeps MAM's
 # parameter 2 as it is. Ben, 2026-10-27: "let's leave Phonetic MAM as-is".
 _STRESS_HELPER_FORMS = {
-    None: "parameter 1",
     "rv-without-stress-helper": "parameter 1",
     "rv-with-stress-helper": "parameter 2",
     "rv-with-stress-helper-keeping-meteg": "parameter 2 keeping meteg",

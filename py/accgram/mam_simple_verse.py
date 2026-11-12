@@ -1,11 +1,11 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-import json
 from pathlib import Path
 
 from mb_cmn import bib_locales as tbn
 from mb_cmn import hebrew_punctuation as hpunc
+from mb_cmn import mam_simple_json
 from mb_cmn.mam_simple_book_group import resolve_book_group_path
 from mb_misc import osis_book_abbrevs as oba
 
@@ -78,23 +78,13 @@ def load_mam_simple_for_refs(
     for bb, ref_pairs in refs_by_book.items():
         bk39id = wlc_bb_to_bk39id(bb)
         json_path = mam_simple_json_path(mam_simple_dir, bk39id)
-        root = _read_json(json_path)
-        if not isinstance(root, dict):
-            raise ValueError(f"Expected root object in MAM-simple file: {json_path}")
+        osis_prefix = oba.BOOK_ABBREVS[bk39id]
 
         target_set = set(ref_pairs)
-        for verse_node in _iter_dict_nodes(root):
-            if verse_node.get("type") != "verse":
-                continue
-
-            osis_id = verse_node.get("osisID")
-            osis_prefix = oba.BOOK_ABBREVS.get(bk39id)
-            if (
-                not isinstance(osis_id, str)
-                or osis_prefix is None
-                or not osis_id.startswith(f"{osis_prefix}.")
-            ):
-                continue
+        for verse_node in _verse_nodes(json_path):
+            osis_id = _verse_osis_id(verse_node, json_path)
+            if not osis_id.startswith(f"{osis_prefix}."):
+                continue  # a verse of another book in the same book group
 
             chnu, vrnu = _parse_osis_id(osis_id)
             if (chnu, vrnu) not in target_set:
@@ -134,17 +124,11 @@ def mam_simple_refs(mam_simple_dir: Path) -> dict[str, set[tuple[int, int]]]:
     for bb in wlc_bb_codes():
         bk39id = wlc_bb_to_bk39id(bb)
         json_path = mam_simple_json_path(mam_simple_dir, bk39id)
-        osis_prefix = oba.BOOK_ABBREVS.get(bk39id)
-        if osis_prefix is None:
-            continue
-        for verse_node in _iter_dict_nodes(_read_json(json_path)):
-            if verse_node.get("type") != "verse":
-                continue
-            osis_id = verse_node.get("osisID")
-            if not isinstance(osis_id, str) or not osis_id.startswith(
-                f"{osis_prefix}."
-            ):
-                continue
+        osis_prefix = oba.BOOK_ABBREVS[bk39id]
+        for verse_node in _verse_nodes(json_path):
+            osis_id = _verse_osis_id(verse_node, json_path)
+            if not osis_id.startswith(f"{osis_prefix}."):
+                continue  # a verse of another book in the same book group
             refs.setdefault(bb, set()).add(_parse_osis_id(osis_id))
     return refs
 
@@ -234,26 +218,23 @@ def _mam_simple_json_file_for_bk39id(bk39id: str) -> str:
     return f"{first_prefix}-{last_prefix}.json"
 
 
-def _read_json(path: Path):
-    with path.open("r", encoding="utf-8") as f_in:
-        return json.load(f_in)
+def _verse_nodes(json_path: Path):
+    """Locate every verse of one MAM-simple book-group file.
 
-
-def _iter_dict_nodes(value: object):
-    """Yield every dictionary in the complete MAM-simple structure.
-
-    This is deliberately an all-node corpus inventory used only to locate
-    verse objects; it does not select or flatten Scripture text.
+    This structural inventory does not flatten text or choose an alternative.  It reads
+    the file's envelope and walks the explicit book24/book39/chapter hierarchy
+    (``mb_cmn.mam_simple_json``), so a node out of place raises; until 2026-11-12 it
+    walked every dictionary of the file and passed over whatever was not a verse, as
+    ``mam_poetic_accents._iter_verse_nodes`` did until 2026-10-21.
     """
-    if isinstance(value, dict):
-        yield value
-        contents = value.get("contents")
-        if isinstance(contents, list):
-            for child in contents:
-                yield from _iter_dict_nodes(child)
-    elif isinstance(value, list):
-        for child in value:
-            yield from _iter_dict_nodes(child)
+    return mam_simple_json.verses(mam_simple_json.read_book_group(json_path))
+
+
+def _verse_osis_id(verse_node: dict[str, object], json_path: Path) -> str:
+    osis_id = verse_node.get("osisID")
+    if not isinstance(osis_id, str):
+        raise ValueError(f"MAM-simple verse in {json_path} has no osisID: {osis_id!r}")
+    return osis_id
 
 
 def _parse_osis_id(osis_id: str) -> tuple[int, int]:
