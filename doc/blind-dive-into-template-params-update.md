@@ -614,6 +614,13 @@ at 2 Kings 5:18 and Ruth 3:12; the `projection` field of the three population fi
 census predicate. No count changed, and `py/main_intro_doc_audit.py review` rewrote its outputs
 unchanged.
 
+One defect stays unfixed, since option A changes only labels. `py/explicit_xataf/extract.py`'s
+`flatten_text` gives a כתיב ולא קרי its parameter 2, the ketiv without parentheses, and
+leaves out its parameter 3, which at 2 Kings 5:18 is a maqaf. So that verse's `target_survey_text`
+in `notes.json` runs the unread ketiv into the next atom, with neither a space nor a maqaf
+between them: יִסְלַח־נאיְהֹוָ֥ה. Ruth 3:12's call has no parameter 3. Whether `flatten_text` should
+change is Ben's decision; it was not put to him on 2026-11-12.
+
 **S1, settled by `d6a93d9c`.** Option B, "Keep them, and say so": "keeps the row, and states
 on both pages that spellings quoted in scroll-difference notes are included and labelled. It also
 makes the documentation-note exclusion whole, so that the text inside a template in a note's body
