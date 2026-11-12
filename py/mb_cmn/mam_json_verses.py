@@ -75,9 +75,9 @@ holding only whitespace gives no word; a paseq-family element, <implicit-maqaf>,
 class including-trailing-space; and a paseq-family element with no word before it, a
 <kq> with no ketiv text, an <slh-word> with no slhw-desc-0, a <scrdfftar> with no
 <sdt-target>, and a target that gives no text yet holds more than parashah breaks
-raise instead of being passed over. No MAM-simple verse is refused: ``py/tests/test_mam_json_verses.py`` runs
-``get_verse_atoms`` over every verse of MAM-simple/json-vtrad-mam/ and checks that no
-atom is empty.
+raise instead of being passed over. No MAM-simple verse is refused:
+``py/tests/test_mam_json_verses.py`` runs ``get_verse_atoms`` over every verse of
+MAM-simple/json-vtrad-mam/ and checks that no atom is empty.
 
 Parashah breaks. MAM-simple places a break between books, between chapters, between
 verses or within a verse (gh-pages/MAM-simple/reading-mam-simple-json.html).
