@@ -7,6 +7,10 @@ Sefaria versifications. See [MAM-parsed](../MAM-parsed/README.md) for a complete
 
 The XML distribution was retired on 2026-10-12. Applications should read JSON.
 
+MAM gives some chanted words in two forms, without and with a stress helper, through its
+templates מ:דחי and מ:צינור. MAM-simple gives the form without the stress helper,
+as every MAM-simple release has; MAM-with-doc shows the form with it.
+
 ## Documentation
 
 - [Reading MAM-simple](https://bdenckla.github.io/MAM-basics/MAM-simple/reading-mam-simple.html) — file layout, consumer notice, and examples

@@ -5,6 +5,7 @@ from dataclasses import dataclass
 import re
 
 from mb_cmn.hebrew_punctuation import MAQ, PASOLEG
+from mb_cmn import stress_helper_forms as shf
 from mb_cmn import template_names
 from hkq_cmn.template_name_quotes import canonical_template_name
 
@@ -47,7 +48,12 @@ class QereProjectionPolicy:
 
     name: str
     trivial_qere_argument_key: str
-    stress_helper_argument_keys: tuple[str, ...]
+    # The forms of a stress-helper template that the projection gives, in order, each
+    # one of mb_cmn.stress_helper_forms.FORM_NAMES: parameter 1, parameter 2, or
+    # parameter 2 keeping parameter 1's meteg, which that module derives for the
+    # renderer too.  Until 2026-11-12 this field was stress_helper_argument_keys,
+    # which named parameters and could not ask for the third form.
+    stress_helper_forms: tuple[str, ...]
     qamats_argument_keys: tuple[str, ...]
     dual_cantillation_argument_keys: tuple[str, ...]
     whitespace_text: str = " "
@@ -58,6 +64,19 @@ class QereProjectionPolicy:
     gray_maqaf_text: str = MAQ
     excluded_qamats_text: str = " "
 
+    def __post_init__(self) -> None:
+        forms = self.stress_helper_forms
+        if (
+            not isinstance(forms, tuple)
+            or not forms
+            or len(set(forms)) != len(forms)
+            or not set(forms) <= shf.FORM_NAMES
+        ):
+            raise ValueError(
+                f"{self.name!r} names stress-helper forms {forms!r}, not a tuple of"
+                f" distinct names from {sorted(shf.FORM_NAMES)!r}"
+            )
+
 
 # The holam-he search decision is deferred in
 # doc/PLAN-deferred-template-projection-decisions.md.  This policy makes the
@@ -66,7 +85,7 @@ class QereProjectionPolicy:
 HOLAM_HE_MAIN_COMPATIBLE_POLICY = QereProjectionPolicy(
     name="holam-he-main-compatible",
     trivial_qere_argument_key="1",
-    stress_helper_argument_keys=("1", "2"),
+    stress_helper_forms=(shf.PARAMETER_1, shf.PARAMETER_2),
     qamats_argument_keys=("ד", "ס"),
     dual_cantillation_argument_keys=("כפול", "א", "ב"),
 )
@@ -77,7 +96,7 @@ HOLAM_HE_MAIN_COMPATIBLE_POLICY = QereProjectionPolicy(
 XATAF_QAMATS_POLICY = QereProjectionPolicy(
     name="xataf-qamats-foi",
     trivial_qere_argument_key="3",
-    stress_helper_argument_keys=("1",),
+    stress_helper_forms=(shf.PARAMETER_1,),
     qamats_argument_keys=(),
     dual_cantillation_argument_keys=("כפול",),
 )
@@ -87,11 +106,16 @@ XATAF_QAMATS_POLICY = QereProjectionPolicy(
 # 2026-11-09, settling item 8 of the same plan document, under his rule of that day
 # that a form keeps its legarmeh "but NOT paseq in the narrow sense".  Whitespace and
 # the gray maqaf take the defaults: giving either nothing would run two atoms
-# together, which Ben Denckla ruled out for the gray maqaf on 2026-10-20.
+# together, which Ben Denckla ruled out for the gray maqaf on 2026-10-20.  A
+# stress-helper template gives parameter 2 keeping parameter 1's meteg, the form
+# MAM-with-doc shows and the row's first cell, MAM's rendering of the template, shows
+# too; Ben Denckla chose MAM-with-doc's form for both cells on 2026-11-12 (S2 of the
+# 2026-11-11 audit in doc/blind-dive-into-template-params-update.md).  Until then
+# the pqere field gave parameter 1.
 FOI_KQ_SIMPLE_MAIN_COMPATIBLE_POLICY = QereProjectionPolicy(
     name="foi-kq-simple-main-compatible",
     trivial_qere_argument_key="3",
-    stress_helper_argument_keys=("1",),
+    stress_helper_forms=(shf.PARAMETER_2_KEEPING_METEG,),
     qamats_argument_keys=("ד",),
     dual_cantillation_argument_keys=("כפול",),
     paseq_text="",
@@ -277,13 +301,14 @@ def project_qere_atoms(
         canonical_template_name(item)
         for item in template_names.STRESS_HELPER_TMPL_NAMES
     }:
-        return _project_argument_keys(
-            tmpl_name,
-            tmpl_params,
-            policy.stress_helper_argument_keys,
-            source=source,
-            policy=policy,
-        )
+        forms = shf.forms(node, policy.name)
+        projected = [
+            project_qere_atoms(forms[form], source=source, policy=policy)
+            for form in policy.stress_helper_forms
+        ]
+        if len(projected) == 1:
+            return projected[0]
+        return [_template_atom(tmpl_name, projected)]
 
     if cmp_name == canonical_template_name(template_names.QAMATS_VARIANT):
         if not policy.qamats_argument_keys:

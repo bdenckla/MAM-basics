@@ -4,22 +4,19 @@ Exports:
     col_c_hctx(hctx: wt_help.Hctx)
 """
 
-import unicodedata
-from collections import Counter
-
 from py_misc import get_cvm_rec_from_bcvt as gcrfb
 from py_misc import mam_doc_utils as doc_utils
 from py_misc import near_aleppo_params as nap  # near-aleppo
 from py_misc import true_gershayim as true_g2
 from py_misc import unbury_doc_parts as unbury
 from mb_cmn import bib_locales as tbn
-from mb_cmn import hebrew_accents as ha
 from mb_cmn import hebrew_letters as hl
 from mb_cmn import hebrew_points as hpo
 from mb_cmn import hebrew_punctuation as hpu
 from mb_cmn import str_defs as sd
 from mb_cmn import template_names as tmpln
 from mb_cmn.silluq_before_meteg import validate_silluq_before_meteg
+from mb_cmn import stress_helper_forms as shf
 from mb_cmn import ws_tmpl2 as wtp
 from render_wt import render_element as renel
 from render_wt import render_wikitext_added_clauses as added_clauses  # near-aleppo
@@ -30,7 +27,6 @@ from render_wt import render_wikitext_kq as kq
 from render_wt import render_wikitext_spacing_concerns as spacing
 from mb_cmn.he_wikisource_url import he_page_url
 from mb_cmn.my_utils import dv_map
-from mb_cmn.my_utils import first_and_only
 from mb_cmn.my_utils import first_and_only_and_str
 from mb_cmn.my_utils import st_map
 
@@ -270,21 +266,30 @@ def _handle_stress_helper_word(hctx, tmpl):
     Parameter 1 is the chanted word with its accent alone, and parameter 2 is the
     same chanted word with the accent's stress helper as well. The caller's render
     option ro_stress_helper chooses among those two and a third form, by
-    _STRESS_HELPER_FORMS; _stress_helper_forms checks the parameters and derives
-    the third form.
+    _STRESS_HELPER_FORMS, and must be set; mb_cmn.stress_helper_forms checks the
+    parameters and derives the third form.
     """
-    if set(wtp.template_param_keys(tmpl)) != {"1", "2"}:
-        raise ValueError(f"{hctx.bcvt}: unexpected stress-helper parameters: {tmpl!r}")
     choice = wt_help.get_renopt(hctx, "ro_stress_helper")
+    if choice is None:
+        raise ValueError(
+            f"{hctx.bcvt}: a caller rendering {wtp.template_name(tmpl)} states no "
+            f"ro_stress_helper"
+        )
     if choice not in _STRESS_HELPER_FORMS:
         raise ValueError(f"{hctx.bcvt}: unknown ro_stress_helper value: {choice!r}")
-    forms = _stress_helper_forms(hctx, tmpl)
+    forms = shf.forms(tmpl, hctx.bcvt)
     return wt_help.render_wtseq(hctx, forms[_STRESS_HELPER_FORMS[choice]])
 
 
-# The form of מ:דחי and מ:צינור that each value of ro_stress_helper shows. None,
-# the value of a caller that does not set the option, shows parameter 1, as every
-# caller did before the option existed. The last value is for pages set in Taamey
+# The form of מ:דחי and מ:צינור that each value of ro_stress_helper shows. A caller
+# that can meet either template states one, and an unset option raises. Until
+# 2026-11-12 an unset option gave parameter 1, as every caller was given before
+# the option existed; latent item L4 of the 2026-11-11 audit recorded in
+# doc/blind-dive-into-template-params-update.md asked each caller to state its
+# form. Ben decided on 2026-11-12 that MAM-simple states parameter 1, the form
+# every MAM-simple release has shipped, and that the FOI fragments state
+# MAM-with-doc's form, the one MAM-with-doc's verse column shows.
+# The last value is for pages set in Taamey
 # D, which draws a dexi stress helper as a "top meteg", above its letter, so that
 # they can also show a meteg below that letter, one that MAM's parameter 2 lacks
 # where parameter 1 has it. Ben, 2026-10-27: "in contexts like "MAM with doc",
@@ -294,105 +299,10 @@ def _handle_stress_helper_word(hctx, tmpl):
 # release, whose readers choose their own fonts, and that release keeps MAM's
 # parameter 2 as it is. Ben, 2026-10-27: "let's leave Phonetic MAM as-is".
 _STRESS_HELPER_FORMS = {
-    None: "parameter 1",
-    "rv-without-stress-helper": "parameter 1",
-    "rv-with-stress-helper": "parameter 2",
-    "rv-with-stress-helper-keeping-meteg": "parameter 2 keeping meteg",
+    "rv-without-stress-helper": shf.PARAMETER_1,
+    "rv-with-stress-helper": shf.PARAMETER_2,
+    "rv-with-stress-helper-keeping-meteg": shf.PARAMETER_2_KEEPING_METEG,
 }
-# The accent of which each template's parameter 2 has one more: its stress helper.
-_STRESS_HELPER_ACCENTS = {"מ:דחי": ha.DEX, "מ:צינור": ha.Z_OR_TSOR}
-# For each template that a stress-helper parameter can be, its parameter holding
-# the uninterrupted chanted word as text.
-_UNINTERRUPTED_WORD_PARAMETERS = {tmpln.SLH_WORD: "2"}
-
-
-def _stress_helper_forms(hctx, tmpl):
-    """Return parameter 1, parameter 2, and parameter 2 keeping parameter 1's meteg.
-
-    Raises unless parameter 2 is parameter 1 with one more of the template's accent,
-    its stress helper, on one letter, where parameter 2 may also lack a meteg that
-    parameter 1 has, as a few calls of מ:דחי in MAM do (the FOI page
-    foi-dexi-stress-meteg lists them). The third form keeps that meteg.
-    A parameter that is a special-letter word is compared through its uninterrupted
-    word, and may not lack such a meteg, since nothing here keeps one inside it.
-    """
-    helper = _STRESS_HELPER_ACCENTS[wtp.template_name(tmpl)]
-    val1, val2 = (wtp.template_param_val(tmpl, name) for name in ("1", "2"))
-    for name, val in (("1", val1), ("2", val2)):
-        if all(wtel == "" for wtel in val):
-            raise ValueError(
-                f"{hctx.bcvt}: empty stress-helper parameter {name}: {tmpl!r}"
-            )
-    forms = {"parameter 1": val1, "parameter 2": val2}
-    if all(isinstance(wtel, str) for wtel in (*val1, *val2)):
-        kept = _with_kept_meteg(hctx, "".join(val1), "".join(val2), helper)
-        return {**forms, "parameter 2 keeping meteg": val2 if kept is None else [kept]}
-    word1, word2 = (_uninterrupted_word(hctx, val) for val in (val1, val2))
-    if _with_kept_meteg(hctx, word1, word2, helper) is not None:
-        raise ValueError(
-            f"{hctx.bcvt}: a meteg to keep in a special-letter word: {tmpl!r}"
-        )
-    return {**forms, "parameter 2 keeping meteg": val2}
-
-
-def _uninterrupted_word(hctx, val):
-    """Return the text of a stress-helper parameter that is one special-letter word."""
-    wtel = first_and_only(val)
-    name = wtp.template_name_if_is_template(wtel)
-    if name not in _UNINTERRUPTED_WORD_PARAMETERS:
-        raise ValueError(f"{hctx.bcvt}: unexpected stress-helper parameter: {val!r}")
-    param_val = wtp.template_param_val(wtel, _UNINTERRUPTED_WORD_PARAMETERS[name])
-    return first_and_only_and_str(param_val)
-
-
-def _with_kept_meteg(hctx, text1, text2, helper):
-    """Return text2 with the meteg that text1 has where text2 has the helper.
-
-    Returns None if text1 has no meteg there. Raises unless the two texts have the
-    same letters and marks, except that on one letter text2 has one more helper and
-    may lack a meteg that text1 has.
-    """
-    clusters1, clusters2 = _mark_clusters(text1), _mark_clusters(text2)
-    differing = [
-        i
-        for i, (cl1, cl2) in enumerate(zip(clusters1, clusters2))
-        if cl1[0] != cl2[0] or Counter(cl1[1]) != Counter(cl2[1])
-    ]
-    if len(clusters1) != len(clusters2) or len(differing) != 1:
-        raise ValueError(
-            f"{hctx.bcvt}: unexpected stress-helper forms: {text1} {text2}"
-        )
-    (i,) = differing
-    (base, marks1), (base2, marks2) = clusters1[i], clusters2[i]
-    added = Counter(marks2) - Counter(marks1)
-    removed = Counter(marks1) - Counter(marks2)
-    expected_removals = Counter(), Counter({hpo.MTGOSLQ: 1})
-    if (
-        base != base2
-        or added != Counter({helper: 1})
-        or removed not in expected_removals
-    ):
-        raise ValueError(
-            f"{hctx.bcvt}: unexpected stress-helper forms: {text1} {text2}"
-        )
-    if not removed:
-        return None
-    kept = [char + "".join(marks) for char, marks in clusters2]
-    kept[i] = base + "".join(marks1) + helper
-    return "".join(kept)
-
-
-def _mark_clusters(text):
-    """Return each character that is not a combining mark, with the marks after it."""
-    clusters = []
-    for char in text:
-        if unicodedata.category(char) != "Mn":
-            clusters.append((char, []))
-        elif clusters:
-            clusters[-1][1].append(char)
-        else:
-            raise ValueError(f"a combining mark with no letter before it: {text!r}")
-    return clusters
 
 
 def _handle_silluq_before_meteg(hctx, tmpl):

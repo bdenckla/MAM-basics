@@ -9,6 +9,7 @@ selects a representative of each category for the divine name.
 from foi import foi_struct as fct
 from hkq_cmn.qere_projection import QereProjectionPolicy, project_qere_atoms
 from mb_cmn import bib_locales as tbn
+from mb_cmn import stress_helper_forms as shf
 from mb_cmn import hebrew_accents as ha
 from mb_cmn import hebrew_letters as hl
 from mb_cmn import hebrew_points as hp
@@ -26,7 +27,7 @@ OTHER_CATEGORIES = frozenset((_OTHER_WITH[1], _OTHER_WITHOUT[1]))
 _POLICY = QereProjectionPolicy(
     name="holam-before-vav-foi",
     trivial_qere_argument_key="1",
-    stress_helper_argument_keys=("1",),
+    stress_helper_forms=(shf.PARAMETER_1,),
     qamats_argument_keys=("ד",),
     dual_cantillation_argument_keys=("כפול",),
 )

@@ -3,6 +3,7 @@ from functools import partial
 from mb_cmn import template_names as tmpln
 from py_misc import ren_html_for_renel as hfr
 from mb_cmn import ws_tmpl2 as wtp
+from mwd import mwd_write_book as mwdwb
 from render_wt import render_wikitext_handlers as handlers
 from render_wt import render_wikitext_helpers as wt_help
 from py_misc import ren_html_from_ren_el_mapping as hfrm
@@ -101,8 +102,15 @@ def _record_sampe_in_col_e(_foilers, stack, tmpl):
     return [(_FP_RT_CES, qual_target)]
 
 
+# A stress-helper template in a fragment takes MAM-with-doc's form, the one its verse
+# column shows: parameter 2 keeping parameter 1's meteg.  Ben chose it on 2026-11-12
+# (S2 of the 2026-11-11 audit in doc/blind-dive-into-template-params-update.md); until
+# then a fragment showed parameter 1, the renderer's default, which no longer exists.
+_RENOPTS = {"ro_stress_helper": mwdwb.RENOPTS_MAM_WITH_DOC["ro_stress_helper"]}
+
+
 def _html_for_wtseq(wtseq, column="E"):
-    hctx = handlers.default_hctx()
+    hctx = handlers.default_hctx(renopts=_RENOPTS)
     if column == "C":
         if tuple(wtseq) == ("__",):
             return ("__",)

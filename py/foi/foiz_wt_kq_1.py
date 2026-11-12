@@ -6,6 +6,7 @@ from foi import foi_wikitext_helpers as fwh
 from py_misc import ren_html_from_ren_el_mapping as hfrm
 from py_misc import ren_html_for_renel as hfr
 from mb_cmn import ws_tmpl2 as wtp
+from mwd import mwd_write_book as mwdwb
 from render_wt import render_wikitext_handlers as handlers
 from render_wt import render_wikitext_helpers as wt_help
 from mb_cmn import kq_special_templates as kqst
@@ -84,8 +85,15 @@ def _record_kq_as_foi(_foilers, stack, tmpl):
     return [(foi_path, foi_target)]
 
 
+# A stress-helper template in a fragment takes MAM-with-doc's form, the one its verse
+# column shows: parameter 2 keeping parameter 1's meteg.  Ben chose it on 2026-11-12
+# (S2 of the 2026-11-11 audit in doc/blind-dive-into-template-params-update.md); until
+# then a fragment showed parameter 1, the renderer's default, which no longer exists.
+_RENOPTS = {"ro_stress_helper": mwdwb.RENOPTS_MAM_WITH_DOC["ro_stress_helper"]}
+
+
 def _html_for_wtseq(wtseq):
-    hctx = handlers.default_hctx()
+    hctx = handlers.default_hctx(renopts=_RENOPTS)
     renseq = wt_help.render_wtseq(hctx, wtseq)
     hfr_ctx = hfr.HfrCtx(hfrm.HT_TAC_FOR_RT_FOR_KETIV_QERE_FOI)
     return hfr.html_for_ren_el(hfr_ctx, renseq)
