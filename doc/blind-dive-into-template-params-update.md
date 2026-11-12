@@ -614,12 +614,13 @@ at 2 Kings 5:18 and Ruth 3:12; the `projection` field of the three population fi
 census predicate. No count changed, and `py/main_intro_doc_audit.py review` rewrote its outputs
 unchanged.
 
-One defect stays unfixed, since option A changes only labels. `py/explicit_xataf/extract.py`'s
-`flatten_text` gives a כתיב ולא קרי its parameter 2, the ketiv without parentheses, and
-leaves out its parameter 3, which at 2 Kings 5:18 is a maqaf. So that verse's `target_survey_text`
-in `notes.json` runs the unread ketiv into the next atom, with neither a space nor a maqaf
-between them: יִסְלַח־נאיְהֹוָ֥ה. Ruth 3:12's call has no parameter 3. Whether `flatten_text` should
-change is Ben's decision; it was not put to him on 2026-11-12.
+One defect was left unfixed by C1's option A, which changes only labels.
+`py/explicit_xataf/extract.py`'s `flatten_text` gave a כתיב ולא קרי its parameter 2, the ketiv
+without parentheses, and left out its parameter 3, which at 2 Kings 5:18 is a maqaf. So that
+verse's `target_survey_text` in `notes.json` ran the unread ketiv into the next atom, with
+neither a space nor a maqaf between them: יִסְלַח־נאיְהֹוָ֥ה. Ruth 3:12's call has no parameter 3.
+At 16:18 New York time that day Ben chose to have `flatten_text` give parameter 3 too, and
+`bad593e6` made that fix, as the entry "The flatten_text defect was fixed, 2026-11-12" records.
 
 **S1, settled by `d6a93d9c`.** Option B, "Keep them, and say so": "keeps the row, and states
 on both pages that spellings quoted in scroll-difference notes are included and labelled. It also
@@ -698,3 +699,123 @@ mislabelled projection in new or changed walkers" in place:
    L4:".
 7. Latent item 4's "**L4, open: the stress-helper default.**" now reads "**L4, closed on
    2026-11-12 by `345a0332`: the stress-helper default.**"
+
+## The flatten_text defect was fixed, 2026-11-12
+
+Recorded by Claude (Opus 5.5) on 2026-11-12, New York time, while carrying out the fix, by a
+sub-agent of the session that owns its integration. The entry "C1, S1, S2 and L4 were settled
+and carried out, 2026-11-12" recorded a defect that C1's option A, which changes only labels,
+left unfixed: `py/explicit_xataf/extract.py`'s `flatten_text` gave the template כתיב ולא קרי
+its parameter 2 and left out its parameter 3. At 16:18 New York time that day Ben answered
+another session's question "Take all four recommendations?" with "Yes, all four". This fix is
+that session's question 4, option A, whose text, in that session's words and not Ben's, is:
+"Give parameter 3 too. The unread ketiv keeps the maqaf MAM writes after it, so the two atoms
+stay apart. ... Only 2 Kings 5:18's survey text is expected to change. The regenerated diff
+would show any other effect on consumers of flatten_text."
+
+**Fixed by `bad593e6`, whose comment and docstrings `a06991a2` reworded.** `flatten_text` gives
+the template כתיב ולא קרי an arm of its own, and that name is no longer in
+`_RETURN_ARG2_TMPL_NAMES`; the arm takes the name from `py/mb_cmn/template_names.py`'s
+`LATIN_SHORTS`, as `py/intro_doc_audit/audit.py` does. The arm's `_ketiv_without_qere_text`
+returns parameter 2 followed by parameter 3 when the call has one. It raises unless the call has
+parameters 1 and 2 and no other but 3, and unless parameter 3 is a maqaf alone, the one value the
+census below found. A comment above its constants gives Ben's decision and its date, and points
+to the defect's record in the entry before this one.
+
+**Census**, written to a file before the code changed. A walk of each `MAM-parsed/plus/` file's
+whole JSON, which agrees with a raw count of the template's quoted name, finds 8 calls of
+the template כתיב ולא קרי, the same 8 with the same parameters at `85be75d0` and at `89cb8657`,
+the Introduction audit's pinned source. All 8 are in column E:
+
+- 2 Samuel 13:33 and 2 Kings 5:18 have parameters 1, 2 and 3, and parameter 3 is a maqaf alone
+  in each. In both, parameter 1 has the ketiv in parentheses followed by a maqaf, and
+  parameter 2 the ketiv alone. 2 Kings 5:18's call stands in parameter 1 of a נוסח, the
+  note's target; 2 Samuel 13:33's stands in the verse's text.
+- 2 Samuel 15:21, Jeremiah 38:16, 39:12 and 51:3, Ezekiel 48:16 and Ruth 3:12 have parameters 1
+  and 2 only. Ruth 3:12's call stands in a note's target, the others in the verse's text.
+
+**Consumers checked.** `flatten_text` reaches the template only in a note's target. Its
+consumers are:
+
+- `py/main_explicit_xataf.py`, the mega step `explicit-xataf`, which reads the current
+  `MAM-parsed/plus/`. It calls `has_varika` on the target of every topmost note in columns C and
+  E of each verse, and writes `flatten_text`'s result as `varika_word` where that target has a
+  varika, or as `target_word`, among the extras, where the note's body has the word חטף.
+- `has_varika` in `extract.py` itself, which answers yes or no.
+- `py/intro_doc_audit/audit.py`: `inventory_notes` writes, as `target_survey_text`, the
+  projection of every topmost note's target in every cell of every verse key, the pseudo-verses
+  included, from the pinned `89cb8657` copy.
+
+The other importers of `explicit_xataf.extract` in `py/` call only `find_docnote_tmpls`
+(`py/intro_doc_audit/all_books_hataf.py`, `deuter_hataf_scope.py` and `audit.py`,
+`py/hbce_psalms/mam_docnotes.py` and `py/sigils/inventory.py`) or `extract_xataf_word` and
+`XATAF_VOWELS` (`py/intro_doc_audit/rosters.py`), none of which calls `flatten_text`.
+`py/foi/kq_trivial_types.py` and `kq_trivial_sug.py` have private `_flatten_text` functions,
+which this fix does not touch. MAM-private, searched without being changed, has two importers,
+`near-aleppo/census/varika_notes_no_alef.py` and `varika_hataf_census.py`, and both import the
+vendored copy of `explicit_xataf/extract.py` beside them, copied from MAM-basics `d42f9740` on
+2026-08-25, not MAM-basics' module. With `flatten_text` instrumented, it reaches two of the 8
+calls, those in the targets of the notes `2Kings 5:18/2/0` and `Ruth 3:12/2/0`, through the
+audit and through `has_varika`. `explicit-xataf` writes neither note's projection, since
+neither target has a varika and neither body has the word חטף.
+The prediction: only the `target_survey_text` of 2 Kings 5:18's record in
+`doc/intro-doc-audit/notes.json` changes.
+
+**Regenerated, every diff read; the prediction held.**
+
+- `py/main_explicit_xataf.py` rewrote `out/explicit-xataf.json`, 673 mappings and 0 failures,
+  and `out/explicit-xataf-extras.json`, 73 extras, both unchanged.
+- The Introduction audit ran by `eb52ecd5`'s pinned-input method, in a detached scratch worktree
+  of `85be75d0`, since removed. There the five inputs that `doc/intro-doc-audit/source-pin.json`
+  pins had their `89cb8657` content, all 81 blobs checked against it, and MAM-simple's Ps, Prov
+  and Job in `json-vtrad-mam` had the blobs of `fb566021`. With the old code,
+  `py/main_intro_doc_audit.py` with no subcommand, then with `structures`, `catalogues` and
+  `census-scope`, rewrote its nine files byte for byte. With the fix, only `notes.json` changed,
+  in one line, the `target_survey_text` of the record `2Kings 5:18/2/0`, from יִסְלַח־נאיְהֹוָ֥ה
+  to יִסְלַח־נא־יְהֹוָ֥ה, which keeps the maqaf after the unread ketiv. Ruth 3:12's
+  call has no parameter 3, so its record is unchanged. Each of the two runs was made twice, with
+  the same results.
+- `py/main_intro_doc_audit.py review` then rewrote its nine outputs in the clone, `review.html`
+  and `gh-pages/intro-doc-audit/index.html` among them, each unchanged, since it reads a note's
+  `target_node` and `body_text`, not its `target_survey_text`. No published page changed.
+
+Two passages that describe this projection stay true. C1's bullet "Branch included against the
+label" says that `flatten_text` includes the unread ketiv, its parameter 2, which it still does.
+The notes' `target_projection_notice` says that the template כתיב ולא קרי gives its unread
+ketiv, which it still does, now with the maqaf that MAM has after it.
+
+**Checks.** `bad593e6` had Black, `git diff --check`, a mark-order check of every added line,
+`py/check_mark_order.py` and `py/check_escape_sequences.py`, all clean, and `py/main_test.py`
+over `test_mega_coverage`, `test_prose_mark_order` and `test_product_scopes`, 12 passed; no test
+names `explicit_xataf`. After it `py/main_0_mega.py` exited 0, 66 steps in 484 seconds, with no
+tracked change, but `py/main_test.py` then gave 1 failed, 1448 passed, 5 skipped. The failure was
+`test_prose_conventions.py::test_no_banned_prose_wording`, which found the agentive verb
+"writes", with MAM as its subject, in the comment and in `flatten_text`'s docstring; the lint
+bans it, and the plain word is "has". `a06991a2` says "has" there, and by the same rule says that
+parameter 1 has the ketiv in parentheses; with it, `py/main_test.py` over
+`test_prose_conventions`, `test_transliterations` and `test_prose_mark_order` gave 10 passed.
+After `a06991a2`, the last code change, `py/main_0_mega.py` exited 0, 66 steps in
+427 seconds, with no tracked change; its `taamey-d-corpus` step reported the refresh
+pending that needs Ben's baseline acceptance and that this fix does not cause. `py/main_test.py`
+then gave 1449 passed, 5 skipped. The one hand-run generator rerun was
+`py/main_intro_doc_audit.py`, as above.
+
+This entry corrected one passage of the entry "C1, S1, S2 and L4 were settled and carried out,
+2026-11-12" in place. Its paragraph that read
+
+> One defect stays unfixed, since option A changes only labels. `py/explicit_xataf/extract.py`'s
+> `flatten_text` gives a כתיב ולא קרי its parameter 2, the ketiv without parentheses, and
+> leaves out its parameter 3, which at 2 Kings 5:18 is a maqaf. So that verse's `target_survey_text`
+> in `notes.json` runs the unread ketiv into the next atom, with neither a space nor a maqaf
+> between them: יִסְלַח־נאיְהֹוָ֥ה. Ruth 3:12's call has no parameter 3. Whether `flatten_text` should
+> change is Ben's decision; it was not put to him on 2026-11-12.
+
+now reads
+
+> One defect was left unfixed by C1's option A, which changes only labels.
+> `py/explicit_xataf/extract.py`'s `flatten_text` gave a כתיב ולא קרי its parameter 2, the ketiv
+> without parentheses, and left out its parameter 3, which at 2 Kings 5:18 is a maqaf. So that
+> verse's `target_survey_text` in `notes.json` ran the unread ketiv into the next atom, with
+> neither a space nor a maqaf between them: יִסְלַח־נאיְהֹוָ֥ה. Ruth 3:12's call has no parameter 3.
+> At 16:18 New York time that day Ben chose to have `flatten_text` give parameter 3 too, and
+> `bad593e6` made that fix, as the entry "The flatten_text defect was fixed, 2026-11-12" records.
