@@ -326,7 +326,8 @@ and confirmed that `4e9e7b84` is the commit that closed the 2026-10-07 latent it
 decisions in `doc/PLAN-deferred-template-projection-decisions.md` were not re-raised.
 
 One item is confirmed, C1: a mislabel that changes no count. S1 and S2 are suspected and need
-Ben's answers; L1 to L6 are latent. The range's largest change for this audit is the template
+Ben's answers. L1 to L6 were latent; all six were closed on 2026-11-12 in `93eb8686`, as their
+list below records. The range's largest change for this audit is the template
 מ:סילוק לפני געיה (`49b0baf7`, 2026-10-12), whose parameter 1 is a full atom and parameter 2 the
 same letters with one HEBREW POINT METEG marking the silluq. Every consumer reviewed that reaches
 its two calls, 1 Kings 7:37 and Job 4:12, names the template and reads parameter 1, or reads
@@ -483,53 +484,67 @@ stress-helper templates in MAM-parsed-plus sit inside ketiv/qere templates (7 in
 15 rows of foi-kq-simple, whose first cell is "MAM's rendering of the template", differ from
 MAM-with-doc's column. `foiz_wt_dexi_stress_meteg.py` states `RENOPTS_MAM_WITH_DOC` instead.
 **What would settle it:** Ben deciding whether FOI renderings under `gh-pages/MAM-with-doc/foi/`
-follow MAM-with-doc's stress-helper form; either way the three callers can state
-`ro_stress_helper`, and `py/main_foi_features_of_interest.py --foi args-foi-kq-1
+follow MAM-with-doc's stress-helper form. Since `93eb8686` the three callers state
+`ro_stress_helper` as `"rv-without-stress-helper"`, the form they show, so either answer
+changes that one value; `py/main_foi_features_of_interest.py --foi args-foi-kq-1
 --single-threaded` would show the rows that change.
 
-Latent items, recorded so that a later change cannot make them live unnoticed:
+Latent items, recorded so that a later change cannot make them live unnoticed. Each describes
+the code as the audit found it at `d957048a`, as the table above does. All six were closed on
+2026-11-12 in `93eb8686`, under Ben's instruction of 2026-10-21 quoted below, without changing
+a tracked output:
 
-1. **L1, unfixed: `py/foi/foi_wikitext_helpers.py`: `_add_templates_before_sof_pasuq`** recurses
-   through `template_param_vals` into every parameter of every template and checks a template's
-   name only where a sof pasuq follows it, so an unknown template elsewhere is entered without
-   raising, which Ben's closed-dispatch rule asks a shared helper not to do. Nothing escapes
-   today: each of its four callers (`foiz_wt_kq_1`, `foiz_wt_qamats_var`, `foiz_wt_slh_word`,
+1. **L1, closed: `py/foi/foi_wikitext_helpers.py`: `_add_templates_before_sof_pasuq`** recursed
+   through `template_param_vals` into every parameter of every template and checked a template's
+   name only where a sof pasuq followed it, so an unknown template elsewhere was entered without
+   raising, which Ben's closed-dispatch rule asks a shared helper not to do. Nothing escaped:
+   each of its four callers (`foiz_wt_kq_1`, `foiz_wt_qamats_var`, `foiz_wt_slh_word`,
    `foiz_wt_rare_tmpls`) then walks the same cell through `all_branch_foilers`, whose
-   `_find_fois_in_wtel` validates every template.
-2. **L2, unfixed: `py/mam_morphhb/morphhb_plus.py`: `plus_stream`** is closed by name but calls
-   no shape validator (`node.get("tmpl_params") or {}`); an added parameter of מ:דחי, מ:צינור,
-   נוסח or מ:קמץ would be discarded silently in MAM-morphhb, a distributed product.
-   `validate_current_plus_template`, which other readers of the same files call, would close
-   it.
-3. **L3, unfixed, carried over from `mam_xml_verses.py` at 61ab4e3b:
-   `py/mb_cmn/mam_json_verses.py`: `get_verse_words`** passes over a `kq` with no `kq-k`, a
+   `_find_fois_in_wtel` validates every template. It now validates each template with
+   `validate_current_plus_template` before entering its parameters, as `with_attached_marks`
+   does.
+2. **L2, closed: `py/mam_morphhb/morphhb_plus.py`: `plus_stream`** was closed by name but
+   called no shape validator (`node.get("tmpl_params") or {}`); an added parameter of מ:דחי,
+   מ:צינור, נוסח or מ:קמץ would have been discarded silently in MAM-morphhb, a distributed
+   product. It now takes each template's parameters from `validate_current_plus_template`,
+   which other readers of the same files call.
+3. **L3, closed; carried over from `mam_xml_verses.py` at 61ab4e3b:
+   `py/mb_cmn/mam_json_verses.py`: `get_verse_words`** passed over a `kq` with no `kq-k`, a
    `scrdfftar` with no `sdt-target`, a `text` child with empty text, an `slh-word` with an empty
-   `slhw-desc-0` and a paseq-family child with no word before it. No current verse reaches
+   `slhw-desc-0` and a paseq-family child with no word before it. No current verse reached
    these branches: `py/tests/test_mam_json_verses.py`'s full-corpus differential
    `test_reader_atom_content_matches_selected_source_nodes_over_the_full_corpus` asserts each
-   missing child and the word before a paseq-family mark.
-4. **L4, unfixed: the stress-helper default.** `py/render_wt/render_wikitext_handlers.py`:
-   `_STRESS_HELPER_FORMS` gives parameter 1 to a caller that sets no `ro_stress_helper`, and the
-   comment above it declares that default as the renderer's behavior before the option existed.
+   missing child and the word before a paseq-family mark. Each of those cases now raises, and
+   every other child's shape is checked. Two cases give no word and are named: a `text` child
+   holding only whitespace, of which there are 28, and a scroll-difference target that is empty,
+   at Exodus 26:6 and Deuteronomy 27:19, or holds only a parashah break, at three sites.
+4. **L4, closed: the stress-helper default.** `py/render_wt/render_wikitext_handlers.py`:
+   `_STRESS_HELPER_FORMS` gave parameter 1 to a caller that set no `ro_stress_helper`, and the
+   comment above it declared that default as the renderer's behavior before the option existed.
    `py/mb_xml/xml_render.py`: `_RENOPTS_MAM_XML`, MAM-simple's call and through it MAM-OSIS's,
-   MAM-for-Sefaria's and MAM-morphhb's, states cantillation (`rv-cant-all-three`) and qamats
+   MAM-for-Sefaria's and MAM-morphhb's, stated cantillation (`rv-cant-all-three`) and qamats
    (`rv-dalet`) but not the stress-helper form, and MAM-simple's README and guides mention
    neither stress helpers nor the qamats choice (searched `MAM-simple/` outside its JSON and
-   `gh-pages/MAM-simple/`). Output is unchanged by the range. Ben's rule asks each caller to
-   state its stress-helper alternative; `"ro_stress_helper": "rv-without-stress-helper"` there
-   would be output-neutral. `py/tests/test_mpplus_latest_note_schema.py` and the S2 callers also
-   rely on the default.
-5. **L5, unfixed; recursion unchanged: `py/accgram/mam_simple_verse.py`: `_iter_dict_nodes`**
-   yields every dictionary of a MAM-simple file wherever it stands, and its callers
-   `load_mam_simple_for_refs` and `mam_simple_refs` pass over a verse whose osisID is not a
-   string. The matching locator in `mam_poetic_accents.py`, `_iter_verse_nodes`, was closed on
-   2026-10-21 (`67237cdb`) through `mam_simple_json.verses`. It selects no text, so it cannot
-   project; it could only leave a malformed verse unread.
-6. **L6, uncalled walker code.** `py/intro_doc_audit/review.py`: `source_node` has no caller
-   (its only references are its own recursion); it serializes every parameter of any template
-   without checking its name. `py/near_aleppo/census/nusach_aleppo_readings.py`: `collect`
-   remains uncalled, kept as declared population code by Ben's decision of 2026-10-09; not
-   re-raised.
+   `gh-pages/MAM-simple/`). Output was unchanged by the range. Ben's rule asks each caller to
+   state its stress-helper alternative. The table now has no default, and a caller that meets
+   מ:דחי or מ:צינור without stating the option raises. `_RENOPTS_MAM_XML` and the three S2
+   callers state `"rv-without-stress-helper"`, the form they showed, so S2 stays open.
+   `py/tests/test_mpplus_latest_note_schema.py` renders no stress-helper template, so it states
+   nothing.
+5. **L5, closed; its recursion was unchanged until then: `py/accgram/mam_simple_verse.py`:
+   `_iter_dict_nodes`** yielded every dictionary of a MAM-simple file wherever it stood, and
+   its callers `load_mam_simple_for_refs` and `mam_simple_refs` passed over a verse whose
+   osisID was not a string. The matching locator in `mam_poetic_accents.py`,
+   `_iter_verse_nodes`, was closed on 2026-10-21 (`67237cdb`) through
+   `mam_simple_json.verses`. It selected no text, so it could not project; it could only leave
+   a malformed verse unread. Both callers now locate verses through
+   `mam_simple_json.read_book_group` and `mam_simple_json.verses`, which raise on a node out of
+   place, and they raise on a verse without an osisID.
+6. **L6, closed: uncalled walker code.** `py/intro_doc_audit/review.py`: `source_node` had no
+   caller (its only references were its own recursion); it serialized every parameter of any
+   template without checking its name. It is deleted.
+   `py/near_aleppo/census/nusach_aleppo_readings.py`: `collect` remains uncalled, kept as
+   declared population code by Ben's decision of 2026-10-09; not re-raised.
 
 **The 2026-10-07 latent item 3 is no longer present as described.** `4e9e7b84` ("Close the census,
 phase-6, verify_mp, explicit_xataf and mam4sef walkers", 2026-10-21) made the four census `render`
