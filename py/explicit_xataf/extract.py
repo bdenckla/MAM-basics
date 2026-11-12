@@ -192,9 +192,9 @@ _RETURN_ARG1_TMPL_NAMES = _SLH_TMPL_NAMES + (
 )
 # Templates where arg 2 is the primary word
 _RETURN_ARG2_TMPL_NAMES = ("קרי ולא כתיב",)
-# The template כתיב ולא קרי holds a ketiv that is not read: parameter 1 writes it in
+# The template כתיב ולא קרי holds a ketiv that is not read: parameter 1 has it in
 # parentheses, parameter 2 without them, and parameter 3, where present, is the mark
-# MAM writes after that ketiv.  This projection gives parameter 2 followed by
+# that MAM has after that ketiv.  This projection gives parameter 2 followed by
 # parameter 3, so that the unread ketiv keeps the maqaf after it and stays apart from
 # the next atom.  Ben chose this on 2026-11-12, fixing the defect recorded under C1 in
 # that day's entry of doc/blind-dive-into-template-params-update.md; until then
@@ -233,7 +233,7 @@ def flatten_text(wtel):
 
     For כתיב ולא קרי, returns the ketiv that is not read, without its parentheses,
     from parameter 2, followed by parameter 3 where the template has one: the maqaf
-    that MAM writes after that ketiv.  _ketiv_without_qere_text validates the call.
+    that MAM has after that ketiv.  _ketiv_without_qere_text validates the call.
 
     A whitespace template or one of _SEPARATOR_TMPL_NAMES returns a space.
     """
@@ -275,7 +275,7 @@ def _ketiv_without_qere_text(tmpl):
 
     Raises unless the call has parameters 1 and 2 and no other but 3, and unless its
     parameter 3 is one of _KETIV_WITHOUT_QERE_PARAM3_VALUES.  Parameter 1, which
-    writes the same ketiv in parentheses, is not read.
+    has the same ketiv in parentheses, is not read.
     """
     keys = set(wtp.template_param_keys(tmpl))
     if not {"1", "2"} <= keys <= {"1", "2", "3"}:
