@@ -2,6 +2,8 @@
   "edition_credit": "Torah Nevi’im Ketuvim Simanim, Elḥanan Yosef edition, Jerusalem 5775. © 5783 Shmuel Meir Riachi and Feldheim Publishers.",
   "coverage": [
     "The table lists differences among selected readings in prose verses and uses MAM verse numbering.",
+    "The completed scan review covers stress helpers already present in MAM’s prose verses. It excludes a search for helpers absent from MAM and optional helpers in poetic verses.",
+    "The follow-up resolved all 10,223 pending scan checks across the two editions, counting each occurrence in each edition separately. It found three more differences, all in Koren, and corrected the earlier reading of 2Chr 20:27 in both editions.",
     "The Decalogue comparison uses MAM’s manuscript-tradition תחתון for the Simanim Tanakh’s main Decalogues and its manuscript-tradition עליון for its appendix Decalogues.",
     "The Simanim Tanakh has redundant pashta helpers on thirteen chanted words whose final syllable ends with two consonants bearing sheva. Phonetic MAM places the stress on that same final syllable."
   ],
@@ -371,6 +373,32 @@
         }
       ],
       "verse_href": "../MAM-with-doc/E2-Ruth.html#c3v7"
+    },
+    {
+      "book": "2Chronicles",
+      "chapter": 20,
+      "verse": 27,
+      "mam": "וַ֠יָּשֻׁב֠וּ",
+      "printed": "וַ֠יָּשֻׁ֠בוּ",
+      "category": "different-placement",
+      "page": 1432,
+      "scan": "FD-2C-1432.jpg",
+      "crops": [
+        "img/simanim-tanakh-2chronicles-20-27-FD-2C-1432-1609-1.png"
+      ],
+      "notes": [
+        {
+          "text": "MAM puts the telisha gedolah helper on bet. Koren and the Simanim Tanakh put it on shin. Phonetic MAM marks final stress in Chronicles.",
+          "href": "../phonetic-mam/tnkh/FD-2Chronicles/20.html#v27",
+          "label": "Phonetic MAM at 2Chr 20:27"
+        },
+        {
+          "text": "MAM puts the helper on shin in the same pointed form at Gen 14:7, and Phonetic MAM marks stress on the syllable beginning with shin. The helper on bet in Chronicles is likely a MAM error.",
+          "href": "../phonetic-mam/tnkh/A1-Genesis/14.html#v7",
+          "label": "Phonetic MAM at Gen 14:7"
+        }
+      ],
+      "verse_href": "../MAM-with-doc/FD-2Chronicles.html#c20v27"
     }
   ]
 }

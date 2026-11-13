@@ -2,6 +2,8 @@
   "edition_credit": "The Koren Classic Tanakh, Classic Edition, Large Size. Koren Publishers Jerusalem Ltd. © 1962, 2020 for font and text design.",
   "coverage": [
     "The table lists differences among selected readings in prose verses and uses MAM verse numbering.",
+    "The completed scan review covers stress helpers already present in MAM’s prose verses. It excludes a search for helpers absent from MAM and optional helpers in poetic verses.",
+    "The follow-up resolved all 10,223 pending scan checks across the two editions, counting each occurrence in each edition separately. It found three more differences, all in Koren, and corrected the earlier reading of 2Chr 20:27 in both editions.",
     "The Decalogue comparison uses MAM’s printed-tradition תחתון for Koren’s main Decalogues and its printed-tradition עליון for Koren’s appendix Decalogues.",
     "Koren has redundant pashta helpers on eleven chanted words whose final syllable ends with two consonants bearing sheva. Phonetic MAM places the stress on that same final syllable."
   ],
@@ -97,6 +99,46 @@
         }
       ],
       "verse_href": "../MAM-with-doc/A5-Deuter.html#c33v21"
+    },
+    {
+      "book": "Joshua",
+      "chapter": 24,
+      "verse": 3,
+      "mam": "וָ֠אֶקַּ֠ח",
+      "printed": "וָֽ֠אֶקַּח֠",
+      "category": "different-placement",
+      "page": 40,
+      "scan": "B1-Js-040.jpg",
+      "crops": [
+        "img/koren-joshua-24-3-B1-Js-040-526-1.png"
+      ],
+      "notes": [
+        {
+          "text": "Koren puts the telisha gedolah helper on ḥet. MAM and the Simanim Tanakh put it on qof. Both letters belong to the final syllable, which Phonetic MAM marks as stressed.",
+          "href": "../phonetic-mam/tnkh/B1-Joshua/24.html#v3",
+          "label": "Phonetic MAM"
+        }
+      ],
+      "verse_href": "../MAM-with-doc/B1-Joshua.html#c24v3"
+    },
+    {
+      "book": "Judges",
+      "chapter": 18,
+      "verse": 19,
+      "mam": "וַיֹּ֩אמְרוּ֩",
+      "printed": "וַיֹּֽאמְרוּ֩",
+      "category": "no-helper",
+      "page": 77,
+      "scan": "B2-Ju-077.jpg",
+      "crops": [
+        "img/koren-judges-18-19-B2-Ju-077-573-1.png"
+      ],
+      "notes": [
+        {
+          "text": "Koren has final telisha qetanna and meteg on yod. MAM and the Simanim Tanakh have the telisha qetanna helper on yod."
+        }
+      ],
+      "verse_href": "../MAM-with-doc/B2-Judges.html#c18v19"
     },
     {
       "book": "2Samuel",
@@ -534,6 +576,27 @@
       "verse_href": "../MAM-with-doc/CA-Hosea.html#c11v3"
     },
     {
+      "book": "Zechariah",
+      "chapter": 1,
+      "verse": 16,
+      "mam": "לִירוּשָׁלַ֙͏ִם֙",
+      "printed": "לִירֽוּשָׁ֙לַ͏ִם֙",
+      "category": "different-placement",
+      "page": 574,
+      "scan": "CK-Zc-574.jpg",
+      "crops": [
+        "img/koren-zechariah-1-16-CK-Zc-574-13074-1.png"
+      ],
+      "notes": [
+        {
+          "text": "Koren puts the pashta helper on shin. MAM and the Simanim Tanakh put it on lamed, at the start of the stressed syllable.",
+          "href": "../phonetic-mam/tnkh/CK-Zechariah/01.html#v16",
+          "label": "Phonetic MAM"
+        }
+      ],
+      "verse_href": "../MAM-with-doc/CK-Zechariah.html#c1v16"
+    },
+    {
       "book": "Ruth",
       "chapter": 3,
       "verse": 7,
@@ -611,6 +674,32 @@
         }
       ],
       "verse_href": "../MAM-with-doc/FB-Nehemiah.html#c12v14"
+    },
+    {
+      "book": "2Chronicles",
+      "chapter": 20,
+      "verse": 27,
+      "mam": "וַ֠יָּשֻׁב֠וּ",
+      "printed": "וַ֠יָּשֻׁ֠בוּ",
+      "category": "different-placement",
+      "page": 346,
+      "scan": "FD-2C-346.jpg",
+      "crops": [
+        "img/koren-2chronicles-20-27-FD-2C-346-1609-1.png"
+      ],
+      "notes": [
+        {
+          "text": "MAM puts the telisha gedolah helper on bet. Koren and the Simanim Tanakh put it on shin. Phonetic MAM marks final stress in Chronicles.",
+          "href": "../phonetic-mam/tnkh/FD-2Chronicles/20.html#v27",
+          "label": "Phonetic MAM at 2Chr 20:27"
+        },
+        {
+          "text": "MAM puts the helper on shin in the same pointed form at Gen 14:7, and Phonetic MAM marks stress on the syllable beginning with shin. The helper on bet in Chronicles is likely a MAM error.",
+          "href": "../phonetic-mam/tnkh/A1-Genesis/14.html#v7",
+          "label": "Phonetic MAM at Gen 14:7"
+        }
+      ],
+      "verse_href": "../MAM-with-doc/FD-2Chronicles.html#c20v27"
     }
   ]
 }
