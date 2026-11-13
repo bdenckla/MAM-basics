@@ -1,0 +1,638 @@
+{
+  "edition_credit": "The Koren Classic Tanakh, Classic Edition, Large Size. Koren Publishers Jerusalem Ltd. © 1962, 2020 for font and text design.",
+  "coverage": [
+    "The table lists confirmed differences among targeted readings in prose verses, including readings from the Decalogue appendices. It uses MAM verse numbering.",
+    "The review started with 1,688 targets for segolta, telisha gedolah, telisha qetanna and zarqa, and 3,829 targets for pashta where MAM has a stress helper. Of these, 1,160 non-pashta targets and 3,699 pashta targets lack an independent record of Koren’s mark placement. The original non-pashta review often recorded the presence of marks without identifying the letter carrying each mark.",
+    "The pashta review used OCR to locate chanted words and screened the crops for mark count and spacing. A reverse screen looked for extra helpers where MAM has lone pashta. It located 16,692 of 16,812 body targets. Ten appendix comparisons were handled separately. Three Gen 35:22 targets belong to a separate cantillation reading absent from Koren. Inspection of the 97 crops with no detected pashta-shaped mark found no extra helper, and some crops lacked enough context to confirm the reading. Independent observations resolve 15 of the 16,822 target and scan pairs in the reverse catalogue. MAM doc-notes supplied additional leads, including chanted words with a different accent in MAM.",
+    "Koren has redundant pashta helpers on eleven chanted words whose final syllable ends with two consonants bearing sheva. Phonetic MAM places the stress on that same final syllable."
+  ],
+  "source_notes": [
+    {
+      "text": "The comparison incorporates the Hebrew Wikisource correction at 2Sam 4:6. Koren, the Simanim Tanakh and corrected MAM have the telisha gedolah helper on the first he in וְ֠הֵ֠נָּה. The checked-in MAM-with-doc text still has the helper on nun, as did the MAM snapshot used in the first Koren comparison. Its exporter copied that position into the Koren result and missed the difference.",
+      "href": "https://he.wikisource.org/w/index.php?oldid=3102555",
+      "label": "Wikisource correction"
+    }
+  ],
+  "differences": [
+    {
+      "book": "Levit",
+      "chapter": 7,
+      "verse": 36,
+      "mam": "אֲשֶׁר֩",
+      "printed": "אֲ֠שֶׁ֠ר",
+      "category": "different-accent",
+      "page": 162,
+      "scan": "A3-L-162.jpg",
+      "crops": [
+        "img/koren-levit-7-36-A3-L-162-note-1.png"
+      ],
+      "notes": [
+        {
+          "text": "MAM’s note reports telisha gedolah in Koren and lists a doubled form. The scanned copy has the doubled form.",
+          "href": "../MAM-with-doc/A3-Levit.html#c7v36"
+        }
+      ],
+      "verse_href": "../MAM-with-doc/A3-Levit.html#c7v36"
+    },
+    {
+      "book": "Levit",
+      "chapter": 10,
+      "verse": 4,
+      "mam": "קִ֞֠רְב֞֠וּ",
+      "printed": "קִ֠רְב֞וּ",
+      "category": "gerstar-telg",
+      "page": 166,
+      "scan": "A3-L-166.jpg",
+      "crops": [
+        "img/koren-levit-10-4-A3-L-166-213-1.png"
+      ],
+      "notes": [
+        {
+          "text": "Koren has telisha gedolah on qof and gershayim on bet. MAM has both marks on both letters.",
+          "href": "../MAM-with-doc/A3-Levit.html#c10v4"
+        },
+        {
+          "text": "MAM’s notes describe the two cases where geresh or gershayim and telisha gedolah belong on different letters.",
+          "href": "../wlc/accgram/telg-doc-notes.html",
+          "label": "MAM notes on telisha gedolah"
+        }
+      ],
+      "verse_href": "../MAM-with-doc/A3-Levit.html#c10v4"
+    },
+    {
+      "book": "Levit",
+      "chapter": 23,
+      "verse": 17,
+      "mam": "שְׁ֚תַּיִם",
+      "printed": "שְׁתַּ֙יִם֙",
+      "category": "different-accent",
+      "page": 190,
+      "scan": "A3-L-190.jpg",
+      "crops": [
+        "img/koren-levit-23-17-A3-L-190-note-1.png"
+      ],
+      "notes": [
+        {
+          "text": "MAM’s note gives the doubled pashta for Koren and other printed editions.",
+          "href": "../MAM-with-doc/A3-Levit.html#c23v17"
+        }
+      ],
+      "verse_href": "../MAM-with-doc/A3-Levit.html#c23v17"
+    },
+    {
+      "book": "Deuter",
+      "chapter": 5,
+      "verse": 13,
+      "mam": "וְעַבְדְּךָֽ־וַ֠אֲמָתֶ֠ךָ",
+      "printed": "וְעַבְדְּךָֽ־וַֽאֲמָתֶ֗ךָ",
+      "category": "different-accent",
+      "page": 281,
+      "scan": "A5-D-281.jpg",
+      "crops": [
+        "img/koren-deuter-5-13-A5-D-281-370-1.png",
+        "img/koren-deuter-5-13-A5-D-281-370-2.png"
+      ],
+      "notes": [
+        {
+          "text": "Koren Deut 5:14 has revia on tav and a meteg on vav. Its body agrees with the accent in MAM’s printed-tradition supplement."
+        }
+      ],
+      "strand": "תחתון",
+      "verse_href": "../MAM-with-doc/A5-Deuter.html#c5v13"
+    },
+    {
+      "book": "Deuter",
+      "chapter": 33,
+      "verse": 21,
+      "mam": "וַיֵּתֵא֙",
+      "printed": "וַיֶּ֙תֵא֙",
+      "category": "extra-helper",
+      "page": 326,
+      "scan": "A5-D-326.jpg",
+      "crops": [
+        "img/koren-deuter-33-21-A5-D-326-note-1.png"
+      ],
+      "notes": [
+        {
+          "text": "MAM’s note reports final stress in MAM and a segol with the pashta stress helper on yod in Koren. The scan also shows a dagesh in yod.",
+          "href": "../MAM-with-doc/A5-Deuter.html#c33v21"
+        }
+      ],
+      "verse_href": "../MAM-with-doc/A5-Deuter.html#c33v21"
+    },
+    {
+      "book": "2Samuel",
+      "chapter": 3,
+      "verse": 32,
+      "mam": "וַיֵּבְךְּ֙",
+      "printed": "וַיֵּ֙בְךְּ֙",
+      "category": "redundant-edition",
+      "page": 146,
+      "scan": "BB-2S-146.jpg",
+      "crops": [
+        "img/koren-2samuel-3-32-BB-2S-146-36723-1.png"
+      ],
+      "notes": [
+        {
+          "text": "Koren places the stress helper on yod. Phonetic MAM places stress on the same final syllable.",
+          "href": "../phonetic-mam/tnkh/BB-2Samuel/03.html#v32",
+          "label": "Phonetic MAM"
+        }
+      ],
+      "verse_href": "../MAM-with-doc/BB-2Samuel.html#c3v32"
+    },
+    {
+      "book": "2Samuel",
+      "chapter": 13,
+      "verse": 20,
+      "mam": "אָחִ֘יךְ֮",
+      "printed": "אָחִיךְ֮",
+      "category": "redundant-mam",
+      "page": 161,
+      "scan": "BB-2S-161.jpg",
+      "crops": [
+        "img/koren-2samuel-13-20-BB-2S-161-691-1.png"
+      ],
+      "notes": [
+        {
+          "text": "The ḥet begins the final, stressed syllable in Phonetic MAM. The second occurrence in this verse has munaḥ on ḥet. Koren has the final zarqa alone.",
+          "href": "../phonetic-mam/tnkh/BB-2Samuel/13.html#v20",
+          "label": "Phonetic MAM"
+        }
+      ],
+      "verse_href": "../MAM-with-doc/BB-2Samuel.html#c13v20"
+    },
+    {
+      "book": "2Kings",
+      "chapter": 20,
+      "verse": 14,
+      "mam": "וַיֹּ֙אמֶר֙",
+      "printed": "וַיֹּ֣אמֶר",
+      "category": "different-accent",
+      "page": 279,
+      "scan": "BD-2K-279.jpg",
+      "crops": [
+        "img/koren-2kings-20-14-BD-2K-279-11974-1.png"
+      ],
+      "notes": [
+        {
+          "text": "Koren has munaḥ on yod in the second occurrence of this chanted word."
+        }
+      ],
+      "verse_href": "../MAM-with-doc/BD-2Kings.html#c20v14"
+    },
+    {
+      "book": "Isaiah",
+      "chapter": 29,
+      "verse": 4,
+      "mam": "וְשָׁפַלְתְּ֙",
+      "printed": "וְשָׁפַ֙לְתְּ֙",
+      "category": "redundant-edition",
+      "page": 320,
+      "scan": "C1-I-320.jpg",
+      "crops": [
+        "img/koren-isaiah-29-4-C1-I-320-39233-1.png"
+      ],
+      "notes": [
+        {
+          "text": "Koren places the stress helper on pe. Phonetic MAM places stress on the same final syllable.",
+          "href": "../phonetic-mam/tnkh/C1-Isaiah/29.html#v4",
+          "label": "Phonetic MAM"
+        }
+      ],
+      "verse_href": "../MAM-with-doc/C1-Isaiah.html#c29v4"
+    },
+    {
+      "book": "Isaiah",
+      "chapter": 47,
+      "verse": 1,
+      "mam": "תוֹסִ֙יפִי֙",
+      "printed": "תֽוֹסִיפִי֙",
+      "category": "no-helper",
+      "page": 341,
+      "scan": "C1-I-341.jpg",
+      "crops": [
+        "img/koren-isaiah-47-1-C1-I-341-12182-1.png"
+      ],
+      "notes": [
+        {
+          "text": "Koren also prints a meteg on initial tav."
+        }
+      ],
+      "verse_href": "../MAM-with-doc/C1-Isaiah.html#c47v1"
+    },
+    {
+      "book": "Isaiah",
+      "chapter": 47,
+      "verse": 5,
+      "mam": "תוֹסִ֙יפִי֙",
+      "printed": "תֽוֹסִיפִי֙",
+      "category": "no-helper",
+      "page": 341,
+      "scan": "C1-I-341.jpg",
+      "crops": [
+        "img/koren-isaiah-47-5-C1-I-341-12183-1.png"
+      ],
+      "notes": [
+        {
+          "text": "Koren also prints a meteg on initial tav."
+        }
+      ],
+      "verse_href": "../MAM-with-doc/C1-Isaiah.html#c47v5"
+    },
+    {
+      "book": "Isaiah",
+      "chapter": 47,
+      "verse": 10,
+      "mam": "אָמַרְתְּ֙",
+      "printed": "אָמַ֙רְתְּ֙",
+      "category": "redundant-edition",
+      "page": 342,
+      "scan": "C1-I-342.jpg",
+      "crops": [
+        "img/koren-isaiah-47-10-C1-I-342-39625-1.png"
+      ],
+      "notes": [
+        {
+          "text": "Koren places the stress helper on mem. Phonetic MAM places stress on the same final syllable.",
+          "href": "../phonetic-mam/tnkh/C1-Isaiah/47.html#v10",
+          "label": "Phonetic MAM"
+        }
+      ],
+      "verse_href": "../MAM-with-doc/C1-Isaiah.html#c47v10"
+    },
+    {
+      "book": "Isaiah",
+      "chapter": 60,
+      "verse": 16,
+      "mam": "וְיָנַקְתְּ֙",
+      "printed": "וְיָנַ֙קְתְּ֙",
+      "category": "redundant-edition",
+      "page": 354,
+      "scan": "C1-I-354.jpg",
+      "crops": [
+        "img/koren-isaiah-60-16-C1-I-354-39866-1.png"
+      ],
+      "notes": [
+        {
+          "text": "Koren places the stress helper on nun. Phonetic MAM places stress on the same final syllable.",
+          "href": "../phonetic-mam/tnkh/C1-Isaiah/60.html#v16",
+          "label": "Phonetic MAM"
+        }
+      ],
+      "verse_href": "../MAM-with-doc/C1-Isaiah.html#c60v16"
+    },
+    {
+      "book": "Jeremiah",
+      "chapter": 7,
+      "verse": 9,
+      "mam": "רָצֹ֙חַ֙",
+      "printed": "רָצֹחַ֙",
+      "category": "no-helper",
+      "page": 373,
+      "scan": "C2-Je-373.jpg",
+      "crops": [
+        "img/koren-jeremiah-7-9-C2-Je-373-12333-1.png"
+      ],
+      "notes": [],
+      "verse_href": "../MAM-with-doc/C2-Jeremiah.html#c7v9"
+    },
+    {
+      "book": "Jeremiah",
+      "chapter": 9,
+      "verse": 7,
+      "mam": "אֶת־רֵעֵ֙הוּ֙",
+      "printed": "אֶת־רֵעֵ֣הוּ",
+      "category": "different-accent",
+      "page": 376,
+      "scan": "C2-Je-376.jpg",
+      "crops": [
+        "img/koren-jeremiah-9-7-C2-Je-376-12345-1.png"
+      ],
+      "notes": [
+        {
+          "text": "Koren has munaḥ on ayin."
+        }
+      ],
+      "verse_href": "../MAM-with-doc/C2-Jeremiah.html#c9v7"
+    },
+    {
+      "book": "Jeremiah",
+      "chapter": 22,
+      "verse": 23,
+      "mam": "מַה־נֵּחַנְתְּ֙",
+      "printed": "מַה־נֵּחַ֙נְתְּ֙",
+      "category": "redundant-edition",
+      "page": 395,
+      "scan": "C2-Je-395.jpg",
+      "crops": [
+        "img/koren-jeremiah-22-23-C2-Je-395-40536-1.png"
+      ],
+      "notes": [
+        {
+          "text": "Koren places the stress helper on ḥet. Phonetic MAM places stress on the same final syllable.",
+          "href": "../phonetic-mam/tnkh/C2-Jeremiah/22.html#v23",
+          "label": "Phonetic MAM"
+        }
+      ],
+      "verse_href": "../MAM-with-doc/C2-Jeremiah.html#c22v23"
+    },
+    {
+      "book": "Jeremiah",
+      "chapter": 44,
+      "verse": 27,
+      "mam": "וְתַ֩מּוּ֩",
+      "printed": "וְתַמּוּ֩",
+      "category": "no-helper",
+      "page": 434,
+      "scan": "C2-Je-434.jpg",
+      "crops": [
+        "img/koren-jeremiah-44-27-C2-Je-434-1103-1.png"
+      ],
+      "notes": [
+        {
+          "text": "The MAM doc-note attributes the doubled telisha qetanna to the Aleppo Codex.",
+          "href": "../MAM-with-doc/C2-Jeremiah.html#c44v27"
+        }
+      ],
+      "verse_href": "../MAM-with-doc/C2-Jeremiah.html#c44v27"
+    },
+    {
+      "book": "Jeremiah",
+      "chapter": 50,
+      "verse": 24,
+      "mam": "וְגַם־נִלְכַּדְתְּ֙",
+      "printed": "וְגַם־נִלְכַּ֙דְתְּ֙",
+      "category": "redundant-edition",
+      "page": 443,
+      "scan": "C2-Je-443.jpg",
+      "crops": [
+        "img/koren-jeremiah-50-24-C2-Je-443-41267-1.png"
+      ],
+      "notes": [
+        {
+          "text": "Koren places the stress helper on kaf. Phonetic MAM places stress on the same final syllable.",
+          "href": "../phonetic-mam/tnkh/C2-Jeremiah/50.html#v24",
+          "label": "Phonetic MAM"
+        }
+      ],
+      "verse_href": "../MAM-with-doc/C2-Jeremiah.html#c50v24"
+    },
+    {
+      "book": "Jeremiah",
+      "chapter": 51,
+      "verse": 13,
+      "mam": "שֹׁכַנְתְּ֙",
+      "printed": "שֹׁכַ֙נְתְּ֙",
+      "category": "redundant-edition",
+      "page": 445,
+      "scan": "C2-Je-445.jpg",
+      "crops": [
+        "img/koren-jeremiah-51-13-C2-Je-445-41304-1.png"
+      ],
+      "notes": [
+        {
+          "text": "Koren places the stress helper on kaf in the pointed margin qere. Phonetic MAM places stress on the same final syllable.",
+          "href": "../phonetic-mam/tnkh/C2-Jeremiah/51.html#v13",
+          "label": "Phonetic MAM"
+        }
+      ],
+      "verse_href": "../MAM-with-doc/C2-Jeremiah.html#c51v13"
+    },
+    {
+      "book": "Ezekiel",
+      "chapter": 5,
+      "verse": 15,
+      "mam": "בַּעֲשׂ֩וֹתִי֩",
+      "printed": "בַּֽעֲשׂוֹתִי֩",
+      "category": "no-helper",
+      "page": 458,
+      "scan": "C3-Ee-458.jpg",
+      "crops": [
+        "img/koren-ezekiel-5-15-C3-Ee-458-1126-1.png"
+      ],
+      "notes": [
+        {
+          "text": "The MAM doc-note attributes the doubled telisha qetanna to the Aleppo and Leningrad codices. Koren also has a meteg on bet.",
+          "href": "../MAM-with-doc/C3-Ezekiel.html#c5v15"
+        }
+      ],
+      "verse_href": "../MAM-with-doc/C3-Ezekiel.html#c5v15"
+    },
+    {
+      "book": "Ezekiel",
+      "chapter": 12,
+      "verse": 7,
+      "mam": "כֵּ֠לַ֠י",
+      "printed": "כֵּלַ֨י",
+      "category": "different-accent",
+      "page": 466,
+      "scan": "C3-Ee-466.jpg",
+      "crops": [
+        "img/koren-ezekiel-12-7-C3-Ee-466-1135-1.png"
+      ],
+      "notes": [
+        {
+          "text": "Koren has qadma on lamed, before geresh on the next chanted word."
+        }
+      ],
+      "verse_href": "../MAM-with-doc/C3-Ezekiel.html#c12v7"
+    },
+    {
+      "book": "Ezekiel",
+      "chapter": 16,
+      "verse": 43,
+      "mam": "לֹֽא־זָכַרְתְּ֙",
+      "printed": "לֹֽא־זָכַ֙רְתְּ֙",
+      "category": "redundant-edition",
+      "page": 473,
+      "scan": "C3-Ee-473.jpg",
+      "crops": [
+        "img/koren-ezekiel-16-43-C3-Ee-473-41717-1.png"
+      ],
+      "notes": [
+        {
+          "text": "Koren places the stress helper on kaf in the pointed margin qere. Phonetic MAM places stress on the same final syllable.",
+          "href": "../phonetic-mam/tnkh/C3-Ezekiel/16.html#v43",
+          "label": "Phonetic MAM"
+        }
+      ],
+      "verse_href": "../MAM-with-doc/C3-Ezekiel.html#c16v43"
+    },
+    {
+      "book": "Ezekiel",
+      "chapter": 16,
+      "verse": 52,
+      "mam": "פִּלַּלְתְּ֙",
+      "printed": "פִּלַּ֙לְתְּ֙",
+      "category": "redundant-edition",
+      "page": 473,
+      "scan": "C3-Ee-473.jpg",
+      "crops": [
+        "img/koren-ezekiel-16-52-C3-Ee-473-41728-1.png"
+      ],
+      "notes": [
+        {
+          "text": "Koren places the stress helper on the first lamed. Phonetic MAM places stress on the same final syllable.",
+          "href": "../phonetic-mam/tnkh/C3-Ezekiel/16.html#v52",
+          "label": "Phonetic MAM"
+        }
+      ],
+      "verse_href": "../MAM-with-doc/C3-Ezekiel.html#c16v52"
+    },
+    {
+      "book": "Ezekiel",
+      "chapter": 19,
+      "verse": 9,
+      "mam": "בַסּ֙וּגַר֙",
+      "printed": "בַסּוּגַר֙",
+      "category": "no-helper",
+      "page": 478,
+      "scan": "C3-Ee-478.jpg",
+      "crops": [
+        "img/koren-ezekiel-19-9-C3-Ee-478-12683-1.png"
+      ],
+      "notes": [],
+      "verse_href": "../MAM-with-doc/C3-Ezekiel.html#c19v9"
+    },
+    {
+      "book": "Ezekiel",
+      "chapter": 23,
+      "verse": 41,
+      "mam": "וְיָשַׁבְתְּ֙",
+      "printed": "וְיָשַׁ֙בְתְּ֙",
+      "category": "redundant-edition",
+      "page": 487,
+      "scan": "C3-Ee-487.jpg",
+      "crops": [
+        "img/koren-ezekiel-23-41-C3-Ee-487-41957-1.png"
+      ],
+      "notes": [
+        {
+          "text": "Koren places the stress helper on shin. Phonetic MAM places stress on the same final syllable.",
+          "href": "../phonetic-mam/tnkh/C3-Ezekiel/23.html#v41",
+          "label": "Phonetic MAM"
+        }
+      ],
+      "verse_href": "../MAM-with-doc/C3-Ezekiel.html#c23v41"
+    },
+    {
+      "book": "Ezekiel",
+      "chapter": 48,
+      "verse": 10,
+      "mam": "וּ֜֠לְאֵ֜֠לֶּה",
+      "printed": "וּ֠לְאֵ֜לֶּה",
+      "category": "gerstar-telg",
+      "page": 526,
+      "scan": "C3-Ee-526.jpg",
+      "crops": [
+        "img/koren-ezekiel-48-10-C3-Ee-526-1217-1.png"
+      ],
+      "notes": [
+        {
+          "text": "Koren has telisha gedolah on vav and geresh on alef, as the MAM doc-note reports.",
+          "href": "../MAM-with-doc/C3-Ezekiel.html#c48v10"
+        }
+      ],
+      "verse_href": "../MAM-with-doc/C3-Ezekiel.html#c48v10"
+    },
+    {
+      "book": "Hosea",
+      "chapter": 11,
+      "verse": 3,
+      "mam": "תִרְגַּ֙לְתִּי֙",
+      "printed": "תִּרְגַּ֣לְתִּי",
+      "category": "different-accent",
+      "page": 538,
+      "scan": "CA-Ho-538.jpg",
+      "crops": [
+        "img/koren-hosea-11-3-CA-Ho-538-12927-1.png"
+      ],
+      "notes": [
+        {
+          "text": "Koren has munaḥ on gimel and a dagesh in initial tav."
+        }
+      ],
+      "verse_href": "../MAM-with-doc/CA-Hosea.html#c11v3"
+    },
+    {
+      "book": "Ruth",
+      "chapter": 3,
+      "verse": 7,
+      "mam": "וַיֵּשְׁתְּ֙",
+      "printed": "וַיֵּ֙שְׁתְּ֙",
+      "category": "redundant-edition",
+      "page": 160,
+      "scan": "E2-R-160.jpg",
+      "crops": [
+        "img/koren-ruth-3-7-E2-R-160-43807-1.png"
+      ],
+      "notes": [
+        {
+          "text": "Koren places the stress helper on yod. Phonetic MAM places stress on the same final syllable.",
+          "href": "../phonetic-mam/tnkh/E2-Ruth/03.html#v7",
+          "label": "Phonetic MAM"
+        }
+      ],
+      "verse_href": "../MAM-with-doc/E2-Ruth.html#c3v7"
+    },
+    {
+      "book": "Esther",
+      "chapter": 6,
+      "verse": 1,
+      "mam": "וַיֹּ֗אמֶר",
+      "printed": "וַ֠יֹּ֠אמֶר",
+      "category": "different-accent",
+      "page": 193,
+      "scan": "E5-Es-193.jpg",
+      "crops": [
+        "img/koren-esther-6-1-E5-Es-193-note-1.png"
+      ],
+      "notes": [
+        {
+          "text": "MAM’s note reports the doubled telisha gedolah for Koren and the Simanim Tanakh. The scanned Koren copy has the doubled form. The scanned Simanim Tanakh has revia, in agreement with MAM.",
+          "href": "../MAM-with-doc/E5-Esther.html#c6v1"
+        }
+      ],
+      "verse_href": "../MAM-with-doc/E5-Esther.html#c6v1"
+    },
+    {
+      "book": "Nehemiah",
+      "chapter": 11,
+      "verse": 1,
+      "mam": "לָשֶׁ֙בֶת֙",
+      "printed": "לָשֶׁ֤בֶת",
+      "category": "different-accent",
+      "page": 264,
+      "scan": "FB-Ne-264.jpg",
+      "crops": [
+        "img/koren-nehemiah-11-1-FB-Ne-264-13501-1.png"
+      ],
+      "notes": [
+        {
+          "text": "Koren has mahapakh on shin."
+        }
+      ],
+      "verse_href": "../MAM-with-doc/FB-Nehemiah.html#c11v1"
+    },
+    {
+      "book": "Nehemiah",
+      "chapter": 12,
+      "verse": 14,
+      "mam": "לִמְלִ֙יכוּ֙",
+      "printed": "לִמְלִיכוּ֙",
+      "category": "no-helper",
+      "page": 266,
+      "scan": "FB-Ne-266.jpg",
+      "crops": [
+        "img/koren-nehemiah-12-14-FB-Ne-266-13506-1.png"
+      ],
+      "notes": [
+        {
+          "text": "The pointed Koren qere in the margin has final pashta only."
+        }
+      ],
+      "verse_href": "../MAM-with-doc/FB-Nehemiah.html#c12v14"
+    }
+  ]
+}

@@ -26,6 +26,7 @@ from __future__ import annotations
 
 from mb_cmn import str_defs as sd
 
+from author_site import stress_helper_comparison
 from author_site.entries import Anchor, Entry, EntryGroup, Italic, Section
 
 _RSQM = "\N{RIGHT SINGLE QUOTATION MARK}"
@@ -241,6 +242,10 @@ _POINTING_AND_CANTILLATION = Section(
     heading="Pointing and cantillation",
     entries=(
         _entry(POST_STRESS_METEG_TITLE, POST_STRESS_METEG_HREF),
+        *(
+            _entry(title, f"{stress_helper_comparison.DIRECTORY}/{edition}.html")
+            for edition, (_, title) in stress_helper_comparison.EDITIONS.items()
+        ),
         _entry(
             (
                 "Excerpts from ",

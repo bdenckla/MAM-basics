@@ -15,6 +15,8 @@ Subcommands:
                 forwarding stubs at two pages' old addresses,
                 gh-pages/post-stress-meteg.html and
                 gh-pages/post-stress-meteg-post-silluq-1s17v5.html.
+                Write both printed-edition stress-helper comparisons to
+                gh-pages/stress-helpers/.
                 --trust-surveys lets the post-stress pages that read the survey
                 load it from the tracked out/accgram/post-stress-meteg.json
                 instead of recomputing it from the tracked Phonetic-MAM
@@ -118,6 +120,7 @@ from author_misc import mam4sef_unicode_names_index
 from author_site import post_stress_meteg
 from author_site import site_data
 from author_site import site_index
+from author_site import stress_helper_comparison
 from author_site import unicode_proposals
 from verify_mp import claims_doc
 from verify_mp import driver as verify_driver
@@ -208,7 +211,7 @@ assert _SURVEY_READING_PAGES <= {
 
 
 def gen_site(*, trust_surveys: bool = False):
-    """Write the deploy root's index and Unicode proposals, and the post-stress-meteg pages.
+    """Write the site index, Unicode proposals, and the stress-related pages.
 
     The post-stress-meteg pages go into their own folder, with forwarding stubs at two pages'
     old addresses.  ``trust_surveys`` is passed by ``main_0_mega.py``; see
@@ -221,6 +224,7 @@ def gen_site(*, trust_surveys: bool = False):
     for out_path in (
         unicode_proposals.gen_html_file(),
         *post_stress_meteg.gen_html_files(trust_survey=trusted),
+        *stress_helper_comparison.gen_html_files(),
         site_index.gen_html_file(),
     ):
         print(f"Generated {out_path}")

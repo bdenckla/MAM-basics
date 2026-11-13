@@ -1,0 +1,421 @@
+{
+  "edition_credit": "Torah Nevi’im Ketuvim Simanim, Elḥanan Yosef edition, Jerusalem 5775. © 5783 Shmuel Meir Riachi and Feldheim Publishers.",
+  "coverage": [
+    "The table lists confirmed differences among targeted readings in prose verses, including readings from the Decalogue appendices. It uses MAM verse numbering.",
+    "The review started with 1,688 targets for segolta, telisha gedolah, telisha qetanna and zarqa, and 3,829 targets for pashta where MAM has a stress helper. Of these, 1,650 non-pashta targets and 3,714 pashta targets lack an independent record of the Simanim Tanakh’s mark placement. Seeing two marks in a crop establishes their presence. Identifying the letter carrying each mark requires separate placement evidence.",
+    "The pashta review used OCR to locate chanted words and screened the crops for mark count and spacing. A reverse screen looked for extra helpers where MAM has lone pashta. The review considered 16,825 targets, including 68 selected for follow-up. The initial screen found no pashta-shaped mark in 331 crops. Inspection of 141 of those crops found no extra helper. Independent observations resolve 14 of the 16,822 target and scan pairs in the reverse catalogue.",
+    "The Simanim Tanakh has redundant pashta helpers on all thirteen chanted words in this population whose final syllable ends with two consonants bearing sheva. Phonetic MAM places the stress on that same final syllable."
+  ],
+  "source_notes": [
+    {
+      "text": "The comparison incorporates the Hebrew Wikisource correction at 2Sam 4:6. Koren, the Simanim Tanakh and corrected MAM have the telisha gedolah helper on the first he in וְ֠הֵ֠נָּה. The checked-in MAM-with-doc text still has the helper on nun.",
+      "href": "https://he.wikisource.org/w/index.php?oldid=3102555",
+      "label": "Wikisource correction"
+    }
+  ],
+  "differences": [
+    {
+      "book": "Exodus",
+      "chapter": 20,
+      "verse": 2,
+      "mam": "הוֹצֵאתִ֩יךָ֩",
+      "printed": "הֽוֹצֵאתִ֥יךָ",
+      "category": "different-accent",
+      "page": 350,
+      "scan": "A9-A2-10C-0350.jpg",
+      "crops": [
+        "img/simanim-tanakh-exodus-20-2-A9-A2-10C-0350-1684-1.png"
+      ],
+      "notes": [
+        {
+          "text": "MAM's printed-tradition supplement has telisha qetanna and its helper. The Simanim Tanakh appendix has the manuscript-tradition merkha on tav.",
+          "href": "../MAM-with-doc/A2-Exodus-big-doc.html#c20v2doc1",
+          "label": "MAM printed-tradition note"
+        }
+      ],
+      "strand": "עליון",
+      "verse_href": "../MAM-with-doc/A2-Exodus.html#c20v2"
+    },
+    {
+      "book": "Levit",
+      "chapter": 10,
+      "verse": 4,
+      "mam": "קִ֞֠רְב֞֠וּ",
+      "printed": "קִ֠רְב֞וּ",
+      "category": "gerstar-telg",
+      "page": 175,
+      "scan": "A3-L-0175.jpg",
+      "crops": [
+        "img/simanim-tanakh-levit-10-4-A3-L-0175-213-1.png"
+      ],
+      "notes": [
+        {
+          "text": "The Simanim Tanakh has the telisha gedolah on qof and the gershayim on bet. MAM has both signs on both letters.",
+          "href": "../MAM-with-doc/A3-Levit.html#c10v4"
+        },
+        {
+          "text": "MAM’s notes describe the two cases where geresh or gershayim and telisha gedolah belong on different letters.",
+          "href": "../wlc/accgram/telg-doc-notes.html",
+          "label": "MAM notes on telisha gedolah"
+        }
+      ],
+      "verse_href": "../MAM-with-doc/A3-Levit.html#c10v4"
+    },
+    {
+      "book": "Numbers",
+      "chapter": 11,
+      "verse": 8,
+      "mam": "שָׁ֩טוּ֩",
+      "printed": "שָׁטוּ֩",
+      "category": "no-helper",
+      "page": 236,
+      "scan": "A4-N-0236.jpg",
+      "crops": [
+        "img/simanim-tanakh-numbers-11-8-A4-N-0236-296-1.png"
+      ],
+      "notes": [
+        {
+          "text": "The MAM doc-note gives penultimate stress for MAM and Koren and final stress for the Simanim Tanakh, following Sephardic and Yemenite reading traditions.",
+          "href": "../MAM-with-doc/A4-Numbers.html#c11v8"
+        }
+      ],
+      "verse_href": "../MAM-with-doc/A4-Numbers.html#c11v8"
+    },
+    {
+      "book": "Deuter",
+      "chapter": 5,
+      "verse": 6,
+      "mam": "הוֹצֵאתִ֩יךָ֩",
+      "printed": "הֽוֹצֵאתִ֥יךָ",
+      "category": "different-accent",
+      "page": 351,
+      "scan": "A9-A5-10C-0351.jpg",
+      "crops": [
+        "img/simanim-tanakh-deuter-5-6-A9-A5-10C-0351-1685-1.png"
+      ],
+      "notes": [
+        {
+          "text": "MAM's printed-tradition supplement has telisha qetanna and its helper. The Simanim Tanakh appendix has the manuscript-tradition merkha on tav.",
+          "href": "../MAM-with-doc/A5-Deuter-big-doc.html#c5v6doc1",
+          "label": "MAM printed-tradition note"
+        }
+      ],
+      "strand": "עליון",
+      "verse_href": "../MAM-with-doc/A5-Deuter.html#c5v6"
+    },
+    {
+      "book": "2Samuel",
+      "chapter": 3,
+      "verse": 32,
+      "mam": "וַיֵּבְךְּ֙",
+      "printed": "וַיֵּ֙בְךְּ֙",
+      "category": "redundant-edition",
+      "page": 511,
+      "scan": "BB-2S-0511.jpg",
+      "crops": [
+        "img/simanim-tanakh-2samuel-3-32-BB-2S-0511-36723-1.png"
+      ],
+      "notes": [
+        {
+          "text": "Phonetic MAM places the stress on the final syllable, which the Simanim Tanakh also marks with the added pashta.",
+          "href": "../phonetic-mam/tnkh/BB-2Samuel/03.html#v32",
+          "label": "Phonetic MAM"
+        }
+      ],
+      "verse_href": "../MAM-with-doc/BB-2Samuel.html#c3v32"
+    },
+    {
+      "book": "2Samuel",
+      "chapter": 13,
+      "verse": 20,
+      "mam": "אָחִ֘יךְ֮",
+      "printed": "אָחִיךְ֮",
+      "category": "redundant-mam",
+      "page": 526,
+      "scan": "BB-2S-0526.jpg",
+      "crops": [
+        "img/simanim-tanakh-2samuel-13-20-BB-2S-0526-691-1.png"
+      ],
+      "notes": [
+        {
+          "text": "Phonetic MAM places the stress on the final syllable. The Simanim Tanakh’s postpositive zarqa also indicates final stress.",
+          "href": "../phonetic-mam/tnkh/BB-2Samuel/13.html#v20",
+          "label": "Phonetic MAM"
+        }
+      ],
+      "verse_href": "../MAM-with-doc/BB-2Samuel.html#c13v20"
+    },
+    {
+      "book": "Isaiah",
+      "chapter": 29,
+      "verse": 4,
+      "mam": "וְשָׁפַלְתְּ֙",
+      "printed": "וְשָׁפַ֙לְתְּ֙",
+      "category": "redundant-edition",
+      "page": 696,
+      "scan": "C1-I-0696.jpg",
+      "crops": [
+        "img/simanim-tanakh-isaiah-29-4-C1-I-0696-39233-1.png"
+      ],
+      "notes": [
+        {
+          "text": "Phonetic MAM places the stress on the final syllable, which the Simanim Tanakh also marks with the added pashta.",
+          "href": "../phonetic-mam/tnkh/C1-Isaiah/29.html#v4",
+          "label": "Phonetic MAM"
+        }
+      ],
+      "verse_href": "../MAM-with-doc/C1-Isaiah.html#c29v4"
+    },
+    {
+      "book": "Isaiah",
+      "chapter": 47,
+      "verse": 10,
+      "mam": "אָמַרְתְּ֙",
+      "printed": "אָמַ֙רְתְּ֙",
+      "category": "redundant-edition",
+      "page": 719,
+      "scan": "C1-I-0719.jpg",
+      "crops": [
+        "img/simanim-tanakh-isaiah-47-10-C1-I-0719-39625-1.png"
+      ],
+      "notes": [
+        {
+          "text": "Phonetic MAM places the stress on the final syllable, which the Simanim Tanakh also marks with the added pashta.",
+          "href": "../phonetic-mam/tnkh/C1-Isaiah/47.html#v10",
+          "label": "Phonetic MAM"
+        }
+      ],
+      "verse_href": "../MAM-with-doc/C1-Isaiah.html#c47v10"
+    },
+    {
+      "book": "Isaiah",
+      "chapter": 60,
+      "verse": 16,
+      "mam": "וְיָנַקְתְּ֙",
+      "printed": "וְיָנַ֙קְתְּ֙",
+      "category": "redundant-edition",
+      "page": 733,
+      "scan": "C1-I-0733.jpg",
+      "crops": [
+        "img/simanim-tanakh-isaiah-60-16-C1-I-0733-39866-1.png"
+      ],
+      "notes": [
+        {
+          "text": "Phonetic MAM places the stress on the final syllable, which the Simanim Tanakh also marks with the added pashta.",
+          "href": "../phonetic-mam/tnkh/C1-Isaiah/60.html#v16",
+          "label": "Phonetic MAM"
+        }
+      ],
+      "verse_href": "../MAM-with-doc/C1-Isaiah.html#c60v16"
+    },
+    {
+      "book": "Jeremiah",
+      "chapter": 22,
+      "verse": 23,
+      "mam": "יֹשַׁבְתְּ֙",
+      "printed": "יֹשַׁ֙בְתְּ֙",
+      "category": "redundant-edition",
+      "page": 777,
+      "scan": "C2-Je-0777.jpg",
+      "crops": [
+        "img/simanim-tanakh-jeremiah-22-23-C2-Je-0777-40535-1.png"
+      ],
+      "notes": [
+        {
+          "text": "Phonetic MAM places the stress on the final syllable, which the Simanim Tanakh also marks with the added pashta.",
+          "href": "../phonetic-mam/tnkh/C2-Jeremiah/22.html#v23",
+          "label": "Phonetic MAM"
+        }
+      ],
+      "verse_href": "../MAM-with-doc/C2-Jeremiah.html#c22v23"
+    },
+    {
+      "book": "Jeremiah",
+      "chapter": 22,
+      "verse": 23,
+      "mam": "מַה־נֵּחַנְתְּ֙",
+      "printed": "מַה־נֵּחַ֙נְתְּ֙",
+      "category": "redundant-edition",
+      "page": 777,
+      "scan": "C2-Je-0777.jpg",
+      "crops": [
+        "img/simanim-tanakh-jeremiah-22-23-C2-Je-0777-40536-1.png"
+      ],
+      "notes": [
+        {
+          "text": "Phonetic MAM places the stress on the final syllable, which the Simanim Tanakh also marks with the added pashta.",
+          "href": "../phonetic-mam/tnkh/C2-Jeremiah/22.html#v23",
+          "label": "Phonetic MAM"
+        }
+      ],
+      "verse_href": "../MAM-with-doc/C2-Jeremiah.html#c22v23"
+    },
+    {
+      "book": "Jeremiah",
+      "chapter": 50,
+      "verse": 24,
+      "mam": "וְגַם־נִלְכַּדְתְּ֙",
+      "printed": "וְגַם־נִלְכַּ֙דְתְּ֙",
+      "category": "redundant-edition",
+      "page": 829,
+      "scan": "C2-Je-0829.jpg",
+      "crops": [
+        "img/simanim-tanakh-jeremiah-50-24-C2-Je-0829-41267-1.png"
+      ],
+      "notes": [
+        {
+          "text": "Phonetic MAM places the stress on the final syllable, which the Simanim Tanakh also marks with the added pashta.",
+          "href": "../phonetic-mam/tnkh/C2-Jeremiah/50.html#v24",
+          "label": "Phonetic MAM"
+        }
+      ],
+      "verse_href": "../MAM-with-doc/C2-Jeremiah.html#c50v24"
+    },
+    {
+      "book": "Jeremiah",
+      "chapter": 51,
+      "verse": 13,
+      "mam": "שֹׁכַנְתְּ֙",
+      "printed": "שֹׁכַ֙נְתְּ֙",
+      "category": "redundant-edition",
+      "page": 831,
+      "scan": "C2-Je-0831.jpg",
+      "crops": [
+        "img/simanim-tanakh-jeremiah-51-13-C2-Je-0831-41304-1.png"
+      ],
+      "notes": [
+        {
+          "text": "Phonetic MAM places the stress on the final syllable, which the Simanim Tanakh also marks with the added pashta.",
+          "href": "../phonetic-mam/tnkh/C2-Jeremiah/51.html#v13",
+          "label": "Phonetic MAM"
+        }
+      ],
+      "verse_href": "../MAM-with-doc/C2-Jeremiah.html#c51v13"
+    },
+    {
+      "book": "Ezekiel",
+      "chapter": 16,
+      "verse": 43,
+      "mam": "לֹֽא־זָכַרְתְּ֙",
+      "printed": "לֹֽא־זָכַ֙רְתְּ֙",
+      "category": "redundant-edition",
+      "page": 863,
+      "scan": "C3-Ee-0863.jpg",
+      "crops": [
+        "img/simanim-tanakh-ezekiel-16-43-C3-Ee-0863-41717-1.png"
+      ],
+      "notes": [
+        {
+          "text": "Phonetic MAM places the stress on the final syllable, which the Simanim Tanakh also marks with the added pashta.",
+          "href": "../phonetic-mam/tnkh/C3-Ezekiel/16.html#v43",
+          "label": "Phonetic MAM"
+        }
+      ],
+      "verse_href": "../MAM-with-doc/C3-Ezekiel.html#c16v43"
+    },
+    {
+      "book": "Ezekiel",
+      "chapter": 16,
+      "verse": 52,
+      "mam": "פִּלַּלְתְּ֙",
+      "printed": "פִּלַּ֙לְתְּ֙",
+      "category": "redundant-edition",
+      "page": 863,
+      "scan": "C3-Ee-0863.jpg",
+      "crops": [
+        "img/simanim-tanakh-ezekiel-16-52-C3-Ee-0863-41728-1.png"
+      ],
+      "notes": [
+        {
+          "text": "Phonetic MAM places the stress on the final syllable, which the Simanim Tanakh also marks with the added pashta.",
+          "href": "../phonetic-mam/tnkh/C3-Ezekiel/16.html#v52",
+          "label": "Phonetic MAM"
+        }
+      ],
+      "verse_href": "../MAM-with-doc/C3-Ezekiel.html#c16v52"
+    },
+    {
+      "book": "Ezekiel",
+      "chapter": 23,
+      "verse": 41,
+      "mam": "וְיָשַׁבְתְּ֙",
+      "printed": "וְיָשַׁ֙בְתְּ֙",
+      "category": "redundant-edition",
+      "page": 878,
+      "scan": "C3-Ee-0878.jpg",
+      "crops": [
+        "img/simanim-tanakh-ezekiel-23-41-C3-Ee-0878-41957-1.png"
+      ],
+      "notes": [
+        {
+          "text": "Phonetic MAM places the stress on the final syllable, which the Simanim Tanakh also marks with the added pashta.",
+          "href": "../phonetic-mam/tnkh/C3-Ezekiel/23.html#v41",
+          "label": "Phonetic MAM"
+        }
+      ],
+      "verse_href": "../MAM-with-doc/C3-Ezekiel.html#c23v41"
+    },
+    {
+      "book": "Ezekiel",
+      "chapter": 48,
+      "verse": 10,
+      "mam": "וּ֜֠לְאֵ֜֠לֶּה",
+      "printed": "וּ֠לְאֵ֜לֶּה",
+      "category": "gerstar-telg",
+      "page": 921,
+      "scan": "C3-Ee-0921.jpg",
+      "crops": [
+        "img/simanim-tanakh-ezekiel-48-10-C3-Ee-0921-1217-1.png"
+      ],
+      "notes": [
+        {
+          "text": "The Simanim Tanakh has the telisha gedolah on vav and the geresh on alef. MAM has both signs on both letters.",
+          "href": "../MAM-with-doc/C3-Ezekiel.html#c48v10"
+        }
+      ],
+      "verse_href": "../MAM-with-doc/C3-Ezekiel.html#c48v10"
+    },
+    {
+      "book": "Ruth",
+      "chapter": 2,
+      "verse": 9,
+      "mam": "וְהָלַכְתְּ֙",
+      "printed": "וְהָלַ֙כְתְּ֙",
+      "category": "redundant-edition",
+      "page": 1228,
+      "scan": "E2-R-1228.jpg",
+      "crops": [
+        "img/simanim-tanakh-ruth-2-9-E2-R-1228-43788-1.png"
+      ],
+      "notes": [
+        {
+          "text": "Phonetic MAM places the stress on the final syllable, which the Simanim Tanakh also marks with the added pashta.",
+          "href": "../phonetic-mam/tnkh/E2-Ruth/02.html#v9",
+          "label": "Phonetic MAM"
+        }
+      ],
+      "verse_href": "../MAM-with-doc/E2-Ruth.html#c2v9"
+    },
+    {
+      "book": "Ruth",
+      "chapter": 3,
+      "verse": 7,
+      "mam": "וַיֵּשְׁתְּ֙",
+      "printed": "וַיֵּ֙שְׁתְּ֙",
+      "category": "redundant-edition",
+      "page": 1230,
+      "scan": "E2-R-1230.jpg",
+      "crops": [
+        "img/simanim-tanakh-ruth-3-7-E2-R-1230-43807-1.png"
+      ],
+      "notes": [
+        {
+          "text": "Phonetic MAM places the stress on the final syllable, which the Simanim Tanakh also marks with the added pashta.",
+          "href": "../phonetic-mam/tnkh/E2-Ruth/03.html#v7",
+          "label": "Phonetic MAM"
+        }
+      ],
+      "verse_href": "../MAM-with-doc/E2-Ruth.html#c3v7"
+    }
+  ]
+}
