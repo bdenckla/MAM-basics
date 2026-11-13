@@ -1,6 +1,7 @@
 # November 13, 2026 nightly MAM-basics checks (UTC)
 
 State: completed 2026-11-13; maintained broad profiles pass with corpus refresh pending
+Updates and later status: [review-nightly-2026-11-13-update.md](review-nightly-2026-11-13-update.md).
 
 Exact source `9ed47c6e8999ecaf56031e9b3f524bee6e01507a`, continuing isolated receipt `0fdce8f617bb9144c5c84ca2cd0cc09232b70af5`. Mega completes **66 steps** in **502.400981 s**; complete suite **1449 passed / 5 skipped / zero failed**, **375.133618 s** wall (371.53 s pytest). The five skips are the maintained divergent-edition controls shown in the log, not missing-input or native-Windows coverage. Owning Python 3.13.15 requirements, constraints and dependency checks pass. Both phases run sequentially with committed isolated source/sibling inputs; homes remain unchanged.
 
