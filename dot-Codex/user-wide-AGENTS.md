@@ -348,18 +348,33 @@ checkouts as well. Delegate read-only investigation freely; if concurrent agents
 the agents separate verified checkouts. A sub-agent never stages or commits another agent's
 unfinished files.
 
+Before giving more work to a session that already exists, read how full its context window is. A
+session past about 30% takes the new work through a sub-agent, unless Ben starts a fresh session
+for it. Ben, 2026-11-11, to a session at 30%: "Please try to do so via sub-agent or a fresh
+session since you are already at 30% context"; 2026-11-12: "why would you do that to a session
+already 63% context full?"
+
 ## Final messages begin with one H1 report heading
 
 Begin every final message with `# Report: <subject>`, with nothing above it, and use no other H1
 in the turn. Put the direct answer immediately below that heading. The heading names the report's
 subject rather than using a bare `# Report`.
 
-### Claude Code only: decisions go in the chat message
+### Claude Code only: questions go on a decision page
 
-Put each decision Ben must make in the chat message itself: what raises it, what each choice
-would do, and any recommendation with its reason. Claude Code's multiple-choice dialog may show
-Ben only short labels, so do not use it for a decision that needs context; ask him to answer in
-his own words.
+Put every decision Ben must make on a decision page before asking him about it: an artifact that
+keeps one URL while the task lasts, or, where no artifact can be published, a local page linked
+by its `file:///` URL. For each decision the page says what raises it, what each choice would do,
+and any recommendation with its reason, so that Ben never has to scroll back or search to learn
+what a question means. Every message that asks for a decision links to the page and names each
+open decision by its number and its question. Keep the page current, marking each decision
+answered or carried out as that happens. Claude Code's multiple-choice dialog and its next-step
+box may show Ben only short labels, so do not use either to ask for a decision; ask him to answer
+on the page or in his own words. Ben, 2026-11-11: "The ergonomics of this workflow are terrible;
+I've been complaining about it for months but we haven't found a solution; maybe this "artifact"
+document will be a solution"; 2026-11-12: "Why not put questions to me via a persistent document
+(e.g. an artifact) that you always refer back to instead of asking me to "research" what your
+questions mean?"
 
 ## Prose names its subject
 
