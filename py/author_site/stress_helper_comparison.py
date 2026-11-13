@@ -116,6 +116,9 @@ def _row(sources, filter_value):
     reading_label = " / ".join(short for _, short in edition_names)
     edition = "both printed editions" if shared else edition_names[0][0]
     reference = f'{BOOK_ABBREVS[record["book"]]} {record["chapter"]}:{record["verse"]}'
+    instance = record.get("instance")
+    location = record.get("location")
+    crop_reference = f"{reference}, {location.lower()}" if location else reference
     verse_href = escape(record["verse_href"], quote=True)
     label = f'<a href="{verse_href}">{escape(reference)}</a>'
     crops_by_edition = {key: list(source["crops"]) for key, source in sources.items()}
@@ -127,12 +130,14 @@ def _row(sources, filter_value):
         for edition_id, items in source.get("comparison_crops", {}).items():
             crops_by_edition.setdefault(edition_id, []).extend(items)
     crops = "".join(
-        _crop(item, edition_id, reference, len(crops_by_edition) > 1)
+        _crop(item, edition_id, crop_reference, len(crops_by_edition) > 1)
         for edition_id in _EDITIONS
         for item in crops_by_edition.get(edition_id, ())
     )
-    if instance := record.get("instance"):
+    if instance:
         label += f"<br><small>Instance {instance}</small>"
+    if location:
+        label += f"<br><small>{escape(location)}</small>"
     if strand := record.get("strand"):
         label += f'<br><bdi lang="hbo">{escape(strand)}</bdi>'
     row_label, _ = CATEGORIES[record["category"]]
@@ -163,6 +168,7 @@ def _comparison_key(record):
         record["verse"],
         record.get("strand"),
         record.get("instance"),
+        record.get("location"),
         record["mam"],
         record["printed"],
     )
@@ -238,7 +244,7 @@ def _document(common, inputs, generated_comment):
 </table>
 </div>
 {credits}
-<p class="credit">The crops document the printed readings shown in the table.</p>
+<p class="credit">The crops show the printed editions at the locations compared in the table.</p>
 <p class="credit">MAM text from <a href="{mam_href}">MAM-with-doc</a>, based on
 Miqra according to the Masorah at Hebrew Wikisource, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</p>
 </main>
