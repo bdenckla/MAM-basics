@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from collections import Counter
 from html import escape
+from itertools import chain
 import json
 from pathlib import Path
 import re
@@ -97,9 +98,11 @@ def _reading(edition, word):
     )
 
 
-def _crop(item, edition, reference, label):
+def _crop(item, edition_id, reference, labeled):
+    edition, short = _EDITIONS[edition_id]
     src = escape(item, quote=True)
     alt = escape(f"{edition} scan crop for {reference}", quote=True)
+    label = f'<span class="source">{short}</span><br>' if labeled else ""
     return (
         f'<a href="{src}">{label}<img src="{src}" alt="{alt}" '
         'loading="lazy" decoding="async"></a>'
@@ -115,16 +118,19 @@ def _row(sources, filter_value):
     reference = f'{BOOK_ABBREVS[record["book"]]} {record["chapter"]}:{record["verse"]}'
     verse_href = escape(record["verse_href"], quote=True)
     label = f'<a href="{verse_href}">{escape(reference)}</a>'
-    crops = []
+    crops_by_edition = {key: list(source["crops"]) for key, source in sources.items()}
     for key, source in sources.items():
-        edition_name, short = _EDITIONS[key]
+        _, short = _EDITIONS[key]
         scan = escape(source["scan"], quote=True)
         page_prefix = f"{short} " if shared else ""
         label += f'<br><span class="source" title="{scan}">{page_prefix}p. {source["page"]}</span>'
-        crop_label = f'<span class="source">{short}</span><br>' if shared else ""
-        crops.extend(
-            _crop(item, edition_name, reference, crop_label) for item in source["crops"]
-        )
+        for edition_id, items in source.get("comparison_crops", {}).items():
+            crops_by_edition.setdefault(edition_id, []).extend(items)
+    crops = "".join(
+        _crop(item, edition_id, reference, len(crops_by_edition) > 1)
+        for edition_id in _EDITIONS
+        for item in crops_by_edition.get(edition_id, ())
+    )
     if instance := record.get("instance"):
         label += f"<br><small>Instance {instance}</small>"
     if strand := record.get("strand"):
@@ -146,7 +152,7 @@ def _row(sources, filter_value):
         f'<td class="readings" dir="rtl">{reading}</td>'
         f'<th scope="row">{label}</th>'
         f'<td class="difference"><strong>{name}</strong>{notes}</td>'
-        f'<td class="scan" hidden>{"".join(crops)}</td></tr>'
+        f'<td class="scan" hidden>{crops}</td></tr>'
     )
 
 
@@ -256,7 +262,11 @@ def _check(data, output_dir):
             raise ValueError(f"Unknown comparison category: {record}")
         if not record["crops"]:
             raise ValueError(f"Comparison lacks image evidence: {key}")
-        for item in record["crops"]:
+        comparison_crops = record.get("comparison_crops", {})
+        for edition_id, items in comparison_crops.items():
+            if edition_id not in _EDITIONS or not items:
+                raise ValueError(f"Invalid comparison crops for {edition_id}: {key}")
+        for item in chain(record["crops"], *comparison_crops.values()):
             crop = Path(item)
             if len(crop.parts) != 2 or crop.parts[0] != "img":
                 raise ValueError(f"Unexpected crop path: {item}")

@@ -134,9 +134,12 @@
       "crops": [
         "img/simanim-tanakh-jeremiah-22-23-C2-Je-0777-40535-1.png"
       ],
+      "comparison_crops": {
+        "koren": ["img/koren-jeremiah-22-23-C2-Je-395-margin-qere.png"]
+      },
       "notes": [
         {
-          "text": "The Simanim Tanakh has a pashta helper within the final syllable. Koren’s margin qere (p. 395) has a single pashta, as in MAM. The omission is surprising because Koren has a helper in eleven of the thirteen cases where the Simanim Tanakh has one."
+          "text": "The Simanim Tanakh has a pashta helper within the final syllable. Koren’s margin qere (p. 395) has a single pashta, as in MAM. The omission is surprising because Koren has a helper in eleven of the thirteen cases like this."
         }
       ],
       "verse_href": "../MAM-with-doc/C2-Jeremiah.html#c22v23"
@@ -287,9 +290,12 @@
       "crops": [
         "img/simanim-tanakh-ruth-2-9-E2-R-1228-43788-1.png"
       ],
+      "comparison_crops": {
+        "koren": ["img/koren-ruth-2-9-E2-R-158.png"]
+      },
       "notes": [
         {
-          "text": "The Simanim Tanakh has a pashta helper within the final syllable. Koren (p. 158) has a single pashta, as in MAM. The omission is surprising because Koren has a helper in eleven of the thirteen cases where the Simanim Tanakh has one."
+          "text": "The Simanim Tanakh has a pashta helper within the final syllable. Koren (p. 158) has a single pashta, as in MAM. The omission is surprising because Koren has a helper in eleven of the thirteen cases like this."
         }
       ],
       "verse_href": "../MAM-with-doc/E2-Ruth.html#c2v9"
