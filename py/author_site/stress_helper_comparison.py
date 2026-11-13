@@ -1,24 +1,24 @@
-"""Render the two printed-edition comparisons from checked readings and crops."""
+"""Render the comparison with both printed editions from checked readings and crops."""
 
 from __future__ import annotations
 
-from collections import Counter
 from html import escape
 import json
 from pathlib import Path
 import re
 
 from accgram import printed_decalogue_strands as accent_names
-from mb_cmn import paths, provenance, uni_denorm
+from author_site import forwarding_stub
+from mb_cmn import bib_locales, paths, provenance, site_links, uni_denorm
 from mb_misc.osis_book_abbrevs import BOOK_ABBREVS
 
 DIRECTORY = "stress-helpers"
-EDITIONS = {
-    "koren": ("Koren", "Stress helpers in MAM and Koren Classic Tanakh"),
-    "simanim-tanakh": (
-        "the Simanim Tanakh",
-        "Stress helpers in MAM and Feldheim Simanim Tanakh",
-    ),
+_FNAME = "index.html"
+HREF = f"{DIRECTORY}/{_FNAME}"
+TITLE = "Stress helpers in MAM, Koren Classic Tanakh, and Feldheim Simanim Tanakh"
+_EDITIONS = {
+    "koren": ("Koren Classic Tanakh", "Koren", "Koren"),
+    "simanim-tanakh": ("Feldheim Simanim Tanakh", "the Simanim Tanakh", "SimTan"),
 }
 CATEGORIES = {
     "no-helper": "no SH in {edition}",
@@ -98,7 +98,8 @@ def _crop(item, edition, reference):
     )
 
 
-def _row(record, edition, reading_label):
+def _row(record, edition_id):
+    _, edition, reading_label = _EDITIONS[edition_id]
     reference = f'{BOOK_ABBREVS[record["book"]]} {record["chapter"]}:{record["verse"]}'
     verse_href = escape(record["verse_href"], quote=True)
     page = record["page"]
@@ -119,36 +120,56 @@ def _row(record, edition, reading_label):
     )
     crops = "".join(_crop(item, edition, reference) for item in record["crops"])
     return (
-        f'<tr data-outcome="{category}"><td class="readings" dir="rtl">{reading}</td>'
+        f'<tr data-edition="{edition_id}" data-outcome="{category}">'
+        f'<td class="readings" dir="rtl">{reading}</td>'
         f'<th scope="row">{label}</th>'
         f'<td class="difference"><strong>{name}</strong>{notes}</td>'
         f'<td class="scan" hidden>{crops}</td></tr>'
     )
 
 
-def _document(data, edition_id, generated_comment):
-    short_name, title = EDITIONS[edition_id]
-    other = next(key for key in EDITIONS if key != edition_id)
-    other_title = EDITIONS[other][1]
-    records = data["differences"]
-    outcomes = Counter(row["category"] for row in records)
-    choices = "".join(
-        f'<option value="{key}">{escape(_short_label(key, short_name))}</option>'
+def _verse_key(item):
+    record, _ = item
+    return bib_locales.get_bknu(record["book"]), record["chapter"], record["verse"]
+
+
+def _document(common, inputs, generated_comment):
+    records = [
+        (record, edition_id)
+        for edition_id, data in inputs.items()
+        for record in data["differences"]
+    ]
+    outcomes = {record["category"] for record, _ in records}
+    edition_choices = "".join(
+        f'<option value="{key}">{escape(title)}</option>'
+        for key, (title, _, _) in _EDITIONS.items()
+    )
+    outcome_choices = "".join(
+        f'<option value="{key}">{escape(_short_label(key, "the printed edition"))}</option>'
         for key in CATEGORIES
         if key in outcomes
     )
-    reading_label = "SimTan" if edition_id == "simanim-tanakh" else short_name
-    body = "\n".join(_row(record, short_name, reading_label) for record in records)
-    coverage = "".join(f"<p>{_romanize(line)}</p>" for line in data["coverage"])
-    source_notes = "".join(map(_linked_note, data.get("source_notes", ())))
-    attribution = escape(data["edition_credit"])
+    body = "\n".join(
+        _row(record, key) for record, key in sorted(records, key=_verse_key)
+    )
+    coverage = "\n".join(
+        f"<p>{_romanize(line)}</p>"
+        for data in (common, *inputs.values())
+        for line in data["coverage"]
+    )
+    source_notes = "\n".join(map(_linked_note, common["source_notes"]))
+    credits = "\n".join(
+        f'<p class="credit">{escape(data["edition_credit"])}</p>'
+        for data in inputs.values()
+    )
+    mam_href = site_links.site_href(HREF, "MAM-with-doc/index.html")
     return f"""<!doctype html>
 <!-- {escape(generated_comment)} -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{title}</title>
+<title>{TITLE}</title>
 <link rel="stylesheet" href="../document.css">
 <link rel="stylesheet" href="../wlc/style.css">
 <link rel="stylesheet" href="style.css">
@@ -156,8 +177,7 @@ def _document(data, edition_id, generated_comment):
 </head>
 <body>
 <main>
-<h1>{title}</h1>
-<p><a href="{other}.html">{other_title}</a></p>
+<h1>{TITLE}</h1>
 {coverage}
 {source_notes}
 <div class="controls">
@@ -167,7 +187,8 @@ def _document(data, edition_id, generated_comment):
 <button id="size-reset" type="button">Reset</button>
 </div>
 <label>Search <input id="find" type="search" placeholder="Verse or Hebrew"></label>
-<label>Outcome <select id="outcome" title="SH means stress helper"><option value="">All differences</option>{choices}</select></label>
+<label>Edition <select id="edition"><option value="">Both editions</option>{edition_choices}</select></label>
+<label>Outcome <select id="outcome" title="SH means stress helper"><option value="">All differences</option>{outcome_choices}</select></label>
 <button id="toggle-images" type="button" aria-controls="observations" aria-expanded="false">Show images</button>
 <output id="visible" aria-live="polite"></output>
 </div>
@@ -180,8 +201,9 @@ def _document(data, edition_id, generated_comment):
 </tbody>
 </table>
 </div>
-<p class="credit">{attribution} The crops document the printed readings shown in the table.</p>
-<p class="credit">MAM text from <a href="../MAM-with-doc/index.html">MAM-with-doc</a>, based on
+{credits}
+<p class="credit">The crops document the printed readings shown in the table.</p>
+<p class="credit">MAM text from <a href="{mam_href}">MAM-with-doc</a>, based on
 Miqra according to the Masorah at Hebrew Wikisource, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</p>
 </main>
 </body>
@@ -221,20 +243,29 @@ def _check(data, output_dir):
 
 
 def render(input_dir, output_dir, *, generated_comment):
-    """Render a complete report pair, with all assets already in output_dir."""
+    """Write the combined report and its old addresses, with crops in output_dir."""
+    common = json.loads((input_dir / "common.json").read_text(encoding="utf-8"))
     inputs = {
         key: json.loads((input_dir / f"{key}.json").read_text(encoding="utf-8"))
-        for key in EDITIONS
+        for key in _EDITIONS
     }
     for data in inputs.values():
         _check(data, output_dir)
-    written = []
-    for key, data in inputs.items():
-        target = output_dir / f"{key}.html"
-        page = _document(data, key, generated_comment)
-        target.write_text(page, encoding="utf-8", newline="\n")
-        written.append(str(target))
-    return tuple(written)
+    target = output_dir / _FNAME
+    page = _document(common, inputs, generated_comment)
+    target.write_text(page, encoding="utf-8", newline="\n")
+    return (
+        str(target),
+        *(
+            forwarding_stub.write(
+                output_dir / f"{key}.html",
+                _FNAME,
+                f"Stress helpers in MAM and {title}",
+                generated_comment=generated_comment,
+            )
+            for key, (title, _, _) in _EDITIONS.items()
+        ),
+    )
 
 
 def gen_html_files():

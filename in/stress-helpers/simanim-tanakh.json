@@ -1,18 +1,8 @@
 {
   "edition_credit": "Torah Nevi’im Ketuvim Simanim, Elḥanan Yosef edition, Jerusalem 5775. © 5783 Shmuel Meir Riachi and Feldheim Publishers.",
   "coverage": [
-    "The table lists differences among selected readings in prose verses.",
-    "The completed scan review covers stress helpers already present in MAM’s prose verses. It excludes a search for helpers absent from MAM and optional helpers in poetic verses.",
-    "The follow-up found differences from MAM at four additional verses. It completed all 10,223 pending scan checks, counting each occurrence in each edition separately. Both editions differ from MAM at 2Chr 20:27, which the earlier comparison had marked as an agreement in each edition. Koren differs from MAM at the other three verses.",
     "The Decalogue comparison uses MAM’s manuscript-tradition תחתון for the Simanim Tanakh’s main Decalogues and its manuscript-tradition עליון for its appendix Decalogues.",
     "The Simanim Tanakh has redundant pashta helpers on thirteen chanted words whose final syllable ends with two consonants bearing sheva. MAM has a single pashta, its usual notation for final stress."
-  ],
-  "source_notes": [
-    {
-      "text": "The comparison incorporates the Hebrew Wikisource correction at 2Sam 4:6. Koren, the Simanim Tanakh and corrected MAM have the telisha gedolah helper on the first he in וְ֠הֵ֠נָּה. The checked-in MAM-with-doc text still has the helper on nun.",
-      "href": "https://he.wikisource.org/w/index.php?oldid=3102555",
-      "label": "Wikisource correction"
-    }
   ],
   "differences": [
     {

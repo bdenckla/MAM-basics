@@ -15,8 +15,8 @@ Subcommands:
                 forwarding stubs at two pages' old addresses,
                 gh-pages/post-stress-meteg.html and
                 gh-pages/post-stress-meteg-post-silluq-1s17v5.html.
-                Write both printed-edition stress-helper comparisons to
-                gh-pages/stress-helpers/.
+                Write the combined printed-edition stress-helper report to
+                gh-pages/stress-helpers/index.html and forward the two old addresses.
                 --trust-surveys lets the post-stress pages that read the survey
                 load it from the tracked out/accgram/post-stress-meteg.json
                 instead of recomputing it from the tracked Phonetic-MAM

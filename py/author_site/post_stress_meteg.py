@@ -86,11 +86,10 @@ populations are not source-code constants.
 
 from __future__ import annotations
 
-import html
-import json
 from pathlib import Path
 
 from accgram import post_stress_meteg as psm
+from author_site import forwarding_stub
 from author_site import site_data
 from author_site import post_stress_meteg_annotations
 from author_site import post_stress_meteg_appendices as _appendices_module
@@ -347,30 +346,6 @@ _OLD_MAIN_PAGE_FNAME = "post-stress-meteg.html"
 _OLD_1S17V5_PAGE_FNAME = "post-stress-meteg-post-silluq-1s17v5.html"
 _1S17V5_BCV = "1s17:5"
 
-# The stub at each of those addresses carries its target in the four places that the stubs of
-# py/redirect_stubs/stubs.py do: a canonical link, a meta refresh, a script that keeps the
-# incoming query and fragment, and a visible link.  Its target is relative, the page having
-# moved within this site (mb_cmn/site_links.py), so py/check_html_syntax_and_sanity.py
-# resolves the visible link.  Its title and sentence follow this site's other moved-page stub,
-# the one that py/author_misc/tsinnorit_and_oleh_on_ivs.py writes.
-_FORWARDING_STUB_TEMPLATE = """<!doctype html>
-<!-- {comment} -->
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<title>{title}</title>
-<link rel="canonical" href="{href}">
-<meta http-equiv="refresh" content="0; url={href}">
-<script>
-location.replace({href_js} + location.search + location.hash);
-</script>
-</head>
-<body>
-<p>This page has moved to <a href="{href}">a different location</a>.</p>
-</body>
-</html>
-"""
-
 
 def _write_forwarding_stubs(deploy_root: Path) -> tuple[str, str]:
     """Write the stubs that send the two old addresses on to their pages in the folder."""
@@ -393,19 +368,12 @@ def _write_forwarding_stub(
 ) -> str:
     """Write the stub at ``old_fname``, directly in ``deploy_root``, that sends its reader on
     to ``target``, a path below the deploy root, whose page is titled ``title``."""
-    href = site_links.site_href(old_fname, target)
-    path = deploy_root / old_fname
-    path.write_text(
-        _FORWARDING_STUB_TEMPLATE.format(
-            comment=provenance.generated_html_comment(__file__),
-            title=html.escape(f"Redirect for {title}"),
-            href=html.escape(href),
-            href_js=json.dumps(href),
-        ),
-        encoding="utf-8",
-        newline="\n",
+    return forwarding_stub.write(
+        deploy_root / old_fname,
+        site_links.site_href(old_fname, target),
+        title,
+        generated_comment=provenance.generated_html_comment(__file__),
     )
-    return str(path)
 
 
 def build_body(survey: dict) -> list:

@@ -242,10 +242,7 @@ _POINTING_AND_CANTILLATION = Section(
     heading="Pointing and cantillation",
     entries=(
         _entry(POST_STRESS_METEG_TITLE, POST_STRESS_METEG_HREF),
-        *(
-            _entry(title, f"{stress_helper_comparison.DIRECTORY}/{edition}.html")
-            for edition, (_, title) in stress_helper_comparison.EDITIONS.items()
-        ),
+        _entry(stress_helper_comparison.TITLE, stress_helper_comparison.HREF),
         _entry(
             (
                 "Excerpts from ",

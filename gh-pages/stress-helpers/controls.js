@@ -21,6 +21,7 @@ toggle.addEventListener("click", () => {
 });
 
 const input = document.querySelector("#find");
+const edition = document.querySelector("#edition");
 const outcome = document.querySelector("#outcome");
 const visible = document.querySelector("#visible");
 const rows = Array.from(document.querySelectorAll("#observations tbody tr"));
@@ -33,11 +34,13 @@ function filter() {
     let count = 0;
     for (const [index, row] of rows.entries()) {
         row.hidden = !searchable[index].some(cell => cell.includes(query))
+            || (edition.value && row.dataset.edition !== edition.value)
             || (outcome.value && row.dataset.outcome !== outcome.value);
         if (!row.hidden) count++;
     }
     visible.textContent = count + (count === 1 ? " difference" : " differences");
 }
 input.addEventListener("input", filter);
+edition.addEventListener("change", filter);
 outcome.addEventListener("change", filter);
 filter();
