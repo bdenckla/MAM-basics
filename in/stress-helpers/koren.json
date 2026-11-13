@@ -1,14 +1,12 @@
 {
   "edition_credit": "The Koren Classic Tanakh, Classic Edition, Large Size. Koren Publishers Jerusalem Ltd. © 1962, 2020 for font and text design.",
   "coverage": [
-    "The table lists confirmed differences among targeted readings in prose verses, including readings from the Decalogue appendices. It uses MAM verse numbering.",
-    "The review started with 1,688 targets for segolta, telisha gedolah, telisha qetanna and zarqa, and 3,829 targets for pashta where MAM has a stress helper. Of these, 1,160 non-pashta targets and 3,699 pashta targets lack an independent record of Koren’s mark placement. The original non-pashta review often recorded the presence of marks without identifying the letter carrying each mark.",
-    "The pashta review used OCR to locate chanted words and screened the crops for mark count and spacing. A reverse screen looked for extra helpers where MAM has lone pashta. It located 16,692 of 16,812 body targets. Ten appendix comparisons were handled separately. Three Gen 35:22 targets belong to a separate cantillation reading absent from Koren. Inspection of the 97 crops with no detected pashta-shaped mark found no extra helper, and some crops lacked enough context to confirm the reading. Independent observations resolve 15 of the 16,822 target and scan pairs in the reverse catalogue. MAM doc-notes supplied additional leads, including chanted words with a different accent in MAM.",
+    "The table lists confirmed differences among selected readings in prose verses, including readings from the Decalogue appendices. It uses MAM verse numbering.",
     "Koren has redundant pashta helpers on eleven chanted words whose final syllable ends with two consonants bearing sheva. Phonetic MAM places the stress on that same final syllable."
   ],
   "source_notes": [
     {
-      "text": "The comparison incorporates the Hebrew Wikisource correction at 2Sam 4:6. Koren, the Simanim Tanakh and corrected MAM have the telisha gedolah helper on the first he in וְ֠הֵ֠נָּה. The checked-in MAM-with-doc text still has the helper on nun, as did the MAM snapshot used in the first Koren comparison. Its exporter copied that position into the Koren result and missed the difference.",
+      "text": "The comparison incorporates the Hebrew Wikisource correction at 2Sam 4:6. Koren, the Simanim Tanakh and corrected MAM have the telisha gedolah helper on the first he in וְ֠הֵ֠נָּה. The checked-in MAM-with-doc text still has the helper on nun, as did the MAM snapshot used in the first Koren comparison. The first Koren comparison missed that difference.",
       "href": "https://he.wikisource.org/w/index.php?oldid=3102555",
       "label": "Wikisource correction"
     }
