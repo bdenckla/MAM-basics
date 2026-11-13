@@ -9,6 +9,14 @@ session confirmed enabled hourly new-main screening from October 16 at 13:00 and
 checks around 02:00 from October 17, America/New_York, with no end date. Scheduling remains
 with that session; this run created no automation.
 
+## Hourly prose screen, 2026-11-13 19:00 UTC
+
+Screened only `adae612d8406781cf5c457a0df4715e5d96c6eac..5287ba189e87bd90cb889fe7c578c8ada8c1f55b`: one commit / four paths. Complete endpoint patches remove one qualifier from both stress-helper introductions and shorten the Koren source note in the JSON inputs and matching generated HTML. Selected-reading scope, substantive source note, Hebrew forms, observation rows, links, credits, controls, assets and generator logic are unchanged. No consequential introduced defect or repair; this prose-only interval warrants no deeper runtime investigation.
+
+GitHub-only source and patch inspection; no executor, generator, test or browser launched. Commit-reported checks remain attributed, not independent execution evidence. The saved review task and inspected recent peer tasks were completed; no expensive job or duplicate window was started. Private main is unchanged and was not re-reviewed.
+
+Receipt lineage continues from `8b521eba4a7d87b649da69223431ed332047cca8`. Overall reviewed-through remains `210affe3ac2931473bead0de839be0de08309e3d`; latest broad-tested remains `9ed47c6e8999ecaf56031e9b3f524bee6e01507a`. All earlier content, pending gaps, tested anchors and limitations are preserved. Isolated receipt only; the parent Pages workflow is manual-dispatch-only, with no dispatch or main/shared integration. No hbofonts work or temporary worktree.
+
 ## Hourly presentation screen, 2026-11-13 18:00 UTC
 
 Screened only `3badbc72b8e57f99617980c4e6383a7cf52dd4d6..adae612d8406781cf5c457a0df4715e5d96c6eac`: two commits / five paths. The complete endpoint patches remove row striping with a page-local CSS override and shorten the two stress-helper introductions in their JSON inputs and matching generated HTML. Selected-reading scope remains explicit. Observation rows, Hebrew forms, credits, links, crops, controls and generator logic are unchanged. The ID-scoped transparent-cell rule outranks the inherited WLC odd-row rule. No consequential introduced defect or product repair; this presentation/prose-only interval warrants no deeper runtime investigation.
