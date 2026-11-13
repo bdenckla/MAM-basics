@@ -88,57 +88,81 @@ def _reading(edition, word):
     )
 
 
-def _crop(item, edition, reference):
+def _crop(item, edition, reference, label):
     src = escape(item, quote=True)
     alt = escape(f"{edition} scan crop for {reference}", quote=True)
     return (
-        f'<a href="{src}"><img src="{src}" alt="{alt}" '
+        f'<a href="{src}">{label}<img src="{src}" alt="{alt}" '
         'loading="lazy" decoding="async"></a>'
     )
 
 
-def _row(record, edition_id):
-    _, edition, reading_label = _EDITIONS[edition_id]
+def _row(sources):
+    record = next(iter(sources.values()))
+    shared = len(sources) > 1
+    edition_names = [_EDITIONS[key] for key in sources]
+    reading_label = " / ".join(short for _, _, short in edition_names)
+    edition = "both printed editions" if shared else edition_names[0][1]
     reference = f'{BOOK_ABBREVS[record["book"]]} {record["chapter"]}:{record["verse"]}'
     verse_href = escape(record["verse_href"], quote=True)
-    page = record["page"]
-    scan = escape(record["scan"], quote=True)
-    label = (
-        f'<a href="{verse_href}">{escape(reference)}</a><br>'
-        f'<span class="source" title="{scan}">p. {page}</span>'
-    )
+    label = f'<a href="{verse_href}">{escape(reference)}</a>'
+    crops = []
+    for key, source in sources.items():
+        _, edition_name, short = _EDITIONS[key]
+        scan = escape(source["scan"], quote=True)
+        page_prefix = f"{short} " if shared else ""
+        label += f'<br><span class="source" title="{scan}">{page_prefix}p. {source["page"]}</span>'
+        crop_label = f'<span class="source">{short}</span><br>' if shared else ""
+        crops.extend(
+            _crop(item, edition_name, reference, crop_label) for item in source["crops"]
+        )
     if instance := record.get("instance"):
         label += f"<br><small>Instance {instance}</small>"
     if strand := record.get("strand"):
         label += f'<br><bdi lang="hbo">{escape(strand)}</bdi>'
     category = record["category"]
     name = _marked_label(_short_label(category, edition))
-    notes = "".join(map(_linked_note, record.get("notes", ())))
+    notes = "".join(
+        dict.fromkeys(
+            _linked_note(note)
+            for source in sources.values()
+            for note in source.get("notes", ())
+        )
+    )
     reading = _reading("MAM", record["mam"]) + _reading(
         reading_label, record["printed"]
     )
-    crops = "".join(_crop(item, edition, reference) for item in record["crops"])
+    editions = " ".join(sources)
     return (
-        f'<tr data-edition="{edition_id}" data-outcome="{category}">'
+        f'<tr data-editions="{editions}" data-outcome="{category}">'
         f'<td class="readings" dir="rtl">{reading}</td>'
         f'<th scope="row">{label}</th>'
         f'<td class="difference"><strong>{name}</strong>{notes}</td>'
-        f'<td class="scan" hidden>{crops}</td></tr>'
+        f'<td class="scan" hidden>{"".join(crops)}</td></tr>'
     )
 
 
-def _verse_key(item):
-    record, _ = item
-    return bib_locales.get_bknu(record["book"]), record["chapter"], record["verse"]
+def _comparison_key(record):
+    return (
+        bib_locales.get_bknu(record["book"]),
+        record["chapter"],
+        record["verse"],
+        record.get("strand"),
+        record.get("instance"),
+        record["mam"],
+        record["printed"],
+    )
 
 
 def _document(common, inputs, generated_comment):
-    records = [
-        (record, edition_id)
-        for edition_id, data in inputs.items()
-        for record in data["differences"]
-    ]
-    outcomes = {record["category"] for record, _ in records}
+    comparisons = {}
+    outcomes = set()
+    for edition_id, data in inputs.items():
+        for record in data["differences"]:
+            category = record["category"]
+            key = (*_comparison_key(record), record["verse_href"], category)
+            comparisons.setdefault(key, {})[edition_id] = record
+            outcomes.add(category)
     edition_choices = "".join(
         f'<option value="{key}">{escape(title)}</option>'
         for key, (title, _, _) in _EDITIONS.items()
@@ -149,7 +173,7 @@ def _document(common, inputs, generated_comment):
         if key in outcomes
     )
     body = "\n".join(
-        _row(record, key) for record, key in sorted(records, key=_verse_key)
+        _row(comparisons[key]) for key in sorted(comparisons, key=lambda key: key[:3])
     )
     coverage = "\n".join(f"<p>{_romanize(line)}</p>" for line in common["coverage"])
     source_notes = "\n".join(map(_linked_note, common["source_notes"]))
@@ -182,7 +206,7 @@ def _document(common, inputs, generated_comment):
 <button id="size-reset" type="button">Reset</button>
 </div>
 <label>Search <input id="find" type="search" placeholder="Verse or Hebrew"></label>
-<label>Edition <select id="edition"><option value="">Both editions</option>{edition_choices}</select></label>
+<label>Edition <select id="edition"><option value="">All editions</option>{edition_choices}</select></label>
 <label>Outcome <select id="outcome" title="SH means stress helper"><option value="">All differences</option>{outcome_choices}</select></label>
 <button id="toggle-images" type="button" aria-controls="observations" aria-expanded="false">Show images</button>
 <output id="visible" aria-live="polite"></output>
@@ -209,15 +233,7 @@ Miqra according to the Masorah at Hebrew Wikisource, <a href="https://creativeco
 def _check(data, output_dir):
     refs = set()
     for record in data["differences"]:
-        key = (
-            record["book"],
-            record["chapter"],
-            record["verse"],
-            record.get("strand"),
-            record.get("instance"),
-            record["mam"],
-            record["printed"],
-        )
+        key = _comparison_key(record)
         if key in refs:
             raise ValueError(f"Duplicate comparison: {key}")
         refs.add(key)

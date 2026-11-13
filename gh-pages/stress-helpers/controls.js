@@ -29,12 +29,13 @@ function searchKey(text) {
     return text.toLowerCase().replace(/[\u0591-\u05bd\u05bf-\u05c7]/g, "");
 }
 const searchable = rows.map(row => Array.from(row.cells, cell => searchKey(cell.textContent)));
+const rowEditions = rows.map(row => row.dataset.editions.split(" "));
 function filter() {
     const query = searchKey(input.value.trim());
     let count = 0;
     for (const [index, row] of rows.entries()) {
         row.hidden = !searchable[index].some(cell => cell.includes(query))
-            || (edition.value && row.dataset.edition !== edition.value)
+            || (edition.value && !rowEditions[index].includes(edition.value))
             || (outcome.value && row.dataset.outcome !== outcome.value);
         if (!row.hidden) count++;
     }
