@@ -3,7 +3,7 @@
   "coverage": [
     "The table lists differences among selected readings in prose verses and uses MAM verse numbering.",
     "The completed scan review covers stress helpers already present in MAM’s prose verses. It excludes a search for helpers absent from MAM and optional helpers in poetic verses.",
-    "The follow-up resolved all 10,223 pending scan checks across the two editions, counting each occurrence in each edition separately. It found three more differences, all in Koren, and corrected the earlier reading of 2Chr 20:27 in both editions.",
+    "The follow-up found differences from MAM at four additional verses. It completed all 10,223 pending scan checks, counting each occurrence in each edition separately. Both editions differ from MAM at 2Chr 20:27, which the earlier comparison had marked as an agreement in each edition. Koren differs from MAM at the other three verses.",
     "The Decalogue comparison uses MAM’s manuscript-tradition תחתון for the Simanim Tanakh’s main Decalogues and its manuscript-tradition עליון for its appendix Decalogues.",
     "The Simanim Tanakh has redundant pashta helpers on thirteen chanted words whose final syllable ends with two consonants bearing sheva. Phonetic MAM places the stress on that same final syllable."
   ],
