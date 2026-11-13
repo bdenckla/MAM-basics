@@ -135,9 +135,12 @@
       "crops": [
         "img/simanim-tanakh-jeremiah-22-23-C2-Je-0777-40535-1.png"
       ],
+      "comparison_crops": {
+        "koren": ["img/koren-jeremiah-22-23-C2-Je-395-margin-qere.png"]
+      },
       "notes": [
         {
-          "text": "The Simanim Tanakh has a pashta helper on shin in the opening qere. MAM has a single pashta on the qere."
+          "text": "The opening qere has pashta in MAM and the Simanim Tanakh, with a helper on shin in the Simanim Tanakh. Koren (p. 395) differs in the accent itself, with munaḥ on shin."
         }
       ],
       "verse_href": "../MAM-with-doc/C2-Jeremiah.html#c22v23"
@@ -294,7 +297,7 @@
       },
       "notes": [
         {
-          "text": "At the second occurrence, after וְצָמִת, the Simanim Tanakh has a pashta helper on lamed. MAM and Koren (p. 158) have a single pashta. The first occurrence has munaḥ on lamed in all three sources."
+          "text": "At the second occurrence, after וְצָמִת, the Simanim Tanakh has a pashta helper on lamed. MAM and Koren (p. 158) have a single pashta. Koren prints a helper in all eleven of the group’s other cases where it has pashta, so Koren’s editors would likely consider the omission here an error. The first occurrence has munaḥ on lamed in all three sources."
         }
       ],
       "verse_href": "../MAM-with-doc/E2-Ruth.html#c2v9"
