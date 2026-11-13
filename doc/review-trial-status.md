@@ -9,6 +9,12 @@ session confirmed enabled hourly new-main screening from October 16 at 13:00 and
 checks around 02:00 from October 17, America/New_York, with no end date. Scheduling remains
 with that session; this run created no automation.
 
+## Bounded screen, 2026-11-13 22:00 UTC cycle, 8f686dca
+
+Reviewed `7173440e9a2cf932edc290a4ff17affde54a3072` → `8f686dca6d3651b86dc824ae7c53d96f73e6d34a`: two commits / eight paths; no consequential introduced defect or product repair. The nine populated exact-edition-set/category choices account for 36 rows (14 shared/22 single), separate from 50 edition records (33 Koren/17 Simanim Tanakh). All retained fields except declared notes survive in their original order; exactly two 2Sam 13:20 records/crops are withdrawn. Maintained gen-site is exact; 37 focused tests and changed-source Black pass. HTML exits 1 for four retained orphan crops, with 103 informational CSS references. Independent data/DOM, 152-local-attribute, 54-PNG and 4,048 actual-JS combination checks pass. Source census/revision/editorial claims stay attributed; no browser or broad rerun. [Receipt](review-hourly-2026-11-13-8f686dca-basics.md), [evidence](review-hourly-2026-11-13-8f686dca-basics-evidence.zip).
+
+Lineage `0db06a40f78972b8c7b7d5bc6475138fc499e0b5` preserves all historical rows, pending gaps, immutable receipts, November 13 nightly/Windows evidence and Taamey D limits. Overall reviewed `210affe3ac2931473bead0de839be0de08309e3d` and broad-tested `9ed47c6e8999ecaf56031e9b3f524bee6e01507a` remain unchanged. Existing isolated receipt branch preparation only; publication/cleanup are later closeout steps. No Private, hbofonts, main/shared/deployment or schedule work.
+
 ## Bounded screen, 2026-11-13 21:00 UTC cycle, 7173440e
 
 Reviewed `4c0084f405351e36eb590180fa6a7f4a4f1ee063` → `7173440e9a2cf932edc290a4ff17affde54a3072`: five commits / 11 paths. No consequential introduced defect or product repair. All 52 source comparisons retain every field except declared note rewrites; 37 combined rows preserve both edition memberships, pages/crops/notes and all occurrence/strand/category distinctions. The owner's old-address removal remains intentional. Maintained gen-site --trust-surveys is exact; 37 selected tests and three-file Black pass. HTML exits 1 for the same four retained orphan crops; 105 CSS references are informational. Independent 52-comparison/157-local-attribute/56-PNG checks and 4,356 actual-script Node filter combinations pass. Source-census/editorial claims remain attributed; no browser or broad rerun. [Receipt](review-hourly-2026-11-13-7173440e-basics.md), [evidence](review-hourly-2026-11-13-7173440e-basics-evidence.zip).
@@ -65,6 +71,8 @@ No repository generator, maintained test or browser run was started. Execution i
 
 | Anchor | Commit/result |
 | --- | --- |
+| Bounded screen 8f686dca, 2026-11-13 22:00 UTC | `7173440e9a2cf932edc290a4ff17affde54a3072` → `8f686dca6d3651b86dc824ae7c53d96f73e6d34a`; two commits / eight paths; no consequential defect or repair. [Receipt](review-hourly-2026-11-13-8f686dca-basics.md). |
+| Focused evidence 8f686dca | gen-site exact; 37 tests/Black pass; HTML exit 1 for four retained orphan crops. 50 records/36 rows/nine choices; 152 local attributes; 54 PNGs/50 linked; 4,048 Node combinations. [Evidence](review-hourly-2026-11-13-8f686dca-basics-evidence.zip). |
 | Bounded screen 7173440e, 2026-11-13 21:00 UTC | `4c0084f405351e36eb590180fa6a7f4a4f1ee063` → `7173440e9a2cf932edc290a4ff17affde54a3072`; five commits / 11 paths; no consequential defect or product repair. [Receipt](review-hourly-2026-11-13-7173440e-basics.md). |
 | Focused evidence 7173440e | gen-site exact; 37 tests/three-file Black pass; HTML exit 1 for four retained orphan crops. 52 source comparisons → 37 rows, 157 local attributes, 56 PNGs/52 linked, 4,356 Node combinations. [Evidence](review-hourly-2026-11-13-7173440e-basics-evidence.zip). |
 | Latest bounded screen 4c0084f4 | `5287ba189e87bd90cb889fe7c578c8ada8c1f55b` → `4c0084f405351e36eb590180fa6a7f4a4f1ee063`; five commits / 11 paths. No consequential introduced defect or product repair. Research and all earlier gaps retained. [Receipt](review-hourly-2026-11-13-4c0084f4-basics.md). |
