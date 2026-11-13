@@ -31,6 +31,7 @@ th, td {
     text-align: start;
 }
 thead th { background: var(--header); }
+#observations tbody td { background-color: transparent; }
 tbody th { white-space: nowrap; font-weight: 600; }
 tbody th small, tbody th bdi { font-weight: normal; }
 .reading {
