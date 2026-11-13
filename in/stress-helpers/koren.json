@@ -1,12 +1,12 @@
 {
   "edition_credit": "The Koren Classic Tanakh, Classic Edition, Large Size. Koren Publishers Jerusalem Ltd. © 1962, 2020 for font and text design.",
   "coverage": [
-    "The table lists confirmed differences among selected readings in prose verses, including readings from the Decalogue appendices. It uses MAM verse numbering.",
+    "The table lists differences among selected readings in prose verses, including readings from the Decalogue appendices. It uses MAM verse numbering.",
     "Koren has redundant pashta helpers on eleven chanted words whose final syllable ends with two consonants bearing sheva. Phonetic MAM places the stress on that same final syllable."
   ],
   "source_notes": [
     {
-      "text": "The comparison incorporates the Hebrew Wikisource correction at 2Sam 4:6. Koren, the Simanim Tanakh and corrected MAM have the telisha gedolah helper on the first he in וְ֠הֵ֠נָּה. The checked-in MAM-with-doc text still has the helper on nun, as did the MAM snapshot used in the first Koren comparison. The first Koren comparison missed that difference.",
+      "text": "The comparison incorporates the Hebrew Wikisource correction at 2Sam 4:6. Koren, the Simanim Tanakh and corrected MAM have the telisha gedolah helper on the first he in וְ֠הֵ֠נָּה. The checked-in MAM-with-doc text still has the helper on nun.",
       "href": "https://he.wikisource.org/w/index.php?oldid=3102555",
       "label": "Wikisource correction"
     }
