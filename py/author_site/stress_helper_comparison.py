@@ -8,7 +8,6 @@ from pathlib import Path
 import re
 
 from accgram import printed_decalogue_strands as accent_names
-from author_site import forwarding_stub
 from mb_cmn import bib_locales, paths, provenance, site_links, uni_denorm
 from mb_misc.osis_book_abbrevs import BOOK_ABBREVS
 
@@ -243,7 +242,7 @@ def _check(data, output_dir):
 
 
 def render(input_dir, output_dir, *, generated_comment):
-    """Write the combined report and its old addresses, with crops in output_dir."""
+    """Write the combined report, with crops already in output_dir."""
     common = json.loads((input_dir / "common.json").read_text(encoding="utf-8"))
     inputs = {
         key: json.loads((input_dir / f"{key}.json").read_text(encoding="utf-8"))
@@ -254,21 +253,10 @@ def render(input_dir, output_dir, *, generated_comment):
     target = output_dir / _FNAME
     page = _document(common, inputs, generated_comment)
     target.write_text(page, encoding="utf-8", newline="\n")
-    return (
-        str(target),
-        *(
-            forwarding_stub.write(
-                output_dir / f"{key}.html",
-                _FNAME,
-                f"Stress helpers in MAM and {title}",
-                generated_comment=generated_comment,
-            )
-            for key, (title, _, _) in _EDITIONS.items()
-        ),
-    )
+    return str(target)
 
 
-def gen_html_files():
+def gen_html_file():
     root = paths.repo_root()
     return render(
         root / "in" / DIRECTORY,

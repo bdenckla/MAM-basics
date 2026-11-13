@@ -79,10 +79,6 @@ _PAGES_FOR_OUTSIDE_LINKS = {
         " when the pages moved into post-stress-meteg/ on 2026-11-11, an address that"
         " MAM-private's review of BHL Appendix A links"
     ),
-    "stress-helpers/koren.html": "the old address of the Koren stress-helper report",
-    "stress-helpers/simanim-tanakh.html": (
-        "the old address of the Feldheim Simanim Tanakh stress-helper report"
-    ),
     # The seven CLC stubs that py/clc/clc_index.py's write_legacy_redirects writes.  Ben,
     # 2026-11-11, of a report recommending these entries: "I authorize you to do those
     # improvements you recommend."
