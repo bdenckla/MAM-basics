@@ -1,7 +1,8 @@
 {
   "edition_credit": "Torah Nevi’im Ketuvim Simanim, Elḥanan Yosef edition, Jerusalem 5775. © 5783 Shmuel Meir Riachi and Feldheim Publishers.",
   "coverage": [
-    "The table lists differences among selected readings in prose verses, including readings from the Decalogue appendices. It uses MAM verse numbering.",
+    "The table lists differences among selected readings in prose verses and uses MAM verse numbering.",
+    "The Decalogue comparison uses MAM’s manuscript-tradition תחתון for the Simanim Tanakh’s main Decalogues and its manuscript-tradition עליון for its appendix Decalogues.",
     "The Simanim Tanakh has redundant pashta helpers on thirteen chanted words whose final syllable ends with two consonants bearing sheva. Phonetic MAM places the stress on that same final syllable."
   ],
   "source_notes": [
@@ -12,28 +13,6 @@
     }
   ],
   "differences": [
-    {
-      "book": "Exodus",
-      "chapter": 20,
-      "verse": 2,
-      "mam": "הוֹצֵאתִ֩יךָ֩",
-      "printed": "הֽוֹצֵאתִ֛יךָ",
-      "category": "different-accent",
-      "page": 350,
-      "scan": "A9-A2-10C-0350.jpg",
-      "crops": [
-        "img/simanim-tanakh-exodus-20-2-A9-A2-10C-0350-1684-1.png"
-      ],
-      "notes": [
-        {
-          "text": "MAM's printed-tradition supplement has telisha qetanna and its helper. The Simanim Tanakh appendix follows the manuscript-tradition עליון here, with tevir on tav.",
-          "href": "../MAM-with-doc/A2-Exodus-big-doc.html#c20v2doc1",
-          "label": "MAM printed-tradition note"
-        }
-      ],
-      "strand": "עליון",
-      "verse_href": "../MAM-with-doc/A2-Exodus.html#c20v2"
-    },
     {
       "book": "Levit",
       "chapter": 10,
@@ -78,28 +57,6 @@
         }
       ],
       "verse_href": "../MAM-with-doc/A4-Numbers.html#c11v8"
-    },
-    {
-      "book": "Deuter",
-      "chapter": 5,
-      "verse": 6,
-      "mam": "הוֹצֵאתִ֩יךָ֩",
-      "printed": "הֽוֹצֵאתִ֛יךָ",
-      "category": "different-accent",
-      "page": 351,
-      "scan": "A9-A5-10C-0351.jpg",
-      "crops": [
-        "img/simanim-tanakh-deuter-5-6-A9-A5-10C-0351-1685-1.png"
-      ],
-      "notes": [
-        {
-          "text": "MAM's printed-tradition supplement has telisha qetanna and its helper. The Simanim Tanakh appendix follows the manuscript-tradition עליון here, with tevir on tav.",
-          "href": "../MAM-with-doc/A5-Deuter-big-doc.html#c5v6doc1",
-          "label": "MAM printed-tradition note"
-        }
-      ],
-      "strand": "עליון",
-      "verse_href": "../MAM-with-doc/A5-Deuter.html#c5v6"
     },
     {
       "book": "2Samuel",

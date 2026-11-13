@@ -1,7 +1,8 @@
 {
   "edition_credit": "The Koren Classic Tanakh, Classic Edition, Large Size. Koren Publishers Jerusalem Ltd. © 1962, 2020 for font and text design.",
   "coverage": [
-    "The table lists differences among selected readings in prose verses, including readings from the Decalogue appendices. It uses MAM verse numbering.",
+    "The table lists differences among selected readings in prose verses and uses MAM verse numbering.",
+    "The Decalogue comparison uses MAM’s printed-tradition תחתון for Koren’s main Decalogues and its printed-tradition עליון for Koren’s appendix Decalogues.",
     "Koren has redundant pashta helpers on eleven chanted words whose final syllable ends with two consonants bearing sheva. Phonetic MAM places the stress on that same final syllable."
   ],
   "source_notes": [
