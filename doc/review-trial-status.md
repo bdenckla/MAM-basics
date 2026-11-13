@@ -9,6 +9,14 @@ session confirmed enabled hourly new-main screening from October 16 at 13:00 and
 checks around 02:00 from October 17, America/New_York, with no end date. Scheduling remains
 with that session; this run created no automation.
 
+## Hourly presentation screen, 2026-11-13 18:00 UTC
+
+Screened only `3badbc72b8e57f99617980c4e6383a7cf52dd4d6..adae612d8406781cf5c457a0df4715e5d96c6eac`: two commits / five paths. The complete endpoint patches remove row striping with a page-local CSS override and shorten the two stress-helper introductions in their JSON inputs and matching generated HTML. Selected-reading scope remains explicit. Observation rows, Hebrew forms, credits, links, crops, controls and generator logic are unchanged. The ID-scoped transparent-cell rule outranks the inherited WLC odd-row rule. No consequential introduced defect or product repair; this presentation/prose-only interval warrants no deeper runtime investigation.
+
+This screen inspected committed source and patches through GitHub only. No executor, test, generator or browser was launched; commit-reported checks remain attributed, not independent evidence. The existing review task was completed before this receipt work, and no expensive job or duplicate review window was started. Private is unchanged and was not re-reviewed.
+
+Receipt lineage continues from `3e814ef2e793a5106ce198e0d4c7cbd637a642f1`. Overall reviewed-through remains `210affe3ac2931473bead0de839be0de08309e3d`; latest broad-tested remains `9ed47c6e8999ecaf56031e9b3f524bee6e01507a`. Every historical row, pending window, immutable receipt and source/browser/editorial/font limitation is retained. This is an isolated receipt branch only; the receipt parent's sole Pages workflow is manual-dispatch-only, and no dispatch or main/shared integration occurs. No hbofonts work or temporary worktree.
+
 ## Hourly documentation screen, 2026-11-13 15:00 UTC
 
 Screened endpoint `9ed47c6e8999ecaf56031e9b3f524bee6e01507a..05191160832cba00e6bcd86959b16520c2f74d7b`: one commit, only `dot-Codex/user-wide-AGENTS.md` (21 added / six removed lines). The process prose asks existing sessions to delegate beyond about 30% context and changes Claude Code decision presentation to a persistent page. No executable, generator, data, font, deployment or product path changes. The complete patch was inspected for scope and consistency; no consequential defect established and no deeper runtime investigation warranted. Commit-reported 22 tests remain attributed evidence, not tests run by this screen. No executor, tests or generator was launched.
