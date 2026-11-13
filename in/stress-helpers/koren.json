@@ -144,25 +144,6 @@
       "verse_href": "../MAM-with-doc/BB-2Samuel.html#c3v32"
     },
     {
-      "book": "2Samuel",
-      "chapter": 13,
-      "verse": 20,
-      "mam": "אָחִ֘יךְ֮",
-      "printed": "אָחִיךְ֮",
-      "category": "redundant-mam",
-      "page": 161,
-      "scan": "BB-2S-161.jpg",
-      "crops": [
-        "img/koren-2samuel-13-20-BB-2S-161-691-1.png"
-      ],
-      "notes": [
-        {
-          "text": "MAM’s zarqa helper is on ḥet, at the start of the final syllable. The second occurrence of the same form in this verse has munaḥ on ḥet. Both printed editions have the postpositive zarqa alone on the first occurrence."
-        }
-      ],
-      "verse_href": "../MAM-with-doc/BB-2Samuel.html#c13v20"
-    },
-    {
       "book": "2Kings",
       "chapter": 20,
       "verse": 14,
@@ -659,6 +640,11 @@
           "text": "At Gen 14:7, MAM has the same vowels and puts the helper on shin, as both printed editions do in Chronicles. The helper on bet in Chronicles is likely a MAM error.",
           "href": "../MAM-with-doc/A1-Genesis.html#c14v7",
           "label": "MAM at Gen 14:7"
+        },
+        {
+          "text": "The issue documents the proposed correction.",
+          "href": "https://github.com/bdenckla/MAM-basics/issues/371",
+          "label": "MAM-basics #371"
         }
       ],
       "verse_href": "../MAM-with-doc/FD-2Chronicles.html#c20v27"

@@ -66,25 +66,6 @@
       "verse_href": "../MAM-with-doc/BB-2Samuel.html#c3v32"
     },
     {
-      "book": "2Samuel",
-      "chapter": 13,
-      "verse": 20,
-      "mam": "אָחִ֘יךְ֮",
-      "printed": "אָחִיךְ֮",
-      "category": "redundant-mam",
-      "page": 526,
-      "scan": "BB-2S-0526.jpg",
-      "crops": [
-        "img/simanim-tanakh-2samuel-13-20-BB-2S-0526-691-1.png"
-      ],
-      "notes": [
-        {
-          "text": "MAM’s zarqa helper is on ḥet, at the start of the final syllable. The second occurrence of the same form in this verse has munaḥ on ḥet. Both printed editions have the postpositive zarqa alone on the first occurrence."
-        }
-      ],
-      "verse_href": "../MAM-with-doc/BB-2Samuel.html#c13v20"
-    },
-    {
       "book": "Isaiah",
       "chapter": 29,
       "verse": 4,
@@ -155,7 +136,7 @@
       ],
       "notes": [
         {
-          "text": "The Simanim Tanakh adds a pashta helper within the final syllable. MAM indicates final stress with a single pashta."
+          "text": "The Simanim Tanakh has a pashta helper within the final syllable. Koren’s margin qere (p. 395) has a single pashta, as in MAM. The omission is surprising because Koren has a helper in eleven of the thirteen cases where the Simanim Tanakh has one."
         }
       ],
       "verse_href": "../MAM-with-doc/C2-Jeremiah.html#c22v23"
@@ -308,7 +289,7 @@
       ],
       "notes": [
         {
-          "text": "The Simanim Tanakh adds a pashta helper within the final syllable. MAM indicates final stress with a single pashta."
+          "text": "The Simanim Tanakh has a pashta helper within the final syllable. Koren (p. 158) has a single pashta, as in MAM. The omission is surprising because Koren has a helper in eleven of the thirteen cases where the Simanim Tanakh has one."
         }
       ],
       "verse_href": "../MAM-with-doc/E2-Ruth.html#c2v9"
@@ -352,6 +333,11 @@
           "text": "At Gen 14:7, MAM has the same vowels and puts the helper on shin, as both printed editions do in Chronicles. The helper on bet in Chronicles is likely a MAM error.",
           "href": "../MAM-with-doc/A1-Genesis.html#c14v7",
           "label": "MAM at Gen 14:7"
+        },
+        {
+          "text": "The issue documents the proposed correction.",
+          "href": "https://github.com/bdenckla/MAM-basics/issues/371",
+          "label": "MAM-basics #371"
         }
       ],
       "verse_href": "../MAM-with-doc/FD-2Chronicles.html#c20v27"

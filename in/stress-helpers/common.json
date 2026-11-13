@@ -2,13 +2,18 @@
   "coverage": [
     "The table lists selected differences from MAM in prose verses. It covers stress helpers present in MAM and includes some cases where a printed edition has a helper absent from MAM.",
     "The Decalogue comparisons use MAM’s printed tradition for Koren and MAM’s manuscript tradition for the Simanim Tanakh. Both comparisons use תחתון for the main Decalogues and עליון for the appendix Decalogues.",
-    "Koren has redundant pashta helpers on eleven chanted words and the Simanim Tanakh on thirteen. In each case, the final syllable ends with two consonants bearing sheva. MAM has a single pashta, its usual notation for final stress."
+    "In MAM’s prose verses, thirteen chanted words have a single pashta and a final syllable ending in two consonants bearing sheva. The Simanim Tanakh has a redundant pashta helper in all thirteen cases, and Koren has one in eleven."
   ],
   "source_notes": [
     {
       "text": "At 2Sam 4:6, Koren, the Simanim Tanakh, and MAM at Hebrew Wikisource have the telisha gedolah helper on the first he in וְ֠הֵ֠נָּה. MAM-with-doc has the helper on nun.",
       "href": "https://he.wikisource.org/w/index.php?oldid=3102555",
       "label": "MAM at 2Sam 4:6"
+    },
+    {
+      "text": "At 2Sam 13:20, MAM at Hebrew Wikisource, Koren, and the Simanim Tanakh have a single zarqa on the first occurrence of אָחִיךְ֮. MAM-with-doc has a zarqa helper on ḥet there.",
+      "href": "https://he.wikisource.org/w/index.php?oldid=3102618",
+      "label": "MAM at 2Sam 13:20"
     }
   ]
 }
