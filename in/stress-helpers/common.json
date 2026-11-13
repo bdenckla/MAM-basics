@@ -1,6 +1,8 @@
 {
   "coverage": [
-    "The table lists differences from MAM in prose verses. It covers stress helpers present in MAM and includes selected cases where a printed edition has a helper absent from MAM."
+    "The table lists selected differences from MAM in prose verses. It covers stress helpers present in MAM and includes some cases where a printed edition has a helper absent from MAM.",
+    "The Decalogue comparisons use MAM’s printed tradition for Koren and MAM’s manuscript tradition for the Simanim Tanakh. Both comparisons use תחתון for the main Decalogues and עליון for the appendix Decalogues.",
+    "Koren has redundant pashta helpers on eleven chanted words and the Simanim Tanakh on thirteen. In each case, the final syllable ends with two consonants bearing sheva. MAM has a single pashta, its usual notation for final stress."
   ],
   "source_notes": [
     {

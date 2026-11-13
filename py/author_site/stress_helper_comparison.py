@@ -151,11 +151,7 @@ def _document(common, inputs, generated_comment):
     body = "\n".join(
         _row(record, key) for record, key in sorted(records, key=_verse_key)
     )
-    coverage = "\n".join(
-        f"<p>{_romanize(line)}</p>"
-        for data in (common, *inputs.values())
-        for line in data["coverage"]
-    )
+    coverage = "\n".join(f"<p>{_romanize(line)}</p>" for line in common["coverage"])
     source_notes = "\n".join(map(_linked_note, common["source_notes"]))
     credits = "\n".join(
         f'<p class="credit">{escape(data["edition_credit"])}</p>'

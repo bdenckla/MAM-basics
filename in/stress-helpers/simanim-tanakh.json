@@ -1,9 +1,5 @@
 {
   "edition_credit": "Torah Nevi’im Ketuvim Simanim, Elḥanan Yosef edition, Jerusalem 5775. © 5783 Shmuel Meir Riachi and Feldheim Publishers.",
-  "coverage": [
-    "The Decalogue comparison uses MAM’s manuscript-tradition תחתון for the Simanim Tanakh’s main Decalogues and its manuscript-tradition עליון for its appendix Decalogues.",
-    "The Simanim Tanakh has redundant pashta helpers on thirteen chanted words whose final syllable ends with two consonants bearing sheva. MAM has a single pashta, its usual notation for final stress."
-  ],
   "differences": [
     {
       "book": "Levit",
