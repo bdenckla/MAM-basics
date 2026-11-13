@@ -79,27 +79,6 @@
     },
     {
       "book": "Deuter",
-      "chapter": 5,
-      "verse": 13,
-      "mam": "וְעַבְדְּךָֽ־וַ֠אֲמָתֶ֠ךָ",
-      "printed": "וְעַבְדְּךָֽ־וַֽאֲמָתֶ֗ךָ",
-      "category": "different-accent",
-      "page": 281,
-      "scan": "A5-D-281.jpg",
-      "crops": [
-        "img/koren-deuter-5-13-A5-D-281-370-1.png",
-        "img/koren-deuter-5-13-A5-D-281-370-2.png"
-      ],
-      "notes": [
-        {
-          "text": "Koren Deut 5:14 has revia on tav and a meteg on vav. Its body agrees with the accent in MAM’s printed-tradition supplement."
-        }
-      ],
-      "strand": "תחתון",
-      "verse_href": "../MAM-with-doc/A5-Deuter.html#c5v13"
-    },
-    {
-      "book": "Deuter",
       "chapter": 33,
       "verse": 21,
       "mam": "וַיֵּתֵא֙",

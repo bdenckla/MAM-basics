@@ -17,7 +17,7 @@
       "chapter": 20,
       "verse": 2,
       "mam": "הוֹצֵאתִ֩יךָ֩",
-      "printed": "הֽוֹצֵאתִ֥יךָ",
+      "printed": "הֽוֹצֵאתִ֛יךָ",
       "category": "different-accent",
       "page": 350,
       "scan": "A9-A2-10C-0350.jpg",
@@ -26,7 +26,7 @@
       ],
       "notes": [
         {
-          "text": "MAM's printed-tradition supplement has telisha qetanna and its helper. The Simanim Tanakh appendix has the manuscript-tradition merkha on tav.",
+          "text": "MAM's printed-tradition supplement has telisha qetanna and its helper. The Simanim Tanakh appendix follows the manuscript-tradition עליון here, with tevir on tav.",
           "href": "../MAM-with-doc/A2-Exodus-big-doc.html#c20v2doc1",
           "label": "MAM printed-tradition note"
         }
@@ -84,7 +84,7 @@
       "chapter": 5,
       "verse": 6,
       "mam": "הוֹצֵאתִ֩יךָ֩",
-      "printed": "הֽוֹצֵאתִ֥יךָ",
+      "printed": "הֽוֹצֵאתִ֛יךָ",
       "category": "different-accent",
       "page": 351,
       "scan": "A9-A5-10C-0351.jpg",
@@ -93,7 +93,7 @@
       ],
       "notes": [
         {
-          "text": "MAM's printed-tradition supplement has telisha qetanna and its helper. The Simanim Tanakh appendix has the manuscript-tradition merkha on tav.",
+          "text": "MAM's printed-tradition supplement has telisha qetanna and its helper. The Simanim Tanakh appendix follows the manuscript-tradition עליון here, with tevir on tav.",
           "href": "../MAM-with-doc/A5-Deuter-big-doc.html#c5v6doc1",
           "label": "MAM printed-tradition note"
         }

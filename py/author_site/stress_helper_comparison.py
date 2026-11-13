@@ -41,6 +41,7 @@ _ACCENT_NAME_RE = re.compile(
                 accent_names.ROM_GERSHAYIM,
                 accent_names.ROM_GERESH,
                 accent_names.ROM_QADMA,
+                accent_names.ROM_TEVIR,
                 accent_names.ROM_SEGOLTA,
                 accent_names.ROM_REVIA,
                 accent_names.ROM_METEG,
