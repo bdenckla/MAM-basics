@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from collections import Counter
 from html import escape
 import json
 from pathlib import Path
@@ -16,17 +17,29 @@ _FNAME = "index.html"
 HREF = f"{DIRECTORY}/{_FNAME}"
 TITLE = "Stress helpers in MAM, Koren Classic Tanakh, and Feldheim Simanim Tanakh"
 _EDITIONS = {
-    "koren": ("Koren Classic Tanakh", "Koren", "Koren"),
-    "simanim-tanakh": ("Feldheim Simanim Tanakh", "the Simanim Tanakh", "SimTan"),
+    "koren": ("Koren", "Koren"),
+    "simanim-tanakh": ("the Simanim Tanakh", "SimTan"),
 }
+_FILTER_EDITIONS = {
+    ("koren", "simanim-tanakh"): "KorSim",
+    ("koren",): "Kor",
+    ("simanim-tanakh",): "Sim",
+}
+# Each category has a row label and a filter label.
 CATEGORIES = {
-    "no-helper": "no SH in {edition}",
-    "gerstar-telg": "Geresh or gershayim + telisha gedolah",
-    "redundant-mam": "redundant SH in MAM",
-    "redundant-edition": "redundant SH in {edition}",
-    "extra-helper": "SH in {edition} only",
-    "different-placement": "Different SH placement",
-    "different-accent": "Different accent",
+    "no-helper": ("no SH in {edition}", "No SH in {edition}"),
+    "gerstar-telg": (
+        "Geresh or gershayim + telisha gedolah",
+        "Gerstar + tel. g. — {edition}",
+    ),
+    "redundant-mam": ("redundant SH in MAM", "Redundant SH in MAM — {edition}"),
+    "redundant-edition": ("redundant SH in {edition}", "Redundant SH in {edition}"),
+    "extra-helper": ("SH in {edition} only", "SH in {edition} only"),
+    "different-placement": (
+        "Different SH placement",
+        "Different SH placement — {edition}",
+    ),
+    "different-accent": ("Different accent", "Different accent — {edition}"),
 }
 DEFAULT_SIZE = 30
 _ACCENT_NAME_RE = re.compile(
@@ -56,10 +69,6 @@ _ACCENT_NAME_RE = re.compile(
     + r")(?!\w)",
     re.IGNORECASE,
 )
-
-
-def _short_label(category, edition):
-    return CATEGORIES[category].format(edition=edition)
 
 
 def _romanize(text):
@@ -97,18 +106,18 @@ def _crop(item, edition, reference, label):
     )
 
 
-def _row(sources):
+def _row(sources, filter_value):
     record = next(iter(sources.values()))
     shared = len(sources) > 1
     edition_names = [_EDITIONS[key] for key in sources]
-    reading_label = " / ".join(short for _, _, short in edition_names)
-    edition = "both printed editions" if shared else edition_names[0][1]
+    reading_label = " / ".join(short for _, short in edition_names)
+    edition = "both printed editions" if shared else edition_names[0][0]
     reference = f'{BOOK_ABBREVS[record["book"]]} {record["chapter"]}:{record["verse"]}'
     verse_href = escape(record["verse_href"], quote=True)
     label = f'<a href="{verse_href}">{escape(reference)}</a>'
     crops = []
     for key, source in sources.items():
-        _, edition_name, short = _EDITIONS[key]
+        edition_name, short = _EDITIONS[key]
         scan = escape(source["scan"], quote=True)
         page_prefix = f"{short} " if shared else ""
         label += f'<br><span class="source" title="{scan}">{page_prefix}p. {source["page"]}</span>'
@@ -120,8 +129,8 @@ def _row(sources):
         label += f"<br><small>Instance {instance}</small>"
     if strand := record.get("strand"):
         label += f'<br><bdi lang="hbo">{escape(strand)}</bdi>'
-    category = record["category"]
-    name = _marked_label(_short_label(category, edition))
+    row_label, _ = CATEGORIES[record["category"]]
+    name = _marked_label(row_label.format(edition=edition))
     notes = "".join(
         dict.fromkeys(
             _linked_note(note)
@@ -132,9 +141,8 @@ def _row(sources):
     reading = _reading("MAM", record["mam"]) + _reading(
         reading_label, record["printed"]
     )
-    editions = " ".join(sources)
     return (
-        f'<tr data-editions="{editions}" data-outcome="{category}">'
+        f'<tr data-filter="{filter_value}">'
         f'<td class="readings" dir="rtl">{reading}</td>'
         f'<th scope="row">{label}</th>'
         f'<td class="difference"><strong>{name}</strong>{notes}</td>'
@@ -156,25 +164,29 @@ def _comparison_key(record):
 
 def _document(common, inputs, generated_comment):
     comparisons = {}
-    outcomes = set()
     for edition_id, data in inputs.items():
         for record in data["differences"]:
-            category = record["category"]
-            key = (*_comparison_key(record), record["verse_href"], category)
+            key = (*_comparison_key(record), record["verse_href"], record["category"])
             comparisons.setdefault(key, {})[edition_id] = record
-            outcomes.add(category)
-    edition_choices = "".join(
-        f'<option value="{key}">{escape(title)}</option>'
-        for key, (title, _, _) in _EDITIONS.items()
-    )
-    outcome_choices = "".join(
-        f'<option value="{key}">{escape(_short_label(key, "the printed edition"))}</option>'
-        for key in CATEGORIES
-        if key in outcomes
-    )
-    body = "\n".join(
-        _row(comparisons[key]) for key in sorted(comparisons, key=lambda key: key[:3])
-    )
+    counts = Counter()
+    rows = []
+    for key in sorted(comparisons, key=lambda key: key[:3]):
+        sources = comparisons[key]
+        category = key[-1]
+        edition = _FILTER_EDITIONS[tuple(sources)]
+        filter_value = f"{category}-{edition}"
+        counts[filter_value] += 1
+        rows.append(_row(sources, filter_value))
+    choices = [f'<option value="">All differences ({len(rows)})</option>']
+    for category, (_, template) in CATEGORIES.items():
+        for edition in _FILTER_EDITIONS.values():
+            filter_value = f"{category}-{edition}"
+            if count := counts[filter_value]:
+                label = escape(template.format(edition=edition))
+                choices.append(
+                    f'<option value="{filter_value}">{label} ({count})</option>'
+                )
+    body = "\n".join(rows)
     coverage = "\n".join(f"<p>{_romanize(line)}</p>" for line in common["coverage"])
     source_notes = "\n".join(map(_linked_note, common["source_notes"]))
     credits = "\n".join(
@@ -206,8 +218,7 @@ def _document(common, inputs, generated_comment):
 <button id="size-reset" type="button">Reset</button>
 </div>
 <label>Search <input id="find" type="search" placeholder="Verse or Hebrew"></label>
-<label>Edition <select id="edition"><option value="">All editions</option>{edition_choices}</select></label>
-<label>Outcome <select id="outcome" title="SH means stress helper"><option value="">All differences</option>{outcome_choices}</select></label>
+<label>Filter <select id="filter" title="SH means stress helper. Gerstar means geresh or gershayim. Tel. g. means {accent_names.ROM_TELISHA_GEDOLAH}.">{"".join(choices)}</select></label>
 <button id="toggle-images" type="button" aria-controls="observations" aria-expanded="false">Show images</button>
 <output id="visible" aria-live="polite"></output>
 </div>

@@ -21,27 +21,23 @@ toggle.addEventListener("click", () => {
 });
 
 const input = document.querySelector("#find");
-const edition = document.querySelector("#edition");
-const outcome = document.querySelector("#outcome");
+const menu = document.querySelector("#filter");
 const visible = document.querySelector("#visible");
 const rows = Array.from(document.querySelectorAll("#observations tbody tr"));
 function searchKey(text) {
     return text.toLowerCase().replace(/[\u0591-\u05bd\u05bf-\u05c7]/g, "");
 }
 const searchable = rows.map(row => Array.from(row.cells, cell => searchKey(cell.textContent)));
-const rowEditions = rows.map(row => row.dataset.editions.split(" "));
 function filter() {
     const query = searchKey(input.value.trim());
     let count = 0;
     for (const [index, row] of rows.entries()) {
         row.hidden = !searchable[index].some(cell => cell.includes(query))
-            || (edition.value && !rowEditions[index].includes(edition.value))
-            || (outcome.value && row.dataset.outcome !== outcome.value);
+            || (menu.value && row.dataset.filter !== menu.value);
         if (!row.hidden) count++;
     }
     visible.textContent = count + (count === 1 ? " difference" : " differences");
 }
 input.addEventListener("input", filter);
-edition.addEventListener("change", filter);
-outcome.addEventListener("change", filter);
+menu.addEventListener("change", filter);
 filter();
