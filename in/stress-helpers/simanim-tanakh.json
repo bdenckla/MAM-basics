@@ -1,11 +1,11 @@
 {
   "edition_credit": "Torah Nevi’im Ketuvim Simanim, Elḥanan Yosef edition, Jerusalem 5775. © 5783 Shmuel Meir Riachi and Feldheim Publishers.",
   "coverage": [
-    "The table lists differences among selected readings in prose verses and uses MAM verse numbering.",
+    "The table lists differences among selected readings in prose verses.",
     "The completed scan review covers stress helpers already present in MAM’s prose verses. It excludes a search for helpers absent from MAM and optional helpers in poetic verses.",
     "The follow-up found differences from MAM at four additional verses. It completed all 10,223 pending scan checks, counting each occurrence in each edition separately. Both editions differ from MAM at 2Chr 20:27, which the earlier comparison had marked as an agreement in each edition. Koren differs from MAM at the other three verses.",
     "The Decalogue comparison uses MAM’s manuscript-tradition תחתון for the Simanim Tanakh’s main Decalogues and its manuscript-tradition עליון for its appendix Decalogues.",
-    "The Simanim Tanakh has redundant pashta helpers on thirteen chanted words whose final syllable ends with two consonants bearing sheva. Phonetic MAM places the stress on that same final syllable."
+    "The Simanim Tanakh has redundant pashta helpers on thirteen chanted words whose final syllable ends with two consonants bearing sheva. MAM has a single pashta, its usual notation for final stress."
   ],
   "source_notes": [
     {
@@ -74,9 +74,7 @@
       ],
       "notes": [
         {
-          "text": "Phonetic MAM places the stress on the final syllable, which the Simanim Tanakh also marks with the added pashta.",
-          "href": "../phonetic-mam/tnkh/BB-2Samuel/03.html#v32",
-          "label": "Phonetic MAM"
+          "text": "The Simanim Tanakh adds a pashta helper within the final syllable. MAM indicates final stress with a single pashta."
         }
       ],
       "verse_href": "../MAM-with-doc/BB-2Samuel.html#c3v32"
@@ -95,9 +93,7 @@
       ],
       "notes": [
         {
-          "text": "Phonetic MAM places the stress on the final syllable. The Simanim Tanakh’s postpositive zarqa also indicates final stress.",
-          "href": "../phonetic-mam/tnkh/BB-2Samuel/13.html#v20",
-          "label": "Phonetic MAM"
+          "text": "MAM’s zarqa helper is on ḥet, at the start of the final syllable. The second occurrence of the same form in this verse has munaḥ on ḥet. Both printed editions have the postpositive zarqa alone on the first occurrence."
         }
       ],
       "verse_href": "../MAM-with-doc/BB-2Samuel.html#c13v20"
@@ -116,9 +112,7 @@
       ],
       "notes": [
         {
-          "text": "Phonetic MAM places the stress on the final syllable, which the Simanim Tanakh also marks with the added pashta.",
-          "href": "../phonetic-mam/tnkh/C1-Isaiah/29.html#v4",
-          "label": "Phonetic MAM"
+          "text": "The Simanim Tanakh adds a pashta helper within the final syllable. MAM indicates final stress with a single pashta."
         }
       ],
       "verse_href": "../MAM-with-doc/C1-Isaiah.html#c29v4"
@@ -137,9 +131,7 @@
       ],
       "notes": [
         {
-          "text": "Phonetic MAM places the stress on the final syllable, which the Simanim Tanakh also marks with the added pashta.",
-          "href": "../phonetic-mam/tnkh/C1-Isaiah/47.html#v10",
-          "label": "Phonetic MAM"
+          "text": "The Simanim Tanakh adds a pashta helper within the final syllable. MAM indicates final stress with a single pashta."
         }
       ],
       "verse_href": "../MAM-with-doc/C1-Isaiah.html#c47v10"
@@ -158,9 +150,7 @@
       ],
       "notes": [
         {
-          "text": "Phonetic MAM places the stress on the final syllable, which the Simanim Tanakh also marks with the added pashta.",
-          "href": "../phonetic-mam/tnkh/C1-Isaiah/60.html#v16",
-          "label": "Phonetic MAM"
+          "text": "The Simanim Tanakh adds a pashta helper within the final syllable. MAM indicates final stress with a single pashta."
         }
       ],
       "verse_href": "../MAM-with-doc/C1-Isaiah.html#c60v16"
@@ -179,9 +169,7 @@
       ],
       "notes": [
         {
-          "text": "Phonetic MAM places the stress on the final syllable, which the Simanim Tanakh also marks with the added pashta.",
-          "href": "../phonetic-mam/tnkh/C2-Jeremiah/22.html#v23",
-          "label": "Phonetic MAM"
+          "text": "The Simanim Tanakh adds a pashta helper within the final syllable. MAM indicates final stress with a single pashta."
         }
       ],
       "verse_href": "../MAM-with-doc/C2-Jeremiah.html#c22v23"
@@ -200,9 +188,7 @@
       ],
       "notes": [
         {
-          "text": "Phonetic MAM places the stress on the final syllable, which the Simanim Tanakh also marks with the added pashta.",
-          "href": "../phonetic-mam/tnkh/C2-Jeremiah/22.html#v23",
-          "label": "Phonetic MAM"
+          "text": "The Simanim Tanakh adds a pashta helper within the final syllable. MAM indicates final stress with a single pashta."
         }
       ],
       "verse_href": "../MAM-with-doc/C2-Jeremiah.html#c22v23"
@@ -221,9 +207,7 @@
       ],
       "notes": [
         {
-          "text": "Phonetic MAM places the stress on the final syllable, which the Simanim Tanakh also marks with the added pashta.",
-          "href": "../phonetic-mam/tnkh/C2-Jeremiah/50.html#v24",
-          "label": "Phonetic MAM"
+          "text": "The Simanim Tanakh adds a pashta helper within the final syllable. MAM indicates final stress with a single pashta."
         }
       ],
       "verse_href": "../MAM-with-doc/C2-Jeremiah.html#c50v24"
@@ -242,9 +226,7 @@
       ],
       "notes": [
         {
-          "text": "Phonetic MAM places the stress on the final syllable, which the Simanim Tanakh also marks with the added pashta.",
-          "href": "../phonetic-mam/tnkh/C2-Jeremiah/51.html#v13",
-          "label": "Phonetic MAM"
+          "text": "The Simanim Tanakh adds a pashta helper within the final syllable. MAM indicates final stress with a single pashta."
         }
       ],
       "verse_href": "../MAM-with-doc/C2-Jeremiah.html#c51v13"
@@ -263,9 +245,7 @@
       ],
       "notes": [
         {
-          "text": "Phonetic MAM places the stress on the final syllable, which the Simanim Tanakh also marks with the added pashta.",
-          "href": "../phonetic-mam/tnkh/C3-Ezekiel/16.html#v43",
-          "label": "Phonetic MAM"
+          "text": "The Simanim Tanakh adds a pashta helper within the final syllable. MAM indicates final stress with a single pashta."
         }
       ],
       "verse_href": "../MAM-with-doc/C3-Ezekiel.html#c16v43"
@@ -284,9 +264,7 @@
       ],
       "notes": [
         {
-          "text": "Phonetic MAM places the stress on the final syllable, which the Simanim Tanakh also marks with the added pashta.",
-          "href": "../phonetic-mam/tnkh/C3-Ezekiel/16.html#v52",
-          "label": "Phonetic MAM"
+          "text": "The Simanim Tanakh adds a pashta helper within the final syllable. MAM indicates final stress with a single pashta."
         }
       ],
       "verse_href": "../MAM-with-doc/C3-Ezekiel.html#c16v52"
@@ -305,9 +283,7 @@
       ],
       "notes": [
         {
-          "text": "Phonetic MAM places the stress on the final syllable, which the Simanim Tanakh also marks with the added pashta.",
-          "href": "../phonetic-mam/tnkh/C3-Ezekiel/23.html#v41",
-          "label": "Phonetic MAM"
+          "text": "The Simanim Tanakh adds a pashta helper within the final syllable. MAM indicates final stress with a single pashta."
         }
       ],
       "verse_href": "../MAM-with-doc/C3-Ezekiel.html#c23v41"
@@ -346,9 +322,7 @@
       ],
       "notes": [
         {
-          "text": "Phonetic MAM places the stress on the final syllable, which the Simanim Tanakh also marks with the added pashta.",
-          "href": "../phonetic-mam/tnkh/E2-Ruth/02.html#v9",
-          "label": "Phonetic MAM"
+          "text": "The Simanim Tanakh adds a pashta helper within the final syllable. MAM indicates final stress with a single pashta."
         }
       ],
       "verse_href": "../MAM-with-doc/E2-Ruth.html#c2v9"
@@ -367,9 +341,7 @@
       ],
       "notes": [
         {
-          "text": "Phonetic MAM places the stress on the final syllable, which the Simanim Tanakh also marks with the added pashta.",
-          "href": "../phonetic-mam/tnkh/E2-Ruth/03.html#v7",
-          "label": "Phonetic MAM"
+          "text": "The Simanim Tanakh adds a pashta helper within the final syllable. MAM indicates final stress with a single pashta."
         }
       ],
       "verse_href": "../MAM-with-doc/E2-Ruth.html#c3v7"
@@ -388,14 +360,12 @@
       ],
       "notes": [
         {
-          "text": "MAM puts the telisha gedolah helper on bet. Koren and the Simanim Tanakh put it on shin. Phonetic MAM marks final stress in Chronicles.",
-          "href": "../phonetic-mam/tnkh/FD-2Chronicles/20.html#v27",
-          "label": "Phonetic MAM at 2Chr 20:27"
+          "text": "MAM puts the telisha gedolah helper on bet. Koren and the Simanim Tanakh put it on shin."
         },
         {
-          "text": "MAM puts the helper on shin in the same pointed form at Gen 14:7, and Phonetic MAM marks stress on the syllable beginning with shin. The helper on bet in Chronicles is likely a MAM error.",
-          "href": "../phonetic-mam/tnkh/A1-Genesis/14.html#v7",
-          "label": "Phonetic MAM at Gen 14:7"
+          "text": "At Gen 14:7, MAM has the same vowels and puts the helper on shin, as both printed editions do in Chronicles. The helper on bet in Chronicles is likely a MAM error.",
+          "href": "../MAM-with-doc/A1-Genesis.html#c14v7",
+          "label": "MAM at Gen 14:7"
         }
       ],
       "verse_href": "../MAM-with-doc/FD-2Chronicles.html#c20v27"

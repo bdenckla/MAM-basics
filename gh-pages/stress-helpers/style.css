@@ -33,7 +33,7 @@ th, td {
 thead th { background: var(--header); }
 #observations tbody td { background-color: transparent; }
 tbody th { white-space: nowrap; font-weight: 600; }
-tbody th small, tbody th bdi { font-weight: normal; }
+tbody th small, tbody th bdi, tbody th .source { font-weight: normal; }
 .reading {
     display: grid;
     grid-template-columns: max-content minmax(max-content, 1fr);

@@ -98,10 +98,15 @@ def _crop(item, edition, reference):
     )
 
 
-def _row(record, edition):
+def _row(record, edition, reading_label):
     reference = f'{BOOK_ABBREVS[record["book"]]} {record["chapter"]}:{record["verse"]}'
     verse_href = escape(record["verse_href"], quote=True)
-    label = f'<a href="{verse_href}">{escape(reference)}</a>'
+    page = record["page"]
+    scan = escape(record["scan"], quote=True)
+    label = (
+        f'<a href="{verse_href}">{escape(reference)}</a><br>'
+        f'<span class="source" title="{scan}">p. {page}</span>'
+    )
     if instance := record.get("instance"):
         label += f"<br><small>Instance {instance}</small>"
     if strand := record.get("strand"):
@@ -109,15 +114,14 @@ def _row(record, edition):
     category = record["category"]
     name = _marked_label(_short_label(category, edition))
     notes = "".join(map(_linked_note, record.get("notes", ())))
-    reading = _reading("MAM", record["mam"]) + _reading(edition, record["printed"])
+    reading = _reading("MAM", record["mam"]) + _reading(
+        reading_label, record["printed"]
+    )
     crops = "".join(_crop(item, edition, reference) for item in record["crops"])
-    page = record["page"]
-    scan = escape(record["scan"], quote=True)
     return (
         f'<tr data-outcome="{category}"><td class="readings" dir="rtl">{reading}</td>'
         f'<th scope="row">{label}</th>'
         f'<td class="difference"><strong>{name}</strong>{notes}</td>'
-        f'<td class="source"><span title="{scan}">p. {page}</span></td>'
         f'<td class="scan" hidden>{crops}</td></tr>'
     )
 
@@ -133,7 +137,8 @@ def _document(data, edition_id, generated_comment):
         for key in CATEGORIES
         if key in outcomes
     )
-    body = "\n".join(_row(record, short_name) for record in records)
+    reading_label = "SimTan" if edition_id == "simanim-tanakh" else short_name
+    body = "\n".join(_row(record, short_name, reading_label) for record in records)
     coverage = "".join(f"<p>{_romanize(line)}</p>" for line in data["coverage"])
     source_notes = "".join(map(_linked_note, data.get("source_notes", ())))
     attribution = escape(data["edition_credit"])
@@ -168,8 +173,8 @@ def _document(data, edition_id, generated_comment):
 </div>
 <div class="comparison-table">
 <table id="observations">
-<thead><tr><th scope="col">Readings</th><th scope="col">MAM verse</th>
-<th scope="col">Difference</th><th scope="col">Page</th><th scope="col" class="scan" hidden>Scan crop</th></tr></thead>
+<thead><tr><th></th><th scope="col">Verse</th>
+<th scope="col">Difference</th><th scope="col" class="scan" hidden>Scan crop</th></tr></thead>
 <tbody>
 {body}
 </tbody>
