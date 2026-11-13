@@ -9,6 +9,12 @@ session confirmed enabled hourly new-main screening from October 16 at 13:00 and
 checks around 02:00 from October 17, America/New_York, with no end date. Scheduling remains
 with that session; this run created no automation.
 
+## Hourly documentation screen, 2026-11-13 15:00 UTC
+
+Screened endpoint `9ed47c6e8999ecaf56031e9b3f524bee6e01507a..05191160832cba00e6bcd86959b16520c2f74d7b`: one commit, only `dot-Codex/user-wide-AGENTS.md` (21 added / six removed lines). The process prose asks existing sessions to delegate beyond about 30% context and changes Claude Code decision presentation to a persistent page. No executable, generator, data, font, deployment or product path changes. The complete patch was inspected for scope and consistency; no consequential defect established and no deeper runtime investigation warranted. Commit-reported 22 tests remain attributed evidence, not tests run by this screen. No executor, tests or generator was launched.
+
+This compact screen extends only the examined endpoint interval; overall reviewed-through remains `210affe3ac2931473bead0de839be0de08309e3d`, and all older pending windows, tested anchors, immutable receipts and Taamey D baseline limitations remain. Reconciled the November 13 nightly and Windows supplement at `3030161007bc393f554cf0c95cf819ed4d81a93c`. Receipt publication is isolated only; Pages is manual-dispatch-only and no dispatch is made. hbofonts remains frozen.
+
 ## Continuing nightly broad checks, 2026-11-13 (UTC)
 
 Maintained mega and suite pass at `9ed47c6e8999ecaf56031e9b3f524bee6e01507a`: 66 steps, 1449 passed / 5 intentional control skips. Taamey D QA/release pass, corpus refresh remains pending. Eight explained SVG differences preserved/restored; suite write-neutral. Overall reviewed `210affe3ac2931473bead0de839be0de08309e3d`, every prior row/pending window and source/browser/Windows/editorial limitation remain unchanged. [Receipt](review-nightly-2026-11-13.md), [evidence](review-nightly-2026-11-13-evidence.zip).
