@@ -1,10 +1,12 @@
-# MAM-morphhb's pull requests to morphhb and OpenScriptorium
+# Ben's pull requests to morphhb and OpenScriptorium
 
-State: executed 2026-11-10, when the OpenScriptorium pull request was posted (item 4)
+State: live. Ben's decision of 2026-11-14 widened it from MAM-morphhb's pull requests to his
+pull requests to morphhb in general; the latest is openscriptures/morphhb#118 (item 5).
 
 Written by Claude (Opus 5.5) on 2026-11-04, on top of `825032c0`, at Ben's word ("Yes, track
 it"), so that a fresh session can post the second pull request once the first is accepted.
-Ben's words are quoted; everything else is Claude's.
+The second was posted on 2026-11-10 (item 4); `267d58ab` holds this file as it then stood,
+finished, before Ben widened it (item 5). Ben's words are quoted; everything else is Claude's.
 
 ## What is done
 
@@ -52,6 +54,27 @@ Ben's words are quoted; everything else is Claude's.
    edit the branch. Read back, its title and body equal the description's, code point for
    code point. The description beside this file is that text from "## Why" on; its opening
    comment was written before the posting.
+5. **A second morphhb pull request, for the pashta's stress helper, posted.** Ben asked for
+   it on 2026-11-14, and a session prepared it. At 14:43 New York time his "Proceed,
+   following all of your recommendations" settled its text and this file's wider title. At
+   his "post it", it was posted as openscriptures/morphhb#114 was: through `gh api`, one
+   request at a time, with no clone. The first attempt, at 14:49 New York time, stopped at
+   its first write, changing nothing: GitHub refused, with HTTP 422, the `merge-upstream`
+   sync of the fork's master, because `gh`'s token lacks the `workflow` scope and the sync
+   would have added `.github/workflows/validate.yml`, new in openscriptures/morphhb#115. Ben
+   synced the fork on GitHub's own page, and the posting then ran unchanged. The pull request
+   opened at 14:56 New York time as openscriptures/morphhb#118,
+   <https://github.com/openscriptures/morphhb/pull/118>, "Write the pashta's stress helper as
+   HEBREW ACCENT PASHTA, as WLC does", from the branch `pashta-helpers` of his fork
+   bdenckla/morphhb, with maintainers allowed to edit the branch. Its one commit, `696e21ce`,
+   on morphhb's master `db6c5c9b`, its author and committer left for GitHub to fill in from
+   Ben's account, puts HEBREW ACCENT PASHTA (U+0599), as WLC has it at tanach.us, in place
+   of the HEBREW ACCENT QADMA (U+05A8) that morphhb's commit `380f4219` of 2014-02-04 had
+   written for the helper: 3,823 code points in 37 of the 39 books in `wlc/`, 3,815 in `<w>`
+   elements, 6 in `<catchWord>` elements and 2 in alternative readings. The first atoms of
+   Exodus 20:10 and Deuteronomy 5:14 stay as they were, since there the qadma is no helper
+   but an accent of the עליון, beside a pashta of the תחתון. Read back, the title and body
+   equal the approved text, code point for code point.
 
 ## When morphhb has accepted openscriptures/morphhb#114
 
