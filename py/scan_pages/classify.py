@@ -62,6 +62,11 @@ def _leading_books(fields):
 
 
 def _jc1(file_name):
+    if file_name == "316-2S-blank.jpg":
+        return pk.page(file_name, pk.BLANK)
+    if file_name == "766-Es-Da.jpg":
+        # Esther ends on this page. Daniel opens on the next page.
+        return pk.page(file_name, pk.BODY, bkids=(tbn.BK_ESTHER,))
     fields = _split(file_name)
     if fields[0].startswith("#"):  # front matter, separately numbered
         return pk.page(file_name, _kind_of_descriptor(file_name, pk.FRONT_MATTER))
@@ -72,8 +77,6 @@ def _jc1(file_name):
         return _jc1_supplement(file_name, rest[1:])
     bk39ids, tail = _leading_books(rest)
     if bk39ids:
-        # A trailing service word after the books ("316-2S-blank.jpg") describes the
-        # unused remainder of a page whose text is still 2Samuel's, so it stays body.
         return pk.page(file_name, pk.BODY, bkids=bk39ids)
     if not tail:
         return None
@@ -106,6 +109,9 @@ def _jc1_supplement(file_name, desc_fields):
 
 
 def _bhl(file_name):
+    if file_name in {"0946-Pr.jpg", "0974-Jb.jpg"}:
+        # The opening-page scans for Proverbs and Job have no body text.
+        return pk.page(file_name, pk.BLANK)
     fields = _split(file_name)
     if fields[0].startswith("#"):
         return pk.page(file_name, _kind_of_descriptor(file_name, pk.FRONT_MATTER))
@@ -189,10 +195,30 @@ def _is_section_front(token):
 _KOREN_V_DECALOGUE = {"V-038.jpg": tbn.BK_EXODUS, "V-039.jpg": tbn.BK_DEUTER}
 
 
+# Shared boundary pages established by the completed edition censuses.
+_KOREN_SHARED_PAGES = {
+    "BB-2S-141.jpg": ("1Samuel", "2Samuel"),
+    "BD-2K-240.jpg": ("1Kings", "2Kings"),
+    "CB-Jl-540.jpg": ("Hosea", "Joel"),
+    "CC-A-544.jpg": ("Joel", "Amos"),
+    "CD-O-553.jpg": ("Amos", "Obadiah"),
+    "CE-Jn-554.jpg": ("Obadiah", "Jonah"),
+    "CF-Mi-557.jpg": ("Jonah", "Micah"),
+    "CH-Hb-565.jpg": ("Nahum", "Habakkuk"),
+    "CJ-Hg-571.jpg": ("Tsefaniah", "Haggai"),
+    "CK-Zc-573.jpg": ("Haggai", "Zechariah"),
+    "CL-Ma-586.jpg": ("Zechariah", "Malachi"),
+    "FB-Ne-247.jpg": ("Ezra", "Nehemiah"),
+    "FD-2C-318.jpg": ("1Chronicles", "2Chronicles"),
+}
+
+
 def _koren(file_name):
     fields = _split(file_name)
     body = _koren_family_body(file_name, fields)
     if body is not None:
+        if file_name in _KOREN_SHARED_PAGES:
+            return pk.page(file_name, pk.BODY, bkids=_KOREN_SHARED_PAGES[file_name])
         return body
     head = fields[0]
     if _is_section_front(head) and len(fields) == 2 and fields[1].isdigit():
@@ -231,10 +257,30 @@ _SIMANIM_TANAKH_A9 = {
 # Pages whose codes say "text of this book" but which reading showed to be
 # something else.  simanim-tanakh gives the כתובים section its divider under Psalms'
 # codes rather than a D0- name, so neither the section-front rule nor the divider pass
-# can see it: D1-Ps-0993.jpg is the כתובים divider (בין השנים 2783-3438, read
-# 2026-08-07), and Psalms' text begins on 0994.  The Torah and Nevi'im dividers are
-# named 3-1/3-2 and B0-0353/B0-0354, which those rules do catch.
-_SIMANIM_TANAKH_READ = {"D1-Ps-0993.jpg": (pk.SECTION_TITLE, "כתובים")}
+# can see it. The Torah and Nevi'im dividers have distinct scan names.
+_SIMANIM_TANAKH_READ = {
+    "CA-Ho-0927.jpg": (pk.TOC, "Twelve contents"),
+    "D1-Ps-0993.jpg": (pk.SECTION_TITLE, "כתובים"),
+    "D1-Ps-0994.jpg": (pk.FRONT_MATTER, "copyright imprint"),
+    "D1-Ps-0995.jpg": (pk.TOC, "Writings contents"),
+}
+
+_SIMANIM_TANAKH_SHARED_PAGES = {
+    "BB-2S-0505.jpg": ("1Samuel", "2Samuel"),
+    "BD-2K-0612.jpg": ("1Kings", "2Kings"),
+    "CB-Jl-0939.jpg": ("Hosea", "Joel"),
+    "CC-A-0943.jpg": ("Joel", "Amos"),
+    "CD-O-0952.jpg": ("Amos", "Obadiah"),
+    "CE-Jn-0953.jpg": ("Obadiah", "Jonah"),
+    "CF-Mi-0956.jpg": ("Jonah", "Micah"),
+    "CG-Na-0963.jpg": ("Micah", "Nahum"),
+    "CH-Hb-0965.jpg": ("Nahum", "Habakkuk"),
+    "CI-Ts-0968.jpg": ("Habakkuk", "Tsefaniah"),
+    "CK-Zc-0974.jpg": ("Haggai", "Zechariah"),
+    "CL-Ma-0988.jpg": ("Zechariah", "Malachi"),
+    "FB-Ne-1325.jpg": ("Ezra", "Nehemiah"),
+    "FD-2C-1403.jpg": ("1Chronicles", "2Chronicles"),
+}
 
 
 def _simanim_tanakh(file_name):
@@ -245,6 +291,10 @@ def _simanim_tanakh(file_name):
     fields = _split(file_name)
     body = _koren_family_body(file_name, fields)
     if body is not None:
+        if file_name in _SIMANIM_TANAKH_SHARED_PAGES:
+            return pk.page(
+                file_name, pk.BODY, bkids=_SIMANIM_TANAKH_SHARED_PAGES[file_name]
+            )
         return body
     head = fields[0]
     if file_name in _SIMANIM_TANAKH_A9:

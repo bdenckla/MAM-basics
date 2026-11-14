@@ -405,6 +405,14 @@ NOT_IN_MEGA: dict[str, str] = {
         " py/tests/test_scan_pages_index.py runs the same check.  Proposed in"
         " doc/mega-coverage-2026-09-10.md §4."
     ),
+    "py/main_scan_pages.py census": (
+        "Adopts manually verified page-edge observations supplied as input."
+        " See doc/scan-pages.md, Phase 1 pilot and OCR workflow for future censuses."
+    ),
+    "py/main_scan_pages.py lookup": (
+        "Answers an interactive query with local scan links. See doc/scan-pages.md,"
+        " Decisions and Phase 1 pilot."
+    ),
     "py/main_parse.py ws --write-fmt-1": (
         "Claude-written, accepted by Ben on 2026-09-10: debugging output to .novc/;"
         " the tracked half of the run is the parse-ws step's.  Proposed in"

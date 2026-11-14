@@ -16,6 +16,7 @@ from scan_pages import classify
 from scan_pages import editions
 from scan_pages import index_io
 from scan_pages import page_kinds as pk
+from scan_pages import tiqqun
 
 # OneDrive marks a file whose bytes are not on this machine.  Reading one would either
 # stall on a network fetch or fail outright, and indexing it unread would record a page
@@ -116,7 +117,7 @@ def _seeded_recs(pages):
     return recs
 
 
-def _anomalies(edition_id, pages):
+def _anomalies(edition_id, pages, recs):
     """Return the notes worth a human's attention, without failing the run."""
     out = []
     body_books = {}
@@ -141,7 +142,14 @@ def _anomalies(edition_id, pages):
             out.append(f"{bkid}: only one body page, {pages[indices[0]]['file']}")
     if edition_id == editions.BHL:
         out.extend(_bhl_bare_number_anomalies(pages))
-    unadjudicated = classify.unadjudicated_book_openings(edition_id, pages)
+    observed_openings = {
+        rec["page"] for rec in recs if rec["start_phrase"] and rec["stop_phrase"]
+    }
+    unadjudicated = [
+        name
+        for name in classify.unadjudicated_book_openings(edition_id, pages)
+        if name not in observed_openings
+    ]
     if unadjudicated:
         out.append(
             f"{len(unadjudicated)} books show no divider leaf, so their opening page is"
@@ -173,13 +181,61 @@ def _bhl_bare_number_anomalies(pages):
 
 def survey_edition(edition_id):
     """Classify one edition's folder and write its index. Return a report dict."""
-    names = _listing(edition_id)
-    pages = _classified(edition_id, names)
-    recs = _seeded_recs(pages)
-    # Segments -- the runs of pages over which the text advances contiguously -- are
-    # filled by the phases that read pages.  An empty list is this edition's honest
-    # state now, not a missing input; check() verifies whatever is here.
-    index_io.write_index(edition_id, index_io.make_index(edition_id, pages, recs, []))
+    return survey_editions((edition_id,))[0]
+
+
+def _prepare_index(edition_id):
+    pages = _classified(edition_id, _listing(edition_id))
+    if not editions.index_path(edition_id).exists():
+        return index_io.make_index(edition_id, pages, _seeded_recs(pages), [])
+    current = index_io.read_index(edition_id)
+    if "tiqqun" in current:
+        if edition_id != editions.SIMANIM_TIQQUN:
+            raise SurveyError(f"{edition_id}: unexpected Tiqqun occurrence data")
+        pages = tiqqun.classify_pages(pages, current["tiqqun"])
+        revised = {**current, "pages": pages}
+        tiqqun.validate(revised)
+        return revised
+    if (
+        current["segments"]
+        or current.get("decalogue-ranges")
+        or current.get("printed-forms")
+        or any(rec["start_phrase"] is not None for rec in current["recs"])
+    ):
+        _check_text_inventory(edition_id, current["pages"], pages)
+        return {**current, "pages": pages}
+    return index_io.make_index(edition_id, pages, _seeded_recs(pages), [])
+
+
+def _check_text_inventory(edition_id, previous, revised):
+    """Require a census for changes that affect pages carrying Scripture."""
+    text_kinds = (*pk.RECORDABLE_KINDS, pk.BODY_UNASSIGNED)
+    before = {page["file"]: page for page in previous if page["kind"] in text_kinds}
+    after = {page["file"]: page for page in revised if page["kind"] in text_kinds}
+    changed = sorted(
+        name
+        for name in before.keys() | after.keys()
+        if before.get(name) != after.get(name)
+    )
+    if changed:
+        raise SurveyError(
+            f"{edition_id}: text-page inventory or classification changed;"
+            " reconcile these scans with the census before refreshing: "
+            + ", ".join(changed)
+        )
+
+
+def _write_survey(edition_id, revised):
+    pages = revised["pages"]
+    if "tiqqun" in revised:
+        recs = [
+            leaf
+            for occurrence in revised["tiqqun"]["occurrences"]
+            for leaf in occurrence["pages"]
+        ]
+    else:
+        recs = revised["recs"]
+    index_io.write_index(edition_id, revised)
     kinds = {}
     for page in pages:
         kinds[page["kind"]] = kinds.get(page["kind"], 0) + 1
@@ -190,15 +246,21 @@ def survey_edition(edition_id):
                 body_pages[bkid] = body_pages.get(bkid, 0) + 1
     return {
         "edition": edition_id,
-        "files": len(names),
+        "files": len(pages),
         "kinds": kinds,
         "body_pages_per_book": body_pages,
         "recs": len(recs),
         "rec_pages": len({rec["page"] for rec in recs}),
-        "anomalies": _anomalies(edition_id, pages),
+        "anomalies": [] if "tiqqun" in revised else _anomalies(edition_id, pages, recs),
     }
 
 
 def survey_all():
     """Survey every edition. Return one report per edition, in the canonical order."""
-    return [survey_edition(edition_id) for edition_id in editions.ALL_EDITION_IDS]
+    return survey_editions(editions.ALL_EDITION_IDS)
+
+
+def survey_editions(edition_ids):
+    """Prepare all requested catalogs before writing any of them."""
+    prepared = {edition_id: _prepare_index(edition_id) for edition_id in edition_ids}
+    return [_write_survey(edition_id, index) for edition_id, index in prepared.items()]

@@ -1,4 +1,6 @@
-# Scan-pages index: bring up five scanned editions at a bcv — plan
+# Scan-pages index: bring up five scanned editions at a bcv
+
+State: runbook
 
 Ben's ask, 2026-08-06: *"index important editions I have scanned (in 'ScansOfBooks') so
 that, given a bcv (book-chapter-verse) reference, I can run a program that will bring up the
@@ -6,11 +8,41 @@ relevant page in all those editions (JC1 (Jerusalem crown), Koren, Simanim Tiqqu
 bcv is in Torah or haftarah), Simanim Tanakh, Dotan BHL)."*
 
 This file is the single plan-and-findings document for the undertaking (per Ben's
-one-tracked-plan rule). Findings replace plan text here as phases complete. It is written
-for a fresh session that has no other context. Its thin pointer issue is #349, filed on
+one-tracked-plan rule). The current instructions are under [Using the index](#using-the-index). Dated
+findings below record the work as it stood at each checkpoint. Its thin pointer issue is #349, filed on
 2026-10-31.
 
+## Using the index
+
+Jerusalem Crown, Dotan BHL, Koren and Simanim Tanakh have ordinary-body
+lookup for all 39 books. The Simanim Tiqqun covers the indexed Torah,
+haftarah and megillah occurrences and two Decalogue appendix intervals.
+Its unpointed D section is outside the lookup scope.
+
+Run from the repository root with its Python environment. Lookup prints
+local scan links. A verse across a page break returns both scans. To select
+a page by its text, add a phrase that locates a unique atom position.
+Append `t` or `e` to a Decalogue reference to select the named reading.
+
+```powershell
+./.venv/Scripts/python.exe py/main_scan_pages.py lookup Exodus 20:9
+```
+
+```powershell
+./.venv/Scripts/python.exe py/main_scan_pages.py lookup Exodus 20:9e --edition jc1
+```
+
+Use `check` to validate the tracked catalogs and report page-density
+advisories. It uses the tracked MAM text. Use `survey` to refresh the inventory
+from the scan folder in `BOOK_SCANS_ROOT`, which defaults to
+`$HOME/OneDrive/Documents/ScansOfBooks`. Refresh preserves the adopted page
+intervals and refuses unreviewed changes to the text-page inventory. Use
+`census` with a whole book's verified page-edge file to adopt a replacement
+partition, following the [OCR workflow](#ocr-workflow-for-future-censuses).
+
 ## Status
+
+The entries below describe the dated state of the research branch and catalogs.
 
 - 2026-08-06, session 1 (Ben + Claude): scan folders surveyed (findings below); plan
   written. No phase has run; no code exists yet.
@@ -47,6 +79,115 @@ for a fresh session that has no other context. Its thin pointer issue is #349, f
   of session wall-clock a page, with all 20 edges located exactly — is recorded under
   Phase 1 below, in the paragraphs headed "Cost probe, 2026-09-10". The probe built no
   tooling, and none of its ten records entered `in/scan-pages/koren.json`.
+- 2026-11-02: **Phase 1's first-book pilot is implemented on an isolated research
+  branch.** JC and BHL each have two verified Obadiah page portions, covering all
+  21 verses. At that checkpoint the catalogs contained 158 records: four completed records
+  and 154 unread seeds. Exact `lookup` and whole-book `census` exist; `check`
+  re-locates both edge cues and verifies complete adjacent-atom coverage for every
+  declared book. This is the first-book review boundary, not a completed universal
+  index. The commands, observed splits and remaining limitations are below.
+- 2026-11-02, next bounded batch: Jonah is fully censused in JC and BHL, adding
+  six book/page portions. The catalogs now contain 162 records: ten completed
+  records and 152 unread seeds. All 69 verses of Obadiah and Jonah are covered
+  in each edition. Both BHL Jonah page breaks continue verses excluded by the
+  new page's printed header; the adopted records use actual running text.
+- 2026-11-02, Micah batch: ten further book/page portions are censused in JC
+  and BHL. All 174 verses of Obadiah, Jonah and Micah are covered in each
+  edition. The catalogs contain 170 records: twenty completed records and
+  150 unread seeds. Ordinary ketiv/qere is supported only when each form
+  occupies one atom; phrase lookup uses its qere spelling.
+- 2026-11-02, Nahum batch: six further portions complete Nahum in both
+  editions, bringing coverage to 221 verses in four books per edition.
+  The catalogs contain 174 records: twenty-six completed records and
+  148 unread seeds. Explicit small-letter markup retains the letter within
+  its word. Unique edge cues may span verses on the same page.
+- 2026-11-02, Habakkuk batch: five further portions complete Habakkuk in both
+  editions, bringing coverage to 277 verses in five books per edition.
+  The catalogs contain 177 records: thirty-one completed records and
+  146 unread seeds. No text-projection changes were needed for this batch.
+- 2026-11-03, Zephaniah batch: six further portions complete Zephaniah in
+  both editions, bringing coverage to 330 verses in six books per edition.
+  The catalogs contain 181 records: thirty-seven completed records and
+  144 unread seeds. The explicit paseq template keeps neighboring words
+  separate, following the maintained atom definitions.
+- 2026-11-03, Haggai batch: seven further portions complete Haggai in both
+  editions, bringing coverage to 368 verses in seven books per edition.
+  The catalogs contain 186 records: forty-four completed records and
+  142 unread seeds. No text-projection changes were needed for this batch.
+- 2026-11-03, Zechariah batch: twenty-one further portions complete Zechariah
+  in both editions, bringing coverage to 579 verses in eight books per edition.
+  The catalogs contain 205 records: sixty-five completed records and
+  140 unread seeds. No text-projection changes were needed for this batch.
+- 2026-11-03, Malachi batch: eight further portions complete Malachi in both
+  editions, bringing coverage to 634 verses in nine books per edition. The
+  catalogs contain 211 records: seventy-three completed records and 138 unread
+  seeds. Explicit large-letter markup retains its letter within the word;
+  BHL's repeated closing verse is recorded as same-page display evidence.
+
+- 2026-11-03, Amos batch: 15 further portions complete Amos in both
+  editions, bringing coverage to 780 verses in 10 books per edition. The
+  catalogs contain 224 records: 88 completed records and 136 unread seeds.
+
+- 2026-11-03, Joel batch: 9 further portions complete Joel in both
+  editions, bringing coverage to 853 verses in 11 books per edition. The
+  catalogs contain 231 records: 97 completed records and 134 unread seeds.
+
+- 2026-11-03, Hosea batch: 15 further portions complete Hosea in both
+  editions, bringing coverage to 1050 verses in 12 books per edition. The
+  catalogs contain 244 records: 112 completed records and 132 unread seeds.
+
+- 2026-11-03, Ezekiel completion: the seven remaining opening portions
+  (JC 481-483; BHL 733-736) are verified, completing chapters 1-4 (82 verses /
+  1,213 atoms). Both unequal ketiv/qere cases now have explicit, closed
+  one-written-word/two-qere-word mappings with indivisible page spans.
+  All 119 Ezekiel portions are adopted: 49 JC and 70 BHL, covering all
+  1,273 verses / 18,732 atoms per edition without gaps. The independent
+  MAM-simple comparison agrees for every verse. All 116 prior interval
+  observations relocate unchanged; four formerly partial pages are closed.
+  The accepted total is 13 books / 2,323 verses per edition, with 231 completed
+  portions and 130 unread seeds across the five catalogs (361 records).
+  These results are on the isolated research branch; main is unchanged.
+
+- 2026-11-03, Jeremiah completion: all 136 ordinary-body portions are now
+  adopted on the isolated research branch after explicit approval: 56 JC
+  and 80 BHL, covering 1,364 verses / 21,833 atoms per edition. Accepted
+  lookup reaches 14 books / 3,687 verses per edition. The five catalogs
+  contain 495 records: 367 completed portions and 128 unread seeds, with
+  two body segments. Exact guarded mappings and source correspondences
+  remain intact. No main integration or deployment occurred.
+
+- 2026-11-04, approved Psalms adoption: **173 ordinary-body portions** are now
+  adopted on the isolated research branch: **93 JC and 80 BHL**, covering all
+  **150 psalms /2,527 verses /19,586 canonical atoms** per edition. Accepted
+  coverage reaches **15 books /6,214 verses** per edition. The five catalogs
+  contain **666 records: 540 completed portions and 126 unread seeds**, with two
+  body segments. New records contain the approved relative filenames, printed
+  page numbers, canonical ranges and consonantal boundary cues; every new note
+  is null. No scans, crops or private research files are included.
+  Persisted records exactly match the approved fields. Actual lookup passes all
+  **56 split-verse cases** and seven CLI cases, including BHL145:18 on printed
+  pages942-943 and phrase-qualified lookup on either side of that split. The
+  maintained catalog check and ten focused index tests pass (one repetitive
+  existing edge-query test deselected). The other three editions remain
+  uncensused for Psalms. Main integration and
+  deployment remain outside this research-branch adoption.
+
+- 2026-11-06, **Ben adopted local letter-only OCR followed by visual review for
+  all future scan indexing.** The trial found the verified break as the sole best
+  suggestion for 22 of 23 joins, including all six joins in the fresh sample.
+  The scan crops resolved the remaining tie. The workflow below supersedes
+  reading and transcribing each scan before locating its boundaries in MAM.
+
+- 2026-11-13, **Ben authorized local adoption of the five-edition patches on
+  `codex/scan-index-laptop-20261104` in GitRepos3.** Koren and Simanim Tanakh
+  have all 39 ordinary-body books. Jerusalem Crown and Dotan BHL now cover 27
+  books each, from Jeremiah through the last body page. The Simanim Tiqqun
+  lookup covers the verified Torah, haftarot, megillot and two appendices.
+  See [Local adoption on 2026-11-13](#local-adoption-on-2026-11-13) for the
+  catalog scope, lookup decisions and checks.
+- 2026-11-14, the local main integration adopts the finished five-edition
+  indexes, named lookups, inventory refresh and density review. See
+  [Local main integration](#local-main-integration-2026-11-14).
 
 ## Codex entry indexes
 
@@ -93,10 +234,9 @@ about a page's layout.
   broad sense: a run of one or more consecutive atoms, so a lone chanted word or even a
   lone atom counts. And lookup is either by **phrase-qualified verse** — an error if the
   phrase does not pin a unique spot within that verse — or by **phrase-unqualified
-  verse**, in which case the first unique phrase of the verse is substituted silently.
-  Either way lookup resolves to an atom position and returns the page whose record
-  covers that atom, so a phrase deep in a page-straddling verse brings up the later
-  page.
+  verse**, which returns each page covering part of the verse.
+  A phrase-qualified lookup returns the page covering the phrase's first atom,
+  so a phrase deep in a page-straddling verse brings up the later page.
 - **Verse text and counts come from the landed MAM-parsed product at runtime** (via
   `mb_cmn/read_books_from_mam_parsed_plus.py`), not from a second tracked copy — no
   duplicated artifact to drift. Versification: MAM's, and only MAM's. A page record is
@@ -128,33 +268,21 @@ about a page's layout.
   interpolation, no uncertainty window, nothing labeled "estimate": Ben, 2026-08-07,
   twice — a page error is not acceptable.
 - **The Decalogues are strand-aware (Ben, 2026-08-07).** A bare bcv in either Decalogue
-  brings up the **body** Decalogue — and whether an edition's body has the תחתון
-  (taxton) or the עליון (elyon) there is an edition fact, established by reading the
-  page during its census and recorded in its JSON. On top of that, a **bcvs** syntax —
-  the bcv plus a strand letter, `Exodus 20:3t` / `Exodus 20:3e` — asks for the named
-  strand: the body page when the body strand matches, the page of a separate Decalogue
-  section (an appendix segment, tagged with its strand) when the edition has one, and an
-  honest "this edition has no separate <strand> Decalogue" when it has none. A
-  strand-suffixed phrase is located in that strand's text as MAM-parsed has it, so the
-  strands' differing verse divisions never enter the records. bhl's `Appendix` ×5 and
+  brings up the **body** Decalogue. The catalog records which strands the source
+  review verifies in the running text. A **bcvs**, such as `Exodus 20:3t` or
+  `Exodus 20:3e`, requests a named strand. The lookup selects the body scan
+  when the running text carries that strand and the appendix when the appendix
+  alone carries it. Named phrase lookup uses MAM's atom coordinates for the
+  requested strand. The records use the same coordinates for both strands.
+  bhl's `Appendix` ×5 and
   koren's `V` ×55 are natural places for a second strand's Decalogue to surface; Phase
   0's classification should look.
-- **Records are captured from page-edge phrases, located in MAM's text.** The Leningrad
-  records were derived from an existing index (tanach.us' LCIndex); no such index exists
-  for these five printed editions, so each record here gets read off the scan: the
-  phrase at each edge of the page — its first and its last few atoms — stored as
-  `start_phrase` / `stop_phrase` evidence. **Phrases are stored letters-only** (no
-  vowels, no accents): a phrase read off a scan is typed by the model reading it, and
-  model transcription of pointed Hebrew silently reorders marks (proven in the Metsudah
-  comparison, `doc/metsudah-vs-ctr.md` — all 39 chapter hashes mismatched — and warned
-  about in this repo's `CLAUDE.md` mark-order section), while letters survive
-  transcription. Letters-only also makes locating a phrase in MAM-parsed text a plain
-  search over accent-and-vowel-stripped text. The `census` tooling locates each phrase in MAM-parsed text and derives the
-  atom numbers from it — no hand-counting of atoms, no reading of printed verse numbers —
-  and demands a longer phrase whenever the current one fails to pin a unique position in
-  the candidate neighborhood (Ben's "verse-unique phrase" requirement). The stored phrase
-  keeps every record independently re-verifiable, against the image and against the
-  text, forever after.
+- **Records are captured from visually verified page-edge phrases, located in MAM's
+  text.** Following Ben's 2026-11-06 decision, use the [OCR workflow](#ocr-workflow-for-future-censuses)
+  to propose the first and last atoms on each page. Store letters-only `start_phrase`
+  and `stop_phrase` evidence confirmed on the scans. `census` locates each phrase in
+  MAM-parsed and derives the atom numbers. Lengthen a cue when needed to resolve its
+  position uniquely. Each stored phrase can be checked against the scan and the text.
 - **Finding the page is separated from showing it, and `lookup` prints its answer on
   stdout (Ben's decision, 2026-09-10).** The resolution — a bcv, an optional strand suffix
   and an optional phrase in; a page record or records out — is a library function under
@@ -162,8 +290,8 @@ about a page's layout.
   2026-09-10: *"the main point is to find the page, and that part of the code should be
   totally abstracted from what you do with the page, which might have multiple answers
   depending on the application."* **The first use of that library is deliberately a very
-  short `main`** (Ben, 2026-09-10) that prints one `file:///` link into the scans folder
-  per edition and nothing else. Its shortness is the test that the separation holds:
+  short `main`** (Ben, 2026-09-10) that prints one `file:///` link per matching scan.
+  Its shortness is the test that the separation holds:
   anything the resolution left for its caller to do would show up as length right here. An
   edition whose range is not censused gets an honest refusal naming what is censused,
   never a guess. Everything beyond the link rides along later, in a JSON output shape some
@@ -332,23 +460,21 @@ reading sample pages (`B10.jpg`, `B60.jpg`, `C012.jpg`, `C400.jpg`, `D10.jpg`,
   heading הפטרת בהר with the source line בירמיה פרק לב introduces Jeremiah 32 — the same
   pointed-and-unpointed dual layout as the Torah pages. So the haftarot are in C, in
   parasha order, each under a heading naming it and its source book and chapter (a gift
-  to the census). **Megillot — three of the five, not all.** Ben suspected on 2026-08-07
-  that far from all of the Five Scrolls would be here, and the reads confirm it: a
-  מגילות section in festival-calendar order — `C395.jpg` is מגילת שיר השירים, `C400.jpg`
-  is מגילת רות chapter 3, `C408.jpg` is מגילת איכה chapters 4–5, all three in the same
-  dual layout as the Torah pages: one column with full pointing and accents, the facing
-  column unpointed (Ben asked on 2026-08-07; unpointed megillot would have been useless
-  here) — and then the full text stops. Ecclesiastes and Esther have no full text anywhere in C. (The other half of the
-  suspicion, Ruth as a haftarah-like reading, is not what the book does: Ruth sits under
-  the מגילות running head, not among the haftarot.) **The tail, ~C410–C444, is a notes
-  apparatus, not full text**: masorah/diqduq notes per parasha (`C415.jpg` is ספר
-  בראשית notes, `C420.jpg` is ספר שמות notes), and by `C440.jpg` the running head is חמש
-  מגילות, with Esther's notes ending and notes on שיר השירים beginning mid-page — so the
-  notes treat all five megillot though only three have their full text. The notes tail is
-  out of lookup, like B and E.
-  Exact segment boundaries inside C are still unknown; finding them is Phase 3, and the
-  cheap route is the printed ToC (in B or A), since C scan numbers equal printed numbers —
-  a ToC page read gives the whole haftarah/megillot map in a handful of image reads.
+  to the census). **Megillot.** The printed contents on `B04.jpg` list all five
+  megillot. The Ecclesiastes opening is observed on `C367.jpg`, and its
+  closing portion shares `C378.jpg` with the Esther opening. Esther ends
+  on `C391.jpg`. Song of Songs opens on `C392.jpg` and ends on the shared page
+  `C397.jpg`, where Ruth begins. Ruth ends on the shared page `C402.jpg`,
+  where Lamentations begins. `C409.jpg` has Lamentations' final numbered
+  verse 5:22 followed by another printed occurrence of 5:21. These inspected
+  portions have parallel pointed and unpointed columns of running text.
+  The local adoption verified all intervening body pages. **The notes supplement.**
+  `C410.jpg` is blank, `C411.jpg` is the קומץ מנחת שי title, `C412.jpg` is blank,
+  and running notes begin on
+  `C413.jpg` under ספר בראשית / פרשת בראשית. Earlier reads recorded notes
+  on `C415.jpg`, `C420.jpg` and `C440.jpg`. The catalog classifies `C413.jpg`
+  through `C443.jpg` as the notes supplement. The notes and auxiliary pages
+  are outside lookup.
 - `D01`–`D60`: a compact, *unpointed-only* Torah, scanned rotated 90° (`D10.jpg` is
   Devarim). Out of lookup — Ben, 2026-08-07: "don't worry about unpointed."
 - `E01`–`E32` (`E05-01.jpg`-style dual numbering): a color promotional/method booklet.
@@ -411,17 +537,15 @@ Tracked index, one JSON per edition at `in/scan-pages/<edition-id>.json`:
   `1228-Deut-Decalogue-Upper.jpg` are headed "The Decalogue with Upper Cantillation
   (טעם עליון)", the Exodus one naming its range as 20:2–13. **So a page can belong to two
   strand-tagged segments at once**, and the tiling lint below exempts strand-tagged
-  segments from disjointness for exactly that reason. Which strand each edition's *body*
-  Decalogue has is still an open edition fact, established during its census.
-- Every edition's JSON has a `segments` list: maximal runs of body pages over which the
-  text advances contiguously. A full-Tanakh edition's whole body is one segment; a
-  separate Decalogue section is a small strand-tagged segment; in simanim-tiqqun the
-  Torah, each haftarah and each megillah are segments (consecutive haftarot are not
-  textually contiguous, so contiguity holds within a haftarah, never across two). The
-  simanim-tiqqun JSON additionally has the haftarah table: per haftarah, the name and
-  bcv range the book has for it — whatever rites the book has, not a liturgical
-  calendar's computation — and its C-page range. A haftarah bcv can hit several
-  haftarot; `lookup` returns every hit.
+  segments from disjointness for exactly that reason. The local adoption sections
+  below record which named ranges have been verified.
+- The four full-Tanakh catalogs use `segments` for runs of censused body pages.
+  The Simanim Tiqqun uses `tiqqun.occurrences`. Each occurrence has a section,
+  a book and a printed-reading identifier. Its page records have inclusive
+  canonical atom ranges and may name a scan that also carries another occurrence.
+  The validator checks contiguity within each occurrence. Approved rite ranges
+  select and clip a haftarah occurrence. The library returns all matching
+  occurrences and the CLI prints one link per physical scan.
 
 **Lint, not example tests.** `check` (also run as a pytest lint, one new file
 `py/tests/test_scan_pages_index.py`) verifies over the tracked JSONs:
@@ -432,11 +556,10 @@ Tracked index, one JSON per edition at `in/scan-pages/<edition-id>.json`:
 - every stored classification is re-derived from the listing and compared — a differential
   check of all 5,720 pages against an independent derivation of the same fact, and the one
   lint that already does full-scale work at Phase 0;
-- within a segment, recs in page order have strictly advancing text positions and
-  consecutive recs meet at adjacent atoms in text order — no gap, no overlap, no page
-  silently skipped — and segments' page ranges tile the classified body pages without
-  overlap, **except that strand-tagged segments may share pages**, since jc1 prints the
-  תחתון and the עליון on one sheet;
+- within an ordinary segment or a printed occurrence, consecutive records in reading
+  order meet at adjacent atoms. The Simanim Tiqqun permits distinct occurrences to
+  share a scan. Strand-tagged segments may also share a scan, as with the two
+  Decalogue strands on one Jerusalem Crown sheet;
 - each stored phrase, re-located in MAM-parsed text, lands exactly at its rec's recorded
   atoms — a differential check of every record against an independent derivation;
 - atoms-per-page stays within a sane band, flagging the outliers a misread produces.
@@ -500,19 +623,647 @@ keeps refusing rather than guessing, so partial progress is always safe to use.
   than the known background noise it used to be. Running the full suite in the home clone
   after merging is still worth doing, but no longer the only way to see a real result.
 - Tracked files this undertaking may touch: this doc, `py/main_scan_pages.py`,
-  `py/scan_pages/*`, `in/scan-pages/*`, `py/tests/test_scan_pages_index.py`. **Nothing
+  `py/scan_pages/*`, `in/scan-pages/*`, `py/tests/test_scan_pages_index.py`, and
+  the scan entry point declarations in `py/tests/test_mega_coverage.py`. **Nothing
   else is expected to change** — no MAM data, no generated artifacts, no sibling repos; an
   unexpected diff elsewhere is a finding.
 - No `sys.path` surgery (the entry point in `py/` gives `scan_pages.*` imports for free);
   black on every touched `.py`; commit and push per the global rules; load the
   `hebrew-prose` skill before writing findings prose into this doc (parasha names,
   megillot, "the Simanim Tiqqun" never a bare "Simanim").
-- Image reads: the executing session verifies scan-page claims by `Read` on the JPG —
-  never by launching a viewer.
+- Scan evidence: the executing session reads local image crops or original JPGs to verify
+  OCR suggestions and printed page numbers. Batch the paired crops for review.
 
 ## Phases (each ends with a chat report and a commit; pause for Ben where marked)
 
-**Phase 0 — survey and tracked inventory. DONE, 2026-08-07.** The code is
+### Phase 1 pilot: exact Obadiah lookup in JC and BHL, 2026-11-02
+
+All four original images were inspected, their printed footer numbers were read,
+and the internal page breaks were re-read in native-pixel crops. The source cues
+below describe the Obadiah portion of a shared page, not all of that page's text.
+No image or crop is stored in this repository.
+
+| Edition | Scan filename | Observed printed page | Obadiah interval in MAM atom positions |
+|---|---|---|---|
+| `jc1` | `544-A-O.jpg` | 544 | 1:1 atom 1 through 1:9 atom 1 |
+| `jc1` | `545-O-Jn.jpg` | 545 | 1:9 atom 2 through the book's final atom |
+| `bhl` | `0825-A-O.jpg` | 825 | 1:1 atom 1 through 1:18 atom 2 |
+| `bhl` | `0826-O-Jn.jpg` | 826 | 1:18 atom 3 through the book's final atom |
+
+The JC break is between `וחתו` and `גבוריך`; the BHL break is between
+`והיה בית` and `יעקב אש`. Those readings were checked at native resolution.
+
+The first page in each edition also contains Amos; the second also contains Jonah.
+Those neighboring book portions were uncensused at this pilot checkpoint. Jonah
+was subsequently completed in the continuation below; Amos remains uncensused.
+The BHL header on page 826
+starts its Obadiah range at 1:19, but the actual first running text continues
+1:18. The stored boundary follows the running text, not the header.
+
+Use the home clone's interpreter from a worktree. For example:
+
+```powershell
+python py/main_scan_pages.py lookup Obadiah 1:9 --edition jc1 --edition bhl
+python py/main_scan_pages.py lookup Obadiah 1:9 "גבוריך תימן" --edition jc1
+python py/main_scan_pages.py lookup Obadiah 1:18 "יעקב אש" --edition bhl
+python py/main_scan_pages.py check
+```
+
+An unqualified verse returns every page the verse touches: JC verse 9 returns
+544 and 545; BHL verse 18 returns 825 and 826. A unique phrase resolves to the
+page of its first atom: the two qualified examples return JC 545 and BHL 826.
+The library returns records without rendering or opening anything. The CLI's
+stdout contains only local file links; uncensused editions and strands are
+reported on stderr. A request with no covered edition exits with status 1.
+These commands also passed from outside the checkout.
+
+The census command is `census <edition> <book39> <edge-json>`. Its input is a JSON
+array with one entry per body page for that book, in scan order. Each entry has
+`page`, an independently observed integer `printed_page`, `note`, and `start`
+and `stop` arrays shaped `[chapter, verse, "letters-only cue"]`. The chapter
+and verse identify the cue's first atom for a start, or last atom for a stop;
+matching the cue derives its atom number. A cue may span neighboring verses,
+but must match uniquely with that endpoint in the given verse and must lie
+entirely within its observed page interval. Adoption checks all of the book's pages and
+its first and last atoms before writing anything. The stored records retain
+both cues; the input need not become a second tracked copy.
+
+The initial body segment explicitly lists its completed `bkids` and their page
+identities. It may cover only the Obadiah portions of its boundary pages. A later
+whole-book batch can extend this contiguous body run in either direction;
+adopting a distant book with intervening uncensused body pages is refused.
+This preserves the existing plan's single contiguous body segment while making
+partial coverage explicit. Lookup never treats an unread seed as coverage.
+
+The first-phase text projection accepts Scripture strings, the target of a
+`נוסח` note, vowel alternatives whose consonantal atoms agree, the explicit
+legarmeh marker `מ:לגרמיה-2` and paseq `מ:פסק` as boundaries without atoms, and the main
+one-atom form of the modern trivial ketiv/qere template, matching MAM-simple.
+The Micah continuation adds ordinary ketiv/qere when both forms are one atom,
+using the qere spelling at that common position. Ezekiel adds the named
+vowel-alternative wrapper inside such a form, only with string alternatives
+whose consonantal atoms agree and preserve a single slot. The Nahum continuation adds
+the special-letter word wrapper and small-letter template; Malachi adds the
+explicit large-letter template. All retain their Scripture parameter without
+inserting a word boundary. Hosea adds the named `פפ` paragraph-break template,
+which contributes a separator while its optional annotation contributes no
+Scripture. Ezekiel also supports the explicitly named special two-word
+ketiv/qere subtype with exactly two ordered atoms in both forms, and the
+matching one-atom written-but-not-read form. A read-but-not-written word
+contributes no atom, following the maintained written-atom reader; its
+matching one-atom display/reading forms are checked before omission.
+The four native-verified unequal forms at Ezekiel 8:6 and 9:11 and
+Jeremiah 6:29 and 18:3 select the maintained qere pair and declare
+both canonical atoms an indivisible source-written-word span. The template
+subtype and both consonantal forms must match exactly; unknown forms and
+ambiguous span locations are refused. Census, check and lookup reject a
+page start or end inside a mapped pair. The named two-word special subtype
+also admits an explicit parameterless paseq between its two qere atoms;
+other nested forms refuse. The named three-samekh break is a separator
+without an atom, following the maintained definitions. Other multi-atom ketiv/qere,
+unimplemented templates and named Decalogue strands remain unsupported.
+Extending those cases needs explicit source alignment;
+template names or argument shapes are not grounds for guessing it. An
+atoms-per-page advisory band remains deferred until representative full-page
+censuses exist. This pilot does not claim that every planned Phase 1 feature
+is finished.
+
+Verification: the focused scan-page and entry-point checks passed (six tests).
+An independent comparison against MAM-simple covers every verse and atom of
+the adopted book. Every source edge cue resolves back to its recorded page.
+Additional direct checks confirmed both split verses, phrase-qualified hits,
+uncensused and ambiguous-query refusals, failed-census write neutrality,
+idempotent census regeneration, and cwd-independent CLI output. `survey` now
+refuses before overwriting any adopted census; census-preserving inventory
+refresh is not yet implemented. `check` validates without reading the scans.
+
+### Jonah continuation, 2026-11-02
+
+The authorized next bounded batch completed Jonah in both editions. The four
+additional original images were inspected, and native crops checked both sides
+of each internal page break. The beginning and end of the book were also checked
+at native size. Existing Obadiah coverage remains valid.
+
+| Edition | Scan filename | Observed printed page | Jonah interval in MAM atom positions |
+|---|---|---|---|
+| `jc1` | `545-O-Jn.jpg` | 545 | 1:1 atom 1 through 1:14 atom 8 |
+| `jc1` | `546-Jn.jpg` | 546 | 1:14 atom 9 through 4:8 atom 17 |
+| `jc1` | `547-Jn-Mi.jpg` | 547 | 4:8 atom 18 through 4:11 atom 23 |
+| `bhl` | `0826-O-Jn.jpg` | 826 | 1:1 atom 1 through 1:12 atom 1 |
+| `bhl` | `0827-Jn.jpg` | 827 | 1:12 atom 2 through 3:7 atom 5 |
+| `bhl` | `0828-Jn.jpg` | 828 | 3:7 atom 6 through 4:11 atom 23 |
+
+The JC breaks are after `אל נא` and `נפשו`, with the next pages starting
+`נאבדה בנפש האיש הזה` and `למות ויאמר`. BHL page 826 ends with the opening
+`ויאמר` of 1:12; page 827 starts `אליהם שאוני` despite its header beginning
+at 1:13. Page 827 ends with `מטעם המלך` in 3:7; page 828 starts `וגדליו לאמר`
+despite its header beginning at 3:8. The final cue in both editions is
+`ובהמה רבה`. The shared Micah portion of JC page 547 is not indexed yet.
+
+For example, `lookup Jonah 1:12 --edition bhl` returns 826 and 827, while adding
+the phrase `אליהם שאוני` returns only 827. Likewise, unqualified BHL 3:7 and JC
+1:14 and 4:8 return both pages, with phrase-qualified lookups resolving to the
+correct later page. All four breaks were checked directly.
+
+The independent MAM-simple comparison now checks all 48 Jonah verses and 688
+Jonah atoms as well as Obadiah. The six focused tests passed. Direct checks
+confirmed every split above, phrase resolution, idempotent Jonah regeneration,
+and the earlier Obadiah/refusal/write-neutrality checks. The full suite and mega
+were not run for this isolated bounded batch under the focused-check policy.
+This continuation does not authorize or imply a large census without the
+first-book record-shape review below.
+
+### Micah continuation, 2026-11-02
+
+All ten Micah book/page portions were inspected. Nine original images were new
+to this batch; shared JC 547 was re-read at the Micah opening and its final
+lines. Native-pixel crops verified every page edge, the book transitions and
+the four ordinary ketiv/qere positions. Printed footer numbers were read
+separately from filenames. No image or crop is stored in this repository.
+
+| Edition | Scan filename | Observed printed page | Micah interval in MAM atom positions |
+|---|---|---|---|
+| `jc1` | `547-Jn-Mi.jpg` | 547 | 1:1 atom 1 through 2:10 atom 3 |
+| `jc1` | `548-Mi.jpg` | 548 | 2:10 atom 4 through 4:9 atom 13 |
+| `jc1` | `549-Mi.jpg` | 549 | 4:9 atom 14 through 6:10 atom 8 |
+| `jc1` | `550-Mi-Na.jpg` | 550 | 6:10 atom 9 through 7:20 atom 10 |
+| `bhl` | `0829-Mi.jpg` | 829 | 1:1 atom 1 through 2:5 atom 3 |
+| `bhl` | `0830-Mi.jpg` | 830 | 2:5 atom 4 through 3:11 atom 15 |
+| `bhl` | `0831-Mi.jpg` | 831 | 3:11 atom 16 through 5:2 atom 11 |
+| `bhl` | `0832-Mi.jpg` | 832 | 5:2 atom 12 through 6:8 atom 19 |
+| `bhl` | `0833-Mi.jpg` | 833 | 6:9 atom 1 through 7:16 atom 4 |
+| `bhl` | `0834-Mi-Na.jpg` | 834 | 7:16 atom 5 through 7:20 atom 10 |
+
+BHL's headers on 830, 831, 832 and 834 begin at 2:6, 3:12, 5:3 and 7:17
+respectively, but their actual opening text continues the preceding verse.
+JC 549 begins with the final atom of 4:9, `כיולדה`; JC 550 begins with the
+final atom of 6:10, `זעומה`. A verse-only page boundary would miss these words.
+The ordinary body coverage reached Micah's end at this checkpoint. The Nahum
+portions of JC 550 and BHL 834 were completed in the following continuation.
+
+Micah's ordinary ketiv/qere occurs at 1:3, 1:8, 1:10 and 3:2. In both editions
+each form occupies one word position, verified in the images. The text reader
+accepts only the two explicit ordinary template names `כו״ק` and `קו״כ`,
+validates their current schema and requires one atom in each form. It uses
+parameter 2, the qere in either display order, matching the independent
+MAM-simple `kq-q` child. Phrase lookup therefore uses `במתי`, `שולל`,
+`התפלשי` and `רע` at those four positions; ketiv aliases are not implemented.
+Multi-atom forms still refuse, even when their atom counts agree. This batch
+does not choose an alignment rule for them.
+
+All 105 Micah verses and 1,396 atoms agree with the independent MAM-simple
+export. The six focused tests passed. Direct checks covered all seven
+within-verse splits, phrase-qualified lookups including a phrase spanning a
+page break, the complete-verse boundary at BHL 832/833, all four qere phrases
+in both editions, and idempotent census regeneration. The full suite and
+mega were not run under the focused-check policy. This remains a bounded
+continuation before the large-census review boundary below.
+
+### Nahum continuation, 2026-11-02
+
+All six Nahum portions were read, including four additional original images
+and the shared pages JC 550 and BHL 834. Native-pixel crops verify both page
+edges, the word at 1:3 and the book boundaries. Printed footers were checked
+separately from scan filenames. No image or crop is stored in this repository.
+
+| Edition | Scan filename | Observed printed page | Nahum interval in MAM atom positions |
+|---|---|---|---|
+| `jc1` | `550-Mi-Na.jpg` | 550 | 1:1 atom 1 through 1:6 atom 1 |
+| `jc1` | `551-Na.jpg` | 551 | 1:6 atom 2 through 3:11 atom 9 |
+| `jc1` | `552-Na-Hb.jpg` | 552 | 3:11 atom 10 through 3:19 atom 18 |
+| `bhl` | `0834-Mi-Na.jpg` | 834 | 1:1 atom 1 through 2:3 atom 1 |
+| `bhl` | `0835-Na.jpg` | 835 | 2:3 atom 2 through 3:11 atom 8 |
+| `bhl` | `0836-Na-Hb.jpg` | 836 | 3:11 atom 9 through 3:19 atom 18 |
+
+JC 550 ends with only the first atom of 1:6, `לפני`; JC 552 begins with only
+the last atom of 3:11, `מאויב`. BHL 835 and 836 begin with continuations of
+2:3 and 3:11 although their headers start at 2:4 and 3:12 respectively.
+The Habakkuk portions of JC 552 and BHL 836 were uncensused at this checkpoint;
+the following continuation completed them.
+
+Nahum 1:3 contains a special-letter word wrapper (`מ:אות-מיוחדת-במילה`)
+with a nested small-letter template (`מ:אות-ק`). Their documented Scripture
+parameter is parameter 1. The reader validates these two explicit schemas and
+recurses into that parameter, joining `ב`, `ס` and `ופה` within one atom,
+`בסופה`. Descriptive fields contribute no text. This follows the existing
+MAM projection definitions and agrees with the independent MAM-simple
+`slh-word` / `letter-small` structure. It makes no inference about the printed
+letter's size. Other unfamiliar templates and multi-atom ketiv/qere still
+refuse explicitly.
+
+BHL 834 ends with the first `כי` of 2:3. That verse contains two occurrences,
+so a one-word cue fails the uniqueness check. Its visible preceding words
+give the unique stop cue `אמץ כח מאד כי`, crossing 2:2 into 2:3. The locator
+now supports such cross-verse cues: a start reference anchors the phrase's
+first atom, and a stop reference anchors its last. Both complete phrase spans
+must remain inside the recorded page. No new record fields or exception to
+unique matching is needed. Phrase lookup anchors its first atom's verse,
+so `lookup Nahum 2:2 "אמץ כח מאד כי" --edition bhl` returns 834;
+`lookup Nahum 2:3 "כי" --edition bhl` still refuses as ambiguous.
+
+All 47 Nahum verses and 558 atoms agree with the independent MAM-simple
+export. Six focused tests passed, now checking every adopted source cue as a
+full position span. Direct checks cover all four within-verse splits,
+qualified lookups, the intact one-atom word at 1:3, a phrase crossing a page
+break, the cross-verse stop cue, repeated short-phrase refusal and idempotent
+census regeneration. The full suite and mega were not run under the ordinary
+focused-check policy. The large-census review boundary below still applies.
+
+### Habakkuk continuation, 2026-11-02
+
+All five Habakkuk portions were read, including three additional original
+images and the shared pages JC 552 and BHL 836. Native-pixel crops verify
+each start/stop cue and the book boundaries. Printed footers were checked
+separately from scan filenames. No image or crop is stored in this repository.
+
+| Edition | Scan filename | Observed printed page | Habakkuk interval in MAM atom positions |
+|---|---|---|---|
+| `jc1` | `552-Na-Hb.jpg` | 552 | 1:1 atom 1 through 2:7 atom 9 |
+| `jc1` | `553-Hb-Ts.jpg` | 553 | 2:8 atom 1 through 3:19 atom 11 |
+| `bhl` | `0836-Na-Hb.jpg` | 836 | 1:1 atom 1 through 1:13 atom 6 |
+| `bhl` | `0837-Hb.jpg` | 837 | 1:13 atom 7 through 2:18 atom 2 |
+| `bhl` | `0838-Hb.jpg` | 838 | 2:18 atom 3 through 3:19 atom 11 |
+
+JC's break falls between the complete verses 2:7 and 2:8. BHL 837 and 838
+begin with continuations of 1:13 and 2:18 although their headers start at
+1:14 and 2:19 respectively. BHL 837 ends with just `מה הועיל`, the first two
+atoms of 2:18. The Zephaniah portion of JC 553 was uncensused at this
+checkpoint; the following continuation completed it.
+
+The existing reader projects all 56 Habakkuk verses and 671 atoms without a
+new template rule; the complete stream agrees with the independent MAM-simple
+export. Six focused tests passed. Direct checks cover both BHL within-verse
+splits and their unique phrase hits, JC's complete-verse boundary, a phrase
+spanning a BHL page break, and idempotent census regeneration in both editions.
+The full suite and mega were not run under the ordinary focused-check policy.
+The large-census review boundary below still applies.
+
+### Zephaniah continuation, 2026-11-03
+
+All six Zephaniah portions were read, including five additional original
+images and the shared page JC 553. Native-pixel crops verify both page edges,
+book transitions and the adjacent words at 3:15. Printed footers were checked
+separately from scan filenames. No image or crop is stored in this repository.
+The internal book ID used by the commands and index is `Tsefaniah`.
+
+| Edition | Scan filename | Observed printed page | Zephaniah interval in MAM atom positions |
+|---|---|---|---|
+| `jc1` | `553-Hb-Ts.jpg` | 553 | 1:1 atom 1 through 1:1 atom 14 |
+| `jc1` | `554-Ts.jpg` | 554 | 1:1 atom 15 through 2:11 atom 16 |
+| `jc1` | `555-Ts-Hg.jpg` | 555 | 2:12 atom 1 through 3:20 atom 21 |
+| `bhl` | `0839-Ts.jpg` | 839 | 1:1 atom 1 through 2:2 atom 2 |
+| `bhl` | `0840-Ts.jpg` | 840 | 2:2 atom 3 through 3:7 atom 1 |
+| `bhl` | `0841-Ts-Hg.jpg` | 841 | 3:7 atom 2 through 3:20 atom 21 |
+
+JC 553 ends within the opening verse, after `חזקיה`; JC 554 continues with
+`בימי`. JC's next break is between the complete verses 2:11 and 2:12.
+BHL 840 and 841 continue 2:2 and 3:7 although their headers start at 2:3 and
+3:8 respectively. BHL 840 ends with only the first atom of 3:7, `אמרתי`.
+The Haggai portions of JC 555 and BHL 841 were uncensused at this checkpoint;
+the following continuation completed them.
+
+The existing maintained rules in `mb_cmn/template_names.py`'s
+`NO_ATOM_TMPL_NAMES` and `hkq_cmn/qere_projection.py` establish that the
+explicit paseq template `מ:פסק` separates its neighbors without contributing
+an atom. The scan-page reader validates its parameterless schema and emits
+a separator, just as for its supported legarmeh marker. This preserves
+`ישראל` and `יהוה` as distinct atoms 7 and 8 at 3:15; dropping the template
+without a separator would join them. The independent MAM-simple export
+represents the boundary as `lp-paseq`. This adopts the maintained convention;
+it introduces no new editorial interpretation or generic template fallback.
+
+All 53 Zephaniah verses and 767 atoms agree with MAM-simple. Six focused
+tests passed. Direct checks cover all three within-verse splits, unique
+phrase hits, JC's whole-verse boundary, a phrase crossing a BHL page break,
+the intact adjacent words at 3:15 in both editions, and idempotent census
+regeneration. The full suite and mega were not run under the ordinary
+focused-check policy. The large-census review boundary below still applies.
+
+### Haggai continuation, 2026-11-03
+
+All seven Haggai portions were read, including five additional original
+images and the shared pages JC 555 and BHL 841. Native-pixel crops verify
+both page edges and the book transitions. Printed footer numbers were checked
+separately from scan filenames. No image or crop is stored in this repository.
+
+| Edition | Scan filename | Observed printed page | Haggai interval in MAM atom positions |
+|---|---|---|---|
+| `jc1` | `555-Ts-Hg.jpg` | 555 | 1:1 atom 1 through 1:2 atom 8 |
+| `jc1` | `556-Hg.jpg` | 556 | 1:2 atom 9 through 2:12 atom 14 |
+| `jc1` | `557-Hg-Zc.jpg` | 557 | 2:12 atom 15 through 2:23 atom 20 |
+| `bhl` | `0841-Ts-Hg.jpg` | 841 | 1:1 atom 1 through 1:2 atom 4 |
+| `bhl` | `0842-Hg.jpg` | 842 | 1:2 atom 5 through 2:4 atom 14 |
+| `bhl` | `0843-Hg.jpg` | 843 | 2:4 atom 15 through 2:22 atom 13 |
+| `bhl` | `0844-Hg-Zc.jpg` | 844 | 2:22 atom 14 through 2:23 atom 20 |
+
+All five internal page breaks split verses. BHL 842, 843 and 844 continue
+1:2, 2:4 and 2:22 although their headers begin at 1:3, 2:5 and 2:23.
+The ending formula `נאם יהוה צבאות` occurs twice in 2:23, so the observed
+stop cue is the longer unique `כי בך בחרתי נאם יהוה צבאות`. The shorter
+formula still refuses as an ambiguous phrase query. The Zechariah portions
+of JC 557 and BHL 844 were uncensused at that checkpoint.
+
+The existing reader projects all 38 Haggai verses and 600 atoms without a
+new rule; the entire stream agrees with MAM-simple. Six focused tests passed.
+Direct checks cover every split, unique phrase hits, a phrase crossing a
+page break, refusal of the repeated short formula, and idempotent census
+regeneration in both editions. The full suite and mega were not run under
+the ordinary focused-check policy. The large-census review boundary below
+still applies.
+
+The next natural adjacent group at that checkpoint was Zechariah and Malachi,
+completing the forward end of the Twelve. Grouping their shared images does
+not change the whole-book adoption gates or per-page native verification.
+
+### Zechariah continuation, 2026-11-03
+
+All twenty-one Zechariah portions were read in native edge bands, including
+nineteen additional original images and the shared Haggai pages JC 557 and
+BHL 844. Book-transition layouts were checked in full-page previews. Printed
+footers were checked independently of filenames. Each cue is unique in the
+whole book and lies entirely within its source page. The private evidence
+retains source hashes, dimensions, crop coordinates and navigation pointers.
+
+| Edition | Scan filename | Observed printed page | Zechariah interval in MAM atom positions |
+|---|---|---:|---|
+| JC | `557-Hg-Zc.jpg` | 557 | 1:1 atom 1 through 1:12 atom 13 |
+| JC | `558-Zc.jpg` | 558 | 1:12 atom 14 through 3:7 atom 6 |
+| JC | `559-Zc.jpg` | 559 | 3:7 atom 7 through 5:11 atom 12 |
+| JC | `560-Zc.jpg` | 560 | 6:1 atom 1 through 7:14 atom 3 |
+| JC | `561-Zc.jpg` | 561 | 7:14 atom 4 through 8:23 atom 12 |
+| JC | `562-Zc.jpg` | 562 | 8:23 atom 13 through 10:12 atom 3 |
+| JC | `563-Zc.jpg` | 563 | 10:12 atom 4 through 12:8 atom 17 |
+| JC | `564-Zc.jpg` | 564 | 12:8 atom 18 through 14:10 atom 22 |
+| JC | `565-Zc-Ma.jpg` | 565 | 14:10 atom 23 through 14:21 atom 24 |
+| BHL | `0844-Hg-Zc.jpg` | 844 | 1:1 atom 1 through 1:14 atom 1 |
+| BHL | `0845-Zc.jpg` | 845 | 1:14 atom 2 through 2:17 atom 2 |
+| BHL | `0846-Zc.jpg` | 846 | 2:17 atom 3 through 4:9 atom 6 |
+| BHL | `0847-Zc.jpg` | 847 | 4:9 atom 7 through 6:5 atom 2 |
+| BHL | `0848-Zc.jpg` | 848 | 6:5 atom 3 through 7:7 atom 18 |
+| BHL | `0849-Zc.jpg` | 849 | 7:8 atom 1 through 8:12 atom 16 |
+| BHL | `0850-Zc.jpg` | 850 | 8:12 atom 17 through 9:8 atom 4 |
+| BHL | `0851-Zc.jpg` | 851 | 9:8 atom 5 through 10:10 atom 5 |
+| BHL | `0852-Zc.jpg` | 852 | 10:10 atom 6 through 11:17 atom 10 |
+| BHL | `0853-Zc.jpg` | 853 | 11:17 atom 11 through 13:2 atom 6 |
+| BHL | `0854-Zc.jpg` | 854 | 13:2 atom 7 through 14:10 atom 7 |
+| BHL | `0855-Zc-Ma.jpg` | 855 | 14:10 atom 8 through 14:21 atom 24 |
+
+Seven of eight JC breaks and ten of eleven BHL breaks split verses. The BHL
+headers omit the opening continuations on 845 (1:14), 846 (2:17), 847 (4:9),
+848 (6:5), 850 (8:12), 851 (9:8), 852 (10:10), 853 (11:17), 854 (13:2) and
+855 (14:10); 849 begins at 7:8, matching its header. Headers alone would miss
+these first atoms. JC 565 and BHL 855 also open Malachi, uncensused at that
+checkpoint; the following continuation completed those portions.
+
+The existing reader projects all 211 verses and 3,127 atoms, independently
+matching MAM-simple. Six focused tests passed (30 deselected); the catalog
+check reports five editions, 5,720 pages, 205 records and two segments without
+problems. Direct checks cover all seventeen within-verse breaks, qualified and
+cross-page phrase lookup, refusal of the twice-occurring word in 14:9,
+and idempotent regeneration. Initial transcription slips and a repeated short
+cue were rejected before any index write; lengthened, source-visible cues
+resolve uniquely. No projection rule or record field changed.
+
+### Malachi continuation, 2026-11-03
+
+All eight Malachi portions were read in native edge bands and full-page
+previews, including six additional images and shared JC 565/BHL 855.
+Printed footers and BHL headers were checked separately from filenames.
+Private evidence retains exact original identities, hashes and crop boxes.
+
+| Edition | Scan filename | Observed printed page | Malachi interval in MAM atom positions |
+|---|---|---:|---|
+| JC | `565-Zc-Ma.jpg` | 565 | 1:1 atom 1 through 1:12 atom 11 |
+| JC | `566-Ma.jpg` | 566 | 1:13 atom 1 through 3:5 atom 10 |
+| JC | `567-Ma.jpg` | 567 | 3:5 atom 11 through 3:24 atom 15 |
+| BHL | `0855-Zc-Ma.jpg` | 855 | 1:1 atom 1 through 1:3 atom 8 |
+| BHL | `0856-Ma.jpg` | 856 | 1:3 atom 9 through 2:5 atom 8 |
+| BHL | `0857-Ma.jpg` | 857 | 2:5 atom 9 through 3:4 atom 4 |
+| BHL | `0858-Ma.jpg` | 858 | 3:4 atom 5 through 3:21 atom 15 |
+| BHL | `0859-Ma.jpg` | 859 | 3:22 atom 1 through 3:24 atom 15 |
+
+One of two JC breaks and three of four BHL breaks split verses. BHL 856,
+857 and 858 begin with continuations of 1:3, 2:5 and 3:4; their headers
+start at 1:4, 2:6 and 3:5. BHL 859 begins at 3:22, matching its header.
+
+Malachi 3:22 contains the explicit large-letter template `מ:אות-ג` within
+`SLH_WORD`. Its maintained `IN_WORD_TMPL_NAMES` membership and exact
+parameter-1 schema establish its contribution. The reader now validates and
+recurses into that parameter, preserving the zayin in `זכרו` as one atom.
+The independent MAM-simple comparison handles its explicit `letter-large`
+node and agrees on all 55 verses and 876 atoms. This projection says nothing
+about a source edition's printed letter size.
+
+BHL 859 prints 3:23 again, unnumbered, after 3:24. Its record's stop cue
+marks the canonical 3:24 ending, and its note preserves the following
+repetition. Both occurrences of 3:23 are on the same page, so verse-to-page
+lookup remains exact; this index has no occurrence coordinates. Following
+`mb_cmn/mam_json_verses.py`, the independent comparison explicitly validates
+and excludes MAM-simple's `good-ending` node from the final verse's atoms.
+It contributes no additional verse or atom interval. JC 567 ends with 3:24
+without that following repetition.
+
+Six focused tests pass (30 deselected), including complete independent atom
+comparison; the catalog check reports five editions, 5,720 pages, 211 records
+and two segments without problems. Direct checks cover all four within-verse
+splits, qualified and cross-page lookups, ambiguous-phrase refusal, intact
+3:22 word/lookup, both final verses and idempotent regeneration. Black and
+whitespace checks pass. The full suite and mega were not run under the
+ordinary focused-check policy. No main integration or deployment occurred.
+The large-census review boundary below still applies.
+
+### Amos continuation, 2026-11-03
+
+All 15 Amos portions were read in native edge bands, including
+13 additional images. Full-page previews were used at book
+transitions. Printed footer numbers and BHL running headers were read
+separately from filenames. Exact original identities, hashes and crop boxes
+are retained privately.
+
+| Edition | Scan filename | Observed printed page | Amos interval in MAM atom positions |
+|---|---|---:|---|
+| JC | `539-Jl-A.jpg` | 539 | 1:1 atom 1 through 1:14 atom 10 |
+| JC | `540-A.jpg` | 540 | 1:14 atom 11 through 3:12 atom 13 |
+| JC | `541-A.jpg` | 541 | 3:12 atom 14 through 5:11 atom 17 |
+| JC | `542-A.jpg` | 542 | 5:11 atom 18 through 7:2 atom 10 |
+| JC | `543-A.jpg` | 543 | 7:2 atom 11 through 8:13 atom 3 |
+| JC | `544-A-O.jpg` | 544 | 8:13 atom 4 through 9:15 atom 14 |
+| BHL | `0817-Jl-A.jpg` | 817 | 1:1 atom 1 through 1:10 atom 2 |
+| BHL | `0818-A.jpg` | 818 | 1:10 atom 3 through 2:13 atom 7 |
+| BHL | `0819-A.jpg` | 819 | 2:13 atom 8 through 4:2 atom 9 |
+| BHL | `0820-A.jpg` | 820 | 4:2 atom 10 through 5:6 atom 14 |
+| BHL | `0821-A.jpg` | 821 | 5:7 atom 1 through 6:2 atom 17 |
+| BHL | `0822-A.jpg` | 822 | 6:2 atom 18 through 7:10 atom 11 |
+| BHL | `0823-A.jpg` | 823 | 7:10 atom 12 through 8:11 atom 17 |
+| BHL | `0824-A.jpg` | 824 | 8:11 atom 18 through 9:14 atom 2 |
+| BHL | `0825-A-O.jpg` | 825 | 9:14 atom 3 through 9:15 atom 14 |
+
+All five JC breaks and seven of eight BHL breaks split verses. BHL headers omit opening continuations on 818 (1:10), 819 (2:13), 820 (4:2), 822 (6:2), 823 (7:10), 824 (8:11) and 825 (9:14). BHL 821 begins at 5:7, matching its header. Shared JC 539/BHL 817 still contain uncensused Joel; the Obadiah portions of JC 544/BHL 825 were already indexed.
+
+No new projection rule was needed; all 146 verses and 2,042 atoms match independent MAM-simple.
+
+Six focused tests passed (30 deselected), including complete independent atom comparison. Direct checks cover all twelve within-verse breaks, qualified and cross-page lookup, repeated-atom refusal and idempotent adoption. Cue checks rejected three transcription slips before the first index write; the corrected source-visible cues are unique across the book. The full suite and mega were omitted under the ordinary focused-check policy. The catalog check reports five editions, 5,720 pages, 224 records and two segments without problems. No main integration or deployment occurred. The large-census review boundary below still applies.
+
+### Joel continuation, 2026-11-03
+
+All 9 Joel portions were read in native edge bands, including
+7 additional images. Full-page previews were used at book
+transitions. Printed footer numbers and BHL running headers were read
+separately from filenames. Exact original identities, hashes and crop boxes
+are retained privately.
+
+| Edition | Scan filename | Observed printed page | Joel interval in MAM atom positions |
+|---|---|---:|---|
+| JC | `536-Ho-Jl.jpg` | 536 | 1:1 atom 1 through 1:3 atom 1 |
+| JC | `537-Jl.jpg` | 537 | 1:3 atom 2 through 2:15 atom 5 |
+| JC | `538-Jl.jpg` | 538 | 2:15 atom 6 through 4:10 atom 1 |
+| JC | `539-Jl-A.jpg` | 539 | 4:10 atom 2 through 4:21 atom 7 |
+| BHL | `0813-Ho-Jl.jpg` | 813 | 1:1 atom 1 through 1:6 atom 11 |
+| BHL | `0814-Jl.jpg` | 814 | 1:6 atom 12 through 2:8 atom 9 |
+| BHL | `0815-Jl.jpg` | 815 | 2:8 atom 10 through 2:27 atom 7 |
+| BHL | `0816-Jl.jpg` | 816 | 2:27 atom 8 through 4:16 atom 6 |
+| BHL | `0817-Jl-A.jpg` | 817 | 4:16 atom 7 through 4:21 atom 7 |
+
+All three JC breaks and all four BHL breaks split verses. JC 536 ends at 1:3 atom 1, and JC 538 ends at 4:10 atom 1; each following page continues that verse. BHL headers omit opening continuations on 814 (1:6), 815 (2:8), 816 (2:27) and 817 (4:16). JC 536 and BHL 813 still contain uncensused Hosea; Amos portions on JC 539/BHL 817 are already indexed.
+
+No new projection rule was needed; all 73 verses and 957 atoms match independent MAM-simple.
+
+Six focused tests passed (30 deselected), including complete independent atom comparison. Direct checks cover all seven within-verse breaks, qualified and cross-page lookup, repeated-atom refusal and idempotent adoption. The cue check rejected a missing initial vav before any index write; the corrected source-visible cue is unique. The full suite and mega were omitted under the ordinary focused-check policy. The catalog check reports five editions, 5,720 pages, 231 records and two segments without problems. No main integration or deployment occurred. The large-census review boundary below still applies.
+
+### Hosea continuation, 2026-11-03
+
+All 15 Hosea portions were read in native edge bands, including
+13 additional images. Full-page previews were used at book
+transitions. Printed footer numbers and BHL running headers were read
+separately from filenames. Exact original identities, hashes and crop boxes
+are retained privately.
+
+| Edition | Scan filename | Observed printed page | Hosea interval in MAM atom positions |
+|---|---|---:|---|
+| JC | `531-Ho.jpg` | 531 | 1:1 atom 1 through 2:19 atom 1 |
+| JC | `532-Ho.jpg` | 532 | 2:19 atom 2 through 5:1 atom 17 |
+| JC | `533-Ho.jpg` | 533 | 5:1 atom 18 through 7:13 atom 5 |
+| JC | `534-Ho.jpg` | 534 | 7:13 atom 6 through 9:17 atom 9 |
+| JC | `535-Ho.jpg` | 535 | 10:1 atom 1 through 12:8 atom 6 |
+| JC | `536-Ho-Jl.jpg` | 536 | 12:9 atom 1 through 14:10 atom 16 |
+| BHL | `0805-Ho.jpg` | 805 | 1:1 atom 1 through 2:10 atom 8 |
+| BHL | `0806-Ho.jpg` | 806 | 2:10 atom 9 through 3:5 atom 2 |
+| BHL | `0807-Ho.jpg` | 807 | 3:5 atom 3 through 5:4 atom 2 |
+| BHL | `0808-Ho.jpg` | 808 | 5:4 atom 3 through 7:3 atom 3 |
+| BHL | `0809-Ho.jpg` | 809 | 7:3 atom 4 through 8:13 atom 10 |
+| BHL | `0810-Ho.jpg` | 810 | 8:13 atom 11 through 10:3 atom 15 |
+| BHL | `0811-Ho.jpg` | 811 | 10:4 atom 1 through 11:10 atom 11 |
+| BHL | `0812-Ho.jpg` | 812 | 11:11 atom 1 through 13:10 atom 12 |
+| BHL | `0813-Ho-Jl.jpg` | 813 | 13:10 atom 13 through 14:10 atom 16 |
+
+Three of five JC breaks and six of eight BHL breaks split verses. BHL headers omit opening continuations on 806 (2:10), 807 (3:5), 808 (5:4), 809 (7:3), 810 (8:13) and 813 (13:10); 811 and 812 match their opening references, 10:4 and 11:11. All shared Joel portions are already indexed, so every listed book on the Twelve's source images is now censused.
+
+The explicit פפ rule follows maintained WHITESPACE_TMPL_NAMES/NO_ATOM_TMPL_NAMES and the current optional parameter-1 schema. It emits a separator and excludes the annotation; independent MAM-simple represents this as spi-pe2. Hosea 1:2 retains בהושע and ויאמר as separate atoms 4 and 5, with 21 atoms and no annotation words. All 197 verses and 2,381 atoms agree with independent MAM-simple. No generic fallback or new editorial convention was introduced.
+
+Six focused tests passed (30 deselected), including complete independent atom comparison. Direct checks cover all nine within-verse breaks, qualified and cross-page lookup, repeated-atom refusal and idempotent adoption. The annotated-break check confirms separate adjacent words, excludes annotation atoms, and refuses an unknown template name or invalid parameter schema. Black and catalog/whitespace checks passed. Cue checks rejected transcription slips before any index write. The full suite and mega were omitted under the ordinary focused-check policy. The catalog check reports five editions, 5,720 pages, 244 records and two segments without problems. No main integration or deployment occurred. The large-census review boundary below still applies.
+
+### Ezekiel completion, 2026-11-03
+
+Ten bounded native-inspection checkpoints complete all 49 JC and 70 BHL
+ordinary-body portions of Ezekiel. The final opening group adds these
+directly observed intervals; earlier checkpoints supply every later page.
+
+| Edition | Scan image | Printed page | Observed interval |
+|---|---|---:|---|
+| JC | `481-Ee.jpg` | 481 | 1:1 atom 1 through 1:28 atom 9 |
+| JC | `482-Ee.jpg` | 482 | 1:28 atom 10 through 3:16 atom 1 |
+| JC | `483-Ee.jpg` | 483 | 3:16 atom 2 through 4:14 atom 1 |
+| BHL | `0733-Ee.jpg` | 733 | 1:1 atom 1 through 1:21 atom 9 |
+| BHL | `0734-Ee.jpg` | 734 | 1:21 atom 10 through 2:10 atom 5 |
+| BHL | `0735-Ee.jpg` | 735 | 2:10 atom 6 through 3:19 atom 5 |
+| BHL | `0736-Ee.jpg` | 736 | 3:19 atom 6 through 4:9 atom 10 |
+
+BHL headers omit the physical opening continuations on 734 (1:21),
+735 (2:10) and 736 (3:19). The body text supplies the exact boundaries.
+The seven new portions join the previously inspected chapter-4 continuations
+without gaps. Printed page numbers were checked separately from image identities.
+
+The native forms and maintained selected-qere semantics establish one written
+word corresponding to two canonical qere atoms at 8:6 (atoms 7-8) and 9:11
+(atoms 12-13). JC486/BHL741 contain the first whole pair; JC487/BHL742 contain
+the second. Both native written forms and their qere annotations were already
+inspected in the preceding checkpoints, and those originals were rehashed.
+Only the exact two subtype/form combinations are admitted. Protected spans
+propagate through the selected Scripture target, including 9:11's enclosing
+note; documentation contributes no atoms. A repeated pair within a verse
+is refused rather than assigned an occurrence. This closes the four partial
+physical pages without changing the older fragment observations.
+
+All 1,273 verses / 18,732 atoms match the independently decoded MAM-simple
+export. Whole-book partitions pass 117 adjacent joins and 107 split-verse
+checks. Four deliberately invalid page partitions, one per mapping and edition,
+remain canonically contiguous but split a protected pair; all are rejected.
+Fourteen malformed-form checks and two ambiguous-span checks also refuse.
+Each edition refuses 1,131 repeated-atom queries. Original scans and detailed
+source provenance remain private; no image enters either repository.
+
+The whole book is now available through `lookup` on the research branch.
+The catalog check passes for five editions, 5,720 pages, 361 records and two
+segments. Eight focused tests passed (30 deselected, 122.55 seconds), covering
+every adopted edge, independent atom agreement and the invalid-boundary
+regression. Black and whitespace checks passed. Full suite and mega remain
+deferred under the ordinary focused-check policy. Universal completion still
+requires 26 ordinary-body books per edition, source-classification reconciliation,
+strand handling and the deferred refresh/density work. Main integration and
+deployment are separate from this research-branch adoption.
+
+### Jeremiah completion, 2026-11-03
+
+The three opening portions completed the whole-book census.
+All **136 Jeremiah portions** are now available through `lookup` on the
+isolated research branch, following explicit approval. Each edition covers
+**1,364 verses / 21,833 canonical atoms**, from 1:1 atom 1 through 52:34
+atom 17, with no gaps or overlaps.
+
+| Edition | Adopted Jeremiah portions | First scan | Last scan |
+|---|---:|---|---|
+| JC | 56 | `425-Je.jpg` | `480-Je.jpg` |
+| BHL | 80 | `0651-Je.jpg` | `0730-Je.jpg` |
+
+The final opening pages are JC 425 (1:1 atom 1 through 2:8 atom 5),
+BHL 651 (1:1 atom 1 through 1:19 atom 3) and BHL 652 (1:19 atom 4
+through 2:20 atom 17). Their running Scripture, printed numbers and
+continuations were inspected directly. Printed header ranges do not replace
+body boundaries. Canonical cues retain the verified source-to-MAM atom
+correspondences; source orthography or numbering can differ from the query.
+Original scans and detailed source provenance remain private.
+
+The exact one-written-word/two-reading-word mappings at 6:29 and 18:3
+remain indivisible. Both atoms of each pair stay on the same source page;
+an internal page start or stop is rejected. Selected Scripture targets,
+ordinary one-word qere and read-without-written-word behavior retain their
+existing maintained semantics. Unknown or ambiguous forms still refuse.
+No projection or lookup implementation changed for adoption.
+
+Whole-book partitions preserve every verified interval and pass **134 adjacent
+joins / 120 split-verse checks**. Each atom belongs to exactly one page per
+edition. Independent MAM-simple comparison agrees on the complete book.
+Lookup supports unqualified verses, unique phrases and lone unique atoms;
+ambiguous repeated-atom queries still refuse. For example:
+
+```powershell
+python py/main_scan_pages.py lookup Jeremiah 1:19 --edition jc1 --edition bhl
+python py/main_scan_pages.py lookup Jeremiah 6:29 --edition jc1 --edition bhl
+python py/main_scan_pages.py lookup Jeremiah 39:13 --edition jc1 --edition bhl
+```
+
+Accepted coverage is now **14 books / 3,687 verses per edition**. Across the
+five catalogs there are **5,720 pages, 495 records, 367 completed portions,
+128 unread seeds and two segments**. Nine focused tests passed (30 deselected),
+including independent adopted-book atoms, every adopted edge query, guarded
+mapping regressions and CLI wiring; the catalog check also passes. Full suite
+and mega remain deferred under the focused-check policy. Universal completion still needs 25
+ordinary-body books per edition, source-classification reconciliation,
+strand handling and deferred refresh/density work. Other incomplete books
+remain unavailable through lookup. Main integration and deployment are
+separate from this research-branch adoption.
+
+**Phase 0 - survey and tracked inventory. DONE, 2026-08-07.** The code is
 `py/main_scan_pages.py` (`survey`, `check`) over `py/scan_pages/`, with the lint at
 `py/tests/test_scan_pages_index.py`. Re-derive everything below with:
 
@@ -535,8 +1286,8 @@ Each of the four full-Tanakh editions has all 39 books present with body pages, 
 seeded records on 39 distinct pages — the outcome the plan predicted. The rest of each
 edition is front and back matter, covers, blanks, title pages and, in simanim-tiqqun,
 apparatus; the full breakdown is in the survey's output and in the tracked JSONs.
-simanim-tiqqun's 444 C pages are classified `body-unassigned`, awaiting Phase 3 to say
-which is Torah, which a haftarah and which one of the three full-text megillot.
+simanim-tiqqun's 444 C pages are classified `body-unassigned`, awaiting Phase 3 to
+identify their actual contents and verify their segments of running text.
 
 `check` re-classifies all 5,720 pages and validates all 156 records against MAM-parsed:
 
@@ -755,25 +1506,339 @@ ten pages with a timestamp at the start and end of each render and each locate; 
 positions, by locating the records table's phrases under step 3's atom definition, or, once
 `census` exists, by feeding it the phrases.
 
-**Phase 2 — the censuses, edition by edition.** For each of jc1, bhl, koren,
-simanim-tanakh: read every body page's edges, one book-sized chunk at a time — lints, a
-chat report and a commit per chunk. Edition order is Ben's call (open question below).
+### OCR workflow for future censuses
 
-**Phase 3 — simanim-tiqqun.** Find the printed ToC in the B (or A) section and read the
-haftarah/megillot start pages straight off it (C scan numbers equal printed numbers, so
-the ToC maps the whole C body in a handful of image reads); fall back to bisection sweeps
-of C only if the ToC disappoints. Fill `segments`, then census the C body — Torah, the
-haftarot (each with the name and bcv range the book has for it, in the haftarah table),
-and the three full-text megillot (שיר השירים, רות, איכה; Ecclesiastes and Esther have
-notes only, so no census there, and the ~C410–C444 notes tail is not censused at all) —
-and extend `lookup` so a Nakh bcv inside a printed haftarah yields the simanim-tiqqun
-hit(s). The unpointed D section is out (Ben, 2026-08-07). Report the haftarah inventory
-here. Independent of Phase 2, so the two can interleave.
+Ben's decision, 2026-11-06: “use this workflow for all future work.” Apply it to
+future scan-indexing batches in every edition, including the Simanim Tiqqun. Use a
+scan-capable local checkout and the edition's known inventory. Resume from the latest
+verified checkpoint for that edition.
 
-## Open questions for Ben (defaults chosen so no phase blocks on them)
+1. Batch local OCR over the outer body lines on each side of a join. Choose body
+   regions by edition, page parity and column order, and check the regions on a few
+   representative pages before using them across a new layout. Keep raw text and
+   coordinates in scratch space. The trial used Tesseract 5.5.3 via `tesserocr` 2.12.0
+   and the official `tessdata_best` Hebrew model. It segmented lines by dark-pixel
+   density, cropped each line around the bulk of the letter shapes, scaled to 65%,
+   and recognized each band in single-line mode.
+2. Compare letters from the two sides with the projected MAM text. Rank candidate
+   joins using both edges, with the stop and start at adjacent reference atoms.
+   Retain ties and the reference positions. OCR and approximate matching supply
+   suggestions for review. Validate the production projection through the maintained
+   scan-pages code and resolve unsupported forms explicitly.
+3. Review both scan crops together for every join. Confirm the exact boundary cues
+   against the visible running text. Check both ends of each book and the relevant
+   text on any shared page. Read the wider scan when a crop misses a line, a repeated phrase
+   is ambiguous, or the edition differs from MAM. Verify printed page numbers
+   separately. Keep an unresolved join out of the census until the evidence supports
+   an exact placement.
+4. Give the verified cues and printed page numbers to `census`. Run `check` and the
+   focused scan-pages tests from the repository root before committing the verified
+   metadata. Inspect the catalog diff. Keep scans, crops, raw OCR and candidate lists
+   in local scratch space.
 
-1. **Census order across the four full-Tanakh editions?** Default: jc1, bhl, koren,
-   simanim-tanakh.
-2. **Scope beyond the Da'at Miqra subsection added on 2026-09-24:** the other ScansOfBooks folders
-   (JC2 Companion, JC3, the
-   readers, the loose PDFs) stay out of the index. Confirm.
+The trial covered 30 scans and 23 joins in Koren, Jerusalem Crown and Dotan BHL.
+It tuned the OCR settings on 22 scans and kept eight Psalms scans for a fresh check.
+Only two joins met the strict exact-match rule. The approximate match ranked the
+verified break uniquely first at 22 joins and tied first at Dotan BHL 941/942.
+Visual review confirmed all 23. The six fresh joins took about 17 seconds for OCR,
+matching, preparation and visual review after setup. The timing covers joins with
+existing reference answers and excludes printed page-number verification and census
+adoption. The trial used MAM-simple to match Genesis because the maintained
+scan-pages projection rejects a template outside the sampled passage.
+
+**Phase 2 — the censuses, edition by edition.** Ordinary lookup now covers all
+39 books in Jerusalem Crown, Dotan BHL, Koren and Simanim Tanakh. The local
+adoption sections below record the coverage and verification.
+
+**Phase 3 — the Simanim Tiqqun.** The verified occurrence catalog entered the
+local branch on 2026-11-13. The unpointed D section stays out of lookup under
+Ben’s 2026-08-07 decision. The available strand requests and remaining scope are
+recorded below.
+
+### Local adoption on 2026-11-13
+
+Ben authorized applying, verifying and committing the prepared patches on the
+local branch `codex/scan-index-laptop-20261104` in GitRepos3. The checkout
+started at `c81ddf9151ef46831ab8ef74c13cda92392038a0` with the reviewed
+projection prerequisite already present. Adoption proceeded through Jerusalem
+Crown and Dotan BHL, Koren and Simanim Tanakh, then the Simanim Tiqqun. The
+table records the coverage at that checkpoint.
+
+| Edition | Adopted coverage |
+| --- | --- |
+| Jerusalem Crown | 27 ordinary-body books on 440 scans, from `425-Je.jpg` to `874-2C.jpg` |
+| Dotan BHL | 27 ordinary-body books on 540 scans, from `0651-Je.jpg` to `1225-2C.jpg` |
+| Koren | 39 ordinary-body books on 1,240 scans |
+| Simanim Tanakh | 39 ordinary-body books on 1,398 scans |
+| Simanim Tiqqun | 496 body intervals on 396 scans and two appendix intervals, in 116 occurrences |
+
+Jerusalem Crown `766-Es-Da.jpg` contains Esther. Daniel starts on `767-Da.jpg`.
+Dotan BHL `0946-Pr.jpg` and `0974-Jb.jpg` are blank. The earlier completed
+records and pre-Jeremiah unread seeds in both editions are preserved. Koren’s
+`D1-Ps-107.jpg` is printed page 60. The catalog keeps filename order and the
+census puts that scan between printed pages 59 and 61.
+
+Ben’s 2026-11-12 decisions assign both printed forms of 2 Samuel 21:12 to
+canonical atoms 22–24 on Koren p. 178 and Simanim Tanakh p. 545. For the four
+split Simanim Tanakh pairs at 2 Kings 18:27, Jeremiah 49:39, Daniel 5:16 and
+Ezra 2:1, the page with the pointed form owns the canonical interval. The
+adjacent scan’s printed form links to that owner. The optional `--printed-form`
+query exposes recorded edition spellings while ordinary phrase lookup keeps
+its canonical behavior. Source verification found both instances of להם
+on Simanim Tanakh p. 842 at Ezekiel 1:18, atoms 3 and 5. The first was missing
+from the earlier transcription of the scan.
+
+The Simanim Tiqqun rite selector `vayetze-sephardi` uses Hosea 11:7–12:12.
+The printed table’s endpoint is 12:14 and both occurrences of 12:13–14
+remain in ordinary lookup. The selector `shabbat-shuvah-joel-most-ashkenazi`
+uses Joel 2:15–26. Joel 2:27 remains in ordinary lookup. A `t` suffix can
+select the verified תחתון appendix on `C246.jpg` for Exodus or `C247.jpg`
+for Deuteronomy. A bare reference uses ordinary body coverage. The named
+עליון body ranges were verified separately, as recorded below.
+
+Refresh the Simanim Tiqqun inventory with
+`py/main_scan_pages.py survey --edition simanim-tiqqun`. The refresh
+retains the portable occurrence, rite and nontext assignments and checks
+them against the inventory before writing. It refuses missing assigned
+scans and newly unassigned pointed scans. Scans, raw OCR, and source
+receipts remain in local research storage.
+
+The maintained checker passed on the adoption checkout with 5,720 scans,
+4,188 records and 120 segments or occurrence groups. All 18 focused tests
+passed, including ordinary page-edge lookup and the MAM-simple comparison.
+The receipt replay checked 922 post-Psalms cues and 11,074 whole-verse lookups
+in Jerusalem Crown and Dotan BHL. The Simanim Tiqqun replay covered all 498
+intervals, 8,389 ordinary verse lookups, 50 rite cases, and 26 appendix phrase
+queries. Refresh reproduced the catalog byte for byte and preserved it on
+both inventory failures. The live Tiqqun inventory matched all 614 filenames.
+Black and Git whitespace checks passed.
+
+### Simanim Tiqqun main Decalogue lookup, 2026-11-13
+
+The local branch adopted named `e` lookup from `94476fdb` under Ben’s
+2026-11-13 authorization to continue local scan-index adoption. Both main
+passages have printed-tradition עליון. The hand transcriptions record nine
+chanted verses in each. In Exodus, the Simanim Tiqqun has separate chanted
+words at ובנך ובתך and a maqaf in the opening לא־תחמד of 20:13. Its
+Deuteronomy transcription agrees with the reference at all 164 accent tokens.
+The source review checked the headings and the beginning, split and end of
+each passage against the scan crops. [Exodus transcription](../in/accgram/edition_transcriptions/simtiq_ex_elyon.txt) · [Deuteronomy transcription](../in/accgram/edition_transcriptions/simtiq_dt_elyon.txt)
+
+| Scan | Inclusive MAM atom range |
+| --- | --- |
+| `C083.jpg` | Exodus 20:2 atom 1 through 20:5 atom 4 |
+| `C084.jpg` | Exodus 20:5 atom 5 through 20:13 atom 15 |
+| `C208.jpg` | Deuteronomy 5:6 atom 1 through 5:13 atom 16 |
+| `C209.jpg` | Deuteronomy 5:13 atom 17 through 5:17 atom 16 |
+
+The `e` suffix selects these intervals. The lookup intersects the verified
+passage bounds with the existing ordinary page ranges. A split verse
+returns both scans, and a unique phrase selects the scan containing its
+first atom. MAM-simple’s `cant-bet` agrees with the maintained canonical
+atom coordinates for both ranges. The `t` suffix still selects the verified
+appendices.
+
+The checkout replay verified all 24 named verse queries, 358 unique atom
+cues and eight CLI boundary cases. The existing Tiqqun replay covered all
+498 occurrence intervals and both approved rites. The maintained checker,
+Black and Git whitespace checks passed. The focused suite returned 200
+passed and five skipped. Refresh preserved the catalog byte for byte on an
+unchanged inventory and refused incomplete inventory before writing.
+
+### Simanim Tanakh named Decalogue lookup, 2026-11-13
+
+Ben authorized local adoption from `c620898f` under the existing
+`t`/`e` policy. The six local edition scans matched the source hashes
+and dimensions in the maintained editor exports. Both named atom
+arrays in MAM-simple agreed with MAM-parsed in each passage.
+
+The Simanim Tanakh body has manuscript-tradition תחתון and its appendices
+have manuscript-tradition עליון. The Deuteronomy body’s transcribed qadma
+on ויום differs from the reference’s pashta. The chanted-verse boundaries
+and canonical atom coordinates agree. [Exodus body transcription](../in/accgram/edition_transcriptions/simtan_ex_taxton.txt) · [Deuteronomy body transcription](../in/accgram/edition_transcriptions/simtan_dt_taxton.txt)
+
+| Named lookup | Scan | Inclusive MAM atom range |
+| --- | --- | --- |
+| Exodus `t` | `A2-E-0119.jpg` | 20:2 atom 1 through 20:12 atom 7 |
+| Exodus `t` | `A2-E-0120.jpg` | 20:12 atom 8 through 20:13 atom 15 |
+| Exodus `e` | `A9-A2-10C-0350.jpg` | 20:2 atom 1 through 20:13 atom 15 |
+| Deuteronomy `t` | `A5-D-0297.jpg` | 5:6 atom 1 through 5:11 atom 1 |
+| Deuteronomy `t` | `A5-D-0298.jpg` | 5:11 atom 2 through 5:17 atom 16 |
+| Deuteronomy `e` | `A9-A5-10C-0351.jpg` | 5:6 atom 1 through 5:17 atom 16 |
+
+The lookup uses the existing body partition for named body requests. The
+appendix scans are assigned directly to the verified passage ranges.
+[Exodus appendix transcription](../in/accgram/edition_transcriptions/simtan_ex_elyon.txt) · [Deuteronomy appendix transcription](../in/accgram/edition_transcriptions/simtan_dt_elyon.txt)
+
+The checkout replay passed all 48 named verse requests, 716 unique
+phrase cues and four CLI boundary cases. The maintained checker
+passed across all five catalogs. The focused suite returned 200 passed
+and five skipped. The Simanim Tiqqun replay covered all 498 occurrence
+intervals and both approved rites, and its inventory refresh checks
+passed.
+
+### Jerusalem Crown and Dotan BHL named Decalogue appendices, 2026-11-13
+
+The local continuation adopted six named ranges from four appendix scans.
+The source review checked the running text and each chanted-verse
+boundary against the MAM coordinates. The Jerusalem Crown has תחתון in
+the right column and עליון in the left, with 12 and 10 chanted verses
+respectively in each passage. Dotan BHL has 10 chanted verses of עליון
+in each appendix.
+
+| Edition and suffix | Scan | Inclusive MAM atom range |
+| --- | --- | --- |
+| Jerusalem Crown `t` or `e` | `876-02-Exod-Decalogue.jpg` | Exodus 20:2 atom 1 through 20:13 atom 15 |
+| Jerusalem Crown `t` or `e` | `877-03-Deut-Decalogue.jpg` | Deuteronomy 5:6 atom 1 through 5:17 atom 16 |
+| Dotan BHL `e` | `1227-Exod-Decalogue-Upper.jpg` | Exodus 20:2 atom 1 through 20:13 atom 15 |
+| Dotan BHL `e` | `1228-Deut-Decalogue-Upper.jpg` | Deuteronomy 5:6 atom 1 through 5:17 atom 16 |
+
+At Deuteronomy 5:9 atom 6 the three columns print ketiv מצותו in the
+running text and give qere מצותי separately. The canonical phrase lookup
+uses מצותי at that coordinate. Dotan BHL’s Deuteronomy appendix has
+pashta on אנכי where the manuscript-tradition עליון reference has tipeḥa.
+The chanted-verse boundaries agree.
+
+At this checkpoint, the Jerusalem Crown’s named requests selected the
+verified appendix columns. Ordinary body coverage in Exodus and
+Deuteronomy was still uncensused in both editions, and Dotan BHL `t`
+was unavailable.
+
+The checkout replay passed 72 named verse requests, 1,074 phrase cues
+and eight CLI cases. The maintained checker passed across all five
+catalogs. All 18 scan-index tests passed using the existing scratch runner,
+which caches repeated catalog validation in two differential tests.
+
+### Koren named Decalogue lookup, 2026-11-13
+
+After the stress-helper comparison finished, Ben released the Koren catalog
+and authorized adopting the verified patch from `aa594dab`. Ben’s direct
+transcriptions and their editor exports establish
+printed-tradition תחתון on `A2-E-113.jpg` and `A2-E-114.jpg` in Exodus and
+on `A5-D-280.jpg` and `A5-D-281.jpg` in Deuteronomy. The named body ranges
+split at Exodus 20:11 between atoms 13 and 14 and at Deuteronomy 5:9 between
+atoms 5 and 6. The printed-tradition עליון appendices `V-038.jpg` and
+`V-039.jpg` each cover the whole corresponding Decalogue.
+[Exodus body transcription](../in/accgram/edition_transcriptions/koren_ex_taxton.txt) · [Deuteronomy body transcription](../in/accgram/edition_transcriptions/koren_dt_taxton.txt) · [Exodus appendix transcription](../in/accgram/edition_transcriptions/koren_ex_elyon.txt) · [Deuteronomy appendix transcription](../in/accgram/edition_transcriptions/koren_dt_elyon.txt)
+
+The Exodus appendix transcription has separate chanted words at יהיה לך
+and ובנך ובתך, where the reference has maqaf. Both preserve the canonical
+atom positions. Bare references use the ordinary body records. Named
+`t` requests clip those records to the Decalogue, and `e` requests select
+the appendix. Each starts at Exodus 20:2 atom 1 or Deuteronomy 5:6 atom 1
+and runs through Exodus 20:13 atom 15 or Deuteronomy 5:17 atom 16.
+
+The adopted catalog matched the verified scratch catalog byte for byte.
+The checkout replay passed 48 named verse requests, 716 phrase cues,
+48 ordinary regression queries and six CLI cases. The five-catalog
+checker passed, and the focused transcription tests returned 199 passed
+and five skipped.
+
+### Census-preserving inventory refresh, 2026-11-13
+
+`py/main_scan_pages.py survey` can now refresh all five inventories. For a
+full-Tanakh edition with adopted lookup data, the command reclassifies
+the complete filename listing and preserves all census records, unread
+seeds, named ranges and recorded printed forms. It accepts changes to
+nontext scans and refuses any addition, removal or reclassification of
+a text page. The Simanim Tiqqun still validates the recorded occurrence
+assignments against its refreshed inventory. All requested editions
+are prepared before any catalog is written.
+
+The survey entry point reproduced all five catalogs byte for byte from
+the 5,720 saved filenames. Scratch replays added and removed a nontext
+scan in each edition, refused missing and new text scans, and verified
+that a refusal in the last edition left all catalogs byte-identical.
+
+### Page-density advisory and local completion, 2026-11-13
+
+The `check` command reports unusual atom counts on ordinary interior
+pages that carry a single book. The advisory applies once an edition
+and book have at least eight such pages. It flags counts below half
+or above one and a half times the median for that edition and book.
+The band is a review heuristic. All reported pages pass the exact cue
+and partition checks. An independent calculation over 3,258 eligible
+pages agreed with the five advisories. The six focused scan-index and
+mega coverage tests passed.
+The mega coverage lint now declares `census` and `lookup` as hand-run
+commands, following their documented input and output contracts.
+
+### Jerusalem Crown and Dotan BHL body coverage, 2026-11-13
+
+Ben directed the local adoption of the existing verification records for
+Genesis through Isaiah. The Jerusalem Crown added 422 book-page portions
+on 420 scans, and Dotan BHL added 622 portions on 620 scans. Each edition
+now has ordinary lookup for all 39 books. The new portions cover 11,451
+verses and 166,527 canonical atoms per edition. MAM-parsed and MAM-simple
+agree on the ordered atom sequence for all 12 added books.
+
+The saved 2 Samuel source review establishes that Jerusalem Crown
+`316-2S-blank.jpg` is blank. The catalog now classifies the scan as blank.
+Both catalogs retain the completed records from Jeremiah onward.
+The import used observed printed page numbers and shortened saved
+selectors to the first or last unique sequence at each boundary. Six
+boundaries use cues derived from MAM at the verified position. The scan
+evidence remains in local research storage.
+
+The replay verified all 2,088 new boundary cues and 22,902 whole-verse
+lookups, including 914 split verses. The maintained checker passed
+across all five catalogs and reported a new density advisory for
+Jerusalem Crown Judges `234-Ju.jpg` at 187 atoms against a book median of
+394. The saved boundaries for that scan pass the cue and partition
+checks.
+
+Bare Decalogue references now select the body scans in both editions.
+
+### Jerusalem Crown and Dotan BHL named body lookup, 2026-11-13
+
+The Jerusalem Crown prints both strands in the running text of Exodus and
+Deuteronomy. At the opening אנכי, the running text has both pashta and
+tipeḥa. The short prohibitions also carry marks from both strands.
+Dotan BHL prints תחתון in the running text, with a single accent at
+the opening אנכי and continuous cantillation across the short
+prohibitions. Its notes on pp. 109 and 266 direct readers to the עליון
+appendices on pp. 1227 and 1228.
+
+| Edition and suffix | Body scan | Inclusive MAM atom range |
+| --- | --- | --- |
+| Jerusalem Crown `t` or `e` | `069-E.jpg` | Exodus 20:2 atom 1 through 20:9 atom 3 |
+| Jerusalem Crown `t` or `e` | `070-E.jpg` | Exodus 20:9 atom 4 through 20:13 atom 15 |
+| Jerusalem Crown `t` or `e` | `171-D.jpg` | Deuteronomy 5:6 atom 1 through 5:17 atom 16 |
+| Dotan BHL `t` | `0109-E.jpg` | Exodus 20:2 atom 1 through 20:13 atom 15 |
+| Dotan BHL `t` | `0266-D.jpg` | Deuteronomy 5:6 atom 1 through 5:16 atom 10 |
+| Dotan BHL `t` | `0267-D.jpg` | Deuteronomy 5:16 atom 11 through 5:17 atom 16 |
+
+The Jerusalem Crown catalog retains the separately verified appendix
+locations. A range with `body: true` and `appendix` records both locations
+and selects the body at lookup. Dotan BHL `e` selects its verified appendices.
+The replay passed 96 named verse requests, 1,432 phrase requests and
+35 CLI cases.
+
+### Scan-page density source review, 2026-11-14
+
+Direct review of the six flagged scans confirmed the first and last
+Scripture atoms of each catalog interval. The low counts reflect the
+printed layouts. All six intervals stand.
+
+| Edition and scan | Inclusive MAM atom range | Atoms | Printed layout |
+| --- | --- | ---: | --- |
+| Jerusalem Crown `234-Ju.jpg` | Judges 5:12 atom 13 through 5:28 atom 11 | 187 | Spaced lines of the Song of Deborah |
+| Koren `B1-Js-021.jpg` | Joshua 12:9 atom 1 through 12:22 atom 3 | 87 | List of kings, with the names and counts in widely separated columns |
+| Simanim Tanakh `E4-Ec-1248.jpg` | Ecclesiastes 3:5 atom 2 through 3:15 atom 10 | 125 | Short paired clauses across two columns, followed by full-width text |
+| Dotan BHL `1037-Ec.jpg` | Ecclesiastes 2:25 atom 4 through 3:7 atom 7 | 84 | Short paired clauses across two columns |
+| Dotan BHL `1091-Er.jpg` | Ezra 2:37 atom 5 through 2:49 atom 3 | 84 | Full-width text followed by the entry-per-line list |
+| Dotan BHL `1092-Er.jpg` | Ezra 2:49 atom 4 through 2:57 atom 8 | 54 | Entry-per-line list continued from the preceding scan |
+
+## Local main integration, 2026-11-14
+
+The completed scan indexes come from `7294eb46616bbd747b9cfadd1d20eef24f64fccc`.
+The scoped integration applies the finished scan catalog and code changes to
+`1c8a68e00c86b2c50930078cc4854af93139101d` and preserves upstream declarations
+in the mega coverage lint. The original branch retains the interim research
+checkpoints and the separate Job 16:6 TEI documentation correction in
+`c81ddf9151ef46831ab8ef74c13cda92392038a0`.
+
+## Scope beyond the five editions
+
+The Da'at Miqra subsection records the canonical holding for future work. The
+JC2 Companion, JC3, readers and loose PDFs are outside the current index.
