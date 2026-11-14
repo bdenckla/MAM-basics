@@ -24,7 +24,7 @@ import uxlc_paths
 _STRAND_SLUG = {
     "taḥton": "tahton",
     "elyon": "elyon",
-    "pashut": "pashut",
+    "peshutah": "peshutah",
     "midrashit": "midrashit",
 }
 

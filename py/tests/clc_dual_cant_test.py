@@ -244,7 +244,7 @@ def test_strand_views_strict():
                 assert st["text"] != co["text"], f"atom {i} should differ (divergence)"
                 assert st["text"] == _old_split(co["text"], i, strand), f"atom {i} text"
         # Rendered marks = subtracted text + supplied marks: only alef gains a
-        # sof-pasuq (pashut chants Gen 35:22 as two verses).
+        # sof-pasuq (peshutah chants Gen 35:22 as two verses).
         supplied = [ch for a in view.atoms for ch in a.get("additions", ())]
         rendered = whole_text + "".join(supplied)
         assert _count(rendered, _SOF_PASUQ) == 1 + (1 if strand == "alef" else 0)

@@ -13,15 +13,15 @@
     {
       "name": "gn 35:22",
       "bb": "gn",
-      "alef_label": "pashut",
+      "alef_label": "peshutah",
       "bet_label": "midrashit",
       "strands": [
         {
           "strand": "alef",
-          "strand_label": "pashut",
+          "strand_label": "peshutah",
           "chanted_verses": [
             {
-              "ref": "gn35:22 [pashut] (chanted verse 1/2)",
+              "ref": "gn35:22 [peshutah] (chanted verse 1/2)",
               "bcv_span": [
                 "gn35:22",
                 "gn35:22"
@@ -193,7 +193,7 @@
               ]
             },
             {
-              "ref": "gn35:22 [pashut] (chanted verse 2/2)",
+              "ref": "gn35:22 [peshutah] (chanted verse 2/2)",
               "bcv_span": [
                 "gn35:22",
                 "gn35:22"
@@ -479,7 +479,7 @@
         {
           "bcv": "gn35:22",
           "strand": "alef",
-          "strand_label": "pashut",
+          "strand_label": "peshutah",
           "mark": "sof pasuq",
           "delta": "supplied",
           "wlc_word": "יִשְׂרָאֵֽ֑ל",

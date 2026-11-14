@@ -420,7 +420,7 @@ Prefer "word", or "atom" where the distinction from a chanted word matters.
 
 ## Strand vocabulary
 
-- **strand** = one single-cantillation reading of a dual-cant passage (alef/תחתון/pashut,
+- **strand** = one single-cantillation reading of a dual-cant passage (alef/תחתון/peshutah,
   bet/עליון/midrashit). Precedent: MAM-basics' "singly-accented strands." Never "thread."
 - **unpaired** = a stress-helper written without its fusion partner. Never "stranded."
 - **marooned** = an accent or verse number displaced by BHS versification.
@@ -680,6 +680,13 @@ This choice does not start a sweep of other transliteration variants.
 
 Ben's choice, 2026-10-14: use `rafeh` in authored prose. Retain `RAFE` when
 citing the Unicode name, as in `U+05BF HEBREW POINT RAFE` or `Unicode RAFE`.
+
+Ben's choice, 2026-11-14: romanize MAM's פשוטה, the name of Genesis 35:22's `cant-alef`
+strand, as `peshutah`, rather than `pashut` or `pashutah`. MAM's column heading הטעמה "פשוטה"
+makes the name a feminine adjective, so it keeps the final `-ah`, as `midrashit` keeps the
+ending of הטעמה "מדרשית"; and its first syllable has the feminine's shewa, as in `setumah`,
+`qetanah` and `gedolah`. CLC's and accgram's visible labels keep the romanization rather than
+Hebrew letters (Ben, the same day).
 
 Tet and tav both use plain `t`/`T` in Ben's transliteration; do not introduce ṭ/Ṭ.
 

@@ -101,7 +101,7 @@ ruby.clc-kq > rt > span {
 /* Keep the pointed qere's final marks positioned as in ordinary text. */
 ruby.clc-kq span.clc-kq-q { display: inline-block; }
 /* Dual-cant additive detangling (§7.7): a maqaf/sof-pasuq SUPPLIED to clarify ONE
-   strand (e.g. a sof-pasuq breaking pashut into two chanted verses). Shown
+   strand (e.g. a sof-pasuq breaking peshutah into two chanted verses). Shown
    bracketed; the mark is green to flag "added, not in the codex". Recolor the mark
    everywhere (text column + synthesized note) via this one class.
    When a supplied mark sits inside a highlighted note target (clc-doc-target wraps the
