@@ -9,6 +9,12 @@ session confirmed enabled hourly new-main screening from October 16 at 13:00 and
 checks around 02:00 from October 17, America/New_York, with no end date. Scheduling remains
 with that session; this run created no automation.
 
+## Bounded screen, 2026-11-14 00:00 UTC cycle, 9b5086dc
+
+Reviewed `4214fd938d0bfaa92e693f09bfbc1b7207e0a451` → `9b5086dc6f8543dba99f855851f9ccc9f625e9b3`: one commit / seven paths; no consequential introduced defect or product repair. Location grouping/escaping and new/revised rows reconcile across 51 edition records, 37 rows (14 shared/23 single) and 9 menu choices; 34 unaffected prior rows remain exact. gen-site exact; Black and 13 focused tests pass. HTML exits 1 for four retained orphan crops (110 informational CSS references). Independent 157-local-attribute, 56-PNG/52-linked, six invalid-input rejection, ten valid mechanical and 3,082 actual-JS combination checks pass. No browser/new source/editorial judgment. Actual admitted start `2026-11-13T23:53:00.682770+00:00`; focused finish `2026-11-13T23:57:56.958266+00:00`. [Receipt](review-hourly-2026-11-14-9b5086dc-basics.md), [evidence](review-hourly-2026-11-14-9b5086dc-basics-evidence.zip).
+
+Receipt parent `04d8c567659353f0742b659d27b12846ad55d9dd` preserves historical rows, pending windows, immutable receipts and November 13 nightly/Windows evidence. Overall reviewed `210affe3ac2931473bead0de839be0de08309e3d` and broad-tested `9ed47c6e8999ecaf56031e9b3f524bee6e01507a` remain unchanged. Preparation only; publication/cleanup have separate later evidence. No Private, hbofonts, main/shared/deployment or schedule work.
+
 ## Bounded screen, 2026-11-13 23:00 UTC cycle, 4214fd93
 
 Reviewed `8f686dca6d3651b86dc824ae7c53d96f73e6d34a` → `4214fd938d0bfaa92e693f09bfbc1b7207e0a451`: one commit / five paths; no consequential introduced defect or product repair. Two Koren reference crops preserve Sim-only difference membership and reading labels. All 50 records, 36 rows (14 shared/22 single) and nine menu choices reconcile; only two intended page lines change. gen-site is exact; Black and 13 focused tests pass. HTML exits 1 for four retained orphan crops (103 informational CSS references). Independent 156-local-attribute, 56-PNG/52-linked, six invalid-input rejection, four valid-grouping and 2,944 actual-JS combination checks pass. No browser or new source/editorial judgment. [Receipt](review-hourly-2026-11-13-4214fd93-basics.md), [evidence](review-hourly-2026-11-13-4214fd93-basics-evidence.zip).
@@ -77,6 +83,8 @@ No repository generator, maintained test or browser run was started. Execution i
 
 | Anchor | Commit/result |
 | --- | --- |
+| Bounded screen 9b5086dc, 2026-11-14 00:00 UTC cycle | `4214fd938d0bfaa92e693f09bfbc1b7207e0a451` → `9b5086dc6f8543dba99f855851f9ccc9f625e9b3`; one commit / seven paths; no consequential defect or repair. Actual focused completion 2026-11-13T23:57:56.958266+00:00. [Receipt](review-hourly-2026-11-14-9b5086dc-basics.md). |
+| Focused evidence 9b5086dc | gen-site exact; 13 tests/Black pass; HTML exit 1 for four retained orphan crops. 51 records/37 rows/9 choices; 157 local attributes; 56 PNGs/52 linked; six rejection/ten valid cases; 3,082 Node combinations. [Evidence](review-hourly-2026-11-14-9b5086dc-basics-evidence.zip). |
 | Bounded screen 4214fd93, 2026-11-13 23:00 UTC | `8f686dca6d3651b86dc824ae7c53d96f73e6d34a` → `4214fd938d0bfaa92e693f09bfbc1b7207e0a451`; one commit / five paths; no consequential defect or repair. [Receipt](review-hourly-2026-11-13-4214fd93-basics.md). |
 | Focused evidence 4214fd93 | gen-site exact; 13 tests/Black pass; HTML exit 1 for four retained orphan crops. 50 records/36 rows/nine choices; 156 local attributes; 56 PNGs/52 linked; six rejection/four grouping cases; 2,944 Node combinations. [Evidence](review-hourly-2026-11-13-4214fd93-basics-evidence.zip). |
 | Bounded screen 8f686dca, 2026-11-13 22:00 UTC | `7173440e9a2cf932edc290a4ff17affde54a3072` → `8f686dca6d3651b86dc824ae7c53d96f73e6d34a`; two commits / eight paths; no consequential defect or repair. [Receipt](review-hourly-2026-11-13-8f686dca-basics.md). |
