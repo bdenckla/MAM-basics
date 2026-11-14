@@ -69,11 +69,11 @@ def _all_chanted_verses(
     return [cv for pr in results for tr in pr.strands for cv in tr.chanted_verses]
 
 
-def test_gen3522_strands_are_pashut_and_midrashit_and_parse() -> None:
+def test_gen3522_strands_are_peshutah_and_midrashit_and_parse() -> None:
     results = _detangle()
     gen = next(pr for pr in results if pr.passage.bb == "gn")
     alef, bet = gen.strands
-    assert alef.strand_label == "pashut" and bet.strand_label == "midrashit"
+    assert alef.strand_label == "peshutah" and bet.strand_label == "midrashit"
     assert all(cv.status == "clean" for cv in alef.chanted_verses + bet.chanted_verses)
 
 

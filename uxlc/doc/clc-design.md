@@ -245,7 +245,7 @@ largely an act of *composition* over existing machinery, plus the new identity-r
   - Bracket-note parsing/HTML: `wlc-utils/py/accgram/rtmsr_bracket_notes.py`.
   - **Accent-grammar engine:** `wlc-utils/py/accgram/` — the prose/poetic grammar checker.
   - **Untangled Decalogues + Gen 35:22:** `wlc-utils/py/accgram/dual_cant_detangle.py`
-    (passages `gn 35:22` pashut/midrashit, `ex 20:2-17` & `dt 5:6-21` taxton/elyon). Uses
+    (passages `gn 35:22` peshutah/midrashit, `ex 20:2-17` & `dt 5:6-21` taxton/elyon). Uses
     MAM-simple as the oracle to split merged accents into two single-cantillation streams;
     produces parse trees + **4 charitably "supplied" marks** + **1 anomaly** (Deut 5:8 תעשה).
     Loader `wlc-utils/py/accgram/mam_simple_verse.py` (`vels_cant_alef` / `vels_cant_bet`).
@@ -452,7 +452,7 @@ Each is a feature this doc names, organized with grounding + open questions.
 
 ### 7.7 Untangled Decalogues + Genesis 35:22
 - Build on `wlc-utils/py/accgram/dual_cant_detangle.py`: present Exod 20, Deut 5, and Gen 35:22
-  as **two clean single-cantillation streams** each (taxton/elyon; pashut/midrashit) instead of
+  as **two clean single-cantillation streams** each (taxton/elyon; peshutah/midrashit) instead of
   the merged tangle.
 - The detangler's **"supplied marks" are themselves charitable acts** (marks the scribe didn't
   write because both strands share them) and its **anomalies** are exactly the kind of thing CLC
@@ -464,7 +464,7 @@ Each is a feature this doc names, organized with grounding + open questions.
   remains for this atom.
 
 **Single-strand display.** Where a dual-cant verse is one row today, CLC shows **three**: the
-combined form plus its two strands — labeled e.g. `35:22-C`, `35:22-א` (pashut), `35:22-ב`
+combined form plus its two strands — labeled e.g. `35:22-C`, `35:22-א` (peshutah), `35:22-ב`
 (midrashit), each ref label carrying a hover description, the three grouped as one verse block.
 **Genesis 35:22 is the first application** (`py/clc/clc_dual_cant.py`, rendered by
 `clc_render.py`); the Decalogues follow by adding their oracle entries.
@@ -499,11 +499,11 @@ text is **near-subtractive, with two narrowly-scoped, loudly-flagged charities, 
   mark is never touched.
 - **Marked supply — *punctuation only*, bracketed and footnoted, never silent.** Only an
   accent-coupled **word-division** mark a strand needs but UXLC lacks may be **supplied**, and only
-  to improve legibility (e.g. the sof-pasuq that breaks Gen 35:22's pashut into its two chanted
+  to improve legibility (e.g. the sof-pasuq that breaks Gen 35:22's peshutah into its two chanted
   verses), rendered **bracketed and green** (CSS `clc-added-during-detangling`) with a synthesized
   "added out of thin air" note. The closed suppliable set is **maqaf / sof-pasuq / legarmeh** (the
   rule: *no punctuation supplied unless clearly marked as supplied* — cf. the green/bracketed
-  additions in wlc-utils). Three sof-pasuqs are supplied so far — Gen 35:22 (pashut) and the taxton
+  additions in wlc-utils). Three sof-pasuqs are supplied so far — Gen 35:22 (peshutah) and the taxton
   verse-ends of Exod 20:8 (לקדשו) and 20:9 (מלאכתך), where UXLC has none.
 - **Omitted accent — *noted, never supplied*.** Where a strand's chanting calls for an **accent**
   UXLC left untangled (it has only the *other* strand's accent on that word), CLC does **not**

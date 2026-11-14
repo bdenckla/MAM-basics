@@ -31,9 +31,9 @@ strand wants an accent UXLC omitted, a note in lieu of inventing one**:
     but UXLC lacks may be **supplied — never silently**: it is rendered
     **bracketed and green** (CSS ``clc-added-during-detangling``) with a
     synthesized "added out of thin air" note (e.g. a sof-pasuq breaking Gen
-    35:22's pashut into its two chanted verses). Only the three accent-coupled
+    35:22's peshutah into its two chanted verses). Only the three accent-coupled
     punctuation marks — **maqaf / sof-pasuq / legarmeh** — are ever supplied; so
-    far three sof-pasuq marks are (Gen 35:22 pashut, and the taḥton verse-ends of Exod
+    far three sof-pasuq marks are (Gen 35:22 peshutah, and the taḥton verse-ends of Exod
     20:8 לקדשו and 20:9 מלאכתך, where UXLC has none).
   * **Omitted accent — noted, never supplied.** Where a strand's chanting calls
     for an *accent* UXLC left untangled (it has only the other strand's accent
@@ -159,7 +159,7 @@ TOOLTIP_COMBINED = (
 
 
 # Each dual-cant book uses a different pair of strand traditions, so the alef/bet
-# doc-labels and tooltips are per-book: Genesis 35:22 is pashut / midrashit; the
+# doc-labels and tooltips are per-book: Genesis 35:22 is peshutah / midrashit; the
 # Decalogues (Exodus 20, Deuteronomy 5) are taxton / elyon. The alef strand is always
 # the verse-by-verse strand, bet the grouped/alternative one.
 @dataclass(frozen=True)
@@ -169,12 +169,12 @@ class _Strand:
     short: str  # bare strand name (e.g. "taxton"), for the omitted-accent note prose
 
 
-_PASHUT = _Strand(
-    "pashut (simple) strand",
-    "Strand א (pashut / simple): the verse-by-verse accentuation, "
+_PESHUTAH = _Strand(
+    "peshutah (simple) strand",
+    "Strand א (peshutah / simple): the verse-by-verse accentuation, "
     "separated from the combined marks using MAM as oracle — no mark "
     "subtracted but the other strand's, only a maqaf/sof-pasuq supplied.",
-    "pashut",
+    "peshutah",
 )
 _MIDRASHIT = _Strand(
     "midrashit (interpretive) strand",
@@ -199,7 +199,7 @@ _ELYON = _Strand(
 
 # alef/bet strands per dual-cant book (bk39 id).
 _STRANDS = {
-    "Genesis": (_PASHUT, _MIDRASHIT),
+    "Genesis": (_PESHUTAH, _MIDRASHIT),
     "Exodus": (_TAXTON, _ELYON),
     "Deuter": (_TAXTON, _ELYON),
 }

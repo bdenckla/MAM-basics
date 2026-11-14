@@ -460,7 +460,7 @@ def _section_abcant(heading):
         (
             "Whereas, MAM-WS shows not only the combined cantillation "
             "but also the “A” and “B” cantillations, which MAM-WS refers to as the "
-            "פשוטה (pashutah) and מדרשית (midrashit) cantillations "
+            "פשוטה (peshutah) and מדרשית (midrashit) cantillations "
             "respectively:",
         )
     )

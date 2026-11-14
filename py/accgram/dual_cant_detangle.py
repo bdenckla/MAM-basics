@@ -96,12 +96,12 @@ class Passage:
     name: str  # compact, e.g. "gn 35:22" / "ex 20:2-17"
     bb: str
     refs: tuple[tuple[int, int], ...]  # (chnu, vrnu) in source order
-    alef_label: str  # cant-alef tradition name (pashut / taxton)
+    alef_label: str  # cant-alef tradition name (peshutah / taxton)
     bet_label: str  # cant-bet tradition name (midrashit / elyon)
 
 
 PASSAGES: tuple[Passage, ...] = (
-    Passage("gn 35:22", "gn", ((35, 22),), "pashut", "midrashit"),
+    Passage("gn 35:22", "gn", ((35, 22),), "peshutah", "midrashit"),
     Passage(
         "ex 20:2-17", "ex", tuple((20, v) for v in range(2, 18)), "taxton", "elyon"
     ),
@@ -126,7 +126,7 @@ class SuppliedMark:
 
     bcv: str
     strand: str  # "alef" / "bet"
-    strand_label: str  # pashut / taxton / ...
+    strand_label: str  # peshutah / taxton / ...
     mam_word: str  # the MAM strand word with the supplied accent
     wlc_word: str  # WLC's word, which lacks it
     accent: str  # supplied accent codepoint
@@ -171,7 +171,7 @@ class PunctuationChange:
 
     bcv: str
     strand: str  # "alef" / "bet"
-    strand_label: str  # pashut / taxton / ...
+    strand_label: str  # peshutah / taxton / ...
     mark: str  # "maqaf" / "sof pasuq" / "legarmeh"
     delta: (
         str  # "supplied" (strand has, WLC lacks) / "suppressed" (WLC has, strand lacks)
@@ -184,7 +184,7 @@ class PunctuationChange:
 class ChantedVerseResult:
     """One detangled chanted verse (sof-pasuq-delimited), fed to the prose grammar."""
 
-    ref: str  # human attribution, e.g. "gn 35:22 [pashut] (chanted verse 1/2)"
+    ref: str  # human attribution, e.g. "gn 35:22 [peshutah] (chanted verse 1/2)"
     strand: str
     strand_label: str
     bcv_span: tuple[str, str]  # the BHS numbered verse(s) this chanted verse touches

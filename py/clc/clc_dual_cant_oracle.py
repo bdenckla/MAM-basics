@@ -83,7 +83,7 @@ def _is_accent(ch):
 #   10    בִּלְהָ֖ה֙         tipexa       U+0596     pashta       U+0599
 #   12    אָבִ֑֔יו          etnaxta      U+0591     zaqef qatan  U+0594
 #   14    יִשְׂרָאֵ֑͏ֽל       meteg/silluq U+05BD     etnaxta      U+0591  (CGJ dropped)
-#         + alef ALSO gains a supplied sof-pasuq — pashut chants this as a verse end.
+#         + alef ALSO gains a supplied sof-pasuq — peshutah chants this as a verse end.
 _ORACLE = {
     "Genesis": {
         (35, 22): {

@@ -278,7 +278,7 @@ def _supplied_section(supplies: list) -> tuple[object, ...]:
 def _reading_order_key(s) -> tuple:
     bb = s.bcv[:2]
     chnu, vrnu = (int(p) for p in s.bcv[2:].split(":"))
-    # alef strand (taxton/pashut) before bet (elyon/midrashit) within a verse
+    # alef strand (taxton/peshutah) before bet (elyon/midrashit) within a verse
     return (_PASSAGE_RANK.get(bb, 9), chnu, vrnu, 0 if s.strand == "alef" else 1)
 
 
