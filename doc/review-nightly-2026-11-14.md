@@ -1,6 +1,7 @@
 # November 14 continuing nightly broad checks
 
 State: completed 2026-11-14; known HTML findings and scope limits retained
+Updates and later status: [review-nightly-2026-11-14-update.md](review-nightly-2026-11-14-update.md).
 
 Portable source `46ed8dc5ac41fe556b131b7911726c215ab64140`; committed read-only sibling input `3cfacbc28ad75e2939613ab796a90d40a40181c5`. Latest hourly receipt `a6a08c8bb482f800725bf6a087403dfc7aaf92a3` already covers through this source, so no hourly window review or focused matrix was repeated. Overall reviewed-through remains `210affe3ac2931473bead0de839be0de08309e3d`; all historical gaps and finished receipts remain.
 
