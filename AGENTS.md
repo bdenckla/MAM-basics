@@ -69,6 +69,12 @@ inventory against chapter 2 of the mirrored introduction, `in/mam-ws-intro/ch2.m
 the Decalogue section's table and the paragraph after it, and the song-form table. Do not
 hand-edit the mirror or its manifest.
 
+## Look in MAM-private before consulting an online Bible's site
+
+MAM-private may contain useful information about various online Bibles, useful enough to prevent
+the need to consult their sites live. Before proposing a fetch from such a site, look there
+first.
+
 ## Holman and book-of-Job work has local routing documentation
 
 Before touching Holman mailboxes, correspondence derivatives, dispositions, or authored assets,

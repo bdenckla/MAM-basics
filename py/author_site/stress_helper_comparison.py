@@ -16,7 +16,12 @@ from mb_misc.osis_book_abbrevs import BOOK_ABBREVS
 DIRECTORY = "stress-helpers"
 _FNAME = "index.html"
 HREF = f"{DIRECTORY}/{_FNAME}"
-TITLE = "Stress helpers in MAM, Koren Classic Tanakh, and Feldheim Simanim Tanakh"
+# The page's <title> and <h1>, and its link text on the site's index.  Ben asked on
+# 2026-11-14 for the title "Stress helpers in MAM, Koren Classic Tanakh, and Feldheim
+# Simanim Tanakh" to be shortened to "Stress helpers in MAM, Koren, and Simanim".  His
+# words govern this title's bare "Simanim", which the hebrew-prose skill's checklist
+# item 7 otherwise avoids; other mentions of the two editions keep their own names.
+TITLE = "Stress helpers in MAM, Koren, and Simanim"
 _EDITIONS = {
     "koren": ("Koren", "Koren"),
     "simanim-tanakh": ("the Simanim Tanakh", "SimTan"),

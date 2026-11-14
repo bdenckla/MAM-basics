@@ -189,9 +189,13 @@ load-bearing here and a merged count is meaningless.
 
 Why the encoding is like this: in most fonts *pashta*, *zarqa*/*tsinnor* and *deḥi* each have a
 centered **lookalike** accent — *qadma*, *tsinnorit* and *tarḥa* respectively — whose codepoint
-*could* be pressed into service as the helper. In practice this is done only for the zarqa, and
-Unicode, as Ben puts it, "pretty much prescribes" it. He considers the practice a bad idea and has
-proposed deprecating it.
+*could* be pressed into service as the helper. Unicode, as Ben puts it, "pretty much prescribes"
+it for the zarqa, and the editions Ben considers worth considering do it only there, with one
+exception: Mechon Mamre's online edition writes the pashta's helper as U+05A8 too, as its encoding
+tables prescribe (Helmut Richter, "Hebrew Cantillation Marks And Their Encoding"). Although Ben
+respects Mechon Mamre as an important online edition, he does not respect its decision in this
+regard. morphhb, which made the same change to WLC's text in 2014, is no precedent (Ben,
+2026-11-14). Ben considers the practice a bad idea and has proposed deprecating it.
 
 **Primary sources — read these rather than reconstructing the argument.** `../document-index`
 (repo `bdenckla/document-index`) indexes every proposal Ben has authored, in
