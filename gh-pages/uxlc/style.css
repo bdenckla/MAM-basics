@@ -52,7 +52,8 @@ td.clc-ref[title] { cursor: help; }
 /* The verse-ref number is a self-link (clc_render, issue #55): clicking it grabs the
    #c{ch}v{v} URL for that verse. Keep it looking like the plain muted ref number —
    inherit its color, drop the default link underline — and only underline on hover
-   as a click affordance (mirrors a.clc-doc-target below). */
+   as a click affordance. The ref is Latin text; a.clc-doc-target below is pointed
+   Hebrew, so its hover cue is a background instead. */
 td.clc-ref a { color: inherit; text-decoration: none; }
 td.clc-ref a:hover { text-decoration: underline; }
 span.clc-strand-label { font-style: italic; color: light-dark(#555, #aaa); }
@@ -64,9 +65,13 @@ td.clc-doc { max-width: 45em; font-size: 85%; }
 /* A noted word is highlighted in the text column (clc_render._noted_word,
    clc_kq._member_span). Usually a plain <span> — its note sits beside it in the same
    row, so there is no same-page jump; only a note relegated to the long-notes page
-   makes this an <a> pointing across to that page (hover-underlined). */
+   makes this an <a> pointing across to that page. The word is pointed Hebrew, so the
+   link's hover cue is a background tint, the one near-aleppo/link-presentation.css
+   gives the links it marks, and never an underline, which would run through the
+   points and accents below the letters (dot-claude/skills/hebrew-prose/references/
+   rendered-prose.md, "No line under pointed Hebrew"). */
 .clc-doc-target { color: light-dark(#1a4fd6, #8ab4ff); text-decoration: none; }
-a.clc-doc-target:hover { text-decoration: underline; }
+a.clc-doc-target:hover { background-color: light-dark(#edf3ff, #15243a); border-radius: 0.15em; }
 div.clc-note { margin-bottom: 0.5em; }
 span.clc-note-code { font-weight: bold; }
 /* CLC ketiv/qere (clc_kq): one boxed <ruby> per K/Q unit — qere on the baseline
