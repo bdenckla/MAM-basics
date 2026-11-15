@@ -1,0 +1,12 @@
+# written by scripts/check_marks.py
+verses with an alternative-accent note: 24
+== other verses
+   morphhb  pashta  20611  qadma  11334  pashta+qadma  31945  zwj    0  cgj    0
+   WLC 4.18 pashta  24419  qadma   7528  pashta+qadma  31947  zwj   79  cgj    0
+   WLC 4.20 pashta  24418  qadma   7527  pashta+qadma  31945  zwj   79  cgj    0
+   WLC 4.22 pashta  24416  qadma   7526  pashta+qadma  31942  zwj   79  cgj    0
+== divided-accent verses
+   morphhb  pashta     19  qadma     16  pashta+qadma     35  zwj    0  cgj    0
+   WLC 4.18 pashta     37  qadma     14  pashta+qadma     51  zwj    0  cgj    0
+   WLC 4.20 pashta     37  qadma     14  pashta+qadma     51  zwj    0  cgj    0
+   WLC 4.22 pashta     35  qadma     16  pashta+qadma     51  zwj    0  cgj    0

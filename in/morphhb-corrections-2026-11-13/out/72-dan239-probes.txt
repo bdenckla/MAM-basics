@@ -1,0 +1,43 @@
+# written by scripts/p2_records_dan239_probe.py; versions on disk plus 12505532
+v31 2016-01-24T01:09:19Z cd726c7c ketiv/qere=False first word=אֲרַ֣עא | Various corrections
+     exegesis note(s): none
+     <w lemma="772">אֲרַ֣עא</w>
+v35 2017-12-10T07:20:17Z 097d0e42 ketiv/qere=False first word=אֲרַ֣עא | added phase 1 parsings--ruth, obad, jonah, joel complete; other books partial
+     exegesis note(s): none
+     <w lemma="772">אֲרַ֣עא</w>
+v37 2018-01-02T21:53:47Z b4dc98ad ketiv/qere=False first word=אֲרַ֣עא | Correction of the double-escaped &
+     exegesis note(s): none
+     <w lemma="772">אֲרַ֣עא</w>
+v38 2018-01-04T22:51:17Z ba378e75 ketiv/qere=False first word=אֲרַ֣עא | 7 books newly complete
+     exegesis note(s): none
+     <w lemma="772">אֲרַ֣עא</w>
+v39 2018-04-15T13:28:47Z 019b22f6 ketiv/qere=True first word=ארעא | word division fixes
+     exegesis note(s): ['<note type="exegesis">WLC has this word divided as <rdg>ארעא</rdg>.</note>']
+     <w lemma="772">ארע/א</w><note type="variant"><catchWord>ארע/א</catchWord><rdg type="x-qere"><w lemma="c/7495">אֲרַע</w></rdg></note>
+v40 2018-04-15T14:20:01Z bc20b79b ketiv/qere=True first word=ארעא | Removed added variant reading for now (will add back at end of phase 1)
+     exegesis note(s): ['<note type="exegesis">WLC has this word divided as <rdg>ארעא</rdg>.</note>']
+     <w lemma="772">ארע/א</w>
+v42 2018-06-02T13:54:37Z 12505532 ketiv/qere=True first word=ארעא | Updated headers
+     exegesis note(s): ['<note type="exegesis">WLC has this word divided as <rdg>ארעא</rdg>.</note>']
+     <w lemma="772">ארע/א</w>
+v43 2018-12-14T14:18:08Z f0b4e882 ketiv/qere=False first word=אֲרַ֣עא | Addition of almost all verifieds
+     exegesis note(s): ['<note type="exegesis"/>']
+     <w lemma="772" morph="ANcfsd">אֲרַ֣עא</w>
+v47 2018-12-15T16:00:03Z 55bc539d ketiv/qere=False first word=אֲרַ֣עא | make lemma of 853/4 match its parsing
+     exegesis note(s): ['<note type="exegesis"/>']
+     <w lemma="772" morph="ANcfsd">אֲרַ֣עא</w>
+v51 2018-12-29T15:40:37Z e4855e94 ketiv/qere=False first word=אֲרַ֣עא | Updated morph of words where number of morph parts did not match word parts.
+     exegesis note(s): ['<note type="exegesis"/>']
+     <w lemma="772" morph="ANcfsd">אֲרַ֣עא</w>
+v53 2019-01-13T09:13:12Z 7be49a56 ketiv/qere=False first word=אֲרַ֣עא | Made nouns either gender both, masc or fem
+     exegesis note(s): ['<note type="exegesis"/>']
+     <w lemma="772" morph="ANcfsd">אֲרַ֣עא</w>
+v54 2019-01-13T09:28:20Z 5dc21275 ketiv/qere=False first word=אֲרַ֣עא | Added unique ids
+     exegesis note(s): ['<note type="exegesis"/>']
+     <w lemma="772" morph="ANcfsd" id="27QFm">אֲרַ֣עא</w>
+v55 2019-01-13T10:31:14Z 456c54c6 ketiv/qere=True first word=ארעא | Restored exegesis note about change in word division
+     exegesis note(s): ['<note type="exegesis">WLC has this word divided as <rdg>ארעא</rdg>.</note>']
+     <w lemma="772" morph="ANcfsc/Sd" id="27QFm">ארע/א</w><note type="variant"><catchWord>ארע/א</catchWord><rdg type="x-qere"><w lemma="772" morph="ANcfsd" id="27Euh">אֲרַע</w></rdg></note>
+v63 2022-03-18T20:04:48Z 8de89602 ketiv/qere=True first word=ארעא | Changes requested in earlier set of OSHB issues.
+     exegesis note(s): ['<note type="exegesis">WLC has this word divided as <rdg>ארעא</rdg>.</note>']
+     <w type="x-ketiv" lemma="772" morph="ANcfsc/Sd" id="27QFm">ארע/א</w><note type="variant"><catchWord>ארע/א</catchWord><rdg type="x-qere"><w lemma="772" morph="ANcfsd" id="27Euh">אֲרַע</w></rdg></note>

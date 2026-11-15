@@ -1,0 +1,60 @@
+# written by scripts/p2_records_issues_list.py; no requests.  Issues and PRs fetched 2026-11-13 (117 issues and PRs,
+# 390 comments, 6 review comments).  Groups and judgments are Claude's reading of each thread.
+
+== 0. The verses and words searched for (75-issues-hits.txt)
+   No title, body, comment or review comment mentions Hosea 13:15, Genesis 39:19, Deuteronomy 22:29, Leviticus 4:35,
+   Jeremiah 51:3, Daniel 2:39, Exodus 20:4 or Exodus 20:5 (in the spellings searched), the morphhb ids 28sYk, 01oc4,
+   05ENP, 03caE, 24JqK, 249Bc, 27QFm, 27Euh or 02p5S, or lemma 996: zero hits for each.
+
+== 1. Reports about WLC itself: its morphology (the Westminster division into morphemes), taken to the Groves Center, or its version
+   openscriptures/morphhb#33 (issue, closed, created 2017-10-15, closed 2018-01-05) b/994 should have lemma of just 994 and no morphological separator
+      the particle written bet-yod was divided as preposition plus suffix (b/994); Troidl found 12 instances, reported it to the Groves Center (2017-10-29: the WLC had already changed it in July, for its next release). Outcome: fixed in morphhb by a573a984 (2017-11-23), which merged the 12 words (observed in 73-named-commits.txt).
+   openscriptures/morphhb#41 (issue, open, created 2017-12-07, closed -) Missing word break in Gen 38:24
+      Genesis 38:24, a missing morpheme break; Troidl: it 'will have to be submitted to the Groves Center, for a change in the WLC', and submitted it (2017-12-13). Outcome: still open; morphhb divides the word and carries the exegesis note 'WLC has this word divided as ...' (74-exegesis-notes.txt).
+   openscriptures/morphhb#42 (issue, open, created 2017-12-12, closed -) Textual issue in Song 6:12
+      Song of Songs 6:12, the analysis of the two words (a proper name, as LXX and KJV, or 'my people' + 'noble', as NIV); Troidl submitted the division of the suffix to the Groves Center, which 'won't approve the change, but wants to list it as an alternative' (2017-12-29). Outcome: still open; morphhb divides the suffix with the note 'WLC has this word divided as ...'.
+   openscriptures/morphhb#38 (issue, open, created 2017-12-04, closed -) Aramaic Determined State
+      Aramaic determined state: the WLC's morphology divides the ending as an article; a letter to the Groves Center is quoted. Outcome: open.
+   openscriptures/morphhb#19 (issue, closed, created 2016-03-03, closed 2017-10-29) WLC version 4.20
+      asks whether anyone is updating to WLC 4.20. Outcome: closed 2017-10-29, 'The update has been made' (2201c6a7, 2016-03-04).
+   openscriptures/morphhb#66 (issue, closed, created 2019-09-16, closed 2019-10-23) Textual issue in Num 27:5
+      'Textual issue in Num 27:5': words missing from the end of the verse. Outcome: the text was complete; the Read application failed to display a large letter and what followed; fixed in the application.
+
+== 2. Requests for a reading other than WLC's
+   openscriptures/morphhb#27 (issue, closed, created 2017-02-02, closed 2017-02-04) Special markup for large letters, small letters and raised letters?
+      special markup for large, small and raised letters as Aleppo-based editions have them. Troidl (2017-02-03): 'the OSHB should respect the WLC, because that is our source.' Outcome: the reporter answered 'Fair enough!' and the issue closed 2017-02-04 with no change.
+   openscriptures/morphhb#116 (issue, open, created 2026-11-11, closed -) Plan: update the website and release OSHB 2.3 (comments welcome until 15 December 2026)
+      in a comment of 2026-11-11 (Ben Denckla's, written by a Claude session), Proverbs 30:15: MAM has oleh-weyored on the second word where WLC has only merkha, so the accent-structure value 2 'belongs on' that word by MAM's text. Outcome: pending; the issue's comment period ends 15 December 2026. This concerns the n attribute, not the text, lemma or morph.
+   openscriptures/morphhb#109 (issue, closed, created 2026-02-02, closed 2026-11-11) Zarka vs. tsinnorit in Exodus 36:2
+      Exodus 36:2's zarqa in MAPM/MAPM.xml, morphhb's copy of MAM, not WLC. Outcome: closed 2026-11-11, resolved by openscriptures/morphhb#114.
+   openscriptures/morphhb#114 (PR, closed, created 2026-11-04, closed 2026-11-11, merged 2026-11-11) Update MAPM to the current Miqra according to the Masorah
+      replaces MAPM/MAPM.xml with the current MAM; touches no wlc/ file. Outcome: merged 2026-11-11.
+
+== 3. Analyses corrected toward or away from another reading
+   openscriptures/morphhb#74 (issue, closed, created 2021-01-14, closed 2021-01-18) Submitting Corrections
+      Exodus 21:8: the ketiv was analysed as Hiphil, which is the qere's reading; the ketiv as written is a Niphal. Outcome: corrected (2021-01-18) away from the qere's analysis to the ketiv's own.
+   openscriptures/morphhb#67 (issue, closed, created 2019-11-13, closed 2019-11-14) Systemic parsing error for כֻּלֹּה
+      the noun 'all' with the old -oh suffix was parsed with a third feminine suffix; the reporter notes that BHS has a ketiv/qere at some of the places where WLC has none. Outcome: corrected to third masculine (2bdcd48c, 2019-11-14) at the agreed places, an analysis of the form as written, not of another reading.
+
+== 4. Related records: swapped lemmas (the kind of slip found at Jeremiah 51:3), and lemma corrections that one of the analysed commits made
+   openscriptures/morphhb#39 (issue, closed, created 2017-12-07, closed 2017-12-07) Swapped lemmas in 2Sam 10:6
+      2 Samuel 10:6, two words with each other's lemmas. Outcome: fixed the same day (2017-12-07).
+   openscriptures/morphhb#95 (issue, open, created 2022-06-27, closed -) Parsing error on Jeremiah 7.31?
+      Jeremiah 7:31, two words with each other's lemma and morph. Outcome: open.
+   openscriptures/morphhb#113 (issue, open, created 2026-10-21, closed -) Swapped lemmas in 1 Chr 12:39 and 2 Chr 3:17
+      1 Chronicles 12:39 and 2 Chronicles 3:17, neighbouring words with each other's lemmas; the reporter's search 'for neighbouring words whose forms belong to each other's lemma turned up no others'. Jeremiah 51:3's pair (24JqK, 249Bc) is not adjacent, and no issue mentions it. Outcome: open.
+   openscriptures/morphhb#18 (issue, closed, created 2015-06-16, closed 2015-06-17) Incorrect Strong Number in Two Verses
+      the Tetragrammaton's Strong number wrong at 1 Kings 17:14 and 2 Chronicles 28:3. Outcome: fixed at 1 Kings 17:14 by db553e1d ('Various corrections.', 2015-06-17), whose patch changes that word's lemma from 5414 to 3068 (73-named-commits.txt).
+
+== 5. Statements of morphhb's text policy found in the threads
+   openscriptures/morphhb#27 (issue, closed, created 2017-02-02, closed 2017-02-04) Special markup for large letters, small letters and raised letters?
+      Troidl, 2017-02-03: 'the OSHB should respect the WLC, because that is our source.'
+   openscriptures/morphhb#80 (issue, closed, created 2021-07-07, closed 2021-07-19) Ketiv/Qere without catchWord?
+      Troidl, 2021-07-17: 'one of our primary concerns was how to faithfully represent the text, within the limitations of OSIS'; the ketiv is part of the consonantal text and the qere a Masoretic note. The thread led to the x-ketiv type (65214d2b) and the maqqef subType (2005a3e5).
+   openscriptures/morphhb#30 (issue, closed, created 2017-03-03, closed 2017-03-04) Accent Catalog
+      Troidl, 2017-03-04: WLC has double accents in the Decalogues 'to indicate two separate traditions'; morphhb lists one in the main text and the other in notes (the division of 73784451, 2010-07-13).
+   openscriptures/morphhb#6 (issue, open, created 2014-04-10, closed -) A standard linguistic reference
+      a contributor, 2014-04-13: 'our text is already established' (on lexical sources, not a maintainer's statement).
+
+== 6. None of these reports an error in WLC's letters, vowels or accents that morphhb then corrected in its text,
+   and none concerns any of the nine corrections.

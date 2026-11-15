@@ -1,0 +1,275 @@
+# written by scripts/p2_lemma_alel.py: C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe -I .novc/morphhb-corrections-2026-11-13/scripts/p2_lemma_alel.py .novc/morphhb-corrections-2026-11-13/scripts .novc/morphhb-corrections-2026-11-13/fetched .novc/morphhb-corrections-2026-11-13/out/50-alel-census.txt .novc/morphhb-corrections-2026-11-13/out/50-alel-census.json  (working directory C:/Users/BenDe/GitRepos/MAM-basics)
+
+Part 2, analyses, method 1: the al/el census (throwaway scratch).
+
+Written by Claude (Opus 5.5) on 2026-11-13, New York time; not reviewed by a human.  Every
+reading is attributed to the transcription that has it; nothing here is about the Leningrad
+Codex itself.  Hebrew is copied from the data by script and shown in MAM-normal mark order.
+
+== 1. Counts
+morphhb words whose last morpheme is alef-lamed: 4930
+  of them aligned one to one with a MAM atom of the same letters: 4924; not: 6
+mismatches: 17 (the known five among them: 5)
+  by Claude's class: anomaly 1, correction 5, defensible 8, slip 3
+    anomaly: an anomaly read as the intended word: WLC's form is no regular word or form in its place (often under a WLC note), and the analysis is that of the word both transcriptions mean, which MAM's form spells regularly; Part 1's class c
+    correction: a correction: WLC's form, as written, is a regular spelling of another word or of another inflection, and the lemma or the morph analyses MAM's reading instead
+    defensible: a homograph, or an analysis that WLC's form admits as written
+    slip: an inconsistency of morphhb's own: the lemma or morph fits neither WLC's form nor MAM's, and the two agree
+alef-lamed words whose alef has another vowel in MAM's atom: 6
+
+== 2. Cross-tabulations
+2.1 vowel x lemma number
+     3874  segol          413
+      720  patah          408
+      226  tsere          410
+       72  tsere          1008
+        9  tsere          411
+        5  tsere          6214
+        4  patah          409
+        4  patah          516
+        4  segol          408
+        3  patah          413
+        2  tsere          3317
+        2  tsere          6005
+        1  hataf patah    408
+        1  patah          3808
+        1  tsere          352
+        1  tsere          4027
+        1  tsere          412
+2.2 vowel x morph's last part
+     3877  segol          R
+      732  patah          Tn
+      191  tsere          Ncmsa
+       87  tsere          Np
+       32  tsere          Ncmsc
+        9  tsere          Pdxcp
+        1  hataf patah    Tn
+        1  segol          Tn
+2.3 lemma number x morph's last part
+     3874  413      R
+      722  408      Tn
+      190  410      Ncmsa
+       72  1008     Np
+       31  410      Ncmsc
+        9  411      Pdxcp
+        5  410      Np
+        5  6214     Np
+        4  409      Tn
+        4  516      Tn
+        3  408      R
+        3  413      Tn
+        2  3317     Np
+        2  6005     Np
+        1  352      Ncmsc
+        1  3808     Tn
+        1  4027     Np
+        1  412      Ncmsa
+2.4 vowel x lemma's main part x morph's last part x language
+     3874  segol          413      R        H
+      720  patah          408      Tn       H
+      190  tsere          410      Ncmsa    H
+       72  tsere          1008     Np       H
+       31  tsere          410      Ncmsc    H
+        9  tsere          411      Pdxcp    H
+        5  tsere          410      Np       H
+        5  tsere          6214     Np       H
+        4  patah          409      Tn       A
+        4  patah          516+     Tn       H
+        3  patah          413      Tn       H
+        3  segol          408      R        H
+        2  tsere          3317     Np       H
+        2  tsere          6005     Np       H
+        1  hataf patah    408      Tn       H
+        1  patah          3808     Tn       H
+        1  segol          408      Tn       H
+        1  tsere          352 b    Ncmsc    H
+        1  tsere          4027     Np       H
+        1  tsere          412      Ncmsa    A
+
+== 3. Every mismatch
+-- Gen 37:22  id 01bhs  plain word
+   morphhb: אַל  lemma 3808  morph HTn  (alef: patah)
+   morphhb's chanted word: אַל־ תִּשְׁפְּכוּ־ דָם֒  notes none
+   WLC 4.18: אַל־   chanted word: אַל־ תִּשְׁפְּכוּ־ דָם֒  notes none
+   WLC 4.20: אַל־   chanted word: אַל־ תִּשְׁפְּכוּ־ דָם֒  notes none
+   WLC 4.22: אַל־   chanted word: אַל־ תִּשְׁפְּכוּ־ דָם֒  notes none
+   UXLC 2.6: אַל־   chanted word: אַל־ תִּשְׁפְּכוּ־ דָם֒  notes none
+   MAM:      אַל־   chanted word: אַל־ תִּשְׁפְּכוּ־ דָם֒  notes n/a
+   MAM's alef: patah; MAM's form agrees with the lemma: no
+   verdict: slip: WLC and MAM both have the patah form; the lemma 3808 is the other negative particle (lo), a slip for 408; the morph HTn fits
+-- Exod 10:28  id 02ubY  plain word  [one of the known five]
+   morphhb: אֶל  lemma 408  morph HTn  (alef: segol)
+   morphhb's chanted word: אֶל־ תֹּ֨סֶף֙  notes none
+   WLC 4.18: אֶל־   chanted word: אֶל־ תֹּ֙סֶף֙  notes none
+   WLC 4.20: אֶל־   chanted word: אֶל־ תֹּ֙סֶף֙  notes none
+   WLC 4.22: אֶל־   chanted word: אֶל־ תֹּ֙סֶף֙  notes ['1']
+   UXLC 2.6: אֶל־   chanted word: אֶל־ תֹּ֙סֶף֙  notes none
+   MAM:      אַל־   chanted word: אַל־ תֹּ֙סֶף֙  notes n/a
+   MAM's alef: patah; MAM's form agrees with the lemma: yes
+   verdict: correction: WLC has the segol form (the preposition), MAM the patah form (the negative); lemma 408 and morph HTn both analyse MAM's form (known case)
+-- Deut 2:9  id 057a3  plain word  [one of the known five]
+   morphhb: אֶל  lemma 408  morph HR  (alef: segol)
+   morphhb's chanted word: אֶל־ תָּ֨צַר֙  notes ['U']
+   WLC 4.18: אֶל־   chanted word: אֶל־ תָּ֙צַר֙  notes ['U']
+   WLC 4.20: אֶל־   chanted word: אֶל־ תָּ֙צַר֙  notes ['U']
+   WLC 4.22: אֶל־   chanted word: אֶל־ תָּ֙צַר֙  notes ['U']
+   UXLC 2.6: אֶל־   chanted word: אֶל־ תָּ֙צַר֙  notes none
+   MAM:      אַל־   chanted word: אַל־ תָּ֙צַר֙  notes n/a
+   MAM's alef: patah; MAM's form agrees with the lemma: yes
+   verdict: correction: WLC has the segol form (the preposition), MAM the patah form (the negative); lemma 408 analyses MAM's form, morph HR WLC's; WLC's note U at the chanted word (known case)
+-- Josh 22:19  id 06Umo  plain word  [one of the known five]
+   morphhb: אֶל  lemma 408  morph HR  (alef: segol)
+   morphhb's chanted word: אֶל־ תִּמְרֹ֔דוּ  notes none
+   WLC 4.18: אֶל־   chanted word: אֶל־ תִּמְרֹ֔דוּ  notes none
+   WLC 4.20: אֶל־   chanted word: אֶל־ תִּמְרֹ֔דוּ  notes none
+   WLC 4.22: אֶל־   chanted word: אֶל־ תִּמְרֹ֔דוּ  notes ['1']
+   UXLC 2.6: אֶל־   chanted word: אֶל־ תִּמְרֹ֔דוּ  notes none
+   MAM:      אַל־   chanted word: אַל־ תִּמְרֹ֔דוּ  notes n/a
+   MAM's alef: patah; MAM's form agrees with the lemma: yes
+   verdict: correction: WLC has the segol form (the preposition), MAM the patah form (the negative); lemma 408 analyses MAM's form, morph HR WLC's (known case)
+-- Judg 19:23  id 07HwX  plain word  [one of the known five]
+   morphhb: אַל  lemma 413  morph HTn  (alef: patah)
+   morphhb's chanted word: אַל־ בֵּיתִ֔י  notes ['U']
+   WLC 4.18: אַל־   chanted word: אַל־ בֵּיתִ֔י  notes ['U']
+   WLC 4.20: אַל־   chanted word: אַל־ בֵּיתִ֔י  notes ['U']
+   WLC 4.22: אַל־   chanted word: אַל־ בֵּיתִ֔י  notes ['U']
+   UXLC 2.6: אַל־   chanted word: אַל־ בֵּיתִ֔י  notes none
+   MAM:      אֶל־   chanted word: אֶל־ בֵּיתִ֔י  notes n/a
+   MAM's alef: segol; MAM's form agrees with the lemma: yes
+   verdict: correction: WLC has the patah form (the negative), MAM the segol form (the preposition); lemma 413 analyses MAM's form, morph HTn WLC's; WLC's note U at the chanted word (known case)
+-- Jer 47:6  id 242CG  plain word  [one of the known five]
+   morphhb: אַל  lemma 413  morph HTn  (alef: patah)
+   morphhb's chanted word: אַל־ תַּעְרֵ֔ךְ  notes none
+   WLC 4.18: אַל־   chanted word: אַל־ תַּעְרֵ֔ךְ  notes none
+   WLC 4.20: אַל־   chanted word: אַל־ תַּעְרֵ֔ךְ  notes none
+   WLC 4.22: אַל־   chanted word: אַל־ תַּעְרֵ֔ךְ  notes ['1']
+   UXLC 2.6: אַל־   chanted word: אַל־ תַּעְרֵ֔ךְ  notes none
+   MAM:      אֶל־   chanted word: אֶל־ תַּעְרֵ֔ךְ  notes n/a
+   MAM's alef: segol; MAM's form agrees with the lemma: yes
+   verdict: correction: WLC has the patah form (the negative), MAM the segol form (the preposition); lemma 413 analyses MAM's form, morph HTn WLC's (known case)
+-- Jer 51:3  id 24JqK  plain word
+   morphhb: וְ/אֶל  lemma c/408  morph HC/R  (alef: segol)
+   morphhb's chanted word: וְאֶל־ יִתְעַ֖ל  notes none
+   WLC 4.18: וְאֶל־   chanted word: וְאֶל־ יִתְעַ֖ל  notes none
+   WLC 4.20: וְאֶל־   chanted word: וְאֶל־ יִתְעַ֖ל  notes none
+   WLC 4.22: וְאֶל־   chanted word: וְאֶל־ יִתְעַ֖ל  notes none
+   UXLC 2.6: וְאֶל־   chanted word: וְאֶל־ יִתְעַ֖ל  notes none
+   MAM:      וְאֶֽל־   chanted word: וְאֶֽל־ יִתְעַ֖ל  notes n/a
+   MAM's alef: segol; MAM's form agrees with the lemma: no
+   verdict: slip: WLC and MAM both have the segol form; lemma 408 (the negative) fits neither, morph HR fits both; in the same verse the patah form 249Bc carries lemma 413, so the verse's two lemmas look exchanged
+-- Jer 51:3  id 249Bc  plain word
+   morphhb: וְ/אַֽל  lemma c/413  morph HC/Tn  (alef: patah)
+   morphhb's chanted word: וְאַֽל־ תַּחְמְלוּ֙  notes none
+   WLC 4.18: וְאַֽל־   chanted word: וְאַֽל־ תַּחְמְלוּ֙  notes none
+   WLC 4.20: וְאַֽל־   chanted word: וְאַֽל־ תַּחְמְלוּ֙  notes none
+   WLC 4.22: וְאַֽל־   chanted word: וְאַֽל־ תַּחְמְלוּ֙  notes none
+   UXLC 2.6: וְאַֽל־   chanted word: וְאַֽל־ תַּחְמְלוּ֙  notes none
+   MAM:      וְאַֽל־   chanted word: וְאַֽל־ תַּחְמְלוּ֙  notes n/a
+   MAM's alef: patah; MAM's form agrees with the lemma: no
+   verdict: slip: WLC and MAM both have the patah form; lemma 413 (the preposition) fits neither, morph HTn fits both; see 24JqK
+-- Ps 35:22  id 19HTT  plain word
+   morphhb: אֲל  lemma 408  morph HTn  (alef: hataf patah)
+   morphhb's chanted word: אֲל־ תִּרְחַ֥ק  notes none
+   WLC 4.18: אֲל־   chanted word: אֲל־ תִּרְחַ֥ק  notes none
+   WLC 4.20: אֲל־   chanted word: אֲל־ תִּרְחַ֥ק  notes none
+   WLC 4.22: אֲל־   chanted word: אֲל־ תִּרְחַ֥ק  notes none
+   UXLC 2.6: אֲל־   chanted word: אֲל־ תִּרְחַ֥ק  notes none
+   MAM:      אַל־   chanted word: אַל־ תִּרְחַ֥ק  notes n/a
+   MAM's alef: patah; MAM's form agrees with the lemma: yes
+   verdict: anomaly: WLC has a hataf patah on the alef, MAM a patah; the hataf patah form is no other word (the preposition's alef takes segol), so lemma 408 and morph HTn are the only analysis of either form
+-- Ps 57:1  id 19N8P  plain word
+   morphhb: אַל  lemma 516+  morph HTn  (alef: patah)
+   morphhb's chanted word: אַל־ תַּ֭שְׁחֵת  notes none
+   WLC 4.18: אַל־   chanted word: אַל־ תַּ֭שְׁחֵת  notes none
+   WLC 4.20: אַל־   chanted word: אַל־ תַּ֭שְׁחֵת  notes none
+   WLC 4.22: אַל־   chanted word: אַל־ תַּ֭שְׁחֵת  notes none
+   UXLC 2.6: אַל־   chanted word: אַל־ תַּ֭שְׁחֵת  notes none
+   MAM:      אַל־   chanted word: אַל־ תַּ֭שְׁחֵת  notes n/a
+   MAM's alef: patah; MAM's form agrees with the lemma: no
+   verdict: defensible: the psalm title Al-tashheth, lemma 516 as a name; WLC and MAM agree
+-- Ps 58:1  id 19BYz  plain word
+   morphhb: אַל  lemma 516+  morph HTn  (alef: patah)
+   morphhb's chanted word: אַל־ תַּשְׁחֵ֗ת  notes none
+   WLC 4.18: אַל־   chanted word: אַל־ תַּשְׁחֵ֗ת  notes none
+   WLC 4.20: אַל־   chanted word: אַל־ תַּשְׁחֵ֗ת  notes none
+   WLC 4.22: אַל־   chanted word: אַל־ תַּשְׁחֵ֗ת  notes none
+   UXLC 2.6: אַל־   chanted word: אַל־ תַּשְׁחֵ֗ת  notes none
+   MAM:      אַל־   chanted word: אַל־ תַּשְׁחֵ֗ת  notes n/a
+   MAM's alef: patah; MAM's form agrees with the lemma: no
+   verdict: defensible: the psalm title Al-tashheth, lemma 516 as a name; WLC and MAM agree
+-- Ps 59:1  id 19ZFs  plain word
+   morphhb: אַל  lemma 516+  morph HTn  (alef: patah)
+   morphhb's chanted word: אַל־ תַּשְׁחֵת֮  notes none
+   WLC 4.18: אַל־   chanted word: אַל־ תַּשְׁחֵת֮  notes none
+   WLC 4.20: אַל־   chanted word: אַל־ תַּשְׁחֵת֮  notes none
+   WLC 4.22: אַל־   chanted word: אַל־ תַּשְׁחֵת֮  notes none
+   UXLC 2.6: אַל־   chanted word: אַל־ תַּשְׁחֵת֮  notes none
+   MAM:      אַל־   chanted word: אַל־ תַּשְׁחֵת֮  notes n/a
+   MAM's alef: patah; MAM's form agrees with the lemma: no
+   verdict: defensible: the psalm title Al-tashheth, lemma 516 as a name; WLC and MAM agree
+-- Ps 75:1  id 19ivp  plain word
+   morphhb: אַל  lemma 516+  morph HTn  (alef: patah)
+   morphhb's chanted word: אַל־ תַּשְׁחֵ֑ת  notes none
+   WLC 4.18: אַל־   chanted word: אַל־ תַּשְׁחֵ֑ת  notes none
+   WLC 4.20: אַל־   chanted word: אַל־ תַּשְׁחֵ֑ת  notes none
+   WLC 4.22: אַל־   chanted word: אַל־ תַּשְׁחֵ֑ת  notes none
+   UXLC 2.6: אַל־   chanted word: אַל־ תַּשְׁחֵ֑ת  notes none
+   MAM:      אַל־   chanted word: אַל־ תַּשְׁחֵ֑ת  notes n/a
+   MAM's alef: patah; MAM's form agrees with the lemma: no
+   verdict: defensible: the psalm title Al-tashheth, lemma 516 as a name; WLC and MAM agree
+-- Dan 2:24  id 27F5r  plain word
+   morphhb: אַל  lemma 409  morph ATn  (alef: patah)
+   morphhb's chanted word: אַל־ תְּהוֹבֵ֔ד  notes none
+   WLC 4.18: אַל־   chanted word: אַל־ תְּהוֹבֵ֔ד  notes none
+   WLC 4.20: אַל־   chanted word: אַל־ תְּהוֹבֵ֔ד  notes none
+   WLC 4.22: אַל־   chanted word: אַל־ תְּהוֹבֵ֔ד  notes none
+   UXLC 2.6: אַל־   chanted word: אַל־ תְּהוֹבֵ֔ד  notes none
+   MAM:      אַל־   chanted word: אַל־ תְּהוֹבֵ֔ד  notes n/a
+   MAM's alef: patah; MAM's form agrees with the lemma: no
+   verdict: defensible: the Aramaic negative, lemma 409, morph ATn; WLC and MAM agree
+-- Dan 4:16  id 27xTA  plain word
+   morphhb: אַֽל  lemma 409  morph ATn  (alef: patah)
+   morphhb's chanted word: אַֽל־ יְבַהֲלָ֔ךְ  notes none
+   WLC 4.18: אַֽל־   chanted word: אַֽל־ יְבַהֲלָ֔ךְ  notes none
+   WLC 4.20: אַֽל־   chanted word: אַֽל־ יְבַהֲלָ֔ךְ  notes none
+   WLC 4.22: אַֽל־   chanted word: אַֽל־ יְבַהֲלָ֔ךְ  notes none
+   UXLC 2.6: אַֽל־   chanted word: אַֽל־ יְבַהֲלָ֔ךְ  notes none
+   MAM:      אַֽל־   chanted word: אַֽל־ יְבַהֲלָ֔ךְ  notes n/a
+   MAM's alef: patah; MAM's form agrees with the lemma: no
+   verdict: defensible: the Aramaic negative, lemma 409, morph ATn; WLC and MAM agree
+-- Dan 5:10  id 27DD6  plain word
+   morphhb: אַֽל  lemma 409  morph ATn  (alef: patah)
+   morphhb's chanted word: אַֽל־ יְבַהֲלוּךְ֙  notes none
+   WLC 4.18: אַֽל־   chanted word: אַֽל־ יְבַהֲלוּךְ֙  notes none
+   WLC 4.20: אַֽל־   chanted word: אַֽל־ יְבַהֲלוּךְ֙  notes none
+   WLC 4.22: אַֽל־   chanted word: אַֽל־ יְבַהֲלוּךְ֙  notes none
+   UXLC 2.6: אַֽל־   chanted word: אַֽל־ יְבַהֲלוּךְ֙  notes none
+   MAM:      אַֽל־   chanted word: אַֽל־ יְבַהֲלוּךְ֙  notes n/a
+   MAM's alef: patah; MAM's form agrees with the lemma: no
+   verdict: defensible: the Aramaic negative, lemma 409, morph ATn; WLC and MAM agree
+-- Dan 5:10  id 27B7W  plain word
+   morphhb: אַל  lemma 409  morph ATn  (alef: patah)
+   morphhb's chanted word: אַל־ יִשְׁתַּנּֽוֹ  notes none
+   WLC 4.18: אַל־   chanted word: אַל־ יִשְׁתַּנּֽוֹ  notes none
+   WLC 4.20: אַל־   chanted word: אַל־ יִשְׁתַּנּֽוֹ  notes none
+   WLC 4.22: אַל־   chanted word: אַל־ יִשְׁתַּנּֽוֹ  notes none
+   UXLC 2.6: אַל־   chanted word: אַל־ יִשְׁתַּנּֽוֹ  notes none
+   MAM:      אַל־   chanted word: אַל־ יִשְׁתַּנּֽוֹ  notes n/a
+   MAM's alef: patah; MAM's form agrees with the lemma: no
+   verdict: defensible: the Aramaic negative, lemma 409, morph ATn; WLC and MAM agree
+
+== 4. Every alef-lamed word whose alef has another vowel in MAM's atom
+   Exod 10:28     02ubY  morphhb אֶל (segol) lemma 408 morph HTn | MAM אַל־ (patah) | lemma reads MAM's form
+   Deut 2:9       057a3  morphhb אֶל (segol) lemma 408 morph HR | MAM אַל־ (patah) | lemma reads MAM's form
+   Josh 22:19     06Umo  morphhb אֶל (segol) lemma 408 morph HR | MAM אַל־ (patah) | lemma reads MAM's form
+   Judg 19:23     07HwX  morphhb אַל (patah) lemma 413 morph HTn | MAM אֶל־ (segol) | lemma reads MAM's form
+   Jer 47:6       242CG  morphhb אַל (patah) lemma 413 morph HTn | MAM אֶל־ (segol) | lemma reads MAM's form
+   Ps 35:22       19HTT  morphhb אֲל (hataf patah) lemma 408 morph HTn | MAM אַל־ (patah) | lemma reads MAM's form
+
+== 5. Alef-lamed words not aligned one to one with a MAM atom of the same letters
+   2Sam 2:30      10oCH  morphhb אֵֽל lemma 410 morph HNp | MAM block (replace): וַעֲשָׂהאֵֽל
+   2Sam 3:27      10L6s  morphhb אֵ֥ל lemma 6214 morph HNp | MAM block (replace): עֲשָׂהאֵ֥ל
+   2Sam 23:24     10BYD  morphhb אֵ֥ל lemma 6214 morph HNp | MAM block (replace): עֲשָׂהאֵ֥ל
+   1Chr 2:16      13LsC  morphhb אֵ֖ל lemma 6214 morph HNp | MAM block (replace): וַעֲשָׂהאֵ֖ל
+   1Chr 11:26     13Gbm  morphhb אֵל֙ lemma 6214 morph HNp | MAM block (replace): עֲשָׂהאֵל֙
+   1Chr 27:7      13qJg  morphhb אֵל֙ lemma 6214 morph HNp | MAM block (replace): עֲשָׂהאֵל֙

@@ -1,0 +1,729 @@
+# written by scripts/check_zwj_qadma_history.py; no requests made
+
+== A. d4265dfa, whole files
+   1Chr.xml       zwj=    0 qadma=  355 pashta=  778 cgj=    0 zwnj=    0
+   1Kgs.xml       zwj=    0 qadma=  635 pashta=  997 cgj=    0 zwnj=    0
+   1Sam.xml       zwj=    0 qadma=  572 pashta= 1078 cgj=    0 zwnj=    0
+   2Chr.xml       zwj=    0 qadma=  625 pashta= 1036 cgj=    0 zwnj=    0
+   2Kgs.xml       zwj=    0 qadma=  551 pashta=  907 cgj=    0 zwnj=    0
+   2Sam.xml       zwj=    0 qadma=  501 pashta=  858 cgj=    0 zwnj=    0
+   Amos.xml       zwj=    0 qadma=   75 pashta=  160 cgj=    0 zwnj=    0
+   Dan.xml        zwj=    0 qadma=  215 pashta=  541 cgj=    0 zwnj=    0
+   Deut.xml       zwj=    0 qadma=  626 pashta= 1047 cgj=    0 zwnj=    0
+   Eccl.xml       zwj=    0 qadma=   96 pashta=  205 cgj=    0 zwnj=    0
+   Esth.xml       zwj=    0 qadma=  157 pashta=  232 cgj=    0 zwnj=    0
+   Exod.xml       zwj=    0 qadma=  609 pashta= 1142 cgj=    0 zwnj=    0
+   Ezek.xml       zwj=    0 qadma=  785 pashta= 1538 cgj=    0 zwnj=    0
+   Ezra.xml       zwj=    0 qadma=  140 pashta=  267 cgj=    0 zwnj=    0
+   Gen.xml        zwj=    0 qadma=  730 pashta= 1431 cgj=    0 zwnj=    0
+   Hab.xml        zwj=    0 qadma=   16 pashta=   62 cgj=    0 zwnj=    0
+   Hag.xml        zwj=    0 qadma=   26 pashta=   42 cgj=    0 zwnj=    0
+   Hos.xml        zwj=    0 qadma=   69 pashta=  197 cgj=    0 zwnj=    0
+   Isa.xml        zwj=    0 qadma=  557 pashta= 1481 cgj=    0 zwnj=    0
+   Jer.xml        zwj=    0 qadma=  887 pashta= 1687 cgj=    0 zwnj=    0
+   Job.xml        zwj=    0 qadma=   77 pashta=   51 cgj=    0 zwnj=    0
+   Joel.xml       zwj=    0 qadma=   29 pashta=   88 cgj=    0 zwnj=    0
+   Jonah.xml      zwj=    0 qadma=   23 pashta=   53 cgj=    0 zwnj=    0
+   Josh.xml       zwj=    0 qadma=  519 pashta=  732 cgj=    0 zwnj=    0
+   Judg.xml       zwj=    0 qadma=  433 pashta=  775 cgj=    0 zwnj=    0
+   Lam.xml        zwj=    0 qadma=   75 pashta=  172 cgj=    0 zwnj=    0
+   Lev.xml        zwj=    0 qadma=  457 pashta=  777 cgj=    0 zwnj=    0
+   Mal.xml        zwj=    0 qadma=   37 pashta=   86 cgj=    0 zwnj=    0
+   Mic.xml        zwj=    0 qadma=   40 pashta=  130 cgj=    0 zwnj=    0
+   Nah.xml        zwj=    0 qadma=   25 pashta=   51 cgj=    0 zwnj=    0
+   Neh.xml        zwj=    0 qadma=  230 pashta=  375 cgj=    0 zwnj=    0
+   Num.xml        zwj=    0 qadma=  598 pashta= 1055 cgj=    0 zwnj=    0
+   Obad.xml       zwj=    0 qadma=    8 pashta=   21 cgj=    0 zwnj=    0
+   Prov.xml       zwj=    0 qadma=   33 pashta=    0 cgj=    0 zwnj=    0
+   Ps.xml         zwj=    0 qadma=  292 pashta=    0 cgj=    0 zwnj=    0
+   Ruth.xml       zwj=    0 qadma=   61 pashta=  117 cgj=    0 zwnj=    0
+   Song.xml       zwj=    0 qadma=   53 pashta=  144 cgj=    0 zwnj=    0
+   VerseMap.xml   zwj=    0 qadma=    0 pashta=    0 cgj=    0 zwnj=    0
+   Zech.xml       zwj=    0 qadma=  125 pashta=  260 cgj=    0 zwnj=    0
+   Zeph.xml       zwj=    0 qadma=   27 pashta=   74 cgj=    0 zwnj=    0
+   TOTAL          zwj=    0 qadma=11369 pashta=20647 cgj=    0 zwnj=    0
+
+== B. every commit touching each book with saved history, oldest first
+-- Dan: 63 commits in the listing
+   2009-12-28T20:00:24Z 07647ae2 (not saved)                                                    | Moved WLC xml files to a wlc subdirectory.
+   2010-01-08T14:40:16Z bba17e45 (not saved)                                                    | Brought phrases linked by a maqqef onto the same line (excluding K/Q)
+   2010-01-13T03:13:40Z 5018d9b5 (not saved)                                                    | Changed masoretic paragraphing to new markup
+   2010-01-13T03:25:56Z a0703ae7 (not saved)                                                    | Moved sof pasuq to its own element
+   2010-01-13T12:26:42Z 9bd5d8ad (not saved)                                                    | Moved paseq to its own seg element
+   2010-01-16T22:26:01Z 3d250cb6 (not saved)                                                    | Changed all ketiv/qere readings. Added Daniel as a contributor.
+   2010-01-17T21:53:18Z f58c4008 (not saved)                                                    | Strong numbers for Divine Name corrected.
+   2010-01-19T12:17:25Z e7fcef7a (not saved)                                                    | Moved maqqefs out of w elements, and eliminated lemma="0".
+   2010-01-20T13:00:21Z b88ce67a (not saved)                                                    | Corrected ketiv/qeres. Inserted notes in place of references.
+   2010-03-31T12:08:52Z 57e5e441 (not saved)                                                    | Update to WLC 4.12.  Implements holam haser for vav, and various corre
+   2011-01-20T13:01:40Z 5ec80c74 (not saved)                                                    | Strong numbers for phrases entended, appending + to each word before t
+   2011-01-22T00:01:58Z 57206c9b (not saved)                                                    | Updated to WLC version 4.14.
+   2011-01-28T14:11:32Z a52c1012 (not saved)                                                    | Augmented Strong numbers completed.
+   2011-01-30T14:37:02Z fe661292 (not saved)                                                    | Prefixes added to augmented Strong numbers.
+   2011-03-05T19:20:19Z 753f97af (not saved)                                                    | Yalak Strong numbers changed to 3212, to agree with KJV.
+   2011-04-16T11:33:06Z 26498fd9 (not saved)                                                    | Changes due to TWOT numbers and verbal roots.
+   2012-01-27T00:53:50Z c0af6994 (not saved)                                                    | Strong number corrections.
+   2012-03-08T02:29:28Z 6a80f089 (not saved)                                                    | Corrected 6635.
+   2012-07-19T00:50:46Z 11626b6f (not saved)                                                    | Update to WLC 4.16.
+   2012-07-20T13:16:18Z d598fef6 (not saved)                                                    | Strong number corrections.
+   2013-02-27T11:41:15Z 1376cd7a (not saved)                                                    | Changed KJV reference notes, Strong number corrections.
+   2013-07-04T18:15:40Z 2772ac0e (not saved)                                                    | First installment updating notes.
+   2013-07-11T23:34:24Z d1325011 (not saved)                                                    | Update to WLC 4.18
+   2013-07-13T23:55:16Z 3a1c8784 (not saved)                                                    | Corrections for enosh.
+   2013-07-17T00:29:38Z 27179eda (not saved)                                                    | Structure attributes added.
+   2013-09-17T23:58:23Z 1dee0226 (not saved)                                                    | Corrections to augments.
+   2013-12-12T01:38:58Z 56b51322 (not saved)                                                    | First release of morphology.
+   2013-12-15T00:39:15Z d4f37610 (not saved)                                                    | Corrections to ketiv/qere numbering.
+   2014-02-04T14:13:54Z 380f4219 (not saved)                                                    | Corrected pashta in the middle of a word.
+   2015-06-17T00:26:09Z db553e1d (not saved)                                                    | Various corrections.
+   2016-01-24T01:09:19Z cd726c7c zwj=    0 qadma=  215 pashta=  541 cgj=    0 zwnj=    0 | Various corrections
+   2016-03-04T00:57:55Z 2201c6a7 (not saved)                                                    | Update to WLC 4.20
+   2016-03-08T12:53:00Z 6887dd0a (not saved)                                                    | Textual corrections.
+   2017-11-23T16:53:16Z a573a984 (not saved)                                                    | Various corrections.
+   2017-12-10T07:20:17Z 097d0e42 zwj=    0 qadma=  215 pashta=  541 cgj=    0 zwnj=    0 | added phase 1 parsings--ruth, obad, jonah, joel complete; other books 
+   2017-12-14T19:27:17Z 3094c7ec (not saved)                                                    | Fixed license in XML files to be CC BY 4.0
+   2018-01-02T21:53:47Z b4dc98ad zwj=    0 qadma=  215 pashta=  541 cgj=    0 zwnj=    0 | Correction of the double-escaped &
+   2018-01-04T22:51:17Z ba378e75 zwj=    0 qadma=  215 pashta=  541 cgj=    0 zwnj=    0 | 7 books newly complete
+   2018-04-15T13:28:47Z 019b22f6 zwj=    0 qadma=  215 pashta=  541 cgj=    0 zwnj=    0 | word division fixes
+   2018-04-15T14:20:01Z bc20b79b zwj=    0 qadma=  215 pashta=  541 cgj=    0 zwnj=    0 | Removed added variant reading for now (will add back at end of phase 1
+   2018-04-23T19:11:30Z 32dd0c4d (not saved)                                                    | completed Lamentations, Esther, Micah, Ecclesiastes, Amos
+   2018-06-02T13:54:37Z 12505532 zwj=    0 qadma=  215 pashta=  541 cgj=    0 zwnj=    0 | Updated headers
+   2018-12-14T14:18:08Z f0b4e882 zwj=    0 qadma=  215 pashta=  541 cgj=    0 zwnj=    0 | Addition of almost all verifieds
+   2018-12-14T14:45:21Z 4954a8d3 (not saved)                                                    | Added all contributors to each file
+   2018-12-14T15:34:23Z 91f0a521 (not saved)                                                    | fixed ordering for contributors, added missing morphs (except 2)
+   2018-12-15T15:38:24Z 8954c93b (not saved)                                                    | Several lemma updates
+   2018-12-15T16:00:03Z 55bc539d zwj=    0 qadma=  215 pashta=  541 cgj=    0 zwnj=    0 | make lemma of 853/4 match its parsing
+   2018-12-16T13:28:26Z 6d412616 (not saved)                                                    | A few more 853/4 fixes
+   2018-12-20T14:57:46Z a92b95a1 (not saved)                                                    | Correction of 5 words from Hebrew to Aramaic
+   2018-12-21T09:56:29Z e0504653 (not saved)                                                    | Corrected word in Job 30:24 (was indicated as aramaic)
+   2018-12-29T15:40:37Z e4855e94 zwj=    0 qadma=  215 pashta=  541 cgj=    0 zwnj=    0 | Updated morph of words where number of morph parts did not match word 
+   2019-01-13T08:31:14Z b52b78f5 (not saved)                                                    | Updated morph of סביב where it was marked an adverb
+   2019-01-13T09:13:12Z 7be49a56 zwj=    0 qadma=  215 pashta=  541 cgj=    0 zwnj=    0 | Made nouns either gender both, masc or fem
+   2019-01-13T09:28:20Z 5dc21275 zwj=    0 qadma=  215 pashta=  541 cgj=    0 zwnj=    0 | Added unique ids
+   2019-01-13T10:31:14Z 456c54c6 zwj=    0 qadma=  215 pashta=  541 cgj=    0 zwnj=    0 | Restored exegesis note about change in word division
+   2019-01-16T10:27:24Z 8774f10b (not saved)                                                    | Fixed typo in morph of H1994 in Dan 2:35
+   2019-01-16T10:28:49Z f7b39f6d (not saved)                                                    | Corrected missing s in morph (Dan 5:23)
+   2020-01-14T11:33:43Z 140da8d7 (not saved)                                                    | fix incorrect morph
+   2020-01-14T11:40:27Z cd0eaf6b (not saved)                                                    | fix incorrect morph
+   2020-01-14T16:23:17Z 050488bd (not saved)                                                    | fix morph
+   2020-01-14T23:47:15Z f58a124b (not saved)                                                    | fix morph
+   2021-07-16T22:16:54Z 65214d2b (not saved)                                                    | Added 'x-ketiv' to @type attributes for all nodes in Ketiv readings.  
+   2022-03-18T20:04:48Z 8de89602 (not saved)                                                    | Changes requested in earlier set of OSHB issues.
+   head                 d4265dfa zwj=    0 qadma=  215 pashta=  541 cgj=    0 zwnj=    0 | the file at d4265dfa
+-- Deut: 70 commits in the listing
+   2009-12-28T20:00:24Z 07647ae2 (not saved)                                                    | Moved WLC xml files to a wlc subdirectory.
+   2010-01-08T14:40:16Z bba17e45 (not saved)                                                    | Brought phrases linked by a maqqef onto the same line (excluding K/Q)
+   2010-01-13T03:13:40Z 5018d9b5 (not saved)                                                    | Changed masoretic paragraphing to new markup
+   2010-01-13T03:25:56Z a0703ae7 (not saved)                                                    | Moved sof pasuq to its own element
+   2010-01-13T12:26:42Z 9bd5d8ad (not saved)                                                    | Moved paseq to its own seg element
+   2010-01-16T14:04:01Z 477e1cb9 (not saved)                                                    | Changed mixed ketiv/qere markup.  Minor corrections to validate files.
+   2010-01-16T22:26:01Z 3d250cb6 (not saved)                                                    | Changed all ketiv/qere readings. Added Daniel as a contributor.
+   2010-01-17T21:53:18Z f58c4008 zwj=    2 qadma=  441 pashta= 1222 cgj=    0 zwnj=    0 | Strong numbers for Divine Name corrected.
+   2010-01-19T12:17:25Z e7fcef7a (not saved)                                                    | Moved maqqefs out of w elements, and eliminated lemma="0".
+   2010-01-20T13:00:21Z b88ce67a (not saved)                                                    | Corrected ketiv/qeres. Inserted notes in place of references.
+   2010-03-31T12:08:52Z 57e5e441 (not saved)                                                    | Update to WLC 4.12.  Implements holam haser for vav, and various corre
+   2010-07-02T01:28:44Z 9c46c1e1 zwj=    2 qadma=  441 pashta= 1222 cgj=    0 zwnj=    0 | Strong number corrections.
+   2010-07-13T00:55:47Z 73784451 zwj=    2 qadma=  442 pashta= 1231 cgj=    0 zwnj=    0 | Separated the accents of the Ten Commandments, to conform with the WLC
+   2010-07-17T23:14:46Z c2f87ac2 zwj=    2 qadma=  442 pashta= 1231 cgj=    0 zwnj=    0 | Strong number corrections: Deut 9.
+   2010-08-08T21:50:43Z 18168e2c (not saved)                                                    | Strong number correction: Deut.17.8.
+   2010-08-17T00:55:44Z c889f134 (not saved)                                                    | Strong number correction: Deut.21.10.
+   2010-08-17T13:22:53Z 9497d5f5 zwj=    2 qadma=  442 pashta= 1231 cgj=    0 zwnj=    0 | Strong number correction : Deut.21.16
+   2010-09-16T14:42:47Z e833e969 (not saved)                                                    | Strong number correction: Deut.26.5.
+   2010-09-18T17:03:37Z dc6db141 (not saved)                                                    | Strong number correction: Deut.26.11.
+   2010-09-28T12:47:21Z 77be2531 (not saved)                                                    | Strong number correction: Deut.27.2,4.
+   2010-10-07T12:58:01Z 67241d76 zwj=    2 qadma=  442 pashta= 1231 cgj=    0 zwnj=    0 | Qere Strong numbers distinguished: Deut.28.27, 30.
+   2010-10-12T13:25:01Z f90341d6 (not saved)                                                    | Strong number correction: Deut.31.18.
+   2011-01-17T22:30:16Z 2c2319d2 zwj=    2 qadma=  442 pashta= 1231 cgj=    0 zwnj=    0 | Strong number corrections, many missing Strong numbers added.
+   2011-01-20T13:01:40Z 5ec80c74 zwj=    2 qadma=  442 pashta= 1231 cgj=    0 zwnj=    0 | Strong numbers for phrases entended, appending + to each word before t
+   2011-01-22T00:01:58Z 57206c9b zwj=    2 qadma=  442 pashta= 1231 cgj=    0 zwnj=    0 | Updated to WLC version 4.14.
+   2011-01-28T14:11:32Z a52c1012 zwj=    2 qadma=  442 pashta= 1231 cgj=    0 zwnj=    0 | Augmented Strong numbers completed.
+   2011-01-29T13:52:33Z e2449e19 (not saved)                                                    | Corrections for the index.
+   2011-01-30T14:37:02Z fe661292 (not saved)                                                    | Prefixes added to augmented Strong numbers.
+   2011-03-05T19:20:19Z 753f97af (not saved)                                                    | Yalak Strong numbers changed to 3212, to agree with KJV.
+   2011-04-02T16:50:31Z ba41e3da (not saved)                                                    | Corrections to divided accents.
+   2011-04-16T11:33:06Z 26498fd9 (not saved)                                                    | Changes due to TWOT numbers and verbal roots.
+   2012-01-27T00:53:50Z c0af6994 (not saved)                                                    | Strong number corrections.
+   2012-07-19T00:50:46Z 11626b6f (not saved)                                                    | Update to WLC 4.16.
+   2012-07-20T13:16:18Z d598fef6 (not saved)                                                    | Strong number corrections.
+   2013-02-27T11:41:15Z 1376cd7a zwj=    2 qadma=  442 pashta= 1231 cgj=    0 zwnj=    0 | Changed KJV reference notes, Strong number corrections.
+   2013-07-04T18:15:40Z 2772ac0e (not saved)                                                    | First installment updating notes.
+   2013-07-11T23:34:24Z d1325011 (not saved)                                                    | Update to WLC 4.18
+   2013-07-13T23:55:16Z 3a1c8784 (not saved)                                                    | Corrections for enosh.
+   2013-07-17T00:29:38Z 27179eda zwj=    2 qadma=  442 pashta= 1231 cgj=    0 zwnj=    0 | Structure attributes added.
+   2013-09-02T17:27:49Z 20f4e641 (not saved)                                                    | Minor updates to augments.
+   2013-09-17T23:58:23Z 1dee0226 zwj=    2 qadma=  442 pashta= 1231 cgj=    0 zwnj=    0 | Corrections to augments.
+   2013-12-12T01:38:58Z 56b51322 zwj=    0 qadma=  442 pashta= 1231 cgj=    0 zwnj=    0 | First release of morphology.
+   2014-02-04T14:13:54Z 380f4219 zwj=    0 qadma=  626 pashta= 1047 cgj=    0 zwnj=    0 | Corrected pashta in the middle of a word.
+   2016-03-04T00:57:55Z 2201c6a7 (not saved)                                                    | Update to WLC 4.20
+   2016-09-03T21:30:54Z 7f6aa930 (not saved)                                                    | Ongoing corrections.
+   2016-11-01T00:07:25Z 68cb4ba8 (not saved)                                                    | Lemma correction in Deuteronomy.
+   2016-11-11T22:09:28Z 5a5c0962 (not saved)                                                    | Numbering correction.
+   2017-11-23T16:53:16Z a573a984 (not saved)                                                    | Various corrections.
+   2017-11-27T13:17:18Z 08574817 (not saved)                                                    | Fixed m/854.
+   2017-12-10T07:20:17Z 097d0e42 (not saved)                                                    | added phase 1 parsings--ruth, obad, jonah, joel complete; other books 
+   2017-12-14T19:27:17Z 3094c7ec (not saved)                                                    | Fixed license in XML files to be CC BY 4.0
+   2018-01-02T21:53:47Z b4dc98ad zwj=    0 qadma=  626 pashta= 1047 cgj=    0 zwnj=    0 | Correction of the double-escaped &
+   2018-01-04T22:51:17Z ba378e75 (not saved)                                                    | 7 books newly complete
+   2018-04-23T19:11:30Z 32dd0c4d zwj=    0 qadma=  626 pashta= 1047 cgj=    0 zwnj=    0 | completed Lamentations, Esther, Micah, Ecclesiastes, Amos
+   2018-06-02T13:54:37Z 12505532 zwj=    0 qadma=  626 pashta= 1047 cgj=    0 zwnj=    0 | Updated headers
+   2018-12-14T14:18:08Z f0b4e882 zwj=    0 qadma=  626 pashta= 1047 cgj=    0 zwnj=    0 | Addition of almost all verifieds
+   2018-12-14T14:45:21Z 4954a8d3 (not saved)                                                    | Added all contributors to each file
+   2018-12-14T15:34:23Z 91f0a521 (not saved)                                                    | fixed ordering for contributors, added missing morphs (except 2)
+   2018-12-15T15:38:24Z 8954c93b (not saved)                                                    | Several lemma updates
+   2018-12-15T15:46:53Z a7b1d8b2 (not saved)                                                    | mark צָהֳרָיִם consistently plural
+   2018-12-15T16:00:03Z 55bc539d zwj=    0 qadma=  626 pashta= 1047 cgj=    0 zwnj=    0 | make lemma of 853/4 match its parsing
+   2018-12-16T13:28:26Z 6d412616 (not saved)                                                    | A few more 853/4 fixes
+   2018-12-20T14:57:46Z a92b95a1 (not saved)                                                    | Correction of 5 words from Hebrew to Aramaic
+   2018-12-21T09:56:29Z e0504653 (not saved)                                                    | Corrected word in Job 30:24 (was indicated as aramaic)
+   2018-12-29T15:40:37Z e4855e94 (not saved)                                                    | Updated morph of words where number of morph parts did not match word 
+   2019-01-13T08:31:14Z b52b78f5 (not saved)                                                    | Updated morph of סביב where it was marked an adverb
+   2019-01-13T09:13:12Z 7be49a56 (not saved)                                                    | Made nouns either gender both, masc or fem
+   2019-01-13T09:28:20Z 5dc21275 (not saved)                                                    | Added unique ids
+   2021-07-16T22:16:54Z 65214d2b (not saved)                                                    | Added 'x-ketiv' to @type attributes for all nodes in Ketiv readings.  
+   2022-03-10T22:52:57Z 2408955b zwj=    0 qadma=  626 pashta= 1047 cgj=    0 zwnj=    0 | Changes requested by Randall Tan and Joel Ruark from Clear Trees work.
+   head                 d4265dfa zwj=    0 qadma=  626 pashta= 1047 cgj=    0 zwnj=    0 | the file at d4265dfa
+-- Eccl: 53 commits in the listing
+   2009-12-28T20:00:24Z 07647ae2 (not saved)                                                    | Moved WLC xml files to a wlc subdirectory.
+   2010-01-08T14:40:16Z bba17e45 (not saved)                                                    | Brought phrases linked by a maqqef onto the same line (excluding K/Q)
+   2010-01-13T03:13:40Z 5018d9b5 (not saved)                                                    | Changed masoretic paragraphing to new markup
+   2010-01-13T03:25:56Z a0703ae7 (not saved)                                                    | Moved sof pasuq to its own element
+   2010-01-13T12:26:42Z 9bd5d8ad (not saved)                                                    | Moved paseq to its own seg element
+   2010-01-16T22:26:01Z 3d250cb6 (not saved)                                                    | Changed all ketiv/qere readings. Added Daniel as a contributor.
+   2010-01-19T12:17:25Z e7fcef7a (not saved)                                                    | Moved maqqefs out of w elements, and eliminated lemma="0".
+   2010-01-20T13:00:21Z b88ce67a (not saved)                                                    | Corrected ketiv/qeres. Inserted notes in place of references.
+   2010-02-27T00:42:50Z 2b7225d1 zwj=    0 qadma=   58 pashta=  243 cgj=    0 zwnj=    0 | Strong number corrections.
+   2010-03-31T12:08:52Z 57e5e441 zwj=    0 qadma=   58 pashta=  243 cgj=    0 zwnj=    0 | Update to WLC 4.12.  Implements holam haser for vav, and various corre
+   2010-04-20T00:15:04Z 62939059 zwj=    0 qadma=   58 pashta=  243 cgj=    0 zwnj=    0 | Strong number correction: Eccl.6.10.
+   2011-01-22T00:01:58Z 57206c9b zwj=    0 qadma=   58 pashta=  243 cgj=    0 zwnj=    0 | Updated to WLC version 4.14.
+   2011-01-28T14:11:32Z a52c1012 zwj=    0 qadma=   58 pashta=  243 cgj=    0 zwnj=    0 | Augmented Strong numbers completed.
+   2011-01-30T14:37:02Z fe661292 (not saved)                                                    | Prefixes added to augmented Strong numbers.
+   2011-03-05T19:20:19Z 753f97af (not saved)                                                    | Yalak Strong numbers changed to 3212, to agree with KJV.
+   2011-04-16T11:33:06Z 26498fd9 (not saved)                                                    | Changes due to TWOT numbers and verbal roots.
+   2012-01-27T00:53:50Z c0af6994 zwj=    0 qadma=   58 pashta=  243 cgj=    0 zwnj=    0 | Strong number corrections.
+   2012-07-19T00:50:46Z 11626b6f zwj=    0 qadma=   58 pashta=  243 cgj=    0 zwnj=    0 | Update to WLC 4.16.
+   2012-07-20T13:16:18Z d598fef6 zwj=    0 qadma=   58 pashta=  243 cgj=    0 zwnj=    0 | Strong number corrections.
+   2013-02-27T11:41:15Z 1376cd7a (not saved)                                                    | Changed KJV reference notes, Strong number corrections.
+   2013-07-04T18:15:40Z 2772ac0e zwj=    0 qadma=   58 pashta=  243 cgj=    0 zwnj=    0 | First installment updating notes.
+   2013-07-11T23:34:24Z d1325011 zwj=    0 qadma=   58 pashta=  243 cgj=    0 zwnj=    0 | Update to WLC 4.18
+   2013-07-13T23:55:16Z 3a1c8784 zwj=    0 qadma=   58 pashta=  243 cgj=    0 zwnj=    0 | Corrections for enosh.
+   2013-07-17T00:29:38Z 27179eda (not saved)                                                    | Structure attributes added.
+   2013-09-02T17:27:49Z 20f4e641 (not saved)                                                    | Minor updates to augments.
+   2013-09-17T23:58:23Z 1dee0226 (not saved)                                                    | Corrections to augments.
+   2013-12-12T01:38:58Z 56b51322 (not saved)                                                    | First release of morphology.
+   2013-12-15T00:39:15Z d4f37610 (not saved)                                                    | Corrections to ketiv/qere numbering.
+   2014-02-04T14:13:54Z 380f4219 zwj=    0 qadma=   96 pashta=  205 cgj=    0 zwnj=    0 | Corrected pashta in the middle of a word.
+   2016-03-04T00:57:55Z 2201c6a7 zwj=    0 qadma=   96 pashta=  205 cgj=    0 zwnj=    0 | Update to WLC 4.20
+   2017-11-23T16:53:16Z a573a984 zwj=    0 qadma=   96 pashta=  205 cgj=    0 zwnj=    0 | Various corrections.
+   2017-11-26T12:07:45Z 61f9680f (not saved)                                                    | Further lemma corrections.
+   2017-12-10T07:20:17Z 097d0e42 (not saved)                                                    | added phase 1 parsings--ruth, obad, jonah, joel complete; other books 
+   2017-12-14T19:27:17Z 3094c7ec (not saved)                                                    | Fixed license in XML files to be CC BY 4.0
+   2018-01-02T21:53:47Z b4dc98ad (not saved)                                                    | Correction of the double-escaped &
+   2018-01-04T22:51:17Z ba378e75 (not saved)                                                    | 7 books newly complete
+   2018-04-23T19:11:30Z 32dd0c4d (not saved)                                                    | completed Lamentations, Esther, Micah, Ecclesiastes, Amos
+   2018-06-02T13:54:37Z 12505532 (not saved)                                                    | Updated headers
+   2018-07-26T13:40:49Z e39577f7 (not saved)                                                    | Markup corrections.
+   2018-12-14T14:18:08Z f0b4e882 (not saved)                                                    | Addition of almost all verifieds
+   2018-12-14T14:45:21Z 4954a8d3 (not saved)                                                    | Added all contributors to each file
+   2018-12-14T15:34:23Z 91f0a521 (not saved)                                                    | fixed ordering for contributors, added missing morphs (except 2)
+   2018-12-15T15:38:24Z 8954c93b (not saved)                                                    | Several lemma updates
+   2018-12-15T16:00:03Z 55bc539d (not saved)                                                    | make lemma of 853/4 match its parsing
+   2018-12-16T13:28:26Z 6d412616 (not saved)                                                    | A few more 853/4 fixes
+   2018-12-20T14:57:46Z a92b95a1 (not saved)                                                    | Correction of 5 words from Hebrew to Aramaic
+   2018-12-21T09:56:29Z e0504653 (not saved)                                                    | Corrected word in Job 30:24 (was indicated as aramaic)
+   2018-12-29T15:40:37Z e4855e94 (not saved)                                                    | Updated morph of words where number of morph parts did not match word 
+   2019-01-13T08:31:14Z b52b78f5 (not saved)                                                    | Updated morph of סביב where it was marked an adverb
+   2019-01-13T09:13:12Z 7be49a56 (not saved)                                                    | Made nouns either gender both, masc or fem
+   2019-01-13T09:28:20Z 5dc21275 (not saved)                                                    | Added unique ids
+   2021-07-16T22:16:54Z 65214d2b (not saved)                                                    | Added 'x-ketiv' to @type attributes for all nodes in Ketiv readings.  
+   2022-03-10T22:52:57Z 2408955b zwj=    0 qadma=   96 pashta=  205 cgj=    0 zwnj=    0 | Changes requested by Randall Tan and Joel Ruark from Clear Trees work.
+   head                 d4265dfa zwj=    0 qadma=   96 pashta=  205 cgj=    0 zwnj=    0 | the file at d4265dfa
+-- Exod: 62 commits in the listing
+   2009-12-28T20:00:24Z 07647ae2 (not saved)                                                    | Moved WLC xml files to a wlc subdirectory.
+   2010-01-08T14:40:16Z bba17e45 (not saved)                                                    | Brought phrases linked by a maqqef onto the same line (excluding K/Q)
+   2010-01-13T03:13:40Z 5018d9b5 (not saved)                                                    | Changed masoretic paragraphing to new markup
+   2010-01-13T03:25:56Z a0703ae7 (not saved)                                                    | Moved sof pasuq to its own element
+   2010-01-13T12:26:42Z 9bd5d8ad (not saved)                                                    | Moved paseq to its own seg element
+   2010-01-16T14:04:01Z 477e1cb9 (not saved)                                                    | Changed mixed ketiv/qere markup.  Minor corrections to validate files.
+   2010-01-16T22:26:01Z 3d250cb6 zwj=    0 qadma=  408 pashta= 1335 cgj=    0 zwnj=    0 | Changed all ketiv/qere readings. Added Daniel as a contributor.
+   2010-01-19T12:17:25Z e7fcef7a (not saved)                                                    | Moved maqqefs out of w elements, and eliminated lemma="0".
+   2010-01-20T13:00:21Z b88ce67a zwj=    0 qadma=  408 pashta= 1335 cgj=    0 zwnj=    0 | Corrected ketiv/qeres. Inserted notes in place of references.
+   2010-03-31T12:08:52Z 57e5e441 zwj=    0 qadma=  408 pashta= 1335 cgj=    0 zwnj=    0 | Update to WLC 4.12.  Implements holam haser for vav, and various corre
+   2010-07-13T00:55:47Z 73784451 zwj=    0 qadma=  411 pashta= 1341 cgj=    0 zwnj=    0 | Separated the accents of the Ten Commandments, to conform with the WLC
+   2010-12-29T14:58:35Z 165fddf2 (not saved)                                                    | Strong number correction: Exod.4.2
+   2010-12-29T15:48:12Z 0d8f6dd5 (not saved)                                                    | Strong number correction: Exod.4.14
+   2011-01-17T22:30:16Z 2c2319d2 (not saved)                                                    | Strong number corrections, many missing Strong numbers added.
+   2011-01-20T13:01:40Z 5ec80c74 zwj=    0 qadma=  411 pashta= 1341 cgj=    0 zwnj=    0 | Strong numbers for phrases entended, appending + to each word before t
+   2011-01-22T00:01:58Z 57206c9b (not saved)                                                    | Updated to WLC version 4.14.
+   2011-01-28T14:11:32Z a52c1012 (not saved)                                                    | Augmented Strong numbers completed.
+   2011-01-30T14:37:02Z fe661292 (not saved)                                                    | Prefixes added to augmented Strong numbers.
+   2011-02-18T13:57:17Z 0a5b1a52 (not saved)                                                    | Strong number corrections: Gen.3.6,7, 6.9,17, Exod.12.23
+   2011-03-05T19:20:19Z 753f97af (not saved)                                                    | Yalak Strong numbers changed to 3212, to agree with KJV.
+   2011-03-11T14:33:24Z 208c83e8 (not saved)                                                    | Strong number corrections in Exodus.
+   2011-04-02T16:50:31Z ba41e3da (not saved)                                                    | Corrections to divided accents.
+   2011-04-16T11:33:06Z 26498fd9 (not saved)                                                    | Changes due to TWOT numbers and verbal roots.
+   2012-01-27T00:53:50Z c0af6994 (not saved)                                                    | Strong number corrections.
+   2012-02-17T13:02:03Z 6e17c189 (not saved)                                                    | Divided 2618.
+   2012-07-19T00:50:46Z 11626b6f (not saved)                                                    | Update to WLC 4.16.
+   2012-07-20T13:16:18Z d598fef6 (not saved)                                                    | Strong number corrections.
+   2013-02-27T11:41:15Z 1376cd7a (not saved)                                                    | Changed KJV reference notes, Strong number corrections.
+   2013-07-04T18:15:40Z 2772ac0e (not saved)                                                    | First installment updating notes.
+   2013-07-11T23:34:24Z d1325011 (not saved)                                                    | Update to WLC 4.18
+   2013-07-13T23:55:16Z 3a1c8784 zwj=    0 qadma=  410 pashta= 1341 cgj=    0 zwnj=    0 | Corrections for enosh.
+   2013-07-17T00:29:38Z 27179eda (not saved)                                                    | Structure attributes added.
+   2013-09-17T23:58:23Z 1dee0226 (not saved)                                                    | Corrections to augments.
+   2013-12-12T01:38:58Z 56b51322 (not saved)                                                    | First release of morphology.
+   2014-02-04T14:13:54Z 380f4219 (not saved)                                                    | Corrected pashta in the middle of a word.
+   2016-03-04T00:57:55Z 2201c6a7 (not saved)                                                    | Update to WLC 4.20
+   2016-09-03T21:30:54Z 7f6aa930 (not saved)                                                    | Ongoing corrections.
+   2016-10-13T16:15:05Z 7a8ce776 (not saved)                                                    | Minor corrections.
+   2017-11-23T16:53:16Z a573a984 (not saved)                                                    | Various corrections.
+   2017-11-27T13:17:18Z 08574817 (not saved)                                                    | Fixed m/854.
+   2017-12-10T07:20:17Z 097d0e42 (not saved)                                                    | added phase 1 parsings--ruth, obad, jonah, joel complete; other books 
+   2017-12-14T19:27:17Z 3094c7ec (not saved)                                                    | Fixed license in XML files to be CC BY 4.0
+   2018-01-02T21:53:47Z b4dc98ad (not saved)                                                    | Correction of the double-escaped &
+   2018-01-04T22:51:17Z ba378e75 (not saved)                                                    | 7 books newly complete
+   2018-04-23T19:11:30Z 32dd0c4d (not saved)                                                    | completed Lamentations, Esther, Micah, Ecclesiastes, Amos
+   2018-06-02T13:54:37Z 12505532 zwj=    0 qadma=  609 pashta= 1142 cgj=    0 zwnj=    0 | Updated headers
+   2018-12-14T14:18:08Z f0b4e882 zwj=    0 qadma=  609 pashta= 1142 cgj=    0 zwnj=    0 | Addition of almost all verifieds
+   2018-12-14T14:45:21Z 4954a8d3 zwj=    0 qadma=  609 pashta= 1142 cgj=    0 zwnj=    0 | Added all contributors to each file
+   2018-12-14T15:34:23Z 91f0a521 (not saved)                                                    | fixed ordering for contributors, added missing morphs (except 2)
+   2018-12-15T15:38:24Z 8954c93b zwj=    0 qadma=  609 pashta= 1142 cgj=    0 zwnj=    0 | Several lemma updates
+   2018-12-15T16:00:03Z 55bc539d (not saved)                                                    | make lemma of 853/4 match its parsing
+   2018-12-16T13:28:26Z 6d412616 (not saved)                                                    | A few more 853/4 fixes
+   2018-12-20T14:57:46Z a92b95a1 (not saved)                                                    | Correction of 5 words from Hebrew to Aramaic
+   2018-12-20T15:32:17Z 17899971 zwj=    0 qadma=  609 pashta= 1142 cgj=    0 zwnj=    0 | Changed סביב from D to HNcbsa where it could be auto-determined (other
+   2018-12-21T09:56:29Z e0504653 (not saved)                                                    | Corrected word in Job 30:24 (was indicated as aramaic)
+   2018-12-29T15:40:37Z e4855e94 (not saved)                                                    | Updated morph of words where number of morph parts did not match word 
+   2019-01-13T08:31:14Z b52b78f5 (not saved)                                                    | Updated morph of סביב where it was marked an adverb
+   2019-01-13T09:13:12Z 7be49a56 (not saved)                                                    | Made nouns either gender both, masc or fem
+   2019-01-13T09:28:20Z 5dc21275 (not saved)                                                    | Added unique ids
+   2021-01-18T21:58:19Z 39016cfc (not saved)                                                    | Morphology correction.
+   2021-07-16T22:16:54Z 65214d2b (not saved)                                                    | Added 'x-ketiv' to @type attributes for all nodes in Ketiv readings.  
+   2022-03-10T22:52:57Z 2408955b zwj=    0 qadma=  609 pashta= 1142 cgj=    0 zwnj=    0 | Changes requested by Randall Tan and Joel Ruark from Clear Trees work.
+   head                 d4265dfa zwj=    0 qadma=  609 pashta= 1142 cgj=    0 zwnj=    0 | the file at d4265dfa
+-- Gen: 62 commits in the listing
+   2009-12-28T20:00:24Z 07647ae2 (not saved)                                                    | Moved WLC xml files to a wlc subdirectory.
+   2010-01-08T14:40:16Z bba17e45 (not saved)                                                    | Brought phrases linked by a maqqef onto the same line (excluding K/Q)
+   2010-01-13T03:13:40Z 5018d9b5 (not saved)                                                    | Changed masoretic paragraphing to new markup
+   2010-01-13T03:25:56Z a0703ae7 (not saved)                                                    | Moved sof pasuq to its own element
+   2010-01-13T12:26:42Z 9bd5d8ad (not saved)                                                    | Moved paseq to its own seg element
+   2010-01-16T14:04:01Z 477e1cb9 (not saved)                                                    | Changed mixed ketiv/qere markup.  Minor corrections to validate files.
+   2010-01-16T14:37:28Z 8674a20c zwj=    0 qadma=  457 pashta= 1703 cgj=    0 zwnj=    0 | Changed mixed ketiv/qere. Made minor corrections to validate files.
+   2010-01-16T22:26:01Z 3d250cb6 (not saved)                                                    | Changed all ketiv/qere readings. Added Daniel as a contributor.
+   2010-01-17T21:53:18Z f58c4008 (not saved)                                                    | Strong numbers for Divine Name corrected.
+   2010-01-19T12:17:25Z e7fcef7a (not saved)                                                    | Moved maqqefs out of w elements, and eliminated lemma="0".
+   2010-01-20T13:00:21Z b88ce67a zwj=    0 qadma=  457 pashta= 1703 cgj=    0 zwnj=    0 | Corrected ketiv/qeres. Inserted notes in place of references.
+   2010-03-31T12:08:52Z 57e5e441 (not saved)                                                    | Update to WLC 4.12.  Implements holam haser for vav, and various corre
+   2011-01-20T13:01:40Z 5ec80c74 zwj=    0 qadma=  457 pashta= 1703 cgj=    0 zwnj=    0 | Strong numbers for phrases entended, appending + to each word before t
+   2011-01-22T00:01:58Z 57206c9b zwj=    0 qadma=  457 pashta= 1703 cgj=    0 zwnj=    0 | Updated to WLC version 4.14.
+   2011-01-24T13:12:40Z b17c7e6e zwj=    0 qadma=  457 pashta= 1703 cgj=    0 zwnj=    0 | Genesis with augmented Strong numbers.
+   2011-01-29T13:52:33Z e2449e19 (not saved)                                                    | Corrections for the index.
+   2011-01-30T14:37:02Z fe661292 (not saved)                                                    | Prefixes added to augmented Strong numbers.
+   2011-02-18T13:57:17Z 0a5b1a52 (not saved)                                                    | Strong number corrections: Gen.3.6,7, 6.9,17, Exod.12.23
+   2011-03-05T19:20:19Z 753f97af (not saved)                                                    | Yalak Strong numbers changed to 3212, to agree with KJV.
+   2011-04-02T16:50:31Z ba41e3da (not saved)                                                    | Corrections to divided accents.
+   2011-04-16T11:33:06Z 26498fd9 (not saved)                                                    | Changes due to TWOT numbers and verbal roots.
+   2012-01-27T00:53:50Z c0af6994 (not saved)                                                    | Strong number corrections.
+   2012-07-19T00:50:46Z 11626b6f (not saved)                                                    | Update to WLC 4.16.
+   2012-07-20T13:16:18Z d598fef6 (not saved)                                                    | Strong number corrections.
+   2013-02-27T11:41:15Z 1376cd7a (not saved)                                                    | Changed KJV reference notes, Strong number corrections.
+   2013-07-07T20:13:21Z 4a2d63fd (not saved)                                                    | Second installment updating notes.
+   2013-07-11T23:34:24Z d1325011 (not saved)                                                    | Update to WLC 4.18
+   2013-07-13T23:55:16Z 3a1c8784 (not saved)                                                    | Corrections for enosh.
+   2013-07-17T00:29:38Z 27179eda (not saved)                                                    | Structure attributes added.
+   2013-09-17T23:58:23Z 1dee0226 (not saved)                                                    | Corrections to augments.
+   2013-12-12T01:38:58Z 56b51322 zwj=    0 qadma=  457 pashta= 1705 cgj=    0 zwnj=    0 | First release of morphology.
+   2014-02-04T14:13:54Z 380f4219 (not saved)                                                    | Corrected pashta in the middle of a word.
+   2016-03-04T00:57:55Z 2201c6a7 (not saved)                                                    | Update to WLC 4.20
+   2016-09-03T21:30:54Z 7f6aa930 zwj=    0 qadma=  730 pashta= 1431 cgj=    0 zwnj=    0 | Ongoing corrections.
+   2017-02-11T16:46:07Z c8f43473 (not saved)                                                    | Textual corrections from tanach.us.
+   2017-11-23T16:53:16Z a573a984 zwj=    0 qadma=  730 pashta= 1431 cgj=    0 zwnj=    0 | Various corrections.
+   2017-11-27T13:17:18Z 08574817 zwj=    0 qadma=  730 pashta= 1431 cgj=    0 zwnj=    0 | Fixed m/854.
+   2017-12-10T07:20:17Z 097d0e42 zwj=    0 qadma=  730 pashta= 1431 cgj=    0 zwnj=    0 | added phase 1 parsings--ruth, obad, jonah, joel complete; other books 
+   2017-12-14T19:27:17Z 3094c7ec (not saved)                                                    | Fixed license in XML files to be CC BY 4.0
+   2018-01-02T21:27:59Z fac999bc (not saved)                                                    | Made 2 word division changes with exegesis notes.
+   2018-01-02T21:53:47Z b4dc98ad (not saved)                                                    | Correction of the double-escaped &
+   2018-01-04T22:51:17Z ba378e75 (not saved)                                                    | 7 books newly complete
+   2018-04-15T13:14:59Z b6813fdd (not saved)                                                    | Restored exegesis notes that got inadvertently removed by script
+   2018-04-23T19:11:30Z 32dd0c4d (not saved)                                                    | completed Lamentations, Esther, Micah, Ecclesiastes, Amos
+   2018-06-02T13:54:37Z 12505532 (not saved)                                                    | Updated headers
+   2018-12-14T14:18:08Z f0b4e882 zwj=    0 qadma=  730 pashta= 1431 cgj=    0 zwnj=    0 | Addition of almost all verifieds
+   2018-12-14T14:45:21Z 4954a8d3 (not saved)                                                    | Added all contributors to each file
+   2018-12-14T15:34:23Z 91f0a521 (not saved)                                                    | fixed ordering for contributors, added missing morphs (except 2)
+   2018-12-15T15:38:24Z 8954c93b (not saved)                                                    | Several lemma updates
+   2018-12-15T15:46:53Z a7b1d8b2 (not saved)                                                    | mark צָהֳרָיִם consistently plural
+   2018-12-15T16:00:03Z 55bc539d (not saved)                                                    | make lemma of 853/4 match its parsing
+   2018-12-16T13:28:26Z 6d412616 (not saved)                                                    | A few more 853/4 fixes
+   2018-12-20T14:57:46Z a92b95a1 (not saved)                                                    | Correction of 5 words from Hebrew to Aramaic
+   2018-12-20T15:32:17Z 17899971 (not saved)                                                    | Changed סביב from D to HNcbsa where it could be auto-determined (other
+   2018-12-21T09:56:29Z e0504653 (not saved)                                                    | Corrected word in Job 30:24 (was indicated as aramaic)
+   2018-12-29T15:40:37Z e4855e94 (not saved)                                                    | Updated morph of words where number of morph parts did not match word 
+   2019-01-13T08:31:14Z b52b78f5 (not saved)                                                    | Updated morph of סביב where it was marked an adverb
+   2019-01-13T09:13:12Z 7be49a56 (not saved)                                                    | Made nouns either gender both, masc or fem
+   2019-01-13T09:28:20Z 5dc21275 (not saved)                                                    | Added unique ids
+   2019-01-13T10:31:14Z 456c54c6 (not saved)                                                    | Restored exegesis note about change in word division
+   2021-07-16T22:16:54Z 65214d2b (not saved)                                                    | Added 'x-ketiv' to @type attributes for all nodes in Ketiv readings.  
+   2022-03-10T22:52:57Z 2408955b (not saved)                                                    | Changes requested by Randall Tan and Joel Ruark from Clear Trees work.
+   head                 d4265dfa zwj=    0 qadma=  730 pashta= 1431 cgj=    0 zwnj=    0 | the file at d4265dfa
+-- Hos: 51 commits in the listing
+   2009-12-28T20:00:24Z 07647ae2 (not saved)                                                    | Moved WLC xml files to a wlc subdirectory.
+   2010-01-08T14:40:16Z bba17e45 (not saved)                                                    | Brought phrases linked by a maqqef onto the same line (excluding K/Q)
+   2010-01-13T03:13:40Z 5018d9b5 (not saved)                                                    | Changed masoretic paragraphing to new markup
+   2010-01-13T03:25:56Z a0703ae7 (not saved)                                                    | Moved sof pasuq to its own element
+   2010-01-13T12:26:42Z 9bd5d8ad (not saved)                                                    | Moved paseq to its own seg element
+   2010-01-16T22:26:01Z 3d250cb6 (not saved)                                                    | Changed all ketiv/qere readings. Added Daniel as a contributor.
+   2010-01-17T21:53:18Z f58c4008 (not saved)                                                    | Strong numbers for Divine Name corrected.
+   2010-01-19T12:17:25Z e7fcef7a (not saved)                                                    | Moved maqqefs out of w elements, and eliminated lemma="0".
+   2010-01-20T13:00:21Z b88ce67a (not saved)                                                    | Corrected ketiv/qeres. Inserted notes in place of references.
+   2010-03-31T12:08:52Z 57e5e441 (not saved)                                                    | Update to WLC 4.12.  Implements holam haser for vav, and various corre
+   2011-01-17T22:30:16Z 2c2319d2 (not saved)                                                    | Strong number corrections, many missing Strong numbers added.
+   2011-01-22T00:01:58Z 57206c9b (not saved)                                                    | Updated to WLC version 4.14.
+   2011-01-28T14:11:32Z a52c1012 (not saved)                                                    | Augmented Strong numbers completed.
+   2011-01-29T13:52:33Z e2449e19 (not saved)                                                    | Corrections for the index.
+   2011-01-30T14:37:02Z fe661292 (not saved)                                                    | Prefixes added to augmented Strong numbers.
+   2011-03-05T19:20:19Z 753f97af (not saved)                                                    | Yalak Strong numbers changed to 3212, to agree with KJV.
+   2011-04-16T11:33:06Z 26498fd9 (not saved)                                                    | Changes due to TWOT numbers and verbal roots.
+   2012-01-27T00:53:50Z c0af6994 (not saved)                                                    | Strong number corrections.
+   2012-02-17T13:02:03Z 6e17c189 (not saved)                                                    | Divided 2618.
+   2012-07-19T00:50:46Z 11626b6f (not saved)                                                    | Update to WLC 4.16.
+   2012-07-20T13:16:18Z d598fef6 (not saved)                                                    | Strong number corrections.
+   2013-02-27T11:41:15Z 1376cd7a (not saved)                                                    | Changed KJV reference notes, Strong number corrections.
+   2013-07-07T20:13:21Z 4a2d63fd (not saved)                                                    | Second installment updating notes.
+   2013-07-11T23:34:24Z d1325011 (not saved)                                                    | Update to WLC 4.18
+   2013-07-13T23:55:16Z 3a1c8784 zwj=    1 qadma=   28 pashta=  238 cgj=    0 zwnj=    0 | Corrections for enosh.
+   2013-07-17T00:29:38Z 27179eda (not saved)                                                    | Structure attributes added.
+   2013-09-17T23:58:23Z 1dee0226 zwj=    1 qadma=   28 pashta=  238 cgj=    0 zwnj=    0 | Corrections to augments.
+   2013-12-12T01:38:58Z 56b51322 zwj=    0 qadma=   28 pashta=  238 cgj=    0 zwnj=    0 | First release of morphology.
+   2014-02-04T14:13:54Z 380f4219 (not saved)                                                    | Corrected pashta in the middle of a word.
+   2016-03-04T00:57:55Z 2201c6a7 (not saved)                                                    | Update to WLC 4.20
+   2017-11-23T16:53:16Z a573a984 zwj=    0 qadma=   69 pashta=  197 cgj=    0 zwnj=    0 | Various corrections.
+   2017-12-10T07:20:17Z 097d0e42 (not saved)                                                    | added phase 1 parsings--ruth, obad, jonah, joel complete; other books 
+   2017-12-14T19:27:17Z 3094c7ec (not saved)                                                    | Fixed license in XML files to be CC BY 4.0
+   2018-01-02T21:53:47Z b4dc98ad zwj=    0 qadma=   69 pashta=  197 cgj=    0 zwnj=    0 | Correction of the double-escaped &
+   2018-01-04T22:51:17Z ba378e75 zwj=    0 qadma=   69 pashta=  197 cgj=    0 zwnj=    0 | 7 books newly complete
+   2018-04-23T19:11:30Z 32dd0c4d zwj=    0 qadma=   69 pashta=  197 cgj=    0 zwnj=    0 | completed Lamentations, Esther, Micah, Ecclesiastes, Amos
+   2018-06-02T13:54:37Z 12505532 (not saved)                                                    | Updated headers
+   2018-12-14T14:18:08Z f0b4e882 zwj=    0 qadma=   69 pashta=  197 cgj=    0 zwnj=    0 | Addition of almost all verifieds
+   2018-12-14T14:45:21Z 4954a8d3 (not saved)                                                    | Added all contributors to each file
+   2018-12-14T15:34:23Z 91f0a521 (not saved)                                                    | fixed ordering for contributors, added missing morphs (except 2)
+   2018-12-15T15:38:24Z 8954c93b (not saved)                                                    | Several lemma updates
+   2018-12-16T13:28:26Z 6d412616 (not saved)                                                    | A few more 853/4 fixes
+   2018-12-20T14:57:46Z a92b95a1 (not saved)                                                    | Correction of 5 words from Hebrew to Aramaic
+   2018-12-21T09:56:29Z e0504653 (not saved)                                                    | Corrected word in Job 30:24 (was indicated as aramaic)
+   2018-12-29T15:40:37Z e4855e94 (not saved)                                                    | Updated morph of words where number of morph parts did not match word 
+   2019-01-13T08:31:14Z b52b78f5 (not saved)                                                    | Updated morph of סביב where it was marked an adverb
+   2019-01-13T09:13:12Z 7be49a56 (not saved)                                                    | Made nouns either gender both, masc or fem
+   2019-01-13T09:28:20Z 5dc21275 (not saved)                                                    | Added unique ids
+   2019-11-14T21:59:06Z 2bdcd48c (not saved)                                                    | Corrected 3605 parsing.
+   2021-07-16T22:16:54Z 65214d2b (not saved)                                                    | Added 'x-ketiv' to @type attributes for all nodes in Ketiv readings.  
+   2022-03-10T22:52:57Z 2408955b (not saved)                                                    | Changes requested by Randall Tan and Joel Ruark from Clear Trees work.
+   head                 d4265dfa zwj=    0 qadma=   69 pashta=  197 cgj=    0 zwnj=    0 | the file at d4265dfa
+-- Jer: 70 commits in the listing
+   2009-12-28T20:00:24Z 07647ae2 (not saved)                                                    | Moved WLC xml files to a wlc subdirectory.
+   2010-01-08T14:40:16Z bba17e45 (not saved)                                                    | Brought phrases linked by a maqqef onto the same line (excluding K/Q)
+   2010-01-13T03:13:40Z 5018d9b5 (not saved)                                                    | Changed masoretic paragraphing to new markup
+   2010-01-13T03:25:56Z a0703ae7 (not saved)                                                    | Moved sof pasuq to its own element
+   2010-01-13T12:26:42Z 9bd5d8ad (not saved)                                                    | Moved paseq to its own seg element
+   2010-01-16T22:26:01Z 3d250cb6 (not saved)                                                    | Changed all ketiv/qere readings. Added Daniel as a contributor.
+   2010-01-17T21:53:18Z f58c4008 (not saved)                                                    | Strong numbers for Divine Name corrected.
+   2010-01-19T12:17:25Z e7fcef7a (not saved)                                                    | Moved maqqefs out of w elements, and eliminated lemma="0".
+   2010-01-20T13:00:21Z b88ce67a (not saved)                                                    | Corrected ketiv/qeres. Inserted notes in place of references.
+   2010-03-31T12:08:52Z 57e5e441 (not saved)                                                    | Update to WLC 4.12.  Implements holam haser for vav, and various corre
+   2010-04-16T17:53:40Z 49244121 (not saved)                                                    | Strong numbers reversed: Jer.29.17.
+   2010-04-17T22:37:59Z d0d5fce5 (not saved)                                                    | Strong number correction: Jer.15.11.
+   2010-04-17T22:38:07Z 9ed34bc4 (not saved)                                                    | Merge branch 'master' of git@github.com:openscriptures/morphhb.git
+   2011-01-20T13:01:40Z 5ec80c74 (not saved)                                                    | Strong numbers for phrases entended, appending + to each word before t
+   2011-01-22T00:01:58Z 57206c9b (not saved)                                                    | Updated to WLC version 4.14.
+   2011-01-28T14:11:32Z a52c1012 (not saved)                                                    | Augmented Strong numbers completed.
+   2011-01-29T13:52:33Z e2449e19 zwj=    5 qadma=  589 pashta= 1985 cgj=    0 zwnj=    0 | Corrections for the index.
+   2011-01-30T14:37:02Z fe661292 zwj=    5 qadma=  589 pashta= 1985 cgj=    0 zwnj=    0 | Prefixes added to augmented Strong numbers.
+   2011-03-05T19:20:19Z 753f97af zwj=    5 qadma=  589 pashta= 1985 cgj=    0 zwnj=    0 | Yalak Strong numbers changed to 3212, to agree with KJV.
+   2011-04-16T11:33:06Z 26498fd9 (not saved)                                                    | Changes due to TWOT numbers and verbal roots.
+   2012-01-27T00:53:50Z c0af6994 zwj=    5 qadma=  589 pashta= 1985 cgj=    0 zwnj=    0 | Strong number corrections.
+   2012-02-17T13:02:03Z 6e17c189 (not saved)                                                    | Divided 2618.
+   2012-03-08T02:29:28Z 6a80f089 (not saved)                                                    | Corrected 6635.
+   2012-07-19T00:50:46Z 11626b6f (not saved)                                                    | Update to WLC 4.16.
+   2012-07-20T13:16:18Z d598fef6 (not saved)                                                    | Strong number corrections.
+   2013-02-27T11:41:15Z 1376cd7a zwj=    5 qadma=  589 pashta= 1985 cgj=    0 zwnj=    0 | Changed KJV reference notes, Strong number corrections.
+   2013-06-24T14:34:16Z 389f6487 (not saved)                                                    | Updates to parsing app.
+   2013-07-07T20:13:21Z 4a2d63fd (not saved)                                                    | Second installment updating notes.
+   2013-07-11T23:34:24Z d1325011 (not saved)                                                    | Update to WLC 4.18
+   2013-07-13T23:55:16Z 3a1c8784 (not saved)                                                    | Corrections for enosh.
+   2013-07-17T00:29:38Z 27179eda (not saved)                                                    | Structure attributes added.
+   2013-09-02T17:27:49Z 20f4e641 (not saved)                                                    | Minor updates to augments.
+   2013-09-17T23:58:23Z 1dee0226 (not saved)                                                    | Corrections to augments.
+   2013-12-12T01:38:58Z 56b51322 (not saved)                                                    | First release of morphology.
+   2014-02-04T14:13:54Z 380f4219 zwj=    0 qadma=  887 pashta= 1687 cgj=    0 zwnj=    0 | Corrected pashta in the middle of a word.
+   2016-03-04T00:57:55Z 2201c6a7 (not saved)                                                    | Update to WLC 4.20
+   2016-09-03T21:30:54Z 7f6aa930 (not saved)                                                    | Ongoing corrections.
+   2017-11-23T16:53:16Z a573a984 (not saved)                                                    | Various corrections.
+   2017-11-26T12:07:45Z 61f9680f zwj=    0 qadma=  887 pashta= 1687 cgj=    0 zwnj=    0 | Further lemma corrections.
+   2017-11-27T13:17:18Z 08574817 zwj=    0 qadma=  887 pashta= 1687 cgj=    0 zwnj=    0 | Fixed m/854.
+   2017-12-10T07:20:17Z 097d0e42 zwj=    0 qadma=  887 pashta= 1687 cgj=    0 zwnj=    0 | added phase 1 parsings--ruth, obad, jonah, joel complete; other books 
+   2017-12-14T19:27:17Z 3094c7ec (not saved)                                                    | Fixed license in XML files to be CC BY 4.0
+   2018-01-02T21:53:47Z b4dc98ad zwj=    0 qadma=  887 pashta= 1687 cgj=    0 zwnj=    0 | Correction of the double-escaped &
+   2018-01-04T22:51:17Z ba378e75 zwj=    0 qadma=  887 pashta= 1687 cgj=    0 zwnj=    0 | 7 books newly complete
+   2018-04-23T19:11:30Z 32dd0c4d zwj=    0 qadma=  887 pashta= 1687 cgj=    0 zwnj=    0 | completed Lamentations, Esther, Micah, Ecclesiastes, Amos
+   2018-06-02T13:54:37Z 12505532 (not saved)                                                    | Updated headers
+   2018-07-26T13:40:49Z e39577f7 zwj=    0 qadma=  887 pashta= 1687 cgj=    0 zwnj=    0 | Markup corrections.
+   2018-12-14T14:18:08Z f0b4e882 (not saved)                                                    | Addition of almost all verifieds
+   2018-12-14T14:45:21Z 4954a8d3 (not saved)                                                    | Added all contributors to each file
+   2018-12-14T15:34:23Z 91f0a521 (not saved)                                                    | fixed ordering for contributors, added missing morphs (except 2)
+   2018-12-15T15:38:24Z 8954c93b (not saved)                                                    | Several lemma updates
+   2018-12-15T15:46:53Z a7b1d8b2 zwj=    0 qadma=  887 pashta= 1687 cgj=    0 zwnj=    0 | mark צָהֳרָיִם consistently plural
+   2018-12-15T16:00:03Z 55bc539d (not saved)                                                    | make lemma of 853/4 match its parsing
+   2018-12-16T13:28:26Z 6d412616 (not saved)                                                    | A few more 853/4 fixes
+   2018-12-20T14:57:46Z a92b95a1 (not saved)                                                    | Correction of 5 words from Hebrew to Aramaic
+   2018-12-20T15:32:17Z 17899971 (not saved)                                                    | Changed סביב from D to HNcbsa where it could be auto-determined (other
+   2018-12-21T09:56:29Z e0504653 (not saved)                                                    | Corrected word in Job 30:24 (was indicated as aramaic)
+   2018-12-29T15:40:37Z e4855e94 (not saved)                                                    | Updated morph of words where number of morph parts did not match word 
+   2019-01-13T08:31:14Z b52b78f5 (not saved)                                                    | Updated morph of סביב where it was marked an adverb
+   2019-01-13T09:13:12Z 7be49a56 (not saved)                                                    | Made nouns either gender both, masc or fem
+   2019-01-13T09:28:20Z 5dc21275 (not saved)                                                    | Added unique ids
+   2019-01-13T10:12:09Z e88eda1a (not saved)                                                    | Fixed words with multiple lemmas
+   2019-01-13T10:31:14Z 456c54c6 (not saved)                                                    | Restored exegesis note about change in word division
+   2019-01-16T10:16:28Z 402c3164 (not saved)                                                    | Corrected two words with invalid slashes
+   2019-09-17T00:16:58Z 89edf8d1 (not saved)                                                    | Cantillation in 39:13
+   2019-11-14T21:59:06Z 2bdcd48c (not saved)                                                    | Corrected 3605 parsing.
+   2021-02-24T13:57:56Z c982f2fa (not saved)                                                    | Morphology correction.
+   2021-07-16T22:16:54Z 65214d2b (not saved)                                                    | Added 'x-ketiv' to @type attributes for all nodes in Ketiv readings.  
+   2022-03-10T22:52:57Z 2408955b (not saved)                                                    | Changes requested by Randall Tan and Joel Ruark from Clear Trees work.
+   2022-03-18T20:04:48Z 8de89602 zwj=    0 qadma=  887 pashta= 1687 cgj=    0 zwnj=    0 | Changes requested in earlier set of OSHB issues.
+   head                 d4265dfa zwj=    0 qadma=  887 pashta= 1687 cgj=    0 zwnj=    0 | the file at d4265dfa
+-- Josh: 52 commits in the listing
+   2009-12-28T20:00:24Z 07647ae2 (not saved)                                                    | Moved WLC xml files to a wlc subdirectory.
+   2010-01-08T14:40:16Z bba17e45 (not saved)                                                    | Brought phrases linked by a maqqef onto the same line (excluding K/Q)
+   2010-01-13T03:13:40Z 5018d9b5 (not saved)                                                    | Changed masoretic paragraphing to new markup
+   2010-01-13T03:25:56Z a0703ae7 (not saved)                                                    | Moved sof pasuq to its own element
+   2010-01-13T12:26:42Z 9bd5d8ad (not saved)                                                    | Moved paseq to its own seg element
+   2010-01-16T14:04:01Z 477e1cb9 (not saved)                                                    | Changed mixed ketiv/qere markup.  Minor corrections to validate files.
+   2010-01-16T22:26:01Z 3d250cb6 (not saved)                                                    | Changed all ketiv/qere readings. Added Daniel as a contributor.
+   2010-01-17T21:53:18Z f58c4008 (not saved)                                                    | Strong numbers for Divine Name corrected.
+   2010-01-19T12:17:25Z e7fcef7a (not saved)                                                    | Moved maqqefs out of w elements, and eliminated lemma="0".
+   2010-01-20T13:00:21Z b88ce67a (not saved)                                                    | Corrected ketiv/qeres. Inserted notes in place of references.
+   2010-01-23T13:39:21Z b865d725 (not saved)                                                    | Corrected maqqef errors in Joshua and Judges.
+   2010-03-31T12:08:52Z 57e5e441 (not saved)                                                    | Update to WLC 4.12.  Implements holam haser for vav, and various corre
+   2011-01-20T13:01:40Z 5ec80c74 (not saved)                                                    | Strong numbers for phrases entended, appending + to each word before t
+   2011-01-22T00:01:58Z 57206c9b (not saved)                                                    | Updated to WLC version 4.14.
+   2011-01-28T14:11:32Z a52c1012 (not saved)                                                    | Augmented Strong numbers completed.
+   2011-01-30T14:37:02Z fe661292 (not saved)                                                    | Prefixes added to augmented Strong numbers.
+   2011-03-05T19:20:19Z 753f97af (not saved)                                                    | Yalak Strong numbers changed to 3212, to agree with KJV.
+   2011-04-16T11:33:06Z 26498fd9 (not saved)                                                    | Changes due to TWOT numbers and verbal roots.
+   2012-01-27T00:53:50Z c0af6994 (not saved)                                                    | Strong number corrections.
+   2012-07-19T00:50:46Z 11626b6f (not saved)                                                    | Update to WLC 4.16.
+   2012-07-20T13:16:18Z d598fef6 (not saved)                                                    | Strong number corrections.
+   2013-02-27T11:41:15Z 1376cd7a (not saved)                                                    | Changed KJV reference notes, Strong number corrections.
+   2013-07-11T23:34:24Z d1325011 (not saved)                                                    | Update to WLC 4.18
+   2013-07-13T23:55:16Z 3a1c8784 (not saved)                                                    | Corrections for enosh.
+   2013-07-17T00:29:38Z 27179eda (not saved)                                                    | Structure attributes added.
+   2013-12-12T01:38:58Z 56b51322 zwj=    0 qadma=  371 pashta=  880 cgj=    0 zwnj=    0 | First release of morphology.
+   2014-02-04T14:13:54Z 380f4219 (not saved)                                                    | Corrected pashta in the middle of a word.
+   2016-03-04T00:57:55Z 2201c6a7 (not saved)                                                    | Update to WLC 4.20
+   2016-09-03T21:30:54Z 7f6aa930 (not saved)                                                    | Ongoing corrections.
+   2017-11-23T16:53:16Z a573a984 (not saved)                                                    | Various corrections.
+   2017-11-27T13:17:18Z 08574817 (not saved)                                                    | Fixed m/854.
+   2017-12-10T07:20:17Z 097d0e42 zwj=    0 qadma=  519 pashta=  732 cgj=    0 zwnj=    0 | added phase 1 parsings--ruth, obad, jonah, joel complete; other books 
+   2017-12-14T19:27:17Z 3094c7ec (not saved)                                                    | Fixed license in XML files to be CC BY 4.0
+   2018-01-02T21:53:47Z b4dc98ad (not saved)                                                    | Correction of the double-escaped &
+   2018-01-04T22:51:17Z ba378e75 zwj=    0 qadma=  519 pashta=  732 cgj=    0 zwnj=    0 | 7 books newly complete
+   2018-04-23T19:11:30Z 32dd0c4d (not saved)                                                    | completed Lamentations, Esther, Micah, Ecclesiastes, Amos
+   2018-06-02T13:54:37Z 12505532 zwj=    0 qadma=  519 pashta=  732 cgj=    0 zwnj=    0 | Updated headers
+   2018-12-14T14:18:08Z f0b4e882 zwj=    0 qadma=  519 pashta=  732 cgj=    0 zwnj=    0 | Addition of almost all verifieds
+   2018-12-14T14:45:21Z 4954a8d3 zwj=    0 qadma=  519 pashta=  732 cgj=    0 zwnj=    0 | Added all contributors to each file
+   2018-12-14T15:34:23Z 91f0a521 (not saved)                                                    | fixed ordering for contributors, added missing morphs (except 2)
+   2018-12-15T15:38:24Z 8954c93b (not saved)                                                    | Several lemma updates
+   2018-12-15T16:00:03Z 55bc539d (not saved)                                                    | make lemma of 853/4 match its parsing
+   2018-12-16T13:28:26Z 6d412616 (not saved)                                                    | A few more 853/4 fixes
+   2018-12-20T14:57:46Z a92b95a1 (not saved)                                                    | Correction of 5 words from Hebrew to Aramaic
+   2018-12-20T15:32:17Z 17899971 (not saved)                                                    | Changed סביב from D to HNcbsa where it could be auto-determined (other
+   2018-12-21T09:56:29Z e0504653 (not saved)                                                    | Corrected word in Job 30:24 (was indicated as aramaic)
+   2018-12-29T15:40:37Z e4855e94 (not saved)                                                    | Updated morph of words where number of morph parts did not match word 
+   2019-01-13T08:31:14Z b52b78f5 (not saved)                                                    | Updated morph of סביב where it was marked an adverb
+   2019-01-13T09:13:12Z 7be49a56 (not saved)                                                    | Made nouns either gender both, masc or fem
+   2019-01-13T09:28:20Z 5dc21275 (not saved)                                                    | Added unique ids
+   2021-07-16T22:16:54Z 65214d2b (not saved)                                                    | Added 'x-ketiv' to @type attributes for all nodes in Ketiv readings.  
+   2022-03-10T22:52:57Z 2408955b zwj=    0 qadma=  519 pashta=  732 cgj=    0 zwnj=    0 | Changes requested by Randall Tan and Joel Ruark from Clear Trees work.
+   head                 d4265dfa zwj=    0 qadma=  519 pashta=  732 cgj=    0 zwnj=    0 | the file at d4265dfa
+-- Judg: 58 commits in the listing
+   2009-12-28T20:00:24Z 07647ae2 (not saved)                                                    | Moved WLC xml files to a wlc subdirectory.
+   2010-01-08T14:40:16Z bba17e45 (not saved)                                                    | Brought phrases linked by a maqqef onto the same line (excluding K/Q)
+   2010-01-13T03:13:40Z 5018d9b5 (not saved)                                                    | Changed masoretic paragraphing to new markup
+   2010-01-13T03:25:56Z a0703ae7 (not saved)                                                    | Moved sof pasuq to its own element
+   2010-01-13T12:26:42Z 9bd5d8ad (not saved)                                                    | Moved paseq to its own seg element
+   2010-01-16T14:04:01Z 477e1cb9 (not saved)                                                    | Changed mixed ketiv/qere markup.  Minor corrections to validate files.
+   2010-01-16T22:26:01Z 3d250cb6 (not saved)                                                    | Changed all ketiv/qere readings. Added Daniel as a contributor.
+   2010-01-17T21:53:18Z f58c4008 (not saved)                                                    | Strong numbers for Divine Name corrected.
+   2010-01-19T12:17:25Z e7fcef7a (not saved)                                                    | Moved maqqefs out of w elements, and eliminated lemma="0".
+   2010-01-20T13:00:21Z b88ce67a (not saved)                                                    | Corrected ketiv/qeres. Inserted notes in place of references.
+   2010-01-23T13:39:21Z b865d725 zwj=    1 qadma=  279 pashta=  929 cgj=    0 zwnj=    0 | Corrected maqqef errors in Joshua and Judges.
+   2010-03-31T12:08:52Z 57e5e441 zwj=    1 qadma=  279 pashta=  929 cgj=    0 zwnj=    0 | Update to WLC 4.12.  Implements holam haser for vav, and various corre
+   2011-01-20T13:01:40Z 5ec80c74 zwj=    1 qadma=  279 pashta=  929 cgj=    0 zwnj=    0 | Strong numbers for phrases entended, appending + to each word before t
+   2011-01-22T00:01:58Z 57206c9b zwj=    1 qadma=  279 pashta=  929 cgj=    0 zwnj=    0 | Updated to WLC version 4.14.
+   2011-01-28T14:11:32Z a52c1012 zwj=    1 qadma=  279 pashta=  929 cgj=    0 zwnj=    0 | Augmented Strong numbers completed.
+   2011-01-30T14:37:02Z fe661292 (not saved)                                                    | Prefixes added to augmented Strong numbers.
+   2011-03-05T19:20:19Z 753f97af (not saved)                                                    | Yalak Strong numbers changed to 3212, to agree with KJV.
+   2011-04-16T11:33:06Z 26498fd9 (not saved)                                                    | Changes due to TWOT numbers and verbal roots.
+   2012-01-27T00:53:50Z c0af6994 (not saved)                                                    | Strong number corrections.
+   2012-02-17T13:02:03Z 6e17c189 zwj=    1 qadma=  279 pashta=  929 cgj=    0 zwnj=    0 | Divided 2618.
+   2012-07-19T00:50:46Z 11626b6f zwj=    1 qadma=  279 pashta=  929 cgj=    0 zwnj=    0 | Update to WLC 4.16.
+   2012-07-20T13:16:18Z d598fef6 zwj=    1 qadma=  279 pashta=  929 cgj=    0 zwnj=    0 | Strong number corrections.
+   2013-02-27T11:41:15Z 1376cd7a zwj=    1 qadma=  279 pashta=  929 cgj=    0 zwnj=    0 | Changed KJV reference notes, Strong number corrections.
+   2013-07-11T23:34:24Z d1325011 zwj=    1 qadma=  279 pashta=  929 cgj=    0 zwnj=    0 | Update to WLC 4.18
+   2013-07-13T23:55:16Z 3a1c8784 zwj=    1 qadma=  279 pashta=  929 cgj=    0 zwnj=    0 | Corrections for enosh.
+   2013-07-17T00:29:38Z 27179eda (not saved)                                                    | Structure attributes added.
+   2013-09-17T23:58:23Z 1dee0226 (not saved)                                                    | Corrections to augments.
+   2013-12-12T01:38:58Z 56b51322 (not saved)                                                    | First release of morphology.
+   2014-02-04T14:13:54Z 380f4219 zwj=    0 qadma=  433 pashta=  775 cgj=    0 zwnj=    0 | Corrected pashta in the middle of a word.
+   2014-07-16T15:25:04Z f540e482 zwj=    0 qadma=  433 pashta=  775 cgj=    0 zwnj=    0 | Accumulated corrections.
+   2016-03-04T00:57:55Z 2201c6a7 zwj=    0 qadma=  433 pashta=  775 cgj=    0 zwnj=    0 | Update to WLC 4.20
+   2016-09-03T21:30:54Z 7f6aa930 zwj=    0 qadma=  433 pashta=  775 cgj=    0 zwnj=    0 | Ongoing corrections.
+   2016-10-13T16:15:05Z 7a8ce776 (not saved)                                                    | Minor corrections.
+   2016-11-16T01:42:46Z 46cb08d6 (not saved)                                                    | More numbering corrections.
+   2017-11-23T16:53:16Z a573a984 (not saved)                                                    | Various corrections.
+   2017-11-27T13:17:18Z 08574817 zwj=    0 qadma=  433 pashta=  775 cgj=    0 zwnj=    0 | Fixed m/854.
+   2017-12-10T07:20:17Z 097d0e42 zwj=    0 qadma=  433 pashta=  775 cgj=    0 zwnj=    0 | added phase 1 parsings--ruth, obad, jonah, joel complete; other books 
+   2017-12-14T19:27:17Z 3094c7ec (not saved)                                                    | Fixed license in XML files to be CC BY 4.0
+   2018-01-02T21:53:47Z b4dc98ad zwj=    0 qadma=  433 pashta=  775 cgj=    0 zwnj=    0 | Correction of the double-escaped &
+   2018-01-04T22:51:17Z ba378e75 (not saved)                                                    | 7 books newly complete
+   2018-04-23T19:11:30Z 32dd0c4d (not saved)                                                    | completed Lamentations, Esther, Micah, Ecclesiastes, Amos
+   2018-06-02T13:54:37Z 12505532 (not saved)                                                    | Updated headers
+   2018-12-14T14:18:08Z f0b4e882 zwj=    0 qadma=  433 pashta=  775 cgj=    0 zwnj=    0 | Addition of almost all verifieds
+   2018-12-14T14:45:21Z 4954a8d3 (not saved)                                                    | Added all contributors to each file
+   2018-12-14T15:34:23Z 91f0a521 (not saved)                                                    | fixed ordering for contributors, added missing morphs (except 2)
+   2018-12-15T15:38:24Z 8954c93b (not saved)                                                    | Several lemma updates
+   2018-12-15T16:00:03Z 55bc539d (not saved)                                                    | make lemma of 853/4 match its parsing
+   2018-12-16T13:28:26Z 6d412616 (not saved)                                                    | A few more 853/4 fixes
+   2018-12-20T14:57:46Z a92b95a1 (not saved)                                                    | Correction of 5 words from Hebrew to Aramaic
+   2018-12-20T15:32:17Z 17899971 (not saved)                                                    | Changed סביב from D to HNcbsa where it could be auto-determined (other
+   2018-12-21T09:56:29Z e0504653 (not saved)                                                    | Corrected word in Job 30:24 (was indicated as aramaic)
+   2018-12-29T15:40:37Z e4855e94 (not saved)                                                    | Updated morph of words where number of morph parts did not match word 
+   2019-01-13T08:31:14Z b52b78f5 (not saved)                                                    | Updated morph of סביב where it was marked an adverb
+   2019-01-13T09:13:12Z 7be49a56 (not saved)                                                    | Made nouns either gender both, masc or fem
+   2019-01-13T09:28:20Z 5dc21275 (not saved)                                                    | Added unique ids
+   2021-07-16T22:16:54Z 65214d2b (not saved)                                                    | Added 'x-ketiv' to @type attributes for all nodes in Ketiv readings.  
+   2022-03-10T22:52:57Z 2408955b (not saved)                                                    | Changes requested by Randall Tan and Joel Ruark from Clear Trees work.
+   2022-03-18T20:04:48Z 8de89602 zwj=    0 qadma=  433 pashta=  775 cgj=    0 zwnj=    0 | Changes requested in earlier set of OSHB issues.
+   head                 d4265dfa zwj=    0 qadma=  433 pashta=  775 cgj=    0 zwnj=    0 | the file at d4265dfa
+-- Lev: 52 commits in the listing
+   2009-12-28T20:00:24Z 07647ae2 (not saved)                                                    | Moved WLC xml files to a wlc subdirectory.
+   2010-01-08T14:40:16Z bba17e45 (not saved)                                                    | Brought phrases linked by a maqqef onto the same line (excluding K/Q)
+   2010-01-13T03:13:40Z 5018d9b5 (not saved)                                                    | Changed masoretic paragraphing to new markup
+   2010-01-13T03:25:56Z a0703ae7 (not saved)                                                    | Moved sof pasuq to its own element
+   2010-01-13T12:26:42Z 9bd5d8ad (not saved)                                                    | Moved paseq to its own seg element
+   2010-01-16T14:04:01Z 477e1cb9 (not saved)                                                    | Changed mixed ketiv/qere markup.  Minor corrections to validate files.
+   2010-01-16T22:26:01Z 3d250cb6 (not saved)                                                    | Changed all ketiv/qere readings. Added Daniel as a contributor.
+   2010-01-17T21:53:18Z f58c4008 (not saved)                                                    | Strong numbers for Divine Name corrected.
+   2010-01-19T12:17:25Z e7fcef7a (not saved)                                                    | Moved maqqefs out of w elements, and eliminated lemma="0".
+   2010-01-20T13:00:21Z b88ce67a (not saved)                                                    | Corrected ketiv/qeres. Inserted notes in place of references.
+   2010-03-31T12:08:52Z 57e5e441 (not saved)                                                    | Update to WLC 4.12.  Implements holam haser for vav, and various corre
+   2011-01-22T00:01:58Z 57206c9b (not saved)                                                    | Updated to WLC version 4.14.
+   2011-01-28T14:11:32Z a52c1012 (not saved)                                                    | Augmented Strong numbers completed.
+   2011-01-30T14:37:02Z fe661292 (not saved)                                                    | Prefixes added to augmented Strong numbers.
+   2011-03-05T19:20:19Z 753f97af (not saved)                                                    | Yalak Strong numbers changed to 3212, to agree with KJV.
+   2011-04-16T11:33:06Z 26498fd9 (not saved)                                                    | Changes due to TWOT numbers and verbal roots.
+   2012-01-27T00:53:50Z c0af6994 (not saved)                                                    | Strong number corrections.
+   2012-07-19T00:50:46Z 11626b6f (not saved)                                                    | Update to WLC 4.16.
+   2012-07-20T13:16:18Z d598fef6 (not saved)                                                    | Strong number corrections.
+   2013-02-27T11:41:15Z 1376cd7a (not saved)                                                    | Changed KJV reference notes, Strong number corrections.
+   2013-07-11T23:34:24Z d1325011 (not saved)                                                    | Update to WLC 4.18
+   2013-07-17T00:29:38Z 27179eda (not saved)                                                    | Structure attributes added.
+   2013-09-17T23:58:23Z 1dee0226 (not saved)                                                    | Corrections to augments.
+   2013-12-12T01:38:58Z 56b51322 (not saved)                                                    | First release of morphology.
+   2014-02-04T14:13:54Z 380f4219 (not saved)                                                    | Corrected pashta in the middle of a word.
+   2016-03-04T00:57:55Z 2201c6a7 zwj=    0 qadma=  457 pashta=  777 cgj=    0 zwnj=    0 | Update to WLC 4.20
+   2016-09-03T21:30:54Z 7f6aa930 (not saved)                                                    | Ongoing corrections.
+   2017-02-10T12:50:54Z 55c54c6f (not saved)                                                    | Lemma correction.
+   2017-11-23T16:53:16Z a573a984 (not saved)                                                    | Various corrections.
+   2017-11-27T13:17:18Z 08574817 (not saved)                                                    | Fixed m/854.
+   2017-12-10T07:20:17Z 097d0e42 (not saved)                                                    | added phase 1 parsings--ruth, obad, jonah, joel complete; other books 
+   2017-12-14T19:27:17Z 3094c7ec zwj=    0 qadma=  457 pashta=  777 cgj=    0 zwnj=    0 | Fixed license in XML files to be CC BY 4.0
+   2018-01-02T21:53:47Z b4dc98ad (not saved)                                                    | Correction of the double-escaped &
+   2018-01-04T22:51:17Z ba378e75 (not saved)                                                    | 7 books newly complete
+   2018-04-23T19:11:30Z 32dd0c4d zwj=    0 qadma=  457 pashta=  777 cgj=    0 zwnj=    0 | completed Lamentations, Esther, Micah, Ecclesiastes, Amos
+   2018-06-02T13:54:37Z 12505532 zwj=    0 qadma=  457 pashta=  777 cgj=    0 zwnj=    0 | Updated headers
+   2018-12-14T14:18:08Z f0b4e882 zwj=    0 qadma=  457 pashta=  777 cgj=    0 zwnj=    0 | Addition of almost all verifieds
+   2018-12-14T14:45:21Z 4954a8d3 (not saved)                                                    | Added all contributors to each file
+   2018-12-14T15:34:23Z 91f0a521 zwj=    0 qadma=  457 pashta=  777 cgj=    0 zwnj=    0 | fixed ordering for contributors, added missing morphs (except 2)
+   2018-12-15T15:38:24Z 8954c93b (not saved)                                                    | Several lemma updates
+   2018-12-15T16:00:03Z 55bc539d (not saved)                                                    | make lemma of 853/4 match its parsing
+   2018-12-16T13:28:26Z 6d412616 (not saved)                                                    | A few more 853/4 fixes
+   2018-12-20T14:57:46Z a92b95a1 (not saved)                                                    | Correction of 5 words from Hebrew to Aramaic
+   2018-12-20T15:32:17Z 17899971 (not saved)                                                    | Changed סביב from D to HNcbsa where it could be auto-determined (other
+   2018-12-21T09:56:29Z e0504653 (not saved)                                                    | Corrected word in Job 30:24 (was indicated as aramaic)
+   2018-12-29T15:40:37Z e4855e94 (not saved)                                                    | Updated morph of words where number of morph parts did not match word 
+   2019-01-13T08:31:14Z b52b78f5 (not saved)                                                    | Updated morph of סביב where it was marked an adverb
+   2019-01-13T09:13:12Z 7be49a56 (not saved)                                                    | Made nouns either gender both, masc or fem
+   2019-01-13T09:28:20Z 5dc21275 (not saved)                                                    | Added unique ids
+   2020-01-14T07:47:39Z 591b446d (not saved)                                                    | fix incorrect lemma
+   2021-07-16T22:16:54Z 65214d2b (not saved)                                                    | Added 'x-ketiv' to @type attributes for all nodes in Ketiv readings.  
+   2022-03-10T22:52:57Z 2408955b (not saved)                                                    | Changes requested by Randall Tan and Joel Ruark from Clear Trees work.
+   head                 d4265dfa zwj=    0 qadma=  457 pashta=  777 cgj=    0 zwnj=    0 | the file at d4265dfa
+
+== C. Part B's changes of the zwj or qadma count, with the unsaved commits between
+-- Dan: 63 commits in the listing
+   2016-01-24T01:09:19Z cd726c7c zwj=    0 qadma=  215 pashta=  541 cgj=    0 zwnj=    0 | Various corrections   [first saved]
+      unsaved after the last saved: 8774f10b f7b39f6d 140da8d7 cd0eaf6b 050488bd f58a124b 65214d2b 8de89602
+   head                 d4265dfa zwj=    0 qadma=  215 pashta=  541 cgj=    0 zwnj=    0 | the file at d4265dfa
+-- Deut: 70 commits in the listing
+   2010-01-17T21:53:18Z f58c4008 zwj=    2 qadma=  441 pashta= 1222 cgj=    0 zwnj=    0 | Strong numbers for Divine Name corrected.   [first saved]
+   2010-07-02T01:28:44Z 9c46c1e1 zwj=    2 qadma=  441 pashta= 1222 cgj=    0 zwnj=    0 | Strong number corrections.
+   2010-07-13T00:55:47Z 73784451 zwj=    2 qadma=  442 pashta= 1231 cgj=    0 zwnj=    0 | Separated the accents of the Ten Commandments, to conform with the WLC
+   2013-09-17T23:58:23Z 1dee0226 zwj=    2 qadma=  442 pashta= 1231 cgj=    0 zwnj=    0 | Corrections to augments.
+   2013-12-12T01:38:58Z 56b51322 zwj=    0 qadma=  442 pashta= 1231 cgj=    0 zwnj=    0 | First release of morphology.
+   2013-12-12T01:38:58Z 56b51322 zwj=    0 qadma=  442 pashta= 1231 cgj=    0 zwnj=    0 | First release of morphology.
+   2014-02-04T14:13:54Z 380f4219 zwj=    0 qadma=  626 pashta= 1047 cgj=    0 zwnj=    0 | Corrected pashta in the middle of a word.
+   head                 d4265dfa zwj=    0 qadma=  626 pashta= 1047 cgj=    0 zwnj=    0 | the file at d4265dfa
+-- Eccl: 53 commits in the listing
+   2010-02-27T00:42:50Z 2b7225d1 zwj=    0 qadma=   58 pashta=  243 cgj=    0 zwnj=    0 | Strong number corrections.   [first saved]
+   2013-07-13T23:55:16Z 3a1c8784 zwj=    0 qadma=   58 pashta=  243 cgj=    0 zwnj=    0 | Corrections for enosh.
+      unsaved between: 27179eda 20f4e641 1dee0226 56b51322 d4f37610
+   2014-02-04T14:13:54Z 380f4219 zwj=    0 qadma=   96 pashta=  205 cgj=    0 zwnj=    0 | Corrected pashta in the middle of a word.
+   head                 d4265dfa zwj=    0 qadma=   96 pashta=  205 cgj=    0 zwnj=    0 | the file at d4265dfa
+-- Exod: 62 commits in the listing
+   2010-01-16T22:26:01Z 3d250cb6 zwj=    0 qadma=  408 pashta= 1335 cgj=    0 zwnj=    0 | Changed all ketiv/qere readings. Added Daniel as a contributor.   [first saved]
+   2010-03-31T12:08:52Z 57e5e441 zwj=    0 qadma=  408 pashta= 1335 cgj=    0 zwnj=    0 | Update to WLC 4.12.  Implements holam haser for vav, and various corre
+   2010-07-13T00:55:47Z 73784451 zwj=    0 qadma=  411 pashta= 1341 cgj=    0 zwnj=    0 | Separated the accents of the Ten Commandments, to conform with the WLC
+   2011-01-20T13:01:40Z 5ec80c74 zwj=    0 qadma=  411 pashta= 1341 cgj=    0 zwnj=    0 | Strong numbers for phrases entended, appending + to each word before t
+      unsaved between: 57206c9b a52c1012 fe661292 0a5b1a52 753f97af 208c83e8 ba41e3da 26498fd9 c0af6994 6e17c189 11626b6f d598fef6 1376cd7a 2772ac0e d1325011
+   2013-07-13T23:55:16Z 3a1c8784 zwj=    0 qadma=  410 pashta= 1341 cgj=    0 zwnj=    0 | Corrections for enosh.
+   2013-07-13T23:55:16Z 3a1c8784 zwj=    0 qadma=  410 pashta= 1341 cgj=    0 zwnj=    0 | Corrections for enosh.
+      unsaved between: 27179eda 1dee0226 56b51322 380f4219 2201c6a7 7f6aa930 7a8ce776 a573a984 08574817 097d0e42 3094c7ec b4dc98ad ba378e75 32dd0c4d
+   2018-06-02T13:54:37Z 12505532 zwj=    0 qadma=  609 pashta= 1142 cgj=    0 zwnj=    0 | Updated headers
+   head                 d4265dfa zwj=    0 qadma=  609 pashta= 1142 cgj=    0 zwnj=    0 | the file at d4265dfa
+-- Gen: 62 commits in the listing
+   2010-01-16T14:37:28Z 8674a20c zwj=    0 qadma=  457 pashta= 1703 cgj=    0 zwnj=    0 | Changed mixed ketiv/qere. Made minor corrections to validate files.   [first saved]
+   2013-12-12T01:38:58Z 56b51322 zwj=    0 qadma=  457 pashta= 1705 cgj=    0 zwnj=    0 | First release of morphology.
+      unsaved between: 380f4219 2201c6a7
+   2016-09-03T21:30:54Z 7f6aa930 zwj=    0 qadma=  730 pashta= 1431 cgj=    0 zwnj=    0 | Ongoing corrections.
+      unsaved after the last saved: 4954a8d3 91f0a521 8954c93b a7b1d8b2 55bc539d 6d412616 a92b95a1 17899971 e0504653 e4855e94 b52b78f5 7be49a56 5dc21275 456c54c6 65214d2b 2408955b
+   head                 d4265dfa zwj=    0 qadma=  730 pashta= 1431 cgj=    0 zwnj=    0 | the file at d4265dfa
+-- Hos: 51 commits in the listing
+   2013-07-13T23:55:16Z 3a1c8784 zwj=    1 qadma=   28 pashta=  238 cgj=    0 zwnj=    0 | Corrections for enosh.   [first saved]
+   2013-09-17T23:58:23Z 1dee0226 zwj=    1 qadma=   28 pashta=  238 cgj=    0 zwnj=    0 | Corrections to augments.
+   2013-12-12T01:38:58Z 56b51322 zwj=    0 qadma=   28 pashta=  238 cgj=    0 zwnj=    0 | First release of morphology.
+   2013-12-12T01:38:58Z 56b51322 zwj=    0 qadma=   28 pashta=  238 cgj=    0 zwnj=    0 | First release of morphology.
+      unsaved between: 380f4219 2201c6a7
+   2017-11-23T16:53:16Z a573a984 zwj=    0 qadma=   69 pashta=  197 cgj=    0 zwnj=    0 | Various corrections.
+      unsaved after the last saved: 4954a8d3 91f0a521 8954c93b 6d412616 a92b95a1 e0504653 e4855e94 b52b78f5 7be49a56 5dc21275 2bdcd48c 65214d2b 2408955b
+   head                 d4265dfa zwj=    0 qadma=   69 pashta=  197 cgj=    0 zwnj=    0 | the file at d4265dfa
+-- Jer: 70 commits in the listing
+   2011-01-29T13:52:33Z e2449e19 zwj=    5 qadma=  589 pashta= 1985 cgj=    0 zwnj=    0 | Corrections for the index.   [first saved]
+   2013-02-27T11:41:15Z 1376cd7a zwj=    5 qadma=  589 pashta= 1985 cgj=    0 zwnj=    0 | Changed KJV reference notes, Strong number corrections.
+      unsaved between: 389f6487 4a2d63fd d1325011 3a1c8784 27179eda 20f4e641 1dee0226 56b51322
+   2014-02-04T14:13:54Z 380f4219 zwj=    0 qadma=  887 pashta= 1687 cgj=    0 zwnj=    0 | Corrected pashta in the middle of a word.
+   head                 d4265dfa zwj=    0 qadma=  887 pashta= 1687 cgj=    0 zwnj=    0 | the file at d4265dfa
+-- Josh: 52 commits in the listing
+   2013-12-12T01:38:58Z 56b51322 zwj=    0 qadma=  371 pashta=  880 cgj=    0 zwnj=    0 | First release of morphology.   [first saved]
+   2013-12-12T01:38:58Z 56b51322 zwj=    0 qadma=  371 pashta=  880 cgj=    0 zwnj=    0 | First release of morphology.
+      unsaved between: 380f4219 2201c6a7 7f6aa930 a573a984 08574817
+   2017-12-10T07:20:17Z 097d0e42 zwj=    0 qadma=  519 pashta=  732 cgj=    0 zwnj=    0 | added phase 1 parsings--ruth, obad, jonah, joel complete; other books 
+   head                 d4265dfa zwj=    0 qadma=  519 pashta=  732 cgj=    0 zwnj=    0 | the file at d4265dfa
+-- Judg: 58 commits in the listing
+   2010-01-23T13:39:21Z b865d725 zwj=    1 qadma=  279 pashta=  929 cgj=    0 zwnj=    0 | Corrected maqqef errors in Joshua and Judges.   [first saved]
+   2013-07-13T23:55:16Z 3a1c8784 zwj=    1 qadma=  279 pashta=  929 cgj=    0 zwnj=    0 | Corrections for enosh.
+      unsaved between: 27179eda 1dee0226 56b51322
+   2014-02-04T14:13:54Z 380f4219 zwj=    0 qadma=  433 pashta=  775 cgj=    0 zwnj=    0 | Corrected pashta in the middle of a word.
+   head                 d4265dfa zwj=    0 qadma=  433 pashta=  775 cgj=    0 zwnj=    0 | the file at d4265dfa
+-- Lev: 52 commits in the listing
+   2016-03-04T00:57:55Z 2201c6a7 zwj=    0 qadma=  457 pashta=  777 cgj=    0 zwnj=    0 | Update to WLC 4.20   [first saved]
+      unsaved after the last saved: 8954c93b 55bc539d 6d412616 a92b95a1 17899971 e0504653 e4855e94 b52b78f5 7be49a56 5dc21275 591b446d 65214d2b 2408955b
+   head                 d4265dfa zwj=    0 qadma=  457 pashta=  777 cgj=    0 zwnj=    0 | the file at d4265dfa

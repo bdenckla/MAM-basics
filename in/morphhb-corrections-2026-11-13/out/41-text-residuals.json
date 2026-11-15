@@ -1,0 +1,2572 @@
+{
+ "_written_by": "# written by scripts/p2_text_compare.py: C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe -I .novc/morphhb-corrections-2026-11-13/scripts/p2_text_compare.py .novc/morphhb-corrections-2026-11-13/scripts .novc/morphhb-corrections-2026-11-13/fetched .novc/morphhb-corrections-2026-11-13/out  (working directory C:/Users/BenDe/GitRepos/MAM-basics)",
+ "closest_version": "4.20",
+ "residuals": [],
+ "other_units_shown": [
+  {
+   "reference": "Exod 20:4",
+   "osisID": "Exod.20.4",
+   "label": "divided-accents/pointing",
+   "class": "Decalogue/divided accents",
+   "level": "pointing",
+   "morphhb": [
+    {
+     "kind": "plain",
+     "raw": "מִ/תָּ֑חַת",
+     "text": "מִתָּ֑חַת",
+     "paseq": false,
+     "notes": [
+      "1"
+     ]
+    }
+   ],
+   "morphhb_ids": [
+    "02p5S"
+   ],
+   "wlc_4.20": [
+    {
+     "kind": "plain",
+     "raw": "מִתַָּ֑֜חַת",
+     "text": "מִתַָּ֑֜חַת",
+     "paseq": false,
+     "notes": [
+      "1"
+     ]
+    }
+   ],
+   "others": {
+    "4.18": [
+     {
+      "kind": "plain",
+      "raw": "מִ/תַָּ֑֜חַת",
+      "text": "מִתַָּ֑֜חַת",
+      "paseq": false,
+      "notes": [
+       "1"
+      ]
+     }
+    ],
+    "4.22": [
+     {
+      "kind": "plain",
+      "raw": "מִתַָּ֑֜חַת",
+      "text": "מִתַָּ֑֜חַת",
+      "paseq": false,
+      "notes": [
+       "1"
+      ]
+     }
+    ],
+    "UXLC": [
+     {
+      "kind": "plain",
+      "raw": "מִתָּ֑͏ַ֜חַת",
+      "text": "מִתָּ֑͏ַ֜חַת",
+      "paseq": false,
+      "notes": []
+     }
+    ],
+    "MAM": [
+     {
+      "kind": "plain",
+      "raw": "מִתָּ֑͏ַ֜חַת",
+      "text": "מִתָּ֑͏ַ֜חַת",
+      "paseq": false,
+      "notes": []
+     }
+    ]
+   },
+   "agree_with_morphhb": {
+    "4.18": "letters",
+    "4.22": "letters",
+    "UXLC": "letters",
+    "MAM": "letters"
+   },
+   "agree_with_wlc_4.20": {
+    "4.18": "full",
+    "4.22": "full",
+    "UXLC": "full",
+    "MAM": "full"
+   },
+   "mark_diff": {
+    "morphhb_has": [],
+    "wlc_has": [
+     "accent geresh",
+     "point patah"
+    ]
+   },
+   "divided_accents_verse": true,
+   "exegesis_notes": [],
+   "_display": {
+    "morphhb": "מִתָּ֑חַת",
+    "4.20": "מִתַָּ֑֜חַת",
+    "4.18": "מִתַָּ֑֜חַת",
+    "4.22": "מִתַָּ֑֜חַת",
+    "UXLC": "מִתָּ֑͏ַ֜חַת",
+    "MAM": "מִתָּ֑͏ַ֜חַת"
+   },
+   "union_test": "marks",
+   "alternative": {
+    "text": "מִתָּ֜חַת",
+    "paseq": false
+   }
+  },
+  {
+   "reference": "Exod 20:5",
+   "osisID": "Exod.20.5",
+   "label": "divided-accents/pointing",
+   "class": "Decalogue/divided accents",
+   "level": "pointing",
+   "morphhb": [
+    {
+     "kind": "plain",
+     "raw": "תִשְׁתַּחֲוֶ֥ה",
+     "text": "תִשְׁתַּחֲוֶ֥ה",
+     "paseq": false,
+     "notes": [
+      "1"
+     ]
+    }
+   ],
+   "morphhb_ids": [
+    "02Feh"
+   ],
+   "wlc_4.20": [
+    {
+     "kind": "plain",
+     "raw": "תִשְׁתַּחְוֶ֥֣ה",
+     "text": "תִשְׁתַּחְוֶ֥֣ה",
+     "paseq": false,
+     "notes": [
+      "1"
+     ]
+    }
+   ],
+   "others": {
+    "4.18": [
+     {
+      "kind": "plain",
+      "raw": "תִשְׁתַּחְוֶ֥֣ה",
+      "text": "תִשְׁתַּחְוֶ֥֣ה",
+      "paseq": false,
+      "notes": [
+       "1"
+      ]
+     }
+    ],
+    "4.22": [
+     {
+      "kind": "plain",
+      "raw": "תִשְׁתַּחְוֶ֥֣ה",
+      "text": "תִשְׁתַּחְוֶ֥֣ה",
+      "paseq": false,
+      "notes": [
+       "1"
+      ]
+     }
+    ],
+    "UXLC": [
+     {
+      "kind": "plain",
+      "raw": "תִשְׁתַּחְוֶ֥֣ה",
+      "text": "תִשְׁתַּחְוֶ֥֣ה",
+      "paseq": false,
+      "notes": []
+     }
+    ],
+    "MAM": [
+     {
+      "kind": "plain",
+      "raw": "תִשְׁתַּחֲוֶ֥֣ה",
+      "text": "תִשְׁתַּחֲוֶ֥֣ה",
+      "paseq": false,
+      "notes": []
+     }
+    ]
+   },
+   "agree_with_morphhb": {
+    "4.18": "letters",
+    "4.22": "letters",
+    "UXLC": "letters",
+    "MAM": "skey"
+   },
+   "agree_with_wlc_4.20": {
+    "4.18": "full",
+    "4.22": "full",
+    "UXLC": "full",
+    "MAM": "letters"
+   },
+   "mark_diff": {
+    "morphhb_has": [
+     "point hataf patah"
+    ],
+    "wlc_has": [
+     "accent munah",
+     "point sheva"
+    ]
+   },
+   "divided_accents_verse": true,
+   "exegesis_notes": [],
+   "_display": {
+    "morphhb": "תִשְׁתַּחֲוֶ֥ה",
+    "4.20": "תִשְׁתַּחְוֶ֥֣ה",
+    "4.18": "תִשְׁתַּחְוֶ֥֣ה",
+    "4.22": "תִשְׁתַּחְוֶ֥֣ה",
+    "UXLC": "תִשְׁתַּחְוֶ֥֣ה",
+    "MAM": "תִשְׁתַּחֲוֶ֥֣ה"
+   },
+   "union_test": "marks",
+   "alternative": {
+    "text": "תִשְׁתַּחֲוֶ֣ה",
+    "paseq": false
+   }
+  },
+  {
+   "reference": "Deut 5:7",
+   "osisID": "Deut.5.7",
+   "label": "divided-accents/pointing",
+   "class": "Decalogue/divided accents",
+   "level": "pointing",
+   "morphhb": [
+    {
+     "kind": "plain",
+     "raw": "לֹא",
+     "text": "לֹא־",
+     "paseq": false,
+     "notes": []
+    }
+   ],
+   "morphhb_ids": [
+    "05HcR"
+   ],
+   "wlc_4.20": [
+    {
+     "kind": "plain",
+     "raw": "לֹ֣א",
+     "text": "לֹ֣א",
+     "paseq": false,
+     "notes": []
+    }
+   ],
+   "others": {
+    "4.18": [
+     {
+      "kind": "plain",
+      "raw": "לֹ֣א",
+      "text": "לֹ֣א",
+      "paseq": false,
+      "notes": []
+     }
+    ],
+    "4.22": [
+     {
+      "kind": "plain",
+      "raw": "לֹ֣א",
+      "text": "לֹ֣א",
+      "paseq": false,
+      "notes": []
+     }
+    ],
+    "UXLC": [
+     {
+      "kind": "plain",
+      "raw": "לֹ֣א",
+      "text": "לֹ֣א",
+      "paseq": false,
+      "notes": []
+     }
+    ],
+    "MAM": [
+     {
+      "kind": "plain",
+      "raw": "לֹ֣א־",
+      "text": "לֹ֣א־",
+      "paseq": false,
+      "notes": []
+     }
+    ]
+   },
+   "agree_with_morphhb": {
+    "4.18": "letters",
+    "4.22": "letters",
+    "UXLC": "letters",
+    "MAM": "skey"
+   },
+   "agree_with_wlc_4.20": {
+    "4.18": "full",
+    "4.22": "full",
+    "UXLC": "full",
+    "MAM": "letters"
+   },
+   "mark_diff": null,
+   "divided_accents_verse": true,
+   "exegesis_notes": [],
+   "_display": {
+    "morphhb": "לֹא־",
+    "4.20": "לֹ֣א",
+    "4.18": "לֹ֣א",
+    "4.22": "לֹ֣א",
+    "UXLC": "לֹ֣א",
+    "MAM": "לֹ֣א־"
+   },
+   "union_test": "maqaf",
+   "alternative": {
+    "text": "לֹ֣א",
+    "paseq": false
+   }
+  },
+  {
+   "reference": "Deut 5:7",
+   "osisID": "Deut.5.7",
+   "label": "divided-accents/pointing",
+   "class": "Decalogue/divided accents",
+   "level": "pointing",
+   "morphhb": [
+    {
+     "kind": "plain",
+     "raw": "יִהְיֶ֥ה",
+     "text": "יִהְיֶ֥ה",
+     "paseq": false,
+     "notes": []
+    }
+   ],
+   "morphhb_ids": [
+    "059vS"
+   ],
+   "wlc_4.20": [
+    {
+     "kind": "plain",
+     "raw": "יִהְיֶ֥ה־",
+     "text": "יִהְיֶ֥ה־",
+     "paseq": false,
+     "notes": []
+    }
+   ],
+   "others": {
+    "4.18": [
+     {
+      "kind": "plain",
+      "raw": "יִהְיֶ֥ה־",
+      "text": "יִהְיֶ֥ה־",
+      "paseq": false,
+      "notes": []
+     }
+    ],
+    "4.22": [
+     {
+      "kind": "plain",
+      "raw": "יִהְיֶ֥ה־",
+      "text": "יִהְיֶ֥ה־",
+      "paseq": false,
+      "notes": []
+     }
+    ],
+    "UXLC": [
+     {
+      "kind": "plain",
+      "raw": "יִהְיֶ֥ה־",
+      "text": "יִהְיֶ֥ה־",
+      "paseq": false,
+      "notes": []
+     }
+    ],
+    "MAM": [
+     {
+      "kind": "plain",
+      "raw": "יִהְיֶ֥͏ֽה־",
+      "text": "יִהְיֶ֥͏ֽה־",
+      "paseq": false,
+      "notes": []
+     }
+    ]
+   },
+   "agree_with_morphhb": {
+    "4.18": "letters",
+    "4.22": "letters",
+    "UXLC": "letters",
+    "MAM": "letters"
+   },
+   "agree_with_wlc_4.20": {
+    "4.18": "full",
+    "4.22": "full",
+    "UXLC": "full",
+    "MAM": "skey"
+   },
+   "mark_diff": null,
+   "divided_accents_verse": true,
+   "exegesis_notes": [],
+   "_display": {
+    "morphhb": "יִהְיֶ֥ה",
+    "4.20": "יִהְיֶ֥ה־",
+    "4.18": "יִהְיֶ֥ה־",
+    "4.22": "יִהְיֶ֥ה־",
+    "UXLC": "יִהְיֶ֥ה־",
+    "MAM": "יִהְיֶ֥͏ֽה־"
+   },
+   "union_test": "ok",
+   "alternative": {
+    "text": "יִהְיֶה־",
+    "paseq": false
+   }
+  },
+  {
+   "reference": "Deut 5:8",
+   "osisID": "Deut.5.8",
+   "label": "divided-accents/pointing",
+   "class": "Decalogue/divided accents",
+   "level": "pointing",
+   "morphhb": [
+    {
+     "kind": "plain",
+     "raw": "תַעֲשֶׂ֥ה",
+     "text": "תַעֲשֶׂ֥ה",
+     "paseq": false,
+     "notes": []
+    }
+   ],
+   "morphhb_ids": [
+    "05fou"
+   ],
+   "wlc_4.20": [
+    {
+     "kind": "plain",
+     "raw": "תַעֲשֶׂ֥ה־",
+     "text": "תַעֲשֶׂ֥ה־",
+     "paseq": false,
+     "notes": []
+    }
+   ],
+   "others": {
+    "4.18": [
+     {
+      "kind": "plain",
+      "raw": "תַעֲשֶׂ֥ה־",
+      "text": "תַעֲשֶׂ֥ה־",
+      "paseq": false,
+      "notes": []
+     }
+    ],
+    "4.22": [
+     {
+      "kind": "plain",
+      "raw": "תַעֲשֶׂ֥ה־",
+      "text": "תַעֲשֶׂ֥ה־",
+      "paseq": false,
+      "notes": []
+     }
+    ],
+    "UXLC": [
+     {
+      "kind": "plain",
+      "raw": "תַעֲשֶֽׂ֨ה־",
+      "text": "תַעֲשֶֽׂ֨ה־",
+      "paseq": false,
+      "notes": [
+       "t"
+      ]
+     }
+    ],
+    "MAM": [
+     {
+      "kind": "plain",
+      "raw": "תַעֲשֶֽׂ֨ה־",
+      "text": "תַעֲשֶֽׂ֨ה־",
+      "paseq": false,
+      "notes": []
+     }
+    ]
+   },
+   "agree_with_morphhb": {
+    "4.18": "letters",
+    "4.22": "letters",
+    "UXLC": "letters",
+    "MAM": "letters"
+   },
+   "agree_with_wlc_4.20": {
+    "4.18": "full",
+    "4.22": "full",
+    "UXLC": "skey",
+    "MAM": "skey"
+   },
+   "mark_diff": null,
+   "divided_accents_verse": true,
+   "exegesis_notes": [],
+   "_display": {
+    "morphhb": "תַעֲשֶׂ֥ה",
+    "4.20": "תַעֲשֶׂ֥ה־",
+    "4.18": "תַעֲשֶׂ֥ה־",
+    "4.22": "תַעֲשֶׂ֥ה־",
+    "UXLC": "תַעֲשֶֽׂ֨ה־",
+    "MAM": "תַעֲשֶֽׂ֨ה־"
+   },
+   "union_test": "ok",
+   "alternative": {
+    "text": "תַעֲשֶׂה־",
+    "paseq": false
+   }
+  },
+  {
+   "reference": "2Kgs 6:25",
+   "osisID": "2Kgs.6.25",
+   "label": "word-division",
+   "class": "word division",
+   "level": "division",
+   "morphhb": [
+    {
+     "kind": "ketiv",
+     "raw": "חרי",
+     "text": "חרי",
+     "paseq": false,
+     "notes": []
+    },
+    {
+     "kind": "ketiv",
+     "raw": "יונים",
+     "text": "יונים",
+     "paseq": false,
+     "notes": []
+    }
+   ],
+   "morphhb_ids": [
+    "12TtK",
+    "12vw5"
+   ],
+   "wlc_4.20": [
+    {
+     "kind": "ketiv",
+     "raw": "חרייונים",
+     "text": "חרייונים",
+     "paseq": false,
+     "notes": []
+    }
+   ],
+   "others": {
+    "4.18": [
+     {
+      "kind": "ketiv",
+      "raw": "חרי/יונים",
+      "text": "חרייונים",
+      "paseq": false,
+      "notes": []
+     }
+    ],
+    "4.22": [
+     {
+      "kind": "ketiv",
+      "raw": "חרייונים",
+      "text": "חרייונים",
+      "paseq": false,
+      "notes": []
+     }
+    ],
+    "UXLC": [
+     {
+      "kind": "ketiv",
+      "raw": "חרייונים",
+      "text": "חרייונים",
+      "paseq": false,
+      "notes": []
+     }
+    ],
+    "MAM": [
+     {
+      "kind": "plain",
+      "raw": "חרייוֹנִ֖ים",
+      "text": "חרייוֹנִ֖ים",
+      "paseq": false,
+      "notes": []
+     }
+    ]
+   },
+   "agree_with_morphhb": {
+    "4.18": "no",
+    "4.22": "no",
+    "UXLC": "no",
+    "MAM": "no"
+   },
+   "agree_with_wlc_4.20": {
+    "4.18": "full",
+    "4.22": "full",
+    "UXLC": "full",
+    "MAM": "letters"
+   },
+   "mark_diff": {
+    "morphhb_has": [],
+    "wlc_has": []
+   },
+   "divided_accents_verse": false,
+   "exegesis_notes": [
+    {
+     "text": "A single word in the text has been divided for exegesis.",
+     "rdg": null,
+     "after": 18
+    }
+   ],
+   "_display": {
+    "morphhb": "[k]חרי [k]יונים",
+    "4.20": "[k]חרייונים",
+    "4.18": "[k]חרייונים",
+    "4.22": "[k]חרייונים",
+    "UXLC": "[k]חרייונים",
+    "MAM": "חרייוֹנִ֖ים"
+   }
+  },
+  {
+   "reference": "Isa 9:5",
+   "osisID": "Isa.9.5",
+   "label": "word-division",
+   "class": "word division",
+   "level": "division",
+   "morphhb": [
+    {
+     "kind": "plain",
+     "raw": "אֲבִי",
+     "text": "אֲבִי",
+     "paseq": false,
+     "notes": []
+    },
+    {
+     "kind": "plain",
+     "raw": "עַ֖ד",
+     "text": "עַ֖ד",
+     "paseq": false,
+     "notes": []
+    }
+   ],
+   "morphhb_ids": [
+    "23TH8",
+    "23q1v"
+   ],
+   "wlc_4.20": [
+    {
+     "kind": "plain",
+     "raw": "אֲבִיעַ֖ד",
+     "text": "אֲבִיעַ֖ד",
+     "paseq": false,
+     "notes": []
+    }
+   ],
+   "others": {
+    "4.18": [
+     {
+      "kind": "plain",
+      "raw": "אֲבִי/עַ֖ד",
+      "text": "אֲבִיעַ֖ד",
+      "paseq": false,
+      "notes": []
+     }
+    ],
+    "4.22": [
+     {
+      "kind": "plain",
+      "raw": "אֲבִיעַ֖ד",
+      "text": "אֲבִיעַ֖ד",
+      "paseq": false,
+      "notes": []
+     }
+    ],
+    "UXLC": [
+     {
+      "kind": "plain",
+      "raw": "אֲבִיעַ֖ד",
+      "text": "אֲבִיעַ֖ד",
+      "paseq": false,
+      "notes": []
+     }
+    ],
+    "MAM": [
+     {
+      "kind": "plain",
+      "raw": "אֲבִי־",
+      "text": "אֲבִי־",
+      "paseq": false,
+      "notes": []
+     },
+     {
+      "kind": "plain",
+      "raw": "עַ֖ד",
+      "text": "עַ֖ד",
+      "paseq": false,
+      "notes": []
+     }
+    ]
+   },
+   "agree_with_morphhb": {
+    "4.18": "no",
+    "4.22": "no",
+    "UXLC": "no",
+    "MAM": "letters"
+   },
+   "agree_with_wlc_4.20": {
+    "4.18": "full",
+    "4.22": "full",
+    "UXLC": "full",
+    "MAM": "no"
+   },
+   "mark_diff": {
+    "morphhb_has": [],
+    "wlc_has": []
+   },
+   "divided_accents_verse": false,
+   "exegesis_notes": [
+    {
+     "text": "A single word in the text has been divided for exegesis.",
+     "rdg": null,
+     "after": 19
+    }
+   ],
+   "_display": {
+    "morphhb": "אֲבִי עַ֖ד",
+    "4.20": "אֲבִיעַ֖ד",
+    "4.18": "אֲבִיעַ֖ד",
+    "4.22": "אֲבִיעַ֖ד",
+    "UXLC": "אֲבִיעַ֖ד",
+    "MAM": "אֲבִי־עַ֖ד"
+   }
+  },
+  {
+   "reference": "Isa 9:6",
+   "osisID": "Isa.9.6",
+   "label": "final-form",
+   "class": "mark encoding only",
+   "level": "letter form",
+   "morphhb": [
+    {
+     "kind": "ketiv",
+     "raw": "ל/םרבה",
+     "text": "לםרבה",
+     "paseq": false,
+     "notes": []
+    }
+   ],
+   "morphhb_ids": [
+    "23ssX"
+   ],
+   "wlc_4.20": [
+    {
+     "kind": "ketiv",
+     "raw": "למרבה",
+     "text": "למרבה",
+     "paseq": false,
+     "notes": [
+      "F"
+     ]
+    }
+   ],
+   "others": {
+    "4.18": [
+     {
+      "kind": "ketiv",
+      "raw": "ל/םרבה",
+      "text": "לםרבה",
+      "paseq": false,
+      "notes": [
+       "F"
+      ]
+     }
+    ],
+    "4.22": [
+     {
+      "kind": "ketiv",
+      "raw": "למרבה",
+      "text": "למרבה",
+      "paseq": false,
+      "notes": [
+       "F"
+      ]
+     }
+    ],
+    "UXLC": [
+     {
+      "kind": "ketiv",
+      "raw": "לםרבה",
+      "text": "לםרבה",
+      "paseq": false,
+      "notes": [
+       "c"
+      ]
+     }
+    ],
+    "MAM": [
+     {
+      "kind": "plain",
+      "raw": "לם",
+      "text": "לם",
+      "paseq": false,
+      "notes": []
+     },
+     {
+      "kind": "plain",
+      "raw": "רבה",
+      "text": "רבה",
+      "paseq": false,
+      "notes": []
+     }
+    ]
+   },
+   "agree_with_morphhb": {
+    "4.18": "full",
+    "4.22": "no",
+    "UXLC": "full",
+    "MAM": "no"
+   },
+   "agree_with_wlc_4.20": {
+    "4.18": "no",
+    "4.22": "full",
+    "UXLC": "no",
+    "MAM": "no"
+   },
+   "mark_diff": null,
+   "divided_accents_verse": false,
+   "exegesis_notes": [],
+   "_display": {
+    "morphhb": "[k]לםרבה",
+    "4.20": "[k]למרבה",
+    "4.18": "[k]לםרבה",
+    "4.22": "[k]למרבה",
+    "UXLC": "[k]לםרבה",
+    "MAM": "לם רבה"
+   }
+  },
+  {
+   "reference": "Jer 29:23",
+   "osisID": "Jer.29.23",
+   "label": "word-division",
+   "class": "word division",
+   "level": "division",
+   "morphhb": [
+    {
+     "kind": "ketiv",
+     "raw": "הו",
+     "text": "הו",
+     "paseq": false,
+     "notes": []
+    },
+    {
+     "kind": "ketiv",
+     "raw": "ידע",
+     "text": "ידע",
+     "paseq": false,
+     "notes": []
+    }
+   ],
+   "morphhb_ids": [
+    "24pmm",
+    "24ATv"
+   ],
+   "wlc_4.20": [
+    {
+     "kind": "ketiv",
+     "raw": "הוידע",
+     "text": "הוידע",
+     "paseq": false,
+     "notes": []
+    }
+   ],
+   "others": {
+    "4.18": [
+     {
+      "kind": "ketiv",
+      "raw": "הו/ידע",
+      "text": "הוידע",
+      "paseq": false,
+      "notes": []
+     }
+    ],
+    "4.22": [
+     {
+      "kind": "ketiv",
+      "raw": "הוידע",
+      "text": "הוידע",
+      "paseq": false,
+      "notes": []
+     }
+    ],
+    "UXLC": [
+     {
+      "kind": "ketiv",
+      "raw": "הוידע",
+      "text": "הוידע",
+      "paseq": false,
+      "notes": []
+     }
+    ],
+    "MAM": [
+     {
+      "kind": "plain",
+      "raw": "הוידע",
+      "text": "הוידע",
+      "paseq": false,
+      "notes": []
+     }
+    ]
+   },
+   "agree_with_morphhb": {
+    "4.18": "no",
+    "4.22": "no",
+    "UXLC": "no",
+    "MAM": "no"
+   },
+   "agree_with_wlc_4.20": {
+    "4.18": "full",
+    "4.22": "full",
+    "UXLC": "full",
+    "MAM": "full"
+   },
+   "mark_diff": {
+    "morphhb_has": [],
+    "wlc_has": []
+   },
+   "divided_accents_verse": false,
+   "exegesis_notes": [
+    {
+     "text": "A single word in the text has been divided for exegesis.",
+     "rdg": null,
+     "after": 20
+    }
+   ],
+   "_display": {
+    "morphhb": "[k]הו [k]ידע",
+    "4.20": "[k]הוידע",
+    "4.18": "[k]הוידע",
+    "4.22": "[k]הוידע",
+    "UXLC": "[k]הוידע",
+    "MAM": "הוידע"
+   }
+  },
+  {
+   "reference": "Ps 106:1",
+   "osisID": "Ps.106.1",
+   "label": "word-division",
+   "class": "word division",
+   "level": "division",
+   "morphhb": [
+    {
+     "kind": "plain",
+     "raw": "הַֽלְלוּ",
+     "text": "הַֽלְלוּ",
+     "paseq": false,
+     "notes": []
+    },
+    {
+     "kind": "plain",
+     "raw": "יָ֨הּ",
+     "text": "יָ֨הּ",
+     "paseq": true,
+     "notes": []
+    }
+   ],
+   "morphhb_ids": [
+    "19xgT",
+    "19T7s"
+   ],
+   "wlc_4.20": [
+    {
+     "kind": "plain",
+     "raw": "הַֽלְלוּיָ֨הּ׀",
+     "text": "הַֽלְלוּיָ֨הּ",
+     "paseq": true,
+     "notes": []
+    }
+   ],
+   "others": {
+    "4.18": [
+     {
+      "kind": "plain",
+      "raw": "הַֽלְלוּ/יָ֨הּ ׀",
+      "text": "הַֽלְלוּיָ֨הּ",
+      "paseq": true,
+      "notes": []
+     }
+    ],
+    "4.22": [
+     {
+      "kind": "plain",
+      "raw": "הַֽלְלוּיָ֨הּ׀",
+      "text": "הַֽלְלוּיָ֨הּ",
+      "paseq": true,
+      "notes": []
+     }
+    ],
+    "UXLC": [
+     {
+      "kind": "plain",
+      "raw": "הַֽלְלְויָ֨הּ ׀",
+      "text": "הַֽלְלְויָ֨הּ",
+      "paseq": true,
+      "notes": [
+       "c"
+      ]
+     }
+    ],
+    "MAM": [
+     {
+      "kind": "plain",
+      "raw": "הַ֥לְלוּ־",
+      "text": "הַ֥לְלוּ־",
+      "paseq": false,
+      "notes": []
+     },
+     {
+      "kind": "plain",
+      "raw": "יָ֨הּ׀",
+      "text": "יָ֨הּ",
+      "paseq": true,
+      "notes": []
+     }
+    ]
+   },
+   "agree_with_morphhb": {
+    "4.18": "no",
+    "4.22": "no",
+    "UXLC": "no",
+    "MAM": "letters"
+   },
+   "agree_with_wlc_4.20": {
+    "4.18": "full",
+    "4.22": "full",
+    "UXLC": "letters",
+    "MAM": "no"
+   },
+   "mark_diff": {
+    "morphhb_has": [],
+    "wlc_has": []
+   },
+   "divided_accents_verse": false,
+   "exegesis_notes": [
+    {
+     "text": "A single word in the text has been divided for exegesis.",
+     "rdg": null,
+     "after": 2
+    }
+   ],
+   "_display": {
+    "morphhb": "הַֽלְלוּ יָ֨הּ ׀",
+    "4.20": "הַֽלְלוּיָ֨הּ ׀",
+    "4.18": "הַֽלְלוּיָ֨הּ ׀",
+    "4.22": "הַֽלְלוּיָ֨הּ ׀",
+    "UXLC": "הַֽלְלְויָ֨הּ ׀",
+    "MAM": "הַ֥לְלוּ־יָ֨הּ ׀"
+   }
+  },
+  {
+   "reference": "Job 38:1",
+   "osisID": "Job.38.1",
+   "label": "final-form",
+   "class": "mark encoding only",
+   "level": "letter form",
+   "morphhb": [
+    {
+     "kind": "ketiv",
+     "raw": "מנ",
+     "text": "מנ",
+     "paseq": false,
+     "notes": [
+      "M"
+     ]
+    }
+   ],
+   "morphhb_ids": [
+    "18rDJ"
+   ],
+   "wlc_4.20": [
+    {
+     "kind": "ketiv",
+     "raw": "מן",
+     "text": "מן",
+     "paseq": false,
+     "notes": [
+      "M"
+     ]
+    }
+   ],
+   "others": {
+    "4.18": [
+     {
+      "kind": "ketiv",
+      "raw": "מנ",
+      "text": "מנ",
+      "paseq": false,
+      "notes": [
+       "M"
+      ]
+     }
+    ],
+    "4.22": [
+     {
+      "kind": "ketiv",
+      "raw": "מן",
+      "text": "מן",
+      "paseq": false,
+      "notes": [
+       "M"
+      ]
+     }
+    ],
+    "UXLC": [
+     {
+      "kind": "ketiv",
+      "raw": "מנ",
+      "text": "מנ",
+      "paseq": false,
+      "notes": [
+       "c"
+      ]
+     }
+    ],
+    "MAM": [
+     {
+      "kind": "plain",
+      "raw": "מנהסערה",
+      "text": "מנהסערה",
+      "paseq": false,
+      "notes": []
+     }
+    ]
+   },
+   "agree_with_morphhb": {
+    "4.18": "full",
+    "4.22": "no",
+    "UXLC": "full",
+    "MAM": "no"
+   },
+   "agree_with_wlc_4.20": {
+    "4.18": "no",
+    "4.22": "full",
+    "UXLC": "no",
+    "MAM": "no"
+   },
+   "mark_diff": null,
+   "divided_accents_verse": false,
+   "exegesis_notes": [],
+   "_display": {
+    "morphhb": "[k]מנ",
+    "4.20": "[k]מן",
+    "4.18": "[k]מנ",
+    "4.22": "[k]מן",
+    "UXLC": "[k]מנ",
+    "MAM": "מנהסערה"
+   }
+  },
+  {
+   "reference": "Job 40:6",
+   "osisID": "Job.40.6",
+   "label": "final-form",
+   "class": "mark encoding only",
+   "level": "letter form",
+   "morphhb": [
+    {
+     "kind": "ketiv",
+     "raw": "מנ",
+     "text": "מנ",
+     "paseq": false,
+     "notes": [
+      "M"
+     ]
+    }
+   ],
+   "morphhb_ids": [
+    "187qo"
+   ],
+   "wlc_4.20": [
+    {
+     "kind": "ketiv",
+     "raw": "מן",
+     "text": "מן",
+     "paseq": false,
+     "notes": [
+      "M"
+     ]
+    }
+   ],
+   "others": {
+    "4.18": [
+     {
+      "kind": "ketiv",
+      "raw": "מנ",
+      "text": "מנ",
+      "paseq": false,
+      "notes": [
+       "M"
+      ]
+     }
+    ],
+    "4.22": [
+     {
+      "kind": "ketiv",
+      "raw": "מן",
+      "text": "מן",
+      "paseq": false,
+      "notes": [
+       "M"
+      ]
+     }
+    ],
+    "UXLC": [
+     {
+      "kind": "ketiv",
+      "raw": "מנ",
+      "text": "מנ",
+      "paseq": false,
+      "notes": [
+       "c"
+      ]
+     }
+    ],
+    "MAM": [
+     {
+      "kind": "plain",
+      "raw": "מנסערה",
+      "text": "מנסערה",
+      "paseq": false,
+      "notes": []
+     }
+    ]
+   },
+   "agree_with_morphhb": {
+    "4.18": "full",
+    "4.22": "no",
+    "UXLC": "full",
+    "MAM": "no"
+   },
+   "agree_with_wlc_4.20": {
+    "4.18": "no",
+    "4.22": "full",
+    "UXLC": "no",
+    "MAM": "no"
+   },
+   "mark_diff": null,
+   "divided_accents_verse": false,
+   "exegesis_notes": [],
+   "_display": {
+    "morphhb": "[k]מנ",
+    "4.20": "[k]מן",
+    "4.18": "[k]מנ",
+    "4.22": "[k]מן",
+    "UXLC": "[k]מנ",
+    "MAM": "מנסערה"
+   }
+  },
+  {
+   "reference": "Song 8:6",
+   "osisID": "Song.8.6",
+   "label": "word-division",
+   "class": "word division",
+   "level": "division",
+   "morphhb": [
+    {
+     "kind": "plain",
+     "raw": "שַׁלְהֶ֥בֶתְ",
+     "text": "שַׁלְהֶ֥בֶתְ",
+     "paseq": false,
+     "notes": []
+    },
+    {
+     "kind": "plain",
+     "raw": "יָֽה",
+     "text": "יָֽה",
+     "paseq": false,
+     "notes": []
+    }
+   ],
+   "morphhb_ids": [
+    "22j2J",
+    "22fZr"
+   ],
+   "wlc_4.20": [
+    {
+     "kind": "plain",
+     "raw": "שַׁלְהֶ֥בֶתְיָֽה׃",
+     "text": "שַׁלְהֶ֥בֶתְיָֽה",
+     "paseq": false,
+     "notes": []
+    }
+   ],
+   "others": {
+    "4.18": [
+     {
+      "kind": "plain",
+      "raw": "שַׁלְהֶ֥בֶתְיָֽה׃",
+      "text": "שַׁלְהֶ֥בֶתְיָֽה",
+      "paseq": false,
+      "notes": []
+     }
+    ],
+    "4.22": [
+     {
+      "kind": "plain",
+      "raw": "שַׁלְהֶ֥בֶתְיָֽה׃",
+      "text": "שַׁלְהֶ֥בֶתְיָֽה",
+      "paseq": false,
+      "notes": []
+     }
+    ],
+    "UXLC": [
+     {
+      "kind": "plain",
+      "raw": "שַׁלְהֶ֥בֶתְיָֽה׃",
+      "text": "שַׁלְהֶ֥בֶתְיָֽה",
+      "paseq": false,
+      "notes": []
+     }
+    ],
+    "MAM": [
+     {
+      "kind": "plain",
+      "raw": "שַׁלְהֶ֥בֶתְיָֽה׃",
+      "text": "שַׁלְהֶ֥בֶתְיָֽה",
+      "paseq": false,
+      "notes": []
+     }
+    ]
+   },
+   "agree_with_morphhb": {
+    "4.18": "no",
+    "4.22": "no",
+    "UXLC": "no",
+    "MAM": "no"
+   },
+   "agree_with_wlc_4.20": {
+    "4.18": "full",
+    "4.22": "full",
+    "UXLC": "full",
+    "MAM": "full"
+   },
+   "mark_diff": {
+    "morphhb_has": [],
+    "wlc_has": []
+   },
+   "divided_accents_verse": false,
+   "exegesis_notes": [
+    {
+     "text": "A single word in the text has been divided for exegesis.",
+     "rdg": null,
+     "after": 19
+    }
+   ],
+   "_display": {
+    "morphhb": "שַׁלְהֶ֥בֶתְ יָֽה",
+    "4.20": "שַׁלְהֶ֥בֶתְיָֽה",
+    "4.18": "שַׁלְהֶ֥בֶתְיָֽה",
+    "4.22": "שַׁלְהֶ֥בֶתְיָֽה",
+    "UXLC": "שַׁלְהֶ֥בֶתְיָֽה",
+    "MAM": "שַׁלְהֶ֥בֶתְיָֽה"
+   }
+  },
+  {
+   "reference": "Dan 2:39",
+   "osisID": "Dan.2.39",
+   "label": "kq-structure",
+   "class": "ketiv/qere representation",
+   "level": "ketiv/qere structure",
+   "morphhb": [
+    {
+     "kind": "ketiv",
+     "raw": "ארע/א",
+     "text": "ארעא",
+     "paseq": false,
+     "notes": []
+    },
+    {
+     "kind": "qere",
+     "raw": "אֲרַע",
+     "text": "אֲרַע",
+     "paseq": false,
+     "notes": [
+      "1"
+     ]
+    }
+   ],
+   "morphhb_ids": [
+    "27QFm",
+    "27Euh"
+   ],
+   "wlc_4.20": [
+    {
+     "kind": "plain",
+     "raw": "אֲרַ֣עא",
+     "text": "אֲרַ֣עא",
+     "paseq": false,
+     "notes": [
+      "1"
+     ]
+    }
+   ],
+   "others": {
+    "4.18": [
+     {
+      "kind": "plain",
+      "raw": "אֲרַ֣עא",
+      "text": "אֲרַ֣עא",
+      "paseq": false,
+      "notes": [
+       "1"
+      ]
+     }
+    ],
+    "4.22": [
+     {
+      "kind": "ketiv",
+      "raw": "ארעא",
+      "text": "ארעא",
+      "paseq": false,
+      "notes": []
+     },
+     {
+      "kind": "qere",
+      "raw": "אֲרַ֣ע",
+      "text": "אֲרַ֣ע",
+      "paseq": false,
+      "notes": []
+     }
+    ],
+    "UXLC": [
+     {
+      "kind": "ketiv",
+      "raw": "ארעא",
+      "text": "ארעא",
+      "paseq": false,
+      "notes": []
+     },
+     {
+      "kind": "qere",
+      "raw": "אֲרַ֣ע",
+      "text": "אֲרַ֣ע",
+      "paseq": false,
+      "notes": []
+     }
+    ],
+    "MAM": [
+     {
+      "kind": "plain",
+      "raw": "ארעא",
+      "text": "ארעא",
+      "paseq": false,
+      "notes": []
+     },
+     {
+      "kind": "qere",
+      "raw": "אֲרַ֣ע",
+      "text": "אֲרַ֣ע",
+      "paseq": false,
+      "notes": []
+     }
+    ]
+   },
+   "agree_with_morphhb": {
+    "4.18": "no",
+    "4.22": "skey",
+    "UXLC": "skey",
+    "MAM": "skey"
+   },
+   "agree_with_wlc_4.20": {
+    "4.18": "full",
+    "4.22": "no",
+    "UXLC": "no",
+    "MAM": "no"
+   },
+   "mark_diff": null,
+   "divided_accents_verse": false,
+   "exegesis_notes": [
+    {
+     "text": "WLC has this word divided as ארעא.",
+     "rdg": "ארעא",
+     "after": 6
+    }
+   ],
+   "_display": {
+    "morphhb": "[k]ארעא [q]אֲרַע",
+    "4.20": "אֲרַ֣עא",
+    "4.18": "אֲרַ֣עא",
+    "4.22": "[k]ארעא [q]אֲרַ֣ע",
+    "UXLC": "[k]ארעא [q]אֲרַ֣ע",
+    "MAM": "ארעא [q]אֲרַ֣ע"
+   }
+  },
+  {
+   "reference": "Ezra 3:5",
+   "osisID": "Ezra.3.5",
+   "label": "word-division",
+   "class": "word division",
+   "level": "division",
+   "morphhb": [
+    {
+     "kind": "plain",
+     "raw": "וְ/אַחֲרֵי",
+     "text": "וְאַחֲרֵי",
+     "paseq": false,
+     "notes": []
+    },
+    {
+     "kind": "plain",
+     "raw": "כֵ֞ן",
+     "text": "כֵ֞ן",
+     "paseq": false,
+     "notes": []
+    }
+   ],
+   "morphhb_ids": [
+    "15emv",
+    "15SP9"
+   ],
+   "wlc_4.20": [
+    {
+     "kind": "plain",
+     "raw": "וְאַחֲרֵיכֵ֞ן",
+     "text": "וְאַחֲרֵיכֵ֞ן",
+     "paseq": false,
+     "notes": []
+    }
+   ],
+   "others": {
+    "4.18": [
+     {
+      "kind": "plain",
+      "raw": "וְ/אַחֲרֵיכֵ֞ן",
+      "text": "וְאַחֲרֵיכֵ֞ן",
+      "paseq": false,
+      "notes": []
+     }
+    ],
+    "4.22": [
+     {
+      "kind": "plain",
+      "raw": "וְאַחֲרֵיכֵ֞ן",
+      "text": "וְאַחֲרֵיכֵ֞ן",
+      "paseq": false,
+      "notes": []
+     }
+    ],
+    "UXLC": [
+     {
+      "kind": "plain",
+      "raw": "וְאַחֲרֵיכֵ֞ן",
+      "text": "וְאַחֲרֵיכֵ֞ן",
+      "paseq": false,
+      "notes": [
+       "t"
+      ]
+     }
+    ],
+    "MAM": [
+     {
+      "kind": "plain",
+      "raw": "וְאַחֲרֵי־",
+      "text": "וְאַחֲרֵי־",
+      "paseq": false,
+      "notes": []
+     },
+     {
+      "kind": "plain",
+      "raw": "כֵ֞ן",
+      "text": "כֵ֞ן",
+      "paseq": false,
+      "notes": []
+     }
+    ]
+   },
+   "agree_with_morphhb": {
+    "4.18": "no",
+    "4.22": "no",
+    "UXLC": "no",
+    "MAM": "letters"
+   },
+   "agree_with_wlc_4.20": {
+    "4.18": "full",
+    "4.22": "full",
+    "UXLC": "full",
+    "MAM": "no"
+   },
+   "mark_diff": {
+    "morphhb_has": [],
+    "wlc_has": []
+   },
+   "divided_accents_verse": false,
+   "exegesis_notes": [
+    {
+     "text": "A single word in the text has been divided for exegesis.",
+     "rdg": null,
+     "after": 2
+    }
+   ],
+   "_display": {
+    "morphhb": "וְאַחֲרֵי כֵ֞ן",
+    "4.20": "וְאַחֲרֵיכֵ֞ן",
+    "4.18": "וְאַחֲרֵיכֵ֞ן",
+    "4.22": "וְאַחֲרֵיכֵ֞ן",
+    "UXLC": "וְאַחֲרֵיכֵ֞ן",
+    "MAM": "וְאַחֲרֵי־כֵ֞ן"
+   }
+  },
+  {
+   "reference": "1Chr 15:13",
+   "osisID": "1Chr.15.13",
+   "label": "word-division",
+   "class": "word division",
+   "level": "division",
+   "morphhb": [
+    {
+     "kind": "plain",
+     "raw": "לְ/מַ",
+     "text": "לְמַ",
+     "paseq": false,
+     "notes": []
+    },
+    {
+     "kind": "plain",
+     "raw": "בָּ/רִ֥אשׁוֹנָ֖ה",
+     "text": "בָּרִ֥אשׁוֹנָ֖ה",
+     "paseq": false,
+     "notes": []
+    }
+   ],
+   "morphhb_ids": [
+    "13Z5a",
+    "1391p"
+   ],
+   "wlc_4.20": [
+    {
+     "kind": "plain",
+     "raw": "לְמַבָּרִ֥אשׁוֹנָ֖ה",
+     "text": "לְמַבָּרִ֥אשׁוֹנָ֖ה",
+     "paseq": false,
+     "notes": []
+    }
+   ],
+   "others": {
+    "4.18": [
+     {
+      "kind": "plain",
+      "raw": "לְ/מַ/בָּ/רִ֥אשׁוֹנָ֖ה",
+      "text": "לְמַבָּרִ֥אשׁוֹנָ֖ה",
+      "paseq": false,
+      "notes": []
+     }
+    ],
+    "4.22": [
+     {
+      "kind": "plain",
+      "raw": "לְמַבָּרִ֥אשׁוֹנָ֖ה",
+      "text": "לְמַבָּרִ֥אשׁוֹנָ֖ה",
+      "paseq": false,
+      "notes": []
+     }
+    ],
+    "UXLC": [
+     {
+      "kind": "plain",
+      "raw": "לְמַבָּרִ֥אשׁוֹנָ֖ה",
+      "text": "לְמַבָּרִ֥אשׁוֹנָ֖ה",
+      "paseq": false,
+      "notes": []
+     }
+    ],
+    "MAM": [
+     {
+      "kind": "plain",
+      "raw": "לְמַבָּרִ֥אשׁוֹנָ֖ה",
+      "text": "לְמַבָּרִ֥אשׁוֹנָ֖ה",
+      "paseq": false,
+      "notes": []
+     }
+    ]
+   },
+   "agree_with_morphhb": {
+    "4.18": "no",
+    "4.22": "no",
+    "UXLC": "no",
+    "MAM": "no"
+   },
+   "agree_with_wlc_4.20": {
+    "4.18": "full",
+    "4.22": "full",
+    "UXLC": "full",
+    "MAM": "full"
+   },
+   "mark_diff": {
+    "morphhb_has": [],
+    "wlc_has": []
+   },
+   "divided_accents_verse": false,
+   "exegesis_notes": [
+    {
+     "text": "A single word in the text has been divided for exegesis.",
+     "rdg": null,
+     "after": 3
+    }
+   ],
+   "_display": {
+    "morphhb": "לְמַ בָּרִ֥אשׁוֹנָ֖ה",
+    "4.20": "לְמַבָּרִ֥אשׁוֹנָ֖ה",
+    "4.18": "לְמַבָּרִ֥אשׁוֹנָ֖ה",
+    "4.22": "לְמַבָּרִ֥אשׁוֹנָ֖ה",
+    "UXLC": "לְמַבָּרִ֥אשׁוֹנָ֖ה",
+    "MAM": "לְמַבָּרִ֥אשׁוֹנָ֖ה"
+   }
+  },
+  {
+   "reference": "1Chr 20:4",
+   "osisID": "1Chr.20.4",
+   "label": "word-division",
+   "class": "word division",
+   "level": "division",
+   "morphhb": [
+    {
+     "kind": "plain",
+     "raw": "אַחֲרֵי",
+     "text": "אַחֲרֵי",
+     "paseq": false,
+     "notes": []
+    },
+    {
+     "kind": "plain",
+     "raw": "כֵ֔ן",
+     "text": "כֵ֔ן",
+     "paseq": false,
+     "notes": []
+    }
+   ],
+   "morphhb_ids": [
+    "139UV",
+    "13B6v"
+   ],
+   "wlc_4.20": [
+    {
+     "kind": "plain",
+     "raw": "אַחֲרֵיכֵ֔ן",
+     "text": "אַחֲרֵיכֵ֔ן",
+     "paseq": false,
+     "notes": []
+    }
+   ],
+   "others": {
+    "4.18": [
+     {
+      "kind": "plain",
+      "raw": "אַחֲרֵיכֵ֔ן",
+      "text": "אַחֲרֵיכֵ֔ן",
+      "paseq": false,
+      "notes": []
+     }
+    ],
+    "4.22": [
+     {
+      "kind": "plain",
+      "raw": "אַחֲרֵיכֵ֔ן",
+      "text": "אַחֲרֵיכֵ֔ן",
+      "paseq": false,
+      "notes": []
+     }
+    ],
+    "UXLC": [
+     {
+      "kind": "plain",
+      "raw": "אַחֲרֵיכֵ֔ן",
+      "text": "אַחֲרֵיכֵ֔ן",
+      "paseq": false,
+      "notes": [
+       "c"
+      ]
+     }
+    ],
+    "MAM": [
+     {
+      "kind": "plain",
+      "raw": "אַחֲרֵי־",
+      "text": "אַחֲרֵי־",
+      "paseq": false,
+      "notes": []
+     },
+     {
+      "kind": "plain",
+      "raw": "כֵ֔ן",
+      "text": "כֵ֔ן",
+      "paseq": false,
+      "notes": []
+     }
+    ]
+   },
+   "agree_with_morphhb": {
+    "4.18": "no",
+    "4.22": "no",
+    "UXLC": "no",
+    "MAM": "letters"
+   },
+   "agree_with_wlc_4.20": {
+    "4.18": "full",
+    "4.22": "full",
+    "UXLC": "full",
+    "MAM": "no"
+   },
+   "mark_diff": {
+    "morphhb_has": [],
+    "wlc_has": []
+   },
+   "divided_accents_verse": false,
+   "exegesis_notes": [
+    {
+     "text": "A single word in the text has been divided for exegesis.",
+     "rdg": null,
+     "after": 3
+    }
+   ],
+   "_display": {
+    "morphhb": "אַחֲרֵי כֵ֔ן",
+    "4.20": "אַחֲרֵיכֵ֔ן",
+    "4.18": "אַחֲרֵיכֵ֔ן",
+    "4.22": "אַחֲרֵיכֵ֔ן",
+    "UXLC": "אַחֲרֵיכֵ֔ן",
+    "MAM": "אַחֲרֵי־כֵ֔ן"
+   }
+  },
+  {
+   "reference": "2Chr 20:1",
+   "osisID": "2Chr.20.1",
+   "label": "word-division",
+   "class": "word division",
+   "level": "division",
+   "morphhb": [
+    {
+     "kind": "plain",
+     "raw": "אַֽחֲרֵי",
+     "text": "אַֽחֲרֵי",
+     "paseq": false,
+     "notes": []
+    },
+    {
+     "kind": "plain",
+     "raw": "כֵ֡ן",
+     "text": "כֵ֡ן",
+     "paseq": false,
+     "notes": []
+    }
+   ],
+   "morphhb_ids": [
+    "14QLn",
+    "14Cjb"
+   ],
+   "wlc_4.20": [
+    {
+     "kind": "plain",
+     "raw": "אַֽחֲרֵיכֵ֡ן",
+     "text": "אַֽחֲרֵיכֵ֡ן",
+     "paseq": false,
+     "notes": []
+    }
+   ],
+   "others": {
+    "4.18": [
+     {
+      "kind": "plain",
+      "raw": "אַֽחֲרֵיכֵ֡ן",
+      "text": "אַֽחֲרֵיכֵ֡ן",
+      "paseq": false,
+      "notes": []
+     }
+    ],
+    "4.22": [
+     {
+      "kind": "plain",
+      "raw": "אַֽחֲרֵיכֵ֡ן",
+      "text": "אַֽחֲרֵיכֵ֡ן",
+      "paseq": false,
+      "notes": []
+     }
+    ],
+    "UXLC": [
+     {
+      "kind": "plain",
+      "raw": "אֽ͏ַחֲרֵיכֵ֡ן",
+      "text": "אֽ͏ַחֲרֵיכֵ֡ן",
+      "paseq": false,
+      "notes": [
+       "c"
+      ]
+     }
+    ],
+    "MAM": [
+     {
+      "kind": "plain",
+      "raw": "אַחֲרֵי־",
+      "text": "אַחֲרֵי־",
+      "paseq": false,
+      "notes": []
+     },
+     {
+      "kind": "plain",
+      "raw": "כֵ֡ן",
+      "text": "כֵ֡ן",
+      "paseq": false,
+      "notes": []
+     }
+    ]
+   },
+   "agree_with_morphhb": {
+    "4.18": "no",
+    "4.22": "no",
+    "UXLC": "no",
+    "MAM": "letters"
+   },
+   "agree_with_wlc_4.20": {
+    "4.18": "full",
+    "4.22": "full",
+    "UXLC": "full",
+    "MAM": "no"
+   },
+   "mark_diff": {
+    "morphhb_has": [],
+    "wlc_has": []
+   },
+   "divided_accents_verse": false,
+   "exegesis_notes": [
+    {
+     "text": "A single word in the text has been divided for exegesis.",
+     "rdg": null,
+     "after": 3
+    }
+   ],
+   "_display": {
+    "morphhb": "אַֽחֲרֵי כֵ֡ן",
+    "4.20": "אַֽחֲרֵיכֵ֡ן",
+    "4.18": "אַֽחֲרֵיכֵ֡ן",
+    "4.22": "אַֽחֲרֵיכֵ֡ן",
+    "UXLC": "אֽ͏ַחֲרֵיכֵ֡ן",
+    "MAM": "אַחֲרֵי־כֵ֡ן"
+   }
+  },
+  {
+   "reference": "2Chr 20:35",
+   "osisID": "2Chr.20.35",
+   "label": "word-division",
+   "class": "word division",
+   "level": "division",
+   "morphhb": [
+    {
+     "kind": "plain",
+     "raw": "וְ/אַחֲרֵי",
+     "text": "וְאַחֲרֵי",
+     "paseq": false,
+     "notes": []
+    },
+    {
+     "kind": "plain",
+     "raw": "כֵ֗ן",
+     "text": "כֵ֗ן",
+     "paseq": false,
+     "notes": []
+    }
+   ],
+   "morphhb_ids": [
+    "14tYe",
+    "143UC"
+   ],
+   "wlc_4.20": [
+    {
+     "kind": "plain",
+     "raw": "וְאַחֲרֵיכֵ֗ן",
+     "text": "וְאַחֲרֵיכֵ֗ן",
+     "paseq": false,
+     "notes": []
+    }
+   ],
+   "others": {
+    "4.18": [
+     {
+      "kind": "plain",
+      "raw": "וְ/אַחֲרֵיכֵ֗ן",
+      "text": "וְאַחֲרֵיכֵ֗ן",
+      "paseq": false,
+      "notes": []
+     }
+    ],
+    "4.22": [
+     {
+      "kind": "plain",
+      "raw": "וְאַחֲרֵיכֵ֗ן",
+      "text": "וְאַחֲרֵיכֵ֗ן",
+      "paseq": false,
+      "notes": []
+     }
+    ],
+    "UXLC": [
+     {
+      "kind": "plain",
+      "raw": "וְאַחֲרֵיכֵ֗ן",
+      "text": "וְאַחֲרֵיכֵ֗ן",
+      "paseq": false,
+      "notes": [
+       "c"
+      ]
+     }
+    ],
+    "MAM": [
+     {
+      "kind": "plain",
+      "raw": "וְאַחֲרֵי־",
+      "text": "וְאַחֲרֵי־",
+      "paseq": false,
+      "notes": []
+     },
+     {
+      "kind": "plain",
+      "raw": "כֵ֗ן",
+      "text": "כֵ֗ן",
+      "paseq": false,
+      "notes": []
+     }
+    ]
+   },
+   "agree_with_morphhb": {
+    "4.18": "no",
+    "4.22": "no",
+    "UXLC": "no",
+    "MAM": "letters"
+   },
+   "agree_with_wlc_4.20": {
+    "4.18": "full",
+    "4.22": "full",
+    "UXLC": "full",
+    "MAM": "no"
+   },
+   "mark_diff": {
+    "morphhb_has": [],
+    "wlc_has": []
+   },
+   "divided_accents_verse": false,
+   "exegesis_notes": [
+    {
+     "text": "A single word in the text has been divided for exegesis.",
+     "rdg": null,
+     "after": 2
+    }
+   ],
+   "_display": {
+    "morphhb": "וְאַחֲרֵי כֵ֗ן",
+    "4.20": "וְאַחֲרֵיכֵ֗ן",
+    "4.18": "וְאַחֲרֵיכֵ֗ן",
+    "4.22": "וְאַחֲרֵיכֵ֗ן",
+    "UXLC": "וְאַחֲרֵיכֵ֗ן",
+    "MAM": "וְאַחֲרֵי־כֵ֗ן"
+   }
+  },
+  {
+   "reference": "2Chr 24:4",
+   "osisID": "2Chr.24.4",
+   "label": "word-division",
+   "class": "word division",
+   "level": "division",
+   "morphhb": [
+    {
+     "kind": "plain",
+     "raw": "אַחֲרֵי",
+     "text": "אַחֲרֵי",
+     "paseq": false,
+     "notes": []
+    },
+    {
+     "kind": "plain",
+     "raw": "כֵ֑ן",
+     "text": "כֵ֑ן",
+     "paseq": false,
+     "notes": []
+    }
+   ],
+   "morphhb_ids": [
+    "14m2K",
+    "14s8J"
+   ],
+   "wlc_4.20": [
+    {
+     "kind": "plain",
+     "raw": "אַחֲרֵיכֵ֑ן",
+     "text": "אַחֲרֵיכֵ֑ן",
+     "paseq": false,
+     "notes": []
+    }
+   ],
+   "others": {
+    "4.18": [
+     {
+      "kind": "plain",
+      "raw": "אַחֲרֵיכֵ֑ן",
+      "text": "אַחֲרֵיכֵ֑ן",
+      "paseq": false,
+      "notes": []
+     }
+    ],
+    "4.22": [
+     {
+      "kind": "plain",
+      "raw": "אַחֲרֵיכֵ֑ן",
+      "text": "אַחֲרֵיכֵ֑ן",
+      "paseq": false,
+      "notes": []
+     }
+    ],
+    "UXLC": [
+     {
+      "kind": "plain",
+      "raw": "אַחֲרֵיכֵ֑ן",
+      "text": "אַחֲרֵיכֵ֑ן",
+      "paseq": false,
+      "notes": []
+     }
+    ],
+    "MAM": [
+     {
+      "kind": "plain",
+      "raw": "אַחֲרֵי־",
+      "text": "אַחֲרֵי־",
+      "paseq": false,
+      "notes": []
+     },
+     {
+      "kind": "plain",
+      "raw": "כֵ֑ן",
+      "text": "כֵ֑ן",
+      "paseq": false,
+      "notes": []
+     }
+    ]
+   },
+   "agree_with_morphhb": {
+    "4.18": "no",
+    "4.22": "no",
+    "UXLC": "no",
+    "MAM": "letters"
+   },
+   "agree_with_wlc_4.20": {
+    "4.18": "full",
+    "4.22": "full",
+    "UXLC": "full",
+    "MAM": "no"
+   },
+   "mark_diff": {
+    "morphhb_has": [],
+    "wlc_has": []
+   },
+   "divided_accents_verse": false,
+   "exegesis_notes": [
+    {
+     "text": "A single word in the text has been divided for exegesis.",
+     "rdg": null,
+     "after": 3
+    }
+   ],
+   "_display": {
+    "morphhb": "אַחֲרֵי כֵ֑ן",
+    "4.20": "אַחֲרֵיכֵ֑ן",
+    "4.18": "אַחֲרֵיכֵ֑ן",
+    "4.22": "אַחֲרֵיכֵ֑ן",
+    "UXLC": "אַחֲרֵיכֵ֑ן",
+    "MAM": "אַחֲרֵי־כֵ֑ן"
+   }
+  },
+  {
+   "reference": "2Chr 30:3",
+   "osisID": "2Chr.30.3",
+   "label": "word-division",
+   "class": "word division",
+   "level": "division",
+   "morphhb": [
+    {
+     "kind": "plain",
+     "raw": "לְ/מַ",
+     "text": "לְמַ",
+     "paseq": false,
+     "notes": []
+    },
+    {
+     "kind": "plain",
+     "raw": "דַּ֔י",
+     "text": "דַּ֔י",
+     "paseq": false,
+     "notes": []
+    }
+   ],
+   "morphhb_ids": [
+    "14kZ4",
+    "147rA"
+   ],
+   "wlc_4.20": [
+    {
+     "kind": "plain",
+     "raw": "לְמַדַּ֔י",
+     "text": "לְמַדַּ֔י",
+     "paseq": false,
+     "notes": []
+    }
+   ],
+   "others": {
+    "4.18": [
+     {
+      "kind": "plain",
+      "raw": "לְ/מַ/דַּ֔י",
+      "text": "לְמַדַּ֔י",
+      "paseq": false,
+      "notes": []
+     }
+    ],
+    "4.22": [
+     {
+      "kind": "plain",
+      "raw": "לְמַדַּ֔י",
+      "text": "לְמַדַּ֔י",
+      "paseq": false,
+      "notes": []
+     }
+    ],
+    "UXLC": [
+     {
+      "kind": "plain",
+      "raw": "לְמַדַּ֔י",
+      "text": "לְמַדַּ֔י",
+      "paseq": false,
+      "notes": []
+     }
+    ],
+    "MAM": [
+     {
+      "kind": "plain",
+      "raw": "לְמַדַּ֔י",
+      "text": "לְמַדַּ֔י",
+      "paseq": false,
+      "notes": []
+     }
+    ]
+   },
+   "agree_with_morphhb": {
+    "4.18": "no",
+    "4.22": "no",
+    "UXLC": "no",
+    "MAM": "no"
+   },
+   "agree_with_wlc_4.20": {
+    "4.18": "full",
+    "4.22": "full",
+    "UXLC": "full",
+    "MAM": "full"
+   },
+   "mark_diff": {
+    "morphhb_has": [],
+    "wlc_has": []
+   },
+   "divided_accents_verse": false,
+   "exegesis_notes": [
+    {
+     "text": "A single word in the text has been divided for exegesis.",
+     "rdg": null,
+     "after": 12
+    }
+   ],
+   "_display": {
+    "morphhb": "לְמַ דַּ֔י",
+    "4.20": "לְמַדַּ֔י",
+    "4.18": "לְמַדַּ֔י",
+    "4.22": "לְמַדַּ֔י",
+    "UXLC": "לְמַדַּ֔י",
+    "MAM": "לְמַדַּ֔י"
+   }
+  },
+  {
+   "reference": "Exod 20:4",
+   "osisID": "Exod.20.4",
+   "label": "divided-accents/accents",
+   "class": "Decalogue/divided accents",
+   "level": "accents",
+   "morphhb": [
+    {
+     "kind": "plain",
+     "raw": "וַ/אֲשֶׁ֥ר",
+     "text": "וַאֲשֶׁ֥ר",
+     "paseq": false,
+     "notes": []
+    }
+   ],
+   "morphhb_ids": [
+    "02dor"
+   ],
+   "wlc_4.20": [
+    {
+     "kind": "plain",
+     "raw": "וַֽאֲשֶׁ֥ר֩",
+     "text": "וַֽאֲשֶׁ֥ר֩",
+     "paseq": false,
+     "notes": []
+    }
+   ],
+   "others": {
+    "4.18": [
+     {
+      "kind": "plain",
+      "raw": "וַֽ/אֲשֶׁ֥ר֩",
+      "text": "וַֽאֲשֶׁ֥ר֩",
+      "paseq": false,
+      "notes": []
+     }
+    ],
+    "4.22": [
+     {
+      "kind": "plain",
+      "raw": "וַֽאֲשֶׁ֥ר֩",
+      "text": "וַֽאֲשֶׁ֥ר֩",
+      "paseq": false,
+      "notes": []
+     }
+    ],
+    "UXLC": [
+     {
+      "kind": "plain",
+      "raw": "וֽ͏ַאֲשֶׁ֥ר֩",
+      "text": "וֽ͏ַאֲשֶׁ֥ר֩",
+      "paseq": false,
+      "notes": []
+     }
+    ],
+    "MAM": [
+     {
+      "kind": "plain",
+      "raw": "וַֽאֲשֶׁ֥ר֩",
+      "text": "וַֽאֲשֶׁ֥ר֩",
+      "paseq": false,
+      "notes": []
+     }
+    ]
+   },
+   "agree_with_morphhb": {
+    "4.18": "skey",
+    "4.22": "skey",
+    "UXLC": "skey",
+    "MAM": "skey"
+   },
+   "agree_with_wlc_4.20": {
+    "4.18": "full",
+    "4.22": "full",
+    "UXLC": "full",
+    "MAM": "full"
+   },
+   "mark_diff": {
+    "morphhb_has": [],
+    "wlc_has": [
+     "accent telisha qetana",
+     "point meteg"
+    ]
+   },
+   "divided_accents_verse": true,
+   "exegesis_notes": [],
+   "_display": {
+    "morphhb": "וַאֲשֶׁ֥ר",
+    "4.20": "וַֽאֲשֶׁ֥ר֩",
+    "4.18": "וַֽאֲשֶׁ֥ר֩",
+    "4.22": "וַֽאֲשֶׁ֥ר֩",
+    "UXLC": "וֽ͏ַאֲשֶׁ֥ר֩",
+    "MAM": "וַֽאֲשֶׁ֥ר֩"
+   },
+   "union_test": "marks",
+   "alternative": {
+    "text": "וַאֲשֶׁר֩",
+    "paseq": false
+   }
+  },
+  {
+   "reference": "Exod 20:8",
+   "osisID": "Exod.20.8",
+   "label": "divided-accents/accents",
+   "class": "Decalogue/divided accents",
+   "level": "accents",
+   "morphhb": [
+    {
+     "kind": "plain",
+     "raw": "הַ/שַּׁבָּ֖ת",
+     "text": "הַשַּׁבָּ֖ת",
+     "paseq": false,
+     "notes": []
+    }
+   ],
+   "morphhb_ids": [
+    "02xhV"
+   ],
+   "wlc_4.20": [
+    {
+     "kind": "plain",
+     "raw": "הַשַּׁבָּ֖֜ת",
+     "text": "הַשַּׁבָּ֖֜ת",
+     "paseq": false,
+     "notes": []
+    }
+   ],
+   "others": {
+    "4.18": [
+     {
+      "kind": "plain",
+      "raw": "הַ/שַּׁבָּ֖֜ת",
+      "text": "הַשַּׁבָּ֖֜ת",
+      "paseq": false,
+      "notes": []
+     }
+    ],
+    "4.22": [
+     {
+      "kind": "plain",
+      "raw": "הַשַּׁבָּ֖֜ת",
+      "text": "הַשַּׁבָּ֖֜ת",
+      "paseq": false,
+      "notes": []
+     }
+    ],
+    "UXLC": [
+     {
+      "kind": "plain",
+      "raw": "הַשַׁבָּ֖֜ת",
+      "text": "הַשַׁבָּ֖֜ת",
+      "paseq": false,
+      "notes": []
+     }
+    ],
+    "MAM": [
+     {
+      "kind": "plain",
+      "raw": "הַשַּׁבָּ֖֜ת",
+      "text": "הַשַּׁבָּ֖֜ת",
+      "paseq": false,
+      "notes": []
+     }
+    ]
+   },
+   "agree_with_morphhb": {
+    "4.18": "skey",
+    "4.22": "skey",
+    "UXLC": "letters",
+    "MAM": "skey"
+   },
+   "agree_with_wlc_4.20": {
+    "4.18": "full",
+    "4.22": "full",
+    "UXLC": "letters",
+    "MAM": "full"
+   },
+   "mark_diff": {
+    "morphhb_has": [],
+    "wlc_has": [
+     "accent geresh"
+    ]
+   },
+   "divided_accents_verse": true,
+   "exegesis_notes": [],
+   "_display": {
+    "morphhb": "הַשַּׁבָּ֖ת",
+    "4.20": "הַשַּׁבָּ֖֜ת",
+    "4.18": "הַשַּׁבָּ֖֜ת",
+    "4.22": "הַשַּׁבָּ֖֜ת",
+    "UXLC": "הַשַׁבָּ֖֜ת",
+    "MAM": "הַשַּׁבָּ֖֜ת"
+   },
+   "union_test": "marks",
+   "alternative": {
+    "text": "הַשַּׁבָּ֨ת",
+    "paseq": false
+   }
+  },
+  {
+   "reference": "Deut 5:17",
+   "osisID": "Deut.5.17",
+   "label": "divided-accents/accents",
+   "class": "Decalogue/divided accents",
+   "level": "accents",
+   "morphhb": [
+    {
+     "kind": "plain",
+     "raw": "תִּרְצָֽח",
+     "text": "תִּרְצָֽח",
+     "paseq": false,
+     "notes": []
+    }
+   ],
+   "morphhb_ids": [
+    "05Lzv"
+   ],
+   "wlc_4.20": [
+    {
+     "kind": "plain",
+     "raw": "תִּֿרְצָֽח׃",
+     "text": "תִּֿרְצָֽח",
+     "paseq": false,
+     "notes": []
+    }
+   ],
+   "others": {
+    "4.18": [
+     {
+      "kind": "plain",
+      "raw": "תִּֿרְצָֽח׃",
+      "text": "תִּֿרְצָֽח",
+      "paseq": false,
+      "notes": []
+     }
+    ],
+    "4.22": [
+     {
+      "kind": "plain",
+      "raw": "תִּרְצָֽח׃",
+      "text": "תִּרְצָֽח",
+      "paseq": false,
+      "notes": []
+     }
+    ],
+    "UXLC": [
+     {
+      "kind": "plain",
+      "raw": "תִּֿרְצָ֖ח׃",
+      "text": "תִּֿרְצָ֖ח",
+      "paseq": false,
+      "notes": [
+       "c"
+      ]
+     }
+    ],
+    "MAM": [
+     {
+      "kind": "plain",
+      "raw": "תִּֿרְצָ֖͏ֽח׃",
+      "text": "תִּֿרְצָ֖͏ֽח",
+      "paseq": false,
+      "notes": []
+     }
+    ]
+   },
+   "agree_with_morphhb": {
+    "4.18": "skey",
+    "4.22": "full",
+    "UXLC": "skey",
+    "MAM": "skey"
+   },
+   "agree_with_wlc_4.20": {
+    "4.18": "full",
+    "4.22": "skey",
+    "UXLC": "skey",
+    "MAM": "skey"
+   },
+   "mark_diff": {
+    "morphhb_has": [],
+    "wlc_has": [
+     "point rafe"
+    ]
+   },
+   "divided_accents_verse": true,
+   "exegesis_notes": [],
+   "_display": {
+    "morphhb": "תִּרְצָֽח",
+    "4.20": "תִּֿרְצָֽח",
+    "4.18": "תִּֿרְצָֽח",
+    "4.22": "תִּרְצָֽח",
+    "UXLC": "תִּֿרְצָ֖ח",
+    "MAM": "תִּֿרְצָ֖͏ֽח"
+   },
+   "union_test": "marks",
+   "alternative": {
+    "text": "תִֿרְצָ֖ח",
+    "paseq": false
+   }
+  }
+ ]
+}

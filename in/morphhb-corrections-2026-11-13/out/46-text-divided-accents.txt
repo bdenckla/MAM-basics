@@ -1,0 +1,199 @@
+# written by scripts/p2_text_compare.py: C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe -I .novc/morphhb-corrections-2026-11-13/scripts/p2_text_compare.py .novc/morphhb-corrections-2026-11-13/scripts .novc/morphhb-corrections-2026-11-13/fetched .novc/morphhb-corrections-2026-11-13/out  (working directory C:/Users/BenDe/GitRepos/MAM-basics)
+The verses with morphhb alternative-accent notes (the Decalogues and Genesis 35:22): every
+morphhb atom that differs from WLC 4.20 or carries an alternative note, with the note's
+reading and WLC's atom, and whether WLC's atom is the union of the main text's and the
+alternative's marks (p2_text_compare.reconstructs).
+
+atoms covered by alternative notes: 123
+    116  equal to WLC, no alternative note
+    105  divided-accents/accents; alternative note: yes; WLC = main + alternative: ok
+      9  divided-accents/accents+paseq; alternative note: yes; WLC = main + alternative: ok
+      4  qadma; alternative note: no; WLC = main + alternative: ok
+      3  divided-accents/accents; alternative note: yes; WLC = main + alternative: marks
+      2  divided-accents/pointing; alternative note: yes; WLC = main + alternative: marks
+      2  divided-accents/pointing; alternative note: yes; WLC = main + alternative: ok
+      1  divided-accents/pointing; alternative note: yes; WLC = main + alternative: maqaf
+      1  equal to WLC; alternative note: yes; WLC = main + alternative: ok
+
+catchWord atoms whose marks differ from the main text they name: 1
+  Deut 5:8     main text: לֹֽ֣א־ | catchWord atom: לֹֽא־   (catchWord לֹֽא־תַעֲשֶׂ֥ה לְךָ֥; x-accent לֹ֣א תַעֲשֶׂה־לְךָ֣)
+
+Gen 35:22    divided-accents/accents            main: וַיִּשְׁכַּב֙ | alternative: וַיִּשְׁכַּ֕ב | WLC 4.20: וַיִּשְׁכַּ֕ב֙ | union: ok
+Gen 35:22    divided-accents/accents            main: בִּלְהָה֙ | alternative: בִּלְהָ֖ה | WLC 4.20: בִּלְהָ֖ה֙ | union: ok
+Gen 35:22    divided-accents/accents            main: אָבִ֔יו | alternative: אָבִ֑יו | WLC 4.20: אָבִ֑֔יו | union: ok
+Gen 35:22    divided-accents/accents            main: יִשְׂרָאֵ֑ל | alternative: יִשְׂרָאֵֽל | WLC 4.20: יִשְׂרָאֵֽ֑ל | union: ok
+Exod 20:2    divided-accents/accents            main: אָֽנֹכִ֖י | alternative: אָֽנֹכִי֙ | WLC 4.20: אָֽנֹכִ֖י֙ | union: ok
+Exod 20:2    divided-accents/accents            main: אֱלֹהֶ֑יךָ | alternative: אֱלֹהֶ֔יךָ | WLC 4.20: אֱלֹהֶ֑֔יךָ | union: ok
+Exod 20:2    divided-accents/accents            main: מִבֵּ֥ית | alternative: מִבֵּ֣ית | WLC 4.20: מִבֵּ֣֥ית | union: ok
+Exod 20:2    divided-accents/accents            main: עֲבָדִֽים | alternative: עֲבָדִ֑ים | WLC 4.20: עֲבָדִֽ֑ים | union: ok
+Exod 20:3    divided-accents/accents            main: לְךָ֛ | alternative: לְךָ֩ | WLC 4.20: לְךָ֛֩ | union: ok
+Exod 20:3    divided-accents/accents            main: אֱלֹהִ֥ים | alternative: אֱלֹהִ֨ים | WLC 4.20: אֱלֹהִ֥֨ים | union: ok
+Exod 20:3    divided-accents/accents            main: אֲחֵרִ֖ים | alternative: אֲחֵרִ֜ים | WLC 4.20: אֲחֵרִ֖֜ים | union: ok
+Exod 20:3    divided-accents/accents            main: פָּנָֽיַ | alternative: פָּנָ֗יַ | WLC 4.20: פָּנָֽ֗יַ | union: ok
+Exod 20:4    divided-accents/accents            main: לְךָ֥ | alternative: לְךָ֣ | WLC 4.20: לְךָ֥֣ | union: ok
+Exod 20:4    divided-accents/accents+paseq      main: פֶ֨סֶל֙ | alternative: פֶ֣סֶל ׀ | WLC 4.20: פֶ֣֙סֶל֙ ׀ | union: ok
+Exod 20:4    divided-accents/accents            main: תְּמוּנָ֔ה | alternative: תְּמוּנָ֡ה | WLC 4.20: תְּמוּנָ֡֔ה | union: ok
+Exod 20:4    divided-accents/accents            main: אֲשֶׁ֤ר | alternative: אֲשֶׁ֣ר | WLC 4.20: אֲשֶׁ֤֣ר | union: ok
+Exod 20:4    divided-accents/accents+paseq      main: בַּשָּׁמַ֨יִם֙ | alternative: בַּשָּׁמַ֣יִם ׀ | WLC 4.20: בַּשָּׁמַ֣֙יִם֙ ׀ | union: ok
+Exod 20:4    divided-accents/accents            main: מִמַּ֔עַל | alternative: מִמַּ֡עַל | WLC 4.20: מִמַּ֡֔עַל | union: ok
+Exod 20:4    divided-accents/accents            main: וַאֲשֶׁ֥ר | alternative: וַאֲשֶׁר֩ | WLC 4.20: וַֽאֲשֶׁ֥ר֩ | union: marks
+                                                  elsewhere: WLC 4.18: וַֽאֲשֶׁ֥ר֩ | WLC 4.20: וַֽאֲשֶׁ֥ר֩ | WLC 4.22: וַֽאֲשֶׁ֥ר֩ | UXLC 2.6: וֽ͏ַאֲשֶׁ֥ר֩ | MAM: וַֽאֲשֶׁ֥ר֩
+Exod 20:4    divided-accents/accents            main: בָּאָ֖רֶץ | alternative: בָּאָ֨רֶץ | WLC 4.20: בָּאָ֖֨רֶץ | union: ok
+Exod 20:4    divided-accents/pointing           main: מִתָּ֑חַת | alternative: מִתָּ֜חַת | WLC 4.20: מִתַָּ֑֜חַת | union: marks
+                                                  elsewhere: WLC 4.18: מִתַָּ֑֜חַת | WLC 4.20: מִתַָּ֑֜חַת | WLC 4.22: מִתַָּ֑֜חַת | UXLC 2.6: מִתָּ֑͏ַ֜חַת | MAM: מִתָּ֑͏ַ֜חַת
+Exod 20:4    divided-accents/accents            main: וַאֲשֶׁ֥ר | alternative: וַאֲשֶׁ֣ר | WLC 4.20: וַאֲשֶׁ֥֣ר | union: ok
+Exod 20:4    divided-accents/accents+paseq      main: בַּמַּ֖יִם | alternative: בַּמַּ֣יִם ׀ | WLC 4.20: בַּמַּ֖֣יִם ׀ | union: ok
+Exod 20:4    divided-accents/accents            main: מִתַּ֥חַת | alternative: מִתַּ֣חַת | WLC 4.20: מִתַּ֥֣חַת | union: ok
+Exod 20:4    divided-accents/accents            main: לָאָֽרֶץ | alternative: לָאָ֗רֶץ | WLC 4.20: לָאָֽ֗רֶץ | union: ok
+Exod 20:5    divided-accents/pointing           main: תִשְׁתַּחֲוֶ֥ה | alternative: תִשְׁתַּחֲוֶ֣ה | WLC 4.20: תִשְׁתַּחְוֶ֥֣ה | union: marks
+                                                  elsewhere: WLC 4.18: תִשְׁתַּחְוֶ֥֣ה | WLC 4.20: תִשְׁתַּחְוֶ֥֣ה | WLC 4.22: תִשְׁתַּחְוֶ֥֣ה | UXLC 2.6: תִשְׁתַּחְוֶ֥֣ה | MAM: תִשְׁתַּחֲוֶ֥֣ה
+Exod 20:5    divided-accents/accents            main: לָהֶ֖ם | alternative: לָהֶם֮ | WLC 4.20: לָהֶ֖ם֮ | union: ok
+Exod 20:5    divided-accents/accents            main: תָעָבְדֵ֑ם | alternative: תָעָבְדֵם֒ | WLC 4.20: תָעָבְדֵ֑ם֒ | union: ok
+Exod 20:5    qadma                              main: אֱלֹהֶ֨יךָ֙ | alternative: - | WLC 4.20: אֱלֹהֶ֙יךָ֙ | union: ok
+Exod 20:5    divided-accents/accents            main: לְשֹׂנְאָֽי | alternative: לְשֹׂנְאָ֑י | WLC 4.20: לְשֹׂנְאָֽ֑י | union: ok
+Exod 20:6    divided-accents/accents            main: וְעֹ֥שֶׂה | alternative: וְעֹ֤שֶׂה | WLC 4.20: וְעֹ֥֤שֶׂה | union: ok
+Exod 20:6    divided-accents/accents            main: חֶ֖סֶד | alternative: חֶ֨סֶד֙ | WLC 4.20: חֶ֖֙סֶד֙ | union: ok
+Exod 20:6    divided-accents/accents            main: לַאֲלָפִ֑ים | alternative: לַאֲלָפִ֔ים | WLC 4.20: לַאֲלָפִ֑֔ים | union: ok
+Exod 20:8    divided-accents/accents            main: זָכ֛וֹר | alternative: זָכוֹר֩ | WLC 4.20: זָכ֛וֹר֩ | union: ok
+Exod 20:8    divided-accents/accents            main: י֥וֹם | alternative: י֨וֹם | WLC 4.20: י֥֨וֹם | union: ok
+Exod 20:8    divided-accents/accents            main: הַשַּׁבָּ֖ת | alternative: הַשַּׁבָּ֨ת | WLC 4.20: הַשַּׁבָּ֖֜ת | union: marks
+                                                  elsewhere: WLC 4.18: הַשַּׁבָּ֖֜ת | WLC 4.20: הַשַּׁבָּ֖֜ת | WLC 4.22: הַשַּׁבָּ֖֜ת | UXLC 2.6: הַשַׁבָּ֖֜ת | MAM: הַשַּׁבָּ֖֜ת
+Exod 20:8    divided-accents/accents            main: לְקַדְּשֽׁוֹ | alternative: לְקַדְּשׁ֗וֹ | WLC 4.20: לְקַדְּשֽׁ֗וֹ | union: ok
+Exod 20:9    divided-accents/accents            main: שֵׁ֤שֶׁת | alternative: שֵׁ֣שֶׁת | WLC 4.20: שֵׁ֤֣שֶׁת | union: ok
+Exod 20:9    divided-accents/accents            main: יָמִים֙ | alternative: יָמִ֣ים | WLC 4.20: יָמִ֣ים֙ | union: ok
+Exod 20:9    divided-accents/accents            main: תַּֽעֲבֹ֔ד | alternative: תַּֽעֲבֹד֮ | WLC 4.20: תַּֽעֲבֹ֔ד֮ | union: ok
+Exod 20:9    divided-accents/accents            main: וְעָשִׂ֖יתָ | alternative: וְעָשִׂ֣יתָ | WLC 4.20: וְעָשִׂ֖֣יתָ | union: ok
+Exod 20:9    divided-accents/accents            main: מְלַאכְתֶּֽךָ | alternative: מְלַאכְתֶּךָ֒ | WLC 4.20: מְלַאכְתֶּֽךָ֒ | union: ok
+Exod 20:10   qadma                              main: וְי֨וֹם֙ | alternative: - | WLC 4.20: וְי֙וֹם֙ | union: ok
+Exod 20:10   divided-accents/accents            main: הַשְּׁבִיעִ֔י | alternative: הַשְּׁבִיעִ֜י | WLC 4.20: הַשְּׁבִיעִ֔֜י | union: ok
+Exod 20:10   divided-accents/accents+paseq      main: שַׁבָּ֖ת | alternative: שַׁבָּ֣ת ׀ | WLC 4.20: שַׁבָּ֖֣ת ׀ | union: ok
+Exod 20:10   divided-accents/accents            main: אֱלֹהֶ֑יךָ | alternative: אֱלֹהֶ֗יךָ | WLC 4.20: אֱלֹהֶ֑֗יךָ | union: ok
+Exod 20:10   divided-accents/accents            main: תַעֲשֶׂ֨ה | alternative: תַעֲשֶׂ֣ה | WLC 4.20: תַעֲשֶׂ֣֨ה | union: ok
+Exod 20:10   divided-accents/accents            main: מְלָאכָ֜ה | alternative: מְלָאכָ֡ה | WLC 4.20: מְלָאכָ֡֜ה | union: ok
+Exod 20:10   divided-accents/accents            main: וּבִתֶּ֗ךָ | alternative: וּ֠בִתֶּךָ | WLC 4.20: וּ֠בִתֶּ֗ךָ | union: ok
+Exod 20:10   divided-accents/accents            main: עַבְדְּךָ֤ | alternative: עַבְדְּךָ֨ | WLC 4.20: עַבְדְּךָ֤֨ | union: ok
+Exod 20:10   divided-accents/accents            main: וַאֲמָֽתְךָ֙ | alternative: וַאֲמָֽתְךָ֜ | WLC 4.20: וַאֲמָֽתְךָ֜֙ | union: ok
+Exod 20:10   divided-accents/accents            main: וּבְהֶמְתֶּ֔ךָ | alternative: וּבְהֶמְתֶּ֗ךָ | WLC 4.20: וּבְהֶמְתֶּ֔֗ךָ | union: ok
+Exod 20:10   divided-accents/accents            main: וְגֵרְךָ֖ | alternative: וְגֵרְךָ֙ | WLC 4.20: וְגֵרְךָ֖֙ | union: ok
+Exod 20:10   divided-accents/accents            main: אֲשֶׁ֥ר | alternative: אֲשֶׁ֣ר | WLC 4.20: אֲשֶׁ֥֣ר | union: ok
+Exod 20:10   divided-accents/accents            main: בִּשְׁעָרֶֽיךָ | alternative: בִּשְׁעָרֶ֔יךָ | WLC 4.20: בִּשְׁעָרֶֽ֔יךָ | union: ok
+Exod 20:13   divided-accents/accents            main: לֹ֖א | alternative: לֹ֥א | WLC 4.20: לֹ֥֖א | union: ok
+Exod 20:13   divided-accents/accents            main: תִּרְצָֽח | alternative: תִֿרְצָ֖ח | WLC 4.20: תִּֿרְצָֽ֖ח | union: ok
+Exod 20:14   divided-accents/accents            main: לֹ֖א | alternative: לֹ֣א | WLC 4.20: לֹ֣֖א | union: ok
+Exod 20:14   divided-accents/accents            main: תִּנְאָֽף | alternative: תִֿנְאָ֑ף | WLC 4.20: תִּֿנְאָֽ֑ף | union: ok
+Exod 20:15   divided-accents/accents            main: לֹ֖א | alternative: לֹ֣א | WLC 4.20: לֹ֣֖א | union: ok
+Exod 20:15   divided-accents/accents            main: תִּגְנֹֽב | alternative: תִֿגְנֹ֔ב | WLC 4.20: תִּֿגְנֹֽ֔ב | union: ok
+Deut 5:6     divided-accents/accents            main: מִבֵּ֥ית | alternative: מִבֵּ֣ית | WLC 4.20: מִבֵּ֣֥ית | union: ok
+Deut 5:6     divided-accents/accents            main: עֲבָדִֽים | alternative: עֲבָדִ֑ים | WLC 4.20: עֲבָדִֽ֑ים | union: ok
+Deut 5:7     divided-accents/pointing           main: לֹא־ | alternative: לֹ֣א | WLC 4.20: לֹ֣א | union: maqaf
+                                                  elsewhere: WLC 4.18: לֹ֣א | WLC 4.20: לֹ֣א | WLC 4.22: לֹ֣א | UXLC 2.6: לֹ֣א | MAM: לֹ֣א־
+Deut 5:7     divided-accents/pointing           main: יִהְיֶ֥ה | alternative: יִהְיֶה־ | WLC 4.20: יִהְיֶ֥ה־ | union: ok
+Deut 5:7     divided-accents/accents            main: לְךָ֛ | alternative: לְךָ֩ | WLC 4.20: לְךָ֛֩ | union: ok
+Deut 5:7     divided-accents/accents            main: אֱלֹהִ֥ים | alternative: אֱלֹהִ֨ים | WLC 4.20: אֱלֹהִ֥֨ים | union: ok
+Deut 5:7     divided-accents/accents            main: אֲחֵרִ֖ים | alternative: אֲחֵרִ֜ים | WLC 4.20: אֲחֵרִ֖֜ים | union: ok
+Deut 5:7     divided-accents/accents            main: פָּנָֽיַ | alternative: פָּנָ֗יַ | WLC 4.20: פָּנָֽ֗יַ | union: ok
+Deut 5:8     equal to WLC                       main: לֹֽ֣א־ | alternative: לֹ֣א | WLC 4.20: לֹֽ֣א־ | union: ok
+                                                  elsewhere: WLC 4.18: לֹֽ֣א־ | WLC 4.20: לֹֽ֣א־ | WLC 4.22: לֹֽ֣א־ | UXLC 2.6: לֹֽ֣א־ | MAM: לֹֽ֣א־
+Deut 5:8     divided-accents/pointing           main: תַעֲשֶׂ֥ה | alternative: תַעֲשֶׂה־ | WLC 4.20: תַעֲשֶׂ֥ה־ | union: ok
+Deut 5:8     divided-accents/accents            main: לְךָ֥ | alternative: לְךָ֣ | WLC 4.20: לְךָ֥֣ | union: ok
+Deut 5:8     divided-accents/accents+paseq      main: פֶ֨סֶל֙ | alternative: פֶ֣סֶל ׀ | WLC 4.20: פֶ֣֙סֶל֙ ׀ | union: ok
+Deut 5:8     divided-accents/accents            main: תְּמוּנָ֔ה | alternative: תְּמוּנָ֡ה | WLC 4.20: תְּמוּנָ֔֡ה | union: ok
+Deut 5:8     divided-accents/accents            main: אֲשֶׁ֤ר | alternative: אֲשֶׁ֣ר | WLC 4.20: אֲשֶׁ֤֣ר | union: ok
+Deut 5:8     divided-accents/accents+paseq      main: בַּשָּׁמַ֨יִם֙ | alternative: בַּשָּׁמַ֣יִם ׀ | WLC 4.20: בַּשָּׁמַ֣֙יִם֙ ׀ | union: ok
+Deut 5:8     divided-accents/accents            main: מִמַּ֔עַל | alternative: מִמַּ֡עַל | WLC 4.20: מִמַּ֔֡עַל | union: ok
+Deut 5:8     divided-accents/accents            main: וַאֲשֶׁ֥ר | alternative: וַאֲשֶׁר֩ | WLC 4.20: וַאֲשֶׁ֥ר֩ | union: ok
+Deut 5:8     divided-accents/accents            main: בָּאָ֖רֶץ | alternative: בָּאָ֨רֶץ | WLC 4.20: בָּאָ֖֨רֶץ | union: ok
+Deut 5:8     divided-accents/accents            main: מִתָּ֑חַת | alternative: מִתָּ֜חַת | WLC 4.20: מִתָּ֑֜חַת | union: ok
+Deut 5:8     divided-accents/accents+paseq      main: בַּמַּ֖יִם | alternative: בַּמַּ֣יִם ׀ | WLC 4.20: בַּמַּ֖֣יִם ׀ | union: ok
+Deut 5:8     divided-accents/accents            main: מִתַּ֥חַת | alternative: מִתַּ֣חַת | WLC 4.20: מִתַּ֥֣חַת | union: ok
+Deut 5:8     divided-accents/accents            main: לָאָֽרֶץ | alternative: לָאָ֗רֶץ | WLC 4.20: לָאָֽ֗רֶץ | union: ok
+Deut 5:9     divided-accents/accents            main: תִשְׁתַּחֲוֶ֥ה | alternative: תִשְׁתַּחֲוֶ֣ה | WLC 4.20: תִשְׁתַּחֲוֶ֥֣ה | union: ok
+Deut 5:9     divided-accents/accents            main: לָהֶ֖ם | alternative: לָהֶם֮ | WLC 4.20: לָהֶ֖ם֮ | union: ok
+Deut 5:9     divided-accents/accents            main: תָעָבְדֵ֑ם | alternative: תָעָבְדֵם֒ | WLC 4.20: תָעָבְדֵ֑ם֒ | union: ok
+Deut 5:9     qadma                              main: אֱלֹהֶ֨יךָ֙ | alternative: - | WLC 4.20: אֱלֹהֶ֙יךָ֙ | union: ok
+Deut 5:9     divided-accents/accents            main: לְשֹׂנְאָֽי | alternative: לְשֹׂנְאָ֑י | WLC 4.20: לְשֹׂנְאָֽ֑י | union: ok
+Deut 5:10    divided-accents/accents            main: וְעֹ֥שֶׂה | alternative: וְעֹ֤שֶׂה | WLC 4.20: וְעֹ֤֥שֶׂה | union: ok
+Deut 5:10    divided-accents/accents            main: חֶ֖סֶד | alternative: חֶ֨סֶד֙ | WLC 4.20: חֶ֖֙סֶד֙ | union: ok
+Deut 5:10    divided-accents/accents            main: לַֽאֲלָפִ֑ים | alternative: לַֽאֲלָפִ֔ים | WLC 4.20: לַֽאֲלָפִ֑֔ים | union: ok
+Deut 5:12    divided-accents/accents            main: שָׁמ֛וֹר | alternative: שָׁמ֣וֹר | WLC 4.20: שָׁמ֣֛וֹר | union: ok
+Deut 5:12    divided-accents/accents            main: י֥וֹם | alternative: יוֹם֩ | WLC 4.20: י֥וֹם֩ | union: ok
+Deut 5:12    divided-accents/accents            main: הַשַׁבָּ֖ת | alternative: הַשַׁבָּ֨ת | WLC 4.20: הַשַׁבָּ֖֨ת | union: ok
+Deut 5:12    divided-accents/accents            main: לְקַדְּשׁ֑וֹ | alternative: לְקַדְּשׁ֜וֹ | WLC 4.20: לְקַדְּשׁ֑֜וֹ | union: ok
+Deut 5:12    divided-accents/accents+paseq      main: צִוְּךָ֖ | alternative: צִוְּךָ֣ ׀ | WLC 4.20: צִוְּךָ֖֣ ׀ | union: ok
+Deut 5:12    divided-accents/accents            main: יְהוָ֥ה | alternative: יְהוָ֣ה | WLC 4.20: יְהוָ֥֣ה | union: ok
+Deut 5:12    divided-accents/accents            main: אֱלֹהֶֽיךָ | alternative: אֱלֹהֶ֗יךָ | WLC 4.20: אֱלֹהֶֽ֗יךָ | union: ok
+Deut 5:13    divided-accents/accents            main: שֵׁ֤שֶׁת | alternative: שֵׁ֣שֶׁת | WLC 4.20: שֵׁ֤֣שֶׁת | union: ok
+Deut 5:13    divided-accents/accents            main: יָמִים֙ | alternative: יָמִ֣ים | WLC 4.20: יָמִ֣ים֙ | union: ok
+Deut 5:13    divided-accents/accents            main: תַּֽעֲבֹ֔ד | alternative: תַּֽעֲבֹד֮ | WLC 4.20: תַּֽעֲבֹ֔ד֮ | union: ok
+Deut 5:13    divided-accents/accents            main: וְעָשִׂ֖יתָ | alternative: וְעָשִׂ֣יתָ | WLC 4.20: וְעָשִׂ֖֣יתָ | union: ok
+Deut 5:13    divided-accents/accents            main: כָּל־ | alternative: כָֿל | WLC 4.20: כָּֿל־ | union: ok
+Deut 5:13    divided-accents/accents            main: מְלַאכְתֶּֽךָ | alternative: מְלַאכְתֶּךָ֒ | WLC 4.20: מְלַאכְתֶּֽךָ֒ | union: ok
+Deut 5:14    qadma                              main: וְי֨וֹם֙ | alternative: - | WLC 4.20: וְי֙וֹם֙ | union: ok
+Deut 5:14    divided-accents/accents            main: הַשְּׁבִיעִ֔י | alternative: הַשְּׁבִיעִ֜י | WLC 4.20: הַשְּׁבִיעִ֜֔י | union: ok
+Deut 5:14    divided-accents/accents+paseq      main: שַׁבָּ֖ת | alternative: שַׁבָּ֣ת ׀ | WLC 4.20: שַׁבָּ֖֣ת ׀ | union: ok
+Deut 5:14    divided-accents/accents            main: לַיהוָ֣ה | alternative: לַיהוָ֖ה | WLC 4.20: לַיהוָ֖֣ה | union: ok
+Deut 5:14    divided-accents/accents            main: אֱלֹהֶ֑יךָ | alternative: אֱלֹהֶ֗יךָ | WLC 4.20: אֱלֹהֶ֑֗יךָ | union: ok
+Deut 5:14    divided-accents/accents            main: כָּמֽוֹךָ | alternative: כָּמ֑וֹךָ | WLC 4.20: כָּמֽ֑וֹךָ | union: ok
+Deut 5:15    divided-accents/accents            main: וְזָכַרְתָּ֗ | alternative: וְזָכַרְתָּ֞ | WLC 4.20: וְזָכַרְתָּ֞֗ | union: ok
+Deut 5:15    divided-accents/accents            main: עֶ֤בֶד | alternative: עֶ֥בֶד | WLC 4.20: עֶ֤֥בֶד | union: ok
+Deut 5:15    divided-accents/accents            main: הָיִ֨יתָ֙ ׀ | alternative: הָיִ֣יתָ ׀ | WLC 4.20: הָיִ֣֙יתָ֙ ׀ | union: ok
+Deut 5:15    divided-accents/accents            main: מִצְרַ֔יִם | alternative: מִצְרַ֗יִם | WLC 4.20: מִצְרַ֔֗יִם | union: ok
+Deut 5:15    divided-accents/accents            main: וַיֹּצִ֨אֲךָ֜ | alternative: וַיֹּצִאֲךָ֩ | WLC 4.20: וַיֹּצִ֨אֲךָ֜֩ | union: ok
+Deut 5:15    divided-accents/accents            main: יְהוָ֤ה | alternative: יְהוָ֨ה | WLC 4.20: יְהוָ֤֨ה | union: ok
+Deut 5:15    divided-accents/accents            main: אֱלֹהֶ֨יךָ֙ | alternative: אֱלֹהֶ֤יךָ | WLC 4.20: אֱלֹהֶ֤֙יךָ֙ | union: ok
+Deut 5:15    divided-accents/accents            main: מִשָּׁ֔ם | alternative: מִשָּׁם֙ | WLC 4.20: מִשָּׁ֔ם֙ | union: ok
+Deut 5:15    divided-accents/accents            main: בְּיָ֥ד | alternative: בְּיָ֤ד | WLC 4.20: בְּיָ֤֥ד | union: ok
+Deut 5:15    divided-accents/accents            main: חֲזָקָ֖ה | alternative: חֲזָקָה֙ | WLC 4.20: חֲזָקָ֖ה֙ | union: ok
+Deut 5:15    divided-accents/accents            main: נְטוּיָ֑ה | alternative: נְטוּיָ֔ה | WLC 4.20: נְטוּיָ֑֔ה | union: ok
+Deut 5:17    divided-accents/accents            main: לֹ֖א | alternative: לֹ֥א | WLC 4.20: לֹ֥֖א | union: ok
+Deut 5:17    divided-accents/accents            main: תִּרְצָֽח | alternative: תִֿרְצָ֖ח | WLC 4.20: תִּֿרְצָֽח | union: marks
+                                                  elsewhere: WLC 4.18: תִּֿרְצָֽח | WLC 4.20: תִּֿרְצָֽח | WLC 4.22: תִּרְצָֽח | UXLC 2.6: תִּֿרְצָ֖ח | MAM: תִּֿרְצָ֖͏ֽח
+Deut 5:18    divided-accents/accents            main: וְלֹ֖א | alternative: וְלֹ֣א | WLC 4.20: וְלֹ֖֣א | union: ok
+Deut 5:18    divided-accents/accents            main: תִּנְאָֽף | alternative: תִֿנְאָ֑ף | WLC 4.20: תִּֿנְאָֽ֑ף | union: ok
+Deut 5:19    divided-accents/accents            main: וְלֹ֖א | alternative: וְלֹ֣א | WLC 4.20: וְלֹ֖֣א | union: ok
+Deut 5:19    divided-accents/accents            main: תִּגְנֹֽב | alternative: תִֿגְנֹ֔ב | WLC 4.20: תִּֿגְנֹֽ֔ב | union: ok
+
+The places where WLC 4.20's atom is not the union of morphhb's two readings, or where the
+catchWord differs from the main text, with every source:
+  Exod 20:4 (divided-accents/accents; marks): main וַאֲשֶׁ֥ר; alternative וַאֲשֶׁר֩
+      WLC 4.18: וַֽאֲשֶׁ֥ר֩
+      WLC 4.20: וַֽאֲשֶׁ֥ר֩
+      WLC 4.22: וַֽאֲשֶׁ֥ר֩
+      UXLC 2.6: וֽ͏ַאֲשֶׁ֥ר֩
+      MAM:      וַֽאֲשֶׁ֥ר֩
+  Exod 20:4 (divided-accents/pointing; marks): main מִתָּ֑חַת; alternative מִתָּ֜חַת
+      WLC 4.18: מִתַָּ֑֜חַת
+      WLC 4.20: מִתַָּ֑֜חַת
+      WLC 4.22: מִתַָּ֑֜חַת
+      UXLC 2.6: מִתָּ֑͏ַ֜חַת
+      MAM:      מִתָּ֑͏ַ֜חַת
+  Exod 20:5 (divided-accents/pointing; marks): main תִשְׁתַּחֲוֶ֥ה; alternative תִשְׁתַּחֲוֶ֣ה
+      WLC 4.18: תִשְׁתַּחְוֶ֥֣ה
+      WLC 4.20: תִשְׁתַּחְוֶ֥֣ה
+      WLC 4.22: תִשְׁתַּחְוֶ֥֣ה
+      UXLC 2.6: תִשְׁתַּחְוֶ֥֣ה
+      MAM:      תִשְׁתַּחֲוֶ֥֣ה
+  Exod 20:8 (divided-accents/accents; marks): main הַשַּׁבָּ֖ת; alternative הַשַּׁבָּ֨ת
+      WLC 4.18: הַשַּׁבָּ֖֜ת
+      WLC 4.20: הַשַּׁבָּ֖֜ת
+      WLC 4.22: הַשַּׁבָּ֖֜ת
+      UXLC 2.6: הַשַׁבָּ֖֜ת
+      MAM:      הַשַּׁבָּ֖֜ת
+  Deut 5:7 (divided-accents/pointing; maqaf): main לֹא־; alternative לֹ֣א
+      WLC 4.18: לֹ֣א
+      WLC 4.20: לֹ֣א
+      WLC 4.22: לֹ֣א
+      UXLC 2.6: לֹ֣א
+      MAM:      לֹ֣א־
+  Deut 5:8 (equal to WLC; ok): main לֹֽ֣א־; alternative לֹ֣א
+      WLC 4.18: לֹֽ֣א־
+      WLC 4.20: לֹֽ֣א־
+      WLC 4.22: לֹֽ֣א־
+      UXLC 2.6: לֹֽ֣א־
+      MAM:      לֹֽ֣א־
+  Deut 5:17 (divided-accents/accents; marks): main תִּרְצָֽח; alternative תִֿרְצָ֖ח
+      WLC 4.18: תִּֿרְצָֽח
+      WLC 4.20: תִּֿרְצָֽח
+      WLC 4.22: תִּרְצָֽח
+      UXLC 2.6: תִּֿרְצָ֖ח
+      MAM:      תִּֿרְצָ֖͏ֽח
