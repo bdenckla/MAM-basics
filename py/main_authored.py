@@ -35,6 +35,13 @@ Subcommands:
                 Write gh-pages/israel-bible-review/index.html, Ben's review of
                 the Israel Bible, and its style.css, from in/israel-bible-review/
                 (py/author_misc/israel_bible_review_index.py).
+    gen-morphhb-corrections
+                Write gh-pages/morphhb-corrections/index.html, the HTML
+                version of the report on morphhb's corrections of WLC, and
+                its link table into out/morphhb-corrections/, from the
+                report's files in in/morphhb-corrections-2026-11-13/ and the
+                review of the Israel Bible's generated page
+                (py/author_misc/morphhb_corrections_index.py).
     verify-mp
                 Run MAM-parsed claim verification without rewriting
                 MAM-parsed authored HTML/CSS outputs.
@@ -110,6 +117,7 @@ from author_misc import review_of_hebrew_worlds_phonetic_bible as hw_review
 from author_misc import review_of_artscroll_transliterated_linear_siddur as as_review
 from author_misc import review_of_hebrew_reader_for_the_pentateuch as hr_review
 from author_misc import israel_bible_review_index as ib_review
+from author_misc import morphhb_corrections_index as mc_page
 from author_misc import he_ws_intro_to_mam_gray_maqaf_1 as gray_maqaf
 from author_misc import he_ws_intro_to_mam_pasleg as pasleg
 from author_misc import he_ws_intro_to_mam_gaya_text as gaya_text
@@ -254,6 +262,16 @@ def cmd_gen_israel_bible_review(_args):
     gen_israel_bible_review()
 
 
+def gen_morphhb_corrections():
+    """Write the page on morphhb's corrections of WLC into its own folder,
+    gh-pages/morphhb-corrections/, and its link table into out/morphhb-corrections/."""
+    print(f"Generated {mc_page.gen_html_file()}")
+
+
+def cmd_gen_morphhb_corrections(_args):
+    gen_morphhb_corrections()
+
+
 def _run_verify_mp(*, claims) -> None:
     """Run MAM-parsed claim verification against the loaded plus corpus."""
     verify_driver.run(Context(corpus=load_plus_corpus()), claims=claims)
@@ -333,6 +351,14 @@ def build_parser():
         ),
     )
     sub.add_parser(
+        "gen-morphhb-corrections",
+        help=(
+            "Generate gh-pages/morphhb-corrections/index.html, the page on morphhb's"
+            " corrections of WLC, and its link table in out/morphhb-corrections/, from"
+            " in/morphhb-corrections-2026-11-13/."
+        ),
+    )
+    sub.add_parser(
         "gen-mp-claims-index",
         help=(
             "Generate doc/mp-claims.md from explicit claims and verifier functions "
@@ -358,6 +384,8 @@ def main():
         cmd_gen_mam_for_sefaria_doc(args)
     elif args.subcommand == "gen-israel-bible-review":
         cmd_gen_israel_bible_review(args)
+    elif args.subcommand == "gen-morphhb-corrections":
+        cmd_gen_morphhb_corrections(args)
     elif args.subcommand == "gen-mp-claims-index":
         cmd_gen_mp_claims_index(args)
     elif args.subcommand == "verify-mp":
