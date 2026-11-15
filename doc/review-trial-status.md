@@ -9,6 +9,18 @@ session confirmed enabled hourly new-main screening from October 16 at 13:00 and
 checks around 02:00 from October 17, America/New_York, with no end date. Scheduling remains
 with that session; this run created no automation.
 
+## Hourly licensing-document screen, 2026-11-15 20:00 UTC cycle, f689951f
+
+Screened only `2d39d415d6781e4582a03b8f191c4ada748c37bc` -> `f689951f802051fbae4ffda794be31ce0f1de7a3`: two reachable commits / one endpoint path. Complete-file comparison confirms only the two WLC rows of DATA-LICENSES.md changed. No consequential introduced defect or repair established. The new description distinguishes WLC text from manuals and release notes, leaves the latter outside MAM-basics' grant, and preserves the existing CC0 statement for Ben's structuring.
+
+On 2026-11-15, independent reads of the [Groves Center home page](https://grovescenter.org/) and [download descriptions](https://grovescenter.org/file-downloads/) confirm that the Center identifies WLC text as public domain without use restrictions, while treating its morphology and syntax products separately. Its home page also identifies Stephen Salisbury's WLC responsibility. This supports the public statement cited in the changed row; the reported conversation, historical always-public-domain claim, owner approval and suspected origin of the notices remain attributed. This screen makes no new license grant or publication decision.
+
+The unchanged committed header copies at `out/wlc420/0header.json` and `out/wlc422/0header.json` contain the two distinct restrictive notices described in the new text; full-copy comparison with the base is exact. The connector returned no text for the large raw-file range reads, so the notice wording was checked against those committed JSON copies, not represented as a fresh raw extraction. No source/header/data file changes in the endpoint.
+
+No executor, tests, generator or browser launched: source-statement verification and document comparison suffice for this documentation-only interval. The owner's five-test claim remains attributed. The saved review task is completed; no duplicate job was started. Next nightly remains enabled for 2026-11-16 around 02:00 America/New_York.
+
+Receipt parent `967f6d2ab0dda6c4a0b5eaa6c5cd12b1c6b2f833`, every prior status byte, historical gap and November 15 nightly/Windows evidence are preserved. Overall reviewed-through stays `210affe3ac2931473bead0de839be0de08309e3d`; last broad/focused-tested source stays `647ef21ca9d09b1b50264b000cd6a31fd376e572`. Only the established isolated receipt branch is updated, with no open PR and the same sole manual-dispatch Pages workflow in source and parent (`18ceb19405424710bda47d9a38c470cc2ed9c385`). No main/shared integration, dispatch/deployment, private review, font/baseline or hbofonts work; no checkout or temporary worktree.
+
 ## Hourly instruction screen, 2026-11-15 15:00 UTC cycle, 2d39d415
 
 Screened only `eba06de164a125515e8c15162a95efd22393aec5` -> `2d39d415d6781e4582a03b8f191c4ada748c37bc`: one commit / one skill Markdown path. No consequential introduced defect or repair. Complete-file comparison after folding whitespace shows only the two declared sentences added to checklist item 8: reports whose findings depend on pointed forms must make those forms legible, with several possible formats rather than one mandated format. Existing Unicode, direction, font and other skill guidance is preserved. No code, generator input, published/distributed product or font file changed.
