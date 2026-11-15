@@ -9,6 +9,14 @@ session confirmed enabled hourly new-main screening from October 16 at 13:00 and
 checks around 02:00 from October 17, America/New_York, with no end date. Scheduling remains
 with that session; this run created no automation.
 
+## Hourly instruction screen, 2026-11-15 15:00 UTC cycle, 2d39d415
+
+Screened only `eba06de164a125515e8c15162a95efd22393aec5` -> `2d39d415d6781e4582a03b8f191c4ada748c37bc`: one commit / one skill Markdown path. No consequential introduced defect or repair. Complete-file comparison after folding whitespace shows only the two declared sentences added to checklist item 8: reports whose findings depend on pointed forms must make those forms legible, with several possible formats rather than one mandated format. Existing Unicode, direction, font and other skill guidance is preserved. No code, generator input, published/distributed product or font file changed.
+
+GitHub-only inspection; no executor, test, generator or browser launched because this instruction-only change warrants no deeper runtime investigation. The commit's 27-test claim and approval/provenance account remain attributed; no skill deployment is attempted or inferred. The saved review task is completed and no duplicate window or expensive job was started. Nightly remains enabled for 2026-11-16 around 02:00 America/New_York.
+
+Receipt parent `c1610b4d26be6b8b81f6924e65c96fa364c719b5` and every prior status byte, finished receipt and November 15 nightly/Windows supplement are preserved. Overall reviewed-through remains `210affe3ac2931473bead0de839be0de08309e3d`; last broad and focused-tested source remains `647ef21ca9d09b1b50264b000cd6a31fd376e572`. Earlier gaps, four orphan crops and Windows scan/viewer limits remain distinct. Only the existing isolated receipt branch is updated; source and parent retain the sole manual-dispatch Pages workflow `18ceb19405424710bda47d9a38c470cc2ed9c385`, and no open PR depends on this branch. No deployment/dispatch, main/shared integration, private review, frozen-font/baseline or hbofonts work. No checkout or temporary worktree was created.
+
 ## Hourly presentation screen, 2026-11-15 14:00 UTC cycle, eba06de1
 
 Screened only `647ef21ca9d09b1b50264b000cd6a31fd376e572` -> `eba06de164a125515e8c15162a95efd22393aec5`: three commits / three endpoint paths. No consequential introduced defect or repair. After excluding comments and whitespace, the stylesheet's only change replaces `a.clc-doc-target:hover`'s underline with the existing near-Aleppo light/dark background colors and 0.15em radius. The target's base rule still sets `text-decoration: none`; the Latin verse-reference hover rule is unchanged. The committed Deuteronomy page loads document.css then the hand-authored UXLC stylesheet, and its pointed-Hebrew long-note link matches the changed selector. The inspected cascade adds no target underline or bottom border. No HTML, Hebrew text, links, generator, data or font file changed.
