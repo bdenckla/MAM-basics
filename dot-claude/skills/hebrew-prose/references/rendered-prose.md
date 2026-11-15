@@ -120,6 +120,16 @@ repository, it is Taamey D. The common `~/.codex/AGENTS.md` body says so in its 
 D is the default font for pointed Hebrew", with Ben's words of 2026-11-08 and how a page outside
 MAM-basics loads the font.
 
+## No line under pointed Hebrew
+
+Never underline pointed Hebrew or draw any other line under it: no `text-decoration` underline,
+dotted or solid, and no bottom border on a pointed run, on hover or otherwise. The line runs
+through the vowel points and the accents below the letters. Mark such a form some other way,
+in Latin text beside it: a row label, a note or a column. A link on pointed Hebrew takes
+`text-decoration: none`, as the links that MAM-basics' link-presentation stylesheet marks
+already do. Ben, 2026-11-14, of a dotted underline under a CLC form on a local stack page:
+“You can't use underlining with pointed hebrew, come on. it makes it unreadable.”
+
 ## Cite the two books as ITM and CoS, with the full title on hover
 
 Ben, 2026-07-28: *"'Breuer, Chapter 9' doesn't say what breuer book … use CoS and ITM
