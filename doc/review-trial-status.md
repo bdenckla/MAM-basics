@@ -9,6 +9,14 @@ session confirmed enabled hourly new-main screening from October 16 at 13:00 and
 checks around 02:00 from October 17, America/New_York, with no end date. Scheduling remains
 with that session; this run created no automation.
 
+## Focused morphhb report screen, 2026-11-15 21:00 UTC cycle, 2a108647
+
+Reviewed only `f689951f802051fbae4ffda794be31ce0f1de7a3` -> `2a108647c4b17e587a00549eb9fa8de8958e0e3e` (four reachable commits / 42 paths). No consequential introduced defect or repair established. Seven-file Black, dependency/report regeneration, 34 maintained focused tests and eight additional HTML lint tests pass; all tracked outputs and source status remain unchanged. Independent snapshot checks cover 56 review rows/10 anchors/127 review hrefs/four CSS paths, 4,930 census IDs/4,924 aligned records/17 verdicts, 3,811 helper pairs and eight Decalogue unions. Runtime audit verifies tracked-only inputs and exactly three expected writes; no sibling input is required or read. All 30 input-folder files match committed bytes; eight CRLF and five trailing/terminal-blank files have narrowly scoped attributes.
+
+The local report-subsite HTML checker **exited 1**, reporting 119 text directives as missing element IDs; its ID-only model does not validate `#:~:text=`. Full failure output and the separate passing static/model evidence are retained; no browser/live-link pass or checker repair is claimed. Reviewer setup/probe errors and both bounded audit callbacks remain evidence. Owner research/provenance/approval and full-suite/mega claims stay attributed; omitted raw sources are not reproduced.
+
+Overall reviewed-through stays `210affe3ac2931473bead0de839be0de08309e3d`; broad-tested stays `647ef21ca9d09b1b50264b000cd6a31fd376e572`. Focused coverage adds only this endpoint. Parent `413ca85fb9075c37af54708c353bdf562c8f59c2`, all older status bytes/finished receipts, November 15 portable/HP evidence and pending windows/four orphan crops/Windows scan-viewer/Taamey D limits are preserved. No broad, source acquisition, browser, Private, deployment, schedule or frozen-font operation. Existing isolated receipt branch only; sole manual-dispatch workflow and coordinator's no-open-PR check verified. [Receipt](review-hourly-2026-11-15-2a108647-basics.md), [evidence](review-hourly-2026-11-15-2a108647-basics-evidence.zip).
+
 ## Hourly licensing-document screen, 2026-11-15 20:00 UTC cycle, f689951f
 
 Screened only `2d39d415d6781e4582a03b8f191c4ada748c37bc` -> `f689951f802051fbae4ffda794be31ce0f1de7a3`: two reachable commits / one endpoint path. Complete-file comparison confirms only the two WLC rows of DATA-LICENSES.md changed. No consequential introduced defect or repair established. The new description distinguishes WLC text from manuals and release notes, leaves the latter outside MAM-basics' grant, and preserves the existing CC0 statement for Ben's structuring.
