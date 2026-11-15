@@ -1,6 +1,7 @@
 # November 15 continuing nightly broad checks
 
 State: completed 2026-11-15; portable broad checks complete; historical HTML findings retained
+Updates and later status: [review-nightly-2026-11-15-update.md](review-nightly-2026-11-15-update.md).
 
 Exact source `647ef21ca9d09b1b50264b000cd6a31fd376e572`; separate pristine read-only sibling input `3cfacbc28ad75e2939613ab796a90d40a40181c5`. Receipt parent `fb546ebe521c88c23a06c0ebb666e8bca5e94950` already records focused screening through this endpoint. This run adds broad execution; it repeats no hourly window. Overall reviewed-through stays `210affe3ac2931473bead0de839be0de08309e3d`; older gaps and every finished receipt remain.
 
