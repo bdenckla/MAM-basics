@@ -44,9 +44,13 @@ the repository-specific reference before writing. Load only the references neede
    which is not any kind of vowel; keep a **ḥolam male** and its **ḥolam male dot** apart in
    the same way.
 8. **Show the Hebrew form in Unicode.** Do not replace the form with a transliteration or an
-   English gloss. In mixed-direction prose, the first strong character of a line must be Latin;
-   give Hebrew an English runway or its own RTL table cell. A section sign and a backtick are
-   neutral; an ASCII digit has a weak directional type. None is a strong character.
+   English gloss. In chat, where pointed Hebrew is barely legible, a report whose findings turn
+   on forms also shows those forms large enough to read their points and accents. Legibility is
+   the goal, not any particular way of achieving it: a local HTML page in Taamey D, an artifact,
+   and an image such as a PNG or SVG are examples. In mixed-direction prose, the first strong
+   character of a line must be Latin; give Hebrew an English runway or its own RTL table cell. A
+   section sign and a backtick are neutral; an ASCII digit has a weak directional type. None is
+   a strong character.
 9. **Give the pointed-Hebrew font only to pointed Hebrew.** On a rendered page, `lang="hbo"`
    sets Taamey D at 140% so that points and accents are legible. Hebrew with no point or
    accent, such as a vowel's or accent's name in an English sentence, a template name, a strand
