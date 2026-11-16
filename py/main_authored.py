@@ -36,11 +36,10 @@ Subcommands:
                 the Israel Bible, and its style.css, from in/israel-bible-review/
                 (py/author_misc/israel_bible_review_index.py).
     gen-morphhb-corrections
-                Write gh-pages/morphhb-corrections/index.html, the HTML
-                version of the report on morphhb's corrections of WLC, and
-                its link table into out/morphhb-corrections/, from the
-                report's files in in/morphhb-corrections-2026-11-13/ and the
-                review of the Israel Bible's generated page
+                Write gh-pages/morphhb-corrections/index.html, "Where morphhb
+                defies or resolves WLC", from the verdicts in
+                in/morphhb-verdicts-2026-11-16/ and the report's files in
+                in/morphhb-corrections-2026-11-13/
                 (py/author_misc/morphhb_corrections_index.py).
     verify-mp
                 Run MAM-parsed claim verification without rewriting
@@ -263,8 +262,8 @@ def cmd_gen_israel_bible_review(_args):
 
 
 def gen_morphhb_corrections():
-    """Write the page on morphhb's corrections of WLC into its own folder,
-    gh-pages/morphhb-corrections/, and its link table into out/morphhb-corrections/."""
+    """Write the page on where morphhb defies or resolves WLC into its own folder,
+    gh-pages/morphhb-corrections/."""
     print(f"Generated {mc_page.gen_html_file()}")
 
 
@@ -353,8 +352,8 @@ def build_parser():
     sub.add_parser(
         "gen-morphhb-corrections",
         help=(
-            "Generate gh-pages/morphhb-corrections/index.html, the page on morphhb's"
-            " corrections of WLC, and its link table in out/morphhb-corrections/, from"
+            "Generate gh-pages/morphhb-corrections/index.html, the page on where morphhb"
+            " defies or resolves WLC, from in/morphhb-verdicts-2026-11-16/ and"
             " in/morphhb-corrections-2026-11-13/."
         ),
     )
