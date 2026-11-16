@@ -16,9 +16,11 @@ of the other seven books of the Twelve wait for their base chapters (Stage 10, �
 parts of large books”). The display mode's table keeps Stage 10's titles of Joshua's pages
 until its next change (decisions ledger entry 14). On 2026-11-16 Avi's folder held nine new
 books and none of the first six: the text of Micah, Nahum, Habakkuk, Haggai and Zechariah is now
-tracked, and their base chapters wait on Ben's word, while Judges, Zephaniah, Malachi and Daniel
-wait on his decisions (execution ledger, “Later Word files, 2026-11-16”). The execution ledger
-below records each finished stage.
+tracked (execution ledger, “Later Word files, 2026-11-16”). Ben's decisions of that day
+(decisions ledger entry 15) let a fresh session save those books' base chapters and extend the
+converter for Zephaniah and Daniel, while Judges and Malachi wait for Avi's corrected files
+(Deferred, “Avi's answers to Ben's email of 2026-11-16”). The execution ledger below records
+each finished stage.
 
 Written 2026-11-02 by Claude (Opus 5.5) in the Phase 1 session that the session "Commander for
 Claude's forests" started for Avi's email "Mikra Mevo'ar at Wikisource". The quoted decisions are
@@ -38,7 +40,7 @@ whose base chapters exist: Joshua's two parts and five books of the Twelve.
 
 ## Decisions ledger
 
-Entries 1 to 3 and 10 to 14 are Ben's decisions. Entries 5 to 9 were Claude's proposals,
+Entries 1 to 3 and 10 to 15 are Ben's decisions. Entries 5 to 9 were Claude's proposals,
 approved by Ben's word in entry 3.
 
 1. **Route: the bot, after a pilot.** Ben, 2026-11-02, answering "Which route should the pages
@@ -104,7 +106,36 @@ approved by Ben's word in entry 3.
     Joshua's two pages, now redirects (execution ledger, “Avi's answer to the reply”), since no
     run is due and a change now would change nothing on Wikisource, and to make any change with
     the table's next change, when the later books of the Twelve are added. That change also
-    settles whether part two keeps Stage 10's name as its category sort key. Active.
+    settles whether part two keeps Stage 10's name as its category sort key. Settled by entry
+    15, item 5.
+15. **The update of 2026-11-16: every recommendation.** Ben, 2026-11-16, before 11:14 New York
+    time, in the session that carried out the update, answering the six decisions of its
+    decision page: "ask the commander for a fresh session that will follow all your
+    recommendations BUT FIRST compose an email to Avi asking any questions he needs to answer,
+    since even if his answers don't block making some progress, in terms of time zones we need
+    to ask them as soon as possible so they don't block the second round of progress, i.e. the
+    round that does depend on his answers". The recommendations, as that page gave them
+    (execution ledger, “Later Word files, 2026-11-16”):
+    1. **The five books' save.** One saving run creates the 29 base chapters of Micah, Nahum,
+       Habakkuk, Haggai and Zechariah, with Avi's summary of entry 9. This is Ben's word for
+       that run and its summary (entries 3 and 9).
+    2. **Pictures.** The converter reads past a picture that holds no text, still refusing any
+       drawing that holds text, and names each picture it reads past in its output. Ben tells
+       Avi which verses had pictures.
+    3. **Daniel's table of contents.** The converter also reads past a table of contents that
+       Word built as a field after the table: empty paragraphs, and paragraphs styled "toc"
+       with a level, within one field whose instruction is TOC, and nothing else.
+    4. **Two slips.** Avi is asked to correct Malachi 2:16's chapter cell and Judges 6:23's
+       verse cell in the files. Judges and Malachi wait for the corrected files.
+    5. **Joshua's display entries.** When the display mode's table takes the new books,
+       Joshua's two entries take their live titles, and Stage 10's names stay their category
+       sort keys, in a field of their own.
+    6. **No test** of whether the pCloud link reaches a file outside its folder.
+
+    The page also said, needing no answer unless Ben objected, that the projection that
+    `check` uses would read the hung letter of Judges 18:30 as its letter and keep the word of
+    20:13 that is read but not written, as it keeps a ketiv and its qere both. Every other
+    saving run, the display pages' included, still needs Ben's word for that run. Active.
 
 Deferred, each until its own decision:
 
@@ -197,6 +228,15 @@ Deferred, each until its own decision:
   - **The topics are copies,** not transclusions, so a heading that Rabbi Kokhav revises on its
     base chapter changes on the page's break line but not among its topics.
   - **Part two** has no such block yet.
+- **Avi's answers to Ben's email of 2026-11-16,** drafted in the update's session for Ben to
+  send: `C:/Users/BenDe/GitRepos2/MAM-basics/.novc/miqra-mevoar-2026-11-16/email-to-avi-2026-11-16.md`,
+  with its copyable page beside it. Its five questions: whether Avi will clear Malachi 2:16's
+  chapter cell; whether he will correct Judges 6:23's verse cell; whether Daniel's file,
+  changed on 2026-11-16 after the others, is final; whether he wants display pages for Judges
+  and Daniel, and how each would be divided and titled; and whether Micah's same heading
+  before 1:1 and 2:1 is intended. Judges and Malachi wait on the first two. The third bears on
+  Daniel's save. A display page for Judges or Daniel waits on the fourth and then on a stage
+  of this plan that Ben approves.
 
 ## Execution ledger
 
@@ -617,6 +657,28 @@ byte-for-byte copy of that frozen plan; this ledger and the State line are the e
     versification test again (50 passed). The full suite and the mega were skipped: the change
     adds five table entries and five data files that only the Miqra Mevoar converter, its bot
     modes and their tests read, and the mega reads none of them.
+  - **Pushed** as `b3eab6bc`. The decision page, an artifact,
+    https://claude.ai/artifact/KANC5eqKCUMX9Hdu8aiUvR, put six decisions to Ben.
+  - **The pCloud link's reach,** which Ben asked about the same morning: "my concern is if you
+    can use it to navigate "up" in a directory hierarchy". The link is a pCloud shared link,
+    `u.pcloud.link/publink/show` with an opaque code, to the folder that holds the Word files,
+    with the rights to read and download only. pCloud's listing of it, as fetched on
+    2026-11-02, holds no id or path of any folder above that one, and the public-link methods
+    take only the link's code and, for a download, a file's id. So no way up is exposed.
+    pCloud's warning about parent folders concerns its Public Folder's direct links, whose
+    address is a path, another kind of link. Not tested, by Ben's decision (decisions ledger
+    entry 15, item 6): whether a download through the link refuses the id of a file outside
+    the folder.
+  - **The link's copies,** by a search for its code that printed only paths: the link file of
+    decisions ledger entry 8, which Git ignores; Claude Code's backup of it under
+    `~/.claude/file-history/`; and two Claude Code transcripts, the Phase 1 session's and the
+    commander's of October 29 to November 10. The code is in no other file of the eight clones
+    of the four forests, and in no commit or commit message of GitRepos2's two clones, origin's
+    branches included.
+  - **Ben's decisions and the email to Avi:** decisions ledger entry 15, and Deferred, “Avi's
+    answers to Ben's email of 2026-11-16”. The rest of the work goes to a fresh session that
+    the commander starts, with the brief
+    `C:/Users/BenDe/AppData/Local/Claude-Data/claude_pzs8sxrjxfjjc/side-session-notes/local_a80ded65-f78e-4280-8493-9dab3b8c5686/miqra-mevoar-round-1-brief-2026-11-16.md`.
 
 ## Background for a fresh executor
 
