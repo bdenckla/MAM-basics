@@ -1219,7 +1219,7 @@ infrastructure has changed enough to make them misleading examples:
   `.novc/mam-ws-bot-pages-runs/20261106-171009-267831-0500/`, dry run
   `.novc/mam-ws-bot-pages-runs/20261106-155850-573136-0500/`.
 
-### The UXLC's link label in the Leningrad Codex index's footnote: "LC fascimile" replaced by the current label, 2026-11-07 — current
+### The UXLC's link label in the Leningrad Codex index's footnote: "LC fascimile" replaced by the current label, 2026-11-07
 
 - **Purpose:** Make the footnote on line 13 of the Leningrad Codex index quote the label that the
   UXLC's site, tanach.us, now gives its link to the codex's page images. The footnote tells the
@@ -1268,6 +1268,47 @@ infrastructure has changed enough to make them misleading examples:
   naming line 13 of revision 3101876 and what changes on it; run artifacts
   `.novc/mam-ws-bot-intro-runs/20261107-080633-460011-0500/`, dry run
   `.novc/mam-ws-bot-intro-runs/20261106-231954-754862-0500/`.
+
+### Miqra Mevoar's base chapters: Micah, Nahum, Habakkuk, Haggai and Zechariah, 29 chapters, 2026-11-16 — current
+
+- **Purpose:** Create the base chapters of Rabbi David Kokhav's Miqra Mevoar for the five books
+  whose Word files reached Avi's pCloud folder on 2026-11-15 and whose text has been tracked
+  since `b3eab6bc`: all of Micah, Nahum, Habakkuk, Haggai and Zechariah, 29 pages. This is the
+  first part of round 1 of Ben's decisions of 2026-11-16 in `doc/PLAN-miqra-mevoar.md`, which
+  carries out its section “Later Word files” for these books.
+- **Authorization:** Ben, 2026-11-16, in the session that carried out the update, answering the
+  six decisions of its decision page: "ask the commander for a fresh session that will follow
+  all your recommendations". The first recommendation was one saving run of the 29 pages with
+  the summary that Avi gave for new chapters (the plan's decisions ledger, entry 15, item 1).
+  Avi had asked on 2026-11-03 to "finish the available chapters".
+- **Mode:** `main_ws_bot.py miqra-mevoar`, as in Stage 8, over the five books.
+- **Saving run:** 29 pages created, from 11:42 to 11:47 New York time, 146,775 bytes in all,
+  with the summary פרק חדש במקרא מבואר: Micah 1–6 as revisions 3102993 to 3102998 and Micah 7 as 3103000,
+  Nahum 1–3 as 3103001 to 3103003, Habakkuk 1–3 as 3103004 to 3103006, Haggai 1–2 as 3103007
+  and 3103008, and Zechariah 1–14 as 3103009 to 3103022. Revision 3102999 is not this run's.
+  The summary was copied from the plan by script and given to the run without passing through
+  a shell.
+- **Safety rule:** before the run, a fresh fetch of the folder
+  (`.novc/miqra-mevoar/pcloud/20261116-113743-667491-0500/`) gave a manifest byte-identical to
+  that of the morning's fetch, so each of the five Word files equalled, by SHA-256, the one its
+  tracked JSON came from. Before the dry run, and again before the save, no `main_ws_bot.py`
+  process was running on the machine and no session of the commander's family was busy. The
+  `--no-save` dry run gave 29 creates and no refusal, and its pages equal byte for byte those
+  of the dry run that the update's decision page put to Ben
+  (`.novc/mam-ws-bot-miqra-mevoar-runs/20261116-100925-652046-0500/`); the saving run's pages
+  equal the dry run's. The saving run read each new revision back
+  through the API, uncached, and its bytes equalled the generated text. A read after the run,
+  without the bot's login, found each page with one revision, the new one, BDencklaBot's, not
+  minor, with the approved summary, and with the SHA-1 and size of the generated page; in the
+  recent changes every creation, and its entry in the category, carries the bot flag.
+- **One-shot:** no. Confirmed 2026-11-16, immediately after the run: a `--no-save` rerun found all
+  29 pages unchanged and exited zero
+  (`.novc/mam-ws-bot-miqra-mevoar-runs/20261116-114919-069381-0500/`).
+- **Edit level:** Whole page text, generated; page-targeted by book and chapter.
+- **JSON files:** `in/miqra-mevoar/`, the files of `mikha`, `nahum`, `havaquq`, `hagay` and
+  `zekharya`; run artifacts `.novc/mam-ws-bot-miqra-mevoar-runs/20261116-114224-993270-0500/`, dry
+  run `.novc/mam-ws-bot-miqra-mevoar-runs/20261116-114055-576581-0500/`; the read after the run
+  in `.novc/miqra-mevoar-round-1-2026-11-16/read-after-save-29/`.
 
 ## How to look up the original code
 

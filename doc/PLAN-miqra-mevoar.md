@@ -17,10 +17,11 @@ parts of large books”). The display mode's table keeps Stage 10's titles of Jo
 until its next change (decisions ledger entry 14). On 2026-11-16 Avi's folder held nine new
 books and none of the first six: the text of Micah, Nahum, Habakkuk, Haggai and Zechariah is now
 tracked (execution ledger, “Later Word files, 2026-11-16”). Ben's decisions of that day
-(decisions ledger entry 15) let a fresh session save those books' base chapters and extend the
-converter for Zephaniah and Daniel, while Judges and Malachi wait for Avi's corrected files
-(Deferred, “Avi's answers to Ben's email of 2026-11-16”). The execution ledger below records
-each finished stage.
+(decisions ledger entry 15) gave round 1 to a fresh session: the bot created those five books'
+29 base chapters the same day, and the converter's extension for Zephaniah and Daniel and the
+display pages of the five books follow (execution ledger, “Round 1 of Ben's decisions of
+2026-11-16”), while Judges and Malachi wait for Avi's corrected files (Deferred, “Avi's answers
+to Ben's email of 2026-11-16”). The execution ledger below records each finished stage.
 
 Written 2026-11-02 by Claude (Opus 5.5) in the Phase 1 session that the session "Commander for
 Claude's forests" started for Avi's email "Mikra Mevo'ar at Wikisource". The quoted decisions are
@@ -230,7 +231,8 @@ Deferred, each until its own decision:
   - **Part two** has no such block yet.
 - **Avi's answers to Ben's email of 2026-11-16,** drafted in the update's session for Ben to
   send: `C:/Users/BenDe/GitRepos2/MAM-basics/.novc/miqra-mevoar-2026-11-16/email-to-avi-2026-11-16.md`,
-  with its copyable page beside it. Its five questions: whether Avi will clear Malachi 2:16's
+  with its copyable page beside it. Ben sent it before 11:39 New York time that day (execution
+  ledger, “Round 1 of Ben's decisions of 2026-11-16”). Its five questions: whether Avi will clear Malachi 2:16's
   chapter cell; whether he will correct Judges 6:23's verse cell; whether Daniel's file,
   changed on 2026-11-16 after the others, is final; whether he wants display pages for Judges
   and Daniel, and how each would be divided and titled; and whether Micah's same heading
@@ -679,6 +681,30 @@ byte-for-byte copy of that frozen plan; this ledger and the State line are the e
     answers to Ben's email of 2026-11-16”. The rest of the work goes to a fresh session that
     the commander starts, with the brief
     `C:/Users/BenDe/AppData/Local/Claude-Data/claude_pzs8sxrjxfjjc/side-session-notes/local_a80ded65-f78e-4280-8493-9dab3b8c5686/miqra-mevoar-round-1-brief-2026-11-16.md`.
+- **Round 1 of Ben's decisions of 2026-11-16:** the commander adapted that draft and started a
+  fresh Claude (Opus 5.5) session with it, saved as
+  `C:/Users/BenDe/GitRepos/MAM-basics/.novc/commander-session/miqra-mevoar-round-1-brief-2026-11-16.md`,
+  SHA-256 `E2C65BC586FCA6F0599964253CB666A82AE41A7B5F72739BD91005AD029290E6`. Its checkout,
+  `C:/Users/BenDe/GitRepos2/MAM-basics`, was verified before a fetch at 11:37 New York time: on
+  `main`, clean, at `1884cf59c47d85d8cb74ec3f2a2a26015444e431`, level with origin, with no
+  other session working in it.
+  - **The email to Avi** went out: the update's session reported in the shared notes folder at
+    11:39 New York time that Ben had sent it (Deferred, “Avi's answers to Ben's email of
+    2026-11-16”).
+  - **The fetch,** at 11:37 New York time into
+    `.novc/miqra-mevoar/pcloud/20261116-113743-667491-0500/`: its manifest is byte-identical to
+    that of the morning's fetch, so no Word file had changed, and the slips of Malachi and
+    Judges are still in their files.
+  - **The save** of decisions ledger entry 15, item 1. Before the dry run, and again before the
+    save, no `main_ws_bot.py` process was running on the machine and no session of the
+    commander's family was busy. The dry run at 11:40 New York time gave 29 creates, and its
+    pages equal those of the dry run of 10:09 byte for byte. The saving run, from 11:42 to
+    11:47 with Avi's summary of entry 9, copied from this plan by script, created the 29 pages
+    as revisions 3102993 to 3103022, all but 3102999, read each back equal to the generated
+    text, and exited zero. A read after the run, without the bot's login, found each page with
+    one revision, BDencklaBot's, not minor, with that summary, and each creation and its
+    category entry with the bot flag. A dry rerun found all 29 unchanged and exited zero.
+    `py/ws/ws_bot_edit_history.md` has the entry, with the run directories.
 
 ## Background for a fresh executor
 
