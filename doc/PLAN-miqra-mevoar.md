@@ -10,10 +10,9 @@ same day, had the bot create the seven of those pages whose base chapters exist,
 3101357 to 3101363, and Ben then sent Avi a reply about them with three questions (execution
 ledger, “The reply to Avi”). Avi answered on 2026-11-05: he had added Amos's link to the main
 page and renamed Joshua's two display pages, and he is building a model for the parts of large
-books (execution ledger, “Avi's answer to the reply”). The State stays live: the display page
-of Malachi, the last of the Twelve without one, is still to come (Stage 10, “Left out”, and
-“Later Word files”); and the model waits on Avi and then on Ben's decision
-(Deferred, “The parts of large books”). With its change of 2026-11-16 the display mode's table
+books (execution ledger, “Avi's answer to the reply”). The State stays live: the model waits on
+Avi and then on Ben's decision (Deferred, “The parts of large books”), and Stage 11 is yet to be
+executed. With its change of 2026-11-16 the display mode's table
 took Joshua's live titles and kept Stage 10's names as their sort keys (decisions ledger entries
 14 and 15). On 2026-11-16 Avi's folder held nine new
 books and none of the first six: the text of Micah, Nahum, Habakkuk, Haggai and Zechariah is now
@@ -26,11 +25,11 @@ pages of those five books and of Zephaniah (execution ledger, “Round 1 of Ben'
 of 2026-11-16”), and in round 2, another fresh session, the bot created Daniel's 12 base
 chapters on Ben's word of round 1 (execution ledger, “Round 2, after Avi's answers”). The
 converter now reads Avi's corrected files of Judges and Malachi, saved again with other style
-names, and their text is tracked; their base chapters wait on Ben's word, and so does the
-display page of Malachi, the last of the Twelve's. Avi's main page now also links display pages
-of Judges, in three parts, and of Daniel, in two, which Stage 11, written in round 2, plans; it
-stays planning only until Ben gives his word to execute it. The execution ledger below records
-each finished stage.
+names, and on Ben's word of round 2 the bot created their 24 base chapters and the display page
+of Malachi, the last of the Twelve's. Avi's main page now also links display pages of Judges,
+in three parts, and of Daniel, in two, which Stage 11, written in round 2, plans; Ben gave his
+word to execute it, in a fresh session that the commander starts. The execution ledger below
+records each finished stage.
 
 Written 2026-11-02 by Claude (Opus 5.5) in the Phase 1 session that the session "Commander for
 Claude's forests" started for Avi's email "Mikra Mevo'ar at Wikisource". The quoted decisions are
@@ -149,9 +148,9 @@ approved by Ben's word in entry 3.
     20:13 that is read but not written, as it keeps a ketiv and its qere both. Every other
     saving run, the display pages' included, still needs Ben's word for that run. Active:
     round 1 carried out items 1, 2, 3 and 5 and the projection (execution ledger, “Round 1 of
-    Ben's decisions of 2026-11-16”), and for item 4 round 2 tracks the text of Avi's
-    corrected files, whose base chapters wait on Ben's word (execution ledger, “Round 2,
-    after Avi's answers”).
+    Ben's decisions of 2026-11-16”), and for item 4 round 2 tracked the text of Avi's
+    corrected files and, on Ben's word, created their base chapters (execution ledger,
+    “Round 2, after Avi's answers”).
 
 Deferred, each until its own decision:
 
@@ -977,6 +976,45 @@ byte-for-byte copy of that frozen plan; this ledger and the State line are the e
     summary, recommended now; 2, the save of Malachi's display page with Stage 10's summary
     right after it, on the conditions above, recommended; and 3, his word to execute Stage
     11 in a fresh session, recommended, with Daniel's two pages free to go first.
+  - **Ben's word,** in the round 2 session before 16:01 New York time, answering the decision
+    page: "Do 1a, 2a and 3a". So Judges' and Malachi's 24 base chapters are saved now, after
+    a fresh fetch finds both files unchanged and a fresh dry run gives the pages put to him
+    (1a); Malachi's display page right after them, if a fresh run finds its base chapters
+    unchanged, the main page still links its title and a fresh dry run finds no missing link
+    (2a); and Stage 11 is executed in a fresh session that the commander starts, each of its
+    saves on Ben's word for that run (3a).
+  - **The base chapters' save.** A fetch at 16:01 New York time into
+    `.novc/miqra-mevoar/pcloud/20261116-160109-118981-0500/` gave a manifest byte-identical
+    to that of 15:24. No `main_ws_bot.py` process was running before the dry run or before
+    the save; of the commander's family, only the session on the morphhb page was busy, on a
+    page generator in the GitRepos clone, not on bot work. The dry run at 16:02 gave 24
+    creates, with pages equal to those of 15:43 byte for byte (run
+    `.novc/mam-ws-bot-miqra-mevoar-runs/20261116-160214-376731-0500/`). The saving run, from
+    16:02 to 16:07 with Avi's summary of entry 9, copied from this plan by script, created
+    Judges 1 to 21 and Malachi 1 to 3 as revisions 3103109 to 3103133, all but 3103128, read
+    each back equal to the generated text, and exited zero. A read after the run, without the
+    bot's login, found each page with one revision, BDencklaBot's, not minor, with that
+    summary, and each creation and its category entry with the bot flag. A dry rerun found
+    all 24 unchanged and exited zero. `py/ws/ws_bot_edit_history.md` has the entry, with the
+    run directories.
+  - **Malachi's display page's save.** The dry rerun above found Malachi's base chapters
+    unchanged, and the main page, read again at 16:04 and at 16:08 New York time, was still
+    at revision 3103065. The display dry run at 16:08 gave one create, with no missing link
+    or transcluded page, and its page equals the preview's byte for byte (run
+    `.novc/mam-ws-bot-miqra-mevoar-display-runs/20261116-160805-558860-0500/`). The saving
+    run at 16:08, with Stage 10's summary copied from this plan by script, created the page
+    as revision 3103136, read it back equal to the generated text, and exited zero. A read
+    after the run, without the bot's login, found the page with one revision, BDencklaBot's,
+    not minor, with that summary, and the creation and its category entry with the bot flag.
+    A dry rerun found it unchanged, with no missing link or transcluded page, and exited zero.
+    `py/ws/ws_bot_edit_history.md` has the entry, with the run directories, and the decision
+    page marks decisions 1 and 2 answered and carried out. Each of the Twelve now has its
+    display page.
+  - **Stage 11's word.** Ben's 3a is his word to execute Stage 11. By his rule a fresh session
+    executes it, not the round 2 session that wrote it: its standalone prompt, written for
+    the commander, is
+    `C:/Users/BenDe/AppData/Local/Claude-Data/claude_pzs8sxrjxfjjc/side-session-notes/local_a80ded65-f78e-4280-8493-9dab3b8c5686/miqra-mevoar-stage-11-prompt-2026-11-16.md`,
+    and the decision page marks decision 3 answered.
 
 ## Background for a fresh executor
 

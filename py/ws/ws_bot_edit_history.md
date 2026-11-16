@@ -1421,7 +1421,7 @@ infrastructure has changed enough to make them misleading examples:
   and `.novc/mam-ws-bot-miqra-mevoar-runs/20261116-124654-178558-0500/`, before the save; the
   read after the run in `.novc/miqra-mevoar-round-1-2026-11-16/read-after-save-zephaniah-display/`.
 
-### Miqra Mevoar's base chapters: Daniel, 12 chapters, 2026-11-16 — current
+### Miqra Mevoar's base chapters: Daniel, 12 chapters, 2026-11-16
 
 - **Purpose:** Create the base chapters of Rabbi David Kokhav's Miqra Mevoar for Daniel, whose
   Word file reached Avi's pCloud folder on 2026-11-16 and whose text has been tracked since
@@ -1460,6 +1460,82 @@ infrastructure has changed enough to make them misleading examples:
   `.novc/mam-ws-bot-miqra-mevoar-runs/20261116-152620-303377-0500/`, dry run
   `.novc/mam-ws-bot-miqra-mevoar-runs/20261116-152525-435088-0500/`; the read after the run in
   `.novc/miqra-mevoar-round-2-2026-11-16/read-after-save-daniel/`.
+
+### Miqra Mevoar's base chapters: Judges and Malachi, 24 chapters, 2026-11-16
+
+- **Purpose:** Create the base chapters of Rabbi David Kokhav's Miqra Mevoar for Judges and
+  Malachi, whose Word files Avi corrected on 2026-11-16, Judges' verse cell of 6:23 and
+  Malachi's chapter cell of 2:16, and whose text has been tracked since `9b2d8909`, when the
+  converter learned the style names with which the corrected files were saved: 24 pages.
+  Judges' two pictures, in the paraphrase cells of 8:7 and 9:14, hold no text and are not on
+  the pages.
+- **Authorization:** Ben, 2026-11-16, in the round 2 session, answering its decision page,
+  https://claude.ai/artifact/QVrERyj3zqyDacRCCr81YD: "Do 1a, 2a and 3a". Recommendation 1a was
+  to save all 24 now, in one run, with the summary that Avi gave for new chapters, after a
+  fresh fetch finds both files unchanged and a fresh dry run gives the pages put to him.
+- **Mode:** `main_ws_bot.py miqra-mevoar`, as in Stage 8, over `sephershoftim` and `malakhi`.
+- **Saving run:** 24 pages created, from 16:02 to 16:07 New York time, 222,580 bytes in all,
+  with the summary פרק חדש במקרא מבואר: Judges 1–19 as revisions 3103109 to 3103127, Judges 20 and 21
+  as 3103129 and 3103130, and Malachi 1–3 as 3103131 to 3103133. Revision 3103128 is not this
+  run's. The summary was copied from the plan by script and given to the run without passing
+  through a shell.
+- **Safety rule:** before the run, a fresh fetch of the folder
+  (`.novc/miqra-mevoar/pcloud/20261116-160109-118981-0500/`) gave a manifest byte-identical to
+  that of the fetch at 15:24, so each of the two Word files equalled, by SHA-256, the one its
+  tracked JSON came from. Before the dry run, and again before the save, no `main_ws_bot.py`
+  process was running on the machine, and no other session of the commander's family was
+  doing bot work. The `--no-save` dry run gave 24 creates and no refusal, and its pages equal
+  byte for byte those of the dry run that the decision page put to Ben
+  (`.novc/mam-ws-bot-miqra-mevoar-runs/20261116-154317-514447-0500/`); the saving run's pages
+  equal the dry run's. The saving run read each new revision back through the API, uncached,
+  and its bytes equalled the generated text. A read after the run, without the bot's login,
+  found each page with one revision, the new one, BDencklaBot's, not minor, with the approved
+  summary, and with the SHA-1 and size of the generated page; in the recent changes every
+  creation, and its entry in the category, carries the bot flag.
+- **One-shot:** no. Confirmed 2026-11-16, immediately after the run: a `--no-save` rerun found all
+  24 pages unchanged and exited zero
+  (`.novc/mam-ws-bot-miqra-mevoar-runs/20261116-160747-019991-0500/`).
+- **Edit level:** Whole page text, generated; page-targeted by book and chapter.
+- **JSON files:** `in/miqra-mevoar/sephershoftim.json` and `in/miqra-mevoar/malakhi.json`; run
+  artifacts `.novc/mam-ws-bot-miqra-mevoar-runs/20261116-160232-388676-0500/`, dry run
+  `.novc/mam-ws-bot-miqra-mevoar-runs/20261116-160214-376731-0500/`; the read after the run in
+  `.novc/miqra-mevoar-round-2-2026-11-16/read-after-save-judges-malachi/`.
+
+### Miqra Mevoar's display page: Malachi, 2026-11-16 — current
+
+- **Purpose:** Create the display page of Malachi, which the main page of Miqra Mevoar links,
+  in the form of the other books of the Twelve, now that Malachi's base chapters exist (the
+  entry above). The display mode's table took the page in `a5df0ffc`. With it, each of the
+  Twelve has its display page.
+- **Authorization:** Ben, 2026-11-16, in the round 2 session, answering its decision page,
+  https://claude.ai/artifact/QVrERyj3zqyDacRCCr81YD: "Do 1a, 2a and 3a". Recommendation 2a was
+  to save the page with Stage 10's summary right after the base chapters' save, if a fresh run
+  finds Malachi's base chapters unchanged, the main page still links the title, and a fresh
+  dry run finds no missing link.
+- **Mode:** `main_ws_bot.py miqra-mevoar-display`, as in Stage 10, with `--page malakhi`.
+- **Saving run:** one page created, at 16:08 New York time, 3,399 bytes, with the summary
+  דף תצוגה חדש במקרא מבואר, "a new display page in Miqra Mevoar", as revision 3103136. The summary was
+  copied from the plan by script and given to the run without passing through a shell.
+- **Safety rule:** before the dry run, the `--no-save` rerun of the entry above found
+  Malachi's 3 base chapters unchanged, and the main page, read again at 16:04 and at 16:08,
+  was still at revision 3103065, whose link the page's title equals. No `main_ws_bot.py`
+  process was running on the machine before either bot run. The `--no-save` dry run gave one
+  create, with no missing link or transcluded page, and its page equals byte for byte the
+  preview that the decision page put to Ben
+  (`.novc/mam-ws-bot-miqra-mevoar-display-runs/20261116-154353-296615-0500/`). The saving
+  run's page equals the dry run's, and it read the new revision back through the API,
+  uncached, and its bytes equalled the generated text. A read after the run, without the
+  bot's login, found the page with one revision, BDencklaBot's, not minor, with the approved
+  summary and with the SHA-1 and size of the generated page, and the creation and its entry in
+  the category with the bot flag in the recent changes.
+- **One-shot:** no. Confirmed 2026-11-16, immediately after the run: a `--no-save` rerun found the
+  page unchanged, with no missing link or transcluded page, and exited zero
+  (`.novc/mam-ws-bot-miqra-mevoar-display-runs/20261116-160905-171221-0500/`).
+- **Edit level:** Whole page text, generated; page-targeted by key.
+- **Input:** `MAM-simple/json-vtrad-mam/` and `in/miqra-mevoar/`; run artifacts
+  `.novc/mam-ws-bot-miqra-mevoar-display-runs/20261116-160830-640150-0500/`; dry run
+  `.novc/mam-ws-bot-miqra-mevoar-display-runs/20261116-160805-558860-0500/`; the read after the
+  run in `.novc/miqra-mevoar-round-2-2026-11-16/read-after-save-malachi-display/`.
 
 ## How to look up the original code
 
