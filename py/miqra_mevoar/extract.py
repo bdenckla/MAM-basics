@@ -17,6 +17,10 @@ Any other row is an error, as is a second title row, a heading with no verse aft
 or a chapter or verse number out of sequence. So is a heading or paraphrase that has a
 line break, a tab or anything else MediaWiki would interpret or transform. A cell's
 text joins its paragraphs, and each run of whitespace in it becomes one space.
+
+A picture that holds no text, in a cell, is read past (docx_table.py), and each one is
+named by its file, its row, the row's place in the book and its cell, so that nobody
+loses track of a picture that the pages leave out.
 """
 
 import hashlib
@@ -35,7 +39,7 @@ def run(directory):
     """Write in/miqra-mevoar/<stem>.json for every .docx in directory."""
     for docx_path in docx_paths(directory):
         book = books.book_of_stem(docx_path.stem)
-        record, _bible = extract_book(docx_path, book)
+        record, _bible, pictures = extract_book(docx_path, book)
         tracked.write_record(book, record)
         verses = [
             verse for chapter in record["chapters"] for verse in chapter["verses"]
@@ -45,6 +49,8 @@ def run(directory):
             f"{book.stem}: {len(record['chapters'])} chapters, {len(verses)} verses,"
             f" {headings} headings"
         )
+        for line in pictures:
+            print(f"  {line}")
 
 
 def docx_paths(directory):
@@ -56,9 +62,11 @@ def docx_paths(directory):
 
 
 def extract_book(docx_path, book):
-    """A book's record for its tracked JSON, and each verse's Bible cell by (chapter, verse)."""
+    """A book's record for its tracked JSON, each verse's Bible cell by (chapter, verse),
+    and a line naming each picture read past in the file."""
     data = docx_path.read_bytes()
-    title, chapters = _build(docx_table.read_rows(docx_path), docx_path.name)
+    table = docx_table.read_table(docx_path)
+    title, chapters, places = _build(table.rows, docx_path.name)
     unmarked = "".join(char for char in title if unicodedata.category(char) != "Mn")
     if unmarked != book.title:
         raise ValueError(f"{docx_path.name}: title {unmarked!r}, not {book.title!r}")
@@ -85,15 +93,23 @@ def extract_book(docx_path, book):
         for chapter in chapters
         for verse in chapter["verses"]
     }
-    return record, bible
+    pictures = [
+        f"{docx_path.name} row {picture.row} ({places[picture.row]}),"
+        f" cell {picture.cell}: a picture that holds no text, read past"
+        for picture in table.pictures
+    ]
+    return record, bible, pictures
 
 
 def _build(rows, name):
+    """The book's title, its chapters, and each row's place: its verse, or its kind."""
     chapters, pending, title = [], None, None
+    places, heading_row = {}, None
     for index, cells in enumerate(rows):
         where = f"{name} row {index}"
         kind, (c0, c1, c2, c3) = _classify(cells, where)
         if kind == "empty":
+            places[index] = "an empty row"
             continue
         if kind == "title":
             if title is not None or chapters or pending is not None:
@@ -101,13 +117,14 @@ def _build(rows, name):
                     f"{where}: a title row after the book's first row of text"
                 )
             title, pending = c2, c3 or None
+            places[index] = "the title row"
             continue
         if title is None:
             raise ValueError(f"{where}: a {kind} row before the title row")
         if kind == "heading":
             if pending is not None:
                 raise ValueError(f"{where}: a heading after the heading {pending!r}")
-            pending = c3
+            pending, heading_row = c3, index
             continue
         if c0:
             number = _numeral(c0, f"{where}, chapter cell")
@@ -126,12 +143,15 @@ def _build(rows, name):
         verses.append(
             {"verse": number, "heading": pending, "paraphrase": c3, "bible": c2}
         )
-        pending = None
+        places[index] = f"{chapters[-1]['chapter']}:{number}"
+        if heading_row is not None:
+            places[heading_row] = f"the heading of {places[index]}"
+        pending, heading_row = None, None
     if title is None:
         raise ValueError(f"{name}: no title row")
     if pending is not None:
         raise ValueError(f"{name}: the heading {pending!r} has no verse after it")
-    return title, chapters
+    return title, chapters, places
 
 
 def _classify(cells, where):

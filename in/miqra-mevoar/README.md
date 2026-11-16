@@ -1,11 +1,12 @@
 # Miqra Mevoar: the tracked text of Rabbi Kokhav's Word files
 
-The files here hold Rabbi David Kokhav's Miqra Mevoar, a paraphrase of the Bible, for eleven
-books of the Prophets: Joshua, Hosea, Joel, Amos, Obadiah, Jonah, Micah, Nahum, Habakkuk, Haggai
-and Zechariah. Each `<stem>.json` is extracted from one of the Word files that reach Avi, for
-publication on Hebrew Wikisource as the base chapters of its Miqra Mevoar project. The project's
-main page gives its license as Creative Commons Attribution-ShareAlike 3.0 Unported, and says
-that the attribution the license asks for is a direct link to that page.
+The files here hold Rabbi David Kokhav's Miqra Mevoar, a paraphrase of the Bible, for thirteen
+books: Joshua, Hosea, Joel, Amos, Obadiah, Jonah, Micah, Nahum, Habakkuk, Zephaniah, Haggai and
+Zechariah, of the Prophets, and Daniel, of the Writings. Each `<stem>.json` is extracted from one
+of the Word files that reach Avi, for publication on Hebrew Wikisource as the base chapters of
+its Miqra Mevoar project. The project's main page gives its license as Creative Commons
+Attribution-ShareAlike 3.0 Unported, and says that the attribution the license asks for is a
+direct link to that page.
 
 `py/main_miqra_mevoar.py` writes these files, `py/main_ws_bot.py miqra-mevoar` creates the
 pages from them, and `doc/PLAN-miqra-mevoar.md` is the plan of record.
@@ -15,7 +16,9 @@ pages from them, and `doc/PLAN-miqra-mevoar.md` is the plan of record.
 Each file is one book: the book's name as the page titles give it; the Word file's name, size
 and SHA-256; and the book's chapters, each verse with the heading before it, or null, and its
 paraphrase. The extraction joins a cell's paragraphs and makes each run of whitespace one space;
-it changes nothing else.
+it changes nothing else. A picture in a cell holds no text and is left out, as are Zephaniah's
+two, beside the numbers of 2:13 and 2:14; `extract` and `check` name each one by its file, row
+and cell.
 
 The Word files' Bible column is not kept. It is MAM's text, copied from Wikisource, which
 Wikisource and MAM-simple already hold. `check` compares it with MAM-simple's verse of the same

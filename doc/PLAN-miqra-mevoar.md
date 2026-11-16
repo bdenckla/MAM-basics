@@ -705,6 +705,45 @@ byte-for-byte copy of that frozen plan; this ledger and the State line are the e
     one revision, BDencklaBot's, not minor, with that summary, and each creation and its
     category entry with the bot flag. A dry rerun found all 29 unchanged and exited zero.
     `py/ws/ws_bot_edit_history.md` has the entry, with the run directories.
+  - **The converter,** decisions ledger entry 15, items 2 and 3, and the projection that the
+    decision page announced:
+    1. `py/miqra_mevoar/docx_table.py` reads past a drawing only in a table cell, and only
+       when it is one frame, inline or anchored, whose graphic data is one picture and which
+       holds no text: no WordprocessingML element, and no text, text box or text body of
+       DrawingML. `read_table` gives each picture's row and cell, and `extract`'s output and
+       `check`'s report name it by file, row, the row's place and cell. Any other drawing,
+       and a picture outside a cell, still raise.
+    2. After the table, the same module reads past empty paragraphs and one field whose
+       instruction is TOC, its text only in its result and only in paragraphs styled "toc"
+       with a level, with PAGEREF fields nested in its result and none nested in them. A
+       field character or instruction anywhere else still raises. Joshua's content control
+       is read as before.
+    3. `py/miqra_mevoar/mam_simple.py`'s projection reads `letter-hung` as its letter and
+       keeps `kq-q-velo-k`, as it keeps a ketiv and its qere both.
+    4. `py/miqra_mevoar/books.py` gains `tzefanya` and `daniyel`, each title copied by script
+       from its file's title row through the new reader; each equals MAM's name of the book.
+  - **The results,** on `.novc/miqra-mevoar/combined/20261116-115425-523981-0500/`, which joins
+    the six earlier books' files from the fetch of 2026-11-03 with the seven others from that
+    of 11:37. `extract` wrote Zephaniah, 3 chapters, 53 verses and 3 headings, naming its two
+    pictures, in the verse cells of 2:13 and 2:14, and Daniel, 12, 357 and 14, its table of
+    contents read past; it rewrote the other eleven books' JSON byte for byte. `check` passed
+    for all thirteen, with the report `.novc/miqra-mevoar/checks/20261116-115439-327550-0500.txt`.
+    Zephaniah's and Daniel's margins and ratios equal those of the update's diagnosis with its
+    problems set aside in memory: Daniel's smallest margin is that of 3:2, 0.897 against 0.667,
+    and its lowest ratio that of 5:30, 0.750 against 0.174. `pages` wrote 100 pages into
+    `.novc/miqra-mevoar/pages/20261116-115451-round-1/`, and the eleven books' 85 equal those
+    of 10:03 byte for byte. With the new reader, Judges gets past its pictures and stops at its
+    verse cell of 6:23, and Malachi at its chapter cell of 2:16, as round 2 expects.
+  - **The dry run of Zephaniah's and Daniel's base chapters,** at 11:56 New York time: 15
+    creates, and the run's pages equal those of `pages` byte for byte (run
+    `.novc/mam-ws-bot-miqra-mevoar-runs/20261116-115613-777573-0500/`). Their save needs Ben's
+    word; Avi's answer to the email's third question, whether Daniel's file is final, bears on
+    Daniel's.
+  - **Checks:** `git diff --check`; Black on the five changed modules; Stage 10's verification
+    command with `py/tests/test_miqra_mevoar_save_receipts.py` added, after staging the two
+    new JSON files so that the tree-wide lints read them (119 passed). The mega and the full
+    suite were skipped: the mega runs none of this code, and the converter is imported only by
+    its entry point, its three bot modes and five tests, all in that run.
 
 ## Background for a fresh executor
 

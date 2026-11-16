@@ -12,7 +12,8 @@ The ratio is difflib's, without autojunk. A verse with a ketiv and a qere scores
 since MAM-simple's projection keeps both: Joshua 15:53 scored 0.78 and Hosea 10:10 0.88
 on 2026-11-02, while their closer neighbouring verses scored 0.34. The margin of a row
 is its ratio less its best neighbour's. The report, under .novc/miqra-mevoar/checks/,
-lists each book's five smallest margins and lowest ratios. Nothing tracked is written.
+lists each book's five smallest margins and lowest ratios, and names each picture that
+the extraction read past in the book's Word file. Nothing tracked is written.
 """
 
 import datetime
@@ -37,8 +38,9 @@ def run(directory):
         failures.append(f"Word files {docx_stems}, tracked JSON {tracked_stems}")
     for docx_path in docx_paths:
         book = books.book_of_stem(docx_path.stem)
-        record, bible = extract.extract_book(docx_path, book)
+        record, bible, pictures = extract.extract_book(docx_path, book)
         _check_book(book, record, bible, report, failures)
+        report.extend(f"  {line}" for line in pictures)
     report.append("")
     report.append(f"failures: {len(failures)}")
     report.extend(f"  FAIL {failure}" for failure in failures)

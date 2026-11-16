@@ -5,7 +5,9 @@ verse numbers, and for which verse each row of a Word file is: its Bible column 
 MAM's text, copied from Wikisource. It is also the oracle for the books and chapters
 that the base-chapter index links, and for the verses and the breaks between them that
 a display page shows. _projected reads a verse's elements to text by a closed dispatch,
-keeping a ketiv and its qere both, for a comparison of letters only. verse_breaks reads
+keeping a ketiv and its qere both, for a comparison of letters only: so it reads a hung
+letter, such as the nun of Judges 18:30, as its letter, and keeps a word that is read
+but not written, such as the one of Judges 20:13, as it keeps a qere. verse_breaks reads
 the petuha and setuma break elements by a closed dispatch of their places.
 """
 
@@ -171,7 +173,15 @@ def _projected(node):
         if "text" in node:
             return node["text"]
         return "".join(_projected(child) for child in node["contents"])
-    if kind in ("text", "kq-k", "kq-trivial", "letter-small", "letter-large"):
+    if kind in (
+        "text",
+        "kq-k",
+        "kq-trivial",
+        "kq-q-velo-k",
+        "letter-small",
+        "letter-large",
+        "letter-hung",
+    ):
         return node["text"]
     if kind == "kq":
         return " ".join(_projected(child) for child in node["contents"])
