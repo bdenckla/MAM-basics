@@ -26,8 +26,10 @@ pages of those five books and of Zephaniah (execution ledger, “Round 1 of Ben'
 of 2026-11-16”), and in round 2, another fresh session, the bot created Daniel's 12 base
 chapters on Ben's word of round 1 (execution ledger, “Round 2, after Avi's answers”). The
 converter now reads Avi's corrected files of Judges and Malachi, saved again with other style
-names, and their text is tracked; their base chapters wait on Ben's word. The execution ledger
-below records each finished stage.
+names, and their text is tracked; their base chapters wait on Ben's word, and so does the
+display page of Malachi, the last of the Twelve's. Avi's main page now also links display pages
+of Judges, in three parts, and of Daniel, in two, which this plan has yet to take up. The
+execution ledger below records each finished stage.
 
 Written 2026-11-02 by Claude (Opus 5.5) in the Phase 1 session that the session "Commander for
 Claude's forests" started for Avi's email "Mikra Mevo'ar at Wikisource". The quoted decisions are
@@ -935,6 +937,27 @@ byte-for-byte copy of that frozen plan; this ledger and the State line are the e
     new JSON files so that the tree-wide lints read them (129 passed). The mega and the full
     suite were skipped: the mega runs none of this code, and the converter is imported only
     by its entry point, its three bot modes and five tests, all in that run.
+  - **Pushed** as `9b2d8909`.
+  - **The dry run of Judges' and Malachi's base chapters,** at 15:43 New York time, from that
+    commit, after a check that no `main_ws_bot.py` process was running and no other session
+    of the commander's family was doing bot work: 24 creates, no title existing, and the
+    run's pages equal those of `pages` byte for byte (run
+    `.novc/mam-ws-bot-miqra-mevoar-runs/20261116-154317-514447-0500/`). The save needs Ben's
+    word for that run, with its summary.
+  - **The main page,** read again at 15:38 New York time, is at revision 3103065, Dovi's of
+    14:54. Since revision 3101507 it has gained only links to display pages of Judges and
+    Daniel, in parts: Judges' first part from 1:1 to 2:5, its second from 2:6 to the end of
+    chapter 16 and its third chapters 17 to 21, and Daniel's first part chapters 1 to 6 and
+    its second chapters 7 to 12. The Twelve's line is unchanged.
+  - **Malachi's display page.** Malachi joins the display mode's table, its name copied by
+    script from the twelfth link of the Twelve's line in revision 3103065, which equals MAM's
+    name of the book. A preview dry run at 15:43 New York time gave one create: 55 verse
+    lines; 6 petuhot and 1 setuma; 7 headings; and break lines with a break only, a heading
+    only and both, 1, 1 and 6. Its parse check found red links to exactly Malachi's three
+    base chapters, which do not exist yet (run
+    `.novc/mam-ws-bot-miqra-mevoar-display-runs/20261116-154353-296615-0500/`). Its save
+    needs Ben's word, and then the base chapters' save and a fresh dry run that finds no
+    missing link.
 
 ## Background for a fresh executor
 

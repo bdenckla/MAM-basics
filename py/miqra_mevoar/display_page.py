@@ -248,6 +248,7 @@ PAGES = {
         Page("tzefanya", "צפניה", "tzefanya"),
         Page("hagay", "חגי", "hagay"),
         Page("zekharya", "זכריה", "zekharya"),
+        Page("malakhi", "מלאכי", "malakhi"),
     )
 }
 # The templates, their parameters and the section function, copied by script from the
