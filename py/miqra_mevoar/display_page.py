@@ -2,13 +2,15 @@
 
 A display page, titled DISPLAY_PREFIX and its name, sets each of its verses in MAM's
 text beside Rabbi Kokhav's paraphrase from the verse's base chapter, in the form of
-Avi's pages for the five megillot. PAGES lists the seven pages of Stage 10 of
-doc/PLAN-miqra-mevoar.md: Joshua's two parts, as Avi divided the book, and the five
-books of the Twelve whose base chapters exist. Their names are those that the main page,
-מקרא מבואר, links from its section of the Prophets in revision 3101310, copied from it by
-script, except Amos's: that revision has no link for Amos, whose name is MAM's name of
-the book, as Avi's email gives it. Obadiah's name has no vav, as Avi's link and the Word
-file's title row have it, but its verses name the book as MAM does, with the vav.
+Avi's pages for the five megillot. PAGES lists Joshua's two parts, as Avi divided the
+book, and the books of the Twelve whose base chapters exist: the five of Stage 10 of
+doc/PLAN-miqra-mevoar.md, and Micah, Nahum, Habakkuk, Haggai and Zechariah, added in
+its round 1 of 2026-11-16. Their names are those that the main page,
+מקרא מבואר, links from its section of the Prophets in revision 3101507, each copied by script and
+checked against that revision's link. Obadiah's name has no vav, as Avi's link and the
+Word file's title row have it, but its verses name the book as MAM does, with the vav.
+Avi moved Joshua's two parts after Stage 10 created them, and their category lines
+still sort them under the names they had then, which PAGES keeps as their sort keys.
 
 A page has three line shapes and no others, as the megillot's pages have:
 
@@ -28,7 +30,8 @@ A page has three line shapes and no others, as the megillot's pages have:
    gives, by the section that wraps it there, wikitext.HEADING_SECTION and the verse's
    numeral. A break inside a verse gets no line, since MAM's verse shows it.
 3. The end: a blank line, then the category line, [[קטגוריה:מקרא מבואר|<name>]], whose
-   sort key is the page's own name, as each megillah's page has its own.
+   sort key is the page's own name, as each megillah's page has its own, or the sort key
+   that PAGES gives it.
 
 page_text generates a page in NFC with no final newline, exactly as a save stores it.
 read_page, a closed parser of the three shapes, reads a page back as its verses and
@@ -48,17 +51,24 @@ from miqra_mevoar import wikitext
 
 @dataclasses.dataclass(frozen=True)
 class Page:
-    """One display page: its key, its name after DISPLAY_PREFIX, its book and chapters."""
+    """One display page: its key, its name after DISPLAY_PREFIX, its book and chapters,
+    and its category line's sort key where that is not its name."""
 
     key: str
     name: str
     stem: str
     # The first and last chapters of a part of a book, or None for the whole book.
     chapters: tuple[int, int] | None = None
+    # The sort key of the page's category line, or None for the page's own name.
+    sort_key: str | None = None
 
     def title(self) -> str:
         """The page's title on Wikisource."""
         return f"{DISPLAY_PREFIX}{self.name}"
+
+    def category_sort_key(self) -> str:
+        """The sort key of the page's category line: sort_key, or else its name."""
+        return self.name if self.sort_key is None else self.sort_key
 
 
 @dataclasses.dataclass(frozen=True)
@@ -76,7 +86,7 @@ class Verse:
 
 def page_text(page):
     """A display page's text, exactly as a save stores it."""
-    return _text(page_verses(page), page.name)
+    return _text(page_verses(page), page.category_sort_key())
 
 
 def page_verses(page):
@@ -216,20 +226,27 @@ def _category_line(name):
 PE = "\N{HEBREW LETTER PE}"
 SAMEKH = "\N{HEBREW LETTER SAMEKH}"
 _LETTERS = {mam_simple.PETUHA: PE, mam_simple.SETUMA: SAMEKH}
-# The title prefix and the names, copied by script from the links of the main page's
-# section of the Prophets in revision 3101310, except Amos's, which is MAM's name of the
-# book, mam_bknas.he_bk39_name of its BS_ pair.
+# The title prefix and the names, as the links of the main page's section of the Prophets
+# give them in revision 3101507. Stage 10 copied the prefix and its names by script from
+# revision 3101310, except Amos's, MAM's name of the book, and each equals 3101507's link;
+# round 1 copied Joshua's new names and the five later names from 3101507 by script.
+# Joshua's sort keys are the names under which Stage 10 created its two pages.
 DISPLAY_PREFIX = "מקרא מבואר/תצוגה/"
 PAGES = {
     page.key: page
     for page in (
-        Page("yehoshua-1", "ספר יהושע א", "yehoshua", (1, 12)),
-        Page("yehoshua-2", "ספר יהושע ב", "yehoshua", (13, 24)),
+        Page("yehoshua-1", "ספר יהושע 1", "yehoshua", (1, 12), sort_key="ספר יהושע א"),
+        Page("yehoshua-2", "ספר יהושע 2", "yehoshua", (13, 24), sort_key="ספר יהושע ב"),
         Page("hoshea", "הושע", "hoshea"),
         Page("yoel", "יואל", "yoel"),
         Page("amos", "עמוס", "amos"),
         Page("ovadya", "עבדיה", "ovadya"),
         Page("yona", "יונה", "yona"),
+        Page("mikha", "מיכה", "mikha"),
+        Page("nahum", "נחום", "nahum"),
+        Page("havaquq", "חבקוק", "havaquq"),
+        Page("hagay", "חגי", "hagay"),
+        Page("zekharya", "זכריה", "zekharya"),
     )
 }
 # The templates, their parameters and the section function, copied by script from the

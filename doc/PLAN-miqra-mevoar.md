@@ -18,10 +18,12 @@ until its next change (decisions ledger entry 14). On 2026-11-16 Avi's folder he
 books and none of the first six: the text of Micah, Nahum, Habakkuk, Haggai and Zechariah is now
 tracked (execution ledger, “Later Word files, 2026-11-16”). Ben's decisions of that day
 (decisions ledger entry 15) gave round 1 to a fresh session: the bot created those five books'
-29 base chapters the same day, and the converter's extension for Zephaniah and Daniel and the
-display pages of the five books follow (execution ledger, “Round 1 of Ben's decisions of
-2026-11-16”), while Judges and Malachi wait for Avi's corrected files (Deferred, “Avi's answers
-to Ben's email of 2026-11-16”). The execution ledger below records each finished stage.
+29 base chapters the same day, the converter now reads Zephaniah and Daniel, whose text is
+tracked, and the display mode's table takes the five books' pages (execution ledger, “Round 1 of
+Ben's decisions of 2026-11-16”). The saves of Zephaniah's and Daniel's base chapters and of the
+five books' display pages wait on Ben's word, and Judges and Malachi on Avi's corrected files
+(Deferred, “Avi's answers to Ben's email of 2026-11-16”). The execution ledger below records
+each finished stage.
 
 Written 2026-11-02 by Claude (Opus 5.5) in the Phase 1 session that the session "Commander for
 Claude's forests" started for Avi's email "Mikra Mevo'ar at Wikisource". The quoted decisions are
@@ -136,7 +138,9 @@ approved by Ben's word in entry 3.
     The page also said, needing no answer unless Ben objected, that the projection that
     `check` uses would read the hung letter of Judges 18:30 as its letter and keep the word of
     20:13 that is read but not written, as it keeps a ketiv and its qere both. Every other
-    saving run, the display pages' included, still needs Ben's word for that run. Active.
+    saving run, the display pages' included, still needs Ben's word for that run. Active:
+    round 1 carried out items 1, 2, 3 and 5 and the projection (execution ledger, “Round 1 of
+    Ben's decisions of 2026-11-16”), and item 4 waits on Avi's corrected files.
 
 Deferred, each until its own decision:
 
@@ -733,7 +737,11 @@ byte-for-byte copy of that frozen plan; this ledger and the State line are the e
     and its lowest ratio that of 5:30, 0.750 against 0.174. `pages` wrote 100 pages into
     `.novc/miqra-mevoar/pages/20261116-115451-round-1/`, and the eleven books' 85 equal those
     of 10:03 byte for byte. With the new reader, Judges gets past its pictures and stops at its
-    verse cell of 6:23, and Malachi at its chapter cell of 2:16, as round 2 expects.
+    verse cell of 6:23, and Malachi at its chapter cell of 2:16, as round 2 expects. The
+    reading of the new JSON, aided by a survey script in
+    `.novc/miqra-mevoar-round-1-2026-11-16/scripts/`: neither file has a character that the
+    eleven earlier books lack, only Hebrew letters and marks, the space and ordinary
+    punctuation, and neither repeats a paraphrase or a heading.
   - **The dry run of Zephaniah's and Daniel's base chapters,** at 11:56 New York time: 15
     creates, and the run's pages equal those of `pages` byte for byte (run
     `.novc/mam-ws-bot-miqra-mevoar-runs/20261116-115613-777573-0500/`). Their save needs Ben's
@@ -744,6 +752,33 @@ byte-for-byte copy of that frozen plan; this ledger and the State line are the e
     new JSON files so that the tree-wide lints read them (119 passed). The mega and the full
     suite were skipped: the mega runs none of this code, and the converter is imported only by
     its entry point, its three bot modes and five tests, all in that run.
+  - **Pushed** as `2a82085e`.
+  - **The display mode's table,** decisions ledger entry 15, item 5. `Page` in
+    `py/miqra_mevoar/display_page.py` gains `sort_key`, its category line's sort key where that
+    is not the page's name. `PAGES` gives Joshua's two parts the titles to which Avi moved them
+    and keeps Stage 10's names as their sort keys, and it adds Micah, Nahum, Habakkuk, Haggai
+    and Zechariah. Every new name was copied by script from the main page's latest revision,
+    3101507, read again just before; the other five names equal that revision's links.
+    `py/tests/test_miqra_mevoar_display.py` takes a page's expected sort key from the table.
+  - **The display dry runs,** at 12:03 New York time, after a `miqra-mevoar --no-save` run over
+    the five books found all 29 base chapters unchanged (run
+    `.novc/mam-ws-bot-miqra-mevoar-runs/20261116-120237-571476-0500/`) and the main page was
+    still at revision 3101507:
+    1. **The five new pages:** five creates, and the parse check found no missing link or
+       transcluded page (run `.novc/mam-ws-bot-miqra-mevoar-display-runs/20261116-120302-349946-0500/`).
+       In the columns of Stage 10's table, verse lines; petuhot and setumot; headings; and
+       break lines with a break only, a heading only and both: Micah 105; 12 and 4; 12; 5, 1
+       and 11. Nahum 47; 2 and 1; 3; 1, 1 and 2. Habakkuk 56; 4 and 4; 3; 6, 1 and 2. Haggai
+       38; 7 and 0; 4; 5, 2 and 2. Zechariah 211; 25 and 9; 21; 16, 3 and 18. In all: 457 verse
+       lines, 68 breaks, 43 headings and 76 break lines.
+    2. **Joshua's two keys:** part one refused, listing Dovi's seven revisions from 3101498 to
+       3101512 after the bot's 3101357, and part two unchanged. Both parts' generated pages
+       equal those of Stage 10's dry run byte for byte (run
+       `.novc/mam-ws-bot-miqra-mevoar-display-runs/20261116-120307-948003-0500/`). The mode
+       only creates, so no run saves anything for Joshua.
+
+    The save of the five pages needs Ben's word, with its summary; the session offers Stage
+    10's.
 
 ## Background for a fresh executor
 
@@ -1243,10 +1278,10 @@ JSON's diff, and then Stages 6 to 8 for its pages, each saving run again on Ben'
 goes through only for pages that nobody but BDencklaBot has edited. A book of the Twelve whose
 base chapters arrive this way then gets its display page through Stage 10's mode, added to that
 mode's table, again on Ben's word for each saving run. Such a run names its pages with `--page`:
-a run over the whole table now refuses Joshua's two pages, which Avi has moved and, in part one,
-edited (execution ledger, “Avi's answer to the reply”). The change that adds a book to the table
-also takes up Joshua's two entries: whether they take their new titles, and whether part two's
-sort key stays Stage 10's name (decisions ledger entry 14).
+a run over the whole table refuses Joshua's part one, which carries Avi's model (execution
+ledger, “Avi's answer to the reply”). Since round 1 of 2026-11-16 the table gives Joshua's two
+entries the titles to which Avi moved them, and keeps Stage 10's names as their sort keys
+(decisions ledger entry 15, item 5).
 
 ## Measurements of 2026-11-02
 

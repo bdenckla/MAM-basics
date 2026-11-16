@@ -16,7 +16,9 @@ line shapes, and is compared with oracles that do not share the generator's read
 - Its headings stand where the tracked JSON, in/miqra-mevoar/, gives a verse a heading,
   each transcluded from the verse's base chapter, the title that
   py/miqra_mevoar/wikitext.py's page_title gives, by the heading's section there.
-- Its category line sorts it under its own name.
+- Its category line sorts it under its own name, or under the sort key that
+  display_page.PAGES gives it, as it gives Joshua's two parts the names under which
+  Stage 10 created them.
 - The pages of a book, such as Joshua's two parts, together show its verses once each,
   in order.
 
@@ -54,8 +56,8 @@ def test_the_table_lists_pages():
 def test_a_page_shows_mam_simple_and_the_tracked_headings(key):
     page = display_page.PAGES[key]
     book = books.book_of_stem(page.stem)
-    verses, name = display_page.read_page(display_page.page_text(page))
-    assert name == page.name
+    verses, sort_key = display_page.read_page(display_page.page_text(page))
+    assert sort_key == (page.name if page.sort_key is None else page.sort_key)
     assert verses == _expected_verses(page, book)
 
 
