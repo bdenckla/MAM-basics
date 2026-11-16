@@ -22,8 +22,8 @@ tracked (execution ledger, “Later Word files, 2026-11-16”). Ben's decisions 
 29 base chapters the same day, the converter now reads Zephaniah and Daniel, whose text is
 tracked, and on Ben's word the bot then created Zephaniah's 3 base chapters and the five books'
 display pages (execution ledger, “Round 1 of Ben's decisions of 2026-11-16”). Daniel's 12 base
-chapters wait on Avi's word that his file is final, Zephaniah's display page on a change to the
-display mode's table and Ben's word, and Judges and Malachi on Avi's corrected files (Deferred,
+chapters wait on Avi's word that his file is final, Zephaniah's display page, now in the display
+mode's table, on Ben's word, and Judges and Malachi on Avi's corrected files (Deferred,
 “Avi's answers to Ben's email of 2026-11-16”). The execution ledger below records each finished
 stage.
 
@@ -812,6 +812,17 @@ byte-for-byte copy of that frozen plan; this ledger and the State line are the e
     A dry rerun found all five unchanged, with no missing link or transcluded page, and exited
     zero. `py/ws/ws_bot_edit_history.md` has an entry for each of the two saves, with the run
     directories, and the decision page marks both decisions answered and carried out.
+  - **Zephaniah's display page.** The brief put it in round 2, beside Malachi's, though it waits
+    on nothing of Avi's: only on its base chapters, which existed from 12:21. Ben asked, after
+    the session's report of 12:28: "Why wasn't this Zephaniah work part of what you already
+    did?" The session added Zephaniah to the display mode's table, its name copied by script
+    from the main page's revision 3101507, read again at 12:39 New York time. A `miqra-mevoar
+    --no-save` run found Zephaniah's 3 base chapters unchanged (run
+    `.novc/mam-ws-bot-miqra-mevoar-runs/20261116-123944-251638-0500/`), and the display dry run
+    at 12:39 gave one create, with no missing link or transcluded page: 53 verse lines; 3
+    petuhot and 3 setumot; 3 headings; and break lines with a break only, a heading only and
+    both, 4, 1 and 2 (run `.novc/mam-ws-bot-miqra-mevoar-display-runs/20261116-123948-889773-0500/`).
+    Its save needs Ben's word; the decision page asks for it as decision 3.
 
 ## Background for a fresh executor
 

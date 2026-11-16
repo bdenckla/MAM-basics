@@ -4,8 +4,8 @@ A display page, titled DISPLAY_PREFIX and its name, sets each of its verses in M
 text beside Rabbi Kokhav's paraphrase from the verse's base chapter, in the form of
 Avi's pages for the five megillot. PAGES lists Joshua's two parts, as Avi divided the
 book, and the books of the Twelve whose base chapters exist: the five of Stage 10 of
-doc/PLAN-miqra-mevoar.md, and Micah, Nahum, Habakkuk, Haggai and Zechariah, added in
-its round 1 of 2026-11-16. Their names are those that the main page,
+doc/PLAN-miqra-mevoar.md, and Micah, Nahum, Habakkuk, Zephaniah, Haggai and Zechariah,
+added in its round 1 of 2026-11-16. Their names are those that the main page,
 מקרא מבואר, links from its section of the Prophets in revision 3101507, each copied by script and
 checked against that revision's link. Obadiah's name has no vav, as Avi's link and the
 Word file's title row have it, but its verses name the book as MAM does, with the vav.
@@ -229,7 +229,7 @@ _LETTERS = {mam_simple.PETUHA: PE, mam_simple.SETUMA: SAMEKH}
 # The title prefix and the names, as the links of the main page's section of the Prophets
 # give them in revision 3101507. Stage 10 copied the prefix and its names by script from
 # revision 3101310, except Amos's, MAM's name of the book, and each equals 3101507's link;
-# round 1 copied Joshua's new names and the five later names from 3101507 by script.
+# round 1 copied Joshua's new names and the six later names from 3101507 by script.
 # Joshua's sort keys are the names under which Stage 10 created its two pages.
 DISPLAY_PREFIX = "מקרא מבואר/תצוגה/"
 PAGES = {
@@ -245,6 +245,7 @@ PAGES = {
         Page("mikha", "מיכה", "mikha"),
         Page("nahum", "נחום", "nahum"),
         Page("havaquq", "חבקוק", "havaquq"),
+        Page("tzefanya", "צפניה", "tzefanya"),
         Page("hagay", "חגי", "hagay"),
         Page("zekharya", "זכריה", "zekharya"),
     )
