@@ -779,6 +779,11 @@ byte-for-byte copy of that frozen plan; this ledger and the State line are the e
 
     The save of the five pages needs Ben's word, with its summary; the session offers Stage
     10's.
+  - **Pushed** as `4136d08c`. The decision page, an artifact,
+    https://claude.ai/artifact/JxV9X7eRsyPm8DxQRmZD8a, built by script from the dry runs and
+    this plan, puts two decisions to Ben: the save of Zephaniah's and Daniel's 15 base
+    chapters, recommending Zephaniah's now and Daniel's once Avi says his file is final; and
+    the save of the five display pages with Stage 10's summary, recommended.
 
 ## Background for a fresh executor
 
