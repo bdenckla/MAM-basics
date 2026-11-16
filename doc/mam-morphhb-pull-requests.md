@@ -1,7 +1,8 @@
 # Ben's pull requests to morphhb and OpenScriptorium
 
 State: live. Ben's decision of 2026-11-14 widened it from MAM-morphhb's pull requests to his
-pull requests to morphhb in general; the latest is openscriptures/morphhb#118 (item 5).
+pull requests to morphhb in general; the latest posted is openscriptures/morphhb#118 (item 5),
+and a third, prepared and not posted, is on ice (item 6).
 
 Written by Claude (Opus 5.5) on 2026-11-04, on top of `825032c0`, at Ben's word ("Yes, track
 it"), so that a fresh session can post the second pull request once the first is accepted.
@@ -75,6 +76,16 @@ finished, before Ben widened it (item 5). Ben's words are quoted; everything els
    Exodus 20:10 and Deuteronomy 5:14 stay as they were, since there the qadma is no helper
    but an accent of the עליון, beside a pashta of the תחתון. Read back, the title and body
    equal the approved text, code point for code point.
+6. **A third morphhb pull request, on the Decalogues' and Genesis 35:22's strands, prepared
+   and put on ice.** On 2026-11-14 Ben asked for a pull request "that will rationalize the
+   handling of the decalogues and the reuben verse (Gen 35:22) in morphhb". On 2026-11-15, at
+   13:12 New York time, he asked for up to four versions of every span: CLC's תחתון as the
+   main text, CLC's עליון, and a MAM-informed version wherever CLC's is not legal. A session
+   prepared it that day on the branch of openscriptures/morphhb#118 (`pashta-helpers`,
+   `696e21ce`), with a decision page of 14 decisions, all open, and did not post it. On
+   2026-11-16 Ben said: "put this work "on ice": git-track it for deep storage, perhaps never
+   to return to it, but perhaps we will." Its record, its change as a diff and its work
+   folder are in `doc/mam-morphhb-pull-requests/decalogue-strands-2026-11-15/`.
 
 ## When morphhb has accepted openscriptures/morphhb#114
 
