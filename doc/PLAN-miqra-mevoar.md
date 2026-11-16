@@ -28,8 +28,10 @@ converter now reads Avi's corrected files of Judges and Malachi, saved again wit
 names, and on Ben's word of round 2 the bot created their 24 base chapters and the display page
 of Malachi, the last of the Twelve's. Avi's main page now also links display pages of Judges,
 in three parts, and of Daniel, in two, which Stage 11, written in round 2, plans; Ben gave his
-word to execute it, in a fresh session that the commander starts. The execution ledger below
-records each finished stage.
+word to execute it, in a fresh session that the commander starts. That session gave the
+generator the change that Stage 11 designs and the display table its five pages, whose saves
+wait on Ben's word for each run (execution ledger, “Stage 11, the display pages of Judges and
+Daniel”). The execution ledger below records each finished stage.
 
 Written 2026-11-02 by Claude (Opus 5.5) in the Phase 1 session that the session "Commander for
 Claude's forests" started for Avi's email "Mikra Mevo'ar at Wikisource". The quoted decisions are
@@ -1015,6 +1017,41 @@ byte-for-byte copy of that frozen plan; this ledger and the State line are the e
     the commander, is
     `C:/Users/BenDe/AppData/Local/Claude-Data/claude_pzs8sxrjxfjjc/side-session-notes/local_a80ded65-f78e-4280-8493-9dab3b8c5686/miqra-mevoar-stage-11-prompt-2026-11-16.md`,
     and the decision page marks decision 3 answered.
+- **Stage 11, the display pages of Judges and Daniel, 2026-11-16:** the commander started a
+  fresh Claude (Opus 5.5) session with a brief that carries Stage 11's prompt, saved as
+  `C:/Users/BenDe/GitRepos/MAM-basics/.novc/commander-session/miqra-mevoar-stage-11-brief-2026-11-16.md`,
+  SHA-256 `9B78EC922D9FB129FB69DDAF4B772270B318794CA90BB6C277796E5C3092C5EA`. Its checkout,
+  `C:/Users/BenDe/GitRepos2/MAM-basics`, was verified at 16:56 New York time: on `main`, clean,
+  at `8cc22b46348651dd6e2f04c6a013e77157026ded`, level with origin, with no other session
+  working in it. The session's scripts and evidence are in
+  `.novc/miqra-mevoar-stage-11-2026-11-16/`.
+  - **The main page,** read again by script at 16:59 New York time, was still at revision
+    3103065, its text equal to round 2's kept copy, and linked exactly the five names.
+  - **The generator,** `py/miqra_mevoar/display_page.py`, as the stage's design gives it:
+    `Page` gained `first_verse` and `last_verse`; `_page_keys` takes a page's verses from its
+    first bound to its last, and raises if either bound is not a verse of the book or if the
+    verses between them are not in MAM-simple's order; `Verse` gained `chapter_parameter`,
+    which `page_verses` sets on a page's first verse alone, where its verse number is not 1;
+    `_text` writes the parameter; and `read_page` accepts it only on a page's first verse
+    line, with that line's own chapter numeral, at a verse other than alef. A script,
+    `scripts/apply_stage_11.py` in that folder, copied the parameter's name from the Noah
+    page's revision 964086, checked it against the verse template's text in revision 2852518,
+    copied the five names from revision 3103065 and parsed each link's label into its part's
+    range: Judges 1:1 to 2:5, 2:6 to 16:31 and 17 to 21, and Daniel 1 to 6 and 7 to 12. The
+    same parser gives Joshua's two links the table's ranges. Judges' three entries follow
+    Joshua's, and Daniel's two follow Malachi's. The module docstring and the table's comment
+    say so, and now also name Malachi, which round 2 added to the table.
+  - **The test,** `py/tests/test_miqra_mevoar_display.py`: `_expected_verses` takes a page's
+    verses from its first bound to its last, as their osisIDs give them, and gives the first
+    of them the chapter parameter exactly where its verse number is not 1. The test of a
+    book's pages now covers Judges' three and Daniel's two.
+  - **Unchanged:** the generated text of each of the 14 pages already in the table, byte for
+    byte, written by a script before and after the change. Daniel's two pages and Judges'
+    third equal byte for byte those that Stage 10's generator made offline in round 2.
+  - **Checks:** `git diff --check`; Black on the two changed Python files; Stage 11's
+    verification command (135 passed). The mega and the full suite were skipped: the mega
+    runs none of this code, and the generator is imported only by its bot mode and two
+    tests, all in that command.
 
 ## Background for a fresh executor
 
