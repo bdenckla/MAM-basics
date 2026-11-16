@@ -11,19 +11,21 @@ same day, had the bot create the seven of those pages whose base chapters exist,
 ledger, “The reply to Avi”). Avi answered on 2026-11-05: he had added Amos's link to the main
 page and renamed Joshua's two display pages, and he is building a model for the parts of large
 books (execution ledger, “Avi's answer to the reply”). The State stays live: the display pages
-of the other seven books of the Twelve wait for their base chapters (Stage 10, “Left out”, and
-“Later Word files”); and the model waits on Avi and then on Ben's decision (Deferred, “The
-parts of large books”). The display mode's table keeps Stage 10's titles of Joshua's pages
-until its next change (decisions ledger entry 14). On 2026-11-16 Avi's folder held nine new
+of Zephaniah and Malachi, the last of the Twelve without one, are still to come (Stage 10,
+“Left out”, and “Later Word files”); and the model waits on Avi and then on Ben's decision
+(Deferred, “The parts of large books”). With its change of 2026-11-16 the display mode's table
+took Joshua's live titles and kept Stage 10's names as their sort keys (decisions ledger entries
+14 and 15). On 2026-11-16 Avi's folder held nine new
 books and none of the first six: the text of Micah, Nahum, Habakkuk, Haggai and Zechariah is now
 tracked (execution ledger, “Later Word files, 2026-11-16”). Ben's decisions of that day
 (decisions ledger entry 15) gave round 1 to a fresh session: the bot created those five books'
 29 base chapters the same day, the converter now reads Zephaniah and Daniel, whose text is
-tracked, and the display mode's table takes the five books' pages (execution ledger, “Round 1 of
-Ben's decisions of 2026-11-16”). The saves of Zephaniah's and Daniel's base chapters and of the
-five books' display pages wait on Ben's word, and Judges and Malachi on Avi's corrected files
-(Deferred, “Avi's answers to Ben's email of 2026-11-16”). The execution ledger below records
-each finished stage.
+tracked, and on Ben's word the bot then created Zephaniah's 3 base chapters and the five books'
+display pages (execution ledger, “Round 1 of Ben's decisions of 2026-11-16”). Daniel's 12 base
+chapters wait on Avi's word that his file is final, Zephaniah's display page on a change to the
+display mode's table and Ben's word, and Judges and Malachi on Avi's corrected files (Deferred,
+“Avi's answers to Ben's email of 2026-11-16”). The execution ledger below records each finished
+stage.
 
 Written 2026-11-02 by Claude (Opus 5.5) in the Phase 1 session that the session "Commander for
 Claude's forests" started for Avi's email "Mikra Mevo'ar at Wikisource". The quoted decisions are
@@ -235,7 +237,8 @@ Deferred, each until its own decision:
   - **Part two** has no such block yet.
 - **Avi's answers to Ben's email of 2026-11-16,** drafted in the update's session for Ben to
   send: `C:/Users/BenDe/GitRepos2/MAM-basics/.novc/miqra-mevoar-2026-11-16/email-to-avi-2026-11-16.md`,
-  with its copyable page beside it. Ben sent it before 11:39 New York time that day (execution
+  with its copyable page beside it. Ben sent it before 11:39 New York time that day, writing in
+  the update's session, as that session relayed his words: "Email sent to Avi." (execution
   ledger, “Round 1 of Ben's decisions of 2026-11-16”). Its five questions: whether Avi will clear Malachi 2:16's
   chapter cell; whether he will correct Judges 6:23's verse cell; whether Daniel's file,
   changed on 2026-11-16 after the others, is final; whether he wants display pages for Judges
@@ -784,6 +787,31 @@ byte-for-byte copy of that frozen plan; this ledger and the State line are the e
     this plan, puts two decisions to Ben: the save of Zephaniah's and Daniel's 15 base
     chapters, recommending Zephaniah's now and Daniel's once Avi says his file is final; and
     the save of the five display pages with Stage 10's summary, recommended.
+  - **Ben's word,** in the round 1 session before 12:20 New York time, answering the decision
+    page: "Do the saves recommended in 1a and 2a". So Zephaniah's base chapters were saved and
+    Daniel's wait for Avi's word that his file is final (1a), and the five display pages were
+    saved with Stage 10's summary (2a).
+  - **Zephaniah's save.** A fetch at 12:19 New York time into
+    `.novc/miqra-mevoar/pcloud/20261116-121956-152507-0500/` gave a manifest byte-identical to
+    that of 11:37. No `main_ws_bot.py` process was running before either bot run of this save.
+    The dry run at 12:20 gave 3 creates, with pages equal to those of 11:56 byte for byte. The
+    saving run at 12:21, with Avi's summary copied from this plan by script, created Zephaniah
+    1 to 3 as revisions 3103032 to 3103034, read each back equal to the generated text, and
+    exited zero. A read after the run, without the bot's login, found each page with one
+    revision, BDencklaBot's, not minor, with that summary and the bot flag. A dry rerun found
+    all 3 unchanged and exited zero.
+  - **The display pages' save.** Before it, a `miqra-mevoar --no-save` run over the five books
+    found all 29 base chapters unchanged (run
+    `.novc/mam-ws-bot-miqra-mevoar-runs/20261116-122231-819251-0500/`), and the main page was
+    still at revision 3101507. The saving run at 12:23 New York time, with Stage 10's summary
+    copied from this plan by script, created the pages of Micah, Nahum, Habakkuk, Haggai and
+    Zechariah as revisions 3103035 to 3103039, read each back equal to the generated text, one
+    of them after a `maxlag` wait, and exited zero; its pages equal those of the dry run at
+    12:03 byte for byte. A read after the run found each page with one revision, BDencklaBot's,
+    not minor, with that summary, and each creation and its category entry with the bot flag.
+    A dry rerun found all five unchanged, with no missing link or transcluded page, and exited
+    zero. `py/ws/ws_bot_edit_history.md` has an entry for each of the two saves, with the run
+    directories, and the decision page marks both decisions answered and carried out.
 
 ## Background for a fresh executor
 
