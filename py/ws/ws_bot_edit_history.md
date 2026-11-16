@@ -1501,7 +1501,7 @@ infrastructure has changed enough to make them misleading examples:
   `.novc/mam-ws-bot-miqra-mevoar-runs/20261116-160214-376731-0500/`; the read after the run in
   `.novc/miqra-mevoar-round-2-2026-11-16/read-after-save-judges-malachi/`.
 
-### Miqra Mevoar's display page: Malachi, 2026-11-16 — current
+### Miqra Mevoar's display page: Malachi, 2026-11-16
 
 - **Purpose:** Create the display page of Malachi, which the main page of Miqra Mevoar links,
   in the form of the other books of the Twelve, now that Malachi's base chapters exist (the
@@ -1536,6 +1536,88 @@ infrastructure has changed enough to make them misleading examples:
   `.novc/mam-ws-bot-miqra-mevoar-display-runs/20261116-160830-640150-0500/`; dry run
   `.novc/mam-ws-bot-miqra-mevoar-display-runs/20261116-160805-558860-0500/`; the read after the
   run in `.novc/miqra-mevoar-round-2-2026-11-16/read-after-save-malachi-display/`.
+
+### Miqra Mevoar's display pages: Daniel's two parts, 2026-11-16
+
+- **Purpose:** Create the display pages of Daniel's two parts, chapters 1 to 6 and 7 to 12,
+  which the main page of Miqra Mevoar links from its section of the Writings (revision
+  3103065), in the form of the display pages above. The display mode's table took the pages
+  in `4c0d5efc`, in Stage 11 of `doc/PLAN-miqra-mevoar.md`. Daniel's base chapters exist (the
+  entry of Daniel's 12 base chapters above).
+- **Authorization:** Ben, 2026-11-16, in the Stage 11 session, answering its decision page,
+  https://claude.ai/artifact/WfkABxxnxSCqKmtGsu1PUS: "Do 1a and 2a". Recommendation 1a was to
+  save both pages in one run with Stage 10's summary, after a fresh check of the
+  preconditions and a fresh dry run that gives the same pages.
+- **Mode:** `main_ws_bot.py miqra-mevoar-display`, as in Stage 10, with `--page daniyel-1
+  --page daniyel-2`.
+- **Saving run:** two pages created, at 17:26 New York time, 18,059 bytes in all, with the
+  summary דף תצוגה חדש במקרא מבואר, "a new display page in Miqra Mevoar": Daniel 1 to 6 as revision
+  3103153 and Daniel 7 to 12 as 3103154. The summary was copied from the plan by script and
+  given to the run without passing through a shell.
+- **Safety rule:** before the dry run, a `miqra-mevoar --no-save` run found the 33 base
+  chapters of Judges and Daniel unchanged, so the places of the headings, which come from the
+  tracked JSON, still match the base chapters; and the main page was still at revision
+  3103065, whose links the pages' titles equal. No `main_ws_bot.py` process was running on
+  the machine, and no other session of the commander's family was doing bot work, before
+  either bot run. The `--no-save` dry run gave two creates, with no missing link or
+  transcluded page, and its pages equal byte for byte those that the decision page put to Ben
+  (`.novc/mam-ws-bot-miqra-mevoar-display-runs/20261116-170945-588565-0500/`). The saving
+  run's pages equal the dry run's, and it read each new revision back through the API,
+  uncached, and its bytes equalled the generated text. A read after the run, without the
+  bot's login, found each page with one revision, BDencklaBot's, not minor, with the approved
+  summary and with the SHA-1 and size of the generated page, and each creation and its entry
+  in the category with the bot flag in the recent changes.
+- **One-shot:** no. Confirmed 2026-11-16, immediately after the run: a `--no-save` rerun found
+  both pages unchanged, with no missing link or transcluded page, and exited zero
+  (`.novc/mam-ws-bot-miqra-mevoar-display-runs/20261116-172656-360408-0500/`).
+- **Edit level:** Whole page text, generated; page-targeted by key.
+- **Input:** `MAM-simple/json-vtrad-mam/` and `in/miqra-mevoar/`; run artifacts
+  `.novc/mam-ws-bot-miqra-mevoar-display-runs/20261116-172612-032440-0500/`; dry run
+  `.novc/mam-ws-bot-miqra-mevoar-display-runs/20261116-172556-318807-0500/`; the
+  precondition's run `.novc/mam-ws-bot-miqra-mevoar-runs/20261116-172530-530303-0500/`; the
+  read after the run in `.novc/miqra-mevoar-stage-11-2026-11-16/read-after-save-daniel/`.
+
+### Miqra Mevoar's display pages: Judges' three parts, 2026-11-16 — current
+
+- **Purpose:** Create the display pages of Judges' three parts, 1:1 to 2:5, 2:6 to 16:31 and
+  chapters 17 to 21, which the main page of Miqra Mevoar links from its section of the
+  Prophets (revision 3103065), in the form of the display pages above. The display mode's
+  table took the pages in `4c0d5efc`, in Stage 11 of `doc/PLAN-miqra-mevoar.md`, which also
+  let a page begin inside a chapter: the second part's first verse line, that of 2:6, numbers
+  its chapter with the verse template's chapter parameter, as the first verse line of Avi's
+  page of parashat Noah does. Judges' base chapters exist (the entry of Judges' and Malachi's
+  24 base chapters above).
+- **Authorization:** Ben, 2026-11-16, in the Stage 11 session, answering its decision page,
+  https://claude.ai/artifact/WfkABxxnxSCqKmtGsu1PUS: "Do 1a and 2a". Recommendation 2a was to
+  save all three pages in one run with Stage 10's summary, on the same conditions as
+  Daniel's.
+- **Mode:** `main_ws_bot.py miqra-mevoar-display`, as in Stage 10, with `--page
+  sephershoftim-1 --page sephershoftim-2 --page sephershoftim-3`.
+- **Saving run:** three pages created, from 17:27 to 17:28 New York time, 37,217 bytes in all,
+  with the summary of the entry above: Judges 1:1 to 2:5 as revision 3103155, 2:6 to 16:31 as
+  3103156, and chapters 17 to 21 as 3103157. The summary was copied from the plan by script
+  and given to the run without passing through a shell.
+- **Safety rule:** before the dry run, a `miqra-mevoar --no-save` run found Judges' 21 base
+  chapters unchanged, and the main page was still at revision 3103065, whose links the pages'
+  titles equal. No `main_ws_bot.py` process was running on the machine, and no other session
+  of the commander's family was doing bot work, before either bot run. The `--no-save` dry run
+  gave three creates, with no missing link or transcluded page, and its pages equal byte for
+  byte those that the decision page put to Ben
+  (`.novc/mam-ws-bot-miqra-mevoar-display-runs/20261116-171004-529582-0500/`). The saving
+  run's pages equal the dry run's, and it read each new revision back through the API,
+  uncached, and its bytes equalled the generated text. A read after the run, without the
+  bot's login, found each page with one revision, BDencklaBot's, not minor, with the approved
+  summary and with the SHA-1 and size of the generated page, and each creation and its entry
+  in the category with the bot flag in the recent changes.
+- **One-shot:** no. Confirmed 2026-11-16, immediately after the run: a `--no-save` rerun found
+  all three pages unchanged, with no missing link or transcluded page, and exited zero
+  (`.novc/mam-ws-bot-miqra-mevoar-display-runs/20261116-172839-500392-0500/`).
+- **Edit level:** Whole page text, generated; page-targeted by key.
+- **Input:** `MAM-simple/json-vtrad-mam/` and `in/miqra-mevoar/`; run artifacts
+  `.novc/mam-ws-bot-miqra-mevoar-display-runs/20261116-172748-157042-0500/`; dry run
+  `.novc/mam-ws-bot-miqra-mevoar-display-runs/20261116-172733-004691-0500/`; the
+  precondition's run `.novc/mam-ws-bot-miqra-mevoar-runs/20261116-172722-680784-0500/`; the
+  read after the run in `.novc/miqra-mevoar-stage-11-2026-11-16/read-after-save-judges/`.
 
 ## How to look up the original code
 

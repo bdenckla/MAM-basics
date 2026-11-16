@@ -11,8 +11,8 @@ same day, had the bot create the seven of those pages whose base chapters exist,
 ledger, “The reply to Avi”). Avi answered on 2026-11-05: he had added Amos's link to the main
 page and renamed Joshua's two display pages, and he is building a model for the parts of large
 books (execution ledger, “Avi's answer to the reply”). The State stays live: the model waits on
-Avi and then on Ben's decision (Deferred, “The parts of large books”), and Stage 11 is yet to be
-executed. With its change of 2026-11-16 the display mode's table
+Avi and then on Ben's decision (Deferred, “The parts of large books”), and Word files of further books
+take the course of “Later Word files”. With its change of 2026-11-16 the display mode's table
 took Joshua's live titles and kept Stage 10's names as their sort keys (decisions ledger entries
 14 and 15). On 2026-11-16 Avi's folder held nine new
 books and none of the first six: the text of Micah, Nahum, Habakkuk, Haggai and Zechariah is now
@@ -29,9 +29,9 @@ names, and on Ben's word of round 2 the bot created their 24 base chapters and t
 of Malachi, the last of the Twelve's. Avi's main page now also links display pages of Judges,
 in three parts, and of Daniel, in two, which Stage 11, written in round 2, plans; Ben gave his
 word to execute it, in a fresh session that the commander starts. That session gave the
-generator the change that Stage 11 designs and the display table its five pages, and its dry
-runs of all five agree with the stage; their saves wait on Ben's word for each run, which its
-decision page asks (execution ledger, “Stage 11, the display pages of Judges and Daniel”). The
+generator the change that Stage 11 designs and the display table its five pages, and on Ben's
+word for each run, given on its decision page, the bot created all five, so Stage 11 is
+executed (execution ledger, “Stage 11, the display pages of Judges and Daniel”). The
 execution ledger below records each finished stage.
 
 Written 2026-11-02 by Claude (Opus 5.5) in the Phase 1 session that the session "Commander for
@@ -1076,6 +1076,43 @@ byte-for-byte copy of that frozen plan; this ledger and the State line are the e
     to Ben: 1, the save of Daniel's two pages, and 2, the save of Judges' three, each in one
     run with Stage 10's summary, recommended now, after a fresh check of the preconditions
     and a fresh dry run that gives the same pages.
+  - **Pushed** as `ec211fa8`.
+  - **Ben's word,** in this session before 17:25 New York time, answering the decision page:
+    "Do 1a and 2a". So Daniel's two pages and then Judges' three were saved, each in one run
+    with Stage 10's summary, after a fresh check of the preconditions and a fresh dry run.
+  - **Daniel's save.** Before it, no `main_ws_bot.py` process was running, and of the
+    commander's family only the session looking for a process that hogs the machine's
+    resources and the session on the morphhb page were working, neither on bot work. The
+    main page, read again at 17:25 New York time, was still at revision 3103065 and linked
+    the five names, and a `miqra-mevoar --no-save` run found the 33 base chapters of Judges
+    and Daniel unchanged (run
+    `.novc/mam-ws-bot-miqra-mevoar-runs/20261116-172530-530303-0500/`). The dry run at 17:25
+    gave two creates, with no missing link or transcluded page, and pages equal to those of
+    17:09 byte for byte (run
+    `.novc/mam-ws-bot-miqra-mevoar-display-runs/20261116-172556-318807-0500/`). The saving
+    run at 17:26, with Stage 10's summary copied from this plan by script, created Daniel 1
+    to 6 and 7 to 12 as revisions 3103153 and 3103154, read each back equal to the generated
+    text, and exited zero; its pages equal the dry run's byte for byte. A read after the
+    run, without the bot's login, found each page with one revision, BDencklaBot's, not
+    minor, with that summary, and each creation and its category entry with the bot flag. A
+    dry rerun found both unchanged, with no missing link or transcluded page, and exited
+    zero.
+  - **Judges' save.** Before it, the main page, read again at 17:27, was still at revision
+    3103065; a `miqra-mevoar --no-save` run found Judges' 21 base chapters unchanged (run
+    `.novc/mam-ws-bot-miqra-mevoar-runs/20261116-172722-680784-0500/`); and the dry run at
+    17:27 gave three creates, with no missing link or transcluded page, and pages equal to
+    those of 17:10 byte for byte (run
+    `.novc/mam-ws-bot-miqra-mevoar-display-runs/20261116-172733-004691-0500/`). No
+    `main_ws_bot.py` process was running, and the same two sessions of the family were
+    working, neither on bot work. The saving run, from 17:27 to 17:28 with Stage 10's
+    summary copied from this plan by script, created Judges 1:1 to 2:5, 2:6 to 16:31 and 17
+    to 21 as revisions 3103155 to 3103157, read each back equal to the generated text, and
+    exited zero; its pages equal the dry run's byte for byte. A read after the run, without
+    the bot's login, found each page with one revision, BDencklaBot's, not minor, with that
+    summary, and each creation and its category entry with the bot flag. A dry rerun found
+    all three unchanged, with no missing link or transcluded page, and exited zero.
+    `py/ws/ws_bot_edit_history.md` has an entry for each of the two saves, with the run
+    directories, and the decision page marks both decisions answered and carried out.
 
 ## Background for a fresh executor
 
