@@ -1,11 +1,11 @@
 # Miqra Mevoar: the tracked text of Rabbi Kokhav's Word files
 
-The files here hold Rabbi David Kokhav's Miqra Mevoar, a paraphrase of the Bible, for six books
-of the Prophets: Joshua, Hosea, Joel, Amos, Obadiah and Jonah. Each `<stem>.json` is extracted
-from one of the Word files that reach Avi, for publication on Hebrew Wikisource as the base
-chapters of its Miqra Mevoar project. The project's main page gives its license as Creative
-Commons Attribution-ShareAlike 3.0 Unported, and says that the attribution the license asks for
-is a direct link to that page.
+The files here hold Rabbi David Kokhav's Miqra Mevoar, a paraphrase of the Bible, for eleven
+books of the Prophets: Joshua, Hosea, Joel, Amos, Obadiah, Jonah, Micah, Nahum, Habakkuk, Haggai
+and Zechariah. Each `<stem>.json` is extracted from one of the Word files that reach Avi, for
+publication on Hebrew Wikisource as the base chapters of its Miqra Mevoar project. The project's
+main page gives its license as Creative Commons Attribution-ShareAlike 3.0 Unported, and says
+that the attribution the license asks for is a direct link to that page.
 
 `py/main_miqra_mevoar.py` writes these files, `py/main_ws_bot.py miqra-mevoar` creates the
 pages from them, and `doc/PLAN-miqra-mevoar.md` is the plan of record.
@@ -41,7 +41,14 @@ Run each command from the repository root. First download the folder into a new 
 ```
 
 Its `manifest.json` has each file's SHA-256. A file that differs from the previous fetch's is new
-material from Rabbi Kokhav. Extract the JSON from that directory:
+material from Rabbi Kokhav.
+
+Avi takes a book's Word file out of the folder once its base chapters exist: the fetch of
+2026-11-16 held none of the six books that came first. `check` requires a directory's Word files
+to be exactly the tracked books, so `extract` and `check` then run on a new directory, under
+`.novc/miqra-mevoar/combined/`, that joins the new fetch's files with each other tracked book's
+file from an earlier fetch, its SHA-256 equal to the `source` that its JSON records. Extract the
+JSON from the fetch's directory, or from such a joined one:
 
 ```powershell
 ./.venv/Scripts/python.exe py/main_miqra_mevoar.py extract .novc/miqra-mevoar/pcloud/<timestamp>
