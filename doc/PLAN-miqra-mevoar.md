@@ -244,7 +244,9 @@ Deferred, each until its own decision:
   changed on 2026-11-16 after the others, is final; whether he wants display pages for Judges
   and Daniel, and how each would be divided and titled; and whether Micah's same heading
   before 1:1 and 2:1 is intended. Judges and Malachi wait on the first two. The third bears on
-  Daniel's save. A display page for Judges or Daniel waits on the fourth and then on a stage
+  Daniel's save: Ben's word "Do the saves recommended in 1a and 2a" took the decision page's
+  1a, "Save Zephaniah's 3 now, and Daniel's 12 once Avi says his file is final", so Daniel's
+  save needs no further word if Avi says so and the file is unchanged. A display page for Judges or Daniel waits on the fourth and then on a stage
   of this plan that Ben approves.
 
 ## Execution ledger
@@ -834,6 +836,17 @@ byte-for-byte copy of that frozen plan; this ledger and the State line are the e
     rerun found it unchanged, with no missing link or transcluded page, and exited zero.
     `py/ws/ws_bot_edit_history.md` has the entry, with the run directories, and the decision
     page marks decision 3 answered and carried out.
+  - **The report to Avi.** At Ben's request the session drafted an email reporting round 1's
+    saves:
+    `C:/Users/BenDe/GitRepos2/MAM-basics/.novc/miqra-mevoar-round-1-2026-11-16/email-to-avi-2026-11-16-saved.md`,
+    with its copyable page beside it, built by `scripts/build_email_saved.py` there, which
+    requires every link to name a page that round 1 saved. It tells Avi that Daniel's 12 base
+    chapters are ready and that the bot will create them once he says the file is final, and
+    that Judges and Malachi follow his corrections. Ben, before 13:00 New York time: "I sent
+    the email to Avi."
+  - **Round 2** waits on Avi's answers (Deferred, “Avi's answers to Ben's email of
+    2026-11-16”). Its standalone prompt, written for the commander when this session ended, is
+    `C:/Users/BenDe/AppData/Local/Claude-Data/claude_pzs8sxrjxfjjc/side-session-notes/local_a80ded65-f78e-4280-8493-9dab3b8c5686/miqra-mevoar-round-2-prompt-2026-11-16.md`.
 
 ## Background for a fresh executor
 
