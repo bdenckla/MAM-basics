@@ -1346,7 +1346,7 @@ infrastructure has changed enough to make them misleading examples:
   `.novc/mam-ws-bot-miqra-mevoar-runs/20261116-122057-026096-0500/`; the read after the run in
   `.novc/miqra-mevoar-round-1-2026-11-16/read-after-save-zephaniah/`.
 
-### Miqra Mevoar's display pages: Micah, Nahum, Habakkuk, Haggai and Zechariah, 2026-11-16 — current
+### Miqra Mevoar's display pages: Micah, Nahum, Habakkuk, Haggai and Zechariah, 2026-11-16
 
 - **Purpose:** Create the display pages of Micah, Nahum, Habakkuk, Haggai and Zechariah, which
   the main page of Miqra Mevoar links, each setting MAM's verses beside Rabbi David Kokhav's
@@ -1386,6 +1386,40 @@ infrastructure has changed enough to make them misleading examples:
   runs `.novc/mam-ws-bot-miqra-mevoar-runs/20261116-120237-571476-0500/`, before the dry run,
   and `.novc/mam-ws-bot-miqra-mevoar-runs/20261116-122231-819251-0500/`, before the save; the
   read after the run in `.novc/miqra-mevoar-round-1-2026-11-16/read-after-save-display/`.
+
+### Miqra Mevoar's display page: Zephaniah, 2026-11-16 — current
+
+- **Purpose:** Create the display page of Zephaniah, which the main page of Miqra Mevoar links,
+  in the form of the five pages above, now that Zephaniah's base chapters exist (two entries
+  above). The display mode's table took the page in `68f8ad55`. Of the Twelve, only Malachi's
+  page is still to come, after its base chapters.
+- **Authorization:** Ben, 2026-11-16, in the round 1 session, answering decision 3 of its
+  decision page, https://claude.ai/artifact/JxV9X7eRsyPm8DxQRmZD8a: "Do the save recommended in
+  3a". Recommendation 3a was to save the page with Stage 10's summary.
+- **Mode:** `main_ws_bot.py miqra-mevoar-display`, as in Stage 10, with `--page tzefanya`.
+- **Saving run:** one page created, at 12:47 New York time, 2,872 bytes, with the summary
+  דף תצוגה חדש במקרא מבואר, "a new display page in Miqra Mevoar", as revision 3103041. The summary was
+  copied from the plan by script and given to the run without passing through a shell.
+- **Safety rule:** before the dry run, and again before the save, a `miqra-mevoar --no-save` run
+  found Zephaniah's 3 base chapters unchanged, and the main page was still at revision 3101507,
+  whose link the page's title equals. No `main_ws_bot.py` process was running on the machine
+  before either bot run. The `--no-save` dry run gave one create, with no missing link or
+  transcluded page. The saving run's page equals the dry run's byte for byte, and it read the
+  new revision back through the API, uncached, and its bytes equalled the generated text. A
+  read after the run, without the bot's login, found the page with one revision,
+  BDencklaBot's, not minor, with the approved summary and with the SHA-1 and size of the
+  generated page, and the creation and its entry in the category with the bot flag in the
+  recent changes.
+- **One-shot:** no. Confirmed 2026-11-16, immediately after the run: a `--no-save` rerun found the
+  page unchanged, with no missing link or transcluded page, and exited zero
+  (`.novc/mam-ws-bot-miqra-mevoar-display-runs/20261116-124738-548385-0500/`).
+- **Edit level:** Whole page text, generated; page-targeted by key.
+- **Input:** `MAM-simple/json-vtrad-mam/` and `in/miqra-mevoar/`; run artifacts
+  `.novc/mam-ws-bot-miqra-mevoar-display-runs/20261116-124707-546748-0500/`; dry run
+  `.novc/mam-ws-bot-miqra-mevoar-display-runs/20261116-123948-889773-0500/`; the precondition's
+  runs `.novc/mam-ws-bot-miqra-mevoar-runs/20261116-123944-251638-0500/`, before the dry run,
+  and `.novc/mam-ws-bot-miqra-mevoar-runs/20261116-124654-178558-0500/`, before the save; the
+  read after the run in `.novc/miqra-mevoar-round-1-2026-11-16/read-after-save-zephaniah-display/`.
 
 ## How to look up the original code
 
