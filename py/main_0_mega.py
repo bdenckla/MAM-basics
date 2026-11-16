@@ -524,6 +524,18 @@ _STEPS = [
         " gh-pages/israel-bible-review/index.html and its style.css from"
         " in/israel-bible-review/",
     ),
+    # Added 2026-11-15, when Ben chose to track the page on morphhb's corrections of WLC and
+    # to have the mega generate it as it generates the review.  It reads the review's
+    # generated page, which the step above writes, and checks its links and its copies of the
+    # review's rows against that page, so it stands right after israel-bible-review.  Its
+    # other input, in/morphhb-corrections-2026-11-13/, no step writes.
+    StepRecord(
+        "morphhb-corrections",
+        main_authored.gen_morphhb_corrections,
+        "runs py/main_authored.py gen-morphhb-corrections, which writes"
+        " gh-pages/morphhb-corrections/index.html and out/morphhb-corrections/ from"
+        " in/morphhb-corrections-2026-11-13/ and the review's generated page",
+    ),
     # The wlc steps, in the order wlc-utils' own mega ran them until it was
     # absorbed here on 2026-08-01.  They are LAST rather than free-standing because
     # accgram reads MAM-simple's json-vtrad-bhs, which mam-simple above regenerates:

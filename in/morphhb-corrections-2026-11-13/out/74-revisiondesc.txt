@@ -1,0 +1,88 @@
+# written by scripts/p2_records_headers_notes.py; no requests.  morphhb's wlc/<book>.xml at d4265dfa.
+# revisionDesc entries: 273 in 39 books; 12 distinct (date, text, resp).
+# The class is Claude's reading of the text: WLC update, CORRECTION, analysis (lemma, morph), other.
+
+== Distinct entries, by date (the books that carry each; 'all 39' when every book does)
+   2008.08.08 resp=dt [other] Convert the Westminster Leningrad Codex files from TEI markup to OSIS book files.
+      books all 39
+   2011.01.21 resp=dt [WLC update] Updated to WLC version 4.14.
+      books all 39
+   2012.07.18 resp=dt [WLC update] Updated to WLC version 4.16.
+      books all 39
+   2013.07.10 resp=dt [WLC update] Updated to WLC version 4.18.
+      books all 39
+   2013.12.11 resp=dt [analysis (lemma, morph)] First release of morphology on selected portions.
+      books all 39
+   2016.03.03 resp=dt [WLC update] Updated to WLC version 4.20.
+      books all 39
+   2017.12.10 resp=dt [analysis (lemma, morph)] Release of full morphology
+      books 4: Joel Obad Jonah Ruth
+   2018.1.5 resp=dt [analysis (lemma, morph)] Release of full morphology
+      books 7: Hos Nah Hab Zeph Hag Mal Song
+   2018.12.14 resp=dt [analysis (lemma, morph)] Release of full morphology
+      books 22: Gen Exod Lev Num Deut Josh Judg 1Sam 2Sam 1Kgs 2Kgs Isa Jer Ezek Zech Prov Job Lam Dan Ezra Neh 2Chr
+   2018.12.15 resp=dt [analysis (lemma, morph)] Release of full morphology
+      books 1: Ps
+   2018.4.23 resp=dt [analysis (lemma, morph)] Release of full morphology
+      books 4: Amos Mic Eccl Esth
+   2019.1.13 resp=dt [analysis (lemma, morph)] Release of full morphology (incomplete pre-release)
+      books 1: 1Chr
+
+== Entries that describe a correction of the text or of the analysis
+   none
+
+== Entries that describe a release of the analysis (not a correction)
+   2013.12.11 First release of morphology on selected portions. (39 books)
+   2017.12.10 Release of full morphology (4 books)
+   2018.1.5 Release of full morphology (7 books)
+   2018.12.14 Release of full morphology (22 books)
+   2018.12.15 Release of full morphology (1 books)
+   2018.4.23 Release of full morphology (4 books)
+   2019.1.13 Release of full morphology (incomplete pre-release) (1 books)
+
+== Entries that describe an update to a WLC version
+   2011.01.21 Updated to WLC version 4.14. (39 books)
+   2012.07.18 Updated to WLC version 4.16. (39 books)
+   2013.07.10 Updated to WLC version 4.18. (39 books)
+   2016.03.03 Updated to WLC version 4.20. (39 books)
+
+== Per book, in file order
+   Gen: 2018.12.14 Release of full morphology | 2016.03.03 Updated to WLC version 4.20. | 2013.12.11 First release of morphology on selected portions. | 2013.07.10 Updated to WLC version 4.18. | 2012.07.18 Updated to WLC version 4.16. | 2011.01.21 Updated to WLC version 4.14. | 2008.08.08 Convert the Westminster Leningrad Codex files from TEI markup to OSIS book files.
+   Exod: 2018.12.14 Release of full morphology | 2016.03.03 Updated to WLC version 4.20. | 2013.12.11 First release of morphology on selected portions. | 2013.07.10 Updated to WLC version 4.18. | 2012.07.18 Updated to WLC version 4.16. | 2011.01.21 Updated to WLC version 4.14. | 2008.08.08 Convert the Westminster Leningrad Codex files from TEI markup to OSIS book files.
+   Lev: 2018.12.14 Release of full morphology | 2016.03.03 Updated to WLC version 4.20. | 2013.12.11 First release of morphology on selected portions. | 2013.07.10 Updated to WLC version 4.18. | 2012.07.18 Updated to WLC version 4.16. | 2011.01.21 Updated to WLC version 4.14. | 2008.08.08 Convert the Westminster Leningrad Codex files from TEI markup to OSIS book files.
+   Num: 2018.12.14 Release of full morphology | 2016.03.03 Updated to WLC version 4.20. | 2013.12.11 First release of morphology on selected portions. | 2013.07.10 Updated to WLC version 4.18. | 2012.07.18 Updated to WLC version 4.16. | 2011.01.21 Updated to WLC version 4.14. | 2008.08.08 Convert the Westminster Leningrad Codex files from TEI markup to OSIS book files.
+   Deut: 2018.12.14 Release of full morphology | 2016.03.03 Updated to WLC version 4.20. | 2013.12.11 First release of morphology on selected portions. | 2013.07.10 Updated to WLC version 4.18. | 2012.07.18 Updated to WLC version 4.16. | 2011.01.21 Updated to WLC version 4.14. | 2008.08.08 Convert the Westminster Leningrad Codex files from TEI markup to OSIS book files.
+   Josh: 2018.12.14 Release of full morphology | 2016.03.03 Updated to WLC version 4.20. | 2013.12.11 First release of morphology on selected portions. | 2013.07.10 Updated to WLC version 4.18. | 2012.07.18 Updated to WLC version 4.16. | 2011.01.21 Updated to WLC version 4.14. | 2008.08.08 Convert the Westminster Leningrad Codex files from TEI markup to OSIS book files.
+   Judg: 2018.12.14 Release of full morphology | 2016.03.03 Updated to WLC version 4.20. | 2013.12.11 First release of morphology on selected portions. | 2013.07.10 Updated to WLC version 4.18. | 2012.07.18 Updated to WLC version 4.16. | 2011.01.21 Updated to WLC version 4.14. | 2008.08.08 Convert the Westminster Leningrad Codex files from TEI markup to OSIS book files.
+   1Sam: 2018.12.14 Release of full morphology | 2016.03.03 Updated to WLC version 4.20. | 2013.12.11 First release of morphology on selected portions. | 2013.07.10 Updated to WLC version 4.18. | 2012.07.18 Updated to WLC version 4.16. | 2011.01.21 Updated to WLC version 4.14. | 2008.08.08 Convert the Westminster Leningrad Codex files from TEI markup to OSIS book files.
+   2Sam: 2018.12.14 Release of full morphology | 2016.03.03 Updated to WLC version 4.20. | 2013.12.11 First release of morphology on selected portions. | 2013.07.10 Updated to WLC version 4.18. | 2012.07.18 Updated to WLC version 4.16. | 2011.01.21 Updated to WLC version 4.14. | 2008.08.08 Convert the Westminster Leningrad Codex files from TEI markup to OSIS book files.
+   1Kgs: 2018.12.14 Release of full morphology | 2016.03.03 Updated to WLC version 4.20. | 2013.12.11 First release of morphology on selected portions. | 2013.07.10 Updated to WLC version 4.18. | 2012.07.18 Updated to WLC version 4.16. | 2011.01.21 Updated to WLC version 4.14. | 2008.08.08 Convert the Westminster Leningrad Codex files from TEI markup to OSIS book files.
+   2Kgs: 2018.12.14 Release of full morphology | 2016.03.03 Updated to WLC version 4.20. | 2013.12.11 First release of morphology on selected portions. | 2013.07.10 Updated to WLC version 4.18. | 2012.07.18 Updated to WLC version 4.16. | 2011.01.21 Updated to WLC version 4.14. | 2008.08.08 Convert the Westminster Leningrad Codex files from TEI markup to OSIS book files.
+   Isa: 2018.12.14 Release of full morphology | 2016.03.03 Updated to WLC version 4.20. | 2013.12.11 First release of morphology on selected portions. | 2013.07.10 Updated to WLC version 4.18. | 2012.07.18 Updated to WLC version 4.16. | 2011.01.21 Updated to WLC version 4.14. | 2008.08.08 Convert the Westminster Leningrad Codex files from TEI markup to OSIS book files.
+   Jer: 2018.12.14 Release of full morphology | 2016.03.03 Updated to WLC version 4.20. | 2013.12.11 First release of morphology on selected portions. | 2013.07.10 Updated to WLC version 4.18. | 2012.07.18 Updated to WLC version 4.16. | 2011.01.21 Updated to WLC version 4.14. | 2008.08.08 Convert the Westminster Leningrad Codex files from TEI markup to OSIS book files.
+   Ezek: 2018.12.14 Release of full morphology | 2016.03.03 Updated to WLC version 4.20. | 2013.12.11 First release of morphology on selected portions. | 2013.07.10 Updated to WLC version 4.18. | 2012.07.18 Updated to WLC version 4.16. | 2011.01.21 Updated to WLC version 4.14. | 2008.08.08 Convert the Westminster Leningrad Codex files from TEI markup to OSIS book files.
+   Hos: 2018.1.5 Release of full morphology | 2016.03.03 Updated to WLC version 4.20. | 2013.12.11 First release of morphology on selected portions. | 2013.07.10 Updated to WLC version 4.18. | 2012.07.18 Updated to WLC version 4.16. | 2011.01.21 Updated to WLC version 4.14. | 2008.08.08 Convert the Westminster Leningrad Codex files from TEI markup to OSIS book files.
+   Joel: 2017.12.10 Release of full morphology | 2016.03.03 Updated to WLC version 4.20. | 2013.12.11 First release of morphology on selected portions. | 2013.07.10 Updated to WLC version 4.18. | 2012.07.18 Updated to WLC version 4.16. | 2011.01.21 Updated to WLC version 4.14. | 2008.08.08 Convert the Westminster Leningrad Codex files from TEI markup to OSIS book files.
+   Amos: 2018.4.23 Release of full morphology | 2016.03.03 Updated to WLC version 4.20. | 2013.12.11 First release of morphology on selected portions. | 2013.07.10 Updated to WLC version 4.18. | 2012.07.18 Updated to WLC version 4.16. | 2011.01.21 Updated to WLC version 4.14. | 2008.08.08 Convert the Westminster Leningrad Codex files from TEI markup to OSIS book files.
+   Obad: 2017.12.10 Release of full morphology | 2016.03.03 Updated to WLC version 4.20. | 2013.12.11 First release of morphology on selected portions. | 2013.07.10 Updated to WLC version 4.18. | 2012.07.18 Updated to WLC version 4.16. | 2011.01.21 Updated to WLC version 4.14. | 2008.08.08 Convert the Westminster Leningrad Codex files from TEI markup to OSIS book files.
+   Jonah: 2017.12.10 Release of full morphology | 2016.03.03 Updated to WLC version 4.20. | 2013.12.11 First release of morphology on selected portions. | 2013.07.10 Updated to WLC version 4.18. | 2012.07.18 Updated to WLC version 4.16. | 2011.01.21 Updated to WLC version 4.14. | 2008.08.08 Convert the Westminster Leningrad Codex files from TEI markup to OSIS book files.
+   Mic: 2018.4.23 Release of full morphology | 2016.03.03 Updated to WLC version 4.20. | 2013.12.11 First release of morphology on selected portions. | 2013.07.10 Updated to WLC version 4.18. | 2012.07.18 Updated to WLC version 4.16. | 2011.01.21 Updated to WLC version 4.14. | 2008.08.08 Convert the Westminster Leningrad Codex files from TEI markup to OSIS book files.
+   Nah: 2018.1.5 Release of full morphology | 2016.03.03 Updated to WLC version 4.20. | 2013.12.11 First release of morphology on selected portions. | 2013.07.10 Updated to WLC version 4.18. | 2012.07.18 Updated to WLC version 4.16. | 2011.01.21 Updated to WLC version 4.14. | 2008.08.08 Convert the Westminster Leningrad Codex files from TEI markup to OSIS book files.
+   Hab: 2018.1.5 Release of full morphology | 2016.03.03 Updated to WLC version 4.20. | 2013.12.11 First release of morphology on selected portions. | 2013.07.10 Updated to WLC version 4.18. | 2012.07.18 Updated to WLC version 4.16. | 2011.01.21 Updated to WLC version 4.14. | 2008.08.08 Convert the Westminster Leningrad Codex files from TEI markup to OSIS book files.
+   Zeph: 2018.1.5 Release of full morphology | 2016.03.03 Updated to WLC version 4.20. | 2013.12.11 First release of morphology on selected portions. | 2013.07.10 Updated to WLC version 4.18. | 2012.07.18 Updated to WLC version 4.16. | 2011.01.21 Updated to WLC version 4.14. | 2008.08.08 Convert the Westminster Leningrad Codex files from TEI markup to OSIS book files.
+   Hag: 2018.1.5 Release of full morphology | 2016.03.03 Updated to WLC version 4.20. | 2013.12.11 First release of morphology on selected portions. | 2013.07.10 Updated to WLC version 4.18. | 2012.07.18 Updated to WLC version 4.16. | 2011.01.21 Updated to WLC version 4.14. | 2008.08.08 Convert the Westminster Leningrad Codex files from TEI markup to OSIS book files.
+   Zech: 2018.12.14 Release of full morphology | 2016.03.03 Updated to WLC version 4.20. | 2013.12.11 First release of morphology on selected portions. | 2013.07.10 Updated to WLC version 4.18. | 2012.07.18 Updated to WLC version 4.16. | 2011.01.21 Updated to WLC version 4.14. | 2008.08.08 Convert the Westminster Leningrad Codex files from TEI markup to OSIS book files.
+   Mal: 2018.1.5 Release of full morphology | 2016.03.03 Updated to WLC version 4.20. | 2013.12.11 First release of morphology on selected portions. | 2013.07.10 Updated to WLC version 4.18. | 2012.07.18 Updated to WLC version 4.16. | 2011.01.21 Updated to WLC version 4.14. | 2008.08.08 Convert the Westminster Leningrad Codex files from TEI markup to OSIS book files.
+   Ps: 2018.12.15 Release of full morphology | 2016.03.03 Updated to WLC version 4.20. | 2013.12.11 First release of morphology on selected portions. | 2013.07.10 Updated to WLC version 4.18. | 2012.07.18 Updated to WLC version 4.16. | 2011.01.21 Updated to WLC version 4.14. | 2008.08.08 Convert the Westminster Leningrad Codex files from TEI markup to OSIS book files.
+   Prov: 2018.12.14 Release of full morphology | 2016.03.03 Updated to WLC version 4.20. | 2013.12.11 First release of morphology on selected portions. | 2013.07.10 Updated to WLC version 4.18. | 2012.07.18 Updated to WLC version 4.16. | 2011.01.21 Updated to WLC version 4.14. | 2008.08.08 Convert the Westminster Leningrad Codex files from TEI markup to OSIS book files.
+   Job: 2018.12.14 Release of full morphology | 2016.03.03 Updated to WLC version 4.20. | 2013.12.11 First release of morphology on selected portions. | 2013.07.10 Updated to WLC version 4.18. | 2012.07.18 Updated to WLC version 4.16. | 2011.01.21 Updated to WLC version 4.14. | 2008.08.08 Convert the Westminster Leningrad Codex files from TEI markup to OSIS book files.
+   Song: 2018.1.5 Release of full morphology | 2016.03.03 Updated to WLC version 4.20. | 2013.12.11 First release of morphology on selected portions. | 2013.07.10 Updated to WLC version 4.18. | 2012.07.18 Updated to WLC version 4.16. | 2011.01.21 Updated to WLC version 4.14. | 2008.08.08 Convert the Westminster Leningrad Codex files from TEI markup to OSIS book files.
+   Ruth: 2017.12.10 Release of full morphology | 2016.03.03 Updated to WLC version 4.20. | 2013.12.11 First release of morphology on selected portions. | 2013.07.10 Updated to WLC version 4.18. | 2012.07.18 Updated to WLC version 4.16. | 2011.01.21 Updated to WLC version 4.14. | 2008.08.08 Convert the Westminster Leningrad Codex files from TEI markup to OSIS book files.
+   Lam: 2018.12.14 Release of full morphology | 2016.03.03 Updated to WLC version 4.20. | 2013.12.11 First release of morphology on selected portions. | 2013.07.10 Updated to WLC version 4.18. | 2012.07.18 Updated to WLC version 4.16. | 2011.01.21 Updated to WLC version 4.14. | 2008.08.08 Convert the Westminster Leningrad Codex files from TEI markup to OSIS book files.
+   Eccl: 2018.4.23 Release of full morphology | 2016.03.03 Updated to WLC version 4.20. | 2013.12.11 First release of morphology on selected portions. | 2013.07.10 Updated to WLC version 4.18. | 2012.07.18 Updated to WLC version 4.16. | 2011.01.21 Updated to WLC version 4.14. | 2008.08.08 Convert the Westminster Leningrad Codex files from TEI markup to OSIS book files.
+   Esth: 2018.4.23 Release of full morphology | 2016.03.03 Updated to WLC version 4.20. | 2013.12.11 First release of morphology on selected portions. | 2013.07.10 Updated to WLC version 4.18. | 2012.07.18 Updated to WLC version 4.16. | 2011.01.21 Updated to WLC version 4.14. | 2008.08.08 Convert the Westminster Leningrad Codex files from TEI markup to OSIS book files.
+   Dan: 2018.12.14 Release of full morphology | 2016.03.03 Updated to WLC version 4.20. | 2013.12.11 First release of morphology on selected portions. | 2013.07.10 Updated to WLC version 4.18. | 2012.07.18 Updated to WLC version 4.16. | 2011.01.21 Updated to WLC version 4.14. | 2008.08.08 Convert the Westminster Leningrad Codex files from TEI markup to OSIS book files.
+   Ezra: 2018.12.14 Release of full morphology | 2016.03.03 Updated to WLC version 4.20. | 2013.12.11 First release of morphology on selected portions. | 2013.07.10 Updated to WLC version 4.18. | 2012.07.18 Updated to WLC version 4.16. | 2011.01.21 Updated to WLC version 4.14. | 2008.08.08 Convert the Westminster Leningrad Codex files from TEI markup to OSIS book files.
+   Neh: 2018.12.14 Release of full morphology | 2016.03.03 Updated to WLC version 4.20. | 2013.12.11 First release of morphology on selected portions. | 2013.07.10 Updated to WLC version 4.18. | 2012.07.18 Updated to WLC version 4.16. | 2011.01.21 Updated to WLC version 4.14. | 2008.08.08 Convert the Westminster Leningrad Codex files from TEI markup to OSIS book files.
+   1Chr: 2019.1.13 Release of full morphology (incomplete pre-release) | 2016.03.03 Updated to WLC version 4.20. | 2013.12.11 First release of morphology on selected portions. | 2013.07.10 Updated to WLC version 4.18. | 2012.07.18 Updated to WLC version 4.16. | 2011.01.21 Updated to WLC version 4.14. | 2008.08.08 Convert the Westminster Leningrad Codex files from TEI markup to OSIS book files.
+   2Chr: 2018.12.14 Release of full morphology | 2016.03.03 Updated to WLC version 4.20. | 2013.12.11 First release of morphology on selected portions. | 2013.07.10 Updated to WLC version 4.18. | 2012.07.18 Updated to WLC version 4.16. | 2011.01.21 Updated to WLC version 4.14. | 2008.08.08 Convert the Westminster Leningrad Codex files from TEI markup to OSIS book files.

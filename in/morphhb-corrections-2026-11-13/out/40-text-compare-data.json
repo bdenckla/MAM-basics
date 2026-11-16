@@ -1,0 +1,830 @@
+{
+ "_written_by": "# written by scripts/p2_text_compare.py: C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe -I .novc/morphhb-corrections-2026-11-13/scripts/p2_text_compare.py .novc/morphhb-corrections-2026-11-13/scripts .novc/morphhb-corrections-2026-11-13/fetched .novc/morphhb-corrections-2026-11-13/out  (working directory C:/Users/BenDe/GitRepos/MAM-basics)",
+ "closest": "4.20",
+ "kstats": {
+  "4.18": {
+   "verses": 23213,
+   "morphhb atoms": 306785,
+   "WLC atoms": 306772,
+   "verses differing": 3616,
+   "hunks": 3957,
+   "morphhb atoms in hunks": 4054,
+   "WLC atoms in hunks": 4041
+  },
+  "4.20": {
+   "verses": 23213,
+   "morphhb atoms": 306785,
+   "WLC atoms": 306772,
+   "verses differing": 3607,
+   "hunks": 3944,
+   "morphhb atoms in hunks": 4041,
+   "WLC atoms in hunks": 4028
+  },
+  "4.22": {
+   "verses": 23213,
+   "morphhb atoms": 306785,
+   "WLC atoms": 306774,
+   "verses differing": 3633,
+   "hunks": 3981,
+   "morphhb atoms in hunks": 4076,
+   "WLC atoms in hunks": 4065
+  }
+ },
+ "stats": {
+  "4.18": {
+   "verses differing": 3616
+  },
+  "4.20": {
+   "verses differing": 3607
+  },
+  "4.22": {
+   "verses differing": 3633
+  }
+ },
+ "label_units": {
+  "4.18": {
+   "qadma": 3811,
+   "residual/accents": 5,
+   "divided-accents/accents": 108,
+   "residual/pointing": 9,
+   "divided-accents/accents+paseq": 9,
+   "divided-accents/pointing": 5,
+   "zwj": 79,
+   "word-division": 12,
+   "residual/letters": 1,
+   "kq-structure": 1,
+   "qadma-other": 1
+  },
+  "4.20": {
+   "qadma": 3811,
+   "divided-accents/accents": 108,
+   "divided-accents/accents+paseq": 9,
+   "divided-accents/pointing": 5,
+   "zwj": 79,
+   "word-division": 12,
+   "final-form": 3,
+   "kq-structure": 1
+  },
+  "4.22": {
+   "qadma": 3808,
+   "residual/accents": 17,
+   "residual/pointing": 21,
+   "word-division+marks": 1,
+   "divided-accents/accents": 106,
+   "divided-accents/pointing": 6,
+   "divided-accents/accents+paseq": 9,
+   "zwj": 79,
+   "paseq": 1,
+   "word-division": 12,
+   "final-form": 3,
+   "kq-structure": 2
+  }
+ },
+ "label_m_atoms": {
+  "4.18": {
+   "qadma": 3811,
+   "residual/accents": 5,
+   "divided-accents/accents": 108,
+   "residual/pointing": 9,
+   "divided-accents/accents+paseq": 9,
+   "divided-accents/pointing": 5,
+   "zwj": 79,
+   "word-division": 24,
+   "residual/letters": 1,
+   "kq-structure": 2,
+   "qadma-other": 1
+  },
+  "4.20": {
+   "qadma": 3811,
+   "divided-accents/accents": 108,
+   "divided-accents/accents+paseq": 9,
+   "divided-accents/pointing": 5,
+   "zwj": 79,
+   "word-division": 24,
+   "final-form": 3,
+   "kq-structure": 2
+  },
+  "4.22": {
+   "qadma": 3808,
+   "residual/accents": 17,
+   "residual/pointing": 21,
+   "word-division+marks": 1,
+   "divided-accents/accents": 106,
+   "divided-accents/pointing": 6,
+   "divided-accents/accents+paseq": 9,
+   "zwj": 79,
+   "paseq": 1,
+   "word-division": 24,
+   "final-form": 3,
+   "kq-structure": 1
+  }
+ },
+ "label_w_atoms": {
+  "4.18": {
+   "qadma": 3811,
+   "residual/accents": 5,
+   "divided-accents/accents": 108,
+   "residual/pointing": 9,
+   "divided-accents/accents+paseq": 9,
+   "divided-accents/pointing": 5,
+   "zwj": 79,
+   "word-division": 12,
+   "residual/letters": 1,
+   "kq-structure": 1,
+   "qadma-other": 1
+  },
+  "4.20": {
+   "qadma": 3811,
+   "divided-accents/accents": 108,
+   "divided-accents/accents+paseq": 9,
+   "divided-accents/pointing": 5,
+   "zwj": 79,
+   "word-division": 12,
+   "final-form": 3,
+   "kq-structure": 1
+  },
+  "4.22": {
+   "qadma": 3808,
+   "residual/accents": 17,
+   "residual/pointing": 21,
+   "word-division+marks": 2,
+   "divided-accents/accents": 106,
+   "divided-accents/pointing": 6,
+   "divided-accents/accents+paseq": 9,
+   "zwj": 79,
+   "paseq": 1,
+   "word-division": 12,
+   "final-form": 3,
+   "kq-structure": 1
+  }
+ },
+ "class_units": {
+  "4.18": {
+   "qadma-for-first-pashta": 3811,
+   "residual": 16,
+   "Decalogue/divided accents": 122,
+   "mark encoding only": 79,
+   "word division": 12,
+   "ketiv/qere representation": 1
+  },
+  "4.20": {
+   "qadma-for-first-pashta": 3811,
+   "Decalogue/divided accents": 122,
+   "mark encoding only": 82,
+   "word division": 12,
+   "ketiv/qere representation": 1
+  },
+  "4.22": {
+   "qadma-for-first-pashta": 3808,
+   "residual": 38,
+   "word division": 13,
+   "Decalogue/divided accents": 121,
+   "mark encoding only": 82,
+   "paseq": 1,
+   "ketiv/qere representation": 2
+  }
+ },
+ "note_stats": {
+  "4.18": [
+   23159,
+   54
+  ],
+  "4.20": [
+   23200,
+   13
+  ],
+  "4.22": [
+   23014,
+   199
+  ]
+ },
+ "qstats": {
+  "morphhb differs, qadma_test=qadma, divided-accents verse=False; WLC: 2 pashtas, the last on the atom's last letter=True": 3807,
+  "(morphhb atoms with both a qadma and a pashta)": 3817,
+  "morphhb differs, qadma_test=None, divided-accents verse=True; WLC: 2 pashtas, the last on the atom's last letter=True": 8,
+  "morphhb differs, qadma_test=qadma, divided-accents verse=True; WLC: 2 pashtas, the last on the atom's last letter=True": 4
+ },
+ "dstats": {
+  "equal to WLC, no alternative note": 116,
+  "divided-accents/accents; alternative note: yes; WLC = main + alternative: ok": 105,
+  "divided-accents/accents+paseq; alternative note: yes; WLC = main + alternative: ok": 9,
+  "divided-accents/accents; alternative note: yes; WLC = main + alternative: marks": 3,
+  "divided-accents/pointing; alternative note: yes; WLC = main + alternative: marks": 2,
+  "qadma; alternative note: no; WLC = main + alternative: ok": 4,
+  "divided-accents/pointing; alternative note: yes; WLC = main + alternative: maqaf": 1,
+  "divided-accents/pointing; alternative note: yes; WLC = main + alternative: ok": 2,
+  "equal to WLC; alternative note: yes; WLC = main + alternative: ok": 1
+ },
+ "alt_cover": {
+  "alternative-note atoms": 123
+ },
+ "paseq_kinds": {
+  "morphhb": {
+   "plain": 2259,
+   "qere": 19
+  },
+  "4.18": {
+   "plain": 2268,
+   "qere": 19
+  },
+  "4.20": {
+   "plain": 2268,
+   "qere": 19
+  },
+  "4.22": {
+   "plain": 2269,
+   "qere": 19
+  }
+ },
+ "exegesis_rows": [
+  [
+   "Gen 38:24",
+   "WLC has this word divided as כְּ/מִשְׁלֹ֣שׁ.",
+   "כְּ/מִשְׁלֹ֣שׁ",
+   []
+  ],
+  [
+   "2Kgs 6:25",
+   "A single word in the text has been divided for exegesis.",
+   null,
+   [
+    "word-division"
+   ]
+  ],
+  [
+   "Isa 9:5",
+   "A single word in the text has been divided for exegesis.",
+   null,
+   [
+    "word-division"
+   ]
+  ],
+  [
+   "Jer 29:23",
+   "A single word in the text has been divided for exegesis.",
+   null,
+   [
+    "word-division"
+   ]
+  ],
+  [
+   "Jer 48:44",
+   "WLC has this word divided as הניס.",
+   "הניס",
+   [
+    "qadma"
+   ]
+  ],
+  [
+   "Zech 2:13",
+   "WLC has this word divided as עֲלֵ/יהֶ֔ם.",
+   "עֲלֵ/יהֶ֔ם",
+   []
+  ],
+  [
+   "Ps 106:1",
+   "A single word in the text has been divided for exegesis.",
+   null,
+   [
+    "word-division"
+   ]
+  ],
+  [
+   "Song 6:12",
+   "WLC has this word divided as עַמִּי.",
+   "עַמִּי",
+   []
+  ],
+  [
+   "Song 8:6",
+   "A single word in the text has been divided for exegesis.",
+   null,
+   [
+    "qadma",
+    "word-division"
+   ]
+  ],
+  [
+   "Dan 2:39",
+   "WLC has this word divided as ארעא.",
+   "ארעא",
+   [
+    "kq-structure"
+   ]
+  ],
+  [
+   "Ezra 3:5",
+   "A single word in the text has been divided for exegesis.",
+   null,
+   [
+    "word-division"
+   ]
+  ],
+  [
+   "Ezra 4:9",
+   "WLC has this word divided as דִּ֠ינָיֵא.",
+   "דִּ֠ינָיֵא",
+   []
+  ],
+  [
+   "1Chr 2:52",
+   "WLC has this word divided as הָ/רֹאֶ֖ה.",
+   "הָ/רֹאֶ֖ה",
+   []
+  ],
+  [
+   "1Chr 5:9",
+   "WLC has this word divided as לְב֣וֹא.",
+   "לְב֣וֹא",
+   []
+  ],
+  [
+   "1Chr 15:13",
+   "A single word in the text has been divided for exegesis.",
+   null,
+   [
+    "word-division",
+    "qadma"
+   ]
+  ],
+  [
+   "1Chr 20:4",
+   "A single word in the text has been divided for exegesis.",
+   null,
+   [
+    "word-division"
+   ]
+  ],
+  [
+   "2Chr 20:1",
+   "A single word in the text has been divided for exegesis.",
+   null,
+   [
+    "word-division"
+   ]
+  ],
+  [
+   "2Chr 20:35",
+   "A single word in the text has been divided for exegesis.",
+   null,
+   [
+    "word-division"
+   ]
+  ],
+  [
+   "2Chr 24:4",
+   "A single word in the text has been divided for exegesis.",
+   null,
+   [
+    "word-division"
+   ]
+  ],
+  [
+   "2Chr 26:8",
+   "WLC has this word divided as לְב֣וֹא.",
+   "לְב֣וֹא",
+   []
+  ],
+  [
+   "2Chr 30:3",
+   "A single word in the text has been divided for exegesis.",
+   null,
+   [
+    "word-division"
+   ]
+  ]
+ ],
+ "placeholder_differences": {
+  "4.18": [],
+  "4.20": [],
+  "4.22": []
+ },
+ "sof_pasuq_differences": {
+  "4.18": [
+   [
+    "Exod 20:3",
+    1,
+    0
+   ],
+   [
+    "Exod 20:4",
+    1,
+    0
+   ],
+   [
+    "Exod 20:8",
+    1,
+    0
+   ],
+   [
+    "Exod 20:9",
+    1,
+    0
+   ],
+   [
+    "Exod 20:10",
+    1,
+    0
+   ],
+   [
+    "Deut 5:12",
+    1,
+    0
+   ]
+  ],
+  "4.20": [
+   [
+    "Exod 20:3",
+    1,
+    0
+   ],
+   [
+    "Exod 20:4",
+    1,
+    0
+   ],
+   [
+    "Exod 20:8",
+    1,
+    0
+   ],
+   [
+    "Exod 20:9",
+    1,
+    0
+   ],
+   [
+    "Exod 20:10",
+    1,
+    0
+   ],
+   [
+    "Deut 5:12",
+    1,
+    0
+   ]
+  ],
+  "4.22": [
+   [
+    "Exod 20:3",
+    1,
+    0
+   ],
+   [
+    "Exod 20:4",
+    1,
+    0
+   ],
+   [
+    "Exod 20:8",
+    1,
+    0
+   ],
+   [
+    "Exod 20:9",
+    1,
+    0
+   ],
+   [
+    "Exod 20:10",
+    1,
+    0
+   ],
+   [
+    "Deut 5:12",
+    1,
+    0
+   ]
+  ]
+ },
+ "seg_after_pair": {
+  "maqaf in rdg": 7,
+  "maqaf after a variant note": 52,
+  "paseq after a variant note": 14,
+  "paseq after a variant note whose pair has a ketiv": 14,
+  "paseq in rdg": 5
+ },
+ "kq_placeholders": {
+  "4.20": [
+   [
+    "2Kgs 19:31",
+    "kk"
+   ],
+   [
+    "2Kgs 19:37",
+    "kk"
+   ],
+   [
+    "2Kgs 5:18",
+    "qq"
+   ],
+   [
+    "2Sam 16:23",
+    "kk"
+   ],
+   [
+    "2Sam 18:20",
+    "kk"
+   ],
+   [
+    "2Sam 8:3",
+    "kk"
+   ],
+   [
+    "Ezek 48:16",
+    "qq"
+   ],
+   [
+    "Jer 31:38",
+    "kk"
+   ],
+   [
+    "Jer 38:16",
+    "qq"
+   ],
+   [
+    "Jer 39:12",
+    "qq"
+   ],
+   [
+    "Jer 50:29",
+    "kk"
+   ],
+   [
+    "Jer 51:3",
+    "qq"
+   ],
+   [
+    "Judg 20:13",
+    "kk"
+   ],
+   [
+    "Ruth 3:12",
+    "qq"
+   ],
+   [
+    "Ruth 3:17",
+    "kk"
+   ],
+   [
+    "Ruth 3:5",
+    "kk"
+   ]
+  ],
+  "4.22": [
+   [
+    "2Kgs 19:31",
+    "kk"
+   ],
+   [
+    "2Kgs 19:37",
+    "kk"
+   ],
+   [
+    "2Kgs 5:18",
+    "qq"
+   ],
+   [
+    "2Sam 16:23",
+    "kk"
+   ],
+   [
+    "2Sam 18:20",
+    "kk"
+   ],
+   [
+    "2Sam 8:3",
+    "kk"
+   ],
+   [
+    "Ezek 48:16",
+    "qq"
+   ],
+   [
+    "Jer 31:38",
+    "kk"
+   ],
+   [
+    "Jer 38:16",
+    "qq"
+   ],
+   [
+    "Jer 39:12",
+    "qq"
+   ],
+   [
+    "Jer 50:29",
+    "kk"
+   ],
+   [
+    "Jer 51:3",
+    "qq"
+   ],
+   [
+    "Judg 20:13",
+    "kk"
+   ],
+   [
+    "Ruth 3:12",
+    "qq"
+   ],
+   [
+    "Ruth 3:17",
+    "kk"
+   ],
+   [
+    "Ruth 3:5",
+    "kk"
+   ]
+  ]
+ },
+ "divided_verses": [
+  "Deut 5:10",
+  "Deut 5:12",
+  "Deut 5:13",
+  "Deut 5:14",
+  "Deut 5:15",
+  "Deut 5:17",
+  "Deut 5:18",
+  "Deut 5:19",
+  "Deut 5:6",
+  "Deut 5:7",
+  "Deut 5:8",
+  "Deut 5:9",
+  "Exod 20:10",
+  "Exod 20:13",
+  "Exod 20:14",
+  "Exod 20:15",
+  "Exod 20:2",
+  "Exod 20:3",
+  "Exod 20:4",
+  "Exod 20:5",
+  "Exod 20:6",
+  "Exod 20:8",
+  "Exod 20:9",
+  "Gen 35:22"
+ ],
+ "exegesis_verses": {
+  "Gen 38:24": [
+   {
+    "text": "WLC has this word divided as כְּ/מִשְׁלֹ֣שׁ.",
+    "rdg": "כְּ/מִשְׁלֹ֣שׁ",
+    "after": 2
+   }
+  ],
+  "2Kgs 6:25": [
+   {
+    "text": "A single word in the text has been divided for exegesis.",
+    "rdg": null,
+    "after": 18
+   }
+  ],
+  "Isa 9:5": [
+   {
+    "text": "A single word in the text has been divided for exegesis.",
+    "rdg": null,
+    "after": 19
+   }
+  ],
+  "Jer 29:23": [
+   {
+    "text": "A single word in the text has been divided for exegesis.",
+    "rdg": null,
+    "after": 20
+   }
+  ],
+  "Jer 48:44": [
+   {
+    "text": "WLC has this word divided as הניס.",
+    "rdg": "הניס",
+    "after": 1
+   }
+  ],
+  "Zech 2:13": [
+   {
+    "text": "WLC has this word divided as עֲלֵ/יהֶ֔ם.",
+    "rdg": "עֲלֵ/יהֶ֔ם",
+    "after": 6
+   }
+  ],
+  "Ps 106:1": [
+   {
+    "text": "A single word in the text has been divided for exegesis.",
+    "rdg": null,
+    "after": 2
+   }
+  ],
+  "Song 6:12": [
+   {
+    "text": "WLC has this word divided as עַמִּי.",
+    "rdg": "עַמִּי",
+    "after": 6
+   }
+  ],
+  "Song 8:6": [
+   {
+    "text": "A single word in the text has been divided for exegesis.",
+    "rdg": null,
+    "after": 19
+   }
+  ],
+  "Dan 2:39": [
+   {
+    "text": "WLC has this word divided as ארעא.",
+    "rdg": "ארעא",
+    "after": 6
+   }
+  ],
+  "Ezra 3:5": [
+   {
+    "text": "A single word in the text has been divided for exegesis.",
+    "rdg": null,
+    "after": 2
+   }
+  ],
+  "Ezra 4:9": [
+   {
+    "text": "WLC has this word divided as דִּ֠ינָיֵא.",
+    "rdg": "דִּ֠ינָיֵא",
+    "after": 9
+   }
+  ],
+  "1Chr 2:52": [
+   {
+    "text": "WLC has this word divided as הָ/רֹאֶ֖ה.",
+    "rdg": "הָ/רֹאֶ֖ה",
+    "after": 7
+   }
+  ],
+  "1Chr 5:9": [
+   {
+    "text": "WLC has this word divided as לְב֣וֹא.",
+    "rdg": "לְב֣וֹא",
+    "after": 4
+   }
+  ],
+  "1Chr 15:13": [
+   {
+    "text": "A single word in the text has been divided for exegesis.",
+    "rdg": null,
+    "after": 3
+   }
+  ],
+  "1Chr 20:4": [
+   {
+    "text": "A single word in the text has been divided for exegesis.",
+    "rdg": null,
+    "after": 3
+   }
+  ],
+  "2Chr 20:1": [
+   {
+    "text": "A single word in the text has been divided for exegesis.",
+    "rdg": null,
+    "after": 3
+   }
+  ],
+  "2Chr 20:35": [
+   {
+    "text": "A single word in the text has been divided for exegesis.",
+    "rdg": null,
+    "after": 2
+   }
+  ],
+  "2Chr 24:4": [
+   {
+    "text": "A single word in the text has been divided for exegesis.",
+    "rdg": null,
+    "after": 3
+   }
+  ],
+  "2Chr 26:8": [
+   {
+    "text": "WLC has this word divided as לְב֣וֹא.",
+    "rdg": "לְב֣וֹא",
+    "after": 8
+   }
+  ],
+  "2Chr 30:3": [
+   {
+    "text": "A single word in the text has been divided for exegesis.",
+    "rdg": null,
+    "after": 12
+   }
+  ]
+ },
+ "missing": {
+  "morphhb": [],
+  "4.18": [],
+  "UXLC": [],
+  "4.20": [],
+  "4.22": []
+ },
+ "extra": {
+  "morphhb": [],
+  "4.18": [],
+  "UXLC": [],
+  "4.20": [],
+  "4.22": []
+ }
+}

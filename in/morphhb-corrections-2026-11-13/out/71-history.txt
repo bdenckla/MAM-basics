@@ -1,0 +1,97 @@
+== Hos 13:15 ben/bein (Hos; 52 versions of the book)
+   v00 2009-12-28T07:02:55Z c299c30a Hos.xml lemma=996 morph=None text=בֵּ֥ן | These are the files David Troidl was mantaining in the Google SVN repository.
+   v25 2013-07-13T23:55:16Z 3a1c8784 wlc/Hos.xml lemma=996 morph=None text=בֵּ֥ן | Corrections for enosh.
+   v31 2017-11-23T16:53:16Z a573a984 wlc/Hos.xml lemma=996 morph=None text=בֵּ֥ן | Various corrections.
+   v34 2018-01-02T21:53:47Z b4dc98ad wlc/Hos.xml lemma=996 morph=None text=בֵּ֥ן | Correction of the double-escaped &
+   v35 2018-01-04T22:51:17Z ba378e75 wlc/Hos.xml lemma=996 morph=HNcmsc text=בֵּ֥ן | 7 books newly complete
+   v36 2018-04-23T19:11:30Z 32dd0c4d wlc/Hos.xml lemma=996 morph=HNcmsc text=בֵּ֥ן | completed Lamentations, Esther, Micah, Ecclesiastes, Amos
+   v38 2018-12-14T14:18:08Z f0b4e882 wlc/Hos.xml lemma=996 morph=HNcmsc text=בֵּ֥ן | Addition of almost all verifieds
+   v51 2022-03-10T22:52:57Z 2408955b wlc/Hos.xml lemma=996 morph=HNcmsc text=בֵּ֥ן | Changes requested by Randall Tan and Joel Ruark from Clear Trees work.
+   lemma: same as now in the first commit (c299c30a, 2009-12-28)
+   morph: arrived between v34 and v35, i.e. with ba378e75 (2018-01-04T22:51:17Z): 7 books newly complete
+   text: same as now in the first commit (c299c30a, 2009-12-28)
+
+== Gen 39:19 asah (Gen; 63 versions of the book)
+   v00 2009-12-28T07:02:55Z c299c30a Gen.xml lemma=6213 morph=None text=עָ֥שָׂהּ | These are the files David Troidl was mantaining in the Google SVN repository.
+   v07 2010-01-16T14:37:28Z 8674a20c wlc/Gen.xml lemma=6213 morph=None text=עָ֥שָׂהּ | Changed mixed ketiv/qere. Made minor corrections to validate files.
+   v11 2010-01-20T13:00:21Z b88ce67a wlc/Gen.xml lemma=6213 morph=None text=עָ֥שָׂהּ | Corrected ketiv/qeres. Inserted notes in place of references.
+   v13 2011-01-20T13:01:40Z 5ec80c74 wlc/Gen.xml lemma=6213 morph=None text=עָ֥שָׂהּ | Strong numbers for phrases entended, appending + to each word before the last.
+   v14 2011-01-22T00:01:58Z 57206c9b wlc/Gen.xml lemma=6213 morph=None text=עָ֥שָׂהּ | Updated to WLC version 4.14.
+   v15 2011-01-24T13:12:40Z b17c7e6e wlc/Gen.xml lemma=6213 a morph=None text=עָ֥שָׂהּ | Genesis with augmented Strong numbers.
+   v31 2013-12-12T01:38:58Z 56b51322 wlc/Gen.xml lemma=6213 a morph=None text=עָ֥שָׂהּ | First release of morphology.
+   v34 2016-09-03T21:30:54Z 7f6aa930 wlc/Gen.xml lemma=6213 a morph=None text=עָ֥שָׂהּ | Ongoing corrections.
+   v36 2017-11-23T16:53:16Z a573a984 wlc/Gen.xml lemma=6213 a morph=None text=עָ֥שָׂהּ | Various corrections.
+   v37 2017-11-27T13:17:18Z 08574817 wlc/Gen.xml lemma=6213 a morph=None text=עָ֥שָׂהּ | Fixed m/854.
+   v38 2017-12-10T07:20:17Z 097d0e42 wlc/Gen.xml lemma=6213 a morph=HVqp3ms text=עָ֥שָׂהּ | added phase 1 parsings--ruth, obad, jonah, joel complete; other books partial
+   v46 2018-12-14T14:18:08Z f0b4e882 wlc/Gen.xml lemma=6213 a morph=HVqp3ms text=עָ֥שָׂהּ | Addition of almost all verifieds
+   v62 2022-03-10T22:52:57Z 2408955b wlc/Gen.xml lemma=6213 a morph=HVqp3ms text=עָ֥שָׂהּ | Changes requested by Randall Tan and Joel Ruark from Clear Trees work.
+   lemma: arrived between v14 and v15, i.e. with b17c7e6e (2011-01-24T13:12:40Z): Genesis with augmented Strong numbers.
+   morph: arrived between v37 and v38, i.e. with 097d0e42 (2017-12-10T07:20:17Z): added phase 1 parsings--ruth, obad, jonah, joel complete; other books partial
+   text: same as now in the first commit (c299c30a, 2009-12-28)
+
+== Deut 22:29 shallehah (Deut; 71 versions of the book)
+   v00 2009-12-28T07:02:55Z c299c30a Deut.xml lemma=7971 morph=None text=שַׁלְּחָ֖הּ | These are the files David Troidl was mantaining in the Google SVN repository.
+   v17 2010-08-17T13:22:53Z 9497d5f5 wlc/Deut.xml lemma=7971 morph=None text=שַׁלְּחָ֖הּ | Strong number correction : Deut.21.16
+   v21 2010-10-07T12:58:01Z 67241d76 wlc/Deut.xml lemma=7971 morph=None text=שַׁלְּחָ֖הּ | Qere Strong numbers distinguished: Deut.28.27, 30.
+   v23 2011-01-17T22:30:16Z 2c2319d2 wlc/Deut.xml lemma=7971 morph=None text=שַׁלְּחָ֖הּ | Strong number corrections, many missing Strong numbers added.
+   v24 2011-01-20T13:01:40Z 5ec80c74 wlc/Deut.xml lemma=7971 morph=None text=שַׁלְּחָ֖הּ | Strong numbers for phrases entended, appending + to each word before the last.
+   v25 2011-01-22T00:01:58Z 57206c9b wlc/Deut.xml lemma=7971 morph=None text=שַׁלְּחָ֖ה | Updated to WLC version 4.14.
+   v26 2011-01-28T14:11:32Z a52c1012 wlc/Deut.xml lemma=7971 morph=None text=שַׁלְּחָ֖ה | Augmented Strong numbers completed.
+   v35 2013-02-27T11:41:15Z 1376cd7a wlc/Deut.xml lemma=7971 morph=None text=שַׁלְּחָ֖ה | Changed KJV reference notes, Strong number corrections.
+   v52 2018-01-02T21:53:47Z b4dc98ad wlc/Deut.xml lemma=7971 morph=None text=שַׁלְּחָ֖ה | Correction of the double-escaped &
+   v54 2018-04-23T19:11:30Z 32dd0c4d wlc/Deut.xml lemma=7971 morph=None text=שַׁלְּחָ֖ה | completed Lamentations, Esther, Micah, Ecclesiastes, Amos
+   v55 2018-06-02T13:54:37Z 12505532 wlc/Deut.xml lemma=7971 morph=None text=שַׁלְּחָ֖ה | Updated headers
+   v56 2018-12-14T14:18:08Z f0b4e882 wlc/Deut.xml lemma=7971 morph=HVpc/Sp3fs text=שַׁלְּחָ֖ה | Addition of almost all verifieds
+   v61 2018-12-15T16:00:03Z 55bc539d wlc/Deut.xml lemma=7971 morph=HVpc/Sp3fs text=שַׁלְּחָ֖ה | make lemma of 853/4 match its parsing
+   v70 2022-03-10T22:52:57Z 2408955b wlc/Deut.xml lemma=7971 morph=HVpc/Sp3fs text=שַׁלְּחָ֖ה | Changes requested by Randall Tan and Joel Ruark from Clear Trees work.
+   lemma: same as now in the first commit (c299c30a, 2009-12-28)
+   morph: arrived between v55 and v56, i.e. with f0b4e882 (2018-12-14T14:18:08Z): Addition of almost all verifieds
+   text: arrived between v24 and v25, i.e. with 57206c9b (2011-01-22T00:01:58Z): Updated to WLC version 4.14.
+
+== Lev 4:35 helbah (Lev; 53 versions of the book)
+   v00 2009-12-28T07:02:55Z c299c30a Lev.xml lemma=2459 morph=None text=חֶלְבָּ֣ה | These are the files David Troidl was mantaining in the Google SVN repository.
+   v26 2016-03-04T00:57:55Z 2201c6a7 wlc/Lev.xml lemma=2459 morph=None text=חֶלְבָּ֣ה | Update to WLC 4.20
+   v32 2017-12-14T19:27:17Z 3094c7ec wlc/Lev.xml lemma=2459 morph=None text=חֶלְבָּ֣ה | Fixed license in XML files to be CC BY 4.0
+   v35 2018-04-23T19:11:30Z 32dd0c4d wlc/Lev.xml lemma=2459 morph=None text=חֶלְבָּ֣ה | completed Lamentations, Esther, Micah, Ecclesiastes, Amos
+   v36 2018-06-02T13:54:37Z 12505532 wlc/Lev.xml lemma=2459 morph=None text=חֶלְבָּ֣ה | Updated headers
+   v37 2018-12-14T14:18:08Z f0b4e882 wlc/Lev.xml lemma=2459 morph=HNcmsc/Sp3fs text=חֶלְבָּ֣ה | Addition of almost all verifieds
+   v39 2018-12-14T15:34:23Z 91f0a521 wlc/Lev.xml lemma=2459 morph=HNcmsc/Sp3fs text=חֶלְבָּ֣ה | fixed ordering for contributors, added missing morphs (except 2)
+   v52 2022-03-10T22:52:57Z 2408955b wlc/Lev.xml lemma=2459 morph=HNcmsc/Sp3fs text=חֶלְבָּ֣ה | Changes requested by Randall Tan and Joel Ruark from Clear Trees work.
+   lemma: same as now in the first commit (c299c30a, 2009-12-28)
+   morph: arrived between v36 and v37, i.e. with f0b4e882 (2018-12-14T14:18:08Z): Addition of almost all verifieds
+   text: same as now in the first commit (c299c30a, 2009-12-28)
+
+== Jer 51:3 ve-el (24JqK) (Jer; 71 versions of the book)
+   v00 2009-12-28T07:02:55Z c299c30a Jer.xml lemma=408 morph=None text=וְאֶל־ | These are the files David Troidl was mantaining in the Google SVN repository.
+   v17 2011-01-29T13:52:33Z e2449e19 wlc/Jer.xml lemma=408 morph=None text=וְאֶל־ | Corrections for the index.
+   v18 2011-01-30T14:37:02Z fe661292 wlc/Jer.xml lemma=c/408 morph=None text=וְאֶל־ | Prefixes added to augmented Strong numbers.
+   v19 2011-03-05T19:20:19Z 753f97af wlc/Jer.xml lemma=c/408 morph=None text=וְאֶל־ | Yalak Strong numbers changed to 3212, to agree with KJV.
+   v21 2012-01-27T00:53:50Z c0af6994 wlc/Jer.xml lemma=c/408 morph=None text=וְאֶל־ | Strong number corrections.
+   v26 2013-02-27T11:41:15Z 1376cd7a wlc/Jer.xml lemma=c/408 morph=None text=וְאֶל־ | Changed KJV reference notes, Strong number corrections.
+   v35 2014-02-04T14:13:54Z 380f4219 wlc/Jer.xml lemma=c/408 morph=None text=וְאֶל־ | Corrected pashta in the middle of a word.
+   v43 2018-01-02T21:53:47Z b4dc98ad wlc/Jer.xml lemma=c/408 morph=None text=וְאֶל־ | Correction of the double-escaped &
+   v44 2018-01-04T22:51:17Z ba378e75 wlc/Jer.xml lemma=c/408 morph=None text=וְאֶל־ | 7 books newly complete
+   v45 2018-04-23T19:11:30Z 32dd0c4d wlc/Jer.xml lemma=c/408 morph=HC/R text=וְאֶל־ | completed Lamentations, Esther, Micah, Ecclesiastes, Amos
+   v47 2018-07-26T13:40:49Z e39577f7 wlc/Jer.xml lemma=c/408 morph=HC/R text=וְאֶל־ | Markup corrections.
+   v52 2018-12-15T15:46:53Z a7b1d8b2 wlc/Jer.xml lemma=c/408 morph=HC/R text=וְאֶל־ | mark צָהֳרָיִם consistently plural
+   v70 2022-03-18T20:04:48Z 8de89602 wlc/Jer.xml lemma=c/408 morph=HC/R text=וְאֶל־ | Changes requested in earlier set of OSHB issues.
+   lemma: arrived between v17 and v18, i.e. with fe661292 (2011-01-30T14:37:02Z): Prefixes added to augmented Strong numbers.
+   morph: arrived between v44 and v45, i.e. with 32dd0c4d (2018-04-23T19:11:30Z): completed Lamentations, Esther, Micah, Ecclesiastes, Amos
+
+== Jer 51:3 ve-al (249Bc) (Jer; 71 versions of the book)
+   v00 2009-12-28T07:02:55Z c299c30a Jer.xml lemma=413 morph=None text=וְאַֽל־ | These are the files David Troidl was mantaining in the Google SVN repository.
+   v17 2011-01-29T13:52:33Z e2449e19 wlc/Jer.xml lemma=413 morph=None text=וְאַֽל־ | Corrections for the index.
+   v18 2011-01-30T14:37:02Z fe661292 wlc/Jer.xml lemma=c/413 morph=None text=וְאַֽל־ | Prefixes added to augmented Strong numbers.
+   v19 2011-03-05T19:20:19Z 753f97af wlc/Jer.xml lemma=c/413 morph=None text=וְאַֽל־ | Yalak Strong numbers changed to 3212, to agree with KJV.
+   v21 2012-01-27T00:53:50Z c0af6994 wlc/Jer.xml lemma=c/413 morph=None text=וְאַֽל־ | Strong number corrections.
+   v26 2013-02-27T11:41:15Z 1376cd7a wlc/Jer.xml lemma=c/413 morph=None text=וְאַֽל־ | Changed KJV reference notes, Strong number corrections.
+   v35 2014-02-04T14:13:54Z 380f4219 wlc/Jer.xml lemma=c/413 morph=None text=וְאַֽל־ | Corrected pashta in the middle of a word.
+   v39 2017-11-26T12:07:45Z 61f9680f wlc/Jer.xml lemma=c/413 morph=None text=וְאַֽל־ | Further lemma corrections.
+   v40 2017-11-27T13:17:18Z 08574817 wlc/Jer.xml lemma=c/413 morph=None text=וְאַֽל־ | Fixed m/854.
+   v41 2017-12-10T07:20:17Z 097d0e42 wlc/Jer.xml lemma=c/413 morph=HC/Tn text=וְאַֽל־ | added phase 1 parsings--ruth, obad, jonah, joel complete; other books partial
+   v43 2018-01-02T21:53:47Z b4dc98ad wlc/Jer.xml lemma=c/413 morph=HC/Tn text=וְאַֽל־ | Correction of the double-escaped &
+   v52 2018-12-15T15:46:53Z a7b1d8b2 wlc/Jer.xml lemma=c/413 morph=HC/Tn text=וְאַֽל־ | mark צָהֳרָיִם consistently plural
+   v70 2022-03-18T20:04:48Z 8de89602 wlc/Jer.xml lemma=c/413 morph=HC/Tn text=וְאַֽל־ | Changes requested in earlier set of OSHB issues.
+   lemma: arrived between v17 and v18, i.e. with fe661292 (2011-01-30T14:37:02Z): Prefixes added to augmented Strong numbers.
+   morph: arrived between v40 and v41, i.e. with 097d0e42 (2017-12-10T07:20:17Z): added phase 1 parsings--ruth, obad, jonah, joel complete; other books partial
+

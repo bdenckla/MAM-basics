@@ -1,0 +1,2165 @@
+{
+ "counts": {
+  "a": 1,
+  "b": 5,
+  "c": 46,
+  "d": 4
+ },
+ "rows": [
+  {
+   "n": 1,
+   "key": "Genesis 32:18",
+   "source": "forms.json",
+   "page": 98,
+   "ib": "וִשְׁאֵלְךָ",
+   "mam": "וּשְׁאֵלְךָ",
+   "side": "ketiv",
+   "class": "c",
+   "what": "",
+   "since": "",
+   "morphhb": [
+    {
+     "text": "וִ/שְׁאֵֽלְ/ךָ֙",
+     "lemma": "c/7592",
+     "morph": "HC/Vqq3ms/Sp2ms",
+     "id": "01PwH",
+     "n": "0.2.0",
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": false,
+     "notes_after": [
+      {
+       "n": "1",
+       "type": null,
+       "text": "BHS has been faithful to the Leningrad Codex where there might be a question of the validity of the form and we keep the same form as BHS."
+      }
+     ]
+    }
+   ],
+   "wlc418_notes": [
+    "1"
+   ],
+   "morphhb_notes": [
+    "1"
+   ],
+   "morphhb_eq_wlc418_review_key": true
+  },
+  {
+   "n": 2,
+   "key": "Genesis 34:11",
+   "source": "forms.json",
+   "page": 102,
+   "ib": "אָבִיה",
+   "mam": "אָבִיהָ",
+   "side": "ketiv",
+   "class": "c",
+   "what": "",
+   "since": "",
+   "morphhb": [
+    {
+     "text": "אָבִ֣י/ה",
+     "lemma": "1",
+     "morph": "HNcmsc/Sp3fs",
+     "id": "011Dh",
+     "n": null,
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": false,
+     "notes_after": [
+      {
+       "n": "1",
+       "type": null,
+       "text": "BHS has been faithful to the Leningrad Codex where there might be a question of the validity of the form and we keep the same form as BHS."
+      }
+     ]
+    }
+   ],
+   "wlc418_notes": [
+    "1"
+   ],
+   "morphhb_notes": [
+    "1"
+   ],
+   "morphhb_eq_wlc418_review_key": true
+  },
+  {
+   "n": 3,
+   "key": "Exodus 1:3",
+   "source": "forms.json",
+   "page": 151,
+   "ib": "וּבְנְיָמִן",
+   "mam": "וּבִנְיָמִן",
+   "side": "ketiv",
+   "class": "c",
+   "what": "",
+   "since": "",
+   "morphhb": [
+    {
+     "text": "וּ/בְנְיָמִֽן",
+     "lemma": "c/1144",
+     "morph": "HC/Np",
+     "id": "02yNB",
+     "n": "0",
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": false,
+     "notes_after": [
+      {
+       "n": "1",
+       "type": null,
+       "text": "BHS has been faithful to the Leningrad Codex where there might be a question of the validity of the form and we keep the same form as BHS."
+      }
+     ]
+    }
+   ],
+   "wlc418_notes": [
+    "1"
+   ],
+   "morphhb_notes": [
+    "1"
+   ],
+   "morphhb_eq_wlc418_review_key": true
+  },
+  {
+   "n": 4,
+   "key": "Exodus 10:28",
+   "source": "forms.json",
+   "page": 176,
+   "ib": "אֶל־",
+   "mam": "אַל־",
+   "side": "ketiv",
+   "class": "b",
+   "what": "lemma 408 and morph `HTn` (the negative) both read MAM's patah form; WLC has no note at the chanted word",
+   "since": "lemma: since `c299c30a` (2009-12-28), morphhb's first GitHub commit; morph: `f0b4e882` (2018-12-14, \"Addition of almost all verifieds\")",
+   "morphhb": [
+    {
+     "text": "אֶל",
+     "lemma": "408",
+     "morph": "HTn",
+     "id": "02ubY",
+     "n": null,
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": true,
+     "notes_after": []
+    }
+   ],
+   "wlc418_notes": [],
+   "morphhb_notes": [],
+   "morphhb_eq_wlc418_review_key": true
+  },
+  {
+   "n": 5,
+   "key": "Numbers 2:14",
+   "source": "forms.json",
+   "page": 343,
+   "ib": "וְמַטֵּה",
+   "mam": "וּמַטֵּה",
+   "side": "ketiv",
+   "class": "c",
+   "what": "",
+   "since": "",
+   "morphhb": [
+    {
+     "text": "וְ/מַטֵּ֖ה",
+     "lemma": "c/4294",
+     "morph": "HC/Ncmsc",
+     "id": "04qjY",
+     "n": "1.0",
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": false,
+     "notes_after": []
+    }
+   ],
+   "wlc418_notes": [],
+   "morphhb_notes": [],
+   "morphhb_eq_wlc418_review_key": true
+  },
+  {
+   "n": 6,
+   "key": "Numbers 26:7",
+   "source": "forms.json",
+   "page": 412,
+   "ib": "הָרֻאוּבֵנִי",
+   "mam": "הָראֿוּבֵנִי",
+   "side": "ketiv",
+   "class": "c",
+   "what": "",
+   "since": "",
+   "morphhb": [
+    {
+     "text": "הָ/רֻֽאוּבֵנִ֑י",
+     "lemma": "d/7206",
+     "morph": "HTd/Ngmsa",
+     "id": "04ZHi",
+     "n": "1",
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": false,
+     "notes_after": [
+      {
+       "n": "1",
+       "type": null,
+       "text": "BHS has been faithful to the Leningrad Codex where there might be a question of the validity of the form and we keep the same form as BHS."
+      }
+     ]
+    }
+   ],
+   "wlc418_notes": [
+    "1"
+   ],
+   "morphhb_notes": [
+    "1"
+   ],
+   "morphhb_eq_wlc418_review_key": true
+  },
+  {
+   "n": 7,
+   "key": "Deuteronomy 2:9",
+   "source": "forms.json",
+   "page": 452,
+   "ib": "אֶל־תָּצַר",
+   "mam": "אַל־תָּצַר",
+   "side": "ketiv",
+   "class": "b",
+   "what": "lemma 408 (the negative) reads MAM's patah form; morph `HR` (the preposition) reads WLC's segol form; WLC's note U ends the chanted word, and morphhb carries it",
+   "since": "lemma: since `c299c30a` (2009-12-28), morphhb's first GitHub commit; morph: `f0b4e882` (2018-12-14, \"Addition of almost all verifieds\")",
+   "morphhb": [
+    {
+     "text": "אֶל",
+     "lemma": "408",
+     "morph": "HR",
+     "id": "057a3",
+     "n": null,
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": true,
+     "notes_after": []
+    },
+    {
+     "text": "תָּ֨צַר֙",
+     "lemma": "6696 b",
+     "morph": "HVqj2ms",
+     "id": "05k23",
+     "n": "1.1.0",
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": false,
+     "notes_after": [
+      {
+       "n": "U",
+       "type": null,
+       "text": "We agree with both BHS 1997 and BHQ on an unexpected reading."
+      }
+     ]
+    }
+   ],
+   "wlc418_notes": [
+    "U"
+   ],
+   "morphhb_notes": [
+    "U"
+   ],
+   "morphhb_eq_wlc418_review_key": true
+  },
+  {
+   "n": 8,
+   "key": "Deuteronomy 3:12",
+   "source": "forms.json",
+   "page": 455,
+   "ib": "לָרֻאוּבֵנִי",
+   "mam": "לָראֿוּבֵנִי",
+   "side": "ketiv",
+   "class": "c",
+   "what": "",
+   "since": "",
+   "morphhb": [
+    {
+     "text": "לָ/רֻֽאוּבֵנִ֖י",
+     "lemma": "l/7206",
+     "morph": "HRd/Ngmsa",
+     "id": "05pDQ",
+     "n": "0.0",
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": false,
+     "notes_after": [
+      {
+       "n": "U",
+       "type": null,
+       "text": "We agree with both BHS 1997 and BHQ on an unexpected reading."
+      }
+     ]
+    }
+   ],
+   "wlc418_notes": [
+    "U"
+   ],
+   "morphhb_notes": [
+    "U"
+   ],
+   "morphhb_eq_wlc418_review_key": true
+  },
+  {
+   "n": 9,
+   "key": "Deuteronomy 3:16",
+   "source": "forms.json",
+   "page": 456,
+   "ib": "וְלָרֻאוּבֵנִי",
+   "mam": "וְלָראֿוּבֵנִי",
+   "side": "ketiv",
+   "class": "c",
+   "what": "",
+   "since": "",
+   "morphhb": [
+    {
+     "text": "וְ/לָ/רֻאוּבֵנִ֨י",
+     "lemma": "c/l/7206",
+     "morph": "HC/Rd/Ngmsa",
+     "id": "05EJP",
+     "n": null,
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": false,
+     "notes_after": [
+      {
+       "n": "U",
+       "type": null,
+       "text": "We agree with both BHS 1997 and BHQ on an unexpected reading."
+      }
+     ]
+    }
+   ],
+   "wlc418_notes": [
+    "U"
+   ],
+   "morphhb_notes": [
+    "U"
+   ],
+   "morphhb_eq_wlc418_review_key": true
+  },
+  {
+   "n": 10,
+   "key": "Deuteronomy 4:43",
+   "source": "forms.json",
+   "page": 462,
+   "ib": "לָרֻאוּבֵנִי",
+   "mam": "לָראֿוּבֵנִי",
+   "side": "ketiv",
+   "class": "c",
+   "what": "",
+   "since": "",
+   "morphhb": [
+    {
+     "text": "לָ/רֻֽאוּבֵנִ֑י",
+     "lemma": "l/7206",
+     "morph": "HRd/Ngmsa",
+     "id": "05f8m",
+     "n": "1",
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": false,
+     "notes_after": [
+      {
+       "n": "U",
+       "type": null,
+       "text": "We agree with both BHS 1997 and BHQ on an unexpected reading."
+      }
+     ]
+    }
+   ],
+   "wlc418_notes": [
+    "U"
+   ],
+   "morphhb_notes": [
+    "U"
+   ],
+   "morphhb_eq_wlc418_review_key": true
+  },
+  {
+   "n": 11,
+   "key": "Joshua 12:6",
+   "source": "forms.json",
+   "page": 571,
+   "ib": "לָרֻאוּבֵנִי",
+   "mam": "לָראֿוּבֵנִי",
+   "side": "ketiv",
+   "class": "c",
+   "what": "",
+   "since": "",
+   "morphhb": [
+    {
+     "text": "לָ/רֻֽאוּבֵנִי֙",
+     "lemma": "l/7206",
+     "morph": "HRd/Ngmsa",
+     "id": "06eix",
+     "n": "0.1.0",
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": false,
+     "notes_after": []
+    }
+   ],
+   "wlc418_notes": [],
+   "morphhb_notes": [],
+   "morphhb_eq_wlc418_review_key": true
+  },
+  {
+   "n": 12,
+   "key": "Joshua 22:19",
+   "source": "forms.json",
+   "page": 595,
+   "ib": "אֶל־תִּמְרֹדוּ",
+   "mam": "אַל־תִּמְרֹדוּ",
+   "side": "ketiv",
+   "class": "b",
+   "what": "lemma 408 (the negative) reads MAM's patah form; morph `HR` (the preposition) reads WLC's segol form; no note in WLC 4.18, 4.20 or morphhb (WLC 4.22 adds note 1)",
+   "since": "lemma: since `c299c30a` (2009-12-28), morphhb's first GitHub commit; morph: `f0b4e882` (2018-12-14, \"Addition of almost all verifieds\")",
+   "morphhb": [
+    {
+     "text": "אֶל",
+     "lemma": "408",
+     "morph": "HR",
+     "id": "06Umo",
+     "n": null,
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": true,
+     "notes_after": []
+    },
+    {
+     "text": "תִּמְרֹ֔דוּ",
+     "lemma": "4775",
+     "morph": "HVqj2mp",
+     "id": "067NW",
+     "n": "0.3",
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": false,
+     "notes_after": []
+    }
+   ],
+   "wlc418_notes": [],
+   "morphhb_notes": [],
+   "morphhb_eq_wlc418_review_key": true
+  },
+  {
+   "n": 13,
+   "key": "Judges 15:14",
+   "source": "forms.json",
+   "page": 647,
+   "ib": "וּפְלִשִׁתִּים",
+   "mam": "וּפְלִשְׁתִּים",
+   "side": "ketiv",
+   "class": "d",
+   "what": "morphhb's text is WLC 4.20's (and 4.22's) form, neither WLC 4.18's nor MAM's; lemma and morph fit all three",
+   "since": "text: MAM's form until `d1325011` (2013-07-11, \"Update to WLC 4.18\") brought WLC 4.18's; `2201c6a7` (2016-03-04, \"Update to WLC 4.20\") brought the present form",
+   "morphhb": [
+    {
+     "text": "וּ/פִלְשִׁתִּ֖ים",
+     "lemma": "c/6430",
+     "morph": "HC/Ngmpa",
+     "id": "07fz2",
+     "n": "1.0",
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": false,
+     "notes_after": [
+      {
+       "n": "Q",
+       "type": null,
+       "text": "Marks a place where we agree with BHQ against BHS in reading L."
+      },
+      {
+       "n": "n",
+       "type": null,
+       "text": "Marks an anomalous form."
+      },
+      {
+       "n": "v",
+       "type": null,
+       "text": "We read one or more vowels in L differently from BHS."
+      }
+     ]
+    }
+   ],
+   "wlc418_notes": [
+    "Q",
+    "n",
+    "v"
+   ],
+   "morphhb_notes": [
+    "Q",
+    "n",
+    "v"
+   ],
+   "morphhb_eq_wlc418_review_key": false
+  },
+  {
+   "n": 14,
+   "key": "Judges 16:2",
+   "source": "forms.json",
+   "page": 647,
+   "ib": "וַהֲרְגְנֻהוּ",
+   "mam": "וַהֲרַגְנֻהוּ",
+   "side": "ketiv",
+   "class": "c",
+   "what": "",
+   "since": "",
+   "morphhb": [
+    {
+     "text": "וַ/הֲרְגְנֻֽ/הוּ",
+     "lemma": "c/2026",
+     "morph": "HC/Vqp1cp/Sp3ms",
+     "id": "07YiE",
+     "n": "0",
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": false,
+     "notes_after": [
+      {
+       "n": "U",
+       "type": null,
+       "text": "We agree with both BHS 1997 and BHQ on an unexpected reading."
+      }
+     ]
+    }
+   ],
+   "wlc418_notes": [
+    "U"
+   ],
+   "morphhb_notes": [
+    "U"
+   ],
+   "morphhb_eq_wlc418_review_key": true
+  },
+  {
+   "n": 15,
+   "key": "Judges 19:4",
+   "source": "forms.json",
+   "page": 655,
+   "ib": "וַיֶּחֱזַק־",
+   "mam": "וַיַּחֲזֶק־",
+   "side": "ketiv",
+   "class": "a",
+   "what": "morph `HC/Vqw3ms` is a Qal, WLC's form; MAM's form is a Hiphil; the lemma fits both",
+   "since": "morph: `097d0e42` (2017-12-10, \"added phase 1 parsings\")",
+   "morphhb": [
+    {
+     "text": "וַ/יֶּחֱזַק",
+     "lemma": "c/2388",
+     "morph": "HC/Vqw3ms",
+     "id": "07GJ8",
+     "n": null,
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": true,
+     "notes_after": []
+    }
+   ],
+   "wlc418_notes": [],
+   "morphhb_notes": [],
+   "morphhb_eq_wlc418_review_key": true
+  },
+  {
+   "n": 16,
+   "key": "Judges 19:23",
+   "source": "forms.json",
+   "page": 657,
+   "ib": "אַל־בֵּיתִי",
+   "mam": "אֶל־בֵּיתִי",
+   "side": "ketiv",
+   "class": "b",
+   "what": "lemma 413 (the preposition) reads MAM's segol form; morph `HTn` (the negative) reads WLC's patah form; WLC's note U ends the chanted word, and morphhb carries it",
+   "since": "lemma: since `c299c30a` (2009-12-28), morphhb's first GitHub commit; morph: `097d0e42` (2017-12-10, \"added phase 1 parsings\")",
+   "morphhb": [
+    {
+     "text": "אַל",
+     "lemma": "413",
+     "morph": "HTn",
+     "id": "07HwX",
+     "n": null,
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": true,
+     "notes_after": []
+    },
+    {
+     "text": "בֵּיתִ֔/י",
+     "lemma": "1004 b",
+     "morph": "HNcmsc/Sp1cs",
+     "id": "07Lda",
+     "n": "0.1",
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": false,
+     "notes_after": [
+      {
+       "n": "U",
+       "type": null,
+       "text": "We agree with both BHS 1997 and BHQ on an unexpected reading."
+      }
+     ]
+    }
+   ],
+   "wlc418_notes": [
+    "U"
+   ],
+   "morphhb_notes": [
+    "U"
+   ],
+   "morphhb_eq_wlc418_review_key": true
+  },
+  {
+   "n": 17,
+   "key": "1 Samuel 27:10",
+   "source": "forms.json",
+   "page": 737,
+   "ib": "הַיַּרְחְמְאֵלִי",
+   "mam": "הַיְּרַחְמְאֵלִי",
+   "side": "ketiv",
+   "class": "c",
+   "what": "",
+   "since": "",
+   "morphhb": [
+    {
+     "text": "הַ/יַּרְחְמְאֵלִ֔י",
+     "lemma": "d/3397",
+     "morph": "HTd/Ngmsa",
+     "id": "09KmV",
+     "n": "0.1",
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": false,
+     "notes_after": []
+    }
+   ],
+   "wlc418_notes": [],
+   "morphhb_notes": [],
+   "morphhb_eq_wlc418_review_key": true
+  },
+  {
+   "n": 18,
+   "key": "2 Samuel 11:1",
+   "source": "forms.json",
+   "page": 767,
+   "ib": "הַמַּלְאכִים",
+   "mam": "הַמְּלָאכִים",
+   "side": "ketiv",
+   "class": "c",
+   "what": "WLC's rafeh marks the alef silent, so WLC's form too reads as lemma 4428, 'kings'; morphhb keeps the rafeh, which WLC 4.22 drops",
+   "since": "",
+   "morphhb": [
+    {
+     "text": "הַ/מַּלְאֿכִ֗ים",
+     "lemma": "d/4428",
+     "morph": "HTd/Ncmpa",
+     "id": "10264",
+     "n": "1.1.2",
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": false,
+     "notes_after": [
+      {
+       "n": "1",
+       "type": null,
+       "text": "BHS has been faithful to the Leningrad Codex where there might be a question of the validity of the form and we keep the same form as BHS."
+      }
+     ]
+    }
+   ],
+   "wlc418_notes": [
+    "1"
+   ],
+   "morphhb_notes": [
+    "1"
+   ],
+   "morphhb_eq_wlc418_review_key": true
+  },
+  {
+   "n": 19,
+   "key": "2 Samuel 13:33",
+   "source": "forms.json",
+   "page": 776,
+   "ib": "אִם־אַמְנוֹן",
+   "mam": "אם־אַמְנוֹן",
+   "side": "ketiv",
+   "class": "c",
+   "what": "MAM writes this atom without reading it; morphhb, like WLC, points it and analyses it as the conjunction",
+   "since": "",
+   "morphhb": [
+    {
+     "text": "אִם",
+     "lemma": "518 b",
+     "morph": "HC",
+     "id": "10kX9",
+     "n": null,
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": true,
+     "notes_after": []
+    },
+    {
+     "text": "אַמְנ֥וֹן",
+     "lemma": "550",
+     "morph": "HNp",
+     "id": "103n3",
+     "n": null,
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": false,
+     "notes_after": []
+    }
+   ],
+   "wlc418_notes": [],
+   "morphhb_notes": [],
+   "morphhb_eq_wlc418_review_key": true
+  },
+  {
+   "n": 20,
+   "key": "2 Samuel 15:21",
+   "source": "forms.json",
+   "page": 781,
+   "ib": "כִּי אִם־",
+   "mam": "כִּי אם",
+   "side": "ketiv",
+   "class": "c",
+   "what": "MAM writes this atom without reading it; morphhb, like WLC, points it and analyses it as the conjunction",
+   "since": "",
+   "morphhb": [
+    {
+     "text": "כִּ֠י",
+     "lemma": "3588 b",
+     "morph": "HC",
+     "id": "107eY",
+     "n": "0.1.1.2",
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": false,
+     "notes_after": []
+    },
+    {
+     "text": "אִם",
+     "lemma": "518 b",
+     "morph": "HC",
+     "id": "105KS",
+     "n": null,
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": true,
+     "notes_after": []
+    }
+   ],
+   "wlc418_notes": [],
+   "morphhb_notes": [],
+   "morphhb_eq_wlc418_review_key": true
+  },
+  {
+   "n": 21,
+   "key": "2 Kings 10:33",
+   "source": "forms.json",
+   "page": 918,
+   "ib": "וְהָרֻאובֵנִי",
+   "mam": "וְהָראֿוּבֵנִי",
+   "side": "ketiv",
+   "class": "c",
+   "what": "",
+   "since": "",
+   "morphhb": [
+    {
+     "text": "וְ/הָ/רֻאובֵנִ֖י",
+     "lemma": "c/d/7206",
+     "morph": "HC/Td/Ngmsa",
+     "id": "12imA",
+     "n": "1.0",
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": false,
+     "notes_after": []
+    }
+   ],
+   "wlc418_notes": [],
+   "morphhb_notes": [],
+   "morphhb_eq_wlc418_review_key": true
+  },
+  {
+   "n": 22,
+   "key": "2 Kings 18:27",
+   "source": "forms.json",
+   "page": 940,
+   "ib": "מימֵי רַגְלֵיהֶם",
+   "mam": "מֵימֵי רַגְלֵיהֶם",
+   "side": "qere",
+   "class": "c",
+   "what": "",
+   "since": "",
+   "morphhb": [
+    {
+     "text": "מימֵ֥י",
+     "lemma": "4325",
+     "morph": "HNcmpc",
+     "id": "12cPo",
+     "n": null,
+     "type": null,
+     "in_qere": true,
+     "maqaf_after": false,
+     "notes_after": []
+    },
+    {
+     "text": "רַגְלֵי/הֶ֖ם",
+     "lemma": "7272",
+     "morph": "HNcfdc/Sp3mp",
+     "id": "12HCo",
+     "n": "0.0",
+     "type": null,
+     "in_qere": true,
+     "maqaf_after": false,
+     "notes_after": [
+      {
+       "n": "c",
+       "type": null,
+       "text": "We read one or more accents in L differently than BHS. Often this notation indicates a typographical error in BHS."
+      },
+      {
+       "n": "n",
+       "type": null,
+       "text": "Marks an anomalous form."
+      }
+     ]
+    }
+   ],
+   "wlc418_notes": [
+    "c",
+    "n",
+    "v"
+   ],
+   "morphhb_notes": [
+    "c",
+    "n"
+   ],
+   "morphhb_eq_wlc418_review_key": true
+  },
+  {
+   "n": 23,
+   "key": "Isaiah 23:8",
+   "source": "forms.json",
+   "page": 1003,
+   "ib": "סֹחֲרֶיה",
+   "mam": "סֹחֲרֶיהָ",
+   "side": "ketiv",
+   "class": "c",
+   "what": "outside the form: morphhb has HEBREW ACCENT QADMA on the first syllable where WLC has a second pashta, since `380f4219` (2014-02-04, \"Corrected pashta in the middle of a word\")",
+   "since": "",
+   "morphhb": [
+    {
+     "text": "סֹחֲרֶ֨י/ה֙",
+     "lemma": "5503",
+     "morph": "HVqrmpc/Sp3fs",
+     "id": "23F8H",
+     "n": "0.1.0",
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": false,
+     "notes_after": []
+    }
+   ],
+   "wlc418_notes": [],
+   "morphhb_notes": [],
+   "morphhb_eq_wlc418_review_key": true
+  },
+  {
+   "n": 24,
+   "key": "Isaiah 46:4",
+   "source": "forms.json",
+   "page": 1048,
+   "ib": "שֵיבָה",
+   "mam": "שֵׂיבָה",
+   "side": "ketiv",
+   "class": "c",
+   "what": "WLC's letter has no dot; lemma 7872 reads it as sin, as MAM writes it",
+   "since": "",
+   "morphhb": [
+    {
+     "text": "שֵיבָ֖ה",
+     "lemma": "7872",
+     "morph": "HNcfsa",
+     "id": "23F41",
+     "n": "1.0",
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": false,
+     "notes_after": [
+      {
+       "n": "1",
+       "type": null,
+       "text": "BHS has been faithful to the Leningrad Codex where there might be a question of the validity of the form and we keep the same form as BHS."
+      }
+     ]
+    }
+   ],
+   "wlc418_notes": [
+    "1"
+   ],
+   "morphhb_notes": [
+    "1"
+   ],
+   "morphhb_eq_wlc418_review_key": true
+  },
+  {
+   "n": 25,
+   "key": "Isaiah 66:22",
+   "source": "forms.json",
+   "page": 1083,
+   "ib": "הַחֳדָשִׁים",
+   "mam": "הַחֲדָשִׁים",
+   "side": "ketiv",
+   "class": "c",
+   "what": "",
+   "since": "",
+   "morphhb": [
+    {
+     "text": "הַ֠/חֳדָשִׁים",
+     "lemma": "d/2319",
+     "morph": "HTd/Aampa",
+     "id": "23kzo",
+     "n": "1.0.0.1",
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": false,
+     "notes_after": []
+    }
+   ],
+   "wlc418_notes": [],
+   "morphhb_notes": [],
+   "morphhb_eq_wlc418_review_key": true
+  },
+  {
+   "n": 26,
+   "key": "Jeremiah 3:17",
+   "source": "forms.json",
+   "page": 1094,
+   "ib": "וְנִקְוּוּ",
+   "mam": "וְנִקְווּ",
+   "side": "ketiv",
+   "class": "c",
+   "what": "",
+   "since": "",
+   "morphhb": [
+    {
+     "text": "וְ/נִקְוּ֨וּ",
+     "lemma": "c/6960 b",
+     "morph": "HC/VNq3cp",
+     "id": "24r8g",
+     "n": null,
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": false,
+     "notes_after": []
+    }
+   ],
+   "wlc418_notes": [],
+   "morphhb_notes": [],
+   "morphhb_eq_wlc418_review_key": true
+  },
+  {
+   "n": 27,
+   "key": "Jeremiah 47:6",
+   "source": "forms.json",
+   "page": 1197,
+   "ib": "אַל־",
+   "mam": "אֶל־",
+   "side": "ketiv",
+   "class": "b",
+   "what": "lemma 413 (the preposition) reads MAM's segol form; morph `HTn` (the negative) reads WLC's patah form; no WLC note",
+   "since": "lemma: since `c299c30a` (2009-12-28), morphhb's first GitHub commit; morph: `097d0e42` (2017-12-10, \"added phase 1 parsings\")",
+   "morphhb": [
+    {
+     "text": "אַל",
+     "lemma": "413",
+     "morph": "HTn",
+     "id": "242CG",
+     "n": null,
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": true,
+     "notes_after": []
+    }
+   ],
+   "wlc418_notes": [],
+   "morphhb_notes": [],
+   "morphhb_eq_wlc418_review_key": true
+  },
+  {
+   "n": 28,
+   "key": "Hosea 2:4",
+   "source": "forms.json",
+   "page": 1346,
+   "ib": "מִפָּנֶיה",
+   "mam": "מִפָּנֶיהָ",
+   "side": "ketiv",
+   "class": "c",
+   "what": "",
+   "since": "",
+   "morphhb": [
+    {
+     "text": "מִ/פָּנֶ֔י/ה",
+     "lemma": "m/6440",
+     "morph": "HR/Ncbpc/Sp3fs",
+     "id": "28PGK",
+     "n": "0.1",
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": false,
+     "notes_after": [
+      {
+       "n": "U",
+       "type": null,
+       "text": "We agree with both BHS 1997 and BHQ on an unexpected reading."
+      }
+     ]
+    }
+   ],
+   "wlc418_notes": [
+    "U"
+   ],
+   "morphhb_notes": [
+    "U"
+   ],
+   "morphhb_eq_wlc418_review_key": true
+  },
+  {
+   "n": 29,
+   "key": "Hosea 2:17",
+   "source": "forms.json",
+   "page": 1347,
+   "ib": "וִּכְיוֹם",
+   "mam": "וּכְיוֹם",
+   "side": "ketiv",
+   "class": "c",
+   "what": "",
+   "since": "",
+   "morphhb": [
+    {
+     "text": "וִּ/כְ/י֖וֹם",
+     "lemma": "c/k/3117",
+     "morph": "HC/R/Ncmsc",
+     "id": "282gM",
+     "n": "0.0",
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": false,
+     "notes_after": [
+      {
+       "n": "U",
+       "type": null,
+       "text": "We agree with both BHS 1997 and BHQ on an unexpected reading."
+      }
+     ]
+    }
+   ],
+   "wlc418_notes": [
+    "U"
+   ],
+   "morphhb_notes": [
+    "U"
+   ],
+   "morphhb_eq_wlc418_review_key": true
+  },
+  {
+   "n": 30,
+   "key": "Joel 2:12",
+   "source": "forms.json",
+   "page": 1367,
+   "ib": "וּבְבְכִי",
+   "mam": "וּבִבְכִי",
+   "side": "ketiv",
+   "class": "c",
+   "what": "",
+   "since": "",
+   "morphhb": [
+    {
+     "text": "וּ/בְ/בְכִ֖י",
+     "lemma": "c/b/1065",
+     "morph": "HC/R/Ncmsa",
+     "id": "29c6V",
+     "n": "0.0",
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": false,
+     "notes_after": [
+      {
+       "n": "U",
+       "type": null,
+       "text": "We agree with both BHS 1997 and BHQ on an unexpected reading."
+      }
+     ]
+    }
+   ],
+   "wlc418_notes": [
+    "U"
+   ],
+   "morphhb_notes": [
+    "U"
+   ],
+   "morphhb_eq_wlc418_review_key": true
+  },
+  {
+   "n": 31,
+   "key": "Jonah 3:2",
+   "source": "forms.json",
+   "page": 1394,
+   "ib": "וִּקְרָא",
+   "mam": "וּקְרָא",
+   "side": "ketiv",
+   "class": "c",
+   "what": "",
+   "since": "",
+   "morphhb": [
+    {
+     "text": "וִּ/קְרָ֤א",
+     "lemma": "c/7121",
+     "morph": "HC/Vqv2ms",
+     "id": "32ki2",
+     "n": null,
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": false,
+     "notes_after": [
+      {
+       "n": "U",
+       "type": null,
+       "text": "We agree with both BHS 1997 and BHQ on an unexpected reading."
+      }
+     ]
+    }
+   ],
+   "wlc418_notes": [
+    "U"
+   ],
+   "morphhb_notes": [
+    "U"
+   ],
+   "morphhb_eq_wlc418_review_key": true
+  },
+  {
+   "n": 32,
+   "key": "Zechariah 2:2",
+   "source": "forms.json",
+   "page": 1436,
+   "ib": "וִירוּשָׁלָם",
+   "mam": "וִירוּשָׁלִָם",
+   "side": "ketiv",
+   "class": "c",
+   "what": "",
+   "since": "",
+   "morphhb": [
+    {
+     "text": "וִ/ירוּשָׁלָֽם",
+     "lemma": "c/3389",
+     "morph": "HC/Np",
+     "id": "38ZpQ",
+     "n": "0",
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": false,
+     "notes_after": [
+      {
+       "n": "U",
+       "type": null,
+       "text": "We agree with both BHS 1997 and BHQ on an unexpected reading."
+      }
+     ]
+    }
+   ],
+   "wlc418_notes": [
+    "U"
+   ],
+   "morphhb_notes": [
+    "U"
+   ],
+   "morphhb_eq_wlc418_review_key": true
+  },
+  {
+   "n": 33,
+   "key": "Psalms 45:3",
+   "source": "forms.json",
+   "page": 1516,
+   "ib": "בְּשְׂפְתוֹתֶיךָ",
+   "mam": "בְּשִׂפְתוֹתֶיךָ",
+   "side": "ketiv",
+   "class": "c",
+   "what": "",
+   "since": "",
+   "morphhb": [
+    {
+     "text": "בְּ/שְׂפְתוֹתֶ֑י/ךָ",
+     "lemma": "b/8193",
+     "morph": "HR/Ncfpc/Sp2ms",
+     "id": "19K1g",
+     "n": "1",
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": false,
+     "notes_after": []
+    }
+   ],
+   "wlc418_notes": [],
+   "morphhb_notes": [],
+   "morphhb_eq_wlc418_review_key": true
+  },
+  {
+   "n": 34,
+   "key": "Proverbs 12:9",
+   "source": "forms.json",
+   "page": 1665,
+   "ib": "מִמְּתַכַּבֵּד",
+   "mam": "מִמִּתְכַּבֵּד",
+   "side": "ketiv",
+   "class": "c",
+   "what": "morph `HR/Vtrmsa` names MAM's Hithpael participle; WLC's vowels are anomalous but admit no other stem or form",
+   "since": "",
+   "morphhb": [
+    {
+     "text": "מִ֝/מְּתַכַּבֵּ֗ד",
+     "lemma": "m/3513",
+     "morph": "HR/Vtrmsa",
+     "id": "20f6y",
+     "n": "0.0",
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": false,
+     "notes_after": []
+    }
+   ],
+   "wlc418_notes": [],
+   "morphhb_notes": [],
+   "morphhb_eq_wlc418_review_key": true
+  },
+  {
+   "n": 35,
+   "key": "Proverbs 20:1",
+   "source": "forms.json",
+   "page": 1679,
+   "ib": "הַיַּין",
+   "mam": "הַיַּיִן",
+   "side": "ketiv",
+   "class": "c",
+   "what": "",
+   "since": "",
+   "morphhb": [
+    {
+     "text": "הַ֭/יַּין",
+     "lemma": "d/3196",
+     "morph": "HTd/Ncmsa",
+     "id": "20Rm3",
+     "n": "1.0",
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": false,
+     "notes_after": [
+      {
+       "n": "U",
+       "type": null,
+       "text": "We agree with both BHS 1997 and BHQ on an unexpected reading."
+      }
+     ]
+    }
+   ],
+   "wlc418_notes": [
+    "U"
+   ],
+   "morphhb_notes": [
+    "U"
+   ],
+   "morphhb_eq_wlc418_review_key": true
+  },
+  {
+   "n": 36,
+   "key": "Proverbs 31:12",
+   "source": "forms.json",
+   "page": 1700,
+   "ib": "חַיֶּיה",
+   "mam": "חַיֶּיהָ",
+   "side": "ketiv",
+   "class": "c",
+   "what": "",
+   "since": "",
+   "morphhb": [
+    {
+     "text": "חַיֶּֽי/ה",
+     "lemma": "2416 e",
+     "morph": "HNcmpc/Sp3fs",
+     "id": "20cd3",
+     "n": "0",
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": false,
+     "notes_after": [
+      {
+       "n": "U",
+       "type": null,
+       "text": "We agree with both BHS 1997 and BHQ on an unexpected reading."
+      }
+     ]
+    }
+   ],
+   "wlc418_notes": [
+    "U"
+   ],
+   "morphhb_notes": [
+    "U"
+   ],
+   "morphhb_eq_wlc418_review_key": true
+  },
+  {
+   "n": 37,
+   "key": "Job 31:7",
+   "source": "forms.json",
+   "page": 1752,
+   "ib": "מֻאוּם",
+   "mam": "מאֿוּם",
+   "side": "ketiv",
+   "class": "c",
+   "what": "",
+   "since": "",
+   "morphhb": [
+    {
+     "text": "מֻאֽוּם",
+     "lemma": "3971 a",
+     "morph": "HNcmsa",
+     "id": "18Wom",
+     "n": "0",
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": false,
+     "notes_after": [
+      {
+       "n": "1",
+       "type": null,
+       "text": "BHS has been faithful to the Leningrad Codex where there might be a question of the validity of the form and we keep the same form as BHS."
+      }
+     ]
+    }
+   ],
+   "wlc418_notes": [
+    "1"
+   ],
+   "morphhb_notes": [
+    "1"
+   ],
+   "morphhb_eq_wlc418_review_key": true
+  },
+  {
+   "n": 38,
+   "key": "Song of Songs 5:11",
+   "source": "forms.json",
+   "page": 1785,
+   "ib": "קְוּצּוֹתָיו",
+   "mam": "קְוֻצּוֹתָיו",
+   "side": "ketiv",
+   "class": "c",
+   "what": "",
+   "since": "",
+   "morphhb": [
+    {
+     "text": "קְוּצּוֹתָי/ו֙",
+     "lemma": "6977",
+     "morph": "HNcfpc/Sp3ms",
+     "id": "22k23",
+     "n": "0.1.0",
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": false,
+     "notes_after": [
+      {
+       "n": "U",
+       "type": null,
+       "text": "We agree with both BHS 1997 and BHQ on an unexpected reading."
+      }
+     ]
+    }
+   ],
+   "wlc418_notes": [
+    "U"
+   ],
+   "morphhb_notes": [
+    "U"
+   ],
+   "morphhb_eq_wlc418_review_key": true
+  },
+  {
+   "n": 39,
+   "key": "Daniel 2:45",
+   "source": "forms.json",
+   "page": 1875,
+   "ib": "וְהַדֶּקֶת",
+   "mam": "וְהַדֵּקֶת",
+   "side": "ketiv",
+   "class": "c",
+   "what": "",
+   "since": "",
+   "morphhb": [
+    {
+     "text": "וְ֠/הַדֶּקֶת",
+     "lemma": "c/1855",
+     "morph": "AC/Vhp3fs",
+     "id": "27Z1J",
+     "n": "1.2.0.0",
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": false,
+     "notes_after": []
+    }
+   ],
+   "wlc418_notes": [],
+   "morphhb_notes": [],
+   "morphhb_eq_wlc418_review_key": true
+  },
+  {
+   "n": 40,
+   "key": "Daniel 5:24",
+   "source": "forms.json",
+   "page": 1886,
+   "ib": "שְׁלִיַחַ",
+   "mam": "שְׁלִיחַ",
+   "side": "ketiv",
+   "class": "c",
+   "what": "",
+   "since": "",
+   "morphhb": [
+    {
+     "text": "שְׁלִ֖יַחַ",
+     "lemma": "7972",
+     "morph": "AVQp3ms",
+     "id": "27sKp",
+     "n": "1.0",
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": false,
+     "notes_after": [
+      {
+       "n": "1",
+       "type": null,
+       "text": "BHS has been faithful to the Leningrad Codex where there might be a question of the validity of the form and we keep the same form as BHS."
+      }
+     ]
+    }
+   ],
+   "wlc418_notes": [
+    "1"
+   ],
+   "morphhb_notes": [
+    "1"
+   ],
+   "morphhb_eq_wlc418_review_key": true
+  },
+  {
+   "n": 41,
+   "key": "Daniel 7:20",
+   "source": "forms.json",
+   "page": 1891,
+   "ib": "וְפֻם",
+   "mam": "וּפֻם",
+   "side": "ketiv",
+   "class": "c",
+   "what": "",
+   "since": "",
+   "morphhb": [
+    {
+     "text": "וְ/פֻם֙",
+     "lemma": "c/6433",
+     "morph": "AC/Ncmsa",
+     "id": "275bQ",
+     "n": "0.1.0",
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": false,
+     "notes_after": []
+    }
+   ],
+   "wlc418_notes": [],
+   "morphhb_notes": [],
+   "morphhb_eq_wlc418_review_key": true
+  },
+  {
+   "n": 42,
+   "key": "Nehemiah 9:14",
+   "source": "forms.json",
+   "page": 1956,
+   "ib": "הוֹדַעַתָ",
+   "mam": "הוֹדַעְתָּ",
+   "side": "ketiv",
+   "class": "c",
+   "what": "",
+   "since": "",
+   "morphhb": [
+    {
+     "text": "הוֹדַ֣עַתָ",
+     "lemma": "3045",
+     "morph": "HVhp2ms",
+     "id": "16tnE",
+     "n": null,
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": false,
+     "notes_after": [
+      {
+       "n": "U",
+       "type": null,
+       "text": "We agree with both BHS 1997 and BHQ on an unexpected reading."
+      }
+     ]
+    }
+   ],
+   "wlc418_notes": [
+    "U"
+   ],
+   "morphhb_notes": [
+    "U"
+   ],
+   "morphhb_eq_wlc418_review_key": true
+  },
+  {
+   "n": 43,
+   "key": "1 Chronicles 3:1",
+   "source": "forms.json",
+   "page": 1982,
+   "ib": "דָויִד",
+   "mam": "דָוִיד",
+   "side": "ketiv",
+   "class": "c",
+   "what": "",
+   "since": "",
+   "morphhb": [
+    {
+     "text": "דָויִ֔ד",
+     "lemma": "1732",
+     "morph": "HNp",
+     "id": "13ZNU",
+     "n": "1.1",
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": false,
+     "notes_after": [
+      {
+       "n": "1",
+       "type": null,
+       "text": "BHS has been faithful to the Leningrad Codex where there might be a question of the validity of the form and we keep the same form as BHS."
+      }
+     ]
+    }
+   ],
+   "wlc418_notes": [
+    "1"
+   ],
+   "morphhb_notes": [
+    "1"
+   ],
+   "morphhb_eq_wlc418_review_key": true
+  },
+  {
+   "n": 44,
+   "key": "Deut 3:22",
+   "source": "review.md tour table row 1",
+   "page": 457,
+   "ib": "תְִּירָאוּם",
+   "mam": "תִּירָאוּם",
+   "side": "ketiv",
+   "class": "c",
+   "what": "",
+   "since": "",
+   "morphhb": [
+    {
+     "text": "תְִּירָא֑וּ/ם",
+     "lemma": "3372",
+     "morph": "HVqi2mp/Sp3mp",
+     "id": "05wNE",
+     "n": "1",
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": false,
+     "notes_after": [
+      {
+       "n": "Q",
+       "type": null,
+       "text": "Marks a place where we agree with BHQ against BHS in reading L."
+      },
+      {
+       "n": "n",
+       "type": null,
+       "text": "Marks an anomalous form."
+      },
+      {
+       "n": "v",
+       "type": null,
+       "text": "We read one or more vowels in L differently from BHS."
+      }
+     ]
+    }
+   ],
+   "wlc418_notes": [
+    "Q",
+    "n",
+    "v"
+   ],
+   "morphhb_notes": [
+    "Q",
+    "n",
+    "v"
+   ],
+   "morphhb_eq_wlc418_review_key": true
+  },
+  {
+   "n": 45,
+   "key": "Isa 49:23",
+   "source": "review.md tour table row 2",
+   "page": 1054,
+   "ib": "קוָֹי׃",
+   "mam": "קֹוָי׃",
+   "side": "ketiv",
+   "class": "c",
+   "what": "",
+   "since": "",
+   "morphhb": [
+    {
+     "text": "קוָֹֽ/י",
+     "lemma": "6960 a",
+     "morph": "HVqrmpc/Sp1cs",
+     "id": "23zh5",
+     "n": "0",
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": false,
+     "notes_after": []
+    }
+   ],
+   "wlc418_notes": [],
+   "morphhb_notes": [],
+   "morphhb_eq_wlc418_review_key": true
+  },
+  {
+   "n": 46,
+   "key": "Lam 3:25",
+   "source": "review.md tour table row 3",
+   "page": 1813,
+   "ib": "לְקוָֹו",
+   "mam": "לְקֹוָו",
+   "side": "ketiv",
+   "class": "c",
+   "what": "",
+   "since": "",
+   "morphhb": [
+    {
+     "text": "לְ/קוָֹ֔/ו",
+     "lemma": "l/6960 a",
+     "morph": "HR/Vqrmpc/Sp3ms",
+     "id": "25eec",
+     "n": "0.1",
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": false,
+     "notes_after": [
+      {
+       "n": "Q",
+       "type": null,
+       "text": "Marks a place where we agree with BHQ against BHS in reading L."
+      },
+      {
+       "n": "q",
+       "type": null,
+       "text": "We have abandoned or added a ketib/qere relative to BHS. In doing this we agree with L against BHS."
+      }
+     ]
+    }
+   ],
+   "wlc418_notes": [
+    "Q",
+    "q"
+   ],
+   "morphhb_notes": [
+    "Q",
+    "q"
+   ],
+   "morphhb_eq_wlc418_review_key": true
+  },
+  {
+   "n": 47,
+   "key": "Lam 4:4",
+   "source": "review.md tour table row 4",
+   "page": 1816,
+   "ib": "אֶל־חכּוֹ",
+   "mam": "אֶל־חִכּוֹ",
+   "side": "ketiv",
+   "class": "c",
+   "what": "",
+   "since": "",
+   "morphhb": [
+    {
+     "text": "אֶל",
+     "lemma": "413",
+     "morph": "HR",
+     "id": "257tY",
+     "n": null,
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": true,
+     "notes_after": []
+    },
+    {
+     "text": "חכּ֖/וֹ",
+     "lemma": "2441",
+     "morph": "HNcmsc/Sp3ms",
+     "id": "252Dp",
+     "n": "1.0",
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": false,
+     "notes_after": [
+      {
+       "n": "Q",
+       "type": null,
+       "text": "Marks a place where we agree with BHQ against BHS in reading L."
+      },
+      {
+       "n": "n",
+       "type": null,
+       "text": "Marks an anomalous form."
+      },
+      {
+       "n": "v",
+       "type": null,
+       "text": "We read one or more vowels in L differently from BHS."
+      }
+     ]
+    }
+   ],
+   "wlc418_notes": [
+    "Q",
+    "n",
+    "v"
+   ],
+   "morphhb_notes": [
+    "Q",
+    "n",
+    "v"
+   ],
+   "morphhb_eq_wlc418_review_key": true
+  },
+  {
+   "n": 48,
+   "key": "Eccl 2:23",
+   "source": "review.md tour table row 5",
+   "page": 1827,
+   "ib": "לִבּו",
+   "mam": "לִבּוֹ",
+   "side": "ketiv",
+   "class": "d",
+   "what": "morphhb's text is WLC 4.20's (and 4.22's) form, which is MAM's; lemma and morph fit both",
+   "since": "text: MAM's form until `57e5e441` (2010-03-31, \"Update to WLC 4.12\") brought the form IB has; `2201c6a7` (2016-03-04, \"Update to WLC 4.20\") brought back the present form",
+   "morphhb": [
+    {
+     "text": "לִבּ֑/וֹ",
+     "lemma": "3820 a",
+     "morph": "HNcmsc/Sp3ms",
+     "id": "21nzj",
+     "n": "1",
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": false,
+     "notes_after": []
+    }
+   ],
+   "wlc418_notes": [
+    "Q",
+    "n",
+    "v"
+   ],
+   "morphhb_notes": [],
+   "morphhb_eq_wlc418_review_key": false
+  },
+  {
+   "n": 49,
+   "key": "Exod 20:3",
+   "source": "review.md Decalogue table row 1",
+   "page": 198,
+   "ib": "עַל־פָּנָיַ",
+   "mam": "עַל־פָּנַי",
+   "side": "ketiv",
+   "class": "c",
+   "what": "morphhb's text has WLC's two vowels; its accents are divided as `73784451` (2010-07-13, \"Separated the accents of the Ten Commandments, to conform with the WLC versification\")",
+   "since": "",
+   "morphhb": [
+    {
+     "text": "עַל",
+     "lemma": "5921 a",
+     "morph": "HR",
+     "id": "02qKv",
+     "n": null,
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": true,
+     "notes_after": []
+    },
+    {
+     "text": "פָּנָֽ/יַ",
+     "lemma": "6440",
+     "morph": "HNcbpc/Sp1cs",
+     "id": "02CuC",
+     "n": "0",
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": false,
+     "notes_after": [
+      {
+       "n": null,
+       "type": "alternative",
+       "text": "פָּנָֽ/יַפָּנָ֗/יַ"
+      },
+      {
+       "n": "1",
+       "type": null,
+       "text": "BHS has been faithful to the Leningrad Codex where there might be a question of the validity of the form and we keep the same form as BHS."
+      }
+     ]
+    }
+   ],
+   "wlc418_notes": [
+    "1"
+   ],
+   "morphhb_notes": [
+    "1"
+   ],
+   "morphhb_eq_wlc418_review_key": true
+  },
+  {
+   "n": 50,
+   "key": "Deut 5:7",
+   "source": "review.md Decalogue table row 2",
+   "page": 463,
+   "ib": "עַל־פָּנָיַ",
+   "mam": "עַל־פָּנַי",
+   "side": "ketiv",
+   "class": "c",
+   "what": "morphhb's text has WLC's two vowels; its accents are divided as `73784451` (2010-07-13, \"Separated the accents of the Ten Commandments, to conform with the WLC versification\")",
+   "since": "",
+   "morphhb": [
+    {
+     "text": "עַל",
+     "lemma": "5921 a",
+     "morph": "HR",
+     "id": "05oYz",
+     "n": null,
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": true,
+     "notes_after": []
+    },
+    {
+     "text": "פָּנָֽ/יַ",
+     "lemma": "6440",
+     "morph": "HNcbpc/Sp1cs",
+     "id": "05dD2",
+     "n": "0",
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": false,
+     "notes_after": [
+      {
+       "n": null,
+       "type": "alternative",
+       "text": "פָּנָֽ/יַפָּנָ֗/יַ"
+      }
+     ]
+    }
+   ],
+   "wlc418_notes": [],
+   "morphhb_notes": [],
+   "morphhb_eq_wlc418_review_key": true
+  },
+  {
+   "n": 51,
+   "key": "Exod 20:4",
+   "source": "review.md Decalogue table row 3",
+   "page": 198,
+   "ib": "מִתַָּחַת",
+   "mam": "מִתַּחַת",
+   "side": "ketiv",
+   "class": "d",
+   "what": "morphhb's text has the qamats alone; WLC 4.18, 4.20 and 4.22 have the qamats and the patah; morphhb's alternative-accent note has the qamats too; lemma and morph fit both",
+   "since": "text: `73784451` (2010-07-13, \"Separated the accents of the Ten Commandments, to conform with the WLC versification\")",
+   "morphhb": [
+    {
+     "text": "מִ/תָּ֑חַת",
+     "lemma": "m/8478",
+     "morph": "HR/D",
+     "id": "02p5S",
+     "n": "1",
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": false,
+     "notes_after": [
+      {
+       "n": null,
+       "type": "alternative",
+       "text": "מִ/תָּ֑חַתמִ/תָּ֜חַת"
+      },
+      {
+       "n": "1",
+       "type": null,
+       "text": "BHS has been faithful to the Leningrad Codex where there might be a question of the validity of the form and we keep the same form as BHS."
+      }
+     ]
+    }
+   ],
+   "wlc418_notes": [
+    "1"
+   ],
+   "morphhb_notes": [
+    "1"
+   ],
+   "morphhb_eq_wlc418_review_key": false
+  },
+  {
+   "n": 52,
+   "key": "Exod 20:9",
+   "source": "review.md Decalogue table row 4",
+   "page": 198,
+   "ib": "כָּל־מְלַאכְתֶּךָ",
+   "mam": "כׇל־מְלַאכְתֶּךָ",
+   "side": "ketiv",
+   "class": "c",
+   "what": "",
+   "since": "",
+   "morphhb": [
+    {
+     "text": "כָּל",
+     "lemma": "3605",
+     "morph": "HNcmsc",
+     "id": "02pGd",
+     "n": null,
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": true,
+     "notes_after": []
+    },
+    {
+     "text": "מְלַאכְתֶּֽ/ךָ",
+     "lemma": "4399",
+     "morph": "HNcfsc/Sp2ms",
+     "id": "02S8b",
+     "n": "0",
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": false,
+     "notes_after": [
+      {
+       "n": null,
+       "type": "alternative",
+       "text": "מְלַאכְתֶּֽ/ךָמְלַאכְתֶּ/ךָ֒"
+      },
+      {
+       "n": "1",
+       "type": null,
+       "text": "BHS has been faithful to the Leningrad Codex where there might be a question of the validity of the form and we keep the same form as BHS."
+      }
+     ]
+    }
+   ],
+   "wlc418_notes": [
+    "1"
+   ],
+   "morphhb_notes": [
+    "1"
+   ],
+   "morphhb_eq_wlc418_review_key": true
+  },
+  {
+   "n": 53,
+   "key": "Exod 20:10",
+   "source": "review.md Decalogue table row 5",
+   "page": 198,
+   "ib": "לֹא־תַעֲשֶׂה",
+   "mam": "לֹא תַעֲשֶׂה",
+   "side": "ketiv",
+   "class": "c",
+   "what": "",
+   "since": "",
+   "morphhb": [
+    {
+     "text": "לֹֽ֣א",
+     "lemma": "3808",
+     "morph": "HTn",
+     "id": "02Jx8",
+     "n": null,
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": true,
+     "notes_after": []
+    },
+    {
+     "text": "תַעֲשֶׂ֨ה",
+     "lemma": "6213 a",
+     "morph": "HVqi2ms",
+     "id": "02BdY",
+     "n": null,
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": false,
+     "notes_after": [
+      {
+       "n": null,
+       "type": "alternative",
+       "text": "תַעֲשֶׂ֨התַעֲשֶׂ֣ה"
+      }
+     ]
+    }
+   ],
+   "wlc418_notes": [],
+   "morphhb_notes": [],
+   "morphhb_eq_wlc418_review_key": true
+  },
+  {
+   "n": 54,
+   "key": "Deut 5:8 (Decalogue row 6)",
+   "source": "review.md Decalogue table row 6",
+   "page": 463,
+   "ib": "לֹא־תַעֲשֶׂה־לְךָ",
+   "mam": "לֹא תַעֲשֶׂה־לְךָ",
+   "side": "ketiv",
+   "class": "d",
+   "what": "morphhb's main text has no maqaf after the second atom; its alternative-accent note has MAM's עליון form exactly; lemma and morph fit both",
+   "since": "text: `73784451` (2010-07-13, \"Separated the accents of the Ten Commandments, to conform with the WLC versification\")",
+   "morphhb": [
+    {
+     "text": "לֹֽ֣א",
+     "lemma": "3808",
+     "morph": "HTn",
+     "id": "052t9",
+     "n": null,
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": true,
+     "notes_after": []
+    },
+    {
+     "text": "תַעֲשֶׂ֥ה",
+     "lemma": "6213 a",
+     "morph": "HVqi2ms",
+     "id": "05fou",
+     "n": null,
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": false,
+     "notes_after": []
+    },
+    {
+     "text": "לְ/ךָ֥",
+     "lemma": "l",
+     "morph": "HR/Sp2ms",
+     "id": "05DL4",
+     "n": null,
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": false,
+     "notes_after": [
+      {
+       "n": null,
+       "type": "alternative",
+       "text": "לֹֽא־תַעֲשֶׂ֥ה לְ/ךָ֥לֹ֣א תַעֲשֶׂה־לְ/ךָ֣"
+      }
+     ]
+    }
+   ],
+   "wlc418_notes": [],
+   "morphhb_notes": [],
+   "morphhb_eq_wlc418_review_key": false
+  },
+  {
+   "n": 55,
+   "key": "Deut 5:8 (Decalogue row 7)",
+   "source": "review.md Decalogue table row 7",
+   "page": 463,
+   "ib": "מִתָּחַת",
+   "mam": "מִתַּחַת",
+   "side": "ketiv",
+   "class": "c",
+   "what": "morphhb's text has WLC's qamats; its accents are divided as `73784451` (2010-07-13, \"Separated the accents of the Ten Commandments, to conform with the WLC versification\")",
+   "since": "",
+   "morphhb": [
+    {
+     "text": "מִ/תָּ֑חַת",
+     "lemma": "m/8478",
+     "morph": "HR/R",
+     "id": "05jMY",
+     "n": "1",
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": false,
+     "notes_after": [
+      {
+       "n": null,
+       "type": "alternative",
+       "text": "מִ/תָּ֑חַתמִ/תָּ֜חַת"
+      }
+     ]
+    }
+   ],
+   "wlc418_notes": [],
+   "morphhb_notes": [],
+   "morphhb_eq_wlc418_review_key": true
+  },
+  {
+   "n": 56,
+   "key": "Deut 5:13",
+   "source": "review.md Decalogue table row 8",
+   "page": 463,
+   "ib": "כָּל־מְלַאכְתֶּךָ",
+   "mam": "כׇל־מְלַאכְתֶּךָ",
+   "side": "ketiv",
+   "class": "c",
+   "what": "morphhb's main text has WLC's dagesh without its rafeh; its alternative-accent note has the rafeh without the dagesh, since `73784451` (2010-07-13, \"Separated the accents of the Ten Commandments, to conform with the WLC versification\")",
+   "since": "",
+   "morphhb": [
+    {
+     "text": "כָּל",
+     "lemma": "3605",
+     "morph": "HNcmsc",
+     "id": "05YWx",
+     "n": null,
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": true,
+     "notes_after": [
+      {
+       "n": null,
+       "type": "alternative",
+       "text": "כָּלכָֿל"
+      }
+     ]
+    },
+    {
+     "text": "מְלַאכְתֶּֽ/ךָ",
+     "lemma": "4399",
+     "morph": "HNcfsc/Sp2ms",
+     "id": "05d4u",
+     "n": "0",
+     "type": null,
+     "in_qere": false,
+     "maqaf_after": false,
+     "notes_after": [
+      {
+       "n": null,
+       "type": "alternative",
+       "text": "מְלַאכְתֶּֽ/ךָמְלַאכְתֶּ/ךָ֒"
+      }
+     ]
+    }
+   ],
+   "wlc418_notes": [],
+   "morphhb_notes": [],
+   "morphhb_eq_wlc418_review_key": true
+  }
+ ],
+ "hataf_rows": 6
+}

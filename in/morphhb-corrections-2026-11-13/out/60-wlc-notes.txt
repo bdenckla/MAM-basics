@@ -1,0 +1,1136 @@
+# written by scripts/p2_lemma_notes.py: C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe -I .novc/morphhb-corrections-2026-11-13/scripts/p2_lemma_notes.py .novc/morphhb-corrections-2026-11-13/scripts .novc/morphhb-corrections-2026-11-13/fetched .novc/morphhb-corrections-2026-11-13/out/51-general-test.json .novc/morphhb-corrections-2026-11-13/out  (working directory C:/Users/BenDe/GitRepos/MAM-basics)
+
+Written by Claude (Opus 5.5) on 2026-11-13, New York time; not reviewed by a human.  Every
+reading is attributed to the transcription that has it; nothing here is about the Leningrad
+Codex itself.  Hebrew is copied from the data by script and shown in MAM-normal mark order.
+
+== 1. Method
+Writes <out_dir>/60-wlc-notes.txt and .json.  Run after p2_lemma_general.py, whose pairs, flags
+and verdicts it reads from 51-general-test.json.
+
+Every WLC note in morphhb is a <note> with an n attribute (the note letter) and no type.  Its
+chanted word is what the note follows: the last <w> before it (skipping other notes, sof pasuq and
+paseq segs), or, when a variant note comes last, that ketiv/qere pair (its ketiv words and its qere
+words); with every <w> joined to them by maqaf before them, on each side.  Each word of the chanted
+word is looked up in this folder's alignment of morphhb with MAM (p2_lemma_lib.align_all), on each
+side it is on: "same" if it is aligned one to one with a MAM atom of the same form key, "skey" if
+with a MAM atom of the same letters and another form key, "letters" if it is in a block whose
+letters differ.  A chanted word differs from MAM if any of its words is "skey" or "letters".  The
+general test's results (flagged, flagged by a back-off test, and Claude's verdicts) are attached
+by morphhb id.
+
+== 2. Counts
+WLC notes in morphhb: 1072; chanted words: 800
+
+letter  notes  chanted   differ by letters  flagged  back-off   meaning (morphhb's note text)
+U          79       79       59         4        3         6   We agree with both BHS 1997 and BHQ on an unexpected reading.
+1         207      207      124        10        1        16   BHS has been faithful to the Leningrad Codex where there might be a question of the validity of the form and we keep the same form as BHS.
+c         189      189        9         5        0         0   We read one or more accents in L differently than BHS. Often this notation indicates a typographical error in BHS.
+n         109      109       86        18        0        11   Marks an anomalous form.
+Q         116      116       72         7        0        10   Marks a place where we agree with BHQ against BHS in reading L.; We agree with both BHS 1997 and BHQ on an unexpected reading.
+p          86       86       58         1        0         8   We read punctuation in L differently from BHS.
+q          51       51       22        20        0         2   We have abandoned or added a ketib/qere relative to BHS. In doing this we agree with L against BHS.
+C          48       47        4         1        0         0   We read one or more accents in L differently from BHQ.
+a          39       39        3         1        0         1   Adaptations to a Qere which L and BHS, by their design, do not indicate.
+v          33       33       20         2        0         2   We read one or more vowels in L differently from BHS.
+k          28       28       14        12        0         1   We read one or more consonants in L differently from BHS.
+y          27       27        4         4        0         0   Yathir readings in L which we have designated as Qeres when both Dothan and BHS list a Qere.
+4          16       16        0         0        0         0   Puncta extraordinaria -- a \u05c4 is used to mark such marks in the text when they are above the line and a \u05c5 when they are below the line.
+P          16       16        5         0        0         2   We read the punctuation in L differently from BHQ.
+8           9        9        0         0        0         0   Inverted nun in the text.
+5           4        4        0         0        0         0   Large letter(s). Shown as large letters without a superscript note number.
+7           4        4        0         0        0         0   Suspended letter(s). Shown as suspended letters without a superscript note number.
+V           4        4        2         0        0         0   We read one or more vowels in L differently from BHQ.
+6           3        3        0         0        0         0   Small letter(s). Shown as small letters without a superscript note number.
+M           2        2        0         0        0         0   Marks a word with a final consonant that is a medial (not a final) form.
+F           1        1        1         1        0         0   Marks a consonant with an anomalous final form that is word-medial.
+K           1        1        0         0        0         0   We read one or more consonants in L differently from BHQ.
+
+== 3. Every chanted word under note U, with Claude's verdict
+Verdicts by class: agrees 20, anomaly 13, both fit 38, correction 3, defensible 1, noise 4.
+A verdict of a word that p2_lemma_general.py read is that file's (51-general-test.txt); the classes are
+p2_lemma_verdicts.CLASS_TEXT's.
+Each: reference; morphhb's chanted word, each word {lemma morph status}; MAM's atoms per word; verdict.
+-- Deut 2:9  (anchor 05k23)
+   morphhb: אֶל־{408 HR skey} תָּ֨צַר֙{6696 b HVqj2ms same}
+   MAM:     אַל־ | תָּ֙צַר֙
+   verdict: correction: WLC has the segol form (the preposition), MAM the patah form (the negative); lemma 408 analyses MAM's form, morph HR WLC's; WLC's note U at the chanted word (known case)
+-- Deut 3:12  (anchor 05pDQ)
+   morphhb: לָ/רֻֽאוּבֵנִ֖י{l/7206 HRd/Ngmsa skey}
+   MAM:     לָרֽאֿוּבֵנִ֖י
+   verdict: both fit: the Reubenite: WLC's qubuts on the resh against MAM's rafe on the alef (Part 1, class c)
+-- Deut 3:16  (anchor 05EJP)
+   morphhb: וְ/לָ/רֻאוּבֵנִ֨י{c/l/7206 HC/Rd/Ngmsa skey}
+   MAM:     וְלָראֿוּבֵנִ֨י
+   verdict: both fit: the Reubenite: WLC's qubuts on the resh against MAM's rafe on the alef (Part 1, class c)
+-- Deut 4:21  (anchor 05Xvh)
+   morphhb: הִתְאַנֶּף־{599 HVtp3ms skey} בִּ֖/י{b HR/Sp1cs same}
+   MAM:     הִתְאַנַּף־ | בִּ֖י
+   verdict: both fit: same word and inflection; segol against patah in the last syllable of a Hithpael perfect
+-- Deut 4:35  (anchor 05yZ9)
+   morphhb: מִ/לְ/בַדּֽ/וֹ{m/l/905 HR/R/Ncmsc/Sp3ms skey}
+   MAM:     מִלְּבַדּֽוֹ
+   verdict: both fit: same word and inflection; WLC lacks the dagesh in the lamed
+-- Deut 4:43  (anchor 05f8m)
+   morphhb: לָ/רֻֽאוּבֵנִ֑י{l/7206 HRd/Ngmsa skey}
+   MAM:     לָרֽאֿוּבֵנִ֑י
+   verdict: both fit: the Reubenite: WLC's qubuts on the resh against MAM's rafe on the alef (Part 1, class c)
+-- Deut 5:12  (anchor 05dbJ)
+   morphhb: אֱלֹהֶֽי/ךָ{430 HNcmpc/Sp2ms same}
+   MAM:     אֱלֹהֶֽ֗יךָ
+   verdict: agrees: the chanted word agrees with MAM's by the review key; no correction is possible here
+-- Deut 9:3  (anchor 05JGD)
+   morphhb: וְ/הַֽאַבַדְתָּ/ם֙{c/6 HC/Vhq2ms/Sp3mp skey}
+   MAM:     וְהַֽאֲבַדְתָּם֙
+   verdict: both fit: same word and inflection; patah against hataf patah under the alef of a Hiphil
+-- Deut 10:15  (anchor 059vU)
+   morphhb: הַ/זֶּה{d/2088 HTd/Pdxms same}
+   MAM:     הַזֶּֽה
+   verdict: agrees: the chanted word agrees with MAM's by the review key; no correction is possible here
+-- Deut 12:2  (anchor 05vXa)
+   morphhb: רַעֲנָן{7488 b HAamsa same}
+   MAM:     רַעֲנָֽן
+   verdict: agrees: the chanted word agrees with MAM's by the review key; no correction is possible here
+-- Deut 12:3  (anchor 054Sd)
+   morphhb: אֶת־{853 HTo same} מִזְבּחֹתָ֗/ם{4196 HNcmpc/Sp3mp skey}
+   MAM:     אֶת־ | מִזְבְּחֹתָ֗ם
+   verdict: both fit: same word and inflection; WLC lacks the shewa under the bet
+-- Deut 13:15  (anchor 058ac)
+   morphhb: וְ/חָקַרְתָּ֧{c/2713 HC/Vqq2ms same}
+   MAM:     וְחָקַרְתָּ֛
+   verdict: agrees: the chanted word agrees with MAM's by the review key; no correction is possible here
+-- Deut 14:24  (anchor 053mF)
+   morphhb: תוּכַ֘ל{3201 HVqi2ms same}
+   MAM:     תוּכַל֮
+   verdict: agrees: the chanted word agrees with MAM's by the review key; no correction is possible here
+-- Deut 23:12  (anchor 05Bo9)
+   morphhb: הַֽ/מַּחֲנֶה{d/4264 HTd/Ncbsa same}
+   MAM:     הַֽמַּחֲנֶֽה
+   verdict: agrees: the chanted word agrees with MAM's by the review key; no correction is possible here
+-- Deut 23:18  (anchor 05SHs)
+   morphhb: יִשְׂרָאֵל{3478 HNp same}
+   MAM:     יִשְׂרָאֵֽל
+   verdict: agrees: the chanted word agrees with MAM's by the review key; no correction is possible here
+-- Deut 24:10  (anchor 055eB)
+   morphhb: בְ/רֵֽעֲ/ךָ{b/7453 HR/Ncmsc/Sp2ms same}
+   MAM:     בְרֵֽעֲךָ֖
+   verdict: agrees: the chanted word agrees with MAM's by the review key; no correction is possible here
+-- Deut 25:18  (anchor 05KjR)
+   morphhb: אַֽחַרֶ֔י/ךָ{310 a HR/Sp2ms skey}
+   MAM:     אַֽחֲרֶ֔יךָ
+   verdict: both fit: same word and inflection; patah against hataf patah under the het
+-- Deut 29:25  (anchor 057fp)
+   morphhb: וַ/יִּֽשְׁתַּחֲוּ֖וּ{c/7812 HC/Vvw3mp skey}
+   MAM:     וַיִּֽשְׁתַּחֲו֖וּ
+   verdict: both fit: same word and inflection; the dotted middle vav of the bowing verb; morphhb's Hishtaphel label is its own
+-- Deut 30:18  (anchor 05MPV)
+   morphhb: לָ/בֹ֥א{l/935 HR/Vqc letters}
+   MAM:     לָב֥וֹא
+   verdict: both fit: same word and inflection; defective against plene spelling of the infinitive
+-- Deut 31:7  (anchor 05hSB)
+   morphhb: כָל־{3605 HNcmsc same} יִשְׂרָאֵ֘ל{3478 HNp same}
+   MAM:     כׇל־ | יִשְׂרָאֵל֮
+   verdict: agrees: the chanted word agrees with MAM's by the review key; no correction is possible here
+-- Judg 7:20  (anchor 07i2j)
+   morphhb: בְ/יַד־{b/3027 HR/Ncbsc same} שְׂמאוֹלָ/ם֙{8040 HNcmsc/Sp3mp skey}
+   MAM:     בְיַד־ | שְׂמֹאולָם֙
+   verdict: both fit: same word and inflection; the holam of 'left' written on the vav against before it
+-- Judg 9:2  (anchor 07USD)
+   morphhb: כִּֽי־{3588 a HC same} עַצְמֵ/כֶם{6106 HNcfsc/Sp2mp skey}
+   MAM:     כִּֽי־ | עַצְמְכֶ֥ם
+   verdict: both fit: same word and inflection; tsere against shewa under the mem before the suffix
+-- Judg 9:2  (anchor 07Uzr)
+   morphhb: אָנִֽי{589 HPp1cs same}
+   MAM:     אָֽנִי
+   verdict: agrees: the chanted word agrees with MAM's by the review key; no correction is possible here
+-- Judg 11:35  (anchor 07rMH)
+   morphhb: הָיִ֣יתְ{1961 HVqp2fs skey}
+   MAM:     הָיִ֣ית
+   verdict: noise: the same word and inflection in both; the second feminine perfect with and without a final shewa
+-- Judg 16:2  (anchor 07YiE)
+   morphhb: וַ/הֲרְגְנֻֽ/הוּ{c/2026 HC/Vqp1cp/Sp3ms skey}
+   MAM:     וַהֲרַגְנֻֽהוּ
+   verdict: anomaly: WLC has a shewa under the resh where the first plural perfect has a patah (Part 1, class c)
+-- Judg 16:23  (anchor 07Bre)
+   morphhb: נֶֽאֱסְפוּ֙{622 HVNp3cp skey}
+   MAM:     נֶֽאֶסְפוּ֙
+   verdict: both fit: same word and inflection; hataf segol against segol under the alef of a Niphal
+-- Judg 19:23  (anchor 07Lda)
+   morphhb: אַל־{413 HTn skey} בֵּיתִ֔/י{1004 b HNcmsc/Sp1cs same}
+   MAM:     אֶל־ | בֵּיתִ֔י
+   verdict: correction: WLC has the patah form (the negative), MAM the segol form (the preposition); lemma 413 analyses MAM's form, morph HTn WLC's; WLC's note U at the chanted word (known case)
+-- Hos 2:4  (anchor 28PGK)
+   morphhb: מִ/פָּנֶ֔י/ה{m/6440 HR/Ncbpc/Sp3fs skey}
+   MAM:     מִפָּנֶ֔יהָ
+   verdict: anomaly: WLC lacks the mappiq of the third feminine suffix (Part 1, class c)
+-- Hos 2:17  (anchor 282gM)
+   morphhb: וִּ/כְ/י֖וֹם{c/k/3117 HC/R/Ncmsc skey}
+   MAM:     וּכְי֖וֹם
+   verdict: anomaly: WLC has a hiriq on the conjunction vav that also carries its dot (Part 1, class c)
+-- Hos 8:3  (anchor 287Xe)
+   morphhb: יִרְדְּֽפ/וֹ{7291 HVqi3ms/Sp3ms same}
+   MAM:     יִרְדְּפֽוֹ
+   verdict: agrees: the chanted word agrees with MAM's by the review key; no correction is possible here
+-- Hos 9:4  (anchor 283it)
+   morphhb: יִטַמָּ֑אוּ{2930 a HVti3mp skey}
+   MAM:     יִטַּמָּ֑אוּ
+   verdict: both fit: same word and inflection; WLC lacks the dagesh in the tet of a Hithpael
+-- Hos 9:7  (anchor 28bcM)
+   morphhb: הַ/שִׁלֻּ֔ם{d/7966 HTd/Ncmsa skey}
+   MAM:     הַשִּׁלֻּ֔ם
+   verdict: both fit: same word and inflection; WLC lacks the dagesh after the article
+-- Hos 11:7  (anchor 28RH3)
+   morphhb: יְרוֹמֵם{7311 a HVoi3ms same}
+   MAM:     יְרוֹמֵֽם
+   verdict: agrees: the chanted word agrees with MAM's by the review key; no correction is possible here
+-- Hos 13:14  (anchor 28t5T)
+   morphhb: דְבָרֶי/ךָ֜{1698 HNcmpc/Sp2ms same}
+   MAM:     דְבָרֶ֜יךָ
+   verdict: agrees: the chanted word agrees with MAM's by the review key; no correction is possible here
+-- Hos 13:15  (anchor 28sYk)
+   morphhb: בֵּ֥ן{996 HNcmsc letters}
+   MAM:     בֵּ֥ין
+   verdict: correction: WLC (all three versions) has the word spelled as 'son' (no yod), under note U, 'an unexpected reading'; MAM has 'between' (with the yod); lemma 996 ('between') analyses MAM's word; the morph HNcmsc fits 'son' in the construct (morphhb tags 'between' HR in its 167 other occurrences); the letters differ, so the review key cannot match them; read as a defective spelling of 'between' it would be an anomaly instead
+-- Joel 1:15  (anchor 29VuH)
+   morphhb: מִ/שַׁדַּ֥י{m/7706 HR/Np skey}
+   MAM:     מִשַּׁדַּ֥י
+   verdict: both fit: same word and inflection; WLC lacks the dagesh after the preposition
+-- Joel 2:12  (anchor 29c6V)
+   morphhb: וּ/בְ/בְכִ֖י{c/b/1065 HC/R/Ncmsa skey}
+   MAM:     וּבִבְכִ֖י
+   verdict: anomaly: WLC has a shewa under the second bet where MAM has a hiriq (Part 1, class c)
+-- Amos 6:2  (anchor 30BQa)
+   morphhb: גַת־{1661 HNp same} פְּלִשְׁתּ֗ים{6430 HNgmpa skey}
+   MAM:     גַת־ | פְּלִשְׁתִּ֗ים
+   verdict: both fit: same word and inflection; WLC lacks the hiriq under the tav
+-- Amos 9:4  (anchor 30yB6)
+   morphhb: אֹֽיבֵי/הֶ֔ם{341 HVqrmpc/Sp3mp skey}
+   MAM:     אֹֽיְבֵיהֶ֔ם
+   verdict: both fit: same word and inflection; WLC lacks the shewa under the yod of the participle
+-- Obad 1:17  (anchor 31W2c)
+   morphhb: מוֹרָֽשֵׁי/הֶם{4180 HNcmpc/Sp3mp same}
+   MAM:     מוֹרָֽשֵׁיהֶֽם
+   verdict: agrees: the chanted word agrees with MAM's by the review key; no correction is possible here
+-- Jonah 1:3  (anchor 325SS)
+   morphhb: אָנִיָּ֣ה{591 HNcfsa skey}
+   MAM:     אֳנִיָּ֣ה
+   verdict: both fit: same word and inflection; qamats against hataf qamats under the alef
+-- Jonah 3:2  (anchor 32ki2)
+   morphhb: וִּ/קְרָ֤א{c/7121 HC/Vqv2ms skey}
+   MAM:     וּקְרָ֤א
+   verdict: anomaly: WLC has a hiriq on the conjunction vav that also carries its dot (Part 1, class c)
+-- Jonah 3:3  (anchor 32XMu)
+   morphhb: אֶל־{413 HR same} נִֽינְוֶ֖ה{5210 HNp skey}
+   MAM:     אֶל־ | נִֽינְוֵ֖ה
+   verdict: both fit: same word and inflection; segol against tsere in the last syllable of Nineveh
+-- Jonah 3:6  (anchor 32Sxc)
+   morphhb: אֶל־{413 HR same} מֶ֣לֶך{4428 HNcmsc skey}
+   MAM:     אֶל־ | מֶ֣לֶךְ
+   verdict: noise: the same word and inflection in both; final kaf without its shewa
+-- Hab 2:8  (anchor 35qK3)
+   morphhb: כִּֽי{3588 a HC same}
+   MAM:     כִּֽי־
+   verdict: agrees: the chanted word agrees with MAM's by the review key; no correction is possible here
+-- Hab 3:3  (anchor 35ACh)
+   morphhb: אֱל֨וֹהַ֙{433 HNcmsa skey}
+   MAM:     אֱל֙וֹהַּ֙
+   verdict: anomaly: WLC lacks the mappiq in the root's final he; same word
+-- Zech 1:4  (anchor 38fsu)
+   morphhb: ו/מעלילי/כם{c/4611 HC/Ncmpc/Sp2mp same} וּ/מַֽעֲלְלֵי/כֶ֖ם{c/4611 HC/Ncmpc/Sp2mp skey}
+   MAM:     ומעליליכם | וּמַֽעַלְלֵיכֶ֖ם
+   verdict: both fit: same word and inflection; the qere has hataf patah against patah under the ayin
+-- Zech 1:10  (anchor 38Qa3)
+   morphhb: בֵּין־{996 HR same} הַ/הַדַסִּ֖ים{d/1918 HTd/Ncmpa skey}
+   MAM:     בֵּין־ | הַהֲדַסִּ֖ים
+   verdict: both fit: same word and inflection; patah against hataf patah under the second he
+-- Zech 2:2  (anchor 38ZpQ)
+   morphhb: וִ/ירוּשָׁלָֽם{c/3389 HC/Np skey}
+   MAM:     וִירוּשָׁלָֽ͏ִם
+   verdict: both fit: same word and inflection; Jerusalem with and without MAM's hiriq before the final mem (Part 1, class c)
+-- Zech 4:2  (anchor 38Djb)
+   morphhb: וְ/גֻלָּ֣הּ{c/1543 HC/Ncfsa same}
+   MAM:     וְגֻלָּ֣הּ
+   verdict: agrees: the chanted word agrees with MAM's by the review key; no correction is possible here
+-- Zech 6:7  (anchor 382u6)
+   morphhb: לְ/הִתְהַלֵּ֣ך{l/1980 HR/Vtc skey}
+   MAM:     לְהִתְהַלֵּ֣ךְ
+   verdict: both fit: same word and inflection; final kaf without its shewa
+-- Zech 8:14  (anchor 38ojQ)
+   morphhb: זָמַמְ֜תִּי{2161 HVqp1cs same}
+   MAM:     זָמַ֜מְתִּי
+   verdict: agrees: the chanted word agrees with MAM's by the review key; no correction is possible here
+-- Zech 10:2  (anchor 383fz)
+   morphhb: הַ/שָּׁ֣וא{d/7723 HTd/Ncmsa skey}
+   MAM:     הַשָּׁ֣וְא
+   verdict: both fit: same word and inflection; WLC lacks the shewa under the vav
+-- Zech 14:4  (anchor 38dP1)
+   morphhb: הַ/זֵּתִ֜ים{d/2132 HTd/Ncmpa letters}
+   MAM:     הַזֵּיתִ֜ים
+   verdict: both fit: same word and inflection; defective against plene spelling of 'olives'
+-- Mal 1:9  (anchor 39TXw)
+   morphhb: וִֽ/יחָנֵ֑/נוּ{c/2603 a HC/Vqj3ms/Sp1cp skey}
+   MAM:     וִֽיחׇנֵּ֑נוּ
+   verdict: both fit: same word and inflection; WLC lacks the dagesh in the nun before the suffix
+-- Prov 1:17  (anchor 20zio)
+   morphhb: כָל־{3605 HNcmsc skey} בַּ֥עַל{1167 HNcmsc same}
+   MAM:     כׇּל־ | בַּ֥עַל
+   verdict: both fit: same word and inflection; WLC lacks the dagesh in the kaf of 'all'
+-- Prov 5:22  (anchor 207Ch)
+   morphhb: עַֽווֹנוֹתָ֗י/ו{5771 HNcbpc/Sp3ms letters}
+   MAM:     עֲֽווֹנֹתָ֗יו
+   verdict: both fit: same word and inflection; plene against defective spelling and patah against hataf patah
+-- Prov 7:22  (anchor 20EJP)
+   morphhb: אֶל־{413 HR same} טָ֣בַח{2874 HNcmsa skey}
+   MAM:     אֶל־ | טֶ֣בַח
+   verdict: defensible: WLC's qamats under the tet is the pausal vowel of the noun 'slaughter', here under a conjunctive accent; as written it could also be a Qal perfect, which cannot follow the preposition; lemma 2874 and the noun morph fit WLC's form read as the noun
+-- Prov 8:20  (anchor 20tNW)
+   morphhb: אֲהַלֵּ֑ך{1980 HVpi1cs skey}
+   MAM:     אֲהַלֵּ֑ךְ
+   verdict: both fit: same word and inflection; final kaf without its shewa
+-- Prov 8:28  (anchor 20uSP)
+   morphhb: תְּהוֹם{8415 HNcbsa same}
+   MAM:     תְּהֽוֹם
+   verdict: agrees: the chanted word agrees with MAM's by the review key; no correction is possible here
+-- Prov 11:30  (anchor 20agh)
+   morphhb: נְפָשׂ֣וֹת{5315 HNcbpa skey}
+   MAM:     נְפָשׁ֣וֹת
+   verdict: anomaly: WLC has a sin dot for the shin of 'souls'; same word
+-- Prov 15:3  (anchor 20agt)
+   morphhb: ו/טוֹבִֽים{c/2896 a HC/Aampa skey}
+   MAM:     וְטוֹבִֽים
+   verdict: both fit: same word and inflection; WLC's conjunction vav has no vowel
+-- Prov 15:18  (anchor 20hNP)
+   morphhb: וְ/אֶ֥רֶך{c/750 HC/Aamsc skey}
+   MAM:     וְאֶ֥רֶךְ
+   verdict: both fit: same word and inflection; final kaf without its shewa
+-- Prov 19:4  (anchor 20atD)
+   morphhb: מֵרֵ֥ע/הוּ{7453 HNcmsc/Sp3ms skey}
+   MAM:     מֵרֵעֵ֥הוּ
+   verdict: both fit: same word and inflection; WLC lacks the tsere under the ayin; the lemma 7453 without the preposition's prefix is morphhb's choice for either form
+-- Prov 19:11  (anchor 20x6j)
+   morphhb: וְ֝/תִפאַרְתּ֗/וֹ{c/8597 HC/Ncfsc/Sp3ms skey}
+   MAM:     וְ֝תִפְאַרְתּ֗וֹ
+   verdict: both fit: same word and inflection; WLC lacks the shewa under the pe
+-- Prov 19:27  (anchor 20GSm)
+   morphhb: חַֽדַל־{2308 HVqv2ms skey} בְּ֭נִ/י{1121 a HNcmsc/Sp1cs same}
+   MAM:     חֲֽדַל־ | בְּ֭נִי
+   verdict: both fit: same word and inflection; patah against hataf patah under the het of the imperative
+-- Prov 20:1  (anchor 20Rm3)
+   morphhb: הַ֭/יַּין{d/3196 HTd/Ncmsa skey}
+   MAM:     הַ֭יַּיִן
+   verdict: anomaly: WLC lacks the hiriq under the first yod of 'wine' (Part 1, class c)
+-- Prov 21:11  (anchor 203kE)
+   morphhb: בַּ/עְנָשׁ־{b/6064 HR/Vqc skey} לֵ֭ץ{3887 HAamsa same}
+   MAM:     בַּֽעֲנׇשׁ־ | לֵ֭ץ
+   verdict: both fit: same word and inflection; shewa against hataf patah under the ayin of the infinitive
+-- Prov 31:12  (anchor 20cd3)
+   morphhb: חַיֶּֽי/ה{2416 e HNcmpc/Sp3fs skey}
+   MAM:     חַיֶּֽיהָ
+   verdict: anomaly: WLC lacks the mappiq of the third feminine suffix (Part 1, class c)
+-- Song 5:2  (anchor 22m3h)
+   morphhb: קְוֻּצּוֹתַ֖/י{6977 HNcfpc/Sp1cs skey}
+   MAM:     קְוֻצּוֹתַ֖י
+   verdict: both fit: same word and inflection; WLC has a dagesh in the vav of 'locks'
+-- Song 5:11  (anchor 22k23)
+   morphhb: קְוּצּוֹתָי/ו֙{6977 HNcfpc/Sp3ms skey}
+   MAM:     קְוֻצּוֹתָיו֙
+   verdict: anomaly: WLC writes the vav of 'locks' with a dot and a shewa (Part 1, class c)
+-- Ruth 3:9  (anchor 08MZ9)
+   morphhb: מִי־{4310 HTi same} אָ֑תּ{859 c HPp2fs skey}
+   MAM:     מִי־ | אָ֑תְּ
+   verdict: anomaly: WLC has a dagesh in the final tav of the feminine pronoun and no shewa (note U); same word
+-- Eccl 11:6  (anchor 21K4a)
+   morphhb: יוֹדֵ֜ע{3045 HVqrmsa skey}
+   MAM:     יוֹדֵ֜עַ
+   verdict: noise: the same word and inflection in both; WLC lacks the furtive patah (note U)
+-- Esth 3:6  (anchor 17GFP)
+   morphhb: לִ/שְׁלֹ֤ח{l/7971 HR/Vqc skey}
+   MAM:     לִשְׁלֹ֤חַ
+   verdict: noise: the same word and inflection in both; WLC lacks the furtive patah (note U)
+-- Ezra 3:11  (anchor 15NW8)
+   morphhb: תְרוּעָ֨ה{8643 HNcfsa same}
+   MAM:     תְרוּעָ֨ה
+   verdict: agrees: the chanted word agrees with MAM's by the review key; no correction is possible here
+-- Ezra 10:32  (anchor 15fw9)
+   morphhb: בְּנְיָמִ֥ן{1144 HNp skey}
+   MAM:     בִּנְיָמִ֥ן
+   verdict: anomaly: WLC has a shewa under the bet of Benjamin where MAM has a hiriq (Part 1's footnote cases, class c)
+-- Neh 1:6  (anchor 16A74)
+   morphhb: פְתֻוּח֟וֹת{6605 a HVqsfpa skey}
+   MAM:     פְתוּח֟וֹת
+   verdict: both fit: same word and inflection; WLC writes a qibbuts before the dotted vav of the passive participle
+-- Neh 6:8  (anchor 16VUr)
+   morphhb: בוֹדָֽא/ם{908 HVqrmsc/Sp3mp same}
+   MAM:     בוֹדָֽאם
+   verdict: agrees: the chanted word agrees with MAM's by the review key; no correction is possible here
+-- Neh 9:14  (anchor 16tnE)
+   morphhb: הוֹדַ֣עַתָ{3045 HVhp2ms skey}
+   MAM:     הוֹדַ֣עְתָּ
+   verdict: anomaly: WLC has a patah under the ayin and no dagesh in the tav of a Hiphil perfect (Part 1, class c)
+
+== 4. Every chanted word, under any note letter, with a word that the general test flags
+-- Gen 34:11  note 1  (anchor 011Dh)  [back-off only]
+   morphhb: אֶל־{413 HR same} אָבִ֣י/ה{1 HNcmsc/Sp3fs skey}
+   MAM:     אֶל־ | אָבִ֣יהָ
+   general test: 011Dh pairs flags [] back-off A ['lemma', 'morph', 'pair'] B []; verdict anomaly: WLC lacks the mappiq of the third feminine suffix; without it the form is no word, so the suffix in the morph is the only analysis (Part 1, class c)
+-- Gen 39:19  note 1  (anchor 01oc4)  [back-off only]
+   morphhb: עָ֥שָׂהּ{6213 a HVqp3ms skey}
+   MAM:     עָ֥שָׂה
+   general test: 01oc4 pairs flags [] back-off A ['morph', 'pair'] B []; verdict correction: WLC has a mappiq in the final he, which as written makes the form a perfect with a third feminine suffix (he did it); the morph HVqp3ms, without a suffix, analyses MAM's form, which has no mappiq; WLC 4.18 and 4.20 have note 1 at the word, 4.22 note U, and UXLC 2.6 drops the mappiq; a correction of a mark
+-- Gen 41:46  note 1  (anchor 01muR)  [back-off only]
+   morphhb: וַֽ/יַּעְבֹ֖ר{c/5674 a HC/Vqw3ms skey}
+   MAM:     וַֽיַּעֲבֹ֖ר
+   general test: 01muR pairs flags [] back-off A ['morph', 'pair'] B []; verdict noise: the same word and inflection in both; silent shewa against hataf patah under the ayin
+-- Gen 43:7  note 1  (anchor 01GLo)  [back-off only]
+   morphhb: וַ/נַ֨גֶּד־{c/5046 HC/Vhw1cp skey} ל֔/וֹ{l HR/Sp3ms same}
+   MAM:     וַנַּ֨גֶּד־ | ל֔וֹ
+   general test: 01yxi pairs flags [] back-off A ['lemma', 'morph', 'pair'] B []; verdict noise: the same word and inflection in both; WLC lacks the dagesh of the wayyiqtol prefix
+-- Num 16:21  note 1  (anchor 04dUR)  [back-off only]
+   morphhb: וַ/אַכַלֶּ֥ה{c/3615 HC/Vph1cs skey}
+   MAM:     וַאֲכַלֶּ֥ה
+   general test: 04dUR pairs flags [] back-off A ['lemma'] B []; verdict noise: the same word and inflection in both; patah against hataf patah under the alef of a Piel first person; the back-off flag comes from the other forms with these letters, which are of 'eat'
+-- Num 16:27  note 1  (anchor 04c2q)  [back-off only]
+   morphhb: מִשְׁכַּן־{4908 HNcmsc same} קֹ֛רֶח{7141 HNp skey}
+   MAM:     מִשְׁכַּן־ | קֹ֛רַח
+   general test: 04c2q pairs flags [] back-off A ['lemma', 'pair'] B []; verdict anomaly: WLC has a segol for the patah of the name Korah, under note 1; same name
+-- Num 19:21  note 1  (anchor 04fo4)  [back-off only]
+   morphhb: לָּ/הֶ֖ם{l HR/Sp3mp skey}
+   MAM:     לָהֶ֖ם
+   general test: 04fo4 pairs flags [] back-off A ['morph', 'pair'] B []; verdict noise: the same word and inflection in both; a dagesh that WLC has and MAM lacks, or the reverse, in a letter where it changes no analysis
+-- Deut 2:9  note U  (anchor 05k23)
+   morphhb: אֶל־{408 HR skey} תָּ֨צַר֙{6696 b HVqj2ms same}
+   MAM:     אַל־ | תָּ֙צַר֙
+   general test: 057a3 pairs flags ['lemma'] back-off A [] B []; verdict correction: WLC has the segol form (the preposition), MAM the patah form (the negative); lemma 408 analyses MAM's form, morph HR WLC's; WLC's note U at the chanted word (known case)
+-- Judg 3:25  note Q  (anchor 07PaR)  [back-off only]
+   morphhb: וְ/הְנֵּ֛ה{c/2009 HC/Tm skey}
+   MAM:     וְהִנֵּ֛ה
+   general test: 07PaR pairs flags [] back-off A ['lemma', 'morph', 'pair'] B []; verdict anomaly: WLC has a shewa under the he of 'behold' (notes Q, n, v); no other word
+-- Judg 3:25  note n  (anchor 07PaR)  [back-off only]
+   morphhb: וְ/הְנֵּ֛ה{c/2009 HC/Tm skey}
+   MAM:     וְהִנֵּ֛ה
+   general test: 07PaR pairs flags [] back-off A ['lemma', 'morph', 'pair'] B []; verdict anomaly: WLC has a shewa under the he of 'behold' (notes Q, n, v); no other word
+-- Judg 3:25  note v  (anchor 07PaR)  [back-off only]
+   morphhb: וְ/הְנֵּ֛ה{c/2009 HC/Tm skey}
+   MAM:     וְהִנֵּ֛ה
+   general test: 07PaR pairs flags [] back-off A ['lemma', 'morph', 'pair'] B []; verdict anomaly: WLC has a shewa under the he of 'behold' (notes Q, n, v); no other word
+-- Judg 6:12  note Q  (anchor 07cwR)  [back-off only]
+   morphhb: מַלְּאַ֣ךְ{4397 HNcmsc skey}
+   MAM:     מַלְאַ֣ךְ
+   general test: 07cwR pairs flags [] back-off A ['morph', 'pair'] B []; verdict noise: the same word and inflection in both; a dagesh that WLC has and MAM lacks, or the reverse, in a letter where it changes no analysis
+-- Judg 6:12  note n  (anchor 07cwR)  [back-off only]
+   morphhb: מַלְּאַ֣ךְ{4397 HNcmsc skey}
+   MAM:     מַלְאַ֣ךְ
+   general test: 07cwR pairs flags [] back-off A ['morph', 'pair'] B []; verdict noise: the same word and inflection in both; a dagesh that WLC has and MAM lacks, or the reverse, in a letter where it changes no analysis
+-- Judg 6:12  note p  (anchor 07cwR)  [back-off only]
+   morphhb: מַלְּאַ֣ךְ{4397 HNcmsc skey}
+   MAM:     מַלְאַ֣ךְ
+   general test: 07cwR pairs flags [] back-off A ['morph', 'pair'] B []; verdict noise: the same word and inflection in both; a dagesh that WLC has and MAM lacks, or the reverse, in a letter where it changes no analysis
+-- Judg 6:34  note Q  (anchor 071L6)  [back-off only]
+   morphhb: וַ/יִזָּעֵ֥ק{c/2199 HC/VNw3ms skey}
+   MAM:     וַיִּזָּעֵ֥ק
+   general test: 071L6 pairs flags [] back-off A ['morph', 'pair'] B []; verdict noise: the same word and inflection in both; WLC lacks the dagesh of the wayyiqtol prefix
+-- Judg 6:34  note n  (anchor 071L6)  [back-off only]
+   morphhb: וַ/יִזָּעֵ֥ק{c/2199 HC/VNw3ms skey}
+   MAM:     וַיִּזָּעֵ֥ק
+   general test: 071L6 pairs flags [] back-off A ['morph', 'pair'] B []; verdict noise: the same word and inflection in both; WLC lacks the dagesh of the wayyiqtol prefix
+-- Judg 6:34  note p  (anchor 071L6)  [back-off only]
+   morphhb: וַ/יִזָּעֵ֥ק{c/2199 HC/VNw3ms skey}
+   MAM:     וַיִּזָּעֵ֥ק
+   general test: 071L6 pairs flags [] back-off A ['morph', 'pair'] B []; verdict noise: the same word and inflection in both; WLC lacks the dagesh of the wayyiqtol prefix
+-- Judg 6:35  note Q  (anchor 07RCv)  [back-off only]
+   morphhb: וַ/יִזָּעֵ֥ק{c/2199 HC/VNw3ms skey}
+   MAM:     וַיִּזָּעֵ֥ק
+   general test: 07RCv pairs flags [] back-off A ['morph', 'pair'] B []; verdict noise: the same word and inflection in both; WLC lacks the dagesh of the wayyiqtol prefix
+-- Judg 6:35  note n  (anchor 07RCv)  [back-off only]
+   morphhb: וַ/יִזָּעֵ֥ק{c/2199 HC/VNw3ms skey}
+   MAM:     וַיִּזָּעֵ֥ק
+   general test: 07RCv pairs flags [] back-off A ['morph', 'pair'] B []; verdict noise: the same word and inflection in both; WLC lacks the dagesh of the wayyiqtol prefix
+-- Judg 6:35  note p  (anchor 07RCv)  [back-off only]
+   morphhb: וַ/יִזָּעֵ֥ק{c/2199 HC/VNw3ms skey}
+   MAM:     וַיִּזָּעֵ֥ק
+   general test: 07RCv pairs flags [] back-off A ['morph', 'pair'] B []; verdict noise: the same word and inflection in both; WLC lacks the dagesh of the wayyiqtol prefix
+-- Judg 9:4  note P  (anchor 07g9e)  [back-off only]
+   morphhb: מִ/בֵּ֖יתּ{m/1004 b HR/Ncmsc skey}
+   MAM:     מִבֵּ֖ית
+   general test: 07g9e pairs flags [] back-off A ['morph', 'pair'] B []; verdict anomaly: WLC has a dagesh in the final tav (notes P, n, p); no other word
+-- Judg 9:4  note n  (anchor 07g9e)  [back-off only]
+   morphhb: מִ/בֵּ֖יתּ{m/1004 b HR/Ncmsc skey}
+   MAM:     מִבֵּ֖ית
+   general test: 07g9e pairs flags [] back-off A ['morph', 'pair'] B []; verdict anomaly: WLC has a dagesh in the final tav (notes P, n, p); no other word
+-- Judg 9:4  note p  (anchor 07g9e)  [back-off only]
+   morphhb: מִ/בֵּ֖יתּ{m/1004 b HR/Ncmsc skey}
+   MAM:     מִבֵּ֖ית
+   general test: 07g9e pairs flags [] back-off A ['morph', 'pair'] B []; verdict anomaly: WLC has a dagesh in the final tav (notes P, n, p); no other word
+-- Judg 9:5  note P  (anchor 07N1A)  [back-off only]
+   morphhb: שִׁבְּעִ֥ים{7657 HAcbpa skey}
+   MAM:     שִׁבְעִ֥ים
+   general test: 07N1A pairs flags [] back-off A ['lemma', 'morph', 'pair'] B []; verdict anomaly: WLC has a dagesh in the bet of 'seventy' (notes P, n, p); no other word
+-- Judg 9:5  note n  (anchor 07N1A)  [back-off only]
+   morphhb: שִׁבְּעִ֥ים{7657 HAcbpa skey}
+   MAM:     שִׁבְעִ֥ים
+   general test: 07N1A pairs flags [] back-off A ['lemma', 'morph', 'pair'] B []; verdict anomaly: WLC has a dagesh in the bet of 'seventy' (notes P, n, p); no other word
+-- Judg 9:5  note p  (anchor 07N1A)  [back-off only]
+   morphhb: שִׁבְּעִ֥ים{7657 HAcbpa skey}
+   MAM:     שִׁבְעִ֥ים
+   general test: 07N1A pairs flags [] back-off A ['lemma', 'morph', 'pair'] B []; verdict anomaly: WLC has a dagesh in the bet of 'seventy' (notes P, n, p); no other word
+-- Judg 11:35  note U  (anchor 07rMH)  [back-off only]
+   morphhb: הָיִ֣יתְ{1961 HVqp2fs skey}
+   MAM:     הָיִ֣ית
+   general test: 07rMH pairs flags [] back-off A ['morph', 'pair'] B []; verdict noise: the same word and inflection in both; the second feminine perfect with and without a final shewa
+-- Judg 19:23  note U  (anchor 07Lda)
+   morphhb: אַל־{413 HTn skey} בֵּיתִ֔/י{1004 b HNcmsc/Sp1cs same}
+   MAM:     אֶל־ | בֵּיתִ֔י
+   general test: 07HwX pairs flags ['lemma'] back-off A [] B []; verdict correction: WLC has the patah form (the negative), MAM the segol form (the preposition); lemma 413 analyses MAM's form, morph HTn WLC's; WLC's note U at the chanted word (known case)
+-- 2Sam 18:12  note k  (anchor 10uD3)  [back-off only]
+   morphhb: ו/לא{c/3863 HC/C same} וְ/ל֨וּא{c/3863 HC/C letters}
+   MAM:     ולא | וְל֨וּ
+   general test: 10uD3 letters_differ flags [] back-off A ['lemma', 'morph', 'pair'] B []; verdict defensible: WLC's qere spells 'if' with a final alef, a plene spelling attested elsewhere; lemma 3863 fits
+-- 2Sam 18:20  note a  (anchor 10SHe)  [back-off only]
+   morphhb: כִּֽי־{3588 c HC same} על{5921 b HR skey} עַל־{5921 b HR same} כֵּ֥ן{3651 b HTm same}
+   MAM:     כִּֽי־ | עַל־ | עַל־ | כֵּ֥ן
+   general test: 10vJw pairs flags [] back-off A ['lemma', 'morph', 'pair'] B []; verdict ketiv: a ketiv not read, unpointed in morphhb and pointed in MAM; the analysis fits the letters
+-- 2Sam 19:31  note 1  (anchor 10vyC)  [back-off only]
+   morphhb: הַ/מֶּ֛לֶך{d/4428 HTd/Ncmsa skey}
+   MAM:     הַמֶּ֛לֶךְ
+   general test: 10vyC pairs flags [] back-off A ['morph', 'pair'] B []; verdict noise: the same word and inflection in both; final kaf without its shewa
+-- 2Kgs 3:9  note 1  (anchor 12bea)  [back-off only]
+   morphhb: וּ/מֶֽלֶך־{c/4428 HC/Ncmsc skey} יְהוּדָה֙{3063 HNp same}
+   MAM:     וּמֶֽלֶךְ־ | יְהוּדָה֙
+   general test: 12eec pairs flags [] back-off A ['morph', 'pair'] B []; verdict noise: the same word and inflection in both; final kaf without its shewa
+-- 2Kgs 11:19  note 1  (anchor 12p6Q)  [back-off only]
+   morphhb: דֶּֽרֶך־{1870 HNcbsc skey} שַׁ֥עַר{8179 HNcmsc same}
+   MAM:     דֶּרֶךְ־ | שַׁ֥עַר
+   general test: 12Qpi pairs flags [] back-off A ['morph', 'pair'] B []; verdict noise: the same word and inflection in both; final kaf without its shewa
+-- 2Kgs 19:9  note 1  (anchor 12138)  [back-off only]
+   morphhb: מֶֽלֶך־{4428 HNcmsc skey} כּוּשׁ֙{3568 a HNp same}
+   MAM:     מֶֽלֶךְ־ | כּוּשׁ֙
+   general test: 12KYM pairs flags [] back-off A ['lemma', 'morph', 'pair'] B []; verdict noise: the same word and inflection in both; final kaf without its shewa
+-- 2Kgs 21:26  note 1  (anchor 12u96)  [back-off only]
+   morphhb: וַ/יִּקְבְֹּ֥ר{c/6912 HC/Vqw3ms skey}
+   MAM:     וַיִּקְבֹּ֥ר
+   general test: 12u96 pairs flags [] back-off A ['morph', 'pair'] B []; verdict anomaly: WLC 4.20 and 4.22 have both a shewa and a holam on the bet (WLC 4.18 the holam alone); same form
+-- Isa 49:7  note 1  (anchor 23tit)  [back-off only]
+   morphhb: וְ/יִֽשְׁתַּחֲוּ֑וּ{c/7812 HC/Vvi3mp skey}
+   MAM:     וְיִֽשְׁתַּחֲו֑וּ
+   general test: 23tit pairs flags [] back-off A ['morph', 'pair'] B []; verdict noise: morphhb labels this verb Hithpael in some places and Hishtaphel (stem v) in others; WLC's spelling with a dot in the middle vav correlates with one label, but both spellings are the same form
+-- Isa 62:3  note 1  (anchor 238w2)  [back-off only]
+   morphhb: וְ/הָיִ֛יתְ{c/1961 HC/Vqq2fs skey}
+   MAM:     וְהָיִ֛ית
+   general test: 238w2 pairs flags [] back-off A ['morph', 'pair'] B []; verdict noise: the same word and inflection in both; the second feminine perfect with and without a final shewa
+-- Ezek 13:16  note 1  (anchor 26Prq)  [back-off only]
+   morphhb: הַֽ/נִבְּאִים֙{d/5012 HTd/VNrmpa skey}
+   MAM:     הַֽנִּבְּאִים֙
+   general test: 26Prq pairs flags [] back-off A ['lemma', 'morph', 'pair'] B []; verdict noise: the same word and inflection in both; WLC lacks the dagesh after the article
+-- Hos 13:15  note U  (anchor 28sYk)
+   morphhb: בֵּ֥ן{996 HNcmsc letters}
+   MAM:     בֵּ֥ין
+   general test: 28sYk letters_differ flags ['lemma'] back-off A [] B []; verdict correction: WLC (all three versions) has the word spelled as 'son' (no yod), under note U, 'an unexpected reading'; MAM has 'between' (with the yod); lemma 996 ('between') analyses MAM's word; the morph HNcmsc fits 'son' in the construct (morphhb tags 'between' HR in its 167 other occurrences); the letters differ, so the review key cannot match them; read as a defective spelling of 'between' it would be an anomaly instead
+-- Jonah 3:2  note U  (anchor 32ki2)  [back-off only]
+   morphhb: וִּ/קְרָ֤א{c/7121 HC/Vqv2ms skey}
+   MAM:     וּקְרָ֤א
+   general test: 32ki2 pairs flags [] back-off A ['morph', 'pair'] B []; verdict anomaly: WLC has a hiriq on the conjunction vav that also carries its dot (Part 1, class c)
+-- Jonah 3:6  note U  (anchor 32Sxc)  [back-off only]
+   morphhb: אֶל־{413 HR same} מֶ֣לֶך{4428 HNcmsc skey}
+   MAM:     אֶל־ | מֶ֣לֶךְ
+   general test: 32Sxc pairs flags [] back-off A ['lemma', 'morph', 'pair'] B []; verdict noise: the same word and inflection in both; final kaf without its shewa
+-- Hab 3:19  note Q  (anchor 35QUP)  [back-off only]
+   morphhb: יְהוִ֤הּ{3069 HNp skey}
+   MAM:     יֱהֹוִ֤ה
+   general test: 35QUP pairs flags [] back-off A ['lemma', 'pair'] B []; verdict anomaly: WLC's divine name, read Elohim, has a shewa and a mappiq where MAM has a hataf segol and a holam; lemma 3069 fits both
+-- Hab 3:19  note n  (anchor 35QUP)  [back-off only]
+   morphhb: יְהוִ֤הּ{3069 HNp skey}
+   MAM:     יֱהֹוִ֤ה
+   general test: 35QUP pairs flags [] back-off A ['lemma', 'pair'] B []; verdict anomaly: WLC's divine name, read Elohim, has a shewa and a mappiq where MAM has a hataf segol and a holam; lemma 3069 fits both
+-- Hab 3:19  note p  (anchor 35QUP)  [back-off only]
+   morphhb: יְהוִ֤הּ{3069 HNp skey}
+   MAM:     יֱהֹוִ֤ה
+   general test: 35QUP pairs flags [] back-off A ['lemma', 'pair'] B []; verdict anomaly: WLC's divine name, read Elohim, has a shewa and a mappiq where MAM has a hataf segol and a holam; lemma 3069 fits both
+-- Zeph 3:17  note Q  (anchor 3631Z)  [back-off only]
+   morphhb: בְּ/קִרְבֵּ֖/ך{b/7130 HR/Ncmsc/Sp2fs skey}
+   MAM:     בְּקִרְבֵּ֖ךְ
+   general test: 3631Z pairs flags [] back-off A ['morph', 'pair'] B []; verdict noise: the same word and inflection in both; final kaf without its shewa
+-- Job 1:21  note 1  (anchor 18d3U)  [back-off only]
+   morphhb: שָׁ֔מָ/ה{8033 HD/Sd skey}
+   MAM:     שָׁ֔מָּה
+   general test: 18d3U pairs flags [] back-off A ['lemma', 'morph', 'pair'] B []; verdict noise: the same word and inflection in both; WLC lacks the dagesh in the mem of 'thither'
+-- Ruth 2:9  note Q  (anchor 085eq)  [back-off only]
+   morphhb: וְ/הָלַ֣כְתִּ{c/1980 HC/Vqq2fs skey}
+   MAM:     וְהָלַ֣כְתְּ
+   general test: 085eq pairs flags [] back-off A ['morph', 'pair'] B []; verdict defensible: WLC's hiriq on the final tav is the archaic second feminine ending; the morph HC/Vqq2fs fits both forms
+-- Ruth 2:9  note n  (anchor 085eq)  [back-off only]
+   morphhb: וְ/הָלַ֣כְתִּ{c/1980 HC/Vqq2fs skey}
+   MAM:     וְהָלַ֣כְתְּ
+   general test: 085eq pairs flags [] back-off A ['morph', 'pair'] B []; verdict defensible: WLC's hiriq on the final tav is the archaic second feminine ending; the morph HC/Vqq2fs fits both forms
+-- Ruth 2:9  note v  (anchor 085eq)  [back-off only]
+   morphhb: וְ/הָלַ֣כְתִּ{c/1980 HC/Vqq2fs skey}
+   MAM:     וְהָלַ֣כְתְּ
+   general test: 085eq pairs flags [] back-off A ['morph', 'pair'] B []; verdict defensible: WLC's hiriq on the final tav is the archaic second feminine ending; the morph HC/Vqq2fs fits both forms
+-- Ruth 2:11  note Q  (anchor 08w1U)  [back-off only]
+   morphhb: אָּבִ֣י/ךְ{1 HNcmsc/Sp2fs skey}
+   MAM:     אָבִ֣יךְ
+   general test: 08w1U pairs flags [] back-off A ['morph', 'pair'] B []; verdict anomaly: WLC has a dagesh in the alef (notes Q, n, p); same word
+-- Ruth 2:11  note n  (anchor 08w1U)  [back-off only]
+   morphhb: אָּבִ֣י/ךְ{1 HNcmsc/Sp2fs skey}
+   MAM:     אָבִ֣יךְ
+   general test: 08w1U pairs flags [] back-off A ['morph', 'pair'] B []; verdict anomaly: WLC has a dagesh in the alef (notes Q, n, p); same word
+-- Ruth 2:11  note p  (anchor 08w1U)  [back-off only]
+   morphhb: אָּבִ֣י/ךְ{1 HNcmsc/Sp2fs skey}
+   MAM:     אָבִ֣יךְ
+   general test: 08w1U pairs flags [] back-off A ['morph', 'pair'] B []; verdict anomaly: WLC has a dagesh in the alef (notes Q, n, p); same word
+-- Ruth 3:9  note U  (anchor 08MZ9)  [back-off only]
+   morphhb: מִי־{4310 HTi same} אָ֑תּ{859 c HPp2fs skey}
+   MAM:     מִי־ | אָ֑תְּ
+   general test: 08MZ9 pairs flags [] back-off A ['lemma', 'morph', 'pair'] B []; verdict anomaly: WLC has a dagesh in the final tav of the feminine pronoun and no shewa (note U); same word
+-- Eccl 5:17  note Q  (anchor 21yrH)  [back-off only]
+   morphhb: יְמֵי־{3117 HNcmpc same} חי/ו{2416 e HNcmpc/Sp3ms skey} חַיָּ֛י/ו{2416 e HNcmpc/Sp3ms letters}
+   MAM:     יְמֵי־ | חַיָּ֛ו | חַיָּ֛ו
+   general test: 21P5E pairs flags [] back-off A ['lemma', 'morph', 'pair'] B []; verdict ketiv: morphhb's unpointed ketiv against MAM's pointed one; the analysis fits
+-- Eccl 5:17  note q  (anchor 21yrH)  [back-off only]
+   morphhb: יְמֵי־{3117 HNcmpc same} חי/ו{2416 e HNcmpc/Sp3ms skey} חַיָּ֛י/ו{2416 e HNcmpc/Sp3ms letters}
+   MAM:     יְמֵי־ | חַיָּ֛ו | חַיָּ֛ו
+   general test: 21P5E pairs flags [] back-off A ['lemma', 'morph', 'pair'] B []; verdict ketiv: morphhb's unpointed ketiv against MAM's pointed one; the analysis fits
+-- Eccl 9:15  note Q  (anchor 21zSa)  [back-off only]
+   morphhb: הַ/הּֽוּא{d/1931 HTd/Pp3ms skey}
+   MAM:     הַהֽוּא
+   general test: 21zSa pairs flags [] back-off A ['morph', 'pair'] B []; verdict anomaly: WLC has a mappiq in the he of the pronoun (notes Q, n, p); same word
+-- Eccl 9:15  note n  (anchor 21zSa)  [back-off only]
+   morphhb: הַ/הּֽוּא{d/1931 HTd/Pp3ms skey}
+   MAM:     הַהֽוּא
+   general test: 21zSa pairs flags [] back-off A ['morph', 'pair'] B []; verdict anomaly: WLC has a mappiq in the he of the pronoun (notes Q, n, p); same word
+-- Eccl 9:15  note p  (anchor 21zSa)  [back-off only]
+   morphhb: הַ/הּֽוּא{d/1931 HTd/Pp3ms skey}
+   MAM:     הַהֽוּא
+   general test: 21zSa pairs flags [] back-off A ['morph', 'pair'] B []; verdict anomaly: WLC has a mappiq in the he of the pronoun (notes Q, n, p); same word
+-- Eccl 11:6  note U  (anchor 21K4a)  [back-off only]
+   morphhb: יוֹדֵ֜ע{3045 HVqrmsa skey}
+   MAM:     יוֹדֵ֜עַ
+   general test: 21K4a pairs flags [] back-off A ['morph', 'pair'] B []; verdict noise: the same word and inflection in both; WLC lacks the furtive patah (note U)
+-- Esth 3:6  note U  (anchor 17GFP)  [back-off only]
+   morphhb: לִ/שְׁלֹ֤ח{l/7971 HR/Vqc skey}
+   MAM:     לִשְׁלֹ֤חַ
+   general test: 17GFP pairs flags [] back-off A ['morph', 'pair'] B []; verdict noise: the same word and inflection in both; WLC lacks the furtive patah (note U)
+-- Dan 3:15  note 1  (anchor 27eWV)
+   morphhb: דֵּ֥י{1768 ATr skey}
+   MAM:     דִּ֥י
+   general test: 27eWV pairs flags ['lemma', 'morph', 'pair'] back-off A [] B []; verdict anomaly: WLC has a tsere under the dalet of the Aramaic relative particle, MAM a hiriq, under WLC's note 1; the six other words of WLC's form are the Hebrew noun 'enough', which an Aramaic passage cannot have; lemma 1768 and morph ATr are the only analysis
+-- Dan 4:22  note n  (anchor 27YMF)  [back-off only]
+   morphhb: עֲלָ֑/יךְ{5922 AR/Sp2ms skey} עֲלָ֑/יךְ{5922 AR/Sp2ms letters}
+   MAM:     עליך | עֲלָ֑ךְ
+   general test: 27YMF pairs flags [] back-off A ['lemma', 'morph', 'pair'] B []; verdict ketiv: WLC (and morphhb) has one pointed word where MAM has a ketiv and a qere; the analysis fits
+   general test: 27YMF letters_differ flags [] back-off A ['lemma', 'morph', 'pair'] B []; verdict ketiv: WLC (and morphhb) has one pointed word where MAM has a ketiv and a qere; the analysis fits
+   general test: 27YMF pairs flags [] back-off A ['lemma', 'morph', 'pair'] B []; verdict ketiv: WLC (and morphhb) has one pointed word where MAM has a ketiv and a qere; the analysis fits
+   general test: 27YMF letters_differ flags [] back-off A ['lemma', 'morph', 'pair'] B []; verdict ketiv: WLC (and morphhb) has one pointed word where MAM has a ketiv and a qere; the analysis fits
+-- Dan 4:22  note q  (anchor 27YMF)  [back-off only]
+   morphhb: עֲלָ֑/יךְ{5922 AR/Sp2ms skey} עֲלָ֑/יךְ{5922 AR/Sp2ms letters}
+   MAM:     עליך | עֲלָ֑ךְ
+   general test: 27YMF pairs flags [] back-off A ['lemma', 'morph', 'pair'] B []; verdict ketiv: WLC (and morphhb) has one pointed word where MAM has a ketiv and a qere; the analysis fits
+   general test: 27YMF letters_differ flags [] back-off A ['lemma', 'morph', 'pair'] B []; verdict ketiv: WLC (and morphhb) has one pointed word where MAM has a ketiv and a qere; the analysis fits
+   general test: 27YMF pairs flags [] back-off A ['lemma', 'morph', 'pair'] B []; verdict ketiv: WLC (and morphhb) has one pointed word where MAM has a ketiv and a qere; the analysis fits
+   general test: 27YMF letters_differ flags [] back-off A ['lemma', 'morph', 'pair'] B []; verdict ketiv: WLC (and morphhb) has one pointed word where MAM has a ketiv and a qere; the analysis fits
+
+== 5. Every chanted word that differs from MAM, by note letter (one line each)
+-- note U: 59
+   Deut 2:9       אֶל־{408 HR skey} תָּ֨צַר֙{6696 b HVqj2ms same} | MAM אַל־ | תָּ֙צַר֙
+   Deut 3:12      לָ/רֻֽאוּבֵנִ֖י{l/7206 HRd/Ngmsa skey} | MAM לָרֽאֿוּבֵנִ֖י
+   Deut 3:16      וְ/לָ/רֻאוּבֵנִ֨י{c/l/7206 HC/Rd/Ngmsa skey} | MAM וְלָראֿוּבֵנִ֨י
+   Deut 4:21      הִתְאַנֶּף־{599 HVtp3ms skey} בִּ֖/י{b HR/Sp1cs same} | MAM הִתְאַנַּף־ | בִּ֖י
+   Deut 4:35      מִ/לְ/בַדּֽ/וֹ{m/l/905 HR/R/Ncmsc/Sp3ms skey} | MAM מִלְּבַדּֽוֹ
+   Deut 4:43      לָ/רֻֽאוּבֵנִ֑י{l/7206 HRd/Ngmsa skey} | MAM לָרֽאֿוּבֵנִ֑י
+   Deut 9:3       וְ/הַֽאַבַדְתָּ/ם֙{c/6 HC/Vhq2ms/Sp3mp skey} | MAM וְהַֽאֲבַדְתָּם֙
+   Deut 12:3      אֶת־{853 HTo same} מִזְבּחֹתָ֗/ם{4196 HNcmpc/Sp3mp skey} | MAM אֶת־ | מִזְבְּחֹתָ֗ם
+   Deut 25:18     אַֽחַרֶ֔י/ךָ{310 a HR/Sp2ms skey} | MAM אַֽחֲרֶ֔יךָ
+   Deut 29:25     וַ/יִּֽשְׁתַּחֲוּ֖וּ{c/7812 HC/Vvw3mp skey} | MAM וַיִּֽשְׁתַּחֲו֖וּ
+   Deut 30:18     לָ/בֹ֥א{l/935 HR/Vqc letters} | MAM לָב֥וֹא
+   Judg 7:20      בְ/יַד־{b/3027 HR/Ncbsc same} שְׂמאוֹלָ/ם֙{8040 HNcmsc/Sp3mp skey} | MAM בְיַד־ | שְׂמֹאולָם֙
+   Judg 9:2       כִּֽי־{3588 a HC same} עַצְמֵ/כֶם{6106 HNcfsc/Sp2mp skey} | MAM כִּֽי־ | עַצְמְכֶ֥ם
+   Judg 11:35     הָיִ֣יתְ{1961 HVqp2fs skey} | MAM הָיִ֣ית
+   Judg 16:2      וַ/הֲרְגְנֻֽ/הוּ{c/2026 HC/Vqp1cp/Sp3ms skey} | MAM וַהֲרַגְנֻֽהוּ
+   Judg 16:23     נֶֽאֱסְפוּ֙{622 HVNp3cp skey} | MAM נֶֽאֶסְפוּ֙
+   Judg 19:23     אַל־{413 HTn skey} בֵּיתִ֔/י{1004 b HNcmsc/Sp1cs same} | MAM אֶל־ | בֵּיתִ֔י
+   Hos 2:4        מִ/פָּנֶ֔י/ה{m/6440 HR/Ncbpc/Sp3fs skey} | MAM מִפָּנֶ֔יהָ
+   Hos 2:17       וִּ/כְ/י֖וֹם{c/k/3117 HC/R/Ncmsc skey} | MAM וּכְי֖וֹם
+   Hos 9:4        יִטַמָּ֑אוּ{2930 a HVti3mp skey} | MAM יִטַּמָּ֑אוּ
+   Hos 9:7        הַ/שִׁלֻּ֔ם{d/7966 HTd/Ncmsa skey} | MAM הַשִּׁלֻּ֔ם
+   Hos 13:15      בֵּ֥ן{996 HNcmsc letters} | MAM בֵּ֥ין
+   Joel 1:15      מִ/שַׁדַּ֥י{m/7706 HR/Np skey} | MAM מִשַּׁדַּ֥י
+   Joel 2:12      וּ/בְ/בְכִ֖י{c/b/1065 HC/R/Ncmsa skey} | MAM וּבִבְכִ֖י
+   Amos 6:2       גַת־{1661 HNp same} פְּלִשְׁתּ֗ים{6430 HNgmpa skey} | MAM גַת־ | פְּלִשְׁתִּ֗ים
+   Amos 9:4       אֹֽיבֵי/הֶ֔ם{341 HVqrmpc/Sp3mp skey} | MAM אֹֽיְבֵיהֶ֔ם
+   Jonah 1:3      אָנִיָּ֣ה{591 HNcfsa skey} | MAM אֳנִיָּ֣ה
+   Jonah 3:2      וִּ/קְרָ֤א{c/7121 HC/Vqv2ms skey} | MAM וּקְרָ֤א
+   Jonah 3:3      אֶל־{413 HR same} נִֽינְוֶ֖ה{5210 HNp skey} | MAM אֶל־ | נִֽינְוֵ֖ה
+   Jonah 3:6      אֶל־{413 HR same} מֶ֣לֶך{4428 HNcmsc skey} | MAM אֶל־ | מֶ֣לֶךְ
+   Hab 3:3        אֱל֨וֹהַ֙{433 HNcmsa skey} | MAM אֱל֙וֹהַּ֙
+   Zech 1:4       ו/מעלילי/כם{c/4611 HC/Ncmpc/Sp2mp same} וּ/מַֽעֲלְלֵי/כֶ֖ם{c/4611 HC/Ncmpc/Sp2mp skey} | MAM ומעליליכם | וּמַֽעַלְלֵיכֶ֖ם
+   Zech 1:10      בֵּין־{996 HR same} הַ/הַדַסִּ֖ים{d/1918 HTd/Ncmpa skey} | MAM בֵּין־ | הַהֲדַסִּ֖ים
+   Zech 2:2       וִ/ירוּשָׁלָֽם{c/3389 HC/Np skey} | MAM וִירוּשָׁלָֽ͏ִם
+   Zech 6:7       לְ/הִתְהַלֵּ֣ך{l/1980 HR/Vtc skey} | MAM לְהִתְהַלֵּ֣ךְ
+   Zech 10:2      הַ/שָּׁ֣וא{d/7723 HTd/Ncmsa skey} | MAM הַשָּׁ֣וְא
+   Zech 14:4      הַ/זֵּתִ֜ים{d/2132 HTd/Ncmpa letters} | MAM הַזֵּיתִ֜ים
+   Mal 1:9        וִֽ/יחָנֵ֑/נוּ{c/2603 a HC/Vqj3ms/Sp1cp skey} | MAM וִֽיחׇנֵּ֑נוּ
+   Prov 1:17      כָל־{3605 HNcmsc skey} בַּ֥עַל{1167 HNcmsc same} | MAM כׇּל־ | בַּ֥עַל
+   Prov 5:22      עַֽווֹנוֹתָ֗י/ו{5771 HNcbpc/Sp3ms letters} | MAM עֲֽווֹנֹתָ֗יו
+   Prov 7:22      אֶל־{413 HR same} טָ֣בַח{2874 HNcmsa skey} | MAM אֶל־ | טֶ֣בַח
+   Prov 8:20      אֲהַלֵּ֑ך{1980 HVpi1cs skey} | MAM אֲהַלֵּ֑ךְ
+   Prov 11:30     נְפָשׂ֣וֹת{5315 HNcbpa skey} | MAM נְפָשׁ֣וֹת
+   Prov 15:3      ו/טוֹבִֽים{c/2896 a HC/Aampa skey} | MAM וְטוֹבִֽים
+   Prov 15:18     וְ/אֶ֥רֶך{c/750 HC/Aamsc skey} | MAM וְאֶ֥רֶךְ
+   Prov 19:4      מֵרֵ֥ע/הוּ{7453 HNcmsc/Sp3ms skey} | MAM מֵרֵעֵ֥הוּ
+   Prov 19:11     וְ֝/תִפאַרְתּ֗/וֹ{c/8597 HC/Ncfsc/Sp3ms skey} | MAM וְ֝תִפְאַרְתּ֗וֹ
+   Prov 19:27     חַֽדַל־{2308 HVqv2ms skey} בְּ֭נִ/י{1121 a HNcmsc/Sp1cs same} | MAM חֲֽדַל־ | בְּ֭נִי
+   Prov 20:1      הַ֭/יַּין{d/3196 HTd/Ncmsa skey} | MAM הַ֭יַּיִן
+   Prov 21:11     בַּ/עְנָשׁ־{b/6064 HR/Vqc skey} לֵ֭ץ{3887 HAamsa same} | MAM בַּֽעֲנׇשׁ־ | לֵ֭ץ
+   Prov 31:12     חַיֶּֽי/ה{2416 e HNcmpc/Sp3fs skey} | MAM חַיֶּֽיהָ
+   Song 5:2       קְוֻּצּוֹתַ֖/י{6977 HNcfpc/Sp1cs skey} | MAM קְוֻצּוֹתַ֖י
+   Song 5:11      קְוּצּוֹתָי/ו֙{6977 HNcfpc/Sp3ms skey} | MAM קְוֻצּוֹתָיו֙
+   Ruth 3:9       מִי־{4310 HTi same} אָ֑תּ{859 c HPp2fs skey} | MAM מִי־ | אָ֑תְּ
+   Eccl 11:6      יוֹדֵ֜ע{3045 HVqrmsa skey} | MAM יוֹדֵ֜עַ
+   Esth 3:6       לִ/שְׁלֹ֤ח{l/7971 HR/Vqc skey} | MAM לִשְׁלֹ֤חַ
+   Ezra 10:32     בְּנְיָמִ֥ן{1144 HNp skey} | MAM בִּנְיָמִ֥ן
+   Neh 1:6        פְתֻוּח֟וֹת{6605 a HVqsfpa skey} | MAM פְתוּח֟וֹת
+   Neh 9:14       הוֹדַ֣עַתָ{3045 HVhp2ms skey} | MAM הוֹדַ֣עְתָּ
+-- note 1: 124
+   Gen 2:18       אֶֽעֱשֶׂהּ־{6213 a HVqi1cs skey} לּ֥/וֹ{l HR/Sp3ms same} | MAM אֶֽעֱשֶׂה־ | לּ֥וֹ
+   Gen 6:16       תְּכַלֶ֣/נָּה{3615 HVpi2ms/Sp3fs skey} | MAM תְּכַלֶּ֣נָּה
+   Gen 7:23       וַ/יִשָּׁ֧אֶר{c/7604 HC/VNw3ms skey} | MAM וַיִּשָּׁ֧אֶר
+   Gen 14:10      הַ/שִׂדִּ֗ים{d/7708 HTd/Np skey} | MAM הַשִּׂדִּ֗ים
+   Gen 15:10      וְ/אֶת־{c/853 HC/To same} הַ/צִפֹּ֖ר{d/6833 HTd/Ncbsa skey} | MAM וְאֶת־ | הַצִּפֹּ֖ר
+   Gen 22:12      מְא֑וּמָּה{3972 HNcfsa skey} | MAM מְא֑וּמָה
+   Gen 24:36      וַ/יִּתֶּן־{c/5414 HC/Vqw3ms same} לּ֖/וֹ{l HR/Sp3ms skey} | MAM וַיִּתֶּן־ | ל֖וֹ
+   Gen 26:1       אֶל־{413 HR same} אֲבִימֶּ֥לֶךְ{40 HNp skey} | MAM אֶל־ | אֲבִימֶ֥לֶךְ
+   Gen 27:29      וְ/יִשְׁתַּחֲוּ֥וּ{c/7812 HC/Vvj3mp skey} | MAM וְיִשְׁתַּחֲו֥וּ
+   Gen 30:19      לְּ/יַעֲקֹֽב{l/3290 HR/Np skey} | MAM לְיַעֲקֹֽב
+   Gen 30:37      וְ/עֶרְמ֑וֹן{c/6196 HC/Ncmsa skey} | MAM וְעַרְמ֑וֹן
+   Gen 31:51      הַ/מַצֵּבָ֔ה{d/4676 HTd/Ncfsa skey} | MAM הַמַּצֵּבָ֔ה
+   Gen 32:18      יִֽפְגָּשְׁ/ךָ֞{6298 HVqi3ms/Sp2ms skey} | MAM יִֽפְגׇשְׁךָ֞
+   Gen 32:18      וִ/שְׁאֵֽלְ/ךָ֙{c/7592 HC/Vqq3ms/Sp2ms skey} | MAM וּשְׁאֵֽלְךָ֙
+   Gen 34:11      אֶל־{413 HR same} אָבִ֣י/ה{1 HNcmsc/Sp3fs skey} | MAM אֶל־ | אָבִ֣יהָ
+   Gen 34:28      וְ/אֶת־{c/853 HC/To same} חֲמֹרֵי/הֶּ֑ם{2543 HNcbpc/Sp3mp skey} | MAM וְאֶת־ | חֲמֹרֵיהֶ֑ם
+   Gen 38:16      מַה־{4100 HTi same} תִּתֶּן־{5414 HVqi2ms same} לִּ֔/י{l HR/Sp1cs skey} | MAM מַה־ | תִּתֶּן־ | לִ֔י
+   Gen 38:26      לְ/דַעְתָּֽ/ה{l/3045 HR/Vqc/Sp3fs skey} | MAM לְדַעְתָּֽהּ
+   Gen 39:19      עָ֥שָׂהּ{6213 a HVqp3ms skey} | MAM עָ֥שָׂה
+   Gen 40:3       הַ/טַבָּחִ֖ים{d/2876 HTd/Ncmpa skey} | MAM הַטַּבָּחִ֖ים
+   Gen 41:24      הָ/שִׁבֳּלִ֣ים{d/7641 b HTd/Ncfpa skey} | MAM הַשִּׁבֳּלִ֣ים
+   Gen 41:46      וַֽ/יַּעְבֹ֖ר{c/5674 a HC/Vqw3ms skey} | MAM וַֽיַּעֲבֹ֖ר
+   Gen 43:7       וַ/נַ֨גֶּד־{c/5046 HC/Vhw1cp skey} ל֔/וֹ{l HR/Sp3ms same} | MAM וַנַּ֨גֶּד־ | ל֔וֹ
+   Gen 43:28      ו/ישתחו{c/7812 HC/Vvw3ms same} וַ/יִּֽשְׁתַּחֲוּֽוּ{c/7812 HC/Vvw3mp skey} | MAM וישתחו | וַיִּֽשְׁתַּחֲוֽוּ
+   Gen 45:6       וְ/קָצִּֽיר{c/7105 a HC/Ncmsa skey} | MAM וְקָצִֽיר
+   Gen 49:8       יִשְׁתַּחֲוּ֥וּ{7812 HVvi3mp skey} | MAM יִשְׁתַּחֲו֥וּ
+   Gen 49:26      תִּֽהְיֶ֨ין֙{1961 HVqi3fp skey} | MAM תִּֽהְיֶ֙יןָ֙
+   Exod 1:3       וּ/בְנְיָמִֽן{c/1144 HC/Np skey} | MAM וּבִנְיָמִֽן
+   Exod 2:10      וַ/יִגְדַּ֣ל{c/1431 HC/Vqw3ms skey} | MAM וַיִּגְדַּ֣ל
+   Exod 4:31      וַ/יִּֽשְׁתַּחֲוּֽוּ{c/7812 HC/Vvw3mp skey} | MAM וַיִּֽשְׁתַּחֲוֽוּ
+   Exod 7:10      וַ/יַּ֣עַשׂוּ{c/6213 a HC/Vqw3mp skey} | MAM וַיַּ֣עֲשׂוּ
+   Exod 11:8      וְ/הִשְׁתַּֽחֲוּוּ־{c/7812 HC/Vvq3cp skey} לִ֣/י{l HR/Sp1cs same} | MAM וְהִשְׁתַּֽחֲווּ־ | לִ֣י
+   Exod 20:3      עַל־{5921 a HR same} פָּנָֽ/יַ{6440 HNcbpc/Sp1cs skey} | MAM עַל־ | פָּנָֽ͏ַ֗י
+   Exod 20:4      מִ/תָּ֑חַת{m/8478 HR/D skey} | MAM מִתָּ֑͏ַ֜חַת
+   Exod 27:15     חְמֵ֥שׁ{2568 HAcfsa skey} | MAM חֲמֵ֥שׁ
+   Exod 33:10     וְ/הִֽשְׁתַּחֲוּ֔וּ{c/7812 HC/Vvq3cp skey} | MAM וְהִֽשְׁתַּחֲו֔וּ
+   Exod 33:16     וְ/נִפְלֵ֨ינוּ֙{c/6395 HC/VNq1cp skey} | MAM וְנִפְלִ֙ינוּ֙
+   Exod 35:7      שִׂטִּֽים{7848 HNcfpa skey} | MAM שִׁטִּֽים
+   Lev 5:7        תַגִּ֣יע{5060 HVhi3fs skey} | MAM תַגִּ֣יעַ
+   Lev 6:6        תִכְבֶֽה{3518 HVqi3fs skey} | MAM תִכְבֶּֽה
+   Lev 25:46      וְ/הִתְנַחֲלְתֶּ֨ם{c/5157 HC/Vtq2mp skey} | MAM וְהִתְנַחַלְתֶּ֨ם
+   Num 3:30       אֶלִיצָפָ֖ן{469 HNp skey} | MAM אֱלִיצָפָ֖ן
+   Num 9:3        הָֽ/עֲרְבַּ֛יִם{d/6153 HTd/Ncmda skey} | MAM הָֽעַרְבַּ֛יִם
+   Num 10:9       וֲ/נִזְכַּרְתֶּ֗ם{c/2142 HC/VNq2mp skey} | MAM וְנִזְכַּרְתֶּ֗ם
+   Num 16:21      וַ/אַכַלֶּ֥ה{c/3615 HC/Vph1cs skey} | MAM וַאֲכַלֶּ֥ה
+   Num 16:27      מִשְׁכַּן־{4908 HNcmsc same} קֹ֛רֶח{7141 HNp skey} | MAM מִשְׁכַּן־ | קֹ֛רַח
+   Num 17:12      אֶל־{413 HR same} תּ֣וֹך{8432 HNcmsc skey} | MAM אֶל־ | תּ֣וֹךְ
+   Num 19:21      לָּ/הֶ֖ם{l HR/Sp3mp skey} | MAM לָהֶ֖ם
+   Num 21:13      מִ/גְּב֣וּל{m/1366 HR/Ncmsc letters} | MAM מִגְּבֻ֣ל
+   Num 25:2       וַ/יִּֽשְׁתַּחֲוּ֖וּ{c/7812 HC/Vvw3mp skey} | MAM וַיִּֽשְׁתַּחֲו֖וּ
+   Num 26:7       הָ/רֻֽאוּבֵנִ֑י{d/7206 HTd/Ngmsa skey} | MAM הָראֿוּבֵנִ֑י
+   1Sam 3:2       בִּ/מְקֹמ֑/וֹ{b/4725 HR/Ncmsc/Sp3ms letters} בִּ/מְקֹמ֑/וֹ{b/4725 HR/Ncmsc/Sp3ms letters} | MAM בִּמְקוֹמ֑וֹ | בִּמְקוֹמ֑וֹ וְעֵינָו֙
+   1Sam 6:12      וַ/יִשַּׁ֨רְנָה{c/3474 HC/Vqw3fp skey} | MAM וַיִּשַּׁ֨רְנָה
+   1Sam 9:21      מִ/קַּטַנֵּי֙{m/6996 a HR/Aampc skey} | MAM מִקְּטַנֵּי֙
+   1Sam 17:31     וַ/יְּשָּֽׁמְעוּ֙{c/8085 HC/VNw3mp skey} | MAM וַיִּשָּֽׁמְעוּ֙
+   1Sam 23:15     דָוִ֔ד{1732 HNp skey} | MAM דָּוִ֔ד
+   2Sam 3:32      וַ/יִשָּׂ֧א{c/5375 HC/Vqw3ms skey} | MAM וַיִּשָּׂ֧א
+   2Sam 11:1      הַ/מַּלְאֿכִ֗ים{d/4428 HTd/Ncmpa skey} | MAM הַמְּלָאכִ֗ים
+   2Sam 19:31     הַ/מֶּ֛לֶך{d/4428 HTd/Ncmsa skey} | MAM הַמֶּ֛לֶךְ
+   1Kgs 1:13      אֲדֹנִיָֽהוּ{138 HNp skey} | MAM אֲדֹנִיָּֽהוּ
+   1Kgs 2:13      בֶן־{1121 a HNcmsc same} חַגֵּ֗ית{2294 HNp skey} | MAM בֶן־ | חַגִּ֗ית
+   1Kgs 17:13     וְ/הוֹצֵ֣אתְ{c/3318 HC/Vhp2fs skey} | MAM וְהוֹצֵ֣את
+   1Kgs 21:8      אֶל־{413 HR same} הַ/זְקֵנִ֤ים{d/2205 HTd/Aampa skey} | MAM אֶל־ | הַזְּקֵנִ֤ים
+   1Kgs 22:29     וְ/יהוֹשָׁפָ֥ט{c/3092 HC/Np skey} | MAM וִיהוֹשָׁפָ֥ט
+   2Kgs 3:9       וּ/מֶֽלֶך־{c/4428 HC/Ncmsc skey} יְהוּדָה֙{3063 HNp same} | MAM וּמֶֽלֶךְ־ | יְהוּדָה֙
+   2Kgs 9:2       מִ/תּ֣וֹך{m/8432 HR/Ncmsc skey} | MAM מִתּ֣וֹךְ
+   2Kgs 11:19     דֶּֽרֶך־{1870 HNcbsc skey} שַׁ֥עַר{8179 HNcmsc same} | MAM דֶּרֶךְ־ | שַׁ֥עַר
+   2Kgs 17:21     וְ/הֶחֱטֵיאָ֖/ם{c/2398 HC/Vhp3ms/Sp3mp skey} | MAM וְהֶחֱטִיאָ֖ם
+   2Kgs 19:9      מֶֽלֶך־{4428 HNcmsc skey} כּוּשׁ֙{3568 a HNp same} | MAM מֶֽלֶךְ־ | כּוּשׁ֙
+   2Kgs 21:26     וַ/יִּקְבְֹּ֥ר{c/6912 HC/Vqw3ms skey} | MAM וַיִּקְבֹּ֥ר
+   Isa 2:15       גָּבֹ֑הַ{1364 HAamsa skey} | MAM גָּבֹ֑הַּ
+   Isa 5:16       וַ/יִּגְבַּ֛ה{c/1361 HC/Vqw3ms skey} | MAM וַיִּגְבַּ֛הּ
+   Isa 11:14      מִשְׁל֣וֹח{4916 b HNcmsc skey} | MAM מִשְׁל֣וֹחַ
+   Isa 13:22      בְּ/אַלְמנוֹתָ֔י/ו{b/490 HR/Ncfpc/Sp3ms skey} | MAM בְּאַלְמְנוֹתָ֔יו
+   Isa 22:21      וּ/מֶֽמְשֶׁלְתְּ/ךָ֖{c/4475 HC/Ncbsc/Sp2ms skey} | MAM וּמֶֽמְשַׁלְתְּךָ֖
+   Isa 27:1       בְּ/חַרְב֨/וֹ{b/2719 HR/Ncfsc/Sp3ms skey} | MAM בְּחַרְבּ֨וֹ
+   Isa 27:2       חֶ֖מֶד{2531 HNcmsa letters} | MAM חֶ֖מֶר
+   Isa 30:25      גָּבֹ֗הַ{1364 HAamsa skey} | MAM גָּבֹ֗הַּ
+   Isa 37:20      מִ/יָד֑/וֹ{m/3027 HR/Ncbsc/Sp3ms skey} | MAM מִיָּד֑וֹ
+   Isa 37:33      עֳלֶ֖י/הָ{5921 a HR/Sp3fs skey} | MAM עָלֶ֖יהָ
+   Isa 42:9       אַשְׁמִ֥יע{8085 HVhi1cs skey} | MAM אַשְׁמִ֥יעַ
+   Isa 45:14      יִֽשְׁתַּחֲוּוּ֙{7812 HVvi3mp skey} | MAM יִֽשְׁתַּחֲווּ֙
+   Isa 46:4       וְ/עַד־{c/5704 HC/R same} שֵיבָ֖ה{7872 HNcfsa skey} | MAM וְעַד־ | שֵׂיבָ֖ה
+   Isa 46:6       אַף־{637 HTa same} יִֽשְׁתַּחֲוּֽוּ{7812 HVvi3mp skey} | MAM אַף־ | יִֽשְׁתַּחֲוֽוּ
+   Isa 49:7       וְ/יִֽשְׁתַּחֲוּ֑וּ{c/7812 HC/Vvi3mp skey} | MAM וְיִֽשְׁתַּחֲו֑וּ
+   Isa 62:3       וְ/הָיִ֛יתְ{c/1961 HC/Vqq2fs skey} | MAM וְהָיִ֛ית
+   Jer 5:7        אסלוח־{5545 HVqi1cs letters} לָ֔/ךְ{l/5545 HR/Sp2fs letters} אֶֽסְלַֽח־{5545 HVqi1cs same} לָ֔/ךְ{l/5545 HR/Sp2fs same} | MAM אסלוחלָ֔ךְ | אסלוחלָ֔ךְ | אֶֽסְלַֽח־ | לָ֔ךְ
+   Jer 6:1        בִניָמִ֗ן{1144 HNp skey} | MAM בִנְיָמִ֗ן
+   Jer 27:20      אֶת־{853 HTo same} יְכָונְיָ֨ה{3204 HNp skey} יְכָונְיָ֨ה{3204 HNp letters} | MAM אֶת־ | יכוניה | יְכׇנְיָ֨ה
+   Jer 28:3       נְבוּכַדנֶאצַּ֤ר{5019 HNp skey} | MAM נְבוּכַדְנֶאצַּ֤ר
+   Jer 39:9       נְבֽוּזַר־{5018+ HNp letters} אֲדָ֥ן{5018 HNp letters} | MAM נְבוּזַרְאֲדָ֥ן | נְבוּזַרְאֲדָ֥ן
+   Jer 50:11      תעלזי{5937 HVqi2fs same} תַֽעֲלְז֔וּ{5937 HVqi2mp skey} | MAM תעלזי | תַעַלְז֔וּ
+   Ezek 1:11      גְּוִיֹתֵי/הֶֽנָה{1472 HNcfpc/Sp3fp skey} | MAM גְּוִיֹּתֵיהֶֽנָה
+   Ezek 13:16     הַֽ/נִבְּאִים֙{d/5012 HTd/VNrmpa skey} | MAM הַֽנִּבְּאִים֙
+   Ezek 16:24     גֶּ֑ב{1354 HNcbsa skey} | MAM גָּ֑ב
+   Ezek 18:29     יִתָּֽכְנּוּ֙{8505 HVNi3mp skey} | MAM יִתָּֽכְנוּ֙
+   Ezek 21:17     הָיתָ֣ה{1961 HVqp3fs skey} | MAM הָיְתָ֣ה
+   Ezek 21:31     הַגְבֵּ֔הַ{1361 HVha skey} | MAM הַגְבֵּ֔הַּ
+   Ezek 21:31     וְ/הַ/גָּבֹ֖הַ{c/d/1364 HC/Td/Aamsa skey} | MAM וְהַגָּבֹ֖הַּ
+   Ezek 27:27     בִדְקֵ֣/ך{919 HNcmsc/Sp2fs skey} | MAM בִדְקֵ֣ךְ
+   Ezek 27:29     מֵ/אָנִיּֽוֹתֵי/הֶ֗ם{m/591 HR/Ncfpc/Sp3mp skey} | MAM מֵאֳנִיּֽוֹתֵיהֶ֗ם
+   Ps 22:30       וַ/יִּֽשְׁתַּחֲוּ֨וּ{c/7812 HC/Vvw3mp skey} | MAM וַיִּֽשְׁתַּחֲו֨וּ
+   Ps 30:11       יְ֝הוָה{3068 HNp skey} | MAM יְ֝הֹוָ֗ה
+   Ps 105:28      אֶת־{853 HTo same} דברו/ו{1697 HNcmpc/Sp3ms letters} דְּבָרֽ/וֹ{1697 HNcmsc/Sp3ms same} | MAM אֶת־ | דבריו | דְּבָרֽוֹ
+   Ps 119:87      פִקֻּודֶֽי/ךָ{6490 HNcmpc/Sp2ms letters} | MAM פִקֻּדֶֽיךָ
+   Job 1:21       שָׁ֔מָ/ה{8033 HD/Sd skey} | MAM שָׁ֔מָּה
+   Job 8:1        וַ/יֹאמַֽר{c/559 HC/Vqw3ms skey} | MAM וַיֹּאמַֽר
+   Job 9:6        יִתְפַלָּצֽוּ/ן{6426 HVti3mp/Sn skey} | MAM יִתְפַּלָּצֽוּן
+   Job 11:3       יַחֲרִ֑ישׁו{2790 b HVhi3mp skey} | MAM יַחֲרִ֑ישׁוּ
+   Job 19:5       חֶרְפָּתִּֽ/י{2781 HNcfsc/Sp1cs skey} | MAM חֶרְפָּתִֽי
+   Job 22:21      וּ/שְׁלם{c/7999 b HC/Vqv2ms skey} | MAM וּשְׁלָ֑ם
+   Job 31:7       מֻאֽוּם{3971 a HNcmsa skey} | MAM מֽאֿוּם
+   Job 36:12      כִּ/בְלִי־{k/1097 HR/Tn letters} דָֽעַת{1847 HNcfsa same} | MAM בִּבְלִי־ | דָֽעַת
+   Job 37:6       לַ/שֶּׁ֨לַג{l/7950 HRd/Ncmsa skey} | MAM לַשֶּׁ֨לֶג
+   Job 38:12      הְֽ֭/מִ/יָּמֶי/ךָ{i/m/3117 HTi/R/Ncmpc/Sp2ms skey} | MAM הֲֽ֭מִיָּמֶיךָ
+   Dan 3:15       דֵּ֥י{1768 ATr skey} | MAM דִּ֥י
+   Dan 5:6        וְ/רַעיֹנֹ֖/הִי{c/7476 AC/Ncmpc/Sp3ms skey} | MAM וְרַעְיֹנֹ֖הִי
+   Dan 5:21       שוי{7739 a AVQp3mp same} שַׁוִּ֗יְו{7739 a AVQp3mp skey} | MAM שוי | שַׁוִּ֗יו
+   Dan 5:24       שְׁלִ֖יַחַ{7972 AVQp3ms skey} | MAM שְׁלִ֖יחַ
+   Dan 7:19       בְּ/רַגְלַ֥י/הּ{b/7271 AR/Ncfpc/Sp3fs skey} בְּ/רַגְלַ֥י/הּ{b/7271 AR/Ncfpc/Sp3fs letters} | MAM ברגליה | בְּרַגְלַ֥הּ
+   1Chr 3:1       דָויִ֔ד{1732 HNp skey} | MAM דָוִ֔יד
+   1Chr 10:9      בְ/אֶֽרֶץ־{b/776 HR/Ncbsc same} פְלִשְׁתִּ֜ים{6430 HNgmpa skey} | MAM בְאֶרֶץ־ | פְּלִשְׁתִּ֜ים
+   1Chr 11:13     נֶאֱסְפוּ־{622 HVNp3cp skey} שָׁ֣ם{8033 HD same} | MAM נֶאֶסְפוּ־ | שָׁ֣ם
+   2Chr 26:22     וְ/הָ/אֲחֲרֹנִ֑ים{c/d/314 HC/Td/Aampa skey} | MAM וְהָאַחֲרֹנִ֑ים
+-- note c: 9
+   Deut 22:26     ו/ל/נער{c/l/5291 HC/Rd/Ncfsa skey} וְ/לַֽ/נַּעֲרָה֙{c/l/5291 HC/Rd/Ncfsa letters} | MAM וְלַֽנַּעֲרָ֙ | וְלַֽנַּעֲרָ֙
+   Judg 2:12      אֶת־{853 HTo same} יְהוָֽה{3068 HNp skey} | MAM אֶת־ | יְהֹוָֽה
+   Judg 9:2       כִּֽי־{3588 a HC same} עַצְמֵ/כֶם{6106 HNcfsc/Sp2mp skey} | MAM כִּֽי־ | עַצְמְכֶ֥ם
+   Judg 11:33     וְ/עַד־{c/5704 HC/R same} בּוֹאֲ/ךָ֨{935 HVqc/Sp2ms letters} | MAM וְעַד־ | בֹּאֲךָ֨
+   2Kgs 18:27     אֶת־{853 HTo same} שיני/הם{7890 HNcmpc/Sp3mp letters} רַגְלֵי/הֶ֖ם{7272 HNcfdc/Sp3mp same} | MAM אֶת־ | שניהם | רַגְלֵיהֶ֖ם
+   Ps 126:6       בֹּֽ֬א־{935 HVqa same} יָב֥וֹא{935 HVqi3ms letters} | MAM בֹּא־ | יָבֹ֥א
+   Job 22:28      וְֽ/תִגְזַר־{c/1504 HC/Vqi2ms same} א֭וֹמֶר{562 HNcmsa letters} | MAM וְֽתִגְזַר־ | אֹ֭מֶר
+   Job 34:10      אַ֥נֲשֵׁ֥י{376 HNcmpc skey} | MAM אַ֥נְשֵׁ֥י
+   2Chr 12:7      דְבַר־{1697 HNcmsc same} יְהוָ֨ה{3068 HNp skey} | MAM דְבַר־ | יְהֹוָ֨ה
+-- note n: 86
+   Gen 14:17      אֶת־{853 HTo same} כְּדָרלָעֹ֔מֶר{3540 HNp skey} | MAM אֶת־ | כְּדׇרְלָעֹ֔מֶר
+   Deut 1:39      יִירָשֽׁוּ/הָּ{3423 HVqi3mp/Sp3fs skey} | MAM יִירָשֽׁוּהָ
+   Deut 3:22      תְִּירָא֑וּ/ם{3372 HVqi2mp/Sp3mp skey} | MAM תִּֽירָא֑וּם
+   Deut 4:7       בְּ/כָּל־{b/3605 HR/Ncmsc skey} קָרְאֵ֖/נוּ{7121 HVqc/Sp1cp same} | MAM בְּכׇל־ | קׇרְאֵ֖נוּ
+   Deut 4:40      עַל־{5921 a HR same} הַ֣/אֲדָמָ֔ה{d/127 HTd/Ncfsa skey} | MAM עַל־ | הָ֣אֲדָמָ֔ה
+   Deut 5:12      הַ/שַׁבָּ֖ת{d/7676 HTd/Ncbsa skey} | MAM הַשַּׁבָּ֖֨ת
+   Deut 5:15      הַ/שַׁבָּֽת{d/7676 HTd/Ncbsa skey} | MAM הַשַּׁבָּֽת
+   Deut 10:1      שְׁנֵֽי־{8147 HAcmdc same} לֻוחֹ֤ת{3871 HNcmpc skey} | MAM שְׁנֵֽי־ | לוּחֹ֤ת
+   Deut 10:22     מִצְרָ֑יְמָ/הּ{4714 HNp/Sd skey} | MAM מִצְרָ֑יְמָה
+   Deut 20:12     עָלֶֽי/הָּ{5921 a HR/Sp3fs skey} | MAM עָלֶֽיהָ
+   Deut 21:18     וְ/יסְּר֣וּ{c/3256 HC/Vpq3cp skey} | MAM וְיִסְּר֣וּ
+   Deut 22:16     ה/נער{d/5291 HTd/Ncfsa skey} הַֽ/נַּעַרָ֖ה{d/5291 HTd/Ncfsa letters} | MAM הַֽנַּעֲרָ֖ | הַֽנַּעֲרָ֖
+   Deut 22:19     לְ/שַּׁלְּחָ֖/הּ{l/7971 HR/Vpc/Sp3fs skey} | MAM לְשַׁלְּחָ֖הּ
+   Deut 22:29     שַׁלְּחָ֖/ה{7971 HVpc/Sp3fs skey} | MAM שַׁלְּחָ֖הּ
+   Deut 24:16     אִ֥יש{376 HNcmsa skey} | MAM אִ֥ישׁ
+   Deut 28:30     תְחַלְּלֶּֽ/נּוּ{2490 c HVpi2ms/Sp3ms skey} | MAM תְחַלְּלֶֽנּוּ
+   Judg 1:19      אֶתּ־{854 HR skey} יְהוּדָ֔ה{3063 HNp same} | MAM אֶת־ | יְהוּדָ֔ה
+   Judg 3:25      וְ/הְנֵּ֛ה{c/2009 HC/Tm skey} | MAM וְהִנֵּ֛ה
+   Judg 4:9       וַ/תֵּ֥לֶך{c/3212 HC/Vqw3fs skey} | MAM וַתֵּ֥לֶךְ
+   Judg 4:17      אֵ֖שֶּׁת{802 HNcfsc skey} | MAM אֵ֖שֶׁת
+   Judg 6:12      מַלְּאַ֣ךְ{4397 HNcmsc skey} | MAM מַלְאַ֣ךְ
+   Judg 6:34      וַ/יִזָּעֵ֥ק{c/2199 HC/VNw3ms skey} | MAM וַיִּזָּעֵ֥ק
+   Judg 6:35      וַ/יִזָּעֵ֥ק{c/2199 HC/VNw3ms skey} | MAM וַיִּזָּעֵ֥ק
+   Judg 8:18      וַֽ/יֹּאמרוּ֙{c/559 HC/Vqw3mp skey} | MAM וַיֹּֽאמְרוּ֙
+   Judg 9:2       כִּֽי־{3588 a HC same} עַצְמֵ/כֶם{6106 HNcfsc/Sp2mp skey} | MAM כִּֽי־ | עַצְמְכֶ֥ם
+   Judg 9:4       מִ/בֵּ֖יתּ{m/1004 b HR/Ncmsc skey} | MAM מִבֵּ֖ית
+   Judg 9:4       בַ֣עַל{1170+ HNp skey} | MAM בַּ֣עַל
+   Judg 9:5       שִׁבְּעִ֥ים{7657 HAcbpa skey} | MAM שִׁבְעִ֥ים
+   Judg 11:32     וַ/יִתְּנֵ֥/ם{c/5414 HC/Vqw3ms/Sp3mp skey} | MAM וַיִּתְּנֵ֥ם
+   Judg 12:3      מוֹשִׁ֗יע{3467 HVhrmsa skey} | MAM מוֹשִׁ֗יעַ
+   Judg 13:18     לּ/וֹ֙{l HR/Sp3ms skey} | MAM לוֹ֙
+   Judg 15:14     וּ/פִלְשִׁתִּ֖ים{c/6430 HC/Ngmpa skey} | MAM וּפְלִשְׁתִּ֖ים
+   Judg 19:21     וַ/יָּ֖בָול{c/1101 b HC/Vqw3ms skey} וַ/יָּ֖בָול{c/1101 b HC/Vqw3ms letters} | MAM ויבול | וַיָּ֖בׇל
+   2Sam 5:13      וַ/יִּוָּ֥לְדּוּ{c/3205 HC/VNw3mp skey} | MAM וַיִּוָּ֥לְדוּ
+   2Kgs 18:27     אֶת־{853 HTo same} שיני/הם{7890 HNcmpc/Sp3mp letters} רַגְלֵי/הֶ֖ם{7272 HNcfdc/Sp3mp same} | MAM אֶת־ | שניהם | רַגְלֵיהֶ֖ם
+   Isa 58:14      עַל־{5921 a HR same} בָּ֣מֳותֵי{1116 HNcfpc skey} בָּ֣מֳותֵי{1116 HNcfpc letters} | MAM עַל־ | במותי | בָּ֣מֳתֵי
+   Ezek 43:15     וּ/מֵ/הָ/אֲרִאֵ֣יל{c/m/d/741 HC/R/Td/Ncmsa skey} וּ/מֵ/הָ/אֲרִאֵ֣יל{c/m/d/741 HC/R/Td/Ncmsa letters} | MAM ומהאראיל | וּמֵהָאֲרִיאֵ֣ל
+   Ezek 44:3      לֶ/אֱכָול־{l/398 HR/Vqc letters} לֶ֖חֶם{3899 HNcbsa letters} לֶ/אֱכָול־{l/398 HR/Vqc letters} לֶ֖חֶם{3899 HNcbsa same} | MAM לאכוללֶ֖חֶם | לאכוללֶ֖חֶם | לֶאֱכׇל־ | לֶ֖חֶם
+   Amos 1:1       עֻזִיָּ֣ה{5818 HNp skey} | MAM עֻזִּיָּ֣ה
+   Amos 1:2       מִ/צִיּ֣וֹן{m/6726 HR/Np skey} | MAM מִצִּיּ֣וֹן
+   Amos 4:11      מִ/שְׂרֵפָ֑ה{m/8316 HR/Ncfsa skey} | MAM מִשְּׂרֵפָ֑ה
+   Mic 1:15       עַד־{5704 HR same} עֲדֻּלָּ֥ם{5725 HNp skey} | MAM עַד־ | עֲדֻלָּ֥ם
+   Mic 7:3        בַּ/שִׁלּ֑וּם{b/7966 HRd/Ncmsa skey} | MAM בַּשִּׁלּ֑וּם
+   Hab 1:1        הַ/מַּשָׂא֙{d/4853 b HTd/Ncmsa skey} | MAM הַמַּשָּׂא֙
+   Hab 3:19       יְהוִ֤הּ{3069 HNp skey} | MAM יֱהֹוִ֤ה
+   Zeph 3:10      בַּת־{1323 HNcfsc same} פוּצַ֔/י{6327 a HVqsmsc/Sp1cs skey} | MAM בַּת־ | פּוּצַ֔י
+   Hag 1:10       שָמַ֖יִם{8064 HNcmpa skey} | MAM שָׁמַ֖יִם
+   Zech 6:12      יְהוָֽהּ{3068 HNp skey} | MAM יְהֹוָֽה
+   Zech 14:3      הִֽלָּחֲמ֖/ו{3898 a HVNc/Sp3ms skey} | MAM הִֽלָּחֲמ֖וֹ
+   Mal 1:8        הֲ/יִּרְצְ/ךָ֙{i/7521 HTi/Vqi3ms/Sp2ms skey} | MAM הֲיִרְצְךָ֙
+   Prov 12:24     ו֝/רְמִיָּ֗ה{c/7423 b HC/Ncfsa skey} | MAM וּ֝רְמִיָּ֗ה
+   Prov 20:24     מֵ/יהוָ֥ה{m/3068 HR/Np skey} | MAM מֵיְהֹוָ֥ה
+   Song 2:14      אֶתּ־{853 HTo skey} מַרְאַ֔יִ/ךְ{4758 HNcmpc/Sp2fs same} | MAM אֶת־ | מַרְאַ֔יִךְ
+   Song 3:8       בַּ/לֵּילּֽוֹת{b/3915 HRd/Ncmpa skey} | MAM בַּלֵּילֽוֹת
+   Song 5:16      מַחֲּמַדִּ֑ים{4261 HNcmpa skey} | MAM מַחֲמַדִּ֑ים
+   Song 6:3       בַּ/שׁוֹשַׁנִּֽים{b/7799 HRd/Ncbpa skey} | MAM בַּשּׁוֹשַׁנִּֽים
+   Song 8:1       אֶשָׁ֣קְ/ךָ֔{5401 a HVqi1cs/Sp2ms skey} | MAM אֶשָּׁ֣קְךָ֔
+   Song 8:12      כָּרְמִ֥/י{3754 HNcbsc/Sp1cs skey} | MAM כַּרְמִ֥י
+   Song 8:13      הַ/יוֹשֶׁ֣בֶת{d/3427 HTd/Vqrfsa skey} | MAM הַיּוֹשֶׁ֣בֶת
+   Ruth 2:2       וַ/אֲלַקֳטָּ֣ה{c/3950 HC/Vph1cs skey} | MAM וַאֲלַקֳּטָ֣ה
+   Ruth 2:2       בַ/שִׁבֳּלִ֔ים{b/7641 b HRd/Ncfpa skey} | MAM בַֽשִּׁבֳּלִ֔ים
+   Ruth 2:9       וְ/הָלַ֣כְתִּ{c/1980 HC/Vqq2fs skey} | MAM וְהָלַ֣כְתְּ
+   Ruth 2:10      וְ/אָּנֹכִ֖י{c/595 HC/Pp1cs skey} | MAM וְאָנֹכִ֖י
+   Ruth 2:11      אָּבִ֣י/ךְ{1 HNcmsc/Sp2fs skey} | MAM אָבִ֣יךְ
+   Ruth 3:14      מרגלת/ו{4772 HNcfsc/Sp3ms letters} מַרְגְּלוֹתָי/וֹ֙{4772 HNcfpc/Sp3ms letters} | MAM מַרְגְּלוֹתָו֙ | מַרְגְּלוֹתָו֙
+   Lam 1:1        רַּבָּ֣תִי{7227 a HAafsc skey} | MAM רַבָּ֣תִי
+   Lam 3:12       קַשְׁת/וֹ֙{7198 HNcfsc/Sp3ms skey} | MAM קַשְׁתּוֹ֙
+   Lam 3:33       בְנֵי־{1121 a HNcmpc skey} אִֽישׁ{376 HNcmsa same} | MAM בְּנֵי־ | אִֽישׁ
+   Lam 4:4        אֶל־{413 HR same} חכּ֖/וֹ{2441 HNcmsc/Sp3ms skey} | MAM אֶל־ | חִכּ֖וֹ
+   Eccl 2:22      לִבּ֑/ו{3820 a HNcmsc/Sp3ms skey} | MAM לִבּ֑וֹ
+   Eccl 5:4       מִ/שֶׁ/תִּדּ֖וֹר{m/s/5087 HR/Tr/Vqi2ms skey} | MAM מִשֶּׁתִּדּ֖וֹר
+   Eccl 5:7       גָּבֹ֨הַ֙{1364 HAamsa skey} | MAM גָּבֹ֙הַּ֙
+   Eccl 9:15      הַ/הּֽוּא{d/1931 HTd/Pp3ms skey} | MAM הַהֽוּא
+   Eccl 12:5      בָ/שּׁ֖וּק{b/7784 HRd/Ncmsa skey} | MAM בַשּׁ֖וּק
+   Esth 4:4       וַ֠/תָּבוֹאינָה{c/935 HC/Vqw3fp skey} וַ֠/תָּבוֹאינָה{c/935 HC/Vqw3fp letters} | MAM ותבואינה | וַ֠תָּב֠וֹאנָה
+   Esth 4:11      נִקְרֵ֨אתי֙{7121 HVNp1cs skey} | MAM נִקְרֵ֙אתִי֙
+   Dan 2:29       אַ֣נְתְּה{607 APp2ms skey} אַ֣נְתְּה{607 APp2ms letters} | MAM אנתה | אַ֣נְתְּ
+   Dan 2:31       אַ֣נְתְּה{607 APp2ms skey} אַ֣נְתְּה{607 APp2ms letters} | MAM אנתה | אַ֣נְתְּ
+   Dan 2:37       אַ֣נְתְּה{607 APp2ms skey} אַ֣נְתְּה{607 APp2ms letters} | MAM אנתה | אַ֣נְתְּ
+   Dan 2:38       אַנְתְּה־{607 APp2ms letters} ה֔וּא{1932 ATa letters} אַנְתְּה־{607 APp2ms letters} ה֔וּא{1932 ATa same} | MAM אנתהה֔וּא | אנתהה֔וּא | אַ֨נְתְּ־ | ה֔וּא
+   Dan 4:22       עֲלָ֑/יךְ{5922 AR/Sp2ms skey} עֲלָ֑/יךְ{5922 AR/Sp2ms letters} | MAM עליך | עֲלָ֑ךְ
+   Dan 4:22       עִלָּיָ/א֙{5943 AAamsd/Td skey} עִלָּיָ/א֙{5943 AAamsd/Td letters} | MAM עליא | עִלָּאָה֙
+   Dan 4:29       עִלָּיָ/א֙{5943 AAamsd/Td skey} עִלָּיָ/א֙{5943 AAamsd/Td letters} | MAM עליא | עִלָּאָה֙
+   Dan 6:1        מָֽדָיָ֔/א{4077 ANgmsd/Td skey} מָֽדָיָ֔/א{4077 ANgmsd/Td letters} | MAM מדיא | מָֽדָאָ֔ה
+   2Chr 35:4      וְ/הָכִ֥ונוּ{c/3559 a HC/Vhv2mp skey} וְ/הָכִ֥ונוּ{c/3559 a HC/Vhv2mp letters} | MAM והכונו | וְהָכִ֥ינוּ
+   2Chr 36:14     לִ/מְעָול־{l/4603 HR/Vqc letters} מַ֔עַל{4603 HNcmsa letters} לִ/מְעָול־{l/4603 HR/Vqc letters} מַ֔עַל{4603 HNcmsa same} | MAM למעולמַ֔עַל | למעולמַ֔עַל | לִמְעׇל־ | מַ֔עַל
+-- note Q: 72
+   Deut 1:39      יִירָשֽׁוּ/הָּ{3423 HVqi3mp/Sp3fs skey} | MAM יִירָשֽׁוּהָ
+   Deut 3:22      תְִּירָא֑וּ/ם{3372 HVqi2mp/Sp3mp skey} | MAM תִּֽירָא֑וּם
+   Deut 4:7       בְּ/כָּל־{b/3605 HR/Ncmsc skey} קָרְאֵ֖/נוּ{7121 HVqc/Sp1cp same} | MAM בְּכׇל־ | קׇרְאֵ֖נוּ
+   Deut 4:40      עַל־{5921 a HR same} הַ֣/אֲדָמָ֔ה{d/127 HTd/Ncfsa skey} | MAM עַל־ | הָ֣אֲדָמָ֔ה
+   Deut 5:12      הַ/שַׁבָּ֖ת{d/7676 HTd/Ncbsa skey} | MAM הַשַּׁבָּ֖֨ת
+   Deut 5:15      הַ/שַׁבָּֽת{d/7676 HTd/Ncbsa skey} | MAM הַשַּׁבָּֽת
+   Deut 10:1      שְׁנֵֽי־{8147 HAcmdc same} לֻוחֹ֤ת{3871 HNcmpc skey} | MAM שְׁנֵֽי־ | לוּחֹ֤ת
+   Deut 10:22     מִצְרָ֑יְמָ/הּ{4714 HNp/Sd skey} | MAM מִצְרָ֑יְמָה
+   Deut 20:12     עָלֶֽי/הָּ{5921 a HR/Sp3fs skey} | MAM עָלֶֽיהָ
+   Deut 21:18     וְ/יסְּר֣וּ{c/3256 HC/Vpq3cp skey} | MAM וְיִסְּר֣וּ
+   Deut 22:16     ה/נער{d/5291 HTd/Ncfsa skey} הַֽ/נַּעַרָ֖ה{d/5291 HTd/Ncfsa letters} | MAM הַֽנַּעֲרָ֖ | הַֽנַּעֲרָ֖
+   Deut 22:19     לְ/שַּׁלְּחָ֖/הּ{l/7971 HR/Vpc/Sp3fs skey} | MAM לְשַׁלְּחָ֖הּ
+   Deut 22:26     ו/ל/נער{c/l/5291 HC/Rd/Ncfsa skey} וְ/לַֽ/נַּעֲרָה֙{c/l/5291 HC/Rd/Ncfsa letters} | MAM וְלַֽנַּעֲרָ֙ | וְלַֽנַּעֲרָ֙
+   Deut 22:29     שַׁלְּחָ֖/ה{7971 HVpc/Sp3fs skey} | MAM שַׁלְּחָ֖הּ
+   Deut 24:16     אִ֥יש{376 HNcmsa skey} | MAM אִ֥ישׁ
+   Deut 28:30     תְחַלְּלֶּֽ/נּוּ{2490 c HVpi2ms/Sp3ms skey} | MAM תְחַלְּלֶֽנּוּ
+   Judg 3:25      וְ/הְנֵּ֛ה{c/2009 HC/Tm skey} | MAM וְהִנֵּ֛ה
+   Judg 4:9       וַ/תֵּ֥לֶך{c/3212 HC/Vqw3fs skey} | MAM וַתֵּ֥לֶךְ
+   Judg 4:17      אֵ֖שֶּׁת{802 HNcfsc skey} | MAM אֵ֖שֶׁת
+   Judg 6:12      מַלְּאַ֣ךְ{4397 HNcmsc skey} | MAM מַלְאַ֣ךְ
+   Judg 6:34      וַ/יִזָּעֵ֥ק{c/2199 HC/VNw3ms skey} | MAM וַיִּזָּעֵ֥ק
+   Judg 6:35      וַ/יִזָּעֵ֥ק{c/2199 HC/VNw3ms skey} | MAM וַיִּזָּעֵ֥ק
+   Judg 8:18      וַֽ/יֹּאמרוּ֙{c/559 HC/Vqw3mp skey} | MAM וַיֹּֽאמְרוּ֙
+   Judg 9:2       כִּֽי־{3588 a HC same} עַצְמֵ/כֶם{6106 HNcfsc/Sp2mp skey} | MAM כִּֽי־ | עַצְמְכֶ֥ם
+   Judg 11:32     וַ/יִתְּנֵ֥/ם{c/5414 HC/Vqw3ms/Sp3mp skey} | MAM וַיִּתְּנֵ֥ם
+   Judg 12:3      מוֹשִׁ֗יע{3467 HVhrmsa skey} | MAM מוֹשִׁ֗יעַ
+   Judg 13:18     לּ/וֹ֙{l HR/Sp3ms skey} | MAM לוֹ֙
+   Judg 15:14     וּ/פִלְשִׁתִּ֖ים{c/6430 HC/Ngmpa skey} | MAM וּפְלִשְׁתִּ֖ים
+   Judg 19:21     וַ/יָּ֖בָול{c/1101 b HC/Vqw3ms skey} וַ/יָּ֖בָול{c/1101 b HC/Vqw3ms letters} | MAM ויבול | וַיָּ֖בׇל
+   Amos 1:1       עֻזִיָּ֣ה{5818 HNp skey} | MAM עֻזִּיָּ֣ה
+   Amos 1:2       מִ/צִיּ֣וֹן{m/6726 HR/Np skey} | MAM מִצִּיּ֣וֹן
+   Amos 4:11      מִ/שְׂרֵפָ֑ה{m/8316 HR/Ncfsa skey} | MAM מִשְּׂרֵפָ֑ה
+   Mic 1:15       עַד־{5704 HR same} עֲדֻּלָּ֥ם{5725 HNp skey} | MAM עַד־ | עֲדֻלָּ֥ם
+   Mic 6:3        בִּֽ/י{b HR/Sp1cs skey} | MAM בִֽי
+   Mic 7:3        בַּ/שִׁלּ֑וּם{b/7966 HRd/Ncmsa skey} | MAM בַּשִּׁלּ֑וּם
+   Hab 1:1        הַ/מַּשָׂא֙{d/4853 b HTd/Ncmsa skey} | MAM הַמַּשָּׂא֙
+   Hab 3:19       יְהוִ֤הּ{3069 HNp skey} | MAM יֱהֹוִ֤ה
+   Zeph 3:10      בַּת־{1323 HNcfsc same} פוּצַ֔/י{6327 a HVqsmsc/Sp1cs skey} | MAM בַּת־ | פּוּצַ֔י
+   Zeph 3:17      בְּ/קִרְבֵּ֖/ך{b/7130 HR/Ncmsc/Sp2fs skey} | MAM בְּקִרְבֵּ֖ךְ
+   Hag 1:10       שָמַ֖יִם{8064 HNcmpa skey} | MAM שָׁמַ֖יִם
+   Zech 6:12      יְהוָֽהּ{3068 HNp skey} | MAM יְהֹוָֽה
+   Zech 14:3      הִֽלָּחֲמ֖/ו{3898 a HVNc/Sp3ms skey} | MAM הִֽלָּחֲמ֖וֹ
+   Mal 1:8        הֲ/יִּרְצְ/ךָ֙{i/7521 HTi/Vqi3ms/Sp2ms skey} | MAM הֲיִרְצְךָ֙
+   Prov 12:24     ו֝/רְמִיָּ֗ה{c/7423 b HC/Ncfsa skey} | MAM וּ֝רְמִיָּ֗ה
+   Prov 20:24     מֵ/יהוָ֥ה{m/3068 HR/Np skey} | MAM מֵיְהֹוָ֥ה
+   Song 2:14      אֶתּ־{853 HTo skey} מַרְאַ֔יִ/ךְ{4758 HNcmpc/Sp2fs same} | MAM אֶת־ | מַרְאַ֔יִךְ
+   Song 3:8       בַּ/לֵּילּֽוֹת{b/3915 HRd/Ncmpa skey} | MAM בַּלֵּילֽוֹת
+   Song 5:16      מַחֲּמַדִּ֑ים{4261 HNcmpa skey} | MAM מַחֲמַדִּ֑ים
+   Song 6:3       בַּ/שׁוֹשַׁנִּֽים{b/7799 HRd/Ncbpa skey} | MAM בַּשּׁוֹשַׁנִּֽים
+   Song 8:1       אֶשָׁ֣קְ/ךָ֔{5401 a HVqi1cs/Sp2ms skey} | MAM אֶשָּׁ֣קְךָ֔
+   Song 8:12      כָּרְמִ֥/י{3754 HNcbsc/Sp1cs skey} | MAM כַּרְמִ֥י
+   Song 8:13      הַ/יוֹשֶׁ֣בֶת{d/3427 HTd/Vqrfsa skey} | MAM הַיּוֹשֶׁ֣בֶת
+   Ruth 2:2       וַ/אֲלַקֳטָּ֣ה{c/3950 HC/Vph1cs skey} | MAM וַאֲלַקֳּטָ֣ה
+   Ruth 2:2       בַ/שִׁבֳּלִ֔ים{b/7641 b HRd/Ncfpa skey} | MAM בַֽשִּׁבֳּלִ֔ים
+   Ruth 2:9       וְ/הָלַ֣כְתִּ{c/1980 HC/Vqq2fs skey} | MAM וְהָלַ֣כְתְּ
+   Ruth 2:10      וְ/אָּנֹכִ֖י{c/595 HC/Pp1cs skey} | MAM וְאָנֹכִ֖י
+   Ruth 2:11      אָּבִ֣י/ךְ{1 HNcmsc/Sp2fs skey} | MAM אָבִ֣יךְ
+   Ruth 3:14      מרגלת/ו{4772 HNcfsc/Sp3ms letters} מַרְגְּלוֹתָי/וֹ֙{4772 HNcfpc/Sp3ms letters} | MAM מַרְגְּלוֹתָו֙ | מַרְגְּלוֹתָו֙
+   Lam 1:1        רַּבָּ֣תִי{7227 a HAafsc skey} | MAM רַבָּ֣תִי
+   Lam 3:12       קַשְׁת/וֹ֙{7198 HNcfsc/Sp3ms skey} | MAM קַשְׁתּוֹ֙
+   Lam 3:25       לְ/קוָֹ֔/ו{l/6960 a HR/Vqrmpc/Sp3ms skey} | MAM לְקֹוָ֔ו
+   Lam 3:33       בְנֵי־{1121 a HNcmpc skey} אִֽישׁ{376 HNcmsa same} | MAM בְּנֵי־ | אִֽישׁ
+   Lam 4:4        אֶל־{413 HR same} חכּ֖/וֹ{2441 HNcmsc/Sp3ms skey} | MAM אֶל־ | חִכּ֖וֹ
+   Eccl 2:22      לִבּ֑/ו{3820 a HNcmsc/Sp3ms skey} | MAM לִבּ֑וֹ
+   Eccl 5:4       מִ/שֶׁ/תִּדּ֖וֹר{m/s/5087 HR/Tr/Vqi2ms skey} | MAM מִשֶּׁתִּדּ֖וֹר
+   Eccl 5:7       גָּבֹ֨הַ֙{1364 HAamsa skey} | MAM גָּבֹ֙הַּ֙
+   Eccl 5:17      יְמֵי־{3117 HNcmpc same} חי/ו{2416 e HNcmpc/Sp3ms skey} חַיָּ֛י/ו{2416 e HNcmpc/Sp3ms letters} | MAM יְמֵי־ | חַיָּ֛ו | חַיָּ֛ו
+   Eccl 9:15      הַ/הּֽוּא{d/1931 HTd/Pp3ms skey} | MAM הַהֽוּא
+   Eccl 12:5      בָ/שּׁ֖וּק{b/7784 HRd/Ncmsa skey} | MAM בַשּׁ֖וּק
+   Esth 4:4       וַ֠/תָּבוֹאינָה{c/935 HC/Vqw3fp skey} וַ֠/תָּבוֹאינָה{c/935 HC/Vqw3fp letters} | MAM ותבואינה | וַ֠תָּב֠וֹאנָה
+   Esth 4:11      נִקְרֵ֨אתי֙{7121 HVNp1cs skey} | MAM נִקְרֵ֙אתִי֙
+   Ezra 4:11      עַבְדָ֛י/ךְ{5649 ANcmpc/Sp2ms skey} עַבְדָ֛י/ךְ{5649 ANcmpc/Sp2ms letters} | MAM עבדיך | עַבְדָ֛ךְ
+-- note p: 58
+   Gen 2:10       וְ/נָהָרּ֙{c/5104 HC/Ncmsa skey} | MAM וְנָהָר֙
+   Gen 14:17      אֶת־{853 HTo same} כְּדָרלָעֹ֔מֶר{3540 HNp skey} | MAM אֶת־ | כְּדׇרְלָעֹ֔מֶר
+   Num 7:59       בֶּן־{1121 a HNcmsc same} פְּדָה{6301+ HNp letters} | MAM בֶּן־ | פְּדָהצֽוּר
+   Deut 1:39      יִירָשֽׁוּ/הָּ{3423 HVqi3mp/Sp3fs skey} | MAM יִירָשֽׁוּהָ
+   Deut 4:7       בְּ/כָּל־{b/3605 HR/Ncmsc skey} קָרְאֵ֖/נוּ{7121 HVqc/Sp1cp same} | MAM בְּכׇל־ | קׇרְאֵ֖נוּ
+   Deut 5:12      הַ/שַׁבָּ֖ת{d/7676 HTd/Ncbsa skey} | MAM הַשַּׁבָּ֖֨ת
+   Deut 5:15      הַ/שַׁבָּֽת{d/7676 HTd/Ncbsa skey} | MAM הַשַּׁבָּֽת
+   Deut 7:8       וּ/מִ/שָּׁמְר֤/וּ{c/m/8104 HC/R/Vqc/Sp3ms skey} | MAM וּמִשׇּׁמְר֤וֹ
+   Deut 10:1      שְׁנֵֽי־{8147 HAcmdc same} לֻוחֹ֤ת{3871 HNcmpc skey} | MAM שְׁנֵֽי־ | לוּחֹ֤ת
+   Deut 10:22     מִצְרָ֑יְמָ/הּ{4714 HNp/Sd skey} | MAM מִצְרָ֑יְמָה
+   Deut 20:12     עָלֶֽי/הָּ{5921 a HR/Sp3fs skey} | MAM עָלֶֽיהָ
+   Deut 22:19     לְ/שַּׁלְּחָ֖/הּ{l/7971 HR/Vpc/Sp3fs skey} | MAM לְשַׁלְּחָ֖הּ
+   Deut 22:29     שַׁלְּחָ֖/ה{7971 HVpc/Sp3fs skey} | MAM שַׁלְּחָ֖הּ
+   Deut 28:30     תְחַלְּלֶּֽ/נּוּ{2490 c HVpi2ms/Sp3ms skey} | MAM תְחַלְּלֶֽנּוּ
+   Judg 1:19      אֶתּ־{854 HR skey} יְהוּדָ֔ה{3063 HNp same} | MAM אֶת־ | יְהוּדָ֔ה
+   Judg 4:17      אֵ֖שֶּׁת{802 HNcfsc skey} | MAM אֵ֖שֶׁת
+   Judg 6:12      מַלְּאַ֣ךְ{4397 HNcmsc skey} | MAM מַלְאַ֣ךְ
+   Judg 6:34      וַ/יִזָּעֵ֥ק{c/2199 HC/VNw3ms skey} | MAM וַיִּזָּעֵ֥ק
+   Judg 6:35      וַ/יִזָּעֵ֥ק{c/2199 HC/VNw3ms skey} | MAM וַיִּזָּעֵ֥ק
+   Judg 9:4       מִ/בֵּ֖יתּ{m/1004 b HR/Ncmsc skey} | MAM מִבֵּ֖ית
+   Judg 9:4       בַ֣עַל{1170+ HNp skey} | MAM בַּ֣עַל
+   Judg 9:5       שִׁבְּעִ֥ים{7657 HAcbpa skey} | MAM שִׁבְעִ֥ים
+   Judg 11:32     וַ/יִתְּנֵ֥/ם{c/5414 HC/Vqw3ms/Sp3mp skey} | MAM וַיִּתְּנֵ֥ם
+   Judg 13:18     לּ/וֹ֙{l HR/Sp3ms skey} | MAM לוֹ֙
+   2Sam 5:13      וַ/יִּוָּ֥לְדּוּ{c/3205 HC/VNw3mp skey} | MAM וַיִּוָּ֥לְדוּ
+   2Sam 20:12     הַֽ/מְסִּלָּ֑ה{d/4546 HTd/Ncfsa skey} | MAM הַֽמְסִלָּ֑ה
+   Isa 27:8       בְּ/סַּאסְּאָ֖ה{b/5432 HR/Vlc skey} | MAM בְּסַאסְּאָ֖ה
+   Isa 45:6       וּ/מִ/מַּ֣עֲרָבָ֔/הּ{c/m/4628 HC/R/Ncmsc/Sp3fs skey} | MAM וּמִמַּ֣עֲרָבָ֔הֿ
+   Amos 1:1       עֻזִיָּ֣ה{5818 HNp skey} | MAM עֻזִּיָּ֣ה
+   Amos 1:2       מִ/צִיּ֣וֹן{m/6726 HR/Np skey} | MAM מִצִּיּ֣וֹן
+   Amos 4:11      מִ/שְׂרֵפָ֑ה{m/8316 HR/Ncfsa skey} | MAM מִשְּׂרֵפָ֑ה
+   Mic 1:15       עַד־{5704 HR same} עֲדֻּלָּ֥ם{5725 HNp skey} | MAM עַד־ | עֲדֻלָּ֥ם
+   Mic 6:3        בִּֽ/י{b HR/Sp1cs skey} | MAM בִֽי
+   Mic 7:3        בַּ/שִׁלּ֑וּם{b/7966 HRd/Ncmsa skey} | MAM בַּשִּׁלּ֑וּם
+   Hab 1:1        הַ/מַּשָׂא֙{d/4853 b HTd/Ncmsa skey} | MAM הַמַּשָּׂא֙
+   Hab 3:19       יְהוִ֤הּ{3069 HNp skey} | MAM יֱהֹוִ֤ה
+   Zeph 3:10      בַּת־{1323 HNcfsc same} פוּצַ֔/י{6327 a HVqsmsc/Sp1cs skey} | MAM בַּת־ | פּוּצַ֔י
+   Zech 6:12      יְהוָֽהּ{3068 HNp skey} | MAM יְהֹוָֽה
+   Mal 1:8        הֲ/יִּרְצְ/ךָ֙{i/7521 HTi/Vqi3ms/Sp2ms skey} | MAM הֲיִרְצְךָ֙
+   Prov 12:24     ו֝/רְמִיָּ֗ה{c/7423 b HC/Ncfsa skey} | MAM וּ֝רְמִיָּ֗ה
+   Job 17:4       מִּ/שָּׂ֑כֶל{m/7922 HR/Ncmsa skey} | MAM מִשָּׂ֑כֶל
+   Song 2:14      אֶתּ־{853 HTo skey} מַרְאַ֔יִ/ךְ{4758 HNcmpc/Sp2fs same} | MAM אֶת־ | מַרְאַ֔יִךְ
+   Song 3:8       בַּ/לֵּילּֽוֹת{b/3915 HRd/Ncmpa skey} | MAM בַּלֵּילֽוֹת
+   Song 5:16      מַחֲּמַדִּ֑ים{4261 HNcmpa skey} | MAM מַחֲמַדִּ֑ים
+   Song 6:3       בַּ/שׁוֹשַׁנִּֽים{b/7799 HRd/Ncbpa skey} | MAM בַּשּׁוֹשַׁנִּֽים
+   Song 8:1       אֶשָׁ֣קְ/ךָ֔{5401 a HVqi1cs/Sp2ms skey} | MAM אֶשָּׁ֣קְךָ֔
+   Song 8:13      הַ/יוֹשֶׁ֣בֶת{d/3427 HTd/Vqrfsa skey} | MAM הַיּוֹשֶׁ֣בֶת
+   Ruth 2:2       וַ/אֲלַקֳטָּ֣ה{c/3950 HC/Vph1cs skey} | MAM וַאֲלַקֳּטָ֣ה
+   Ruth 2:2       בַ/שִׁבֳּלִ֔ים{b/7641 b HRd/Ncfpa skey} | MAM בַֽשִּׁבֳּלִ֔ים
+   Ruth 2:10      וְ/אָּנֹכִ֖י{c/595 HC/Pp1cs skey} | MAM וְאָנֹכִ֖י
+   Ruth 2:11      אָּבִ֣י/ךְ{1 HNcmsc/Sp2fs skey} | MAM אָבִ֣יךְ
+   Lam 1:1        רַּבָּ֣תִי{7227 a HAafsc skey} | MAM רַבָּ֣תִי
+   Lam 3:12       קַשְׁת/וֹ֙{7198 HNcfsc/Sp3ms skey} | MAM קַשְׁתּוֹ֙
+   Lam 3:33       בְנֵי־{1121 a HNcmpc skey} אִֽישׁ{376 HNcmsa same} | MAM בְּנֵי־ | אִֽישׁ
+   Eccl 5:4       מִ/שֶׁ/תִּדּ֖וֹר{m/s/5087 HR/Tr/Vqi2ms skey} | MAM מִשֶּׁתִּדּ֖וֹר
+   Eccl 5:7       גָּבֹ֨הַ֙{1364 HAamsa skey} | MAM גָּבֹ֙הַּ֙
+   Eccl 9:15      הַ/הּֽוּא{d/1931 HTd/Pp3ms skey} | MAM הַהֽוּא
+   2Chr 31:1      כָּל־{3605 HNcmsc skey} יִשְׂרָאֵ֥ל{3478 HNp same} | MAM כׇל־ | יִשְׂרָאֵ֥ל
+-- note q: 22
+   Judg 19:21     וַ/יָּ֖בָול{c/1101 b HC/Vqw3ms skey} וַ/יָּ֖בָול{c/1101 b HC/Vqw3ms letters} | MAM ויבול | וַיָּ֖בׇל
+   1Sam 18:14     לְ/כָל־{l/3605 HR/Ncmsc same} דָּרְכָ֖/ו{1870 HNcbpc/Sp3ms skey} | MAM לְכׇל־ | דְּרָכָ֖ו
+   Isa 58:14      עַל־{5921 a HR same} בָּ֣מֳותֵי{1116 HNcfpc skey} בָּ֣מֳותֵי{1116 HNcfpc letters} | MAM עַל־ | במותי | בָּ֣מֳתֵי
+   Jer 5:6        משבותי/הם{4878 HNcfpc/Sp3mp skey} מְשׁוּבוֹתֵי/הֶֽם{4878 HNcfpc/Sp3mp letters} | MAM מְשֻׁבוֹתֵיהֶֽם | מְשֻׁבוֹתֵיהֶֽם
+   Jer 15:8       אַלְמְנֹתָ/ו֙{490 HNcfpc/Sp3ms letters} | MAM אַלְמְנוֹתָו֙
+   Ezek 43:15     וּ/מֵ/הָ/אֲרִאֵ֣יל{c/m/d/741 HC/R/Td/Ncmsa skey} וּ/מֵ/הָ/אֲרִאֵ֣יל{c/m/d/741 HC/R/Td/Ncmsa letters} | MAM ומהאראיל | וּמֵהָאֲרִיאֵ֣ל
+   Ezek 44:3      לֶ/אֱכָול־{l/398 HR/Vqc letters} לֶ֖חֶם{3899 HNcbsa letters} לֶ/אֱכָול־{l/398 HR/Vqc letters} לֶ֖חֶם{3899 HNcbsa same} | MAM לאכוללֶ֖חֶם | לאכוללֶ֖חֶם | לֶאֱכׇל־ | לֶ֖חֶם
+   Ps 123:4       לִ/גְאֵ֥יוֹנִֽים{l/1349 HR/Aampa skey} לִ/גְאֵ֥יוֹנִֽים{l/1349 HR/Aampa letters} | MAM לגאיונים | לִגְאֵ֥י יוֹנִֽים
+   Lam 3:25       לְ/קוָֹ֔/ו{l/6960 a HR/Vqrmpc/Sp3ms skey} | MAM לְקֹוָ֔ו
+   Eccl 5:17      יְמֵי־{3117 HNcmpc same} חי/ו{2416 e HNcmpc/Sp3ms skey} חַיָּ֛י/ו{2416 e HNcmpc/Sp3ms letters} | MAM יְמֵי־ | חַיָּ֛ו | חַיָּ֛ו
+   Esth 4:4       וַ֠/תָּבוֹאינָה{c/935 HC/Vqw3fp skey} וַ֠/תָּבוֹאינָה{c/935 HC/Vqw3fp letters} | MAM ותבואינה | וַ֠תָּב֠וֹאנָה
+   Dan 2:29       אַ֣נְתְּה{607 APp2ms skey} אַ֣נְתְּה{607 APp2ms letters} | MAM אנתה | אַ֣נְתְּ
+   Dan 2:31       אַ֣נְתְּה{607 APp2ms skey} אַ֣נְתְּה{607 APp2ms letters} | MAM אנתה | אַ֣נְתְּ
+   Dan 2:37       אַ֣נְתְּה{607 APp2ms skey} אַ֣נְתְּה{607 APp2ms letters} | MAM אנתה | אַ֣נְתְּ
+   Dan 2:38       אַנְתְּה־{607 APp2ms letters} ה֔וּא{1932 ATa letters} אַנְתְּה־{607 APp2ms letters} ה֔וּא{1932 ATa same} | MAM אנתהה֔וּא | אנתהה֔וּא | אַ֨נְתְּ־ | ה֔וּא
+   Dan 4:22       עֲלָ֑/יךְ{5922 AR/Sp2ms skey} עֲלָ֑/יךְ{5922 AR/Sp2ms letters} | MAM עליך | עֲלָ֑ךְ
+   Dan 4:22       עִלָּיָ/א֙{5943 AAamsd/Td skey} עִלָּיָ/א֙{5943 AAamsd/Td letters} | MAM עליא | עִלָּאָה֙
+   Dan 4:29       עִלָּיָ/א֙{5943 AAamsd/Td skey} עִלָּיָ/א֙{5943 AAamsd/Td letters} | MAM עליא | עִלָּאָה֙
+   Dan 6:1        מָֽדָיָ֔/א{4077 ANgmsd/Td skey} מָֽדָיָ֔/א{4077 ANgmsd/Td letters} | MAM מדיא | מָֽדָאָ֔ה
+   Ezra 4:11      עַבְדָ֛י/ךְ{5649 ANcmpc/Sp2ms skey} עַבְדָ֛י/ךְ{5649 ANcmpc/Sp2ms letters} | MAM עבדיך | עַבְדָ֛ךְ
+   2Chr 35:4      וְ/הָכִ֥ונוּ{c/3559 a HC/Vhv2mp skey} וְ/הָכִ֥ונוּ{c/3559 a HC/Vhv2mp letters} | MAM והכונו | וְהָכִ֥ינוּ
+   2Chr 36:14     לִ/מְעָול־{l/4603 HR/Vqc letters} מַ֔עַל{4603 HNcmsa letters} לִ/מְעָול־{l/4603 HR/Vqc letters} מַ֔עַל{4603 HNcmsa same} | MAM למעולמַ֔עַל | למעולמַ֔עַל | לִמְעׇל־ | מַ֔עַל
+-- note C: 4
+   Deut 29:3      יְהוָ֨ה{3068 HNp skey} | MAM יְהֹוָ֨ה
+   Judg 2:12      אֶת־{853 HTo same} יְהוָֽה{3068 HNp skey} | MAM אֶת־ | יְהֹוָֽה
+   Judg 11:33     וְ/עַד־{c/5704 HC/R same} בּוֹאֲ/ךָ֨{935 HVqc/Sp2ms letters} | MAM וְעַד־ | בֹּאֲךָ֨
+   Hab 1:1        הַ/מַּשָׂא֙{d/4853 b HTd/Ncmsa skey} | MAM הַמַּשָּׂא֙
+-- note a: 3
+   Gen 43:28      ו/ישתחו{c/7812 HC/Vvw3ms same} וַ/יִּֽשְׁתַּחֲוּֽוּ{c/7812 HC/Vvw3mp skey} | MAM וישתחו | וַיִּֽשְׁתַּחֲוֽוּ
+   2Sam 18:20     כִּֽי־{3588 c HC same} על{5921 b HR skey} עַל־{5921 b HR same} כֵּ֥ן{3651 b HTm same} | MAM כִּֽי־ | עַל־ | עַל־ | כֵּ֥ן
+   2Kgs 6:25      יונים{3123 HNcfpa letters} דִּבְיוֹנִ֖ים{1686 HNcmpa letters} | MAM חרייוֹנִ֖ים | דִּב־ יוֹנִ֖ים
+-- note v: 20
+   Deut 3:22      תְִּירָא֑וּ/ם{3372 HVqi2mp/Sp3mp skey} | MAM תִּֽירָא֑וּם
+   Deut 4:40      עַל־{5921 a HR same} הַ֣/אֲדָמָ֔ה{d/127 HTd/Ncfsa skey} | MAM עַל־ | הָ֣אֲדָמָ֔ה
+   Deut 7:8       וּ/מִ/שָּׁמְר֤/וּ{c/m/8104 HC/R/Vqc/Sp3ms skey} | MAM וּמִשׇּׁמְר֤וֹ
+   Deut 10:1      שְׁנֵֽי־{8147 HAcmdc same} לֻוחֹ֤ת{3871 HNcmpc skey} | MAM שְׁנֵֽי־ | לוּחֹ֤ת
+   Deut 21:18     וְ/יסְּר֣וּ{c/3256 HC/Vpq3cp skey} | MAM וְיִסְּר֣וּ
+   Deut 22:16     ה/נער{d/5291 HTd/Ncfsa skey} הַֽ/נַּעַרָ֖ה{d/5291 HTd/Ncfsa letters} | MAM הַֽנַּעֲרָ֖ | הַֽנַּעֲרָ֖
+   Judg 3:25      וְ/הְנֵּ֛ה{c/2009 HC/Tm skey} | MAM וְהִנֵּ֛ה
+   Judg 4:9       וַ/תֵּ֥לֶך{c/3212 HC/Vqw3fs skey} | MAM וַתֵּ֥לֶךְ
+   Judg 8:18      וַֽ/יֹּאמרוּ֙{c/559 HC/Vqw3mp skey} | MAM וַיֹּֽאמְרוּ֙
+   Judg 12:3      מוֹשִׁ֗יע{3467 HVhrmsa skey} | MAM מוֹשִׁ֗יעַ
+   Judg 15:14     וּ/פִלְשִׁתִּ֖ים{c/6430 HC/Ngmpa skey} | MAM וּפְלִשְׁתִּ֖ים
+   Zech 14:3      הִֽלָּחֲמ֖/ו{3898 a HVNc/Sp3ms skey} | MAM הִֽלָּחֲמ֖וֹ
+   Prov 20:24     מֵ/יהוָ֥ה{m/3068 HR/Np skey} | MAM מֵיְהֹוָ֥ה
+   Song 8:12      כָּרְמִ֥/י{3754 HNcbsc/Sp1cs skey} | MAM כַּרְמִ֥י
+   Ruth 2:9       וְ/הָלַ֣כְתִּ{c/1980 HC/Vqq2fs skey} | MAM וְהָלַ֣כְתְּ
+   Ruth 3:14      מרגלת/ו{4772 HNcfsc/Sp3ms letters} מַרְגְּלוֹתָי/וֹ֙{4772 HNcfpc/Sp3ms letters} | MAM מַרְגְּלוֹתָו֙ | מַרְגְּלוֹתָו֙
+   Lam 4:4        אֶל־{413 HR same} חכּ֖/וֹ{2441 HNcmsc/Sp3ms skey} | MAM אֶל־ | חִכּ֖וֹ
+   Eccl 2:22      לִבּ֑/ו{3820 a HNcmsc/Sp3ms skey} | MAM לִבּ֑וֹ
+   Eccl 12:5      בָ/שּׁ֖וּק{b/7784 HRd/Ncmsa skey} | MAM בַשּׁ֖וּק
+   Esth 4:11      נִקְרֵ֨אתי֙{7121 HVNp1cs skey} | MAM נִקְרֵ֙אתִי֙
+-- note k: 14
+   Gen 14:2       צביים{6636 HNp same} צְבוֹיִ֔ים{6636 HNp letters} | MAM צביים | צְבוֹיִ֔ם
+   Deut 24:16     אִ֥יש{376 HNcmsa skey} | MAM אִ֥ישׁ
+   1Sam 25:18     עשוות{6213 a HVqsfpa same} עֲשׂוּיֹת֙{6213 a HVqsfpa letters} | MAM עשוות | עֲשׂוּיוֹת֙
+   2Sam 18:8      נפצית{6327 a HVNsfpa letters} נָפֹ֖צֶת{6327 a HVNsfsa letters} | MAM נפצות | נָפ֖וֹצֶת
+   2Sam 18:12     ו/לא{c/3863 HC/C same} וְ/ל֨וּא{c/3863 HC/C letters} | MAM ולא | וְל֨וּ
+   2Kgs 16:6      ו/ארמים{c/726 HC/Ngmpa same} וַֽ/אֲדוֹמִים֙{c/130 HC/Ngmpa letters} | MAM וארמים | וַֽאֲדֹמִים֙
+   Jer 48:5       ה/לחות{d/3872 HTd/Np same} הַ/לּוּחִ֔ית{d/3872 HTd/Np letters} | MAM הלחות | הַלֻּחִ֔ית
+   Hag 1:10       שָמַ֖יִם{8064 HNcmpa skey} | MAM שָׁמַ֖יִם
+   Ps 140:10      יכסו/מו{3680 HVpj3mp/Sp3mp same} יְכַסֵּֽ/מוֹ{3680 HVpj3ms/Sp3mp letters} | MAM יכסומו | יְכַסֵּֽימוֹ
+   Job 26:14      גבורת/ו{1369 HNcfsc/Sp3ms skey} גְּ֝בוּרוֹתָ֗י/ו{1369 HNcfpc/Sp3ms letters} | MAM גְּ֝בוּרֹתָ֗ו | גְּ֝בוּרֹתָ֗ו
+   Ruth 3:14      מרגלת/ו{4772 HNcfsc/Sp3ms letters} מַרְגְּלוֹתָי/וֹ֙{4772 HNcfpc/Sp3ms letters} | MAM מַרְגְּלוֹתָו֙ | מַרְגְּלוֹתָו֙
+   Dan 5:7        ו/המונכ/א{c/2002 AC/Ncmsd/Td letters} וְ/הַֽמְנִיכָ֤/א{c/2002 AC/Ncmsd/Td same} | MAM והמנוכא | וְהַֽמְנִיכָ֤א
+   Dan 5:16       דִּֽי־{1768 ATr same} תוכל{3202 AVqi2ms same} תִיכּ֥וּל{3202 AVqi2ms letters} | MAM דִּֽי־ | תוכל | תִכּ֥וּל
+   Dan 10:19      וּֽ/בְ/דַבְּר֤/וֹ{c/b/1696 HC/R/Vpc/Sp3ms letters} | MAM וּֽכְדַבְּר֤וֹ
+-- note y: 4
+   1Sam 28:8      קסומי־{7080 HVqv2fs letters} נָ֥א{7080 HTe letters} קָֽסֳמִי־{7080 HVqv2fs same} נָ֥א{7080 HTe same} | MAM קסומינָ֥א | קסומינָ֥א | קׇסֳמִי־ | נָ֥א
+   Jer 3:5        דברתי{1696 HVpp1cs letters} דִבַּ֛רְתְּ{1696 HVpp2fs same} | MAM דִבַּ֛רְתְּ | דִבַּ֛רְתְּ
+   Eccl 10:10     הכשיר{3787 HVhc skey} הַכְשֵׁ֖ר{3787 HVhc letters} | MAM הַכְשֵׁ֖יר | הַכְשֵׁ֖יר
+   Ezra 4:12      ו/באישת/א{c/873 AC/Aafsd/Td skey} וּ/בִֽישְׁתָּ/א֙{c/873 AC/Aafsd/Td letters} | MAM וּבִֽאישְׁתָּא֙ | וּבִֽאישְׁתָּא֙
+-- note 4: 0
+-- note P: 5
+   Deut 7:8       וּ/מִ/שָּׁמְר֤/וּ{c/m/8104 HC/R/Vqc/Sp3ms skey} | MAM וּמִשׇּׁמְר֤וֹ
+   Judg 1:19      אֶתּ־{854 HR skey} יְהוּדָ֔ה{3063 HNp same} | MAM אֶת־ | יְהוּדָ֔ה
+   Judg 9:4       מִ/בֵּ֖יתּ{m/1004 b HR/Ncmsc skey} | MAM מִבֵּ֖ית
+   Judg 9:4       בַ֣עַל{1170+ HNp skey} | MAM בַּ֣עַל
+   Judg 9:5       שִׁבְּעִ֥ים{7657 HAcbpa skey} | MAM שִׁבְעִ֥ים
+-- note 8: 0
+-- note 5: 0
+-- note 7: 0
+-- note V: 2
+   Prov 8:26      עָפְר֥וֹת{6083 HNcmpc skey} | MAM עַפְר֥וֹת
+   Ruth 3:4       תַּעַשִֽׂי/ן{6213 a HVqi2fs/Sn skey} | MAM תַּעֲשִֽׂין
+-- note 6: 0
+-- note M: 0
+-- note F: 1
+   Isa 9:6        ל/םרבה{l/4766 HR/Ncmsc letters} לְ/מַרְבֵּ֨ה{l/4766 HR/Ncmsc same} | MAM לם רבה | לְמַרְבֵּ֨ה
+-- note K: 0

@@ -1,0 +1,226 @@
+# written by scripts/p2_lemma_kq.py: C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe -I .novc/morphhb-corrections-2026-11-13/scripts/p2_lemma_kq.py .novc/morphhb-corrections-2026-11-13/scripts .novc/morphhb-corrections-2026-11-13/fetched .novc/morphhb-corrections-2026-11-13/out/58-ketiv-qere-analyses.txt  (working directory C:/Users/BenDe/GitRepos/MAM-basics)
+
+For every ketiv/qere pair in morphhb (a run of x-ketiv words and the following variant note's
+qere words) with as many ketiv words as qere words, each ketiv word is compared with the qere
+word in the same position: lemma main number, full lemma, morph.  Counts, and every pair whose
+ketiv and qere differ in lemma main number, are listed, so that one can see whether morphhb gives
+a ketiv its own analysis or its qere's.
+
+variant notes                                        1260
+ketiv words compared                                 1228
+  same lemma main number                             1023
+  same full lemma                                     918
+  same morph                                          597
+  different lemma main number                         205
+  different full lemma                                310
+  different morph                                     631
+ketiv and qere of different word counts                25
+qere without ketiv                                      9
+ketiv without qere                                      6
+
+Every ketiv word whose lemma main number differs from its qere word's:
+Gen 24:33      ketiv 01vCf ו/יישם L=c/3455 M=HC/VQw3ms | qere 01SiU וַ/יּוּשַׂ֤ם L=c/7760 a M=HC/VHw3ms
+Gen 36:5       ketiv 019bv יעיש L=3274 M=HNp | qere 01PEh יְע֥וּשׁ L=3266 M=HNp
+Gen 36:14      ketiv 01WTG יעיש L=3274 M=HNp | qere 019PN יְע֥וּשׁ L=3266 M=HNp
+Gen 39:20      ketiv 01Mbg אסורי L=631 M=HVqsmpc | qere 01qVE אֲסִירֵ֥י L=615 M=HNcmpc
+Exod 21:8      ketiv 02W2d לא L=3808 M=HTn | qere 023Mv ל֥/וֹ L=l M=HR/Sp3ms
+Exod 37:8      ketiv 02gZC קצוות/ו L=7117 M=HNcfpc/Sp3ms | qere 027VD קְצוֹתָֽי/ו L=7098 M=HNcbpc/Sp3ms
+Exod 39:4      ketiv 02qyo קצוות/ו L=7117 M=HNcfpc/Sp3ms | qere 02fC7 קְצוֹתָ֖י/ו L=7098 M=HNcbpc/Sp3ms
+Lev 11:21      ketiv 037d1 לא L=3808 M=HTn | qere 03iGP ל֤/וֹ L=l M=HR/Sp3ms
+Lev 25:30      ketiv 03qJz לא L=3808 M=HTn | qere 03mN4 ל֣/וֹ L=l M=HR/Sp3ms
+Num 1:16       ketiv 04dns קריאי L=7148 M=HAampc | qere 04GK3 קְרוּאֵ֣י L=7121 M=HVqsmpc
+Num 23:13      ketiv 043Aj לך L=3212 M=HVqv2ms | qere 04TcW לְכָ/ה L=1980 M=HVqv2ms/Sh
+Num 26:9       ketiv 04Kr7 קרואי L=7121 M=HVqsmpc | qere 04aXz קְרִיאֵ֣י L=7148 M=HAampc
+Deut 28:27     ketiv 05Y63 ו/ב/עפלים L=c/b/6076 b M=HC/Rd/Ncmpa | qere 056qu וּ/בַ/טְּחֹרִ֔ים L=c/b/2914 M=HC/Rd/Ncmpa
+Deut 28:30     ketiv 05SnL ישגל/נה L=7693 M=HVqi3ms/Sp3fs | qere 0578q יִשְׁכָּבֶ֔/נָּה L=7901 M=HVqi3ms/Sp3fs
+Josh 8:16      ketiv 06GEn ב/עיר L=b/5892 b M=HRd/Ncfsa | qere 06JcF בָּ/עַ֔י L=b/5857 M=HRd/Np
+Josh 15:47     ketiv 06Kv1 ה/גבול L=d/1366 M=HTd/Ncmsa | qere 06S8w הַ/גָּד֖וֹל L=d/1419 a M=HTd/Aamsa
+Judg 11:37     ketiv 07SsZ ו/רעית/י L=c/7474 M=HC/Ncfpc/Sp1cs | qere 07gHx וְ/רֵעוֹתָֽ/י L=c/7464 M=HC/Ncfpc/Sp1cs
+Judg 16:21     ketiv 07sbY ה/אסירים L=d/615 M=HTd/Ncmpa | qere 07oxz הָ/אֲסוּרִֽים L=d/631 M=HTd/Vqsmpa
+Judg 16:25     ketiv 07oKK ה/אסירים L=d/615 M=HTd/Ncmpa | qere 07yyH הָ/אֲסוּרִ֗ים L=d/631 M=HTd/Vqsmpa
+Judg 16:26     ketiv 07NTY ו/הימש/ני L=c/3237 M=HC/Vhv2ms/Sp1cs | qere 07nfk וַ/הֲמִשֵׁ֨/נִי֙ L=c/4184 M=HC/Vhv2ms/Sp1cs
+1Sam 2:16      ketiv 09WSe ל/ו L=l M=HR/Sp3ms | qere 09AFs לֹא֙ L=3808 M=HTn
+1Sam 4:13      ketiv 09uCk יך L=5221 M=HVhc | qere 09KHf יַ֥ד L=3027 M=HNcbsc
+1Sam 5:6       ketiv 092Mh ב/עפלים L=b/6076 b M=HRd/Ncmpa | qere 09J1i בַּ/טְּחֹרִ֔ים L=b/2914 M=HRd/Ncmpa
+1Sam 5:9       ketiv 09YiJ עפלים L=6076 b M=HNcmpa | qere 09Ypk טְחֹרִֽים L=2914 M=HNcmpa
+1Sam 5:12      ketiv 09Bav ב/עפלים L=b/6076 b M=HRd/Ncmpa | qere 09GVi בַּ/טְּחֹרִ֑ים L=b/2914 M=HRd/Ncmpa
+1Sam 6:4       ketiv 09mYa עפלי L=6076 b M=HNcmpc | qere 09Fc9 טְחֹרֵ֣י L=2914 M=HNcmpc
+1Sam 6:5       ketiv 09Rpd עפלי/כם L=6076 b M=HNcmpc/Sp2mp | qere 092xG טְחֹרֵי/כֶ֜ם L=2914 M=HNcmpc/Sp2mp
+1Sam 14:27     ketiv 091D5 ו/תראנה L=c/7200 M=HC/Vqw3fp | qere 09xwi וַ/תָּאֹ֖רְנָה L=c/215 M=HC/Vqw3fp
+1Sam 14:32     ketiv 09z3c ו/יעש L=c/6213 a M=HC/Vqw3ms | qere 09B7n וַ/יַּ֤עַט L=c/5860 b M=HC/Vqw3ms
+1Sam 17:7      ketiv 09DJM ו/חץ L=c/2671 M=HC/Ncmsc | qere 09vQR וְ/עֵ֣ץ L=c/6086 M=HC/Ncmsc
+1Sam 17:23     ketiv 09Wfn מ/מערות L=m/4630 M=HR/Ncfpc | qere 09d4o מִ/מַּעַרְכ֣וֹת L=m/4634 M=HR/Ncfpc
+1Sam 18:9      ketiv 09ioA עון L=5771 M=HNcbsa | qere 09BVU עוֹיֵ֣ן L=5770 M=HVqrmsa
+1Sam 20:2      ketiv 09UFD ל/ו L=l M=HR/Sp3ms | qere 09uGu לֹֽא L=3808 M=HTn
+1Sam 20:24     ketiv 09PCg על L=5921 a M=HR | qere 09Gd9 אֶל L=413 M=HR
+1Sam 25:3      ketiv 09WvW כ/לב/ו L=k/3820 a M=HR/Ncmsc/Sp3ms | qere 09Cyq כָלִבִּֽי L=3614 M=HNgmsa
+2Sam 3:15      ketiv 10Sho לוש L=3889 M=HNp | qere 108zu לָֽיִשׁ L=3919 b M=HNp
+2Sam 13:37     ketiv 10tA2 עמיחור L=5991 M=HNp | qere 109ZJ עַמִּיה֖וּד L=5989 M=HNp
+2Sam 15:28     ketiv 10KhP ב/עברות L=b/5679 M=HR/Ncfpc | qere 10cj2 בְּ/עַֽרְב֖וֹת L=b/6160 M=HR/Ncfpc
+2Sam 16:10     ketiv 10J4L כי L=3588 a M=HC | qere 10Qq5 כֹּ֣ה L=3541 M=HD
+2Sam 16:12     ketiv 10jkK ב/עונ/י L=b/5771 M=HR/Ncbsc/Sp1cs | qere 10Xn7 בְּ/עֵינִ֑/י L=b/5869 M=HR/Ncmsc/Sp1cs
+2Sam 16:18     ketiv 105cJ לא L=3808 M=HTn | qere 10yrN ל֥/וֹ L=l M=HR/Sp3ms
+2Sam 20:5      ketiv 10WYA ו/ייחר L=c/3186 M=HC/Vqw3ms | qere 10qhb וַ/יּ֕וֹחֶר L=c/309 M=HC/Vhw3ms
+2Sam 20:14     ketiv 10M2X ו/יקלהו L=c/7035 M=HC/VNw3mp | qere 10n34 וַ/יִּקָּ֣הֲל֔וּ L=c/6950 M=HC/VNw3mp
+2Sam 20:23     ketiv 10KjA ה/כרי L=d/3746 M=HTd/Ngmsa | qere 10N2F הַ/כְּרֵתִ֖י L=d/3774 M=HTd/Ngmsa
+2Sam 20:25     ketiv 10hTk ו/שיא L=c/7864 M=HC/Np | qere 10buz וּ/שְׁוָ֖א L=c/7724 M=HC/Np
+2Sam 21:21     ketiv 10wJx שמעי L=8096 M=HNp | qere 103y6 שִׁמְעָ֖ה L=8092 M=HNp
+2Sam 22:51     ketiv 10HLK מגדיל L=1431 M=HVhrmsc | qere 10BX2 מִגְדּ֖וֹל L=4024 a M=HNcmsc
+2Sam 23:13     ketiv 10AiD שלשים L=7970 M=HAcbpa | qere 10saZ שְׁלֹשָׁ֜ה L=7969 M=HAcmsa
+2Sam 23:18     ketiv 101bL ה/שלשי L=d/7992 M=HTd/Aomsa | qere 10aPi הַ/שְּׁלֹשָׁ֔ה L=d/7969 M=HTd/Acmsa
+2Sam 23:20     ketiv 10i6u חי L=2416 a M=HAamsa | qere 10KNk חַ֛יִל L=2428 M=HNcmsa
+2Sam 23:21     ketiv 10B7Q אשר L=834 a M=HTr | qere 10ycr אִ֣ישׁ L=376 M=HNcmsc
+1Kgs 9:18      ketiv 11XBR תמר L=8559 M=HNp | qere 11RKz תַּדְמֹ֥ר L=8412 M=HNp
+1Kgs 12:33     ketiv 11WDd מ/ל/בד L=m/l/905 M=HR/R/Ncmsa | qere 11H54 מִ/לִּבּ֑/וֹ L=m/3820 M=HR/Ncmsc/Sp3ms
+1Kgs 22:49     ketiv 113Jn עשר L=6240 M=HAcmsa | qere 113AH עָשָׂה֩ L=6213 M=HVqp3ms
+2Kgs 3:24      ketiv 12xjb ו/יבו L=c/935 M=HC/Vqw3mp | qere 1278y וַ/יַּכּוּ L=c/5221 M=HC/Vhw3mp
+2Kgs 4:2       ketiv 12jWU ל/כי L=l/3588 a M=HR/Sp2fs | qere 12WRL לָ֖/ךְ L=l M=HR/Sp2fs
+2Kgs 5:12      ketiv 1276m אבנה L=71 M=HNp | qere 126a2 אֲמָנָ֨ה L=549 M=HNp
+2Kgs 8:10      ketiv 12Uae לא L=3808 M=HTn | qere 125P4 ל֖/וֹ L=l M=HR/Sp3ms
+2Kgs 10:27     ketiv 12apg ל/מחראות L=l/4280 M=HR/Ncfpa | qere 12m2R לְ/מֽוֹצָא֖וֹת L=l/4163 M=HR/Ncfpa
+2Kgs 11:2      ketiv 12ync ה/ממותתים L=d/4463 M=HTd/VHsmpa | qere 128fH הַ/מּ֣וּמָתִ֔ים L=d/4191 M=HTd/VHsmpa
+2Kgs 16:6      ketiv 12n7q ו/ארמים L=c/726 M=HC/Ngmpa | qere 128XN וַֽ/אֲדוֹמִים֙ L=c/130 M=HC/Ngmpa
+2Kgs 17:21     ketiv 12H4G ו/ידא L=c/5077 a M=HC/Vhw3ms | qere 12gFy וַ/יַּדַּ֨ח L=c/5080 M=HC/Vhw3ms
+2Kgs 17:31     ketiv 12Jy1 אלה L=433 M=HNcmsc | qere 12eQ5 אֱלֹהֵ֥י L=430 M=HNcmpc
+2Kgs 18:27     ketiv 12Zna חרי/הם L=2755 M=HNcmpc/Sp3mp | qere 1247T צוֹאָתָ֗/ם L=6675 M=HNcfsc/Sp3mp
+2Kgs 19:23     ketiv 12yK8 ב/רכב L=b/7393 M=HR/Ncmsc | qere 12F7i בְּ/רֹ֥ב L=b/7230 M=HR/Ncbsc
+2Kgs 20:4      ketiv 12ydd ה/עיר L=d/5892 b M=HTd/Ncfsa | qere 12kL7 חָצֵ֖ר L=2691 a M=HNcbsa
+2Kgs 24:15     ketiv 12yba אולי L=193 b M=HNcmpc | qere 1258m אֵילֵ֣י L=352 c M=HNcmpc
+Isa 9:2        ketiv 23qch לא L=3808 M=HTn | qere 23VmY ל֖/וֹ L=l M=HR/Sp3ms
+Isa 10:32      ketiv 23RAc בית L=1004 b M=HNcmsc | qere 231AV בַּת L=1323 M=HNcfsc
+Isa 13:16      ketiv 231pu תשגלנה L=7693 M=HVNi3fp | qere 23fNB תִּשָּׁכַֽבְנָה L=7901 M=HVNi3fp
+Isa 28:15      ketiv 23q9y שיט L=7885 M=HNcmsa | qere 23VHs שׁ֣וֹט L=7752 M=HNcmsa
+Isa 30:5       ketiv 239CS הבאיש L=887 M=HVhp3ms | qere 23ozE הֹבִ֔ישׁ L=954 M=HVhp3ms
+Isa 32:7       ketiv 23Nac ענוים L=6035 M=HAampa | qere 237qo עֲנִיִּים֙ L=6041 M=HAampa
+Isa 36:12      ketiv 23r46 חראי/הם L=2716 M=HNcmpc/Sp3mp | qere 233dV צוֹאָתָ֗/ם L=6675 M=HNcfsc/Sp3mp
+Isa 42:24      ketiv 23aQ8 ל/משוסה L=l/4882 M=HR/Ncfsa | qere 23oUN לִ/מְשִׁסָּ֧ה L=l/4933 M=HR/Ncfsa
+Isa 49:5       ketiv 234WA לא L=3808 M=HTn | qere 23Xmm ל֣/וֹ L=l M=HR/Sp3ms
+Isa 49:6       ketiv 23k88 ו/נצירי L=c/5336 M=HC/Aampc | qere 23PiS וּ/נְצוּרֵ֥י L=c/5341 M=HC/Vqsmpc
+Isa 63:9       ketiv 23jyx לא L=3808 M=HTn | qere 23vWE ל֣/וֹ L=l M=HR/Sp3ms
+Isa 65:4       ketiv 238Zw ו/פרק L=c/6564 M=HC/Ncmsc | qere 23b3J וּ/מְרַ֥ק L=c/4839 M=HC/Ncmsc
+Isa 65:7       ketiv 23S1J על L=5921 a M=HR | qere 23WZc אֶל L=413 M=HR
+Jer 2:20       ketiv 24irW אעבד L=5647 M=HVqi1cs | qere 24x72 אֶעֱב֑וֹר L=5674 a M=HVqi1cs
+Jer 2:25       ketiv 24ifL ו/גורנ/ך L=c/1637 M=HC/Ncbsc/Sp2fs | qere 24LZU וּ/גְרוֹנֵ֖/ךְ L=c/1627 M=HC/Ncmsc/Sp2fs
+Jer 3:2        ketiv 24t98 שגלת L=7693 M=HVPp2fs | qere 24YfW שֻׁכַּ֔בְתְּ L=7901 M=HVPp2fs
+Jer 4:19       ketiv 24ikx אחולה L=2342 a M=HVqh1cs | qere 245Xt אוֹחִ֜ילָה L=3176 M=HVhh1cs
+Jer 6:25       ketiv 24YS7 תלכי L=3212 M=HVqj2fs | qere 24ST2 תֵּלֵ֑כוּ L=1980 M=HVqj2mp
+Jer 14:14      ketiv 24FwU ו/אלול L=c/434 M=HC/Np | qere 249Yo וֶֽ/אֱלִיל֙ L=c/457 M=HC/Ncmsa
+Jer 15:4       ketiv 24Njp ל/זועה L=l/2113 M=HR/Ncfsa | qere 24U8E לְ/זַֽעֲוָ֔ה L=l/2189 M=HR/Ncfsa
+Jer 15:11      ketiv 24SsZ שרות/ך L=8293 M=HVqp1cs/Sp2ms | qere 24gHx שֵֽׁרִיתִ֖י/ךָ L=8281 M=HVpp1cs/Sp2ms
+Jer 16:16      ketiv 24yVJ ל/דוגים L=l/1728 M=HR/Ncmpa | qere 24Jp4 לְ/דַיָּגִ֥ים L=l/1771 M=HR/Ncmpa
+Jer 17:8       ketiv 24xRk ירא L=3372 M=HVqi3ms | qere 24agE יִרְאֶה֙ L=7200 M=HVqi3ms
+Jer 17:13      ketiv 24Qsp יסור/י L=3249 M=HNcmpc/Sp1cs | qere 24q5z וְ/סוּרַ/י֙ L=c/5493 M=HC/Vqrmpc/Sp1cs
+Jer 18:16      ketiv 24k8w שרוקת L=8292 M=HNcfsc | qere 24Jo5 שְׁרִיק֣וֹת L=8322 M=HNcfpc
+Jer 18:22      ketiv 24bUa שיחה L=7882 M=HNcfsa | qere 24L1P שׁוּחָה֙ L=7745 M=HNcfsa
+Jer 26:18      ketiv 24fjn מיכיה L=4320 M=HNp | qere 24CTb מִיכָה֙ L=4318 M=HNp
+Jer 29:18      ketiv 24u4q ל/זועה L=l/2113 M=HR/Ncfsa | qere 24J16 לְ/זַעֲוָ֜ה L=l/2189 M=HR/Ncfsa
+Jer 31:39      ketiv 24tgR קוה L=6961 M=HNcmsc | qere 24KUc קָ֤ו L=6957 b M=HNcmsc
+Jer 31:40      ketiv 24ufW ה/שרמות L=d/8309 M=HTd/Ncfpa | qere 24s5d הַ/שְּׁדֵמוֹת֩ L=d/7709 M=HTd/Ncfpa
+Jer 34:17      ketiv 24vYR ל/זועה L=l/2113 M=HR/Ncfsa | qere 24L7e לְ/זַעֲוָ֔ה L=l/2189 M=HR/Ncfsa
+Jer 37:19      ketiv 24EvC ו/אי/ו L=c/335 M=HC/Ti/Sp3ms | qere 24sQJ וְ/אַיֵּה֙ L=c/346 M=HC/Ti
+Jer 42:6       ketiv 248yL אנו L=580 M=HPp1cp | qere 24JrR אֲנַ֜חְנוּ L=587 M=HPp1cp
+Jer 48:44      ketiv 24PtS ה/ניס L=d/5211 M=HTd/Vqrmsa | qere 24Rwm הַ/נָּ֞ס L=d/5127 M=HTd/Vqrmsa
+Jer 50:6       ketiv 24eGE שובבים L=7726 M=HAampa | qere 24sjy שֽׁוֹבְב֑וּ/ם L=7725 M=HVop3cp/Sp3mp
+Ezek 3:15      ketiv 26Gbx ו/אשר L=c/834 a M=HC/Tr | qere 26H82 וָֽ/אֵשֵׁ֔ב L=c/3427 M=HC/Vqw1cs
+Ezek 4:6       ketiv 26TMW ה/ימיני L=d/3227 a M=HTd/Aamsa | qere 26KvW הַ/יְמָנִי֙ L=d/3233 M=HTd/Aamsa
+Ezek 9:5       ketiv 26Pq7 על L=5921 a M=HR | qere 262XE אַל L=408 M=HTn
+Ezek 14:4      ketiv 26hmw ב/ה L=b M=HR/Sp3fs | qere 26Hme בָ֖א L=935 M=HVqp3ms
+Ezek 25:7      ketiv 26GhY ל/בג L=l/897 M=HR/Ncmsa | qere 269n6 לְ/בַז֙ L=l/957 M=HR/Ncmsa
+Ezek 35:9      ketiv 266kN תישבנה L=3427 M=HVqi3fp | qere 26hWa תָשֹׁ֑בְנָה L=7725 M=HVqi3fp
+Ezek 36:14     ketiv 26CBC תכשלי L=3782 M=HVpi2fs | qere 26d88 תְשַׁכְּלִי L=7921 a M=HVpi2fs
+Ezek 41:8      ketiv 26dhx מיסדות L=4328 M=HNcfpc | qere 26vRK מוּסְד֤וֹת L=4145 M=HNcfpc
+Ezek 42:9      ketiv 26pCg ה/מבוא L=d/3996 M=HTd/Ncmsa | qere 26wTv הַ/מֵּבִיא֙ L=d/935 M=HTd/Ncmsa
+Ezek 42:16     ketiv 269vJ אמות L=520 a M=HNcfpc | qere 26T6b מֵא֥וֹת L=3967 M=HAcbpa
+Ezek 44:24     ketiv 26738 ל/שפט L=l/8199 M=HR/Vqc | qere 26h9i לְ/מִשְׁפָּ֔ט L=l/4941 M=HR/Ncmsa
+Hos 8:12       ketiv 28jDe רבו L=7239 M=HNcbsc | qere 28uHz רֻבֵּ֖י L=7230 M=HNcbsc
+Hos 9:16       ketiv 28htk בלי L=1097 M=HTn | qere 28mPM בַֽל L=1077 M=HTn
+Hos 10:10      ketiv 28iS2 עינת/ם L=5869 b M=HNcbpc/Sp3mp | qere 28Ua3 עוֹנֹתָֽ/ם L=5868 a M=HNcfpc/Sp3mp
+Amos 8:4       ketiv 303iN ענוי L=6035 M=HAampc | qere 305vj עֲנִיֵּי L=6041 M=HAampc
+Amos 8:8       ketiv 30kbN ו/נשקה L=c/8248 M=HC/VNq3fs | qere 306mC וְ/נִשְׁקְעָ֖ה L=c/8257 M=HC/VNq3fs
+Zech 1:16      ketiv 386w9 ו/קוה L=c/6961 M=HC/Ncmsa | qere 38wA4 וְ/קָ֥ו L=c/6957 b M=HC/Ncmsa
+Zech 11:2      ketiv 38dS2 ה/בצור L=d/1208 M=HTd/Vqsmsa | qere 38ckH הַ/בָּצִֽיר L=d/1219 M=HTd/Ncmsa
+Zech 14:2      ketiv 38DB1 תשגלנה L=7693 M=HVNi3fp | qere 38Uz3 תִּשָּׁכַ֑בְנָה L=7901 M=HVNi3fp
+Ps 9:13        ketiv 194vF עניים L=6041 M=HAampa | qere 19y7z עֲנָוִֽים L=6035 M=HAampa
+Ps 9:19        ketiv 19KTJ ענוים L=6035 M=HAampa | qere 19twL עֲ֝נִיִּ֗ים L=6041 M=HAampa
+Ps 10:12       ketiv 194Yz עניים L=6041 M=HAampa | qere 19zbA עֲנָוִֽים L=6035 M=HAampa
+Ps 17:14       ketiv 19sRx ו/צפינ/ך L=c/6840 M=HC/Ncmsc/Sp2ms | qere 19oGS וּֽ/צְפוּנְ/ךָ֮ L=c/6845 M=HC/Vqsmsc/Sp2ms
+Ps 49:15       ketiv 19wi9 ו/ציר/ם L=c/6736 M=HC/Ncmsc/Sp3mp | qere 19T67 וְ֭/צוּרָ/ם L=c/6697 M=HC/Ncmsc/Sp3mp
+Ps 71:12       ketiv 19jCu חיש/ה L=2439 M=HVqv2ms/Sh | qere 19RA2 חֽוּשָׁ/ה L=2363 a M=HVqv2ms/Sh
+Ps 74:11       ketiv 19sPD חוק/ך L=2706 M=HNcmsc/Sp2ms | qere 19ngQ חֵֽיקְ/ךָ֣ L=2436 M=HNcmsc/Sp2ms
+Ps 100:3       ketiv 19ua2 ו/לא L=c/3808 M=HC/Tn | qere 19EBF וְ/ל֣/וֹ L=c/l M=HC/R/Sp3ms
+Ps 139:16      ketiv 19A2L ו/לא L=c/3808 M=HC/Tn | qere 19xxE וְ/ל֖/וֹ L=c/l M=HC/R/Sp3ms
+Prov 1:27      ketiv 20sHf כ/שאוה L=k/7584 M=HR/Ncfsa | qere 20iee כְ/שׁוֹאָ֨ה L=k/7722 b M=HR/Ncfsa
+Prov 3:34      ketiv 208HV ו/ל/עניים L=c/l/6041 M=HC/R/Aampa | qere 20j8W וְ֝/לַ/עֲנָוִ֗ים L=c/l/6035 M=HC/R/Aampa
+Prov 6:14      ketiv 20UwQ מדנים L=4090 M=HNcmpa | qere 20EG9 מִדְיָנִ֥ים L=4066 M=HNcmpa
+Prov 14:21     ketiv 20PZV עניים L=6041 M=HAampa | qere 20GDR עֲנָוִ֣ים L=6035 M=HAampa
+Prov 15:14     ketiv 20gKV ו/פני L=c/6440 M=HC/Ncbpc | qere 204qd וּ/פִ֥י L=c/6310 M=HC/Ncmsc
+Prov 16:19     ketiv 20Wxh עניים L=6041 M=HAampa | qere 20bfm עֲנָוִ֑ים L=6035 M=HAampa
+Prov 17:27     ketiv 20G5J ו/קר L=c/7119 M=HC/Aamsc | qere 206Fc יְקַר L=3368 M=HAamsc
+Prov 18:19     ketiv 20jKo ו/מדונים L=c/4066 M=HC/Ncmpa | qere 205EL וּ֝/מִדְיָנִ֗ים L=c/4079 M=HC/Ncmpa
+Prov 19:7      ketiv 20faU לא L=3808 M=HTn | qere 20xJG ל/וֹ L=l M=HR/Sp3ms
+Prov 19:19     ketiv 20Kmu גרל L=1632 M=HNcmsc | qere 20yUJ גְּֽדָל L=1419 a M=HAamsc
+Prov 20:21     ketiv 20hDt מבחלת L=973 b M=HVPsfsa | qere 20JoU מְבֹהֶ֣לֶת L=926 M=HVPsfsa
+Prov 20:30     ketiv 20BYB תמריק L=4838 M=HVhi3fs | qere 20fDj תַּמְר֣וּק L=8562 M=HNcmsa
+Prov 21:19     ketiv 20DuR מדונים L=4066 M=HNcmpa | qere 20VTa מִדְיָנִ֣ים L=4079 M=HNcmpa
+Prov 21:29     ketiv 20ey4 יכין L=3559 a M=HVhi3ms | qere 20QMs יָבִ֬ין L=995 M=HVqi3ms
+Prov 22:20     ketiv 20YX6 שלשום L=8032 M=HD | qere 20aYb שָׁלִישִׁ֑ים L=7991 c M=HAompa
+Prov 23:26     ketiv 20dmq תרצנה L=7521 M=HVqj3fp | qere 20RFy תִּצֹּֽרְנָה L=5341 M=HVqj3fp
+Prov 23:29     ketiv 20TX2 מדונים L=4066 M=HNcmpa | qere 20BVw מִדְיָנִ֨ים L=4079 M=HNcmpa
+Prov 23:31     ketiv 20Dbh ב/כיס L=b/3599 M=HRd/Ncmsa | qere 20GXn בַּ/כּ֣וֹס L=b/3563 a M=HRd/Ncfsa
+Prov 25:24     ketiv 20bsU מדונים L=4066 M=HNcmpa | qere 20KEw מִ֝דְיָנִ֗ים L=4079 M=HNcmpa
+Prov 26:2      ketiv 20tg6 לא L=3808 M=HTn | qere 209wB ל֣/וֹ L=l M=HR/Sp3ms
+Prov 26:21     ketiv 20jkP מדונים L=4066 M=HNcmpa | qere 20NA8 מִ֝דְיָנִ֗ים L=4079 M=HNcmpa
+Prov 27:10     ketiv 20ooW ו/רעה L=c/7463 M=HC/Ncmsc | qere 2044e וְ/רֵ֪עַ L=c/7453 M=HC/Ncmsc
+Prov 27:15     ketiv 201A6 מדונים L=4066 M=HNcmpa | qere 20BJQ מִ֝דְיָנִ֗ים L=4079 M=HNcmpa
+Prov 31:4      ketiv 20sC8 או L=176 b M=HC | qere 20nHM אֵ֣י L=335 M=HTi
+Job 6:2        ketiv 18LbG ו/הית/י L=c/1962 M=HC/Ncfsc/Sp1cs | qere 18jJf וְ֝/הַוָּתִ֗/י L=c/1942 M=HC/Ncfsc/Sp1cs
+Job 6:21       ketiv 18PaR לא L=3808 M=HTn | qere 18Env ל֑/וֹ L=l M=HR/Sp3ms
+Job 9:30       ketiv 18wDc במו L=1119 M=HR | qere 181ME בְ/מֵי L=b/4325 M=HR/Ncmpc
+Job 13:15      ketiv 184U9 לא L=3808 M=HTn | qere 18Vvg ל֣/וֹ L=l M=HR/Sp3ms
+Job 21:13      ketiv 181Ae יבלו L=1086 M=HVpi3mp | qere 18Kmu יְכַלּ֣וּ L=3615 M=HVpi3mp
+Job 30:22      ketiv 18y1q תשוה L=7738 M=HVPi2ms | qere 18XBR תּוּשִׁיָּֽה L=8454 M=HNcfsa
+Job 33:19      ketiv 18a9R ו/ריב L=c/7379 M=HC/Ncbsc | qere 18BUv וְ/ר֖וֹב L=c/7230 M=HC/Ncbsc
+Job 33:21      ketiv 18UQf ו/שפי L=c/8205 M=HC/Ncmsc | qere 18koC וְ/שֻׁפּ֥וּ L=c/8192 M=HC/VPq3cp
+Job 41:4       ketiv 18DQF לא L=3808 M=HTn | qere 18m8G לֽ/וֹ L=l M=HR/Sp3ms
+Song 2:13      ketiv 228GY לכי L=3212 M=HVqv2fs | qere 22GpK לָ֛/ךְ L=l M=HR/Sp2fs
+Ruth 2:1       ketiv 08ygU מידע L=3045 M=HVPsmsa | qere 08swV מוֹדַ֣ע L=4129 M=HNcmsa
+Ruth 3:14      ketiv 087Vm ב/טרום L=b/2958 M=HR/D | qere 08vSy בְּ/טֶ֛רֶם L=b/2962 M=HR/D
+Lam 1:11       ketiv 25FMU מחמודי/הם L=4262 M=HNcmpc/Sp3mp | qere 25SaV מַחֲמַדֵּי/הֶ֛ם L=4261 M=HNcmpc/Sp3mp
+Eccl 5:10      ketiv 217YZ ראית L=7212 M=HNcmsc | qere 21DLP רְא֥וּת L=7207 M=HNcfsc
+Eccl 6:10      ketiv 21Tzx ש/התקיף L=s/8630 M=HTr/Vhc | qere 21fTQ שֶׁ/תַּקִּ֖יף L=s/8623 M=HTd/Aamsa
+Eccl 9:4       ketiv 214BE יבחר L=977 M=HVPi3ms | qere 21t8g יְחֻבַּ֔ר L=2266 M=HVPi3ms
+Eccl 12:6      ketiv 211bu ירחק L=7368 M=HVqi3ms | qere 21cWZ יֵרָתֵק֙ L=7576 M=HVNi3ms
+Esth 8:13      ketiv 17Bxx עתודים L=6259 M=HAampa | qere 17wPL עֲתִידִים֙ L=6264 M=HAampa
+Dan 3:29       ketiv 27mim שלה L=7955 M=ANcfsa | qere 27Hbd שָׁלוּ֙ L=7960 M=ANcfsa
+Dan 9:24       ketiv 275Sr ו/ל/חתם L=c/l/2856 M=HC/R/Vqc | qere 27np9 וּ/לְ/הָתֵ֤ם L=c/l/8552 M=HC/R/Vhc
+Dan 11:18      ketiv 27AAn ו/ישב L=c/7725 M=HC/Vhi3ms | qere 27cJF וְ/יָשֵׂ֧ם L=c/7760 a M=HC/Vqi3ms
+Ezra 2:46      ketiv 15H8a שמלי L=8073 M=HNp | qere 15Sjh שַׁלְמַ֖י L=8014 M=HNp
+Ezra 4:2       ketiv 15Zy7 ו/לא L=c/3808 M=HC/Tn | qere 15ozy וְ/ל֣/וֹ L=c/l M=HC/R/Sp3ms
+Ezra 4:4       ketiv 15pjd ו/מבלהים L=c/1089 M=HC/Vprmpa | qere 15Atm וּֽ/מְבַהֲלִ֥ים L=c/926 M=HC/Vprmpa
+Ezra 4:9       ketiv 15tFU ד/הוא L=1768 M=ATr/Ta | qere 15QHV דֶּהָיֵ֖/א L=1723 M=ANgmpd/Td
+Ezra 6:17      ketiv 15RGB ל/חטיא L=l/2409 M=AR/Vpc | qere 15Upn לְ/חַטָּאָ֤ה L=l/2402 M=AR/Vpc
+Ezra 8:14      ketiv 15sWs ו/זבוד L=c/2072 M=HC/Np | qere 15mUy וְ/זַכּ֑וּר L=c/2139 M=HC/Np
+Ezra 8:17      ketiv 15Pym ו/אוצא/ה L=c/3318 M=HC/Vhw1cs/Sh | qere 15D5E וָ/אֲצַוֶּ֤ה L=c/6680 M=HC/Vpw1cs
+Neh 3:20       ketiv 16azH זבי L=2079 M=HNp | qere 16fZA זַכַּ֖י L=2140 M=HNp
+Neh 4:7        ketiv 16w2r ב/צחחיים L=b/6708 M=HRd/Ncmpa | qere 16j2a בַּ/צְּחִיחִ֑ים L=b/6706 M=HRd/Ncmpa
+Neh 7:52       ketiv 16JPF נפושסים L=5300 M=HNgmpa | qere 16t2f נְפִֽישְׁסִֽים L=5304 M=HNgmpa
+1Chr 3:24      ketiv 13NYp הדיוהו L=1939 M=HNp | qere 13Gjw הוֹדַוְיָ֡הוּ L=1938 M=HNp
+1Chr 4:7       ketiv 138LK יצחר L=3328 M=HNp | qere 13aWe וְ/צֹ֖חַר L=c/6714 M=HC/Np
+1Chr 9:33      ketiv 13tFR פטירים L=6359 M=HNcmpa | qere 13oGq פְּטוּרִ֑ים L=6362 M=HVqsmpa
+1Chr 11:11     ketiv 13WQf ה/שלושים L=d/7970 M=HTd/Acbpa | qere 13eUm הַ/שָּׁ֣לִישִׁ֔ים L=d/7991 c M=HTd/Acbpa
+1Chr 11:20     ketiv 13yU7 ו/לא L=c/3808 M=HC/Tn | qere 13WV1 וְ/ל/וֹ L=c/l M=HC/R/Sp3ms
+1Chr 12:16     ketiv 13vAd גדיתי/ו L=1428 M=HNcfpc/Sp3ms | qere 13hNu גְּדוֹתָ֑י/ו L=1415 M=HNcfpc/Sp3ms
+1Chr 23:9      ketiv 131nK שלמות L=8013 M=HNp | qere 13UFD שְׁלוֹמִ֧ית L=8019 a M=HNp
+1Chr 24:24     ketiv 13KR8 שמור L=8053 M=HNp | qere 13bXf שָׁמִֽיר L=8069 M=HNp
+1Chr 25:1      ketiv 13zDY ה/נביאים L=d/5030 M=HTd/Ncmpa | qere 13veq הַֽ/נִּבְּאִ֛ים L=d/5012 M=HTd/VNsmpa
+2Chr 3:17      ketiv 14Pw8 ה/ימיני L=d/3227 a M=HTd/Aamsa | qere 14Bxn הַ/יְמָנִי֙ L=d/3233 M=HTd/Aamsa
+2Chr 4:11      ketiv 14kV4 חירם L=2438 M=HNp | qere 14Zy7 חוּרָ֗ם L=2361 M=HNp
+2Chr 8:10      ketiv 14Nix ה/נציבים L=d/5333 M=HTd/Ncmpa | qere 14q1J הַ/נִּצָּבִ֛ים L=d/5324 M=HTd/VNrmpa
+2Chr 9:10      ketiv 14jFT חירם L=2438 M=HNp | qere 14VEv חוּרָם֙ L=2361 M=HNp
+2Chr 11:18     ketiv 148Ci בן L=1121 a M=HNcmsc | qere 14jsc בַּת L=1323 M=HNcfsc
+2Chr 18:8      ketiv 14Kzw מיכהו L=4318 M=HNp | qere 14RDi מִיכָ֥יְהוּ L=4321 M=HNp
+2Chr 24:27     ketiv 14NXR ו/רב L=c/7230 M=HC/Ncbsc | qere 1425M יִ֧רֶ֞ב L=7235 a M=HVqi3ms
+2Chr 25:17     ketiv 14JMK לך L=l M=HVqv2ms | qere 14tNx לְכָ֖/ה L=1980 M=HVqv2ms/Sh
+2Chr 29:8      ketiv 14YzW ל/זועה L=l/2113 M=HR/Ncfsa | qere 14FaA לְ/זַֽעֲוָה֙ L=l/2189 M=HR/Ncfsa
+2Chr 33:16     ketiv 14FJD ו/יכן L=c/3559 a M=HC/Vhw3ms | qere 14jd4 וַ/יִּ֨בֶן֙ L=c/1129 M=HC/Vqw3ms
+2Chr 34:9      ketiv 14b5v ו/ישבי L=c/3427 M=HC/Vqrmpc | qere 14d7c וַ/יָּשֻׁ֖בוּ L=c/7725 M=HC/Vqw3mp

@@ -1,0 +1,5 @@
+unit keys: ['class', 'label', 'morphhb', 'osisID', 'wlc']
+one unit: {"osisID": "Gen.1.2", "label": "qadma", "class": "qadma-for-first-pashta", "morphhb": [{"kind": "plain", "raw": "תֹ֨הוּ֙", "text": "תֹ֨הוּ֙", "paseq": false, "notes": []}], "wlc": [{"kind": "plain", "raw": "תֹ֙הוּ֙", "text": "תֹ֙הוּ֙", "paseq": false, "notes": []}]}
+labels: {'qadma': 3811, 'divided-accents/accents': 108, 'divided-accents/accents+paseq': 9, 'divided-accents/pointing': 5, 'zwj': 79, 'word-division': 12, 'final-form': 3, 'kq-structure': 1}
+verses with an alternative-accent note: 24: Deut.5.10 Deut.5.12 Deut.5.13 Deut.5.14 Deut.5.15 Deut.5.17 Deut.5.18 Deut.5.19 Deut.5.6 Deut.5.7 Deut.5.8 Deut.5.9 Exod.20.10 Exod.20.13 Exod.20.14 Exod.20.15 Exod.20.2 Exod.20.3 Exod.20.4 Exod.20.5 Exod.20.6 Exod.20.8 Exod.20.9 Gen.35.22
+qadma-class units by verse kind: {'other': 3807, 'divided': 4}

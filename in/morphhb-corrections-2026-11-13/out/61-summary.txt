@@ -1,0 +1,129 @@
+# written by scripts/p2_lemma_summary.py: C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe -I .novc/morphhb-corrections-2026-11-13/scripts/p2_lemma_summary.py .novc/morphhb-corrections-2026-11-13/scripts .novc/morphhb-corrections-2026-11-13/out  (working directory C:/Users/BenDe/GitRepos/MAM-basics)
+
+Written by Claude (Opus 5.5) on 2026-11-13, New York time; not reviewed by a human.  Every reading
+is attributed to the transcription that has it; nothing here is about the Leningrad Codex itself.
+Hebrew is copied from the outputs by script and shown in MAM-normal mark order.
+
+== 1. Corrections beyond Part 1's five: 4, all Claude's judgment
+These methods find no other lemma correction of the al/el kind (one word read as another word with the same
+letters).  What else they find is a lemma correction where the letters differ (Hosea 13:15) and three
+corrections of a mappiq, where only the morph follows MAM's form.
+
+-- Deut 22:29, morphhb id 05ENP
+   morphhb: שַׁלְּחָ֖/ה  lemma 7971  morph HVpc/Sp3fs; WLC notes at the chanted word in morphhb: ['Q', 'n', 'p']
+   WLC 4.18: שַׁלְּחָ֖ה  notes ['Q', 'n', 'p']
+   WLC 4.20: שַׁלְּחָ֖ה  notes ['Q', 'n', 'p']
+   WLC 4.22: שַׁלְּחָ֖ה  notes ['Q', 'n', 'p']
+   UXLC 2.6: שַׁלְּחָ֖ה  notes none
+   MAM:      שַׁלְּחָ֖הּ
+   Claude's class and reason: correction: WLC (4.18, 4.20, 4.22) and UXLC 2.6 lack the mappiq; WLC marks the word with notes Q, n ('an anomalous form') and p; as written the form is a Piel imperative with the paragogic he; the morph HVpc/Sp3fs (infinitive with a third feminine suffix) analyses MAM's form, which has the mappiq; a correction of a mark that WLC itself calls anomalous
+-- Gen 39:19, morphhb id 01oc4
+   morphhb: עָ֥שָׂהּ  lemma 6213 a  morph HVqp3ms; WLC notes at the chanted word in morphhb: ['1']
+   WLC 4.18: עָ֥שָׂהּ  notes ['1']
+   WLC 4.20: עָ֥שָׂהּ  notes ['1']
+   WLC 4.22: עָ֥שָׂהּ  notes ['U']
+   UXLC 2.6: עָ֥שָׂה  notes ['t']
+   MAM:      עָ֥שָׂה
+   Claude's class and reason: correction: WLC has a mappiq in the final he, which as written makes the form a perfect with a third feminine suffix (he did it); the morph HVqp3ms, without a suffix, analyses MAM's form, which has no mappiq; WLC 4.18 and 4.20 have note 1 at the word, 4.22 note U, and UXLC 2.6 drops the mappiq; a correction of a mark
+-- Hos 13:15, morphhb id 28sYk
+   morphhb: בֵּ֥ן  lemma 996  morph HNcmsc; WLC notes at the chanted word in morphhb: ['U']
+   WLC 4.18: בֵּ֥ן  notes ['U']
+   WLC 4.20: בֵּ֥ן  notes ['U']
+   WLC 4.22: בֵּ֥ן  notes ['U']
+   UXLC 2.6: בֵּ֥ן  notes none
+   MAM:      בֵּ֥ין
+   Claude's class and reason: correction: WLC (all three versions) has the word spelled as 'son' (no yod), under note U, 'an unexpected reading'; MAM has 'between' (with the yod); lemma 996 ('between') analyses MAM's word; the morph HNcmsc fits 'son' in the construct (morphhb tags 'between' HR in its 167 other occurrences); the letters differ, so the review key cannot match them; read as a defective spelling of 'between' it would be an anomaly instead
+-- Lev 4:35, morphhb id 03caE
+   morphhb: חֶלְבָּ֣/ה  lemma 2459  morph HNcmsc/Sp3fs; WLC notes at the chanted word in morphhb: none
+   WLC 4.18: חֶלְבָּ֣ה  notes none
+   WLC 4.20: חֶלְבָּ֣ה  notes none
+   WLC 4.22: חֶלְבָּ֣ה  notes none
+   UXLC 2.6: חֶלְבָּ֣ה  notes none
+   MAM:      חֶלְבָּ֣הּ
+   Claude's class and reason: correction: WLC (4.18, 4.20, 4.22) and UXLC 2.6 lack the mappiq, with no note; as written the form is the place name Helbah (lemma 2462), which is morphhb's one other word of this form; the morph's third feminine suffix (its fat) analyses MAM's form, which has the mappiq; a correction of a mark, though no reader would take the place name here
+
+== 2. Counts
+Method 1, the al/el census (50-alel-census.txt): 4930 words whose last morpheme is alef-lamed; 17 mismatches of
+vowel, lemma and morph, by Claude's class: anomaly 1, correction 5, defensible 8, slip 3; 6 alef-lamed words whose alef has another vowel in MAM
+(the five and Psalms 35:22).
+Method 2, the general test (51-general-test.txt):
+   verses                                                                                         23213
+   verses that MAM lacks (MAM-simple's em dash: Joshua 21:36 and 21:37)                               2
+   side words (each verse's ketiv side and qere side)                                            611024
+   side words in a block of op equal                                                             608802
+   side words in a block of op replace                                                             2174
+   side words in a block of op delete                                                                48
+   side words in a block of op insert                                                                 0
+   side words in a one-to-one pair whose form keys differ                                         15269
+   A. pairs (deduped by morphhb id and MAM's form key)                                             7757
+   A. morphhb ids with two different MAM forms                                                        0
+   A1. pairs whose own form has at least 5 other occurrences                                       6892
+   A1.  of them, MAM's form absent from morphhb (untestable)                                         49
+   A1.  of them, flagged                                                                              8
+   A1.    flagged by lemma                                                                            6
+   A1.    flagged by morph                                                                            4
+   A1.    flagged by pair                                                                             4
+   A2. pairs whose own form is rare (inconclusive)                                                  865
+   A2.  of them, MAM's form absent from morphhb                                                     502
+   A2.  of them, some analysis has at least 50% of MAM's form's occurrences                         356
+   A2.  of them, flagged by back-off A (other same-letter forms)                                     54
+   A2.  of them, flagged by back-off B (MAM's text)                                                   0
+   A2.  of them, flagged by A or B                                                                   54
+   B. letters-differ pairs (one-to-one non-equal blocks)                                           1017
+   B.  of them, own form with at least 5 other occurrences                                          322
+   B.  of them, flagged                                                                               5
+   B.  of them, rare own form, flagged by back-off A or B                                            22
+   Calibration: all five known corrections are flagged; Judges 19:4 is not.  Of the 8 flagged: the five,
+   one anomaly (Daniel 3:15), two noise (Exodus 12:27, 1 Chronicles 29:16).  A looser grid of thresholds
+   flags nothing more (59-threshold-sensitivity.txt).  6,466 pairs differ only by a holam in MAM's form,
+   6,459 of them the Tetragrammaton (59-holam-only-pairs.txt).
+Method 3, WLC's notes (60-wlc-notes.txt): per note letter, notes / chanted words / differing from MAM /
+flagged by the general test / flagged by a back-off test:
+   U    79   79   59   3   6
+   1   207  207  124   1  16
+   c   189  189    9   0   0
+   n   109  109   86   0  11
+   Q   116  116   72   0  10
+   p    86   86   58   0   8
+   q    51   51   22   0   2
+   C    48   47    4   0   0
+   a    39   39    3   0   1
+   v    33   33   20   0   2
+   k    28   28   14   0   1
+   y    27   27    4   0   0
+   4    16   16    0   0   0
+   P    16   16    5   0   2
+   8     9    9    0   0   0
+   5     4    4    0   0   0
+   7     4    4    0   0   0
+   V     4    4    2   0   0
+   6     3    3    0   0   0
+   M     2    2    0   0   0
+   F     1    1    1   0   0
+   K     1    1    0   0   0
+
+== 3. What each method cannot find
+1. Method 1 (the al/el census) sees only words whose last morpheme is alef-lamed.  Within them it finds every disagreement between vowel, lemma and morph, whether or not MAM differs, so it also finds morphhb's own slips (Jeremiah 51:3, Genesis 37:22), which are not corrections.  It cannot see a correction at any other word.
+2. Method 2 (the general test) compares morphhb's form with MAM's by the review key, which strips accents, meteg, rafeh and the dots.  It cannot find: (a) a correction where WLC and MAM agree, since there is no pair (the exchanged lemmas of Jeremiah 51:3 are invisible to it); (b) a correction carried by a mark the key strips, such as an accent whose place distinguishes two forms; (c) a correction of an analysis that both forms share, where none is possible anyway; (d) a correction whose own form is rare (fewer than five other occurrences: 865 pairs), except through its back-off tests and Claude's reading of the rare lists; back-off B, which draws on MAM's text, flagged nothing, and back-off A is mostly noise; (e) a correction where MAM's form does not occur in WLC's text (49 pairs with a common own form and 502 rare ones are untestable by frequency; Claude read the rare ones whose mark difference could change an analysis, list 57); (f) a correction that morphhb makes often enough to raise its share among its own form's occurrences above the threshold (the grid in 59-threshold-sensitivity.txt shows no further flag up to 30%); (g) a correction where the letters differ, except through the supplement, which covers one-to-one blocks only (1,017 pairs), not word division or ketiv/qere structure; (h) a correction of a ketiv against WLC's own qere: the test compares a ketiv with MAM's ketiv side, where MAM often has no ketiv or points it.
+3. Method 3 (WLC's notes) sees only words that WLC 4.20 annotates, as morphhb carries the notes.  Of the corrections, Exodus 10:28, Joshua 22:19, Jeremiah 47:6 and Leviticus 4:35 carry no note in morphhb (WLC 4.22's notes 1 at the first three came after morphhb's text), so this method cannot find them; within annotated words it inherits method 2's limits.
+
+== 4. Side findings, outside the question of corrections
+Every id by Claude's class, over all three methods (classes as in 51-general-test.txt):
+   correction 9: 01oc4 02ubY 03caE 057a3 05ENP 06Umo 07HwX 242CG 28sYk
+   anomaly    21: 011Dh 01G2d 01x11 04c2q 052W7 05iza 07N1A 07PaR 07g9e 08MZ9 08w1U 12cPo 12u96 19HTT 21zSa 271BC 27eWV 27yxA 28F23 32ki2 35QUP
+   defensible 14: 05Tyx 075xN 085eq 10bWi 10uD3 19BYz 19N8P 19ZFs 19ivp 20EJP 27B7W 27DD6 27F5r 27xTA
+   ketiv      7: 0188E 05Ucv 05y1v 10vJw 21P5E 235WL 27YMF
+   reads WLC  6: 02Wc4 144SZ 23Dw8 24Rdh 24uja 27JSS
+   slip       3: 01bhs 249Bc 24JqK
+   noise      52: 01YX2 01hRC 01muR 01yxi 02ZPG 02kxi 02tmJ 03cXS 04dUR 04fo4 06cFs 071L6 07RCv 07cwR 07rMH 1039o 10EWV 10FHT 10LMs 10bst 10vyC 11HGY 12KYM 12Qpi 12eec 13SiG 14cYB 15UV1 15hjj 16fwL 17GFP 18d3U 18wCh 19Eg2 19bn2 20Not 20hnf 21K4a 21VLV 21pY9 22MzG 238w2 23e4L 23tit 26Prq 27aC7 32Sxc 34MmM 35bCC 3631Z 38UDg 39XPV
+Slips of morphhb's own: Jeremiah 51:3 (24JqK, 249Bc: the two conjunction-plus-al/el words carry each other's
+lemma), Genesis 37:22 (01bhs: lemma 3808 for 408).  Lemma prefix d (the article) with morph Ti (the
+interrogative), seen at Exodus 14:11, 2 Kings 1:3, 1:6, 1:16, Job 27:9, 34:33, 39:20 (no census was made).
+Hithpael against Hishtaphel labels of one verb form (Exodus 12:27, Isaiah 49:7 and others).
+Ketiv against qere, 58-ketiv-qere-analyses.txt: ketiv words compared                                 1228
+Ketiv against qere, 58-ketiv-qere-analyses.txt: same lemma main number                             1023
+Ketiv against qere, 58-ketiv-qere-analyses.txt: different lemma main number                         205
+
+== 5. Commands
+All steps, this summary last: C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe -I .novc/morphhb-corrections-2026-11-13/scripts/p2_lemma_run_all.py  (working directory C:/Users/BenDe/GitRepos/MAM-basics; about six minutes)
+This summary alone: C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe -I .novc/morphhb-corrections-2026-11-13/scripts/p2_lemma_summary.py .novc/morphhb-corrections-2026-11-13/scripts .novc/morphhb-corrections-2026-11-13/out  (working directory C:/Users/BenDe/GitRepos/MAM-basics)

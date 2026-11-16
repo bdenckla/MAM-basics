@@ -1,0 +1,71 @@
+# written by scripts/p2_records_headers_notes.py; no requests.  morphhb's wlc/<book>.xml at d4265dfa.
+# exegesis notes: 21.  Tokens: w[text|lemma|morph] ('-' = a maqqef follows), seg:<type>, variant[qere: ...], note:<type>.
+
+== The notes' texts (rdg replaced by <rdg>), with their verses
+   9 x WLC has this word divided as <rdg>.: Gen.38.24, Jer.48.44, Zech.2.13, Song.6.12, Dan.2.39, Ezra.4.9, 1Chr.2.52, 1Chr.5.9, 2Chr.26.8
+   12 x A single word in the text has been divided for exegesis.: 2Kgs.6.25, Isa.9.5, Jer.29.23, Ps.106.1, Song.8.6, Ezra.3.5, 1Chr.15.13, 1Chr.20.4, 2Chr.20.1, 2Chr.20.35, 2Chr.24.4, 2Chr.30.3
+
+== Each note
+-- Gen.38.24: WLC has this word divided as כְּ/מִשְׁלֹ֣שׁ.  [rdg: כְּ/מִשְׁלֹ֣שׁ]
+      before: w[וַ/יְהִ֣י|c/1961|HC/Vqw3ms]  seg:x-paseq  w[כְּ/מִ/שְׁלֹ֣שׁ|k/m/7969|HR/R/Acfsc]
+      after:  w[חֳדָשִׁ֗ים|2320|HNcmpa]  w[וַ/יֻּגַּ֨ד|c/5046|HC/VHw3ms]
+-- 2Kgs.6.25: A single word in the text has been divided for exegesis.
+      before: w[יונים|3123|HNcfpa]  variant[qere: דִּבְיוֹנִ֖ים]  note:(n=a)
+      after:  w[בַּ/חֲמִשָּׁה|b/2568|HR/Acmsa]-  seg:x-maqqef
+-- Isa.9.5: A single word in the text has been divided for exegesis.
+      before: w[גִּבּ֔וֹר|1368|HAamsa]  w[אֲבִי|1|HNcmsc]  w[עַ֖ד|5703|HNcmsa]
+      after:  w[שַׂר|8269|HNcmsc]-  seg:x-maqqef
+-- Jer.29.23: A single word in the text has been divided for exegesis.
+      before: w[הו|1931|HPp3ms]  w[ידע|3045|HVqrmsa]  variant[qere: הַ/יּוֹדֵ֥עַ]
+      after:  w[וָ/עֵ֖ד|c/5707|HC/Ncmsa]  w[נְאֻם|5002|HNcmsc]-
+-- Jer.48.44: WLC has this word divided as הניס.  [rdg: הניס]
+      before: w[ה/ניס|d/5211|HTd/Vqrmsa]
+      after:  variant[qere: הַ/נָּ֞ס]  w[מִ/פְּנֵ֤י|m/6440|HR/Ncbpc]
+-- Zech.2.13: WLC has this word divided as עֲלֵ/יהֶ֔ם.  [rdg: עֲלֵ/יהֶ֔ם]
+      before: seg:x-maqqef  w[יָדִ/י֙|3027|HNcbsc/Sp1cs]  w[עֲלֵי/הֶ֔ם|5921 a|HR/Sp3mp]
+      after:  w[וְ/הָי֥וּ|c/1961|HC/Vqq3cp]  w[שָׁלָ֖ל|7998|HNcmsa]
+-- Ps.106.1: A single word in the text has been divided for exegesis.
+      before: w[הַֽלְלוּ|1984 b|HVpv2mp]  w[יָ֨הּ|3050|HNp]
+      after:  seg:x-paseq  w[הוֹד֣וּ|3034|HVhv2mp]
+-- Song.6.12: WLC has this word divided as עַמִּי.  [rdg: עַמִּי]
+      before: w[שָׂמַ֔תְ/נִי|7760 a|HVqp3fs/Sp1cs]  w[מַרְכְּב֖וֹת|4818|HNcfpc]  w[עַמִּ/י|5971 a|HNcmsc/Sp1cs]-
+      after:  seg:x-maqqef  w[נָדִֽיב|5081|HAamsa]
+-- Song.8.6: A single word in the text has been divided for exegesis.
+      before: w[שַׁלְהֶ֥בֶתְ|7957|HNcfsa]  w[יָֽה|3050|HNp]  seg:x-sof-pasuq
+      after:  
+-- Dan.2.39: WLC has this word divided as ארעא.  [rdg: ארעא]
+      before: w[אָחֳרִ֖י|317|AAafsa]  w[ארע/א|772|ANcfsc/Sd]  variant[qere: אֲרַע]
+      after:  note:(n=1)  w[מִנָּ֑/ךְ|4481|AR/Sp2ms]
+-- Ezra.3.5: A single word in the text has been divided for exegesis.
+      before: w[וְ/אַחֲרֵי|c/310 a|HC/D]  w[כֵ֞ן|3651|HD]
+      after:  w[עֹלַ֤ת|5930 a|HNcfsc]  w[תָּמִיד֙|8548|HNcmsa]
+-- Ezra.4.9: WLC has this word divided as דִּ֠ינָיֵא.  [rdg: דִּ֠ינָיֵא]
+      before: w[וּ/שְׁאָ֖ר|c/7606|AC/Ncmsc]  w[כְּנָוָתְ/ה֑וֹן|3675|ANcmpc/Sp3mp]  w[דִּ֠ינָיֵ/א|1784|ANcmpd/Td]
+      after:  w[וַ/אֲפַרְסַתְכָיֵ֞/א|c/671 b|AC/Ncmpd/Td]  w[טַרְפְּלָיֵ֣/א|2967|ANcmpd/Td]
+-- 1Chr.2.52: WLC has this word divided as הָ/רֹאֶ֖ה.  [rdg: הָ/רֹאֶ֖ה]
+      before: w[קִרְיַ֣ת|7157+|HNp]  w[יְעָרִ֑ים|7157|HNp]  w[הָרֹאֶ֖ה|7204|HNp]
+      after:  w[חֲצִ֥י|2679+|HNcmsc]  w[הַ/מְּנֻחֽוֹת|d/2679|HTd/Np]
+-- 1Chr.5.9: WLC has this word divided as לְב֣וֹא.  [rdg: לְב֣וֹא]
+      before: w[עַד|5704|HR]-  seg:x-maqqef  w[לְ/ב֣וֹא|l/935|HR/Vqc]
+      after:  w[מִדְבָּ֔רָ/ה|4057 b|HNcmsa/Sd]  w[לְ/מִן|l/4480 a|HR/R]-
+-- 1Chr.15.13: A single word in the text has been divided for exegesis.
+      before: w[כִּ֛י|3588 a|HC]  w[לְ/מַ|l/4100|HR/Ti]  w[בָּ/רִ֥אשׁוֹנָ֖ה|b/7223|HRd/Aafsa]
+      after:  w[לֹ֣א|3808|HTn]  w[אַתֶּ֑ם|859 d|HPp2mp]
+-- 1Chr.20.4: A single word in the text has been divided for exegesis.
+      before: w[וַ/יְהִי֙|c/1961|HC/Vqw3ms]  w[אַחֲרֵי|310 a|HD]  w[כֵ֔ן|3651 c|HD]
+      after:  w[וַ/תַּעֲמֹ֧ד|c/5975|HC/Vqw3fs]  w[מִלְחָמָ֛ה|4421|HNcfsa]
+-- 2Chr.20.1: A single word in the text has been divided for exegesis.
+      before: w[וַ/יְהִ֣י|c/1961|HC/Vqw3ms]  w[אַֽחֲרֵי|310 a|HD]  w[כֵ֡ן|3651 c|HD]
+      after:  w[בָּ֣אוּ|935|HVqp3cp]  w[בְנֵי|1121 a|HNcmpc]-
+-- 2Chr.20.35: A single word in the text has been divided for exegesis.
+      before: w[וְ/אַחֲרֵי|c/310 a|HC/D]  w[כֵ֗ן|3651 c|HD]
+      after:  w[אֶתְחַבַּר֙|2266|HVtp3ms]  w[יְהוֹשָׁפָ֣ט|3092|HNp]
+-- 2Chr.24.4: A single word in the text has been divided for exegesis.
+      before: w[וַ/יְהִ֖י|c/1961|HC/Vqw3ms]  w[אַחֲרֵי|310 a|HD]  w[כֵ֑ן|3651 c|HD]
+      after:  w[הָיָה֙|1961|HVqp3ms]  w[עִם|5973 a|HR]-
+-- 2Chr.26.8: WLC has this word divided as לְב֣וֹא.  [rdg: לְב֣וֹא]
+      before: w[עַד|5704|HR]-  seg:x-maqqef  w[לְ/ב֣וֹא|l/935|HR/Vqc]
+      after:  w[מִצְרַ֔יִם|4714|HNp]  w[כִּ֥י|3588 a|HC]
+-- 2Chr.30.3: A single word in the text has been divided for exegesis.
+      before: w[הִתְקַדְּשׁ֣וּ|6942|HVtp3cp]  w[לְ/מַ|l/4100|HR/Ti]  w[דַּ֔י|1767|HNcmsa]
+      after:  w[וְ/הָ/עָ֖ם|c/d/5971 a|HC/Td/Ncmsa]  w[לֹא|3808|HTn]-

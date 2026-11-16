@@ -1,0 +1,296 @@
+# written by scripts/p2_text_compare.py: C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe -I .novc/morphhb-corrections-2026-11-13/scripts/p2_text_compare.py .novc/morphhb-corrections-2026-11-13/scripts .novc/morphhb-corrections-2026-11-13/fetched .novc/morphhb-corrections-2026-11-13/out  (working directory C:/Users/BenDe/GitRepos/MAM-basics)
+
+PART 2, TEXT: morphhb's text compared with WLC 4.18, 4.20 and 4.22, every verse of all 39 books
+Written by Claude (Opus 5.5) on 2026-11-13, New York time; not reviewed by a human.  Every
+reading is attributed to the transcription that has it; nothing here is about the Leningrad
+Codex itself.  Hebrew is copied from the data by script and shown in MAM-normal mark order.
+
+== 1. Answer
+1. morphhb's text follows WLC 4.20. Against WLC 4.20 every differing atom falls into one of the
+systematic classes below and 0 residual differences remain. Against WLC 4.18, 16 residual units
+remain, and WLC 4.20 has morphhb's reading, atom for atom, at 16 of them; against WLC 4.22, 38
+remain, and WLC 4.20 has morphhb's reading at 36 of them (section 6).
+2. Raw counts, difflib on the atoms' comparison tuples (the brief's method): morphhb differs
+from WLC 4.18 in 3616 verses (4054 morphhb atoms in 3957 hunks), from WLC 4.20 in 3607 verses
+(4041 atoms, 3944 hunks), from WLC 4.22 in 3633 verses (4076 atoms, 3981 hunks). Nearly all of
+these are the qadma convention (class 1).
+3. The differing units against WLC 4.20, by class: qadma-for-first-pashta 3811;
+Decalogue/divided accents 122; mark encoding only 82; word division 12; ketiv/qere
+representation 1; paseq 0; residual 0.
+4. Text changes inside the classes, each listed in full in 41-text-residuals.txt or
+46-text-divided-accents.txt: the ketiv/qere unit(s): Dan 2:39, where morphhb has [k]ארעא
+[q]אֲרַע for WLC 4.20's אֲרַ֣עא (WLC 4.22 [k]ארעא [q]אֲרַ֣ע, UXLC 2.6 [k]ארעא [q]אֲרַ֣ע, MAM
+ארעא [q]אֲרַ֣ע: vs morphhb skey, skey, skey); 12 atoms that morphhb divides in two (word
+division, 5.4); and, in the Decalogues, 6 atoms where WLC 4.20's atom is not the union of
+morphhb's main text and its alternative-accent note, plus 1 catchWord atom that differs from
+the main text it names (5.2).
+
+== 2. Inputs
+   morphhb: wlc/<book>.xml at d4265dfa (fetched/morphhb-wlc-<book>/), read by
+   mhb_common.read_morphhb_book for validation and by p2_text_atoms.morphhb_book for the atoms.
+   WLC 4.18: tanach.us build 24.2, Sefaria-Data's copy
+   (C:/Users/BenDe/GitRepos2/MAM-basics/.novc/wlc418-tanach-us/sefaria-data-0f63a5fe/books),
+   read by mhb_common.read_wlc418_book.
+   WLC 4.20 and 4.22: MAM-basics' tracked conversions out/wlc420-u and out/wlc422-u of the
+   Michigan-Claremont files in/wlc420 and in/wlc422, read by mhb_common.read_wlc42x.
+   UXLC 2.6: in/UXLC-39 (tanach.us XML), for display at the listed places. MAM: MAM-simple's
+   BHS JSON read by the Israel Bible review's lint (part1_cases.mam_atoms), every dual
+   cantillation in its cant-combined strand, for display at the listed places.
+   Every source has the same 23213 verses under the same references (BHS versification).
+
+== 3. Method
+3.1 Atoms.  Each verse of each source becomes a list of atoms, one per space- or maqaf-delimited
+unit, in text order: kind (plain, ketiv, qere), text, paseq flag.  The text drops '/', sof pasuq,
+paseq and whitespace, and keeps a final maqaf.  pe, samekh and inverted-nun placeholders, and
+WLC 4.2x's 'kk'/'qq' placeholders of a missing ketiv or qere, are left out.  Every element and
+character is dispatched explicitly; anything else raises.  Per source:
+   - morphhb: verse-level <w> in order, x-ketiv <w> as ketiv atoms, each variant note's qere
+   <w> right after its ketiv <w>. A maqqef seg adds a maqaf to the <w> before it (one of
+   subType x-ketiv to that ketiv alone); after a variant note, to the pair's last ketiv and
+   last qere atom both, as WLC has it (52 such segs; 7 more inside rdg). A paseq seg flags the
+   <w> before it; after a variant note, the pair's qere, as WLC has it (14 such segs; 5 more
+   inside rdg). Note text is not text: a WLC note (n, no type) is kept as a note letter on the
+   atom; KJV-versification notes are skipped; alternative notes and exegesis notes contribute
+   no atoms and are used by the classification.
+   - WLC 4.18 and UXLC 2.6: w, k and q elements; a paseq ends the atom after a space (UXLC 2.6
+   once without one, 2 Samuel 15:12); x notes kept as note letters. UXLC 2.6 has one atom with
+   a maqaf inside (Psalms 67:2), allowed for display.
+   - WLC 4.20 and 4.22: '*' ketiv, '**' qere; a paseq is attached to the atom's end.
+   - MAM: the lint's ketiv side (plain and ketiv atoms) and qere side (plain and qere atoms)
+   separately; a standalone paseq atom flags the atom before it.
+3.2 Keys.  fkey(text) (mhb_common): every mark kept, '/' and CGJ dropped, each letter's marks
+sorted, so mark order never matters.  An atom's comparison tuple is (kind, fkey, paseq).  skey
+is the Israel Bible review's key (accents, meteg, rafeh, paseq, sof pasuq, the upper and lower
+dots and invisible marks stripped; qamats qatan read as qamats, holam haser for vav as holam).
+letters() keeps the letters alone, final forms distinct.
+3.3 Alignments, per verse, morphhb against each WLC version.  (a) The brief's: difflib on the
+lists of comparison tuples; its non-equal opcodes are the 'hunks' counted below.  (b) The
+classification's: difflib on the lists of letters, so a difference in marks never shifts the
+alignment (on the tuples, a repeated word, as in Deuteronomy 5:8, can align with the wrong
+copy).  Atoms in equal letter blocks pair one to one; a pair whose tuples differ is a differing
+pair; a non-equal block is a letter group.  Adjacent letter groups and pairs whose kinds differ
+merge into one structural unit; every other differing pair is a unit of its own.  The two
+alignments always agree on which verses differ (the script raises otherwise).
+3.4 Classes.  Each unit gets one label, by the first test that holds (p2_text_compare.classify):
+For a differing pair (same letters, same kind):
+  'zwj': equal by fkey once ZERO WIDTH JOINER is dropped from both.
+  'qadma': replacing some of morphhb's HEBREW ACCENT QADMA with HEBREW ACCENT PASHTA makes the
+      atoms equal by fkey, the replaced qadmas sit on exactly the letters where WLC has every
+      pashta but its last, and WLC has two pashtas or more.  Nothing else is changed, so the
+      replacement is exactly what makes them equal.  'qadma-other': a replacement makes them
+      equal without that pattern.  'qadma+zwj': both.
+  'paseq': equal by fkey, the paseq flags differ ('+paseq' is added to the labels above).
+  'divided-accents/pointing' or '/accents': otherwise, in a verse with a morphhb
+      alternative-accent note, as skey differs or not ('+paseq' if the paseq flags differ).
+  'residual/pointing' or 'residual/accents': otherwise, likewise.
+For a structural unit:
+  'final-form': as many atoms on each side, kinds and paseq flags pairwise equal, and each
+      pair equal by fkey once every final letter is read as its non-final form.
+  'kq-structure': the sets of kinds on the two sides differ, a ketiv or qere among them.
+  'word-division': both sides non-empty, the same set of kinds, the same letters in the same
+      order split into different atoms ('+marks' if the concatenations differ by fkey).
+  'divided-accents/letters' in a verse with an alternative note, else 'residual/letters'.
+The task's classes group the labels: qadma-for-first-pashta = qadma (and qadma+zwj, qadma+paseq);
+Decalogue/divided accents = divided-accents/*; mark encoding only = zwj and final-form; word
+division = word-division*; ketiv/qere representation = kq-structure; paseq = paseq; residual =
+residual/* and qadma-other.  A residual is split into letters, pointing (skey differs) and
+accents only (skey equal).
+3.5 Every unit of the closest version is listed in 43-text-class-lists.txt; every residual, and
+every unit of the rarer labels, with WLC 4.18's, 4.20's, 4.22's, UXLC 2.6's and MAM's atoms at
+the same place (aligned by letters with both morphhb's and WLC's atoms) in 41-text-residuals.*.
+
+== 4. Counts
+                                               WLC 4.18   WLC 4.20   WLC 4.22
+key alignment: verses                             23213      23213      23213
+key alignment: morphhb atoms                     306785     306785     306785
+key alignment: WLC atoms                         306772     306772     306774
+key alignment: verses differing                    3616       3607       3633
+key alignment: hunks                               3957       3944       3981
+key alignment: morphhb atoms in hunks              4054       4041       4076
+key alignment: WLC atoms in hunks                  4041       4028       4065
+letters alignment: differing units                 4041       4028       4065
+
+Units by class, and (morphhb atoms / WLC atoms) in them:
+                                                     WLC 4.18         WLC 4.20         WLC 4.22
+qadma-for-first-pashta                        3811 (3811/3811)  3811 (3811/3811)  3808 (3808/3808)
+Decalogue/divided accents                       122 (122/122)    122 (122/122)    121 (121/121)
+mark encoding only                                 79 (79/79)       82 (82/82)       82 (82/82)
+word division                                      12 (24/12)       12 (24/12)       13 (25/14)
+ketiv/qere representation                             1 (2/1)          1 (2/1)          2 (1/1)
+paseq                                                 0 (0/0)          0 (0/0)          1 (1/1)
+residual                                           16 (16/16)          0 (0/0)       38 (38/38)
+
+Units by label:
+qadma                                              3811       3811       3808
+divided-accents/accents                             108        108        106
+zwj                                                  79         79         79
+word-division                                        12         12         12
+divided-accents/accents+paseq                         9          9          9
+divided-accents/pointing                              5          5          6
+final-form                                            0          3          3
+kq-structure                                          1          1          2
+paseq                                                 0          0          1
+qadma-other                                           1          0          0
+residual/accents                                      5          0         17
+residual/letters                                      1          0          0
+residual/pointing                                     9          0         21
+word-division+marks                                   0          0          1
+
+Verses with at least one unit of the class, against WLC 4.20:
+   qadma-for-first-pashta                      3501
+   Decalogue/divided accents                     24
+   mark encoding only                            82
+   word division                                 12
+   ketiv/qere representation                      1
+   paseq                                          0
+   residual                                       0
+
+== 5. The classes against WLC 4.20
+5.1 qadma-for-first-pashta: 3811 units.
+     3817  (morphhb atoms with both a qadma and a pashta)
+     3807  WLC 4.20 atom with two pashtas or more: morphhb differs, qadma_test=qadma, divided-accents verse=False; WLC: 2 pashtas, the last on the atom's last letter=True
+        8  WLC 4.20 atom with two pashtas or more: morphhb differs, qadma_test=None, divided-accents verse=True; WLC: 2 pashtas, the last on the atom's last letter=True
+        4  WLC 4.20 atom with two pashtas or more: morphhb differs, qadma_test=qadma, divided-accents verse=True; WLC: 2 pashtas, the last on the atom's last letter=True
+   Every WLC 4.20 atom with two pashtas or more has exactly two, the last on the atom's last
+   letter; morphhb keeps none of them unchanged; outside the verses with alternative-accent
+   notes every one is a 'qadma' unit.
+5.2 Decalogue/divided accents: 122 units, all in the 24 verses with morphhb alternative-accent
+    notes: Gen 35:22, Exod 20:2, Exod 20:3, Exod 20:4, Exod 20:5, Exod 20:6, Exod 20:8, Exod 20:9, Exod 20:10, Exod 20:13, Exod 20:14, Exod 20:15, Deut 5:6, Deut 5:7, Deut 5:8, Deut 5:9, Deut 5:10, Deut 5:12, Deut 5:13, Deut 5:14, Deut 5:15, Deut 5:17, Deut 5:18, Deut 5:19.
+   divided-accents/accents              108
+   divided-accents/accents+paseq        9
+   divided-accents/pointing             5
+   Union test (p2_text_compare.reconstructs; 46-text-divided-accents.txt): WLC's
+   double-accented atom should be, letter by letter, the union of the marks of morphhb's
+   main-text atom and of its alternative note's atom (each mark's count the larger of the two;
+   morphhb's qadma read as pashta where WLC has a pashta and no qadma; a maqaf or paseq if
+   either has one). 123 atoms carry alternative notes.
+      116  equal to WLC, no alternative note
+      105  divided-accents/accents; alternative note: yes; WLC = main + alternative: ok
+        9  divided-accents/accents+paseq; alternative note: yes; WLC = main + alternative: ok
+        4  qadma; alternative note: no; WLC = main + alternative: ok
+        3  divided-accents/accents; alternative note: yes; WLC = main + alternative: marks
+        2  divided-accents/pointing; alternative note: yes; WLC = main + alternative: marks
+        2  divided-accents/pointing; alternative note: yes; WLC = main + alternative: ok
+        1  divided-accents/pointing; alternative note: yes; WLC = main + alternative: maqaf
+        1  equal to WLC; alternative note: yes; WLC = main + alternative: ok
+   The places where the union is not WLC 4.20's atom, or where the alternative note's catchWord
+   differs from the main text it names, with every source:
+   Exod 20:4 (divided-accents/accents; union test: marks): morphhb main וַאֲשֶׁ֥ר; alternative וַאֲשֶׁר֩
+      WLC 4.18 וַֽאֲשֶׁ֥ר֩ | WLC 4.20 וַֽאֲשֶׁ֥ר֩ | WLC 4.22 וַֽאֲשֶׁ֥ר֩ | UXLC 2.6 וֽ͏ַאֲשֶׁ֥ר֩ | MAM וַֽאֲשֶׁ֥ר֩
+   Exod 20:4 (divided-accents/pointing; union test: marks): morphhb main מִתָּ֑חַת; alternative מִתָּ֜חַת
+      WLC 4.18 מִתַָּ֑֜חַת | WLC 4.20 מִתַָּ֑֜חַת | WLC 4.22 מִתַָּ֑֜חַת | UXLC 2.6 מִתָּ֑͏ַ֜חַת | MAM מִתָּ֑͏ַ֜חַת
+   Exod 20:5 (divided-accents/pointing; union test: marks): morphhb main תִשְׁתַּחֲוֶ֥ה; alternative תִשְׁתַּחֲוֶ֣ה
+      WLC 4.18 תִשְׁתַּחְוֶ֥֣ה | WLC 4.20 תִשְׁתַּחְוֶ֥֣ה | WLC 4.22 תִשְׁתַּחְוֶ֥֣ה | UXLC 2.6 תִשְׁתַּחְוֶ֥֣ה | MAM תִשְׁתַּחֲוֶ֥֣ה
+   Exod 20:8 (divided-accents/accents; union test: marks): morphhb main הַשַּׁבָּ֖ת; alternative הַשַּׁבָּ֨ת
+      WLC 4.18 הַשַּׁבָּ֖֜ת | WLC 4.20 הַשַּׁבָּ֖֜ת | WLC 4.22 הַשַּׁבָּ֖֜ת | UXLC 2.6 הַשַׁבָּ֖֜ת | MAM הַשַּׁבָּ֖֜ת
+   Deut 5:7 (divided-accents/pointing; union test: maqaf): morphhb main לֹא־; alternative לֹ֣א
+      WLC 4.18 לֹ֣א | WLC 4.20 לֹ֣א | WLC 4.22 לֹ֣א | UXLC 2.6 לֹ֣א | MAM לֹ֣א־
+   Deut 5:8 (equal to WLC; union test: ok): morphhb main לֹֽ֣א־; alternative לֹ֣א
+      WLC 4.18 לֹֽ֣א־ | WLC 4.20 לֹֽ֣א־ | WLC 4.22 לֹֽ֣א־ | UXLC 2.6 לֹֽ֣א־ | MAM לֹֽ֣א־
+   Deut 5:17 (divided-accents/accents; union test: marks): morphhb main תִּרְצָֽח; alternative תִֿרְצָ֖ח
+      WLC 4.18 תִּֿרְצָֽח | WLC 4.20 תִּֿרְצָֽח | WLC 4.22 תִּרְצָֽח | UXLC 2.6 תִּֿרְצָ֖ח | MAM תִּֿרְצָ֖͏ֽח
+   catchWord mismatch, Deut 5:8: main text לֹֽ֣א־; the catchWord's atom לֹֽא־
+   The units whose skey differs too (letters, vowels, dagesh or maqaf), listed separately as
+   the brief asks, are the divided-accents/pointing and divided-accents/letters units in
+   41-text-residuals.txt.
+5.3 mark encoding only: 82 units.
+   zwj, 79: the ZERO WIDTH JOINER that WLC writes before a medial meteg (Michigan-Claremont
+   code 35 in 4.2x) is missing in morphhb. ZERO WIDTH JOINERs in the atoms: morphhb 0; 4.18 79;
+   4.20 79; 4.22 79.
+   final-form, 3: Isa 9:6 morphhb [k]לםרבה, WLC 4.20 [k]למרבה, WLC 4.18 [k]לםרבה; Job 38:1
+   morphhb [k]מנ, WLC 4.20 [k]מן, WLC 4.18 [k]מנ; Job 40:6 morphhb [k]מנ, WLC 4.20 [k]מן, WLC
+   4.18 [k]מנ. morphhb has the letter forms of WLC 4.18 (tanach.us), as the agreement tags in
+   41-text-residuals.txt show; WLC 4.20 carries a note at each (Isa 9:6 note F, Job 38:1 note
+   M, Job 40:6 note M) and MAM-basics' conversion of its Michigan-Claremont source gives each
+   word-final letter its final form and no medial letter one.
+5.4 word division: 12 units (24 morphhb atoms for 12 WLC atoms):
+   2Kgs 6:25    morphhb [k]חרי [k]יונים | WLC 4.20 [k]חרייונים | MAM חרייוֹנִ֖ים
+   Isa 9:5      morphhb אֲבִי עַ֖ד | WLC 4.20 אֲבִיעַ֖ד | MAM אֲבִי־עַ֖ד
+   Jer 29:23    morphhb [k]הו [k]ידע | WLC 4.20 [k]הוידע | MAM הוידע
+   Ps 106:1     morphhb הַֽלְלוּ יָ֨הּ ׀ | WLC 4.20 הַֽלְלוּיָ֨הּ ׀ | MAM הַ֥לְלוּ־יָ֨הּ ׀
+   Song 8:6     morphhb שַׁלְהֶ֥בֶתְ יָֽה | WLC 4.20 שַׁלְהֶ֥בֶתְיָֽה | MAM שַׁלְהֶ֥בֶתְיָֽה
+   Ezra 3:5     morphhb וְאַחֲרֵי כֵ֞ן | WLC 4.20 וְאַחֲרֵיכֵ֞ן | MAM וְאַחֲרֵי־כֵ֞ן
+   1Chr 15:13   morphhb לְמַ בָּרִ֥אשׁוֹנָ֖ה | WLC 4.20 לְמַבָּרִ֥אשׁוֹנָ֖ה | MAM לְמַבָּרִ֥אשׁוֹנָ֖ה
+   1Chr 20:4    morphhb אַחֲרֵי כֵ֔ן | WLC 4.20 אַחֲרֵיכֵ֔ן | MAM אַחֲרֵי־כֵ֔ן
+   2Chr 20:1    morphhb אַֽחֲרֵי כֵ֡ן | WLC 4.20 אַֽחֲרֵיכֵ֡ן | MAM אַחֲרֵי־כֵ֡ן
+   2Chr 20:35   morphhb וְאַחֲרֵי כֵ֗ן | WLC 4.20 וְאַחֲרֵיכֵ֗ן | MAM וְאַחֲרֵי־כֵ֗ן
+   2Chr 24:4    morphhb אַחֲרֵי כֵ֑ן | WLC 4.20 אַחֲרֵיכֵ֑ן | MAM אַחֲרֵי־כֵ֑ן
+   2Chr 30:3    morphhb לְמַ דַּ֔י | WLC 4.20 לְמַדַּ֔י | MAM לְמַדַּ֔י
+   morphhb has 21 exegesis notes. 12 say 'A single word in the text has been divided for
+   exegesis' (no rdg); their verses are exactly the verses of the word-division units. The
+   other 9 give WLC's form in an rdg ('WLC has this word divided as ...'); the units in their
+   verses: Gen 38:24 none; Jer 48:44 qadma; Zech 2:13 none; Song 6:12 none; Dan 2:39
+   kq-structure; Ezra 4:9 none; 1Chr 2:52 none; 1Chr 5:9 none; 2Chr 26:8 none.
+5.5 ketiv/qere representation: 1 unit(s):
+   Dan 2:39     morphhb [k]ארעא [q]אֲרַע | WLC 4.20 אֲרַ֣עא | WLC 4.18 אֲרַ֣עא | WLC 4.22 [k]ארעא [q]אֲרַ֣ע | UXLC 2.6 [k]ארעא [q]אֲרַ֣ע | MAM ארעא [q]אֲרַ֣ע
+   Conventions that are not differences: the maqaf and paseq segs after variant notes (3.1);
+   WLC 4.2x's kk/qq placeholders, at 2Kgs 19:31 kk; 2Kgs 19:37 kk; 2Kgs 5:18 qq; 2Sam 16:23 kk;
+   2Sam 18:20 kk; 2Sam 8:3 kk; Ezek 48:16 qq; Jer 31:38 kk; Jer 38:16 qq; Jer 39:12 qq; Jer
+   50:29 kk; Jer 51:3 qq; Judg 20:13 kk; Ruth 3:12 qq; Ruth 3:17 kk; Ruth 3:5 kk (WLC 4.20).
+5.6 paseq: 0 units.  Paseqs by atom kind: morphhb plain 2259, qere 19; WLC 4.18 plain 2268, qere 19; WLC 4.20 plain 2268, qere 19; WLC 4.22 plain 2269, qere 19.
+   morphhb has 9 fewer paseqs on plain atoms than WLC 4.20: the divided-accents+paseq units of
+   5.2, where the paseq belongs to the other accentuation and stands in morphhb's alternative
+   note (9).
+   The 14 paseq segs after a variant note are read as the qere's (3.1). 14 of those pairs have
+   a ketiv, and WLC 4.20 has a paseq on 0 ketiv atoms, so reading each such paseq as the
+   ketiv's too would add 14 paseq units.
+5.7 residual: 0 units.
+
+== 6. Which version: the residuals against the other two
+morphhb vs WLC 4.18: 16 residual units (accents 6, letters 1, pointing 9); WLC 4.20 has morphhb's reading in full at 16.
+   places: Gen 5:29, Gen 41:30, Exod 4:18, Deut 1:31, Judg 9:2, Judg 15:14, 2Sam 5:13, 2Sam 9:13, 2Kgs 21:26, Ezek 4:6, Zeph 2:15, Prov 14:31, Eccl 2:22, Eccl 2:23, Esth 3:13, Ezra 3:11
+morphhb vs WLC 4.22: 38 residual units (accents 17, pointing 21); WLC 4.20 has morphhb's reading in full at 36.
+   not in full: Lev 13:3 [residual/pointing] morphhb הַנֶּ֨גַע֙ | WLC 4.22 הַנֶּ֙גֶע֙ | WLC 4.20 הַנֶּ֙גַע֙ (vs morphhb: skey)
+   not in full: Dan 2:39 [residual/accents] morphhb [q]אֲרַע | WLC 4.22 [q]אֲרַ֣ע | WLC 4.20 (nothing) (vs morphhb: no)
+   places: Gen 1:11, Gen 2:8, Gen 2:10, Gen 14:17, Gen 18:25, Gen 24:53, Gen 25:6, Gen 26:1, Gen 34:28, Gen 38:11, Gen 39:2, Gen 39:2, Gen 39:23, Gen 41:7, Gen 41:24, Gen 50:1, Exod 10:13, Lev 13:3, Lev 23:38, Lev 26:35, Num 11:24, Num 24:13, Deut 7:8, Deut 12:30, 2Sam 11:1, 1Kgs 9:9, Isa 22:10, Isa 45:6, Jer 15:18, Jer 20:17, Jer 27:13, Jer 44:19, Jer 48:27, Zech 5:11, Ps 119:99, Esth 7:8, Dan 2:39, 1Chr 10:1
+Every one is listed with both readings in 45-text-version-evidence.txt.
+
+== 7. Side checks
+7.1 WLC note letters, compared per verse as multisets (WLC 4.2x's inverted-nun placeholder
+given its note 8, which the conversion drops): verses that differ from morphhb: WLC 4.18 54,
+WLC 4.20 13, WLC 4.22 199 (44-text-notes.txt). The notes too are closest to WLC 4.20's.
+7.2 pe, samekh and inverted-nun placeholders, compared per verse as sequences: verses that
+differ from morphhb: WLC 4.18 0, WLC 4.20 0, WLC 4.22 0.
+7.3 sof pasuq, counted per verse: verses whose count differs from morphhb's: WLC 4.18 6, WLC
+4.20 6, WLC 4.22 6. Against WLC 4.20: Exod 20:3 morphhb 1, WLC 0; Exod 20:4 morphhb 1, WLC 0;
+Exod 20:8 morphhb 1, WLC 0; Exod 20:9 morphhb 1, WLC 0; Exod 20:10 morphhb 1, WLC 0; Deut 5:12
+morphhb 1, WLC 0. All of them are verses with alternative-accent notes: part of the division of
+5.2, not of the atoms compared.
+
+== 8. Limitations
+- WLC 4.20 and 4.22 are read through MAM-basics' own Unicode conversion of the
+Michigan-Claremont files, not through tanach.us's or morphhb's; a difference that the
+conversion makes (the final forms of 5.3) looks like a difference of version. WLC 4.18 is
+tanach.us's Unicode, which morphhb's text resembles in encoding (final forms, ZERO WIDTH
+JOINER).
+- No WLC 4.20 in tanach.us's encoding, the edition morphhb most likely took (its commit 'Update
+to WLC 4.20' of 2016-03-04), was available locally; so the version question rests on content
+differences between 4.18, 4.20 and 4.22, not on byte identity.
+- The comparison ignores morpheme division ('/'), sof pasuq, the lemma and morph attributes,
+and the text of notes (WLC note letters are compared separately per verse, as multisets, not by
+position).
+- The classes are defined by tests on the data, not by morphhb's intent: a 'divided-accents'
+unit is any difference in a verse with an alternative note; the union test of 5.2 is what shows
+that the division alone accounts for most of them.
+- difflib alignments: the letters alignment pairs atoms with identical letters; a unit whose
+letters also changed (none against WLC 4.20) would be a group, classified by the structural
+tests.
+- MAM is shown only at the listed places, read on its ketiv side for plain and ketiv atoms and
+its qere side for qere atoms, dual cantillation in MAM-simple's cant-combined strand; MAM's
+kind is not compared, and its ketiv-side atoms are shown without [k].
+- UXLC 2.6 and MAM are display only: they are not used to classify anything.
+
+== 9. Files and commands
+Run from the working directory C:/Users/BenDe/GitRepos/MAM-basics (MAM-basics inputs are
+cwd-relative), with F = .novc/morphhb-corrections-2026-11-13:
+  C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe -I F/scripts/p2_text_compare.py F/scripts F/fetched F/out
+     writes 40-text-compare-summary.txt (this file), 40-text-compare-data.json (the counts),
+     41-text-residuals.txt/.json, 42-text-units.json, 43-text-class-lists.txt,
+     44-text-notes.txt, 45-text-version-evidence.txt, 46-text-divided-accents.txt
+  C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe -I F/scripts/p2_text_explore.py F/scripts F/fetched F/out/47-text-explore-census.txt
+     the character and element censuses that fixed the closed dispatch
+  C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe -I F/scripts/p2_text_show.py F/scripts F/fetched <out_txt> <OSIS.c.v> ...
+     appends verses raw in every source (used for inspection)
+  C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe -I F/scripts/p2_text_peek.py F/scripts F/out/42-text-units.json <version> <label> ...
+     prints one version's units with given labels
+Modules: F/scripts/p2_text_atoms.py (the atom readers), F/scripts/p2_text_summary.py (this file).

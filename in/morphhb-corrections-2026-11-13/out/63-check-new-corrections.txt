@@ -1,0 +1,64 @@
+# written by scripts/check_new_corrections.py
+== Hos 13:15
+   morphhb 28sYk: בֵּ֥ן lemma=996 morph=HNcmsc notes=['U']
+   WLC 4.18 בֵּ֥ן
+   WLC 4.20 בֵּ֥ן
+   WLC 4.22 בֵּ֥ן
+   UXLC 2.6 בֵּ֥ן
+   MAM      בֵּ֥ין
+   morphhb's words of this form (review key): {('1121 a', 'HNcmsa'): 83, ('996', 'HNcmsc'): 1, ('1122', 'HNp'): 1}
+   morphhb's words of MAM's form בֵּ֥ין: {('996', 'HR'): 167, ('997', 'AR'): 1}
+   morphs of lemma 996, last part: {'HR': 172, 'R': 143, 'Sp1cs': 31, 'Sp2ms': 21, 'Sp2mp': 13, 'Sp1cp': 11, 'Sp3mp': 10, 'Sp3ms': 7}
+== Gen 39:19
+   morphhb 01oc4: עָ֥שָׂהּ lemma=6213 a morph=HVqp3ms notes=['1']
+   WLC 4.18 עָ֥שָׂהּ
+   WLC 4.20 עָ֥שָׂהּ
+   WLC 4.22 עָ֥שָׂהּ
+   UXLC 2.6 עָ֥שָׂה
+   MAM      עָ֥שָׂה
+   morphhb's words of this form (review key): {('6213 a', 'HVqp3ms'): 1}
+   morphhb's words of MAM's form עָ֥שָׂה: {('6213 a', 'HVqp3ms'): 357, ('6213', 'HVqp3ms'): 1}
+   morphs of lemma 6213 a, last part: {'HVqp3ms': 359, 'Vqc': 245, 'Vqw3ms': 241, 'HVqp3cp': 139, 'HVqi2ms': 122, 'HVqi3ms': 112, 'Vqq2ms': 91, 'Vqw3mp': 80}
+== Deut 22:29
+   morphhb 05ENP: שַׁלְּחָ֖/ה lemma=7971 morph=HVpc/Sp3fs notes=['Q', 'n', 'p']
+   WLC 4.18 שַׁלְּחָ֖/ה
+   WLC 4.20 שַׁלְּחָ֖ה
+   WLC 4.22 שַׁלְּחָ֖ה
+   UXLC 2.6 שַׁלְּחָ֖ה
+   MAM      שַׁלְּחָ֖הּ
+   morphhb's words of this form (review key): {('7971', 'HVpc/Sp3fs'): 1}
+   morphhb's words of MAM's form שַׁלְּחָ֖הּ: {}
+   morphs of lemma 7971, last part: {'Vqw3ms': 190, 'HVqp3ms': 67, 'Sp1cs': 47, 'Sp3ms': 41, 'Sp3mp': 35, 'Vqw3mp': 25, 'Sp2ms': 25, 'Vpw3ms': 22}
+== Lev 4:35
+   morphhb 03caE: חֶלְבָּ֣/ה lemma=2459 morph=HNcmsc/Sp3fs notes=[]
+   WLC 4.18 חֶלְבָּ֣/ה
+   WLC 4.20 חֶלְבָּ֣ה
+   WLC 4.22 חֶלְבָּ֣ה
+   UXLC 2.6 חֶלְבָּ֣ה
+   MAM      חֶלְבָּ֣הּ
+   morphhb's words of this form (review key): {('2459', 'HNcmsc/Sp3fs'): 1, ('2462', 'HNp'): 1}
+   morphhb's words of MAM's form חֶלְבָּ֣הּ: {('2459', 'HNcmsc/Sp3fs'): 1}
+   morphs of lemma 2459, last part: {'Ncmsa': 35, 'HNcmsc': 12, 'Ncmsc': 9, 'Sp3ms': 8, 'HNcmsa': 8, 'Ncmpa': 8, 'HNcmpc': 4, 'Sp3fp': 3}
+== Jer 51:3
+   morphhb 24JqK: וְ/אֶל lemma=c/408 morph=HC/R notes=[]
+   WLC 4.18 וְ/אֶל־
+   WLC 4.20 וְאֶל־
+   WLC 4.22 וְאֶל־
+   UXLC 2.6 וְאֶל־
+   MAM      וְאֶֽל־
+   morphhb's words of this form (review key): {('c/413', 'HC/R'): 334, ('c/408', 'HC/R'): 1}
+   morphhb's words of MAM's form וְאֶֽל־: {('c/413', 'HC/R'): 334, ('c/408', 'HC/R'): 1}
+   morphs of lemma 408, last part: {'HTn': 574, 'Tn': 148, 'HR': 2, 'R': 1}
+== Jer 51:3
+   morphhb 249Bc: וְ/אַֽל lemma=c/413 morph=HC/Tn notes=[]
+   WLC 4.18 וְ/אַֽל־
+   WLC 4.20 וְאַֽל־
+   WLC 4.22 וְאַֽל־
+   UXLC 2.6 וְאַֽל־
+   MAM      וְאַֽל־
+   morphhb's words of this form (review key): {('c/408', 'HC/Tn'): 147, ('c/413', 'HC/Tn'): 1}
+   morphhb's words of MAM's form וְאַֽל־: {('c/408', 'HC/Tn'): 147, ('c/413', 'HC/Tn'): 1}
+   morphs of lemma 413, last part: {'HR': 3543, 'Sp1cs': 451, 'Sp3ms': 435, 'R': 335, 'Sp3mp': 297, 'Sp2ms': 230, 'Sp3fs': 79, 'Sp2mp': 69}
+== Dan 3:15
+   morphhb: כְּעַ֞ן{3705 AD} הֵ֧ן{2006 a AC} אִֽיתֵי/כ֣וֹן{383 ATa/Sp2mp} עֲתִידִ֗ין{6263 AAampa} דִּ֣י{1768 ATr} בְ/עִדָּנָ֡/א{b/5732 AR/Ncmsd/Td} דִּֽי{1768 ATr} תִשְׁמְע֡וּן{8086 AVqi2mp} קָ֣ל{7032 ANcmsc} קַרְנָ֣/א{7162 ANcfsd/Td} מַשְׁרוֹקִיתָ֣/א{4953 ANcfsd/Td} קיתרס{7030 ANcmsa} שַׂבְּכָ֡א{5443 ANcfsa} פְּסַנְתֵּרִין֩{6460 ANcmsa} וְ/סוּמְפֹּ֨נְיָ֜ה{c/5481 AC/Ncfsa} וְ/כֹ֣ל{c/3606 AC/Ncmsc} זְנֵ֣י{2178 ANcmpc} זְמָרָ֗/א{2170 ANcmsd/Td} תִּפְּל֣וּן{5308 AVqi2mp} וְ/תִסְגְּדוּן֮{c/5457 AC/Vqi2mp} לְ/צַלְמָ֣/א{l/6755 AR/Ncmsd/Td} דִֽי{1768 ATr} עַבְדֵת֒{5648 AVqp1cs} וְ/הֵן֙{c/2006 a AC/C} לָ֣א{3809 ATn} תִסְגְּד֔וּן{5457 AVqi2mp} בַּ/הּ{b AR/Sp3ms} שַׁעֲתָ֣/ה{8160 ANcfsd/Td} תִתְרְמ֔וֹן{7412 AVui2mp} לְ/גֽוֹא{l/1459 AR/Ncmsc} אַתּ֥וּן{861 ANcmsc} נוּרָ֖/א{5135 ANcbsd/Td} יָקִֽדְתָּ֑/א{3345 AVqrfsd/Td} וּ/מַן{c/4479 AC/Pi3cs} ה֣וּא{1932 ATa} אֱלָ֔הּ{426 ANcmsa} דֵּ֥י{1768 ATr} יְשֵֽׁיזְבִנְ/כ֖וֹן{7804 AVei3ms/Sp2mp} מִן{4481 AR} יְדָֽ/י{3028 ANcfpc/Sp1cs}
+   MAM:     כְּעַ֞ן הֵ֧ן אִֽיתֵיכ֣וֹן עֲתִידִ֗ין דִּ֣י בְעִדָּנָ֡א דִּֽי־ תִשְׁמְע֡וּן קָ֣ל קַרְנָ֣א מַשְׁרוֹקִיתָ֣א קיתרס שַׂבְּכָ֡א פְּסַנְתֵּרִין֩ וְסוּמְפֹּ֨נְיָ֜ה וְכֹ֣ל׀ זְנֵ֣י זְמָרָ֗א תִּפְּל֣וּן וְתִסְגְּדוּן֮ לְצַלְמָ֣א דִֽי־ עַבְדֵת֒ וְהֵן֙ לָ֣א תִסְגְּד֔וּן בַּהּ־ שַׁעֲתָ֣א תִתְרְמ֔וֹן לְגֽוֹא־ אַתּ֥וּן נוּרָ֖א יָקִֽדְתָּ֑א וּמַן־ ה֣וּא אֱלָ֔הּ דִּ֥י יְשֵֽׁיזְבִנְכ֖וֹן מִן־ יְדָֽי׃

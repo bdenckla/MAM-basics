@@ -58,6 +58,13 @@ uxlc/in/UXLC-misc-fixed/*.xml whitespace=-blank-at-eol,-space-before-tab
 # Preserve this frozen review's exact bytes, including its line-final spaces.
 doc/yod-holam-review-20261007.html -text whitespace=-blank-at-eol
 
+# The morphhb-corrections report's out/ files, tracked byte for byte by Ben's decision of
+# 2026-11-15 (in/morphhb-corrections-2026-11-13/what-is-left-out.md). Eight of them end their
+# lines with CRLF, which the rule at the top would rewrite, and five have line-final blanks or
+# blank lines at their end, so Git must keep their bytes and `git diff --check` must not
+# report them.
+in/morphhb-corrections-2026-11-13/out/** -text whitespace=-trailing-space
+
 # Taamey D's font sources, moved from hbofonts. Its FontForge files are CRLF, and
 # Taamey_D-nofea.sym.sfd mixes line ends, so Git must keep their bytes: without -text the
 # rule at the top would rewrite them. Spelled -text, not the legacy -crlf, which does not
