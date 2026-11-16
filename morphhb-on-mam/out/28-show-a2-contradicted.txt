@@ -1,0 +1,24 @@
+## A2 contradicted (23 of 23)
+  {vid: Exod.17.15, mam: יְהֹוָ֥ה, morphhb: יְהוָ֥ה, lemma: 3071+, morph: HNp, id: 022xh, cons: n 46, pair 0, lemma 0, morph 46, top ['3068 | HNp', 46]}
+  {vid: Num.16.21, mam: וַאֲכַלֶּ֥ה, morphhb: וַ/אַכַלֶּ֥ה, lemma: c/3615, morph: HC/Vph1cs, id: 04dUR, cons: n 1, pair 0, lemma 1, morph 0, top ['3615 | HC/Vpi1cs', 1]}
+  {vid: Num.23.25, mam: תְבָרְכֶֽנּוּ, morphhb: תְבָרֲכֶֽ/נּוּ, lemma: 1288, morph: HVpi2ms/Sp3ms, id: 04QZ8, cons: n 1, pair 0, lemma 1, morph 0, top ['1288 | HVpi2ms/Sp1cp', 1]}
+  {vid: Deut.2.9, mam: אַל, morphhb: אֶל, lemma: 408, morph: HR, id: 057a3, cons: n 583, pair 0, lemma 572, morph 0, top ['408 | HTn', 572]}
+  {vid: Deut.15.20, mam: תֹאכְלֶ֙נּוּ֙, morphhb: תֹאכֲלֶ֨/נּוּ֙, lemma: 398, morph: HVqi2ms/Sp3ms, id: 057xX, cons: n 1, pair 0, lemma 1, morph 0, top ['398 | HVqi3fs/Sp3ms', 1]}
+  {vid: Josh.22.19, mam: אַל, morphhb: אֶל, lemma: 408, morph: HR, id: 06Umo, cons: n 583, pair 0, lemma 572, morph 0, top ['408 | HTn', 572]}
+  {vid: Judg.19.4, mam: וַיַּחֲזֶק, morphhb: וַ/יֶּחֱזַק, lemma: c/2388, morph: HC/Vqw3ms, id: 07GJ8, cons: n 2, pair 0, lemma 2, morph 0, top ['2388 | HC/Vhw3ms', 2]}
+  {vid: Judg.19.23, mam: אֶל, morphhb: אַל, lemma: 413, morph: HTn, id: 07HwX, cons: n 3542, pair 0, lemma 3539, morph 1, top ['413 | HR', 3539]}
+  {vid: 1Sam.26.11, mam: וְנֵלְכָה, morphhb: וְ/נֵ֥לֲכָה, lemma: c/3212, morph: HC/Vqi1cp, id: 09vv7, cons: n 5, pair 0, lemma 5, morph 0, top ['3212 | HC/Vqh1cp', 5]}
+  {vid: 2Sam.7.22, mam: יְהֹוָ֣ה, morphhb: יְהוִ֑ה, lemma: 3069, morph: HNp, id: 10Ati, cons: n 46, pair 0, lemma 0, morph 46, top ['3068 | HNp', 46]}
+  {vid: 1Kgs.1.15, mam: שֶׁ֤בַע, morphhb: שֶׁ֤בֶע, lemma: 1339, morph: HNp, id: 11VTb, cons: n 132, pair 0, lemma 8, morph 0, top ['7651 | HAcfsa', 101]}
+  {vid: Isa.31.8, mam: תֹּאכְלֶ֑נּוּ, morphhb: תֹּֽאכֲלֶ֑/נּוּ, lemma: 398, morph: HVqi3fs/Sp3ms, id: 23M82, cons: n 4, pair 0, lemma 4, morph 0, top ['398 | HVqi2ms/Sp3ms', 4]}
+  {vid: Jer.11.2, mam: וְדִבַּרְתֶּם֙, morphhb: וְ/דִבַּרְתָּ/ם֙, lemma: c/1696, morph: HC/Vpq2ms/Sp3mp, id: 24Rdh, cons: n 2, pair 0, lemma 2, morph 0, top ['1696 | HC/Vpq2mp', 2]}
+  {vid: Jer.47.6, mam: אֶל, morphhb: אַל, lemma: 413, morph: HTn, id: 242CG, cons: n 3542, pair 0, lemma 3539, morph 1, top ['413 | HR', 3539]}
+  {vid: Zech.12.11, mam: הֲדַד, morphhb: הֲדַדְ, lemma: 1910+, morph: HNp, id: 38qoQ, cons: n 29, pair 0, lemma 0, morph 29, top ['1130 | HNp', 23]}
+  {vid: Ps.94.1, mam: הוֹפִֽיעַ, morphhb: הוֹפִֽיַע, lemma: 3313, morph: HVhv2ms, id: 19Cth, cons: n 2, pair 0, lemma 2, morph 0, top ['3313 | HVhp3ms', 2]}
+  {vid: Prov.15.18, mam: וְאֶ֥רֶךְ, morphhb: וְ/אֶ֥רֶך, lemma: c/750, morph: HC/Aamsc, id: 20hNP, cons: n 1, pair 0, lemma 0, morph 0, top ['751 | HC/Np', 1]}
+  {vid: Job.17.9, mam: וּֽטְהׇר, morphhb: וּֽ/טֳהָר, lemma: c/2891, morph: HC/Aamsc, id: 187ET, cons: n 2, pair 0, lemma 2, morph 0, top ['2891 | HC/Vqv2ms', 2]}
+  {vid: Dan.2.31, mam: דִכֵּ֥ן, morphhb: דִּכֵּ֥ן, lemma: 1797, morph: APdxbs, id: 27iPC, cons: n 2, pair 0, lemma 2, morph 0, top ['1797 | APdxcs', 2]}
+  {vid: Dan.5.24, mam: שְׁלִ֖יחַ, morphhb: שְׁלִ֖יַחַ, lemma: 7972, morph: AVQp3ms, id: 27sKp, cons: n 1, pair 0, lemma 1, morph 0, top ['7972 | AVQsmsa', 1]}
+  {vid: 2Chr.1.5, mam: שָׁ֕ם, morphhb: שָׂ֕ם, lemma: 7760 a, morph: HVqp3ms, id: 14A4a, cons: n 508, pair 0, lemma 0, morph 0, top ['8033 | HD', 508]}
+  {vid: 2Chr.15.16, mam: לָאֲשֵׁרָ֖ה, morphhb: לַ/אֲשֵׁרָ֖ה, lemma: l/842, morph: HR/Np, id: 144SZ, cons: n 2, pair 0, lemma 2, morph 0, top ['842 | HRd/Np', 2]}
+  {vid: 2Chr.28.9, mam: בְּזַ֔עַף, morphhb: בְ/זַ֔עַף, lemma: b/2197, morph: HR/Ncmsa, id: 14SPW, cons: n 1, pair 0, lemma 1, morph 0, top ['2197 | HR/Ncmsc', 1]}

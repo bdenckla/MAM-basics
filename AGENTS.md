@@ -97,6 +97,15 @@ and whether to contact the INTF is Ben's decision. `hbce-psalms/out/` is a froze
 run: by Ben's decision of 2026-09-26, a change to MAM's data does not oblige rerunning
 `py/main_hbce_psalms.py compare`, as the hand-run rule below would otherwise require.
 
+## The morphhb-on-MAM study is on ice
+
+Before touching `morphhb-on-mam/`, `py/morphhb_on_mam/` or `py/main_morphhb_on_mam.py`, read
+`morphhb-on-mam/README.md`. The study measured how much of morphhb's morphology (lemmas, morph
+codes and word ids) MAM's text could take. Ben put it on ice on 2026-11-16: "put this work "on
+ice" (deep storage), i.e. git-track it somewhere." So `morphhb-on-mam/out/` is a frozen record of
+one run, a change to MAM's data does not oblige rerunning `py/main_morphhb_on_mam.py`, as the
+hand-run rule below would otherwise require, and the program is rerun only if the work resumes.
+
 ## Taamey D work has local routing documentation
 
 Before touching `Taamey-D/`, `py/taamey_d*/`, `py/main_taamey_d*.py` or `gh-pages/taamey-d/`,
@@ -174,14 +183,15 @@ rather than amending. Committing to or integrating into a local `main` needs no 
 that `main` is pushed. When the mega runs, a failing step or an unexplained tracked diff is a failure.
 The mega does not run the hand-run generators, so a hand-run generator can reach a product that
 no mega run checks. A change to a hand-run generator, or to any input it reads, requires
-rerunning every affected hand-run generator and inspecting its tracked outputs, with three
+rerunning every affected hand-run generator and inspecting its tracked outputs, with four
 exceptions that Ben decided. A refresh of MAM's text does not oblige rerunning
 `py/main_mam4sef.py` or `py/main_mam_osis.py` (his decision of 2026-09-30) or
 `py/main_mam_morphhb.py` (his decision of 2026-11-03), so MAM-for-Sefaria, MAM-OSIS and
 MAM-morphhb may lag MAM-simple, as their READMEs say; any other change to one of those
 generators or to its inputs still does. A change to MAM's data does not oblige rerunning
-`py/main_hbce_psalms.py compare` (his decision of 2026-09-26, in the HBCE section above). A
-refresh of MAM's text does not oblige refreshing Taamey D's shaping-check corpus with
+`py/main_hbce_psalms.py compare` (his decision of 2026-09-26, in the HBCE section above), or
+`py/main_morphhb_on_mam.py` (his decision of 2026-11-16 to put that study on ice, in its section
+above). A refresh of MAM's text does not oblige refreshing Taamey D's shaping-check corpus with
 `py/main_taamey_d.py corpus` (his decision of 2026-10-28): the mega's `taamey-d-corpus` step
 reports `REFRESH PENDING` instead, and a refresh needs his baseline acceptance. That corpus,
 `Taamey-D/qa-in/`, is a pinned test population of MAM's text, the decision's deliberate

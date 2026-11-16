@@ -1,0 +1,41 @@
+## qatan with a perfect or participle morph (40 of 40)
+  {vid: Exod.18.23, mam: וְיָֽכׇלְתָּ֖, morphhb: וְ/יָֽכָלְתָּ֖, lemma: c/3201, morph: HC/Vqq2ms, id: 02D4Y}
+  {vid: Exod.26.30, mam: הׇרְאֵ֖יתָ, morphhb: הָרְאֵ֖יתָ, lemma: 7200, morph: HVHp2ms, id: 02q7s}
+  {vid: Lev.5.23, mam: הׇפְקַ֖ד, morphhb: הָפְקַ֖ד, lemma: 6485, morph: HVHp3ms, id: 03a5r}
+  {vid: Lev.13.49, mam: וְהׇרְאָ֖ה, morphhb: וְ/הָרְאָ֖ה, lemma: c/7200, morph: HC/VHq3ms, id: 03vMU}
+  {vid: Num.1.47, mam: הׇתְפָּקְד֖וּ, morphhb: הָתְפָּקְד֖וּ, lemma: 6485 a, morph: HVup3cp, id: 04WJY}
+  {vid: Num.2.33, mam: הׇתְפָּקְד֔וּ, morphhb: הָתְפָּקְד֔וּ, lemma: 6485 a, morph: HVup3cp, id: 04bea}
+  {vid: Num.26.62, mam: הׇתְפָּקְד֗וּ, morphhb: הָתְפָּקְד֗וּ, lemma: 6485 a, morph: HVup3cp, id: 04Zyo}
+  {vid: Deut.4.35, mam: הׇרְאֵ֣תָ, morphhb: הָרְאֵ֣תָ, lemma: 7200, morph: HVHp2ms, id: 05wiu}
+  {vid: Judg.20.31, mam: הׇנְתְּק֖וּ, morphhb: הָנְתְּק֖וּ, lemma: 5423, morph: HVHp3cp, id: 07W2r}
+  {vid: 1Sam.25.15, mam: הׇכְלַ֙מְנוּ֙, morphhb: הָכְלַ֨מְנוּ֙, lemma: 3637, morph: HVHp1cp, id: 09ZMS}
+  {vid: 1Kgs.20.27, mam: הׇתְפָּקְדוּ֙, morphhb: הָתְפָּקְדוּ֙, lemma: 6485 a, morph: HVup3cp, id: 111N2}
+  {vid: 1Kgs.20.27, mam: וְכׇלְכְּל֔וּ, morphhb: וְ/כָלְכְּל֔וּ, lemma: c/3557, morph: HC/VLp3cp, id: 11GLd}
+  {vid: 1Kgs.22.34, mam: הׇחֳלֵֽיתִי, morphhb: הָחֳלֵֽיתִי, lemma: 2470 a, morph: HVHp1cs, id: 11HYe}
+  {vid: 2Kgs.8.6, mam: עׇזְבָ֥הֿ, morphhb: עָזְבָ֥ה, lemma: 5800 a, morph: HVqp3fs, id: 12LrY}
+  {vid: Isa.14.19, mam: הׇשְׁלַ֤כְתָּ, morphhb: הָשְׁלַ֤כְתָּ, lemma: 7993, morph: HVHp2ms, id: 234Xh}
+  {vid: Isa.42.22, mam: הׇחְבָּ֑אוּ, morphhb: הָחְבָּ֑אוּ, lemma: 2244, morph: HVHp3cp, id: 23mqX}
+  {vid: Jer.6.6, mam: הׇפְקַ֔ד, morphhb: הָפְקַ֔ד, lemma: 6485 a, morph: HVHp3ms, id: 24SJf}
+  {vid: Jer.8.21, mam: הׇשְׁבָּ֑רְתִּי, morphhb: הָשְׁבָּ֑רְתִּי, lemma: 7665, morph: HVHp1cs, id: 24DJ2}
+  {vid: Jer.13.19, mam: הׇגְלָ֧ת, morphhb: הָגְלָ֧ת, lemma: 1540, morph: HVHp3fs, id: 246Yk}
+  {vid: Jer.13.19, mam: הׇגְלָ֥ת, morphhb: הָגְלָ֥ת, lemma: 1540, morph: HVHp3fs, id: 24YUT}
+  {vid: Jer.14.3, mam: וְהׇכְלְמ֖וּ, morphhb: וְ/הָכְלְמ֖וּ, lemma: c/3637, morph: HC/VHp3cp, id: 246gh}
+  {vid: Jer.38.22, mam: הׇטְבְּע֥וּ, morphhb: הָטְבְּע֥וּ, lemma: 2883, morph: HVHp3cp, id: 24NXV}
+  {vid: Jer.39.2, mam: הׇבְקְעָ֖ה, morphhb: הָבְקְעָ֖ה, lemma: 1234, morph: HVHp3fs, id: 246NY}
+  {vid: Jer.40.7, mam: הׇגְל֖וּ, morphhb: הָגְל֖וּ, lemma: 1540, morph: HVHp3cp, id: 244vw}
+  {vid: Ezek.16.4, mam: כׇרַּ֣ת, morphhb: כָרַּ֣ת, lemma: 3772, morph: HVPp3ms, id: 261w3}
+  {vid: Ezek.26.2, mam: הׇחֳרָֽבָה, morphhb: הָחֳרָֽבָה, lemma: 2717 b, morph: HVHp3fs, id: 26jQQ}
+  {vid: Joel.1.9, mam: הׇכְרַ֥ת, morphhb: הָכְרַ֥ת, lemma: 3772, morph: HVHp3ms, id: 29dNE}
+  {vid: Mic.2.10, mam: טׇמְאָ֛ה, morphhb: טָמְאָ֛ה, lemma: 2930 b, morph: HVqp3fs, id: 33PUg}
+  {vid: Nah.2.4, mam: הׇרְעָֽלוּ, morphhb: הָרְעָֽלוּ, lemma: 7477, morph: HVHp3cp, id: 34bCC}
+  {vid: Nah.3.7, mam: שׇׁדְּדָ֣ה, morphhb: שָׁדְּדָ֣ה, lemma: 7703, morph: HVPp3fs, id: 34mGU}
+  {vid: Ps.13.5, mam: יְכׇלְתִּ֑יו, morphhb: יְכָלְתִּ֑י/ו, lemma: 3201, morph: HVqp1cs/Sp3ms, id: 19sgH}
+  {vid: Ps.22.11, mam: הׇשְׁלַ֣כְתִּי, morphhb: הָשְׁלַ֣כְתִּי, lemma: 7993, morph: HVHp1cs, id: 19GQd}
+  {vid: Ps.45.3, mam: יׇפְיָפִ֡יתָ, morphhb: יָפְיָפִ֡יתָ, lemma: 3302, morph: HVjp2ms, id: 19EH3}
+  {vid: Ps.72.20, mam: כׇּלּ֥וּ, morphhb: כָּלּ֥וּ, lemma: 3615, morph: HVPp3cp, id: 195qf}
+  {vid: Ps.80.11, mam: כׇּסּ֣וּ, morphhb: כָּסּ֣וּ, lemma: 3680, morph: HVPp3cp, id: 19B6v}
+  {vid: Ps.101.5, mam: מְלׇשְׁנִ֬י, morphhb: מְלָשְׁנִ֬י, lemma: 3960, morph: HVmrmsc, id: 19ASC}
+  {vid: Prov.8.25, mam: הׇטְבָּ֑עוּ, morphhb: הָטְבָּ֑עוּ, lemma: 2883, morph: HVHp3cp, id: 20aUh}
+  {vid: Prov.24.31, mam: כׇּסּ֣וּ, morphhb: כָּסּ֣וּ, lemma: 3680, morph: HVPp3cp, id: 203R8}
+  {vid: Job.5.23, mam: הׇשְׁלְמָה, morphhb: הָשְׁלְמָה, lemma: 7999 b, morph: HVHp3fs, id: 184mo}
+  {vid: Job.7.3, mam: הׇנְחַ֣לְתִּי, morphhb: הָנְחַ֣לְתִּי, lemma: 5157, morph: HVHp1cs, id: 18sgn}

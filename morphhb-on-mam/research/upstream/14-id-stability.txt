@@ -1,0 +1,16 @@
+Dan current: 6035 ids
+hist-Dan-2019-01-13-5dc21275: 6034 ids; absent now 0; new since 1; shared ids whose verse changed 0; whose letters changed 0
+   new  27Euh ('Dan.2.39', 'ארע', '772')
+hist-Dan-2019-01-13-456c54c6: 6035 ids; absent now 0; new since 0; shared ids whose verse changed 0; whose letters changed 0
+Jer current: 21976 ids
+hist-Jer-2022-03-18-8de89602: 21976 ids; absent now 0; new since 0; shared ids whose verse changed 0; whose letters changed 0
+Judg current: 9905 ids
+hist-Judg-2022-03-18-8de89602: 9905 ids; absent now 0; new since 0; shared ids whose verse changed 0; whose letters changed 0
+Deut current: 14320 ids
+hist-Deut-2022-03-10-2408955b: 14320 ids; absent now 0; new since 0; shared ids whose verse changed 0; whose letters changed 0
+Exod current: 16726 ids
+hist-Exod-2022-03-10-2408955b: 16726 ids; absent now 0; new since 0; shared ids whose verse changed 0; whose letters changed 0
+Josh current: 10083 ids
+hist-Josh-2022-03-10-2408955b: 10083 ids; absent now 0; new since 0; shared ids whose verse changed 0; whose letters changed 0
+Eccl current: 2999 ids
+hist-Eccl-2022-03-10-2408955b: 2999 ids; absent now 0; new since 0; shared ids whose verse changed 0; whose letters changed 0

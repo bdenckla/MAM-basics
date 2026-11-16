@@ -1,0 +1,51 @@
+1. Elements with an id attribute: {'w': 306785}
+2. <w> ids per book (KJV ordinal, words, distinct, sample duplicates, prefixes):
+   01 Gen: 20629 words, 20629 distinct, dups [], prefixes ['01']
+   02 Exod: 16726 words, 16726 distinct, dups [], prefixes ['02']
+   03 Lev: 11955 words, 11955 distinct, dups [], prefixes ['03']
+   04 Num: 16422 words, 16422 distinct, dups [], prefixes ['04']
+   05 Deut: 14320 words, 14320 distinct, dups [], prefixes ['05']
+   06 Josh: 10083 words, 10083 distinct, dups [], prefixes ['06']
+   07 Judg: 9905 words, 9905 distinct, dups [], prefixes ['07']
+   08 Ruth: 1306 words, 1306 distinct, dups [], prefixes ['08']
+   09 1Sam: 13335 words, 13335 distinct, dups [], prefixes ['09']
+   10 2Sam: 11130 words, 11130 distinct, dups [], prefixes ['10']
+   11 1Kgs: 13186 words, 13186 distinct, dups [], prefixes ['11']
+   12 2Kgs: 12354 words, 12354 distinct, dups [], prefixes ['12']
+   13 1Chr: 10790 words, 10790 distinct, dups [], prefixes ['13']
+   14 2Chr: 13354 words, 13354 distinct, dups [], prefixes ['14']
+   15 Ezra: 3791 words, 3791 distinct, dups [], prefixes ['15']
+   16 Neh: 5336 words, 5336 distinct, dups [], prefixes ['16']
+   17 Esth: 3057 words, 3057 distinct, dups [], prefixes ['17']
+   18 Job: 8399 words, 8399 distinct, dups [], prefixes ['18']
+   19 Ps: 19657 words, 19657 distinct, dups [], prefixes ['19']
+   20 Prov: 6984 words, 6984 distinct, dups [], prefixes ['20']
+   21 Eccl: 2999 words, 2999 distinct, dups [], prefixes ['21']
+   22 Song: 1255 words, 1255 distinct, dups [], prefixes ['22']
+   23 Isa: 16988 words, 16988 distinct, dups [], prefixes ['23']
+   24 Jer: 21976 words, 21976 distinct, dups [], prefixes ['24']
+   25 Lam: 1564 words, 1564 distinct, dups [], prefixes ['25']
+   26 Ezek: 18866 words, 18866 distinct, dups [], prefixes ['26']
+   27 Dan: 6035 words, 6035 distinct, dups [], prefixes ['27']
+   28 Hos: 2386 words, 2386 distinct, dups [], prefixes ['28']
+   29 Joel: 958 words, 958 distinct, dups [], prefixes ['29']
+   30 Amos: 2045 words, 2045 distinct, dups [], prefixes ['30']
+   31 Obad: 292 words, 292 distinct, dups [], prefixes ['31']
+   32 Jonah: 688 words, 688 distinct, dups [], prefixes ['32']
+   33 Mic: 1400 words, 1400 distinct, dups [], prefixes ['33']
+   34 Nah: 562 words, 562 distinct, dups [], prefixes ['34']
+   35 Hab: 672 words, 672 distinct, dups [], prefixes ['35']
+   36 Zeph: 769 words, 769 distinct, dups [], prefixes ['36']
+   37 Hag: 601 words, 601 distinct, dups [], prefixes ['37']
+   38 Zech: 3134 words, 3134 distinct, dups [], prefixes ['38']
+   39 Mal: 876 words, 876 distinct, dups [], prefixes ['39']
+   whole Bible: 306785 <w> ids, 306785 distinct, 0 ids used more than once
+   shape or prefix problems: 0 []
+   alphabet of the last three characters: 58 characters; absent from [A-Za-z0-9]: ['0', 'I', 'O', 'l']
+   capacity per book with that alphabet: 195112
+   <w> whose parent is not <verse>, by (parent, grandparent): {('rdg', 'note'): 1278}
+3. consecutive words whose id tails are in ascending order: 152730 of 306746 (0.498; about 0.5 if random)
+4. VerseMap.xml: root {http://www.APTBibleTools.com/namespace}verseMap; elements {'verseMap': 1, 'book': 39, 'verse': 1978}
+   attributes {('book', 'osisID'): 39, ('verse', 'wlc'): 1978, ('verse', 'kjv'): 1978, ('verse', 'type'): 1978}
+   verse type values {'full': 1971, 'partial': 7}
+   first non-full entries [{'wlc': '1Kgs.18.34!a', 'kjv': '1Kgs.18.33!b', 'type': 'partial'}, {'wlc': '1Kgs.20.3!a', 'kjv': '1Kgs.20.2!b', 'type': 'partial'}, {'wlc': '1Kgs.22.21!b', 'kjv': '1Kgs.22.22!a', 'type': 'partial'}, {'wlc': '1Kgs.22.44', 'kjv': '1Kgs.22.43!b', 'type': 'partial'}, {'wlc': 'Isa.63.19!b', 'kjv': 'Isa.64.1', 'type': 'partial'}]

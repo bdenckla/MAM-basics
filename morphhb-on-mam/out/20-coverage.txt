@@ -1,0 +1,297 @@
+analyze.py on 10-atoms.jsonl; written by Claude (Opus 5.5), 2026-11-15; not reviewed by a human
+
+== 1. MAM atoms by class (each atom once; on = the sides it is on: kq both, k ketiv, q qere)
+  A1   296819   96.83%   (kq 295792, q 1027)
+  A2     7521    2.45%   (kq 7513, q 8)
+  K      1047    0.34%   (k 1047)
+  AX        2    0.00%   (kq 2)
+  B       842    0.27%   (kq 774, k 21, q 47)
+  C       294    0.10%   (kq 286, k 5, q 3)
+  all  306525
+
+== 2. A2, letters equal and pointing differs: by kind of difference, then by how morphhb analyses MAM's form elsewhere
+    5655  holam in MAM only, Tetragrammaton
+            5654  supported: MAM's form has this lemma and morph elsewhere
+               1  contradicted in lemma: same morph elsewhere, never this lemma
+     810  holam in MAM only, other
+             764  supported: MAM's form has this lemma and morph elsewhere
+              46  MAM's form not elsewhere in morphhb
+     321  several letters
+             285  supported: MAM's form has this lemma and morph elsewhere
+              32  MAM's form not elsewhere in morphhb
+               3  contradicted in morph: same lemma elsewhere, never this morph
+               1  contradicted in lemma: same morph elsewhere, never this lemma
+     268  dagesh or mappiq only
+             187  supported: MAM's form has this lemma and morph elsewhere
+              79  MAM's form not elsewhere in morphhb
+               2  contradicted in morph: same lemma elsewhere, never this morph
+     190  one letter: hataf-patah -> shewa
+             116  MAM's form not elsewhere in morphhb
+              70  supported: MAM's form has this lemma and morph elsewhere
+               4  contradicted in morph: same lemma elsewhere, never this morph
+      32  one letter: shewa -> hataf-segol
+              32  supported: MAM's form has this lemma and morph elsewhere
+      30  one letter: none -> shewa
+              25  supported: MAM's form has this lemma and morph elsewhere
+               4  MAM's form not elsewhere in morphhb
+               1  contradicted in both
+      25  one letter: hataf-patah -> patah
+              14  supported: MAM's form has this lemma and morph elsewhere
+              11  MAM's form not elsewhere in morphhb
+      19  one letter: patah -> hataf-patah
+              10  MAM's form not elsewhere in morphhb
+               8  supported: MAM's form has this lemma and morph elsewhere
+               1  contradicted in morph: same lemma elsewhere, never this morph
+      12  one letter: segol -> patah
+               5  MAM's form not elsewhere in morphhb
+               4  supported: MAM's form has this lemma and morph elsewhere
+               3  contradicted in morph: same lemma elsewhere, never this morph
+      11  one letter: none -> patah
+               7  supported: MAM's form has this lemma and morph elsewhere
+               4  MAM's form not elsewhere in morphhb
+      11  one letter: qamats -> patah
+               6  supported: MAM's form has this lemma and morph elsewhere
+               5  MAM's form not elsewhere in morphhb
+       9  one letter: shewa -> hataf-patah
+               6  supported: MAM's form has this lemma and morph elsewhere
+               3  MAM's form not elsewhere in morphhb
+       9  one letter: shewa -> none
+               5  MAM's form not elsewhere in morphhb
+               3  supported: MAM's form has this lemma and morph elsewhere
+               1  contradicted in lemma: same morph elsewhere, never this lemma
+       8  one letter: patah -> segol
+               4  MAM's form not elsewhere in morphhb
+               2  supported: MAM's form has this lemma and morph elsewhere
+               2  contradicted in morph: same lemma elsewhere, never this morph
+       7  one letter: none -> qamats
+               4  supported: MAM's form has this lemma and morph elsewhere
+               3  MAM's form not elsewhere in morphhb
+       7  one letter: shewa -> hiriq
+               4  supported: MAM's form has this lemma and morph elsewhere
+               3  MAM's form not elsewhere in morphhb
+       7  shin or sin dot only
+               6  supported: MAM's form has this lemma and morph elsewhere
+               1  contradicted in both
+       7  one letter: qubuts -> none
+               5  supported: MAM's form has this lemma and morph elsewhere
+               2  MAM's form not elsewhere in morphhb
+       6  one letter: none -> hiriq
+               5  supported: MAM's form has this lemma and morph elsewhere
+               1  MAM's form not elsewhere in morphhb
+       5  one letter: hataf-qamats -> shewa
+               3  supported: MAM's form has this lemma and morph elsewhere
+               2  MAM's form not elsewhere in morphhb
+       5  one letter: patah -> shewa
+               3  MAM's form not elsewhere in morphhb
+               2  supported: MAM's form has this lemma and morph elsewhere
+       5  one letter: tsere -> hiriq
+               3  MAM's form not elsewhere in morphhb
+               2  supported: MAM's form has this lemma and morph elsewhere
+       5  one letter: segol -> hataf-segol
+               3  supported: MAM's form has this lemma and morph elsewhere
+               2  MAM's form not elsewhere in morphhb
+       5  one letter: segol -> tsere
+               4  supported: MAM's form has this lemma and morph elsewhere
+               1  MAM's form not elsewhere in morphhb
+       4  one letter: dagesh+qamats -> qamats-qatan
+               3  supported: MAM's form has this lemma and morph elsewhere
+               1  MAM's form not elsewhere in morphhb
+       4  one letter: qamats -> hataf-qamats
+               3  MAM's form not elsewhere in morphhb
+               1  supported: MAM's form has this lemma and morph elsewhere
+       4  one letter: patah -> qamats
+               2  MAM's form not elsewhere in morphhb
+               1  supported: MAM's form has this lemma and morph elsewhere
+               1  contradicted in morph: same lemma elsewhere, never this morph
+       4  one letter: hataf-segol -> segol
+               3  supported: MAM's form has this lemma and morph elsewhere
+               1  MAM's form not elsewhere in morphhb
+       3  one letter: hataf-qamats -> qamats
+               2  MAM's form not elsewhere in morphhb
+               1  supported: MAM's form has this lemma and morph elsewhere
+       3  one letter: shewa -> hataf-qamats
+               2  supported: MAM's form has this lemma and morph elsewhere
+               1  MAM's form not elsewhere in morphhb
+       2  one letter: shewa -> dagesh
+               2  supported: MAM's form has this lemma and morph elsewhere
+       2  one letter: hataf-qamats -> qamats-qatan
+               1  MAM's form not elsewhere in morphhb
+               1  supported: MAM's form has this lemma and morph elsewhere
+       2  one letter: none -> tsere
+               2  supported: MAM's form has this lemma and morph elsewhere
+       2  one letter: hataf-qamats -> hataf-patah
+               1  MAM's form not elsewhere in morphhb
+               1  supported: MAM's form has this lemma and morph elsewhere
+       2  one letter: qamats -> segol
+               1  contradicted in morph: same lemma elsewhere, never this morph
+               1  supported: MAM's form has this lemma and morph elsewhere
+       2  one letter: hiriq -> none
+               1  MAM's form not elsewhere in morphhb
+               1  supported: MAM's form has this lemma and morph elsewhere
+       2  one letter: qamats -> dagesh+qamats-qatan
+               1  MAM's form not elsewhere in morphhb
+               1  supported: MAM's form has this lemma and morph elsewhere
+       2  one letter: tsere -> segol
+               2  supported: MAM's form has this lemma and morph elsewhere
+       2  one letter: segol -> shewa
+               2  MAM's form not elsewhere in morphhb
+       2  one letter: hiriq -> shewa
+               2  supported: MAM's form has this lemma and morph elsewhere
+       1  one letter: hiriq -> dagesh
+               1  MAM's form not elsewhere in morphhb
+       1  one letter: tsere -> shewa
+               1  MAM's form not elsewhere in morphhb
+       1  one letter: shewa -> patah
+               1  MAM's form not elsewhere in morphhb
+       1  one letter: dagesh -> holam
+               1  supported: MAM's form has this lemma and morph elsewhere
+       1  one letter: segol -> qamats
+               1  MAM's form not elsewhere in morphhb
+       1  one letter: segol -> hataf-patah
+               1  MAM's form not elsewhere in morphhb
+       1  one letter: hataf-segol -> shewa
+               1  MAM's form not elsewhere in morphhb
+       1  one letter: dagesh -> qubuts
+               1  MAM's form not elsewhere in morphhb
+       1  one letter: hataf-patah -> hataf-segol
+               1  supported: MAM's form has this lemma and morph elsewhere
+       1  one letter: patah -> none
+               1  contradicted in morph: same lemma elsewhere, never this morph
+
+  A2 by consistency alone:
+      7131  supported: MAM's form has this lemma and morph elsewhere
+       367  MAM's form not elsewhere in morphhb
+        18  contradicted in morph: same lemma elsewhere, never this morph
+         3  contradicted in lemma: same morph elsewhere, never this lemma
+         2  contradicted in both
+  A2 contradicted with MAM's form at least 5 times elsewhere in morphhb: 10
+
+== 3. K, MAM's ketiv (unpointed) with the letters of morphhb's ketiv word: 1047
+  morphhb partner kinds: {'x-ketiv': 1018, 'plain': 29}
+
+== 4. Ketiv and qere: MAM atoms' kinds against their morphhb partners' kinds
+  A1  MAM kq-q[q]                      morphhb qere                885
+  A1  MAM kq-q-first[q]                morphhb qere                131
+  A1  MAM kq-trivial[kq]               morphhb plain                12
+  A1  MAM kq-q-velo-k[q]               morphhb qere                  9
+  A1  MAM kq-q[q]                      morphhb plain                 2
+  A2  MAM kq-q[q]                      morphhb qere                  7
+  A2  MAM kq-trivial[kq]               morphhb plain                 1
+  A2  MAM kq-q-first[q]                morphhb qere                  1
+  AX  MAM plain[kq]                    morphhb qere+x-ketiv          2
+  B   MAM kq-q[q]                      morphhb plain                23
+  B   MAM kq-q[q]                      morphhb qere                 20
+  B   MAM kq-k[k]                      morphhb x-ketiv              20
+  B   MAM kq-q-first[q]                morphhb qere                  2
+  B   MAM kq-q-first[q]                morphhb plain                 2
+  B   MAM kq-trivial[kq]               morphhb plain                 1
+  B   MAM kq-k[k]                      morphhb plain                 1
+  C   MAM kq-trivial[kq]               morphhb qere+x-ketiv        134
+  C   MAM plain[kq]                    morphhb qere+x-ketiv         86
+  C   MAM kq-k[k]                      morphhb x-ketiv               5
+  C   MAM plain[kq]                    morphhb none                  3
+  C   MAM kq-q[q]                      morphhb plain                 2
+  C   MAM kq-trivial[kq]               morphhb plain+qere+x-ketiv      1
+  C   MAM kq-q[q]                      morphhb qere                  1
+  K   MAM kq-k[k]                      morphhb x-ketiv            1012
+  K   MAM kq-k[k]                      morphhb plain                27
+  K   MAM kq-k-velo-q[k]               morphhb x-ketiv               6
+  K   MAM kq-k-velo-q[k]               morphhb plain                 2
+  (plain MAM atoms with plain morphhb partners are left out of this table)
+
+== 5. AX (letters equal, different morphhb word on each side): 2
+  2Sam.18.20 MAM עַל; morphhb k [('על', '10vJw', 'x-ketiv', False)], q [('עַל', '10HX9', None, True)]
+  Isa.52.5 MAM לִּי; morphhb k [('ל/י', '23JfN', 'x-ketiv', False)], q [('לִּ/י', '23aeF', None, True)]
+
+== 6. B, one-to-one and letters differ: by kind of letter difference, then by consistency
+  of the 842, paired word by word inside a larger block of equal size on both texts: 27
+     430  mater missing in MAM
+             233  supported: MAM's form has this lemma and morph elsewhere
+             182  MAM's form not elsewhere in morphhb
+              12  contradicted in morph: same lemma elsewhere, never this morph
+               2  contradicted in both
+               1  contradicted in lemma: same morph elsewhere, never this lemma
+     289  mater added in MAM
+             174  supported: MAM's form has this lemma and morph elsewhere
+             107  MAM's form not elsewhere in morphhb
+               5  contradicted in morph: same lemma elsewhere, never this morph
+               3  contradicted in both
+     112  other letters
+              56  supported: MAM's form has this lemma and morph elsewhere
+              44  MAM's form not elsewhere in morphhb
+               8  contradicted in morph: same lemma elsewhere, never this morph
+               3  contradicted in lemma: same morph elsewhere, never this lemma
+               1  contradicted in both
+      11  matres both ways
+               7  MAM's form not elsewhere in morphhb
+               3  supported: MAM's form has this lemma and morph elsewhere
+               1  contradicted in lemma: same morph elsewhere, never this lemma
+
+== 7. C, no one-to-one partner: blocks
+  blocks: 283, holding 294 MAM atoms
+     135  MAM's trivial ketiv/qere (one form) where morphhb has a ketiv and a qere
+      85  MAM plain where morphhb has a ketiv and a qere
+      53  division into atoms differs (same letters)
+       6  MAM ketiv/qere with another structure in morphhb
+       2  MAM atom(s) with no morphhb word
+       2  letters and division differ
+
+== 8. morphhb words that no MAM atom matches (difflib delete blocks), side words: 48
+  distinct morphhb words: 25; in verses MAM lacks: 20
+  Josh.21.36 06DWU וּ/מִ/מַּטֵּ֣ה c/m/4294 HC/R/Ncmsc sides 2
+  Josh.21.36 06d1L רְאוּבֵ֔ן 7205 HNp sides 2
+  Josh.21.36 06e96 אֶת 853 HTo sides 2
+  Josh.21.36 06Ci6 בֶּ֖צֶר 1221 HNp sides 2
+  Josh.21.36 06ixh וְ/אֶת c/853 HC/To sides 2
+  Josh.21.36 0622x מִגְרָשֶׁ֑/הָ 4054 HNcmpc/Sp3fs sides 2
+  Josh.21.36 06ogz וְ/אֶת c/853 HC/To sides 2
+  Josh.21.36 06z7X יַ֖הְצָ/ה 3096 HNp/Sd sides 2
+  Josh.21.36 06MjR וְ/אֶת c/853 HC/To sides 2
+  Josh.21.36 06Tk7 מִגְרָשֶֽׁ/הָ 4054 HNcmpc/Sp3fs sides 2
+  Josh.21.37 06ZGJ אֶת 853 HTo sides 2
+  Josh.21.37 06apP קְדֵמוֹת֙ 6932 HNp sides 2
+  Josh.21.37 06dPF וְ/אֶת c/853 HC/To sides 2
+  Josh.21.37 06nAe מִגְרָשֶׁ֔/הָ 4054 HNcmpc/Sp3fs sides 2
+  Josh.21.37 066WC וְ/אֶת c/853 HC/To sides 2
+  Josh.21.37 06Q3p מֵיפָ֖עַת 4158 HNp sides 2
+  Josh.21.37 06dRx וְ/אֶת c/853 HC/To sides 2
+  Josh.21.37 066GF מִגְרָשֶׁ֑/הָ 4054 HNcmpc/Sp3fs sides 2
+  Josh.21.37 06ZWf עָרִ֖ים 5892 b HNcfpa sides 2
+  Josh.21.37 06dZw אַרְבַּֽע 702 HAcfsa sides 2
+  2Sam.7.22 10EC9 אֲדֹנָ֣/י 136 HNcmpc/Sp1cs sides 2
+  2Sam.13.33 10kX9 אִם 518 b HC sides 1
+  2Sam.15.21 105KS אִם 518 b HC sides 1
+  Dan.5.19 27qti צָבֵ֜א 6634 AVqrmsa sides 2
+  Dan.5.19 27y7b הֲוָ֣א 1934 AVqp3ms sides 2
+
+== 9. Maqaf after an atom, MAM against morphhb, two-sided atoms with a one-to-one plain partner
+  MAM none               morphhb none      261452
+  MAM maqaf              morphhb maqaf      42374
+  MAM implicit maqaf     morphhb none          95
+  MAM maqaf              morphhb none          79
+  MAM none               morphhb maqaf         59
+  MAM implicit maqaf     morphhb maqaf         20
+
+== 10. morphhb's morpheme slashes carried into MAM's text (classes A1, A2, K, B)
+  A1  slashes                                                       161623
+  A1  slashes placed                                                161623
+  A1  with slashes                                                  143951
+  A1  words                                                         296819
+  A1  words with an Rd segment                                        6399
+  A2  Rd words whose difference touches the first two letters           16
+  A2  slashes                                                         1422
+  A2  slashes placed                                                  1422
+  A2  with slashes                                                    1302
+  A2  words                                                           7521
+  A2  words with an Rd segment                                          22
+  B   slashes                                                          650
+  B   slashes placed                                                   549
+  B   with slashes                                                     534
+  B   words                                                            842
+  B   words with an Rd segment                                          11
+  B   words with an unplaced slash                                      98
+  K   slashes                                                          681
+  K   slashes placed                                                   681
+  K   with slashes                                                     572
+  K   words                                                           1047
+  K   words with an Rd segment                                          18

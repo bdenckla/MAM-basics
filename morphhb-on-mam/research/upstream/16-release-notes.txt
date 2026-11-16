@@ -1,0 +1,150 @@
+================================================================================
+v.2.2 2021-12-13T14:47:08Z jag3773 'OSHB Version 2.2'
+This minor release of the **Open Scriptures Hebrew Bible** (OSHB) addresses some issues found in the previous release.  You can see all the changes [here](https://github.com/openscriptures/morphhb/compare/v.2.1...v.2.2).
+
+In the past year we have made a handful of lemma corrections. In July, 2021 [we added](https://github.com/openscriptures/morphhb/pull/83/files) `type=x-ketiv` to Ketiv entries and fixed the types on maqqef entries [where needed](https://github.com/openscriptures/morphhb/commit/2005a3e5871ec9517da6a3a4c1b7a440bdb82241).
+
+The OSHB includes the fully completed and verified morphological data for the entire Hebrew Bible (following the WLC).  See the `wlc` folder in the attached source files or download the [OSHB-v.2.2.zip](https://github.com/openscriptures/morphhb/releases/download/v.2.2/OSHB-v.2.2.zip) file if you just want the OSIS files directly.  You may also be interested in the [NPM package](https://www.npmjs.com/package/morphhb).
+
+A page that describes the morphology codes that we use may be found at [OSHB Morph Codes](https://openscriptures.github.io/morphhb/parsing/HebrewMorphologyCodes.html).  You may also see the overarching [parsing principles](https://github.com/openscriptures/morphhb/blob/master/parsing/README.md#parsing-principles) we used for consistency. Also, note the updated documentation regarding the `id` fields that were added in 2.0 in the [README](https://github.com/openscriptures/morphhb#word-tag-attributes).
+
+
+For the OSHB Team,
+Jesse Griffin
+
+Mailing list: openscriptures-hb@googlegroups.com
+assets: ['OSHB-v.2.2.zip']
+================================================================================
+v.2.1 2019-02-08T18:15:12Z jag3773 'OSHB Version 2.1'
+This minor release of the **Open Scriptures Hebrew Bible** (OSHB) address a few inconsistencies found in the 2.0 release.  You can see the six changes [here](https://github.com/openscriptures/morphhb/pull/57/files).
+
+The OSHB includes the fully completed and verified morphological data for the entire Hebrew Bible (following the WLC).  See the `wlc` folder in the attached source files or download the [OSHB-v.2.1.zip](https://github.com/openscriptures/morphhb/releases/download/v.2.1/OSHB-v.2.1.zip) file if you just want the OSIS files directly.  You may also be interested in the [NPM package](https://www.npmjs.com/package/morphhb).
+
+A page that describes the morphology codes that we use may be found at [OSHB Morph Codes](https://openscriptures.github.io/morphhb/parsing/HebrewMorphologyCodes.html).  You may also see the overarching [parsing principles](https://github.com/openscriptures/morphhb/blob/master/parsing/README.md#parsing-principles) we used for consistency. Also, note the updated documentation regarding the `id` fields that were added in 2.0 in the [README](https://github.com/openscriptures/morphhb#word-tag-attributes).
+
+
+For the OSHB Team,
+Jesse Griffin
+
+Mailing list: openscriptures-hb@googlegroups.com
+
+*P.S. There is a companion project to the OSHB that is a basic Hebrew reference grammar, the [unfoldingWord Hebrew Grammar](https://uhg.readthedocs.io/en/latest/front.html). This grammar is based on the morphology codes in the OSHB and should therefore be easy to embed in software applications that make use of the OSHB.*
+assets: ['OSHB-v.2.1.zip']
+================================================================================
+v.2.0 2019-01-16T12:45:34Z jag3773 'OSHB Version 2.0'
+We are pleased to announce the release of the **Open Scriptures Hebrew Bible** (OSHB) version 2.0!
+
+This version includes the fully completed and verified morphological data for the entire Hebrew Bible (following the WLC).  See the `wlc` folder in the attached source files or download the [OSHB-v.2.0.zip](https://github.com/openscriptures/morphhb/releases/download/v.2.0/OSHB-v.2.0.zip) file if you just want the OSIS files directly.  You may also be interested in the [NPM package](https://www.npmjs.com/package/morphhb).
+
+A page that describes the morphology codes that we use may be found at [OSHB Morph Codes](https://openscriptures.github.io/morphhb/parsing/HebrewMorphologyCodes.html).  You may also see the overarching [parsing principles](https://github.com/openscriptures/morphhb/blob/master/parsing/README.md#parsing-principles) we used for consistency.
+
+The 2.0 release completes phase 1 of the morphology project.  **Many thanks and congratulations to the over 300 people that have contributed to this project over the course of 10 years!**
+
+For the OSHB Team,
+Jesse Griffin
+
+Mailing list: openscriptures-hb@googlegroups.com
+
+*P.S. There is a companion project to the OSHB that is a basic Hebrew reference grammar, the [unfoldingWord Hebrew Grammar](https://uhg.readthedocs.io/en/latest/front.html). This grammar is based on the morphology codes in the OSHB and should therefore be easy to embed in software applications that make use of the OSHB.*
+assets: ['OSHB-v.2.0.zip']
+================================================================================
+1.4 2018-04-24T15:36:19Z jag3773 'OSHB Version 1.4'
+We are pleased to announce the release of the Open Scriptures Hebrew Bible version 1.4!
+
+In addition to the books already released, this version includes the fully completed and verified morphological data for:
+
+* Lamentations
+* Esther
+* Micah
+* Ecclesiastes
+* Amos
+
+We have also included the morphological data for the rest of the books, where the status of that data has been verified. At the time of writing, this is about 95% of all the words in the Tanakh, see [OSHB Morph Status](http://hb.openscriptures.org/status_all.html) for an updated chart.
+
+A page that describes the morphology codes that we use may be found at [OSHB Morph Codes](https://openscriptures.github.io/morphhb/parsing/HebrewMorphologyCodes.html).
+
+Would you consider helping us finish the remaining 5% of the parsing? If so, see the [OSHB Phase 1 document](https://docs.google.com/document/d/1mxKPM_uOE6AHHMP3fnLU1tKrwyZrlbjnSYENe8PklME/edit) for information on how to contribute.
+
+For the OSHB Team,
+Jesse Griffin
+
+Mailing list: openscriptures-hb@googlegroups.com
+Parsing site: http://hb.openscriptures.org/OshbParse/index.php
+Slack Group: Sign up at http://ufw.io/team43, join the #uhb-uhg-uag-uhal channel
+
+*P.S. There is a companion project to the OSHB that is a basic Hebrew reference grammar, the [unfoldingWord Hebrew Grammar](https://uhg.readthedocs.io/en/latest/front.html). This grammar is based on the morphology codes in the OSHB and should therefore be easy to embed in software applications that make use of the OSHB. Editing work is ongoing but the text is substantially complete.*
+assets: []
+================================================================================
+v.1.3 2018-01-05T14:15:44Z jag3773 'OSHB Version 1.3'
+We are pleased to announce the release of the Open Scriptures Hebrew Bible version 1.3!
+
+In addition to the books released in 1.2, this release includes the fully completed and verified morphological data for:
+
+* Habakkuk
+* Song of Songs
+* Haggai
+* Zephaniah
+* Malachi
+* Nahum
+* Hosea
+
+We have also included the morphological data for the rest of the books, where the status of that data has been verified.  At the time of writing, this is about 89% of all the words in the Tanakh, see [OSHB Morph Status](http://hb.openscriptures.org/status_all.html) for an updated chart.
+
+A page that describes the morphology codes that we use may be found at [OSHB Morph Codes](https://openscriptures.github.io/morphhb/parsing/HebrewMorphologyCodes.html).
+
+Would you consider helping us finish the remaining 11% of the parsing?  If so, see the [OSHB Phase 1 document](https://docs.google.com/document/d/1mxKPM_uOE6AHHMP3fnLU1tKrwyZrlbjnSYENe8PklME/edit) for information on how to contribute.
+
+For the OSHB Team,
+Jesse Griffin
+
+
+Mailing list: openscriptures-hb@googlegroups.com
+Parsing site: http://hb.openscriptures.org/OshbParse/index.php
+Slack Group: Sign up at http://ufw.io/team43, join the #uhb-uhg-uag-uhal channel
+assets: []
+================================================================================
+v.1.2 2017-12-11T22:37:46Z jag3773 'OSHB Version 1.2'
+We are pleased to announce the release of the Open Scriptures Hebrew Bible version 1.2!
+
+This release includes the fully completed and verified morphological data for:
+
+* Ruth
+* Obadiah
+* Jonah
+* Joel
+
+We have also included the morphological data for the rest of the books, where the status of that data has been verified.  At the time of writing, this is about 87% of all the words in the Tanakh, see [OSHB Morph Status](http://hb.openscriptures.org/status_all.html) for an updated chart.
+
+A page that describes the morphology codes that we use may be found at [OSHB Morph Codes](https://openscriptures.github.io/morphhb/parsing/HebrewMorphologyCodes.html).
+
+Would you consider helping us finish the remaining 13% of the parsing?  If so, see the [OSHB Phase 1 document](https://docs.google.com/document/d/1mxKPM_uOE6AHHMP3fnLU1tKrwyZrlbjnSYENe8PklME/edit) for information on how to contribute.
+
+For the OSHB Team,
+Jesse Griffin
+
+
+Mailing list: openscriptures-hb@googlegroups.com
+Parsing site: http://hb.openscriptures.org/OshbParse/index.php
+Slack Group: Sign up at http://ufw.io/team43, join the #uhb-uhg-uag-uhal channel
+assets: []
+================================================================================
+v.1.01 2013-12-12T02:14:01Z dowens76 'First release of morphology'
+We are announcing our first release of the morphology for portions of the Open Scriptures Hebrew Bible.
+
+This first release contains Ruth and Jonah complete, as well as small portions of Genesis, Isaiah and Psalms.  Files can be downloaded here: https://github.com/openscriptures/morphhb
+
+We are using the Hebrew Morphology Codes:
+http://openscriptures.github.io/morphhb/parsing/HebrewMorphologyCodes.html
+
+Anyone interested in learning more, or even contributing to our efforts, can join the mailing list
+openscriptures-hb@googlegroups.com
+or register at the parsing site:
+http://hb.openscriptures.org/OshbParse/index.php
+
+Thanks to all who have contributed to the construction of the website and the parsing so far.
+
+Peace,
+
+David
+
+assets: []

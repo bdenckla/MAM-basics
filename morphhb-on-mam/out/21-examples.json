@@ -1,0 +1,10150 @@
+{
+ "A2 one letter: hataf-patah -> shewa / MAM's form not elsewhere in morphhb": [
+  {
+   "vid": "Gen.1.18",
+   "mam": "וּֽלְהַבְדִּ֔יל",
+   "class": "A2",
+   "morphhb": "וּֽ/לֲ/הַבְדִּ֔יל",
+   "lemma": "c/l/914",
+   "morph": "HC/R/Vhc",
+   "id": "018ro",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     1,
+     "ל",
+     [
+      "hataf-patah"
+     ],
+     [
+      "shewa"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Gen.2.12",
+   "mam": "וּֽזְהַ֛ב",
+   "class": "A2",
+   "morphhb": "וּֽ/זֲהַ֛ב",
+   "lemma": "c/2091",
+   "morph": "HC/Ncmsc",
+   "id": "01dbM",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     1,
+     "ז",
+     [
+      "hataf-patah"
+     ],
+     [
+      "shewa"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Gen.3.17",
+   "mam": "תֹּֽאכְלֶ֔נָּה",
+   "class": "A2",
+   "morphhb": "תֹּֽאכֲלֶ֔/נָּה",
+   "lemma": "398",
+   "morph": "HVqi2ms/Sp3fs",
+   "id": "01ozy",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     2,
+     "כ",
+     [
+      "hataf-patah"
+     ],
+     [
+      "shewa"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Gen.10.3",
+   "mam": "אַשְׁכְּנַ֥ז",
+   "class": "A2",
+   "morphhb": "אַשְׁכֲּנַ֥ז",
+   "lemma": "813",
+   "morph": "HNp",
+   "id": "01Scx",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     2,
+     "כ",
+     [
+      "hataf-patah",
+      "dagesh"
+     ],
+     [
+      "shewa",
+      "dagesh"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 holam in MAM only, Tetragrammaton / supported: MAM's form has this lemma and morph elsewhere": [
+  {
+   "vid": "Gen.2.4",
+   "mam": "יְהֹוָ֥ה",
+   "class": "A2",
+   "morphhb": "יְהוָ֥ה",
+   "lemma": "3068",
+   "morph": "HNp",
+   "id": "01gcK",
+   "cons": {
+    "n": 46,
+    "pair": 46,
+    "lemma": 46,
+    "morph": 46,
+    "top": [
+     "3068 | HNp",
+     46
+    ]
+   },
+   "sig": [
+    [
+     1,
+     "ה",
+     [],
+     [
+      "holam"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Gen.2.5",
+   "mam": "יְהֹוָ֤ה",
+   "class": "A2",
+   "morphhb": "יְהוָ֤ה",
+   "lemma": "3068",
+   "morph": "HNp",
+   "id": "01aqT",
+   "cons": {
+    "n": 46,
+    "pair": 46,
+    "lemma": 46,
+    "morph": 46,
+    "top": [
+     "3068 | HNp",
+     46
+    ]
+   },
+   "sig": [
+    [
+     1,
+     "ה",
+     [],
+     [
+      "holam"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Gen.2.7",
+   "mam": "יְהֹוָ֨ה",
+   "class": "A2",
+   "morphhb": "יְהוָ֨ה",
+   "lemma": "3068",
+   "morph": "HNp",
+   "id": "01pPp",
+   "cons": {
+    "n": 46,
+    "pair": 46,
+    "lemma": 46,
+    "morph": 46,
+    "top": [
+     "3068 | HNp",
+     46
+    ]
+   },
+   "sig": [
+    [
+     1,
+     "ה",
+     [],
+     [
+      "holam"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Gen.2.8",
+   "mam": "יְהֹוָ֧ה",
+   "class": "A2",
+   "morphhb": "יְהוָ֧ה",
+   "lemma": "3068",
+   "morph": "HNp",
+   "id": "015qp",
+   "cons": {
+    "n": 46,
+    "pair": 46,
+    "lemma": 46,
+    "morph": 46,
+    "top": [
+     "3068 | HNp",
+     46
+    ]
+   },
+   "sig": [
+    [
+     1,
+     "ה",
+     [],
+     [
+      "holam"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 dagesh or mappiq only / supported: MAM's form has this lemma and morph elsewhere": [
+  {
+   "vid": "Gen.2.8",
+   "mam": "בְּעֵ֖דֶן",
+   "class": "A2",
+   "morphhb": "בְ/עֵ֖דֶן",
+   "lemma": "b/5731 b",
+   "morph": "HR/Np",
+   "id": "01hSr",
+   "cons": {
+    "n": 1,
+    "pair": 1,
+    "lemma": 1,
+    "morph": 1,
+    "top": [
+     "5731 | HR/Np",
+     1
+    ]
+   },
+   "sig": [
+    [
+     0,
+     "ב",
+     [
+      "shewa"
+     ],
+     [
+      "shewa",
+      "dagesh"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Gen.2.10",
+   "mam": "וְנָהָר֙",
+   "class": "A2",
+   "morphhb": "וְ/נָהָרּ֙",
+   "lemma": "c/5104",
+   "morph": "HC/Ncmsa",
+   "id": "01zCS",
+   "cons": {
+    "n": 3,
+    "pair": 2,
+    "lemma": 3,
+    "morph": 2,
+    "top": [
+     "5104 | HC/Ncmsa",
+     2
+    ]
+   },
+   "sig": [
+    [
+     3,
+     "ר",
+     [
+      "dagesh"
+     ],
+     []
+    ]
+   ]
+  },
+  {
+   "vid": "Gen.2.18",
+   "mam": "אֶֽעֱשֶׂה",
+   "class": "A2",
+   "morphhb": "אֶֽעֱשֶׂהּ",
+   "lemma": "6213 a",
+   "morph": "HVqi1cs",
+   "id": "01G2d",
+   "cons": {
+    "n": 75,
+    "pair": 74,
+    "lemma": 75,
+    "morph": 74,
+    "top": [
+     "6213 | HVqi1cs",
+     74
+    ]
+   },
+   "sig": [
+    [
+     3,
+     "ה",
+     [
+      "dagesh"
+     ],
+     []
+    ]
+   ]
+  },
+  {
+   "vid": "Gen.14.10",
+   "mam": "הַשִּׂדִּ֗ים",
+   "class": "A2",
+   "morphhb": "הַ/שִׂדִּ֗ים",
+   "lemma": "d/7708",
+   "morph": "HTd/Np",
+   "id": "01q9w",
+   "cons": {
+    "n": 2,
+    "pair": 2,
+    "lemma": 2,
+    "morph": 2,
+    "top": [
+     "7708 | HTd/Np",
+     2
+    ]
+   },
+   "sig": [
+    [
+     1,
+     "ש",
+     [
+      "hiriq",
+      "sin-dot"
+     ],
+     [
+      "hiriq",
+      "dagesh",
+      "sin-dot"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: hataf-qamats -> shewa / MAM's form not elsewhere in morphhb": [
+  {
+   "vid": "Gen.2.23",
+   "mam": "לֻֽקְחָה",
+   "class": "A2",
+   "morphhb": "לֻֽקֳחָה",
+   "lemma": "3947",
+   "morph": "HVPp3fs",
+   "id": "01K9E",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     1,
+     "ק",
+     [
+      "hataf-qamats"
+     ],
+     [
+      "shewa"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Jer.20.15",
+   "mam": "שִׂמְּחָֽהוּ",
+   "class": "A2",
+   "morphhb": "שִׂמֳּחָֽ/הוּ",
+   "lemma": "8055",
+   "morph": "HVpp3ms/Sp3ms",
+   "id": "245gH",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     1,
+     "מ",
+     [
+      "hataf-qamats",
+      "dagesh"
+     ],
+     [
+      "shewa",
+      "dagesh"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 holam in MAM only, other / supported: MAM's form has this lemma and morph elsewhere": [
+  {
+   "vid": "Gen.4.3",
+   "mam": "לַֽיהֹוָֽה",
+   "class": "A2",
+   "morphhb": "לַֽ/יהוָֽה",
+   "lemma": "l/3068",
+   "morph": "HR/Np",
+   "id": "01cog",
+   "cons": {
+    "n": 4,
+    "pair": 4,
+    "lemma": 4,
+    "morph": 4,
+    "top": [
+     "3068 | HR/Np",
+     4
+    ]
+   },
+   "sig": [
+    [
+     2,
+     "ה",
+     [],
+     [
+      "holam"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Gen.8.20",
+   "mam": "לַֽיהֹוָ֑ה",
+   "class": "A2",
+   "morphhb": "לַֽ/יהוָ֑ה",
+   "lemma": "l/3068",
+   "morph": "HR/Np",
+   "id": "01157",
+   "cons": {
+    "n": 4,
+    "pair": 4,
+    "lemma": 4,
+    "morph": 4,
+    "top": [
+     "3068 | HR/Np",
+     4
+    ]
+   },
+   "sig": [
+    [
+     2,
+     "ה",
+     [],
+     [
+      "holam"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Gen.12.7",
+   "mam": "לַיהֹוָ֖ה",
+   "class": "A2",
+   "morphhb": "לַ/יהוָ֖ה",
+   "lemma": "l/3068",
+   "morph": "HR/Np",
+   "id": "01Y5A",
+   "cons": {
+    "n": 4,
+    "pair": 4,
+    "lemma": 4,
+    "morph": 4,
+    "top": [
+     "3068 | HR/Np",
+     4
+    ]
+   },
+   "sig": [
+    [
+     2,
+     "ה",
+     [],
+     [
+      "holam"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Gen.12.8",
+   "mam": "לַֽיהֹוָ֔ה",
+   "class": "A2",
+   "morphhb": "לַֽ/יהוָ֔ה",
+   "lemma": "l/3068",
+   "morph": "HR/Np",
+   "id": "01G6t",
+   "cons": {
+    "n": 4,
+    "pair": 4,
+    "lemma": 4,
+    "morph": 4,
+    "top": [
+     "3068 | HR/Np",
+     4
+    ]
+   },
+   "sig": [
+    [
+     2,
+     "ה",
+     [],
+     [
+      "holam"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 several letters / MAM's form not elsewhere in morphhb": [
+  {
+   "vid": "Gen.4.18",
+   "mam": "וּמְחִיָּיאֵ֗ל",
+   "class": "A2",
+   "morphhb": "וּ/מְחִיּיָאֵ֗ל",
+   "lemma": "c/4232",
+   "morph": "HC/Np",
+   "id": "01P5E",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     3,
+     "י",
+     [
+      "dagesh"
+     ],
+     [
+      "qamats",
+      "dagesh"
+     ]
+    ],
+    [
+     4,
+     "י",
+     [
+      "qamats"
+     ],
+     []
+    ]
+   ]
+  },
+  {
+   "vid": "Exod.20.3",
+   "mam": "פָּנָֽ͏ַ֗י",
+   "class": "A2",
+   "morphhb": "פָּנָֽ/יַ",
+   "lemma": "6440",
+   "morph": "HNcbpc/Sp1cs",
+   "id": "02CuC",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     1,
+     "נ",
+     [
+      "qamats"
+     ],
+     [
+      "patah",
+      "qamats"
+     ]
+    ],
+    [
+     2,
+     "י",
+     [
+      "patah"
+     ],
+     []
+    ]
+   ]
+  },
+  {
+   "vid": "Num.32.35",
+   "mam": "וְיׇגְבְּהָֽה",
+   "class": "A2",
+   "morphhb": "וְ/יָגְבֳּהָֽה",
+   "lemma": "c/3011",
+   "morph": "HC/Np",
+   "id": "04SUQ",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     1,
+     "י",
+     [
+      "qamats"
+     ],
+     [
+      "qamats-qatan"
+     ]
+    ],
+    [
+     3,
+     "ב",
+     [
+      "hataf-qamats",
+      "dagesh"
+     ],
+     [
+      "shewa",
+      "dagesh"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Deut.5.7",
+   "mam": "פָּנָֽ͏ַ֗י",
+   "class": "A2",
+   "morphhb": "פָּנָֽ/יַ",
+   "lemma": "6440",
+   "morph": "HNcbpc/Sp1cs",
+   "id": "05dD2",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     1,
+     "נ",
+     [
+      "qamats"
+     ],
+     [
+      "patah",
+      "qamats"
+     ]
+    ],
+    [
+     2,
+     "י",
+     [
+      "patah"
+     ],
+     []
+    ]
+   ]
+  }
+ ],
+ "A2 dagesh or mappiq only / MAM's form not elsewhere in morphhb": [
+  {
+   "vid": "Gen.6.16",
+   "mam": "תְּכַלֶּ֣נָּה",
+   "class": "A2",
+   "morphhb": "תְּכַלֶ֣/נָּה",
+   "lemma": "3615",
+   "morph": "HVpi2ms/Sp3fs",
+   "id": "01cTb",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     2,
+     "ל",
+     [
+      "segol"
+     ],
+     [
+      "segol",
+      "dagesh"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Gen.7.23",
+   "mam": "וַיִּשָּׁ֧אֶר",
+   "class": "A2",
+   "morphhb": "וַ/יִשָּׁ֧אֶר",
+   "lemma": "c/7604",
+   "morph": "HC/VNw3ms",
+   "id": "01RNc",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     1,
+     "י",
+     [
+      "hiriq"
+     ],
+     [
+      "hiriq",
+      "dagesh"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Gen.38.26",
+   "mam": "לְדַעְתָּֽהּ",
+   "class": "A2",
+   "morphhb": "לְ/דַעְתָּֽ/ה",
+   "lemma": "l/3045",
+   "morph": "HR/Vqc/Sp3fs",
+   "id": "01x11",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     4,
+     "ה",
+     [],
+     [
+      "dagesh"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Gen.46.13",
+   "mam": "וּפֻוָ֖ה",
+   "class": "A2",
+   "morphhb": "וּ/פֻוָּ֖ה",
+   "lemma": "c/6312",
+   "morph": "HC/Np",
+   "id": "01Vek",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     2,
+     "ו",
+     [
+      "qamats",
+      "dagesh"
+     ],
+     [
+      "qamats"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 several letters / supported: MAM's form has this lemma and morph elsewhere": [
+  {
+   "vid": "Gen.14.17",
+   "mam": "כְּדׇרְלָעֹ֔מֶר",
+   "class": "A2",
+   "morphhb": "כְּדָרלָעֹ֔מֶר",
+   "lemma": "3540",
+   "morph": "HNp",
+   "id": "01h5C",
+   "cons": {
+    "n": 3,
+    "pair": 3,
+    "lemma": 3,
+    "morph": 3,
+    "top": [
+     "3540 | HNp",
+     3
+    ]
+   },
+   "sig": [
+    [
+     1,
+     "ד",
+     [
+      "qamats"
+     ],
+     [
+      "qamats-qatan"
+     ]
+    ],
+    [
+     2,
+     "ר",
+     [],
+     [
+      "shewa"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Gen.41.24",
+   "mam": "הַשִּׁבֳּלִ֣ים",
+   "class": "A2",
+   "morphhb": "הָ/שִׁבֳּלִ֣ים",
+   "lemma": "d/7641 b",
+   "morph": "HTd/Ncfpa",
+   "id": "01QMW",
+   "cons": {
+    "n": 3,
+    "pair": 3,
+    "lemma": 3,
+    "morph": 3,
+    "top": [
+     "7641 | HTd/Ncfpa",
+     3
+    ]
+   },
+   "sig": [
+    [
+     0,
+     "ה",
+     [
+      "qamats"
+     ],
+     [
+      "patah"
+     ]
+    ],
+    [
+     1,
+     "ש",
+     [
+      "hiriq",
+      "shin-dot"
+     ],
+     [
+      "hiriq",
+      "dagesh",
+      "shin-dot"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Lev.23.38",
+   "mam": "יְהֹוָ֑ה",
+   "class": "A2",
+   "morphhb": "יְּהוָ֑ה",
+   "lemma": "3068",
+   "morph": "HNp",
+   "id": "03Bjt",
+   "cons": {
+    "n": 46,
+    "pair": 46,
+    "lemma": 46,
+    "morph": 46,
+    "top": [
+     "3068 | HNp",
+     46
+    ]
+   },
+   "sig": [
+    [
+     0,
+     "י",
+     [
+      "shewa",
+      "dagesh"
+     ],
+     [
+      "shewa"
+     ]
+    ],
+    [
+     1,
+     "ה",
+     [],
+     [
+      "holam"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Lev.26.34",
+   "mam": "הׇשַּׁמָּ֔הֿ",
+   "class": "A2",
+   "morphhb": "הֳשַׁמָּ֔/ה",
+   "lemma": "8074",
+   "morph": "HVHc/Sp3fs",
+   "id": "03fMN",
+   "cons": {
+    "n": 2,
+    "pair": 2,
+    "lemma": 2,
+    "morph": 2,
+    "top": [
+     "8074 | HVHc/Sp3fs",
+     2
+    ]
+   },
+   "sig": [
+    [
+     0,
+     "ה",
+     [
+      "hataf-qamats"
+     ],
+     [
+      "qamats-qatan"
+     ]
+    ],
+    [
+     1,
+     "ש",
+     [
+      "patah",
+      "shin-dot"
+     ],
+     [
+      "patah",
+      "dagesh",
+      "shin-dot"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 holam in MAM only, other / MAM's form not elsewhere in morphhb": [
+  {
+   "vid": "Gen.18.14",
+   "mam": "מֵיְהֹוָ֖ה",
+   "class": "A2",
+   "morphhb": "מֵ/יְהוָ֖ה",
+   "lemma": "m/3068",
+   "morph": "HR/Np",
+   "id": "01RDi",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     2,
+     "ה",
+     [],
+     [
+      "holam"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Gen.24.50",
+   "mam": "מֵיְהֹוָ֖ה",
+   "class": "A2",
+   "morphhb": "מֵ/יְהוָ֖ה",
+   "lemma": "m/3068",
+   "morph": "HR/Np",
+   "id": "01LPR",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     2,
+     "ה",
+     [],
+     [
+      "holam"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Exod.8.6",
+   "mam": "כַּיהֹוָ֥ה",
+   "class": "A2",
+   "morphhb": "כַּ/יהוָ֥ה",
+   "lemma": "k/3068",
+   "morph": "HR/Np",
+   "id": "02PUa",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     2,
+     "ה",
+     [],
+     [
+      "holam"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Num.21.7",
+   "mam": "בַֽיהֹוָה֙",
+   "class": "A2",
+   "morphhb": "בַֽ/יהוָה֙",
+   "lemma": "b/3068",
+   "morph": "HR/Np",
+   "id": "0462a",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     2,
+     "ה",
+     [],
+     [
+      "holam"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: hataf-patah -> shewa / supported: MAM's form has this lemma and morph elsewhere": [
+  {
+   "vid": "Gen.22.18",
+   "mam": "וְהִתְבָּרְכ֣וּ",
+   "class": "A2",
+   "morphhb": "וְ/הִתְבָּרֲכ֣וּ",
+   "lemma": "c/1288",
+   "morph": "HC/Vtq3cp",
+   "id": "01JvL",
+   "cons": {
+    "n": 1,
+    "pair": 1,
+    "lemma": 1,
+    "morph": 1,
+    "top": [
+     "1288 | HC/Vtq3cp",
+     1
+    ]
+   },
+   "sig": [
+    [
+     4,
+     "ר",
+     [
+      "hataf-patah"
+     ],
+     [
+      "shewa"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Gen.26.4",
+   "mam": "וְהִתְבָּרְכ֣וּ",
+   "class": "A2",
+   "morphhb": "וְ/הִתְבָּרֲכ֣וּ",
+   "lemma": "c/1288",
+   "morph": "HC/Vtq3cp",
+   "id": "01uZa",
+   "cons": {
+    "n": 1,
+    "pair": 1,
+    "lemma": 1,
+    "morph": 1,
+    "top": [
+     "1288 | HC/Vtq3cp",
+     1
+    ]
+   },
+   "sig": [
+    [
+     4,
+     "ר",
+     [
+      "hataf-patah"
+     ],
+     [
+      "shewa"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Gen.26.12",
+   "mam": "וַֽיְבָרְכֵ֖הוּ",
+   "class": "A2",
+   "morphhb": "וַֽ/יְבָרֲכֵ֖/הוּ",
+   "lemma": "c/1288",
+   "morph": "HC/Vpw3ms/Sp3ms",
+   "id": "01Yko",
+   "cons": {
+    "n": 5,
+    "pair": 5,
+    "lemma": 5,
+    "morph": 5,
+    "top": [
+     "1288 | HC/Vpw3ms/Sp3ms",
+     5
+    ]
+   },
+   "sig": [
+    [
+     3,
+     "ר",
+     [
+      "hataf-patah"
+     ],
+     [
+      "shewa"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Gen.27.27",
+   "mam": "וַֽיְבָרְכֵ֑הוּ",
+   "class": "A2",
+   "morphhb": "וַֽ/יְבָרֲכֵ֑/הוּ",
+   "lemma": "c/1288",
+   "morph": "HC/Vpw3ms/Sp3ms",
+   "id": "01ezp",
+   "cons": {
+    "n": 5,
+    "pair": 5,
+    "lemma": 5,
+    "morph": 5,
+    "top": [
+     "1288 | HC/Vpw3ms/Sp3ms",
+     5
+    ]
+   },
+   "sig": [
+    [
+     3,
+     "ר",
+     [
+      "hataf-patah"
+     ],
+     [
+      "shewa"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: segol -> patah / MAM's form not elsewhere in morphhb": [
+  {
+   "vid": "Gen.30.37",
+   "mam": "וְעַרְמ֑וֹן",
+   "class": "A2",
+   "morphhb": "וְ/עֶרְמ֑וֹן",
+   "lemma": "c/6196",
+   "morph": "HC/Ncmsa",
+   "id": "01xgg",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     1,
+     "ע",
+     [
+      "segol"
+     ],
+     [
+      "patah"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Exod.28.27",
+   "mam": "מַחְבַּרְתּ֑וֹ",
+   "class": "A2",
+   "morphhb": "מֶחְבַּרְתּ֑/וֹ",
+   "lemma": "4225",
+   "morph": "HNcfsc/Sp3ms",
+   "id": "02g6L",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     0,
+     "מ",
+     [
+      "segol"
+     ],
+     [
+      "patah"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Exod.39.20",
+   "mam": "מַחְבַּרְתּ֑וֹ",
+   "class": "A2",
+   "morphhb": "מֶחְבַּרְתּ֑/וֹ",
+   "lemma": "4225",
+   "morph": "HNcfsc/Sp3ms",
+   "id": "02A1R",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     0,
+     "מ",
+     [
+      "segol"
+     ],
+     [
+      "patah"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Isa.22.21",
+   "mam": "וּמֶֽמְשַׁלְתְּךָ֖",
+   "class": "A2",
+   "morphhb": "וּ/מֶֽמְשֶׁלְתְּ/ךָ֖",
+   "lemma": "c/4475",
+   "morph": "HC/Ncbsc/Sp2ms",
+   "id": "23ing",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     3,
+     "ש",
+     [
+      "segol",
+      "shin-dot"
+     ],
+     [
+      "patah",
+      "shin-dot"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: hataf-qamats -> shewa / supported: MAM's form has this lemma and morph elsewhere": [
+  {
+   "vid": "Gen.30.38",
+   "mam": "בָּרְהָטִ֖ים",
+   "class": "A2",
+   "morphhb": "בָּ/רֳהָטִ֖ים",
+   "lemma": "b/7298 a",
+   "morph": "HRd/Ncmpa",
+   "id": "01f6g",
+   "cons": {
+    "n": 1,
+    "pair": 1,
+    "lemma": 1,
+    "morph": 1,
+    "top": [
+     "7298 | HRd/Ncmpa",
+     1
+    ]
+   },
+   "sig": [
+    [
+     1,
+     "ר",
+     [
+      "hataf-qamats"
+     ],
+     [
+      "shewa"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Gen.30.41",
+   "mam": "בָּרְהָטִ֑ים",
+   "class": "A2",
+   "morphhb": "בָּ/רֳהָטִ֑ים",
+   "lemma": "b/7298 a",
+   "morph": "HRd/Ncmpa",
+   "id": "01wFq",
+   "cons": {
+    "n": 1,
+    "pair": 1,
+    "lemma": 1,
+    "morph": 1,
+    "top": [
+     "7298 | HRd/Ncmpa",
+     1
+    ]
+   },
+   "sig": [
+    [
+     1,
+     "ר",
+     [
+      "hataf-qamats"
+     ],
+     [
+      "shewa"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Prov.28.22",
+   "mam": "נִ֥בְהָֽל",
+   "class": "A2",
+   "morphhb": "נִֽבֳהָ֥ל",
+   "lemma": "926",
+   "morph": "HVNrmsa",
+   "id": "20b9p",
+   "cons": {
+    "n": 1,
+    "pair": 1,
+    "lemma": 1,
+    "morph": 1,
+    "top": [
+     "926 | HVNrmsa",
+     1
+    ]
+   },
+   "sig": [
+    [
+     1,
+     "ב",
+     [
+      "hataf-qamats"
+     ],
+     [
+      "shewa"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: dagesh+qamats -> qamats-qatan / MAM's form not elsewhere in morphhb": [
+  {
+   "vid": "Gen.32.18",
+   "mam": "יִֽפְגׇשְׁךָ֞",
+   "class": "A2",
+   "morphhb": "יִֽפְגָּשְׁ/ךָ֞",
+   "lemma": "6298",
+   "morph": "HVqi3ms/Sp2ms",
+   "id": "01PAM",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     2,
+     "ג",
+     [
+      "qamats",
+      "dagesh"
+     ],
+     [
+      "qamats-qatan"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: hiriq -> dagesh / MAM's form not elsewhere in morphhb": [
+  {
+   "vid": "Gen.32.18",
+   "mam": "וּשְׁאֵֽלְךָ֙",
+   "class": "A2",
+   "morphhb": "וִ/שְׁאֵֽלְ/ךָ֙",
+   "lemma": "c/7592",
+   "morph": "HC/Vqq3ms/Sp2ms",
+   "id": "01PwH",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     0,
+     "ו",
+     [
+      "hiriq"
+     ],
+     [
+      "dagesh"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: none -> qamats / supported: MAM's form has this lemma and morph elsewhere": [
+  {
+   "vid": "Gen.34.11",
+   "mam": "אָבִ֣יהָ",
+   "class": "A2",
+   "morphhb": "אָבִ֣י/ה",
+   "lemma": "1",
+   "morph": "HNcmsc/Sp3fs",
+   "id": "011Dh",
+   "cons": {
+    "n": 30,
+    "pair": 30,
+    "lemma": 30,
+    "morph": 30,
+    "top": [
+     "1 | HNcmsc/Sp3fs",
+     30
+    ]
+   },
+   "sig": [
+    [
+     3,
+     "ה",
+     [],
+     [
+      "qamats"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Gen.49.26",
+   "mam": "תִּֽהְיֶ֙יןָ֙",
+   "class": "A2",
+   "morphhb": "תִּֽהְיֶ֨ין֙",
+   "lemma": "1961",
+   "morph": "HVqi3fp",
+   "id": "01iFQ",
+   "cons": {
+    "n": 9,
+    "pair": 9,
+    "lemma": 9,
+    "morph": 9,
+    "top": [
+     "1961 | HVqi3fp",
+     9
+    ]
+   },
+   "sig": [
+    [
+     4,
+     "ן",
+     [],
+     [
+      "qamats"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Hos.2.4",
+   "mam": "מִפָּנֶ֔יהָ",
+   "class": "A2",
+   "morphhb": "מִ/פָּנֶ֔י/ה",
+   "lemma": "m/6440",
+   "morph": "HR/Ncbpc/Sp3fs",
+   "id": "28PGK",
+   "cons": {
+    "n": 1,
+    "pair": 1,
+    "lemma": 1,
+    "morph": 1,
+    "top": [
+     "6440 | HR/Ncbpc/Sp3fs",
+     1
+    ]
+   },
+   "sig": [
+    [
+     4,
+     "ה",
+     [],
+     [
+      "qamats"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Dan.6.13",
+   "mam": "אַרְיָוָתָ֑א",
+   "class": "A2",
+   "morphhb": "אַרְיָותָ֑/א",
+   "lemma": "744",
+   "morph": "ANcmpd/Td",
+   "id": "27n3z",
+   "cons": {
+    "n": 8,
+    "pair": 8,
+    "lemma": 8,
+    "morph": 8,
+    "top": [
+     "744 | ANcmpd/Td",
+     8
+    ]
+   },
+   "sig": [
+    [
+     3,
+     "ו",
+     [],
+     [
+      "qamats"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: shewa -> hataf-patah / supported: MAM's form has this lemma and morph elsewhere": [
+  {
+   "vid": "Gen.41.46",
+   "mam": "וַֽיַּעֲבֹ֖ר",
+   "class": "A2",
+   "morphhb": "וַֽ/יַּעְבֹ֖ר",
+   "lemma": "c/5674 a",
+   "morph": "HC/Vqw3ms",
+   "id": "01muR",
+   "cons": {
+    "n": 38,
+    "pair": 38,
+    "lemma": 38,
+    "morph": 38,
+    "top": [
+     "5674 | HC/Vqw3ms",
+     38
+    ]
+   },
+   "sig": [
+    [
+     2,
+     "ע",
+     [
+      "shewa"
+     ],
+     [
+      "hataf-patah"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Exod.27.15",
+   "mam": "חֲמֵ֥שׁ",
+   "class": "A2",
+   "morphhb": "חְמֵ֥שׁ",
+   "lemma": "2568",
+   "morph": "HAcfsa",
+   "id": "02JMe",
+   "cons": {
+    "n": 39,
+    "pair": 39,
+    "lemma": 39,
+    "morph": 39,
+    "top": [
+     "2568 | HAcfsa",
+     39
+    ]
+   },
+   "sig": [
+    [
+     0,
+     "ח",
+     [
+      "shewa"
+     ],
+     [
+      "hataf-patah"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "1Kgs.8.55",
+   "mam": "וַיַּעֲמֹ֕ד",
+   "class": "A2",
+   "morphhb": "וַֽ/יַּעְמֹ֕ד",
+   "lemma": "c/5975",
+   "morph": "HC/Vqw3ms",
+   "id": "11HGY",
+   "cons": {
+    "n": 54,
+    "pair": 54,
+    "lemma": 54,
+    "morph": 54,
+    "top": [
+     "5975 | HC/Vqw3ms",
+     54
+    ]
+   },
+   "sig": [
+    [
+     2,
+     "ע",
+     [
+      "shewa"
+     ],
+     [
+      "hataf-patah"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "1Kgs.20.13",
+   "mam": "הֲֽרָאִ֔יתָ",
+   "class": "A2",
+   "morphhb": "הְֽ/רָאִ֔יתָ",
+   "lemma": "i/7200",
+   "morph": "HTi/Vqp2ms",
+   "id": "11W3y",
+   "cons": {
+    "n": 6,
+    "pair": 6,
+    "lemma": 6,
+    "morph": 6,
+    "top": [
+     "7200 | HTi/Vqp2ms",
+     6
+    ]
+   },
+   "sig": [
+    [
+     0,
+     "ה",
+     [
+      "shewa"
+     ],
+     [
+      "hataf-patah"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: shewa -> hiriq / supported: MAM's form has this lemma and morph elsewhere": [
+  {
+   "vid": "Exod.1.3",
+   "mam": "וּבִנְיָמִֽן",
+   "class": "A2",
+   "morphhb": "וּ/בְנְיָמִֽן",
+   "lemma": "c/1144",
+   "morph": "HC/Np",
+   "id": "02yNB",
+   "cons": {
+    "n": 26,
+    "pair": 26,
+    "lemma": 26,
+    "morph": 26,
+    "top": [
+     "1144 | HC/Np",
+     26
+    ]
+   },
+   "sig": [
+    [
+     1,
+     "ב",
+     [
+      "shewa"
+     ],
+     [
+      "hiriq"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Judg.3.25",
+   "mam": "וְהִנֵּ֛ה",
+   "class": "A2",
+   "morphhb": "וְ/הְנֵּ֛ה",
+   "lemma": "c/2009",
+   "morph": "HC/Tm",
+   "id": "07PaR",
+   "cons": {
+    "n": 359,
+    "pair": 359,
+    "lemma": 359,
+    "morph": 359,
+    "top": [
+     "2009 | HC/Tm",
+     359
+    ]
+   },
+   "sig": [
+    [
+     1,
+     "ה",
+     [
+      "shewa"
+     ],
+     [
+      "hiriq"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "1Kgs.22.29",
+   "mam": "וִיהוֹשָׁפָ֥ט",
+   "class": "A2",
+   "morphhb": "וְ/יהוֹשָׁפָ֥ט",
+   "lemma": "c/3092",
+   "morph": "HC/Np",
+   "id": "11mS4",
+   "cons": {
+    "n": 10,
+    "pair": 10,
+    "lemma": 10,
+    "morph": 10,
+    "top": [
+     "3092 | HC/Np",
+     10
+    ]
+   },
+   "sig": [
+    [
+     0,
+     "ו",
+     [
+      "shewa"
+     ],
+     [
+      "hiriq"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Ezra.10.32",
+   "mam": "בִּנְיָמִ֥ן",
+   "class": "A2",
+   "morphhb": "בְּנְיָמִ֥ן",
+   "lemma": "1144",
+   "morph": "HNp",
+   "id": "15fw9",
+   "cons": {
+    "n": 47,
+    "pair": 47,
+    "lemma": 47,
+    "morph": 47,
+    "top": [
+     "1144 | HNp",
+     47
+    ]
+   },
+   "sig": [
+    [
+     0,
+     "ב",
+     [
+      "shewa",
+      "dagesh"
+     ],
+     [
+      "hiriq",
+      "dagesh"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: patah -> hataf-patah / supported: MAM's form has this lemma and morph elsewhere": [
+  {
+   "vid": "Exod.7.10",
+   "mam": "וַיַּ֣עֲשׂוּ",
+   "class": "A2",
+   "morphhb": "וַ/יַּ֣עַשׂוּ",
+   "lemma": "c/6213 a",
+   "morph": "HC/Vqw3mp",
+   "id": "02GD6",
+   "cons": {
+    "n": 78,
+    "pair": 78,
+    "lemma": 78,
+    "morph": 78,
+    "top": [
+     "6213 | HC/Vqw3mp",
+     78
+    ]
+   },
+   "sig": [
+    [
+     2,
+     "ע",
+     [
+      "patah"
+     ],
+     [
+      "hataf-patah"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Exod.35.32",
+   "mam": "מַֽחֲשָׁבֹ֑ת",
+   "class": "A2",
+   "morphhb": "מַֽחַשָׁבֹ֑ת",
+   "lemma": "4284",
+   "morph": "HNcfpa",
+   "id": "02ZPG",
+   "cons": {
+    "n": 2,
+    "pair": 2,
+    "lemma": 2,
+    "morph": 2,
+    "top": [
+     "4284 | HNcfpa",
+     2
+    ]
+   },
+   "sig": [
+    [
+     1,
+     "ח",
+     [
+      "patah"
+     ],
+     [
+      "hataf-patah"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Deut.25.18",
+   "mam": "אַֽחֲרֶ֔יךָ",
+   "class": "A2",
+   "morphhb": "אַֽחַרֶ֔י/ךָ",
+   "lemma": "310 a",
+   "morph": "HR/Sp2ms",
+   "id": "05KjR",
+   "cons": {
+    "n": 29,
+    "pair": 29,
+    "lemma": 29,
+    "morph": 29,
+    "top": [
+     "310 | HR/Sp2ms",
+     29
+    ]
+   },
+   "sig": [
+    [
+     1,
+     "ח",
+     [
+      "patah"
+     ],
+     [
+      "hataf-patah"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Judg.3.23",
+   "mam": "הָעֲלִיָּ֛ה",
+   "class": "A2",
+   "morphhb": "הָ/עַלִיָּ֛ה",
+   "lemma": "d/5944",
+   "morph": "HTd/Ncfsa",
+   "id": "07Wgd",
+   "cons": {
+    "n": 5,
+    "pair": 5,
+    "lemma": 5,
+    "morph": 5,
+    "top": [
+     "5944 | HTd/Ncfsa",
+     5
+    ]
+   },
+   "sig": [
+    [
+     1,
+     "ע",
+     [
+      "patah"
+     ],
+     [
+      "hataf-patah"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: hataf-patah -> patah / supported: MAM's form has this lemma and morph elsewhere": [
+  {
+   "vid": "Exod.8.3",
+   "mam": "הַֽחַרְטֻמִּ֖ים",
+   "class": "A2",
+   "morphhb": "הַֽ/חֲרְטֻמִּ֖ים",
+   "lemma": "d/2748",
+   "morph": "HTd/Ncmpa",
+   "id": "02TjC",
+   "cons": {
+    "n": 5,
+    "pair": 5,
+    "lemma": 5,
+    "morph": 5,
+    "top": [
+     "2748 | HTd/Ncmpa",
+     5
+    ]
+   },
+   "sig": [
+    [
+     1,
+     "ח",
+     [
+      "hataf-patah"
+     ],
+     [
+      "patah"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Exod.30.8",
+   "mam": "הָעַרְבַּ֖יִם",
+   "class": "A2",
+   "morphhb": "הָ/עֲרְבַּ֖יִם",
+   "lemma": "d/6153",
+   "morph": "HTd/Ncmda",
+   "id": "02pEi",
+   "cons": {
+    "n": 3,
+    "pair": 3,
+    "lemma": 3,
+    "morph": 3,
+    "top": [
+     "6153 | HTd/Ncmda",
+     3
+    ]
+   },
+   "sig": [
+    [
+     1,
+     "ע",
+     [
+      "hataf-patah"
+     ],
+     [
+      "patah"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Lev.25.46",
+   "mam": "וְהִתְנַחַלְתֶּ֨ם",
+   "class": "A2",
+   "morphhb": "וְ/הִתְנַחֲלְתֶּ֨ם",
+   "lemma": "c/5157",
+   "morph": "HC/Vtq2mp",
+   "id": "03Xps",
+   "cons": {
+    "n": 1,
+    "pair": 1,
+    "lemma": 1,
+    "morph": 1,
+    "top": [
+     "5157 | HC/Vtq2mp",
+     1
+    ]
+   },
+   "sig": [
+    [
+     4,
+     "ח",
+     [
+      "hataf-patah"
+     ],
+     [
+      "patah"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Num.9.3",
+   "mam": "הָֽעַרְבַּ֛יִם",
+   "class": "A2",
+   "morphhb": "הָֽ/עֲרְבַּ֛יִם",
+   "lemma": "d/6153",
+   "morph": "HTd/Ncmda",
+   "id": "04VTa",
+   "cons": {
+    "n": 3,
+    "pair": 3,
+    "lemma": 3,
+    "morph": 3,
+    "top": [
+     "6153 | HTd/Ncmda",
+     3
+    ]
+   },
+   "sig": [
+    [
+     1,
+     "ע",
+     [
+      "hataf-patah"
+     ],
+     [
+      "patah"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: hataf-patah -> patah / MAM's form not elsewhere in morphhb": [
+  {
+   "vid": "Exod.9.11",
+   "mam": "בַּֽחַרְטֻמִּ֖ם",
+   "class": "A2",
+   "morphhb": "בַּֽ/חֲרְטֻמִּ֖ם",
+   "lemma": "b/2748",
+   "morph": "HRd/Ncmpa",
+   "id": "029g8",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     1,
+     "ח",
+     [
+      "hataf-patah"
+     ],
+     [
+      "patah"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Deut.32.6",
+   "mam": "הַ",
+   "class": "A2",
+   "morphhb": "הֲ",
+   "lemma": "i",
+   "morph": "HTi",
+   "id": "05ASC",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     0,
+     "ה",
+     [
+      "hataf-patah"
+     ],
+     [
+      "patah"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Jer.50.11",
+   "mam": "כָּאַבִּרִֽים",
+   "class": "A2",
+   "morphhb": "כָּ/אֲבִּרִֽים",
+   "lemma": "k/47",
+   "morph": "HRd/Aampa",
+   "id": "24JQq",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     1,
+     "א",
+     [
+      "hataf-patah"
+     ],
+     [
+      "patah"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Jer.50.11",
+   "mam": "תַעַלְז֔וּ",
+   "class": "A2",
+   "morphhb": "תַֽעֲלְז֔וּ",
+   "lemma": "5937",
+   "morph": "HVqi2mp",
+   "id": "24Tum",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     1,
+     "ע",
+     [
+      "hataf-patah"
+     ],
+     [
+      "patah"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: segol -> patah / supported: MAM's form has this lemma and morph elsewhere": [
+  {
+   "vid": "Exod.10.28",
+   "mam": "אַל",
+   "class": "A2",
+   "morphhb": "אֶל",
+   "lemma": "408",
+   "morph": "HTn",
+   "id": "02ubY",
+   "cons": {
+    "n": 583,
+    "pair": 572,
+    "lemma": 572,
+    "morph": 579,
+    "top": [
+     "408 | HTn",
+     572
+    ]
+   },
+   "sig": [
+    [
+     0,
+     "א",
+     [
+      "segol"
+     ],
+     [
+      "patah"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Lev.13.26",
+   "mam": "בַּבַּהֶ֙רֶת֙",
+   "class": "A2",
+   "morphhb": "בַּ/בֶּהֶ֨רֶת֙",
+   "lemma": "b/934",
+   "morph": "HRd/Ncfsa",
+   "id": "03NgL",
+   "cons": {
+    "n": 1,
+    "pair": 1,
+    "lemma": 1,
+    "morph": 1,
+    "top": [
+     "934 | HRd/Ncfsa",
+     1
+    ]
+   },
+   "sig": [
+    [
+     1,
+     "ב",
+     [
+      "segol",
+      "dagesh"
+     ],
+     [
+      "patah",
+      "dagesh"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Num.16.27",
+   "mam": "קֹ֛רַח",
+   "class": "A2",
+   "morphhb": "קֹ֛רֶח",
+   "lemma": "7141",
+   "morph": "HNp",
+   "id": "04c2q",
+   "cons": {
+    "n": 33,
+    "pair": 33,
+    "lemma": 33,
+    "morph": 33,
+    "top": [
+     "7141 | HNp",
+     33
+    ]
+   },
+   "sig": [
+    [
+     1,
+     "ר",
+     [
+      "segol"
+     ],
+     [
+      "patah"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Deut.4.21",
+   "mam": "הִתְאַנַּף",
+   "class": "A2",
+   "morphhb": "הִתְאַנֶּף",
+   "lemma": "599",
+   "morph": "HVtp3ms",
+   "id": "05K76",
+   "cons": {
+    "n": 2,
+    "pair": 2,
+    "lemma": 2,
+    "morph": 2,
+    "top": [
+     "599 | HVtp3ms",
+     2
+    ]
+   },
+   "sig": [
+    [
+     3,
+     "נ",
+     [
+      "segol",
+      "dagesh"
+     ],
+     [
+      "patah",
+      "dagesh"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: none -> shewa / supported: MAM's form has this lemma and morph elsewhere": [
+  {
+   "vid": "Exod.14.5",
+   "mam": "וַיֹּֽאמְרוּ֙",
+   "class": "A2",
+   "morphhb": "וַ/יֹּֽאמרוּ֙",
+   "lemma": "c/559",
+   "morph": "HC/Vqw3mp",
+   "id": "028Wu",
+   "cons": {
+    "n": 297,
+    "pair": 297,
+    "lemma": 297,
+    "morph": 297,
+    "top": [
+     "559 | HC/Vqw3mp",
+     297
+    ]
+   },
+   "sig": [
+    [
+     3,
+     "מ",
+     [],
+     [
+      "shewa"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Num.17.12",
+   "mam": "תּ֣וֹךְ",
+   "class": "A2",
+   "morphhb": "תּ֣וֹך",
+   "lemma": "8432",
+   "morph": "HNcmsc",
+   "id": "04qeo",
+   "cons": {
+    "n": 24,
+    "pair": 24,
+    "lemma": 24,
+    "morph": 24,
+    "top": [
+     "8432 | HNcmsc",
+     24
+    ]
+   },
+   "sig": [
+    [
+     2,
+     "ך",
+     [],
+     [
+      "shewa"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Deut.12.3",
+   "mam": "מִזְבְּחֹתָ֗ם",
+   "class": "A2",
+   "morphhb": "מִזְבּחֹתָ֗/ם",
+   "lemma": "4196",
+   "morph": "HNcmpc/Sp3mp",
+   "id": "054Sd",
+   "cons": {
+    "n": 1,
+    "pair": 1,
+    "lemma": 1,
+    "morph": 1,
+    "top": [
+     "4196 | HNcmpc/Sp3mp",
+     1
+    ]
+   },
+   "sig": [
+    [
+     2,
+     "ב",
+     [
+      "dagesh"
+     ],
+     [
+      "shewa",
+      "dagesh"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Judg.4.9",
+   "mam": "וַתֵּ֥לֶךְ",
+   "class": "A2",
+   "morphhb": "וַ/תֵּ֥לֶך",
+   "lemma": "c/3212",
+   "morph": "HC/Vqw3fs",
+   "id": "075VT",
+   "cons": {
+    "n": 32,
+    "pair": 28,
+    "lemma": 32,
+    "morph": 28,
+    "top": [
+     "3212 | HC/Vqw3fs",
+     28
+    ]
+   },
+   "sig": [
+    [
+     3,
+     "ך",
+     [],
+     [
+      "shewa"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: patah -> hataf-patah / MAM's form not elsewhere in morphhb": [
+  {
+   "vid": "Exod.14.11",
+   "mam": "הֲֽמִבְּלִ֤י",
+   "class": "A2",
+   "morphhb": "הַֽ/מִ/בְּלִ֤י",
+   "lemma": "d/m/1097",
+   "morph": "HTi/R/Tn",
+   "id": "02Wc4",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     0,
+     "ה",
+     [
+      "patah"
+     ],
+     [
+      "hataf-patah"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Deut.9.3",
+   "mam": "וְהַֽאֲבַדְתָּם֙",
+   "class": "A2",
+   "morphhb": "וְ/הַֽאַבַדְתָּ/ם֙",
+   "lemma": "c/6",
+   "morph": "HC/Vhq2ms/Sp3mp",
+   "id": "05JGD",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     2,
+     "א",
+     [
+      "patah"
+     ],
+     [
+      "hataf-patah"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "1Kgs.3.14",
+   "mam": "וְהַאֲרַכְתִּ֖י",
+   "class": "A2",
+   "morphhb": "וְ/הַאַרַכְתִּ֖י",
+   "lemma": "c/748",
+   "morph": "HC/Vhq1cs",
+   "id": "11GVi",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     2,
+     "א",
+     [
+      "patah"
+     ],
+     [
+      "hataf-patah"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "2Kgs.1.3",
+   "mam": "הֲֽמִבְּלִ֤י",
+   "class": "A2",
+   "morphhb": "הַֽ/מִ/בְּלִ֤י",
+   "lemma": "d/m/1097",
+   "morph": "HTi/R/D",
+   "id": "12wrL",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     0,
+     "ה",
+     [
+      "patah"
+     ],
+     [
+      "hataf-patah"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 holam in MAM only, Tetragrammaton / contradicted in lemma: same morph elsewhere, never this lemma": [
+  {
+   "vid": "Exod.17.15",
+   "mam": "יְהֹוָ֥ה",
+   "class": "A2",
+   "morphhb": "יְהוָ֥ה",
+   "lemma": "3071+",
+   "morph": "HNp",
+   "id": "022xh",
+   "cons": {
+    "n": 46,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 46,
+    "top": [
+     "3068 | HNp",
+     46
+    ]
+   },
+   "sig": [
+    [
+     1,
+     "ה",
+     [],
+     [
+      "holam"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: none -> patah / MAM's form not elsewhere in morphhb": [
+  {
+   "vid": "Exod.20.4",
+   "mam": "מִתָּ֑͏ַ֜חַת",
+   "class": "A2",
+   "morphhb": "מִ/תָּ֑חַת",
+   "lemma": "m/8478",
+   "morph": "HR/D",
+   "id": "02p5S",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     1,
+     "ת",
+     [
+      "qamats",
+      "dagesh"
+     ],
+     [
+      "patah",
+      "qamats",
+      "dagesh"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Lev.5.7",
+   "mam": "תַגִּ֣יעַ",
+   "class": "A2",
+   "morphhb": "תַגִּ֣יע",
+   "lemma": "5060",
+   "morph": "HVhi3fs",
+   "id": "03jmB",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     3,
+     "ע",
+     [],
+     [
+      "patah"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Deut.5.8",
+   "mam": "מִתָּ֑͏ַ֜חַת",
+   "class": "A2",
+   "morphhb": "מִ/תָּ֑חַת",
+   "lemma": "m/8478",
+   "morph": "HR/R",
+   "id": "05jMY",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     1,
+     "ת",
+     [
+      "qamats",
+      "dagesh"
+     ],
+     [
+      "patah",
+      "qamats",
+      "dagesh"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Isa.11.14",
+   "mam": "מִשְׁל֣וֹחַ",
+   "class": "A2",
+   "morphhb": "מִשְׁל֣וֹח",
+   "lemma": "4916 b",
+   "morph": "HNcmsc",
+   "id": "232Cm",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     4,
+     "ח",
+     [],
+     [
+      "patah"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: patah -> shewa / supported: MAM's form has this lemma and morph elsewhere": [
+  {
+   "vid": "Exod.29.23",
+   "mam": "וְֽחַלַּ֨ת",
+   "class": "A2",
+   "morphhb": "וַֽ/חַלַּ֨ת",
+   "lemma": "c/2471",
+   "morph": "HC/Ncfsc",
+   "id": "02aky",
+   "cons": {
+    "n": 2,
+    "pair": 2,
+    "lemma": 2,
+    "morph": 2,
+    "top": [
+     "2471 | HC/Ncfsc",
+     2
+    ]
+   },
+   "sig": [
+    [
+     0,
+     "ו",
+     [
+      "patah"
+     ],
+     [
+      "shewa"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "2Kgs.19.5",
+   "mam": "יְשַׁעְיָֽהוּ",
+   "class": "A2",
+   "morphhb": "יְשַֽׁעַיָֽהוּ",
+   "lemma": "3470 a",
+   "morph": "HNp",
+   "id": "12TPj",
+   "cons": {
+    "n": 31,
+    "pair": 31,
+    "lemma": 31,
+    "morph": 31,
+    "top": [
+     "3470 | HNp",
+     31
+    ]
+   },
+   "sig": [
+    [
+     2,
+     "ע",
+     [
+      "patah"
+     ],
+     [
+      "shewa"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: tsere -> hiriq / MAM's form not elsewhere in morphhb": [
+  {
+   "vid": "Exod.33.16",
+   "mam": "וְנִפְלִ֙ינוּ֙",
+   "class": "A2",
+   "morphhb": "וְ/נִפְלֵ֨ינוּ֙",
+   "lemma": "c/6395",
+   "morph": "HC/VNq1cp",
+   "id": "02QRM",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     3,
+     "ל",
+     [
+      "tsere"
+     ],
+     [
+      "hiriq"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "2Kgs.17.21",
+   "mam": "וְהֶחֱטִיאָ֖ם",
+   "class": "A2",
+   "morphhb": "וְ/הֶחֱטֵיאָ֖/ם",
+   "lemma": "c/2398",
+   "morph": "HC/Vhp3ms/Sp3mp",
+   "id": "12rHU",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     3,
+     "ט",
+     [
+      "tsere"
+     ],
+     [
+      "hiriq"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Dan.2.16",
+   "mam": "יִנְתִּן",
+   "class": "A2",
+   "morphhb": "יִנְתֵּן",
+   "lemma": "5415",
+   "morph": "AVqi3ms",
+   "id": "27Cyx",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     2,
+     "ת",
+     [
+      "tsere",
+      "dagesh"
+     ],
+     [
+      "hiriq",
+      "dagesh"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 shin or sin dot only / supported: MAM's form has this lemma and morph elsewhere": [
+  {
+   "vid": "Exod.35.7",
+   "mam": "שִׁטִּֽים",
+   "class": "A2",
+   "morphhb": "שִׂטִּֽים",
+   "lemma": "7848",
+   "morph": "HNcfpa",
+   "id": "02Cuf",
+   "cons": {
+    "n": 26,
+    "pair": 26,
+    "lemma": 26,
+    "morph": 26,
+    "top": [
+     "7848 | HNcfpa",
+     26
+    ]
+   },
+   "sig": [
+    [
+     0,
+     "ש",
+     [
+      "hiriq",
+      "sin-dot"
+     ],
+     [
+      "hiriq",
+      "shin-dot"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Deut.24.16",
+   "mam": "אִ֥ישׁ",
+   "class": "A2",
+   "morphhb": "אִ֥יש",
+   "lemma": "376",
+   "morph": "HNcmsa",
+   "id": "051M5",
+   "cons": {
+    "n": 1131,
+    "pair": 908,
+    "lemma": 1120,
+    "morph": 909,
+    "top": [
+     "376 | HNcmsa",
+     908
+    ]
+   },
+   "sig": [
+    [
+     2,
+     "ש",
+     [],
+     [
+      "shin-dot"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Isa.46.4",
+   "mam": "שֵׂיבָ֖ה",
+   "class": "A2",
+   "morphhb": "שֵיבָ֖ה",
+   "lemma": "7872",
+   "morph": "HNcfsa",
+   "id": "23F41",
+   "cons": {
+    "n": 5,
+    "pair": 5,
+    "lemma": 5,
+    "morph": 5,
+    "top": [
+     "7872 | HNcfsa",
+     5
+    ]
+   },
+   "sig": [
+    [
+     0,
+     "ש",
+     [
+      "tsere"
+     ],
+     [
+      "tsere",
+      "sin-dot"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Isa.65.6",
+   "mam": "אֶֽחֱשֶׁה֙",
+   "class": "A2",
+   "morphhb": "אֶחֱשֶׂה֙",
+   "lemma": "2814",
+   "morph": "HVqi1cs",
+   "id": "23LU7",
+   "cons": {
+    "n": 1,
+    "pair": 1,
+    "lemma": 1,
+    "morph": 1,
+    "top": [
+     "2814 | HVqi1cs",
+     1
+    ]
+   },
+   "sig": [
+    [
+     2,
+     "ש",
+     [
+      "segol",
+      "sin-dot"
+     ],
+     [
+      "segol",
+      "shin-dot"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: shewa -> dagesh / supported: MAM's form has this lemma and morph elsewhere": [
+  {
+   "vid": "Num.2.14",
+   "mam": "וּמַטֵּ֖ה",
+   "class": "A2",
+   "morphhb": "וְ/מַטֵּ֖ה",
+   "lemma": "c/4294",
+   "morph": "HC/Ncmsc",
+   "id": "04qjY",
+   "cons": {
+    "n": 5,
+    "pair": 5,
+    "lemma": 5,
+    "morph": 5,
+    "top": [
+     "4294 | HC/Ncmsc",
+     5
+    ]
+   },
+   "sig": [
+    [
+     0,
+     "ו",
+     [
+      "shewa"
+     ],
+     [
+      "dagesh"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Dan.7.20",
+   "mam": "וּפֻם֙",
+   "class": "A2",
+   "morphhb": "וְ/פֻם֙",
+   "lemma": "c/6433",
+   "morph": "AC/Ncmsa",
+   "id": "275bQ",
+   "cons": {
+    "n": 1,
+    "pair": 1,
+    "lemma": 1,
+    "morph": 1,
+    "top": [
+     "6433 | AC/Ncmsa",
+     1
+    ]
+   },
+   "sig": [
+    [
+     0,
+     "ו",
+     [
+      "shewa"
+     ],
+     [
+      "dagesh"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: segol -> hataf-segol / supported: MAM's form has this lemma and morph elsewhere": [
+  {
+   "vid": "Num.3.30",
+   "mam": "אֱלִיצָפָ֖ן",
+   "class": "A2",
+   "morphhb": "אֶלִיצָפָ֖ן",
+   "lemma": "469",
+   "morph": "HNp",
+   "id": "04qo8",
+   "cons": {
+    "n": 3,
+    "pair": 3,
+    "lemma": 3,
+    "morph": 3,
+    "top": [
+     "469 | HNp",
+     3
+    ]
+   },
+   "sig": [
+    [
+     0,
+     "א",
+     [
+      "segol"
+     ],
+     [
+      "hataf-segol"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Josh.24.1",
+   "mam": "וַיֶּאֱסֹ֧ף",
+   "class": "A2",
+   "morphhb": "וַ/יֶּאֶסֹ֧ף",
+   "lemma": "c/622",
+   "morph": "HC/Vqw3ms",
+   "id": "06cFs",
+   "cons": {
+    "n": 19,
+    "pair": 19,
+    "lemma": 19,
+    "morph": 19,
+    "top": [
+     "622 | HC/Vqw3ms",
+     19
+    ]
+   },
+   "sig": [
+    [
+     2,
+     "א",
+     [
+      "segol"
+     ],
+     [
+      "hataf-segol"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Eccl.5.17",
+   "mam": "לֶֽאֱכוֹל",
+   "class": "A2",
+   "morphhb": "לֶֽ/אֶכוֹל",
+   "lemma": "l/398",
+   "morph": "HR/Vqc",
+   "id": "21Mef",
+   "cons": {
+    "n": 12,
+    "pair": 12,
+    "lemma": 12,
+    "morph": 12,
+    "top": [
+     "398 | HR/Vqc",
+     12
+    ]
+   },
+   "sig": [
+    [
+     1,
+     "א",
+     [
+      "segol"
+     ],
+     [
+      "hataf-segol"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: patah -> hataf-patah / contradicted in morph: same lemma elsewhere, never this morph": [
+  {
+   "vid": "Num.16.21",
+   "mam": "וַאֲכַלֶּ֥ה",
+   "class": "A2",
+   "morphhb": "וַ/אַכַלֶּ֥ה",
+   "lemma": "c/3615",
+   "morph": "HC/Vph1cs",
+   "id": "04dUR",
+   "cons": {
+    "n": 1,
+    "pair": 0,
+    "lemma": 1,
+    "morph": 0,
+    "top": [
+     "3615 | HC/Vpi1cs",
+     1
+    ]
+   },
+   "sig": [
+    [
+     1,
+     "א",
+     [
+      "patah"
+     ],
+     [
+      "hataf-patah"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: hataf-patah -> shewa / contradicted in morph: same lemma elsewhere, never this morph": [
+  {
+   "vid": "Num.23.25",
+   "mam": "תְבָרְכֶֽנּוּ",
+   "class": "A2",
+   "morphhb": "תְבָרֲכֶֽ/נּוּ",
+   "lemma": "1288",
+   "morph": "HVpi2ms/Sp3ms",
+   "id": "04QZ8",
+   "cons": {
+    "n": 1,
+    "pair": 0,
+    "lemma": 1,
+    "morph": 0,
+    "top": [
+     "1288 | HVpi2ms/Sp1cp",
+     1
+    ]
+   },
+   "sig": [
+    [
+     2,
+     "ר",
+     [
+      "hataf-patah"
+     ],
+     [
+      "shewa"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Deut.15.20",
+   "mam": "תֹאכְלֶ֙נּוּ֙",
+   "class": "A2",
+   "morphhb": "תֹאכֲלֶ֨/נּוּ֙",
+   "lemma": "398",
+   "morph": "HVqi2ms/Sp3ms",
+   "id": "057xX",
+   "cons": {
+    "n": 1,
+    "pair": 0,
+    "lemma": 1,
+    "morph": 0,
+    "top": [
+     "398 | HVqi3fs/Sp3ms",
+     1
+    ]
+   },
+   "sig": [
+    [
+     2,
+     "כ",
+     [
+      "hataf-patah"
+     ],
+     [
+      "shewa"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "1Sam.26.11",
+   "mam": "וְנֵלְכָה",
+   "class": "A2",
+   "morphhb": "וְ/נֵ֥לֲכָה",
+   "lemma": "c/3212",
+   "morph": "HC/Vqi1cp",
+   "id": "09vv7",
+   "cons": {
+    "n": 5,
+    "pair": 0,
+    "lemma": 5,
+    "morph": 0,
+    "top": [
+     "3212 | HC/Vqh1cp",
+     5
+    ]
+   },
+   "sig": [
+    [
+     2,
+     "ל",
+     [
+      "hataf-patah"
+     ],
+     [
+      "shewa"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Isa.31.8",
+   "mam": "תֹּאכְלֶ֑נּוּ",
+   "class": "A2",
+   "morphhb": "תֹּֽאכֲלֶ֑/נּוּ",
+   "lemma": "398",
+   "morph": "HVqi3fs/Sp3ms",
+   "id": "23M82",
+   "cons": {
+    "n": 4,
+    "pair": 0,
+    "lemma": 4,
+    "morph": 0,
+    "top": [
+     "398 | HVqi2ms/Sp3ms",
+     4
+    ]
+   },
+   "sig": [
+    [
+     2,
+     "כ",
+     [
+      "hataf-patah"
+     ],
+     [
+      "shewa"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: qubuts -> none / supported: MAM's form has this lemma and morph elsewhere": [
+  {
+   "vid": "Num.26.7",
+   "mam": "הָראֿוּבֵנִ֑י",
+   "class": "A2",
+   "morphhb": "הָ/רֻֽאוּבֵנִ֑י",
+   "lemma": "d/7206",
+   "morph": "HTd/Ngmsa",
+   "id": "04ZHi",
+   "cons": {
+    "n": 5,
+    "pair": 5,
+    "lemma": 5,
+    "morph": 5,
+    "top": [
+     "7206 | HTd/Ngmsa",
+     5
+    ]
+   },
+   "sig": [
+    [
+     1,
+     "ר",
+     [
+      "qubuts"
+     ],
+     []
+    ]
+   ]
+  },
+  {
+   "vid": "Deut.3.12",
+   "mam": "לָרֽאֿוּבֵנִ֖י",
+   "class": "A2",
+   "morphhb": "לָ/רֻֽאוּבֵנִ֖י",
+   "lemma": "l/7206",
+   "morph": "HRd/Ngmsa",
+   "id": "05pDQ",
+   "cons": {
+    "n": 6,
+    "pair": 6,
+    "lemma": 6,
+    "morph": 6,
+    "top": [
+     "7206 | HRd/Ngmsa",
+     6
+    ]
+   },
+   "sig": [
+    [
+     1,
+     "ר",
+     [
+      "qubuts"
+     ],
+     []
+    ]
+   ]
+  },
+  {
+   "vid": "Deut.3.16",
+   "mam": "וְלָראֿוּבֵנִ֨י",
+   "class": "A2",
+   "morphhb": "וְ/לָ/רֻאוּבֵנִ֨י",
+   "lemma": "c/l/7206",
+   "morph": "HC/Rd/Ngmsa",
+   "id": "05EJP",
+   "cons": {
+    "n": 1,
+    "pair": 1,
+    "lemma": 1,
+    "morph": 1,
+    "top": [
+     "7206 | HC/Rd/Ngmsa",
+     1
+    ]
+   },
+   "sig": [
+    [
+     2,
+     "ר",
+     [
+      "qubuts"
+     ],
+     []
+    ]
+   ]
+  },
+  {
+   "vid": "Deut.4.43",
+   "mam": "לָרֽאֿוּבֵנִ֑י",
+   "class": "A2",
+   "morphhb": "לָ/רֻֽאוּבֵנִ֑י",
+   "lemma": "l/7206",
+   "morph": "HRd/Ngmsa",
+   "id": "05f8m",
+   "cons": {
+    "n": 6,
+    "pair": 6,
+    "lemma": 6,
+    "morph": 6,
+    "top": [
+     "7206 | HRd/Ngmsa",
+     6
+    ]
+   },
+   "sig": [
+    [
+     1,
+     "ר",
+     [
+      "qubuts"
+     ],
+     []
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: qamats -> hataf-qamats / MAM's form not elsewhere in morphhb": [
+  {
+   "vid": "Num.35.20",
+   "mam": "יֶהְדֳּפֶ֑נּוּ",
+   "class": "A2",
+   "morphhb": "יֶהְדָּפֶ֑/נּוּ",
+   "lemma": "1920",
+   "morph": "HVqi3ms/Sp3ms",
+   "id": "04Nxj",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     2,
+     "ד",
+     [
+      "qamats",
+      "dagesh"
+     ],
+     [
+      "hataf-qamats",
+      "dagesh"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "1Sam.26.10",
+   "mam": "יִגֳּפֶ֑נּוּ",
+   "class": "A2",
+   "morphhb": "יִגָּפֶ֑/נּוּ",
+   "lemma": "5062",
+   "morph": "HVqi3ms/Sp1cp",
+   "id": "09hk6",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     1,
+     "ג",
+     [
+      "qamats",
+      "dagesh"
+     ],
+     [
+      "hataf-qamats",
+      "dagesh"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Ezek.27.29",
+   "mam": "מֵאֳנִיּֽוֹתֵיהֶ֗ם",
+   "class": "A2",
+   "morphhb": "מֵ/אָנִיּֽוֹתֵי/הֶ֗ם",
+   "lemma": "m/591",
+   "morph": "HR/Ncfpc/Sp3mp",
+   "id": "261Qm",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     1,
+     "א",
+     [
+      "qamats"
+     ],
+     [
+      "hataf-qamats"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: segol -> patah / contradicted in morph: same lemma elsewhere, never this morph": [
+  {
+   "vid": "Deut.2.9",
+   "mam": "אַל",
+   "class": "A2",
+   "morphhb": "אֶל",
+   "lemma": "408",
+   "morph": "HR",
+   "id": "057a3",
+   "cons": {
+    "n": 583,
+    "pair": 0,
+    "lemma": 572,
+    "morph": 0,
+    "top": [
+     "408 | HTn",
+     572
+    ]
+   },
+   "sig": [
+    [
+     0,
+     "א",
+     [
+      "segol"
+     ],
+     [
+      "patah"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Josh.22.19",
+   "mam": "אַל",
+   "class": "A2",
+   "morphhb": "אֶל",
+   "lemma": "408",
+   "morph": "HR",
+   "id": "06Umo",
+   "cons": {
+    "n": 583,
+    "pair": 0,
+    "lemma": 572,
+    "morph": 0,
+    "top": [
+     "408 | HTn",
+     572
+    ]
+   },
+   "sig": [
+    [
+     0,
+     "א",
+     [
+      "segol"
+     ],
+     [
+      "patah"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "1Kgs.1.15",
+   "mam": "שֶׁ֤בַע",
+   "class": "A2",
+   "morphhb": "שֶׁ֤בֶע",
+   "lemma": "1339",
+   "morph": "HNp",
+   "id": "11VTb",
+   "cons": {
+    "n": 132,
+    "pair": 0,
+    "lemma": 8,
+    "morph": 0,
+    "top": [
+     "7651 | HAcfsa",
+     101
+    ]
+   },
+   "sig": [
+    [
+     1,
+     "ב",
+     [
+      "segol"
+     ],
+     [
+      "patah"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: shewa -> none / MAM's form not elsewhere in morphhb": [
+  {
+   "vid": "Deut.3.22",
+   "mam": "תִּֽירָא֑וּם",
+   "class": "A2",
+   "morphhb": "תְִּירָא֑וּ/ם",
+   "lemma": "3372",
+   "morph": "HVqi2mp/Sp3mp",
+   "id": "05wNE",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     0,
+     "ת",
+     [
+      "shewa",
+      "hiriq",
+      "dagesh"
+     ],
+     [
+      "hiriq",
+      "dagesh"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Deut.34.6",
+   "mam": "בַגַּי֙",
+   "class": "A2",
+   "morphhb": "בַ/גַּיְ֙",
+   "lemma": "b/1516",
+   "morph": "HRd/Ncbsa",
+   "id": "05663",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     2,
+     "י",
+     [
+      "shewa"
+     ],
+     []
+    ]
+   ]
+  },
+  {
+   "vid": "1Kgs.17.13",
+   "mam": "וְהוֹצֵ֣את",
+   "class": "A2",
+   "morphhb": "וְ/הוֹצֵ֣אתְ",
+   "lemma": "c/3318",
+   "morph": "HC/Vhp2fs",
+   "id": "11nLz",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     5,
+     "ת",
+     [
+      "shewa"
+     ],
+     []
+    ]
+   ]
+  },
+  {
+   "vid": "Job.19.2",
+   "mam": "וּֽתְדַכּאֿוּנַ֥נִי",
+   "class": "A2",
+   "morphhb": "וּֽ/תְדַכְּאוּ/נַ֥נִי",
+   "lemma": "c/1792",
+   "morph": "HC/Vpi2mp/Sp1cs",
+   "id": "18rn8",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     3,
+     "כ",
+     [
+      "shewa",
+      "dagesh"
+     ],
+     [
+      "dagesh"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: dagesh+qamats -> qamats-qatan / supported: MAM's form has this lemma and morph elsewhere": [
+  {
+   "vid": "Deut.4.7",
+   "mam": "בְּכׇל",
+   "class": "A2",
+   "morphhb": "בְּ/כָּל",
+   "lemma": "b/3605",
+   "morph": "HR/Ncmsc",
+   "id": "056E3",
+   "cons": {
+    "n": 339,
+    "pair": 334,
+    "lemma": 334,
+    "morph": 334,
+    "top": [
+     "3605 | HR/Ncmsc",
+     334
+    ]
+   },
+   "sig": [
+    [
+     1,
+     "כ",
+     [
+      "qamats",
+      "dagesh"
+     ],
+     [
+      "qamats-qatan"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Deut.12.31",
+   "mam": "כׇל",
+   "class": "A2",
+   "morphhb": "כָּל",
+   "lemma": "3605",
+   "morph": "HNcmsc",
+   "id": "05E7Q",
+   "cons": {
+    "n": 280,
+    "pair": 268,
+    "lemma": 268,
+    "morph": 268,
+    "top": [
+     "3605 | HNcmsc",
+     268
+    ]
+   },
+   "sig": [
+    [
+     0,
+     "כ",
+     [
+      "qamats",
+      "dagesh"
+     ],
+     [
+      "qamats-qatan"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "2Chr.31.1",
+   "mam": "כׇל",
+   "class": "A2",
+   "morphhb": "כָּל",
+   "lemma": "3605",
+   "morph": "HNcmsc",
+   "id": "145rU",
+   "cons": {
+    "n": 280,
+    "pair": 268,
+    "lemma": 268,
+    "morph": 268,
+    "top": [
+     "3605 | HNcmsc",
+     268
+    ]
+   },
+   "sig": [
+    [
+     0,
+     "כ",
+     [
+      "qamats",
+      "dagesh"
+     ],
+     [
+      "qamats-qatan"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: patah -> qamats / supported: MAM's form has this lemma and morph elsewhere": [
+  {
+   "vid": "Deut.4.40",
+   "mam": "הָ֣אֲדָמָ֔ה",
+   "class": "A2",
+   "morphhb": "הַ֣/אֲדָמָ֔ה",
+   "lemma": "d/127",
+   "morph": "HTd/Ncfsa",
+   "id": "05nVk",
+   "cons": {
+    "n": 112,
+    "pair": 112,
+    "lemma": 112,
+    "morph": 112,
+    "top": [
+     "127 | HTd/Ncfsa",
+     112
+    ]
+   },
+   "sig": [
+    [
+     0,
+     "ה",
+     [
+      "patah"
+     ],
+     [
+      "qamats"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: none -> hiriq / supported: MAM's form has this lemma and morph elsewhere": [
+  {
+   "vid": "Deut.21.18",
+   "mam": "וְיִסְּר֣וּ",
+   "class": "A2",
+   "morphhb": "וְ/יסְּר֣וּ",
+   "lemma": "c/3256",
+   "morph": "HC/Vpq3cp",
+   "id": "058VA",
+   "cons": {
+    "n": 1,
+    "pair": 1,
+    "lemma": 1,
+    "morph": 1,
+    "top": [
+     "3256 | HC/Vpq3cp",
+     1
+    ]
+   },
+   "sig": [
+    [
+     1,
+     "י",
+     [],
+     [
+      "hiriq"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Amos.6.2",
+   "mam": "פְּלִשְׁתִּ֗ים",
+   "class": "A2",
+   "morphhb": "פְּלִשְׁתּ֗ים",
+   "lemma": "6430",
+   "morph": "HNgmpa",
+   "id": "30BQa",
+   "cons": {
+    "n": 112,
+    "pair": 112,
+    "lemma": 112,
+    "morph": 112,
+    "top": [
+     "6430 | HNgmpa",
+     112
+    ]
+   },
+   "sig": [
+    [
+     3,
+     "ת",
+     [
+      "dagesh"
+     ],
+     [
+      "hiriq",
+      "dagesh"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Zech.2.2",
+   "mam": "וִירוּשָׁלָֽ͏ִם",
+   "class": "A2",
+   "morphhb": "וִ/ירוּשָׁלָֽם",
+   "lemma": "c/3389",
+   "morph": "HC/Np",
+   "id": "38ZpQ",
+   "cons": {
+    "n": 14,
+    "pair": 14,
+    "lemma": 14,
+    "morph": 14,
+    "top": [
+     "3389 | HC/Np",
+     14
+    ]
+   },
+   "sig": [
+    [
+     5,
+     "ל",
+     [
+      "qamats"
+     ],
+     [
+      "hiriq",
+      "qamats"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Prov.20.1",
+   "mam": "הַ֭יַּיִן",
+   "class": "A2",
+   "morphhb": "הַ֭/יַּין",
+   "lemma": "d/3196",
+   "morph": "HTd/Ncmsa",
+   "id": "20Rm3",
+   "cons": {
+    "n": 16,
+    "pair": 16,
+    "lemma": 16,
+    "morph": 16,
+    "top": [
+     "3196 | HTd/Ncmsa",
+     16
+    ]
+   },
+   "sig": [
+    [
+     2,
+     "י",
+     [],
+     [
+      "hiriq"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: qamats -> patah / MAM's form not elsewhere in morphhb": [
+  {
+   "vid": "Deut.24.20",
+   "mam": "תְפַאֵ֖ר",
+   "class": "A2",
+   "morphhb": "תְפָאֵ֖ר",
+   "lemma": "6286 b",
+   "morph": "HVpi2ms",
+   "id": "05rRg",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     1,
+     "פ",
+     [
+      "qamats"
+     ],
+     [
+      "patah"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Deut.28.29",
+   "mam": "הַֽעִוֵּר֙",
+   "class": "A2",
+   "morphhb": "הָ/עִוֵּר֙",
+   "lemma": "d/5787",
+   "morph": "HTd/Aamsa",
+   "id": "058hs",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     0,
+     "ה",
+     [
+      "qamats"
+     ],
+     [
+      "patah"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Prov.8.26",
+   "mam": "עַפְר֥וֹת",
+   "class": "A2",
+   "morphhb": "עָפְר֥וֹת",
+   "lemma": "6083",
+   "morph": "HNcmpc",
+   "id": "205vj",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     0,
+     "ע",
+     [
+      "qamats"
+     ],
+     [
+      "patah"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Eccl.12.5",
+   "mam": "בַשּׁ֖וּק",
+   "class": "A2",
+   "morphhb": "בָ/שּׁ֖וּק",
+   "lemma": "b/7784",
+   "morph": "HRd/Ncmsa",
+   "id": "21AS9",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     0,
+     "ב",
+     [
+      "qamats"
+     ],
+     [
+      "patah"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: patah -> segol / supported: MAM's form has this lemma and morph elsewhere": [
+  {
+   "vid": "Deut.28.11",
+   "mam": "בְהֶמְתְּךָ֖",
+   "class": "A2",
+   "morphhb": "בְהַמְתְּ/ךָ֖",
+   "lemma": "929",
+   "morph": "HNcfsc/Sp2ms",
+   "id": "05U9B",
+   "cons": {
+    "n": 2,
+    "pair": 2,
+    "lemma": 2,
+    "morph": 2,
+    "top": [
+     "929 | HNcfsc/Sp2ms",
+     2
+    ]
+   },
+   "sig": [
+    [
+     1,
+     "ה",
+     [
+      "patah"
+     ],
+     [
+      "segol"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "2Chr.21.4",
+   "mam": "מַמְלֶ֤כֶת",
+   "class": "A2",
+   "morphhb": "מַמְלֶ֤כַת",
+   "lemma": "4467",
+   "morph": "HNcfsc",
+   "id": "14o7T",
+   "cons": {
+    "n": 11,
+    "pair": 11,
+    "lemma": 11,
+    "morph": 11,
+    "top": [
+     "4467 | HNcfsc",
+     11
+    ]
+   },
+   "sig": [
+    [
+     3,
+     "כ",
+     [
+      "patah"
+     ],
+     [
+      "segol"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: qamats -> patah / supported: MAM's form has this lemma and morph elsewhere": [
+  {
+   "vid": "Deut.31.21",
+   "mam": "נִשְׁבַּֽעְתִּי",
+   "class": "A2",
+   "morphhb": "נִשְׁבָּֽעְתִּי",
+   "lemma": "7650",
+   "morph": "HVNp1cs",
+   "id": "05HRP",
+   "cons": {
+    "n": 26,
+    "pair": 26,
+    "lemma": 26,
+    "morph": 26,
+    "top": [
+     "7650 | HVNp1cs",
+     26
+    ]
+   },
+   "sig": [
+    [
+     2,
+     "ב",
+     [
+      "qamats",
+      "dagesh"
+     ],
+     [
+      "patah",
+      "dagesh"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "2Sam.1.7",
+   "mam": "אֵלַ֔י",
+   "class": "A2",
+   "morphhb": "אֵלָ֔/י",
+   "lemma": "413",
+   "morph": "HR/Sp1cs",
+   "id": "10Haa",
+   "cons": {
+    "n": 368,
+    "pair": 368,
+    "lemma": 368,
+    "morph": 368,
+    "top": [
+     "413 | HR/Sp1cs",
+     368
+    ]
+   },
+   "sig": [
+    [
+     1,
+     "ל",
+     [
+      "qamats"
+     ],
+     [
+      "patah"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "2Kgs.23.34",
+   "mam": "לָקַ֔ח",
+   "class": "A2",
+   "morphhb": "לָקָ֔ח",
+   "lemma": "3947",
+   "morph": "HVqp3ms",
+   "id": "12Zp6",
+   "cons": {
+    "n": 44,
+    "pair": 44,
+    "lemma": 44,
+    "morph": 44,
+    "top": [
+     "3947 | HVqp3ms",
+     44
+    ]
+   },
+   "sig": [
+    [
+     1,
+     "ק",
+     [
+      "qamats"
+     ],
+     [
+      "patah"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Hos.12.5",
+   "mam": "וַיָּ֤שַׂר",
+   "class": "A2",
+   "morphhb": "וָ/יָּ֤שַׂר",
+   "lemma": "c/7786",
+   "morph": "HC/Vqw3ms",
+   "id": "28F23",
+   "cons": {
+    "n": 2,
+    "pair": 1,
+    "lemma": 1,
+    "morph": 2,
+    "top": [
+     "7786 | HC/Vqw3ms",
+     1
+    ]
+   },
+   "sig": [
+    [
+     0,
+     "ו",
+     [
+      "qamats"
+     ],
+     [
+      "patah"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: hataf-qamats -> qamats-qatan / MAM's form not elsewhere in morphhb": [
+  {
+   "vid": "Josh.7.25",
+   "mam": "יַעְכׇּרְךָ֥",
+   "class": "A2",
+   "morphhb": "יַעְכֳּרְ/ךָ֥",
+   "lemma": "5916",
+   "morph": "HVqi3ms/Sp2ms",
+   "id": "06gEf",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     2,
+     "כ",
+     [
+      "hataf-qamats",
+      "dagesh"
+     ],
+     [
+      "dagesh",
+      "qamats-qatan"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: tsere -> shewa / MAM's form not elsewhere in morphhb": [
+  {
+   "vid": "Judg.9.2",
+   "mam": "עַצְמְכֶ֥ם",
+   "class": "A2",
+   "morphhb": "עַצְמֵ/כֶם",
+   "lemma": "6106",
+   "morph": "HNcfsc/Sp2mp",
+   "id": "07USD",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     2,
+     "מ",
+     [
+      "tsere"
+     ],
+     [
+      "shewa"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: shewa -> none / supported: MAM's form has this lemma and morph elsewhere": [
+  {
+   "vid": "Judg.11.35",
+   "mam": "הָיִ֣ית",
+   "class": "A2",
+   "morphhb": "הָיִ֣יתְ",
+   "lemma": "1961",
+   "morph": "HVqp2fs",
+   "id": "07rMH",
+   "cons": {
+    "n": 5,
+    "pair": 5,
+    "lemma": 5,
+    "morph": 5,
+    "top": [
+     "1961 | HVqp2fs",
+     5
+    ]
+   },
+   "sig": [
+    [
+     3,
+     "ת",
+     [
+      "shewa"
+     ],
+     []
+    ]
+   ]
+  },
+  {
+   "vid": "2Kgs.21.26",
+   "mam": "וַיִּקְבֹּ֥ר",
+   "class": "A2",
+   "morphhb": "וַ/יִּקְבְֹּ֥ר",
+   "lemma": "c/6912",
+   "morph": "HC/Vqw3ms",
+   "id": "12u96",
+   "cons": {
+    "n": 1,
+    "pair": 1,
+    "lemma": 1,
+    "morph": 1,
+    "top": [
+     "6912 | HC/Vqw3ms",
+     1
+    ]
+   },
+   "sig": [
+    [
+     3,
+     "ב",
+     [
+      "shewa",
+      "holam",
+      "dagesh"
+     ],
+     [
+      "holam",
+      "dagesh"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Isa.62.3",
+   "mam": "וְהָיִ֛ית",
+   "class": "A2",
+   "morphhb": "וְ/הָיִ֛יתְ",
+   "lemma": "c/1961",
+   "morph": "HC/Vqq2fs",
+   "id": "238w2",
+   "cons": {
+    "n": 1,
+    "pair": 1,
+    "lemma": 1,
+    "morph": 1,
+    "top": [
+     "1961 | HC/Vqq2fs",
+     1
+    ]
+   },
+   "sig": [
+    [
+     4,
+     "ת",
+     [
+      "shewa"
+     ],
+     []
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: none -> patah / supported: MAM's form has this lemma and morph elsewhere": [
+  {
+   "vid": "Judg.12.3",
+   "mam": "מוֹשִׁ֗יעַ",
+   "class": "A2",
+   "morphhb": "מוֹשִׁ֗יע",
+   "lemma": "3467",
+   "morph": "HVhrmsa",
+   "id": "073cG",
+   "cons": {
+    "n": 16,
+    "pair": 16,
+    "lemma": 16,
+    "morph": 16,
+    "top": [
+     "3467 | HVhrmsa",
+     16
+    ]
+   },
+   "sig": [
+    [
+     4,
+     "ע",
+     [],
+     [
+      "patah"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Isa.20.1",
+   "mam": "בִּשְׁלֹ֣חַ",
+   "class": "A2",
+   "morphhb": "בִּ/שְׁלֹ֣ח",
+   "lemma": "b/7971",
+   "morph": "HR/Vqc",
+   "id": "23wcG",
+   "cons": {
+    "n": 3,
+    "pair": 3,
+    "lemma": 3,
+    "morph": 3,
+    "top": [
+     "7971 | HR/Vqc",
+     3
+    ]
+   },
+   "sig": [
+    [
+     3,
+     "ח",
+     [],
+     [
+      "patah"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Isa.42.9",
+   "mam": "אַשְׁמִ֥יעַ",
+   "class": "A2",
+   "morphhb": "אַשְׁמִ֥יע",
+   "lemma": "8085",
+   "morph": "HVhi1cs",
+   "id": "23xwE",
+   "cons": {
+    "n": 1,
+    "pair": 1,
+    "lemma": 1,
+    "morph": 1,
+    "top": [
+     "8085 | HVhi1cs",
+     1
+    ]
+   },
+   "sig": [
+    [
+     4,
+     "ע",
+     [],
+     [
+      "patah"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Ps.67.1",
+   "mam": "לַמְנַצֵּ֥חַ",
+   "class": "A2",
+   "morphhb": "לַ/מְנַצֵּ֥ח",
+   "lemma": "l/5329",
+   "morph": "HRd/Vprmsa",
+   "id": "19isj",
+   "cons": {
+    "n": 55,
+    "pair": 55,
+    "lemma": 55,
+    "morph": 55,
+    "top": [
+     "5329 | HRd/Vprmsa",
+     55
+    ]
+   },
+   "sig": [
+    [
+     4,
+     "ח",
+     [],
+     [
+      "patah"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: shewa -> patah / MAM's form not elsewhere in morphhb": [
+  {
+   "vid": "Judg.16.2",
+   "mam": "וַהֲרַגְנֻֽהוּ",
+   "class": "A2",
+   "morphhb": "וַ/הֲרְגְנֻֽ/הוּ",
+   "lemma": "c/2026",
+   "morph": "HC/Vqp1cp/Sp3ms",
+   "id": "07YiE",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     2,
+     "ר",
+     [
+      "shewa"
+     ],
+     [
+      "patah"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: hataf-segol -> segol / supported: MAM's form has this lemma and morph elsewhere": [
+  {
+   "vid": "Judg.16.23",
+   "mam": "נֶֽאֶסְפוּ֙",
+   "class": "A2",
+   "morphhb": "נֶֽאֱסְפוּ֙",
+   "lemma": "622",
+   "morph": "HVNp3cp",
+   "id": "07Bre",
+   "cons": {
+    "n": 12,
+    "pair": 12,
+    "lemma": 12,
+    "morph": 12,
+    "top": [
+     "622 | HVNp3cp",
+     12
+    ]
+   },
+   "sig": [
+    [
+     1,
+     "א",
+     [
+      "hataf-segol"
+     ],
+     [
+      "segol"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "2Sam.10.11",
+   "mam": "יֶחֶזְק֣וּ",
+   "class": "A2",
+   "morphhb": "יֶחֱזְק֣וּ",
+   "lemma": "2388",
+   "morph": "HVqi3mp",
+   "id": "10xW5",
+   "cons": {
+    "n": 2,
+    "pair": 2,
+    "lemma": 2,
+    "morph": 2,
+    "top": [
+     "2388 | HVqi3mp",
+     2
+    ]
+   },
+   "sig": [
+    [
+     1,
+     "ח",
+     [
+      "hataf-segol"
+     ],
+     [
+      "segol"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "1Chr.11.13",
+   "mam": "נֶאֶסְפוּ",
+   "class": "A2",
+   "morphhb": "נֶאֱסְפוּ",
+   "lemma": "622",
+   "morph": "HVNp3cp",
+   "id": "13W3H",
+   "cons": {
+    "n": 12,
+    "pair": 12,
+    "lemma": 12,
+    "morph": 12,
+    "top": [
+     "622 | HVNp3cp",
+     12
+    ]
+   },
+   "sig": [
+    [
+     1,
+     "א",
+     [
+      "hataf-segol"
+     ],
+     [
+      "segol"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 several letters / contradicted in morph: same lemma elsewhere, never this morph": [
+  {
+   "vid": "Judg.19.4",
+   "mam": "וַיַּחֲזֶק",
+   "class": "A2",
+   "morphhb": "וַ/יֶּחֱזַק",
+   "lemma": "c/2388",
+   "morph": "HC/Vqw3ms",
+   "id": "07GJ8",
+   "cons": {
+    "n": 2,
+    "pair": 0,
+    "lemma": 2,
+    "morph": 0,
+    "top": [
+     "2388 | HC/Vhw3ms",
+     2
+    ]
+   },
+   "sig": [
+    [
+     1,
+     "י",
+     [
+      "segol",
+      "dagesh"
+     ],
+     [
+      "patah",
+      "dagesh"
+     ]
+    ],
+    [
+     2,
+     "ח",
+     [
+      "hataf-segol"
+     ],
+     [
+      "hataf-patah"
+     ]
+    ],
+    [
+     3,
+     "ז",
+     [
+      "patah"
+     ],
+     [
+      "segol"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Ps.94.1",
+   "mam": "הוֹפִֽיעַ",
+   "class": "A2",
+   "morphhb": "הוֹפִֽיַע",
+   "lemma": "3313",
+   "morph": "HVhv2ms",
+   "id": "19Cth",
+   "cons": {
+    "n": 2,
+    "pair": 0,
+    "lemma": 2,
+    "morph": 0,
+    "top": [
+     "3313 | HVhp3ms",
+     2
+    ]
+   },
+   "sig": [
+    [
+     3,
+     "י",
+     [
+      "patah"
+     ],
+     []
+    ],
+    [
+     4,
+     "ע",
+     [],
+     [
+      "patah"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Job.17.9",
+   "mam": "וּֽטְהׇר",
+   "class": "A2",
+   "morphhb": "וּֽ/טֳהָר",
+   "lemma": "c/2891",
+   "morph": "HC/Aamsc",
+   "id": "187ET",
+   "cons": {
+    "n": 2,
+    "pair": 0,
+    "lemma": 2,
+    "morph": 0,
+    "top": [
+     "2891 | HC/Vqv2ms",
+     2
+    ]
+   },
+   "sig": [
+    [
+     1,
+     "ט",
+     [
+      "hataf-qamats"
+     ],
+     [
+      "shewa"
+     ]
+    ],
+    [
+     2,
+     "ה",
+     [
+      "qamats"
+     ],
+     [
+      "qamats-qatan"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: patah -> segol / contradicted in morph: same lemma elsewhere, never this morph": [
+  {
+   "vid": "Judg.19.23",
+   "mam": "אֶל",
+   "class": "A2",
+   "morphhb": "אַל",
+   "lemma": "413",
+   "morph": "HTn",
+   "id": "07HwX",
+   "cons": {
+    "n": 3542,
+    "pair": 0,
+    "lemma": 3539,
+    "morph": 1,
+    "top": [
+     "413 | HR",
+     3539
+    ]
+   },
+   "sig": [
+    [
+     0,
+     "א",
+     [
+      "patah"
+     ],
+     [
+      "segol"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Jer.47.6",
+   "mam": "אֶל",
+   "class": "A2",
+   "morphhb": "אַל",
+   "lemma": "413",
+   "morph": "HTn",
+   "id": "242CG",
+   "cons": {
+    "n": 3542,
+    "pair": 0,
+    "lemma": 3539,
+    "morph": 1,
+    "top": [
+     "413 | HR",
+     3539
+    ]
+   },
+   "sig": [
+    [
+     0,
+     "א",
+     [
+      "patah"
+     ],
+     [
+      "segol"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: patah -> shewa / MAM's form not elsewhere in morphhb": [
+  {
+   "vid": "1Sam.9.21",
+   "mam": "מִקְּטַנֵּי֙",
+   "class": "A2",
+   "morphhb": "מִ/קַּטַנֵּי֙",
+   "lemma": "m/6996 a",
+   "morph": "HR/Aampc",
+   "id": "09T6a",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     1,
+     "ק",
+     [
+      "patah",
+      "dagesh"
+     ],
+     [
+      "shewa",
+      "dagesh"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "2Kgs.17.4",
+   "mam": "וַֽיַּעְצְרֵ֙הוּ֙",
+   "class": "A2",
+   "morphhb": "וַֽ/יַּעַצְרֵ֨/הוּ֙",
+   "lemma": "c/6113",
+   "morph": "HC/Vqw3ms/Sp3ms",
+   "id": "12pGd",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     2,
+     "ע",
+     [
+      "patah"
+     ],
+     [
+      "shewa"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Dan.5.12",
+   "mam": "וְֽאַֽחֲוָיַ֨ת",
+   "class": "A2",
+   "morphhb": "וַֽ/אַֽחֲוָיַ֨ת",
+   "lemma": "c/263",
+   "morph": "AC/Vhc",
+   "id": "274tD",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     0,
+     "ו",
+     [
+      "patah"
+     ],
+     [
+      "shewa"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: shewa -> hiriq / MAM's form not elsewhere in morphhb": [
+  {
+   "vid": "1Sam.17.31",
+   "mam": "וַיִּשָּֽׁמְעוּ֙",
+   "class": "A2",
+   "morphhb": "וַ/יְּשָּֽׁמְעוּ֙",
+   "lemma": "c/8085",
+   "morph": "HC/VNw3mp",
+   "id": "095Zv",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     1,
+     "י",
+     [
+      "shewa",
+      "dagesh"
+     ],
+     [
+      "hiriq",
+      "dagesh"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Joel.2.12",
+   "mam": "וּבִבְכִ֖י",
+   "class": "A2",
+   "morphhb": "וּ/בְ/בְכִ֖י",
+   "lemma": "c/b/1065",
+   "morph": "HC/R/Ncmsa",
+   "id": "29c6V",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     1,
+     "ב",
+     [
+      "shewa"
+     ],
+     [
+      "hiriq"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Ps.45.3",
+   "mam": "בְּשִׂפְתוֹתֶ֑יךָ",
+   "class": "A2",
+   "morphhb": "בְּ/שְׂפְתוֹתֶ֑י/ךָ",
+   "lemma": "b/8193",
+   "morph": "HR/Ncfpc/Sp2ms",
+   "id": "19K1g",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     1,
+     "ש",
+     [
+      "shewa",
+      "sin-dot"
+     ],
+     [
+      "hiriq",
+      "sin-dot"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: segol -> tsere / supported: MAM's form has this lemma and morph elsewhere": [
+  {
+   "vid": "2Sam.4.2",
+   "mam": "הַבְּאֵרֹתִ֖י",
+   "class": "A2",
+   "morphhb": "הַ/בְּאֶֽרֹתִ֖י",
+   "lemma": "d/886",
+   "morph": "HTd/Ngmsa",
+   "id": "10thm",
+   "cons": {
+    "n": 3,
+    "pair": 3,
+    "lemma": 3,
+    "morph": 3,
+    "top": [
+     "886 | HTd/Ngmsa",
+     3
+    ]
+   },
+   "sig": [
+    [
+     2,
+     "א",
+     [
+      "segol"
+     ],
+     [
+      "tsere"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Jonah.3.3",
+   "mam": "נִֽינְוֵ֖ה",
+   "class": "A2",
+   "morphhb": "נִֽינְוֶ֖ה",
+   "lemma": "5210",
+   "morph": "HNp",
+   "id": "32XMu",
+   "cons": {
+    "n": 10,
+    "pair": 10,
+    "lemma": 10,
+    "morph": 10,
+    "top": [
+     "5210 | HNp",
+     10
+    ]
+   },
+   "sig": [
+    [
+     3,
+     "ו",
+     [
+      "segol"
+     ],
+     [
+      "tsere"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Dan.2.45",
+   "mam": "וְ֠הַדֵּ֠קֶת",
+   "class": "A2",
+   "morphhb": "וְ֠/הַדֶּקֶת",
+   "lemma": "c/1855",
+   "morph": "AC/Vhp3fs",
+   "id": "27Z1J",
+   "cons": {
+    "n": 1,
+    "pair": 1,
+    "lemma": 1,
+    "morph": 1,
+    "top": [
+     "1855 | AC/Vhp3fs",
+     1
+    ]
+   },
+   "sig": [
+    [
+     2,
+     "ד",
+     [
+      "segol",
+      "dagesh"
+     ],
+     [
+      "tsere",
+      "dagesh"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Dan.6.22",
+   "mam": "דָּנִיֵּ֔אל",
+   "class": "A2",
+   "morphhb": "דָּנִיֶּ֔אל",
+   "lemma": "1841",
+   "morph": "ANp",
+   "id": "27k9V",
+   "cons": {
+    "n": 30,
+    "pair": 15,
+    "lemma": 15,
+    "morph": 15,
+    "top": [
+     "1840 | HNp",
+     15
+    ]
+   },
+   "sig": [
+    [
+     2,
+     "י",
+     [
+      "segol",
+      "dagesh"
+     ],
+     [
+      "tsere",
+      "dagesh"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: segol -> hataf-segol / MAM's form not elsewhere in morphhb": [
+  {
+   "vid": "2Sam.6.5",
+   "mam": "וּֽבְצֶלְצֱלִֽים",
+   "class": "A2",
+   "morphhb": "וּֽ/בְ/צֶלְצֶלִֽים",
+   "lemma": "c/b/6767 d",
+   "morph": "HC/R/Ncmpa",
+   "id": "10zyy",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     4,
+     "צ",
+     [
+      "segol"
+     ],
+     [
+      "hataf-segol"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Ps.89.25",
+   "mam": "וֶ֥אֱֽמוּנָתִ֣י",
+   "class": "A2",
+   "morphhb": "וֶֽ/אֶֽמוּנָתִ֣/י",
+   "lemma": "c/530",
+   "morph": "HC/Ncfsc/Sp1cs",
+   "id": "19T9e",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     1,
+     "א",
+     [
+      "segol"
+     ],
+     [
+      "hataf-segol"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 several letters / contradicted in lemma: same morph elsewhere, never this lemma": [
+  {
+   "vid": "2Sam.7.22",
+   "mam": "יְהֹוָ֣ה",
+   "class": "A2",
+   "morphhb": "יְהוִ֑ה",
+   "lemma": "3069",
+   "morph": "HNp",
+   "id": "10Ati",
+   "cons": {
+    "n": 46,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 46,
+    "top": [
+     "3068 | HNp",
+     46
+    ]
+   },
+   "sig": [
+    [
+     1,
+     "ה",
+     [],
+     [
+      "holam"
+     ]
+    ],
+    [
+     2,
+     "ו",
+     [
+      "hiriq"
+     ],
+     [
+      "qamats"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: dagesh -> holam / supported: MAM's form has this lemma and morph elsewhere": [
+  {
+   "vid": "2Sam.20.8",
+   "mam": "לְבֻשׁ֗וֹ",
+   "class": "A2",
+   "morphhb": "לְבֻשׁ֗/וּ",
+   "lemma": "3830",
+   "morph": "HNcmsc/Sp3ms",
+   "id": "10LxX",
+   "cons": {
+    "n": 2,
+    "pair": 2,
+    "lemma": 2,
+    "morph": 2,
+    "top": [
+     "3830 | HNcmsc/Sp3ms",
+     2
+    ]
+   },
+   "sig": [
+    [
+     3,
+     "ו",
+     [
+      "dagesh"
+     ],
+     [
+      "holam"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: tsere -> hiriq / supported: MAM's form has this lemma and morph elsewhere": [
+  {
+   "vid": "1Kgs.2.13",
+   "mam": "חַגִּ֗ית",
+   "class": "A2",
+   "morphhb": "חַגֵּ֗ית",
+   "lemma": "2294",
+   "morph": "HNp",
+   "id": "11JyU",
+   "cons": {
+    "n": 4,
+    "pair": 4,
+    "lemma": 4,
+    "morph": 4,
+    "top": [
+     "2294 | HNp",
+     4
+    ]
+   },
+   "sig": [
+    [
+     1,
+     "ג",
+     [
+      "tsere",
+      "dagesh"
+     ],
+     [
+      "hiriq",
+      "dagesh"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Dan.3.15",
+   "mam": "דִּ֥י",
+   "class": "A2",
+   "morphhb": "דֵּ֥י",
+   "lemma": "1768",
+   "morph": "ATr",
+   "id": "27eWV",
+   "cons": {
+    "n": 305,
+    "pair": 254,
+    "lemma": 305,
+    "morph": 254,
+    "top": [
+     "1768 | ATr",
+     254
+    ]
+   },
+   "sig": [
+    [
+     0,
+     "ד",
+     [
+      "tsere",
+      "dagesh"
+     ],
+     [
+      "hiriq",
+      "dagesh"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: shewa -> hataf-segol / supported: MAM's form has this lemma and morph elsewhere": [
+  {
+   "vid": "1Kgs.2.26",
+   "mam": "יֱהֹוִה֙",
+   "class": "A2",
+   "morphhb": "יְהֹוִה֙",
+   "lemma": "3069",
+   "morph": "HNp",
+   "id": "114Ei",
+   "cons": {
+    "n": 1,
+    "pair": 1,
+    "lemma": 1,
+    "morph": 1,
+    "top": [
+     "3069 | HNp",
+     1
+    ]
+   },
+   "sig": [
+    [
+     0,
+     "י",
+     [
+      "shewa"
+     ],
+     [
+      "hataf-segol"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Isa.50.4",
+   "mam": "יֱהֹוִ֗ה",
+   "class": "A2",
+   "morphhb": "יְהֹוִ֗ה",
+   "lemma": "3069",
+   "morph": "HNp",
+   "id": "23y1s",
+   "cons": {
+    "n": 1,
+    "pair": 1,
+    "lemma": 1,
+    "morph": 1,
+    "top": [
+     "3069 | HNp",
+     1
+    ]
+   },
+   "sig": [
+    [
+     0,
+     "י",
+     [
+      "shewa"
+     ],
+     [
+      "hataf-segol"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Jer.1.6",
+   "mam": "יֱהֹוִ֔ה",
+   "class": "A2",
+   "morphhb": "יְהֹוִ֔ה",
+   "lemma": "3069",
+   "morph": "HNp",
+   "id": "24goK",
+   "cons": {
+    "n": 1,
+    "pair": 1,
+    "lemma": 1,
+    "morph": 1,
+    "top": [
+     "3069 | HNp",
+     1
+    ]
+   },
+   "sig": [
+    [
+     0,
+     "י",
+     [
+      "shewa"
+     ],
+     [
+      "hataf-segol"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Jer.7.20",
+   "mam": "יֱהֹוִ֗ה",
+   "class": "A2",
+   "morphhb": "יְהֹוִ֗ה",
+   "lemma": "3069",
+   "morph": "HNp",
+   "id": "24FAr",
+   "cons": {
+    "n": 1,
+    "pair": 1,
+    "lemma": 1,
+    "morph": 1,
+    "top": [
+     "3069 | HNp",
+     1
+    ]
+   },
+   "sig": [
+    [
+     0,
+     "י",
+     [
+      "shewa"
+     ],
+     [
+      "hataf-segol"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: none -> tsere / supported: MAM's form has this lemma and morph elsewhere": [
+  {
+   "vid": "2Kgs.18.27",
+   "mam": "מֵימֵ֥י",
+   "class": "A2",
+   "morphhb": "מימֵ֥י",
+   "lemma": "4325",
+   "morph": "HNcmpc",
+   "id": "12cPo",
+   "cons": {
+    "n": 8,
+    "pair": 8,
+    "lemma": 8,
+    "morph": 8,
+    "top": [
+     "4325 | HNcmpc",
+     8
+    ]
+   },
+   "sig": [
+    [
+     0,
+     "מ",
+     [],
+     [
+      "tsere"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Prov.19.4",
+   "mam": "מֵרֵעֵ֥הוּ",
+   "class": "A2",
+   "morphhb": "מֵרֵ֥ע/הוּ",
+   "lemma": "7453",
+   "morph": "HNcmsc/Sp3ms",
+   "id": "20atD",
+   "cons": {
+    "n": 7,
+    "pair": 1,
+    "lemma": 5,
+    "morph": 3,
+    "top": [
+     "7453 | HR/Ncmsc/Sp3ms",
+     4
+    ]
+   },
+   "sig": [
+    [
+     2,
+     "ע",
+     [],
+     [
+      "tsere"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: none -> shewa / MAM's form not elsewhere in morphhb": [
+  {
+   "vid": "Isa.13.22",
+   "mam": "בְּאַלְמְנוֹתָ֔יו",
+   "class": "A2",
+   "morphhb": "בְּ/אַלְמנוֹתָ֔י/ו",
+   "lemma": "b/490",
+   "morph": "HR/Ncfpc/Sp3ms",
+   "id": "23C37",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     3,
+     "מ",
+     [],
+     [
+      "shewa"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Jer.15.10",
+   "mam": "מְקַֽלְלַֽוְנִי",
+   "class": "A2",
+   "morphhb": "מְקַלְלַֽו/נִי",
+   "lemma": "7043",
+   "morph": "HVprmpc/Sp1cs",
+   "id": "24kDB",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     4,
+     "ו",
+     [],
+     [
+      "shewa"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Ezek.27.27",
+   "mam": "בִדְקֵ֣ךְ",
+   "class": "A2",
+   "morphhb": "בִדְקֵ֣/ך",
+   "lemma": "919",
+   "morph": "HNcmsc/Sp2fs",
+   "id": "26XXd",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     3,
+     "ך",
+     [],
+     [
+      "shewa"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Nah.3.13",
+   "mam": "בְּרִיחָֽיִךְ",
+   "class": "A2",
+   "morphhb": "בְּרִיחָֽיִ/ך",
+   "lemma": "1280",
+   "morph": "HNcmpc/Sp2fs",
+   "id": "34Qpj",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     5,
+     "ך",
+     [],
+     [
+      "shewa"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: none -> qamats / MAM's form not elsewhere in morphhb": [
+  {
+   "vid": "Isa.23.8",
+   "mam": "סֹחֲרֶ֙יהָ֙",
+   "class": "A2",
+   "morphhb": "סֹחֲרֶ֨י/ה֙",
+   "lemma": "5503",
+   "morph": "HVqrmpc/Sp3fs",
+   "id": "23F8H",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     4,
+     "ה",
+     [],
+     [
+      "qamats"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Prov.31.12",
+   "mam": "חַיֶּֽיהָ",
+   "class": "A2",
+   "morphhb": "חַיֶּֽי/ה",
+   "lemma": "2416 e",
+   "morph": "HNcmpc/Sp3fs",
+   "id": "20cd3",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     3,
+     "ה",
+     [],
+     [
+      "qamats"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Job.22.21",
+   "mam": "וּשְׁלָ֑ם",
+   "class": "A2",
+   "morphhb": "וּ/שְׁלם",
+   "lemma": "c/7999 b",
+   "morph": "HC/Vqv2ms",
+   "id": "18z1m",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     2,
+     "ל",
+     [],
+     [
+      "qamats"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: hataf-qamats -> qamats / supported: MAM's form has this lemma and morph elsewhere": [
+  {
+   "vid": "Isa.37.33",
+   "mam": "עָלֶ֖יהָ",
+   "class": "A2",
+   "morphhb": "עֳלֶ֖י/הָ",
+   "lemma": "5921 a",
+   "morph": "HR/Sp3fs",
+   "id": "23VtC",
+   "cons": {
+    "n": 169,
+    "pair": 169,
+    "lemma": 169,
+    "morph": 169,
+    "top": [
+     "5921 | HR/Sp3fs",
+     169
+    ]
+   },
+   "sig": [
+    [
+     0,
+     "ע",
+     [
+      "hataf-qamats"
+     ],
+     [
+      "qamats"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: hataf-qamats -> hataf-patah / MAM's form not elsewhere in morphhb": [
+  {
+   "vid": "Isa.66.22",
+   "mam": "הַ֠חֲדָשִׁ֠ים",
+   "class": "A2",
+   "morphhb": "הַ֠/חֳדָשִׁים",
+   "lemma": "d/2319",
+   "morph": "HTd/Aampa",
+   "id": "23kzo",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     1,
+     "ח",
+     [
+      "hataf-qamats"
+     ],
+     [
+      "hataf-patah"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: qamats -> segol / contradicted in morph: same lemma elsewhere, never this morph": [
+  {
+   "vid": "Jer.11.2",
+   "mam": "וְדִבַּרְתֶּם֙",
+   "class": "A2",
+   "morphhb": "וְ/דִבַּרְתָּ/ם֙",
+   "lemma": "c/1696",
+   "morph": "HC/Vpq2ms/Sp3mp",
+   "id": "24Rdh",
+   "cons": {
+    "n": 2,
+    "pair": 0,
+    "lemma": 2,
+    "morph": 0,
+    "top": [
+     "1696 | HC/Vpq2mp",
+     2
+    ]
+   },
+   "sig": [
+    [
+     4,
+     "ת",
+     [
+      "qamats",
+      "dagesh"
+     ],
+     [
+      "segol",
+      "dagesh"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: patah -> segol / MAM's form not elsewhere in morphhb": [
+  {
+   "vid": "Jer.52.21",
+   "mam": "אֶצְבָּע֖וֹת",
+   "class": "A2",
+   "morphhb": "אַצְבָּע֖וֹת",
+   "lemma": "676",
+   "morph": "HNcfpa",
+   "id": "24GCs",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     0,
+     "א",
+     [
+      "patah"
+     ],
+     [
+      "segol"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Ezek.23.5",
+   "mam": "וַתֶּעְגַּב֙",
+   "class": "A2",
+   "morphhb": "וַ/תַּעְגַּב֙",
+   "lemma": "c/5689",
+   "morph": "HC/Vqw3fs",
+   "id": "26GZn",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     1,
+     "ת",
+     [
+      "patah",
+      "dagesh"
+     ],
+     [
+      "segol",
+      "dagesh"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Ps.12.6",
+   "mam": "מֵאֶנְקַ֢ת",
+   "class": "A2",
+   "morphhb": "מֵ/אַנְקַ֪ת",
+   "lemma": "m/603",
+   "morph": "HR/Ncfsc",
+   "id": "19XBe",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     1,
+     "א",
+     [
+      "patah"
+     ],
+     [
+      "segol"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Job.37.6",
+   "mam": "לַשֶּׁ֨לֶג",
+   "class": "A2",
+   "morphhb": "לַ/שֶּׁ֨לַג",
+   "lemma": "l/7950",
+   "morph": "HRd/Ncmsa",
+   "id": "185bN",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     2,
+     "ל",
+     [
+      "patah"
+     ],
+     [
+      "segol"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: segol -> qamats / MAM's form not elsewhere in morphhb": [
+  {
+   "vid": "Ezek.16.24",
+   "mam": "גָּ֑ב",
+   "class": "A2",
+   "morphhb": "גֶּ֑ב",
+   "lemma": "1354",
+   "morph": "HNcbsa",
+   "id": "26K3s",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     0,
+     "ג",
+     [
+      "segol",
+      "dagesh"
+     ],
+     [
+      "qamats",
+      "dagesh"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: segol -> hataf-patah / MAM's form not elsewhere in morphhb": [
+  {
+   "vid": "Ezek.28.16",
+   "mam": "וָאֲחַלֶּלְךָ֩",
+   "class": "A2",
+   "morphhb": "וָ/אֶחַלֶּלְ/ךָ֩",
+   "lemma": "c/2490 c",
+   "morph": "HC/Vpw1cs/Sp2ms",
+   "id": "26xrN",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     1,
+     "א",
+     [
+      "segol"
+     ],
+     [
+      "hataf-patah"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: shewa -> hataf-patah / MAM's form not elsewhere in morphhb": [
+  {
+   "vid": "Ezek.35.15",
+   "mam": "לְנַחֲלַ֧ת",
+   "class": "A2",
+   "morphhb": "לְ/נַחְלַ֧ת",
+   "lemma": "l/5159",
+   "morph": "HR/Ncfsc",
+   "id": "26PZQ",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     2,
+     "ח",
+     [
+      "shewa"
+     ],
+     [
+      "hataf-patah"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Job.38.12",
+   "mam": "הֲֽ֭מִיָּמֶיךָ",
+   "class": "A2",
+   "morphhb": "הְֽ֭/מִ/יָּמֶי/ךָ",
+   "lemma": "i/m/3117",
+   "morph": "HTi/R/Ncmpc/Sp2ms",
+   "id": "18Sau",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     0,
+     "ה",
+     [
+      "shewa"
+     ],
+     [
+      "hataf-patah"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Job.39.20",
+   "mam": "הֲֽ֭תַרְעִישֶׁנּוּ",
+   "class": "A2",
+   "morphhb": "הְֽ֭/תַרְעִישֶׁ/נּוּ",
+   "lemma": "d/7493",
+   "morph": "HTi/Vhi2ms/Sp3ms",
+   "id": "18kRt",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     0,
+     "ה",
+     [
+      "shewa"
+     ],
+     [
+      "hataf-patah"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: hataf-qamats -> qamats / MAM's form not elsewhere in morphhb": [
+  {
+   "vid": "Ezek.43.14",
+   "mam": "וּמֵהָעֲזָרָ֨ה",
+   "class": "A2",
+   "morphhb": "וּ/מֵ/הֳ/עֲזָרָ֨ה",
+   "lemma": "c/m/d/5835",
+   "morph": "HC/R/Td/Ncfsa",
+   "id": "26kt2",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     2,
+     "ה",
+     [
+      "hataf-qamats"
+     ],
+     [
+      "qamats"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Ezra.5.12",
+   "mam": "אֲבָהָתַ֙נָא֙",
+   "class": "A2",
+   "morphhb": "אֲבָהֳתַ֨/נָא֙",
+   "lemma": "2",
+   "morph": "ANcmpc/Sp1cp",
+   "id": "15JUj",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     2,
+     "ה",
+     [
+      "hataf-qamats"
+     ],
+     [
+      "qamats"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: shewa -> hataf-qamats / supported: MAM's form has this lemma and morph elsewhere": [
+  {
+   "vid": "Ezek.44.13",
+   "mam": "הַקֳּדָשִׁ֑ים",
+   "class": "A2",
+   "morphhb": "הַ/קְּדָשִׁ֑ים",
+   "lemma": "d/6944",
+   "morph": "HTd/Ncmpa",
+   "id": "267mi",
+   "cons": {
+    "n": 32,
+    "pair": 32,
+    "lemma": 32,
+    "morph": 32,
+    "top": [
+     "6944 | HTd/Ncmpa",
+     32
+    ]
+   },
+   "sig": [
+    [
+     1,
+     "ק",
+     [
+      "shewa",
+      "dagesh"
+     ],
+     [
+      "hataf-qamats",
+      "dagesh"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "2Chr.5.7",
+   "mam": "הַקֳּדָשִׁ֑ים",
+   "class": "A2",
+   "morphhb": "הַ/קְּדָשִׁ֑ים",
+   "lemma": "d/6944",
+   "morph": "HTd/Ncmpa",
+   "id": "14CoS",
+   "cons": {
+    "n": 32,
+    "pair": 32,
+    "lemma": 32,
+    "morph": 32,
+    "top": [
+     "6944 | HTd/Ncmpa",
+     32
+    ]
+   },
+   "sig": [
+    [
+     1,
+     "ק",
+     [
+      "shewa",
+      "dagesh"
+     ],
+     [
+      "hataf-qamats",
+      "dagesh"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: hiriq -> none / MAM's form not elsewhere in morphhb": [
+  {
+   "vid": "Hos.2.17",
+   "mam": "וּכְי֖וֹם",
+   "class": "A2",
+   "morphhb": "וִּ/כְ/י֖וֹם",
+   "lemma": "c/k/3117",
+   "morph": "HC/R/Ncmsc",
+   "id": "282gM",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     0,
+     "ו",
+     [
+      "hiriq",
+      "dagesh"
+     ],
+     [
+      "dagesh"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: qamats -> hataf-qamats / supported: MAM's form has this lemma and morph elsewhere": [
+  {
+   "vid": "Jonah.1.3",
+   "mam": "אֳנִיָּ֣ה",
+   "class": "A2",
+   "morphhb": "אָנִיָּ֣ה",
+   "lemma": "591",
+   "morph": "HNcfsa",
+   "id": "325SS",
+   "cons": {
+    "n": 1,
+    "pair": 1,
+    "lemma": 1,
+    "morph": 1,
+    "top": [
+     "591 | HNcfsa",
+     1
+    ]
+   },
+   "sig": [
+    [
+     0,
+     "א",
+     [
+      "qamats"
+     ],
+     [
+      "hataf-qamats"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: hiriq -> none / supported: MAM's form has this lemma and morph elsewhere": [
+  {
+   "vid": "Jonah.3.2",
+   "mam": "וּקְרָ֤א",
+   "class": "A2",
+   "morphhb": "וִּ/קְרָ֤א",
+   "lemma": "c/7121",
+   "morph": "HC/Vqv2ms",
+   "id": "32ki2",
+   "cons": {
+    "n": 3,
+    "pair": 3,
+    "lemma": 3,
+    "morph": 3,
+    "top": [
+     "7121 | HC/Vqv2ms",
+     3
+    ]
+   },
+   "sig": [
+    [
+     0,
+     "ו",
+     [
+      "hiriq",
+      "dagesh"
+     ],
+     [
+      "dagesh"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: qamats -> dagesh+qamats-qatan / MAM's form not elsewhere in morphhb": [
+  {
+   "vid": "Zech.9.17",
+   "mam": "יׇּפְי֑וֹ",
+   "class": "A2",
+   "morphhb": "יָפְי֑/וֹ",
+   "lemma": "3308",
+   "morph": "HNcmsc/Sp3ms",
+   "id": "38Vhq",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     0,
+     "י",
+     [
+      "qamats"
+     ],
+     [
+      "dagesh",
+      "qamats-qatan"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: shewa -> none / contradicted in lemma: same morph elsewhere, never this lemma": [
+  {
+   "vid": "Zech.12.11",
+   "mam": "הֲדַד",
+   "class": "A2",
+   "morphhb": "הֲדַדְ",
+   "lemma": "1910+",
+   "morph": "HNp",
+   "id": "38qoQ",
+   "cons": {
+    "n": 29,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 29,
+    "top": [
+     "1130 | HNp",
+     23
+    ]
+   },
+   "sig": [
+    [
+     2,
+     "ד",
+     [
+      "shewa"
+     ],
+     []
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: segol -> tsere / MAM's form not elsewhere in morphhb": [
+  {
+   "vid": "Ps.10.14",
+   "mam": "חֵלֵ֑כָה",
+   "class": "A2",
+   "morphhb": "חֵלֶ֑כָה",
+   "lemma": "2489",
+   "morph": "HNcfsa",
+   "id": "19YJk",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     1,
+     "ל",
+     [
+      "segol"
+     ],
+     [
+      "tsere"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: hataf-segol -> segol / MAM's form not elsewhere in morphhb": [
+  {
+   "vid": "Ps.119.69",
+   "mam": "אֶצֹּ֬ר",
+   "class": "A2",
+   "morphhb": "אֱצֹּ֬ר",
+   "lemma": "5341",
+   "morph": "HVqi1cs",
+   "id": "19PSv",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     0,
+     "א",
+     [
+      "hataf-segol"
+     ],
+     [
+      "segol"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: qamats -> dagesh+qamats-qatan / supported: MAM's form has this lemma and morph elsewhere": [
+  {
+   "vid": "Prov.1.17",
+   "mam": "כׇּל",
+   "class": "A2",
+   "morphhb": "כָל",
+   "lemma": "3605",
+   "morph": "HNcmsc",
+   "id": "20cpb",
+   "cons": {
+    "n": 2606,
+    "pair": 2548,
+    "lemma": 2558,
+    "morph": 2548,
+    "top": [
+     "3605 | HNcmsc",
+     2548
+    ]
+   },
+   "sig": [
+    [
+     0,
+     "כ",
+     [
+      "qamats"
+     ],
+     [
+      "dagesh",
+      "qamats-qatan"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: qamats -> segol / supported: MAM's form has this lemma and morph elsewhere": [
+  {
+   "vid": "Prov.7.22",
+   "mam": "טֶ֣בַח",
+   "class": "A2",
+   "morphhb": "טָ֣בַח",
+   "lemma": "2874",
+   "morph": "HNcmsa",
+   "id": "20EJP",
+   "cons": {
+    "n": 3,
+    "pair": 2,
+    "lemma": 2,
+    "morph": 2,
+    "top": [
+     "2874 | HNcmsa",
+     2
+    ]
+   },
+   "sig": [
+    [
+     0,
+     "ט",
+     [
+      "qamats"
+     ],
+     [
+      "segol"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: none -> shewa / contradicted in both": [
+  {
+   "vid": "Prov.15.18",
+   "mam": "וְאֶ֥רֶךְ",
+   "class": "A2",
+   "morphhb": "וְ/אֶ֥רֶך",
+   "lemma": "c/750",
+   "morph": "HC/Aamsc",
+   "id": "20hNP",
+   "cons": {
+    "n": 1,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": [
+     "751 | HC/Np",
+     1
+    ]
+   },
+   "sig": [
+    [
+     3,
+     "ך",
+     [],
+     [
+      "shewa"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: tsere -> segol / supported: MAM's form has this lemma and morph elsewhere": [
+  {
+   "vid": "Prov.18.12",
+   "mam": "לֶב",
+   "class": "A2",
+   "morphhb": "לֵב",
+   "lemma": "3820 a",
+   "morph": "HNcmsc",
+   "id": "20Ua5",
+   "cons": {
+    "n": 4,
+    "pair": 4,
+    "lemma": 4,
+    "morph": 4,
+    "top": [
+     "3820 | HNcmsc",
+     4
+    ]
+   },
+   "sig": [
+    [
+     0,
+     "ל",
+     [
+      "tsere"
+     ],
+     [
+      "segol"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Esth.9.31",
+   "mam": "אֶת",
+   "class": "A2",
+   "morphhb": "אֵת",
+   "lemma": "853",
+   "morph": "HTo",
+   "id": "17Ade",
+   "cons": {
+    "n": 6715,
+    "pair": 6462,
+    "lemma": 6462,
+    "morph": 6462,
+    "top": [
+     "853 | HTo",
+     6462
+    ]
+   },
+   "sig": [
+    [
+     0,
+     "א",
+     [
+      "tsere"
+     ],
+     [
+      "segol"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: segol -> shewa / MAM's form not elsewhere in morphhb": [
+  {
+   "vid": "Job.20.19",
+   "mam": "יִבְנֵֽהוּ",
+   "class": "A2",
+   "morphhb": "יִבֶנֵֽ/הוּ",
+   "lemma": "1129",
+   "morph": "HVqi3ms/Sp3ms",
+   "id": "18tNG",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     1,
+     "ב",
+     [
+      "segol"
+     ],
+     [
+      "shewa"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Eccl.2.22",
+   "mam": "שְׁה֥וּא",
+   "class": "A2",
+   "morphhb": "שֶׁ/ה֥וּא",
+   "lemma": "s/1931",
+   "morph": "HTr/Pp3ms",
+   "id": "21uHZ",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     0,
+     "ש",
+     [
+      "segol",
+      "shin-dot"
+     ],
+     [
+      "shewa",
+      "shin-dot"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: qubuts -> none / MAM's form not elsewhere in morphhb": [
+  {
+   "vid": "Job.31.7",
+   "mam": "מֽאֿוּם",
+   "class": "A2",
+   "morphhb": "מֻאֽוּם",
+   "lemma": "3971 a",
+   "morph": "HNcmsa",
+   "id": "18Wom",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     0,
+     "מ",
+     [
+      "qubuts"
+     ],
+     []
+    ]
+   ]
+  },
+  {
+   "vid": "Neh.1.6",
+   "mam": "פְתוּח֟וֹת",
+   "class": "A2",
+   "morphhb": "פְתֻוּח֟וֹת",
+   "lemma": "6605 a",
+   "morph": "HVqsfpa",
+   "id": "16A74",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     1,
+     "ת",
+     [
+      "qubuts"
+     ],
+     []
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: hataf-segol -> shewa / MAM's form not elsewhere in morphhb": [
+  {
+   "vid": "Song.1.6",
+   "mam": "שֶׁשְּׁזָפַ֖תְנִי",
+   "class": "A2",
+   "morphhb": "שֶׁ/שֱּׁזָפַ֖תְ/נִי",
+   "lemma": "s/7805",
+   "morph": "HTr/Vqp3fs/Sp1cs",
+   "id": "22uLf",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     1,
+     "ש",
+     [
+      "hataf-segol",
+      "dagesh",
+      "shin-dot"
+     ],
+     [
+      "shewa",
+      "dagesh",
+      "shin-dot"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: dagesh -> qubuts / MAM's form not elsewhere in morphhb": [
+  {
+   "vid": "Song.5.11",
+   "mam": "קְוֻצּוֹתָיו֙",
+   "class": "A2",
+   "morphhb": "קְוּצּוֹתָי/ו֙",
+   "lemma": "6977",
+   "morph": "HNcfpc/Sp3ms",
+   "id": "22k23",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     1,
+     "ו",
+     [
+      "dagesh"
+     ],
+     [
+      "qubuts"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: patah -> qamats / MAM's form not elsewhere in morphhb": [
+  {
+   "vid": "Ruth.2.1",
+   "mam": "מוֹדָ֣ע",
+   "class": "A2",
+   "morphhb": "מוֹדַ֣ע",
+   "lemma": "4129",
+   "morph": "HNcmsa",
+   "id": "08swV",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     2,
+     "ד",
+     [
+      "patah"
+     ],
+     [
+      "qamats"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Dan.4.27",
+   "mam": "בִּתְקָ֥ף",
+   "class": "A2",
+   "morphhb": "בִּ/תְקַ֥ף",
+   "lemma": "b/8632 a",
+   "morph": "AR/Ncmsc",
+   "id": "27JSS",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     2,
+     "ק",
+     [
+      "patah"
+     ],
+     [
+      "qamats"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: hiriq -> shewa / supported: MAM's form has this lemma and morph elsewhere": [
+  {
+   "vid": "Ruth.2.9",
+   "mam": "וְהָלַ֣כְתְּ",
+   "class": "A2",
+   "morphhb": "וְ/הָלַ֣כְתִּ",
+   "lemma": "c/1980",
+   "morph": "HC/Vqq2fs",
+   "id": "085eq",
+   "cons": {
+    "n": 2,
+    "pair": 2,
+    "lemma": 2,
+    "morph": 2,
+    "top": [
+     "1980 | HC/Vqq2fs",
+     2
+    ]
+   },
+   "sig": [
+    [
+     4,
+     "ת",
+     [
+      "hiriq",
+      "dagesh"
+     ],
+     [
+      "shewa",
+      "dagesh"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "Dan.9.2",
+   "mam": "יִרְמְיָ֣ה",
+   "class": "A2",
+   "morphhb": "יִרְמִיָ֣ה",
+   "lemma": "3414",
+   "morph": "HNp",
+   "id": "27t4v",
+   "cons": {
+    "n": 13,
+    "pair": 13,
+    "lemma": 13,
+    "morph": 13,
+    "top": [
+     "3414 | HNp",
+     13
+    ]
+   },
+   "sig": [
+    [
+     2,
+     "מ",
+     [
+      "hiriq"
+     ],
+     [
+      "shewa"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: none -> hiriq / MAM's form not elsewhere in morphhb": [
+  {
+   "vid": "Esth.4.11",
+   "mam": "נִקְרֵ֙אתִי֙",
+   "class": "A2",
+   "morphhb": "נִקְרֵ֨אתי֙",
+   "lemma": "7121",
+   "morph": "HVNp1cs",
+   "id": "171Q7",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     4,
+     "ת",
+     [],
+     [
+      "hiriq"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: hataf-qamats -> hataf-patah / supported: MAM's form has this lemma and morph elsewhere": [
+  {
+   "vid": "Esth.9.2",
+   "mam": "אֲחַשְׁוֵר֔וֹשׁ",
+   "class": "A2",
+   "morphhb": "אֳחַשְׁוֵר֔וֹשׁ",
+   "lemma": "325",
+   "morph": "HNp",
+   "id": "17AFT",
+   "cons": {
+    "n": 26,
+    "pair": 26,
+    "lemma": 26,
+    "morph": 26,
+    "top": [
+     "325 | HNp",
+     26
+    ]
+   },
+   "sig": [
+    [
+     0,
+     "א",
+     [
+      "hataf-qamats"
+     ],
+     [
+      "hataf-patah"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: hataf-patah -> hataf-segol / supported: MAM's form has this lemma and morph elsewhere": [
+  {
+   "vid": "Dan.2.10",
+   "mam": "אֱנָשׁ֙",
+   "class": "A2",
+   "morphhb": "אֲנָשׁ֙",
+   "lemma": "606",
+   "morph": "ANcmsa",
+   "id": "27V8W",
+   "cons": {
+    "n": 8,
+    "pair": 7,
+    "lemma": 8,
+    "morph": 7,
+    "top": [
+     "606 | ANcmsa",
+     7
+    ]
+   },
+   "sig": [
+    [
+     0,
+     "א",
+     [
+      "hataf-patah"
+     ],
+     [
+      "hataf-segol"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 dagesh or mappiq only / contradicted in morph: same lemma elsewhere, never this morph": [
+  {
+   "vid": "Dan.2.31",
+   "mam": "דִכֵּ֥ן",
+   "class": "A2",
+   "morphhb": "דִּכֵּ֥ן",
+   "lemma": "1797",
+   "morph": "APdxbs",
+   "id": "27iPC",
+   "cons": {
+    "n": 2,
+    "pair": 0,
+    "lemma": 2,
+    "morph": 0,
+    "top": [
+     "1797 | APdxcs",
+     2
+    ]
+   },
+   "sig": [
+    [
+     0,
+     "ד",
+     [
+      "hiriq",
+      "dagesh"
+     ],
+     [
+      "hiriq"
+     ]
+    ]
+   ]
+  },
+  {
+   "vid": "2Chr.28.9",
+   "mam": "בְּזַ֔עַף",
+   "class": "A2",
+   "morphhb": "בְ/זַ֔עַף",
+   "lemma": "b/2197",
+   "morph": "HR/Ncmsa",
+   "id": "14SPW",
+   "cons": {
+    "n": 1,
+    "pair": 0,
+    "lemma": 1,
+    "morph": 0,
+    "top": [
+     "2197 | HR/Ncmsc",
+     1
+    ]
+   },
+   "sig": [
+    [
+     0,
+     "ב",
+     [
+      "shewa"
+     ],
+     [
+      "shewa",
+      "dagesh"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: patah -> none / contradicted in morph: same lemma elsewhere, never this morph": [
+  {
+   "vid": "Dan.5.24",
+   "mam": "שְׁלִ֖יחַ",
+   "class": "A2",
+   "morphhb": "שְׁלִ֖יַחַ",
+   "lemma": "7972",
+   "morph": "AVQp3ms",
+   "id": "27sKp",
+   "cons": {
+    "n": 1,
+    "pair": 0,
+    "lemma": 1,
+    "morph": 0,
+    "top": [
+     "7972 | AVQsmsa",
+     1
+    ]
+   },
+   "sig": [
+    [
+     2,
+     "י",
+     [
+      "patah"
+     ],
+     []
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: shewa -> hataf-qamats / MAM's form not elsewhere in morphhb": [
+  {
+   "vid": "Ezra.4.9",
+   "mam": "אַרְכֳּוָיֵ֤א",
+   "class": "A2",
+   "morphhb": "אַרְכְּוָיֵ֤/א",
+   "lemma": "756",
+   "morph": "ANgmpd/Td",
+   "id": "15mQU",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   },
+   "sig": [
+    [
+     2,
+     "כ",
+     [
+      "shewa",
+      "dagesh"
+     ],
+     [
+      "hataf-qamats",
+      "dagesh"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: hataf-qamats -> qamats-qatan / supported: MAM's form has this lemma and morph elsewhere": [
+  {
+   "vid": "1Chr.29.18",
+   "mam": "שׇׁמְרָה",
+   "class": "A2",
+   "morphhb": "שֳׁמְרָ/ה",
+   "lemma": "8104",
+   "morph": "HVqv2ms/Sh",
+   "id": "13mN4",
+   "cons": {
+    "n": 6,
+    "pair": 2,
+    "lemma": 5,
+    "morph": 2,
+    "top": [
+     "8104 | HVqp3fs",
+     3
+    ]
+   },
+   "sig": [
+    [
+     0,
+     "ש",
+     [
+      "hataf-qamats",
+      "shin-dot"
+     ],
+     [
+      "shin-dot",
+      "qamats-qatan"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 shin or sin dot only / contradicted in both": [
+  {
+   "vid": "2Chr.1.5",
+   "mam": "שָׁ֕ם",
+   "class": "A2",
+   "morphhb": "שָׂ֕ם",
+   "lemma": "7760 a",
+   "morph": "HVqp3ms",
+   "id": "14A4a",
+   "cons": {
+    "n": 508,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": [
+     "8033 | HD",
+     508
+    ]
+   },
+   "sig": [
+    [
+     0,
+     "ש",
+     [
+      "qamats",
+      "sin-dot"
+     ],
+     [
+      "qamats",
+      "shin-dot"
+     ]
+    ]
+   ]
+  }
+ ],
+ "A2 one letter: patah -> qamats / contradicted in morph: same lemma elsewhere, never this morph": [
+  {
+   "vid": "2Chr.15.16",
+   "mam": "לָאֲשֵׁרָ֖ה",
+   "class": "A2",
+   "morphhb": "לַ/אֲשֵׁרָ֖ה",
+   "lemma": "l/842",
+   "morph": "HR/Np",
+   "id": "144SZ",
+   "cons": {
+    "n": 2,
+    "pair": 0,
+    "lemma": 2,
+    "morph": 0,
+    "top": [
+     "842 | HRd/Np",
+     2
+    ]
+   },
+   "sig": [
+    [
+     0,
+     "ל",
+     [
+      "patah"
+     ],
+     [
+      "qamats"
+     ]
+    ]
+   ]
+  }
+ ],
+ "K": [
+  {
+   "vid": "Gen.8.17",
+   "mam": "הוצא",
+   "class": "K",
+   "morphhb": "הוצא",
+   "lemma": "3318",
+   "morph": "HVhv2ms",
+   "id": "01Pdv"
+  },
+  {
+   "vid": "Gen.14.2",
+   "mam": "צביים",
+   "class": "K",
+   "morphhb": "צביים",
+   "lemma": "6636",
+   "morph": "HNp",
+   "id": "01gUj"
+  },
+  {
+   "vid": "Gen.14.8",
+   "mam": "צביים",
+   "class": "K",
+   "morphhb": "צביים",
+   "lemma": "6636",
+   "morph": "HNp",
+   "id": "01UUW"
+  }
+ ],
+ "kq-trivial C": [
+  {
+   "vid": "Gen.13.3",
+   "mam": "אׇֽהֳלֹה֙",
+   "class": "C",
+   "ws": {
+    "k": [
+     {
+      "id": "0188E",
+      "text": "אהל/ה",
+      "lemma": "168",
+      "morph": "HNcmsc/Sp3ms",
+      "type": "x-ketiv",
+      "in_qere": false,
+      "maqaf_after": false
+     }
+    ],
+    "q": [
+     {
+      "id": "01Gdj",
+      "text": "אָֽהֳל/וֹ֙",
+      "lemma": "168",
+      "morph": "HNcmsc/Sp3ms",
+      "type": null,
+      "in_qere": true,
+      "maqaf_after": false
+     }
+    ]
+   }
+  },
+  {
+   "vid": "Gen.49.10",
+   "mam": "שִׁילֹ֔ה",
+   "class": "C",
+   "ws": {
+    "k": [
+     {
+      "id": "01qXR",
+      "text": "שילה",
+      "lemma": "7886",
+      "morph": "HNp",
+      "type": "x-ketiv",
+      "in_qere": false,
+      "maqaf_after": false
+     }
+    ],
+    "q": [
+     {
+      "id": "01KU3",
+      "text": "שִׁיל֔וֹ",
+      "lemma": "7886",
+      "morph": "HNp",
+      "type": null,
+      "in_qere": true,
+      "maqaf_after": false
+     }
+    ]
+   }
+  },
+  {
+   "vid": "Gen.49.11",
+   "mam": "עִירֹ֔ה",
+   "class": "C",
+   "ws": {
+    "k": [
+     {
+      "id": "017zp",
+      "text": "עיר/ה",
+      "lemma": "5895",
+      "morph": "HNcmsc/Sp3ms",
+      "type": "x-ketiv",
+      "in_qere": false,
+      "maqaf_after": false
+     }
+    ],
+    "q": [
+     {
+      "id": "01BN1",
+      "text": "עִיר֔/וֹ",
+      "lemma": "5895",
+      "morph": "HNcmsc/Sp3ms",
+      "type": null,
+      "in_qere": true,
+      "maqaf_after": false
+     }
+    ]
+   }
+  },
+  {
+   "vid": "Gen.49.11",
+   "mam": "סוּתֹֽה",
+   "class": "C",
+   "ws": {
+    "k": [
+     {
+      "id": "0186h",
+      "text": "סות/ה",
+      "lemma": "5497",
+      "morph": "HNcmsc/Sp3ms",
+      "type": "x-ketiv",
+      "in_qere": false,
+      "maqaf_after": false
+     }
+    ],
+    "q": [
+     {
+      "id": "01Chx",
+      "text": "סוּתֽ/וֹ",
+      "lemma": "5497",
+      "morph": "HNcmsc/Sp3ms",
+      "type": null,
+      "in_qere": true,
+      "maqaf_after": false
+     }
+    ]
+   }
+  }
+ ],
+ "kq-trivial A1": [
+  {
+   "vid": "1Sam.3.18",
+   "mam": "בְּעֵינָ֖ו",
+   "class": "A1",
+   "morphhb": "בְּ/עֵינָ֖/ו",
+   "lemma": "b/5869 a",
+   "morph": "HR/Ncbdc/Sp3ms",
+   "id": "09Wgd"
+  },
+  {
+   "vid": "2Kgs.19.23",
+   "mam": "קִצֹּ֔ה",
+   "class": "A1",
+   "morphhb": "קִצֹּ֔/ה",
+   "lemma": "7093",
+   "morph": "HNcmsc/Sp3ms",
+   "id": "12TKr"
+  },
+  {
+   "vid": "2Kgs.20.13",
+   "mam": "נְכֹתֹ֡ה",
+   "class": "A1",
+   "morphhb": "נְכֹתֹ֡/ה",
+   "lemma": "5238",
+   "morph": "HNcfsc/Sp3ms",
+   "id": "124H2"
+  },
+  {
+   "vid": "Jer.2.3",
+   "mam": "תְּבוּאָתֹ֑ה",
+   "class": "A1",
+   "morphhb": "תְּבוּאָתֹ֑/ה",
+   "lemma": "8393",
+   "morph": "HNcfsc/Sp3ms",
+   "id": "24iDs"
+  }
+ ],
+ "kq-trivial A2": [
+  {
+   "vid": "1Sam.18.14",
+   "mam": "דְּרָכָ֖ו",
+   "class": "A2",
+   "morphhb": "דָּרְכָ֖/ו",
+   "lemma": "1870",
+   "morph": "HNcbpc/Sp3ms",
+   "id": "09JBA"
+  }
+ ],
+ "kq-trivial B": [
+  {
+   "vid": "Jer.15.8",
+   "mam": "אַלְמְנוֹתָו֙",
+   "class": "B",
+   "morphhb": "אַלְמְנֹתָ/ו֙",
+   "lemma": "490",
+   "morph": "HNcfpc/Sp3ms",
+   "id": "24HJA"
+  }
+ ],
+ "AX": [
+  {
+   "vid": "2Sam.18.20",
+   "mam": "עַל",
+   "class": "AX",
+   "ws": {
+    "k": [
+     {
+      "id": "10vJw",
+      "text": "על",
+      "lemma": "5921 b",
+      "morph": "HR",
+      "type": "x-ketiv",
+      "in_qere": false,
+      "maqaf_after": false
+     }
+    ],
+    "q": [
+     {
+      "id": "10HX9",
+      "text": "עַל",
+      "lemma": "5921 b",
+      "morph": "HR",
+      "type": null,
+      "in_qere": true,
+      "maqaf_after": true
+     }
+    ]
+   }
+  },
+  {
+   "vid": "Isa.52.5",
+   "mam": "לִּי",
+   "class": "AX",
+   "ws": {
+    "k": [
+     {
+      "id": "23JfN",
+      "text": "ל/י",
+      "lemma": "l",
+      "morph": "HR/Sp1cs",
+      "type": "x-ketiv",
+      "in_qere": false,
+      "maqaf_after": true
+     }
+    ],
+    "q": [
+     {
+      "id": "23aeF",
+      "text": "לִּ/י",
+      "lemma": "l",
+      "morph": "HR/Sp1cs",
+      "type": null,
+      "in_qere": true,
+      "maqaf_after": true
+     }
+    ]
+   }
+  }
+ ],
+ "B mater missing in MAM / supported: MAM's form has this lemma and morph elsewhere": [
+  {
+   "vid": "Gen.8.20",
+   "mam": "הַטְּהֹרָ֗ה",
+   "class": "B",
+   "morphhb": "הַ/טְּהוֹרָ֗ה",
+   "lemma": "d/2889",
+   "morph": "HTd/Aafsa",
+   "id": "013Cf",
+   "cons": {
+    "n": 4,
+    "pair": 4,
+    "lemma": 4,
+    "morph": 4,
+    "top": [
+     "2889 | HTd/Aafsa",
+     4
+    ]
+   }
+  },
+  {
+   "vid": "Gen.13.8",
+   "mam": "וּבֵינֶ֔ךָ",
+   "class": "B",
+   "morphhb": "וּ/בֵינֶ֔י/ךָ",
+   "lemma": "c/996",
+   "morph": "HC/R/Sp2ms",
+   "id": "01LMs",
+   "cons": {
+    "n": 12,
+    "pair": 12,
+    "lemma": 12,
+    "morph": 12,
+    "top": [
+     "996 | HC/R/Sp2ms",
+     12
+    ]
+   }
+  },
+  {
+   "vid": "Gen.14.2",
+   "mam": "צְבוֹיִ֔ם",
+   "class": "B",
+   "morphhb": "צְבוֹיִ֔ים",
+   "lemma": "6636",
+   "morph": "HNp",
+   "id": "01kJL",
+   "cons": {
+    "n": 1,
+    "pair": 1,
+    "lemma": 1,
+    "morph": 1,
+    "top": [
+     "6636 | HNp",
+     1
+    ]
+   }
+  },
+  {
+   "vid": "Gen.27.31",
+   "mam": "בַּעֲבֻ֖ר",
+   "class": "B",
+   "morphhb": "בַּ/עֲב֖וּר",
+   "lemma": "b/5668",
+   "morph": "HR/Ncmsc",
+   "id": "01u25",
+   "cons": {
+    "n": 1,
+    "pair": 1,
+    "lemma": 1,
+    "morph": 1,
+    "top": [
+     "5668 | HR/Ncmsc",
+     1
+    ]
+   }
+  }
+ ],
+ "B mater added in MAM / supported: MAM's form has this lemma and morph elsewhere": [
+  {
+   "vid": "Gen.8.20",
+   "mam": "הַטָּה֔וֹר",
+   "class": "B",
+   "morphhb": "הַ/טָּהֹ֔ר",
+   "lemma": "d/2889",
+   "morph": "HTd/Aamsa",
+   "id": "0134f",
+   "cons": {
+    "n": 3,
+    "pair": 3,
+    "lemma": 3,
+    "morph": 3,
+    "top": [
+     "2889 | HTd/Aamsa",
+     3
+    ]
+   }
+  },
+  {
+   "vid": "Gen.19.16",
+   "mam": "וַיַּחֲזִ֨יקוּ",
+   "class": "B",
+   "morphhb": "וַ/יַּחֲזִ֨קוּ",
+   "lemma": "c/2388",
+   "morph": "HC/Vhw3mp",
+   "id": "01hfu",
+   "cons": {
+    "n": 3,
+    "pair": 3,
+    "lemma": 3,
+    "morph": 3,
+    "top": [
+     "2388 | HC/Vhw3mp",
+     3
+    ]
+   }
+  },
+  {
+   "vid": "Gen.35.5",
+   "mam": "סְבִיב֣וֹתֵיהֶ֔ם",
+   "class": "B",
+   "morphhb": "סְבִיבֹ֣תֵי/הֶ֔ם",
+   "lemma": "5439",
+   "morph": "HNcbpc/Sp3mp",
+   "id": "012wD",
+   "cons": {
+    "n": 1,
+    "pair": 1,
+    "lemma": 1,
+    "morph": 1,
+    "top": [
+     "5439 | HNcbpc/Sp3mp",
+     1
+    ]
+   }
+  },
+  {
+   "vid": "Gen.41.35",
+   "mam": "הַטֹּב֔וֹת",
+   "class": "B",
+   "morphhb": "הַ/טֹּבֹ֔ת",
+   "lemma": "d/2896 a",
+   "morph": "HTd/Aafpa",
+   "id": "01zPf",
+   "cons": {
+    "n": 3,
+    "pair": 3,
+    "lemma": 3,
+    "morph": 3,
+    "top": [
+     "2896 | HTd/Aafpa",
+     3
+    ]
+   }
+  }
+ ],
+ "B mater missing in MAM / MAM's form not elsewhere in morphhb": [
+  {
+   "vid": "Gen.14.22",
+   "mam": "הֲרִמֹ֨תִי",
+   "class": "B",
+   "morphhb": "הֲרִימֹ֨תִי",
+   "lemma": "7311 a",
+   "morph": "HVhp1cs",
+   "id": "01QxV",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   }
+  },
+  {
+   "vid": "Gen.25.3",
+   "mam": "וּלְטוּשִׁ֖ם",
+   "class": "B",
+   "morphhb": "וּ/לְטוּשִׁ֖ים",
+   "lemma": "c/3912",
+   "morph": "HC/Np",
+   "id": "01VhT",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   }
+  },
+  {
+   "vid": "Gen.46.9",
+   "mam": "וְחֶצְרֹ֥ן",
+   "class": "B",
+   "morphhb": "וְ/חֶצְר֥וֹן",
+   "lemma": "c/2696",
+   "morph": "HC/Np",
+   "id": "01PLB",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   }
+  },
+  {
+   "vid": "Gen.46.12",
+   "mam": "חֶצְרֹ֥ן",
+   "class": "B",
+   "morphhb": "חֶצְר֥וֹן",
+   "lemma": "2696",
+   "morph": "HNp",
+   "id": "01aCu",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   }
+  }
+ ],
+ "B other letters / supported: MAM's form has this lemma and morph elsewhere": [
+  {
+   "vid": "Gen.19.20",
+   "mam": "וְהִ֣וא",
+   "class": "B",
+   "morphhb": "וְ/הִ֣יא",
+   "lemma": "c/1931",
+   "morph": "HC/Pp3fs",
+   "id": "01R4y",
+   "cons": {
+    "n": 8,
+    "pair": 8,
+    "lemma": 8,
+    "morph": 8,
+    "top": [
+     "1931 | HC/Pp3fs",
+     8
+    ]
+   }
+  },
+  {
+   "vid": "Gen.26.7",
+   "mam": "הִֽוא",
+   "class": "B",
+   "morphhb": "הִֽיא",
+   "lemma": "1931",
+   "morph": "HPp3fs",
+   "id": "01Unp",
+   "cons": {
+    "n": 128,
+    "pair": 127,
+    "lemma": 128,
+    "morph": 127,
+    "top": [
+     "1931 | HPp3fs",
+     127
+    ]
+   }
+  },
+  {
+   "vid": "Gen.35.23",
+   "mam": "וּזְבֻלֽוּן",
+   "class": "B",
+   "morphhb": "וּ/זְבוּלֻֽן",
+   "lemma": "c/2074",
+   "morph": "HC/Np",
+   "id": "01knm",
+   "cons": {
+    "n": 3,
+    "pair": 3,
+    "lemma": 3,
+    "morph": 3,
+    "top": [
+     "2074 | HC/Np",
+     3
+    ]
+   }
+  },
+  {
+   "vid": "Gen.40.10",
+   "mam": "וְהִ֤וא",
+   "class": "B",
+   "morphhb": "וְ/הִ֤יא",
+   "lemma": "c/1931",
+   "morph": "HC/Pp3fs",
+   "id": "01m9w",
+   "cons": {
+    "n": 8,
+    "pair": 8,
+    "lemma": 8,
+    "morph": 8,
+    "top": [
+     "1931 | HC/Pp3fs",
+     8
+    ]
+   }
+  }
+ ],
+ "B matres both ways / contradicted in lemma: same morph elsewhere, never this lemma": [
+  {
+   "vid": "Exod.29.40",
+   "mam": "רְבִיעִ֥ת",
+   "class": "B",
+   "morphhb": "רְבִעִ֥ית",
+   "lemma": "7253",
+   "morph": "HAofsc",
+   "id": "02ZHi",
+   "cons": {
+    "n": 3,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 3,
+    "top": [
+     "7243 | HAofsc",
+     3
+    ]
+   }
+  }
+ ],
+ "B matres both ways / supported: MAM's form has this lemma and morph elsewhere": [
+  {
+   "vid": "Exod.36.19",
+   "mam": "אֵילִ֖ם",
+   "class": "B",
+   "morphhb": "אֵלִ֖ים",
+   "lemma": "352 a",
+   "morph": "HNcmpa",
+   "id": "02ouJ",
+   "cons": {
+    "n": 26,
+    "pair": 25,
+    "lemma": 25,
+    "morph": 25,
+    "top": [
+     "352 | HNcmpa",
+     25
+    ]
+   }
+  },
+  {
+   "vid": "Ps.105.28",
+   "mam": "דבריו",
+   "class": "B",
+   "morphhb": "דברו/ו",
+   "lemma": "1697",
+   "morph": "HNcmpc/Sp3ms",
+   "id": "19wD4",
+   "cons": {
+    "n": 1,
+    "pair": 1,
+    "lemma": 1,
+    "morph": 1,
+    "top": [
+     "1697 | HNcmpc/Sp3ms",
+     1
+    ]
+   }
+  },
+  {
+   "vid": "Prov.22.20",
+   "mam": "בְּמֹ֖עֵצ֣וֹת",
+   "class": "B",
+   "morphhb": "בְּ/מ֖וֹעֵצֹ֣ת",
+   "lemma": "b/4156",
+   "morph": "HR/Ncfpa",
+   "id": "20M4g",
+   "cons": {
+    "n": 1,
+    "pair": 1,
+    "lemma": 1,
+    "morph": 1,
+    "top": [
+     "4156 | HR/Ncfpa",
+     1
+    ]
+   }
+  }
+ ],
+ "B mater added in MAM / MAM's form not elsewhere in morphhb": [
+  {
+   "vid": "Num.9.7",
+   "mam": "הַקְרִ֜יב",
+   "class": "B",
+   "morphhb": "הַקְרִ֜ב",
+   "lemma": "7126",
+   "morph": "HVhc",
+   "id": "04z6J",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   }
+  },
+  {
+   "vid": "Num.15.39",
+   "mam": "תָת֜וּרוּ",
+   "class": "B",
+   "morphhb": "תָתֻ֜רוּ",
+   "lemma": "8446",
+   "morph": "HVqi2mp",
+   "id": "04wgp",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   }
+  },
+  {
+   "vid": "Deut.8.2",
+   "mam": "הוֹלִֽיכְךָ֜",
+   "class": "B",
+   "morphhb": "הֹלִֽיכֲ/ךָ֜",
+   "lemma": "3212",
+   "morph": "HVhp3ms/Sp2ms",
+   "id": "05Pdw",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   }
+  },
+  {
+   "vid": "Deut.8.3",
+   "mam": "הוֹדִֽיעֲךָ֗",
+   "class": "B",
+   "morphhb": "הוֹדִֽעֲ/ךָ֗",
+   "lemma": "3045",
+   "morph": "HVhc/Sp2ms",
+   "id": "05aSS",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   }
+  }
+ ],
+ "B other letters / MAM's form not elsewhere in morphhb": [
+  {
+   "vid": "Deut.6.9",
+   "mam": "מְזֻז֥וֹת",
+   "class": "B",
+   "morphhb": "מְזוּזֹ֥ת",
+   "lemma": "4201",
+   "morph": "HNcfpc",
+   "id": "05KkZ",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   }
+  },
+  {
+   "vid": "Josh.10.24",
+   "mam": "הֶהָלְכ֣וּ",
+   "class": "B",
+   "morphhb": "הֶ/הָלְכ֣וּא",
+   "lemma": "d/1980",
+   "morph": "HTd/Vqp3cp",
+   "id": "06zJe",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   }
+  },
+  {
+   "vid": "Josh.21.10",
+   "mam": "רִאישֹׁנָֽה",
+   "class": "B",
+   "morphhb": "רִיאשֹׁנָֽה",
+   "lemma": "7223",
+   "morph": "HAofsa",
+   "id": "06Es7",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   }
+  },
+  {
+   "vid": "2Sam.18.8",
+   "mam": "נפצות",
+   "class": "B",
+   "morphhb": "נפצית",
+   "lemma": "6327 a",
+   "morph": "HVNsfpa",
+   "id": "10Ph4",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   }
+  }
+ ],
+ "B mater missing in MAM / contradicted in morph: same lemma elsewhere, never this morph": [
+  {
+   "vid": "Deut.20.1",
+   "mam": "אֹיְבֶ֗ךָ",
+   "class": "B",
+   "morphhb": "אֹיְבֶ֗י/ךָ",
+   "lemma": "341",
+   "morph": "HVqrmpc/Sp2ms",
+   "id": "0536n",
+   "cons": {
+    "n": 1,
+    "pair": 0,
+    "lemma": 1,
+    "morph": 0,
+    "top": [
+     "341 | HVqrmsc/Sp2ms",
+     1
+    ]
+   }
+  },
+  {
+   "vid": "Deut.32.27",
+   "mam": "יָדֵ֣נוּ",
+   "class": "B",
+   "morphhb": "יָדֵ֣י/נוּ",
+   "lemma": "3027",
+   "morph": "HNcbdc/Sp1cp",
+   "id": "055H7",
+   "cons": {
+    "n": 1,
+    "pair": 0,
+    "lemma": 1,
+    "morph": 0,
+    "top": [
+     "3027 | HNcbsc/Sp1cp",
+     1
+    ]
+   }
+  },
+  {
+   "vid": "Judg.16.23",
+   "mam": "אוֹיְבֵֽנוּ",
+   "class": "B",
+   "morphhb": "אוֹיְבֵֽי/נוּ",
+   "lemma": "341",
+   "morph": "HVqrmpc/Sp1cp",
+   "id": "076DP",
+   "cons": {
+    "n": 1,
+    "pair": 0,
+    "lemma": 1,
+    "morph": 0,
+    "top": [
+     "341 | HVqrmsc/Sp1cp",
+     1
+    ]
+   }
+  },
+  {
+   "vid": "1Kgs.21.9",
+   "mam": "וְהֹשִׁ֥יבוּ",
+   "class": "B",
+   "morphhb": "וְ/הוֹשִׁ֥יבוּ",
+   "lemma": "c/3427",
+   "morph": "HC/Vhv2mp",
+   "id": "1166F",
+   "cons": {
+    "n": 1,
+    "pair": 0,
+    "lemma": 1,
+    "morph": 0,
+    "top": [
+     "3427 | HC/Vhp3cp",
+     1
+    ]
+   }
+  }
+ ],
+ "B mater added in MAM / contradicted in both": [
+  {
+   "vid": "Judg.4.11",
+   "mam": "אֵיל֥וֹן",
+   "class": "B",
+   "morphhb": "אֵל֥וֹן",
+   "lemma": "436",
+   "morph": "HNcmsa",
+   "id": "07K5D",
+   "cons": {
+    "n": 2,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": [
+     "356 | HNp",
+     2
+    ]
+   }
+  },
+  {
+   "vid": "Ps.89.23",
+   "mam": "יַשִּׁ֣יא",
+   "class": "B",
+   "morphhb": "יַשִּׁ֣א",
+   "lemma": "5378",
+   "morph": "HVhi3ms",
+   "id": "19uSA",
+   "cons": {
+    "n": 2,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": [
+     "5377 | HVhj3ms",
+     2
+    ]
+   }
+  },
+  {
+   "vid": "Job.40.16",
+   "mam": "וְ֝אוֹנ֗וֹ",
+   "class": "B",
+   "morphhb": "וְ֝/אֹנ֗/וֹ",
+   "lemma": "c/202",
+   "morph": "HC/Ncmsc/Sp3ms",
+   "id": "18zYY",
+   "cons": {
+    "n": 3,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": [
+     "207 | HC/Np",
+     3
+    ]
+   }
+  }
+ ],
+ "B matres both ways / MAM's form not elsewhere in morphhb": [
+  {
+   "vid": "1Sam.3.8",
+   "mam": "בַּשְּׁלִישִׁת֒",
+   "class": "B",
+   "morphhb": "בַּ/שְּׁלִשִׁית֒",
+   "lemma": "b/7992",
+   "morph": "HRd/Aofsa",
+   "id": "09WQ1",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   }
+  },
+  {
+   "vid": "2Kgs.16.17",
+   "mam": "הַמְּכוֹנֹ֗ת",
+   "class": "B",
+   "morphhb": "הַ/מְּכֹנ֗וֹת",
+   "lemma": "d/4350",
+   "morph": "HTd/Ncfpa",
+   "id": "12zEv",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   }
+  },
+  {
+   "vid": "Ezek.43.15",
+   "mam": "וּמֵהָאֲרִיאֵ֣ל",
+   "class": "B",
+   "morphhb": "וּ/מֵ/הָ/אֲרִאֵ֣יל",
+   "lemma": "c/m/d/741",
+   "morph": "HC/R/Td/Ncmsa",
+   "id": "26K3C",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   }
+  },
+  {
+   "vid": "Prov.31.17",
+   "mam": "זְרוֹעֹתֶֽיהָ",
+   "class": "B",
+   "morphhb": "זְרֹעוֹתֶֽי/הָ",
+   "lemma": "2220",
+   "morph": "HNcbpc/Sp3fs",
+   "id": "20nru",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   }
+  }
+ ],
+ "B mater added in MAM / contradicted in morph: same lemma elsewhere, never this morph": [
+  {
+   "vid": "2Sam.15.3",
+   "mam": "דְבָרֶ֖יךָ",
+   "class": "B",
+   "morphhb": "דְבָרֶ֖/ךָ",
+   "lemma": "1697",
+   "morph": "HNcmsc/Sp2ms",
+   "id": "10Jp4",
+   "cons": {
+    "n": 7,
+    "pair": 0,
+    "lemma": 6,
+    "morph": 0,
+    "top": [
+     "1697 | HNcmpc/Sp2ms",
+     6
+    ]
+   }
+  },
+  {
+   "vid": "Hos.13.15",
+   "mam": "בֵּ֥ין",
+   "class": "B",
+   "morphhb": "בֵּ֥ן",
+   "lemma": "996",
+   "morph": "HNcmsc",
+   "id": "28sYk",
+   "cons": {
+    "n": 168,
+    "pair": 0,
+    "lemma": 167,
+    "morph": 0,
+    "top": [
+     "996 | HR",
+     167
+    ]
+   }
+  },
+  {
+   "vid": "Ps.36.7",
+   "mam": "מִ֭שְׁפָּטֶיךָ",
+   "class": "B",
+   "morphhb": "מִ֭שְׁפָּטֶ/ךָ",
+   "lemma": "4941",
+   "morph": "HNcmsc/Sp2ms",
+   "id": "19Xw7",
+   "cons": {
+    "n": 13,
+    "pair": 0,
+    "lemma": 13,
+    "morph": 0,
+    "top": [
+     "4941 | HNcmpc/Sp2ms",
+     13
+    ]
+   }
+  },
+  {
+   "vid": "Job.11.13",
+   "mam": "כַּפֶּֽיךָ",
+   "class": "B",
+   "morphhb": "כַּפֶּֽ/ךָ",
+   "lemma": "3709",
+   "morph": "HNcfsc/Sp2ms",
+   "id": "18UBC",
+   "cons": {
+    "n": 4,
+    "pair": 0,
+    "lemma": 4,
+    "morph": 0,
+    "top": [
+     "3709 | HNcfdc/Sp2ms",
+     4
+    ]
+   }
+  }
+ ],
+ "B other letters / contradicted in lemma: same morph elsewhere, never this lemma": [
+  {
+   "vid": "2Sam.23.11",
+   "mam": "שַׁמָּ֥ה",
+   "class": "B",
+   "morphhb": "שַׁמָּ֥א",
+   "lemma": "8037",
+   "morph": "HNp",
+   "id": "10u96",
+   "cons": {
+    "n": 12,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 7,
+    "top": [
+     "8048 | HNp",
+     7
+    ]
+   }
+  },
+  {
+   "vid": "Mal.3.16",
+   "mam": "אֶל",
+   "class": "B",
+   "morphhb": "אֶת",
+   "lemma": "854",
+   "morph": "HR",
+   "id": "39XPV",
+   "cons": {
+    "n": 3542,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 3541,
+    "top": [
+     "413 | HR",
+     3539
+    ]
+   }
+  },
+  {
+   "vid": "Neh.11.17",
+   "mam": "מִ֠יכָ֠א",
+   "class": "B",
+   "morphhb": "מִ֠יכָה",
+   "lemma": "4318",
+   "morph": "HNp",
+   "id": "16T7b",
+   "cons": {
+    "n": 4,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 4,
+    "top": [
+     "4316 | HNp",
+     4
+    ]
+   }
+  }
+ ],
+ "B other letters / contradicted in morph: same lemma elsewhere, never this morph": [
+  {
+   "vid": "2Kgs.14.7",
+   "mam": "בְּגֵי",
+   "class": "B",
+   "morphhb": "בְּ/גֵיא",
+   "lemma": "b/1516",
+   "morph": "HR/Np",
+   "id": "12nHz",
+   "cons": {
+    "n": 2,
+    "pair": 0,
+    "lemma": 2,
+    "morph": 0,
+    "top": [
+     "1516 | HR/Ncbsc",
+     2
+    ]
+   }
+  },
+  {
+   "vid": "Ps.8.4",
+   "mam": "מַעֲשֵׂ֣ה",
+   "class": "B",
+   "morphhb": "מַעֲשֵׂ֣י",
+   "lemma": "4639",
+   "morph": "HNcmpc",
+   "id": "19gbT",
+   "cons": {
+    "n": 85,
+    "pair": 0,
+    "lemma": 85,
+    "morph": 0,
+    "top": [
+     "4639 | HNcmsc",
+     85
+    ]
+   }
+  },
+  {
+   "vid": "Job.36.12",
+   "mam": "בִּבְלִי",
+   "class": "B",
+   "morphhb": "כִּ/בְלִי",
+   "lemma": "k/1097",
+   "morph": "HR/Tn",
+   "id": "188B7",
+   "cons": {
+    "n": 4,
+    "pair": 0,
+    "lemma": 4,
+    "morph": 0,
+    "top": [
+     "1097 | HR/Ncmsc",
+     4
+    ]
+   }
+  },
+  {
+   "vid": "Ruth.2.6",
+   "mam": "מִשְּׂדֵ֥י",
+   "class": "B",
+   "morphhb": "מִ/שְּׂדֵ֥ה",
+   "lemma": "m/7704 b",
+   "morph": "HR/Ncmsc",
+   "id": "08gBW",
+   "cons": {
+    "n": 2,
+    "pair": 0,
+    "lemma": 2,
+    "morph": 0,
+    "top": [
+     "7704 | HR/Ncmpc",
+     2
+    ]
+   }
+  }
+ ],
+ "B mater missing in MAM / contradicted in lemma: same morph elsewhere, never this lemma": [
+  {
+   "vid": "Jer.8.9",
+   "mam": "הֹבִ֣שׁוּ",
+   "class": "B",
+   "morphhb": "הֹבִ֣ישׁוּ",
+   "lemma": "954",
+   "morph": "HVhp3cp",
+   "id": "24Cch",
+   "cons": {
+    "n": 1,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 1,
+    "top": [
+     "3001 | HVhp3cp",
+     1
+    ]
+   }
+  }
+ ],
+ "B mater missing in MAM / contradicted in both": [
+  {
+   "vid": "Jer.20.10",
+   "mam": "שְׁלֹמִ֔י",
+   "class": "B",
+   "morphhb": "שְׁלוֹמִ֔/י",
+   "lemma": "7965",
+   "morph": "HNcmsc/Sp1cs",
+   "id": "24uBa",
+   "cons": {
+    "n": 1,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": [
+     "8015 | HNp",
+     1
+    ]
+   }
+  },
+  {
+   "vid": "Neh.7.37",
+   "mam": "וְאֹנ֔וֹ",
+   "class": "B",
+   "morphhb": "וְ/אוֹנ֔וֹ",
+   "lemma": "c/207",
+   "morph": "HC/Np",
+   "id": "16YE4",
+   "cons": {
+    "n": 1,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": [
+     "202 | HC/Ncmsc/Sp3ms",
+     1
+    ]
+   }
+  }
+ ],
+ "B other letters / contradicted in both": [
+  {
+   "vid": "Ps.68.27",
+   "mam": "אֲ֝דֹנָ֗י",
+   "class": "B",
+   "morphhb": "יְ֝הוָ֗ה",
+   "lemma": "3068",
+   "morph": "HNp",
+   "id": "19MkY",
+   "cons": {
+    "n": 420,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": [
+     "136 | HNcmpc/Sp1cs",
+     418
+    ]
+   }
+  }
+ ],
+ "C MAM's trivial ketiv/qere (one form) where morphhb has a ketiv and a qere": [
+  {
+   "vid": "Gen.13.3",
+   "mam": [
+    "אׇֽהֳלֹה֙"
+   ],
+   "mam_on": [
+    "kq"
+   ],
+   "morphhb": {
+    "k": [
+     [
+      "אהל/ה",
+      "0188E",
+      "168",
+      "HNcmsc/Sp3ms",
+      "x-ketiv",
+      false
+     ]
+    ],
+    "q": [
+     [
+      "אָֽהֳל/וֹ֙",
+      "01Gdj",
+      "168",
+      "HNcmsc/Sp3ms",
+      null,
+      true
+     ]
+    ]
+   }
+  },
+  {
+   "vid": "Gen.49.10",
+   "mam": [
+    "שִׁילֹ֔ה"
+   ],
+   "mam_on": [
+    "kq"
+   ],
+   "morphhb": {
+    "k": [
+     [
+      "שילה",
+      "01qXR",
+      "7886",
+      "HNp",
+      "x-ketiv",
+      false
+     ]
+    ],
+    "q": [
+     [
+      "שִׁיל֔וֹ",
+      "01KU3",
+      "7886",
+      "HNp",
+      null,
+      true
+     ]
+    ]
+   }
+  },
+  {
+   "vid": "Gen.49.11",
+   "mam": [
+    "עִירֹ֔ה"
+   ],
+   "mam_on": [
+    "kq"
+   ],
+   "morphhb": {
+    "k": [
+     [
+      "עיר/ה",
+      "017zp",
+      "5895",
+      "HNcmsc/Sp3ms",
+      "x-ketiv",
+      false
+     ]
+    ],
+    "q": [
+     [
+      "עִיר֔/וֹ",
+      "01BN1",
+      "5895",
+      "HNcmsc/Sp3ms",
+      null,
+      true
+     ]
+    ]
+   }
+  },
+  {
+   "vid": "Gen.49.11",
+   "mam": [
+    "סוּתֹֽה"
+   ],
+   "mam_on": [
+    "kq"
+   ],
+   "morphhb": {
+    "k": [
+     [
+      "סות/ה",
+      "0186h",
+      "5497",
+      "HNcmsc/Sp3ms",
+      "x-ketiv",
+      false
+     ]
+    ],
+    "q": [
+     [
+      "סוּתֽ/וֹ",
+      "01Chx",
+      "5497",
+      "HNcmsc/Sp3ms",
+      null,
+      true
+     ]
+    ]
+   }
+  },
+  {
+   "vid": "Exod.22.4",
+   "mam": [
+    "בְּעִירֹ֔ה"
+   ],
+   "mam_on": [
+    "kq"
+   ],
+   "morphhb": {
+    "k": [
+     [
+      "בעיר/ה",
+      "02S27",
+      "1165",
+      "HNcmsc/Sp3ms",
+      "x-ketiv",
+      false
+     ]
+    ],
+    "q": [
+     [
+      "בְּעִיר֔/וֹ",
+      "02ADR",
+      "1165",
+      "HNcmsc/Sp3ms",
+      null,
+      true
+     ]
+    ]
+   }
+  },
+  {
+   "vid": "Exod.22.26",
+   "mam": [
+    "כְסוּתֹה֙"
+   ],
+   "mam_on": [
+    "kq"
+   ],
+   "morphhb": {
+    "k": [
+     [
+      "כסות/ה",
+      "02EYu",
+      "3682",
+      "HNcfsc/Sp3ms",
+      "x-ketiv",
+      false
+     ]
+    ],
+    "q": [
+     [
+      "כְסוּת/וֹ֙",
+      "02CvC",
+      "3682",
+      "HNcfsc/Sp3ms",
+      null,
+      true
+     ]
+    ]
+   }
+  }
+ ],
+ "C division into atoms differs (same letters)": [
+  {
+   "vid": "Num.2.12",
+   "mam": [
+    "צוּרִֽישַׁדָּֽי"
+   ],
+   "mam_on": [
+    "kq"
+   ],
+   "morphhb": {
+    "k": [
+     [
+      "צוּרִֽי",
+      "04rxG",
+      "6701+",
+      "HNp",
+      null,
+      false
+     ],
+     [
+      "שַׁדָּֽי",
+      "046fj",
+      "6701",
+      "HNp",
+      null,
+      false
+     ]
+    ],
+    "q": [
+     [
+      "צוּרִֽי",
+      "04rxG",
+      "6701+",
+      "HNp",
+      null,
+      false
+     ],
+     [
+      "שַׁדָּֽי",
+      "046fj",
+      "6701",
+      "HNp",
+      null,
+      false
+     ]
+    ]
+   }
+  },
+  {
+   "vid": "Num.7.54",
+   "mam": [
+    "פְּדָהצֽוּר"
+   ],
+   "mam_on": [
+    "kq"
+   ],
+   "morphhb": {
+    "k": [
+     [
+      "פְּדָה",
+      "041ou",
+      "6301+",
+      "HNp",
+      null,
+      false
+     ],
+     [
+      "צֽוּר",
+      "04bjQ",
+      "6301",
+      "HNp",
+      null,
+      false
+     ]
+    ],
+    "q": [
+     [
+      "פְּדָה",
+      "041ou",
+      "6301+",
+      "HNp",
+      null,
+      false
+     ],
+     [
+      "צֽוּר",
+      "04bjQ",
+      "6301",
+      "HNp",
+      null,
+      false
+     ]
+    ]
+   }
+  },
+  {
+   "vid": "Num.7.59",
+   "mam": [
+    "פְּדָהצֽוּר"
+   ],
+   "mam_on": [
+    "kq"
+   ],
+   "morphhb": {
+    "k": [
+     [
+      "פְּדָה",
+      "042rB",
+      "6301+",
+      "HNp",
+      null,
+      false
+     ],
+     [
+      "צֽוּר",
+      "04Hxg",
+      "6301",
+      "HNp",
+      null,
+      false
+     ]
+    ],
+    "q": [
+     [
+      "פְּדָה",
+      "042rB",
+      "6301+",
+      "HNp",
+      null,
+      false
+     ],
+     [
+      "צֽוּר",
+      "04Hxg",
+      "6301",
+      "HNp",
+      null,
+      false
+     ]
+    ]
+   }
+  },
+  {
+   "vid": "Num.10.19",
+   "mam": [
+    "צוּרִֽישַׁדָּֽי"
+   ],
+   "mam_on": [
+    "kq"
+   ],
+   "morphhb": {
+    "k": [
+     [
+      "צוּרִֽי",
+      "046Yk",
+      "6701+",
+      "HNp",
+      null,
+      false
+     ],
+     [
+      "שַׁדָּֽי",
+      "04yaX",
+      "6701",
+      "HNp",
+      null,
+      false
+     ]
+    ],
+    "q": [
+     [
+      "צוּרִֽי",
+      "046Yk",
+      "6701+",
+      "HNp",
+      null,
+      false
+     ],
+     [
+      "שַׁדָּֽי",
+      "04yaX",
+      "6701",
+      "HNp",
+      null,
+      false
+     ]
+    ]
+   }
+  },
+  {
+   "vid": "Num.10.23",
+   "mam": [
+    "פְּדָהצֽוּר"
+   ],
+   "mam_on": [
+    "kq"
+   ],
+   "morphhb": {
+    "k": [
+     [
+      "פְּדָה",
+      "04brS",
+      "6301",
+      "HNp",
+      null,
+      false
+     ],
+     [
+      "צֽוּר",
+      "04wJM",
+      "6301",
+      "HNp",
+      null,
+      false
+     ]
+    ],
+    "q": [
+     [
+      "פְּדָה",
+      "04brS",
+      "6301",
+      "HNp",
+      null,
+      false
+     ],
+     [
+      "צֽוּר",
+      "04wJM",
+      "6301",
+      "HNp",
+      null,
+      false
+     ]
+    ]
+   }
+  },
+  {
+   "vid": "1Sam.4.21",
+   "mam": [
+    "אִֽיכָבוֹד֙"
+   ],
+   "mam_on": [
+    "kq"
+   ],
+   "morphhb": {
+    "k": [
+     [
+      "אִֽי",
+      "09ZCR",
+      "350+",
+      "HTj",
+      null,
+      false
+     ],
+     [
+      "כָבוֹד֙",
+      "09m4e",
+      "350",
+      "HNp",
+      null,
+      false
+     ]
+    ],
+    "q": [
+     [
+      "אִֽי",
+      "09ZCR",
+      "350+",
+      "HTj",
+      null,
+      false
+     ],
+     [
+      "כָבוֹד֙",
+      "09m4e",
+      "350",
+      "HNp",
+      null,
+      false
+     ]
+    ]
+   }
+  }
+ ],
+ "C MAM plain where morphhb has a ketiv and a qere": [
+  {
+   "vid": "Judg.7.13",
+   "mam": [
+    "צְלִ֜יל"
+   ],
+   "mam_on": [
+    "kq"
+   ],
+   "morphhb": {
+    "k": [
+     [
+      "צלול",
+      "07hNP",
+      "6742",
+      "HNcmsc",
+      "x-ketiv",
+      false
+     ]
+    ],
+    "q": [
+     [
+      "צְלִ֜יל",
+      "07vwy",
+      "6742",
+      "HNcmsc",
+      null,
+      true
+     ]
+    ]
+   }
+  },
+  {
+   "vid": "1Sam.2.9",
+   "mam": [
+    "חֲסִידָו֙"
+   ],
+   "mam_on": [
+    "kq"
+   ],
+   "morphhb": {
+    "k": [
+     [
+      "חסיד/ו",
+      "09XjR",
+      "2623",
+      "HAamsc/Sp3ms",
+      "x-ketiv",
+      false
+     ]
+    ],
+    "q": [
+     [
+      "חֲסִידָי/ו֙",
+      "09jaD",
+      "2623",
+      "HAampc/Sp3ms",
+      null,
+      true
+     ]
+    ]
+   }
+  },
+  {
+   "vid": "1Sam.8.3",
+   "mam": [
+    "בִּדְרָכָ֔ו"
+   ],
+   "mam_on": [
+    "kq"
+   ],
+   "morphhb": {
+    "k": [
+     [
+      "ב/דרכ/ו",
+      "09LMe",
+      "b/1870",
+      "HR/Ncbsc/Sp3ms",
+      "x-ketiv",
+      false
+     ]
+    ],
+    "q": [
+     [
+      "בִּ/דְרָכָ֔י/ו",
+      "09zuk",
+      "b/1870",
+      "HR/Ncbpc/Sp3ms",
+      null,
+      true
+     ]
+    ]
+   }
+  },
+  {
+   "vid": "1Sam.21.14",
+   "mam": [
+    "וַיְתָו֙"
+   ],
+   "mam_on": [
+    "kq"
+   ],
+   "morphhb": {
+    "k": [
+     [
+      "ו/יתו",
+      "09oC1",
+      "c/8427",
+      "HC/Vpw3ms",
+      "x-ketiv",
+      false
+     ]
+    ],
+    "q": [
+     [
+      "וַ/יְתָיו֙",
+      "09bst",
+      "c/8427",
+      "HC/Vpw3ms",
+      null,
+      true
+     ]
+    ]
+   }
+  },
+  {
+   "vid": "1Sam.22.13",
+   "mam": [
+    "אֵלָו֙"
+   ],
+   "mam_on": [
+    "kq"
+   ],
+   "morphhb": {
+    "k": [
+     [
+      "אל/ו",
+      "09xTu",
+      "413",
+      "HR/Sp3ms",
+      "x-ketiv",
+      false
+     ]
+    ],
+    "q": [
+     [
+      "אֵלָי/ו֙",
+      "09hya",
+      "413",
+      "HR/Sp3ms",
+      null,
+      true
+     ]
+    ]
+   }
+  },
+  {
+   "vid": "1Sam.30.6",
+   "mam": [
+    "בָּנָ֣ו"
+   ],
+   "mam_on": [
+    "kq"
+   ],
+   "morphhb": {
+    "k": [
+     [
+      "בנ/ו",
+      "09D3Q",
+      "1121 a",
+      "HNcmsc/Sp3ms",
+      "x-ketiv",
+      false
+     ]
+    ],
+    "q": [
+     [
+      "בָּנָ֣י/ו",
+      "09gLX",
+      "1121 a",
+      "HNcmpc/Sp3ms",
+      null,
+      true
+     ]
+    ]
+   }
+  }
+ ],
+ "C MAM atom(s) with no morphhb word": [
+  {
+   "vid": "2Sam.7.22",
+   "mam": [
+    "אֱלֹהִ֑ים"
+   ],
+   "mam_on": [
+    "kq"
+   ],
+   "morphhb": {
+    "k": [],
+    "q": []
+   }
+  },
+  {
+   "vid": "Dan.5.19",
+   "mam": [
+    "הֲוָ֨א",
+    "צָבֵ֜א"
+   ],
+   "mam_on": [
+    "kq",
+    "kq"
+   ],
+   "morphhb": {
+    "k": [],
+    "q": []
+   }
+  }
+ ],
+ "C MAM ketiv/qere with another structure in morphhb": [
+  {
+   "vid": "2Kgs.6.25",
+   "mam": [
+    "דִּב"
+   ],
+   "mam_on": [
+    "q"
+   ],
+   "morphhb": {
+    "q": [
+     [
+      "דִּבְיוֹנִ֖ים",
+      "12Bqs",
+      "1686",
+      "HNcmpa",
+      null,
+      true
+     ]
+    ]
+   }
+  },
+  {
+   "vid": "Isa.9.6",
+   "mam": [
+    "לם",
+    "רבה"
+   ],
+   "mam_on": [
+    "k",
+    "k"
+   ],
+   "morphhb": {
+    "k": [
+     [
+      "ל/םרבה",
+      "23ssX",
+      "l/4766",
+      "HR/Ncmsc",
+      "x-ketiv",
+      false
+     ]
+    ]
+   }
+  },
+  {
+   "vid": "Jer.29.23",
+   "mam": [
+    "הוידע"
+   ],
+   "mam_on": [
+    "k"
+   ],
+   "morphhb": {
+    "k": [
+     [
+      "הו",
+      "24pmm",
+      "1931",
+      "HPp3ms",
+      "x-ketiv",
+      false
+     ],
+     [
+      "ידע",
+      "24ATv",
+      "3045",
+      "HVqrmsa",
+      "x-ketiv",
+      false
+     ]
+    ]
+   }
+  },
+  {
+   "vid": "Ps.123.4",
+   "mam": [
+    "לִגְאֵ֥י",
+    "יוֹנִֽים"
+   ],
+   "mam_on": [
+    "q",
+    "q"
+   ],
+   "morphhb": {
+    "q": [
+     [
+      "לִ/גְאֵ֥יוֹנִֽים",
+      "192za",
+      "l/1349",
+      "HR/Aampa",
+      null,
+      false
+     ]
+    ]
+   }
+  },
+  {
+   "vid": "Job.38.1",
+   "mam": [
+    "מנהסערה"
+   ],
+   "mam_on": [
+    "k"
+   ],
+   "morphhb": {
+    "k": [
+     [
+      "מנ",
+      "18rDJ",
+      "4480 a",
+      "HR",
+      "x-ketiv",
+      false
+     ],
+     [
+      "ה/סערה",
+      "18ZbD",
+      "d/5591 b",
+      "HTd/Ncfsa",
+      "x-ketiv",
+      false
+     ]
+    ]
+   }
+  },
+  {
+   "vid": "Job.40.6",
+   "mam": [
+    "מנסערה"
+   ],
+   "mam_on": [
+    "k"
+   ],
+   "morphhb": {
+    "k": [
+     [
+      "מנ",
+      "187qo",
+      "4480 a",
+      "HR",
+      "x-ketiv",
+      false
+     ],
+     [
+      "סערה",
+      "18htN",
+      "5591 b",
+      "HNcfsa",
+      "x-ketiv",
+      false
+     ]
+    ]
+   }
+  }
+ ],
+ "C letters and division differ": [
+  {
+   "vid": "2Kgs.18.19",
+   "mam": [
+    "אֲלֵיהֶם֙",
+    "רַבְשָׁקֵ֔ה"
+   ],
+   "mam_on": [
+    "kq",
+    "kq"
+   ],
+   "morphhb": {
+    "k": [
+     [
+      "אֲלֵ/הֶם֙",
+      "12L6T",
+      "413",
+      "HR/Sp3mp",
+      null,
+      false
+     ],
+     [
+      "רַב",
+      "12m8E",
+      "7262+",
+      "HNcmsc",
+      null,
+      false
+     ],
+     [
+      "שָׁקֵ֔ה",
+      "122bM",
+      "7262",
+      "HNp",
+      null,
+      false
+     ]
+    ],
+    "q": [
+     [
+      "אֲלֵ/הֶם֙",
+      "12L6T",
+      "413",
+      "HR/Sp3mp",
+      null,
+      false
+     ],
+     [
+      "רַב",
+      "12m8E",
+      "7262+",
+      "HNcmsc",
+      null,
+      false
+     ],
+     [
+      "שָׁקֵ֔ה",
+      "122bM",
+      "7262",
+      "HNp",
+      null,
+      false
+     ]
+    ]
+   }
+  },
+  {
+   "vid": "Ps.149.7",
+   "mam": [
+    "תּ֝וֹכֵח֗וֹת",
+    "בַּלְאֻמִּֽים"
+   ],
+   "mam_on": [
+    "kq",
+    "kq"
+   ],
+   "morphhb": {
+    "k": [
+     [
+      "תּֽ֝וֹכֵחֹ֗ת",
+      "19iKS",
+      "8433 a",
+      "HNcfpa",
+      null,
+      false
+     ],
+     [
+      "בַּל",
+      "19jhv",
+      "1077",
+      "HTn",
+      null,
+      false
+     ],
+     [
+      "אֻמִּֽים",
+      "19Vf8",
+      "3816",
+      "HNcmpa",
+      null,
+      false
+     ]
+    ],
+    "q": [
+     [
+      "תּֽ֝וֹכֵחֹ֗ת",
+      "19iKS",
+      "8433 a",
+      "HNcfpa",
+      null,
+      false
+     ],
+     [
+      "בַּל",
+      "19jhv",
+      "1077",
+      "HTn",
+      null,
+      false
+     ],
+     [
+      "אֻמִּֽים",
+      "19Vf8",
+      "3816",
+      "HNcmpa",
+      null,
+      false
+     ]
+    ]
+   }
+  }
+ ],
+ "unmatched": [
+  {
+   "vid": "Josh.21.36",
+   "side": "k",
+   "i": 0,
+   "w": {
+    "id": "06DWU",
+    "text": "וּ/מִ/מַּטֵּ֣ה",
+    "lemma": "c/m/4294",
+    "morph": "HC/R/Ncmsc",
+    "type": null,
+    "in_qere": false,
+    "maqaf_after": false
+   },
+   "absent_verse": true
+  },
+  {
+   "vid": "Josh.21.36",
+   "side": "k",
+   "i": 1,
+   "w": {
+    "id": "06d1L",
+    "text": "רְאוּבֵ֔ן",
+    "lemma": "7205",
+    "morph": "HNp",
+    "type": null,
+    "in_qere": false,
+    "maqaf_after": false
+   },
+   "absent_verse": true
+  },
+  {
+   "vid": "Josh.21.36",
+   "side": "k",
+   "i": 2,
+   "w": {
+    "id": "06e96",
+    "text": "אֶת",
+    "lemma": "853",
+    "morph": "HTo",
+    "type": null,
+    "in_qere": false,
+    "maqaf_after": true
+   },
+   "absent_verse": true
+  },
+  {
+   "vid": "Josh.21.36",
+   "side": "k",
+   "i": 3,
+   "w": {
+    "id": "06Ci6",
+    "text": "בֶּ֖צֶר",
+    "lemma": "1221",
+    "morph": "HNp",
+    "type": null,
+    "in_qere": false,
+    "maqaf_after": false
+   },
+   "absent_verse": true
+  },
+  {
+   "vid": "Josh.21.36",
+   "side": "k",
+   "i": 4,
+   "w": {
+    "id": "06ixh",
+    "text": "וְ/אֶת",
+    "lemma": "c/853",
+    "morph": "HC/To",
+    "type": null,
+    "in_qere": false,
+    "maqaf_after": true
+   },
+   "absent_verse": true
+  },
+  {
+   "vid": "Josh.21.36",
+   "side": "k",
+   "i": 5,
+   "w": {
+    "id": "0622x",
+    "text": "מִגְרָשֶׁ֑/הָ",
+    "lemma": "4054",
+    "morph": "HNcmpc/Sp3fs",
+    "type": null,
+    "in_qere": false,
+    "maqaf_after": false
+   },
+   "absent_verse": true
+  },
+  {
+   "vid": "Josh.21.36",
+   "side": "k",
+   "i": 6,
+   "w": {
+    "id": "06ogz",
+    "text": "וְ/אֶת",
+    "lemma": "c/853",
+    "morph": "HC/To",
+    "type": null,
+    "in_qere": false,
+    "maqaf_after": true
+   },
+   "absent_verse": true
+  },
+  {
+   "vid": "Josh.21.36",
+   "side": "k",
+   "i": 7,
+   "w": {
+    "id": "06z7X",
+    "text": "יַ֖הְצָ/ה",
+    "lemma": "3096",
+    "morph": "HNp/Sd",
+    "type": null,
+    "in_qere": false,
+    "maqaf_after": false
+   },
+   "absent_verse": true
+  }
+ ],
+ "maqaf MAM none / morphhb maqaf": [
+  {
+   "vid": "Gen.2.6",
+   "mam": "פְּנֵ֥י",
+   "class": "A1",
+   "morphhb": "פְּנֵֽי",
+   "lemma": "6440",
+   "morph": "HNcbpc",
+   "id": "018na"
+  },
+  {
+   "vid": "Gen.9.24",
+   "mam": "עָ֥שָׂה",
+   "class": "A1",
+   "morphhb": "עָ֥שָׂה",
+   "lemma": "6213 a",
+   "morph": "HVqp3ms",
+   "id": "01uaL"
+  },
+  {
+   "vid": "Gen.26.16",
+   "mam": "עָצַ֥מְתָּ",
+   "class": "A1",
+   "morphhb": "עָצַֽמְתָּ",
+   "lemma": "6105 a",
+   "morph": "HVqp2ms",
+   "id": "01buz"
+  },
+  {
+   "vid": "Exod.12.45",
+   "mam": "יֹ֥אכַל",
+   "class": "A1",
+   "morphhb": "יֹ֥אכַל",
+   "lemma": "398",
+   "morph": "HVqi3ms",
+   "id": "02rTr"
+  }
+ ],
+ "maqaf MAM maqaf / morphhb none": [
+  {
+   "vid": "Gen.18.18",
+   "mam": "וְנִ֨בְרְכוּ",
+   "class": "A1",
+   "morphhb": "וְ/נִ֨בְרְכוּ",
+   "lemma": "c/1288",
+   "morph": "HC/VNq3cp",
+   "id": "01TRZ"
+  },
+  {
+   "vid": "Exod.10.13",
+   "mam": "רֽוּחַ",
+   "class": "A1",
+   "morphhb": "ר֥וּחַ",
+   "lemma": "7307",
+   "morph": "HNcbsc",
+   "id": "02ikF"
+  },
+  {
+   "vid": "Exod.20.3",
+   "mam": "לֹֽ֣א",
+   "class": "A1",
+   "morphhb": "לֹֽ֣א",
+   "lemma": "3808",
+   "morph": "HTn",
+   "id": "02ZFp"
+  },
+  {
+   "vid": "Exod.20.4",
+   "mam": "לֹֽ֣א",
+   "class": "A1",
+   "morphhb": "לֹֽ֣א",
+   "lemma": "3808",
+   "morph": "HTn",
+   "id": "02CZ7"
+  }
+ ],
+ "maqaf MAM implicit maqaf / morphhb none": [
+  {
+   "vid": "Ps.1.2",
+   "mam": "אִ֥ם",
+   "class": "A1",
+   "morphhb": "אִ֥ם",
+   "lemma": "518 a",
+   "morph": "HC",
+   "id": "19x9c"
+  },
+  {
+   "vid": "Ps.1.3",
+   "mam": "פַּלְגֵ֫י",
+   "class": "A1",
+   "morphhb": "פַּלְגֵ֫י",
+   "lemma": "6388",
+   "morph": "HNcmpc",
+   "id": "19v6U"
+  },
+  {
+   "vid": "Ps.2.7",
+   "mam": "אֶֽ֫ל",
+   "class": "A1",
+   "morphhb": "אֶֽ֫ל",
+   "lemma": "413",
+   "morph": "HR",
+   "id": "19fJN"
+  },
+  {
+   "vid": "Ps.2.7",
+   "mam": "אָמַ֘ר",
+   "class": "A1",
+   "morphhb": "אָמַ֘ר",
+   "lemma": "559",
+   "morph": "HVqp3ms",
+   "id": "19dns"
+  }
+ ],
+ "slash unplaced B": [
+  {
+   "vid": "Gen.13.8",
+   "mam": "וּבֵינֶ֔ךָ",
+   "class": "B",
+   "morphhb": "וּ/בֵינֶ֔י/ךָ",
+   "lemma": "c/996",
+   "morph": "HC/R/Sp2ms",
+   "id": "01LMs",
+   "slash": {
+    "n": 2,
+    "at_letter": true,
+    "morph_parts": 3,
+    "mapped": 1
+   }
+  },
+  {
+   "vid": "Gen.45.15",
+   "mam": "עֲלֵהֶ֑ם",
+   "class": "B",
+   "morphhb": "עֲלֵי/הֶ֑ם",
+   "lemma": "5921 a",
+   "morph": "HR/Sp3mp",
+   "id": "018dU",
+   "slash": {
+    "n": 1,
+    "at_letter": true,
+    "morph_parts": 2,
+    "mapped": 0
+   }
+  },
+  {
+   "vid": "Exod.29.22",
+   "mam": "עֲלֵיהֶ֔ן",
+   "class": "B",
+   "morphhb": "עֲלֵ/הֶ֔ן",
+   "lemma": "5921 a",
+   "morph": "HR/Sp3fp",
+   "id": "02wXZ",
+   "slash": {
+    "n": 1,
+    "at_letter": true,
+    "morph_parts": 2,
+    "mapped": 0
+   }
+  },
+  {
+   "vid": "Exod.32.34",
+   "mam": "עֲלֵהֶ֖ם",
+   "class": "B",
+   "morphhb": "עֲלֵי/הֶ֖ם",
+   "lemma": "5921 a",
+   "morph": "HR/Sp3mp",
+   "id": "02xH7",
+   "slash": {
+    "n": 1,
+    "at_letter": true,
+    "morph_parts": 2,
+    "mapped": 0
+   }
+  },
+  {
+   "vid": "Num.11.26",
+   "mam": "עֲלֵהֶ֣ם",
+   "class": "B",
+   "morphhb": "עֲלֵי/הֶ֣ם",
+   "lemma": "5921 a",
+   "morph": "HR/Sp3mp",
+   "id": "04GsM",
+   "slash": {
+    "n": 1,
+    "at_letter": true,
+    "morph_parts": 2,
+    "mapped": 0
+   }
+  },
+  {
+   "vid": "Deut.10.11",
+   "mam": "וְיִֽירְשׁ֣וּ",
+   "class": "B",
+   "morphhb": "וְ/יִֽרְשׁ֣וּ",
+   "lemma": "c/3423",
+   "morph": "HC/Vqj3mp",
+   "id": "05mRM",
+   "slash": {
+    "n": 1,
+    "at_letter": true,
+    "morph_parts": 2,
+    "mapped": 0
+   }
+  }
+ ],
+ "Rd A2 first two letters": [
+  {
+   "vid": "Gen.30.38",
+   "mam": "בָּרְהָטִ֖ים",
+   "class": "A2",
+   "morphhb": "בָּ/רֳהָטִ֖ים",
+   "lemma": "b/7298 a",
+   "morph": "HRd/Ncmpa",
+   "id": "01f6g",
+   "sig": [
+    [
+     1,
+     "ר",
+     [
+      "hataf-qamats"
+     ],
+     [
+      "shewa"
+     ]
+    ]
+   ],
+   "cons": {
+    "n": 1,
+    "pair": 1,
+    "lemma": 1,
+    "morph": 1,
+    "top": [
+     "7298 | HRd/Ncmpa",
+     1
+    ]
+   }
+  },
+  {
+   "vid": "Gen.30.41",
+   "mam": "בָּרְהָטִ֑ים",
+   "class": "A2",
+   "morphhb": "בָּ/רֳהָטִ֑ים",
+   "lemma": "b/7298 a",
+   "morph": "HRd/Ncmpa",
+   "id": "01wFq",
+   "sig": [
+    [
+     1,
+     "ר",
+     [
+      "hataf-qamats"
+     ],
+     [
+      "shewa"
+     ]
+    ]
+   ],
+   "cons": {
+    "n": 1,
+    "pair": 1,
+    "lemma": 1,
+    "morph": 1,
+    "top": [
+     "7298 | HRd/Ncmpa",
+     1
+    ]
+   }
+  },
+  {
+   "vid": "Exod.9.11",
+   "mam": "בַּֽחַרְטֻמִּ֖ם",
+   "class": "A2",
+   "morphhb": "בַּֽ/חֲרְטֻמִּ֖ם",
+   "lemma": "b/2748",
+   "morph": "HRd/Ncmpa",
+   "id": "029g8",
+   "sig": [
+    [
+     1,
+     "ח",
+     [
+      "hataf-patah"
+     ],
+     [
+      "patah"
+     ]
+    ]
+   ],
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   }
+  },
+  {
+   "vid": "Lev.13.26",
+   "mam": "בַּבַּהֶ֙רֶת֙",
+   "class": "A2",
+   "morphhb": "בַּ/בֶּהֶ֨רֶת֙",
+   "lemma": "b/934",
+   "morph": "HRd/Ncfsa",
+   "id": "03NgL",
+   "sig": [
+    [
+     1,
+     "ב",
+     [
+      "segol",
+      "dagesh"
+     ],
+     [
+      "patah",
+      "dagesh"
+     ]
+    ]
+   ],
+   "cons": {
+    "n": 1,
+    "pair": 1,
+    "lemma": 1,
+    "morph": 1,
+    "top": [
+     "934 | HRd/Ncfsa",
+     1
+    ]
+   }
+  },
+  {
+   "vid": "Deut.3.12",
+   "mam": "לָרֽאֿוּבֵנִ֖י",
+   "class": "A2",
+   "morphhb": "לָ/רֻֽאוּבֵנִ֖י",
+   "lemma": "l/7206",
+   "morph": "HRd/Ngmsa",
+   "id": "05pDQ",
+   "sig": [
+    [
+     1,
+     "ר",
+     [
+      "qubuts"
+     ],
+     []
+    ]
+   ],
+   "cons": {
+    "n": 6,
+    "pair": 6,
+    "lemma": 6,
+    "morph": 6,
+    "top": [
+     "7206 | HRd/Ngmsa",
+     6
+    ]
+   }
+  },
+  {
+   "vid": "Deut.4.43",
+   "mam": "לָרֽאֿוּבֵנִ֑י",
+   "class": "A2",
+   "morphhb": "לָ/רֻֽאוּבֵנִ֑י",
+   "lemma": "l/7206",
+   "morph": "HRd/Ngmsa",
+   "id": "05f8m",
+   "sig": [
+    [
+     1,
+     "ר",
+     [
+      "qubuts"
+     ],
+     []
+    ]
+   ],
+   "cons": {
+    "n": 6,
+    "pair": 6,
+    "lemma": 6,
+    "morph": 6,
+    "top": [
+     "7206 | HRd/Ngmsa",
+     6
+    ]
+   }
+  }
+ ],
+ "slash A1 example": [
+  {
+   "vid": "Gen.1.2",
+   "mam": "וְהָאָ֗רֶץ",
+   "class": "A1",
+   "morphhb": "וְ/הָ/אָ֗רֶץ",
+   "lemma": "c/d/776",
+   "morph": "HC/Td/Ncbsa",
+   "id": "01LN3",
+   "slash": {
+    "n": 2,
+    "at_letter": true,
+    "morph_parts": 3,
+    "mapped": 2,
+    "mam": "וְ/הָ/אָ֗רֶץ"
+   }
+  },
+  {
+   "vid": "Gen.1.5",
+   "mam": "וְלַחֹ֖שֶׁךְ",
+   "class": "A1",
+   "morphhb": "וְ/לַ/חֹ֖שֶׁךְ",
+   "lemma": "c/l/2822",
+   "morph": "HC/Rd/Ncmsa",
+   "id": "013TL",
+   "slash": {
+    "n": 2,
+    "at_letter": true,
+    "morph_parts": 3,
+    "mapped": 2,
+    "mam": "וְ/לַ/חֹ֖שֶׁךְ"
+   }
+  },
+  {
+   "vid": "Gen.1.10",
+   "mam": "וּלְמִקְוֵ֥ה",
+   "class": "A1",
+   "morphhb": "וּ/לְ/מִקְוֵ֥ה",
+   "lemma": "c/l/4723 c",
+   "morph": "HC/R/Ncmsc",
+   "id": "01jQ8",
+   "slash": {
+    "n": 2,
+    "at_letter": true,
+    "morph_parts": 3,
+    "mapped": 2,
+    "mam": "וּ/לְ/מִקְוֵ֥ה"
+   }
+  }
+ ],
+ "slash B example": [
+  {
+   "vid": "Gen.8.20",
+   "mam": "הַטְּהֹרָ֗ה",
+   "class": "B",
+   "morphhb": "הַ/טְּהוֹרָ֗ה",
+   "lemma": "d/2889",
+   "morph": "HTd/Aafsa",
+   "id": "013Cf",
+   "slash": {
+    "n": 1,
+    "at_letter": true,
+    "morph_parts": 2,
+    "mapped": 1,
+    "mam": "הַ/טְּהֹרָ֗ה"
+   }
+  },
+  {
+   "vid": "Gen.8.20",
+   "mam": "הַטָּה֔וֹר",
+   "class": "B",
+   "morphhb": "הַ/טָּהֹ֔ר",
+   "lemma": "d/2889",
+   "morph": "HTd/Aamsa",
+   "id": "0134f",
+   "slash": {
+    "n": 1,
+    "at_letter": true,
+    "morph_parts": 2,
+    "mapped": 1,
+    "mam": "הַ/טָּה֔וֹר"
+   }
+  },
+  {
+   "vid": "Gen.19.16",
+   "mam": "וַיַּחֲזִ֨יקוּ",
+   "class": "B",
+   "morphhb": "וַ/יַּחֲזִ֨קוּ",
+   "lemma": "c/2388",
+   "morph": "HC/Vhw3mp",
+   "id": "01hfu",
+   "slash": {
+    "n": 1,
+    "at_letter": true,
+    "morph_parts": 2,
+    "mapped": 1,
+    "mam": "וַ/יַּחֲזִ֨יקוּ"
+   }
+  }
+ ]
+}

@@ -1,0 +1,121 @@
+<title>morphhb-on-MAM decisions</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Space+Grotesk:wght@500;600&display=swap">
+<style>
+/* Layout: one reading column; each decision a bordered card; the state as a chip. */
+:root {
+  --bg: #f6f7f9; --card: #ffffff; --fg: #1d2430; --muted: #566173; --line: #d5dae2;
+  --accent: #1f6f8b; --open: #8a5a00; --open-bg: #fdf1d6;
+  --body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --head: "Space Grotesk", "Inter", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #12161c; --card: #1a2029; --fg: #e3e8ef; --muted: #9aa5b5; --line: #2e3744;
+  --accent: #6cc1dc; --open: #f2c46b; --open-bg: #3a2f17; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #12161c; --card: #1a2029; --fg: #e3e8ef; --muted: #9aa5b5; --line: #2e3744;
+  --accent: #6cc1dc; --open: #f2c46b; --open-bg: #3a2f17; color-scheme: dark }
+body { background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 16px; line-height: 1.55;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 24px 48px; }
+main { max-width: 46rem; margin: 0 auto; display: flex; flex-direction: column; gap: 1.25rem; }
+h1, h2 { font-family: var(--head); text-wrap: balance; line-height: 1.25; }
+h1 { font-size: 1.75rem; margin: 0; }
+h2 { font-size: 1.2rem; margin: 0; }
+p, ul, ol { margin: 0; }
+.caveat { border: 1px solid var(--line); background: var(--card); padding: .75rem 1rem; border-radius: 6px; color: var(--muted); }
+.decision { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 1rem 1.1rem;
+  display: flex; flex-direction: column; gap: .6rem; min-width: 0; }
+.head { display: flex; gap: .6rem; align-items: baseline; flex-wrap: wrap; }
+.num { font-family: var(--head); color: var(--accent); font-weight: 600; }
+.state { font-size: .78rem; letter-spacing: .04em; text-transform: uppercase; color: var(--open); background: var(--open-bg);
+  padding: .1rem .5rem; border-radius: 999px; }
+.label { font-size: .78rem; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.rec { border-left: 3px solid var(--accent); padding-left: .75rem; }
+ol.choices, ul.facts { padding-left: 1.3rem; display: flex; flex-direction: column; gap: .3rem; }
+code { font-size: .9em; }
+a { color: var(--accent); }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+</style>
+<main>
+<h1>morphhb-on-MAM decisions</h1>
+<p class="caveat">Not reviewed by a human. Claude (Opus 5.5) wrote this page on 2026-11-15 for the feasibility study of applying morphhb's morphology (lemmas, morph codes and word ids) to MAM's text. The study's page is <code>morphhb-on-mam/out/morphhb-on-mam.html</code> in MAM-basics, where Ben put the study on ice on 2026-11-16. Nothing on this page has been started, and the decisions wait until the work resumes; each is open until Ben answers it here or in his own words.</p>
+
+<section class="decision" id="d1">
+<div class="head"><span class="num">Decision 1</span><h2>Should MAM's text be given morphhb's analyses at all?</h2><span class="state">Open</span></div>
+<p><span class="label">What raises it</span><br>The study finds it feasible. Of MAM's 306,525 atoms, 99.64% take morphhb's lemma, morph and id with evidence: their form is morphhb's, or morphhb analyses MAM's form the same way elsewhere. The other 1,091 atoms (0.36%) need a rule or a person. The alignment takes about 20 seconds.</p>
+<div><span class="label">Choices</span>
+<ol class="choices">
+<li>Build it, shaped by decisions 2 to 6.</li>
+<li>Not now: keep the study and its scripts in <code>.novc/</code>.</li>
+</ol></div>
+<p class="rec"><span class="label">Recommendation</span><br>Choice 1, if MAM is to carry morphology at all. The automatic part is nearly complete and cheap to rerun, and the rest is a bounded queue of decisions.</p>
+</section>
+
+<section class="decision" id="d2">
+<div class="head"><span class="num">Decision 2</span><h2>Where would the analyses live, and in what form?</h2><span class="state">Open</span></div>
+<p><span class="label">What raises it</span><br>MAM-morphhb already gives MAM in morphhb's format. Its <code>MAPM.xml</code> is valid OSIS 2.1.1, has no word elements, and is laid out for OpenScriptorium's line-by-line importer. Its generator is hand-run and, by Ben's decision of 2026-11-03, may lag MAM-simple. No MAM-basics product has stable word ids.</p>
+<div><span class="label">Choices</span>
+<ol class="choices">
+<li>Inside MAM-morphhb: <code>MAPM.xml</code> gains <code>&lt;w lemma morph id&gt;</code>, as morphhb's <code>wlc/</code> files have. Familiar to morphhb's users, but OSIS has no lowercase <code>id</code>, so the file would lose its OSIS validity, and the importer's tolerance is unknown.</li>
+<li>A new table, declared in <code>py/product_scopes.py</code>: one row per MAM atom, keyed by verse and atom index, with MAM's form as a guard, morphhb's lemma, morph and id, and how the match was made. MAM's text stays as it is, and each refresh's effect is a plain diff.</li>
+<li>Both: the table as the record, and <code>MAPM.xml</code>'s words generated from it.</li>
+</ol></div>
+<p class="rec"><span class="label">Recommendation</span><br>Choice 2 now, adding choice 3 only if decision 6 offers the result to morphhb. The table follows MAM-basics' per-word precedents (Phonetic MAM and near-Aleppo key words by verse and position with the form as a guard) and leaves the existing OSIS-valid file and its importer untouched. Like MAM-morphhb, it would be hand-run and could lag MAM-simple, unless Ben wants it to follow every refresh.</p>
+</section>
+
+<section class="decision" id="d3">
+<div class="head"><span class="num">Decision 3</span><h2>Should MAM's text carry morphhb's morpheme slashes?</h2><span class="state">Open</span></div>
+<p><span class="label">What raises it</span><br>morphhb marks its morpheme boundaries with slashes inside each word; MAM has none. Every morphhb slash stands directly before a letter, so in the 305,387 atoms whose letters equal morphhb's, every slash moves by letter count. In the 842 atoms whose spelling differs, letter alignment and a fallback rule place all but 26.</p>
+<div><span class="label">Choices</span>
+<ol class="choices">
+<li>Write slashes into the word text, as morphhb does.</li>
+<li>Keep MAM's text exact and give the boundaries as letter positions.</li>
+</ol></div>
+<p class="rec"><span class="label">Recommendation</span><br>Choice 2 in the table, so MAM's text is never altered; choice 1 only in an OSIS form made for morphhb's users, whose tools split morph codes at slashes.</p>
+</section>
+
+<section class="decision" id="d4">
+<div class="head"><span class="num">Decision 4</span><h2>What happens to the atoms that need judgment, and who judges them?</h2><span class="state">Open</span></div>
+<div><span class="label">What raises it</span>
+<ul class="facts">
+<li>59 atoms are flagged: morphhb analyses MAM's form elsewhere, never with this lemma and morph. In Claude's first reading about half are real changes (a singular for a plural, a shin dot for a sin dot, an article the morph lacks) and half are homographs. Two more, found by a qamats qatan screen, look like real changes.</li>
+<li>707 atoms are untested: MAM's form occurs nowhere else in morphhb.</li>
+<li>325 atoms have no one-to-one partner: names MAM writes as one atom, ketiv/qere that MAM and morphhb structure differently, and a word one text lacks.</li>
+<li>Where MAM writes one form and morphhb has a ketiv and a qere, the two analyses differ in 85 places, nearly always in the morph.</li>
+<li>26 spelling-difference atoms have a slash that letters cannot place.</li>
+</ul></div>
+<div><span class="label">Choices</span>
+<ol class="choices">
+<li>Carry every analysis and mark how each atom was matched.</li>
+<li>Carry the same and the supported analyses; carry the untested ones marked as untested; leave flagged atoms and unresolved structural atoms without an analysis until a decision record exists.</li>
+<li>Decide every one of the 1,091 before any release.</li>
+</ol>
+<p>For MAM's one-form ketiv/qere, one rule would settle most cases: give the one form the qere's analysis, since MAM's vowels are the qere's.</p></div>
+<p class="rec"><span class="label">Recommendation</span><br>Choice 2 with the qere rule. Claude would draft each decision record with its evidence, and Ben, or a Hebrew grammarian of his choosing, would approve it. No contradicted analysis is then published silently, and the untested ones are morphhb's own analyses of the same word, labelled.</p>
+</section>
+
+<section class="decision" id="d5">
+<div class="head"><span class="num">Decision 5</span><h2>Which ids do MAM's atoms take when they have no morphhb word of their own?</h2><span class="state">Open</span></div>
+<p><span class="label">What raises it</span><br>In 53 places MAM writes as one atom a name that morphhb divides into two or more words. In 28 verses MAM has a ketiv and a qere where morphhb has one word, 2 Samuel 7:22 has a word that morphhb lacks, and a few ketiv or qere atoms are divided differently. Conversely, 23 morphhb ids would go unused, 20 of them in Joshua 21:36-37, which MAM lacks. morphhb's README invites another codex to reuse its ids where words align and to create new ones for new words; an id is the book's two-digit number plus three characters, and 173,136 such strings are used in no book. morphhb has had no tool for making ids since 2019.</p>
+<div><span class="label">Choices</span>
+<ol class="choices">
+<li>An atom that covers several morphhb words carries all their ids; an atom with no morphhb word gets a new id in morphhb's scheme, from strings no book uses, listed in a tracked file.</li>
+<li>New ids in a separate scheme that marks them as MAM's.</li>
+<li>No id for such atoms.</li>
+</ol></div>
+<p class="rec"><span class="label">Recommendation</span><br>Choice 1. Carrying every covered id keeps the link to morphhb, and to MACULA Hebrew, which uses the same ids, for every word the texts share. New ids in morphhb's scheme pass its validator's format check and cannot collide with any existing id.</p>
+</section>
+
+<section class="decision" id="d6">
+<div class="head"><span class="num">Decision 6</span><h2>Should the result be offered to morphhb?</h2><span class="state">Open</span></div>
+<p><span class="label">What raises it</span><br>No one has asked for an analysed <code>MAPM/</code>. The maintainers call <code>MAPM/</code> a companion text, and morphhb's versions describe <code>wlc/</code>. The validator would not check <code>MAPM/</code>'s words. In practice one maintainer reviews everything.</p>
+<div><span class="label">Choices</span>
+<ol class="choices">
+<li>Not now: decide once MAM-basics' own product exists and its review queue is done.</li>
+<li>Offer it as a pull request to <code>MAPM/</code> once built.</li>
+<li>Never: keep it in MAM-basics only.</li>
+</ol></div>
+<p class="rec"><span class="label">Recommendation</span><br>Choice 1. Nothing in morphhb's record asks for it, and an offer would add to a one-person review queue before MAM-basics has reviewed the analyses itself.</p>
+</section>
+</main>

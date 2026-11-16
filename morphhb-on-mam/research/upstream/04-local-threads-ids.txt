@@ -1,0 +1,370 @@
+====================================================================================================
+openscriptures/morphhb#58 [issue] 'Describe IDs that Have been Added to Text' state=closed by jag3773 (MEMBER) created=2019-01-16T13:50:23Z closed=2019-02-06T15:11:57Z closed_by=jag3773
+labels=
+--- body
+This is a reminder for @AndyHubert to write up a short description of the IDs that we can put into the README.
+--- comment 461058353 by jag3773 (MEMBER) at 2019-02-06T15:11:57Z
+Looks good @AndyHubert , I merged in your updates to the README, thank you.
+====================================================================================================
+openscriptures/morphhb#59 [issue] 'Incorporate Fixes for 2.1' state=closed by jag3773 (MEMBER) created=2019-01-16T13:51:39Z closed=2019-02-06T15:11:30Z closed_by=jag3773
+labels=
+--- body
+This is a meta issue to ensure that we include fixes that we find over the next few weeks in the 2.1 release.
+
+Some of these are already provided in #57 
+--- comment 460986005 by AndyHubert (CONTRIBUTOR) at 2019-02-06T11:11:02Z
+Anything you need me to do for this @jag3773 ?
+--- comment 461058154 by jag3773 (MEMBER) at 2019-02-06T15:11:30Z
+Nope, just merged in your PR.
+====================================================================================================
+openscriptures/morphhb#107 [issue] "JSON Script Doesn't Reproduce the Immutable ID's" state=open by brando130 (NONE) created=2025-04-13T00:36:25Z closed=None closed_by=None
+labels=
+--- body
+The README explains the reasoning for the "unique, immutable id", but then fails to include it in the Perl/Python scripts, which output "[ 'wordString', 'lemma', 'morphology' ]"
+
+Is there a way to bring these ID's to JSON?
+--- comment 2801793093 by jag3773 (MEMBER) at 2025-04-14T13:53:04Z
+I'm sure that it isn't too hard to do what you request but the reason the scripts don't include them is because the unique IDs came much later than the scripts.
+--- comment 5736694787 by 0-Actual (NONE) at 2026-09-18T21:58:44Z
+Agent: Gaucia — AI-assisted review for Sherman G. Laing / Quantum.Earth.Laing.
+
+I reproduced the Python side of #107 against revision [`3d15126fb1ef74867fc1434be1942e837932691f`](https://github.com/openscriptures/morphhb/tree/3d15126fb1ef74867fc1434be1942e837932691f), which was still `master` when checked on September 18, 2026.
+
+The Python converter exports `[wordString, lemma, morphology]` and omits the XML occurrence ID. A locally tested, opt-in `--includeIds` prototype appends `word.attrib.get('id')` as field four and keeps the three-field schema when the option is absent. It does not change the word selector or remapping logic. This is a proposed Python change; no PR or Perl implementation is being claimed.
+
+**ID-export validation**
+
+- The 39-book corpus contains **306,785 word elements and 306,785 distinct, nonempty IDs** under the Python converter's descendant-word selection. This includes **1,278 words nested under reading elements**, alongside 305,507 direct verse-child words; it is not a count for a single variant-excluded reading text.
+- Without verse remapping, the prototype emits each of those IDs exactly once, in source order.
+- A fresh replay covered **34 full-corpus option scenarios / 102 converter invocations**: upstream, prototype with IDs disabled, and prototype with IDs enabled. All **274 recorded compatibility assertions** passed. Comparisons use parsed JSON structure and values: default output matches upstream, and enabling IDs preserves the preceding three fields. These are compatibility results, not a certification of text or remapping fidelity.
+
+**Separate existing behavior found while checking preservation**
+
+1. **Eleven word texts are truncated in Python output.** At [line 96](https://github.com/openscriptures/morphhb/blob/3d15126fb1ef74867fc1434be1942e837932691f/morphhbXML-to-JSON.py#L96), `word.text` omits text within or after child `seg` elements marking large, small, or suspended letters. For example, Deut.6.4 ID `05WH5` exports `שְׁמַ֖` while the complete word element contains `שְׁמַ֖ע`. Comparing the non-remapped output with the complete text inside each source word yields 306,774 matches and 11 mismatches. The source XML remains intact.
+2. **The current converter plus VerseMap does not conserve occurrence IDs when remapping.** With the same ID-only instrumentation, `--remapVerses` produces **306,738 records / 306,719 distinct IDs**: **66 source IDs are absent and 19 extra occurrences repeat existing IDs**, relative to the same descendant-word input population. The first three output fields still match unmodified upstream output. The accounting is 306,785 − 66 + 19 = 306,738.
+   - Assignments to already occupied targets lose 38 occurrences from WLC Num.26.1, 1Sam.20.42, and 1Chr.12.4.
+   - Repeated Psalm-title target assignments lose 17 superscription words from WLC Ps.51.1, Ps.52.1, Ps.54.1, and Ps.60.1.
+   - The [manual Psalm 13 split](https://github.com/openscriptures/morphhb/blob/3d15126fb1ef74867fc1434be1942e837932691f/morphhbXML-to-JSON.py#L263-L267) reads source verse 5 for both pieces: 11 verse-6 occurrences disappear and 8 verse-5 occurrences repeat.
+   - Moving Neh.7.68 forward without clearing its former slot adds 11 repeated occurrences.
+3. **Two option behaviors also reproduce:** `--stripPointing` alone leaves the parsed output unchanged; bare `-h` exits with status 2 because the short-option specification is `h:`.
+
+For reproduction, use a disposable checkout of the pinned revision with its `wlc/` directory. In `morphhbXML-to-JSON.py`, insert `singleWordArray.append(word.attrib.get('id'))` immediately after `singleWordArray.append(morph)`, at the same indentation. Then run these commands from the checkout root:
+
+```sh
+python3 morphhbXML-to-JSON.py
+python3 morphhbXML-to-JSON.py --remapVerses
+```
+
+These produce `hebrew.json` and `remapped.json`, respectively. Flatten each book/chapter/verse structure to word records and compare the multiset of field-four IDs with IDs selected by `.//osis:w` under each source verse. For complete-word text, compare each exported field-one value with `''.join(word.itertext())` for its source ID; the eleven affected child elements carry letters rather than alternative readings or notes. This temporary instrumentation reproduces the occurrence accounting; it is not the full opt-in CLI proposal.
+
+The Python descendant selector and Perl direct-child selector differ, so variant inclusion needs an explicit maintainer decision. These findings are bounded to the cited revision and Python execution. The text/remapping/option defects remain separate from the optional ID-export proposal.
+
+Original text, annotations, and converter attribution remain with the Open Scriptures Hebrew Bible project and its stated contributors. Review and reproduction: Sherman G. Laing / Quantum.Earth.Laing, with Gaucia (AI-assisted).
+
+====================================================================================================
+openscriptures/morphhb#84 [issue] 'Schema validity and id attributes' state=open by jonathanrobie (CONTRIBUTOR) created=2021-07-17T14:30:22Z closed=None closed_by=None
+labels=
+--- body
+When I validate against the [OSIS schema](https://crosswire.org/osis/osisCore.2.1.1.xsd) using xmllint, I get validation errors for the id attributes on words:
+ 
+```
+1Kgs.xml:321: element w: Schemas validity error : Element '{http://www.bibletechnologies.net/2003/OSIS/namespace}w', attribute 'id': The attribute 'id' is not allowed.
+1Kgs.xml:322: element w: Schemas validity error : Element '{http://www.bibletechnologies.net/2003/OSIS/namespace}w', attribute 'id': The attribute 'id' is not allowed.
+!!! SNIP !!!
+```
+
+Am I missing something?
+--- comment 881932742 by DavidTroidl (MEMBER) at 2021-07-17T17:38:19Z
+I have an email thread going on this issue, trying to resolve the validation problem. The @ID in OSIS is capitalized, but the main issue is that XML IDs are not allowed to start with a number. I did a temporary correction for this when I validated 1Sam to check the two token issue.
+--- comment 881942337 by jonathanrobie (CONTRIBUTOR) at 2021-07-17T18:44:54Z
+So perhaps a global search/replace that replaces `id="` with `ID="id` would do the trick?
+--- comment 881943402 by DavidTroidl (MEMBER) at 2021-07-17T18:51:12Z
+Not exactly. I replace: id=" with: ID="a, for a temporary check. I am still conversing with the authors of the IDs to see how they can be adjusted.
+--- comment 881943942 by DavidTroidl (MEMBER) at 2021-07-17T18:54:31Z
+Sorry, I missed the point. Yes, yours would work.
+====================================================================================================
+openscriptures/morphhb#85 [PR] 'Schema validity fixes: (1) changed id attributes to ID attributes and…' state=closed by jonathanrobie (CONTRIBUTOR) created=2021-07-18T18:04:39Z closed=2021-07-18T19:09:49Z closed_by=DavidTroidl
+merged_at=None
+labels=
+--- body
+… added a leading alphabetic character, (2) single values for @type attribute in Ketiv readings.  See https://github.com/openscriptures/morphhb/issues/84, https://github.com/openscriptures/morphhb/issues/80.
+--- comment 882096103 by jonathanrobie (CONTRIBUTOR) at 2021-07-18T18:05:01Z
+This now validates using XML Lint.
+--- comment 882103800 by DavidTroidl (MEMBER) at 2021-07-18T19:09:49Z
+I don't want to commit either of these changes.
+====================================================================================================
+openscriptures/morphhb#98 [PR] 'MAPM: Fix chapter names' state=closed by didib (CONTRIBUTOR) created=2022-11-27T08:28:47Z closed=2023-04-10T09:11:21Z closed_by=jdejoode
+merged_at=2023-04-10T09:11:21Z
+labels=
+--- body
+As is customary, replace the chapter names for chapters 15 and 16 to 'טו' and 'טז', respectively. See e.g.:
+
+https://en.wikipedia.org/wiki/Significance_of_numbers_in_Judaism#15
+--- comment 1350196089 by jag3773 (MEMBER) at 2022-12-14T01:01:01Z
+@DavidTroidl or @jdejoode any thoughts on this PR?
+--- comment 1408234809 by oxidian24 (NONE) at 2023-01-30T09:12:57Z
+@DavidTroidl Hello David, Sorry that I write here but I do not know how to contact you. Are you still active in the google group OSHB https://groups.google.com/g/openscriptures-hb or can I ask you here? Where? May I use your data tags and verse structure (levels) and how to get them to be easy parsed? I would like to use it to create new App to compare bible verses using sentence structure comparison between hebrew and English translations.
+--- comment 1501589902 by jdejoode (CONTRIBUTOR) at 2023-04-10T09:12:06Z
+Thanks for your PR @didib 
+
+Great work!
+====================================================================================================
+openscriptures/morphhb#75 [issue] 'What is the best way to create a Verse-per-Line version of the Open Hebrew Bible?' state=open by Nainoia-Inc-Admin (NONE) created=2021-02-04T01:37:40Z closed=None closed_by=None
+labels=
+--- body
+I would like to creat a Verse-per-Line copy of the Open Hebrew Bible.  What is the best way to do that?  Which files should I use from this repository?
+--- comment 773312960 by pierre-amadio (NONE) at 2021-02-04T13:45:40Z
+Hello.
+
+You will find the text in xml format for each book in the wlc directory.
+
+python with BeautifulSoup is probably the easiest way to display 1 verse by
+line for all book.
+
+On Thu, 4 Feb 2021 at 02:37, Jeff Martin <notifications@github.com> wrote:
+
+> I would like to creat a Verse-per-Line copy of the Open Hebrew Bible. What
+> is the best way to do that? Which files should I use from this repository?
+>
+> —
+> You are receiving this because you are subscribed to this thread.
+> Reply to this email directly, view it on GitHub
+> <https://github.com/openscriptures/morphhb/issues/75>, or unsubscribe
+> <https://github.com/notifications/unsubscribe-auth/AJJS36DQPQFGPHXFYNYPYKDS5H27HANCNFSM4XB5EWZA>
+> .
+>
+
+--- comment 773319312 by DavidIB (NONE) at 2021-02-04T13:55:59Z
+Do you mean the one by OpenSriptures? This is essentially the same as the
+Westminster transcription of the Leningrad text.
+YOu can get that data from the OpenScriptures site -
+https://github.com/openscriptures/morphhb
+
+The  *TOTHT <https://github.com/tyndale/STEPBible-Data>* text in our
+repository is virtually the same as this text, though with a few
+corrections.
+Extracting the verse-per-line Hebrew was not a difficult task for me, so
+created the Hebrew text from TOTHT.
+You can pick it up at
+https://www.dropbox.com/s/bj30roa2h4uar1o/TOTHT%20Hebrew-only%20text.txt?dl=0
+I hope it is useful for you.
+
+Every blessing
+
+*David IB*
+
+
+
+On Thu, Feb 4, 2021 at 2:08 AM Jeff Martin <notifications@github.com> wrote:
+
+> I would like to creat a Verse-per-Line copy of the Open Hebrew Bible. What
+> is the best way to do that? Which files should I use from this repository?
+>
+> —
+> You are receiving this because you are subscribed to this thread.
+> Reply to this email directly, view it on GitHub
+> <https://github.com/openscriptures/morphhb/issues/75>, or unsubscribe
+> <https://github.com/notifications/unsubscribe-auth/AAM5BOQLAWZAX7CJAPXYP3TS5H27HANCNFSM4XB5EWZA>
+> .
+>
+
+--- comment 773333656 by Nainoia-Inc-Admin (NONE) at 2021-02-04T14:15:10Z
+Thanks! Questions...
+
+To convert the TOTHT to VPL is it simply a matter of concatenating the Hebrew words together with a space in between for each verse?  Also is the TOTHT updated when this OpenScriptures project is updated?
+
+Now in the OpenScriptures/morphhb project I see three folders that seem to contain the Hebrew text: 1) /MAPM/ 2) /wlc and 3) /oxlos-import.
+
+The MAPM/MAPM.xml file already seems to be close to VPL format.  I just need to know what to do with the -SEG- tags.  I need the Hebrew text in VPL without any tags.  How do I strip out the -SEG- tags?
+
+The /wlc/bible books file format has even more tags.  I would need help to know how to strip out all the tags to get to VPL format.
+
+And finally the /oxlos-import format is just a long list of all the Hebrew words with verse and word number.  This file format would be the easiest to use to make a VPL format.  Do I just concatenate the words together with a space in between?  And which file in the /oxlos-import is best to use? 
+
+And of the three options above can each be used to produce the same best Open Scriptures Hebrew bible or is one folder the better to use?
+
+
+
+
+--- comment 773578879 by DavidTroidl (MEMBER) at 2021-02-04T20:18:51Z
+/wlc is the latest OSHB text.
+/MAPM is a completely different project.
+/oxlos-import has no scripture files in it.
+--- comment 773583211 by Nainoia-Inc-Admin (NONE) at 2021-02-04T20:26:47Z
+It seems to me that the VPL format could easily be constructed with /oxlos-import/wlc.txt.  Would it work to simply concatenate all the Hebrew words in that file together per verse separated by a space?
+--- comment 773675776 by DavidTroidl (MEMBER) at 2021-02-04T23:40:08Z
+Correction on my previous post.
+/oxlos-import is 11 years old. I would not consider it reliable. A lot has been updated since then.
+--- comment 773722288 by Nainoia-Inc-Admin (NONE) at 2021-02-05T01:41:57Z
+Okay thanks that is what I needed to know.
+
+I plan to use this as my source for the Open Scriptures Hebrew Bible, [https://ebible.org/details.php?id=hboWLC](https://ebible.org/details.php?id=hboWLC)
+I think that is a well groomed source.
+
+====================================================================================================
+openscriptures/morphhb#94 [issue] "Adding new `def`s to the `LexicalIndex.xml` and extending Strong's numbers?" state=open by etale-cohomology (NONE) created=2022-06-22T09:12:20Z closed=None closed_by=None
+labels=
+--- body
+A "vanilla" Strong's number looks something like [H430](https://studybible.info/strongs/h6635). But OSHB features "extended" Strong's numbers (eg. `6635 b`), which (as far as I can tell) account for multiple meanings of the same word, and seem related to the `aug` field in the (really cool) [`LexicalIndex.xml`](https://github.com/openscriptures/HebrewLexicon/blob/master/LexicalIndex.xml). (OSHB also has "extended-extended" Strong's numbers, which look like `c/d/5531 b`, where the actual Strong's number is `5531`, and the the first part `c/d/` seems to only account for extra words within a word (eg. prepositions/articles/conjunctions like "in", "the", "and"), and the latter part `b` is as before).
+
+Where was this extension to Strong's numbers devised, and, more importantly, can it be extended within the OSHB project?
+
+Eg. consider [`H430`](https://studybible.info/strongs/h430). The `LexicalIndex.xml` `def` says `gods`.
+
+```xml
+<entry id="arn">
+	<w xlit="ʾĕlōhîm">אֱלֹהִים</w> <pos>N</pos> <def>gods</def>
+	<xref bdb="a.dl.ad" strong="430" twot="93c"/>
+	<etym type="sub">arm</etym>
+</entry>
+```
+
+But what if I'd like to add another `<entry>` to the `xml`, to account for the meaning `God`?
+
+Eg.
+
+```xml
+<entry id="arn">
+	<w xlit="ʾĕlōhîm">אֱלֹהִים</w> <pos>N</pos> <def>God</def>
+	<xref bdb="a.dl.ad" strong="430" aug="a" twot="93c"/>
+	<etym type="sub">arm</etym>
+</entry>
+<entry id="arn">
+	<w xlit="ʾĕlōhîm">אֱלֹהִים</w> <pos>N</pos> <def>gods</def>
+	<xref bdb="a.dl.ad" strong="430" aug="b" twot="93c"/>
+	<etym type="sub">arm</etym>
+</entry>
+```
+
+Notice that I've also added a corresponding `aug` field to each `<entry>`.
+
+Can this be done? Does it make sense?
+
+Of course this would require going to every instance of `H430` and adding an `a` or a `b` postfix (or `c`, `d`, etc.), depending on the meaning (and people sometimes disagree in certain verses, like [Psa 50.1](https://biblegateway.com/passage/?search=psa+50.1&version=GNV)).
+
+But maybe what I want to do is done / can be done in another way, and I'm just speaking nonsense. Or maybe I've understood nothing about the extended Strong's numbers.
+
+I'm also curious, where does the `def` field some from?
+--- comment 1163327467 by DavidTroidl (MEMBER) at 2022-06-22T16:16:33Z
+The Lexical Index is meant to be an index to the entries in Strong's, as 
+well as Brown, Driver, Briggs and the codes for the Theological Wordbook 
+of the Old Testament. The def element was added just to give w rough 
+ides of what word is being referenced. This is all described in 
+HebrewLexicon.pdf, as well as the readme.md for the lexicon.
+
+On 6/22/2022 5:12 AM, Diego Alonso wrote:
+>
+> A "vanilla" Strong's number looks something like H430 
+> <https://studybible.info/strongs/h6635>. But OSHB features "extended" 
+> Strong's numbers (eg. |6635 b|), which (as far as I can tell) account 
+> for multiple meanings of the same word, and seem related to the |aug| 
+> field in the (really cool) |LexicalIndex.xml| 
+> <https://github.com/openscriptures/HebrewLexicon/blob/master/LexicalIndex.xml>. 
+> (OSHB also has "extended-extended" Strong's numbers, which look like 
+> |c/d/5531 b|, where the actual Strong's number is |5531|, and the the 
+> first part |c/d/| seems to only account for extra words within a word 
+> (eg. prepositions/articles/conjunctions like "in", "the", "and"), and 
+> the latter part |b| is as before).
+>
+> Where was this extension to Strong's numbers devised, and, more 
+> importantly, can it be extended within the OSHB project?
+>
+> Eg. consider |H430| <https://studybible.info/strongs/h430>. The 
+> |LexicalIndex.xml| |def| says |gods|.
+>
+> <entry  id="arn">
+>
+> 	<w  xlit="ʾĕlōhîm">אֱלֹהִים</w> <pos>N</pos> <def>gods</def>
+>
+> 	<xref  bdb="a.dl.ad"  strong="430"  twot="93c"/>
+>
+> 	<etym  type="sub">arm</etym>
+>
+> </entry>
+>
+> But what if I'd like to add another |<entry>| to the |xml|, to account 
+> for the meaning |God|?
+>
+> Eg.
+>
+> <entry  id="arn">
+>
+> 	<w  xlit="ʾĕlōhîm">אֱלֹהִים</w> <pos>N</pos> <def>God</def>
+>
+> 	<xref  bdb="a.dl.ad"  strong="430"  aug="a"  twot="93c"/>
+>
+> 	<etym  type="sub">arm</etym>
+>
+> </entry>
+>
+> <entry  id="arn">
+>
+> 	<w  xlit="ʾĕlōhîm">אֱלֹהִים</w> <pos>N</pos> <def>gods</def>
+>
+> 	<xref  bdb="a.dl.ad"  strong="430"  aug="b"  twot="93c"/>
+>
+> 	<etym  type="sub">arm</etym>
+>
+> </entry>
+>
+> Notice that I've also added a corresponding |aug| field to each |<entry>|.
+>
+> Can this be done? Does it make sense?
+>
+> Of course this would require going to every instance of |H430| and 
+> adding an |a| or a |b| postfix (or |c|, |d|, etc.), depending on the 
+> meaning (and people sometimes disagree in certain verses, like Psa 
+> 50.1 <https://biblegateway.com/passage/?search=psa+50.1&version=GNV>). 
+> (Although you can automate the process if you have, say, a KJV with 
+> embedded Strong's numbers.)
+>
+> But maybe what I want to do is done / can be done in another way, and 
+> I'm just speaking nonsense. Or maybe I've understood nothing about the 
+> extended Strong's numbers.
+>
+> I'm also curious, where does the |def| field some from?
+>
+> —
+> Reply to this email directly, view it on GitHub 
+> <https://github.com/openscriptures/morphhb/issues/94>, or unsubscribe 
+> <https://github.com/notifications/unsubscribe-auth/AABLABIVR65A75GUUH63HP3VQLKH7ANCNFSM5ZPO6WXQ>.
+> You are receiving this because you are subscribed to this 
+> thread.Message ID: ***@***.***>
+>
+
+-- 
+This email has been checked for viruses by Avast antivirus software.
+https://www.avast.com/antivirus
+
+--- comment 1163921863 by etale-cohomology (NONE) at 2022-06-23T04:43:57Z
+Okay thank you!
+====================================================================================================
+openscriptures/morphhb#71 [issue] 'morphhb or stepbible-data' state=closed by john916zhang (CONTRIBUTOR) created=2020-07-10T22:28:55Z closed=2020-07-22T15:46:51Z closed_by=john916zhang
+labels=
+--- body
+Thanks for providing this wonderful resource. I am developing a quiz website for students of Biblical Hebrew. I see both this repository and 'stepbible-data' (https://github.com/tyndale/STEPBible-Data) providing full Hebrew bible and parsing information. I am wondering which is better, accurate, and updated. Thanks again.
+--- comment 657624720 by DavidTroidl (MEMBER) at 2020-07-13T15:22:48Z
+The OHB on STEP began by using our data, before a sizeable portion of the parsing was completed. Since then the parsing was finished independently by each project, though we have kept in communication. Both projects are updated, when errors are identified, so I suppose it is a matter of opinion whose text is more accurate.
+====================================================================================================
+openscriptures/morphhb#60 [issue] 'Attach JSON and USFM Files to Release' state=open by jag3773 (MEMBER) created=2019-01-16T13:53:15Z closed=None closed_by=None
+labels=
+--- body
+Especially for the 2.1 release coming up it would be good if we could attach downloadable assets for JSON and USFM representations of the OSIS files.
+--- comment 510602228 by john916zhang (CONTRIBUTOR) at 2019-07-11T18:31:07Z
++1
+--- comment 510878227 by jag3773 (MEMBER) at 2019-07-12T13:03:02Z
+@anderson916 which are you looking for JSON or USFM?
+--- comment 510890594 by john916zhang (CONTRIBUTOR) at 2019-07-12T13:40:58Z
+@jag3773 JSON.
+--- comment 511371815 by jag3773 (MEMBER) at 2019-07-15T11:53:23Z
+@anderson916 Although there is not a direct attached JSON blob there is an NPM package that provides the data as JSON here: https://www.npmjs.com/package/morphhb .
+--- comment 639423771 by theJoshMuller (NONE) at 2020-06-05T11:27:12Z
+Successfully running the script to compile JSON in the NPM package requires a bunch of undocumented dependencies _and_ an out of date version of Perl. 
+
+It would be much preferable to have it pre-compiled in the repo.
+
+...or at the very least, if we _are_ depending on an NPM package, to have the script able to run out-of-the-box somehow (either by updating the script so it can run with current versions of perl, or some other solution.)
+--- comment 663098322 by john916zhang (CONTRIBUTOR) at 2020-07-23T16:15:36Z
+I have ported the perl script to python3 and made a pull request. Python should be much easier to use for most of the people.
+--- comment 663963512 by theJoshMuller (NONE) at 2020-07-26T09:19:14Z
+@john916zhang Amazing! thank you!

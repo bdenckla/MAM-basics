@@ -1,0 +1,41 @@
+PR #98 'MAPM: Fix chapter names' by didib (CONTRIBUTOR)
+  state = closed
+  created_at = 2022-11-27T08:28:47Z
+  updated_at = 2023-04-10T09:12:07Z
+  closed_at = 2023-04-10T09:11:21Z
+  merged_at = 2023-04-10T09:11:21Z
+  merged = True
+  merge_commit_sha = 7b65df58a324e6ee871aaa1c7286305eaa88c74d
+  commits = 1
+  additions = 28
+  deletions = 28
+  changed_files = 1
+  comments = 3
+  review_comments = 0
+  merged_by = jdejoode
+  head = didib:mapm-fix-chapter-names a2f9144441401b47d9fa1c3616f4743efb4462c6
+  base = openscriptures:master eb13fed747c5229d5f7be959956697cae04e2f64
+  requested_reviewers = []
+  labels = []
+timeline: 16 events
+  2022-11-27T08:27:38Z committed by Yedidyah Bar David sha=a2f91444 msg='MAPM: Fix chapter names'
+  2022-12-14T01:01:01Z commented by jag3773 state=None body='@DavidTroidl or @jdejoode any thoughts on this PR?'
+  2022-12-14T01:01:02Z mentioned by DavidTroidl
+  2022-12-14T01:01:02Z subscribed by DavidTroidl
+  2022-12-14T01:01:02Z mentioned by jdejoode
+  2022-12-14T01:01:02Z subscribed by jdejoode
+  2023-01-30T09:12:57Z commented by oxidian24 state=None body='@DavidTroidl Hello David, Sorry that I write here but I do not know how to contact you. Are you still active in the google group OSHB https://groups.google.com/'
+  2023-01-30T09:12:57Z mentioned by DavidTroidl
+  2023-01-30T09:12:57Z subscribed by DavidTroidl
+  2023-04-10T09:09:00Z reviewed by jdejoode state=approved body='Yes, this is a very good fix. The numbers at a verse level were fine, but those at the chapter level occasionally still used a letter combination that could imp'
+  2023-04-10T09:11:21Z merged by jdejoode commit=7b65df58
+  2023-04-10T09:11:21Z closed by jdejoode commit=None
+  2023-04-10T09:12:06Z commented by jdejoode state=None body='Thanks for your PR @didib   Great work!'
+  2023-04-10T09:12:06Z mentioned by didib
+  2023-04-10T09:12:07Z subscribed by didib
+  2026-11-11T02:21:42Z cross-referenced by jag3773 from=https://api.github.com/repos/openscriptures/morphhb#116 'Plan: update the website and release OSHB 2.3 (comments welcome until 15 December 2026)'
+--- C:/Users/BenDe/GitRepos/MAM-basics/.novc/morphhb-on-mam-2026-11-15/research/upstream/fetched/pr98-3.json: 1
+  [2023-04-10T09:09:00Z by jdejoode (CONTRIBUTOR) state=APPROVED]
+    Yes, this is a very good fix. The numbers at a verse level were fine, but those at the chapter level occasionally still used a letter combination that could imply a reference to the divine name. This PR fixes those errors.
+    
+    I checked whether the corpus is consistent in its choice of the alternative (there are two, inverting the letters or doing a different addition such as 9+6 rather than 10 +5). I have not gone through all occurrence, but a quick find does suggest that this merge now makes the verse level and chapter level numbers consistent.

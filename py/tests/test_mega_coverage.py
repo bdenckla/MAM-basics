@@ -194,6 +194,17 @@ _CONCRETE_TRANSCRIPTION_BY_HAND = (
     ' Recorded in doc/concrete-transcription-2026-11-03/README.md, under "Tracked'
     ' since 2026-11-04" and "The production images, 2026-11-04".'
 )
+# The morphhb-on-MAM feasibility study's program, whose subcommands were the study's
+# untracked scripts until Ben put the study on ice on 2026-11-16.
+_MORPHHB_ON_MAM_ON_ICE = (
+    "Claude-written proposal, not yet reviewed by Ben: the program of the morphhb-on-MAM"
+    " feasibility study, which Ben put on ice on 2026-11-16, writing 'put this work"
+    ' "on ice" (deep storage), i.e. git-track it somewhere.\'  A frozen record of one'
+    " study, run by hand again only if the work resumes, so morphhb-on-mam/out/ records"
+    " one run rather than following MAM's data; it also needs morphhb's wlc/ directory,"
+    " which this repository does not hold.  Recorded in morphhb-on-mam/README.md, under"
+    ' "Put on ice" and "Regenerating the outputs".'
+)
 
 # ---------------------------------------------------------------------------
 # THE DECLARATION.  Every program the mega does not run, keyed as the module
@@ -599,6 +610,13 @@ NOT_IN_MEGA: dict[str, str] = {
         "  Recorded in py/main_hbce_psalms.py's docstring, hbce-psalms/README.md and"
         " https://github.com/bdenckla/MAM-basics/blob/be9c03961dcd970a620cd66b861b6aeaf0d58af3/doc/PLAN-remediate-review-findings-2026-09-29.md (update https://github.com/bdenckla/MAM-basics/blob/be9c03961dcd970a620cd66b861b6aeaf0d58af3/doc/PLAN-remediate-review-findings-2026-09-29-update.md)."
     ),
+    "py/main_morphhb_on_mam.py verify-morphhb": _MORPHHB_ON_MAM_ON_ICE,
+    "py/main_morphhb_on_mam.py census": _MORPHHB_ON_MAM_ON_ICE,
+    "py/main_morphhb_on_mam.py align": _MORPHHB_ON_MAM_ON_ICE,
+    "py/main_morphhb_on_mam.py analyze": _MORPHHB_ON_MAM_ON_ICE,
+    "py/main_morphhb_on_mam.py page": _MORPHHB_ON_MAM_ON_ICE,
+    "py/main_morphhb_on_mam.py selftest-page": _MORPHHB_ON_MAM_ON_ICE,
+    "py/main_morphhb_on_mam.py all": _MORPHHB_ON_MAM_ON_ICE,
     "py/check_all.py": (
         "Claude-written, accepted by Ben on 2026-09-10: it is book-of-job's register"
         " of seven checks, run by hand, and each of the seven is accounted for on its"

@@ -1,0 +1,1 @@
+census.py, check_fused_ketiv: {'qere ends with maqaf': 55}

@@ -1,0 +1,145 @@
+tree db6c5c9b46b8f39346f10915ddb1a70dcd429901 truncated=False entries=143
+blob        102 .dockerignore
+tree            .github
+tree            .github/scripts
+blob      14844 .github/scripts/validate_data.py
+tree            .github/workflows
+blob        762 .github/workflows/validate.yml
+blob        270 .gitignore
+blob        139 Dockerfile
+tree            HomeFiles
+blob       4353 HomeFiles/Accents.html
+blob      19650 HomeFiles/Anointed.jpg
+blob       4181 HomeFiles/History.html
+blob       4444 HomeFiles/Lexicon.html
+blob       4159 HomeFiles/Morph.html
+blob      25214 HomeFiles/OSHB.ico
+blob      19155 HomeFiles/Originally.png
+blob       4582 HomeFiles/Oshb.html
+blob       3094 HomeFiles/OshbStyle.css
+blob      18931 HomeFiles/VerseDemo.png
+blob        206 HomeFiles/ZigZag.png
+blob       1476 LICENSE.md
+tree            MAPM
+blob    7731482 MAPM/MAPM.xml
+blob       3453 MAPM/readme.txt
+tree            OSHB Graphics
+blob       7514 OSHB Graphics/LexiconLogo.png
+blob       6690 OSHB Graphics/LexiconLogo.svg
+blob      25214 OSHB Graphics/OSHB.ico
+blob       3400 OSHB Graphics/OSHB.svg
+blob        559 OSHB Graphics/Oshb16.png
+blob       1378 OSHB Graphics/Oshb32.png
+blob       2331 OSHB Graphics/Oshb48.png
+blob       6372 OSHB Graphics/OshbLogo.png
+blob       6396 OSHB Graphics/OshbLogo.svg
+blob        265 OSHB Graphics/Readme.txt
+blob       5170 README.md
+tree            WlcWordList
+blob       6334 WlcWordList/WlcWordList.html
+blob       3784 WlcWordList/WlcWordList.xsd
+blob    9515455 WlcWordList/WordList.xml
+blob    1837513 WlcWordList/Words.csv
+blob       4834 index.html
+blob    9850045 index.js
+blob       6906 morphhbXML-to-JSON.pl
+blob       9543 morphhbXML-to-JSON.py
+tree            oxlos-import
+blob       5556 oxlos-import/ConvertWLC.py
+blob       5106 oxlos-import/export.html
+blob   10785268 oxlos-import/wlc.txt
+blob    8018214 oxlos-import/wlc_cons.txt
+blob   10600756 oxlos-import/wlc_flat.txt
+blob   10102772 oxlos-import/wlc_nocant.txt
+blob        519 package.json
+tree            parsing
+blob      19902 parsing/HebrewMorphologyCodes.html
+blob     456917 parsing/Oshm.xml
+blob       7574 parsing/README.md
+tree            read
+tree            read/Image
+blob      25214 read/Image/OSHB.ico
+blob        434 read/Image/Signal.svg
+tree            read/Script
+blob       9569 read/Script/AccentCatalog.js
+blob       1094 read/Script/AccentInterpretation.js
+blob       3411 read/Script/Books.js
+blob        980 read/Script/ChapterMarkup.js
+blob       1045 read/Script/ClickWord.js
+blob       7255 read/Script/ElementMarkup.js
+blob       6202 read/Script/ElementMarkupBackup.js
+blob      16583 read/Script/MorphologyParser.js
+blob       1409 read/Script/Popup.js
+blob       4659 read/Script/Read.js
+blob       1337 read/Script/ReferenceConversion.js
+blob       1609 read/Script/ReferenceLocation.js
+blob       1020 read/Script/SelectVerse.js
+tree            read/Style
+blob       3219 read/Style/ReadStyle.css
+blob       5019 read/index.html
+blob       2979 read/readme.md
+tree            structure
+tree            structure/OshbVerse
+tree            structure/OshbVerse/Image
+blob      25214 structure/OshbVerse/Image/OSHB.ico
+blob        284 structure/OshbVerse/Image/ZigZag.png
+tree            structure/OshbVerse/Script
+blob       9532 structure/OshbVerse/Script/AccentCatalog.js
+blob       1085 structure/OshbVerse/Script/AccentInterpretation.js
+blob       3411 structure/OshbVerse/Script/Books.js
+blob       5272 structure/OshbVerse/Script/ElementMarkup.js
+blob       1399 structure/OshbVerse/Script/Popup.js
+blob       1337 structure/OshbVerse/Script/ReferenceConversion.js
+blob       1596 structure/OshbVerse/Script/ReferenceLocation.js
+blob       6858 structure/OshbVerse/Script/Structure.js
+blob       3698 structure/OshbVerse/Script/VerseMarkupHorizontal.js
+blob       3162 structure/OshbVerse/Script/VerseMarkupVertical.js
+tree            structure/OshbVerse/Style
+blob       1570 structure/OshbVerse/Style/PassageHorizontal.css
+blob        788 structure/OshbVerse/Style/PassageVertical.css
+blob       2605 structure/OshbVerse/Style/VerseStyle.css
+blob       5844 structure/OshbVerse/index.html
+blob       3493 structure/OshbVerse/readme.md
+blob        909 structure/write_wlc_chapters.py
+tree            wlc
+blob    1014881 wlc/1Chr.xml
+blob    1189874 wlc/1Kgs.xml
+blob    1206608 wlc/1Sam.xml
+blob    1222694 wlc/2Chr.xml
+blob    1115537 wlc/2Kgs.xml
+blob    1013552 wlc/2Sam.xml
+blob     201588 wlc/Amos.xml
+blob     569236 wlc/Dan.xml
+blob    1315399 wlc/Deut.xml
+blob     285122 wlc/Eccl.xml
+blob     292184 wlc/Esth.xml
+blob    1524391 wlc/Exod.xml
+blob    1724378 wlc/Ezek.xml
+blob     369918 wlc/Ezra.xml
+blob    1859928 wlc/Gen.xml
+blob      79467 wlc/Hab.xml
+blob      71754 wlc/Hag.xml
+blob     236712 wlc/Hos.xml
+blob    1548674 wlc/Isa.xml
+blob    1977728 wlc/Jer.xml
+blob     813715 wlc/Job.xml
+blob     105277 wlc/Joel.xml
+blob      80534 wlc/Jonah.xml
+blob     919916 wlc/Josh.xml
+blob     904347 wlc/Judg.xml
+blob     167766 wlc/Lam.xml
+blob    1085066 wlc/Lev.xml
+blob      95722 wlc/Mal.xml
+blob     145482 wlc/Mic.xml
+blob      69823 wlc/Nah.xml
+blob     512876 wlc/Neh.xml
+blob    1496830 wlc/Num.xml
+blob      44626 wlc/Obad.xml
+blob     678669 wlc/Prov.xml
+blob    1925090 wlc/Ps.xml
+blob     136188 wlc/Ruth.xml
+blob     138554 wlc/Song.xml
+blob     106885 wlc/VerseMap.xml
+blob     300202 wlc/Zech.xml
+blob      87313 wlc/Zeph.xml
+wlc/*.xml blobs equal to the 2026-11-13 local copies: 40; not equal or missing: 0

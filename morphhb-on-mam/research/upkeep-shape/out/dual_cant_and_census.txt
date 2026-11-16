@@ -1,0 +1,298 @@
+== Gen.35.22 (json-vtrad-mam)
+  verse keys=osisID
+    text text[51]
+    cant-all-three
+      cant-combined text[100]
+      cant-alef text[94]
+      cant-bet text[93]
+    spi-pe2
+    text text[46]
+== Exod.20.2 (json-vtrad-bhs)
+  verse keys=contents-corresponds-to,osisID,osisID-of-MAM-src,starts-with-sampe
+    cant-all-three
+      cant-combined text[95]
+      cant-alef text[89]
+      cant-bet text[90]
+== Exod.20.3 (json-vtrad-bhs)
+  verse keys=contents-corresponds-to,osisID,osisID-of-MAM-src
+    cant-all-three
+      cant-combined text[61]
+      cant-alef text[52]
+      cant-bet text[51]
+== Exod.20.4 (json-vtrad-bhs)
+  verse keys=contents-corresponds-to,osisID,osisID-of-MAM-src
+    cant-all-three
+      cant-combined
+        text text[32]
+        lp-paseq
+        text text[42]
+        lp-paseq
+        text text[68]
+        lp-legarmeih
+        text text[22]
+      cant-alef text[150]
+      cant-bet
+        text text[27]
+        lp-paseq
+        text text[38]
+        lp-paseq
+        text text[61]
+        lp-legarmeih
+        text text[19]
+== Exod.20.5 (json-vtrad-bhs)
+  verse keys=contents-corresponds-to,osisID,osisID-of-MAM-src
+    cant-all-three
+      cant-combined text[47]
+      cant-alef text[44]
+      cant-bet text[44]
+    text text[121]
+    cant-all-three
+      cant-combined text[13]
+      cant-alef text[12]
+      cant-bet text[11]
+== Exod.20.6 (json-vtrad-bhs)
+  verse keys=contents-corresponds-to,ends-with-sampe,osisID,osisID-of-MAM-src
+    cant-all-three
+      cant-combined text[69]
+      cant-alef text[65]
+      cant-bet text[66]
+== Exod.20.7 (json-vtrad-bhs)
+  verse text[129] keys=contents-corresponds-to,ends-with-sampe,osisID,osisID-of-MAM-src,starts-with-sampe
+== Exod.20.8 (json-vtrad-bhs)
+  verse keys=contents-corresponds-to,osisID,osisID-of-MAM-src,starts-with-sampe
+    cant-all-three
+      cant-combined text[47]
+      cant-alef text[43]
+      cant-bet text[42]
+== Exod.20.9 (json-vtrad-bhs)
+  verse keys=contents-corresponds-to,osisID,osisID-of-MAM-src
+    cant-all-three
+      cant-combined text[65]
+      cant-alef text[59]
+      cant-bet text[58]
+== Exod.20.10 (json-vtrad-bhs)
+  verse keys=contents-corresponds-to,osisID,osisID-of-MAM-src
+    cant-all-three
+      cant-combined
+        text text[33]
+        lp-legarmeih
+        text text[62]
+        lp-legarmeih
+        text text[103]
+      cant-alef
+        text text[88]
+        lp-legarmeih
+        text text[94]
+      cant-bet
+        text text[30]
+        lp-legarmeih
+        text text[152]
+== Exod.20.11 (json-vtrad-bhs)
+  verse text[210] keys=contents-corresponds-to,ends-with-sampe,osisID,osisID-of-MAM-src
+== Exod.20.12 (json-vtrad-bhs)
+  verse text[124] keys=contents-corresponds-to,ends-with-sampe,osisID,osisID-of-MAM-src,starts-with-sampe
+== Exod.20.13 (json-vtrad-bhs)
+  verse keys=contents-corresponds-to,ends-with-sampe,osisID,osisID-of-MAM-src,starts-with-sampe
+    cant-all-three
+      cant-combined text[19]
+      cant-alef text[13]
+      cant-bet text[15]
+== Exod.20.14 (json-vtrad-bhs)
+  verse keys=contents-corresponds-to,ends-with-sampe,osisID,osisID-of-MAM-src,starts-with-sampe
+    cant-all-three
+      cant-combined text[19]
+      cant-alef text[13]
+      cant-bet text[15]
+== Exod.20.15 (json-vtrad-bhs)
+  verse keys=contents-corresponds-to,ends-with-sampe,osisID,osisID-of-MAM-src,starts-with-sampe
+    cant-all-three
+      cant-combined text[18]
+      cant-alef text[13]
+      cant-bet text[15]
+== Exod.20.16 (json-vtrad-bhs)
+  verse text[37] keys=contents-corresponds-to,ends-with-sampe,osisID,osisID-of-MAM-src,starts-with-sampe
+== Exod.20.17 (json-vtrad-bhs)
+  verse keys=contents-corresponds-to,ends-with-sampe,osisID,osisID-of-MAM-src,starts-with-sampe
+    text text[28]
+    spi-samekh3
+    text text[100]
+== Deut.5.6 (json-vtrad-bhs)
+  verse keys=contents-corresponds-to,osisID,osisID-of-MAM-src,starts-with-sampe
+    cant-all-three
+      cant-combined text[95]
+      cant-alef text[89]
+      cant-bet text[90]
+== Deut.5.7 (json-vtrad-bhs)
+  verse keys=contents-corresponds-to,osisID,osisID-of-MAM-src
+    cant-all-three
+      cant-combined text[60]
+      cant-alef text[51]
+      cant-bet text[51]
+== Deut.5.8 (json-vtrad-bhs)
+  verse keys=contents-corresponds-to,osisID,osisID-of-MAM-src
+    cant-all-three
+      cant-combined
+        text text[32]
+        lp-paseq
+        text text[41]
+        lp-paseq
+        text text[67]
+        lp-legarmeih
+        text text[22]
+      cant-alef text[148]
+      cant-bet
+        text text[27]
+        lp-paseq
+        text text[37]
+        lp-paseq
+        text text[60]
+        lp-legarmeih
+        text text[19]
+== Deut.5.9 (json-vtrad-bhs)
+  verse keys=contents-corresponds-to,osisID,osisID-of-MAM-src
+    cant-all-three
+      cant-combined text[46]
+      cant-alef text[43]
+      cant-bet text[43]
+    text text[123]
+    cant-all-three
+      cant-combined text[13]
+      cant-alef text[12]
+      cant-bet text[11]
+== Deut.5.10 (json-vtrad-bhs)
+  verse keys=contents-corresponds-to,ends-with-sampe,osisID,osisID-of-MAM-src
+    cant-all-three
+      cant-combined text[33]
+      cant-alef text[29]
+      cant-bet text[30]
+    text text[26]
+    kq
+      kq-k text[5]
+      kq-q text[10]
+    text text[1]
+== Deut.5.11 (json-vtrad-bhs)
+  verse text[129] keys=contents-corresponds-to,ends-with-sampe,osisID,osisID-of-MAM-src,starts-with-sampe
+== Deut.5.12 (json-vtrad-bhs)
+  verse keys=contents-corresponds-to,osisID,osisID-of-MAM-src,starts-with-sampe
+    cant-all-three
+      cant-combined
+        text text[68]
+        lp-legarmeih
+        text text[23]
+      cant-alef text[84]
+      cant-bet
+        text text[63]
+        lp-legarmeih
+        text text[20]
+== Deut.5.13 (json-vtrad-bhs)
+  verse keys=contents-corresponds-to,osisID,osisID-of-MAM-src
+    cant-all-three
+      cant-combined text[65]
+      cant-alef text[59]
+      cant-bet text[58]
+== Deut.5.14 (json-vtrad-bhs)
+  verse keys=contents-corresponds-to,osisID,osisID-of-MAM-src
+    cant-all-three
+      cant-combined
+        text text[33]
+        lp-legarmeih
+        text text[22]
+      cant-alef text[51]
+      cant-bet
+        text text[30]
+        lp-legarmeih
+        text text[21]
+    text text[205]
+    cant-all-three
+      cant-combined text[11]
+      cant-alef text[10]
+      cant-bet text[9]
+== Deut.5.15 (json-vtrad-bhs)
+  verse keys=contents-corresponds-to,ends-with-sampe,osisID,osisID-of-MAM-src
+    cant-all-three
+      cant-combined
+        text text[38]
+        lp-legarmeih
+        text text[185]
+      cant-alef text[212]
+      cant-bet
+        text text[33]
+        lp-legarmeih
+        text text[175]
+== Deut.5.16 (json-vtrad-bhs)
+  verse keys=contents-corresponds-to,ends-with-sampe,osisID,osisID-of-MAM-src,starts-with-sampe
+    text text[86]
+    lp-legarmeih
+    text text[105]
+== Deut.5.17 (json-vtrad-bhs)
+  verse keys=contents-corresponds-to,ends-with-sampe,osisID,osisID-of-MAM-src,starts-with-sampe
+    cant-all-three
+      cant-combined text[19]
+      cant-alef text[13]
+      cant-bet text[15]
+== Deut.5.18 (json-vtrad-bhs)
+  verse keys=contents-corresponds-to,ends-with-sampe,osisID,osisID-of-MAM-src,starts-with-sampe
+    cant-all-three
+      cant-combined text[21]
+      cant-alef text[15]
+      cant-bet text[17]
+== Deut.5.19 (json-vtrad-bhs)
+  verse keys=contents-corresponds-to,ends-with-sampe,osisID,osisID-of-MAM-src,starts-with-sampe
+    cant-all-three
+      cant-combined text[20]
+      cant-alef text[15]
+      cant-bet text[17]
+== Deut.5.20 (json-vtrad-bhs)
+  verse text[40] keys=contents-corresponds-to,ends-with-sampe,osisID,osisID-of-MAM-src,starts-with-sampe
+== Deut.5.21 (json-vtrad-bhs)
+  verse keys=contents-corresponds-to,ends-with-sampe,osisID,osisID-of-MAM-src,starts-with-sampe
+    text text[31]
+    spi-samekh3
+    text text[112]
+
+verses containing cant-all-three: 24
+Gen.35.22 Exod.20.2 Exod.20.3 Exod.20.4 Exod.20.5 Exod.20.6 Exod.20.8 Exod.20.9 Exod.20.10 Exod.20.13 Exod.20.14 Exod.20.15 Deut.5.6 Deut.5.7 Deut.5.8 Deut.5.9 Deut.5.10 Deut.5.12 Deut.5.13 Deut.5.14 Deut.5.15 Deut.5.17 Deut.5.18 Deut.5.19
+
+MAM-simple type/class census over the 24 book groups as MAM-morphhb reads them:
+  verse: 23213
+  text: 7547
+  lp-legarmeih: 1794
+  spi-samekh2: 1554
+  spi-pe2: 1553
+  kq-k: 1047
+  kq-q: 1047
+  kq: 1045
+  chapter: 929
+  lp-paseq: 512
+  spi-samekh3: 428
+  shirah-space: 328
+  kq-trivial: 149
+  implicit-maqaf: 116
+  slh-word: 58
+  book39: 39
+  letter-large: 32
+  scrdfftar: 32
+  sdt-note: 32
+  sdt-target: 32
+  cant-alef: 27
+  cant-all-three: 27
+  cant-bet: 27
+  cant-combined: 27
+  book24: 24
+  letter-small: 24
+  spi-pe3: 18
+  kq-q-velo-k: 9
+  kq-k-velo-q: 8
+  spi-invnun.including-trailing-space: 7
+  good-ending: 4
+  letter-hung: 4
+  kq.sep-maqaf: 2
+  kq-k-velo-q-maq: 2
+  silluq-before-meteg: 2
+  spi-invnun: 2
+  spi-samekh3.nu10-invnun-neighbor: 2
+
+MAPM.xml bare NBSP+PASEQ (legarmeh): 1787
+MAPM.xml x-paseq segs holding PASEQ: 508
+MAPM.xml PASEQ characters in all: 2297
+MAPM.xml MAQAF characters in all: 42657

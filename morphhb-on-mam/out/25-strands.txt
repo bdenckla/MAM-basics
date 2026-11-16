@@ -1,0 +1,41 @@
+strands.py; written by Claude (Opus 5.5), 2026-11-15; not reviewed by a human
+
+verses with a dual cantillation: 24
+verses compared                                                           24
+class K in cant-combined                                                   1
+class K in cant-bet                                                        1
+class K in cant-alef                                                       1
+class A2 in cant-combined                                                 15
+class A2 in cant-bet                                                      17
+class A2 in cant-alef                                                     19
+class A1 in cant-combined                                                227
+class A1 in cant-bet                                                     225
+class A1 in cant-alef                                                    223
+atoms whose vowel key differs between strands                             12
+atoms whose text (accents included) differs between strands              134
+atoms whose maqaf after differs between strands                           11
+atoms whose class differs between strands                                 10
+atoms compared                                                           243
+  Exod.20.3 atom 0 maqaf: {'cant-combined': ('לֹֽ֣א', True), 'cant-alef': ('לֹֽא', True), 'cant-bet': ('לֹ֣א', False)}
+  Exod.20.3 atom 1 maqaf: {'cant-combined': ('יִהְיֶ֥͏ֽה', True), 'cant-alef': ('יִהְיֶ֥ה', False), 'cant-bet': ('יִהְיֶֽה', True)}
+  Exod.20.3 atom 6 vowels: {'cant-combined': ('פָּנָֽ͏ַ֗י', 'A2'), 'cant-alef': ('פָּנָֽי', 'A2'), 'cant-bet': ('פָּנַ֗י', 'A2')}
+  Exod.20.4 atom 0 maqaf: {'cant-combined': ('לֹֽ֣א', True), 'cant-alef': ('לֹֽא', True), 'cant-bet': ('לֹ֣א', False)}
+  Exod.20.4 atom 1 maqaf: {'cant-combined': ('תַעֲשֶֽׂ֨ה', True), 'cant-alef': ('תַעֲשֶׂ֨ה', False), 'cant-bet': ('תַעֲשֶֽׂה', True)}
+  Exod.20.4 atom 11 vowels: {'cant-combined': ('מִתָּ֑͏ַ֜חַת', 'A2'), 'cant-alef': ('מִתָּ֑חַת', 'A1'), 'cant-bet': ('מִתַּ֜חַת', 'A2')}
+  Exod.20.9 atom 4 vowels: {'cant-combined': ('כׇּֿל', 'A1'), 'cant-alef': ('כׇּל', 'A1'), 'cant-bet': ('כׇל', 'A2')}
+  Exod.20.10 atom 5 maqaf: {'cant-combined': ('לֹֽ֣א', True), 'cant-alef': ('לֹֽא', True), 'cant-bet': ('לֹ֣א', False)}
+  Exod.20.10 atom 10 maqaf: {'cant-combined': ('וּבִנְךָ֣͏ֽ', True), 'cant-alef': ('וּבִנְךָ֣', False), 'cant-bet': ('וּבִנְךָֽ', True)}
+  Exod.20.13 atom 1 vowels: {'cant-combined': ('תִּֿרְצָ֖͏ֽח', 'A1'), 'cant-alef': ('תִרְצָ֖ח', 'A2'), 'cant-bet': ('תִּרְצָֽח', 'A1')}
+  Exod.20.14 atom 1 vowels: {'cant-combined': ('תִּֿנְאָ֑͏ֽף', 'A1'), 'cant-alef': ('תִנְאָ֑ף', 'A2'), 'cant-bet': ('תִּנְאָֽף', 'A1')}
+  Exod.20.15 atom 1 vowels: {'cant-combined': ('תִּֿגְנֹֽ֔ב', 'A1'), 'cant-alef': ('תִגְנֹ֔ב', 'A2'), 'cant-bet': ('תִּגְנֹֽב', 'A1')}
+  Deut.5.7 atom 0 maqaf: {'cant-combined': ('לֹ֣א', True), 'cant-alef': ('לֹא', True), 'cant-bet': ('לֹ֣א', False)}
+  Deut.5.7 atom 1 maqaf: {'cant-combined': ('יִהְיֶ֥͏ֽה', True), 'cant-alef': ('יִהְיֶ֥ה', False), 'cant-bet': ('יִהְיֶֽה', True)}
+  Deut.5.7 atom 6 vowels: {'cant-combined': ('פָּנָֽ͏ַ֗י', 'A2'), 'cant-alef': ('פָּנָֽי', 'A2'), 'cant-bet': ('פָּנַ֗י', 'A2')}
+  Deut.5.8 atom 0 maqaf: {'cant-combined': ('לֹֽ֣א', True), 'cant-alef': ('לֹֽא', True), 'cant-bet': ('לֹ֣א', False)}
+  Deut.5.8 atom 1 maqaf: {'cant-combined': ('תַעֲשֶֽׂ֨ה', True), 'cant-alef': ('תַעֲשֶׂ֨ה', False), 'cant-bet': ('תַעֲשֶֽׂה', True)}
+  Deut.5.8 atom 11 vowels: {'cant-combined': ('מִתָּ֑͏ַ֜חַת', 'A2'), 'cant-alef': ('מִתָּ֑חַת', 'A1'), 'cant-bet': ('מִתַּ֜חַת', 'A2')}
+  Deut.5.13 atom 4 vowels: {'cant-combined': ('כׇּֿל', 'A1'), 'cant-alef': ('כׇּל', 'A1'), 'cant-bet': ('כׇל', 'A2')}
+  Deut.5.15 atom 1 maqaf: {'cant-combined': ('כִּ֣י', True), 'cant-alef': ('כִּ֣י', False), 'cant-bet': ('כִּי', True)}
+  Deut.5.17 atom 1 vowels: {'cant-combined': ('תִּֿרְצָ֖͏ֽח', 'A1'), 'cant-alef': ('תִרְצָ֖ח', 'A2'), 'cant-bet': ('תִּרְצָֽח', 'A1')}
+  Deut.5.18 atom 1 vowels: {'cant-combined': ('תִּֿנְאָ֑͏ֽף', 'A1'), 'cant-alef': ('תִנְאָ֑ף', 'A2'), 'cant-bet': ('תִּנְאָֽף', 'A1')}
+  Deut.5.19 atom 1 vowels: {'cant-combined': ('תִּֿגְנֹֽ֔ב', 'A1'), 'cant-alef': ('תִגְנֹ֔ב', 'A2'), 'cant-bet': ('תִּגְנֹֽב', 'A1')}

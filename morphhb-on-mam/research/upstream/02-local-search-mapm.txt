@@ -1,0 +1,900 @@
+====================================================================================================
+PATTERN 'MAPM'
+--- openscriptures/morphhb#116 issue body by jag3773 at 2026-11-11T02:21:41Z (11 matches)
+    ...below), and @noamraph, @rockclaver and @bdenckla, whose pull requests were merged today. Thank you all.
+    
+    ## Where things stand
+    
+    **On `master` since v.2.2**
+    
+    - #91 and #92: morphology and lemma corrections from the Clear trees work (95 lines across 31 books in `wlc/`).
+    - #98: chapter names fixed in `MAPM/MAPM.xml`.
+    - #103: verse linking in the Read app.
+    - #108 (merged today): one cantillation-structure value in Ps 93:4.
+    - #110 (merged today): documentation of the implicit article (`Rd`) on the morphology codes page.
+    - #114 (merged today): `MAPM/MAPM.xml` regenerated from the current Miqra according...
+    ...), and @noamraph, @rockclaver and @bdenckla, whose pull requests were merged today. Thank you all.
+    
+    ## Where things stand
+    
+    **On `master` since v.2.2**
+    
+    - #91 and #92: morphology and lemma corrections from the Clear trees work (95 lines across 31 books in `wlc/`).
+    - #98: chapter names fixed in `MAPM/MAPM.xml`.
+    - #103: verse linking in the Read app.
+    - #108 (merged today): one cantillation-structure value in Ps 93:4.
+    - #110 (merged today): documentation of the implicit article (`Rd`) on the morphology codes page.
+    - #114 (merged today): `MAPM/MAPM.xml` regenerated from the current Miqra according to t...
+    ...ss 31 books in `wlc/`).
+    - #98: chapter names fixed in `MAPM/MAPM.xml`.
+    - #103: verse linking in the Read app.
+    - #108 (merged today): one cantillation-structure value in Ps 93:4.
+    - #110 (merged today): documentation of the implicit article (`Rd`) on the morphology codes page.
+    - #114 (merged today): `MAPM/MAPM.xml` regenerated from the current Miqra according to the Masorah.
+    
+    **The website** (hb.openscriptures.org) is built from the `gh-pages` branch, which was last merged from `master` on 2022-02-08. It differs from that point only by the `CNAME` file, so none of the above is live yet. Merging `mas...
+    ... books in `wlc/`).
+    - #98: chapter names fixed in `MAPM/MAPM.xml`.
+    - #103: verse linking in the Read app.
+    - #108 (merged today): one cantillation-structure value in Ps 93:4.
+    - #110 (merged today): documentation of the implicit article (`Rd`) on the morphology codes page.
+    - #114 (merged today): `MAPM/MAPM.xml` regenerated from the current Miqra according to the Masorah.
+    
+    **The website** (hb.openscriptures.org) is built from the `gh-pages` branch, which was last merged from `master` on 2022-02-08. It differs from that point only by the `CNAME` file, so none of the above is live yet. Merging `master` ...
+--- openscriptures/morphhb#115 PR body by jag3773 at 2026-11-11T02:21:08Z (5 matches)
+    ...adds a small set of checks that run on every pull request and on pushes to `master`.
+    
+    ## What it checks
+    
+    Any of these failing fails the run:
+    
+    - every tracked XML file is well-formed;
+    - `wlc/` has 39 books and 23,213 verses, and every word has a lemma, a morph code and a unique five-character id;
+    - `MAPM/MAPM.xml` has balanced verse markers and the same verse inventory as `wlc/`, apart from Josh 21:36–37, which MAM's text does not have;
+    - no operating-system junk files (`Thumbs.db`, `.DS_Store`, `desktop.ini`) are tracked.
+    
+    ## What it reports
+    
+    On a pull request it also writes a **data change summar...
+    ...a small set of checks that run on every pull request and on pushes to `master`.
+    
+    ## What it checks
+    
+    Any of these failing fails the run:
+    
+    - every tracked XML file is well-formed;
+    - `wlc/` has 39 books and 23,213 verses, and every word has a lemma, a morph code and a unique five-character id;
+    - `MAPM/MAPM.xml` has balanced verse markers and the same verse inventory as `wlc/`, apart from Josh 21:36–37, which MAM's text does not have;
+    - no operating-system junk files (`Thumbs.db`, `.DS_Store`, `desktop.ini`) are tracked.
+    
+    ## What it reports
+    
+    On a pull request it also writes a **data change summary** t...
+    ...ating-system junk files (`Thumbs.db`, `.DS_Store`, `desktop.ini`) are tracked.
+    
+    ## What it reports
+    
+    On a pull request it also writes a **data change summary** to the job summary: which words in `wlc/` changed and in which field (text, lemma, morph, `n`), any word ids added or removed, and how many `MAPM/` verses changed. The summary never fails the run; it is there so a reviewer can see at a glance what a change touches. For #108 it would have been one row:
+    
+    | verse | id | field | before | after |
+    |---|---|---|---|---|
+    | Ps.93.4 | `19AHF` | n | 2 | 1.0.0 |
+    
+    ## Also in this pull request
+    
+    The four `...
+    ...
+    
+    The four `Thumbs.db` files are removed and such files are ignored from now on, as osjc proposed in #111. Without that the new junk-file check would fail on `master`.
+    
+    ## How it was tested
+    
+    Run locally with the same script:
+    
+    - on `master` before #108, #110 and #114 were merged: fails, on the 2014 `MAPM.xml` (unclosed verses, text outside verses, different verse numbering) and the `Thumbs.db` files;
+    - on this branch: passes (`wlc/: 23213 verses, 306785 words`, `MAPM/: 23211 verses`) in about four seconds.
+    
+    This pull request is the first real run of the workflow on GitHub.
+    
+    ## Notes
+    
+    - The script (...
+--- openscriptures/morphhb#114 PR body by bdenckla at 2026-11-04T12:30:35Z (11 matches)
+    ...Update MAPM to the current Miqra according to the Masorah
+    ## Why
+    
+    `MAPM/MAPM.xml` is David Troidl's OSIS conversion of Miqra according to the Masorah (MAM), finished in February 2014. MAM has been corrected a great deal since: the text differs from today's MAM in 2,260 of the 23,210 verses the two share. One o...
+    ...Update MAPM to the current Miqra according to the Masorah
+    ## Why
+    
+    `MAPM/MAPM.xml` is David Troidl's OSIS conversion of Miqra according to the Masorah (MAM), finished in February 2014. MAM has been corrected a great deal since: the text differs from today's MAM in 2,260 of the 23,210 verses the two share. One of those differences is the subject of openscriptures/morphhb...
+    ...Update MAPM to the current Miqra according to the Masorah
+    ## Why
+    
+    `MAPM/MAPM.xml` is David Troidl's OSIS conversion of Miqra according to the Masorah (MAM), finished in February 2014. MAM has been corrected a great deal since: the text differs from today's MAM in 2,260 of the 23,210 verses the two share. One of those differences is the subject of openscriptures/morphhb#109 ...
+    ...shed in February 2014. MAM has been corrected a great deal since: the text differs from today's MAM in 2,260 of the 23,210 verses the two share. One of those differences is the subject of openscriptures/morphhb#109 (the zarqa in Exodus 36:2), which this pull request resolves.
+    
+    ## What changes
+    
+    - **`MAPM/MAPM.xml`** is replaced by today's MAM, generated by [MAM-basics](https://github.com/bdenckla/MAM-basics) at commit [83caf168](https://github.com/bdenckla/MAM-basics/commit/83caf1689a7c8e382254af07ecb5373819ce3f07) (its `MAM-morphhb/MAPM.xml`, byte for byte).
+    - **`MAPM/readme.txt`** gives the date,...
+--- openscriptures/morphhb#109 issue body by cjwatson at 2026-02-02T00:33:17Z (5 matches)
+    ...Zarka vs. tsinnorit in Exodus 36:2
+    I've been experimenting with the MapM text today to see if I can help with https://github.com/Noleli/trop-analysis/issues/10.  The code in that repository happens to include a consistency check for whether the cantillation marks it finds include any instances of tsinnorit.  After handling the fact that MapM uses tsinnorit (a.k.a. Unico...
+    ... been experimenting with the MapM text today to see if I can help with https://github.com/Noleli/trop-analysis/issues/10.  The code in that repository happens to include a consistency check for whether the cantillation marks it finds include any instances of tsinnorit.  After handling the fact that MapM uses tsinnorit (a.k.a. Unicode "zarqa") for the accented syllable of milra words where there's a postpositive zarka (a.k.a. Unicode "zinor"), this still had one hit on Exodus 36:2:
+    
+    > וַיִּקְרָ֣א מֹשֶׁ֗ה אֶל־בְּצַלְאֵל֘
+    
+    This surely isn't a real tsinnorit, so the only reason I can think of why it w...
+    ...seems as though it should just be a rendering consideration.  But the [rendered text of this verse on WikiSource](https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%AA_%D7%9C%D7%95/%D7%98%D7%A2%D7%9E%D7%99%D7%9D) has a normal postpositive zarka instead:
+    
+    > וַיִּקְרָ֣א מֹשֶׁ֗ה אֶל־בְּצַלְאֵל֮
+    
+    The MapM spreadsheet does show [variants for Exodus 36:2](https://docs.google.com/spreadsheets/d/1mkQyj6by1AtBUabpbaxaZq9Z2X3pX8ZpwG91ZCSOEYs/edit?gid=957434826#gid=957434826&range=E2736), but they're between אֶל־בְּצַלְאֵל֮ (with postpositive zarqa) and אֶל־בְּצַלְאֵ֘ל (with tsinnorit on the alef).  The do...
+    ...orm here where the zarka appears to be before the lamed and not after it, but they observe that this is only because the head of the lamed means that the zarka cannot extend to the left, and that there is "no place" to copy this irregular form to the digital edition.
+    
+    I notice that Exodus 30:11 in `MAPM.xml` here has a zarka as I'd expect, so I think the accentuation of Exodus 36:2 may be a mistake in the edition found here (perhaps just due to using an older version of the MapM text).  Does this make sense to you?  Thanks!...
+--- openscriptures/morphhb#98 PR body by didib at 2022-11-27T08:28:47Z (1 matches)
+    ...MAPM: Fix chapter names
+    As is customary, replace the chapter names for chapters 15 and 16 to 'טו' and 'טז', respectively. See e.g.:
+    
+    https://en.wikipedia.org/wiki/Significance_of_numbers_in_Judaism#15...
+--- openscriptures/morphhb#28 issue body by DavidHaslam at 2017-02-02T19:21:50Z (1 matches)
+    ...Song format in prose books (e.g. The list of defeated kings in Joshua 12)?
+    MAPM uses OSIS **table elements** to markup the passages containing **song format** in prose books.
+    
+    e.g. The list of defeated kings in Joshua 12:9-31
+    
+    This topic is described in [Column F: The Verse in Song Format (with table code)](https://en.wikisource.org/wiki/User:Dovi/Miqra_according_to_the_Me...
+--- openscriptures/morphhb#27 issue body by DavidHaslam at 2017-02-02T18:58:28Z (4 matches)
+    ...s, **small** letters and **raised** (_aka_ **suspended**) letters?
+    
+    Even if most Bible software currently has no means to render these differently, it would still be sensible to provide the means in the XML to identify these unusual letters in order to support these traditional features.
+    
+    cf. **MapM** uses the **seg** element with these user eXtension **type** attribute values:
+    - **x-big**
+    - **x-small**
+    - **x-suspended**
+    
+    See counted list of OSIS eXtensions found in MAPM.xml
+    
+    [MAPM.xox.cdl.txt](https://github.com/openscriptures/morphhb/files/748733/MAPM.xox.cdl.txt)...
+    ...provide the means in the XML to identify these unusual letters in order to support these traditional features.
+    
+    cf. **MapM** uses the **seg** element with these user eXtension **type** attribute values:
+    - **x-big**
+    - **x-small**
+    - **x-suspended**
+    
+    See counted list of OSIS eXtensions found in MAPM.xml
+    
+    [MAPM.xox.cdl.txt](https://github.com/openscriptures/morphhb/files/748733/MAPM.xox.cdl.txt)...
+    ...eans in the XML to identify these unusual letters in order to support these traditional features.
+    
+    cf. **MapM** uses the **seg** element with these user eXtension **type** attribute values:
+    - **x-big**
+    - **x-small**
+    - **x-suspended**
+    
+    See counted list of OSIS eXtensions found in MAPM.xml
+    
+    [MAPM.xox.cdl.txt](https://github.com/openscriptures/morphhb/files/748733/MAPM.xox.cdl.txt)...
+    ...se traditional features.
+    
+    cf. **MapM** uses the **seg** element with these user eXtension **type** attribute values:
+    - **x-big**
+    - **x-small**
+    - **x-suspended**
+    
+    See counted list of OSIS eXtensions found in MAPM.xml
+    
+    [MAPM.xox.cdl.txt](https://github.com/openscriptures/morphhb/files/748733/MAPM.xox.cdl.txt)...
+--- openscriptures/morphhb#25 issue body by DavidHaslam at 2017-01-30T07:21:39Z (1 matches)
+    ...sues in the Tanakh?
+    Do you have any background information for these observations:
+    
+    -**Nehemiah 7:68** text is missing, with versification off by one afterwards compared to translations
+    -**Isaiah 64:1** text is missing, with similar consequences.
+    -**Malachi 3:24** text is truncated, except in **MapM**, where the missing text is supplied but without diacritics
+    
+    Front-ends with parallel passage display feature will present difficulties around these locations.
+    
+    cf. Nehemiah 7 has 73 verses in the KJV versification. yet OSHB has only 72 verses. 
+    It's conceivable that the displacement "error" ...
+--- openscriptures/morphhb#25 comment 276065534 by DavidTroidl at 2017-01-30T13:43:42Z (1 matches)
+    ...nk Haslam wrote:
+    >
+    > Do you have any background information for these observations:
+    >
+    > -*Nehemiah 7:68* text is missing, with versification off by one 
+    > afterwards compared to translations
+    > -*Isaiah 64:1* text is missing, with similar consequences.
+    > -*Malachi 3:24* text is truncated, except in *MapM*, where the missing 
+    > text is without diacritics
+    >
+    > Front-ends with parallel passage display feature will present 
+    > difficulties in these locations.
+    >
+    > —
+    > You are receiving this because you are subscribed to this thread.
+    > Reply to this email directly, view it on GitHub 
+    > <https://github.com/...
+--- openscriptures/morphhb#29 comment 277074652 by DavidHaslam at 2017-02-02T20:32:21Z (3 matches)
+    ...FIO. Seeing as MapM is already a single XML file for the whole work,
+    I just extracted and counted all the _compound words_ found therein.
+    
+    File format is **tab delimited text** (like CSV but without the quotation marks or commas).
+    
+    [MAPM.maqaf.words.count.txt](https://github.com/openscriptures/morphhb/files/74888...
+    ...FIO. Seeing as MapM is already a single XML file for the whole work,
+    I just extracted and counted all the _compound words_ found therein.
+    
+    File format is **tab delimited text** (like CSV but without the quotation marks or commas).
+    
+    [MAPM.maqaf.words.count.txt](https://github.com/openscriptures/morphhb/files/748889/MAPM.maqaf.words.count.txt)
+    
+    
+    ...
+    ...s already a single XML file for the whole work,
+    I just extracted and counted all the _compound words_ found therein.
+    
+    File format is **tab delimited text** (like CSV but without the quotation marks or commas).
+    
+    [MAPM.maqaf.words.count.txt](https://github.com/openscriptures/morphhb/files/748889/MAPM.maqaf.words.count.txt)
+    
+    
+    ...
+--- openscriptures/morphhb#27 comment 277243487 by DavidTroidl at 2017-02-03T13:12:08Z (1 matches)
+    ...I have seen them in files I have from online, but have no permission to 
+    distribute.  They are also present in the MapM 
+    <https://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%AA%D7%9E%D7%A9:Dovi/%D7%AA%D7%95%D7%A8%D7%94_%D7%A2%D7%9C_%D7%A4%D7%99_%D7%94%D7%9E%D7%A1%D7%95%D7%A8%D7%94/%D7%91%D7%A8%D7%90%D7%A9%D7%99%D7%AA>. 
+    Presentation would be as simple as CSS, if the markup were carried over 
+    to a SWORD module, for exampl...
+--- openscriptures/morphhb#28 comment 277245770 by DavidTroidl at 2017-02-03T13:24:45Z (1 matches)
+    ...I would say that the "one" in each part of the verse is set off by the 
+    cantillation.  Given that, presentation is in the province of the ones 
+    using the XML, not in the storage format itself.
+    
+    
+    On 2/2/2017 2:21 PM, David Frank Haslam wrote:
+    >
+    > MAPM uses OSIS *table elements* to markup the passages containing 
+    > *song format* in prose books.
+    >
+    > e.g. The list of defeated kings in Joshua 12:9-31
+    >
+    > This topic is described in Column F: The Verse in Song Format (with 
+    > table code) 
+    > <https://en.wikisource.org/wiki/User:Dovi/Miqra_according_to_...
+--- openscriptures/morphhb#29 comment 277250386 by DavidTroidl at 2017-02-03T13:48:32Z (3 matches)
+    ...The maqqef is a mark that does tie words together, but does not in 
+    general create "compound words".  In the OSHB we separate out maqqef 
+    into a <seg> element between the words.
+    
+    
+    On 2/2/2017 3:32 PM, David Frank Haslam wrote:
+    >
+    > FIO. Seeing as MapM is already a single XML file for the whole work,
+    > I just extracted and counted all the /compound words/ found therein.
+    >
+    > File format is *tab delimited text* (like CSV but without the 
+    > quotation marks or commas).
+    >
+    > MAPM.maqaf.words.count.txt 
+    > <https://github.com/openscriptures/morphhb/files...
+    ...ords.
+    
+    
+    On 2/2/2017 3:32 PM, David Frank Haslam wrote:
+    >
+    > FIO. Seeing as MapM is already a single XML file for the whole work,
+    > I just extracted and counted all the /compound words/ found therein.
+    >
+    > File format is *tab delimited text* (like CSV but without the 
+    > quotation marks or commas).
+    >
+    > MAPM.maqaf.words.count.txt 
+    > <https://github.com/openscriptures/morphhb/files/748889/MAPM.maqaf.words.count.txt>
+    >
+    > —
+    > You are receiving this because you are subscribed to this thread.
+    > Reply to this email directly, view it on GitHub 
+    > <https://github.com/openscriptures/morphhb/issues/29#issuecomme...
+    ...ady a single XML file for the whole work,
+    > I just extracted and counted all the /compound words/ found therein.
+    >
+    > File format is *tab delimited text* (like CSV but without the 
+    > quotation marks or commas).
+    >
+    > MAPM.maqaf.words.count.txt 
+    > <https://github.com/openscriptures/morphhb/files/748889/MAPM.maqaf.words.count.txt>
+    >
+    > —
+    > You are receiving this because you are subscribed to this thread.
+    > Reply to this email directly, view it on GitHub 
+    > <https://github.com/openscriptures/morphhb/issues/29#issuecomment-277074652>, 
+    > or mute the thread 
+    > <https://github.com/notifications/unsubscribe-...
+--- openscriptures/morphhb#28 comment 277281919 by DavidHaslam at 2017-02-03T15:45:47Z (1 matches)
+    ...Not sure if you missed the point.
+    
+    -In the OSHB module, there is no special XML to (e.g.) mark each "one" defeated king in Joshua 12. 
+    -In the MapM module, the special XML is present in the form of table, row and col elements.
+    
+    If only some Hebrew cantillation marks off the "one" (king) in each of the verses 9-24, then how can a front-end render this differently, if (as I assume) the same cantillation is used elsewhere for other purposes?
+    ...
+--- openscriptures/morphhb#28 comment 277334984 by DavidTroidl at 2017-02-03T19:10:45Z (1 matches)
+    ...limitations.  These could be handled by module makers, 
+    if they deem the distinction important.
+    
+    
+    On 2/3/2017 10:45 AM, David Frank Haslam wrote:
+    >
+    > Not sure if you missed the point.
+    >
+    > -In the OSHB module, there is no special XML to (e.g.) mark each "one" 
+    > defeated king in Joshua 12.
+    > -In the MapM module, the special XML is present in the form of table, 
+    > row and col elements.
+    >
+    > If only some Hebrew cantillation marks off the "one" (king) in each of 
+    > the verses 9-24, then how can a front-end render this differently, if 
+    > (as I assume) the same cantillation is used elsewhere for other pu...
+--- openscriptures/morphhb#75 comment 773333656 by Nainoia-Inc-Admin at 2021-02-04T14:15:10Z (3 matches)
+    ...he TOTHT to VPL is it simply a matter of concatenating the Hebrew words together with a space in between for each verse?  Also is the TOTHT updated when this OpenScriptures project is updated?
+    
+    Now in the OpenScriptures/morphhb project I see three folders that seem to contain the Hebrew text: 1) /MAPM/ 2) /wlc and 3) /oxlos-import.
+    
+    The MAPM/MAPM.xml file already seems to be close to VPL format.  I just need to know what to do with the -SEG- tags.  I need the Hebrew text in VPL without any tags.  How do I strip out the -SEG- tags?
+    
+    The /wlc/bible books file format has even more tags.  I woul...
+    ...ncatenating the Hebrew words together with a space in between for each verse?  Also is the TOTHT updated when this OpenScriptures project is updated?
+    
+    Now in the OpenScriptures/morphhb project I see three folders that seem to contain the Hebrew text: 1) /MAPM/ 2) /wlc and 3) /oxlos-import.
+    
+    The MAPM/MAPM.xml file already seems to be close to VPL format.  I just need to know what to do with the -SEG- tags.  I need the Hebrew text in VPL without any tags.  How do I strip out the -SEG- tags?
+    
+    The /wlc/bible books file format has even more tags.  I would need help to know how to strip out all th...
+    ...nating the Hebrew words together with a space in between for each verse?  Also is the TOTHT updated when this OpenScriptures project is updated?
+    
+    Now in the OpenScriptures/morphhb project I see three folders that seem to contain the Hebrew text: 1) /MAPM/ 2) /wlc and 3) /oxlos-import.
+    
+    The MAPM/MAPM.xml file already seems to be close to VPL format.  I just need to know what to do with the -SEG- tags.  I need the Hebrew text in VPL without any tags.  How do I strip out the -SEG- tags?
+    
+    The /wlc/bible books file format has even more tags.  I would need help to know how to strip out all the tag...
+--- openscriptures/morphhb#75 comment 773578879 by DavidTroidl at 2021-02-04T20:18:51Z (1 matches)
+    .../wlc is the latest OSHB text.
+    /MAPM is a completely different project.
+    /oxlos-import has no scripture files in it....
+--- openscriptures/morphhb#109 comment 5744171169 by 0-Actual at 2026-09-19T18:03:02Z (5 matches)
+    ...Agent: Gaucia — AI-assisted verification for Sherman G. Laing / Quantum.Earth.Laing.
+    
+    I reproduced this at `3d15126fb1ef74867fc1434be1942e837932691f`: in `MAPM/MAPM.xml`, Exodus 36:2 has U+0598 after the final lamed in Bezalel. The [Wikisource MAM text](https://he.wikisource.org/wiki/שמות_לו/טעמים) linked in the report displays U+05AE there. Ben Denckla's encoding documentation explains the distinction between stress zarqa and postpositive zarqa and ident...
+    ...Agent: Gaucia — AI-assisted verification for Sherman G. Laing / Quantum.Earth.Laing.
+    
+    I reproduced this at `3d15126fb1ef74867fc1434be1942e837932691f`: in `MAPM/MAPM.xml`, Exodus 36:2 has U+0598 after the final lamed in Bezalel. The [Wikisource MAM text](https://he.wikisource.org/wiki/שמות_לו/טעמים) linked in the report displays U+05AE there. Ben Denckla's encoding documentation explains the distinction between stress zarqa and postpositive zarqa and identifies...
+    ...eplaces only that terminal U+0598 with U+05AE. I verified that it changes exactly one Unicode code point, preserves every consonant and all remaining file content, and leaves valid XML. This is not a global replacement rule: U+0598 has legitimate uses elsewhere. The README already cautions that the MAPM files may be outdated, which supports considering source-version drift without proving the history of this particular character.
+    
+    One clarification to the report: Exodus 30:11 in this pinned MAPM file has neither U+0598 nor U+05AE, so it cannot serve as the stated positive comparison. That referenc...
+    ...t a global replacement rule: U+0598 has legitimate uses elsewhere. The README already cautions that the MAPM files may be outdated, which supports considering source-version drift without proving the history of this particular character.
+    
+    One clarification to the report: Exodus 30:11 in this pinned MAPM file has neither U+0598 nor U+05AE, so it cannot serve as the stated positive comparison. That reference may need correction; I have not guessed a replacement verse.
+    
+    This candidate updates the stored MAPM encoding toward the cited source edition; it does not alter WLC or certify manuscript reading...
+--- openscriptures/morphhb#114 comment 6784980147 by jag3773 at 2026-11-11T02:13:23Z (4 matches)
+    ...*These review notes were prepared by Claude (an AI assistant) working at my direction. I'm posting them for the record; corrections are welcome.*
+    
+    Thank you for this. The description made the change easy to check, and it holds up. What was verified independently of the PR:
+    
+    - **Provenance.** `MAPM/MAPM.xml` at this PR's head is byte-for-byte identical to `MAM-morphhb/MAPM.xml` at MAM-basics commit 83caf168 (SHA-256 `6f69ec74…e798962`).
+    - **Independent text check.** Compared word by word with Sefaria's "Miqra according to the Masorah" as served on 2026-11-10, the new file differs in 202 of 30...
+    ...*These review notes were prepared by Claude (an AI assistant) working at my direction. I'm posting them for the record; corrections are welcome.*
+    
+    Thank you for this. The description made the change easy to check, and it holds up. What was verified independently of the PR:
+    
+    - **Provenance.** `MAPM/MAPM.xml` at this PR's head is byte-for-byte identical to `MAM-morphhb/MAPM.xml` at MAM-basics commit 83caf168 (SHA-256 `6f69ec74…e798962`).
+    - **Independent text check.** Compared word by word with Sefaria's "Miqra according to the Masorah" as served on 2026-11-10, the new file differs in 202 of 306,525...
+    ...at my direction. I'm posting them for the record; corrections are welcome.*
+    
+    Thank you for this. The description made the change easy to check, and it holds up. What was verified independently of the PR:
+    
+    - **Provenance.** `MAPM/MAPM.xml` at this PR's head is byte-for-byte identical to `MAM-morphhb/MAPM.xml` at MAM-basics commit 83caf168 (SHA-256 `6f69ec74…e798962`).
+    - **Independent text check.** Compared word by word with Sefaria's "Miqra according to the Masorah" as served on 2026-11-10, the new file differs in 202 of 306,525 words, all small pointing details (mostly meteg, and rafe in forms of ...
+    ...w spellings (Mic 5:4, Job 21:24, Dan 7:9, Prov 7:15, Job 20:8).
+    - **Other statements.** Confirmed: 1,047 ketiv and 1,047 qere segs; 39 books, 9 book groups, 59 sections, 101 titles, 1,858 chapters and 9,756 poetic lines; U+0598 replaced by U+05AE in Exod 36:2; nothing else in this repository reads `MAPM/`; `gh-pages` was last merged from master on 2022-02-08.
+    
+    Not verified: the OpenScriptorium importer's behaviour, and the comparison with MAM-OSIS.
+    
+    Notes:
+    
+    - The format changes (marked qere, no song tables, BHS numbering in the four places, no `x-symbol` segs) will be called out for consumers in t...
+--- openscriptures/morphhb#109 comment 6785081583 by jag3773 at 2026-11-11T02:20:01Z (2 matches)
+    ...Resolved by #114, merged today: `MAPM/MAPM.xml` now has HEBREW ACCENT ZINOR (U+05AE) on בְּצַלְאֵל in Exodus 36:2, as MAM does. Thank you for the careful report. The website will show the change once it is next updated....
+    ...Resolved by #114, merged today: `MAPM/MAPM.xml` now has HEBREW ACCENT ZINOR (U+05AE) on בְּצַלְאֵל in Exodus 36:2, as MAM does. Thank you for the careful report. The website will show the change once it is next updated....
+--- openscriptures/morphhb#115 comment 6785804912 by jag3773 at 2026-11-11T03:08:34Z (8 matches)
+    ...duced by running the unchanged validator against an isolated, Git-tracked copy of the complete dataset. They cover malformed VerseMap XML escaping validation, baseline comparison errors failing valid current data, misplaced words bypassing checks, six-character IDs passing the ID check, deletion of MAPM passing validation, and conflicting start/end attributes being overlooked.
+    
+    **What passed:** the unchanged dataset validated with 23,213 WLC verses, 306,785 word IDs, and 23,211 MAPM verses. Separate mutations correctly failed for missing lemmas, duplicate word IDs, malformed morphology, unclosed...
+    ... failing valid current data, misplaced words bypassing checks, six-character IDs passing the ID check, deletion of MAPM passing validation, and conflicting start/end attributes being overlooked.
+    
+    **What passed:** the unchanged dataset validated with 23,213 WLC verses, 306,785 word IDs, and 23,211 MAPM verses. Separate mutations correctly failed for missing lemmas, duplicate word IDs, malformed morphology, unclosed MAPM verses, verse-inventory mismatches, tracked junk, and malformed XML outside the skipped WLC metadata. Reconstructing the Psalm 93:4 example produced the promised single `n: 2 → 1....
+    ...passing validation, and conflicting start/end attributes being overlooked.
+    
+    **What passed:** the unchanged dataset validated with 23,213 WLC verses, 306,785 word IDs, and 23,211 MAPM verses. Separate mutations correctly failed for missing lemmas, duplicate word IDs, malformed morphology, unclosed MAPM verses, verse-inventory mismatches, tracked junk, and malformed XML outside the skipped WLC metadata. Reconstructing the Psalm 93:4 example produced the promised single `n: 2 → 1.0.0` row. The first GitHub workflow run also succeeded.
+    
+    **Standards:** no direct violations of documented repository ...
+    ... complete baseline containing only a malformed `wlc/Obad.xml`, the script exits 1 solely because of the baseline parse failure. A PR repairing malformed XML can therefore remain red, contrary to the promise that summary generation never fails the run. Use quiet parsing for baseline WLC data, as the MAPM comparison does, report unavailable comparisons, and keep summary failures separate from validation of the current revision.
+    
+    ### 3. [P2] Reject words outside recognized verse elements
+    
+    [validate_data.py:97](https://github.com/openscriptures/morphhb/blob/6623bd0a18d98accf74e7e5a8897d4a850f37ad6...
+--- openscriptures/morphhb#115 comment 6785895893 by jag3773 at 2026-11-11T03:14:14Z (5 matches)
+    ...sses | fails: not well-formed |
+    | 2 | malformed `wlc/Obad.xml` in the base only | fails | passes; summary says the book was not compared |
+    | 3 | `<w>` placed under a chapter, outside any verse | passes | fails: word outside any verse |
+    | 4 | `id="31xeN&#10;"` | passes | fails: malformed id |
+    | 5 | `MAPM/MAPM.xml` deleted | passes | fails: file is missing |
+    | 6 | first `sID="Gen.1.1"` milestone also given an `eID` | passes | fails: both sID and eID |
+    
+    How each was fixed:
+    
+    1. Every tracked XML file that a specific check has not already read is now parsed for well-formedness.
+    2. The base revision is ...
+    ...| fails: not well-formed |
+    | 2 | malformed `wlc/Obad.xml` in the base only | fails | passes; summary says the book was not compared |
+    | 3 | `<w>` placed under a chapter, outside any verse | passes | fails: word outside any verse |
+    | 4 | `id="31xeN&#10;"` | passes | fails: malformed id |
+    | 5 | `MAPM/MAPM.xml` deleted | passes | fails: file is missing |
+    | 6 | first `sID="Gen.1.1"` milestone also given an `eID` | passes | fails: both sID and eID |
+    
+    How each was fixed:
+    
+    1. Every tracked XML file that a specific check has not already read is now parsed for well-formedness.
+    2. The base revision is read ...
+    ... is now parsed for well-formedness.
+    2. The base revision is read quietly, and an error while producing the summary is reported in the summary instead of failing the run.
+    3. Any `<w>` that is not inside a verse is an error.
+    4. The id, morph, `n` and verse-id patterns use `fullmatch()`.
+    5. A missing `MAPM/MAPM.xml` is an error for the current revision; the base may still lack it.
+    6. Each verse milestone must carry exactly one of `sID` and `eID`. A milestone with neither is reported as well.
+    
+    Also taken up from the review:
+    
+    - **Word order.** The summary now lists verses whose words are the same but i...
+    ...ow parsed for well-formedness.
+    2. The base revision is read quietly, and an error while producing the summary is reported in the summary instead of failing the run.
+    3. Any `<w>` that is not inside a verse is an error.
+    4. The id, morph, `n` and verse-id patterns use `fullmatch()`.
+    5. A missing `MAPM/MAPM.xml` is an error for the current revision; the base may still lack it.
+    6. Each verse milestone must carry exactly one of `sID` and `eID`. A milestone with neither is reported as well.
+    
+    Also taken up from the review:
+    
+    - **Word order.** The summary now lists verses whose words are the same but in a d...
+--- openscriptures/morphhb#116 comment 6786741567 by bdenckla at 2026-11-11T04:08:32Z (3 matches)
+    ...*Written by a Claude session on 2026-11-10, at Ben Denckla's request.*
+    
+    On whether anyone depends on `MAPM/MAPM.xml`: one program we know of does. OpenScriptorium's `app/services/importers/oshb_features_importer.rb` downloads the file from this repository's `master`, unless it has a cached copy, and reads it line by line with regular expressions, importing the ketiv/qere notes, the parashot and the para...
+    ...*Written by a Claude session on 2026-11-10, at Ben Denckla's request.*
+    
+    On whether anyone depends on `MAPM/MAPM.xml`: one program we know of does. OpenScriptorium's `app/services/importers/oshb_features_importer.rb` downloads the file from this repository's `master`, unless it has a cached copy, and reads it line by line with regular expressions, importing the ketiv/qere notes, the parashot and the paragraph...
+    ...d keeps the old pattern for the 2014 file. An installation with a cached copy goes on importing the 2014 file until that copy is deleted.
+    
+    We know of no other program that reads the file. Whether this makes 3.0 the more honest number is your call; either way, the release notes' "Breaking change in `MAPM/`" section might link that pull request.
+    ...
+--- openscriptures/morphhb#116 comment 6787035032 by bdenckla at 2026-11-11T04:28:55Z (4 matches)
+    ...*Written by a Claude session on 2026-11-10, at Ben Denckla's request.*
+    
+    On the follow-up list of thirteen verses: one of them is settled by the text. In Prov 30:15, Miqra according to the Masorah (MAM), now this repository's `MAPM/MAPM.xml`, has oleh-weyored on the second הַב, written הַ֥֫ב, where WLC has only the merkha, הַ֥ב. By MAM's text the verse has an oleh-weyored, so the `2` belongs on הַ֥֫ב rather than on the verse's first chanted word. (I have not checked the Leningrad Codex itself.)
+    
+    In the other twelve, MAM's acc...
+    ...*Written by a Claude session on 2026-11-10, at Ben Denckla's request.*
+    
+    On the follow-up list of thirteen verses: one of them is settled by the text. In Prov 30:15, Miqra according to the Masorah (MAM), now this repository's `MAPM/MAPM.xml`, has oleh-weyored on the second הַב, written הַ֥֫ב, where WLC has only the merkha, הַ֥ב. By MAM's text the verse has an oleh-weyored, so the `2` belongs on הַ֥֫ב rather than on the verse's first chanted word. (I have not checked the Leningrad Codex itself.)
+    
+    In the other twelve, MAM's accents ...
+    ...ed against the Aleppo Codex and related manuscripts. Runs of two accent grammars over WLC 4.22, with comparisons to MAM, flag 125 prose verses and 25 poetic ones: https://bdenckla.github.io/MAM-basics/wlc/accgram/goerwitz.html and https://bdenckla.github.io/MAM-basics/wlc/accgram/poetic.html. With `MAPM/MAPM.xml` in this repository, such a check needs nothing from outside it.
+    ...
+    ...ainst the Aleppo Codex and related manuscripts. Runs of two accent grammars over WLC 4.22, with comparisons to MAM, flag 125 prose verses and 25 poetic ones: https://bdenckla.github.io/MAM-basics/wlc/accgram/goerwitz.html and https://bdenckla.github.io/MAM-basics/wlc/accgram/poetic.html. With `MAPM/MAPM.xml` in this repository, such a check needs nothing from outside it.
+    ...
+--- commit d4265dfa by Jesse Griffin at 2026-11-11T02:19:37Z (2 matches)
+    ...Merge pull request #114 from bdenckla/update-mapm
+    
+    Update MAPM to the current Miqra according to the Masorah...
+    ...Merge pull request #114 from bdenckla/update-mapm
+    
+    Update MAPM to the current Miqra according to the Masorah...
+--- commit d266b727 by Ben Denckla at 2026-11-04T12:30:07Z (6 matches)
+    ...Update MAPM to the current Miqra according to the Masorah
+    
+    Replace MAPM/MAPM.xml, David Troidl's 2014 OSIS conversion of Miqra
+    according to the Masorah (MAM), with today's MAM, generated by
+    MAM-basics (https://github.com/bdenckla/MAM-basics) at commit
+    83caf1689a7c8e382254af07ecb5373819ce3f07: its MAM-morphhb/M...
+    ...Update MAPM to the current Miqra according to the Masorah
+    
+    Replace MAPM/MAPM.xml, David Troidl's 2014 OSIS conversion of Miqra
+    according to the Masorah (MAM), with today's MAM, generated by
+    MAM-basics (https://github.com/bdenckla/MAM-basics) at commit
+    83caf1689a7c8e382254af07ecb5373819ce3f07: its MAM-morphhb/MAPM.xml,
+    byte for byte. The new file keeps the 2014 file's O...
+    ...Update MAPM to the current Miqra according to the Masorah
+    
+    Replace MAPM/MAPM.xml, David Troidl's 2014 OSIS conversion of Miqra
+    according to the Masorah (MAM), with today's MAM, generated by
+    MAM-basics (https://github.com/bdenckla/MAM-basics) at commit
+    83caf1689a7c8e382254af07ecb5373819ce3f07: its MAM-morphhb/MAPM.xml,
+    byte for byte. The new file keeps the 2014 file's OSIS f...
+    ...M to the current Miqra according to the Masorah
+    
+    Replace MAPM/MAPM.xml, David Troidl's 2014 OSIS conversion of Miqra
+    according to the Masorah (MAM), with today's MAM, generated by
+    MAM-basics (https://github.com/bdenckla/MAM-basics) at commit
+    83caf1689a7c8e382254af07ecb5373819ce3f07: its MAM-morphhb/MAPM.xml,
+    byte for byte. The new file keeps the 2014 file's OSIS form and line
+    layout.
+    
+    MAPM/readme.txt gives the date, the MAM-basics commit, what differs
+    from the 2014 file, and MAM's license and attribution statement.
+    README.md's MAPM paragraph now says when the file was regenerated.
+    
+    Co-Authored-By:...
+--- commit 7b65df58 by J. de Joode at 2023-04-10T09:11:20Z (2 matches)
+    ...Merge pull request #98 from didib/mapm-fix-chapter-names
+    
+    MAPM: Fix chapter names because of significance of numbers in Hebrew...
+    ...Merge pull request #98 from didib/mapm-fix-chapter-names
+    
+    MAPM: Fix chapter names because of significance of numbers in Hebrew...
+--- commit a2f91444 by Yedidyah Bar David at 2022-11-27T08:22:51Z (1 matches)
+    ...MAPM: Fix chapter names
+    
+    As is customary, replace the chapter names for chapters 15 and 16 to 'טו'
+    and 'טז', respectively. See e.g.:
+    
+    https://en.wikipedia.org/wiki/Significance_of_numbers_in_Judaism#15...
+--- commit 3ee7fec9 by David Troidl at 2014-02-20T01:44:27Z (1 matches)
+    ...MAPM first OSIS release....
+PATTERN 'MAPM': 29 records
+====================================================================================================
+PATTERN 'Aleppo'
+--- openscriptures/morphhb#27 comment 277344141 by DavidTroidl at 2017-02-03T19:47:18Z (2 matches)
+    ...n 
+    image online that says it is:
+    http://transparentenglishbible.com/wp-content/uploads/2016/03/leningrad_genesis1-927x1024.jpg
+    This shows the initial bet of Genesis no bigger than any of the 
+    surrounding letters.  Both of the examples I know of, that do record the 
+    unusual letters, are based on the Aleppo Codex.  The Jewish community 
+    seems to respect the Aleppo more highly than the Leningrad, but if the 
+    difference is so pronounced with regard to the unusual letters, the OSHB 
+    should respect the WLC, because that is our source.
+    
+    
+    On 2/3/2017 10:16 AM, David Frank Haslam wrote:
+    >
+    > The usefulness is...
+    ...bible.com/wp-content/uploads/2016/03/leningrad_genesis1-927x1024.jpg
+    This shows the initial bet of Genesis no bigger than any of the 
+    surrounding letters.  Both of the examples I know of, that do record the 
+    unusual letters, are based on the Aleppo Codex.  The Jewish community 
+    seems to respect the Aleppo more highly than the Leningrad, but if the 
+    difference is so pronounced with regard to the unusual letters, the OSHB 
+    should respect the WLC, because that is our source.
+    
+    
+    On 2/3/2017 10:16 AM, David Frank Haslam wrote:
+    >
+    > The usefulness is only potentially for the future.
+    > Suitable markup could ...
+--- openscriptures/morphhb#116 comment 6787035032 by bdenckla at 2026-11-11T04:28:55Z (1 matches)
+    ... mark on the first syllable of the first chanted word in Ps 87:5 and Prov 6:14, which does not bear on the division. So those turn on the accent grammar, not on the text.
+    
+    More generally, for questions of accent structure it is worth checking WLC's accents against MAM's, which is edited against the Aleppo Codex and related manuscripts. Runs of two accent grammars over WLC 4.22, with comparisons to MAM, flag 125 prose verses and 25 poetic ones: https://bdenckla.github.io/MAM-basics/wlc/accgram/goerwitz.html and https://bdenckla.github.io/MAM-basics/wlc/accgram/poetic.html. With `MAPM/MAPM.xml` in thi...
+PATTERN 'Aleppo': 2 records
+====================================================================================================
+PATTERN 'Miqra'
+--- openscriptures/morphhb#116 issue body by jag3773 at 2026-11-11T02:21:41Z (1 matches)
+    ... fixed in `MAPM/MAPM.xml`.
+    - #103: verse linking in the Read app.
+    - #108 (merged today): one cantillation-structure value in Ps 93:4.
+    - #110 (merged today): documentation of the implicit article (`Rd`) on the morphology codes page.
+    - #114 (merged today): `MAPM/MAPM.xml` regenerated from the current Miqra according to the Masorah.
+    
+    **The website** (hb.openscriptures.org) is built from the `gh-pages` branch, which was last merged from `master` on 2022-02-08. It differs from that point only by the `CNAME` file, so none of the above is live yet. Merging `master` into `gh-pages` today applies cleanly.
+    
+    ...
+--- openscriptures/morphhb#114 PR body by bdenckla at 2026-11-04T12:30:35Z (2 matches)
+    ...Update MAPM to the current Miqra according to the Masorah
+    ## Why
+    
+    `MAPM/MAPM.xml` is David Troidl's OSIS conversion of Miqra according to the Masorah (MAM), finished in February 2014. MAM has been corrected a great deal since: the text differs from today's MAM in 2,260 of the 23,210 verses the two share. One of those differences i...
+    ...Update MAPM to the current Miqra according to the Masorah
+    ## Why
+    
+    `MAPM/MAPM.xml` is David Troidl's OSIS conversion of Miqra according to the Masorah (MAM), finished in February 2014. MAM has been corrected a great deal since: the text differs from today's MAM in 2,260 of the 23,210 verses the two share. One of those differences is the subject of openscriptures/morphhb#109 (the zarqa in Exodus 36:2), which this pull requ...
+--- openscriptures/morphhb#28 issue body by DavidHaslam at 2017-02-02T19:21:50Z (1 matches)
+    ...kings in Joshua 12)?
+    MAPM uses OSIS **table elements** to markup the passages containing **song format** in prose books.
+    
+    e.g. The list of defeated kings in Joshua 12:9-31
+    
+    This topic is described in [Column F: The Verse in Song Format (with table code)](https://en.wikisource.org/wiki/User:Dovi/Miqra_according_to_the_Mesorah/Technical_Guide#Column_F:_The_Verse_in_Song_Format_.28with_table_code.29)
+    
+    Currently, this markup is not used in the WLC text used to make the OSMHB module.
+    _Is there any reason to not use this eventually?_
+    ...
+--- openscriptures/morphhb#28 comment 277245770 by DavidTroidl at 2017-02-03T13:24:45Z (1 matches)
+    ...lam wrote:
+    >
+    > MAPM uses OSIS *table elements* to markup the passages containing 
+    > *song format* in prose books.
+    >
+    > e.g. The list of defeated kings in Joshua 12:9-31
+    >
+    > This topic is described in Column F: The Verse in Song Format (with 
+    > table code) 
+    > <https://en.wikisource.org/wiki/User:Dovi/Miqra_according_to_the_Mesorah/Technical_Guide#Column_F:_The_Verse_in_Song_Format_.28with_table_code.29>
+    >
+    > Currently, this markup is not used in the WLC text used to make the 
+    > OSMHB module.
+    > /Is there any reason to not use this eventually?/
+    >
+    > —
+    > You are receiving this because you are subscribed t...
+--- openscriptures/morphhb#108 comment 6784979447 by jag3773 at 2026-11-11T02:13:20Z (1 matches)
+    ...ored segment "has no substitute segment", and cites Ps 93:4 by name among the Great Rebia clauses that have a preceding Legarmeh. That is the reading this PR gives.
+    - Within the data, Ps 93:3 (נָשְׂא֤וּ נְהָר֨וֹת ׀ יְֽהוָ֗ה) is already coded `1.0.0, 1.0, 1, 0`, the same shape this PR gives verse 4. Miqra according to the Masorah also keeps מִקֹּלוֹת ׀ מַיִם רַבִּים together on one poetic line.
+    
+    **Your question about the XML.** Nothing in this repository generates the `n` values, and the structure viewer reads `wlc/*.xml` directly, so editing the XML is the right way to make this fix.
+    
+    **Follow-up, ...
+--- openscriptures/morphhb#114 comment 6784980147 by jag3773 at 2026-11-11T02:13:23Z (1 matches)
+    ...heck, and it holds up. What was verified independently of the PR:
+    
+    - **Provenance.** `MAPM/MAPM.xml` at this PR's head is byte-for-byte identical to `MAM-morphhb/MAPM.xml` at MAM-basics commit 83caf168 (SHA-256 `6f69ec74…e798962`).
+    - **Independent text check.** Compared word by word with Sefaria's "Miqra according to the Masorah" as served on 2026-11-10, the new file differs in 202 of 306,525 words, all small pointing details (mostly meteg, and rafe in forms of ראובני). The 2014 file differs from the same text in 2,685 words.
+    - **Schema and structure.** The new file validates against the OSIS 2.1.1...
+--- openscriptures/morphhb#116 comment 6787035032 by bdenckla at 2026-11-11T04:28:55Z (1 matches)
+    ...*Written by a Claude session on 2026-11-10, at Ben Denckla's request.*
+    
+    On the follow-up list of thirteen verses: one of them is settled by the text. In Prov 30:15, Miqra according to the Masorah (MAM), now this repository's `MAPM/MAPM.xml`, has oleh-weyored on the second הַב, written הַ֥֫ב, where WLC has only the merkha, הַ֥ב. By MAM's text the verse has an oleh-weyored, so the `2` belongs on הַ֥֫ב rather than on the verse's first chanted word. (I have not checked ...
+--- commit d4265dfa by Jesse Griffin at 2026-11-11T02:19:37Z (1 matches)
+    ...Merge pull request #114 from bdenckla/update-mapm
+    
+    Update MAPM to the current Miqra according to the Masorah...
+--- commit d266b727 by Ben Denckla at 2026-11-04T12:30:07Z (2 matches)
+    ...Update MAPM to the current Miqra according to the Masorah
+    
+    Replace MAPM/MAPM.xml, David Troidl's 2014 OSIS conversion of Miqra
+    according to the Masorah (MAM), with today's MAM, generated by
+    MAM-basics (https://github.com/bdenckla/MAM-basics) at commit
+    83caf1689a7c8e382254af07ecb5373819ce3f07: its MAM-morphhb/MAPM.xml,
+    byte for byt...
+    ...Update MAPM to the current Miqra according to the Masorah
+    
+    Replace MAPM/MAPM.xml, David Troidl's 2014 OSIS conversion of Miqra
+    according to the Masorah (MAM), with today's MAM, generated by
+    MAM-basics (https://github.com/bdenckla/MAM-basics) at commit
+    83caf1689a7c8e382254af07ecb5373819ce3f07: its MAM-morphhb/MAPM.xml,
+    byte for byte. The new file keeps the 2014 file's OSIS form and line
+    layout.
+    
+    MAPM/readme.txt gives the da...
+PATTERN 'Miqra': 9 records
+====================================================================================================
+PATTERN 'Masorah'
+--- openscriptures/morphhb#116 issue body by jag3773 at 2026-11-11T02:21:41Z (1 matches)
+    ...l`.
+    - #103: verse linking in the Read app.
+    - #108 (merged today): one cantillation-structure value in Ps 93:4.
+    - #110 (merged today): documentation of the implicit article (`Rd`) on the morphology codes page.
+    - #114 (merged today): `MAPM/MAPM.xml` regenerated from the current Miqra according to the Masorah.
+    
+    **The website** (hb.openscriptures.org) is built from the `gh-pages` branch, which was last merged from `master` on 2022-02-08. It differs from that point only by the `CNAME` file, so none of the above is live yet. Merging `master` into `gh-pages` today applies cleanly.
+    
+    **The npm package** (`mor...
+--- openscriptures/morphhb#114 PR body by bdenckla at 2026-11-04T12:30:35Z (2 matches)
+    ...Update MAPM to the current Miqra according to the Masorah
+    ## Why
+    
+    `MAPM/MAPM.xml` is David Troidl's OSIS conversion of Miqra according to the Masorah (MAM), finished in February 2014. MAM has been corrected a great deal since: the text differs from today's MAM in 2,260 of the 23,210 verses the two share. One of those differences is the subject of openscri...
+    ...Update MAPM to the current Miqra according to the Masorah
+    ## Why
+    
+    `MAPM/MAPM.xml` is David Troidl's OSIS conversion of Miqra according to the Masorah (MAM), finished in February 2014. MAM has been corrected a great deal since: the text differs from today's MAM in 2,260 of the 23,210 verses the two share. One of those differences is the subject of openscriptures/morphhb#109 (the zarqa in Exodus 36:2), which this pull request resolves.
+    
+    ## What ch...
+--- openscriptures/morphhb#108 comment 6784979447 by jag3773 at 2026-11-11T02:13:20Z (1 matches)
+    ...bstitute segment", and cites Ps 93:4 by name among the Great Rebia clauses that have a preceding Legarmeh. That is the reading this PR gives.
+    - Within the data, Ps 93:3 (נָשְׂא֤וּ נְהָר֨וֹת ׀ יְֽהוָ֗ה) is already coded `1.0.0, 1.0, 1, 0`, the same shape this PR gives verse 4. Miqra according to the Masorah also keeps מִקֹּלוֹת ׀ מַיִם רַבִּים together on one poetic line.
+    
+    **Your question about the XML.** Nothing in this repository generates the `n` values, and the structure viewer reads `wlc/*.xml` directly, so editing the XML is the right way to make this fix.
+    
+    **Follow-up, not blocking.** Thirteen ...
+--- openscriptures/morphhb#114 comment 6784980147 by jag3773 at 2026-11-11T02:13:23Z (2 matches)
+    ...What was verified independently of the PR:
+    
+    - **Provenance.** `MAPM/MAPM.xml` at this PR's head is byte-for-byte identical to `MAM-morphhb/MAPM.xml` at MAM-basics commit 83caf168 (SHA-256 `6f69ec74…e798962`).
+    - **Independent text check.** Compared word by word with Sefaria's "Miqra according to the Masorah" as served on 2026-11-10, the new file differs in 202 of 306,525 words, all small pointing details (mostly meteg, and rafe in forms of ראובני). The 2014 file differs from the same text in 2,685 words.
+    - **Schema and structure.** The new file validates against the OSIS 2.1.1 schema. The 2014 file do...
+    ...ed out for consumers in the next release notes.
+    - #109 will not close automatically from this description, so it will be closed by hand once this is merged.
+    - Optional, not blocking: the header's `<title>` and `<identifier>` still use the older "Mesorah" spelling and URL, while the readme now says "Masorah".
+    
+    **Outcome:** we intend to merge this. Updating the website and cutting a release are being planned separately.
+    ...
+--- openscriptures/morphhb#116 comment 6787035032 by bdenckla at 2026-11-11T04:28:55Z (1 matches)
+    ...*Written by a Claude session on 2026-11-10, at Ben Denckla's request.*
+    
+    On the follow-up list of thirteen verses: one of them is settled by the text. In Prov 30:15, Miqra according to the Masorah (MAM), now this repository's `MAPM/MAPM.xml`, has oleh-weyored on the second הַב, written הַ֥֫ב, where WLC has only the merkha, הַ֥ב. By MAM's text the verse has an oleh-weyored, so the `2` belongs on הַ֥֫ב rather than on the verse's first chanted word. (I have not checked the Leningrad Codex itsel...
+--- commit d4265dfa by Jesse Griffin at 2026-11-11T02:19:37Z (1 matches)
+    ...Merge pull request #114 from bdenckla/update-mapm
+    
+    Update MAPM to the current Miqra according to the Masorah...
+--- commit d266b727 by Ben Denckla at 2026-11-04T12:30:07Z (2 matches)
+    ...Update MAPM to the current Miqra according to the Masorah
+    
+    Replace MAPM/MAPM.xml, David Troidl's 2014 OSIS conversion of Miqra
+    according to the Masorah (MAM), with today's MAM, generated by
+    MAM-basics (https://github.com/bdenckla/MAM-basics) at commit
+    83caf1689a7c8e382254af07ecb5373819ce3f07: its MAM-morphhb/MAPM.xml,
+    byte for byte. The new file keeps the...
+    ...Update MAPM to the current Miqra according to the Masorah
+    
+    Replace MAPM/MAPM.xml, David Troidl's 2014 OSIS conversion of Miqra
+    according to the Masorah (MAM), with today's MAM, generated by
+    MAM-basics (https://github.com/bdenckla/MAM-basics) at commit
+    83caf1689a7c8e382254af07ecb5373819ce3f07: its MAM-morphhb/MAPM.xml,
+    byte for byte. The new file keeps the 2014 file's OSIS form and line
+    layout.
+    
+    MAPM/readme.txt gives the date, the MAM-basics commit...
+PATTERN 'Masorah': 7 records
+====================================================================================================
+PATTERN 'Denckla'
+--- openscriptures/morphhb#116 issue body by jag3773 at 2026-11-11T02:21:41Z (1 matches)
+    ...e of them today. This issue proposes how to get that work to the people who use the OSHB. Please comment if you see a problem or a better way. We will wait until **15 December 2026** before tagging the release.
+    
+    cc @jdejoode, @scruffian (for the npm question below), and @noamraph, @rockclaver and @bdenckla, whose pull requests were merged today. Thank you all.
+    
+    ## Where things stand
+    
+    **On `master` since v.2.2**
+    
+    - #91 and #92: morphology and lemma corrections from the Clear trees work (95 lines across 31 books in `wlc/`).
+    - #98: chapter names fixed in `MAPM/MAPM.xml`.
+    - #103: verse linking in the Rea...
+--- openscriptures/morphhb#114 PR body by bdenckla at 2026-11-04T12:30:35Z (2 matches)
+    ...ay's MAM in 2,260 of the 23,210 verses the two share. One of those differences is the subject of openscriptures/morphhb#109 (the zarqa in Exodus 36:2), which this pull request resolves.
+    
+    ## What changes
+    
+    - **`MAPM/MAPM.xml`** is replaced by today's MAM, generated by [MAM-basics](https://github.com/bdenckla/MAM-basics) at commit [83caf168](https://github.com/bdenckla/MAM-basics/commit/83caf1689a7c8e382254af07ecb5373819ce3f07) (its `MAM-morphhb/MAPM.xml`, byte for byte).
+    - **`MAPM/readme.txt`** gives the date, the MAM-basics commit, what differs from the 2014 file, and the license with MAM's attributio...
+    ...those differences is the subject of openscriptures/morphhb#109 (the zarqa in Exodus 36:2), which this pull request resolves.
+    
+    ## What changes
+    
+    - **`MAPM/MAPM.xml`** is replaced by today's MAM, generated by [MAM-basics](https://github.com/bdenckla/MAM-basics) at commit [83caf168](https://github.com/bdenckla/MAM-basics/commit/83caf1689a7c8e382254af07ecb5373819ce3f07) (its `MAM-morphhb/MAPM.xml`, byte for byte).
+    - **`MAPM/readme.txt`** gives the date, the MAM-basics commit, what differs from the 2014 file, and the license with MAM's attribution statement.
+    - **`README.md`**: the MAPM paragraph's last lin...
+--- openscriptures/morphhb#46 comment 890034981 by jonathanrobie at 2021-07-30T17:12:03Z (1 matches)
+    ...), in the Unicode Standard.
+    
+    It looks like they are using CGJs for this purpose at Tanch.us. According to their [Change Log](https://tanach.us/Pages/Changes.html):
+    
+    >  Combining Grapheme Joiners (CGJs) have been added in 728 instances to make leading meteg-then-vowel displays more reliable. Ben Denckla suggested this change. The Coding page has been substantially updated. 
+    
+    I can use `ugrep` to confirm that these characters are there in the text from Tanach.us:
+    
+    ```xml
+    % ugrep '[\x{034F}]' *
+    Daniel.xml:        <w>יְרוּשָׁלַ֖͏ִם</w>
+    Daniel.xml:        <w>קֽ͏ָדָמַ֖י</w>
+    Daniel.xml:        <...
+--- openscriptures/morphhb#109 comment 3832433914 by cjwatson at 2026-02-02T01:09:01Z (1 matches)
+    ...https://bdenckla.github.io/MAM-for-Sefaria/#:~:text=No%20displacement%20of%20%D7%96%D7%A8%D7%A7%D7%90%20by%20%D7%9C,-In also has some relevant notes on this, including a reference to this verse.  That states that "MAM only uses true postpositive זרקא", so it seems as though the version found in this repository is a...
+--- openscriptures/morphhb#109 comment 5744171169 by 0-Actual at 2026-09-19T18:03:02Z (2 matches)
+    ...rman G. Laing / Quantum.Earth.Laing.
+    
+    I reproduced this at `3d15126fb1ef74867fc1434be1942e837932691f`: in `MAPM/MAPM.xml`, Exodus 36:2 has U+0598 after the final lamed in Bezalel. The [Wikisource MAM text](https://he.wikisource.org/wiki/שמות_לו/טעמים) linked in the report displays U+05AE there. Ben Denckla's encoding documentation explains the distinction between stress zarqa and postpositive zarqa and identifies Exodus 36:2 in its discussion of lamed-related displacement:
+    [The encoding of MAM for Sefaria](https://bdenckla.github.io/MAM-basics/MAM-for-Sefaria/index.html)
+    
+    A narrow source-alignment ca...
+    ...source.org/wiki/שמות_לו/טעמים) linked in the report displays U+05AE there. Ben Denckla's encoding documentation explains the distinction between stress zarqa and postpositive zarqa and identifies Exodus 36:2 in its discussion of lamed-related displacement:
+    [The encoding of MAM for Sefaria](https://bdenckla.github.io/MAM-basics/MAM-for-Sefaria/index.html)
+    
+    A narrow source-alignment candidate replaces only that terminal U+0598 with U+05AE. I verified that it changes exactly one Unicode code point, preserves every consonant and all remaining file content, and leaves valid XML. This is not a global repla...
+--- openscriptures/morphhb#116 comment 6786741567 by bdenckla at 2026-11-11T04:08:32Z (1 matches)
+    ...*Written by a Claude session on 2026-11-10, at Ben Denckla's request.*
+    
+    On whether anyone depends on `MAPM/MAPM.xml`: one program we know of does. OpenScriptorium's `app/services/importers/oshb_features_importer.rb` downloads the file from this repository's `master`, unless it has a cached copy, and reads it line by line with regular expressions, importing...
+--- openscriptures/morphhb#116 comment 6787035032 by bdenckla at 2026-11-11T04:28:55Z (3 matches)
+    ...*Written by a Claude session on 2026-11-10, at Ben Denckla's request.*
+    
+    On the follow-up list of thirteen verses: one of them is settled by the text. In Prov 30:15, Miqra according to the Masorah (MAM), now this repository's `MAPM/MAPM.xml`, has oleh-weyored on the second הַב, written הַ֥֫ב, where WLC has only the merkha, הַ֥ב. By MAM's text the verse has ...
+    ... on the text.
+    
+    More generally, for questions of accent structure it is worth checking WLC's accents against MAM's, which is edited against the Aleppo Codex and related manuscripts. Runs of two accent grammars over WLC 4.22, with comparisons to MAM, flag 125 prose verses and 25 poetic ones: https://bdenckla.github.io/MAM-basics/wlc/accgram/goerwitz.html and https://bdenckla.github.io/MAM-basics/wlc/accgram/poetic.html. With `MAPM/MAPM.xml` in this repository, such a check needs nothing from outside it.
+    ...
+    ...is worth checking WLC's accents against MAM's, which is edited against the Aleppo Codex and related manuscripts. Runs of two accent grammars over WLC 4.22, with comparisons to MAM, flag 125 prose verses and 25 poetic ones: https://bdenckla.github.io/MAM-basics/wlc/accgram/goerwitz.html and https://bdenckla.github.io/MAM-basics/wlc/accgram/poetic.html. With `MAPM/MAPM.xml` in this repository, such a check needs nothing from outside it.
+    ...
+--- commit d4265dfa by Jesse Griffin at 2026-11-11T02:19:37Z (1 matches)
+    ...Merge pull request #114 from bdenckla/update-mapm
+    
+    Update MAPM to the current Miqra according to the Masorah...
+--- commit d266b727 by Ben Denckla at 2026-11-04T12:30:07Z (1 matches)
+    ...Update MAPM to the current Miqra according to the Masorah
+    
+    Replace MAPM/MAPM.xml, David Troidl's 2014 OSIS conversion of Miqra
+    according to the Masorah (MAM), with today's MAM, generated by
+    MAM-basics (https://github.com/bdenckla/MAM-basics) at commit
+    83caf1689a7c8e382254af07ecb5373819ce3f07: its MAM-morphhb/MAPM.xml,
+    byte for byte. The new file keeps the 2014 file's OSIS form and line
+    layout.
+    
+    MAPM/readme.txt gives the date, the MAM-basics commit, what differs
+    from the 2014 file, and MAM's license and attribution statement...
+PATTERN 'Denckla': 9 records
+====================================================================================================
+PATTERN 'codex'
+--- openscriptures/morphhb#110 PR body by rockclaver at 2026-06-23T19:25:44Z (1 matches)
+    ...in the documentation.
+    
+    ## Test plan
+    - `git diff --check`
+    - Static verification of `parsing/HebrewMorphologyCodes.html`
+    - No automated type, lint, or test suite exists in this repository; `package.json` only defines a placeholder `npm test` that exits with "Error: no test specified".
+    
+    Generated with Codex
+    ...
+--- openscriptures/morphhb#27 comment 277344141 by DavidTroidl at 2017-02-03T19:47:18Z (2 matches)
+    ...I have no access to facsimiles of the Leningrad Codex, but I found an 
+    image online that says it is:
+    http://transparentenglishbible.com/wp-content/uploads/2016/03/leningrad_genesis1-927x1024.jpg
+    This shows the initial bet of Genesis no bigger than any of the 
+    surrounding letters.  Both of the examples I know of, that do record the 
+    unusual letters, ar...
+    ...e online that says it is:
+    http://transparentenglishbible.com/wp-content/uploads/2016/03/leningrad_genesis1-927x1024.jpg
+    This shows the initial bet of Genesis no bigger than any of the 
+    surrounding letters.  Both of the examples I know of, that do record the 
+    unusual letters, are based on the Aleppo Codex.  The Jewish community 
+    seems to respect the Aleppo more highly than the Leningrad, but if the 
+    difference is so pronounced with regard to the unusual letters, the OSHB 
+    should respect the WLC, because that is our source.
+    
+    
+    On 2/3/2017 10:16 AM, David Frank Haslam wrote:
+    >
+    > The usefulness is only ...
+--- openscriptures/morphhb#50 comment 1652082751 by DavidHaslam at 2023-07-26T15:47:14Z (2 matches)
+    ...@jag3773 
+    
+    Since I added this issue in 2017, the website [tanach.us](https://tanach.us/) has had a change of title.
+    
+    - Instead of **Westminster Leningrad Codex**
+    - it's now **Unicode XML Leningrad Codex**
+    
+    There are other significant changes, but one relevant to this issue is that all the **solidus** `/` markers that used to separate morphological segments have all been removed!...
+    ...@jag3773 
+    
+    Since I added this issue in 2017, the website [tanach.us](https://tanach.us/) has had a change of title.
+    
+    - Instead of **Westminster Leningrad Codex**
+    - it's now **Unicode XML Leningrad Codex**
+    
+    There are other significant changes, but one relevant to this issue is that all the **solidus** `/` markers that used to separate morphological segments have all been removed!...
+--- openscriptures/morphhb#116 comment 6787035032 by bdenckla at 2026-11-11T04:28:55Z (2 matches)
+    ...the Masorah (MAM), now this repository's `MAPM/MAPM.xml`, has oleh-weyored on the second הַב, written הַ֥֫ב, where WLC has only the merkha, הַ֥ב. By MAM's text the verse has an oleh-weyored, so the `2` belongs on הַ֥֫ב rather than on the verse's first chanted word. (I have not checked the Leningrad Codex itself.)
+    
+    In the other twelve, MAM's accents agree with WLC's except for a mark on the first syllable of the first chanted word in Ps 87:5 and Prov 6:14, which does not bear on the division. So those turn on the accent grammar, not on the text.
+    
+    More generally, for questions of accent structure it ...
+    ...n the first syllable of the first chanted word in Ps 87:5 and Prov 6:14, which does not bear on the division. So those turn on the accent grammar, not on the text.
+    
+    More generally, for questions of accent structure it is worth checking WLC's accents against MAM's, which is edited against the Aleppo Codex and related manuscripts. Runs of two accent grammars over WLC 4.22, with comparisons to MAM, flag 125 prose verses and 25 poetic ones: https://bdenckla.github.io/MAM-basics/wlc/accgram/goerwitz.html and https://bdenckla.github.io/MAM-basics/wlc/accgram/poetic.html. With `MAPM/MAPM.xml` in this repo...
+PATTERN 'codex': 4 records
+====================================================================================================
+PATTERN 'another (Hebrew )?(Bible|text)'
+PATTERN 'another (Hebrew )?(Bible|text)': 0 records

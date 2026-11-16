@@ -82,3 +82,7 @@ gh-pages/taamey-d/**/*.ttf binary
 gh-pages/taamey-d/**/*.woff binary
 gh-pages/taamey-d/**/*.woff2 binary
 gh-pages/taamey-d/**/*.zip binary
+# The morphhb-on-MAM study's evidence files quote GitHub's text as GitHub served it, line-final
+# blanks, a space before a tab and a blank last line included, so `git diff --check` must not
+# report those (morphhb-on-mam/README.md, "What is not tracked").
+morphhb-on-mam/research/upstream/*.txt whitespace=-blank-at-eol,-space-before-tab,-blank-at-eof

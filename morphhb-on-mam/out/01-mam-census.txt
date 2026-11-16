@@ -1,0 +1,37 @@
+census of MAM-simple (BHS versification, cant-combined strand) by mam_reader.py
+
+boundary added after (k)                       55
+implicit maqaf after (k)                      116
+implicit maqaf after (q)                      116
+legarmeh (k)                                 1776
+legarmeh (q)                                 1787
+maqaf after (k)                             42579
+maqaf after (q)                             42638
+paseq after (k)                               503
+paseq after (q)                               508
+side atoms k                               305440
+side atoms q                               305452
+verses                                      23213
+verses with no atoms                            2
+
+distinct atoms by the sides they are on: {'kq': 304367, 'k': 1073, 'q': 1085}
+total distinct atoms: 306525
+
+atom kinds (each atom once):
+  plain [kq]                                           304218
+  kq-k [k]                                               1065
+  kq-q [q]                                                940
+  kq-trivial [kq]                                         149
+  kq-q-first [q]                                          136
+  kq-q-velo-k [q]                                           9
+  kq-k-velo-q [k]                                           8
+
+atom flags:
+  slh=ג                                                    27
+  slh=ק                                                    24
+  slh=ת                                                     5
+  silluq_before_meteg=True                                  2
+  slh=גק                                                    1
+  slh=קג                                                    1
+
+verses with a dual cantillation: 24: Gen.35.22 Exod.20.2 Exod.20.3 Exod.20.4 Exod.20.5 Exod.20.6 Exod.20.8 Exod.20.9 Exod.20.10 Exod.20.13 Exod.20.14 Exod.20.15 Deut.5.6 Deut.5.7 Deut.5.8 Deut.5.9 Deut.5.10 Deut.5.12 Deut.5.13 Deut.5.14 Deut.5.15 Deut.5.17 Deut.5.18 Deut.5.19

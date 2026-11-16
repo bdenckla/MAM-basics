@@ -1,0 +1,20 @@
+mam_atoms: 306525
+mam_atoms_by_sides: {'kq': 304367, 'k': 1073, 'q': 1085}
+classes: {'A1': 296819, 'A2': 7521, 'K': 1047, 'B': 842, 'C': 294, 'AX': 2}
+tiers: {'same': 297837, 'untested': 707, 'supported': 7597, 'structural': 325, 'flagged': 59}
+tiers_percent: {'same': 97.17, 'untested': 0.23, 'supported': 2.48, 'structural': 0.11, 'flagged': 0.02}
+tier_by_class: {'same/A1': 296819, 'untested/A2': 367, 'supported/A2': 7131, 'same/K': 1018, 'supported/B': 466, 'structural/C': 294, 'untested/B': 340, 'flagged/A2': 23, 'flagged/B': 36, 'structural/K': 29, 'structural/AX': 2}
+a2_holam_only: {'bare': 5655, 'prefixed': 808, 'other': 2}
+a2_holam_only_supported: 6418
+a2_other_than_holam: 1056
+a2_other_than_holam_by_tier: {'untested': 321, 'supported': 713, 'flagged': 22}
+b_by_letters: {'mater missing in MAM': 430, 'mater added in MAM': 289, 'other letters': 112, 'matres both ways': 11}
+b_by_tier: {'supported': 466, 'untested': 340, 'flagged': 36}
+b_paired_in_block: 27
+morphhb_side_words_unmatched: 48
+morphhb_words_unmatched_distinct: 25
+morphhb_words_unmatched_in_absent_verses: 20
+slashes: {'words': 306229, 'words with a slash': 146359, 'slashes': 164376, 'slashes placed by letter count or letter alignment': 164275, 'slash not directly before a letter': 0, 'morph parts differ from text pieces': 0, 'letters-equal words with a slash': 145825, 'letters-equal slashes': 163726}
+rd_words_by_class: {'A1': 6399, 'A2': 22, 'K': 18, 'B': 11}
+maqaf: {'MAM none / morphhb none': 261452, 'MAM maqaf / morphhb maqaf': 42374, 'MAM none / morphhb maqaf': 59, 'MAM maqaf / morphhb none': 79, 'MAM implicit maqaf / morphhb maqaf': 20, 'MAM implicit maqaf / morphhb none': 95}
+notes: Computed by py/morphhb_on_mam/figures.py from the work directory's 10-atoms.jsonl and 11-unmatched-morphhb.jsonl; Claude (Opus 5.5), 2026-11-15.

@@ -1,0 +1,45 @@
+<section id="generator-dispatch">
+<p>A product's generator would dispatch as MAM-morphhb's generator already does. <code>py/main_mam_morphhb.py</code> renders MAM-simple's JSON through a closed dispatch on its (type, class) pairs: <code>morphhb_inline.render</code> raises on an unknown pair, and its handlers, with the four structural types, cover exactly the 37 pairs present. It passes each template it reads from MAM-parsed's <code>plus/</code> through <code>validate_current_plus_template</code>. An alignment step would read the same projection of MAM-simple, as this study's reader does.</p>
+</section>
+
+<section id="upkeep">
+<h2>6. Upkeep: following MAM's refreshes</h2>
+<p>MAM's text changes with each refresh from Hebrew Wikisource. MAM-basics' <code>AGENTS.md</code> says that a product derived from MAM's text takes each refresh through the <code>mam-wikisource-refresh</code> runbook, which predicts every change verse by verse and checks that those changes, and only they, appear. Such a product gets no hashes, fingerprints or pinned populations of its inputs. Its deterministic checks are closed dispatch, or a check that a hand-made statement about the data still holds, covering exactly what the statement depends on.</p>
+<p>An alignment fits that rule in three parts.</p>
+<ol>
+<li><strong>Regenerate it from scratch.</strong> The alignment is a deterministic function of MAM-simple and of one pinned commit of morphhb, and it takes about 20 seconds per strand. Nothing about MAM's text is stored beyond the product itself, so a refresh's effect on the analyses is simply the product's diff, which the runbook already has an agent predict and judge.</li>
+<li><strong>Store each person's decision as a statement, and check it.</strong> A decision (a flagged atom's analysis, the morph of a one-form ketiv/qere, a slash that letters cannot place, a new id) is a record that names the verse, the morphhb id or ids, and MAM's whole form, letters and every mark. The build stops when MAM's form under a record changes, or when a record is not used. That is how near-Aleppo's stored pointed ketiv records already work in MAM-basics (<code>py/near_aleppo/frozen_ketiv.py</code>): the check covers exactly what the decision depends on, and nothing else.</li>
+<li><strong>Move morphhb deliberately.</strong> morphhb is pinned to a commit, as this study pins <code>db6c5c9b</code>, and moved forward as a separate, reviewed change. Its ids are stable: the research sub-agent found Daniel's ids unchanged since they were made in 2019, and six books' ids identical to their 2022 versions.</li>
+</ol>
+<p>How much a refresh would touch, from the research sub-agent's census of the 52 Wikisource downloads committed from 2026-03-12 to 2026-11-10 (<code>morphhb-on-mam/research/upkeep-shape/FINDINGS.md</code>, section C):</p>
+<ul>
+<li>A download changed a median of 3.5 verses, and a median of 1 verse in its text, its ketiv/qere or an alternative form; 22 downloads changed none.</li>
+<li>Over the whole period, letters changed in 3 verses, no atom was split or joined, and one vowel point changed (a qamats became a qamats qatan, at 2 Kings 22:1). Most changes were to meteg marks (134 verses), accents and documentation notes, which leave an atom's class unchanged, because the comparison's vowel key ignores them.</li>
+<li>Changes to ketiv/qere structure came to 192 verse changes, mostly two template migrations. A migration of that kind would change the structure the alignment reads, and its effect would show in the product's diff.</li>
+<li>Since 2026-09-16, 19 downloads changed the text or the ketiv/qere of 12 verses, 6 atoms in all.</li>
+</ul>
+<p>MAM-morphhb's generator is hand-run, outside the mega, and by Ben's decision of 2026-11-03 a refresh of MAM's text does not oblige rerunning it, so it may lag MAM-simple. A morphology layer would be an input of that generator, so a change to the layer would oblige a rerun; whether the layer should instead follow every refresh is a decision for Ben.</p>
+</section>
+
+<section id="shape-upstream">
+<h2>7. Product shape and upstream</h2>
+<h3>Where the result could live</h3>
+<p>MAM-morphhb is the product that already gives MAM in morphhb's format. It is distributed data, built by <code>py/main_mam_morphhb.py</code> from MAM-simple's BHS-numbered JSON, with titles, parashot and poetic line breaks from MAM-parsed's <code>plus/</code>, and checked against the OSIS 2.1.1 schema. Its <code>MAPM.xml</code> has verse milestones and no <code>&lt;w&gt;</code> element. It writes each of the 1,047 ketiv/qere pairs as a ketiv seg and a qere seg, MAM's 149 trivial pairs as one pointed form, and only the <code>cant-combined</code> strand of a dual cantillation. Its line layout serves OpenScriptorium's importer, which reads the file line by line.</p>
+<p>Three shapes are possible.</p>
+<ol>
+<li><strong>Inside MAM-morphhb</strong>: <code>MAPM.xml</code> gains <code>&lt;w lemma morph id&gt;</code>, as morphhb's <code>wlc/</code> files have. morphhb's users would find the format familiar. But OSIS does not allow a lowercase <code>id</code> attribute (openscriptures/morphhb#84), so the file would lose the OSIS 2.1.1 validity that the review of <a href="https://github.com/openscriptures/morphhb/pull/114">openscriptures/morphhb#114</a> counted in its favour; whether OpenScriptorium's importer would still read it was not examined. The one strand that <code>MAPM.xml</code> writes is enough for the analyses, since every atom's analysis is the same in all three strands.</li>
+<li><strong>A new table</strong>, declared in <code>py/product_scopes.py</code>: one row per MAM atom, keyed by verse and atom index, carrying MAM's form as a guard, morphhb's lemma, morph and id, and how the match was made. That is the shape of MAM-basics' per-word precedents: Phonetic MAM keys each chanted word by verse and row order, and near-Aleppo keys its records by verse and index with the form as a guard. No MAM-basics product has stable word ids; morphhb's would be the first.</li>
+<li><strong>Both</strong>: the table as the record, and <code>MAPM.xml</code>'s words generated from it.</li>
+</ol>
+<h3>What morphhb says and does</h3>
+<p>From the research sub-agent's reading of morphhb at <code>db6c5c9b</code> and of its issues and pull requests (<code>morphhb-on-mam/research/upstream/FINDINGS.md</code>):</p>
+<ul>
+<li>morphhb's <code>README.md</code> (line 23), in a section Andy Hubert wrote in 2019 and Jesse Griffin merged, says the ids are unique and immutable and that another codex could reuse them where its words align with WLC's, creating new ones for new words.</li>
+<li>The maintainers describe <code>MAPM/</code> as a separate text kept for comparison. David Troidl wrote in 2021 that it is "a completely different project" (openscriptures/morphhb#75), and Jesse Griffin, on 2026-11-11, that "That file is a companion text" (<a href="https://github.com/openscriptures/morphhb/issues/116">openscriptures/morphhb#116</a>); morphhb's version numbers describe the morphology in <code>wlc/</code>.</li>
+<li>Nobody has asked for an analysed <code>MAPM/</code>, or for morphology on another text, in 118 issues and pull requests, 396 comments and 328 commits.</li>
+<li>The validator that <a href="https://github.com/openscriptures/morphhb/pull/115">openscriptures/morphhb#115</a> added checks words only in <code>wlc/</code>: each id must match <code>[0-9]{2}[A-Za-z0-9]{3}</code> and be unique across the books, each morph must have the right shape, and each lemma must be present. <code>MAPM/MAPM.xml</code> gets only milestone, text and verse-inventory checks, so an analysed file in today's one-file form would pass with its words unchecked. Checking them would need a rule of MAPM's own for ids, since reused ids would collide with <code>wlc/</code>'s.</li>
+<li>An id is the book's two-digit number in the KJV's order of books followed by three characters from a 58-character alphabet. All 306,785 of morphhb's ids are distinct, but the three characters repeat from book to book. morphhb has no tool for making new ids: the generator, in openscriptures/morphhb-parsing, has been disabled since 2019-01-13. Of the possible three-character strings, 173,136 are used in no book.</li>
+<li>In practice one maintainer, Jesse Griffin, reviews and merges. He merged openscriptures/morphhb#114 6.6 days after it was opened and openscriptures/morphhb#115 3.4 days after.</li>
+</ul>
+<p>The questions these facts raise for Ben are on the decision page, a private artifact at <a href="https://claude.ai/artifact/6cWmkc1DXdxMcr797YU4TX">https://claude.ai/artifact/6cWmkc1DXdxMcr797YU4TX</a>, whose source is <a href="../decisions.html">morphhb-on-mam/decisions.html</a>.</p>
+</section>

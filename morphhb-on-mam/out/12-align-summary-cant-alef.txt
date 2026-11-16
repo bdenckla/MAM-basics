@@ -1,0 +1,17 @@
+align.py, strand cant-alef; written by Claude (Opus 5.5), 2026-11-15; not reviewed by a human
+
+morphhb side words with no MAM atom (k)                       23
+morphhb side words with no MAM atom (q)                       25
+verses in MAM-simple (BHS)                                 23213
+verses in MAM-simple only                                      0
+verses in morphhb                                          23213
+verses in morphhb only                                         0
+
+MAM atoms by class (each atom once):
+  A1     296815
+  A2       7525
+  K        1047
+  AX          2
+  B         842
+  C         294
+  all    306525

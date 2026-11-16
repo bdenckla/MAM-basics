@@ -1,0 +1,2 @@
+<w> inside <rdg>, by rdg type: {'x-qere': 1278, 'x-accent': 0, None: 0}
+<w> by its own type attribute: {None: 305517, 'x-ketiv': 1268}

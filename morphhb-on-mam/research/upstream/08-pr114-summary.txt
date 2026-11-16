@@ -1,0 +1,31 @@
+PR #114 'Update MAPM to the current Miqra according to the Masorah' by bdenckla (CONTRIBUTOR)
+  state = closed
+  created_at = 2026-11-04T12:30:35Z
+  updated_at = 2026-11-11T02:19:38Z
+  closed_at = 2026-11-11T02:19:38Z
+  merged_at = 2026-11-11T02:19:38Z
+  merged = True
+  merge_commit_sha = d4265dfa93b78d82765a557e12d965528c17c1a9
+  commits = 1
+  additions = 6318
+  deletions = 6707
+  changed_files = 3
+  comments = 1
+  review_comments = 0
+  merged_by = jag3773
+  head = bdenckla:update-mapm d266b727f2c560af4bee89a3063d7f30ddf752ad
+  base = openscriptures:master 3d15126fb1ef74867fc1434be1942e837932691f
+  requested_reviewers = []
+  labels = []
+timeline: 9 events
+  2026-11-04T12:30:07Z committed by Ben Denckla sha=d266b727 msg='Update MAPM to the current Miqra according to the Masorah'
+  2026-11-11T02:13:23Z commented by jag3773 state=None body="*These review notes were prepared by Claude (an AI assistant) working at my direction. I'm posting them for the record; corrections are welcome.*  Thank you for"
+  2026-11-11T02:19:38Z merged by jag3773 commit=d4265dfa
+  2026-11-11T02:19:38Z closed by jag3773 commit=None
+  2026-11-11T02:20:02Z cross-referenced by jag3773 from=https://api.github.com/repos/openscriptures/morphhb#109 'Zarka vs. tsinnorit in Exodus 36:2'
+  2026-11-11T02:21:10Z cross-referenced by jag3773 from=https://api.github.com/repos/openscriptures/morphhb#115 'Add automated data validation for pull requests'
+  2026-11-11T02:21:42Z cross-referenced by jag3773 from=https://api.github.com/repos/openscriptures/morphhb#116 'Plan: update the website and release OSHB 2.3 (comments welcome until 15 December 2026)'
+  2026-11-11T03:33:44Z cross-referenced by bdenckla from=https://api.github.com/repos/OpenScriptorium/OpenScriptorium#1 'Read the marked qere in the new MAPM.xml, and fix the paragraph-break reset'
+  2026-11-11T12:45:31Z referenced by bdenckla commit=93974836
+--- C:/Users/BenDe/GitRepos/MAM-basics/.novc/morphhb-on-mam-2026-11-15/research/upstream/fetched/pr114-3.json: 0
+--- C:/Users/BenDe/GitRepos/MAM-basics/.novc/morphhb-on-mam-2026-11-15/research/upstream/fetched/pr114-4.json: 0

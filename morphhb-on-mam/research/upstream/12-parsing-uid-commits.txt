@@ -1,0 +1,186 @@
+==========================================================================================
+d681b7da8bab9f895c76045dba496b909f0697d6 Huberts 2018-12-16T14:14:30Z
+Created script to make uid's
+--- morphhb-scripts/makeIdList.js added +43 -0
+@@ -0,0 +1,43 @@
++require('dotenv').config()
++
++process.exit()
++
++const mysql = require('mysql')
++const utils = require('./utils')
++
++const connection = mysql.createConnection({
++  host: process.env.DB_NAME || "localhost",
++  database: process.env.HOSTNAME || 'oshb',
++  user: process.env.USERNAME || "root",
++  password: process.env.PASSWORD || "",
++  multipleStatements: true,
++});
++
++connection.connect(function(err) {
++  if(err) throw err
++
++  console.log(`\nSTARTING`)
++
++  const base58Characters = '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz'.split('')
++  const ids = []
++
++  base58Characters.forEach(char1 => {
++    base58Characters.forEach(char2 => {
++      base58Characters.forEach(char3 => {
++        const insertIndex = Math.floor( Math.random() * ( ids.length + 1 ) )
++        ids.splice( insertIndex, 0, `${char1}${char2}${char3}` )
++      })
++    })
++  })
++
++  const inserts = ids.map(id => {
++    return `INSERT INTO uids SET uid='${id}'`
++  })
++
++  utils.doUpdatesInChunks(connection, { updates: inserts }, numRowsUpdated => {
++    if(numRowsUpdated != inserts.length) throw new Error(`-----------> ERROR: Not everything got inserted. Just ${numRowsUpdated}/${inserts.length}.`)
++    console.log(`\nDONE (successful)`)
++    process.exit();
++  })
++
++})
+==========================================================================================
+fa973917a73fed1229881fed8246bfd05b03de7c Huberts 2018-12-16T14:59:49Z
+Inserted code for added uid's, though did not activate it
+--- morphhb-scripts/exportToOsis.js modified +22 -0
+@@ -29,6 +29,8 @@ connection.connect(function(err) {
+   const exportDir = '../../morphhb/wlc'
+   // const exportDir = "./morphhb"
+ 
++  let uids
++
+   utils.runInSeries([
+     
+     // (x, next) => {
+@@ -82,6 +84,18 @@ connection.connect(function(err) {
+ 
+     },
+ 
++    (x, next) => {
++
++      connection.query(`SELECT uid FROM uids ORDER BY id LIMIT 22000`, (err, result) => {
++        if(err) throw err
++
++        uids = result.map(row => row.uid)
++        
++        next()
++      })
++
++    },
++
+     (x, next) => {
+ 
+       const parser = new xml2js.Parser({
+@@ -131,6 +145,10 @@ connection.connect(function(err) {
+                 process.exit()
+               }
+ 
++              const kjvBookId = utils.getKJVBibleBookIdByAbbr(bookURIsByBookId[bookId].replace(/\..*$/, ''))
++
++              let uidsIndex = 0
++
+               parser.parseString(xml, function (err, jsonObj) {
+ 
+                 const convertObj = obj => {
+@@ -203,6 +221,10 @@ connection.connect(function(err) {
+                     // process.exit()
+                   }
+ 
++                  if(!jsonWord['@'].id) {
++                    // jsonWord['@'].id = `${`0${kjvBookId}`.substr(-2)}${uids[uidsIndex++]}`
++                  }
++
+                   if(result[resultIndex].status == 'verified') {
+                     jsonWord['@'].morph = result[resultIndex].morph
+                   } else {
+--- morphhb-scripts/utils.js modified +46 -0
+@@ -578,6 +578,52 @@ const utils = {
+ 
+   },
+   
++  getKJVBibleBookIdByAbbr: (abbr) => {
++    
++    return {
++      "Gen": "1",
++      "Exod": "2",
++      "Lev": "3",
++      "Num": "4",
++      "Deut": "5",
++      "Josh": "6",
++      "Judg": "7",
++      "Ruth": "8",
++      "1Sam": "9",
++      "2Sam": "10",
++      "1Kgs": "11",
++      "2Kgs": "12",
++      "1Chr": "13",
++      "2Chr": "14",
++      "Ezra": "15",
++      "Neh": "16",
++      "Esth": "17",
++      "Job": "18",
++      "Ps": "19",
++      "Prov": "20",
++      "Eccl": "21",
++      "Song": "22",
++      "Isa": "23",
++      "Jer": "24",
++      "Lam": "25",
++      "Ezek": "26",
++      "Dan": "27",
++      "Hos": "28",
++      "Joel": "29",
++      "Amos": "30",
++      "Obad": "31",
++      "Jonah": "32",
++      "Mic": "33",
++      "Nah": "34",
++      "Hab": "35",
++      "Zeph": "36",
++      "Hag": "37",
++      "Zech": "38",
++      "Mal": "39",
++    }[abbr]
++    
++  },
++
+   // ARAMAIC PASSAGES:
+     // Genesis 31:47 – translation of a Hebrew placename, Jegar-Sahadutha Strong's #H3026
+     // Jeremiah 10:11 – a single sentence denouncing idolatry occurs in the middle of a Hebrew text.
+==========================================================================================
+efccf292058b0627732eab48183aeb74b707bdc1 Huberts 2019-01-13T09:29:07Z
+disable scripts
+--- morphhb-scripts/exportToOsis.js modified +3 -1
+@@ -1,5 +1,7 @@
+ require('dotenv').config()
+ 
++process.exit();
++
+ const mysql = require('mysql')
+ const xml2js = require('xml2js')
+ const js2xmlparser = require("js2xmlparser")
+@@ -222,7 +224,7 @@ connection.connect(function(err) {
+                   }
+ 
+                   if(!jsonWord['@'].id) {
+-                    // jsonWord['@'].id = `${`0${kjvBookId}`.substr(-2)}${uids[uidsIndex++]}`
++                    jsonWord['@'].id = `${`0${kjvBookId}`.substr(-2)}${uids[uidsIndex++]}`
+                   }
+ 
+                   if(result[resultIndex].status == 'verified') {
+--- morphhb-scripts/updateMainTables.js modified +2 -0
+@@ -1,5 +1,7 @@
+ require('dotenv').config()
+ 
++process.exit()
++
+ const mysql = require('mysql')
+ 
+ const utils = require('./utils')

@@ -1,0 +1,1830 @@
+====================================================================================================
+PATTERN '\\bIDs?\\b'
+--- openscriptures/morphhb#116 issue body by jag3773 at 2026-11-11T02:21:41Z (1 matches)
+    ..., v.2.2 or anything since.
+    
+    ## Proposal
+    
+    ### 1. Add automated checks first
+    
+    #115 adds a GitHub Actions workflow that runs on every pull request and on pushes to `master`:
+    
+    - every XML file is well-formed;
+    - `wlc/` has 39 books and 23,213 verses, and every word has a lemma, a morph code and a unique id;
+    - `MAPM/MAPM.xml` has balanced verse markers and the same verse inventory as `wlc/` (apart from Josh 21:36–37, which MAM's text does not have);
+    - no operating-system junk files are tracked (it also removes the four `Thumbs.db` files, as #111 proposed);
+    - a summary on each pull request of exactly w...
+--- openscriptures/morphhb#115 PR body by jag3773 at 2026-11-11T02:21:08Z (4 matches)
+    .... This adds a small set of checks that run on every pull request and on pushes to `master`.
+    
+    ## What it checks
+    
+    Any of these failing fails the run:
+    
+    - every tracked XML file is well-formed;
+    - `wlc/` has 39 books and 23,213 verses, and every word has a lemma, a morph code and a unique five-character id;
+    - `MAPM/MAPM.xml` has balanced verse markers and the same verse inventory as `wlc/`, apart from Josh 21:36–37, which MAM's text does not have;
+    - no operating-system junk files (`Thumbs.db`, `.DS_Store`, `desktop.ini`) are tracked.
+    
+    ## What it reports
+    
+    On a pull request it also writes a **data chan...
+    ... MAM's text does not have;
+    - no operating-system junk files (`Thumbs.db`, `.DS_Store`, `desktop.ini`) are tracked.
+    
+    ## What it reports
+    
+    On a pull request it also writes a **data change summary** to the job summary: which words in `wlc/` changed and in which field (text, lemma, morph, `n`), any word ids added or removed, and how many `MAPM/` verses changed. The summary never fails the run; it is there so a reviewer can see at a glance what a change touches. For #108 it would have been one row:
+    
+    | verse | id | field | before | after |
+    |---|---|---|---|---|
+    | Ps.93.4 | `19AHF` | n | 2 | 1.0.0 |
+    
+    ## ...
+    ...mary: which words in `wlc/` changed and in which field (text, lemma, morph, `n`), any word ids added or removed, and how many `MAPM/` verses changed. The summary never fails the run; it is there so a reviewer can see at a glance what a change touches. For #108 it would have been one row:
+    
+    | verse | id | field | before | after |
+    |---|---|---|---|---|
+    | Ps.93.4 | `19AHF` | n | 2 | 1.0.0 |
+    
+    ## Also in this pull request
+    
+    The four `Thumbs.db` files are removed and such files are ignored from now on, as osjc proposed in #111. Without that the new junk-file check would fail on `master`.
+    
+    ## How it was ...
+    ...s/validate_data.py`, or with `--base <checkout of master>` to see the change summary.
+    - The workflow uses the `pull_request` trigger with `contents: read` only, so pull requests from forks get a read-only token and no secrets.
+    - It does not validate `wlc/` against the OSIS schema, because the word `id` attribute is not in that schema and the files do not pass it today. Morph codes are checked for shape, not against the full code tables; that would be a good later addition.
+    
+    🤖 Generated with [Claude Code](https://claude.com/claude-code)
+    ...
+--- openscriptures/morphhb#113 issue body by franz-rosenzweig at 2026-10-21T14:23:27Z (2 matches)
+    ...Swapped lemmas in 1 Chr 12:39 and 2 Chr 3:17
+    In both verses two neighbouring words carry each other's lemma. Their `morph` codes look right; only the lemmas are crossed. Checked against `3d15126fb1ef74867fc1434be1942e837932691f`.
+    
+    **1 Chr 12:39**, בְּלֵבָב שָׁלֵם "with a perfect heart"
+    
+    | word | `id` | `lemma` now | `morph` | lemma should be |
+    |---|---|---|---|---|
+    | בְּ/לֵבָ֤ב | `13nVn` | `b/8003` | `HR/Ncmsa` | `b/3824` |
+    | שָׁלֵם֙ | `13rN2` | `3824` | `HAamsa` | `8003` |
+    
+    **2 Chr 3:17**, מֵהַשְּׂמֹאול … הַשְּׂמָאלִי
+    
+    | word | `id` | `lemma` now | `morph` | lemma should be |
+    |---|---|---|---...
+    ...hr 12:39**, בְּלֵבָב שָׁלֵם "with a perfect heart"
+    
+    | word | `id` | `lemma` now | `morph` | lemma should be |
+    |---|---|---|---|---|
+    | בְּ/לֵבָ֤ב | `13nVn` | `b/8003` | `HR/Ncmsa` | `b/3824` |
+    | שָׁלֵם֙ | `13rN2` | `3824` | `HAamsa` | `8003` |
+    
+    **2 Chr 3:17**, מֵהַשְּׂמֹאול … הַשְּׂמָאלִי
+    
+    | word | `id` | `lemma` now | `morph` | lemma should be |
+    |---|---|---|---|---|
+    | מֵֽ/הַ/שְּׂמֹ֑אול | `147Np` | `m/d/8042` | `HR/Td/Ncmsa` | `m/d/8040` |
+    | הַ/שְּׂמָאלִ֖י | `14Cmf` | `d/8040` | `HTd/Aamsa` | `d/8042` |
+    
+    In each pair the lemma disagrees with the word's own part of speech in `morph`: 3824 and 804...
+--- openscriptures/morphhb#112 issue body by gloiiire at 2026-09-18T21:27:55Z (3 matches)
+    ...nst commit `3d15126fb1ef74867fc1434be1942e837932691f`.
+    
+    ### The observation
+    
+    The consonantal form `הראה` occurs 19 times, of which **12 carry the definite article**. Those twelve fall into three groups.
+    
+    **1 — the ordinary participle, "the one who sees":**
+    
+    | reference | word | `lemma` | `morph` | `id` |
+    |---|---|---|---|---|
+    | Judg 19:30 | הָרֹאֶ֗ה | `d/7200` | `HTd/Vqrmsa` | `078k8` |
+    | Isa 28:4 | הָֽרֹאֶה֙ | `d/7200` | `HTd/Vqrmsa` | `23x5r` |
+    
+    **2 — the title "the seer", in 1 Samuel 9:**
+    
+    | reference | word | `lemma` | `morph` | `id` |
+    |---|---|---|---|---|
+    | 1 Sam 9:9 | הָרֹאֶ֑ה | `d/7203 a...
+    ...one who sees":**
+    
+    | reference | word | `lemma` | `morph` | `id` |
+    |---|---|---|---|---|
+    | Judg 19:30 | הָרֹאֶ֗ה | `d/7200` | `HTd/Vqrmsa` | `078k8` |
+    | Isa 28:4 | הָֽרֹאֶה֙ | `d/7200` | `HTd/Vqrmsa` | `23x5r` |
+    
+    **2 — the title "the seer", in 1 Samuel 9:**
+    
+    | reference | word | `lemma` | `morph` | `id` |
+    |---|---|---|---|---|
+    | 1 Sam 9:9 | הָרֹאֶ֑ה | `d/7203 a` | `HTd/Vqrmsa` | `09vGY` |
+    | 1 Sam 9:9 | הָרֹאֶֽה | `d/7203 a` | `HTd/Vqrmsa` | `09afe` |
+    | 1 Sam 9:11 | הָרֹאֶֽה | `d/7203 a` | `HTd/Vqrmsa` | `09CuU` |
+    | 1 Sam 9:18 | הָרֹאֶֽה | `d/7203 a` | `HTd/Vqrmsa` | `093FP` |
+    | 1 Sam 9:19 | הָרֹא...
+    ...`HTd/Vqrmsa` | `09afe` |
+    | 1 Sam 9:11 | הָרֹאֶֽה | `d/7203 a` | `HTd/Vqrmsa` | `09CuU` |
+    | 1 Sam 9:18 | הָרֹאֶֽה | `d/7203 a` | `HTd/Vqrmsa` | `093FP` |
+    | 1 Sam 9:19 | הָרֹאֶ֔ה | `d/7203 a` | `HTd/Vqrmsa` | `0985m` |
+    
+    **3 — the same title, in Chronicles:**
+    
+    | reference | word | `lemma` | `morph` | `id` |
+    |---|---|---|---|---|
+    | 1 Chr 9:22 | הָרֹאֶ֖ה | `d/7200` | `HTd/Ncmsa` | `13u5x` |
+    | 1 Chr 26:28 | הָרֹאֶה֙ | `d/7200` | `HTd/Ncmsa` | `13cdq` |
+    | 1 Chr 29:29 | הָרֹאֶ֔ה | `d/7200` | `HTd/Ncmsa` | `13Mqr` |
+    | 2 Chr 16:7 | הָרֹאֶ֔ה | `d/7200` | `HTd/Ncmsa` | `14gVD` |
+    | 2 Chr 16:10 | הָרֹאֶ֗ה | `...
+--- openscriptures/morphhb#107 issue body by brando130 at 2025-04-13T00:36:25Z (3 matches)
+    ...JSON Script Doesn't Reproduce the Immutable ID's
+    The README explains the reasoning for the "unique, immutable id", but then fails to include it in the Perl/Python scripts, which output "[ 'wordString', 'lemma', 'morphology' ]"
+    
+    Is there a way to bring these ID's to JSON?...
+    ...JSON Script Doesn't Reproduce the Immutable ID's
+    The README explains the reasoning for the "unique, immutable id", but then fails to include it in the Perl/Python scripts, which output "[ 'wordString', 'lemma', 'morphology' ]"
+    
+    Is there a way to bring these ID's to JSON?...
+    ...JSON Script Doesn't Reproduce the Immutable ID's
+    The README explains the reasoning for the "unique, immutable id", but then fails to include it in the Perl/Python scripts, which output "[ 'wordString', 'lemma', 'morphology' ]"
+    
+    Is there a way to bring these ID's to JSON?...
+--- openscriptures/morphhb#101 issue body by ThomHehl at 2023-11-06T00:50:33Z (21 matches)
+    ... of lemma notations
+    Hi, totatl Newb to this project and OSIS, but have been a student of Hebrew for years and wanted to dig deeper.
+    
+    I'm having a look at the lemma notations. I'm going to post Genesis 1:1-2.
+    
+            <verse osisID="Gen.1.1">
+              <w lemma="b/7225" n="1.0" morph="HR/Ncfsa" id="01xeN">בְּ/רֵאשִׁ֖ית</w>
+              <w lemma="1254 a" morph="HVqp3ms" id="01Nvk">בָּרָ֣א</w>
+              <w lemma="430" n="1" morph="HNcmpa" id="01TyA">אֱלֹהִ֑ים</w>
+              <w lemma="853" morph="HTo" id="01vuQ">אֵ֥ת</w>
+              <w lemma="d/8064" n="0.0" morph="HTd/Ncmpa" id="01TSc">הַ/שָּׁמַ...
+    ...n a student of Hebrew for years and wanted to dig deeper.
+    
+    I'm having a look at the lemma notations. I'm going to post Genesis 1:1-2.
+    
+            <verse osisID="Gen.1.1">
+              <w lemma="b/7225" n="1.0" morph="HR/Ncfsa" id="01xeN">בְּ/רֵאשִׁ֖ית</w>
+              <w lemma="1254 a" morph="HVqp3ms" id="01Nvk">בָּרָ֣א</w>
+              <w lemma="430" n="1" morph="HNcmpa" id="01TyA">אֱלֹהִ֑ים</w>
+              <w lemma="853" morph="HTo" id="01vuQ">אֵ֥ת</w>
+              <w lemma="d/8064" n="0.0" morph="HTd/Ncmpa" id="01TSc">הַ/שָּׁמַ֖יִם</w>
+              <w lemma="c/853" morph="HC/To" id="01k5P">וְ/אֵ֥ת</w>...
+    ...g a look at the lemma notations. I'm going to post Genesis 1:1-2.
+    
+            <verse osisID="Gen.1.1">
+              <w lemma="b/7225" n="1.0" morph="HR/Ncfsa" id="01xeN">בְּ/רֵאשִׁ֖ית</w>
+              <w lemma="1254 a" morph="HVqp3ms" id="01Nvk">בָּרָ֣א</w>
+              <w lemma="430" n="1" morph="HNcmpa" id="01TyA">אֱלֹהִ֑ים</w>
+              <w lemma="853" morph="HTo" id="01vuQ">אֵ֥ת</w>
+              <w lemma="d/8064" n="0.0" morph="HTd/Ncmpa" id="01TSc">הַ/שָּׁמַ֖יִם</w>
+              <w lemma="c/853" morph="HC/To" id="01k5P">וְ/אֵ֥ת</w>
+              <w lemma="d/776" n="0" morph="HTd/Ncbsa" id="01nPh">הָ/אָֽר...
+    ...2.
+    
+            <verse osisID="Gen.1.1">
+              <w lemma="b/7225" n="1.0" morph="HR/Ncfsa" id="01xeN">בְּ/רֵאשִׁ֖ית</w>
+              <w lemma="1254 a" morph="HVqp3ms" id="01Nvk">בָּרָ֣א</w>
+              <w lemma="430" n="1" morph="HNcmpa" id="01TyA">אֱלֹהִ֑ים</w>
+              <w lemma="853" morph="HTo" id="01vuQ">אֵ֥ת</w>
+              <w lemma="d/8064" n="0.0" morph="HTd/Ncmpa" id="01TSc">הַ/שָּׁמַ֖יִם</w>
+              <w lemma="c/853" morph="HC/To" id="01k5P">וְ/אֵ֥ת</w>
+              <w lemma="d/776" n="0" morph="HTd/Ncbsa" id="01nPh">הָ/אָֽרֶץ</w><seg type="x-sof-pasuq">׃</seg>
+            </verse>
+          ...
+--- openscriptures/morphhb#94 issue body by etale-cohomology at 2022-06-22T09:12:20Z (3 matches)
+    ...he", "and"), and the latter part `b` is as before).
+    
+    Where was this extension to Strong's numbers devised, and, more importantly, can it be extended within the OSHB project?
+    
+    Eg. consider [`H430`](https://studybible.info/strongs/h430). The `LexicalIndex.xml` `def` says `gods`.
+    
+    ```xml
+    <entry id="arn">
+    	<w xlit="ʾĕlōhîm">אֱלֹהִים</w> <pos>N</pos> <def>gods</def>
+    	<xref bdb="a.dl.ad" strong="430" twot="93c"/>
+    	<etym type="sub">arm</etym>
+    </entry>
+    ```
+    
+    But what if I'd like to add another `<entry>` to the `xml`, to account for the meaning `God`?
+    
+    Eg.
+    
+    ```xml
+    <entry id="arn">
+    	<w ...
+    ...`xml
+    <entry id="arn">
+    	<w xlit="ʾĕlōhîm">אֱלֹהִים</w> <pos>N</pos> <def>gods</def>
+    	<xref bdb="a.dl.ad" strong="430" twot="93c"/>
+    	<etym type="sub">arm</etym>
+    </entry>
+    ```
+    
+    But what if I'd like to add another `<entry>` to the `xml`, to account for the meaning `God`?
+    
+    Eg.
+    
+    ```xml
+    <entry id="arn">
+    	<w xlit="ʾĕlōhîm">אֱלֹהִים</w> <pos>N</pos> <def>God</def>
+    	<xref bdb="a.dl.ad" strong="430" aug="a" twot="93c"/>
+    	<etym type="sub">arm</etym>
+    </entry>
+    <entry id="arn">
+    	<w xlit="ʾĕlōhîm">אֱלֹהִים</w> <pos>N</pos> <def>gods</def>
+    	<xref bdb="a.dl.ad" strong="430" aug="b" twot="93c"/>...
+    ...``
+    
+    But what if I'd like to add another `<entry>` to the `xml`, to account for the meaning `God`?
+    
+    Eg.
+    
+    ```xml
+    <entry id="arn">
+    	<w xlit="ʾĕlōhîm">אֱלֹהִים</w> <pos>N</pos> <def>God</def>
+    	<xref bdb="a.dl.ad" strong="430" aug="a" twot="93c"/>
+    	<etym type="sub">arm</etym>
+    </entry>
+    <entry id="arn">
+    	<w xlit="ʾĕlōhîm">אֱלֹהִים</w> <pos>N</pos> <def>gods</def>
+    	<xref bdb="a.dl.ad" strong="430" aug="b" twot="93c"/>
+    	<etym type="sub">arm</etym>
+    </entry>
+    ```
+    
+    Notice that I've also added a corresponding `aug` field to each `<entry>`.
+    
+    Can this be done? Does it make sense?
+    
+    Of cour...
+--- openscriptures/morphhb#87 PR body by emg at 2021-08-24T18:57:14Z (1 matches)
+    ...Change Strong's for id 18rfH in Job 30:24 from 'l/2004' to '3861'
+    The word "לָהֶ֥ן" in Job 30:24 might be better analyzed as Strong's 3861. Please review and accept/reject this proposal....
+--- openscriptures/morphhb#86 issue body by jonathanrobie at 2021-07-19T15:25:11Z (6 matches)
+    ...26184816-650ca45c-7b25-407e-9b41-d148e342e813.png)
+    
+    In the existing OSHB, these are represented by lemmas that end with a + marker, indicating that you need to add further words before you have something that matches the entire lemma:
+    
+    ```xml
+              <w lemma="3205" n="1.2.0" morph="HVqp3fs" id="01pDQ">יָֽלְדָה֙</w>
+              <w lemma="853" morph="HTo" id="01deG">אֶת</w><seg type="x-maqqef">־</seg><w lemma="8423+" morph="HNp" id="01Nvj">תּ֣וּבַל</w>
+              <w lemma="8423" n="1.2" morph="HNp" id="01Gye">קַ֔יִן</w>
+              <w lemma="3913" n="1.1" morph="HVqrmsc" id="01qCo">לֹטֵ֕שׁ</...
+    ...isting OSHB, these are represented by lemmas that end with a + marker, indicating that you need to add further words before you have something that matches the entire lemma:
+    
+    ```xml
+              <w lemma="3205" n="1.2.0" morph="HVqp3fs" id="01pDQ">יָֽלְדָה֙</w>
+              <w lemma="853" morph="HTo" id="01deG">אֶת</w><seg type="x-maqqef">־</seg><w lemma="8423+" morph="HNp" id="01Nvj">תּ֣וּבַל</w>
+              <w lemma="8423" n="1.2" morph="HNp" id="01Gye">קַ֔יִן</w>
+              <w lemma="3913" n="1.1" morph="HVqrmsc" id="01qCo">לֹטֵ֕שׁ</w>
+    ```
+    
+    In my trees, I am merging them.  There is a single `...
+    ...cating that you need to add further words before you have something that matches the entire lemma:
+    
+    ```xml
+              <w lemma="3205" n="1.2.0" morph="HVqp3fs" id="01pDQ">יָֽלְדָה֙</w>
+              <w lemma="853" morph="HTo" id="01deG">אֶת</w><seg type="x-maqqef">־</seg><w lemma="8423+" morph="HNp" id="01Nvj">תּ֣וּבַל</w>
+              <w lemma="8423" n="1.2" morph="HNp" id="01Gye">קַ֔יִן</w>
+              <w lemma="3913" n="1.1" morph="HVqrmsc" id="01qCo">לֹטֵ֕שׁ</w>
+    ```
+    
+    In my trees, I am merging them.  There is a single `w` for 
+    
+    ```xml
+    <w lemma="8423+" morph="HNp HNp" id="01Nvj">תּ֣וּבַל קַ֔...
+    ...t matches the entire lemma:
+    
+    ```xml
+              <w lemma="3205" n="1.2.0" morph="HVqp3fs" id="01pDQ">יָֽלְדָה֙</w>
+              <w lemma="853" morph="HTo" id="01deG">אֶת</w><seg type="x-maqqef">־</seg><w lemma="8423+" morph="HNp" id="01Nvj">תּ֣וּבַל</w>
+              <w lemma="8423" n="1.2" morph="HNp" id="01Gye">קַ֔יִן</w>
+              <w lemma="3913" n="1.1" morph="HVqrmsc" id="01qCo">לֹטֵ֕שׁ</w>
+    ```
+    
+    In my trees, I am merging them.  There is a single `w` for 
+    
+    ```xml
+    <w lemma="8423+" morph="HNp HNp" id="01Nvj">תּ֣וּבַל קַ֔יִן</w>
+    ```
+    
+    Do you want that upstream, or should I continue to make...
+--- openscriptures/morphhb#85 PR body by jonathanrobie at 2021-07-18T18:04:39Z (2 matches)
+    ...Schema validity fixes: (1) changed id attributes to ID attributes and…
+    … added a leading alphabetic character, (2) single values for @type attribute in Ketiv readings.  See https://github.com/openscriptures/morphhb/issues/84, https://github.com/openscriptures/morphhb/issues/80....
+    ...Schema validity fixes: (1) changed id attributes to ID attributes and…
+    … added a leading alphabetic character, (2) single values for @type attribute in Ketiv readings.  See https://github.com/openscriptures/morphhb/issues/84, https://github.com/openscriptures/morphhb/issues/80....
+--- openscriptures/morphhb#84 issue body by jonathanrobie at 2021-07-17T14:30:22Z (6 matches)
+    ...Schema validity and id attributes
+    When I validate against the [OSIS schema](https://crosswire.org/osis/osisCore.2.1.1.xsd) using xmllint, I get validation errors for the id attributes on words:
+     
+    ```
+    1Kgs.xml:321: element w: Schemas validity error : Element '{http://www.bibletechnologies.net/2003/OSIS/namespace}w', at...
+    ...Schema validity and id attributes
+    When I validate against the [OSIS schema](https://crosswire.org/osis/osisCore.2.1.1.xsd) using xmllint, I get validation errors for the id attributes on words:
+     
+    ```
+    1Kgs.xml:321: element w: Schemas validity error : Element '{http://www.bibletechnologies.net/2003/OSIS/namespace}w', attribute 'id': The attribute 'id' is not allowed.
+    1Kgs.xml:322: element w: Schemas validity error : Element '{http://www.bibletechnologies.net/2003/OS...
+    ...es
+    When I validate against the [OSIS schema](https://crosswire.org/osis/osisCore.2.1.1.xsd) using xmllint, I get validation errors for the id attributes on words:
+     
+    ```
+    1Kgs.xml:321: element w: Schemas validity error : Element '{http://www.bibletechnologies.net/2003/OSIS/namespace}w', attribute 'id': The attribute 'id' is not allowed.
+    1Kgs.xml:322: element w: Schemas validity error : Element '{http://www.bibletechnologies.net/2003/OSIS/namespace}w', attribute 'id': The attribute 'id' is not allowed.
+    !!! SNIP !!!
+    ```
+    
+    Am I missing something?...
+    ...gainst the [OSIS schema](https://crosswire.org/osis/osisCore.2.1.1.xsd) using xmllint, I get validation errors for the id attributes on words:
+     
+    ```
+    1Kgs.xml:321: element w: Schemas validity error : Element '{http://www.bibletechnologies.net/2003/OSIS/namespace}w', attribute 'id': The attribute 'id' is not allowed.
+    1Kgs.xml:322: element w: Schemas validity error : Element '{http://www.bibletechnologies.net/2003/OSIS/namespace}w', attribute 'id': The attribute 'id' is not allowed.
+    !!! SNIP !!!
+    ```
+    
+    Am I missing something?...
+--- openscriptures/morphhb#80 issue body by jonathanrobie at 2021-07-07T18:14:42Z (11 matches)
+    ...tiv appears as a `w` element
+    - Immediately after the Ketiv, there is a `note`
+    - The `note` contains  a `catchWord` that corresponds to the word just before the note, representing the Ketiv, and a `rdg`, representing the Qere.  
+    
+    For instance:
+    
+    ```xml
+              <w lemma="3318" morph="HVhv2ms" id="01Pdv">הוצא</w>
+              <note type="variant">
+                <catchWord>הוצא</catchWord>
+                <rdg type="x-qere">
+                  <w lemma="3318" morph="HVhv2ms" id="01S7t">הַיְצֵ֣א</w>
+                </rdg>
+              </note>
+    ```
+    
+    I'm I right to expect that for all readings?
+    
+    The follo...
+    ...enting the Ketiv, and a `rdg`, representing the Qere.  
+    
+    For instance:
+    
+    ```xml
+              <w lemma="3318" morph="HVhv2ms" id="01Pdv">הוצא</w>
+              <note type="variant">
+                <catchWord>הוצא</catchWord>
+                <rdg type="x-qere">
+                  <w lemma="3318" morph="HVhv2ms" id="01S7t">הַיְצֵ֣א</w>
+                </rdg>
+              </note>
+    ```
+    
+    I'm I right to expect that for all readings?
+    
+    The following 9 instances do not follow this pattern because the `note` does not contain a `catchWord`:
+    
+    ```xml
+    <note type="variant">
+      <rdg type="x-qere">
+        <w lemma="6635 b" ...
+    ...            </rdg>
+              </note>
+    ```
+    
+    I'm I right to expect that for all readings?
+    
+    The following 9 instances do not follow this pattern because the `note` does not contain a `catchWord`:
+    
+    ```xml
+    <note type="variant">
+      <rdg type="x-qere">
+        <w lemma="6635 b" n="0.0" morph="HNcbpa" id="12kTe">צְבָא֖וֹת</w>
+      </rdg>
+    </note>
+    <note type="variant">
+      <rdg type="x-qere">
+        <w lemma="1121 a" n="1.1.0" morph="HNcmpc/Sp3ms" id="12uR9">בָּנָי/ו֙</w>
+      </rdg>
+    </note>
+    <note  type="variant">
+      <rdg type="x-qere">
+        <w lemma="1121 a" morph="HNcmpc" id="07Kvd">בְּנֵ֣י</w>
+      </r...
+    ...rn because the `note` does not contain a `catchWord`:
+    
+    ```xml
+    <note type="variant">
+      <rdg type="x-qere">
+        <w lemma="6635 b" n="0.0" morph="HNcbpa" id="12kTe">צְבָא֖וֹת</w>
+      </rdg>
+    </note>
+    <note type="variant">
+      <rdg type="x-qere">
+        <w lemma="1121 a" n="1.1.0" morph="HNcmpc/Sp3ms" id="12uR9">בָּנָי/ו֙</w>
+      </rdg>
+    </note>
+    <note  type="variant">
+      <rdg type="x-qere">
+        <w lemma="1121 a" morph="HNcmpc" id="07Kvd">בְּנֵ֣י</w>
+      </rdg>
+    </note>
+    <note type="variant">
+      <rdg type="x-qere">
+        <w lemma="6578" n="0" morph="HNp" id="10dp9">פְּרָֽת</w>
+      </rdg>
+    </note>
+    <no...
+--- openscriptures/morphhb#79 issue body by HeyITGuyFixIt at 2021-06-19T15:12:16Z (4 matches)
+    ...Missing Morph in Amos 6:14 and Job 30:24
+    I was using a script to loop through each word in the your XML files and it had an issue with the following two words:
+    
+    Job.30.24 : `<w lemma="l/2004" morph="HC" id="18rfH">לָהֶ֥ן</w>`
+    
+    Amos.6.14 : `<w lemma="m/l/935" morph="HR/Np" id="30HAz">מִ/לְּב֥וֹא</w>`
+    
+    It looks like the lamed in each word should be divided from the word, as is reflected in the lemma. The Hebrew text content and the morph do not reflect this.
+    
+    If I am correct about this, these two...
+    ...Missing Morph in Amos 6:14 and Job 30:24
+    I was using a script to loop through each word in the your XML files and it had an issue with the following two words:
+    
+    Job.30.24 : `<w lemma="l/2004" morph="HC" id="18rfH">לָהֶ֥ן</w>`
+    
+    Amos.6.14 : `<w lemma="m/l/935" morph="HR/Np" id="30HAz">מִ/לְּב֥וֹא</w>`
+    
+    It looks like the lamed in each word should be divided from the word, as is reflected in the lemma. The Hebrew text content and the morph do not reflect this.
+    
+    If I am correct about this, these two words should be corrected to:
+    
+    Job.30.24 : `<w lemma="l/2004" morph="...
+    ...">מִ/לְּב֥וֹא</w>`
+    
+    It looks like the lamed in each word should be divided from the word, as is reflected in the lemma. The Hebrew text content and the morph do not reflect this.
+    
+    If I am correct about this, these two words should be corrected to:
+    
+    Job.30.24 : `<w lemma="l/2004" morph="HR/HC" id="18rfH">לָ/הֶ֥ן</w>`
+    
+    Amos.6.14 :` <w lemma="m/l/935" morph="HR/HR/Np" id="30HAz">מִ/לְּ/ב֥וֹא</w>`
+    
+    ...
+    ... from the word, as is reflected in the lemma. The Hebrew text content and the morph do not reflect this.
+    
+    If I am correct about this, these two words should be corrected to:
+    
+    Job.30.24 : `<w lemma="l/2004" morph="HR/HC" id="18rfH">לָ/הֶ֥ן</w>`
+    
+    Amos.6.14 :` <w lemma="m/l/935" morph="HR/HR/Np" id="30HAz">מִ/לְּ/ב֥וֹא</w>`
+    
+    ...
+--- openscriptures/morphhb#77 issue body by jonathanrobie at 2021-06-07T18:00:55Z (3 matches)
+    ...Implicit Articles and Syntax Trees
+    For words with an implicit article ("Rd"), WLC and OHSB differ in the number of morphemes.  Here is a comparison for one word:
+    
+    ```xml
+    <w morphshort="01001005003" osisref="Gen.1.5">
+      <oshb>
+        <w lemma="l/216" n="1.1.0" morph="HRd/Ncbsa" id="01Wkf">לָ/אוֹר֙</w>
+      </oshb>
+      <wlc>
+        <m morphid="010010050031" text="לָ‎"/>
+        <m morphid="010010050032" text="‎"/>
+        <m morphid="010010050033" text="אוֹר֙‎"/>
+      </wlc>
+    </w>
+    ```
+    
+    This is not a showstopper for our syntax trees, but it would be convenient if  OSHB could add an expl...
+    ...id="010010050033" text="אוֹר֙‎"/>
+      </wlc>
+    </w>
+    ```
+    
+    This is not a showstopper for our syntax trees, but it would be convenient if  OSHB could add an explicit representation for the implicit article.  One approach would be to change this:
+    
+    ```xml
+    <w lemma="l/216" n="1.1.0" morph="HRd/Ncbsa" id="01Wkf">לָ/אוֹר֙</w>
+    ```
+    
+    To this:
+    
+    ```xml
+     <w lemma="l/216" n="1.1.0" morph="HRd/Ncbsa" id="01Wkf">לָ//אוֹר֙</w>
+    ```
+    
+    I don't know if it would be useful to change the @morph attribute as well....
+    ... trees, but it would be convenient if  OSHB could add an explicit representation for the implicit article.  One approach would be to change this:
+    
+    ```xml
+    <w lemma="l/216" n="1.1.0" morph="HRd/Ncbsa" id="01Wkf">לָ/אוֹר֙</w>
+    ```
+    
+    To this:
+    
+    ```xml
+     <w lemma="l/216" n="1.1.0" morph="HRd/Ncbsa" id="01Wkf">לָ//אוֹר֙</w>
+    ```
+    
+    I don't know if it would be useful to change the @morph attribute as well....
+--- openscriptures/morphhb#76 PR body by emg at 2021-02-23T20:53:56Z (1 matches)
+    ...Correct morph parsing of שִׁלַּחְתִּ֤י in Jer 49:37
+    In Jeremiah 49:37, the parsing is probably wrong for word שִׁלַּחְתִּ֤י with id='246wV'.
+    
+    Proposing to change the morph parsing from
+    
+    Sp3mp
+    
+    to
+    
+    Vpp1cs
+    
+    Any Hebrew experts out there, please do correct me if I'm wrong.
+    
+    Many thanks.
+    
+    Ulrik Sandborg-Petersen
+    ...
+--- openscriptures/morphhb#61 issue body by derrikF at 2019-01-18T07:17:34Z (3 matches)
+    ...(v.2.0) No explanation of morphological code for Isa.53.5
+    No explanation of morphological code
+    
+            <verse osisID="Isa.53.5">
+              ...................
+              <w lemma="2490 a" morph="HVOsmsa" id="23VQE">מְחֹלָ֣ל</w>
+    
+    the code "HVOsmsa" is not explained in the Oshm.xml file
+    
+    and more
+    
+    morph HVqsmsa
+    
+    >         <verse osisID="Isa.53.4">
+    >           .........................................
+    >           <w lemma="5060" n="0.0.0" morph="HVqsmsa" id="23tLg">נָג֛וּעַ</w>
+    
+    morph HC/Vqi1...
+    ...    <w lemma="2490 a" morph="HVOsmsa" id="23VQE">מְחֹלָ֣ל</w>
+    
+    the code "HVOsmsa" is not explained in the Oshm.xml file
+    
+    and more
+    
+    morph HVqsmsa
+    
+    >         <verse osisID="Isa.53.4">
+    >           .........................................
+    >           <w lemma="5060" n="0.0.0" morph="HVqsmsa" id="23tLg">נָג֛וּעַ</w>
+    
+    morph HC/Vqi1cp/Sp3ms
+    
+    >         <verse osisID="Isa.53.2">
+    >           .........................................
+    >           <w lemma="c/7200" morph="HC/Vqi1cp/Sp3ms" id="2391S">וְ/נִרְאֵ֥/הוּ</w>
+    
+    when do you update the Oshm.xml file?...
+    ...     .........................................
+    >           <w lemma="5060" n="0.0.0" morph="HVqsmsa" id="23tLg">נָג֛וּעַ</w>
+    
+    morph HC/Vqi1cp/Sp3ms
+    
+    >         <verse osisID="Isa.53.2">
+    >           .........................................
+    >           <w lemma="c/7200" morph="HC/Vqi1cp/Sp3ms" id="2391S">וְ/נִרְאֵ֥/הוּ</w>
+    
+    when do you update the Oshm.xml file?...
+--- openscriptures/morphhb#58 issue body by jag3773 at 2019-01-16T13:50:23Z (2 matches)
+    ...Describe IDs that Have been Added to Text
+    This is a reminder for @AndyHubert to write up a short description of the IDs that we can put into the README....
+    ...Describe IDs that Have been Added to Text
+    This is a reminder for @AndyHubert to write up a short description of the IDs that we can put into the README....
+--- openscriptures/morphhb#56 PR body by AndyHubert at 2019-01-13T10:35:40Z (1 matches)
+    ...All verified and checks run
+    All parsing and verification done, with broad consistency checks. 
+    
+    Also, immutable unique ids (beginning with two digits representing the KJV ordering of the book) have been given to each word to aid aligning additional data....
+--- openscriptures/morphhb#6 comment 40237022 by yaaqov at 2014-04-11T18:15:40Z (3 matches)
+    ...848) - Bagster's Lexicon, for short.
+    
+    You can browse online, save it as a Google eBook, or just save it as a PDF by using either of the following links (keep in mind the OCR only worked reliably for English, so it's best to treat it as a searchable PDF).
+    
+    Google Books: http://books.google.com/books?id=TSljAAAAMAAJ
+    Internet Archive: https://archive.org/details/analyticalhebre00bagsgoog
+    
+    As an added bonus, the first 99 pages are a refresher in Hebrew and Biblical Aramaic grammar. When I studied Hebrew in college, it was a way of confirming your results when practicing the ability to decline a noun...
+    ...pecification. One brief example:
+    
+    Parsing בְּרֵאשִׁית ("In the beginning"):
+    Original Page CXIII/Scanned page 211 (Middle of second column) https://archive.org/stream/analyticalhebre00bagsgoog#page/n211/mode/2up
+    
+    Bagster's entry - note: paretheses separate pre/suffixes from lexeme.
+    בְּרֵאשִׁית pref. id.)( id., noun fem. sing. dec. 1 b. ראשׁ
+    
+    Meaning of abbreviations: https://archive.org/stream/analyticalhebre00bagsgoog#page/n15/mode/2up
+    "Prefix idem | idem, noun feminine singular declension 1 b ראשׁ"
+    Idem is saying this is a "Lemma", since the individual word exists as a lexicon entry (Be and Res...
+    ...cation. One brief example:
+    
+    Parsing בְּרֵאשִׁית ("In the beginning"):
+    Original Page CXIII/Scanned page 211 (Middle of second column) https://archive.org/stream/analyticalhebre00bagsgoog#page/n211/mode/2up
+    
+    Bagster's entry - note: paretheses separate pre/suffixes from lexeme.
+    בְּרֵאשִׁית pref. id.)( id., noun fem. sing. dec. 1 b. ראשׁ
+    
+    Meaning of abbreviations: https://archive.org/stream/analyticalhebre00bagsgoog#page/n15/mode/2up
+    "Prefix idem | idem, noun feminine singular declension 1 b ראשׁ"
+    Idem is saying this is a "Lemma", since the individual word exists as a lexicon entry (Be and Reshith),...
+--- openscriptures/morphhb#34 comment 339670775 by DavidTroidl at 2017-10-26T13:45:34Z (1 matches)
+    ...hat it is not limited to the lexical 
+    form of a word.  I can look up the word "go" in my dictionary, but I can 
+    also look up "went".  The case in point, "yalak", is a major form of 
+    "halak", representing over 500 instances in the Hebrew bible.  To 
+    represent it as a dictionary entry, it requires an ID, 3212 fulfills 
+    that function.  This should pose no problem.  I can open up the OSHB and 
+    search for (3212|1980) and find 1555 hits, but I can still search for 
+    each one individually if I want.  Why should we destroy that information?
+    
+    
+    On 10/26/2017 2:34 AM, Andy Hubert wrote:
+    >
+    > There have been ...
+--- openscriptures/morphhb#66 comment 531955131 by DavidTroidl at 2019-09-16T20:57:04Z (6 matches)
+    ...Correct. Here is the XML:
+    
+            <verse osisID="Num.27.5">
+              <w lemma="c/7126" morph="HC/Vhw3ms" id="04XkU">וַ/יַּקְרֵ֥ב</w>
+              <w lemma="4872" n="0.0.0" morph="HNp" id="04ga6">מֹשֶׁ֛ה</w>
+              <w lemma="853" morph="HTo" id="041sG">אֶת</w><seg type="x-maqqef">־</seg><w lemma="4941" n="0.0" morph="HNcmsc/Sp3fp" id="04DbS">מִשְׁפָּטָ֖/<seg type="x-large">ן</seg></w>
+              <note n...
+    ...Correct. Here is the XML:
+    
+            <verse osisID="Num.27.5">
+              <w lemma="c/7126" morph="HC/Vhw3ms" id="04XkU">וַ/יַּקְרֵ֥ב</w>
+              <w lemma="4872" n="0.0.0" morph="HNp" id="04ga6">מֹשֶׁ֛ה</w>
+              <w lemma="853" morph="HTo" id="041sG">אֶת</w><seg type="x-maqqef">־</seg><w lemma="4941" n="0.0" morph="HNcmsc/Sp3fp" id="04DbS">מִשְׁפָּטָ֖/<seg type="x-large">ן</seg></w>
+              <note n="5">Large letter(s). Shown as large letters without a superscript note numbe...
+    ...Correct. Here is the XML:
+    
+            <verse osisID="Num.27.5">
+              <w lemma="c/7126" morph="HC/Vhw3ms" id="04XkU">וַ/יַּקְרֵ֥ב</w>
+              <w lemma="4872" n="0.0.0" morph="HNp" id="04ga6">מֹשֶׁ֛ה</w>
+              <w lemma="853" morph="HTo" id="041sG">אֶת</w><seg type="x-maqqef">־</seg><w lemma="4941" n="0.0" morph="HNcmsc/Sp3fp" id="04DbS">מִשְׁפָּטָ֖/<seg type="x-large">ן</seg></w>
+              <note n="5">Large letter(s). Shown as large letters without a superscript note number. </note>
+              <w lemma="l/6440" morph="HR/Ncbpc" id="...
+    ...erse osisID="Num.27.5">
+              <w lemma="c/7126" morph="HC/Vhw3ms" id="04XkU">וַ/יַּקְרֵ֥ב</w>
+              <w lemma="4872" n="0.0.0" morph="HNp" id="04ga6">מֹשֶׁ֛ה</w>
+              <w lemma="853" morph="HTo" id="041sG">אֶת</w><seg type="x-maqqef">־</seg><w lemma="4941" n="0.0" morph="HNcmsc/Sp3fp" id="04DbS">מִשְׁפָּטָ֖/<seg type="x-large">ן</seg></w>
+              <note n="5">Large letter(s). Shown as large letters without a superscript note number. </note>
+              <w lemma="l/6440" morph="HR/Ncbpc" id="04EX3">לִ/פְנֵ֥י</w>
+              <w lemma="3068" n="0" morph="HNp" id="04vV1">יְהוָֽה</w><se...
+--- openscriptures/morphhb#75 comment 773722288 by Nainoia-Inc-Admin at 2021-02-05T01:41:57Z (2 matches)
+    ...Okay thanks that is what I needed to know.
+    
+    I plan to use this as my source for the Open Scriptures Hebrew Bible, [https://ebible.org/details.php?id=hboWLC](https://ebible.org/details.php?id=hboWLC)
+    I think that is a well groomed source.
+    ...
+    ...Okay thanks that is what I needed to know.
+    
+    I plan to use this as my source for the Open Scriptures Hebrew Bible, [https://ebible.org/details.php?id=hboWLC](https://ebible.org/details.php?id=hboWLC)
+    I think that is a well groomed source.
+    ...
+--- openscriptures/morphhb#79 comment 872041318 by jdejoode at 2021-07-01T08:29:49Z (1 matches)
+    ...t/ETCBC4/Iob/30/24 I think the latter is correct. The parsing wouldn't be the one your proposed (as its a suffix and not a conjunction), but you are right that it needs a change:
+    
+    What about the following? (Note that this changes both lemma and morph)
+    
+    Job.30.24 : `<w lemma="l" morph="HR/Sp3fp" id="18rfH">לָ/הֶ֥ן</w>`...
+--- openscriptures/morphhb#79 comment 872071322 by jdejoode at 2021-07-01T09:10:23Z (3 matches)
+    ... parsing solution is a bit more complex here than in the example from Job. [ETCBC](https://bibleol.3bmoodle.dk/text/show_text/ETCBC4/Amos/6/14) reads two prepositions and the infinitive construct here. That makes more sense. It would therefore be:
+    
+    Amos.6.14 : `<w lemma="m/l/935" morph="HR/R/Vqc" id="30HAz">מִ/לְּ/ב֥וֹא</w>`
+    
+    BUT a) this also affects other cases, b) this might be part of a composed place name.
+    
+    A. This also affects other occurrences, I only cite two
+    
+        <verse osisID="2Chr.7.8">
+        <w lemma="m/935" morph="HR/Np" id="1459X">מִ/לְּב֥וֹא</w>
+        </verse>
+    
+    and 
+    
+        ...
+    ...:
+    
+    Amos.6.14 : `<w lemma="m/l/935" morph="HR/R/Vqc" id="30HAz">מִ/לְּ/ב֥וֹא</w>`
+    
+    BUT a) this also affects other cases, b) this might be part of a composed place name.
+    
+    A. This also affects other occurrences, I only cite two
+    
+        <verse osisID="2Chr.7.8">
+        <w lemma="m/935" morph="HR/Np" id="1459X">מִ/לְּב֥וֹא</w>
+        </verse>
+    
+    and 
+    
+        <verse osisID="2Kgs.14.25">
+        <w lemma="m/935" morph="HR/Ncmsc" id="12vQR">מִ/לְּב֥וֹא</w>
+        </verse>
+    
+    Other occurrences include: 1Kgs.8.65, Ezek.47.20, Josh.13.5, Judg.3.3, Num.13.21, Num.34.8. Often here לְּב֥וֹא is parsed a proper noun...
+    ... b) this might be part of a composed place name.
+    
+    A. This also affects other occurrences, I only cite two
+    
+        <verse osisID="2Chr.7.8">
+        <w lemma="m/935" morph="HR/Np" id="1459X">מִ/לְּב֥וֹא</w>
+        </verse>
+    
+    and 
+    
+        <verse osisID="2Kgs.14.25">
+        <w lemma="m/935" morph="HR/Ncmsc" id="12vQR">מִ/לְּב֥וֹא</w>
+        </verse>
+    
+    Other occurrences include: 1Kgs.8.65, Ezek.47.20, Josh.13.5, Judg.3.3, Num.13.21, Num.34.8. Often here לְּב֥וֹא is parsed a proper noun (as you proposed as well).
+    
+    B. The Dictionary of Classical Hebrew has a lemma for Lebo-hamath as a placename. HALOT does...
+--- openscriptures/morphhb#80 comment 875886077 by jonathanrobie at 2021-07-07T19:50:58Z (106 matches)
+    ... corresponds to more than one preceding `w` element, but it's not clear how I am supposed to identify the start and end of the Ketiv reading without using string operations and comparing as I go.  Here are some:
+    
+    ```xml
+      <out count="1" osisID="1Sam.9.1">
+        <w lemma="c/1961" morph="HC/Vqw3ms" id="09wci">וַֽ/יְהִי</w>
+        <seg type="x-maqqef">־</seg>
+        <w lemma="376" morph="HNcmsa" id="09MpA">אִ֣ישׁ</w>
+        <w lemma="m/1121 a" morph="HR/Np" id="09Una">מ/בן</w>
+        <seg type="x-maqqef">־</seg>
+        <w lemma="3225" morph="HNp" id="09jgC">ימין</w>
+        <note type="variant">
+          <catch...
+    ...dentify the start and end of the Ketiv reading without using string operations and comparing as I go.  Here are some:
+    
+    ```xml
+      <out count="1" osisID="1Sam.9.1">
+        <w lemma="c/1961" morph="HC/Vqw3ms" id="09wci">וַֽ/יְהִי</w>
+        <seg type="x-maqqef">־</seg>
+        <w lemma="376" morph="HNcmsa" id="09MpA">אִ֣ישׁ</w>
+        <w lemma="m/1121 a" morph="HR/Np" id="09Una">מ/בן</w>
+        <seg type="x-maqqef">־</seg>
+        <w lemma="3225" morph="HNp" id="09jgC">ימין</w>
+        <note type="variant">
+          <catchWord>מ/בן־ימין</catchWord>
+          <rdg type="x-qere">
+            <w lemma="m/1144" n="1.0.1" mor...
+    ...string operations and comparing as I go.  Here are some:
+    
+    ```xml
+      <out count="1" osisID="1Sam.9.1">
+        <w lemma="c/1961" morph="HC/Vqw3ms" id="09wci">וַֽ/יְהִי</w>
+        <seg type="x-maqqef">־</seg>
+        <w lemma="376" morph="HNcmsa" id="09MpA">אִ֣ישׁ</w>
+        <w lemma="m/1121 a" morph="HR/Np" id="09Una">מ/בן</w>
+        <seg type="x-maqqef">־</seg>
+        <w lemma="3225" morph="HNp" id="09jgC">ימין</w>
+        <note type="variant">
+          <catchWord>מ/בן־ימין</catchWord>
+          <rdg type="x-qere">
+            <w lemma="m/1144" n="1.0.1" morph="HR/Np" id="09EC9">מִ/בִּנְיָמִ֗ין</w>
+          </rdg>
+        ...
+    ...isID="1Sam.9.1">
+        <w lemma="c/1961" morph="HC/Vqw3ms" id="09wci">וַֽ/יְהִי</w>
+        <seg type="x-maqqef">־</seg>
+        <w lemma="376" morph="HNcmsa" id="09MpA">אִ֣ישׁ</w>
+        <w lemma="m/1121 a" morph="HR/Np" id="09Una">מ/בן</w>
+        <seg type="x-maqqef">־</seg>
+        <w lemma="3225" morph="HNp" id="09jgC">ימין</w>
+        <note type="variant">
+          <catchWord>מ/בן־ימין</catchWord>
+          <rdg type="x-qere">
+            <w lemma="m/1144" n="1.0.1" morph="HR/Np" id="09EC9">מִ/בִּנְיָמִ֗ין</w>
+          </rdg>
+        </note>
+      </out>
+      <out count="2" osisID="1Sam.20.2">
+        <w lemma="c/559" morph="HC...
+--- openscriptures/morphhb#80 comment 875897423 by jonathanrobie at 2021-07-07T20:08:52Z (3 matches)
+    ...Wouldn't this be a lot easier if all readings were put in an `app` element with a `rdg` element for each reading?
+    
+    ```xml
+    <app>
+          <rdg type="x-ketiv">
+            <w lemma="3588 a" morph="HC" id="07rb5">כי</w>
+            <w lemma="2896 a" morph="HVqp3ms" id="07saF">טוב</w>
+          </rdg>
+          <rdg type="x-qere">
+            <w lemma="k/2896 a" morph="HR/Vqc" id="07URH">כְּ/ט֣וֹב</w>
+          </rdg>
+    </app>
+    ```...
+    ...Wouldn't this be a lot easier if all readings were put in an `app` element with a `rdg` element for each reading?
+    
+    ```xml
+    <app>
+          <rdg type="x-ketiv">
+            <w lemma="3588 a" morph="HC" id="07rb5">כי</w>
+            <w lemma="2896 a" morph="HVqp3ms" id="07saF">טוב</w>
+          </rdg>
+          <rdg type="x-qere">
+            <w lemma="k/2896 a" morph="HR/Vqc" id="07URH">כְּ/ט֣וֹב</w>
+          </rdg>
+    </app>
+    ```...
+    ...app` element with a `rdg` element for each reading?
+    
+    ```xml
+    <app>
+          <rdg type="x-ketiv">
+            <w lemma="3588 a" morph="HC" id="07rb5">כי</w>
+            <w lemma="2896 a" morph="HVqp3ms" id="07saF">טוב</w>
+          </rdg>
+          <rdg type="x-qere">
+            <w lemma="k/2896 a" morph="HR/Vqc" id="07URH">כְּ/ט֣וֹב</w>
+          </rdg>
+    </app>
+    ```...
+--- openscriptures/morphhb#80 comment 875975306 by jonathanrobie at 2021-07-07T22:25:54Z (4 matches)
+    ...Yes, I think that could work, if I understand correctly.  As far as timing goes, it's possible that I can produce this and do a pull request, not promising just yet, but that could happen.
+    
+    You are proposing this?
+    
+    ```xml
+        <w lemma="c/m/8478" morph="HC/R/R/Sd" id="26Mwv"  type="x-ketiv">ו/מ/תחת/ה</w>
+        <w lemma="3957" morph="HNcfpa" id="26DfV"  type="x-ketiv">לשכות</w>
+        <note type="variant">
+          <catchWord>ו/מ/תחת/ה לשכות</catchWord>
+          <rdg type="x-qere">
+            <w lemma="c/m/8478" n="1.0" morph="HC/R/R" id="262Lg">וּ/מִ/תַּ֖חַת</w>
+          ...
+    ...correctly.  As far as timing goes, it's possible that I can produce this and do a pull request, not promising just yet, but that could happen.
+    
+    You are proposing this?
+    
+    ```xml
+        <w lemma="c/m/8478" morph="HC/R/R/Sd" id="26Mwv"  type="x-ketiv">ו/מ/תחת/ה</w>
+        <w lemma="3957" morph="HNcfpa" id="26DfV"  type="x-ketiv">לשכות</w>
+        <note type="variant">
+          <catchWord>ו/מ/תחת/ה לשכות</catchWord>
+          <rdg type="x-qere">
+            <w lemma="c/m/8478" n="1.0" morph="HC/R/R" id="262Lg">וּ/מִ/תַּ֖חַת</w>
+            <w lemma="d/3957" morph="HTd/Ncfpa" id="26CYE">הַ/לְּשָׁכ֣וֹת</w>
+          </...
+    ...emma="c/m/8478" morph="HC/R/R/Sd" id="26Mwv"  type="x-ketiv">ו/מ/תחת/ה</w>
+        <w lemma="3957" morph="HNcfpa" id="26DfV"  type="x-ketiv">לשכות</w>
+        <note type="variant">
+          <catchWord>ו/מ/תחת/ה לשכות</catchWord>
+          <rdg type="x-qere">
+            <w lemma="c/m/8478" n="1.0" morph="HC/R/R" id="262Lg">וּ/מִ/תַּ֖חַת</w>
+            <w lemma="d/3957" morph="HTd/Ncfpa" id="26CYE">הַ/לְּשָׁכ֣וֹת</w>
+          </rdg>
+        </note>
+    ```...
+    ...
+        <w lemma="3957" morph="HNcfpa" id="26DfV"  type="x-ketiv">לשכות</w>
+        <note type="variant">
+          <catchWord>ו/מ/תחת/ה לשכות</catchWord>
+          <rdg type="x-qere">
+            <w lemma="c/m/8478" n="1.0" morph="HC/R/R" id="262Lg">וּ/מִ/תַּ֖חַת</w>
+            <w lemma="d/3957" morph="HTd/Ncfpa" id="26CYE">הַ/לְּשָׁכ֣וֹת</w>
+          </rdg>
+        </note>
+    ```...
+--- openscriptures/morphhb#80 comment 876061979 by jonathanrobie at 2021-07-08T02:06:38Z (11 matches)
+    ...t, so we could use @type="x-ketiv". Does that make sense?
+    
+    `rdgGroup` is an OSIS element.  Could we use that instead of `app`?   
+    
+    Perhaps:
+    
+    ```xml
+       <verse osisID="Ezek.42.9">
+          <rdgGroup type="variant">
+             <rdg type="x-ketiv">
+                <w lemma="c/m/8478" morph="HC/R/R/Sd" id="26Mwv">ו/מ/תחת/ה</w>
+                <w lemma="3957" morph="HNcfpa" id="26DfV">לשכות</w>            
+             </rdg>
+             <rdg type="x-qere">
+                <w lemma="c/m/8478" n="1.0" morph="HC/R/R" id="262Lg">וּ/מִ/תַּחַת</w>
+                <w lemma="d/3957" morph="HTd/Ncfpa" id="26CYE">הַ/לְּשָׁ...
+    ...p` is an OSIS element.  Could we use that instead of `app`?   
+    
+    Perhaps:
+    
+    ```xml
+       <verse osisID="Ezek.42.9">
+          <rdgGroup type="variant">
+             <rdg type="x-ketiv">
+                <w lemma="c/m/8478" morph="HC/R/R/Sd" id="26Mwv">ו/מ/תחת/ה</w>
+                <w lemma="3957" morph="HNcfpa" id="26DfV">לשכות</w>            
+             </rdg>
+             <rdg type="x-qere">
+                <w lemma="c/m/8478" n="1.0" morph="HC/R/R" id="262Lg">וּ/מִ/תַּחַת</w>
+                <w lemma="d/3957" morph="HTd/Ncfpa" id="26CYE">הַ/לְּשָׁכ֣וֹת</w>
+             </rdg>
+          </rdgGroup>
+          <w lemma="d/428"...
+    ...e="variant">
+             <rdg type="x-ketiv">
+                <w lemma="c/m/8478" morph="HC/R/R/Sd" id="26Mwv">ו/מ/תחת/ה</w>
+                <w lemma="3957" morph="HNcfpa" id="26DfV">לשכות</w>            
+             </rdg>
+             <rdg type="x-qere">
+                <w lemma="c/m/8478" n="1.0" morph="HC/R/R" id="262Lg">וּ/מִ/תַּחַת</w>
+                <w lemma="d/3957" morph="HTd/Ncfpa" id="26CYE">הַ/לְּשָׁכ֣וֹת</w>
+             </rdg>
+          </rdgGroup>
+          <w lemma="d/428" n="1" morph="HTd/Pdxcp" id="26FUJ">הָ/אֵ֑לֶּה</w>
+          <rdgGroup type="variant">
+             <rdg type="x-ketiv">
+                <w lemma...
+    ...morph="HC/R/R/Sd" id="26Mwv">ו/מ/תחת/ה</w>
+                <w lemma="3957" morph="HNcfpa" id="26DfV">לשכות</w>            
+             </rdg>
+             <rdg type="x-qere">
+                <w lemma="c/m/8478" n="1.0" morph="HC/R/R" id="262Lg">וּ/מִ/תַּחַת</w>
+                <w lemma="d/3957" morph="HTd/Ncfpa" id="26CYE">הַ/לְּשָׁכ֣וֹת</w>
+             </rdg>
+          </rdgGroup>
+          <w lemma="d/428" n="1" morph="HTd/Pdxcp" id="26FUJ">הָ/אֵ֑לֶּה</w>
+          <rdgGroup type="variant">
+             <rdg type="x-ketiv">
+                <w lemma="d/3996" morph="HTd/Ncmsa" d="26pCg">ה/מבוא</w>            
+             </rdg>...
+--- openscriptures/morphhb#80 comment 880803711 by jonathanrobie at 2021-07-15T15:43:35Z (11 matches)
+    ...I have a transformation that seems to work, but there's a problem with maqqef, which already uses the @type attribute.
+    
+    I can't do this because an element cannot have two type attributes:
+    
+    ```xml
+      <w type="x-ketiv" lemma="m/1121 a" morph="HR/Np" id="09Una">מ/בן</w>
+      <seg type="x-ketiv" type="x-maqqef">־</seg>
+      <w type="x-ketiv" lemma="3225" morph="HNp" id="09jgC">ימין</w>
+    ```
+    
+    I could provide one type attribute with two tokens, but that's likely to mess up existing software if it is assuming there can only be one value in the type attr...
+    ... with maqqef, which already uses the @type attribute.
+    
+    I can't do this because an element cannot have two type attributes:
+    
+    ```xml
+      <w type="x-ketiv" lemma="m/1121 a" morph="HR/Np" id="09Una">מ/בן</w>
+      <seg type="x-ketiv" type="x-maqqef">־</seg>
+      <w type="x-ketiv" lemma="3225" morph="HNp" id="09jgC">ימין</w>
+    ```
+    
+    I could provide one type attribute with two tokens, but that's likely to mess up existing software if it is assuming there can only be one value in the type attribute:
+    
+    ```xml
+      <w type="x-ketiv" lemma="m/1121 a" morph="HR/Np" id="09Una">מ/בן</w>
+      <seg type="x-ketiv x-...
+    ...w type="x-ketiv" lemma="3225" morph="HNp" id="09jgC">ימין</w>
+    ```
+    
+    I could provide one type attribute with two tokens, but that's likely to mess up existing software if it is assuming there can only be one value in the type attribute:
+    
+    ```xml
+      <w type="x-ketiv" lemma="m/1121 a" morph="HR/Np" id="09Una">מ/בן</w>
+      <seg type="x-ketiv x-maqqef">־</seg>
+      <w type="x-ketiv" lemma="3225" morph="HNp" id="09jgC">ימין</w>
+    ```
+    Or I could simply leave out the ketiv marking for the maqqef:
+    
+    ```xml
+      <w type="x-ketiv" lemma="m/1121 a" morph="HR/Np" id="09Una">מ/בן</w>
+      <seg type="x-maqqef">־<...
+    ...ith two tokens, but that's likely to mess up existing software if it is assuming there can only be one value in the type attribute:
+    
+    ```xml
+      <w type="x-ketiv" lemma="m/1121 a" morph="HR/Np" id="09Una">מ/בן</w>
+      <seg type="x-ketiv x-maqqef">־</seg>
+      <w type="x-ketiv" lemma="3225" morph="HNp" id="09jgC">ימין</w>
+    ```
+    Or I could simply leave out the ketiv marking for the maqqef:
+    
+    ```xml
+      <w type="x-ketiv" lemma="m/1121 a" morph="HR/Np" id="09Una">מ/בן</w>
+      <seg type="x-maqqef">־</seg>
+      <w type="x-ketiv" lemma="3225" morph="HNp" id="09jgC">ימין</w>
+    ```
+    
+    Or I could add some other ...
+--- openscriptures/morphhb#80 comment 880978517 by DavidTroidl at 2021-07-15T20:05:45Z (2 matches)
+    ...I would think the nest way to do it would be the two token option:
+      ```
+      <w type="x-ketiv" lemma="m/1121 a" morph="HR/Np" id="09Una">מ/בן</w>
+      <seg type="x-ketiv x-maqqef">־</seg>
+      <w type="x-ketiv" lemma="3225" morph="HNp" id="09jgC">ימין</w>
+    ```
+    If you feel that would be problematic, the nest best option would be to leave it out altogether. As long as that doesn't hinder your efforts.
+    One thing to watch is that ...
+    ...I would think the nest way to do it would be the two token option:
+      ```
+      <w type="x-ketiv" lemma="m/1121 a" morph="HR/Np" id="09Una">מ/בן</w>
+      <seg type="x-ketiv x-maqqef">־</seg>
+      <w type="x-ketiv" lemma="3225" morph="HNp" id="09jgC">ימין</w>
+    ```
+    If you feel that would be problematic, the nest best option would be to leave it out altogether. As long as that doesn't hinder your efforts.
+    One thing to watch is that you maintain the white space within the verse elements....
+--- openscriptures/morphhb#80 comment 881900413 by jonathanrobie at 2021-07-17T13:36:13Z (27 matches)
+    ... mainline text, but I think you would probably dislike that because you think of the Ketiv as the main reading and the Qere as mere commentary.  For the record, that would look like this, and it would make it easy to format a text as described above:
+    
+    ```xml
+      <w lemma="c/1961" morph="HC/Vqw3ms" id="09wci">וַֽ/יְהִי</w>
+      <seg type="x-maqqef">־</seg>
+      <w lemma="376" morph="HNcmsa" id="09MpA">אִ֣ישׁ</w>
+      <note type="variant">
+          <rdg type="x-ketiv">
+            <w lemma="m/1121 a" morph="HR/Np" id="09Una">מ/בן</w>
+            <seg type="x-maqqef">־</seg>
+           <w lemma="3225" morph="HNp" ...
+    ... as the main reading and the Qere as mere commentary.  For the record, that would look like this, and it would make it easy to format a text as described above:
+    
+    ```xml
+      <w lemma="c/1961" morph="HC/Vqw3ms" id="09wci">וַֽ/יְהִי</w>
+      <seg type="x-maqqef">־</seg>
+      <w lemma="376" morph="HNcmsa" id="09MpA">אִ֣ישׁ</w>
+      <note type="variant">
+          <rdg type="x-ketiv">
+            <w lemma="m/1121 a" morph="HR/Np" id="09Una">מ/בן</w>
+            <seg type="x-maqqef">־</seg>
+           <w lemma="3225" morph="HNp" id="09jgC">ימין</w>
+        </rdg>
+      </note>
+      <w lemma="m/1144" n="1.0.1" morph="HR/Np" id...
+    ... easy to format a text as described above:
+    
+    ```xml
+      <w lemma="c/1961" morph="HC/Vqw3ms" id="09wci">וַֽ/יְהִי</w>
+      <seg type="x-maqqef">־</seg>
+      <w lemma="376" morph="HNcmsa" id="09MpA">אִ֣ישׁ</w>
+      <note type="variant">
+          <rdg type="x-ketiv">
+            <w lemma="m/1121 a" morph="HR/Np" id="09Una">מ/בן</w>
+            <seg type="x-maqqef">־</seg>
+           <w lemma="3225" morph="HNp" id="09jgC">ימין</w>
+        </rdg>
+      </note>
+      <w lemma="m/1144" n="1.0.1" morph="HR/Np" id="09EC9">מִ/בִּנְיָמִ֗ין</w>
+    ```
+    
+    Another approach would be to get rid of `@type` attributes that simply say that a...
+    ...="09wci">וַֽ/יְהִי</w>
+      <seg type="x-maqqef">־</seg>
+      <w lemma="376" morph="HNcmsa" id="09MpA">אִ֣ישׁ</w>
+      <note type="variant">
+          <rdg type="x-ketiv">
+            <w lemma="m/1121 a" morph="HR/Np" id="09Una">מ/בן</w>
+            <seg type="x-maqqef">־</seg>
+           <w lemma="3225" morph="HNp" id="09jgC">ימין</w>
+        </rdg>
+      </note>
+      <w lemma="m/1144" n="1.0.1" morph="HR/Np" id="09EC9">מִ/בִּנְיָמִ֗ין</w>
+    ```
+    
+    Another approach would be to get rid of `@type` attributes that simply say that a maqqef is a maqqef, a sof-pasuq is a sof-pasuq, a samekh is a same, a pe is a pe, etc.  They ...
+--- openscriptures/morphhb#84 comment 881932742 by DavidTroidl at 2021-07-17T17:38:19Z (2 matches)
+    ...I have an email thread going on this issue, trying to resolve the validation problem. The @ID in OSIS is capitalized, but the main issue is that XML IDs are not allowed to start with a number. I did a temporary correction for this when I validated 1Sam to check the two token issue....
+    ...I have an email thread going on this issue, trying to resolve the validation problem. The @ID in OSIS is capitalized, but the main issue is that XML IDs are not allowed to start with a number. I did a temporary correction for this when I validated 1Sam to check the two token issue....
+--- openscriptures/morphhb#84 comment 881942337 by jonathanrobie at 2021-07-17T18:44:54Z (3 matches)
+    ...So perhaps a global search/replace that replaces `id="` with `ID="id` would do the trick?...
+    ...So perhaps a global search/replace that replaces `id="` with `ID="id` would do the trick?...
+    ...So perhaps a global search/replace that replaces `id="` with `ID="id` would do the trick?...
+--- openscriptures/morphhb#80 comment 881943125 by jonathanrobie at 2021-07-17T18:49:51Z (6 matches)
+    ...bes a subtype of the `@type` attribute.
+    
+    Of all the approaches discussed so far, I think this is the one that allows the maqqef attribute, validates under OSIS, and clearly identifies both Ketiv and Qere:
+    
+    ```xml
+            <verse osisID="Amos.9.6">
+              <w lemma="d/1129" morph="HTd/Vqrmsa" id="30Rr8">הַ/בּוֹנֶ֤ה</w>
+              <w lemma="b/8064" n="1.1.0" morph="HRd/Ncmda" id="30q3q">בַ/שּׁמַ֨יִם֙</w>
+              <seg type="x-variant" subType="x-ketiv">
+                <w lemma="4609 b" morph="HNcfpc/Sp3ms" id="30zBj">מעלות/ו</w>
+              </seg>
+              <seg type="x-variant" subType="x-...
+    ... think this is the one that allows the maqqef attribute, validates under OSIS, and clearly identifies both Ketiv and Qere:
+    
+    ```xml
+            <verse osisID="Amos.9.6">
+              <w lemma="d/1129" morph="HTd/Vqrmsa" id="30Rr8">הַ/בּוֹנֶ֤ה</w>
+              <w lemma="b/8064" n="1.1.0" morph="HRd/Ncmda" id="30q3q">בַ/שּׁמַ֨יִם֙</w>
+              <seg type="x-variant" subType="x-ketiv">
+                <w lemma="4609 b" morph="HNcfpc/Sp3ms" id="30zBj">מעלות/ו</w>
+              </seg>
+              <seg type="x-variant" subType="x-qere">
+                <w lemma="4609 b" n="1.1" morph="HNcfpc/Sp3ms" id="30mM8">מַעֲלו...
+    ...
+            <verse osisID="Amos.9.6">
+              <w lemma="d/1129" morph="HTd/Vqrmsa" id="30Rr8">הַ/בּוֹנֶ֤ה</w>
+              <w lemma="b/8064" n="1.1.0" morph="HRd/Ncmda" id="30q3q">בַ/שּׁמַ֨יִם֙</w>
+              <seg type="x-variant" subType="x-ketiv">
+                <w lemma="4609 b" morph="HNcfpc/Sp3ms" id="30zBj">מעלות/ו</w>
+              </seg>
+              <seg type="x-variant" subType="x-qere">
+                <w lemma="4609 b" n="1.1" morph="HNcfpc/Sp3ms" id="30mM8">מַעֲלוֹתָ֔י/ו</w>
+              </seg>
+              <w lemma="c/92" n="1.0" morph="HC/Ncfsc/Sp3ms" id="30Boi">וַ/אֲגֻדָּת֖/וֹ</w>
+    ```
+    
+    It is ...
+    ...ph="HRd/Ncmda" id="30q3q">בַ/שּׁמַ֨יִם֙</w>
+              <seg type="x-variant" subType="x-ketiv">
+                <w lemma="4609 b" morph="HNcfpc/Sp3ms" id="30zBj">מעלות/ו</w>
+              </seg>
+              <seg type="x-variant" subType="x-qere">
+                <w lemma="4609 b" n="1.1" morph="HNcfpc/Sp3ms" id="30mM8">מַעֲלוֹתָ֔י/ו</w>
+              </seg>
+              <w lemma="c/92" n="1.0" morph="HC/Ncfsc/Sp3ms" id="30Boi">וַ/אֲגֻדָּת֖/וֹ</w>
+    ```
+    
+    It is also the approach that is documented in Crosswire's documentation.
+    
+    Would you be OK with that?
+    
+    I could fix the ID validation problem in a separate ...
+--- openscriptures/morphhb#84 comment 881943402 by DavidTroidl at 2021-07-17T18:51:12Z (3 matches)
+    ...Not exactly. I replace: id=" with: ID="a, for a temporary check. I am still conversing with the authors of the IDs to see how they can be adjusted....
+    ...Not exactly. I replace: id=" with: ID="a, for a temporary check. I am still conversing with the authors of the IDs to see how they can be adjusted....
+    ...Not exactly. I replace: id=" with: ID="a, for a temporary check. I am still conversing with the authors of the IDs to see how they can be adjusted....
+--- openscriptures/morphhb#80 comment 881951732 by jonathanrobie at 2021-07-17T19:52:28Z (5 matches)
+    ...her software in the conversation?  Or perhaps that's you?  I'd like to know if any more wiggle room is possible.
+    
+    Using `@subtype` without a `@type` is odd, but I don't know what `@type` would work for both the `w` elements and the `seg` elements. 
+    
+    ```xml
+      <w lemma="c/1961" morph="HC/Vqw3ms" id="09wci">וַֽ/יְהִי</w>
+      <seg type="x-maqqef">־</seg>
+      <w lemma="376" morph="HNcmsa" id="09MpA">אִ֣ישׁ</w>
+      <w subType="x-ketiv" lemma="m/1121 a" morph="HR/Np" id="09Una">מ/בן</w>
+      <seg type="x-maqqef" subType="x-ketiv">־</seg>
+      <w subType="x-ketiv" lemma="3225" morph="HNp" id="09jgC">ימין<...
+    ...ggle room is possible.
+    
+    Using `@subtype` without a `@type` is odd, but I don't know what `@type` would work for both the `w` elements and the `seg` elements. 
+    
+    ```xml
+      <w lemma="c/1961" morph="HC/Vqw3ms" id="09wci">וַֽ/יְהִי</w>
+      <seg type="x-maqqef">־</seg>
+      <w lemma="376" morph="HNcmsa" id="09MpA">אִ֣ישׁ</w>
+      <w subType="x-ketiv" lemma="m/1121 a" morph="HR/Np" id="09Una">מ/בן</w>
+      <seg type="x-maqqef" subType="x-ketiv">־</seg>
+      <w subType="x-ketiv" lemma="3225" morph="HNp" id="09jgC">ימין</w>
+      <note type="variant">
+        <catchWord>מ/בן־ימין</catchWord>
+        <rdg type="x-qere"...
+    ...n't know what `@type` would work for both the `w` elements and the `seg` elements. 
+    
+    ```xml
+      <w lemma="c/1961" morph="HC/Vqw3ms" id="09wci">וַֽ/יְהִי</w>
+      <seg type="x-maqqef">־</seg>
+      <w lemma="376" morph="HNcmsa" id="09MpA">אִ֣ישׁ</w>
+      <w subType="x-ketiv" lemma="m/1121 a" morph="HR/Np" id="09Una">מ/בן</w>
+      <seg type="x-maqqef" subType="x-ketiv">־</seg>
+      <w subType="x-ketiv" lemma="3225" morph="HNp" id="09jgC">ימין</w>
+      <note type="variant">
+        <catchWord>מ/בן־ימין</catchWord>
+        <rdg type="x-qere">
+          <w lemma="m/1144" n="1.0.1" morph="HR/Np" id="09EC9">מִ/בִּנְיָמִ֗ין...
+    ...h="HC/Vqw3ms" id="09wci">וַֽ/יְהִי</w>
+      <seg type="x-maqqef">־</seg>
+      <w lemma="376" morph="HNcmsa" id="09MpA">אִ֣ישׁ</w>
+      <w subType="x-ketiv" lemma="m/1121 a" morph="HR/Np" id="09Una">מ/בן</w>
+      <seg type="x-maqqef" subType="x-ketiv">־</seg>
+      <w subType="x-ketiv" lemma="3225" morph="HNp" id="09jgC">ימין</w>
+      <note type="variant">
+        <catchWord>מ/בן־ימין</catchWord>
+        <rdg type="x-qere">
+          <w lemma="m/1144" n="1.0.1" morph="HR/Np" id="09EC9">מִ/בִּנְיָמִ֗ין</w>
+        </rdg>
+      </note>
+    ```
+    
+    I could do that.  It would work.  It would probably confuse some people. It's not s...
+--- openscriptures/morphhb#80 comment 882096790 by jonathanrobie at 2021-07-18T18:10:56Z (6 matches)
+    ...I just created a pull request that fixes the id problem this one, it now validates.  This example shows how I treated maqqef inside and outside of the ketiv, did I understand your intent correctly?
+    
+    ```xml 
+    <verse osisID="1Sam.9.1">
+              <w ID="i09wci" lemma="c/1961" morph="HC/Vqw3ms">וַֽ/יְהִי</w><seg type="x-maqqef">־</seg><w ID="i09M...
+    ...I just created a pull request that fixes the id problem this one, it now validates.  This example shows how I treated maqqef inside and outside of the ketiv, did I understand your intent correctly?
+    
+    ```xml 
+    <verse osisID="1Sam.9.1">
+              <w ID="i09wci" lemma="c/1961" morph="HC/Vqw3ms">וַֽ/יְהִי</w><seg type="x-maqqef">־</seg><w ID="i09MpA" lemma="376" morph="HNcmsa">אִ֣ישׁ</w>
+              <w ID="i09Una" type="x-ketiv" lemma="m/1121 a" morph="HR/Np">מ/בן</w><seg subType="x-maqqef" type="x-ketiv">־</seg><w ID="i09jgC" type="x-ketiv" lemma="...
+    ...s the id problem this one, it now validates.  This example shows how I treated maqqef inside and outside of the ketiv, did I understand your intent correctly?
+    
+    ```xml 
+    <verse osisID="1Sam.9.1">
+              <w ID="i09wci" lemma="c/1961" morph="HC/Vqw3ms">וַֽ/יְהִי</w><seg type="x-maqqef">־</seg><w ID="i09MpA" lemma="376" morph="HNcmsa">אִ֣ישׁ</w>
+              <w ID="i09Una" type="x-ketiv" lemma="m/1121 a" morph="HR/Np">מ/בן</w><seg subType="x-maqqef" type="x-ketiv">־</seg><w ID="i09jgC" type="x-ketiv" lemma="3225" morph="HNp">ימין</w><note type="variant"><catchWord>מ/בן־ימין</catchWord><rdg type=...
+    ... how I treated maqqef inside and outside of the ketiv, did I understand your intent correctly?
+    
+    ```xml 
+    <verse osisID="1Sam.9.1">
+              <w ID="i09wci" lemma="c/1961" morph="HC/Vqw3ms">וַֽ/יְהִי</w><seg type="x-maqqef">־</seg><w ID="i09MpA" lemma="376" morph="HNcmsa">אִ֣ישׁ</w>
+              <w ID="i09Una" type="x-ketiv" lemma="m/1121 a" morph="HR/Np">מ/בן</w><seg subType="x-maqqef" type="x-ketiv">־</seg><w ID="i09jgC" type="x-ketiv" lemma="3225" morph="HNp">ימין</w><note type="variant"><catchWord>מ/בן־ימין</catchWord><rdg type="x-qere"><w ID="i09EC9" lemma="m/1144" n="1.0.1" morph="HR/Np">מ...
+--- openscriptures/morphhb#80 comment 882103456 by DavidTroidl at 2021-07-18T19:07:10Z (3 matches)
+    ...The id fix was only meant to be a temporary stopgap for testing. I am still discussing the ID format with the authors of the IDs.
+    Making the maqqef the subType is still going to cause problems.
+    I don't want to commit either of these to the files....
+    ...The id fix was only meant to be a temporary stopgap for testing. I am still discussing the ID format with the authors of the IDs.
+    Making the maqqef the subType is still going to cause problems.
+    I don't want to commit either of these to the files....
+    ...The id fix was only meant to be a temporary stopgap for testing. I am still discussing the ID format with the authors of the IDs.
+    Making the maqqef the subType is still going to cause problems.
+    I don't want to commit either of these to the files....
+--- openscriptures/morphhb#80 comment 882107073 by jonathanrobie at 2021-07-18T19:38:15Z (3 matches)
+    ...OK.
+    
+    Let me know if there's anything useful I can do.
+    
+    On Sun, Jul 18, 2021 at 3:07 PM David Troidl ***@***.***>
+    wrote:
+    
+    > The id fix was only meant to be a temporary stopgap for testing. I am
+    > still discussing the ID format with the authors of the IDs.
+    > Making the maqqef the subType is still going to cause problems.
+    > I don't want to commit either of these to the files.
+    >
+    > —
+    > You are receiving this because you authored t...
+    ...OK.
+    
+    Let me know if there's anything useful I can do.
+    
+    On Sun, Jul 18, 2021 at 3:07 PM David Troidl ***@***.***>
+    wrote:
+    
+    > The id fix was only meant to be a temporary stopgap for testing. I am
+    > still discussing the ID format with the authors of the IDs.
+    > Making the maqqef the subType is still going to cause problems.
+    > I don't want to commit either of these to the files.
+    >
+    > —
+    > You are receiving this because you authored the thread.
+    > Reply to this email directly, view it on GitHub
+    > <https://github.com/opensc...
+    ...OK.
+    
+    Let me know if there's anything useful I can do.
+    
+    On Sun, Jul 18, 2021 at 3:07 PM David Troidl ***@***.***>
+    wrote:
+    
+    > The id fix was only meant to be a temporary stopgap for testing. I am
+    > still discussing the ID format with the authors of the IDs.
+    > Making the maqqef the subType is still going to cause problems.
+    > I don't want to commit either of these to the files.
+    >
+    > —
+    > You are receiving this because you authored the thread.
+    > Reply to this email directly, view it on GitHub
+    > <https://github.com/openscriptures/morphhb/issues/80#issuecom...
+--- openscriptures/morphhb#80 comment 882114669 by DavidTroidl at 2021-07-18T20:47:49Z (1 matches)
+    ...Thanks for your help.
+    I corrected the two token issue using type="x-maqqef" subType="x-ketiv".
+    This validates, using the temporary id correction....
+--- openscriptures/morphhb#90 comment 1065301219 by DavidIB at 2022-03-11T16:56:15Z (2 matches)
+    ...m/notifications/unsubscribe-auth/AAM5BOTNOMMTF7D2RV43HJTU7J3HPANCNFSM5QN73XEA>
+    > .
+    > Triage notifications on the go with GitHub Mobile for iOS
+    > <https://apps.apple.com/app/apple-store/id1477376905?ct=notification-email&mt=8&pt=524675>
+    > or Android
+    > <https://play.google.com/store/apps/details?id=com.github.android&referrer=utm_campaign%3Dnotification-email%26utm_medium%3Demail%26utm_source%3Dgithub>.
+    >
+    > You are receiving this because you are subscribed to this thread.Message
+    > ID: ***@***.***>
+    >
+    ...
+    ...77376905?ct=notification-email&mt=8&pt=524675>
+    > or Android
+    > <https://play.google.com/store/apps/details?id=com.github.android&referrer=utm_campaign%3Dnotification-email%26utm_medium%3Demail%26utm_source%3Dgithub>.
+    >
+    > You are receiving this because you are subscribed to this thread.Message
+    > ID: ***@***.***>
+    >
+    ...
+--- openscriptures/morphhb#90 comment 1072783246 by rkjtan at 2022-03-18T20:44:13Z (8 matches)
+    ...David, thanks for interacting on these cases. Sorry for the delay in responding.
+     
+    Ezr.4.2 I think OSHB is in error with morph="HRd/Pp2mp" id="15Qq3">כָ/כֶ֔ם</w>id="15Qq3">כָ/כֶ֔ם</w>. First, the pronominal suffix Sp is mistagged as a personal pronoun. My full proposed correction is morph="HR/Sp2mp"  The only difference with ETCBC Rd/Sp2mp is regarding the definite article. I don't think that the pronominal suffix with a prefixed preposi...
+    ...David, thanks for interacting on these cases. Sorry for the delay in responding.
+     
+    Ezr.4.2 I think OSHB is in error with morph="HRd/Pp2mp" id="15Qq3">כָ/כֶ֔ם</w>id="15Qq3">כָ/כֶ֔ם</w>. First, the pronominal suffix Sp is mistagged as a personal pronoun. My full proposed correction is morph="HR/Sp2mp"  The only difference with ETCBC Rd/Sp2mp is regarding the definite article. I don't think that the pronominal suffix with a prefixed preposition takes a definite ...
+    ...ith ETCBC Rd/Sp2mp is regarding the definite article. I don't think that the pronominal suffix with a prefixed preposition takes a definite article (the qames is explained by strong vocalisation with heavy suffixes as Joüon §103c notes. 
+     
+    Ezr.4.3 I think OSHB is in error with morph="HC/Rd/Pp1cp" id="151bY">וָ/לָ֔/נוּ</w>. The same problems and reasoning for Ezr.4.2 apply here as well. My full proposed correction is morph="HC/R/Sp1cp" The only difference with ETCBC C/Rd/Sp1bp is regarding the definite article. Again, I don't think that the pronominal suffix with a prefixed preposition takes a ...
+    ... as well. My full proposed correction is morph="HC/R/Sp1cp" The only difference with ETCBC C/Rd/Sp1bp is regarding the definite article. Again, I don't think that the pronominal suffix with a prefixed preposition takes a definite article.
+    
+    Psa.68.19 I think OSHB is in error with morph="HTd/Ncmsa" id="19TcE">לַ/מָּר֨וֹם</w>. The preposition is mistagged as a particle. My full proposed correction is morph="HRd/Ncmsa". This is in agreement with STEPBible (& only different from ETCBC in terms of gender being masculine rather than both).
+    
+    Exo.9.11 OSHB currectly doesn't see the implied definite a...
+--- openscriptures/morphhb#90 comment 1074281972 by DavidIB at 2022-03-21T18:46:22Z (9 matches)
+    ...ee differences and
+    altered them in STEPBible data (not yet updated on Github).
+    *David IB*
+    
+    
+    
+    On Fri, Mar 18, 2022 at 8:44 PM rkjtan ***@***.***> wrote:
+    
+    > David, thanks for interacting on these cases. Sorry for the delay in
+    > responding.
+    >
+    > Ezr.4.2 I think OSHB is in error with morph="HRd/Pp2mp"
+    > id="15Qq3">כָ/כֶ֔םid="15Qq3">כָ/כֶ֔ם. First, the pronominal suffix Sp is
+    > mistagged as a personal pronoun. My full proposed correction is
+    > morph="HR/Sp2mp" The only difference with ETCBC Rd/Sp2mp is regarding the
+    > definite article. I don't think that the pronominal suffix with a prefixed
+    > preposit...
+    ...BC Rd/Sp2mp is regarding the
+    > definite article. I don't think that the pronominal suffix with a prefixed
+    > preposition takes a definite article (the qames is explained by strong
+    > vocalisation with heavy suffixes as Joüon §103c notes.
+    >
+    > Ezr.4.3 I think OSHB is in error with morph="HC/Rd/Pp1cp"
+    > id="151bY">וָ/לָ֔/נוּ. The same problems and reasoning for Ezr.4.2 apply
+    > here as well. My full proposed correction is morph="HC/R/Sp1cp" The only
+    > difference with ETCBC C/Rd/Sp1bp is regarding the definite article. Again,
+    > I don't think that the pronominal suffix with a prefixed preposition takes
+    ...
+    ... My full proposed correction is morph="HC/R/Sp1cp" The only
+    > difference with ETCBC C/Rd/Sp1bp is regarding the definite article. Again,
+    > I don't think that the pronominal suffix with a prefixed preposition takes
+    > a definite article.
+    >
+    > Psa.68.19 I think OSHB is in error with morph="HTd/Ncmsa"
+    > id="19TcE">לַ/מָּר֨וֹם. The preposition is mistagged as a particle. My full
+    > proposed correction is morph="HRd/Ncmsa". This is in agreement with
+    > STEPBible (& only different from ETCBC in terms of gender being masculine
+    > rather than both).
+    >
+    > Exo.9.11 OSHB currectly doesn't see the implied definit...
+    ...erent from ETCBC in terms of gender being masculine
+    > rather than both).
+    >
+    > Exo.9.11 OSHB currectly doesn't see the implied definite article. The form
+    > is ambiguous (per Joüon §35e), but I think the context favors the article
+    > being present. My full proposed correction is morph="HRd/Ncmpa" for
+    > id="029g8">בַּֽ/חֲרְטֻמִּ֖ם. This is in agreement with ETCBC Rd/Ncmpa.
+    >
+    > Psa.139.12 OSHB currently doesn't see the implied definite article. The
+    > form is ambiguous (per Joüon §35e), but I think the context might slightly
+    > favor (debatable) the article being present. My full proposed correction is
+    ...
+--- openscriptures/morphhb#94 comment 1163327467 by DavidTroidl at 2022-06-22T16:16:33Z (4 matches)
+    ... "and"), and 
+    > the latter part |b| is as before).
+    >
+    > Where was this extension to Strong's numbers devised, and, more 
+    > importantly, can it be extended within the OSHB project?
+    >
+    > Eg. consider |H430| <https://studybible.info/strongs/h430>. The 
+    > |LexicalIndex.xml| |def| says |gods|.
+    >
+    > <entry  id="arn">
+    >
+    > 	<w  xlit="ʾĕlōhîm">אֱלֹהִים</w> <pos>N</pos> <def>gods</def>
+    >
+    > 	<xref  bdb="a.dl.ad"  strong="430"  twot="93c"/>
+    >
+    > 	<etym  type="sub">arm</etym>
+    >
+    > </entry>
+    >
+    > But what if I'd like to add another |<entry>| to the |xml|, to account 
+    > for the meaning |God|?
+    >
+    > Eg.
+    >
+    > <entry  id="...
+    ...  id="arn">
+    >
+    > 	<w  xlit="ʾĕlōhîm">אֱלֹהִים</w> <pos>N</pos> <def>gods</def>
+    >
+    > 	<xref  bdb="a.dl.ad"  strong="430"  twot="93c"/>
+    >
+    > 	<etym  type="sub">arm</etym>
+    >
+    > </entry>
+    >
+    > But what if I'd like to add another |<entry>| to the |xml|, to account 
+    > for the meaning |God|?
+    >
+    > Eg.
+    >
+    > <entry  id="arn">
+    >
+    > 	<w  xlit="ʾĕlōhîm">אֱלֹהִים</w> <pos>N</pos> <def>God</def>
+    >
+    > 	<xref  bdb="a.dl.ad"  strong="430"  aug="a"  twot="93c"/>
+    >
+    > 	<etym  type="sub">arm</etym>
+    >
+    > </entry>
+    >
+    > <entry  id="arn">
+    >
+    > 	<w  xlit="ʾĕlōhîm">אֱלֹהִים</w> <pos>N</pos> <def>gods</def>
+    >
+    > 	<xref  bdb="a.dl.ad"  st...
+    ...d like to add another |<entry>| to the |xml|, to account 
+    > for the meaning |God|?
+    >
+    > Eg.
+    >
+    > <entry  id="arn">
+    >
+    > 	<w  xlit="ʾĕlōhîm">אֱלֹהִים</w> <pos>N</pos> <def>God</def>
+    >
+    > 	<xref  bdb="a.dl.ad"  strong="430"  aug="a"  twot="93c"/>
+    >
+    > 	<etym  type="sub">arm</etym>
+    >
+    > </entry>
+    >
+    > <entry  id="arn">
+    >
+    > 	<w  xlit="ʾĕlōhîm">אֱלֹהִים</w> <pos>N</pos> <def>gods</def>
+    >
+    > 	<xref  bdb="a.dl.ad"  strong="430"  aug="b"  twot="93c"/>
+    >
+    > 	<etym  type="sub">arm</etym>
+    >
+    > </entry>
+    >
+    > Notice that I've also added a corresponding |aug| field to each |<entry>|.
+    >
+    > Can this be done? Does it make se...
+    ...Reply to this email directly, view it on GitHub 
+    > <https://github.com/openscriptures/morphhb/issues/94>, or unsubscribe 
+    > <https://github.com/notifications/unsubscribe-auth/AABLABIVR65A75GUUH63HP3VQLKH7ANCNFSM5ZPO6WXQ>.
+    > You are receiving this because you are subscribed to this 
+    > thread.Message ID: ***@***.***>
+    >
+    
+    -- 
+    This email has been checked for viruses by Avast antivirus software.
+    https://www.avast.com/antivirus
+    ...
+--- openscriptures/morphhb#93 comment 1167455494 by DavidTroidl at 2022-06-27T14:53:50Z (1 matches)
+    ...y, view it on GitHub 
+    > <https://github.com/openscriptures/morphhb/issues/93#issuecomment-1166678971>, 
+    > or unsubscribe 
+    > <https://github.com/notifications/unsubscribe-auth/AABLABJB2FSQ5E5TQRG7GWTVRDSHPANCNFSM5ZLHHLIQ>.
+    > You are receiving this because you are subscribed to this 
+    > thread.Message ID: 
+    > ***@***.***>
+    >
+    
+    -- 
+    This email has been checked for viruses by Avast antivirus software.
+    https://www.avast.com/antivirus
+    ...
+--- openscriptures/morphhb#91 comment 1502133800 by jonathanrobie at 2023-04-10T18:09:11Z (6 matches)
+    ...23 at 8:01 AM J. de Joode ***@***.***>
+    wrote:
+    
+    > ***@***.**** commented on this pull request.
+    > ------------------------------
+    >
+    > In wlc/1Kgs.xml
+    > <https://github.com/openscriptures/morphhb/pull/91#discussion_r1161665886>
+    > :
+    >
+    > > @@ -6542,7 +6542,7 @@
+    >            <w lemma="3967" morph="HAcbpa" id="11jTj">מֵא֣וֹת</w>
+    >            <w lemma="3701" n="1.1" morph="HNcmsa" id="11yoM">כֶּ֔סֶף</w>
+    >            <w lemma="c/5483 b" n="1.0" morph="HC/Ncmsa" id="11u9c">וְ/ס֖וּס</w>
+    > -          <w lemma="b/2572" morph="HRd/Acbpa" id="11npB">בַּ/חֲמִשִּׁ֣ים</w>
+    > +          <w lemma="b/2572" morph="HR/A...
+    ...this pull request.
+    > ------------------------------
+    >
+    > In wlc/1Kgs.xml
+    > <https://github.com/openscriptures/morphhb/pull/91#discussion_r1161665886>
+    > :
+    >
+    > > @@ -6542,7 +6542,7 @@
+    >            <w lemma="3967" morph="HAcbpa" id="11jTj">מֵא֣וֹת</w>
+    >            <w lemma="3701" n="1.1" morph="HNcmsa" id="11yoM">כֶּ֔סֶף</w>
+    >            <w lemma="c/5483 b" n="1.0" morph="HC/Ncmsa" id="11u9c">וְ/ס֖וּס</w>
+    > -          <w lemma="b/2572" morph="HRd/Acbpa" id="11npB">בַּ/חֲמִשִּׁ֣ים</w>
+    > +          <w lemma="b/2572" morph="HR/Acbpa" id="11npB">בַּ/חֲמִשִּׁ֣ים</w>
+    >
+    > Could someone help me understand t...
+    ...//github.com/openscriptures/morphhb/pull/91#discussion_r1161665886>
+    > :
+    >
+    > > @@ -6542,7 +6542,7 @@
+    >            <w lemma="3967" morph="HAcbpa" id="11jTj">מֵא֣וֹת</w>
+    >            <w lemma="3701" n="1.1" morph="HNcmsa" id="11yoM">כֶּ֔סֶף</w>
+    >            <w lemma="c/5483 b" n="1.0" morph="HC/Ncmsa" id="11u9c">וְ/ס֖וּס</w>
+    > -          <w lemma="b/2572" morph="HRd/Acbpa" id="11npB">בַּ/חֲמִשִּׁ֣ים</w>
+    > +          <w lemma="b/2572" morph="HR/Acbpa" id="11npB">בַּ/חֲמִשִּׁ֣ים</w>
+    >
+    > Could someone help me understand the logic to remove the definite article
+    > here? Is that because of the parallel w...
+    ...
+    > > @@ -6542,7 +6542,7 @@
+    >            <w lemma="3967" morph="HAcbpa" id="11jTj">מֵא֣וֹת</w>
+    >            <w lemma="3701" n="1.1" morph="HNcmsa" id="11yoM">כֶּ֔סֶף</w>
+    >            <w lemma="c/5483 b" n="1.0" morph="HC/Ncmsa" id="11u9c">וְ/ס֖וּס</w>
+    > -          <w lemma="b/2572" morph="HRd/Acbpa" id="11npB">בַּ/חֲמִשִּׁ֣ים</w>
+    > +          <w lemma="b/2572" morph="HR/Acbpa" id="11npB">בַּ/חֲמִשִּׁ֣ים</w>
+    >
+    > Could someone help me understand the logic to remove the definite article
+    > here? Is that because of the parallel with בְּ/שֵׁ֣שׁ? Or because the
+    > number is implicitly definite? Or is the...
+--- openscriptures/morphhb#92 comment 2244773985 by jonathanrobie at 2024-07-23T09:57:57Z (1 matches)
+    ...nscriptures/morphhb/pull/92#issuecomment-2243407652>,
+    > or unsubscribe
+    > <https://github.com/notifications/unsubscribe-auth/AANPTPKGKAJKLAWWUQM4JA3ZNU2QNAVCNFSM6AAAAABLIWSNQWVHI2DSMVQWIX3LMV43OSLTON2WKQ3PNVWWK3TUHMZDENBTGQYDONRVGI>
+    > .
+    > You are receiving this because you were mentioned.Message ID:
+    > ***@***.***>
+    >
+    ...
+--- openscriptures/morphhb#102 comment 2312540581 by jdejoode at 2024-08-27T13:18:01Z (6 matches)
+    ...Thank you for your pull request and for noting the issue. A quick search suggests that this same expressions is also found elsewhere in the HB:
+    
+    - 1Kgs 8:65 `<w lemma="m/935" morph="HR/Np" id="11RHd">מִ/לְּב֥וֹא</w>`
+    - 2Kgs 14:25 `<w lemma="m/935" morph="HR/Ncmsc" id="12vQR">מִ/לְּב֥וֹא</w>`
+    - 2Chr 7:8 `<w lemma="m/935" morph="HR/Np" id="1459X">מִ/לְּב֥וֹא</w>`
+    - Amos 6:14 `<w lemma="m/l/935" morph="HR/Np" id="30HAz">מִ/לְּב֥וֹא</w>`
+    
+    In these cases it all refers to the construct c...
+    ...Thank you for your pull request and for noting the issue. A quick search suggests that this same expressions is also found elsewhere in the HB:
+    
+    - 1Kgs 8:65 `<w lemma="m/935" morph="HR/Np" id="11RHd">מִ/לְּב֥וֹא</w>`
+    - 2Kgs 14:25 `<w lemma="m/935" morph="HR/Ncmsc" id="12vQR">מִ/לְּב֥וֹא</w>`
+    - 2Chr 7:8 `<w lemma="m/935" morph="HR/Np" id="1459X">מִ/לְּב֥וֹא</w>`
+    - Amos 6:14 `<w lemma="m/l/935" morph="HR/Np" id="30HAz">מִ/לְּב֥וֹא</w>`
+    
+    In these cases it all refers to the construct chain מִלְּב֥וֹא חֲמָ֣ת (with different accents). We are inconsistent here: we...
+    ...noting the issue. A quick search suggests that this same expressions is also found elsewhere in the HB:
+    
+    - 1Kgs 8:65 `<w lemma="m/935" morph="HR/Np" id="11RHd">מִ/לְּב֥וֹא</w>`
+    - 2Kgs 14:25 `<w lemma="m/935" morph="HR/Ncmsc" id="12vQR">מִ/לְּב֥וֹא</w>`
+    - 2Chr 7:8 `<w lemma="m/935" morph="HR/Np" id="1459X">מִ/לְּב֥וֹא</w>`
+    - Amos 6:14 `<w lemma="m/l/935" morph="HR/Np" id="30HAz">מִ/לְּב֥וֹא</w>`
+    
+    In these cases it all refers to the construct chain מִלְּב֥וֹא חֲמָ֣ת (with different accents). We are inconsistent here: we parse the morphology both as HR/Ncmsc and HR/Np and the lemma as m/935 ...
+    ...o found elsewhere in the HB:
+    
+    - 1Kgs 8:65 `<w lemma="m/935" morph="HR/Np" id="11RHd">מִ/לְּב֥וֹא</w>`
+    - 2Kgs 14:25 `<w lemma="m/935" morph="HR/Ncmsc" id="12vQR">מִ/לְּב֥וֹא</w>`
+    - 2Chr 7:8 `<w lemma="m/935" morph="HR/Np" id="1459X">מִ/לְּב֥וֹא</w>`
+    - Amos 6:14 `<w lemma="m/l/935" morph="HR/Np" id="30HAz">מִ/לְּב֥וֹא</w>`
+    
+    In these cases it all refers to the construct chain מִלְּב֥וֹא חֲמָ֣ת (with different accents). We are inconsistent here: we parse the morphology both as HR/Ncmsc and HR/Np and the lemma as m/935 and m/l/935, and then there is the issue that you raised of the parsing of ...
+--- openscriptures/morphhb#107 comment 2801793093 by jag3773 at 2025-04-14T13:53:04Z (1 matches)
+    ...I'm sure that it isn't too hard to do what you request but the reason the scripts don't include them is because the unique IDs came much later than the scripts....
+--- openscriptures/morphhb#107 comment 5736694787 by 0-Actual at 2026-09-18T21:58:44Z (19 matches)
+    ...t revision [`3d15126fb1ef74867fc1434be1942e837932691f`](https://github.com/openscriptures/morphhb/tree/3d15126fb1ef74867fc1434be1942e837932691f), which was still `master` when checked on September 18, 2026.
+    
+    The Python converter exports `[wordString, lemma, morphology]` and omits the XML occurrence ID. A locally tested, opt-in `--includeIds` prototype appends `word.attrib.get('id')` as field four and keeps the three-field schema when the option is absent. It does not change the word selector or remapping logic. This is a proposed Python change; no PR or Perl implementation is being claimed.
+    
+    **I...
+    ...criptures/morphhb/tree/3d15126fb1ef74867fc1434be1942e837932691f), which was still `master` when checked on September 18, 2026.
+    
+    The Python converter exports `[wordString, lemma, morphology]` and omits the XML occurrence ID. A locally tested, opt-in `--includeIds` prototype appends `word.attrib.get('id')` as field four and keeps the three-field schema when the option is absent. It does not change the word selector or remapping logic. This is a proposed Python change; no PR or Perl implementation is being claimed.
+    
+    **ID-export validation**
+    
+    - The 39-book corpus contains **306,785 word elements and...
+    ...D. A locally tested, opt-in `--includeIds` prototype appends `word.attrib.get('id')` as field four and keeps the three-field schema when the option is absent. It does not change the word selector or remapping logic. This is a proposed Python change; no PR or Perl implementation is being claimed.
+    
+    **ID-export validation**
+    
+    - The 39-book corpus contains **306,785 word elements and 306,785 distinct, nonempty IDs** under the Python converter's descendant-word selection. This includes **1,278 words nested under reading elements**, alongside 305,507 direct verse-child words; it is not a count for a si...
+    ...the three-field schema when the option is absent. It does not change the word selector or remapping logic. This is a proposed Python change; no PR or Perl implementation is being claimed.
+    
+    **ID-export validation**
+    
+    - The 39-book corpus contains **306,785 word elements and 306,785 distinct, nonempty IDs** under the Python converter's descendant-word selection. This includes **1,278 words nested under reading elements**, alongside 305,507 direct verse-child words; it is not a count for a single variant-excluded reading text.
+    - Without verse remapping, the prototype emits each of those IDs exactly o...
+--- openscriptures/morphhb#112 comment 5744170373 by 0-Actual at 2026-09-19T18:02:57Z (3 matches)
+    ...ered 306,785 word elements. Keeping Hebrew letters U+05D0–U+05EA for the consonantal comparison reproduced all 19 occurrences of הראה, including the 12 definite-article forms. It also reproduced exactly the five `7203 a` occurrences and five `7200` occurrences with `Ncmsa` cited here, with matching IDs.
+    
+    The project's companion HebrewLexicon at `21c9add13bc727d3a951361778e97e3ff7afd1ce` gives additional support: [`AugIndex.xml`](https://github.com/openscriptures/HebrewLexicon/blob/21c9add13bc727d3a951361778e97e3ff7afd1ce/AugIndex.xml) maps `7200` to `lpd`, `7203a` to `lph`, and `7203b` to `lpf`. ...
+    ...respectively. This supports considering `d/7203 a` for the five Chronicles title occurrences. A lexeme's dictionary part of speech alone does not require its contextual morphology to match.
+    
+    I prepared and structurally checked a candidate changing only those five lemma attributes. It preserves word IDs, text, pointing, morphology, order, and all other attributes. It leaves the ordinary participles, the Samuel morphology, the vision entry, and Haroeh unchanged. This is a proposed consistency correction, subject to your editorial convention; the counts do not establish whether an intentional except...
+    ...ion, subject to your editorial convention; the counts do not establish whether an intentional exception exists. Would that five-entry lemma-only correction fit the project's intended convention?
+    
+    The candidate changes `lemma="d/7200"` to `lemma="d/7203 a"` only on these records:
+    
+    | Reference | Word ID |
+    | --- | --- |
+    | 1 Chr 9:22 | `13u5x` |
+    | 1 Chr 26:28 | `13cdq` |
+    | 1 Chr 29:29 | `13Mqr` |
+    | 2 Chr 16:7 | `14gVD` |
+    | 2 Chr 16:10 | `14HSC` |
+    
+    Original report: Gloire Bikouta. Original data and lexicon: Open Scriptures and credited contributors. Independent verification: Sherman G. Laing / Quantu...
+--- openscriptures/morphhb#110 comment 5744170878 by 0-Actual at 2026-09-19T18:03:00Z (1 matches)
+    ...Agent: Gaucia — AI-assisted review for Sherman G. Laing / Quantum.Earth.Laing.
+    
+    I checked the proposed example at PR head `97b1283cf7b2f4be16f5f819aecbe9faad8f2a50` against word ID `01Wkf` in the base corpus. Its Hebrew text, `lemma="l/216"`, and `morph="HRd/Ncbsa"` match. The surface string retains two slash-separated segments; the implicit article is represented by `Rd`, without introducing an empty segment.
+    
+    This also addresses the clarification requested in #77's discussi...
+--- openscriptures/morphhb#108 comment 5744171408 by 0-Actual at 2026-09-19T18:03:04Z (2 matches)
+    ...Agent: Gaucia — AI-assisted technical review for Sherman G. Laing / Quantum.Earth.Laing.
+    
+    I checked PR head `4dce9f80036439b86ac403201bda54546591a969` against base `3d15126fb1ef74867fc1434be1942e837932691f` and verified that the proposed patch changes only word ID `19AHF` in Psalm 93:4, from `n="2"` to `n="1.0.0"`. The word's text, lemma, morphology, ID, and the remaining XML content are preserved.
+    
+    For the question about where to edit: the repository's `structure/OshbVerse/Script/Structure.js` loads the WLC book XML directly; `ElementMarkup.js` reads the `n...
+    ...man G. Laing / Quantum.Earth.Laing.
+    
+    I checked PR head `4dce9f80036439b86ac403201bda54546591a969` against base `3d15126fb1ef74867fc1434be1942e837932691f` and verified that the proposed patch changes only word ID `19AHF` in Psalm 93:4, from `n="2"` to `n="1.0.0"`. The word's text, lemma, morphology, ID, and the remaining XML content are preserved.
+    
+    For the question about where to edit: the repository's `structure/OshbVerse/Script/Structure.js` loads the WLC book XML directly; `ElementMarkup.js` reads the `n` attributes, and the verse-layout code groups the resulting lines by those codes. The sepa...
+--- openscriptures/morphhb#112 comment 5870117881 by gloiiire at 2026-09-28T12:47:16Z (2 matches)
+    ...Thank you for the independent verification. Your counts and IDs match ours exactly, and the `HebrewLexicon` evidence is a piece we had not brought. We checked those three entries on our side before replying, and they read as you describe:
+    
+    | id | word | pos | def | xref |
+    |---|---|---|---|---|
+    | `lpd` | רָאָה | V | see | `strong="7200"` |
+    | `lph` | רֹאֶה | N | ...
+    ...Thank you for the independent verification. Your counts and IDs match ours exactly, and the `HebrewLexicon` evidence is a piece we had not brought. We checked those three entries on our side before replying, and they read as you describe:
+    
+    | id | word | pos | def | xref |
+    |---|---|---|---|---|
+    | `lpd` | רָאָה | V | see | `strong="7200"` |
+    | `lph` | רֹאֶה | N | seer | `strong="7203" aug="a"` |
+    | `lpf` | רֹאֶה | N | vision | `strong="7203" aug="b"` |
+    
+    `lpd` also lists `lph` and `lpf` among its sub-entries, so the lexicon derives both nouns ...
+--- openscriptures/morphhb#112 comment 5872242539 by 0-Actual at 2026-09-28T14:40:00Z (1 matches)
+    ...ollow-up for Sherman G. Laing / Quantum.Earth.Laing.
+    
+    Thank you, Gloire, for checking the lexicon entries and clarifying the counting methods. Our earlier scan counted 306,785 word elements including reading variants; you report 305,507 excluding them. Your confirmation that the affected counts and IDs agree makes that scope distinction clear for future readers.
+    
+    We also understand that ONT Bible is neutral on the proposed correction and will retain its pinned, unmodified source. The five-entry lemma-only proposal remains subject to the maintainers’ editorial convention.
+    
+    The remaining question f...
+--- openscriptures/morphhb#114 comment 6784980147 by jag3773 at 2026-11-11T02:13:23Z (1 matches)
+    ...685 words.
+    - **Schema and structure.** The new file validates against the OSIS 2.1.1 schema. The 2014 file does not; it also has two verses that are never closed (Isa.66.25, Eccl.12.15) and text outside any verse. All of that is resolved here.
+    - **Verse inventory.** 23,211 verses, exactly the verse IDs of this repository's `wlc/` minus Josh 21:36–37.
+    - **What changes in the text.** With the renumbered passages aligned, 2,415 of 23,210 verses differ at all and about 2,256 differ beyond spacing or mark order, in line with the 2,260 stated. Nearly all of it is meteg, qamats qatan, maqaf, and zero-wi...
+--- openscriptures/morphhb#115 comment 6785804912 by jag3773 at 2026-11-11T03:08:34Z (12 matches)
+    ...below before merging.** Each was reproduced by running the unchanged validator against an isolated, Git-tracked copy of the complete dataset. They cover malformed VerseMap XML escaping validation, baseline comparison errors failing valid current data, misplaced words bypassing checks, six-character IDs passing the ID check, deletion of MAPM passing validation, and conflicting start/end attributes being overlooked.
+    
+    **What passed:** the unchanged dataset validated with 23,213 WLC verses, 306,785 word IDs, and 23,211 MAPM verses. Separate mutations correctly failed for missing lemmas, duplicate w...
+    ...ging.** Each was reproduced by running the unchanged validator against an isolated, Git-tracked copy of the complete dataset. They cover malformed VerseMap XML escaping validation, baseline comparison errors failing valid current data, misplaced words bypassing checks, six-character IDs passing the ID check, deletion of MAPM passing validation, and conflicting start/end attributes being overlooked.
+    
+    **What passed:** the unchanged dataset validated with 23,213 WLC verses, 306,785 word IDs, and 23,211 MAPM verses. Separate mutations correctly failed for missing lemmas, duplicate word IDs, malfor...
+    ...omparison errors failing valid current data, misplaced words bypassing checks, six-character IDs passing the ID check, deletion of MAPM passing validation, and conflicting start/end attributes being overlooked.
+    
+    **What passed:** the unchanged dataset validated with 23,213 WLC verses, 306,785 word IDs, and 23,211 MAPM verses. Separate mutations correctly failed for missing lemmas, duplicate word IDs, malformed morphology, unclosed MAPM verses, verse-inventory mismatches, tracked junk, and malformed XML outside the skipped WLC metadata. Reconstructing the Psalm 93:4 example produced the promised ...
+    ...sing the ID check, deletion of MAPM passing validation, and conflicting start/end attributes being overlooked.
+    
+    **What passed:** the unchanged dataset validated with 23,213 WLC verses, 306,785 word IDs, and 23,211 MAPM verses. Separate mutations correctly failed for missing lemmas, duplicate word IDs, malformed morphology, unclosed MAPM verses, verse-inventory mismatches, tracked junk, and malformed XML outside the skipped WLC metadata. Reconstructing the Psalm 93:4 example produced the promised single `n: 2 → 1.0.0` row. The first GitHub workflow run also succeeded.
+    
+    **Standards:** no direct...
+--- openscriptures/morphhb#115 comment 6785895893 by jag3773 at 2026-11-11T03:14:14Z (6 matches)
+    ...|
+    | 1 | `wlc/VerseMap.xml` replaced with `<not-xml>` | passes | fails: not well-formed |
+    | 2 | malformed `wlc/Obad.xml` in the base only | fails | passes; summary says the book was not compared |
+    | 3 | `<w>` placed under a chapter, outside any verse | passes | fails: word outside any verse |
+    | 4 | `id="31xeN&#10;"` | passes | fails: malformed id |
+    | 5 | `MAPM/MAPM.xml` deleted | passes | fails: file is missing |
+    | 6 | first `sID="Gen.1.1"` milestone also given an `eID` | passes | fails: both sID and eID |
+    
+    How each was fixed:
+    
+    1. Every tracked XML file that a specific check has not already read ...
+    ...t-xml>` | passes | fails: not well-formed |
+    | 2 | malformed `wlc/Obad.xml` in the base only | fails | passes; summary says the book was not compared |
+    | 3 | `<w>` placed under a chapter, outside any verse | passes | fails: word outside any verse |
+    | 4 | `id="31xeN&#10;"` | passes | fails: malformed id |
+    | 5 | `MAPM/MAPM.xml` deleted | passes | fails: file is missing |
+    | 6 | first `sID="Gen.1.1"` milestone also given an `eID` | passes | fails: both sID and eID |
+    
+    How each was fixed:
+    
+    1. Every tracked XML file that a specific check has not already read is now parsed for well-formedness.
+    2. The bas...
+    ...
+    
+    1. Every tracked XML file that a specific check has not already read is now parsed for well-formedness.
+    2. The base revision is read quietly, and an error while producing the summary is reported in the summary instead of failing the run.
+    3. Any `<w>` that is not inside a verse is an error.
+    4. The id, morph, `n` and verse-id patterns use `fullmatch()`.
+    5. A missing `MAPM/MAPM.xml` is an error for the current revision; the base may still lack it.
+    6. Each verse milestone must carry exactly one of `sID` and `eID`. A milestone with neither is reported as well.
+    
+    Also taken up from the review:
+    
+    - **W...
+    ...le that a specific check has not already read is now parsed for well-formedness.
+    2. The base revision is read quietly, and an error while producing the summary is reported in the summary instead of failing the run.
+    3. Any `<w>` that is not inside a verse is an error.
+    4. The id, morph, `n` and verse-id patterns use `fullmatch()`.
+    5. A missing `MAPM/MAPM.xml` is an error for the current revision; the base may still lack it.
+    6. Each verse milestone must carry exactly one of `sID` and `eID`. A milestone with neither is reported as well.
+    
+    Also taken up from the review:
+    
+    - **Word order.** The summary ...
+--- commit 3d09ffec by Jesse Griffin at 2019-02-06T14:24:41Z (1 matches)
+    ...Merge pull request #62 from openscriptures/add-note-on-ids-to-docs
+    
+    Added Wrd tag attributes section to readme...
+--- commit 5dc21275 by Huberts at 2019-01-13T09:28:20Z (1 matches)
+    ...Added unique ids...
+PATTERN '\\bIDs?\\b': 60 records
+====================================================================================================
+PATTERN 'immutable'
+--- openscriptures/morphhb#107 issue body by brando130 at 2025-04-13T00:36:25Z (2 matches)
+    ...JSON Script Doesn't Reproduce the Immutable ID's
+    The README explains the reasoning for the "unique, immutable id", but then fails to include it in the Perl/Python scripts, which output "[ 'wordString', 'lemma', 'morphology' ]"
+    
+    Is there a way to bring these ID's to JSON?...
+    ...JSON Script Doesn't Reproduce the Immutable ID's
+    The README explains the reasoning for the "unique, immutable id", but then fails to include it in the Perl/Python scripts, which output "[ 'wordString', 'lemma', 'morphology' ]"
+    
+    Is there a way to bring these ID's to JSON?...
+--- openscriptures/morphhb#56 PR body by AndyHubert at 2019-01-13T10:35:40Z (1 matches)
+    ...All verified and checks run
+    All parsing and verification done, with broad consistency checks. 
+    
+    Also, immutable unique ids (beginning with two digits representing the KJV ordering of the book) have been given to each word to aid aligning additional data....
+PATTERN 'immutable': 2 records
+====================================================================================================
+PATTERN 'bible ?tags'
+--- openscriptures/morphhb#57 PR body by AndyHubert at 2019-01-16T13:27:32Z (1 matches)
+    ...Fixes found when importing to bible tags
+    ...
+--- openscriptures/morphhb#93 comment 1161711483 by AndyHubert at 2022-06-21T12:56:15Z (1 matches)
+    ...You may be helped by https://github.com/educational-resources-and-services/bibletags-versification. That is the whole point of this open-source library. 
+    
+    While we will publish the particular data points needed for a translation at some point, for now you can get a sampling by looking at https://preview.biblearc.com/settings/versions, clicking on the more icons, and then "View in...
+--- commit 821d9d01 by Jesse Griffin at 2019-02-06T15:10:56Z (1 matches)
+    ...Merge pull request #57 from openscriptures/fixes-found-when-importing-to-bible-tags
+    
+    Fixes found when importing to bible tags...
+PATTERN 'bible ?tags': 3 records
+====================================================================================================
+PATTERN 'biblearc'
+--- openscriptures/morphhb#34 issue body by AndyHubert at 2017-10-15T12:16:07Z (1 matches)
+    ...ֵּלֵךְ, and the Qal wayyiqtol 3mp and 3fp are וַיֵּלְכוּ and וַתֵּלַכְנָה. (A similar situation occurs with הלךְ in all conjugations of the Hiphil––recall the form הוֹלִיךְ.)
+    
+    
+    > 
+    > Neither of the scholarly standard lexicons (HALOT and DCH) treat ילךְ as a root, so I would discourage its use in BibleArc. Feel free to follow-up with questions. I can develop any of my comments further if it will serve you.
+    
+    I can make this change in the parsing project so that the lemmas will be updated in the xml that is produced from that. However, I first thought it would be good to bring it up for discussion. ...
+--- openscriptures/morphhb#34 comment 339565789 by AndyHubert at 2017-10-26T06:34:29Z (1 matches)
+    ...s.
+    
+    Back to the main discussion, however, I still am not understanding why changing the strongs number associated with a lemma _to another valid strongs number_ would cause problems to the fidelity of the original strongs numbers or nullify the advantages of this dictionary. I am the developer of Biblearc.com and we certainly use strongs. Once I import the morphhb with parsings, a change like the one I propose here would simply cause the system to bring up the strongs info for הלך instead of ילך on the corrected words. Thus, I don't see how this would cause problems in the normal use cases. What am ...
+--- openscriptures/morphhb#34 comment 339670775 by DavidTroidl at 2017-10-26T13:45:34Z (1 matches)
+    ...o the main discussion, however, I still am not understanding why 
+    > changing the strongs number associated with a lemma /to another valid 
+    > strongs number/ would cause problems to the fidelity of the original 
+    > strongs numbers or nullify the advantages of this dictionary. I am the 
+    > developer of Biblearc.com and we certainly use strongs. Once I import 
+    > the morphhb with parsings, a change like the one I propose here would 
+    > simply cause the system to bring up the strongs info for הלך instead 
+    > of ילך on the corrected words. Thus, I don't see how this would cause 
+    > problems in the normal use cas...
+--- openscriptures/morphhb#93 comment 1161711483 by AndyHubert at 2022-06-21T12:56:15Z (1 matches)
+    ... be helped by https://github.com/educational-resources-and-services/bibletags-versification. That is the whole point of this open-source library. 
+    
+    While we will publish the particular data points needed for a translation at some point, for now you can get a sampling by looking at https://preview.biblearc.com/settings/versions, clicking on the more icons, and then "View information." There, look at the technical information table....
+PATTERN 'biblearc': 4 records
+====================================================================================================
+PATTERN 'UGNT|BHP'
+PATTERN 'UGNT|BHP': 0 records
+====================================================================================================
+PATTERN 'textual critic'
+--- openscriptures/morphhb#6 comment 40297193 by yaaqov at 2014-04-13T01:37:27Z (1 matches)
+    ... proprietary tagged editions are used, that guarantee that the
+    results are consistent with a respected academic reference (Bagster's) -
+    not bad for FOSS.
+    
+    As an aside knowledge of variants in the DSS, Geniza scrolls, etc. don't
+    affect basic grammatical parsing, they just affect our understanding of
+    textual criticism - our text is already established, so I'm not sure how
+    the age of the reference is relevant to our needs. BDB was published in
+    1906 and Gesenius' Lexicon was published in 1834, and translated into
+    English in 1892.
+    
+    The following would be the topic for a new thread, as well, but the
+    structure of ...
+PATTERN 'textual critic': 1 records
+====================================================================================================
+PATTERN 'new ids?'
+PATTERN 'new ids?': 0 records

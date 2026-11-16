@@ -1,0 +1,141 @@
+====================================================================================================
+openscriptures/morphhb#73 [PR] 'Add Dockerfile, splitByBook, and and fix invalid JSON' state=closed by davidbetz (CONTRIBUTOR) created=2020-08-15T02:18:16Z closed=2021-12-13T13:56:14Z closed_by=jdejoode
+merged_at=2021-12-13T13:56:14Z
+labels=
+--- body
+* Added Dockerfile
+* Added splitByBook
+* Made output cross-platform (e.g. not a Node module)
+* Fixed invalid JSON (string manipulation of JSON/XML/YAML is always bad; and JSON uses double-quotes)
+
+====================================================================================================
+openscriptures/morphhb#91 [PR] 'Changes requested by Randall Tan and Joel Ruark from Clear Trees work.' state=closed by jonathanrobie (CONTRIBUTOR) created=2022-03-10T22:56:30Z closed=2024-08-27T13:19:57Z closed_by=jdejoode
+merged_at=2024-08-27T13:19:57Z
+labels=
+--- body
+
+--- review comment on wlc/1Kgs.xml 1161665886 by jdejoode (CONTRIBUTOR) at 2023-04-10T12:00:56Z
+Could someone help me understand the logic to remove the definite article here? Is that because of the parallel with בְּ/שֵׁ֣שׁ? Or because the number is implicitly definite? Or is the patah wrong here? Westminster Morphology here has a definite article, which is in line with the vowel. 
+--- comment 1502133800 by jonathanrobie (CONTRIBUTOR) at 2023-04-10T18:09:11Z
+Adding Randall, David, Joel, and Reinier.
+
+I think you each contributed to the merge request. Could you all please
+take a look at this respond to Johan's comment?
+
+https://github.com/openscriptures/morphhb/pull/91#pullrequestreview-1377446976
+
+Looks like this may be merged in soon.
+
+Blessings!
+
+Jonathan
+
+
+On Mon, Apr 10, 2023 at 8:01 AM J. de Joode ***@***.***>
+wrote:
+
+> ***@***.**** commented on this pull request.
+> ------------------------------
+>
+> In wlc/1Kgs.xml
+> <https://github.com/openscriptures/morphhb/pull/91#discussion_r1161665886>
+> :
+>
+> > @@ -6542,7 +6542,7 @@
+>            <w lemma="3967" morph="HAcbpa" id="11jTj">מֵא֣וֹת</w>
+>            <w lemma="3701" n="1.1" morph="HNcmsa" id="11yoM">כֶּ֔סֶף</w>
+>            <w lemma="c/5483 b" n="1.0" morph="HC/Ncmsa" id="11u9c">וְ/ס֖וּס</w>
+> -          <w lemma="b/2572" morph="HRd/Acbpa" id="11npB">בַּ/חֲמִשִּׁ֣ים</w>
+> +          <w lemma="b/2572" morph="HR/Acbpa" id="11npB">בַּ/חֲמִשִּׁ֣ים</w>
+>
+> Could someone help me understand the logic to remove the definite article
+> here? Is that because of the parallel with בְּ/שֵׁ֣שׁ? Or because the
+> number is implicitly definite? Or is the patah wrong here? Westminster
+> Morphology here has a definite article, which is in line with the vowel.
+>
+> —
+> Reply to this email directly, view it on GitHub
+> <https://github.com/openscriptures/morphhb/pull/91#pullrequestreview-1377446976>,
+> or unsubscribe
+> <https://github.com/notifications/unsubscribe-auth/AANPTPMEK3ULXWLIMZBCTWDXAPZAJANCNFSM5QOAUSVA>
+> .
+> You are receiving this because you authored the thread.Message ID:
+> ***@***.***>
+>
+
+--- review comment on wlc/1Kgs.xml 1161973381 by rkjtan (NONE) at 2023-04-10T18:35:49Z
+The patah vowel is already explained by the fact that if the noun begins with a guttural with a hatep vowel, the preposition takes the corresponding full vowel. So, there is no need to posit the definite article here,
+--- review comment on wlc/1Kgs.xml 1161980510 by jdejoode (CONTRIBUTOR) at 2023-04-10T18:44:56Z
+Yes, I thought that was the logic :+1: So I've seen more of these in the same pull request, did you systematically check for cases of a number in the hundreds and whether the direct article was tagged or not?
+--- review comment on wlc/1Kgs.xml 1161988842 by jdejoode (CONTRIBUTOR) at 2023-04-10T18:55:36Z
+A possible reference in support is JM §35.e  which mentions a similar case where it cannot be known whether the definite article is present or not. It would indeed be safer in that case not to assume the article is there; this is also supported by other parallels.
+--- review comment on wlc/1Kgs.xml 1162001993 by rkjtan (NONE) at 2023-04-10T19:12:45Z
+Yes, Joel & I actually did use JM §35.e in support as we wrestled through each instance on a case-by-case basis.
+--- review comment on wlc/1Kgs.xml 1162406941 by jdejoode (CONTRIBUTOR) at 2023-04-11T07:29:13Z
+Thanks for that work @rkjtan and Joel!
+--- comment 1702771427 by jdejoode (CONTRIBUTOR) at 2023-09-01T13:43:01Z
+@jonathanrobie What's the best way forward to resolve the outstanding questions?
+====================================================================================================
+openscriptures/morphhb#92 [PR] 'Earlier requests' state=closed by jonathanrobie (CONTRIBUTOR) created=2022-03-18T20:18:19Z closed=2024-08-27T13:19:55Z closed_by=jdejoode
+merged_at=2024-08-27T13:19:55Z
+labels=
+--- body
+These corrections were requested by Joel and Randall about 8 weeks ago in a set of issues.  Issuing a pull request to allow them to be examined, modified, or committed more efficiently.
+--- comment 1502920474 by jdejoode (CONTRIBUTOR) at 2023-04-11T08:41:30Z
+Thanks Jonathan, does this PR actually include the previous one? I've been reviewing the previous one, so once that's merged it, could this PR be transformed to only contain what was not covered in the previous one? Thoughts?
+--- comment 1502921403 by jdejoode (CONTRIBUTOR) at 2023-04-11T08:42:17Z
+Would it be possible to provide references to the issues that are covered in this PR (and ditto in the other PR)? That would make it easier to close the issues after the merge.
+--- comment 1702772232 by jdejoode (CONTRIBUTOR) at 2023-09-01T13:43:35Z
+Any update here @jonathanrobie? Thanks!
+--- comment 2243407652 by thesmartwon (NONE) at 2024-07-22T16:55:12Z
+I'd like to see these changes merged, so I'll answer some of the questions.
+
+> Thanks Jonathan, does this PR actually include the previous one?
+
+Yes. You can verify that the SHA (2408955) is the same.
+
+> I've been reviewing the previous one, so once that's merged it, could this PR be transformed to only contain what was not covered in the previous one?
+
+That will automatically happen.
+
+> Would it be possible to provide references to the issues that are covered in this PR (and ditto in the other PR)?
+
+Together these close #90 .
+--- comment 2244773985 by jonathanrobie (CONTRIBUTOR) at 2024-07-23T09:57:57Z
+Yes, that is correct.
+
+Jony
+
+On Mon, Jul 22, 2024, 12:55 thesmartwon ***@***.***> wrote:
+
+> I'd like to see these changes merged, so I'll answer some of the questions.
+>
+> Thanks Jonathan, does this PR actually include the previous one?
+>
+> Yes. You can verify that the SHA (2408955
+> <https://github.com/openscriptures/morphhb/commit/2408955b1f3a1ea8acfdf5f51155674917e491b0>)
+> is the same.
+>
+> I've been reviewing the previous one, so once that's merged it, could this
+> PR be transformed to only contain what was not covered in the previous one?
+>
+> That will automatically happen.
+>
+> Would it be possible to provide references to the issues that are covered
+> in this PR (and ditto in the other PR)?
+>
+> Together these close #90
+> <https://github.com/openscriptures/morphhb/issues/90> .
+>
+> —
+> Reply to this email directly, view it on GitHub
+> <https://github.com/openscriptures/morphhb/pull/92#issuecomment-2243407652>,
+> or unsubscribe
+> <https://github.com/notifications/unsubscribe-auth/AANPTPKGKAJKLAWWUQM4JA3ZNU2QNAVCNFSM6AAAAABLIWSNQWVHI2DSMVQWIX3LMV43OSLTON2WKQ3PNVWWK3TUHMZDENBTGQYDONRVGI>
+> .
+> You are receiving this because you were mentioned.Message ID:
+> ***@***.***>
+>
+
+--- comment 2312547604 by jdejoode (CONTRIBUTOR) at 2024-08-27T13:20:55Z
+Thanks @thesmartwon and @jonathanrobie 

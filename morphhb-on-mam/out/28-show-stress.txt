@@ -1,0 +1,49 @@
+## stress differs (48 of 48)
+  {vid: Gen.32.17, mam: וַיֹּ֤אמֶר, morphhb: וַ֤/יֹּאמֶר, lemma: c/559, morph: HC/Vqw3ms, id: 01X7q}
+  {vid: Gen.41.12, mam: וַ֨נְּסַפֶּר, morphhb: וַ/נְּ֨סַפֶּר, lemma: c/5608 a, morph: HC/Vpw1cp, id: 01kct}
+  {vid: Gen.44.16, mam: הִנֶּ֤נּוּ, morphhb: הִנֶּ/נּ֤וּ, lemma: 2005, morph: HTm/Sp1cp, id: 0176M}
+  {vid: Deut.16.3, mam: תִּזְכֹּ֗ר, morphhb: תִּזְכֹּר֔, lemma: 2142, morph: HVqi2ms, id: 05o7T}
+  {vid: Josh.2.23, mam: וַ֨יְסַפְּרוּ, morphhb: וַ/יְסַ֨פְּרוּ, lemma: c/5608 a, morph: HC/Vpw3mp, id: 06sQy}
+  {vid: Josh.19.8, mam: בַּ֥עֲלַת, morphhb: בַּֽעֲלַ֥ת, lemma: 1192+, morph: HNp, id: 06CvE}
+  {vid: Josh.21.23, mam: וּמִ֨מַּטֵּה, morphhb: וּ/מִ/מַּ֨טֵּה, lemma: c/m/4294, morph: HC/R/Ncmsc, id: 06NXR}
+  {vid: Judg.7.20, mam: וּ֨בְיַד, morphhb: וּ/בְ/יַ֨ד, lemma: c/b/3027, morph: HC/R/Ncbsc, id: 07FHp}
+  {vid: Judg.10.11, mam: וַיֹּ֥אמֶר, morphhb: וַ֥/יֹּאמֶר, lemma: c/559, morph: HC/Vqw3ms, id: 07Zue}
+  {vid: 1Sam.11.5, mam: וַ֨יְסַפְּרוּ, morphhb: וַ/יְסַ֨פְּרוּ, lemma: c/5608 a, morph: HC/Vpw3mp, id: 09Q6Z}
+  {vid: 1Kgs.20.28, mam: הַגָּד֤וֹל, morphhb: הַ/גָּ֤דוֹל, lemma: d/1419 a, morph: HTd/Aamsa, id: 11ATR}
+  {vid: 2Kgs.4.29, mam: תַעֲנֶ֑נּוּ, morphhb: תַעֲנֶ/נּ֑וּ, lemma: 6030 b, morph: HVqi2ms/Sp1cp, id: 12oQV}
+  {vid: 2Kgs.22.1, mam: עֲדָיָ֖ה, morphhb: עֲדָ֖יָה, lemma: 5718, morph: HNp, id: 12BC3}
+  {vid: Isa.25.10, mam: וְנָד֤וֹשׁ, morphhb: וְ/נָ֤דוֹשׁ, lemma: c/1758, morph: HC/VNq3ms, id: 23BRP}
+  {vid: Isa.47.8, mam: בִּלְבָבָ֔הּ, morphhb: בִּ/לְבָ֔בָ/הּ, lemma: b/3824, morph: HR/Ncmsc/Sp3fs, id: 23pnG}
+  {vid: Jer.17.6, mam: יָ֣בוֹא, morphhb: יָב֣וֹא, lemma: 935, morph: HVqi3ms, id: 24coZ}
+  {vid: Jer.17.8, mam: יָ֣בֹא, morphhb: יָבֹ֣א, lemma: 935, morph: HVqi3ms, id: 24SnR}
+  {vid: Jer.37.16, mam: הַחֲנֻי֑וֹת, morphhb: הַֽ/חֲנֻ֑יוֹת, lemma: d/2588, morph: HTd/Ncfpa, id: 24t7n}
+  {vid: Jer.42.8, mam: וּ֨לְכׇל, morphhb: וּ/לְ/כָ֨ל, lemma: c/l/3605, morph: HC/R/Ncmsc, id: 243Ra}
+  {vid: Ezek.13.19, mam: וַתְּחַלֶּ֨לְנָה, morphhb: וַ/תְּחַלֶּלְ֨נָה, lemma: c/2490 c, morph: HC/Vpw2fp, id: 26LXv}
+  {vid: Ezek.16.12, mam: וָ֥אֶתֵּֽן, morphhb: וָ/אֶתֵּ֥ן, lemma: c/5414, morph: HC/Vqw1cs, id: 26yFv}
+  {vid: Ezek.21.15, mam: בָּרָ֖ק, morphhb: בָּ֖רָק, lemma: 1300 b, morph: HNcmsa, id: 26q5L}
+  {vid: Ezek.23.40, mam: וְעָדִ֥ית, morphhb: וְ/עָ֥דִית, lemma: c/5710 b, morph: HC/Vqp2fs, id: 26aWZ}
+  {vid: Ezek.27.6, mam: מִבָּשָׁ֔ן, morphhb: מִ/בָּ֔שָׁן, lemma: m/1316, morph: HR/Np, id: 26iUb}
+  {vid: Hos.13.14, mam: דְבָרֶ֜יךָ, morphhb: דְבָרֶי/ךָ֜, lemma: 1698, morph: HNcmpc/Sp2ms, id: 28t5T}
+  {vid: Zech.2.4, mam: זֵר֣וּ, morphhb: זֵ֣רוּ, lemma: 2219, morph: HVpp3cp, id: 38YxK}
+  {vid: Zech.8.14, mam: זָמַ֜מְתִּי, morphhb: זָמַמְ֜תִּי, lemma: 2161, morph: HVqp1cs, id: 38ojQ}
+  {vid: Ps.7.6, mam: יִ֥רַדֹּֽף, morphhb: יִֽרַדֹּ֥ף, lemma: 7291, morph: HVqi3ms, id: 19nzj}
+  {vid: Ps.17.14, mam: מִ֥מְתִֽים, morphhb: מִֽ/מְתִ֥ים, lemma: m/4962, morph: HR/Ncmpa, id: 19Bi2}
+  {vid: Ps.19.15, mam: יִ֥הְיֽוּ, morphhb: יִֽהְי֥וּ, lemma: 1961, morph: HVqi3mp, id: 19xfx}
+  {vid: Ps.39.13, mam: שִׁ֥מְעָֽה, morphhb: שִֽׁמְעָ֥/ה, lemma: 8085, morph: HVqv2ms/Sh, id: 19gFP}
+  {vid: Ps.44.9, mam: הִלַּ֣לְנוּ, morphhb: הִלַּלְ֣נוּ, lemma: 1984 b, morph: HVpp1cp, id: 19ApD}
+  {vid: Ps.65.10, mam: פָּ֤קַֽדְתָּ, morphhb: פָּקַ֥דְתָּ, lemma: 6485 a, morph: HVqp2ms, id: 1922d}
+  {vid: Ps.70.6, mam: ח֫וּשָׁה, morphhb: חֽוּשָׁ֫/ה, lemma: 2363 a, morph: HVqv2ms/Sh, id: 19kUz}
+  {vid: Ps.77.4, mam: וְאֶהֱמָ֑יָה, morphhb: וְ/אֶֽהֱמָיָ֑ה, lemma: c/1993, morph: HC/Vqh1cs, id: 19T19}
+  {vid: Ps.78.30, mam: זָ֥רוּ, morphhb: זָר֥וּ, lemma: 2114 a, morph: HVqp3cp, id: 19poM}
+  {vid: Ps.81.6, mam: עֵד֤וּת, morphhb: עֵ֤דוּת, lemma: 5715, morph: HNcfsa, id: 19M8j}
+  {vid: Ps.89.20, mam: בְחָז֡וֹן, morphhb: בְ/חָ֡זוֹן, lemma: b/2377, morph: HR/Ncmsa, id: 19nAm}
+  {vid: Ps.106.48, mam: בָּ֤רֽוּךְ, morphhb: בָּר֤וּךְ, lemma: 1288, morph: HVqsmsa, id: 19BMG}
+  {vid: Prov.5.19, mam: וְֽיַ֫עֲלַת, morphhb: וְֽ/יַעֲלַ֫ת, lemma: c/3280, morph: HC/Ncfsc, id: 20KTp}
+  {vid: Job.42.10, mam: וַיֹּ֧סֶף, morphhb: וַ֧/יֹּסֶף, lemma: c/3254, morph: HC/Vhw3ms, id: 18Sc6}
+  {vid: Esth.1.5, mam: לְמִגָּד֧וֹל, morphhb: לְ/מִ/גָּ֧דוֹל, lemma: l/m/1419 a, morph: HR/R/Aamsa, id: 17bmv}
+  {vid: Esth.9.4, mam: גָד֤וֹל, morphhb: גָ֤דוֹל, lemma: 1419 a, morph: HAamsa, id: 17cDe}
+  {vid: Ezra.4.3, mam: לָכֶ֣ם, morphhb: לָ֣/כֶם, lemma: l, morph: HR/Sp2mp, id: 15PTT}
+  {vid: Neh.5.14, mam: הַפֶּחָ֖ה, morphhb: הַ/פֶּ֖חָה, lemma: d/6346, morph: HTd/Ncmsa, id: 16L7X}
+  {vid: 1Chr.6.39, mam: לְמִשְׁפַּ֣חַת, morphhb: לְ/מִשְׁפַּחַ֣ת, lemma: l/4940, morph: HR/Ncfsc, id: 136gk}
+  {vid: 1Chr.28.5, mam: וּמִ֨כׇּל, morphhb: וּ/מִ/כָּ֨ל, lemma: c/m/3605, morph: HC/R/Ncmsc, id: 13pf3}
+  {vid: 2Chr.8.11, mam: בָּ֥אָֽה, morphhb: בָּֽאָ֥ה, lemma: 935, morph: HVqp3fs, id: 143Gd}

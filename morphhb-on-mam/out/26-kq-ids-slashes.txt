@@ -1,0 +1,39 @@
+analyze3.py; written by Claude (Opus 5.5), 2026-11-15; not reviewed by a human
+
+== 1. MAM one form, morphhb a ketiv and a qere (class C blocks of one MAM atom)
+     72  kq-trivial; analyses agree; MAM's letters are the ketiv's
+     49  kq-trivial; same lemma, morphs differ; MAM's letters are the ketiv's
+     37  plain; analyses agree; MAM's letters are the ketiv's
+     28  plain; same lemma, morphs differ; MAM's letters are the ketiv's
+     11  kq-trivial; several ketiv or qere words
+     11  plain; several ketiv or qere words
+      4  plain; analyses agree; the qere's
+      3  plain; same lemma, morphs differ; the qere's
+      3  plain; lemmas differ; MAM's letters are the ketiv's
+      2  kq-trivial; same lemma, morphs differ; neither's
+      1  kq-trivial; analyses agree; neither's
+
+== 2. MAM a ketiv and a qere, morphhb one plain word
+      1  MAM ketiv atoms, class B
+     29  MAM ketiv atoms, class K
+      2  MAM qere atoms, class A1
+     25  MAM qere atoms, class B
+  verses: 28
+
+== 3. ids: MAM atoms with no morphhb word of their own, and morphhb words with no MAM atom
+    208  C: in a block with 1/1 morphhb word(s) per side
+     48  C: in a block with 2/2 morphhb word(s) per side
+     11  C: in a block with 1/2 morphhb word(s) per side
+     10  C: in a block with 1/3 morphhb word(s) per side
+      5  C: in a block with 1 morphhb word(s) per side
+      4  C: in a block with 3/3 morphhb word(s) per side
+      3  C: no morphhb word at all
+      3  C: in a block with 2 morphhb word(s) per side
+      2  AX: MAM one atom, morphhb a ketiv and a qere of the same letters
+      2  C: in a block with 2/3 morphhb word(s) per side
+  morphhb words in a delete block on some side: 25; of them matched on no side: 23
+
+== 4. Slashes in class B: the fallback rule
+    436  words placed by align.py
+     72  words placed by the fallback rule
+     26  words still ambiguous

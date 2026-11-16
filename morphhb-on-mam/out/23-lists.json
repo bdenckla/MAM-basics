@@ -1,0 +1,2361 @@
+{
+ "holam other": [
+  {
+   "vid": "Zech.14.3",
+   "mam": "הִֽלָּחֲמ֖וֹ",
+   "morphhb": "הִֽלָּחֲמ֖/ו",
+   "lemma": "3898 a",
+   "morph": "HVNc/Sp3ms",
+   "cons": {
+    "n": 0,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": null
+   }
+  },
+  {
+   "vid": "Eccl.2.22",
+   "mam": "לִבּ֑וֹ",
+   "morphhb": "לִבּ֑/ו",
+   "lemma": "3820 a",
+   "morph": "HNcmsc/Sp3ms",
+   "cons": {
+    "n": 69,
+    "pair": 69,
+    "lemma": 69,
+    "morph": 69,
+    "top": [
+     "3820 | HNcmsc/Sp3ms",
+     69
+    ]
+   }
+  }
+ ],
+ "qatan with a perfect or participle morph": [
+  {
+   "vid": "Exod.18.23",
+   "mam": "וְיָֽכׇלְתָּ֖",
+   "morphhb": "וְ/יָֽכָלְתָּ֖",
+   "lemma": "c/3201",
+   "morph": "HC/Vqq2ms",
+   "id": "02D4Y"
+  },
+  {
+   "vid": "Exod.26.30",
+   "mam": "הׇרְאֵ֖יתָ",
+   "morphhb": "הָרְאֵ֖יתָ",
+   "lemma": "7200",
+   "morph": "HVHp2ms",
+   "id": "02q7s"
+  },
+  {
+   "vid": "Lev.5.23",
+   "mam": "הׇפְקַ֖ד",
+   "morphhb": "הָפְקַ֖ד",
+   "lemma": "6485",
+   "morph": "HVHp3ms",
+   "id": "03a5r"
+  },
+  {
+   "vid": "Lev.13.49",
+   "mam": "וְהׇרְאָ֖ה",
+   "morphhb": "וְ/הָרְאָ֖ה",
+   "lemma": "c/7200",
+   "morph": "HC/VHq3ms",
+   "id": "03vMU"
+  },
+  {
+   "vid": "Num.1.47",
+   "mam": "הׇתְפָּקְד֖וּ",
+   "morphhb": "הָתְפָּקְד֖וּ",
+   "lemma": "6485 a",
+   "morph": "HVup3cp",
+   "id": "04WJY"
+  },
+  {
+   "vid": "Num.2.33",
+   "mam": "הׇתְפָּקְד֔וּ",
+   "morphhb": "הָתְפָּקְד֔וּ",
+   "lemma": "6485 a",
+   "morph": "HVup3cp",
+   "id": "04bea"
+  },
+  {
+   "vid": "Num.26.62",
+   "mam": "הׇתְפָּקְד֗וּ",
+   "morphhb": "הָתְפָּקְד֗וּ",
+   "lemma": "6485 a",
+   "morph": "HVup3cp",
+   "id": "04Zyo"
+  },
+  {
+   "vid": "Deut.4.35",
+   "mam": "הׇרְאֵ֣תָ",
+   "morphhb": "הָרְאֵ֣תָ",
+   "lemma": "7200",
+   "morph": "HVHp2ms",
+   "id": "05wiu"
+  },
+  {
+   "vid": "Judg.20.31",
+   "mam": "הׇנְתְּק֖וּ",
+   "morphhb": "הָנְתְּק֖וּ",
+   "lemma": "5423",
+   "morph": "HVHp3cp",
+   "id": "07W2r"
+  },
+  {
+   "vid": "1Sam.25.15",
+   "mam": "הׇכְלַ֙מְנוּ֙",
+   "morphhb": "הָכְלַ֨מְנוּ֙",
+   "lemma": "3637",
+   "morph": "HVHp1cp",
+   "id": "09ZMS"
+  },
+  {
+   "vid": "1Kgs.20.27",
+   "mam": "הׇתְפָּקְדוּ֙",
+   "morphhb": "הָתְפָּקְדוּ֙",
+   "lemma": "6485 a",
+   "morph": "HVup3cp",
+   "id": "111N2"
+  },
+  {
+   "vid": "1Kgs.20.27",
+   "mam": "וְכׇלְכְּל֔וּ",
+   "morphhb": "וְ/כָלְכְּל֔וּ",
+   "lemma": "c/3557",
+   "morph": "HC/VLp3cp",
+   "id": "11GLd"
+  },
+  {
+   "vid": "1Kgs.22.34",
+   "mam": "הׇחֳלֵֽיתִי",
+   "morphhb": "הָחֳלֵֽיתִי",
+   "lemma": "2470 a",
+   "morph": "HVHp1cs",
+   "id": "11HYe"
+  },
+  {
+   "vid": "2Kgs.8.6",
+   "mam": "עׇזְבָ֥הֿ",
+   "morphhb": "עָזְבָ֥ה",
+   "lemma": "5800 a",
+   "morph": "HVqp3fs",
+   "id": "12LrY"
+  },
+  {
+   "vid": "Isa.14.19",
+   "mam": "הׇשְׁלַ֤כְתָּ",
+   "morphhb": "הָשְׁלַ֤כְתָּ",
+   "lemma": "7993",
+   "morph": "HVHp2ms",
+   "id": "234Xh"
+  },
+  {
+   "vid": "Isa.42.22",
+   "mam": "הׇחְבָּ֑אוּ",
+   "morphhb": "הָחְבָּ֑אוּ",
+   "lemma": "2244",
+   "morph": "HVHp3cp",
+   "id": "23mqX"
+  },
+  {
+   "vid": "Jer.6.6",
+   "mam": "הׇפְקַ֔ד",
+   "morphhb": "הָפְקַ֔ד",
+   "lemma": "6485 a",
+   "morph": "HVHp3ms",
+   "id": "24SJf"
+  },
+  {
+   "vid": "Jer.8.21",
+   "mam": "הׇשְׁבָּ֑רְתִּי",
+   "morphhb": "הָשְׁבָּ֑רְתִּי",
+   "lemma": "7665",
+   "morph": "HVHp1cs",
+   "id": "24DJ2"
+  },
+  {
+   "vid": "Jer.13.19",
+   "mam": "הׇגְלָ֧ת",
+   "morphhb": "הָגְלָ֧ת",
+   "lemma": "1540",
+   "morph": "HVHp3fs",
+   "id": "246Yk"
+  },
+  {
+   "vid": "Jer.13.19",
+   "mam": "הׇגְלָ֥ת",
+   "morphhb": "הָגְלָ֥ת",
+   "lemma": "1540",
+   "morph": "HVHp3fs",
+   "id": "24YUT"
+  },
+  {
+   "vid": "Jer.14.3",
+   "mam": "וְהׇכְלְמ֖וּ",
+   "morphhb": "וְ/הָכְלְמ֖וּ",
+   "lemma": "c/3637",
+   "morph": "HC/VHp3cp",
+   "id": "246gh"
+  },
+  {
+   "vid": "Jer.38.22",
+   "mam": "הׇטְבְּע֥וּ",
+   "morphhb": "הָטְבְּע֥וּ",
+   "lemma": "2883",
+   "morph": "HVHp3cp",
+   "id": "24NXV"
+  },
+  {
+   "vid": "Jer.39.2",
+   "mam": "הׇבְקְעָ֖ה",
+   "morphhb": "הָבְקְעָ֖ה",
+   "lemma": "1234",
+   "morph": "HVHp3fs",
+   "id": "246NY"
+  },
+  {
+   "vid": "Jer.40.7",
+   "mam": "הׇגְל֖וּ",
+   "morphhb": "הָגְל֖וּ",
+   "lemma": "1540",
+   "morph": "HVHp3cp",
+   "id": "244vw"
+  },
+  {
+   "vid": "Ezek.16.4",
+   "mam": "כׇרַּ֣ת",
+   "morphhb": "כָרַּ֣ת",
+   "lemma": "3772",
+   "morph": "HVPp3ms",
+   "id": "261w3"
+  },
+  {
+   "vid": "Ezek.26.2",
+   "mam": "הׇחֳרָֽבָה",
+   "morphhb": "הָחֳרָֽבָה",
+   "lemma": "2717 b",
+   "morph": "HVHp3fs",
+   "id": "26jQQ"
+  },
+  {
+   "vid": "Joel.1.9",
+   "mam": "הׇכְרַ֥ת",
+   "morphhb": "הָכְרַ֥ת",
+   "lemma": "3772",
+   "morph": "HVHp3ms",
+   "id": "29dNE"
+  },
+  {
+   "vid": "Mic.2.10",
+   "mam": "טׇמְאָ֛ה",
+   "morphhb": "טָמְאָ֛ה",
+   "lemma": "2930 b",
+   "morph": "HVqp3fs",
+   "id": "33PUg"
+  },
+  {
+   "vid": "Nah.2.4",
+   "mam": "הׇרְעָֽלוּ",
+   "morphhb": "הָרְעָֽלוּ",
+   "lemma": "7477",
+   "morph": "HVHp3cp",
+   "id": "34bCC"
+  },
+  {
+   "vid": "Nah.3.7",
+   "mam": "שׇׁדְּדָ֣ה",
+   "morphhb": "שָׁדְּדָ֣ה",
+   "lemma": "7703",
+   "morph": "HVPp3fs",
+   "id": "34mGU"
+  },
+  {
+   "vid": "Ps.13.5",
+   "mam": "יְכׇלְתִּ֑יו",
+   "morphhb": "יְכָלְתִּ֑י/ו",
+   "lemma": "3201",
+   "morph": "HVqp1cs/Sp3ms",
+   "id": "19sgH"
+  },
+  {
+   "vid": "Ps.22.11",
+   "mam": "הׇשְׁלַ֣כְתִּי",
+   "morphhb": "הָשְׁלַ֣כְתִּי",
+   "lemma": "7993",
+   "morph": "HVHp1cs",
+   "id": "19GQd"
+  },
+  {
+   "vid": "Ps.45.3",
+   "mam": "יׇפְיָפִ֡יתָ",
+   "morphhb": "יָפְיָפִ֡יתָ",
+   "lemma": "3302",
+   "morph": "HVjp2ms",
+   "id": "19EH3"
+  },
+  {
+   "vid": "Ps.72.20",
+   "mam": "כׇּלּ֥וּ",
+   "morphhb": "כָּלּ֥וּ",
+   "lemma": "3615",
+   "morph": "HVPp3cp",
+   "id": "195qf"
+  },
+  {
+   "vid": "Ps.80.11",
+   "mam": "כׇּסּ֣וּ",
+   "morphhb": "כָּסּ֣וּ",
+   "lemma": "3680",
+   "morph": "HVPp3cp",
+   "id": "19B6v"
+  },
+  {
+   "vid": "Ps.101.5",
+   "mam": "מְלׇשְׁנִ֬י",
+   "morphhb": "מְלָשְׁנִ֬י",
+   "lemma": "3960",
+   "morph": "HVmrmsc",
+   "id": "19ASC"
+  },
+  {
+   "vid": "Prov.8.25",
+   "mam": "הׇטְבָּ֑עוּ",
+   "morphhb": "הָטְבָּ֑עוּ",
+   "lemma": "2883",
+   "morph": "HVHp3cp",
+   "id": "20aUh"
+  },
+  {
+   "vid": "Prov.24.31",
+   "mam": "כׇּסּ֣וּ",
+   "morphhb": "כָּסּ֣וּ",
+   "lemma": "3680",
+   "morph": "HVPp3cp",
+   "id": "203R8"
+  },
+  {
+   "vid": "Job.5.23",
+   "mam": "הׇשְׁלְמָה",
+   "morphhb": "הָשְׁלְמָה",
+   "lemma": "7999 b",
+   "morph": "HVHp3fs",
+   "id": "184mo"
+  },
+  {
+   "vid": "Job.7.3",
+   "mam": "הׇנְחַ֣לְתִּי",
+   "morphhb": "הָנְחַ֣לְתִּי",
+   "lemma": "5157",
+   "morph": "HVHp1cs",
+   "id": "18sgn"
+  }
+ ],
+ "A2 contradicted": [
+  {
+   "vid": "Exod.17.15",
+   "mam": "יְהֹוָ֥ה",
+   "morphhb": "יְהוָ֥ה",
+   "lemma": "3071+",
+   "morph": "HNp",
+   "id": "022xh",
+   "cons": {
+    "n": 46,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 46,
+    "top": [
+     "3068 | HNp",
+     46
+    ]
+   }
+  },
+  {
+   "vid": "Num.16.21",
+   "mam": "וַאֲכַלֶּ֥ה",
+   "morphhb": "וַ/אַכַלֶּ֥ה",
+   "lemma": "c/3615",
+   "morph": "HC/Vph1cs",
+   "id": "04dUR",
+   "cons": {
+    "n": 1,
+    "pair": 0,
+    "lemma": 1,
+    "morph": 0,
+    "top": [
+     "3615 | HC/Vpi1cs",
+     1
+    ]
+   }
+  },
+  {
+   "vid": "Num.23.25",
+   "mam": "תְבָרְכֶֽנּוּ",
+   "morphhb": "תְבָרֲכֶֽ/נּוּ",
+   "lemma": "1288",
+   "morph": "HVpi2ms/Sp3ms",
+   "id": "04QZ8",
+   "cons": {
+    "n": 1,
+    "pair": 0,
+    "lemma": 1,
+    "morph": 0,
+    "top": [
+     "1288 | HVpi2ms/Sp1cp",
+     1
+    ]
+   }
+  },
+  {
+   "vid": "Deut.2.9",
+   "mam": "אַל",
+   "morphhb": "אֶל",
+   "lemma": "408",
+   "morph": "HR",
+   "id": "057a3",
+   "cons": {
+    "n": 583,
+    "pair": 0,
+    "lemma": 572,
+    "morph": 0,
+    "top": [
+     "408 | HTn",
+     572
+    ]
+   }
+  },
+  {
+   "vid": "Deut.15.20",
+   "mam": "תֹאכְלֶ֙נּוּ֙",
+   "morphhb": "תֹאכֲלֶ֨/נּוּ֙",
+   "lemma": "398",
+   "morph": "HVqi2ms/Sp3ms",
+   "id": "057xX",
+   "cons": {
+    "n": 1,
+    "pair": 0,
+    "lemma": 1,
+    "morph": 0,
+    "top": [
+     "398 | HVqi3fs/Sp3ms",
+     1
+    ]
+   }
+  },
+  {
+   "vid": "Josh.22.19",
+   "mam": "אַל",
+   "morphhb": "אֶל",
+   "lemma": "408",
+   "morph": "HR",
+   "id": "06Umo",
+   "cons": {
+    "n": 583,
+    "pair": 0,
+    "lemma": 572,
+    "morph": 0,
+    "top": [
+     "408 | HTn",
+     572
+    ]
+   }
+  },
+  {
+   "vid": "Judg.19.4",
+   "mam": "וַיַּחֲזֶק",
+   "morphhb": "וַ/יֶּחֱזַק",
+   "lemma": "c/2388",
+   "morph": "HC/Vqw3ms",
+   "id": "07GJ8",
+   "cons": {
+    "n": 2,
+    "pair": 0,
+    "lemma": 2,
+    "morph": 0,
+    "top": [
+     "2388 | HC/Vhw3ms",
+     2
+    ]
+   }
+  },
+  {
+   "vid": "Judg.19.23",
+   "mam": "אֶל",
+   "morphhb": "אַל",
+   "lemma": "413",
+   "morph": "HTn",
+   "id": "07HwX",
+   "cons": {
+    "n": 3542,
+    "pair": 0,
+    "lemma": 3539,
+    "morph": 1,
+    "top": [
+     "413 | HR",
+     3539
+    ]
+   }
+  },
+  {
+   "vid": "1Sam.26.11",
+   "mam": "וְנֵלְכָה",
+   "morphhb": "וְ/נֵ֥לֲכָה",
+   "lemma": "c/3212",
+   "morph": "HC/Vqi1cp",
+   "id": "09vv7",
+   "cons": {
+    "n": 5,
+    "pair": 0,
+    "lemma": 5,
+    "morph": 0,
+    "top": [
+     "3212 | HC/Vqh1cp",
+     5
+    ]
+   }
+  },
+  {
+   "vid": "2Sam.7.22",
+   "mam": "יְהֹוָ֣ה",
+   "morphhb": "יְהוִ֑ה",
+   "lemma": "3069",
+   "morph": "HNp",
+   "id": "10Ati",
+   "cons": {
+    "n": 46,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 46,
+    "top": [
+     "3068 | HNp",
+     46
+    ]
+   }
+  },
+  {
+   "vid": "1Kgs.1.15",
+   "mam": "שֶׁ֤בַע",
+   "morphhb": "שֶׁ֤בֶע",
+   "lemma": "1339",
+   "morph": "HNp",
+   "id": "11VTb",
+   "cons": {
+    "n": 132,
+    "pair": 0,
+    "lemma": 8,
+    "morph": 0,
+    "top": [
+     "7651 | HAcfsa",
+     101
+    ]
+   }
+  },
+  {
+   "vid": "Isa.31.8",
+   "mam": "תֹּאכְלֶ֑נּוּ",
+   "morphhb": "תֹּֽאכֲלֶ֑/נּוּ",
+   "lemma": "398",
+   "morph": "HVqi3fs/Sp3ms",
+   "id": "23M82",
+   "cons": {
+    "n": 4,
+    "pair": 0,
+    "lemma": 4,
+    "morph": 0,
+    "top": [
+     "398 | HVqi2ms/Sp3ms",
+     4
+    ]
+   }
+  },
+  {
+   "vid": "Jer.11.2",
+   "mam": "וְדִבַּרְתֶּם֙",
+   "morphhb": "וְ/דִבַּרְתָּ/ם֙",
+   "lemma": "c/1696",
+   "morph": "HC/Vpq2ms/Sp3mp",
+   "id": "24Rdh",
+   "cons": {
+    "n": 2,
+    "pair": 0,
+    "lemma": 2,
+    "morph": 0,
+    "top": [
+     "1696 | HC/Vpq2mp",
+     2
+    ]
+   }
+  },
+  {
+   "vid": "Jer.47.6",
+   "mam": "אֶל",
+   "morphhb": "אַל",
+   "lemma": "413",
+   "morph": "HTn",
+   "id": "242CG",
+   "cons": {
+    "n": 3542,
+    "pair": 0,
+    "lemma": 3539,
+    "morph": 1,
+    "top": [
+     "413 | HR",
+     3539
+    ]
+   }
+  },
+  {
+   "vid": "Zech.12.11",
+   "mam": "הֲדַד",
+   "morphhb": "הֲדַדְ",
+   "lemma": "1910+",
+   "morph": "HNp",
+   "id": "38qoQ",
+   "cons": {
+    "n": 29,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 29,
+    "top": [
+     "1130 | HNp",
+     23
+    ]
+   }
+  },
+  {
+   "vid": "Ps.94.1",
+   "mam": "הוֹפִֽיעַ",
+   "morphhb": "הוֹפִֽיַע",
+   "lemma": "3313",
+   "morph": "HVhv2ms",
+   "id": "19Cth",
+   "cons": {
+    "n": 2,
+    "pair": 0,
+    "lemma": 2,
+    "morph": 0,
+    "top": [
+     "3313 | HVhp3ms",
+     2
+    ]
+   }
+  },
+  {
+   "vid": "Prov.15.18",
+   "mam": "וְאֶ֥רֶךְ",
+   "morphhb": "וְ/אֶ֥רֶך",
+   "lemma": "c/750",
+   "morph": "HC/Aamsc",
+   "id": "20hNP",
+   "cons": {
+    "n": 1,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": [
+     "751 | HC/Np",
+     1
+    ]
+   }
+  },
+  {
+   "vid": "Job.17.9",
+   "mam": "וּֽטְהׇר",
+   "morphhb": "וּֽ/טֳהָר",
+   "lemma": "c/2891",
+   "morph": "HC/Aamsc",
+   "id": "187ET",
+   "cons": {
+    "n": 2,
+    "pair": 0,
+    "lemma": 2,
+    "morph": 0,
+    "top": [
+     "2891 | HC/Vqv2ms",
+     2
+    ]
+   }
+  },
+  {
+   "vid": "Dan.2.31",
+   "mam": "דִכֵּ֥ן",
+   "morphhb": "דִּכֵּ֥ן",
+   "lemma": "1797",
+   "morph": "APdxbs",
+   "id": "27iPC",
+   "cons": {
+    "n": 2,
+    "pair": 0,
+    "lemma": 2,
+    "morph": 0,
+    "top": [
+     "1797 | APdxcs",
+     2
+    ]
+   }
+  },
+  {
+   "vid": "Dan.5.24",
+   "mam": "שְׁלִ֖יחַ",
+   "morphhb": "שְׁלִ֖יַחַ",
+   "lemma": "7972",
+   "morph": "AVQp3ms",
+   "id": "27sKp",
+   "cons": {
+    "n": 1,
+    "pair": 0,
+    "lemma": 1,
+    "morph": 0,
+    "top": [
+     "7972 | AVQsmsa",
+     1
+    ]
+   }
+  },
+  {
+   "vid": "2Chr.1.5",
+   "mam": "שָׁ֕ם",
+   "morphhb": "שָׂ֕ם",
+   "lemma": "7760 a",
+   "morph": "HVqp3ms",
+   "id": "14A4a",
+   "cons": {
+    "n": 508,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": [
+     "8033 | HD",
+     508
+    ]
+   }
+  },
+  {
+   "vid": "2Chr.15.16",
+   "mam": "לָאֲשֵׁרָ֖ה",
+   "morphhb": "לַ/אֲשֵׁרָ֖ה",
+   "lemma": "l/842",
+   "morph": "HR/Np",
+   "id": "144SZ",
+   "cons": {
+    "n": 2,
+    "pair": 0,
+    "lemma": 2,
+    "morph": 0,
+    "top": [
+     "842 | HRd/Np",
+     2
+    ]
+   }
+  },
+  {
+   "vid": "2Chr.28.9",
+   "mam": "בְּזַ֔עַף",
+   "morphhb": "בְ/זַ֔עַף",
+   "lemma": "b/2197",
+   "morph": "HR/Ncmsa",
+   "id": "14SPW",
+   "cons": {
+    "n": 1,
+    "pair": 0,
+    "lemma": 1,
+    "morph": 0,
+    "top": [
+     "2197 | HR/Ncmsc",
+     1
+    ]
+   }
+  }
+ ],
+ "B contradicted": [
+  {
+   "vid": "Exod.29.40",
+   "mam": "רְבִיעִ֥ת",
+   "morphhb": "רְבִעִ֥ית",
+   "lemma": "7253",
+   "morph": "HAofsc",
+   "id": "02ZHi",
+   "cons": {
+    "n": 3,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 3,
+    "top": [
+     "7243 | HAofsc",
+     3
+    ]
+   }
+  },
+  {
+   "vid": "Deut.20.1",
+   "mam": "אֹיְבֶ֗ךָ",
+   "morphhb": "אֹיְבֶ֗י/ךָ",
+   "lemma": "341",
+   "morph": "HVqrmpc/Sp2ms",
+   "id": "0536n",
+   "cons": {
+    "n": 1,
+    "pair": 0,
+    "lemma": 1,
+    "morph": 0,
+    "top": [
+     "341 | HVqrmsc/Sp2ms",
+     1
+    ]
+   }
+  },
+  {
+   "vid": "Deut.32.27",
+   "mam": "יָדֵ֣נוּ",
+   "morphhb": "יָדֵ֣י/נוּ",
+   "lemma": "3027",
+   "morph": "HNcbdc/Sp1cp",
+   "id": "055H7",
+   "cons": {
+    "n": 1,
+    "pair": 0,
+    "lemma": 1,
+    "morph": 0,
+    "top": [
+     "3027 | HNcbsc/Sp1cp",
+     1
+    ]
+   }
+  },
+  {
+   "vid": "Judg.4.11",
+   "mam": "אֵיל֥וֹן",
+   "morphhb": "אֵל֥וֹן",
+   "lemma": "436",
+   "morph": "HNcmsa",
+   "id": "07K5D",
+   "cons": {
+    "n": 2,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": [
+     "356 | HNp",
+     2
+    ]
+   }
+  },
+  {
+   "vid": "Judg.16.23",
+   "mam": "אוֹיְבֵֽנוּ",
+   "morphhb": "אוֹיְבֵֽי/נוּ",
+   "lemma": "341",
+   "morph": "HVqrmpc/Sp1cp",
+   "id": "076DP",
+   "cons": {
+    "n": 1,
+    "pair": 0,
+    "lemma": 1,
+    "morph": 0,
+    "top": [
+     "341 | HVqrmsc/Sp1cp",
+     1
+    ]
+   }
+  },
+  {
+   "vid": "2Sam.15.3",
+   "mam": "דְבָרֶ֖יךָ",
+   "morphhb": "דְבָרֶ֖/ךָ",
+   "lemma": "1697",
+   "morph": "HNcmsc/Sp2ms",
+   "id": "10Jp4",
+   "cons": {
+    "n": 7,
+    "pair": 0,
+    "lemma": 6,
+    "morph": 0,
+    "top": [
+     "1697 | HNcmpc/Sp2ms",
+     6
+    ]
+   }
+  },
+  {
+   "vid": "2Sam.23.11",
+   "mam": "שַׁמָּ֥ה",
+   "morphhb": "שַׁמָּ֥א",
+   "lemma": "8037",
+   "morph": "HNp",
+   "id": "10u96",
+   "cons": {
+    "n": 12,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 7,
+    "top": [
+     "8048 | HNp",
+     7
+    ]
+   }
+  },
+  {
+   "vid": "1Kgs.21.9",
+   "mam": "וְהֹשִׁ֥יבוּ",
+   "morphhb": "וְ/הוֹשִׁ֥יבוּ",
+   "lemma": "c/3427",
+   "morph": "HC/Vhv2mp",
+   "id": "1166F",
+   "cons": {
+    "n": 1,
+    "pair": 0,
+    "lemma": 1,
+    "morph": 0,
+    "top": [
+     "3427 | HC/Vhp3cp",
+     1
+    ]
+   }
+  },
+  {
+   "vid": "2Kgs.11.18",
+   "mam": "פְּקֻדֹּ֖ת",
+   "morphhb": "פְּקֻדּ֖וֹת",
+   "lemma": "6486",
+   "morph": "HNcfpa",
+   "id": "12qwG",
+   "cons": {
+    "n": 1,
+    "pair": 0,
+    "lemma": 1,
+    "morph": 0,
+    "top": [
+     "6486 | HNcfpc",
+     1
+    ]
+   }
+  },
+  {
+   "vid": "2Kgs.14.7",
+   "mam": "בְּגֵי",
+   "morphhb": "בְּ/גֵיא",
+   "lemma": "b/1516",
+   "morph": "HR/Np",
+   "id": "12nHz",
+   "cons": {
+    "n": 2,
+    "pair": 0,
+    "lemma": 2,
+    "morph": 0,
+    "top": [
+     "1516 | HR/Ncbsc",
+     2
+    ]
+   }
+  },
+  {
+   "vid": "Isa.14.19",
+   "mam": "לְבֻ֥שׁ",
+   "morphhb": "לְב֥וּשׁ",
+   "lemma": "3830",
+   "morph": "HNcmsc",
+   "id": "23wep",
+   "cons": {
+    "n": 4,
+    "pair": 0,
+    "lemma": 1,
+    "morph": 0,
+    "top": [
+     "3847 | HVqsmsc",
+     2
+    ]
+   }
+  },
+  {
+   "vid": "Jer.8.9",
+   "mam": "הֹבִ֣שׁוּ",
+   "morphhb": "הֹבִ֣ישׁוּ",
+   "lemma": "954",
+   "morph": "HVhp3cp",
+   "id": "24Cch",
+   "cons": {
+    "n": 1,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 1,
+    "top": [
+     "3001 | HVhp3cp",
+     1
+    ]
+   }
+  },
+  {
+   "vid": "Jer.20.10",
+   "mam": "שְׁלֹמִ֔י",
+   "morphhb": "שְׁלוֹמִ֔/י",
+   "lemma": "7965",
+   "morph": "HNcmsc/Sp1cs",
+   "id": "24uBa",
+   "cons": {
+    "n": 1,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": [
+     "8015 | HNp",
+     1
+    ]
+   }
+  },
+  {
+   "vid": "Hos.13.15",
+   "mam": "בֵּ֥ין",
+   "morphhb": "בֵּ֥ן",
+   "lemma": "996",
+   "morph": "HNcmsc",
+   "id": "28sYk",
+   "cons": {
+    "n": 168,
+    "pair": 0,
+    "lemma": 167,
+    "morph": 0,
+    "top": [
+     "996 | HR",
+     167
+    ]
+   }
+  },
+  {
+   "vid": "Mal.3.16",
+   "mam": "אֶל",
+   "morphhb": "אֶת",
+   "lemma": "854",
+   "morph": "HR",
+   "id": "39XPV",
+   "cons": {
+    "n": 3542,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 3541,
+    "top": [
+     "413 | HR",
+     3539
+    ]
+   }
+  },
+  {
+   "vid": "Ps.8.4",
+   "mam": "מַעֲשֵׂ֣ה",
+   "morphhb": "מַעֲשֵׂ֣י",
+   "lemma": "4639",
+   "morph": "HNcmpc",
+   "id": "19gbT",
+   "cons": {
+    "n": 85,
+    "pair": 0,
+    "lemma": 85,
+    "morph": 0,
+    "top": [
+     "4639 | HNcmsc",
+     85
+    ]
+   }
+  },
+  {
+   "vid": "Ps.10.10",
+   "mam": "חֵ֣ל",
+   "morphhb": "חֵ֣יל",
+   "lemma": "2426",
+   "morph": "HNcmsc",
+   "id": "19Jb3",
+   "cons": {
+    "n": 1,
+    "pair": 0,
+    "lemma": 1,
+    "morph": 0,
+    "top": [
+     "2426 | HNcmsa",
+     1
+    ]
+   }
+  },
+  {
+   "vid": "Ps.35.21",
+   "mam": "עֵינֵֽנוּ",
+   "morphhb": "עֵינֵֽי/נוּ",
+   "lemma": "5869 a",
+   "morph": "HNcbdc/Sp1cp",
+   "id": "19tQY",
+   "cons": {
+    "n": 1,
+    "pair": 0,
+    "lemma": 1,
+    "morph": 0,
+    "top": [
+     "5869 | HNcbsc/Sp1cp",
+     1
+    ]
+   }
+  },
+  {
+   "vid": "Ps.36.7",
+   "mam": "מִ֭שְׁפָּטֶיךָ",
+   "morphhb": "מִ֭שְׁפָּטֶ/ךָ",
+   "lemma": "4941",
+   "morph": "HNcmsc/Sp2ms",
+   "id": "19Xw7",
+   "cons": {
+    "n": 13,
+    "pair": 0,
+    "lemma": 13,
+    "morph": 0,
+    "top": [
+     "4941 | HNcmpc/Sp2ms",
+     13
+    ]
+   }
+  },
+  {
+   "vid": "Ps.68.27",
+   "mam": "אֲ֝דֹנָ֗י",
+   "morphhb": "יְ֝הוָ֗ה",
+   "lemma": "3068",
+   "morph": "HNp",
+   "id": "19MkY",
+   "cons": {
+    "n": 420,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": [
+     "136 | HNcmpc/Sp1cs",
+     418
+    ]
+   }
+  },
+  {
+   "vid": "Ps.89.23",
+   "mam": "יַשִּׁ֣יא",
+   "morphhb": "יַשִּׁ֣א",
+   "lemma": "5378",
+   "morph": "HVhi3ms",
+   "id": "19uSA",
+   "cons": {
+    "n": 2,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": [
+     "5377 | HVhj3ms",
+     2
+    ]
+   }
+  },
+  {
+   "vid": "Job.11.13",
+   "mam": "כַּפֶּֽיךָ",
+   "morphhb": "כַּפֶּֽ/ךָ",
+   "lemma": "3709",
+   "morph": "HNcfsc/Sp2ms",
+   "id": "18UBC",
+   "cons": {
+    "n": 4,
+    "pair": 0,
+    "lemma": 4,
+    "morph": 0,
+    "top": [
+     "3709 | HNcfdc/Sp2ms",
+     4
+    ]
+   }
+  },
+  {
+   "vid": "Job.36.12",
+   "mam": "בִּבְלִי",
+   "morphhb": "כִּ/בְלִי",
+   "lemma": "k/1097",
+   "morph": "HR/Tn",
+   "id": "188B7",
+   "cons": {
+    "n": 4,
+    "pair": 0,
+    "lemma": 4,
+    "morph": 0,
+    "top": [
+     "1097 | HR/Ncmsc",
+     4
+    ]
+   }
+  },
+  {
+   "vid": "Job.40.16",
+   "mam": "וְ֝אוֹנ֗וֹ",
+   "morphhb": "וְ֝/אֹנ֗/וֹ",
+   "lemma": "c/202",
+   "morph": "HC/Ncmsc/Sp3ms",
+   "id": "18zYY",
+   "cons": {
+    "n": 3,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": [
+     "207 | HC/Np",
+     3
+    ]
+   }
+  },
+  {
+   "vid": "Ruth.2.6",
+   "mam": "מִשְּׂדֵ֥י",
+   "morphhb": "מִ/שְּׂדֵ֥ה",
+   "lemma": "m/7704 b",
+   "morph": "HR/Ncmsc",
+   "id": "08gBW",
+   "cons": {
+    "n": 2,
+    "pair": 0,
+    "lemma": 2,
+    "morph": 0,
+    "top": [
+     "7704 | HR/Ncmpc",
+     2
+    ]
+   }
+  },
+  {
+   "vid": "Dan.2.40",
+   "mam": "אִלֵּ֖ן",
+   "morphhb": "אִלֵּ֖ין",
+   "lemma": "459",
+   "morph": "APdxbp",
+   "id": "27gLV",
+   "cons": {
+    "n": 1,
+    "pair": 0,
+    "lemma": 1,
+    "morph": 0,
+    "top": [
+     "459 | APdxmp",
+     1
+    ]
+   }
+  },
+  {
+   "vid": "Dan.3.24",
+   "mam": "תְּלָתָ֜ה",
+   "morphhb": "תְּלָתָ֜א",
+   "lemma": "8532",
+   "morph": "AAcmsa",
+   "id": "272xq",
+   "cons": {
+    "n": 3,
+    "pair": 0,
+    "lemma": 3,
+    "morph": 0,
+    "top": [
+     "8532 | AAcbsa",
+     2
+    ]
+   }
+  },
+  {
+   "vid": "Dan.6.3",
+   "mam": "תְּלָתָ֔ה",
+   "morphhb": "תְּלָתָ֔א",
+   "lemma": "8532",
+   "morph": "AAcmsa",
+   "id": "27jFT",
+   "cons": {
+    "n": 3,
+    "pair": 0,
+    "lemma": 3,
+    "morph": 0,
+    "top": [
+     "8532 | AAcbsa",
+     2
+    ]
+   }
+  },
+  {
+   "vid": "Dan.6.13",
+   "mam": "קְרִ֨בוּ",
+   "morphhb": "קְרִ֨יבוּ",
+   "lemma": "7127",
+   "morph": "AVQp3mp",
+   "id": "27gCC",
+   "cons": {
+    "n": 1,
+    "pair": 0,
+    "lemma": 1,
+    "morph": 0,
+    "top": [
+     "7127 | AVqp3mp",
+     1
+    ]
+   }
+  },
+  {
+   "vid": "Dan.7.19",
+   "mam": "בְּרַגְלַ֥הּ",
+   "morphhb": "בְּ/רַגְלַ֥י/הּ",
+   "lemma": "b/7271",
+   "morph": "AR/Ncfpc/Sp3fs",
+   "id": "27dWV",
+   "cons": {
+    "n": 1,
+    "pair": 0,
+    "lemma": 1,
+    "morph": 0,
+    "top": [
+     "7271 | AR/Ncfsc/Sp3fs",
+     1
+    ]
+   }
+  },
+  {
+   "vid": "Dan.7.23",
+   "mam": "רביעיה",
+   "morphhb": "רביעי/א",
+   "lemma": "7244",
+   "morph": "AAomsd/Td",
+   "id": "27Bfx",
+   "cons": {
+    "n": 2,
+    "pair": 0,
+    "lemma": 2,
+    "morph": 0,
+    "top": [
+     "7244 | AAobsd",
+     1
+    ]
+   }
+  },
+  {
+   "vid": "Neh.7.37",
+   "mam": "וְאֹנ֔וֹ",
+   "morphhb": "וְ/אוֹנ֔וֹ",
+   "lemma": "c/207",
+   "morph": "HC/Np",
+   "id": "16YE4",
+   "cons": {
+    "n": 1,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 0,
+    "top": [
+     "202 | HC/Ncmsc/Sp3ms",
+     1
+    ]
+   }
+  },
+  {
+   "vid": "Neh.10.33",
+   "mam": "שְׁלִישִׁ֥ית",
+   "morphhb": "שְׁלִשִׁ֥ית",
+   "lemma": "7992",
+   "morph": "HAofsc",
+   "id": "16Hag",
+   "cons": {
+    "n": 1,
+    "pair": 0,
+    "lemma": 1,
+    "morph": 0,
+    "top": [
+     "7992 | HNcfsc",
+     1
+    ]
+   }
+  },
+  {
+   "vid": "Neh.11.12",
+   "mam": "עֹשֵׂ֤ה",
+   "morphhb": "עֹשֵׂ֤י",
+   "lemma": "6213 a",
+   "morph": "HVqrmpc",
+   "id": "16SGP",
+   "cons": {
+    "n": 39,
+    "pair": 0,
+    "lemma": 39,
+    "morph": 0,
+    "top": [
+     "6213 | HVqrmsc",
+     39
+    ]
+   }
+  },
+  {
+   "vid": "Neh.11.17",
+   "mam": "מִ֠יכָ֠א",
+   "morphhb": "מִ֠יכָה",
+   "lemma": "4318",
+   "morph": "HNp",
+   "id": "16T7b",
+   "cons": {
+    "n": 4,
+    "pair": 0,
+    "lemma": 0,
+    "morph": 4,
+    "top": [
+     "4316 | HNp",
+     4
+    ]
+   }
+  },
+  {
+   "vid": "2Chr.6.42",
+   "mam": "מְשִׁיחֶ֑ךָ",
+   "morphhb": "מְשִׁיחֶ֑י/ךָ",
+   "lemma": "4899",
+   "morph": "HNcmpc/Sp2ms",
+   "id": "14qkk",
+   "cons": {
+    "n": 5,
+    "pair": 0,
+    "lemma": 5,
+    "morph": 0,
+    "top": [
+     "4899 | HNcmsc/Sp2ms",
+     5
+    ]
+   }
+  }
+ ],
+ "MAM ketiv or qere against a plain morphhb word": [
+  {
+   "vid": "Josh.10.24",
+   "on": "k",
+   "mam": "ההלכוא",
+   "class": "K",
+   "morphhb": "הֶ/הָלְכ֣וּא",
+   "lemma": "d/1980",
+   "morph": "HTd/Vqp3cp",
+   "id": "06zJe"
+  },
+  {
+   "vid": "Josh.10.24",
+   "on": "q",
+   "mam": "הֶהָלְכ֣וּ",
+   "class": "B",
+   "morphhb": "הֶ/הָלְכ֣וּא",
+   "lemma": "d/1980",
+   "morph": "HTd/Vqp3cp",
+   "id": "06zJe"
+  },
+  {
+   "vid": "Judg.19.21",
+   "on": "k",
+   "mam": "ויבול",
+   "class": "K",
+   "morphhb": "וַ/יָּ֖בָול",
+   "lemma": "c/1101 b",
+   "morph": "HC/Vqw3ms",
+   "id": "071Ro"
+  },
+  {
+   "vid": "Judg.19.21",
+   "on": "q",
+   "mam": "וַיָּ֖בׇל",
+   "class": "B",
+   "morphhb": "וַ/יָּ֖בָול",
+   "lemma": "c/1101 b",
+   "morph": "HC/Vqw3ms",
+   "id": "071Ro"
+  },
+  {
+   "vid": "2Sam.8.3",
+   "on": "k",
+   "mam": "בנהר",
+   "class": "K",
+   "morphhb": "בִּֽ/נְהַר",
+   "lemma": "b/5104",
+   "morph": "HR/Ncmsc",
+   "id": "10BJi"
+  },
+  {
+   "vid": "2Sam.13.33",
+   "on": "k",
+   "mam": "אם",
+   "class": "K",
+   "morphhb": "אִם",
+   "lemma": "518 b",
+   "morph": "HC",
+   "id": "10kX9"
+  },
+  {
+   "vid": "2Sam.15.21",
+   "on": "k",
+   "mam": "אם",
+   "class": "K",
+   "morphhb": "אִם",
+   "lemma": "518 b",
+   "morph": "HC",
+   "id": "105KS"
+  },
+  {
+   "vid": "Isa.58.14",
+   "on": "k",
+   "mam": "במותי",
+   "class": "K",
+   "morphhb": "בָּ֣מֳותֵי",
+   "lemma": "1116",
+   "morph": "HNcfpc",
+   "id": "23nK2"
+  },
+  {
+   "vid": "Isa.58.14",
+   "on": "q",
+   "mam": "בָּ֣מֳתֵי",
+   "class": "B",
+   "morphhb": "בָּ֣מֳותֵי",
+   "lemma": "1116",
+   "morph": "HNcfpc",
+   "id": "23nK2"
+  },
+  {
+   "vid": "Jer.27.20",
+   "on": "k",
+   "mam": "יכוניה",
+   "class": "K",
+   "morphhb": "יְכָונְיָ֨ה",
+   "lemma": "3204",
+   "morph": "HNp",
+   "id": "24AiD"
+  },
+  {
+   "vid": "Jer.27.20",
+   "on": "q",
+   "mam": "יְכׇנְיָ֨ה",
+   "class": "B",
+   "morphhb": "יְכָונְיָ֨ה",
+   "lemma": "3204",
+   "morph": "HNp",
+   "id": "24AiD"
+  },
+  {
+   "vid": "Ezek.43.15",
+   "on": "k",
+   "mam": "ומהאראיל",
+   "class": "K",
+   "morphhb": "וּ/מֵ/הָ/אֲרִאֵ֣יל",
+   "lemma": "c/m/d/741",
+   "morph": "HC/R/Td/Ncmsa",
+   "id": "26K3C"
+  },
+  {
+   "vid": "Ezek.43.15",
+   "on": "q",
+   "mam": "וּמֵהָאֲרִיאֵ֣ל",
+   "class": "B",
+   "morphhb": "וּ/מֵ/הָ/אֲרִאֵ֣יל",
+   "lemma": "c/m/d/741",
+   "morph": "HC/R/Td/Ncmsa",
+   "id": "26K3C"
+  },
+  {
+   "vid": "Ezek.44.3",
+   "on": "k",
+   "mam": "לאכול",
+   "class": "K",
+   "morphhb": "לֶ/אֱכָול",
+   "lemma": "l/398",
+   "morph": "HR/Vqc",
+   "id": "26G8d"
+  },
+  {
+   "vid": "Ezek.44.3",
+   "on": "q",
+   "mam": "לֶאֱכׇל",
+   "class": "B",
+   "morphhb": "לֶ/אֱכָול",
+   "lemma": "l/398",
+   "morph": "HR/Vqc",
+   "id": "26G8d"
+  },
+  {
+   "vid": "Hos.4.6",
+   "on": "k",
+   "mam": "ואמאסאך",
+   "class": "K",
+   "morphhb": "וְ/אֶמְאָֽסְא/ךָ֙",
+   "lemma": "c/3988 a",
+   "morph": "HC/Vqi1cs/Sp2ms",
+   "id": "28PYJ"
+  },
+  {
+   "vid": "Hos.4.6",
+   "on": "q",
+   "mam": "וְאֶמְאָֽסְךָ֙",
+   "class": "B",
+   "morphhb": "וְ/אֶמְאָֽסְא/ךָ֙",
+   "lemma": "c/3988 a",
+   "morph": "HC/Vqi1cs/Sp2ms",
+   "id": "28PYJ"
+  },
+  {
+   "vid": "Ps.123.4",
+   "on": "k",
+   "mam": "לגאיונים",
+   "class": "K",
+   "morphhb": "לִ/גְאֵ֥יוֹנִֽים",
+   "lemma": "l/1349",
+   "morph": "HR/Aampa",
+   "id": "192za"
+  },
+  {
+   "vid": "Prov.31.27",
+   "on": "k",
+   "mam": "הילכות",
+   "class": "B",
+   "morphhb": "הֲלִיכ֣וֹת",
+   "lemma": "1979",
+   "morph": "HNcfpc",
+   "id": "20te8"
+  },
+  {
+   "vid": "Esth.4.4",
+   "on": "k",
+   "mam": "ותבואינה",
+   "class": "K",
+   "morphhb": "וַ֠/תָּבוֹאינָה",
+   "lemma": "c/935",
+   "morph": "HC/Vqw3fp",
+   "id": "1776o"
+  },
+  {
+   "vid": "Esth.4.4",
+   "on": "q",
+   "mam": "וַ֠תָּב֠וֹאנָה",
+   "class": "B",
+   "morphhb": "וַ֠/תָּבוֹאינָה",
+   "lemma": "c/935",
+   "morph": "HC/Vqw3fp",
+   "id": "1776o"
+  },
+  {
+   "vid": "Dan.2.29",
+   "on": "k",
+   "mam": "אנתה",
+   "class": "K",
+   "morphhb": "אַ֣נְתְּה",
+   "lemma": "607",
+   "morph": "APp2ms",
+   "id": "27tZb"
+  },
+  {
+   "vid": "Dan.2.29",
+   "on": "q",
+   "mam": "אַ֣נְתְּ",
+   "class": "B",
+   "morphhb": "אַ֣נְתְּה",
+   "lemma": "607",
+   "morph": "APp2ms",
+   "id": "27tZb"
+  },
+  {
+   "vid": "Dan.2.31",
+   "on": "k",
+   "mam": "אנתה",
+   "class": "K",
+   "morphhb": "אַ֣נְתְּה",
+   "lemma": "607",
+   "morph": "APp2ms",
+   "id": "27B6g"
+  },
+  {
+   "vid": "Dan.2.31",
+   "on": "q",
+   "mam": "אַ֣נְתְּ",
+   "class": "B",
+   "morphhb": "אַ֣נְתְּה",
+   "lemma": "607",
+   "morph": "APp2ms",
+   "id": "27B6g"
+  },
+  {
+   "vid": "Dan.2.37",
+   "on": "k",
+   "mam": "אנתה",
+   "class": "K",
+   "morphhb": "אַ֣נְתְּה",
+   "lemma": "607",
+   "morph": "APp2ms",
+   "id": "27bea"
+  },
+  {
+   "vid": "Dan.2.37",
+   "on": "q",
+   "mam": "אַ֣נְתְּ",
+   "class": "B",
+   "morphhb": "אַ֣נְתְּה",
+   "lemma": "607",
+   "morph": "APp2ms",
+   "id": "27bea"
+  },
+  {
+   "vid": "Dan.2.38",
+   "on": "k",
+   "mam": "אנתה",
+   "class": "K",
+   "morphhb": "אַנְתְּה",
+   "lemma": "607",
+   "morph": "APp2ms",
+   "id": "27gjk"
+  },
+  {
+   "vid": "Dan.2.38",
+   "on": "q",
+   "mam": "אַ֨נְתְּ",
+   "class": "B",
+   "morphhb": "אַנְתְּה",
+   "lemma": "607",
+   "morph": "APp2ms",
+   "id": "27gjk"
+  },
+  {
+   "vid": "Dan.4.19",
+   "on": "k",
+   "mam": "רבית",
+   "class": "K",
+   "morphhb": "רְבַ֖ית",
+   "lemma": "7236",
+   "morph": "AVqp2ms",
+   "id": "27vhV"
+  },
+  {
+   "vid": "Dan.4.19",
+   "on": "q",
+   "mam": "רְבַ֖ת",
+   "class": "B",
+   "morphhb": "רְבַ֖ית",
+   "lemma": "7236",
+   "morph": "AVqp2ms",
+   "id": "27vhV"
+  },
+  {
+   "vid": "Dan.4.22",
+   "on": "k",
+   "mam": "עליך",
+   "class": "K",
+   "morphhb": "עֲלָ֑/יךְ",
+   "lemma": "5922",
+   "morph": "AR/Sp2ms",
+   "id": "27YMF"
+  },
+  {
+   "vid": "Dan.4.22",
+   "on": "k",
+   "mam": "עליא",
+   "class": "K",
+   "morphhb": "עִלָּיָ/א֙",
+   "lemma": "5943",
+   "morph": "AAamsd/Td",
+   "id": "273zy"
+  },
+  {
+   "vid": "Dan.4.22",
+   "on": "q",
+   "mam": "עֲלָ֑ךְ",
+   "class": "B",
+   "morphhb": "עֲלָ֑/יךְ",
+   "lemma": "5922",
+   "morph": "AR/Sp2ms",
+   "id": "27YMF"
+  },
+  {
+   "vid": "Dan.4.22",
+   "on": "q",
+   "mam": "עִלָּאָה֙",
+   "class": "B",
+   "morphhb": "עִלָּיָ/א֙",
+   "lemma": "5943",
+   "morph": "AAamsd/Td",
+   "id": "273zy"
+  },
+  {
+   "vid": "Dan.4.29",
+   "on": "k",
+   "mam": "עליא",
+   "class": "K",
+   "morphhb": "עִלָּיָ/א֙",
+   "lemma": "5943",
+   "morph": "AAamsd/Td",
+   "id": "27VtE"
+  },
+  {
+   "vid": "Dan.4.29",
+   "on": "q",
+   "mam": "עִלָּאָה֙",
+   "class": "B",
+   "morphhb": "עִלָּיָ/א֙",
+   "lemma": "5943",
+   "morph": "AAamsd/Td",
+   "id": "27VtE"
+  },
+  {
+   "vid": "Dan.5.10",
+   "on": "k",
+   "mam": "וזיויך",
+   "class": "K",
+   "morphhb": "וְ/זִיוָ֖י/ךְ",
+   "lemma": "c/2122",
+   "morph": "AC/Ncmpc/Sp2ms",
+   "id": "27TjC"
+  },
+  {
+   "vid": "Dan.5.10",
+   "on": "q",
+   "mam": "וְזִיוָ֖ךְ",
+   "class": "B",
+   "morphhb": "וְ/זִיוָ֖י/ךְ",
+   "lemma": "c/2122",
+   "morph": "AC/Ncmpc/Sp2ms",
+   "id": "27TjC"
+  },
+  {
+   "vid": "Dan.6.1",
+   "on": "k",
+   "mam": "מדיא",
+   "class": "K",
+   "morphhb": "מָֽדָיָ֔/א",
+   "lemma": "4077",
+   "morph": "ANgmsd/Td",
+   "id": "27kAt"
+  },
+  {
+   "vid": "Dan.6.1",
+   "on": "q",
+   "mam": "מָֽדָאָ֔ה",
+   "class": "B",
+   "morphhb": "מָֽדָיָ֔/א",
+   "lemma": "4077",
+   "morph": "ANgmsd/Td",
+   "id": "27kAt"
+  },
+  {
+   "vid": "Dan.7.4",
+   "on": "k",
+   "mam": "גפיה",
+   "class": "K",
+   "morphhb": "גַפַּ֜י/הּ",
+   "lemma": "1611",
+   "morph": "ANcbpc/Sp3fs",
+   "id": "27G3x"
+  },
+  {
+   "vid": "Dan.7.4",
+   "on": "q",
+   "mam": "גַפַּ֜הּ",
+   "class": "B",
+   "morphhb": "גַפַּ֜י/הּ",
+   "lemma": "1611",
+   "morph": "ANcbpc/Sp3fs",
+   "id": "27G3x"
+  },
+  {
+   "vid": "Dan.7.7",
+   "on": "k",
+   "mam": "קדמיה",
+   "class": "K",
+   "morphhb": "קָֽדָמַ֔י/הּ",
+   "lemma": "6925",
+   "morph": "ANcfsd/Td",
+   "id": "27x3P"
+  },
+  {
+   "vid": "Dan.7.7",
+   "on": "q",
+   "mam": "קׇֽדָמַ֔הּ",
+   "class": "B",
+   "morphhb": "קָֽדָמַ֔י/הּ",
+   "lemma": "6925",
+   "morph": "ANcfsd/Td",
+   "id": "27x3P"
+  },
+  {
+   "vid": "Dan.7.19",
+   "on": "k",
+   "mam": "וטפריה",
+   "class": "K",
+   "morphhb": "וְ/טִפְרַ֣י/הּ",
+   "lemma": "c/2953",
+   "morph": "AC/Ncfpc/Sp3fs",
+   "id": "27pej"
+  },
+  {
+   "vid": "Dan.7.19",
+   "on": "k",
+   "mam": "ברגליה",
+   "class": "K",
+   "morphhb": "בְּ/רַגְלַ֥י/הּ",
+   "lemma": "b/7271",
+   "morph": "AR/Ncfpc/Sp3fs",
+   "id": "27dWV"
+  },
+  {
+   "vid": "Dan.7.19",
+   "on": "q",
+   "mam": "וְטִפְרַ֣הּ",
+   "class": "B",
+   "morphhb": "וְ/טִפְרַ֣י/הּ",
+   "lemma": "c/2953",
+   "morph": "AC/Ncfpc/Sp3fs",
+   "id": "27pej"
+  },
+  {
+   "vid": "Dan.7.19",
+   "on": "q",
+   "mam": "בְּרַגְלַ֥הּ",
+   "class": "B",
+   "morphhb": "בְּ/רַגְלַ֥י/הּ",
+   "lemma": "b/7271",
+   "morph": "AR/Ncfpc/Sp3fs",
+   "id": "27dWV"
+  },
+  {
+   "vid": "Ezra.4.11",
+   "on": "k",
+   "mam": "עבדיך",
+   "class": "K",
+   "morphhb": "עַבְדָ֛י/ךְ",
+   "lemma": "5649",
+   "morph": "ANcmpc/Sp2ms",
+   "id": "15nF8"
+  },
+  {
+   "vid": "Ezra.4.11",
+   "on": "q",
+   "mam": "עַבְדָ֛ךְ",
+   "class": "B",
+   "morphhb": "עַבְדָ֛י/ךְ",
+   "lemma": "5649",
+   "morph": "ANcmpc/Sp2ms",
+   "id": "15nF8"
+  },
+  {
+   "vid": "2Chr.35.4",
+   "on": "k",
+   "mam": "והכונו",
+   "class": "K",
+   "morphhb": "וְ/הָכִ֥ונוּ",
+   "lemma": "c/3559 a",
+   "morph": "HC/Vhv2mp",
+   "id": "14ALK"
+  },
+  {
+   "vid": "2Chr.35.4",
+   "on": "q",
+   "mam": "וְהָכִ֥ינוּ",
+   "class": "B",
+   "morphhb": "וְ/הָכִ֥ונוּ",
+   "lemma": "c/3559 a",
+   "morph": "HC/Vhv2mp",
+   "id": "14ALK"
+  },
+  {
+   "vid": "2Chr.36.14",
+   "on": "k",
+   "mam": "למעול",
+   "class": "K",
+   "morphhb": "לִ/מְעָול",
+   "lemma": "l/4603",
+   "morph": "HR/Vqc",
+   "id": "14tto"
+  },
+  {
+   "vid": "2Chr.36.14",
+   "on": "q",
+   "mam": "לִמְעׇל",
+   "class": "B",
+   "morphhb": "לִ/מְעָול",
+   "lemma": "l/4603",
+   "morph": "HR/Vqc",
+   "id": "14tto"
+  }
+ ],
+ "stress differs": [
+  {
+   "vid": "Gen.32.17",
+   "mam": "וַיֹּ֤אמֶר",
+   "morphhb": "וַ֤/יֹּאמֶר",
+   "lemma": "c/559",
+   "morph": "HC/Vqw3ms",
+   "id": "01X7q"
+  },
+  {
+   "vid": "Gen.41.12",
+   "mam": "וַ֨נְּסַפֶּר",
+   "morphhb": "וַ/נְּ֨סַפֶּר",
+   "lemma": "c/5608 a",
+   "morph": "HC/Vpw1cp",
+   "id": "01kct"
+  },
+  {
+   "vid": "Gen.44.16",
+   "mam": "הִנֶּ֤נּוּ",
+   "morphhb": "הִנֶּ/נּ֤וּ",
+   "lemma": "2005",
+   "morph": "HTm/Sp1cp",
+   "id": "0176M"
+  },
+  {
+   "vid": "Deut.16.3",
+   "mam": "תִּזְכֹּ֗ר",
+   "morphhb": "תִּזְכֹּר֔",
+   "lemma": "2142",
+   "morph": "HVqi2ms",
+   "id": "05o7T"
+  },
+  {
+   "vid": "Josh.2.23",
+   "mam": "וַ֨יְסַפְּרוּ",
+   "morphhb": "וַ/יְסַ֨פְּרוּ",
+   "lemma": "c/5608 a",
+   "morph": "HC/Vpw3mp",
+   "id": "06sQy"
+  },
+  {
+   "vid": "Josh.19.8",
+   "mam": "בַּ֥עֲלַת",
+   "morphhb": "בַּֽעֲלַ֥ת",
+   "lemma": "1192+",
+   "morph": "HNp",
+   "id": "06CvE"
+  },
+  {
+   "vid": "Josh.21.23",
+   "mam": "וּמִ֨מַּטֵּה",
+   "morphhb": "וּ/מִ/מַּ֨טֵּה",
+   "lemma": "c/m/4294",
+   "morph": "HC/R/Ncmsc",
+   "id": "06NXR"
+  },
+  {
+   "vid": "Judg.7.20",
+   "mam": "וּ֨בְיַד",
+   "morphhb": "וּ/בְ/יַ֨ד",
+   "lemma": "c/b/3027",
+   "morph": "HC/R/Ncbsc",
+   "id": "07FHp"
+  },
+  {
+   "vid": "Judg.10.11",
+   "mam": "וַיֹּ֥אמֶר",
+   "morphhb": "וַ֥/יֹּאמֶר",
+   "lemma": "c/559",
+   "morph": "HC/Vqw3ms",
+   "id": "07Zue"
+  },
+  {
+   "vid": "1Sam.11.5",
+   "mam": "וַ֨יְסַפְּרוּ",
+   "morphhb": "וַ/יְסַ֨פְּרוּ",
+   "lemma": "c/5608 a",
+   "morph": "HC/Vpw3mp",
+   "id": "09Q6Z"
+  },
+  {
+   "vid": "1Kgs.20.28",
+   "mam": "הַגָּד֤וֹל",
+   "morphhb": "הַ/גָּ֤דוֹל",
+   "lemma": "d/1419 a",
+   "morph": "HTd/Aamsa",
+   "id": "11ATR"
+  },
+  {
+   "vid": "2Kgs.4.29",
+   "mam": "תַעֲנֶ֑נּוּ",
+   "morphhb": "תַעֲנֶ/נּ֑וּ",
+   "lemma": "6030 b",
+   "morph": "HVqi2ms/Sp1cp",
+   "id": "12oQV"
+  },
+  {
+   "vid": "2Kgs.22.1",
+   "mam": "עֲדָיָ֖ה",
+   "morphhb": "עֲדָ֖יָה",
+   "lemma": "5718",
+   "morph": "HNp",
+   "id": "12BC3"
+  },
+  {
+   "vid": "Isa.25.10",
+   "mam": "וְנָד֤וֹשׁ",
+   "morphhb": "וְ/נָ֤דוֹשׁ",
+   "lemma": "c/1758",
+   "morph": "HC/VNq3ms",
+   "id": "23BRP"
+  },
+  {
+   "vid": "Isa.47.8",
+   "mam": "בִּלְבָבָ֔הּ",
+   "morphhb": "בִּ/לְבָ֔בָ/הּ",
+   "lemma": "b/3824",
+   "morph": "HR/Ncmsc/Sp3fs",
+   "id": "23pnG"
+  },
+  {
+   "vid": "Jer.17.6",
+   "mam": "יָ֣בוֹא",
+   "morphhb": "יָב֣וֹא",
+   "lemma": "935",
+   "morph": "HVqi3ms",
+   "id": "24coZ"
+  },
+  {
+   "vid": "Jer.17.8",
+   "mam": "יָ֣בֹא",
+   "morphhb": "יָבֹ֣א",
+   "lemma": "935",
+   "morph": "HVqi3ms",
+   "id": "24SnR"
+  },
+  {
+   "vid": "Jer.37.16",
+   "mam": "הַחֲנֻי֑וֹת",
+   "morphhb": "הַֽ/חֲנֻ֑יוֹת",
+   "lemma": "d/2588",
+   "morph": "HTd/Ncfpa",
+   "id": "24t7n"
+  },
+  {
+   "vid": "Jer.42.8",
+   "mam": "וּ֨לְכׇל",
+   "morphhb": "וּ/לְ/כָ֨ל",
+   "lemma": "c/l/3605",
+   "morph": "HC/R/Ncmsc",
+   "id": "243Ra"
+  },
+  {
+   "vid": "Ezek.13.19",
+   "mam": "וַתְּחַלֶּ֨לְנָה",
+   "morphhb": "וַ/תְּחַלֶּלְ֨נָה",
+   "lemma": "c/2490 c",
+   "morph": "HC/Vpw2fp",
+   "id": "26LXv"
+  },
+  {
+   "vid": "Ezek.16.12",
+   "mam": "וָ֥אֶתֵּֽן",
+   "morphhb": "וָ/אֶתֵּ֥ן",
+   "lemma": "c/5414",
+   "morph": "HC/Vqw1cs",
+   "id": "26yFv"
+  },
+  {
+   "vid": "Ezek.21.15",
+   "mam": "בָּרָ֖ק",
+   "morphhb": "בָּ֖רָק",
+   "lemma": "1300 b",
+   "morph": "HNcmsa",
+   "id": "26q5L"
+  },
+  {
+   "vid": "Ezek.23.40",
+   "mam": "וְעָדִ֥ית",
+   "morphhb": "וְ/עָ֥דִית",
+   "lemma": "c/5710 b",
+   "morph": "HC/Vqp2fs",
+   "id": "26aWZ"
+  },
+  {
+   "vid": "Ezek.27.6",
+   "mam": "מִבָּשָׁ֔ן",
+   "morphhb": "מִ/בָּ֔שָׁן",
+   "lemma": "m/1316",
+   "morph": "HR/Np",
+   "id": "26iUb"
+  },
+  {
+   "vid": "Hos.13.14",
+   "mam": "דְבָרֶ֜יךָ",
+   "morphhb": "דְבָרֶי/ךָ֜",
+   "lemma": "1698",
+   "morph": "HNcmpc/Sp2ms",
+   "id": "28t5T"
+  },
+  {
+   "vid": "Zech.2.4",
+   "mam": "זֵר֣וּ",
+   "morphhb": "זֵ֣רוּ",
+   "lemma": "2219",
+   "morph": "HVpp3cp",
+   "id": "38YxK"
+  },
+  {
+   "vid": "Zech.8.14",
+   "mam": "זָמַ֜מְתִּי",
+   "morphhb": "זָמַמְ֜תִּי",
+   "lemma": "2161",
+   "morph": "HVqp1cs",
+   "id": "38ojQ"
+  },
+  {
+   "vid": "Ps.7.6",
+   "mam": "יִ֥רַדֹּֽף",
+   "morphhb": "יִֽרַדֹּ֥ף",
+   "lemma": "7291",
+   "morph": "HVqi3ms",
+   "id": "19nzj"
+  },
+  {
+   "vid": "Ps.17.14",
+   "mam": "מִ֥מְתִֽים",
+   "morphhb": "מִֽ/מְתִ֥ים",
+   "lemma": "m/4962",
+   "morph": "HR/Ncmpa",
+   "id": "19Bi2"
+  },
+  {
+   "vid": "Ps.19.15",
+   "mam": "יִ֥הְיֽוּ",
+   "morphhb": "יִֽהְי֥וּ",
+   "lemma": "1961",
+   "morph": "HVqi3mp",
+   "id": "19xfx"
+  },
+  {
+   "vid": "Ps.39.13",
+   "mam": "שִׁ֥מְעָֽה",
+   "morphhb": "שִֽׁמְעָ֥/ה",
+   "lemma": "8085",
+   "morph": "HVqv2ms/Sh",
+   "id": "19gFP"
+  },
+  {
+   "vid": "Ps.44.9",
+   "mam": "הִלַּ֣לְנוּ",
+   "morphhb": "הִלַּלְ֣נוּ",
+   "lemma": "1984 b",
+   "morph": "HVpp1cp",
+   "id": "19ApD"
+  },
+  {
+   "vid": "Ps.65.10",
+   "mam": "פָּ֤קַֽדְתָּ",
+   "morphhb": "פָּקַ֥דְתָּ",
+   "lemma": "6485 a",
+   "morph": "HVqp2ms",
+   "id": "1922d"
+  },
+  {
+   "vid": "Ps.70.6",
+   "mam": "ח֫וּשָׁה",
+   "morphhb": "חֽוּשָׁ֫/ה",
+   "lemma": "2363 a",
+   "morph": "HVqv2ms/Sh",
+   "id": "19kUz"
+  },
+  {
+   "vid": "Ps.77.4",
+   "mam": "וְאֶהֱמָ֑יָה",
+   "morphhb": "וְ/אֶֽהֱמָיָ֑ה",
+   "lemma": "c/1993",
+   "morph": "HC/Vqh1cs",
+   "id": "19T19"
+  },
+  {
+   "vid": "Ps.78.30",
+   "mam": "זָ֥רוּ",
+   "morphhb": "זָר֥וּ",
+   "lemma": "2114 a",
+   "morph": "HVqp3cp",
+   "id": "19poM"
+  },
+  {
+   "vid": "Ps.81.6",
+   "mam": "עֵד֤וּת",
+   "morphhb": "עֵ֤דוּת",
+   "lemma": "5715",
+   "morph": "HNcfsa",
+   "id": "19M8j"
+  },
+  {
+   "vid": "Ps.89.20",
+   "mam": "בְחָז֡וֹן",
+   "morphhb": "בְ/חָ֡זוֹן",
+   "lemma": "b/2377",
+   "morph": "HR/Ncmsa",
+   "id": "19nAm"
+  },
+  {
+   "vid": "Ps.106.48",
+   "mam": "בָּ֤רֽוּךְ",
+   "morphhb": "בָּר֤וּךְ",
+   "lemma": "1288",
+   "morph": "HVqsmsa",
+   "id": "19BMG"
+  },
+  {
+   "vid": "Prov.5.19",
+   "mam": "וְֽיַ֫עֲלַת",
+   "morphhb": "וְֽ/יַעֲלַ֫ת",
+   "lemma": "c/3280",
+   "morph": "HC/Ncfsc",
+   "id": "20KTp"
+  },
+  {
+   "vid": "Job.42.10",
+   "mam": "וַיֹּ֧סֶף",
+   "morphhb": "וַ֧/יֹּסֶף",
+   "lemma": "c/3254",
+   "morph": "HC/Vhw3ms",
+   "id": "18Sc6"
+  },
+  {
+   "vid": "Esth.1.5",
+   "mam": "לְמִגָּד֧וֹל",
+   "morphhb": "לְ/מִ/גָּ֧דוֹל",
+   "lemma": "l/m/1419 a",
+   "morph": "HR/R/Aamsa",
+   "id": "17bmv"
+  },
+  {
+   "vid": "Esth.9.4",
+   "mam": "גָד֤וֹל",
+   "morphhb": "גָ֤דוֹל",
+   "lemma": "1419 a",
+   "morph": "HAamsa",
+   "id": "17cDe"
+  },
+  {
+   "vid": "Ezra.4.3",
+   "mam": "לָכֶ֣ם",
+   "morphhb": "לָ֣/כֶם",
+   "lemma": "l",
+   "morph": "HR/Sp2mp",
+   "id": "15PTT"
+  },
+  {
+   "vid": "Neh.5.14",
+   "mam": "הַפֶּחָ֖ה",
+   "morphhb": "הַ/פֶּ֖חָה",
+   "lemma": "d/6346",
+   "morph": "HTd/Ncmsa",
+   "id": "16L7X"
+  },
+  {
+   "vid": "1Chr.6.39",
+   "mam": "לְמִשְׁפַּ֣חַת",
+   "morphhb": "לְ/מִשְׁפַּחַ֣ת",
+   "lemma": "l/4940",
+   "morph": "HR/Ncfsc",
+   "id": "136gk"
+  },
+  {
+   "vid": "1Chr.28.5",
+   "mam": "וּמִ֨כׇּל",
+   "morphhb": "וּ/מִ/כָּ֨ל",
+   "lemma": "c/m/3605",
+   "morph": "HC/R/Ncmsc",
+   "id": "13pf3"
+  },
+  {
+   "vid": "2Chr.8.11",
+   "mam": "בָּ֥אָֽה",
+   "morphhb": "בָּֽאָ֥ה",
+   "lemma": "935",
+   "morph": "HVqp3fs",
+   "id": "143Gd"
+  }
+ ]
+}

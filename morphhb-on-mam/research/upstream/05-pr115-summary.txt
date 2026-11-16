@@ -1,0 +1,38 @@
+PR #115 'Add automated data validation for pull requests' by jag3773 (MEMBER)
+  state = closed
+  created_at = 2026-11-11T02:21:08Z
+  updated_at = 2026-11-14T12:36:42Z
+  closed_at = 2026-11-14T12:36:33Z
+  merged_at = 2026-11-14T12:36:33Z
+  merged = True
+  merge_commit_sha = db6c5c9b46b8f39346f10915ddb1a70dcd429901
+  commits = 2
+  additions = 393
+  deletions = 0
+  changed_files = 7
+  comments = 2
+  review_comments = 0
+  merged_by = jag3773
+  head = openscriptures:ci/validate-data 22484c0efeb54b380469e6adf36a37c61cc7bebd
+  base = openscriptures:master d4265dfa93b78d82765a557e12d965528c17c1a9
+  requested_reviewers = []
+  labels = []
+timeline: 8 events
+  2026-11-11T02:20:50Z committed by Jesse Griffin sha=6623bd0a msg='Add automated data validation for pull requests'
+  2026-11-11T02:21:42Z cross-referenced by jag3773 from=https://api.github.com/repos/openscriptures/morphhb#116 'Plan: update the website and release OSHB 2.3 (comments welcome until 15 December 2026)'
+  2026-11-11T03:08:34Z commented by jag3773 state=None body='Review of `6623bd0a18d98accf74e7e5a8897d4a850f37ad6` against `d4265dfa93b78d82765a557e12d965528c17c1a9`.  **Recommendation: address the six P2 correctness findi'
+  2026-11-11T03:13:51Z committed by Jesse Griffin sha=22484c0e msg='Close gaps in the data validator found in review'
+  2026-11-11T03:14:14Z commented by jag3773 state=None body='*Prepared by Claude (an AI assistant) working at my direction.*  All six findings are addressed in 22484c0. Each was reproduced first against 6623bd0 by mutatin'
+  2026-11-14T12:36:33Z merged by jag3773 commit=db6c5c9b
+  2026-11-14T12:36:33Z closed by jag3773 commit=None
+  2026-11-14T12:36:42Z head_ref_deleted by jag3773
+--- C:/Users/BenDe/GitRepos/MAM-basics/.novc/morphhb-on-mam-2026-11-15/research/upstream/fetched/pr115-2.json: 0
+--- C:/Users/BenDe/GitRepos/MAM-basics/.novc/morphhb-on-mam-2026-11-15/research/upstream/fetched/pr115-3.json: 0
+--- C:/Users/BenDe/GitRepos/MAM-basics/.novc/morphhb-on-mam-2026-11-15/research/upstream/fetched/pr115-6.json: 7
+  file .github/scripts/validate_data.py added +357 -0
+  file .github/workflows/validate.yml added +31 -0
+  file .gitignore modified +5 -0
+  file HomeFiles/Thumbs.db removed +0 -0
+  file OSHB Graphics/Thumbs.db removed +0 -0
+  file read/Image/Thumbs.db removed +0 -0
+  file structure/OshbVerse/Image/Thumbs.db removed +0 -0

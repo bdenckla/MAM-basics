@@ -1,0 +1,13 @@
+('1Kings', 7, 37): downloads=[('c486ccad', 'alternative')] change_log=template-change
+('2Chronicles', 13, 19): downloads=[('3c58d087', 'kq-structure')] change_log=template-change
+('2Kings', 20, 13): downloads=[('b5b15c01', 'kq-structure')] change_log=template-change
+('2Kings', 22, 1): downloads=[('97c4aff5', 'pointing')] change_log=vowel-change
+('2Samuel', 18, 3): downloads=[('b5b15c01', 'meteg')] change_log=meteg-addition
+('2Samuel', 20, 23): downloads=[('3c58d087', 'kq-structure')] change_log=template-change
+('Deuter', 15, 22): downloads=[('e6688e4d', 'pointing')] change_log=varika
+('Deuter', 32, 10): downloads=[('e6688e4d', 'pointing')] change_log=varika
+('Ezekiel', 39, 25): downloads=[('3c58d087', 'kq-structure')] change_log=template-change
+('Jeremiah', 48, 21): downloads=[('3c58d087', 'kq-structure')] change_log=template-change
+('Job', 4, 12): downloads=[('c486ccad', 'alternative')] change_log=template-change
+('Judges', 19, 23): downloads=[('97c4aff5', 'accents')] change_log=accent-addition
+found 12, logged 12, both 12

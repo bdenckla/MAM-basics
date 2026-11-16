@@ -1,0 +1,34 @@
+opened in window:
+   ('bdenckla', 'CONTRIBUTOR', 'PR') 2
+   ('brando130', 'NONE', 'issue') 1
+   ('cjwatson', 'NONE', 'issue') 1
+   ('franz-rosenzweig', 'NONE', 'issue') 1
+   ('gloiiire', 'NONE', 'issue') 1
+   ('jag3773', 'MEMBER', 'PR') 1
+   ('jag3773', 'MEMBER', 'issue') 1
+   ('jld9700', 'NONE', 'issue') 1
+   ('noamraph', 'CONTRIBUTOR', 'PR') 1
+   ('osjc', 'NONE', 'PR') 1
+   ('rockclaver', 'CONTRIBUTOR', 'PR') 1
+   ('skosonen', 'NONE', 'issue') 2
+comments in window (2026-11-13 pages only):
+   ('0-Actual', 'NONE') 6
+   ('bdenckla', 'CONTRIBUTOR') 2
+   ('cjwatson', 'NONE') 1
+   ('gloiiire', 'NONE') 1
+   ('jag3773', 'MEMBER') 8
+   ('osjc', 'NONE') 1
+closed or merged in window:
+   #108 PR closed 2026-11-11T02:19:30Z merged 2026-11-11T02:19:30Z closed_by jag3773 'Fix the structure of Ps.93.4, by treating the Azla Legarmeh in the first word as a SHALISH'
+   #109 issue closed 2026-11-11T02:20:02Z merged None closed_by jag3773 'Zarka vs. tsinnorit in Exodus 36:2'
+   #110 PR closed 2026-11-11T02:19:34Z merged 2026-11-11T02:19:34Z closed_by jag3773 'Implicit Articles and Syntax Trees'
+   #111 PR closed 2026-08-09T04:31:19Z merged None closed_by osjc 'Clean up unnecessary proprietary data made by Windows'
+   #114 PR closed 2026-11-11T02:19:38Z merged 2026-11-11T02:19:38Z closed_by jag3773 'Update MAPM to the current Miqra according to the Masorah'
+   #115 PR closed 2026-11-14T12:36:33Z merged 2026-11-14T12:36:33Z closed_by jag3773 'Add automated data validation for pull requests'
+last comment ever, for people with a MEMBER comment or a merge:
+   AndyHubert: 2022-06-21T12:56:15Z
+   DavidTroidl: 2022-06-27T14:53:50Z
+   dowens76: 2019-11-14T03:38:31Z
+   jag3773: 2026-11-11T03:14:14Z
+   jdejoode: 2024-08-27T13:23:20Z
+   scruffian: 2020-01-14T23:47:51Z

@@ -1,0 +1,61 @@
+analyze2.py on 10-atoms.jsonl; written by Claude (Opus 5.5), 2026-11-15; not reviewed by a human
+
+== 1. A2 'holam in MAM only': {'Tetragrammaton, bare': 5655, 'Tetragrammaton with a prefix': 808, 'other': 2}
+   non-Tetragrammaton examples in 23-lists.json 'holam other' (2 in all)
+
+== 2. A1 atoms whose strict marks differ (the vowel key folds qamats qatan into qamats and holam haser into holam)
+     7389  qamats->qamats-qatan
+       52  qamats qatan where morphhb's morph part is a perfect or participle
+  qamats qatan in MAM, qamats in morphhb, by the morph part of the piece holding it:
+    Nc       5691
+    Vqw       429
+    Np        381
+    Vqc       355
+    Vqv       146
+    Vqi        86
+    Aa         79
+    R          43
+    VHp        34
+    VHs        28
+    C          27
+    D          19
+    Vqj        16
+    VHi        13
+    Ng         12
+    VPs         7
+    Ac          5
+    VPp         5
+    VHa         4
+    Vup         4
+    Vqp         3
+    VHc         2
+    Vpi         2
+    VHv         2
+    Vqq         1
+    VHq         1
+    VLp         1
+    VLi         1
+    Vjp         1
+    Vmr         1
+    Vqr         1
+    Vqh         1
+
+== 3. The 2026-11-13 study's nine corrections, by morphhb id
+  Gen.39.19 ['01oc4'] class A2; cons {'n': 358, 'pair': 358, 'lemma': 358, 'morph': 358, 'top': ['6213 | HVqp3ms', 358]}
+  Exod.10.28 ['02ubY'] class A2; cons {'n': 583, 'pair': 572, 'lemma': 572, 'morph': 579, 'top': ['408 | HTn', 572]}
+  Lev.4.35 ['03caE'] class A2; cons {'n': 1, 'pair': 1, 'lemma': 1, 'morph': 1, 'top': ['2459 | HNcmsc/Sp3fs', 1]}
+  Deut.2.9 ['057a3'] class A2; cons {'n': 583, 'pair': 0, 'lemma': 572, 'morph': 0, 'top': ['408 | HTn', 572]}
+  Deut.22.29 ['05ENP'] class A2; cons {'n': 0, 'pair': 0, 'lemma': 0, 'morph': 0, 'top': None}
+  Josh.22.19 ['06Umo'] class A2; cons {'n': 583, 'pair': 0, 'lemma': 572, 'morph': 0, 'top': ['408 | HTn', 572]}
+  Judg.19.23 ['07HwX'] class A2; cons {'n': 3542, 'pair': 0, 'lemma': 3539, 'morph': 1, 'top': ['413 | HR', 3539]}
+  Jer.47.6 ['242CG'] class A2; cons {'n': 3542, 'pair': 0, 'lemma': 3539, 'morph': 1, 'top': ['413 | HR', 3539]}
+  Hos.13.15 ['28sYk'] class B; cons {'n': 168, 'pair': 0, 'lemma': 167, 'morph': 0, 'top': ['996 | HR', 167]}
+
+== 4. Lists in 23-lists.json: {'holam other': 2, 'qatan with a perfect or participle morph': 40, 'A2 contradicted': 23, 'B contradicted': 36, 'MAM ketiv or qere against a plain morphhb word': 55}
+   MAM ketiv/qere against a plain morphhb word: 55 atoms in 28 verses
+
+== 5. A1 pairs whose stress accents sit on different letters (each form has exactly one such letter)
+  same                                      198743
+  not comparable (none or several)           98028
+  differ                                        48
+  differ, morph has a verb                      26
