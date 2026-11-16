@@ -24,9 +24,10 @@ tracked, and on Ben's word the bot then created Zephaniah's 3 base chapters and 
 pages of those five books and of Zephaniah (execution ledger, “Round 1 of Ben's decisions of
 2026-11-16”). Avi answered Ben's email that afternoon (Deferred, “Avi's answers to Ben's email
 of 2026-11-16”), and in round 2, another fresh session, the bot created Daniel's 12 base
-chapters on Ben's word of round 1 (execution ledger, “Round 2, after Avi's answers”). Judges and
-Malachi, whose corrected files reached the folder that afternoon, are round 2's next step. The
-execution ledger below records each finished stage.
+chapters on Ben's word of round 1 (execution ledger, “Round 2, after Avi's answers”). The
+converter now reads Avi's corrected files of Judges and Malachi, saved again with other style
+names, and their text is tracked; their base chapters wait on Ben's word. The execution ledger
+below records each finished stage.
 
 Written 2026-11-02 by Claude (Opus 5.5) in the Phase 1 session that the session "Commander for
 Claude's forests" started for Avi's email "Mikra Mevo'ar at Wikisource". The quoted decisions are
@@ -143,7 +144,9 @@ approved by Ben's word in entry 3.
     20:13 that is read but not written, as it keeps a ketiv and its qere both. Every other
     saving run, the display pages' included, still needs Ben's word for that run. Active:
     round 1 carried out items 1, 2, 3 and 5 and the projection (execution ledger, “Round 1 of
-    Ben's decisions of 2026-11-16”), and item 4 waits on Avi's corrected files.
+    Ben's decisions of 2026-11-16”), and for item 4 round 2 tracks the text of Avi's
+    corrected files, whose base chapters wait on Ben's word (execution ledger, “Round 2,
+    after Avi's answers”).
 
 Deferred, each until its own decision:
 
@@ -892,6 +895,46 @@ byte-for-byte copy of that frozen plan; this ledger and the State line are the e
     first launch of the save, at 15:25, ran nothing: the folder of its log did not exist, so
     PowerShell refused the redirection before it started the launcher, and no run directory
     was made.
+  - **Judges' and Malachi's corrected files** hold Avi's two corrections: Judges 6:23's verse
+    cell has the numeral kaf gimel, and Malachi 2:16's chapter cell is empty. A comparison
+    with round 1's copies through the converter's table reader found every other cell's text
+    the same, but for whitespace gone from the ends of five Bible cells, a paraphrase cell
+    and a heading, which the converter trims in any case
+    (`.novc/miqra-mevoar-round-2-2026-11-16/survey-texts-and-styles.txt`). Judges' pictures
+    are still in the paraphrase cells of 8:7 and 9:14. But the files were saved again with
+    other style names: the styles named "heading 2" and "heading 4", with the ids "2" and
+    "4", are now named "Heading 2" and "Heading 4", with the ids "Heading2" and "Heading4",
+    and every paragraph that had no style has the style "Normal". So the converter's closed
+    dispatch stopped at each file's title row.
+  - **The converter,** in `py/miqra_mevoar/extract.py`, now names "Heading 2" beside "heading
+    2" as the title's style, and "Heading 4" beside "heading 3" and "heading 4" as a
+    heading's, and its docstring says which files use which. A census of the styles of the
+    table paragraphs of all fifteen files found no others: no style, "heading 2", "heading
+    3" and "heading 4" in the thirteen earlier files, and "Normal", "Heading 2" and "Heading
+    4" in the two corrected ones. "Normal", like no style, makes no row a title or a
+    heading. `books.BOOKS` gains `sephershoftim` and `malakhi`, each title copied by script
+    from its file's title row through the reader: Malachi's equals MAM's name of the book,
+    and Judges', like Obadiah's, lacks the vav of MAM's name.
+  - **The results,** on `.novc/miqra-mevoar/combined/20261116-153615-763470-0500/`, which joins
+    the six earlier books' files from the fetch of 2026-11-03 with the nine others from that
+    of 15:24. `extract` wrote Judges, 21 chapters, 618 verses and 51 headings, naming its two
+    pictures, and Malachi, 3, 55 and 7, as the update's diagnosis had found them; it rewrote
+    the other thirteen books' JSON byte for byte. `check` passed for all fifteen, with the
+    report `.novc/miqra-mevoar/checks/20261116-153628-775184-0500.txt`: Judges' smallest
+    margin is that of 16:7 and 16:8, 1.000 against 0.614, and its lowest ratio that of 7:21,
+    0.962 against 0.322; Malachi's are those of 3:11, 1.000 against 0.472, and of 3:12, 0.989
+    against 0.411. `pages` wrote 124 pages into
+    `.novc/miqra-mevoar/pages/20261116-153645-round-2/`, and the thirteen books' 100 equal
+    those of round 1 byte for byte. The reading of the new JSON, aided by a survey script in
+    `.novc/miqra-mevoar-round-2-2026-11-16/scripts/`: neither file has a character that the
+    thirteen earlier books lack, only Hebrew letters and marks, the space and ordinary
+    punctuation; Malachi repeats no paraphrase or heading, and Judges repeats one heading,
+    Samson's revenge, before 15:1 and before 16:23.
+  - **Checks:** `git diff --check`; Black on the two changed modules; Stage 10's verification
+    command with `py/tests/test_miqra_mevoar_save_receipts.py` added, after staging the two
+    new JSON files so that the tree-wide lints read them (129 passed). The mega and the full
+    suite were skipped: the mega runs none of this code, and the converter is imported only
+    by its entry point, its three bot modes and five tests, all in that run.
 
 ## Background for a fresh executor
 
