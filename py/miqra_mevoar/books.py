@@ -15,8 +15,8 @@ class Book:
     """One book: its Word file's stem and title, and where MAM-simple keeps it."""
 
     stem: str
-    # The text of the title row's Bible cell with its marks stripped. Obadiah's has no
-    # vav, unlike MAM's name of the book.
+    # The text of the title row's Bible cell with its marks stripped. Judges' and
+    # Obadiah's have no vav, unlike MAM's names of the books.
     title: str
     mam_book: tuple[str, str | None]
     mam_simple_file: str
@@ -38,6 +38,7 @@ BOOKS = {
     book.stem: book
     for book in (
         Book("yehoshua", "יהושע", mam_bknas.BS_JOSHUA, "Josh.json", "Josh"),
+        Book("sephershoftim", "שפטים", mam_bknas.BS_JUDGES, "Judg.json", "Judg"),
         Book("hoshea", "הושע", mam_bknas.BS_HOSEA, "Hos-Mal.json", "Hos"),
         Book("yoel", "יואל", mam_bknas.BS_JOEL, "Hos-Mal.json", "Joel"),
         Book("amos", "עמוס", mam_bknas.BS_AMOS, "Hos-Mal.json", "Amos"),
@@ -49,6 +50,7 @@ BOOKS = {
         Book("tzefanya", "צפניה", mam_bknas.BS_TSEF, "Hos-Mal.json", "Zeph"),
         Book("hagay", "חגי", mam_bknas.BS_XAGGAI, "Hos-Mal.json", "Hag"),
         Book("zekharya", "זכריה", mam_bknas.BS_ZEKHAR, "Hos-Mal.json", "Zech"),
+        Book("malakhi", "מלאכי", mam_bknas.BS_MALAKHI, "Hos-Mal.json", "Mal"),
         Book("daniyel", "דניאל", mam_bknas.BS_DANIEL, "Dan.json", "Dan"),
     )
 }

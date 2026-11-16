@@ -5,9 +5,10 @@ break elements and from the tracked JSON. Each page that it generates is read ba
 its closed parser, display_page.read_page, which raises on any line outside the three
 line shapes, and is compared with oracles that do not share the generator's reading:
 
-- Its verse lines are MAM-simple's verses of the page's chapters, in order, as the
-  verses' osisIDs give them: each names the book as MAM does, and gives its chapter and
-  verse as Hebrew numerals.
+- Its verse lines are MAM-simple's verses from the page's first bound to its last, in
+  order, as the verses' osisIDs give them: each names the book as MAM does, and gives
+  its chapter and verse as Hebrew numerals. The first of them, and no other, gives the
+  chapter parameter, its chapter's numeral, exactly where its verse number is not 1.
 - Its petuhot and setumot are those that MAM-simple records in a verse's
   starts-with-sampe field, its own record of a break between the verse and the one
   before it, except at a book's first verse, where the field would record a break
@@ -19,8 +20,9 @@ line shapes, and is compared with oracles that do not share the generator's read
 - Its category line sorts it under its own name, or under the sort key that
   display_page.PAGES gives it, as it gives Joshua's two parts the names under which
   Stage 10 created them.
-- The pages of a book, such as Joshua's two parts, together show its verses once each,
-  in order.
+- The pages of a book, such as Joshua's two parts, Judges' three and Daniel's two,
+  together show its verses once each, in order, across a boundary inside a chapter, as
+  between Judges 2:5 and 2:6, as well as between chapters.
 
 The oracle finds each book in MAM-simple by its OSIS abbreviation in
 py/mb_misc/osis_book_abbrevs.py, not by the converter's table of books. A missing input
@@ -81,12 +83,11 @@ def test_the_pages_of_a_book_show_it_once():
 def _expected_verses(page, book):
     """The page's verses as the oracles give them, in display_page.Verse's form."""
     verses = _mam_simple_verses(book.mam_book)
-    first, last = page.chapters or (1, verses[-1][0][0])
     bk39id = mam_bknas_and_std_bknas.MAM_HBNP_TO_BK39ID[book.mam_book]
     headings = _tracked_headings(book)
     expected = []
     for at, ((chapter, verse), sampe) in enumerate(verses):
-        if not first <= chapter <= last:
+        if not _on_page(page, (chapter, verse), verses[-1][0][0]):
             continue
         heading = None
         if (chapter, verse) in headings:
@@ -94,6 +95,9 @@ def _expected_verses(page, book):
                 wikitext.page_title(book.mam_book, chapter),
                 f"{wikitext.HEADING_SECTION}{hvn.INT_TO_STR_DIC[verse]}",
             )
+        chapter_parameter = None
+        if not expected and verse != 1:
+            chapter_parameter = hvn.INT_TO_STR_DIC[chapter]
         expected.append(
             display_page.Verse(
                 mam_bknas_and_std_bknas.he_bk39_name(bk39id),
@@ -101,9 +105,20 @@ def _expected_verses(page, book):
                 hvn.INT_TO_STR_DIC[verse],
                 None if at == 0 or sampe is None else _SAMPE_LETTERS[sampe],
                 heading,
+                chapter_parameter,
             )
         )
     return expected
+
+
+def _on_page(page, key, last_chapter):
+    """Whether a verse's (chapter, verse), from its osisID, is on the page: from its first
+    chapter's first_verse to its last chapter's last_verse, or that chapter's end."""
+    first, last = page.chapters or (1, last_chapter)
+    chapter, verse = key
+    if key < (first, page.first_verse) or chapter > last:
+        return False
+    return chapter < last or page.last_verse is None or verse <= page.last_verse
 
 
 @functools.cache

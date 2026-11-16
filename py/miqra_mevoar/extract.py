@@ -4,9 +4,9 @@ Each book is one table of four right-to-left columns: the chapter numeral, only 
 chapter's first verse; the verse numeral; the Bible text, MAM copied from Wikisource;
 and the paraphrase. _classify names each row's kind by a closed dispatch:
 
-  title    the Bible cell alone, styled "heading 2", holds the book's pointed name; the
+  title    the Bible cell alone, styled as heading 2, holds the book's pointed name; the
            paraphrase cell may also hold the heading of the first verse, as Joshua's does
-  heading  the paraphrase cell alone, styled "heading 3" or "heading 4", holds the
+  heading  the paraphrase cell alone, styled as heading 3 or heading 4, holds the
            heading of the next verse; the Bible cell may hold a pe or a samekh, the
            petuha or setuma marker before it, as one of Joel's does
   verse    the verse numeral, the Bible text and the paraphrase, and the chapter numeral
@@ -17,6 +17,14 @@ Any other row is an error, as is a second title row, a heading with no verse aft
 or a chapter or verse number out of sequence. So is a heading or paraphrase that has a
 line break, a tab or anything else MediaWiki would interpret or transform. A cell's
 text joins its paragraphs, and each run of whitespace in it becomes one space.
+
+A style is known by its name in the file's styles.xml. _TITLE_STYLES and _HEADING_STYLES
+name only styles that Rabbi Kokhav's files have used: the files of the thirteen books
+first tracked name them "heading 2", "heading 3" and "heading 4", and Avi's corrected
+files of Judges and Malachi, saved again on 2026-11-16, name two of them "Heading 2" and
+"Heading 4". Those two files also give every other paragraph the style "Normal", where
+the other files give it none; a style that is no heading's makes no row a title or a
+heading.
 
 A picture that holds no text, in a cell, is read past (docx_table.py), and each one is
 named by its file, its row, the row's place in the book and its cell, so that nobody
@@ -164,7 +172,7 @@ def _classify(cells, where):
     ]
     if not (c0 or c1 or c2 or c3):
         return "empty", (c0, c1, c2, c3)
-    if c2 and styles[2] == {_TITLE_STYLE} and not c0 and not c1:
+    if c2 and len(styles[2]) == 1 and styles[2] <= _TITLE_STYLES and not c0 and not c1:
         if c3 and not styles[3] <= _HEADING_STYLES:
             raise ValueError(
                 f"{where}: a title row whose paraphrase cell is not a heading"
@@ -215,8 +223,10 @@ def _numeral(text, where):
     return hvn.STR_TO_INT_DIC[key]
 
 
-_TITLE_STYLE = "heading 2"
-_HEADING_STYLES = frozenset({"heading 3", "heading 4"})
+# The names of the title's style and of the headings' styles: the module docstring says
+# which files use which.
+_TITLE_STYLES = frozenset({"heading 2", "Heading 2"})
+_HEADING_STYLES = frozenset({"heading 3", "heading 4", "Heading 4"})
 _BREAK_MARKS = frozenset({"\N{HEBREW LETTER PE}", "\N{HEBREW LETTER SAMEKH}"})
 _WHITESPACE = re.compile(r"\s+")
 _NUMERAL_JUNK = re.compile(

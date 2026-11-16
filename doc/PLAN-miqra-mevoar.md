@@ -10,10 +10,9 @@ same day, had the bot create the seven of those pages whose base chapters exist,
 3101357 to 3101363, and Ben then sent Avi a reply about them with three questions (execution
 ledger, “The reply to Avi”). Avi answered on 2026-11-05: he had added Amos's link to the main
 page and renamed Joshua's two display pages, and he is building a model for the parts of large
-books (execution ledger, “Avi's answer to the reply”). The State stays live: the display page
-of Malachi, the last of the Twelve without one, is still to come (Stage 10, “Left out”, and
-“Later Word files”); and the model waits on Avi and then on Ben's decision
-(Deferred, “The parts of large books”). With its change of 2026-11-16 the display mode's table
+books (execution ledger, “Avi's answer to the reply”). The State stays live: the model waits on
+Avi and then on Ben's decision (Deferred, “The parts of large books”), and Stage 11 is yet to be
+executed. With its change of 2026-11-16 the display mode's table
 took Joshua's live titles and kept Stage 10's names as their sort keys (decisions ledger entries
 14 and 15). On 2026-11-16 Avi's folder held nine new
 books and none of the first six: the text of Micah, Nahum, Habakkuk, Haggai and Zechariah is now
@@ -22,10 +21,18 @@ tracked (execution ledger, “Later Word files, 2026-11-16”). Ben's decisions 
 29 base chapters the same day, the converter now reads Zephaniah and Daniel, whose text is
 tracked, and on Ben's word the bot then created Zephaniah's 3 base chapters and the display
 pages of those five books and of Zephaniah (execution ledger, “Round 1 of Ben's decisions of
-2026-11-16”). Daniel's 12 base chapters wait on Avi's word that his file is final, and Judges
-and Malachi on Avi's corrected files (Deferred,
-“Avi's answers to Ben's email of 2026-11-16”). The execution ledger below records each finished
-stage.
+2026-11-16”). Avi answered Ben's email that afternoon (Deferred, “Avi's answers to Ben's email
+of 2026-11-16”), and in round 2, another fresh session, the bot created Daniel's 12 base
+chapters on Ben's word of round 1 (execution ledger, “Round 2, after Avi's answers”). The
+converter now reads Avi's corrected files of Judges and Malachi, saved again with other style
+names, and on Ben's word of round 2 the bot created their 24 base chapters and the display page
+of Malachi, the last of the Twelve's. Avi's main page now also links display pages of Judges,
+in three parts, and of Daniel, in two, which Stage 11, written in round 2, plans; Ben gave his
+word to execute it, in a fresh session that the commander starts. That session gave the
+generator the change that Stage 11 designs and the display table its five pages, and its dry
+runs of all five agree with the stage; their saves wait on Ben's word for each run, which its
+decision page asks (execution ledger, “Stage 11, the display pages of Judges and Daniel”). The
+execution ledger below records each finished stage.
 
 Written 2026-11-02 by Claude (Opus 5.5) in the Phase 1 session that the session "Commander for
 Claude's forests" started for Avi's email "Mikra Mevo'ar at Wikisource". The quoted decisions are
@@ -41,7 +48,9 @@ pCloud folder (Joshua, Hosea, Joel, Amos, Obadiah and Jonah) make 56 pages. The 
 extracted text is tracked in MAM-basics; the Word files and the Wikisource pages are not. Stage 9,
 added on 2026-11-03, has the bot complete the base-chapter index so that it links all 929 of
 MAM's chapters. Stage 10, added on 2026-11-04, has it create the display pages that Avi asked for
-whose base chapters exist: Joshua's two parts and five books of the Twelve.
+whose base chapters exist: Joshua's two parts and five books of the Twelve. Stage 11, added on
+2026-11-16, plans the display pages of Judges, in three parts, and of Daniel, in two, which Avi
+linked from his main page that day.
 
 ## Decisions ledger
 
@@ -142,7 +151,9 @@ approved by Ben's word in entry 3.
     20:13 that is read but not written, as it keeps a ketiv and its qere both. Every other
     saving run, the display pages' included, still needs Ben's word for that run. Active:
     round 1 carried out items 1, 2, 3 and 5 and the projection (execution ledger, “Round 1 of
-    Ben's decisions of 2026-11-16”), and item 4 waits on Avi's corrected files.
+    Ben's decisions of 2026-11-16”), and for item 4 round 2 tracked the text of Avi's
+    corrected files and, on Ben's word, created their base chapters (execution ledger,
+    “Round 2, after Avi's answers”).
 
 Deferred, each until its own decision:
 
@@ -244,8 +255,14 @@ Deferred, each until its own decision:
   changed on 2026-11-16 after the others, is final; whether he wants display pages for Judges
   and Daniel, and how each would be divided and titled; and whether Micah's same heading
   before 1:1 and 2:1 is intended. Judges and Malachi wait on the first two. The third bears on
-  Daniel's save. A display page for Judges or Daniel waits on the fourth and then on a stage
-  of this plan that Ben approves.
+  Daniel's save: Ben's word "Do the saves recommended in 1a and 2a" took the decision page's
+  1a, "Save Zephaniah's 3 now, and Daniel's 12 once Avi says his file is final", so Daniel's
+  save needs no further word if Avi says so and the file is unchanged. A display page for Judges or Daniel waits on the fourth and then on a stage
+  of this plan that Ben approves. Avi answered on 2026-11-16, in a reply that Ben pasted into
+  the commander session at 15:16 New York time and that the execution ledger quotes (“Round 2,
+  after Avi's answers”): he made both corrections in the files, Daniel's file is final, he
+  linked display pages for Judges and Daniel from the main page, and the pictures may be
+  ignored. Stage 11 is the stage that the fourth answer called for.
 
 ## Execution ledger
 
@@ -834,6 +851,231 @@ byte-for-byte copy of that frozen plan; this ledger and the State line are the e
     rerun found it unchanged, with no missing link or transcluded page, and exited zero.
     `py/ws/ws_bot_edit_history.md` has the entry, with the run directories, and the decision
     page marks decision 3 answered and carried out.
+  - **The report to Avi.** At Ben's request the session drafted an email reporting round 1's
+    saves:
+    `C:/Users/BenDe/GitRepos2/MAM-basics/.novc/miqra-mevoar-round-1-2026-11-16/email-to-avi-2026-11-16-saved.md`,
+    with its copyable page beside it, built by `scripts/build_email_saved.py` there, which
+    requires every link to name a page that round 1 saved. It tells Avi that Daniel's 12 base
+    chapters are ready and that the bot will create them once he says the file is final, and
+    that Judges and Malachi follow his corrections. Ben, before 13:00 New York time: "I sent
+    the email to Avi."
+  - **Round 2** waits on Avi's answers (Deferred, “Avi's answers to Ben's email of
+    2026-11-16”). Its standalone prompt, written for the commander when this session ended, is
+    `C:/Users/BenDe/AppData/Local/Claude-Data/claude_pzs8sxrjxfjjc/side-session-notes/local_a80ded65-f78e-4280-8493-9dab3b8c5686/miqra-mevoar-round-2-prompt-2026-11-16.md`.
+- **Round 2, after Avi's answers, 2026-11-16:** Ben pasted Avi's reply to his email of that day
+  into the commander session at 15:16 New York time, with the instruction "launch a session to
+  act on avi's reply email related to the Miqra Mevoar project". Avi's reply, as Ben pasted it,
+  with the link on "main page" left out:
+
+  > I made the two small corrections in the files (#1-#2).
+  > Yes, Daniel is good to go (#3). I guess he just finished it.
+  > I put in links on the main page for Judges and Daniel (4).
+  > You can ignore the pictures. If he wants, he can deal with them himself in terms of
+  > licenses and everything. I'll let him know about the repeated title, and he can fix that
+  > too.
+
+  The commander started a fresh Claude (Opus 5.5) session with a brief that adapts round 1's
+  prompt, saved as
+  `C:/Users/BenDe/GitRepos/MAM-basics/.novc/commander-session/miqra-mevoar-round-2-brief-2026-11-16.md`,
+  SHA-256 `750C3AC2DC03C086AE989620751C70905BE20E11D66CFB86D7ACD71041FAD425`. Its checkout,
+  `C:/Users/BenDe/GitRepos2/MAM-basics`, was verified at 15:22 New York time: on `main`, clean,
+  at `b41f31668958bdaade9a9846fbbf07aa75f76fac`, level with origin, with no other session
+  working in it.
+  - **The fetch,** at 15:24 New York time into
+    `.novc/miqra-mevoar/pcloud/20261116-152406-317227-0500/`: Daniel's file and the six other
+    files of round 1 are byte-identical to those of the fetch at 12:19, and Daniel's equals by
+    SHA-256 the source that `in/miqra-mevoar/daniyel.json` records. Judges' and Malachi's files
+    are new: pCloud dates them 2026-11-16 at 19:44 and 19:43 UTC, and they have 160,983 and
+    27,650 bytes, against 364,865 and 91,420 before.
+  - **Daniel's save,** on Ben's word of round 1 (“Round 1 of Ben's decisions of 2026-11-16”,
+    “Ben's word”) and Avi's answer. Before the dry run, and again before the save, no
+    `main_ws_bot.py` process was running on the machine and no other session of the
+    commander's family was doing bot work. The dry run at 15:25 New York time gave 12 creates,
+    and its pages equal those of the dry run of 11:56 byte for byte (run
+    `.novc/mam-ws-bot-miqra-mevoar-runs/20261116-152525-435088-0500/`). The saving run, from
+    15:26 to 15:28 with Avi's summary of entry 9, copied from this plan by script, created
+    Daniel 1 to 12 as revisions 3103073 to 3103086, all but 3103077 and 3103083, read each back
+    equal to the generated text, and exited zero. A read after the run, without the bot's
+    login, found each page with one revision, BDencklaBot's, not minor, with that summary, and
+    each creation and its category entry with the bot flag. A dry rerun found all 12 unchanged
+    and exited zero. `py/ws/ws_bot_edit_history.md` has the entry, with the run directories. A
+    first launch of the save, at 15:25, ran nothing: the folder of its log did not exist, so
+    PowerShell refused the redirection before it started the launcher, and no run directory
+    was made.
+  - **Judges' and Malachi's corrected files** hold Avi's two corrections: Judges 6:23's verse
+    cell has the numeral kaf gimel, and Malachi 2:16's chapter cell is empty. A comparison
+    with round 1's copies through the converter's table reader found every other cell's text
+    the same, but for whitespace gone from the ends of five Bible cells, a paraphrase cell
+    and a heading, which the converter trims in any case
+    (`.novc/miqra-mevoar-round-2-2026-11-16/survey-texts-and-styles.txt`). Judges' pictures
+    are still in the paraphrase cells of 8:7 and 9:14. But the files were saved again with
+    other style names: the styles named "heading 2" and "heading 4", with the ids "2" and
+    "4", are now named "Heading 2" and "Heading 4", with the ids "Heading2" and "Heading4",
+    and every paragraph that had no style has the style "Normal". So the converter's closed
+    dispatch stopped at each file's title row.
+  - **The converter,** in `py/miqra_mevoar/extract.py`, now names "Heading 2" beside "heading
+    2" as the title's style, and "Heading 4" beside "heading 3" and "heading 4" as a
+    heading's, and its docstring says which files use which. A census of the styles of the
+    table paragraphs of all fifteen files found no others: no style, "heading 2", "heading
+    3" and "heading 4" in the thirteen earlier files, and "Normal", "Heading 2" and "Heading
+    4" in the two corrected ones. "Normal", like no style, makes no row a title or a
+    heading. `books.BOOKS` gains `sephershoftim` and `malakhi`, each title copied by script
+    from its file's title row through the reader: Malachi's equals MAM's name of the book,
+    and Judges', like Obadiah's, lacks the vav of MAM's name.
+  - **The results,** on `.novc/miqra-mevoar/combined/20261116-153615-763470-0500/`, which joins
+    the six earlier books' files from the fetch of 2026-11-03 with the nine others from that
+    of 15:24. `extract` wrote Judges, 21 chapters, 618 verses and 51 headings, naming its two
+    pictures, and Malachi, 3, 55 and 7, as the update's diagnosis had found them; it rewrote
+    the other thirteen books' JSON byte for byte. `check` passed for all fifteen, with the
+    report `.novc/miqra-mevoar/checks/20261116-153628-775184-0500.txt`: Judges' smallest
+    margin is that of 16:7 and 16:8, 1.000 against 0.614, and its lowest ratio that of 7:21,
+    0.962 against 0.322; Malachi's are those of 3:11, 1.000 against 0.472, and of 3:12, 0.989
+    against 0.411. `pages` wrote 124 pages into
+    `.novc/miqra-mevoar/pages/20261116-153645-round-2/`, and the thirteen books' 100 equal
+    those of round 1 byte for byte. The reading of the new JSON, aided by a survey script in
+    `.novc/miqra-mevoar-round-2-2026-11-16/scripts/`: neither file has a character that the
+    thirteen earlier books lack, only Hebrew letters and marks, the space and ordinary
+    punctuation; Malachi repeats no paraphrase or heading, and Judges repeats one heading,
+    Samson's revenge, before 15:1 and before 16:23.
+  - **Checks:** `git diff --check`; Black on the two changed modules; Stage 10's verification
+    command with `py/tests/test_miqra_mevoar_save_receipts.py` added, after staging the two
+    new JSON files so that the tree-wide lints read them (129 passed). The mega and the full
+    suite were skipped: the mega runs none of this code, and the converter is imported only
+    by its entry point, its three bot modes and five tests, all in that run.
+  - **Pushed** as `9b2d8909`.
+  - **The dry run of Judges' and Malachi's base chapters,** at 15:43 New York time, from that
+    commit, after a check that no `main_ws_bot.py` process was running and no other session
+    of the commander's family was doing bot work: 24 creates, no title existing, and the
+    run's pages equal those of `pages` byte for byte (run
+    `.novc/mam-ws-bot-miqra-mevoar-runs/20261116-154317-514447-0500/`). The save needs Ben's
+    word for that run, with its summary.
+  - **The main page,** read again at 15:38 New York time, is at revision 3103065, Dovi's of
+    14:54. Since revision 3101507 it has gained only links to display pages of Judges and
+    Daniel, in parts: Judges' first part from 1:1 to 2:5, its second from 2:6 to the end of
+    chapter 16 and its third chapters 17 to 21, and Daniel's first part chapters 1 to 6 and
+    its second chapters 7 to 12. The Twelve's line is unchanged.
+  - **Malachi's display page.** Malachi joins the display mode's table, its name copied by
+    script from the twelfth link of the Twelve's line in revision 3103065, which equals MAM's
+    name of the book. A preview dry run at 15:43 New York time gave one create: 55 verse
+    lines; 6 petuhot and 1 setuma; 7 headings; and break lines with a break only, a heading
+    only and both, 1, 1 and 6. Its parse check found red links to exactly Malachi's three
+    base chapters, which do not exist yet (run
+    `.novc/mam-ws-bot-miqra-mevoar-display-runs/20261116-154353-296615-0500/`). Its save
+    needs Ben's word, and then the base chapters' save and a fresh dry run that finds no
+    missing link.
+  - **Checks** of the table's change: `git diff --check`; Black on `display_page.py`; Stage
+    10's verification command with `py/tests/test_miqra_mevoar_save_receipts.py` added (130
+    passed). Pushed as `a5df0ffc`.
+  - **Stage 11,** the display pages of Judges and Daniel, written into this plan as planning
+    only. A forked sub-agent of the round 2 session, writing nothing but its own folder,
+    `.novc/miqra-mevoar-round-2-2026-11-16/stage-11/`, read the parasha page of Noah and the
+    verse template, measured the counts by a walk that shares no code with the generator,
+    and drafted the stage; the session checked its counts, its quotations of the Noah page
+    and its five names against the kept responses, and placed it by script, with two changes
+    of wording.
+  - **The decision page,** an artifact, https://claude.ai/artifact/QVrERyj3zqyDacRCCr81YD,
+    built by script from the dry runs, the kept responses and this plan, puts three
+    decisions to Ben: 1, the save of Judges' and Malachi's 24 base chapters with Avi's
+    summary, recommended now; 2, the save of Malachi's display page with Stage 10's summary
+    right after it, on the conditions above, recommended; and 3, his word to execute Stage
+    11 in a fresh session, recommended, with Daniel's two pages free to go first.
+  - **Ben's word,** in the round 2 session before 16:01 New York time, answering the decision
+    page: "Do 1a, 2a and 3a". So Judges' and Malachi's 24 base chapters are saved now, after
+    a fresh fetch finds both files unchanged and a fresh dry run gives the pages put to him
+    (1a); Malachi's display page right after them, if a fresh run finds its base chapters
+    unchanged, the main page still links its title and a fresh dry run finds no missing link
+    (2a); and Stage 11 is executed in a fresh session that the commander starts, each of its
+    saves on Ben's word for that run (3a).
+  - **The base chapters' save.** A fetch at 16:01 New York time into
+    `.novc/miqra-mevoar/pcloud/20261116-160109-118981-0500/` gave a manifest byte-identical
+    to that of 15:24. No `main_ws_bot.py` process was running before the dry run or before
+    the save; of the commander's family, only the session on the morphhb page was busy, on a
+    page generator in the GitRepos clone, not on bot work. The dry run at 16:02 gave 24
+    creates, with pages equal to those of 15:43 byte for byte (run
+    `.novc/mam-ws-bot-miqra-mevoar-runs/20261116-160214-376731-0500/`). The saving run, from
+    16:02 to 16:07 with Avi's summary of entry 9, copied from this plan by script, created
+    Judges 1 to 21 and Malachi 1 to 3 as revisions 3103109 to 3103133, all but 3103128, read
+    each back equal to the generated text, and exited zero. A read after the run, without the
+    bot's login, found each page with one revision, BDencklaBot's, not minor, with that
+    summary, and each creation and its category entry with the bot flag. A dry rerun found
+    all 24 unchanged and exited zero. `py/ws/ws_bot_edit_history.md` has the entry, with the
+    run directories.
+  - **Malachi's display page's save.** The dry rerun above found Malachi's base chapters
+    unchanged, and the main page, read again at 16:04 and at 16:08 New York time, was still
+    at revision 3103065. The display dry run at 16:08 gave one create, with no missing link
+    or transcluded page, and its page equals the preview's byte for byte (run
+    `.novc/mam-ws-bot-miqra-mevoar-display-runs/20261116-160805-558860-0500/`). The saving
+    run at 16:08, with Stage 10's summary copied from this plan by script, created the page
+    as revision 3103136, read it back equal to the generated text, and exited zero. A read
+    after the run, without the bot's login, found the page with one revision, BDencklaBot's,
+    not minor, with that summary, and the creation and its category entry with the bot flag.
+    A dry rerun found it unchanged, with no missing link or transcluded page, and exited zero.
+    `py/ws/ws_bot_edit_history.md` has the entry, with the run directories, and the decision
+    page marks decisions 1 and 2 answered and carried out. Each of the Twelve now has its
+    display page.
+  - **Stage 11's word.** Ben's 3a is his word to execute Stage 11. By his rule a fresh session
+    executes it, not the round 2 session that wrote it: its standalone prompt, written for
+    the commander, is
+    `C:/Users/BenDe/AppData/Local/Claude-Data/claude_pzs8sxrjxfjjc/side-session-notes/local_a80ded65-f78e-4280-8493-9dab3b8c5686/miqra-mevoar-stage-11-prompt-2026-11-16.md`,
+    and the decision page marks decision 3 answered.
+- **Stage 11, the display pages of Judges and Daniel, 2026-11-16:** the commander started a
+  fresh Claude (Opus 5.5) session with a brief that carries Stage 11's prompt, saved as
+  `C:/Users/BenDe/GitRepos/MAM-basics/.novc/commander-session/miqra-mevoar-stage-11-brief-2026-11-16.md`,
+  SHA-256 `9B78EC922D9FB129FB69DDAF4B772270B318794CA90BB6C277796E5C3092C5EA`. Its checkout,
+  `C:/Users/BenDe/GitRepos2/MAM-basics`, was verified at 16:56 New York time: on `main`, clean,
+  at `8cc22b46348651dd6e2f04c6a013e77157026ded`, level with origin, with no other session
+  working in it. The session's scripts and evidence are in
+  `.novc/miqra-mevoar-stage-11-2026-11-16/`.
+  - **The main page,** read again by script at 16:59 New York time, was still at revision
+    3103065, its text equal to round 2's kept copy, and linked exactly the five names.
+  - **The generator,** `py/miqra_mevoar/display_page.py`, as the stage's design gives it:
+    `Page` gained `first_verse` and `last_verse`; `_page_keys` takes a page's verses from its
+    first bound to its last, and raises if either bound is not a verse of the book or if the
+    verses between them are not in MAM-simple's order; `Verse` gained `chapter_parameter`,
+    which `page_verses` sets on a page's first verse alone, where its verse number is not 1;
+    `_text` writes the parameter; and `read_page` accepts it only on a page's first verse
+    line, with that line's own chapter numeral, at a verse other than alef. A script,
+    `scripts/apply_stage_11.py` in that folder, copied the parameter's name from the Noah
+    page's revision 964086, checked it against the verse template's text in revision 2852518,
+    copied the five names from revision 3103065 and parsed each link's label into its part's
+    range: Judges 1:1 to 2:5, 2:6 to 16:31 and 17 to 21, and Daniel 1 to 6 and 7 to 12. The
+    same parser gives Joshua's two links the table's ranges. Judges' three entries follow
+    Joshua's, and Daniel's two follow Malachi's. The module docstring and the table's comment
+    say so, and now also name Malachi, which round 2 added to the table.
+  - **The test,** `py/tests/test_miqra_mevoar_display.py`: `_expected_verses` takes a page's
+    verses from its first bound to its last, as their osisIDs give them, and gives the first
+    of them the chapter parameter exactly where its verse number is not 1. The test of a
+    book's pages now covers Judges' three and Daniel's two.
+  - **Unchanged:** the generated text of each of the 14 pages already in the table, byte for
+    byte, written by a script before and after the change. Daniel's two pages and Judges'
+    third equal byte for byte those that Stage 10's generator made offline in round 2.
+  - **Checks:** `git diff --check`; Black on the two changed Python files; Stage 11's
+    verification command (135 passed). The mega and the full suite were skipped: the mega
+    runs none of this code, and the generator is imported only by its bot mode and two
+    tests, all in that command.
+  - **Pushed** as `4c0d5efc`.
+  - **The dry runs,** from that commit, after a check that no `main_ws_bot.py` process was
+    running and no other session of the commander's family was doing bot work. The main
+    page, read again at 17:09 New York time, was still at revision 3103065 and linked the
+    five names. A `miqra-mevoar --no-save` run over `sephershoftim` and `daniyel` found all
+    33 base chapters unchanged (run
+    `.novc/mam-ws-bot-miqra-mevoar-runs/20261116-170926-478759-0500/`).
+    1. **Daniel's two pages,** at 17:09: two creates, with no missing link or transcluded
+       page (run `.novc/mam-ws-bot-miqra-mevoar-display-runs/20261116-170945-588565-0500/`).
+    2. **Judges' three pages,** at 17:10: three creates, with no missing link or
+       transcluded page (run
+       `.novc/mam-ws-bot-miqra-mevoar-display-runs/20261116-171004-529582-0500/`).
+
+    Each of the five pages has the counts of Stage 11's table and equals byte for byte the
+    page that the generator wrote for the comparison after the change; Daniel's two and
+    Judges' third also equal round 2's offline pages. Judges' second part opens with the two
+    lines that Stage 11 quotes, its first part ends at 2:5, and no other line of the three
+    gives the chapter parameter.
+  - **The decision page,** an artifact, https://claude.ai/artifact/WfkABxxnxSCqKmtGsu1PUS,
+    built by script from the dry runs, the kept main page and this plan, puts two decisions
+    to Ben: 1, the save of Daniel's two pages, and 2, the save of Judges' three, each in one
+    run with Stage 10's summary, recommended now, after a fresh check of the preconditions
+    and a fresh dry run that gives the same pages.
 
 ## Background for a fresh executor
 
@@ -1325,6 +1567,178 @@ root; and `-c safe.directory=<clone>` on every Git call. Ask the commander befor
 run, dry runs included, and release the clone while waiting on Ben. The stage reads MAM-simple,
 the tracked JSON and the live pages; its only untracked input is the draft reply, which is in
 `C:/Users/BenDe/GitRepos2/MAM-basics/.novc/miqra-mevoar/` alone.
+
+## Stage 11. The display pages of Judges and Daniel, on Ben's word
+
+The round 2 session wrote this stage on 2026-11-16 (execution ledger, “Round 2, after Avi's
+answers”), after Avi answered the fourth question of Ben's email of that day by linking display
+pages for Judges and Daniel from the main page (Deferred, “Avi's answers to Ben's email of
+2026-11-16”). By Ben's rule a fresh session executes it, not the session that wrote it, and it
+stays planning only until he gives his word to execute it; each saving run needs his word too.
+The design is that session's proposal: Ben's word to execute approves it, and he may change any
+of it first, the scope included.
+
+**What it does.** BDencklaBot creates the five display pages that the main page `מקרא מבואר` links
+for Judges and Daniel, in the form of Stage 10's pages: Judges in three parts and Daniel in two,
+as Avi divided them. It only creates pages; it never edits one. One part begins inside a chapter,
+which Stage 10's generator refuses, so the stage first gives the generator the parameter with
+which Avi's parasha pages number the chapter that a page begins inside.
+
+**The pages,** keyed as the bot mode names them, with the names that the main page links in
+revision 3103065, Dovi's of 2026-11-16 at 14:54 New York time, copied from that revision by script, and
+the ranges that each link's label gives, parsed by script:
+
+1. `sephershoftim-1`: `מקרא מבואר/תצוגה/ספר שופטים 1`, Judges 1:1 to 2:5.
+2. `sephershoftim-2`: `מקרא מבואר/תצוגה/ספר שופטים 2`, Judges 2:6 to 16:31.
+3. `sephershoftim-3`: `מקרא מבואר/תצוגה/ספר שופטים 3`, Judges 17 to 21.
+4. `daniyel-1`: `מקרא מבואר/תצוגה/ספר דניאל 1`, Daniel 1 to 6.
+5. `daniyel-2`: `מקרא מבואר/תצוגה/ספר דניאל 2`, Daniel 7 to 12.
+
+Judges' links stand in the main page's section `==ספרי הנביאים==` and Daniel's in `==ספרי הכתובים==`. The
+revision changed nothing else since 3101507, which round 1 read
+(`.novc/miqra-mevoar-round-2-2026-11-16/wikisource/diff-3101507-3103065.txt`). The keys follow
+Joshua's: the Word file's stem and the part's number. The parser of the labels gives Joshua's
+two links the table's ranges, 1 to 12 and 13 to 24.
+
+**A page that begins inside a chapter.** Avi's parasha pages begin where a parasha does. The page
+of parashat Noah, `מקרא מבואר/תצוגה/ספר בראשית/פרשת נח`, read at revision 964086, begins its text at Genesis 6:9, after a
+title template and the heading of its first section, with these two lines:
+
+- a break line with both parameters: `{{פרשה במקרא מבואר|פרשה=פ|כותרת={{#קטע:מקרא מבואר/פרקי בסיס/ספר בראשית/ו|כותרת ט}}}}`;
+- its first verse line: `{{מקרא מבואר|בראשית|ו|ט|פרק=ו}}`.
+
+Its first verse line, and only that one of its 153 verse lines, gives the parameter `פרק=`,
+whose value is the chapter's numeral; its later sections, some of which begin inside a chapter,
+as its third does at 7:17, do not. The verse template, read at revision 2852518, shows the
+parameter's value as the chapter's numeral where it is given, and otherwise shows the chapter's
+numeral only at a verse numbered alef. So `sephershoftim-2` opens with these two lines:
+
+- a break line with both parameters: `{{פרשה במקרא מבואר|פרשה=פ|כותרת={{#קטע:מקרא מבואר/פרקי בסיס/ספר שופטים/ב|כותרת ו}}}}`;
+- its first verse line: `{{מקרא מבואר|שופטים|ב|ו|פרק=ב}}`.
+
+**Choices,** each a proposal that Ben's word approves:
+
+1. **The ranges and names follow the main page's links,** copied and parsed by script.
+2. **The parameter `פרק=` stands on a page's first verse line only, and only where that verse
+   is not its chapter's first,** with the chapter's numeral, as on the Noah page. No other line
+   takes it.
+3. **A break before a page's first verse is shown,** as Stage 10's choice 2 has it. MAM-simple has
+   a petuha before Judges 2:6, before Judges 17:1 and before Daniel 7:1, and the tracked JSON
+   gives each of those verses a heading, so each later part opens with a break line that has
+   both parameters, as Joshua's second part does. `sephershoftim-1` ends at 2:5, before that
+   petuha.
+4. **A break inside a verse gets no line,** as Stage 10's choice 3 has it. MAM-simple's Judges has
+   one, a petuha inside 2:1, on `sephershoftim-1`; Daniel has none.
+5. **Sort keys** are the pages' own names, as Stage 10's choice 4 has it.
+6. **No title and navigation block.** The bot's pages carry the three line shapes and nothing
+   else, as Joshua's two parts did when the bot created them. Avi's model for the parts of large
+   books (Deferred, “The parts of large books”) is his to add, as he did on Joshua's first part,
+   unless Ben decides that the bot should make it: an open question for Ben, which this stage
+   does not settle.
+
+**Counts,** measured on 2026-11-16 from MAM-simple and `in/miqra-mevoar/` at `9b2d8909`, by a
+scratch walk of MAM-simple and the tracked JSON, `in/miqra-mevoar/sephershoftim.json` and
+`in/miqra-mevoar/daniyel.json`, that shares no code
+with the generator (`.novc/miqra-mevoar-round-2-2026-11-16/stage-11/walk-counts.txt`). The walk
+gives Stage 10's counts for Jonah and round 1's for Zephaniah, and agrees with the
+starts-with-sampe field of every verse but each book's first in Joshua, Judges, Daniel, Jonah
+and Zephaniah. Stage 10's generator, run
+offline on the three parts that begin at a chapter, gives the same counts and raises on nothing
+in either book (`.novc/miqra-mevoar-round-2-2026-11-16/stage-11/gen-offline.txt`). The dry run's
+pages must have them:
+
+| Page | Verse lines | Petuhot, setumot | Headings | Break lines: break only, heading only, both |
+|---|---|---|---|---|
+| Judges 1:1 to 2:5 | 41 | 5, 4 | 6 | 4, 1, 5 |
+| Judges 2:6 to 16:31 | 430 | 51, 8 | 37 | 22, 0, 37 |
+| Judges 17 to 21 | 147 | 17, 2 | 8 | 11, 0, 8 |
+| Daniel 1 to 6 | 196 | 10, 11 | 7 | 15, 1, 6 |
+| Daniel 7 to 12 | 161 | 7, 1 | 7 | 1, 0, 7 |
+
+In all: 975 verse lines, 116 breaks, 65 headings and 118 break lines. Judges' three pages hold
+its 618 verses and 51 headings, and Daniel's two its 357 verses and 14 headings.
+
+**The design.**
+
+1. **Generator,** `py/miqra_mevoar/display_page.py`:
+   - `Page` gains `first_verse: int = 1`, the verse of its first chapter at which the page
+     begins, and `last_verse: int | None = None`, the verse of its last chapter at which it
+     ends, or None for that chapter's last. Every entry already in `PAGES` stays as it is.
+     `sephershoftim-1` has the chapters (1, 2) and `last_verse=5`; `sephershoftim-2` has the
+     chapters (2, 16) and `first_verse=6`.
+   - `_page_keys` takes the book's verses from its first bound to its last, raises if either
+     bound is not a verse of the book, as it now raises on a chapter outside the book, and
+     requires the page to begin at its first bound, as it now requires a chapter's first verse.
+   - `Verse` gains `chapter_parameter: str | None = None`, the chapter's numeral, which
+     `page_verses` sets on a page's first verse alone, and only where that verse is not its
+     chapter's first.
+   - `_text` writes `|פרק=` and that numeral before a verse line's closing braces where the
+     verse has it.
+   - `read_page`, the closed parser, accepts the parameter only on a page's first verse line,
+     only with that line's own chapter numeral and only where its verse is not alef, and raises
+     on it anywhere else; every other line is still one of the three shapes.
+   - The parameter's name is a constant beside the template's, copied by script from the Noah
+     page's revision 964086 and checked against the template's text in revision 2852518.
+   - `PAGES` gains the five entries, their names copied by script from revision 3103065. The
+     module docstring and the table's comment say so, and the docstring's sentence that no line
+     needs the parameter gives way to choice 2.
+2. **Bot mode,** `py/main_ws_bot.py miqra-mevoar-display`: unchanged. Each run names its pages
+   with `--page`, since a run over the whole table refuses Joshua's part one, which carries
+   Avi's model (“Later Word files”).
+3. **Test,** `py/tests/test_miqra_mevoar_display.py`, differential:
+   - `_expected_verses` takes the page's verses from its first bound to its last, as
+     MAM-simple's osisIDs give them, rather than its chapters, and gives the first of them the
+     chapter parameter exactly where its verse number, from its osisID, is not 1.
+   - `test_the_pages_of_a_book_show_it_once` then checks that Judges' three pages and Daniel's
+     two show each book's verses once each, in order, the boundary between 2:5 and 2:6 included.
+   - The generated pages, read back through `read_page`, are the test of the parser's new
+     acceptance; no example test is added.
+
+**Preconditions,** before the dry run and again before the save:
+
+- The base chapters exist: Judges' 21, created by their own saving run on Ben's word, and
+  Daniel's 12, created on 2026-11-16 as revisions 3103073 to 3103086. While Judges' do not
+  exist, the dry run's parse check finds its pages' links to them missing. Daniel's two pages
+  need not wait for Judges': a run may name only them.
+- A `miqra-mevoar --no-save` run over `sephershoftim` and `daniyel` finds all 33 base chapters
+  unchanged, since the places of the headings come from the tracked JSON. If one differs, stop
+  and report it to Ben.
+- The main page's latest revision, read again by script, still links the five names. If it
+  does not, stop and report it.
+- No `main_ws_bot.py` process runs, and no other session of the commander's family does bot
+  work.
+
+**Verification,** focused, under `doc/review-trial.md`: `git diff --check`; Black on the changed
+Python files; and Stage 10's targeted tests with `py/tests/test_miqra_mevoar_save_receipts.py`
+added:
+
+```powershell
+./.venv/Scripts/python.exe py/main_test.py py/tests/test_miqra_mevoar_display.py py/tests/test_miqra_mevoar_versification.py py/tests/test_miqra_mevoar_index.py py/tests/test_miqra_mevoar_bot_revision_guard.py py/tests/test_mega_coverage.py py/tests/test_entry_point_subcommands.py py/tests/source_hygiene_test.py py/tests/test_prose_conventions.py py/tests/test_transliterations.py py/tests/test_explicit_time_zones.py py/tests/test_stderr_error_handler.py py/tests/test_h_dot_below_nfc.py py/tests/test_prose_mark_order.py py/tests/test_tracked_filenames.py py/tests/test_miqra_mevoar_save_receipts.py
+```
+
+Expected unchanged: the generated text of every page already in `PAGES`, byte for byte,
+compared by a scratch script before and after the change; every product directory that
+`py/product_scopes.py` declares, `in/miqra-mevoar/`, `in/mam-ws/` and `in/mam-ws-bot-edits/`. The
+mega runs none of this code; the last pushed commit's message says what was skipped and why.
+
+**The dry run and the save.** Run `--no-save` with `--page` naming the five pages, or Daniel's two
+alone while Judges' base chapters do not exist. Compare each page with the counts above, and read
+its first two lines and its last. `daniyel-1`, `daniyel-2` and `sephershoftim-3` must equal byte
+for byte the pages that Stage 10's generator made offline,
+`.novc/miqra-mevoar-round-2-2026-11-16/stage-11/generated/`. Report the creates, the counts, the
+parse check and the run directory to Ben; then stop. Each save needs his explicit word for that
+run, with Stage 10's summary, copied from the plan by script through round 1's launcher,
+`.novc/miqra-mevoar-round-1-2026-11-16/scripts/run_bot_with_plan_summary.py display`. After it,
+a read after the run, and a dry rerun that finds every page unchanged; then an entry in
+`py/ws/ws_bot_edit_history.md`, the execution ledger and the State. Commit, fetch, merge
+`origin/main` if it moved, and push.
+
+**Checkout and coordination,** as for Stage 10: a full MAM-basics clone that the commander
+assigns, verified clean on `main` at the commit that added this stage or a descendant, with
+`git merge-base --is-ancestor`; its own `.venv/Scripts/python.exe`, run from its root; and
+`-c safe.directory=<clone>` on every Git call. The stage reads MAM-simple, the tracked JSON and
+the live pages; its untracked inputs, the kept responses and the offline pages under
+`.novc/miqra-mevoar-round-2-2026-11-16/`, are in `C:/Users/BenDe/GitRepos2/MAM-basics` alone.
 
 ## Later Word files
 
