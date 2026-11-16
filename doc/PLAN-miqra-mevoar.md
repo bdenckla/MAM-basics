@@ -29,9 +29,10 @@ names, and on Ben's word of round 2 the bot created their 24 base chapters and t
 of Malachi, the last of the Twelve's. Avi's main page now also links display pages of Judges,
 in three parts, and of Daniel, in two, which Stage 11, written in round 2, plans; Ben gave his
 word to execute it, in a fresh session that the commander starts. That session gave the
-generator the change that Stage 11 designs and the display table its five pages, whose saves
-wait on Ben's word for each run (execution ledger, “Stage 11, the display pages of Judges and
-Daniel”). The execution ledger below records each finished stage.
+generator the change that Stage 11 designs and the display table its five pages, and its dry
+runs of all five agree with the stage; their saves wait on Ben's word for each run, which its
+decision page asks (execution ledger, “Stage 11, the display pages of Judges and Daniel”). The
+execution ledger below records each finished stage.
 
 Written 2026-11-02 by Claude (Opus 5.5) in the Phase 1 session that the session "Commander for
 Claude's forests" started for Avi's email "Mikra Mevo'ar at Wikisource". The quoted decisions are
@@ -1052,6 +1053,29 @@ byte-for-byte copy of that frozen plan; this ledger and the State line are the e
     verification command (135 passed). The mega and the full suite were skipped: the mega
     runs none of this code, and the generator is imported only by its bot mode and two
     tests, all in that command.
+  - **Pushed** as `4c0d5efc`.
+  - **The dry runs,** from that commit, after a check that no `main_ws_bot.py` process was
+    running and no other session of the commander's family was doing bot work. The main
+    page, read again at 17:09 New York time, was still at revision 3103065 and linked the
+    five names. A `miqra-mevoar --no-save` run over `sephershoftim` and `daniyel` found all
+    33 base chapters unchanged (run
+    `.novc/mam-ws-bot-miqra-mevoar-runs/20261116-170926-478759-0500/`).
+    1. **Daniel's two pages,** at 17:09: two creates, with no missing link or transcluded
+       page (run `.novc/mam-ws-bot-miqra-mevoar-display-runs/20261116-170945-588565-0500/`).
+    2. **Judges' three pages,** at 17:10: three creates, with no missing link or
+       transcluded page (run
+       `.novc/mam-ws-bot-miqra-mevoar-display-runs/20261116-171004-529582-0500/`).
+
+    Each of the five pages has the counts of Stage 11's table and equals byte for byte the
+    page that the generator wrote for the comparison after the change; Daniel's two and
+    Judges' third also equal round 2's offline pages. Judges' second part opens with the two
+    lines that Stage 11 quotes, its first part ends at 2:5, and no other line of the three
+    gives the chapter parameter.
+  - **The decision page,** an artifact, https://claude.ai/artifact/WfkABxxnxSCqKmtGsu1PUS,
+    built by script from the dry runs, the kept main page and this plan, puts two decisions
+    to Ben: 1, the save of Daniel's two pages, and 2, the save of Judges' three, each in one
+    run with Stage 10's summary, recommended now, after a fresh check of the preconditions
+    and a fresh dry run that gives the same pages.
 
 ## Background for a fresh executor
 
