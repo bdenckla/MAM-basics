@@ -22,10 +22,11 @@ tracked (execution ledger, “Later Word files, 2026-11-16”). Ben's decisions 
 29 base chapters the same day, the converter now reads Zephaniah and Daniel, whose text is
 tracked, and on Ben's word the bot then created Zephaniah's 3 base chapters and the display
 pages of those five books and of Zephaniah (execution ledger, “Round 1 of Ben's decisions of
-2026-11-16”). Daniel's 12 base chapters wait on Avi's word that his file is final, and Judges
-and Malachi on Avi's corrected files (Deferred,
-“Avi's answers to Ben's email of 2026-11-16”). The execution ledger below records each finished
-stage.
+2026-11-16”). Avi answered Ben's email that afternoon (Deferred, “Avi's answers to Ben's email
+of 2026-11-16”), and in round 2, another fresh session, the bot created Daniel's 12 base
+chapters on Ben's word of round 1 (execution ledger, “Round 2, after Avi's answers”). Judges and
+Malachi, whose corrected files reached the folder that afternoon, are round 2's next step. The
+execution ledger below records each finished stage.
 
 Written 2026-11-02 by Claude (Opus 5.5) in the Phase 1 session that the session "Commander for
 Claude's forests" started for Avi's email "Mikra Mevo'ar at Wikisource". The quoted decisions are
@@ -247,7 +248,11 @@ Deferred, each until its own decision:
   Daniel's save: Ben's word "Do the saves recommended in 1a and 2a" took the decision page's
   1a, "Save Zephaniah's 3 now, and Daniel's 12 once Avi says his file is final", so Daniel's
   save needs no further word if Avi says so and the file is unchanged. A display page for Judges or Daniel waits on the fourth and then on a stage
-  of this plan that Ben approves.
+  of this plan that Ben approves. Avi answered on 2026-11-16, in a reply that Ben pasted into
+  the commander session at 15:16 New York time and that the execution ledger quotes (“Round 2,
+  after Avi's answers”): he made both corrections in the files, Daniel's file is final, he
+  linked display pages for Judges and Daniel from the main page, and the pictures may be
+  ignored.
 
 ## Execution ledger
 
@@ -847,6 +852,46 @@ byte-for-byte copy of that frozen plan; this ledger and the State line are the e
   - **Round 2** waits on Avi's answers (Deferred, “Avi's answers to Ben's email of
     2026-11-16”). Its standalone prompt, written for the commander when this session ended, is
     `C:/Users/BenDe/AppData/Local/Claude-Data/claude_pzs8sxrjxfjjc/side-session-notes/local_a80ded65-f78e-4280-8493-9dab3b8c5686/miqra-mevoar-round-2-prompt-2026-11-16.md`.
+- **Round 2, after Avi's answers, 2026-11-16:** Ben pasted Avi's reply to his email of that day
+  into the commander session at 15:16 New York time, with the instruction "launch a session to
+  act on avi's reply email related to the Miqra Mevoar project". Avi's reply, as Ben pasted it,
+  with the link on "main page" left out:
+
+  > I made the two small corrections in the files (#1-#2).
+  > Yes, Daniel is good to go (#3). I guess he just finished it.
+  > I put in links on the main page for Judges and Daniel (4).
+  > You can ignore the pictures. If he wants, he can deal with them himself in terms of
+  > licenses and everything. I'll let him know about the repeated title, and he can fix that
+  > too.
+
+  The commander started a fresh Claude (Opus 5.5) session with a brief that adapts round 1's
+  prompt, saved as
+  `C:/Users/BenDe/GitRepos/MAM-basics/.novc/commander-session/miqra-mevoar-round-2-brief-2026-11-16.md`,
+  SHA-256 `750C3AC2DC03C086AE989620751C70905BE20E11D66CFB86D7ACD71041FAD425`. Its checkout,
+  `C:/Users/BenDe/GitRepos2/MAM-basics`, was verified at 15:22 New York time: on `main`, clean,
+  at `b41f31668958bdaade9a9846fbbf07aa75f76fac`, level with origin, with no other session
+  working in it.
+  - **The fetch,** at 15:24 New York time into
+    `.novc/miqra-mevoar/pcloud/20261116-152406-317227-0500/`: Daniel's file and the six other
+    files of round 1 are byte-identical to those of the fetch at 12:19, and Daniel's equals by
+    SHA-256 the source that `in/miqra-mevoar/daniyel.json` records. Judges' and Malachi's files
+    are new: pCloud dates them 2026-11-16 at 19:44 and 19:43 UTC, and they have 160,983 and
+    27,650 bytes, against 364,865 and 91,420 before.
+  - **Daniel's save,** on Ben's word of round 1 (“Round 1 of Ben's decisions of 2026-11-16”,
+    “Ben's word”) and Avi's answer. Before the dry run, and again before the save, no
+    `main_ws_bot.py` process was running on the machine and no other session of the
+    commander's family was doing bot work. The dry run at 15:25 New York time gave 12 creates,
+    and its pages equal those of the dry run of 11:56 byte for byte (run
+    `.novc/mam-ws-bot-miqra-mevoar-runs/20261116-152525-435088-0500/`). The saving run, from
+    15:26 to 15:28 with Avi's summary of entry 9, copied from this plan by script, created
+    Daniel 1 to 12 as revisions 3103073 to 3103086, all but 3103077 and 3103083, read each back
+    equal to the generated text, and exited zero. A read after the run, without the bot's
+    login, found each page with one revision, BDencklaBot's, not minor, with that summary, and
+    each creation and its category entry with the bot flag. A dry rerun found all 12 unchanged
+    and exited zero. `py/ws/ws_bot_edit_history.md` has the entry, with the run directories. A
+    first launch of the save, at 15:25, ran nothing: the folder of its log did not exist, so
+    PowerShell refused the redirection before it started the launcher, and no run directory
+    was made.
 
 ## Background for a fresh executor
 

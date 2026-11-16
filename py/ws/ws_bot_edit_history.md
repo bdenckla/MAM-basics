@@ -1387,7 +1387,7 @@ infrastructure has changed enough to make them misleading examples:
   and `.novc/mam-ws-bot-miqra-mevoar-runs/20261116-122231-819251-0500/`, before the save; the
   read after the run in `.novc/miqra-mevoar-round-1-2026-11-16/read-after-save-display/`.
 
-### Miqra Mevoar's display page: Zephaniah, 2026-11-16 — current
+### Miqra Mevoar's display page: Zephaniah, 2026-11-16
 
 - **Purpose:** Create the display page of Zephaniah, which the main page of Miqra Mevoar links,
   in the form of the five pages above, now that Zephaniah's base chapters exist (two entries
@@ -1420,6 +1420,46 @@ infrastructure has changed enough to make them misleading examples:
   runs `.novc/mam-ws-bot-miqra-mevoar-runs/20261116-123944-251638-0500/`, before the dry run,
   and `.novc/mam-ws-bot-miqra-mevoar-runs/20261116-124654-178558-0500/`, before the save; the
   read after the run in `.novc/miqra-mevoar-round-1-2026-11-16/read-after-save-zephaniah-display/`.
+
+### Miqra Mevoar's base chapters: Daniel, 12 chapters, 2026-11-16 — current
+
+- **Purpose:** Create the base chapters of Rabbi David Kokhav's Miqra Mevoar for Daniel, whose
+  Word file reached Avi's pCloud folder on 2026-11-16 and whose text has been tracked since
+  `2a82085e`, when the converter learned to read past the table of contents that Word built as
+  a field after the book's table: 12 pages. They waited for Avi's word that the file was final.
+- **Authorization:** Ben, 2026-11-16, in the round 1 session, answering its decision page,
+  https://claude.ai/artifact/JxV9X7eRsyPm8DxQRmZD8a: "Do the saves recommended in 1a and 2a".
+  Recommendation 1a was to save Zephaniah's three base chapters now, with the summary that Avi
+  gave for new chapters, and Daniel's twelve once Avi says his file is final. Avi said so in
+  his reply to Ben's email of 2026-11-16, which Ben pasted into the commander session at 15:16
+  New York time: "Yes, Daniel is good to go (#3)."
+- **Mode:** `main_ws_bot.py miqra-mevoar`, as in Stage 8, over `daniyel`.
+- **Saving run:** 12 pages created, from 15:26 to 15:28 New York time, 124,819 bytes in all,
+  with the summary פרק חדש במקרא מבואר: Daniel 1–4 as revisions 3103073 to 3103076, Daniel 5–9 as
+  3103078 to 3103082, and Daniel 10–12 as 3103084 to 3103086. Revisions 3103077 and 3103083
+  are not this run's. The summary was copied from the plan by script and given to the run
+  without passing through a shell.
+- **Safety rule:** before the run, a fresh fetch of the folder
+  (`.novc/miqra-mevoar/pcloud/20261116-152406-317227-0500/`) found Daniel's Word file
+  byte-identical to that of the fetch at 12:19, and its SHA-256 equal to the source that its
+  tracked JSON records. Before the dry run, and again before the save, no `main_ws_bot.py`
+  process was running on the machine, and no other session of the commander's family was
+  doing bot work. The `--no-save` dry run gave 12 creates and no refusal, and its pages equal
+  byte for byte those of the dry run that round 1's decision page put to Ben
+  (`.novc/mam-ws-bot-miqra-mevoar-runs/20261116-115613-777573-0500/`); the saving run's pages
+  equal the dry run's. The saving run read each new revision back through the API, uncached,
+  and its bytes equalled the generated text. A read after the run, without the bot's login,
+  found each page with one revision, the new one, BDencklaBot's, not minor, with the approved
+  summary, and with the SHA-1 and size of the generated page; in the recent changes every
+  creation, and its entry in the category, carries the bot flag.
+- **One-shot:** no. Confirmed 2026-11-16, immediately after the run: a `--no-save` rerun found all
+  12 pages unchanged and exited zero
+  (`.novc/mam-ws-bot-miqra-mevoar-runs/20261116-152940-197883-0500/`).
+- **Edit level:** Whole page text, generated; page-targeted by book and chapter.
+- **JSON file:** `in/miqra-mevoar/daniyel.json`; run artifacts
+  `.novc/mam-ws-bot-miqra-mevoar-runs/20261116-152620-303377-0500/`, dry run
+  `.novc/mam-ws-bot-miqra-mevoar-runs/20261116-152525-435088-0500/`; the read after the run in
+  `.novc/miqra-mevoar-round-2-2026-11-16/read-after-save-daniel/`.
 
 ## How to look up the original code
 
