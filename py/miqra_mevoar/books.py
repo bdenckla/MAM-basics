@@ -43,5 +43,10 @@ BOOKS = {
         Book("amos", "עמוס", mam_bknas.BS_AMOS, "Hos-Mal.json", "Amos"),
         Book("ovadya", "עבדיה", mam_bknas.BS_OBADIAH, "Hos-Mal.json", "Obad"),
         Book("yona", "יונה", mam_bknas.BS_JONAH, "Hos-Mal.json", "Jonah"),
+        Book("mikha", "מיכה", mam_bknas.BS_MICAH, "Hos-Mal.json", "Mic"),
+        Book("nahum", "נחום", mam_bknas.BS_NAXUM, "Hos-Mal.json", "Nah"),
+        Book("havaquq", "חבקוק", mam_bknas.BS_XABA, "Hos-Mal.json", "Hab"),
+        Book("hagay", "חגי", mam_bknas.BS_XAGGAI, "Hos-Mal.json", "Hag"),
+        Book("zekharya", "זכריה", mam_bknas.BS_ZEKHAR, "Hos-Mal.json", "Zech"),
     )
 }

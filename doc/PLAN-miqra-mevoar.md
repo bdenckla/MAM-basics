@@ -14,8 +14,11 @@ books (execution ledger, “Avi's answer to the reply”). The State stays live:
 of the other seven books of the Twelve wait for their base chapters (Stage 10, “Left out”, and
 “Later Word files”); and the model waits on Avi and then on Ben's decision (Deferred, “The
 parts of large books”). The display mode's table keeps Stage 10's titles of Joshua's pages
-until its next change (decisions ledger entry 14). The execution ledger below records each
-finished stage.
+until its next change (decisions ledger entry 14). On 2026-11-16 Avi's folder held nine new
+books and none of the first six: the text of Micah, Nahum, Habakkuk, Haggai and Zechariah is now
+tracked, and their base chapters wait on Ben's word, while Judges, Zephaniah, Malachi and Daniel
+wait on his decisions (execution ledger, “Later Word files, 2026-11-16”). The execution ledger
+below records each finished stage.
 
 Written 2026-11-02 by Claude (Opus 5.5) in the Phase 1 session that the session "Commander for
 Claude's forests" started for Avi's email "Mikra Mevo'ar at Wikisource". The quoted decisions are
@@ -534,6 +537,86 @@ byte-for-byte copy of that frozen plan; this ledger and the State line are the e
     titles now, or with its next change, waits on Ben's decision.
   - **Ben's decision on the titles,** the same day: "Later, as recommended" (decisions ledger
     entry 14).
+- **Later Word files, 2026-11-16:** Ben typed in the commander session at 09:42 New York time:
+  “Launch a session that will update Miqra Mevoar based on new files found at the "pCloud" link.
+  BTW verify that the "pCloud" link is either not git-tracked at all, or only-git-tracked in
+  MAM-private (NOT MAM-basics).” The commander's brief reports that it found the link's code in
+  no tracked file and no commit, on any ref, of GitRepos and GitRepos2's clones of MAM-basics and
+  MAM-private, and that Git ignores the link file. The commander started a fresh Claude (Opus
+  5.5) session with that brief, saved as
+  `C:/Users/BenDe/GitRepos/MAM-basics/.novc/commander-session/miqra-mevoar-update-brief-2026-11-16.md`,
+  SHA-256 `A3E12FC0A1EF47FB91B1CE727557EAF0D43A0764726631FB1E4FCB4FB720C523`. Its checkout,
+  `C:/Users/BenDe/GitRepos2/MAM-basics`, was verified at about 09:55 New York time: on `main`,
+  clean, at `2a108647c4b17e587a00549eb9fa8de8958e0e3e`, then fast-forwarded to origin's
+  `babc6ba7756e43eb7696af332625af7918437753`, whose two new commits touch nothing of this plan's.
+  - **The fetch,** at 09:56 New York time into
+    `.novc/miqra-mevoar/pcloud/20261116-095654-155958-0500/`, brought nine Word files, all new:
+    `sephershoftim.docx` (Judges), 364,865 bytes; `mikha.docx`, 113,269; `nahum.docx`, 83,586;
+    `havaquq.docx`, 87,618; `tzefanya.docx`, 106,002; `hagay.docx`, 78,314; `zekharya.docx`,
+    163,867; `malakhi.docx`, 91,420; and `daniyel.docx`, 253,304. pCloud dates each of them
+    2026-11-15, except Daniel's, 2026-11-16. The folder no longer holds the six earlier books'
+    Word files or Joshua's PDF. The newest earlier fetch, `20261103-145602-860752-0500`, holds
+    them, and its six Word files equal by SHA-256 the sources that the tracked JSON records. The
+    folder still holds `.~lock.yehoshua.docx#`, which `fetch` skipped.
+  - **Four of the files stop the converter,** as its closed dispatch requires. A read-only
+    diagnosis by the scripts in `.novc/miqra-mevoar-2026-11-16/scripts/`, with their reports
+    beside them, set each stop aside in memory to find the next, and then ran `check`'s
+    comparisons with MAM-simple on the result:
+    1. **Judges,** `sephershoftim.docx`: two small pictures, about a centimetre across, in the
+       paraphrase cells of 8:7 and 9:14, which the XML reader does not name; and the verse cell
+       of 6:23, whose letters are bet and gimel, not the numeral kaf gimel. MAM-simple's Judges
+       also has two elements that the projection in `py/miqra_mevoar/mam_simple.py` does not
+       name: `letter-hung`, the hung nun of 18:30, and `kq-q-velo-k`, the word of 20:13 that is
+       read but not written.
+    2. **Zephaniah,** `tzefanya.docx`: two small pictures in the verse-number cells of 2:13 and
+       2:14, whose descriptions name image files on daf-yomi.com, `strix1.jpg` and `bubo.jpg`,
+       the Latin names of two kinds of owl.
+    3. **Malachi,** `malakhi.docx`: an equals sign and a semicolon in the chapter cell of 2:16,
+       which begins no chapter.
+    4. **Daniel,** `daniyel.docx`: after its table, a table of contents of the book's name and
+       its 14 headings, with page numbers, which Word built as a TOC field in 15 paragraphs
+       styled "toc 2" and "toc 4", outside any content control, unlike Joshua's.
+
+    With those set aside, and with the projection reading the hung nun as its letter and keeping
+    the word read but not written, the four read as Judges, 21 chapters, 618 verses and 51
+    headings; Zephaniah, 3, 53 and 3; Malachi, 3, 55 and 7; and Daniel, 12, 357 and 14. `check`'s
+    comparisons find no failure in any of them. Judges' title row, like Obadiah's, has no vav.
+    What becomes of each file waits on Ben's decisions.
+  - **The other five books** joined `books.BOOKS`, each title copied by script from its file's
+    title row: `mikha`, `nahum`, `havaquq`, `hagay` and `zekharya`. Since `check` requires a
+    directory's Word files to be exactly the tracked books, `extract`, `check` and `pages` ran on
+    `.novc/miqra-mevoar/combined/20261116-100316-381543-0500/`, which joins those five files with
+    the six earlier books' files from the fetch of 2026-11-03. Each file equals its fetch's
+    manifest by SHA-256, and the directory's `sources.json` names each file's fetch.
+    `in/miqra-mevoar/README.md` now describes such a directory.
+  - **The results.** `extract` wrote the five new files and rewrote the six earlier ones byte for
+    byte: Micah, 7 chapters, 105 verses and 12 headings; Nahum, 3, 47 and 3; Habakkuk, 3, 56 and
+    3; Haggai, 2, 38 and 4; and Zechariah, 14, 211 and 21; in all 29 chapters, 457 verses and 43
+    headings. `check` passed for all eleven books, with the report
+    `.novc/miqra-mevoar/checks/20261116-100324-636850-0500.txt`. Among the five, the smallest
+    margin is that of Zechariah 6:2 and 6:3, 1.000 against 0.695, and the lowest ratio that of
+    Zechariah 14:6, which has a ketiv and a qere, 0.842 against 0.427. `pages` wrote 85 pages into
+    `.novc/miqra-mevoar/pages/20261116-100336-311211-0500/`, and those of the six earlier books
+    equal the prototype's byte for byte.
+  - **The reading of the JSON's diff,** aided by the survey
+    `.novc/miqra-mevoar-2026-11-16/survey-new-json-20261116.txt`: the five files have no
+    character that the six earlier books lack, only Hebrew letters and marks, the space and
+    ordinary punctuation. Micah's headings before 1:1 and 2:1 are the same text, a prophecy of
+    Samaria's destruction. Zechariah repeats two paraphrases, at 4:4 and 6:4 and at 7:4 and 8:18;
+    MAM-simple's letters of 7:4 and 8:18 are the same, and those of 4:4 and 6:4 match with a
+    ratio of 0.938.
+  - **The dry run,** at 10:09 New York time, from the tree that this entry's commit records,
+    after a check that no other BDencklaBot run was in progress: `miqra-mevoar --no-save` over
+    the five books gave 29 creates, no title existing, and exited non-zero, as a dry run before a
+    save does. Its 29 pages equal those of `pages` byte for byte. Run
+    `.novc/mam-ws-bot-miqra-mevoar-runs/20261116-100925-652046-0500/`. The save waits on Ben's
+    word for that run, with its summary.
+  - **Checks:** `git diff --check`, Black on `py/miqra_mevoar/books.py`, and Stage 10's
+    verification command with `py/tests/test_miqra_mevoar_save_receipts.py` added (113 passed);
+    then, with the new files staged so that the tree-wide lints read them, those lints and the
+    versification test again (50 passed). The full suite and the mega were skipped: the change
+    adds five table entries and five data files that only the Miqra Mevoar converter, its bot
+    modes and their tests read, and the mega reads none of them.
 
 ## Background for a fresh executor
 
