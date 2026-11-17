@@ -1,7 +1,7 @@
 # Plan: rework the stress-helpers results page to show only what index.html does not
 
-State: live; written 2026-11-17, with Ben's five decisions recorded the same day; nothing
-executed. A fresh session executes it on Ben's other computer, which holds the census material.
+State: live; written 2026-11-17, with Ben's five decisions recorded the same day; being executed
+since later that day on Ben's other computer, which holds the census material.
 
 ## Context
 
@@ -28,6 +28,17 @@ Everything else in this plan is the session's reconstruction. The work moves to 
 computer through this tracked plan, pushed to origin, because the user-level instructions'
 "Clone forests and portable work" moves a task between checkouts only through pushed commits,
 and keeps a task that needs checkout-local untracked inputs in the checkout that holds them.
+
+Ben's instruction to execute the plan, typed to the commander session on 2026-11-17:
+
+> start a session that will execute the plan (or at least get the plan closer to exectuion)
+> doc/PLAN-stress-helpers-results-rework.md, with the following additional info:
+
+The additional information was a note that Codex wrote the same day, whose first paragraph
+quotes what Ben had asked Codex and which calls the rest its reconstruction. Inputs records the
+locations it gives, as the executing session verified them. That session, Claude (Opus 5.5),
+was started by the commander and works in `C:/Users/BenDe/GitRepos2/MAM-basics`, which was clean
+on `main` at `180dd6de`, this plan's commit, when it began.
 
 The decision page, <https://claude.ai/artifact/B9HHswXxZ5MrN6VvB9TZ4h>, is private to Ben's
 account. A session signed in to that account reads it with the Artifact tool's `read` action and
@@ -186,7 +197,7 @@ the decision page, by the way."
 | Input | Identity and provenance | Use | Disposition |
 | --- | --- | --- | --- |
 | results.html at `22daa1f9` | the hand-written page, from `60ea02e6` | every kept row's MAM form and sentences, the census figures and the prose | in the repository |
-| The census material | Codex's comparison output and the digital Koren and Simanim Tanakh texts it compared, on Ben's other computer | printed forms and pages under 3B; Koren's recount under 1B | its path comes from Ben; read it there, write nothing there |
+| The census material | Codex's comparison output, in `C:/Users/BenDe/.codex/visualizations/2026/11/16/01a1e668-287f-7ab0-bff0-c1b5be8a5136/` on Ben's other computer: `koren-primary-join.jsonl` and `simanim-tanakh-primary-join.jsonl`, one row for each of 25,669 MAM readings, agreements included; `koren-printed-decalogue-join.jsonl`, 68 rows; and `comparison-audit-summary.json`. Each row's `printed.source` names the record it was built from, in `.../2026/11/16/01a1e4c3-34e2-74d0-b95f-8e86afe00a69/` or `.../2026/11/13/01a1d5c3-a10b-7d21-85fb-fb52ee5986e1/`. The comparison used the `MAM-parsed/plus` tree `39829338`, which `eba06de1`, the commit results.html names, and this plan's commit share | printed forms and pages under 3B; Koren's recount under 1B | located by Codex's note; read in place, nothing written there |
 | The scans | `$HOME/OneDrive/Documents/ScansOfBooks`, folders `Koren Classic Tanakh` and `Feldheim Simanim Tanakh` | crops, at the merge | deferred to the merge |
 
 ## Stages
@@ -287,3 +298,6 @@ carried out, and set this plan's State to `executed <date>`.
 > nothing there. Keep the decision page, https://claude.ai/artifact/B9HHswXxZ5MrN6VvB9TZ4h,
 > current: read it with the Artifact tool, then republish to that URL. Begin your final report
 > with "# Report:" and a subject.
+
+Ben answered the question about the census material before the executing session began, by
+passing on Codex's note with his instruction; Inputs records the answer.
