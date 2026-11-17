@@ -1113,6 +1113,17 @@ byte-for-byte copy of that frozen plan; this ledger and the State line are the e
     all three unchanged, with no missing link or transcluded page, and exited zero.
     `py/ws/ws_bot_edit_history.md` has an entry for each of the two saves, with the run
     directories, and the decision page marks both decisions answered and carried out.
+  - **The email to Avi,** which Ben asked this session for on 2026-11-17, before 09:05 New
+    York time, is drafted for him to send. It reports round 2's saves and this stage's; that
+    Judges' second part numbers its chapter on its first verse, as the Noah page does; that
+    the parts of Judges and Daniel have no title and navigation block; that the pictures are
+    left out; that the converter reads the corrected files' new style names; and that Judges
+    repeats a heading before 15:1 and 16:23, which Avi may mention to Rabbi Kokhav with
+    Micah's. It asks Avi nothing. The draft is
+    `C:/Users/BenDe/GitRepos2/MAM-basics/.novc/miqra-mevoar-stage-11-2026-11-16/email-to-avi-2026-11-17.md`,
+    with its copyable page beside it, both built by `scripts/build_email_to_avi.py` in that
+    folder, which takes each page's title from the verified saves of round 1, round 2 and this
+    stage and the repeated heading from the tracked JSON.
 
 ## Background for a fresh executor
 
