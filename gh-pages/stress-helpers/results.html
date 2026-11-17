@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stress-helper results in MAM, Koren, and the Simanim Tanakh</title>
+<link rel="stylesheet" href="../document.css">
+<link rel="stylesheet" href="../wlc/style.css">
+<style>
+main { margin: 1.5rem auto; max-width: 65rem; padding-inline: .5rem; }
+nav { display: flex; flex-wrap: wrap; gap: .25em 1em; margin-block: 1em; }
+.table-scroll { overflow-x: auto; margin-block: .65em 1.4em; }
+table { border-collapse: collapse; }
+caption { font-weight: bold; text-align: left; margin-block-end: .35em; }
+th, td { border-bottom: 1px solid light-dark(#ccc, #555); padding: .25em .6em; vertical-align: middle; }
+th, td { text-align: start; }
+thead th { background: light-dark(#f3f3f3, #282828); }
+td.count { text-align: end; font-variant-numeric: tabular-nums; }
+td[dir="rtl"] { line-height: 1.8; white-space: nowrap; }
+.reference { white-space: nowrap; }
+details { margin-block: .75em; }
+summary { cursor: pointer; }
+</style>
+</head>
+<body>
+<main>
+<h1>Stress-helper results in MAM, Koren, and the Simanim Tanakh</h1>
+<p>The comparison covers 25,669 primary MAM readings per edition. It concerns five accents in prose verses: <span class="romanized">pashta</span>, <span class="romanized">segolta</span>, <span class="romanized">telisha gedolah</span>, <span class="romanized">telisha qetanna</span>, and <span class="romanized">zarqa</span>. The printed editions are the Koren Classic Tanakh, Classic Edition, Large Size, and the Feldheim Simanim Tanakh, Elḥanan Yosef edition.</p>
+<p>An atom is a written form bounded by spaces or <span class="romanized">maqaf</span>. A chanted word is one atom or a whole <span class="romanized">maqaf</span> compound. A stress helper indicates stress within the chanted word. A reading here is counted at the atom that bears the target accent. References use MAM verse numbers and, where useful, the atom's position within that verse.</p>
+<nav aria-label="Contents">
+<a href="#primary">Primary MAM</a>
+<a href="#decalogue">Printed-tradition Decalogue</a>
+<a href="#genesis">Combined Genesis reading</a>
+<a href="index.html">Selected comparisons</a>
+</nav>
+<section id="primary">
+<h2>Primary MAM</h2>
+<p>The primary comparison uses the MAM-parsed plus text at <code>eba06de1</code>, including the manuscript-tradition Decalogue strands. The two printed editions give <bdi lang="he" dir="rtl">טעם תחתון</bdi> in their main text and <bdi lang="he" dir="rtl">טעם עליון</bdi> in their appendices.</p>
+<div class="table-scroll" role="region" aria-label="Number of primary MAM readings" tabindex="0">
+<table>
+<caption>Primary MAM readings by accent</caption>
+<thead><tr><th scope="col">Target accent</th><th scope="col">With helper</th><th scope="col">Without helper</th><th scope="col">Total</th></tr></thead>
+<tbody>
+<tr><th scope="row"><span class="romanized">pashta</span></th><td class="count">3,829</td><td class="count">16,825</td><td class="count">20,654</td></tr>
+<tr><th scope="row"><span class="romanized">segolta</span></th><td class="count">170</td><td class="count">787</td><td class="count">957</td></tr>
+<tr><th scope="row"><span class="romanized">telisha gedolah</span></th><td class="count">1,003</td><td class="count">200</td><td class="count">1,203</td></tr>
+<tr><th scope="row"><span class="romanized">telisha qetanna</span></th><td class="count">333</td><td class="count">1,534</td><td class="count">1,867</td></tr>
+<tr><th scope="row"><span class="romanized">zarqa</span></th><td class="count">180</td><td class="count">808</td><td class="count">988</td></tr>
+<tr><th scope="row">Total</th><td class="count">5,515</td><td class="count">20,154</td><td class="count">25,669</td></tr>
+</tbody>
+</table>
+</div>
+<div class="table-scroll" role="region" aria-label="Primary comparison by edition" tabindex="0">
+<table>
+<caption>Primary comparison results</caption>
+<thead><tr><th scope="col">Result</th><th scope="col">Koren</th><th scope="col">Simanim Tanakh</th></tr></thead>
+<tbody>
+<tr><th scope="row">Same accent and helper</th><td class="count">25,581</td><td class="count">25,630</td></tr>
+<tr><th scope="row">Helper in print only</th><td class="count">26</td><td class="count">27</td></tr>
+<tr><th scope="row">Helper in MAM only</th><td class="count">11</td><td class="count">4</td></tr>
+<tr><th scope="row">Helper on a different letter</th><td class="count">4</td><td class="count">2</td></tr>
+<tr><th scope="row">Different accent</th><td class="count">47</td><td class="count">6</td></tr>
+<tr><th scope="row">Same target accent with a different grouping</th><td class="count">4</td><td class="count">0</td></tr>
+<tr><th scope="row">Spelling differs within the accent and helper agreements</th><td class="count">42</td><td class="count">6</td></tr>
+</tbody>
+</table>
+</div>
+<p>Koren has a helper at 12 places where MAM has lone <span class="romanized">pashta</span>. The Simanim Tanakh has a helper at 13. For the other four accents, each edition has 14 places with the same accent and an additional helper. At 1 Sam 17:37, both editions have a <span class="romanized">zarqa</span> helper on yod of <bdi lang="hbo" dir="rtl">וַיֹּאמֶר֮</bdi>. At Ezek 13:19, both have a <span class="romanized">segolta</span> helper on lamed of <bdi lang="hbo" dir="rtl">לֶחֶם֒</bdi>.</p>
+<p>The four Koren grouping differences in the table above are places where the target accent agrees. At Ezek 31:12, MAM has <span class="romanized">pashta</span> on <bdi lang="hbo" dir="rtl">בְּכֹל֙</bdi> where Koren has a <span class="romanized">maqaf</span> joining it to the following atom. This exchange counts once, under the accent differences.</p>
+<p>At 2 Sam 4:6, the primary MAM reading has the <span class="romanized">telisha gedolah</span> helper on nun. Both editions and <a href="https://he.wikisource.org/w/index.php?oldid=3102555">Hebrew Wikisource revision 3102555</a> have it on the first he. At the first occurrence of <bdi lang="hbo" dir="rtl">אָחִ֘יךְ֮</bdi> in 2 Sam 13:20, the primary MAM reading has a <span class="romanized">zarqa</span> helper on ḥet. Both editions and <a href="https://he.wikisource.org/w/index.php?oldid=3102618">Hebrew Wikisource revision 3102618</a> have a single <span class="romanized">zarqa</span>.</p>
+<details>
+<summary>Accent, helper, and grouping differences by verse</summary>
+<p>A dash indicates agreement in the accent, helper, and grouping.</p>
+<div class="table-scroll" role="region" aria-label="Differences by verse" tabindex="0">
+<table>
+<thead><tr><th scope="col">MAM reading</th><th scope="col">Verse</th><th scope="col">Koren</th><th scope="col">Simanim Tanakh</th></tr></thead>
+<tbody>
+<tr><td dir="rtl" lang="hbo">אָֽנֹכִי֙</td><th scope="row" class="reference">Exod 20:2<br><small>Atom 1 · <bdi lang="he" dir="rtl">תחתון</bdi></small></th><td><span class="romanized">Tipeḥa</span> on kaf where MAM has <span class="romanized">pashta</span>.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">יִהְיֶֽה־לְךָ֩</td><th scope="row" class="reference">Exod 20:2<br><small>Atom 12 · <bdi lang="he" dir="rtl">עליון</bdi></small></th><td><span class="romanized">Munaḥ</span> on the preceding atom and a space where MAM has <span class="romanized">maqaf</span>. The target accent and helper agree.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">וּבִנְךָֽ־וּ֠בִתֶּ֠ךָ</td><th scope="row" class="reference">Exod 20:9<br><small>Atom 12 · <bdi lang="he" dir="rtl">עליון</bdi></small></th><td><span class="romanized">Munaḥ</span> on the preceding atom and a space where MAM has <span class="romanized">maqaf</span>. The target accent and helper agree.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">עַמֻּֽדֵיהֶם֙</td><th scope="row" class="reference">Exod 27:16<br><small>Atom 14</small></th><td><span class="romanized">Munaḥ</span> on he where MAM has <span class="romanized">pashta</span>.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">אֲשֶׁר֩</td><th scope="row" class="reference">Lev 7:36<br><small>Atom 1</small></th><td><span class="romanized">Telisha gedolah</span> on alef where MAM has <span class="romanized">telisha qetanna</span>. The printed accent has a helper on shin.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">קִ֞֠רְב֞֠וּ</td><th scope="row" class="reference">Lev 10:4<br><small>Atom 13</small></th><td><span class="romanized">Telisha gedolah</span> on qof and <span class="romanized">gershayim</span> on bet. MAM has both marks on both letters.</td><td><span class="romanized">Telisha gedolah</span> on qof and <span class="romanized">gershayim</span> on bet. MAM has both marks on both letters.</td></tr>
+<tr><td dir="rtl" lang="hbo">שָׁ֩טוּ֩</td><th scope="row" class="reference">Num 11:8<br><small>Atom 1</small></th><td>—</td><td>Single <span class="romanized">telisha qetanna</span>.</td></tr>
+<tr><td dir="rtl" lang="hbo">וּלְמַטֵּה֙</td><th scope="row" class="reference">Num 34:20<br><small>Atom 1</small></th><td><span class="romanized">Tipeḥa</span> on tet where MAM has <span class="romanized">pashta</span>.</td><td><span class="romanized">Tipeḥa</span> on tet where MAM has <span class="romanized">pashta</span>.</td></tr>
+<tr><td dir="rtl" lang="hbo">אָֽנֹכִי֙</td><th scope="row" class="reference">Deut 5:6<br><small>Atom 1 · <bdi lang="he" dir="rtl">תחתון</bdi></small></th><td><span class="romanized">Tipeḥa</span> on kaf where MAM has <span class="romanized">pashta</span>.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">יִהְיֶֽה־לְךָ֩</td><th scope="row" class="reference">Deut 5:6<br><small>Atom 12 · <bdi lang="he" dir="rtl">עליון</bdi></small></th><td><span class="romanized">Maqaf</span> one atom earlier than in MAM, with a space before the target atom. The target accent and helper agree.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">וְיוֹם֙</td><th scope="row" class="reference">Deut 5:13<br><small>Atom 1 · <bdi lang="he" dir="rtl">תחתון</bdi></small></th><td>—</td><td><span class="romanized">Qadma</span> on yod where MAM has <span class="romanized">pashta</span>.</td></tr>
+<tr><td dir="rtl" lang="hbo">וְעַבְדְּךָֽ־וַ֠אֲמָתֶ֠ךָ</td><th scope="row" class="reference">Deut 5:13<br><small>Atom 14 · <bdi lang="he" dir="rtl">תחתון</bdi></small></th><td><span class="romanized">Revia</span> on tav where MAM has <span class="romanized">telisha gedolah</span>.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">וַיֵּתֵא֙</td><th scope="row" class="reference">Deut 33:21<br><small>Atom 9</small></th><td>A <span class="romanized">pashta</span> helper on yod.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">אַתֶּם֙</td><th scope="row" class="reference">Josh 1:11<br><small>Atom 15</small></th><td><span class="romanized">Mahapakh</span> on tav where MAM has <span class="romanized">pashta</span>.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">לָ֠מָה</td><th scope="row" class="reference">Josh 7:7<br><small>Atom 6</small></th><td>A <span class="romanized">telisha gedolah</span> helper on mem.</td><td>A <span class="romanized">telisha gedolah</span> helper on mem.</td></tr>
+<tr><td dir="rtl" lang="hbo">לִּֽירִיחוֹ֙</td><th scope="row" class="reference">Josh 8:2<br><small>Atom 6</small></th><td><span class="romanized">Munaḥ</span> on ḥet where MAM has <span class="romanized">pashta</span>.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">כַּֽאֲשֶׁר֙</td><th scope="row" class="reference">Josh 14:11<br><small>Atom 4</small></th><td><span class="romanized">Telisha qetanna</span> on resh where MAM has <span class="romanized">pashta</span>.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">וְנָסַב֩</td><th scope="row" class="reference">Josh 15:10<br><small>Atom 1</small></th><td><span class="romanized">Telisha gedolah</span> on vav where MAM has <span class="romanized">telisha qetanna</span>. The printed accent has a helper on samekh.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">וָ֠אֶקַּ֠ח</td><th scope="row" class="reference">Josh 24:3<br><small>Atom 1</small></th><td>The <span class="romanized">telisha gedolah</span> helper is on ḥet. MAM has it on qof.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">וַיֹּ֩אמְרוּ֩</td><th scope="row" class="reference">Judg 18:19<br><small>Atom 1</small></th><td>Single <span class="romanized">telisha qetanna</span>.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">וַיֹּֽאמְרוּ֙</td><th scope="row" class="reference">Judg 21:16<br><small>Atom 1</small></th><td>—</td><td><span class="romanized">Qadma</span> on resh where MAM has <span class="romanized">pashta</span>.</td></tr>
+<tr><td dir="rtl" lang="hbo">לֹא֙</td><th scope="row" class="reference">1 Sam 2:16<br><small>Atom 14</small></th><td><span class="romanized">Zaqef qatan</span> on lamed where MAM has <span class="romanized">pashta</span>.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">אִֽיכָבוֹד֙</td><th scope="row" class="reference">1 Sam 4:21<br><small>Atom 3</small></th><td>Two chanted words, with <span class="romanized">mahapakh</span> on the first and <span class="romanized">pashta</span> on the second. MAM has one chanted word. The target accent and helper agree.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">וַיֹּאמֶר֮</td><th scope="row" class="reference">1 Sam 17:37<br><small>Atom 1</small></th><td>A <span class="romanized">zarqa</span> helper on yod.</td><td>A <span class="romanized">zarqa</span> helper on yod.</td></tr>
+<tr><td dir="rtl" lang="hbo">לָלֶכֶת֮</td><th scope="row" class="reference">1 Sam 17:39<br><small>Atom 8</small></th><td>A <span class="romanized">zarqa</span> helper on the second lamed.</td><td>A <span class="romanized">zarqa</span> helper on the second lamed.</td></tr>
+<tr><td dir="rtl" lang="hbo">וְדָוִד֙</td><th scope="row" class="reference">1 Sam 24:3<br><small>Atom 14</small></th><td><span class="romanized">Tevir</span> on the second vav where MAM has <span class="romanized">pashta</span>.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">וַיֹּאמֶר֩</td><th scope="row" class="reference">1 Sam 26:15<br><small>Atom 1</small></th><td>A <span class="romanized">telisha qetanna</span> helper on yod.</td><td>A <span class="romanized">telisha qetanna</span> helper on yod.</td></tr>
+<tr><td dir="rtl" lang="hbo">וְיָשֹׁב֙</td><th scope="row" class="reference">1 Sam 29:4<br><small>Atom 12</small></th><td><span class="romanized">Mahapakh</span> on shin where MAM has <span class="romanized">pashta</span>.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">וַיֵּבְךְּ֙</td><th scope="row" class="reference">2 Sam 3:32<br><small>Atom 9</small></th><td>A <span class="romanized">pashta</span> helper on yod.</td><td>A <span class="romanized">pashta</span> helper on yod.</td></tr>
+<tr><td dir="rtl" lang="hbo">וְ֠הֵנָּ֠ה</td><th scope="row" class="reference">2 Sam 4:6<br><small>Atom 1</small></th><td>The <span class="romanized">telisha gedolah</span> helper is on the first he. MAM has it on nun.</td><td>The <span class="romanized">telisha gedolah</span> helper is on the first he. MAM has it on nun.</td></tr>
+<tr><td dir="rtl" lang="hbo">אֶל־מוּל֙</td><th scope="row" class="reference">2 Sam 11:15<br><small>Atom 8</small></th><td><span class="romanized">Qadma</span> on mem where MAM has <span class="romanized">pashta</span>.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">אָחִ֘יךְ֮</td><th scope="row" class="reference">2 Sam 13:20<br><small>Atom 6</small></th><td>Single <span class="romanized">zarqa</span>.</td><td>Single <span class="romanized">zarqa</span>.</td></tr>
+<tr><td dir="rtl" lang="hbo">מִדָּן֙</td><th scope="row" class="reference">2 Sam 17:11<br><small>Atom 8</small></th><td><span class="romanized">Munaḥ</span> on dalet where MAM has <span class="romanized">pashta</span>.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">אַ֠חֲרֵי</td><th scope="row" class="reference">2 Sam 19:31<br><small>Atom 9</small></th><td>A <span class="romanized">telisha gedolah</span> helper on resh.</td><td>A <span class="romanized">telisha gedolah</span> helper on resh.</td></tr>
+<tr><td dir="rtl" lang="hbo">אֱלֹהֵי֙</td><th scope="row" class="reference">1 Kgs 18:36<br><small>Atom 9</small></th><td><span class="romanized">Mahapakh</span> on he where MAM has <span class="romanized">pashta</span>.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">וְהִנֵּה֙</td><th scope="row" class="reference">2 Kgs 1:9<br><small>Atom 8</small></th><td><span class="romanized">Mahapakh</span> on nun where MAM has <span class="romanized">pashta</span>.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">וַיִּשְׁלַח֙</td><th scope="row" class="reference">2 Kgs 5:8<br><small>Atom 12</small></th><td><span class="romanized">Mahapakh</span> on lamed where MAM has <span class="romanized">pashta</span>.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">וַיִּוָּעַץ֙</td><th scope="row" class="reference">2 Kgs 6:8<br><small>Atom 6</small></th><td><span class="romanized">Mahapakh</span> on ayin where MAM has <span class="romanized">pashta</span>.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">וַיָּשֻׁבוּ֮</td><th scope="row" class="reference">2 Kgs 9:36<br><small>Atom 1</small></th><td>A <span class="romanized">zarqa</span> helper on shin.</td><td>A <span class="romanized">zarqa</span> helper on shin.</td></tr>
+<tr><td dir="rtl" lang="hbo">וַיֹּ֙אמֶר֙</td><th scope="row" class="reference">2 Kgs 20:14<br><small>Atom 16</small></th><td><span class="romanized">Munaḥ</span> on yod where MAM has <span class="romanized">pashta</span>.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">לָ֠כֵן</td><th scope="row" class="reference">Isa 10:16<br><small>Atom 1</small></th><td>A <span class="romanized">telisha gedolah</span> helper on kaf.</td><td>A <span class="romanized">telisha gedolah</span> helper on kaf.</td></tr>
+<tr><td dir="rtl" lang="hbo">וְשָׁפַלְתְּ֙</td><th scope="row" class="reference">Isa 29:4<br><small>Atom 1</small></th><td>A <span class="romanized">pashta</span> helper on pe.</td><td>A <span class="romanized">pashta</span> helper on pe.</td></tr>
+<tr><td dir="rtl" lang="hbo">אֶת־הַכֶּסֶף֩</td><th scope="row" class="reference">Isa 39:2<br><small>Atom 9</small></th><td>A <span class="romanized">telisha qetanna</span> helper on kaf.</td><td>A <span class="romanized">telisha qetanna</span> helper on kaf.</td></tr>
+<tr><td dir="rtl" lang="hbo">תוֹסִ֙יפִי֙</td><th scope="row" class="reference">Isa 47:1<br><small>Atom 16</small></th><td>Single <span class="romanized">pashta</span>.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">תוֹסִ֙יפִי֙</td><th scope="row" class="reference">Isa 47:5<br><small>Atom 9</small></th><td>Single <span class="romanized">pashta</span>.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">אָמַרְתְּ֙</td><th scope="row" class="reference">Isa 47:10<br><small>Atom 3</small></th><td>A <span class="romanized">pashta</span> helper on mem.</td><td>A <span class="romanized">pashta</span> helper on mem.</td></tr>
+<tr><td dir="rtl" lang="hbo">וְיָנַקְתְּ֙</td><th scope="row" class="reference">Isa 60:16<br><small>Atom 1</small></th><td>A <span class="romanized">pashta</span> helper on nun.</td><td>A <span class="romanized">pashta</span> helper on nun.</td></tr>
+<tr><td dir="rtl" lang="hbo">רָצֹ֙חַ֙</td><th scope="row" class="reference">Jer 7:9<br><small>Atom 2</small></th><td>Single <span class="romanized">pashta</span>.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">אֶת־רֵעֵ֙הוּ֙</td><th scope="row" class="reference">Jer 9:7<br><small>Atom 9</small></th><td><span class="romanized">Munaḥ</span> on ayin where MAM has <span class="romanized">pashta</span>.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">פָ֠נַי</td><th scope="row" class="reference">Jer 21:10<br><small>Atom 3</small></th><td>A <span class="romanized">telisha gedolah</span> helper on nun.</td><td>A <span class="romanized">telisha gedolah</span> helper on nun.</td></tr>
+<tr><td dir="rtl" lang="hbo">יֹשַׁבְתְּ֙</td><th scope="row" class="reference">Jer 22:23<br><small>Atom 1</small></th><td><span class="romanized">Munaḥ</span> on shin where MAM has <span class="romanized">pashta</span>.</td><td>A <span class="romanized">pashta</span> helper on shin.</td></tr>
+<tr><td dir="rtl" lang="hbo">מַה־נֵּחַנְתְּ֙</td><th scope="row" class="reference">Jer 22:23<br><small>Atom 6</small></th><td>A <span class="romanized">pashta</span> helper on ḥet.</td><td>A <span class="romanized">pashta</span> helper on ḥet.</td></tr>
+<tr><td dir="rtl" lang="hbo">יַעֲקוֹב֩</td><th scope="row" class="reference">Jer 33:26<br><small>Atom 3</small></th><td><span class="romanized">Telisha gedolah</span> on yod where MAM has <span class="romanized">telisha qetanna</span>. The printed accent has a helper on qof.</td><td><span class="romanized">Telisha gedolah</span> on yod where MAM has <span class="romanized">telisha qetanna</span>. The printed accent has a helper on qof.</td></tr>
+<tr><td dir="rtl" lang="hbo">אֶל־גְּדַלְיָהוּ֩</td><th scope="row" class="reference">Jer 40:15<br><small>Atom 6</small></th><td>A <span class="romanized">telisha qetanna</span> helper on yod.</td><td>A <span class="romanized">telisha qetanna</span> helper on yod.</td></tr>
+<tr><td dir="rtl" lang="hbo">כׇּל־הָרָעָה֙</td><th scope="row" class="reference">Jer 41:11<br><small>Atom 12</small></th><td><span class="romanized">Munaḥ</span> on resh where MAM has <span class="romanized">pashta</span>.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">וַיְהִי֩</td><th scope="row" class="reference">Jer 43:1<br><small>Atom 1</small></th><td><span class="romanized">Telisha gedolah</span> on vav where MAM has <span class="romanized">telisha qetanna</span>. The printed accent has a helper on he.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">וְתַ֩מּוּ֩</td><th scope="row" class="reference">Jer 44:27<br><small>Atom 7</small></th><td>Single <span class="romanized">telisha qetanna</span>.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">אֵין֙</td><th scope="row" class="reference">Jer 49:1<br><small>Atom 7</small></th><td><span class="romanized">Munaḥ</span> on alef where MAM has <span class="romanized">pashta</span>.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">וְגַם־נִלְכַּדְתְּ֙</td><th scope="row" class="reference">Jer 50:24<br><small>Atom 4</small></th><td>A <span class="romanized">pashta</span> helper on kaf.</td><td>A <span class="romanized">pashta</span> helper on kaf.</td></tr>
+<tr><td dir="rtl" lang="hbo">שֹׁכַנְתְּ֙</td><th scope="row" class="reference">Jer 51:13<br><small>Atom 1</small></th><td>A <span class="romanized">pashta</span> helper on kaf.</td><td>A <span class="romanized">pashta</span> helper on kaf.</td></tr>
+<tr><td dir="rtl" lang="hbo">בַּעֲשׂ֩וֹתִי֩</td><th scope="row" class="reference">Ezek 5:15<br><small>Atom 9</small></th><td>Single <span class="romanized">telisha qetanna</span>.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">כֵּ֠לַ֠י</td><th scope="row" class="reference">Ezek 12:7<br><small>Atom 5</small></th><td><span class="romanized">Qadma</span> on lamed where MAM has <span class="romanized">telisha gedolah</span>.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">לֶחֶם֒</td><th scope="row" class="reference">Ezek 13:19<br><small>Atom 8</small></th><td>A <span class="romanized">segolta</span> helper on lamed.</td><td>A <span class="romanized">segolta</span> helper on lamed.</td></tr>
+<tr><td dir="rtl" lang="hbo">הָאֵלֶּה֮</td><th scope="row" class="reference">Ezek 14:16<br><small>Atom 3</small></th><td>A <span class="romanized">zarqa</span> helper on alef.</td><td>A <span class="romanized">zarqa</span> helper on alef.</td></tr>
+<tr><td dir="rtl" lang="hbo">לֹֽא־זָכַרְתְּ֙</td><th scope="row" class="reference">Ezek 16:43<br><small>Atom 4</small></th><td>A <span class="romanized">pashta</span> helper on kaf.</td><td>A <span class="romanized">pashta</span> helper on kaf.</td></tr>
+<tr><td dir="rtl" lang="hbo">פִּלַּלְתְּ֙</td><th scope="row" class="reference">Ezek 16:52<br><small>Atom 6</small></th><td>A <span class="romanized">pashta</span> helper on the first lamed.</td><td>A <span class="romanized">pashta</span> helper on the first lamed.</td></tr>
+<tr><td dir="rtl" lang="hbo">וְנִכְלַמְתְּ֒</td><th scope="row" class="reference">Ezek 16:61<br><small>Atom 4</small></th><td>A <span class="romanized">segolta</span> helper on lamed.</td><td>A <span class="romanized">segolta</span> helper on lamed.</td></tr>
+<tr><td dir="rtl" lang="hbo">בִּמְקוֹם֙</td><th scope="row" class="reference">Ezek 17:16<br><small>Atom 8</small></th><td><span class="romanized">Mahapakh</span> on qof where MAM has <span class="romanized">pashta</span>.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">אַתֶּם֙</td><th scope="row" class="reference">Ezek 18:2<br><small>Atom 3</small></th><td><span class="romanized">Mahapakh</span> on tav where MAM has <span class="romanized">pashta</span>.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">בַסּ֙וּגַר֙</td><th scope="row" class="reference">Ezek 19:9<br><small>Atom 2</small></th><td>Single <span class="romanized">pashta</span>.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">אַתֶּם֩</td><th scope="row" class="reference">Ezek 20:31<br><small>Atom 6</small></th><td><span class="romanized">Qadma</span> on tav where MAM has <span class="romanized">telisha qetanna</span>.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">וְיָשַׁבְתְּ֙</td><th scope="row" class="reference">Ezek 23:41<br><small>Atom 1</small></th><td>A <span class="romanized">pashta</span> helper on shin.</td><td>A <span class="romanized">pashta</span> helper on shin.</td></tr>
+<tr><td dir="rtl" lang="hbo">דְּדָן֙</td><th scope="row" class="reference">Ezek 27:20<br><small>Atom 1</small></th><td><span class="romanized">Tipeḥa</span> on the second dalet where MAM has <span class="romanized">pashta</span>.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">בְּכֹל֙</td><th scope="row" class="reference">Ezek 31:12<br><small>Atom 14</small></th><td><span class="romanized">Maqaf</span> to the following atom where MAM has <span class="romanized">pashta</span>.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">וּ֜֠לְאֵ֜֠לֶּה</td><th scope="row" class="reference">Ezek 48:10<br><small>Atom 1</small></th><td><span class="romanized">Telisha gedolah</span> on vav and <span class="romanized">geresh</span> on alef. MAM has both marks on both letters.</td><td><span class="romanized">Telisha gedolah</span> on vav and <span class="romanized">geresh</span> on alef. MAM has both marks on both letters.</td></tr>
+<tr><td dir="rtl" lang="hbo">זָנַח֙</td><th scope="row" class="reference">Hosea 8:5<br><small>Atom 1</small></th><td><span class="romanized">Mahapakh</span> on nun where MAM has <span class="romanized">pashta</span>.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">תִרְגַּ֙לְתִּי֙</td><th scope="row" class="reference">Hosea 11:3<br><small>Atom 2</small></th><td><span class="romanized">Munaḥ</span> on gimel where MAM has <span class="romanized">pashta</span>.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">מִן־הַבַּיִת֒</td><th scope="row" class="reference">Amos 6:10<br><small>Atom 7</small></th><td>A <span class="romanized">segolta</span> helper on bet.</td><td>A <span class="romanized">segolta</span> helper on bet.</td></tr>
+<tr><td dir="rtl" lang="hbo">לִירוּשָׁלַ֙͏ִם֙</td><th scope="row" class="reference">Zech 1:16<br><small>Atom 6</small></th><td>The <span class="romanized">pashta</span> helper is on shin. MAM has it on the second lamed.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">וְהָלַכְתְּ֙</td><th scope="row" class="reference">Ruth 2:9<br><small>Atom 14</small></th><td>—</td><td>A <span class="romanized">pashta</span> helper on lamed.</td></tr>
+<tr><td dir="rtl" lang="hbo">וַיֵּשְׁתְּ֙</td><th scope="row" class="reference">Ruth 3:7<br><small>Atom 3</small></th><td>A <span class="romanized">pashta</span> helper on yod.</td><td>A <span class="romanized">pashta</span> helper on yod.</td></tr>
+<tr><td dir="rtl" lang="hbo">אֶסְתֵּר֙</td><th scope="row" class="reference">Esther 4:10<br><small>Atom 2</small></th><td><span class="romanized">Tipeḥa</span> on tav where MAM has <span class="romanized">pashta</span>.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">פַּרְזְלָא֙</td><th scope="row" class="reference">Daniel 2:43<br><small>Atom 3</small></th><td><span class="romanized">Mahapakh</span> on lamed where MAM has <span class="romanized">pashta</span>.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">בְּמַלְכוּתָם֩</td><th scope="row" class="reference">Neh 9:35<br><small>Atom 2</small></th><td><span class="romanized">Telisha gedolah</span> on bet where MAM has <span class="romanized">telisha qetanna</span>. The printed accent has a helper on tav.</td><td><span class="romanized">Telisha gedolah</span> on bet where MAM has <span class="romanized">telisha qetanna</span>. The printed accent has a helper on tav.</td></tr>
+<tr><td dir="rtl" lang="hbo">לָשֶׁ֙בֶת֙</td><th scope="row" class="reference">Neh 11:1<br><small>Atom 13</small></th><td><span class="romanized">Mahapakh</span> on shin where MAM has <span class="romanized">pashta</span>.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">וְיוֹיָדָע֙</td><th scope="row" class="reference">Neh 12:11<br><small>Atom 1</small></th><td><span class="romanized">Tipeḥa</span> on tav where MAM has <span class="romanized">pashta</span>. The spelling differs as well.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">לִמְלִ֙יכוּ֙</td><th scope="row" class="reference">Neh 12:14<br><small>Atom 1</small></th><td>Single <span class="romanized">pashta</span>.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">וַֽאֲבָנִים֙</td><th scope="row" class="reference">1 Chr 22:14<br><small>Atom 22</small></th><td><span class="romanized">Merkha</span> on nun where MAM has <span class="romanized">pashta</span>.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">מְרָרִי֙</td><th scope="row" class="reference">1 Chr 24:26<br><small>Atom 2</small></th><td><span class="romanized">Tipeḥa</span> on the second resh where MAM has <span class="romanized">pashta</span>.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">בַּתִּים֙</td><th scope="row" class="reference">2 Chr 2:9<br><small>Atom 17</small></th><td><span class="romanized">Tipeḥa</span> on tav where MAM has <span class="romanized">pashta</span>.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">שְׁלֹמֹה֙</td><th scope="row" class="reference">2 Chr 8:3<br><small>Atom 2</small></th><td><span class="romanized">Tipeḥa</span> on mem where MAM has <span class="romanized">pashta</span>.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">חָשַׁק֙</td><th scope="row" class="reference">2 Chr 8:6<br><small>Atom 22</small></th><td><span class="romanized">Geresh</span> on shin where MAM has <span class="romanized">pashta</span>.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">וַ֠יָּשֻׁב֠וּ</td><th scope="row" class="reference">2 Chr 20:27<br><small>Atom 1</small></th><td>The <span class="romanized">telisha gedolah</span> helper is on shin. MAM has it on bet.</td><td>The <span class="romanized">telisha gedolah</span> helper is on shin. MAM has it on bet.</td></tr>
+<tr><td dir="rtl" lang="hbo">לָֽבְשָׁה֙</td><th scope="row" class="reference">2 Chr 24:20<br><small>Atom 3</small></th><td><span class="romanized">Mahapakh</span> on shin where MAM has <span class="romanized">pashta</span>.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">עַתָּה֙</td><th scope="row" class="reference">2 Chr 29:31<br><small>Atom 4</small></th><td><span class="romanized">Qadma</span> on tav where MAM has <span class="romanized">pashta</span>.</td><td><span class="romanized">Qadma</span> on tav where MAM has <span class="romanized">pashta</span>.</td></tr>
+<tr><td dir="rtl" lang="hbo">אֱלֹהֵי֙</td><th scope="row" class="reference">2 Chr 30:6<br><small>Atom 18</small></th><td><span class="romanized">Mahapakh</span> on he where MAM has <span class="romanized">pashta</span>.</td><td>—</td></tr>
+</tbody>
+</table>
+</div>
+</details>
+<details>
+<summary>Spelling differences with agreement in accent and helper</summary>
+<p>Ten of the 42 Koren spelling differences required alignment by letter. At Job 1:10, Koren has the ketiv letters with the qere’s pointing. Both MAM and Koren have the <span class="romanized">telisha gedolah</span> helper on tav. A dash indicates agreement in spelling.</p>
+<div class="table-scroll" role="region" aria-label="Spelling results by verse" tabindex="0">
+<table>
+<thead><tr><th scope="col">MAM reading</th><th scope="col">Verse</th><th scope="col">Koren</th><th scope="col">Simanim Tanakh</th></tr></thead>
+<tbody>
+<tr><td dir="rtl" lang="hbo">כׇּֽל־מַעְיְנֹת֙</td><th scope="row" class="reference">Gen 7:11<br><small>Atom 17</small></th><td>The compared marks agree.</td><td>The compared marks agree.</td></tr>
+<tr><td dir="rtl" lang="hbo">וַיִּֽהְיוּ֙</td><th scope="row" class="reference">Gen 9:29<br><small>Atom 1</small></th><td>The compared marks agree.</td><td>The compared marks agree.</td></tr>
+<tr><td dir="rtl" lang="hbo">וּלְבִלְתִּי־בֹא֙</td><th scope="row" class="reference">Deut 4:21<br><small>Atom 12</small></th><td>The compared marks agree.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">כְּשׇׁמְעֲכֶם֙</td><th scope="row" class="reference">Josh 6:5<br><small>Atom 5</small></th><td>The compared marks agree.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">וּמְטֻלָּאוֹת֙</td><th scope="row" class="reference">Josh 9:5<br><small>Atom 3</small></th><td>The compared marks agree.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">דִּיבֹן֙</td><th scope="row" class="reference">Josh 13:17<br><small>Atom 6</small></th><td>The compared marks agree.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">אֹתוֹ֙</td><th scope="row" class="reference">Josh 14:7<br><small>Atom 16</small></th><td>The compared marks agree.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">וְאֹתָ֙נוּ֙</td><th scope="row" class="reference">Josh 22:19<br><small>Atom 22</small></th><td>The compared marks agree after alignment by letter.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">וָֽאַרְבֶּה֙</td><th scope="row" class="reference">Josh 24:3<br><small>Atom 13</small></th><td>The compared marks agree.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">אֹתוֹ֙</td><th scope="row" class="reference">Josh 24:30<br><small>Atom 2</small></th><td>The compared marks agree.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">לְיֽוֹשְׁבֵי֙</td><th scope="row" class="reference">Judg 2:2<br><small>Atom 5</small></th><td>The compared marks agree.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">חַ֙דְתָּ֙</td><th scope="row" class="reference">Judg 14:16<br><small>Atom 11</small></th><td>The compared marks agree after alignment by letter.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">אֲשֶֽׁר־יִשְׁכְּבוּן֙</td><th scope="row" class="reference">1 Sam 2:22<br><small>Atom 14</small></th><td>The compared marks agree.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">אֲבֽוֹתֵיכֶם֙</td><th scope="row" class="reference">1 Sam 12:8<br><small>Atom 6</small></th><td>The compared marks agree.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">אֶת־אֲבֹֽתֵיכֶם֙</td><th scope="row" class="reference">1 Sam 12:8<br><small>Atom 17</small></th><td>The compared marks agree.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">לַמַּֽחֲרֵשֹׁת֙</td><th scope="row" class="reference">1 Sam 13:21<br><small>Atom 4</small></th><td>The compared marks agree.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">וְאַתָּה֙</td><th scope="row" class="reference">1 Sam 24:18<br><small>Atom 1</small></th><td>The compared marks agree.</td><td>The compared marks agree.</td></tr>
+<tr><td dir="rtl" lang="hbo">בֵּית־הַמֶּ֙לֶךְ֙</td><th scope="row" class="reference">2 Kgs 15:25<br><small>Atom 11</small></th><td>The compared marks agree after alignment by letter.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">וַֽאֲדֹמִים֙</td><th scope="row" class="reference">2 Kgs 16:6<br><small>Atom 14</small></th><td>The compared marks agree.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">וְיֹרֵ֙נוּ֙</td><th scope="row" class="reference">Isa 2:3<br><small>Atom 14</small></th><td>The compared marks agree after alignment by letter.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">וְטָפֹף֙</td><th scope="row" class="reference">Isa 3:16<br><small>Atom 14</small></th><td>The compared marks agree.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">וְהַגִּלְיֹנִים֙</td><th scope="row" class="reference">Isa 3:23<br><small>Atom 1</small></th><td>The compared marks agree.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">עֽוֹלֵלֹת֙</td><th scope="row" class="reference">Isa 17:6<br><small>Atom 3</small></th><td>The compared marks agree.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">כִּי־יַֽעֲבֹר֙</td><th scope="row" class="reference">Isa 28:15<br><small>Atom 14</small></th><td>The compared marks agree.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">מֽוֹדִעִים֙</td><th scope="row" class="reference">Isa 47:13<br><small>Atom 11</small></th><td>The compared marks agree.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">הַמַּזְכִּרִים֙</td><th scope="row" class="reference">Isa 62:6<br><small>Atom 13</small></th><td>The compared marks agree.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">יִֽיגְעוּ֙</td><th scope="row" class="reference">Isa 65:23<br><small>Atom 2</small></th><td>The compared marks agree.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">יִרְאֶה֙</td><th scope="row" class="reference">Jer 17:8<br><small>Atom 11</small></th><td>The compared marks agree.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">וַהֲשִׂמֹתִ֙יהוּ֙</td><th scope="row" class="reference">Ezek 14:8<br><small>Atom 5</small></th><td>The compared marks agree after alignment by letter.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">כׇּל־תּוֹעֲבֹתַ֙יִךְ֙</td><th scope="row" class="reference">Ezek 16:22<br><small>Atom 3</small></th><td>The compared marks agree after alignment by letter.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">תֻּבַל֙</td><th scope="row" class="reference">Ezek 27:13<br><small>Atom 2</small></th><td>The compared marks agree.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">עֲרִסֽוֹתֵיכֶם֙</td><th scope="row" class="reference">Ezek 44:30<br><small>Atom 13</small></th><td>The compared marks agree.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">וַתִּשֶּׂ֙אנָה֙</td><th scope="row" class="reference">Zech 5:9<br><small>Atom 14</small></th><td>The compared marks agree after alignment by letter.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">הֲלֹֽא־אַ֠תָּ֠ה</td><th scope="row" class="reference">Job 1:10<br><small>Atom 2</small></th><td>The compared marks agree after alignment by letter.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">אַל־תִּרְא֙וּנִי֙</td><th scope="row" class="reference">Song of Songs 1:6<br><small>Atom 2</small></th><td>The compared marks agree after alignment by letter.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">וְאֵֽדְעָה֙</td><th scope="row" class="reference">Ruth 4:4<br><small>Atom 20</small></th><td>The compared marks agree.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">מִנְּהֵין֙</td><th scope="row" class="reference">Daniel 2:33<br><small>Atom 5</small></th><td>The compared marks agree.</td><td>The compared marks agree.</td></tr>
+<tr><td dir="rtl" lang="hbo">דָּאיְנִין֙</td><th scope="row" class="reference">Ezra 7:25<br><small>Atom 12</small></th><td>The compared marks agree.</td><td>The compared marks agree.</td></tr>
+<tr><td dir="rtl" lang="hbo">וַהֲבִֽיאוֹתִים֙</td><th scope="row" class="reference">Neh 1:9<br><small>Atom 14</small></th><td>—</td><td>The compared marks agree.</td></tr>
+<tr><td dir="rtl" lang="hbo">גְּ֠וִיֹּתֵ֠ינוּ</td><th scope="row" class="reference">Neh 9:37<br><small>Atom 9</small></th><td>The compared marks agree after alignment by letter.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">רָאשֵׁי֙</td><th scope="row" class="reference">Neh 12:46<br><small>Atom 6</small></th><td>The compared marks agree.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">סֹֽפְרִים֙</td><th scope="row" class="reference">1 Chr 2:55<br><small>Atom 2</small></th><td>The compared marks agree.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">וְאֶת־חִילֵז֙</td><th scope="row" class="reference">1 Chr 6:43<br><small>Atom 2</small></th><td>The compared marks agree.</td><td>—</td></tr>
+</tbody>
+</table>
+</div>
+</details>
+<p>At 20 lone-<span class="romanized">pashta</span> locations, each edition has the primary MAM spelling and the MAM alternative has no corresponding accented form in that edition. At Dan 1:4, both editions have the alef in the primary MAM spelling, while MAM’s spelling alternative <bdi lang="hbo" dir="rtl">כׇּל־מוּם֩</bdi> has no separate accented form in either edition.</p>
+</section>
+<section id="decalogue">
+<h2>Printed-tradition Decalogue</h2>
+<p>The printed-tradition MAM supplement has 68 readings with the target accents. It shares 63 of them with the MAM manuscript tradition. The supplement has five eligible readings of its own and the manuscript tradition has three of its own. Koren has the printed tradition’s chanted-verse boundaries, and the Simanim Tanakh has the manuscript tradition’s.</p>
+<p>Koren agrees in target accent and helper at all 68 readings. At three places, the accent on the preceding atom or the position of a neighboring <span class="romanized">maqaf</span> differs. In the Simanim Tanakh, 62 of the readings agree with the supplement and six have a different accent. At Deut 5:13, the <span class="romanized">geresh</span> on the atom <bdi lang="he" dir="rtl">וחמרך</bdi> agrees with the manuscript tradition. The <span class="romanized">qadma</span> on the first atom of the verse differs from both <bdi lang="he" dir="rtl">תחתון</bdi> strands. A dash indicates agreement in the accent, helper, and grouping.</p>
+<div class="table-scroll" role="region" aria-label="Printed-tradition Decalogue differences" tabindex="0">
+<table>
+<thead><tr><th scope="col">MAM reading</th><th scope="col">Verse</th><th scope="col">Koren</th><th scope="col">Simanim Tanakh</th></tr></thead>
+<tbody>
+<tr><td dir="rtl" lang="hbo">אָֽנֹכִי֙</td><th scope="row" class="reference">Exod 20:2<br><small>Atom 1 · <bdi lang="he" dir="rtl">עליון</bdi></small></th><td>—</td><td><span class="romanized">Tipeḥa</span> on kaf where MAM has <span class="romanized">pashta</span>.</td></tr>
+<tr><td dir="rtl" lang="hbo">הוֹצֵאתִ֩יךָ֩</td><th scope="row" class="reference">Exod 20:2<br><small>Atom 5 · <bdi lang="he" dir="rtl">עליון</bdi></small></th><td>—</td><td><span class="romanized">Tevir</span> on tav where MAM has <span class="romanized">telisha qetanna</span>.</td></tr>
+<tr><td dir="rtl" lang="hbo">יִהְיֶֽה־לְךָ֩</td><th scope="row" class="reference">Exod 20:2<br><small>Atom 12 · <bdi lang="he" dir="rtl">עליון</bdi></small></th><td><span class="romanized">Munaḥ</span> on the preceding atom and a space where MAM has <span class="romanized">maqaf</span>. The target accent and helper agree.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">וּבִנְךָֽ־וּ֠בִתֶּ֠ךָ</td><th scope="row" class="reference">Exod 20:9<br><small>Atom 12 · <bdi lang="he" dir="rtl">עליון</bdi></small></th><td><span class="romanized">Munaḥ</span> on the preceding atom and a space where MAM has <span class="romanized">maqaf</span>. The target accent and helper agree.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">אָֽנֹכִי֙</td><th scope="row" class="reference">Deut 5:6<br><small>Atom 1 · <bdi lang="he" dir="rtl">עליון</bdi></small></th><td>—</td><td><span class="romanized">Tipeḥa</span> on kaf where MAM has <span class="romanized">pashta</span>.</td></tr>
+<tr><td dir="rtl" lang="hbo">הוֹצֵאתִ֩יךָ֩</td><th scope="row" class="reference">Deut 5:6<br><small>Atom 5 · <bdi lang="he" dir="rtl">עליון</bdi></small></th><td>—</td><td><span class="romanized">Tevir</span> on tav where MAM has <span class="romanized">telisha qetanna</span>.</td></tr>
+<tr><td dir="rtl" lang="hbo">יִהְיֶֽה־לְךָ֩</td><th scope="row" class="reference">Deut 5:6<br><small>Atom 12 · <bdi lang="he" dir="rtl">עליון</bdi></small></th><td><span class="romanized">Maqaf</span> one atom earlier than in MAM, with a space before the target atom. The target accent and helper agree.</td><td>—</td></tr>
+<tr><td dir="rtl" lang="hbo">וְיוֹם֙</td><th scope="row" class="reference">Deut 5:13<br><small>Atom 1 · <bdi lang="he" dir="rtl">תחתון</bdi></small></th><td>—</td><td><span class="romanized">Qadma</span> on yod where MAM has <span class="romanized">pashta</span>.</td></tr>
+<tr><td dir="rtl" lang="hbo">וַחֲמֹֽרְךָ֙</td><th scope="row" class="reference">Deut 5:13<br><small>Atom 16 · <bdi lang="he" dir="rtl">תחתון</bdi></small></th><td>—</td><td><span class="romanized">Geresh</span> on final kaf where MAM has <span class="romanized">pashta</span>.</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="genesis">
+<h2>Combined reading of Genesis 35:22</h2>
+<p>Both editions agree with MAM at all three eligible places in the combined reading. The chanted words are <bdi lang="hbo" dir="rtl">יִשְׂרָאֵל֙</bdi>, <bdi lang="hbo" dir="rtl">וַיִּשְׁכַּ֕ב֙</bdi>, and <bdi lang="hbo" dir="rtl">אֶת־בִּלְהָ֖ה֙</bdi>.</p>
+</section>
+<p>MAM text from Miqra according to the Masorah at Hebrew Wikisource, under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</p>
+</main>
+</body>
+</html>
