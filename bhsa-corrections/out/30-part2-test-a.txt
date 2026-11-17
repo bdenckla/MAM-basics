@@ -1,0 +1,308 @@
+Test A: 359 words in 305 groups (pointed key, analysis) whose analysis their key does not support
+by kind: {'stem/tense': 62, 'lexeme': 297}
+
+stem/tense | ('Hebrew', 'יִּקְרָא') | this: QR>[ qal impf x1 | key: QR>[ qal wayq x201, QR>[ qal impf x1 | Genesis 2:19 slot 1037
+lexeme | ('Hebrew', 'עֲלֵה') | this: <LH=/ x2 | key: <LH[ qal impv x37, <LH=/ x2 | Genesis 3:7 slot 1309; Genesis 8:11 slot 3764
+lexeme | ('Hebrew', 'הָבֶל') | this: HBL=/ x1 | key: HBL/ x17, HBL=/ x1 | Genesis 4:2 slot 1693
+lexeme | ('Hebrew', 'חֲנֹוךְ') | this: XNWK=/ x1 | key: XNWK/ x14, XNWK=/ x1 | Genesis 4:17 slot 1966
+lexeme | ('Hebrew', 'רֹב') | this: RBB[ qal infc x1 | key: RB=/ x135, RBB[ qal infc x1, RJB[ qal infa x1 | Genesis 6:1 slot 2608
+lexeme | ('Hebrew', 'אֶרֶךְ') | this: >RK===/ x1 | key: >RK/ x14, >RK===/ x1 | Genesis 10:10 slot 4666
+lexeme | ('Hebrew', 'חֲמָתִי') | this: XMTJ/ x2 | key: XMH/ x37, XMTJ/ x2 | Genesis 10:18 slot 4776; Chronica_I 1:16 slot 391418
+lexeme | ('Hebrew', 'דָּן') | this: DJN[ qal ptca x2 | key: DN/ x33, DJN[ qal ptca x2, DJN[ qal perf x1 | Genesis 15:14 slot 6908; Jeremia 30:13 slot 250445
+lexeme | ('Hebrew', 'אֲדֹנָי') | this: >DWN/ x1 | key: >DNJ/ x419, >DWN/ x1 | Genesis 19:18 slot 8836
+stem/tense | ('Hebrew', 'נִקְרָא') | this: QR>[ qal impf x2 | key: QR>[ nif perf x24, QR>[ qal impf x2, QR>=[ nif perf x2, QR>[ nif ptca x2 | Genesis 24:57 slot 12231; Psalmi 80:19 slot 324586
+lexeme | ('Hebrew', 'לְאֻמִּים') | this: L>MJM/ x1 | key: L>M/ x25, L>MJM/ x1 | Genesis 25:3 slot 12471
+lexeme | ('Hebrew', 'מַשָּׂא') | this: MF>===/ x2 | key: MF>/ x31, MF>=/ x15, MF>===/ x2 | Genesis 25:14 slot 12644; Chronica_I 1:30 slot 391544
+lexeme | ('Hebrew', 'קֵדְמָה') | this: QDMH==/ x2 | key: QDM/ x26, QDMH==/ x2 | Genesis 25:15 slot 12651; Chronica_I 1:31 slot 391551
+lexeme | ('Hebrew', 'שְׁעָרִים') | this: C<R=/ x1 | key: C<R/ x11, C<R=/ x1 | Genesis 26:12 slot 13230
+lexeme | ('Hebrew', 'אֲחֻזַּת') | this: >XZT/ x1 | key: >XZH/ x22, >XZT/ x1 | Genesis 26:26 slot 13472
+lexeme | ('Hebrew', 'שִׁבְעָה') | this: CB<H/ x1 | key: CB</ x102, CB<H/ x1 | Genesis 26:33 slot 13592
+stem/tense | ('Hebrew', 'אָכְלָה') | this: >KL[ qal impv x1 | key: >KL[ qal perf x34, >KLH/ x18, >KL[ qal impv x1, >KL[ qal infc x1 | Genesis 27:19 slot 13949
+stem/tense | ('Hebrew', 'יְדַבֵּרוּ') | this: DBR[ piel wayq x1 | key: DBR[ piel impf x17, DBR[ piel wayq x1 | Genesis 34:13 slot 18677
+lexeme | ('Hebrew', 'עֵינַיִם') | this: <JNJM/ x2 | key: <JN/ x27, <JNJM/ x2 | Genesis 38:14 slot 21080; Genesis 38:21 slot 21225
+lexeme | ('Hebrew', 'אֹור') | this: >WR[ qal perf x2 | key: >WR/ x97, >WR[ qal infc x6, >WR[ qal perf x2, >WR[ nif infc x1 | Genesis 44:3 slot 24885; Samuel_I 29:10 slot 159418
+lexeme | ('Hebrew', 'רֹאשׁ') | this: R>C==/ x1 | key: R>C/ x274, R>C=/ x11, R>C==/ x1 | Genesis 46:21 slot 26330
+stem/tense | ('Hebrew', 'אֹמְרָה') | this: >MR[ qal impf x1 | key: >MR[ qal wayq x18, >MR[ qal ptca x3, >MR[ qal impf x1 | Genesis 46:31 slot 26490
+stem/tense | ('Hebrew', 'יֹּושֵׁב') | this: JCB[ hif wayq x1 | key: JCB[ qal ptca x13, JCB[ hif wayq x1 | Genesis 47:11 slot 26764
+lexeme | ('Hebrew', 'אִמְרֵי') | this: >MR==/ x1 | key: >MR/ x28, >MR==/ x1 | Genesis 49:21 slot 28041
+lexeme | ('Hebrew', 'תֵּבָה') | this: TBH=/ x1 | key: TBH/ x25, TBH=/ x1 | Exodus 2:5 slot 29206
+stem/tense | ('Hebrew', 'יִגְדַּל') | this: GDL[ qal wayq x1 | key: GDL[ qal impf x11, GDL[ qal wayq x1 | Exodus 2:10 slot 29304
+lexeme | ('Hebrew', 'זִכְרִי') | this: ZKR/ x1 | key: ZKRJ/ x12, ZKR/ x1 | Exodus 3:15 slot 29984
+lexeme | ('Hebrew', 'צֹר') | this: YR==/ x1 | key: YR====/ x28, YR==/ x1 | Exodus 4:25 slot 30688
+lexeme | ('Hebrew', 'נִקְרָא') | this: QR>=[ nif perf x2 | key: QR>[ nif perf x24, QR>[ qal impf x2, QR>=[ nif perf x2, QR>[ nif ptca x2 | Exodus 5:3 slot 30860; Samuel_II 20:1 slot 173089
+stem/tense | ('Hebrew', 'נָכֹון') | this: KWN[ nif perf x2 | key: KWN[ nif ptca x27, KWN[ nif perf x2, NKWN=/ x1, NKWN/ x1 | Exodus 8:22 slot 32877; Psalmi 78:37 slot 323869
+lexeme | ('Hebrew', 'אַךְ') | this: NKH[ hif wayq x1 | key: >K x161, NKH[ hif wayq x1 | Exodus 9:15 slot 33343
+lexeme | ('Hebrew', 'אֶל') | this: >L= x1 | key: >L x3875, >L= x1 | Exodus 10:28 slot 34429
+lexeme | ('Hebrew', 'נָא') | this: N>/ x1 | key: N> x332, N>/ x1 | Exodus 12:9 slot 34848
+lexeme | ('Hebrew', 'סַּף') | this: SP/ x1 | key: SP=/ x12, SP/ x1 | Exodus 12:22 slot 35181
+lexeme | ('Hebrew', 'חָמֵץ') | this: XMY[ qal perf x1 | key: XMY/ x11, XMY[ qal perf x1 | Exodus 12:39 slot 35547
+lexeme | ('Hebrew', 'רָמָה') | this: RMH[ qal perf x2 | key: RMH==/ x27, RWM[ qal ptca x8, RWM[ qal perf x3, RMH[ qal perf x2 | Exodus 15:1 slot 36941; Exodus 15:21 slot 37210
+stem/tense | ('Hebrew', 'הִלָּחֵם') | this: LXM[ nif impv x2 | key: LXM[ nif infc x37, LXM[ nif impv x2 | Exodus 17:9 slot 38329; Samuel_I 18:17 slot 152501
+lexeme | ('Hebrew', 'כַּרְמֶל') | this: KRML=/ x1 | key: KRML==/ x15, KRML/ x10, KRML=/ x1 | Leviticus 2:14 slot 53127
+stem/tense | ('Hebrew', 'נַעֲשָׂה') | this: <FH[ nif ptca x1 | key: <FH[ nif perf x19, <FH[ nif ptca x1 | Leviticus 7:9 slot 55465
+stem/tense | ('Hebrew', 'יִּיטַב') | this: JVB[ qal impf x1 | key: JVB[ qal wayq x15, JVB[ qal impf x1 | Leviticus 10:19 slot 57834
+lexeme | ('Hebrew', 'כֹּוס') | this: KWS=/ x2 | key: KWS/ x21, KWS=/ x2 | Leviticus 11:17 slot 58123; Deuteronomium 14:16 slot 101708
+lexeme | ('Hebrew', 'כֹּחַ') | this: KX=/ x1 | key: KX/ x41, KX=/ x1 | Leviticus 11:30 slot 58354
+lexeme | ('Hebrew', 'חַיֹּות') | this: XJ/ x1 | key: XJH/ x12, XJH[ piel infc x2, XJ/ x1 | Leviticus 14:4 slot 60264
+lexeme | ('Hebrew', 'חֶסֶד') | this: XSD=/ x2 | key: XSD/ x92, XSD=/ x2, XSD==/ x1 | Leviticus 20:17 slot 64734; Proverbia 14:34 slot 350702
+lexeme | ('Hebrew', 'חֵי') | this: XJH[ qal perf x1 | key: XJ/ x16, XJH[ qal perf x1 | Leviticus 25:36 slot 67827
+lexeme | ('Hebrew', 'נָתָן') | this: NTN[ qal perf x2 | key: NTN/ x42, NTN[ qal perf x2 | Numeri 7:9 slot 74057; Ezechiel 18:16 slot 272978
+lexeme | ('Hebrew', 'צַּר') | this: YR=/ x1 | key: YR/ x14, YR=/ x1, YR===/ x1 | Numeri 10:9 slot 76380
+lexeme | ('Hebrew', 'חָצִיר') | this: XYJR=/ x1 | key: XYJR/ x15, XYJR==/ x3, XYJR=/ x1 | Numeri 11:5 slot 76890
+lexeme | ('Hebrew', 'רָע') | this: R<<[ qal perf x2 | key: R</ x168, R<<[ qal perf x2 | Numeri 11:10 slot 76990; Jesaia 3:11 slot 213082
+stem/tense | ('Hebrew', 'הֹולֵךְ') | this: HLK[ hif impv x1 | key: HLK[ qal ptca x42, HLK[ hif impv x1 | Numeri 17:11 slot 80962
+lexeme | ('Hebrew', 'בָּמֹות') | this: BMWT/ x2 | key: BMH/ x54, BMWT/ x2 | Numeri 21:19 slot 83497; Numeri 21:20 slot 83500
+lexeme | ('Hebrew', 'יָשׁוּב') | this: JCWB/ x2 | key: CWB[ qal impf x51, JCWB/ x2 | Numeri 26:24 slot 86282; Esra 10:29 slot 383317
+lexeme | ('Hebrew', 'חֵלֶק') | this: XLQ====/ x2 | key: XLQ/ x38, XLQ====/ x2, XLQ===/ x1 | Numeri 26:30 slot 86365; Josua 17:2 slot 122407
+lexeme | ('Hebrew', 'עָיִן') | this: <JN=/ x1 | key: <JN/ x12, <JN=/ x1 | Numeri 34:11 slot 91574
+lexeme | ('Hebrew', 'אֵפֹד') | this: >PD=/ x1 | key: >PD/ x25, >PD=/ x1 | Numeri 34:23 slot 91755
+lexeme | ('Hebrew', 'סוּף') | this: SWP==/ x1 | key: SWP/ x25, SWP==/ x1 | Deuteronomium 1:1 slot 92820
+lexeme | ('Hebrew', 'לָבָן') | this: LBN==/ x1 | key: LBN=/ x54, LBN/ x13, LBN==/ x1 | Deuteronomium 1:1 slot 92827
+lexeme | ('Hebrew', 'רָאָה') | this: R>H=/ x1 | key: R>H[ qal perf x66, R>H=/ x1 | Deuteronomium 14:13 slot 101671
+lexeme | ('Hebrew', 'יִקָּרֵא') | this: QR>=[ nif impf x1 | key: QR>[ nif impf x21, QR>=[ nif impf x1 | Deuteronomium 22:6 slot 105391
+lexeme | ('Hebrew', 'מַטֶּה') | this: NVH[ hif ptca x1 | key: MVH/ x12, NVH[ hif ptca x1 | Deuteronomium 27:19 slot 107998
+stem/tense | ('Hebrew', 'יְצַו') | this: YWH[ piel impf x1 | key: YWH[ piel wayq x47, YWH[ piel impf x1 | Deuteronomium 28:8 slot 108213
+lexeme | ('Hebrew', 'עֲבוּר') | this: <BWR=/ x2 | key: <BWR/ x42, <BWR=/ x2 | Josua 5:11 slot 115220; Josua 5:12 slot 115245
+lexeme | ('Hebrew', 'חָם') | this: XM==/ x1 | key: XM===/ x16, XM==/ x1 | Josua 9:12 slot 117998
+lexeme | ('Hebrew', 'דְּבִיר') | this: DBJR=/ x1 | key: DBJR/ x14, DBR=====/ x3, DBJR=/ x1 | Josua 10:3 slot 118437
+lexeme | ('Hebrew', 'צָפֹון') | this: YPWN=/ x1 | key: YPWN/ x39, YPWN=/ x1 | Josua 13:27 slot 120873
+lexeme | ('Hebrew', 'עֵדֶר') | this: <DR=/ x1 | key: <DR/ x15, <DR==/ x2, <DR=/ x1 | Josua 15:21 slot 121838
+lexeme | ('Hebrew', 'יָגוּר') | this: JGWR=/ x1 | key: GWR[ qal impf x13, JGWR=/ x1, GWR=[ qal impf x1 | Josua 15:21 slot 121840
+lexeme | ('Hebrew', 'קִינָה') | this: QJNH=/ x1 | key: QJNH/ x14, QJNH=/ x1 | Josua 15:22 slot 121842
+lexeme | ('Hebrew', 'שְׁמַע') | this: CM<=====/ x1 | key: CM<[ qal impv x61, CM<=====/ x1 | Josua 15:26 slot 121867
+lexeme | ('Hebrew', 'כְסִיל') | this: KSJL==/ x1 | key: KSJL/ x21, KSJL==/ x1, KSJL=/ x1 | Josua 15:30 slot 121891
+lexeme | ('Hebrew', 'חֲדָשָׁה') | this: XDCH/ x1 | key: XDC/ x20, XDCH/ x1 | Josua 15:37 slot 121951
+lexeme | ('Hebrew', 'יִפְתָּח') | this: JPTX=/ x1 | key: JPTX/ x29, JPTX=/ x1 | Josua 15:43 slot 121990
+lexeme | ('Hebrew', 'אֶלֶף') | this: >LP===/ x1 | key: >LP=/ x241, >LP===/ x1, >LP==/ x1 | Josua 18:28 slot 123395
+lexeme | ('Hebrew', 'גִּבְעַת') | this: GB<T/ x1 | key: GB<H/ x13, GB<T/ x1 | Josua 18:28 slot 123401
+lexeme | ('Hebrew', 'עַיִן') | this: <JN=/ x2 | key: <JN/ x27, <JN=/ x2 | Josua 19:7 slot 123474; Josua 21:16 slot 124719
+lexeme | ('Hebrew', 'שָׂרִיד') | this: FRJD=/ x1 | key: FRJD/ x23, FRJD=/ x1 | Josua 19:10 slot 123542
+lexeme | ('Hebrew', 'חֶלְקַת') | this: XLQT/ x1 | key: XLQH/ x11, XLQH=/ x2, XLQT/ x1 | Josua 19:25 slot 123729
+stem/tense | ('Hebrew', 'תִּשְׁמְעוּ') | this: CM<[ qal wayq x1 | key: CM<[ qal impf x13, CM<[ qal wayq x1 | Josua 22:2 slot 125265
+lexeme | ('Hebrew', 'דֹור') | this: DWR===/ x1 | key: DWR/ x33, DWR===/ x1 | Judices 1:27 slot 128007
+lexeme | ('Hebrew', 'לָחֶם') | this: LXM=/ x1 | key: LXM/ x39, LXM=/ x1 | Judices 5:8 slot 130063
+lexeme | ('Hebrew', 'זָרַע') | this: ZR<[ qal perf x1 | key: ZR</ x13, ZR<[ qal perf x1 | Judices 6:3 slot 130470
+stem/tense | ('Hebrew', 'הֲרֹג') | this: HRG[ qal impv x1 | key: HRG[ qal infc x12, HRG[ qal impv x1 | Judices 8:20 slot 132556
+lexeme | ('Hebrew', 'צָפֹונָה') | this: YPWN=/ x1 | key: YPWN/ x38, YPWN=/ x1 | Judices 12:1 slot 135391
+lexeme | ('Hebrew', 'חֲמֹור') | this: XMR=/ x1 | key: XMWR/ x45, XMWR=/ x13, XMR=/ x1 | Judices 15:16 slot 137095
+stem/tense | ('Hebrew', 'נִתַּן') | this: NTN[ qal impf x1 | key: NTN[ nif perf x16, NTN[ qal impf x1 | Judices 16:5 slot 137333
+lexeme | ('Hebrew', 'אַל') | this: >L x2 | key: >L= x723, >L x2, >L== x1, >L=/ x1 | Judices 19:23 slot 139678; Jeremia 47:6 slot 260353
+stem/tense | ('Hebrew', 'אָכְלָה') | this: >KL[ qal infc x1 | key: >KL[ qal perf x34, >KLH/ x18, >KL[ qal impv x1, >KL[ qal infc x1 | Samuel_I 1:9 slot 141711
+lexeme | ('Hebrew', 'שָׁאוּל') | this: C>L[ qal ptcp x2 | key: C>WL=/ x405, C>L[ qal ptcp x2 | Samuel_I 1:28 slot 142108; Reges_II 6:5 slot 198253
+stem/tense | ('Hebrew', 'בֹּוא') | this: BW>[ qal infa x1 | key: BW>[ qal infc x18, BW>[ qal impv x4, BW>[ qal infa x1 | Samuel_I 9:6 slot 145636
+lexeme | ('Hebrew', 'נָּבִיא') | this: BW>[ hif impf x1 | key: NBJ>/ x129, BW>[ hif impf x1 | Samuel_I 9:7 slot 145659
+lexeme | ('Hebrew', 'יַּעַר') | this: J<R=/ x1 | key: J<R/ x14, J<R=/ x1 | Samuel_I 14:26 slot 148903
+lexeme | ('Hebrew', 'יָשֹׁב') | this: JCB[ qal infa x1 | key: CWB[ qal impf x18, JCB[ qal infa x1 | Samuel_I 20:5 slot 153531
+lexeme | ('Hebrew', 'רָמָה') | this: RMH=/ x2 | key: RMH==/ x27, RWM[ qal ptca x8, RWM[ qal perf x3, RMH[ qal perf x2 | Samuel_I 22:6 slot 154885; Ezechiel 16:24 slot 271448
+lexeme | ('Hebrew', 'צוּר') | this: YWR[ qal infc x1 | key: YWR/ x36, YWR==/ x5, YWR[ qal infc x1, YWR=[ qal infc x1 | Samuel_I 23:8 slot 155496
+lexeme | ('Hebrew', 'בָּנוּ') | this: BW>[ qal perf x1 | key: B x22, BNH[ qal perf x9, BW>[ qal perf x1 | Samuel_I 25:8 slot 156661
+stem/tense | ('Hebrew', 'עֲבֹד') | this: <BD[ qal impv x1 | key: <BD[ qal infc x29, <BD[ qal impv x1 | Samuel_I 26:19 slot 158055
+lexeme | ('Hebrew', 'אַל') | this: >L== x1 | key: >L= x723, >L x2, >L== x1, >L=/ x1 | Samuel_I 27:10 slot 158430
+lexeme | ('Hebrew', 'אַמָּה') | this: >MH====/ x1 | key: >MH=/ x152, >MH====/ x1, >MH===/ x1 | Samuel_II 2:24 slot 161498
+stem/tense | ('Hebrew', 'יִשָּׂא') | this: NF>[ qal wayq x1 | key: NF>[ qal impf x39, NF>[ qal wayq x1 | Samuel_II 3:32 slot 162420
+lexeme | ('Hebrew', 'גָדֹול') | this: GDL[ qal infa x2 | key: GDWL/ x35, GDL[ qal infa x2 | Samuel_II 5:10 slot 163152; Chronica_I 11:9 slot 397179
+lexeme | ('Hebrew', 'יֹּסֶף') | this: >SP[ qal wayq x1 | key: JSP[ hif wayq x21, >SP[ qal wayq x1 | Samuel_II 6:1 slot 163423
+lexeme | ('Hebrew', 'נָכֹון') | this: NKWN=/ x1 | key: KWN[ nif ptca x27, KWN[ nif perf x2, NKWN=/ x1, NKWN/ x1 | Samuel_II 6:6 slot 163546
+lexeme | ('Hebrew', 'אַמָּה') | this: >MH===/ x1 | key: >MH=/ x152, >MH====/ x1, >MH===/ x1 | Samuel_II 8:1 slot 164611
+lexeme | ('Hebrew', 'מִיכַל') | this: MJKL/ x1 | key: MJKL=/ x18, MJKL/ x1 | Samuel_II 17:20 slot 170816
+lexeme | ('Hebrew', 'שָׁנָה') | this: CNH[ qal perf x1 | key: CNH/ x439, CNH[ qal perf x1 | Samuel_II 20:10 slot 173345
+stem/tense | ('Hebrew', 'דַּבֵּר') | this: DBR[ piel infa x1 | key: DBR[ piel impv x58, DBR[ piel infc x16, DBR[ piel infa x1 | Samuel_II 20:18 slot 173537
+lexeme | ('Hebrew', 'חַיַּת') | this: XWH/ x1 | key: XJH/ x41, XJH==/ x3, XWH/ x1 | Samuel_II 23:13 slot 175073
+lexeme | ('Hebrew', 'חֵלֶב') | this: XLB==/ x1 | key: XLB=/ x64, XLB==/ x1 | Samuel_II 23:29 slot 175336
+lexeme | ('Hebrew', 'יַּעַן') | this: J<N/ x1 | key: <NH[ qal wayq x111, J<N/ x1 | Samuel_II 24:6 slot 175577
+lexeme | ('Hebrew', 'חֶסֶד') | this: XSD==/ x1 | key: XSD/ x92, XSD=/ x2, XSD==/ x1 | Reges_I 4:10 slot 179198
+lexeme | ('Hebrew', 'גֶּבֶר') | this: GBR=/ x2 | key: GBR/ x28, GBR=/ x2 | Reges_I 4:13 slot 179246; Reges_I 4:19 slot 179306
+stem/tense | ('Hebrew', 'נִרְאָה') | this: R>H[ nif ptca x1 | key: R>H[ nif perf x26, R>H[ nif ptca x1 | Reges_I 6:18 slot 180458
+lexeme | ('Hebrew', 'אַיִל') | this: >JL===/ x2 | key: >JL=/ x72, >JL===/ x2 | Reges_I 6:31 slot 180712; Ezechiel 40:16 slot 285342
+lexeme | ('Hebrew', 'סַרְנֵי') | this: SRN/ x1 | key: SRN=/ x17, SRN/ x1 | Reges_I 7:30 slot 181530
+lexeme | ('Hebrew', 'כֵן') | this: KN=/ x2 | key: KN x152, KN/ x11, KN=/ x2, KN==/ x1 | Reges_I 7:31 slot 181565; Jesaia 33:23 slot 223236
+lexeme | ('Hebrew', 'עֶרֶב') | this: <RB========/ x2 | key: <RB/ x68, <RB====/ x3, <RB========/ x2 | Reges_I 10:15 slot 184695; Jeremia 25:24 slot 247530
+lexeme | ('Hebrew', 'חָפֵץ') | this: XPY=/ x2 | key: XPY[ qal perf x28, XPY[ qal ptca x4, XPY=/ x2 | Reges_I 13:33 slot 187613; Reges_I 21:6 slot 193137
+stem/tense | ('Hebrew', 'תָּשָׁב') | this: CWB[ qal impf x1 | key: CWB[ qal wayq x13, CWB[ qal impf x1 | Reges_I 17:21 slot 190258
+stem/tense | ('Hebrew', 'בֹא') | this: BW>[ qal impv x2 | key: BW>[ qal infc x30, BW>[ qal infa x3, BW>[ qal impv x2 | Reges_I 22:30 slot 194279; Esther 5:14 slot 367918
+stem/tense | ('Hebrew', 'יַּרְא') | this: R>H[ hif wayq x1 | key: R>H[ qal wayq x130, R>H[ hif wayq x1 | Reges_II 11:4 slot 202113
+lexeme | ('Hebrew', 'סוּר') | this: SWR=/ x1 | key: SWR[ qal infc x14, SWR[ qal impv x6, SWR=/ x1 | Reges_II 11:6 slot 202145
+lexeme | ('Hebrew', 'שֹׁמֵר') | this: CMR==/ x1 | key: CMR[ qal ptca x41, CMR==/ x1 | Reges_II 12:22 slot 203065
+lexeme | ('Hebrew', 'יָבֵשׁ') | this: JBJC==/ x1 | key: JBC[ qal perf x13, JBC/ x6, JBJC=/ x5, JBJC==/ x1 | Reges_II 15:10 slot 204452
+lexeme | ('Hebrew', 'אַרְיֵה') | this: >RJH=/ x1 | key: >RJH/ x45, >RJH=/ x1 | Reges_II 15:25 slot 204768
+lexeme | ('Hebrew', 'אֲבִי') | this: >BJ/ x1 | key: >B/ x80, >BJ/ x1 | Reges_II 18:2 slot 206561
+lexeme | ('Hebrew', 'יָּרָץ') | this: RYY[ qal wayq x1 | key: RWY[ qal wayq x17, RYY[ qal wayq x1 | Reges_II 23:12 slot 210192
+lexeme | ('Hebrew', 'שָּׁנִים') | this: CNJ=/ x1 | key: CNH/ x13, CNJ=/ x1 | Jesaia 1:18 slot 212344
+lexeme | ('Hebrew', 'אֵילִים') | this: >JL==/ x1 | key: >JL=/ x25, >JL===/ x4, >JL==/ x1 | Jesaia 1:29 slot 212493
+lexeme | ('Hebrew', 'רִיב') | this: RJB[ qal infc x2 | key: RJB/ x32, RJB[ qal infc x2, RJB[ qal impv x2, RJB[ qal infa x1 | Jesaia 3:13 slot 213104; Iob 9:3 slot 338295
+lexeme | ('Hebrew', 'כִּי') | this: KJ/ x1 | key: KJ x4340, KJ/ x1 | Jesaia 3:24 slot 213264
+lexeme | ('Hebrew', 'צַּר') | this: YR===/ x1 | key: YR/ x14, YR=/ x1, YR===/ x1 | Jesaia 5:28 slot 213925
+stem/tense | ('Hebrew', 'תִּמְצָא') | this: MY>[ qal wayq x1 | key: MY>[ qal impf x15, MY>[ qal wayq x1 | Jesaia 10:14 slot 215749
+lexeme | ('Hebrew', 'לָנוּ') | this: LJN[ qal perf x1 | key: L x191, LJN[ qal perf x1 | Jesaia 10:29 slot 216023
+lexeme | ('Hebrew', 'מוּסָר') | this: SWR[ hof ptcp x1 | key: MWSR/ x29, SWR[ hof ptcp x1 | Jesaia 17:1 slot 217721
+lexeme | ('Hebrew', 'נַחֲלָה') | this: XLH[ nif ptca x1 | key: NXLH/ x73, XLH[ nif ptca x1 | Jesaia 17:11 slot 217905
+lexeme | ('Hebrew', 'מָסַךְ') | this: MSK[ qal perf x1 | key: MSK/ x13, MSK[ qal perf x1 | Jesaia 19:14 slot 218344
+lexeme | ('Hebrew', 'קִיר') | this: QJR=/ x1 | key: QJR/ x23, QJR=/ x1 | Jesaia 22:6 slot 219071
+lexeme | ('Hebrew', 'שִׁיר') | this: CJR[ qal infa x1 | key: CJR/ x56, CJR[ qal infa x1 | Jesaia 23:16 slot 219632
+lexeme | ('Hebrew', 'רֹאֶה') | this: R>H==/ x1 | key: R>H[ qal ptca x38, R>H/ x10, R>H==/ x1 | Jesaia 28:7 slot 220944
+stem/tense | ('Hebrew', 'יָבִין') | this: BJN[ hif impf x1 | key: BJN[ qal impf x17, JBJN/ x8, BJN[ hif impf x1 | Jesaia 28:9 slot 220962
+lexeme | ('Hebrew', 'צָרָה') | this: YRR[ qal perf x1 | key: YRH/ x40, YRR[ qal perf x1, YR/ x1 | Jesaia 28:20 slot 221184
+lexeme | ('Hebrew', 'מַסֵּכָה') | this: MSKH==/ x1 | key: MSKH/ x17, MSKH==/ x1 | Jesaia 30:1 slot 221810
+lexeme | ('Hebrew', 'רֹאִים') | this: R>H/ x1 | key: R>H[ qal ptca x13, R>H/ x1 | Jesaia 30:10 slot 221962
+lexeme | ('Hebrew', 'צֵא') | this: Y>/ x1 | key: JY>[ qal impv x16, Y>/ x1 | Jesaia 30:22 slot 222214
+lexeme | ('Hebrew', 'כָל') | this: KWL[ qal perf x1 | key: KL/ x1648, KWL[ qal perf x1 | Jesaia 40:12 slot 225759
+lexeme | ('Hebrew', 'מַר') | this: MR=/ x1 | key: MR/ x12, MRR[ qal perf x3, MR=/ x1 | Jesaia 40:15 slot 225805
+stem/tense | ('Hebrew', 'אֵרֶא') | this: R>H[ qal impf x1 | key: R>H[ qal wayq x15, R>H[ qal impf x1 | Jesaia 41:28 slot 226507
+lexeme | ('Hebrew', 'נִסְכֵּיהֶם') | this: NSK=/ x1 | key: NSK/ x17, NSK=/ x1 | Jesaia 41:29 slot 226530
+lexeme | ('Hebrew', 'מְשֻׁלָּם') | this: CLM[ pual ptcp x1 | key: MCLM/ x25, CLM[ pual ptcp x1 | Jesaia 42:19 slot 226830
+stem/tense | ('Hebrew', 'אֹכֵל') | this: >KL[ qal impf x1 | key: >KL[ qal ptca x17, >KL[ qal wayq x2, >KL[ qal impf x1 | Jesaia 44:19 slot 227713
+lexeme | ('Hebrew', 'בַּדִּים') | this: BD=/ x2 | key: BD/ x27, BD=/ x2 | Jesaia 44:25 slot 227817; Jeremia 50:36 slot 262528
+lexeme | ('Hebrew', 'נְבֹו') | this: NBW/ x1 | key: NBW=/ x12, NBW/ x1 | Jesaia 46:1 slot 228329
+lexeme | ('Hebrew', 'כֵן') | this: KN==/ x1 | key: KN x152, KN/ x11, KN=/ x2, KN==/ x1 | Jesaia 51:6 slot 229965
+lexeme | ('Hebrew', 'שְּׁבִי') | this: JCB[ qal impv x1 | key: CBJ/ x22, JCB[ qal impv x1 | Jesaia 52:2 slot 230330
+lexeme | ('Hebrew', 'רָחֵל') | this: RXL/ x1 | key: RXL=/ x47, RXL/ x1 | Jesaia 53:7 slot 230664
+lexeme | ('Hebrew', 'יָגוּר') | this: GWR=[ qal impf x1 | key: GWR[ qal impf x13, JGWR=/ x1, GWR=[ qal impf x1 | Jesaia 54:15 slot 231007
+stem/tense | ('Hebrew', 'שְׁלַח') | this: CLX[ qal infc x1 | key: CLX[ qal impv x16, CLX[ qal infc x1 | Jesaia 58:9 slot 232100
+lexeme | ('Hebrew', 'שֹׁד') | this: CD===/ x1 | key: CD/ x21, CD===/ x1 | Jesaia 60:16 slot 232886
+lexeme | ('Hebrew', 'אֶלֶף') | this: >LP==/ x1 | key: >LP=/ x241, >LP===/ x1, >LP==/ x1 | Jesaia 60:22 slot 233010
+lexeme | ('Hebrew', 'עֹולָה') | this: <WLH/ x1 | key: <LH/ x35, <WLH/ x1, <LH[ qal ptca x1 | Jesaia 61:8 slot 233160
+lexeme | ('Hebrew', 'גַת') | this: GT/ x1 | key: GT=/ x15, GT/ x1 | Jesaia 63:2 slot 233497
+lexeme | ('Hebrew', 'שִׁמְעִי') | this: CM</ x1 | key: CM<J=/ x43, CM<[ qal impv x6, CM</ x1 | Jesaia 66:19 slot 234857
+lexeme | ('Hebrew', 'עֵצָה') | this: <YH===/ x1 | key: <YH/ x29, <YH===/ x1 | Jeremia 6:6 slot 237749
+lexeme | ('Hebrew', 'שִׁבְתְּךָ') | this: CBT=/ x1 | key: JCB[ qal infc x12, CBT=/ x1 | Jeremia 9:5 slot 239492
+lexeme | ('Hebrew', 'מוּל') | this: MWL[ qal ptcp x1 | key: MWL/ x25, MWL[ qal ptcp x1 | Jeremia 9:24 slot 239866
+lexeme | ('Hebrew', 'עִיר') | this: <JR===/ x2 | key: <JR/ x627, <JR===/ x2, <WR[ hif infc x1, <JR====/ x1 | Jeremia 15:8 slot 242358; Hosea 11:9 slot 293450
+lexeme | ('Hebrew', 'קֹרֵא') | this: QR>/ x1 | key: QR>[ qal ptca x13, QR>/ x1, QWR>/ x1 | Jeremia 17:11 slot 243306
+stem/tense | ('Hebrew', 'הָבִיא') | this: BW>[ hif impv x1 | key: BW>[ hif infc x41, BW>[ hif impv x1 | Jeremia 17:18 slot 243412
+lexeme | ('Hebrew', 'דָּן') | this: DJN[ qal perf x1 | key: DN/ x33, DJN[ qal ptca x2, DJN[ qal perf x1 | Jeremia 22:16 slot 245636
+lexeme | ('Hebrew', 'זִמְרִי') | this: ZMRJ=/ x1 | key: ZMRJ/ x14, ZMRJ=/ x1 | Jeremia 25:25 slot 247540
+lexeme | ('Hebrew', 'יַעֲנֶה') | this: <NH==[ qal impf x1 | key: <NH[ qal impf x15, <NH=[ qal impf x2, <NH==[ qal impf x1 | Jeremia 25:30 slot 247691
+lexeme | ('Hebrew', 'שָׁב') | this: CWB=[ qal ptca x1 | key: CWB[ qal perf x63, CWB[ qal ptca x5, CWB=[ qal perf x3, CWB=[ qal ptca x1 | Jeremia 30:18 slot 250530
+lexeme | ('Hebrew', 'יוּכַל') | this: JWKL/ x1 | key: JKL[ qal impf x35, JWKL/ x1 | Jeremia 38:1 slot 255588
+stem/tense | ('Hebrew', 'נִקְרָא') | this: QR>[ nif ptca x2 | key: QR>[ nif perf x24, QR>[ qal impf x2, QR>=[ nif perf x2, QR>[ nif ptca x2 | Jeremia 44:26 slot 259458; Ecclesiastes 6:10 slot 361423
+lexeme | ('Hebrew', 'אָמֹון') | this: >MWN===/ x1 | key: >MWN==/ x16, >MWN=/ x2, >MWN===/ x1 | Jeremia 46:25 slot 260125
+lexeme | ('Hebrew', 'בָּנִים') | this: BJN[ qal ptca x1 | key: BN/ x113, BJN[ qal ptca x1 | Jeremia 49:7 slot 261270
+lexeme | ('Hebrew', 'רַבִּים') | this: RB===/ x1 | key: RB/ x200, RB===/ x1 | Jeremia 50:29 slot 262398
+lexeme | ('Hebrew', 'רִיב') | this: RJB[ qal infa x1 | key: RJB/ x32, RJB[ qal infc x2, RJB[ qal impv x2, RJB[ qal infa x1 | Jeremia 50:34 slot 262496
+lexeme | ('Hebrew', 'עָנוּ') | this: <NH==[ qal perf x1 | key: <NH[ qal perf x11, <NH==[ qal perf x1 | Jeremia 51:14 slot 262988
+lexeme | ('Hebrew', 'מִנִּי') | this: MNJ=/ x1 | key: MN x37, MNJ=/ x1 | Jeremia 51:27 slot 263212
+stem/tense | ('Hebrew', 'אֵצֵא') | this: JY>[ qal wayq x1 | key: JY>[ qal impf x13, JY>[ qal wayq x1 | Ezechiel 3:23 slot 265967
+stem/tense | ('Hebrew', 'אֶעֱשֶׂה') | this: <FH[ qal wayq x2 | key: <FH[ qal impf x87, <FH[ qal wayq x2 | Ezechiel 20:14 slot 273838; Daniel 8:27 slot 375752
+lexeme | ('Hebrew', 'הָרִים') | this: RWM[ hif impv x1 | key: HR/ x124, RWM[ hif infc x7, RWM[ hif impv x1 | Ezechiel 21:31 slot 275074
+lexeme | ('Hebrew', 'רְשָׁעִים') | this: RC<=/ x1 | key: RC</ x130, RC<=/ x1 | Ezechiel 21:34 slot 275146
+stem/tense | ('Hebrew', 'הַרְבֵּה') | this: RBH[ hif impv x1 | key: RBH[ hif infa x50, RBH[ hif impv x1 | Ezechiel 24:10 slot 276732
+lexeme | ('Hebrew', 'חָרָה') | this: XRR[ qal perf x2 | key: XRH[ qal perf x21, XRR[ qal perf x2 | Ezechiel 24:11 slot 276757; Iob 30:30 slot 343392
+lexeme | ('Hebrew', 'אָוֶן') | this: >WN====/ x1 | key: >WN=/ x73, >WN====/ x1 | Ezechiel 30:17 slot 279573
+lexeme | ('Hebrew', 'אֵילִם') | this: >JL===/ x1 | key: >JL=/ x37, >JLM=/ x4, >JL===/ x1 | Ezechiel 40:10 slot 285215
+lexeme | ('Hebrew', 'אֵל') | this: >JL===/ x1 | key: >L/ x220, >L=== x9, >L==/ x5, >JL===/ x1 | Ezechiel 40:48 slot 286037
+lexeme | ('Hebrew', 'בַת') | this: BT=/ x1 | key: BT/ x56, BT=/ x1 | Ezechiel 45:10 slot 288696
+lexeme | ('Hebrew', 'עַמִּי') | this: <MJ/ x1 | key: <M/ x210, <MJ/ x1 | Hosea 2:3 slot 291152
+lexeme | ('Hebrew', 'קֶצֶף') | this: QYP=/ x1 | key: QYP/ x17, QYP=/ x1 | Hosea 10:7 slot 293165
+lexeme | ('Hebrew', 'שָׂרָה') | this: FRH[ qal perf x1 | key: FRH=/ x38, FRH[ qal perf x1 | Hosea 12:4 slot 293550
+lexeme | ('Hebrew', 'פְאַת') | this: P>H=/ x1 | key: P>H/ x26, P>H=/ x1 | Amos 3:12 slot 296173
+stem/tense | ('Hebrew', 'תִּהְיוּ') | this: HJH[ qal wayq x1 | key: HJH[ qal impf x12, HJH[ qal wayq x1 | Amos 4:11 slot 296467
+lexeme | ('Hebrew', 'כְסִיל') | this: KSJL=/ x1 | key: KSJL/ x21, KSJL==/ x1, KSJL=/ x1 | Amos 5:8 slot 296631
+lexeme | ('Hebrew', 'חֲמַת') | this: XMT=/ x1 | key: XMH/ x25, XMT=/ x1 | Amos 6:2 slot 296970
+lexeme | ('Hebrew', 'שֶׁבֶת') | this: CBT=/ x2 | key: JCB[ qal infc x42, CBT=/ x2 | Amos 6:3 slot 296995; Proverbia 20:3 slot 352152
+lexeme | ('Hebrew', 'קִּיר') | this: QJR=/ x1 | key: QJR/ x32, QJR=/ x1 | Amos 9:7 slot 297987
+lexeme | ('Hebrew', 'אָבִי') | this: BW>[ hif impf x1 | key: >B/ x134, BW>[ hif impf x1 | Micha 1:15 slot 299793
+lexeme | ('Hebrew', 'חֶבֶל') | this: XBL===/ x1 | key: XBL=/ x24, XBL===/ x1 | Micha 2:10 slot 299985
+lexeme | ('Hebrew', 'רִיב') | this: RJB[ qal impv x2 | key: RJB/ x32, RJB[ qal infc x2, RJB[ qal impv x2, RJB[ qal infa x1 | Micha 6:1 slot 300856; Proverbia 25:9 slot 353807
+lexeme | ('Hebrew', 'חֵרֶם') | this: XRM=/ x1 | key: XRM/ x27, XRM=/ x1 | Micha 7:2 slot 301152
+lexeme | ('Hebrew', 'יִרְאוּ') | this: JR>[ qal impf x1 | key: R>H[ qal impf x28, JR>[ qal impf x1 | Micha 7:17 slot 301390
+stem/tense | ('Hebrew', 'חַזֵּק') | this: XZQ[ piel infa x1 | key: XZQ[ piel infc x13, XZQ[ piel impv x2, XZQ[ piel infa x1 | Nahum 2:2 slot 301676
+lexeme | ('Hebrew', 'חֵיל') | this: XJL==/ x1 | key: XJL/ x40, XJL==/ x1 | Nahum 3:8 slot 301998
+lexeme | ('Hebrew', 'קְצֹות') | this: QYH[ qal infc x1 | key: QYH/ x16, QYWT/ x4, QYH[ qal infc x1 | Habakuk 2:10 slot 302640
+lexeme | ('Hebrew', 'קָרֹוב') | this: QRB[ qal infa x2 | key: QRWB/ x35, QRB[ qal infa x2 | Zephania 1:14 slot 303368; Ecclesiastes 4:17 slot 360860
+lexeme | ('Hebrew', 'בַז') | this: BWZ[ qal perf x1 | key: BZ/ x18, BWZ[ qal perf x1 | Sacharia 4:10 slot 306058
+lexeme | ('Hebrew', 'חֵן') | this: XN=/ x1 | key: XN/ x68, XN=/ x1 | Sacharia 6:14 slot 306668
+lexeme | ('Hebrew', 'צֹום') | this: YWM[ qal infa x1 | key: YWM/ x21, YWM[ qal infa x1 | Sacharia 7:5 slot 306803
+lexeme | ('Hebrew', 'חָכְמָה') | this: XKM[ qal perf x1 | key: XKMH/ x107, XKM[ qal perf x1 | Sacharia 9:2 slot 307506
+lexeme | ('Hebrew', 'בִּינָה') | this: BJN[ qal impv x1 | key: BJNH/ x16, BJN[ qal impv x1 | Psalmi 5:2 slot 311050
+lexeme | ('Hebrew', 'הָרָה') | this: HRH[ qal perf x1 | key: HR/ x13, HRH/ x11, HRH[ qal perf x1 | Psalmi 7:15 slot 311427
+lexeme | ('Hebrew', 'תְּנָה') | this: TNH[ qal impv x1 | key: NTN[ qal impv x23, TNH[ qal impv x1 | Psalmi 8:2 slot 311478
+lexeme | ('Hebrew', 'זָכָר') | this: ZKR[ qal perf x1 | key: ZKR=/ x58, ZKR[ qal perf x1 | Psalmi 9:13 slot 311683
+lexeme | ('Hebrew', 'יֶתֶר') | this: JTR=/ x1 | key: JTR/ x86, JTR==/ x9, JTR=/ x1 | Psalmi 11:2 slot 311998
+stem/tense | ('Hebrew', 'נִמְצָא') | this: MY>[ nif ptca x2 | key: MY>[ nif perf x24, MY>[ qal impf x4, MY>[ nif ptca x2 | Psalmi 46:2 slot 318098; Proverbia 6:31 slot 348545
+lexeme | ('Hebrew', 'עַצְמֹות') | this: <YMH=/ x1 | key: <YM/ x20, <YMH=/ x1 | Psalmi 53:6 slot 319256
+lexeme | ('Hebrew', 'תֹּוךְ') | this: TK/ x1 | key: TWK/ x79, TK/ x1 | Psalmi 72:14 slot 322439
+lexeme | ('Hebrew', 'אוּלָם') | this: >WL/ x1 | key: >JLM/ x20, >WLM x19, >WLM/ x4, >WL/ x1 | Psalmi 73:4 slot 322569
+lexeme | ('Hebrew', 'עִיר') | this: <WR[ hif infc x1 | key: <JR/ x627, <JR===/ x2, <WR[ hif infc x1, <JR====/ x1 | Psalmi 73:20 slot 322709
+lexeme | ('Hebrew', 'צוּר') | this: YWR=[ qal infc x1 | key: YWR/ x36, YWR==/ x5, YWR[ qal infc x1, YWR=[ qal infc x1 | Psalmi 89:44 slot 326130
+lexeme | ('Hebrew', 'דֶּבֶר') | this: DBR===/ x2 | key: DBR=/ x23, DBR===/ x2 | Psalmi 91:3 slot 326438; Psalmi 91:6 slot 326462
+stem/tense | ('Hebrew', 'יִּתֵּן') | this: NTN[ qal impf x1 | key: NTN[ qal wayq x150, NTN[ qal impf x1 | Psalmi 120:3 slot 332681
+lexeme | ('Hebrew', 'מְלֵאִים') | this: ML>/ x1 | key: ML>[ qal ptca x19, ML>/ x1 | Psalmi 144:13 slot 335208
+lexeme | ('Hebrew', 'שָׁמַע') | this: CM<=/ x1 | key: CM<[ qal perf x72, CM<=/ x1, CM<===/ x1 | Psalmi 150:5 slot 336013
+stem/tense | ('Hebrew', 'תִּירָאוּ') | this: JR>[ qal wayq x1 | key: JR>[ qal impf x15, JR>[ qal wayq x1 | Iob 6:21 slot 337767
+stem/tense | ('Hebrew', 'יֹאמַר') | this: >MR[ qal wayq x1 | key: >MR[ qal impf x65, >MR[ qal wayq x1 | Iob 8:1 slot 338078
+lexeme | ('Hebrew', 'כְּסִיל') | this: KSJL=/ x2 | key: KSJL/ x24, KSJL=/ x2 | Iob 9:9 slot 338353; Iob 38:31 slot 345734
+lexeme | ('Hebrew', 'נָכֹון') | this: NKWN/ x1 | key: KWN[ nif ptca x27, KWN[ nif perf x2, NKWN=/ x1, NKWN/ x1 | Iob 12:5 slot 339057
+lexeme | ('Hebrew', 'קָצִיר') | this: QYJR=/ x1 | key: QYJR/ x15, QYJR=/ x1 | Iob 14:9 slot 339609
+lexeme | ('Hebrew', 'יְדַבְּרוּ') | this: DBR=[ piel wayq x1 | key: DBR[ piel wayq x29, DBR[ piel impf x7, DBR=[ piel wayq x1 | Iob 19:18 slot 340793
+stem/tense | ('Hebrew', 'שִׂים') | this: FJM[ qal infc x1 | key: FJM[ qal impv x31, FJM[ qal ptcp x3, FJM[ qal infc x1 | Iob 20:4 slot 340943
+lexeme | ('Hebrew', 'חֲבָלִים') | this: XBL===/ x1 | key: XBL=/ x12, XBL/ x4, XBL===/ x1 | Iob 21:17 slot 341332
+lexeme | ('Hebrew', 'צוּר') | this: YWR=/ x1 | key: YWR/ x36, YWR==/ x5, YWR[ qal infc x1, YWR=[ qal infc x1 | Iob 22:24 slot 341712
+stem/tense | ('Hebrew', 'יֹּאמַר') | this: >MR[ qal impf x2 | key: >MR[ qal wayq x122, >MR[ qal impf x2 | Iob 23:5 slot 341804; Ecclesiastes 1:10 slot 359419
+lexeme | ('Hebrew', 'אַל') | this: >L=/ x1 | key: >L= x723, >L x2, >L== x1, >L=/ x1 | Iob 24:25 slot 342192
+lexeme | ('Hebrew', 'חָג') | this: XWG[ qal perf x1 | key: XG/ x15, XWG[ qal perf x1 | Iob 26:10 slot 342326
+lexeme | ('Hebrew', 'חֵמָה') | this: XM>H/ x1 | key: XMH/ x39, XM>H/ x1 | Iob 29:6 slot 342918
+lexeme | ('Hebrew', 'חֹול') | this: XWL=/ x1 | key: XWL/ x22, XWL=/ x1 | Iob 29:18 slot 343035
+lexeme | ('Hebrew', 'אֹור') | this: >WR[ nif infc x1 | key: >WR/ x97, >WR[ qal infc x6, >WR[ qal perf x2, >WR[ nif infc x1 | Iob 33:30 slot 344338
+lexeme | ('Hebrew', 'שְׁנֵיהֶם') | this: CNH/ x1 | key: CNJM/ x63, CNH/ x1 | Iob 36:11 slot 344993
+lexeme | ('Hebrew', 'רֹב') | this: RJB[ qal infa x1 | key: RB=/ x135, RBB[ qal infc x1, RJB[ qal infa x1 | Iob 40:2 slot 346135
+stem/tense | ('Hebrew', 'עָשׂוּ') | this: <FH[ qal ptcp x1 | key: <FH[ qal perf x164, <FH[ qal ptcp x1 | Iob 41:25 slot 346607
+lexeme | ('Hebrew', 'אֹור') | this: >WR[ qal ptca x1 | key: >WR/ x97, >WR[ qal infc x6, >WR[ qal perf x2, >WR[ nif infc x1 | Proverbia 4:18 slot 347950
+lexeme | ('Hebrew', 'מָגֵן') | this: MGN=/ x2 | key: MGN/ x30, MGN=/ x2 | Proverbia 6:11 slot 348355; Proverbia 24:34 slot 353712
+lexeme | ('Hebrew', 'חֵלֶק') | this: XLQ===/ x1 | key: XLQ/ x38, XLQ====/ x2, XLQ===/ x1 | Proverbia 7:21 slot 348782
+lexeme | ('Hebrew', 'רָאשִׁים') | this: RWC[ qal ptca x1 | key: R>C/ x22, RWC[ qal ptca x1 | Proverbia 13:23 slot 350372
+lexeme | ('Hebrew', 'אִישׁ') | this: >C=/ x1 | key: >JC/ x1602, >C=/ x1 | Proverbia 18:24 slot 351834
+lexeme | ('Hebrew', 'צָרָה') | this: YR/ x1 | key: YRH/ x40, YRR[ qal perf x1, YR/ x1 | Proverbia 23:27 slot 353262
+lexeme | ('Hebrew', 'שָׁנִים') | this: CNJ=/ x1 | key: CNH/ x130, CNJ=/ x1 | Proverbia 31:21 slot 355703
+lexeme | ('Hebrew', 'יִרְאַת') | this: JR>/ x1 | key: JR>H/ x28, JR>/ x1 | Proverbia 31:30 slot 355781
+lexeme | ('Hebrew', 'עֹבֵד') | this: <WBD/ x1 | key: <BD[ qal ptca x13, <WBD/ x1 | Ruth 4:22 slot 357589
+lexeme | ('Hebrew', 'צְבָאֹות') | this: YB>H/ x2 | key: YB>/ x282, YB>H/ x2 | Canticum 2:7 slot 357859; Canticum 3:5 slot 358112
+stem/tense | ('Hebrew', 'יָּבֹוא') | this: BW>[ qal impf x1 | key: BW>[ qal wayq x19, BW>[ qal impf x1 | Ecclesiastes 2:12 slot 359815
+stem/tense | ('Hebrew', 'יֹּאכַל') | this: >KL[ qal impf x2 | key: >KL[ qal wayq x21, >KL[ qal impf x2 | Ecclesiastes 2:24 slot 360072; Ecclesiastes 3:13 slot 360324
+lexeme | ('Hebrew', 'יִּרְאוּ') | this: JR>[ qal impf x1 | key: R>H[ qal wayq x39, JR>[ qal wayq x9, JR>[ qal impf x1 | Ecclesiastes 3:14 slot 360361
+stem/tense | ('Hebrew', 'בַקֵּשׁ') | this: BQC[ piel infa x1 | key: BQC[ piel infc x28, BQC[ piel infa x1 | Ecclesiastes 7:25 slot 361830
+stem/tense | ('Hebrew', 'יֹּאמְרוּ') | this: >MR[ qal impf x1 | key: >MR[ qal wayq x297, >MR[ qal impf x1 | Threni 2:15 slot 364293
+lexeme | ('Hebrew', 'נָבִיא') | this: BW>[ hif impf x2 | key: NBJ>/ x36, BW>[ hif impf x2 | Threni 5:9 slot 365344; Nehemia 10:38 slot 389129
+lexeme | ('Hebrew', 'שְׁנָתֹו') | this: CNH=/ x1 | key: CNH/ x17, CNH=/ x1 | Daniel 2:1 slot 370549
+stem/tense | ('Hebrew', 'אֲדַבְּרָה') | this: DBR[ piel wayq x1 | key: DBR[ piel impf x15, DBR[ piel wayq x1 | Daniel 10:16 slot 376804
+lexeme | ('Hebrew', 'יָּמִין') | this: JWM/ x1 | key: JMJN/ x18, JWM/ x1 | Daniel 12:13 slot 378150
+lexeme | ('Hebrew', 'מִסְפָּר') | this: MSPR=/ x1 | key: MSPR/ x40, MSPR=/ x1 | Esra 2:2 slot 378463
+lexeme | ('Hebrew', 'כְּרוּב') | this: KRWB=/ x2 | key: KRWB/ x24, KRWB=/ x2 | Esra 2:59 slot 378893; Nehemia 7:61 slot 386925
+lexeme | ('Hebrew', 'יַּעֲנוּ') | this: <NH==[ qal wayq x1 | key: <NH[ qal wayq x15, <NH==[ qal wayq x1 | Esra 3:11 slot 379412
+stem/tense | ('Hebrew', 'אָשִׁיב') | this: CWB[ hif wayq x2 | key: CWB[ hif impf x23, CWB[ hif wayq x2 | Nehemia 2:20 slot 384238; Nehemia 6:4 slot 386000
+lexeme | ('Hebrew', 'יַּעַזְבוּ') | this: <ZB=[ qal wayq x1 | key: <ZB[ qal wayq x11, <ZB=[ qal wayq x1 | Nehemia 3:8 slot 384427
+stem/tense | ('Hebrew', 'נַעֲשֶׂה') | this: <FH[ nif ptca x1 | key: <FH[ qal impf x27, <FH[ nif ptca x1 | Nehemia 5:18 slot 385847
+lexeme | ('Hebrew', 'מִרְיָם') | this: MRJ/ x1 | key: MRJM/ x15, MRJ/ x1 | Nehemia 9:17 slot 388150
+lexeme | ('Hebrew', 'עָנָן') | this: <NN=/ x1 | key: <NN/ x76, <NN=/ x1 | Nehemia 10:27 slot 388840
+lexeme | ('Hebrew', 'יֵשׁוּעַ') | this: JCW<=/ x1 | key: JCW</ x28, JCW<=/ x1 | Nehemia 11:26 slot 389688
+lexeme | ('Hebrew', 'אַפַּיִם') | this: >PJM/ x1 | key: >P/ x27, >PJM/ x1 | Chronica_I 2:31 slot 392239
+lexeme | ('Hebrew', 'שָׁמַע') | this: CM<===/ x1 | key: CM<[ qal perf x72, CM<=/ x1, CM<===/ x1 | Chronica_I 2:43 slot 392388
+lexeme | ('Hebrew', 'שֶׁבֶר') | this: CBR===/ x1 | key: CBR/ x28, CBR=/ x4, CBR===/ x1 | Chronica_I 2:48 slot 392445
+lexeme | ('Hebrew', 'אֹהֶל') | this: >HL=/ x1 | key: >HL/ x235, >HL=/ x1 | Chronica_I 3:20 slot 392751
+lexeme | ('Hebrew', 'מְחִיר') | this: MXJR=/ x1 | key: MXJR/ x13, MXJR=/ x1 | Chronica_I 4:11 slot 392978
+lexeme | ('Hebrew', 'רִנָּה') | this: RNH=/ x1 | key: RNH/ x25, RNH=/ x1 | Chronica_I 4:20 slot 393117
+lexeme | ('Hebrew', 'עֶצֶם') | this: <YM===/ x1 | key: <YM/ x28, <YM===/ x1 | Chronica_I 4:29 slot 393241
+lexeme | ('Hebrew', 'בָּעַל') | this: B<L=/ x1 | key: B<L/ x15, B<L=/ x1 | Chronica_I 4:33 slot 393292
+lexeme | ('Hebrew', 'בַּעַל') | this: B<L==/ x1 | key: B<L/ x64, B<L==/ x1 | Chronica_I 5:5 slot 393536
+lexeme | ('Hebrew', 'אֲחִי') | this: >XJ=/ x2 | key: >X/ x36, >XJ=/ x2 | Chronica_I 5:15 slot 393686; Chronica_I 7:34 slot 395485
+lexeme | ('Hebrew', 'תַּחַת') | this: TXT==/ x2 | key: TXT/ x298, TXT==/ x2 | Chronica_I 6:9 slot 394169; Chronica_I 6:22 slot 394302
+lexeme | ('Hebrew', 'בִּלְעָם') | this: BL<M=/ x1 | key: BL<M/ x51, BL<M=/ x1 | Chronica_I 6:55 slot 394759
+lexeme | ('Hebrew', 'מָשָׁל') | this: MCL===/ x1 | key: MCL/ x17, MCL[ qal perf x2, MCL===/ x1 | Chronica_I 6:59 slot 394823
+lexeme | ('Hebrew', 'עִיר') | this: <JR====/ x1 | key: <JR/ x627, <JR===/ x2, <WR[ hif infc x1, <JR====/ x1 | Chronica_I 7:12 slot 395170
+lexeme | ('Hebrew', 'אַחֵר') | this: >XR==/ x1 | key: >XR=/ x57, >XR==/ x1 | Chronica_I 7:12 slot 395173
+lexeme | ('Hebrew', 'תַחַת') | this: TXT==/ x2 | key: TXT/ x37, TXT==/ x2 | Chronica_I 7:20 slot 395283; Chronica_I 7:20 slot 395289
+lexeme | ('Hebrew', 'עָמָל') | this: <ML==/ x1 | key: <ML/ x27, <ML==/ x1 | Chronica_I 7:35 slot 395502
+lexeme | ('Hebrew', 'הֹוד') | this: HWD=/ x1 | key: HWD/ x13, HWD=/ x1 | Chronica_I 7:37 slot 395516
+lexeme | ('Hebrew', 'חֹדֶשׁ') | this: XDC==/ x1 | key: XDC=/ x231, XDC==/ x1 | Chronica_I 8:9 slot 395658
+lexeme | ('Hebrew', 'מִרְמָה') | this: MRMH=/ x1 | key: MRMH/ x36, MRMH=/ x1 | Chronica_I 8:10 slot 395679
+lexeme | ('Hebrew', 'מֶלֶךְ') | this: MLK==/ x2 | key: MLK/ x992, MLK==/ x2 | Chronica_I 8:35 slot 395911; Chronica_I 9:41 slot 396653
+lexeme | ('Hebrew', 'בְרָכָה') | this: BRKH==/ x1 | key: BRKH/ x16, BRKH==/ x1 | Chronica_I 12:3 slot 397788
+lexeme | ('Hebrew', 'בֵּן') | this: BN=/ x1 | key: BN/ x92, BN=/ x1 | Chronica_I 15:18 slot 399349
+lexeme | ('Hebrew', 'שְׂעֹרִים') | this: F<RJM/ x1 | key: F<RH/ x20, F<RJM/ x1 | Chronica_I 24:8 slot 403629
+lexeme | ('Hebrew', 'קֹרֵא') | this: QWR>/ x1 | key: QR>[ qal ptca x13, QR>/ x1, QWR>/ x1 | Chronica_I 26:1 slot 404301
+lexeme | ('Hebrew', 'עֹולָה') | this: <LH[ qal ptca x1 | key: <LH/ x35, <WLH/ x1, <LH[ qal ptca x1 | Chronica_I 26:16 slot 404537
+lexeme | ('Hebrew', 'גָּדֹול') | this: GDL[ qal infa x1 | key: GDWL/ x244, GDL[ qal infa x1 | Chronica_II 2:8 slot 407475
+stem/tense | ('Hebrew', 'בֹוא') | this: BW>[ qal impv x1 | key: BW>[ qal infc x113, BW>[ qal infa x3, BW>[ qal impv x1 | Chronica_II 18:29 slot 415551
+lexeme | ('Hebrew', 'תְּדַבֵּר') | this: DBR=[ piel wayq x1 | key: DBR[ piel impf x19, DBR[ piel wayq x15, DBR=[ piel wayq x1 | Chronica_II 22:10 slot 417533
+lexeme | ('Hebrew', 'שָׁרֵת') | this: CRT/ x1 | key: CRT[ piel infc x18, CRT/ x1 | Chronica_II 24:14 slot 418569
+lexeme | ('Hebrew', 'חָזָק') | this: XZQ[ qal perf x1 | key: XZQ/ x19, XZQ[ qal perf x1 | Chronica_II 26:15 slot 419936
+lexeme | ('Hebrew', 'מַעַל') | this: M<L[ qal perf x1 | key: M<L=/ x13, M<L[ qal perf x1 | Chronica_II 28:19 slot 420804

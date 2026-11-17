@@ -1,0 +1,28 @@
+Colophon¶
+Repositories¶
+bhsa = Biblia Hebraica Stuttgartensia Amstelodamensis core data)
+parallels = Parallel passages - cross references between verses)
+valence = Verbal valence - sense descriptions for verbs depending on their context)
+phono = Phonetic transcription of the Hebrew text)
+pipeline = Data pipeline to make manage versions of all related data and transfer them to SHEBANQ)
+People¶
+Willem van Peursen
+Martijn Naaijer
+Christiaan Erwich
+Cody Kingham
+Marianne Kaajan
+Dirk Roorda
+Institutional¶
+SHEBANQ website
+  View and query Hebrew dataset online
+SHEBANQ wiki
+  Read about the whole shebanq
+SHEBANQ admin
+  Mail us
+ETCBC on Slack
+  Sign up with our Slack team
+ETCBC twitter
+  follow events
+Tools¶
+text-fabric
+  Python module for processing annotated texts

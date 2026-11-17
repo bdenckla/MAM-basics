@@ -1,0 +1,8 @@
+Test B class mam-elsewhere: 8 slots in 7 groups
+1. BHSA צִפֹּר | MAM צִּפֹּר | YPWR/ | own: YPWR=/ x2 | MAM's key: YPWR/ x9 | Genesis 15:10
+2. BHSA יִגְדַּל | MAM יִּגְדַּל | GDL[ qal wayq | own: GDL[ qal impf x11 | MAM's key: GDL[ qal wayq x10 | Exodus 2:10
+3. BHSA אֶל | MAM אַל | >L= | own: >L x3875 | MAM's key: >L= x723, >L x2, >L== x1, >L=/ x1 | Exodus 10:28
+4. BHSA חֶלְבָּה | MAM חֶלְבָּהּ | XLB=/ | own: XLBH/ x1 | MAM's key: XLB=/ x1 | Leviticus 4:35
+5. BHSA אַל | MAM אֶל | >L | own: >L= x723, >L x1, >L== x1, >L=/ x1 | MAM's key: >L x3875, >L= x1 | Judices 19:23; Jeremia 47:6
+6. BHSA יִשָּׂא | MAM יִּשָּׂא | NF>[ qal wayq | own: NF>[ qal impf x39 | MAM's key: NF>[ qal wayq x41 | Samuel_II 3:32
+7. BHSA יֹאמַר | MAM יֹּאמַר | >MR[ qal wayq | own: >MR[ qal impf x65 | MAM's key: >MR[ qal wayq x122, >MR[ qal impf x2 | Iob 8:1

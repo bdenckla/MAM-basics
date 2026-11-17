@@ -1,0 +1,16 @@
+>NJH/: {'ship': 31}
+>NJH=/: {'mourning': 2}
+<Z==/: {'goat': 74}
+<Z===/: {'strong': 22}
+>LH/: {'big tree': 16, 'god': 95}
+>LH===/: {'Elah': 13}
+FJM[: {'put': 583, 'place': 26}
+>L/: {'god': 235}
+>L: {'to': 5517, 'not': 4}
+>L=: {'not': 726, 'these': 1}
+R>H[: {'see': 1298}
+HNH=: {'they': 48}
+HNH==: {'here': 50}
+CMRH=/: {'guard': 1}
+XDL/: {'ceasing': 3}
+KX=/: {'lizard': 1}

@@ -1,0 +1,185 @@
+Test B class mam-unique: 184 slots in 184 groups
+1. BHSA זֲהַב | MAM זְהַב | ZHB/ | own: - | MAM's key: ZHB/ x4 | Genesis 2:12
+2. BHSA אֶעֱשֶׂהּ | MAM אֶעֱשֶׂה | <FH[ qal impf | own: - | MAM's key: <FH[ qal impf x87, <FH[ qal wayq x2 | Genesis 2:18
+3. BHSA שִׂדִּים | MAM שִּׂדִּים | FDJM/ | own: - | MAM's key: FDJM/ x2 | Genesis 14:10
+4. BHSA כְּדָר־לָעֹמֶר | MAM כְּדָרְלָעֹמֶר | KDRL<MR/ | own: - | MAM's key: KDRL<MR/ x3 | Genesis 14:17
+5. BHSA מִמֵּנָּה | MAM מִמֶּנָּה | MN | own: - | MAM's key: MN x60 | Genesis 16:2
+6. BHSA הְלַכְתֶּם | MAM הֲלַכְתֶּם | HLK[ qal perf | own: - | MAM's key: HLK[ qal perf x14 | Genesis 19:2
+7. BHSA מְאוּמָּה | MAM מְאוּמָה | M>WMH/ | own: - | MAM's key: M>WMH/ x31 | Genesis 22:12
+8. BHSA אֲבִימֶּלֶךְ | MAM אֲבִימֶלֶךְ | >BJMLK/ | own: - | MAM's key: >BJMLK/ x66 | Genesis 26:1
+9. BHSA נִבְרֲכוּ | MAM נִבְרְכוּ | BRK[ nif perf | own: - | MAM's key: BRK[ nif perf x2 | Genesis 28:14
+10. BHSA אָבִיה | MAM אָבִיהָ | >B/ | own: - | MAM's key: >B/ x34 | Genesis 34:11
+11. BHSA חֲמֹרֵיהֶּם | MAM חֲמֹרֵיהֶם | XMWR/ | own: - | MAM's key: XMWR/ x4 | Genesis 34:28
+12. BHSA עָשָׂהּ | MAM עָשָׂה | <FH[ qal perf | own: - | MAM's key: <FH[ qal perf x414 | Genesis 39:19
+13. BHSA יַּעְבֹר | MAM יַּעֲבֹר | <BR[ qal wayq | own: - | MAM's key: <BR[ qal wayq x38 | Genesis 41:46
+14. BHSA נַגֶּד | MAM נַּגֶּד | NGD[ hif wayq | own: - | MAM's key: NGD[ hif wayq x1 | Genesis 43:7
+15. BHSA קָצִּיר | MAM קָצִיר | QYJR/ | own: - | MAM's key: QYJR/ x15, QYJR=/ x1 | Genesis 45:6
+16. BHSA פֻוָּה | MAM פֻוָה | PWH/ | own: - | MAM's key: PWH/ x1 | Genesis 46:13
+17. BHSA תִּהְיֶין | MAM תִּהְיֶיןָ | HJH[ qal impf | own: - | MAM's key: HJH[ qal impf x9, HJH[ qal wayq x2 | Genesis 49:26
+18. BHSA בְנְיָמִן | MAM בִנְיָמִן | BNJMN/ | own: - | MAM's key: BNJMN/ x92 | Exodus 1:3
+19. BHSA תִּתֵּנּוּ | MAM תִּתֵּנוּ | NTN[ qal impf | own: - | MAM's key: NTN[ qal impf x2 | Exodus 5:18
+20. BHSA יַּעַשׂוּ | MAM יַּעֲשׂוּ | <FH[ qal wayq | own: - | MAM's key: <FH[ qal wayq x78 | Exodus 7:10
+21. BHSA חֲרְטֻמִּים | MAM חַרְטֻמִּים | XRVM/ | own: - | MAM's key: XRVM/ x6 | Exodus 8:3
+22. BHSA צֲפַרְדְּעִים | MAM צְפַרְדְּעִים | YPRD</ | own: - | MAM's key: YPRD</ x10 | Exodus 8:5
+23. BHSA יֹּאמרוּ | MAM יֹּאמְרוּ | >MR[ qal wayq | own: - | MAM's key: >MR[ qal wayq x297, >MR[ qal impf x1 | Exodus 14:5
+24. BHSA הִתְיַצְבוּ | MAM הִתְיַצְּבוּ | JYB[ hit impv | own: - | MAM's key: JYB[ hit impv x6, JYB[ hit perf x2 | Exodus 14:13
+25. BHSA תִשְׁתַּחְוֶה | MAM תִשְׁתַּחֲוֶה | XWH[ hsht impf | own: - | MAM's key: XWH[ hsht impf x5 | Exodus 20:5
+26. BHSA חְמֵשׁ | MAM חֲמֵשׁ | XMC/ | own: - | MAM's key: XMC/ x66 | Exodus 27:15
+27. BHSA שִׂטִּים | MAM שִׁטִּים | CVH/ | own: - | MAM's key: CVH/ x26 | Exodus 35:7
+28. BHSA מַחַשָׁבֹת | MAM מַחֲשָׁבֹת | MXCBH/ | own: - | MAM's key: MXCBH/ x2 | Exodus 35:32
+29. BHSA אַזְכָּרָתָה | MAM אַזְכָּרָתָהּ | >ZKRH/ | own: - | MAM's key: >ZKRH/ x5 | Leviticus 5:12
+30. BHSA תִכְבֶה | MAM תִכְבֶּה | KBH[ qal impf | own: - | MAM's key: KBH[ qal impf x8 | Leviticus 6:6
+31. BHSA בֶּהֶרֶת | MAM בַּהֶרֶת | BHRT/ | own: - | MAM's key: BHRT/ x5 | Leviticus 13:26
+32. BHSA הִתְנַחֲלְתֶּם | MAM הִתְנַחַלְתֶּם | NXL[ hit perf | own: - | MAM's key: NXL[ hit perf x1 | Leviticus 25:46
+33. BHSA הֳשַּׁמָּה | MAM הָשַּׁמָּה | CMM[ hof infc | own: - | MAM's key: CMM[ hof infc x1 | Leviticus 26:34
+34. BHSA צוּרִי־שַׁדָּי | MAM צוּרִישַׁדָּי | YWRJCDJ/ | own: - | MAM's key: YWRJCDJ/ x3 | Numeri 2:12
+35. BHSA אֶלִיצָפָן | MAM אֱלִיצָפָן | >LJYPN/ | own: - | MAM's key: >LJYPN/ x3 | Numeri 3:30
+36. BHSA וֲ | MAM וְ | W | own: - | MAM's key: W x23914 | Numeri 10:9
+37. BHSA צוּרִי שַׁדָּי | MAM צוּרִישַׁדָּי | YWRJCDJ/ | own: - | MAM's key: YWRJCDJ/ x3 | Numeri 10:19
+38. BHSA עַמִּי שַׁדָּי | MAM עַמִּישַׁדָּי | <MJCDJ/ | own: - | MAM's key: <MJCDJ/ x4 | Numeri 10:25
+39. BHSA אַכַלֶּה | MAM אֲכַלֶּה | KLH[ piel impf | own: - | MAM's key: KLH[ piel impf x4 | Numeri 16:21
+40. BHSA קֹרֶח | MAM קֹרַח | QRX==/ | own: - | MAM's key: QRX==/ x36 | Numeri 16:27
+41. BHSA רֲכוּשׁ | MAM רְכוּשׁ | RKWC/ | own: - | MAM's key: RKWC/ x11 | Numeri 16:32
+42. BHSA לָּהֶם | MAM לָהֶם | L | own: - | MAM's key: L x646 | Numeri 19:21
+43. BHSA תְבָרֲכֶנּוּ | MAM תְבָרְכֶנּוּ | BRK[ piel impf | own: - | MAM's key: BRK[ piel impf x1 | Numeri 23:25
+44. BHSA הִתְאַנֶּף | MAM הִתְאַנַּף | >NP[ hit perf | own: - | MAM's key: >NP[ hit perf x2 | Deuteronomium 4:21
+45. BHSA תֹאבֵדוּן | MAM תֹּאבֵדוּן | >BD[ qal impf | own: - | MAM's key: >BD[ qal impf x3 | Deuteronomium 8:20
+46. BHSA מִזְבּחֹתָם | MAM מִזְבְּחֹתָם | MZBX/ | own: - | MAM's key: MZBX/ x1 | Deuteronomium 12:3
+47. BHSA תֹאכֲלֶנּוּ | MAM תֹאכְלֶנּוּ | >KL[ qal impf | own: - | MAM's key: >KL[ qal impf x1 | Deuteronomium 15:20
+48. BHSA אִישָּׁהּ | MAM אִישָׁהּ | >JC/ | own: - | MAM's key: >JC/ x37 | Deuteronomium 25:11
+49. BHSA אַחַרֶיךָ | MAM אַחֲרֶיךָ | >XR/ | own: - | MAM's key: >XR/ x33 | Deuteronomium 25:18
+50. BHSA בְהַמְתְּךָ | MAM בְהֶמְתְּךָ | BHMH/ | own: - | MAM's key: BHMH/ x3 | Deuteronomium 28:11
+51. BHSA נִשְׁבָּעְתִּי | MAM נִשְׁבַּעְתִּי | CB<[ nif perf | own: - | MAM's key: CB<[ nif perf x26 | Deuteronomium 31:21
+52. BHSA אֱלֹהַ | MAM אֱלֹהַּ | >LWH/ | own: - | MAM's key: >LWH/ x1 | Deuteronomium 32:17
+53. BHSA גַּיְ | MAM גַּי | GJ>/ | own: - | MAM's key: GJ>/ x2 | Deuteronomium 34:6
+54. BHSA כִּנֲרֹות | MAM כִּנְרֹות | KNRT/ | own: - | MAM's key: KNRT/ x2 | Josua 11:2
+55. BHSA יָקְנֳעָם | MAM יָקְנְעָם | JQN<M/ | own: - | MAM's key: JQN<M/ x2 | Josua 12:22
+56. BHSA תֹצְאֹות | MAM תֹּצְאֹות | TWY>WT/ | own: - | MAM's key: TWY>WT/ x2 | Josua 15:4
+57. BHSA יֶּאֶסֹף | MAM יֶּאֱסֹף | >SP[ qal wayq | own: - | MAM's key: >SP[ qal wayq x19 | Josua 24:1
+58. BHSA עַלִיָּה | MAM עֲלִיָּה | <LJH/ | own: - | MAM's key: <LJH/ x5 | Judices 3:23
+59. BHSA קִלֲלַת | MAM קִלְלַת | QLLH/ | own: - | MAM's key: QLLH/ x2 | Judices 9:57
+60. BHSA התְהַלֵּךְ | MAM הִתְהַלֵּךְ | HLK[ hit perf | own: - | MAM's key: HLK[ hit infc x4, HLK[ hit impv x2, HLK[ hit perf x1 | Samuel_I 2:35
+61. BHSA אִי־כָבֹוד | MAM אִיכָבֹוד | >JKBWD/ | own: - | MAM's key: >JKBWD/ x1 | Samuel_I 4:21
+62. BHSA יַּרְחְמְאֵלִי | MAM יְּרַחְמְאֵלִי | JRXM>LJ/ | own: - | MAM's key: JRXM>LJ/ x1 | Samuel_I 27:10
+63. BHSA יְּשַׁלַּח | MAM יְשַׁלַּח | CLX[ piel wayq | own: - | MAM's key: CLX[ piel wayq x21, CLX[ piel impf x12 | Samuel_II 3:21
+64. BHSA בְּאֶרֹתִי | MAM בְּאֵרֹתִי | B>RTJ/ | own: - | MAM's key: B>RTJ/ x3 | Samuel_II 4:2
+65. BHSA יֶחֱזְקוּ | MAM יֶחֶזְקוּ | XZQ[ qal impf | own: - | MAM's key: XZQ[ qal impf x2 | Samuel_II 10:11
+66. BHSA מֶּלֶך | MAM מֶּלֶךְ | MLK/ | own: - | MAM's key: MLK/ x1189 | Samuel_II 19:31
+67. BHSA לְבֻשׁוּ | MAM לְבֻשֹׁו | LBWC/ | own: - | MAM's key: LBWC/ x2 | Samuel_II 20:8
+68. BHSA מְּסִלָּה | MAM מְסִלָּה | MSLH/ | own: - | MAM's key: MSLH/ x12 | Samuel_II 20:12
+69. BHSA אֲדֹנִיָהוּ | MAM אֲדֹנִיָּהוּ | >DNJHW/ | own: - | MAM's key: >DNJHW/ x18 | Reges_I 1:13
+70. BHSA חַגֵּית | MAM חַגִּית | XGJT/ | own: - | MAM's key: XGJT/ x4 | Reges_I 2:13
+71. BHSA יָקְמֳעָם | MAM יָקְמְעָם | JQM<M/ | own: - | MAM's key: JQM<M/ x1 | Reges_I 4:12
+72. BHSA יַּעְמֹד | MAM יַּעֲמֹד | <MD[ qal wayq | own: - | MAM's key: <MD[ qal wayq x54 | Reges_I 8:55
+73. BHSA יְזְרְעֶאל | MAM יִזְרְעֶאל | JZR<>L/ | own: - | MAM's key: JZR<>L/ x23, JZR<>L=/ x3 | Reges_II 9:15
+74. BHSA רֻאובֵנִי | MAM ראוּבֵנִי | R>WBNJ/ | own: - | MAM's key: R>WBNJ/ x12 | Reges_II 10:33
+75. BHSA דֶּרֶך | MAM דֶּרֶךְ | DRK/ | own: - | MAM's key: DRK/ x281 | Reges_II 11:19
+76. BHSA יְשַׁעַיָהוּ | MAM יְשַׁעְיָהוּ | JC<JHW/ | own: - | MAM's key: JC<JHW/ x31 | Reges_II 19:5
+77. BHSA יִּקְבְֹּר | MAM יִּקְבֹּר | QBR[ qal wayq | own: - | MAM's key: QBR[ qal wayq x1 | Reges_II 21:26
+78. BHSA יִּגְבַּה | MAM יִּגְבַּהּ | GBH[ qal wayq | own: - | MAM's key: GBH[ qal wayq x3 | Jesaia 5:16
+79. BHSA מִשְׁלֹוח | MAM מִשְׁלֹוחַ | MCLWX/ | own: - | MAM's key: MCLWX/ x2 | Jesaia 11:14
+80. BHSA יַגִּיהַ | MAM יַגִּיהַּ | NGH[ hif impf | own: - | MAM's key: NGH[ hif impf x2 | Jesaia 13:10
+81. BHSA אַלְמנֹותָיו | MAM אַלְמְנֹותָיו | >LMNH/ | own: - | MAM's key: >LMNH/ x1 | Jesaia 13:22
+82. BHSA חַרְבֹו | MAM חַרְבֹּו | XRB/ | own: - | MAM's key: XRB/ x24 | Jesaia 27:1
+83. BHSA בֹּטחֹות | MAM בֹּטְחֹות | BVX[ qal ptca | own: - | MAM's key: BVX[ qal ptca x2 | Jesaia 32:9
+84. BHSA עֳלֶיהָ | MAM עָלֶיהָ | <L | own: - | MAM's key: <L x182 | Jesaia 37:33
+85. BHSA אַשְׁמִיע | MAM אַשְׁמִיעַ | CM<[ hif impf | own: - | MAM's key: CM<[ hif impf x1 | Jesaia 42:9
+86. BHSA שֵיבָה | MAM שֵׂיבָה | FJBH/ | own: - | MAM's key: FJBH/ x12 | Jesaia 46:4
+87. BHSA תְדַמְיוּנִי | MAM תְדַמְּיוּנִי | DMH[ piel impf | own: - | MAM's key: DMH[ piel impf x1 | Jesaia 46:5
+88. BHSA שֲׁמָעוּ | MAM שְׁמָעוּ | CM<[ qal impv | own: - | MAM's key: CM<[ qal impv x1 | Jesaia 48:14
+89. BHSA אֶחֱשֶׂה | MAM אֶחֱשֶׁה | XCH[ qal impf | own: - | MAM's key: XCH[ qal impf x1 | Jesaia 65:6
+90. BHSA בִניָמִן | MAM בִנְיָמִן | BNJMN/ | own: - | MAM's key: BNJMN/ x92 | Jeremia 6:1
+91. BHSA דִבַּרְתָּם | MAM דִבַּרְתֶּם | DBR[ piel perf | own: - | MAM's key: DBR[ piel perf x4 | Jeremia 11:2
+92. BHSA נְבוּכַדנֶאצַּר | MAM נְבוּכַדְנֶאצַּר | NBWKDN>YR/ | own: - | MAM's key: NBWKDN>YR/ x13 | Jeremia 28:3
+93. BHSA נְבוּזַר־אֲדָן | MAM נְבוּזַרְאֲדָן | NBWZR>DN/ | own: - | MAM's key: NBWZR>DN/ x14 | Jeremia 39:9
+94. BHSA שָׁרֳשֶׁיהָ | MAM שָׁרָשֶׁיהָ | CRC/ | own: - | MAM's key: CRC/ x3 | Ezechiel 17:7
+95. BHSA חֻקֹותַי | MAM חֻקֹּותַי | XQH/ | own: - | MAM's key: XQH/ x16 | Ezechiel 18:21
+96. BHSA הָיתָה | MAM הָיְתָה | HJH[ qal perf | own: - | MAM's key: HJH[ qal perf x203 | Ezechiel 21:17
+97. BHSA הַגְבֵּהַ | MAM הַגְבֵּהַּ | GBH[ hif infa | own: - | MAM's key: GBH[ hif infa x1 | Ezechiel 21:31
+98. BHSA נַחְלַת | MAM נַחֲלַת | NXLH/ | own: - | MAM's key: NXLH/ x38 | Ezechiel 35:15
+99. BHSA הֵנָה | MAM הֵנָּה | HNH= | own: - | MAM's key: HNH== x50, HNH= x47 | Ezechiel 42:5
+100. BHSA הֳ | MAM הָ | H | own: - | MAM's key: H x6633 | Ezechiel 43:14
+101. BHSA פָּנֶיה | MAM פָּנֶיהָ | PNH/ | own: - | MAM's key: PNH/ x8 | Hosea 2:4
+102. BHSA יִטַמָּאוּ | MAM יִטַּמָּאוּ | VM>[ hit impf | own: - | MAM's key: VM>[ hit impf x1 | Hosea 9:4
+103. BHSA יַּעְשׂוּ | MAM יַּעֲשׂוּ | <FH[ qal wayq | own: - | MAM's key: <FH[ qal wayq x78 | Hosea 13:2
+104. BHSA פְּלִשְׁתּים | MAM פְּלִשְׁתִּים | PLCTJ/ | own: - | MAM's key: PLCTJ/ x144 | Amos 6:2
+105. BHSA אֹיבֵיהֶם | MAM אֹיְבֵיהֶם | >JB[ qal ptca | own: - | MAM's key: >JB[ qal ptca x28 | Amos 9:4
+106. BHSA אָנִיָּה | MAM אֳנִיָּה | >NJH/ | own: - | MAM's key: >NJH/ x3 | Jona 1:3
+107. BHSA נִינְוֶה | MAM נִינְוֵה | NJNWH/ | own: - | MAM's key: NJNWH/ x16 | Jona 3:3
+108. BHSA קִרְבֵּך | MAM קִרְבֵּךְ | QRB/ | own: - | MAM's key: QRB/ x7 | Zephania 3:17
+109. BHSA הַדַסִּים | MAM הֲדַסִּים | HDS/ | own: - | MAM's key: HDS/ x2 | Sacharia 1:10
+110. BHSA אֵלֶה | MAM אֵלֶּה | >LH | own: - | MAM's key: >LH x744 | Sacharia 4:11
+111. BHSA הִתְהַלֵּך | MAM הִתְהַלֵּךְ | HLK[ hit infc | own: - | MAM's key: HLK[ hit infc x4, HLK[ hit impv x2, HLK[ hit perf x1 | Sacharia 6:7
+112. BHSA שַׂר־אֶצֶר | MAM שַׂרְאֶצֶר | FR>YR/ | own: - | MAM's key: FR>YR/ x2 | Sacharia 7:2
+113. BHSA שָּׁוא | MAM שָּׁוְא | CW>/ | own: - | MAM's key: CW>/ x13 | Sacharia 10:2
+114. BHSA אַנְקַת | MAM אֶנְקַת | >NQH/ | own: - | MAM's key: >NQH/ x2 | Psalmi 12:6
+115. BHSA שֲׁכֵנַי | MAM שְׁכֵנַי | CKN/ | own: - | MAM's key: CKN/ x1 | Psalmi 31:12
+116. BHSA אֲל | MAM אַל | >L= | own: - | MAM's key: >L= x723, >L x2, >L== x1, >L=/ x1 | Psalmi 35:22
+117. BHSA קֲרָב | MAM קְרָב | QRB==/ | own: - | MAM's key: QRB==/ x6, QRB[ qal infc x1 | Psalmi 55:22
+118. BHSA מִּ | MAM מִ | MN | own: - | MAM's key: MN x4119 | Psalmi 59:2
+119. BHSA עַזִים | MAM עַזִּים | <Z===/ | own: - | MAM's key: <Z===/ x3 | Psalmi 59:4
+120. BHSA מְנַצֵּח | MAM מְנַצֵּחַ | NYX[ piel ptca | own: - | MAM's key: NYX[ piel ptca x55 | Psalmi 67:1
+121. BHSA סֹורֲרִים | MAM סֹורְרִים | SRR[ qal ptca | own: - | MAM's key: SRR[ qal ptca x4 | Psalmi 68:7
+122. BHSA קִרֲבַת | MAM קִרְבַת | QRBH/ | own: - | MAM's key: QRBH/ x1 | Psalmi 73:28
+123. BHSA דֹּמֶן | MAM דֹמֶן | DMN/ | own: - | MAM's key: DMN/ x5 | Psalmi 83:11
+124. BHSA אֶמוּנָתִי | MAM אֱמוּנָתִי | >MWNH/ | own: - | MAM's key: >MWNH/ x1 | Psalmi 89:25
+125. BHSA בָרֲכוּ | MAM בָרְכוּ | BRK[ piel impv | own: - | MAM's key: BRK[ piel impv x1 | Psalmi 134:2
+126. BHSA מִמֶּךָ | MAM מִמֶּךָּ | MN | own: - | MAM's key: MN x17 | Psalmi 139:12
+127. BHSA שָׁנֲנוּ | MAM שָׁנְנוּ | CNN[ qal perf | own: - | MAM's key: CNN[ qal perf x1 | Psalmi 140:4
+128. BHSA צֹרֲרֵי | MAM צֹרְרֵי | YRR=[ qal ptca | own: - | MAM's key: YRR=[ qal ptca x2 | Psalmi 143:12
+129. BHSA יֲהוָה | MAM יְהֹוָה | JHWH/ | own: - | MAM's key: JHWH/ x45 | Psalmi 144:15
+130. BHSA אֲבָרֲכֶךָּ | MAM אֲבָרְכֶךָּ | BRK[ piel impf | own: - | MAM's key: BRK[ piel impf x1 | Psalmi 145:2
+131. BHSA שָׁמָה | MAM שָׁמָּה | CM | own: - | MAM's key: CM x139 | Iob 1:21
+132. BHSA אַדַבְּרָה | MAM אֲדַבְּרָה | DBR[ piel impf | own: - | MAM's key: DBR[ piel impf x15, DBR[ piel wayq x1 | Iob 9:35
+133. BHSA חֶרְפָּתִּי | MAM חֶרְפָּתִי | XRPH/ | own: - | MAM's key: XRPH/ x5 | Iob 19:5
+134. BHSA אֶבֲחַר | MAM אֶבְחַר | BXR[ qal impf | own: - | MAM's key: BXR[ qal wayq x3, BXR[ qal impf x2 | Iob 29:25
+135. BHSA אַנֲשֵׁי | MAM אַנְשֵׁי | >JC/ | own: - | MAM's key: >JC/ x201 | Iob 34:10
+136. BHSA יְשַׁלְמֶנָּה | MAM יְשַׁלְּמֶנָּה | CLM[ piel impf | own: - | MAM's key: CLM[ piel impf x2 | Iob 34:33
+137. BHSA שֶּׁלַג | MAM שֶּׁלֶג | CLG/ | own: - | MAM's key: CLG/ x5 | Iob 37:6
+138. BHSA אֲהַלֵּך | MAM אֲהַלֵּךְ | HLK[ piel impf | own: - | MAM's key: HLK[ piel impf x2 | Proverbia 8:20
+139. BHSA נְפָשֹׂות | MAM נְפָשֹׁות | NPC/ | own: - | MAM's key: NPC/ x7 | Proverbia 11:30
+140. BHSA ו | MAM וְ | W | own: - | MAM's key: W x23914 | Proverbia 15:3
+141. BHSA אֶרֶך | MAM אֶרֶךְ | >RK/ | own: - | MAM's key: >RK/ x14, >RK===/ x1 | Proverbia 15:18
+142. BHSA רֵעהוּ | MAM רֵעֵהוּ | R<=/ | own: - | MAM's key: R<=/ x118 | Proverbia 19:4
+143. BHSA תִפאַרְתֹּו | MAM תִפְאַרְתֹּו | TP>RT/ | own: - | MAM's key: TP>RT/ x3 | Proverbia 19:11
+144. BHSA חַדַל | MAM חֲדַל | XDL[ qal impv | own: - | MAM's key: XDL[ qal impv x5, XDL/ x1 | Proverbia 19:27
+145. BHSA יַּין | MAM יַּיִן | JJN/ | own: - | MAM's key: JJN/ x30 | Proverbia 20:1
+146. BHSA נִבֳהָל | MAM נִבְהָל | BHL[ nif ptca | own: - | MAM's key: BHL[ nif ptca x1 | Proverbia 28:22
+147. BHSA חַיֶּיה | MAM חַיֶּיהָ | XJJM/ | own: - | MAM's key: XJJM/ x1 | Proverbia 31:12
+148. BHSA אָתּ | MAM אָתְּ | >T= | own: - | MAM's key: >T= x5 | Ruth 3:9
+149. BHSA מְּלָכֹות | MAM מְלָכֹות | MLKH/ | own: - | MAM's key: MLKH/ x1 | Canticum 6:8
+150. BHSA אֶכֹול | MAM אֱכֹול | >KL[ qal infc | own: - | MAM's key: >KL[ qal infc x12, >KL[ qal impv x4 | Ecclesiastes 5:17
+151. BHSA שֲׁתֵה | MAM שְׁתֵה | CTH[ qal impv | own: - | MAM's key: CTH[ qal impv x8 | Ecclesiastes 9:7
+152. BHSA יֹודֵע | MAM יֹודֵעַ | JD<[ qal ptca | own: - | MAM's key: JD<[ qal ptca x28 | Ecclesiastes 11:6
+153. BHSA מְבַקְּשִׁים | MAM מְבַקְשִׁים | BQC[ piel ptca | own: - | MAM's key: BQC[ piel ptca x11 | Threni 1:11
+154. BHSA אֳחַשְׁוֵרֹושׁ | MAM אֲחַשְׁוֵרֹושׁ | >XCWRWC/ | own: - | MAM's key: >XCWRWC/ x25 | Esther 9:2
+155. BHSA אֲנָשׁ | MAM אֱנָשׁ | Aram >NC/ | own: - | MAM's key: Aram >NC/ x11 | Daniel 2:10
+156. BHSA דִּכֵּן | MAM דִכֵּן | Aram DKN | own: - | MAM's key: Aram DKN x2 | Daniel 2:31
+157. BHSA הִשְׁתֲּכַח | MAM הִשְׁתְּכַח | Aram CKX[ htpe perf | own: - | MAM's key: Aram CKX[ htpe perf x2 | Daniel 2:35
+158. BHSA הַדֶּקֶת | MAM הַדֵּקֶת | Aram DQQ[ haf perf | own: - | MAM's key: Aram DQQ[ haf perf x1 | Daniel 2:45
+159. BHSA דֵּי | MAM דִּי | Aram DJ | own: - | MAM's key: Aram DJ x305 | Daniel 3:15
+160. BHSA סָרְבָּלֵיהֹון | MAM סַרְבָּלֵיהֹון | Aram SRBL/ | own: - | MAM's key: Aram SRBL/ x1 | Daniel 3:27
+161. BHSA אֱלָה | MAM אֱלָהּ | Aram >LH/ | own: - | MAM's key: Aram >LH/ x24 | Daniel 3:29
+162. BHSA רַעיֹנֹהִי | MAM רַעְיֹנֹהִי | Aram R<JWN/ | own: - | MAM's key: Aram R<JWN/ x1 | Daniel 5:6
+163. BHSA הֶעְדִּיוּ | MAM הֶעְדִּיו | Aram <DH[ haf perf | own: - | MAM's key: Aram <DH[ haf perf x1 | Daniel 5:20
+164. BHSA שְׁלִיַחַ | MAM שְׁלִיחַ | Aram CLX[ peil perf | own: - | MAM's key: Aram CLX[ peil perf x1 | Daniel 5:24
+165. BHSA אַרְיָותָא | MAM אַרְיָוָתָא | Aram >RJH/ | own: - | MAM's key: Aram >RJH/ x8 | Daniel 6:13
+166. BHSA דָּנִיֶּאל | MAM דָּנִיֵּאל | Aram DNJ>L/ | own: - | MAM's key: Aram DNJ>L/ x15 | Daniel 6:22
+167. BHSA יִרְמִיָה | MAM יִרְמְיָה | JRMJH/ | own: - | MAM's key: JRMJH/ x17 | Daniel 9:2
+168. BHSA הַקֲשִׁיבָה | MAM הַקְשִׁיבָה | QCB[ hif impv | own: - | MAM's key: QCB[ hif impv x9 | Daniel 9:19
+169. BHSA לְמַעֲנְךָ | MAM לְמַעַנְךָ | LM<N | own: - | MAM's key: LM<N x1 | Daniel 9:19
+170. BHSA כֹּח | MAM כֹּחַ | KX/ | own: - | MAM's key: KX/ x41, KX=/ x1 | Daniel 10:8
+171. BHSA אָהֳלֶי | MAM אָהֳלֵי | >HL/ | own: - | MAM's key: >HL/ x14 | Daniel 11:45
+172. BHSA יַּעְנוּ | MAM יַּעֲנוּ | <NH[ qal wayq | own: - | MAM's key: <NH[ qal wayq x15, <NH==[ qal wayq x1 | Esra 10:12
+173. BHSA יַעֲמְדוּ | MAM יַעַמְדוּ | <MD[ qal impf | own: - | MAM's key: <MD[ qal impf x17 | Esra 10:14
+174. BHSA בְּנְיָמִן | MAM בִּנְיָמִן | BNJMN/ | own: - | MAM's key: BNJMN/ x54 | Esra 10:32
+175. BHSA גַּיא | MAM גַּיְא | GJ>/ | own: - | MAM's key: GJ>/ x7 | Nehemia 2:13
+176. BHSA מְשֹׁרֲרֹות | MAM מְשֹׁרְרֹות | CJR[ piel ptca | own: - | MAM's key: CJR[ piel ptca x1 | Nehemia 7:67
+177. BHSA הֹודַעַתָ | MAM הֹודַעְתָּ | JD<[ hif perf | own: - | MAM's key: JD<[ hif perf x3 | Nehemia 9:14
+178. BHSA דָויִד | MAM דָוִיד | DWD==/ | own: - | MAM's key: DWD==/ x70 | Chronica_I 3:1
+179. BHSA חַמִישִׁי | MAM חֲמִישִׁי | XMJCJ/ | own: - | MAM's key: XMJCJ/ x24 | Chronica_I 27:8
+180. BHSA שֳׁמְרָה | MAM שָׁמְרָה | CMR[ qal impv | own: - | MAM's key: CMR[ qal perf x3, CMR[ qal impv x2, CMRH=/ x1 | Chronica_I 29:18
+181. BHSA אֲחרֹנִים | MAM אַחֲרֹנִים | >XRWN/ | own: - | MAM's key: >XRWN/ x12 | Chronica_I 29:29
+182. BHSA אֲחֲרֹונִים | MAM אַחֲרֹונִים | >XRWN/ | own: - | MAM's key: >XRWN/ x4 | Chronica_II 9:29
+183. BHSA אֲחַרֹונִים | MAM אַחֲרֹונִים | >XRWN/ | own: - | MAM's key: >XRWN/ x4 | Chronica_II 12:15
+184. BHSA אֲחֲרֹנִים | MAM אַחֲרֹנִים | >XRWN/ | own: - | MAM's key: >XRWN/ x12 | Chronica_II 26:22

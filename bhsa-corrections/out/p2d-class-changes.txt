@@ -1,0 +1,228 @@
+== slot both -> atom mam-unique: 48 slot rows
+  Genesis 30:19 | slot לְּ / MAM לְ | L | own L x79 | MAM's L x7445
+      atom לְּיַעֲקֹב / MAM לְיַעֲקֹב | L + J<QB/ -.sg.m +n/a | own - | MAM's L + J<QB/ -.sg.m +n/a x35
+  Genesis 31:51 | slot מַצֵּבָה / MAM מַּצֵּבָה | MYBH/ | own MYBH/ x11 | MAM's MYBH/ x2
+      atom הַמַצֵּבָה / MAM הַמַּצֵּבָה | H + MYBH/ -.sg.f | own - | MAM's H + MYBH/ -.sg.f x2
+  Genesis 40:3 | slot טַבָּחִים / MAM טַּבָּחִים | VBX=/ | own VBX=/ x24 | MAM's VBX=/ x5
+      atom הַטַבָּחִים / MAM הַטַּבָּחִים | H + VBX=/ -.pl.m | own - | MAM's H + VBX=/ -.pl.m x5
+  Genesis 41:24 | slot הָ / MAM הַ | H | own H x6632 | MAM's H x16827, H= x179
+      atom הָשִׁבֳּלִים / MAM הַשִּׁבֳּלִים | H + CBLT/ -.pl.f | own - | MAM's H + CBLT/ -.pl.f x3
+  Genesis 41:24 | slot שִׁבֳּלִים / MAM שִּׁבֳּלִים | CBLT/ | own CBLT/ x8 | MAM's CBLT/ x4
+      atom הָשִׁבֳּלִים / MAM הַשִּׁבֳּלִים | H + CBLT/ -.pl.f | own - | MAM's H + CBLT/ -.pl.f x3
+  Exodus 29:23 | slot וַ / MAM וְ | W | own W x15986 | MAM's W x23914
+      atom וַחַלַּת / MAM וְחַלַּת | W + XLH/ -.sg.f | own - | MAM's W + XLH/ -.sg.f x2
+  Exodus 39:20 | slot לְ / MAM לְּ | L | own L x7444 | MAM's L x80
+      atom מִלְמַטָּה / MAM מִלְּמַטָּה | MN + L + MVH==/ -.sg.m | own - | MAM's MN + L + MVH==/ -.sg.m x4
+  Numeri 2:14 | slot וְ / MAM וּ | W | own W x23913 | MAM's W x8195
+      atom וְמַטֵּה / MAM וּמַטֵּה | W + MVH/ -.sg.m | own - | MAM's W + MVH/ -.sg.m x5
+  Numeri 17:12 | slot תֹּוך / MAM תֹּוךְ | TWK/ | own TWK/ x1 | MAM's TWK/ x79, TK/ x1
+      atom תֹּוך / MAM תֹּוךְ | TWK/ -.sg.m | own - | MAM's TWK/ -.sg.m x24
+  Numeri 24:9 | slot מְבָרֲכֶיךָ / MAM מְבָרְכֶיךָ | BRK[ piel ptca | own BRK[ piel ptca x1 | MAM's BRK[ piel ptca x1
+      atom מְבָרֲכֶיךָ / MAM מְבָרְכֶיךָ | BRK[ piel ptca ?.pl.m +K | own - | MAM's BRK[ piel ptca ?.pl.m +K x1
+  Numeri 26:7 | slot רֻאוּבֵנִי / MAM ראוּבֵנִי | R>WBNJ/ | own R>WBNJ/ x4 | MAM's R>WBNJ/ x12
+      atom הָרֻאוּבֵנִי / MAM הָראוּבֵנִי | H + R>WBNJ/ -.sg.m | own - | MAM's H + R>WBNJ/ -.sg.m x5
+  Deuteronomium 3:16 | slot רֻאוּבֵנִי / MAM ראוּבֵנִי | R>WBNJ/ | own R>WBNJ/ x4 | MAM's R>WBNJ/ x12
+      atom וְלָרֻאוּבֵנִי / MAM וְלָראוּבֵנִי | W + L + H + R>WBNJ/ -.sg.m | own - | MAM's W + L + H + R>WBNJ/ -.sg.m x1
+
+== slot both -> atom neither: 36 slot rows
+  Genesis 27:29 | slot מְבָרֲכֶיךָ / MAM מְבָרְכֶיךָ | BRK[ piel ptca | own BRK[ piel ptca x1 | MAM's BRK[ piel ptca x1
+      atom וּמְבָרֲכֶיךָ / MAM וּמְבָרְכֶיךָ | W + BRK[ piel ptca ?.pl.m +K | own - | MAM's -
+  Genesis 32:18 | slot וִ / MAM וּ | W | own W x453 | MAM's W x8195
+      atom וִשְׁאֵלְךָ / MAM וּשְׁאֵלְךָ | W + C>L[ qal perf p3.sg.m +K | own - | MAM's -
+  Deuteronomium 4:35 | slot לְ / MAM לְּ | L | own L x7444 | MAM's L x80
+      atom מִלְבַדֹּו / MAM מִלְּבַדֹּו | MN + L + BD/ -.sg.m +W | own - | MAM's -
+  Deuteronomium 28:29 | slot הָ / MAM הַ | H | own H x6632 | MAM's H x16827, H= x179
+      atom הָעִוֵּר / MAM הַעִוֵּר | H + <WR/ -.sg.m | own - | MAM's -
+  Deuteronomium 32:6 | slot הֲ / MAM הַ | H= | own H= x541 | MAM's H x16827, H= x179
+      atom הֲ / MAM הַ | H= | own - | MAM's -
+  Deuteronomium 32:6 | slot לַ / MAM לְ | L | own L x2900 | MAM's L x7445
+      atom לַיְהוָה / MAM לְיְהֹוָה | L + JHWH/ -.sg.m +n/a | own - | MAM's -
+  Deuteronomium 32:6 | slot יְהוָה / MAM יְהֹוָה | JHWH/ | own JHWH/ x5681 | MAM's JHWH/ x45
+      atom לַיְהוָה / MAM לְיְהֹוָה | L + JHWH/ -.sg.m +n/a | own - | MAM's -
+  Samuel_II 19:33 | slot בְ / MAM בְּ | B | own B x1495 | MAM's B x6507
+      atom בְשִׁיבָתֹו / MAM בְּשִׁיבָתֹו | B + CJBH/ -.sg.f +W | own - | MAM's -
+  Reges_II 15:13 | slot עֻזִיָּה / MAM עֻזִּיָּה | <ZJH/ | own <ZJH/ x2 | MAM's <ZJH/ x5
+      atom לְעֻזִיָּה / MAM לְעֻזִּיָּה | L + <ZJH/ -.sg.m +n/a | own - | MAM's -
+  Jesaia 14:3 | slot מֵ / MAM מִ | MN | own MN x2085 | MAM's MN x4119
+      atom וּמֵרָגְזֶךָ / MAM וּמִרָגְזֶךָ | W + MN + RGZ/ -.sg.m +K | own - | MAM's -
+  Jesaia 21:11 | slot מִ / MAM מִּ | MN | own MN x4118 | MAM's MN x1
+      atom מִלַּיְלָה / MAM מִּלַּיְלָה | MN + LJLH/ -.sg.m | own - | MAM's -
+  Jesaia 21:11 | slot מִ / MAM מִּ | MN | own MN x4118 | MAM's MN x1
+      atom מִלֵּיל / MAM מִּלֵּיל | MN + LJL/ -.sg.m | own - | MAM's -
+
+== slot both -> atom written: 67 slot rows
+  Genesis 1:18 | slot לֲ / MAM לְ | L | own L x3 | MAM's L x7445
+      atom וּלֲהַבְדִּיל / MAM וּלְהַבְדִּיל | W + L + BDL[ hif infc ?.?.? | own W + L + BDL[ hif infc ?.?.? x1 | MAM's -
+  Genesis 18:14 | slot יְהוָה / MAM יְהֹוָה | JHWH/ | own JHWH/ x5681 | MAM's JHWH/ x45
+      atom מֵיְהוָה / MAM מֵיְהֹוָה | MN + JHWH/ -.sg.m +n/a | own MN + JHWH/ -.sg.m +n/a x19 | MAM's -
+  Genesis 24:50 | slot יְהוָה / MAM יְהֹוָה | JHWH/ | own JHWH/ x5681 | MAM's JHWH/ x45
+      atom מֵיְהוָה / MAM מֵיְהֹוָה | MN + JHWH/ -.sg.m +n/a | own MN + JHWH/ -.sg.m +n/a x19 | MAM's -
+  Exodus 8:6 | slot יהוָה / MAM יהֹוָה | JHWH/ | own JHWH/ x787 | MAM's JHWH/ x6
+      atom כַּיהוָה / MAM כַּיהֹוָה | K + JHWH/ -.sg.m +n/a | own K + JHWH/ -.sg.m +n/a x3 | MAM's -
+  Exodus 14:11 | slot הַ / MAM הֲ | H= | own H x16827, H= x178 | MAM's H= x542
+      atom הַמִבְּלִי / MAM הֲמִבְּלִי | H= + MN + BLJ/ -.sg.m | own H= + MN + BLJ/ -.sg.m x3 | MAM's -
+  Exodus 20:3 | slot פָּנָיַ / MAM פָּנָי | PNH/ | own PNH/ x1 | MAM's PNH/ x16
+      atom פָּנָיַ / MAM פָּנַָי | PNH/ -.pl.m +J | own PNH/ -.pl.m +J x1 | MAM's -
+  Leviticus 10:10 | slot לֲ / MAM לְ | L | own L x3 | MAM's L x7445
+      atom וּלֲהַבְדִּיל / MAM וּלְהַבְדִּיל | W + L + BDL[ hif infc ?.?.? | own W + L + BDL[ hif infc ?.?.? x1 | MAM's -
+  Numeri 21:7 | slot יהוָה / MAM יהֹוָה | JHWH/ | own JHWH/ x787 | MAM's JHWH/ x6
+      atom בַיהוָה / MAM בַיהֹוָה | B + JHWH/ -.sg.m +n/a | own B + JHWH/ -.sg.m +n/a x11 | MAM's -
+  Numeri 32:22 | slot יְהוָה / MAM יְהֹוָה | JHWH/ | own JHWH/ x5681 | MAM's JHWH/ x45
+      atom מֵיְהוָה / MAM מֵיְהֹוָה | MN + JHWH/ -.sg.m +n/a | own MN + JHWH/ -.sg.m +n/a x19 | MAM's -
+  Numeri 36:2 | slot יהוָה / MAM יהֹוָה | JHWH/ | own JHWH/ x787 | MAM's JHWH/ x6
+      atom בַיהוָה / MAM בַיהֹוָה | B + JHWH/ -.sg.m +n/a | own B + JHWH/ -.sg.m +n/a x11 | MAM's -
+  Deuteronomium 4:7 | slot יהוָה / MAM יהֹוָה | JHWH/ | own JHWH/ x787 | MAM's JHWH/ x6
+      atom כַּיהוָה / MAM כַּיהֹוָה | K + JHWH/ -.sg.m +n/a | own K + JHWH/ -.sg.m +n/a x3 | MAM's -
+  Deuteronomium 5:7 | slot פָּנָיַ / MAM פָּנָי | PNH/ | own PNH/ x1 | MAM's PNH/ x16
+      atom פָּנָיַ / MAM פָּנַָי | PNH/ -.pl.m +J | own PNH/ -.pl.m +J x1 | MAM's -
+
+== slot mam-elsewhere -> atom mam-elsewhere: 4 slot rows
+  Exodus 10:28 | slot אֶל / MAM אַל | >L= | own >L x3875 | MAM's >L= x723, >L x2, >L== x1, >L=/ x1
+      atom אֶל / MAM אַל | >L= | own >L x3539 | MAM's >L= x575, >L x2, >L== x1
+  Leviticus 4:35 | slot חֶלְבָּה / MAM חֶלְבָּהּ | XLB=/ | own XLBH/ x1 | MAM's XLB=/ x1
+      atom חֶלְבָּה / MAM חֶלְבָּהּ | XLB=/ -.sg.m +H | own XLBH/ -.sg.? +n/a x1 | MAM's XLB=/ -.sg.m +H x1
+  Judices 19:23 | slot אַל / MAM אֶל | >L | own >L= x723, >L x1, >L== x1, >L=/ x1 | MAM's >L x3875, >L= x1
+      atom אַל / MAM אֶל | >L | own >L= x575, >L x1, >L== x1 | MAM's >L x3539, >L= x1
+  Jeremia 47:6 | slot אַל / MAM אֶל | >L | own >L= x723, >L x1, >L== x1, >L=/ x1 | MAM's >L x3875, >L= x1
+      atom אַל / MAM אֶל | >L | own >L= x575, >L x1, >L== x1 | MAM's >L x3539, >L= x1
+
+== slot mam-elsewhere -> atom mam-unique: 4 slot rows
+  Genesis 15:10 | slot צִפֹּר / MAM צִּפֹּר | YPWR/ | own YPWR=/ x2 | MAM's YPWR/ x9
+      atom הַצִפֹּר / MAM הַצִּפֹּר | H + YPWR/ -.sg.? | own - | MAM's H + YPWR/ -.sg.? x8
+  Exodus 2:10 | slot יִגְדַּל / MAM יִּגְדַּל | GDL[ qal wayq | own GDL[ qal impf x11 | MAM's GDL[ qal wayq x10
+      atom וַיִגְדַּל / MAM וַיִּגְדַּל | W + GDL[ qal wayq p3.sg.m | own - | MAM's W + GDL[ qal wayq p3.sg.m x10
+  Samuel_II 3:32 | slot יִשָּׂא / MAM יִּשָּׂא | NF>[ qal wayq | own NF>[ qal impf x39 | MAM's NF>[ qal wayq x41
+      atom וַיִשָּׂא / MAM וַיִּשָּׂא | W + NF>[ qal wayq p3.sg.m | own - | MAM's W + NF>[ qal wayq p3.sg.m x41
+  Iob 8:1 | slot יֹאמַר / MAM יֹּאמַר | >MR[ qal wayq | own >MR[ qal impf x65 | MAM's >MR[ qal wayq x122, >MR[ qal impf x2
+      atom וַיֹאמַר / MAM וַיֹּאמַר | W + >MR[ qal wayq p3.sg.m | own - | MAM's W + >MR[ qal wayq p3.sg.m x122
+
+== slot mam-unique -> atom mam-unique: 153 slot rows
+  Genesis 2:18 | slot אֶעֱשֶׂהּ / MAM אֶעֱשֶׂה | <FH[ qal impf | own - | MAM's <FH[ qal impf x87, <FH[ qal wayq x2
+      atom אֶעֱשֶׂהּ / MAM אֶעֱשֶׂה | <FH[ qal impf p1.sg.? | own - | MAM's <FH[ qal impf p1.sg.? x75
+  Genesis 14:10 | slot שִׂדִּים / MAM שִּׂדִּים | FDJM/ | own - | MAM's FDJM/ x2
+      atom הַשִׂדִּים / MAM הַשִּׂדִּים | H + FDJM/ -.sg.? +n/a | own - | MAM's H + FDJM/ -.sg.? +n/a x2
+  Genesis 14:17 | slot כְּדָר־לָעֹמֶר / MAM כְּדָרְלָעֹמֶר | KDRL<MR/ | own - | MAM's KDRL<MR/ x3
+      atom כְּדָר־לָעֹמֶר / MAM כְּדָרְלָעֹמֶר | KDRL<MR/ -.sg.m +n/a | own - | MAM's KDRL<MR/ -.sg.m +n/a x3
+  Genesis 16:2 | slot מִמֵּנָּה / MAM מִמֶּנָּה | MN | own - | MAM's MN x60
+      atom מִמֵּנָּה / MAM מִמֶּנָּה | MN +H | own - | MAM's MN +H x59
+  Genesis 19:2 | slot הְלַכְתֶּם / MAM הֲלַכְתֶּם | HLK[ qal perf | own - | MAM's HLK[ qal perf x14
+      atom וַהְלַכְתֶּם / MAM וַהֲלַכְתֶּם | W + HLK[ qal perf p2.pl.m | own - | MAM's W + HLK[ qal perf p2.pl.m x9
+  Genesis 22:12 | slot מְאוּמָּה / MAM מְאוּמָה | M>WMH/ | own - | MAM's M>WMH/ x31
+      atom מְאוּמָּה / MAM מְאוּמָה | M>WMH/ -.sg.f | own - | MAM's M>WMH/ -.sg.f x27
+  Genesis 26:1 | slot אֲבִימֶּלֶךְ / MAM אֲבִימֶלֶךְ | >BJMLK/ | own - | MAM's >BJMLK/ x66
+      atom אֲבִימֶּלֶךְ / MAM אֲבִימֶלֶךְ | >BJMLK/ -.sg.m +n/a | own - | MAM's >BJMLK/ -.sg.m +n/a x52
+  Genesis 28:14 | slot נִבְרֲכוּ / MAM נִבְרְכוּ | BRK[ nif perf | own - | MAM's BRK[ nif perf x2
+      atom וְנִבְרֲכוּ / MAM וְנִבְרְכוּ | W + BRK[ nif perf p3.pl.? | own - | MAM's W + BRK[ nif perf p3.pl.? x2
+  Genesis 34:11 | slot אָבִיה / MAM אָבִיהָ | >B/ | own - | MAM's >B/ x34
+      atom אָבִיה / MAM אָבִיהָ | >B/ -.sg.m +H | own - | MAM's >B/ -.sg.m +H x30
+  Genesis 34:28 | slot חֲמֹרֵיהֶּם / MAM חֲמֹרֵיהֶם | XMWR/ | own - | MAM's XMWR/ x4
+      atom חֲמֹרֵיהֶּם / MAM חֲמֹרֵיהֶם | XMWR/ -.pl.m +HM | own - | MAM's XMWR/ -.pl.m +HM x2
+  Genesis 39:19 | slot עָשָׂהּ / MAM עָשָׂה | <FH[ qal perf | own - | MAM's <FH[ qal perf x414
+      atom עָשָׂהּ / MAM עָשָׂה | <FH[ qal perf p3.sg.m | own - | MAM's <FH[ qal perf p3.sg.m x357
+  Genesis 41:46 | slot יַּעְבֹר / MAM יַּעֲבֹר | <BR[ qal wayq | own - | MAM's <BR[ qal wayq x38
+      atom וַיַּעְבֹר / MAM וַיַּעֲבֹר | W + <BR[ qal wayq p3.sg.m | own - | MAM's W + <BR[ qal wayq p3.sg.m x38
+
+== slot mam-unique -> atom neither: 31 slot rows
+  Genesis 2:12 | slot זֲהַב / MAM זְהַב | ZHB/ | own - | MAM's ZHB/ x4
+      atom וּזֲהַב / MAM וּזְהַב | W + ZHB/ -.sg.m | own - | MAM's -
+  Genesis 46:13 | slot פֻוָּה / MAM פֻוָה | PWH/ | own - | MAM's PWH/ x1
+      atom וּפֻוָּה / MAM וּפֻוָה | W + PWH/ -.sg.m +n/a | own - | MAM's -
+  Leviticus 5:12 | slot אַזְכָּרָתָה / MAM אַזְכָּרָתָהּ | >ZKRH/ | own - | MAM's >ZKRH/ x5
+      atom אַזְכָּרָתָה / MAM אַזְכָּרָתָהּ | >ZKRH/ -.sg.f | own - | MAM's >ZKRH/ -.sg.f +H x5
+  Numeri 10:9 | slot וֲ / MAM וְ | W | own - | MAM's W x23914
+      atom וֲנִזְכַּרְתֶּם / MAM וְנִזְכַּרְתֶּם | W + ZKR[ nif perf p2.pl.m | own - | MAM's -
+  Deuteronomium 15:20 | slot תֹאכֲלֶנּוּ / MAM תֹאכְלֶנּוּ | >KL[ qal impf | own - | MAM's >KL[ qal impf x1
+      atom תֹאכֲלֶנּוּ / MAM תֹאכְלֶנּוּ | >KL[ qal impf p2.sg.m +HW | own - | MAM's >KL[ qal impf p3.sg.f +HW x1
+  Deuteronomium 32:17 | slot אֱלֹהַ / MAM אֱלֹהַּ | >LWH/ | own - | MAM's >LWH/ x1
+      atom אֱלֹהַ / MAM אֱלֹהַּ | >LWH/ -.sg.m | own - | MAM's -
+  Deuteronomium 34:6 | slot גַּיְ / MAM גַּי | GJ>/ | own - | MAM's GJ>/ x2
+      atom בַגַּיְ / MAM בַגַּי | B + H + GJ>/ -.sg.? | own - | MAM's -
+  Samuel_II 20:8 | slot לְבֻשׁוּ / MAM לְבֻשֹׁו | LBWC/ | own - | MAM's LBWC/ x2
+      atom לְבֻשׁוּ / MAM לְבֻשֹׁו | LBWC/ -.sg.m +HW | own - | MAM's LBWC/ -.sg.m +W x2
+  Reges_I 4:12 | slot יָקְמֳעָם / MAM יָקְמְעָם | JQM<M/ | own - | MAM's JQM<M/ x1
+      atom לְיָקְמֳעָם / MAM לְיָקְמְעָם | L + JQM<M/ -.sg.? +n/a | own - | MAM's -
+  Reges_II 10:33 | slot רֻאובֵנִי / MAM ראוּבֵנִי | R>WBNJ/ | own - | MAM's R>WBNJ/ x12
+      atom וְהָרֻאובֵנִי / MAM וְהָראוּבֵנִי | W + H + R>WBNJ/ -.sg.m | own - | MAM's -
+  Jesaia 11:14 | slot מִשְׁלֹוח / MAM מִשְׁלֹוחַ | MCLWX/ | own - | MAM's MCLWX/ x2
+      atom מִשְׁלֹוח / MAM מִשְׁלֹוחַ | MCLWX/ -.sg.m | own - | MAM's -
+  Jesaia 13:22 | slot אַלְמנֹותָיו / MAM אַלְמְנֹותָיו | >LMNH/ | own - | MAM's >LMNH/ x1
+      atom בְּאַלְמנֹותָיו / MAM בְּאַלְמְנֹותָיו | B + >LMNH/ -.pl.f +W | own - | MAM's -
+
+== slot neither -> atom neither: 169 slot rows
+  Genesis 2:23 | slot לֻקֳחָה / MAM לֻקְחָה | LQX[ pual perf | own - | MAM's -
+      atom לֻקֳחָה / MAM לֻקְחָה | LQX[ pual perf p3.sg.f | own - | MAM's -
+  Genesis 4:18 | slot מְחִיּיָאֵל / MAM מְחִיָּיאֵל | MXJJ>L/ | own - | MAM's -
+      atom וּמְחִיּיָאֵל / MAM וּמְחִיָּיאֵל | W + MXJJ>L/ -.sg.m +n/a | own - | MAM's -
+  Genesis 6:16 | slot תְּכַלֶנָּה / MAM תְּכַלֶּנָּה | KLH[ piel impf | own - | MAM's -
+      atom תְּכַלֶנָּה / MAM תְּכַלֶּנָּה | KLH[ piel impf p2.sg.m +H | own - | MAM's -
+  Genesis 7:23 | slot יִשָּׁאֶר / MAM יִּשָּׁאֶר | C>R[ nif wayq | own - | MAM's -
+      atom וַיִשָּׁאֶר / MAM וַיִּשָּׁאֶר | W + C>R[ nif wayq p3.sg.m | own - | MAM's -
+  Genesis 18:21 | slot אֵרֲדָה / MAM אֵרְדָה | JRD[ qal impf | own - | MAM's -
+      atom אֵרֲדָה / MAM אֵרְדָה | JRD[ qal impf p1.sg.? | own - | MAM's -
+  Genesis 25:22 | slot יִּתְרֹצֲצוּ / MAM יִּתְרֹצְצוּ | RYY[ hit wayq | own - | MAM's -
+      atom וַיִּתְרֹצֲצוּ / MAM וַיִּתְרֹצְצוּ | W + RYY[ hit wayq p3.pl.m | own - | MAM's -
+  Genesis 27:33 | slot אֲבָרֲכֵהוּ / MAM אֲבָרְכֵהוּ | BRK[ piel wayq | own - | MAM's BRK[ piel impf x1
+      atom וָאֲבָרֲכֵהוּ / MAM וָאֲבָרְכֵהוּ | W + BRK[ piel wayq p1.sg.? +HW | own - | MAM's -
+  Genesis 30:27 | slot יְבָרֲכֵנִי / MAM יְבָרְכֵנִי | BRK[ piel wayq | own - | MAM's -
+      atom וַיְבָרֲכֵנִי / MAM וַיְבָרְכֵנִי | W + BRK[ piel wayq p3.sg.m +NJ | own - | MAM's -
+  Genesis 30:37 | slot עֶרְמֹון / MAM עַרְמֹון | <RMWN/ | own - | MAM's -
+      atom וְעֶרְמֹון / MAM וְעַרְמֹון | W + <RMWN/ -.sg.m | own - | MAM's -
+  Genesis 30:38 | slot שִׁקֲתֹות / MAM שִׁקְתֹות | CQT/ | own - | MAM's -
+      atom בְּשִׁקֲתֹות / MAM בְּשִׁקְתֹות | B + CQT/ -.pl.f | own - | MAM's -
+  Genesis 32:18 | slot יִפְגָּשְׁךָ / MAM יִפְגָשְׁךָ | PGC[ qal impf | own - | MAM's -
+      atom יִפְגָּשְׁךָ / MAM יִפְגָשְׁךָ | PGC[ qal impf p3.sg.m +K | own - | MAM's -
+  Genesis 38:12 | slot גֹּזֲזֵי / MAM גֹּזְזֵי | GZZ[ qal ptca | own - | MAM's -
+      atom גֹּזֲזֵי / MAM גֹּזְזֵי | GZZ[ qal ptca ?.pl.m | own - | MAM's -
+
+== slot written -> atom neither: 22 slot rows
+  Genesis 28:6 | slot בָרֲכֹו / MAM בָרְכֹו | BRK[ piel infc | own BRK[ piel infc x3 | MAM's -
+      atom בְּבָרֲכֹו / MAM בְּבָרְכֹו | B + BRK[ piel infc ?.?.? +W | own - | MAM's -
+  Genesis 48:9 | slot אֲבָרֲכֵם / MAM אֲבָרְכֵם | BRK[ piel impf | own BRK[ piel impf x1 | MAM's -
+      atom וַאֲבָרֲכֵם / MAM וַאֲבָרְכֵם | W + BRK[ piel impf p1.sg.? +M | own - | MAM's -
+  Numeri 6:27 | slot אֲבָרֲכֵם / MAM אֲבָרְכֵם | BRK[ piel impf | own BRK[ piel impf x1 | MAM's -
+      atom אֲבָרֲכֵם / MAM אֲבָרְכֵם | BRK[ piel impf p1.sg.? +M | own - | MAM's -
+  Josua 10:24 | slot הֶ / MAM ה | H | own H x388, H= x18 | MAM's -
+      atom הֶהָלְכוּא / MAM ההלכוא | H + HLK[ qal perf p3.pl.? | own - | MAM's -
+  Samuel_I 13:10 | slot בָרֲכֹו / MAM בָרְכֹו | BRK[ piel infc | own BRK[ piel infc x3 | MAM's -
+      atom לְבָרֲכֹו / MAM לְבָרְכֹו | L + BRK[ piel infc ?.?.? +W | own - | MAM's -
+  Samuel_I 14:49 | slot מַלְכִּי־שׁוּעַ / MAM מַלְכִּישׁוּעַ | MLKJ_CW</ | own MLKJ_CW</ x4 | MAM's -
+      atom וּמַלְכִּי־שׁוּעַ / MAM וּמַלְכִּישׁוּעַ | W + MLKJ_CW</ -.sg.m +n/a | own - | MAM's -
+  Jesaia 66:22 | slot חֳדָשִׁים / MAM חֲדָשִׁים | XDC=/ | own XDC=/ x38 | MAM's XDC/ x10
+      atom הַחֳדָשִׁים / MAM הַחֲדָשִׁים | H + XDC=/ -.pl.m | own - | MAM's -
+  Jeremia 8:22 | slot צֳרִי / MAM צֳּרִי | YRJ/ | own YRJ/ x3 | MAM's -
+      atom הַצֳרִי / MAM הַצֳּרִי | H= + YRJ/ -.sg.m | own - | MAM's -
+  Ezechiel 22:26 | slot שַׁבְּתֹותַי / MAM שַּׁבְּתֹותַי | CBT/ | own CBT/ x8 | MAM's -
+      atom וּמִשַׁבְּתֹותַי / MAM וּמִשַּׁבְּתֹותַי | W + MN + CBT/ -.pl.f +J | own - | MAM's -
+  Ezechiel 23:36 | slot תֹועֲבֹותֵיהֶן / MAM תֹּועֲבֹותֵיהֶן | TW<BH/ | own TW<BH/ x1 | MAM's -
+      atom תֹועֲבֹותֵיהֶן / MAM תֹּועֲבֹותֵיהֶן | TW<BH/ -.pl.f +HN | own - | MAM's -
+  Joel 3:3 | slot תִימֲרֹות / MAM תִימְרֹות | TJMRH/ | own TJMRH/ x1 | MAM's -
+      atom וְתִימֲרֹות / MAM וְתִימְרֹות | W + TJMRH/ -.pl.f | own - | MAM's -
+  Sacharia 9:17 | slot יָפְיֹו / MAM יָּפְיֹו | JPJ/ | own JPJ/ x2 | MAM's -
+      atom יָפְיֹו / MAM יָּפְיֹו | JPJ/ -.sg.m +W | own - | MAM's -
+
+== slot written -> atom written: 82 slot rows
+  Genesis 3:17 | slot תֹּאכֲלֶנָּה / MAM תֹּאכְלֶנָּה | >KL[ qal impf | own >KL[ qal impf x1 | MAM's -
+      atom תֹּאכֲלֶנָּה / MAM תֹּאכְלֶנָּה | >KL[ qal impf p2.sg.m +H | own >KL[ qal impf p2.sg.m +H x1 | MAM's -
+  Genesis 10:3 | slot אַשְׁכֲּנַז / MAM אַשְׁכְּנַז | >CKNZ/ | own >CKNZ/ x1 | MAM's -
+      atom אַשְׁכֲּנַז / MAM אַשְׁכְּנַז | >CKNZ/ -.sg.? +n/a | own >CKNZ/ -.sg.? +n/a x1 | MAM's -
+  Genesis 12:3 | slot אֲבָרֲכָה / MAM אֲבָרְכָה | BRK[ piel impf | own BRK[ piel impf x2 | MAM's -
+      atom וַאֲבָרֲכָה / MAM וַאֲבָרְכָה | W + BRK[ piel impf p1.sg.? | own W + BRK[ piel impf p1.sg.? x1 | MAM's -
+  Genesis 24:60 | slot יְבָרֲכוּ / MAM יְבָרְכוּ | BRK[ piel wayq | own BRK[ piel wayq x7 | MAM's -
+      atom וַיְבָרֲכוּ / MAM וַיְבָרְכוּ | W + BRK[ piel wayq p3.pl.m | own W + BRK[ piel wayq p3.pl.m x7 | MAM's -
+  Genesis 27:19 | slot תְּבָרֲכַנִּי / MAM תְּבָרְכַנִּי | BRK[ piel impf | own BRK[ piel impf x1 | MAM's -
+      atom תְּבָרֲכַנִּי / MAM תְּבָרְכַנִּי | BRK[ piel impf p3.sg.f +NJ | own BRK[ piel impf p3.sg.f +NJ x1 | MAM's -
+  Genesis 27:27 | slot בֵּרֲכֹו / MAM בֵּרְכֹו | BRK[ piel perf | own BRK[ piel perf x2 | MAM's -
+      atom בֵּרֲכֹו / MAM בֵּרְכֹו | BRK[ piel perf p3.sg.m +W | own BRK[ piel perf p3.sg.m +W x2 | MAM's -
+  Genesis 27:31 | slot תְּבָרֲכַנִּי / MAM תְּבָרְכַנִּי | BRK[ piel impf | own BRK[ piel impf x1 | MAM's -
+      atom תְּבָרֲכַנִּי / MAM תְּבָרְכַנִּי | BRK[ piel impf p3.sg.f +NJ | own BRK[ piel impf p3.sg.f +NJ x1 | MAM's -
+  Genesis 27:34 | slot בָּרֲכֵנִי / MAM בָּרְכֵנִי | BRK[ piel impv | own BRK[ piel impv x1 | MAM's -
+      atom בָּרֲכֵנִי / MAM בָּרְכֵנִי | BRK[ piel impv p2.sg.m +NJ | own BRK[ piel impv p2.sg.m +NJ x1 | MAM's -
+  Genesis 27:38 | slot בָּרֲכֵנִי / MAM בָּרְכֵנִי | BRK[ piel impv | own BRK[ piel impv x1 | MAM's -
+      atom בָּרֲכֵנִי / MAM בָּרְכֵנִי | BRK[ piel impv p2.sg.m +NJ | own BRK[ piel impv p2.sg.m +NJ x1 | MAM's -
+  Genesis 27:41 | slot בֵּרֲכֹו / MAM בֵּרְכֹו | BRK[ piel perf | own BRK[ piel perf x2 | MAM's -
+      atom בֵּרֲכֹו / MAM בֵּרְכֹו | BRK[ piel perf p3.sg.m +W | own BRK[ piel perf p3.sg.m +W x2 | MAM's -
+  Genesis 29:3 | slot גָלֲלוּ / MAM גָלְלוּ | GLL[ qal perf | own GLL[ qal perf x1 | MAM's -
+      atom וְגָלֲלוּ / MAM וְגָלְלוּ | W + GLL[ qal perf p3.pl.? | own W + GLL[ qal perf p3.pl.? x1 | MAM's -
+  Genesis 29:8 | slot גָלֲלוּ / MAM גָלְלוּ | GLL[ qal perf | own GLL[ qal perf x1 | MAM's -
+      atom וְגָלֲלוּ / MAM וְגָלְלוּ | W + GLL[ qal perf p3.pl.? | own W + GLL[ qal perf p3.pl.? x1 | MAM's -
+

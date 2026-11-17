@@ -1,0 +1,1089 @@
+== 1. Genesis 32:18 (forms.json, page 98); BHSA Genesis 32:18
+   IB:  וִשְׁאֵלְךָ
+   MAM: וּשְׁאֵלְךָ
+   [ketiv side] WLC 4.18 atoms [8]: וִשְׁאֵֽלְךָ֙ notes [['1']]
+      WLC 4.20: וִשְׁאֵֽלְךָ֙ notes [[']1']]
+      WLC 4.22: וִשְׁאֵֽלְךָ֙ notes [[']U']]
+      MAM:      וּשְׁאֵֽלְךָ֙
+      BHSA:     וִשְׁאֵֽלְךָ֙  (atoms [8])
+        slot 17779 וִ | WI- | lex W וְ and | sp conj pdp conj ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase CP Conj | clause WQt0
+        slot 17780 שְׁאֵֽלְךָ֙  | C:>;45L:K@03 | lex C>L[ שׁאל ask | sp verb pdp verb ls none | vs qal vt perf | ps p3 nu sg gn m st NA prs K | phrase VP PreO | clause WQt0
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+   [qere side] WLC 4.18 atoms [8]: וִשְׁאֵֽלְךָ֙ notes [['1']]
+      WLC 4.20: וִשְׁאֵֽלְךָ֙ notes [[']1']]
+      WLC 4.22: וִשְׁאֵֽלְךָ֙ notes [[']U']]
+      MAM:      וּשְׁאֵֽלְךָ֙
+      BHSA:     וִשְׁאֵֽלְךָ֙  (atoms [8])
+        slot 17779 וִ | WI- | lex W וְ and | sp conj pdp conj ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase CP Conj | clause WQt0
+        slot 17780 שְׁאֵֽלְךָ֙  | C:>;45L:K@03 | lex C>L[ שׁאל ask | sp verb pdp verb ls none | vs qal vt perf | ps p3 nu sg gn m st NA prs K | phrase VP PreO | clause WQt0
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+
+== 2. Genesis 34:11 (forms.json, page 102); BHSA Genesis 34:11
+   IB:  אָבִיה
+   MAM: אָבִיהָ
+   [ketiv side] WLC 4.18 atoms [3]: אָבִ֣יה notes [['1']]
+      WLC 4.20: אָבִ֣יה notes [[']1']]
+      WLC 4.22: אָבִ֣יה notes [[']U']]
+      MAM:      אָבִ֣יהָ
+      BHSA:     אָבִ֣יה  (atoms [3])
+        slot 18631 אָבִ֣יה  | >@BI74JH | lex >B/ אָב father | sp subs pdp subs ls none | vs NA vt NA | ps NA nu sg gn m st a prs H | phrase PP Cmpl | clause WayX
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+   [qere side] WLC 4.18 atoms [3]: אָבִ֣יה notes [['1']]
+      WLC 4.20: אָבִ֣יה notes [[']1']]
+      WLC 4.22: אָבִ֣יה notes [[']U']]
+      MAM:      אָבִ֣יהָ
+      BHSA:     אָבִ֣יה  (atoms [3])
+        slot 18631 אָבִ֣יה  | >@BI74JH | lex >B/ אָב father | sp subs pdp subs ls none | vs NA vt NA | ps NA nu sg gn m st a prs H | phrase PP Cmpl | clause WayX
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+
+== 3. Exodus 1:3 (forms.json, page 151); BHSA Exodus 1:3
+   IB:  וּבְנְיָמִן
+   MAM: וּבִנְיָמִן
+   [ketiv side] WLC 4.18 atoms [2]: וּבְנְיָמִֽן׃ notes [['1']]
+      WLC 4.20: וּבְנְיָמִֽן׃ notes [[']1']]
+      WLC 4.22: וּבְנְיָמִֽן׃ notes [[']1']]
+      MAM:      וּבִנְיָמִֽן׃
+      BHSA:     וּבְנְיָמִֽן  (atoms [2])
+        slot 28786 וּ | W.- | lex W וְ and | sp conj pdp conj ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase PrNP Subj | clause Ellp
+        slot 28787 בְנְיָמִֽן׃  | B:N:J@MI75N | lex BNJMN/ בִּנְיָמִן Benjamin | sp nmpr pdp nmpr ls none | vs NA vt NA | ps NA nu sg gn unknown st a prs n/a | phrase PrNP Subj | clause Ellp
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+   [qere side] WLC 4.18 atoms [2]: וּבְנְיָמִֽן׃ notes [['1']]
+      WLC 4.20: וּבְנְיָמִֽן׃ notes [[']1']]
+      WLC 4.22: וּבְנְיָמִֽן׃ notes [[']1']]
+      MAM:      וּבִנְיָמִֽן׃
+      BHSA:     וּבְנְיָמִֽן  (atoms [2])
+        slot 28786 וּ | W.- | lex W וְ and | sp conj pdp conj ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase PrNP Subj | clause Ellp
+        slot 28787 בְנְיָמִֽן׃  | B:N:J@MI75N | lex BNJMN/ בִּנְיָמִן Benjamin | sp nmpr pdp nmpr ls none | vs NA vt NA | ps NA nu sg gn unknown st a prs n/a | phrase PrNP Subj | clause Ellp
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+
+== 4. Exodus 10:28 (forms.json, page 176); BHSA Exodus 10:28
+   IB:  אֶל־
+   MAM: אַל־
+   [ketiv side] WLC 4.18 atoms [7]: אֶל־ notes [[]]
+      WLC 4.20: אֶל־ notes [[]]
+      WLC 4.22: אֶל־ notes [[]]
+      MAM:      אַל־
+      BHSA:     אֶל־  (atoms [7])
+        slot 34429 אֶל־ | >EL | lex >L= אַל not | sp nega pdp nega ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase NegP Nega | clause xYq0
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+   [qere side] WLC 4.18 atoms [7]: אֶל־ notes [[]]
+      WLC 4.20: אֶל־ notes [[]]
+      WLC 4.22: אֶל־ notes [[]]
+      MAM:      אַל־
+      BHSA:     אֶל־  (atoms [7])
+        slot 34429 אֶל־ | >EL | lex >L= אַל not | sp nega pdp nega ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase NegP Nega | clause xYq0
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+
+== 5. Numbers 2:14 (forms.json, page 343); BHSA Numeri 2:14
+   IB:  וְמַטֵּה
+   MAM: וּמַטֵּה
+   [ketiv side] WLC 4.18 atoms [0]: וְמַטֵּ֖ה notes [[]]
+      WLC 4.20: וְמַטֵּ֖ה notes [[]]
+      WLC 4.22: וְמַטֵּ֖ה notes [[]]
+      MAM:      וּמַטֵּ֖ה
+      BHSA:     וְמַטֵּ֖ה  (atoms [0])
+        slot 70603 וְ | W:- | lex W וְ and | sp conj pdp conj ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase CP Conj | clause NmCl
+        slot 70604 מַטֵּ֖ה  | MAV.;73H | lex MVH/ מַטֶּה staff | sp subs pdp subs ls none | vs NA vt NA | ps NA nu sg gn m st c prs absent | phrase NP Subj | clause NmCl
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+   [qere side] WLC 4.18 atoms [0]: וְמַטֵּ֖ה notes [[]]
+      WLC 4.20: וְמַטֵּ֖ה notes [[]]
+      WLC 4.22: וְמַטֵּ֖ה notes [[]]
+      MAM:      וּמַטֵּ֖ה
+      BHSA:     וְמַטֵּ֖ה  (atoms [0])
+        slot 70603 וְ | W:- | lex W וְ and | sp conj pdp conj ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase CP Conj | clause NmCl
+        slot 70604 מַטֵּ֖ה  | MAV.;73H | lex MVH/ מַטֶּה staff | sp subs pdp subs ls none | vs NA vt NA | ps NA nu sg gn m st c prs absent | phrase NP Subj | clause NmCl
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+
+== 6. Numbers 26:7 (forms.json, page 412); BHSA Numeri 26:7
+   IB:  הָרֻאוּבֵנִי
+   MAM: הָראֿוּבֵנִי
+   [ketiv side] WLC 4.18 atoms [2]: הָרֻֽאוּבֵנִ֑י notes [['1']]
+      WLC 4.20: הָרֻֽאוּבֵנִ֑י notes [[']1']]
+      WLC 4.22: הָרֻֽאוּבֵנִ֑י notes [[']1']]
+      MAM:      הָראֿוּבֵנִ֑י
+      BHSA:     הָרֻֽאוּבֵנִ֑י  (atoms [2])
+        slot 86038 הָ | H@- | lex H הַ the | sp art pdp art ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase NP PreC | clause NmCl
+        slot 86039 רֻֽאוּבֵנִ֑י  | RU45>W.B;NI92J | lex R>WBNJ/ רְאוּבֵנִי Reubenite | sp adjv pdp subs ls gntl | vs NA vt NA | ps NA nu sg gn m st a prs absent | phrase NP PreC | clause NmCl
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+   [qere side] WLC 4.18 atoms [2]: הָרֻֽאוּבֵנִ֑י notes [['1']]
+      WLC 4.20: הָרֻֽאוּבֵנִ֑י notes [[']1']]
+      WLC 4.22: הָרֻֽאוּבֵנִ֑י notes [[']1']]
+      MAM:      הָראֿוּבֵנִ֑י
+      BHSA:     הָרֻֽאוּבֵנִ֑י  (atoms [2])
+        slot 86038 הָ | H@- | lex H הַ the | sp art pdp art ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase NP PreC | clause NmCl
+        slot 86039 רֻֽאוּבֵנִ֑י  | RU45>W.B;NI92J | lex R>WBNJ/ רְאוּבֵנִי Reubenite | sp adjv pdp subs ls gntl | vs NA vt NA | ps NA nu sg gn m st a prs absent | phrase NP PreC | clause NmCl
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+
+== 7. Deuteronomy 2:9 (forms.json, page 452); BHSA Deuteronomium 2:9
+   IB:  אֶל־תָּצַר
+   MAM: אַל־תָּצַר
+   [ketiv side] WLC 4.18 atoms [3, 4]: אֶל־ | תָּ֙צַר֙ notes [[], ['U']]
+      WLC 4.20: אֶל־ | תָּ֙צַר֙ notes [[], [']U']]
+      WLC 4.22: אֶל־ | תָּ֙צַר֙ notes [[], [']U']]
+      MAM:      אַל־ | תָּ֙צַר֙
+      BHSA:     אֶל־ | תָּ֨צַר֙  (atoms [3, 4])
+        slot 93910 אֶל־ | >EL | lex >L אֶל to | sp prep pdp prep ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs absent | phrase VP Pred | clause ZYq0
+        slot 93911 תָּ֨צַר֙  | T.@33YAR03 | lex YWR=[ צור damage | sp verb pdp verb ls none | vs qal vt impf | ps p2 nu sg gn m st NA prs absent | phrase VP Pred | clause ZYq0
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 False, ==4.20 False, ==4.22 False
+   [qere side] WLC 4.18 atoms [3, 4]: אֶל־ | תָּ֙צַר֙ notes [[], ['U']]
+      WLC 4.20: אֶל־ | תָּ֙צַר֙ notes [[], [']U']]
+      WLC 4.22: אֶל־ | תָּ֙צַר֙ notes [[], [']U']]
+      MAM:      אַל־ | תָּ֙צַר֙
+      BHSA:     אֶל־ | תָּ֨צַר֙  (atoms [3, 4])
+        slot 93910 אֶל־ | >EL | lex >L אֶל to | sp prep pdp prep ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs absent | phrase VP Pred | clause ZYq0
+        slot 93911 תָּ֨צַר֙  | T.@33YAR03 | lex YWR=[ צור damage | sp verb pdp verb ls none | vs qal vt impf | ps p2 nu sg gn m st NA prs absent | phrase VP Pred | clause ZYq0
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 False, ==4.20 False, ==4.22 False
+
+== 8. Deuteronomy 3:12 (forms.json, page 455); BHSA Deuteronomium 3:12
+   IB:  לָרֻאוּבֵנִי
+   MAM: לָראֿוּבֵנִי
+   [ketiv side] WLC 4.18 atoms [16]: לָרֻֽאוּבֵנִ֖י notes [['U']]
+      WLC 4.20: לָרֻֽאוּבֵנִ֖י notes [[']U']]
+      WLC 4.22: לָרֻֽאוּבֵנִ֖י notes [[']U']]
+      MAM:      לָרֽאֿוּבֵנִ֖י
+      BHSA:     לָרֻֽאוּבֵנִ֖י  (atoms [16])
+        slot 94758 לָ | L@- | lex L לְ to | sp prep pdp prep ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs absent | phrase PP Cmpl | clause xQt0
+        slot 94759  | - | lex H הַ the | sp art pdp art ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase PP Cmpl | clause xQt0
+        slot 94760 רֻֽאוּבֵנִ֖י  | RU95>W.B;NI73J | lex R>WBNJ/ רְאוּבֵנִי Reubenite | sp adjv pdp subs ls gntl | vs NA vt NA | ps NA nu sg gn m st a prs absent | phrase PP Cmpl | clause xQt0
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+   [qere side] WLC 4.18 atoms [16]: לָרֻֽאוּבֵנִ֖י notes [['U']]
+      WLC 4.20: לָרֻֽאוּבֵנִ֖י notes [[']U']]
+      WLC 4.22: לָרֻֽאוּבֵנִ֖י notes [[']U']]
+      MAM:      לָרֽאֿוּבֵנִ֖י
+      BHSA:     לָרֻֽאוּבֵנִ֖י  (atoms [16])
+        slot 94758 לָ | L@- | lex L לְ to | sp prep pdp prep ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs absent | phrase PP Cmpl | clause xQt0
+        slot 94759  | - | lex H הַ the | sp art pdp art ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase PP Cmpl | clause xQt0
+        slot 94760 רֻֽאוּבֵנִ֖י  | RU95>W.B;NI73J | lex R>WBNJ/ רְאוּבֵנִי Reubenite | sp adjv pdp subs ls gntl | vs NA vt NA | ps NA nu sg gn m st a prs absent | phrase PP Cmpl | clause xQt0
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+
+== 9. Deuteronomy 3:16 (forms.json, page 456); BHSA Deuteronomium 3:16
+   IB:  וְלָרֻאוּבֵנִי
+   MAM: וְלָראֿוּבֵנִי
+   [ketiv side] WLC 4.18 atoms [0]: וְלָרֻאוּבֵנִ֨י notes [['U']]
+      WLC 4.20: וְלָרֻאוּבֵנִ֨י notes [[']U']]
+      WLC 4.22: וְלָרֻאוּבֵנִ֨י notes [[']U']]
+      MAM:      וְלָראֿוּבֵנִ֨י
+      BHSA:     וְלָרֻאוּבֵנִ֨י  (atoms [0])
+        slot 94831 וְ | W:- | lex W וְ and | sp conj pdp conj ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase CP Conj | clause WxQ0
+        slot 94832 לָ | L@- | lex L לְ to | sp prep pdp prep ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs absent | phrase PP Cmpl | clause WxQ0
+        slot 94833  | - | lex H הַ the | sp art pdp art ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase PP Cmpl | clause WxQ0
+        slot 94834 רֻאוּבֵנִ֨י  | RU>W.B;NI63J | lex R>WBNJ/ רְאוּבֵנִי Reubenite | sp adjv pdp subs ls gntl | vs NA vt NA | ps NA nu sg gn m st a prs absent | phrase PP Cmpl | clause WxQ0
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+   [qere side] WLC 4.18 atoms [0]: וְלָרֻאוּבֵנִ֨י notes [['U']]
+      WLC 4.20: וְלָרֻאוּבֵנִ֨י notes [[']U']]
+      WLC 4.22: וְלָרֻאוּבֵנִ֨י notes [[']U']]
+      MAM:      וְלָראֿוּבֵנִ֨י
+      BHSA:     וְלָרֻאוּבֵנִ֨י  (atoms [0])
+        slot 94831 וְ | W:- | lex W וְ and | sp conj pdp conj ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase CP Conj | clause WxQ0
+        slot 94832 לָ | L@- | lex L לְ to | sp prep pdp prep ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs absent | phrase PP Cmpl | clause WxQ0
+        slot 94833  | - | lex H הַ the | sp art pdp art ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase PP Cmpl | clause WxQ0
+        slot 94834 רֻאוּבֵנִ֨י  | RU>W.B;NI63J | lex R>WBNJ/ רְאוּבֵנִי Reubenite | sp adjv pdp subs ls gntl | vs NA vt NA | ps NA nu sg gn m st a prs absent | phrase PP Cmpl | clause WxQ0
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+
+== 10. Deuteronomy 4:43 (forms.json, page 462); BHSA Deuteronomium 4:43
+   IB:  לָרֻאוּבֵנִי
+   MAM: לָראֿוּבֵנִי
+   [ketiv side] WLC 4.18 atoms [5]: לָרֻֽאוּבֵנִ֑י notes [['U']]
+      WLC 4.20: לָרֻֽאוּבֵנִ֑י notes [[']U']]
+      WLC 4.22: לָרֻֽאוּבֵנִ֑י notes [[']U']]
+      MAM:      לָרֽאֿוּבֵנִ֑י
+      BHSA:     לָרֻֽאוּבֵנִ֑י  (atoms [5])
+        slot 96181 לָ | L@- | lex L לְ to | sp prep pdp prep ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs absent | phrase PP Adju | clause Ellp
+        slot 96182  | - | lex H הַ the | sp art pdp art ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase PP Adju | clause Ellp
+        slot 96183 רֻֽאוּבֵנִ֑י  | RU45>W.B;NI92J | lex R>WBNJ/ רְאוּבֵנִי Reubenite | sp adjv pdp subs ls gntl | vs NA vt NA | ps NA nu sg gn m st a prs absent | phrase PP Adju | clause Ellp
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+   [qere side] WLC 4.18 atoms [5]: לָרֻֽאוּבֵנִ֑י notes [['U']]
+      WLC 4.20: לָרֻֽאוּבֵנִ֑י notes [[']U']]
+      WLC 4.22: לָרֻֽאוּבֵנִ֑י notes [[']U']]
+      MAM:      לָרֽאֿוּבֵנִ֑י
+      BHSA:     לָרֻֽאוּבֵנִ֑י  (atoms [5])
+        slot 96181 לָ | L@- | lex L לְ to | sp prep pdp prep ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs absent | phrase PP Adju | clause Ellp
+        slot 96182  | - | lex H הַ the | sp art pdp art ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase PP Adju | clause Ellp
+        slot 96183 רֻֽאוּבֵנִ֑י  | RU45>W.B;NI92J | lex R>WBNJ/ רְאוּבֵנִי Reubenite | sp adjv pdp subs ls gntl | vs NA vt NA | ps NA nu sg gn m st a prs absent | phrase PP Adju | clause Ellp
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+
+== 11. Joshua 12:6 (forms.json, page 571); BHSA Josua 12:6
+   IB:  לָרֻאוּבֵנִי
+   MAM: לָראֿוּבֵנִי
+   [ketiv side] WLC 4.18 atoms [11]: לָרֻֽאוּבֵנִי֙ notes [[]]
+      WLC 4.20: לָרֻֽאוּבֵנִי֙ notes [[]]
+      WLC 4.22: לָרֻֽאוּבֵנִי֙ notes [[]]
+      MAM:      לָרֽאֿוּבֵנִי֙
+      BHSA:     לָרֻֽאוּבֵנִי֙  (atoms [11])
+        slot 120158 לָ | L@- | lex L לְ to | sp prep pdp prep ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs absent | phrase PP Cmpl | clause WayX
+        slot 120159  | - | lex H הַ the | sp art pdp art ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase PP Cmpl | clause WayX
+        slot 120160 רֻֽאוּבֵנִי֙  | RU45>W.B;NIJ03 | lex R>WBNJ/ רְאוּבֵנִי Reubenite | sp adjv pdp subs ls gntl | vs NA vt NA | ps NA nu sg gn m st a prs absent | phrase PP Cmpl | clause WayX
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+   [qere side] WLC 4.18 atoms [11]: לָרֻֽאוּבֵנִי֙ notes [[]]
+      WLC 4.20: לָרֻֽאוּבֵנִי֙ notes [[]]
+      WLC 4.22: לָרֻֽאוּבֵנִי֙ notes [[]]
+      MAM:      לָרֽאֿוּבֵנִי֙
+      BHSA:     לָרֻֽאוּבֵנִי֙  (atoms [11])
+        slot 120158 לָ | L@- | lex L לְ to | sp prep pdp prep ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs absent | phrase PP Cmpl | clause WayX
+        slot 120159  | - | lex H הַ the | sp art pdp art ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase PP Cmpl | clause WayX
+        slot 120160 רֻֽאוּבֵנִי֙  | RU45>W.B;NIJ03 | lex R>WBNJ/ רְאוּבֵנִי Reubenite | sp adjv pdp subs ls gntl | vs NA vt NA | ps NA nu sg gn m st a prs absent | phrase PP Cmpl | clause WayX
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+
+== 12. Joshua 22:19 (forms.json, page 595); BHSA Josua 22:19
+   IB:  אֶל־תִּמְרֹדוּ
+   MAM: אַל־תִּמְרֹדוּ
+   [ketiv side] WLC 4.18 atoms [22, 23]: אֶל־ | תִּמְרֹ֔דוּ notes [[], []]
+      WLC 4.20: אֶל־ | תִּמְרֹ֔דוּ notes [[], []]
+      WLC 4.22: אֶל־ | תִּמְרֹ֔דוּ notes [[], [']1']]
+      MAM:      אַל־ | תִּמְרֹ֔דוּ
+      BHSA:     אֶל־ | תִּמְרֹ֔דוּ  (atoms [22, 23])
+        slot 125750 אֶל־ | >EL | lex >L אֶל to | sp prep pdp prep ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs absent | phrase VP Pred | clause WxY0
+        slot 125751 תִּמְרֹ֔דוּ  | T.IM:RO80DW. | lex MRD[ מרד rebel | sp verb pdp verb ls none | vs qal vt impf | ps p2 nu pl gn m st NA prs absent | phrase VP Pred | clause WxY0
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+   [qere side] WLC 4.18 atoms [22, 23]: אֶל־ | תִּמְרֹ֔דוּ notes [[], []]
+      WLC 4.20: אֶל־ | תִּמְרֹ֔דוּ notes [[], []]
+      WLC 4.22: אֶל־ | תִּמְרֹ֔דוּ notes [[], [']1']]
+      MAM:      אַל־ | תִּמְרֹ֔דוּ
+      BHSA:     אֶל־ | תִּמְרֹ֔דוּ  (atoms [22, 23])
+        slot 125750 אֶל־ | >EL | lex >L אֶל to | sp prep pdp prep ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs absent | phrase VP Pred | clause WxY0
+        slot 125751 תִּמְרֹ֔דוּ  | T.IM:RO80DW. | lex MRD[ מרד rebel | sp verb pdp verb ls none | vs qal vt impf | ps p2 nu pl gn m st NA prs absent | phrase VP Pred | clause WxY0
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+
+== 13. Judges 15:14 (forms.json, page 647); BHSA Judices 15:14
+   IB:  וּפְלִשִׁתִּים
+   MAM: וּפְלִשְׁתִּים
+   [ketiv side] WLC 4.18 atoms [4]: וּפְלִשִׁתִּ֖ים notes [['Q', 'n', 'v']]
+      WLC 4.20: וּפִלְשִׁתִּ֖ים notes [[']Q', ']n', ']v', ']v', ']v']]
+      WLC 4.22: וּפִלְשִׁתִּ֖ים notes [[']Q', ']n', ']v', ']v', ']v']]
+      MAM:      וּפְלִשְׁתִּ֖ים
+      BHSA:     וּפְלִשְׁתִּ֖ים  (atoms [4])
+        slot 137042 וּ | W.- | lex W וְ and | sp conj pdp conj ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase CP Conj | clause WXQt
+        slot 137043 פְלִשְׁתִּ֖ים  | P:LIC:T.I73JM | lex PLCTJ/ פְּלִשְׁתִּי Philistine | sp adjv pdp subs ls gntl | vs NA vt NA | ps NA nu pl gn m st a prs absent | phrase NP Subj | clause WXQt
+      BHSA==WLC4.18 by review key: False; BHSA==MAM by review key: True; full key: ==4.18 False, ==4.20 False, ==4.22 False
+   [qere side] WLC 4.18 atoms [4]: וּפְלִשִׁתִּ֖ים notes [['Q', 'n', 'v']]
+      WLC 4.20: וּפִלְשִׁתִּ֖ים notes [[']Q', ']n', ']v', ']v', ']v']]
+      WLC 4.22: וּפִלְשִׁתִּ֖ים notes [[']Q', ']n', ']v', ']v', ']v']]
+      MAM:      וּפְלִשְׁתִּ֖ים
+      BHSA:     וּפְלִשְׁתִּ֖ים  (atoms [4])
+        slot 137042 וּ | W.- | lex W וְ and | sp conj pdp conj ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase CP Conj | clause WXQt
+        slot 137043 פְלִשְׁתִּ֖ים  | P:LIC:T.I73JM | lex PLCTJ/ פְּלִשְׁתִּי Philistine | sp adjv pdp subs ls gntl | vs NA vt NA | ps NA nu pl gn m st a prs absent | phrase NP Subj | clause WXQt
+      BHSA==WLC4.18 by review key: False; BHSA==MAM by review key: True; full key: ==4.18 False, ==4.20 False, ==4.22 False
+
+== 14. Judges 16:2 (forms.json, page 647); BHSA Judices 16:2
+   IB:  וַהֲרְגְנֻהוּ
+   MAM: וַהֲרַגְנֻהוּ
+   [ketiv side] WLC 4.18 atoms [19]: וַהֲרְגְנֻֽהוּ׃ notes [['U']]
+      WLC 4.20: וַהֲרְגְנֻֽהוּ׃ notes [[']U']]
+      WLC 4.22: וַהֲרְגְנֻֽהוּ׃ notes [[']U']]
+      MAM:      וַהֲרַגְנֻֽהוּ׃
+      BHSA:     וַהֲרְגְנֻֽהוּ  (atoms [19])
+        slot 137247 וַ | WA- | lex W וְ and | sp conj pdp conj ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase CP Conj | clause WQt0
+        slot 137248 הֲרְגְנֻֽהוּ׃  | H:AR:G:NU75HW. | lex HRG[ הרג kill | sp verb pdp verb ls none | vs qal vt perf | ps p1 nu pl gn unknown st NA prs HW | phrase VP PreO | clause WQt0
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+   [qere side] WLC 4.18 atoms [19]: וַהֲרְגְנֻֽהוּ׃ notes [['U']]
+      WLC 4.20: וַהֲרְגְנֻֽהוּ׃ notes [[']U']]
+      WLC 4.22: וַהֲרְגְנֻֽהוּ׃ notes [[']U']]
+      MAM:      וַהֲרַגְנֻֽהוּ׃
+      BHSA:     וַהֲרְגְנֻֽהוּ  (atoms [19])
+        slot 137247 וַ | WA- | lex W וְ and | sp conj pdp conj ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase CP Conj | clause WQt0
+        slot 137248 הֲרְגְנֻֽהוּ׃  | H:AR:G:NU75HW. | lex HRG[ הרג kill | sp verb pdp verb ls none | vs qal vt perf | ps p1 nu pl gn unknown st NA prs HW | phrase VP PreO | clause WQt0
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+
+== 15. Judges 19:4 (forms.json, page 655); BHSA Judices 19:4
+   IB:  וַיֶּחֱזַק־
+   MAM: וַיַּחֲזֶק־
+   [ketiv side] WLC 4.18 atoms [0]: וַיֶּחֱזַק־ notes [[]]
+      WLC 4.20: וַיֶּחֱזַק־ notes [[]]
+      WLC 4.22: וַיֶּחֱזַק־ notes [[]]
+      MAM:      וַיַּחֲזֶק־
+      BHSA:     וַיֶּחֱזַק־  (atoms [0])
+        slot 139166 וַ | WA- | lex W וְ and | sp conj pdp conj ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase CP Conj | clause WayX
+        slot 139167 יֶּחֱזַק־ | J.EX:EZAQ | lex XZQ[ חזק be strong | sp verb pdp verb ls none | vs qal vt wayq | ps p3 nu sg gn m st NA prs absent | phrase VP Pred | clause WayX
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+   [qere side] WLC 4.18 atoms [0]: וַיֶּחֱזַק־ notes [[]]
+      WLC 4.20: וַיֶּחֱזַק־ notes [[]]
+      WLC 4.22: וַיֶּחֱזַק־ notes [[]]
+      MAM:      וַיַּחֲזֶק־
+      BHSA:     וַיֶּחֱזַק־  (atoms [0])
+        slot 139166 וַ | WA- | lex W וְ and | sp conj pdp conj ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase CP Conj | clause WayX
+        slot 139167 יֶּחֱזַק־ | J.EX:EZAQ | lex XZQ[ חזק be strong | sp verb pdp verb ls none | vs qal vt wayq | ps p3 nu sg gn m st NA prs absent | phrase VP Pred | clause WayX
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+
+== 16. Judges 19:23 (forms.json, page 657); BHSA Judices 19:23
+   IB:  אַל־בֵּיתִי
+   MAM: אֶל־בֵּיתִי
+   [ketiv side] WLC 4.18 atoms [17, 18]: אַל־ | בֵּיתִ֔י notes [[], ['U']]
+      WLC 4.20: אַל־ | בֵּיתִ֔י notes [[], [']U']]
+      WLC 4.22: אַל־ | בֵּיתִ֔י notes [[], [']U']]
+      MAM:      אֶל־ | בֵּיתִ֔י
+      BHSA:     אַל־ | בֵּיתִ֔י  (atoms [17, 18])
+        slot 139678 אַל־ | >AL | lex >L אֶל to | sp prep pdp prep ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs absent | phrase PP Cmpl | clause xQtX
+        slot 139679 בֵּיתִ֔י  | B.;JTI80J | lex BJT/ בַּיִת house | sp subs pdp subs ls none | vs NA vt NA | ps NA nu sg gn m st a prs J | phrase PP Cmpl | clause xQtX
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+   [qere side] WLC 4.18 atoms [17, 18]: אַל־ | בֵּיתִ֔י notes [[], ['U']]
+      WLC 4.20: אַל־ | בֵּיתִ֔י notes [[], [']U']]
+      WLC 4.22: אַל־ | בֵּיתִ֔י notes [[], [']U']]
+      MAM:      אֶל־ | בֵּיתִ֔י
+      BHSA:     אַל־ | בֵּיתִ֔י  (atoms [17, 18])
+        slot 139678 אַל־ | >AL | lex >L אֶל to | sp prep pdp prep ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs absent | phrase PP Cmpl | clause xQtX
+        slot 139679 בֵּיתִ֔י  | B.;JTI80J | lex BJT/ בַּיִת house | sp subs pdp subs ls none | vs NA vt NA | ps NA nu sg gn m st a prs J | phrase PP Cmpl | clause xQtX
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+
+== 17. 1 Samuel 27:10 (forms.json, page 737); BHSA Samuel_I 27:10
+   IB:  הַיַּרְחְמְאֵלִי
+   MAM: הַיְּרַחְמְאֵלִי
+   [ketiv side] WLC 4.18 atoms [12]: הַיַּרְחְמְאֵלִ֔י notes [[]]
+      WLC 4.20: הַיַּרְחְמְאֵלִ֔י notes [[]]
+      WLC 4.22: הַיַּרְחְמְאֵלִ֔י notes [[']1']]
+      MAM:      הַיְּרַחְמְאֵלִ֔י
+      BHSA:     הַיַּרְחְמְאֵלִ֔י  (atoms [12])
+        slot 158443 הַ | HA- | lex H הַ the | sp art pdp art ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase PP Cmpl | clause NmCl
+        slot 158444 יַּרְחְמְאֵלִ֔י  | J.AR:X:M:>;LI80J | lex JRXM>LJ/ יְרַחְמְאֵלִי Jerahmeelite | sp adjv pdp subs ls gntl | vs NA vt NA | ps NA nu sg gn m st a prs absent | phrase PP Cmpl | clause NmCl
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+   [qere side] WLC 4.18 atoms [12]: הַיַּרְחְמְאֵלִ֔י notes [[]]
+      WLC 4.20: הַיַּרְחְמְאֵלִ֔י notes [[]]
+      WLC 4.22: הַיַּרְחְמְאֵלִ֔י notes [[']1']]
+      MAM:      הַיְּרַחְמְאֵלִ֔י
+      BHSA:     הַיַּרְחְמְאֵלִ֔י  (atoms [12])
+        slot 158443 הַ | HA- | lex H הַ the | sp art pdp art ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase PP Cmpl | clause NmCl
+        slot 158444 יַּרְחְמְאֵלִ֔י  | J.AR:X:M:>;LI80J | lex JRXM>LJ/ יְרַחְמְאֵלִי Jerahmeelite | sp adjv pdp subs ls gntl | vs NA vt NA | ps NA nu sg gn m st a prs absent | phrase PP Cmpl | clause NmCl
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+
+== 18. 2 Samuel 11:1 (forms.json, page 767); BHSA Samuel_II 11:1
+   IB:  הַמַּלְאכִים
+   MAM: הַמְּלָאכִים
+   [ketiv side] WLC 4.18 atoms [5]: הַמַּלְאֿכִ֗ים notes [['1']]
+      WLC 4.20: הַמַּלְאֿכִ֗ים notes [[']1']]
+      WLC 4.22: הַמַּלְאכִ֗ים notes [[']1']]
+      MAM:      הַמְּלָאכִ֗ים
+      BHSA:     הַמַּלְאֿכִ֗ים  (atoms [5])
+        slot 165714 הַ | HA- | lex H הַ the | sp art pdp art ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase NP Subj | clause InfC
+        slot 165715 מַּלְאֿכִ֗ים  | M.AL:>,KI81JM | lex MLK/ מֶלֶךְ king | sp subs pdp subs ls none | vs NA vt NA | ps NA nu pl gn m st a prs absent | phrase NP Subj | clause InfC
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 False
+   [qere side] WLC 4.18 atoms [5]: הַמַּלְאֿכִ֗ים notes [['1']]
+      WLC 4.20: הַמַּלְאֿכִ֗ים notes [[']1']]
+      WLC 4.22: הַמַּלְאכִ֗ים notes [[']1']]
+      MAM:      הַמְּלָאכִ֗ים
+      BHSA:     הַמַּלְאֿכִ֗ים  (atoms [5])
+        slot 165714 הַ | HA- | lex H הַ the | sp art pdp art ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase NP Subj | clause InfC
+        slot 165715 מַּלְאֿכִ֗ים  | M.AL:>,KI81JM | lex MLK/ מֶלֶךְ king | sp subs pdp subs ls none | vs NA vt NA | ps NA nu pl gn m st a prs absent | phrase NP Subj | clause InfC
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 False
+
+== 19. 2 Samuel 13:33 (forms.json, page 776); BHSA Samuel_II 13:33
+   IB:  אִם־אַמְנוֹן
+   MAM: אם־אַמְנוֹן
+   [ketiv side] WLC 4.18 atoms [14, 15]: אִם־ | אַמְנ֥וֹן notes [[], []]
+      WLC 4.20: אִם־ | אַמְנ֥וֹן notes [[], []]
+      WLC 4.22: אִם־ | אַמְנ֥וֹן notes [[], []]
+      MAM:      אם־ | אַמְנ֥וֹן
+      BHSA:     אִם־ | אַמְנֹ֥ון  (atoms [14, 15])
+        slot 167903 אִם־ | >IM | lex >M אִם if | sp conj pdp conj ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase CP Conj | clause XQtl
+        slot 167904 אַמְנֹ֥ון  | >AM:NO71WN | lex >MNWN/ אַמְנֹון Amnon | sp nmpr pdp nmpr ls none | vs NA vt NA | ps NA nu sg gn m st a prs n/a | phrase PrNP Subj | clause XQtl
+      BHSA==WLC4.18 by review key: False; BHSA==MAM by review key: False; full key: ==4.18 False, ==4.20 False, ==4.22 False
+   [qere side] not found
+
+== 20. 2 Samuel 15:21 (forms.json, page 781); BHSA Samuel_II 15:21
+   IB:  כִּי אִם־
+   MAM: כִּי אם
+   [ketiv side] WLC 4.18 atoms [10, 11]: כִּ֠י | אִם־ notes [[], []]
+      WLC 4.20: כִּ֠י | אִם־ notes [[], []]
+      WLC 4.22: כִּ֠י | אִם־ notes [[], []]
+      MAM:      כִּ֠י | אם
+      BHSA:     כִּ֠י | אִם־  (atoms [10, 11])
+        slot 169363 כִּ֠י  | 14K.IJ | lex KJ כִּי that | sp conj pdp conj ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase CP Conj | clause CPen
+        slot 169364 אִם־ | >IM | lex >M אִם if | sp conj pdp conj ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase CP Conj | clause CPen
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+   [qere side] not found
+
+== 21. 2 Kings 10:33 (forms.json, page 918); BHSA Reges_II 10:33
+   IB:  וְהָרֻאובֵנִי
+   MAM: וְהָראֿוּבֵנִי
+   [ketiv side] WLC 4.18 atoms [9]: וְהָרֻאובֵנִ֖י notes [[]]
+      WLC 4.20: וְהָרֻאובֵנִ֖י notes [[]]
+      WLC 4.22: וְהָרֻאובֵנִ֖י notes [[]]
+      MAM:      וְהָראֿוּבֵנִ֖י
+      BHSA:     וְהָרֻאובֵנִ֖י  (atoms [9])
+        slot 201934 וְ | W:- | lex W וְ and | sp conj pdp conj ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase PP Objc | clause Ellp
+        slot 201935 הָ | H@- | lex H הַ the | sp art pdp art ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase PP Objc | clause Ellp
+        slot 201936 רֻאובֵנִ֖י  | RU>WB;NI73J | lex R>WBNJ/ רְאוּבֵנִי Reubenite | sp adjv pdp subs ls gntl | vs NA vt NA | ps NA nu sg gn m st a prs absent | phrase PP Objc | clause Ellp
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+   [qere side] WLC 4.18 atoms [9]: וְהָרֻאובֵנִ֖י notes [[]]
+      WLC 4.20: וְהָרֻאובֵנִ֖י notes [[]]
+      WLC 4.22: וְהָרֻאובֵנִ֖י notes [[]]
+      MAM:      וְהָראֿוּבֵנִ֖י
+      BHSA:     וְהָרֻאובֵנִ֖י  (atoms [9])
+        slot 201934 וְ | W:- | lex W וְ and | sp conj pdp conj ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase PP Objc | clause Ellp
+        slot 201935 הָ | H@- | lex H הַ the | sp art pdp art ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase PP Objc | clause Ellp
+        slot 201936 רֻאובֵנִ֖י  | RU>WB;NI73J | lex R>WBNJ/ רְאוּבֵנִי Reubenite | sp adjv pdp subs ls gntl | vs NA vt NA | ps NA nu sg gn m st a prs absent | phrase PP Objc | clause Ellp
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+
+== 22. 2 Kings 18:27 (forms.json, page 940) [Separate]; BHSA Reges_II 18:27
+   IB:  מימֵי רַגְלֵיהֶם
+   MAM: מֵימֵי רַגְלֵיהֶם
+   [ketiv side] not found
+   [qere side] WLC 4.18 atoms [24, 25]: מימֵ֥י | רַגְלֵיהֶ֖ם notes [['c', 'n', 'v'], []]
+      WLC 4.20: מימֵ֥י | רַגְלֵיהֶ֖ם notes [[']c', ']n'], []]
+      WLC 4.22: מימֵ֥י | רַגְלֵיהֶ֖ם notes [[']c', ']n'], []]
+      MAM:      מֵימֵ֥י | רַגְלֵיהֶ֖ם
+      BHSA:     מֵֽימֵי | רַגְלֵיהֶ֖ם  (atoms [23, 24])
+        slot 207188 שׁ | *C- | lex MJM/ מַיִם water | sp subs pdp subs ls none | vs NA vt NA | ps NA nu pl gn m st c prs absent | phrase PP Objc | clause InfC | qere מֵֽימֵי kq_hybrid שֵֽׁ
+        slot 207189 יניהם  | *JNJHM | lex RGL/ רֶגֶל foot | sp subs pdp subs ls none | vs NA vt NA | ps NA nu du gn f st a prs HM | phrase PP Objc | clause InfC | qere רַגְלֵיהֶ֖ם kq_hybrid יַנְיֵהֶ֖ם
+      BHSA==WLC4.18 by review key: False; BHSA==MAM by review key: True; full key: ==4.18 False, ==4.20 False, ==4.22 False
+
+== 23. Isaiah 23:8 (forms.json, page 1003); BHSA Jesaia 23:8
+   IB:  סֹחֲרֶיה
+   MAM: סֹחֲרֶיהָ
+   [ketiv side] WLC 4.18 atoms [7]: סֹחֲרֶ֙יה֙ notes [[]]
+      WLC 4.20: סֹחֲרֶ֙יה֙ notes [[]]
+      WLC 4.22: סֹחֲרֶ֙יה֙ notes [[]]
+      MAM:      סֹחֲרֶ֙יהָ֙
+      BHSA:     סֹחֲרֶ֨יה֙  (atoms [7])
+        slot 219509 סֹחֲרֶ֨יה֙  | SOX:ARE33JH03 | lex SXR[ סחר go about | sp verb pdp subs ls none | vs qal vt ptca | ps unknown nu pl gn m st a prs H | phrase NP Subj | clause NmCl
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 False, ==4.20 False, ==4.22 False
+   [qere side] WLC 4.18 atoms [7]: סֹחֲרֶ֙יה֙ notes [[]]
+      WLC 4.20: סֹחֲרֶ֙יה֙ notes [[]]
+      WLC 4.22: סֹחֲרֶ֙יה֙ notes [[]]
+      MAM:      סֹחֲרֶ֙יהָ֙
+      BHSA:     סֹחֲרֶ֨יה֙  (atoms [7])
+        slot 219509 סֹחֲרֶ֨יה֙  | SOX:ARE33JH03 | lex SXR[ סחר go about | sp verb pdp subs ls none | vs qal vt ptca | ps unknown nu pl gn m st a prs H | phrase NP Subj | clause NmCl
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 False, ==4.20 False, ==4.22 False
+
+== 24. Isaiah 46:4 (forms.json, page 1048); BHSA Jesaia 46:4
+   IB:  שֵיבָה
+   MAM: שֵׂיבָה
+   [ketiv side] WLC 4.18 atoms [5]: שֵיבָ֖ה notes [['1']]
+      WLC 4.20: שֵיבָ֖ה notes [[']1']]
+      WLC 4.22: שֵיבָ֖ה notes [[']1']]
+      MAM:      שֵׂיבָ֖ה
+      BHSA:     שֵיבָ֖ה  (atoms [5])
+        slot 228381 שֵיבָ֖ה  | #;JB@73H | lex FJBH/ שֵׂיבָה age | sp subs pdp subs ls none | vs NA vt NA | ps NA nu sg gn f st a prs absent | phrase PP Time | clause WXYq
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+   [qere side] WLC 4.18 atoms [5]: שֵיבָ֖ה notes [['1']]
+      WLC 4.20: שֵיבָ֖ה notes [[']1']]
+      WLC 4.22: שֵיבָ֖ה notes [[']1']]
+      MAM:      שֵׂיבָ֖ה
+      BHSA:     שֵיבָ֖ה  (atoms [5])
+        slot 228381 שֵיבָ֖ה  | #;JB@73H | lex FJBH/ שֵׂיבָה age | sp subs pdp subs ls none | vs NA vt NA | ps NA nu sg gn f st a prs absent | phrase PP Time | clause WXYq
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+
+== 25. Isaiah 66:22 (forms.json, page 1083); BHSA Jesaia 66:22
+   IB:  הַחֳדָשִׁים
+   MAM: הַחֲדָשִׁים
+   [ketiv side] WLC 4.18 atoms [3]: הַ֠חֳדָשִׁים notes [[]]
+      WLC 4.20: הַ֠חֳדָשִׁים notes [[]]
+      WLC 4.22: הַ֠חֳדָשִׁים notes [[]]
+      MAM:      הַ֠חֲדָשִׁ֠ים
+      BHSA:     הַ֠חֳדָשִׁים  (atoms [3])
+        slot 234937 הַ֠ | 14HA- | lex H הַ the | sp art pdp art ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase NP Subj | clause Ptcp
+        slot 234938 חֳדָשִׁים  | X:@D@CIJM | lex XDC=/ חֹדֶשׁ month | sp subs pdp subs ls none | vs NA vt NA | ps NA nu pl gn m st a prs absent | phrase NP Subj | clause Ptcp
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+   [qere side] WLC 4.18 atoms [3]: הַ֠חֳדָשִׁים notes [[]]
+      WLC 4.20: הַ֠חֳדָשִׁים notes [[]]
+      WLC 4.22: הַ֠חֳדָשִׁים notes [[]]
+      MAM:      הַ֠חֲדָשִׁ֠ים
+      BHSA:     הַ֠חֳדָשִׁים  (atoms [3])
+        slot 234937 הַ֠ | 14HA- | lex H הַ the | sp art pdp art ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase NP Subj | clause Ptcp
+        slot 234938 חֳדָשִׁים  | X:@D@CIJM | lex XDC=/ חֹדֶשׁ month | sp subs pdp subs ls none | vs NA vt NA | ps NA nu pl gn m st a prs absent | phrase NP Subj | clause Ptcp
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+
+== 26. Jeremiah 3:17 (forms.json, page 1094); BHSA Jeremia 3:17
+   IB:  וְנִקְוּוּ
+   MAM: וְנִקְווּ
+   [ketiv side] WLC 4.18 atoms [6]: וְנִקְוּ֨וּ notes [[]]
+      WLC 4.20: וְנִקְוּ֨וּ notes [[]]
+      WLC 4.22: וְנִקְוּ֨וּ notes [[']1']]
+      MAM:      וְנִקְו֨וּ
+      BHSA:     וְנִקְוּ֨וּ  (atoms [6])
+        slot 236378 וְ | W:- | lex W וְ and | sp conj pdp conj ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase CP Conj | clause WQtX
+        slot 236379 נִקְוּ֨וּ  | NIQ:W.63W. | lex QWH=[ קוה collect | sp verb pdp verb ls none | vs nif vt perf | ps p3 nu pl gn unknown st NA prs absent | phrase VP Pred | clause WQtX
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+   [qere side] WLC 4.18 atoms [6]: וְנִקְוּ֨וּ notes [[]]
+      WLC 4.20: וְנִקְוּ֨וּ notes [[]]
+      WLC 4.22: וְנִקְוּ֨וּ notes [[']1']]
+      MAM:      וְנִקְו֨וּ
+      BHSA:     וְנִקְוּ֨וּ  (atoms [6])
+        slot 236378 וְ | W:- | lex W וְ and | sp conj pdp conj ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase CP Conj | clause WQtX
+        slot 236379 נִקְוּ֨וּ  | NIQ:W.63W. | lex QWH=[ קוה collect | sp verb pdp verb ls none | vs nif vt perf | ps p3 nu pl gn unknown st NA prs absent | phrase VP Pred | clause WQtX
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+
+== 27. Jeremiah 47:6 (forms.json, page 1197); BHSA Jeremia 47:6
+   IB:  אַל־
+   MAM: אֶל־
+   [ketiv side] WLC 4.18 atoms [8]: אַל־ notes [[]]
+      WLC 4.20: אַל־ notes [[]]
+      WLC 4.22: אַל־ notes [[]]
+      MAM:      אֶל־
+      BHSA:     אַל־  (atoms [8])
+        slot 260353 אַל־ | >AL | lex >L אֶל to | sp prep pdp prep ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs absent | phrase PP Cmpl | clause ZIm0
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+   [qere side] WLC 4.18 atoms [8]: אַל־ notes [[]]
+      WLC 4.20: אַל־ notes [[]]
+      WLC 4.22: אַל־ notes [[]]
+      MAM:      אֶל־
+      BHSA:     אַל־  (atoms [8])
+        slot 260353 אַל־ | >AL | lex >L אֶל to | sp prep pdp prep ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs absent | phrase PP Cmpl | clause ZIm0
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+
+== 28. Hosea 2:4 (forms.json, page 1346); BHSA Hosea 2:4
+   IB:  מִפָּנֶיה
+   MAM: מִפָּנֶיהָ
+   [ketiv side] WLC 4.18 atoms [12]: מִפָּנֶ֔יה notes [['U']]
+      WLC 4.20: מִפָּנֶ֔יה notes [[']U']]
+      WLC 4.22: מִפָּנֶ֔יה notes [[']U']]
+      MAM:      מִפָּנֶ֔יהָ
+      BHSA:     מִפָּנֶ֔יה  (atoms [12])
+        slot 291172 מִ | MI- | lex MN מִן from | sp prep pdp prep ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs absent | phrase PP Cmpl | clause WYq0
+        slot 291173 פָּנֶ֔יה  | P.@NE80JH | lex PNH/ פָּנֶה face | sp subs pdp subs ls none | vs NA vt NA | ps NA nu pl gn m st a prs H | phrase PP Cmpl | clause WYq0
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+   [qere side] WLC 4.18 atoms [12]: מִפָּנֶ֔יה notes [['U']]
+      WLC 4.20: מִפָּנֶ֔יה notes [[']U']]
+      WLC 4.22: מִפָּנֶ֔יה notes [[']U']]
+      MAM:      מִפָּנֶ֔יהָ
+      BHSA:     מִפָּנֶ֔יה  (atoms [12])
+        slot 291172 מִ | MI- | lex MN מִן from | sp prep pdp prep ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs absent | phrase PP Cmpl | clause WYq0
+        slot 291173 פָּנֶ֔יה  | P.@NE80JH | lex PNH/ פָּנֶה face | sp subs pdp subs ls none | vs NA vt NA | ps NA nu pl gn m st a prs H | phrase PP Cmpl | clause WYq0
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+
+== 29. Hosea 2:17 (forms.json, page 1347); BHSA Hosea 2:17
+   IB:  וִּכְיוֹם
+   MAM: וּכְיוֹם
+   [ketiv side] WLC 4.18 atoms [14]: וִּכְי֖וֹם notes [['U']]
+      WLC 4.20: וִּכְי֖וֹם notes [[']U']]
+      WLC 4.22: וִּכְי֖וֹם notes [[']U']]
+      MAM:      וּכְי֖וֹם
+      BHSA:     וִּכְיֹ֖ום  (atoms [14])
+        slot 291425 וִּ | W.I- | lex W וְ and | sp conj pdp conj ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase PP Adju | clause WQt0
+        slot 291426 כְ | K:- | lex K כְּ as | sp prep pdp prep ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs absent | phrase PP Adju | clause WQt0
+        slot 291427 יֹ֖ום  | JO73WM | lex JWM/ יֹום day | sp subs pdp subs ls padv | vs NA vt NA | ps NA nu sg gn m st c prs absent | phrase PP Adju | clause WQt0
+      BHSA==WLC4.18 by review key: False; BHSA==MAM by review key: False; full key: ==4.18 False, ==4.20 False, ==4.22 False
+   [qere side] WLC 4.18 atoms [14]: וִּכְי֖וֹם notes [['U']]
+      WLC 4.20: וִּכְי֖וֹם notes [[']U']]
+      WLC 4.22: וִּכְי֖וֹם notes [[']U']]
+      MAM:      וּכְי֖וֹם
+      BHSA:     וִּכְיֹ֖ום  (atoms [14])
+        slot 291425 וִּ | W.I- | lex W וְ and | sp conj pdp conj ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase PP Adju | clause WQt0
+        slot 291426 כְ | K:- | lex K כְּ as | sp prep pdp prep ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs absent | phrase PP Adju | clause WQt0
+        slot 291427 יֹ֖ום  | JO73WM | lex JWM/ יֹום day | sp subs pdp subs ls padv | vs NA vt NA | ps NA nu sg gn m st c prs absent | phrase PP Adju | clause WQt0
+      BHSA==WLC4.18 by review key: False; BHSA==MAM by review key: False; full key: ==4.18 False, ==4.20 False, ==4.22 False
+
+== 30. Joel 2:12 (forms.json, page 1367); BHSA Joel 2:12
+   IB:  וּבְבְכִי
+   MAM: וּבִבְכִי
+   [ketiv side] WLC 4.18 atoms [9]: וּבְבְכִ֖י notes [['U']]
+      WLC 4.20: וּבְבְכִ֖י notes [[']U']]
+      WLC 4.22: וּבְבְכִ֖י notes [[']U']]
+      MAM:      וּבִבְכִ֖י
+      BHSA:     וּבְבְכִ֖י  (atoms [9])
+        slot 294581 וּ | W.- | lex W וְ and | sp conj pdp conj ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase PP Adju | clause Ellp
+        slot 294582 בְ | B:- | lex B בְּ in | sp prep pdp prep ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs absent | phrase PP Adju | clause Ellp
+        slot 294583 בְכִ֖י  | B:KI73J | lex BKJ/ בְּכִי weeping | sp subs pdp subs ls none | vs NA vt NA | ps NA nu sg gn m st a prs absent | phrase PP Adju | clause Ellp
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+   [qere side] WLC 4.18 atoms [9]: וּבְבְכִ֖י notes [['U']]
+      WLC 4.20: וּבְבְכִ֖י notes [[']U']]
+      WLC 4.22: וּבְבְכִ֖י notes [[']U']]
+      MAM:      וּבִבְכִ֖י
+      BHSA:     וּבְבְכִ֖י  (atoms [9])
+        slot 294581 וּ | W.- | lex W וְ and | sp conj pdp conj ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase PP Adju | clause Ellp
+        slot 294582 בְ | B:- | lex B בְּ in | sp prep pdp prep ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs absent | phrase PP Adju | clause Ellp
+        slot 294583 בְכִ֖י  | B:KI73J | lex BKJ/ בְּכִי weeping | sp subs pdp subs ls none | vs NA vt NA | ps NA nu sg gn m st a prs absent | phrase PP Adju | clause Ellp
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+
+== 31. Jonah 3:2 (forms.json, page 1394); BHSA Jona 3:2
+   IB:  וִּקְרָא
+   MAM: וּקְרָא
+   [ketiv side] WLC 4.18 atoms [6]: וִּקְרָ֤א notes [['U']]
+      WLC 4.20: וִּקְרָ֤א notes [[']U']]
+      WLC 4.22: וִּקְרָ֤א notes [[']U']]
+      MAM:      וּקְרָ֤א
+      BHSA:     וִּקְרָ֤א  (atoms [6])
+        slot 299095 וִּ | W.I- | lex W וְ and | sp conj pdp conj ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase CP Conj | clause WIm0
+        slot 299096 קְרָ֤א  | Q:R@70> | lex QR>[ קרא call | sp verb pdp verb ls none | vs qal vt impv | ps p2 nu sg gn m st NA prs absent | phrase VP Pred | clause WIm0
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+   [qere side] WLC 4.18 atoms [6]: וִּקְרָ֤א notes [['U']]
+      WLC 4.20: וִּקְרָ֤א notes [[']U']]
+      WLC 4.22: וִּקְרָ֤א notes [[']U']]
+      MAM:      וּקְרָ֤א
+      BHSA:     וִּקְרָ֤א  (atoms [6])
+        slot 299095 וִּ | W.I- | lex W וְ and | sp conj pdp conj ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase CP Conj | clause WIm0
+        slot 299096 קְרָ֤א  | Q:R@70> | lex QR>[ קרא call | sp verb pdp verb ls none | vs qal vt impv | ps p2 nu sg gn m st NA prs absent | phrase VP Pred | clause WIm0
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+
+== 32. Zechariah 2:2 (forms.json, page 1436); BHSA Sacharia 2:2
+   IB:  וִירוּשָׁלָם
+   MAM: וִירוּשָׁלִָם
+   [ketiv side] WLC 4.18 atoms [17]: וִירוּשָׁלָֽם׃ notes [['U']]
+      WLC 4.20: וִירוּשָׁלָֽם׃ notes [[']U']]
+      WLC 4.22: וִירוּשָׁלָֽם׃ notes [[']U']]
+      MAM:      וִירוּשָׁלָֽ͏ִם׃
+      BHSA:     וִירוּשָׁלָֽם  (atoms [17])
+        slot 305395 וִ | WI- | lex W וְ and | sp conj pdp conj ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase PP Objc | clause xQt0
+        slot 305396 ירוּשָׁלָֽם׃ ס  | JRW.C@L@75M | lex JRWCLM/ יְרוּשָׁלִַם Jerusalem | sp nmpr pdp nmpr ls none | vs NA vt NA | ps NA nu sg gn unknown st a prs n/a | phrase PP Objc | clause xQt0
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+   [qere side] WLC 4.18 atoms [17]: וִירוּשָׁלָֽם׃ notes [['U']]
+      WLC 4.20: וִירוּשָׁלָֽם׃ notes [[']U']]
+      WLC 4.22: וִירוּשָׁלָֽם׃ notes [[']U']]
+      MAM:      וִירוּשָׁלָֽ͏ִם׃
+      BHSA:     וִירוּשָׁלָֽם  (atoms [17])
+        slot 305395 וִ | WI- | lex W וְ and | sp conj pdp conj ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase PP Objc | clause xQt0
+        slot 305396 ירוּשָׁלָֽם׃ ס  | JRW.C@L@75M | lex JRWCLM/ יְרוּשָׁלִַם Jerusalem | sp nmpr pdp nmpr ls none | vs NA vt NA | ps NA nu sg gn unknown st a prs n/a | phrase PP Objc | clause xQt0
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+
+== 33. Psalms 45:3 (forms.json, page 1516); BHSA Psalmi 45:3
+   IB:  בְּשְׂפְתוֹתֶיךָ
+   MAM: בְּשִׂפְתוֹתֶיךָ
+   [ketiv side] WLC 4.18 atoms [5]: בְּשְׂפְתוֹתֶ֑יךָ notes [[]]
+      WLC 4.20: בְּשְׂפְתוֹתֶ֑יךָ notes [[]]
+      WLC 4.22: בְּשְׂפְתוֹתֶ֑יךָ notes [[]]
+      MAM:      בְּשִׂפְתוֹתֶ֑יךָ
+      BHSA:     בְּשְׂפְתֹותֶ֑יךָ  (atoms [5])
+        slot 317908 בְּ | B.:- | lex B בְּ in | sp prep pdp prep ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs absent | phrase PP Cmpl | clause ZQtX
+        slot 317909 שְׂפְתֹותֶ֑יךָ  | F:P:TOWTE92JK@ | lex FPH/ שָׂפָה lip | sp subs pdp subs ls none | vs NA vt NA | ps NA nu pl gn f st a prs K | phrase PP Cmpl | clause ZQtX
+      BHSA==WLC4.18 by review key: False; BHSA==MAM by review key: False; full key: ==4.18 False, ==4.20 False, ==4.22 False
+   [qere side] WLC 4.18 atoms [5]: בְּשְׂפְתוֹתֶ֑יךָ notes [[]]
+      WLC 4.20: בְּשְׂפְתוֹתֶ֑יךָ notes [[]]
+      WLC 4.22: בְּשְׂפְתוֹתֶ֑יךָ notes [[]]
+      MAM:      בְּשִׂפְתוֹתֶ֑יךָ
+      BHSA:     בְּשְׂפְתֹותֶ֑יךָ  (atoms [5])
+        slot 317908 בְּ | B.:- | lex B בְּ in | sp prep pdp prep ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs absent | phrase PP Cmpl | clause ZQtX
+        slot 317909 שְׂפְתֹותֶ֑יךָ  | F:P:TOWTE92JK@ | lex FPH/ שָׂפָה lip | sp subs pdp subs ls none | vs NA vt NA | ps NA nu pl gn f st a prs K | phrase PP Cmpl | clause ZQtX
+      BHSA==WLC4.18 by review key: False; BHSA==MAM by review key: False; full key: ==4.18 False, ==4.20 False, ==4.22 False
+
+== 34. Proverbs 12:9 (forms.json, page 1665); BHSA Proverbia 12:9
+   IB:  מִמְּתַכַּבֵּד
+   MAM: מִמִּתְכַּבֵּד
+   [ketiv side] WLC 4.18 atoms [4]: מִ֝מְּתַכַּבֵּ֗ד notes [[]]
+      WLC 4.20: מִ֝מְּתַכַּבֵּ֗ד notes [[]]
+      WLC 4.22: מִ֝מְּתַכַּבֵּ֗ד notes [[]]
+      MAM:      מִ֝מִּתְכַּבֵּ֗ד
+      BHSA:     מִ֝מְּתַכַּבֵּ֗ד  (atoms [4])
+        slot 349993 מִ֝ | 11MI- | lex MN מִן from | sp prep pdp prep ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs absent | phrase PP Adju | clause NmCl
+        slot 349994 מְּתַכַּבֵּ֗ד  | M.:TAK.AB.;81D | lex KBD[ כבד be heavy | sp verb pdp subs ls none | vs tif vt ptca | ps unknown nu sg gn m st a prs absent | phrase PP Adju | clause NmCl
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+   [qere side] WLC 4.18 atoms [4]: מִ֝מְּתַכַּבֵּ֗ד notes [[]]
+      WLC 4.20: מִ֝מְּתַכַּבֵּ֗ד notes [[]]
+      WLC 4.22: מִ֝מְּתַכַּבֵּ֗ד notes [[]]
+      MAM:      מִ֝מִּתְכַּבֵּ֗ד
+      BHSA:     מִ֝מְּתַכַּבֵּ֗ד  (atoms [4])
+        slot 349993 מִ֝ | 11MI- | lex MN מִן from | sp prep pdp prep ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs absent | phrase PP Adju | clause NmCl
+        slot 349994 מְּתַכַּבֵּ֗ד  | M.:TAK.AB.;81D | lex KBD[ כבד be heavy | sp verb pdp subs ls none | vs tif vt ptca | ps unknown nu sg gn m st a prs absent | phrase PP Adju | clause NmCl
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+
+== 35. Proverbs 20:1 (forms.json, page 1679); BHSA Proverbia 20:1
+   IB:  הַיַּין
+   MAM: הַיַּיִן
+   [ketiv side] WLC 4.18 atoms [1]: הַ֭יַּין notes [['U']]
+      WLC 4.20: הַ֭יַּין notes [[']U']]
+      WLC 4.22: הַ֭יַּין notes [[']U']]
+      MAM:      הַ֭יַּיִן
+      BHSA:     הַ֭יַּין  (atoms [1])
+        slot 352129 הַ֭ | 13HA- | lex H הַ the | sp art pdp art ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase NP Subj | clause NmCl
+        slot 352130 יַּין  | J.AJN | lex JJN/ יַיִן wine | sp subs pdp subs ls none | vs NA vt NA | ps NA nu sg gn m st a prs absent | phrase NP Subj | clause NmCl
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+   [qere side] WLC 4.18 atoms [1]: הַ֭יַּין notes [['U']]
+      WLC 4.20: הַ֭יַּין notes [[']U']]
+      WLC 4.22: הַ֭יַּין notes [[']U']]
+      MAM:      הַ֭יַּיִן
+      BHSA:     הַ֭יַּין  (atoms [1])
+        slot 352129 הַ֭ | 13HA- | lex H הַ the | sp art pdp art ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase NP Subj | clause NmCl
+        slot 352130 יַּין  | J.AJN | lex JJN/ יַיִן wine | sp subs pdp subs ls none | vs NA vt NA | ps NA nu sg gn m st a prs absent | phrase NP Subj | clause NmCl
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+
+== 36. Proverbs 31:12 (forms.json, page 1700); BHSA Proverbia 31:12
+   IB:  חַיֶּיה
+   MAM: חַיֶּיהָ
+   [ketiv side] WLC 4.18 atoms [6]: חַיֶּֽיה׃ notes [['U']]
+      WLC 4.20: חַיֶּֽיה׃ notes [[']U']]
+      WLC 4.22: חַיֶּֽיה׃ notes [[']U']]
+      MAM:      חַיֶּֽיהָ׃
+      BHSA:     חַיֶּֽיה  (atoms [6])
+        slot 355615 חַיֶּֽיה׃  | XAJ.E75JH | lex XJJM/ חַיִּים life | sp subs pdp subs ls none | vs NA vt NA | ps NA nu pl gn m st a prs H | phrase NP Time | clause ZQt0
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+   [qere side] WLC 4.18 atoms [6]: חַיֶּֽיה׃ notes [['U']]
+      WLC 4.20: חַיֶּֽיה׃ notes [[']U']]
+      WLC 4.22: חַיֶּֽיה׃ notes [[']U']]
+      MAM:      חַיֶּֽיהָ׃
+      BHSA:     חַיֶּֽיה  (atoms [6])
+        slot 355615 חַיֶּֽיה׃  | XAJ.E75JH | lex XJJM/ חַיִּים life | sp subs pdp subs ls none | vs NA vt NA | ps NA nu pl gn m st a prs H | phrase NP Time | clause ZQt0
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+
+== 37. Job 31:7 (forms.json, page 1752); BHSA Iob 31:7
+   IB:  מֻאוּם
+   MAM: מאֿוּם
+   [ketiv side] WLC 4.18 atoms [11]: מֻאֽוּם׃ notes [['1']]
+      WLC 4.20: מֻאֽוּם׃ notes [[']1']]
+      WLC 4.22: מֻאֽוּם׃ notes [[']1']]
+      MAM:      מֽאֿוּם׃
+      BHSA:     מֻאֽוּם  (atoms [11])
+        slot 343476 מֻאֽוּם׃ פ  | MU>75W.M | lex M>WM/ מאוּם blemish | sp subs pdp subs ls none | vs NA vt NA | ps NA nu sg gn m st a prs absent | phrase NP Subj | clause WxQX
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+   [qere side] WLC 4.18 atoms [11]: מֻאֽוּם׃ notes [['1']]
+      WLC 4.20: מֻאֽוּם׃ notes [[']1']]
+      WLC 4.22: מֻאֽוּם׃ notes [[']1']]
+      MAM:      מֽאֿוּם׃
+      BHSA:     מֻאֽוּם  (atoms [11])
+        slot 343476 מֻאֽוּם׃ פ  | MU>75W.M | lex M>WM/ מאוּם blemish | sp subs pdp subs ls none | vs NA vt NA | ps NA nu sg gn m st a prs absent | phrase NP Subj | clause WxQX
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+
+== 38. Song of Songs 5:11 (forms.json, page 1785); BHSA Canticum 5:11
+   IB:  קְוּצּוֹתָיו
+   MAM: קְוֻצּוֹתָיו
+   [ketiv side] WLC 4.18 atoms [3]: קְוּצּוֹתָיו֙ notes [['U']]
+      WLC 4.20: קְוּצּוֹתָיו֙ notes [[']U']]
+      WLC 4.22: קְוּצּוֹתָיו֙ notes [[']U']]
+      MAM:      קְוֻצּוֹתָיו֙
+      BHSA:     קְוּצֹּותָיו֙  (atoms [3])
+        slot 358617 קְוּצֹּותָיו֙  | Q:W.Y.OWT@JW03 | lex QWYWT/ קְוֻצֹּות hairlocks | sp subs pdp subs ls none | vs NA vt NA | ps NA nu pl gn f st a prs W | phrase NP Subj | clause NmCl
+      BHSA==WLC4.18 by review key: False; BHSA==MAM by review key: False; full key: ==4.18 False, ==4.20 False, ==4.22 False
+   [qere side] WLC 4.18 atoms [3]: קְוּצּוֹתָיו֙ notes [['U']]
+      WLC 4.20: קְוּצּוֹתָיו֙ notes [[']U']]
+      WLC 4.22: קְוּצּוֹתָיו֙ notes [[']U']]
+      MAM:      קְוֻצּוֹתָיו֙
+      BHSA:     קְוּצֹּותָיו֙  (atoms [3])
+        slot 358617 קְוּצֹּותָיו֙  | Q:W.Y.OWT@JW03 | lex QWYWT/ קְוֻצֹּות hairlocks | sp subs pdp subs ls none | vs NA vt NA | ps NA nu pl gn f st a prs W | phrase NP Subj | clause NmCl
+      BHSA==WLC4.18 by review key: False; BHSA==MAM by review key: False; full key: ==4.18 False, ==4.20 False, ==4.22 False
+
+== 39. Daniel 2:45 (forms.json, page 1875); BHSA Daniel 2:45
+   IB:  וְהַדֶּקֶת
+   MAM: וְהַדֵּקֶת
+   [ketiv side] WLC 4.18 atoms [11]: וְ֠הַדֶּקֶת notes [[]]
+      WLC 4.20: וְ֠הַדֶּקֶת notes [[]]
+      WLC 4.22: וְ֠הַדֶּקֶת notes [[]]
+      MAM:      וְ֠הַדֵּ֠קֶת
+      BHSA:     וְ֠הַדֶּקֶת  (atoms [11])
+        slot 371498 וְ֠ | 14W:- | lex W וְ and | sp conj pdp conj ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase CP Conj | clause WQt0
+        slot 371499 הַדֶּקֶת  | HAD.EQET | lex DQQ[ דקק crush | sp verb pdp verb ls none | vs haf vt perf | ps p3 nu sg gn f st NA prs absent | phrase VP Pred | clause WQt0
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+   [qere side] WLC 4.18 atoms [11]: וְ֠הַדֶּקֶת notes [[]]
+      WLC 4.20: וְ֠הַדֶּקֶת notes [[]]
+      WLC 4.22: וְ֠הַדֶּקֶת notes [[]]
+      MAM:      וְ֠הַדֵּ֠קֶת
+      BHSA:     וְ֠הַדֶּקֶת  (atoms [11])
+        slot 371498 וְ֠ | 14W:- | lex W וְ and | sp conj pdp conj ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase CP Conj | clause WQt0
+        slot 371499 הַדֶּקֶת  | HAD.EQET | lex DQQ[ דקק crush | sp verb pdp verb ls none | vs haf vt perf | ps p3 nu sg gn f st NA prs absent | phrase VP Pred | clause WQt0
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+
+== 40. Daniel 5:24 (forms.json, page 1886); BHSA Daniel 5:24
+   IB:  שְׁלִיַחַ
+   MAM: שְׁלִיחַ
+   [ketiv side] WLC 4.18 atoms [3]: שְׁלִ֖יַחַ notes [['1']]
+      WLC 4.20: שְׁלִ֖יַחַ notes [[']1']]
+      WLC 4.22: שְׁלִ֖יַחַ notes [[']1']]
+      MAM:      שְׁלִ֖יחַ
+      BHSA:     שְׁלִ֖יַחַ  (atoms [3])
+        slot 373768 שְׁלִ֖יַחַ  | C:LI73JAXA | lex CLX[ שׁלח send | sp verb pdp verb ls none | vs peil vt perf | ps p3 nu sg gn m st NA prs absent | phrase VP Pred | clause xQtX
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+   [qere side] WLC 4.18 atoms [3]: שְׁלִ֖יַחַ notes [['1']]
+      WLC 4.20: שְׁלִ֖יַחַ notes [[']1']]
+      WLC 4.22: שְׁלִ֖יַחַ notes [[']1']]
+      MAM:      שְׁלִ֖יחַ
+      BHSA:     שְׁלִ֖יַחַ  (atoms [3])
+        slot 373768 שְׁלִ֖יַחַ  | C:LI73JAXA | lex CLX[ שׁלח send | sp verb pdp verb ls none | vs peil vt perf | ps p3 nu sg gn m st NA prs absent | phrase VP Pred | clause xQtX
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+
+== 41. Daniel 7:20 (forms.json, page 1891); BHSA Daniel 7:20
+   IB:  וְפֻם
+   MAM: וּפֻם
+   [ketiv side] WLC 4.18 atoms [16]: וְפֻם֙ notes [[]]
+      WLC 4.20: וְפֻם֙ notes [[]]
+      WLC 4.22: וְפֻם֙ notes [[]]
+      MAM:      וּפֻם֙
+      BHSA:     וְפֻם֙  (atoms [16])
+        slot 375001 וְ | W:- | lex W וְ and | sp conj pdp conj ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase CP Conj | clause Ellp
+        slot 375002 פֻם֙  | PUM03 | lex PM/ פֻּם mouth | sp subs pdp subs ls none | vs NA vt NA | ps NA nu sg gn m st a prs absent | phrase NP Subj | clause Ellp
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+   [qere side] WLC 4.18 atoms [16]: וְפֻם֙ notes [[]]
+      WLC 4.20: וְפֻם֙ notes [[]]
+      WLC 4.22: וְפֻם֙ notes [[]]
+      MAM:      וּפֻם֙
+      BHSA:     וְפֻם֙  (atoms [16])
+        slot 375001 וְ | W:- | lex W וְ and | sp conj pdp conj ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase CP Conj | clause Ellp
+        slot 375002 פֻם֙  | PUM03 | lex PM/ פֻּם mouth | sp subs pdp subs ls none | vs NA vt NA | ps NA nu sg gn m st a prs absent | phrase NP Subj | clause Ellp
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+
+== 42. Nehemiah 9:14 (forms.json, page 1956); BHSA Nehemia 9:14
+   IB:  הוֹדַעַתָ
+   MAM: הוֹדַעְתָּ
+   [ketiv side] WLC 4.18 atoms [3]: הוֹדַ֣עַתָ notes [['U']]
+      WLC 4.20: הוֹדַ֣עַתָ notes [[']U']]
+      WLC 4.22: הוֹדַ֣עַתָ notes [[']U']]
+      MAM:      הוֹדַ֣עְתָּ
+      BHSA:     הֹודַ֣עַתָ  (atoms [3])
+        slot 388066 הֹודַ֣עַתָ  | HOWDA74<AT@ | lex JD<[ ידע know | sp verb pdp verb ls none | vs hif vt perf | ps p2 nu sg gn m st NA prs absent | phrase VP Pred | clause WxQ0
+      BHSA==WLC4.18 by review key: False; BHSA==MAM by review key: False; full key: ==4.18 False, ==4.20 False, ==4.22 False
+   [qere side] WLC 4.18 atoms [3]: הוֹדַ֣עַתָ notes [['U']]
+      WLC 4.20: הוֹדַ֣עַתָ notes [[']U']]
+      WLC 4.22: הוֹדַ֣עַתָ notes [[']U']]
+      MAM:      הוֹדַ֣עְתָּ
+      BHSA:     הֹודַ֣עַתָ  (atoms [3])
+        slot 388066 הֹודַ֣עַתָ  | HOWDA74<AT@ | lex JD<[ ידע know | sp verb pdp verb ls none | vs hif vt perf | ps p2 nu sg gn m st NA prs absent | phrase VP Pred | clause WxQ0
+      BHSA==WLC4.18 by review key: False; BHSA==MAM by review key: False; full key: ==4.18 False, ==4.20 False, ==4.22 False
+
+== 43. 1 Chronicles 3:1 (forms.json, page 1982); BHSA Chronica_I 3:1
+   IB:  דָויִד
+   MAM: דָוִיד
+   [ketiv side] WLC 4.18 atoms [3]: דָויִ֔ד notes [['1']]
+      WLC 4.20: דָויִ֔ד notes [[']1']]
+      WLC 4.22: דָויִ֔ד notes [[']1']]
+      MAM:      דָוִ֔יד
+      BHSA:     דָויִ֔ד  (atoms [3])
+        slot 392549 דָויִ֔ד  | D@WJI80D | lex DWD==/ דָּוִד David | sp nmpr pdp nmpr ls none | vs NA vt NA | ps NA nu sg gn m st a prs n/a | phrase NP PreC | clause WXQt
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+   [qere side] WLC 4.18 atoms [3]: דָויִ֔ד notes [['1']]
+      WLC 4.20: דָויִ֔ד notes [[']1']]
+      WLC 4.22: דָויִ֔ד notes [[']1']]
+      MAM:      דָוִ֔יד
+      BHSA:     דָויִ֔ד  (atoms [3])
+        slot 392549 דָויִ֔ד  | D@WJI80D | lex DWD==/ דָּוִד David | sp nmpr pdp nmpr ls none | vs NA vt NA | ps NA nu sg gn m st a prs n/a | phrase NP PreC | clause WXQt
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+
+== 44. Deut 3:22 (review.md tour table row 1, page 457); BHSA Deuteronomium 3:22
+   IB:  תְִּירָאוּם
+   MAM: תִּירָאוּם
+   [ketiv side] WLC 4.18 atoms [1]: תְִּירָא֑וּם notes [['Q', 'n', 'v']]
+      WLC 4.20: תְִּירָא֑וּם notes [[']Q', ']n', ']v']]
+      WLC 4.22: תְִּירָא֑וּם notes [[']Q', ']n', ']v']]
+      MAM:      תִּֽירָא֑וּם
+      BHSA:     תִּֽירָא֑וּם  (atoms [1])
+        slot 95000 תִּֽירָא֑וּם  | T.I45JR@>92W.M | lex JR>[ ירא fear | sp verb pdp verb ls none | vs qal vt impf | ps p2 nu pl gn m st NA prs M | phrase VP PreO | clause xYq0
+      BHSA==WLC4.18 by review key: False; BHSA==MAM by review key: True; full key: ==4.18 False, ==4.20 False, ==4.22 False
+   [qere side] WLC 4.18 atoms [1]: תְִּירָא֑וּם notes [['Q', 'n', 'v']]
+      WLC 4.20: תְִּירָא֑וּם notes [[']Q', ']n', ']v']]
+      WLC 4.22: תְִּירָא֑וּם notes [[']Q', ']n', ']v']]
+      MAM:      תִּֽירָא֑וּם
+      BHSA:     תִּֽירָא֑וּם  (atoms [1])
+        slot 95000 תִּֽירָא֑וּם  | T.I45JR@>92W.M | lex JR>[ ירא fear | sp verb pdp verb ls none | vs qal vt impf | ps p2 nu pl gn m st NA prs M | phrase VP PreO | clause xYq0
+      BHSA==WLC4.18 by review key: False; BHSA==MAM by review key: True; full key: ==4.18 False, ==4.20 False, ==4.22 False
+
+== 45. Isa 49:23 (review.md tour table row 2, page 1054); BHSA Jesaia 49:23
+   IB:  קוָֹי׃
+   MAM: קֹוָי׃
+   [ketiv side] WLC 4.18 atoms [19]: קוָֹֽי׃ notes [[]]
+      WLC 4.20: קוָֹֽי׃ notes [[]]
+      WLC 4.22: קוָֹֽי׃ notes [[]]
+      MAM:      קֹוָֽי׃
+      BHSA:     קֹוָֽי  (atoms [19])
+        slot 229568 קֹוָֽי׃ ס  | QOW@75J | lex QWH[ קוה wait for | sp verb pdp subs ls none | vs qal vt ptca | ps unknown nu pl gn m st a prs J | phrase NP Subj | clause xYqX
+      BHSA==WLC4.18 by review key: False; BHSA==MAM by review key: True; full key: ==4.18 False, ==4.20 False, ==4.22 False
+   [qere side] WLC 4.18 atoms [19]: קוָֹֽי׃ notes [[]]
+      WLC 4.20: קוָֹֽי׃ notes [[]]
+      WLC 4.22: קוָֹֽי׃ notes [[]]
+      MAM:      קֹוָֽי׃
+      BHSA:     קֹוָֽי  (atoms [19])
+        slot 229568 קֹוָֽי׃ ס  | QOW@75J | lex QWH[ קוה wait for | sp verb pdp subs ls none | vs qal vt ptca | ps unknown nu pl gn m st a prs J | phrase NP Subj | clause xYqX
+      BHSA==WLC4.18 by review key: False; BHSA==MAM by review key: True; full key: ==4.18 False, ==4.20 False, ==4.22 False
+
+== 46. Lam 3:25 (review.md tour table row 3, page 1813); BHSA Threni 3:25
+   IB:  לְקוָֹו
+   MAM: לְקֹוָו
+   [ketiv side] WLC 4.18 atoms [2]: לְקוָֹ֔ו notes [['Q', 'q']]
+      WLC 4.20: לְקוָֹ֔ו notes [[']Q', ']q']]
+      WLC 4.22: לְקוָֹ֔ו notes [[']Q', ']q']]
+      MAM:      לְקֹוָ֔ו
+      BHSA:     לְקֹוָ֔ו  (atoms [2])
+        slot 364638 ל | *L- | lex L לְ to | sp prep pdp prep ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs absent | phrase PP Cmpl | clause AjCl | qere לְ kq_hybrid לְ
+        slot 364639 קוו  | *QWW | lex QWH[ קוה wait for | sp verb pdp subs ls none | vs qal vt ptca | ps unknown nu pl gn m st a prs W | phrase PP Cmpl | clause AjCl | qere קֹוָ֔יו kq_hybrid קֹוָ֔ו
+      BHSA==WLC4.18 by review key: False; BHSA==MAM by review key: True; full key: ==4.18 False, ==4.20 False, ==4.22 False
+   [qere side] WLC 4.18 atoms [2]: לְקוָֹ֔ו notes [['Q', 'q']]
+      WLC 4.20: לְקוָֹ֔ו notes [[']Q', ']q']]
+      WLC 4.22: לְקוָֹ֔ו notes [[']Q', ']q']]
+      MAM:      לְקֹוָ֔ו
+      BHSA:     לְקֹוָ֔יו  (atoms [2])
+        slot 364638 ל | *L- | lex L לְ to | sp prep pdp prep ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs absent | phrase PP Cmpl | clause AjCl | qere לְ kq_hybrid לְ
+        slot 364639 קוו  | *QWW | lex QWH[ קוה wait for | sp verb pdp subs ls none | vs qal vt ptca | ps unknown nu pl gn m st a prs W | phrase PP Cmpl | clause AjCl | qere קֹוָ֔יו kq_hybrid קֹוָ֔ו
+      BHSA==WLC4.18 by review key: False; BHSA==MAM by review key: False; full key: ==4.18 False, ==4.20 False, ==4.22 False
+
+== 47. Lam 4:4 (review.md tour table row 4, page 1816); BHSA Threni 4:4
+   IB:  אֶל־חכּוֹ
+   MAM: אֶל־חִכּוֹ
+   [ketiv side] WLC 4.18 atoms [3, 4]: אֶל־ | חכּ֖וֹ notes [[], ['Q', 'n', 'v']]
+      WLC 4.20: אֶל־ | חכּ֖וֹ notes [[], [']Q', ']n', ']v']]
+      WLC 4.22: אֶל־ | חכּ֖וֹ notes [[], [']Q', ']n', ']v']]
+      MAM:      אֶל־ | חִכּ֖וֹ
+      BHSA:     אֶל־ | חִכֹּ֖ו  (atoms [3, 4])
+        slot 365001 אֶל־ | >EL | lex >L אֶל to | sp prep pdp prep ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs absent | phrase PP Cmpl | clause ZQtX
+        slot 365002 חִכֹּ֖ו  | XIK.O73W | lex XK/ חֵךְ palate | sp subs pdp subs ls none | vs NA vt NA | ps NA nu sg gn m st a prs W | phrase PP Cmpl | clause ZQtX
+      BHSA==WLC4.18 by review key: False; BHSA==MAM by review key: False; full key: ==4.18 False, ==4.20 False, ==4.22 False
+   [qere side] WLC 4.18 atoms [3, 4]: אֶל־ | חכּ֖וֹ notes [[], ['Q', 'n', 'v']]
+      WLC 4.20: אֶל־ | חכּ֖וֹ notes [[], [']Q', ']n', ']v']]
+      WLC 4.22: אֶל־ | חכּ֖וֹ notes [[], [']Q', ']n', ']v']]
+      MAM:      אֶל־ | חִכּ֖וֹ
+      BHSA:     אֶל־ | חִכֹּ֖ו  (atoms [3, 4])
+        slot 365001 אֶל־ | >EL | lex >L אֶל to | sp prep pdp prep ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs absent | phrase PP Cmpl | clause ZQtX
+        slot 365002 חִכֹּ֖ו  | XIK.O73W | lex XK/ חֵךְ palate | sp subs pdp subs ls none | vs NA vt NA | ps NA nu sg gn m st a prs W | phrase PP Cmpl | clause ZQtX
+      BHSA==WLC4.18 by review key: False; BHSA==MAM by review key: False; full key: ==4.18 False, ==4.20 False, ==4.22 False
+
+== 48. Eccl 2:23 (review.md tour table row 5, page 1827); BHSA Ecclesiastes 2:23
+   IB:  לִבּו
+   MAM: לִבּוֹ
+   [ketiv side] WLC 4.18 atoms [10]: לִבּ֑ו notes [['Q', 'n', 'v']]
+      WLC 4.20: לִבּ֑וֹ notes [[]]
+      WLC 4.22: לִבּ֑וֹ notes [[]]
+      MAM:      לִבּ֑וֹ
+      BHSA:     לִבֹּ֑ו  (atoms [10])
+        slot 360061 לִבֹּ֑ו  | LIB.O92W | lex LB/ לֵב heart | sp subs pdp subs ls none | vs NA vt NA | ps NA nu sg gn m st a prs W | phrase NP Subj | clause xQtX
+      BHSA==WLC4.18 by review key: False; BHSA==MAM by review key: False; full key: ==4.18 False, ==4.20 False, ==4.22 False
+   [qere side] WLC 4.18 atoms [10]: לִבּ֑ו notes [['Q', 'n', 'v']]
+      WLC 4.20: לִבּ֑וֹ notes [[]]
+      WLC 4.22: לִבּ֑וֹ notes [[]]
+      MAM:      לִבּ֑וֹ
+      BHSA:     לִבֹּ֑ו  (atoms [10])
+        slot 360061 לִבֹּ֑ו  | LIB.O92W | lex LB/ לֵב heart | sp subs pdp subs ls none | vs NA vt NA | ps NA nu sg gn m st a prs W | phrase NP Subj | clause xQtX
+      BHSA==WLC4.18 by review key: False; BHSA==MAM by review key: False; full key: ==4.18 False, ==4.20 False, ==4.22 False
+
+== 49. Exod 20:3 (review.md Decalogue table row 1, page 198); BHSA Exodus 20:3
+   IB:  עַל־פָּנָיַ
+   MAM: עַל־פָּנַי
+   [ketiv side] WLC 4.18 atoms [5, 6]: עַל־ | פָּנָֽ֗יַ notes [[], ['1']]
+      WLC 4.20: עַל־ | פָּנָֽ֗יַ notes [[], [']1']]
+      WLC 4.22: עַל־ | פָּנַָֽ֗י notes [[], [']1']]
+      MAM:      עַל־ | פָּנַ֗י
+      BHSA:     עַל־ | פָּנָֽ֗יַ  (atoms [5, 6])
+        slot 39623 עַל־ | <AL | lex <L עַל upon | sp prep pdp prep ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs absent | phrase PP Adju | clause xYqX
+        slot 39624 פָּנָֽ֗יַ׃  | P.@N@8175JA | lex PNH/ פָּנֶה face | sp subs pdp subs ls none | vs NA vt NA | ps NA nu pl gn m st a prs J | phrase PP Adju | clause xYqX
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 False
+   [qere side] WLC 4.18 atoms [5, 6]: עַל־ | פָּנָֽ֗יַ notes [[], ['1']]
+      WLC 4.20: עַל־ | פָּנָֽ֗יַ notes [[], [']1']]
+      WLC 4.22: עַל־ | פָּנַָֽ֗י notes [[], [']1']]
+      MAM:      עַל־ | פָּנַ֗י
+      BHSA:     עַל־ | פָּנָֽ֗יַ  (atoms [5, 6])
+        slot 39623 עַל־ | <AL | lex <L עַל upon | sp prep pdp prep ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs absent | phrase PP Adju | clause xYqX
+        slot 39624 פָּנָֽ֗יַ׃  | P.@N@8175JA | lex PNH/ פָּנֶה face | sp subs pdp subs ls none | vs NA vt NA | ps NA nu pl gn m st a prs J | phrase PP Adju | clause xYqX
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 False
+
+== 50. Deut 5:7 (review.md Decalogue table row 2, page 463); BHSA Deuteronomium 5:7
+   IB:  עַל־פָּנָיַ
+   MAM: עַל־פָּנַי
+   [ketiv side] WLC 4.18 atoms [5, 6]: עַל־ | פָּנָֽ֗יַ׃ notes [[], []]
+      WLC 4.20: עַל־ | פָּנָֽ֗יַ׃ notes [[], []]
+      WLC 4.22: עַל־ | פָּנָֽ֗יַ׃ notes [[], []]
+      MAM:      עַל־ | פָּנַ֗י
+      BHSA:     עַל־ | פָּנָֽ֗יַ  (atoms [5, 6])
+        slot 96431 עַל־ | <AL | lex <L עַל upon | sp prep pdp prep ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs absent | phrase PP PreC | clause xYqX
+        slot 96432 פָּנָֽ֗יַ׃  | P.@N@7581JA | lex PNH/ פָּנֶה face | sp subs pdp subs ls none | vs NA vt NA | ps NA nu pl gn m st a prs J | phrase PP PreC | clause xYqX
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+   [qere side] WLC 4.18 atoms [5, 6]: עַל־ | פָּנָֽ֗יַ׃ notes [[], []]
+      WLC 4.20: עַל־ | פָּנָֽ֗יַ׃ notes [[], []]
+      WLC 4.22: עַל־ | פָּנָֽ֗יַ׃ notes [[], []]
+      MAM:      עַל־ | פָּנַ֗י
+      BHSA:     עַל־ | פָּנָֽ֗יַ  (atoms [5, 6])
+        slot 96431 עַל־ | <AL | lex <L עַל upon | sp prep pdp prep ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs absent | phrase PP PreC | clause xYqX
+        slot 96432 פָּנָֽ֗יַ׃  | P.@N@7581JA | lex PNH/ פָּנֶה face | sp subs pdp subs ls none | vs NA vt NA | ps NA nu pl gn m st a prs J | phrase PP PreC | clause xYqX
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+
+== 51. Exod 20:4 (review.md Decalogue table row 3, page 198); BHSA Exodus 20:4
+   IB:  מִתַָּחַת
+   MAM: מִתַּחַת
+   [ketiv side] WLC 4.18 atoms [11]: מִתַָּ֑֜חַת notes [['1']]
+      WLC 4.20: מִתַָּ֑֜חַת notes [[']1']]
+      WLC 4.22: מִתַָּ֑֜חַת notes [[']1']]
+      MAM:      מִתַּ֜חַת
+      BHSA:     מִתַָּ֑֜חַת  (atoms [11])
+        slot 39643 מִ | MI- | lex MN מִן from | sp prep pdp prep ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs absent | phrase PP PreC | clause NmCl
+        slot 39644 תַָּ֑֜חַת  | T.@9261AXAT | lex TXT/ תַּחַת under part | sp subs pdp subs ls ppre | vs NA vt NA | ps NA nu sg gn m st a prs absent | phrase PP PreC | clause NmCl
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+   [qere side] WLC 4.18 atoms [11]: מִתַָּ֑֜חַת notes [['1']]
+      WLC 4.20: מִתַָּ֑֜חַת notes [[']1']]
+      WLC 4.22: מִתַָּ֑֜חַת notes [[']1']]
+      MAM:      מִתַּ֜חַת
+      BHSA:     מִתַָּ֑֜חַת  (atoms [11])
+        slot 39643 מִ | MI- | lex MN מִן from | sp prep pdp prep ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs absent | phrase PP PreC | clause NmCl
+        slot 39644 תַָּ֑֜חַת  | T.@9261AXAT | lex TXT/ תַּחַת under part | sp subs pdp subs ls ppre | vs NA vt NA | ps NA nu sg gn m st a prs absent | phrase PP PreC | clause NmCl
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+
+== 52. Exod 20:9 (review.md Decalogue table row 4, page 198); BHSA Exodus 20:9
+   IB:  כָּל־מְלַאכְתֶּךָ
+   MAM: כׇל־מְלַאכְתֶּךָ
+   [ketiv side] WLC 4.18 atoms [4, 5]: כָּל־ | מְלַאכְתֶּֽךָ֒ notes [[], ['1']]
+      WLC 4.20: כָּל־ | מְלַאכְתֶּֽךָ֒ notes [[], [']1']]
+      WLC 4.22: כָּל־ | מְלַאכְתֶּֽךָ֒ notes [[], [']1']]
+      MAM:      כׇל־ | מְלַאכְתֶּ֒ךָ֒
+      BHSA:     כָּל־ | מְלַאכְתֶּֽךָ֒  (atoms [4, 5])
+        slot 39723 כָּל־ | K.@L | lex KL/ כֹּל whole | sp subs pdp subs ls nmdi | vs NA vt NA | ps NA nu sg gn m st c prs absent | phrase NP Objc | clause WQt0
+        slot 39724 מְלַאכְתֶּֽךָ֒׃  | M:LA>K:T.E75K@01 | lex ML>KT/ מְלֶאכֶת work | sp subs pdp subs ls none | vs NA vt NA | ps NA nu sg gn f st a prs K | phrase NP Objc | clause WQt0
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+   [qere side] WLC 4.18 atoms [4, 5]: כָּל־ | מְלַאכְתֶּֽךָ֒ notes [[], ['1']]
+      WLC 4.20: כָּל־ | מְלַאכְתֶּֽךָ֒ notes [[], [']1']]
+      WLC 4.22: כָּל־ | מְלַאכְתֶּֽךָ֒ notes [[], [']1']]
+      MAM:      כׇל־ | מְלַאכְתֶּ֒ךָ֒
+      BHSA:     כָּל־ | מְלַאכְתֶּֽךָ֒  (atoms [4, 5])
+        slot 39723 כָּל־ | K.@L | lex KL/ כֹּל whole | sp subs pdp subs ls nmdi | vs NA vt NA | ps NA nu sg gn m st c prs absent | phrase NP Objc | clause WQt0
+        slot 39724 מְלַאכְתֶּֽךָ֒׃  | M:LA>K:T.E75K@01 | lex ML>KT/ מְלֶאכֶת work | sp subs pdp subs ls none | vs NA vt NA | ps NA nu sg gn f st a prs K | phrase NP Objc | clause WQt0
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+
+== 53. Exod 20:10 (review.md Decalogue table row 5, page 198); BHSA Exodus 20:10
+   IB:  לֹא־תַעֲשֶׂה
+   MAM: לֹא תַעֲשֶׂה
+   [ketiv side] WLC 4.18 atoms [5, 6]: לֹֽ֣א־ | תַעֲשֶׂ֣֨ה notes [[], []]
+      WLC 4.20: לֹֽ֣א־ | תַעֲשֶׂ֣֨ה notes [[], []]
+      WLC 4.22: לֹֽ֣א־ | תַעֲשֶׂ֣֨ה notes [[], []]
+      MAM:      לֹ֣א | תַעֲשֶׂ֣ה
+      BHSA:     לֹֽ֣א־ | תַעֲשֶׂ֣֨ה  (atoms [5, 6])
+        slot 39733 לֹֽ֣א־ | LO4574> | lex L> לֹא not | sp nega pdp nega ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase NegP Nega | clause xYqX
+        slot 39734 תַעֲשֶׂ֣֨ה  | TA<:AFE6374H | lex <FH[ עשׂה make | sp verb pdp verb ls none | vs qal vt impf | ps p2 nu sg gn m st NA prs absent | phrase VP Pred | clause xYqX
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+   [qere side] WLC 4.18 atoms [5, 6]: לֹֽ֣א־ | תַעֲשֶׂ֣֨ה notes [[], []]
+      WLC 4.20: לֹֽ֣א־ | תַעֲשֶׂ֣֨ה notes [[], []]
+      WLC 4.22: לֹֽ֣א־ | תַעֲשֶׂ֣֨ה notes [[], []]
+      MAM:      לֹ֣א | תַעֲשֶׂ֣ה
+      BHSA:     לֹֽ֣א־ | תַעֲשֶׂ֣֨ה  (atoms [5, 6])
+        slot 39733 לֹֽ֣א־ | LO4574> | lex L> לֹא not | sp nega pdp nega ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase NegP Nega | clause xYqX
+        slot 39734 תַעֲשֶׂ֣֨ה  | TA<:AFE6374H | lex <FH[ עשׂה make | sp verb pdp verb ls none | vs qal vt impf | ps p2 nu sg gn m st NA prs absent | phrase VP Pred | clause xYqX
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+
+== 54. Deut 5:8 (review.md Decalogue table row 6, page 463); BHSA Deuteronomium 5:8
+   IB:  לֹא־תַעֲשֶׂה־לְךָ
+   MAM: לֹא תַעֲשֶׂה־לְךָ
+   [ketiv side] WLC 4.18 atoms [0, 1, 2]: לֹֽ֣א־ | תַעֲשֶׂ֥ה־ | לְךָ֥֣ notes [[], [], []]
+      WLC 4.20: לֹֽ֣א־ | תַעֲשֶׂ֥ה־ | לְךָ֥֣ notes [[], [], []]
+      WLC 4.22: לֹֽ֣א־ | תַעֲשֶׂ֥ה־ | לְךָ֥֣ notes [[], [], []]
+      MAM:      לֹ֣א | תַעֲשֶֽׂה־ | לְךָ֣
+      BHSA:     לֹֽ֣א־ | תַעֲשֶׂ֥ה־ | לְךָ֥֣  (atoms [0, 1, 2])
+        slot 96433 לֹֽ֣א־ | LO9574> | lex L> לֹא not | sp nega pdp nega ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase NegP Nega | clause xYq0
+        slot 96434 תַעֲשֶׂ֥ה־ | TA<:AFE71H | lex <FH[ עשׂה make | sp verb pdp verb ls none | vs qal vt impf | ps p2 nu sg gn m st NA prs absent | phrase VP Pred | clause xYq0
+        slot 96435 לְךָ֥֣  | L:K@7174 | lex L לְ to | sp prep pdp prep ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs K | phrase PP Cmpl | clause xYq0
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+   [qere side] WLC 4.18 atoms [0, 1, 2]: לֹֽ֣א־ | תַעֲשֶׂ֥ה־ | לְךָ֥֣ notes [[], [], []]
+      WLC 4.20: לֹֽ֣א־ | תַעֲשֶׂ֥ה־ | לְךָ֥֣ notes [[], [], []]
+      WLC 4.22: לֹֽ֣א־ | תַעֲשֶׂ֥ה־ | לְךָ֥֣ notes [[], [], []]
+      MAM:      לֹ֣א | תַעֲשֶֽׂה־ | לְךָ֣
+      BHSA:     לֹֽ֣א־ | תַעֲשֶׂ֥ה־ | לְךָ֥֣  (atoms [0, 1, 2])
+        slot 96433 לֹֽ֣א־ | LO9574> | lex L> לֹא not | sp nega pdp nega ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs n/a | phrase NegP Nega | clause xYq0
+        slot 96434 תַעֲשֶׂ֥ה־ | TA<:AFE71H | lex <FH[ עשׂה make | sp verb pdp verb ls none | vs qal vt impf | ps p2 nu sg gn m st NA prs absent | phrase VP Pred | clause xYq0
+        slot 96435 לְךָ֥֣  | L:K@7174 | lex L לְ to | sp prep pdp prep ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs K | phrase PP Cmpl | clause xYq0
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+
+== 55. Deut 5:8 (review.md Decalogue table row 7, page 463); BHSA Deuteronomium 5:8
+   IB:  מִתָּחַת
+   MAM: מִתַּחַת
+   [ketiv side] WLC 4.18 atoms [11]: מִתָּ֑֜חַת notes [[]]
+      WLC 4.20: מִתָּ֑֜חַת notes [[]]
+      WLC 4.22: מִתָּ֑֜חַת notes [[]]
+      MAM:      מִתַּ֜חַת
+      BHSA:     מִתָּ֑֜חַת  (atoms [11])
+        slot 96450 מִ | MI- | lex MN מִן from | sp prep pdp prep ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs absent | phrase PP PreC | clause NmCl
+        slot 96451 תָּ֑֜חַת  | T.@6192XAT | lex TXT/ תַּחַת under part | sp subs pdp subs ls ppre | vs NA vt NA | ps NA nu sg gn m st a prs absent | phrase PP PreC | clause NmCl
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+   [qere side] WLC 4.18 atoms [11]: מִתָּ֑֜חַת notes [[]]
+      WLC 4.20: מִתָּ֑֜חַת notes [[]]
+      WLC 4.22: מִתָּ֑֜חַת notes [[]]
+      MAM:      מִתַּ֜חַת
+      BHSA:     מִתָּ֑֜חַת  (atoms [11])
+        slot 96450 מִ | MI- | lex MN מִן from | sp prep pdp prep ls none | vs NA vt NA | ps NA nu NA gn NA st NA prs absent | phrase PP PreC | clause NmCl
+        slot 96451 תָּ֑֜חַת  | T.@6192XAT | lex TXT/ תַּחַת under part | sp subs pdp subs ls ppre | vs NA vt NA | ps NA nu sg gn m st a prs absent | phrase PP PreC | clause NmCl
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 True
+
+== 56. Deut 5:13 (review.md Decalogue table row 8, page 463); BHSA Deuteronomium 5:13
+   IB:  כָּל־מְלַאכְתֶּךָ
+   MAM: כׇל־מְלַאכְתֶּךָ
+   [ketiv side] WLC 4.18 atoms [4, 5]: כָּֿל־ | מְלַאכְתֶּֽךָ֒׃ notes [[], []]
+      WLC 4.20: כָּֿל־ | מְלַאכְתֶּֽךָ֒׃ notes [[], []]
+      WLC 4.22: כָּל־ | מְלַאכְתֶּֽךָ֒׃ notes [[], []]
+      MAM:      כׇל־ | מְלַאכְתֶּ֒ךָ֒
+      BHSA:     כָּֿל־ | מְלַאכְתֶּֽךָ֒  (atoms [4, 5])
+        slot 96536 כָּֿל־ | K.,@L | lex KL/ כֹּל whole | sp subs pdp subs ls nmdi | vs NA vt NA | ps NA nu sg gn m st c prs absent | phrase NP Objc | clause WQt0
+        slot 96537 מְלַאכְתֶּֽךָ֒׃  | M:LA>K:T.E75K@01 | lex ML>KT/ מְלֶאכֶת work | sp subs pdp subs ls none | vs NA vt NA | ps NA nu sg gn f st a prs K | phrase NP Objc | clause WQt0
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 False
+   [qere side] WLC 4.18 atoms [4, 5]: כָּֿל־ | מְלַאכְתֶּֽךָ֒׃ notes [[], []]
+      WLC 4.20: כָּֿל־ | מְלַאכְתֶּֽךָ֒׃ notes [[], []]
+      WLC 4.22: כָּל־ | מְלַאכְתֶּֽךָ֒׃ notes [[], []]
+      MAM:      כׇל־ | מְלַאכְתֶּ֒ךָ֒
+      BHSA:     כָּֿל־ | מְלַאכְתֶּֽךָ֒  (atoms [4, 5])
+        slot 96536 כָּֿל־ | K.,@L | lex KL/ כֹּל whole | sp subs pdp subs ls nmdi | vs NA vt NA | ps NA nu sg gn m st c prs absent | phrase NP Objc | clause WQt0
+        slot 96537 מְלַאכְתֶּֽךָ֒׃  | M:LA>K:T.E75K@01 | lex ML>KT/ מְלֶאכֶת work | sp subs pdp subs ls none | vs NA vt NA | ps NA nu sg gn f st a prs K | phrase NP Objc | clause WQt0
+      BHSA==WLC4.18 by review key: True; BHSA==MAM by review key: False; full key: ==4.18 True, ==4.20 True, ==4.22 False
+

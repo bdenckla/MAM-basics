@@ -1,0 +1,496 @@
+Test A, lines 259 to 309 of out/30-part2-test-a.txt (309 lines in the file, 305 groups in the JSON)
+
+line 259 (group 256 of 305) | stem/tense | key Hebrew יָּבֹוא | this: BW>[ qal impf x1
+    the key's analyses:
+      BW>[ qal wayq x19: 1Sam 4:13, 1Kgs 3:15, 1Kgs 7:14 ...
+      BW>[ qal impf x1: Eccl 2:12
+    Eccl 2:12 slot 359815: BHSA atom שֶׁיָּבֹוא֙ (שֶׁ C + יָּבֹוא֙ BW>[) | MAM atom שֶׁיָּבוֹא֙
+      slot before: 359814 שֶׁ [CE-] | C שַׁ '<relative>' | sp conj |  | phrase CP Rela | clause xYq0
+      this slot:   359815 יָּבֹוא֙  [J.@BOW>03] | BW>[ בוא 'come' | sp verb | qal impf ps p3 nu sg gn m | phrase VP Pred | clause xYq0
+      slot after:  359816 אַחֲרֵ֣י  [>AX:AR;74J] | >XR/ אַחַר 'after' | sp subs | nu pl gn m st c nme J | phrase PP Cmpl | clause xYq0
+
+line 260 (group 257 of 305) | stem/tense | key Hebrew יֹּאכַל | this: >KL[ qal impf x2
+    the key's analyses:
+      >KL[ qal wayq x21: Gen 3:6, Gen 25:34, Gen 27:25 ...
+      >KL[ qal impf x2: Eccl 2:24, Eccl 3:13
+    Eccl 2:24 slot 360072: BHSA atom שֶׁיֹּאכַ֣ל (שֶׁ C + יֹּאכַ֣ל >KL[) | MAM atom שֶׁיֹּאכַ֣ל
+      slot before: 360071 שֶׁ [CE-] | C שַׁ '<relative>' | sp conj |  | phrase CP Conj | clause xYq0
+      this slot:   360072 יֹּאכַ֣ל  [J.O>KA74L] | >KL[ אכל 'eat' | sp verb | qal impf ps p3 nu sg gn m | phrase VP Pred | clause xYq0
+      slot after:  360073 וְ [W:-] | W וְ 'and' | sp conj |  | phrase CP Conj | clause WQt0
+    Eccl 3:13 slot 360324: BHSA atom שֶׁיֹּאכַ֣ל (שֶׁ C + יֹּאכַ֣ל >KL[) | MAM atom שֶׁיֹּאכַ֣ל
+      slot before: 360323 שֶׁ [CE-] | C שַׁ '<relative>' | sp conj |  | phrase CP Rela | clause xYq0
+      this slot:   360324 יֹּאכַ֣ל  [J.O>KA74L] | >KL[ אכל 'eat' | sp verb | qal impf ps p3 nu sg gn m | phrase VP Pred | clause xYq0
+      slot after:  360325 וְ [W:-] | W וְ 'and' | sp conj |  | phrase CP Conj | clause WQt0
+
+line 261 (group 258 of 305) | lexeme | key Hebrew יִּרְאוּ | this: JR>[ qal impf x1
+    the key's analyses:
+      R>H[ qal wayq x39: Gen 6:2, Gen 12:14, Gen 12:15 ...
+      JR>[ qal wayq x9: Josh 4:14, 1Sam 4:7, 1Sam 7:7 ...
+      JR>[ qal impf x1: Eccl 3:14
+    Eccl 3:14 slot 360361: BHSA atom שֶׁיִּֽרְא֖וּ (שֶׁ C + יִּֽרְא֖וּ JR>[) | MAM atom שֶׁיִּֽרְא֖וּ
+      slot before: 360360 שֶׁ [CE-] | C שַׁ '<relative>' | sp conj |  | phrase CP Rela | clause xYq0
+      this slot:   360361 יִּֽרְא֖וּ  [J.I45R:>73W.] | JR>[ ירא 'fear' | sp verb | qal impf ps p3 nu pl gn m | phrase VP Pred | clause xYq0
+      slot after:  360362 מִ [MI-] | MN מִן 'from' | sp prep |  | phrase PP Cmpl | clause xYq0
+
+line 262 (group 259 of 305) | stem/tense | key Hebrew בַקֵּשׁ | this: BQC[ piel infa x1
+    the key's analyses:
+      BQC[ piel infc x28: 1Sam 10:2, 1Sam 10:14, 1Sam 23:15 ...
+      BQC[ piel infa x1: Eccl 7:25
+    Eccl 7:25 slot 361830: BHSA atom וּבַקֵּ֥שׁ (וּ W + בַקֵּ֥שׁ BQC[) | MAM atom וּבַקֵּ֥שׁ
+      slot before: 361829 וּ [W.-] | W וְ 'and' | sp conj |  | phrase CP Conj | clause InfA
+      this slot:   361830 בַקֵּ֥שׁ  [BAQ.;71C] | BQC[ בקשׁ 'seek' | sp verb | piel infa st a | phrase VP Pred | clause InfA
+      slot after:  361831 חָכְמָ֖ה  [X@K:M@73H] | XKMH/ חָכְמָה 'wisdom' | sp subs | nu sg gn f st a nme H | phrase NP Objc | clause InfA
+
+line 263 (group 260 of 305) | stem/tense | key Hebrew יֹּאמְרוּ | this: >MR[ qal impf x1
+    the key's analyses:
+      >MR[ qal wayq x297: Gen 11:3, Gen 11:4, Gen 18:5 ...
+      >MR[ qal impf x1: Lam 2:15
+    Lam 2:15 slot 364293: BHSA atom שֶׁיֹּֽאמְרוּ֙ (שֶׁ C + יֹּֽאמְרוּ֙ >MR[) | MAM atom שֶׁיֹּֽאמְרוּ֙
+      slot before: 364292 שֶׁ [CE-] | C שַׁ '<relative>' | sp conj |  | phrase CP Rela | clause xYq0
+      this slot:   364293 יֹּֽאמְרוּ֙  [J.O45>M:RW.03] | >MR[ אמר 'say' | sp verb | qal impf ps p3 nu pl gn m | phrase VP Pred | clause xYq0
+      slot after:  364294 כְּלִ֣ילַת  [K.:LI74JLAT] | KLJL/ כָּלִיל 'entire' | sp adjv | nu sg gn f st c nme T | phrase NP PreC | clause NmCl
+
+line 264 (group 261 of 305) | lexeme | key Hebrew נָבִיא | this: BW>[ hif impf x2
+    the key's analyses:
+      NBJ>/ x36: Gen 20:7, Deut 13:2, Deut 18:15 ...
+      BW>[ hif impf x2: Lam 5:9, Neh 10:38
+    Lam 5:9 slot 365344: BHSA atom נָבִ֣יא (נָבִ֣יא BW>[) | MAM atom נָבִ֣יא
+      slot before: 365343 נַפְשֵׁ֨נוּ֙  [NAP:C;33NW.03] | NPC/ נֶפֶשׁ 'soul' | sp subs | nu sg gn f st a prs NW | phrase PP Adju | clause xYq0
+      this slot:   365344 נָבִ֣יא  [N@BI74J>] | BW>[ בוא 'come' | sp verb | hif impf ps p1 nu pl | phrase VP Pred | clause xYq0
+      slot after:  365345 לַחְמֵ֔נוּ  [LAX:M;80NW.] | LXM/ לֶחֶם 'bread' | sp subs | nu sg st a prs NW | phrase NP Objc | clause xYq0
+    Neh 10:38 slot 389129: BHSA atom נָבִ֤יא (נָבִ֤יא BW>[) | MAM atom נָבִ֤יא
+      slot before: 389128 יִצְהָ֗ר  [JIY:H@81R] | JYHR/ יִצְהָר 'oil' | sp subs | nu sg gn m st a | phrase PP Objc | clause WxY0
+      this slot:   389129 נָבִ֤יא  [N@BI70J>] | BW>[ בוא 'come' | sp verb | hif impf ps p1 nu pl | phrase VP Pred | clause WxY0
+      slot after:  389130 לַ [LA-] | L לְ 'to' | sp prep |  | phrase PP Cmpl | clause WxY0
+
+line 265 (group 262 of 305) | lexeme | key Hebrew שְׁנָתֹו | this: CNH=/ x1
+    the key's analyses:
+      CNH/ x17: Lev 12:6, Lev 23:12, Num 6:12 ...
+      CNH=/ x1: Dan 2:1
+    Dan 2:1 slot 370549: BHSA atom וּשְׁנָתֹ֖ו (וּ W + שְׁנָתֹ֖ו CNH=/) | MAM atom וּשְׁנָת֖וֹ
+      slot before: 370548 וּ [W.-] | W וְ 'and' | sp conj |  | phrase CP Conj | clause WXQt
+      this slot:   370549 שְׁנָתֹ֖ו  [C:N@TO73W] | CNH=/ שֵׁנָה 'sleep' | sp subs | nu sg gn f st a prs W nme T | phrase NP Subj | clause WXQt
+      slot after:  370550 נִהְיְתָ֥ה  [NIH:J:T@71H] | HJH[ היה 'be' | sp verb | nif perf ps p3 nu sg gn f | phrase VP Pred | clause WXQt
+
+line 266 (group 263 of 305) | stem/tense | key Hebrew אֲדַבְּרָה | this: DBR[ piel wayq x1
+    the key's analyses:
+      DBR[ piel impf x15: Gen 18:32, Deut 5:31, Deut 31:28 ...
+      DBR[ piel wayq x1: Dan 10:16
+    Dan 10:16 slot 376804: BHSA atom וָאֲדַבְּרָה֙ (וָ W + אֲדַבְּרָה֙ DBR[) | MAM atom וָאֲדַבְּרָה֙
+      slot before: 376803 וָ [W@-] | W וְ 'and' | sp conj |  | phrase CP Conj | clause Way0
+      this slot:   376804 אֲדַבְּרָה֙  [>:ADAB.:R@H03] | DBR[ דבר 'speak' | sp verb | piel wayq ps p1 nu sg | phrase VP Pred | clause Way0
+      slot after:  376805 וָ [W@-] | W וְ 'and' | sp conj |  | phrase CP Conj | clause Way0
+
+line 267 (group 264 of 305) | lexeme | key Hebrew יָּמִין | this: JWM/ x1
+    the key's analyses:
+      JMJN/ x18: Gen 13:9, Exod 29:22, Lev 7:32 ...
+      JWM/ x1: Dan 12:13
+    Dan 12:13 slot 378150: BHSA atom הַיָּמִֽין (הַ H + יָּמִֽין JWM/) | MAM atom הַיָּמִֽין׃
+      slot before: 378149 הַ [HA-] | H הַ 'the' | sp art |  | phrase PP Time | clause WYq0
+      this slot:   378150 יָּמִֽין׃  [J.@MI75JN] | JWM/ יֹום 'day' | sp subs | nu pl gn m st a nme JN | phrase PP Time | clause WYq0
+      slot after:  378151 וּ [W.-] | W וְ 'and' | sp conj |  | phrase CP Conj | clause WxQX
+
+line 268 (group 265 of 305) | lexeme | key Hebrew מִסְפָּר | this: MSPR=/ x1
+    the key's analyses:
+      MSPR/ x40: Gen 34:30, Gen 41:49, Num 9:20 ...
+      MSPR=/ x1: Ezra 2:2
+    Ezra 2:2 slot 378463: BHSA atom מִסְפָּ֥ר (מִסְפָּ֥ר MSPR=/) | MAM atom מִסְפָּ֥ר
+      slot before: 378462 בִּלְשָׁ֛ן  [B.IL:C@91N] | BLCN/ בִּלְשָׁן 'Bilshan' | sp nmpr | nu sg gn m st a | phrase PP Adju | clause xQt0
+      this slot:   378463 מִסְפָּ֥ר  [MIS:P.@71R] | MSPR=/ מִסְפָּר 'Mispar' | sp nmpr | nu sg gn m st a | phrase PP Adju | clause xQt0
+      slot after:  378464 בִּגְוַ֖י  [B.IG:WA73J] | BGWJ/ בִּגְוַי 'Bigvai' | sp nmpr | nu sg gn m st a | phrase PP Adju | clause xQt0
+
+line 269 (group 266 of 305) | lexeme | key Hebrew כְּרוּב | this: KRWB=/ x2
+    the key's analyses:
+      KRWB/ x24: Exod 25:19, Exod 37:8, 2Sam 22:11 ...
+      KRWB=/ x2: Ezra 2:59, Neh 7:61
+    Ezra 2:59 slot 378893: BHSA atom כְּר֥וּב (כְּר֥וּב KRWB=/) | MAM atom כְּר֥וּב
+      slot before: 378892 תֵּ֣ל חַרְשָׁ֔א  [T.;74L_XAR:C@80>] | TL_XRC>/ תֵּל חַרְשָׁא 'Tel Harsha' | sp nmpr | nu sg st a | phrase PP Cmpl | clause Ptcp
+      this slot:   378893 כְּר֥וּב  [K.:R71W.B] | KRWB=/ כְּרוּב 'Kerub' | sp nmpr | nu sg st a | phrase PP Cmpl | clause Ptcp
+      slot after:  378894 אַדָּ֖ן  [>AD.@73N] | >DN=/ אַדָּן 'Addon' | sp nmpr | nu sg st a | phrase PP Cmpl | clause Ptcp
+    Neh 7:61 slot 386925: BHSA atom כְּר֥וּב (כְּר֥וּב KRWB=/) | MAM atom כְּר֥וּב
+      slot before: 386924 תֵּ֣ל חַרְשָׁ֔א  [T.;74L_XAR:C@80>] | TL_XRC>/ תֵּל חַרְשָׁא 'Tel Harsha' | sp nmpr | nu sg st a | phrase PP Cmpl | clause Ptcp
+      this slot:   386925 כְּר֥וּב  [K.:R71W.B] | KRWB=/ כְּרוּב 'Kerub' | sp nmpr | nu sg st a | phrase PP Cmpl | clause Ptcp
+      slot after:  386926 אַדֹּ֖ון  [>AD.O73WN] | >DWN=/ אַדֹּון 'Addon' | sp nmpr | nu sg st a | phrase PP Cmpl | clause Ptcp
+
+line 270 (group 267 of 305) | lexeme | key Hebrew יַּעֲנוּ | this: <NH==[ qal wayq x1
+    the key's analyses:
+      <NH[ qal wayq x15: Gen 23:5, Gen 34:13, Exod 19:8 ...
+      <NH==[ qal wayq x1: Ezra 3:11
+    Ezra 3:11 slot 379412: BHSA atom וַֽ֠יַּעֲנוּ (וַֽ֠ W + יַּעֲנוּ <NH==[) | MAM atom וַֽ֠יַּעֲנ֠וּ
+      slot before: 379411 וַֽ֠ [14WA95-] | W וְ 'and' | sp conj |  | phrase CP Conj | clause Way0
+      this slot:   379412 יַּעֲנוּ  [J.A<:ANW.] | <NH==[ ענה 'sing' | sp verb | qal wayq ps p3 nu pl gn m | phrase VP Pred | clause Way0
+      slot after:  379413 בְּ [B.:-] | B בְּ 'in' | sp prep |  | phrase VP Pred | clause InfC
+
+line 271 (group 268 of 305) | stem/tense | key Hebrew אָשִׁיב | this: CWB[ hif wayq x2
+    the key's analyses:
+      CWB[ hif impf x23: Gen 24:5, Deut 32:41, 1Sam 12:3 ...
+      CWB[ hif wayq x2: Neh 2:20, Neh 6:4
+    Neh 2:20 slot 384238: BHSA atom וָאָשִׁ֨יב (וָ W + אָשִׁ֨יב CWB[) | MAM atom וָאָשִׁ֨יב
+      slot before: 384237 וָ [W@-] | W וְ 'and' | sp conj |  | phrase CP Conj | clause Way0
+      this slot:   384238 אָשִׁ֨יב  [>@CI63JB] | CWB[ שׁוב 'return' | sp verb | hif wayq ps p1 nu sg | phrase VP Pred | clause Way0
+      slot after:  384239 אֹותָ֜ם  [>OWT@61M] | >T אֵת '<object marker>' | sp prep | prs M | phrase PP Objc | clause Way0
+    Neh 6:4 slot 386000: BHSA atom וָאָשִׁ֥יב (וָ W + אָשִׁ֥יב CWB[) | MAM atom וָאָשִׁ֥יב
+      slot before: 385999 וָ [W@-] | W וְ 'and' | sp conj |  | phrase CP Conj | clause Way0
+      this slot:   386000 אָשִׁ֥יב  [>@CI71JB] | CWB[ שׁוב 'return' | sp verb | hif wayq ps p1 nu sg | phrase VP Pred | clause Way0
+      slot after:  386001 אֹותָ֖ם  [>OWT@73M] | >T אֵת '<object marker>' | sp prep | prs M | phrase PP Objc | clause Way0
+
+line 272 (group 269 of 305) | lexeme | key Hebrew יַּעַזְבוּ | this: <ZB=[ qal wayq x1
+    the key's analyses:
+      <ZB[ qal wayq x11: Josh 8:17, Judg 2:12, Judg 2:13 ...
+      <ZB=[ qal wayq x1: Neh 3:8
+    Neh 3:8 slot 384427: BHSA atom וַיַּֽעַזְבוּ֙ (וַ W + יַּֽעַזְבוּ֙ <ZB=[) | MAM atom וַיַּֽעַזְבוּ֙
+      slot before: 384426 וַ [WA-] | W וְ 'and' | sp conj |  | phrase CP Conj | clause Way0
+      this slot:   384427 יַּֽעַזְבוּ֙  [J.A45<AZ:BW.03] | <ZB=[ עזב 'flag' | sp verb | qal wayq ps p3 nu pl gn m | phrase VP Pred | clause Way0
+      slot after:  384428 יְר֣וּשָׁלִַ֔ם  [J:R74W.C@LA80IM] | JRWCLM/ יְרוּשָׁלִַם 'Jerusalem' | sp nmpr | nu sg st a | phrase PrNP Objc | clause Way0
+
+line 273 (group 270 of 305) | stem/tense | key Hebrew נַעֲשֶׂה | this: <FH[ nif ptca x1
+    the key's analyses:
+      <FH[ qal impf x27: Gen 1:26, Gen 11:4, Exod 19:8 ...
+      <FH[ nif ptca x1: Neh 5:18
+    Neh 5:18 slot 385847: BHSA atom נַעֲשֶׂ֜ה (נַעֲשֶׂ֜ה <FH[) | MAM atom נַעֲשֶׂ֜ה
+      slot before: 385846 הָיָ֨ה  [H@J@63H] | HJH[ היה 'be' | sp verb | qal perf ps p3 nu sg gn m | phrase VP Pred | clause xQt0
+      this slot:   385847 נַעֲשֶׂ֜ה  [NA<:AFE61H] | <FH[ עשׂה 'make' | sp verb | nif ptca nu sg gn m st a | phrase VP PreC | clause xQt0
+      slot after:  385848 לְ [L:-] | L לְ 'to' | sp prep |  | phrase PP Adju | clause xQt0
+
+line 274 (group 271 of 305) | lexeme | key Hebrew מִרְיָם | this: MRJ/ x1
+    the key's analyses:
+      MRJM/ x15: Exod 15:20, Exod 15:21, Num 12:1 ...
+      MRJ/ x1: Neh 9:17
+    Neh 9:17 slot 388150: BHSA atom בְּמִרְיָ֑ם (בְּ B + מִרְיָ֑ם MRJ/) | MAM atom בְּמִרְיָ֑ם
+      slot before: 388149 בְּ [B.:-] | B בְּ 'in' | sp prep |  | phrase PP Adju | clause InfC
+      this slot:   388150 מִרְיָ֑ם  [MIR:J@92M] | MRJ/ מְרִי 'rebellion' | sp subs | nu sg gn m st a prs M | phrase PP Adju | clause InfC
+      slot after:  388151 וְ [W:-] | W וְ 'and' | sp conj |  | phrase CP Conj | clause NmCl
+
+line 275 (group 272 of 305) | lexeme | key Hebrew עָנָן | this: <NN=/ x1
+    the key's analyses:
+      <NN/ x76: Gen 9:13, Gen 9:14, Gen 9:14 ...
+      <NN=/ x1: Neh 10:27
+    Neh 10:27 slot 388840: BHSA atom עָנָֽן (עָנָֽן <NN=/) | MAM atom עָנָֽן׃
+      slot before: 388839 חָנָ֖ן  [X@N@73N] | XNN/ חָנָן 'Hanan' | sp nmpr | nu sg gn m st a | phrase PrNP Subj | clause Ellp
+      this slot:   388840 עָנָֽן׃  [<@N@75N] | <NN=/ עָנָן 'Anan' | sp nmpr | nu sg gn m st a | phrase PrNP Subj | clause Ellp
+      slot after:  388841 מַלּ֥וּךְ  [MAL.71W.K:] | MLWK/ מַלּוּךְ 'Malluch' | sp nmpr | nu sg gn m st a | phrase PrNP Subj | clause Ellp
+
+line 276 (group 273 of 305) | lexeme | key Hebrew יֵשׁוּעַ | this: JCW<=/ x1
+    the key's analyses:
+      JCW</ x28: Ezra 2:2, Ezra 2:6, Ezra 2:36 ...
+      JCW<=/ x1: Neh 11:26
+    Neh 11:26 slot 389688: BHSA atom וּבְיֵשׁ֥וּעַ (וּ W + בְ B + יֵשׁ֥וּעַ JCW<=/) | MAM atom וּבְיֵשׁ֥וּעַ
+      slot before: 389687 בְ [B:-] | B בְּ 'in' | sp prep |  | phrase PP PreC | clause NmCl
+      this slot:   389688 יֵשׁ֥וּעַ  [J;C71W.<A] | JCW<=/ יֵשׁוּעַ 'Jeshua' | sp nmpr | nu sg st a | phrase PP PreC | clause NmCl
+      slot after:  389689 וּ [W.-] | W וְ 'and' | sp conj |  | phrase PP PreC | clause NmCl
+
+line 277 (group 274 of 305) | lexeme | key Hebrew אַפַּיִם | this: >PJM/ x1
+    the key's analyses:
+      >P/ x27: Gen 19:1, Gen 42:6, Exod 34:6 ...
+      >PJM/ x1: 1Chr 2:31
+    1Chr 2:31 slot 392239: BHSA atom אַפַּ֖יִם (אַפַּ֖יִם >PJM/) | MAM atom אַפַּ֖יִם
+      slot before: 392238 בְנֵ֥י  [B:N;71J] | BN/ בֵּן 'son' | sp subs | nu pl gn m st c nme J | phrase NP Subj | clause NmCl
+      this slot:   392239 אַפַּ֖יִם  [>AP.A73JIM] | >PJM/ אַפָּיִם 'Appaim' | sp nmpr | nu sg gn m st a | phrase NP Subj | clause NmCl
+      slot after:  392240 יִשְׁעִ֑י  [JIC:<I92J] | JC<J/ יִשְׁעִי 'Ishi' | sp nmpr | nu sg gn m st a | phrase PrNP PreC | clause NmCl
+
+line 278 (group 275 of 305) | lexeme | key Hebrew שָׁמַע | this: CM<===/ x1
+    the key's analyses:
+      CM<[ qal perf x72: Gen 16:11, Gen 21:17, Gen 24:52 ...
+      CM<=/ x1: Ps 150:5
+      CM<===/ x1: 1Chr 2:43
+    1Chr 2:43 slot 392388: BHSA atom וָשָֽׁמַע (וָ W + שָֽׁמַע CM<===/) | MAM atom וָשָֽׁמַע׃
+      slot before: 392387 וָ [W@-] | W וְ 'and' | sp conj |  | phrase PrNP PreC | clause NmCl
+      this slot:   392388 שָֽׁמַע׃  [C@75MA<] | CM<===/ שֶׁמַע 'Shema' | sp nmpr | nu sg gn m st a | phrase PrNP PreC | clause NmCl
+      slot after:  392389 וְ [W:-] | W וְ 'and' | sp conj |  | phrase CP Conj | clause WXQt
+
+line 279 (group 276 of 305) | lexeme | key Hebrew שֶׁבֶר | this: CBR===/ x1
+    the key's analyses:
+      CBR/ x28: Lev 21:19, Lev 21:19, Lev 24:20 ...
+      CBR=/ x4: Gen 42:1, Gen 42:2, Gen 42:19 ...
+      CBR===/ x1: 1Chr 2:48
+    1Chr 2:48 slot 392445: BHSA atom שֶׁ֖בֶר (שֶׁ֖בֶר CBR===/) | MAM atom שֶׁ֖בֶר
+      slot before: 392444 יָ֥לַד  [J@71LAD] | JLD[ ילד 'bear' | sp verb | qal perf ps p3 nu sg gn m | phrase VP Pred | clause XQtl
+      this slot:   392445 שֶׁ֖בֶר  [CE73BER] | CBR===/ שֶׁבֶר 'Sheber' | sp nmpr | nu sg gn m st a | phrase PrNP Objc | clause XQtl
+      slot after:  392446 וְ [W:-] | W וְ 'and' | sp conj |  | phrase PrNP Objc | clause XQtl
+
+line 280 (group 277 of 305) | lexeme | key Hebrew אֹהֶל | this: >HL=/ x1
+    the key's analyses:
+      >HL/ x235: Gen 4:20, Gen 18:1, Gen 18:2 ...
+      >HL=/ x1: 1Chr 3:20
+    1Chr 3:20 slot 392751: BHSA atom וָ֠אֹהֶל (וָ֠ W + אֹהֶל >HL=/) | MAM atom וָ֠אֹ֠הֶל
+      slot before: 392750 וָ֠ [14W@-] | W וְ 'and' | sp conj |  | phrase PrNP PreC | clause NmCl
+      this slot:   392751 אֹהֶל  [>OHEL] | >HL=/ אֹהֶל 'Ohel' | sp nmpr | nu sg gn m st a | phrase PrNP PreC | clause NmCl
+      slot after:  392752 וּ [W.-] | W וְ 'and' | sp conj |  | phrase PrNP PreC | clause NmCl
+
+line 281 (group 278 of 305) | lexeme | key Hebrew מְחִיר | this: MXJR=/ x1
+    the key's analyses:
+      MXJR/ x13: Deut 23:19, 2Sam 24:24, 1Kgs 10:28 ...
+      MXJR=/ x1: 1Chr 4:11
+    1Chr 4:11 slot 392978: BHSA atom מְחִ֑יר (מְחִ֑יר MXJR=/) | MAM atom מְחִ֑יר
+      slot before: 392977 אֶת־ [>ET] | >T אֵת '<object marker>' | sp prep |  | phrase PP Objc | clause WXQt
+      this slot:   392978 מְחִ֑יר  [M:XI92JR] | MXJR=/ מְחִיר 'Mehir' | sp nmpr | nu sg gn m st a | phrase PP Objc | clause WXQt
+      slot after:  392979 ה֖וּא  [H73W.>] | HW> הוּא 'he' | sp prps | ps p3 nu sg gn m | phrase PPrP Subj | clause NmCl
+
+line 282 (group 279 of 305) | lexeme | key Hebrew רִנָּה | this: RNH=/ x1
+    the key's analyses:
+      RNH/ x25: 1Kgs 8:28, 1Kgs 22:36, Isa 14:7 ...
+      RNH=/ x1: 1Chr 4:20
+    1Chr 4:20 slot 393117: BHSA atom וְרִנָּ֔ה (וְ W + רִנָּ֔ה RNH=/) | MAM atom וְרִנָּ֔ה
+      slot before: 393116 וְ [W:-] | W וְ 'and' | sp conj |  | phrase PrNP PreC | clause NmCl
+      this slot:   393117 רִנָּ֔ה  [RIN.@80H] | RNH=/ רִנָּה 'Rinnah' | sp nmpr | nu sg gn m st a | phrase PrNP PreC | clause NmCl
+      slot after:  393118 בֶּן־חָנָ֖ן  [B.EN&X@N@73N] | BN_XNN/ בֶּן חָנָן 'Ben-Hanan' | sp nmpr | nu sg gn m st a | phrase PrNP PreC | clause NmCl
+
+line 283 (group 280 of 305) | lexeme | key Hebrew עֶצֶם | this: <YM===/ x1
+    the key's analyses:
+      <YM/ x28: Gen 2:23, Gen 7:13, Gen 17:23 ...
+      <YM===/ x1: 1Chr 4:29
+    1Chr 4:29 slot 393241: BHSA atom וּבְעֶ֖צֶם (וּ W + בְ B + עֶ֖צֶם <YM===/) | MAM atom וּבְעֶ֖צֶם
+      slot before: 393240 בְ [B:-] | B בְּ 'in' | sp prep |  | phrase PP Cmpl | clause Ellp
+      this slot:   393241 עֶ֖צֶם  [<E73YEM] | <YM===/ עֶצֶם 'Ezem' | sp nmpr | nu sg st a | phrase PP Cmpl | clause Ellp
+      slot after:  393242 וּ [W.-] | W וְ 'and' | sp conj |  | phrase PP Cmpl | clause Ellp
+
+line 284 (group 281 of 305) | lexeme | key Hebrew בָּעַל | this: B<L=/ x1
+    the key's analyses:
+      B<L/ x15: Gen 20:3, 1Kgs 16:32, 2Kgs 10:19 ...
+      B<L=/ x1: 1Chr 4:33
+    1Chr 4:33 slot 393292: BHSA atom בָּ֑עַל (בָּ֑עַל B<L=/) | MAM atom בָּ֑עַל
+      slot before: 393291 עַד־ [<AD] | <D עַד 'unto' | sp prep |  | phrase PP Adju | clause NmCl
+      this slot:   393292 בָּ֑עַל  [B.@92<AL] | B<L=/ בָּעַל 'Baalath' | sp nmpr | nu sg st a | phrase PP Adju | clause NmCl
+      slot after:  393293 זֹ֚את  [10ZO>T] | Z>T זֹאת 'this' | sp prde | nu sg gn f | phrase DPrP Subj | clause NmCl
+
+line 285 (group 282 of 305) | lexeme | key Hebrew בַּעַל | this: B<L==/ x1
+    the key's analyses:
+      B<L/ x64: Gen 37:19, Exod 21:3, Exod 21:22 ...
+      B<L==/ x1: 1Chr 5:5
+    1Chr 5:5 slot 393536: BHSA atom בַּ֥עַל (בַּ֥עַל B<L==/) | MAM atom בַּ֥עַל
+      slot before: 393535 בְנֹ֖ו  [B:NO73W] | BN/ בֵּן 'son' | sp subs | nu sg gn m st a prs W | phrase PrNP PreC | clause NmCl
+      this slot:   393536 בַּ֥עַל  [B.A71<AL] | B<L==/ בַּעַל 'Baal' | sp nmpr | nu sg gn m st a | phrase PrNP PreC | clause NmCl
+      slot after:  393537 בְּנֹֽו׃  [B.:NO75W] | BN/ בֵּן 'son' | sp subs | nu sg gn m st a prs W | phrase PrNP PreC | clause NmCl
+
+line 286 (group 283 of 305) | lexeme | key Hebrew אֲחִי | this: >XJ=/ x2
+    the key's analyses:
+      >X/ x36: Gen 10:21, Gen 14:12, Gen 14:13 ...
+      >XJ=/ x2: 1Chr 5:15, 1Chr 7:34
+    1Chr 5:15 slot 393686: BHSA atom אֲחִי֙ (אֲחִי֙ >XJ=/) | MAM atom אֲחִי֙
+      slot before: 393685 בּֽוּז׃  [B.75W.Z] | BWZ=/ בּוּז 'Buz' | sp nmpr | nu sg gn m st a | phrase NP PreC | clause NmCl
+      this slot:   393686 אֲחִי֙  [>:AXIJ03] | >XJ=/ אֲחִי 'Ahi' | sp nmpr | nu sg gn m st a | phrase PrNP Subj | clause NmCl
+      slot after:  393687 בֶּן־ [B.EN] | BN/ בֵּן 'son' | sp subs | nu sg gn m st c | phrase PrNP Subj | clause NmCl
+    1Chr 7:34 slot 395485: BHSA atom אֲחִ֥י (אֲחִ֥י >XJ=/) | MAM atom אֲחִ֥י
+      slot before: 395484 שָׁ֑מֶר  [C@92MER] | CMR=/ שֶׁמֶר 'Shemer' | sp nmpr | nu sg gn m st a | phrase NP Subj | clause NmCl
+      this slot:   395485 אֲחִ֥י  [>:AXI71J] | >XJ=/ אֲחִי 'Ahi' | sp nmpr | nu sg gn m st a | phrase PrNP PreC | clause NmCl
+      slot after:  395486 ו [*W-] | W וְ 'and' | sp conj |  | phrase PrNP PreC | clause NmCl | qere וְ
+
+line 287 (group 284 of 305) | lexeme | key Hebrew תַּחַת | this: TXT==/ x2
+    the key's analyses:
+      TXT/ x298: Gen 1:7, Gen 1:9, Gen 4:25 ...
+      TXT==/ x2: 1Chr 6:9, 1Chr 6:22
+    1Chr 6:9 slot 394169: BHSA atom תַּ֤חַת (תַּ֤חַת TXT==/) | MAM atom תַּ֤חַת
+      slot before: 394168 בְּנֹֽו׃  [B.:NO75W] | BN/ בֵּן 'son' | sp subs | nu sg gn m st a prs W | phrase PrNP PreC | clause NmCl
+      this slot:   394169 תַּ֤חַת  [T.A70XAT] | TXT==/ תַּחַת 'Tahath' | sp nmpr | nu sg gn m st a | phrase PrNP PreC | clause NmCl
+      slot after:  394170 בְּנֹו֙  [B.:NOW03] | BN/ בֵּן 'son' | sp subs | nu sg gn m st a prs W | phrase PrNP PreC | clause NmCl
+    1Chr 6:22 slot 394302: BHSA atom תַּ֨חַת֙ (תַּ֨חַת֙ TXT==/) | MAM atom תַּ֙חַת֙
+      slot before: 394301 בֶּן־ [B.EN] | BN/ בֵּן 'son' | sp subs | nu sg gn m st c | phrase NP Subj | clause Ellp
+      this slot:   394302 תַּ֨חַת֙  [T.A33XAT03] | TXT==/ תַּחַת 'Tahath' | sp nmpr | nu sg gn m st a | phrase NP Subj | clause Ellp
+      slot after:  394303 בֶּן־ [B.EN] | BN/ בֵּן 'son' | sp subs | nu sg gn m st c | phrase NP Subj | clause Ellp
+
+line 288 (group 285 of 305) | lexeme | key Hebrew בִּלְעָם | this: BL<M=/ x1
+    the key's analyses:
+      BL<M/ x51: Num 22:5, Num 22:7, Num 22:8 ...
+      BL<M=/ x1: 1Chr 6:55
+    1Chr 6:55 slot 394759: BHSA atom בִּלְעָ֖ם (בִּלְעָ֖ם BL<M=/) | MAM atom בִּלְעָ֖ם
+      slot before: 394758 אֶת־ [>ET] | >T אֵת '<object marker>' | sp prep |  | phrase PP Objc | clause Ellp
+      this slot:   394759 בִּלְעָ֖ם  [B.IL:<@73M] | BL<M=/ בִּלְעָם 'Bileam' | sp nmpr | nu sg st a | phrase PP Objc | clause Ellp
+      slot after:  394760 וְ [W:-] | W וְ 'and' | sp conj |  | phrase PP Objc | clause Ellp
+
+line 289 (group 286 of 305) | lexeme | key Hebrew מָשָׁל | this: MCL===/ x1
+    the key's analyses:
+      MCL/ x17: Deut 28:37, 1Sam 10:12, 1Kgs 5:12 ...
+      MCL[ qal perf x2: Dan 11:4, Dan 11:5
+      MCL===/ x1: 1Chr 6:59
+    1Chr 6:59 slot 394823: BHSA atom מָשָׁ֖ל (מָשָׁ֖ל MCL===/) | MAM atom מָשָׁ֖ל
+      slot before: 394822 אֶת־ [>ET] | >T אֵת '<object marker>' | sp prep |  | phrase PP Objc | clause Ellp
+      this slot:   394823 מָשָׁ֖ל  [M@C@73L] | MCL===/ מָשָׁל 'Mashal' | sp nmpr | nu sg st a | phrase PP Objc | clause Ellp
+      slot after:  394824 וְ [W:-] | W וְ 'and' | sp conj |  | phrase PP Objc | clause Ellp
+
+line 290 (group 287 of 305) | lexeme | key Hebrew עִיר | this: <JR====/ x1
+    the key's analyses:
+      <JR/ x627: Gen 4:17, Gen 4:17, Gen 10:12 ...
+      <JR===/ x2: Jer 15:8, Hos 11:9
+      <WR[ hif infc x1: Ps 73:20
+      <JR====/ x1: 1Chr 7:12
+    1Chr 7:12 slot 395170: BHSA atom עִ֔יר (עִ֔יר <JR====/) | MAM atom עִ֔יר
+      slot before: 395169 בְּנֵ֣י  [B.:N;74J] | BN/ בֵּן 'son' | sp subs | nu pl gn m st c nme J | phrase PrNP PreC | clause NmCl
+      this slot:   395170 עִ֔יר  [<I80JR] | <JR====/ עִיר 'Ir' | sp nmpr | nu sg gn m st a | phrase PrNP PreC | clause NmCl
+      slot after:  395171 חֻשִׁ֖ם  [XUCI73M] | XCM=/ חֻשִׁם 'Hushim' | sp nmpr | nu sg st a | phrase PrNP PreC | clause NmCl
+
+line 291 (group 288 of 305) | lexeme | key Hebrew אַחֵר | this: >XR==/ x1
+    the key's analyses:
+      >XR=/ x57: Gen 4:25, Gen 29:19, Gen 30:24 ...
+      >XR==/ x1: 1Chr 7:12
+    1Chr 7:12 slot 395173: BHSA atom אַחֵֽר (אַחֵֽר >XR==/) | MAM atom אַחֵֽר׃
+      slot before: 395172 בְּנֵ֥י  [B.:N;71J] | BN/ בֵּן 'son' | sp subs | nu pl gn m st c nme J | phrase PrNP PreC | clause NmCl
+      this slot:   395173 אַחֵֽר׃  [>AX;75R] | >XR==/ אַחֵר 'Aher' | sp nmpr | nu sg gn m st a | phrase PrNP PreC | clause NmCl
+      slot after:  395174 בְּנֵ֣י  [B.:N;74J] | BN/ בֵּן 'son' | sp subs | nu pl gn m st c nme J | phrase NP Subj | clause NmCl
+
+line 292 (group 289 of 305) | lexeme | key Hebrew תַחַת | this: TXT==/ x2
+    the key's analyses:
+      TXT/ x37: Gen 30:2, Gen 50:19, Exod 24:10 ...
+      TXT==/ x2: 1Chr 7:20, 1Chr 7:20
+    1Chr 7:20 slot 395283: BHSA atom וְתַ֣חַת (וְ W + תַ֣חַת TXT==/) | MAM atom וְתַ֣חַת
+      slot before: 395282 וְ [W:-] | W וְ 'and' | sp conj |  | phrase PrNP PreC | clause NmCl
+      this slot:   395283 תַ֣חַת  [TA74XAT] | TXT==/ תַּחַת 'Tahath' | sp nmpr | nu sg gn m st a | phrase PrNP PreC | clause NmCl
+      slot after:  395284 בְּנֹ֔ו  [B.:NO80W] | BN/ בֵּן 'son' | sp subs | nu sg gn m st a prs W | phrase PrNP PreC | clause NmCl
+    1Chr 7:20 slot 395289: BHSA atom וְתַ֥חַת (וְ W + תַ֥חַת TXT==/) | MAM atom וְתַ֥חַת
+      slot before: 395288 וְ [W:-] | W וְ 'and' | sp conj |  | phrase PrNP PreC | clause NmCl
+      this slot:   395289 תַ֥חַת  [TA71XAT] | TXT==/ תַּחַת 'Tahath' | sp nmpr | nu sg gn m st a | phrase PrNP PreC | clause NmCl
+      slot after:  395290 בְּנֹֽו׃  [B.:NO75W] | BN/ בֵּן 'son' | sp subs | nu sg gn m st a prs W | phrase PrNP PreC | clause NmCl
+
+line 293 (group 290 of 305) | lexeme | key Hebrew עָמָל | this: <ML==/ x1
+    the key's analyses:
+      <ML/ x27: Num 23:21, Isa 10:1, Isa 59:4 ...
+      <ML==/ x1: 1Chr 7:35
+    1Chr 7:35 slot 395502: BHSA atom וְעָמָֽל (וְ W + עָמָֽל <ML==/) | MAM atom וְעָמָֽל׃
+      slot before: 395501 וְ [W:-] | W וְ 'and' | sp conj |  | phrase PrNP PreC | clause NmCl
+      this slot:   395502 עָמָֽל׃  [<@M@75L] | <ML==/ עָמָל 'Amal' | sp nmpr | nu sg gn m st a | phrase PrNP PreC | clause NmCl
+      slot after:  395503 בְּנֵ֖י  [B.:N;73J] | BN/ בֵּן 'son' | sp subs | nu pl gn m st c nme J | phrase NP Subj | clause NmCl
+
+line 294 (group 291 of 305) | lexeme | key Hebrew הֹוד | this: HWD=/ x1
+    the key's analyses:
+      HWD/ x13: Isa 30:30, Zech 6:13, Ps 21:6 ...
+      HWD=/ x1: 1Chr 7:37
+    1Chr 7:37 slot 395516: BHSA atom וָהֹ֗וד (וָ W + הֹ֗וד HWD=/) | MAM atom וָה֗וֹד
+      slot before: 395515 וָ [W@-] | W וְ 'and' | sp conj |  | phrase PrNP PreC | clause NmCl
+      this slot:   395516 הֹ֗וד  [HO81WD] | HWD=/ הֹוד 'Hod' | sp nmpr | nu sg gn m st a | phrase PrNP PreC | clause NmCl
+      slot after:  395517 וְ [W:-] | W וְ 'and' | sp conj |  | phrase PrNP PreC | clause NmCl
+
+line 295 (group 292 of 305) | lexeme | key Hebrew חֹדֶשׁ | this: XDC==/ x1
+    the key's analyses:
+      XDC=/ x231: Gen 7:11, Gen 7:11, Gen 8:4 ...
+      XDC==/ x1: 1Chr 8:9
+    1Chr 8:9 slot 395658: BHSA atom חֹ֣דֶשׁ (חֹ֣דֶשׁ XDC==/) | MAM atom חֹ֣דֶשׁ
+      slot before: 395657 מִן־ [MIN] | MN מִן 'from' | sp prep |  | phrase PP Adju | clause Way0
+      this slot:   395658 חֹ֣דֶשׁ  [XO74DEC] | XDC==/ חֹדֶשׁ 'Hodesh' | sp nmpr | nu sg gn f st a | phrase PP Adju | clause Way0
+      slot after:  395659 אִשְׁתֹּ֑ו  [>IC:T.O92W] | >CH/ אִשָּׁה 'woman' | sp subs | nu sg gn f st a prs W nme T | phrase PP Adju | clause Way0
+
+line 296 (group 293 of 305) | lexeme | key Hebrew מִרְמָה | this: MRMH=/ x1
+    the key's analyses:
+      MRMH/ x36: Gen 27:35, Gen 34:13, 2Kgs 9:23 ...
+      MRMH=/ x1: 1Chr 8:10
+    1Chr 8:10 slot 395679: BHSA atom מִרְמָ֑ה (מִרְמָ֑ה MRMH=/) | MAM atom מִרְמָ֑ה
+      slot before: 395678 אֶת־ [>ET] | >T אֵת '<object marker>' | sp prep |  | phrase PP Objc | clause Ellp
+      this slot:   395679 מִרְמָ֑ה  [MIR:M@92H] | MRMH=/ מִרְמָה 'Mirmah' | sp nmpr | nu sg gn m st a | phrase PP Objc | clause Ellp
+      slot after:  395680 אֵ֥לֶּה  [>;71L.EH] | >LH אֵלֶּה 'these' | sp prde | nu pl | phrase DPrP Subj | clause NmCl
+
+line 297 (group 294 of 305) | lexeme | key Hebrew מֶלֶךְ | this: MLK==/ x2
+    the key's analyses:
+      MLK/ x992: Gen 14:1, Gen 14:1, Gen 14:1 ...
+      MLK==/ x2: 1Chr 8:35, 1Chr 9:41
+    1Chr 8:35 slot 395911: BHSA atom וָמֶ֖לֶךְ (וָ W + מֶ֖לֶךְ MLK==/) | MAM atom וָמֶ֖לֶךְ
+      slot before: 395910 וָ [W@-] | W וְ 'and' | sp conj |  | phrase PrNP PreC | clause NmCl
+      this slot:   395911 מֶ֖לֶךְ  [ME73LEK:] | MLK==/ מֶלֶךְ 'Melech' | sp nmpr | nu sg gn m st a | phrase PrNP PreC | clause NmCl
+      slot after:  395912 וְ [W:-] | W וְ 'and' | sp conj |  | phrase PrNP PreC | clause NmCl
+    1Chr 9:41 slot 396653: BHSA atom וָמֶ֖לֶךְ (וָ W + מֶ֖לֶךְ MLK==/) | MAM atom וָמֶ֖לֶךְ
+      slot before: 396652 וָ [W@-] | W וְ 'and' | sp conj |  | phrase PrNP PreC | clause NmCl
+      this slot:   396653 מֶ֖לֶךְ  [ME73LEK:] | MLK==/ מֶלֶךְ 'Melech' | sp nmpr | nu sg gn m st a | phrase PrNP PreC | clause NmCl
+      slot after:  396654 וְ [W:-] | W וְ 'and' | sp conj |  | phrase PrNP PreC | clause NmCl
+
+line 298 (group 295 of 305) | lexeme | key Hebrew בְרָכָה | this: BRKH==/ x1
+    the key's analyses:
+      BRKH/ x16: Gen 27:12, Gen 27:38, Deut 23:6 ...
+      BRKH==/ x1: 1Chr 12:3
+    1Chr 12:3 slot 397788: BHSA atom וּבְרָכָ֕ה (וּ W + בְרָכָ֕ה BRKH==/) | MAM atom וּבְרָכָ֕ה
+      slot before: 397787 וּ [W.-] | W וְ 'and' | sp conj |  | phrase PrNP Subj | clause Ellp
+      this slot:   397788 בְרָכָ֕ה  [B:R@K@85H] | BRKH==/ בְּרָכָה 'Beracah' | sp nmpr | nu sg gn m st a | phrase PrNP Subj | clause Ellp
+      slot after:  397789 וְ [W:-] | W וְ 'and' | sp conj |  | phrase PrNP Subj | clause Ellp
+
+line 299 (group 296 of 305) | lexeme | key Hebrew בֵּן | this: BN=/ x1
+    the key's analyses:
+      BN/ x92: Gen 4:25, Gen 4:26, Gen 5:28 ...
+      BN=/ x1: 1Chr 15:18
+    1Chr 15:18 slot 399349: BHSA atom בֵּ֡ן (בֵּ֡ן BN=/) | MAM atom בֵּ֡ן
+      slot before: 399348 זְכַרְיָ֡הוּ  [Z:KAR:J@83HW.] | ZKRJHW/ זְכַרְיָהוּ 'Zechariah' | sp nmpr | nu sg gn m st a | phrase NP Objc | clause Ellp
+      this slot:   399349 בֵּ֡ן  [B.;83N] | BN=/ בֵּן 'Ben' | sp nmpr | nu sg gn m st a | phrase NP Objc | clause Ellp
+      slot after:  399350 וְ [W:-] | W וְ 'and' | sp conj |  | phrase NP Objc | clause Ellp
+
+line 300 (group 297 of 305) | lexeme | key Hebrew שְׂעֹרִים | this: F<RJM/ x1
+    the key's analyses:
+      F<RH/ x20: Lev 27:16, Num 5:15, Judg 7:13 ...
+      F<RJM/ x1: 1Chr 24:8
+    1Chr 24:8 slot 403629: BHSA atom לִשְׂעֹרִ֖ים (לִ L + שְׂעֹרִ֖ים F<RJM/) | MAM atom לִשְׂעֹרִ֖ים
+      slot before: 403628 לִ [LI-] | L לְ 'to' | sp prep |  | phrase PP Cmpl | clause Ellp
+      this slot:   403629 שְׂעֹרִ֖ים  [F:<ORI73JM] | F<RJM/ שְׂעֹרִים 'Seorim' | sp nmpr | nu sg gn m st a | phrase PP Cmpl | clause Ellp
+      slot after:  403630 הָ [H@-] | H הַ 'the' | sp art |  | phrase NP Subj | clause Ellp
+
+line 301 (group 298 of 305) | lexeme | key Hebrew קֹרֵא | this: QWR>/ x1
+    the key's analyses:
+      QR>[ qal ptca x13: 1Sam 3:8, Isa 21:11, Isa 41:4 ...
+      QR>/ x1: Jer 17:11
+      QWR>/ x1: 1Chr 26:1
+    1Chr 26:1 slot 404301: BHSA atom קֹרֵ֖א (קֹרֵ֖א QWR>/) | MAM atom קֹרֵ֖א
+      slot before: 404300 בֶן־ [BEN] | BN/ בֵּן 'son' | sp subs | nu sg gn m st c | phrase PrNP Subj | clause NmCl
+      this slot:   404301 קֹרֵ֖א  [QOR;73>] | QWR>/ קֹורֵא 'Kore' | sp nmpr | nu sg gn m st a | phrase PrNP Subj | clause NmCl
+      slot after:  404302 מִן־ [MIN] | MN מִן 'from' | sp prep |  | phrase PrNP Subj | clause NmCl
+
+line 302 (group 299 of 305) | lexeme | key Hebrew עֹולָה | this: <LH[ qal ptca x1
+    the key's analyses:
+      <LH/ x35: Num 28:27, Josh 22:23, Josh 22:26 ...
+      <WLH/ x1: Isa 61:8
+      <LH[ qal ptca x1: 1Chr 26:16
+    1Chr 26:16 slot 404537: BHSA atom הָעֹולָ֑ה (הָ H + עֹולָ֑ה <LH[) | MAM atom הָעוֹלָ֑ה
+      slot before: 404536 הָ [H@-] | H הַ 'the' | sp art |  | phrase CP Rela | clause Ptcp
+      this slot:   404537 עֹולָ֑ה  [<OWL@92H] | <LH[ עלה 'ascend' | sp verb | qal ptca nu sg gn f st a nme H | phrase VP PreC | clause Ptcp
+      slot after:  404538 מִשְׁמָ֖ר  [MIC:M@73R] | MCMR/ מִשְׁמָר 'guard' | sp subs | nu sg gn m st a | phrase NP Adju | clause Ptcp
+
+line 303 (group 300 of 305) | lexeme | key Hebrew גָּדֹול | this: GDL[ qal infa x1
+    the key's analyses:
+      GDWL/ x244: Gen 4:13, Gen 10:21, Gen 12:2 ...
+      GDL[ qal infa x1: 2Chr 2:8
+    2Chr 2:8 slot 407475: BHSA atom גָּדֹ֥ול (גָּדֹ֥ול GDL[) | MAM atom גָּד֥וֹל
+      slot before: 407474 בֹונֶ֖ה  [BOWNE73H] | BNH[ בנה 'build' | sp verb | qal ptca nu sg gn m st a | phrase VP PreC | clause Ptcp
+      this slot:   407475 גָּדֹ֥ול  [G.@DO71WL] | GDL[ גדל 'be strong' | sp verb | qal infa st a | phrase AdvP PreC | clause NmCl
+      slot after:  407476 וְ [W:-] | W וְ 'and' | sp conj |  | phrase AdvP PreC | clause NmCl
+
+line 304 (group 301 of 305) | stem/tense | key Hebrew בֹוא | this: BW>[ qal impv x1
+    the key's analyses:
+      BW>[ qal infc x113: Gen 12:11, Gen 12:14, Gen 15:12 ...
+      BW>[ qal infa x3: Gen 37:10, Dan 11:10, Dan 11:13
+      BW>[ qal impv x1: 2Chr 18:29
+    2Chr 18:29 slot 415551: BHSA atom וָבֹ֣וא (וָ W + בֹ֣וא BW>[) | MAM atom וָב֣וֹא
+      slot before: 415550 וָ [W@-] | W וְ 'and' | sp conj |  | phrase CP Conj | clause WIm0
+      this slot:   415551 בֹ֣וא  [BO74W>] | BW>[ בוא 'come' | sp verb | qal impv ps p2 nu sg gn m | phrase VP Pred | clause WIm0
+      slot after:  415552 בַ [BA-] | B בְּ 'in' | sp prep |  | phrase PP Cmpl | clause WIm0
+
+line 305 (group 302 of 305) | lexeme | key Hebrew תְּדַבֵּר | this: DBR=[ piel wayq x1
+    the key's analyses:
+      DBR[ piel impf x19: Gen 31:24, Exod 4:12, Exod 19:6 ...
+      DBR[ piel wayq x15: Gen 39:17, Exod 32:13, Num 12:1 ...
+      DBR=[ piel wayq x1: 2Chr 22:10
+    2Chr 22:10 slot 417533: BHSA atom וַתְּדַבֵּ֛ר (וַ W + תְּדַבֵּ֛ר DBR=[) | MAM atom וַתְּדַבֵּ֛ר
+      slot before: 417532 וַ [WA-] | W וְ 'and' | sp conj |  | phrase CP Conj | clause Way0
+      this slot:   417533 תְּדַבֵּ֛ר  [T.:DAB.;91R] | DBR=[ דבר 'push back' | sp verb | piel wayq ps p3 nu sg gn f | phrase VP Pred | clause Way0
+      slot after:  417534 אֶת־ [>ET] | >T אֵת '<object marker>' | sp prep |  | phrase PP Objc | clause Way0
+
+line 306 (group 303 of 305) | lexeme | key Hebrew שָׁרֵת | this: CRT/ x1
+    the key's analyses:
+      CRT[ piel infc x18: Exod 28:35, Exod 28:43, Exod 29:30 ...
+      CRT/ x1: 2Chr 24:14
+    2Chr 24:14 slot 418569: BHSA atom שָׁרֵ֔ת (שָׁרֵ֔ת CRT/) | MAM atom שָׁרֵ֔ת
+      slot before: 418568 כְּלֵ֣י  [K.:L;74J] | KLJ/ כְּלִי 'tool' | sp subs | nu pl gn m st c nme J | phrase NP Objc | clause Way0
+      this slot:   418569 שָׁרֵ֔ת  [C@R;80T] | CRT/ שָׁרֵת 'cultic service' | sp subs | nu sg gn m st a | phrase NP Objc | clause Way0
+      slot after:  418570 וְ [W:-] | W וְ 'and' | sp conj |  | phrase NP Objc | clause Way0
+
+line 307 (group 304 of 305) | lexeme | key Hebrew חָזָק | this: XZQ[ qal perf x1
+    the key's analyses:
+      XZQ/ x19: Exod 10:19, Exod 19:16, Num 13:18 ...
+      XZQ[ qal perf x1: 2Chr 26:15
+    2Chr 26:15 slot 419936: BHSA atom חָזָֽק (חָזָֽק XZQ[) | MAM atom חָזָֽק׃
+      slot before: 419935 כִּֽי־ [K.I45J] | KJ כִּי 'that' | sp conj |  | phrase CP Conj | clause xQt0
+      this slot:   419936 חָזָֽק׃  [X@Z@75Q] | XZQ[ חזק 'be strong' | sp verb | qal perf ps p3 nu sg gn m | phrase VP Pred | clause xQt0
+      slot after:  419937 וּ [W.-] | W וְ 'and' | sp conj |  | phrase CP Conj | clause WxQX
+
+line 308 (group 305 of 305) | lexeme | key Hebrew מַעַל | this: M<L[ qal perf x1
+    the key's analyses:
+      M<L=/ x13: Lev 5:15, Lev 5:21, Num 5:6 ...
+      M<L[ qal perf x1: 2Chr 28:19
+    2Chr 28:19 slot 420804: BHSA atom מַ֖עַל (מַ֖עַל M<L[) | MAM atom מַ֖עַל
+      slot before: 420803 מָעֹ֥ול  [M@<O71WL] | M<L[ מעל 'be unfaithful' | sp verb | qal infa st a | phrase AdvP Modi | clause WxQ0
+      this slot:   420804 מַ֖עַל  [MA73<AL] | M<L[ מעל 'be unfaithful' | sp verb | qal perf ps p3 nu sg gn m | phrase VP Pred | clause WxQ0
+      slot after:  420805 בַּ [B.A-] | B בְּ 'in' | sp prep |  | phrase PP Cmpl | clause WxQ0
+
+line 309: empty
+

@@ -1,0 +1,26 @@
+colofon:6: phono = Phonetic transcription of the Hebrew text)
+home:108: | qere
+home:109: | word (qere)
+home:113: | qere_utf8
+home:114: | word (qere)
+home:128: | qere_trailer
+home:129: | after-word (qere)
+home:133: | qere_trailer_utf8
+home:134: | after-word (qere)
+index:49: with inclusion of the lexical features, the ketiv-qere data and the paragraph numbers.
+index:77: by citing this persistent identifier:
+news:18: There has been a conversion error: a single lexeme node became tied to a single stray node,
+news:19: due to a programming error.
+news:20: I have removed the error, and regenerated all versions of the BHSA, except 3, which was not affected.
+qere:1: Qere
+qere:2: title: qere¶
+qere:3: qere (to be read, if different from ketiv, what is written)
+qere:6: The unpointed representation of a qere word occurrence in Hebrew script when
+qere:7: the ketiv is a divergent from the qere.
+qere:8: When there is a ketiv-qere discrepancy, this feature contains the vocalized
+qere:9: qere, whereas the ketiv is generally unvocalised.
+qere:15: qere_trailer.
+qere:16: qere_utf8.
+qere:17: qere_trailer_utf8.
+vs:63: | tif
+vs:64: | tif‘al

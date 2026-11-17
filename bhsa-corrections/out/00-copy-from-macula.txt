@@ -1,0 +1,32 @@
+Copied from C:/Users/BenDe/GitRepos/MAM-basics/.novc/macula-al-beiti-2026-11-12/fetched
+etcbc-bhsa-2021-book/book.tf 199917 bytes
+etcbc-bhsa-2021-chapter/chapter.tf 66379 bytes
+etcbc-bhsa-2021-function/function.tf 1266461 bytes
+etcbc-bhsa-2021-g_word_utf8/g_word_utf8.tf 5392356 bytes
+etcbc-bhsa-2021-lex/lex.tf 1792859 bytes
+etcbc-bhsa-2021-oslots/oslots.tf 13526306 bytes
+etcbc-bhsa-2021-otype/otype.tf 667 bytes
+etcbc-bhsa-2021-pdp/pdp.tf 2104316 bytes
+etcbc-bhsa-2021-sp/sp.tf 2149214 bytes
+etcbc-bhsa-2021-trailer_utf8/trailer_utf8.tf 834560 bytes
+etcbc-bhsa-2021-typ/typ.tf 2592846 bytes
+etcbc-bhsa-2021-verse/verse.tf 61897 bytes
+etcbc-bhsa-branch-master/branch.json 5123 bytes
+etcbc-bhsa-readme/README.md 4688 bytes
+etcbc-bhsa-repo/repo.json 5962 bytes
+etcbc-bhsa-tf-listing/contents.json 5171 bytes
+etcbc-bhsa-tf2021-listing/contents.json 108321 bytes
+
+Checked against the tf/2021 listing (size, Git blob SHA-1):
+  book.tf size 199917 sha 70407385b60568eaeb44dbeb45f3a7dfafd2a6af OK
+  chapter.tf size 66379 sha 7834c771c0a42fe81b21a8284e95e4226a448108 OK
+  function.tf size 1266461 sha 07cffd7b21efe39f950897d51cae4c95d99b9d9f OK
+  g_word_utf8.tf size 5392356 sha f78cce06300190ed5c8ef9ca1fa72b16cdfca5eb OK
+  lex.tf size 1792859 sha 234224440026af0b2da9ece3dbeebfbf8da9ad6c OK
+  oslots.tf size 13526306 sha b389833f7624bb252dd2cf25cf798d4a6a82cc1b OK
+  otype.tf size 667 sha ecc4d0ecd388bd673d0aebfa8ab2a81508bec23c OK
+  pdp.tf size 2104316 sha a5e7ea43696118e8390cf1b07bed662dbd5dc1a0 OK
+  sp.tf size 2149214 sha d0dfb4d66ba34ff853e7f41b8dc9596e1a17bcc4 OK
+  trailer_utf8.tf size 834560 sha b1b083fa87f099584df0f52b278f8e2c0de6ef4f OK
+  typ.tf size 2592846 sha 10c075abd4da74088baa7f3675ca56edc09893de OK
+  verse.tf size 61897 sha 06046e58967de2a46b6e976584bd29c98fe2fdab OK

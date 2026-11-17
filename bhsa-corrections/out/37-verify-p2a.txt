@@ -1,0 +1,24 @@
+lex M<L[: 36 words; voc_lex [('מעל', 36)]; gloss [('be unfaithful', 36)]; sp [('verb', 36)]; language [('Hebrew', 36)]
+   forms by review key: [('מָעֲלוּ', 8), ('מָעַל', 5), ('מְעַלְתֶּם', 4), ('מָעֲלָה', 2), ('מְעֹל', 2), ('יִּמְעֲלוּ', 2), ('תִמְעֹל', 1), ('תִּמְעֹל', 1), ('מְעָל', 1), ('מַעֲלָם', 1), ('יִמְעַל', 1), ('מָעַלְנוּ', 1), ('תִּמְעָלוּ', 1), ('יִּמְעַל', 1), ('מָעַלְתָּ', 1), ('מָעֹול', 1), ('מַעַל', 1), ('מְעֹול', 1), ('מעול', 1)]
+lex M<L=/: 28 words; voc_lex [('מַעַל', 28)]; gloss [('unfaithfulness', 28)]; sp [('subs', 28)]; language [('Hebrew', 28)]
+   forms by review key: [('מַעַל', 13), ('מַעֲלָם', 4), ('מַעֲלֹו', 4), ('מָעַל', 3), ('מַּעַל', 3), ('מַעְלֹו', 1)]
+verse 2Chr 28:19
+   420788 כִּֽי־ | K.I45J | KJ כִּי that | sp conj pdp conj | vs NA vt NA | nu NA gn NA st NA prs n/a | phrase CP Conj | clause xQtX
+   420789 הִכְנִ֤יעַ  | HIK:NI70J<A | KN<[ כנע be humble | sp verb pdp verb | vs hif vt perf | nu sg gn m st NA prs absent | phrase VP Pred | clause xQtX
+   420790 יְהוָה֙  | J:HW@H03 | JHWH/ יְהוָה YHWH | sp nmpr pdp nmpr | vs NA vt NA | nu sg gn m st a prs n/a | phrase PrNP Subj | clause xQtX
+   420791 אֶת־ | >ET | >T אֵת <object marker> | sp prep pdp prep | vs NA vt NA | nu NA gn NA st NA prs absent | phrase PP Objc | clause xQtX
+   420792 יְהוּדָ֔ה  | J:HW.D@80H | JHWDH/ יְהוּדָה Judah | sp nmpr pdp nmpr | vs NA vt NA | nu sg gn unknown st a prs n/a | phrase PP Objc | clause xQtX
+   420793 בַּ | B.A- | B בְּ in | sp prep pdp prep | vs NA vt NA | nu NA gn NA st NA prs absent | phrase PP Adju | clause xQtX
+   420794 עֲב֖וּר  | <:AB73W.R | <BWR/ עֲבוּר way | sp subs pdp subs | vs NA vt NA | nu sg gn m st c prs absent | phrase PP Adju | clause xQtX
+   420795 אָחָ֣ז  | >@X@74Z | >XZ=/ אָחָז Ahaz | sp nmpr pdp nmpr | vs NA vt NA | nu sg gn m st a prs n/a | phrase PP Adju | clause xQtX
+   420796 מֶֽלֶךְ־ | ME45LEK: | MLK/ מֶלֶךְ king | sp subs pdp subs | vs NA vt NA | nu sg gn m st c prs absent | phrase PP Adju | clause xQtX
+   420797 יִשְׂרָאֵ֑ל  | JIF:R@>;92L | JFR>L/ יִשְׂרָאֵל Israel | sp nmpr pdp nmpr | vs NA vt NA | nu sg gn unknown st a prs n/a | phrase PP Adju | clause xQtX
+   420798 כִּ֤י  | K.I70J | KJ כִּי that | sp conj pdp conj | vs NA vt NA | nu NA gn NA st NA prs n/a | phrase CP Conj | clause xQt0
+   420799 הִפְרִ֨יעַ֙  | HIP:RI33J<A03 | PR<[ פרע let loose | sp verb pdp verb | vs hif vt perf | nu sg gn m st NA prs absent | phrase VP Pred | clause xQt0
+   420800 בִּֽ | B.I45- | B בְּ in | sp prep pdp prep | vs NA vt NA | nu NA gn NA st NA prs absent | phrase PP Cmpl | clause xQt0
+   420801 יהוּדָ֔ה  | JHW.D@80H | JHWDH/ יְהוּדָה Judah | sp nmpr pdp nmpr | vs NA vt NA | nu sg gn unknown st a prs n/a | phrase PP Cmpl | clause xQt0
+   420802 וּ | W.- | W וְ and | sp conj pdp conj | vs NA vt NA | nu NA gn NA st NA prs n/a | phrase CP Conj | clause WxQ0
+   420803 מָעֹ֥ול  | M@<O71WL | M<L[ מעל be unfaithful | sp verb pdp advb | vs qal vt infa | nu unknown gn unknown st a prs absent | phrase AdvP Modi | clause WxQ0
+   420804 מַ֖עַל  | MA73<AL | M<L[ מעל be unfaithful | sp verb pdp verb | vs qal vt perf | nu sg gn m st NA prs absent | phrase VP Pred | clause WxQ0
+   420805 בַּ | B.A- | B בְּ in | sp prep pdp prep | vs NA vt NA | nu NA gn NA st NA prs absent | phrase PP Cmpl | clause WxQ0
+   420806 יהוָֽה׃  | JHW@75H | JHWH/ יְהוָה YHWH | sp nmpr pdp nmpr | vs NA vt NA | nu sg gn m st a prs n/a | phrase PP Cmpl | clause WxQ0

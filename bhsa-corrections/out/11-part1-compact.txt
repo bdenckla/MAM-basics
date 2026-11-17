@@ -1,0 +1,391 @@
+1. Genesis 32:18 (forms.json)
+   ketiv: WLC418 וִשְׁאֵֽלְךָ֙ | 4.20 וִשְׁאֵֽלְךָ֙ | 4.22 וִשְׁאֵֽלְךָ֙ | UXLC2.6 וִשְׁאֵֽלְךָ֙ | MAM וּשְׁאֵֽלְךָ֙ | BHSA וִשְׁאֵֽלְךָ֙
+      bkey BHSA=UXLC2.6 True UXLC2.6=MAM False
+      skey BHSA=418 True BHSA=MAM False | bkey BHSA=418 True BHSA=MAM False | bfkey BHSA=418 True | fkey BHSA=418 True =420 True =422 True | notes [['1']]
+      וִ [WI-] W conj conj | CP Conj | and
+      שְׁאֵֽלְךָ֙ [C:>;45L:K@03] C>L[ verb verb qal perf ps=p3 nu=sg gn=m prs=K | VP PreO | ask
+   qere: as above
+2. Genesis 34:11 (forms.json)
+   ketiv: WLC418 אָבִ֣יה | 4.20 אָבִ֣יה | 4.22 אָבִ֣יה | UXLC2.6 אָבִ֣יה | MAM אָבִ֣יהָ | BHSA אָבִ֣יה
+      bkey BHSA=UXLC2.6 True UXLC2.6=MAM False
+      skey BHSA=418 True BHSA=MAM False | bkey BHSA=418 True BHSA=MAM False | bfkey BHSA=418 True | fkey BHSA=418 True =420 True =422 True | notes [['1']]
+      אָבִ֣יה [>@BI74JH] >B/ subs subs nu=sg gn=m st=a prs=H | PP Cmpl | father
+   qere: as above
+3. Exodus 1:3 (forms.json)
+   ketiv: WLC418 וּבְנְיָמִֽן׃ | 4.20 וּבְנְיָמִֽן׃ | 4.22 וּבְנְיָמִֽן׃ | UXLC2.6 וּבְנְיָמִֽן׃ | MAM וּבִנְיָמִֽן׃ | BHSA וּבְנְיָמִֽן
+      bkey BHSA=UXLC2.6 True UXLC2.6=MAM False
+      skey BHSA=418 True BHSA=MAM False | bkey BHSA=418 True BHSA=MAM False | bfkey BHSA=418 True | fkey BHSA=418 True =420 True =422 True | notes [['1']]
+      וּ [W.-] W conj conj | PrNP Subj | and
+      בְנְיָמִֽן [B:N:J@MI75N] BNJMN/ nmpr nmpr nu=sg gn=unknown st=a | PrNP Subj | Benjamin
+   qere: as above
+4. Exodus 10:28 (forms.json)
+   ketiv: WLC418 אֶל־ | 4.20 אֶל־ | 4.22 אֶל־ | UXLC2.6 אֶל־ | MAM אַל־ | BHSA אֶל־
+      bkey BHSA=UXLC2.6 True UXLC2.6=MAM False
+      skey BHSA=418 True BHSA=MAM False | bkey BHSA=418 True BHSA=MAM False | bfkey BHSA=418 True | fkey BHSA=418 True =420 True =422 True | notes [[]]
+      אֶל [>EL] >L= nega nega | NegP Nega | not
+   qere: as above
+5. Numbers 2:14 (forms.json)
+   ketiv: WLC418 וְמַטֵּ֖ה | 4.20 וְמַטֵּ֖ה | 4.22 וְמַטֵּ֖ה | UXLC2.6 וְמַטֵּ֖ה | MAM וּמַטֵּ֖ה | BHSA וְמַטֵּ֖ה
+      bkey BHSA=UXLC2.6 True UXLC2.6=MAM False
+      skey BHSA=418 True BHSA=MAM False | bkey BHSA=418 True BHSA=MAM False | bfkey BHSA=418 True | fkey BHSA=418 True =420 True =422 True | notes [[]]
+      וְ [W:-] W conj conj | CP Conj | and
+      מַטֵּ֖ה [MAV.;73H] MVH/ subs subs nu=sg gn=m st=c | NP Subj | staff
+   qere: as above
+6. Numbers 26:7 (forms.json)
+   ketiv: WLC418 הָרֻֽאוּבֵנִ֑י | 4.20 הָרֻֽאוּבֵנִ֑י | 4.22 הָרֻֽאוּבֵנִ֑י | UXLC2.6 הָרֻֽאוּבֵנִ֑י | MAM הָראֿוּבֵנִ֑י | BHSA הָרֻֽאוּבֵנִ֑י
+      bkey BHSA=UXLC2.6 True UXLC2.6=MAM False
+      skey BHSA=418 True BHSA=MAM False | bkey BHSA=418 True BHSA=MAM False | bfkey BHSA=418 True | fkey BHSA=418 True =420 True =422 True | notes [['1']]
+      הָ [H@-] H art art | NP PreC | the
+      רֻֽאוּבֵנִ֑י [RU45>W.B;NI92J] R>WBNJ/ adjv subs nu=sg gn=m st=a | NP PreC | Reubenite
+   qere: as above
+7. Deuteronomy 2:9 (forms.json)
+   ketiv: WLC418 אֶל־ תָּ֙צַר֙ | 4.20 אֶל־ תָּ֙צַר֙ | 4.22 אֶל־ תָּ֙צַר֙ | UXLC2.6 אֶל־ תָּ֙צַר֙ | MAM אַל־ תָּ֙צַר֙ | BHSA אֶל־ תָּ֨צַר֙
+      bkey BHSA=UXLC2.6 True UXLC2.6=MAM False
+      skey BHSA=418 True BHSA=MAM False | bkey BHSA=418 True BHSA=MAM False | bfkey BHSA=418 False | fkey BHSA=418 False =420 False =422 False | notes [[], ['U']]
+      אֶל [>EL] >L prep prep | VP Pred | to
+      תָּ֨צַר֙ [T.@33YAR03] YWR=[ verb verb qal impf ps=p2 nu=sg gn=m | VP Pred | damage
+   qere: as above
+8. Deuteronomy 3:12 (forms.json)
+   ketiv: WLC418 לָרֻֽאוּבֵנִ֖י | 4.20 לָרֻֽאוּבֵנִ֖י | 4.22 לָרֻֽאוּבֵנִ֖י | UXLC2.6 לָרֽ͏ֻאוּבֵנִ֖י | MAM לָרֽאֿוּבֵנִ֖י | BHSA לָרֻֽאוּבֵנִ֖י
+      bkey BHSA=UXLC2.6 True UXLC2.6=MAM False
+      skey BHSA=418 True BHSA=MAM False | bkey BHSA=418 True BHSA=MAM False | bfkey BHSA=418 True | fkey BHSA=418 True =420 True =422 True | notes [['U']]
+      לָ [L@-] L prep prep | PP Cmpl | to
+      (empty) [-] H art art | PP Cmpl | the
+      רֻֽאוּבֵנִ֖י [RU95>W.B;NI73J] R>WBNJ/ adjv subs nu=sg gn=m st=a | PP Cmpl | Reubenite
+   qere: as above
+9. Deuteronomy 3:16 (forms.json)
+   ketiv: WLC418 וְלָרֻאוּבֵנִ֨י | 4.20 וְלָרֻאוּבֵנִ֨י | 4.22 וְלָרֻאוּבֵנִ֨י | UXLC2.6 וְלָרֻאוּבֵנִ֨י | MAM וְלָראֿוּבֵנִ֨י | BHSA וְלָרֻאוּבֵנִ֨י
+      bkey BHSA=UXLC2.6 True UXLC2.6=MAM False
+      skey BHSA=418 True BHSA=MAM False | bkey BHSA=418 True BHSA=MAM False | bfkey BHSA=418 True | fkey BHSA=418 True =420 True =422 True | notes [['U']]
+      וְ [W:-] W conj conj | CP Conj | and
+      לָ [L@-] L prep prep | PP Cmpl | to
+      (empty) [-] H art art | PP Cmpl | the
+      רֻאוּבֵנִ֨י [RU>W.B;NI63J] R>WBNJ/ adjv subs nu=sg gn=m st=a | PP Cmpl | Reubenite
+   qere: as above
+10. Deuteronomy 4:43 (forms.json)
+   ketiv: WLC418 לָרֻֽאוּבֵנִ֑י | 4.20 לָרֻֽאוּבֵנִ֑י | 4.22 לָרֻֽאוּבֵנִ֑י | UXLC2.6 לָרֻֽאוּבֵנִ֑י | MAM לָרֽאֿוּבֵנִ֑י | BHSA לָרֻֽאוּבֵנִ֑י
+      bkey BHSA=UXLC2.6 True UXLC2.6=MAM False
+      skey BHSA=418 True BHSA=MAM False | bkey BHSA=418 True BHSA=MAM False | bfkey BHSA=418 True | fkey BHSA=418 True =420 True =422 True | notes [['U']]
+      לָ [L@-] L prep prep | PP Adju | to
+      (empty) [-] H art art | PP Adju | the
+      רֻֽאוּבֵנִ֑י [RU45>W.B;NI92J] R>WBNJ/ adjv subs nu=sg gn=m st=a | PP Adju | Reubenite
+   qere: as above
+11. Joshua 12:6 (forms.json)
+   ketiv: WLC418 לָרֻֽאוּבֵנִי֙ | 4.20 לָרֻֽאוּבֵנִי֙ | 4.22 לָרֻֽאוּבֵנִי֙ | UXLC2.6 לָרֻֽאוּבֵנִי֙ | MAM לָרֽאֿוּבֵנִי֙ | BHSA לָרֻֽאוּבֵנִי֙
+      bkey BHSA=UXLC2.6 True UXLC2.6=MAM False
+      skey BHSA=418 True BHSA=MAM False | bkey BHSA=418 True BHSA=MAM False | bfkey BHSA=418 True | fkey BHSA=418 True =420 True =422 True | notes [[]]
+      לָ [L@-] L prep prep | PP Cmpl | to
+      (empty) [-] H art art | PP Cmpl | the
+      רֻֽאוּבֵנִי֙ [RU45>W.B;NIJ03] R>WBNJ/ adjv subs nu=sg gn=m st=a | PP Cmpl | Reubenite
+   qere: as above
+12. Joshua 22:19 (forms.json)
+   ketiv: WLC418 אֶל־ תִּמְרֹ֔דוּ | 4.20 אֶל־ תִּמְרֹ֔דוּ | 4.22 אֶל־ תִּמְרֹ֔דוּ | UXLC2.6 אֶל־ תִּמְרֹ֔דוּ | MAM אַל־ תִּמְרֹ֔דוּ | BHSA אֶל־ תִּמְרֹ֔דוּ
+      bkey BHSA=UXLC2.6 True UXLC2.6=MAM False
+      skey BHSA=418 True BHSA=MAM False | bkey BHSA=418 True BHSA=MAM False | bfkey BHSA=418 True | fkey BHSA=418 True =420 True =422 True | notes [[], []]
+      אֶל [>EL] >L prep prep | VP Pred | to
+      תִּמְרֹ֔דוּ [T.IM:RO80DW.] MRD[ verb verb qal impf ps=p2 nu=pl gn=m | VP Pred | rebel
+   qere: as above
+13. Judges 15:14 (forms.json)
+   ketiv: WLC418 וּפְלִשִׁתִּ֖ים | 4.20 וּפִלְשִׁתִּ֖ים | 4.22 וּפִלְשִׁתִּ֖ים | UXLC2.6 וּפִלְשִׁתִּ֖ים | MAM וּפְלִשְׁתִּ֖ים | BHSA וּפְלִשְׁתִּ֖ים
+      bkey BHSA=UXLC2.6 False UXLC2.6=MAM False
+      skey BHSA=418 False BHSA=MAM True | bkey BHSA=418 False BHSA=MAM True | bfkey BHSA=418 False | fkey BHSA=418 False =420 False =422 False | notes [['Q', 'n', 'v']]
+      וּ [W.-] W conj conj | CP Conj | and
+      פְלִשְׁתִּ֖ים [P:LIC:T.I73JM] PLCTJ/ adjv subs nu=pl gn=m st=a | NP Subj | Philistine
+   qere: as above
+14. Judges 16:2 (forms.json)
+   ketiv: WLC418 וַהֲרְגְנֻֽהוּ׃ | 4.20 וַהֲרְגְנֻֽהוּ׃ | 4.22 וַהֲרְגְנֻֽהוּ׃ | UXLC2.6 וַהֲרְגְנֻֽהוּ׃ | MAM וַהֲרַגְנֻֽהוּ׃ | BHSA וַהֲרְגְנֻֽהוּ
+      bkey BHSA=UXLC2.6 True UXLC2.6=MAM False
+      skey BHSA=418 True BHSA=MAM False | bkey BHSA=418 True BHSA=MAM False | bfkey BHSA=418 True | fkey BHSA=418 True =420 True =422 True | notes [['U']]
+      וַ [WA-] W conj conj | CP Conj | and
+      הֲרְגְנֻֽהוּ [H:AR:G:NU75HW.] HRG[ verb verb qal perf ps=p1 nu=pl gn=unknown prs=HW | VP PreO | kill
+   qere: as above
+15. Judges 19:4 (forms.json)
+   ketiv: WLC418 וַיֶּחֱזַק־ | 4.20 וַיֶּחֱזַק־ | 4.22 וַיֶּחֱזַק־ | UXLC2.6 וַיֶּחֱזַק־ | MAM וַיַּחֲזֶק־ | BHSA וַיֶּחֱזַק־
+      bkey BHSA=UXLC2.6 True UXLC2.6=MAM False
+      skey BHSA=418 True BHSA=MAM False | bkey BHSA=418 True BHSA=MAM False | bfkey BHSA=418 True | fkey BHSA=418 True =420 True =422 True | notes [[]]
+      וַ [WA-] W conj conj | CP Conj | and
+      יֶּחֱזַק [J.EX:EZAQ] XZQ[ verb verb qal wayq ps=p3 nu=sg gn=m | VP Pred | be strong
+   qere: as above
+16. Judges 19:23 (forms.json)
+   ketiv: WLC418 אַל־ בֵּיתִ֔י | 4.20 אַל־ בֵּיתִ֔י | 4.22 אַל־ בֵּיתִ֔י | UXLC2.6 אַל־ בֵּיתִ֔י | MAM אֶל־ בֵּיתִ֔י | BHSA אַל־ בֵּיתִ֔י
+      bkey BHSA=UXLC2.6 True UXLC2.6=MAM False
+      skey BHSA=418 True BHSA=MAM False | bkey BHSA=418 True BHSA=MAM False | bfkey BHSA=418 True | fkey BHSA=418 True =420 True =422 True | notes [[], ['U']]
+      אַל [>AL] >L prep prep | PP Cmpl | to
+      בֵּיתִ֔י [B.;JTI80J] BJT/ subs subs nu=sg gn=m st=a prs=J | PP Cmpl | house
+   qere: as above
+17. 1 Samuel 27:10 (forms.json)
+   ketiv: WLC418 הַיַּרְחְמְאֵלִ֔י | 4.20 הַיַּרְחְמְאֵלִ֔י | 4.22 הַיַּרְחְמְאֵלִ֔י | UXLC2.6 הַיַּרְחְמְאֵלִ֔י | MAM הַיְּרַחְמְאֵלִ֔י | BHSA הַיַּרְחְמְאֵלִ֔י
+      bkey BHSA=UXLC2.6 True UXLC2.6=MAM False
+      skey BHSA=418 True BHSA=MAM False | bkey BHSA=418 True BHSA=MAM False | bfkey BHSA=418 True | fkey BHSA=418 True =420 True =422 True | notes [[]]
+      הַ [HA-] H art art | PP Cmpl | the
+      יַּרְחְמְאֵלִ֔י [J.AR:X:M:>;LI80J] JRXM>LJ/ adjv subs nu=sg gn=m st=a | PP Cmpl | Jerahmeelite
+   qere: as above
+18. 2 Samuel 11:1 (forms.json)
+   ketiv: WLC418 הַמַּלְאֿכִ֗ים | 4.20 הַמַּלְאֿכִ֗ים | 4.22 הַמַּלְאכִ֗ים | UXLC2.6 הַמַּלְאֿכִ֗ים | MAM הַמְּלָאכִ֗ים | BHSA הַמַּלְאֿכִ֗ים
+      bkey BHSA=UXLC2.6 True UXLC2.6=MAM False
+      skey BHSA=418 True BHSA=MAM False | bkey BHSA=418 True BHSA=MAM False | bfkey BHSA=418 True | fkey BHSA=418 True =420 True =422 False | notes [['1']]
+      הַ [HA-] H art art | NP Subj | the
+      מַּלְאֿכִ֗ים [M.AL:>,KI81JM] MLK/ subs subs nu=pl gn=m st=a | NP Subj | king
+   qere: as above
+19. 2 Samuel 13:33 (forms.json)
+   ketiv: WLC418 אִם־ אַמְנ֥וֹן | 4.20 אִם־ אַמְנ֥וֹן | 4.22 אִם־ אַמְנ֥וֹן | UXLC2.6 אִם־ אַמְנ֥וֹן | MAM אם־ אַמְנ֥וֹן | BHSA אִם־ אַמְנֹ֥ון
+      bkey BHSA=UXLC2.6 True UXLC2.6=MAM False
+      skey BHSA=418 False BHSA=MAM False | bkey BHSA=418 True BHSA=MAM False | bfkey BHSA=418 True | fkey BHSA=418 False =420 False =422 False | notes [[], []]
+      אִם [>IM] >M conj conj | CP Conj | if
+      אַמְנֹ֥ון [>AM:NO71WN] >MNWN/ nmpr nmpr nu=sg gn=m st=a | PrNP Subj | Amnon
+   qere: not found
+20. 2 Samuel 15:21 (forms.json)
+   ketiv: WLC418 כִּ֠י אִם־ | 4.20 כִּ֠י אִם־ | 4.22 כִּ֠י אִם־ | UXLC2.6 כִּ֠י אִם־ | MAM כִּ֠י אם | BHSA כִּ֠י אִם־
+      bkey BHSA=UXLC2.6 True UXLC2.6=MAM False
+      skey BHSA=418 True BHSA=MAM False | bkey BHSA=418 True BHSA=MAM False | bfkey BHSA=418 True | fkey BHSA=418 True =420 True =422 True | notes [[], []]
+      כִּ֠י [14K.IJ] KJ conj conj | CP Conj | that
+      אִם [>IM] >M conj conj | CP Conj | if
+   qere: not found
+21. 2 Kings 10:33 (forms.json)
+   ketiv: WLC418 וְהָרֻאובֵנִ֖י | 4.20 וְהָרֻאובֵנִ֖י | 4.22 וְהָרֻאובֵנִ֖י | UXLC2.6 וְהָרֻאובֵנִ֖י | MAM וְהָראֿוּבֵנִ֖י | BHSA וְהָרֻאובֵנִ֖י
+      bkey BHSA=UXLC2.6 True UXLC2.6=MAM False
+      skey BHSA=418 True BHSA=MAM False | bkey BHSA=418 True BHSA=MAM False | bfkey BHSA=418 True | fkey BHSA=418 True =420 True =422 True | notes [[]]
+      וְ [W:-] W conj conj | PP Objc | and
+      הָ [H@-] H art art | PP Objc | the
+      רֻאובֵנִ֖י [RU>WB;NI73J] R>WBNJ/ adjv subs nu=sg gn=m st=a | PP Objc | Reubenite
+   qere: as above
+22. 2 Kings 18:27 (forms.json) [Separate]
+   ketiv: not found
+   qere: WLC418 מימֵ֥י רַגְלֵיהֶ֖ם | 4.20 מימֵ֥י רַגְלֵיהֶ֖ם | 4.22 מימֵ֥י רַגְלֵיהֶ֖ם | UXLC2.6 מימֵ֥י רַגְלֵיהֶ֖ם | MAM מֵימֵ֥י רַגְלֵיהֶ֖ם | BHSA מֵֽימֵי רַגְלֵיהֶ֖ם
+      bkey BHSA=UXLC2.6 False UXLC2.6=MAM False
+      skey BHSA=418 False BHSA=MAM True | bkey BHSA=418 False BHSA=MAM True | bfkey BHSA=418 False | fkey BHSA=418 False =420 False =422 False | notes [['c', 'n', 'v'], []]
+      שׁ [*C-] MJM/ subs subs nu=pl gn=m st=c | PP Objc | water qere=מֵֽימֵי hybrid=שֵֽׁ
+      יניהם [*JNJHM] RGL/ subs subs nu=du gn=f st=a prs=HM | PP Objc | foot qere=רַגְלֵיהֶ֖ם hybrid=יַנְיֵהֶ֖ם
+23. Isaiah 23:8 (forms.json)
+   ketiv: WLC418 סֹחֲרֶ֙יה֙ | 4.20 סֹחֲרֶ֙יה֙ | 4.22 סֹחֲרֶ֙יה֙ | UXLC2.6 סֹחֲרֶ֙יה֙ | MAM סֹחֲרֶ֙יהָ֙ | BHSA סֹחֲרֶ֨יה֙
+      bkey BHSA=UXLC2.6 True UXLC2.6=MAM False
+      skey BHSA=418 True BHSA=MAM False | bkey BHSA=418 True BHSA=MAM False | bfkey BHSA=418 False | fkey BHSA=418 False =420 False =422 False | notes [[]]
+      סֹחֲרֶ֨יה֙ [SOX:ARE33JH03] SXR[ verb subs qal ptca ps=unknown nu=pl gn=m st=a prs=H | NP Subj | go about
+   qere: as above
+24. Isaiah 46:4 (forms.json)
+   ketiv: WLC418 שֵיבָ֖ה | 4.20 שֵיבָ֖ה | 4.22 שֵיבָ֖ה | UXLC2.6 שֵיבָ֖ה | MAM שֵׂיבָ֖ה | BHSA שֵיבָ֖ה
+      bkey BHSA=UXLC2.6 True UXLC2.6=MAM False
+      skey BHSA=418 True BHSA=MAM False | bkey BHSA=418 True BHSA=MAM False | bfkey BHSA=418 True | fkey BHSA=418 True =420 True =422 True | notes [['1']]
+      שֵיבָ֖ה [#;JB@73H] FJBH/ subs subs nu=sg gn=f st=a | PP Time | age
+   qere: as above
+25. Isaiah 66:22 (forms.json)
+   ketiv: WLC418 הַ֠חֳדָשִׁים | 4.20 הַ֠חֳדָשִׁים | 4.22 הַ֠חֳדָשִׁים | UXLC2.6 הַ֠חֳדָשִׁים | MAM הַ֠חֲדָשִׁ֠ים | BHSA הַ֠חֳדָשִׁים
+      bkey BHSA=UXLC2.6 True UXLC2.6=MAM False
+      skey BHSA=418 True BHSA=MAM False | bkey BHSA=418 True BHSA=MAM False | bfkey BHSA=418 True | fkey BHSA=418 True =420 True =422 True | notes [[]]
+      הַ֠ [14HA-] H art art | NP Subj | the
+      חֳדָשִׁים [X:@D@CIJM] XDC=/ subs subs nu=pl gn=m st=a | NP Subj | month
+   qere: as above
+26. Jeremiah 3:17 (forms.json)
+   ketiv: WLC418 וְנִקְוּ֨וּ | 4.20 וְנִקְוּ֨וּ | 4.22 וְנִקְוּ֨וּ | UXLC2.6 וְנִקְוּ֨וּ | MAM וְנִקְו֨וּ | BHSA וְנִקְוּ֨וּ
+      bkey BHSA=UXLC2.6 True UXLC2.6=MAM False
+      skey BHSA=418 True BHSA=MAM False | bkey BHSA=418 True BHSA=MAM False | bfkey BHSA=418 True | fkey BHSA=418 True =420 True =422 True | notes [[]]
+      וְ [W:-] W conj conj | CP Conj | and
+      נִקְוּ֨וּ [NIQ:W.63W.] QWH=[ verb verb nif perf ps=p3 nu=pl gn=unknown | VP Pred | collect
+   qere: as above
+27. Jeremiah 47:6 (forms.json)
+   ketiv: WLC418 אַל־ | 4.20 אַל־ | 4.22 אַל־ | UXLC2.6 אַל־ | MAM אֶל־ | BHSA אַל־
+      bkey BHSA=UXLC2.6 True UXLC2.6=MAM False
+      skey BHSA=418 True BHSA=MAM False | bkey BHSA=418 True BHSA=MAM False | bfkey BHSA=418 True | fkey BHSA=418 True =420 True =422 True | notes [[]]
+      אַל [>AL] >L prep prep | PP Cmpl | to
+   qere: as above
+28. Hosea 2:4 (forms.json)
+   ketiv: WLC418 מִפָּנֶ֔יה | 4.20 מִפָּנֶ֔יה | 4.22 מִפָּנֶ֔יה | UXLC2.6 מִפָּנֶ֔יה | MAM מִפָּנֶ֔יהָ | BHSA מִפָּנֶ֔יה
+      bkey BHSA=UXLC2.6 True UXLC2.6=MAM False
+      skey BHSA=418 True BHSA=MAM False | bkey BHSA=418 True BHSA=MAM False | bfkey BHSA=418 True | fkey BHSA=418 True =420 True =422 True | notes [['U']]
+      מִ [MI-] MN prep prep | PP Cmpl | from
+      פָּנֶ֔יה [P.@NE80JH] PNH/ subs subs nu=pl gn=m st=a prs=H | PP Cmpl | face
+   qere: as above
+29. Hosea 2:17 (forms.json)
+   ketiv: WLC418 וִּכְי֖וֹם | 4.20 וִּכְי֖וֹם | 4.22 וִּכְי֖וֹם | UXLC2.6 וִּכְי֖וֹם | MAM וּכְי֖וֹם | BHSA וִּכְיֹ֖ום
+      bkey BHSA=UXLC2.6 True UXLC2.6=MAM False
+      skey BHSA=418 False BHSA=MAM False | bkey BHSA=418 True BHSA=MAM False | bfkey BHSA=418 True | fkey BHSA=418 False =420 False =422 False | notes [['U']]
+      וִּ [W.I-] W conj conj | PP Adju | and
+      כְ [K:-] K prep prep | PP Adju | as
+      יֹ֖ום [JO73WM] JWM/ subs subs nu=sg gn=m st=c | PP Adju | day
+   qere: as above
+30. Joel 2:12 (forms.json)
+   ketiv: WLC418 וּבְבְכִ֖י | 4.20 וּבְבְכִ֖י | 4.22 וּבְבְכִ֖י | UXLC2.6 וּבְבְכִ֖י | MAM וּבִבְכִ֖י | BHSA וּבְבְכִ֖י
+      bkey BHSA=UXLC2.6 True UXLC2.6=MAM False
+      skey BHSA=418 True BHSA=MAM False | bkey BHSA=418 True BHSA=MAM False | bfkey BHSA=418 True | fkey BHSA=418 True =420 True =422 True | notes [['U']]
+      וּ [W.-] W conj conj | PP Adju | and
+      בְ [B:-] B prep prep | PP Adju | in
+      בְכִ֖י [B:KI73J] BKJ/ subs subs nu=sg gn=m st=a | PP Adju | weeping
+   qere: as above
+31. Jonah 3:2 (forms.json)
+   ketiv: WLC418 וִּקְרָ֤א | 4.20 וִּקְרָ֤א | 4.22 וִּקְרָ֤א | UXLC2.6 וִּקְרָ֤א | MAM וּקְרָ֤א | BHSA וִּקְרָ֤א
+      bkey BHSA=UXLC2.6 True UXLC2.6=MAM False
+      skey BHSA=418 True BHSA=MAM False | bkey BHSA=418 True BHSA=MAM False | bfkey BHSA=418 True | fkey BHSA=418 True =420 True =422 True | notes [['U']]
+      וִּ [W.I-] W conj conj | CP Conj | and
+      קְרָ֤א [Q:R@70>] QR>[ verb verb qal impv ps=p2 nu=sg gn=m | VP Pred | call
+   qere: as above
+32. Zechariah 2:2 (forms.json)
+   ketiv: WLC418 וִירוּשָׁלָֽם׃ | 4.20 וִירוּשָׁלָֽם׃ | 4.22 וִירוּשָׁלָֽם׃ | UXLC2.6 וִירוּשָׁלָֽם׃ | MAM וִירוּשָׁלָֽ͏ִם׃ | BHSA וִירוּשָׁלָֽם
+      bkey BHSA=UXLC2.6 True UXLC2.6=MAM False
+      skey BHSA=418 True BHSA=MAM False | bkey BHSA=418 True BHSA=MAM False | bfkey BHSA=418 True | fkey BHSA=418 True =420 True =422 True | notes [['U']]
+      וִ [WI-] W conj conj | PP Objc | and
+      ירוּשָׁלָֽם [JRW.C@L@75M] JRWCLM/ nmpr nmpr nu=sg gn=unknown st=a | PP Objc | Jerusalem
+   qere: as above
+33. Psalms 45:3 (forms.json)
+   ketiv: WLC418 בְּשְׂפְתוֹתֶ֑יךָ | 4.20 בְּשְׂפְתוֹתֶ֑יךָ | 4.22 בְּשְׂפְתוֹתֶ֑יךָ | UXLC2.6 בְּשְׂפְתוֹתֶ֑יךָ | MAM בְּשִׂפְתוֹתֶ֑יךָ | BHSA בְּשְׂפְתֹותֶ֑יךָ
+      bkey BHSA=UXLC2.6 True UXLC2.6=MAM False
+      skey BHSA=418 False BHSA=MAM False | bkey BHSA=418 True BHSA=MAM False | bfkey BHSA=418 True | fkey BHSA=418 False =420 False =422 False | notes [[]]
+      בְּ [B.:-] B prep prep | PP Cmpl | in
+      שְׂפְתֹותֶ֑יךָ [F:P:TOWTE92JK@] FPH/ subs subs nu=pl gn=f st=a prs=K | PP Cmpl | lip
+   qere: as above
+34. Proverbs 12:9 (forms.json)
+   ketiv: WLC418 מִ֝מְּתַכַּבֵּ֗ד | 4.20 מִ֝מְּתַכַּבֵּ֗ד | 4.22 מִ֝מְּתַכַּבֵּ֗ד | UXLC2.6 מִ֝מְּתַכַּבֵּ֗ד | MAM מִ֝מִּתְכַּבֵּ֗ד | BHSA מִ֝מְּתַכַּבֵּ֗ד
+      bkey BHSA=UXLC2.6 True UXLC2.6=MAM False
+      skey BHSA=418 True BHSA=MAM False | bkey BHSA=418 True BHSA=MAM False | bfkey BHSA=418 True | fkey BHSA=418 True =420 True =422 True | notes [[]]
+      מִ֝ [11MI-] MN prep prep | PP Adju | from
+      מְּתַכַּבֵּ֗ד [M.:TAK.AB.;81D] KBD[ verb subs tif ptca ps=unknown nu=sg gn=m st=a | PP Adju | be heavy
+   qere: as above
+35. Proverbs 20:1 (forms.json)
+   ketiv: WLC418 הַ֭יַּין | 4.20 הַ֭יַּין | 4.22 הַ֭יַּין | UXLC2.6 הַ֭יַּין | MAM הַ֭יַּיִן | BHSA הַ֭יַּין
+      bkey BHSA=UXLC2.6 True UXLC2.6=MAM False
+      skey BHSA=418 True BHSA=MAM False | bkey BHSA=418 True BHSA=MAM False | bfkey BHSA=418 True | fkey BHSA=418 True =420 True =422 True | notes [['U']]
+      הַ֭ [13HA-] H art art | NP Subj | the
+      יַּין [J.AJN] JJN/ subs subs nu=sg gn=m st=a | NP Subj | wine
+   qere: as above
+36. Proverbs 31:12 (forms.json)
+   ketiv: WLC418 חַיֶּֽיה׃ | 4.20 חַיֶּֽיה׃ | 4.22 חַיֶּֽיה׃ | UXLC2.6 חַיֶּֽיה׃ | MAM חַיֶּֽיהָ׃ | BHSA חַיֶּֽיה
+      bkey BHSA=UXLC2.6 True UXLC2.6=MAM False
+      skey BHSA=418 True BHSA=MAM False | bkey BHSA=418 True BHSA=MAM False | bfkey BHSA=418 True | fkey BHSA=418 True =420 True =422 True | notes [['U']]
+      חַיֶּֽיה [XAJ.E75JH] XJJM/ subs subs nu=pl gn=m st=a prs=H | NP Time | life
+   qere: as above
+37. Job 31:7 (forms.json)
+   ketiv: WLC418 מֻאֽוּם׃ | 4.20 מֻאֽוּם׃ | 4.22 מֻאֽוּם׃ | UXLC2.6 מֻאוּֽם׃ | MAM מֽאֿוּם׃ | BHSA מֻאֽוּם
+      bkey BHSA=UXLC2.6 True UXLC2.6=MAM False
+      skey BHSA=418 True BHSA=MAM False | bkey BHSA=418 True BHSA=MAM False | bfkey BHSA=418 True | fkey BHSA=418 True =420 True =422 True | notes [['1']]
+      מֻאֽוּם [MU>75W.M] M>WM/ subs subs nu=sg gn=m st=a | NP Subj | blemish
+   qere: as above
+38. Song of Songs 5:11 (forms.json)
+   ketiv: WLC418 קְוּצּוֹתָיו֙ | 4.20 קְוּצּוֹתָיו֙ | 4.22 קְוּצּוֹתָיו֙ | UXLC2.6 קְוּצּוֹתָיו֙ | MAM קְוֻצּוֹתָיו֙ | BHSA קְוּצֹּותָיו֙
+      bkey BHSA=UXLC2.6 True UXLC2.6=MAM False
+      skey BHSA=418 False BHSA=MAM False | bkey BHSA=418 True BHSA=MAM False | bfkey BHSA=418 True | fkey BHSA=418 False =420 False =422 False | notes [['U']]
+      קְוּצֹּותָיו֙ [Q:W.Y.OWT@JW03] QWYWT/ subs subs nu=pl gn=f st=a prs=W | NP Subj | hairlocks
+   qere: as above
+39. Daniel 2:45 (forms.json)
+   ketiv: WLC418 וְ֠הַדֶּקֶת | 4.20 וְ֠הַדֶּקֶת | 4.22 וְ֠הַדֶּקֶת | UXLC2.6 וְ֠הַדֶּקֶת | MAM וְ֠הַדֵּ֠קֶת | BHSA וְ֠הַדֶּקֶת
+      bkey BHSA=UXLC2.6 True UXLC2.6=MAM False
+      skey BHSA=418 True BHSA=MAM False | bkey BHSA=418 True BHSA=MAM False | bfkey BHSA=418 True | fkey BHSA=418 True =420 True =422 True | notes [[]]
+      וְ֠ [14W:-] W conj conj | CP Conj | and
+      הַדֶּקֶת [HAD.EQET] DQQ[ verb verb haf perf ps=p3 nu=sg gn=f | VP Pred | crush
+   qere: as above
+40. Daniel 5:24 (forms.json)
+   ketiv: WLC418 שְׁלִ֖יַחַ | 4.20 שְׁלִ֖יַחַ | 4.22 שְׁלִ֖יַחַ | UXLC2.6 שְׁלִ֖יַחַ | MAM שְׁלִ֖יחַ | BHSA שְׁלִ֖יַחַ
+      bkey BHSA=UXLC2.6 True UXLC2.6=MAM False
+      skey BHSA=418 True BHSA=MAM False | bkey BHSA=418 True BHSA=MAM False | bfkey BHSA=418 True | fkey BHSA=418 True =420 True =422 True | notes [['1']]
+      שְׁלִ֖יַחַ [C:LI73JAXA] CLX[ verb verb peil perf ps=p3 nu=sg gn=m | VP Pred | send
+   qere: as above
+41. Daniel 7:20 (forms.json)
+   ketiv: WLC418 וְפֻם֙ | 4.20 וְפֻם֙ | 4.22 וְפֻם֙ | UXLC2.6 וְפֻם֙ | MAM וּפֻם֙ | BHSA וְפֻם֙
+      bkey BHSA=UXLC2.6 True UXLC2.6=MAM False
+      skey BHSA=418 True BHSA=MAM False | bkey BHSA=418 True BHSA=MAM False | bfkey BHSA=418 True | fkey BHSA=418 True =420 True =422 True | notes [[]]
+      וְ [W:-] W conj conj | CP Conj | and
+      פֻם֙ [PUM03] PM/ subs subs nu=sg gn=m st=a | NP Subj | mouth
+   qere: as above
+42. Nehemiah 9:14 (forms.json)
+   ketiv: WLC418 הוֹדַ֣עַתָ | 4.20 הוֹדַ֣עַתָ | 4.22 הוֹדַ֣עַתָ | UXLC2.6 הוֹדַ֣עַתָ | MAM הוֹדַ֣עְתָּ | BHSA הֹודַ֣עַתָ
+      bkey BHSA=UXLC2.6 True UXLC2.6=MAM False
+      skey BHSA=418 False BHSA=MAM False | bkey BHSA=418 True BHSA=MAM False | bfkey BHSA=418 True | fkey BHSA=418 False =420 False =422 False | notes [['U']]
+      הֹודַ֣עַתָ [HOWDA74<AT@] JD<[ verb verb hif perf ps=p2 nu=sg gn=m | VP Pred | know
+   qere: as above
+43. 1 Chronicles 3:1 (forms.json)
+   ketiv: WLC418 דָויִ֔ד | 4.20 דָויִ֔ד | 4.22 דָויִ֔ד | UXLC2.6 דָויִ֔ד | MAM דָוִ֔יד | BHSA דָויִ֔ד
+      bkey BHSA=UXLC2.6 True UXLC2.6=MAM False
+      skey BHSA=418 True BHSA=MAM False | bkey BHSA=418 True BHSA=MAM False | bfkey BHSA=418 True | fkey BHSA=418 True =420 True =422 True | notes [['1']]
+      דָויִ֔ד [D@WJI80D] DWD==/ nmpr nmpr nu=sg gn=m st=a | NP PreC | David
+   qere: as above
+44. Deut 3:22 (review.md tour table row 1)
+   ketiv: WLC418 תְִּירָא֑וּם | 4.20 תְִּירָא֑וּם | 4.22 תְִּירָא֑וּם | UXLC2.6 תִּ͏ְירָא֑וּם | MAM תִּֽירָא֑וּם | BHSA תִּֽירָא֑וּם
+      bkey BHSA=UXLC2.6 False UXLC2.6=MAM False
+      skey BHSA=418 False BHSA=MAM True | bkey BHSA=418 False BHSA=MAM True | bfkey BHSA=418 False | fkey BHSA=418 False =420 False =422 False | notes [['Q', 'n', 'v']]
+      תִּֽירָא֑וּם [T.I45JR@>92W.M] JR>[ verb verb qal impf ps=p2 nu=pl gn=m prs=M | VP PreO | fear
+   qere: as above
+45. Isa 49:23 (review.md tour table row 2)
+   ketiv: WLC418 קוָֹֽי׃ | 4.20 קוָֹֽי׃ | 4.22 קוָֹֽי׃ | UXLC2.6 קֹוָֽי׃ | MAM קֹוָֽי׃ | BHSA קֹוָֽי
+      bkey BHSA=UXLC2.6 True UXLC2.6=MAM True
+      skey BHSA=418 False BHSA=MAM True | bkey BHSA=418 False BHSA=MAM True | bfkey BHSA=418 False | fkey BHSA=418 False =420 False =422 False | notes [[]]
+      קֹוָֽי [QOW@75J] QWH[ verb subs qal ptca ps=unknown nu=pl gn=m st=a prs=J | NP Subj | wait for
+   qere: as above
+46. Lam 3:25 (review.md tour table row 3)
+   ketiv: WLC418 לְקוָֹ֔ו | 4.20 לְקוָֹ֔ו | 4.22 לְקוָֹ֔ו | UXLC2.6 לְקֹוָ֔ו | MAM לְקֹוָ֔ו | BHSA לְקֹוָ֔ו
+      bkey BHSA=UXLC2.6 True UXLC2.6=MAM True
+      skey BHSA=418 False BHSA=MAM True | bkey BHSA=418 False BHSA=MAM True | bfkey BHSA=418 False | fkey BHSA=418 False =420 False =422 False | notes [['Q', 'q']]
+      ל [*L-] L prep prep | PP Cmpl | to qere=לְ hybrid=לְ
+      קוו [*QWW] QWH[ verb subs qal ptca ps=unknown nu=pl gn=m st=a prs=W | PP Cmpl | wait for qere=קֹוָ֔יו hybrid=קֹוָ֔ו
+   qere: WLC418 לְקוָֹ֔ו | 4.20 לְקוָֹ֔ו | 4.22 לְקוָֹ֔ו | UXLC2.6 לְקֹוָ֔ו | MAM לְקֹוָ֔ו | BHSA לְקֹוָ֔יו
+      bkey BHSA=UXLC2.6 False UXLC2.6=MAM True
+      skey BHSA=418 False BHSA=MAM False | bkey BHSA=418 False BHSA=MAM False | bfkey BHSA=418 False | fkey BHSA=418 False =420 False =422 False | notes [['Q', 'q']]
+      ל [*L-] L prep prep | PP Cmpl | to qere=לְ hybrid=לְ
+      קוו [*QWW] QWH[ verb subs qal ptca ps=unknown nu=pl gn=m st=a prs=W | PP Cmpl | wait for qere=קֹוָ֔יו hybrid=קֹוָ֔ו
+47. Lam 4:4 (review.md tour table row 4)
+   ketiv: WLC418 אֶל־ חכּ֖וֹ | 4.20 אֶל־ חכּ֖וֹ | 4.22 אֶל־ חכּ֖וֹ | UXLC2.6 אֶל־ חִכּ֖וֹ | MAM אֶל־ חִכּ֖וֹ | BHSA אֶל־ חִכֹּ֖ו
+      bkey BHSA=UXLC2.6 True UXLC2.6=MAM True
+      skey BHSA=418 False BHSA=MAM False | bkey BHSA=418 False BHSA=MAM True | bfkey BHSA=418 False | fkey BHSA=418 False =420 False =422 False | notes [[], ['Q', 'n', 'v']]
+      אֶל [>EL] >L prep prep | PP Cmpl | to
+      חִכֹּ֖ו [XIK.O73W] XK/ subs subs nu=sg gn=m st=a prs=W | PP Cmpl | palate
+   qere: as above
+48. Eccl 2:23 (review.md tour table row 5)
+   ketiv: WLC418 לִבּ֑ו | 4.20 לִבּ֑וֹ | 4.22 לִבּ֑וֹ | UXLC2.6 לִבּ֑וֹ | MAM לִבּ֑וֹ | BHSA לִבֹּ֑ו
+      bkey BHSA=UXLC2.6 True UXLC2.6=MAM True
+      skey BHSA=418 False BHSA=MAM False | bkey BHSA=418 False BHSA=MAM True | bfkey BHSA=418 False | fkey BHSA=418 False =420 False =422 False | notes [['Q', 'n', 'v']]
+      לִבֹּ֑ו [LIB.O92W] LB/ subs subs nu=sg gn=m st=a prs=W | NP Subj | heart
+   qere: as above
+49. Exod 20:3 (review.md Decalogue table row 1)
+   ketiv: WLC418 עַל־ פָּנָֽ֗יַ | 4.20 עַל־ פָּנָֽ֗יַ | 4.22 עַל־ פָּנַָֽ֗י | UXLC2.6 עַל־ פָּנָֽ͏ַ֗י | MAM עַל־ פָּנַ֗י | BHSA עַל־ פָּנָֽ֗יַ
+      bkey BHSA=UXLC2.6 False UXLC2.6=MAM False
+      skey BHSA=418 True BHSA=MAM False | bkey BHSA=418 True BHSA=MAM False | bfkey BHSA=418 True | fkey BHSA=418 True =420 True =422 False | notes [[], ['1']]
+      עַל [<AL] <L prep prep | PP Adju | upon
+      פָּנָֽ֗יַ [P.@N@8175JA] PNH/ subs subs nu=pl gn=m st=a prs=J | PP Adju | face
+   qere: as above
+50. Deut 5:7 (review.md Decalogue table row 2)
+   ketiv: WLC418 עַל־ פָּנָֽ֗יַ׃ | 4.20 עַל־ פָּנָֽ֗יַ׃ | 4.22 עַל־ פָּנָֽ֗יַ׃ | UXLC2.6 עַל־ פָּנָֽ͏ַ֗י | MAM עַל־ פָּנַ֗י | BHSA עַל־ פָּנָֽ֗יַ
+      bkey BHSA=UXLC2.6 False UXLC2.6=MAM False
+      skey BHSA=418 True BHSA=MAM False | bkey BHSA=418 True BHSA=MAM False | bfkey BHSA=418 True | fkey BHSA=418 True =420 True =422 True | notes [[], []]
+      עַל [<AL] <L prep prep | PP PreC | upon
+      פָּנָֽ֗יַ [P.@N@7581JA] PNH/ subs subs nu=pl gn=m st=a prs=J | PP PreC | face
+   qere: as above
+51. Exod 20:4 (review.md Decalogue table row 3)
+   ketiv: WLC418 מִתַָּ֑֜חַת | 4.20 מִתַָּ֑֜חַת | 4.22 מִתַָּ֑֜חַת | UXLC2.6 מִתָּ֑͏ַ֜חַת | MAM מִתַּ֜חַת | BHSA מִתַָּ֑֜חַת
+      bkey BHSA=UXLC2.6 True UXLC2.6=MAM False
+      skey BHSA=418 True BHSA=MAM False | bkey BHSA=418 True BHSA=MAM False | bfkey BHSA=418 True | fkey BHSA=418 True =420 True =422 True | notes [['1']]
+      מִ [MI-] MN prep prep | PP PreC | from
+      תַָּ֑֜חַת [T.@9261AXAT] TXT/ subs subs nu=sg gn=m st=a | PP PreC | under part
+   qere: as above
+52. Exod 20:9 (review.md Decalogue table row 4)
+   ketiv: WLC418 כָּל־ מְלַאכְתֶּֽךָ֒ | 4.20 כָּל־ מְלַאכְתֶּֽךָ֒ | 4.22 כָּל־ מְלַאכְתֶּֽךָ֒ | UXLC2.6 כָּל־ מְלַאכְתֶּֽךָ֒ | MAM כׇל־ מְלַאכְתֶּ֒ךָ֒ | BHSA כָּל־ מְלַאכְתֶּֽךָ֒
+      bkey BHSA=UXLC2.6 True UXLC2.6=MAM False
+      skey BHSA=418 True BHSA=MAM False | bkey BHSA=418 True BHSA=MAM False | bfkey BHSA=418 True | fkey BHSA=418 True =420 True =422 True | notes [[], ['1']]
+      כָּל [K.@L] KL/ subs subs nu=sg gn=m st=c | NP Objc | whole
+      מְלַאכְתֶּֽךָ֒ [M:LA>K:T.E75K@01] ML>KT/ subs subs nu=sg gn=f st=a prs=K | NP Objc | work
+   qere: as above
+53. Exod 20:10 (review.md Decalogue table row 5)
+   ketiv: WLC418 לֹֽ֣א־ תַעֲשֶׂ֣֨ה | 4.20 לֹֽ֣א־ תַעֲשֶׂ֣֨ה | 4.22 לֹֽ֣א־ תַעֲשֶׂ֣֨ה | UXLC2.6 לֹֽ֣א־ תַעֲשֶׂ֣֨ה | MAM לֹ֣א תַעֲשֶׂ֣ה | BHSA לֹֽ֣א־ תַעֲשֶׂ֣֨ה
+      bkey BHSA=UXLC2.6 True UXLC2.6=MAM False
+      skey BHSA=418 True BHSA=MAM False | bkey BHSA=418 True BHSA=MAM False | bfkey BHSA=418 True | fkey BHSA=418 True =420 True =422 True | notes [[], []]
+      לֹֽ֣א [LO4574>] L> nega nega | NegP Nega | not
+      תַעֲשֶׂ֣֨ה [TA<:AFE6374H] <FH[ verb verb qal impf ps=p2 nu=sg gn=m | VP Pred | make
+   qere: as above
+54. Deut 5:8 (review.md Decalogue table row 6)
+   ketiv: WLC418 לֹֽ֣א־ תַעֲשֶׂ֥ה־ לְךָ֥֣ | 4.20 לֹֽ֣א־ תַעֲשֶׂ֥ה־ לְךָ֥֣ | 4.22 לֹֽ֣א־ תַעֲשֶׂ֥ה־ לְךָ֥֣ | UXLC2.6 לֹֽ֣א־ תַעֲשֶֽׂ֨ה־ לְךָ֥֣ | MAM לֹ֣א תַעֲשֶֽׂה־ לְךָ֣ | BHSA לֹֽ֣א־ תַעֲשֶׂ֥ה־ לְךָ֥֣
+      bkey BHSA=UXLC2.6 True UXLC2.6=MAM False
+      skey BHSA=418 True BHSA=MAM False | bkey BHSA=418 True BHSA=MAM False | bfkey BHSA=418 True | fkey BHSA=418 True =420 True =422 True | notes [[], [], []]
+      לֹֽ֣א [LO9574>] L> nega nega | NegP Nega | not
+      תַעֲשֶׂ֥ה [TA<:AFE71H] <FH[ verb verb qal impf ps=p2 nu=sg gn=m | VP Pred | make
+      לְךָ֥֣ [L:K@7174] L prep prep prs=K | PP Cmpl | to
+   qere: as above
+55. Deut 5:8 (review.md Decalogue table row 7)
+   ketiv: WLC418 מִתָּ֑֜חַת | 4.20 מִתָּ֑֜חַת | 4.22 מִתָּ֑֜חַת | UXLC2.6 מִתָּ֑֜חַת | MAM מִתַּ֜חַת | BHSA מִתָּ֑֜חַת
+      bkey BHSA=UXLC2.6 True UXLC2.6=MAM False
+      skey BHSA=418 True BHSA=MAM False | bkey BHSA=418 True BHSA=MAM False | bfkey BHSA=418 True | fkey BHSA=418 True =420 True =422 True | notes [[]]
+      מִ [MI-] MN prep prep | PP PreC | from
+      תָּ֑֜חַת [T.@6192XAT] TXT/ subs subs nu=sg gn=m st=a | PP PreC | under part
+   qere: as above
+56. Deut 5:13 (review.md Decalogue table row 8)
+   ketiv: WLC418 כָּֿל־ מְלַאכְתֶּֽךָ֒׃ | 4.20 כָּֿל־ מְלַאכְתֶּֽךָ֒׃ | 4.22 כָּל־ מְלַאכְתֶּֽךָ֒׃ | UXLC2.6 כָּֿל־ מְלַאכְתֶּֽךָ֒׃ | MAM כׇל־ מְלַאכְתֶּ֒ךָ֒ | BHSA כָּֿל־ מְלַאכְתֶּֽךָ֒
+      bkey BHSA=UXLC2.6 True UXLC2.6=MAM False
+      skey BHSA=418 True BHSA=MAM False | bkey BHSA=418 True BHSA=MAM False | bfkey BHSA=418 True | fkey BHSA=418 True =420 True =422 False | notes [[], []]
+      כָּֿל [K.,@L] KL/ subs subs nu=sg gn=m st=c | NP Objc | whole
+      מְלַאכְתֶּֽךָ֒ [M:LA>K:T.E75K@01] ML>KT/ subs subs nu=sg gn=f st=a prs=K | NP Objc | work
+   qere: as above

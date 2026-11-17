@@ -1,0 +1,22 @@
+1Sam 30:26 | BHSA atom לְרֵעֵ֣הוּ | MAM atoms with its letters: לְרֵעֵ֣הוּ
+   slot 160091 רֵעֵ֣הוּ | lex=R<=/ sp=subs vs=NA vt=NA ps=NA nu=pl gn=m st=a prs=HW gloss=fellow voc_lex_utf8=רֵעַ
+Job 42:10 | BHSA atom רֵעֵ֑הוּ | MAM atoms with its letters: רֵעֵ֑הוּ
+   slot 346786 רֵעֵ֑הוּ | lex=R<=/ sp=subs vs=NA vt=NA ps=NA nu=pl gn=m st=a prs=HW gloss=fellow voc_lex_utf8=רֵעַ
+1Kgs 16:11 | BHSA atom וְרֵעֵֽהוּ | MAM atoms with its letters: וְרֵעֵֽהוּ׃
+   slot 189297 רֵעֵֽהוּ | lex=R<=/ sp=subs vs=NA vt=NA ps=NA nu=pl gn=m st=a prs=HW gloss=fellow voc_lex_utf8=רֵעַ
+Num 11:15 | BHSA atom אַתְּ־ | MAM atoms with its letters: אַתְּ־
+   slot 77091 אַתְּ | lex=>TH sp=prps vs=NA vt=NA ps=p2 nu=sg gn=m st=NA prs=n/a gloss=you voc_lex_utf8=אַתָּה
+Deut 5:27 | BHSA atom אַתָּה֙ | MAM atoms with its letters: אַתָּה֙
+   slot 96809 אַתָּה֙ | lex=>TH sp=prps vs=NA vt=NA ps=p2 nu=sg gn=m st=NA prs=n/a gloss=you voc_lex_utf8=אַתָּה
+Deut 5:27 | BHSA atom וְאַ֣תְּ | MAM atoms with its letters: וְאַ֣תְּ׀
+   slot 96819 אַ֣תְּ | lex=>TH sp=prps vs=NA vt=NA ps=p2 nu=sg gn=m st=NA prs=n/a gloss=you voc_lex_utf8=אַתָּה
+Ezek 28:14 | BHSA atom אַ֨תְּ־ | MAM atoms with its letters: אַ֨תְּ־
+   slot 278577 אַ֨תְּ | lex=>TH sp=prps vs=NA vt=NA ps=p2 nu=sg gn=m st=NA prs=n/a gloss=you voc_lex_utf8=אַתָּה
+Deut 25:7 | BHSA atom מֵאֵ֨ין | MAM atoms with its letters: none
+   slot 106935 מֵאֵ֨ין | lex=M>N[ sp=verb vs=piel vt=perf ps=p3 nu=sg gn=m st=NA prs=absent gloss=refuse voc_lex_utf8=מאן
+Lev 4:35 | BHSA atom חֶלְבָּ֣ה | MAM atoms with its letters: חֶלְבָּ֣הּ
+   slot 54258 חֶלְבָּ֣ה | lex=XLB=/ sp=subs vs=NA vt=NA ps=NA nu=sg gn=m st=a prs=H gloss=fat voc_lex_utf8=חֵלֶב
+Lev 4:35 | BHSA atom חֵֽלֶב־ | MAM atoms with its letters: חֵֽלֶב־
+   slot 54263 חֵֽלֶב | lex=XLB=/ sp=subs vs=NA vt=NA ps=NA nu=sg gn=m st=c prs=absent gloss=fat voc_lex_utf8=חֵלֶב
+Lev 5:12 | BHSA atom אַזְכָּרָתָה֙ | MAM atoms with its letters: אַזְכָּרָתָהּ֙
+   slot 54583 אַזְכָּרָתָה֙ | lex=>ZKRH/ sp=subs vs=NA vt=NA ps=NA nu=sg gn=f st=a prs=absent gloss=memorial offering voc_lex_utf8=אַזְכָּרָה

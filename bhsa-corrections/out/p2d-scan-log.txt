@@ -1,0 +1,60 @@
+atoms read, 18 s
+MAM aligned, 26 s
+tests done, 41 s
+p2d: part2_scan.py's tests over BHSA atoms (scripts/p2d_scan_atoms.py), 41 s
+
+BHSA atoms: {"BHSA atoms": 304789, "BHSA atoms keyed": 303474, "BHSA atoms with a qere slot, skipped": 1315, "pointed keys": 52827}
+
+Test A, atom level: 255 atoms in 222 groups; slot level (out/33-part2-scan-run.txt): 359 words in 305 groups
+  testable atoms (key has some analysis at least 5 times): 235366 of 303474 keyed
+  slot level, testable words (part2_scan.py's keys, recounted here): 369196 of 418274 keyed
+  by kind, atoms: {"segmentation": 4, "lexeme": 200, "stem/tense": 29, "ps/nu/gn/prs": 22}
+  by kind, groups: {"segmentation": 4, "lexeme": 173, "stem/tense": 24, "ps/nu/gn/prs": 21}
+  new at the atom level (no slot of the group's atoms flagged at the slot level), groups: {"segmentation": 3, "lexeme": 44, "stem/tense": 7, "ps/nu/gn/prs": 21}; atoms: {"segmentation": 3, "lexeme": 57, "stem/tense": 9, "ps/nu/gn/prs": 22}
+  slot level by kind, words: {'stem/tense': 62, 'lexeme': 297}
+
+Test B, atom level: {"atoms": 304789, "atoms whose pointing differs from MAM's": 7517, "atoms: written": 148, "atoms: both": 6909, "atoms: neither": 249, "atoms: mam-unique": 205, "atoms whose letters differ from MAM's, skipped": 1530, "atoms with a ketiv, skipped": 1315, "atoms: mam-elsewhere": 4, "atoms whose keys are equal after all": 2}
+Test B, slot level: {"atoms": 304789, "atoms whose pointing differs from MAM's": 7517, "slots: both": 7059, "slots: mam-unique": 184, "slots: neither": 169, "slots: written": 104, "atoms whose letters differ from MAM's, skipped": 1530, "atoms with a ketiv, skipped": 1315, "slots: mam-elsewhere": 8}
+
+class               atoms slots (slot level)
+mam-elsewhere           4          8
+mam-unique            205        184
+written               148        104
+both                 6909       7059
+neither               249        169
+
+Atoms whose pointing differs by bkey but whose keys are equal (skey of the BHSA's text, bkey of MAM's):
+  Daniel 5:6 | BHSA זִיוֹהִי | MAM זִיוֹהִי
+  Daniel 5:9 | BHSA וְזִיוֹהִי | MAM וְזִיוֹהִי
+
+Slot-level Test B rows (by class) -> the class of the atom that holds the slot:
+  both           -> both                       6908
+  both           -> mam-unique                   48
+  both           -> neither                      36
+  both           -> written                      67
+  mam-elsewhere  -> mam-elsewhere                 4
+  mam-elsewhere  -> mam-unique                    4
+  mam-unique     -> mam-unique                  153
+  mam-unique     -> neither                      31
+  neither        -> neither                     169
+  written        -> neither                      22
+  written        -> written                      82
+
+Slot-level mam-elsewhere rows -> their atoms:
+  Genesis 15:10 slot 6847 (YPWR/ NA NA) -> atom 4762, mam-unique
+  Exodus 2:10 slot 29304 (GDL[ qal wayq) -> atom 20938, mam-unique
+  Exodus 10:28 slot 34429 (>L= NA NA) -> atom 24563, mam-elsewhere
+  Leviticus 4:35 slot 54258 (XLB=/ NA NA) -> atom 38501, mam-elsewhere
+  Judices 19:23 slot 139678 (>L NA NA) -> atom 98396, mam-elsewhere
+  Samuel_II 3:32 slot 162420 (NF>[ qal wayq) -> atom 114276, mam-unique
+  Jeremia 47:6 slot 260353 (>L NA NA) -> atom 184594, mam-elsewhere
+  Iob 8:1 slot 338078 (>MR[ qal wayq) -> atom 242039, mam-unique
+
+Slot-level Test A words (by kind) -> the fate of the atom that holds the slot:
+  lexeme     -> atom's key under 5              104
+  lexeme     -> flagged, lexeme                 143
+  lexeme     -> flagged, segmentation             1
+  lexeme     -> supported                        49
+  stem/tense -> atom's key under 5               41
+  stem/tense -> flagged, stem/tense              20
+  stem/tense -> supported                         1

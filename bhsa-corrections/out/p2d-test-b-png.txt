@@ -1,0 +1,6 @@
+Test B atoms whose analysis departs from MAM's key's commonest only in ps/nu/gn/prs: {'neither': 5}
+neither | Leviticus 5:12 | BHSA אַזְכָּרָתָה | MAM אַזְכָּרָתָהּ | this >ZKRH/ -.sg.f | MAM's key >ZKRH/ -.sg.f +H x5 | differs: >ZKRH/ prs absent (MAM's key H)
+neither | Deuteronomy 15:20 | BHSA תֹאכֲלֶנּוּ | MAM תֹאכְלֶנּוּ | this >KL[ qal impf p2.sg.m +HW | MAM's key >KL[ qal impf p3.sg.f +HW x1 | differs: >KL[ ps p2 (MAM's key p3); >KL[ gn m (MAM's key f)
+neither | 2 Samuel 20:8 | BHSA לְבֻשׁוּ | MAM לְבֻשֹׁו | this LBWC/ -.sg.m +HW | MAM's key LBWC/ -.sg.m +W x2 | differs: LBWC/ prs HW (MAM's key W)
+neither | Isaiah 31:8 | BHSA תֹּאכֲלֶנּוּ | MAM תֹּאכְלֶנּוּ | this >KL[ qal impf p3.sg.f +HW | MAM's key >KL[ qal impf p2.sg.m +HW x4 | differs: >KL[ ps p3 (MAM's key p2); >KL[ gn f (MAM's key m)
+neither | Jeremiah 11:2 | BHSA וְדִבַּרְתָּם | MAM וְדִבַּרְתֶּם | this W + DBR[ piel perf p2.sg.m +M | MAM's key W + DBR[ piel perf p2.pl.m x2 | differs: DBR[ nu sg (MAM's key pl); DBR[ prs M (MAM's key absent)

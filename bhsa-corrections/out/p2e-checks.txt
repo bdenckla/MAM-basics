@@ -1,0 +1,244 @@
+== 1. Proverbs 7:22, the BHSA's atoms with their accents
+  הֹ֤ולֵ֥ךְ | accents: mahapakh, merkha
+  אַחֲרֶ֗יהָ | accents: revia
+  פִּ֫תְאֹ֥ם | accents: ole, merkha
+  כְּ֭שֹׁור | accents: dehi
+  אֶל־ | accents: none
+  טָ֣בַח | accents: munah
+  יָבֹ֑וא | accents: etnahta
+  וּ֝כְעֶ֗כֶס | accents: geresh muqdam, revia
+  אֶל־ | accents: none
+  מוּסַ֥ר | accents: merkha
+  אֱוִֽיל | accents: none
+  VBX/: טֶבַח x4 (Genesis 43:16); טָּבַח x3 (Isaiah 34:2); טֶּבַח x2 (Isaiah 53:7); טָבַח x2 (Ezekiel 21:20); טִבְחָהּ x1 (Proverbs 9:2); טַבָּחַיָּא x1 (Daniel 2:14)
+  VBX[: טְבֹוחַ x4 (Jeremiah 11:19); טְבֹחַ x2 (Genesis 43:16); טְבָחֹו x1 (Exodus 21:37); טָבוּחַ x1 (Deuteronomy 28:31); טָבַחְתִּי x1 (1 Samuel 25:11); טָבְחָה x1 (Proverbs 9:2); טָבַחְתָּ x1 (Lamentations 2:21)
+  VBX=/: טַבָּחִים x25 (Genesis 40:3); טַּבָּחִים x5 (Genesis 37:36); טַּבָּח x2 (1 Samuel 9:23)
+  VBX==/: טֶבַח x1 (Genesis 22:24)
+
+== 2. Atoms whose first slot is L pointed with qamats and that have no H slot (preposition with qamats, no article)
+  3311 atoms in 85 analyses (by lexemes)
+  L x2488: Genesis 1:28 לָהֶם; Genesis 1:29 לָכֶם; Genesis 1:29 לָכֶם; Genesis 3:7 לָהֶם; Genesis 3:11 לְךָ; Genesis 3:18 לָךְ
+  L + NTN[ x97: Genesis 15:7 לָתֶת; Genesis 29:26 לָתֵת; Genesis 34:14 לָתֵת; Genesis 42:27 לָתֵת; Exodus 5:7 לָתֵת; Exodus 5:21 לָתֶת־
+  L + HLK[ x84: Genesis 11:31 לָלֶכֶת; Genesis 12:5 לָלֶכֶת; Genesis 24:5 לָלֶכֶת; Genesis 24:8 לָלֶכֶת; Exodus 8:24 לָלֶכֶת; Exodus 13:21 לָלֶכֶת
+  L + BW>[ x83: Genesis 12:11 לָבֹוא; Genesis 15:12 לָבֹוא; Genesis 19:31 לָבֹוא; Genesis 31:18 לָבֹוא; Genesis 35:16 לָבֹוא; Genesis 41:54 לָבֹוא
+  L + RB=/ x55: Genesis 30:30 לָרֹב; Genesis 48:16 לָרֹב; Deuteronomy 1:10 לָרֹב; Deuteronomy 10:22 לָרֹב; Deuteronomy 28:62 לָרֹב; Joshua 11:4 לָרֹב
+  L + JCB[ x38: Genesis 13:6 לָשֶׁבֶת; Genesis 13:6 לָשֶׁבֶת; Genesis 19:30 לָשֶׁבֶת; Genesis 34:22 לָשֶׁבֶת; Exodus 2:21 לָשֶׁבֶת; Leviticus 20:22 לָשֶׁבֶת
+  L + JD<[ x32: Genesis 3:22 לָדַעַת; Genesis 24:21 לָדַעַת; Exodus 31:13 לָדַעַת; Exodus 36:1 לָדַעַת; Deuteronomy 4:35 לָדַעַת; Deuteronomy 8:2 לָדַעַת
+  L + BVX/ x32: Leviticus 25:18 לָבֶטַח; Leviticus 25:19 לָבֶטַח; Leviticus 26:5 לָבֶטַח; Deuteronomy 33:12 לָבֶטַח; Judges 18:7 לָבֶטַח; 1 Kings 5:5 לָבֶטַח
+  L + NYX/ x30: Isaiah 13:20 לָנֶצַח; Isaiah 25:8 לָנֶצַח; Isaiah 28:28 לָנֶצַח; Isaiah 33:20 לָנֶצַח; Isaiah 57:16 לָנֶצַח; Jeremiah 3:5 לָנֶצַח
+  L + LQX[ x25: Genesis 4:11 לָקַחַת; Genesis 24:48 לָקַחַת; Genesis 28:6 לָקַחַת־; Genesis 38:20 לָקַחַת; Deuteronomy 4:34 לָקַחַת; Deuteronomy 9:9 לָקַחַת
+  L + FJM[ x25: Genesis 45:7 לָשׂוּם; Numbers 11:11 לָשׂוּם; Deuteronomy 12:5 לָשׂוּם; Deuteronomy 12:21 לָשׂוּם; Deuteronomy 14:24 לָשׂוּם; Judges 9:24 לָשׂוּם
+  L + MWT[ x24: Genesis 25:32 לָמוּת; Genesis 47:29 לָמוּת; Exodus 14:11 לָמוּת; Exodus 21:14 לָמוּת; Numbers 18:22 לָמוּת; Numbers 20:4 לָמוּת
+  L + NF>[ x24: Genesis 36:7 לָשֵׂאת; Genesis 45:27 לָשֵׂאת; Genesis 46:5 לָשֵׂאת; Exodus 25:14 לָשֵׂאת; Exodus 25:27 לָשֵׂאת; Exodus 30:4 לָשֵׂאת
+  L + CWB[ x24: Exodus 4:21 לָשׁוּב; Numbers 35:32 לָשׁוּב; Deuteronomy 17:16 לָשׁוּב; Deuteronomy 24:4 לָשׁוּב; Joshua 22:16 לָשׁוּב; Joshua 22:23 לָשׁוּב
+  L + <D/ x21: Isaiah 30:8 לָעַד; Isaiah 64:8 לָעַד; Amos 1:11 לָעַד; Micah 7:18 לָעַד; Psalms 9:19 לָעַד; Psalms 19:10 לָעַד
+  L + JRC[ x19: Leviticus 20:24 לָרֶשֶׁת; Leviticus 25:46 לָרֶשֶׁת; Numbers 33:53 לָרֶשֶׁת; Deuteronomy 2:31 לָרֶשֶׁת; Deuteronomy 9:1 לָרֶשֶׁת; Deuteronomy 9:4 לָרֶשֶׁת
+  L + GWR[ x18: Genesis 12:10 לָגוּר; Genesis 19:9 לָגוּר; Genesis 47:4 לָגוּר; Judges 17:8 לָגוּר; Judges 17:9 לָגוּר; Isaiah 23:7 לָגוּר
+  L + NWS[ x13: Genesis 19:20 לָנוּס; Numbers 35:6 לָנֻס; Numbers 35:15 לָנוּס; Numbers 35:32 לָנוּס; Deuteronomy 4:42 לָנֻס; Deuteronomy 19:3 לָנוּס
+  L + BZ/ x13: Numbers 14:3 לָבַז; Numbers 14:31 לָבַז; Deuteronomy 1:39 לָבַז; Isaiah 42:22 לָבַז; Jeremiah 2:14 לָבַז; Jeremiah 15:13 לָבַז
+  L + JRD[ x10: Genesis 44:26 לָרֶדֶת; Exodus 32:1 לָרֶדֶת; Judges 1:34 לָרֶדֶת; Judges 7:10 לָרֶדֶת; 1 Samuel 23:8 לָרֶדֶת; 1 Samuel 23:20 לָרֶדֶת
+  L + MS/ x9: Deuteronomy 20:11 לָמַס; Joshua 17:13 לָמַס; Judges 1:28 לָמַס; Judges 1:30 לָמַס; Judges 1:33 לָמַס; Judges 1:35 לָמַס
+  L + JY>[ x9: Deuteronomy 31:2 לָצֵאת; Judges 20:14 לָצֵאת; Judges 20:28 לָצֵאת; 1 Samuel 23:13 לָצֵאת; 2 Samuel 13:39 לָצֵאת; 2 Kings 24:7 לָצֵאת
+  L + TWR[ x8: Numbers 10:33 לָתוּר; Numbers 13:16 לָתוּר; Numbers 13:17 לָתוּר; Numbers 13:32 לָתוּר; Numbers 14:7 לָתוּר; Numbers 14:36 לָתוּר
+  L + LJN[ x7: Genesis 24:23 לָלִין; Genesis 24:25 לָלוּן; Judges 19:10 לָלוּן; Judges 19:15 לָלוּן; Judges 19:15 לָלוּן; Judges 20:4 לָלוּן
+  L + QWM[ x7: Genesis 31:35 לָקוּם; Joshua 7:12 לָקוּם; Joshua 7:13 לָקוּם; 1 Samuel 22:13 לָקוּם; 1 Samuel 24:8 לָקוּם; 2 Kings 6:15 לָקוּם
+  L + JLD[ x5: Genesis 4:2 לָלֶדֶת; Genesis 25:24 לָלֶדֶת; 1 Samuel 4:19 לָלַת; Isaiah 26:17 לָלֶדֶת; Ecclesiastes 3:2 לָלֶדֶת
+  L + >LH x5: Genesis 31:43 לָאֵלֶּה; Numbers 26:53 לָאֵלֶּה; 1 Kings 22:17 לָאֵלֶּה; Micah 2:6 לָאֵלֶּה; 2 Chronicles 18:16 לָאֵלֶּה
+  L + SWR[ x5: 2 Samuel 2:21 לָסוּר; 2 Samuel 2:23 לָסוּר; Proverbs 13:14 לָסוּר; Proverbs 14:27 לָסוּר; 2 Chronicles 35:15 לָסוּר
+  L + QBL/ x5: Daniel 3:3 לָקֳבֵל; Daniel 5:5 לָקֳבֵל; Daniel 5:10 לָקֳבֵל; Ezra 4:16 לָקֳבֵל; Ezra 6:13 לָקֳבֵל
+  L + FB</ x4: Exodus 16:3 לָשֹׂבַע; Leviticus 25:19 לָשֹׂבַע; Leviticus 26:5 לָשֹׂבַע; Psalms 78:25 לָשֹׂבַע
+  L + NW<[ x4: Judges 9:9 לָנוּעַ; Judges 9:11 לָנוּעַ; Judges 9:13 לָנוּעַ; Jeremiah 14:10 לָנוּעַ
+  L + RJB[ x4: Isaiah 3:13 לָרִיב; Amos 7:4 לָרִב; Job 9:3 לָרִיב; Proverbs 25:8 לָרִב
+  L + YW/ x4: Isaiah 28:10 לָצָו; Isaiah 28:10 לָצָו; Isaiah 28:13 לָצָו; Isaiah 28:13 לָצָו
+  L + QW=/ x4: Isaiah 28:10 לָקָו; Isaiah 28:10 לָקָו; Isaiah 28:13 לָקָו; Isaiah 28:13 לָקָו
+  L + HNH= x4: Ezekiel 1:5 לָהֵנָּה; Ezekiel 1:23 לָהֵנָּה; Ezekiel 1:23 לָהֵנָּה; Ezekiel 42:9 לָהֵנָּה
+  L + Z>T x3: Exodus 7:23 לָזֹאת; Isaiah 30:7 לָזֹאת; Jeremiah 5:7 לָזֹאת
+  L + NPC/ x3: Leviticus 19:28 לָנֶפֶשׁ; Numbers 5:2 לָנָפֶשׁ; Numbers 9:10 לָנֶפֶשׁ
+  L + RWY[ x3: 1 Samuel 20:6 לָרוּץ; Psalms 19:6 לָרוּץ; Proverbs 6:18 לָרוּץ
+  L + ZH x3: 1 Samuel 21:12 לָזֶה; 1 Samuel 25:21 לָזֶה; Ecclesiastes 6:5 לָזֶה
+  L + DJN[ x3: Isaiah 3:13 לָדִין; Psalms 50:4 לָדִין; Ecclesiastes 6:10 לָדִין
+  L + NWD[ x3: Psalms 69:21 לָנוּד; Job 2:11 לָנוּד־; Proverbs 26:2 לָנוּד
+  L + BZZ[ x3: Esther 3:13 לָבֹוז; Esther 8:11 לָבֹוז; 2 Chronicles 20:25 לָבֹז
+  L + BWZ/ x2: Genesis 38:23 לָבוּז; Proverbs 12:8 לָבוּז
+  L + QBB[ x2: Numbers 23:11 לָקֹב; Numbers 24:10 לָקֹב
+  L + NGC[ x2: Judges 20:23 לָגֶשֶׁת; Jeremiah 30:21 לָגֶשֶׁת
+  L + PH/ x2: 2 Kings 10:21 לָפֶה; 2 Kings 21:16 לָפֶה
+  L + DWC[ x2: 2 Kings 13:7 לָדֻשׁ; Hosea 10:11 לָדוּשׁ
+  L + XLJ/ x2: Isaiah 1:5 לָחֳלִי; 2 Chronicles 21:18 לָחֳלִי
+  L + FH/ x2: Ezekiel 34:17 לָשֶׂה; Ezekiel 34:22 לָשֶׂה
+  L + XGG[ x2: Zechariah 14:18 לָחֹג; Zechariah 14:19 לָחֹג
+  L + MJM/ x1: Genesis 1:6 לָמָיִם
+  L + RBB[ x1: Genesis 6:1 לָרֹב
+  L + FWX[ x1: Genesis 24:63 לָשׂוּחַ
+  L + YWD[ x1: Genesis 27:5 לָצוּד
+  L + GZZ[ x1: Genesis 38:13 לָגֹז
+  L + VHR=/ x1: Exodus 24:10 לָטֹהַר
+  L + C<R/ x1: Exodus 32:27 לָשַׁעַר
+  L + JYQ[ x1: Exodus 38:27 לָצֶקֶת
+  L + R</ x1: Leviticus 27:33 לָרַע
+  L + NG</ x1: Deuteronomy 17:8 לָנֶגַע
+  L + FWF[ x1: Deuteronomy 30:9 לָשׂוּשׂ
+  L + XWL[ x1: Judges 21:21 לָחוּל
+  L + YWR[ x1: 1 Samuel 23:8 לָצוּר
+  L + NG<[ x1: 2 Samuel 14:10 לָגַעַת
+  L + NWX[ x1: 2 Samuel 21:10 לָנוּחַ
+  L + VRX/ x1: Isaiah 1:14 לָטֹרַח
+  L + <WZ[ x1: Isaiah 30:2 לָעֹוז
+  L + D<T/ x1: Isaiah 32:4 לָדָעַת
+  L + DWR/ x1: Isaiah 34:10 לָדֹור
+  L + <WT=[ x1: Isaiah 50:4 לָעוּת
+  L + NWM[ x1: Isaiah 56:10 לָנוּם
+  L + >LP==/ x1: Isaiah 60:22 לָאֶלֶף
+  L + HMH x1: Jeremiah 14:16 לָהֵמָּה
+  L + RWM[ x1: Ezekiel 10:16 לָרוּם
+  L + MWG[ x1: Ezekiel 21:20 לָמוּג
+  L + NPX[ x1: Ezekiel 22:20 לָפַחַת־
+  L + RSS[ x1: Ezekiel 46:14 לָרֹס
+  L + XDC=/ x1: Ezekiel 47:12 לָחֳדָשָׁיו
+  L + MDD[ x1: Zechariah 2:6 לָמֹד
+  L + FJX[ x1: Psalms 119:148 לָשִׂיחַ
+  L + CJT[ x1: Job 30:1 לָשִׁית
+  L + <WP[ x1: Proverbs 26:2 לָעוּף
+  L + NV<[ x1: Ecclesiastes 3:2 לָטַעַת
+  L + VWX[ x1: 1 Chronicles 29:4 לָטוּחַ
+  L + <JR/ x1: 2 Chronicles 30:10 לָעִיר
+
+== 3. Atoms whose first slot is W with patah, followed by a guttural with a full patah, outside the wayyiqtol
+  3 atoms: Exodus 29:23 וַחַלַּת (W + XLH/); Numbers 16:21 וַאַכַלֶּה (W + KLH[); Daniel 5:12 וַאַחֲוָיַת (W + XWH[)
+
+== 4. The BHSA's slots of M>N[ by pointing, stem and tense
+  מֵאֲנוּ piel perf x10 (Jeremiah 5:3)
+  יְמָאֵן piel wayq x9 (Genesis 37:35)
+  מֵאֵן piel perf x4 (Exodus 7:14)
+  מָאֵן piel ptca x4 (Exodus 7:27)
+  מֵאֲנָה piel perf x4 (Jeremiah 15:18)
+  יְמָאֲנוּ piel wayq x3 (1 Samuel 8:19)
+  תְּמָאֵן piel wayq x2 (Exodus 4:23)
+  מֵאַנְתָּ piel perf x1 (Exodus 10:3)
+  מֵאַנְתֶּם piel perf x1 (Exodus 16:28)
+  מָאֵן piel infa x1 (Exodus 22:16)
+  יְמָאֵן piel impf x1 (Exodus 22:16)
+  מֵאֵין piel perf x1 (Deuteronomy 25:7)
+  תְּמָאֲנוּ piel impf x1 (Isaiah 1:20)
+  מֵאַנְתְּ piel perf x1 (Jeremiah 3:3)
+  מֵּאֲנִים piel ptca x1 (Jeremiah 13:10)
+  יְמָאֲנוּ piel impf x1 (Jeremiah 25:28)
+  תְּמָאֵנוּ piel wayq x1 (Proverbs 1:24)
+
+== 5. The BHSA's slots of >TH and >T= by pointing (ketiv slots show their unpointed letters)
+  >TH: אַתָּה x685 (Genesis 3:14, Genesis 3:15, Genesis 3:19, Genesis 4:7); אָתָּה x54 (Genesis 3:11, Genesis 4:11, Genesis 27:32, Genesis 29:14); את (ketiv; qere אַתָּה) x5 (1 Samuel 24:19, Psalms 6:4, Job 1:10, Ecclesiastes 7:22); אַתְּ x3 (Numbers 11:15, Deuteronomy 5:27, Ezekiel 28:14)
+  >T=: אַתְּ x44 (Genesis 24:23, Genesis 24:47, Genesis 24:60, Genesis 39:9); אתי (ketiv; qere אַתְּ) x6 (Judges 17:2, 1 Kings 14:2, 2 Kings 4:16, 2 Kings 4:23); אָתְּ x5 (Genesis 12:11, Genesis 12:13, 1 Samuel 25:33, Proverbs 7:4); אתי (ketiv; qere אָתְּ) x1 (Ezekiel 36:13); אָתּ x1 (Ruth 3:9)
+
+== 6. Candidate atoms whose BHSA atom differs from WLC 4.18's aligned atom (bkey, final maqaf stripped)
+  B114192 2 Samuel 3:27 | BHSA לְדַּבֵּר | WLC 4.18 לְדַבֵּר
+  B119492 2 Samuel 16:4 | BHSA לִמְפִי־בֹשֶׁת | WLC 4.18 לִמְפִי־בֹשֶׁת
+  B119742 2 Samuel 16:19 | BHSA לִפָנֶיךָ | WLC 4.18 לְפָנֶיךָ
+  B185728 Jeremiah 49:37 | BHSA לפְנֵי | WLC 4.18 לִפְנֵי
+  B191270 Ezekiel 12:10 | BHSA בִּירוּשָׁלַם | WLC 4.18 בִּירוּשָׁלִַם (notes v)
+  B193102 Ezekiel 16:54 | BHSA וִנִכְלַמְתְּ | WLC 4.18 וְנִכְלַמְתְּ (notes v)
+  B105206 1 Samuel 14:49 | BHSA וּמַלְכִּי־שׁוּעַ | WLC 4.18 וּמַלְכִּי־שׁוּעַ
+  B121506 2 Samuel 19:33 | BHSA בְשִׁיבָתֹו | WLC 4.18 בְּשִׁיבָתוֹ
+  B199639 Ezekiel 32:30 | BHSA מִגְּבוּרָתָם | WLC 4.18 מִגְבוּרָתָם
+  B223241 Psalms 21:14 | BHSA בְעֻזֶּךָ | WLC 4.18 בְּעֻזֶּךָ
+  B247316 Job 36:3 | BHSA וְלְפֹעֲלִי | WLC 4.18 וּלְפֹעֲלִי
+  B256127 Ruth 2:2 | BHSA וַאֲלַקֳטָה | WLC 4.18 וַאֲלַקֳטָּה (notes Q,n,p)
+  12 atoms differ
+
+== 7. Accents of a few verses' atoms in the BHSA
+  Isa 3:6
+    כִּֽי־ | none
+    יִתְפֹּ֨שׂ | qadma
+    אִ֤ישׁ | mahapakh
+    בְּאָחִיו֙ | pashta
+    בֵּ֣ית | munah
+    אָבִ֔יו | zaqef qatan
+    שִׂמְלָ֣ה | munah
+    לְכָ֔ה | zaqef qatan
+    קָצִ֖ין | tipeha
+    תִּֽהְיֶה־ | none
+    לָּ֑נוּ | etnahta
+    וְהַמַּכְשֵׁלָ֥ה | merkha
+    הַזֹּ֖את | tipeha
+    תַּ֥חַת | merkha
+    יָדֶֽךָ | none
+  2Chr 30:10
+    וַיִּֽהְי֨וּ | qadma
+    הָרָצִ֜ים | geresh
+    עֹבְרִ֨ים | qadma
+    מֵעִ֧יר | darga
+    לָעִ֛יר | tevir
+    בְּאֶֽרֶץ־ | none
+    אֶפְרַ֥יִם | merkha
+    וּמְנַשֶּׁ֖ה | tipeha
+    וְעַד־ | none
+    זְבֻל֑וּן | etnahta
+    וַיִּֽהְיוּ֙ | pashta
+    מַשְׂחִיקִ֣ים | munah
+    עֲלֵיהֶ֔ם | zaqef qatan
+    וּמַלְעִגִ֖ים | tipeha
+    בָּֽם | none
+  Ezek 3:10
+    וַיֹּ֖אמֶר | tipeha
+    אֵלָ֑י | etnahta
+    בֶּן־ | none
+    אָדָ֕ם | zaqef gadol
+    אֶת־ | none
+    כָּל־ | none
+    דְּבָרַי֙ | pashta
+    אֲשֶׁ֣ר | munah
+    אֲדַבֵּ֣ר | munah
+    אֵלֶ֔יךָ | zaqef qatan
+    קַ֥ח | merkha
+    בִּֽלְבָבְךָ֖ | tipeha
+    וּבְאָזְנֶ֥יךָ | merkha
+    שְׁמָֽע | none
+  Gen 30:19
+    וַתַּ֤הַר | mahapakh
+    עֹוד֙ | pashta
+    לֵאָ֔ה | zaqef qatan
+    וַתֵּ֥לֶד | merkha
+    בֵּן־ | none
+    שִׁשִּׁ֖י | tipeha
+    לְּיַעֲקֹֽב | none
+  Ezek 20:8
+    וַיַּמְרוּ־ | none
+    בִ֗י | revia
+    וְלֹ֤א | mahapakh
+    אָבוּ֙ | pashta
+    לִּשְׁמֹ֣עַ | munah
+    אֵלַ֔י | zaqef qatan
+    אִ֣ישׁ | munah
+    אֶת־ | none
+    שִׁקּוּצֵ֤י | mahapakh
+    עֵֽינֵיהֶם֙ | pashta
+    לֹ֣א | munah
+    הִשְׁלִ֔יכוּ | zaqef qatan
+    וְאֶת־ | none
+    גִּלּוּלֵ֥י | merkha
+    מִצְרַ֖יִם | tipeha
+    לֹ֣א | munah
+    עָזָ֑בוּ | etnahta
+    וָאֹמַ֞ר | gershayim
+    לִשְׁפֹּ֧ךְ | darga
+    חֲמָתִ֣י | munah
+    עֲלֵיהֶ֗ם | revia
+    לְכַלֹּ֤ות | mahapakh
+    אַפִּי֙ | pashta
+    בָּהֶ֔ם | zaqef qatan
+    בְּתֹ֖וךְ | tipeha
+    אֶ֥רֶץ | merkha
+    מִצְרָֽיִם | none
+  Obad 1:3
+    זְדֹ֤ון | mahapakh
+    לִבְּךָ֙ | pashta
+    הִשִּׁיאֶ֔ךָ | zaqef qatan
+    שֹׁכְנִ֥י | merkha
+    בְחַגְוֵי־ | none
+    סֶּ֖לַע | tipeha
+    מְרֹ֣ום | munah
+    שִׁבְתֹּ֑ו | etnahta
+    אֹמֵ֣ר | munah
+    בְּלִבֹּ֔ו | zaqef qatan
+    מִ֥י | merkha
+    יֹורִדֵ֖נִי | tipeha
+    אָֽרֶץ | none

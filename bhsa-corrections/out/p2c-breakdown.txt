@@ -1,0 +1,16 @@
+another-word | own reason | 1
+follows-pointing | own reason | 2
+no-word | HATAF_CLOSED | 7
+no-word | HATAF_DOUBLED | 3
+no-word | WAYQ_DAGESH | 3
+no-word | own reason | 29
+unsure | own reason | 1
+variant | FULL_FOR_HATAF | 5
+variant | HATAF_VOCAL | 62
+variant | INITIAL_LENE | 7
+variant | INTERNAL_LENE | 3
+variant | KQ | 12
+variant | MAM_HATAF | 3
+variant | VAV_DOT | 3
+variant | own reason | 28
+total | 169

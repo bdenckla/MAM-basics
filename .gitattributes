@@ -86,3 +86,13 @@ gh-pages/taamey-d/**/*.zip binary
 # blanks, a space before a tab and a blank last line included, so `git diff --check` must not
 # report those (morphhb-on-mam/README.md, "What is not tracked").
 morphhb-on-mam/research/upstream/*.txt whitespace=-blank-at-eol,-space-before-tab,-blank-at-eof
+
+# The BHSA-corrections study's record, put on ice by Ben's instruction of 2026-11-17
+# (bhsa-corrections/ON-ICE.md). Its out/ files are copied byte for byte: four of them end
+# their lines with CRLF, which the rule at the top would rewrite, and 19 others have
+# line-final blanks or blank lines at their end, so Git must keep their bytes and
+# `git diff --check` must not report them. The BHSA's README, also copied byte for byte, has
+# three line-final blanks. The archive of the study's scripts is binary.
+bhsa-corrections/out/** -text whitespace=-trailing-space
+bhsa-corrections/in/etcbc-bhsa-README.md whitespace=-blank-at-eol
+bhsa-corrections/scripts.zip binary

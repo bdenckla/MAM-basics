@@ -1,0 +1,38 @@
+lex >L==: 1 words; voc_lex [('אַל', 1)]; gloss [('where', 1)]; sp [('inrg', 1)]; language [('Hebrew', 1)]
+   forms by review key: [('אַל', 1)]
+lex >L=/: 1 words; voc_lex [('אַל', 1)]; gloss [('nothingness', 1)]; sp [('subs', 1)]; language [('Hebrew', 1)]
+   forms by review key: [('אַל', 1)]
+lex M<L[: 36 words; voc_lex [('מעל', 36)]; gloss [('be unfaithful', 36)]; sp [('verb', 36)]; language [('Hebrew', 36)]
+   forms by review key: [('מָעֲלוּ', 8), ('מָעַל', 5), ('מְעַלְתֶּם', 4), ('מָעֲלָה', 2), ('מְעֹל', 2), ('יִּמְעֲלוּ', 2), ('תִמְעֹל', 1), ('תִּמְעֹל', 1), ('מְעָל', 1), ('מַעֲלָם', 1), ('יִמְעַל', 1), ('מָעַלְנוּ', 1), ('תִּמְעָלוּ', 1), ('יִּמְעַל', 1), ('מָעַלְתָּ', 1), ('מָעֹול', 1), ('מַעַל', 1), ('מְעֹול', 1), ('מעול', 1)]
+lex M<L=/: 28 words; voc_lex [('מַעַל', 28)]; gloss [('unfaithfulness', 28)]; sp [('subs', 28)]; language [('Hebrew', 28)]
+   forms by review key: [('מַעַל', 13), ('מַעֲלָם', 4), ('מַעֲלֹו', 4), ('מָעַל', 3), ('מַּעַל', 3), ('מַעְלֹו', 1)]
+verse 1Sam 18:29
+   152785 וַ | WA- | W וְ and | sp conj pdp conj | vs NA vt NA | nu NA gn NA st NA prs n/a | phrase CP Conj | clause WayX
+   152786 יֹּ֣אסֶף  | J.O74>SEP | JSP[ יסף add | sp verb pdp verb | vs hif vt wayq | nu sg gn m st NA prs absent | phrase VP Pred | clause WayX
+   152787 שָׁא֗וּל  | C@>81W.L | C>WL=/ שָׁאוּל Saul | sp nmpr pdp nmpr | vs NA vt NA | nu sg gn m st a prs n/a | phrase PrNP Subj | clause WayX
+   152788 לֵ | L;- | L לְ to | sp prep pdp prep | vs NA vt NA | nu NA gn NA st NA prs absent | phrase VP Pred | clause InfC
+   152789 רֹ֛א  | RO91> | JR>[ ירא fear | sp verb pdp verb | vs qal vt infc | nu unknown gn unknown st a prs absent | phrase VP Pred | clause InfC
+   152790 מִ | MI- | MN מִן from | sp prep pdp prep | vs NA vt NA | nu NA gn NA st NA prs absent | phrase PP Cmpl | clause InfC
+   152791 פְּנֵ֥י  | P.:N;71J | PNH/ פָּנֶה face | sp subs pdp subs | vs NA vt NA | nu pl gn m st c prs absent | phrase PP Cmpl | clause InfC
+   152792 דָוִ֖ד  | D@WI73D | DWD==/ דָּוִד David | sp nmpr pdp nmpr | vs NA vt NA | nu sg gn m st a prs n/a | phrase PP Cmpl | clause InfC
+   152793 עֹ֑וד  | <O92WD | <WD/ עֹוד duration | sp subs pdp advb | vs NA vt NA | nu sg gn m st a prs absent | phrase AdvP Modi | clause InfC
+   152794 וַ | WA- | W וְ and | sp conj pdp conj | vs NA vt NA | nu NA gn NA st NA prs n/a | phrase CP Conj | clause WayX
+   152795 יְהִ֥י  | J:HI71J | HJH[ היה be | sp verb pdp verb | vs qal vt wayq | nu sg gn m st NA prs absent | phrase VP Pred | clause WayX
+   152796 שָׁא֛וּל  | C@>91W.L | C>WL=/ שָׁאוּל Saul | sp nmpr pdp nmpr | vs NA vt NA | nu sg gn m st a prs n/a | phrase PrNP Subj | clause WayX
+   152797 אֹיֵ֥ב  | >OJ;71B | >JB[ איב be hostile | sp verb pdp verb | vs qal vt ptca | nu sg gn m st a prs absent | phrase VP PreC | clause WayX
+   152798 אֶת־ | >ET | >T אֵת <object marker> | sp prep pdp prep | vs NA vt NA | nu NA gn NA st NA prs absent | phrase PP Objc | clause WayX
+   152799 דָּוִ֖ד  | D.@WI73D | DWD==/ דָּוִד David | sp nmpr pdp nmpr | vs NA vt NA | nu sg gn m st a prs n/a | phrase PP Objc | clause WayX
+   152800 כָּל־ | K.@L | KL/ כֹּל whole | sp subs pdp subs | vs NA vt NA | nu sg gn m st c prs absent | phrase NP Time | clause WayX
+   152801 הַ | HA- | H הַ the | sp art pdp art | vs NA vt NA | nu NA gn NA st NA prs n/a | phrase NP Time | clause WayX
+   152802 יָּמִֽים׃ ס  | J.@MI75JM | JWM/ יֹום day | sp subs pdp subs | vs NA vt NA | nu pl gn m st a prs absent | phrase NP Time | clause WayX
+verse Ps 104:29
+   328513 תַּסְתִּ֥יר  | T.AS:T.I71JR | STR[ סתר hide | sp verb pdp verb | vs hif vt impf | nu sg gn m st NA prs absent | phrase VP Pred | clause ZYq0
+   328514 פָּנֶיךָ֮  | P.@NEJK@02 | PNH/ פָּנֶה face | sp subs pdp subs | vs NA vt NA | nu pl gn m st a prs K | phrase NP Objc | clause ZYq0
+   328515 יִֽבָּהֵ֫ל֥וּן  | JI45B.@H;60L71W.N | BHL[ בהל disturb | sp verb pdp verb | vs nif vt impf | nu pl gn m st NA prs absent | phrase VP Pred | clause ZYq0
+   328516 תֹּסֵ֣ף  | T.OS;74P | >SP[ אסף gather | sp verb pdp verb | vs qal vt impf | nu sg gn m st NA prs absent | phrase VP Pred | clause ZYq0
+   328517 ר֭וּחָם  | 13RW.X@M | RWX/ רוּחַ wind | sp subs pdp subs | vs NA vt NA | nu sg gn unknown st a prs M | phrase NP Objc | clause ZYq0
+   328518 יִגְוָע֑וּן  | JIG:W@<92W.N | GW<[ גוע expire | sp verb pdp verb | vs qal vt impf | nu pl gn m st NA prs absent | phrase VP Pred | clause ZYq0
+   328519 וְֽ | W:45- | W וְ and | sp conj pdp conj | vs NA vt NA | nu NA gn NA st NA prs n/a | phrase CP Conj | clause WxY0
+   328520 אֶל־ | >EL | >L אֶל to | sp prep pdp prep | vs NA vt NA | nu NA gn NA st NA prs absent | phrase PP Cmpl | clause WxY0
+   328521 עֲפָרָ֥ם  | <:AP@R@71M | <PR/ עָפָר dust | sp subs pdp subs | vs NA vt NA | nu sg gn m st a prs M | phrase PP Cmpl | clause WxY0
+   328522 יְשׁוּבֽוּן׃  | J:CW.B75W.N | CWB[ שׁוב return | sp verb pdp verb | vs qal vt impf | nu pl gn m st NA prs absent | phrase VP Pred | clause WxY0

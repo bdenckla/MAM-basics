@@ -1,0 +1,42 @@
+== slot 98390, Deuteronomium 8:20
+     slot 98387 | g_word מִ | qere  | trailer '' | accents - | qere accents -
+     slot 98388 | g_word פְּנֵיכֶ֔ם | qere  | trailer ' ' | accents accent zaqef qatan | qere accents -
+     slot 98389 | g_word כֵּ֖ן | qere  | trailer ' ' | accents accent tipeha | qere accents -
+  -> slot 98390 | g_word תֹאבֵד֑וּן | qere  | trailer ' ' | accents accent etnahta | qere accents -
+     slot 98391 | g_word עֵ֚קֶב | qere  | trailer ' ' | accents accent yetiv | qere accents -
+== slot 121460, Josua 15:4
+     slot 121457 | g_word מִצְרַ֔יִם | qere  | trailer ' ' | accents accent zaqef qatan | qere accents -
+     slot 121458 | g_word ו | qere וְ | trailer '' | accents - | qere accents -
+     slot 121459 | g_word היה | qere הָי֛וּ | trailer ' ' | accents - | qere accents accent tevir
+  -> slot 121460 | g_word תֹצְאֹ֥ות | qere  | trailer ' ' | accents accent merkha | qere accents -
+     slot 121461 | g_word הַ | qere  | trailer '' | accents - | qere accents -
+== slot 324932, Psalmi 83:11
+     slot 324929 | g_word בְֽ | qere  | trailer '' | accents point meteg | qere accents -
+     slot 324930 | g_word עֵין־דֹּ֑אר | qere  | trailer ' ' | accents accent etnahta | qere accents -
+     slot 324931 | g_word הָ֥יוּ | qere  | trailer ' ' | accents accent merkha | qere accents -
+  -> slot 324932 | g_word דֹּ֝֗מֶן | qere  | trailer ' ' | accents accent geresh muqdam, accent revia | qere accents -
+     slot 324933 | g_word לָ | qere  | trailer '' | accents - | qere accents -
+== slot 371180, Daniel 2:31
+     slot 371177 | g_word חַד֙ | qere  | trailer ' ' | accents accent pashta | qere accents -
+     slot 371178 | g_word שַׂגִּ֔יא | qere  | trailer ' ' | accents accent zaqef qatan | qere accents -
+     slot 371179 | g_word צַלְמָ֨א | qere  | trailer ' ' | accents accent qadma | qere accents -
+  -> slot 371180 | g_word דִּכֵּ֥ן | qere  | trailer ' ' | accents accent merkha | qere accents -
+     slot 371181 | g_word רַ֛ב | qere  | trailer ' ' | accents accent tevir | qere accents -
+== slot 82499, Numeri 19:21
+     slot 82496 | g_word הֽוּא | qere  | trailer '׃ ' | accents point meteg | qere accents -
+     slot 82497 | g_word וְ | qere  | trailer '' | accents - | qere accents -
+     slot 82498 | g_word הָיְתָ֥ה | qere  | trailer ' ' | accents accent merkha | qere accents -
+  -> slot 82499 | g_word לָּהֶ֖ם | qere  | trailer ' ' | accents accent tipeha | qere accents -
+     slot 82500 | g_word לְ | qere  | trailer '' | accents - | qere accents -
+== slot 358786, Canticum 6:8
+     slot 358783 | g_word צַמָּתֵֽךְ | qere  | trailer '׃ ' | accents point meteg | qere accents -
+     slot 358784 | g_word שִׁשִּׁ֥ים | qere  | trailer ' ' | accents accent merkha | qere accents -
+     slot 358785 | g_word הֵ֨מָּה֙ | qere  | trailer ' ' | accents accent qadma, accent pashta | qere accents -
+  -> slot 358786 | g_word מְּלָכֹ֔ות | qere  | trailer ' ' | accents accent zaqef qatan | qere accents -
+     slot 358787 | g_word וּ | qere  | trailer '' | accents - | qere accents -
+== slot 320049, Psalmi 59:2
+     slot 320046 | g_word מֵ | qere  | trailer '' | accents - | qere accents -
+     slot 320047 | g_word אֹיְבַ֥י | qere  | trailer '׀ ' | accents accent merkha | qere accents -
+     slot 320048 | g_word אֱלֹהָ֑י | qere  | trailer ' ' | accents accent etnahta | qere accents -
+  -> slot 320049 | g_word מִּ | qere  | trailer '' | accents - | qere accents -
+     slot 320050 | g_word מִתְקֹומְמַ֥י | qere  | trailer ' ' | accents accent merkha | qere accents -

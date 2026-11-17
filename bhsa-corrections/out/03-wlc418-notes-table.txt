@@ -1,0 +1,23 @@
+WLC 4.18 notes table, from C:/Users/BenDe/GitRepos2/MAM-basics/.novc/wlc418-tanach-us/sefaria-data-0f63a5fe/books/Genesis.xml
+code 1, gccode 1: BHS has been faithful to the Leningrad Codex where there might be a question of the validity of the form and we keep the same form as BHS.
+code 2, gccode 4: Puncta extraordinaria -- a \u05c4 is used to mark such marks in the text when they are above the line and a \u05c5 when they are below the line.
+code 3, gccode 5: Large letter(s). Shown as large letters without a superscript note number.
+code 4, gccode 6: Small letter(s). Shown as small letters without a superscript note number.
+code 5, gccode 7: Suspended letter(s). Shown as suspended letters without a superscript note number.
+code 6, gccode 8: Inverted nun in the text.
+code 7, gccode a: Adaptations to a Qere which L and BHS, by their design, do not indicate.
+code 8, gccode c: We read one or more accents in L differently than BHS. Often this notation indicates a typographical error in BHS.
+code 9, gccode k: We read one or more consonants in L differently from BHS.
+code 10, gccode n: Marks an anomalous form.
+code 11, gccode p: We read punctuation in L differently from BHS.
+code 12, gccode q: We have abandoned or added a ketib/qere relative to BHS. In doing this we agree with L against BHS.
+code 13, gccode v: We read one or more vowels in L differently from BHS.
+code 14, gccode y: Yathir readings in L which we have designated as Qeres when both Dothan and BHS list a Qere.
+code 15, gccode C: We read one or more accents in L differently from BHQ.
+code 16, gccode F: Marks a consonant with an anomalous final form that is word-medial.
+code 17, gccode K: We read one or more consonants in L differently from BHQ.
+code 18, gccode M: Marks a word with a final consonant that is a medial (not a final) form.
+code 19, gccode P: We read the punctuation in L differently from BHQ.
+code 20, gccode Q: Marks a place where we agree with BHQ against BHS in reading L.
+code 21, gccode U: We agree with both BHS 1997 and BHQ on an unexpected reading.
+code 22, gccode V: We read one or more vowels in L differently from BHQ.

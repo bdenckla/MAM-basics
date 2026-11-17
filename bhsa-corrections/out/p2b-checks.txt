@@ -1,0 +1,168 @@
+== 1. third-he verbs, qal perfect 3ms with suffix H
+1 words, 1 keys
+  Iob 28:27 רָ֭אָהּ [R>H[ qal perf p3sgm prs=H]
+
+== 2. <FH[ with prs H
+  Genesis 6:16 תַּֽעֲשֶֽׂהָ [<FH[ qal impf p2sgm prs=H]
+  Leviticus 4:27 עֲשֹׂתָהּ [<FH[ qal infc unknownunknownunknown prs=H]
+  Leviticus 9:16 יַּעֲשֶׂ֖הָ [<FH[ qal wayq p3sgm prs=H]
+  Deuteronomium 11:22 עֲשֹׂתָ֑הּ [<FH[ qal infc unknownunknownunknown prs=H]
+  Deuteronomium 19:9 עֲשֹׂתָ֗הּ [<FH[ qal infc unknownunknownunknown prs=H]
+  Deuteronomium 30:12 נַעֲשֶֽׂנָּה [<FH[ qal impf p1plunknown prs=H]
+  Deuteronomium 30:13 נַעֲשֶֽׂנָּה [<FH[ qal impf p1plunknown prs=H]
+  Samuel_II 12:4 יַּעֲשֶׂ֔הָ [<FH[ qal wayq p3sgm prs=H]
+  Reges_I 11:12 אֶעֱשֶׂ֔נָּה [<FH[ qal impf p1sgunknown prs=H]
+  Jesaia 22:11 עֹשֶׂ֔יהָ [<FH[ qal ptca unknownsgm prs=H]
+  Jesaia 45:18 עֹשָׂהּ֙ [<FH[ qal ptca unknownsgm prs=H]
+  Jesaia 46:11 אֶעֱשֶֽׂנָּה [<FH[ qal impf p1sgunknown prs=H]
+  Jeremia 3:7 עֲשֹׂותָ֧הּ [<FH[ qal infc unknownunknownunknown prs=H]
+  Jeremia 11:15 עֲשֹׂותָ֤הּ [<FH[ qal infc unknownunknownunknown prs=H]
+  Jeremia 33:2 עֹשָׂ֑הּ [<FH[ qal ptca unknownsgm prs=H]
+  Micha 2:1 יַעֲשׂ֔וּהָ [<FH[ qal impf p3plm prs=H]
+  Maleachi 2:12 יַעֲשֶׂ֨נָּה֙ [<FH[ qal impf p3sgm prs=H]
+  Psalmi 109:27 עֲשִׂיתָֽהּ [<FH[ qal perf p2sgm prs=H]
+  Proverbia 6:32 יַעֲשֶֽׂנָּה [<FH[ qal impf p3sgm prs=H]
+
+== 3. impf/wayq with prs H: endings (last two letters with marks)
+  נָּה x124 e.g. Genesis 3:17 תֹּֽאכֲלֶ֔נָּה [>KL[ qal impf p2sgm prs=H]
+  וּהָ x35 e.g. Leviticus 6:9 יֹאכְלֽוּהָ [>KL[ qal impf p3plm prs=H]
+  חֶהָ x16 e.g. Genesis 8:9 יִּקָּחֶ֔הָ [LQX[ qal wayq p3sgm prs=H]
+  נָהּ x12 e.g. Deuteronomium 29:7 נִּתְּנָ֣הּ [NTN[ qal wayq p1plunknown prs=H]
+  אֶהָ x11 e.g. Genesis 2:22 יְבִאֶ֖הָ [BW>[ hif wayq p3sgm prs=H]
+  דָהּ x11 e.g. Deuteronomium 31:22 יְלַמְּדָ֖הּ [LMD[ piel wayq p3sgm prs=H]
+  בֶהָ x8 e.g. Genesis 15:6 יַּחְשְׁבֶ֥הָ [XCB[ qal wayq p3sgm prs=H]
+  רֶהָ x7 e.g. Genesis 48:7 אֶקְבְּרֶ֤הָ [QBR[ qal wayq p1sgunknown prs=H]
+  נֶהָ x6 e.g. Reges_I 14:8 אֶתְּנֶ֖הָ [NTN[ qal wayq p1sgunknown prs=H]
+  נַּהּ x6 e.g. Daniel 2:11 יְחַוִּנַּ֖הּ [XWH[ pael impf p3sgm prs=H]
+  עֶהָ x5 e.g. Judices 3:21 יִּתְקָעֶ֖הָ [TQ<[ qal wayq p3sgm prs=H]
+  שֶׂהָ x4 e.g. Genesis 6:16 תַּֽעֲשֶֽׂהָ [<FH[ qal impf p2sgm prs=H]
+  נֶּהָ x4 e.g. Genesis 16:6 תְּעַנֶּ֣הָ [<NH=[ piel wayq p3sgf prs=H]
+  אָהּ x4 e.g. Genesis 16:7 יִּמְצָאָ֞הּ [MY>[ qal wayq p3sgm prs=H]
+  מֶהָ x4 e.g. Genesis 31:45 יְרִימֶ֖הָ [RWM[ hif wayq p3sgm prs=H]
+  לֶהָ x3 e.g. Exodus 20:25 תְּחַֽלְלֶֽהָ [XLL[ piel wayq p2sgm prs=H]
+  כֶּהָ x3 e.g. Josua 10:28 יַּכֶּ֣הָ [NKH[ hif wayq p3sgm prs=H]
+  פָהּ x3 e.g. Samuel_I 17:51 יִּשְׁלְפָ֤הּ [CLP[ qal wayq p3sgm prs=H]
+  דֶהָ x3 e.g. Jesaia 44:7 יַגִּידֶ֤הָ [NGD[ hif impf p3sgm prs=H]
+  רָהּ x2 e.g. Genesis 37:33 יַּכִּירָ֤הּ [NKR[ hif wayq p3sgm prs=H]
+  דֻהָ x2 e.g. Numeri 32:39 יִּלְכְּדֻ֑הָ [LKD[ qal wayq p3plm prs=H]
+  לָהּ x2 e.g. Jesaia 26:5 יַשְׁפִּילָהּ֙ [CPL[ hif impf p3sgm prs=H]
+  כֶהָ x2 e.g. Jesaia 44:7 יַעְרְכֶ֨הָ֙ [<RK[ qal impf p3sgm prs=H]
+  פֶּהָ x2 e.g. Iob 27:6 אַרְפֶּ֑הָ [RPH[ hif impf p1sgunknown prs=H]
+  רָה x1 e.g. Exodus 2:3 תַּחְמְרָ֥ה [XMR[ qal wayq p3sgf prs=H]
+  מָהּ x1 e.g. Josua 10:1 יַּחֲרִימָהּ֒ [XRM[ hif wayq p3sgm prs=H]
+  יֶּהָ x1 e.g. Samuel_II 12:3 יְחַיֶּ֕הָ [XJH[ piel wayq p3sgm prs=H]
+  נְהָ x1 e.g. Jeremia 2:24 יִמְצָאֽוּנְהָ [MY>[ qal impf p3plm prs=H]
+  סֶּהָ x1 e.g. Micha 7:10 תְכַסֶּ֣הָ [KSH[ piel impf p3sgf prs=H]
+  בֻהָ x1 e.g. Psalmi 55:11 יְסֹובְבֻ֥הָ [SBB[ piel impf p3plm prs=H]
+  קֶהָ x1 e.g. Psalmi 65:10 תְּשֹׁ֪קְקֶ֡הָ [CWQ[ piel wayq p2sgm prs=H]
+  שֶׁהָ x1 e.g. Iob 39:15 תְּדוּשֶֽׁהָ [DWC[ qal impf p3sgf prs=H]
+  סֶהָ x1 e.g. Chronica_I 20:1 יֶּֽהֶרְסֶֽהָ [HRS[ qal wayq p3sgm prs=H]
+  הֶהָ x1 e.g. Chronica_II 33:14 יַּגְבִּיהֶ֖הָ [GBH[ hif wayq p3sgm prs=H]
+  -- any word (any analysis) whose key ends in segol + he with mappiq:
+  ('<FH[', 'impf', 'absent') x1 e.g. Genesis 2:18 אֶֽעֱשֶׂהּ [<FH[ qal impf p1sgunknown prs=absent]
+
+== 4. a proclitic with hiriq, then a slot beginning with yod + sheva
+  Reges_II 9:15 | בִ + יְזְרְעֶ֗אל [B JZR<>L/]
+  Daniel 12:2 | מִ + יְּשֵׁנֵ֥י [MN JCN/]
+  Chronica_II 20:11 | מִ + יְּרֻשָּׁתְךָ֖ [MN JRCH/]
+  total 3
+
+== 5. Joshua 15:4 slots
+  slot 121451 g_word וְ | qere  | trailer '' | marks 
+  slot 121452 g_word עָבַ֣ר | qere  | trailer ' ' | marks accent munah
+  slot 121453 g_word עַצְמֹ֗ונָה | qere  | trailer ' ' | marks accent revia
+  slot 121454 g_word וְ | qere  | trailer '' | marks 
+  slot 121455 g_word יָצָא֙ | qere  | trailer ' ' | marks accent pashta
+  slot 121456 g_word נַ֣חַל | qere  | trailer ' ' | marks accent munah
+
+== 6. perfects 2ms with suffix M
+  Genesis 44:4 הִשַּׂגְתָּם֙ [NFG[ hif perf p2sgm prs=M]
+  Genesis 47:6 שַׂמְתָּ֛ם [FJM[ qal perf p2sgm prs=M]
+  Exodus 4:21 עֲשִׂיתָ֖ם [<FH[ qal perf p2sgm prs=M]
+  Exodus 19:10 קִדַּשְׁתָּ֥ם [QDC[ piel perf p2sgm prs=M]
+  Exodus 29:8 הִלְבַּשְׁתָּ֖ם [LBC[ hif perf p2sgm prs=M]
+  Numeri 17:19 הִנַּחְתָּ֖ם [NWX[ hif perf p2sgm prs=M]
+  Numeri 20:26 הִלְבַּשְׁתָּ֖ם [LBC[ hif perf p2sgm prs=M]
+  Deuteronomium 4:9 הֹודַעְתָּ֥ם [JD<[ hif perf p2sgm prs=M]
+  Deuteronomium 4:19 עֲבַדְתָּ֑ם [<BD[ qal perf p2sgm prs=M]
+  Deuteronomium 6:7 שִׁנַּנְתָּ֣ם [CNN=[ piel perf p2sgm prs=M]
+  Deuteronomium 6:8 קְשַׁרְתָּ֥ם [QCR[ qal perf p2sgm prs=M]
+  Deuteronomium 6:9 כְתַבְתָּ֛ם [KTB[ qal perf p2sgm prs=M]
+  Deuteronomium 7:2 הִכִּיתָ֑ם [NKH[ hif perf p2sgm prs=M]
+  Deuteronomium 8:19 עֲבַדְתָּ֖ם [<BD[ qal perf p2sgm prs=M]
+  Deuteronomium 9:3 הֹֽורַשְׁתָּ֤ם [JRC[ hif perf p2sgm prs=M]
+  Deuteronomium 9:3 הַֽאַבַדְתָּם֙ [>BD[ hif perf p2sgm prs=M]
+  Deuteronomium 10:2 שַׂמְתָּ֖ם [FJM[ qal perf p2sgm prs=M]
+  Deuteronomium 11:20 כְתַבְתָּ֛ם [KTB[ qal perf p2sgm prs=M]
+  Deuteronomium 13:3 יְדַעְתָּ֖ם [JD<[ qal perf p2sgm prs=M]
+  Deuteronomium 17:5 סְקַלְתָּ֥ם [SQL[ qal perf p2sgm prs=M]
+  Deuteronomium 19:1 ירִשְׁתָּ֕ם [JRC[ qal perf p2sgm prs=M]
+  Deuteronomium 30:17 עֲבַדְתָּֽם [<BD[ qal perf p2sgm prs=M]
+  Deuteronomium 31:3 ירִשְׁתָּ֑ם [JRC[ qal perf p2sgm prs=M]
+  Reges_I 8:34 הֲשֵֽׁבֹתָם֙ [CWB[ hif perf p2sgm prs=M]
+  Reges_I 8:46 נְתַתָּ֖ם [NTN[ qal perf p2sgm prs=M]
+  Reges_I 8:50 נְתַתָּ֧ם [NTN[ qal perf p2sgm prs=M]
+  Reges_I 8:53 הִבְדַּלְתָּ֤ם [BDL[ hif perf p2sgm prs=M]
+  Reges_I 12:7 עֲבַדְתָּ֔ם [<BD[ qal perf p2sgm prs=M]
+  Reges_I 12:7 עֲנִיתָ֕ם [<NH[ qal perf p2sgm prs=M]
+  Jesaia 48:6 יְדַעְתָּֽם [JD<[ qal perf p2sgm prs=M]
+  Jesaia 48:7 שְׁמַעְתָּ֑ם [CM<[ qal perf p2sgm prs=M]
+  Jeremia 5:3 כִּלִּיתָ֕ם [KLH[ piel perf p2sgm prs=M]
+  Jeremia 11:2 דִבַּרְתָּם֙ [DBR[ piel perf p2sgm prs=M]
+  Jeremia 12:2 נְטַעְתָּם֙ [NV<[ qal perf p2sgm prs=M]
+  Jeremia 27:2 נְתַתָּ֖ם [NTN[ qal perf p2sgm prs=M]
+  Jeremia 27:3 שִׁלַּחְתָּם֩ [CLX[ piel perf p2sgm prs=M]
+  Jeremia 32:14 נְתַתָּ֖ם [NTN[ qal perf p2sgm prs=M]
+  Jeremia 33:3 יְדַעְתָּֽם [JD<[ qal perf p2sgm prs=M]
+  Jeremia 35:2 הֲבִֽאֹותָם֙ [BW>[ hif perf p2sgm prs=M]
+  Jeremia 43:9 טְמַנְתָּ֤ם [VMN[ qal perf p2sgm prs=M]
+  Ezechiel 5:1 חִלַּקְתָּֽם [XLQ[ piel perf p2sgm prs=M]
+  Ezechiel 32:9 יְדַעְתָּֽם [JD<[ qal perf p2sgm prs=M]
+  Ezechiel 43:24 הִקְרַבְתָּ֖ם [QRB[ hif perf p2sgm prs=M]
+  Psalmi 44:4 רְצִיתָֽם [RYH[ qal perf p2sgm prs=M]
+  Psalmi 73:18 הִ֝פַּלְתָּ֗ם [NPL[ hif perf p2sgm prs=M]
+  Psalmi 74:17 יְצַרְתָּם [JYR[ qal perf p2sgm prs=M]
+  Psalmi 80:6 הֶ֭אֱכַלְתָּם [>KL[ hif perf p2sgm prs=M]
+  Psalmi 88:6 זְכַרְתָּ֣ם [ZKR[ qal perf p2sgm prs=M]
+  Psalmi 89:12 יְסַדְתָּֽם [JSD[ qal perf p2sgm prs=M]
+  Psalmi 89:13 בְרָאתָ֑ם [BR>[ qal perf p2sgm prs=M]
+  Psalmi 90:5 זְ֭רַמְתָּם [ZRM[ qal perf p2sgm prs=M]
+  Psalmi 99:8 עֲנִ֫יתָ֥ם [<NH[ qal perf p2sgm prs=M]
+  Psalmi 119:152 יְסַדְתָּֽם [JSD[ qal perf p2sgm prs=M]
+  Daniel 9:7 הִדַּחְתָּ֣ם [NDX[ hif perf p2sgm prs=M]
+  Nehemia 9:12 הִנְחִיתָ֖ם [NXH[ hif perf p2sgm prs=M]
+  Nehemia 9:17 עֲזַבְתָּֽם [<ZB[ qal perf p2sgm prs=M]
+  Nehemia 9:19 עֲזַבְתָּ֖ם [<ZB[ qal perf p2sgm prs=M]
+  Nehemia 9:21 כִּלְכַּלְתָּ֥ם [KWL[ piel perf p2sgm prs=M]
+  Nehemia 9:31 עֲשִׂיתָ֥ם [<FH[ qal perf p2sgm prs=M]
+  Nehemia 9:31 עֲזַבְתָּ֑ם [<ZB[ qal perf p2sgm prs=M]
+  Chronica_I 14:10 נְתַתָּ֖ם [NTN[ qal perf p2sgm prs=M]
+  Chronica_II 6:25 הֲשֵׁיבֹותָם֙ [CWB[ hif perf p2sgm prs=M]
+  Chronica_II 6:36 נְתַתָּ֖ם [NTN[ qal perf p2sgm prs=M]
+  Chronica_II 10:7 רְצִיתָ֔ם [RYH[ qal perf p2sgm prs=M]
+
+== 7. MN with a suffix: distinct keys
+  prs H: מִמֶּנָּה x60 (Genesis 3:19); מִנַּהּ x2 (Daniel 2:42); מִמֵּנָּה x1 (Genesis 16:2)
+  prs H=: מִנֵּהּ x4 (Daniel 4:9)
+  prs HM: מֵהֶם x98 (Genesis 11:6); מִנְהֶם x1 (Iob 11:20)
+  prs HN: מֵהֵן x2 (Ezechiel 16:47)
+  prs HW: מִמֶּנּוּ x149 (Genesis 2:17); מֶנְהוּ x1 (Iob 4:12)
+  prs HWN: מִנְּהֹון x2 (Daniel 6:3)
+  prs J: מִנִּי x15 (Jesaia 22:4); מֶנִּי x6 (Psalmi 18:23)
+  prs K: מִמְּךָ x40 (Genesis 17:6); מִמֶּךָּ x17 (Genesis 35:11); מִנָּךְ x5 (Daniel 2:23); מִמֶּךָ x1 (Psalmi 139:12)
+  prs K=: מִמֵּךְ x20 (Genesis 30:2)
+  prs KM: מִכֶּם x38 (Genesis 42:16)
+  prs NJ: מִמֶּנִּי x88 (Genesis 22:12)
+  prs NW: מִמֶּנּוּ x25 (Genesis 2:17)
+
+== 8. hitpael perfect 3ms before a maqaf
+  Genesis 6:9 הִֽתְהַלֶּךְ [HLK[ hit perf p3sgm prs=absent]
+  Deuteronomium 4:21 הִתְאַנֶּף [>NP[ hit perf p3sgm prs=absent]
+  Deuteronomium 24:7 הִתְעַמֶּר [<MR[ hit perf p3sgm prs=absent]
+  Samuel_I 30:31 הִתְהַלֶּךְ [HLK[ hit perf p3sgm prs=absent]
+
+== 9. words before the rows at Song of Songs 6:8 (slot 358786) and Numbers 19:21 (slot 82499)
+  slot 358785 Canticum 6:8 הֵ֨מָּה֙ | trailer ' ' | accents accent qadma, accent pashta
+  slot 82498 Numeri 19:21 הָיְתָ֥ה | trailer ' ' | accents accent merkha
+  slot 371179 Daniel 2:31 צַלְמָ֨א | trailer ' ' | accents accent qadma
+  slot 324931 Psalmi 83:11 הָ֥יוּ | trailer ' ' | accents accent merkha

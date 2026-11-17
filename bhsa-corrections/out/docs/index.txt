@@ -1,0 +1,106 @@
+Biblia Hebraica Stuttgartensia (Amstelodamensis)¶
+This is the
+text-fabric
+version of the Hebrew Bible Database,
+containing the text of the Hebrew Bible augmented with linguistic annotations compiled by the
+Eep Talstra Centre for Bible and Computer, VU University Amsterdam.
+The text is based on the
+Biblia Hebraica Stuttgartensia
+edited by Karl Elliger and Wilhelm Rudolph,
+Fifth Revised Edition, edited by Adrian Schenker,
+© 1977 and 1997 Deutsche Bibelgesellschaft, Stuttgart.
+The text-fabric version has been prepared
+by Dirk Roorda Data Archiving and Networked Services,
+with thanks to
+Martijn Naaijer,
+Cody Kingham,
+and Constantijn Sikkel.
+There are more formats in which the data is available.
+In the shebanq subdirectory you find data in MQL format and in MYSQL format that directly goes into
+the SHEBANQ website.
+In the
+bigTables
+you find ways to export the complete data as one big table, and store it in R format or in Pandas format.
+The notebooks 
+bigTablesP
+and
+bigTablesR
+show you a few things that you can do in R and Pandas.
+Provenance¶
+The source data resides on a server of the ETCBC, managed by Constantijn Sikkel.
+He makes that data available as an MQL database dump,
+together with supplementary data files.
+From there it is transported to this GitHub repo by means of a pipeline.
+This dataset contains several versions of the BHSA, from 2011 till now.
+When you navigate to a version, you'll see more information about that version and its provenance.
+For all versions the
+pipeline
+has been followed.
+For the newer versions, starting with 2016, additional data is available in other repositories.
+See the footer of this page.
+In text-fabric it is easy to load the features of several datasets in one session.
+References¶
+We have compiled a list of references to give an impression by what principles
+and methods the ETCBC has carried out its text analyses.
+Workflow¶
+The pipeline above is complicated and not free of
+cruft.
+It would be better if the ETCBC could deliver its core data directly in text-fabric format,
+with inclusion of the lexical features, the ketiv-qere data and the paragraph numbers.
+But at least all the fine distinctions that need to be made between versions have been diagnosed and dealt with
+in this pipeline.
+Reproducible science¶
+We intend to follow a practice that allows for data updates on the one hand, and reproduction of old
+results on the other.
+In SHEBANQ, there are several versions of the data and they are all frozen.
+Data version c is peculiar, because it was intended as a moving version, alongside the
+frozen version. But we have abandoned the idea, and it has become a frozen version,
+sitting oddly between 2017 and 2021.
+We preserve it, because SHEBANQ has saved queries against this version.
+Frozen versions in SHEBANQ will remain there forever,
+and publishing queries and annotations against frozen
+versions will remain supported.
+In particular, versions 3, 4 and 4b are here to stay.
+Version 3 because it is relatively old, and represents an earlier stage in the
+feature organization of this database.
+Versions 4 and 4b because queries have been published that are based on them.
+These versions are also firmly entrenched in the academic record, by virtue of being archived.
+License¶
+This work is licensed under a
+Attribution-NonCommercial 4.0 International (CC BY-NC 4.0).
+That means:
+You may download the data and use it: process, copy, modify;
+You may use the data to create new software applications;
+You may use the data for research and publish any amount of results;
+When you publish this data or results you obtained from them, you have to comply with the following:
+give proper attribution to the data when you use it in new applications,
+    by citing this persistent identifier:
+    10.17026/dans-z6y-skyh.
+do not use the data for commercial applications without consent;
+    for any commercial use, please contact the
+    German Bible Society.
+How to use¶
+This data can be processed by 
+Text-Fabric.
+See also 
+tutorial (Hebrew)
+and
+tutorial (search).
+Work based on the BHSA¶
+Martijn Naaijer and Willem van Peursen: 
+Parsing Hebrew and Syriac morphology using Deep Learning.
+Blog post Netherlands eScience Center
+{
+  "@context" : "http://schema.org",
+  "@type" : "Dataset",
+  "name" : "bhsa",
+  "description" : "Hebrew Bible + Linguistic annotations in text-fabric format. Periodically frozen versions.",
+  "license" : "Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)",
+  "distribution" : {
+    "@type" : "DataDownload",
+    "encodingFormat" : "text-fabric",
+    "contentUrl" : "https://github.com/ETCBC/bhsa/releases/download/1.4/c.zip"
+  },
+  "sourceOrganization" : "ETCBC",
+  "datePublished" : "2018-10-05"
+}

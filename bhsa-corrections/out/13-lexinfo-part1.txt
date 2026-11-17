@@ -1,0 +1,109 @@
+lex XDC/: 52 words; voc_lex [('חָדָשׁ', 52)]; gloss [('new', 52)]; sp [('adjv', 52)]; language [('Hebrew', 52)]
+   forms by review key: [('חָדָשׁ', 20), ('חֲדָשָׁה', 20), ('חֲדָשִׁים', 10), ('חֲדָשֹׁות', 2)]
+lex XDC=/: 284 words; voc_lex [('חֹדֶשׁ', 284)]; gloss [('month', 284)]; sp [('subs', 284)]; language [('Hebrew', 284)]
+   forms by review key: [('חֹדֶשׁ', 231), ('חֳדָשִׁים', 39), ('חָדְשֵׁי', 3), ('חָדְשֵׁיכֶם', 3), ('חָדְשֹׁו', 3), ('חֳדָשָׁיו', 3), ('חָדְשָׁהּ', 2)]
+lex MLK/: 2703 words; voc_lex [('מֶלֶךְ', 2703)]; gloss [('king', 2703)]; sp [('subs', 2703)]; language [('Aramaic', 180), ('Hebrew', 2523)]
+   forms by review key: [('מֶּלֶךְ', 1189), ('מֶלֶךְ', 1002), ('מַלְכֵי', 156), ('מַלְכָּא', 155), ('מְלָכִים', 48), ('מְּלָכִים', 46), ('מַלְכֵיהֶם', 17), ('מַלְכָּהּ', 17), ('מַלְכִין', 10), ('מַלְכָּם', 8), ('מַלְכֹּו', 7), ('מַלְכִּי', 7), ('מְלָכֵינוּ', 6), ('מַלְכְּכֶם', 5), ('מַלְכֵּנוּ', 5), ('מְלָכֶיהָ', 4), ('מלך', 3), ('מֶלֶך', 3), ('מַלְכַיָּא', 3), ('מַלְכְּךָ', 2), ('מַּלְכֵּךְ', 2), ('מַּלְאכִים', 1), ('מֶּלֶך', 1), ('מַלְכֵיכֶם', 1), ('מלכים', 1), ('מַלְכֵּךְ', 1), ('מְלָכִין', 1), ('מַלְכָּה', 1), ('מַלְכִים', 1)]
+lex ML>K/: 215 words; voc_lex [('מַלְאַךְ', 2), ('מַלְאָךְ', 213)]; gloss [('angel', 2), ('messenger', 213)]; sp [('subs', 215)]; language [('Aramaic', 2), ('Hebrew', 213)]
+   forms by review key: [('מַלְאַךְ', 70), ('מַלְאָכִים', 47), ('מַּלְאָךְ', 32), ('מַּלְאָכִים', 17), ('מַלְאָךְ', 17), ('מַלְאֲכֵי', 12), ('מַלְאָכָיו', 9), ('מַלְאָכִי', 4), ('מַלְאָכֹו', 2), ('מַלְאָכֶיךָ', 2), ('מַלְאֲכֵהּ', 2), ('מַלְאָכֵכֵה', 1)]
+lex KBD[: 113 words; voc_lex [('כבד', 113)]; gloss [('be heavy', 113)]; sp [('verb', 113)]; language [('Hebrew', 113)]
+   forms by review key: [('נִכְבָּד', 8), ('תִּכְבַּד', 6), ('הִכְבִּיד', 5), ('כַּבֵּד', 4), ('יְכַבֵּד', 4), ('כָבְדָה', 3), ('נִכְבַּדֵּי', 3), ('הַכְבֵּד', 2), ('יַּכְבֵּד', 2), ('אִכָּבְדָה', 2), ('הִכָּבְדִי', 2), ('אֶכָּבֵד', 2), ('אֲכַבֶּדְךָ', 2), ('נִּכְבָּד', 2), ('אֲכַבֵּד', 2), ('כָּבְדָה', 2), ('מְכַבֵּד', 2), ('הִכְבִּידוּ', 2), ('יִכְבְּדוּ', 2), ('יִכְבָּד', 2), ('יְכֻבָּד', 2), ('כָּבְדוּ', 1), ('יִּכְבַּד', 1), ('הִכְבַּדְתִּי', 1), ('נִכְבָּדִים', 1), ('כַבֵּד', 1), ('כַּבְּדֶךָ', 1), ('יְכַבְּדוּ', 1), ('כִבַּדְנוּךָ', 1), ('כָּבֵדָה', 1), ('תְּכַבֵּד', 1), ('מְכַבְּדַי', 1), ('תְכַבְּדוּ', 1), ('כִּבְּדוּ', 1), ('כַּבְּדֵנִי', 1), ('נִּכְבַּד', 1), ('אִכָּבֵדָה', 1), ('נִכְבַּד', 1), ('הִכָּבֵד', 1), ('כַּבְּדוּ', 1)]
+verse Isa 66:22
+   234932 כִּ֣י  | K.I74J | KJ כִּי that | sp conj pdp conj | vs NA vt NA | nu NA gn NA st NA prs n/a | phrase CP Conj | clause CPen
+   234933 כַ | KA- | K כְּ as | sp prep pdp prep | vs NA vt NA | nu NA gn NA st NA prs absent | phrase CP Conj | clause Ptcp
+   234934 אֲשֶׁ֣ר  | >:ACE74R | >CR אֲשֶׁר <relative> | sp conj pdp conj | vs NA vt NA | nu NA gn NA st NA prs n/a | phrase CP Conj | clause Ptcp
+   234935 הַ | HA- | H הַ the | sp art pdp art | vs NA vt NA | nu NA gn NA st NA prs n/a | phrase NP Subj | clause Ptcp
+   234936 שָּׁמַ֣יִם  | C.@MA74JIM | CMJM/ שָׁמַיִם heavens | sp subs pdp subs | vs NA vt NA | nu pl gn m st a prs absent | phrase NP Subj | clause Ptcp
+   234937 הַ֠ | 14HA- | H הַ the | sp art pdp art | vs NA vt NA | nu NA gn NA st NA prs n/a | phrase NP Subj | clause Ptcp
+   234938 חֳדָשִׁים  | X:@D@CIJM | XDC=/ חֹדֶשׁ month | sp subs pdp subs | vs NA vt NA | nu pl gn m st a prs absent | phrase NP Subj | clause Ptcp
+   234939 וְ | W:- | W וְ and | sp conj pdp conj | vs NA vt NA | nu NA gn NA st NA prs n/a | phrase NP Subj | clause Ptcp
+   234940 הָ | H@- | H הַ the | sp art pdp art | vs NA vt NA | nu NA gn NA st NA prs n/a | phrase NP Subj | clause Ptcp
+   234941 אָ֨רֶץ  | >@63REY | >RY/ אֶרֶץ earth | sp subs pdp subs | vs NA vt NA | nu sg gn unknown st a prs absent | phrase NP Subj | clause Ptcp
+   234942 הַ | HA- | H הַ the | sp art pdp art | vs NA vt NA | nu NA gn NA st NA prs n/a | phrase NP Subj | clause Ptcp
+   234943 חֲדָשָׁ֜ה  | X:AD@C@61H | XDC/ חָדָשׁ new | sp adjv pdp adjv | vs NA vt NA | nu sg gn f st a prs absent | phrase NP Subj | clause Ptcp
+   234944 אֲשֶׁ֨ר  | >:ACE63R | >CR אֲשֶׁר <relative> | sp conj pdp conj | vs NA vt NA | nu NA gn NA st NA prs n/a | phrase CP Rela | clause Ptcp
+   234945 אֲנִ֥י  | >:ANI71J | >NJ אֲנִי i | sp prps pdp prps | vs NA vt NA | nu sg gn unknown st NA prs n/a | phrase PPrP Subj | clause Ptcp
+   234946 עֹשֶׂ֛ה  | <OFE91H | <FH[ עשׂה make | sp verb pdp verb | vs qal vt ptca | nu sg gn m st a prs absent | phrase VP PreC | clause Ptcp
+   234947 עֹמְדִ֥ים  | <OM:DI71JM | <MD[ עמד stand | sp verb pdp verb | vs qal vt ptca | nu pl gn m st a prs absent | phrase VP PreC | clause Ptcp
+   234948 לְ | L:- | L לְ to | sp prep pdp prep | vs NA vt NA | nu NA gn NA st NA prs absent | phrase PP Adju | clause Ptcp
+   234949 פָנַ֖י  | P@NA73J | PNH/ פָּנֶה face | sp subs pdp subs | vs NA vt NA | nu pl gn m st a prs J | phrase PP Adju | clause Ptcp
+   234950 נְאֻם־ | N:>UM | N>M/ נְאֻם speech | sp subs pdp subs | vs NA vt NA | nu sg gn m st c prs absent | phrase NP PreC | clause MSyn
+   234951 יְהוָ֑ה  | J:HW@92H | JHWH/ יְהוָה YHWH | sp nmpr pdp nmpr | vs NA vt NA | nu sg gn m st a prs n/a | phrase NP PreC | clause MSyn
+   234952 כֵּ֛ן  | K.;91N | KN כֵּן thus | sp advb pdp advb | vs NA vt NA | nu NA gn NA st NA prs n/a | phrase AdvP Modi | clause xYqX
+   234953 יַעֲמֹ֥ד  | JA<:AMO71D | <MD[ עמד stand | sp verb pdp verb | vs qal vt impf | nu sg gn m st NA prs absent | phrase VP Pred | clause xYqX
+   234954 זַרְעֲכֶ֖ם  | ZAR:<:AKE73M | ZR</ זֶרַע seed | sp subs pdp subs | vs NA vt NA | nu sg gn m st a prs KM | phrase NP Subj | clause xYqX
+   234955 וְ | W:- | W וְ and | sp conj pdp conj | vs NA vt NA | nu NA gn NA st NA prs n/a | phrase NP Subj | clause xYqX
+   234956 שִׁמְכֶֽם׃  | CIM:KE75M | CM/ שֵׁם name | sp subs pdp subs | vs NA vt NA | nu sg gn m st a prs KM | phrase NP Subj | clause xYqX
+verse 2Sam 11:1
+   165705 וַ | WA- | W וְ and | sp conj pdp conj | vs NA vt NA | nu NA gn NA st NA prs n/a | phrase CP Conj | clause Way0
+   165706 יְהִי֩  | J:HIJ04 | HJH[ היה be | sp verb pdp verb | vs qal vt wayq | nu sg gn m st NA prs absent | phrase VP Pred | clause Way0
+   165707 לִ | LI- | L לְ to | sp prep pdp prep | vs NA vt NA | nu NA gn NA st NA prs absent | phrase PP Time | clause Way0
+   165708 תְשׁוּבַ֨ת  | T:CW.BA63T | TCWBH/ תְּשׁוּבָה return | sp subs pdp subs | vs NA vt NA | nu sg gn f st c prs absent | phrase PP Time | clause Way0
+   165709 הַ | HA- | H הַ the | sp art pdp art | vs NA vt NA | nu NA gn NA st NA prs n/a | phrase PP Time | clause Way0
+   165710 שָּׁנָ֜ה  | C.@N@61H | CNH/ שָׁנָה year | sp subs pdp subs | vs NA vt NA | nu sg gn f st a prs absent | phrase PP Time | clause Way0
+   165711 לְ | L:- | L לְ to | sp prep pdp prep | vs NA vt NA | nu NA gn NA st NA prs absent | phrase PP Time | clause Way0
+   165712 עֵ֣ת׀  | <;74T | <T/ עֵת time | sp subs pdp subs | vs NA vt NA | nu sg gn unknown st c prs absent | phrase PP Time | clause Way0
+   165713 צֵ֣את  | Y;74>T | JY>[ יצא go out | sp verb pdp verb | vs qal vt infc | nu unknown gn unknown st c prs absent | phrase VP Pred | clause InfC
+   165714 הַ | HA- | H הַ the | sp art pdp art | vs NA vt NA | nu NA gn NA st NA prs n/a | phrase NP Subj | clause InfC
+   165715 מַּלְאֿכִ֗ים  | M.AL:>,KI81JM | MLK/ מֶלֶךְ king | sp subs pdp subs | vs NA vt NA | nu pl gn m st a prs absent | phrase NP Subj | clause InfC
+   165716 וַ | WA- | W וְ and | sp conj pdp conj | vs NA vt NA | nu NA gn NA st NA prs n/a | phrase CP Conj | clause WayX
+   165717 יִּשְׁלַ֣ח  | J.IC:LA74X | CLX[ שׁלח send | sp verb pdp verb | vs qal vt wayq | nu sg gn m st NA prs absent | phrase VP Pred | clause WayX
+   165718 דָּוִ֡ד  | D.@WI83D | DWD==/ דָּוִד David | sp nmpr pdp nmpr | vs NA vt NA | nu sg gn m st a prs n/a | phrase PrNP Subj | clause WayX
+   165719 אֶת־ | >ET | >T אֵת <object marker> | sp prep pdp prep | vs NA vt NA | nu NA gn NA st NA prs absent | phrase PP Objc | clause WayX
+   165720 יֹואָב֩  | JOW>@B04 | JW>B/ יֹואָב Joab | sp nmpr pdp nmpr | vs NA vt NA | nu sg gn m st a prs n/a | phrase PP Objc | clause WayX
+   165721 וְ | W:- | W וְ and | sp conj pdp conj | vs NA vt NA | nu NA gn NA st NA prs n/a | phrase PP Objc | clause WayX
+   165722 אֶת־ | >ET | >T אֵת <object marker> | sp prep pdp prep | vs NA vt NA | nu NA gn NA st NA prs absent | phrase PP Objc | clause WayX
+   165723 עֲבָדָ֨יו  | <:AB@D@63JW | <BD/ עֶבֶד servant | sp subs pdp subs | vs NA vt NA | nu pl gn m st a prs W | phrase PP Objc | clause WayX
+   165724 עִמֹּ֜ו  | <IM.O61W | <M עִם with | sp prep pdp prep | vs NA vt NA | nu NA gn NA st NA prs W | phrase PP Objc | clause WayX
+   165725 וְ | W:- | W וְ and | sp conj pdp conj | vs NA vt NA | nu NA gn NA st NA prs n/a | phrase PP Objc | clause WayX
+   165726 אֶת־ | >ET | >T אֵת <object marker> | sp prep pdp prep | vs NA vt NA | nu NA gn NA st NA prs absent | phrase PP Objc | clause WayX
+   165727 כָּל־ | K.@L | KL/ כֹּל whole | sp subs pdp subs | vs NA vt NA | nu sg gn m st c prs absent | phrase PP Objc | clause WayX
+   165728 יִשְׂרָאֵ֗ל  | JIF:R@>;81L | JFR>L/ יִשְׂרָאֵל Israel | sp nmpr pdp nmpr | vs NA vt NA | nu sg gn unknown st a prs n/a | phrase PP Objc | clause WayX
+   165729 וַ | WA- | W וְ and | sp conj pdp conj | vs NA vt NA | nu NA gn NA st NA prs n/a | phrase CP Conj | clause Way0
+   165730 יַּשְׁחִ֨תוּ֙  | J.AC:XI33TW.03 | CXT[ שׁחת destroy | sp verb pdp verb | vs hif vt wayq | nu pl gn m st NA prs absent | phrase VP Pred | clause Way0
+   165731 אֶת־ | >ET | >T אֵת <object marker> | sp prep pdp prep | vs NA vt NA | nu NA gn NA st NA prs absent | phrase PP Objc | clause Way0
+   165732 בְּנֵ֣י  | B.:N;74J | BN/ בֵּן son | sp subs pdp subs | vs NA vt NA | nu pl gn m st c prs absent | phrase PP Objc | clause Way0
+   165733 עַמֹּ֔ון  | <AM.O80WN | <MWN/ עַמֹּון Ammon | sp nmpr pdp nmpr | vs NA vt NA | nu sg gn unknown st a prs n/a | phrase PP Objc | clause Way0
+   165734 וַ | WA- | W וְ and | sp conj pdp conj | vs NA vt NA | nu NA gn NA st NA prs n/a | phrase CP Conj | clause Way0
+   165735 יָּצֻ֖רוּ  | J.@YU73RW. | YWR[ צור bind | sp verb pdp verb | vs qal vt wayq | nu pl gn m st NA prs absent | phrase VP Pred | clause Way0
+   165736 עַל־ | <AL | <L עַל upon | sp prep pdp prep | vs NA vt NA | nu NA gn NA st NA prs absent | phrase PP Cmpl | clause Way0
+   165737 רַבָּ֑ה  | RAB.@92H | RBH/ רַבָּה Rabbah | sp nmpr pdp nmpr | vs NA vt NA | nu sg gn unknown st a prs n/a | phrase PP Cmpl | clause Way0
+   165738 וְ | W:- | W וְ and | sp conj pdp conj | vs NA vt NA | nu NA gn NA st NA prs n/a | phrase CP Conj | clause Ptcp
+   165739 דָוִ֖ד  | D@WI73D | DWD==/ דָּוִד David | sp nmpr pdp nmpr | vs NA vt NA | nu sg gn m st a prs n/a | phrase PrNP Subj | clause Ptcp
+   165740 יֹושֵׁ֥ב  | JOWC;71B | JCB[ ישׁב sit | sp verb pdp verb | vs qal vt ptca | nu sg gn m st a prs absent | phrase VP PreC | clause Ptcp
+   165741 בִּ | B.I- | B בְּ in | sp prep pdp prep | vs NA vt NA | nu NA gn NA st NA prs absent | phrase PP Cmpl | clause Ptcp
+   165742 ירוּשָׁלִָֽם׃ ס  | JRW.C@L@75IM | JRWCLM/ יְרוּשָׁלִַם Jerusalem | sp nmpr pdp nmpr | vs NA vt NA | nu sg gn unknown st a prs n/a | phrase PP Cmpl | clause Ptcp
+verse Prov 12:9
+   349988 טֹ֣וב  | VO74WB | VWB/ טֹוב good | sp adjv pdp adjv | vs NA vt NA | nu sg gn m st a prs absent | phrase AdjP PreC | clause AjCl
+   349989 נִ֭קְלֶה  | 13NIQ:LEH | QLH=[ קלה contempt | sp verb pdp subs | vs nif vt ptca | nu sg gn m st a prs absent | phrase NP Subj | clause AjCl
+   349990 וְ | W:- | W וְ and | sp conj pdp conj | vs NA vt NA | nu NA gn NA st NA prs n/a | phrase CP Conj | clause NmCl
+   349991 עֶ֣בֶד  | <E74BED | <BD/ עֶבֶד servant | sp subs pdp subs | vs NA vt NA | nu sg gn m st a prs absent | phrase NP Subj | clause NmCl
+   349992 לֹ֑ו  | LO92W | L לְ to | sp prep pdp prep | vs NA vt NA | nu NA gn NA st NA prs W | phrase PP PreC | clause NmCl
+   349993 מִ֝ | 11MI- | MN מִן from | sp prep pdp prep | vs NA vt NA | nu NA gn NA st NA prs absent | phrase PP Adju | clause NmCl
+   349994 מְּתַכַּבֵּ֗ד  | M.:TAK.AB.;81D | KBD[ כבד be heavy | sp verb pdp subs | vs tif vt ptca | nu sg gn m st a prs absent | phrase PP Adju | clause NmCl
+   349995 וַ | WA- | W וְ and | sp conj pdp conj | vs NA vt NA | nu NA gn NA st NA prs n/a | phrase CP Conj | clause AjCl
+   349996 חֲסַר־ | X:ASAR | XSR/ חָסֵר lacking | sp adjv pdp adjv | vs NA vt NA | nu sg gn m st c prs absent | phrase AdjP PreC | clause AjCl
+   349997 לָֽחֶם׃  | L@75XEM | LXM/ לֶחֶם bread | sp subs pdp subs | vs NA vt NA | nu sg gn unknown st a prs absent | phrase AdjP PreC | clause AjCl
+verse Jer 47:6
+   260344 הֹ֗וי  | HO81WJ | HWJ הֹוי alas | sp intj pdp intj | vs NA vt NA | nu NA gn NA st NA prs absent | phrase InjP Intj | clause MSyn
+   260345 חֶ֚רֶב  | 10XEREB | XRB/ חֶרֶב dagger | sp subs pdp subs | vs NA vt NA | nu sg gn f st a prs absent | phrase NP Voct | clause Voct
+   260346 לַֽ | LA45- | L לְ to | sp prep pdp prep | vs NA vt NA | nu NA gn NA st NA prs absent | phrase NP Voct | clause Voct
+   260347 יהוָ֔ה  | JHW@80H | JHWH/ יְהוָה YHWH | sp nmpr pdp nmpr | vs NA vt NA | nu sg gn m st a prs n/a | phrase NP Voct | clause Voct
+   260348 עַד־ | <AD | <D עַד unto | sp prep pdp prep | vs NA vt NA | nu NA gn NA st NA prs absent | phrase PP Time | clause xYq0
+   260349 אָ֖נָה  | >@73N@H | >N אָן whither | sp inrg pdp inrg | vs NA vt NA | nu NA gn NA st NA prs absent | phrase PP Time | clause xYq0
+   260350 לֹ֣א  | LO74> | L> לֹא not | sp nega pdp nega | vs NA vt NA | nu NA gn NA st NA prs n/a | phrase NegP Nega | clause xYq0
+   260351 תִשְׁקֹ֑טִי  | TIC:QO92VIJ | CQV[ שׁקט be at peace | sp verb pdp verb | vs qal vt impf | nu sg gn f st NA prs absent | phrase VP Pred | clause xYq0
+   260352 הֵאָֽסְפִי֙  | H;>@45S:PIJ03 | >SP[ אסף gather | sp verb pdp verb | vs nif vt impv | nu sg gn f st NA prs absent | phrase VP Pred | clause ZIm0
+   260353 אַל־ | >AL | >L אֶל to | sp prep pdp prep | vs NA vt NA | nu NA gn NA st NA prs absent | phrase PP Cmpl | clause ZIm0
+   260354 תַּעְרֵ֔ךְ  | T.A<:R;80K: | T<R/ תַּעַר knife | sp subs pdp subs | vs NA vt NA | nu sg gn unknown st a prs K= | phrase PP Cmpl | clause ZIm0
+   260355 הֵרָגְעִ֖י  | H;R@G:<I73J | RG<[ רגע stir | sp verb pdp verb | vs nif vt impv | nu sg gn f st NA prs absent | phrase VP Pred | clause ZIm0
+   260356 וָ | W@- | W וְ and | sp conj pdp conj | vs NA vt NA | nu NA gn NA st NA prs n/a | phrase CP Conj | clause WIm0
+   260357 דֹֽמִּי׃  | DO75M.IJ | DMM[ דמם rest | sp verb pdp verb | vs qal vt impv | nu sg gn f st NA prs absent | phrase VP Pred | clause WIm0
+verse Lam 3:25
+   364636 טֹ֤וב  | VO70WB | VWB/ טֹוב good | sp adjv pdp adjv | vs NA vt NA | nu sg gn m st a prs absent | phrase AdjP PreC | clause AjCl
+   364637 יְהוָה֙  | J:HW@H03 | JHWH/ יְהוָה YHWH | sp nmpr pdp nmpr | vs NA vt NA | nu sg gn m st a prs n/a | phrase PrNP Subj | clause AjCl
+   364638 ל | *L- | L לְ to | sp prep pdp prep | vs NA vt NA | nu NA gn NA st NA prs absent | phrase PP Cmpl | clause AjCl | qere לְ
+   364639 קוו  | *QWW | QWH[ קוה wait for | sp verb pdp subs | vs qal vt ptca | nu pl gn m st a prs W | phrase PP Cmpl | clause AjCl | qere קֹוָ֔יו
+   364640 לְ | L:- | L לְ to | sp prep pdp prep | vs NA vt NA | nu NA gn NA st NA prs absent | phrase PP Cmpl | clause Ellp
+   364641 נֶ֖פֶשׁ  | NE73PEC | NPC/ נֶפֶשׁ soul | sp subs pdp subs | vs NA vt NA | nu sg gn f st a prs absent | phrase PP Cmpl | clause Ellp
+   364642 תִּדְרְשֶֽׁנּוּ׃  | T.ID:R:CE75N.W. | DRC[ דרשׁ inquire | sp verb pdp verb | vs qal vt impf | nu sg gn f st NA prs HW | phrase VP PreO | clause ZYq0

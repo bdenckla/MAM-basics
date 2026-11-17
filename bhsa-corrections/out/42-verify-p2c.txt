@@ -1,0 +1,6 @@
+Judg 9:2 | BHSA atom עַצְמֵכֶ֥ם | MAM atoms with its letters: עַצְמְכֶ֥ם
+   slot 132920 עַצְמֵכֶ֥ם | lex=<YM/ sp=subs vs=NA vt=NA ps=NA nu=sg gn=f st=a prs=KM gloss=bone voc_lex_utf8=עֶצֶם
+Ezek 37:23 | BHSA atom יִֽטַמְּא֣וּ | MAM atoms with its letters: יִֽטַּמְּא֣וּ
+   slot 283685 יִֽטַמְּא֣וּ | lex=VM>[ sp=verb vs=piel vt=impf ps=p3 nu=pl gn=m st=NA prs=absent gloss=be unclean voc_lex_utf8=טמא
+2Chr 21:4 | BHSA atom מַמְלֶ֤כַת | MAM atoms with its letters: מַמְלֶ֤כֶת
+   slot 416895 מַמְלֶ֤כַת | lex=MMLKH/ sp=subs vs=NA vt=NA ps=NA nu=sg gn=f st=c prs=absent gloss=kingdom voc_lex_utf8=מַמְלָכָה

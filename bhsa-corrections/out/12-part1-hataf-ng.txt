@@ -1,0 +1,42 @@
+== Ezekiel 44:13 (ketiv side), BHSA Ezechiel 44:13
+   MAM הַקֳּדָשִׁ֑ים | WLC 4.18 הַקְּדָשִׁ֑ים | BHSA הַקְּדָשִׁ֑ים | hataf under ['ק'] | BHSA=WLC4.18 True BHSA=MAM False
+      slot 288052 הַ [HA-] lex H הַ the | sp art | vs NA vt NA | nu NA st NA prs n/a | phrase PP Cmpl
+      slot 288053 קְּדָשִׁ֑ים [Q.:D@CI92JM] lex QDC/ קֹדֶשׁ holiness | sp subs | vs NA vt NA | nu pl st a prs absent | phrase PP Cmpl
+== Ezekiel 44:13 (qere side), BHSA Ezechiel 44:13
+   MAM הַקֳּדָשִׁ֑ים | WLC 4.18 הַקְּדָשִׁ֑ים | BHSA הַקְּדָשִׁ֑ים | hataf under ['ק'] | BHSA=WLC4.18 True BHSA=MAM False
+      slot 288052 הַ [HA-] lex H הַ the | sp art | vs NA vt NA | nu NA st NA prs n/a | phrase PP Cmpl
+      slot 288053 קְּדָשִׁ֑ים [Q.:D@CI92JM] lex QDC/ קֹדֶשׁ holiness | sp subs | vs NA vt NA | nu pl st a prs absent | phrase PP Cmpl
+== Ezra 4:9 (ketiv side), BHSA Esra 4:9
+== Ezra 4:9 (qere side), BHSA Esra 4:9
+   MAM אַרְכֳּוָיֵ֤א | WLC 4.18 אַרְכְּוָיֵ֤א | BHSA אַרְכְּוָיֵ֤א | hataf under ['כ'] | BHSA=WLC4.18 True BHSA=MAM False
+      slot 379698 ארכוי [*>RKWJ] lex >RKWJ/ אַרְכְּוָי Erechite | sp adjv | vs NA vt NA | nu pl st e prs absent | phrase PrNP Subj
+== 2 Chronicles 5:7 (ketiv side), BHSA Chronica_II 5:7
+   MAM הַקֳּדָשִׁ֑ים | WLC 4.18 הַקְּדָשִׁ֑ים | BHSA הַקְּדָשִׁ֑ים | hataf under ['ק'] | BHSA=WLC4.18 True BHSA=MAM False
+      slot 408757 הַ [HA-] lex H הַ the | sp art | vs NA vt NA | nu NA st NA prs n/a | phrase PP Cmpl
+      slot 408758 קְּדָשִׁ֑ים [Q.:D@CI92JM] lex QDC/ קֹדֶשׁ holiness | sp subs | vs NA vt NA | nu pl st a prs absent | phrase PP Cmpl
+== 2 Chronicles 5:7 (qere side), BHSA Chronica_II 5:7
+   MAM הַקֳּדָשִׁ֑ים | WLC 4.18 הַקְּדָשִׁ֑ים | BHSA הַקְּדָשִׁ֑ים | hataf under ['ק'] | BHSA=WLC4.18 True BHSA=MAM False
+      slot 408757 הַ [HA-] lex H הַ the | sp art | vs NA vt NA | nu NA st NA prs n/a | phrase PP Cmpl
+      slot 408758 קְּדָשִׁ֑ים [Q.:D@CI92JM] lex QDC/ קֹדֶשׁ holiness | sp subs | vs NA vt NA | nu pl st a prs absent | phrase PP Cmpl
+== Numbers 35:20 (ketiv side), BHSA Numeri 35:20
+   MAM יֶהְדֳּפֶ֑נּוּ | WLC 4.18 יֶהְדָּפֶ֑נּוּ | BHSA יֶהְדָּפֶ֑נּוּ | hataf under ['ד'] | BHSA=WLC4.18 True BHSA=MAM False
+      slot 92201 יֶהְדָּפֶ֑נּוּ [JEH:D.@PE92N.W.] lex HDP[ הדף push | sp verb | vs qal vt impf | nu sg st NA prs HW | phrase VP PreO
+== Numbers 35:20 (qere side), BHSA Numeri 35:20
+   MAM יֶהְדֳּפֶ֑נּוּ | WLC 4.18 יֶהְדָּפֶ֑נּוּ | BHSA יֶהְדָּפֶ֑נּוּ | hataf under ['ד'] | BHSA=WLC4.18 True BHSA=MAM False
+      slot 92201 יֶהְדָּפֶ֑נּוּ [JEH:D.@PE92N.W.] lex HDP[ הדף push | sp verb | vs qal vt impf | nu sg st NA prs HW | phrase VP PreO
+== 1 Samuel 26:10 (ketiv side), BHSA Samuel_I 26:10
+   MAM יִגֳּפֶ֑נּוּ | WLC 4.18 יִגָּפֶ֑נּוּ | BHSA יִגָּפֶ֑נּוּ | hataf under ['ג'] | BHSA=WLC4.18 True BHSA=MAM False
+      slot 157794 יִגָּפֶ֑נּוּ [JIG.@PE92N.W.] lex NGP[ נגף hurt | sp verb | vs qal vt impf | nu sg st NA prs HW | phrase VP PreO
+== 1 Samuel 26:10 (qere side), BHSA Samuel_I 26:10
+   MAM יִגֳּפֶ֑נּוּ | WLC 4.18 יִגָּפֶ֑נּוּ | BHSA יִגָּפֶ֑נּוּ | hataf under ['ג'] | BHSA=WLC4.18 True BHSA=MAM False
+      slot 157794 יִגָּפֶ֑נּוּ [JIG.@PE92N.W.] lex NGP[ נגף hurt | sp verb | vs qal vt impf | nu sg st NA prs HW | phrase VP PreO
+== 2 Samuel 6:5 (ketiv side), BHSA Samuel_II 6:5
+   MAM וּֽבְצֶלְצֱלִֽים׃ | WLC 4.18 וּֽבְצֶלְצֶלִֽים׃ | BHSA וּֽבְצֶלְצֶלִֽים | hataf under ['צ'] | BHSA=WLC4.18 True BHSA=MAM False
+      slot 163539 וּֽ [W.95-] lex W וְ and | sp conj | vs NA vt NA | nu NA st NA prs n/a | phrase PP Adju
+      slot 163540 בְ [B:-] lex B בְּ in | sp prep | vs NA vt NA | nu NA st NA prs absent | phrase PP Adju
+      slot 163541 צֶלְצֶלִֽים [YEL:YELI75JM] lex YLYLJM/ צֶלְצֶלִים cymbals | sp subs | vs NA vt NA | nu pl st a prs absent | phrase PP Adju
+== 2 Samuel 6:5 (qere side), BHSA Samuel_II 6:5
+   MAM וּֽבְצֶלְצֱלִֽים׃ | WLC 4.18 וּֽבְצֶלְצֶלִֽים׃ | BHSA וּֽבְצֶלְצֶלִֽים | hataf under ['צ'] | BHSA=WLC4.18 True BHSA=MAM False
+      slot 163539 וּֽ [W.95-] lex W וְ and | sp conj | vs NA vt NA | nu NA st NA prs n/a | phrase PP Adju
+      slot 163540 בְ [B:-] lex B בְּ in | sp prep | vs NA vt NA | nu NA st NA prs absent | phrase PP Adju
+      slot 163541 צֶלְצֶלִֽים [YEL:YELI75JM] lex YLYLJM/ צֶלְצֶלִים cymbals | sp subs | vs NA vt NA | nu pl st a prs absent | phrase PP Adju

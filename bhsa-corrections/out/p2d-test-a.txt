@@ -1,0 +1,235 @@
+Test A, atom level: 255 atoms in 222 groups (pointed key, analysis) whose analysis their key does not support
+by kind (atoms): {"segmentation": 4, "lexeme": 200, "stem/tense": 29, "ps/nu/gn/prs": 22}
+Analysis per slot: lex [vs vt] [ps.nu.gn, - for NA and ? for unknown] [+prs]; slots joined by ' + '.
+(new): no slot of the group's atoms is among the slot-level Test A words (out/30-part2-test-a.txt).
+
+== segmentation: 4 groups, 4 atoms
+A43 (new) | מֵאֵין | this: M>N[ piel perf p3.sg.m x1 | key: MN + >JN/ -.sg.m x26, M>N[ piel perf p3.sg.m x1 | Deuteronomy 25:7 | MAM at the first: (not aligned)
+A162 | בָּעִיר | this: B + <WR[ hif infc ?.?.? x1 | key: B + H + <JR/ -.sg.f x45, B + <WR[ hif infc ?.?.? x1 | Psalms 73:20 | MAM at the first: בָּעִיר
+A192 (new) | בַּחֲצֹצְרֹות | this: B + H + XYYRH/ -.pl.f x1 | key: B + XYYRH/ -.pl.f x13, B + H + XYYRH/ -.pl.f x1 | Ezra 3:10 | MAM at the first: בַּחֲצֹצְרוֹת
+A222 (new) | לָעִיר | this: L + <JR/ -.sg.f x1 | key: L + H + <JR/ -.sg.f x25, L + <JR/ -.sg.f x1 | 2 Chronicles 30:10 | MAM at the first: לָעִיר
+
+== lexeme: 173 groups, 200 atoms
+A1 | עֲלֵה | this: <LH=/ -.sg.m x2 | key: <LH[ qal impv p2.sg.m x36, <LH=/ -.sg.m x2 | Genesis 3:7; Genesis 8:11 | MAM at the first: עֲלֵה
+A2 | הָבֶל | this: HBL=/ -.sg.m +n/a x1 | key: HBL/ -.sg.m x17, HBL=/ -.sg.m +n/a x1 | Genesis 4:2 | MAM at the first: הָבֶל
+A3 | חֲנֹוךְ | this: XNWK=/ -.sg.? +n/a x1 | key: XNWK/ -.sg.m +n/a x12, XNWK=/ -.sg.? +n/a x1 | Genesis 4:17 | MAM at the first: חֲנוֹךְ
+A4 | לָרֹב | this: L + RBB[ qal infc ?.?.? x1 | key: L + RB=/ -.sg.m x53, L + RBB[ qal infc ?.?.? x1 | Genesis 6:1 | MAM at the first: לָרֹב
+A5 (new) | וְשֵׁם | this: W + CM=/ -.sg.m +n/a x1 | key: W + CM/ -.sg.m x89, W + CM=/ -.sg.m +n/a x1 | Genesis 7:13 | MAM at the first: וְשֵׁם־
+A6 (new) | שָׁלֵם | this: CLM===/ -.sg.? +n/a x1 | key: CLM=/ -.sg.m x17, CLM===/ -.sg.? +n/a x1 | Genesis 14:18 | MAM at the first: שָׁלֵם
+A7 | דָּן | this: DJN[ qal ptca ?.sg.m x2 | key: DN/ -.sg.? +n/a x24, DJN[ qal ptca ?.sg.m x2, DJN[ qal perf p3.sg.m x1 | Genesis 15:14; Jeremiah 30:13 | MAM at the first: דָּן
+A8 | אֲדֹנָי | this: >DWN/ -.pl.m +J x1 | key: >DNJ/ -.sg.m +n/a x419, >DWN/ -.pl.m +J x1 | Genesis 19:18 | MAM at the first: אֲדֹנָי
+A10 (new) | חָי | this: XJH[ qal perf p3.sg.m x1 | key: XJ/ -.sg.m x21, XJH[ qal perf p3.sg.m x1 | Genesis 25:7 | MAM at the first: חָי
+A12 | שִׁבְעָה | this: CB<H/ -.sg.? +n/a x1 | key: CB</ -.sg.f x58, CB<H/ -.sg.? +n/a x1 | Genesis 26:33 | MAM at the first: שִׁבְעָה
+A14 | עֵינַיִם | this: <JNJM/ -.sg.? +n/a x1 | key: <JN/ -.du.f x21, <JNJM/ -.sg.? +n/a x1 | Genesis 38:14 | MAM at the first: עֵינַיִם
+A15 | אֹור | this: >WR[ qal perf p3.sg.m x1 | key: >WR/ -.sg.? x46, >WR[ qal infc ?.?.? x6, >WR[ qal perf p3.sg.m x1 | Genesis 44:3 | MAM at the first: אוֹר
+A17 | אִמְרֵי | this: >MR==/ -.pl.m x1 | key: >MR/ -.pl.m x17, >MR==/ -.pl.m x1 | Genesis 49:21 | MAM at the first: אִמְרֵי־
+A18 (new) | עַד | this: <D==/ -.sg.m x2 | key: <D x1015, <D/ -.sg.m x10, <D==/ -.sg.m x2 | Genesis 49:27; Isaiah 33:23 | MAM at the first: עַד
+A19 | הַתֵּבָה | this: H + TBH=/ -.sg.f x1 | key: H + TBH/ -.sg.f x22, H + TBH=/ -.sg.f x1 | Exodus 2:5 | MAM at the first: הַתֵּבָה
+A20 | צֹר | this: YR==/ -.sg.m x1 | key: YR====/ -.sg.? +n/a x26, YR==/ -.sg.m x1 | Exodus 4:25 | MAM at the first: צֹר
+A21 | נִקְרָא | this: QR>=[ nif perf p3.sg.m x2 | key: QR>[ nif perf p3.sg.m x22, QR>[ qal impf p1.pl.? x2, QR>=[ nif perf p3.sg.m x2, QR>[ nif ptca ?.sg.m x2 | Exodus 5:3; 2 Samuel 20:1 | MAM at the first: נִקְרָא
+A23 | אֶל | this: >L= x1 | key: >L x3539, >L= x1 | Exodus 10:28 | MAM at the first: אַל־
+A24 | נָא | this: N>/ -.sg.m x1 | key: N> x332, N>/ -.sg.m x1 | Exodus 12:9 | MAM at the first: נָא
+A25 (new) | אֵילִם | this: >JLM=/ -.sg.? +n/a x1 | key: >JL=/ -.pl.m x25, >JLM=/ -.sg.? +n/a x1 | Exodus 16:1 | MAM at the first: אֵילִם
+A26 (new) | רָעָה | this: R<<[ qal perf p3.sg.f x1 | key: R<H/ -.sg.f x103, R</ -.sg.f x24, R<<[ qal perf p3.sg.f x1 | Exodus 21:8 | MAM at the first: רָעָה
+A28 (new) | וְטָמֵא | this: W + VM>/ -.sg.m x2 | key: W + VM>[ qal perf p3.sg.m x22, W + VM>/ -.sg.m x2 | Leviticus 13:45; Isaiah 52:1 | MAM at the first: וְטָמֵא
+A30 | חֶסֶד | this: XSD=/ -.sg.m x1 | key: XSD/ -.sg.m x64, XSD=/ -.sg.m x1, XSD==/ -.sg.m +n/a x1 | Leviticus 20:17 | MAM at the first: חֶסֶד
+A31 (new) | טָמֵא | this: VM>[ qal perf p3.sg.m x1 | key: VM>/ -.sg.m x41, VM>[ qal perf p3.sg.m x1 | Numbers 6:12 | MAM at the first: טָמֵא
+A32 | נָתָן | this: NTN[ qal perf p3.sg.m x2 | key: NTN/ -.sg.m +n/a x30, NTN[ qal perf p3.sg.m x2 | Numbers 7:9; Ezekiel 18:16 | MAM at the first: נָתָן
+A33 | רָע | this: R<<[ qal perf p3.sg.m x2 | key: R</ -.sg.m x98, R<<[ qal perf p3.sg.m x2 | Numbers 11:10; Isaiah 3:11 | MAM at the first: רָע
+A34 (new) | אַתְּ | this: >TH p2.sg.m +n/a x2 | key: >T= p2.sg.f +n/a x32, >TH p2.sg.m +n/a x2 | Numbers 11:15; Ezekiel 28:14 | MAM at the first: אַתְּ־
+A35 (new) | וְאַף | this: W + >P/ -.sg.m x2 | key: W + >P x23, W + >P/ -.sg.m x2 | Numbers 11:33; Psalms 78:31 | MAM at the first: וְאַף
+A37 | בָּמֹות | this: BMWT/ -.sg.? +n/a x1 | key: BMH/ -.pl.f x14, BMWT/ -.sg.? +n/a x1 | Numbers 21:19 | MAM at the first: בָּמוֹת
+A38 (new) | הַהוּא | this: H= + HW> p3.sg.m +n/a x1 | key: H + HW> p3.sg.m +n/a x312, H= + HW> p3.sg.m +n/a x1 | Numbers 23:19 | MAM at the first: הַהוּא
+A39 | סוּף | this: SWP==/ -.sg.? +n/a x1 | key: SWP/ -.sg.m x24, SWP==/ -.sg.? +n/a x1 | Deuteronomy 1:1 | MAM at the first: סוּף
+A40 (new) | וְאַתְּ | this: W + >TH p2.sg.m +n/a x1 | key: W + >T= p2.sg.f +n/a x12, W + >TH p2.sg.m +n/a x1 | Deuteronomy 5:27 | MAM at the first: וְאַתְּ
+A42 | יִקָּרֵא | this: QR>=[ nif impf p3.sg.m x1 | key: QR>[ nif impf p3.sg.m x19, QR>=[ nif impf p3.sg.m x1 | Deuteronomy 22:6 | MAM at the first: יִקָּרֵא
+A44 (new) | וְשָׁב | this: W + CWB=[ qal perf p3.sg.m x2 | key: W + CWB[ qal perf p3.sg.m x29, W + CWB=[ qal perf p3.sg.m x2 | Deuteronomy 30:3; Zephaniah 2:7 | MAM at the first: וְשָׁב
+A45 | חָם | this: XM==/ -.sg.m x1 | key: XM===/ -.sg.? +n/a x13, XM==/ -.sg.m x1 | Joshua 9:12 | MAM at the first: חָם
+A46 | חֵלֶק | this: XLQ====/ -.sg.m +n/a x1 | key: XLQ/ -.sg.m x27, XLQ====/ -.sg.m +n/a x1 | Joshua 17:2 | MAM at the first: חֵלֶק
+A47 | שָׂרִיד | this: FRJD=/ -.sg.? +n/a x1 | key: FRJD/ -.sg.m x21, FRJD=/ -.sg.? +n/a x1 | Joshua 19:10 | MAM at the first: שָׂרִיד
+A48 | לָחֶם | this: LXM=/ -.sg.m x1 | key: LXM/ -.sg.? x38, LXM=/ -.sg.m x1 | Judges 5:8 | MAM at the first: לָחֶם
+A49 | זָרַע | this: ZR<[ qal perf p3.sg.m x1 | key: ZR</ -.sg.m x12, ZR<[ qal perf p3.sg.m x1 | Judges 6:3 | MAM at the first: זָרַע
+A50 | צָפֹונָה | this: YPWN=/ -.sg.? +n/a x1 | key: YPWN/ -.sg.f x35, YPWN=/ -.sg.? +n/a x1 | Judges 12:1 | MAM at the first: צָפוֹנָה
+A51 | חֲמֹור | this: XMR=/ -.sg.m x1 | key: XMWR/ -.sg.? x16, XMWR=/ -.sg.m +n/a x13, XMR=/ -.sg.m x1 | Judges 15:16 | MAM at the first: חֲמוֹר
+A53 | אַל | this: >L x2 | key: >L= x575, >L x2, >L== x1 | Judges 19:23; Jeremiah 47:6 | MAM at the first: אֶל־
+A54 (new) | הָעֹלָה | this: H + <LH[ qal ptca ?.sg.f x2 | key: H + <LH/ -.sg.f x61, H + <LH[ qal ptca ?.sg.f x2 | Judges 21:19; Ecclesiastes 3:21 | MAM at the first: הָעֹלָה
+A56 | שָׁאוּל | this: C>L[ qal ptcp ?.sg.m x2 | key: C>WL=/ -.sg.m +n/a x353, C>L[ qal ptcp ?.sg.m x2 | 1 Samuel 1:28; 2 Kings 6:5 | MAM at the first: שָׁאוּל
+A59 | בָּנוּ | this: BW>[ qal perf p1.pl.? x1 | key: B +NW x22, BNH[ qal perf p3.pl.? x9, BW>[ qal perf p1.pl.? x1 | 1 Samuel 25:8 | MAM at the first: בָּנוּ
+A60 | אַל | this: >L== x1 | key: >L= x575, >L x2, >L== x1 | 1 Samuel 27:10 | MAM at the first: אַל־
+A62 | אַמָּה | this: >MH====/ -.sg.f +n/a x1 | key: >MH=/ -.sg.f x84, >MH====/ -.sg.f +n/a x1 | 2 Samuel 2:24 | MAM at the first: אַמָּה
+A64 | וַיֹּסֶף | this: W + >SP[ qal wayq p3.sg.m x1 | key: W + JSP[ hif wayq p3.sg.m x21, W + >SP[ qal wayq p3.sg.m x1 | 2 Samuel 6:1 | MAM at the first: וַיֹּסֶף
+A65 | נָכֹון | this: NKWN=/ -.sg.m +n/a x1 | key: KWN[ nif ptca ?.sg.m x27, KWN[ nif perf p3.sg.m x2, NKWN=/ -.sg.m +n/a x1, NKWN/ -.sg.m x1 | 2 Samuel 6:6 | MAM at the first: נָכוֹן
+A67 | מִיכַל | this: MJKL/ -.sg.m x1 | key: MJKL=/ -.sg.f +n/a x14, MJKL/ -.sg.m x1 | 2 Samuel 17:20 | MAM at the first: מִיכַל
+A68 | שָׁנָה | this: CNH[ qal perf p3.sg.m x1 | key: CNH/ -.sg.f x419, CNH[ qal perf p3.sg.m x1 | 2 Samuel 20:10 | MAM at the first: שָׁנָה
+A70 | חֵלֶב | this: XLB==/ -.sg.m +n/a x1 | key: XLB=/ -.sg.m x20, XLB==/ -.sg.m +n/a x1 | 2 Samuel 23:29 | MAM at the first: חֵלֶב
+A71 | חֶסֶד | this: XSD==/ -.sg.m +n/a x1 | key: XSD/ -.sg.m x64, XSD=/ -.sg.m x1, XSD==/ -.sg.m +n/a x1 | 1 Kings 4:10 | MAM at the first: חֶסֶד
+A73 (new) | קְצֹות | this: QYWT/ -.pl.f x1 | key: QYH/ -.pl.f x14, QYWT/ -.pl.f x1, QYH[ qal infc ?.?.? x1 | 1 Kings 6:24 | MAM at the first: קְצוֹת
+A74 | הָאַיִל | this: H + >JL===/ -.sg.m x1 | key: H + >JL=/ -.sg.m x20, H + >JL===/ -.sg.m x1 | 1 Kings 6:31 | MAM at the first: הָאַיִל
+A75 | כֵן | this: KN=/ -.sg.m x2 | key: KN x111, KN/ -.sg.m x11, KN=/ -.sg.m x2, KN==/ -.sg.m x1 | 1 Kings 7:31; Isaiah 33:23 | MAM at the first: כֵן
+A76 (new) | הָאֲדָמָה | this: H + >DMH==/ -.sg.? +n/a x2 | key: H + >DMH/ -.sg.f x111, H + >DMH==/ -.sg.? +n/a x2 | 1 Kings 7:46; 2 Chronicles 4:17 | MAM at the first: הָאֲדָמָה
+A79 | חָפֵץ | this: XPY=/ -.sg.m x1 | key: XPY[ qal perf p3.sg.m x28, XPY[ qal ptca ?.sg.m x2, XPY=/ -.sg.m x1 | 1 Kings 21:6 | MAM at the first: חָפֵץ
+A81 | שֹׁמֵר | this: CMR==/ -.sg.f +n/a x1 | key: CMR[ qal ptca ?.sg.m x36, CMR==/ -.sg.f +n/a x1 | 2 Kings 12:22 | MAM at the first: שֹׁמֵר
+A82 (new) | הַסֶּלַע | this: H + SL<=/ -.sg.? +n/a x1 | key: H + SL</ -.sg.m x11, H + SL<=/ -.sg.? +n/a x1 | 2 Kings 14:7 | MAM at the first: הַסֶּלַע
+A83 | אֲבִי | this: >BJ/ -.sg.f +n/a x1 | key: >B/ -.sg.m x73, >BJ/ -.sg.f +n/a x1 | 2 Kings 18:2 | MAM at the first: אֲבִי
+A84 | וַיָּרָץ | this: W + RYY[ qal wayq p3.sg.m x1 | key: W + RWY[ qal wayq p3.sg.m x17, W + RYY[ qal wayq p3.sg.m x1 | 2 Kings 23:12 | MAM at the first: וַיָּרָץ
+A85 (new) | לְכָה | this: L +K x1 | key: HLK[ qal impv p2.sg.m x26, L +K x1 | Isaiah 3:6 | MAM at the first: לְכָה
+A86 | כִּי | this: KJ/ -.sg.m x1 | key: KJ x4340, KJ/ -.sg.m x1 | Isaiah 3:24 | MAM at the first: כִּי־
+A87 (new) | שָׂרַי | this: FR/ -.pl.m +J x1 | key: FRJ/ -.sg.f +n/a x13, FR/ -.pl.m +J x1 | Isaiah 10:8 | MAM at the first: שָׂרַי
+A88 | לָנוּ | this: LJN[ qal perf p3.pl.? x1 | key: L +NW x186, LJN[ qal perf p3.pl.? x1 | Isaiah 10:29 | MAM at the first: לָנוּ
+A89 | מוּסָר | this: SWR[ hof ptcp ?.sg.m x1 | key: MWSR/ -.sg.m x26, SWR[ hof ptcp ?.sg.m x1 | Isaiah 17:1 | MAM at the first: מוּסָר
+A90 | נַחֲלָה | this: XLH[ nif ptca ?.sg.f x1 | key: NXLH/ -.sg.f x39, XLH[ nif ptca ?.sg.f x1 | Isaiah 17:11 | MAM at the first: נַחֲלָה
+A91 | מָסַךְ | this: MSK[ qal perf p3.sg.m x1 | key: MSK/ -.sg.m x11, MSK[ qal perf p3.sg.m x1 | Isaiah 19:14 | MAM at the first: מָסַךְ
+A92 | שִׁיר | this: CJR[ qal infa ?.?.? x1 | key: CJR/ -.sg.m x51, CJR[ qal infa ?.?.? x1 | Isaiah 23:16 | MAM at the first: שִׁיר
+A95 | צָרָה | this: YRR[ qal perf p3.sg.f x1 | key: YRH/ -.sg.f x36, YRR[ qal perf p3.sg.f x1, YR/ -.sg.f x1 | Isaiah 28:20 | MAM at the first: צָרָה
+A96 | צֵא | this: Y>/ -.sg.? x1 | key: JY>[ qal impv p2.sg.m x14, Y>/ -.sg.? x1 | Isaiah 30:22 | MAM at the first: צֵא
+A98 | וְכָל | this: W + KWL[ qal perf p3.sg.m x1 | key: W + KL/ -.sg.m x619, W + KWL[ qal perf p3.sg.m x1 | Isaiah 40:12 | MAM at the first: וְכָל
+A99 (new) | רָב | this: RJB[ qal ptca ?.sg.m x2 | key: RB/ -.sg.m x47, RJB[ qal perf p3.sg.m x3, RB=/ -.sg.m x3, RJB[ qal ptca ?.sg.m x2 | Isaiah 45:9; Jeremiah 51:36 | MAM at the first: רָב
+A100 | נְבֹו | this: NBW/ -.sg.m +n/a x1 | key: NBW=/ -.sg.? +n/a x11, NBW/ -.sg.m +n/a x1 | Isaiah 46:1 | MAM at the first: נְבוֹ
+A101 | כֵן | this: KN==/ -.sg.m x1 | key: KN x111, KN/ -.sg.m x11, KN=/ -.sg.m x2, KN==/ -.sg.m x1 | Isaiah 51:6 | MAM at the first: כֵן
+A103 | יָגוּר | this: GWR=[ qal impf p3.sg.m x1 | key: GWR[ qal impf p3.sg.m x13, GWR=[ qal impf p3.sg.m x1 | Isaiah 54:15 | MAM at the first: יָגוּר
+A104 (new) | חַיַּת | this: XJH==/ -.sg.f x2 | key: XJH/ -.sg.f x31, XJH==/ -.sg.f x2 | Isaiah 57:10; Psalms 74:19 | MAM at the first: חַיַּת
+A106 | שִׁמְעִי | this: CM</ -.sg.m +J x1 | key: CM<J=/ -.sg.m +n/a x26, CM<[ qal impv p2.sg.f x6, CM</ -.sg.m +J x1 | Isaiah 66:19 | MAM at the first: שִׁמְעִי
+A107 | עֵצָה | this: <YH===/ -.sg.f x1 | key: <YH/ -.sg.f x20, <YH===/ -.sg.f x1 | Jeremiah 6:6 | MAM at the first: עֵצָה
+A108 (new) | דַעַת | this: JD<[ qal infc ?.?.? x1 | key: D<T/ -.sg.f x11, JD<[ qal infc ?.?.? x1 | Jeremiah 9:5 | MAM at the first: דַעַת־
+A109 | מוּל | this: MWL[ qal ptcp ?.sg.m x1 | key: MWL/ -.sg.m x24, MWL[ qal ptcp ?.sg.m x1 | Jeremiah 9:24 | MAM at the first: מוּל
+A110 | עִיר | this: <JR===/ -.sg.m x1 | key: <JR/ -.sg.f x132, <JR===/ -.sg.m x1, <JR====/ -.sg.m +n/a x1 | Jeremiah 15:8 | MAM at the first: עִיר
+A112 | קֹרֵא | this: QR>/ -.sg.m x1 | key: QR>[ qal ptca ?.sg.m x13, QR>/ -.sg.m x1, QWR>/ -.sg.m +n/a x1 | Jeremiah 17:11 | MAM at the first: קֹרֵא
+A113 | דָּן | this: DJN[ qal perf p3.sg.m x1 | key: DN/ -.sg.? +n/a x24, DJN[ qal ptca ?.sg.m x2, DJN[ qal perf p3.sg.m x1 | Jeremiah 22:16 | MAM at the first: דָּן
+A114 | זִמְרִי | this: ZMRJ=/ -.sg.? +n/a x1 | key: ZMRJ/ -.sg.m +n/a x12, ZMRJ=/ -.sg.? +n/a x1 | Jeremiah 25:25 | MAM at the first: זִמְרִי
+A115 | יַעֲנֶה | this: <NH==[ qal impf p3.sg.m x1 | key: <NH[ qal impf p3.sg.m x15, <NH=[ qal impf p3.sg.m x2, <NH==[ qal impf p3.sg.m x1 | Jeremiah 25:30 | MAM at the first: יַעֲנֶה
+A116 | שָׁב | this: CWB=[ qal ptca ?.sg.m x1 | key: CWB[ qal perf p3.sg.m x33, CWB[ qal ptca ?.sg.m x3, CWB=[ qal ptca ?.sg.m x1, CWB=[ qal perf p3.sg.m x1 | Jeremiah 30:18 | MAM at the first: שָׁב
+A119 | אָמֹון | this: >MWN===/ -.sg.m +n/a x1 | key: >MWN==/ -.sg.m +n/a x16, >MWN===/ -.sg.m +n/a x1, >MWN=/ -.sg.m x1 | Jeremiah 46:25 | MAM at the first: אָמוֹן
+A120 (new) | יֹומָם | this: JWM/ -.sg.m +M x2 | key: JWMM x47, JWM/ -.sg.m +M x2 | Jeremiah 50:27; Ezekiel 21:34 | MAM at the first: יוֹמָם
+A121 | רַבִּים | this: RB===/ -.pl.m x1 | key: RB/ -.pl.m x172, RB===/ -.pl.m x1 | Jeremiah 50:29 | MAM at the first: רַבִּים
+A122 | רִיב | this: RJB[ qal infa ?.?.? x1 | key: RJB/ -.sg.m x21, RJB[ qal impv p2.sg.m x2, RJB[ qal infa ?.?.? x1 | Jeremiah 50:34 | MAM at the first: רִיב
+A123 | הַבַּדִּים | this: H + BD=/ -.pl.m x1 | key: H + BD/ -.pl.m x22, H + BD=/ -.pl.m x1 | Jeremiah 50:36 | MAM at the first: הַבַּדִּים
+A124 | מִנִּי | this: MNJ=/ -.sg.? +n/a x1 | key: MN x30, MN +J x5, MNJ=/ -.sg.? +n/a x1 | Jeremiah 51:27 | MAM at the first: מִנִּי
+A125 (new) | אֵלָה | this: >LH/ -.sg.f x1 | key: >LH===/ -.sg.m +n/a x12, >LH/ -.sg.f x1 | Ezekiel 6:13 | MAM at the first: אֵלָה
+A126 (new) | הָרָמָה | this: H + RWM[ qal ptca ?.sg.f x1 | key: H + RMH==/ -.sg.? +n/a x12, H + RWM[ qal ptca ?.sg.f x1 | Ezekiel 17:22 | MAM at the first: הָרָמָה
+A127 | רְשָׁעִים | this: RC<=/ -.pl.m x1 | key: RC</ -.pl.m x104, RC<=/ -.pl.m x1 | Ezekiel 21:34 | MAM at the first: רְשָׁעִים
+A130 | אָוֶן | this: >WN====/ -.sg.? +n/a x1 | key: >WN=/ -.sg.m x66, >WN====/ -.sg.? +n/a x1 | Ezekiel 30:17 | MAM at the first: אָוֶן
+A131 (new) | קְנֵה | this: QNH/ -.sg.m x1 | key: QNH[ qal impv p2.sg.m x12, QNH/ -.sg.m x1 | Ezekiel 40:5 | MAM at the first: קְנֵה
+A132 (new) | אֵילִים | this: >JL===/ -.pl.m x1 | key: >JL=/ -.pl.m x16, >JL===/ -.pl.m x1 | Ezekiel 40:14 | MAM at the first: אֵילִים
+A133 | אַיִל | this: >JL===/ -.sg.m x1 | key: >JL=/ -.sg.m x21, >JL===/ -.sg.m x1 | Ezekiel 40:16 | MAM at the first: אַיִל
+A134 | אֵל | this: >JL===/ -.sg.m x1 | key: >L/ -.sg.m x162, >JL===/ -.sg.m x1, >L=== -.pl.? +n/a x1 | Ezekiel 40:48 | MAM at the first: אֵל
+A135 | עַמִּי | this: <MJ/ -.sg.m +n/a x1 | key: <M/ -.sg.m +J x178, <MJ/ -.sg.m +n/a x1, <M/ -.sg.m x1 | Hosea 2:3 | MAM at the first: עַמִּי
+A136 (new) | עַל | this: <L=/ -.sg.m x1 | key: <L x3476, <L=/ -.sg.m x1 | Hosea 11:7 | MAM at the first: עַל
+A137 | בְּעִיר | this: B + <JR===/ -.sg.m x1 | key: B + <JR/ -.sg.f x36, B + <JR===/ -.sg.m x1 | Hosea 11:9 | MAM at the first: בְּעִיר
+A138 | שָׂרָה | this: FRH[ qal perf p3.sg.m x1 | key: FRH=/ -.sg.f +n/a x29, FRH[ qal perf p3.sg.m x1 | Hosea 12:4 | MAM at the first: שָׂרָה
+A140 (new) | תָּמָר | this: TMR/ -.sg.m x1 | key: TMR===/ -.sg.f +n/a x16, TMR/ -.sg.m x1 | Joel 1:12 | MAM at the first: תָּמָר
+A141 | חֲמַת | this: XMT=/ -.sg.? +n/a x1 | key: XMH/ -.sg.f x19, XMT=/ -.sg.? +n/a x1 | Amos 6:2 | MAM at the first: חֲמַת
+A142 (new) | לְרֹאשׁ | this: L + R>C=/ -.sg.m x1 | key: L + R>C/ -.sg.m x23, L + R>C=/ -.sg.m x1 | Amos 6:12 | MAM at the first: לְרֹאשׁ
+A143 | אָבִי | this: BW>[ hif impf p1.sg.? x1 | key: >B/ -.sg.m +J x127, BW>[ hif impf p1.sg.? x1 | Micah 1:15 | MAM at the first: אָבִי
+A144 | רִיב | this: RJB[ qal impv p2.sg.m x2 | key: RJB/ -.sg.m x21, RJB[ qal impv p2.sg.m x2, RJB[ qal infa ?.?.? x1 | Micah 6:1; Proverbs 25:9 | MAM at the first: רִיב
+A146 | חֵיל | this: XJL==/ -.sg.m x1 | key: XJL/ -.sg.m x32, XJL==/ -.sg.m x1 | Nahum 3:8 | MAM at the first: חֵיל
+A147 | קְצֹות | this: QYH[ qal infc ?.?.? x1 | key: QYH/ -.pl.f x14, QYWT/ -.pl.f x1, QYH[ qal infc ?.?.? x1 | Habakkuk 2:10 | MAM at the first: קְצוֹת־
+A148 | קָרֹוב | this: QRB[ qal infa ?.?.? x1 | key: QRWB/ -.sg.m x31, QRB[ qal infa ?.?.? x1 | Zephaniah 1:14 | MAM at the first: קָרוֹב
+A150 | חָכְמָה | this: XKM[ qal perf p3.sg.f x1 | key: XKMH/ -.sg.f x74, XKM[ qal perf p3.sg.f x1 | Zechariah 9:2 | MAM at the first: חָכְמָה
+A152 | בִּינָה | this: BJN[ qal impv p2.sg.m x1 | key: BJNH/ -.sg.f x13, BJN[ qal impv p2.sg.m x1 | Psalms 5:2 | MAM at the first: בִּינָה
+A153 | תְּנָה | this: TNH[ qal impv p2.sg.m x1 | key: NTN[ qal impv p2.sg.m x23, TNH[ qal impv p2.sg.m x1 | Psalms 8:2 | MAM at the first: תְּנָה
+A154 | זָכָר | this: ZKR[ qal perf p3.sg.m x1 | key: ZKR=/ -.sg.m x58, ZKR[ qal perf p3.sg.m x1 | Psalms 9:13 | MAM at the first: זָכָר
+A155 | יֶתֶר | this: JTR=/ -.sg.m x1 | key: JTR/ -.sg.m x25, JTR==/ -.sg.m +n/a x8, JTR=/ -.sg.m x1 | Psalms 11:2 | MAM at the first: יֶתֶר
+A156 (new) | תֹּם | this: TM=/ -.sg.m x1 | key: TMM[ qal infc ?.?.? x11, TM=/ -.sg.m x1 | Psalms 25:21 | MAM at the first: תֹּם־
+A157 (new) | עֹז | this: <Z=/ -.sg.m x2 | key: <Z/ -.sg.m x32, <Z=/ -.sg.m x2 | Psalms 28:8; Psalms 29:11 | MAM at the first: עֹז־
+A160 | עַצְמֹות | this: <YMH=/ -.pl.f x1 | key: <YM/ -.pl.f x17, <YMH=/ -.pl.f x1 | Psalms 53:6 | MAM at the first: עַצְמוֹת
+A161 | מִתֹּוךְ | this: MN + TK/ -.sg.m x1 | key: MN + TWK/ -.sg.m x55, MN + TK/ -.sg.m x1 | Psalms 72:14 | MAM at the first: מִתּוֹךְ
+A163 | צוּר | this: YWR=[ qal infc ?.?.? x1 | key: YWR/ -.sg.m x22, YWR==/ -.sg.m +n/a x3, YWR=[ qal infc ?.?.? x1 | Psalms 89:44 | MAM at the first: צוּר
+A166 | מְלֵאִים | this: ML>/ -.pl.m x1 | key: ML>[ qal ptca ?.pl.m x18, ML>/ -.pl.m x1 | Psalms 144:13 | MAM at the first: מְלֵאִים
+A167 | שָׁמַע | this: CM<=/ -.sg.m x1 | key: CM<[ qal perf p3.sg.m x60, CM<=/ -.sg.m x1 | Psalms 150:5 | MAM at the first: שָׁמַע
+A168 | נָכֹון | this: NKWN/ -.sg.m x1 | key: KWN[ nif ptca ?.sg.m x27, KWN[ nif perf p3.sg.m x2, NKWN=/ -.sg.m +n/a x1, NKWN/ -.sg.m x1 | Job 12:5 | MAM at the first: נָכוֹן
+A169 | קָצִיר | this: QYJR=/ -.sg.m x1 | key: QYJR/ -.sg.m x14, QYJR=/ -.sg.m x1 | Job 14:9 | MAM at the first: קָצִיר
+A170 | וַיְדַבְּרוּ | this: W + DBR=[ piel wayq p3.pl.m x1 | key: W + DBR[ piel wayq p3.pl.m x29, W + DBR=[ piel wayq p3.pl.m x1 | Job 19:18 | MAM at the first: וַיְדַבְּרוּ־
+A172 | חָרָה | this: XRR[ qal perf p3.sg.f x1 | key: XRH[ qal perf p3.sg.m x16, XRR[ qal perf p3.sg.f x1 | Job 30:30 | MAM at the first: חָרָה
+A174 (new) | שָׁב | this: CWB=[ qal perf p3.sg.m x1 | key: CWB[ qal perf p3.sg.m x33, CWB[ qal ptca ?.sg.m x3, CWB=[ qal ptca ?.sg.m x1, CWB=[ qal perf p3.sg.m x1 | Job 42:10 | MAM at the first: שָׁב
+A176 | מָגֵן | this: MGN=/ -.sg.m x2 | key: MGN/ -.sg.? x25, MGN=/ -.sg.m x2 | Proverbs 6:11; Proverbs 24:34 | MAM at the first: מָגֵן
+A177 (new) | אָמֹון | this: >MWN=/ -.sg.m x1 | key: >MWN==/ -.sg.m +n/a x16, >MWN===/ -.sg.m +n/a x1, >MWN=/ -.sg.m x1 | Proverbs 8:30 | MAM at the first: אָמוֹן
+A178 | רָאשִׁים | this: RWC[ qal ptca ?.pl.m x1 | key: R>C/ -.pl.m x19, RWC[ qal ptca ?.pl.m x1 | Proverbs 13:23 | MAM at the first: רָאשִׁים
+A179 (new) | אֲלָפִים | this: >LP/ -.pl.m x1 | key: >LP=/ -.pl.m x119, >LP/ -.pl.m x1 | Proverbs 14:4 | MAM at the first: אֲלָפִים
+A180 | אִישׁ | this: >C=/ -.sg.? x1 | key: >JC/ -.sg.m x1119, >C=/ -.sg.? x1 | Proverbs 18:24 | MAM at the first: אִישׁ
+A181 | צָרָה | this: YR/ -.sg.f x1 | key: YRH/ -.sg.f x36, YRR[ qal perf p3.sg.f x1, YR/ -.sg.f x1 | Proverbs 23:27 | MAM at the first: צָרָה
+A182 | שָׁנִים | this: CNJ=/ -.pl.m x1 | key: CNH/ -.pl.f x125, CNJ=/ -.pl.m x1 | Proverbs 31:21 | MAM at the first: שָׁנִים
+A183 | יִרְאַת | this: JR>/ -.sg.f x1 | key: JR>H/ -.sg.f x18, JR>/ -.sg.f x1 | Proverbs 31:30 | MAM at the first: יִרְאַת־
+A184 (new) | מְלֵאָה | this: ML>/ -.sg.f x1 | key: ML>[ qal ptca ?.sg.f x18, ML>/ -.sg.f x1 | Ruth 1:21 | MAM at the first: מְלֵאָה
+A185 (new) | שֵׁשׁ | this: CC==/ -.sg.m x2 | key: CC/ -.sg.? x83, CC=/ -.sg.m x16, CC==/ -.sg.m x2 | Song of Songs 5:15; Esther 1:6 | MAM at the first: שֵׁשׁ
+A187 (new) | חֶשְׁבֹּון | this: XCBWN/ -.sg.m x1 | key: XCBWN==/ -.sg.? +n/a x23, XCBWN/ -.sg.m x1 | Ecclesiastes 7:27 | MAM at the first: חֶשְׁבּוֹן
+A188 | נָבִיא | this: BW>[ hif impf p1.pl.? x2 | key: NBJ>/ -.sg.m x26, BW>[ hif impf p1.pl.? x2 | Lamentations 5:9; Nehemiah 10:38 | MAM at the first: נָבִיא
+A189 (new) | חוּר | this: XWR/ -.sg.m x1 | key: XWR=/ -.sg.m +n/a x11, XWR/ -.sg.m x1 | Esther 1:6 | MAM at the first: חוּר
+A190 | הַיָּמִין | this: H + JWM/ -.pl.m x1 | key: H + JMJN/ -.sg.f x11, H + JWM/ -.pl.m x1 | Daniel 12:13 | MAM at the first: הַיָּמִין
+A191 | מִסְפָּר | this: MSPR=/ -.sg.m +n/a x1 | key: MSPR/ -.sg.m x30, MSPR=/ -.sg.m +n/a x1 | Ezra 2:2 | MAM at the first: מִסְפָּר
+A193 | וַיַּעֲנוּ | this: W + <NH==[ qal wayq p3.pl.m x1 | key: W + <NH[ qal wayq p3.pl.m x15, W + <NH==[ qal wayq p3.pl.m x1 | Ezra 3:11 | MAM at the first: וַיַּעֲנוּ
+A194 | יָשׁוּב | this: JCWB/ -.sg.m +n/a x1 | key: CWB[ qal impf p3.sg.m x50, JCWB/ -.sg.m +n/a x1 | Ezra 10:29 | MAM at the first: יָשׁוּב
+A195 | וַיַּעַזְבוּ | this: W + <ZB=[ qal wayq p3.pl.m x1 | key: W + <ZB[ qal wayq p3.pl.m x11, W + <ZB=[ qal wayq p3.pl.m x1 | Nehemiah 3:8 | MAM at the first: וַיַּעַזְבוּ
+A197 (new) | יָמִין | this: JMJN=/ -.sg.m +n/a x1 | key: JMJN/ -.sg.f x21, JMJN=/ -.sg.m +n/a x1 | Nehemiah 8:7 | MAM at the first: יָמִין
+A198 (new) | עֲלֵי | this: <LH=/ -.pl.m x1 | key: <L x38, <LH=/ -.pl.m x1 | Nehemiah 8:15 | MAM at the first: עֲלֵי־
+A200 | עָנָן | this: <NN=/ -.sg.m +n/a x1 | key: <NN/ -.sg.m x21, <NN=/ -.sg.m +n/a x1 | Nehemiah 10:27 | MAM at the first: עָנָן
+A201 | מַשָּׂא | this: MF>===/ -.sg.m +n/a x1 | key: MF>/ -.sg.m x23, MF>=/ -.sg.m x15, MF>===/ -.sg.m +n/a x1 | 1 Chronicles 1:30 | MAM at the first: מַשָּׂא
+A202 | אַפַּיִם | this: >PJM/ -.sg.m +n/a x1 | key: >P/ -.du.m x26, >PJM/ -.sg.m +n/a x1 | 1 Chronicles 2:31 | MAM at the first: אַפַּיִם
+A203 | שֶׁבֶר | this: CBR===/ -.sg.m +n/a x1 | key: CBR/ -.sg.m x18, CBR=/ -.sg.m x4, CBR===/ -.sg.m +n/a x1 | 1 Chronicles 2:48 | MAM at the first: שֶׁבֶר
+A204 | בַּעַל | this: B<L==/ -.sg.m +n/a x1 | key: B<L/ -.sg.m x20, B<L==/ -.sg.m +n/a x1 | 1 Chronicles 5:5 | MAM at the first: בַּעַל
+A205 | אֲחִי | this: >XJ=/ -.sg.m +n/a x2 | key: >X/ -.sg.m x35, >XJ=/ -.sg.m +n/a x2 | 1 Chronicles 5:15; 1 Chronicles 7:34 | MAM at the first: אֲחִי
+A206 | תַּחַת | this: TXT==/ -.sg.m +n/a x2 | key: TXT/ -.sg.m x253, TXT==/ -.sg.m +n/a x2 | 1 Chronicles 6:9; 1 Chronicles 6:22 | MAM at the first: תַּחַת
+A207 (new) | עַבְדִּי | this: <BDJ/ -.sg.m +n/a x2 | key: <BD/ -.sg.m +J x52, <BDJ/ -.sg.m +n/a x2 | 1 Chronicles 6:29; 2 Chronicles 29:12 | MAM at the first: עַבְדִּי
+A208 (new) | עָשָׁן | this: <CN==/ -.sg.? +n/a x1 | key: <CN/ -.sg.m x12, <CN==/ -.sg.? +n/a x1 | 1 Chronicles 6:44 | MAM at the first: עָשָׁן
+A209 | בִּלְעָם | this: BL<M=/ -.sg.? +n/a x1 | key: BL<M/ -.sg.m +n/a x51, BL<M=/ -.sg.? +n/a x1 | 1 Chronicles 6:55 | MAM at the first: בִּלְעָם
+A210 | עִיר | this: <JR====/ -.sg.m +n/a x1 | key: <JR/ -.sg.f x132, <JR===/ -.sg.m x1, <JR====/ -.sg.m +n/a x1 | 1 Chronicles 7:12 | MAM at the first: עִיר
+A211 | אַחֵר | this: >XR==/ -.sg.m +n/a x1 | key: >XR=/ -.sg.m x48, >XR==/ -.sg.m +n/a x1 | 1 Chronicles 7:12 | MAM at the first: אַחֵר
+A212 | וְתַחַת | this: W + TXT==/ -.sg.m +n/a x2 | key: W + TXT/ -.sg.m x26, W + TXT==/ -.sg.m +n/a x2 | 1 Chronicles 7:20; 1 Chronicles 7:20 | MAM at the first: וְתַחַת
+A213 | חֹדֶשׁ | this: XDC==/ -.sg.f +n/a x1 | key: XDC=/ -.sg.m x43, XDC==/ -.sg.f +n/a x1 | 1 Chronicles 8:9 | MAM at the first: חֹדֶשׁ
+A214 | מִרְמָה | this: MRMH=/ -.sg.m +n/a x1 | key: MRMH/ -.sg.f x26, MRMH=/ -.sg.m +n/a x1 | 1 Chronicles 8:10 | MAM at the first: מִרְמָה
+A215 | בֵּן | this: BN=/ -.sg.m +n/a x1 | key: BN/ -.sg.m x84, BN=/ -.sg.m +n/a x1 | 1 Chronicles 15:18 | MAM at the first: בֵּן
+A216 (new) | אֵל | this: >L=== -.pl.? +n/a x1 | key: >L/ -.sg.m x162, >JL===/ -.sg.m x1, >L=== -.pl.? +n/a x1 | 1 Chronicles 20:8 | MAM at the first: אֵל
+A217 | קֹרֵא | this: QWR>/ -.sg.m +n/a x1 | key: QR>[ qal ptca ?.sg.m x13, QR>/ -.sg.m x1, QWR>/ -.sg.m +n/a x1 | 1 Chronicles 26:1 | MAM at the first: קֹרֵא
+A218 | הָעֹולָה | this: H + <LH[ qal ptca ?.sg.f x1 | key: H + <LH/ -.sg.f x12, H + <LH[ qal ptca ?.sg.f x1 | 1 Chronicles 26:16 | MAM at the first: הָעוֹלָה
+A219 | גָּדֹול | this: GDL[ qal infa ?.?.? x1 | key: GDWL/ -.sg.m x147, GDL[ qal infa ?.?.? x1 | 2 Chronicles 2:8 | MAM at the first: גָּדוֹל
+A220 | חָזָק | this: XZQ[ qal perf p3.sg.m x1 | key: XZQ/ -.sg.m x14, XZQ[ qal perf p3.sg.m x1 | 2 Chronicles 26:15 | MAM at the first: חָזָק
+A221 | מַעַל | this: M<L[ qal perf p3.sg.m x1 | key: M<L=/ -.sg.m x12, M<L[ qal perf p3.sg.m x1 | 2 Chronicles 28:19 | MAM at the first: מַעַל
+
+== stem/tense: 24 groups, 29 atoms
+A9 | נִקְרָא | this: QR>[ qal impf p1.pl.? x2 | key: QR>[ nif perf p3.sg.m x22, QR>[ qal impf p1.pl.? x2, QR>=[ nif perf p3.sg.m x2, QR>[ nif ptca ?.sg.m x2 | Genesis 24:57; Psalms 80:19 | MAM at the first: נִקְרָא
+A11 (new) | וְנִכְרְתָה | this: W + KRT[ qal impf p1.pl.? x1 | key: W + KRT[ nif perf p3.sg.f x17, W + KRT[ qal impf p1.pl.? x1 | Genesis 26:28 | MAM at the first: וְנִכְרְתָה
+A13 | וְאָכְלָה | this: W + >KL[ qal impv p2.sg.m x1 | key: W + >KL[ qal perf p3.sg.f x18, W + >KL[ qal impv p2.sg.m x1 | Genesis 27:19 | MAM at the first: וְאָכְלָה
+A22 | נָכֹון | this: KWN[ nif perf p3.sg.m x2 | key: KWN[ nif ptca ?.sg.m x27, KWN[ nif perf p3.sg.m x2, NKWN=/ -.sg.m +n/a x1, NKWN/ -.sg.m x1 | Exodus 8:22; Psalms 78:37 | MAM at the first: נָכוֹן
+A27 | נַעֲשָׂה | this: <FH[ nif ptca ?.sg.f x1 | key: <FH[ nif perf p3.sg.m x18, <FH[ nif ptca ?.sg.f x1 | Leviticus 7:9 | MAM at the first: נַעֲשָׂה
+A36 (new) | נִתְּנָה | this: NTN[ qal impf p1.pl.? x1 | key: NTN[ nif perf p3.sg.f x17, NTN[ qal impf p1.pl.? x1 | Numbers 14:4 | MAM at the first: נִתְּנָה
+A41 (new) | שְׁמֹר | this: CMR[ qal infc ?.?.? x1 | key: CMR[ qal impv p2.sg.m x11, CMR[ qal infc ?.?.? x1 | Deuteronomy 8:11 | MAM at the first: שְׁמֹר
+A52 | נִתַּן | this: NTN[ qal impf p1.pl.? x1 | key: NTN[ nif perf p3.sg.m x14, NTN[ qal impf p1.pl.? x1 | Judges 16:5 | MAM at the first: נִתַּן־
+A55 | אָכְלָה | this: >KL[ qal infc ?.?.? x1 | key: >KL[ qal perf p3.sg.f x16, >KL[ qal infc ?.?.? x1 | 1 Samuel 1:9 | MAM at the first: אָכְלָה
+A57 | בֹּוא | this: BW>[ qal infa ?.?.? x1 | key: BW>[ qal infc ?.?.? x13, BW>[ qal impv p2.sg.m x4, BW>[ qal infa ?.?.? x1 | 1 Samuel 9:6 | MAM at the first: בּוֹא
+A58 (new) | שִׂים | this: FJM[ qal ptcp ?.sg.m x2 | key: FJM[ qal impv p2.sg.m x23, FJM[ qal ptcp ?.sg.m x2, FJM[ qal infc ?.?.? x1 | 1 Samuel 9:24; Obadiah 1:4 | MAM at the first: שִׂים־
+A69 | דַּבֵּר | this: DBR[ piel infa ?.?.? x1 | key: DBR[ piel impv p2.sg.m x58, DBR[ piel infc ?.?.? x8, DBR[ piel infa ?.?.? x1 | 2 Samuel 20:18 | MAM at the first: דַּבֵּר
+A72 | נִרְאָה | this: R>H[ nif ptca ?.sg.f x1 | key: R>H[ nif perf p3.sg.m x21, R>H[ nif ptca ?.sg.f x1 | 1 Kings 6:18 | MAM at the first: נִרְאָה
+A78 (new) | לַעֲלֹות | this: L + <LH[ hif infc ?.?.? x1 | key: L + <LH[ qal infc ?.?.? x18, L + <LH[ hif infc ?.?.? x1 | 1 Kings 18:29 | MAM at the first: לַעֲלוֹת
+A80 | וַיַּרְא | this: W + R>H[ hif wayq p3.sg.m x1 | key: W + R>H[ qal wayq p3.sg.m x130, W + R>H[ hif wayq p3.sg.m x1 | 2 Kings 11:4 | MAM at the first: וַיַּרְא
+A94 | יָבִין | this: BJN[ hif impf p3.sg.m x1 | key: BJN[ qal impf p3.sg.m x17, JBJN/ -.sg.m +n/a x7, BJN[ hif impf p3.sg.m x1 | Isaiah 28:9 | MAM at the first: יָבִין
+A105 | שְׁלַח | this: CLX[ qal infc ?.?.? x1 | key: CLX[ qal impv p2.sg.m x14, CLX[ qal infc ?.?.? x1 | Isaiah 58:9 | MAM at the first: שְׁלַח
+A118 | נִקְרָא | this: QR>[ nif ptca ?.sg.m x2 | key: QR>[ nif perf p3.sg.m x22, QR>[ qal impf p1.pl.? x2, QR>=[ nif perf p3.sg.m x2, QR>[ nif ptca ?.sg.m x2 | Jeremiah 44:26; Ecclesiastes 6:10 | MAM at the first: נִקְרָא
+A129 | הַרְבֵּה | this: RBH[ hif impv p2.sg.m x1 | key: RBH[ hif infa ?.?.? x44, RBH[ hif impv p2.sg.m x1 | Ezekiel 24:10 | MAM at the first: הַרְבֵּה
+A145 (new) | חָפֵץ | this: XPY[ qal ptca ?.sg.m x2 | key: XPY[ qal perf p3.sg.m x28, XPY[ qal ptca ?.sg.m x2, XPY=/ -.sg.m x1 | Micah 7:18; Psalms 5:5 | MAM at the first: חָפֵץ
+A149 (new) | קוּמִי | this: QWM[ qal infc ?.?.? +J x1 | key: QWM[ qal impv p2.sg.f x14, QWM[ qal infc ?.?.? +J x1 | Zephaniah 3:8 | MAM at the first: קוּמִי
+A159 | נִמְצָא | this: MY>[ nif ptca ?.sg.m x1 | key: MY>[ nif perf p3.sg.m x22, MY>[ qal impf p1.pl.? x3, MY>[ nif ptca ?.sg.m x1 | Psalms 46:2 | MAM at the first: נִמְצָא
+A171 | שִׂים | this: FJM[ qal infc ?.?.? x1 | key: FJM[ qal impv p2.sg.m x23, FJM[ qal ptcp ?.sg.m x2, FJM[ qal infc ?.?.? x1 | Job 20:4 | MAM at the first: שִׂים
+A196 | נַעֲשֶׂה | this: <FH[ nif ptca ?.sg.m x1 | key: <FH[ qal impf p1.pl.? x23, <FH[ nif ptca ?.sg.m x1 | Nehemiah 5:18 | MAM at the first: נַעֲשֶׂה
+
+== ps/nu/gn/prs: 21 groups, 22 atoms
+A16 (new) | בְּנִי | this: BN/ -.sg.m x1 | key: BN/ -.sg.m +J x78, BN/ -.sg.m x1 | Genesis 49:11 | MAM at the first: בְּנִי | differs: BN/ prs absent (commonest J)
+A29 (new) | תִרְאֶה | this: R>H[ qal impf p3.sg.f x1 | key: R>H[ qal impf p2.sg.m x13, R>H[ qal impf p3.sg.f x1 | Leviticus 20:17 | MAM at the first: תִרְאֶה | differs: R>H[ ps p3 (commonest p2); R>H[ gn f (commonest m)
+A61 (new) | לְרֵעֵהוּ | this: L + R<=/ -.pl.m +HW x1 | key: L + R<=/ -.sg.m +HW x19, L + R<=/ -.pl.m +HW x1 | 1 Samuel 30:26 | MAM at the first: לְרֵעֵהוּ | differs: R<=/ nu pl (commonest sg)
+A63 (new) | יָדֶךָ | this: JD/ -.du.? +K x2 | key: JD/ -.sg.? +K x26, JD/ -.du.? +K x2 | 2 Samuel 3:34; Jeremiah 40:4 | MAM at the first: יָדֶךָ | differs: JD/ nu du (commonest sg)
+A66 (new) | וַתִּקַּח | this: W + LQX[ qal wayq p2.sg.m x1 | key: W + LQX[ qal wayq p3.sg.f x31, W + LQX[ qal wayq p2.sg.m x1 | 2 Samuel 12:10 | MAM at the first: וַתִּקַּח | differs: LQX[ ps p2 (commonest p3); LQX[ gn m (commonest f)
+A77 (new) | וַתָּשָׁב | this: W + CWB[ qal wayq p2.sg.m x1 | key: W + CWB[ qal wayq p3.sg.f x12, W + CWB[ qal wayq p2.sg.m x1 | 1 Kings 13:22 | MAM at the first: וַתָּשָׁב | differs: CWB[ ps p2 (commonest p3); CWB[ gn m (commonest f)
+A93 (new) | תַּקְרִיב | this: QRB[ hif impf p3.sg.f x1 | key: QRB[ hif impf p2.sg.m x11, QRB[ hif impf p3.sg.f x1 | Isaiah 26:17 | MAM at the first: תַּקְרִיב | differs: QRB[ ps p3 (commonest p2); QRB[ gn f (commonest m)
+A97 (new) | תִּשְׁמַע | this: CM<[ qal impf p3.sg.f x1 | key: CM<[ qal impf p2.sg.m x23, CM<[ qal impf p3.sg.f x1 | Isaiah 34:1 | MAM at the first: תִּשְׁמַע | differs: CM<[ ps p3 (commonest p2); CM<[ gn f (commonest m)
+A102 (new) | תָּשִׂים | this: FJM[ qal impf p3.sg.f x1 | key: FJM[ qal impf p2.sg.m x11, FJM[ qal impf p3.sg.f x1 | Isaiah 53:10 | MAM at the first: תָּשִׂים | differs: FJM[ ps p3 (commonest p2); FJM[ gn f (commonest m)
+A111 (new) | כְּפִי | this: K + PH/ -.sg.m +J x1 | key: K + PH/ -.sg.m x14, K + PH/ -.sg.m +J x1 | Jeremiah 15:19 | MAM at the first: כְּפִי | differs: PH/ prs J (commonest absent)
+A117 (new) | אֵינֶנּוּ | this: >JN/ -.sg.m +NW x1 | key: >JN/ -.sg.m +HW x35, >JN/ -.sg.m +NW x1 | Jeremiah 44:16 | MAM at the first: אֵינֶנּוּ | differs: >JN/ prs NW (commonest HW)
+A128 (new) | וַתָּבֹוא | this: W + BW>[ qal wayq p2.sg.m x1 | key: W + BW>[ qal wayq p3.sg.f x20, W + BW>[ qal wayq p2.sg.m x1 | Ezekiel 22:4 | MAM at the first: וַתָּבוֹא | differs: BW>[ ps p2 (commonest p3); BW>[ gn m (commonest f)
+A139 (new) | בִּלְתִּי | this: BLT/ -.sg.? +J x1 | key: BLT/ -.sg.? x22, BLT/ -.sg.? +J x1 | Hosea 13:4 | MAM at the first: בִּלְתִּי | differs: BLT/ prs J (commonest absent)
+A151 (new) | תֹאמַר | this: >MR[ qal impf p3.sg.f x1 | key: >MR[ qal impf p2.sg.m x22, >MR[ qal impf p3.sg.f x1 | Malachi 1:4 | MAM at the first: תֹאמַר | differs: >MR[ ps p3 (commonest p2); >MR[ gn f (commonest m)
+A158 (new) | תְּדַבֵּר | this: DBR[ piel impf p3.sg.f x1 | key: DBR[ piel impf p2.sg.m x18, DBR[ piel impf p3.sg.f x1 | Psalms 37:30 | MAM at the first: תְּדַבֵּר | differs: DBR[ ps p3 (commonest p2); DBR[ gn f (commonest m)
+A164 (new) | תֵּלֵךְ | this: HLK[ qal impf p3.sg.f x1 | key: HLK[ qal impf p2.sg.m x19, HLK[ qal impf p3.sg.f x1 | Psalms 97:3 | MAM at the first: תֵּלֵךְ | differs: HLK[ ps p3 (commonest p2); HLK[ gn f (commonest m)
+A165 (new) | וַתְּהִי | this: W + HJH[ qal wayq p2.sg.m x1 | key: W + HJH[ qal wayq p3.sg.f x85, W + HJH[ qal wayq p2.sg.m x1 | Psalms 118:21 | MAM at the first: וַתְּהִי־ | differs: HJH[ ps p2 (commonest p3); HJH[ gn m (commonest f)
+A173 (new) | תִּרְאֶה | this: R>H[ qal impf p3.sg.f x1 | key: R>H[ qal impf p2.sg.m x16, R>H[ qal impf p3.sg.f x1 | Job 33:28 | MAM at the first: תִּרְאֶה | differs: R>H[ ps p3 (commonest p2); R>H[ gn f (commonest m)
+A175 (new) | רֵעֵהוּ | this: R<=/ -.pl.m +HW x1 | key: R<=/ -.sg.m +HW x82, R<=/ -.pl.m +HW x1 | Job 42:10 | MAM at the first: רֵעֵהוּ | differs: R<=/ nu pl (commonest sg)
+A186 (new) | עַמִּי | this: <M/ -.sg.m x1 | key: <M/ -.sg.m +J x178, <MJ/ -.sg.m +n/a x1, <M/ -.sg.m x1 | Song of Songs 6:12 | MAM at the first: עַמִּי | differs: <M/ prs absent (commonest J)
+A199 (new) | וַתֵּרֶא | this: W + R>H[ qal wayq p2.sg.m x1 | key: W + R>H[ qal wayq p3.sg.f x28, W + R>H[ qal wayq p2.sg.m x1 | Nehemiah 9:9 | MAM at the first: וַתֵּרֶא | differs: R>H[ ps p2 (commonest p3); R>H[ gn m (commonest f)
+

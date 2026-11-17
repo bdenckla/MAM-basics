@@ -1,0 +1,466 @@
+A16 | בְּנִי | this: BN/ -.sg.m x1 | Genesis 49:11
+   key: BN/ -.sg.m +J x78, BN/ -.sg.m x1
+   MAM: בְּנִי
+   differs: BN/ prs absent (commonest J)
+   morph, this: בְּנִ֣י sp subs st c pfm  vbs  vbe  nme ֜ uvf ִי prs 
+   morph, commonest at Genesis 21:10: בְּנִ֖י sp subs st a pfm  vbs  vbe  nme ֜ uvf  prs ִי
+   verse Genesis 49:11:
+        אֹסְרִי [>SR[ qal ptca ?.sg.m] {PreC}
+        לַגֶּפֶן [L + H + GPN/ -.sg.?] {Cmpl,Cmpl,Cmpl}
+        עירה [<JR==/ -.sg.m +W] {Objc}
+        וְלַשֹּׂרֵקָה [W + L + H + FRQH/ -.sg.f] {Conj,Cmpl,Cmpl,Cmpl}
+     => בְּנִי [BN/ -.sg.m] {Objc}
+        אֲתֹנֹו [>TWN/ -.sg.f +W] {Objc}
+        כִּבֵּס [KBS[ piel perf p3.sg.m] {Pred}
+        בַּיַּיִן [B + H + JJN/ -.sg.m] {Cmpl,Cmpl,Cmpl}
+        לְבֻשֹׁו [LBWC/ -.sg.m +W] {Objc}
+        וּבְדַם־ [W + B + DM/ -.sg.m] {Conj,Cmpl,Cmpl}
+        עֲנָבִים [<NB/ -.pl.m] {Cmpl}
+        סותה [SWT/ -.sg.m +W] {Objc}
+
+A29 | תִרְאֶה | this: R>H[ qal impf p3.sg.f x1 | Leviticus 20:17
+   key: R>H[ qal impf p2.sg.m x13, R>H[ qal impf p3.sg.f x1
+   MAM: תִרְאֶה
+   differs: R>H[ ps p3 (commonest p2); R>H[ gn f (commonest m)
+   morph, this: תִרְאֶ֤ה sp verb st NA pfm תִ vbs  vbe  nme  uvf  prs 
+   morph, commonest at Exodus 6:1: תִרְאֶ֔ה sp verb st NA pfm תִ vbs  vbe  nme  uvf  prs 
+   verse Leviticus 20:17:
+        וְאִישׁ [W + >JC/ -.sg.m] {Conj,Frnt}
+        אֲשֶׁר־ [>CR] {Rela}
+        יִקַּח [LQX[ qal impf p3.sg.m] {Pred}
+        אֶת־ [>T] {Objc}
+        אֲחֹתֹו [>XWT/ -.sg.f +W] {Objc}
+        בַּת־ [BT/ -.sg.f] {Objc}
+        אָבִיו [>B/ -.sg.m +W] {Objc}
+        אֹו [>W] {Objc}
+        בַת־ [BT/ -.sg.f] {Objc}
+        אִמֹּו [>M/ -.sg.f +W] {Objc}
+        וְרָאָה [W + R>H[ qal perf p3.sg.m] {Conj,Pred}
+        אֶת־ [>T] {Objc}
+        עֶרְוָתָהּ [<RWH/ -.sg.f +H] {Objc}
+        וְהִיא־ [W + HJ> p3.sg.f +n/a] {Conj,Subj}
+     => תִרְאֶה [R>H[ qal impf p3.sg.f] {Pred}
+        אֶת־ [>T] {Objc}
+        עֶרְוָתֹו [<RWH/ -.sg.f +W] {Objc}
+        חֶסֶד [XSD=/ -.sg.m] {PreC}
+        הוּא [HW> p3.sg.m +n/a] {Subj}
+        וְנִכְרְתוּ [W + KRT[ nif perf p3.pl.?] {Conj,Pred}
+        לְעֵינֵי [L + <JN/ -.du.f] {Adju,Adju}
+        בְּנֵי [BN/ -.pl.m] {Adju}
+        עַמָּם [<M/ -.sg.m +M] {Adju}
+        עֶרְוַת [<RWH/ -.sg.f] {Objc}
+        אֲחֹתֹו [>XWT/ -.sg.f +W] {Objc}
+        גִּלָּה [GLH[ piel perf p3.sg.m] {Pred}
+        עֲוֹנֹו [<WN/ -.sg.m +W] {Objc}
+        יִשָּׂא [NF>[ qal impf p3.sg.m] {Pred}
+
+A61 | לְרֵעֵהוּ | this: L + R<=/ -.pl.m +HW x1 | 1 Samuel 30:26
+   key: L + R<=/ -.sg.m +HW x19, L + R<=/ -.pl.m +HW x1
+   MAM: לְרֵעֵהוּ
+   differs: R<=/ nu pl (commonest sg)
+   morph, this: לְ sp prep st NA pfm  vbs  vbe  nme  uvf  prs  | רֵעֵ֣הוּ sp subs st a pfm  vbs  vbe  nme ֵ֜ uvf  prs הוּ
+   morph, commonest at Exodus 18:7: לְ sp prep st NA pfm  vbs  vbe  nme  uvf  prs  | רֵעֵ֖הוּ sp subs st a pfm  vbs  vbe  nme ֜ uvf  prs ֵהוּ
+   verse 1 Samuel 30:26:
+        וַיָּבֹא [W + BW>[ qal wayq p3.sg.m] {Conj,Pred}
+        דָוִד [DWD==/ -.sg.m +n/a] {Subj}
+        אֶל־ [>L] {Cmpl}
+        צִקְלַג [YQLG/ -.sg.? +n/a] {Cmpl}
+        וַיְשַׁלַּח [W + CLX[ piel wayq p3.sg.m] {Conj,Pred}
+        מֵהַשָּׁלָל [MN + H + CLL/ -.sg.m] {Cmpl,Cmpl,Cmpl}
+        לְזִקְנֵי [L + ZQN/ -.pl.m] {Cmpl,Cmpl}
+        יְהוּדָה [JHWDH/ -.sg.? +n/a] {Cmpl}
+     => לְרֵעֵהוּ [L + R<=/ -.pl.m +HW] {Cmpl,Cmpl}
+        לֵאמֹר [L + >MR[ qal infc ?.?.?] {Pred,Pred}
+        הִנֵּה [HNH] {Intj}
+        לָכֶם [L +KM] {PreC}
+        בְּרָכָה [BRKH/ -.sg.f] {Subj}
+        מִשְּׁלַל [MN + CLL/ -.sg.m] {Subj,Subj}
+        אֹיְבֵי [>JB[ qal ptca ?.pl.m] {Subj}
+        יְהוָה [JHWH/ -.sg.m +n/a] {Subj}
+
+A63 | יָדֶךָ | this: JD/ -.du.? +K x2 | 2 Samuel 3:34; Jeremiah 40:4
+   key: JD/ -.sg.? +K x26, JD/ -.du.? +K x2
+   MAM: יָדֶךָ | יָדֶךָ
+   differs: JD/ nu du (commonest sg)
+   morph, this: יָדֶ֣ךָ sp subs st a pfm  vbs  vbe  nme ֶ֜ uvf  prs כָ
+   morph, commonest at Deuteronomy 2:7: יָדֶ֔ךָ sp subs st a pfm  vbs  vbe  nme ֜ uvf  prs ֶכָ
+   verse 2 Samuel 3:34:
+     => יָדֶךָ [JD/ -.du.? +K] {Subj}
+        לֹא־ [L>] {Nega}
+        אֲסֻרֹות [>SR[ qal ptcp ?.pl.f] {PreC}
+        וְרַגְלֶיךָ [W + RGL/ -.du.f +K] {Conj,Subj}
+        לֹא־ [L>] {Nega}
+        לִנְחֻשְׁתַּיִם [L + NXCT/ -.du.f] {Cmpl,Cmpl}
+        הֻגָּשׁוּ [NGC[ hof perf p3.pl.?] {Pred}
+        כִּנְפֹול [K + NPL[ qal infc ?.?.?] {Pred,Pred}
+        לִפְנֵי [L + PNH/ -.pl.m] {Cmpl,Cmpl}
+        בְנֵי־ [BN/ -.pl.m] {Cmpl}
+        עַוְלָה [<WLH/ -.sg.f] {Cmpl}
+        נָפָלְתָּ [NPL[ qal perf p2.sg.m] {Pred}
+        וַיֹּסִפוּ [W + JSP[ hif wayq p3.pl.m] {Conj,Pred}
+        כָל־ [KL/ -.sg.m] {Subj}
+        הָעָם [H + <M/ -.sg.m] {Subj,Subj}
+        לִבְכֹּות [L + BKH[ qal infc ?.?.?] {Pred,Pred}
+        עָלָיו [<L +W] {Cmpl}
+
+A66 | וַתִּקַּח | this: W + LQX[ qal wayq p2.sg.m x1 | 2 Samuel 12:10
+   key: W + LQX[ qal wayq p3.sg.f x31, W + LQX[ qal wayq p2.sg.m x1
+   MAM: וַתִּקַּח
+   differs: LQX[ ps p2 (commonest p3); LQX[ gn m (commonest f)
+   morph, this: וַ sp conj st NA pfm  vbs  vbe  nme  uvf  prs  | תִּקַּ֗ח sp verb st NA pfm תִּ vbs  vbe  nme  uvf  prs 
+   morph, commonest at Genesis 3:6: וַ sp conj st NA pfm  vbs  vbe  nme  uvf  prs  | תִּקַּ֥ח sp verb st NA pfm תִּ vbs  vbe  nme  uvf  prs 
+   verse 2 Samuel 12:10:
+        וְעַתָּה [W + <TH] {Conj,Time}
+        לֹא־ [L>] {Nega}
+        תָסוּר [SWR[ qal impf p3.sg.f] {Pred}
+        חֶרֶב [XRB/ -.sg.f] {Subj}
+        מִבֵּיתְךָ [MN + BJT/ -.sg.m +K] {Cmpl,Cmpl}
+        עַד־ [<D] {Time}
+        עֹולָם [<WLM/ -.sg.m] {Time}
+        עֵקֶב [<QB/ -.sg.m] {Conj}
+        כִּי [KJ] {Conj}
+        בְזִתָנִי [BZH[ qal perf p2.sg.m +NJ] {PreO}
+     => וַתִּקַּח [W + LQX[ qal wayq p2.sg.m] {Conj,Pred}
+        אֶת־ [>T] {Objc}
+        אֵשֶׁת [>CH/ -.sg.f] {Objc}
+        אוּרִיָּה [>WRJH/ -.sg.m +n/a] {Objc}
+        הַחִתִּי [H + XTJ/ -.sg.m] {Objc,Objc}
+        לִהְיֹות [L + HJH[ qal infc ?.?.?] {Pred,Pred}
+        לְךָ [L +K] {Cmpl}
+        לְאִשָּׁה [L + >CH/ -.sg.f] {PreC,PreC}
+
+A77 | וַתָּשָׁב | this: W + CWB[ qal wayq p2.sg.m x1 | 1 Kings 13:22
+   key: W + CWB[ qal wayq p3.sg.f x12, W + CWB[ qal wayq p2.sg.m x1
+   MAM: וַתָּשָׁב
+   differs: CWB[ ps p2 (commonest p3); CWB[ gn m (commonest f)
+   morph, this: וַ sp conj st NA pfm  vbs  vbe  nme  uvf  prs  | תָּ֗שָׁב sp verb st NA pfm תָּ vbs  vbe  nme  uvf  prs 
+   morph, commonest at Genesis 8:9: וַ sp conj st NA pfm  vbs  vbe  nme  uvf  prs  | תָּ֤שָׁב sp verb st NA pfm תָּ vbs  vbe  nme  uvf  prs 
+   verse 1 Kings 13:22:
+     => וַתָּשָׁב [W + CWB[ qal wayq p2.sg.m] {Conj,Pred}
+        וַתֹּאכַל [W + >KL[ qal wayq p2.sg.m] {Conj,Pred}
+        לֶחֶם [LXM/ -.sg.?] {Objc}
+        וַתֵּשְׁתְּ [W + CTH[ qal wayq p2.sg.m] {Conj,Pred}
+        מַיִם [MJM/ -.pl.m] {Objc}
+        בַּמָּקֹום [B + H + MQWM/ -.sg.m] {Loca,Loca,Loca}
+        אֲשֶׁר [>CR] {Rela}
+        דִּבֶּר [DBR[ piel perf p3.sg.m] {Pred}
+        אֵלֶיךָ [>L +K] {Cmpl}
+        אַל־ [>L=] {Nega}
+        תֹּאכַל [>KL[ qal impf p2.sg.m] {Pred}
+        לֶחֶם [LXM/ -.sg.?] {Objc}
+        וְאַל־ [W + >L=] {Conj,Nega}
+        תֵּשְׁתְּ [CTH[ qal impf p2.sg.m] {Pred}
+        מָיִם [MJM/ -.pl.m] {Objc}
+        לֹא־ [L>] {Nega}
+        תָבֹוא [BW>[ qal impf p3.sg.f] {Pred}
+        נִבְלָתְךָ [NBLH=/ -.sg.f +K] {Subj}
+        אֶל־ [>L] {Cmpl}
+        קֶבֶר [QBR/ -.sg.m] {Cmpl}
+        אֲבֹתֶיךָ [>B/ -.pl.m +K] {Cmpl}
+
+A93 | תַּקְרִיב | this: QRB[ hif impf p3.sg.f x1 | Isaiah 26:17
+   key: QRB[ hif impf p2.sg.m x11, QRB[ hif impf p3.sg.f x1
+   MAM: תַּקְרִיב
+   differs: QRB[ ps p3 (commonest p2); QRB[ gn f (commonest m)
+   morph, this: תַּקְרִ֣יב sp verb st NA pfm תַּ vbs  vbe  nme  uvf  prs 
+   morph, commonest at Exodus 29:4: תַּקְרִ֔יב sp verb st NA pfm תַּ vbs  vbe  nme  uvf  prs 
+   verse Isaiah 26:17:
+        כְּמֹו [KMW] {Conj}
+        הָרָה [HRH/ -.sg.f] {Subj}
+     => תַּקְרִיב [QRB[ hif impf p3.sg.f] {Pred}
+        לָלֶדֶת [L + JLD[ qal infc ?.?.?] {Pred,Pred}
+        תָּחִיל [XJL[ qal impf p3.sg.f] {Pred}
+        תִּזְעַק [Z<Q[ qal impf p3.sg.f] {Pred}
+        בַּחֲבָלֶיהָ [B + XBL/ -.pl.m +H] {Adju,Adju}
+        כֵּן [KN] {Modi}
+        הָיִינוּ [HJH[ qal perf p1.pl.?] {Pred}
+        מִפָּנֶיךָ [MN + PNH/ -.pl.m +K] {Adju,Adju}
+        יְהוָה [JHWH/ -.sg.m +n/a] {Voct}
+
+A97 | תִּשְׁמַע | this: CM<[ qal impf p3.sg.f x1 | Isaiah 34:1
+   key: CM<[ qal impf p2.sg.m x23, CM<[ qal impf p3.sg.f x1
+   MAM: תִּשְׁמַע
+   differs: CM<[ ps p3 (commonest p2); CM<[ gn f (commonest m)
+   morph, this: תִּשְׁמַ֤ע sp verb st NA pfm תִּ vbs  vbe  nme  uvf  prs 
+   morph, commonest at Genesis 41:15: תִּשְׁמַ֥ע sp verb st NA pfm תִּ vbs  vbe  nme  uvf  prs 
+   verse Isaiah 34:1:
+        קִרְבוּ [QRB[ qal impv p2.pl.m] {Pred}
+        גֹויִם [GWJ/ -.pl.m] {Voct}
+        לִשְׁמֹעַ [L + CM<[ qal infc ?.?.?] {Pred,Pred}
+        וּלְאֻמִּים [W + L>M/ -.pl.m] {Conj,Voct}
+        הַקְשִׁיבוּ [QCB[ hif impv p2.pl.m] {Pred}
+     => תִּשְׁמַע [CM<[ qal impf p3.sg.f] {Pred}
+        הָאָרֶץ [H + >RY/ -.sg.?] {Subj,Subj}
+        וּמְלֹאָהּ [W + ML>=/ -.sg.m +H] {Subj,Subj}
+        תֵּבֵל [TBL/ -.sg.f] {Subj}
+        וְכָל־ [W + KL/ -.sg.m] {Subj,Subj}
+        צֶאֱצָאֶיהָ [Y>Y>JM/ -.pl.m +H] {Subj}
+
+A102 | תָּשִׂים | this: FJM[ qal impf p3.sg.f x1 | Isaiah 53:10
+   key: FJM[ qal impf p2.sg.m x11, FJM[ qal impf p3.sg.f x1
+   MAM: תָּשִׂים
+   differs: FJM[ ps p3 (commonest p2); FJM[ gn f (commonest m)
+   morph, this: תָּשִׂ֤ים sp verb st NA pfm תָּ vbs  vbe  nme  uvf  prs 
+   morph, commonest at Genesis 6:16: תָּשִׂ֑ים sp verb st NA pfm תָּ vbs  vbe  nme  uvf  prs 
+   verse Isaiah 53:10:
+        וַיהוָה [W + JHWH/ -.sg.m +n/a] {Conj,Subj}
+        חָפֵץ [XPY[ qal perf p3.sg.m] {Pred}
+        דַּכְּאֹו [DK>[ piel infc ?.?.? +W] {PreO}
+        הֶחֱלִי [XLH[ hif perf p3.sg.m] {Pred}
+        אִם־ [>M] {Conj}
+     => תָּשִׂים [FJM[ qal impf p3.sg.f] {Pred}
+        אָשָׁם [>CM/ -.sg.m] {Objc}
+        נַפְשֹׁו [NPC/ -.sg.f +W] {Subj}
+        יִרְאֶה [R>H[ qal impf p3.sg.m] {Pred}
+        זֶרַע [ZR</ -.sg.m] {Objc}
+        יַאֲרִיךְ [>RK[ hif impf p3.sg.m] {Pred}
+        יָמִים [JWM/ -.pl.m] {Objc}
+        וְחֵפֶץ [W + XPY/ -.sg.m] {Conj,Subj}
+        יְהוָה [JHWH/ -.sg.m +n/a] {Subj}
+        בְּיָדֹו [B + JD/ -.sg.? +W] {Adju,Adju}
+        יִצְלָח [YLX[ qal impf p3.sg.m] {Pred}
+
+A111 | כְּפִי | this: K + PH/ -.sg.m +J x1 | Jeremiah 15:19
+   key: K + PH/ -.sg.m x14, K + PH/ -.sg.m +J x1
+   MAM: כְּפִי
+   differs: PH/ prs J (commonest absent)
+   morph, this: כְּ sp prep st NA pfm  vbs  vbe  nme  uvf  prs  | פִ֣י sp subs st a pfm  vbs  vbe  nme ֜ uvf  prs ִי
+   morph, commonest at Exodus 16:21: כְּ sp prep st NA pfm  vbs  vbe  nme  uvf  prs  | פִ֣י sp subs st c pfm  vbs  vbe  nme ֜ uvf  prs 
+   verse Jeremiah 15:19:
+        לָכֵן [LKN] {Modi}
+        כֹּה־ [KH] {Modi}
+        אָמַר [>MR[ qal perf p3.sg.m] {Pred}
+        יְהוָה [JHWH/ -.sg.m +n/a] {Subj}
+        אִם־ [>M] {Conj}
+        תָּשׁוּב [CWB[ qal impf p2.sg.m] {Pred}
+        וַאֲשִׁיבְךָ [W + CWB[ hif impf p1.sg.? +K] {Conj,PreO}
+        לְפָנַי [L + PNH/ -.pl.m +J] {Cmpl,Cmpl}
+        תַּעֲמֹד [<MD[ qal impf p2.sg.m] {Pred}
+        וְאִם־ [W + >M] {Conj,Conj}
+        תֹּוצִיא [JY>[ hif impf p2.sg.m] {Pred}
+        יָקָר [JQR/ -.sg.m] {Objc}
+        מִזֹּולֵל [MN + ZLL[ qal ptca ?.sg.m] {Cmpl,Cmpl}
+     => כְּפִי [K + PH/ -.sg.m +J] {Cmpl,Cmpl}
+        תִהְיֶה [HJH[ qal impf p2.sg.m] {Pred}
+        יָשֻׁבוּ [CWB[ qal impf p3.pl.m] {Pred}
+        הֵמָּה [HMH p3.pl.m +n/a] {Subj}
+        אֵלֶיךָ [>L +K] {Cmpl}
+        וְאַתָּה [W + >TH p2.sg.m +n/a] {Conj,Subj}
+        לֹא־ [L>] {Nega}
+        תָשׁוּב [CWB[ qal impf p2.sg.m] {Pred}
+        אֲלֵיהֶם [>L +HM] {Cmpl}
+
+A117 | אֵינֶנּוּ | this: >JN/ -.sg.m +NW x1 | Jeremiah 44:16
+   key: >JN/ -.sg.m +HW x35, >JN/ -.sg.m +NW x1
+   MAM: אֵינֶנּוּ
+   differs: >JN/ prs NW (commonest HW)
+   morph, this: אֵינֶ֥נּוּ sp subs st a pfm  vbs  vbe  nme ֜ uvf ֶנּ prs וּ
+   morph, commonest at Genesis 30:33: אֵינֶנּוּ֩ sp subs st a pfm  vbs  vbe  nme ֜ uvf ֶנּ prs וּ
+   verse Jeremiah 44:16:
+        הַדָּבָר [H + DBR/ -.sg.m] {Frnt,Frnt}
+        אֲשֶׁר־ [>CR] {Rela}
+        דִּבַּרְתָּ [DBR[ piel perf p2.sg.m] {Pred}
+        אֵלֵינוּ [>L +NW] {Cmpl}
+        בְּשֵׁם [B + CM/ -.sg.m] {Adju,Adju}
+        יְהוָה [JHWH/ -.sg.m +n/a] {Adju}
+     => אֵינֶנּוּ [>JN/ -.sg.m +NW] {NCoS}
+        שֹׁמְעִים [CM<[ qal ptca ?.pl.m] {PreC}
+        אֵלֶיךָ [>L +K] {Cmpl}
+
+A128 | וַתָּבֹוא | this: W + BW>[ qal wayq p2.sg.m x1 | Ezekiel 22:4
+   key: W + BW>[ qal wayq p3.sg.f x20, W + BW>[ qal wayq p2.sg.m x1
+   MAM: וַתָּבוֹא
+   differs: BW>[ ps p2 (commonest p3); BW>[ gn m (commonest f)
+   morph, this: וַ sp conj st NA pfm  vbs  vbe  nme  uvf  prs  | תָּבֹ֖וא sp verb st NA pfm תָּ vbs  vbe  nme  uvf  prs 
+   morph, commonest at Judges 4:21: וַ sp conj st NA pfm  vbs  vbe  nme  uvf  prs  | תָּבֹ֤וא sp verb st NA pfm תָּ vbs  vbe  nme  uvf  prs 
+   verse Ezekiel 22:4:
+        בְּדָמֵךְ [B + DM/ -.sg.m +K=] {Cmpl,Cmpl}
+        אֲשֶׁר־ [>CR] {Rela}
+        שָׁפַכְתְּ [CPK[ qal perf p2.sg.f] {Pred}
+        אָשַׁמְתְּ [>CM[ qal perf p2.sg.f] {Pred}
+        וּבְגִלּוּלַיִךְ [W + B + GLWLJM/ -.pl.m +K=] {Conj,Cmpl,Cmpl}
+        אֲשֶׁר־ [>CR] {Rela}
+        עָשִׂית [<FH[ qal perf p2.sg.f] {Pred}
+        טָמֵאת [VM>[ qal perf p2.sg.f] {Pred}
+        וַתַּקְרִיבִי [W + QRB[ hif wayq p2.sg.f] {Conj,Pred}
+        יָמַיִךְ [JWM/ -.pl.m +K=] {Objc}
+     => וַתָּבֹוא [W + BW>[ qal wayq p2.sg.m] {Conj,Pred}
+        עַד־ [<D] {Cmpl}
+        שְׁנֹותָיִךְ [CNH/ -.pl.f +K=] {Cmpl}
+        עַל־ [<L] {Adju}
+        כֵּן [KN] {Adju}
+        נְתַתִּיךְ [NTN[ qal perf p1.sg.? +K=] {PreO}
+        חֶרְפָּה [XRPH/ -.sg.f] {Objc}
+        לַגֹּויִם [L + H + GWJ/ -.pl.m] {Cmpl,Cmpl,Cmpl}
+        וְקַלָּסָה [W + QLSH/ -.sg.f] {Conj,Objc}
+        לְכָל־ [L + KL/ -.sg.m] {Objc,Objc}
+        הָאֲרָצֹות [H + >RY/ -.pl.f] {Objc,Objc}
+
+A139 | בִּלְתִּי | this: BLT/ -.sg.? +J x1 | Hosea 13:4
+   key: BLT/ -.sg.? x22, BLT/ -.sg.? +J x1
+   MAM: בִּלְתִּי
+   differs: BLT/ prs J (commonest absent)
+   morph, this: בִּלְתִּֽי sp subs st a pfm  vbs  vbe  nme ֜ uvf  prs ִי
+   morph, commonest at Genesis 21:26: בִּלְתִּ֥י sp subs st c pfm  vbs  vbe  nme ֜ uvf ִי prs 
+   verse Hosea 13:4:
+        וְאָנֹכִי [W + >NKJ p1.sg.? +n/a] {Conj,Subj}
+        יְהוָה [JHWH/ -.sg.m +n/a] {PreC}
+        אֱלֹהֶיךָ [>LHJM/ -.pl.m +K] {PreC}
+        מֵאֶרֶץ [MN + >RY/ -.sg.?] {Adju,Adju}
+        מִצְרָיִם [MYRJM/ -.sg.? +n/a] {Adju}
+        וֵאלֹהִים [W + >LHJM/ -.pl.m] {Conj,Objc}
+        זוּלָתִי [ZWLH/ -.sg.f +J] {Objc}
+        לֹא [L>] {Nega}
+        תֵדָע [JD<[ qal impf p2.sg.m] {Pred}
+        וּמֹושִׁיעַ [W + JC<[ hif ptca ?.sg.m] {Conj,Subj}
+        אַיִן [>JN/ -.sg.m] {NCop}
+     => בִּלְתִּי [BLT/ -.sg.? +J] {Adju}
+
+A151 | תֹאמַר | this: >MR[ qal impf p3.sg.f x1 | Malachi 1:4
+   key: >MR[ qal impf p2.sg.m x22, >MR[ qal impf p3.sg.f x1
+   MAM: תֹאמַר
+   differs: >MR[ ps p3 (commonest p2); >MR[ gn f (commonest m)
+   morph, this: תֹאמַ֨ר sp verb st NA pfm תֹ vbs  vbe  nme  uvf  prs 
+   morph, commonest at Genesis 14:23: תֹאמַ֔ר sp verb st NA pfm תֹ vbs  vbe  nme  uvf  prs 
+   verse Malachi 1:4:
+        כִּי־ [KJ] {Conj}
+     => תֹאמַר [>MR[ qal impf p3.sg.f] {Pred}
+        אֱדֹום [>DWM/ -.sg.? +n/a] {Subj}
+        רֻשַּׁשְׁנוּ [RCC[ pual perf p1.pl.?] {Pred}
+        וְנָשׁוּב [W + CWB[ qal impf p1.pl.?] {Conj,Pred}
+        וְנִבְנֶה [W + BNH[ qal impf p1.pl.?] {Conj,Pred}
+        חֳרָבֹות [XRBH=/ -.pl.f] {Objc}
+        כֹּה [KH] {Modi}
+        אָמַר [>MR[ qal perf p3.sg.m] {Pred}
+        יְהוָה [JHWH/ -.sg.m +n/a] {Subj}
+        צְבָאֹות [YB>/ -.pl.m] {Subj}
+        הֵמָּה [HMH p3.pl.m +n/a] {Subj}
+        יִבְנוּ [BNH[ qal impf p3.pl.m] {Pred}
+        וַאֲנִי [W + >NJ p1.sg.? +n/a] {Conj,Subj}
+        אֶהֱרֹוס [HRS[ qal impf p1.sg.?] {Pred}
+        וְקָרְאוּ [W + QR>[ qal perf p3.pl.?] {Conj,Pred}
+        לָהֶם [L +HM] {Cmpl}
+        גְּבוּל [GBWL/ -.sg.m] {Objc}
+        רִשְׁעָה [RC<H/ -.sg.f] {Objc}
+        וְהָעָם [W + H + <M/ -.sg.m] {Conj,Objc,Objc}
+        אֲשֶׁר־ [>CR] {Rela}
+        זָעַם [Z<M[ qal perf p3.sg.m] {Pred}
+        יְהוָה [JHWH/ -.sg.m +n/a] {Subj}
+        עַד־ [<D] {Time}
+        עֹולָם [<WLM/ -.sg.m] {Time}
+
+A158 | תְּדַבֵּר | this: DBR[ piel impf p3.sg.f x1 | Psalms 37:30
+   key: DBR[ piel impf p2.sg.m x18, DBR[ piel impf p3.sg.f x1
+   MAM: תְּדַבֵּר
+   differs: DBR[ ps p3 (commonest p2); DBR[ gn f (commonest m)
+   morph, this: תְּדַבֵּ֥ר sp verb st NA pfm תְּ vbs  vbe  nme  uvf  prs 
+   morph, commonest at Genesis 31:24: תְּדַבֵּ֥ר sp verb st NA pfm תְּ vbs  vbe  nme  uvf  prs 
+   verse Psalms 37:30:
+        פִּי־ [PH/ -.sg.m] {Subj}
+        צַדִּיק [YDJQ/ -.sg.m] {Subj}
+        יֶהְגֶּה [HGH[ qal impf p3.sg.m] {Pred}
+        חָכְמָה [XKMH/ -.sg.f] {Objc}
+        וּלְשֹׁונֹו [W + LCWN/ -.sg.? +W] {Conj,Subj}
+     => תְּדַבֵּר [DBR[ piel impf p3.sg.f] {Pred}
+        מִשְׁפָּט [MCPV/ -.sg.m] {Objc}
+
+A164 | תֵּלֵךְ | this: HLK[ qal impf p3.sg.f x1 | Psalms 97:3
+   key: HLK[ qal impf p2.sg.m x19, HLK[ qal impf p3.sg.f x1
+   MAM: תֵּלֵךְ
+   differs: HLK[ ps p3 (commonest p2); HLK[ gn f (commonest m)
+   morph, this: תֵּלֵ֑ךְ sp verb st NA pfm תֵּ vbs  vbe  nme  uvf  prs 
+   morph, commonest at Genesis 24:4: תֵּלֵ֑ךְ sp verb st NA pfm תֵּ vbs  vbe  nme  uvf  prs 
+   verse Psalms 97:3:
+        אֵשׁ [>C/ -.sg.?] {Subj}
+        לְפָנָיו [L + PNH/ -.pl.m +W] {Cmpl,Cmpl}
+     => תֵּלֵךְ [HLK[ qal impf p3.sg.f] {Pred}
+        וּתְלַהֵט [W + LHV[ piel impf p3.sg.f] {Conj,Pred}
+        סָבִיב [SBJB/ -.sg.?] {Modi}
+        צָרָיו [YR=/ -.pl.m +W] {Objc}
+
+A165 | וַתְּהִי | this: W + HJH[ qal wayq p2.sg.m x1 | Psalms 118:21
+   key: W + HJH[ qal wayq p3.sg.f x85, W + HJH[ qal wayq p2.sg.m x1
+   MAM: וַתְּהִי־
+   differs: HJH[ ps p2 (commonest p3); HJH[ gn m (commonest f)
+   morph, this: וַ sp conj st NA pfm  vbs  vbe  nme  uvf  prs  | תְּהִי sp verb st NA pfm תְּ vbs  vbe  nme  uvf  prs 
+   morph, commonest at Genesis 10:10: וַ sp conj st NA pfm  vbs  vbe  nme  uvf  prs  | תְּהִ֨י sp verb st NA pfm תְּ vbs  vbe  nme  uvf  prs 
+   verse Psalms 118:21:
+        אֹודְךָ [JDH[ hif impf p1.sg.? +K] {PreO}
+        כִּי [KJ] {Conj}
+        עֲנִיתָנִי [<NH[ qal perf p2.sg.m +NJ] {PreO}
+     => וַתְּהִי־ [W + HJH[ qal wayq p2.sg.m] {Conj,Pred}
+        לִי [L +J] {Cmpl}
+        לִישׁוּעָה [L + JCW<H/ -.sg.f] {PreC,PreC}
+
+A173 | תִּרְאֶה | this: R>H[ qal impf p3.sg.f x1 | Job 33:28
+   key: R>H[ qal impf p2.sg.m x16, R>H[ qal impf p3.sg.f x1
+   MAM: תִּרְאֶה
+   differs: R>H[ ps p3 (commonest p2); R>H[ gn f (commonest m)
+   morph, this: תִּרְאֶֽה sp verb st NA pfm תִּ vbs  vbe  nme  uvf  prs 
+   morph, commonest at Deuteronomy 3:28: תִּרְאֶֽה sp verb st NA pfm תִּ vbs  vbe  nme  uvf  prs 
+   verse Job 33:28:
+        פָּדָה [PDH[ qal perf p3.sg.m] {Pred}
+        נפשׁי [NPC/ -.sg.f +W] {Objc}
+        מֵעֲבֹר [MN + <BR[ qal infc ?.?.?] {Pred,Pred}
+        בַּשָּׁחַת [B + H + CXT/ -.sg.f] {Cmpl,Cmpl,Cmpl}
+        וחיתי [W + XJH==/ -.sg.f +W] {Conj,Subj}
+        בָּאֹור [B + H + >WR/ -.sg.?] {Cmpl,Cmpl,Cmpl}
+     => תִּרְאֶה [R>H[ qal impf p3.sg.f] {Pred}
+
+A175 | רֵעֵהוּ | this: R<=/ -.pl.m +HW x1 | Job 42:10
+   key: R<=/ -.sg.m +HW x82, R<=/ -.pl.m +HW x1
+   MAM: רֵעֵהוּ
+   differs: R<=/ nu pl (commonest sg)
+   morph, this: רֵעֵ֑הוּ sp subs st a pfm  vbs  vbe  nme ֵ֜ uvf  prs הוּ
+   morph, commonest at Genesis 11:3: רֵעֵ֗הוּ sp subs st a pfm  vbs  vbe  nme ֜ uvf  prs ֵהוּ
+   verse Job 42:10:
+        וַיהוָה [W + JHWH/ -.sg.m +n/a] {Conj,Subj}
+        שָׁב [CWB=[ qal perf p3.sg.m] {Pred}
+        אֶת־ [>T] {Objc}
+        שׁבית [CBWT/ -.sg.f] {Objc}
+        אִיֹּוב [>JWB/ -.sg.m +n/a] {Objc}
+        בְּהִתְפַּלְלֹו [B + PLL[ hit infc ?.?.? +W] {PreO,PreO}
+        בְּעַד [B<D/ -.sg.?] {Cmpl}
+     => רֵעֵהוּ [R<=/ -.pl.m +HW] {Cmpl}
+        וַיֹּסֶף [W + JSP[ hif wayq p3.sg.m] {Conj,Pred}
+        יְהוָה [JHWH/ -.sg.m +n/a] {Subj}
+        אֶת־ [>T] {Objc}
+        כָּל־ [KL/ -.sg.m] {Objc}
+        אֲשֶׁר [>CR] {Rela}
+        לְאִיֹּוב [L + >JWB/ -.sg.m +n/a] {PreC,PreC}
+        לְמִשְׁנֶה [L + MCNH/ -.sg.m] {Adju,Adju}
+
+A186 | עַמִּי | this: <M/ -.sg.m x1 | Song of Songs 6:12
+   key: <M/ -.sg.m +J x178, <MJ/ -.sg.m +n/a x1, <M/ -.sg.m x1
+   MAM: עַמִּי
+   differs: <M/ prs absent (commonest J)
+   morph, this: עַמִּי sp subs st c pfm  vbs  vbe  nme ֜ uvf ִי prs 
+   morph, commonest at Genesis 23:11: עַמִּ֛י sp subs st a pfm  vbs  vbe  nme ֜ uvf  prs ִי
+   verse Song of Songs 6:12:
+        לֹא [L>] {Nega}
+        יָדַעְתִּי [JD<[ qal perf p1.sg.?] {Pred}
+        נַפְשִׁי [NPC/ -.sg.f +J] {Subj}
+        שָׂמַתְנִי [FJM[ qal perf p3.sg.f +NJ] {PreO}
+        מַרְכְּבֹות [MRKBH/ -.pl.f] {Cmpl}
+     => עַמִּי־ [<M/ -.sg.m] {Cmpl}
+        נָדִיב [NDJB/ -.sg.m] {Cmpl}
+
+A199 | וַתֵּרֶא | this: W + R>H[ qal wayq p2.sg.m x1 | Nehemiah 9:9
+   key: W + R>H[ qal wayq p3.sg.f x28, W + R>H[ qal wayq p2.sg.m x1
+   MAM: וַתֵּרֶא
+   differs: R>H[ ps p2 (commonest p3); R>H[ gn m (commonest f)
+   morph, this: וַ sp conj st NA pfm  vbs  vbe  nme  uvf  prs  | תֵּ֛רֶא sp verb st NA pfm תֵּ vbs  vbe  nme  uvf  prs 
+   morph, commonest at Genesis 3:6: וַ sp conj st NA pfm  vbs  vbe  nme  uvf  prs  | תֵּ֣רֶא sp verb st NA pfm תֵּ vbs  vbe  nme  uvf  prs 
+   verse Nehemiah 9:9:
+     => וַתֵּרֶא [W + R>H[ qal wayq p2.sg.m] {Conj,Pred}
+        אֶת־ [>T] {Objc}
+        עֳנִי [<NJ=/ -.sg.m] {Objc}
+        אֲבֹתֵינוּ [>B/ -.pl.m +NW] {Objc}
+        בְּמִצְרָיִם [B + MYRJM/ -.sg.? +n/a] {Loca,Loca}
+        וְאֶת־ [W + >T] {Conj,Objc}
+        זַעֲקָתָם [Z<QH/ -.sg.f +M] {Objc}
+        שָׁמַעְתָּ [CM<[ qal perf p2.sg.m] {Pred}
+        עַל־ [<L] {Loca}
+        יַם־ [JM/ -.sg.m] {Loca}
+        סוּף [SWP/ -.sg.m] {Loca}
+

@@ -1,0 +1,7 @@
+Test A: 359 words in 305 groups (pointed key, analysis) whose analysis their key does not support by kind: {'stem/tense': 62, 'lexeme': 297}
+Test B: {"atoms": 304789, "atoms whose pointing differs from MAM's": 7517, "slots: both": 7059, "slots: mam-unique": 184, "slots: neither": 169, "slots: written": 104, "atoms whose letters differ from MAM's, skipped": 1530, "atoms with a ketiv, skipped": 1315, "slots: mam-elsewhere": 8}
+mam-elsewhere 8
+mam-unique 184
+written 104
+both 7059
+neither 169

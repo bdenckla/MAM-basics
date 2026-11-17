@@ -1,0 +1,1487 @@
+p2e candidates (scripts/p2e_select.py): 156 rows
+Test A groups: {"lexeme": 44, "stem/tense": 7, "segmentation": 3}
+Test B atoms: {"mam-unique: judged by p2b": 153, "mam-unique: not judged, from slot-level mam-elsewhere": 4, "mam-unique: not judged, from slot-level both": 46, "mam-unique: not judged, from slot-level no slot-level row": 2, "neither: judged by p2b": 30, "neither: judged by p2c": 168, "neither: not judged, from slot-level both": 33, "neither: not judged, from slot-level written": 17, "neither: judged by p2b+p2c": 1}
+
+== A5 (Test A, lexeme) | key וְשֵׁם | this: W + CM=/ -.sg.m +n/a
+  key: W + CM/ -.sg.m x89 (Genesis 2:13, Genesis 2:14, Genesis 4:19); W + CM=/ -.sg.m +n/a x1 ()
+  Genesis 7:13 | BHSA וְשֵׁם־ | MAM וְשֵׁם־ | WLC 4.18 וְשֵׁם־
+    diff: none
+    context: בְּעֶצֶם הַיֹּום הַזֶּה בָּא נֹחַ [וְשֵׁם־] וְחָם וָיֶפֶת בְּנֵי־ נֹחַ וְאֵשֶׁת ...
+    slot 3283 וְ | Heb W conj NA NA NA.NA.NA st=NA prs=n/a 'and'
+    slot 3284 שֵׁם | Heb CM=/ nmpr NA NA NA.sg.m st=a prs=n/a 'Shem'
+
+== A6 (Test A, lexeme) | key שָׁלֵם | this: CLM===/ -.sg.? +n/a
+  key: CLM=/ -.sg.m x17 (Genesis 15:16, Genesis 33:18, 1 Kings 8:61); CLM===/ -.sg.? +n/a x1 ()
+  Genesis 14:18 | BHSA שָׁלֵם | MAM שָׁלֵם | WLC 4.18 שָׁלֵם
+    diff: none
+    context: וּמַלְכִּי־צֶדֶק מֶלֶךְ [שָׁלֵם] הֹוצִיא לֶחֶם וָיָיִן וְהוּא כֹהֵן ...
+    slot 6559 שָׁלֵם | Heb CLM===/ nmpr NA NA NA.sg.unknown st=a prs=n/a 'Salem'
+
+== A10 (Test A, lexeme) | key חָי | this: XJH[ qal perf p3.sg.m
+  key: XJ/ -.sg.m x21 (Genesis 3:20, Genesis 43:27, Genesis 43:28); XJH[ qal perf p3.sg.m x1 ()
+  Genesis 25:7 | BHSA חָי | MAM חָי | WLC 4.18 חָי
+    diff: none
+    context: ... יְמֵי שְׁנֵי־ חַיֵּי אַבְרָהָם אֲשֶׁר־ [חָי] מְאַת שָׁנָה וְשִׁבְעִים שָׁנָה וְחָמֵשׁ ...
+    slot 12528 חָי | Heb XJH[ verb qal perf p3.sg.m st=NA prs=absent 'be alive'
+
+== A11 (Test A, stem/tense) | key וְנִכְרְתָה | this: W + KRT[ qal impf p1.pl.?
+  key: W + KRT[ nif perf p3.sg.f x17 (Genesis 17:14, Exodus 12:15, Exodus 12:19); W + KRT[ qal impf p1.pl.? x1 ()
+  Genesis 26:28 | BHSA וְנִכְרְתָה | MAM וְנִכְרְתָה | WLC 4.18 וְנִכְרְתָה
+    diff: none
+    context: ... נָא אָלָה בֵּינֹותֵינוּ בֵּינֵינוּ וּבֵינֶךָ [וְנִכְרְתָה] בְרִית עִמָּךְ
+    slot 13510 וְ | Heb W conj NA NA NA.NA.NA st=NA prs=n/a 'and'
+    slot 13511 נִכְרְתָה | Heb KRT[ verb qal impf p1.pl.unknown st=NA prs=absent 'cut'
+
+== A18 (Test A, lexeme) | key עַד | this: <D==/ -.sg.m
+  key: <D x1015 (Genesis 3:19, Genesis 6:7, Genesis 6:7); <D/ -.sg.m x10 (Isaiah 26:4, Isaiah 45:17, Isaiah 57:15); <D==/ -.sg.m x2 ()
+  Genesis 49:27 | BHSA עַד | MAM עַד | WLC 4.18 עַד
+    diff: none
+    context: בִּנְיָמִין זְאֵב יִטְרָף בַּבֹּקֶר יֹאכַל [עַד] וְלָעֶרֶב יְחַלֵּק שָׁלָל
+    slot 28128 עַד | Heb <D==/ subs NA NA NA.sg.m st=a prs=absent 'prey'
+  Isaiah 33:23 | BHSA עַד־ | MAM עַד־ | WLC 4.18 עַד־
+    diff: none
+    context: ... בַּל־ פָּרְשׂוּ נֵס אָז חֻלַּק [עַד־] שָׁלָל מַרְבֶּה פִּסְחִים בָּזְזוּ בַז
+    slot 223243 עַד | Heb <D==/ subs NA NA NA.sg.m st=c prs=absent 'prey'
+
+== A25 (Test A, lexeme) | key אֵילִם | this: >JLM=/ -.sg.? +n/a
+  key: >JL=/ -.pl.m x25 (Exodus 25:5, Exodus 26:14, Exodus 35:7); >JLM=/ -.sg.? +n/a x1 ()
+  Exodus 16:1 | BHSA אֵילִם | MAM אֵילִם | WLC 4.18 אֵילִם
+    diff: none
+    context: ... אֶל־ מִדְבַּר־ סִין אֲשֶׁר בֵּין־ [אֵילִם] וּבֵין סִינָי בַּחֲמִשָּׁה עָשָׂר יֹום ...
+    slot 37363 אֵילִם | Heb >JLM=/ nmpr NA NA NA.sg.unknown st=a prs=n/a 'Elim'
+
+== A26 (Test A, lexeme) | key רָעָה | this: R<<[ qal perf p3.sg.f
+  key: R<H/ -.sg.f x103 (Genesis 26:29, Genesis 44:4, Genesis 50:17); R</ -.sg.f x24 (Genesis 37:2, Genesis 37:20, Genesis 37:33); R<<[ qal perf p3.sg.f x1 ()
+  Exodus 21:8 | BHSA רָעָה | MAM רָעָה | WLC 4.18 רָעָה
+    diff: none
+    context: אִם־ [רָעָה] בְּעֵינֵי אֲדֹנֶיהָ אֲשֶׁר־ לא יְעָדָהּ ...
+    slot 40137 רָעָה | Heb R<<[ verb qal perf p3.sg.f st=NA prs=absent 'be evil'
+
+== A28 (Test A, lexeme) | key וְטָמֵא | this: W + VM>/ -.sg.m
+  key: W + VM>[ qal perf p3.sg.m x22 (Leviticus 11:25, Leviticus 11:28, Leviticus 11:32); W + VM>/ -.sg.m x2 ()
+  Leviticus 13:45 | BHSA וְטָמֵא | MAM וְטָמֵא | WLC 4.18 וְטָמֵא
+    diff: none
+    context: ... יִהְיֶה פָרוּעַ וְעַל־ שָׂפָם יַעְטֶה [וְטָמֵא] טָמֵא יִקְרָא
+    slot 59831 וְ | Heb W conj NA NA NA.NA.NA st=NA prs=n/a 'and'
+    slot 59832 טָמֵא | Heb VM>/ adjv NA NA NA.sg.m st=a prs=absent 'unclean'
+  Isaiah 52:1 | BHSA וְטָמֵא | MAM וְטָמֵא | WLC 4.18 וְטָמֵא
+    diff: none
+    context: ... יֹוסִיף יָבֹא־ בָךְ עֹוד עָרֵל [וְטָמֵא]
+    slot 230324 וְ | Heb W conj NA NA NA.NA.NA st=NA prs=n/a 'and'
+    slot 230325 טָמֵא | Heb VM>/ adjv NA NA NA.sg.m st=a prs=absent 'unclean'
+
+== A31 (Test A, lexeme) | key טָמֵא | this: VM>[ qal perf p3.sg.m
+  key: VM>/ -.sg.m x41 (Leviticus 5:2, Leviticus 5:2, Leviticus 5:2); VM>[ qal perf p3.sg.m x1 ()
+  Numbers 6:12 | BHSA טָמֵא | MAM טָמֵא | WLC 4.18 טָמֵא
+    diff: none
+    context: ... לְאָשָׁם וְהַיָּמִים הָרִאשֹׁנִים יִפְּלוּ כִּי [טָמֵא] נִזְרֹו
+    slot 73622 טָמֵא | Heb VM>[ verb qal perf p3.sg.m st=NA prs=absent 'be unclean'
+
+== A34 (Test A, lexeme) | key אַתְּ | this: >TH p2.sg.m +n/a
+  key: >T= p2.sg.f +n/a x32 (Genesis 24:23, Genesis 24:47, Genesis 24:60); >TH p2.sg.m +n/a x2 ()
+  Numbers 11:15 | BHSA אַתְּ־ | MAM אַתְּ־ | WLC 4.18 אַתְּ־
+    diff: none
+    context: וְאִם־ כָּכָה [אַתְּ־] עֹשֶׂה לִּי הָרְגֵנִי נָא הָרֹג ...
+    slot 77091 אַתְּ | Heb >TH prps NA NA p2.sg.m st=NA prs=n/a 'you'
+  Ezekiel 28:14 | BHSA אַתְּ־ | MAM אַתְּ־ | WLC 4.18 אַתְּ־
+    diff: none
+    context: [אַתְּ־] כְּרוּב מִמְשַׁח הַסֹּוכֵךְ וּנְתַתִּיךָ בְּהַר ...
+    slot 278577 אַתְּ | Heb >TH prps NA NA p2.sg.m st=NA prs=n/a 'you'
+
+== A35 (Test A, lexeme) | key וְאַף | this: W + >P/ -.sg.m
+  key: W + >P x23 (Leviticus 26:39, Leviticus 26:40, Leviticus 26:42); W + >P/ -.sg.m x2 ()
+  Numbers 11:33 | BHSA וְאַף | MAM וְאַף | WLC 4.18 וְאַף
+    diff: none
+    context: ... עֹודֶנּוּ בֵּין שִׁנֵּיהֶם טֶרֶם יִכָּרֵת [וְאַף] יְהוָה חָרָה בָעָם וַיַּךְ יְהוָה ...
+    slot 77546 וְ | Heb W conj NA NA NA.NA.NA st=NA prs=n/a 'and'
+    slot 77547 אַף | Heb >P/ subs NA NA NA.sg.m st=c prs=absent 'nose'
+  Psalms 78:31 | BHSA וְאַף | MAM וְאַף | WLC 4.18 וְאַף
+    diff: none
+    context: [וְאַף] אֱלֹהִים עָלָה בָהֶם וַיַּהֲרֹג בְּמִשְׁמַנֵּיהֶם ...
+    slot 323805 וְ | Heb W conj NA NA NA.NA.NA st=NA prs=n/a 'and'
+    slot 323806 אַף | Heb >P/ subs NA NA NA.sg.m st=c prs=absent 'nose'
+
+== A36 (Test A, stem/tense) | key נִתְּנָה | this: NTN[ qal impf p1.pl.?
+  key: NTN[ nif perf p3.sg.f x17 (Genesis 38:14, 1 Samuel 18:19, 2 Kings 25:30); NTN[ qal impf p1.pl.? x1 ()
+  Numbers 14:4 | BHSA נִתְּנָה | MAM נִתְּנָה | WLC 4.18 נִתְּנָה
+    diff: none
+    context: וַיֹּאמְרוּ אִישׁ אֶל־ אָחִיו [נִתְּנָה] רֹאשׁ וְנָשׁוּבָה מִצְרָיְמָה
+    slot 78494 נִתְּנָה | Heb NTN[ verb qal impf p1.pl.unknown st=NA prs=absent 'give'
+
+== A38 (Test A, lexeme) | key הַהוּא | this: H= + HW> p3.sg.m +n/a
+  key: H + HW> p3.sg.m +n/a x312 (Genesis 15:18, Genesis 19:35, Genesis 21:31); H= + HW> p3.sg.m +n/a x1 ()
+  Numbers 23:19 | BHSA הַהוּא | MAM הַהוּא | WLC 4.18 הַהוּא
+    diff: none
+    context: ... אֵל וִיכַזֵּב וּבֶן־ אָדָם וְיִתְנֶחָם [הַהוּא] אָמַר וְלֹא יַעֲשֶׂה וְדִבֶּר וְלֹא ...
+    slot 85020 הַ | Heb H= inrg NA NA NA.NA.NA st=NA prs=absent '<interrogative>'
+    slot 85021 הוּא | Heb HW> prps NA NA p3.sg.m st=NA prs=n/a 'he'
+
+== A40 (Test A, lexeme) | key וְאַתְּ | this: W + >TH p2.sg.m +n/a
+  key: W + >T= p2.sg.f +n/a x12 (Numbers 5:20, Judges 11:35, 1 Kings 14:12); W + >TH p2.sg.m +n/a x1 ()
+  Deuteronomy 5:27 | BHSA וְאַתְּ | MAM וְאַתְּ | WLC 4.18 וְאַתְּ
+    diff: none
+    context: ... כָּל־ אֲשֶׁר יֹאמַר יְהוָה אֱלֹהֵינוּ [וְאַתְּ] תְּדַבֵּר אֵלֵינוּ אֵת כָּל־ אֲשֶׁר ...
+    slot 96818 וְ | Heb W conj NA NA NA.NA.NA st=NA prs=n/a 'and'
+    slot 96819 אַתְּ | Heb >TH prps NA NA p2.sg.m st=NA prs=n/a 'you'
+
+== A41 (Test A, stem/tense) | key שְׁמֹר | this: CMR[ qal infc ?.?.?
+  key: CMR[ qal impv p2.sg.m x11 (Deuteronomy 12:28, 1 Kings 8:25, 1 Kings 20:39); CMR[ qal infc ?.?.? x1 ()
+  Deuteronomy 8:11 | BHSA שְׁמֹר | MAM שְׁמֹר | WLC 4.18 שְׁמֹר
+    diff: none
+    context: ... תִּשְׁכַּח אֶת־ יְהוָה אֱלֹהֶיךָ לְבִלְתִּי [שְׁמֹר] מִצְוֹתָיו וּמִשְׁפָּטָיו וְחֻקֹּתָיו אֲשֶׁר אָנֹכִי ...
+    slot 98215 שְׁמֹר | Heb CMR[ verb qal infc unknown.unknown.unknown st=a prs=absent 'keep'
+
+== A43 (Test A, segmentation) | key מֵאֵין | this: M>N[ piel perf p3.sg.m
+  key: MN + >JN/ -.sg.m x26 (Isaiah 5:9, Isaiah 6:11, Isaiah 6:11); M>N[ piel perf p3.sg.m x1 ()
+  Deuteronomy 25:7 | BHSA מֵאֵין | MAM None | WLC 4.18 מֵאֵין
+    diff: MAM's atom not aligned
+    context: ... יְבִמְתֹּו הַשַּׁעְרָה אֶל־ הַזְּקֵנִים וְאָמְרָה [מֵאֵין] יְבָמִי לְהָקִים לְאָחִיו שֵׁם בְּיִשְׂרָאֵל ...
+    slot 106935 מֵאֵין | Heb M>N[ verb piel perf p3.sg.m st=NA prs=absent 'refuse'
+
+== A44 (Test A, lexeme) | key וְשָׁב | this: W + CWB=[ qal perf p3.sg.m
+  key: W + CWB[ qal perf p3.sg.m x29 (Exodus 33:11, Leviticus 14:39, Leviticus 25:27); W + CWB=[ qal perf p3.sg.m x2 ()
+  Deuteronomy 30:3 | BHSA וְשָׁב | MAM וְשָׁב | WLC 4.18 וְשָׁב
+    diff: none
+    context: [וְשָׁב] יְהוָה אֱלֹהֶיךָ אֶת־ שְׁבוּתְךָ וְרִחֲמֶךָ ...
+    slot 110235 וְ | Heb W conj NA NA NA.NA.NA st=NA prs=n/a 'and'
+    slot 110236 שָׁב | Heb CWB=[ verb qal perf p3.sg.m st=NA prs=absent 'gather'
+  Zephaniah 2:7 | BHSA וְשָׁב | MAM וְשָׁב | WLC 4.18 וְשָׁב
+    diff: none
+    context: ... יִרְבָּצוּן כִּי יִפְקְדֵם יְהוָה אֱלֹהֵיהֶם [וְשָׁב] שׁבותם
+    slot 303587 וְ | Heb W conj NA NA NA.NA.NA st=NA prs=n/a 'and'
+    slot 303588 שָׁב | Heb CWB=[ verb qal perf p3.sg.m st=NA prs=absent 'gather'
+
+== A54 (Test A, lexeme) | key הָעֹלָה | this: H + <LH[ qal ptca ?.sg.f
+  key: H + <LH/ -.sg.f x61 (Genesis 22:6, Exodus 29:25, Exodus 30:28); H + <LH[ qal ptca ?.sg.f x2 ()
+  Judges 21:19 | BHSA הָעֹלָה | MAM הָעֹלָה | WLC 4.18 הָעֹלָה
+    diff: none
+    context: ... מִצְּפֹונָה לְבֵית־אֵל מִזְרְחָה הַשֶּׁמֶשׁ לִמְסִלָּה [הָעֹלָה] מִבֵּית־אֵל שְׁכֶמָה וּמִנֶּגֶב לִלְבֹונָה
+    slot 141387 הָ | Heb H art NA NA NA.NA.NA st=NA prs=n/a 'the'
+    slot 141388 עֹלָה | Heb <LH[ verb qal ptca unknown.sg.f st=a prs=absent 'ascend'
+  Ecclesiastes 3:21 | BHSA הָעֹלָה | MAM הָעֹלָה | WLC 4.18 הָעֹלָה
+    diff: none
+    context: מִי יֹודֵעַ רוּחַ בְּנֵי הָאָדָם [הָעֹלָה] הִיא לְמָעְלָה וְרוּחַ הַבְּהֵמָה הַיֹּרֶדֶת ...
+    slot 360509 הָ | Heb H art NA NA NA.NA.NA st=NA prs=n/a 'the'
+    slot 360510 עֹלָה | Heb <LH[ verb qal ptca unknown.sg.f st=a prs=absent 'ascend'
+
+== A58 (Test A, stem/tense) | key שִׂים | this: FJM[ qal ptcp ?.sg.m
+  key: FJM[ qal impv p2.sg.m x23 (Genesis 24:2, Genesis 31:37, Genesis 47:29); FJM[ qal ptcp ?.sg.m x2 (); FJM[ qal infc ?.?.? x1 (Job 20:4)
+  1 Samuel 9:24 | BHSA שִׂים־ | MAM שִׂים־ | WLC 4.18 שִׂים־
+    diff: none
+    context: ... לִפְנֵי שָׁאוּל וַיֹּאמֶר הִנֵּה הַנִּשְׁאָר [שִׂים־] לְפָנֶיךָ אֱכֹל כִּי לַמֹּועֵד שָׁמוּר־ ...
+    slot 146112 שִׂים | Heb FJM[ verb qal ptcp unknown.sg.m st=a prs=absent 'put'
+  Obadiah 1:4 | BHSA שִׂים | MAM שִׂים | WLC 4.18 שִׂים
+    diff: none
+    context: ... תַּגְבִּיהַּ כַּנֶּשֶׁר וְאִם־ בֵּין כֹּוכָבִים [שִׂים] קִנֶּךָ מִשָּׁם אֹורִידְךָ נְאֻם־ יְהוָה
+    slot 298225 שִׂים | Heb FJM[ verb qal ptcp unknown.sg.m st=a prs=absent 'put'
+
+== A73 (Test A, lexeme) | key קְצֹות | this: QYWT/ -.pl.f
+  key: QYH/ -.pl.f x14 (Exodus 25:18, Exodus 28:23, Exodus 28:24); QYWT/ -.pl.f x1 (); QYH[ qal infc ?.?.? x1 (Habakkuk 2:10)
+  1 Kings 6:24 | BHSA קְצֹות | MAM קְצוֹת | WLC 4.18 קְצוֹת
+    diff: none
+    context: ... עֶשֶׂר אַמֹּות מִקְצֹות כְּנָפָיו וְעַד־ [קְצֹות] כְּנָפָיו
+    slot 180578 קְצֹות | Heb QYWT/ subs NA NA NA.pl.f st=c prs=absent 'end'
+
+== A76 (Test A, lexeme) | key הָאֲדָמָה | this: H + >DMH==/ -.sg.? +n/a
+  key: H + >DMH/ -.sg.f x111 (Genesis 1:25, Genesis 2:5, Genesis 2:6); H + >DMH==/ -.sg.? +n/a x2 ()
+  1 Kings 7:46 | BHSA הָאֲדָמָה | MAM הָאֲדָמָה | WLC 4.18 הָאֲדָמָה
+    diff: none
+    context: בְּכִכַּר הַיַּרְדֵּן יְצָקָם הַמֶּלֶךְ בְּמַעֲבֵה [הָאֲדָמָה] בֵּין סֻכֹּות וּבֵין צָרְתָן
+    slot 181918 הָ | Heb H art NA NA NA.NA.NA st=NA prs=n/a 'the'
+    slot 181919 אֲדָמָה | Heb >DMH==/ nmpr NA NA NA.sg.unknown st=a prs=n/a 'Adamah'
+  2 Chronicles 4:17 | BHSA הָאֲדָמָה | MAM הָאֲדָמָה | WLC 4.18 הָאֲדָמָה
+    diff: none
+    context: בְּכִכַּר הַיַּרְדֵּן יְצָקָם הַמֶּלֶךְ בַּעֲבִי [הָאֲדָמָה] בֵּין סֻכֹּות וּבֵין צְרֵדָתָה
+    slot 408481 הָ | Heb H art NA NA NA.NA.NA st=NA prs=n/a 'the'
+    slot 408482 אֲדָמָה | Heb >DMH==/ nmpr NA NA NA.sg.unknown st=a prs=n/a 'Adamah'
+
+== A78 (Test A, stem/tense) | key לַעֲלֹות | this: L + <LH[ hif infc ?.?.?
+  key: L + <LH[ qal infc ?.?.? x18 (Numbers 13:31, Numbers 14:44, Joshua 8:3); L + <LH[ hif infc ?.?.? x1 ()
+  1 Kings 18:29 | BHSA לַעֲלֹות | MAM לַעֲלוֹת | WLC 4.18 לַעֲלוֹת
+    diff: none
+    context: וַיְהִי כַּעֲבֹר הַצָּהֳרַיִם וַיִּתְנַבְּאוּ עַד [לַעֲלֹות] הַמִּנְחָה וְאֵין־ קֹול וְאֵין־ עֹנֶה ...
+    slot 191004 לַ | Heb L prep NA NA NA.NA.NA st=NA prs=absent 'to'
+    slot 191005 עֲלֹות | Heb <LH[ verb hif infc unknown.unknown.unknown st=c prs=absent 'ascend'
+
+== A82 (Test A, lexeme) | key הַסֶּלַע | this: H + SL<=/ -.sg.? +n/a
+  key: H + SL</ -.sg.m x11 (Numbers 20:8, Numbers 20:8, Numbers 20:10); H + SL<=/ -.sg.? +n/a x1 ()
+  2 Kings 14:7 | BHSA הַסֶּלַע | MAM הַסֶּלַע | WLC 4.18 הַסֶּלַע
+    diff: none
+    context: ... המלח עֲשֶׂרֶת אֲלָפִים וְתָפַשׂ אֶת־ [הַסֶּלַע] בַּמִּלְחָמָה וַיִּקְרָא אֶת־ שְׁמָהּ יָקְתְאֵל ...
+    slot 203769 הַ | Heb H art NA NA NA.NA.NA st=NA prs=n/a 'the'
+    slot 203770 סֶּלַע | Heb SL<=/ nmpr NA NA NA.sg.unknown st=a prs=n/a 'Sela'
+
+== A85 (Test A, lexeme) | key לְכָה | this: L +K
+  key: HLK[ qal impv p2.sg.m x26 (Genesis 19:32, Genesis 31:44, Genesis 37:13); L +K x1 ()
+  Isaiah 3:6 | BHSA לְכָה | MAM לְכָה | WLC 4.18 לְכָה
+    diff: none
+    context: ... אִישׁ בְּאָחִיו בֵּית אָבִיו שִׂמְלָה [לְכָה] קָצִין תִּהְיֶה־ לָּנוּ וְהַמַּכְשֵׁלָה הַזֹּאת ...
+    slot 213003 לְכָה | Heb L prep NA NA NA.NA.NA st=NA prs=K 'to'
+
+== A87 (Test A, lexeme) | key שָׂרַי | this: FR/ -.pl.m +J
+  key: FRJ/ -.sg.f +n/a x13 (Genesis 11:30, Genesis 11:31, Genesis 12:5); FR/ -.pl.m +J x1 ()
+  Isaiah 10:8 | BHSA שָׂרַי | MAM שָׂרַי | WLC 4.18 שָׂרַי
+    diff: none
+    context: כִּי יֹאמַר הֲלֹא [שָׂרַי] יַחְדָּו מְלָכִים
+    slot 215650 שָׂרַי | Heb FR/ subs NA NA NA.pl.m st=a prs=J 'chief'
+
+== A99 (Test A, lexeme) | key רָב | this: RJB[ qal ptca ?.sg.m
+  key: RB/ -.sg.m x47 (Genesis 13:6, Genesis 33:9, Genesis 36:7); RJB[ qal perf p3.sg.m x3 (Deuteronomy 33:7, Judges 11:25, 1 Samuel 25:39); RB=/ -.sg.m x3 (Proverbs 13:23, Proverbs 20:6, Ecclesiastes 1:18); RJB[ qal ptca ?.sg.m x2 ()
+  Isaiah 45:9 | BHSA רָב | MAM רָב | WLC 4.18 רָב
+    diff: none
+    context: הֹוי [רָב] אֶת־ יֹצְרֹו חֶרֶשׂ אֶת־ חַרְשֵׂי ...
+    slot 228015 רָב | Heb RJB[ verb qal ptca unknown.sg.m st=a prs=absent 'contend'
+  Jeremiah 51:36 | BHSA רָב | MAM רָב | WLC 4.18 רָב
+    diff: none
+    context: לָכֵן כֹּה אָמַר יְהוָה הִנְנִי־ [רָב] אֶת־ רִיבֵךְ וְנִקַּמְתִּי אֶת־ נִקְמָתֵךְ ...
+    slot 263375 רָב | Heb RJB[ verb qal ptca unknown.sg.m st=a prs=absent 'contend'
+
+== A104 (Test A, lexeme) | key חַיַּת | this: XJH==/ -.sg.f
+  key: XJH/ -.sg.f x31 (Genesis 1:25, Genesis 1:30, Genesis 2:19); XJH==/ -.sg.f x2 ()
+  Isaiah 57:10 | BHSA חַיַּת | MAM חַיַּת | WLC 4.18 חַיַּת
+    diff: none
+    context: ... דַּרְכֵּךְ יָגַעַתְּ לֹא אָמַרְתְּ נֹואָשׁ [חַיַּת] יָדֵךְ מָצָאת עַל־ כֵּן לֹא ...
+    slot 231715 חַיַּת | Heb XJH==/ subs NA NA NA.sg.f st=c prs=absent 'life'
+  Psalms 74:19 | BHSA חַיַּת | MAM חַיַּת | WLC 4.18 חַיַּת
+    diff: none
+    context: אַל־ תִּתֵּן לְחַיַּת נֶפֶשׁ תֹּורֶךָ [חַיַּת] עֲנִיֶּיךָ אַל־ תִּשְׁכַּח לָנֶצַח
+    slot 322981 חַיַּת | Heb XJH==/ subs NA NA NA.sg.f st=c prs=absent 'life'
+
+== A108 (Test A, lexeme) | key דַעַת | this: JD<[ qal infc ?.?.?
+  key: D<T/ -.sg.f x11 (Deuteronomy 4:42, Deuteronomy 19:4, Joshua 20:5); JD<[ qal infc ?.?.? x1 ()
+  Jeremiah 9:5 | BHSA דַעַת־ | MAM דַעַת־ | WLC 4.18 דַעַת־
+    diff: none
+    context: שִׁבְתְּךָ בְּתֹוךְ מִרְמָה בְּמִרְמָה מֵאֲנוּ [דַעַת־] אֹותִי נְאֻם־ יְהוָה
+    slot 239499 דַעַת | Heb JD<[ verb qal infc unknown.unknown.unknown st=a prs=absent 'know'
+
+== A120 (Test A, lexeme) | key יֹומָם | this: JWM/ -.sg.m +M
+  key: JWMM x47 (Exodus 13:21, Exodus 13:21, Exodus 13:22); JWM/ -.sg.m +M x2 ()
+  Jeremiah 50:27 | BHSA יֹומָם | MAM יוֹמָם | WLC 4.18 יוֹמָם
+    diff: none
+    context: ... לַטָּבַח הֹוי עֲלֵיהֶם כִּי־ בָא [יֹומָם] עֵת פְּקֻדָּתָם
+    slot 262375 יֹומָם | Heb JWM/ subs NA NA NA.sg.m st=a prs=M 'day'
+  Ezekiel 21:34 | BHSA יֹומָם | MAM יוֹמָם | WLC 4.18 יוֹמָם
+    diff: none
+    context: ... צַוְּארֵי חַלְלֵי רְשָׁעִים אֲשֶׁר־ בָּא [יֹומָם] בְּעֵת עֲוֹן קֵץ
+    slot 275149 יֹומָם | Heb JWM/ subs NA NA NA.sg.m st=a prs=M 'day'
+
+== A125 (Test A, lexeme) | key אֵלָה | this: >LH/ -.sg.f
+  key: >LH===/ -.sg.m +n/a x12 (Genesis 36:41, 1 Kings 16:6, 1 Kings 16:8); >LH/ -.sg.f x1 ()
+  Ezekiel 6:13 | BHSA אֵלָה | MAM אֵלָה | WLC 4.18 אֵלָה
+    diff: none
+    context: ... כָּל־ עֵץ רַעֲנָן וְתַחַת כָּל־ [אֵלָה] עֲבֻתָּה מְקֹום אֲשֶׁר נָתְנוּ־ שָׁם ...
+    slot 267103 אֵלָה | Heb >LH/ subs NA NA NA.sg.f st=a prs=absent 'big tree'
+
+== A126 (Test A, lexeme) | key הָרָמָה | this: H + RWM[ qal ptca ?.sg.f
+  key: H + RMH==/ -.sg.? +n/a x12 (Joshua 19:29, Judges 4:5, 1 Kings 15:17); H + RWM[ qal ptca ?.sg.f x1 ()
+  Ezekiel 17:22 | BHSA הָרָמָה | MAM הָרָמָה | WLC 4.18 הָרָמָה
+    diff: none
+    context: ... יְהוִה וְלָקַחְתִּי אָנִי מִצַּמֶּרֶת הָאֶרֶז [הָרָמָה] וְנָתָתִּי מֵרֹאשׁ יֹנְקֹותָיו רַךְ אֶקְטֹף ...
+    slot 272629 הָ | Heb H art NA NA NA.NA.NA st=NA prs=n/a 'the'
+    slot 272630 רָמָה | Heb RWM[ verb qal ptca unknown.sg.f st=a prs=absent 'be high'
+
+== A131 (Test A, lexeme) | key קְנֵה | this: QNH/ -.sg.m
+  key: QNH[ qal impv p2.sg.m x12 (Genesis 47:19, Jeremiah 32:7, Jeremiah 32:8); QNH/ -.sg.m x1 ()
+  Ezekiel 40:5 | BHSA קְנֵה | MAM קְנֵה | WLC 4.18 קְנֵה
+    diff: none
+    context: ... לַבַּיִת סָבִיב סָבִיב וּבְיַד הָאִישׁ [קְנֵה] הַמִּדָּה שֵׁשׁ־ אַמֹּות בָּאַמָּה וָטֹפַח ...
+    slot 285081 קְנֵה | Heb QNH/ subs NA NA NA.sg.m st=c prs=absent 'reed'
+
+== A132 (Test A, lexeme) | key אֵילִים | this: >JL===/ -.pl.m
+  key: >JL=/ -.pl.m x16 (Numbers 23:1, Numbers 23:29, 1 Samuel 15:22); >JL===/ -.pl.m x1 ()
+  Ezekiel 40:14 | BHSA אֵילִים | MAM אֵילִים | WLC 4.18 אֵילִים
+    diff: none
+    context: וַיַּעַשׂ אֶת־ [אֵילִים] שִׁשִּׁים אַמָּה וְאֶל־ אֵיל הֶחָצֵר ...
+    slot 285284 אֵילִים | Heb >JL===/ subs NA NA NA.pl.m st=a prs=absent 'pillar'
+
+== A136 (Test A, lexeme) | key עַל | this: <L=/ -.sg.m
+  key: <L x3476 (Genesis 1:2, Genesis 1:2, Genesis 1:11); <L=/ -.sg.m x1 ()
+  Hosea 11:7 | BHSA עַל | MAM עַל | WLC 4.18 עַל
+    diff: none
+    context: וְעַמִּי תְלוּאִים לִמְשׁוּבָתִי וְאֶל־ [עַל] יִקְרָאֻהוּ יַחַד לֹא יְרֹומֵם
+    slot 293405 עַל | Heb <L=/ subs NA NA NA.sg.m st=a prs=absent 'height'
+
+== A140 (Test A, lexeme) | key תָּמָר | this: TMR/ -.sg.m
+  key: TMR===/ -.sg.f +n/a x16 (Genesis 38:6, Genesis 38:11, Genesis 38:24); TMR/ -.sg.m x1 ()
+  Joel 1:12 | BHSA תָּמָר | MAM תָּמָר | WLC 4.18 תָּמָר
+    diff: none
+    context: ... הֹובִישָׁה וְהַתְּאֵנָה אֻמְלָלָה רִמֹּון גַּם־ [תָּמָר] וְתַפּוּחַ כָּל־ עֲצֵי הַשָּׂדֶה יָבֵשׁוּ ...
+    slot 294227 תָּמָר | Heb TMR/ subs NA NA NA.sg.m st=a prs=absent 'date-palm'
+
+== A142 (Test A, lexeme) | key לְרֹאשׁ | this: L + R>C=/ -.sg.m
+  key: L + R>C/ -.sg.m x23 (Genesis 49:26, Numbers 17:18, Deuteronomy 28:13); L + R>C=/ -.sg.m x1 ()
+  Amos 6:12 | BHSA לְרֹאשׁ | MAM לְרֹאשׁ | WLC 4.18 לְרֹאשׁ
+    diff: none
+    context: ... אִם־ יַחֲרֹושׁ בַּבְּקָרִים כִּי־ הֲפַכְתֶּם [לְרֹאשׁ] מִשְׁפָּט וּפְרִי צְדָקָה לְלַעֲנָה
+    slot 297151 לְ | Heb L prep NA NA NA.NA.NA st=NA prs=absent 'to'
+    slot 297152 רֹאשׁ | Heb R>C=/ subs NA NA NA.sg.m st=a prs=absent 'poison'
+
+== A145 (Test A, stem/tense) | key חָפֵץ | this: XPY[ qal ptca ?.sg.m
+  key: XPY[ qal perf p3.sg.m x28 (Genesis 34:19, Numbers 14:8, Judges 13:23); XPY[ qal ptca ?.sg.m x2 (); XPY=/ -.sg.m x1 (1 Kings 21:6)
+  Micah 7:18 | BHSA חָפֵץ | MAM חָפֵץ | WLC 4.18 חָפֵץ
+    diff: none
+    context: ... לֹא־ הֶחֱזִיק לָעַד אַפֹּו כִּי־ [חָפֵץ] חֶסֶד הוּא
+    slot 301410 חָפֵץ | Heb XPY[ verb qal ptca unknown.sg.m st=a prs=absent 'desire'
+  Psalms 5:5 | BHSA חָפֵץ | MAM חָפֵץ־ | WLC 4.18 חָפֵץ
+    diff: none
+    context: כִּי לֹא אֵל־ [חָפֵץ] רֶשַׁע אָתָּה לֹא יְגֻרְךָ רָע
+    slot 311074 חָפֵץ | Heb XPY[ verb qal ptca unknown.sg.m st=a prs=absent 'desire'
+
+== A149 (Test A, stem/tense) | key קוּמִי | this: QWM[ qal infc ?.?.? +J
+  key: QWM[ qal impv p2.sg.f x14 (Genesis 21:18, Judges 19:28, 2 Samuel 13:15); QWM[ qal infc ?.?.? +J x1 ()
+  Zephaniah 3:8 | BHSA קוּמִי | MAM קוּמִי | WLC 4.18 קוּמִי
+    diff: none
+    context: ... חַכּוּ־ לִי נְאֻם־ יְהוָה לְיֹום [קוּמִי] לְעַד כִּי מִשְׁפָּטִי לֶאֱסֹף גֹּויִם ...
+    slot 303867 קוּמִי | Heb QWM[ verb qal infc unknown.unknown.unknown st=a prs=J 'arise'
+
+== A156 (Test A, lexeme) | key תֹּם | this: TM=/ -.sg.m
+  key: TMM[ qal infc ?.?.? x11 (Leviticus 25:29, Numbers 14:33, Numbers 32:13); TM=/ -.sg.m x1 ()
+  Psalms 25:21 | BHSA תֹּם־ | MAM תֹּם־ | WLC 4.18 תֹּם־
+    diff: none
+    context: [תֹּם־] וָיֹשֶׁר יִצְּרוּנִי כִּי קִוִּיתִיךָ
+    slot 314266 תֹּם | Heb TM=/ subs NA NA NA.sg.m st=a prs=absent 'completeness'
+
+== A157 (Test A, lexeme) | key עֹז | this: <Z=/ -.sg.m
+  key: <Z/ -.sg.m x32 (Judges 5:21, Judges 9:51, 1 Samuel 2:10); <Z=/ -.sg.m x2 ()
+  Psalms 28:8 | BHSA עֹז־ | MAM עֹז־ | WLC 4.18 עֹז־
+    diff: none
+    context: יְהוָה [עֹז־] לָמֹו וּמָעֹוז יְשׁוּעֹות מְשִׁיחֹו הוּא
+    slot 314677 עֹז | Heb <Z=/ subs NA NA NA.sg.m st=a prs=absent 'protection'
+  Psalms 29:11 | BHSA עֹז | MAM עֹז | WLC 4.18 עֹז (notes c)
+    diff: none
+    context: יְהוָה [עֹז] לְעַמֹּו יִתֵּן יְהוָה יְבָרֵךְ אֶת־ ...
+    slot 314805 עֹז | Heb <Z=/ subs NA NA NA.sg.m st=a prs=absent 'protection'
+
+== A174 (Test A, lexeme) | key שָׁב | this: CWB=[ qal perf p3.sg.m
+  key: CWB[ qal perf p3.sg.m x33 (Genesis 18:33, Judges 3:19, 1 Samuel 15:11); CWB[ qal ptca ?.sg.m x3 (Jeremiah 8:6, Proverbs 26:11, Ecclesiastes 1:6); CWB=[ qal ptca ?.sg.m x1 (Jeremiah 30:18); CWB=[ qal perf p3.sg.m x1 ()
+  Job 42:10 | BHSA שָׁב | MAM שָׁב | WLC 4.18 שָׁב
+    diff: none
+    context: וַיהוָה [שָׁב] אֶת־ שׁבית אִיֹּוב בְּהִתְפַּלְלֹו בְּעַד ...
+    slot 346779 שָׁב | Heb CWB=[ verb qal perf p3.sg.m st=NA prs=absent 'gather'
+
+== A177 (Test A, lexeme) | key אָמֹון | this: >MWN=/ -.sg.m
+  key: >MWN==/ -.sg.m +n/a x16 (2 Kings 21:18, 2 Kings 21:19, 2 Kings 21:23); >MWN===/ -.sg.m +n/a x1 (Jeremiah 46:25); >MWN=/ -.sg.m x1 ()
+  Proverbs 8:30 | BHSA אָמֹון | MAM אָמוֹן | WLC 4.18 אָמוֹן
+    diff: none
+    context: וָאֶהְיֶה אֶצְלֹו [אָמֹון] וָאֶהְיֶה שַׁעֲשֻׁעִים יֹום יֹום מְשַׂחֶקֶת ...
+    slot 349113 אָמֹון | Heb >MWN=/ subs NA NA NA.sg.m st=a prs=absent 'fondling'
+
+== A179 (Test A, lexeme) | key אֲלָפִים | this: >LP/ -.pl.m
+  key: >LP=/ -.pl.m x119 (Exodus 18:21, Exodus 18:25, Exodus 38:26); >LP/ -.pl.m x1 ()
+  Proverbs 14:4 | BHSA אֲלָפִים | MAM אֲלָפִים | WLC 4.18 אֲלָפִים
+    diff: none
+    context: בְּאֵין [אֲלָפִים] אֵבוּס בָּר וְרָב־ תְּבוּאֹות בְּכֹחַ ...
+    slot 350425 אֲלָפִים | Heb >LP/ subs NA NA NA.pl.m st=a prs=absent 'cattle'
+
+== A184 (Test A, lexeme) | key מְלֵאָה | this: ML>/ -.sg.f
+  key: ML>[ qal ptca ?.sg.f x18 (Numbers 7:14, Numbers 7:20, Numbers 7:26); ML>/ -.sg.f x1 ()
+  Ruth 1:21 | BHSA מְלֵאָה | MAM מְלֵאָה | WLC 4.18 מְלֵאָה
+    diff: none
+    context: אֲנִי [מְלֵאָה] הָלַכְתִּי וְרֵיקָם הֱשִׁיבַנִי יְהוָה לָמָּה ...
+    slot 356192 מְלֵאָה | Heb ML>/ adjv NA NA NA.sg.f st=a prs=absent 'full'
+
+== A185 (Test A, lexeme) | key שֵׁשׁ | this: CC==/ -.sg.m
+  key: CC/ -.sg.? x83 (Genesis 7:6, Genesis 7:11, Genesis 46:18); CC=/ -.sg.m x16 (Genesis 41:42, Exodus 26:1, Exodus 27:9); CC==/ -.sg.m x2 ()
+  Song of Songs 5:15 | BHSA שֵׁשׁ | MAM שֵׁשׁ | WLC 4.18 שֵׁשׁ
+    diff: none
+    context: שֹׁוקָיו עַמּוּדֵי [שֵׁשׁ] מְיֻסָּדִים עַל־ אַדְנֵי־ פָז מַרְאֵהוּ ...
+    slot 358662 שֵׁשׁ | Heb CC==/ subs NA NA NA.sg.m st=a prs=absent 'alabaster'
+  Esther 1:6 | BHSA שֵׁשׁ | MAM שֵׁשׁ | WLC 4.18 שֵׁשׁ
+    diff: none
+    context: ... וְאַרְגָּמָן עַל־ גְּלִילֵי כֶסֶף וְעַמּוּדֵי [שֵׁשׁ] מִטֹּות זָהָב וָכֶסֶף עַל רִצְפַת ...
+    slot 365587 שֵׁשׁ | Heb CC==/ subs NA NA NA.sg.m st=a prs=absent 'alabaster'
+
+== A187 (Test A, lexeme) | key חֶשְׁבֹּון | this: XCBWN/ -.sg.m
+  key: XCBWN==/ -.sg.? +n/a x23 (Numbers 21:26, Numbers 21:27, Numbers 21:30); XCBWN/ -.sg.m x1 ()
+  Ecclesiastes 7:27 | BHSA חֶשְׁבֹּון | MAM חֶשְׁבּוֹן | WLC 4.18 חֶשְׁבּוֹן
+    diff: none
+    context: ... אָמְרָה קֹהֶלֶת אַחַת לְאַחַת לִמְצֹא [חֶשְׁבֹּון]
+    slot 361881 חֶשְׁבֹּון | Heb XCBWN/ subs NA NA NA.sg.m st=a prs=absent 'account'
+
+== A189 (Test A, lexeme) | key חוּר | this: XWR/ -.sg.m
+  key: XWR=/ -.sg.m +n/a x11 (Exodus 31:2, Exodus 35:30, Exodus 38:22); XWR/ -.sg.m x1 ()
+  Esther 1:6 | BHSA חוּר | MAM חוּר | WLC 4.18 חוּר
+    diff: none
+    context: [חוּר] כַּרְפַּס וּתְכֵלֶת אָחוּז בְּחַבְלֵי־ בוּץ ...
+    slot 365572 חוּר | Heb XWR/ subs NA NA NA.sg.m st=a prs=absent 'linen'
+
+== A192 (Test A, segmentation) | key בַּחֲצֹצְרֹות | this: B + H + XYYRH/ -.pl.f
+  key: B + XYYRH/ -.pl.f x13 (Numbers 10:8, Numbers 10:9, 2 Kings 11:14); B + H + XYYRH/ -.pl.f x1 ()
+  Ezra 3:10 | BHSA בַּחֲצֹצְרֹות | MAM בַּחֲצֹצְרוֹת | WLC 4.18 בַּחֲצֹצְרוֹת
+    diff: none
+    context: ... הֵיכַל יְהוָה וַיַּעֲמִידוּ הַכֹּהֲנִים מְלֻבָּשִׁים [בַּחֲצֹצְרֹות] וְהַלְוִיִּם בְּנֵי־ אָסָף בַּמְצִלְתַּיִם לְהַלֵּל ...
+    slot 379391 בַּ | Heb B prep NA NA NA.NA.NA st=NA prs=absent 'in'
+    slot 379392  | Heb H art NA NA NA.NA.NA st=NA prs=n/a 'the'
+    slot 379393 חֲצֹצְרֹות | Heb XYYRH/ subs NA NA NA.pl.f st=a prs=absent 'clarion'
+
+== A197 (Test A, lexeme) | key יָמִין | this: JMJN=/ -.sg.m +n/a
+  key: JMJN/ -.sg.f x21 (Genesis 24:49, Numbers 20:17, Numbers 22:26); JMJN=/ -.sg.m +n/a x1 ()
+  Nehemiah 8:7 | BHSA יָמִין | MAM יָמִין | WLC 4.18 יָמִין
+    diff: none
+    context: וְיֵשׁוּעַ וּבָנִי וְשֵׁרֵבְיָה [יָמִין] עַקּוּב שַׁבְּתַי הֹודִיָּה מַעֲשֵׂיָה קְלִיטָא ...
+    slot 387364 יָמִין | Heb JMJN=/ nmpr NA NA NA.sg.m st=a prs=n/a 'Jamin'
+
+== A198 (Test A, lexeme) | key עֲלֵי | this: <LH=/ -.pl.m
+  key: <L x38 (Genesis 49:17, Genesis 49:17, Genesis 49:22); <LH=/ -.pl.m x1 ()
+  Nehemiah 8:15 | BHSA עֲלֵי־ | MAM עֲלֵי־ | WLC 4.18 עֲלֵי־
+    diff: none
+    context: ... וּבִירוּשָׁלִַם לֵאמֹר צְאוּ הָהָר וְהָבִיאוּ [עֲלֵי־] זַיִת וַעֲלֵי־ עֵץ שֶׁמֶן וַעֲלֵי ...
+    slot 387605 עֲלֵי | Heb <LH=/ subs NA NA NA.pl.m st=c prs=absent 'leafage'
+
+== A207 (Test A, lexeme) | key עַבְדִּי | this: <BDJ/ -.sg.m +n/a
+  key: <BD/ -.sg.m +J x52 (Genesis 26:24, Numbers 12:7, Joshua 1:2); <BDJ/ -.sg.m +n/a x2 ()
+  1 Chronicles 6:29 | BHSA עַבְדִּי | MAM עַבְדִּי | WLC 4.18 עַבְדִּי
+    diff: none
+    context: ... הַשְּׂמֹאול אֵיתָן בֶּן־ קִישִׁי בֶּן־ [עַבְדִּי] בֶּן־ מַלּוּךְ
+    slot 394364 עַבְדִּי | Heb <BDJ/ nmpr NA NA NA.sg.m st=a prs=n/a 'Abdi'
+  2 Chronicles 29:12 | BHSA עַבְדִּי | MAM עַבְדִּי | WLC 4.18 עַבְדִּי
+    diff: none
+    context: ... וּמִן־ בְּנֵי מְרָרִי קִישׁ בֶּן־ [עַבְדִּי] וַעֲזַרְיָהוּ בֶּן־ יְהַלֶּלְאֵל וּמִן־ הַגֵּרְשֻׁנִּי ...
+    slot 421219 עַבְדִּי | Heb <BDJ/ nmpr NA NA NA.sg.m st=a prs=n/a 'Abdi'
+
+== A208 (Test A, lexeme) | key עָשָׁן | this: <CN==/ -.sg.? +n/a
+  key: <CN/ -.sg.m x12 (Genesis 15:17, Judges 20:40, 2 Samuel 22:9); <CN==/ -.sg.? +n/a x1 ()
+  1 Chronicles 6:44 | BHSA עָשָׁן | MAM עָשָׁן | WLC 4.18 עָשָׁן
+    diff: none
+    context: וְאֶת־ [עָשָׁן] וְאֶת־ מִגְרָשֶׁיהָ וְאֶת־ בֵּית שֶׁמֶשׁ וְאֶת־ ...
+    slot 394541 עָשָׁן | Heb <CN==/ nmpr NA NA NA.sg.unknown st=a prs=n/a 'Ashan'
+
+== A216 (Test A, lexeme) | key אֵל | this: >L=== -.pl.? +n/a
+  key: >L/ -.sg.m x162 (Genesis 14:20, Genesis 14:22, Genesis 16:13); >JL===/ -.sg.m x1 (Ezekiel 40:48); >L=== -.pl.? +n/a x1 ()
+  1 Chronicles 20:8 | BHSA אֵל | MAM אֵל | WLC 4.18 אֵל
+    diff: none
+    context: [אֵל] נוּלְּדוּ לְהָרָפָא בְּגַת וַיִּפְּלוּ בְיַד־ ...
+    slot 401789 אֵל | Heb >L=== prde NA NA NA.pl.unknown st=NA prs=n/a 'these'
+
+== A222 (Test A, segmentation) | key לָעִיר | this: L + <JR/ -.sg.f
+  key: L + H + <JR/ -.sg.f x25 (Genesis 19:16, Genesis 24:11, Leviticus 14:40); L + <JR/ -.sg.f x1 ()
+  2 Chronicles 30:10 | BHSA לָעִיר | MAM לָעִיר | WLC 4.18 לָעִיר
+    diff: none
+    context: וַיִּהְיוּ הָרָצִים עֹבְרִים מֵעִיר [לָעִיר] בְּאֶרֶץ־ אֶפְרַיִם וּמְנַשֶּׁה וְעַד־ זְבֻלוּן ...
+    slot 422092 לָ | Heb L prep NA NA NA.NA.NA st=NA prs=absent 'to'
+    slot 422093 עִיר | Heb <JR/ subs NA NA NA.sg.f st=a prs=absent 'town'
+
+== B4762 (Test B, mam-unique, slot level mam-elsewhere) | this: H + YPWR/ -.sg.?
+  own key's other atoms: none
+  MAM's key הַצִּפֹּר in the BHSA: H + YPWR/ -.sg.? x8 (Leviticus 14:6, Leviticus 14:6, Leviticus 14:6)
+  same letters and analysis, pointed: הַצִּפֹּר x8 (Leviticus 14:6); הַצִפֹּר x1 (Genesis 15:10)
+  Genesis 15:10 | BHSA הַצִפֹּר | MAM הַצִּפֹּר | WLC 4.18 הַצִפֹּר (notes 1)
+    diff: letter 2 (tsadi): BHSA [hiriq], MAM [dagesh or mapiq, hiriq]
+    context: ... אִישׁ־ בִּתְרֹו לִקְרַאת רֵעֵהוּ וְאֶת־ [הַצִפֹּר] לֹא בָתָר
+    slot 6846 הַ | Heb H art NA NA NA.NA.NA st=NA prs=n/a 'the'
+    slot 6847 צִפֹּר | Heb YPWR/ subs NA NA NA.sg.unknown st=a prs=absent 'bird' | slot level mam-elsewhere, MAM piece צִּפֹּר, own YPWR=/ NA NA x2, MAM's YPWR/ NA NA x9
+
+== B11268 (Test B, mam-unique, slot level both) | this: L + J<QB/ -.sg.m +n/a
+  own key's other atoms: none
+  MAM's key לְיַעֲקֹב in the BHSA: L + J<QB/ -.sg.m +n/a x35 (Genesis 25:33, Genesis 27:42, Genesis 29:15)
+  same letters and analysis, pointed: לְיַעֲקֹב x35 (Genesis 25:33); לְּיַעֲקֹב x1 (Genesis 30:19)
+  Genesis 30:19 | BHSA לְּיַעֲקֹב | MAM לְיַעֲקֹב | WLC 4.18 לְּיַעֲקֹב (notes 1)
+    diff: letter 1 (lamed): BHSA [dagesh or mapiq, sheva], MAM [sheva]
+    context: ... עֹוד לֵאָה וַתֵּלֶד בֵּן־ שִׁשִּׁי [לְּיַעֲקֹב]
+    slot 15899 לְּ | Heb L prep NA NA NA.NA.NA st=NA prs=absent 'to' | slot level both, MAM piece לְ, own L NA NA x79, MAM's L NA NA x7445
+    slot 15900 יַעֲקֹב | Heb J<QB/ nmpr NA NA NA.sg.m st=a prs=n/a 'Jacob'
+
+== B12313 (Test B, mam-unique, slot level both) | this: H + MYBH/ -.sg.f
+  own key's other atoms: none
+  MAM's key הַמַּצֵּבָה in the BHSA: H + MYBH/ -.sg.f x2 (Genesis 31:52, Genesis 31:52)
+  same letters and analysis, pointed: הַמַּצֵּבָה x2 (Genesis 31:52); הַמַצֵּבָה x1 (Genesis 31:51)
+  Genesis 31:51 | BHSA הַמַצֵּבָה | MAM הַמַּצֵּבָה | WLC 4.18 הַמַצֵּבָה (notes 1)
+    diff: letter 2 (mem): BHSA [patah], MAM [dagesh or mapiq, patah]
+    context: ... לְיַעֲקֹב הִנֵּה הַגַּל הַזֶּה וְהִנֵּה [הַמַצֵּבָה] אֲשֶׁר יָרִיתִי בֵּינִי וּבֵינֶךָ
+    slot 17349 הַ | Heb H art NA NA NA.NA.NA st=NA prs=n/a 'the'
+    slot 17350 מַצֵּבָה | Heb MYBH/ subs NA NA NA.sg.f st=a prs=absent 'massebe' | slot level both, MAM piece מַּצֵּבָה, own MYBH/ NA NA x11, MAM's MYBH/ NA NA x2
+
+== B15635 (Test B, mam-unique, slot level both) | this: H + VBX=/ -.pl.m
+  own key's other atoms: none
+  MAM's key הַטַּבָּחִים in the BHSA: H + VBX=/ -.pl.m x5 (Genesis 37:36, Genesis 39:1, Genesis 40:4)
+  same letters and analysis, pointed: הַטַּבָּחִים x5 (Genesis 37:36); הַטַבָּחִים x1 (Genesis 40:3)
+  Genesis 40:3 | BHSA הַטַבָּחִים | MAM הַטַּבָּחִים | WLC 4.18 הַטַבָּחִים (notes 1)
+    diff: letter 2 (tet): BHSA [patah], MAM [dagesh or mapiq, patah]
+    context: וַיִּתֵּן אֹתָם בְּמִשְׁמַר בֵּית שַׂר [הַטַבָּחִים] אֶל־ בֵּית הַסֹּהַר מְקֹום אֲשֶׁר ...
+    slot 21956 הַ | Heb H art NA NA NA.NA.NA st=NA prs=n/a 'the'
+    slot 21957 טַבָּחִים | Heb VBX=/ subs NA NA NA.pl.m st=a prs=absent 'butcher' | slot level both, MAM piece טַּבָּחִים, own VBX=/ NA NA x24, MAM's VBX=/ NA NA x5
+
+== B16215 (Test B, mam-unique, slot level both) | this: H + CBLT/ -.pl.f
+  own key's other atoms: none
+  MAM's key הַשִּׁבֳּלִים in the BHSA: H + CBLT/ -.pl.f x3 (Genesis 41:7, Genesis 41:7, Genesis 41:26)
+  same letters and analysis, pointed: הַשִּׁבֳּלִים x3 (Genesis 41:7); הַשִׁבֳּלִים x2 (Genesis 41:24); הָשִׁבֳּלִים x1 (Genesis 41:24)
+  Genesis 41:24 | BHSA הָשִׁבֳּלִים | MAM הַשִּׁבֳּלִים | WLC 4.18 הָשִׁבֳּלִים (notes 1)
+    diff: letter 1 (he): BHSA [qamats], MAM [patah]; letter 2 (shin): BHSA [shin dot, hiriq], MAM [shin dot, dagesh or mapiq, hiriq]
+    context: וַתִּבְלַעְןָ [הָשִׁבֳּלִים] הַדַּקֹּת אֵת שֶׁבַע הַשִׁבֳּלִים הַטֹּבֹות ...
+    slot 22776 הָ | Heb H art NA NA NA.NA.NA st=NA prs=n/a 'the' | slot level both, MAM piece הַ, own H NA NA x6632, MAM's H NA NA x16827, H= NA NA x179
+    slot 22777 שִׁבֳּלִים | Heb CBLT/ subs NA NA NA.pl.f st=a prs=absent 'grain' | slot level both, MAM piece שִּׁבֳּלִים, own CBLT/ NA NA x8, MAM's CBLT/ NA NA x4
+
+== B20938 (Test B, mam-unique, slot level mam-elsewhere) | this: W + GDL[ qal wayq p3.sg.m
+  own key's other atoms: none
+  MAM's key וַיִּגְדַּל in the BHSA: W + GDL[ qal wayq p3.sg.m x10 (Genesis 21:8, Genesis 26:13, Exodus 2:11)
+  same letters and analysis, pointed: וַיִּגְדַּל x10 (Genesis 21:8); וַיִּגְדָּל x2 (Genesis 21:20); וַיִגְדַּל x1 (Exodus 2:10)
+  Exodus 2:10 | BHSA וַיִגְדַּל | MAM וַיִּגְדַּל | WLC 4.18 וַיִגְדַּל (notes 1)
+    diff: letter 2 (yod): BHSA [hiriq], MAM [dagesh or mapiq, hiriq]
+    context: [וַיִגְדַּל] הַיֶּלֶד וַתְּבִאֵהוּ לְבַת־ פַּרְעֹה וַיְהִי־ ...
+    slot 29303 וַ | Heb W conj NA NA NA.NA.NA st=NA prs=n/a 'and'
+    slot 29304 יִגְדַּל | Heb GDL[ verb qal wayq p3.sg.m st=NA prs=absent 'be strong' | slot level mam-elsewhere, MAM piece יִּגְדַּל, own GDL[ qal impf x11, MAM's GDL[ qal wayq x10
+
+== B32091 (Test B, mam-unique, slot level both) | this: W + XLH/ -.sg.f
+  own key's other atoms: none
+  MAM's key וְחַלַּת in the BHSA: W + XLH/ -.sg.f x2 (Leviticus 8:26, Numbers 6:19)
+  same letters and analysis, pointed: וְחַלַּת x2 (Leviticus 8:26); וַחַלַּת x1 (Exodus 29:23)
+  Exodus 29:23 | BHSA וַחַלַּת | MAM וְחַלַּת | WLC 4.18 וַחַלַּת
+    diff: letter 1 (vav): BHSA [patah], MAM [sheva]
+    context: וְכִכַּר לֶחֶם אַחַת [וַחַלַּת] לֶחֶם שֶׁמֶן אַחַת וְרָקִיק אֶחָד ...
+    slot 45043 וַ | Heb W conj NA NA NA.NA.NA st=NA prs=n/a 'and' | slot level both, MAM piece וְ, own W NA NA x15986, MAM's W NA NA x23914
+    slot 45044 חַלַּת | Heb XLH/ subs NA NA NA.sg.f st=c prs=absent 'bread'
+
+== B36526 (Test B, mam-unique, slot level both) | this: MN + L + MVH==/ -.sg.m
+  own key's other atoms: none
+  MAM's key מִלְּמַטָּה in the BHSA: MN + L + MVH==/ -.sg.m x4 (Exodus 26:24, Exodus 28:27, Exodus 36:29)
+  same letters and analysis, pointed: מִלְּמַטָּה x4 (Exodus 26:24); מִלְּמָטָּה x1 (Exodus 27:5); מִלְמַטָּה x1 (Exodus 39:20)
+  Exodus 39:20 | BHSA מִלְמַטָּה | MAM מִלְּמַטָּה | WLC 4.18 מִלְמַטָּה
+    diff: letter 2 (lamed): BHSA [sheva], MAM [dagesh or mapiq, sheva]
+    context: ... וַיִּתְּנֻם עַל־ שְׁתֵּי כִתְפֹת הָאֵפֹד [מִלְמַטָּה] מִמּוּל פָּנָיו לְעֻמַּת מֶחְבַּרְתֹּו מִמַּעַל ...
+    slot 51408 מִ | Heb MN prep NA NA NA.NA.NA st=NA prs=absent 'from'
+    slot 51409 לְ | Heb L prep NA NA NA.NA.NA st=NA prs=absent 'to' | slot level both, MAM piece לְּ, own L NA NA x7444, MAM's L NA NA x80
+    slot 51410 מַטָּה | Heb MVH==/ subs NA NA NA.sg.m st=a prs=absent 'low place'
+
+== B49943 (Test B, mam-unique, slot level both) | this: W + MVH/ -.sg.m
+  own key's other atoms: none
+  MAM's key וּמַטֵּה in the BHSA: W + MVH/ -.sg.m x5 (Exodus 17:9, Numbers 2:22, Numbers 2:29)
+  same letters and analysis, pointed: וּמַטֵּה x5 (Exodus 17:9); וְמַטֵּה x1 (Numbers 2:14); וּמַטֶּה x1 (Isaiah 10:5)
+  Numbers 2:14 | BHSA וְמַטֵּה | MAM וּמַטֵּה | WLC 4.18 וְמַטֵּה
+    diff: letter 1 (vav): BHSA [sheva], MAM [dagesh or mapiq]
+    context: [וְמַטֵּה] גָּד וְנָשִׂיא לִבְנֵי גָד אֶלְיָסָף ...
+    slot 70603 וְ | Heb W conj NA NA NA.NA.NA st=NA prs=n/a 'and' | slot level both, MAM piece וּ, own W NA NA x23913, MAM's W NA NA x8195
+    slot 70604 מַטֵּה | Heb MVH/ subs NA NA NA.sg.m st=c prs=absent 'staff'
+
+== B57361 (Test B, mam-unique, slot level both) | this: TWK/ -.sg.m
+  own key's other atoms: none
+  MAM's key תֹּוךְ in the BHSA: TWK/ -.sg.m x24 (Exodus 14:23, Numbers 19:6, Deuteronomy 3:16)
+  same letters and analysis, pointed: תֹּוךְ x24 (Exodus 14:23); תֹּוך x1 (Numbers 17:12)
+  Numbers 17:12 | BHSA תֹּוך | MAM תּוֹךְ | WLC 4.18 תּוֹך (notes 1)
+    diff: letter 3 (final kaf): BHSA [none], MAM [sheva]
+    context: ... כַּאֲשֶׁר דִּבֶּר מֹשֶׁה וַיָּרָץ אֶל־ [תֹּוך] הַקָּהָל וְהִנֵּה הֵחֵל הַנֶּגֶף בָּעָם ...
+    slot 80991 תֹּוך | Heb TWK/ subs NA NA NA.sg.m st=c prs=absent 'midst' | slot level both, MAM piece תֹּוךְ, own TWK/ NA NA x1, MAM's TWK/ NA NA x79, TK/ NA NA x1
+
+== B60481 (Test B, mam-unique, slot level both) | this: BRK[ piel ptca ?.pl.m +K
+  own key's other atoms: none
+  MAM's key מְבָרְכֶיךָ in the BHSA: BRK[ piel ptca ?.pl.m +K x1 (Genesis 12:3)
+  same letters and analysis, pointed: מְבָרְכֶיךָ x1 (Genesis 12:3); מְבָרֲכֶיךָ x1 (Numbers 24:9)
+  Numbers 24:9 | BHSA מְבָרֲכֶיךָ | MAM מְבָרְכֶיךָ | WLC 4.18 מְבָרֲכֶיךָ
+    diff: letter 3 (resh): BHSA [hataf patah], MAM [sheva]
+    context: ... שָׁכַב כַּאֲרִי וּכְלָבִיא מִי יְקִימֶנּוּ [מְבָרֲכֶיךָ] בָרוּךְ וְאֹרְרֶיךָ אָרוּר
+    slot 85346 מְבָרֲכֶיךָ | Heb BRK[ verb piel ptca unknown.pl.m st=a prs=K 'bless' | slot level both, MAM piece מְבָרְכֶיךָ, own BRK[ piel ptca x1, MAM's BRK[ piel ptca x1
+
+== B60987 (Test B, mam-unique, slot level both) | this: H + R>WBNJ/ -.sg.m
+  own key's other atoms: none
+  MAM's key הָראוּבֵנִי in the BHSA: H + R>WBNJ/ -.sg.m x5 (Numbers 34:14, Joshua 13:8, 1 Chronicles 11:42)
+  same letters and analysis, pointed: הָראוּבֵנִי x5 (Numbers 34:14); הָרֻאוּבֵנִי x1 (Numbers 26:7)
+  Numbers 26:7 | BHSA הָרֻאוּבֵנִי | MAM הָראוּבֵנִי | WLC 4.18 הָרֻאוּבֵנִי (notes 1)
+    diff: letter 2 (resh): BHSA [qubuts], MAM [none]
+    context: אֵלֶּה מִשְׁפְּחֹת [הָרֻאוּבֵנִי] וַיִּהְיוּ פְקֻדֵיהֶם שְׁלֹשָׁה וְאַרְבָּעִים אֶלֶף ...
+    slot 86038 הָ | Heb H art NA NA NA.NA.NA st=NA prs=n/a 'the'
+    slot 86039 רֻאוּבֵנִי | Heb R>WBNJ/ adjv NA NA NA.sg.m st=a prs=absent 'Reubenite' | slot level both, MAM piece ראוּבֵנִי, own R>WBNJ/ NA NA x4, MAM's R>WBNJ/ NA NA x12
+
+== B67025 (Test B, mam-unique, slot level both) | this: W + L + H + R>WBNJ/ -.sg.m
+  own key's other atoms: none
+  MAM's key וְלָראוּבֵנִי in the BHSA: W + L + H + R>WBNJ/ -.sg.m x1 (Joshua 1:12)
+  same letters and analysis, pointed: וְלָרֻאוּבֵנִי x1 (Deuteronomy 3:16); וְלָראוּבֵנִי x1 (Joshua 1:12)
+  Deuteronomy 3:16 | BHSA וְלָרֻאוּבֵנִי | MAM וְלָראוּבֵנִי | WLC 4.18 וְלָרֻאוּבֵנִי (notes U)
+    diff: letter 3 (resh): BHSA [qubuts], MAM [none]
+    context: [וְלָרֻאוּבֵנִי] וְלַגָּדִי נָתַתִּי מִן־ הַגִּלְעָד וְעַד־ ...
+    slot 94831 וְ | Heb W conj NA NA NA.NA.NA st=NA prs=n/a 'and'
+    slot 94832 לָ | Heb L prep NA NA NA.NA.NA st=NA prs=absent 'to'
+    slot 94833  | Heb H art NA NA NA.NA.NA st=NA prs=n/a 'the'
+    slot 94834 רֻאוּבֵנִי | Heb R>WBNJ/ adjv NA NA NA.sg.m st=a prs=absent 'Reubenite' | slot level both, MAM piece ראוּבֵנִי, own R>WBNJ/ NA NA x4, MAM's R>WBNJ/ NA NA x12
+
+== B95325 (Test B, mam-unique, slot level both) | this: B + TP/ -.pl.m
+  own key's other atoms: none
+  MAM's key בְּתֻפִּים in the BHSA: B + TP/ -.pl.m x3 (Exodus 15:20, 1 Samuel 18:6, Isaiah 30:32)
+  same letters and analysis, pointed: בְּתֻפִּים x3 (Exodus 15:20); בְתֻפִּים x1 (Judges 11:34)
+  Judges 11:34 | BHSA בְתֻפִּים | MAM בְּתֻפִּים | WLC 4.18 בְתֻפִּים
+    diff: letter 1 (bet): BHSA [sheva], MAM [dagesh or mapiq, sheva]
+    context: ... בֵּיתֹו וְהִנֵּה בִתֹּו יֹצֵאת לִקְרָאתֹו [בְתֻפִּים] וּבִמְחֹלֹות וְרַק הִיא יְחִידָה אֵין־ ...
+    slot 135219 בְ | Heb B prep NA NA NA.NA.NA st=NA prs=absent 'in' | slot level both, MAM piece בְּ, own B NA NA x1495, MAM's B NA NA x6507
+    slot 135220 תֻפִּים | Heb TP/ subs NA NA NA.pl.m st=a prs=absent 'tambourine'
+
+== B95348 (Test B, mam-unique, slot level both) | this: HJH[ qal perf p2.sg.f
+  own key's other atoms: none
+  MAM's key הָיִית in the BHSA: HJH[ qal perf p2.sg.f x4 (Ezekiel 16:22, Ezekiel 27:36, Ezekiel 36:13)
+  same letters and analysis, pointed: הָיִית x4 (Ezekiel 16:22); הָיִיתְ x1 (Judges 11:35)
+  Judges 11:35 | BHSA הָיִיתְ | MAM הָיִית | WLC 4.18 הָיִיתְ (notes U)
+    diff: letter 4 (tav): BHSA [sheva], MAM [none]
+    context: ... אֲהָהּ בִּתִּי הַכְרֵעַ הִכְרַעְתִּנִי וְאַתְּ [הָיִיתְ] בְּעֹכְרָי וְאָנֹכִי פָּצִיתִי־ פִי אֶל־ ...
+    slot 135251 הָיִיתְ | Heb HJH[ verb qal perf p2.sg.f st=NA prs=absent 'be' | slot level both, MAM piece הָיִית, own HJH[ qal perf x1, MAM's HJH[ qal perf x5
+
+== B111052 (Test B, mam-unique, slot level both) | this: W + HLK[ qal impf p1.pl.?
+  own key's other atoms: none
+  MAM's key וְנֵלְכָה in the BHSA: W + HLK[ qal impf p1.pl.? x5 (1 Samuel 9:9, 1 Samuel 11:14, Isaiah 2:3)
+  same letters and analysis, pointed: וְנֵלְכָה x5 (1 Samuel 9:9); וְנֵלֵכָה x3 (Genesis 33:12); וְנֵלֲכָה x1 (1 Samuel 26:11)
+  1 Samuel 26:11 | BHSA וְנֵלֲכָה | MAM וְנֵלְכָה־ | WLC 4.18 וְנֵלֲכָה
+    diff: letter 3 (lamed): BHSA [hataf patah], MAM [sheva]
+    context: ... אֲשֶׁר מראשׁתו וְאֶת־ צַפַּחַת הַמַּיִם [וְנֵלֲכָה] לָּנוּ
+    slot 157831 וְ | Heb W conj NA NA NA.NA.NA st=NA prs=n/a 'and'
+    slot 157832 נֵלֲכָה | Heb HLK[ verb qal impf p1.pl.unknown st=NA prs=absent 'walk' | slot level both, MAM piece נֵלְכָה, own HLK[ qal impf x3, MAM's HLK[ qal impf x15
+
+== B114192 (Test B, mam-unique, slot level both) | this: L + DBR[ piel infc ?.?.?
+  own key's other atoms: none
+  MAM's key לְדַבֵּר in the BHSA: L + DBR[ piel infc ?.?.? x53 (Genesis 17:22, Genesis 18:27, Genesis 18:29)
+  same letters and analysis, pointed: לְדַבֵּר x53 (Genesis 17:22); לְדַבֶּר x2 (1 Kings 2:19); לְדַּבֵּר x1 (2 Samuel 3:27)
+  2 Samuel 3:27 | BHSA לְדַּבֵּר | MAM לְדַבֵּר | WLC 4.18 לְדַבֵּר
+    diff: letter 2 (dalet): BHSA [dagesh or mapiq, patah], MAM [patah]
+    context: ... וַיַּטֵּהוּ יֹואָב אֶל־ תֹּוךְ הַשַּׁעַר [לְדַּבֵּר] אִתֹּו בַּשֶּׁלִי וַיַּכֵּהוּ שָׁם הַחֹמֶשׁ ...
+    slot 162294 לְ | Heb L prep NA NA NA.NA.NA st=NA prs=absent 'to'
+    slot 162295 דַּבֵּר | Heb DBR[ verb piel infc unknown.unknown.unknown st=a prs=absent 'speak' | slot level both, MAM piece דַבֵּר, own DBR[ piel impv x58, DBR[ piel infc x15, DBR[ piel infa x1, MAM's DBR[ piel infc x63, DBR[ piel infa x6, DBR[ piel impv x6
+
+== B114276 (Test B, mam-unique, slot level mam-elsewhere) | this: W + NF>[ qal wayq p3.sg.m
+  own key's other atoms: none
+  MAM's key וַיִּשָּׂא in the BHSA: W + NF>[ qal wayq p3.sg.m x41 (Genesis 13:10, Genesis 18:2, Genesis 22:4)
+  same letters and analysis, pointed: וַיִּשָּׂא x41 (Genesis 13:10); וַיִשָּׂא x1 (2 Samuel 3:32)
+  2 Samuel 3:32 | BHSA וַיִשָּׂא | MAM וַיִּשָּׂא | WLC 4.18 וַיִשָּׂא (notes 1)
+    diff: letter 2 (yod): BHSA [hiriq], MAM [dagesh or mapiq, hiriq]
+    context: וַיִּקְבְּרוּ אֶת־ אַבְנֵר בְּחֶבְרֹון [וַיִשָּׂא] הַמֶּלֶךְ אֶת־ קֹולֹו וַיֵּבְךְּ אֶל־ ...
+    slot 162419 וַ | Heb W conj NA NA NA.NA.NA st=NA prs=n/a 'and'
+    slot 162420 יִשָּׂא | Heb NF>[ verb qal wayq p3.sg.m st=NA prs=absent 'lift' | slot level mam-elsewhere, MAM piece יִּשָּׂא, own NF>[ qal impf x39, MAM's NF>[ qal wayq x41
+
+== B119492 (Test B, mam-unique, slot level both) | this: L + MPJBCT/ -.sg.m +n/a
+  own key's other atoms: none
+  MAM's key לִמְפִיבֹשֶׁת in the BHSA: L + MPJBCT/ -.sg.m +n/a x1 (2 Samuel 9:12)
+  same letters and analysis, pointed: לִמְפִיבֹשֶׁת x1 (2 Samuel 9:12); לִמְפִי־בֹשֶׁת x1 (2 Samuel 16:4)
+  2 Samuel 16:4 | BHSA לִמְפִי־בֹשֶׁת | MAM לִמְפִיבֹשֶׁת | WLC 4.18 לִמְפִי־ בֹשֶׁת
+    diff: inner maqafs: BHSA 1, MAM 0
+    context: ... לְצִבָא הִנֵּה לְךָ כֹּל אֲשֶׁר [לִמְפִי־בֹשֶׁת] וַיֹּאמֶר צִיבָא הִשְׁתַּחֲוֵיתִי אֶמְצָא־ חֵן ...
+    slot 169856 לִ | Heb L prep NA NA NA.NA.NA st=NA prs=absent 'to'
+    slot 169857 מְפִי־בֹשֶׁת | Heb MPJBCT/ nmpr NA NA NA.sg.m st=a prs=n/a 'Mephibosheth' | slot level both, MAM piece מְפִיבֹשֶׁת, own MPJBCT/ NA NA x2, MAM's MPJBCT/ NA NA x10
+
+== B119742 (Test B, mam-unique, slot level both) | this: L + PNH/ -.pl.m +K
+  own key's other atoms: none
+  MAM's key לְפָנֶיךָ in the BHSA: L + PNH/ -.pl.m +K x106 (Genesis 13:9, Genesis 17:18, Genesis 20:15)
+  same letters and analysis, pointed: לְפָנֶיךָ x106 (Genesis 13:9); לִפָנֶיךָ x1 (2 Samuel 16:19)
+  2 Samuel 16:19 | BHSA לִפָנֶיךָ | MAM לְפָנֶיךָ | WLC 4.18 לְפָנֶיךָ
+    diff: letter 1 (lamed): BHSA [hiriq], MAM [sheva]
+    context: ... עָבַדְתִּי לִפְנֵי אָבִיךָ כֵּן אֶהְיֶה [לִפָנֶיךָ]
+    slot 170205 לִ | Heb L prep NA NA NA.NA.NA st=NA prs=absent 'to' | slot level both, MAM piece לְ, own L NA NA x2587, MAM's L NA NA x7445
+    slot 170206 פָנֶיךָ | Heb PNH/ subs NA NA NA.pl.m st=a prs=K 'face'
+
+== B126114 (Test B, mam-unique, slot level both) | this: B + JFFKR/ -.sg.? +n/a
+  own key's other atoms: none
+  MAM's key בְּיִשָּׂשכָר in the BHSA: B + JFFKR/ -.sg.? +n/a x2 (Joshua 17:11, Judges 5:15)
+  same letters and analysis, pointed: בְּיִשָּׂשכָר x2 (Joshua 17:11); בְּיִשָׂשכָר x1 (1 Kings 4:17)
+  1 Kings 4:17 | BHSA בְּיִשָׂשכָר | MAM בְּיִשָּׂשכָר | WLC 4.18 בְּיִשָׂשכָר
+    diff: letter 3 (shin): BHSA [sin dot, qamats], MAM [sin dot, dagesh or mapiq, qamats]
+    context: יְהֹושָׁפָט בֶּן־ פָּרוּחַ [בְּיִשָׂשכָר]
+    slot 179299 בְּ | Heb B prep NA NA NA.NA.NA st=NA prs=absent 'in'
+    slot 179300 יִשָׂשכָר | Heb JFFKR/ nmpr NA NA NA.sg.unknown st=a prs=n/a 'Issachar' | slot level both, MAM piece יִשָּׂשכָר, own JFFKR/ NA NA x13, MAM's JFFKR/ NA NA x29
+
+== B135147 (Test B, mam-unique, slot level both) | this: H= + R>H[ qal perf p2.sg.m
+  own key's other atoms: none
+  MAM's key הֲרָאִיתָ in the BHSA: H= + R>H[ qal perf p2.sg.m x6 (1 Kings 21:29, Jeremiah 3:6, Ezekiel 8:12)
+  same letters and analysis, pointed: הֲרָאִיתָ x6 (1 Kings 21:29); הְרָאִיתָ x1 (1 Kings 20:13)
+  1 Kings 20:13 | BHSA הְרָאִיתָ | MAM הֲרָאִיתָ | WLC 4.18 הְרָאִיתָ
+    diff: letter 1 (he): BHSA [sheva], MAM [hataf patah]
+    context: ... יִשְׂרָאֵל וַיֹּאמֶר כֹּה אָמַר יְהוָה [הְרָאִיתָ] אֵת כָּל־ הֶהָמֹון הַגָּדֹול הַזֶּה ...
+    slot 192224 הְ | Heb H= inrg NA NA NA.NA.NA st=NA prs=absent '<interrogative>' | slot level both, MAM piece הֲ, own H= NA NA x2, MAM's H= NA NA x542
+    slot 192225 רָאִיתָ | Heb R>H[ verb qal perf p2.sg.m st=NA prs=absent 'see'
+
+== B135837 (Test B, mam-unique, slot level both) | this: H + ZQN/ -.pl.m
+  own key's other atoms: none
+  MAM's key הַזְּקֵנִים in the BHSA: H + ZQN/ -.pl.m x20 (Exodus 24:14, Numbers 11:25, Deuteronomy 22:16)
+  same letters and analysis, pointed: הַזְּקֵנִים x20 (Exodus 24:14); הַזְקֵנִים x1 (1 Kings 21:8)
+  1 Kings 21:8 | BHSA הַזְקֵנִים | MAM הַזְּקֵנִים | WLC 4.18 הַזְקֵנִים (notes 1)
+    diff: letter 2 (zayin): BHSA [sheva], MAM [dagesh or mapiq, sheva]
+    context: ... וַתַּחְתֹּם בְּחֹתָמֹו וַתִּשְׁלַח הספרים אֶל־ [הַזְקֵנִים] וְאֶל־ הַחֹרִים אֲשֶׁר בְּעִירֹו הַיֹּשְׁבִים ...
+    slot 193189 הַ | Heb H art NA NA NA.NA.NA st=NA prs=n/a 'the'
+    slot 193190 זְקֵנִים | Heb ZQN/ adjv NA NA NA.pl.m st=a prs=absent 'old' | slot level both, MAM piece זְּקֵנִים, own ZQN/ NA NA x15, MAM's ZQN/ NA NA x28
+
+== B136611 (Test B, mam-unique, slot level both) | this: W + JHWCPV/ -.sg.m +n/a
+  own key's other atoms: none
+  MAM's key וִיהֹושָׁפָט in the BHSA: W + JHWCPV/ -.sg.m +n/a x10 (2 Samuel 8:16, 2 Samuel 20:24, 1 Kings 22:10)
+  same letters and analysis, pointed: וִיהֹושָׁפָט x10 (2 Samuel 8:16); וְיהֹושָׁפָט x1 (1 Kings 22:29)
+  1 Kings 22:29 | BHSA וְיהֹושָׁפָט | MAM וִיהוֹשָׁפָט | WLC 4.18 וְיהוֹשָׁפָט (notes 1)
+    diff: letter 1 (vav): BHSA [sheva], MAM [hiriq]
+    context: וַיַּעַל מֶלֶךְ־ יִשְׂרָאֵל [וְיהֹושָׁפָט] מֶלֶךְ־ יְהוּדָה רָמֹת גִּלְעָד
+    slot 194265 וְ | Heb W conj NA NA NA.NA.NA st=NA prs=n/a 'and' | slot level both, MAM piece וִ, own W NA NA x23913, MAM's W NA NA x454
+    slot 194266 יהֹושָׁפָט | Heb JHWCPV/ nmpr NA NA NA.sg.m st=a prs=n/a 'Jehoshaphat'
+
+== B137860 (Test B, mam-unique, slot level both) | this: W + MLK/ -.sg.m
+  own key's other atoms: none
+  MAM's key וּמֶלֶךְ in the BHSA: W + MLK/ -.sg.m x26 (Genesis 14:2, Genesis 14:8, Genesis 14:8)
+  same letters and analysis, pointed: וּמֶלֶךְ x27 (Genesis 14:2); וָמֶלֶךְ x3 (1 Kings 21:10); וּמֶלֶך x1 (2 Kings 3:9)
+  2 Kings 3:9 | BHSA וּמֶלֶך־ | MAM וּמֶלֶךְ־ | WLC 4.18 וּמֶלֶך־
+    diff: letter 4 (final kaf): BHSA [none], MAM [sheva]
+    context: וַיֵּלֶךְ מֶלֶךְ יִשְׂרָאֵל [וּמֶלֶך־] יְהוּדָה וּמֶלֶךְ אֱדֹום וַיָּסֹבּוּ דֶּרֶךְ ...
+    slot 196004 וּ | Heb W conj NA NA NA.NA.NA st=NA prs=n/a 'and'
+    slot 196005 מֶלֶך | Heb MLK/ subs NA NA NA.sg.m st=c prs=absent 'king' | slot level both, MAM piece מֶלֶךְ, own MLK/ NA NA x2, MAM's MLK/ NA NA x992, MLK==/ NA NA x2
+
+== B140816 (Test B, mam-unique, slot level both) | this: MN + TWK/ -.sg.m
+  own key's other atoms: none
+  MAM's key מִתֹּוךְ in the BHSA: MN + TWK/ -.sg.m x55 (Genesis 19:29, Exodus 3:2, Exodus 3:4); MN + TK/ -.sg.m x1 (Psalms 72:14)
+  same letters and analysis, pointed: מִתֹּוךְ x55 (Genesis 19:29); מִתֹּוך x1 (2 Kings 9:2)
+  2 Kings 9:2 | BHSA מִתֹּוך | MAM מִתּוֹךְ | WLC 4.18 מִתּוֹך (notes 1)
+    diff: letter 4 (final kaf): BHSA [none], MAM [sheva]
+    context: ... יְהֹושָׁפָט בֶּן־ נִמְשִׁי וּבָאתָ וַהֲקֵמֹתֹו [מִתֹּוך] אֶחָיו וְהֵבֵיאתָ אֹתֹו חֶדֶר בְּחָדֶר
+    slot 200287 מִ | Heb MN prep NA NA NA.NA.NA st=NA prs=absent 'from'
+    slot 200288 תֹּוך | Heb TWK/ subs NA NA NA.sg.m st=c prs=absent 'midst' | slot level both, MAM piece תֹּוךְ, own TWK/ NA NA x1, MAM's TWK/ NA NA x79, TK/ NA NA x1
+
+== B144095 (Test B, mam-unique, slot level both) | this: <ZJH/ -.sg.m +n/a
+  own key's other atoms: none
+  MAM's key עֻזִּיָּה in the BHSA: <ZJH/ -.sg.m +n/a x5 (Hosea 1:1, Amos 1:1, Zechariah 14:5)
+  same letters and analysis, pointed: עֻזִּיָּה x5 (Hosea 1:1); עֻזִיָּה x1 (2 Kings 15:30)
+  2 Kings 15:30 | BHSA עֻזִיָּה | MAM עֻזִּיָּה | WLC 4.18 עֻזִיָּה
+    diff: letter 2 (zayin): BHSA [hiriq], MAM [dagesh or mapiq, hiriq]
+    context: ... תַּחְתָּיו בִּשְׁנַת עֶשְׂרִים לְיֹותָם בֶּן־ [עֻזִיָּה]
+    slot 204899 עֻזִיָּה | Heb <ZJH/ nmpr NA NA NA.sg.m st=a prs=n/a 'Uzziah' | slot level both, MAM piece עֻזִּיָּה, own <ZJH/ NA NA x2, MAM's <ZJH/ NA NA x5
+
+== B144293 (Test B, mam-unique, slot level both) | this: H + JHWDJ/ -.pl.m
+  own key's other atoms: none
+  MAM's key הַיְּהוּדִים in the BHSA: H + JHWDJ/ -.pl.m x45 (2 Kings 25:25, Jeremiah 32:12, Jeremiah 38:19)
+  same letters and analysis, pointed: הַיְּהוּדִים x45 (2 Kings 25:25); הַיְהוּדִים x1 (2 Kings 16:6)
+  2 Kings 16:6 | BHSA הַיְהוּדִים | MAM הַיְּהוּדִים | WLC 4.18 הַיְהוּדִים
+    diff: letter 2 (yod): BHSA [sheva], MAM [dagesh or mapiq, sheva]
+    context: ... אֶת־ אֵילַת לַאֲרָם וַיְנַשֵּׁל אֶת־ [הַיְהוּדִים] מֵאֵילֹות וארמים בָּאוּ אֵילַת וַיֵּשְׁבוּ ...
+    slot 205167 הַ | Heb H art NA NA NA.NA.NA st=NA prs=n/a 'the'
+    slot 205168 יְהוּדִים | Heb JHWDJ/ adjv NA NA NA.pl.m st=a prs=absent 'Jewish' | slot level both, MAM piece יְּהוּדִים, own JHWDJ/ NA NA x3, MAM's JHWDJ/ NA NA x55
+
+== B153887 (Test B, mam-unique, slot level both) | this: B + CLX[ qal infc ?.?.?
+  own key's other atoms: none
+  MAM's key בִּשְׁלֹחַ in the BHSA: B + CLX[ qal infc ?.?.? x3 (Joshua 14:7, Jeremiah 21:1, Psalms 59:1)
+  same letters and analysis, pointed: בִּשְׁלֹחַ x3 (Joshua 14:7); בִּשְׁלֹח x1 (Isaiah 20:1)
+  Isaiah 20:1 | BHSA בִּשְׁלֹח | MAM בִּשְׁלֹחַ | WLC 4.18 בִּשְׁלֹח
+    diff: letter 4 (het): BHSA [none], MAM [patah]
+    context: בִּשְׁנַת בֹּא תַרְתָּן אַשְׁדֹּודָה [בִּשְׁלֹח] אֹתֹו סַרְגֹון מֶלֶךְ אַשּׁוּר וַיִּלָּחֶם ...
+    slot 218601 בִּ | Heb B prep NA NA NA.NA.NA st=NA prs=absent 'in'
+    slot 218602 שְׁלֹח | Heb CLX[ verb qal infc unknown.unknown.unknown st=a prs=absent 'send' | slot level both, MAM piece שְׁלֹחַ, own CLX[ qal infc x1, MAM's CLX[ qal infc x16
+
+== B157860 (Test B, mam-unique, slot level both) | this: H + QVN=/ -.pl.m
+  own key's other atoms: none
+  MAM's key הַקְּטַנִּים in the BHSA: H + QVN=/ -.pl.m x2 (2 Kings 18:24, Psalms 115:13)
+  same letters and analysis, pointed: הַקְּטַנִּים x2 (2 Kings 18:24); הַקְטַנִּים x1 (Isaiah 36:9)
+  Isaiah 36:9 | BHSA הַקְטַנִּים | MAM הַקְּטַנִּים | WLC 4.18 הַקְטַנִּים
+    diff: letter 2 (qof): BHSA [sheva], MAM [dagesh or mapiq, sheva]
+    context: ... פְּנֵי פַחַת אַחַד עַבְדֵי אֲדֹנִי [הַקְטַנִּים] וַתִּבְטַח לְךָ עַל־ מִצְרַיִם לְרֶכֶב ...
+    slot 223944 הַ | Heb H art NA NA NA.NA.NA st=NA prs=n/a 'the'
+    slot 223945 קְטַנִּים | Heb QVN=/ adjv NA NA NA.pl.m st=a prs=absent 'small' | slot level both, MAM piece קְּטַנִּים, own QVN=/ NA NA x3, MAM's QVN=/ NA NA x3
+
+== B158377 (Test B, mam-unique, slot level both) | this: MN + JD/ -.sg.? +W
+  own key's other atoms: none
+  MAM's key מִיָּדֹו in the BHSA: MN + JD/ -.sg.? +W x16 (Numbers 21:26, Joshua 24:10, Judges 15:17)
+  same letters and analysis, pointed: מִיָּדֹו x16 (Numbers 21:26); מִיָדֹו x1 (Isaiah 37:20)
+  Isaiah 37:20 | BHSA מִיָדֹו | MAM מִיָּדוֹ | WLC 4.18 מִיָדוֹ (notes 1)
+    diff: letter 2 (yod): BHSA [qamats], MAM [dagesh or mapiq, qamats]
+    context: וְעַתָּה יְהוָה אֱלֹהֵינוּ הֹושִׁיעֵנוּ [מִיָדֹו] וְיֵדְעוּ כָּל־ מַמְלְכֹות הָאָרֶץ כִּי־ ...
+    slot 224640 מִ | Heb MN prep NA NA NA.NA.NA st=NA prs=absent 'from'
+    slot 224641 יָדֹו | Heb JD/ subs NA NA NA.sg.unknown st=a prs=W 'hand' | slot level both, MAM piece יָּדֹו, own JD/ NA NA x253, MAM's JD/ NA NA x16
+
+== B164844 (Test B, mam-unique, slot level both) | this: W + HJH[ qal perf p2.sg.f
+  own key's other atoms: none
+  MAM's key וְהָיִית in the BHSA: W + HJH[ qal perf p2.sg.f x1 (2 Samuel 14:2)
+  same letters and analysis, pointed: וְהָיִית x1 (2 Samuel 14:2); וְהָיִיתְ x1 (Isaiah 62:3)
+  Isaiah 62:3 | BHSA וְהָיִיתְ | MAM וְהָיִית | WLC 4.18 וְהָיִיתְ (notes 1)
+    diff: letter 5 (tav): BHSA [sheva], MAM [none]
+    context: [וְהָיִיתְ] עֲטֶרֶת תִּפְאֶרֶת בְּיַד־ יְהוָה וצנוף ...
+    slot 233276 וְ | Heb W conj NA NA NA.NA.NA st=NA prs=n/a 'and'
+    slot 233277 הָיִיתְ | Heb HJH[ verb qal perf p2.sg.f st=NA prs=absent 'be' | slot level both, MAM piece הָיִית, own HJH[ qal perf x1, MAM's HJH[ qal perf x5
+
+== B185728 (Test B, mam-unique, slot level both) | this: L + PNH/ -.pl.m
+  own key's other atoms: none
+  MAM's key לִפְנֵי in the BHSA: L + PNH/ -.pl.m x595 (Genesis 6:11, Genesis 10:9, Genesis 10:9)
+  same letters and analysis, pointed: לִפְנֵי x595 (Genesis 6:11); לפְנֵי x1 (Jeremiah 49:37)
+  Jeremiah 49:37 | BHSA לפְנֵי | MAM לִפְנֵי | WLC 4.18 לִפְנֵי
+    diff: letter 1 (lamed): BHSA [none], MAM [hiriq]
+    context: וְהַחְתַּתִּי אֶת־ עֵילָם [לפְנֵי] אֹיְבֵיהֶם וְלִפְנֵי מְבַקְשֵׁי נַפְשָׁם וְהֵבֵאתִי ...
+    slot 261821 ל | Heb L prep NA NA NA.NA.NA st=NA prs=absent 'to' | slot level both, MAM piece לִ, own L NA NA x1, MAM's L NA NA x2588
+    slot 261822 פְנֵי | Heb PNH/ subs NA NA NA.pl.m st=c prs=absent 'face'
+
+== B188595 (Test B, mam-unique, slot level both) | this: CM<[ qal impv p2.sg.m
+  own key's other atoms: none
+  MAM's key שְּׁמָע in the BHSA: CM<[ qal impv p2.sg.m x2 (Ezekiel 40:4, Ezekiel 44:5)
+  same letters and analysis, pointed: שְׁמַע x53 (Genesis 21:12); שְּׁמָע x2 (Ezekiel 40:4); שְׁמָע x1 (Ezekiel 3:10)
+  Ezekiel 3:10 | BHSA שְׁמָע | MAM שְּׁמָע | WLC 4.18 שְׁמָע
+    diff: letter 1 (shin): BHSA [shin dot, sheva], MAM [shin dot, dagesh or mapiq, sheva]
+    context: ... אֲדַבֵּר אֵלֶיךָ קַח בִּלְבָבְךָ וּבְאָזְנֶיךָ [שְׁמָע]
+    slot 265708 שְׁמָע | Heb CM<[ verb qal impv p2.sg.m st=NA prs=absent 'hear' | slot level both, MAM piece שְּׁמָע, own CM<[ qal impv x1, MAM's CM<[ qal impv x2
+
+== B191270 (Test B, mam-unique, slot level no slot-level row) | this: B + JRWCLM/ -.sg.? +n/a
+  own key's other atoms: none
+  MAM's key בִּירוּשָׁלִַם in the BHSA: B + JRWCLM/ -.sg.? +n/a x49 (Joshua 15:63, Judges 1:8, Judges 1:21)
+  same letters and analysis, pointed: בִּירוּשָׁלִָם x104 (2 Samuel 5:14); בִּירוּשָׁלִַם x49 (Joshua 15:63); בִירוּשְׁלֶם x15 (Daniel 5:2); בִירוּשָׁלִַם x12 (2 Samuel 11:12); בִּירוּשְׁלֶם x2 (Ezra 4:24); בִירוּשָׁלִָם x2 (1 Chronicles 8:28)
+  Ezekiel 12:10 | BHSA בִּירוּשָׁלַם | MAM בִּירוּשָׁלִַם | WLC 4.18 בִּירוּשָׁלִַם (notes v)
+    diff: letter 6 (lamed): BHSA [patah], MAM [patah, hiriq]
+    context: ... אֲדֹנָי יְהֹוִה הַנָּשִׂיא הַמַּשָּׂא הַזֶּה [בִּירוּשָׁלַם] וְכָל־ בֵּית יִשְׂרָאֵל אֲשֶׁר־ הֵמָּה ...
+    slot 269514 בִּ | Heb B prep NA NA NA.NA.NA st=NA prs=absent 'in'
+    slot 269515 ירוּשָׁלַם | Heb JRWCLM/ nmpr NA NA NA.sg.unknown st=a prs=n/a 'Jerusalem'
+
+== B191748 (Test B, mam-unique, slot level both) | this: H + NB>[ nif ptca ?.pl.m
+  own key's other atoms: none
+  MAM's key הַנִּבְּאִים in the BHSA: H + NB>[ nif ptca ?.pl.m x7 (Jeremiah 14:15, Jeremiah 23:16, Jeremiah 23:25)
+  same letters and analysis, pointed: הַנִּבְּאִים x7 (Jeremiah 14:15); הַנִּבָּאִים x1 (Ezekiel 13:2); הַנִבְּאִים x1 (Ezekiel 13:16)
+  Ezekiel 13:16 | BHSA הַנִבְּאִים | MAM הַנִּבְּאִים | WLC 4.18 הַנִבְּאִים (notes 1)
+    diff: letter 2 (nun): BHSA [hiriq], MAM [dagesh or mapiq, hiriq]
+    context: נְבִיאֵי יִשְׂרָאֵל [הַנִבְּאִים] אֶל־ יְרוּשָׁלִַם וְהַחֹזִים לָהּ חֲזֹון ...
+    slot 270163 הַ | Heb H art NA NA NA.NA.NA st=NA prs=n/a 'the'
+    slot 270164 נִבְּאִים | Heb NB>[ verb nif ptca unknown.pl.m st=a prs=absent 'speak as prophet' | slot level both, MAM piece נִּבְּאִים, own NB>[ nif ptca x10, MAM's NB>[ nif ptca x7
+
+== B193102 (Test B, mam-unique, slot level both) | this: W + KLM[ nif perf p2.sg.f
+  own key's other atoms: none
+  MAM's key וְנִכְלַמְתְּ in the BHSA: W + KLM[ nif perf p2.sg.f x2 (Jeremiah 22:22, Ezekiel 16:61)
+  same letters and analysis, pointed: וְנִכְלַמְתְּ x2 (Jeremiah 22:22); וִנִכְלַמְתְּ x1 (Ezekiel 16:54)
+  Ezekiel 16:54 | BHSA וִנִכְלַמְתְּ | MAM וְנִכְלַמְתְּ | WLC 4.18 וְנִכְלַמְתְּ (notes v)
+    diff: letter 1 (vav): BHSA [hiriq], MAM [sheva]
+    context: לְמַעַן תִּשְׂאִי כְלִמָּתֵךְ [וִנִכְלַמְתְּ] מִכֹּל אֲשֶׁר עָשִׂית בְּנַחֲמֵךְ אֹתָן
+    slot 272015 וִ | Heb W conj NA NA NA.NA.NA st=NA prs=n/a 'and' | slot level both, MAM piece וְ, own W NA NA x453, MAM's W NA NA x23914
+    slot 272016 נִכְלַמְתְּ | Heb KLM[ verb nif perf p2.sg.f st=NA prs=absent 'humiliate'
+
+== B194351 (Test B, mam-unique, slot level both) | this: L + CM<[ qal infc ?.?.?
+  own key's other atoms: none
+  MAM's key לִשְׁמֹעַ in the BHSA: L + CM<[ qal infc ?.?.? x41 (Leviticus 26:21, Deuteronomy 5:25, Deuteronomy 18:16)
+  same letters and analysis, pointed: לִשְׁמֹעַ x41 (Leviticus 26:21); לִּשְׁמֹעַ x1 (Ezekiel 20:8)
+  Ezekiel 20:8 | BHSA לִּשְׁמֹעַ | MAM לִשְׁמֹעַ | WLC 4.18 לִּשְׁמֹעַ
+    diff: letter 1 (lamed): BHSA [dagesh or mapiq, hiriq], MAM [hiriq]
+    context: וַיַּמְרוּ־ בִי וְלֹא אָבוּ [לִּשְׁמֹעַ] אֵלַי אִישׁ אֶת־ שִׁקּוּצֵי עֵינֵיהֶם ...
+    slot 273696 לִּ | Heb L prep NA NA NA.NA.NA st=NA prs=absent 'to' | slot level both, MAM piece לִ, own L NA NA x46, MAM's L NA NA x2588
+    slot 273697 שְׁמֹעַ | Heb CM<[ verb qal infc unknown.unknown.unknown st=a prs=absent 'hear'
+
+== B208609 (Test B, mam-unique, slot level both) | this: W + FWR[ qal wayq p3.sg.m
+  own key's other atoms: none
+  MAM's key וַיָּשַׂר in the BHSA: W + FRR[ qal wayq p3.sg.m x1 (Judges 9:22); W + FWR[ qal wayq p3.sg.m x1 (1 Chronicles 20:3)
+  same letters and analysis, pointed: וָיָּשַׂר x1 (Hosea 12:5); וַיָּשַׂר x1 (1 Chronicles 20:3)
+  Hosea 12:5 | BHSA וָיָּשַׂר | MAM וַיָּשַׂר | WLC 4.18 וָיָּשַׂר
+    diff: letter 1 (vav): BHSA [qamats], MAM [patah]
+    context: [וָיָּשַׂר] אֶל־ מַלְאָךְ וַיֻּכָל בָּכָה וַיִּתְחַנֶּן־ ...
+    slot 293553 וָ | Heb W conj NA NA NA.NA.NA st=NA prs=n/a 'and' | slot level both, MAM piece וַ, own W NA NA x1303, MAM's W NA NA x15987
+    slot 293554 יָּשַׂר | Heb FWR[ verb qal wayq p3.sg.m st=NA prs=absent '<uncertain>'
+
+== B209170 (Test B, mam-unique, slot level both) | this: MN + CDJ/ -.sg.m +n/a
+  own key's other atoms: none
+  MAM's key מִשַּׁדַּי in the BHSA: MN + CDJ/ -.sg.m +n/a x3 (Isaiah 13:6, Job 24:1, Job 27:13)
+  same letters and analysis, pointed: מִשַּׁדַּי x3 (Isaiah 13:6); מִשַׁדַּי x1 (Joel 1:15)
+  Joel 1:15 | BHSA מִשַׁדַּי | MAM מִשַּׁדַּי | WLC 4.18 מִשַׁדַּי (notes U)
+    diff: letter 2 (shin): BHSA [shin dot, patah], MAM [shin dot, dagesh or mapiq, patah]
+    context: ... כִּי קָרֹוב יֹום יְהוָה וּכְשֹׁד [מִשַׁדַּי] יָבֹוא
+    slot 294292 מִ | Heb MN prep NA NA NA.NA.NA st=NA prs=absent 'from'
+    slot 294293 שַׁדַּי | Heb CDJ/ nmpr NA NA NA.sg.m st=a prs=n/a 'Almighty' | slot level both, MAM piece שַּׁדַּי, own CDJ/ NA NA x43, MAM's CDJ/ NA NA x3
+
+== B212015 (Test B, mam-unique, slot level both) | this: SL</ -.sg.m
+  own key's other atoms: none
+  MAM's key סֶלַע in the BHSA: SL</ -.sg.m x13 (Judges 15:8, Judges 15:11, Judges 20:45)
+  same letters and analysis, pointed: סֶלַע x13 (Judges 15:8); סָלַע x4 (Jeremiah 23:29); סֶּלַע x1 (Obadiah 1:3)
+  Obadiah 1:3 | BHSA סֶּלַע | MAM סֶלַע | WLC 4.18 סֶּלַע
+    diff: letter 1 (samekh): BHSA [dagesh or mapiq, segol], MAM [segol]
+    context: זְדֹון לִבְּךָ הִשִּׁיאֶךָ שֹׁכְנִי בְחַגְוֵי־ [סֶּלַע] מְרֹום שִׁבְתֹּו אֹמֵר בְּלִבֹּו מִי ...
+    slot 298207 סֶּלַע | Heb SL</ subs NA NA NA.sg.m st=a prs=absent 'rock' | slot level both, MAM piece סֶלַע, own SL</ NA NA x19, SL<=/ NA NA x3, MAM's SL</ NA NA x15
+
+== B212655 (Test B, mam-unique, slot level both) | this: W + QR>[ qal impv p2.sg.m
+  own key's other atoms: none
+  MAM's key וּקְרָא in the BHSA: W + QR>[ qal impv p2.sg.m x3 (Jonah 1:2, Job 13:22, Ruth 4:11)
+  same letters and analysis, pointed: וּקְרָא x3 (Jonah 1:2); וִּקְרָא x1 (Jonah 3:2)
+  Jonah 3:2 | BHSA וִּקְרָא | MAM וּקְרָא | WLC 4.18 וִּקְרָא (notes U)
+    diff: letter 1 (vav): BHSA [dagesh or mapiq, hiriq], MAM [dagesh or mapiq]
+    context: ... לֵךְ אֶל־ נִינְוֵה הָעִיר הַגְּדֹולָה [וִּקְרָא] אֵלֶיהָ אֶת־ הַקְּרִיאָה אֲשֶׁר אָנֹכִי ...
+    slot 299095 וִּ | Heb W conj NA NA NA.NA.NA st=NA prs=n/a 'and' | slot level both, MAM piece וּ, own W NA NA x1, MAM's W NA NA x8195
+    slot 299096 קְרָא | Heb QR>[ verb qal impv p2.sg.m st=NA prs=absent 'call'
+
+== B217248 (Test B, mam-unique, slot level no slot-level row) | this: W + JRWCLM/ -.sg.? +n/a
+  own key's other atoms: none
+  MAM's key וִירוּשָׁלִָם in the BHSA: W + JRWCLM/ -.sg.? +n/a x14 (2 Kings 23:1, Isaiah 1:1, Isaiah 2:1)
+  same letters and analysis, pointed: וִירוּשָׁלִַם x18 (Jeremiah 19:7); וִירוּשָׁלִָם x14 (2 Kings 23:1); וִירוּשָׁלָם x1 (Zechariah 2:2)
+  Zechariah 2:2 | BHSA וִירוּשָׁלָם | MAM וִירוּשָׁלִָם | WLC 4.18 וִירוּשָׁלָם (notes U)
+    diff: letter 6 (lamed): BHSA [qamats], MAM [qamats, hiriq]
+    context: ... זֵרוּ אֶת־ יְהוּדָה אֶת־ יִשְׂרָאֵל [וִירוּשָׁלָם]
+    slot 305395 וִ | Heb W conj NA NA NA.NA.NA st=NA prs=n/a 'and'
+    slot 305396 ירוּשָׁלָם | Heb JRWCLM/ nmpr NA NA NA.sg.unknown st=a prs=n/a 'Jerusalem'
+
+== B232471 (Test B, mam-unique, slot level both) | this: W + L + YJWN==/ -.sg.? +n/a
+  own key's other atoms: none
+  MAM's key וּלְצִיֹּון in the BHSA: W + L + YJWN==/ -.sg.? +n/a x1 (Zechariah 1:14)
+  same letters and analysis, pointed: וּלְצִיֹּון x1 (Zechariah 1:14); וּלֲצִיֹּון x1 (Psalms 87:5)
+  Psalms 87:5 | BHSA וּלֲצִיֹּון | MAM וּלְצִיּוֹן | WLC 4.18 וּלֲצִיּוֹן
+    diff: letter 2 (lamed): BHSA [hataf patah], MAM [sheva]
+    context: [וּלֲצִיֹּון] יֵאָמַר אִישׁ וְאִישׁ יֻלַּד־ בָּהּ ...
+    slot 325508 וּ | Heb W conj NA NA NA.NA.NA st=NA prs=n/a 'and'
+    slot 325509 לֲ | Heb L prep NA NA NA.NA.NA st=NA prs=absent 'to' | slot level both, MAM piece לְ, own L NA NA x3, MAM's L NA NA x7445
+    slot 325510 צִיֹּון | Heb YJWN==/ nmpr NA NA NA.sg.unknown st=a prs=n/a 'Zion'
+
+== B240515 (Test B, mam-unique, slot level both) | this: B + TP/ -.sg.m
+  own key's other atoms: none
+  MAM's key בְּתֹף in the BHSA: B + TP/ -.sg.m x2 (Genesis 31:27, Psalms 149:3)
+  same letters and analysis, pointed: בְּתֹף x2 (Genesis 31:27); בְתֹף x1 (Psalms 150:4)
+  Psalms 150:4 | BHSA בְתֹף | MAM בְּתֹף | WLC 4.18 בְתֹף
+    diff: letter 1 (bet): BHSA [sheva], MAM [dagesh or mapiq, sheva]
+    context: הַלְלוּהוּ [בְתֹף] וּמָחֹול הַלְלוּהוּ בְּמִנִּים וְעוּגָב
+    slot 336001 בְ | Heb B prep NA NA NA.NA.NA st=NA prs=absent 'in' | slot level both, MAM piece בְּ, own B NA NA x1495, MAM's B NA NA x6507
+    slot 336002 תֹף | Heb TP/ subs NA NA NA.sg.m st=a prs=absent 'tambourine'
+
+== B242039 (Test B, mam-unique, slot level mam-elsewhere) | this: W + >MR[ qal wayq p3.sg.m
+  own key's other atoms: none
+  MAM's key וַיֹּאמַר in the BHSA: W + >MR[ qal wayq p3.sg.m x122 (Genesis 14:19, Genesis 15:8, Genesis 16:8)
+  same letters and analysis, pointed: וַיֹּאמֶר x1945 (Genesis 1:3); וַיֹּאמַר x122 (Genesis 14:19); וַיֹאמַר x1 (Job 8:1)
+  Job 8:1 | BHSA וַיֹאמַר | MAM וַיֹּאמַר | WLC 4.18 וַיֹאמַר (notes 1)
+    diff: letter 2 (yod): BHSA [holam], MAM [dagesh or mapiq, holam]
+    context: וַיַּעַן בִּלְדַּד הַשּׁוּחִי [וַיֹאמַר]
+    slot 338077 וַ | Heb W conj NA NA NA.NA.NA st=NA prs=n/a 'and'
+    slot 338078 יֹאמַר | Heb >MR[ verb qal wayq p3.sg.m st=NA prs=absent 'say' | slot level mam-elsewhere, MAM piece יֹּאמַר, own >MR[ qal impf x65, MAM's >MR[ qal wayq x122, >MR[ qal impf x2
+
+== B250288 (Test B, mam-unique, slot level both) | this: VBX/ -.sg.m
+  own key's other atoms: none
+  MAM's key טֶבַח in the BHSA: VBX/ -.sg.m x2 (Genesis 43:16, Ezekiel 21:15); VBX==/ -.sg.m +n/a x1 (Genesis 22:24)
+  same letters and analysis, pointed: טֶבַח x2 (Genesis 43:16); טָבַח x1 (Proverbs 7:22)
+  Proverbs 7:22 | BHSA טָבַח | MAM טֶבַח | WLC 4.18 טָבַח (notes U)
+    diff: letter 1 (tet): BHSA [qamats], MAM [segol]
+    context: הֹולֵךְ אַחֲרֶיהָ פִּתְאֹם כְּשֹׁור אֶל־ [טָבַח] יָבֹוא וּכְעֶכֶס אֶל־ מוּסַר אֱוִיל
+    slot 348791 טָבַח | Heb VBX/ subs NA NA NA.sg.m st=a prs=absent 'slaughtering' | slot level both, MAM piece טֶבַח, own VBX/ NA NA x1, MAM's VBX/ NA NA x4, VBX==/ NA NA x1
+
+== B257311 (Test B, mam-unique, slot level both) | this: H + XLWN/ -.pl.f
+  own key's other atoms: none
+  MAM's key הַחַלֹּנֹות in the BHSA: H + XLWN/ -.pl.f x1 (Ezekiel 41:16)
+  same letters and analysis, pointed: הַחַלֹּנֹות x1 (Ezekiel 41:16); הַחֲלֹּנֹות x1 (Song of Songs 2:9)
+  Song of Songs 2:9 | BHSA הַחֲלֹּנֹות | MAM הַחַלֹּנוֹת | WLC 4.18 הַחֲלֹּנוֹת
+    diff: letter 2 (het): BHSA [hataf patah], MAM [patah]
+    context: ... עֹומֵד אַחַר כָּתְלֵנוּ מַשְׁגִּיחַ מִן־ [הַחֲלֹּנֹות] מֵצִיץ מִן־ הַחֲרַכִּים
+    slot 357905 הַ | Heb H art NA NA NA.NA.NA st=NA prs=n/a 'the'
+    slot 357906 חֲלֹּנֹות | Heb XLWN/ subs NA NA NA.pl.f st=a prs=absent 'window' | slot level both, MAM piece חַלֹּנֹות, own XLWN/ NA NA x1, MAM's XLWN/ NA NA x3
+
+== B263747 (Test B, mam-unique, slot level both) | this: L + CLX[ qal infc ?.?.?
+  own key's other atoms: none
+  MAM's key לִשְׁלֹחַ in the BHSA: L + CLX[ qal infc ?.?.? x10 (1 Samuel 22:17, 1 Samuel 24:7, 1 Samuel 26:23)
+  same letters and analysis, pointed: לִשְׁלֹחַ x10 (1 Samuel 22:17); לִשְׁלֹח x1 (Esther 3:6)
+  Esther 3:6 | BHSA לִשְׁלֹח | MAM לִשְׁלֹחַ | WLC 4.18 לִשְׁלֹח (notes U)
+    diff: letter 4 (het): BHSA [none], MAM [patah]
+    context: וַיִּבֶז בְּעֵינָיו [לִשְׁלֹח] יָד בְּמָרְדֳּכַי לְבַדֹּו כִּי־ הִגִּידוּ ...
+    slot 366780 לִ | Heb L prep NA NA NA.NA.NA st=NA prs=absent 'to'
+    slot 366781 שְׁלֹח | Heb CLX[ verb qal infc unknown.unknown.unknown st=c prs=absent 'send' | slot level both, MAM piece שְׁלֹחַ, own CLX[ qal infc x1, MAM's CLX[ qal infc x16
+
+== B269698 (Test B, mam-unique, slot level both) | this: W + PM/ -.sg.m
+  own key's other atoms: none
+  MAM's key וּפֻם in the BHSA: W + PM/ -.sg.m x1 (Daniel 7:8)
+  same letters and analysis, pointed: וּפֻם x1 (Daniel 7:8); וְפֻם x1 (Daniel 7:20)
+  Daniel 7:20 | BHSA וְפֻם | MAM וּפֻם | WLC 4.18 וְפֻם
+    diff: letter 1 (vav): BHSA [sheva], MAM [dagesh or mapiq]
+    context: ... תְּלָת וְקַרְנָא דִכֵּן וְעַיְנִין לַהּ [וְפֻם] מְמַלִּל רַבְרְבָן וְחֶזְוַהּ רַב מִן־ ...
+    slot 375001 וְ | Ara W conj NA NA NA.NA.NA st=NA prs=n/a 'and' | slot level both, MAM piece וּ, own W NA NA x388, MAM's W NA NA x249
+    slot 375002 פֻם | Ara PM/ subs NA NA NA.sg.m st=a prs=absent 'mouth'
+
+== B290458 (Test B, mam-unique, slot level both) | this: L + JFFKR/ -.sg.? +n/a
+  own key's other atoms: none
+  MAM's key לְיִשָּׂשכָר in the BHSA: L + JFFKR/ -.sg.? +n/a x2 (Numbers 1:8, Joshua 19:17)
+  same letters and analysis, pointed: לְיִשָּׂשכָר x2 (Numbers 1:8); לְיִשָׂשכָר x1 (1 Chronicles 27:18)
+  1 Chronicles 27:18 | BHSA לְיִשָׂשכָר | MAM לְיִשָּׂשכָר | WLC 4.18 לְיִשָׂשכָר
+    diff: letter 3 (shin): BHSA [sin dot, qamats], MAM [sin dot, dagesh or mapiq, qamats]
+    context: לִיהוּדָה אֱלִיהוּ מֵאֲחֵי דָוִיד [לְיִשָׂשכָר] עָמְרִי בֶּן־ מִיכָאֵל
+    slot 405208 לְ | Heb L prep NA NA NA.NA.NA st=NA prs=absent 'to'
+    slot 405209 יִשָׂשכָר | Heb JFFKR/ nmpr NA NA NA.sg.unknown st=a prs=n/a 'Issachar' | slot level both, MAM piece יִשָּׂשכָר, own JFFKR/ NA NA x13, MAM's JFFKR/ NA NA x29
+
+== B304199 (Test B, mam-unique, slot level both) | this: W + H + CJR[ piel ptca ?.pl.m
+  own key's other atoms: none
+  MAM's key וְהַמְשֹׁרְרִים in the BHSA: W + H + CJR[ piel ptca ?.pl.m x10 (Ezra 2:70, Ezra 7:7, Nehemiah 7:1)
+  same letters and analysis, pointed: וְהַמְשֹׁרְרִים x10 (Ezra 2:70); וְהַמְשֹׁרֲרִים x1 (2 Chronicles 35:15)
+  2 Chronicles 35:15 | BHSA וְהַמְשֹׁרֲרִים | MAM וְהַמְשֹׁרְרִים | WLC 4.18 וְהַמְשֹׁרֲרִים
+    diff: letter 5 (resh): BHSA [hataf patah], MAM [sheva]
+    context: [וְהַמְשֹׁרֲרִים] בְּנֵי־ אָסָף עַל־ מַעֲמָדָם כְּמִצְוַת ...
+    slot 425742 וְ | Heb W conj NA NA NA.NA.NA st=NA prs=n/a 'and'
+    slot 425743 הַ | Heb H art NA NA NA.NA.NA st=NA prs=n/a 'the'
+    slot 425744 מְשֹׁרֲרִים | Heb CJR[ verb piel ptca unknown.pl.m st=a prs=absent 'sing' | slot level both, MAM piece מְשֹׁרְרִים, own CJR[ piel ptca x5, MAM's CJR[ piel ptca x24
+
+== B9969 (Test B, neither, slot level both) | this: W + BRK[ piel ptca ?.pl.m +K
+  own key's other atoms: none
+  MAM's key וּמְבָרְכֶיךָ in the BHSA: none
+  same letters and analysis, pointed: וּמְבָרֲכֶיךָ x1 (Genesis 27:29)
+  Genesis 27:29 | BHSA וּמְבָרֲכֶיךָ | MAM וּמְבָרְכֶיךָ | WLC 4.18 וּמְבָרֲכֶיךָ
+    diff: letter 4 (resh): BHSA [hataf patah], MAM [sheva]
+    context: ... לְךָ בְּנֵי אִמֶּךָ אֹרְרֶיךָ אָרוּר [וּמְבָרֲכֶיךָ] בָּרוּךְ
+    slot 14126 וּ | Heb W conj NA NA NA.NA.NA st=NA prs=n/a 'and'
+    slot 14127 מְבָרֲכֶיךָ | Heb BRK[ verb piel ptca unknown.pl.m st=a prs=K 'bless' | slot level both, MAM piece מְבָרְכֶיךָ, own BRK[ piel ptca x1, MAM's BRK[ piel ptca x1
+
+== B10335 (Test B, neither, slot level written) | this: B + BRK[ piel infc ?.?.? +W
+  own key's other atoms: none
+  MAM's key בְּבָרְכֹו in the BHSA: none
+  same letters and analysis, pointed: בְּבָרֲכֹו x1 (Genesis 28:6)
+  Genesis 28:6 | BHSA בְּבָרֲכֹו | MAM בְּבָרְכוֹ | WLC 4.18 בְּבָרֲכוֹ
+    diff: letter 3 (resh): BHSA [hataf patah], MAM [sheva]
+    context: ... אֲרָם לָקַחַת־ לֹו מִשָּׁם אִשָּׁה [בְּבָרֲכֹו] אֹתֹו וַיְצַו עָלָיו לֵאמֹר לֹא־ ...
+    slot 14613 בְּ | Heb B prep NA NA NA.NA.NA st=NA prs=absent 'in'
+    slot 14614 בָרֲכֹו | Heb BRK[ verb piel infc unknown.unknown.unknown st=a prs=W 'bless' | slot level written, MAM piece בָרְכֹו, own BRK[ piel infc x3, MAM's -
+
+== B12607 (Test B, neither, slot level both) | this: W + C>L[ qal perf p3.sg.m +K
+  own key's other atoms: none
+  MAM's key וּשְׁאֵלְךָ in the BHSA: none
+  same letters and analysis, pointed: וִשְׁאֵלְךָ x1 (Genesis 32:18)
+  Genesis 32:18 | BHSA וִשְׁאֵלְךָ | MAM וּשְׁאֵלְךָ | WLC 4.18 וִשְׁאֵלְךָ (notes 1)
+    diff: letter 1 (vav): BHSA [hiriq], MAM [dagesh or mapiq]
+    context: ... לֵאמֹר כִּי יִפְגָּשְׁךָ עֵשָׂו אָחִי [וִשְׁאֵלְךָ] לֵאמֹר לְמִי־ אַתָּה וְאָנָה תֵלֵךְ ...
+    slot 17779 וִ | Heb W conj NA NA NA.NA.NA st=NA prs=n/a 'and' | slot level both, MAM piece וּ, own W NA NA x453, MAM's W NA NA x8195
+    slot 17780 שְׁאֵלְךָ | Heb C>L[ verb qal perf p3.sg.m st=NA prs=K 'ask'
+
+== B19615 (Test B, neither, slot level written) | this: W + BRK[ piel impf p1.sg.? +M
+  own key's other atoms: none
+  MAM's key וַאֲבָרְכֵם in the BHSA: none
+  same letters and analysis, pointed: וַאֲבָרֲכֵם x1 (Genesis 48:9)
+  Genesis 48:9 | BHSA וַאֲבָרֲכֵם | MAM וַאֲבָרְכֵם | WLC 4.18 וַאֲבָרֲכֵם
+    diff: letter 4 (resh): BHSA [hataf patah], MAM [sheva]
+    context: ... בָּזֶה וַיֹּאמַר קָחֶם־ נָא אֵלַי [וַאֲבָרֲכֵם]
+    slot 27479 וַ | Heb W conj NA NA NA.NA.NA st=NA prs=n/a 'and'
+    slot 27480 אֲבָרֲכֵם | Heb BRK[ verb piel impf p1.sg.unknown st=NA prs=M 'bless' | slot level written, MAM piece אֲבָרְכֵם, own BRK[ piel impf x1, MAM's -
+
+== B52248 (Test B, neither, slot level written) | this: BRK[ piel impf p1.sg.? +M
+  own key's other atoms: none
+  MAM's key אֲבָרְכֵם in the BHSA: none
+  same letters and analysis, pointed: אֲבָרֲכֵם x1 (Numbers 6:27)
+  Numbers 6:27 | BHSA אֲבָרֲכֵם | MAM אֲבָרְכֵם | WLC 4.18 אֲבָרֲכֵם
+    diff: letter 3 (resh): BHSA [hataf patah], MAM [sheva]
+    context: ... שְׁמִי עַל־ בְּנֵי יִשְׂרָאֵל וַאֲנִי [אֲבָרֲכֵם]
+    slot 73886 אֲבָרֲכֵם | Heb BRK[ verb piel impf p1.sg.unknown st=NA prs=M 'bless' | slot level written, MAM piece אֲבָרְכֵם, own BRK[ piel impf x1, MAM's -
+
+== B67849 (Test B, neither, slot level both) | this: MN + L + BD/ -.sg.m +W
+  own key's other atoms: none
+  MAM's key מִלְּבַדֹּו in the BHSA: none
+  same letters and analysis, pointed: מִלְבַדֹּו x1 (Deuteronomy 4:35)
+  Deuteronomy 4:35 | BHSA מִלְבַדֹּו | MAM מִלְּבַדּוֹ | WLC 4.18 מִלְבַדּוֹ (notes U)
+    diff: letter 2 (lamed): BHSA [sheva], MAM [dagesh or mapiq, sheva]
+    context: ... יְהוָה הוּא הָאֱלֹהִים אֵין עֹוד [מִלְבַדֹּו]
+    slot 96001 מִ | Heb MN prep NA NA NA.NA.NA st=NA prs=absent 'from'
+    slot 96002 לְ | Heb L prep NA NA NA.NA.NA st=NA prs=absent 'to' | slot level both, MAM piece לְּ, own L NA NA x7444, MAM's L NA NA x80
+    slot 96003 בַדֹּו | Heb BD/ subs NA NA NA.sg.m st=a prs=W 'linen, part, stave'
+
+== B76818 (Test B, neither, slot level both) | this: H + <WR/ -.sg.m
+  own key's other atoms: none
+  MAM's key הַעִוֵּר in the BHSA: none
+  same letters and analysis, pointed: הָעִוֵּר x1 (Deuteronomy 28:29)
+  Deuteronomy 28:29 | BHSA הָעִוֵּר | MAM הַעִוֵּר | WLC 4.18 הָעִוֵּר
+    diff: letter 1 (he): BHSA [qamats], MAM [patah]
+    context: וְהָיִיתָ מְמַשֵּׁשׁ בַּצָּהֳרַיִם כַּאֲשֶׁר יְמַשֵּׁשׁ [הָעִוֵּר] בָּאֲפֵלָה וְלֹא תַצְלִיחַ אֶת־ דְּרָכֶיךָ ...
+    slot 108652 הָ | Heb H art NA NA NA.NA.NA st=NA prs=n/a 'the' | slot level both, MAM piece הַ, own H NA NA x6632, MAM's H NA NA x16827, H= NA NA x179
+    slot 108653 עִוֵּר | Heb <WR/ adjv NA NA NA.sg.m st=a prs=absent 'blind'
+
+== B78808 (Test B, neither, slot level both) | this: H=
+  own key's other atoms: none
+  MAM's key הַ in the BHSA: none
+  same letters and analysis, pointed: הֲ x1 (Deuteronomy 32:6)
+  Deuteronomy 32:6 | BHSA הֲ־ | MAM הַ | WLC 4.18 הֲ־
+    diff: letter 1 (he): BHSA [hataf patah], MAM [patah]
+    context: [הֲ־] לַיְהוָה תִּגְמְלוּ־ זֹאת עַם נָבָל ...
+    slot 111509 הֲ | Heb H= inrg NA NA NA.NA.NA st=NA prs=absent '<interrogative>' | slot level both, MAM piece הַ, own H= NA NA x541, MAM's H NA NA x16827, H= NA NA x179
+
+== B78809 (Test B, neither, slot level both) | this: L + JHWH/ -.sg.m +n/a
+  own key's other atoms: none
+  MAM's key לְיְהֹוָה in the BHSA: none
+  same letters and analysis, pointed: לַיהוָה x572 (Genesis 4:3); לַיהֹוָה x4 (Exodus 13:12); לַיְהוָה x1 (Deuteronomy 32:6)
+  Deuteronomy 32:6 | BHSA לַיְהוָה | MAM לְיְהֹוָה | WLC 4.18 לַיְהוָה
+    diff: letter 1 (lamed): BHSA [patah], MAM [sheva]; letter 3 (he): BHSA [none], MAM [holam]
+    context: הֲ־ [לַיְהוָה] תִּגְמְלוּ־ זֹאת עַם נָבָל וְלֹא ...
+    slot 111510 לַ | Heb L prep NA NA NA.NA.NA st=NA prs=absent 'to' | slot level both, MAM piece לְ, own L NA NA x2900, MAM's L NA NA x7445
+    slot 111511 יְהוָה | Heb JHWH/ nmpr NA NA NA.sg.m st=a prs=n/a 'YHWH' | slot level both, MAM piece יְהֹוָה, own JHWH/ NA NA x5681, MAM's JHWH/ NA NA x45
+
+== B104213 (Test B, neither, slot level written) | this: L + BRK[ piel infc ?.?.? +W
+  own key's other atoms: none
+  MAM's key לְבָרְכֹו in the BHSA: none
+  same letters and analysis, pointed: לְבָרֲכֹו x1 (1 Samuel 13:10)
+  1 Samuel 13:10 | BHSA לְבָרֲכֹו | MAM לְבָרְכוֹ | WLC 4.18 לְבָרֲכוֹ
+    diff: letter 3 (resh): BHSA [hataf patah], MAM [sheva]
+    context: ... שְׁמוּאֵל בָּא וַיֵּצֵא שָׁאוּל לִקְרָאתֹו [לְבָרֲכֹו]
+    slot 148029 לְ | Heb L prep NA NA NA.NA.NA st=NA prs=absent 'to'
+    slot 148030 בָרֲכֹו | Heb BRK[ verb piel infc unknown.unknown.unknown st=a prs=W 'bless' | slot level written, MAM piece בָרְכֹו, own BRK[ piel infc x3, MAM's -
+
+== B105206 (Test B, neither, slot level written) | this: W + MLKJ_CW</ -.sg.m +n/a
+  own key's other atoms: none
+  MAM's key וּמַלְכִּישׁוּעַ in the BHSA: none
+  same letters and analysis, pointed: וּמַלְכִּי־שׁוּעַ x1 (1 Samuel 14:49)
+  1 Samuel 14:49 | BHSA וּמַלְכִּי־שׁוּעַ | MAM וּמַלְכִּישׁוּעַ | WLC 4.18 וּמַלְכִּי־ שׁוּעַ
+    diff: inner maqafs: BHSA 1, MAM 0
+    context: וַיִּהְיוּ בְּנֵי שָׁאוּל יֹונָתָן וְיִשְׁוִי [וּמַלְכִּי־שׁוּעַ] וְשֵׁם שְׁתֵּי בְנֹתָיו שֵׁם הַבְּכִירָה ...
+    slot 149470 וּ | Heb W conj NA NA NA.NA.NA st=NA prs=n/a 'and'
+    slot 149471 מַלְכִּי־שׁוּעַ | Heb MLKJ_CW</ nmpr NA NA NA.sg.m st=a prs=n/a 'Malki-Shua' | slot level written, MAM piece מַלְכִּישׁוּעַ, own MLKJ_CW</ NA NA x4, MAM's -
+
+== B121506 (Test B, neither, slot level both) | this: B + CJBH/ -.sg.f +W
+  own key's other atoms: none
+  MAM's key בְּשִׁיבָתֹו in the BHSA: none
+  same letters and analysis, pointed: בְשִׁיבָתֹו x1 (2 Samuel 19:33)
+  2 Samuel 19:33 | BHSA בְשִׁיבָתֹו | MAM בְּשִׁיבָתוֹ | WLC 4.18 בְּשִׁיבָתוֹ
+    diff: letter 1 (bet): BHSA [sheva], MAM [dagesh or mapiq, sheva]
+    context: ... שָׁנָה וְהוּא־ כִלְכַּל אֶת־ הַמֶּלֶךְ [בְשִׁיבָתֹו] בְמַחֲנַיִם כִּי־ אִישׁ גָּדֹול הוּא ...
+    slot 172776 בְ | Heb B prep NA NA NA.NA.NA st=NA prs=absent 'in' | slot level both, MAM piece בְּ, own B NA NA x1495, MAM's B NA NA x6507
+    slot 172777 שִׁיבָתֹו | Heb CJBH/ subs NA NA NA.sg.f st=a prs=W '<uncertain>'
+
+== B143798 (Test B, neither, slot level both) | this: L + <ZJH/ -.sg.m +n/a
+  own key's other atoms: none
+  MAM's key לְעֻזִּיָּה in the BHSA: none
+  same letters and analysis, pointed: לְעֻזִיָּה x1 (2 Kings 15:13)
+  2 Kings 15:13 | BHSA לְעֻזִיָּה | MAM לְעֻזִּיָּה | WLC 4.18 לְעֻזִיָּה
+    diff: letter 3 (zayin): BHSA [hiriq], MAM [dagesh or mapiq, hiriq]
+    context: ... מָלַךְ בִּשְׁנַת שְׁלֹשִׁים וָתֵשַׁע שָׁנָה [לְעֻזִיָּה] מֶלֶךְ יְהוּדָה וַיִּמְלֹךְ יֶרַח־ יָמִים ...
+    slot 204505 לְ | Heb L prep NA NA NA.NA.NA st=NA prs=absent 'to'
+    slot 204506 עֻזִיָּה | Heb <ZJH/ nmpr NA NA NA.sg.m st=a prs=n/a 'Uzziah' | slot level both, MAM piece עֻזִּיָּה, own <ZJH/ NA NA x2, MAM's <ZJH/ NA NA x5
+
+== B152607 (Test B, neither, slot level both) | this: W + MN + RGZ/ -.sg.m +K
+  own key's other atoms: none
+  MAM's key וּמִרָגְזֶךָ in the BHSA: none
+  same letters and analysis, pointed: וּמֵרָגְזֶךָ x1 (Isaiah 14:3)
+  Isaiah 14:3 | BHSA וּמֵרָגְזֶךָ | MAM וּמִרָגְזֶךָ | WLC 4.18 וּמֵרָגְזֶךָ
+    diff: letter 2 (mem): BHSA [tsere], MAM [hiriq]
+    context: ... בְּיֹום הָנִיחַ יְהוָה לְךָ מֵעָצְבְּךָ [וּמֵרָגְזֶךָ] וּמִן־ הָעֲבֹדָה הַקָּשָׁה אֲשֶׁר עֻבַּד־ ...
+    slot 216890 וּ | Heb W conj NA NA NA.NA.NA st=NA prs=n/a 'and'
+    slot 216891 מֵ | Heb MN prep NA NA NA.NA.NA st=NA prs=absent 'from' | slot level both, MAM piece מִ, own MN NA NA x2085, MAM's MN NA NA x4119
+    slot 216892 רָגְזֶךָ | Heb RGZ/ subs NA NA NA.sg.m st=a prs=K 'excitement'
+
+== B154111 (Test B, neither, slot level both) | this: MN + LJLH/ -.sg.m
+  own key's other atoms: none
+  MAM's key מִּלַּיְלָה in the BHSA: none
+  same letters and analysis, pointed: מִלַּיְלָה x1 (Isaiah 21:11)
+  Isaiah 21:11 | BHSA מִלַּיְלָה | MAM מִּלַּיְלָה | WLC 4.18 מִלַּיְלָה
+    diff: letter 1 (mem): BHSA [hiriq], MAM [dagesh or mapiq, hiriq]
+    context: ... אֵלַי קֹרֵא מִשֵּׂעִיר שֹׁמֵר מַה־ [מִלַּיְלָה] שֹׁמֵר מַה־ מִלֵּיל
+    slot 218895 מִ | Heb MN prep NA NA NA.NA.NA st=NA prs=absent 'from' | slot level both, MAM piece מִּ, own MN NA NA x4118, MAM's MN NA NA x1
+    slot 218896 לַּיְלָה | Heb LJLH/ subs NA NA NA.sg.m st=a prs=absent 'night'
+
+== B154114 (Test B, neither, slot level both) | this: MN + LJL/ -.sg.m
+  own key's other atoms: none
+  MAM's key מִּלֵּיל in the BHSA: none
+  same letters and analysis, pointed: מִלֵּיל x1 (Isaiah 21:11)
+  Isaiah 21:11 | BHSA מִלֵּיל | MAM מִּלֵּיל | WLC 4.18 מִלֵּיל
+    diff: letter 1 (mem): BHSA [hiriq], MAM [dagesh or mapiq, hiriq]
+    context: ... שֹׁמֵר מַה־ מִלַּיְלָה שֹׁמֵר מַה־ [מִלֵּיל]
+    slot 218899 מִ | Heb MN prep NA NA NA.NA.NA st=NA prs=absent 'from' | slot level both, MAM piece מִּ, own MN NA NA x4118, MAM's MN NA NA x1
+    slot 218900 לֵּיל | Heb LJL/ subs NA NA NA.sg.m st=c prs=absent 'night'
+
+== B156861 (Test B, neither, slot level both) | this: >KL[ qal impf p3.sg.f +HW
+  own key's other atoms: >KL[ qal impf p2.sg.m +HW x5 (Numbers 18:10, Deuteronomy 15:22, Ezekiel 4:9)
+  MAM's key תֹּאכְלֶנּוּ in the BHSA: >KL[ qal impf p2.sg.m +HW x4 (Deuteronomy 12:18, Deuteronomy 12:22, Deuteronomy 12:24)
+  same letters and analysis, pointed: תֹאכְלֶנּוּ x1 (Deuteronomy 28:39); תֹּאכֲלֶנּוּ x1 (Isaiah 31:8)
+  Isaiah 31:8 | BHSA תֹּאכֲלֶנּוּ | MAM תֹּאכְלֶנּוּ | WLC 4.18 תֹּאכֲלֶנּוּ
+    diff: letter 3 (kaf): BHSA [hataf patah], MAM [sheva]
+    context: ... לֹא־ אִישׁ וְחֶרֶב לֹא־ אָדָם [תֹּאכֲלֶנּוּ] וְנָס לֹו מִפְּנֵי־ חֶרֶב וּבַחוּרָיו ...
+    slot 222633 תֹּאכֲלֶנּוּ | Heb >KL[ verb qal impf p3.sg.f st=NA prs=HW 'eat' | slot level both, MAM piece תֹּאכְלֶנּוּ, own >KL[ qal impf x5, MAM's >KL[ qal impf x4
+
+== B166062 (Test B, neither, slot level written) | this: H + XDC=/ -.pl.m
+  own key's other atoms: none
+  MAM's key הַחֲדָשִׁים in the BHSA: none
+  same letters and analysis, pointed: הַחֳדָשִׁים x1 (Isaiah 66:22); הֶחֳדָשִׁים x1 (Nehemiah 10:34)
+  Isaiah 66:22 | BHSA הַחֳדָשִׁים | MAM הַחֲדָשִׁים | WLC 4.18 הַחֳדָשִׁים
+    diff: letter 2 (het): BHSA [hataf qamats], MAM [hataf patah]
+    context: כִּי כַאֲשֶׁר הַשָּׁמַיִם [הַחֳדָשִׁים] וְהָאָרֶץ הַחֲדָשָׁה אֲשֶׁר אֲנִי עֹשֶׂה ...
+    slot 234937 הַ | Heb H art NA NA NA.NA.NA st=NA prs=n/a 'the'
+    slot 234938 חֳדָשִׁים | Heb XDC=/ subs NA NA NA.pl.m st=a prs=absent 'month' | slot level written, MAM piece חֲדָשִׁים, own XDC=/ NA NA x38, MAM's XDC/ NA NA x10
+
+== B169391 (Test B, neither, slot level both) | this: H= + JHWH/ -.sg.m +n/a
+  own key's other atoms: none
+  MAM's key הַיהֹוָה in the BHSA: none
+  same letters and analysis, pointed: הַיהוָה x1 (Jeremiah 8:19)
+  Jeremiah 8:19 | BHSA הַיהוָה | MAM הַיהֹוָה | WLC 4.18 הַיהוָה
+    diff: letter 3 (he): BHSA [none], MAM [holam]
+    context: ... שַׁוְעַת בַּת־ עַמִּי מֵאֶרֶץ מַרְחַקִּים [הַיהוָה] אֵין בְּצִיֹּון אִם־ מַלְכָּהּ אֵין ...
+    slot 239346 הַ | Heb H= inrg NA NA NA.NA.NA st=NA prs=absent '<interrogative>'
+    slot 239347 יהוָה | Heb JHWH/ nmpr NA NA NA.sg.m st=a prs=n/a 'YHWH' | slot level both, MAM piece יהֹוָה, own JHWH/ NA NA x787, MAM's JHWH/ NA NA x6
+
+== B169418 (Test B, neither, slot level written) | this: H= + YRJ/ -.sg.m
+  own key's other atoms: none
+  MAM's key הַצֳּרִי in the BHSA: none
+  same letters and analysis, pointed: הַצֳרִי x1 (Jeremiah 8:22)
+  Jeremiah 8:22 | BHSA הַצֳרִי | MAM הַצֳּרִי | WLC 4.18 הַצֳרִי
+    diff: letter 2 (tsadi): BHSA [hataf qamats], MAM [dagesh or mapiq, hataf qamats]
+    context: [הַצֳרִי] אֵין בְּגִלְעָד אִם־ רֹפֵא אֵין ...
+    slot 239378 הַ | Heb H= inrg NA NA NA.NA.NA st=NA prs=absent '<interrogative>'
+    slot 239379 צֳרִי | Heb YRJ/ subs NA NA NA.sg.m st=a prs=absent 'mastic' | slot level written, MAM piece צֳּרִי, own YRJ/ NA NA x3, MAM's -
+
+== B178161 (Test B, neither, slot level both) | this: L + MN + QVN=/ -.sg.m +M
+  own key's other atoms: none
+  MAM's key לְמִקְּטַנָּם in the BHSA: none
+  same letters and analysis, pointed: לְמִקְטַנָּם x1 (Jeremiah 31:34)
+  Jeremiah 31:34 | BHSA לְמִקְטַנָּם | MAM לְמִקְּטַנָּם | WLC 4.18 לְמִקְטַנָּם
+    diff: letter 3 (qof): BHSA [sheva], MAM [dagesh or mapiq, sheva]
+    context: ... יְהוָה כִּי־ כוּלָּם יֵדְעוּ אֹותִי [לְמִקְטַנָּם] וְעַד־ גְּדֹולָם נְאֻם־ יְהוָה כִּי ...
+    slot 251307 לְ | Heb L prep NA NA NA.NA.NA st=NA prs=absent 'to'
+    slot 251308 מִ | Heb MN prep NA NA NA.NA.NA st=NA prs=absent 'from'
+    slot 251309 קְטַנָּם | Heb QVN=/ adjv NA NA NA.sg.m st=a prs=M 'small' | slot level both, MAM piece קְּטַנָּם, own QVN=/ NA NA x1, MAM's QVN=/ NA NA x1
+
+== B195406 (Test B, neither, slot level both) | this: W + H + GBH/ -.sg.m
+  own key's other atoms: none
+  MAM's key וְהַגָּבֹהַּ in the BHSA: none
+  same letters and analysis, pointed: וְהַגָּבֹהַ x1 (Ezekiel 21:31)
+  Ezekiel 21:31 | BHSA וְהַגָּבֹהַ | MAM וְהַגָּבֹהַּ | WLC 4.18 וְהַגָּבֹהַ (notes 1)
+    diff: letter 5 (he): BHSA [patah], MAM [dagesh or mapiq, patah]
+    context: ... זֹאת לֹא־ זֹאת הַשָּׁפָלָה הַגְבֵּהַ [וְהַגָּבֹהַ] הַשְׁפִּיל
+    slot 275083 וְ | Heb W conj NA NA NA.NA.NA st=NA prs=n/a 'and'
+    slot 275084 הַ | Heb H art NA NA NA.NA.NA st=NA prs=n/a 'the'
+    slot 275085 גָּבֹהַ | Heb GBH/ adjv NA NA NA.sg.m st=a prs=absent 'high' | slot level both, MAM piece גָּבֹהַּ, own GBH/ NA NA x5, MAM's GBH/ NA NA x10
+
+== B195815 (Test B, neither, slot level written) | this: W + MN + CBT/ -.pl.f +J
+  own key's other atoms: none
+  MAM's key וּמִשַּׁבְּתֹותַי in the BHSA: none
+  same letters and analysis, pointed: וּמִשַׁבְּתֹותַי x1 (Ezekiel 22:26)
+  Ezekiel 22:26 | BHSA וּמִשַׁבְּתֹותַי | MAM וּמִשַּׁבְּתוֹתַי | WLC 4.18 וּמִשַׁבְּתוֹתַי
+    diff: letter 3 (shin): BHSA [shin dot, patah], MAM [shin dot, dagesh or mapiq, patah]
+    context: ... וּבֵין־ הַטָּמֵא לְטָהֹור לֹא הֹודִיעוּ [וּמִשַׁבְּתֹותַי] הֶעְלִימוּ עֵינֵיהֶם וָאֵחַל בְּתֹוכָם
+    slot 275623 וּ | Heb W conj NA NA NA.NA.NA st=NA prs=n/a 'and'
+    slot 275624 מִ | Heb MN prep NA NA NA.NA.NA st=NA prs=absent 'from'
+    slot 275625 שַׁבְּתֹותַי | Heb CBT/ subs NA NA NA.pl.f st=a prs=J 'sabbath' | slot level written, MAM piece שַּׁבְּתֹותַי, own CBT/ NA NA x8, MAM's -
+
+== B196336 (Test B, neither, slot level written) | this: TW<BH/ -.pl.f +HN
+  own key's other atoms: none
+  MAM's key תֹּועֲבֹותֵיהֶן in the BHSA: none
+  same letters and analysis, pointed: תֹועֲבֹותֵיהֶן x1 (Ezekiel 23:36)
+  Ezekiel 23:36 | BHSA תֹועֲבֹותֵיהֶן | MAM תּוֹעֲבוֹתֵיהֶן | WLC 4.18 תוֹעֲבוֹתֵיהֶן
+    diff: letter 1 (tav): BHSA [holam], MAM [dagesh or mapiq, holam]
+    context: ... וְאֶת־ אָהֳלִיבָה וְהַגֵּד לָהֶן אֵת [תֹועֲבֹותֵיהֶן]
+    slot 276316 תֹועֲבֹותֵיהֶן | Heb TW<BH/ subs NA NA NA.pl.f st=a prs=HN 'abomination' | slot level written, MAM piece תֹּועֲבֹותֵיהֶן, own TW<BH/ NA NA x1, MAM's -
+
+== B197674 (Test B, neither, slot level both) | this: B + BGD/ -.pl.m
+  own key's other atoms: none
+  MAM's key בְּבִגְדֵי in the BHSA: none
+  same letters and analysis, pointed: בְבִגְדֵי x1 (Ezekiel 27:20)
+  Ezekiel 27:20 | BHSA בְבִגְדֵי־ | MAM בְּבִגְדֵי־ | WLC 4.18 בְבִגְדֵי־
+    diff: letter 1 (bet): BHSA [sheva], MAM [dagesh or mapiq, sheva]
+    context: דְּדָן רֹכַלְתֵּךְ [בְבִגְדֵי־] חֹפֶשׁ לְרִכְבָּה
+    slot 278116 בְ | Heb B prep NA NA NA.NA.NA st=NA prs=absent 'in' | slot level both, MAM piece בְּ, own B NA NA x1495, MAM's B NA NA x6507
+    slot 278117 בִגְדֵי | Heb BGD/ subs NA NA NA.pl.m st=c prs=absent 'garment'
+
+== B199639 (Test B, neither, slot level both) | this: MN + GBWRH/ -.sg.f +M
+  own key's other atoms: none
+  MAM's key מִגְבוּרָתָם in the BHSA: none
+  same letters and analysis, pointed: מִגְּבוּרָתָם x1 (Ezekiel 32:30)
+  Ezekiel 32:30 | BHSA מִגְּבוּרָתָם | MAM מִגְבוּרָתָם | WLC 4.18 מִגְבוּרָתָם
+    diff: letter 2 (gimel): BHSA [dagesh or mapiq, sheva], MAM [sheva]
+    context: ... אֲשֶׁר־ יָרְדוּ אֶת־ חֲלָלִים בְּחִתִּיתָם [מִגְּבוּרָתָם] בֹּושִׁים וַיִּשְׁכְּבוּ עֲרֵלִים אֶת־ חַלְלֵי־ ...
+    slot 280743 מִ | Heb MN prep NA NA NA.NA.NA st=NA prs=absent 'from'
+    slot 280744 גְּבוּרָתָם | Heb GBWRH/ subs NA NA NA.sg.f st=a prs=M 'strength' | slot level both, MAM piece גְבוּרָתָם, own GBWRH/ NA NA x2, MAM's GBWRH/ NA NA x3
+
+== B203044 (Test B, neither, slot level both) | this: K + H + XLWN/ -.pl.f
+  own key's other atoms: none
+  MAM's key כְּהַחַלֹּנֹות in the BHSA: none
+  same letters and analysis, pointed: כְּהַחֲלֹּנֹות x1 (Ezekiel 40:25)
+  Ezekiel 40:25 | BHSA כְּהַחֲלֹּנֹות | MAM כְּהַחַלֹּנוֹת | WLC 4.18 כְּהַחֲלֹּנוֹת
+    diff: letter 3 (het): BHSA [hataf patah], MAM [patah]
+    context: וְחַלֹּונִים לֹו ולאילמו סָבִיב סָבִיב [כְּהַחֲלֹּנֹות] הָאֵלֶּה חֲמִשִּׁים אַמָּה אֹרֶךְ וְרֹחַב ...
+    slot 285535 כְּ | Heb K prep NA NA NA.NA.NA st=NA prs=absent 'as'
+    slot 285536 הַ | Heb H art NA NA NA.NA.NA st=NA prs=n/a 'the'
+    slot 285537 חֲלֹּנֹות | Heb XLWN/ subs NA NA NA.pl.f st=a prs=absent 'window' | slot level both, MAM piece חַלֹּנֹות, own XLWN/ NA NA x1, MAM's XLWN/ NA NA x3
+
+== B206999 (Test B, neither, slot level both) | this: W + K + JWM/ -.sg.m
+  own key's other atoms: none
+  MAM's key וּכְיֹום in the BHSA: none
+  same letters and analysis, pointed: וִּכְיֹום x1 (Hosea 2:17)
+  Hosea 2:17 | BHSA וִּכְיֹום | MAM וּכְיוֹם | WLC 4.18 וִּכְיוֹם (notes U)
+    diff: letter 1 (vav): BHSA [dagesh or mapiq, hiriq], MAM [dagesh or mapiq]
+    context: ... תִּקְוָה וְעָנְתָה שָּׁמָּה כִּימֵי נְעוּרֶיהָ [וִּכְיֹום] עֲלֹתָהּ מֵאֶרֶץ־ מִצְרָיִם
+    slot 291425 וִּ | Heb W conj NA NA NA.NA.NA st=NA prs=n/a 'and' | slot level both, MAM piece וּ, own W NA NA x1, MAM's W NA NA x8195
+    slot 291426 כְ | Heb K prep NA NA NA.NA.NA st=NA prs=absent 'as'
+    slot 291427 יֹום | Heb JWM/ subs NA NA NA.sg.m st=c prs=absent 'day'
+
+== B209394 (Test B, neither, slot level both) | this: W + B + BKJ/ -.sg.m
+  own key's other atoms: none
+  MAM's key וּבִבְכִי in the BHSA: none
+  same letters and analysis, pointed: וּבְבְכִי x1 (Joel 2:12)
+  Joel 2:12 | BHSA וּבְבְכִי | MAM וּבִבְכִי | WLC 4.18 וּבְבְכִי (notes U)
+    diff: letter 2 (bet): BHSA [sheva], MAM [hiriq]
+    context: ... שֻׁבוּ עָדַי בְּכָל־ לְבַבְכֶם וּבְצֹום [וּבְבְכִי] וּבְמִסְפֵּד
+    slot 294581 וּ | Heb W conj NA NA NA.NA.NA st=NA prs=n/a 'and'
+    slot 294582 בְ | Heb B prep NA NA NA.NA.NA st=NA prs=absent 'in' | slot level both, MAM piece בִ, own B NA NA x1495, MAM's B NA NA x305
+    slot 294583 בְכִי | Heb BKJ/ subs NA NA NA.sg.m st=a prs=absent 'weeping'
+
+== B209651 (Test B, neither, slot level written) | this: W + TJMRH/ -.pl.f
+  own key's other atoms: none
+  MAM's key וְתִימְרֹות in the BHSA: none
+  same letters and analysis, pointed: וְתִימֲרֹות x1 (Joel 3:3)
+  Joel 3:3 | BHSA וְתִימֲרֹות | MAM וְתִימְרוֹת | WLC 4.18 וְתִימֲרוֹת
+    diff: letter 4 (mem): BHSA [hataf patah], MAM [sheva]
+    context: ... מֹופְתִים בַּשָּׁמַיִם וּבָאָרֶץ דָּם וָאֵשׁ [וְתִימֲרֹות] עָשָׁן
+    slot 294952 וְ | Heb W conj NA NA NA.NA.NA st=NA prs=n/a 'and'
+    slot 294953 תִימֲרֹות | Heb TJMRH/ subs NA NA NA.pl.f st=c prs=absent 'column' | slot level written, MAM piece תִימְרֹות, own TJMRH/ NA NA x1, MAM's -
+
+== B218909 (Test B, neither, slot level written) | this: JPJ/ -.sg.m +W
+  own key's other atoms: none
+  MAM's key יָּפְיֹו in the BHSA: none
+  same letters and analysis, pointed: יָפְיֹו x1 (Zechariah 9:17)
+  Zechariah 9:17 | BHSA יָפְיֹו | MAM יָּפְיוֹ | WLC 4.18 יָפְיוֹ
+    diff: letter 1 (yod): BHSA [qamats], MAM [dagesh or mapiq, qamats]
+    context: כִּי מַה־ טּוּבֹו וּמַה־ [יָפְיֹו] דָּגָן בַּחוּרִים וְתִירֹושׁ יְנֹובֵב בְּתֻלֹות
+    slot 307787 יָפְיֹו | Heb JPJ/ subs NA NA NA.sg.m st=a prs=W 'beauty' | slot level written, MAM piece יָּפְיֹו, own JPJ/ NA NA x2, MAM's -
+
+== B223241 (Test B, neither, slot level both) | this: B + <Z/ -.sg.m +K
+  own key's other atoms: none
+  MAM's key בְּעֻזֶּךָ in the BHSA: none
+  same letters and analysis, pointed: בְעָזְּךָ x2 (Exodus 15:13); בְעֻזֶּךָ x1 (Psalms 21:14)
+  Psalms 21:14 | BHSA בְעֻזֶּךָ | MAM בְּעֻזֶּךָ | WLC 4.18 בְּעֻזֶּךָ
+    diff: letter 1 (bet): BHSA [sheva], MAM [dagesh or mapiq, sheva]
+    context: רוּמָה יְהוָה [בְעֻזֶּךָ] נָשִׁירָה וּנְזַמְּרָה גְּבוּרָתֶךָ
+    slot 313569 בְ | Heb B prep NA NA NA.NA.NA st=NA prs=absent 'in' | slot level both, MAM piece בְּ, own B NA NA x1495, MAM's B NA NA x6507
+    slot 313570 עֻזֶּךָ | Heb <Z/ subs NA NA NA.sg.m st=a prs=K 'power'
+
+== B224820 (Test B, neither, slot level written) | this: BRK[ piel impf p1.sg.?
+  own key's other atoms: none
+  MAM's key אֲבָרְכָה in the BHSA: none
+  same letters and analysis, pointed: אֲבָרֲכָה x1 (Psalms 34:2)
+  Psalms 34:2 | BHSA אֲבָרֲכָה | MAM אֲבָרְכָה | WLC 4.18 אֲבָרֲכָה
+    diff: letter 3 (resh): BHSA [hataf patah], MAM [sheva]
+    context: [אֲבָרֲכָה] אֶת־ יְהוָה בְּכָל־ עֵת תָּמִיד ...
+    slot 315597 אֲבָרֲכָה | Heb BRK[ verb piel impf p1.sg.unknown st=NA prs=absent 'bless' | slot level written, MAM piece אֲבָרְכָה, own BRK[ piel impf x2, MAM's -
+
+== B236945 (Test B, neither, slot level written) | this: FWF[ qal perf p1.sg.?
+  own key's other atoms: none
+  MAM's key שַּׂשְׂתִּי in the BHSA: none
+  same letters and analysis, pointed: שַׂשְׂתִּי x1 (Psalms 119:14)
+  Psalms 119:14 | BHSA שַׂשְׂתִּי | MAM שַּׂשְׂתִּי | WLC 4.18 שַׂשְׂתִּי
+    diff: letter 1 (shin): BHSA [sin dot, patah], MAM [sin dot, dagesh or mapiq, patah]
+    context: בְּדֶרֶךְ עֵדְוֹתֶיךָ [שַׂשְׂתִּי] כְּעַל כָּל־ הֹון
+    slot 331424 שַׂשְׂתִּי | Heb FWF[ verb qal perf p1.sg.unknown st=NA prs=absent 'rejoice' | slot level written, MAM piece שַּׂשְׂתִּי, own FWF[ qal perf x2, MAM's -
+
+== B241402 (Test B, neither, slot level both) | this: MN + >LWH/ -.sg.m
+  own key's other atoms: none
+  MAM's key מֵאֱלֹוהַּ in the BHSA: none
+  same letters and analysis, pointed: מֵאֱלֹוהַ x1 (Job 4:17)
+  Job 4:17 | BHSA מֵאֱלֹוהַ | MAM מֵאֱלוֹהַּ | WLC 4.18 מֵאֱלוֹהַ
+    diff: letter 5 (he): BHSA [patah], MAM [dagesh or mapiq, patah]
+    context: הַאֱנֹושׁ [מֵאֱלֹוהַ] יִצְדָּק אִם מֵעֹשֵׂהוּ יִטְהַר־ גָּבֶר
+    slot 337244 מֵ | Heb MN prep NA NA NA.NA.NA st=NA prs=absent 'from'
+    slot 337245 אֱלֹוהַ | Heb >LWH/ subs NA NA NA.sg.m st=a prs=absent 'god' | slot level both, MAM piece אֱלֹוהַּ, own >LWH/ NA NA x9, MAM's >LWH/ NA NA x44
+
+== B245426 (Test B, neither, slot level both) | this: H= + Y<QH/ -.sg.f +W
+  own key's other atoms: none
+  MAM's key הֲצַעֲקָתֹו in the BHSA: none
+  same letters and analysis, pointed: הַצַעֲקָתֹו x1 (Job 27:9)
+  Job 27:9 | BHSA הַצַעֲקָתֹו | MAM הֲצַעֲקָתוֹ | WLC 4.18 הַצַעֲקָתוֹ
+    diff: letter 1 (he): BHSA [patah], MAM [hataf patah]
+    context: [הַצַעֲקָתֹו] יִשְׁמַע אֵל כִּי־ תָבֹוא עָלָיו ...
+    slot 342449 הַ | Heb H= inrg NA NA NA.NA.NA st=NA prs=absent '<interrogative>' | slot level both, MAM piece הֲ, own H NA NA x16827, H= NA NA x178, MAM's H= NA NA x542
+    slot 342450 צַעֲקָתֹו | Heb Y<QH/ subs NA NA NA.sg.f st=a prs=W 'cry'
+
+== B247140 (Test B, neither, slot level both) | this: H= + MN + <M +K
+  own key's other atoms: none
+  MAM's key הֲמֵעִמְּךָ in the BHSA: none
+  same letters and analysis, pointed: הַמֵעִמְּךָ x1 (Job 34:33)
+  Job 34:33 | BHSA הַמֵעִמְּךָ | MAM הֲמֵעִמְּךָ | WLC 4.18 הַמֵעִמְּךָ
+    diff: letter 1 (he): BHSA [patah], MAM [hataf patah]
+    context: [הַמֵעִמְּךָ] יְשַׁלְמֶנָּה כִּי־ מָאַסְתָּ כִּי־ אַתָּה ...
+    slot 344679 הַ | Heb H= inrg NA NA NA.NA.NA st=NA prs=absent '<interrogative>' | slot level both, MAM piece הֲ, own H NA NA x16827, H= NA NA x178, MAM's H= NA NA x542
+    slot 344680 מֵ | Heb MN prep NA NA NA.NA.NA st=NA prs=absent 'from'
+    slot 344681 עִמְּךָ | Heb <M prep NA NA NA.NA.NA st=NA prs=K 'with'
+
+== B247316 (Test B, neither, slot level both) | this: W + L + P<L[ qal ptca ?.sg.m +J
+  own key's other atoms: none
+  MAM's key וּלְפֹעֲלִי in the BHSA: none
+  same letters and analysis, pointed: וְלְפֹעֲלִי x1 (Job 36:3)
+  Job 36:3 | BHSA וְלְפֹעֲלִי | MAM וּלְפֹעֲלִי | WLC 4.18 וּלְפֹעֲלִי
+    diff: letter 1 (vav): BHSA [sheva], MAM [dagesh or mapiq]
+    context: אֶשָּׂא דֵעִי לְמֵרָחֹוק [וְלְפֹעֲלִי] אֶתֵּן־ צֶדֶק
+    slot 344907 וְ | Heb W conj NA NA NA.NA.NA st=NA prs=n/a 'and' | slot level both, MAM piece וּ, own W NA NA x23913, MAM's W NA NA x8195
+    slot 344908 לְ | Heb L prep NA NA NA.NA.NA st=NA prs=absent 'to'
+    slot 344909 פֹעֲלִי | Heb P<L[ verb qal ptca unknown.sg.m st=a prs=J 'make'
+
+== B247812 (Test B, neither, slot level both) | this: H= + MN + JWM/ -.pl.m +K
+  own key's other atoms: none
+  MAM's key הֲמִיָּמֶיךָ in the BHSA: none
+  same letters and analysis, pointed: הְמִיָּמֶיךָ x1 (Job 38:12)
+  Job 38:12 | BHSA הְמִיָּמֶיךָ | MAM הֲמִיָּמֶיךָ | WLC 4.18 הְמִיָּמֶיךָ (notes 1)
+    diff: letter 1 (he): BHSA [sheva], MAM [hataf patah]
+    context: [הְמִיָּמֶיךָ] צִוִּיתָ בֹּקֶר ידעתה שׁחר מְקֹמֹו
+    slot 345546 הְ | Heb H= inrg NA NA NA.NA.NA st=NA prs=absent '<interrogative>' | slot level both, MAM piece הֲ, own H= NA NA x2, MAM's H= NA NA x542
+    slot 345547 מִ | Heb MN prep NA NA NA.NA.NA st=NA prs=absent 'from'
+    slot 345548 יָּמֶיךָ | Heb JWM/ subs NA NA NA.pl.m st=a prs=K 'day'
+
+== B248163 (Test B, neither, slot level both) | this: H= + R<C[ hif impf p2.sg.m +HW
+  own key's other atoms: none
+  MAM's key הֲתַרְעִישֶׁנּוּ in the BHSA: none
+  same letters and analysis, pointed: הְתַרְעִישֶׁנּוּ x1 (Job 39:20)
+  Job 39:20 | BHSA הְתַרְעִישֶׁנּוּ | MAM הֲתַרְעִישֶׁנּוּ | WLC 4.18 הְתַרְעִישֶׁנּוּ
+    diff: letter 1 (he): BHSA [sheva], MAM [hataf patah]
+    context: [הְתַרְעִישֶׁנּוּ] כָּאַרְבֶּה הֹוד נַחְרֹו אֵימָה
+    slot 346016 הְ | Heb H= inrg NA NA NA.NA.NA st=NA prs=absent '<interrogative>' | slot level both, MAM piece הֲ, own H= NA NA x2, MAM's H= NA NA x542
+    slot 346017 תַרְעִישֶׁנּוּ | Heb R<C[ verb hif impf p2.sg.m st=NA prs=HW 'quake'
+
+== B256127 (Test B, neither, slot level written) | this: W + LQV[ piel impf p1.sg.?
+  own key's other atoms: none
+  MAM's key וַאֲלַקֳּטָה in the BHSA: none
+  same letters and analysis, pointed: וַאֲלַקֳטָה x1 (Ruth 2:2)
+  Ruth 2:2 | BHSA וַאֲלַקֳטָה | MAM וַאֲלַקֳּטָה | WLC 4.18 וַאֲלַקֳטָּה (notes Q,n,p)
+    diff: letter 4 (qof): BHSA [hataf qamats], MAM [dagesh or mapiq, hataf qamats]
+    context: ... אֶל־ נָעֳמִי אֵלְכָה־ נָּא הַשָּׂדֶה [וַאֲלַקֳטָה] בַשִּׁבֳּלִים אַחַר אֲשֶׁר אֶמְצָא־ חֵן ...
+    slot 356258 וַ | Heb W conj NA NA NA.NA.NA st=NA prs=n/a 'and'
+    slot 356259 אֲלַקֳטָה | Heb LQV[ verb piel impf p1.sg.unknown st=NA prs=absent 'gather' | slot level written, MAM piece אֲלַקֳּטָה, own LQV[ piel impf x1, MAM's -
+
+== B256188 (Test B, neither, slot level written) | this: LQV[ piel impf p1.sg.?
+  own key's other atoms: none
+  MAM's key אֲלַקֳּטָה in the BHSA: none
+  same letters and analysis, pointed: אֲלַקֳטָה x1 (Ruth 2:7)
+  Ruth 2:7 | BHSA אֲלַקֳטָה־ | MAM אֲלַקֳּטָה־ | WLC 4.18 אֲלַקֳטָה־
+    diff: letter 3 (qof): BHSA [hataf qamats], MAM [dagesh or mapiq, hataf qamats]
+    context: וַתֹּאמֶר [אֲלַקֳטָה־] נָּא וְאָסַפְתִּי בָעֳמָרִים אַחֲרֵי הַקֹּוצְרִים ...
+    slot 356355 אֲלַקֳטָה | Heb LQV[ verb piel impf p1.sg.unknown st=NA prs=absent 'gather' | slot level written, MAM piece אֲלַקֳּטָה, own LQV[ piel impf x1, MAM's -
+
+== B257474 (Test B, neither, slot level written) | this: K + TJMRH/ -.pl.f
+  own key's other atoms: none
+  MAM's key כְּתִימְרֹות in the BHSA: none
+  same letters and analysis, pointed: כְּתִימֲרֹות x1 (Song of Songs 3:6)
+  Song of Songs 3:6 | BHSA כְּתִימֲרֹות | MAM כְּתִימְרוֹת | WLC 4.18 כְּתִימֲרוֹת
+    diff: letter 4 (mem): BHSA [hataf patah], MAM [sheva]
+    context: מִי זֹאת עֹלָה מִן־ הַמִּדְבָּר [כְּתִימֲרֹות] עָשָׁן מְקֻטֶּרֶת מֹור וּלְבֹונָה מִכֹּל ...
+    slot 358135 כְּ | Heb K prep NA NA NA.NA.NA st=NA prs=absent 'as'
+    slot 358136 תִימֲרֹות | Heb TJMRH/ subs NA NA NA.pl.f st=a prs=absent 'column' | slot level written, MAM piece תִימְרֹות, own TJMRH/ NA NA x1, MAM's -
+
+== B258854 (Test B, neither, slot level both) | this: C + HW> p3.sg.m +n/a
+  own key's other atoms: none
+  MAM's key שְׁהוּא in the BHSA: none
+  same letters and analysis, pointed: שֶׁהוּא x1 (Ecclesiastes 2:22)
+  Ecclesiastes 2:22 | BHSA שֶׁהוּא | MAM שְׁהוּא | WLC 4.18 שֶׁהוּא
+    diff: letter 1 (shin): BHSA [shin dot, segol], MAM [shin dot, sheva]
+    context: ... לָאָדָם בְּכָל־ עֲמָלֹו וּבְרַעְיֹון לִבֹּו [שֶׁהוּא] עָמֵל תַּחַת הַשָּׁמֶשׁ
+    slot 360042 שֶׁ | Heb C conj NA NA NA.NA.NA st=NA prs=n/a '<relative>' | slot level both, MAM piece שְׁ, own C NA NA x121, MAM's C NA NA x1
+    slot 360043 הוּא | Heb HW> prps NA NA p3.sg.m st=NA prs=n/a 'he'
+
+== B265966 (Test B, neither, slot level both) | this: W + L + LMD[ piel infc ?.?.? +M
+  own key's other atoms: none
+  MAM's key וּלְלַמְּדָם in the BHSA: none
+  same letters and analysis, pointed: וּלֲלַמְּדָם x1 (Daniel 1:4)
+  Daniel 1:4 | BHSA וּלֲלַמְּדָם | MAM וּלְלַמְּדָם | WLC 4.18 וּלֲלַמְּדָם
+    diff: letter 2 (lamed): BHSA [hataf patah], MAM [sheva]
+    context: ... כֹּחַ בָּהֶם לַעֲמֹד בְּהֵיכַל הַמֶּלֶךְ [וּלֲלַמְּדָם] סֵפֶר וּלְשֹׁון כַּשְׂדִּים
+    slot 370177 וּ | Heb W conj NA NA NA.NA.NA st=NA prs=n/a 'and'
+    slot 370178 לֲ | Heb L prep NA NA NA.NA.NA st=NA prs=absent 'to' | slot level both, MAM piece לְ, own L NA NA x3, MAM's L NA NA x7445
+    slot 370179 לַמְּדָם | Heb LMD[ verb piel infc unknown.unknown.unknown st=a prs=M 'learn'
+
+== B268467 (Test B, neither, slot level both) | this: W + XWH[ afel infc ?.?.?
+  own key's other atoms: none
+  MAM's key וְאַחֲוָיַת in the BHSA: none
+  same letters and analysis, pointed: וַאַחֲוָיַת x1 (Daniel 5:12)
+  Daniel 5:12 | BHSA וַאַחֲוָיַת | MAM וְאַחֲוָיַת | WLC 4.18 וַאַחֲוָיַת
+    diff: letter 1 (vav): BHSA [patah], MAM [sheva]
+    context: ... יַתִּירָה וּמַנְדַּע וְשָׂכְלְתָנוּ מְפַשַּׁר חֶלְמִין [וַאַחֲוָיַת] אֲחִידָן וּמְשָׁרֵא קִטְרִין הִשְׁתְּכַחַת בֵּהּ ...
+    slot 373435 וַ | Ara W conj NA NA NA.NA.NA st=NA prs=n/a 'and' | slot level both, MAM piece וְ, own W NA NA x52, MAM's W NA NA x389
+    slot 373436 אַחֲוָיַת | Ara XWH[ verb afel infc unknown.unknown.unknown st=c prs=absent 'know'
+
+== B275395 (Test B, neither, slot level both) | this: W + <ZJH/ -.sg.m +n/a
+  own key's other atoms: none
+  MAM's key וְעֻזִּיָּה in the BHSA: none
+  same letters and analysis, pointed: וְעֻזִיָּה x1 (Ezra 10:21)
+  Ezra 10:21 | BHSA וְעֻזִיָּה | MAM וְעֻזִּיָּה | WLC 4.18 וְעֻזִיָּה
+    diff: letter 3 (zayin): BHSA [hiriq], MAM [dagesh or mapiq, hiriq]
+    context: ... חָרִם מַעֲשֵׂיָה וְאֵלִיָּה וּשְׁמַעְיָה וִיחִיאֵל [וְעֻזִיָּה]
+    slot 383213 וְ | Heb W conj NA NA NA.NA.NA st=NA prs=n/a 'and'
+    slot 383214 עֻזִיָּה | Heb <ZJH/ nmpr NA NA NA.sg.m st=a prs=n/a 'Uzziah' | slot level both, MAM piece עֻזִּיָּה, own <ZJH/ NA NA x2, MAM's <ZJH/ NA NA x5
+
+== B276742 (Test B, neither, slot level written) | this: MN + TXTJ/ -.pl.f
+  own key's other atoms: none
+  MAM's key מִתַּחְתְּיֹות in the BHSA: none
+  same letters and analysis, pointed: מִתַּחְתִּיֹּות x1 (Nehemiah 4:7)
+  Nehemiah 4:7 | BHSA מִתַּחְתִּיֹּות | MAM מִתַּחְתְּיוֹת | WLC 4.18 מִתַּחְתִּיּוֹת
+    diff: letter 4 (tav): BHSA [dagesh or mapiq, hiriq], MAM [dagesh or mapiq, sheva]; letter 5 (yod): BHSA [dagesh or mapiq, holam], MAM [holam]
+    context: וָאַעֲמִיד [מִתַּחְתִּיֹּות] לַמָּקֹום מֵאַחֲרֵי לַחֹומָה בצחחיים וָאַעֲמִיד ...
+    slot 385142 מִ | Heb MN prep NA NA NA.NA.NA st=NA prs=absent 'from'
+    slot 385143 תַּחְתִּיֹּות | Heb TXTJ/ adjv NA NA NA.pl.f st=a prs=absent 'lower' | slot level written, MAM piece תַּחְתְּיֹות, own TXTJ/ NA NA x7, MAM's -
+
+== B292869 (Test B, neither, slot level both) | this: W + L + H + CJR[ piel ptca ?.pl.m
+  own key's other atoms: none
+  MAM's key וְלַמְשֹׁרְרִים in the BHSA: none
+  same letters and analysis, pointed: וְלַמְשֹׁרֲרִים x1 (2 Chronicles 5:13)
+  2 Chronicles 5:13 | BHSA וְלַמְשֹׁרֲרִים | MAM וְלַמְשֹׁרְרִים | WLC 4.18 וְלַמְשֹׁרֲרִים
+    diff: letter 5 (resh): BHSA [hataf patah], MAM [sheva]
+    context: וַיְהִי כְאֶחָד למחצצרים [וְלַמְשֹׁרֲרִים] לְהַשְׁמִיעַ קֹול־ אֶחָד לְהַלֵּל וּלְהֹדֹות ...
+    slot 408910 וְ | Heb W conj NA NA NA.NA.NA st=NA prs=n/a 'and'
+    slot 408911 לַ | Heb L prep NA NA NA.NA.NA st=NA prs=absent 'to'
+    slot 408912  | Heb H art NA NA NA.NA.NA st=NA prs=n/a 'the'
+    slot 408913 מְשֹׁרֲרִים | Heb CJR[ verb piel ptca unknown.pl.m st=a prs=absent 'sing' | slot level both, MAM piece מְשֹׁרְרִים, own CJR[ piel ptca x5, MAM's CJR[ piel ptca x24
+
+== B296463 (Test B, neither, slot level both) | this: L + >CRH/ -.sg.f
+  own key's other atoms: none
+  MAM's key לָאֲשֵׁרָה in the BHSA: L + H + >CRH/ -.sg.f x2 (1 Kings 15:13, 2 Kings 23:7)
+  same letters and analysis, pointed: לַאֲשֵׁרָה x1 (2 Chronicles 15:16)
+  2 Chronicles 15:16 | BHSA לַאֲשֵׁרָה | MAM לָאֲשֵׁרָה | WLC 4.18 לַאֲשֵׁרָה
+    diff: letter 1 (lamed): BHSA [patah], MAM [qamats]
+    context: ... הַמֶּלֶךְ הֱסִירָהּ מִגְּבִירָה אֲשֶׁר־ עָשְׂתָה [לַאֲשֵׁרָה] מִפְלָצֶת וַיִּכְרֹת אָסָא אֶת־ מִפְלַצְתָּהּ ...
+    slot 414147 לַ | Heb L prep NA NA NA.NA.NA st=NA prs=absent 'to' | slot level both, MAM piece לָ, own L NA NA x2900, MAM's L NA NA x1305
+    slot 414148 אֲשֵׁרָה | Heb >CRH/ subs NA NA NA.sg.f st=a prs=absent 'asherah'
+

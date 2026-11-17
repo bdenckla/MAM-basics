@@ -1,0 +1,160 @@
+node types: {'word': (1, 426590), 'book': (426591, 426629), 'chapter': (426630, 427558), 'clause': (427559, 515689), 'clause_atom': (515690, 606393), 'half_verse': (606394, 651572), 'phrase': (651573, 904775), 'phrase_atom': (904776, 1172307), 'sentence': (1172308, 1236024), 'sentence_atom': (1236025, 1300538), 'subphrase': (1300539, 1414388), 'verse': (1414389, 1437601), 'lex': (1437602, 1446831)}
+
+Feature headers (description, valueType):
+  book: ✅ book name in Latin (Genesis; Numeri; Reges1; ...) | str
+  chapter: ✅ chapter number (1; 2; 3; ...) | int
+  function: ✅ syntactic function of phrase (Cmpl; Objc; Pred; ...) | str
+  g_lex: ✅ lexeme pointed-transliterated (B.:- R;>CIJT B.@R@> >:ELOH ...) | str
+  g_lex_utf8: ✅ lexeme pointed-Hebrew (בְּ רֵאשִׁית בָּרָא אֱלֹה) | str
+  g_nme_utf8: ✅ nominal ending pointed-Hebrew (ים ֶ֜ת  ֵ֜י) | str
+  g_pfm_utf8: ✅ preformative pointed-Hebrew (יְ יְ יַּ) | str
+  g_prs_utf8: ✅ pronominal suffix pointed-Hebrew (ו ֵהוּ) | str
+  g_uvf_utf8: ✅ univalent final consonant pointed-Hebrew (ֶ ָה) | str
+  g_vbe_utf8: ✅ verbal ending pointed-Hebrew (וּ) | str
+  g_vbs_utf8: ✅ root formation pointed-Hebrew (הַ) | str
+  g_word: ✅ word pointed-transliterated (B.:- R;>CI73JT B.@R@74> >:ELOHI92JM) | str
+  g_word_utf8: ✅ word pointed-Hebrew (בְּ רֵאשִׁ֖ית בָּרָ֣א אֱלֹהִ֑ים) | str
+  gloss: 🆗 english translation of lexeme (beginning create god(s)) | str
+  gn: ✅ grammatical gender (m; f; NA; unknown.) | str
+  kq_hybrid: ❓ unclear, ketiv/qere related | str
+  kq_hybrid_utf8: ❓ unclear, ketiv/qere related | str
+  language: ✅ of word or lexeme (Hebrew; Aramaic.) | str
+  lex: ✅ lexeme consonantal-transliterated (B R>CJT/ BR>[ >LHJM/) | str
+  ls: ✅ lexical set, subclassification of part-of-speech (card; ques; mult) | str
+  nme: ✅ nominal ending consonantal-transliterated (absent; n/a; JM, ...) | str
+  nu: ✅ grammatical number (sg; du; pl; NA; unknown.) | str
+  oslots:  | str
+  otext:  | 
+  otype:  | str
+  pdp: ✅ phrase dependent part-of-speech (art; verb; subs; nmpr, ...) | str
+  pfm: ✅ preformative consonantal-transliterated (absent; n/a; J, ...) | str
+  prs: ✅ pronominal suffix consonantal-transliterated (absent; n/a; W; ...) | str
+  ps: ✅ grammatical person (p1; p2; p3; NA; unknown.) | str
+  qere: ✅ word pointed-transliterated masoretic reading correction | str
+  qere_trailer_utf8: ✅ interword material -pointed-transliterated (Masoretic correction) | str
+  qere_utf8: ✅ word pointed-Hebrew masoretic reading correction | str
+  sp: ✅ part-of-speech (art; verb; subs; nmpr, ...) | str
+  st: ✅ state of a noun (a (absolute); c (construct); e (emphatic).) | str
+  trailer_utf8: ✅ interword material pointed-Hebrew (־ ׃) | str
+  typ: ✅ clause/phrase(atom) type (VP; NP; Ellp; Ptcp; WayX) | str
+  uvf: ✅ univalent final consonant consonantal-transliterated (absent; N; J; ...) | str
+  vbe: ✅ verbal ending consonantal-transliterated (n/a; W; ...) | str
+  vbs: ✅ root formation consonantal-transliterated (absent; n/a; H; ...) | str
+  verse: ✅ verse number | int
+  voc_lex: ✅ vocalized lexeme pointed-transliterated (B.: R;>CIJT BR> >:ELOHIJM) | str
+  voc_lex_utf8: ✅ vocalized lexeme pointed-Hebrew (בְּ רֵאשִׁית ברא אֱלֹהִים) | str
+  vs: ✅ verbal stem (qal; piel; hif; apel; pael) | str
+  vt: ✅ verbal tense (perf; impv; wayq; infc) | str
+
+otext.tf:
+  @config
+  @author=Eep Talstra Centre for Bible and Computer
+  @dataset=BHSA
+  @datasetName=Biblia Hebraica Stuttgartensia Amstelodamensis
+  @dateWritten=2021-12-09T14:21:19Z
+  @email=shebanq@ancient-data.org
+  @encoders=Constantijn Sikkel (QDF), Ulrik Petersen (MQL) and Dirk Roorda (TF)
+  @fmt:lex-default={voc_lex_utf8} 
+  @fmt:lex-orig-full={g_lex_utf8} 
+  @fmt:lex-orig-plain={lex_utf8} 
+  @fmt:lex-trans-full={g_lex} 
+  @fmt:lex-trans-plain={lex} 
+  @fmt:text-orig-full={qere_utf8/g_word_utf8}{qere_trailer_utf8/trailer_utf8}
+  @fmt:text-orig-full-ketiv={g_word_utf8}{trailer_utf8}
+  @fmt:text-orig-plain={g_cons_utf8}{trailer_utf8}
+  @fmt:text-trans-full={qere/g_word}{qere_trailer/trailer}
+  @fmt:text-trans-full-ketiv={g_word}{trailer}
+  @fmt:text-trans-plain={g_cons}{trailer}
+  @sectionFeatures=book,chapter,verse
+  @sectionTypes=book,chapter,verse
+  @version=2021
+  @website=https://shebanq.ancient-data.org
+  @writtenBy=Text-Fabric
+  @writtenBy=Text-Fabric
+  @dateWritten=2021-12-09T14:23:29Z
+  
+  
+
+slots 426590; slots with g_word_utf8 426590; empty g_word_utf8 6488
+trailer_utf8 values: [("' '", 236930), ("''", 121801), ("'־'", 42275), ("'׃ '", 20146), ("'׀ '", 2266), ("'׃ ס '", 1892), ("'׃ פ '", 1165), ("' ס '", 76), ("' ׀ '", 17), ("' פ '", 13), ("'׃ ׆ '", 7), ("'׃ נ ס '", 1), ("'׃ נ פ '", 1)]
+qere_trailer_utf8 values: [("' '", 1136), ("''", 566), ("'׃'", 109), ("'־'", 62), ("' ׀ '", 19)]
+sp (426590 slots): [('subs', 121509), ('verb', 73710), ('prep', 73273), ('conj', 62722), ('nmpr', 33002), ('art', 30386), ('adjv', 9523), ('nega', 6053), ('prps', 5011), ('advb', 4550), ('prde', 2660), ('intj', 1885), ('inrg', 1285), ('prin', 1021)]
+pdp (426590 slots): [('subs', 125457), ('prep', 74772), ('verb', 69025), ('conj', 64554), ('nmpr', 33101), ('art', 29081), ('nega', 6790), ('advb', 6645), ('adjv', 5330), ('prps', 4508), ('prde', 3135), ('intj', 1886), ('inrg', 1357), ('prin', 949)]
+vs (426590 slots): [('NA', 352880), ('qal', 50205), ('hif', 9407), ('piel', 6811), ('nif', 4145), ('hit', 960), ('peal', 654), ('pual', 492), ('hof', 427), ('hsht', 172), ('haf', 163), ('pael', 88), ('htpe', 53), ('peil', 40), ('htpa', 30), ('shaf', 15), ('hotp', 8), ('etpa', 8), ('pasq', 6), ('poel', 5), ('tif', 5), ('afel', 4), ('nit', 3), ('poal', 3), ('htpo', 3), ('etpe', 3)]
+vt (426590 slots): [('NA', 352880), ('perf', 21129), ('impf', 16099), ('wayq', 14974), ('ptca', 8403), ('infc', 6607), ('impv', 4306), ('ptcp', 1298), ('infa', 894)]
+language (426590 slots): [('Hebrew', 420484), ('Aramaic', 6106)]
+ls (426590 slots): [('none', 385975), ('nmdi', 9418), ('quot', 6521), ('card', 6287), ('padv', 5192), ('vbcp', 3637), ('ppre', 3312), ('gntl', 1825), ('focp', 1176), ('nmcp', 989), ('ques', 749), ('ordn', 726), ('afad', 546), ('cjad', 205), ('mult', 32)]
+st (426590 slots): [('NA', 245354), ('a', 140501), ('c', 39870), ('e', 865)]
+ps (426590 slots): [('NA', 347869), ('p3', 40903), ('unknown', 17202), ('p2', 12278), ('p1', 8338)]
+nu (426590 slots): [('NA', 180154), ('sg', 180110), ('pl', 54941), ('unknown', 8522), ('du', 2863)]
+gn (426590 slots): [('NA', 180154), ('m', 164176), ('unknown', 45539), ('f', 36721)]
+prs (426590 slots): [('absent', 236028), ('n/a', 145404), ('W', 11905), ('K', 7134), ('J', 6566), ('M', 3938), ('H', 3352), ('HM', 3047), ('KM', 2657), ('NW', 1635), ('HW', 1611), ('NJ', 1321), ('K=', 1308), ('HN', 192), ('H=', 161), ('MW', 117), ('HJ', 77), ('HWN', 51), ('N', 47), ('KN', 19), ('KWN', 10), ('N>', 10)]
+nme (426590 slots): [('n/a', 188846), ('', 121983), ('absent', 56508), ('J', 15826), ('JM', 14645), ('H', 8934), ('T', 8558), ('WT', 6363), ('J=', 1770), ('WTJ', 1672), ('JM=', 567), ('TJM', 257), ('TJ', 256), ('JN', 254), ('T=', 61), ('W', 53), ('N', 24), ('W=', 5), ('JN=', 5), ('TJN', 3)]
+pfm (426590 slots): [('n/a', 352880), ('absent', 28714), ('J', 21111), ('', 11438), ('T', 3739), ('>', 2853), ('T=', 2700), ('M', 2144), ('N', 645), ('H', 341), ('L', 25)]
+vbs (426590 slots): [('n/a', 352880), ('absent', 58304), ('H', 9997), ('N', 4145), ('HT', 1054), ('HCT', 172), ('C', 15), ('>T', 11), ('T', 5), ('>', 4), ('NT', 3)]
+vbe (426590 slots): [('n/a', 352880), ('', 50655), ('W', 12801), ('TJ', 3049), ('T', 2085), ('H', 1385), ('H=', 935), ('TM', 825), ('J', 549), ('WN', 381), ('NW', 370), ('NH', 358), ('T=', 249), ('T==', 34), ('N>', 11), ('TN', 10), ('JN', 7), ('TWN', 3), ('N', 3)]
+uvf (426590 slots): [('absent', 423044), ('H', 1068), ('J', 946), ('>', 865), ('N', 650), ('W', 17)]
+
+qere_utf8 on 1892 slots; kq_hybrid_utf8 on 426590 slots; both 1892
+First 40 slots with qere_utf8: ref | g_word_utf8 | qere_utf8 | kq_hybrid_utf8 | g_word | qere | kq_hybrid | lex
+  ('Genesis', 8, 17) 3897 | הוצא | הַיְצֵ֣א | הַוְצֵ֣א | *HWY> | HAJ:Y;74> | HAW:Y;74> | JY>[
+  ('Genesis', 9, 21) 4420 | אהלה | אָהֳלֹֽו | אָהֳלֹֽה׃ | *>HLH | >@H:@LO75W | >@H:@LO75H00 | >HL/
+  ('Genesis', 12, 8) 5645 | אהלה | אָהֳלֹ֑ו | אָהֳלֹ֑ה | *>HLH | >@H:@LO92W | >@H:@LO92H | >HL/
+  ('Genesis', 13, 3) 5912 | אהלה | אָֽהֳלֹו֙ | אָֽהֳלֹה֙ | *>HLH | >@95H:@LOW03 | >@95H:@LOH03 | >HL/
+  ('Genesis', 14, 2) 6246 | צביים | צְבֹויִ֔ם | צְבֹייִ֔ם | *YBJJM | Y:BOWJI80m | Y:BOJJI80M | YB>JM/
+  ('Genesis', 14, 8) 6354 | צביים | צְבֹויִ֔ם | צְבֹייִ֔ם | *YBJJM | Y:BOWJI80m | Y:BOJJI80M | YB>JM/
+  ('Genesis', 24, 33) 11762 | ו | וַ | וַ | *W- | WA | WA- | W
+  ('Genesis', 24, 33) 11763 | יישׂם | יּוּשַׂ֤ם | יֻּישַׂ֤ם | *JJFM | J.W.FA70m | J.UJFA70M | FJM[
+  ('Genesis', 25, 23) 12784 | גיים | גֹויִם֙ | גֹייִם֙ | *GJJM | GOWJIm03 | GOJJIM03 | GWJ/
+  ('Genesis', 27, 3) 13685 | צידה | צָֽיִד | צָֽיִדה׃ | *YJDH | Y@75JID | Y@75JIDH00 | YJD/
+  ('Genesis', 27, 29) 14111 | ו | וְ | וְ | *W- | W: | W:- | W
+  ('Genesis', 27, 29) 14112 | ישׁתחו | יִֽשְׁתַּחֲו֤וּ | יִֽשְׁתַּחֲוֻ֤ | *JCTXW | JI45C:T.AX:AW70W. | JI45C:T.AX:AWU70 | XWH[
+  ('Genesis', 30, 11) 15747 | ב | בָּ֣א | בָּ֣ | *B- | B.@74> | B.@74- | BW>[
+  ('Genesis', 30, 11) 15748 | גד | גָ֑ד | גָ֑ד | *GD | G@92D | G@92D | GD=/
+  ('Genesis', 33, 4) 18153 | צוארו | צַוָּארָ֖יו | צַוָּארָ֖ו | *YW>RW | YAW.@>R@73JW | YAW.@>R@73W | YW>R/
+  ('Genesis', 35, 21) 19429 | אהלה | אָֽהֳלֹ֔ו | אָֽהֳלֹ֔ה | *>HLH | >@45H:@LO80W | >@45H:@LO80H | >HL/
+  ('Genesis', 36, 5) 19603 | יעישׁ | יְע֥וּשׁ | יְע֥יּשׁ | *J<JC | J:<71W.C | J:<71J.C | J<WC/
+  ('Genesis', 36, 14) 19771 | יעישׁ | יְע֥וּשׁ | יְע֥יּשׁ | *J<JC | J:<71W.C | J:<71J.C | J<WC/
+  ('Genesis', 39, 20) 21838 | אסורי | אֲסִירֵ֥י | אֲסִורֵ֥י | *>SWRJ | >:ASIJR;71J | >:ASIWR;71J | >SJR/
+  ('Genesis', 43, 28) 24703 | ו | וַ | וַ | *W- | WA | WA- | W
+  ('Genesis', 43, 28) 24704 | ישׁתחו | יִּֽשְׁתַּחֲוּֽוּ | יִּֽשְׁתַּחֲוֻּֽ׃ | *JCTXW | J.I45C:T.AX:AW.75W. | J.I45C:T.AX:AW.U7500 | XWH[
+  ('Genesis', 49, 10) 27916 | שׁילה | שִׁילֹ֔ו | שִׁילֹ֔ה | *CJLH | CIJLO80W | CIJLO80H | CLW=/
+  ('Genesis', 49, 11) 27925 | עירה | עִירֹ֔ו | עִירֹ֔ה | *<JRH | <IJRO80W | <IJRO80H | <JR==/
+  ('Genesis', 49, 11) 27941 | סותה | סוּתֹֽו | סוּתֹֽה׃ | *SWTH | SW.TO75W | SW.TO75H00 | SWT/
+  ('Exodus', 4, 2) 30194 | מ | מַה | מַ | *M- | MAH | MA- | MH
+  ('Exodus', 4, 2) 30195 | זה | זֶּ֣ה | זֶּ֣ה | *ZH | Z.E74H | Z.E74H | ZH
+  ('Exodus', 16, 2) 37381 | ו | וַ | וַ | *W- | WA | WA- | W
+  ('Exodus', 16, 2) 37382 | ילינו | יִּלֹּ֜ונוּ | יִּלֹּ֜ינוּ | *JLJNW | J.IL.O61WNW. | J.IL.O61JNW. | LWN[
+  ('Exodus', 16, 7) 37525 | תלונו | תַלִּ֖ינוּ | תַלִּ֖ונוּ | *TLWNW | TAL.I73JNW. | TAL.I73WNW. | LWN[
+  ('Exodus', 21, 8) 40142 | לא | לֹ֥ו | לֹ֥א | *L> | LO71W | LO71> | L
+  ('Exodus', 22, 4) 40668 | בעירה | בְּעִירֹ֔ו | בְּעִירֹ֔ה | *B<JRH | B.:<IJRO80W | B.:<IJRO80H | B<JR/
+  ('Exodus', 22, 26) 40989 | כסותה | כְסוּתֹו֙ | כְסוּתֹה֙ | *KSWTH | K:SW.TOW03 | K:SW.TOH03 | KSWT/
+  ('Exodus', 27, 11) 43530 | ו | וְ | וְ | *W- | W: | W:- | W
+  ('Exodus', 27, 11) 43531 | עמדו | עַמּוּדָ֣יו | עַמֻּדָ֣ו | *<MDW | <AM.W.D@74JW | <AM.UD@74W | <MWD/
+  ('Exodus', 28, 28) 44205 | מ | מִֽ | מִֽ | *M- | MI45 | MI45- | MN
+  ('Exodus', 28, 28) 44206 | טבעתו | טַּבְּעֹתָ֞יו | טַּבְּעֹתָ֞ו | *VB<TW | V.AB.:<OT@62JW | V.AB.:<OT@62W | VB<T/
+  ('Exodus', 32, 17) 46881 | ב | בְּ | בְּ | *B- | B.: | B.:- | B
+  ('Exodus', 32, 17) 46882 | רעה | רֵעֹ֑ו | רֵעֹ֑ה | *R<H | R;<O92W | R;<O92H | R<==/
+  ('Exodus', 32, 19) 46928 | מ | מִ | מִ | *M- | MI | MI- | MN
+  ('Exodus', 32, 19) 46929 | ידו | יָּדָיו֙ | יָּדָו֙ | *JDW | J.@D@JW03 | J.@D@W03 | JD/
+kq_hybrid without qere: 424698; first 20:
+  ('Genesis', 1, 1) 1 | בְּ |  | B.:-
+  ('Genesis', 1, 1) 2 | רֵאשִׁ֖ית |  | R;>CI73JT
+  ('Genesis', 1, 1) 3 | בָּרָ֣א |  | B.@R@74>
+  ('Genesis', 1, 1) 4 | אֱלֹהִ֑ים |  | >:ELOHI92JM
+  ('Genesis', 1, 1) 5 | אֵ֥ת |  | >;71T
+  ('Genesis', 1, 1) 6 | הַ |  | HA-
+  ('Genesis', 1, 1) 7 | שָּׁמַ֖יִם |  | C.@MA73JIM
+  ('Genesis', 1, 1) 8 | וְ |  | W:-
+  ('Genesis', 1, 1) 9 | אֵ֥ת |  | >;71T
+  ('Genesis', 1, 1) 10 | הָ |  | H@-
+  ('Genesis', 1, 1) 11 | אָֽרֶץ |  | >@75REY
+  ('Genesis', 1, 2) 12 | וְ |  | W:-
+  ('Genesis', 1, 2) 13 | הָ |  | H@-
+  ('Genesis', 1, 2) 14 | אָ֗רֶץ |  | >@81REY
+  ('Genesis', 1, 2) 15 | הָיְתָ֥ה |  | H@J:T@71H
+  ('Genesis', 1, 2) 16 | תֹ֨הוּ֙ |  | TO33HW.03
+  ('Genesis', 1, 2) 17 | וָ |  | W@-
+  ('Genesis', 1, 2) 18 | בֹ֔הוּ |  | BO80HW.
+  ('Genesis', 1, 2) 19 | וְ |  | W:-
+  ('Genesis', 1, 2) 20 | חֹ֖שֶׁךְ |  | XO73CEK:

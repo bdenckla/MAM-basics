@@ -1,0 +1,600 @@
+1. Atoms of the keys of Test A groups (16, 61, 63, 175, 186, 111, 139)
+
+A16: 79 atoms; analyses {'BN/ -.sg.m +J': 78, 'BN/ -.sg.m': 1}
+   BN/ -.sg.m +J | Genesis 21:10 | בְּנִ֖י | tipeha
+   BN/ -.sg.m +J | Genesis 22:8 | בְּנִ֑י | etnahta
+   BN/ -.sg.m +J | Genesis 24:6 | בְּנִ֖י | tipeha
+   BN/ -.sg.m +J | Genesis 24:8 | בְּנִ֔י | zaqef qatan
+   BN/ -.sg.m +J | Genesis 27:1 | בְּנִ֔י | zaqef qatan
+   BN/ -.sg.m +J | Genesis 27:13 | בְּנִ֑י | etnahta
+   BN/ -.sg.m +J | Genesis 27:18 | בְּנִֽי | meteg
+   BN/ -.sg.m +J | Genesis 27:20 | בְּנִ֑י | etnahta
+   BN/ -.sg.m +J | Genesis 27:21 | בְּנִ֑י | etnahta
+   BN/ -.sg.m +J | Genesis 27:21 | בְּנִ֥י | merkha
+   BN/ -.sg.m +J | Genesis 27:24 | בְּנִ֣י | munah
+   BN/ -.sg.m +J | Genesis 27:25 | בְּנִ֔י | zaqef qatan
+   BN/ -.sg.m +J | Genesis 27:26 | בְּנִֽי | meteg
+   BN/ -.sg.m +J | Genesis 27:27 | בְּנִ֔י | zaqef qatan
+   BN/ -.sg.m +J | Genesis 27:37 | בְּנִֽי | meteg
+   BN/ -.sg.m +J | Genesis 30:15 | בְּנִ֑י | etnahta
+   BN/ -.sg.m +J | Genesis 30:16 | בְּנִ֑י | etnahta
+   BN/ -.sg.m +J | Genesis 34:8 | בְּנִ֗י | revia
+   BN/ -.sg.m +J | Genesis 37:33 | בְּנִ֔י | zaqef qatan
+   BN/ -.sg.m +J | Genesis 37:35 | בְּנִ֛י | tevir
+   BN/ -.sg.m +J | Genesis 42:38 | בְּנִ֖י | tipeha
+   BN/ -.sg.m +J | Genesis 43:29 | בְּנִֽי | meteg
+   BN/ -.sg.m +J | Genesis 45:28 | בְּנִ֖י | tipeha
+   BN/ -.sg.m +J | Genesis 49:9 | בְּנִ֣י | munah
+   BN/ -.sg.m | Genesis 49:11 | בְּנִ֣י | munah
+   BN/ -.sg.m +J | Exodus 4:22 | בְּנִ֥י | merkha
+   BN/ -.sg.m +J | Exodus 4:23 | בְּנִי֙ | pashta
+   BN/ -.sg.m +J | Joshua 7:19 | בְּנִי֙ | pashta
+   BN/ -.sg.m +J | Judges 8:23 | בְּנִ֖י | tipeha
+   BN/ -.sg.m +J | Judges 17:2 | בְּנִ֖י | tipeha
+   BN/ -.sg.m +J | 1 Samuel 3:16 | בְּנִ֑י | etnahta
+   BN/ -.sg.m +J | 1 Samuel 4:16 | בְּנִֽי | meteg
+   BN/ -.sg.m +J | 1 Samuel 14:39 | בְּנִ֖י | tipeha
+   BN/ -.sg.m +J | 1 Samuel 14:40 | בְּנִ֔י | zaqef qatan
+   BN/ -.sg.m +J | 1 Samuel 14:42 | בְּנִ֑י | etnahta
+   BN/ -.sg.m +J | 1 Samuel 22:8 | בְּנִ֣י | munah
+   BN/ -.sg.m +J | 1 Samuel 22:8 | בְּנִ֨י | qadma
+   BN/ -.sg.m +J | 1 Samuel 24:17 | בְּנִ֣י | munah
+   BN/ -.sg.m +J | 1 Samuel 26:17 | בְּנִ֣י | munah
+   BN/ -.sg.m +J | 1 Samuel 26:21 | בְּנִֽי־ | meteg
+   BN/ -.sg.m +J | 1 Samuel 26:25 | בְּנִ֣י | munah
+   BN/ -.sg.m +J | 2 Samuel 13:25 | בְּנִי֙ | pashta
+   BN/ -.sg.m +J | 2 Samuel 14:11 | בְּנִ֑י | etnahta
+   BN/ -.sg.m +J | 2 Samuel 14:16 | בְּנִי֙ | pashta
+   BN/ -.sg.m +J | 2 Samuel 18:22 | בְּנִ֔י | zaqef qatan
+   BN/ -.sg.m +J | 2 Samuel 19:1 | בְּנִ֤י | mahapakh
+   BN/ -.sg.m +J | 2 Samuel 19:1 | בְּנִ֣י | munah
+   BN/ -.sg.m +J | 2 Samuel 19:1 | בְּנִ֥י | merkha
+   BN/ -.sg.m +J | 2 Samuel 19:5 | בְּנִי֙ | pashta
+   BN/ -.sg.m +J | 2 Samuel 19:5 | בְּנִ֥י | merkha
+   BN/ -.sg.m +J | 1 Kings 3:20 | בְּנִ֣י | munah
+   BN/ -.sg.m +J | 1 Kings 3:21 | בְּנִ֖י | tipeha
+   BN/ -.sg.m +J | 1 Kings 3:22 | בְּנִ֤י | mahapakh
+   BN/ -.sg.m +J | 1 Kings 3:23 | בְּנִ֥י | merkha
+   BN/ -.sg.m +J | 1 Kings 17:18 | בְּנִֽי | meteg
+   BN/ -.sg.m +J | 2 Kings 6:28 | בְּנִ֖י | tipeha
+   BN/ -.sg.m +J | 2 Kings 6:29 | בְּנִ֖י | tipeha
+   BN/ -.sg.m +J | Ezekiel 21:15 | בְּנִ֖י | tipeha
+   BN/ -.sg.m +J | Psalms 2:7 | בְּנִ֥י | merkha
+   BN/ -.sg.m +J | Proverbs 1:8 | בְּ֭נִי | dehi
+   BN/ -.sg.m +J | Proverbs 1:10 | בְּנִ֡י | pazer
+   BN/ -.sg.m +J | Proverbs 1:15 | בְּנִ֗י | revia
+   BN/ -.sg.m +J | Proverbs 2:1 | בְּ֭נִי | dehi
+   BN/ -.sg.m +J | Proverbs 3:1 | בְּ֭נִי | dehi
+   BN/ -.sg.m +J | Proverbs 3:11 | בְּנִ֣י | munah
+   BN/ -.sg.m +J | Proverbs 3:21 | בְּ֭נִי | dehi
+   BN/ -.sg.m +J | Proverbs 4:10 | בְּ֭נִי | dehi
+   BN/ -.sg.m +J | Proverbs 4:20 | בְּ֭נִי | dehi
+   BN/ -.sg.m +J | Proverbs 5:1 | בְּ֭נִי | dehi
+   BN/ -.sg.m +J | Proverbs 6:1 | בְּ֭נִי | dehi
+   BN/ -.sg.m +J | Proverbs 6:3 | בְּנִ֡י | pazer
+   BN/ -.sg.m +J | Proverbs 6:20 | בְּ֭נִי | dehi
+   BN/ -.sg.m +J | Proverbs 7:1 | בְּ֭נִי | dehi
+   BN/ -.sg.m +J | Proverbs 19:27 | בְּ֭נִי | dehi
+   BN/ -.sg.m +J | Proverbs 23:15 | בְּ֭נִי | dehi
+   BN/ -.sg.m +J | Proverbs 24:13 | בְּנִ֣י | munah
+   BN/ -.sg.m +J | Proverbs 24:21 | בְּנִ֣י | munah
+   BN/ -.sg.m +J | Proverbs 27:11 | בְּ֭נִי | dehi
+   BN/ -.sg.m +J | Ecclesiastes 12:12 | בְּנִ֣י | munah
+
+A61: 20 atoms; analyses {'L + R<=/ -.sg.m +HW': 19, 'L + R<=/ -.pl.m +HW': 1}
+   L + R<=/ -.sg.m +HW | Exodus 18:7 | לְרֵעֵ֖הוּ | tipeha
+   L + R<=/ -.sg.m +HW | Exodus 22:8 | לְרֵעֵֽהוּ | meteg
+   L + R<=/ -.sg.m +HW | Deuteronomy 19:11 | לְרֵעֵ֔הוּ | zaqef qatan
+   L + R<=/ -.sg.m +HW | Judges 7:13 | לְרֵעֵ֖הוּ | tipeha
+   L + R<=/ -.pl.m +HW | 1 Samuel 30:26 | לְרֵעֵ֣הוּ | munah
+   L + R<=/ -.sg.m +HW | 1 Kings 8:31 | לְרֵעֵ֔הוּ | zaqef qatan
+   L + R<=/ -.sg.m +HW | Jeremiah 23:27 | לְרֵעֵ֑הוּ | etnahta
+   L + R<=/ -.sg.m +HW | Jeremiah 34:15 | לְרֵעֵ֑הוּ | etnahta
+   L + R<=/ -.sg.m +HW | Jeremiah 34:17 | לְרֵעֵ֑הוּ | etnahta
+   L + R<=/ -.sg.m +HW | Zechariah 3:10 | לְרֵעֵ֑הוּ | etnahta
+   L + R<=/ -.sg.m +HW | Psalms 15:3 | לְרֵעֵ֣הוּ | munah
+   L + R<=/ -.sg.m +HW | Job 12:4 | לְרֵעֵ֨הוּ | qadma
+   L + R<=/ -.sg.m +HW | Job 16:21 | לְרֵעֵֽהוּ | meteg
+   L + R<=/ -.sg.m +HW | Proverbs 11:12 | לְרֵעֵ֥הוּ | merkha
+   L + R<=/ -.sg.m +HW | Proverbs 14:20 | לְ֭רֵעֵהוּ | dehi
+   L + R<=/ -.sg.m +HW | Proverbs 14:21 | לְרֵעֵ֥הוּ | merkha
+   L + R<=/ -.sg.m +HW | Ruth 4:7 | לְרֵעֵ֑הוּ | etnahta
+   L + R<=/ -.sg.m +HW | Esther 9:19 | לְרֵעֵֽהוּ | meteg
+   L + R<=/ -.sg.m +HW | Esther 9:22 | לְרֵעֵ֔הוּ | zaqef qatan
+   L + R<=/ -.sg.m +HW | 2 Chronicles 6:22 | לְרֵעֵ֔הוּ | zaqef qatan
+
+A63: 28 atoms; analyses {'JD/ -.sg.? +K': 26, 'JD/ -.du.? +K': 2}
+   JD/ -.sg.? +K | Deuteronomy 2:7 | יָדֶ֔ךָ | zaqef qatan
+   JD/ -.sg.? +K | Deuteronomy 6:8 | יָדֶ֑ךָ | etnahta
+   JD/ -.sg.? +K | Deuteronomy 12:17 | יָדֶֽךָ | meteg
+   JD/ -.sg.? +K | Deuteronomy 12:18 | יָדֶֽךָ | meteg
+   JD/ -.sg.? +K | Deuteronomy 15:3 | יָדֶֽךָ | meteg
+   JD/ -.sg.? +K | Deuteronomy 15:10 | יָדֶֽךָ | meteg
+   JD/ -.sg.? +K | Deuteronomy 23:21 | יָדֶ֔ךָ | zaqef qatan
+   JD/ -.sg.? +K | Deuteronomy 28:8 | יָדֶ֑ךָ | etnahta
+   JD/ -.sg.? +K | Deuteronomy 28:12 | יָדֶ֑ךָ | etnahta
+   JD/ -.sg.? +K | Deuteronomy 28:32 | יָדֶֽךָ | meteg
+   JD/ -.sg.? +K | Deuteronomy 30:9 | יָדֶ֗ךָ | revia
+   JD/ -.sg.? +K | Judges 9:33 | יָדֶֽךָ | meteg
+   JD/ -.sg.? +K | 1 Samuel 10:7 | יָדֶ֔ךָ | zaqef qatan
+   JD/ -.sg.? +K | 1 Samuel 14:19 | יָדֶֽךָ | meteg
+   JD/ -.du.? +K | 2 Samuel 3:34 | יָדֶ֣ךָ | munah
+   JD/ -.sg.? +K | 2 Samuel 24:16 | יָדֶ֑ךָ | etnahta
+   JD/ -.sg.? +K | 2 Kings 10:15 | יָדֶ֑ךָ | etnahta
+   JD/ -.sg.? +K | Isaiah 3:6 | יָדֶֽךָ | meteg
+   JD/ -.du.? +K | Jeremiah 40:4 | יָדֶךָ֒ | segol
+   JD/ -.sg.? +K | Psalms 10:12 | יָדֶ֑ךָ | etnahta
+   JD/ -.sg.? +K | Psalms 32:4 | יָ֫דֶ֥ךָ | ole, merkha
+   JD/ -.sg.? +K | Psalms 38:3 | יָדֶֽךָ | meteg
+   JD/ -.sg.? +K | Psalms 138:7 | יָדֶ֑ךָ | etnahta
+   JD/ -.sg.? +K | Psalms 145:16 | יָדֶ֑ךָ | etnahta
+   JD/ -.sg.? +K | Job 1:12 | יָדֶ֑ךָ | etnahta
+   JD/ -.sg.? +K | Ecclesiastes 7:18 | יָדֶ֑ךָ | etnahta
+   JD/ -.sg.? +K | Ecclesiastes 11:6 | יָדֶ֑ךָ | etnahta
+   JD/ -.sg.? +K | 1 Chronicles 21:15 | יָדֶ֑ךָ | etnahta
+
+A175: 83 atoms; analyses {'R<=/ -.sg.m +HW': 82, 'R<=/ -.pl.m +HW': 1}
+   R<=/ -.sg.m +HW | Genesis 11:3 | רֵעֵ֗הוּ | revia
+   R<=/ -.sg.m +HW | Genesis 11:7 | רֵעֵֽהוּ | meteg
+   R<=/ -.sg.m +HW | Genesis 15:10 | רֵעֵ֑הוּ | etnahta
+   R<=/ -.sg.m +HW | Genesis 38:12 | רֵעֵ֥הוּ | merkha
+   R<=/ -.sg.m +HW | Genesis 38:20 | רֵעֵ֣הוּ | munah
+   R<=/ -.sg.m +HW | Genesis 43:33 | רֵעֵֽהוּ | meteg
+   R<=/ -.sg.m +HW | Exodus 11:2 | רֵעֵ֗הוּ | revia
+   R<=/ -.sg.m +HW | Exodus 18:16 | רֵעֵ֑הוּ | etnahta
+   R<=/ -.sg.m +HW | Exodus 21:14 | רֵעֵ֖הוּ | tipeha
+   R<=/ -.sg.m +HW | Exodus 21:18 | רֵעֵ֔הוּ | zaqef qatan
+   R<=/ -.sg.m +HW | Exodus 21:35 | רֵעֵ֖הוּ | tipeha
+   R<=/ -.sg.m +HW | Exodus 22:6 | רֵעֵ֜הוּ | geresh
+   R<=/ -.sg.m +HW | Exodus 22:7 | רֵעֵֽהוּ | meteg
+   R<=/ -.sg.m +HW | Exodus 22:9 | רֵעֵ֜הוּ | geresh
+   R<=/ -.sg.m +HW | Exodus 22:10 | רֵעֵ֑הוּ | etnahta
+   R<=/ -.sg.m +HW | Exodus 22:13 | רֵעֵ֖הוּ | tipeha
+   R<=/ -.sg.m +HW | Exodus 32:27 | רֵעֵ֖הוּ | tipeha
+   R<=/ -.sg.m +HW | Exodus 33:11 | רֵעֵ֑הוּ | etnahta
+   R<=/ -.sg.m +HW | Leviticus 20:10 | רֵעֵ֑הוּ | etnahta
+   R<=/ -.sg.m +HW | Deuteronomy 4:42 | רֵעֵ֨הוּ֙ | qadma, pashta
+   R<=/ -.sg.m +HW | Deuteronomy 15:2 | רֵעֵ֨הוּ֙ | qadma, pashta
+   R<=/ -.sg.m +HW | Deuteronomy 19:4 | רֵעֵ֨הוּ֙ | qadma, pashta
+   R<=/ -.sg.m +HW | Deuteronomy 19:5 | רֵעֵ֥הוּ | merkha
+   R<=/ -.sg.m +HW | Deuteronomy 19:5 | רֵעֵ֖הוּ | tipeha
+   R<=/ -.sg.m +HW | Deuteronomy 22:24 | רֵעֵ֑הוּ | etnahta
+   R<=/ -.sg.m +HW | Deuteronomy 22:26 | רֵעֵ֨הוּ֙ | qadma, pashta
+   R<=/ -.sg.m +HW | Deuteronomy 27:17 | רֵעֵ֑הוּ | etnahta
+   R<=/ -.sg.m +HW | Deuteronomy 27:24 | רֵעֵ֖הוּ | tipeha
+   R<=/ -.sg.m +HW | Joshua 20:5 | רֵעֵ֔הוּ | zaqef qatan
+   R<=/ -.sg.m +HW | Judges 6:29 | רֵעֵ֔הוּ | zaqef qatan
+   R<=/ -.sg.m +HW | Judges 7:14 | רֵעֵ֤הוּ | mahapakh
+   R<=/ -.sg.m +HW | Judges 10:18 | רֵעֵ֔הוּ | zaqef qatan
+   R<=/ -.sg.m +HW | 1 Samuel 10:11 | רֵעֵ֗הוּ | revia
+   R<=/ -.sg.m +HW | 1 Samuel 20:41 | רֵעֵ֗הוּ | revia
+   R<=/ -.sg.m +HW | 1 Samuel 20:41 | רֵעֵ֔הוּ | zaqef qatan
+   R<=/ -.sg.m +HW | 2 Samuel 2:16 | רֵעֵ֗הוּ | revia
+   R<=/ -.sg.m +HW | 2 Samuel 2:16 | רֵעֵ֔הוּ | zaqef qatan
+   R<=/ -.sg.m +HW | 1 Kings 20:35 | רֵעֵ֛הוּ | tevir
+   R<=/ -.sg.m +HW | 2 Kings 3:23 | רֵעֵ֑הוּ | etnahta
+   R<=/ -.sg.m +HW | 2 Kings 7:3 | רֵעֵ֔הוּ | zaqef qatan
+   R<=/ -.sg.m +HW | 2 Kings 7:9 | רֵעֵ֜הוּ | geresh
+   R<=/ -.sg.m +HW | Isaiah 13:8 | רֵעֵ֨הוּ֙ | qadma, pashta
+   R<=/ -.sg.m +HW | Isaiah 34:14 | רֵעֵ֣הוּ | munah
+   R<=/ -.sg.m +HW | Isaiah 41:6 | רֵעֵ֖הוּ | tipeha
+   R<=/ -.sg.m +HW | Jeremiah 5:8 | רֵעֵ֖הוּ | tipeha
+   R<=/ -.sg.m +HW | Jeremiah 7:5 | רֵעֵֽהוּ | meteg
+   R<=/ -.sg.m +HW | Jeremiah 9:7 | רֵעֵ֨הוּ֙ | qadma, pashta
+   R<=/ -.sg.m +HW | Jeremiah 19:9 | רֵעֵ֖הוּ | tipeha
+   R<=/ -.sg.m +HW | Jeremiah 22:8 | רֵעֵ֔הוּ | zaqef qatan
+   R<=/ -.sg.m +HW | Jeremiah 23:30 | רֵעֵֽהוּ | meteg
+   R<=/ -.sg.m +HW | Jeremiah 23:35 | רֵעֵ֖הוּ | tipeha
+   R<=/ -.sg.m +HW | Jeremiah 31:34 | רֵעֵ֜הוּ | geresh
+   R<=/ -.sg.m +HW | Jeremiah 36:16 | רֵעֵ֑הוּ | etnahta
+   R<=/ -.sg.m +HW | Jeremiah 46:16 | רֵעֵ֗הוּ | revia
+   R<=/ -.sg.m +HW | Ezekiel 18:6 | רֵעֵ֨הוּ֙ | qadma, pashta
+   R<=/ -.sg.m +HW | Ezekiel 18:11 | רֵעֵ֖הוּ | tipeha
+   R<=/ -.sg.m +HW | Ezekiel 18:15 | רֵעֵ֖הוּ | tipeha
+   R<=/ -.sg.m +HW | Ezekiel 22:11 | רֵעֵ֗הוּ | revia
+   R<=/ -.sg.m +HW | Ezekiel 33:26 | רֵעֵ֖הוּ | tipeha
+   R<=/ -.sg.m +HW | Jonah 1:7 | רֵעֵ֗הוּ | revia
+   R<=/ -.sg.m +HW | Habakkuk 2:15 | רֵעֵ֔הוּ | zaqef qatan
+   R<=/ -.sg.m +HW | Zechariah 8:16 | רֵעֵ֔הוּ | zaqef qatan
+   R<=/ -.sg.m +HW | Zechariah 8:17 | רֵעֵ֗הוּ | revia
+   R<=/ -.sg.m +HW | Zechariah 11:6 | רֵעֵ֨הוּ֙ | qadma, pashta
+   R<=/ -.sg.m +HW | Zechariah 14:13 | רֵעֵ֔הוּ | zaqef qatan
+   R<=/ -.sg.m +HW | Zechariah 14:13 | רֵעֵֽהוּ | meteg
+   R<=/ -.sg.m +HW | Malachi 3:16 | רֵעֵ֑הוּ | etnahta
+   R<=/ -.sg.m +HW | Psalms 12:3 | רֵ֫עֵ֥הוּ | ole, merkha
+   R<=/ -.sg.m +HW | Psalms 101:5 | רֵעֵהוּ֮ | zinor
+   R<=/ -.pl.m +HW | Job 42:10 | רֵעֵ֑הוּ | etnahta
+   R<=/ -.sg.m +HW | Proverbs 6:29 | רֵעֵ֑הוּ | etnahta
+   R<=/ -.sg.m +HW | Proverbs 11:9 | רֵעֵ֑הוּ | etnahta
+   R<=/ -.sg.m +HW | Proverbs 16:29 | רֵעֵ֑הוּ | etnahta
+   R<=/ -.sg.m +HW | Proverbs 17:18 | רֵעֵֽהוּ | meteg
+   R<=/ -.sg.m +HW | Proverbs 18:17 | רֵ֝עֵ֗הוּ | geresh muqdam, revia
+   R<=/ -.sg.m +HW | Proverbs 21:10 | רֵעֵֽהוּ | meteg
+   R<=/ -.sg.m +HW | Proverbs 22:11 | רֵעֵ֥הוּ | merkha
+   R<=/ -.sg.m +HW | Proverbs 26:19 | רֵעֵ֑הוּ | etnahta
+   R<=/ -.sg.m +HW | Proverbs 27:9 | רֵ֝עֵ֗הוּ | geresh muqdam, revia
+   R<=/ -.sg.m +HW | Proverbs 27:14 | רֵעֵ֨הוּ | qadma
+   R<=/ -.sg.m +HW | Proverbs 27:17 | רֵעֵֽהוּ | meteg
+   R<=/ -.sg.m +HW | Proverbs 29:5 | רֵעֵ֑הוּ | etnahta
+   R<=/ -.sg.m +HW | Ruth 3:14 | רֵעֵ֑הוּ | etnahta
+
+A186: 180 atoms; analyses {'<M/ -.sg.m +J': 178, '<MJ/ -.sg.m +n/a': 1, '<M/ -.sg.m': 1}
+   <M/ -.sg.m +J | Genesis 23:11 | עַמִּ֛י | tevir
+   <M/ -.sg.m +J | Genesis 41:40 | עַמִּ֑י | etnahta
+   <M/ -.sg.m +J | Genesis 49:29 | עַמִּ֔י | zaqef qatan
+   <M/ -.sg.m +J | Exodus 3:7 | עַמִּ֖י | tipeha
+   <M/ -.sg.m +J | Exodus 3:10 | עַמִּ֥י | merkha
+   <M/ -.sg.m +J | Exodus 5:1 | עַמִּ֔י | zaqef qatan
+   <M/ -.sg.m +J | Exodus 7:4 | עַמִּ֤י | mahapakh
+   <M/ -.sg.m +J | Exodus 7:16 | עַמִּ֔י | zaqef qatan
+   <M/ -.sg.m +J | Exodus 7:26 | עַמִּ֖י | tipeha
+   <M/ -.sg.m +J | Exodus 8:16 | עַמִּ֖י | tipeha
+   <M/ -.sg.m +J | Exodus 8:17 | עַמִּי֒ | segol
+   <M/ -.sg.m +J | Exodus 8:18 | עַמִּי֙ | pashta
+   <M/ -.sg.m +J | Exodus 8:19 | עַמִּ֖י | tipeha
+   <M/ -.sg.m +J | Exodus 9:1 | עַמִּ֖י | tipeha
+   <M/ -.sg.m +J | Exodus 9:13 | עַמִּ֖י | tipeha
+   <M/ -.sg.m +J | Exodus 10:3 | עַמִּ֖י | tipeha
+   <M/ -.sg.m +J | Exodus 10:4 | עַמִּ֑י | etnahta
+   <M/ -.sg.m +J | Exodus 12:31 | עַמִּ֔י | zaqef qatan
+   <M/ -.sg.m +J | Exodus 22:24 | עַמִּ֗י | revia
+   <M/ -.sg.m +J | Judges 14:3 | עַמִּי֙ | pashta
+   <M/ -.sg.m +J | Judges 14:16 | עַמִּ֔י | zaqef qatan
+   <M/ -.sg.m +J | 1 Samuel 5:10 | עַמִּֽי | meteg
+   <M/ -.sg.m +J | 1 Samuel 5:11 | עַמִּ֑י | etnahta
+   <M/ -.sg.m +J | 1 Samuel 9:16 | עַמִּ֣י | munah
+   <M/ -.sg.m +J | 1 Samuel 9:16 | עַמִּ֖י | tipeha
+   <M/ -.sg.m +J | 1 Samuel 9:16 | עַמִּ֔י | zaqef qatan
+   <M/ -.sg.m +J | 1 Samuel 15:30 | עַמִּ֖י | tipeha
+   <M/ -.sg.m +J | 2 Samuel 3:18 | עַמִּ֤י | mahapakh
+   <M/ -.sg.m +J | 2 Samuel 5:2 | עַמִּי֙ | pashta
+   <M/ -.sg.m +J | 2 Samuel 7:7 | עַמִּ֥י | merkha
+   <M/ -.sg.m +J | 2 Samuel 7:8 | עַמִּ֖י | tipeha
+   <M/ -.sg.m +J | 2 Samuel 7:11 | עַמִּ֣י | munah
+   <M/ -.sg.m +J | 2 Samuel 22:44 | עַמִּ֑י | etnahta
+   <M/ -.sg.m +J | 1 Kings 6:13 | עַמִּ֥י | merkha
+   <M/ -.sg.m +J | 1 Kings 8:16 | עַמִּ֣י | munah
+   <M/ -.sg.m +J | 1 Kings 8:16 | עַמִּ֥י | merkha
+   <M/ -.sg.m +J | 1 Kings 14:7 | עַמִּ֥י | merkha
+   <M/ -.sg.m +J | 1 Kings 16:2 | עַמִּ֣י | munah
+   <M/ -.sg.m +J | 1 Kings 16:2 | עַמִּ֣י | munah
+   <M/ -.sg.m +J | 2 Kings 4:13 | עַמִּ֖י | tipeha
+   <M/ -.sg.m +J | 2 Kings 20:5 | עַמִּ֗י | revia
+   <M/ -.sg.m +J | Isaiah 1:3 | עַמִּ֖י | tipeha
+   <M/ -.sg.m +J | Isaiah 3:12 | עַמִּי֙ | pashta
+   <M/ -.sg.m +J | Isaiah 3:12 | עַמִּי֙ | pashta
+   <M/ -.sg.m +J | Isaiah 3:15 | עַמִּ֔י | zaqef qatan
+   <M/ -.sg.m +J | Isaiah 5:13 | עַמִּ֖י | tipeha
+   <M/ -.sg.m +J | Isaiah 10:2 | עַמִּ֑י | etnahta
+   <M/ -.sg.m +J | Isaiah 10:24 | עַמִּ֛י | tevir
+   <M/ -.sg.m +J | Isaiah 19:25 | עַמִּ֜י | geresh
+   <M/ -.sg.m +J | Isaiah 22:4 | עַמִּֽי | meteg
+   <M/ -.sg.m +J | Isaiah 26:20 | עַמִּי֙ | pashta
+   <M/ -.sg.m +J | Isaiah 32:13 | עַמִּ֔י | zaqef qatan
+   <M/ -.sg.m +J | Isaiah 32:18 | עַמִּ֖י | tipeha
+   <M/ -.sg.m +J | Isaiah 40:1 | עַמִּ֑י | etnahta
+   <M/ -.sg.m +J | Isaiah 43:20 | עַמִּ֥י | merkha
+   <M/ -.sg.m +J | Isaiah 47:6 | עַמִּ֗י | revia
+   <M/ -.sg.m +J | Isaiah 51:4 | עַמִּ֔י | zaqef qatan
+   <M/ -.sg.m +J | Isaiah 51:16 | עַמִּי־ | -
+   <M/ -.sg.m +J | Isaiah 52:4 | עַמִּ֥י | merkha
+   <M/ -.sg.m +J | Isaiah 52:5 | עַמִּ֖י | tipeha
+   <M/ -.sg.m +J | Isaiah 52:6 | עַמִּ֖י | tipeha
+   <M/ -.sg.m +J | Isaiah 53:8 | עַמִּ֖י | tipeha
+   <M/ -.sg.m +J | Isaiah 57:14 | עַמִּֽי | meteg
+   <M/ -.sg.m +J | Isaiah 63:8 | עַמִּ֣י | munah
+   <M/ -.sg.m +J | Isaiah 65:22 | עַמִּ֔י | zaqef qatan
+   <M/ -.sg.m +J | Jeremiah 2:13 | עַמִּ֑י | etnahta
+   <M/ -.sg.m +J | Jeremiah 2:31 | עַמִּי֙ | pashta
+   <M/ -.sg.m +J | Jeremiah 4:11 | עַמִּ֑י | etnahta
+   <M/ -.sg.m +J | Jeremiah 4:22 | עַמִּ֗י | revia
+   <M/ -.sg.m +J | Jeremiah 6:14 | עַמִּי֙ | pashta
+   <M/ -.sg.m +J | Jeremiah 6:26 | עַמִּ֤י | mahapakh
+   <M/ -.sg.m +J | Jeremiah 7:12 | עַמִּ֥י | merkha
+   <M/ -.sg.m +J | Jeremiah 8:11 | עַמִּי֙ | pashta
+   <M/ -.sg.m +J | Jeremiah 8:19 | עַמִּ֗י | revia
+   <M/ -.sg.m +J | Jeremiah 8:21 | עַמִּ֖י | tipeha
+   <M/ -.sg.m +J | Jeremiah 8:22 | עַמִּֽי | meteg
+   <M/ -.sg.m +J | Jeremiah 8:23 | עַמִּֽי | meteg
+   <M/ -.sg.m +J | Jeremiah 9:1 | עַמִּ֔י | zaqef qatan
+   <M/ -.sg.m +J | Jeremiah 9:6 | עַמִּֽי | meteg
+   <M/ -.sg.m +J | Jeremiah 12:14 | עַמִּ֖י | tipeha
+   <M/ -.sg.m +J | Jeremiah 12:16 | עַמִּ֜י | geresh
+   <M/ -.sg.m +J | Jeremiah 12:16 | עַמִּ֔י | zaqef qatan
+   <M/ -.sg.m +J | Jeremiah 12:16 | עַמִּֽי | meteg
+   <M/ -.sg.m +J | Jeremiah 14:17 | עַמִּ֔י | zaqef qatan
+   <M/ -.sg.m +J | Jeremiah 15:7 | עַמִּ֔י | zaqef qatan
+   <M/ -.sg.m +J | Jeremiah 18:15 | עַמִּ֖י | tipeha
+   <M/ -.sg.m +J | Jeremiah 23:2 | עַמִּי֒ | segol
+   <M/ -.sg.m +J | Jeremiah 23:13 | עַמִּ֖י | tipeha
+   <M/ -.sg.m +J | Jeremiah 23:22 | עַמִּ֔י | zaqef qatan
+   <M/ -.sg.m +J | Jeremiah 23:27 | עַמִּי֙ | pashta
+   <M/ -.sg.m +J | Jeremiah 23:32 | עַמִּ֔י | zaqef qatan
+   <M/ -.sg.m +J | Jeremiah 30:3 | עַמִּ֧י | darga
+   <M/ -.sg.m +J | Jeremiah 33:24 | עַמִּי֙ | pashta
+   <M/ -.sg.m +J | Jeremiah 50:6 | עַמִּ֔י | zaqef qatan
+   <M/ -.sg.m +J | Jeremiah 51:45 | עַמִּ֔י | zaqef qatan
+   <M/ -.sg.m +J | Ezekiel 13:9 | עַמִּ֣י | munah
+   <M/ -.sg.m +J | Ezekiel 13:10 | עַמִּ֛י | tevir
+   <M/ -.sg.m +J | Ezekiel 13:19 | עַמִּ֗י | revia
+   <M/ -.sg.m +J | Ezekiel 13:21 | עַמִּי֙ | pashta
+   <M/ -.sg.m +J | Ezekiel 13:23 | עַמִּי֙ | pashta
+   <M/ -.sg.m +J | Ezekiel 14:8 | עַמִּ֑י | etnahta
+   <M/ -.sg.m +J | Ezekiel 14:9 | עַמִּ֥י | merkha
+   <M/ -.sg.m +J | Ezekiel 21:17 | עַמִּ֔י | zaqef qatan
+   <M/ -.sg.m +J | Ezekiel 25:14 | עַמִּ֣י | munah
+   <M/ -.sg.m +J | Ezekiel 33:31 | עַמִּ֔י | zaqef qatan
+   <M/ -.sg.m +J | Ezekiel 34:30 | עַמִּי֙ | pashta
+   <M/ -.sg.m +J | Ezekiel 36:12 | עַמִּ֤י | mahapakh
+   <M/ -.sg.m +J | Ezekiel 37:12 | עַמִּ֑י | etnahta
+   <M/ -.sg.m +J | Ezekiel 37:13 | עַמִּֽי | meteg
+   <M/ -.sg.m +J | Ezekiel 38:14 | עַמִּ֧י | darga
+   <M/ -.sg.m +J | Ezekiel 38:16 | עַמִּ֣י | munah
+   <M/ -.sg.m +J | Ezekiel 39:7 | עַמִּ֣י | munah
+   <M/ -.sg.m +J | Ezekiel 44:23 | עַמִּ֣י | munah
+   <M/ -.sg.m +J | Ezekiel 45:8 | עַמִּ֔י | zaqef qatan
+   <M/ -.sg.m +J | Ezekiel 45:9 | עַמִּ֔י | zaqef qatan
+   <M/ -.sg.m +J | Ezekiel 46:18 | עַמִּ֔י | zaqef qatan
+   <M/ -.sg.m +J | Hosea 1:9 | עַמִּ֔י | zaqef qatan
+   <M/ -.sg.m +J | Hosea 2:1 | עַמִּ֣י | munah
+   <MJ/ -.sg.m +n/a | Hosea 2:3 | עַמִּ֑י | etnahta
+   <M/ -.sg.m +J | Hosea 2:25 | עַמִּי־ | -
+   <M/ -.sg.m +J | Hosea 4:6 | עַמִּ֖י | tipeha
+   <M/ -.sg.m +J | Hosea 4:8 | עַמִּ֖י | tipeha
+   <M/ -.sg.m +J | Hosea 4:12 | עַמִּי֙ | pashta
+   <M/ -.sg.m +J | Hosea 6:11 | עַמִּֽי | meteg
+   <M/ -.sg.m +J | Joel 2:26 | עַמִּ֖י | tipeha
+   <M/ -.sg.m +J | Joel 2:27 | עַמִּ֖י | tipeha
+   <M/ -.sg.m +J | Joel 4:2 | עַמִּ֨י | qadma
+   <M/ -.sg.m +J | Joel 4:3 | עַמִּ֖י | tipeha
+   <M/ -.sg.m +J | Amos 7:8 | עַמִּ֣י | munah
+   <M/ -.sg.m +J | Amos 7:15 | עַמִּ֥י | merkha
+   <M/ -.sg.m +J | Amos 8:2 | עַמִּ֣י | munah
+   <M/ -.sg.m +J | Amos 9:10 | עַמִּ֑י | etnahta
+   <M/ -.sg.m +J | Amos 9:14 | עַמִּ֣י | munah
+   <M/ -.sg.m +J | Obadiah 1:13 | עַמִּי֙ | pashta
+   <M/ -.sg.m +J | Micah 1:9 | עַמִּ֖י | tipeha
+   <M/ -.sg.m +J | Micah 2:4 | עַמִּ֖י | tipeha
+   <M/ -.sg.m +J | Micah 2:8 | עַמִּי֙ | pashta
+   <M/ -.sg.m +J | Micah 2:9 | עַמִּי֙ | pashta
+   <M/ -.sg.m +J | Micah 3:3 | עַמִּי֒ | segol
+   <M/ -.sg.m +J | Micah 3:5 | עַמִּ֑י | etnahta
+   <M/ -.sg.m +J | Micah 6:3 | עַמִּ֛י | tevir
+   <M/ -.sg.m +J | Micah 6:5 | עַמִּ֗י | revia
+   <M/ -.sg.m +J | Micah 6:16 | עַמִּ֖י | tipeha
+   <M/ -.sg.m +J | Zephaniah 2:8 | עַמִּ֔י | zaqef qatan
+   <M/ -.sg.m +J | Zephaniah 2:9 | עַמִּי֙ | pashta
+   <M/ -.sg.m +J | Zechariah 8:7 | עַמִּ֖י | tipeha
+   <M/ -.sg.m +J | Zechariah 13:9 | עַמִּ֣י | munah
+   <M/ -.sg.m +J | Psalms 14:4 | עַ֭מִּי | dehi
+   <M/ -.sg.m +J | Psalms 50:7 | עַמִּ֨י | qadma
+   <M/ -.sg.m +J | Psalms 53:5 | עַ֭מִּי | dehi
+   <M/ -.sg.m +J | Psalms 59:12 | עַמִּ֗י | revia
+   <M/ -.sg.m +J | Psalms 78:1 | עַ֭מִּי | dehi
+   <M/ -.sg.m +J | Psalms 81:9 | עַ֭מִּי | dehi
+   <M/ -.sg.m +J | Psalms 81:12 | עַמִּ֣י | munah
+   <M/ -.sg.m +J | Psalms 81:14 | עַ֭מִּי | dehi
+   <M/ -.sg.m +J | Psalms 144:2 | עַמִּ֣י | munah
+   <M/ -.sg.m +J | Ruth 1:16 | עַמִּ֔י | zaqef qatan
+   <M/ -.sg.m +J | Ruth 3:11 | עַמִּ֔י | zaqef qatan
+   <M/ -.sg.m +J | Ruth 4:4 | עַמִּי֒ | segol
+   <M/ -.sg.m | Song of Songs 6:12 | עַמִּי־ | -
+   <M/ -.sg.m +J | Lamentations 2:11 | עַמִּ֑י | etnahta
+   <M/ -.sg.m +J | Lamentations 3:14 | עַמִּ֔י | zaqef qatan
+   <M/ -.sg.m +J | Lamentations 3:48 | עַמִּֽי | meteg
+   <M/ -.sg.m +J | Lamentations 4:3 | עַמִּ֣י | munah
+   <M/ -.sg.m +J | Lamentations 4:6 | עַמִּ֔י | zaqef qatan
+   <M/ -.sg.m +J | Lamentations 4:10 | עַמִּֽי | meteg
+   <M/ -.sg.m +J | Esther 8:6 | עַמִּ֑י | etnahta
+   <M/ -.sg.m +J | Daniel 9:20 | עַמִּ֣י | munah
+   <M/ -.sg.m +J | 1 Chronicles 11:2 | עַמִּי֙ | pashta
+   <M/ -.sg.m +J | 1 Chronicles 11:2 | עַמִּ֥י | merkha
+   <M/ -.sg.m +J | 1 Chronicles 17:6 | עַמִּ֖י | tipeha
+   <M/ -.sg.m +J | 1 Chronicles 17:7 | עַמִּ֥י | merkha
+   <M/ -.sg.m +J | 1 Chronicles 17:10 | עַמִּ֣י | munah
+   <M/ -.sg.m +J | 1 Chronicles 29:14 | עַמִּ֔י | zaqef qatan
+   <M/ -.sg.m +J | 2 Chronicles 1:11 | עַמִּ֔י | zaqef qatan
+   <M/ -.sg.m +J | 2 Chronicles 6:5 | עַמִּי֮ | zinor
+   <M/ -.sg.m +J | 2 Chronicles 6:5 | עַמִּ֥י | merkha
+   <M/ -.sg.m +J | 2 Chronicles 6:6 | עַמִּ֥י | merkha
+   <M/ -.sg.m +J | 2 Chronicles 7:14 | עַמִּ֜י | geresh
+   <M/ -.sg.m +J | 2 Chronicles 18:3 | עַמִּ֔י | zaqef qatan
+
+A111: 15 atoms; analyses {'K + PH/ -.sg.m': 14, 'K + PH/ -.sg.m +J': 1}
+   K + PH/ -.sg.m | Exodus 16:21 | כְּפִ֣י | munah
+   K + PH/ -.sg.m | Exodus 28:32 | כְּפִ֥י | merkha
+   K + PH/ -.sg.m | Exodus 39:23 | כְּפִ֣י | munah
+   K + PH/ -.sg.m | Leviticus 25:52 | כְּפִ֣י | munah
+   K + PH/ -.sg.m | Numbers 6:21 | כְּפִ֤י | mahapakh
+   K + PH/ -.sg.m | Numbers 7:5 | כְּפִ֥י | merkha
+   K + PH/ -.sg.m | Numbers 7:7 | כְּפִ֖י | tipeha
+   K + PH/ -.sg.m | Numbers 7:8 | כְּפִי֙ | pashta
+   K + PH/ -.sg.m | Numbers 35:8 | כְּפִ֤י | mahapakh
+   K + PH/ -.sg.m +J | Jeremiah 15:19 | כְּפִ֣י | munah
+   K + PH/ -.sg.m | Zechariah 2:4 | כְּפִי־ | -
+   K + PH/ -.sg.m | Malachi 2:9 | כְּפִ֗י | revia
+   K + PH/ -.sg.m | Job 30:18 | כְּפִ֖י | tipeha
+   K + PH/ -.sg.m | 1 Chronicles 12:24 | כְּפִ֥י | merkha
+   K + PH/ -.sg.m | 2 Chronicles 31:2 | כְּפִ֣י | munah
+
+A139: 23 atoms; analyses {'BLT/ -.sg.?': 22, 'BLT/ -.sg.? +J': 1}
+   BLT/ -.sg.? | Genesis 21:26 | בִּלְתִּ֥י | merkha
+   BLT/ -.sg.? | Genesis 43:3 | בִּלְתִּ֖י | tipeha
+   BLT/ -.sg.? | Genesis 43:5 | בִּלְתִּ֖י | tipeha
+   BLT/ -.sg.? | Genesis 47:18 | בִּלְתִּ֥י | merkha
+   BLT/ -.sg.? | Exodus 22:19 | בִּלְתִּ֥י | merkha
+   BLT/ -.sg.? | Numbers 11:6 | בִּלְתִּ֖י | tipeha
+   BLT/ -.sg.? | Numbers 21:35 | בִּלְתִּ֥י | merkha
+   BLT/ -.sg.? | Numbers 32:12 | בִּלְתִּ֞י | gershayim
+   BLT/ -.sg.? | Deuteronomy 3:3 | בִּלְתִּ֥י | merkha
+   BLT/ -.sg.? | Joshua 8:22 | בִּלְתִּ֥י | merkha
+   BLT/ -.sg.? | Joshua 10:33 | בִּלְתִּ֥י | merkha
+   BLT/ -.sg.? | Joshua 11:8 | בִּלְתִּ֥י | merkha
+   BLT/ -.sg.? | Joshua 11:19 | בִּלְתִּ֥י | merkha
+   BLT/ -.sg.? | Judges 7:14 | בִּלְתִּ֗י | revia
+   BLT/ -.sg.? | 1 Samuel 20:26 | בִּלְתִּ֥י | merkha
+   BLT/ -.sg.? | 2 Kings 10:11 | בִּלְתִּ֥י | merkha
+   BLT/ -.sg.? | Isaiah 10:4 | בִּלְתִּ֤י | mahapakh
+   BLT/ -.sg.? | Isaiah 14:6 | בִּלְתִּ֣י | munah
+   BLT/ -.sg.? +J | Hosea 13:4 | בִּלְתִּֽי | meteg
+   BLT/ -.sg.? | Amos 3:3 | בִּלְתִּ֖י | tipeha
+   BLT/ -.sg.? | Amos 3:4 | בִּלְתִּ֖י | tipeha
+   BLT/ -.sg.? | Job 14:12 | בִּלְתִּ֣י | munah
+   BLT/ -.sg.? | Daniel 11:18 | בִּלְתִּ֥י | merkha
+
+2. BHSA words with lexeme R<=/, number pl, suffix HW or W
+   1 Samuel 30:26 | רֵעֵהוּ | prs HW
+   1 Kings 16:11 | רֵעֵהוּ | prs HW
+   Job 32:3 | רֵעָיו | prs W
+   Job 42:10 | רֵעֵהוּ | prs HW
+
+3. Job 33:28: the BHSA's slots with a qere
+   slot 344311 | g_word_utf8 נפשׁי | qere_utf8 נַפְשֹׁו | kq_hybrid_utf8 נַפְשֹׁי | NPC/ -.sg.f +W
+   slot 344317 | g_word_utf8 ו | qere_utf8 וְ | kq_hybrid_utf8 וְ | W
+   slot 344318 | g_word_utf8 חיתי | qere_utf8 חַיָּתֹו | kq_hybrid_utf8 חַיָּתֹי | XJH==/ -.sg.f +W
+   MAM-simple, ketiv side: פָּדָה נפשי מֵעֲבֹר בַּשָּׁחַת וחיתי בָּאוֹר תִּרְאֶה
+   MAM-simple, qere side: פָּדָה נַפְשׁוֹ מֵעֲבֹר בַּשָּׁחַת וְחַיָּתוֹ בָּאוֹר תִּרְאֶה
+
+4. Test A's segmentation groups: the BHSA's slots, MAM-simple's verse and WLC 4.18's verse
+   Deuteronomy 25:7
+      slot 106915 | וְ | W:- | W
+      slot 106916 | אִם | >IM | >M
+      slot 106917 | לֹא | LO70> | L>
+      slot 106918 | יַחְפֹּץ | JAX:P.OY03 | XPY[ qal impf p3.sg.m
+      slot 106919 | הָ | H@- | H
+      slot 106920 | אִישׁ | >I80JC | >JC/ -.sg.m
+      slot 106921 | לָ | L@- | L
+      slot 106922 | קַחַת | QA73XAT | LQX[ qal infc ?.?.?
+      slot 106923 | אֶת | >ET | >T
+      slot 106924 | יְבִמְתֹּו | J:BIM:T.O92W | JBMT/ -.sg.f +W
+      slot 106925 | וְ | W:- | W
+      slot 106926 | עָלְתָה | <@L:T@H04 | <LH[ qal perf p3.sg.f
+      slot 106927 | יְבִמְתֹּו | J:BIM:T.O63W | JBMT/ -.sg.f +W
+      slot 106928 | הַ | HA- | H
+      slot 106929 | שַּׁעְרָה | C.A61<:R@H | C<R/ -.sg.m
+      slot 106930 | אֶל | >EL | >L
+      slot 106931 | הַ | HA- | H
+      slot 106932 | זְּקֵנִים | Z.:Q;NI81JM | ZQN/ -.pl.m
+      slot 106933 | וְ | W:- | W
+      slot 106934 | אָמְרָה | >@45M:R@H03 | >MR[ qal perf p3.sg.f
+      slot 106935 | מֵאֵין | M;>;63JN | M>N[ piel perf p3.sg.m
+      slot 106936 | יְבָמִי | J:B@MI61J | JBM/ -.sg.m +J
+      slot 106937 | לְ | L:- | L
+      slot 106938 | הָקִים | H@QI63JM | QWM[ hif infc ?.?.?
+      slot 106939 | לְ | L:- | L
+      slot 106940 | אָחִיו | >@XI71JW | >X/ -.sg.m +W
+      slot 106941 | שֵׁם | C;M03 | CM/ -.sg.m
+      slot 106942 | בְּ | B.:- | B
+      slot 106943 | יִשְׂרָאֵל | JIF:R@>;80L | JFR>L/ -.sg.? +n/a
+      slot 106944 | לֹא | LO71> | L>
+      slot 106945 | אָבָה | >@B@73H | >BH[ qal perf p3.sg.m
+      slot 106946 | יַבְּמִי | JAB.:MI75J | JBM[ piel infc ?.?.? +J
+      MAM-simple: וְאִם־ לֹא יַחְפֹּץ הָאִישׁ לָקַחַת אֶת־ יְבִמְתּוֹ וְעָלְתָה יְבִמְתּוֹ הַשַּׁעְרָה אֶל־ הַזְּקֵנִים וְאָמְרָה מֵאֵן יְבָמִי לְהָקִים לְאָחִיו שֵׁם בְּיִשְׂרָאֵל לֹא אָבָה יַבְּמִי
+      WLC 4.18: וְאִם־ לֹא יַחְפֹּץ הָאִישׁ לָקַחַת אֶת־ יְבִמְתּוֹ וְעָלְתָה יְבִמְתּוֹ הַשַּׁעְרָה אֶל־ הַזְּקֵנִים וְאָמְרָה מֵאֵין יְבָמִי לְהָקִים לְאָחִיו שֵׁם בְּיִשְׂרָאֵל לֹא אָבָה יַבְּמִי
+   Psalms 73:20
+      slot 322703 | כַּ | K.A- | K
+      slot 322704 | חֲלֹום | X:ALO71WM | XLWM/ -.sg.m
+      slot 322705 | מֵ | M;- | MN
+      slot 322706 | הָקִיץ | H@QI92JY | QJY[ hif infc ?.?.?
+      slot 322707 | אֲדֹנָי | 11>:ADON@J | >DNJ/ -.sg.m +n/a
+      slot 322708 | בָּ | B.@- | B
+      slot 322709 | עִיר | <I70JR | <WR[ hif infc ?.?.?
+      slot 322710 | צַלְמָם | YAL:M@64M | YLM/ -.sg.m +M
+      slot 322711 | תִּבְזֶה | T.IB:ZE75H | BZH[ qal impf p2.sg.m
+      MAM-simple: כַּחֲלוֹם מֵהָקִיץ אֲדֹנָי בָּעִיר צַלְמָם תִּבְזֶה
+      WLC 4.18: כַּחֲלוֹם מֵהָקִיץ אֲדֹנָי בָּעִיר צַלְמָם תִּבְזֶה
+   Ezra 3:10
+      slot 379379 | וְ | W:- | W
+      slot 379380 | יִסְּדוּ | JIS.:D71W. | JSD[ piel perf p3.pl.?
+      slot 379381 | הַ | HA- | H
+      slot 379382 | בֹּנִים | B.ONI73JM | BNH[ qal ptca ?.pl.m
+      slot 379383 | אֶת | >ET | >T
+      slot 379384 | הֵיכַל | H;JKA74L | HJKL/ -.sg.m
+      slot 379385 | יְהוָה | J:HW@92H | JHWH/ -.sg.m +n/a
+      slot 379386 | וַ | WA- | W
+      slot 379387 | יַּעֲמִידוּ | J.A<:AMIJDW.04 | <MD[ hif wayq p3.pl.m
+      slot 379388 | הַ | HA- | H
+      slot 379389 | כֹּהֲנִים | K.OH:ANI63JM | KHN/ -.pl.m
+      slot 379390 | מְלֻבָּשִׁים | M:LUB.@CI61JM | LBC[ pual ptcp ?.pl.m
+      slot 379391 | בַּ | B.A- | B
+      slot 379392 |  | - | H
+      slot 379393 | חֲצֹצְרֹות | X:AYO45Y:RO81WT | XYYRH/ -.pl.f
+      slot 379394 | וְ | W:- | W
+      slot 379395 | הַ | HA- | H
+      slot 379396 | לְוִיִּם | L:WIJ.I70M | LWJ/ -.pl.m
+      slot 379397 | בְּנֵי | B.:N;45J | BN/ -.pl.m
+      slot 379398 | אָסָף | >@S@P03 | >SP==/ -.sg.m +n/a
+      slot 379399 | בַּ | B.A45- | B
+      slot 379400 |  | - | H
+      slot 379401 | מְצִלְתַּיִם | M:YIL:T.A80JIM | MYLTJM/ -.du.f
+      slot 379402 | לְ | L:- | L
+      slot 379403 | הַלֵּל | HAL.;L03 | HLL[ piel infc ?.?.?
+      slot 379404 | אֶת | >ET | >T
+      slot 379405 | יְהוָה | J:HW@80H | JHWH/ -.sg.m +n/a
+      slot 379406 | עַל | <AL | <L
+      slot 379407 | יְדֵי | J:D;73J | JD/ -.du.?
+      slot 379408 | דָּוִיד | D.@WI71JD | DWD==/ -.sg.m +n/a
+      slot 379409 | מֶלֶךְ | ME45LEK: | MLK/ -.sg.m
+      slot 379410 | יִשְׂרָאֵל | JIF:R@>;75L | JFR>L/ -.sg.? +n/a
+      MAM-simple: וְיִסְּדוּ הַבֹּנִים אֶת־ הֵיכַל יְהֹוָה וַיַּעֲמִידוּ הַכֹּהֲנִים מְלֻבָּשִׁים בַּחֲצֹצְרוֹת וְהַלְוִיִּם בְּנֵי־ אָסָף בַּמְצִלְתַּיִם לְהַלֵּל אֶת־ יְהֹוָה עַל־ יְדֵי דָּוִיד מֶלֶךְ־ יִשְׂרָאֵל
+      WLC 4.18: וְיִסְּדוּ הַבֹּנִים אֶת־ הֵיכַל יְהוָה וַיַּעֲמִידוּ הַכֹּהֲנִים מְלֻבָּשִׁים בַּחֲצֹצְרוֹת וְהַלְוִיִּם בְּנֵי־ אָסָף בַּמְצִלְתַּיִם לְהַלֵּל אֶת־ יְהוָה עַל־ יְדֵי דָּוִיד מֶלֶךְ־ יִשְׂרָאֵל
+   2 Chronicles 30:10
+      slot 422085 | וַ | WA- | W
+      slot 422086 | יִּהְיוּ | J.I45H:J63W. | HJH[ qal wayq p3.pl.m
+      slot 422087 | הָ | H@- | H
+      slot 422088 | רָצִים | R@YI61JM | RWY[ qal ptca ?.pl.m
+      slot 422089 | עֹבְרִים | <OB:RI63JM | <BR[ qal ptca ?.pl.m
+      slot 422090 | מֵ | M;- | MN
+      slot 422091 | עִיר | <I94JR | <JR/ -.sg.f
+      slot 422092 | לָ | L@- | L
+      slot 422093 | עִיר | <I91JR | <JR/ -.sg.f
+      slot 422094 | בְּ | B.:- | B
+      slot 422095 | אֶרֶץ | >E45REY | >RY/ -.sg.?
+      slot 422096 | אֶפְרַיִם | >EP:RA71JIM | >PRJM/ -.sg.? +n/a
+      slot 422097 | וּ | W.- | W
+      slot 422098 | מְנַשֶּׁה | M:NAC.E73H | MNCH/ -.sg.? +n/a
+      slot 422099 | וְ | W:- | W
+      slot 422100 | עַד | <AD | <D
+      slot 422101 | זְבֻלוּן | Z:BUL92W.N | ZBWLN/ -.sg.? +n/a
+      slot 422102 | וַ | WA- | W
+      slot 422103 | יִּהְיוּ | J.I45H:JW.03 | HJH[ qal wayq p3.pl.m
+      slot 422104 | מַשְׂחִיקִים | MAF:XIJQI74JM | FXQ[ hif ptca ?.pl.m
+      slot 422105 | עֲלֵיהֶם | <:AL;JHE80M | <L +HM
+      slot 422106 | וּ | W.- | W
+      slot 422107 | מַלְעִגִים | MAL:<IGI73JM | L<G[ hif ptca ?.pl.m
+      slot 422108 | בָּם | B.@75M | B +M
+      MAM-simple: וַיִּהְיוּ הָרָצִים עֹבְרִים מֵעִיר  לָעִיר בְּאֶרֶץ־ אֶפְרַיִם וּמְנַשֶּׁה וְעַד־ זְבֻלוּן וַיִּהְיוּ מַשְׂחִיקִים עֲלֵיהֶם וּמַלְעִגִים בָּם
+      WLC 4.18: וַיִּהְיוּ הָרָצִים עֹבְרִים מֵעִיר לָעִיר בְּאֶרֶץ־ אֶפְרַיִם וּמְנַשֶּׁה וְעַד־ זְבֻלוּן וַיִּהְיוּ מַשְׂחִיקִים עֲלֵיהֶם וּמַלְעִגִים בָּם
+
+5. The ETCBC's morphemes (nme, uvf, prs; accents stripped) of the keys of Test A groups (16, 61, 111, 139, 175, 186), by analysis
+   A16 | BN/ -.sg.m +J | nme [] uvf [] prs [ִי] x78
+   A16 | BN/ -.sg.m | nme [] uvf [ִי] prs [] x1
+   A61 | L + R<=/ -.sg.m +HW | nme [] uvf [] prs [ֵהוּ] x19
+   A61 | L + R<=/ -.pl.m +HW | nme [ֵ] uvf [] prs [הוּ] x1
+   A111 | K + PH/ -.sg.m | nme [] uvf [] prs [] x14
+   A111 | K + PH/ -.sg.m +J | nme [] uvf [] prs [ִי] x1
+   A139 | BLT/ -.sg.? | nme [] uvf [ִי] prs [] x22
+   A139 | BLT/ -.sg.? +J | nme [] uvf [] prs [ִי] x1
+   A175 | R<=/ -.sg.m +HW | nme [] uvf [] prs [ֵהוּ] x82
+   A175 | R<=/ -.pl.m +HW | nme [ֵ] uvf [] prs [הוּ] x1
+   A186 | <M/ -.sg.m +J | nme [] uvf [] prs [ִי] x178
+   A186 | <MJ/ -.sg.m +n/a | nme [] uvf [] prs [] x1
+   A186 | <M/ -.sg.m | nme [] uvf [ִי] prs [] x1
+
+6. Nouns (sp subs) whose gender is 'unknown' in some slots and m or f in others
+   67 of 3866 noun lexemes; 15954 slots of them
+   >RY/ {'unknown': 2428, 'f': 76}
+   JD/ {'unknown': 1598, 'f': 37}
+   >XD/ {'unknown': 694, 'f': 271, 'm': 5}
+   CNJM/ {'unknown': 515, 'f': 253}
+   DRK/ {'unknown': 545, 'm': 161}
+   CLC/ {'m': 171, 'unknown': 172, 'f': 259}
+   M>H/ {'f': 580, 'unknown': 7}
+   XMC/ {'unknown': 164, 'm': 163, 'f': 179}
+   CB</ {'f': 240, 'm': 91, 'unknown': 165}
+   >LP=/ {'unknown': 342, 'm': 150}
+   <WD/ {'m': 490, 'unknown': 1}
+   >RB</ {'f': 172, 'm': 135, 'unknown': 155}
+   BJN/ {'m': 408, 'unknown': 1}
+   RWX/ {'unknown': 365, 'f': 24}
+   >C/ {'unknown': 378, 'm': 3}

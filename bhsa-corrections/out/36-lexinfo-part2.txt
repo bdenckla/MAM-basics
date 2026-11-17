@@ -1,0 +1,8 @@
+lex XLBH/: 1 words; voc_lex [('חֶלְבָּה', 1)]; gloss [('Helbah', 1)]; sp [('nmpr', 1)]; language [('Hebrew', 1)]
+   forms by review key: [('חֶלְבָּה', 1)]
+lex XLB=/: 92 words; voc_lex [('חֵלֶב', 92)]; gloss [('fat', 92)]; sp [('subs', 92)]; language [('Hebrew', 92)]
+   forms by review key: [('חֵלֶב', 64), ('חֶלְבֹּו', 8), ('חֲלָבִים', 8), ('חֶלְבֵי', 5), ('חֶלְבְּהֶן', 2), ('חֶלְבֵהֶן', 1), ('חֶלְבָּהּ', 1), ('חֶלְבָּה', 1), ('חֶלְבָּם', 1), ('חֶלְבָּמֹו', 1)]
+lex >L==: 1 words; voc_lex [('אַל', 1)]; gloss [('where', 1)]; sp [('inrg', 1)]; language [('Hebrew', 1)]
+   forms by review key: [('אַל', 1)]
+lex >L=/: 1 words; voc_lex [('אַל', 1)]; gloss [('nothingness', 1)]; sp [('subs', 1)]; language [('Hebrew', 1)]
+   forms by review key: [('אַל', 1)]

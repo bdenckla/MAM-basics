@@ -1,0 +1,343 @@
+lex <YM/: 123 words; voc_lex [('עֶצֶם', 123)]; gloss [('bone', 123)]; sp [('subs', 123)]; language [('Hebrew', 123)]
+   עֶצֶם | vs NA vt NA ps NA nu sg gn f st c prs absent | x22 | Genesis 7:13; Genesis 17:23; Genesis 17:26
+   עַצְמֹות | vs NA vt NA ps NA nu pl gn f st c prs absent | x20 | Exodus 13:19; Josua 24:32; Samuel_II 21:12
+   עֲצָמֹות | vs NA vt NA ps NA nu pl gn f st a prs absent | x12 | Reges_II 23:16; Ezechiel 24:10; Ezechiel 37:1
+   עֶצֶם | vs NA vt NA ps NA nu sg gn f st a prs absent | x6 | Genesis 2:23; Exodus 12:46; Numeri 9:12
+   עַצְמִי | vs NA vt NA ps NA nu sg gn f st a prs J | x6 | Genesis 29:14; Samuel_II 19:13; Samuel_II 19:14
+   עַצְמֹותָיו | vs NA vt NA ps NA nu pl gn f st a prs W | x6 | Psalmi 34:21; Psalmi 109:18; Iob 20:11
+   עֲצָמַי | vs NA vt NA ps NA nu pl gn f st a prs J | x5 | Genesis 2:23; Habakuk 3:16; Psalmi 31:11
+   עַצְמֹותַי | vs NA vt NA ps NA nu pl gn f st a prs J | x5 | Jeremia 23:9; Psalmi 35:10; Psalmi 42:11
+   עֲצָמִים | vs NA vt NA ps NA nu pl gn f st a prs absent | x4 | Ezechiel 24:4; Ezechiel 24:5; Amos 6:10
+   עַצְמֹותָי | vs NA vt NA ps NA nu pl gn f st a prs J | x3 | Jesaia 38:13; Psalmi 22:15; Threni 3:4
+   עַצְמֹתֵיהֶם | vs NA vt NA ps NA nu pl gn f st a prs HM | x3 | Numeri 24:8; Samuel_I 31:13; Micha 3:3
+   עַצְמֹתַי | vs NA vt NA ps NA nu pl gn f st a prs J | x3 | Genesis 50:25; Exodus 13:19; Threni 1:13
+   עַצְמֹתָיו | vs NA vt NA ps NA nu pl gn f st a prs W | x3 | Reges_I 13:31; Reges_II 23:18; Reges_II 23:18
+   עֲצָמֶיהָ | vs NA vt NA ps NA nu pl gn f st a prs H | x2 | Judices 19:29; Ezechiel 24:5
+   עֲצָמָי | vs NA vt NA ps NA nu pl gn f st a prs J | x2 | Psalmi 6:3; Psalmi 32:3
+   עֲצָמָיו | vs NA vt NA ps NA nu pl gn f st a prs W | x2 | Iob 33:19; Iob 40:18
+   עַצְמְךָ | vs NA vt NA ps NA nu sg gn f st a prs K | x2 | Samuel_II 5:1; Chronica_I 11:1
+   עַצְמֹו | vs NA vt NA ps NA nu sg gn f st a prs W | x2 | Ezechiel 37:7; Iob 2:5
+   עַצְמֹותֵיכֶם | vs NA vt NA ps NA nu pl gn f st a prs KM | x2 | Jesaia 66:14; Ezechiel 6:5
+   עַצְמֹותָם | vs NA vt NA ps NA nu pl gn f st a prs M | x2 | Ezechiel 32:27; Micha 3:2
+   עַצְמֹתָי | vs NA vt NA ps NA nu pl gn f st a prs J | x2 | Reges_I 13:31; Jeremia 20:9
+   עָצֶם | vs NA vt NA ps NA nu sg gn f st a prs absent | x2 | Proverbia 15:30; Proverbia 16:24
+   עֲצָמֵינוּ | vs NA vt NA ps NA nu pl gn f st a prs NW | x1 | Psalmi 141:7
+   עַצְמֵכֶם | vs NA vt NA ps NA nu sg gn f st a prs KM | x1 | Judices 9:2
+   עַצְמָם | vs NA vt NA ps NA nu sg gn f st a prs M | x1 | Threni 4:8
+   עַצְמֹותֵיהֶם | vs NA vt NA ps NA nu pl gn f st a prs HM | x1 | Chronica_I 10:12
+   עַצְמֹותֵינוּ | vs NA vt NA ps NA nu pl gn f st a prs NW | x1 | Ezechiel 37:11
+   עַצְמֹותֶיךָ | vs NA vt NA ps NA nu pl gn f st a prs K | x1 | Proverbia 3:8
+   עַצְמֹתֶיךָ | vs NA vt NA ps NA nu pl gn f st a prs K | x1 | Jesaia 58:11
+lex MMLKH/: 93 words; voc_lex [('מַמְלָכָה', 93)]; gloss [('kingdom', 93)]; sp [('subs', 93)]; language [('Hebrew', 93)]
+   מַּמְלָכָה | vs NA vt NA ps NA nu sg gn f st a prs absent | x29 | Josua 10:2; Samuel_I 27:5; Samuel_I 28:17
+   מַמְלְכֹות | vs NA vt NA ps NA nu pl gn f st c prs absent | x25 | Deuteronomium 28:25; Reges_II 19:15; Reges_II 19:19
+   מַמְלָכֹות | vs NA vt NA ps NA nu pl gn f st a prs absent | x15 | Reges_I 10:20; Jesaia 13:19; Jesaia 14:16
+   מַמְלָכָה | vs NA vt NA ps NA nu sg gn f st a prs absent | x14 | Reges_I 18:10; Jesaia 17:3; Jesaia 19:2
+   מַּמְלָכֹות | vs NA vt NA ps NA nu pl gn f st a prs absent | x7 | Deuteronomium 3:21; Josua 11:10; Samuel_I 10:18
+   מַמְלְכֹת | vs NA vt NA ps NA nu pl gn f st c prs absent | x1 | Jesaia 10:10
+   מַמְלֶכַת | vs NA vt NA ps NA nu sg gn f st c prs absent | x1 | Chronica_II 21:4
+   מַּמְלְכֹות | vs NA vt NA ps NA nu pl gn f st c prs absent | x1 | Jeremia 25:26
+lex MMLKT/: 24 words; voc_lex [('מַמְלֶכֶת', 24)]; gloss [('kingdom', 24)]; sp [('subs', 24)]; language [('Hebrew', 24)]
+   מַמְלֶכֶת | vs NA vt NA ps NA nu sg gn f st c prs absent | x11 | Exodus 19:6; Numeri 32:33; Numeri 32:33
+   מַמְלַכְתֹּו | vs NA vt NA ps NA nu sg gn f st a prs W | x7 | Genesis 10:10; Deuteronomium 17:18; Deuteronomium 17:20
+   מַמְלַכְתְּךָ | vs NA vt NA ps NA nu sg gn f st a prs K | x4 | Samuel_I 13:13; Samuel_I 13:14; Samuel_II 7:16
+   מַמְלַכְתִּי | vs NA vt NA ps NA nu sg gn f st a prs J | x2 | Genesis 20:9; Samuel_II 3:28
+lex MMLKWT/: 9 words; voc_lex [('מַמְלָכוּת', 9)]; gloss [('kingdom', 9)]; sp [('subs', 9)]; language [('Hebrew', 9)]
+   מַמְלְכוּת | vs NA vt NA ps NA nu sg gn f st c prs absent | x9 | Josua 13:12; Josua 13:21; Josua 13:27
+lex VM>[: 162 words; voc_lex [('טמא', 162)]; gloss [('be unclean', 162)]; sp [('verb', 162)]; language [('Hebrew', 162)]
+   יִטְמָא | vs qal vt impf ps p3 nu sg gn m st NA prs absent | x35 | Leviticus 5:3; Leviticus 11:24; Leviticus 11:26
+   טָמֵא | vs qal vt perf ps p3 nu sg gn m st NA prs absent | x23 | Leviticus 11:25; Leviticus 11:28; Leviticus 11:32
+   טִמֵּא | vs piel vt perf ps p3 nu sg gn m st NA prs absent | x16 | Genesis 34:5; Genesis 34:13; Leviticus 13:3
+   טָמְאָה | vs qal vt infc ps unknown nu unknown gn unknown st a prs absent | x7 | Leviticus 15:32; Leviticus 18:20; Leviticus 18:23
+   נִטְמָאָה | vs nif vt perf ps p3 nu sg gn f st NA prs absent | x6 | Numeri 5:13; Numeri 5:14; Numeri 5:14
+   יִטַּמָּא | vs hit vt impf ps p3 nu sg gn m st NA prs absent | x5 | Leviticus 21:1; Leviticus 21:3; Leviticus 21:4
+   טִמְּאֹו | vs piel vt perf ps p3 nu sg gn m st NA prs W | x4 | Leviticus 13:8; Leviticus 13:11; Leviticus 13:15
+   טִמְּאוּ | vs piel vt perf ps p3 nu pl gn unknown st NA prs absent | x4 | Genesis 34:27; Ezechiel 23:38; Ezechiel 43:8
+   טָמְאָה | vs qal vt perf ps p3 nu sg gn f st NA prs absent | x4 | Leviticus 12:2; Leviticus 12:5; Leviticus 22:6
+   טַמְּאֹו | vs piel vt infc ps unknown nu unknown gn unknown st a prs W | x3 | Leviticus 13:59; Jeremia 7:30; Jeremia 32:34
+   יְטַמְּאוּ | vs piel vt wayq ps p3 nu pl gn m st NA prs absent | x3 | Ezechiel 23:17; Ezechiel 36:17; Chronica_II 36:14
+   תִּטְמָא | vs qal vt wayq ps p3 nu sg gn f st NA prs absent | x3 | Leviticus 18:25; Leviticus 18:27; Ezechiel 23:17
+   תִּטַּמָּאוּ | vs hit vt impf ps p2 nu pl gn m st NA prs absent | x3 | Leviticus 11:24; Ezechiel 20:7; Ezechiel 20:18
+   טִמֵּאתֶם | vs piel vt perf ps p2 nu pl gn m st NA prs absent | x2 | Jesaia 30:22; Ezechiel 33:26
+   טַמֵּא | vs piel vt infc ps unknown nu unknown gn unknown st a prs absent | x2 | Leviticus 20:3; Leviticus 20:25
+   יְטַמְּאוּ | vs piel vt impf ps p3 nu pl gn m st NA prs absent | x2 | Numeri 5:3; Ezechiel 43:7
+   נִטְמְאִים | vs nif vt ptca ps unknown nu pl gn m st a prs absent | x2 | Ezechiel 20:30; Ezechiel 20:31
+   נִטְמְאָה | vs nif vt perf ps p3 nu sg gn f st NA prs absent | x2 | Numeri 5:27; Numeri 5:28
+   נִטְמֵאת | vs nif vt perf ps p2 nu sg gn f st NA prs absent | x2 | Numeri 5:20; Ezechiel 23:30
+   נִטְמָא | vs nif vt perf ps p3 nu sg gn m st NA prs absent | x2 | Hosea 5:3; Hosea 6:10
+   תְטַמֵּא | vs piel vt impf ps p2 nu sg gn m st NA prs absent | x2 | Numeri 35:34; Deuteronomium 21:23
+   תִטַּמְּאוּ | vs hit vt impf ps p2 nu pl gn m st NA prs absent | x2 | Leviticus 11:43; Leviticus 18:30
+   תִּטְמָא | vs qal vt impf ps p3 nu sg gn f st NA prs absent | x2 | Leviticus 12:2; Numeri 19:22
+   אֲטַמֵּא | vs piel vt wayq ps p1 nu sg gn unknown st NA prs absent | x1 | Ezechiel 20:26
+   הֻטַּמָּאָה | vs hotp vt perf ps p3 nu sg gn f st NA prs absent | x1 | Deuteronomium 24:4
+   טִמְּאוּהָ | vs piel vt perf ps p3 nu pl gn unknown st NA prs H | x1 | Ezechiel 36:18
+   טִמֵּאת | vs piel vt perf ps p2 nu sg gn f st NA prs absent | x1 | Ezechiel 5:11
+   טַמְּאָם | vs piel vt infc ps unknown nu unknown gn unknown st a prs M | x1 | Leviticus 15:31
+   טַמְּאוּ | vs piel vt impv ps p2 nu pl gn m st NA prs absent | x1 | Ezechiel 9:7
+   טַמֵּא | vs piel vt infa ps unknown nu unknown gn unknown st a prs absent | x1 | Leviticus 13:44
+   טַמַּאֲכֶם | vs piel vt infc ps unknown nu unknown gn unknown st a prs KM | x1 | Leviticus 18:28
+   טָמְאוּ | vs qal vt perf ps p3 nu pl gn unknown st NA prs absent | x1 | Leviticus 15:18
+   טָמֵאת | vs qal vt perf ps p2 nu sg gn f st NA prs absent | x1 | Ezechiel 22:4
+   יְטַמְּאֵהוּ | vs piel vt wayq ps p3 nu sg gn m st NA prs HW | x1 | Reges_II 23:16
+   יְטַמְּאֶנּוּ | vs piel vt impf ps p3 nu sg gn m st NA prs HW | x1 | Leviticus 13:44
+   יְטַמֵּא | vs piel vt wayq ps p3 nu sg gn m st NA prs absent | x1 | Reges_II 23:8
+   יִטַמְּאוּ | vs piel vt impf ps p3 nu pl gn m st NA prs absent | x1 | Ezechiel 37:23
+   יִטַמָּאוּ | vs hit vt impf ps p3 nu pl gn m st NA prs absent | x1 | Hosea 9:4
+   יִטַּמְּאוּ | vs hit vt impf ps p3 nu pl gn m st NA prs absent | x1 | Ezechiel 14:11
+   יִטַּמָּאוּ | vs hit vt impf ps p3 nu pl gn m st NA prs absent | x1 | Ezechiel 44:25
+   יִּטְמְאוּ | vs qal vt wayq ps p3 nu pl gn m st NA prs absent | x1 | Psalmi 106:39
+   מְטֻמָּאָה | vs pual vt ptcp ps unknown nu sg gn f st a prs absent | x1 | Ezechiel 4:14
+   נִטְמְאוּ | vs nif vt perf ps p3 nu pl gn unknown st NA prs absent | x1 | Leviticus 18:24
+   נִטְמֵאתִי | vs nif vt perf ps p1 nu sg gn unknown st NA prs absent | x1 | Jeremia 2:23
+   נִטְמֵאתֶם | vs nif vt perf ps p2 nu pl gn m st NA prs absent | x1 | Ezechiel 20:43
+   נִטְמֵתֶם | vs nif vt perf ps p2 nu pl gn m st NA prs absent | x1 | Leviticus 11:43
+   תְטַמְּאוּ | vs piel vt impf ps p2 nu pl gn m st NA prs absent | x1 | Leviticus 11:44
+   תְּטַמְּאוּ | vs piel vt wayq ps p2 nu pl gn m st NA prs absent | x1 | Jeremia 2:7
+   תִּטַּמְּאוּ | vs hit vt impf ps p2 nu pl gn m st NA prs absent | x1 | Leviticus 18:24
+lex JP<[: 8 words; voc_lex [('יפע', 8)]; gloss [('shine', 8)]; sp [('verb', 8)]; language [('Hebrew', 8)]
+   הֹופִיעַ | vs hif vt perf ps p3 nu sg gn m st NA prs absent | x3 | Deuteronomium 33:2; Psalmi 50:2; Iob 37:15
+   הֹופִיַע | vs hif vt impv ps p2 nu sg gn m st NA prs absent | x1 | Psalmi 94:1
+   הֹופִיעָה | vs hif vt impv ps p2 nu sg gn m st NA prs absent | x1 | Psalmi 80:2
+   הֹופָעְתָּ | vs hif vt perf ps p2 nu sg gn m st NA prs absent | x1 | Iob 10:3
+   תֹּופַע | vs hif vt impf ps p3 nu sg gn f st NA prs absent | x1 | Iob 3:4
+   תֹּפַע | vs hif vt wayq ps p3 nu sg gn f st NA prs absent | x1 | Iob 10:22
+lex <PR/: 110 words; voc_lex [('עָפָר', 110)]; gloss [('dust', 110)]; sp [('subs', 110)]; language [('Hebrew', 110)]
+   עָפָר | vs NA vt NA ps NA nu sg gn m st a prs absent | x81 | Genesis 2:7; Genesis 3:14; Genesis 3:19
+   עֲפַר | vs NA vt NA ps NA nu sg gn m st c prs absent | x17 | Genesis 13:16; Genesis 13:16; Genesis 28:14
+   עֲפָרָהּ | vs NA vt NA ps NA nu sg gn m st a prs H | x4 | Reges_II 23:6; Jesaia 34:9; Ezechiel 26:4
+   עֲפָרָם | vs NA vt NA ps NA nu sg gn m st a prs M | x4 | Reges_II 23:4; Reges_II 23:12; Jesaia 34:7
+   עֲפָרֵךְ | vs NA vt NA ps NA nu sg gn m st a prs K= | x1 | Ezechiel 26:12
+   עֲפָרֹו | vs NA vt NA ps NA nu sg gn m st a prs W | x1 | Deuteronomium 9:21
+   עַפְרֹת | vs NA vt NA ps NA nu pl gn m st c prs absent | x1 | Iob 28:6
+   עָפְרֹות | vs NA vt NA ps NA nu pl gn m st c prs absent | x1 | Proverbia 8:26
+lex CPWT/: 1 words; voc_lex [('שְׁפֹות', 1)]; gloss [('yogurt', 1)]; sp [('subs', 1)]; language [('Hebrew', 1)]
+   שְׁפֹות | vs NA vt NA ps NA nu pl gn f st c prs absent | x1 | Samuel_II 17:29
+lex >CPT/: 7 words; voc_lex [('אַשְׁפֹּת', 7)]; gloss [('ash pit', 7)]; sp [('subs', 7)]; language [('Hebrew', 7)]
+   אַשְׁפֹּת | vs NA vt NA ps NA nu sg gn m st a prs absent | x4 | Samuel_I 2:8; Psalmi 113:7; Nehemia 2:13
+   אַשְׁפַּתֹּות | vs NA vt NA ps NA nu pl gn m st a prs absent | x1 | Threni 4:5
+   אַשְׁפֹּות | vs NA vt NA ps NA nu sg gn m st a prs absent | x1 | Nehemia 3:14
+   שֲׁפֹות | vs NA vt NA ps NA nu sg gn m st a prs absent | x1 | Nehemia 3:13
+lex VHR/: 96 words; voc_lex [('טָהֹר', 96)]; gloss [('pure', 96)]; sp [('adjv', 96)]; language [('Hebrew', 96)]
+   טָהֹור | vs NA vt NA ps NA nu sg gn m st a prs absent | x60 | Exodus 25:11; Exodus 25:17; Exodus 25:24
+   טָּהֹור | vs NA vt NA ps NA nu sg gn m st a prs absent | x8 | Leviticus 10:10; Leviticus 15:8; Deuteronomium 12:15
+   טָּהֹר | vs NA vt NA ps NA nu sg gn m st a prs absent | x6 | Genesis 8:20; Leviticus 11:47; Leviticus 14:57
+   טְהֹרָה | vs NA vt NA ps NA nu sg gn f st a prs absent | x4 | Genesis 7:2; Genesis 7:8; Numeri 5:28
+   טְּהֹרָה | vs NA vt NA ps NA nu sg gn f st a prs absent | x4 | Exodus 31:8; Exodus 39:37; Leviticus 20:25
+   טְּהֹורָה | vs NA vt NA ps NA nu sg gn f st a prs absent | x3 | Genesis 7:2; Genesis 7:8; Genesis 8:20
+   טְהֹורִים | vs NA vt NA ps NA nu pl gn m st a prs absent | x2 | Ezechiel 36:25; Esra 6:20
+   טְהֹורָה | vs NA vt NA ps NA nu sg gn f st a prs absent | x2 | Maleachi 1:11; Psalmi 19:10
+   טְהֹרֹות | vs NA vt NA ps NA nu pl gn f st a prs absent | x2 | Leviticus 14:4; Psalmi 12:7
+   טְהָר (qere) | vs NA vt NA ps NA nu sg gn m st c prs absent | x1 | Proverbia 22:11
+   טְהֹור | vs NA vt NA ps NA nu sg gn m st c prs absent | x1 | Habakuk 1:13
+   טְהֹרִים | vs NA vt NA ps NA nu pl gn m st a prs absent | x1 | Proverbia 15:26
+   טֳהָר | vs NA vt NA ps NA nu sg gn m st c prs absent | x1 | Iob 17:9
+   טְּהָרֹו | vs NA vt NA ps NA nu sg gn m st a prs W | x1 | Psalmi 89:45
+lex VHR[: 94 words; voc_lex [('טהר', 94)]; gloss [('be clean', 94)]; sp [('verb', 94)]; language [('Hebrew', 94)]
+   טָהֵר | vs qal vt perf ps p3 nu sg gn m st NA prs absent | x13 | Leviticus 11:32; Leviticus 13:6; Leviticus 13:34
+   מִּטַּהֵר | vs hit vt ptca ps unknown nu sg gn m st a prs absent | x12 | Leviticus 14:4; Leviticus 14:7; Leviticus 14:8
+   טִהֲרֹו | vs piel vt perf ps p3 nu sg gn m st NA prs W | x6 | Leviticus 13:6; Leviticus 13:23; Leviticus 13:28
+   טִהַר | vs piel vt perf ps p3 nu sg gn m st NA prs absent | x5 | Leviticus 13:13; Leviticus 13:17; Leviticus 13:34
+   טַהֵר | vs piel vt infc ps unknown nu unknown gn unknown st a prs absent | x4 | Leviticus 16:30; Ezechiel 39:12; Chronica_II 29:16
+   יִטְהָר | vs qal vt impf ps p3 nu sg gn m st NA prs absent | x3 | Leviticus 22:4; Numeri 19:12; Numeri 19:12
+   הִטֶּהָרוּ | vs hit vt perf ps p3 nu pl gn unknown st NA prs absent | x2 | Numeri 8:7; Chronica_II 30:18
+   טְהַרְתֶּם | vs qal vt perf ps p2 nu pl gn m st NA prs absent | x2 | Numeri 31:24; Ezechiel 36:25
+   טְהָר | vs qal vt impv ps p2 nu sg gn m st NA prs absent | x2 | Reges_II 5:10; Reges_II 5:13
+   טִהֲרוּ | vs piel vt perf ps p3 nu pl gn unknown st NA prs absent | x2 | Ezechiel 39:16; Ezechiel 43:26
+   טִהַרְתִּים | vs piel vt perf ps p1 nu sg gn unknown st NA prs M | x2 | Jeremia 33:8; Nehemia 13:30
+   טִהַרְתָּ | vs piel vt perf ps p2 nu sg gn m st NA prs absent | x2 | Numeri 8:6; Numeri 8:15
+   טַהֲרָם | vs piel vt infc ps unknown nu unknown gn unknown st a prs M | x2 | Numeri 8:7; Numeri 8:21
+   טַהֵר | vs piel vt infc ps unknown nu unknown gn unknown st c prs absent | x2 | Chronica_II 29:15; Chronica_II 34:8
+   טָהֲרָה | vs qal vt perf ps p3 nu sg gn f st NA prs absent | x2 | Leviticus 12:7; Leviticus 15:28
+   יְטַהֲרוּ | vs piel vt wayq ps p3 nu pl gn m st NA prs absent | x2 | Nehemia 12:30; Nehemia 13:9
+   יִטְהַר | vs qal vt impf ps p3 nu sg gn m st NA prs absent | x2 | Leviticus 15:13; Iob 4:17
+   מְטַהֵר | vs piel vt ptca ps unknown nu sg gn m st a prs absent | x2 | Leviticus 14:11; Maleachi 3:3
+   תִטְהֲרִי | vs qal vt impf ps p2 nu sg gn f st NA prs absent | x2 | Jeremia 13:27; Ezechiel 24:13
+   אֲטַהֵר | vs piel vt impf ps p1 nu sg gn unknown st NA prs absent | x1 | Ezechiel 36:25
+   אֶטְהָר | vs qal vt impf ps p1 nu sg gn unknown st NA prs absent | x1 | Psalmi 51:9
+   הִטַּהֲרוּ | vs hit vt impv ps p2 nu pl gn m st NA prs absent | x1 | Genesis 35:2
+   הִטַּהֲרוּ | vs hit vt perf ps p3 nu pl gn unknown st NA prs absent | x1 | Esra 6:20
+   הִטַּהַרְנוּ | vs hit vt perf ps p1 nu pl gn unknown st NA prs absent | x1 | Josua 22:17
+   טִהַרְנוּ | vs piel vt perf ps p1 nu pl gn unknown st NA prs absent | x1 | Chronica_II 29:18
+   טִהַרְתִּי | vs piel vt perf ps p1 nu sg gn unknown st NA prs absent | x1 | Ezechiel 37:23
+   טִהַרְתִּיךְ | vs piel vt perf ps p1 nu sg gn unknown st NA prs K= | x1 | Ezechiel 24:13
+   טַהֲרִי | vs piel vt infc ps unknown nu unknown gn unknown st a prs J | x1 | Ezechiel 36:33
+   טַהֲרֵנִי | vs piel vt impv ps p2 nu sg gn m st NA prs NJ | x1 | Psalmi 51:4
+   טַהֲרָהּ | vs piel vt infc ps unknown nu unknown gn unknown st a prs H | x1 | Ezechiel 39:14
+   טַהֲרֹו | vs piel vt infc ps unknown nu unknown gn unknown st a prs W | x1 | Leviticus 13:59
+   טָהֵרָה | vs qal vt perf ps p3 nu sg gn f st NA prs absent | x1 | Leviticus 12:8
+   טָהַרְתְּ | vs qal vt perf ps p2 nu sg gn f st NA prs absent | x1 | Ezechiel 24:13
+   טָהַרְתִּי | vs qal vt perf ps p1 nu sg gn unknown st NA prs absent | x1 | Proverbia 20:9
+   טָהָרְתִּי | vs qal vt perf ps p1 nu sg gn unknown st NA prs absent | x1 | Reges_II 5:12
+   יְטַהֵר | vs piel vt wayq ps p3 nu sg gn m st NA prs absent | x1 | Chronica_II 34:5
+   יִּטְהָר | vs qal vt wayq ps p3 nu sg gn m st NA prs absent | x1 | Reges_II 5:14
+   יִּטַּהֲרוּ | vs piel vt wayq ps p3 nu pl gn m st NA prs absent | x1 | Nehemia 12:30
+   מְטֹהָרָה | vs pual vt ptcp ps unknown nu sg gn f st a prs absent | x1 | Ezechiel 22:24
+   מִטַּהֲרִים | vs hit vt ptca ps unknown nu pl gn m st a prs absent | x1 | Nehemia 13:22
+   מִּטַּהֲרִים | vs hit vt ptca ps unknown nu pl gn m st a prs absent | x1 | Jesaia 66:17
+   תְּטַהֲרֵם | vs piel vt wayq ps p3 nu sg gn f st NA prs M | x1 | Iob 37:21
+   תִּטְהָר | vs qal vt impf ps p3 nu sg gn f st NA prs absent | x1 | Leviticus 15:28
+   תִּטְהָרוּ | vs qal vt impf ps p2 nu pl gn m st NA prs absent | x1 | Leviticus 16:30
+lex GB/: 14 words; voc_lex [('גַּב', 14)]; gloss [('curve', 13), ('side', 1)]; sp [('subs', 14)]; language [('Aramaic', 1), ('Hebrew', 13)]
+   גַבֵּהֶם | vs NA vt NA ps NA nu pl gn m st a prs HM | x1 | Ezechiel 10:12
+   גַבֵּי | vs NA vt NA ps NA nu pl gn m st c prs absent | x1 | Iob 13:12
+   גַבֵּיהֶם | vs NA vt NA ps NA nu pl gn m st a prs HM | x1 | Reges_I 7:33
+   גַבֵּיהֶן | vs NA vt NA ps NA nu pl gn m st a prs HN | x1 | Ezechiel 1:18
+   גַבֵּךְ | vs NA vt NA ps NA nu sg gn m st a prs K= | x1 | Ezechiel 16:39
+   גַבֹּתָם | vs NA vt NA ps NA nu pl gn m st a prs M | x1 | Ezechiel 1:18
+   גֶּב | vs NA vt NA ps NA nu sg gn m st a prs absent | x1 | Ezechiel 16:24
+   גַּב | vs NA vt NA ps NA nu sg gn m st c prs absent | x1 | Ezechiel 43:13
+   גַּבִּי | vs NA vt NA ps NA nu sg gn m st a prs J | x1 | Psalmi 129:3
+   גַּבֵּי | vs NA vt NA ps NA nu pl gn m st c prs absent | x1 | Iob 15:26
+   גַּבֵּיכֶם | vs NA vt NA ps NA nu pl gn m st a prs KM | x1 | Iob 13:12
+   גַּבֵּךְ | vs NA vt NA ps NA nu sg gn m st a prs K= | x1 | Ezechiel 16:31
+   גַּבַּהּ (qere) | vs NA vt NA ps NA nu sg gn m st a prs H | x1 | Daniel 7:6
+   גַּבֹּת | vs NA vt NA ps NA nu pl gn m st c prs absent | x1 | Leviticus 14:9
+lex GB=/: 14 words; voc_lex [('גֵּב', 4), ('גֹּב', 10)]; gloss [('pit', 14)]; sp [('subs', 14)]; language [('Aramaic', 10), ('Hebrew', 4)]
+   גֵּבִים | vs NA vt NA ps NA nu pl gn m st a prs absent | x4 | Reges_I 6:9; Reges_II 3:16; Reges_II 3:16
+   גֻּבָּא | vs NA vt NA ps NA nu sg gn m st e prs absent | x4 | Daniel 6:18; Daniel 6:24; Daniel 6:24
+   גֻבָּא | vs NA vt NA ps NA nu sg gn m st e prs absent | x3 | Daniel 6:17; Daniel 6:20; Daniel 6:21
+   גֹב | vs NA vt NA ps NA nu sg gn m st c prs absent | x2 | Daniel 6:8; Daniel 6:25
+   גֹוב | vs NA vt NA ps NA nu sg gn m st c prs absent | x1 | Daniel 6:13
+lex QL<==/: 6 words; voc_lex [('קֶלַע', 6)]; gloss [('sling', 6)]; sp [('subs', 6)]; language [('Hebrew', 6)]
+   קְלָעִים | vs NA vt NA ps NA nu pl gn m st a prs absent | x1 | Chronica_II 26:14
+   קֶלַע | vs NA vt NA ps NA nu sg gn m st a prs absent | x1 | Sacharia 9:15
+   קַלְּעֹו | vs NA vt NA ps NA nu sg gn m st a prs W | x1 | Samuel_I 17:40
+   קָלַע | vs NA vt NA ps NA nu sg gn m st a prs absent | x1 | Iob 41:20
+   קֶּלַע | vs NA vt NA ps NA nu sg gn m st a prs absent | x1 | Samuel_I 17:50
+   קָּלַע | vs NA vt NA ps NA nu sg gn m st a prs absent | x1 | Samuel_I 25:29
+lex QL<=/: 1 words; voc_lex [('קַלָּע', 1)]; gloss [('slinger', 1)]; sp [('subs', 1)]; language [('Hebrew', 1)]
+   קַּלָּעִים | vs NA vt NA ps NA nu pl gn m st a prs absent | x1 | Reges_II 3:25
+lex XLKH/: 2 words; voc_lex [('חֵלְכָה', 2)]; gloss [('<uncertain>', 2)]; sp [('subs', 2)]; language [('Hebrew', 2)]
+   חֵלְכָה | vs NA vt NA ps NA nu sg gn f st a prs absent | x1 | Psalmi 10:8
+   חֵלֶכָה | vs NA vt NA ps NA nu sg gn f st a prs absent | x1 | Psalmi 10:14
+lex QBL=/: 1 words; voc_lex [('קָבָלְ־', 1)]; gloss [('<uncertain>', 1)]; sp [('subs', 1)]; language [('Hebrew', 1)]
+   קָבָלְ | vs NA vt NA ps NA nu sg gn m st c prs absent | x1 | Reges_II 15:10
+lex M>WM/: 21 words; voc_lex [('מאוּם', 21)]; gloss [('blemish', 21)]; sp [('subs', 21)]; language [('Hebrew', 21)]
+   מוּם | vs NA vt NA ps NA nu sg gn m st a prs absent | x16 | Leviticus 21:17; Leviticus 21:18; Leviticus 21:21
+   מֻאוּם | vs NA vt NA ps NA nu sg gn m st a prs absent | x1 | Iob 31:7
+   מּוּם | vs NA vt NA ps NA nu sg gn m st a prs absent | x1 | Iob 11:15
+   מוּם (qere) | vs NA vt NA ps NA nu sg gn m st a prs absent | x1 | Daniel 1:4
+   מוּמָם | vs NA vt NA ps NA nu sg gn m st a prs M | x1 | Deuteronomium 32:5
+   מוּמֹו | vs NA vt NA ps NA nu sg gn m st a prs W | x1 | Proverbia 9:7
+lex KBD[: 113 words; voc_lex [('כבד', 113)]; gloss [('be heavy', 113)]; sp [('verb', 113)]; language [('Hebrew', 113)]
+   נִכְבָּד | vs nif vt ptca ps unknown nu sg gn m st a prs absent | x8 | Genesis 34:19; Samuel_I 9:6; Samuel_I 22:14
+   הִכְבִּיד | vs hif vt perf ps p3 nu sg gn m st NA prs absent | x5 | Reges_I 12:10; Reges_I 12:14; Jesaia 8:23
+   יְכַבֵּד | vs piel vt impf ps p3 nu sg gn m st NA prs absent | x4 | Maleachi 1:6; Psalmi 15:4; Daniel 11:38
+   תִּכְבַּד | vs qal vt wayq ps p3 nu sg gn f st NA prs absent | x4 | Judices 1:35; Samuel_I 5:6; Samuel_I 31:3
+   כָבְדָה | vs qal vt perf ps p3 nu sg gn f st NA prs absent | x3 | Genesis 18:20; Jesaia 59:1; Nehemia 5:18
+   כַּבֵּד | vs piel vt infa ps unknown nu unknown gn unknown st a prs absent | x3 | Exodus 20:12; Numeri 24:11; Deuteronomium 5:16
+   נִכְבַּדֵּי | vs nif vt ptca ps unknown nu pl gn m st c prs absent | x3 | Jesaia 23:8; Jesaia 23:9; Proverbia 8:24
+   אֲכַבֵּד | vs piel vt impf ps p1 nu sg gn unknown st NA prs absent | x2 | Samuel_I 2:30; Jesaia 60:13
+   אֲכַבֶּדְךָ | vs piel vt impf ps p1 nu sg gn unknown st NA prs K | x2 | Numeri 22:17; Numeri 24:11
+   אִכָּבְדָה | vs nif vt impf ps p1 nu sg gn unknown st NA prs absent | x2 | Exodus 14:4; Exodus 14:17
+   אֶכָּבֵד | vs nif vt impf ps p1 nu sg gn unknown st NA prs absent | x2 | Leviticus 10:3; Jesaia 49:5
+   הִכְבִּידוּ | vs hif vt perf ps p3 nu pl gn unknown st NA prs absent | x2 | Sacharia 7:11; Nehemia 5:15
+   הִכָּבְדִי | vs nif vt infc ps unknown nu unknown gn unknown st a prs J | x2 | Exodus 14:18; Ezechiel 39:13
+   יְכֻבָּד | vs pual vt impf ps p3 nu sg gn m st NA prs absent | x2 | Proverbia 13:18; Proverbia 27:18
+   יִכְבְּדוּ | vs qal vt impf ps p3 nu pl gn m st NA prs absent | x2 | Psalmi 38:5; Iob 14:21
+   יִכְבָּד | vs qal vt impf ps p3 nu sg gn m st NA prs absent | x2 | Iob 6:3; Iob 33:7
+   יַּכְבֵּד | vs hif vt wayq ps p3 nu sg gn m st NA prs absent | x2 | Exodus 8:28; Exodus 9:34
+   כָּבְדָה | vs qal vt perf ps p3 nu sg gn f st NA prs absent | x2 | Samuel_I 5:11; Iob 23:2
+   מְכַבֵּד | vs piel vt ptca ps unknown nu sg gn m st a prs absent | x2 | Samuel_II 10:3; Chronica_I 19:3
+   נִּכְבָּד | vs nif vt ptca ps unknown nu sg gn m st a prs absent | x2 | Deuteronomium 28:58; Jesaia 3:5
+   תִּכְבַּד | vs qal vt impf ps p3 nu sg gn f st NA prs absent | x2 | Exodus 5:9; Psalmi 32:4
+   אֲכַבְּדֵהוּ | vs piel vt impf ps p1 nu sg gn unknown st NA prs HW | x1 | Psalmi 91:15
+   אֲכַבְּדָה | vs piel vt impf ps p1 nu sg gn unknown st NA prs absent | x1 | Psalmi 86:12
+   אִכָּבֵדָה | vs nif vt impf ps p1 nu sg gn unknown st NA prs absent | x1 | Samuel_II 6:22
+   אֶכָּבְדָה (qere) | vs nif vt impf ps p1 nu sg gn unknown st NA prs absent | x1 | Haggai 1:8
+   אַכְבִּיד | vs hif vt impf ps p1 nu sg gn unknown st NA prs absent | x1 | Chronica_II 10:14
+   הִכְבַּדְתְּ | vs hif vt perf ps p2 nu sg gn f st NA prs absent | x1 | Jesaia 47:6
+   הִכְבַּדְתִּי | vs hif vt perf ps p1 nu sg gn unknown st NA prs absent | x1 | Exodus 10:1
+   הִכְבַּדְתִּים | vs hif vt perf ps p1 nu sg gn unknown st NA prs M | x1 | Jeremia 30:19
+   הִכָּבֵד | vs nif vt impv ps p2 nu sg gn m st NA prs absent | x1 | Reges_II 14:10
+   הִתְכַּבְּדִי | vs hit vt impv ps p2 nu sg gn f st NA prs absent | x1 | Nahum 3:15
+   הִתְכַּבֵּד | vs hit vt impv ps p2 nu sg gn m st NA prs absent | x1 | Nahum 3:15
+   הַכְבִּיד | vs hif vt infc ps unknown nu unknown gn unknown st a prs absent | x1 | Chronica_II 25:19
+   הַכְבֵּד | vs hif vt impv ps p2 nu sg gn m st NA prs absent | x1 | Jesaia 6:10
+   הַכְבֵּד | vs hif vt infa ps unknown nu unknown gn unknown st a prs absent | x1 | Exodus 8:11
+   יְכַבְּדָנְנִי | vs piel vt impf ps p3 nu sg gn m st NA prs NJ | x1 | Psalmi 50:23
+   יְכַבְּדוּ | vs piel vt impf ps p3 nu pl gn m st NA prs absent | x1 | Judices 9:9
+   יְכַבְּדוּךָ | vs piel vt impf ps p3 nu pl gn m st NA prs K | x1 | Jesaia 25:3
+   יִכְבַּד | vs qal vt impf ps p3 nu sg gn m st NA prs absent | x1 | Jesaia 66:5
+   יִּכְבַּד | vs qal vt wayq ps p3 nu sg gn m st NA prs absent | x1 | Exodus 9:7
+   יכַבְּדוּ | vs piel vt impf ps p3 nu pl gn m st NA prs absent | x1 | Psalmi 86:9
+   כִבַּדְנוּךָ | vs piel vt perf ps p1 nu pl gn unknown st NA prs K | x1 | Judices 13:17
+   כִבַּדְתָּנִי | vs piel vt perf ps p2 nu sg gn m st NA prs NJ | x1 | Jesaia 43:23
+   כִבַּדְתֹּו | vs piel vt perf ps p2 nu sg gn m st NA prs W | x1 | Jesaia 58:13
+   כַבֵּד | vs piel vt infa ps unknown nu unknown gn unknown st a prs absent | x1 | Numeri 22:17
+   כָבַד | vs qal vt perf ps p3 nu sg gn m st NA prs absent | x1 | Jesaia 24:20
+   כִּבְּדוּ | vs piel vt perf ps p3 nu pl gn unknown st NA prs absent | x1 | Samuel_I 6:6
+   כִּבְּדוּנִי | vs piel vt perf ps p3 nu pl gn unknown st NA prs NJ | x1 | Jesaia 29:13
+   כַּבְּדֵנִי | vs piel vt impv ps p2 nu sg gn m st NA prs NJ | x1 | Samuel_I 15:30
+   כַּבְּדֶךָ | vs piel vt infc ps unknown nu unknown gn unknown st a prs K | x1 | Numeri 22:37
+   כַּבְּדוּ | vs piel vt impv ps p2 nu pl gn m st NA prs absent | x1 | Jesaia 24:15
+   כַּבְּדוּהוּ | vs piel vt impv ps p2 nu pl gn m st NA prs HW | x1 | Psalmi 22:24
+   כַּבֵּד | vs piel vt impv ps p2 nu sg gn m st NA prs absent | x1 | Proverbia 3:9
+   כָּבְדוּ | vs qal vt perf ps p3 nu pl gn unknown st NA prs absent | x1 | Genesis 48:10
+   כָּבֵדָה | vs qal vt perf ps p3 nu sg gn f st NA prs absent | x1 | Judices 20:34
+   מְכַבְּדֶיהָ | vs piel vt ptca ps unknown nu pl gn m st a prs H | x1 | Threni 1:8
+   מְכַבְּדַי | vs piel vt ptca ps unknown nu pl gn m st a prs J | x1 | Samuel_I 2:30
+   מְכַבְּדֹו | vs piel vt ptca ps unknown nu sg gn m st a prs W | x1 | Proverbia 14:31
+   מְכֻבָּד | vs pual vt ptcp ps unknown nu sg gn m st a prs absent | x1 | Jesaia 58:13
+   מַכְבִּיד | vs hif vt ptca ps unknown nu sg gn m st a prs absent | x1 | Habakuk 2:6
+   מְּתַכַּבֵּד | vs tif vt ptca ps unknown nu sg gn m st a prs absent | x1 | Proverbia 12:9
+   נִכְבְּדֵיהֶם | vs nif vt ptca ps unknown nu pl gn m st a prs HM | x1 | Psalmi 149:8
+   נִכְבַּד | vs qal vt impf ps p1 nu pl gn unknown st NA prs absent | x1 | Samuel_II 13:25
+   נִכְבַּדְתִּי | vs nif vt perf ps p1 nu sg gn unknown st NA prs absent | x1 | Ezechiel 28:22
+   נִכְבַּדְתָּ | vs nif vt perf ps p2 nu sg gn m st NA prs absent | x1 | Jesaia 43:4
+   נִכְבַּדֶּיהָ | vs nif vt ptca ps unknown nu pl gn m st a prs H | x1 | Nahum 3:10
+   נִכְבָּדְתָּ | vs nif vt perf ps p2 nu sg gn m st NA prs absent | x1 | Jesaia 26:15
+   נִכְבָּדִים | vs nif vt ptca ps unknown nu pl gn m st a prs absent | x1 | Numeri 22:15
+   נִכְבָּדֹות | vs nif vt ptca ps unknown nu pl gn f st a prs absent | x1 | Psalmi 87:3
+   נִּכְבַּד | vs nif vt perf ps p3 nu sg gn m st NA prs absent | x1 | Samuel_II 6:20
+   תְכַבְּדֵנִי | vs piel vt impf ps p2 nu sg gn m st NA prs NJ | x1 | Psalmi 50:15
+   תְכַבְּדוּ | vs piel vt impf ps p2 nu pl gn m st NA prs absent | x1 | Samuel_I 6:6
+   תְּכַבְּדֵנִי | vs piel vt impf ps p3 nu sg gn f st NA prs NJ | x1 | Jesaia 43:20
+   תְּכַבֵּד | vs piel vt wayq ps p2 nu sg gn m st NA prs absent | x1 | Samuel_I 2:29
+   תְּכַבֵּדְךָ | vs piel vt impf ps p3 nu sg gn f st NA prs K | x1 | Proverbia 4:8
+   תִּכְבְּדִי | vs qal vt wayq ps p2 nu sg gn f st NA prs absent | x1 | Ezechiel 27:25
+lex TQP=/: 1 words; voc_lex [('תְּקַף', 1)]; gloss [('strength', 1)]; sp [('subs', 1)]; language [('Aramaic', 1)]
+   תְקַף | vs NA vt NA ps NA nu sg gn m st c prs absent | x1 | Daniel 4:27
+lex TQP[: 8 words; voc_lex [('תקף', 8)]; gloss [('be strong', 5), ('overpower', 3)]; sp [('verb', 8)]; language [('Aramaic', 5), ('Hebrew', 3)]
+   תְקִף | vs peal vt perf ps p3 nu sg gn m st NA prs absent | x2 | Daniel 4:8; Daniel 4:17
+   יִתְקְפֹו | vs qal vt impf ps p3 nu sg gn m st NA prs W | x1 | Ecclesiastes 4:12
+   תְקֵפְתְּ | vs peal vt perf ps p2 nu sg gn m st NA prs absent | x1 | Daniel 4:19
+   תַקָּפָה | vs pael vt infc ps unknown nu unknown gn unknown st a prs absent | x1 | Daniel 6:8
+   תִּקְפַת | vs peal vt perf ps p3 nu sg gn f st NA prs absent | x1 | Daniel 5:20
+   תִּתְקְפֵהוּ | vs qal vt impf ps p2 nu sg gn m st NA prs HW | x1 | Iob 14:20
+   תִּתְקְפֵהוּ | vs qal vt impf ps p3 nu sg gn f st NA prs HW | x1 | Iob 15:24
+lex <RMWN/: 2 words; voc_lex [('עֶרְמֹון', 2)]; gloss [('plane-tree', 2)]; sp [('subs', 2)]; language [('Hebrew', 2)]
+   עֶרְמֹון | vs NA vt NA ps NA nu sg gn m st a prs absent | x1 | Genesis 30:37
+   עַרְמֹנִים | vs NA vt NA ps NA nu pl gn m st a prs absent | x1 | Ezechiel 31:8
+lex >YB</: 34 words; voc_lex [('אֶצְבַּע', 34)]; gloss [('finger', 34)]; sp [('subs', 34)]; language [('Aramaic', 3), ('Hebrew', 31)]
+   אֶצְבָּעֹו | vs NA vt NA ps NA nu sg gn f st a prs W | x14 | Leviticus 4:6; Leviticus 4:17; Leviticus 4:25
+   אֶצְבְּעֹתָיו | vs NA vt NA ps NA nu pl gn f st a prs W | x4 | Jesaia 2:8; Jesaia 17:8; Proverbia 6:13
+   אֶצְבַּע | vs NA vt NA ps NA nu sg gn f st c prs absent | x3 | Exodus 8:15; Exodus 31:18; Deuteronomium 9:10
+   אֶצְבְּעֹת | vs NA vt NA ps NA nu pl gn f st c prs absent | x2 | Samuel_II 21:20; Samuel_II 21:20
+   אֶצְבְּעֹתֶיךָ | vs NA vt NA ps NA nu pl gn f st a prs K | x2 | Psalmi 8:4; Proverbia 7:3
+   אֶצְבְּעָן | vs NA vt NA ps NA nu pl gn f st a prs absent | x1 | Daniel 5:5
+   אֶצְבְּעָת | vs NA vt NA ps NA nu pl gn f st c prs absent | x1 | Daniel 2:42
+   אֶצְבְּעָתָא | vs NA vt NA ps NA nu pl gn f st e prs absent | x1 | Daniel 2:41
+   אֶצְבְּעֹותֵיכֶם | vs NA vt NA ps NA nu pl gn f st a prs KM | x1 | Jesaia 59:3
+   אֶצְבְּעֹותַי | vs NA vt NA ps NA nu pl gn f st a prs J | x1 | Psalmi 144:1
+   אֶצְבְּעֹתַי | vs NA vt NA ps NA nu pl gn f st a prs J | x1 | Canticum 5:5
+   אֶצְבַּע | vs NA vt NA ps NA nu sg gn f st a prs absent | x1 | Jesaia 58:9
+   אֶצְבָּעֶךָ | vs NA vt NA ps NA nu sg gn f st a prs K | x1 | Exodus 29:12
+   אַצְבָּעֹות | vs NA vt NA ps NA nu pl gn f st a prs absent | x1 | Jeremia 52:21
+lex QVN=/: 47 words; voc_lex [('קָטָן', 47)]; gloss [('small', 47)]; sp [('adjv', 47)]; language [('Hebrew', 47)]
+   קְטַנָּה | vs NA vt NA ps NA nu sg gn f st a prs absent | x11 | Numeri 22:18; Deuteronomium 25:13; Deuteronomium 25:14
+   קָּטָן | vs NA vt NA ps NA nu sg gn m st a prs absent | x9 | Genesis 9:24; Genesis 27:15; Genesis 27:42
+   קָטָן | vs NA vt NA ps NA nu sg gn m st a prs absent | x6 | Genesis 44:20; Samuel_II 9:12; Reges_I 11:17
+   קְּטַנָּה | vs NA vt NA ps NA nu sg gn f st a prs absent | x6 | Genesis 29:16; Genesis 29:18; Judices 15:2
+   קְטַנִּים | vs NA vt NA ps NA nu pl gn m st a prs absent | x4 | Reges_II 2:23; Jesaia 36:9; Jeremia 16:6
+   קְּטַנִּים | vs NA vt NA ps NA nu pl gn m st a prs absent | x3 | Reges_II 18:24; Psalmi 115:13; Chronica_II 36:18
+   קְטַנָּם | vs NA vt NA ps NA nu sg gn m st a prs M | x2 | Jeremia 31:34; Jona 3:5
+   קְטַנֹּות | vs NA vt NA ps NA nu pl gn f st a prs absent | x2 | Sacharia 4:10; Psalmi 104:25
+   קְטַנֵּי | vs NA vt NA ps NA nu pl gn m st c prs absent | x1 | Proverbia 30:24
+   קְּטַנָּם | vs NA vt NA ps NA nu sg gn m st a prs M | x1 | Jeremia 6:13
+   קְּטַנֹּות | vs NA vt NA ps NA nu pl gn f st a prs absent | x1 | Ezechiel 16:61
+   קַּטַנֵּי | vs NA vt NA ps NA nu pl gn m st c prs absent | x1 | Samuel_I 9:21
+lex QVN/: 54 words; voc_lex [('קָטֹן', 54)]; gloss [('small', 54)]; sp [('adjv', 54)]; language [('Hebrew', 54)]
+   קָּטֹן | vs NA vt NA ps NA nu sg gn m st a prs absent | x35 | Genesis 1:16; Genesis 19:11; Genesis 42:13
+   קָטֹן | vs NA vt NA ps NA nu sg gn m st a prs absent | x18 | Samuel_I 2:19; Samuel_I 15:17; Samuel_I 20:2
+   קְטֹן | vs NA vt NA ps NA nu sg gn m st c prs absent | x1 | Chronica_II 21:17

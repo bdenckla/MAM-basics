@@ -1,0 +1,818 @@
+== 1Sam 27:10, lexeme >L==: slots [158430]
+  verse 1Sam 27:10, word by word:
+     158427 וַ [WA-] | W וְ 'and' | sp conj |  | phrase CP Conj | clause WayX
+     158428 יֹּ֣אמֶר  [J.O74>MER] | >MR[ אמר 'say' | sp verb | qal wayq ps p3 nu sg gn m | phrase VP Pred | clause WayX
+     158429 אָכִ֔ישׁ  [>@KI80JC] | >KJC/ אָכִישׁ 'Achish' | sp nmpr | nu sg gn m st a | phrase PrNP Subj | clause WayX
+   * 158430 אַל־ [>AL] | >L== אַל 'where' | sp inrg |  | phrase InrP Ques | clause xQt0
+     158431 פְּשַׁטְתֶּ֖ם  [P.:CAV:T.E73M] | PCV[ פשׁט 'strip off' | sp verb | qal perf ps p2 nu pl gn m | phrase VP Pred | clause xQt0
+     158432 הַ [HA-] | H הַ 'the' | sp art |  | phrase NP Time | clause xQt0
+     158433 יֹּ֑ום  [J.O92WM] | JWM/ יֹום 'day' | sp subs | nu sg gn m st a | phrase NP Time | clause xQt0
+     158434 וַ [WA-] | W וְ 'and' | sp conj |  | phrase CP Conj | clause WayX
+     158435 יֹּ֣אמֶר  [J.O74>MER] | >MR[ אמר 'say' | sp verb | qal wayq ps p3 nu sg gn m | phrase VP Pred | clause WayX
+     158436 דָּוִ֗ד  [D.@WI81D] | DWD==/ דָּוִד 'David' | sp nmpr | nu sg gn m st a | phrase PrNP Subj | clause WayX
+     158437 עַל־ [<AL] | <L עַל 'upon' | sp prep |  | phrase PP Cmpl | clause NmCl
+     158438 נֶ֤גֶב  [NE70GEB] | NGB/ נֶגֶב 'south' | sp subs | nu sg gn m st c | phrase PP Cmpl | clause NmCl
+     158439 יְהוּדָה֙  [J:HW.D@H03] | JHWDH/ יְהוּדָה 'Judah' | sp nmpr | nu sg st a | phrase PP Cmpl | clause NmCl
+     158440 וְ [W:-] | W וְ 'and' | sp conj |  | phrase PP Cmpl | clause NmCl
+     158441 עַל־ [<AL] | <L עַל 'upon' | sp prep |  | phrase PP Cmpl | clause NmCl
+     158442 נֶ֣גֶב  [NE74GEB] | NGB/ נֶגֶב 'south' | sp subs | nu sg gn m st c | phrase PP Cmpl | clause NmCl
+     158443 הַ [HA-] | H הַ 'the' | sp art |  | phrase PP Cmpl | clause NmCl
+     158444 יַּרְחְמְאֵלִ֔י  [J.AR:X:M:>;LI80J] | JRXM>LJ/ יְרַחְמְאֵלִי 'Jerahmeelite' | sp adjv | nu sg gn m st a | phrase PP Cmpl | clause NmCl
+     158445 וְ [W:-] | W וְ 'and' | sp conj |  | phrase PP Cmpl | clause NmCl
+     158446 אֶל־ [>EL] | >L אֶל 'to' | sp prep |  | phrase PP Cmpl | clause NmCl
+     158447 נֶ֖גֶב  [NE73GEB] | NGB/ נֶגֶב 'south' | sp subs | nu sg gn m st c | phrase PP Cmpl | clause NmCl
+     158448 הַ [HA-] | H הַ 'the' | sp art |  | phrase PP Cmpl | clause NmCl
+     158449 קֵּינִֽי׃  [Q.;JNI75J] | QJNJ/ קֵינִי 'Kenite' | sp adjv | nu sg gn m st a | phrase PP Cmpl | clause NmCl
+  atoms, the BHSA's (ketiv side) | MAM's aligned atoms:
+    1. וַיֹּ֣אמֶר | וַ W + יֹּ֣אמֶר >MR[ | MAM וַיֹּ֣אמֶר
+    2. אָכִ֔ישׁ | אָכִ֔ישׁ >KJC/ | MAM אָכִ֔ישׁ
+    3. אַל־ | אַל >L== | MAM אַל־
+    4. פְּשַׁטְתֶּ֖ם | פְּשַׁטְתֶּ֖ם PCV[ | MAM פְּשַׁטְתֶּ֖ם
+    5. הַיֹּ֑ום | הַ H + יֹּ֑ום JWM/ | MAM הַיּ֑וֹם
+    6. וַיֹּ֣אמֶר | וַ W + יֹּ֣אמֶר >MR[ | MAM וַיֹּ֣אמֶר
+    7. דָּוִ֗ד | דָּוִ֗ד DWD==/ | MAM דָּוִ֗ד
+    8. עַל־ | עַל <L | MAM עַל־
+    9. נֶ֤גֶב | נֶ֤גֶב NGB/ | MAM נֶ֤גֶב
+    10. יְהוּדָה֙ | יְהוּדָה֙ JHWDH/ | MAM יְהוּדָה֙
+    11. וְעַל־ | וְ W + עַל <L | MAM וְעַל־
+    12. נֶ֣גֶב | נֶ֣גֶב NGB/ | MAM נֶ֣גֶב
+    13. הַיַּרְחְמְאֵלִ֔י | הַ H + יַּרְחְמְאֵלִ֔י JRXM>LJ/ | MAM הַיְּרַחְמְאֵלִ֔י
+    14. וְאֶל־ | וְ W + אֶל >L | MAM וְאֶל־
+    15. נֶ֖גֶב | נֶ֖גֶב NGB/ | MAM נֶ֖גֶב
+    16. הַקֵּינִֽי | הַ H + קֵּינִֽי QJNJ/ | MAM הַקֵּינִֽי׃
+  slot 158430: pointed key Hebrew אַל; its analyses:
+      >L= x723: Gen 13:8, Gen 15:1, Gen 18:3 ...
+      >L x2: Judg 19:23, Jer 47:6
+      >L== x1: 1Sam 27:10
+      >L=/ x1: Job 24:25
+  the spellings of >L== NA NA NA NA NA (every word with this lexeme, stem, tense, person, number, gender):
+      אַל () x1: 1Sam 27:10 slot 158430
+
+== Job 24:25, lexeme >L=/: slots [342192]
+  verse Job 24:25, word by word:
+     342183 וְ [W:-] | W וְ 'and' | sp conj |  | phrase CP Conj | clause NmCl
+     342184 אִם־ [>IM] | >M אִם 'if' | sp conj |  | phrase CP Conj | clause NmCl
+     342185 לֹ֣א  [LO74>] | L> לֹא 'not' | sp nega |  | phrase NegP Nega | clause NmCl
+     342186 אֵ֭פֹו  [13>;POW] | >PW אֵפֹו 'then' | sp intj |  | phrase InjP Intj | clause NmCl
+     342187 מִ֣י  [MI74J] | MJ מִי 'who' | sp prin |  | phrase IPrP Subj | clause XYqt
+     342188 יַכְזִיבֵ֑נִי  [JAK:ZIJB;92NIJ] | KZB[ כזב 'lie' | sp verb | hif impf ps p3 nu sg gn m prs NJ | phrase VP PreO | clause XYqt
+     342189 וְ [W:-] | W וְ 'and' | sp conj |  | phrase CP Conj | clause WYq0
+     342190 יָשֵׂ֥ם  [J@F;71M] | FJM[ שׂים 'put' | sp verb | qal impf ps p3 nu sg gn m | phrase VP Pred | clause WYq0
+     342191 לְ֝ [11L:-] | L לְ 'to' | sp prep |  | phrase PP Cmpl | clause WYq0
+   * 342192 אַ֗ל  [>A81L] | >L=/ אַל 'nothingness' | sp subs | nu sg st a | phrase PP Cmpl | clause WYq0
+     342193 מִלָּתִֽי׃ ס  [MIL.@TI75J] | MLH/ מִלָּה 'word' | sp subs | nu sg gn f st a prs J nme T | phrase NP Objc | clause WYq0
+  atoms, the BHSA's (ketiv side) | MAM's aligned atoms:
+    1. וְאִם־ | וְ W + אִם >M | MAM וְאִם־
+    2. לֹ֣א | לֹ֣א L> | MAM לֹ֣א
+    3. אֵ֭פֹו | אֵ֭פֹו >PW | MAM אֵ֭פוֹ
+    4. מִ֣י | מִ֣י MJ | MAM מִ֣י
+    5. יַכְזִיבֵ֑נִי | יַכְזִיבֵ֑נִי KZB[ | MAM יַכְזִיבֵ֑נִי
+    6. וְיָשֵׂ֥ם | וְ W + יָשֵׂ֥ם FJM[ | MAM וְיָשֵׂ֥ם
+    7. לְ֝אַ֗ל | לְ֝ L + אַ֗ל >L=/ | MAM לְ֝אַ֗ל
+    8. מִלָּתִֽי | מִלָּתִֽי MLH/ | MAM מִלָּתִֽי׃
+  slot 342192: pointed key Hebrew אַל; its analyses:
+      >L= x723: Gen 13:8, Gen 15:1, Gen 18:3 ...
+      >L x2: Judg 19:23, Jer 47:6
+      >L== x1: 1Sam 27:10
+      >L=/ x1: Job 24:25
+  the spellings of >L=/ NA NA NA sg unknown (every word with this lexeme, stem, tense, person, number, gender):
+      אַל (nu sg st a) x1: Job 24:25 slot 342192
+
+== 2Sam 6:1, lexeme >SP[: slots [163423]
+  verse 2Sam 6:1, word by word:
+     163422 וַ [WA-] | W וְ 'and' | sp conj |  | phrase CP Conj | clause WayX
+   * 163423 יֹּ֨סֶף  [J.O63SEP] | >SP[ אסף 'gather' | sp verb | qal wayq ps p3 nu sg gn m | phrase VP Pred | clause WayX
+     163424 עֹ֥וד  [<O71WD] | <WD/ עֹוד 'duration' | sp subs | nu sg gn m st a | phrase AdvP Modi | clause WayX
+     163425 דָּוִ֛ד  [D.@WI91D] | DWD==/ דָּוִד 'David' | sp nmpr | nu sg gn m st a | phrase PrNP Subj | clause WayX
+     163426 אֶת־ [>ET] | >T אֵת '<object marker>' | sp prep |  | phrase PP Objc | clause WayX
+     163427 כָּל־ [K.@L] | KL/ כֹּל 'whole' | sp subs | nu sg gn m st c | phrase PP Objc | clause WayX
+     163428 בָּח֥וּר  [B.@X71W.R] | BXWR/ בָּחוּר 'young man' | sp subs | nu sg gn m st a | phrase PP Objc | clause WayX
+     163429 בְּ [B.:-] | B בְּ 'in' | sp prep |  | phrase PP Objc | clause WayX
+     163430 יִשְׂרָאֵ֖ל  [JIF:R@>;73L] | JFR>L/ יִשְׂרָאֵל 'Israel' | sp nmpr | nu sg st a | phrase PP Objc | clause WayX
+     163431 שְׁלֹשִׁ֥ים  [C:LOCI71JM] | CLC/ שָׁלֹשׁ 'three' | sp subs | nu pl gn m st a nme JM | phrase PP Objc | clause WayX
+     163432 אָֽלֶף׃  [>@75LEP] | >LP=/ אֶלֶף 'thousand' | sp subs | nu sg st a | phrase PP Objc | clause WayX
+  atoms, the BHSA's (ketiv side) | MAM's aligned atoms:
+    1. וַיֹּ֨סֶף | וַ W + יֹּ֨סֶף >SP[ | MAM וַיֹּ֨סֶף
+    2. עֹ֥וד | עֹ֥וד <WD/ | MAM ע֥וֹד
+    3. דָּוִ֛ד | דָּוִ֛ד DWD==/ | MAM דָּוִ֛ד
+    4. אֶת־ | אֶת >T | MAM אֶת־
+    5. כָּל־ | כָּל KL/ | MAM כׇּל־
+    6. בָּח֥וּר | בָּח֥וּר BXWR/ | MAM בָּח֥וּר
+    7. בְּיִשְׂרָאֵ֖ל | בְּ B + יִשְׂרָאֵ֖ל JFR>L/ | MAM בְּיִשְׂרָאֵ֖ל
+    8. שְׁלֹשִׁ֥ים | שְׁלֹשִׁ֥ים CLC/ | MAM שְׁלֹשִׁ֥ים
+    9. אָֽלֶף | אָֽלֶף >LP=/ | MAM אָֽלֶף׃
+  slot 163423: pointed key Hebrew יֹּסֶף; its analyses:
+      JSP[ hif wayq x21: Gen 8:10, Gen 18:29, Gen 25:1 ...
+      >SP[ qal wayq x1: 2Sam 6:1
+  the spellings of >SP[ qal wayq p3 sg m (every word with this lexeme, stem, tense, person, number, gender):
+      יֶּאֱסֹף (qal wayq ps p3 nu sg gn m) x19: Gen 29:22 slot 15344, Gen 42:17 slot 23705, Gen 49:33 slot 28249 ...
+      יֶּאֶסֹף (qal wayq ps p3 nu sg gn m) x1: Josh 24:1 slot 126636
+      יַּאַסְפֵהוּ (qal wayq ps p3 nu sg gn m prs HW) x1: 1Sam 14:52 slot 149532
+      יֹּסֶף (qal wayq ps p3 nu sg gn m) x1: 2Sam 6:1 slot 163423
+      יַּאַסְפָהּ (qal wayq ps p3 nu sg gn m prs H) x1: 2Sam 11:27 slot 166339
+      יַּאַסְפֵם (qal wayq ps p3 nu sg gn m prs M) x1: 2Chr 29:4 slot 421047
+
+== Mic 1:15, lexeme BW>[: slots [299793, 299799]
+  verse Mic 1:15, word by word:
+     299790 עֹ֗ד  [<O81D] | <WD/ עֹוד 'duration' | sp subs | nu sg gn m st a | phrase AdvP Modi | clause xYq0
+     299791 הַ [HA-] | H הַ 'the' | sp art |  | phrase NP Objc | clause xYq0
+     299792 יֹּרֵשׁ֙  [J.OR;C03] | JRC[ ירשׁ 'trample down' | sp verb | qal ptca nu sg gn m st a | phrase NP Objc | clause xYq0
+   * 299793 אָ֣בִי  [>@74BIJ] | BW>[ בוא 'come' | sp verb | hif impf ps p1 nu sg | phrase VP Pred | clause xYq0
+     299794 לָ֔ךְ  [L@80K:] | L לְ 'to' | sp prep | prs K= | phrase PP Cmpl | clause xYq0
+     299795 יֹושֶׁ֖בֶת  [JOWCE73BET] | JCB[ ישׁב 'sit' | sp verb | qal ptca nu sg gn f st c nme T | phrase NP Voct | clause Voct
+     299796 מָֽרֵשָׁ֑ה  [M@45R;C@92H] | MRCH=/ מָרֵשָׁה 'Mareshah' | sp nmpr | nu sg st a | phrase NP Voct | clause Voct
+     299797 עַד־ [<AD] | <D עַד 'unto' | sp prep |  | phrase PP Cmpl | clause xYqX
+     299798 עֲדֻלָּ֥ם  [<:ADUL.@71M] | <DLM/ עֲדֻלָּם 'Adullam' | sp nmpr | nu sg st a | phrase PP Cmpl | clause xYqX
+   * 299799 יָבֹ֖וא  [J@BO73W>] | BW>[ בוא 'come' | sp verb | qal impf ps p3 nu sg gn m | phrase VP Pred | clause xYqX
+     299800 כְּבֹ֥וד  [K.:BO71WD] | KBWD/ כָּבֹוד 'weight' | sp subs | nu sg st c | phrase NP Subj | clause xYqX
+     299801 יִשְׂרָאֵֽל׃  [JIF:R@>;75L] | JFR>L/ יִשְׂרָאֵל 'Israel' | sp nmpr | nu sg st a | phrase NP Subj | clause xYqX
+  atoms, the BHSA's (ketiv side) | MAM's aligned atoms:
+    1. עֹ֗ד | עֹ֗ד <WD/ | MAM עֹ֗ד
+    2. הַיֹּרֵשׁ֙ | הַ H + יֹּרֵשׁ֙ JRC[ | MAM הַיֹּרֵשׁ֙
+    3. אָ֣בִי | אָ֣בִי BW>[ | MAM אָ֣בִי
+    4. לָ֔ךְ | לָ֔ךְ L | MAM לָ֔ךְ
+    5. יֹושֶׁ֖בֶת | יֹושֶׁ֖בֶת JCB[ | MAM יוֹשֶׁ֖בֶת
+    6. מָֽרֵשָׁ֑ה | מָֽרֵשָׁ֑ה MRCH=/ | MAM מָֽרֵשָׁ֑ה
+    7. עַד־ | עַד <D | MAM עַד־
+    8. עֲדֻלָּ֥ם | עֲדֻלָּ֥ם <DLM/ | MAM עֲדֻלָּ֥ם
+    9. יָבֹ֖וא | יָבֹ֖וא BW>[ | MAM יָב֖וֹא
+    10. כְּבֹ֥וד | כְּבֹ֥וד KBWD/ | MAM כְּב֥וֹד
+    11. יִשְׂרָאֵֽל | יִשְׂרָאֵֽל JFR>L/ | MAM יִשְׂרָאֵֽל׃
+  slot 299793: pointed key Hebrew אָבִי; its analyses:
+      >B/ x134: Gen 19:34, Gen 20:12, Gen 20:13 ...
+      BW>[ hif impf x1: Mic 1:15
+  the spellings of BW>[ hif impf p1 sg unknown (every word with this lexeme, stem, tense, person, number, gender):
+      אָבִיא (hif impf ps p1 nu sg) x16: Exod 11:1 slot 34457, 1Kgs 21:29 slot 193650, Isa 43:5 slot 227020 ...
+      אֲבִיאֶנּוּ (hif impf ps p1 nu sg prs HW) x4: Gen 42:37 slot 24100, Gen 44:32 slot 25408, Deut 31:20 slot 111170 ...
+      אֲבִיאֶנָּה (hif impf ps p1 nu sg prs H) x1: Isa 46:11 slot 228496
+      אָבִי (hif impf ps p1 nu sg) x1: Mic 1:15 slot 299793
+      אֲבִיאֵם (hif impf ps p1 nu sg prs M) x1: Zech 10:10 slot 307987
+      אֲבִיאֲךָ (hif impf ps p1 nu sg prs K) x1: Song 8:2 slot 359071
+  slot 299799: pointed key Hebrew יָבֹוא; its analyses:
+      BW>[ qal impf x100: Gen 32:9, Gen 32:12, Lev 11:34 ...
+  the spellings of BW>[ qal impf p3 sg m (every word with this lexeme, stem, tense, person, number, gender):
+      יָבֹוא (qal impf ps p3 nu sg gn m) x100: Gen 32:9 slot 17593, Gen 32:12 slot 17675, Lev 11:34 slot 58442 ...
+      יָבֹא (qal impf ps p3 nu sg gn m) x69: Gen 49:10 slot 27915, Exod 18:15 slot 38789, Exod 18:23 slot 38982 ...
+      יְבֹואֵנוּ (qal impf ps p3 nu sg gn m prs NW) x1: Isa 28:15 slot 221081
+      יְבֹואֶנּוּ (qal impf ps p3 nu sg gn m prs HW) x1: Job 15:21 slot 339943
+      יְבֹאֶנּוּ (qal impf ps p3 nu sg gn m prs HW) x1: Prov 28:22 slot 354806
+      יָּבֹוא (qal impf ps p3 nu sg gn m) x1: Eccl 2:12 slot 359815
+
+== Mic 7:17, lexeme JR>[: slots [301390]
+  verse Mic 7:17, word by word:
+     301374 יְלַחֲכ֤וּ  [J:LAX:AK70W.] | LXK[ לחך 'eat' | sp verb | piel impf ps p3 nu pl gn m | phrase VP Pred | clause ZYq0
+     301375 עָפָר֙  [<@P@R03] | <PR/ עָפָר 'dust' | sp subs | nu sg gn m st a | phrase NP Objc | clause ZYq0
+     301376 כַּ [K.A-] | K כְּ 'as' | sp prep |  | phrase PP Adju | clause ZYq0
+     301377  [-] | H הַ 'the' | sp art |  | phrase PP Adju | clause ZYq0
+     301378 נָּחָ֔שׁ  [N.@X@80C] | NXC/ נָחָשׁ 'serpent' | sp subs | nu sg gn m st a | phrase PP Adju | clause ZYq0
+     301379 כְּ [K.:-] | K כְּ 'as' | sp prep |  | phrase PP Adju | clause ZYq0
+     301380 זֹחֲלֵ֣י  [ZOX:AL;74J] | ZXL[ זחל 'glide away' | sp verb | qal ptca nu pl gn m st c nme J | phrase PP Adju | clause ZYq0
+     301381 אֶ֔רֶץ  [>E80REY] | >RY/ אֶרֶץ 'earth' | sp subs | nu sg st a | phrase PP Adju | clause ZYq0
+     301382 יִרְגְּז֖וּ  [JIR:G.:Z73W.] | RGZ[ רגז 'quake' | sp verb | qal impf ps p3 nu pl gn m | phrase VP Pred | clause ZYq0
+     301383 מִ [MI-] | MN מִן 'from' | sp prep |  | phrase PP Cmpl | clause ZYq0
+     301384 מִּסְגְּרֹֽתֵיהֶ֑ם  [M.IS:G.:RO45T;JHE92M] | MSGRT/ מִסְגֶּרֶת 'bulwark' | sp subs | nu pl gn f st a prs HM nme WTJ | phrase PP Cmpl | clause ZYq0
+     301385 אֶל־ [>EL] | >L אֶל 'to' | sp prep |  | phrase PP Cmpl | clause xYq0
+     301386 יְהוָ֤ה  [J:HW@70H] | JHWH/ יְהוָה 'YHWH' | sp nmpr | nu sg gn m st a | phrase PP Cmpl | clause xYq0
+     301387 אֱלֹהֵ֨ינוּ֙  [>:ELOH;33JNW.03] | >LHJM/ אֱלֹהִים 'god(s)' | sp subs | nu pl gn m st a prs NW nme J | phrase PP Cmpl | clause xYq0
+     301388 יִפְחָ֔דוּ  [JIP:X@80DW.] | PXD[ פחד 'tremble' | sp verb | qal impf ps p3 nu pl gn m | phrase VP Pred | clause xYq0
+     301389 וְ [W:-] | W וְ 'and' | sp conj |  | phrase CP Conj | clause WYq0
+   * 301390 יִֽרְא֖וּ  [JI45R:>73W.] | JR>[ ירא 'fear' | sp verb | qal impf ps p3 nu pl gn m | phrase VP Pred | clause WYq0
+     301391 מִמֶּֽךָּ׃  [MIM.E75K.@] | MN מִן 'from' | sp prep | prs K | phrase PP Cmpl | clause WYq0
+  atoms, the BHSA's (ketiv side) | MAM's aligned atoms:
+    1. יְלַחֲכ֤וּ | יְלַחֲכ֤וּ LXK[ | MAM יְלַחֲכ֤וּ
+    2. עָפָר֙ | עָפָר֙ <PR/ | MAM עָפָר֙
+    3. כַּנָּחָ֔שׁ | כַּ K +  H + נָּחָ֔שׁ NXC/ | MAM כַּנָּחָ֔שׁ
+    4. כְּזֹחֲלֵ֣י | כְּ K + זֹחֲלֵ֣י ZXL[ | MAM כְּזֹחֲלֵ֣י
+    5. אֶ֔רֶץ | אֶ֔רֶץ >RY/ | MAM אֶ֔רֶץ
+    6. יִרְגְּז֖וּ | יִרְגְּז֖וּ RGZ[ | MAM יִרְגְּז֖וּ
+    7. מִמִּסְגְּרֹֽתֵיהֶ֑ם | מִ MN + מִּסְגְּרֹֽתֵיהֶ֑ם MSGRT/ | MAM מִמִּסְגְּרֹֽתֵיהֶ֑ם
+    8. אֶל־ | אֶל >L | MAM אֶל־
+    9. יְהוָ֤ה | יְהוָ֤ה JHWH/ | MAM יְהֹוָ֤ה
+    10. אֱלֹהֵ֨ינוּ֙ | אֱלֹהֵ֨ינוּ֙ >LHJM/ | MAM אֱלֹהֵ֙ינוּ֙
+    11. יִפְחָ֔דוּ | יִפְחָ֔דוּ PXD[ | MAM יִפְחָ֔דוּ
+    12. וְיִֽרְא֖וּ | וְ W + יִֽרְא֖וּ JR>[ | MAM וְיִֽרְא֖וּ
+    13. מִמֶּֽךָּ | מִמֶּֽךָּ MN | MAM מִמֶּֽךָּ׃
+  slot 301390: pointed key Hebrew יִרְאוּ; its analyses:
+      R>H[ qal impf x28: Gen 12:12, Exod 16:32, Num 14:23 ...
+      JR>[ qal impf x1: Mic 7:17
+  the spellings of JR>[ qal impf p3 pl m (every word with this lexeme, stem, tense, person, number, gender):
+      יִירְאוּ (qal impf ps p3 nu pl gn m) x8: Deut 2:4 slot 93807, 2Kgs 17:28 slot 206232, Isa 59:19 slot 232557 ...
+      יִרָאוּ (qal impf ps p3 nu pl gn m) x4: Deut 17:13 slot 103265, Deut 19:20 slot 104302, Deut 21:21 slot 105243 ...
+      יִירָאוּ (qal impf ps p3 nu pl gn m) x4: Isa 41:5 slot 226135, Ps 40:4 slot 317038, Ps 52:8 slot 319143 ...
+      יִירָאוּךָ (qal impf ps p3 nu pl gn m prs K) x3: Isa 25:3 slot 220100, Ps 72:5 slot 322351, 2Chr 6:31 slot 409713
+      יִרָאוּן (qal impf ps p3 nu pl gn m) x1: Deut 13:12 slot 101297
+      יִרָאוּךָ (qal impf ps p3 nu pl gn m prs K) x1: 1Kgs 8:40 slot 183004
+      יִרְאוּ (qal impf ps p3 nu pl gn m) x1: Mic 7:17 slot 301390
+      יִּרְאוּ (qal impf ps p3 nu pl gn m) x1: Eccl 3:14 slot 360361
+
+== Isa 52:2, lexeme JCB[: slots [230330]
+  verse Isa 52:2, word by word:
+     230326 הִתְנַעֲרִ֧י  [HIT:NA<:ARI94J] | N<R[ נער 'shake off' | sp verb | hit impv ps p2 nu sg gn f | phrase VP Pred | clause ZIm0
+     230327 מֵ [M;-] | MN מִן 'from' | sp prep |  | phrase PP Adju | clause ZIm0
+     230328 עָפָ֛ר  [<@P@91R] | <PR/ עָפָר 'dust' | sp subs | nu sg gn m st a | phrase PP Adju | clause ZIm0
+     230329 ק֥וּמִי  [Q71W.MIJ] | QWM[ קום 'arise' | sp verb | qal impv ps p2 nu sg gn f | phrase VP Pred | clause ZIm0
+   * 230330 שְּׁבִ֖י  [C.:BI73J] | JCB[ ישׁב 'sit' | sp verb | qal impv ps p2 nu sg gn f | phrase VP Pred | clause ZIm0
+     230331 יְרֽוּשָׁלִָ֑ם  [J:R45W.C@L@92IM] | JRWCLM/ יְרוּשָׁלִַם 'Jerusalem' | sp nmpr | nu sg st a | phrase PrNP Voct | clause Voct
+     230332 התפתחו  [*HTPTXW] | PTX[ פתח 'open' | sp verb | hit impv ps p2 nu sg gn f | phrase VP Pred | clause ZIm0 | qere הִֽתְפַּתְּחִי֙
+     230333 מֹוסְרֵ֣י  [MOWS:R;74J] | MWSR=/ מֹוסֵר 'band' | sp subs | nu pl gn m st c nme J | phrase NP Objc | clause ZIm0
+     230334 צַוָּארֵ֔ךְ  [YAW.@>R;80K:] | YW>R/ צַוָּאר 'neck' | sp subs | nu sg gn m st a prs K= | phrase NP Objc | clause ZIm0
+     230335 שְׁבִיָּ֖ה  [C:BIJ.@73H] | CBJH/ שְׁבִיָּה 'captive' | sp subs | nu sg gn f st a nme H | phrase NP Voct | clause Voct
+     230336 בַּת־ [B.AT] | BT/ בַּת 'daughter' | sp subs | nu sg gn f st c nme T | phrase NP Voct | clause Voct
+     230337 צִיֹּֽון׃ ס  [YIJ.O75WN] | YJWN==/ צִיֹּון 'Zion' | sp nmpr | nu sg st a | phrase NP Voct | clause Voct
+  atoms, the BHSA's (ketiv side) | MAM's aligned atoms:
+    1. הִתְנַעֲרִ֧י | הִתְנַעֲרִ֧י N<R[ | MAM הִתְנַעֲרִ֧י
+    2. מֵעָפָ֛ר | מֵ MN + עָפָ֛ר <PR/ | MAM מֵעָפָ֛ר
+    3. ק֥וּמִי | ק֥וּמִי QWM[ | MAM ק֥וּמִי
+    4. שְּׁבִ֖י | שְּׁבִ֖י JCB[ | MAM שְּׁבִ֖י
+    5. יְרֽוּשָׁלִָ֑ם | יְרֽוּשָׁלִָ֑ם JRWCLM/ | MAM יְרוּשָׁלָ֑͏ִם
+    6. התפתחו | התפתחו PTX[ | MAM התפתחו
+    7. מֹוסְרֵ֣י | מֹוסְרֵ֣י MWSR=/ | MAM מוֹסְרֵ֣י
+    8. צַוָּארֵ֔ךְ | צַוָּארֵ֔ךְ YW>R/ | MAM צַוָּארֵ֔ךְ
+    9. שְׁבִיָּ֖ה | שְׁבִיָּ֖ה CBJH/ | MAM שְׁבִיָּ֖ה
+    10. בַּת־ | בַּת BT/ | MAM בַּת־
+    11. צִיֹּֽון | צִיֹּֽון YJWN==/ | MAM צִיּֽוֹן׃
+  slot 230330: pointed key Hebrew שְּׁבִי; its analyses:
+      CBJ/ x22: Exod 12:29, Num 31:12, Num 31:26 ...
+      JCB[ qal impv x1: Isa 52:2
+  the spellings of JCB[ qal impv p2 sg f (every word with this lexeme, stem, tense, person, number, gender):
+      שְׁבִי (qal impv ps p2 nu sg gn f) x6: Gen 38:11 slot 21002, 1Sam 1:23 slot 142004, Isa 47:1 slot 228526 ...
+      שְּׁבִי (qal impv ps p2 nu sg gn f) x1: Isa 52:2 slot 230330
+
+== 2Chr 28:19, lexeme M<L[: slots [420803, 420804]
+  verse 2Chr 28:19, word by word:
+     420788 כִּֽי־ [K.I45J] | KJ כִּי 'that' | sp conj |  | phrase CP Conj | clause xQtX
+     420789 הִכְנִ֤יעַ  [HIK:NI70J<A] | KN<[ כנע 'be humble' | sp verb | hif perf ps p3 nu sg gn m | phrase VP Pred | clause xQtX
+     420790 יְהוָה֙  [J:HW@H03] | JHWH/ יְהוָה 'YHWH' | sp nmpr | nu sg gn m st a | phrase PrNP Subj | clause xQtX
+     420791 אֶת־ [>ET] | >T אֵת '<object marker>' | sp prep |  | phrase PP Objc | clause xQtX
+     420792 יְהוּדָ֔ה  [J:HW.D@80H] | JHWDH/ יְהוּדָה 'Judah' | sp nmpr | nu sg st a | phrase PP Objc | clause xQtX
+     420793 בַּ [B.A-] | B בְּ 'in' | sp prep |  | phrase PP Adju | clause xQtX
+     420794 עֲב֖וּר  [<:AB73W.R] | <BWR/ עֲבוּר 'way' | sp subs | nu sg gn m st c | phrase PP Adju | clause xQtX
+     420795 אָחָ֣ז  [>@X@74Z] | >XZ=/ אָחָז 'Ahaz' | sp nmpr | nu sg gn m st a | phrase PP Adju | clause xQtX
+     420796 מֶֽלֶךְ־ [ME45LEK:] | MLK/ מֶלֶךְ 'king' | sp subs | nu sg gn m st c | phrase PP Adju | clause xQtX
+     420797 יִשְׂרָאֵ֑ל  [JIF:R@>;92L] | JFR>L/ יִשְׂרָאֵל 'Israel' | sp nmpr | nu sg st a | phrase PP Adju | clause xQtX
+     420798 כִּ֤י  [K.I70J] | KJ כִּי 'that' | sp conj |  | phrase CP Conj | clause xQt0
+     420799 הִפְרִ֨יעַ֙  [HIP:RI33J<A03] | PR<[ פרע 'let loose' | sp verb | hif perf ps p3 nu sg gn m | phrase VP Pred | clause xQt0
+     420800 בִּֽ [B.I45-] | B בְּ 'in' | sp prep |  | phrase PP Cmpl | clause xQt0
+     420801 יהוּדָ֔ה  [JHW.D@80H] | JHWDH/ יְהוּדָה 'Judah' | sp nmpr | nu sg st a | phrase PP Cmpl | clause xQt0
+     420802 וּ [W.-] | W וְ 'and' | sp conj |  | phrase CP Conj | clause WxQ0
+   * 420803 מָעֹ֥ול  [M@<O71WL] | M<L[ מעל 'be unfaithful' | sp verb | qal infa st a | phrase AdvP Modi | clause WxQ0
+   * 420804 מַ֖עַל  [MA73<AL] | M<L[ מעל 'be unfaithful' | sp verb | qal perf ps p3 nu sg gn m | phrase VP Pred | clause WxQ0
+     420805 בַּ [B.A-] | B בְּ 'in' | sp prep |  | phrase PP Cmpl | clause WxQ0
+     420806 יהוָֽה׃  [JHW@75H] | JHWH/ יְהוָה 'YHWH' | sp nmpr | nu sg gn m st a | phrase PP Cmpl | clause WxQ0
+  atoms, the BHSA's (ketiv side) | MAM's aligned atoms:
+    1. כִּֽי־ | כִּֽי KJ | MAM כִּֽי־
+    2. הִכְנִ֤יעַ | הִכְנִ֤יעַ KN<[ | MAM הִכְנִ֤יעַ
+    3. יְהוָה֙ | יְהוָה֙ JHWH/ | MAM יְהֹוָה֙
+    4. אֶת־ | אֶת >T | MAM אֶת־
+    5. יְהוּדָ֔ה | יְהוּדָ֔ה JHWDH/ | MAM יְהוּדָ֔ה
+    6. בַּעֲב֖וּר | בַּ B + עֲב֖וּר <BWR/ | MAM בַּעֲב֖וּר
+    7. אָחָ֣ז | אָחָ֣ז >XZ=/ | MAM אָחָ֣ז
+    8. מֶֽלֶךְ־ | מֶֽלֶךְ MLK/ | MAM מֶֽלֶךְ־
+    9. יִשְׂרָאֵ֑ל | יִשְׂרָאֵ֑ל JFR>L/ | MAM יִשְׂרָאֵ֑ל
+    10. כִּ֤י | כִּ֤י KJ | MAM כִּ֤י
+    11. הִפְרִ֨יעַ֙ | הִפְרִ֨יעַ֙ PR<[ | MAM הִפְרִ֙יעַ֙
+    12. בִּֽיהוּדָ֔ה | בִּֽ B + יהוּדָ֔ה JHWDH/ | MAM בִּֽיהוּדָ֔ה
+    13. וּמָעֹ֥ול | וּ W + מָעֹ֥ול M<L[ | MAM וּמָע֥וֹל
+    14. מַ֖עַל | מַ֖עַל M<L[ | MAM מַ֖עַל
+    15. בַּיהוָֽה | בַּ B + יהוָֽה JHWH/ | MAM בַּיהֹוָֽה׃
+  slot 420803: pointed key Hebrew מָעֹול; its analyses:
+      M<L[ qal infa x1: 2Chr 28:19
+  the spellings of M<L[ qal infa unknown unknown unknown (every word with this lexeme, stem, tense, person, number, gender):
+      מָעֹול (qal infa st a) x1: 2Chr 28:19 slot 420803
+  slot 420804: pointed key Hebrew מַעַל; its analyses:
+      M<L=/ x13: Lev 5:15, Lev 5:21, Num 5:6 ...
+      M<L[ qal perf x1: 2Chr 28:19
+  the spellings of M<L[ qal perf p3 sg m (every word with this lexeme, stem, tense, person, number, gender):
+      מָעַל (qal perf ps p3 nu sg gn m) x5: Josh 22:20 slot 125766, Ezek 17:20 slot 272592, Ezek 18:24 slot 273165 ...
+      מַעַל (qal perf ps p3 nu sg gn m) x1: 2Chr 28:19 slot 420804
+
+== Dan 12:13, lexeme JWM/: slots [378150]
+  verse Dan 12:13, word by word:
+     378135 וְ [W:-] | W וְ 'and' | sp conj |  | phrase CP Conj | clause WXIm
+     378136 אַתָּ֖ה  [>AT.@73H] | >TH אַתָּה 'you' | sp prps | ps p2 nu sg gn m | phrase PPrP Subj | clause WXIm
+     378137 לֵ֣ךְ  [L;74K:] | HLK[ הלך 'walk' | sp verb | qal impv ps p2 nu sg gn m | phrase VP Pred | clause WXIm
+     378138 לַ [LA-] | L לְ 'to' | sp prep |  | phrase PP Cmpl | clause WXIm
+     378139  [-] | H הַ 'the' | sp art |  | phrase PP Cmpl | clause WXIm
+     378140 קֵּ֑ץ  [Q.;92Y] | QY/ קֵץ 'end' | sp subs | nu sg gn m st a | phrase PP Cmpl | clause WXIm
+     378141 וְ [W:-] | W וְ 'and' | sp conj |  | phrase CP Conj | clause WYq0
+     378142 תָנ֛וּחַ  [T@N91W.XA] | NWX[ נוח 'settle' | sp verb | qal impf ps p2 nu sg gn m | phrase VP Pred | clause WYq0
+     378143 וְ [W:-] | W וְ 'and' | sp conj |  | phrase CP Conj | clause WYq0
+     378144 תַעֲמֹ֥ד  [TA<:AMO71D] | <MD[ עמד 'stand' | sp verb | qal impf ps p2 nu sg gn m | phrase VP Pred | clause WYq0
+     378145 לְ [L:-] | L לְ 'to' | sp prep |  | phrase PP Cmpl | clause WYq0
+     378146 גֹרָלְךָ֖  [GOR@L:K@73] | GWRL/ גֹּורָל 'lot' | sp subs | nu sg gn m st a prs K | phrase PP Cmpl | clause WYq0
+     378147 לְ [L:-] | L לְ 'to' | sp prep |  | phrase PP Time | clause WYq0
+     378148 קֵ֥ץ  [Q;71Y] | QY/ קֵץ 'end' | sp subs | nu sg gn m st c | phrase PP Time | clause WYq0
+     378149 הַ [HA-] | H הַ 'the' | sp art |  | phrase PP Time | clause WYq0
+   * 378150 יָּמִֽין׃  [J.@MI75JN] | JWM/ יֹום 'day' | sp subs | nu pl gn m st a nme JN | phrase PP Time | clause WYq0
+  atoms, the BHSA's (ketiv side) | MAM's aligned atoms:
+    1. וְאַתָּ֖ה | וְ W + אַתָּ֖ה >TH | MAM וְאַתָּ֖ה
+    2. לֵ֣ךְ | לֵ֣ךְ HLK[ | MAM לֵ֣ךְ
+    3. לַקֵּ֑ץ | לַ L +  H + קֵּ֑ץ QY/ | MAM לַקֵּ֑ץ
+    4. וְתָנ֛וּחַ | וְ W + תָנ֛וּחַ NWX[ | MAM וְתָנ֛וּחַ
+    5. וְתַעֲמֹ֥ד | וְ W + תַעֲמֹ֥ד <MD[ | MAM וְתַעֲמֹ֥ד
+    6. לְגֹרָלְךָ֖ | לְ L + גֹרָלְךָ֖ GWRL/ | MAM לְגֹרָלְךָ֖
+    7. לְקֵ֥ץ | לְ L + קֵ֥ץ QY/ | MAM לְקֵ֥ץ
+    8. הַיָּמִֽין | הַ H + יָּמִֽין JWM/ | MAM הַיָּמִֽין׃
+  slot 378150: pointed key Hebrew יָּמִין; its analyses:
+      JMJN/ x18: Gen 13:9, Exod 29:22, Lev 7:32 ...
+      JWM/ x1: Dan 12:13
+  the spellings of JWM/ NA NA NA pl m (every word with this lexeme, stem, tense, person, number, gender):
+      יָמִים (nu pl gn m st a nme JM) x286: Gen 1:14 slot 263, Gen 4:3 slot 1708, Gen 7:4 slot 3107 ...
+      יָּמִים (nu pl gn m st a nme JM) x216: Gen 6:4 slot 2668, Gen 7:10 slot 3219, Gen 18:11 slot 8000 ...
+      יְמֵי (nu pl gn m st c nme J) x130: Gen 3:14 slot 1454, Gen 3:17 slot 1528, Gen 5:4 slot 2169 ...
+      ימֵי (nu pl gn m st c nme J) x106: Gen 14:1 slot 6215, Gen 26:1 slot 12994, Gen 26:15 slot 13271 ...
+      יָמָיו (nu pl gn m st a prs W nme J) x31: Gen 6:3 slot 2655, Gen 10:25 slot 4872, Deut 22:19 slot 105646 ...
+      יָמֶיךָ (nu pl gn m st a prs K nme J) x20: Exod 20:12 slot 39797, Exod 23:26 slot 41473, Deut 5:16 slot 96622 ...
+      יָמַי (nu pl gn m st a prs J nme J) x10: Isa 38:10 slot 225197, Ps 39:5 slot 316882, Ps 39:6 slot 316892 ...
+      יָמָי (nu pl gn m st a prs J nme J) x8: Gen 29:21 slot 15339, 2Kgs 20:19 slot 208632, Isa 39:8 slot 225576 ...
+      יָמֵינוּ (nu pl gn m st a prs NW nme J) x8: Jer 35:8 slot 253917, Ps 90:9 slot 326318, Ps 90:12 slot 326357 ...
+      יְמֵיהֶם (nu pl gn m st a prs HM nme J) x6: 1Kgs 15:16 slot 188630, 1Kgs 15:32 slot 189022, Ps 55:24 slot 319618 ...
+      יָמִימָה (nu pl gn m st a nme JM) x5: Exod 13:10 slot 35964, Judg 11:40 slot 135369, Judg 21:19 slot 141376 ...
+      ימֵיכֶם (nu pl gn m st a prs KM nme J) x4: Jer 16:9 slot 242815, Ezek 12:25 slot 269817, Joel 1:2 slot 294090 ...
+      יְמֵיכֶם (nu pl gn m st a prs KM nme J) x3: Deut 11:21 slot 100027, Jer 25:34 slot 247786, Jer 35:7 slot 253887
+      יֹומַיָּא (nu pl gn m st e nme J) x3: Dan 2:28 slot 371116, Dan 7:13 slot 374864, Dan 7:22 slot 375026
+      יֹומִין (nu pl gn m st a nme JN) x3: Dan 6:8 slot 374016, Dan 6:13 slot 374135, Dan 7:9 slot 374766
+      יָמֶיהָ (nu pl gn m st a prs H nme J) x2: Gen 25:24 slot 12804, Isa 13:22 slot 216826
+      יָּמֶיךָ (nu pl gn m st a prs K nme J) x2: 1Sam 25:28 slot 157159, Job 38:12 slot 345548
+      יֹומָת (nu pl gn m st c nme T=) x2: Ezra 4:15 slot 379841, Ezra 4:19 slot 379913
+      יָּמִם (nu pl gn m st a nme JM) x1: Num 6:5 slot 73480
+      יְמֹות (nu pl gn m st c nme WT) x1: Deut 32:7 slot 111529
+      יָּמָיו (nu pl gn m st a prs W nme J) x1: 1Kgs 1:6 slot 176195
+      יָמַיִךְ (nu pl gn m st a prs K= nme J) x1: Ezek 22:4 slot 275258
+      ימֵיהֶם (nu pl gn m st a prs HM nme J) x1: Ps 44:2 slot 317635
+      ימֹות (nu pl gn m st c nme WT) x1: Ps 90:15 slot 326386
+      יָּמָי (nu pl gn m st a prs J nme J) x1: Job 27:6 slot 342430
+      יֹומֵיהֹון (nu pl gn m st a prs HWN nme J) x1: Dan 2:44 slot 371453
+      יֹומַיָּה (nu pl gn m st e nme J) x1: Dan 4:31 slot 373051
+      יֹומֵי (nu pl gn m st c nme J) x1: Dan 5:11 slot 373399
+      יָּמִין (nu pl gn m st a nme JN) x1: Dan 12:13 slot 378150
+
+== Eccl 3:14, lexeme JR>[: slots [360361]
+  verse Eccl 3:14, word by word:
+     360336 יָדַ֗עְתִּי  [J@DA81<:T.IJ] | JD<[ ידע 'know' | sp verb | qal perf ps p1 nu sg | phrase VP Pred | clause ZQt0
+     360337 כִּ֠י  [14K.IJ] | KJ כִּי 'that' | sp conj |  | phrase CP Conj | clause CPen
+     360338 כָּל־ [K.@L] | KL/ כֹּל 'whole' | sp subs | nu sg gn m st a | phrase NP Frnt | clause CPen
+     360339 אֲשֶׁ֨ר  [>:ACE63R] | >CR אֲשֶׁר '<relative>' | sp conj |  | phrase CP Rela | clause xYqX
+     360340 יַעֲשֶׂ֤ה  [JA<:AFE70H] | <FH[ עשׂה 'make' | sp verb | qal impf ps p3 nu sg gn m | phrase VP Pred | clause xYqX
+     360341 הָ [H@-] | H הַ 'the' | sp art |  | phrase NP Subj | clause xYqX
+     360342 אֱלֹהִים֙  [>:ELOHIJM03] | >LHJM/ אֱלֹהִים 'god(s)' | sp subs | nu pl gn m st a nme JM | phrase NP Subj | clause xYqX
+     360343 ה֚וּא  [10HW.>] | HW> הוּא 'he' | sp prps | ps p3 nu sg gn m | phrase PPrP Subj | clause XYqt
+     360344 יִהְיֶ֣ה  [JIH:JE74H] | HJH[ היה 'be' | sp verb | qal impf ps p3 nu sg gn m | phrase VP Pred | clause XYqt
+     360345 לְ [L:-] | L לְ 'to' | sp prep |  | phrase PP PreC | clause XYqt
+     360346 עֹולָ֔ם  [<OWL@80M] | <WLM/ עֹולָם 'eternity' | sp subs | nu sg gn m st a | phrase PP PreC | clause XYqt
+     360347 עָלָיו֙  [<@L@JW03] | <L עַל 'upon' | sp prep | prs W | phrase PP Cmpl | clause InfC
+     360348 אֵ֣ין  [>;74JN] | >JN/ אַיִן '<NEG>' | sp subs | nu sg gn m st c | phrase NegP NCop | clause NmCl
+     360349 לְ [L:-] | L לְ 'to' | sp prep |  | phrase VP Pred | clause InfC
+     360350 הֹוסִ֔יף  [HOWSI80JP] | JSP[ יסף 'add' | sp verb | hif infc st a | phrase VP Pred | clause InfC
+     360351 וּ [W.-] | W וְ 'and' | sp conj |  | phrase CP Conj | clause InfC
+     360352 מִמֶּ֖נּוּ  [MIM.E73N.W.] | MN מִן 'from' | sp prep | prs HW | phrase PP Cmpl | clause InfC
+     360353 אֵ֣ין  [>;74JN] | >JN/ אַיִן '<NEG>' | sp subs | nu sg gn m st c | phrase NegP NCop | clause NmCl
+     360354 לִ [LI-] | L לְ 'to' | sp prep |  | phrase VP Pred | clause InfC
+     360355 גְרֹ֑עַ  [G:RO92<A] | GR<[ גרע 'clip' | sp verb | qal infc st a | phrase VP Pred | clause InfC
+     360356 וְ [W:-] | W וְ 'and' | sp conj |  | phrase CP Conj | clause WXQt
+     360357 הָ [H@-] | H הַ 'the' | sp art |  | phrase NP Subj | clause WXQt
+     360358 אֱלֹהִ֣ים  [>:ELOHI74JM] | >LHJM/ אֱלֹהִים 'god(s)' | sp subs | nu pl gn m st a nme JM | phrase NP Subj | clause WXQt
+     360359 עָשָׂ֔ה  [<@F@80H] | <FH[ עשׂה 'make' | sp verb | qal perf ps p3 nu sg gn m | phrase VP Pred | clause WXQt
+     360360 שֶׁ [CE-] | C שַׁ '<relative>' | sp conj |  | phrase CP Rela | clause xYq0
+   * 360361 יִּֽרְא֖וּ  [J.I45R:>73W.] | JR>[ ירא 'fear' | sp verb | qal impf ps p3 nu pl gn m | phrase VP Pred | clause xYq0
+     360362 מִ [MI-] | MN מִן 'from' | sp prep |  | phrase PP Cmpl | clause xYq0
+     360363 לְּ [L.:-] | L לְ 'to' | sp prep |  | phrase PP Cmpl | clause xYq0
+     360364 פָנָֽיו׃  [P@N@75JW] | PNH/ פָּנֶה 'face' | sp subs | nu pl gn m st a prs W nme J | phrase PP Cmpl | clause xYq0
+  atoms, the BHSA's (ketiv side) | MAM's aligned atoms:
+    1. יָדַ֗עְתִּי | יָדַ֗עְתִּי JD<[ | MAM יָדַ֗עְתִּי
+    2. כִּ֠י | כִּ֠י KJ | MAM כִּ֠י
+    3. כָּל־ | כָּל KL/ | MAM כׇּל־
+    4. אֲשֶׁ֨ר | אֲשֶׁ֨ר >CR | MAM אֲשֶׁ֨ר
+    5. יַעֲשֶׂ֤ה | יַעֲשֶׂ֤ה <FH[ | MAM יַעֲשֶׂ֤ה
+    6. הָאֱלֹהִים֙ | הָ H + אֱלֹהִים֙ >LHJM/ | MAM הָאֱלֹהִים֙
+    7. ה֚וּא | ה֚וּא HW> | MAM ה֚וּא
+    8. יִהְיֶ֣ה | יִהְיֶ֣ה HJH[ | MAM יִהְיֶ֣ה
+    9. לְעֹולָ֔ם | לְ L + עֹולָ֔ם <WLM/ | MAM לְעוֹלָ֔ם
+    10. עָלָיו֙ | עָלָיו֙ <L | MAM עָלָיו֙
+    11. אֵ֣ין | אֵ֣ין >JN/ | MAM אֵ֣ין
+    12. לְהֹוסִ֔יף | לְ L + הֹוסִ֔יף JSP[ | MAM לְהוֹסִ֔יף
+    13. וּמִמֶּ֖נּוּ | וּ W + מִמֶּ֖נּוּ MN | MAM וּמִמֶּ֖נּוּ
+    14. אֵ֣ין | אֵ֣ין >JN/ | MAM אֵ֣ין
+    15. לִגְרֹ֑עַ | לִ L + גְרֹ֑עַ GR<[ | MAM לִגְרֹ֑עַ
+    16. וְהָאֱלֹהִ֣ים | וְ W + הָ H + אֱלֹהִ֣ים >LHJM/ | MAM וְהָאֱלֹהִ֣ים
+    17. עָשָׂ֔ה | עָשָׂ֔ה <FH[ | MAM עָשָׂ֔ה
+    18. שֶׁיִּֽרְא֖וּ | שֶׁ C + יִּֽרְא֖וּ JR>[ | MAM שֶׁיִּֽרְא֖וּ
+    19. מִלְּפָנָֽיו | מִ MN + לְּ L + פָנָֽיו PNH/ | MAM מִלְּפָנָֽיו׃
+  slot 360361: pointed key Hebrew יִּרְאוּ; its analyses:
+      R>H[ qal wayq x39: Gen 6:2, Gen 12:14, Gen 12:15 ...
+      JR>[ qal wayq x9: Josh 4:14, 1Sam 4:7, 1Sam 7:7 ...
+      JR>[ qal impf x1: Eccl 3:14
+  the spellings of JR>[ qal impf p3 pl m (every word with this lexeme, stem, tense, person, number, gender):
+      יִירְאוּ (qal impf ps p3 nu pl gn m) x8: Deut 2:4 slot 93807, 2Kgs 17:28 slot 206232, Isa 59:19 slot 232557 ...
+      יִרָאוּ (qal impf ps p3 nu pl gn m) x4: Deut 17:13 slot 103265, Deut 19:20 slot 104302, Deut 21:21 slot 105243 ...
+      יִירָאוּ (qal impf ps p3 nu pl gn m) x4: Isa 41:5 slot 226135, Ps 40:4 slot 317038, Ps 52:8 slot 319143 ...
+      יִירָאוּךָ (qal impf ps p3 nu pl gn m prs K) x3: Isa 25:3 slot 220100, Ps 72:5 slot 322351, 2Chr 6:31 slot 409713
+      יִרָאוּן (qal impf ps p3 nu pl gn m) x1: Deut 13:12 slot 101297
+      יִרָאוּךָ (qal impf ps p3 nu pl gn m prs K) x1: 1Kgs 8:40 slot 183004
+      יִרְאוּ (qal impf ps p3 nu pl gn m) x1: Mic 7:17 slot 301390
+      יִּרְאוּ (qal impf ps p3 nu pl gn m) x1: Eccl 3:14 slot 360361
+
+== 2Chr 18:29, lexeme BW>[: slots [415551, 415564]
+  verse 2Chr 18:29, word by word:
+     415543 וַ [WA-] | W וְ 'and' | sp conj |  | phrase CP Conj | clause WayX
+     415544 יֹּאמֶר֩  [J.O>MER04] | >MR[ אמר 'say' | sp verb | qal wayq ps p3 nu sg gn m | phrase VP Pred | clause WayX
+     415545 מֶ֨לֶךְ  [ME63LEK:] | MLK/ מֶלֶךְ 'king' | sp subs | nu sg gn m st c | phrase NP Subj | clause WayX
+     415546 יִשְׂרָאֵ֜ל  [JIF:R@>;61L] | JFR>L/ יִשְׂרָאֵל 'Israel' | sp nmpr | nu sg st a | phrase NP Subj | clause WayX
+     415547 אֶל־ [>EL] | >L אֶל 'to' | sp prep |  | phrase PP Cmpl | clause WayX
+     415548 יְהֹושָׁפָ֗ט  [J:HOWC@P@81V] | JHWCPV/ יְהֹושָׁפָט 'Jehoshaphat' | sp nmpr | nu sg gn m st a | phrase PP Cmpl | clause WayX
+     415549 הִתְחַפֵּשׂ֙  [HIT:XAP.;F03] | XPF[ חפשׂ 'search' | sp verb | hit impv ps p2 nu sg gn m | phrase VP Pred | clause ZIm0
+     415550 וָ [W@-] | W וְ 'and' | sp conj |  | phrase CP Conj | clause WIm0
+   * 415551 בֹ֣וא  [BO74W>] | BW>[ בוא 'come' | sp verb | qal impv ps p2 nu sg gn m | phrase VP Pred | clause WIm0
+     415552 בַ [BA-] | B בְּ 'in' | sp prep |  | phrase PP Cmpl | clause WIm0
+     415553  [-] | H הַ 'the' | sp art |  | phrase PP Cmpl | clause WIm0
+     415554 מִּלְחָמָ֔ה  [M.IL:X@M@80H] | MLXMH/ מִלְחָמָה 'war' | sp subs | nu sg gn f st a nme H | phrase PP Cmpl | clause WIm0
+     415555 וְ [W:-] | W וְ 'and' | sp conj |  | phrase CP Conj | clause WXIm
+     415556 אַתָּ֖ה  [>AT.@73H] | >TH אַתָּה 'you' | sp prps | ps p2 nu sg gn m | phrase PPrP Subj | clause WXIm
+     415557 לְבַ֣שׁ  [L:BA74C] | LBC[ לבשׁ 'clothe' | sp verb | qal impv ps p2 nu sg gn m | phrase VP Pred | clause WXIm
+     415558 בְּגָדֶ֑יךָ  [B.:G@DE92JK@] | BGD/ בֶּגֶד 'garment' | sp subs | nu pl gn m st a prs K nme J | phrase NP Objc | clause WXIm
+     415559 וַ [WA-] | W וְ 'and' | sp conj |  | phrase CP Conj | clause WayX
+     415560 יִּתְחַפֵּשׂ֙  [J.IT:XAP.;F03] | XPF[ חפשׂ 'search' | sp verb | hit wayq ps p3 nu sg gn m | phrase VP Pred | clause WayX
+     415561 מֶ֣לֶךְ  [ME74LEK:] | MLK/ מֶלֶךְ 'king' | sp subs | nu sg gn m st c | phrase NP Subj | clause WayX
+     415562 יִשְׂרָאֵ֔ל  [JIF:R@>;80L] | JFR>L/ יִשְׂרָאֵל 'Israel' | sp nmpr | nu sg st a | phrase NP Subj | clause WayX
+     415563 וַ [WA-] | W וְ 'and' | sp conj |  | phrase CP Conj | clause Way0
+   * 415564 יָּבֹ֖אוּ  [J.@BO73>W.] | BW>[ בוא 'come' | sp verb | qal wayq ps p3 nu pl gn m | phrase VP Pred | clause Way0
+     415565 בַּ [B.A-] | B בְּ 'in' | sp prep |  | phrase PP Cmpl | clause Way0
+     415566  [-] | H הַ 'the' | sp art |  | phrase PP Cmpl | clause Way0
+     415567 מִּלְחָמָֽה׃  [M.IL:X@M@75H] | MLXMH/ מִלְחָמָה 'war' | sp subs | nu sg gn f st a nme H | phrase PP Cmpl | clause Way0
+  atoms, the BHSA's (ketiv side) | MAM's aligned atoms:
+    1. וַיֹּאמֶר֩ | וַ W + יֹּאמֶר֩ >MR[ | MAM וַיֹּ֩אמֶר֩
+    2. מֶ֨לֶךְ | מֶ֨לֶךְ MLK/ | MAM מֶ֨לֶךְ
+    3. יִשְׂרָאֵ֜ל | יִשְׂרָאֵ֜ל JFR>L/ | MAM יִשְׂרָאֵ֜ל
+    4. אֶל־ | אֶל >L | MAM אֶל־
+    5. יְהֹושָׁפָ֗ט | יְהֹושָׁפָ֗ט JHWCPV/ | MAM יְהוֹשָׁפָ֗ט
+    6. הִתְחַפֵּשׂ֙ | הִתְחַפֵּשׂ֙ XPF[ | MAM הִתְחַפֵּשׂ֙
+    7. וָבֹ֣וא | וָ W + בֹ֣וא BW>[ | MAM וָב֣וֹא
+    8. בַמִּלְחָמָ֔ה | בַ B +  H + מִּלְחָמָ֔ה MLXMH/ | MAM בַמִּלְחָמָ֔ה
+    9. וְאַתָּ֖ה | וְ W + אַתָּ֖ה >TH | MAM וְאַתָּ֖ה
+    10. לְבַ֣שׁ | לְבַ֣שׁ LBC[ | MAM לְבַ֣שׁ
+    11. בְּגָדֶ֑יךָ | בְּגָדֶ֑יךָ BGD/ | MAM בְּגָדֶ֑יךָ
+    12. וַיִּתְחַפֵּשׂ֙ | וַ W + יִּתְחַפֵּשׂ֙ XPF[ | MAM וַיִּתְחַפֵּשׂ֙
+    13. מֶ֣לֶךְ | מֶ֣לֶךְ MLK/ | MAM מֶ֣לֶךְ
+    14. יִשְׂרָאֵ֔ל | יִשְׂרָאֵ֔ל JFR>L/ | MAM יִשְׂרָאֵ֔ל
+    15. וַיָּבֹ֖אוּ | וַ W + יָּבֹ֖אוּ BW>[ | MAM וַיָּבֹ֖אוּ
+    16. בַּמִּלְחָמָֽה | בַּ B +  H + מִּלְחָמָֽה MLXMH/ | MAM בַּמִּלְחָמָֽה׃
+  slot 415551: pointed key Hebrew בֹוא; its analyses:
+      BW>[ qal infc x113: Gen 12:11, Gen 12:14, Gen 15:12 ...
+      BW>[ qal infa x3: Gen 37:10, Dan 11:10, Dan 11:13
+      BW>[ qal impv x1: 2Chr 18:29
+  the spellings of BW>[ qal impv p2 sg m (every word with this lexeme, stem, tense, person, number, gender):
+      בֹּא (qal impv ps p2 nu sg gn m) x20: Gen 7:1 slot 3043, Gen 16:2 slot 7057, Gen 30:3 slot 15641 ...
+      בֹּוא (qal impv ps p2 nu sg gn m) x4: Gen 24:31 slot 11715, 2Sam 16:21 slot 170222, Isa 2:10 slot 212702 ...
+      בֹא (qal impv ps p2 nu sg gn m) x2: 1Kgs 22:30 slot 194279, Esth 5:14 slot 367918
+      בֹאָה (qal impv ps p2 nu sg gn m) x1: 1Sam 20:21 slot 153873
+      בֹּאָה (qal impv ps p2 nu sg gn m) x1: 1Kgs 13:7 slot 186975
+      בֹוא (qal impv ps p2 nu sg gn m) x1: 2Chr 18:29 slot 415551
+  slot 415564: pointed key Hebrew יָּבֹאוּ; its analyses:
+      BW>[ qal wayq x185: Gen 7:15, Gen 11:31, Gen 12:5 ...
+  the spellings of BW>[ qal wayq p3 pl m (every word with this lexeme, stem, tense, person, number, gender):
+      יָּבֹאוּ (qal wayq ps p3 nu pl gn m) x185: Gen 7:15 slot 3337, Gen 11:31 slot 5464, Gen 12:5 slot 5587 ...
+      יָּבֹואוּ (qal wayq ps p3 nu pl gn m) x3: 2Kgs 11:19 slot 202531, Jer 8:16 slot 239307, 2Chr 29:18 slot 421359
+
+== 1Kgs 22:30, lexeme BW>[: slots [194279, 194292]
+  verse 1Kgs 22:30, word by word:
+     194271 וַ [WA-] | W וְ 'and' | sp conj |  | phrase CP Conj | clause WayX
+     194272 יֹּאמֶר֩  [J.O>MER04] | >MR[ אמר 'say' | sp verb | qal wayq ps p3 nu sg gn m | phrase VP Pred | clause WayX
+     194273 מֶ֨לֶךְ  [ME63LEK:] | MLK/ מֶלֶךְ 'king' | sp subs | nu sg gn m st c | phrase NP Subj | clause WayX
+     194274 יִשְׂרָאֵ֜ל  [JIF:R@>;61L] | JFR>L/ יִשְׂרָאֵל 'Israel' | sp nmpr | nu sg st a | phrase NP Subj | clause WayX
+     194275 אֶל־ [>EL] | >L אֶל 'to' | sp prep |  | phrase PP Cmpl | clause WayX
+     194276 יְהֹושָׁפָ֗ט  [J:HOWC@P@81V] | JHWCPV/ יְהֹושָׁפָט 'Jehoshaphat' | sp nmpr | nu sg gn m st a | phrase PP Cmpl | clause WayX
+     194277 הִתְחַפֵּשׂ֙  [HIT:XAP.;F03] | XPF[ חפשׂ 'search' | sp verb | hit impv ps p2 nu sg gn m | phrase VP Pred | clause ZIm0
+     194278 וָ [W@-] | W וְ 'and' | sp conj |  | phrase CP Conj | clause WIm0
+   * 194279 בֹ֣א  [BO74>] | BW>[ בוא 'come' | sp verb | qal impv ps p2 nu sg gn m | phrase VP Pred | clause WIm0
+     194280 בַ [BA-] | B בְּ 'in' | sp prep |  | phrase PP Cmpl | clause WIm0
+     194281  [-] | H הַ 'the' | sp art |  | phrase PP Cmpl | clause WIm0
+     194282 מִּלְחָמָ֔ה  [M.IL:X@M@80H] | MLXMH/ מִלְחָמָה 'war' | sp subs | nu sg gn f st a nme H | phrase PP Cmpl | clause WIm0
+     194283 וְ [W:-] | W וְ 'and' | sp conj |  | phrase CP Conj | clause WXIm
+     194284 אַתָּ֖ה  [>AT.@73H] | >TH אַתָּה 'you' | sp prps | ps p2 nu sg gn m | phrase PPrP Subj | clause WXIm
+     194285 לְבַ֣שׁ  [L:BA74C] | LBC[ לבשׁ 'clothe' | sp verb | qal impv ps p2 nu sg gn m | phrase VP Pred | clause WXIm
+     194286 בְּגָדֶ֑יךָ  [B.:G@DE92JK@] | BGD/ בֶּגֶד 'garment' | sp subs | nu pl gn m st a prs K nme J | phrase NP Objc | clause WXIm
+     194287 וַ [WA-] | W וְ 'and' | sp conj |  | phrase CP Conj | clause WayX
+     194288 יִּתְחַפֵּשׂ֙  [J.IT:XAP.;F03] | XPF[ חפשׂ 'search' | sp verb | hit wayq ps p3 nu sg gn m | phrase VP Pred | clause WayX
+     194289 מֶ֣לֶךְ  [ME74LEK:] | MLK/ מֶלֶךְ 'king' | sp subs | nu sg gn m st c | phrase NP Subj | clause WayX
+     194290 יִשְׂרָאֵ֔ל  [JIF:R@>;80L] | JFR>L/ יִשְׂרָאֵל 'Israel' | sp nmpr | nu sg st a | phrase NP Subj | clause WayX
+     194291 וַ [WA-] | W וְ 'and' | sp conj |  | phrase CP Conj | clause Way0
+   * 194292 יָּבֹ֖וא  [J.@BO73W>] | BW>[ בוא 'come' | sp verb | qal wayq ps p3 nu sg gn m | phrase VP Pred | clause Way0
+     194293 בַּ [B.A-] | B בְּ 'in' | sp prep |  | phrase PP Cmpl | clause Way0
+     194294  [-] | H הַ 'the' | sp art |  | phrase PP Cmpl | clause Way0
+     194295 מִּלְחָמָֽה׃  [M.IL:X@M@75H] | MLXMH/ מִלְחָמָה 'war' | sp subs | nu sg gn f st a nme H | phrase PP Cmpl | clause Way0
+  atoms, the BHSA's (ketiv side) | MAM's aligned atoms:
+    1. וַיֹּאמֶר֩ | וַ W + יֹּאמֶר֩ >MR[ | MAM וַיֹּ֩אמֶר֩
+    2. מֶ֨לֶךְ | מֶ֨לֶךְ MLK/ | MAM מֶ֨לֶךְ
+    3. יִשְׂרָאֵ֜ל | יִשְׂרָאֵ֜ל JFR>L/ | MAM יִשְׂרָאֵ֜ל
+    4. אֶל־ | אֶל >L | MAM אֶל־
+    5. יְהֹושָׁפָ֗ט | יְהֹושָׁפָ֗ט JHWCPV/ | MAM יְהוֹשָׁפָ֗ט
+    6. הִתְחַפֵּשׂ֙ | הִתְחַפֵּשׂ֙ XPF[ | MAM הִתְחַפֵּשׂ֙
+    7. וָבֹ֣א | וָ W + בֹ֣א BW>[ | MAM וָבֹ֣א
+    8. בַמִּלְחָמָ֔ה | בַ B +  H + מִּלְחָמָ֔ה MLXMH/ | MAM בַמִּלְחָמָ֔ה
+    9. וְאַתָּ֖ה | וְ W + אַתָּ֖ה >TH | MAM וְאַתָּ֖ה
+    10. לְבַ֣שׁ | לְבַ֣שׁ LBC[ | MAM לְבַ֣שׁ
+    11. בְּגָדֶ֑יךָ | בְּגָדֶ֑יךָ BGD/ | MAM בְּגָדֶ֑יךָ
+    12. וַיִּתְחַפֵּשׂ֙ | וַ W + יִּתְחַפֵּשׂ֙ XPF[ | MAM וַיִּתְחַפֵּשׂ֙
+    13. מֶ֣לֶךְ | מֶ֣לֶךְ MLK/ | MAM מֶ֣לֶךְ
+    14. יִשְׂרָאֵ֔ל | יִשְׂרָאֵ֔ל JFR>L/ | MAM יִשְׂרָאֵ֔ל
+    15. וַיָּבֹ֖וא | וַ W + יָּבֹ֖וא BW>[ | MAM וַיָּב֖וֹא
+    16. בַּמִּלְחָמָֽה | בַּ B +  H + מִּלְחָמָֽה MLXMH/ | MAM בַּמִּלְחָמָֽה׃
+  slot 194279: pointed key Hebrew בֹא; its analyses:
+      BW>[ qal infc x30: Gen 48:7, Exod 12:23, Exod 33:9 ...
+      BW>[ qal infa x3: 1Kgs 3:7, Jer 17:27, Hab 2:3
+      BW>[ qal impv x2: 1Kgs 22:30, Esth 5:14
+  the spellings of BW>[ qal impv p2 sg m (every word with this lexeme, stem, tense, person, number, gender):
+      בֹּא (qal impv ps p2 nu sg gn m) x20: Gen 7:1 slot 3043, Gen 16:2 slot 7057, Gen 30:3 slot 15641 ...
+      בֹּוא (qal impv ps p2 nu sg gn m) x4: Gen 24:31 slot 11715, 2Sam 16:21 slot 170222, Isa 2:10 slot 212702 ...
+      בֹא (qal impv ps p2 nu sg gn m) x2: 1Kgs 22:30 slot 194279, Esth 5:14 slot 367918
+      בֹאָה (qal impv ps p2 nu sg gn m) x1: 1Sam 20:21 slot 153873
+      בֹּאָה (qal impv ps p2 nu sg gn m) x1: 1Kgs 13:7 slot 186975
+      בֹוא (qal impv ps p2 nu sg gn m) x1: 2Chr 18:29 slot 415551
+  slot 194292: pointed key Hebrew יָּבֹוא; its analyses:
+      BW>[ qal wayq x19: 1Sam 4:13, 1Kgs 3:15, 1Kgs 7:14 ...
+      BW>[ qal impf x1: Eccl 2:12
+  the spellings of BW>[ qal wayq p3 sg m (every word with this lexeme, stem, tense, person, number, gender):
+      יָּבֹא (qal wayq ps p3 nu sg gn m) x240: Gen 7:7 slot 3156, Gen 13:18 slot 6197, Gen 14:13 slot 6442 ...
+      יָּבֹוא (qal wayq ps p3 nu sg gn m) x19: 1Sam 4:13 slot 143573, 1Kgs 3:15 slot 178743, 1Kgs 7:14 slot 181137 ...
+
+== 2Chr 26:15, lexeme XZQ[: slots [419936]
+  verse 2Chr 26:15, word by word:
+     419897 וַ [WA-] | W וְ 'and' | sp conj |  | phrase CP Conj | clause Way0
+     419898 יַּ֣עַשׂ׀  [J.A74<AF] | <FH[ עשׂה 'make' | sp verb | qal wayq ps p3 nu sg gn m | phrase VP Pred | clause Way0
+     419899 בִּ [B.I-] | B בְּ 'in' | sp prep |  | phrase PP Loca | clause Way0
+     419900 ירוּשָׁלִַ֨ם  [JRW.C@LA63IM] | JRWCLM/ יְרוּשָׁלִַם 'Jerusalem' | sp nmpr | nu sg st a | phrase PP Loca | clause Way0
+     419901 חִשְּׁבֹנֹ֜ות  [XIC.:BONO61WT] | XCBWN=/ חִשָּׁבֹון 'invention' | sp subs | nu pl gn m st a nme WT | phrase NP Objc | clause Way0
+     419902 מַחֲשֶׁ֣בֶת  [MAX:ACE74BET] | MXCBT/ מַחֲשֶׁבֶת 'plan' | sp subs | nu sg gn f st a nme T | phrase NP Objc | clause Ptcp
+     419903 חֹושֵׁ֗ב  [XOWC;81B] | XCB[ חשׁב 'account' | sp verb | qal ptca nu sg gn m st a | phrase VP PreC | clause Ptcp
+     419904 לִ [LI-] | L לְ 'to' | sp prep |  | phrase VP Pred | clause InfC
+     419905 הְיֹ֤ות  [H:JO70WT] | HJH[ היה 'be' | sp verb | qal infc st a nme WT | phrase VP Pred | clause InfC
+     419906 עַל־ [<AL] | <L עַל 'upon' | sp prep |  | phrase PP PreC | clause InfC
+     419907 הַ [HA-] | H הַ 'the' | sp art |  | phrase PP PreC | clause InfC
+     419908 מִּגְדָּלִים֙  [M.IG:D.@LIJM03] | MGDL/ מִגְדָּל 'tower' | sp subs | nu pl gn m st a nme JM | phrase PP PreC | clause InfC
+     419909 וְ [W:-] | W וְ 'and' | sp conj |  | phrase PP PreC | clause InfC
+     419910 עַל־ [<AL] | <L עַל 'upon' | sp prep |  | phrase PP PreC | clause InfC
+     419911 הַ [HA-] | H הַ 'the' | sp art |  | phrase PP PreC | clause InfC
+     419912 פִּנֹּ֔ות  [P.IN.O80WT] | PNH=/ פִּנָּה 'corner' | sp subs | nu pl gn f st a nme WT | phrase PP PreC | clause InfC
+     419913 לִ [LI-] | L לְ 'to' | sp prep |  | phrase VP Pred | clause InfC
+     419914 ירֹוא֙  [JROW>03] | JRH=[ ירה 'cast' | sp verb | qal infc st a | phrase VP Pred | clause InfC
+     419915 בַּֽ [B.A45-] | B בְּ 'in' | sp prep |  | phrase PP Cmpl | clause InfC
+     419916  [-] | H הַ 'the' | sp art |  | phrase PP Cmpl | clause InfC
+     419917 חִצִּ֔ים  [XIY.I80JM] | XY/ חֵץ 'arrow' | sp subs | nu pl gn m st a nme JM | phrase PP Cmpl | clause InfC
+     419918 וּ [W.-] | W וְ 'and' | sp conj |  | phrase PP Cmpl | clause InfC
+     419919 בָ [B@-] | B בְּ 'in' | sp prep |  | phrase PP Cmpl | clause InfC
+     419920  [-] | H הַ 'the' | sp art |  | phrase PP Cmpl | clause InfC
+     419921 אֲבָנִ֖ים  [>:AB@NI73JM] | >BN/ אֶבֶן 'stone' | sp subs | nu pl gn f st a nme JM | phrase PP Cmpl | clause InfC
+     419922 גְּדֹלֹ֑ות  [G.:DOLO92WT] | GDWL/ גָּדֹול 'great' | sp adjv | nu pl gn f st a nme WT | phrase PP Cmpl | clause InfC
+     419923 וַ [WA-] | W וְ 'and' | sp conj |  | phrase CP Conj | clause WayX
+     419924 יֵּצֵ֤א  [J.;Y;70>] | JY>[ יצא 'go out' | sp verb | qal wayq ps p3 nu sg gn m | phrase VP Pred | clause WayX
+     419925 שְׁמֹו֙  [C:MOW03] | CM/ שֵׁם 'name' | sp subs | nu sg gn m st a prs W | phrase NP Subj | clause WayX
+     419926 עַד־ [<AD] | <D עַד 'unto' | sp prep |  | phrase PP Cmpl | clause WayX
+     419927 לְ [L:-] | L לְ 'to' | sp prep |  | phrase PP Cmpl | clause WayX
+     419928 מֵ֣ [M;74-] | MN מִן 'from' | sp prep |  | phrase PP Cmpl | clause WayX
+     419929 רָחֹ֔וק  [R@XO80WQ] | RXWQ/ רָחֹוק 'remote' | sp adjv | nu sg gn m st a | phrase PP Cmpl | clause WayX
+     419930 כִּֽי־ [K.I45J] | KJ כִּי 'that' | sp conj |  | phrase CP Conj | clause xQt0
+     419931 הִפְלִ֥יא  [HIP:LI71J>] | PL>[ פלא 'be miraculous' | sp verb | hif perf ps p3 nu sg gn m | phrase VP Pred | clause xQt0
+     419932 לְ [L:-] | L לְ 'to' | sp prep |  | phrase VP Pred | clause InfC
+     419933 הֵעָזֵ֖ר  [H;<@Z;73R] | <ZR[ עזר 'help' | sp verb | nif infc st a | phrase VP Pred | clause InfC
+     419934 עַ֥ד  [<A71D] | <D עַד 'unto' | sp prep |  | phrase CP Conj | clause xQt0
+     419935 כִּֽי־ [K.I45J] | KJ כִּי 'that' | sp conj |  | phrase CP Conj | clause xQt0
+   * 419936 חָזָֽק׃  [X@Z@75Q] | XZQ[ חזק 'be strong' | sp verb | qal perf ps p3 nu sg gn m | phrase VP Pred | clause xQt0
+  atoms, the BHSA's (ketiv side) | MAM's aligned atoms:
+    1. וַיַּ֣עַשׂ | וַ W + יַּ֣עַשׂ <FH[ | MAM וַיַּ֣עַשׂ׀
+    2. בִּירוּשָׁלִַ֨ם | בִּ B + ירוּשָׁלִַ֨ם JRWCLM/ | MAM בִּירוּשָׁלַ֨͏ִם
+    3. חִשְּׁבֹנֹ֜ות | חִשְּׁבֹנֹ֜ות XCBWN=/ | MAM חִשְּׁבֹנ֜וֹת
+    4. מַחֲשֶׁ֣בֶת | מַחֲשֶׁ֣בֶת MXCBT/ | MAM מַחֲשֶׁ֣בֶת
+    5. חֹושֵׁ֗ב | חֹושֵׁ֗ב XCB[ | MAM חוֹשֵׁ֗ב
+    6. לִהְיֹ֤ות | לִ L + הְיֹ֤ות HJH[ | MAM לִהְי֤וֹת
+    7. עַל־ | עַל <L | MAM עַל־
+    8. הַמִּגְדָּלִים֙ | הַ H + מִּגְדָּלִים֙ MGDL/ | MAM הַמִּגְדָּלִים֙
+    9. וְעַל־ | וְ W + עַל <L | MAM וְעַל־
+    10. הַפִּנֹּ֔ות | הַ H + פִּנֹּ֔ות PNH=/ | MAM הַפִּנּ֔וֹת
+    11. לִירֹוא֙ | לִ L + ירֹוא֙ JRH=[ | MAM לִירוֹא֙
+    12. בַּֽחִצִּ֔ים | בַּֽ B +  H + חִצִּ֔ים XY/ | MAM בַּחִצִּ֔ים
+    13. וּבָאֲבָנִ֖ים | וּ W + בָ B +  H + אֲבָנִ֖ים >BN/ | MAM וּבָאֲבָנִ֖ים
+    14. גְּדֹלֹ֑ות | גְּדֹלֹ֑ות GDWL/ | MAM גְּדֹל֑וֹת
+    15. וַיֵּצֵ֤א | וַ W + יֵּצֵ֤א JY>[ | MAM וַיֵּצֵ֤א
+    16. שְׁמֹו֙ | שְׁמֹו֙ CM/ | MAM שְׁמוֹ֙
+    17. עַד־ | עַד <D | MAM עַד־
+    18. לְמֵ֣רָחֹ֔וק | לְ L + מֵ֣ MN + רָחֹ֔וק RXWQ/ | MAM לְמֵ֣רָח֔וֹק
+    19. כִּֽי־ | כִּֽי KJ | MAM כִּֽי־
+    20. הִפְלִ֥יא | הִפְלִ֥יא PL>[ | MAM הִפְלִ֥יא
+    21. לְהֵעָזֵ֖ר | לְ L + הֵעָזֵ֖ר <ZR[ | MAM לְהֵעָזֵ֖ר
+    22. עַ֥ד | עַ֥ד <D | MAM עַ֥ד
+    23. כִּֽי־ | כִּֽי KJ | MAM כִּי־
+    24. חָזָֽק | חָזָֽק XZQ[ | MAM חָזָֽק׃
+  slot 419936: pointed key Hebrew חָזָק; its analyses:
+      XZQ/ x19: Exod 10:19, Exod 19:16, Num 13:18 ...
+      XZQ[ qal perf x1: 2Chr 26:15
+  the spellings of XZQ[ qal perf p3 sg m (every word with this lexeme, stem, tense, person, number, gender):
+      חָזַק (qal perf ps p3 nu sg gn m) x5: Gen 41:57 slot 23425, Gen 47:20 slot 27037, Judg 1:28 slot 128039 ...
+      חָזָק (qal perf ps p3 nu sg gn m) x1: 2Chr 26:15 slot 419936
+      חֲזָקֹו (qal perf ps p3 nu sg gn m prs W) x1: 2Chr 28:20 slot 420818
+
+== 2Chr 2:8, lexeme GDL[: slots [407475]
+  verse 2Chr 2:8, word by word:
+     407462 וּ [W.-] | W וְ 'and' | sp conj |  | phrase CP Conj | clause InfC
+     407463 לְ [L:-] | L לְ 'to' | sp prep |  | phrase VP Pred | clause InfC
+     407464 הָכִ֥ין  [H@KI71JN] | KWN[ כון 'be firm' | sp verb | hif infc st a | phrase VP Pred | clause InfC
+     407465 לִ֛י  [LI91J] | L לְ 'to' | sp prep | prs J | phrase PP Cmpl | clause InfC
+     407466 עֵצִ֖ים  [<;YI73JM] | <Y/ עֵץ 'tree' | sp subs | nu pl gn m st a nme JM | phrase NP Objc | clause InfC
+     407467 לָ [L@-] | L לְ 'to' | sp prep |  | phrase NP Objc | clause InfC
+     407468 רֹ֑ב  [RO92B] | RB=/ רֹב 'multitude' | sp subs | nu sg gn m st a | phrase NP Objc | clause InfC
+     407469 כִּ֥י  [K.I71J] | KJ כִּי 'that' | sp conj |  | phrase CP Conj | clause NmCl
+     407470 הַ [HA-] | H הַ 'the' | sp art |  | phrase NP Subj | clause NmCl
+     407471 בַּ֛יִת  [B.A91JIT] | BJT/ בַּיִת 'house' | sp subs | nu sg gn m st a | phrase NP Subj | clause NmCl
+     407472 אֲשֶׁר־ [>:ACER] | >CR אֲשֶׁר '<relative>' | sp conj |  | phrase CP Rela | clause Ptcp
+     407473 אֲנִ֥י  [>:ANI71J] | >NJ אֲנִי 'i' | sp prps | ps p1 nu sg | phrase PPrP Subj | clause Ptcp
+     407474 בֹונֶ֖ה  [BOWNE73H] | BNH[ בנה 'build' | sp verb | qal ptca nu sg gn m st a | phrase VP PreC | clause Ptcp
+   * 407475 גָּדֹ֥ול  [G.@DO71WL] | GDL[ גדל 'be strong' | sp verb | qal infa st a | phrase AdvP PreC | clause NmCl
+     407476 וְ [W:-] | W וְ 'and' | sp conj |  | phrase AdvP PreC | clause NmCl
+     407477 הַפְלֵֽא׃  [HAP:L;75>] | PL>[ פלא 'be miraculous' | sp verb | hif infa st a | phrase AdvP PreC | clause NmCl
+  atoms, the BHSA's (ketiv side) | MAM's aligned atoms:
+    1. וּלְהָכִ֥ין | וּ W + לְ L + הָכִ֥ין KWN[ | MAM וּלְהָכִ֥ין
+    2. לִ֛י | לִ֛י L | MAM לִ֛י
+    3. עֵצִ֖ים | עֵצִ֖ים <Y/ | MAM עֵצִ֖ים
+    4. לָרֹ֑ב | לָ L + רֹ֑ב RB=/ | MAM לָרֹ֑ב
+    5. כִּ֥י | כִּ֥י KJ | MAM כִּ֥י
+    6. הַבַּ֛יִת | הַ H + בַּ֛יִת BJT/ | MAM הַבַּ֛יִת
+    7. אֲשֶׁר־ | אֲשֶׁר >CR | MAM אֲשֶׁר־
+    8. אֲנִ֥י | אֲנִ֥י >NJ | MAM אֲנִ֥י
+    9. בֹונֶ֖ה | בֹונֶ֖ה BNH[ | MAM בוֹנֶ֖ה
+    10. גָּדֹ֥ול | גָּדֹ֥ול GDL[ | MAM גָּד֥וֹל
+    11. וְהַפְלֵֽא | וְ W + הַפְלֵֽא PL>[ | MAM וְהַפְלֵֽא׃
+  slot 407475: pointed key Hebrew גָּדֹול; its analyses:
+      GDWL/ x244: Gen 4:13, Gen 10:21, Gen 12:2 ...
+      GDL[ qal infa x1: 2Chr 2:8
+  the spellings of GDL[ qal infa unknown unknown unknown (every word with this lexeme, stem, tense, person, number, gender):
+      גָדֹול (qal infa st a) x2: 2Sam 5:10 slot 163152, 1Chr 11:9 slot 397179
+      גָּדֹול (qal infa st a) x1: 2Chr 2:8 slot 407475
+
+== query: the analyses of 1Sam 27:10's pointed key אַל, by lexeme and part of speech
+      >L= nega x723: Gen 13:8 slot 6000, Gen 15:1 slot 6685, Gen 18:3 slot 7851
+      >L prep x2: Judg 19:23 slot 139678, Jer 47:6 slot 260353
+      >L== inrg x1: 1Sam 27:10 slot 158430
+      >L=/ subs x1: Job 24:25 slot 342192
+
+== query: every word of the lexemes >L=, >L==, >L=/
+      אַל () x724: Gen 13:8 slot 6000, Gen 15:1 slot 6685, Gen 18:3 slot 7851 ...
+      אֶל () x1: Exod 10:28 slot 34429
+      אֲל () x1: Ps 35:22 slot 316024
+      אַל (nu sg st a) x1: Job 24:25 slot 342192
+
+== query: >SP[ words whose letters have no alef
+      יֹּסֶף (qal wayq ps p3 nu sg gn m) x1: 2Sam 6:1 slot 163423
+      תֹּסֵף (qal impf ps p2 nu sg gn m) x1: Ps 104:29 slot 328516
+
+== query: >SP[ qal wayq, every spelling
+      יֶּאֱסֹף (qal wayq ps p3 nu sg gn m) x19: Gen 29:22 slot 15344, Gen 42:17 slot 23705, Gen 49:33 slot 28249 ...
+      יַּאַסְפוּ (qal wayq ps p3 nu pl gn m) x10: Exod 4:29 slot 30761, Num 11:32 slot 77523, 1Sam 5:8 slot 143980 ...
+      יֶּאֶסֹף (qal wayq ps p3 nu sg gn m) x1: Josh 24:1 slot 126636
+      יַּאַסְפֵהוּ (qal wayq ps p3 nu sg gn m prs HW) x1: 1Sam 14:52 slot 149532
+      יֹּסֶף (qal wayq ps p3 nu sg gn m) x1: 2Sam 6:1 slot 163423
+      יַּאַסְפָהּ (qal wayq ps p3 nu sg gn m prs H) x1: 2Sam 11:27 slot 166339
+      יַּאַסְפֵם (qal wayq ps p3 nu sg gn m prs M) x1: 2Chr 29:4 slot 421047
+
+== query: JSP[ words whose letters have an alef
+      אֹוסִיף (hif impf ps p1 nu sg) x12: Josh 7:12 slot 116389, Judg 2:21 slot 128665, Judg 10:13 slot 134372 ...
+      אֹסִיף (hif impf ps p1 nu sg) x5: 1Kgs 12:14 slot 186269, 2Kgs 21:8 slot 208846, Job 34:32 slot 344678 ...
+      אֹסִף (hif impf ps p1 nu sg) x3: Gen 8:21 slot 3983, Gen 8:21 slot 4004, Exod 10:29 slot 34445
+      אֹסֵף (hif impf ps p1 nu sg) x2: Deut 18:16 slot 103733, Ezek 5:16 slot 266801
+      תֹאסִפוּן (hif impf ps p2 nu pl gn m) x1: Exod 5:7 slot 30936
+      אֹוסִף (hif impf ps p1 nu sg) x1: Judg 20:28 slot 140516
+      יֹּאסֶף (hif wayq ps p3 nu sg gn m) x1: 1Sam 18:29 slot 152786
+      אֹסִפָה (hif impf ps p1 nu sg) x1: 2Sam 12:8 slot 166561
+      אֹוסֵף (hif impf ps p1 nu sg) x1: Hos 9:15 slot 293033
+
+== query: BW>[ words whose letters have no alef
+      בָּנוּ (qal perf ps p1 nu pl) x1: 1Sam 25:8 slot 156661
+
+== query: BW>[ hif impf p1 sg, every spelling
+      אָבִיא (hif impf ps p1 nu sg) x16: Exod 11:1 slot 34457, 1Kgs 21:29 slot 193650, Isa 43:5 slot 227020 ...
+      אֲבִיאֶנּוּ (hif impf ps p1 nu sg prs HW) x4: Gen 42:37 slot 24100, Gen 44:32 slot 25408, Deut 31:20 slot 111170 ...
+      אֲבִיאֶנָּה (hif impf ps p1 nu sg prs H) x1: Isa 46:11 slot 228496
+      אָבִי (hif impf ps p1 nu sg) x1: Mic 1:15 slot 299793
+      אֲבִיאֵם (hif impf ps p1 nu sg prs M) x1: Zech 10:10 slot 307987
+      אֲבִיאֲךָ (hif impf ps p1 nu sg prs K) x1: Song 8:2 slot 359071
+
+== query: JR>[ qal impf or wayq, p3 pl m, every spelling
+      יִּירְאוּ (qal wayq ps p3 nu pl gn m) x14: Gen 20:8 slot 9421, Gen 43:18 slot 24488, Exod 14:10 slot 36415 ...
+      יִּרְאוּ (qal wayq ps p3 nu pl gn m) x9: Josh 4:14 slot 114735, 1Sam 4:7 slot 143446, 1Sam 7:7 slot 144859 ...
+      יִירְאוּ (qal impf ps p3 nu pl gn m) x8: Deut 2:4 slot 93807, 2Kgs 17:28 slot 206232, Isa 59:19 slot 232557 ...
+      יִרָאוּ (qal impf ps p3 nu pl gn m) x4: Deut 17:13 slot 103265, Deut 19:20 slot 104302, Deut 21:21 slot 105243 ...
+      יִירָאוּ (qal impf ps p3 nu pl gn m) x4: Isa 41:5 slot 226135, Ps 40:4 slot 317038, Ps 52:8 slot 319143 ...
+      יִירָאוּךָ (qal impf ps p3 nu pl gn m prs K) x3: Isa 25:3 slot 220100, Ps 72:5 slot 322351, 2Chr 6:31 slot 409713
+      יִּירָאוּ (qal wayq ps p3 nu pl gn m) x1: Gen 42:35 slot 24067
+      יִרָאוּן (qal impf ps p3 nu pl gn m) x1: Deut 13:12 slot 101297
+      יִרָאוּךָ (qal impf ps p3 nu pl gn m prs K) x1: 1Kgs 8:40 slot 183004
+      יִרְאוּ (qal impf ps p3 nu pl gn m) x1: Mic 7:17 slot 301390
+      יִּרְאוּ (qal impf ps p3 nu pl gn m) x1: Eccl 3:14 slot 360361
+
+== query: R>H[ qal impf or wayq, p3 pl m, every spelling
+      יִּרְאוּ (qal wayq ps p3 nu pl gn m) x39: Gen 6:2 slot 2618, Gen 12:14 slot 5752, Gen 12:15 slot 5763 ...
+      יִרְאוּ (qal impf ps p3 nu pl gn m) x28: Gen 12:12 slot 5717, Exod 16:32 slot 38037, Num 14:23 slot 78874 ...
+      יִרְאוּנִי (qal impf ps p3 nu pl gn m prs NJ) x2: Ps 109:25 slot 330227, Ps 119:74 slot 331875
+      יִרְאוּהָ (qal impf ps p3 nu pl gn m prs H) x1: Num 14:23 slot 78886
+      יִרְאוּן (qal impf ps p3 nu pl gn m) x1: Deut 4:28 slot 95812
+      יִּרְאֻהוּ (qal wayq ps p3 nu pl gn m prs HW) x1: 2Kgs 2:15 slot 195603
+
+== query: JCB[ qal impv f sg, every spelling
+      שְׁבִי (qal impv ps p2 nu sg gn f) x6: Gen 38:11 slot 21002, 1Sam 1:23 slot 142004, Isa 47:1 slot 228526 ...
+      שְּׁבִי (qal impv ps p2 nu sg gn f) x1: Isa 52:2 slot 230330
+
+== query: CBJ/, every spelling
+      שְּׁבִי (nu sg gn m st a) x20: Exod 12:29 slot 35363, Num 31:12 slot 89099, Num 31:26 slot 89373 ...
+      שֶּׁבִי (nu sg gn m st a) x9: Deut 28:41 slot 108881, Jer 15:2 slot 242236, Jer 20:6 slot 244687 ...
+      שְׁבִי (nu sg gn m st a) x4: Isa 49:24 slot 229576, Amos 4:10 slot 296441, Lam 1:5 slot 363611 ...
+      שִׁבְיָם (nu sg gn m st a prs M) x4: Jer 30:10 slot 250393, Jer 46:27 slot 260193, 2Chr 6:37 slot 409901 ...
+      שֶׁבִי (nu sg gn m st a) x3: Num 21:1 slot 83148, Hab 1:9 slot 302329, 2Chr 28:17 slot 420745
+      שְׁבִי (nu sg gn m st c) x2: Isa 20:4 slot 218674, Isa 49:25 slot 229584
+      שְּׁבִי (nu sg gn m st c) x2: Ezra 2:1 slot 378434, Neh 7:6 slot 386482
+      שְׁבִיכֶם (nu sg gn m st a prs KM) x1: Num 31:19 slot 89254
+      שִׁבְיֹו (nu sg gn m st a prs W) x1: Deut 21:10 slot 104997
+      שִׁבְיָהּ (nu sg gn m st a prs H) x1: Deut 21:13 slot 105031
+      שֶׁבְיְךָ (nu sg gn m st a prs K) x1: Judg 5:12 slot 130128
+
+== query: the words of Isa 52:2's pointed key שְּׁבִי, by lexeme and the lexeme of the slot before
+      CBJ/ after H x20: Exod 12:29 slot 35363, Num 31:12 slot 89099, Num 31:26 slot 89373
+      CBJ/ after MN x2: Ezra 2:1 slot 378434, Neh 7:6 slot 386482
+      JCB[ after QWM[ x1: Isa 52:2 slot 230330
+
+== query: M<L[, every spelling
+      מָעֲלוּ (qal perf ps p3 nu pl) x8: Lev 26:40 slot 68817, Ezek 15:8 slot 271022, Ezek 39:23 slot 284817 ...
+      מָעַל (qal perf ps p3 nu sg gn m) x5: Josh 22:20 slot 125766, Ezek 17:20 slot 272592, Ezek 18:24 slot 273165 ...
+      מְעַלְתֶּם (qal perf ps p2 nu pl gn m) x4: Deut 32:51 slot 112186, Josh 22:16 slot 125656, Josh 22:31 slot 126096 ...
+      מָעֲלָה (qal perf ps p3 nu sg gn f) x2: Lev 5:21 slot 54757, Num 5:12 slot 72931
+      יִּמְעֲלוּ (qal wayq ps p3 nu pl gn m) x2: Josh 7:1 slot 116080, 1Chr 5:25 slot 393882
+      תִמְעֹל (qal impf ps p3 nu sg gn f) x1: Lev 5:15 slot 54626
+      מְעֹל (qal infc st c) x1: Num 5:6 slot 72819
+      תִּמְעֹל (qal wayq ps p3 nu sg gn f) x1: Num 5:27 slot 73301
+      מְעָל (qal infc st c) x1: Ezek 14:13 slot 270625
+      מַעֲלָם (qal infc st a prs M) x1: Ezek 20:27 slot 274116
+      יִמְעַל (qal impf ps p3 nu sg gn m) x1: Prov 16:10 slot 351113
+      מָעַלְנוּ (qal perf ps p1 nu pl) x1: Ezra 10:2 slot 382759
+      תִּמְעָלוּ (qal impf ps p2 nu pl gn m) x1: Neh 1:8 slot 383619
+      מְעֹל (qal infc st a) x1: Neh 13:27 slot 391186
+      יִּמְעַל (qal wayq ps p3 nu sg gn m) x1: 2Chr 26:16 slot 419946
+      מָעַלְתָּ (qal perf ps p2 nu sg gn m) x1: 2Chr 26:18 slot 420006
+      מָעֹול (qal infa st a) x1: 2Chr 28:19 slot 420803
+      מַעַל (qal perf ps p3 nu sg gn m) x1: 2Chr 28:19 slot 420804
+      מְעֹול (qal infc st a) x1: 2Chr 28:22 slot 420851
+
+== query: M<L=/, every spelling
+      מַעַל (nu sg gn m st a) x11: Lev 5:15 slot 54627, Lev 5:21 slot 54758, Num 5:6 slot 72820 ...
+      מַעֲלָם (nu sg gn m st a prs M) x4: Lev 26:40 slot 68815, Ezek 39:26 slot 284872, Dan 9:7 slot 375931 ...
+      מַעֲלֹו (nu sg gn m st a prs W) x4: Ezek 17:20 slot 272590, Ezek 18:24 slot 273163, 1Chr 10:13 slot 396963 ...
+      מָעַל (nu sg gn m st a) x3: Num 5:12 slot 72933, Ezek 20:27 slot 274118, Job 21:34 slot 341496
+      מַּעַל (nu sg gn m st a) x3: Josh 22:16 slot 125652, Josh 22:31 slot 126100, Ezra 9:2 slot 382339
+      מַעַל (nu sg gn m st c) x2: Ezra 9:4 slot 382376, Ezra 10:6 slot 382869
+      מַעְלֹו (nu sg gn m st a prs W) x1: 2Chr 33:19 slot 424328
+
+== query: Hebrew words with nme JN or JN=, by lexeme
+      MLH/ x13: Job 4:2 slot 337113 מִלִּ֗ין, Job 12:11 slot 339128 מִלִּ֣ין
+      MD/ x1: Judg 5:10 slot 130091 מִדִּ֛ין
+      YJDNJ/ x1: 1Kgs 11:33 slot 185704 צִֽדֹנִין֒
+      RWY[ x1: 2Kgs 11:13 slot 202329 רָצִ֖ין
+      XVH/ x1: Ezek 4:9 slot 266244 חִטִּ֡ין
+      >J/ x1: Ezek 26:18 slot 277744 אִיִּ֔ן
+      <J/ x1: Mic 3:12 slot 300284 עִיִּ֣ין
+      XJJM/ x1: Job 24:22 slot 342157 חַיִּֽין
+      >XR=/ x1: Job 31:10 slot 343501 אֲחֵרִֽין
+      MLK/ x1: Prov 31:3 slot 355527 מְלָכִֽין
+      CMM[ x1: Lam 1:4 slot 363588 שֹֽׁומֵמִ֔ין
+      JWM/ x1: Dan 12:13 slot 378150 יָּמִֽין
+
+== query: JWM/, every spelling with nme JN or JN=
+      יֹומִין (nu pl gn m st a nme JN) x3: Dan 6:8 slot 374016, Dan 6:13 slot 374135, Dan 7:9 slot 374766
+      יָּמִין (nu pl gn m st a nme JN) x1: Dan 12:13 slot 378150
+
+== query: JMJN/, every spelling
+      יָמִין (nu sg gn f st a) x22: Gen 24:49 slot 12101, Num 20:17 slot 82901, Num 22:26 slot 84359 ...
+      יְמִינֹו (nu sg gn f st a prs W) x22: Gen 48:14 slot 27557, Gen 48:17 slot 27645, Judg 3:15 slot 129027 ...
+      יָּמִין (nu sg gn f st a) x18: Gen 13:9 slot 6036, Exod 29:22 slot 45034, Lev 7:32 slot 55891 ...
+      ימִינֹו (nu sg gn f st a prs W) x12: Gen 48:13 slot 27538, Deut 33:2 slot 112264, Judg 16:29 slot 137929 ...
+      יְמִין (nu sg gn f st c) x12: 1Sam 23:24 slot 155856, 2Sam 20:9 slot 173314, 2Sam 24:5 slot 175553 ...
+      יְמִינְךָ (nu sg gn f st a prs K) x11: Gen 48:18 slot 27680, Exod 15:6 slot 36989, Exod 15:6 slot 36995 ...
+      יְמִינֶךָ (nu sg gn f st a prs K) x11: Isa 41:13 slot 226255, Ps 45:5 slot 317937, Ps 48:11 slot 318388 ...
+      ימִין (nu sg gn f st c) x8: Gen 48:13 slot 27548, 1Sam 23:19 slot 155751, 2Kgs 23:13 slot 210212 ...
+      ימִינָם (nu sg gn f st a prs M) x5: Exod 14:22 slot 36699, Exod 14:29 slot 36861, Ps 26:10 slot 314371 ...
+      ימִינִי (nu sg gn f st a prs J) x4: Isa 44:20 slot 227740, Isa 48:13 slot 228988, Ps 16:8 slot 312453 ...
+      יְמִינִי (nu sg gn f st a prs J) x3: Jer 22:24 slot 245800, Ps 73:23 slot 322734, Ps 137:5 slot 334204
+      ימִינְךָ (nu sg gn f st a prs K) x3: Ps 16:11 slot 312488, Ps 18:36 slot 313027, Ps 45:10 slot 317989
+
+== query: GDL[ qal infa, every spelling
+      גָדֹול (qal infa st a) x2: 2Sam 5:10 slot 163152, 1Chr 11:9 slot 397179
+      גָּדֹול (qal infa st a) x1: 2Chr 2:8 slot 407475
+
+== query: XZQ[ qal perf p3 sg m, every spelling
+      חָזַק (qal perf ps p3 nu sg gn m) x5: Gen 41:57 slot 23425, Gen 47:20 slot 27037, Judg 1:28 slot 128039 ...
+      חָזָק (qal perf ps p3 nu sg gn m) x1: 2Chr 26:15 slot 419936
+      חֲזָקֹו (qal perf ps p3 nu sg gn m prs W) x1: 2Chr 28:20 slot 420818
+
+== query: BW>[ qal impv m sg, every spelling
+      בֹּא (qal impv ps p2 nu sg gn m) x20: Gen 7:1 slot 3043, Gen 16:2 slot 7057, Gen 30:3 slot 15641 ...
+      בֹּוא (qal impv ps p2 nu sg gn m) x4: Gen 24:31 slot 11715, 2Sam 16:21 slot 170222, Isa 2:10 slot 212702 ...
+      בֹא (qal impv ps p2 nu sg gn m) x2: 1Kgs 22:30 slot 194279, Esth 5:14 slot 367918
+      בֹאָה (qal impv ps p2 nu sg gn m) x1: 1Sam 20:21 slot 153873
+      בֹּאָה (qal impv ps p2 nu sg gn m) x1: 1Kgs 13:7 slot 186975
+      בֹוא (qal impv ps p2 nu sg gn m) x1: 2Chr 18:29 slot 415551
+

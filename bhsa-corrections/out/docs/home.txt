@@ -1,0 +1,328 @@
+0 home
+This is data version 2021,
+viewable in SHEBANQ.
+Introduction¶
+This is the key to the meaning of the features of the
+BHSA dataset.
+We organize the features in several groups, roughly analogous to the
+types of objects
+we have:
+grid
+sectional
+word
+lexeme
+linguistic
+relationships
+generic
+Grid features¶
+name
+description
+examples
+ | otype
+ | node type
+ | book verse clause phrase word
+ | oslots
+ | slot containment
+ | 1 1-11 2010-2015,2020-2030
+ | otext
+ | text API
+ | no data, only specifications
+Sectional features¶
+name
+description
+examples
+ | book
+ | name of Bible book
+ | Genesis Psalmi Amos
+ | chapter
+ | number of chapter within book
+ | 3
+ | verse
+ | number of verse within chapter
+ | 4
+ | label
+ | passage indicator
+ | AMOS 03,04
+ | label
+ | key for part within verse
+ | A B C
+Lexeme features¶
+(on node type lex)
+name
+description
+examples
+ | lex
+ | lexeme consonantal transliterated
+ | >MR[
+ | voc_lex
+ | lexeme pointed transliterated
+ | R;>CIJT
+ | voc_lex_utf8
+ | lexeme pointed hebrew
+ | רֵאשִׁית
+ | sp
+ | part of speech
+ | verb subs
+ | ls
+ | lexical set
+ | quot ques
+ | nametype
+ | type of named entity
+ | topo
+ | gloss
+ | gloss
+ | beginning
+ | language
+ | language (English name)
+ | Hebrew Aramaic
+ | languageISO
+ | language (ISO code)
+ | hbo arc
+Word features¶
+Orthography¶
+name
+node type
+description
+mode
+examples
+ | g_cons
+ | word
+ | consonantal
+ | transliterated
+ | >CR
+ | g_cons_utf8
+ | word
+ | consonantal
+ | hebrew
+ | אשׁר
+ | g_word
+ | word
+ | pointed
+ | transliterated
+ | >:ACER&
+ | g_word_utf8
+ | word
+ | pointed
+ | hebrew
+ | אֲשֶׁר
+ | qere
+ | word (qere)
+ | consonantal
+ | transliterated
+ | HAJ:Y;74>
+ | qere_utf8
+ | word (qere)
+ | pointed
+ | hebrew
+ | הַיְצֵ֣א
+ | trailer
+ | after-word
+ | pointed
+ | transliterated
+ | ׃ ׆̇
+ | trailer_utf8
+ | after-word
+ | pointed
+ | hebrew
+ | 00_N
+ | qere_trailer
+ | after-word (qere)
+ | pointed
+ | transliterated
+ | 00 &
+ | qere_trailer_utf8
+ | after-word (qere)
+ | pointed
+ | hebrew
+ | ׃ ־
+Lexical (on node type word)¶
+name
+node type
+description
+mode
+examples
+ | lex
+ | word
+ | consonantal
+ | transliterated
+ | >MR[
+ | lex_utf8
+ | word
+ | consonantal
+ | hebrew
+ | אמר
+ | g_lex
+ | word
+ | pointed
+ | transliterated
+ | >MER
+ | g_lex_utf8
+ | word
+ | pointed
+ | hebrew
+ | אמֶר
+name
+description
+examples
+ | language
+ | language (English name)
+ | Hebrew Aramaic
+ | languageISO
+ | language (ISO code)
+ | hbo arc
+ | sp
+ | part of speech
+ | verb subs
+ | pdp
+ | phrase dependent part of speech
+ | verb subs
+ | ls
+ | lexical set
+ | quot ques
+Morphology¶
+name
+description
+examples
+ | gn prs_gn
+ | gender
+ | m f
+ | nu prs_nu
+ | number
+ | sg pl du
+ | ps prs_ps
+ | person
+ | p1 p2 p3
+ | st
+ | state
+ | a c e
+ | vs
+ | verbal stem
+ | qal piel nif hif
+ | vt
+ | verbal tense
+ | perf impf wayq
+Morphemes¶
+name (consonantal transliterated)
+name (pointed transliterated)
+name (pointed hebrew)
+description
+examples
+ | nme
+ | g_nme
+ | g_nme_utf8
+ | nominal ending
+ | / /IJM /@H
+ | pfm
+ | g_pfm
+ | g_pfm_utf8
+ | preformative
+ | !! !J.I! !TI!
+ | prs
+ | g_prs
+ | g_prs_utf8
+ | pronominal suffix
+ | +OW +IJ +HEM
+ | uvf
+ | g_uvf
+ | g_uvf_utf8
+ | univalent final
+ | ~@H ~IJ ~OW
+ | vbe
+ | g_vbe
+ | g_vbe_utf8
+ | verbal ending
+ | [ [W. [T.IJ
+ | vbs
+ | g_vbs
+ | g_vbs_utf8
+ | root formation
+ | ]] ]NI] ]HA]
+Statistics¶
+name
+description
+ | freq_lex
+ | frequency of lexeme
+ | freq_occ
+ | frequency of word occurrence
+ | rank_lex
+ | rank of lexeme
+ | rank_occ
+ | rank of word occurrence
+Linguistic features¶
+Sentence(-atom) features¶
+Nothing specific, just a generic number feature.
+Clause(-atom) features¶
+name
+description
+examples
+ | typ
+ | clause type
+ | AjCl WayX WXQt ZImX
+ | kind
+ | rough clause type
+ | VC NC WP
+ | rela
+ | clause constituent relation
+ | Adju Attr Coor
+ | domain
+ | text type ??
+ | Q N D
+ | txt
+ | text type
+ | NQ NQQ QNQQ NQND
+ | code
+ | clause atom relation
+ | 200 477 999
+ | is_root
+ | ??
+ | 
+ | tab
+ | hierarchical tabulation
+ | 0 3 10 29
+ | pargr
+ | paragraph number
+ | 1 1.2 2.3.4
+ | instruction
+ | instruction
+ | .q .d .. ve
+Phrase(-atom) features¶
+name
+description
+examples
+ | typ
+ | phrase type
+ | VP NP PP AdjP AdvP
+ | rela
+ | phrase atom relation
+ | Appo Para Resu
+ | function
+ | phrase function
+ | Pred Subj
+ | det
+ | determination
+ | det und
+Relationships¶
+name
+description
+ | mother
+ | relation of linguistic dependency
+ | distributional_parent
+ | the parent in the distributional hierarchy (-atoms)
+ | functional_parent
+ | the parent in the distributional hierarchy (sentence clause phrase)
+Generic features¶
+name
+description
+examples
+ | number
+ | sequence number in context
+ | 123
+ | dist
+ | distance to mother
+ | -10 0  1 8
+ | dist_unit
+ | unit of measuring distance to mother
+ | clause_atoms phrase_atoms words
+ | mother_object_type
+ | object type of mother
+ | clause phrase subphrase word

@@ -1,0 +1,1799 @@
+Pre-filter for Test B class neither: 169 rows
+rows with a neighbour analysed otherwise: 14
+
+#1 slot 1137 | Genesis 2:23 | LQX[ pual perf
+  BHSA לֻֽקֳחָה (key לֻקֳחָה; LU45Q:@X@H) in atom לֻֽקֳחָה־
+  MAM  לֻֽקְחָה (key לֻקְחָה) in atom לֻֽקְחָה־
+  WLC 4.18: לֻֽקֳחָה־
+  LQX[ | sp verb ps p3 nu sg gn f st NA prs absent | gloss take | voc_lex לקח
+  morphemes: pfm  | vbs  | lex לֻקֳח | vbe ָה | nme  | uvf  | prs 
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#2 slot 1979 | Genesis 4:18 | MXJJ>L/
+  BHSA מְחִיּיָאֵ֗ל (key מְחִיּיָאֵל; M:XIJ.J@>;81L) in atom וּמְחִיּיָאֵ֗ל
+  MAM  מְחִיָּיאֵ֗ל (key מְחִיָּיאֵל) in atom וּמְחִיָּיאֵ֗ל
+  WLC 4.18: וּמְחִיּיָאֵ֗ל
+  MXJJ>L/ | sp nmpr ps NA nu sg gn m st a prs n/a | gloss Mehujael | voc_lex מְחִיּיָאֵל
+  morphemes: pfm  | vbs  | lex מְחִיּיָאֵל | vbe  | nme ֜ | uvf  | prs 
+  atom slots: וּ W; מְחִיּיָאֵ֗ל MXJJ>L/
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#3 slot 2897 | Genesis 6:16 | KLH[ piel impf
+  BHSA תְּכַלֶ֣נָּה (key תְּכַלֶנָּה; T.:KALE74N.@H) in atom תְּכַלֶ֣נָּה
+  MAM  תְּכַלֶּ֣נָּה (key תְּכַלֶּנָּה) in atom תְּכַלֶּ֣נָּה
+  WLC 4.18: תְּכַלֶ֣נָּה notes 1
+  KLH[ | sp verb ps p2 nu sg gn m st NA prs H | gloss be complete | voc_lex כלה
+  morphemes: pfm תְּ | vbs  | lex כַל | vbe  | nme  | uvf ֶנּ | prs ָה
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#4 slot 3524 | Genesis 7:23 | C>R[ nif wayq
+  BHSA יִשָּׁ֧אֶר (key יִשָּׁאֶר; JIC.@94>ER) in atom וַיִשָּׁ֧אֶר
+  MAM  יִּשָּׁ֧אֶר (key יִּשָּׁאֶר) in atom וַיִּשָּׁ֧אֶר
+  WLC 4.18: וַיִשָּׁ֧אֶר notes 1
+  C>R[ | sp verb ps p3 nu sg gn m st NA prs absent | gloss remain | voc_lex שׁאר
+  morphemes: pfm יִ | vbs  | lex שָּׁאֶר | vbe  | nme  | uvf  | prs 
+  atom slots: וַ W; יִשָּׁ֧אֶר C>R[
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  NEIGHBOUR OTHER: tsere for segol on letter 3 | יִשָּׁאֵר | C>R[ nif impf x2 (Jesaia 11:11)
+  same full analysis elsewhere: -
+
+#5 slot 8162 | Genesis 18:21 | JRD[ qal impf
+  BHSA אֵֽרֲדָה (key אֵרֲדָה; >;45R:AD@H) in atom אֵֽרֲדָה־
+  MAM  אֵֽרְדָה (key אֵרְדָה) in atom אֵֽרְדָה־
+  WLC 4.18: אֵֽרֲדָה־
+  JRD[ | sp verb ps p1 nu sg gn unknown st NA prs absent | gloss descend | voc_lex ירד
+  morphemes: pfm אֵ | vbs  | lex רֲד | vbe ָה | nme  | uvf  | prs 
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: אֵרֵד x4 (Genesis 37:35)
+
+#6 slot 12761 | Genesis 25:22 | RYY[ hit wayq
+  BHSA יִּתְרֹֽצֲצ֤וּ (key יִּתְרֹצֲצוּ; J.IT:RO45Y:AY70W.) in atom וַיִּתְרֹֽצֲצ֤וּ
+  MAM  יִּתְרֹֽצְצ֤וּ (key יִּתְרֹצְצוּ) in atom וַיִּתְרֹֽצְצ֤וּ
+  WLC 4.18: וַיִּתְרֹֽצֲצ֤וּ
+  RYY[ | sp verb ps p3 nu pl gn m st NA prs absent | gloss crush | voc_lex רצץ
+  morphemes: pfm יִּ | vbs תְ | lex רֹצֲץ | vbe וּ | nme  | uvf  | prs 
+  atom slots: וַ W; יִּתְרֹֽצֲצ֤וּ RYY[
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#7 slot 14219 | Genesis 27:33 | BRK[ piel wayq
+  BHSA אֲבָרֲכֵ֑הוּ (key אֲבָרֲכֵהוּ; >:AB@R:AK;92HW.) in atom וָאֲבָרֲכֵ֑הוּ
+  MAM  אֲבָרְכֵ֑הוּ (key אֲבָרְכֵהוּ) in atom וָאֲבָרְכֵ֑הוּ
+  WLC 4.18: וָאֲבָרֲכֵ֑הוּ
+  BRK[ | sp verb ps p1 nu sg gn unknown st NA prs HW | gloss bless | voc_lex ברך
+  morphemes: pfm אֲ | vbs  | lex בָרֲך | vbe  | nme  | uvf  | prs ֵהוּ
+  atom slots: וָ W; אֲבָרֲכֵ֑הוּ BRK[
+  own key elsewhere: -
+  MAM's key in BHSA: OTHER BRK[ piel impf x1 (Jesaia 51:2)
+  NEIGHBOUR OTHER: sheva for hataf patah on letter 3 | אֲבָרְכֵהוּ | BRK[ piel impf x1 (Jesaia 51:2)
+  same full analysis elsewhere: -
+
+#8 slot 16020 | Genesis 30:27 | BRK[ piel wayq
+  BHSA יְבָרֲכֵ֥נִי (key יְבָרֲכֵנִי; J:B@R:AK;71NIJ) in atom וַיְבָרֲכֵ֥נִי
+  MAM  יְבָרְכֵ֥נִי (key יְבָרְכֵנִי) in atom וַיְבָרְכֵ֥נִי
+  WLC 4.18: וַיְבָרֲכֵ֥נִי
+  BRK[ | sp verb ps p3 nu sg gn m st NA prs NJ | gloss bless | voc_lex ברך
+  morphemes: pfm יְ | vbs  | lex בָרֲך | vbe  | nme  | uvf  | prs ֵנִי
+  atom slots: וַ W; יְבָרֲכֵ֥נִי BRK[
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#9 slot 16229 | Genesis 30:37 | <RMWN/
+  BHSA עֶרְמֹ֑ון (key עֶרְמֹון; <ER:MO92WN) in atom וְעֶרְמֹ֑ון
+  MAM  עַרְמֹ֑ון (key עַרְמֹון) in atom וְעַרְמ֑וֹן
+  WLC 4.18: וְעֶרְמ֑וֹן notes 1
+  <RMWN/ | sp subs ps NA nu sg gn m st a prs absent | gloss plane-tree | voc_lex עֶרְמֹון
+  morphemes: pfm  | vbs  | lex עֶרְמֹון | vbe  | nme ֜ | uvf  | prs 
+  atom slots: וְ W; עֶרְמֹ֑ון <RMWN/
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#10 slot 16253 | Genesis 30:38 | CQT/
+  BHSA שִֽׁקֲתֹ֣ות (key שִׁקֲתֹות; CI45Q:ATO74WT) in atom בְּשִֽׁקֲתֹ֣ות
+  MAM  שִֽׁקְתֹ֣ות (key שִׁקְתֹות) in atom בְּשִֽׁקְת֣וֹת
+  WLC 4.18: בְּשִֽׁקֲת֣וֹת
+  CQT/ | sp subs ps NA nu pl gn f st c prs absent | gloss watering trough | voc_lex שֹׁקֶת
+  morphemes: pfm  | vbs  | lex שִׁקֲת | vbe  | nme ֹ֜ות | uvf  | prs 
+  atom slots: בְּ B; שִֽׁקֲתֹ֣ות CQT/
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#11 slot 17776 | Genesis 32:18 | PGC[ qal impf
+  BHSA יִֽפְגָּשְׁךָ֞ (key יִפְגָּשְׁךָ; JI45P:G.@C:K@62) in atom יִֽפְגָּשְׁךָ֞
+  MAM  יִֽפְגׇשְׁךָ֞ (key יִפְגָשְׁךָ) in atom יִֽפְגׇשְׁךָ֞
+  WLC 4.18: יִֽפְגָּשְׁךָ֞ notes 1
+  PGC[ | sp verb ps p3 nu sg gn m st NA prs K | gloss meet | voc_lex פגשׁ
+  morphemes: pfm יִ | vbs  | lex פְגָּשְׁ | vbe  | nme  | uvf  | prs כָ
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#12 slot 21041 | Genesis 38:12 | GZZ[ qal ptca
+  BHSA גֹּֽזֲזֵ֤י (key גֹּזֲזֵי; G.O45Z:AZ;70J) in atom גֹּֽזֲזֵ֤י
+  MAM  גֹּֽזְזֵ֤י (key גֹּזְזֵי) in atom גֹּֽזְזֵ֤י
+  WLC 4.18: גֹּֽזֲזֵ֤י
+  GZZ[ | sp verb ps unknown nu pl gn m st c prs absent | gloss shear | voc_lex גזז
+  morphemes: pfm  | vbs  | lex גֹּזֲז | vbe  | nme ֵ֜י | uvf  | prs 
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#13 slot 21353 | Genesis 38:26 | JD<[ qal infc
+  BHSA דַעְתָּֽה (key דַעְתָּה; DA<:T.@75H) in atom לְדַעְתָּֽה
+  MAM  דַעְתָּֽהּ׃ (key דַעְתָּהּ) in atom לְדַעְתָּֽהּ׃
+  WLC 4.18: לְדַעְתָּֽה׃ notes 1
+  JD<[ | sp verb ps unknown nu unknown gn unknown st a prs H | gloss know | voc_lex ידע
+  morphemes: pfm  | vbs  | lex דַעְ | vbe  | nme ֜תּ | uvf  | prs ָה
+  atom slots: לְ L; דַעְתָּֽה JD<[
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#14 slot 28055 | Genesis 49:23 | MRR[ piel wayq
+  BHSA יְמָרֲרֻ֖הוּ (key יְמָרֲרֻהוּ; J:M@R:ARU73HW.) in atom וַֽיְמָרֲרֻ֖הוּ
+  MAM  יְמָרְרֻ֖הוּ (key יְמָרְרֻהוּ) in atom וַֽיְמָרְרֻ֖הוּ
+  WLC 4.18: וַֽיְמָרֲרֻ֖הוּ
+  MRR[ | sp verb ps p3 nu pl gn m st NA prs HW | gloss be bitter | voc_lex מרר
+  morphemes: pfm יְ | vbs  | lex מָרֲר | vbe ֻ | nme  | uvf  | prs הוּ
+  atom slots: וַֽ W; יְמָרֲרֻ֖הוּ MRR[
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#15 slot 33259 | Exodus 9:11 | XRVM/
+  BHSA חֲרְטֻמִּ֖ם (key חֲרְטֻמִּם; X:AR:VUM.I73M) in atom בַּֽחֲרְטֻמִּ֖ם
+  MAM  חַרְטֻמִּ֖ם (key חַרְטֻמִּם) in atom בַּֽחַרְטֻמִּ֖ם
+  WLC 4.18: בַּֽחֲרְטֻמִּ֖ם
+  XRVM/ | sp subs ps NA nu pl gn m st a prs absent | gloss magician | voc_lex חַרְטֹם
+  morphemes: pfm  | vbs  | lex חֲרְטֻםּ | vbe  | nme ִ֜מ | uvf  | prs 
+  atom slots: בַּֽ B;  H; חֲרְטֻמִּ֖ם XRVM/
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: חַרְטֻמִּים x6 (Genesis 41:24); חֲרְטֻמִּים x1 (Exodus 8:3)
+
+#16 slot 37043 | Exodus 15:10 | YLL[ qal perf
+  BHSA צָֽלֲלוּ֙ (key צָלֲלוּ; Y@45L:ALW.03) in atom צָֽלֲלוּ֙
+  MAM  צָֽלְלוּ֙ (key צָלְלוּ) in atom צָֽלְלוּ֙
+  WLC 4.18: צָֽלֲלוּ֙
+  YLL[ | sp verb ps p3 nu pl gn unknown st NA prs absent | gloss sink | voc_lex צלל
+  morphemes: pfm  | vbs  | lex צָלֲל | vbe וּ | nme  | uvf  | prs 
+  own key elsewhere: YLL=[ qal perf x1 (Habakuk 3:16); YLL==[ qal perf x1 (Nehemia 13:19)
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#17 slot 47643 | Exodus 33:16 | PLH[ nif perf
+  BHSA נִפְלֵ֨ינוּ֙ (key נִפְלֵינוּ; NIP:L;33JNW.03) in atom וְנִפְלֵ֨ינוּ֙
+  MAM  נִפְלִ֙ינוּ֙ (key נִפְלִינוּ) in atom וְנִפְלִ֙ינוּ֙
+  WLC 4.18: וְנִפְלֵ֙ינוּ֙ notes 1
+  PLH[ | sp verb ps p1 nu pl gn unknown st NA prs absent | gloss be special | voc_lex פלה
+  morphemes: pfm  | vbs נִ | lex פְלֵי | vbe נוּ | nme  | uvf  | prs 
+  atom slots: וְ W; נִפְלֵ֨ינוּ֙ PLH[
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#18 slot 54440 | Leviticus 5:7 | NG<[ hif impf
+  BHSA תַגִּ֣יע (key תַגִּיע; TAG.I74J<) in atom תַגִּ֣יע
+  MAM  תַגִּ֣יעַ (key תַגִּיעַ) in atom תַגִּ֣יעַ
+  WLC 4.18: תַגִּ֣יע notes 1
+  NG<[ | sp verb ps p3 nu sg gn f st NA prs absent | gloss touch | voc_lex נגע
+  morphemes: pfm תַ | vbs  | lex גִּיע | vbe  | nme  | uvf  | prs 
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#19 slot 73853 | Numeri 6:23 | BRK[ piel impf
+  BHSA תְבָרֲכ֖וּ (key תְבָרֲכוּ; T:B@R:AK73W.) in atom תְבָרֲכ֖וּ
+  MAM  תְבָרְכ֖וּ (key תְבָרְכוּ) in atom תְבָרְכ֖וּ
+  WLC 4.18: תְבָרֲכ֖וּ
+  BRK[ | sp verb ps p2 nu pl gn m st NA prs absent | gloss bless | voc_lex ברך
+  morphemes: pfm תְ | vbs  | lex בָרֲך | vbe וּ | nme  | uvf  | prs 
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#20 slot 91380 | Numeri 33:55 | YRR=[ qal perf
+  BHSA צָרֲר֣וּ (key צָרֲרוּ; Y@R:AR74W.) in atom וְצָרֲר֣וּ
+  MAM  צָרְר֣וּ (key צָרְרוּ) in atom וְצָרְר֣וּ
+  WLC 4.18: וְצָרֲר֣וּ
+  YRR=[ | sp verb ps p3 nu pl gn unknown st NA prs absent | gloss be hostile | voc_lex צרר
+  morphemes: pfm  | vbs  | lex צָרֲר | vbe וּ | nme  | uvf  | prs 
+  atom slots: וְ W; צָרֲר֣וּ YRR=[
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#21 slot 92201 | Numeri 35:20 | HDP[ qal impf
+  BHSA יֶהְדָּפֶ֑נּוּ (key יֶהְדָּפֶנּוּ; JEH:D.@PE92N.W.) in atom יֶהְדָּפֶ֑נּוּ
+  MAM  יֶהְדֳּפֶ֑נּוּ (key יֶהְדֳּפֶנּוּ) in atom יֶהְדֳּפֶ֑נּוּ
+  WLC 4.18: יֶהְדָּפֶ֑נּוּ
+  HDP[ | sp verb ps p3 nu sg gn m st NA prs HW | gloss push | voc_lex הדף
+  morphemes: pfm יֶ | vbs  | lex הְדָּף | vbe  | nme  | uvf ֶנּ | prs וּ
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#22 slot 98269 | Deuteronomium 8:15 | HLK[ hif ptca
+  BHSA מֹּולִ֨יכֲךָ֜ (key מֹּולִיכֲךָ; M.OWLI63JK:AK@61) in atom הַמֹּולִ֨יכֲךָ֜
+  MAM  מֹּולִ֨יכְךָ֜ (key מֹּולִיכְךָ) in atom הַמּוֹלִ֨יכְךָ֜
+  WLC 4.18: הַמּוֹלִ֨יכֲךָ֜
+  HLK[ | sp verb ps unknown nu sg gn m st a prs K | gloss walk | voc_lex הלך
+  morphemes: pfm מֹּ | vbs  | lex ולִיךֲ | vbe  | nme ֜ | uvf  | prs כָ
+  atom slots: הַ H; מֹּולִ֨יכֲךָ֜ HLK[
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#23 slot 98465 | Deuteronomium 9:3 | >BD[ hif perf
+  BHSA הַֽאַבַדְתָּם֙ (key הַאַבַדְתָּם; HA45>ABAD:T.@M03) in atom וְהַֽאַבַדְתָּם֙
+  MAM  הַֽאֲבַדְתָּם֙ (key הַאֲבַדְתָּם) in atom וְהַֽאֲבַדְתָּם֙
+  WLC 4.18: וְהַֽאַבַדְתָּם֙ notes U
+  >BD[ | sp verb ps p2 nu sg gn m st NA prs M | gloss perish | voc_lex אבד
+  morphemes: pfm  | vbs הַ | lex אַבַדְ | vbe תּ | nme  | uvf  | prs ָמ
+  atom slots: וְ W; הַֽאַבַדְתָּם֙ >BD[
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#24 slot 106611 | Deuteronomium 24:13 | BRK[ piel perf
+  BHSA בֵֽרֲכֶ֑ךָּ (key בֵרֲכֶךָּ; B;45R:AKE92K.@) in atom וּבֵֽרֲכֶ֑ךָּ
+  MAM  בֵֽרְכֶ֑ךָּ (key בֵרְכֶךָּ) in atom וּבֵֽרְכֶ֑ךָּ
+  WLC 4.18: וּבֵֽרֲכֶ֑ךָּ
+  BRK[ | sp verb ps p3 nu sg gn m st NA prs K | gloss bless | voc_lex ברך
+  morphemes: pfm  | vbs  | lex בֵרֲך | vbe  | nme  | uvf ֶ | prs כָּ
+  atom slots: וּ W; בֵֽרֲכֶ֑ךָּ BRK[
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: בֵּרַכְךָ x5 (Deuteronomium 2:7); בֵרַכְךָ x4 (Deuteronomium 7:13)
+
+#25 slot 106752 | Deuteronomium 24:20 | P>R=[ piel impf
+  BHSA תְפָאֵ֖ר (key תְפָאֵר; T:P@>;73R) in atom תְפָאֵ֖ר
+  MAM  תְפַאֵ֖ר (key תְפַאֵר) in atom תְפַאֵ֖ר
+  WLC 4.18: תְפָאֵ֖ר
+  P>R=[ | sp verb ps p2 nu sg gn m st NA prs absent | gloss knock down | voc_lex פאר
+  morphemes: pfm תְ | vbs  | lex פָאֵר | vbe  | nme  | uvf  | prs 
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#26 slot 116736 | Josua 7:25 | <KR[ qal impf
+  BHSA יַעְכֳּרְךָ֥ (key יַעְכֳּרְךָ; JA<:K.:@R:K@71) in atom יַעְכֳּרְךָ֥
+  MAM  יַעְכׇּרְךָ֥ (key יַעְכָּרְךָ) in atom יַעְכׇּרְךָ֥
+  WLC 4.18: יַעְכֳּרְךָ֥
+  <KR[ | sp verb ps p3 nu sg gn m st NA prs K | gloss taboo | voc_lex עכר
+  morphemes: pfm יַ | vbs  | lex עְכֳּרְ | vbe  | nme  | uvf  | prs כָ
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#27 slot 118926 | Josua 10:24 | HLK[ qal perf
+  BHSA הָלְכ֣וּא (key הָלְכוּא; H@L:K74W.>) in atom הֶהָלְכ֣וּא
+  MAM  הלכוא (key הלכוא) in atom ההלכוא
+  WLC 4.18: הֶהָלְכ֣וּא
+  HLK[ | sp verb ps p3 nu pl gn unknown st NA prs absent | gloss walk | voc_lex הלך
+  morphemes: pfm  | vbs  | lex הָלְך | vbe וּא | nme  | uvf  | prs 
+  atom slots: הֶ H; הָלְכ֣וּא HLK[
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: הָלְכוּ x49 (Genesis 14:24); הָלָכוּ x9 (Jeremia 2:8)
+
+#28 slot 130127 | Judices 5:12 | CBH[ qal impv
+  BHSA שֲׁבֵ֥ה (key שֲׁבֵה; C:AB;71H) in atom וּֽשֲׁבֵ֥ה
+  MAM  שְׁבֵ֥ה (key שְׁבֵה) in atom וּֽשְׁבֵ֥ה
+  WLC 4.18: וּֽשֲׁבֵ֥ה
+  CBH[ | sp verb ps p2 nu sg gn m st NA prs absent | gloss take captive | voc_lex שׁבה
+  morphemes: pfm  | vbs  | lex שֲׁבֵה | vbe  | nme  | uvf  | prs 
+  atom slots: וּֽ W; שֲׁבֵ֥ה CBH[
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#29 slot 131973 | Judices 7:20 | FM>L/
+  BHSA שְׂמאֹולָם֙ (key שְׂמאֹולָם; F:M>OWL@M03) in atom שְׂמאֹולָם֙
+  MAM  שְׂמֹאולָם֙ (key שְׂמֹאולָם) in atom שְׂמֹאולָם֙
+  WLC 4.18: שְׂמאוֹלָם֙ notes U
+  FM>L/ | sp subs ps NA nu sg gn m st a prs M | gloss left-hand side | voc_lex שְׂמֹאל
+  morphemes: pfm  | vbs  | lex שְׂמאֹול | vbe  | nme ֜ | uvf  | prs ָמ
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: שְּׂמֹאלָם x2 (Exodus 14:22)
+
+#30 slot 132920 | Judices 9:2 | <YM/
+  BHSA עַצְמֵכֶ֥ם (key עַצְמֵכֶם; <AY:M;KE71M) in atom עַצְמֵכֶ֥ם
+  MAM  עַצְמְכֶ֥ם (key עַצְמְכֶם) in atom עַצְמְכֶ֥ם
+  WLC 4.18: עַצְמֵכֶ֥ם notes U
+  <YM/ | sp subs ps NA nu sg gn f st a prs KM | gloss bone | voc_lex עֶצֶם
+  morphemes: pfm  | vbs  | lex עַצְםֵ | vbe  | nme ֜ | uvf  | prs כֶם
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#31 slot 137248 | Judices 16:2 | HRG[ qal perf
+  BHSA הֲרְגְנֻֽהוּ (key הֲרְגְנֻהוּ; H:AR:G:NU75HW.) in atom וַהֲרְגְנֻֽהוּ
+  MAM  הֲרַגְנֻֽהוּ׃ (key הֲרַגְנֻהוּ) in atom וַהֲרַגְנֻֽהוּ׃
+  WLC 4.18: וַהֲרְגְנֻֽהוּ׃ notes U
+  HRG[ | sp verb ps p1 nu pl gn unknown st NA prs HW | gloss kill | voc_lex הרג
+  morphemes: pfm  | vbs  | lex הֲרְגְ | vbe נֻ | nme  | uvf  | prs הוּ
+  atom slots: וַ W; הֲרְגְנֻֽהוּ HRG[
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#32 slot 137585 | Judices 16:16 | >LY[ piel wayq
+  BHSA תְּאַֽלֲצֵ֑הוּ (key תְּאַלֲצֵהוּ; T.:>A45L:AY;92HW.) in atom וַתְּאַֽלֲצֵ֑הוּ
+  MAM  תְּאַֽלְצֵ֑הוּ (key תְּאַלְצֵהוּ) in atom וַתְּאַֽלְצֵ֑הוּ
+  WLC 4.18: וַתְּאַֽלֲצֵ֑הוּ
+  >LY[ | sp verb ps p3 nu sg gn f st NA prs HW | gloss press hard | voc_lex אלץ
+  morphemes: pfm תְּ | vbs  | lex אַלֲץ | vbe  | nme  | uvf  | prs ֵהוּ
+  atom slots: וַ W; תְּאַֽלֲצֵ֑הוּ >LY[
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#33 slot 144406 | Samuel_I 6:12 | JCR[ qal wayq
+  BHSA יִשַּׁ֨רְנָה (key יִשַּׁרְנָה; JIC.A63R:N@H) in atom וַיִשַּׁ֨רְנָה
+  MAM  יִּשַּׁ֨רְנָה (key יִּשַּׁרְנָה) in atom וַיִּשַּׁ֨רְנָה
+  WLC 4.18: וַיִשַּׁ֨רְנָה notes 1
+  JCR[ | sp verb ps p3 nu pl gn f st NA prs absent | gloss be right | voc_lex ישׁר
+  morphemes: pfm יִ | vbs  | lex שַּׁרְ | vbe נָה | nme  | uvf  | prs 
+  atom slots: וַ W; יִשַּׁ֨רְנָה JCR[
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#34 slot 146028 | Samuel_I 9:21 | QVN=/
+  BHSA קַּטַנֵּי֙ (key קַּטַנֵּי; Q.AVAN.;J03) in atom מִקַּטַנֵּי֙
+  MAM  קְּטַנֵּי֙ (key קְּטַנֵּי) in atom מִקְּטַנֵּי֙
+  WLC 4.18: מִקַּטַנֵּי֙ notes 1
+  QVN=/ | sp adjv ps NA nu pl gn m st c prs absent | gloss small | voc_lex קָטָן
+  morphemes: pfm  | vbs  | lex קַּטַןּ | vbe  | nme ֵ֜י | uvf  | prs 
+  atom slots: מִ MN; קַּטַנֵּי֙ QVN=/
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: קְטַנֵּי x1 (Proverbia 30:24)
+
+#35 slot 151471 | Samuel_I 17:31 | CM<[ nif wayq
+  BHSA יְּשָּֽׁמְעוּ֙ (key יְּשָּׁמְעוּ; J.:C.@45M:<W.03) in atom וַיְּשָּֽׁמְעוּ֙
+  MAM  יִּשָּֽׁמְעוּ֙ (key יִּשָּׁמְעוּ) in atom וַיִּשָּֽׁמְעוּ֙
+  WLC 4.18: וַיְּשָּֽׁמְעוּ֙ notes 1
+  CM<[ | sp verb ps p3 nu pl gn m st NA prs absent | gloss hear | voc_lex שׁמע
+  morphemes: pfm יְּ | vbs  | lex שָּׁמְע | vbe וּ | nme  | uvf  | prs 
+  atom slots: וַ W; יְּשָּֽׁמְעוּ֙ CM<[
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#36 slot 151713 | Samuel_I 17:40 | QL<==/
+  BHSA קַלְּעֹ֣ו (key קַלְּעֹו; QAL.:<O74W) in atom וְקַלְּעֹ֣ו
+  MAM  קַלְעֹ֣ו (key קַלְעֹו) in atom וְקַלְע֣וֹ
+  WLC 4.18: וְקַלְּע֣וֹ
+  QL<==/ | sp subs ps NA nu sg gn m st a prs W | gloss sling | voc_lex קֶלַע
+  morphemes: pfm  | vbs  | lex קַלְּע | vbe  | nme ֜ | uvf  | prs ֹו
+  atom slots: וְ W; קַלְּעֹ֣ו QL<==/
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#37 slot 156227 | Samuel_I 24:11 | HRG[ qal infc
+  BHSA הֲרָגֲךָ֖ (key הֲרָגֲךָ; H:AR@G:AK@73) in atom לַהֲרָגֲךָ֖
+  MAM  הֲרָגְךָ֖ (key הֲרָגְךָ) in atom לַהֲרָגְךָ֖
+  WLC 4.18: לַהֲרָגֲךָ֖
+  HRG[ | sp verb ps unknown nu unknown gn unknown st a prs K | gloss kill | voc_lex הרג
+  morphemes: pfm  | vbs  | lex הֲרָג | vbe  | nme ֜ | uvf  | prs ֲכָ
+  atom slots: לַ L; הֲרָגֲךָ֖ HRG[
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: הָרְגֶךָ x3 (Genesis 27:42)
+
+#38 slot 156951 | Samuel_I 25:20 | PGC[ qal wayq
+  BHSA תִּפְגֹּ֖שׁ (key תִּפְגֹּשׁ; T.IP:G.O73C) in atom וַתִּפְגֹּ֖שׁ
+  MAM  תִּפְגֹ֖שׁ (key תִּפְגֹשׁ) in atom וַתִּפְגֹ֖שׁ
+  WLC 4.18: וַתִּפְגֹּ֖שׁ
+  PGC[ | sp verb ps p3 nu sg gn f st NA prs absent | gloss meet | voc_lex פגשׁ
+  morphemes: pfm תִּ | vbs  | lex פְגֹּשׁ | vbe  | nme  | uvf  | prs 
+  atom slots: וַ W; תִּפְגֹּ֖שׁ PGC[
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#39 slot 157794 | Samuel_I 26:10 | NGP[ qal impf
+  BHSA יִגָּפֶ֑נּוּ (key יִגָּפֶנּוּ; JIG.@PE92N.W.) in atom יִגָּפֶ֑נּוּ
+  MAM  יִגֳּפֶ֑נּוּ (key יִגֳּפֶנּוּ) in atom יִגֳּפֶ֑נּוּ
+  WLC 4.18: יִגָּפֶ֑נּוּ
+  NGP[ | sp verb ps p3 nu sg gn m st NA prs HW | gloss hurt | voc_lex נגף
+  morphemes: pfm יִ | vbs  | lex גָּף | vbe  | nme  | uvf ֶנּ | prs וּ
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#40 slot 163541 | Samuel_II 6:5 | YLYLJM/
+  BHSA צֶלְצֶלִֽים (key צֶלְצֶלִים; YEL:YELI75JM) in atom וּֽבְצֶלְצֶלִֽים
+  MAM  צֶלְצֱלִֽים׃ (key צֶלְצֱלִים) in atom וּֽבְצֶלְצֱלִֽים׃
+  WLC 4.18: וּֽבְצֶלְצֶלִֽים׃
+  YLYLJM/ | sp subs ps NA nu pl gn m st a prs absent | gloss cymbals | voc_lex צֶלְצֶלִים
+  morphemes: pfm  | vbs  | lex צֶלְצֶל | vbe  | nme ִ֜ים | uvf  | prs 
+  atom slots: וּֽ W; בְ B; צֶלְצֶלִֽים YLYLJM/
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#41 slot 165715 | Samuel_II 11:1 | MLK/
+  BHSA מַּלְאֿכִ֗ים (key מַּלְאכִים; M.AL:>,KI81JM) in atom הַמַּלְאֿכִ֗ים
+  MAM  מְּלָאכִ֗ים (key מְּלָאכִים) in atom הַמְּלָאכִ֗ים
+  WLC 4.18: הַמַּלְאֿכִ֗ים notes 1
+  MLK/ | sp subs ps NA nu pl gn m st a prs absent | gloss king | voc_lex מֶלֶךְ
+  morphemes: pfm  | vbs  | lex מַּלְאֿך | vbe  | nme ִ֜ים | uvf  | prs 
+  atom slots: הַ H; מַּלְאֿכִ֗ים MLK/
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  NEIGHBOUR OTHER: add a qamats on letter 3 | מַּלְאָכִים | ML>K/ x17 (Genesis 19:1)
+  same full analysis elsewhere: מְלָכִים x48 (Genesis 14:9); מְּלָכִים x46 (Genesis 14:5); מְלָכִין x1 (Proverbia 31:3)
+
+#42 slot 178733 | Reges_I 3:14 | >RK[ hif perf
+  BHSA הַאַרַכְתִּ֖י (key הַאַרַכְתִּי; HA>ARAK:T.I73J) in atom וְהַאַרַכְתִּ֖י
+  MAM  הַאֲרַכְתִּ֖י (key הַאֲרַכְתִּי) in atom וְהַאֲרַכְתִּ֖י
+  WLC 4.18: וְהַאַרַכְתִּ֖י
+  >RK[ | sp verb ps p1 nu sg gn unknown st NA prs absent | gloss be long | voc_lex ארך
+  morphemes: pfm  | vbs הַ | lex אַרַךְ | vbe תִּי | nme  | uvf  | prs 
+  atom slots: וְ W; הַאַרַכְתִּ֖י >RK[
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#43 slot 190079 | Reges_I 17:13 | JY>[ hif perf
+  BHSA הֹוצֵ֣אתְ (key הֹוצֵאתְ; HOWY;74>T:) in atom וְהֹוצֵ֣אתְ
+  MAM  הֹוצֵ֣את (key הֹוצֵאת) in atom וְהוֹצֵ֣את
+  WLC 4.18: וְהוֹצֵ֣אתְ notes 1
+  JY>[ | sp verb ps p2 nu sg gn f st NA prs absent | gloss go out | voc_lex יצא
+  morphemes: pfm  | vbs הֹ | lex וצֵא | vbe תְ | nme  | uvf  | prs 
+  atom slots: וְ W; הֹוצֵ֣אתְ JY>[
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  neighbour same: qamats for sheva on letter 5 | הֹוצֵאתָ | JY>[ hif perf x11 (Exodus 32:11)
+  same full analysis elsewhere: -
+
+#44 slot 191354 | Reges_I 18:44 | <YR[ qal impf
+  BHSA יַעַצָרְכָ֖ה (key יַעַצָרְכָה; JA<AY@R:K@73H) in atom יַעַצָרְכָ֖ה
+  MAM  יַעֲצׇרְכָ֖ה (key יַעֲצָרְכָה) in atom יַעֲצׇרְכָ֖ה
+  WLC 4.18: יַעַצָרְכָ֖ה
+  <YR[ | sp verb ps p3 nu sg gn m st NA prs K | gloss restrain | voc_lex עצר
+  morphemes: pfm יַ | vbs  | lex עַצָרְ | vbe  | nme  | uvf  | prs כָה
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#45 slot 196629 | Reges_II 4:7 | XJH[ qal impf
+  BHSA תִֽחְיִ֖י (key תִחְיִי; TI45X:JI73J) in atom תִֽחְיִ֖י
+  MAM  תִּֽחְיִ֖י (key תִּחְיִי) in atom תִּֽחְיִ֖י
+  WLC 4.18: תִֽחְיִ֖י
+  XJH[ | sp verb ps p2 nu sg gn f st NA prs absent | gloss be alive | voc_lex חיה
+  morphemes: pfm תִ | vbs  | lex חְי | vbe ִי | nme  | uvf  | prs 
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#46 slot 204455 | Reges_II 15:10 | QBL=/
+  BHSA קָֽבָלְ (key קָבָלְ; Q@45B@L:) in atom קָֽבָלְ־
+  MAM  קׇֽבׇל (key קָבָל) in atom קׇֽבׇל־
+  WLC 4.18: קָֽבָלְ־
+  QBL=/ | sp subs ps NA nu sg gn m st c prs absent | gloss <uncertain> | voc_lex קָבָלְ־
+  morphemes: pfm  | vbs  | lex קָבָלְ | vbe  | nme ֜ | uvf  | prs 
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#47 slot 205648 | Reges_II 17:4 | <YR[ qal wayq
+  BHSA יַּעַצְרֵ֨הוּ֙ (key יַּעַצְרֵהוּ; J.A<AY:R;33HW.03) in atom וַֽיַּעַצְרֵ֨הוּ֙
+  MAM  יַּעְצְרֵ֙הוּ֙ (key יַּעְצְרֵהוּ) in atom וַֽיַּעְצְרֵ֙הוּ֙
+  WLC 4.18: וַֽיַּעַצְרֵ֙הוּ֙
+  <YR[ | sp verb ps p3 nu sg gn m st NA prs HW | gloss restrain | voc_lex עצר
+  morphemes: pfm יַּ | vbs  | lex עַצְר | vbe  | nme  | uvf  | prs ֵהוּ
+  atom slots: וַֽ W; יַּעַצְרֵ֨הוּ֙ <YR[
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#48 slot 206043 | Reges_II 17:21 | XV>[ hif perf
+  BHSA הֶחֱטֵיאָ֖ם (key הֶחֱטֵיאָם; HEX:EV;J>@73M) in atom וְהֶחֱטֵיאָ֖ם
+  MAM  הֶחֱטִיאָ֖ם (key הֶחֱטִיאָם) in atom וְהֶחֱטִיאָ֖ם
+  WLC 4.18: וְהֶחֱטֵיאָ֖ם notes 1
+  XV>[ | sp verb ps p3 nu sg gn m st NA prs M | gloss miss | voc_lex חטא
+  morphemes: pfm  | vbs הֶ | lex חֱטֵיא | vbe  | nme  | uvf  | prs ָמ
+  atom slots: וְ W; הֶחֱטֵיאָ֖ם XV>[
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#49 slot 216993 | Jesaia 14:11 | G>WN/
+  BHSA גְאֹונֶ֖ךָ (key גְאֹונֶךָ; G:>OWNE73K@) in atom גְאֹונֶ֖ךָ
+  MAM  גְּאֹונֶ֖ךָ (key גְּאֹונֶךָ) in atom גְּאוֹנֶ֖ךָ
+  WLC 4.18: גְּאוֹנֶ֖ךָ
+  G>WN/ | sp subs ps NA nu sg gn m st a prs K | gloss height | voc_lex גָּאֹון
+  morphemes: pfm  | vbs  | lex גְאֹון | vbe  | nme ֜ | uvf  | prs ֶכָ
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: גְּאֹונְךָ x1 (Exodus 15:7)
+
+#50 slot 218239 | Jesaia 19:6 | DLL[ qal perf
+  BHSA דָּלֲל֥וּ (key דָּלֲלוּ; D.@L:AL71W.) in atom דָּלֲל֥וּ
+  MAM  דָּלְל֥וּ (key דָּלְלוּ) in atom דָּלְל֥וּ
+  WLC 4.18: דָּלֲל֥וּ
+  DLL[ | sp verb ps p3 nu pl gn unknown st NA prs absent | gloss belittle | voc_lex דלל
+  morphemes: pfm  | vbs  | lex דָּלֲל | vbe וּ | nme  | uvf  | prs 
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: דַּלּוּ x2 (Jesaia 38:14)
+
+#51 slot 219509 | Jesaia 23:8 | SXR[ qal ptca
+  BHSA סֹחֲרֶ֨יה֙ (key סֹחֲרֶיה; SOX:ARE33JH03) in atom סֹחֲרֶ֨יה֙
+  MAM  סֹחֲרֶ֙יהָ֙ (key סֹחֲרֶיהָ) in atom סֹחֲרֶ֙יהָ֙
+  WLC 4.18: סֹחֲרֶ֙יה֙
+  SXR[ | sp verb ps unknown nu pl gn m st a prs H | gloss go about | voc_lex סחר
+  morphemes: pfm  | vbs  | lex סֹחֲר | vbe  | nme ֶ֜י | uvf  | prs ה
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#52 slot 227229 | Jesaia 43:19 | JD<[ qal impf
+  BHSA תֵֽדָע֑וּהָ (key תֵדָעוּהָ; T;45D@<92W.H@) in atom תֵֽדָע֑וּהָ
+  MAM  תֵּדָע֑וּהָ (key תֵּדָעוּהָ) in atom תֵּדָע֑וּהָ
+  WLC 4.18: תֵֽדָע֑וּהָ
+  JD<[ | sp verb ps p2 nu pl gn m st NA prs H | gloss know | voc_lex ידע
+  morphemes: pfm תֵ | vbs  | lex דָע | vbe וּ | nme  | uvf  | prs הָ
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#53 slot 229058 | Jesaia 48:17 | DRK[ hif ptca
+  BHSA מַדְרִֽיכֲךָ֖ (key מַדְרִיכֲךָ; MAD:RI45JK:AK@73) in atom מַדְרִֽיכֲךָ֖
+  MAM  מַדְרִֽיכְךָ֖ (key מַדְרִיכְךָ) in atom מַדְרִֽיכְךָ֖
+  WLC 4.18: מַדְרִֽיכֲךָ֖
+  DRK[ | sp verb ps unknown nu sg gn m st a prs K | gloss tread | voc_lex דרך
+  morphemes: pfm מַ | vbs  | lex דְרִיךֲ | vbe  | nme ֜ | uvf  | prs כָ
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#54 slot 231700 | Jesaia 57:9 | YJR==/
+  BHSA צִרַ֨יךְ֙ (key צִרַיךְ; YIRA33JK:03) in atom צִרַ֨יךְ֙
+  MAM  צִרַ֙יִךְ֙ (key צִרַיִךְ) in atom צִרַ֙יִךְ֙
+  WLC 4.18: צִרַ֙יִךְ֙
+  YJR==/ | sp subs ps NA nu pl gn m st a prs K= | gloss messenger | voc_lex צִיר
+  morphemes: pfm  | vbs  | lex צִר | vbe  | nme ַ֜י | uvf  | prs כְ
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#55 slot 231829 | Jesaia 57:16 | QYP[ qal impf
+  BHSA אֶקְּצֹ֑וף (key אֶקְּצֹוף; >EQ.:YO92WP) in atom אֶקְּצֹ֑וף
+  MAM  אֶקְצֹ֑וף (key אֶקְצֹוף) in atom אֶקְצ֑וֹף
+  WLC 4.18: אֶקְּצ֑וֹף
+  QYP[ | sp verb ps p1 nu sg gn unknown st NA prs absent | gloss be angry | voc_lex קצף
+  morphemes: pfm אֶ | vbs  | lex קְּצֹוף | vbe  | nme  | uvf  | prs 
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: אֶקְצֹף x1 (Jesaia 57:17)
+
+#56 slot 236379 | Jeremia 3:17 | QWH=[ nif perf
+  BHSA נִקְוּ֨וּ (key נִקְוּוּ; NIQ:W.63W.) in atom וְנִקְוּ֨וּ
+  MAM  נִקְו֨וּ (key נִקְווּ) in atom וְנִקְו֨וּ
+  WLC 4.18: וְנִקְוּ֨וּ
+  QWH=[ | sp verb ps p3 nu pl gn unknown st NA prs absent | gloss collect | voc_lex קוה
+  morphemes: pfm  | vbs נִ | lex קְוּ | vbe וּ | nme  | uvf  | prs 
+  atom slots: וְ W; נִקְוּ֨וּ QWH=[
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#57 slot 236470 | Jeremia 3:21 | <WH[ hif perf
+  BHSA הֶעֱוּוּ֙ (key הֶעֱוּוּ; HE<:EW.W.03) in atom הֶעֱוּוּ֙
+  MAM  הֶעֱווּ֙ (key הֶעֱווּ) in atom הֶעֱווּ֙
+  WLC 4.18: הֶעֱוּוּ֙
+  <WH[ | sp verb ps p3 nu pl gn unknown st NA prs absent | gloss do wrong | voc_lex עוה
+  morphemes: pfm  | vbs הֶ | lex עֱוּ | vbe וּ | nme  | uvf  | prs 
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#58 slot 242407 | Jeremia 15:10 | QLL[ piel ptca
+  BHSA מְקַלְלַֽונִי (key מְקַלְלַונִי; M:QAL:LA75WNIJ) in atom מְקַלְלַֽונִי
+  MAM  מְקַֽלְלַֽוְנִי׃ (key מְקַלְלַוְנִי) in atom מְקַֽלְלַֽוְנִי׃
+  WLC 4.18: מְקַלְלַֽונִי׃
+  QLL[ | sp verb ps unknown nu pl gn m st a prs NJ | gloss be slight | voc_lex קלל
+  morphemes: pfm מְ | vbs  | lex קַלְל | vbe ַו | nme ֜ | uvf  | prs נִי
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#59 slot 244875 | Jeremia 20:15 | FMX[ piel perf
+  BHSA שִׂמֳּחָֽהוּ (key שִׂמֳּחָהוּ; FIM.:@X@75HW.) in atom שִׂמֳּחָֽהוּ
+  MAM  שִׂמְּחָֽהוּ׃ (key שִׂמְּחָהוּ) in atom שִׂמְּחָֽהוּ׃
+  WLC 4.18: שִׂמֳּחָֽהוּ׃
+  FMX[ | sp verb ps p3 nu sg gn m st NA prs HW | gloss rejoice | voc_lex שׂמח
+  morphemes: pfm  | vbs  | lex שִׂמֳּח | vbe  | nme  | uvf  | prs ָהוּ
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#60 slot 245879 | Jeremia 22:28 | VWL[ hof perf
+  BHSA הֽוּטֲלוּ֙ (key הוּטֲלוּ; H45W.V:ALW.03) in atom הֽוּטֲלוּ֙
+  MAM  הֽוּטְלוּ֙ (key הוּטְלוּ) in atom הֽוּטְלוּ֙
+  WLC 4.18: הֽוּטֲלוּ֙
+  VWL[ | sp verb ps p3 nu pl gn unknown st NA prs absent | gloss cast | voc_lex טול
+  morphemes: pfm  | vbs הוּ | lex טֲל | vbe וּ | nme  | uvf  | prs 
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#61 slot 251275 | Jeremia 31:33 | KTB[ qal impf
+  BHSA אֶכְתֲּבֶ֑נָּה (key אֶכְתֲּבֶנָּה; >EK:T.:ABE92N.@H) in atom אֶכְתֲּבֶ֑נָּה
+  MAM  אֶכְתְּבֶ֑נָּה (key אֶכְתְּבֶנָּה) in atom אֶכְתְּבֶ֑נָּה
+  WLC 4.18: אֶכְתֲּבֶ֑נָּה
+  KTB[ | sp verb ps p1 nu sg gn unknown st NA prs H | gloss write | voc_lex כתב
+  morphemes: pfm אֶ | vbs  | lex כְתֲּב | vbe  | nme  | uvf ֶנּ | prs ָה
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#62 slot 261422 | Jeremia 49:16 | GBH[ hif impf
+  BHSA תַגְבִּ֤יהַ (key תַגְבִּיהַ; TAG:B.I70JHA) in atom תַגְבִּ֤יהַ
+  MAM  תַגְבִּ֤יהַּ (key תַגְבִּיהַּ) in atom תַגְבִּ֤יהַּ
+  WLC 4.18: תַגְבִּ֤יהַ
+  GBH[ | sp verb ps p2 nu sg gn m st NA prs absent | gloss be high | voc_lex גָּבַהּ
+  morphemes: pfm תַ | vbs  | lex גְבִּיהַ | vbe  | nme  | uvf  | prs 
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: תַּגְבִּיהַּ x1 (Obadia 1:4)
+
+#63 slot 262081 | Jeremia 50:11 | >BJR/
+  BHSA אֲבִּרִֽים (key אֲבִּרִים; >:AB.IRI75JM) in atom כָּאֲבִּרִֽים
+  MAM  אַבִּרִֽים׃ (key אַבִּרִים) in atom כָּאַבִּרִֽים׃
+  WLC 4.18: כָּאֲבִּרִֽים׃
+  >BJR/ | sp adjv ps NA nu pl gn m st a prs absent | gloss strong | voc_lex אַבִּיר
+  morphemes: pfm  | vbs  | lex אֲבִּר | vbe  | nme ִ֜ים | uvf  | prs 
+  atom slots: כָּ K;  H; אֲבִּרִֽים >BJR/
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: אַבִּירִים x5 (Jesaia 34:7)
+
+#64 slot 264371 | Jeremia 52:19 | MNQJT/
+  BHSA מְּנַקִיֹ֔ות (key מְּנַקִיֹות; M.:NAQIJO80WT) in atom הַמְּנַקִיֹ֔ות
+  MAM  מְּנַקִּיֹּ֔ות (key מְּנַקִּיֹּות) in atom הַמְּנַקִּיּ֔וֹת
+  WLC 4.18: הַמְּנַקִי֔וֹת
+  MNQJT/ | sp subs ps NA nu pl gn f st a prs absent | gloss bowl | voc_lex מְנַקִּית
+  morphemes: pfm  | vbs  | lex מְּנַקִי | vbe  | nme ֹ֜ות | uvf  | prs 
+  atom slots: הַ H; מְּנַקִיֹ֔ות MNQJT/
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: מְּנַקִּיֹּת x1 (Numeri 4:7)
+
+#65 slot 264436 | Jeremia 52:21 | >YB</
+  BHSA אַצְבָּעֹ֖ות (key אַצְבָּעֹות; >AY:B.@<O73WT) in atom אַצְבָּעֹ֖ות
+  MAM  אֶצְבָּעֹ֖ות (key אֶצְבָּעֹות) in atom אֶצְבָּע֖וֹת
+  WLC 4.18: אַצְבָּע֖וֹת
+  >YB</ | sp subs ps NA nu pl gn f st a prs absent | gloss finger | voc_lex אֶצְבַּע
+  morphemes: pfm  | vbs  | lex אַצְבָּע | vbe  | nme ֹ֜ות | uvf  | prs 
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#66 slot 264949 | Ezechiel 1:11 | GWJH/
+  BHSA גְּוִיֹתֵיהֶֽנָה (key גְּוִיֹתֵיהֶנָה; G.:WIJOT;JHE75N@H) in atom גְּוִיֹתֵיהֶֽנָה
+  MAM  גְּוִיֹּתֵיהֶֽנָה׃ (key גְּוִיֹּתֵיהֶנָה) in atom גְּוִיֹּתֵיהֶֽנָה׃
+  WLC 4.18: גְּוִיֹתֵיהֶֽנָה׃ notes 1
+  GWJH/ | sp subs ps NA nu pl gn f st a prs HN | gloss body | voc_lex גְּוִיָּה
+  morphemes: pfm  | vbs  | lex גְּוִי | vbe  | nme ֹ֜תֵי | uvf  | prs הֶנָה
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#67 slot 268281 | Ezechiel 9:8 | C>R[ nif ptca
+  BHSA נֵֽאשֲׁאַ֖ר (key נֵאשֲׁאַר; N;45>C:A>A73R) in atom וְנֵֽאשֲׁאַ֖ר
+  MAM  נֵֽאשְׁאַ֖ר (key נֵאשְׁאַר) in atom וְנֵֽאשְׁאַ֖ר
+  WLC 4.18: וְנֵֽאשֲׁאַ֖ר
+  C>R[ | sp verb ps unknown nu sg gn m st a prs absent | gloss remain | voc_lex שׁאר
+  morphemes: pfm  | vbs נֵ | lex אשֲׁאַר | vbe  | nme ֜ | uvf  | prs 
+  atom slots: וְ W; נֵֽאשֲׁאַ֖ר C>R[
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: נִּשְׁאָר x9 (Genesis 32:9); נִשְׁאָר x1 (Genesis 42:38)
+
+#68 slot 271444 | Ezechiel 16:24 | GB/
+  BHSA גֶּ֑ב (key גֶּב; G.E92B) in atom גֶּ֑ב
+  MAM  גָּ֑ב (key גָּב) in atom גָּ֑ב
+  WLC 4.18: גֶּ֑ב notes 1
+  GB/ | sp subs ps NA nu sg gn m st a prs absent | gloss curve | voc_lex גַּב
+  morphemes: pfm  | vbs  | lex גֶּב | vbe  | nme ֜ | uvf  | prs 
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  neighbour same: patah for segol on letter 1 | גַּב | GB/ x1 (Ezechiel 43:13)
+  same full analysis elsewhere: -
+
+#69 slot 273249 | Ezechiel 18:29 | TKN[ nif impf
+  BHSA יִתָּֽכְנּוּ֙ (key יִתָּכְנּוּ; JIT.@45K:N.W.03) in atom יִתָּֽכְנּוּ֙
+  MAM  יִתָּֽכְנוּ֙ (key יִתָּכְנוּ) in atom יִתָּֽכְנוּ֙
+  WLC 4.18: יִתָּֽכְנּוּ֙ notes 1
+  TKN[ | sp verb ps p3 nu pl gn m st NA prs absent | gloss estimate | voc_lex תכן
+  morphemes: pfm יִ | vbs  | lex תָּכְןּ | vbe וּ | nme  | uvf  | prs 
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: יִתָּכֵנוּ x1 (Ezechiel 18:25)
+
+#70 slot 275784 | Ezechiel 23:5 | <GB[ qal wayq
+  BHSA תַּעְגַּב֙ (key תַּעְגַּב; T.A<:G.AB03) in atom וַתַּעְגַּב֙
+  MAM  תֶּעְגַּב֙ (key תֶּעְגַּב) in atom וַתֶּעְגַּב֙
+  WLC 4.18: וַתַּעְגַּב֙
+  <GB[ | sp verb ps p3 nu sg gn f st NA prs absent | gloss desire | voc_lex עגב
+  morphemes: pfm תַּ | vbs  | lex עְגַּב | vbe  | nme  | uvf  | prs 
+  atom slots: וַ W; תַּעְגַּב֙ <GB[
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: תַּעְגְּבָה x1 (Ezechiel 23:20)
+
+#71 slot 276851 | Ezechiel 24:17 | P>R/
+  BHSA פְאֵֽרְךָ֙ (key פְאֵרְךָ; P:>;45R:K@03) in atom פְאֵֽרְךָ֙
+  MAM  פְּאֵֽרְךָ֙ (key פְּאֵרְךָ) in atom פְּאֵֽרְךָ֙
+  WLC 4.18: פְאֵֽרְךָ֙
+  P>R/ | sp subs ps NA nu sg gn m st a prs K | gloss headdress | voc_lex פְּאֵר
+  morphemes: pfm  | vbs  | lex פְאֵר | vbe  | nme ֜ | uvf  | prs ְכָ
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#72 slot 278220 | Ezechiel 27:27 | BDQ/
+  BHSA בִדְקֵ֣ך (key בִדְקֵך; BID:Q;74K) in atom בִדְקֵ֣ך
+  MAM  בִדְקֵ֣ךְ (key בִדְקֵךְ) in atom בִדְקֵ֣ךְ
+  WLC 4.18: בִדְקֵ֣ך notes 1
+  BDQ/ | sp subs ps NA nu sg gn m st a prs K= | gloss breach | voc_lex בֶּדֶק
+  morphemes: pfm  | vbs  | lex בִדְק | vbe  | nme ֜ | uvf  | prs ֵכ
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: בִּדְקֵךְ x1 (Ezechiel 27:9)
+
+#73 slot 278253 | Ezechiel 27:29 | >NJH/
+  BHSA אָנִיֹּֽותֵיהֶ֗ם (key אָנִיֹּותֵיהֶם; >@NIJ.O45WT;JHE81M) in atom מֵאָנִיֹּֽותֵיהֶ֗ם
+  MAM  אֳנִיֹּֽותֵיהֶ֗ם (key אֳנִיֹּותֵיהֶם) in atom מֵאֳנִיּֽוֹתֵיהֶ֗ם
+  WLC 4.18: מֵאָנִיּֽוֹתֵיהֶ֗ם notes 1
+  >NJH/ | sp subs ps NA nu pl gn f st a prs HM | gloss ship | voc_lex אֳנִיָּה
+  morphemes: pfm  | vbs  | lex אָנִיּ | vbe  | nme ֹ֜ותֵי | uvf  | prs הֶם
+  atom slots: מֵ MN; אָנִיֹּֽותֵיהֶ֗ם >NJH/
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#74 slot 278614 | Ezechiel 28:16 | XLL[ piel wayq
+  BHSA אֶחַלֶּלְךָ֩ (key אֶחַלֶּלְךָ; >EXAL.EL:K@04) in atom וָאֶחַלֶּלְךָ֩
+  MAM  אֲחַלֶּלְךָ֩ (key אֲחַלֶּלְךָ) in atom וָאֲחַלֶּלְךָ֩
+  WLC 4.18: וָאֶחַלֶּלְךָ֩
+  XLL[ | sp verb ps p1 nu sg gn unknown st NA prs K | gloss defile | voc_lex חלל
+  morphemes: pfm אֶ | vbs  | lex חַלֶּלְ | vbe  | nme  | uvf  | prs כָ
+  atom slots: וָ W; אֶחַלֶּלְךָ֩ XLL[
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#75 slot 283685 | Ezechiel 37:23 | VM>[ piel impf
+  BHSA יִֽטַמְּא֣וּ (key יִטַמְּאוּ; JI45VAM.:>74W.) in atom יִֽטַמְּא֣וּ
+  MAM  יִֽטַּמְּא֣וּ (key יִטַּמְּאוּ) in atom יִֽטַּמְּא֣וּ
+  WLC 4.18: יִֽטַמְּא֣וּ
+  VM>[ | sp verb ps p3 nu pl gn m st NA prs absent | gloss be unclean | voc_lex טמא
+  morphemes: pfm יִ | vbs  | lex טַמְּא | vbe וּ | nme  | uvf  | prs 
+  own key elsewhere: -
+  MAM's key in BHSA: OTHER VM>[ hit impf x1 (Ezechiel 14:11)
+  NEIGHBOUR OTHER: sheva for hiriq on letter 1 | יְטַמְּאוּ | VM>[ piel wayq x3 (Ezechiel 23:17)
+  NEIGHBOUR OTHER: add a dagesh or mappiq on letter 2 | יִטַּמְּאוּ | VM>[ hit impf x1 (Ezechiel 14:11)
+  NEIGHBOUR OTHER: qamats for sheva on letter 3 | יִטַמָּאוּ | VM>[ hit impf x1 (Hosea 9:4)
+  neighbour same: sheva for hiriq on letter 1 | יְטַמְּאוּ | VM>[ piel impf x2 (Numeri 5:3)
+  same full analysis elsewhere: יְטַמְּאוּ x2 (Numeri 5:3)
+
+#76 slot 291796 | Hosea 4:6 | M>S[ qal impf
+  BHSA אֶמְאָֽסְאךָ֙ (key אֶמְאָסְאךָ; >EM:>@45S:>K@03) in atom וְאֶמְאָֽסְאךָ֙
+  MAM  אמאסאך (key אמאסאך) in atom ואמאסאך
+  WLC 4.18: וְאֶמְאָֽסְאךָ֙
+  M>S[ | sp verb ps p1 nu sg gn unknown st NA prs K | gloss reject | voc_lex מאס
+  morphemes: pfm אֶ | vbs  | lex מְאָסְא | vbe  | nme  | uvf  | prs כָ
+  atom slots: וְ W; אֶמְאָֽסְאךָ֙ M>S[
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#77 slot 292892 | Hosea 9:7 | CLWM=/
+  BHSA שִׁלֻּ֔ם (key שִׁלֻּם; CIL.U80M) in atom הַשִׁלֻּ֔ם
+  MAM  שִּׁלֻּ֔ם (key שִּׁלֻּם) in atom הַשִּׁלֻּ֔ם
+  WLC 4.18: הַשִׁלֻּ֔ם notes U
+  CLWM=/ | sp subs ps NA nu sg gn m st a prs absent | gloss reward | voc_lex שִׁלּוּם
+  morphemes: pfm  | vbs  | lex שִׁלֻּם | vbe  | nme ֜ | uvf  | prs 
+  atom slots: הַ H; שִׁלֻּ֔ם CLWM=/
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  NEIGHBOUR OTHER: patah for hiriq on letter 1 | שַׁלֻּם | CLWM==/ x10 (Reges_II 15:10)
+  NEIGHBOUR OTHER: tsere for qubuts on letter 2 | שִׁלֵּם | CLM====/ x2 (Genesis 46:24)
+  NEIGHBOUR OTHER: tsere for qubuts on letter 2 | שִׁלֵּם | CLM==/ x1 (Deuteronomium 32:35)
+  NEIGHBOUR OTHER: patah for qubuts on letter 2 | שִׁלַּם | CLM[ piel perf x4 (Leviticus 5:24)
+  same full analysis elsewhere: שִּׁלּוּם x1 (Micha 7:3)
+
+#78 slot 300231 | Micha 3:9 | T<B[ piel ptca
+  BHSA מֲתַעֲבִ֣ים (key מֲתַעֲבִים; M:ATA<:ABI74JM) in atom הַֽמֲתַעֲבִ֣ים
+  MAM  מְתַעֲבִ֣ים (key מְתַעֲבִים) in atom הַֽמְתַעֲבִ֣ים
+  WLC 4.18: הַֽמֲתַעֲבִ֣ים
+  T<B[ | sp verb ps unknown nu pl gn m st a prs absent | gloss be abhorrent | voc_lex תעב
+  morphemes: pfm מֲ | vbs  | lex תַעֲב | vbe  | nme ִ֜ים | uvf  | prs 
+  atom slots: הַֽ H; מֲתַעֲבִ֣ים T<B[
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#79 slot 302080 | Nahum 3:13 | BRJX/
+  BHSA בְּרִיחָֽיִך (key בְּרִיחָיִך; B.:RIJX@75JIK) in atom בְּרִיחָֽיִך
+  MAM  בְּרִיחָֽיִךְ׃ (key בְּרִיחָיִךְ) in atom בְּרִיחָֽיִךְ׃
+  WLC 4.18: בְּרִיחָֽיִך׃ notes U
+  BRJX/ | sp subs ps NA nu pl gn m st a prs K= | gloss bar | voc_lex בְּרִיחַ
+  morphemes: pfm  | vbs  | lex בְּרִיח | vbe  | nme ָ֜י | uvf  | prs ִכ
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#80 slot 303007 | Habakuk 3:16 | YLL=[ qal perf
+  BHSA צָלֲל֣וּ (key צָלֲלוּ; Y@L:AL74W.) in atom צָלֲל֣וּ
+  MAM  צָלְל֣וּ (key צָלְלוּ) in atom צָלְל֣וּ
+  WLC 4.18: צָלֲל֣וּ
+  YLL=[ | sp verb ps p3 nu pl gn unknown st NA prs absent | gloss tingle | voc_lex צלל
+  morphemes: pfm  | vbs  | lex צָלֲל | vbe וּ | nme  | uvf  | prs 
+  own key elsewhere: YLL[ qal perf x1 (Exodus 15:10); YLL==[ qal perf x1 (Nehemia 13:19)
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#81 slot 306110 | Sacharia 4:12 | CBLT/
+  BHSA שִׁבֲּלֵ֣י (key שִׁבֲּלֵי; CIB.:AL;74J) in atom שִׁבֲּלֵ֣י
+  MAM  שִׁבְּלֵ֣י (key שִׁבְּלֵי) in atom שִׁבְּלֵ֣י
+  WLC 4.18: שִׁבֲּלֵ֣י
+  CBLT/ | sp subs ps NA nu pl gn f st c prs absent | gloss grain | voc_lex שִׁבֹּלֶת
+  morphemes: pfm  | vbs  | lex שִׁבֲּל | vbe  | nme ֵ֜י | uvf  | prs 
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#82 slot 308077 | Sacharia 11:5 | HRG[ qal impf
+  BHSA יַֽהֲרְגֻן֙ (key יַהֲרְגֻן; JA45H:AR:GUN03) in atom יַֽהֲרְגֻן֙
+  MAM  יַֽהַרְגֻן֙ (key יַהַרְגֻן) in atom יַֽהַרְגֻן֙
+  WLC 4.18: יַֽהֲרְגֻן֙
+  HRG[ | sp verb ps p3 nu pl gn m st NA prs absent | gloss kill | voc_lex הרג
+  morphemes: pfm יַ | vbs  | lex הֲרְג | vbe ֻנ | nme  | uvf  | prs 
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: יַהֲרֹגוּ x2 (Ezechiel 23:47)
+
+#83 slot 309639 | Maleachi 1:9 | XNN[ qal impf
+  BHSA יחָנֵ֑נוּ (key יחָנֵנוּ; JX@N;92NW.) in atom וִֽיחָנֵ֑נוּ
+  MAM  יחׇנֵּ֑נוּ (key יחָנֵּנוּ) in atom וִֽיחׇנֵּ֑נוּ
+  WLC 4.18: וִֽיחָנֵ֑נוּ notes U
+  XNN[ | sp verb ps p3 nu sg gn m st NA prs NW | gloss favour | voc_lex חנן
+  morphemes: pfm י | vbs  | lex חָן | vbe  | nme  | uvf  | prs ֵנוּ
+  atom slots: וִֽ W; יחָנֵ֑נוּ XNN[
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: יְחָנֵּנוּ x1 (Psalmi 67:2); יְּחָנֵּנוּ x1 (Psalmi 123:2)
+
+#84 slot 311929 | Psalmi 10:14 | XLKH/
+  BHSA חֵלֶ֑כָה (key חֵלֶכָה; X;LE92K@H) in atom חֵלֶ֑כָה
+  MAM  חֵלֵ֑כָה (key חֵלֵכָה) in atom חֵלֵ֑כָה
+  WLC 4.18: חֵלֶ֑כָה
+  XLKH/ | sp subs ps NA nu sg gn f st a prs absent | gloss <uncertain> | voc_lex חֵלְכָה
+  morphemes: pfm  | vbs  | lex חֵלֶך | vbe  | nme ָ֜ה | uvf  | prs 
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  neighbour same: sheva for segol on letter 2 | חֵלְכָה | XLKH/ x1 (Psalmi 10:8)
+  same full analysis elsewhere: חֵלְכָה x1 (Psalmi 10:8)
+
+#85 slot 312123 | Psalmi 12:7 | >MRH/
+  BHSA אִֽמֲרֹ֣ות (key אִמֲרֹות; >I45M:ARO74WT) in atom אִֽמֲרֹ֣ות
+  MAM  אִ֥מְרֹ֣ות (key אִמְרֹות) in atom אִ֥מְר֣וֹת
+  WLC 4.18: אִֽמֲר֣וֹת
+  >MRH/ | sp subs ps NA nu pl gn f st c prs absent | gloss word | voc_lex אִמְרָה
+  morphemes: pfm  | vbs  | lex אִמֲר | vbe  | nme ֹ֜ות | uvf  | prs 
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#86 slot 313458 | Psalmi 21:2 | GJL[ qal impf
+  BHSA יָּ֥גֶיל (key יָּגֶיל; J.@71GEJL) in atom יָּ֥גֶיל
+  MAM  יגיל (key יגיל) in atom יגיל
+  WLC 4.18: יגיל
+  GJL[ | sp verb ps p3 nu sg gn m st NA prs absent | gloss rejoice | voc_lex גיל
+  morphemes: pfm יָּ | vbs  | lex גֶיל | vbe  | nme  | uvf  | prs 
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: יָגֵל x5 (Sacharia 10:7); יָגִיל x2 (Habakuk 1:15)
+
+#87 slot 315594 | Psalmi 34:1 | GRC[ piel wayq
+  BHSA יְגָרֲשֵׁ֗הוּ (key יְגָרֲשֵׁהוּ; J:G@R:AC;81HW.) in atom וַֽ֝יְגָרֲשֵׁ֗הוּ
+  MAM  יְגָרְשֵׁ֗הוּ (key יְגָרְשֵׁהוּ) in atom וַ֝יְגָרְשֵׁ֗הוּ
+  WLC 4.18: וַֽ֝יְגָרֲשֵׁ֗הוּ
+  GRC[ | sp verb ps p3 nu sg gn m st NA prs HW | gloss drive out | voc_lex גרשׁ
+  morphemes: pfm יְ | vbs  | lex גָרֲשׁ | vbe  | nme  | uvf  | prs ֵהוּ
+  atom slots: וַֽ֝ W; יְגָרֲשֵׁ֗הוּ GRC[
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#88 slot 317909 | Psalmi 45:3 | FPH/
+  BHSA שְׂפְתֹותֶ֑יךָ (key שְׂפְתֹותֶיךָ; F:P:TOWTE92JK@) in atom בְּשְׂפְתֹותֶ֑יךָ
+  MAM  שִׂפְתֹותֶ֑יךָ (key שִׂפְתֹותֶיךָ) in atom בְּשִׂפְתוֹתֶ֑יךָ
+  WLC 4.18: בְּשְׂפְתוֹתֶ֑יךָ
+  FPH/ | sp subs ps NA nu pl gn f st a prs K | gloss lip | voc_lex שָׂפָה
+  morphemes: pfm  | vbs  | lex שְׂפְת | vbe  | nme ֹ֜ותֶי | uvf  | prs כָ
+  atom slots: בְּ B; שְׂפְתֹותֶ֑יךָ FPH/
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#89 slot 319548 | Psalmi 55:19 | QRB==/
+  BHSA קֲּרָב (key קֲּרָב; Q.:AR@B) in atom מִקֲּרָב־
+  MAM  קְּרׇב (key קְּרָב) in atom מִקְּרׇב־
+  WLC 4.18: מִקֲּרָב־
+  QRB==/ | sp subs ps NA nu sg gn m st a prs absent | gloss fight | voc_lex קְרָב
+  morphemes: pfm  | vbs  | lex קֲּרָב | vbe  | nme ֜ | uvf  | prs 
+  atom slots: מִ MN; קֲּרָב QRB==/
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  neighbour same: remove the dagesh or mappiq on letter 1 | קֲרָב | QRB==/ x1 (Psalmi 55:22)
+  same full analysis elsewhere: קְרָב x6 (Samuel_II 17:11); קֲרָב x1 (Psalmi 55:22)
+
+#90 slot 320050 | Psalmi 59:2 | QWM[ hit ptca
+  BHSA מִתְקֹומְמַ֥י (key מִתְקֹומְמַי; MIT:QOWM:MA71J) in atom מִּמִתְקֹומְמַ֥י
+  MAM  מִּתְקֹומְמַ֥י (key מִּתְקֹומְמַי) in atom מִֽמִּתְקוֹמְמַ֥י
+  WLC 4.18: מִּמִתְקוֹמְמַ֥י
+  QWM[ | sp verb ps unknown nu pl gn m st a prs J | gloss arise | voc_lex קום
+  morphemes: pfm מִ | vbs תְ | lex קֹומְם | vbe  | nme ַ֜י | uvf  | prs 
+  atom slots: מִּ MN; מִתְקֹומְמַ֥י QWM[
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  neighbour same: hiriq for patah on letter 6 | מִתְקֹומְמִי | QWM[ hit ptca x1 (Iob 27:7)
+  same full analysis elsewhere: -
+
+#91 slot 320802 | Psalmi 64:9 | NWD[ hit impf
+  BHSA יִ֝תְנֹדֲד֗וּ (key יִתְנֹדֲדוּ; 11JIT:NOD:AD81W.) in atom יִ֝תְנֹדֲד֗וּ
+  MAM  יִ֝תְנֹדְד֗וּ (key יִתְנֹדְדוּ) in atom יִ֝תְנֹדְד֗וּ
+  WLC 4.18: יִ֝תְנֹדֲד֗וּ
+  NWD[ | sp verb ps p3 nu pl gn m st NA prs absent | gloss waver | voc_lex נוד
+  morphemes: pfm יִ | vbs תְ | lex נֹדֲד | vbe וּ | nme  | uvf  | prs 
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#92 slot 321465 | Psalmi 68:21 | JHWH/
+  BHSA יהוִ֥ה (key יהוִה; JHWI71H) in atom וְלֵיהוִ֥ה
+  MAM  יהֹוִ֥ה (key יהֹוִה) in atom וְלֵיהֹוִ֥ה
+  WLC 4.18: וְלֵיהוִ֥ה
+  JHWH/ | sp nmpr ps NA nu sg gn m st a prs n/a | gloss YHWH | voc_lex יְהוָה
+  morphemes: pfm  | vbs  | lex יהוִה | vbe  | nme ֜ | uvf  | prs 
+  atom slots: וְ W; לֵ L; יהוִ֥ה JHWH/
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  neighbour same: add a sheva on letter 1 | יְהוִה | JHWH/ x270 (Deuteronomium 3:24)
+  neighbour same: add a hataf segol on letter 1 | יֱהוִה | JHWH/ x2 (Genesis 15:2)
+  neighbour same: qamats for hiriq on letter 3 | יהוָה | JHWH/ x788 (Genesis 4:3)
+  same full analysis elsewhere: יְהוָה x5682 (Genesis 2:4); יהוָה x788 (Genesis 4:3); יְהוִה x270 (Deuteronomium 3:24); יְהֹוָה x45 (Genesis 3:14); יְהֹוִה x32 (Reges_I 2:26); יהֹוָה x6 (Genesis 18:17)
+
+#93 slot 322465 | Psalmi 72:15 | BRK[ piel impf
+  BHSA יְבָרֲכֶֽנְהֽוּ (key יְבָרֲכֶנְהוּ; J:B@R:AKE45N:H75W.) in atom יְבָרֲכֶֽנְהֽוּ
+  MAM  יְבָרְכֶֽנְהוּ׃ (key יְבָרְכֶנְהוּ) in atom יְבָרְכֶֽנְהוּ׃
+  WLC 4.18: יְבָרֲכֶֽנְהֽוּ׃
+  BRK[ | sp verb ps p3 nu sg gn m st NA prs HW | gloss bless | voc_lex ברך
+  morphemes: pfm יְ | vbs  | lex בָרֲך | vbe  | nme  | uvf ֶנְ | prs הוּ
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#94 slot 322838 | Psalmi 74:5 | SBK=/
+  BHSA סֲבָךְ (key סֲבָךְ; S:AB@K:) in atom בִּֽסֲבָךְ־
+  MAM  סְבׇךְ (key סְבָךְ) in atom בִּסְבׇךְ־
+  WLC 4.18: בִּֽסֲבָךְ־
+  SBK=/ | sp subs ps NA nu sg gn m st c prs absent | gloss thicket | voc_lex סְבֹךְ
+  morphemes: pfm  | vbs  | lex סֲבָךְ | vbe  | nme ֜ | uvf  | prs 
+  atom slots: בִּֽ B; סֲבָךְ SBK=/
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#95 slot 323240 | Psalmi 76:12 | NDR[ qal impv
+  BHSA נִֽדֲר֣וּ (key נִדֲרוּ; NI45D:AR74W.) in atom נִֽדֲר֣וּ
+  MAM  נִ֥דְר֣וּ (key נִדְרוּ) in atom נִ֥דְר֣וּ
+  WLC 4.18: נִֽדֲר֣וּ
+  NDR[ | sp verb ps p2 nu pl gn m st NA prs absent | gloss vow | voc_lex נדר
+  morphemes: pfm  | vbs  | lex נִדֲר | vbe וּ | nme  | uvf  | prs 
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#96 slot 324953 | Psalmi 83:13 | JRC[ qal impf
+  BHSA נִ֣ירֲשָׁה (key נִירֲשָׁה; NI74JR:AC@H) in atom נִ֣ירֲשָׁה
+  MAM  נִ֣ירְשָׁה (key נִירְשָׁה) in atom נִ֣ירְשָׁה
+  WLC 4.18: נִ֣ירֲשָׁה
+  JRC[ | sp verb ps p1 nu pl gn unknown st NA prs absent | gloss trample down | voc_lex ירשׁ
+  morphemes: pfm נִ | vbs  | lex ירֲשׁ | vbe ָה | nme  | uvf  | prs 
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: נִירָשׁ x1 (Judices 11:24)
+
+#97 slot 326770 | Psalmi 94:1 | JP<[ hif impv
+  BHSA הֹופִֽיַע (key הֹופִיַע; HOWPI75JA<) in atom הֹופִֽיַע
+  MAM  הֹופִֽיעַ׃ (key הֹופִיעַ) in atom הוֹפִֽיעַ׃
+  WLC 4.18: הוֹפִֽיַע׃
+  JP<[ | sp verb ps p2 nu sg gn m st NA prs absent | gloss shine | voc_lex יפע
+  morphemes: pfm  | vbs הֹ | lex ופִיַע | vbe  | nme  | uvf  | prs 
+  own key elsewhere: -
+  MAM's key in BHSA: OTHER JP<[ hif perf x3 (Deuteronomium 33:2)
+  same full analysis elsewhere: הֹופִיעָה x1 (Psalmi 80:2)
+
+#98 slot 328054 | Psalmi 103:5 | FB<[ hif ptca
+  BHSA מַּשְׂבִּ֣יַע (key מַּשְׂבִּיַע; M.AF:B.I74JA<) in atom הַמַּשְׂבִּ֣יַע
+  MAM  מַּשְׂבִּ֣יעַ (key מַּשְׂבִּיעַ) in atom הַמַּשְׂבִּ֣יעַ
+  WLC 4.18: הַמַּשְׂבִּ֣יַע
+  FB<[ | sp verb ps unknown nu sg gn m st a prs absent | gloss be sated | voc_lex שׂבע
+  morphemes: pfm מַּ | vbs  | lex שְׂבִּיַע | vbe  | nme ֜ | uvf  | prs 
+  atom slots: הַ H; מַּשְׂבִּ֣יַע FB<[
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: מַשְׂבִּיעַ x1 (Psalmi 145:16)
+
+#99 slot 328750 | Psalmi 105:20 | NTR[ hif wayq
+  BHSA יַתִּירֵ֑הוּ (key יַתִּירֵהוּ; JAT.IJR;92HW.) in atom וַיַתִּירֵ֑הוּ
+  MAM  יַּתִּירֵ֑הוּ (key יַּתִּירֵהוּ) in atom וַיַּתִּירֵ֑הוּ
+  WLC 4.18: וַיַּתִּירֵ֑הוּ
+  NTR[ | sp verb ps p3 nu sg gn m st NA prs HW | gloss run | voc_lex נתר
+  morphemes: pfm יַ | vbs  | lex תִּיר | vbe  | nme  | uvf  | prs ֵהוּ
+  atom slots: וַ W; יַתִּירֵ֑הוּ NTR[
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#100 slot 331840 | Psalmi 119:69 | NYR[ qal impf
+  BHSA אֱצֹּ֬ר (key אֱצֹּר; >:EY.O64R) in atom אֱצֹּ֬ר
+  MAM  אֶצֹּ֬ר (key אֶצֹּר) in atom אֶצֹּ֬ר
+  WLC 4.18: אֱצֹּ֬ר
+  NYR[ | sp verb ps p1 nu sg gn unknown st NA prs absent | gloss watch | voc_lex נצר
+  morphemes: pfm אֱ | vbs  | lex צֹּר | vbe  | nme  | uvf  | prs 
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: אֶצְּרָה x2 (Psalmi 119:34); אֶצֹּרָה x1 (Psalmi 119:145)
+
+#101 slot 332648 | Psalmi 119:175 | <ZR[ qal impf
+  BHSA יַעֲזְרֻֽנִי (key יַעֲזְרֻנִי; JA<:AZ:RU75NIJ) in atom יַעֲזְרֻֽנִי
+  MAM  יַעְזְרֻֽנִי׃ (key יַעְזְרֻנִי) in atom יַעְזְרֻֽנִי׃
+  WLC 4.18: יַעֲזְרֻֽנִי׃
+  <ZR[ | sp verb ps p3 nu pl gn m st NA prs NJ | gloss help | voc_lex עזר
+  morphemes: pfm יַ | vbs  | lex עֲזְר | vbe ֻ | nme  | uvf  | prs נִי
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: יַעְזְרוּנִי x1 (Chronica_II 28:23)
+
+#102 slot 333058 | Psalmi 125:5 | <QLQL/
+  BHSA עַֽקַלְקַלֹּותָ֗ם (key עַקַלְקַלֹּותָם; <A45QAL:QAL.OWT@81M) in atom עַֽקַלְקַלֹּותָ֗ם
+  MAM  עֲֽקַלְקַלֹּותָ֗ם (key עֲקַלְקַלֹּותָם) in atom עֲֽקַלְקַלּוֹתָ֗ם
+  WLC 4.18: עַֽקַלְקַלּוֹתָ֗ם
+  <QLQL/ | sp adjv ps NA nu pl gn f st a prs M | gloss crooked | voc_lex עֲקַלְקָל
+  morphemes: pfm  | vbs  | lex עַקַלְקַלּ | vbe  | nme ֹ֜ות | uvf  | prs ָמ
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#103 slot 335332 | Psalmi 145:10 | BRK[ piel impf
+  BHSA יְבָרֲכֽוּכָה (key יְבָרֲכוּכָה; J:B@R:AK75W.K@H) in atom יְבָרֲכֽוּכָה
+  MAM  יְבָרְכֽוּכָה׃ (key יְבָרְכוּכָה) in atom יְבָרְכֽוּכָה׃
+  WLC 4.18: יְבָרֲכֽוּכָה׃
+  BRK[ | sp verb ps p3 nu pl gn m st NA prs K | gloss bless | voc_lex ברך
+  morphemes: pfm יְ | vbs  | lex בָרֲך | vbe וּ | nme  | uvf  | prs כָה
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#104 slot 336141 | Iob 1:5 | BRK[ piel perf
+  BHSA בֵרֲכ֥וּ (key בֵרֲכוּ; B;R:AK71W.) in atom וּבֵרֲכ֥וּ
+  MAM  בֵרְכ֥וּ (key בֵרְכוּ) in atom וּבֵרְכ֥וּ
+  WLC 4.18: וּבֵרֲכ֥וּ
+  BRK[ | sp verb ps p3 nu pl gn unknown st NA prs absent | gloss bless | voc_lex ברך
+  morphemes: pfm  | vbs  | lex בֵרֲך | vbe וּ | nme  | uvf  | prs 
+  atom slots: וּ W; בֵרֲכ֥וּ BRK[
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  NEIGHBOUR OTHER: qamats for tsere on letter 1 | בָרֲכוּ | BRK[ piel impv x1 (Psalmi 134:2)
+  neighbour same: add a dagesh or mappiq on letter 1 | בֵּרֲכוּ | BRK[ piel perf x1 (Chronica_II 20:26)
+  same full analysis elsewhere: בֵּרֲכוּ x1 (Chronica_II 20:26)
+
+#105 slot 338069 | Iob 7:21 | CXR[ piel perf
+  BHSA שִׁ֖חֲרְתַּ֣נִי (key שִׁחֲרְתַּנִי; CI73X:AR:T.A74NIJ) in atom וְשִׁ֖חֲרְתַּ֣נִי
+  MAM  שִׁ֖חַרְתַּ֣נִי (key שִׁחַרְתַּנִי) in atom וְשִׁ֖חַרְתַּ֣נִי
+  WLC 4.18: וְשִׁ֖חֲרְתַּ֣נִי
+  CXR[ | sp verb ps p2 nu sg gn m st NA prs NJ | gloss look for | voc_lex שׁחר
+  morphemes: pfm  | vbs  | lex שִׁחֲרְ | vbe תַּ | nme  | uvf  | prs נִי
+  atom slots: וְ W; שִׁ֖חֲרְתַּ֣נִי CXR[
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#106 slot 338329 | Iob 9:6 | PLY[ hit impf
+  BHSA יִתְפַלָּצֽוּן (key יִתְפַלָּצוּן; JIT:PAL.@Y75W.N) in atom יִתְפַלָּצֽוּן
+  MAM  יִתְפַּלָּצֽוּן׃ (key יִתְפַּלָּצוּן) in atom יִתְפַּלָּצֽוּן׃
+  WLC 4.18: יִתְפַלָּצֽוּן׃ notes 1
+  PLY[ | sp verb ps p3 nu pl gn m st NA prs absent | gloss shudder | voc_lex פלץ
+  morphemes: pfm יִ | vbs תְ | lex פַלָּץ | vbe וּן | nme  | uvf  | prs 
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#107 slot 338834 | Iob 11:3 | XRC[ hif impf
+  BHSA יַחֲרִ֑ישׁו (key יַחֲרִישׁו; JAX:ARI92JCW) in atom יַחֲרִ֑ישׁו
+  MAM  יַחֲרִ֑ישׁוּ (key יַחֲרִישׁוּ) in atom יַחֲרִ֑ישׁוּ
+  WLC 4.18: יַחֲרִ֑ישׁו
+  XRC[ | sp verb ps p3 nu pl gn m st NA prs absent | gloss be deaf | voc_lex חרשׁ
+  morphemes: pfm יַ | vbs  | lex חֲרִישׁ | vbe ו | nme  | uvf  | prs 
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#108 slot 340383 | Iob 17:9 | VHR/
+  BHSA טֳהָר (key טֳהָר; V:@H@R) in atom וּֽטֳהָר־
+  MAM  טְהׇר (key טְהָר) in atom וּֽטְהׇר־
+  WLC 4.18: וּֽטֳהָר־
+  VHR/ | sp adjv ps NA nu sg gn m st c prs absent | gloss pure | voc_lex טָהֹר
+  morphemes: pfm  | vbs  | lex טֳהָר | vbe  | nme ֜ | uvf  | prs 
+  atom slots: וּֽ W; טֳהָר VHR/
+  own key elsewhere: -
+  MAM's key in BHSA: OTHER VHR[ qal impv x2 (Reges_II 5:10)
+  NEIGHBOUR OTHER: sheva for hataf qamats on letter 1 | טְהָר | VHR[ qal impv x2 (Reges_II 5:10)
+  same full analysis elsewhere: טְהֹור x1 (Habakuk 1:13)
+
+#109 slot 340649 | Iob 19:2 | DK>[ piel impf
+  BHSA תְדַכְּאוּנַ֥נִי (key תְדַכְּאוּנַנִי; T:DAK.:>W.NA71NIJ) in atom וּֽתְדַכְּאוּנַ֥נִי
+  MAM  תְדַכּאֿוּנַ֥נִי (key תְדַכּאוּנַנִי) in atom וּֽתְדַכּאֿוּנַ֥נִי
+  WLC 4.18: וּֽתְדַכְּאוּנַ֥נִי
+  DK>[ | sp verb ps p2 nu pl gn m st NA prs NJ | gloss oppress | voc_lex דכא
+  morphemes: pfm תְ | vbs  | lex דַכְּא | vbe וּן | nme  | uvf  | prs ַנִי
+  atom slots: וּֽ W; תְדַכְּאוּנַ֥נִי DK>[
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#110 slot 340970 | Iob 20:7 | GL==/
+  BHSA גֶלֲלֹו (key גֶלֲלֹו; GEL:ALOW) in atom כְּֽ֭גֶלֲלֹו
+  MAM  גֶלְלֹו (key גֶלְלֹו) in atom כְּֽ֭גֶלְלוֹ
+  WLC 4.18: כְּֽ֭גֶלֲלוֹ
+  GL==/ | sp subs ps NA nu sg gn m st a prs W | gloss dung-cake | voc_lex גֵּל
+  morphemes: pfm  | vbs  | lex גֶלֲל | vbe  | nme ֜ | uvf  | prs ֹו
+  atom slots: כְּֽ֭ K; גֶלֲלֹו GL==/
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#111 slot 341081 | Iob 20:19 | BNH[ qal impf
+  BHSA יִבֶנֵֽהוּ (key יִבֶנֵהוּ; JIBEN;75HW.) in atom יִבֶנֵֽהוּ
+  MAM  יִבְנֵֽהוּ׃ (key יִבְנֵהוּ) in atom יִבְנֵֽהוּ׃
+  WLC 4.18: יִבֶנֵֽהוּ׃
+  BNH[ | sp verb ps p3 nu sg gn m st NA prs HW | gloss build | voc_lex בנה
+  morphemes: pfm יִ | vbs  | lex בֶן | vbe  | nme  | uvf  | prs ֵהוּ
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: יִבְנֶנּוּ x2 (Nehemia 3:14)
+
+#112 slot 341682 | Iob 22:21 | CLM[ qal impv
+  BHSA שְׁלם (key שְׁלם; C:LM) in atom וּשְׁלם
+  MAM  שְׁלָ֑ם (key שְׁלָם) in atom וּשְׁלָ֑ם
+  WLC 4.18: וּשְׁלם notes 1
+  CLM[ | sp verb ps p2 nu sg gn m st NA prs absent | gloss be complete | voc_lex שׁלם
+  morphemes: pfm  | vbs  | lex שְׁלם | vbe  | nme  | uvf  | prs 
+  atom slots: וּ W; שְׁלם CLM[
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#113 slot 342356 | Iob 26:13 | XLL=[ piel perf
+  BHSA חֹֽלֲלָ֥ה (key חֹלֲלָה; XO45L:AL@71H) in atom חֹֽלֲלָ֥ה
+  MAM  חֹלְלָ֥ה (key חֹלְלָה) in atom חֹלְלָ֥ה
+  WLC 4.18: חֹֽלֲלָ֥ה
+  XLL=[ | sp verb ps p3 nu sg gn f st NA prs absent | gloss pierce | voc_lex חלל
+  morphemes: pfm  | vbs  | lex חֹלֲל | vbe ָה | nme  | uvf  | prs 
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#114 slot 343476 | Iob 31:7 | M>WM/
+  BHSA מֻאֽוּם (key מֻאוּם; MU>75W.M) in atom מֻאֽוּם
+  MAM  מֽאֿוּם׃ (key מאוּם) in atom מֽאֿוּם׃
+  WLC 4.18: מֻאֽוּם׃ notes 1
+  M>WM/ | sp subs ps NA nu sg gn m st a prs absent | gloss blemish | voc_lex מאוּם
+  morphemes: pfm  | vbs  | lex מֻאוּם | vbe  | nme ֜ | uvf  | prs 
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: מוּם x16 (Leviticus 21:17); מּוּם x1 (Iob 11:15)
+
+#115 slot 343597 | Iob 31:20 | BRK[ piel perf
+  BHSA בֵרֲכ֣וּנִי (key בֵרֲכוּנִי; B;R:AK74W.NIJ) in atom בֵרֲכ֣וּנִי
+  MAM  בֵרְכ֣וּנִי (key בֵרְכוּנִי) in atom בֵרְכ֣וּנִי
+  WLC 4.18: בֵרֲכ֣וּנִי
+  BRK[ | sp verb ps p3 nu pl gn unknown st NA prs NJ | gloss bless | voc_lex ברך
+  morphemes: pfm  | vbs  | lex בֵרֲך | vbe וּ | nme  | uvf  | prs נִי
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#116 slot 343778 | Iob 31:37 | QRB[ piel impf
+  BHSA אֲקָרֲבֶֽנּוּ (key אֲקָרֲבֶנּוּ; >:AQ@R:ABE75N.W.) in atom אֲקָרֲבֶֽנּוּ
+  MAM  אֲקָֽרְבֶֽנּוּ׃ (key אֲקָרְבֶנּוּ) in atom אֲקָֽרְבֶֽנּוּ׃
+  WLC 4.18: אֲקָרֲבֶֽנּוּ׃
+  QRB[ | sp verb ps p1 nu sg gn unknown st NA prs HW | gloss approach | voc_lex קרב
+  morphemes: pfm אֲ | vbs  | lex קָרֲב | vbe  | nme  | uvf ֶנּ | prs וּ
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#117 slot 344274 | Iob 33:25 | RVPC[ qal perf
+  BHSA רֻֽטֲפַ֣שׁ (key רֻטֲפַשׁ; RU45V:APA74C) in atom רֻֽטֲפַ֣שׁ
+  MAM  רֻֽטְפַ֣שׁ (key רֻטְפַשׁ) in atom רֻֽטְפַ֣שׁ
+  WLC 4.18: רֻֽטֲפַ֣שׁ
+  RVPC[ | sp verb ps p3 nu sg gn m st NA prs absent | gloss <uncertain> | voc_lex רטפשׁ
+  morphemes: pfm  | vbs  | lex רֻטֲפַשׁ | vbe  | nme  | uvf  | prs 
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#118 slot 345970 | Iob 39:15 | DWC[ qal impf
+  BHSA תְּדוּשֶֽׁהָ (key תְּדוּשֶׁהָ; T.:DW.CE75H@) in atom תְּדוּשֶֽׁהָ
+  MAM  תְדוּשֶֽׁהָ׃ (key תְדוּשֶׁהָ) in atom תְדוּשֶֽׁהָ׃
+  WLC 4.18: תְּדוּשֶֽׁהָ׃
+  DWC[ | sp verb ps p3 nu sg gn f st NA prs H | gloss tread on | voc_lex דושׁ
+  morphemes: pfm תְּ | vbs  | lex דוּשׁ | vbe  | nme  | uvf  | prs ֶהָ
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#119 slot 346313 | Iob 40:22 | YL/
+  BHSA צִֽלֲלֹ֑ו (key צִלֲלֹו; YI45L:ALO92W) in atom צִֽלֲלֹ֑ו
+  MAM  צִֽלְלֹ֑ו (key צִלְלֹו) in atom צִֽלְל֑וֹ
+  WLC 4.18: צִֽלֲל֑וֹ
+  YL/ | sp subs ps NA nu sg gn m st a prs W | gloss shadow | voc_lex צֵל
+  morphemes: pfm  | vbs  | lex צִלֲל | vbe  | nme ֜ | uvf  | prs ֹו
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: צִלֹּו x5 (Ezechiel 31:6); צִּלֹּו x1 (Ezechiel 31:12)
+
+#120 slot 349073 | Proverbia 8:26 | <PR/
+  BHSA עָפְרֹ֥ות (key עָפְרֹות; <@P:RO71WT) in atom עָפְרֹ֥ות
+  MAM  עַפְרֹ֥ות (key עַפְרֹות) in atom עַפְר֥וֹת
+  WLC 4.18: עָפְר֥וֹת notes V
+  <PR/ | sp subs ps NA nu pl gn m st c prs absent | gloss dust | voc_lex עָפָר
+  morphemes: pfm  | vbs  | lex עָפְר | vbe  | nme ֹ֜ות | uvf  | prs 
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: עַפְרֹת x1 (Iob 28:6)
+
+#121 slot 349994 | Proverbia 12:9 | KBD[ tif ptca
+  BHSA מְּתַכַּבֵּ֗ד (key מְּתַכַּבֵּד; M.:TAK.AB.;81D) in atom מִ֝מְּתַכַּבֵּ֗ד
+  MAM  מִּתְכַּבֵּ֗ד (key מִּתְכַּבֵּד) in atom מִ֝מִּתְכַּבֵּ֗ד
+  WLC 4.18: מִ֝מְּתַכַּבֵּ֗ד
+  KBD[ | sp verb ps unknown nu sg gn m st a prs absent | gloss be heavy | voc_lex כבד
+  morphemes: pfm מְּ | vbs תַ | lex כַּבֵּד | vbe  | nme ֜ | uvf  | prs 
+  atom slots: מִ֝ MN; מְּתַכַּבֵּ֗ד KBD[
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#122 slot 350333 | Proverbia 13:19 | <RB===[ qal impf
+  BHSA תֶעֱרַ֣ב (key תֶעֱרַב; TE<:ERA74B) in atom תֶעֱרַ֣ב
+  MAM  תֶּעֱרַ֣ב (key תֶּעֱרַב) in atom תֶּעֱרַ֣ב
+  WLC 4.18: תֶּעֱרַ֣ב
+  <RB===[ | sp verb ps p3 nu sg gn f st NA prs absent | gloss be pleasing | voc_lex ערב
+  morphemes: pfm תֶ | vbs  | lex עֱרַב | vbe  | nme  | uvf  | prs 
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#123 slot 352509 | Proverbia 21:11 | <NC[ qal infc
+  BHSA עְנָשׁ (key עְנָשׁ; <:N@C) in atom בַּעְנָשׁ־
+  MAM  עֲנׇשׁ (key עֲנָשׁ) in atom בַּֽעֲנׇשׁ־
+  WLC 4.18: בַּעְנָשׁ־
+  <NC[ | sp verb ps unknown nu unknown gn unknown st c prs absent | gloss fine | voc_lex ענשׁ
+  morphemes: pfm  | vbs  | lex עְנָשׁ | vbe  | nme ֜ | uvf  | prs 
+  atom slots: בַּ B; עְנָשׁ <NC[
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#124 slot 353199 | Proverbia 23:20 | ZLL[ qal ptca
+  BHSA זֹלֲלֵ֖י (key זֹלֲלֵי; ZOL:AL;73J) in atom בְּזֹלֲלֵ֖י
+  MAM  זֹלְלֵ֖י (key זֹלְלֵי) in atom בְּזֹלְלֵ֖י
+  WLC 4.18: בְּזֹלֲלֵ֖י
+  ZLL[ | sp verb ps unknown nu pl gn m st c prs absent | gloss be lavish | voc_lex זלל
+  morphemes: pfm  | vbs  | lex זֹלֲל | vbe  | nme ֵ֜י | uvf  | prs 
+  atom slots: בְּ B; זֹלֲלֵ֖י ZLL[
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#125 slot 355323 | Proverbia 30:17 | JQHH/
+  BHSA יקֲּהַ֫ת (key יקֲּהַת; JQ.:AHA60T) in atom לִֽיקֲּהַ֫ת־
+  MAM  יקְּהַ֫ת (key יקְּהַת) in atom לִֽיקְּהַ֫ת־
+  WLC 4.18: לִֽיקֲּהַ֫ת־
+  JQHH/ | sp subs ps NA nu sg gn f st c prs absent | gloss obedience | voc_lex יְקָהָה
+  morphemes: pfm  | vbs  | lex יקֲּה | vbe  | nme ַ֜ת | uvf  | prs 
+  atom slots: לִֽ L; יקֲּהַ֫ת JQHH/
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: יִקְּהַת x1 (Genesis 49:10)
+
+#126 slot 357659 | Canticum 1:6 | CZP[ qal perf
+  BHSA שֱּׁזָפַ֖תְנִי (key שֱּׁזָפַתְנִי; C.:EZ@PA73T:NIJ) in atom שֶׁשֱּׁזָפַ֖תְנִי
+  MAM  שְּׁזָפַ֖תְנִי (key שְּׁזָפַתְנִי) in atom שֶׁשְּׁזָפַ֖תְנִי
+  WLC 4.18: שֶׁשֱּׁזָפַ֖תְנִי
+  CZP[ | sp verb ps p3 nu sg gn f st NA prs NJ | gloss catch sight | voc_lex שׁזף
+  morphemes: pfm  | vbs  | lex שֱּׁזָף | vbe ַתְ | nme  | uvf  | prs נִי
+  atom slots: שֶׁ C; שֱּׁזָפַ֖תְנִי CZP[
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#127 slot 358497 | Canticum 5:2 | QWYWT/
+  BHSA קְוֻּצֹּותַ֖י (key קְוֻּצֹּותַי; Q:W.UY.OWTA73J) in atom קְוֻּצֹּותַ֖י
+  MAM  קְוֻצֹּותַ֖י (key קְוֻצֹּותַי) in atom קְוֻצּוֹתַ֖י
+  WLC 4.18: קְוֻּצּוֹתַ֖י notes U
+  QWYWT/ | sp subs ps NA nu pl gn f st a prs J | gloss hairlocks | voc_lex קְוֻצֹּות
+  morphemes: pfm  | vbs  | lex קְוֻּץּ | vbe  | nme ֹ֜ותַי | uvf  | prs 
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#128 slot 358617 | Canticum 5:11 | QWYWT/
+  BHSA קְוּצֹּותָיו֙ (key קְוּצֹּותָיו; Q:W.Y.OWT@JW03) in atom קְוּצֹּותָיו֙
+  MAM  קְוֻצֹּותָיו֙ (key קְוֻצֹּותָיו) in atom קְוֻצּוֹתָיו֙
+  WLC 4.18: קְוּצּוֹתָיו֙ notes U
+  QWYWT/ | sp subs ps NA nu pl gn f st a prs W | gloss hairlocks | voc_lex קְוֻצֹּות
+  morphemes: pfm  | vbs  | lex קְוּץּ | vbe  | nme ֹ֜ותָי | uvf  | prs ו
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#129 slot 359070 | Canticum 8:2 | NHG[ qal impf
+  BHSA אֶנְהָֽגֲךָ֗ (key אֶנְהָגֲךָ; >EN:H@45G:AK@81) in atom אֶנְהָֽגֲךָ֗
+  MAM  אֶנְהָֽגְךָ֗ (key אֶנְהָגְךָ) in atom אֶנְהָֽגְךָ֗
+  WLC 4.18: אֶנְהָֽגֲךָ֗
+  NHG[ | sp verb ps p1 nu sg gn unknown st NA prs K | gloss drive | voc_lex נהג
+  morphemes: pfm אֶ | vbs  | lex נְהָגֲ | vbe  | nme  | uvf  | prs כָ
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#130 slot 363592 | Threni 1:4 | JGH[ nif ptca
+  BHSA נוּגֹ֖ות (key נוּגֹות; NW.GO73WT) in atom נוּגֹ֖ות
+  MAM  נּוּגֹ֖ות (key נּוּגֹות) in atom נּוּג֖וֹת
+  WLC 4.18: נּוּג֖וֹת notes Q,p
+  JGH[ | sp verb ps unknown nu pl gn f st a prs absent | gloss grieve | voc_lex יגה
+  morphemes: pfm  | vbs נ | lex וּג | vbe  | nme ֹ֜ות | uvf  | prs 
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#131 slot 364407 | Threni 2:20 | <WLL/
+  BHSA עֹלֲלֵ֣י (key עֹלֲלֵי; <OL:AL;74J) in atom עֹלֲלֵ֣י
+  MAM  עֹלְלֵ֣י (key עֹלְלֵי) in atom עֹלְלֵ֣י
+  WLC 4.18: עֹלֲלֵ֣י
+  <WLL/ | sp subs ps NA nu pl gn m st c prs absent | gloss child | voc_lex עֹולֵל
+  morphemes: pfm  | vbs  | lex עֹלֲל | vbe  | nme ֵ֜י | uvf  | prs 
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#132 slot 366400 | Esther 2:14 | C<CGZ/
+  BHSA שַֽׁעֲשְׁגַ֛ז (key שַׁעֲשְׁגַז; CA45<:AC:GA91Z) in atom שַֽׁעֲשְׁגַ֛ז
+  MAM  שַֽׁעַשְׁגַ֛ז (key שַׁעַשְׁגַז) in atom שַֽׁעַשְׁגַ֛ז
+  WLC 4.18: שַֽׁעֲשְׁגַ֛ז
+  C<CGZ/ | sp nmpr ps NA nu sg gn m st a prs n/a | gloss Shaashgaz | voc_lex שַׁעֲשְׁגַז
+  morphemes: pfm  | vbs  | lex שַׁעֲשְׁגַז | vbe  | nme ֜ | uvf  | prs 
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#133 slot 370758 | Daniel 2:10 | Aram XRVM/
+  BHSA חַרְטֹּ֖ם (key חַרְטֹּם; XAR:V.O73M) in atom חַרְטֹּ֖ם
+  MAM  חַרְטֹ֖ם (key חַרְטֹם) in atom חַרְטֹ֖ם
+  WLC 4.18: חַרְטֹּ֖ם
+  XRVM/ | sp subs ps NA nu sg gn m st a prs absent | gloss magician | voc_lex חַרְטֹּם
+  morphemes: pfm  | vbs  | lex חַרְטֹּם | vbe  | nme ֜ | uvf  | prs 
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#134 slot 370865 | Daniel 2:16 | Aram NTN[ peal impf
+  BHSA יִנְתֵּן (key יִנְתֵּן; JIN:T.;N) in atom יִנְתֵּן־
+  MAM  יִנְתִּן (key יִנְתִּן) in atom יִנְתִּן־
+  WLC 4.18: יִנְתֵּן־
+  NTN[ | sp verb ps p3 nu sg gn m st NA prs absent | gloss give | voc_lex נתן
+  morphemes: pfm יִ | vbs  | lex נְתֵּן | vbe  | nme  | uvf  | prs 
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#135 slot 370916 | Daniel 2:19 | Aram GLH[ peil perf
+  BHSA גֲלִ֑י (key גֲלִי; G:ALI92J) in atom גֲלִ֑י
+  MAM  גְלִ֑י (key גְלִי) in atom גְלִ֑י
+  WLC 4.18: גֲלִ֑י
+  GLH[ | sp verb ps p3 nu sg gn m st NA prs absent | gloss reveal | voc_lex גלה
+  morphemes: pfm  | vbs  | lex גֲלִי | vbe  | nme  | uvf  | prs 
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: גֱּלִי x1 (Daniel 2:30)
+
+#136 slot 371334 | Daniel 2:39 | Aram >R</
+  BHSA אֲרַ֣עא (key אֲרַעא; >:ARA74<>) in atom אֲרַ֣עא
+  MAM  ארעא (key ארעא) in atom ארעא
+  WLC 4.18: אֲרַ֣עא notes 1
+  >R</ | sp subs ps NA nu sg gn f st a prs absent | gloss earth | voc_lex אֲרַע
+  morphemes: pfm  | vbs  | lex אֲרַע | vbe  | nme ֜א | uvf  | prs 
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#137 slot 372011 | Daniel 3:18 | Aram >LH/
+  BHSA אלָהָיךְ֙ (key אלָהָיךְ; >L@H@JK:03) in atom לֵֽאלָהָיךְ֙
+  MAM  אלהיך (key אלהיך) in atom לאלהיך
+  WLC 4.18: לאלהיך
+  >LH/ | sp subs ps NA nu pl gn m st a prs K | gloss god | voc_lex אֱלָהּ
+  morphemes: pfm  | vbs  | lex אלָה | vbe  | nme ָ֜י | uvf  | prs כְ
+  atom slots: לֵֽ L; אלָהָיךְ֙ >LH/
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#138 slot 372769 | Daniel 4:19 | Aram RBH[ peal perf
+  BHSA רְבַ֖ית (key רְבַית; R:BA73JT) in atom רְבַ֖ית
+  MAM  רבית (key רבית) in atom רבית
+  WLC 4.18: רְבַ֖ית
+  RBH[ | sp verb ps p2 nu sg gn m st NA prs absent | gloss grow | voc_lex רבה
+  morphemes: pfm  | vbs  | lex רְבַי | vbe ת | nme  | uvf  | prs 
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#139 slot 372960 | Daniel 4:27 | Aram TQP=/
+  BHSA תְקַ֥ף (key תְקַף; T:QA71P) in atom בִּתְקַ֥ף
+  MAM  תְקָ֥ף (key תְקָף) in atom בִּתְקָ֥ף
+  WLC 4.18: בִּתְקַ֥ף
+  TQP=/ | sp subs ps NA nu sg gn m st c prs absent | gloss strength | voc_lex תְּקַף
+  morphemes: pfm  | vbs  | lex תְקַף | vbe  | nme ֜ | uvf  | prs 
+  atom slots: בִּ B; תְקַ֥ף TQP=/
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  NEIGHBOUR OTHER: hiriq for patah on letter 2 | תְקִף | Aram TQP[ peal perf x2 (Daniel 4:8)
+  same full analysis elsewhere: -
+
+#140 slot 373385 | Daniel 5:10 | Aram ZJW/
+  BHSA זִיוָ֖יךְ (key זִיוָיךְ; ZIJW@73JK:) in atom וְזִיוָ֖יךְ
+  MAM  זיויך (key זיויך) in atom וזיויך
+  WLC 4.18: וְזִיוָ֖יךְ
+  ZJW/ | sp subs ps NA nu pl gn m st a prs K | gloss brightness | voc_lex זִיו
+  morphemes: pfm  | vbs  | lex זִיו | vbe  | nme ָ֜י | uvf  | prs כְ
+  atom slots: וְ W; זִיוָ֖יךְ ZJW/
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#141 slot 374377 | Daniel 6:23 | Aram SGR[ peal perf
+  BHSA סֲגַ֛ר (key סֲגַר; S:AGA91R) in atom וּֽסֲגַ֛ר
+  MAM  סְגַ֛ר (key סְגַר) in atom וּֽסְגַ֛ר
+  WLC 4.18: וּֽסֲגַ֛ר
+  SGR[ | sp verb ps p3 nu sg gn m st NA prs absent | gloss lock | voc_lex סגר
+  morphemes: pfm  | vbs  | lex סֲגַר | vbe  | nme  | uvf  | prs 
+  atom slots: וּֽ W; סֲגַ֛ר SGR[
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#142 slot 374613 | Daniel 7:4 | Aram GP/
+  BHSA גַפַּ֜יהּ (key גַפַּיהּ; GAP.A61JH.) in atom גַפַּ֜יהּ
+  MAM  גפיה (key גפיה) in atom גפיה
+  WLC 4.18: גַפַּ֜יהּ
+  GP/ | sp subs ps NA nu pl gn f st a prs H | gloss wing | voc_lex גַּף
+  morphemes: pfm  | vbs  | lex גַףּ | vbe  | nme ַ֜י | uvf  | prs הּ
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#143 slot 374721 | Daniel 7:7 | Aram QDM/
+  BHSA קָֽדָמַ֔יהּ (key קָדָמַיהּ; Q@95D@MA80JH.) in atom קָֽדָמַ֔יהּ
+  MAM  קדמיה (key קדמיה) in atom קדמיה
+  WLC 4.18: קָֽדָמַ֔יהּ
+  QDM/ | sp subs ps NA nu pl gn m st a prs H | gloss before | voc_lex קֳדָם
+  morphemes: pfm  | vbs  | lex קָדָם | vbe  | nme ַ֜י | uvf  | prs הּ
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#144 slot 374969 | Daniel 7:19 | Aram VPR/
+  BHSA טִפְרַ֣יהּ (key טִפְרַיהּ; VIP:RA74JH.) in atom וְטִפְרַ֣יהּ
+  MAM  טפריה (key טפריה) in atom וטפריה
+  WLC 4.18: וְטִפְרַ֣יהּ
+  VPR/ | sp subs ps NA nu pl gn m st a prs H | gloss nail | voc_lex טְפַר
+  morphemes: pfm  | vbs  | lex טִפְר | vbe  | nme ַ֜י | uvf  | prs הּ
+  atom slots: וְ W; טִפְרַ֣יהּ VPR/
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#145 slot 374973 | Daniel 7:19 | Aram DQQ[ haf ptca
+  BHSA מַדֲּקָ֔ה (key מַדֲּקָה; MAD.:AQ@80H) in atom מַדֲּקָ֔ה
+  MAM  מַדְּקָ֔ה (key מַדְּקָה) in atom מַדְּקָ֔ה
+  WLC 4.18: מַדֲּקָ֔ה
+  DQQ[ | sp verb ps unknown nu sg gn f st a prs absent | gloss crush | voc_lex דקק
+  morphemes: pfm מַ | vbs  | lex דֲּק | vbe  | nme ָ֜ה | uvf  | prs 
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  neighbour same: hataf segol for hataf patah on letter 2 | מַדֱּקָה | Aram DQQ[ haf ptca x1 (Daniel 7:7)
+  same full analysis elsewhere: מַדֱּקָה x1 (Daniel 7:7)
+
+#146 slot 374977 | Daniel 7:19 | Aram RGL/
+  BHSA רַגְלַ֥יהּ (key רַגְלַיהּ; RAG:LA71JH.) in atom בְּרַגְלַ֥יהּ
+  MAM  רגליה (key רגליה) in atom ברגליה
+  WLC 4.18: בְּרַגְלַ֥יהּ notes 1
+  RGL/ | sp subs ps NA nu du gn f st a prs H | gloss foot | voc_lex רְגַל
+  morphemes: pfm  | vbs  | lex רַגְל | vbe  | nme ַ֜י | uvf  | prs הּ
+  atom slots: בְּ B; רַגְלַ֥יהּ RGL/
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#147 slot 377243 | Daniel 11:15 | SLLH/
+  BHSA סֹֽולֲלָ֔ה (key סֹולֲלָה; SO45WL:AL@80H) in atom סֹֽולֲלָ֔ה
+  MAM  סֹֽולְלָ֔ה (key סֹולְלָה) in atom סֽוֹלְלָ֔ה
+  WLC 4.18: סֽוֹלֲלָ֔ה
+  SLLH/ | sp subs ps NA nu sg gn f st a prs absent | gloss rampart | voc_lex סֹלֲלָה
+  morphemes: pfm  | vbs  | lex סֹולֲל | vbe  | nme ָ֜ה | uvf  | prs 
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: סֹלְלָה x8 (Samuel_II 20:15)
+
+#148 slot 378088 | Daniel 12:10 | BRR[ hit impf
+  BHSA יִ֠תְבָּֽרֲרוּ (key יִתְבָּרֲרוּ; 14JIT:B.@45R:ARW.) in atom יִ֠תְבָּֽרֲרוּ
+  MAM  יִ֠תְבָּֽרְר֠וּ (key יִתְבָּרְרוּ) in atom יִ֠תְבָּֽרְר֠וּ
+  WLC 4.18: יִ֠תְבָּֽרֲרוּ
+  BRR[ | sp verb ps p3 nu pl gn m st NA prs absent | gloss purge | voc_lex ברר
+  morphemes: pfm יִ | vbs תְ | lex בָּרֲר | vbe וּ | nme  | uvf  | prs 
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#149 slot 380273 | Esra 5:12 | Aram >B/
+  BHSA אֲבָהֳתַ֨נָא֙ (key אֲבָהֳתַנָא; >:AB@H:@TA33N@>03) in atom אֲבָהֳתַ֨נָא֙
+  MAM  אֲבָהָתַ֙נָא֙ (key אֲבָהָתַנָא) in atom אֲבָהָתַ֙נָא֙
+  WLC 4.18: אֲבָהֳתַ֙נָא֙
+  >B/ | sp subs ps NA nu pl gn m st a prs N> | gloss father | voc_lex אַב
+  morphemes: pfm  | vbs  | lex אֲבָה | vbe  | nme ֳ֜ת | uvf  | prs ַנָא
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#150 slot 382110 | Esra 8:31 | NS<[ qal wayq
+  BHSA נִּסְעָ֞ה (key נִּסְעָה; N.IS:<@62H) in atom וַֽנִּסְעָ֞ה
+  MAM  נִּסְּעָ֞ה (key נִּסְּעָה) in atom וַֽנִּסְּעָ֞ה
+  WLC 4.18: וַֽנִּסְעָ֞ה
+  NS<[ | sp verb ps p1 nu pl gn unknown st NA prs absent | gloss pull out | voc_lex נסע
+  morphemes: pfm נִּ | vbs  | lex סְע | vbe ָה | nme  | uvf  | prs 
+  atom slots: וַֽ W; נִּסְעָ֞ה NS<[
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  NEIGHBOUR OTHER: remove the dagesh or mappiq on letter 1 | נִסְעָה | NS<[ qal impf x1 (Genesis 33:12)
+  same full analysis elsewhere: נִּסַּע x2 (Deuteronomium 1:19)
+
+#151 slot 383549 | Nehemia 1:6 | PTX[ qal ptcp
+  BHSA פְתֻוּחֹ֟ות (key פְתֻוּחֹות; P:TUW.XO84WT) in atom פְתֻוּחֹ֟ות
+  MAM  פְתוּחֹ֟ות (key פְתוּחֹות) in atom פְתוּח֟וֹת
+  WLC 4.18: פְתֻוּח֟וֹת notes U
+  PTX[ | sp verb ps unknown nu pl gn f st a prs absent | gloss open | voc_lex פתח
+  morphemes: pfm  | vbs  | lex פְתֻוּח | vbe  | nme ֹ֜ות | uvf  | prs 
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: פְתֻחֹות x4 (Reges_I 8:29); פְּתֻחֹות x1 (Chronica_II 6:40)
+
+#152 slot 383850 | Nehemia 2:6 | MHLK/
+  BHSA מַֽהֲלָכֲךָ֖ (key מַהֲלָכֲךָ; MA45H:AL@K:AK@73) in atom מַֽהֲלָכֲךָ֖
+  MAM  מַֽהֲלָכְךָ֖ (key מַהֲלָכְךָ) in atom מַֽהֲלָכְךָ֖
+  WLC 4.18: מַֽהֲלָכֲךָ֖
+  MHLK/ | sp subs ps NA nu sg gn m st a prs K | gloss passage | voc_lex מַהֲלָךְ
+  morphemes: pfm  | vbs  | lex מַהֲלָך | vbe  | nme ֜ | uvf  | prs ֲכָ
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#153 slot 384518 | Nehemia 3:13 | >CPT/
+  BHSA שֲׁפֹֽות (key שֲׁפֹות; C:APO75WT) in atom הָשֲׁפֹֽות
+  MAM  שְׁפֹֽות׃ (key שְׁפֹות) in atom הָשְׁפֽוֹת׃
+  WLC 4.18: הָשֲׁפֽוֹת׃
+  >CPT/ | sp subs ps NA nu sg gn m st a prs absent | gloss ash pit | voc_lex אַשְׁפֹּת
+  morphemes: pfm  | vbs  | lex שֲׁפֹות | vbe  | nme ֜ | uvf  | prs 
+  atom slots: הָ H; שֲׁפֹֽות >CPT/
+  own key elsewhere: -
+  MAM's key in BHSA: OTHER CPWT/ x1 (Samuel_II 17:29)
+  NEIGHBOUR OTHER: sheva for hataf patah on letter 1 | שְׁפֹות | CPWT/ x1 (Samuel_II 17:29)
+  same full analysis elsewhere: אַשְׁפֹּת x4 (Samuel_I 2:8); אַשְׁפֹּות x1 (Nehemia 3:14)
+
+#154 slot 385547 | Nehemia 5:7 | NC>[ qal ptca
+  BHSA נֹשִׁ֑אים (key נֹשִׁאים; NOCI92>JM) in atom נֹשִׁ֑אים
+  MAM  נשאים (key נשאים) in atom נשאים
+  WLC 4.18: נשאים
+  NC>[ | sp verb ps unknown nu pl gn m st a prs absent | gloss give loan | voc_lex נשׁא
+  morphemes: pfm  | vbs  | lex נֹשִׁא | vbe  | nme ֜ים | uvf  | prs 
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: נֹשִׁים x2 (Nehemia 5:10)
+
+#155 slot 390199 | Nehemia 12:36 | MLLJ/
+  BHSA מִֽלֲלַ֡י (key מִלֲלַי; MI45L:ALA83J) in atom מִֽלֲלַ֡י
+  MAM  מִֽלְלַ֡י (key מִלְלַי) in atom מִֽלְלַ֡י
+  WLC 4.18: מִֽלֲלַ֡י
+  MLLJ/ | sp nmpr ps NA nu sg gn m st a prs n/a | gloss Milalai | voc_lex מִלֲלַי
+  morphemes: pfm  | vbs  | lex מִלֲלַי | vbe  | nme ֜ | uvf  | prs 
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#156 slot 390200 | Nehemia 12:36 | GLLJ/
+  BHSA גִּֽלֲלַ֡י (key גִּלֲלַי; G.I45L:ALA83J) in atom גִּֽלֲלַ֡י
+  MAM  גִּֽלְלַ֡י (key גִּלְלַי) in atom גִּֽלְלַ֡י
+  WLC 4.18: גִּֽלֲלַ֡י
+  GLLJ/ | sp nmpr ps NA nu sg gn m st a prs n/a | gloss Gilalai | voc_lex גִּלֲלַי
+  morphemes: pfm  | vbs  | lex גִּלֲלַי | vbe  | nme ֜ | uvf  | prs 
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#157 slot 390965 | Nehemia 13:19 | YLL==[ qal perf
+  BHSA צָֽלֲלוּ֩ (key צָלֲלוּ; Y@45L:ALW.04) in atom צָֽלֲלוּ֩
+  MAM  צָֽלְלוּ֩ (key צָלְלוּ) in atom צָֽלְלוּ֩
+  WLC 4.18: צָֽלֲלוּ֩
+  YLL==[ | sp verb ps p3 nu pl gn unknown st NA prs absent | gloss grow dark | voc_lex צלל
+  morphemes: pfm  | vbs  | lex צָלֲל | vbe וּ | nme  | uvf  | prs 
+  own key elsewhere: YLL[ qal perf x1 (Exodus 15:10); YLL=[ qal perf x1 (Habakuk 3:16)
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#158 slot 392395 | Chronica_I 2:44 | JRQ<M/
+  BHSA יָרְקֳעָ֑ם (key יָרְקֳעָם; J@R:Q:@<@92M) in atom יָרְקֳעָ֑ם
+  MAM  יׇרְקְעָ֑ם (key יָרְקְעָם) in atom יׇרְקְעָ֑ם
+  WLC 4.18: יָרְקֳעָ֑ם
+  JRQ<M/ | sp nmpr ps NA nu sg gn unknown st a prs n/a | gloss Jorkeam | voc_lex יָרְקֳעָם
+  morphemes: pfm  | vbs  | lex יָרְקֳעָם | vbe  | nme ֜ | uvf  | prs 
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#159 slot 392724 | Chronica_I 3:18 | MLKJRM/
+  BHSA מַלְכִּירָ֥ם (key מַלְכִּירָם; MAL:K.IJR@71M) in atom וּמַלְכִּירָ֥ם
+  MAM  מַלְכִירָ֥ם (key מַלְכִירָם) in atom וּמַלְכִירָ֥ם
+  WLC 4.18: וּמַלְכִּירָ֥ם
+  MLKJRM/ | sp nmpr ps NA nu sg gn m st a prs n/a | gloss Malkiram | voc_lex מַלְכִּירָם
+  morphemes: pfm  | vbs  | lex מַלְכִּירָם | vbe  | nme ֜ | uvf  | prs 
+  atom slots: וּ W; מַלְכִּירָ֥ם MLKJRM/
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#160 slot 392950 | Chronica_I 4:10 | BRK[ piel impf
+  BHSA תְּבָרֲכֵ֜נִי (key תְּבָרֲכֵנִי; T.:B@R:AK;61NIJ) in atom תְּבָרֲכֵ֜נִי
+  MAM  תְּבָרְכֵ֜נִי (key תְּבָרְכֵנִי) in atom תְּבָרְכֵ֜נִי
+  WLC 4.18: תְּבָרֲכֵ֜נִי
+  BRK[ | sp verb ps p2 nu sg gn m st NA prs NJ | gloss bless | voc_lex ברך
+  morphemes: pfm תְּ | vbs  | lex בָרֲך | vbe  | nme  | uvf  | prs ֵנִי
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#161 slot 393712 | Chronica_I 5:16 | TWY>WT/
+  BHSA תֹוצְאֹותָֽם (key תֹוצְאֹותָם; TOWY:>OWT@75M) in atom תֹוצְאֹותָֽם
+  MAM  תֹּוצְאֹותָֽם׃ (key תֹּוצְאֹותָם) in atom תּוֹצְאוֹתָֽם׃
+  WLC 4.18: תּוֹצְאוֹתָֽם׃
+  TWY>WT/ | sp subs ps NA nu pl gn f st a prs M | gloss outlets | voc_lex תֹּוצָאֹות
+  morphemes: pfm  | vbs  | lex תֹוצְא | vbe  | nme ֹ֜ות | uvf  | prs ָמ
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#162 slot 397575 | Chronica_I 11:28 | <NTTJ/
+  BHSA עֲנְּתֹותִֽי (key עֲנְּתֹותִי; <:AN.:TOWTI75J) in atom הָעֲנְּתֹותִֽי
+  MAM  עַנְּתֹותִֽי׃ (key עַנְּתֹותִי) in atom הָעַנְּתוֹתִֽי׃
+  WLC 4.18: הָעֲנְּתוֹתִֽי׃
+  <NTTJ/ | sp adjv ps NA nu sg gn m st a prs absent | gloss Anathothite | voc_lex עַנְּתֹתִי
+  morphemes: pfm  | vbs  | lex עֲנְּתֹותִי | vbe  | nme ֜ | uvf  | prs 
+  atom slots: הָ H; עֲנְּתֹותִֽי <NTTJ/
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: עַנְּתֹתִי x2 (Samuel_II 23:27); עֲנְּתֹתִי x2 (Jeremia 29:27)
+
+#163 slot 397690 | Chronica_I 11:44 | <ZJ>/
+  BHSA עֻזִיָּ֖א (key עֻזִיָּא; <UZIJ.@73>) in atom עֻזִיָּ֖א
+  MAM  עֻזִּיָּ֖א (key עֻזִּיָּא) in atom עֻזִּיָּ֖א
+  WLC 4.18: עֻזִיָּ֖א
+  <ZJ>/ | sp nmpr ps NA nu sg gn m st a prs n/a | gloss Uzzia | voc_lex עֻזִיָּא
+  morphemes: pfm  | vbs  | lex עֻזִיָּא | vbe  | nme ֜ | uvf  | prs 
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#164 slot 397692 | Chronica_I 11:44 | <CTRTJ/
+  BHSA עֲשְׁתְּרָתִ֑י (key עֲשְׁתְּרָתִי; <:AC:T.:R@TI92J) in atom הָעֲשְׁתְּרָתִ֑י
+  MAM  עַשְׁתְּרָתִ֑י (key עַשְׁתְּרָתִי) in atom הָעַשְׁתְּרָתִ֑י
+  WLC 4.18: הָעֲשְׁתְּרָתִ֑י
+  <CTRTJ/ | sp adjv ps NA nu sg gn m st a prs absent | gloss Ashterathite | voc_lex עֲשְׁתְּרָתִי
+  morphemes: pfm  | vbs  | lex עֲשְׁתְּרָתִי | vbe  | nme ֜ | uvf  | prs 
+  atom slots: הָ H; עֲשְׁתְּרָתִ֑י <CTRTJ/
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: -
+
+#165 slot 404361 | Chronica_I 26:5 | BRK[ piel perf
+  BHSA בֵרֲכֹ֖ו (key בֵרֲכֹו; B;R:AKO73W) in atom בֵרֲכֹ֖ו
+  MAM  בֵרְכֹ֖ו (key בֵרְכֹו) in atom בֵרְכ֖וֹ
+  WLC 4.18: בֵרֲכ֖וֹ
+  BRK[ | sp verb ps p3 nu sg gn m st NA prs W | gloss bless | voc_lex ברך
+  morphemes: pfm  | vbs  | lex בֵרֲך | vbe  | nme  | uvf  | prs ֹו
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  NEIGHBOUR OTHER: qamats for tsere on letter 1 | בָרֲכֹו | BRK[ piel infc x4 (Genesis 28:6)
+  neighbour same: add a dagesh or mappiq on letter 1 | בֵּרֲכֹו | BRK[ piel perf x3 (Genesis 27:27)
+  same full analysis elsewhere: בֵּרֲכֹו x3 (Genesis 27:27)
+
+#166 slot 416604 | Chronica_II 20:26 | BRK[ piel perf
+  BHSA בֵּרֲכ֣וּ (key בֵּרֲכוּ; B.;R:AK74W.) in atom בֵּרֲכ֣וּ
+  MAM  בֵּרְכ֣וּ (key בֵּרְכוּ) in atom בֵּרְכ֣וּ
+  WLC 4.18: בֵּרֲכ֣וּ
+  BRK[ | sp verb ps p3 nu pl gn unknown st NA prs absent | gloss bless | voc_lex ברך
+  morphemes: pfm  | vbs  | lex בֵּרֲך | vbe וּ | nme  | uvf  | prs 
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  NEIGHBOUR OTHER: qamats for tsere on letter 1 | בָּרֲכוּ | BRK[ piel impv x13 (Judices 5:2)
+  neighbour same: remove the dagesh or mappiq on letter 1 | בֵרֲכוּ | BRK[ piel perf x1 (Iob 1:5)
+  same full analysis elsewhere: בֵרֲכוּ x1 (Iob 1:5)
+
+#167 slot 416895 | Chronica_II 21:4 | MMLKH/
+  BHSA מַמְלֶ֤כַת (key מַמְלֶכַת; MAM:LE70KAT) in atom מַמְלֶ֤כַת
+  MAM  מַמְלֶ֤כֶת (key מַמְלֶכֶת) in atom מַמְלֶ֤כֶת
+  WLC 4.18: מַמְלֶ֤כַת
+  MMLKH/ | sp subs ps NA nu sg gn f st c prs absent | gloss kingdom | voc_lex מַמְלָכָה
+  morphemes: pfm  | vbs  | lex מַמְלֶך | vbe  | nme ַ֜ת | uvf  | prs 
+  own key elsewhere: -
+  MAM's key in BHSA: OTHER MMLKT/ x11 (Exodus 19:6)
+  NEIGHBOUR OTHER: segol for patah on letter 4 | מַמְלֶכֶת | MMLKT/ x11 (Exodus 19:6)
+  same full analysis elsewhere: -
+
+#168 slot 417986 | Chronica_II 23:13 | CJR[ piel ptca
+  BHSA מְשֹֽׁורֲרִים֙ (key מְשֹׁורֲרִים; M:CO45WR:ARIJM03) in atom וְהַמְשֹֽׁורֲרִים֙
+  MAM  מְשֹֽׁורְרִים֙ (key מְשֹׁורְרִים) in atom וְהַמְשֽׁוֹרְרִים֙
+  WLC 4.18: וְהַמְשֽׁוֹרֲרִים֙
+  CJR[ | sp verb ps unknown nu pl gn m st a prs absent | gloss sing | voc_lex שׁיר
+  morphemes: pfm מְ | vbs  | lex שֹׁורֲר | vbe  | nme ִ֜ים | uvf  | prs 
+  atom slots: וְ W; הַ H; מְשֹֽׁורֲרִים֙ CJR[
+  own key elsewhere: -
+  MAM's key in BHSA: -
+  same full analysis elsewhere: מְשֹׁרְרִים x24 (Esra 2:41); מְשֹׁרֲרִים x6 (Nehemia 7:67)
+
+#169 slot 421764 | Chronica_II 29:34 | XZQ[ piel wayq
+  BHSA יְּחַזְּק֞וּם (key יְּחַזְּקוּם; J.:XAZ.:Q62W.M) in atom וַֽיְּחַזְּק֞וּם
+  MAM  יְחַזְּק֞וּם (key יְחַזְּקוּם) in atom וַֽיְחַזְּק֞וּם
+  WLC 4.18: וַֽיְּחַזְּק֞וּם
+  XZQ[ | sp verb ps p3 nu pl gn m st NA prs M | gloss be strong | voc_lex חזק
+  morphemes: pfm יְּ | vbs  | lex חַזְּק | vbe וּ | nme  | uvf  | prs מ
+  atom slots: וַֽ W; יְּחַזְּק֞וּם XZQ[
+  own key elsewhere: -
+  MAM's key in BHSA: OTHER XZQ[ piel impf x1 (Jeremia 10:4)
+  NEIGHBOUR OTHER: remove the dagesh or mappiq on letter 1 | יְחַזְּקוּם | XZQ[ piel impf x1 (Jeremia 10:4)
+  same full analysis elsewhere: -
+

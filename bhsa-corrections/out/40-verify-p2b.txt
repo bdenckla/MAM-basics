@@ -1,0 +1,4 @@
+Gen 39:19 | BHSA atom עָ֥שָׂהּ | MAM atoms with its letters: עָ֥שָׂה
+   slot 21819 עָ֥שָׂהּ | lex=<FH[ sp=verb vs=qal vt=perf ps=p3 nu=sg gn=m st=NA prs=absent gloss=make voc_lex_utf8=עשׂה
+Jer 11:2 | BHSA atom וְדִבַּרְתָּם֙ | MAM atoms with its letters: וְדִבַּרְתֶּם֙
+   slot 240342 דִבַּרְתָּם֙ | lex=DBR[ sp=verb vs=piel vt=perf ps=p2 nu=sg gn=m st=NA prs=M gloss=speak voc_lex_utf8=דבר

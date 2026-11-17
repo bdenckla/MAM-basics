@@ -1,0 +1,762 @@
+[
+ {
+  "reference": "Ezekiel 44:13",
+  "side": "ketiv",
+  "mam": "הַקֳּדָשִׁ֑ים",
+  "wlc418": "הַקְּדָשִׁ֑ים",
+  "letters": [
+   "ק"
+  ],
+  "bhsa": [
+   "הַקְּדָשִׁ֑ים"
+  ],
+  "bhsa_slots": [
+   {
+    "slot": 288052,
+    "g_word_utf8": "הַ",
+    "g_word": "HA-",
+    "lex": "H",
+    "voc_lex_utf8": "הַ",
+    "g_lex_utf8": "הַ",
+    "gloss": "the",
+    "language": "Hebrew",
+    "sp": "art",
+    "pdp": "art",
+    "ls": "none",
+    "vs": "NA",
+    "vt": "NA",
+    "ps": "NA",
+    "nu": "NA",
+    "gn": "NA",
+    "st": "NA",
+    "prs": "n/a",
+    "phrase": {
+     "node": 821197,
+     "typ": "PP",
+     "function": "Cmpl"
+    },
+    "clause": {
+     "node": 485100,
+     "typ": "InfC"
+    }
+   },
+   {
+    "slot": 288053,
+    "g_word_utf8": "קְּדָשִׁ֑ים",
+    "trailer_utf8": " ",
+    "g_word": "Q.:D@CI92JM",
+    "lex": "QDC/",
+    "voc_lex_utf8": "קֹדֶשׁ",
+    "g_lex_utf8": "קְּדָשׁ",
+    "gloss": "holiness",
+    "language": "Hebrew",
+    "sp": "subs",
+    "pdp": "subs",
+    "ls": "none",
+    "vs": "NA",
+    "vt": "NA",
+    "ps": "NA",
+    "nu": "pl",
+    "gn": "m",
+    "st": "a",
+    "prs": "absent",
+    "g_nme_utf8": "ִ֜ים",
+    "phrase": {
+     "node": 821197,
+     "typ": "PP",
+     "function": "Cmpl"
+    },
+    "clause": {
+     "node": 485100,
+     "typ": "InfC"
+    }
+   }
+  ],
+  "bkey_bhsa_eq_wlc418": true,
+  "bkey_bhsa_eq_mam": false
+ },
+ {
+  "reference": "Ezekiel 44:13",
+  "side": "qere",
+  "mam": "הַקֳּדָשִׁ֑ים",
+  "wlc418": "הַקְּדָשִׁ֑ים",
+  "letters": [
+   "ק"
+  ],
+  "bhsa": [
+   "הַקְּדָשִׁ֑ים"
+  ],
+  "bhsa_slots": [
+   {
+    "slot": 288052,
+    "g_word_utf8": "הַ",
+    "g_word": "HA-",
+    "lex": "H",
+    "voc_lex_utf8": "הַ",
+    "g_lex_utf8": "הַ",
+    "gloss": "the",
+    "language": "Hebrew",
+    "sp": "art",
+    "pdp": "art",
+    "ls": "none",
+    "vs": "NA",
+    "vt": "NA",
+    "ps": "NA",
+    "nu": "NA",
+    "gn": "NA",
+    "st": "NA",
+    "prs": "n/a",
+    "phrase": {
+     "node": 821197,
+     "typ": "PP",
+     "function": "Cmpl"
+    },
+    "clause": {
+     "node": 485100,
+     "typ": "InfC"
+    }
+   },
+   {
+    "slot": 288053,
+    "g_word_utf8": "קְּדָשִׁ֑ים",
+    "trailer_utf8": " ",
+    "g_word": "Q.:D@CI92JM",
+    "lex": "QDC/",
+    "voc_lex_utf8": "קֹדֶשׁ",
+    "g_lex_utf8": "קְּדָשׁ",
+    "gloss": "holiness",
+    "language": "Hebrew",
+    "sp": "subs",
+    "pdp": "subs",
+    "ls": "none",
+    "vs": "NA",
+    "vt": "NA",
+    "ps": "NA",
+    "nu": "pl",
+    "gn": "m",
+    "st": "a",
+    "prs": "absent",
+    "g_nme_utf8": "ִ֜ים",
+    "phrase": {
+     "node": 821197,
+     "typ": "PP",
+     "function": "Cmpl"
+    },
+    "clause": {
+     "node": 485100,
+     "typ": "InfC"
+    }
+   }
+  ],
+  "bkey_bhsa_eq_wlc418": true,
+  "bkey_bhsa_eq_mam": false
+ },
+ {
+  "reference": "Ezra 4:9",
+  "side": "qere",
+  "mam": "אַרְכֳּוָיֵ֤א",
+  "wlc418": "אַרְכְּוָיֵ֤א",
+  "letters": [
+   "כ"
+  ],
+  "bhsa": [
+   "אַרְכְּוָיֵ֤א"
+  ],
+  "bhsa_slots": [
+   {
+    "slot": 379698,
+    "g_word_utf8": "ארכוי",
+    "trailer_utf8": " ",
+    "qere_utf8": "אַרְכְּוָיֵ֤א",
+    "qere_trailer_utf8": " ",
+    "kq_hybrid_utf8": "אַרְכְּוָיֵ֤",
+    "g_word": "*>RKWJ",
+    "lex": ">RKWJ/",
+    "voc_lex_utf8": "אַרְכְּוָי",
+    "g_lex_utf8": "ארכו",
+    "gloss": "Erechite",
+    "language": "Aramaic",
+    "sp": "adjv",
+    "pdp": "subs",
+    "ls": "gntl",
+    "vs": "NA",
+    "vt": "NA",
+    "ps": "NA",
+    "nu": "pl",
+    "gn": "m",
+    "st": "e",
+    "prs": "absent",
+    "g_nme_utf8": "֜י",
+    "phrase": {
+     "node": 881908,
+     "typ": "PrNP",
+     "function": "Subj"
+    },
+    "clause": {
+     "node": 507962,
+     "typ": "NmCl"
+    }
+   }
+  ],
+  "bkey_bhsa_eq_wlc418": true,
+  "bkey_bhsa_eq_mam": false
+ },
+ {
+  "reference": "2 Chronicles 5:7",
+  "side": "ketiv",
+  "mam": "הַקֳּדָשִׁ֑ים",
+  "wlc418": "הַקְּדָשִׁ֑ים",
+  "letters": [
+   "ק"
+  ],
+  "bhsa": [
+   "הַקְּדָשִׁ֑ים"
+  ],
+  "bhsa_slots": [
+   {
+    "slot": 408757,
+    "g_word_utf8": "הַ",
+    "g_word": "HA-",
+    "lex": "H",
+    "voc_lex_utf8": "הַ",
+    "g_lex_utf8": "הַ",
+    "gloss": "the",
+    "language": "Hebrew",
+    "sp": "art",
+    "pdp": "art",
+    "ls": "none",
+    "vs": "NA",
+    "vt": "NA",
+    "ps": "NA",
+    "nu": "NA",
+    "gn": "NA",
+    "st": "NA",
+    "prs": "n/a",
+    "phrase": {
+     "node": 895519,
+     "typ": "PP",
+     "function": "Cmpl"
+    },
+    "clause": {
+     "node": 512656,
+     "typ": "WayX"
+    }
+   },
+   {
+    "slot": 408758,
+    "g_word_utf8": "קְּדָשִׁ֑ים",
+    "trailer_utf8": " ",
+    "g_word": "Q.:D@CI92JM",
+    "lex": "QDC/",
+    "voc_lex_utf8": "קֹדֶשׁ",
+    "g_lex_utf8": "קְּדָשׁ",
+    "gloss": "holiness",
+    "language": "Hebrew",
+    "sp": "subs",
+    "pdp": "subs",
+    "ls": "none",
+    "vs": "NA",
+    "vt": "NA",
+    "ps": "NA",
+    "nu": "pl",
+    "gn": "m",
+    "st": "a",
+    "prs": "absent",
+    "g_nme_utf8": "ִ֜ים",
+    "phrase": {
+     "node": 895519,
+     "typ": "PP",
+     "function": "Cmpl"
+    },
+    "clause": {
+     "node": 512656,
+     "typ": "WayX"
+    }
+   }
+  ],
+  "bkey_bhsa_eq_wlc418": true,
+  "bkey_bhsa_eq_mam": false
+ },
+ {
+  "reference": "2 Chronicles 5:7",
+  "side": "qere",
+  "mam": "הַקֳּדָשִׁ֑ים",
+  "wlc418": "הַקְּדָשִׁ֑ים",
+  "letters": [
+   "ק"
+  ],
+  "bhsa": [
+   "הַקְּדָשִׁ֑ים"
+  ],
+  "bhsa_slots": [
+   {
+    "slot": 408757,
+    "g_word_utf8": "הַ",
+    "g_word": "HA-",
+    "lex": "H",
+    "voc_lex_utf8": "הַ",
+    "g_lex_utf8": "הַ",
+    "gloss": "the",
+    "language": "Hebrew",
+    "sp": "art",
+    "pdp": "art",
+    "ls": "none",
+    "vs": "NA",
+    "vt": "NA",
+    "ps": "NA",
+    "nu": "NA",
+    "gn": "NA",
+    "st": "NA",
+    "prs": "n/a",
+    "phrase": {
+     "node": 895519,
+     "typ": "PP",
+     "function": "Cmpl"
+    },
+    "clause": {
+     "node": 512656,
+     "typ": "WayX"
+    }
+   },
+   {
+    "slot": 408758,
+    "g_word_utf8": "קְּדָשִׁ֑ים",
+    "trailer_utf8": " ",
+    "g_word": "Q.:D@CI92JM",
+    "lex": "QDC/",
+    "voc_lex_utf8": "קֹדֶשׁ",
+    "g_lex_utf8": "קְּדָשׁ",
+    "gloss": "holiness",
+    "language": "Hebrew",
+    "sp": "subs",
+    "pdp": "subs",
+    "ls": "none",
+    "vs": "NA",
+    "vt": "NA",
+    "ps": "NA",
+    "nu": "pl",
+    "gn": "m",
+    "st": "a",
+    "prs": "absent",
+    "g_nme_utf8": "ִ֜ים",
+    "phrase": {
+     "node": 895519,
+     "typ": "PP",
+     "function": "Cmpl"
+    },
+    "clause": {
+     "node": 512656,
+     "typ": "WayX"
+    }
+   }
+  ],
+  "bkey_bhsa_eq_wlc418": true,
+  "bkey_bhsa_eq_mam": false
+ },
+ {
+  "reference": "Numbers 35:20",
+  "side": "ketiv",
+  "mam": "יֶהְדֳּפֶ֑נּוּ",
+  "wlc418": "יֶהְדָּפֶ֑נּוּ",
+  "letters": [
+   "ד"
+  ],
+  "bhsa": [
+   "יֶהְדָּפֶ֑נּוּ"
+  ],
+  "bhsa_slots": [
+   {
+    "slot": 92201,
+    "g_word_utf8": "יֶהְדָּפֶ֑נּוּ",
+    "trailer_utf8": " ",
+    "g_word": "JEH:D.@PE92N.W.",
+    "lex": "HDP[",
+    "voc_lex_utf8": "הדף",
+    "g_lex_utf8": "הְדָּף",
+    "gloss": "push",
+    "language": "Hebrew",
+    "sp": "verb",
+    "pdp": "verb",
+    "ls": "none",
+    "vs": "qal",
+    "vt": "impf",
+    "ps": "p3",
+    "nu": "sg",
+    "gn": "m",
+    "st": "NA",
+    "prs": "HW",
+    "g_pfm_utf8": "יֶ",
+    "g_uvf_utf8": "ֶנּ",
+    "g_prs_utf8": "וּ",
+    "phrase": {
+     "node": 703900,
+     "typ": "VP",
+     "function": "PreO"
+    },
+    "clause": {
+     "node": 444785,
+     "typ": "WxY0"
+    }
+   }
+  ],
+  "bkey_bhsa_eq_wlc418": true,
+  "bkey_bhsa_eq_mam": false
+ },
+ {
+  "reference": "Numbers 35:20",
+  "side": "qere",
+  "mam": "יֶהְדֳּפֶ֑נּוּ",
+  "wlc418": "יֶהְדָּפֶ֑נּוּ",
+  "letters": [
+   "ד"
+  ],
+  "bhsa": [
+   "יֶהְדָּפֶ֑נּוּ"
+  ],
+  "bhsa_slots": [
+   {
+    "slot": 92201,
+    "g_word_utf8": "יֶהְדָּפֶ֑נּוּ",
+    "trailer_utf8": " ",
+    "g_word": "JEH:D.@PE92N.W.",
+    "lex": "HDP[",
+    "voc_lex_utf8": "הדף",
+    "g_lex_utf8": "הְדָּף",
+    "gloss": "push",
+    "language": "Hebrew",
+    "sp": "verb",
+    "pdp": "verb",
+    "ls": "none",
+    "vs": "qal",
+    "vt": "impf",
+    "ps": "p3",
+    "nu": "sg",
+    "gn": "m",
+    "st": "NA",
+    "prs": "HW",
+    "g_pfm_utf8": "יֶ",
+    "g_uvf_utf8": "ֶנּ",
+    "g_prs_utf8": "וּ",
+    "phrase": {
+     "node": 703900,
+     "typ": "VP",
+     "function": "PreO"
+    },
+    "clause": {
+     "node": 444785,
+     "typ": "WxY0"
+    }
+   }
+  ],
+  "bkey_bhsa_eq_wlc418": true,
+  "bkey_bhsa_eq_mam": false
+ },
+ {
+  "reference": "1 Samuel 26:10",
+  "side": "ketiv",
+  "mam": "יִגֳּפֶ֑נּוּ",
+  "wlc418": "יִגָּפֶ֑נּוּ",
+  "letters": [
+   "ג"
+  ],
+  "bhsa": [
+   "יִגָּפֶ֑נּוּ"
+  ],
+  "bhsa_slots": [
+   {
+    "slot": 157794,
+    "g_word_utf8": "יִגָּפֶ֑נּוּ",
+    "trailer_utf8": " ",
+    "g_word": "JIG.@PE92N.W.",
+    "lex": "NGP[",
+    "voc_lex_utf8": "נגף",
+    "g_lex_utf8": "גָּף",
+    "gloss": "hurt",
+    "language": "Hebrew",
+    "sp": "verb",
+    "pdp": "verb",
+    "ls": "none",
+    "vs": "qal",
+    "vt": "impf",
+    "ps": "p3",
+    "nu": "sg",
+    "gn": "m",
+    "st": "NA",
+    "prs": "HW",
+    "g_pfm_utf8": "יִ",
+    "g_uvf_utf8": "ֶנּ",
+    "g_prs_utf8": "וּ",
+    "phrase": {
+     "node": 742141,
+     "typ": "VP",
+     "function": "PreO"
+    },
+    "clause": {
+     "node": 457424,
+     "typ": "XYqt"
+    }
+   }
+  ],
+  "bkey_bhsa_eq_wlc418": true,
+  "bkey_bhsa_eq_mam": false
+ },
+ {
+  "reference": "1 Samuel 26:10",
+  "side": "qere",
+  "mam": "יִגֳּפֶ֑נּוּ",
+  "wlc418": "יִגָּפֶ֑נּוּ",
+  "letters": [
+   "ג"
+  ],
+  "bhsa": [
+   "יִגָּפֶ֑נּוּ"
+  ],
+  "bhsa_slots": [
+   {
+    "slot": 157794,
+    "g_word_utf8": "יִגָּפֶ֑נּוּ",
+    "trailer_utf8": " ",
+    "g_word": "JIG.@PE92N.W.",
+    "lex": "NGP[",
+    "voc_lex_utf8": "נגף",
+    "g_lex_utf8": "גָּף",
+    "gloss": "hurt",
+    "language": "Hebrew",
+    "sp": "verb",
+    "pdp": "verb",
+    "ls": "none",
+    "vs": "qal",
+    "vt": "impf",
+    "ps": "p3",
+    "nu": "sg",
+    "gn": "m",
+    "st": "NA",
+    "prs": "HW",
+    "g_pfm_utf8": "יִ",
+    "g_uvf_utf8": "ֶנּ",
+    "g_prs_utf8": "וּ",
+    "phrase": {
+     "node": 742141,
+     "typ": "VP",
+     "function": "PreO"
+    },
+    "clause": {
+     "node": 457424,
+     "typ": "XYqt"
+    }
+   }
+  ],
+  "bkey_bhsa_eq_wlc418": true,
+  "bkey_bhsa_eq_mam": false
+ },
+ {
+  "reference": "2 Samuel 6:5",
+  "side": "ketiv",
+  "mam": "וּֽבְצֶלְצֱלִֽים׃",
+  "wlc418": "וּֽבְצֶלְצֶלִֽים׃",
+  "letters": [
+   "צ"
+  ],
+  "bhsa": [
+   "וּֽבְצֶלְצֶלִֽים"
+  ],
+  "bhsa_slots": [
+   {
+    "slot": 163539,
+    "g_word_utf8": "וּֽ",
+    "g_word": "W.95-",
+    "lex": "W",
+    "voc_lex_utf8": "וְ",
+    "g_lex_utf8": "וּ",
+    "gloss": "and",
+    "language": "Hebrew",
+    "sp": "conj",
+    "pdp": "conj",
+    "ls": "none",
+    "vs": "NA",
+    "vt": "NA",
+    "ps": "NA",
+    "nu": "NA",
+    "gn": "NA",
+    "st": "NA",
+    "prs": "n/a",
+    "phrase": {
+     "node": 745661,
+     "typ": "PP",
+     "function": "Adju"
+    },
+    "clause": {
+     "node": 458572,
+     "typ": "Ptcp"
+    }
+   },
+   {
+    "slot": 163540,
+    "g_word_utf8": "בְ",
+    "g_word": "B:-",
+    "lex": "B",
+    "voc_lex_utf8": "בְּ",
+    "g_lex_utf8": "בְ",
+    "gloss": "in",
+    "language": "Hebrew",
+    "sp": "prep",
+    "pdp": "prep",
+    "ls": "none",
+    "vs": "NA",
+    "vt": "NA",
+    "ps": "NA",
+    "nu": "NA",
+    "gn": "NA",
+    "st": "NA",
+    "prs": "absent",
+    "phrase": {
+     "node": 745661,
+     "typ": "PP",
+     "function": "Adju"
+    },
+    "clause": {
+     "node": 458572,
+     "typ": "Ptcp"
+    }
+   },
+   {
+    "slot": 163541,
+    "g_word_utf8": "צֶלְצֶלִֽים",
+    "trailer_utf8": "׃ ",
+    "g_word": "YEL:YELI75JM",
+    "lex": "YLYLJM/",
+    "voc_lex_utf8": "צֶלְצֶלִים",
+    "g_lex_utf8": "צֶלְצֶל",
+    "gloss": "cymbals",
+    "language": "Hebrew",
+    "sp": "subs",
+    "pdp": "subs",
+    "ls": "none",
+    "vs": "NA",
+    "vt": "NA",
+    "ps": "NA",
+    "nu": "pl",
+    "gn": "m",
+    "st": "a",
+    "prs": "absent",
+    "g_nme_utf8": "ִ֜ים",
+    "phrase": {
+     "node": 745661,
+     "typ": "PP",
+     "function": "Adju"
+    },
+    "clause": {
+     "node": 458572,
+     "typ": "Ptcp"
+    }
+   }
+  ],
+  "bkey_bhsa_eq_wlc418": true,
+  "bkey_bhsa_eq_mam": false
+ },
+ {
+  "reference": "2 Samuel 6:5",
+  "side": "qere",
+  "mam": "וּֽבְצֶלְצֱלִֽים׃",
+  "wlc418": "וּֽבְצֶלְצֶלִֽים׃",
+  "letters": [
+   "צ"
+  ],
+  "bhsa": [
+   "וּֽבְצֶלְצֶלִֽים"
+  ],
+  "bhsa_slots": [
+   {
+    "slot": 163539,
+    "g_word_utf8": "וּֽ",
+    "g_word": "W.95-",
+    "lex": "W",
+    "voc_lex_utf8": "וְ",
+    "g_lex_utf8": "וּ",
+    "gloss": "and",
+    "language": "Hebrew",
+    "sp": "conj",
+    "pdp": "conj",
+    "ls": "none",
+    "vs": "NA",
+    "vt": "NA",
+    "ps": "NA",
+    "nu": "NA",
+    "gn": "NA",
+    "st": "NA",
+    "prs": "n/a",
+    "phrase": {
+     "node": 745661,
+     "typ": "PP",
+     "function": "Adju"
+    },
+    "clause": {
+     "node": 458572,
+     "typ": "Ptcp"
+    }
+   },
+   {
+    "slot": 163540,
+    "g_word_utf8": "בְ",
+    "g_word": "B:-",
+    "lex": "B",
+    "voc_lex_utf8": "בְּ",
+    "g_lex_utf8": "בְ",
+    "gloss": "in",
+    "language": "Hebrew",
+    "sp": "prep",
+    "pdp": "prep",
+    "ls": "none",
+    "vs": "NA",
+    "vt": "NA",
+    "ps": "NA",
+    "nu": "NA",
+    "gn": "NA",
+    "st": "NA",
+    "prs": "absent",
+    "phrase": {
+     "node": 745661,
+     "typ": "PP",
+     "function": "Adju"
+    },
+    "clause": {
+     "node": 458572,
+     "typ": "Ptcp"
+    }
+   },
+   {
+    "slot": 163541,
+    "g_word_utf8": "צֶלְצֶלִֽים",
+    "trailer_utf8": "׃ ",
+    "g_word": "YEL:YELI75JM",
+    "lex": "YLYLJM/",
+    "voc_lex_utf8": "צֶלְצֶלִים",
+    "g_lex_utf8": "צֶלְצֶל",
+    "gloss": "cymbals",
+    "language": "Hebrew",
+    "sp": "subs",
+    "pdp": "subs",
+    "ls": "none",
+    "vs": "NA",
+    "vt": "NA",
+    "ps": "NA",
+    "nu": "pl",
+    "gn": "m",
+    "st": "a",
+    "prs": "absent",
+    "g_nme_utf8": "ִ֜ים",
+    "phrase": {
+     "node": 745661,
+     "typ": "PP",
+     "function": "Adju"
+    },
+    "clause": {
+     "node": 458572,
+     "typ": "Ptcp"
+    }
+   }
+  ],
+  "bkey_bhsa_eq_wlc418": true,
+  "bkey_bhsa_eq_mam": false
+ }
+]

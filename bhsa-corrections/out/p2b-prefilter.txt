@@ -1,0 +1,2187 @@
+Pre-filter for Test B class mam-unique: 184 rows
+rows with a neighbour of each relation: {'other stem/tense': 15, 'other lexeme': 14, 'other person/number/gender/suffix': 6}
+
+#1 slot 899 | Genesis 2:12 | ZHB/ sgm st=c
+  BHSA זֲהַ֛ב (key זֲהַב; Z:AHA91B) in atom וּֽזֲהַ֛ב | prev  | next הָאָ֥רֶץ | trailer ' ' | accents accent tevir
+  MAM  זְהַ֛ב (key זְהַב) in atom וּֽזְהַ֛ב
+  diff: letter 1 (zayin): BHSA [hataf patah], MAM [sheva]
+  sp subs | gloss gold | voc_lex זָהָב
+  morphemes: pfm  | vbs  | lex זֲהַב | vbe  | nme ֜ | uvf  | prs 
+  atom slots: וּֽ W; זֲהַ֛ב ZHB/
+  MAM's key in BHSA: ZHB/ sgm st=c x4 (Exodus 38:24)
+  neighbour same: sheva for hataf patah on letter 1 (zayin) | זְהַב | ZHB/ sgm st=c x4 (Exodus 38:24) = MAM's key
+  same full analysis elsewhere: זְהַב x4 (Exodus 38:24); זְּהַב x2 (Psalms 72:15)
+  same letters: זָהָב x274 [ZHB/ sgm st=a x274 other state]; זָּהָב x95 [ZHB/ sgm st=a x95 other state]; זְהַב x4 [ZHB/ sgm st=c x4 same]; זְּהַב x2 [ZHB/ sgm st=c x2 same]
+
+#2 slot 1007 | Genesis 2:18 | <FH[ qal impf p1sg
+  BHSA אֶֽעֱשֶׂהּ (key אֶעֱשֶׂהּ; >E45<:EFEH.) in atom אֶֽעֱשֶׂהּ־ | prev לְבַדֹּ֑ו | next לֹּ֥ו | trailer '־' | accents point meteg
+  MAM  אֶֽעֱשֶׂה (key אֶעֱשֶׂה) in atom אֶֽעֱשֶׂה־
+  diff: letter 4 (he): BHSA [dagesh/mappiq], MAM []
+  sp verb | gloss make | voc_lex עשׂה
+  morphemes: pfm אֶ | vbs  | lex עֱשֶׂהּ | vbe  | nme  | uvf  | prs 
+  MAM's key in BHSA: <FH[ qal impf p1sg x87 (Genesis 18:29); [other stem/tense] <FH[ qal wayq p1sg x2 (Ezekiel 20:14)
+  NEIGHBOUR [other stem/tense]: remove the dagesh or mappiq on letter 4 (he) | אֶעֱשֶׂה | <FH[ qal wayq p1sg x2 (Ezekiel 20:14) = MAM's key
+  neighbour same: remove the dagesh or mappiq on letter 4 (he) | אֶעֱשֶׂה | <FH[ qal impf p1sg x87 (Genesis 18:29) = MAM's key
+  same full analysis elsewhere: אֶעֱשֶׂה x87 (Genesis 18:29)
+  same letters: אֶעֱשֶׂה x89 [<FH[ qal impf p1sg x87 same, <FH[ qal wayq p1sg x2 other stem/tense]
+
+#3 slot 6392 | Genesis 14:10 | FDJM/ sg st=a
+  BHSA שִׂדִּ֗ים (key שִׂדִּים; FID.I81JM) in atom הַשִׂדִּ֗ים | prev וְעֵ֣מֶק | next בֶּֽאֱרֹ֤ת | trailer ' ' | accents accent revia
+  MAM  שִּׂדִּ֗ים (key שִּׂדִּים) in atom הַשִּׂדִּ֗ים
+  diff: letter 1 (shin): BHSA [hiriq, sin dot], MAM [hiriq, dagesh/mappiq, sin dot]
+  sp nmpr | gloss Siddim | voc_lex שִׂדִּים
+  morphemes: pfm  | vbs  | lex שִׂדִּים | vbe  | nme ֜ | uvf  | prs 
+  atom slots: הַ H; שִׂדִּ֗ים FDJM/
+  MAM's key in BHSA: FDJM/ sg st=a x2 (Genesis 14:3)
+  neighbour same: add a dagesh or mappiq on letter 1 (shin) | שִּׂדִּים | FDJM/ sg st=a x2 (Genesis 14:3) = MAM's key
+  same full analysis elsewhere: שִּׂדִּים x2 (Genesis 14:3)
+  same letters: שָׁדַיִם x5 [CD=/ dum st=a x5 other lexeme]; שִּׂדִּים x2 [FDJM/ sg st=a x2 same]; שֵּׁדִים x2 [CD==/ plm st=a x2 other lexeme]; שָּׁדָיִם x1 [CD=/ dum st=a x1 other lexeme]; שָׁדָיִם x1 [CD=/ dum st=a x1 other lexeme]; שָּׁדַיִם x1 [CD=/ dum st=a x1 other lexeme]
+
+#4 slot 6542 | Genesis 14:17 | KDRL<MR/ sgm st=a
+  BHSA כְּדָר־לָעֹ֔מֶר (key כְּדָר־לָעֹמֶר; K.:D@R&L@<O80MER) in atom כְּדָר־לָעֹ֔מֶר | prev אֶת־ | next וְאֶת־ | trailer ' ' | accents accent zaqef qatan
+  MAM  כְּדׇרְלָעֹ֔מֶר (key כְּדָרְלָעֹמֶר) in atom כְּדׇרְלָעֹ֔מֶר
+  diff: separators: BHSA ['maqaf'], MAM [] | letter 3 (resh): BHSA [], MAM [sheva]
+  sp nmpr | gloss Kedorlaomer | voc_lex כְּדָרְלָעֹמֶר
+  morphemes: pfm  | vbs  | lex כְּדָר לָעֹמֶר | vbe  | nme ֜ | uvf  | prs 
+  MAM's key in BHSA: KDRL<MR/ sgm st=a x3 (Genesis 14:1)
+  same full analysis elsewhere: כְּדָרְלָעֹמֶר x3 (Genesis 14:1); כְדָרְלָעֹמֶר x1 (Genesis 14:5)
+  same letters: כְּדָרְלָעֹמֶר x3 [KDRL<MR/ sgm st=a x3 same]; כְדָרְלָעֹמֶר x1 [KDRL<MR/ sgm st=a x1 same]
+
+#5 slot 7063 | Genesis 16:2 | MN prs=H
+  BHSA מִמֵּ֑נָּה (key מִמֵּנָּה; MIM.;92N.@H) in atom מִמֵּ֑נָּה | prev אִבָּנֶ֖ה | next וַיִּשְׁמַ֥ע | trailer ' ' | accents accent etnahta
+  MAM  מִמֶּ֑נָּה (key מִמֶּנָּה) in atom מִמֶּ֑נָּה
+  diff: letter 2 (mem): BHSA [tsere, dagesh/mappiq], MAM [segol, dagesh/mappiq]
+  sp prep | gloss from | voc_lex מִן
+  morphemes: pfm  | vbs  | lex מִמֵּןּ | vbe  | nme  | uvf  | prs ָה
+  MAM's key in BHSA: MN prs=H x60 (Genesis 3:19)
+  neighbour same: segol for tsere on letter 2 (mem) | מִמֶּנָּה | MN prs=H x60 (Genesis 3:19) = MAM's key
+  same full analysis elsewhere: מִמֶּנָּה x60 (Genesis 3:19)
+  same letters: מִמֶּנָּה x60 [MN prs=H x60 same]
+
+#6 slot 8468 | Genesis 19:2 | HLK[ qal perf p2plm
+  BHSA הְלַכְתֶּ֣ם (key הְלַכְתֶּם; H:LAK:T.E74M) in atom וַהְלַכְתֶּ֣ם | prev וְהִשְׁכַּמְתֶּ֖ם | next לְדַרְכְּכֶ֑ם | trailer ' ' | accents accent munah
+  MAM  הֲלַכְתֶּ֣ם (key הֲלַכְתֶּם) in atom וַהֲלַכְתֶּ֣ם
+  diff: letter 1 (he): BHSA [sheva], MAM [hataf patah]
+  sp verb | gloss walk | voc_lex הלך
+  morphemes: pfm  | vbs  | lex הְלַךְ | vbe תֶּם | nme  | uvf  | prs 
+  atom slots: וַ W; הְלַכְתֶּ֣ם HLK[
+  MAM's key in BHSA: HLK[ qal perf p2plm x14 (Leviticus 26:23)
+  neighbour same: hataf patah for sheva on letter 1 (he) | הֲלַכְתֶּם | HLK[ qal perf p2plm x14 (Leviticus 26:23) = MAM's key
+  same full analysis elsewhere: הֲלַכְתֶּם x14 (Leviticus 26:23)
+  same letters: הֲלַכְתֶּם x14 [HLK[ qal perf p2plm x14 same]
+
+#7 slot 10497 | Genesis 22:12 | M>WMH/ sgf st=a
+  BHSA מְא֑וּמָּה (key מְאוּמָּה; M:>92W.M.@H) in atom מְא֑וּמָּה | prev לֹ֖ו | next כִּ֣י | trailer ' ' | accents accent etnahta
+  MAM  מְא֑וּמָה (key מְאוּמָה) in atom מְא֑וּמָה
+  diff: letter 4 (mem): BHSA [qamats, dagesh/mappiq], MAM [qamats]
+  sp subs | gloss something | voc_lex מְאוּמָה
+  morphemes: pfm  | vbs  | lex מְאוּםּ | vbe  | nme ָ֜ה | uvf  | prs 
+  MAM's key in BHSA: M>WMH/ sgf st=a x31 (Genesis 30:31)
+  neighbour same: remove the dagesh or mappiq on letter 4 (mem) | מְאוּמָה | M>WMH/ sgf st=a x31 (Genesis 30:31) = MAM's key
+  same full analysis elsewhere: מְאוּמָה x31 (Genesis 30:31)
+  same letters: מְאוּמָה x31 [M>WMH/ sgf st=a x31 same]
+
+#8 slot 13000 | Genesis 26:1 | >BJMLK/ sgm st=a
+  BHSA אֲבִימֶּ֥לֶךְ (key אֲבִימֶּלֶךְ; >:ABIJM.E71LEK:) in atom אֲבִימֶּ֥לֶךְ | prev אֶל־ | next מֶֽלֶךְ־ | trailer ' ' | accents accent merkha
+  MAM  אֲבִימֶ֥לֶךְ (key אֲבִימֶלֶךְ) in atom אֲבִימֶ֥לֶךְ
+  diff: letter 4 (mem): BHSA [segol, dagesh/mappiq], MAM [segol]
+  sp nmpr | gloss Abimelech | voc_lex אֲבִימֶלֶךְ
+  morphemes: pfm  | vbs  | lex אֲבִימֶּלֶךְ | vbe  | nme ֜ | uvf  | prs 
+  MAM's key in BHSA: >BJMLK/ sgm st=a x66 (Genesis 20:2)
+  neighbour same: remove the dagesh or mappiq on letter 4 (mem) | אֲבִימֶלֶךְ | >BJMLK/ sgm st=a x66 (Genesis 20:2) = MAM's key
+  same full analysis elsewhere: אֲבִימֶלֶךְ x66 (Genesis 20:2)
+  same letters: אֲבִימֶלֶךְ x66 [>BJMLK/ sgm st=a x66 same]
+
+#9 slot 14770 | Genesis 28:14 | BRK[ nif perf p3pl
+  BHSA נִבְרֲכ֥וּ (key נִבְרֲכוּ; NIB:R:AK71W.) in atom וְנִבְרֲכ֥וּ | prev וָנֶ֑גְבָּה | next בְךָ֛ | trailer ' ' | accents accent merkha
+  MAM  נִבְרְכ֥וּ (key נִבְרְכוּ) in atom וְנִבְרְכ֥וּ
+  diff: letter 3 (resh): BHSA [hataf patah], MAM [sheva]
+  sp verb | gloss bless | voc_lex ברך
+  morphemes: pfm  | vbs נִ | lex בְרֲך | vbe וּ | nme  | uvf  | prs 
+  atom slots: וְ W; נִבְרֲכ֥וּ BRK[
+  MAM's key in BHSA: BRK[ nif perf p3pl x2 (Genesis 12:3)
+  neighbour same: sheva for hataf patah on letter 3 (resh) | נִבְרְכוּ | BRK[ nif perf p3pl x2 (Genesis 12:3) = MAM's key
+  same full analysis elsewhere: נִבְרְכוּ x2 (Genesis 12:3)
+  same letters: נִבְרְכוּ x2 [BRK[ nif perf p3pl x2 same]
+
+#10 slot 18631 | Genesis 34:11 | >B/ sgm st=a prs=H
+  BHSA אָבִ֣יה (key אָבִיה; >@BI74JH) in atom אָבִ֣יה | prev אֶל־ | next וְאֶל־ | trailer ' ' | accents accent munah
+  MAM  אָבִ֣יהָ (key אָבִיהָ) in atom אָבִ֣יהָ
+  diff: letter 4 (he): BHSA [], MAM [qamats]
+  sp subs | gloss father | voc_lex אָב
+  morphemes: pfm  | vbs  | lex אָב | vbe  | nme ֜ | uvf ִי | prs ה
+  MAM's key in BHSA: >B/ sgm st=a prs=H x34 (Genesis 19:33)
+  neighbour same: add a qamats on letter 4 (he) | אָבִיהָ | >B/ sgm st=a prs=H x34 (Genesis 19:33) = MAM's key
+  same full analysis elsewhere: אָבִיהָ x34 (Genesis 19:33)
+  same letters: אָבִיהָ x34 [>B/ sgm st=a prs=H x34 same]; אֲבִיָּה x23 [>BJH/ sgm st=a x23 other lexeme]
+
+#11 slot 18966 | Genesis 34:28 | XMWR/ plm st=a prs=HM
+  BHSA חֲמֹרֵיהֶּ֑ם (key חֲמֹרֵיהֶּם; X:AMOR;JH.E92M) in atom חֲמֹרֵיהֶּ֑ם | prev וְאֶת־ | next וְאֵ֧ת | trailer ' ' | accents accent etnahta
+  MAM  חֲמֹרֵיהֶ֑ם (key חֲמֹרֵיהֶם) in atom חֲמֹרֵיהֶ֑ם
+  diff: letter 5 (he): BHSA [segol, dagesh/mappiq], MAM [segol]
+  sp subs | gloss he-ass | voc_lex חֲמֹור
+  morphemes: pfm  | vbs  | lex חֲמֹר | vbe  | nme ֵ֜י | uvf  | prs הֶּם
+  MAM's key in BHSA: XMWR/ plm st=a prs=HM x4 (Genesis 42:26)
+  neighbour same: remove the dagesh or mappiq on letter 5 (he) | חֲמֹרֵיהֶם | XMWR/ plm st=a prs=HM x4 (Genesis 42:26) = MAM's key
+  same full analysis elsewhere: חֲמֹרֵיהֶם x4 (Genesis 42:26); חֲמֹורֵיהֶם x1 (Joshua 9:4)
+  same letters: חֲמֹרֵיהֶם x4 [XMWR/ plm st=a prs=HM x4 same]
+
+#12 slot 21819 | Genesis 39:19 | <FH[ qal perf p3sgm
+  BHSA עָ֥שָׂהּ (key עָשָׂהּ; <@71F@H.) in atom עָ֥שָׂהּ | prev הָאֵ֔לֶּה | next לִ֖י | trailer ' ' | accents accent merkha
+  MAM  עָ֥שָׂה (key עָשָׂה) in atom עָ֥שָׂה
+  diff: letter 3 (he): BHSA [dagesh/mappiq], MAM []
+  sp verb | gloss make | voc_lex עשׂה
+  morphemes: pfm  | vbs  | lex עָשָׂהּ | vbe  | nme  | uvf  | prs 
+  MAM's key in BHSA: <FH[ qal perf p3sgm x414 (Genesis 1:31)
+  NEIGHBOUR [other stem/tense]: holam for qamats on letter 1 (ayin) | עֹשָׂהּ | <FH[ qal ptca sgm st=a prs=H x2 (Isaiah 45:18)
+  neighbour same: remove the dagesh or mappiq on letter 3 (he) | עָשָׂה | <FH[ qal perf p3sgm x414 (Genesis 1:31) = MAM's key
+  same full analysis elsewhere: עָשָׂה x414 (Genesis 1:31)
+  same letters: עָשָׂה x414 [<FH[ qal perf p3sgm x414 same]; עֹשֶׂה x87 [<FH[ qal ptca sgm st=a x87 other stem/tense]; עֲשֵׂה x61 [<FH[ qal impv p2sgm x61 other stem/tense]; עֹשֵׂה x46 [<FH[ qal ptca sgm st=c x46 other stem/tense]; עָשֹׂה x11 [<FH[ qal infa st=a x11 other stem/tense]; עֹשָׂה x6 [<FH[ qal ptca sgf st=a x6 other stem/tense]; עֲשֹׂה x3 [<FH[ qal infc st=c x2 other stem/tense, <FH[ qal infc st=a x1 other stem/tense]; עֹשָׂהּ x2 [<FH[ qal ptca sgm st=a prs=H x2 other stem/tense]
+
+#13 slot 23210 | Genesis 41:46 | <BR[ qal wayq p3sgm
+  BHSA יַּעְבֹ֖ר (key יַּעְבֹר; J.A<:BO73R) in atom וַֽיַּעְבֹ֖ר | prev פַרְעֹ֔ה | next בְּכָל־ | trailer ' ' | accents accent tipeha
+  MAM  יַּעֲבֹ֖ר (key יַּעֲבֹר) in atom וַֽיַּעֲבֹ֖ר
+  diff: letter 2 (ayin): BHSA [sheva], MAM [hataf patah]
+  sp verb | gloss pass | voc_lex עבר
+  morphemes: pfm יַּ | vbs  | lex עְבֹר | vbe  | nme  | uvf  | prs 
+  atom slots: וַֽ W; יַּעְבֹ֖ר <BR[
+  MAM's key in BHSA: <BR[ qal wayq p3sgm x38 (Genesis 12:6)
+  neighbour same: hataf patah for sheva on letter 2 (ayin) | יַּעֲבֹר | <BR[ qal wayq p3sgm x38 (Genesis 12:6) = MAM's key
+  same full analysis elsewhere: יַּעֲבֹר x38 (Genesis 12:6)
+  same letters: יַּעֲבֹר x38 [<BR[ qal wayq p3sgm x38 same]; יַעֲבֹר x22 [<BR[ qal impf p3sgm x22 other stem/tense]; יַּעֲבֵר x7 [<BR[ hif wayq p3sgm x7 other stem/tense]; יַעֲבָר x4 [<BR[ qal impf p3sgm x4 other stem/tense]; יַּעֲבֶר x2 [<BR[ hif wayq p3sgm x2 other stem/tense]; יְעַבֵּר x1 [<BR[ piel wayq p3sgm x1 other stem/tense]; יֵעָבֵר x1 [<BR[ nif impf p3sgm x1 other stem/tense]
+
+#14 slot 24253 | Genesis 43:7 | NGD[ hif wayq p1pl
+  BHSA נַ֨גֶּד (key נַגֶּד; NA63G.ED) in atom וַנַ֨גֶּד־ | prev אָ֔ח | next לֹ֔ו | trailer '־' | accents accent qadma
+  MAM  נַּ֨גֶּד (key נַּגֶּד) in atom וַנַּ֨גֶּד־
+  diff: letter 1 (nun): BHSA [patah], MAM [patah, dagesh/mappiq]
+  sp verb | gloss report | voc_lex נגד
+  morphemes: pfm נַ | vbs  | lex גֶּד | vbe  | nme  | uvf  | prs 
+  atom slots: וַ W; נַ֨גֶּד NGD[
+  MAM's key in BHSA: NGD[ hif wayq p1pl x1 (Genesis 44:24)
+  neighbour same: add a dagesh or mappiq on letter 1 (nun) | נַּגֶּד | NGD[ hif wayq p1pl x1 (Genesis 44:24) = MAM's key
+  same full analysis elsewhere: נַּגֶּד x1 (Genesis 44:24)
+  same letters: נֶגֶד x73 [NGD/ sgm st=c x73 other lexeme]; נֶּגֶד x24 [NGD/ sgm st=a x13 other lexeme, NGD/ sgm st=c x11 other lexeme]; נַּגֶּד x1 [NGD[ hif wayq p1pl x1 same]; נְגִד x1 [NGJD/ sgm st=c x1 other lexeme]
+
+#15 slot 25572 | Genesis 45:6 | QYJR/ sgm st=a
+  BHSA קָצִּֽיר (key קָצִּיר; Q@Y.I75JR) in atom וְקָצִּֽיר | prev חָרִ֖ישׁ | next  | trailer '׃ ' | accents point meteg
+  MAM  קָצִֽיר׃ (key קָצִיר) in atom וְקָצִֽיר׃
+  diff: letter 2 (tsadi): BHSA [hiriq, dagesh/mappiq], MAM [hiriq]
+  sp subs | gloss harvest | voc_lex קָצִיר
+  morphemes: pfm  | vbs  | lex קָצִּיר | vbe  | nme ֜ | uvf  | prs 
+  atom slots: וְ W; קָצִּֽיר QYJR/
+  MAM's key in BHSA: QYJR/ sgm st=a x15 (Genesis 8:22); [other lexeme] QYJR=/ sgm st=a x1 (Job 14:9)
+  NEIGHBOUR [other lexeme]: remove the dagesh or mappiq on letter 2 (tsadi) | קָצִיר | QYJR=/ sgm st=a x1 (Job 14:9) = MAM's key
+  neighbour same: remove the dagesh or mappiq on letter 2 (tsadi) | קָצִיר | QYJR/ sgm st=a x15 (Genesis 8:22) = MAM's key
+  same full analysis elsewhere: קָצִיר x15 (Genesis 8:22); קָּצִיר x10 (Exodus 23:16)
+  same letters: קָצִיר x16 [QYJR/ sgm st=a x15 same, QYJR=/ sgm st=a x1 other lexeme]; קְצִיר x13 [QYJR/ sgm st=c x13 other state]; קָּצִיר x10 [QYJR/ sgm st=a x10 same]
+
+#16 slot 26204 | Genesis 46:13 | PWH/ sgm st=a
+  BHSA פֻוָּ֖ה (key פֻוָּה; PUW.@73H) in atom וּפֻוָּ֖ה | prev תֹּולָ֥ע | next וְיֹ֥וב | trailer ' ' | accents accent tipeha
+  MAM  פֻוָ֖ה (key פֻוָה) in atom וּפֻוָ֖ה
+  diff: letter 2 (vav): BHSA [qamats, dagesh/mappiq], MAM [qamats]
+  sp nmpr | gloss Puah | voc_lex פֻּוָּה
+  morphemes: pfm  | vbs  | lex פֻוָּה | vbe  | nme ֜ | uvf  | prs 
+  atom slots: וּ W; פֻוָּ֖ה PWH/
+  MAM's key in BHSA: PWH/ sgm st=a x1 (Numbers 26:23)
+  neighbour same: remove the dagesh or mappiq on letter 2 (vav) | פֻוָה | PWH/ sgm st=a x1 (Numbers 26:23) = MAM's key
+  same full analysis elsewhere: פֻוָה x1 (Numbers 26:23)
+  same letters: פֻוָה x1 [PWH/ sgm st=a x1 same]
+
+#17 slot 28112 | Genesis 49:26 | HJH[ qal impf p3plf
+  BHSA תִּֽהְיֶ֨ין֙ (key תִּהְיֶין; T.I45H:JE33JN03) in atom תִּֽהְיֶ֨ין֙ | prev עֹולָ֑ם | next לְרֹ֣אשׁ | trailer ' ' | accents point meteg, accent qadma, accent pashta
+  MAM  תִּֽהְיֶ֙יןָ֙ (key תִּהְיֶיןָ) in atom תִּֽהְיֶ֙יןָ֙
+  diff: letter 5 (final nun): BHSA [], MAM [qamats]
+  sp verb | gloss be | voc_lex היה
+  morphemes: pfm תִּ | vbs  | lex הְיֶי | vbe נ | nme  | uvf  | prs 
+  MAM's key in BHSA: HJH[ qal impf p3plf x9 (Genesis 41:36); [other stem/tense] HJH[ qal wayq p3plf x2 (Genesis 26:35)
+  NEIGHBOUR [other stem/tense]: add a qamats on letter 5 (final nun) | תִּהְיֶיןָ | HJH[ qal wayq p3plf x2 (Genesis 26:35) = MAM's key
+  neighbour same: add a qamats on letter 5 (final nun) | תִּהְיֶיןָ | HJH[ qal impf p3plf x9 (Genesis 41:36) = MAM's key
+  same full analysis elsewhere: תִּהְיֶינָה x16 (Leviticus 23:15); תִּהְיֶיןָ x9 (Genesis 41:36); תִהְיֶינָה x5 (Jeremiah 48:6); תִהְיֶיןָ x2 (Deuteronomy 21:15); תִהְיֶנָה x1 (Jeremiah 18:21)
+  same letters: תִּהְיֶיןָ x11 [HJH[ qal impf p3plf x9 same, HJH[ qal wayq p3plf x2 other stem/tense]; תִהְיֶיןָ x2 [HJH[ qal impf p3plf x2 same]
+
+#18 slot 28787 | Exodus 1:3 | BNJMN/ sg st=a
+  BHSA בְנְיָמִֽן (key בְנְיָמִן; B:N:J@MI75N) in atom וּבְנְיָמִֽן | prev זְבוּלֻ֖ן | next  | trailer '׃ ' | accents point meteg
+  MAM  בִנְיָמִֽן׃ (key בִנְיָמִן) in atom וּבִנְיָמִֽן׃
+  diff: letter 1 (bet): BHSA [sheva], MAM [hiriq]
+  sp nmpr | gloss Benjamin | voc_lex בִּנְיָמִן
+  morphemes: pfm  | vbs  | lex בְנְיָמִן | vbe  | nme ֜ | uvf  | prs 
+  atom slots: וּ W; בְנְיָמִֽן BNJMN/
+  MAM's key in BHSA: BNJMN/ sg st=a x92 (Genesis 35:24)
+  neighbour same: add a dagesh or mappiq on letter 1 (bet) | בְּנְיָמִן | BNJMN/ sg st=a x1 (Ezra 10:32)
+  neighbour same: hiriq for sheva on letter 1 (bet) | בִנְיָמִן | BNJMN/ sg st=a x92 (Genesis 35:24) = MAM's key
+  same full analysis elsewhere: בִנְיָמִן x92 (Genesis 35:24); בִּנְיָמִן x54 (Genesis 42:36); בִּנְיָמִין x8 (Genesis 42:4); בִנְיָמִין x7 (Genesis 35:18); בִניָמִן x1 (Jeremiah 6:1); בְּנְיָמִן x1 (Ezra 10:32)
+  same letters: בִנְיָמִן x92 [BNJMN/ sg st=a x92 same]; בִּנְיָמִן x54 [BNJMN/ sg st=a x54 same]; בִניָמִן x1 [BNJMN/ sg st=a x1 same]; בְּנְיָמִן x1 [BNJMN/ sg st=a x1 same]
+
+#19 slot 31150 | Exodus 5:18 | NTN[ qal impf p2plm
+  BHSA תִּתֵּֽנּוּ (key תִּתֵּנּוּ; T.IT.;75N.W.) in atom תִּתֵּֽנּוּ | prev לְבֵנִ֖ים | next  | trailer '׃ ' | accents point meteg
+  MAM  תִּתֵּֽנוּ׃ (key תִּתֵּנוּ) in atom תִּתֵּֽנוּ׃
+  diff: letter 3 (nun): BHSA [dagesh/mappiq], MAM []
+  sp verb | gloss give | voc_lex נתן
+  morphemes: pfm תִּ | vbs  | lex תֵּןּ | vbe וּ | nme  | uvf  | prs 
+  MAM's key in BHSA: NTN[ qal impf p2plm x2 (Numbers 35:13)
+  neighbour same: remove the dagesh or mappiq on letter 3 (nun) | תִּתֵּנוּ | NTN[ qal impf p2plm x2 (Numbers 35:13) = MAM's key
+  same full analysis elsewhere: תִּתְּנוּ x20 (Genesis 34:9); תִתְּנוּ x5 (Leviticus 19:28); תִּתֵּנוּ x2 (Numbers 35:13)
+  same letters: תִּתְּנוּ x20 [NTN[ qal impf p2plm x20 same]; תִתְּנוּ x5 [NTN[ qal impf p2plm x5 same]; תִּתֵּנוּ x2 [NTN[ qal impf p2plm x2 same]; תִּתְּנֹו x1 [NTN[ qal impf p2sgm prs=W x1 other person/number/gender/suffix]; תִתֵּנוּ x1 [NTN[ qal infc st=a prs=NW x1 other stem/tense]
+
+#20 slot 31949 | Exodus 7:10 | <FH[ qal wayq p3plm
+  BHSA יַּ֣עַשׂוּ (key יַּעַשׂוּ; J.A74<AFW.) in atom וַיַּ֣עַשׂוּ | prev פַּרְעֹ֔ה | next כֵ֔ן | trailer ' ' | accents accent munah
+  MAM  יַּ֣עֲשׂוּ (key יַּעֲשׂוּ) in atom וַיַּ֣עֲשׂוּ
+  diff: letter 2 (ayin): BHSA [patah], MAM [hataf patah]
+  sp verb | gloss make | voc_lex עשׂה
+  morphemes: pfm יַּ | vbs  | lex עַשׂ | vbe וּ | nme  | uvf  | prs 
+  atom slots: וַ W; יַּ֣עַשׂוּ <FH[
+  MAM's key in BHSA: <FH[ qal wayq p3plm x78 (Genesis 3:7)
+  neighbour same: sheva for patah on letter 2 (ayin) | יַּעְשׂוּ | <FH[ qal wayq p3plm x1 (Hosea 13:2)
+  neighbour same: hataf patah for patah on letter 2 (ayin) | יַּעֲשׂוּ | <FH[ qal wayq p3plm x78 (Genesis 3:7) = MAM's key
+  same full analysis elsewhere: יַּעֲשׂוּ x78 (Genesis 3:7); יַּעְשׂוּ x1 (Hosea 13:2)
+  same letters: יַּעֲשׂוּ x78 [<FH[ qal wayq p3plm x78 same]; יַעֲשׂוּ x23 [<FH[ qal impf p3plm x23 other stem/tense]; יֵעָשׂוּ x1 [<FH[ nif impf p3plm x1 other stem/tense]; יַּעְשׂוּ x1 [<FH[ qal wayq p3plm x1 same]
+
+#21 slot 32442 | Exodus 8:3 | XRVM/ plm st=a
+  BHSA חֲרְטֻמִּ֖ים (key חֲרְטֻמִּים; X:AR:VUM.I73JM) in atom הַֽחֲרְטֻמִּ֖ים | prev כֵ֥ן | next בְּלָטֵיהֶ֑ם | trailer ' ' | accents accent tipeha
+  MAM  חַרְטֻמִּ֖ים (key חַרְטֻמִּים) in atom הַֽחַרְטֻמִּ֖ים
+  diff: letter 1 (het): BHSA [hataf patah], MAM [patah]
+  sp subs | gloss magician | voc_lex חַרְטֹם
+  morphemes: pfm  | vbs  | lex חֲרְטֻםּ | vbe  | nme ִ֜ים | uvf  | prs 
+  atom slots: הַֽ H; חֲרְטֻמִּ֖ים XRVM/
+  MAM's key in BHSA: XRVM/ plm st=a x6 (Genesis 41:24)
+  neighbour same: patah for hataf patah on letter 1 (het) | חַרְטֻמִּים | XRVM/ plm st=a x6 (Genesis 41:24) = MAM's key
+  same full analysis elsewhere: חַרְטֻמִּים x6 (Genesis 41:24); חֲרְטֻמִּם x1 (Exodus 9:11)
+  same letters: חַרְטֻמִּים x6 [XRVM/ plm st=a x6 same]
+
+#22 slot 32503 | Exodus 8:5 | YPRD</ plf st=a
+  BHSA צֲפַרְדְּעִ֔ים (key צֲפַרְדְּעִים; Y:APAR:D.:<I80JM) in atom הַֽצֲפַרְדְּעִ֔ים | prev לְהַכְרִית֙ | next מִמְּךָ֖ | trailer ' ' | accents accent zaqef qatan
+  MAM  צְפַרְדְּעִ֔ים (key צְפַרְדְּעִים) in atom הַֽצְפַרְדְּעִ֔ים
+  diff: letter 1 (tsadi): BHSA [hataf patah], MAM [sheva]
+  sp subs | gloss frog | voc_lex צְפַרְדֵּעַ
+  morphemes: pfm  | vbs  | lex צֲפַרְדְּע | vbe  | nme ִ֜ים | uvf  | prs 
+  atom slots: הַֽ H; צֲפַרְדְּעִ֔ים YPRD</
+  MAM's key in BHSA: YPRD</ plf st=a x10 (Exodus 7:27)
+  neighbour same: sheva for hataf patah on letter 1 (tsadi) | צְפַרְדְּעִים | YPRD</ plf st=a x10 (Exodus 7:27) = MAM's key
+  same full analysis elsewhere: צְפַרְדְּעִים x10 (Exodus 7:27)
+  same letters: צְפַרְדְּעִים x10 [YPRD</ plf st=a x10 same]
+
+#23 slot 36323 | Exodus 14:5 | >MR[ qal wayq p3plm
+  BHSA יֹּֽאמרוּ֙ (key יֹּאמרוּ; J.O45>MRW.03) in atom וַיֹּֽאמרוּ֙ | prev הָעָ֔ם | next מַה־ | trailer ' ' | accents point meteg, accent pashta
+  MAM  יֹּֽאמְרוּ֙ (key יֹּאמְרוּ) in atom וַיֹּֽאמְרוּ֙
+  diff: letter 3 (mem): BHSA [], MAM [sheva]
+  sp verb | gloss say | voc_lex אמר
+  morphemes: pfm יֹּ | vbs  | lex אמר | vbe וּ | nme  | uvf  | prs 
+  atom slots: וַ W; יֹּֽאמרוּ֙ >MR[
+  MAM's key in BHSA: >MR[ qal wayq p3plm x297 (Genesis 11:3); [other stem/tense] >MR[ qal impf p3plm x1 (Lamentations 2:15)
+  NEIGHBOUR [other stem/tense]: add a sheva on letter 3 (mem) | יֹּאמְרוּ | >MR[ qal impf p3plm x1 (Lamentations 2:15) = MAM's key
+  neighbour same: add a sheva on letter 3 (mem) | יֹּאמְרוּ | >MR[ qal wayq p3plm x297 (Genesis 11:3) = MAM's key
+  same full analysis elsewhere: יֹּאמְרוּ x297 (Genesis 11:3)
+  same letters: יֹּאמְרוּ x298 [>MR[ qal wayq p3plm x297 same, >MR[ qal impf p3plm x1 other stem/tense]; יֹאמְרוּ x59 [>MR[ qal impf p3plm x59 other stem/tense]; יֹאמֵרוּ x3 [>MR[ qal impf p3plm x3 other stem/tense]
+
+#24 slot 36485 | Exodus 14:13 | JYB[ hit impv p2plm
+  BHSA הִֽתְיַצְב֗וּ (key הִתְיַצְבוּ; HI45T:JAY:B81W.) in atom הִֽתְיַצְב֗וּ | prev תִּירָאוּ֒ | next וּרְאוּ֙ | trailer ' ' | accents point meteg, accent revia
+  MAM  הִֽתְיַצְּב֗וּ (key הִתְיַצְּבוּ) in atom הִֽתְיַצְּב֗וּ
+  diff: letter 4 (tsadi): BHSA [sheva], MAM [sheva, dagesh/mappiq]
+  sp verb | gloss stand | voc_lex יצב
+  morphemes: pfm  | vbs הִתְ | lex יַצְב | vbe וּ | nme  | uvf  | prs 
+  MAM's key in BHSA: JYB[ hit impv p2plm x6 (Deuteronomy 31:14); [other stem/tense] JYB[ hit perf p3pl x2 (Numbers 11:16)
+  NEIGHBOUR [other stem/tense]: add a dagesh or mappiq on letter 4 (tsadi) | הִתְיַצְּבוּ | JYB[ hit perf p3pl x2 (Numbers 11:16) = MAM's key
+  neighbour same: add a dagesh or mappiq on letter 4 (tsadi) | הִתְיַצְּבוּ | JYB[ hit impv p2plm x6 (Deuteronomy 31:14) = MAM's key
+  same full analysis elsewhere: הִתְיַצְּבוּ x6 (Deuteronomy 31:14)
+  same letters: הִתְיַצְּבוּ x8 [JYB[ hit impv p2plm x6 same, JYB[ hit perf p3pl x2 other stem/tense]
+
+#25 slot 39656 | Exodus 20:5 | XWH[ hsht impf p2sgm
+  BHSA תִשְׁתַּחְוֶ֥֣ה (key תִשְׁתַּחְוֶה; TIC:T.AX:WE7174H) in atom תִשְׁתַּחְוֶ֥֣ה | prev לֹֽא־ | next לָהֶ֖ם֮ | trailer ' ' | accents accent merkha, accent munah
+  MAM  תִשְׁתַּחֲוֶ֥֣ה (key תִשְׁתַּחֲוֶה) in atom תִשְׁתַּחֲוֶ֥֣ה
+  diff: letter 4 (het): BHSA [sheva], MAM [hataf patah]
+  sp verb | gloss bow down | voc_lex חוה
+  morphemes: pfm תִ | vbs שְׁתַּ | lex חְוֶה | vbe  | nme  | uvf  | prs 
+  MAM's key in BHSA: XWH[ hsht impf p2sgm x5 (Exodus 23:24)
+  neighbour same: hataf patah for sheva on letter 4 (het) | תִשְׁתַּחֲוֶה | XWH[ hsht impf p2sgm x5 (Exodus 23:24) = MAM's key
+  same full analysis elsewhere: תִשְׁתַּחֲוֶה x5 (Exodus 23:24)
+  same letters: תִשְׁתַּחֲוֶה x5 [XWH[ hsht impf p2sgm x5 same]
+
+#26 slot 43587 | Exodus 27:15 | XMC/ sg st=c
+  BHSA חְמֵ֥שׁ (key חְמֵשׁ; X:M;71C) in atom חְמֵ֥שׁ | prev הַשֵּׁנִ֔ית | next עֶשְׂרֵ֖ה | trailer ' ' | accents accent merkha
+  MAM  חֲמֵ֥שׁ (key חֲמֵשׁ) in atom חֲמֵ֥שׁ
+  diff: letter 1 (het): BHSA [sheva], MAM [hataf patah]
+  sp subs | gloss five | voc_lex חָמֵשׁ
+  morphemes: pfm  | vbs  | lex חְמֵשׁ | vbe  | nme ֜ | uvf  | prs 
+  MAM's key in BHSA: XMC/ sg st=c x66 (Genesis 5:10)
+  NEIGHBOUR [other state]: qamats for sheva on letter 1 (het) | חָמֵשׁ | XMC/ sg st=a x96 (Genesis 5:6)
+  neighbour same: hataf patah for sheva on letter 1 (het) | חֲמֵשׁ | XMC/ sg st=c x66 (Genesis 5:10) = MAM's key
+  same full analysis elsewhere: חֲמֵשׁ x66 (Genesis 5:10)
+  same letters: חָמֵשׁ x96 [XMC/ sg st=a x96 other state]; חֲמֵשׁ x66 [XMC/ sg st=c x66 same]; חֹמֶשׁ x5 [XMC=/ sgm st=a x4 other lexeme, XMC==/ sgm st=a x1 other lexeme]; חִמֵּשׁ x1 [XMC[ piel perf p3sgm x1 other lexeme]
+
+#27 slot 48611 | Exodus 35:7 | CVH/ plf st=a
+  BHSA שִׂטִּֽים (key שִׂטִּים; FIV.I75JM) in atom שִׂטִּֽים | prev וַעֲצֵ֥י | next  | trailer '׃ ' | accents point meteg
+  MAM  שִׁטִּֽים׃ (key שִׁטִּים) in atom שִׁטִּֽים׃
+  diff: letter 1 (shin): BHSA [hiriq, sin dot], MAM [hiriq, shin dot]
+  sp subs | gloss acacia | voc_lex שִׁטָּה
+  morphemes: pfm  | vbs  | lex שִׂטּ | vbe  | nme ִ֜ים | uvf  | prs 
+  MAM's key in BHSA: CVH/ plf st=a x26 (Exodus 25:5)
+  neighbour same: shin dot for sin dot on letter 1 (shin) | שִׁטִּים | CVH/ plf st=a x26 (Exodus 25:5) = MAM's key
+  same full analysis elsewhere: שִׁטִּים x26 (Exodus 25:5)
+  same letters: שִׁטִּים x26 [CVH/ plf st=a x26 same]; שִּׁטִּים x5 [CVJM/ sg st=a x5 other lexeme]; שָׁטִים x1 [CWV[ qal ptca plm st=a x1 other lexeme]; שָּׁטִים x1 [CWV[ qal ptca plm st=a x1 other lexeme]; שֵׂטִים x1 [FV/ plm st=a x1 other lexeme]
+
+#28 slot 49082 | Exodus 35:32 | MXCBH/ plf st=a
+  BHSA מַֽחַשָׁבֹ֑ת (key מַחַשָׁבֹת; MA45XAC@BO92T) in atom מַֽחַשָׁבֹ֑ת | prev וְלַחְשֹׁ֖ב | next לַעֲשֹׂ֛ת | trailer ' ' | accents point meteg, accent etnahta
+  MAM  מַֽחֲשָׁבֹ֑ת (key מַחֲשָׁבֹת) in atom מַֽחֲשָׁבֹ֑ת
+  diff: letter 2 (het): BHSA [patah], MAM [hataf patah]
+  sp subs | gloss thought | voc_lex מַחֲשָׁבָה
+  morphemes: pfm  | vbs  | lex מַחַשָׁב | vbe  | nme ֹ֜ת | uvf  | prs 
+  MAM's key in BHSA: MXCBH/ plf st=a x2 (Exodus 31:4)
+  neighbour same: hataf patah for patah on letter 2 (het) | מַחֲשָׁבֹת | MXCBH/ plf st=a x2 (Exodus 31:4) = MAM's key
+  same full analysis elsewhere: מַחֲשָׁבֹות x8 (2 Samuel 14:14); מַחֲשָׁבֹת x2 (Exodus 31:4); מַּחֲשָׁבֹת x1 (Jeremiah 29:11)
+  same letters: מַחֲשֶׁבֶת x3 [MXCBT/ sgf st=c x2 other lexeme, MXCBT/ sgf st=a x1 other lexeme]; מַחֲשָׁבֹת x2 [MXCBH/ plf st=a x2 same]; מַחֲשָׁבֶת x2 [MXCBT/ sgf st=a x2 other lexeme]; מַחְשְׁבֹת x1 [MXCBH/ plf st=c x1 other state]; מַּחֲשָׁבֹת x1 [MXCBH/ plf st=a x1 same]
+
+#29 slot 54583 | Leviticus 5:12 | >ZKRH/ sgf st=a
+  BHSA אַזְכָּרָתָה֙ (key אַזְכָּרָתָה; >AZ:K.@R@T@H03) in atom אַזְכָּרָתָה֙ | prev אֶת־ | next וְהִקְטִ֣יר | trailer ' ' | accents accent pashta
+  MAM  אַזְכָּרָתָהּ֙ (key אַזְכָּרָתָהּ) in atom אַזְכָּרָתָהּ֙
+  diff: letter 6 (he): BHSA [], MAM [dagesh/mappiq]
+  sp subs | gloss memorial offering | voc_lex אַזְכָּרָה
+  morphemes: pfm  | vbs  | lex אַזְכָּרָת | vbe  | nme ָ֜ה | uvf  | prs 
+  MAM's key in BHSA: [other person/number/gender/suffix] >ZKRH/ sgf st=a prs=H x5 (Leviticus 2:2)
+  NEIGHBOUR [other person/number/gender/suffix]: add a dagesh or mappiq on letter 6 (he) | אַזְכָּרָתָהּ | >ZKRH/ sgf st=a prs=H x5 (Leviticus 2:2) = MAM's key
+  same full analysis elsewhere: אַזְכָּרָה x1 (Leviticus 24:7)
+  same letters: אַזְכָּרָתָהּ x5 [>ZKRH/ sgf st=a prs=H x5 other person/number/gender/suffix]
+
+#30 slot 55029 | Leviticus 6:6 | KBH[ qal impf p3sgf
+  BHSA תִכְבֶֽה (key תִכְבֶה; TIK:BE75H) in atom תִכְבֶֽה | prev לֹ֥א | next  | trailer '׃ ס ' | accents point meteg
+  MAM  תִכְבֶּֽה׃ (key תִכְבֶּה) in atom תִכְבֶּֽה׃
+  diff: letter 3 (bet): BHSA [segol], MAM [segol, dagesh/mappiq]
+  sp verb | gloss go out | voc_lex כבה
+  morphemes: pfm תִ | vbs  | lex כְבֶה | vbe  | nme  | uvf  | prs 
+  MAM's key in BHSA: KBH[ qal impf p3sgf x8 (Leviticus 6:5)
+  neighbour same: add a dagesh or mappiq on letter 3 (bet) | תִכְבֶּה | KBH[ qal impf p3sgf x8 (Leviticus 6:5) = MAM's key
+  same full analysis elsewhere: תִכְבֶּה x8 (Leviticus 6:5); תִּכְבֶּה x2 (Ezekiel 21:4)
+  same letters: תִכְבֶּה x8 [KBH[ qal impf p3sgf x8 same]; תִּכְבֶּה x2 [KBH[ qal impf p3sgf x2 same]; תְכַבֶּה x1 [KBH[ piel impf p2sgm x1 other stem/tense]
+
+#31 slot 59416 | Leviticus 13:26 | BHRT/ sgf st=a
+  BHSA בֶּהֶ֨רֶת֙ (key בֶּהֶרֶת; B.EHE33RET03) in atom בַּבֶּהֶ֨רֶת֙ | prev אֵֽין־ | next שֵׂעָ֣ר | trailer ' ' | accents accent qadma, accent pashta
+  MAM  בַּהֶ֙רֶת֙ (key בַּהֶרֶת) in atom בַּבַּהֶ֙רֶת֙
+  diff: letter 1 (bet): BHSA [segol, dagesh/mappiq], MAM [patah, dagesh/mappiq]
+  sp subs | gloss <spot on skin> | voc_lex בַּהֶרֶת
+  morphemes: pfm  | vbs  | lex בֶּהֶר | vbe  | nme ֶ֜ת | uvf  | prs 
+  atom slots: בַּ B;  H; בֶּהֶ֨רֶת֙ BHRT/
+  MAM's key in BHSA: BHRT/ sgf st=a x5 (Leviticus 13:4)
+  neighbour same: patah for segol on letter 1 (bet) | בַּהֶרֶת | BHRT/ sgf st=a x5 (Leviticus 13:4) = MAM's key
+  neighbour same: qamats for segol on letter 2 (he) | בֶּהָרֶת | BHRT/ sgf st=a x1 (Leviticus 14:56)
+  same full analysis elsewhere: בַּהֶרֶת x5 (Leviticus 13:4); בַהֶרֶת x2 (Leviticus 13:2); בֶּהָרֶת x1 (Leviticus 14:56)
+  same letters: בַּהֶרֶת x5 [BHRT/ sgf st=a x5 same]; בֶּהָרֹת x3 [BHRT/ plf st=a x3 other person/number/gender/suffix]; בַהֶרֶת x2 [BHRT/ sgf st=a x2 same]; בֶּהָרֶת x1 [BHRT/ sgf st=a x1 same]
+
+#32 slot 67971 | Leviticus 25:46 | NXL[ hit perf p2plm
+  BHSA הִתְנַחֲלְתֶּ֨ם (key הִתְנַחֲלְתֶּם; HIT:NAX:AL:T.E63M) in atom וְהִתְנַחֲלְתֶּ֨ם | prev  | next אֹתָ֜ם | trailer ' ' | accents accent qadma
+  MAM  הִתְנַחַלְתֶּ֨ם (key הִתְנַחַלְתֶּם) in atom וְהִתְנַחַלְתֶּ֨ם
+  diff: letter 4 (het): BHSA [hataf patah], MAM [patah]
+  sp verb | gloss take possession | voc_lex נחל
+  morphemes: pfm  | vbs הִתְ | lex נַחֲלְ | vbe תֶּם | nme  | uvf  | prs 
+  atom slots: וְ W; הִתְנַחֲלְתֶּ֨ם NXL[
+  MAM's key in BHSA: NXL[ hit perf p2plm x1 (Numbers 33:54)
+  neighbour same: patah for hataf patah on letter 4 (het) | הִתְנַחַלְתֶּם | NXL[ hit perf p2plm x1 (Numbers 33:54) = MAM's key
+  same full analysis elsewhere: הִתְנַחַלְתֶּם x1 (Numbers 33:54)
+  same letters: הִתְנַחַלְתֶּם x1 [NXL[ hit perf p2plm x1 same]
+
+#33 slot 68705 | Leviticus 26:34 | CMM[ hof infc st=a
+  BHSA הֳשַּׁמָּ֔ה (key הֳשַּׁמָּה; H:@C.AM.@80H) in atom הֳשַּׁמָּ֔ה | prev יְמֵ֣י | next וְאַתֶּ֖ם | trailer ' ' | accents accent zaqef qatan
+  MAM  הׇשַּׁמָּ֔הֿ (key הָשַּׁמָּה) in atom הׇשַּׁמָּ֔הֿ
+  diff: letter 1 (he): BHSA [hataf qamats], MAM [qamats]
+  sp verb | gloss be desolate | voc_lex שׁמם
+  morphemes: pfm  | vbs הֳ | lex שַּׁםּ | vbe  | nme ָ֜ה | uvf  | prs 
+  MAM's key in BHSA: CMM[ hof infc st=a x1 (Leviticus 26:35)
+  neighbour same: qamats for hataf qamats on letter 1 (he) | הָשַּׁמָּה | CMM[ hof infc st=a x1 (Leviticus 26:35) = MAM's key
+  same full analysis elsewhere: הָשַּׁמָּה x1 (Leviticus 26:35); הְשַׁמָּה x1 (Leviticus 26:43)
+  same letters: הָשַּׁמָּה x1 [CMM[ hof infc st=a x1 same]; הְשַׁמָּה x1 [CMM[ hof infc st=a x1 same]
+
+#34 slot 70591 | Numbers 2:12 | YWRJCDJ/ sgm st=a
+  BHSA צוּרִֽי־שַׁדָּֽי (key צוּרִי־שַׁדָּי; YW.RI45J&CAD.@75J) in atom צוּרִֽי־שַׁדָּֽי | prev בֶּן־ | next  | trailer '׃ ' | accents point meteg, point meteg
+  MAM  צוּרִֽישַׁדָּֽי׃ (key צוּרִישַׁדָּי) in atom צוּרִֽישַׁדָּֽי׃
+  diff: separators: BHSA ['maqaf'], MAM []
+  sp nmpr | gloss Zurishaddai | voc_lex צוּרִישַׁדַּי
+  morphemes: pfm  | vbs  | lex צוּרִי שַׁדָּי | vbe  | nme ֜ | uvf  | prs 
+  MAM's key in BHSA: YWRJCDJ/ sgm st=a x3 (Numbers 1:6)
+  neighbour same: remove the maqaf inside the word | צוּרִישַׁדָּי | YWRJCDJ/ sgm st=a x3 (Numbers 1:6) = MAM's key
+  same full analysis elsewhere: צוּרִישַׁדָּי x3 (Numbers 1:6); צוּרִי שַׁדָּי x1 (Numbers 10:19)
+  same letters: צוּרִישַׁדָּי x3 [YWRJCDJ/ sgm st=a x3 same]; צוּרִי שַׁדָּי x1 [YWRJCDJ/ sgm st=a x1 same]
+
+#35 slot 71373 | Numbers 3:30 | >LJYPN/ sgm st=a
+  BHSA אֶלִיצָפָ֖ן (key אֶלִיצָפָן; >ELIJY@P@73N) in atom אֶלִיצָפָ֖ן | prev הַקְּהָתִ֑י | next בֶּן־ | trailer ' ' | accents accent tipeha
+  MAM  אֱלִיצָפָ֖ן (key אֱלִיצָפָן) in atom אֱלִיצָפָ֖ן
+  diff: letter 1 (alef): BHSA [segol], MAM [hataf segol]
+  sp nmpr | gloss Elizaphan | voc_lex אֱלִיצָפָן
+  morphemes: pfm  | vbs  | lex אֶלִיצָפָן | vbe  | nme ֜ | uvf  | prs 
+  MAM's key in BHSA: >LJYPN/ sgm st=a x3 (Numbers 34:25)
+  neighbour same: hataf segol for segol on letter 1 (alef) | אֱלִיצָפָן | >LJYPN/ sgm st=a x3 (Numbers 34:25) = MAM's key
+  same full analysis elsewhere: אֱלִיצָפָן x3 (Numbers 34:25)
+  same letters: אֱלִיצָפָן x3 [>LJYPN/ sgm st=a x3 same]
+
+#36 slot 76388 | Numbers 10:9 | W
+  BHSA וֲ (key וֲ; W:A-) in atom וֲנִזְכַּרְתֶּ֗ם | prev בַּחֲצֹצְרֹ֑ות | next לִפְנֵי֙ | trailer '' | accents -
+  MAM  וְ (key וְ) in atom וְנִזְכַּרְתֶּ֗ם
+  diff: letter 1 (vav): BHSA [hataf patah], MAM [sheva]
+  sp conj | gloss and | voc_lex וְ
+  morphemes: pfm  | vbs  | lex וֲ | vbe  | nme  | uvf  | prs 
+  atom slots: וֲ W; נִזְכַּרְתֶּ֗ם ZKR[
+  MAM's key in BHSA: W x23914 (Genesis 1:1)
+  neighbour same: remove the hataf patah on letter 1 (vav) | ו | W x1 (Proverbs 15:3)
+  neighbour same: sheva for hataf patah on letter 1 (vav) | וְ | W x23914 (Genesis 1:1) = MAM's key
+  neighbour same: hiriq for hataf patah on letter 1 (vav) | וִ | W x454 (Genesis 1:6)
+  neighbour same: tsere for hataf patah on letter 1 (vav) | וֵ | W x31 (Genesis 24:3)
+  neighbour same: segol for hataf patah on letter 1 (vav) | וֶ | W x119 (Genesis 12:2)
+  neighbour same: patah for hataf patah on letter 1 (vav) | וַ | W x15987 (Genesis 1:3)
+  neighbour same: qamats for hataf patah on letter 1 (vav) | וָ | W x1304 (Genesis 1:2)
+  same full analysis elsewhere: וְ x23914 (Genesis 1:1); וַ x15987 (Genesis 1:3); וּ x8195 (Genesis 1:4); וָ x1304 (Genesis 1:2); וִ x454 (Genesis 1:6); וֶ x119 (Genesis 12:2)
+  same letters: וְ x23914 [W x23914 same]; וַ x15987 [W x15987 same]; וּ x8195 [W x8195 same]; וָ x1304 [W x1304 same]; וִ x454 [W x454 same]; וֶ x119 [W x119 same]; וֵ x31 [W x31 same]; וִּ x2 [W x2 same]; ו x1 [W x1 same]
+
+#37 slot 76552 | Numbers 10:19 | YWRJCDJ/ sgm st=a
+  BHSA צוּרִֽי שַׁדָּֽי (key צוּרִי שַׁדָּי; YW.RI45J_CAD.@75J) in atom צוּרִֽי שַׁדָּֽי | prev בֶּן־ | next  | trailer '׃ ' | accents point meteg, point meteg
+  MAM  צוּרִֽישַׁדָּֽי׃ (key צוּרִישַׁדָּי) in atom צוּרִֽישַׁדָּֽי׃
+  diff: separators: BHSA ['space'], MAM []
+  sp nmpr | gloss Zurishaddai | voc_lex צוּרִישַׁדַּי
+  morphemes: pfm  | vbs  | lex צוּרִי שַׁדָּי | vbe  | nme ֜ | uvf  | prs 
+  MAM's key in BHSA: YWRJCDJ/ sgm st=a x3 (Numbers 1:6)
+  neighbour same: remove the space inside the word | צוּרִישַׁדָּי | YWRJCDJ/ sgm st=a x3 (Numbers 1:6) = MAM's key
+  same full analysis elsewhere: צוּרִישַׁדָּי x3 (Numbers 1:6); צוּרִי־שַׁדָּי x1 (Numbers 2:12)
+  same letters: צוּרִישַׁדָּי x3 [YWRJCDJ/ sgm st=a x3 same]; צוּרִי־שַׁדָּי x1 [YWRJCDJ/ sgm st=a x1 same]
+
+#38 slot 76626 | Numbers 10:25 | <MJCDJ/ sgm st=a
+  BHSA עַמִּי שַׁדָּֽי (key עַמִּי שַׁדָּי; <AM.IJ_CAD.@75J) in atom עַמִּי שַׁדָּֽי | prev בֶּן־ | next  | trailer '׃ ' | accents point meteg
+  MAM  עַמִּישַׁדָּֽי׃ (key עַמִּישַׁדָּי) in atom עַמִּישַׁדָּֽי׃
+  diff: separators: BHSA ['space'], MAM []
+  sp nmpr | gloss Ammishaddai | voc_lex עַמִּישַׁדָּי
+  morphemes: pfm  | vbs  | lex עַמִּי שַׁדָּי | vbe  | nme ֜ | uvf  | prs 
+  MAM's key in BHSA: <MJCDJ/ sgm st=a x4 (Numbers 1:12)
+  neighbour same: remove the space inside the word | עַמִּישַׁדָּי | <MJCDJ/ sgm st=a x4 (Numbers 1:12) = MAM's key
+  same full analysis elsewhere: עַמִּישַׁדָּי x4 (Numbers 1:12)
+  same letters: עַמִּישַׁדָּי x4 [<MJCDJ/ sgm st=a x4 same]
+
+#39 slot 80461 | Numbers 16:21 | KLH[ piel impf p1sg
+  BHSA אַכַלֶּ֥ה (key אַכַלֶּה; >AKAL.E71H) in atom וַאַכַלֶּ֥ה | prev הַזֹּ֑את | next אֹתָ֖ם | trailer ' ' | accents accent merkha
+  MAM  אֲכַלֶּ֥ה (key אֲכַלֶּה) in atom וַאֲכַלֶּ֥ה
+  diff: letter 1 (alef): BHSA [patah], MAM [hataf patah]
+  sp verb | gloss be complete | voc_lex כלה
+  morphemes: pfm אַ | vbs  | lex כַלֶּה | vbe  | nme  | uvf  | prs 
+  atom slots: וַ W; אַכַלֶּ֥ה KLH[
+  MAM's key in BHSA: KLH[ piel impf p1sg x4 (Genesis 24:45)
+  neighbour same: hataf patah for patah on letter 1 (alef) | אֲכַלֶּה | KLH[ piel impf p1sg x4 (Genesis 24:45) = MAM's key
+  same full analysis elsewhere: אֲכַלֶּה x4 (Genesis 24:45)
+  same letters: אָכְלָה x54 [>KL[ qal perf p3sgf x34 other lexeme, >KLH/ sgf st=a x18 other lexeme, >KL[ qal impv p2sgm x1 other lexeme]; אֹכְלָה x7 [>KL[ qal ptca sgf st=a x4 other lexeme, >KL[ qal impf p1sg x2 other lexeme, >KL[ qal wayq p1sg x1 other lexeme]; אֲכַלֶּה x4 [KLH[ piel impf p1sg x4 same]; אֹכֵלָה x2 [>KL[ qal impf p1sg x2 other lexeme]; אָכָלָה x2 [>KL[ qal perf p3sgf x2 other lexeme]; אֲכָלָהּ x1 [>KL[ qal perf p3sgm prs=H x1 other lexeme]
+
+#40 slot 80559 | Numbers 16:27 | QRX==/ sgm st=a
+  BHSA קֹ֛רֶח (key קֹרֶח; QO91REX) in atom קֹ֛רֶח | prev מִשְׁכַּן־ | next דָּתָ֥ן | trailer ' ' | accents accent tevir
+  MAM  קֹ֛רַח (key קֹרַח) in atom קֹ֛רַח
+  diff: letter 2 (resh): BHSA [segol], MAM [patah]
+  sp nmpr | gloss Korah | voc_lex קֹרַח
+  morphemes: pfm  | vbs  | lex קֹרֶח | vbe  | nme ֜ | uvf  | prs 
+  MAM's key in BHSA: QRX==/ sgm st=a x36 (Genesis 36:5)
+  neighbour same: patah for segol on letter 2 (resh) | קֹרַח | QRX==/ sgm st=a x36 (Genesis 36:5) = MAM's key
+  same full analysis elsewhere: קֹרַח x36 (Genesis 36:5)
+  same letters: קֹרַח x36 [QRX==/ sgm st=a x36 same]; קָרֵחַ x14 [QRX===/ sgm st=a x14 other lexeme]; קֵרֵחַ x3 [QRX=/ sgm st=a x3 other lexeme]; קֶּרַח x2 [QRX/ sgm st=a x2 other lexeme]; קָרַח x2 [QRX/ sgm st=a x2 other lexeme]; קֶרַח x1 [QRX/ sgm st=a x1 other lexeme]; קָּרַח x1 [QRX/ sgm st=a x1 other lexeme]
+
+#41 slot 80693 | Numbers 16:32 | RKWC/ sgm st=a
+  BHSA רֲכֽוּשׁ (key רֲכוּשׁ; R:AK75W.C) in atom הָרֲכֽוּשׁ | prev כָּל־ | next  | trailer '׃ ' | accents point meteg
+  MAM  רְכֽוּשׁ׃ (key רְכוּשׁ) in atom הָרְכֽוּשׁ׃
+  diff: letter 1 (resh): BHSA [hataf patah], MAM [sheva]
+  sp subs | gloss property | voc_lex רְכוּשׁ
+  morphemes: pfm  | vbs  | lex רֲכוּשׁ | vbe  | nme ֜ | uvf  | prs 
+  atom slots: הָ H; רֲכֽוּשׁ RKWC/
+  MAM's key in BHSA: RKWC/ sgm st=a x10 (Daniel 11:13); [other state] RKWC/ sgm st=c x1 (2 Chronicles 35:7)
+  NEIGHBOUR [other state]: sheva for hataf patah on letter 1 (resh) | רְכוּשׁ | RKWC/ sgm st=c x1 (2 Chronicles 35:7) = MAM's key
+  neighbour same: sheva for hataf patah on letter 1 (resh) | רְכוּשׁ | RKWC/ sgm st=a x10 (Daniel 11:13) = MAM's key
+  same full analysis elsewhere: רְכוּשׁ x10 (Daniel 11:13); רְכֻשׁ x3 (Genesis 14:16)
+  same letters: רְכוּשׁ x11 [RKWC/ sgm st=a x10 same, RKWC/ sgm st=c x1 other state]
+
+#42 slot 82499 | Numbers 19:21 | L prs=HM
+  BHSA לָּהֶ֖ם (key לָּהֶם; L.@HE73M) in atom לָּהֶ֖ם | prev וְהָיְתָ֥ה | next לְחֻקַּ֣ת | trailer ' ' | accents accent tipeha
+  MAM  לָהֶ֖ם (key לָהֶם) in atom לָהֶ֖ם
+  diff: letter 1 (lamed): BHSA [qamats, dagesh/mappiq], MAM [qamats]
+  sp prep | gloss to | voc_lex לְ
+  morphemes: pfm  | vbs  | lex לּ | vbe  | nme  | uvf  | prs ָהֶם
+  MAM's key in BHSA: L prs=HM x646 (Genesis 1:28)
+  neighbour same: remove the dagesh or mappiq on letter 1 (lamed) | לָהֶם | L prs=HM x646 (Genesis 1:28) = MAM's key
+  same full analysis elsewhere: לָהֶם x646 (Genesis 1:28)
+  same letters: לָהֶם x646 [L prs=HM x646 same]
+
+#43 slot 85117 | Numbers 23:25 | BRK[ piel impf p2sgm prs=HW
+  BHSA תְבָרֲכֶֽנּוּ (key תְבָרֲכֶנּוּ; T:B@R:AKE75N.W.) in atom תְבָרֲכֶֽנּוּ | prev לֹ֥א | next  | trailer '׃ ' | accents point meteg
+  MAM  תְבָרְכֶֽנּוּ׃ (key תְבָרְכֶנּוּ) in atom תְבָרְכֶֽנּוּ׃
+  diff: letter 3 (resh): BHSA [hataf patah], MAM [sheva]
+  sp verb | gloss bless | voc_lex ברך
+  morphemes: pfm תְ | vbs  | lex בָרֲך | vbe  | nme  | uvf ֶנּ | prs וּ
+  MAM's key in BHSA: BRK[ piel impf p2sgm prs=HW x1 (2 Kings 4:29)
+  neighbour same: sheva for hataf patah on letter 3 (resh) | תְבָרְכֶנּוּ | BRK[ piel impf p2sgm prs=HW x1 (2 Kings 4:29) = MAM's key
+  same full analysis elsewhere: תְבָרְכֶנּוּ x1 (2 Kings 4:29)
+  same letters: תְבָרְכֶנּוּ x1 [BRK[ piel impf p2sgm prs=HW x1 same]
+
+#44 slot 95637 | Deuteronomy 4:21 | >NP[ hit perf p3sgm
+  BHSA הִתְאַנֶּף (key הִתְאַנֶּף; HIT:>AN.EP) in atom הִתְאַנֶּף־ | prev וַֽיהוָ֥ה | next בִּ֖י | trailer '־' | accents -
+  MAM  הִתְאַנַּף (key הִתְאַנַּף) in atom הִתְאַנַּף־
+  diff: letter 4 (nun): BHSA [segol, dagesh/mappiq], MAM [patah, dagesh/mappiq]
+  sp verb | gloss be angry | voc_lex אנף
+  morphemes: pfm  | vbs הִתְ | lex אַנֶּף | vbe  | nme  | uvf  | prs 
+  MAM's key in BHSA: >NP[ hit perf p3sgm x2 (Deuteronomy 1:37)
+  neighbour same: patah for segol on letter 4 (nun) | הִתְאַנַּף | >NP[ hit perf p3sgm x2 (Deuteronomy 1:37) = MAM's key
+  same full analysis elsewhere: הִתְאַנַּף x2 (Deuteronomy 1:37)
+  same letters: הִתְאַנַּף x2 [>NP[ hit perf p3sgm x2 same]
+
+#45 slot 98390 | Deuteronomy 8:20 | >BD[ qal impf p2plm
+  BHSA תֹאבֵד֑וּן (key תֹאבֵדוּן; TO>B;D92W.N) in atom תֹאבֵד֑וּן | prev כֵּ֖ן | next עֵ֚קֶב | trailer ' ' | accents accent etnahta
+  MAM  תֹּאבֵד֑וּן (key תֹּאבֵדוּן) in atom תֹּאבֵד֑וּן
+  diff: letter 1 (tav): BHSA [holam], MAM [holam, dagesh/mappiq]
+  sp verb | gloss perish | voc_lex אבד
+  morphemes: pfm תֹ | vbs  | lex אבֵד | vbe וּן | nme  | uvf  | prs 
+  MAM's key in BHSA: >BD[ qal impf p2plm x3 (Deuteronomy 4:26)
+  neighbour same: add a dagesh or mappiq on letter 1 (tav) | תֹּאבֵדוּן | >BD[ qal impf p2plm x3 (Deuteronomy 4:26) = MAM's key
+  same full analysis elsewhere: תֹּאבֵדוּן x3 (Deuteronomy 4:26); תֹאבְדוּ x1 (Psalms 2:12); תֹּאבֵדוּ x1 (Esther 4:14)
+  same letters: תֹּאבֵדוּן x3 [>BD[ qal impf p2plm x3 same]; תְּאַבְּדוּן x1 [>BD[ piel impf p2plm x1 other stem/tense]
+
+#46 slot 100368 | Deuteronomy 12:3 | MZBX/ plm st=a prs=M
+  BHSA מִזְבּחֹתָ֗ם (key מִזְבּחֹתָם; MIZ:B.XOT@81M) in atom מִזְבּחֹתָ֗ם | prev אֶת־ | next וְשִׁבַּרְתֶּם֙ | trailer ' ' | accents accent revia
+  MAM  מִזְבְּחֹתָ֗ם (key מִזְבְּחֹתָם) in atom מִזְבְּחֹתָ֗ם
+  diff: letter 3 (bet): BHSA [dagesh/mappiq], MAM [sheva, dagesh/mappiq]
+  sp subs | gloss altar | voc_lex מִזְבֵּחַ
+  morphemes: pfm  | vbs  | lex מִזְבּח | vbe  | nme ֹ֜ת | uvf  | prs ָמ
+  MAM's key in BHSA: MZBX/ plm st=a prs=M x1 (Exodus 34:13)
+  neighbour same: add a sheva on letter 3 (bet) | מִזְבְּחֹתָם | MZBX/ plm st=a prs=M x1 (Exodus 34:13) = MAM's key
+  same full analysis elsewhere: מִזְבְּחֹותָם x4 (Jeremiah 17:2); מִזְבְּחֹתָם x1 (Exodus 34:13)
+  same letters: מִזְבְּחֹתָם x1 [MZBX/ plm st=a prs=M x1 same]
+
+#47 slot 102410 | Deuteronomy 15:20 | >KL[ qal impf p2sgm prs=HW
+  BHSA תֹאכֲלֶ֨נּוּ֙ (key תֹאכֲלֶנּוּ; TO>K:ALE33N.W.03) in atom תֹאכֲלֶ֨נּוּ֙ | prev אֱלֹהֶ֤יךָ | next שָׁנָ֣ה | trailer ' ' | accents accent qadma, accent pashta
+  MAM  תֹאכְלֶ֙נּוּ֙ (key תֹאכְלֶנּוּ) in atom תֹאכְלֶ֙נּוּ֙
+  diff: letter 3 (kaf): BHSA [hataf patah], MAM [sheva]
+  sp verb | gloss eat | voc_lex אכל
+  morphemes: pfm תֹ | vbs  | lex אכֲל | vbe  | nme  | uvf ֶנּ | prs וּ
+  MAM's key in BHSA: [other person/number/gender/suffix] >KL[ qal impf p3sgf prs=HW x1 (Deuteronomy 28:39)
+  NEIGHBOUR [other person/number/gender/suffix]: add a dagesh or mappiq on letter 1 (tav) | תֹּאכֲלֶנּוּ | >KL[ qal impf p3sgf prs=HW x1 (Isaiah 31:8)
+  NEIGHBOUR [other person/number/gender/suffix]: sheva for hataf patah on letter 3 (kaf) | תֹאכְלֶנּוּ | >KL[ qal impf p3sgf prs=HW x1 (Deuteronomy 28:39) = MAM's key
+  neighbour same: add a dagesh or mappiq on letter 1 (tav) | תֹּאכֲלֶנּוּ | >KL[ qal impf p2sgm prs=HW x5 (Numbers 18:10)
+  same full analysis elsewhere: תֹּאכֲלֶנּוּ x5 (Numbers 18:10); תֹּאכְלֶנּוּ x4 (Deuteronomy 12:18)
+  same letters: תֹּאכֲלֶנּוּ x6 [>KL[ qal impf p2sgm prs=HW x5 same, >KL[ qal impf p3sgf prs=HW x1 other person/number/gender/suffix]; תֹּאכְלֶנּוּ x4 [>KL[ qal impf p2sgm prs=HW x4 same]; תֹאכְלֵנוּ x1 [>KL[ qal impf p3sgf prs=NW x1 other person/number/gender/suffix]; תֹאכְלֶנּוּ x1 [>KL[ qal impf p3sgf prs=HW x1 other person/number/gender/suffix]
+
+#48 slot 107020 | Deuteronomy 25:11 | >JC/ sgm st=a prs=H
+  BHSA אִישָּׁ֖הּ (key אִישָּׁהּ; >IJC.@73H.) in atom אִישָּׁ֖הּ | prev אֶת־ | next מִיַּ֣ד | trailer ' ' | accents accent tipeha
+  MAM  אִישָׁ֖הּ (key אִישָׁהּ) in atom אִישָׁ֖הּ
+  diff: letter 3 (shin): BHSA [qamats, dagesh/mappiq, shin dot], MAM [qamats, shin dot]
+  sp subs | gloss man | voc_lex אִישׁ
+  morphemes: pfm  | vbs  | lex אִישּׁ | vbe  | nme ֜ | uvf  | prs ָהּ
+  MAM's key in BHSA: >JC/ sgm st=a prs=H x37 (Genesis 3:6)
+  neighbour same: remove the dagesh or mappiq on letter 3 (shin) | אִישָׁהּ | >JC/ sgm st=a prs=H x37 (Genesis 3:6) = MAM's key
+  same full analysis elsewhere: אִישָׁהּ x37 (Genesis 3:6)
+  same letters: אִישָׁהּ x37 [>JC/ sgm st=a prs=H x37 same]
+
+#49 slot 107117 | Deuteronomy 25:18 | >XR/ plm st=a prs=K
+  BHSA אַֽחַרֶ֔יךָ (key אַחַרֶיךָ; >A45XARE80JK@) in atom אַֽחַרֶ֔יךָ | prev הַנֶּחֱשָׁלִ֣ים | next וְאַתָּ֖ה | trailer ' ' | accents point meteg, accent zaqef qatan
+  MAM  אַֽחֲרֶ֔יךָ (key אַחֲרֶיךָ) in atom אַֽחֲרֶ֔יךָ
+  diff: letter 2 (het): BHSA [patah], MAM [hataf patah]
+  sp subs | gloss after | voc_lex אַחַר
+  morphemes: pfm  | vbs  | lex אַחַר | vbe  | nme ֶ֜י | uvf  | prs כָ
+  MAM's key in BHSA: >XR/ plm st=a prs=K x33 (Genesis 17:7)
+  neighbour same: hataf patah for patah on letter 2 (het) | אַחֲרֶיךָ | >XR/ plm st=a prs=K x33 (Genesis 17:7) = MAM's key
+  same full analysis elsewhere: אַחֲרֶיךָ x33 (Genesis 17:7)
+  same letters: אַחֲרֶיךָ x33 [>XR/ plm st=a prs=K x33 same]; אַחֲרַיִךְ x4 [>XR/ plm st=a prs=K= x4 other person/number/gender/suffix]; אַחֲרָיִךְ x1 [>XR/ plm st=a prs=K= x1 other person/number/gender/suffix]
+
+#50 slot 108281 | Deuteronomy 28:11 | BHMH/ sgf st=a prs=K
+  BHSA בְהַמְתְּךָ֖ (key בְהַמְתְּךָ; B:HAM:T.:K@73) in atom בְהַמְתְּךָ֖ | prev וּבִפְרִ֥י | next וּבִפְרִ֣י | trailer ' ' | accents accent tipeha
+  MAM  בְהֶמְתְּךָ֖ (key בְהֶמְתְּךָ) in atom בְהֶמְתְּךָ֖
+  diff: letter 2 (he): BHSA [patah], MAM [segol]
+  sp subs | gloss cattle | voc_lex בְּהֵמָה
+  morphemes: pfm  | vbs  | lex בְהַםְ | vbe  | nme ֜תּ | uvf  | prs ְכָ
+  MAM's key in BHSA: BHMH/ sgf st=a prs=K x3 (Leviticus 25:7)
+  neighbour same: segol for patah on letter 2 (he) | בְהֶמְתְּךָ | BHMH/ sgf st=a prs=K x3 (Leviticus 25:7) = MAM's key
+  same full analysis elsewhere: בְהֶמְתֶּךָ x4 (Exodus 20:10); בְהֶמְתְּךָ x3 (Leviticus 25:7); בְּהֶמְתְּךָ x1 (Leviticus 19:19); בְּהֶמְתֶּךָ x1 (Deuteronomy 5:14)
+  same letters: בְהֶמְתֶּךָ x4 [BHMH/ sgf st=a prs=K x4 same]; בְהֶמְתְּךָ x3 [BHMH/ sgf st=a prs=K x3 same]; בְּהֶמְתְּךָ x1 [BHMH/ sgf st=a prs=K x1 same]; בְּהֶמְתֶּךָ x1 [BHMH/ sgf st=a prs=K x1 same]
+
+#51 slot 111242 | Deuteronomy 31:21 | CB<[ nif perf p1sg
+  BHSA נִשְׁבָּֽעְתִּי (key נִשְׁבָּעְתִּי; NIC:B.@75<:T.IJ) in atom נִשְׁבָּֽעְתִּי | prev אֲשֶׁ֥ר | next  | trailer '׃ ' | accents point meteg
+  MAM  נִשְׁבַּֽעְתִּי׃ (key נִשְׁבַּעְתִּי) in atom נִשְׁבַּֽעְתִּי׃
+  diff: letter 3 (bet): BHSA [qamats, dagesh/mappiq], MAM [patah, dagesh/mappiq]
+  sp verb | gloss swear | voc_lex שׁבע
+  morphemes: pfm  | vbs נִ | lex שְׁבָּעְ | vbe תִּי | nme  | uvf  | prs 
+  MAM's key in BHSA: CB<[ nif perf p1sg x26 (Genesis 22:16)
+  neighbour same: patah for qamats on letter 3 (bet) | נִשְׁבַּעְתִּי | CB<[ nif perf p1sg x26 (Genesis 22:16) = MAM's key
+  same full analysis elsewhere: נִשְׁבַּעְתִּי x26 (Genesis 22:16)
+  same letters: נִשְׁבַּעְתִּי x26 [CB<[ nif perf p1sg x26 same]
+
+#52 slot 111670 | Deuteronomy 32:17 | >LWH/ sgm st=a
+  BHSA אֱלֹ֔הַ (key אֱלֹהַ; >:ELO80HA) in atom אֱלֹ֔הַ | prev לֹ֣א | next אֱלֹהִ֖ים | trailer ' ' | accents accent zaqef qatan
+  MAM  אֱלֹ֔הַּ (key אֱלֹהַּ) in atom אֱלֹ֔הַּ
+  diff: letter 3 (he): BHSA [patah], MAM [patah, dagesh/mappiq]
+  sp subs | gloss god | voc_lex אֱלֹוהַּ
+  morphemes: pfm  | vbs  | lex אֱלֹהַ | vbe  | nme ֜ | uvf  | prs 
+  MAM's key in BHSA: [other state] >LWH/ sgm st=c x1 (Daniel 11:38)
+  NEIGHBOUR [other state]: add a dagesh or mappiq on letter 3 (he) | אֱלֹהַּ | >LWH/ sgm st=c x1 (Daniel 11:38) = MAM's key
+  same full analysis elsewhere: אֱלֹוהַּ x41 (Isaiah 44:8); אֱלֹוהַ x10 (Deuteronomy 32:15)
+  same letters: אֵלֶּה x744 [>LH pl x744 other lexeme]; אֵלָה x29 [>LH/ sgf st=a x16 other lexeme, >LH===/ sgm st=a x13 other lexeme]; אָלָה x27 [>LH=/ sgf st=a x27 other lexeme]; אַלָּה x1 [>LH==/ sgf st=a x1 other lexeme]; אָלֹה x1 [>LH[ qal infa st=a x1 other lexeme]; אֵלֶה x1 [>LH pl x1 other lexeme]; אֱלֹהַּ x1 [>LWH/ sgm st=c x1 other state]
+
+#53 slot 112791 | Deuteronomy 34:6 | GJ>/ sg st=a
+  BHSA גַּיְ֙ (key גַּיְ; G.AJ:03) in atom בַגַּיְ֙ | prev אֹתֹ֤ו | next בְּאֶ֣רֶץ | trailer ' ' | accents accent pashta
+  MAM  גַּי֙ (key גַּי) in atom בַגַּי֙
+  diff: letter 2 (yod): BHSA [sheva], MAM []
+  sp subs | gloss valley | voc_lex גַּיְא
+  morphemes: pfm  | vbs  | lex גַּיְ | vbe  | nme ֜ | uvf  | prs 
+  atom slots: בַ B;  H; גַּיְ֙ GJ>/
+  MAM's key in BHSA: GJ>/ sg st=a x2 (Joshua 8:11)
+  neighbour same: remove the sheva on letter 2 (yod) | גַּי | GJ>/ sg st=a x2 (Joshua 8:11) = MAM's key
+  same full analysis elsewhere: גַּיְא x7 (Numbers 21:20); גָּיְא x2 (Deuteronomy 3:29); גַּי x2 (Joshua 8:11); גַיְא x1 (1 Samuel 17:52); גֶּיא x1 (Isaiah 40:4); גַּיא x1 (Nehemiah 2:13)
+  same letters: גֵּי x8 [GJ>/ sg st=c x8 other state]; גֵי x4 [GJ>/ sg st=c x4 other state]; גַּי x2 [GJ>/ sg st=a x2 same]
+
+#54 slot 119466 | Joshua 11:2 | KNRT/ sg st=a
+  BHSA כִּֽנֲרֹ֖ות (key כִּנֲרֹות; K.I45N:ARO73WT) in atom כִּֽנֲרֹ֖ות | prev נֶ֥גֶב | next וּבַשְּׁפֵלָ֑ה | trailer ' ' | accents point meteg, accent tipeha
+  MAM  כִּֽנְרֹ֖ות (key כִּנְרֹות) in atom כִּֽנְר֖וֹת
+  diff: letter 2 (nun): BHSA [hataf patah], MAM [sheva]
+  sp nmpr | gloss Kinnereth | voc_lex כִּנֶּרֶת
+  morphemes: pfm  | vbs  | lex כִּנֲרֹות | vbe  | nme ֜ | uvf  | prs 
+  MAM's key in BHSA: KNRT/ sg st=a x2 (Joshua 12:3)
+  neighbour same: sheva for hataf patah on letter 2 (nun) | כִּנְרֹות | KNRT/ sg st=a x2 (Joshua 12:3) = MAM's key
+  same full analysis elsewhere: כִּנֶּרֶת x3 (Numbers 34:11); כִּנְרֹות x2 (Joshua 12:3); כִנָּרֶת x1 (Joshua 19:35)
+  same letters: כִנֹּרֹות x15 [KNWR/ plm st=a x15 other lexeme]; כִּנְרֹות x2 [KNRT/ sg st=a x2 same]
+
+#55 slot 120337 | Joshua 12:22 | JQN<M/ sg st=a
+  BHSA יָקְנֳעָ֥ם (key יָקְנֳעָם; J@Q:N:@<@71M) in atom יָקְנֳעָ֥ם | prev מֶֽלֶךְ־ | next לַכַּרְמֶ֖ל | trailer ' ' | accents accent merkha
+  MAM  יׇקְנְעָ֥ם (key יָקְנְעָם) in atom יׇקְנְעָ֥ם
+  diff: letter 3 (nun): BHSA [hataf qamats], MAM [sheva]
+  sp nmpr | gloss Jokneam | voc_lex יָקְנְעָם
+  morphemes: pfm  | vbs  | lex יָקְנֳעָם | vbe  | nme ֜ | uvf  | prs 
+  MAM's key in BHSA: JQN<M/ sg st=a x2 (Joshua 19:11)
+  neighbour same: sheva for hataf qamats on letter 3 (nun) | יָקְנְעָם | JQN<M/ sg st=a x2 (Joshua 19:11) = MAM's key
+  same full analysis elsewhere: יָקְנְעָם x2 (Joshua 19:11)
+  same letters: יָקְנְעָם x2 [JQN<M/ sg st=a x2 same]
+
+#56 slot 121460 | Joshua 15:4 | TWY>WT/ plf st=c
+  BHSA תֹצְאֹ֥ות (key תֹצְאֹות; TOY:>O71WT) in atom תֹצְאֹ֥ות | prev והיה | next הַגְּב֖וּל | trailer ' ' | accents accent merkha
+  MAM  תֹּצְאֹ֥ות (key תֹּצְאֹות) in atom תֹּצְא֥וֹת
+  diff: letter 1 (tav): BHSA [holam], MAM [holam, dagesh/mappiq]
+  sp subs | gloss outlets | voc_lex תֹּוצָאֹות
+  morphemes: pfm  | vbs  | lex תֹצְא | vbe  | nme ֹ֜ות | uvf  | prs 
+  MAM's key in BHSA: TWY>WT/ plf st=c x2 (Joshua 15:11)
+  neighbour same: add a dagesh or mappiq on letter 1 (tav) | תֹּצְאֹות | TWY>WT/ plf st=c x2 (Joshua 15:11) = MAM's key
+  same full analysis elsewhere: תֹּוצְאֹת x2 (Numbers 34:8); תֹּצְאֹות x2 (Joshua 15:11); תֹּוצְאֹות x1 (Proverbs 4:23)
+  same letters: תֹּצְאֹות x2 [TWY>WT/ plf st=c x2 same]
+
+#57 slot 126636 | Joshua 24:1 | >SP[ qal wayq p3sgm
+  BHSA יֶּאֶסֹ֧ף (key יֶּאֶסֹף; J.E>ESO94P) in atom וַיֶּאֶסֹ֧ף | prev  | next יְהֹושֻׁ֛עַ | trailer ' ' | accents accent darga
+  MAM  יֶּאֱסֹ֧ף (key יֶּאֱסֹף) in atom וַיֶּאֱסֹ֧ף
+  diff: letter 2 (alef): BHSA [segol], MAM [hataf segol]
+  sp verb | gloss gather | voc_lex אסף
+  morphemes: pfm יֶּ | vbs  | lex אֶסֹף | vbe  | nme  | uvf  | prs 
+  atom slots: וַ W; יֶּאֶסֹ֧ף >SP[
+  MAM's key in BHSA: >SP[ qal wayq p3sgm x19 (Genesis 29:22)
+  neighbour same: hataf segol for segol on letter 2 (alef) | יֶּאֱסֹף | >SP[ qal wayq p3sgm x19 (Genesis 29:22) = MAM's key
+  same full analysis elsewhere: יֶּאֱסֹף x19 (Genesis 29:22); יֹּסֶף x1 (2 Samuel 6:1)
+  same letters: יֶּאֱסֹף x19 [>SP[ qal wayq p3sgm x19 same]; יֵאָסֵף x9 [>SP[ nif impf p3sgm x9 other stem/tense]; יֵּאָסֶף x5 [>SP[ nif wayq p3sgm x5 other stem/tense]; יֶאֱסֹף x3 [>SP[ qal impf p3sgm x3 other stem/tense]; יֵּאָסֵף x2 [>SP[ nif wayq p3sgm x2 other stem/tense]; יֹּאסֶף x1 [JSP[ hif wayq p3sgm x1 other lexeme]
+
+#58 slot 129203 | Judges 3:23 | <LJH/ sgf st=a
+  BHSA עַלִיָּ֛ה (key עַלִיָּה; <ALIJ.@91H) in atom הָעַלִיָּ֛ה | prev דַּלְתֹ֧ות | next בַּעֲדֹ֖ו | trailer ' ' | accents accent tevir
+  MAM  עֲלִיָּ֛ה (key עֲלִיָּה) in atom הָעֲלִיָּ֛ה
+  diff: letter 1 (ayin): BHSA [patah], MAM [hataf patah]
+  sp subs | gloss upper room | voc_lex עֲלִיָּה
+  morphemes: pfm  | vbs  | lex עַלִיּ | vbe  | nme ָ֜ה | uvf  | prs 
+  atom slots: הָ H; עַלִיָּ֛ה <LJH/
+  MAM's key in BHSA: <LJH/ sgf st=a x5 (Judges 3:24)
+  neighbour same: hataf patah for patah on letter 1 (ayin) | עֲלִיָּה | <LJH/ sgf st=a x5 (Judges 3:24) = MAM's key
+  same full analysis elsewhere: עֲלִיָּה x5 (Judges 3:24)
+  same letters: עָלֶיהָ x182 [<L prs=H x182 other lexeme]; עֲלִיָּה x5 [<LJH/ sgf st=a x5 same]; עֳלֶיהָ x1 [<L prs=H x1 other lexeme]
+
+#59 slot 134096 | Judges 9:57 | QLLH/ sgf st=c
+  BHSA קִֽלֲלַ֖ת (key קִלֲלַת; QI45L:ALA73T) in atom קִֽלֲלַ֖ת | prev אֲלֵיהֶ֔ם | next יֹותָ֥ם | trailer ' ' | accents point meteg, accent tipeha
+  MAM  קִֽלְלַ֖ת (key קִלְלַת) in atom קִֽלְלַ֖ת
+  diff: letter 2 (lamed): BHSA [hataf patah], MAM [sheva]
+  sp subs | gloss curse | voc_lex קְלָלָה
+  morphemes: pfm  | vbs  | lex קִלֲל | vbe  | nme ַ֜ת | uvf  | prs 
+  MAM's key in BHSA: QLLH/ sgf st=c x2 (Deuteronomy 21:23)
+  neighbour same: sheva for hataf patah on letter 2 (lamed) | קִלְלַת | QLLH/ sgf st=c x2 (Deuteronomy 21:23) = MAM's key
+  same full analysis elsewhere: קִלְלַת x2 (Deuteronomy 21:23)
+  same letters: קִלְלַת x2 [QLLH/ sgf st=c x2 same]; קִלַּלְתָּ x1 [QLL[ piel perf p2sgm x1 other lexeme]
+
+#60 slot 142834 | 1 Samuel 2:35 | HLK[ hit perf p3sgm
+  BHSA התְהַלֵּ֥ךְ (key התְהַלֵּךְ; HT:HAL.;71K:) in atom וְהתְהַלֵּ֥ךְ | prev נֶאֱמָ֔ן | next לִפְנֵֽי־ | trailer ' ' | accents accent merkha
+  MAM  הִתְהַלֵּ֥ךְ (key הִתְהַלֵּךְ) in atom וְהִתְהַלֵּ֥ךְ
+  diff: letter 1 (he): BHSA [], MAM [hiriq]
+  sp verb | gloss walk | voc_lex הלך
+  morphemes: pfm  | vbs התְ | lex הַלֵּךְ | vbe  | nme  | uvf  | prs 
+  atom slots: וְ W; התְהַלֵּ֥ךְ HLK[
+  MAM's key in BHSA: [other stem/tense] HLK[ hit infc st=a x4 (Zechariah 1:10); [other stem/tense] HLK[ hit impv p2sgm x2 (Genesis 13:17); HLK[ hit perf p3sgm x1 (Exodus 21:19)
+  NEIGHBOUR [other stem/tense]: add a hiriq on letter 1 (he) | הִתְהַלֵּךְ | HLK[ hit infc st=a x4 (Zechariah 1:10) = MAM's key
+  NEIGHBOUR [other stem/tense]: add a hiriq on letter 1 (he) | הִתְהַלֵּךְ | HLK[ hit impv p2sgm x2 (Genesis 13:17) = MAM's key
+  neighbour same: add a hiriq on letter 1 (he) | הִתְהַלֵּךְ | HLK[ hit perf p3sgm x1 (Exodus 21:19) = MAM's key
+  same full analysis elsewhere: הִתְהַלֶּךְ x2 (Genesis 6:9); הִתְהַלֵּךְ x1 (Exodus 21:19)
+  same letters: הִתְהַלֵּךְ x7 [HLK[ hit infc st=a x4 other stem/tense, HLK[ hit impv p2sgm x2 other stem/tense, HLK[ hit perf p3sgm x1 same]; הִתְהַלֶּךְ x2 [HLK[ hit perf p3sgm x2 same]; הִתְהַלֵּך x1 [HLK[ hit infc st=a x1 other stem/tense]
+
+#61 slot 143798 | 1 Samuel 4:21 | >JKBWD/ sgm st=a
+  BHSA אִֽי־כָבֹוד֙ (key אִי־כָבֹוד; >I45J&K@BOWD03) in atom אִֽי־כָבֹוד֙ | prev לַנַּ֗עַר | next לֵאמֹ֔ר | trailer ' ' | accents point meteg, accent pashta
+  MAM  אִֽיכָבֹוד֙ (key אִיכָבֹוד) in atom אִֽיכָבוֹד֙
+  diff: separators: BHSA ['maqaf'], MAM []
+  sp nmpr | gloss Ichabod | voc_lex אִיכָבֹוד
+  morphemes: pfm  | vbs  | lex אִי כָבֹוד | vbe  | nme ֜ | uvf  | prs 
+  MAM's key in BHSA: >JKBWD/ sgm st=a x1 (1 Samuel 14:3)
+  neighbour same: remove the maqaf inside the word | אִיכָבֹוד | >JKBWD/ sgm st=a x1 (1 Samuel 14:3) = MAM's key
+  same full analysis elsewhere: אִיכָבֹוד x1 (1 Samuel 14:3)
+  same letters: אִיכָבֹוד x1 [>JKBWD/ sgm st=a x1 same]
+
+#62 slot 158444 | 1 Samuel 27:10 | JRXM>LJ/ sgm st=a
+  BHSA יַּרְחְמְאֵלִ֔י (key יַּרְחְמְאֵלִי; J.AR:X:M:>;LI80J) in atom הַיַּרְחְמְאֵלִ֔י | prev נֶ֣גֶב | next וְאֶל־ | trailer ' ' | accents accent zaqef qatan
+  MAM  יְּרַחְמְאֵלִ֔י (key יְּרַחְמְאֵלִי) in atom הַיְּרַחְמְאֵלִ֔י
+  diff: letter 1 (yod): BHSA [patah, dagesh/mappiq], MAM [sheva, dagesh/mappiq] | letter 2 (resh): BHSA [sheva], MAM [patah]
+  sp adjv | gloss Jerahmeelite | voc_lex יְרַחְמְאֵלִי
+  morphemes: pfm  | vbs  | lex יַּרְחְמְאֵלִי | vbe  | nme ֜ | uvf  | prs 
+  atom slots: הַ H; יַּרְחְמְאֵלִ֔י JRXM>LJ/
+  MAM's key in BHSA: JRXM>LJ/ sgm st=a x1 (1 Samuel 30:29)
+  same full analysis elsewhere: יְּרַחְמְאֵלִי x1 (1 Samuel 30:29)
+  same letters: יְּרַחְמְאֵלִי x1 [JRXM>LJ/ sgm st=a x1 same]
+
+#63 slot 162152 | 2 Samuel 3:21 | CLX[ piel wayq p3sgm
+  BHSA יְּשַׁלַּ֥ח (key יְּשַׁלַּח; J.:CAL.A71X) in atom וַיְּשַׁלַּ֥ח | prev נַפְשֶׁ֑ךָ | next דָּוִ֛ד | trailer ' ' | accents accent merkha
+  MAM  יְשַׁלַּ֥ח (key יְשַׁלַּח) in atom וַיְשַׁלַּ֥ח
+  diff: letter 1 (yod): BHSA [sheva, dagesh/mappiq], MAM [sheva]
+  sp verb | gloss send | voc_lex שׁלח
+  morphemes: pfm יְּ | vbs  | lex שַׁלַּח | vbe  | nme  | uvf  | prs 
+  atom slots: וַ W; יְּשַׁלַּ֥ח CLX[
+  MAM's key in BHSA: CLX[ piel wayq p3sgm x21 (Genesis 8:7); [other stem/tense] CLX[ piel impf p3sgm x12 (Exodus 3:20)
+  NEIGHBOUR [other stem/tense]: remove the dagesh or mappiq on letter 1 (yod) | יְשַׁלַּח | CLX[ piel impf p3sgm x12 (Exodus 3:20) = MAM's key
+  neighbour same: remove the dagesh or mappiq on letter 1 (yod) | יְשַׁלַּח | CLX[ piel wayq p3sgm x21 (Genesis 8:7) = MAM's key
+  same full analysis elsewhere: יְשַׁלַּח x21 (Genesis 8:7)
+  same letters: יִּשְׁלַח x190 [CLX[ qal wayq p3sgm x190 other stem/tense]; יְשַׁלַּח x33 [CLX[ piel wayq p3sgm x21 same, CLX[ piel impf p3sgm x12 other stem/tense]; יִשְׁלַח x15 [CLX[ qal impf p3sgm x15 other stem/tense]; יְשַׁלֵּחַ x2 [CLX[ piel impf p3sgm x2 other stem/tense]; ישַׁלַּח x1 [CLX[ piel impf p3sgm x1 other stem/tense]; יְשֻׁלַּח x1 [CLX[ pual impf p3sgm x1 other stem/tense]
+
+#64 slot 162638 | 2 Samuel 4:2 | B>RTJ/ sgm st=a
+  BHSA בְּאֶֽרֹתִ֖י (key בְּאֶרֹתִי; B.:>E45ROTI73J) in atom הַבְּאֶֽרֹתִ֖י | prev רִמֹּ֥ון | next מִבְּנֵ֣י | trailer ' ' | accents point meteg, accent tipeha
+  MAM  בְּאֵרֹתִ֖י (key בְּאֵרֹתִי) in atom הַבְּאֵרֹתִ֖י
+  diff: letter 2 (alef): BHSA [segol], MAM [tsere]
+  sp adjv | gloss Beerothite | voc_lex בְּאֵרֹתִי
+  morphemes: pfm  | vbs  | lex בְּאֶרֹתִי | vbe  | nme ֜ | uvf  | prs 
+  atom slots: הַ H; בְּאֶֽרֹתִ֖י B>RTJ/
+  MAM's key in BHSA: B>RTJ/ sgm st=a x3 (2 Samuel 4:5)
+  neighbour same: tsere for segol on letter 2 (alef) | בְּאֵרֹתִי | B>RTJ/ sgm st=a x3 (2 Samuel 4:5) = MAM's key
+  same full analysis elsewhere: בְּאֵרֹתִי x3 (2 Samuel 4:5); בֵּרֹתִי x1 (1 Chronicles 11:39)
+  same letters: בְּאֵרֹתִי x3 [B>RTJ/ sgm st=a x3 same]
+
+#65 slot 165526 | 2 Samuel 10:11 | XZQ[ qal impf p3plm
+  BHSA יֶחֱזְק֣וּ (key יֶחֱזְקוּ; JEX:EZ:Q74W.) in atom יֶחֱזְק֣וּ | prev עַמֹּון֙ | next מִמְּךָ֔ | trailer ' ' | accents accent munah
+  MAM  יֶחֶזְק֣וּ (key יֶחֶזְקוּ) in atom יֶחֶזְק֣וּ
+  diff: letter 2 (het): BHSA [hataf segol], MAM [segol]
+  sp verb | gloss be strong | voc_lex חזק
+  morphemes: pfm יֶ | vbs  | lex חֱזְק | vbe וּ | nme  | uvf  | prs 
+  MAM's key in BHSA: XZQ[ qal impf p3plm x2 (1 Chronicles 19:12)
+  neighbour same: sheva for hataf segol on letter 2 (het) | יֶחְזְקוּ | XZQ[ qal impf p3plm x1 (Isaiah 28:22)
+  neighbour same: segol for hataf segol on letter 2 (het) | יֶחֶזְקוּ | XZQ[ qal impf p3plm x2 (1 Chronicles 19:12) = MAM's key
+  same full analysis elsewhere: יֶחֶזְקוּ x2 (1 Chronicles 19:12); יֶחְזְקוּ x1 (Isaiah 28:22)
+  same letters: יְחַזְּקוּ x5 [XZQ[ piel impf p3plm x3 other stem/tense, XZQ[ piel wayq p3plm x2 other stem/tense]; יַּחֲזִקוּ x3 [XZQ[ hif wayq p3plm x3 other stem/tense]; יֶחֶזְקוּ x2 [XZQ[ qal impf p3plm x2 same]; יֶחְזְקוּ x1 [XZQ[ qal impf p3plm x1 same]; יַחֲזִקוּ x1 [XZQ[ hif impf p3plm x1 other stem/tense]
+
+#66 slot 172739 | 2 Samuel 19:31 | MLK/ sgm st=a
+  BHSA מֶּ֛לֶך (key מֶּלֶך; M.E91LEK) in atom הַמֶּ֛לֶך | prev אֲדֹנִ֥י | next בְּשָׁלֹ֖ום | trailer ' ' | accents accent tevir
+  MAM  מֶּ֛לֶךְ (key מֶּלֶךְ) in atom הַמֶּ֛לֶךְ
+  diff: letter 3 (final kaf): BHSA [], MAM [sheva]
+  sp subs | gloss king | voc_lex מֶלֶךְ
+  morphemes: pfm  | vbs  | lex מֶּלֶך | vbe  | nme ֜ | uvf  | prs 
+  atom slots: הַ H; מֶּ֛לֶך MLK/
+  MAM's key in BHSA: MLK/ sgm st=a x1188 (Genesis 14:17); [other state] MLK/ sgm st=c x1 (Daniel 11:8)
+  NEIGHBOUR [other state]: remove the dagesh or mappiq on letter 1 (mem) | מֶלֶך | MLK/ sgm st=c x3 (2 Kings 3:9)
+  NEIGHBOUR [other state]: add a sheva on letter 3 (final kaf) | מֶּלֶךְ | MLK/ sgm st=c x1 (Daniel 11:8) = MAM's key
+  neighbour same: add a sheva on letter 3 (final kaf) | מֶּלֶךְ | MLK/ sgm st=a x1188 (Genesis 14:17) = MAM's key
+  same full analysis elsewhere: מֶּלֶךְ x1188 (Genesis 14:17); מֶלֶךְ x160 (Genesis 36:31)
+  same letters: מֶּלֶךְ x1189 [MLK/ sgm st=a x1188 same, MLK/ sgm st=c x1 other state]; מֶלֶךְ x994 [MLK/ sgm st=c x832 other state, MLK/ sgm st=a x160 same, MLK==/ sgm st=a x2 other lexeme]; מָלַךְ x101 [MLK[ qal perf p3sgm x101 other lexeme]; מָלָךְ x9 [MLK[ qal perf p3sgm x9 other lexeme]; מֹּלֶךְ x7 [MLK=/ sgm st=a x7 other lexeme]; מְלֹךְ x5 [MLK[ qal infc st=c x3 other lexeme, MLK[ qal infc st=a x2 other lexeme]; מְלָךְ x3 [MLK[ qal infc st=c x2 other lexeme, MLK[ qal impv p2sgm x1 other lexeme]; מְּלֹךְ x3 [MLK[ qal infc st=a x2 other lexeme, MLK[ qal infc st=c x1 other lexeme]; מֶלֶך x3 [MLK/ sgm st=c x3 other state]; מָלֹךְ x2 [MLK[ qal infa st=a x2 other lexeme]
+
+#67 slot 173287 | 2 Samuel 20:8 | LBWC/ sgm st=a prs=HW
+  BHSA לְבֻשׁ֗וּ (key לְבֻשׁוּ; L:BUC81W.) in atom לְבֻשׁ֗וּ | prev מִדֹּ֣ו | next ועלו | trailer ' ' | accents accent revia
+  MAM  לְבֻשֹׁ֗ו (key לְבֻשֹׁו) in atom לְבֻשׁ֗וֹ
+  diff: letter 3 (shin): BHSA [shin dot], MAM [holam, shin dot] | letter 4 (vav): BHSA [dagesh/mappiq], MAM []
+  sp subs | gloss clothing | voc_lex לְבוּשׁ
+  morphemes: pfm  | vbs  | lex לְבֻשׁ | vbe  | nme ֜ | uvf  | prs וּ
+  MAM's key in BHSA: [other person/number/gender/suffix] LBWC/ sgm st=a prs=W x2 (Genesis 49:11)
+  same full analysis elsewhere: -
+  same letters: לְבֻשֹׁו x2 [LBWC/ sgm st=a prs=W x2 other person/number/gender/suffix]; לָבְשׁוּ x2 [LBC[ qal perf p3pl x2 other lexeme]; לִבְשׁוּ x1 [LBC[ qal impv p2plm x1 other lexeme]
+
+#68 slot 173389 | 2 Samuel 20:12 | MSLH/ sgf st=a
+  BHSA מְּסִלָּ֑ה (key מְּסִלָּה; M.:SIL.@92H) in atom הַֽמְּסִלָּ֑ה | prev בְּתֹ֣וךְ | next וַיַּ֨רְא | trailer ' ' | accents accent etnahta
+  MAM  מְסִלָּ֑ה (key מְסִלָּה) in atom הַֽמְסִלָּ֑ה
+  diff: letter 1 (mem): BHSA [sheva, dagesh/mappiq], MAM [sheva]
+  sp subs | gloss highway | voc_lex מְסִלָּה
+  morphemes: pfm  | vbs  | lex מְּסִלּ | vbe  | nme ָ֜ה | uvf  | prs 
+  atom slots: הַֽ H; מְּסִלָּ֑ה MSLH/
+  MAM's key in BHSA: MSLH/ sgf st=a x12 (Numbers 20:19)
+  neighbour same: remove the dagesh or mappiq on letter 1 (mem) | מְסִלָּה | MSLH/ sgf st=a x12 (Numbers 20:19) = MAM's key
+  same full analysis elsewhere: מְסִלָּה x12 (Numbers 20:19)
+  same letters: מְסִלָּה x12 [MSLH/ sgf st=a x12 same]
+
+#69 slot 176373 | 1 Kings 1:13 | >DNJHW/ sgm st=a
+  BHSA אֲדֹנִיָֽהוּ (key אֲדֹנִיָהוּ; >:ADONIJ@75HW.) in atom אֲדֹנִיָֽהוּ | prev מָלַ֥ךְ | next  | trailer '׃ ' | accents point meteg
+  MAM  אֲדֹנִיָּֽהוּ׃ (key אֲדֹנִיָּהוּ) in atom אֲדֹנִיָּֽהוּ׃
+  diff: letter 4 (yod): BHSA [qamats], MAM [qamats, dagesh/mappiq]
+  sp nmpr | gloss Adonijah | voc_lex אֲדֹנִיָּהוּ
+  morphemes: pfm  | vbs  | lex אֲדֹנִיָהוּ | vbe  | nme ֜ | uvf  | prs 
+  MAM's key in BHSA: >DNJHW/ sgm st=a x18 (1 Kings 1:8)
+  neighbour same: add a dagesh or mappiq on letter 4 (yod) | אֲדֹנִיָּהוּ | >DNJHW/ sgm st=a x18 (1 Kings 1:8) = MAM's key
+  same full analysis elsewhere: אֲדֹנִיָּהוּ x18 (1 Kings 1:8)
+  same letters: אֲדֹנִיָּהוּ x18 [>DNJHW/ sgm st=a x18 same]
+
+#70 slot 177571 | 1 Kings 2:13 | XGJT/ sgf st=a
+  BHSA חַגֵּ֗ית (key חַגֵּית; XAG.;81JT) in atom חַגֵּ֗ית | prev בֶן־ | next אֶל־ | trailer ' ' | accents accent revia
+  MAM  חַגִּ֗ית (key חַגִּית) in atom חַגִּ֗ית
+  diff: letter 2 (gimel): BHSA [tsere, dagesh/mappiq], MAM [hiriq, dagesh/mappiq]
+  sp nmpr | gloss Haggith | voc_lex חַגִּית
+  morphemes: pfm  | vbs  | lex חַגֵּית | vbe  | nme ֜ | uvf  | prs 
+  MAM's key in BHSA: XGJT/ sgf st=a x4 (2 Samuel 3:4)
+  neighbour same: hiriq for tsere on letter 2 (gimel) | חַגִּית | XGJT/ sgf st=a x4 (2 Samuel 3:4) = MAM's key
+  same full analysis elsewhere: חַגִּית x4 (2 Samuel 3:4)
+  same letters: חַגִּית x4 [XGJT/ sgf st=a x4 same]
+
+#71 slot 179244 | 1 Kings 4:12 | JQM<M/ sg st=a
+  BHSA יָקְמֳעָֽם (key יָקְמֳעָם; J@Q:M:@<@75M) in atom לְיָקְמֳעָֽם | prev מֵעֵ֥בֶר | next  | trailer '׃ ס ' | accents point meteg
+  MAM  יׇקְמְעָֽם׃ (key יָקְמְעָם) in atom לְיׇקְמְעָֽם׃
+  diff: letter 3 (mem): BHSA [hataf qamats], MAM [sheva]
+  sp nmpr | gloss Jokmeam | voc_lex יָקְמְעָם
+  morphemes: pfm  | vbs  | lex יָקְמֳעָם | vbe  | nme ֜ | uvf  | prs 
+  atom slots: לְ L; יָקְמֳעָֽם JQM<M/
+  MAM's key in BHSA: JQM<M/ sg st=a x1 (1 Chronicles 6:53)
+  neighbour same: sheva for hataf qamats on letter 3 (mem) | יָקְמְעָם | JQM<M/ sg st=a x1 (1 Chronicles 6:53) = MAM's key
+  same full analysis elsewhere: יָקְמְעָם x1 (1 Chronicles 6:53)
+  same letters: יָקְמְעָם x1 [JQM<M/ sg st=a x1 same]; יקַמְעָם x1 [JQM<M=/ sgm st=a x1 other lexeme]; יְקַמְעָם x1 [JQM<M=/ sgm st=a x1 other lexeme]
+
+#72 slot 183362 | 1 Kings 8:55 | <MD[ qal wayq p3sgm
+  BHSA יַּעְמֹ֕ד (key יַּעְמֹד; J.A<:MO85D) in atom וַֽיַּעְמֹ֕ד | prev  | next וַיְבָ֕רֶךְ | trailer ' ' | accents accent zaqef gadol
+  MAM  יַּעֲמֹ֕ד (key יַּעֲמֹד) in atom וַיַּעֲמֹ֕ד
+  diff: letter 2 (ayin): BHSA [sheva], MAM [hataf patah]
+  sp verb | gloss stand | voc_lex עמד
+  morphemes: pfm יַּ | vbs  | lex עְמֹד | vbe  | nme  | uvf  | prs 
+  atom slots: וַֽ W; יַּעְמֹ֕ד <MD[
+  MAM's key in BHSA: <MD[ qal wayq p3sgm x54 (Exodus 14:19)
+  neighbour same: hataf patah for sheva on letter 2 (ayin) | יַּעֲמֹד | <MD[ qal wayq p3sgm x54 (Exodus 14:19) = MAM's key
+  same full analysis elsewhere: יַּעֲמֹד x54 (Exodus 14:19)
+  same letters: יַּעֲמֹד x54 [<MD[ qal wayq p3sgm x54 same]; יַעֲמֹד x30 [<MD[ qal impf p3sgm x30 other stem/tense]; יַּעֲמֵד x15 [<MD[ hif wayq p3sgm x15 other stem/tense]; יַעֲמָד x2 [<MD[ qal impf p3sgm x2 other stem/tense]; יָעֳמַד x1 [<MD[ hof impf p3sgm x1 other stem/tense]; יַּעֲמֶד x1 [<MD[ hif wayq p3sgm x1 other stem/tense]
+
+#73 slot 200570 | 2 Kings 9:15 | JZR<>L/ sg st=a
+  BHSA יְזְרְעֶ֗אל (key יְזְרְעֶאל; J:Z:R:<E81>L) in atom בִיְזְרְעֶ֗אל | prev לְהִתְרַפֵּ֣א | next מִן־ | trailer ' ' | accents accent revia
+  MAM  יִזְרְעֶ֗אל (key יִזְרְעֶאל) in atom בְיִזְרְעֶ֗אל
+  diff: letter 1 (yod): BHSA [sheva], MAM [hiriq]
+  sp nmpr | gloss <town> | voc_lex יִזְרְעֶאל
+  morphemes: pfm  | vbs  | lex יְזְרְעֶאל | vbe  | nme ֜ | uvf  | prs 
+  atom slots: בִ B; יְזְרְעֶ֗אל JZR<>L/
+  MAM's key in BHSA: JZR<>L/ sg st=a x23 (Joshua 15:56); [other lexeme] JZR<>L=/ sgm st=a x3 (Hosea 1:4)
+  NEIGHBOUR [other lexeme]: hiriq for sheva on letter 1 (yod) | יִזְרְעֶאל | JZR<>L=/ sgm st=a x3 (Hosea 1:4) = MAM's key
+  neighbour same: hiriq for sheva on letter 1 (yod) | יִזְרְעֶאל | JZR<>L/ sg st=a x23 (Joshua 15:56) = MAM's key
+  same full analysis elsewhere: יִזְרְעֶאל x23 (Joshua 15:56); יִזְרְעֶאלָה x7 (Joshua 19:18); יִּזְרְעֶאל x2 (1 Samuel 25:43)
+  same letters: יִזְרְעֶאל x26 [JZR<>L/ sg st=a x23 same, JZR<>L=/ sgm st=a x3 other lexeme]; יִּזְרְעֶאל x2 [JZR<>L/ sg st=a x2 same]
+
+#74 slot 201936 | 2 Kings 10:33 | R>WBNJ/ sgm st=a
+  BHSA רֻאובֵנִ֖י (key רֻאובֵנִי; RU>WB;NI73J) in atom וְהָרֻאובֵנִ֖י | prev הַגָּדִ֥י | next וְהַֽמְנַשִּׁ֑י | trailer ' ' | accents accent tipeha
+  MAM  ראֿוּבֵנִ֖י (key ראוּבֵנִי) in atom וְהָראֿוּבֵנִ֖י
+  diff: letter 1 (resh): BHSA [qubuts], MAM [] | letter 3 (vav): BHSA [], MAM [dagesh/mappiq]
+  sp adjv | gloss Reubenite | voc_lex רְאוּבֵנִי
+  morphemes: pfm  | vbs  | lex רֻאובֵנִי | vbe  | nme ֜ | uvf  | prs 
+  atom slots: וְ W; הָ H; רֻאובֵנִ֖י R>WBNJ/
+  MAM's key in BHSA: R>WBNJ/ sgm st=a x12 (Numbers 34:14)
+  neighbour same: add a dagesh or mappiq on letter 3 (vav) | רֻאוּבֵנִי | R>WBNJ/ sgm st=a x5 (Numbers 26:7)
+  same full analysis elsewhere: ראוּבֵנִי x12 (Numbers 34:14); רֻאוּבֵנִי x5 (Numbers 26:7)
+  same letters: ראוּבֵנִי x12 [R>WBNJ/ sgm st=a x12 same]; רֻאוּבֵנִי x5 [R>WBNJ/ sgm st=a x5 same]
+
+#75 slot 202532 | 2 Kings 11:19 | DRK/ sg st=c
+  BHSA דֶּֽרֶך (key דֶּרֶך; D.E45REK) in atom דֶּֽרֶך־ | prev וַיָּבֹ֛ואוּ | next שַׁ֥עַר | trailer '־' | accents point meteg
+  MAM  דֶּרֶךְ (key דֶּרֶךְ) in atom דֶּרֶךְ־
+  diff: letter 3 (final kaf): BHSA [], MAM [sheva]
+  sp subs | gloss way | voc_lex דֶּרֶךְ
+  morphemes: pfm  | vbs  | lex דֶּרֶך | vbe  | nme ֜ | uvf  | prs 
+  MAM's key in BHSA: DRK/ sg st=c x147 (Genesis 3:24); [other state] DRK/ sg st=a x134 (Genesis 24:27)
+  NEIGHBOUR [other state]: add a sheva on letter 3 (final kaf) | דֶּרֶךְ | DRK/ sg st=a x134 (Genesis 24:27) = MAM's key
+  neighbour same: add a sheva on letter 3 (final kaf) | דֶּרֶךְ | DRK/ sg st=c x147 (Genesis 3:24) = MAM's key
+  same full analysis elsewhere: דֶּרֶךְ x147 (Genesis 3:24); דֶרֶךְ x61 (Genesis 16:7)
+  same letters: דֶּרֶךְ x281 [DRK/ sg st=c x147 same, DRK/ sg st=a x134 other state]; דֶרֶךְ x96 [DRK/ sg st=c x61 same, DRK/ sg st=a x35 other state]; דָּרֶךְ x33 [DRK/ sg st=a x33 other state]; דָרֶךְ x12 [DRK/ sg st=a x12 other state]; דָּרַךְ x5 [DRK[ qal perf p3sgm x5 other lexeme]; דֹּרֵךְ x3 [DRK[ qal ptca sgm st=a x3 other lexeme]; דֹרֵךְ x3 [DRK[ qal ptca sgm st=a x2 other lexeme, DRK[ qal ptca sgm st=c x1 other lexeme]; דָרַךְ x2 [DRK[ qal perf p3sgm x2 other lexeme]
+
+#76 slot 207527 | 2 Kings 19:5 | JC<JHW/ sgm st=a
+  BHSA יְשַֽׁעַיָֽהוּ (key יְשַׁעַיָהוּ; J:CA45<AJ@75HW.) in atom יְשַֽׁעַיָֽהוּ | prev אֶל־ | next  | trailer '׃ ' | accents point meteg, point meteg
+  MAM  יְשַׁעְיָֽהוּ׃ (key יְשַׁעְיָהוּ) in atom יְשַׁעְיָֽהוּ׃
+  diff: letter 3 (ayin): BHSA [patah], MAM [sheva]
+  sp nmpr | gloss Isaiah | voc_lex יְשַׁעְיָהוּ
+  morphemes: pfm  | vbs  | lex יְשַׁעַיָהוּ | vbe  | nme ֜ | uvf  | prs 
+  MAM's key in BHSA: JC<JHW/ sgm st=a x31 (2 Kings 19:2)
+  neighbour same: sheva for patah on letter 3 (ayin) | יְשַׁעְיָהוּ | JC<JHW/ sgm st=a x31 (2 Kings 19:2) = MAM's key
+  same full analysis elsewhere: יְשַׁעְיָהוּ x31 (2 Kings 19:2); ישַׁעְיָהוּ x3 (1 Chronicles 25:3)
+  same letters: יְשַׁעְיָהוּ x31 [JC<JHW/ sgm st=a x31 same]; ישַׁעְיָהוּ x3 [JC<JHW/ sgm st=a x3 same]
+
+#77 slot 209219 | 2 Kings 21:26 | QBR[ qal wayq p3sgm
+  BHSA יִּקְבְֹּ֥ר (key יִּקְבְֹּר; J.IQ:B.:O71R) in atom וַיִּקְבְֹּ֥ר | prev  | next אֹתֹ֛ו | trailer ' ' | accents accent merkha
+  MAM  יִּקְבֹּ֥ר (key יִּקְבֹּר) in atom וַיִּקְבֹּ֥ר
+  diff: letter 3 (bet): BHSA [sheva, holam, dagesh/mappiq], MAM [holam, dagesh/mappiq]
+  sp verb | gloss bury | voc_lex קבר
+  morphemes: pfm יִּ | vbs  | lex קְבְֹּר | vbe  | nme  | uvf  | prs 
+  atom slots: וַ W; יִּקְבְֹּ֥ר QBR[
+  MAM's key in BHSA: QBR[ qal wayq p3sgm x1 (Deuteronomy 34:6)
+  neighbour same: remove the sheva on letter 3 (bet) | יִּקְבֹּר | QBR[ qal wayq p3sgm x1 (Deuteronomy 34:6) = MAM's key
+  same full analysis elsewhere: יִּקְבֹּר x1 (Deuteronomy 34:6)
+  same letters: יִּקָּבֵר x27 [QBR[ nif wayq p3sgm x27 other stem/tense]; יִּקְבֹּר x1 [QBR[ qal wayq p3sgm x1 same]; יִקָּבֵר x1 [QBR[ nif impf p3sgm x1 other stem/tense]
+
+#78 slot 213694 | Isaiah 5:16 | GBH[ qal wayq p3sgm
+  BHSA יִּגְבַּ֛ה (key יִּגְבַּה; J.IG:B.A91H) in atom וַיִּגְבַּ֛ה | prev  | next יְהוָ֥ה | trailer ' ' | accents accent tevir
+  MAM  יִּגְבַּ֛הּ (key יִּגְבַּהּ) in atom וַיִּגְבַּ֛הּ
+  diff: letter 4 (he): BHSA [], MAM [dagesh/mappiq]
+  sp verb | gloss be high | voc_lex גָּבַהּ
+  morphemes: pfm יִּ | vbs  | lex גְבַּה | vbe  | nme  | uvf  | prs 
+  atom slots: וַ W; יִּגְבַּ֛ה GBH[
+  MAM's key in BHSA: GBH[ qal wayq p3sgm x3 (1 Samuel 10:23)
+  neighbour same: add a dagesh or mappiq on letter 4 (he) | יִּגְבַּהּ | GBH[ qal wayq p3sgm x3 (1 Samuel 10:23) = MAM's key
+  same full analysis elsewhere: יִּגְבַּהּ x3 (1 Samuel 10:23)
+  same letters: יִּגְבַּהּ x3 [GBH[ qal wayq p3sgm x3 same]; יִגְבַּהּ x1 [GBH[ qal impf p3sgm x1 other stem/tense]
+
+#79 slot 216359 | Isaiah 11:14 | MCLWX/ sgm st=c
+  BHSA מִשְׁלֹ֣וח (key מִשְׁלֹוח; MIC:LO74WX) in atom מִשְׁלֹ֣וח | prev וּמֹואָב֙ | next יָדָ֔ם | trailer ' ' | accents accent munah
+  MAM  מִשְׁלֹ֣וחַ (key מִשְׁלֹוחַ) in atom מִשְׁל֣וֹחַ
+  diff: letter 5 (het): BHSA [], MAM [patah]
+  sp subs | gloss sending | voc_lex מִשְׁלֹוחַ
+  morphemes: pfm  | vbs  | lex מִשְׁלֹוח | vbe  | nme ֜ | uvf  | prs 
+  MAM's key in BHSA: MCLWX/ sgm st=c x2 (Esther 9:19)
+  neighbour same: add a patah on letter 5 (het) | מִשְׁלֹוחַ | MCLWX/ sgm st=c x2 (Esther 9:19) = MAM's key
+  same full analysis elsewhere: מִשְׁלֹוחַ x2 (Esther 9:19)
+  same letters: מִשְׁלֹוחַ x2 [MCLWX/ sgm st=c x2 same]
+
+#80 slot 216639 | Isaiah 13:10 | NGH[ hif impf p3sgm
+  BHSA יַגִּ֥יהַ (key יַגִּיהַ; JAG.I71JHA) in atom יַגִּ֥יהַ | prev לֹֽא־ | next אֹורֹֽו | trailer ' ' | accents accent merkha
+  MAM  יַגִּ֥יהַּ (key יַגִּיהַּ) in atom יַגִּ֥יהַּ
+  diff: letter 4 (he): BHSA [patah], MAM [patah, dagesh/mappiq]
+  sp verb | gloss shine | voc_lex נָגַהּ
+  morphemes: pfm יַ | vbs  | lex גִּיהַ | vbe  | nme  | uvf  | prs 
+  MAM's key in BHSA: NGH[ hif impf p3sgm x2 (2 Samuel 22:29)
+  neighbour same: add a dagesh or mappiq on letter 4 (he) | יַגִּיהַּ | NGH[ hif impf p3sgm x2 (2 Samuel 22:29) = MAM's key
+  same full analysis elsewhere: יַגִּיהַּ x2 (2 Samuel 22:29)
+  same letters: יַגִּיהַּ x2 [NGH[ hif impf p3sgm x2 same]
+
+#81 slot 216814 | Isaiah 13:22 | >LMNH/ plf st=a prs=W
+  BHSA אַלְמנֹותָ֔יו (key אַלְמנֹותָיו; >AL:MNOWT@80JW) in atom בְּאַלְמנֹותָ֔יו | prev אִיִּים֙ | next וְתַנִּ֖ים | trailer ' ' | accents accent zaqef qatan
+  MAM  אַלְמְנֹותָ֔יו (key אַלְמְנֹותָיו) in atom בְּאַלְמְנוֹתָ֔יו
+  diff: letter 3 (mem): BHSA [], MAM [sheva]
+  sp subs | gloss widow | voc_lex אַלְמָנָה
+  morphemes: pfm  | vbs  | lex אַלְמן | vbe  | nme ֹ֜ותָי | uvf  | prs ו
+  atom slots: בְּ B; אַלְמנֹותָ֔יו >LMNH/
+  MAM's key in BHSA: >LMNH/ plf st=a prs=W x1 (Ezekiel 19:7)
+  neighbour same: add a sheva on letter 3 (mem) | אַלְמְנֹותָיו | >LMNH/ plf st=a prs=W x1 (Ezekiel 19:7) = MAM's key
+  same full analysis elsewhere: אַלְמְנֹתָיו x3 (Isaiah 9:16); אַלְמְנֹותָיו x1 (Ezekiel 19:7)
+  same letters: אַלְמְנֹותָיו x1 [>LMNH/ plf st=a prs=W x1 same]
+
+#82 slot 220573 | Isaiah 27:1 | XRB/ sgf st=a prs=W
+  BHSA חַרְבֹ֨ו (key חַרְבֹו; XAR:BO63W) in atom בְּחַרְבֹ֨ו | prev יְהוָה֩ | next הַקָּשָׁ֜ה | trailer ' ' | accents accent qadma
+  MAM  חַרְבֹּ֨ו (key חַרְבֹּו) in atom בְּחַרְבּ֨וֹ
+  diff: letter 3 (bet): BHSA [holam], MAM [holam, dagesh/mappiq]
+  sp subs | gloss dagger | voc_lex חֶרֶב
+  morphemes: pfm  | vbs  | lex חַרְב | vbe  | nme ֜ | uvf  | prs ֹו
+  atom slots: בְּ B; חַרְבֹ֨ו XRB/
+  MAM's key in BHSA: XRB/ sgf st=a prs=W x24 (Genesis 34:25)
+  neighbour same: add a dagesh or mappiq on letter 3 (bet) | חַרְבֹּו | XRB/ sgf st=a prs=W x24 (Genesis 34:25) = MAM's key
+  same full analysis elsewhere: חַרְבֹּו x24 (Genesis 34:25)
+  same letters: חַרְבֹּו x24 [XRB/ sgf st=a prs=W x24 same]; חָרְבוּ x4 [XRB[ qal perf p3pl x3 other lexeme, XRB[ qal impv p2plm x1 other lexeme]; חֹרָבוּ x2 [XRB[ pual perf p3pl x2 other lexeme]; חִרְבוּ x1 [XRB=[ qal impv p2plm x1 other lexeme]
+
+#83 slot 222791 | Isaiah 32:9 | BVX[ qal ptca plf st=a
+  BHSA בֹּֽטחֹ֔ות (key בֹּטחֹות; B.O45VXO80WT) in atom בֹּֽטחֹ֔ות | prev בָּנֹות֙ | next הַאְזֵ֖נָּה | trailer ' ' | accents point meteg, accent zaqef qatan
+  MAM  בֹּֽטְחֹ֔ות (key בֹּטְחֹות) in atom בֹּֽטְח֔וֹת
+  diff: letter 2 (tet): BHSA [], MAM [sheva]
+  sp verb | gloss trust | voc_lex בטח
+  morphemes: pfm  | vbs  | lex בֹּטח | vbe  | nme ֹ֜ות | uvf  | prs 
+  MAM's key in BHSA: BVX[ qal ptca plf st=a x2 (Isaiah 32:10)
+  neighbour same: add a sheva on letter 2 (tet) | בֹּטְחֹות | BVX[ qal ptca plf st=a x2 (Isaiah 32:10) = MAM's key
+  same full analysis elsewhere: בֹּטְחֹות x2 (Isaiah 32:10)
+  same letters: בֹּטְחֹות x2 [BVX[ qal ptca plf st=a x2 same]; בַטֻּחֹות x1 [BVXWT/ plf st=a x1 other lexeme]
+
+#84 slot 224917 | Isaiah 37:33 | <L prs=H
+  BHSA עֳלֶ֖יהָ (key עֳלֶיהָ; <:@LE73JH@) in atom עֳלֶ֖יהָ | prev יִשְׁפֹּ֥ךְ | next סֹלְלָֽה | trailer ' ' | accents accent tipeha
+  MAM  עָלֶ֖יהָ (key עָלֶיהָ) in atom עָלֶ֖יהָ
+  diff: letter 1 (ayin): BHSA [hataf qamats], MAM [qamats]
+  sp prep | gloss upon | voc_lex עַל
+  morphemes: pfm  | vbs  | lex עֳלֶי | vbe  | nme  | uvf  | prs הָ
+  MAM's key in BHSA: <L prs=H x182 (Genesis 24:42)
+  neighbour same: qamats for hataf qamats on letter 1 (ayin) | עָלֶיהָ | <L prs=H x182 (Genesis 24:42) = MAM's key
+  same full analysis elsewhere: עָלֶיהָ x182 (Genesis 24:42)
+  same letters: עָלֶיהָ x182 [<L prs=H x182 same]; עֲלִיָּה x5 [<LJH/ sgf st=a x5 other lexeme]; עַלִיָּה x1 [<LJH/ sgf st=a x1 other lexeme]
+
+#85 slot 226673 | Isaiah 42:9 | CM<[ hif impf p1sg
+  BHSA אַשְׁמִ֥יע (key אַשְׁמִיע; >AC:MI71J<) in atom אַשְׁמִ֥יע | prev תִּצְמַ֖חְנָה | next אֶתְכֶֽם | trailer ' ' | accents accent merkha
+  MAM  אַשְׁמִ֥יעַ (key אַשְׁמִיעַ) in atom אַשְׁמִ֥יעַ
+  diff: letter 5 (ayin): BHSA [], MAM [patah]
+  sp verb | gloss hear | voc_lex שׁמע
+  morphemes: pfm אַ | vbs  | lex שְׁמִיע | vbe  | nme  | uvf  | prs 
+  MAM's key in BHSA: CM<[ hif impf p1sg x1 (Ezekiel 36:15)
+  neighbour same: add a patah on letter 5 (ayin) | אַשְׁמִיעַ | CM<[ hif impf p1sg x1 (Ezekiel 36:15) = MAM's key
+  same full analysis elsewhere: אַשְׁמִיעַ x1 (Ezekiel 36:15)
+  same letters: אַשְׁמִיעַ x1 [CM<[ hif impf p1sg x1 same]
+
+#86 slot 228381 | Isaiah 46:4 | FJBH/ sgf st=a
+  BHSA שֵיבָ֖ה (key שֵיבָה; #;JB@73H) in atom שֵיבָ֖ה | prev וְעַד־ | next אֲנִ֣י | trailer ' ' | accents accent tipeha
+  MAM  שֵׂיבָ֖ה (key שֵׂיבָה) in atom שֵׂיבָ֖ה
+  diff: letter 1 (shin): BHSA [tsere], MAM [tsere, sin dot]
+  sp subs | gloss age | voc_lex שֵׂיבָה
+  morphemes: pfm  | vbs  | lex שֵׂיב | vbe  | nme ָ֜ה | uvf  | prs 
+  MAM's key in BHSA: FJBH/ sgf st=a x12 (Genesis 15:15)
+  neighbour same: add a sin dot on letter 1 (shin) | שֵׂיבָה | FJBH/ sgf st=a x12 (Genesis 15:15) = MAM's key
+  same full analysis elsewhere: שֵׂיבָה x12 (Genesis 15:15)
+  same letters: שֵׂיבָה x12 [FJBH/ sgf st=a x12 same]
+
+#87 slot 228396 | Isaiah 46:5 | DMH[ piel impf p2plm prs=NJ
+  BHSA תְדַמְי֖וּנִי (key תְדַמְיוּנִי; T:DAM:J73W.NIJ) in atom תְדַמְי֖וּנִי | prev לְמִ֥י | next וְתַשְׁו֑וּ | trailer ' ' | accents accent tipeha
+  MAM  תְדַמְּי֖וּנִי (key תְדַמְּיוּנִי) in atom תְדַמְּי֖וּנִי
+  diff: letter 3 (mem): BHSA [sheva], MAM [sheva, dagesh/mappiq]
+  sp verb | gloss be like | voc_lex דמה
+  morphemes: pfm תְ | vbs  | lex דַמְי | vbe וּ | nme  | uvf  | prs נִי
+  MAM's key in BHSA: DMH[ piel impf p2plm prs=NJ x1 (Isaiah 40:25)
+  neighbour same: add a dagesh or mappiq on letter 3 (mem) | תְדַמְּיוּנִי | DMH[ piel impf p2plm prs=NJ x1 (Isaiah 40:25) = MAM's key
+  same full analysis elsewhere: תְדַמְּיוּנִי x1 (Isaiah 40:25)
+  same letters: תְדַמְּיוּנִי x1 [DMH[ piel impf p2plm prs=NJ x1 same]
+
+#88 slot 228999 | Isaiah 48:14 | CM<[ qal impv p2plm
+  BHSA שֲׁמָ֔עוּ (key שֲׁמָעוּ; C:AM@80<W.) in atom וּֽשֲׁמָ֔עוּ | prev כֻלְּכֶם֙ | next מִ֥י | trailer ' ' | accents accent zaqef qatan
+  MAM  שְׁמָ֔עוּ (key שְׁמָעוּ) in atom וּֽשְׁמָ֔עוּ
+  diff: letter 1 (shin): BHSA [hataf patah, shin dot], MAM [sheva, shin dot]
+  sp verb | gloss hear | voc_lex שׁמע
+  morphemes: pfm  | vbs  | lex שֲׁמָע | vbe וּ | nme  | uvf  | prs 
+  atom slots: וּֽ W; שֲׁמָ֔עוּ CM<[
+  MAM's key in BHSA: CM<[ qal impv p2plm x1 (Isaiah 42:18)
+  neighbour same: sheva for hataf patah on letter 1 (shin) | שְׁמָעוּ | CM<[ qal impv p2plm x1 (Isaiah 42:18) = MAM's key
+  same full analysis elsewhere: שִׁמְעוּ x98 (Genesis 37:6); שְׁמָעוּ x1 (Isaiah 42:18)
+  same letters: שִׁמְעוּ x98 [CM<[ qal impv p2plm x98 same]; שָׁמְעוּ x59 [CM<[ qal perf p3pl x59 other stem/tense]; שָׁמְעֹו x14 [CM<[ qal infc st=a prs=W x10 other stem/tense, CM<==/ sgm st=a prs=W x4 other lexeme]; שָׁמֵעוּ x13 [CM<[ qal perf p3pl x13 other stem/tense]; שֹׁמְעֹו x1 [CM<[ qal ptca sgm st=a prs=W x1 other stem/tense]; שְׁמָעוּ x1 [CM<[ qal impv p2plm x1 same]
+
+#89 slot 234051 | Isaiah 65:6 | XCH[ qal impf p1sg
+  BHSA אֶחֱשֶׂה֙ (key אֶחֱשֶׂה; >EX:EFEH03) in atom אֶחֱשֶׂה֙ | prev לֹ֤א | next כִּ֣י | trailer ' ' | accents accent pashta
+  MAM  אֶֽחֱשֶׁה֙ (key אֶחֱשֶׁה) in atom אֶֽחֱשֶׁה֙
+  diff: letter 3 (shin): BHSA [segol, sin dot], MAM [segol, shin dot]
+  sp verb | gloss be silent | voc_lex חשׁה
+  morphemes: pfm אֶ | vbs  | lex חֱשֶׂה | vbe  | nme  | uvf  | prs 
+  MAM's key in BHSA: XCH[ qal impf p1sg x1 (Isaiah 62:1)
+  neighbour same: shin dot for sin dot on letter 3 (shin) | אֶחֱשֶׁה | XCH[ qal impf p1sg x1 (Isaiah 62:1) = MAM's key
+  same full analysis elsewhere: אֶחֱשֶׁה x1 (Isaiah 62:1)
+  same letters: אֶחֱשֶׁה x1 [XCH[ qal impf p1sg x1 same]
+
+#90 slot 237672 | Jeremiah 6:1 | BNJMN/ sg st=a
+  BHSA בִניָמִ֗ן (key בִניָמִן; BINJ@MI81N) in atom בִניָמִ֗ן | prev בְּנֵ֣י | next מִקֶּ֨רֶב֙ | trailer ' ' | accents accent revia
+  MAM  בִנְיָמִ֗ן (key בִנְיָמִן) in atom בִנְיָמִ֗ן
+  diff: letter 2 (nun): BHSA [], MAM [sheva]
+  sp nmpr | gloss Benjamin | voc_lex בִּנְיָמִן
+  morphemes: pfm  | vbs  | lex בִניָמִן | vbe  | nme ֜ | uvf  | prs 
+  MAM's key in BHSA: BNJMN/ sg st=a x92 (Genesis 35:24)
+  neighbour same: add a sheva on letter 2 (nun) | בִנְיָמִן | BNJMN/ sg st=a x92 (Genesis 35:24) = MAM's key
+  same full analysis elsewhere: בִנְיָמִן x92 (Genesis 35:24); בִּנְיָמִן x54 (Genesis 42:36); בִּנְיָמִין x8 (Genesis 42:4); בִנְיָמִין x7 (Genesis 35:18); בְנְיָמִן x1 (Exodus 1:3); בְּנְיָמִן x1 (Ezra 10:32)
+  same letters: בִנְיָמִן x92 [BNJMN/ sg st=a x92 same]; בִּנְיָמִן x54 [BNJMN/ sg st=a x54 same]; בְנְיָמִן x1 [BNJMN/ sg st=a x1 same]; בְּנְיָמִן x1 [BNJMN/ sg st=a x1 same]
+
+#91 slot 240342 | Jeremiah 11:2 | DBR[ piel perf p2sgm prs=M
+  BHSA דִבַּרְתָּם֙ (key דִבַּרְתָּם; DIB.AR:T.@M03) in atom וְדִבַּרְתָּם֙ | prev הַזֹּ֑את | next אֶל־ | trailer ' ' | accents accent pashta
+  MAM  דִבַּרְתֶּם֙ (key דִבַּרְתֶּם) in atom וְדִבַּרְתֶּם֙
+  diff: letter 4 (tav): BHSA [qamats, dagesh/mappiq], MAM [segol, dagesh/mappiq]
+  sp verb | gloss speak | voc_lex דבר
+  morphemes: pfm  | vbs  | lex דִבַּרְ | vbe תּ | nme  | uvf  | prs ָמ
+  atom slots: וְ W; דִבַּרְתָּם֙ DBR[
+  MAM's key in BHSA: [other person/number/gender/suffix] DBR[ piel perf p2plm x4 (Numbers 20:8)
+  NEIGHBOUR [other person/number/gender/suffix]: segol for qamats on letter 4 (tav) | דִבַּרְתֶּם | DBR[ piel perf p2plm x4 (Numbers 20:8) = MAM's key
+  same full analysis elsewhere: -
+  same letters: דִבַּרְתֶּם x4 [DBR[ piel perf p2plm x4 other person/number/gender/suffix]; דִּבַּרְתֶּם x2 [DBR[ piel perf p2plm x2 other person/number/gender/suffix]
+
+#92 slot 249131 | Jeremiah 28:3 | NBWKDN>YR/ sgm st=a
+  BHSA נְבוּכַדנֶאצַּ֤ר (key נְבוּכַדנֶאצַּר; N:BW.KADNE>Y.A70R) in atom נְבוּכַדנֶאצַּ֤ר | prev לָקַ֜ח | next מֶֽלֶךְ־ | trailer ' ' | accents accent mahapakh
+  MAM  נְבוּכַדְנֶאצַּ֤ר (key נְבוּכַדְנֶאצַּר) in atom נְבוּכַדְנֶאצַּ֤ר
+  diff: letter 5 (dalet): BHSA [], MAM [sheva]
+  sp nmpr | gloss Nebuchadnezzar | voc_lex נְבוּכַדְנֶאצַּר
+  morphemes: pfm  | vbs  | lex נְבוּכַדנֶאצַּר | vbe  | nme ֜ | uvf  | prs 
+  MAM's key in BHSA: NBWKDN>YR/ sgm st=a x13 (2 Kings 24:11)
+  neighbour same: add a sheva on letter 5 (dalet) | נְבוּכַדְנֶאצַּר | NBWKDN>YR/ sgm st=a x13 (2 Kings 24:11) = MAM's key
+  same full analysis elsewhere: נְבוּכַדְנֶאצַּר x13 (2 Kings 24:11); נְבֻכַדְנֶאצַּר x7 (2 Kings 24:1); נְבֻכַדְנֶצַּר x3 (Daniel 1:18); נְבוּכַדְנֶצַּר x2 (Ezra 1:7)
+  same letters: נְבוּכַדְנֶאצַּר x13 [NBWKDN>YR/ sgm st=a x13 same]
+
+#93 slot 256575 | Jeremiah 39:9 | NBWZR>DN/ sgm st=a
+  BHSA נְבֽוּזַר־אֲדָ֥ן (key נְבוּזַר־אֲדָן; N:B45W.ZAR&>:AD@71N) in atom נְבֽוּזַר־אֲדָ֥ן | prev הֶגְלָ֛ה | next רַב־ | trailer ' ' | accents point meteg, accent merkha
+  MAM  נְבוּזַרְאֲדָ֥ן (key נְבוּזַרְאֲדָן) in atom נְבוּזַרְאֲדָ֥ן
+  diff: separators: BHSA ['maqaf'], MAM [] | letter 5 (resh): BHSA [], MAM [sheva]
+  sp nmpr | gloss Nebuzaradan | voc_lex נְבוּזַרְאֲדָן
+  morphemes: pfm  | vbs  | lex נְבוּזַר אֲדָן | vbe  | nme ֜ | uvf  | prs 
+  MAM's key in BHSA: NBWZR>DN/ sgm st=a x14 (2 Kings 25:8)
+  same full analysis elsewhere: נְבוּזַרְאֲדָן x14 (2 Kings 25:8)
+  same letters: נְבוּזַרְאֲדָן x14 [NBWZR>DN/ sgm st=a x14 same]
+
+#94 slot 272303 | Ezekiel 17:7 | CRC/ plm st=a prs=H
+  BHSA שָׁרֳשֶׁ֣יהָ (key שָׁרֳשֶׁיהָ; C@R:@CE74JH@) in atom שָׁרֳשֶׁ֣יהָ | prev כָּֽפְנָ֧ה | next עָלָ֗יו | trailer ' ' | accents accent munah
+  MAM  שׇׁרָשֶׁ֣יהָ (key שָׁרָשֶׁיהָ) in atom שׇׁרָשֶׁ֣יהָ
+  diff: letter 2 (resh): BHSA [hataf qamats], MAM [qamats]
+  sp subs | gloss root | voc_lex שֹׁרֶשׁ
+  morphemes: pfm  | vbs  | lex שָׁרֳשׁ | vbe  | nme ֶ֜י | uvf  | prs הָ
+  MAM's key in BHSA: CRC/ plm st=a prs=H x3 (Ezekiel 17:9)
+  neighbour same: qamats for hataf qamats on letter 2 (resh) | שָׁרָשֶׁיהָ | CRC/ plm st=a prs=H x3 (Ezekiel 17:9) = MAM's key
+  same full analysis elsewhere: שָׁרָשֶׁיהָ x3 (Ezekiel 17:9); שָּׁרָשֶׁיהָ x1 (Ezekiel 17:9)
+  same letters: שָׁרָשֶׁיהָ x3 [CRC/ plm st=a prs=H x3 same]; שָּׁרָשֶׁיהָ x1 [CRC/ plm st=a prs=H x1 same]
+
+#95 slot 273098 | Ezekiel 18:21 | XQH/ plf st=a prs=J
+  BHSA חֻקֹותַ֔י (key חֻקֹותַי; XUQOWTA80J) in atom חֻקֹותַ֔י | prev כָּל־ | next וְעָשָׂ֥ה | trailer ' ' | accents accent zaqef qatan
+  MAM  חֻקֹּותַ֔י (key חֻקֹּותַי) in atom חֻקּוֹתַ֔י
+  diff: letter 2 (qof): BHSA [holam], MAM [holam, dagesh/mappiq]
+  sp subs | gloss regulation | voc_lex חֻקָּה
+  morphemes: pfm  | vbs  | lex חֻק | vbe  | nme ֹ֜ותַי | uvf  | prs 
+  MAM's key in BHSA: XQH/ plf st=a prs=J x16 (Genesis 26:5)
+  neighbour same: add a dagesh or mappiq on letter 2 (qof) | חֻקֹּותַי | XQH/ plf st=a prs=J x16 (Genesis 26:5) = MAM's key
+  same full analysis elsewhere: חֻקֹּתַי x20 (Leviticus 18:4); חֻקֹּותַי x16 (Genesis 26:5); חֻקֹּתָי x1 (1 Kings 11:34)
+  same letters: חֻקֹּותַי x16 [XQH/ plf st=a prs=J x16 same]
+
+#96 slot 274811 | Ezekiel 21:17 | HJH[ qal perf p3sgf
+  BHSA הָיתָ֣ה (key הָיתָה; H@JT@74H) in atom הָיתָ֣ה | prev הִיא֙ | next בְעַמִּ֔י | trailer ' ' | accents accent munah
+  MAM  הָיְתָ֣ה (key הָיְתָה) in atom הָיְתָ֣ה
+  diff: letter 2 (yod): BHSA [], MAM [sheva]
+  sp verb | gloss be | voc_lex היה
+  morphemes: pfm  | vbs  | lex הָי | vbe תָה | nme  | uvf  | prs 
+  MAM's key in BHSA: HJH[ qal perf p3sgf x203 (Genesis 1:2)
+  NEIGHBOUR [other person/number/gender/suffix]: add a hiriq on letter 2 (yod) | הָיִתָה | HJH[ qal perf p2sgm x1 (2 Samuel 10:11)
+  neighbour same: add a sheva on letter 2 (yod) | הָיְתָה | HJH[ qal perf p3sgf x203 (Genesis 1:2) = MAM's key
+  neighbour same: add a qamats on letter 2 (yod) | הָיָתָה | HJH[ qal perf p3sgf x4 (Isaiah 14:24)
+  same full analysis elsewhere: הָיְתָה x203 (Genesis 1:2); הָיָתָה x4 (Isaiah 14:24)
+  same letters: הָיְתָה x203 [HJH[ qal perf p3sgf x203 same]; הָיָתָה x4 [HJH[ qal perf p3sgf x4 same]; הָיִתָה x1 [HJH[ qal perf p2sgm x1 other person/number/gender/suffix]
+
+#97 slot 275082 | Ezekiel 21:31 | GBH[ hif infa st=a
+  BHSA הַגְבֵּ֔הַ (key הַגְבֵּהַ; HAG:B.;80HA) in atom הַגְבֵּ֔הַ | prev הַשָּׁפָ֣לָה | next וְהַגָּבֹ֖הַ | trailer ' ' | accents accent zaqef qatan
+  MAM  הַגְבֵּ֔הַּ (key הַגְבֵּהַּ) in atom הַגְבֵּ֔הַּ
+  diff: letter 4 (he): BHSA [patah], MAM [patah, dagesh/mappiq]
+  sp verb | gloss be high | voc_lex גָּבַהּ
+  morphemes: pfm  | vbs הַ | lex גְבֵּהַ | vbe  | nme ֜ | uvf  | prs 
+  MAM's key in BHSA: GBH[ hif infa st=a x1 (Isaiah 7:11)
+  neighbour same: add a dagesh or mappiq on letter 4 (he) | הַגְבֵּהַּ | GBH[ hif infa st=a x1 (Isaiah 7:11) = MAM's key
+  same full analysis elsewhere: הַגְבֵּהַּ x1 (Isaiah 7:11)
+  same letters: הַגְבֵּהַּ x1 [GBH[ hif infa st=a x1 same]
+
+#98 slot 282392 | Ezekiel 35:15 | NXLH/ sgf st=c
+  BHSA נַחְלַ֧ת (key נַחְלַת; NAX:LA94T) in atom לְנַחְלַ֧ת | prev כְּשִׂמְחָ֨תְךָ֜ | next בֵּֽית־ | trailer ' ' | accents accent darga
+  MAM  נַחֲלַ֧ת (key נַחֲלַת) in atom לְנַחֲלַ֧ת
+  diff: letter 2 (het): BHSA [sheva], MAM [hataf patah]
+  sp subs | gloss heritage | voc_lex נַחֲלָה
+  morphemes: pfm  | vbs  | lex נַחְל | vbe  | nme ַ֜ת | uvf  | prs 
+  atom slots: לְ L; נַחְלַ֧ת NXLH/
+  MAM's key in BHSA: NXLH/ sgf st=c x38 (Numbers 16:14)
+  neighbour same: hataf patah for sheva on letter 2 (het) | נַחֲלַת | NXLH/ sgf st=c x38 (Numbers 16:14) = MAM's key
+  same full analysis elsewhere: נַחֲלַת x38 (Numbers 16:14); נַּחֲלַת x5 (Numbers 35:2); נַחֲלָת x1 (Psalms 16:6)
+  same letters: נַחֲלַת x38 [NXLH/ sgf st=c x38 same]; נַּחֲלַת x5 [NXLH/ sgf st=c x5 same]; נָחַלְתָּ x1 [NXL[ qal perf p2sgm x1 other lexeme]; נְּחָלֹת x1 [NXLH/ plf st=a x1 other person/number/gender/suffix]; נִחַלְתְּ x1 [XLL[ nif perf p2sgf x1 other lexeme]; נַחֲלָת x1 [NXLH/ sgf st=c x1 same]
+
+#99 slot 286783 | Ezekiel 42:5 | HNH= p3plf
+  BHSA הֵ֗נָה (key הֵנָה; H;81N@H) in atom מֵהֵ֗נָה | prev אַתִּיקִ֜ים | next מֵֽהַתַּחְתֹּנֹ֛ות | trailer ' ' | accents accent revia
+  MAM  הֵ֗נָּה (key הֵנָּה) in atom מֵהֵ֗נָּה
+  diff: letter 2 (nun): BHSA [qamats], MAM [qamats, dagesh/mappiq]
+  sp prps | gloss they | voc_lex הֵנָּה
+  morphemes: pfm  | vbs  | lex הֵנָה | vbe  | nme  | uvf  | prs 
+  atom slots: מֵ MN; הֵ֗נָה HNH=
+  MAM's key in BHSA: [other lexeme] HNH== x50 (Genesis 15:16); HNH= p3plf x47 (Genesis 6:2)
+  NEIGHBOUR [other lexeme]: add a dagesh or mappiq on letter 2 (nun) | הֵנָּה | HNH== x50 (Genesis 15:16) = MAM's key
+  neighbour same: add a dagesh or mappiq on letter 2 (nun) | הֵנָּה | HNH= p3plf x47 (Genesis 6:2) = MAM's key
+  same full analysis elsewhere: הֵנָּה x47 (Genesis 6:2)
+  same letters: הִנֵּה x806 [HNH x806 other lexeme]; הֵנָּה x97 [HNH== x50 other lexeme, HNH= p3plf x47 same]; הִנֶּה x1 [HNH x1 other lexeme]
+
+#100 slot 287454 | Ezekiel 43:14 | H
+  BHSA הֳ (key הֳ; H:@-) in atom וּמֵהֳעֲזָרָ֨ה | prev אֶחָ֑ת | next הַקְּטַנָּ֜ה | trailer '' | accents -
+  MAM  הָ (key הָ) in atom וּמֵהָעֲזָרָ֨ה
+  diff: letter 1 (he): BHSA [hataf qamats], MAM [qamats]
+  sp art | gloss the | voc_lex הַ
+  morphemes: pfm  | vbs  | lex הֳ | vbe  | nme  | uvf  | prs 
+  atom slots: וּ W; מֵ MN; הֳ H; עֲזָרָ֨ה <ZRH=/
+  MAM's key in BHSA: H x6633 (Genesis 1:1)
+  NEIGHBOUR [other lexeme]: sheva for hataf qamats on letter 1 (he) | הְ | H= x3 (1 Kings 20:13)
+  NEIGHBOUR [other lexeme]: hataf patah for hataf qamats on letter 1 (he) | הֲ | H= x542 (Genesis 3:11)
+  NEIGHBOUR [other lexeme]: segol for hataf qamats on letter 1 (he) | הֶ | H= x18 (Genesis 24:5)
+  NEIGHBOUR [other lexeme]: patah for hataf qamats on letter 1 (he) | הַ | H= x179 (Genesis 17:17)
+  neighbour same: segol for hataf qamats on letter 1 (he) | הֶ | H x389 (Genesis 7:19)
+  neighbour same: patah for hataf qamats on letter 1 (he) | הַ | H x16827 (Genesis 1:1)
+  neighbour same: qamats for hataf qamats on letter 1 (he) | הָ | H x6633 (Genesis 1:1) = MAM's key
+  same full analysis elsewhere: הַ x16827 (Genesis 1:1); הָ x6633 (Genesis 1:1); הֶ x389 (Genesis 7:19)
+  same letters: הַ x17006 [H x16827 same, H= x179 other lexeme]; הָ x6633 [H x6633 same]; הֲ x542 [H= x542 other lexeme]; הֶ x407 [H x389 same, H= x18 other lexeme]; הְ x3 [H= x3 other lexeme]
+
+#101 slot 291173 | Hosea 2:4 | PNH/ plm st=a prs=H
+  BHSA פָּנֶ֔יה (key פָּנֶיה; P.@NE80JH) in atom מִפָּנֶ֔יה | prev זְנוּנֶ֨יהָ֙ | next וְנַאֲפוּפֶ֖יהָ | trailer ' ' | accents accent zaqef qatan
+  MAM  פָּנֶ֔יהָ (key פָּנֶיהָ) in atom מִפָּנֶ֔יהָ
+  diff: letter 4 (he): BHSA [], MAM [qamats]
+  sp subs | gloss face | voc_lex פָּנֶה
+  morphemes: pfm  | vbs  | lex פָּן | vbe  | nme ֶ֜י | uvf  | prs ה
+  atom slots: מִ MN; פָּנֶ֔יה PNH/
+  MAM's key in BHSA: PNH/ plm st=a prs=H x8 (Genesis 16:6)
+  neighbour same: add a qamats on letter 4 (he) | פָּנֶיהָ | PNH/ plm st=a prs=H x8 (Genesis 16:6) = MAM's key
+  same full analysis elsewhere: פָּנֶיהָ x8 (Genesis 16:6); פָנֶיהָ x8 (Numbers 12:14)
+  same letters: פָּנֶיהָ x8 [PNH/ plm st=a prs=H x8 same]; פָנֶיהָ x8 [PNH/ plm st=a prs=H x8 same]
+
+#102 slot 292849 | Hosea 9:4 | VM>[ hit impf p3plm
+  BHSA יִטַמָּ֑אוּ (key יִטַמָּאוּ; JIVAM.@92>W.) in atom יִטַמָּ֑אוּ | prev אֹכְלָ֖יו | next כִּֽי־ | trailer ' ' | accents accent etnahta
+  MAM  יִטַּמָּ֑אוּ (key יִטַּמָּאוּ) in atom יִטַּמָּ֑אוּ
+  diff: letter 2 (tet): BHSA [patah], MAM [patah, dagesh/mappiq]
+  sp verb | gloss be unclean | voc_lex טמא
+  morphemes: pfm יִ | vbs  | lex טַמָּא | vbe וּ | nme  | uvf  | prs 
+  MAM's key in BHSA: VM>[ hit impf p3plm x1 (Ezekiel 44:25)
+  NEIGHBOUR [other stem/tense]: sheva for qamats on letter 3 (mem) | יִטַמְּאוּ | VM>[ piel impf p3plm x1 (Ezekiel 37:23)
+  neighbour same: add a dagesh or mappiq on letter 2 (tet) | יִטַּמָּאוּ | VM>[ hit impf p3plm x1 (Ezekiel 44:25) = MAM's key
+  same full analysis elsewhere: יִטַּמְּאוּ x1 (Ezekiel 14:11); יִטַּמָּאוּ x1 (Ezekiel 44:25)
+  same letters: יְטַמְּאוּ x5 [VM>[ piel wayq p3plm x3 other stem/tense, VM>[ piel impf p3plm x2 other stem/tense]; יִטַּמְּאוּ x1 [VM>[ hit impf p3plm x1 same]; יִטַמְּאוּ x1 [VM>[ piel impf p3plm x1 other stem/tense]; יִטַּמָּאוּ x1 [VM>[ hit impf p3plm x1 same]; יִּטְמְאוּ x1 [VM>[ qal wayq p3plm x1 other stem/tense]
+
+#103 slot 293721 | Hosea 13:2 | <FH[ qal wayq p3plm
+  BHSA יַּעְשׂ֣וּ (key יַּעְשׂוּ; J.A<:F74W.) in atom וַיַּעְשׂ֣וּ | prev לַחֲטֹ֗א | next לָהֶם֩ | trailer ' ' | accents accent munah
+  MAM  יַּעֲשׂ֣וּ (key יַּעֲשׂוּ) in atom וַיַּעֲשׂ֣וּ
+  diff: letter 2 (ayin): BHSA [sheva], MAM [hataf patah]
+  sp verb | gloss make | voc_lex עשׂה
+  morphemes: pfm יַּ | vbs  | lex עְשׂ | vbe וּ | nme  | uvf  | prs 
+  atom slots: וַ W; יַּעְשׂ֣וּ <FH[
+  MAM's key in BHSA: <FH[ qal wayq p3plm x78 (Genesis 3:7)
+  neighbour same: hataf patah for sheva on letter 2 (ayin) | יַּעֲשׂוּ | <FH[ qal wayq p3plm x78 (Genesis 3:7) = MAM's key
+  neighbour same: patah for sheva on letter 2 (ayin) | יַּעַשׂוּ | <FH[ qal wayq p3plm x1 (Exodus 7:10)
+  same full analysis elsewhere: יַּעֲשׂוּ x78 (Genesis 3:7); יַּעַשׂוּ x1 (Exodus 7:10)
+  same letters: יַּעֲשׂוּ x78 [<FH[ qal wayq p3plm x78 same]; יַעֲשׂוּ x23 [<FH[ qal impf p3plm x23 other stem/tense]; יֵעָשׂוּ x1 [<FH[ nif impf p3plm x1 other stem/tense]; יַּעַשׂוּ x1 [<FH[ qal wayq p3plm x1 same]
+
+#104 slot 296975 | Amos 6:2 | PLCTJ/ plm st=a
+  BHSA פְּלִשְׁתּ֗ים (key פְּלִשְׁתּים; P.:LIC:T.81JM) in atom פְּלִשְׁתּ֗ים | prev גַת־ | next הֲטֹובִים֙ | trailer ' ' | accents accent revia
+  MAM  פְּלִשְׁתִּ֗ים (key פְּלִשְׁתִּים) in atom פְּלִשְׁתִּ֗ים
+  diff: letter 4 (tav): BHSA [dagesh/mappiq], MAM [hiriq, dagesh/mappiq]
+  sp adjv | gloss Philistine | voc_lex פְּלִשְׁתִּי
+  morphemes: pfm  | vbs  | lex פְּלִשְׁתּ | vbe  | nme ֜ים | uvf  | prs 
+  MAM's key in BHSA: PLCTJ/ plm st=a x144 (Genesis 10:14)
+  neighbour same: add a hiriq on letter 4 (tav) | פְּלִשְׁתִּים | PLCTJ/ plm st=a x144 (Genesis 10:14) = MAM's key
+  same full analysis elsewhere: פְּלִשְׁתִּים x144 (Genesis 10:14); פְלִשְׁתִּים x107 (Joshua 13:3); פְלִשְׁתִּיִּים x1 (Amos 9:7)
+  same letters: פְּלִשְׁתִּים x144 [PLCTJ/ plm st=a x144 same]; פְלִשְׁתִּים x107 [PLCTJ/ plm st=a x107 same]
+
+#105 slot 297889 | Amos 9:4 | >JB[ qal ptca plm st=a prs=HM
+  BHSA אֹֽיבֵיהֶ֔ם (key אֹיבֵיהֶם; >O45JB;JHE80M) in atom אֹֽיבֵיהֶ֔ם | prev לִפְנֵ֣י | next מִשָּׁ֛ם | trailer ' ' | accents point meteg, accent zaqef qatan
+  MAM  אֹֽיְבֵיהֶ֔ם (key אֹיְבֵיהֶם) in atom אֹֽיְבֵיהֶ֔ם
+  diff: letter 2 (yod): BHSA [], MAM [sheva]
+  sp verb | gloss be hostile | voc_lex איב
+  morphemes: pfm  | vbs  | lex אֹיב | vbe  | nme ֵ֜י | uvf  | prs הֶם
+  MAM's key in BHSA: >JB[ qal ptca plm st=a prs=HM x28 (Leviticus 26:36)
+  neighbour same: add a sheva on letter 2 (yod) | אֹיְבֵיהֶם | >JB[ qal ptca plm st=a prs=HM x28 (Leviticus 26:36) = MAM's key
+  same full analysis elsewhere: אֹיְבֵיהֶם x28 (Leviticus 26:36); אֹויְבֵיהֶם x7 (Judges 2:14)
+  same letters: אֹיְבֵיהֶם x28 [>JB[ qal ptca plm st=a prs=HM x28 same]
+
+#106 slot 298599 | Jonah 1:3 | >NJH/ sgf st=a
+  BHSA אָנִיָּ֣ה (key אָנִיָּה; >@NIJ.@74H) in atom אָנִיָּ֣ה | prev וַיִּמְצָ֥א | next בָּאָ֣ה | trailer '׀ ' | accents accent munah
+  MAM  אֳנִיָּ֣ה׀ (key אֳנִיָּה) in atom אֳנִיָּ֣ה׀
+  diff: letter 1 (alef): BHSA [qamats], MAM [hataf qamats]
+  sp subs | gloss ship | voc_lex אֳנִיָּה
+  morphemes: pfm  | vbs  | lex אָנִיּ | vbe  | nme ָ֜ה | uvf  | prs 
+  MAM's key in BHSA: >NJH/ sgf st=a x3 (Jonah 1:4)
+  NEIGHBOUR [other lexeme]: hataf patah for qamats on letter 1 (alef) | אֲנִיָּה | >NJH=/ sgf st=a x2 (Isaiah 29:2)
+  neighbour same: hataf qamats for qamats on letter 1 (alef) | אֳנִיָּה | >NJH/ sgf st=a x3 (Jonah 1:4) = MAM's key
+  same full analysis elsewhere: אֳנִיָּה x3 (Jonah 1:4)
+  same letters: אֳנִיָּה x3 [>NJH/ sgf st=a x3 same]; אֲנִיָּה x2 [>NJH=/ sgf st=a x2 other lexeme]
+
+#107 slot 299111 | Jonah 3:3 | NJNWH/ sg st=a
+  BHSA נִֽינְוֶ֖ה (key נִינְוֶה; NI45JN:WE73H) in atom נִֽינְוֶ֖ה | prev אֶל־ | next כִּדְבַ֣ר | trailer ' ' | accents point meteg, accent tipeha
+  MAM  נִֽינְוֵ֖ה (key נִינְוֵה) in atom נִֽינְוֵ֖ה
+  diff: letter 4 (vav): BHSA [segol], MAM [tsere]
+  sp nmpr | gloss Nineveh | voc_lex נִינְוֵה
+  morphemes: pfm  | vbs  | lex נִינְוֶה | vbe  | nme ֜ | uvf  | prs 
+  MAM's key in BHSA: NJNWH/ sg st=a x16 (Genesis 10:11)
+  neighbour same: tsere for segol on letter 4 (vav) | נִינְוֵה | NJNWH/ sg st=a x16 (Genesis 10:11) = MAM's key
+  same full analysis elsewhere: נִינְוֵה x16 (Genesis 10:11)
+  same letters: נִינְוֵה x16 [NJNWH/ sg st=a x16 same]
+
+#108 slot 304030 | Zephaniah 3:17 | QRB/ sgm st=a prs=K=
+  BHSA קִרְבֵּ֖ך (key קִרְבֵּך; QIR:B.;73K) in atom בְּקִרְבֵּ֖ך | prev אֱלֹהַ֛יִךְ | next גִּבֹּ֣ור | trailer ' ' | accents accent tipeha
+  MAM  קִרְבֵּ֖ךְ (key קִרְבֵּךְ) in atom בְּקִרְבֵּ֖ךְ
+  diff: letter 4 (final kaf): BHSA [], MAM [sheva]
+  sp subs | gloss interior | voc_lex קֶרֶב
+  morphemes: pfm  | vbs  | lex קִרְבּ | vbe  | nme ֜ | uvf  | prs ֵכ
+  atom slots: בְּ B; קִרְבֵּ֖ך QRB/
+  MAM's key in BHSA: QRB/ sgm st=a prs=K= x7 (Isaiah 12:6)
+  neighbour same: add a sheva on letter 4 (final kaf) | קִרְבֵּךְ | QRB/ sgm st=a prs=K= x7 (Isaiah 12:6) = MAM's key
+  same full analysis elsewhere: קִרְבֵּךְ x7 (Isaiah 12:6); קִּרְבֵּךְ x1 (Zephaniah 3:11)
+  same letters: קִּרְבֶּךָ x14 [QRB/ sgm st=a prs=K x14 other person/number/gender/suffix]; קִרְבְּךָ x9 [QRB/ sgm st=a prs=K x9 other person/number/gender/suffix]; קִרְבֶּךָ x9 [QRB/ sgm st=a prs=K x9 other person/number/gender/suffix]; קִרְבֵּךְ x7 [QRB/ sgm st=a prs=K= x7 same]; קִּרְבְּךָ x1 [QRB/ sgm st=a prs=K x1 other person/number/gender/suffix]; קִּרְבֵּךְ x1 [QRB/ sgm st=a prs=K= x1 same]
+
+#109 slot 305204 | Zechariah 1:10 | HDS/ plm st=a
+  BHSA הַדַסִּ֖ים (key הַדַסִּים; HADAS.I73JM) in atom הַהַדַסִּ֖ים | prev בֵּין־ | next וַיֹּאמַ֑ר | trailer ' ' | accents accent tipeha
+  MAM  הֲדַסִּ֖ים (key הֲדַסִּים) in atom הַהֲדַסִּ֖ים
+  diff: letter 1 (he): BHSA [patah], MAM [hataf patah]
+  sp subs | gloss myrtle | voc_lex הֲדַס
+  morphemes: pfm  | vbs  | lex הַדַסּ | vbe  | nme ִ֜ים | uvf  | prs 
+  atom slots: הַ H; הַדַסִּ֖ים HDS/
+  MAM's key in BHSA: HDS/ plm st=a x2 (Zechariah 1:8)
+  neighbour same: hataf patah for patah on letter 1 (he) | הֲדַסִּים | HDS/ plm st=a x2 (Zechariah 1:8) = MAM's key
+  same full analysis elsewhere: הֲדַסִּים x2 (Zechariah 1:8)
+  same letters: הֲדַסִּים x2 [HDS/ plm st=a x2 same]
+
+#110 slot 306094 | Zechariah 4:11 | >LH pl
+  BHSA אֵ֔לֶה (key אֵלֶה; >;80LEH) in atom הָאֵ֔לֶה | prev הַזֵּיתִים֙ | next עַל־ | trailer ' ' | accents accent zaqef qatan
+  MAM  אֵ֔לֶּה (key אֵלֶּה) in atom הָאֵ֔לֶּה
+  diff: letter 2 (lamed): BHSA [segol], MAM [segol, dagesh/mappiq]
+  sp prde | gloss these | voc_lex אֵלֶּה
+  morphemes: pfm  | vbs  | lex אֵלֶה | vbe  | nme  | uvf  | prs 
+  atom slots: הָ H; אֵ֔לֶה >LH
+  MAM's key in BHSA: >LH pl x744 (Genesis 2:4)
+  NEIGHBOUR [other lexeme]: qamats for segol on letter 2 (lamed) | אֵלָה | >LH/ sgf st=a x16 (Genesis 35:4)
+  NEIGHBOUR [other lexeme]: qamats for segol on letter 2 (lamed) | אֵלָה | >LH===/ sgm st=a x13 (Genesis 36:41)
+  neighbour same: add a dagesh or mappiq on letter 2 (lamed) | אֵלֶּה | >LH pl x744 (Genesis 2:4) = MAM's key
+  same full analysis elsewhere: אֵלֶּה x744 (Genesis 2:4)
+  same letters: אֵלֶּה x744 [>LH pl x744 same]; אֵלָה x29 [>LH/ sgf st=a x16 other lexeme, >LH===/ sgm st=a x13 other lexeme]; אָלָה x27 [>LH=/ sgf st=a x27 other lexeme]; אֱלֹהַ x1 [>LWH/ sgm st=a x1 other lexeme]; אַלָּה x1 [>LH==/ sgf st=a x1 other lexeme]; אָלֹה x1 [>LH[ qal infa st=a x1 other lexeme]; אֱלֹהַּ x1 [>LWH/ sgm st=c x1 other lexeme]
+
+#111 slot 306508 | Zechariah 6:7 | HLK[ hit infc st=a
+  BHSA הִתְהַלֵּ֣ך (key הִתְהַלֵּך; HIT:HAL.;74K) in atom לְהִתְהַלֵּ֣ך | prev לָלֶ֨כֶת֙ | next בָּאָ֔רֶץ | trailer ' ' | accents accent munah
+  MAM  הִתְהַלֵּ֣ךְ (key הִתְהַלֵּךְ) in atom לְהִתְהַלֵּ֣ךְ
+  diff: letter 5 (final kaf): BHSA [], MAM [sheva]
+  sp verb | gloss walk | voc_lex הלך
+  morphemes: pfm  | vbs הִתְ | lex הַלֵּך | vbe  | nme ֜ | uvf  | prs 
+  atom slots: לְ L; הִתְהַלֵּ֣ך HLK[
+  MAM's key in BHSA: HLK[ hit infc st=a x4 (Zechariah 1:10); [other stem/tense] HLK[ hit impv p2sgm x2 (Genesis 13:17); [other stem/tense] HLK[ hit perf p3sgm x1 (Exodus 21:19)
+  NEIGHBOUR [other stem/tense]: add a sheva on letter 5 (final kaf) | הִתְהַלֵּךְ | HLK[ hit impv p2sgm x2 (Genesis 13:17) = MAM's key
+  NEIGHBOUR [other stem/tense]: add a sheva on letter 5 (final kaf) | הִתְהַלֵּךְ | HLK[ hit perf p3sgm x1 (Exodus 21:19) = MAM's key
+  neighbour same: add a sheva on letter 5 (final kaf) | הִתְהַלֵּךְ | HLK[ hit infc st=a x4 (Zechariah 1:10) = MAM's key
+  same full analysis elsewhere: הִתְהַלֵּךְ x4 (Zechariah 1:10)
+  same letters: הִתְהַלֵּךְ x7 [HLK[ hit infc st=a x4 same, HLK[ hit impv p2sgm x2 other stem/tense, HLK[ hit perf p3sgm x1 other stem/tense]; הִתְהַלֶּךְ x2 [HLK[ hit perf p3sgm x2 other stem/tense]; התְהַלֵּךְ x1 [HLK[ hit perf p3sgm x1 other stem/tense]
+
+#112 slot 306726 | Zechariah 7:2 | FR>YR/ sgm st=a
+  BHSA שַׂר־אֶ֕צֶר (key שַׂר־אֶצֶר; FAR&>E85YER) in atom שַׂר־אֶ֕צֶר | prev בֵּֽית־אֵ֔ל | next וְרֶ֥גֶם מֶ֖לֶךְ | trailer ' ' | accents accent zaqef gadol
+  MAM  שַׂרְאֶ֕צֶר (key שַׂרְאֶצֶר) in atom שַׂרְאֶ֕צֶר
+  diff: separators: BHSA ['maqaf'], MAM [] | letter 2 (resh): BHSA [], MAM [sheva]
+  sp nmpr | gloss Sharezer | voc_lex שַׂרְאֶצֶר
+  morphemes: pfm  | vbs  | lex שַׂר אֶצֶר | vbe  | nme ֜ | uvf  | prs 
+  MAM's key in BHSA: FR>YR/ sgm st=a x2 (2 Kings 19:37)
+  same full analysis elsewhere: שַׂרְאֶצֶר x2 (2 Kings 19:37)
+  same letters: שַׂרְאֶצֶר x2 [FR>YR/ sgm st=a x2 same]
+
+#113 slot 307828 | Zechariah 10:2 | CW>/ sgm st=a
+  BHSA שָּׁ֣וא (key שָּׁוא; C.@74W>) in atom הַשָּׁ֣וא | prev וַֽחֲלֹמֹות֙ | next יְדַבֵּ֔רוּ | trailer ' ' | accents accent munah
+  MAM  שָּׁ֣וְא (key שָּׁוְא) in atom הַשָּׁ֣וְא
+  diff: letter 2 (vav): BHSA [], MAM [sheva]
+  sp subs | gloss vanity | voc_lex שָׁוְא
+  morphemes: pfm  | vbs  | lex שָּׁוא | vbe  | nme ֜ | uvf  | prs 
+  atom slots: הַ H; שָּׁ֣וא CW>/
+  MAM's key in BHSA: CW>/ sgm st=a x13 (Exodus 20:7)
+  neighbour same: add a sheva on letter 2 (vav) | שָּׁוְא | CW>/ sgm st=a x13 (Exodus 20:7) = MAM's key
+  same full analysis elsewhere: שָׁוְא x38 (Exodus 23:1); שָּׁוְא x13 (Exodus 20:7)
+  same letters: שָׁוְא x38 [CW>/ sgm st=a x38 same]; שָּׁוְא x13 [CW>/ sgm st=a x13 same]; שֹׂוא x1 [NF>[ qal infc st=c x1 other lexeme]; שְׁוָא x1 [CW>==/ sgm st=a x1 other lexeme]
+
+#114 slot 312112 | Psalms 12:6 | >NQH/ sgf st=c
+  BHSA אַנְקַ֢ת (key אַנְקַת; >AN:QA97T) in atom מֵאַנְקַ֢ת | prev עֲנִיִּים֮ | next אֶבְיֹ֫ונִ֥ים | trailer ' ' | accents accent atnah hafukh
+  MAM  אֶנְקַ֢ת (key אֶנְקַת) in atom מֵאֶנְקַ֢ת
+  diff: letter 1 (alef): BHSA [patah], MAM [segol]
+  sp subs | gloss sigh | voc_lex אֲנָקָה
+  morphemes: pfm  | vbs  | lex אַנְק | vbe  | nme ַ֜ת | uvf  | prs 
+  atom slots: מֵ MN; אַנְקַ֢ת >NQH/
+  MAM's key in BHSA: >NQH/ sgf st=c x2 (Psalms 79:11)
+  neighbour same: segol for patah on letter 1 (alef) | אֶנְקַת | >NQH/ sgf st=c x2 (Psalms 79:11) = MAM's key
+  same full analysis elsewhere: אֶנְקַת x2 (Psalms 79:11)
+  same letters: אֶנְקַת x2 [>NQH/ sgf st=c x2 same]
+
+#115 slot 315072 | Psalms 31:12 | CKN/ plm st=a prs=J
+  BHSA שֲׁכֵנַ֨י (key שֲׁכֵנַי; C:AK;NA63J) in atom וְלִשֲׁכֵנַ֨י | prev חֶרְפָּ֡ה | next מְאֹד֮ | trailer '׀ ' | accents accent qadma
+  MAM  שְׁכֵנַ֨י׀ (key שְׁכֵנַי) in atom וְלִ֥שְׁכֵנַ֨י׀
+  diff: letter 1 (shin): BHSA [hataf patah, shin dot], MAM [sheva, shin dot]
+  sp subs | gloss inhabitant | voc_lex שָׁכֵן
+  morphemes: pfm  | vbs  | lex שֲׁכֵן | vbe  | nme ַ֜י | uvf  | prs 
+  atom slots: וְ W; לִ L; שֲׁכֵנַ֨י CKN/
+  MAM's key in BHSA: CKN/ plm st=a prs=J x1 (Jeremiah 12:14)
+  neighbour same: sheva for hataf patah on letter 1 (shin) | שְׁכֵנַי | CKN/ plm st=a prs=J x1 (Jeremiah 12:14) = MAM's key
+  same full analysis elsewhere: שְׁכֵנַי x1 (Jeremiah 12:14)
+  same letters: שֹׁכְנִי x4 [CKN[ qal ptca sgm st=c x4 other lexeme]; שֹׁכְנֵי x3 [CKN[ qal ptca plm st=c x3 other lexeme]; שָׁכְנִי x1 [CKN[ qal infc st=a prs=J x1 other lexeme]; שְׁכֵנַי x1 [CKN/ plm st=a prs=J x1 same]
+
+#116 slot 316024 | Psalms 35:22 | >L=
+  BHSA אֲל (key אֲל; >:AL) in atom אֲל־ | prev אֲ֝דֹנָ֗י | next תִּרְחַ֥ק | trailer '־' | accents -
+  MAM  אַל (key אַל) in atom אַל־
+  diff: letter 1 (alef): BHSA [hataf patah], MAM [patah]
+  sp nega | gloss not | voc_lex אַל
+  morphemes: pfm  | vbs  | lex אֲל | vbe  | nme  | uvf  | prs 
+  MAM's key in BHSA: >L= x723 (Genesis 13:8); [other lexeme] >L x2 (Judges 19:23); [other lexeme] >L== x1 (1 Samuel 27:10); [other lexeme] >L=/ sg st=a x1 (Job 24:25)
+  NEIGHBOUR [other lexeme]: tsere for hataf patah on letter 1 (alef) | אֵל | >L/ sgm st=a x190 (Genesis 14:18)
+  NEIGHBOUR [other lexeme]: tsere for hataf patah on letter 1 (alef) | אֵל | >L/ sgm st=c x30 (Genesis 16:13)
+  NEIGHBOUR [other lexeme]: tsere for hataf patah on letter 1 (alef) | אֵל | >L=== pl x9 (Genesis 19:8)
+  NEIGHBOUR [other lexeme]: tsere for hataf patah on letter 1 (alef) | אֵל | >L==/ sgm st=c x5 (Genesis 31:29)
+  NEIGHBOUR [other lexeme]: tsere for hataf patah on letter 1 (alef) | אֵל | >JL===/ sgm st=c x1 (Ezekiel 40:48)
+  NEIGHBOUR [other lexeme]: segol for hataf patah on letter 1 (alef) | אֶל | >L x3875 (Genesis 1:9)
+  NEIGHBOUR [other lexeme]: patah for hataf patah on letter 1 (alef) | אַל | >L x2 (Judges 19:23) = MAM's key
+  NEIGHBOUR [other lexeme]: patah for hataf patah on letter 1 (alef) | אַל | >L== x1 (1 Samuel 27:10) = MAM's key
+  NEIGHBOUR [other lexeme]: patah for hataf patah on letter 1 (alef) | אַל | >L=/ sg st=a x1 (Job 24:25) = MAM's key
+  neighbour same: segol for hataf patah on letter 1 (alef) | אֶל | >L= x1 (Exodus 10:28)
+  neighbour same: patah for hataf patah on letter 1 (alef) | אַל | >L= x723 (Genesis 13:8) = MAM's key
+  same full analysis elsewhere: אַל x723 (Genesis 13:8); אֶל x1 (Exodus 10:28)
+  same letters: אֶל x3876 [>L x3875 other lexeme, >L= x1 same]; אַל x727 [>L= x723 same, >L x2 other lexeme, >L== x1 other lexeme]; אֵל x235 [>L/ sgm st=a x190 other lexeme, >L/ sgm st=c x30 other lexeme, >L=== pl x9 other lexeme]
+
+#117 slot 319581 | Psalms 55:22 | QRB==/ sgm st=a
+  BHSA קֲרָב (key קֲרָב; Q:AR@B) in atom וּֽקֲרָב־ | prev פִּיו֮ | next לִ֫בֹּ֥ו | trailer '־' | accents -
+  MAM  קְרָב (key קְרָב) in atom וּֽקְרָב־
+  diff: letter 1 (qof): BHSA [hataf patah], MAM [sheva]
+  sp subs | gloss fight | voc_lex קְרָב
+  morphemes: pfm  | vbs  | lex קֲרָב | vbe  | nme ֜ | uvf  | prs 
+  atom slots: וּֽ W; קֲרָב QRB==/
+  MAM's key in BHSA: QRB==/ sgm st=a x6 (2 Samuel 17:11); [other lexeme] QRB[ qal infc st=c x1 (2 Samuel 15:5)
+  NEIGHBOUR [other lexeme]: sheva for hataf patah on letter 1 (qof) | קְרָב | QRB[ qal infc st=c x1 (2 Samuel 15:5) = MAM's key
+  neighbour same: add a dagesh or mappiq on letter 1 (qof) | קֲּרָב | QRB==/ sgm st=a x1 (Psalms 55:19)
+  neighbour same: sheva for hataf patah on letter 1 (qof) | קְרָב | QRB==/ sgm st=a x6 (2 Samuel 17:11) = MAM's key
+  same full analysis elsewhere: קְרָב x6 (2 Samuel 17:11); קֲּרָב x1 (Psalms 55:19)
+  same letters: קֶרֶב x53 [QRB/ sgm st=c x53 other lexeme]; קֶּרֶב x36 [QRB/ sgm st=c x20 other lexeme, QRB/ sgm st=a x16 other lexeme]; קָּרֹב x7 [QRWB/ sgm st=a x7 other lexeme]; קָּרֵב x7 [QRB=/ sgm st=a x7 other lexeme]; קְרָב x7 [QRB==/ sgm st=a x6 same, QRB[ qal infc st=c x1 other lexeme]; קָרַב x5 [QRB[ qal perf p3sgm x4 other lexeme, QRB[ piel impv p2sgm x1 other lexeme]; קְרַב x4 [QRB[ qal impv p2sgm x4 other lexeme]; קָרֵב x2 [QRB=/ sgm st=a x2 other lexeme]; קְרֹב x2 [QRB[ qal infc st=a x2 other lexeme]; קֲּרָב x1 [QRB==/ sgm st=a x1 same]
+
+#118 slot 320049 | Psalms 59:2 | MN
+  BHSA מִּ (key מִּ; M.I-) in atom מִּמִתְקֹומְמַ֥י | prev אֱלֹהָ֑י | next תְּשַׂגְּבֵֽנִי | trailer '' | accents -
+  MAM  מִֽ (key מִ) in atom מִֽמִּתְקוֹמְמַ֥י
+  diff: letter 1 (mem): BHSA [hiriq, dagesh/mappiq], MAM [hiriq]
+  sp prep | gloss from | voc_lex מִן
+  morphemes: pfm  | vbs  | lex מִּ | vbe  | nme  | uvf  | prs 
+  atom slots: מִּ MN; מִתְקֹומְמַ֥י QWM[
+  MAM's key in BHSA: MN x4119 (Genesis 1:7)
+  neighbour same: remove the dagesh or mappiq on letter 1 (mem) | מִ | MN x4119 (Genesis 1:7) = MAM's key
+  neighbour same: tsere for hiriq on letter 1 (mem) | מֵּ | MN x3 (Leviticus 19:14)
+  same full analysis elsewhere: מִ x4119 (Genesis 1:7); מֵ x2086 (Genesis 1:7); מִן x736 (Genesis 2:6); מִנִּי x32 (Judges 5:14); מֵּ x3 (Leviticus 19:14); מִנֵּי x2 (Isaiah 30:11)
+  same letters: מִ x4119 [MN x4119 same]; מֵ x2086 [MN x2086 same]; מֵּ x3 [MN x3 same]; מַ x3 [MH x2 other lexeme, MN x1 same]; מֶ x1 [MN x1 same]; מְ x1 [MN x1 same]
+
+#119 slot 320068 | Psalms 59:4 | <Z===/ plm st=a
+  BHSA עַזִ֑ים (key עַזִים; <AZI92JM) in atom עַזִ֑ים | prev עָלַ֣י | next לֹא־ | trailer ' ' | accents accent etnahta
+  MAM  עַזִּ֑ים (key עַזִּים) in atom עַזִּ֑ים
+  diff: letter 2 (zayin): BHSA [hiriq], MAM [hiriq, dagesh/mappiq]
+  sp adjv | gloss strong | voc_lex עַז
+  morphemes: pfm  | vbs  | lex עַז | vbe  | nme ִ֜ים | uvf  | prs 
+  MAM's key in BHSA: <Z===/ plm st=a x3 (Isaiah 43:16)
+  neighbour same: add a dagesh or mappiq on letter 2 (zayin) | עַזִּים | <Z===/ plm st=a x3 (Isaiah 43:16) = MAM's key
+  same full analysis elsewhere: עַזִּים x3 (Isaiah 43:16)
+  same letters: עִזִּים x66 [<Z==/ plf st=a x66 other lexeme]; עַזִּים x3 [<Z===/ plm st=a x3 same]
+
+#120 slot 321164 | Psalms 67:1 | NYX[ piel ptca sgm st=a
+  BHSA מְנַצֵּ֥ח (key מְנַצֵּח; M:NAY.;71X) in atom לַמְנַצֵּ֥ח | prev  | next בִּנְגִינֹ֗ת | trailer ' ' | accents accent merkha
+  MAM  מְנַצֵּ֥חַ (key מְנַצֵּחַ) in atom לַמְנַצֵּ֥חַ
+  diff: letter 4 (het): BHSA [], MAM [patah]
+  sp verb | gloss prevail | voc_lex נצח
+  morphemes: pfm מְ | vbs  | lex נַצֵּח | vbe  | nme ֜ | uvf  | prs 
+  atom slots: לַ L;  H; מְנַצֵּ֥ח NYX[
+  MAM's key in BHSA: NYX[ piel ptca sgm st=a x55 (Habakkuk 3:19)
+  neighbour same: add a patah on letter 4 (het) | מְנַצֵּחַ | NYX[ piel ptca sgm st=a x55 (Habakkuk 3:19) = MAM's key
+  same full analysis elsewhere: מְנַצֵּחַ x55 (Habakkuk 3:19)
+  same letters: מְנַצֵּחַ x55 [NYX[ piel ptca sgm st=a x55 same]
+
+#121 slot 321308 | Psalms 68:7 | SRR[ qal ptca plm st=a
+  BHSA סֹ֝ורֲרִ֗ים (key סֹורֲרִים; 11SOWR:ARI81JM) in atom סֹ֝ורֲרִ֗ים | prev אַ֥ךְ | next שָׁכְנ֥וּ | trailer ' ' | accents accent geresh muqdam, accent revia
+  MAM  סֹ֝ורְרִ֗ים (key סֹורְרִים) in atom ס֝וֹרְרִ֗ים
+  diff: letter 3 (resh): BHSA [hataf patah], MAM [sheva]
+  sp verb | gloss rebel | voc_lex סרר
+  morphemes: pfm  | vbs  | lex סֹורֲר | vbe  | nme ִ֜ים | uvf  | prs 
+  MAM's key in BHSA: SRR[ qal ptca plm st=a x4 (Isaiah 1:23)
+  neighbour same: sheva for hataf patah on letter 3 (resh) | סֹורְרִים | SRR[ qal ptca plm st=a x4 (Isaiah 1:23) = MAM's key
+  same full analysis elsewhere: סֹורְרִים x4 (Isaiah 1:23); סֹרְרִים x1 (Hosea 9:15); סֹּורְרִים x1 (Psalms 66:7)
+  same letters: סֹורְרִים x4 [SRR[ qal ptca plm st=a x4 same]; סֹּורְרִים x1 [SRR[ qal ptca plm st=a x1 same]
+
+#122 slot 322775 | Psalms 73:28 | QRBH/ sgf st=c
+  BHSA קִֽרֲבַ֥ת (key קִרֲבַת; QI45R:ABA71T) in atom קִֽרֲבַ֥ת | prev וַאֲנִ֤י | next אֱלֹהִ֗ים | trailer ' ' | accents point meteg, accent merkha
+  MAM  קִ֥רְבַ֥ת (key קִרְבַת) in atom קִ֥רְבַ֥ת
+  diff: letter 2 (resh): BHSA [hataf patah], MAM [sheva]
+  sp subs | gloss approach | voc_lex קִרְבָה
+  morphemes: pfm  | vbs  | lex קִרֲב | vbe  | nme ַ֜ת | uvf  | prs 
+  MAM's key in BHSA: QRBH/ sgf st=c x1 (Isaiah 58:2)
+  neighbour same: sheva for hataf patah on letter 2 (resh) | קִרְבַת | QRBH/ sgf st=c x1 (Isaiah 58:2) = MAM's key
+  same full analysis elsewhere: קִרְבַת x1 (Isaiah 58:2)
+  same letters: קָרַבְתָּ x2 [QRB[ qal perf p2sgm x2 other lexeme]; קָרָבְתָּ x1 [QRB[ qal perf p2sgm x1 other lexeme]; קִרְבַת x1 [QRBH/ sgf st=c x1 same]
+
+#123 slot 324932 | Psalms 83:11 | DMN/ sgm st=a
+  BHSA דֹּ֝֗מֶן (key דֹּמֶן; 11D.O81MEN) in atom דֹּ֝֗מֶן | prev הָ֥יוּ | next לָאֲדָמָֽה | trailer ' ' | accents accent geresh muqdam, accent revia
+  MAM  דֹ֝֗מֶן (key דֹמֶן) in atom דֹ֝֗מֶן
+  diff: letter 1 (dalet): BHSA [holam, dagesh/mappiq], MAM [holam]
+  sp subs | gloss dung | voc_lex דֹּמֶן
+  morphemes: pfm  | vbs  | lex דֹּמֶן | vbe  | nme ֜ | uvf  | prs 
+  MAM's key in BHSA: DMN/ sgm st=a x5 (2 Kings 9:37)
+  neighbour same: remove the dagesh or mappiq on letter 1 (dalet) | דֹמֶן | DMN/ sgm st=a x5 (2 Kings 9:37) = MAM's key
+  same full analysis elsewhere: דֹמֶן x5 (2 Kings 9:37)
+  same letters: דֹמֶן x5 [DMN/ sgm st=a x5 same]
+
+#124 slot 325964 | Psalms 89:25 | >MWNH/ sgf st=a prs=J
+  BHSA אֶֽמוּנָתִ֣י (key אֶמוּנָתִי; >E45MW.N@TI74J) in atom וֶֽאֶֽמוּנָתִ֣י | prev  | next וְחַסְדִּ֣י | trailer ' ' | accents point meteg, accent munah
+  MAM  אֱֽמוּנָתִ֣י (key אֱמוּנָתִי) in atom וֶ֥אֱֽמוּנָתִ֣י
+  diff: letter 1 (alef): BHSA [segol], MAM [hataf segol]
+  sp subs | gloss steadiness | voc_lex אֱמוּנָה
+  morphemes: pfm  | vbs  | lex אֶמוּן | vbe  | nme ָ֜ת | uvf  | prs ִי
+  atom slots: וֶֽ W; אֶֽמוּנָתִ֣י >MWNH/
+  MAM's key in BHSA: >MWNH/ sgf st=a prs=J x1 (Psalms 89:34)
+  neighbour same: hataf segol for segol on letter 1 (alef) | אֱמוּנָתִי | >MWNH/ sgf st=a prs=J x1 (Psalms 89:34) = MAM's key
+  same full analysis elsewhere: אֱמוּנָתִי x1 (Psalms 89:34)
+  same letters: אֱמוּנָתִי x1 [>MWNH/ sgf st=a prs=J x1 same]
+
+#125 slot 333684 | Psalms 134:2 | BRK[ piel impv p2plm
+  BHSA בָרֲכוּ (key בָרֲכוּ; B@R:AKW.) in atom וּ֝בָרֲכוּ | prev קֹ֑דֶשׁ | next אֶת־ | trailer ' ' | accents -
+  MAM  בָרְכ֗וּ (key בָרְכוּ) in atom וּ֝בָרְכ֗וּ
+  diff: letter 2 (resh): BHSA [hataf patah], MAM [sheva]
+  sp verb | gloss bless | voc_lex ברך
+  morphemes: pfm  | vbs  | lex בָרֲך | vbe וּ | nme  | uvf  | prs 
+  atom slots: וּ֝ W; בָרֲכוּ BRK[
+  MAM's key in BHSA: BRK[ piel impv p2plm x1 (2 Samuel 21:3)
+  NEIGHBOUR [other stem/tense]: tsere for qamats on letter 1 (bet) | בֵרֲכוּ | BRK[ piel perf p3pl x1 (Job 1:5)
+  neighbour same: add a dagesh or mappiq on letter 1 (bet) | בָּרֲכוּ | BRK[ piel impv p2plm x13 (Judges 5:2)
+  neighbour same: sheva for hataf patah on letter 2 (resh) | בָרְכוּ | BRK[ piel impv p2plm x1 (2 Samuel 21:3) = MAM's key
+  same full analysis elsewhere: בָּרֲכוּ x13 (Judges 5:2); בָּרְכוּ x3 (Psalms 66:8); בָרְכוּ x1 (2 Samuel 21:3)
+  same letters: בָּרֲכוּ x13 [BRK[ piel impv p2plm x13 same]; בָרֲכֹו x4 [BRK[ piel infc st=a prs=W x4 other stem/tense]; בֵּרֲכֹו x3 [BRK[ piel perf p3sgm prs=W x3 other stem/tense]; בָּרְכוּ x3 [BRK[ piel impv p2plm x3 same]; בָרְכוּ x1 [BRK[ piel impv p2plm x1 same]; בֵרֲכוּ x1 [BRK[ piel perf p3pl x1 other stem/tense]; בֵרֲכֹו x1 [BRK[ piel perf p3sgm prs=W x1 other stem/tense]; בֵּרֲכוּ x1 [BRK[ piel perf p3pl x1 other stem/tense]
+
+#126 slot 334447 | Psalms 139:12 | MN prs=K
+  BHSA מִ֫מֶּ֥ךָ (key מִמֶּךָ; MI60M.E71K@) in atom מִ֫מֶּ֥ךָ | prev יַחְשִׁ֢יךְ | next וְ֭לַיְלָה | trailer ' ' | accents accent ole, accent merkha
+  MAM  מִ֫מֶּ֥ךָּ (key מִמֶּךָּ) in atom מִ֫מֶּ֥ךָּ
+  diff: letter 3 (final kaf): BHSA [qamats], MAM [qamats, dagesh/mappiq]
+  sp prep | gloss from | voc_lex מִן
+  morphemes: pfm  | vbs  | lex מִםּ | vbe  | nme  | uvf  | prs ֶכָ
+  MAM's key in BHSA: MN prs=K x17 (Genesis 35:11)
+  neighbour same: sheva for segol on letter 2 (mem) | מִמְּךָ | MN prs=K x40 (Genesis 17:6)
+  neighbour same: add a dagesh or mappiq on letter 3 (final kaf) | מִמֶּךָּ | MN prs=K x17 (Genesis 35:11) = MAM's key
+  same full analysis elsewhere: מִמְּךָ x40 (Genesis 17:6); מִמֶּךָּ x17 (Genesis 35:11)
+  same letters: מִמְּךָ x40 [MN prs=K x40 same]; מִמֵּךְ x20 [MN prs=K= x20 other person/number/gender/suffix]; מִמֶּךָּ x17 [MN prs=K x17 same]
+
+#127 slot 334601 | Psalms 140:4 | CNN[ qal perf p3pl
+  BHSA שָֽׁנֲנ֣וּ (key שָׁנֲנוּ; C@45N:AN74W.) in atom שָֽׁנֲנ֣וּ | prev  | next לְשֹׁונָם֮ | trailer ' ' | accents point meteg, accent munah
+  MAM  שָׁ֥נְנ֣וּ (key שָׁנְנוּ) in atom שָׁ֥נְנ֣וּ
+  diff: letter 2 (nun): BHSA [hataf patah], MAM [sheva]
+  sp verb | gloss sharpen | voc_lex שׁנן
+  morphemes: pfm  | vbs  | lex שָׁנֲן | vbe וּ | nme  | uvf  | prs 
+  MAM's key in BHSA: CNN[ qal perf p3pl x1 (Psalms 64:4)
+  neighbour same: sheva for hataf patah on letter 2 (nun) | שָׁנְנוּ | CNN[ qal perf p3pl x1 (Psalms 64:4) = MAM's key
+  same full analysis elsewhere: שָׁנְנוּ x1 (Psalms 64:4)
+  same letters: שָׁנְנוּ x1 [CNN[ qal perf p3pl x1 same]
+
+#128 slot 335061 | Psalms 143:12 | YRR=[ qal ptca plm st=c
+  BHSA צֹרֲרֵ֣י (key צֹרֲרֵי; YOR:AR;74J) in atom צֹרֲרֵ֣י | prev כָּל־ | next נַפְשִׁ֑י | trailer ' ' | accents accent munah
+  MAM  צֹרְרֵ֣י (key צֹרְרֵי) in atom צֹרְרֵ֣י
+  diff: letter 2 (resh): BHSA [hataf patah], MAM [sheva]
+  sp verb | gloss be hostile | voc_lex צרר
+  morphemes: pfm  | vbs  | lex צֹרֲר | vbe  | nme ֵ֜י | uvf  | prs 
+  MAM's key in BHSA: YRR=[ qal ptca plm st=c x2 (Isaiah 11:13)
+  neighbour same: sheva for hataf patah on letter 2 (resh) | צֹרְרֵי | YRR=[ qal ptca plm st=c x2 (Isaiah 11:13) = MAM's key
+  same full analysis elsewhere: צֹרְרֵי x2 (Isaiah 11:13)
+  same letters: צֹרְרֵי x2 [YRR=[ qal ptca plm st=c x2 same]; צֹרְרָי x1 [YRR=[ qal ptca plm st=a prs=J x1 other person/number/gender/suffix]; צֹרְרַי x1 [YRR=[ qal ptca plm st=a prs=J x1 other person/number/gender/suffix]
+
+#129 slot 335241 | Psalms 144:15 | JHWH/ sgm st=a
+  BHSA יֲהוָ֥ה (key יֲהוָה; J:AHW@71H) in atom שֶׁיֲהוָ֥ה | prev הָ֝עָ֗ם | next אֱלֹהָֽיו | trailer ' ' | accents accent merkha
+  MAM  יְהֹוָ֥ה (key יְהֹוָה) in atom שֱׁיְהֹוָ֥ה
+  diff: letter 1 (yod): BHSA [hataf patah], MAM [sheva] | letter 2 (he): BHSA [], MAM [holam]
+  sp nmpr | gloss YHWH | voc_lex יְהוָה
+  morphemes: pfm  | vbs  | lex יֲהוָה | vbe  | nme ֜ | uvf  | prs 
+  atom slots: שֶׁ C; יֲהוָ֥ה JHWH/
+  MAM's key in BHSA: JHWH/ sgm st=a x45 (Genesis 3:14)
+  neighbour same: remove the hataf patah on letter 1 (yod) | יהוָה | JHWH/ sgm st=a x788 (Genesis 4:3)
+  neighbour same: sheva for hataf patah on letter 1 (yod) | יְהוָה | JHWH/ sgm st=a x5682 (Genesis 2:4)
+  same full analysis elsewhere: יְהוָה x5682 (Genesis 2:4); יהוָה x788 (Genesis 4:3); יְהוִה x270 (Deuteronomy 3:24); יְהֹוָה x45 (Genesis 3:14); יְהֹוִה x32 (1 Kings 2:26); יהֹוָה x6 (Genesis 18:17)
+  same letters: יְהוָה x5682 [JHWH/ sgm st=a x5682 same]; יהוָה x788 [JHWH/ sgm st=a x788 same]; יְהוִה x270 [JHWH/ sgm st=a x270 same]; יְהֹוָה x45 [JHWH/ sgm st=a x45 same]; יְהֹוִה x32 [JHWH/ sgm st=a x32 same]; יהֹוָה x6 [JHWH/ sgm st=a x6 same]; יֱהוִה x2 [JHWH/ sgm st=a x2 same]; יֱהֹוִה x1 [JHWH/ sgm st=a x1 same]; יהוִה x1 [JHWH/ sgm st=a x1 same]
+
+#130 slot 335260 | Psalms 145:2 | BRK[ piel impf p1sg prs=K
+  BHSA אֲבָרֲכֶ֑ךָּ (key אֲבָרֲכֶךָּ; >:AB@R:AKE92K.@) in atom אֲבָרֲכֶ֑ךָּ | prev יֹ֥ום | next וַאֲהַלְלָ֥ה | trailer ' ' | accents accent etnahta
+  MAM  אֲבָרְכֶ֑ךָּ (key אֲבָרְכֶךָּ) in atom אֲבָרְכֶ֑ךָּ
+  diff: letter 3 (resh): BHSA [hataf patah], MAM [sheva]
+  sp verb | gloss bless | voc_lex ברך
+  morphemes: pfm אֲ | vbs  | lex בָרֲך | vbe  | nme  | uvf ֶ | prs כָּ
+  MAM's key in BHSA: BRK[ piel impf p1sg prs=K x1 (Genesis 26:3)
+  neighbour same: sheva for hataf patah on letter 3 (resh) | אֲבָרְכֶךָּ | BRK[ piel impf p1sg prs=K x1 (Genesis 26:3) = MAM's key
+  same full analysis elsewhere: אֲבָרֶכְךָ x3 (Genesis 12:2); אֲבָרְכֶךָּ x1 (Genesis 26:3); אֲבָרֶכְכָה x1 (Genesis 27:7)
+  same letters: אֲבָרֶכְךָ x3 [BRK[ piel impf p1sg prs=K x3 same]; אֲבָרְכֶךָּ x1 [BRK[ piel impf p1sg prs=K x1 same]
+
+#131 slot 336507 | Job 1:21 | CM
+  BHSA שָׁ֔מָה (key שָׁמָה; C@80M@H) in atom שָׁ֔מָה | prev אָשׁ֣וּב | next יְהוָ֣ה | trailer ' ' | accents accent zaqef qatan
+  MAM  שָׁ֔מָּה (key שָׁמָּה) in atom שָׁ֔מָּה
+  diff: letter 2 (mem): BHSA [qamats], MAM [qamats, dagesh/mappiq]
+  sp advb | gloss there | voc_lex שָׁם
+  morphemes: pfm  | vbs  | lex שָׁם | vbe  | nme  | uvf ָה | prs 
+  MAM's key in BHSA: CM x139 (Genesis 14:10)
+  NEIGHBOUR [other lexeme]: sin dot for shin dot on letter 1 (shin) | שָׂמָה | FJM[ qal perf p3sgf x1 (1 Samuel 19:13)
+  neighbour same: add a dagesh or mappiq on letter 2 (mem) | שָׁמָּה | CM x139 (Genesis 14:10) = MAM's key
+  same full analysis elsewhere: שָׁם x547 (Genesis 2:8); שָּׁם x145 (Genesis 2:10); שָׁמָּה x139 (Genesis 14:10); שָּׁמָּה x1 (Hosea 2:17)
+  same letters: שָׁמָּה x139 [CM x139 same]; שַׁמָּה x45 [CMH/ sgf st=a x38 other lexeme, CMH=/ sgm st=a x7 other lexeme]; שְׁמָהּ x25 [CM/ sgm st=a prs=H x25 other lexeme]; שָׂמָהּ x3 [FJM[ qal perf p3sgm prs=H x3 other lexeme]; שָׂמָה x1 [FJM[ qal perf p3sgf x1 other lexeme]; שָּׂמָה x1 [FJM[ qal perf p3sgf x1 other lexeme]; שָּׁמָּה x1 [CM x1 same]; שַּׁמָּה x1 [CMH/ sgf st=a x1 other lexeme]
+
+#132 slot 338577 | Job 9:35 | DBR[ piel impf p1sg
+  BHSA אַֽ֭דַבְּרָה (key אַדַבְּרָה; 13>A45DAB.:R@H) in atom אַֽ֭דַבְּרָה | prev  | next וְלֹ֣א | trailer ' ' | accents accent dehi, point meteg
+  MAM  אֲֽ֭דַבְּרָה (key אֲדַבְּרָה) in atom אֲֽ֭דַבְּרָה
+  diff: letter 1 (alef): BHSA [patah], MAM [hataf patah]
+  sp verb | gloss speak | voc_lex דבר
+  morphemes: pfm אַ | vbs  | lex דַבְּר | vbe ָה | nme  | uvf  | prs 
+  MAM's key in BHSA: DBR[ piel impf p1sg x15 (Genesis 18:32); [other stem/tense] DBR[ piel wayq p1sg x1 (Daniel 10:16)
+  NEIGHBOUR [other stem/tense]: hataf patah for patah on letter 1 (alef) | אֲדַבְּרָה | DBR[ piel wayq p1sg x1 (Daniel 10:16) = MAM's key
+  neighbour same: hataf patah for patah on letter 1 (alef) | אֲדַבְּרָה | DBR[ piel impf p1sg x15 (Genesis 18:32) = MAM's key
+  same full analysis elsewhere: אֲדַבֵּר x35 (Exodus 23:22); אֲדַבְּרָה x15 (Genesis 18:32); אֲדַבֵּרָה x5 (Genesis 18:30); אֲדַבֶּר x2 (Numbers 12:6)
+  same letters: אֲדַבְּרָה x16 [DBR[ piel impf p1sg x15 same, DBR[ piel wayq p1sg x1 other stem/tense]; אֲדַבֵּרָה x5 [DBR[ piel impf p1sg x5 same]
+
+#133 slot 340674 | Job 19:5 | XRPH/ sgf st=a prs=J
+  BHSA חֶרְפָּתִּֽי (key חֶרְפָּתִּי; XER:P.@T.I75J) in atom חֶרְפָּתִּֽי | prev עָ֝לַ֗י | next  | trailer '׃ ' | accents point meteg
+  MAM  חֶרְפָּתִֽי׃ (key חֶרְפָּתִי) in atom חֶרְפָּתִֽי׃
+  diff: letter 4 (tav): BHSA [hiriq, dagesh/mappiq], MAM [hiriq]
+  sp subs | gloss reproach | voc_lex חֶרְפָּה
+  morphemes: pfm  | vbs  | lex חֶרְףָּ | vbe  | nme ֜תּ | uvf  | prs ִי
+  MAM's key in BHSA: XRPH/ sgf st=a prs=J x5 (Genesis 30:23)
+  neighbour same: remove the dagesh or mappiq on letter 4 (tav) | חֶרְפָּתִי | XRPH/ sgf st=a prs=J x5 (Genesis 30:23) = MAM's key
+  same full analysis elsewhere: חֶרְפָּתִי x5 (Genesis 30:23)
+  same letters: חֶרְפָּתִי x5 [XRPH/ sgf st=a prs=J x5 same]; חֵרַפְתִּי x1 [XRP[ piel perf p1sg x1 other lexeme]
+
+#134 slot 343091 | Job 29:25 | BXR[ qal impf p1sg
+  BHSA אֶֽבֲחַ֣ר (key אֶבֲחַר; >E45B:AXA74R) in atom אֶֽבֲחַ֣ר | prev  | next דַּרְכָּם֮ | trailer ' ' | accents point meteg, accent munah
+  MAM  אֶ֥בְחַ֣ר (key אֶבְחַר) in atom אֶ֥בְחַ֣ר
+  diff: letter 2 (bet): BHSA [hataf patah], MAM [sheva]
+  sp verb | gloss examine | voc_lex בחר
+  morphemes: pfm אֶ | vbs  | lex בֲחַר | vbe  | nme  | uvf  | prs 
+  MAM's key in BHSA: [other stem/tense] BXR[ qal wayq p1sg x3 (1 Kings 8:16); BXR[ qal impf p1sg x2 (Numbers 17:20)
+  NEIGHBOUR [other stem/tense]: sheva for hataf patah on letter 2 (bet) | אֶבְחַר | BXR[ qal wayq p1sg x3 (1 Kings 8:16) = MAM's key
+  neighbour same: sheva for hataf patah on letter 2 (bet) | אֶבְחַר | BXR[ qal impf p1sg x2 (Numbers 17:20) = MAM's key
+  same full analysis elsewhere: אֶבְחַר x2 (Numbers 17:20); אֶבְחֲרָה x2 (2 Samuel 17:1)
+  same letters: אֶבְחַר x5 [BXR[ qal wayq p1sg x3 other stem/tense, BXR[ qal impf p1sg x2 same]
+
+#135 slot 344443 | Job 34:10 | >JC/ plm st=c
+  BHSA אַֽנֲשֵׁ֥י (key אַנֲשֵׁי; >A45N:AC;71J) in atom אַֽנֲשֵׁ֥י | prev לָכֵ֤ן | next לֵבָ֗ב | trailer ' ' | accents point meteg, accent merkha
+  MAM  אַ֥נְשֵׁ֥י (key אַנְשֵׁי) in atom אַ֥נְשֵׁ֥י
+  diff: letter 2 (nun): BHSA [hataf patah], MAM [sheva]
+  sp subs | gloss man | voc_lex אִישׁ
+  morphemes: pfm  | vbs  | lex אַנֲשׁ | vbe  | nme ֵ֜י | uvf  | prs 
+  MAM's key in BHSA: >JC/ plm st=c x201 (Genesis 6:4)
+  neighbour same: sheva for hataf patah on letter 2 (nun) | אַנְשֵׁי | >JC/ plm st=c x201 (Genesis 6:4) = MAM's key
+  same full analysis elsewhere: אַנְשֵׁי x201 (Genesis 6:4)
+  same letters: אַנְשֵׁי x201 [>JC/ plm st=c x201 same]; אֲנָשַׁי x1 [>JC/ plm st=a prs=J x1 other person/number/gender/suffix]
+
+#136 slot 344682 | Job 34:33 | CLM[ piel impf p3sgm prs=H
+  BHSA יְשַׁלְמֶ֨נָּה (key יְשַׁלְמֶנָּה; J:CAL:ME63N.@H) in atom יְשַׁלְמֶ֨נָּה | prev הַֽמֵעִמְּךָ֬ | next כִּֽי־ | trailer ' ' | accents accent qadma
+  MAM  יְשַׁלְּמֶ֨נָּה׀ (key יְשַׁלְּמֶנָּה) in atom יְשַׁלְּמֶ֨נָּה׀
+  diff: letter 3 (lamed): BHSA [sheva], MAM [sheva, dagesh/mappiq]
+  sp verb | gloss be complete | voc_lex שׁלם
+  morphemes: pfm יְ | vbs  | lex שַׁלְם | vbe  | nme  | uvf ֶנּ | prs ָה
+  MAM's key in BHSA: CLM[ piel impf p3sgm prs=H x2 (Leviticus 24:18)
+  neighbour same: add a dagesh or mappiq on letter 3 (lamed) | יְשַׁלְּמֶנָּה | CLM[ piel impf p3sgm prs=H x2 (Leviticus 24:18) = MAM's key
+  same full analysis elsewhere: יְשַׁלְּמֶנָּה x2 (Leviticus 24:18)
+  same letters: יְשַׁלְּמֶנָּה x2 [CLM[ piel impf p3sgm prs=H x2 same]
+
+#137 slot 345255 | Job 37:6 | CLG/ sgm st=a
+  BHSA שֶּׁ֨לַג (key שֶּׁלַג; C.E63LAG) in atom לַשֶּׁ֨לַג | prev כִּ֤י | next יֹאמַ֗ר | trailer '׀ ' | accents accent qadma
+  MAM  שֶּׁ֨לֶג׀ (key שֶּׁלֶג) in atom לַשֶּׁ֨לֶג׀
+  diff: letter 2 (lamed): BHSA [patah], MAM [segol]
+  sp subs | gloss snow | voc_lex שֶׁלֶג
+  morphemes: pfm  | vbs  | lex שֶּׁלַג | vbe  | nme ֜ | uvf  | prs 
+  atom slots: לַ L;  H; שֶּׁ֨לַג CLG/
+  MAM's key in BHSA: CLG/ sgm st=a x5 (Isaiah 1:18)
+  neighbour same: segol for patah on letter 2 (lamed) | שֶּׁלֶג | CLG/ sgm st=a x5 (Isaiah 1:18) = MAM's key
+  same full analysis elsewhere: שָּׁלֶג x6 (Exodus 4:6); שֶּׁלֶג x5 (Isaiah 1:18); שֶׁלֶג x4 (Psalms 147:16); שָׁלֶג x2 (Job 6:16)
+  same letters: שָּׁלֶג x6 [CLG/ sgm st=a x6 same]; שֶּׁלֶג x5 [CLG/ sgm st=a x5 same]; שֶׁלֶג x5 [CLG/ sgm st=a x4 same, CLG/ sgm st=c x1 other state]; שָׁלֶג x3 [CLG/ sgm st=a x2 same, CLG=/ sgm st=a x1 other lexeme]
+
+#138 slot 349020 | Proverbs 8:20 | HLK[ piel impf p1sg
+  BHSA אֲהַלֵּ֑ך (key אֲהַלֵּך; >:AHAL.;92K) in atom אֲהַלֵּ֑ך | prev צְדָקָ֥ה | next בְּ֝תֹ֗וךְ | trailer ' ' | accents accent etnahta
+  MAM  אֲהַלֵּ֑ךְ (key אֲהַלֵּךְ) in atom אֲהַלֵּ֑ךְ
+  diff: letter 4 (final kaf): BHSA [], MAM [sheva]
+  sp verb | gloss walk | voc_lex הלך
+  morphemes: pfm אֲ | vbs  | lex הַלֵּך | vbe  | nme  | uvf  | prs 
+  MAM's key in BHSA: HLK[ piel impf p1sg x2 (Psalms 86:11)
+  neighbour same: add a sheva on letter 4 (final kaf) | אֲהַלֵּךְ | HLK[ piel impf p1sg x2 (Psalms 86:11) = MAM's key
+  same full analysis elsewhere: אֲהַלֵּךְ x2 (Psalms 86:11)
+  same letters: אָהֳלֶךָ x4 [>HL/ sgm st=a prs=K x4 other lexeme]; אֲהַלֵּךְ x2 [HLK[ piel impf p1sg x2 same]; אֶהֱלֹךְ x2 [HLK[ qal impf p1sg x2 other stem/tense]; אֹהָלֶךָ x1 [>HL/ sgm st=a prs=K x1 other lexeme]; אָהֳלֵךְ x1 [>HL/ sgm st=a prs=K= x1 other lexeme]; אָהָלְךָ x1 [>HL/ sgm st=a prs=K x1 other lexeme]
+
+#139 slot 349905 | Proverbs 11:30 | NPC/ plf st=a
+  BHSA נְפָשֹׂ֣ות (key נְפָשֹׂות; N:P@FO74WT) in atom נְפָשֹׂ֣ות | prev וְלֹקֵ֖חַ | next חָכָֽם | trailer ' ' | accents accent munah
+  MAM  נְפָשֹׁ֣ות (key נְפָשֹׁות) in atom נְפָשׁ֣וֹת
+  diff: letter 3 (shin): BHSA [holam, sin dot], MAM [holam, shin dot]
+  sp subs | gloss soul | voc_lex נֶפֶשׁ
+  morphemes: pfm  | vbs  | lex נְפָשׂ | vbe  | nme ֹ֜ות | uvf  | prs 
+  MAM's key in BHSA: NPC/ plf st=a x7 (Ezekiel 13:18)
+  neighbour same: shin dot for sin dot on letter 3 (shin) | נְפָשֹׁות | NPC/ plf st=a x7 (Ezekiel 13:18) = MAM's key
+  same full analysis elsewhere: נְפָשֹׁות x7 (Ezekiel 13:18); נְּפָשֹׁות x6 (Leviticus 18:29); נְפָשֹׁת x2 (Exodus 12:4); נְפָשִׁים x1 (Ezekiel 13:20)
+  same letters: נְפָשֹׁות x7 [NPC/ plf st=a x7 same]; נְּפָשֹׁות x6 [NPC/ plf st=a x6 same]; נַפְשֹׁות x5 [NPC/ plf st=c x5 other state]
+
+#140 slot 350739 | Proverbs 15:3 | W
+  BHSA ו (key ו; W-) in atom וטֹובִֽים | prev רָעִ֥ים | next  | trailer '' | accents -
+  MAM  וְ (key וְ) in atom וְטוֹבִֽים׃
+  diff: letter 1 (vav): BHSA [], MAM [sheva]
+  sp conj | gloss and | voc_lex וְ
+  morphemes: pfm  | vbs  | lex ו | vbe  | nme  | uvf  | prs 
+  atom slots: ו W; טֹובִֽים VWB/
+  MAM's key in BHSA: W x23914 (Genesis 1:1)
+  neighbour same: add a dagesh or mappiq on letter 1 (vav) | וּ | W x8195 (Genesis 1:4)
+  neighbour same: add a sheva on letter 1 (vav) | וְ | W x23914 (Genesis 1:1) = MAM's key
+  neighbour same: add a hataf patah on letter 1 (vav) | וֲ | W x1 (Numbers 10:9)
+  neighbour same: add a hiriq on letter 1 (vav) | וִ | W x454 (Genesis 1:6)
+  neighbour same: add a tsere on letter 1 (vav) | וֵ | W x31 (Genesis 24:3)
+  neighbour same: add a segol on letter 1 (vav) | וֶ | W x119 (Genesis 12:2)
+  neighbour same: add a patah on letter 1 (vav) | וַ | W x15987 (Genesis 1:3)
+  neighbour same: add a qamats on letter 1 (vav) | וָ | W x1304 (Genesis 1:2)
+  same full analysis elsewhere: וְ x23914 (Genesis 1:1); וַ x15987 (Genesis 1:3); וּ x8195 (Genesis 1:4); וָ x1304 (Genesis 1:2); וִ x454 (Genesis 1:6); וֶ x119 (Genesis 12:2)
+  same letters: וְ x23914 [W x23914 same]; וַ x15987 [W x15987 same]; וּ x8195 [W x8195 same]; וָ x1304 [W x1304 same]; וִ x454 [W x454 same]; וֶ x119 [W x119 same]; וֵ x31 [W x31 same]; וִּ x2 [W x2 same]; וֲ x1 [W x1 same]
+
+#141 slot 350876 | Proverbs 15:18 | >RK/ sgm st=c
+  BHSA אֶ֥רֶך (key אֶרֶך; >E71REK) in atom וְאֶ֥רֶך | prev מָדֹ֑ון | next אַ֝פַּ֗יִם | trailer ' ' | accents accent merkha
+  MAM  אֶ֥רֶךְ (key אֶרֶךְ) in atom וְאֶ֥רֶךְ
+  diff: letter 3 (final kaf): BHSA [], MAM [sheva]
+  sp adjv | gloss long | voc_lex אָרֵךְ
+  morphemes: pfm  | vbs  | lex אֶרֶך | vbe  | nme ֜ | uvf  | prs 
+  atom slots: וְ W; אֶ֥רֶך >RK/
+  MAM's key in BHSA: >RK/ sgm st=c x14 (Exodus 34:6); [other lexeme] >RK===/ sg st=a x1 (Genesis 10:10)
+  NEIGHBOUR [other lexeme]: add a sheva on letter 3 (final kaf) | אֶרֶךְ | >RK===/ sg st=a x1 (Genesis 10:10) = MAM's key
+  neighbour same: add a sheva on letter 3 (final kaf) | אֶרֶךְ | >RK/ sgm st=c x14 (Exodus 34:6) = MAM's key
+  same full analysis elsewhere: אֶרֶךְ x14 (Exodus 34:6)
+  same letters: אֹרֶךְ x62 [>RK=/ sgm st=a x32 other lexeme, >RK=/ sgm st=c x30 other lexeme]; אֶרֶךְ x15 [>RK/ sgm st=c x14 same, >RK===/ sg st=a x1 other lexeme]
+
+#142 slot 351883 | Proverbs 19:4 | R<=/ sgm st=a prs=HW
+  BHSA רֵ֥עהוּ (key רֵעהוּ; R;71<HW.) in atom מֵרֵ֥עהוּ | prev וְ֝דָ֗ל | next יִפָּרֵֽד | trailer ' ' | accents accent merkha
+  MAM  רֵעֵ֥הוּ (key רֵעֵהוּ) in atom מֵרֵעֵ֥הוּ
+  diff: letter 2 (ayin): BHSA [], MAM [tsere]
+  sp subs | gloss fellow | voc_lex רֵעַ
+  morphemes: pfm  | vbs  | lex רֵע | vbe  | nme ֜ | uvf  | prs הוּ
+  atom slots: מֵ MN; רֵ֥עהוּ R<=/
+  MAM's key in BHSA: R<=/ sgm st=a prs=HW x115 (Genesis 11:3); [other person/number/gender/suffix] R<=/ plm st=a prs=HW x3 (1 Samuel 30:26)
+  NEIGHBOUR [other person/number/gender/suffix]: add a tsere on letter 2 (ayin) | רֵעֵהוּ | R<=/ plm st=a prs=HW x3 (1 Samuel 30:26) = MAM's key
+  neighbour same: add a tsere on letter 2 (ayin) | רֵעֵהוּ | R<=/ sgm st=a prs=HW x115 (Genesis 11:3) = MAM's key
+  same full analysis elsewhere: רֵעֵהוּ x115 (Genesis 11:3)
+  same letters: רֵעֵהוּ x118 [R<=/ sgm st=a prs=HW x115 same, R<=/ plm st=a prs=HW x3 other person/number/gender/suffix]
+
+#143 slot 351952 | Proverbs 19:11 | TP>RT/ sgf st=a prs=W
+  BHSA תִפאַרְתֹּ֗ו (key תִפאַרְתֹּו; TIP>AR:T.O81W) in atom וְ֝תִפאַרְתֹּ֗ו | prev אַפֹּ֑ו | next עֲבֹ֣ר | trailer ' ' | accents accent revia
+  MAM  תִפְאַרְתֹּ֗ו (key תִפְאַרְתֹּו) in atom וְ֝תִפְאַרְתּ֗וֹ
+  diff: letter 2 (pe): BHSA [], MAM [sheva]
+  sp subs | gloss splendour | voc_lex תִּפְאֶרֶת
+  morphemes: pfm  | vbs  | lex תִפאַרְ | vbe  | nme ֜תּ | uvf  | prs ֹו
+  atom slots: וְ֝ W; תִפאַרְתֹּ֗ו TP>RT/
+  MAM's key in BHSA: TP>RT/ sgf st=a prs=W x3 (Isaiah 28:1)
+  neighbour same: add a sheva on letter 2 (pe) | תִפְאַרְתֹּו | TP>RT/ sgf st=a prs=W x3 (Isaiah 28:1) = MAM's key
+  same full analysis elsewhere: תִפְאַרְתֹּו x3 (Isaiah 28:1); תִּפְאַרְתֹּו x1 (Isaiah 63:12)
+  same letters: תִפְאַרְתֹּו x3 [TP>RT/ sgf st=a prs=W x3 same]; תִּפְאַרְתֹּו x1 [TP>RT/ sgf st=a prs=W x1 same]
+
+#144 slot 352099 | Proverbs 19:27 | XDL[ qal impv p2sgm
+  BHSA חַֽדַל (key חַדַל; XA45DAL) in atom חַֽדַל־ | prev  | next בְּ֭נִי | trailer '־' | accents point meteg
+  MAM  חֲֽדַל (key חֲדַל) in atom חֲֽדַל־
+  diff: letter 1 (het): BHSA [patah], MAM [hataf patah]
+  sp verb | gloss cease | voc_lex חדל
+  morphemes: pfm  | vbs  | lex חַדַל | vbe  | nme  | uvf  | prs 
+  MAM's key in BHSA: XDL[ qal impv p2sgm x5 (Exodus 14:12); [other lexeme] XDL/ sgm st=c x1 (Isaiah 53:3)
+  NEIGHBOUR [other lexeme]: hataf patah for patah on letter 1 (het) | חֲדַל | XDL/ sgm st=c x1 (Isaiah 53:3) = MAM's key
+  NEIGHBOUR [other stem/tense]: qamats for patah on letter 1 (het) | חָדַל | XDL[ qal perf p3sgm x7 (Genesis 18:11)
+  neighbour same: hataf patah for patah on letter 1 (het) | חֲדַל | XDL[ qal impv p2sgm x5 (Exodus 14:12) = MAM's key
+  same full analysis elsewhere: חֲדַל x5 (Exodus 14:12); חֲדָל x2 (Jeremiah 40:4)
+  same letters: חָדַל x7 [XDL[ qal perf p3sgm x7 other stem/tense]; חֲדַל x6 [XDL[ qal impv p2sgm x5 same, XDL/ sgm st=c x1 other lexeme]; חֲדָל x2 [XDL[ qal impv p2sgm x2 same]; חָדֵל x2 [XDL/ sgm st=a x2 other lexeme]; חֲדֹל x1 [XDL[ qal infc st=a x1 other stem/tense]; חָדֶל x1 [XDL=/ sgm st=a x1 other lexeme]
+
+#145 slot 352130 | Proverbs 20:1 | JJN/ sgm st=a
+  BHSA יַּין (key יַּין; J.AJN) in atom הַ֭יַּין | prev לֵ֣ץ | next הֹמֶ֣ה | trailer ' ' | accents -
+  MAM  יַּיִן (key יַּיִן) in atom הַ֭יַּיִן
+  diff: letter 2 (yod): BHSA [], MAM [hiriq]
+  sp subs | gloss wine | voc_lex יַיִן
+  morphemes: pfm  | vbs  | lex יַּין | vbe  | nme ֜ | uvf  | prs 
+  atom slots: הַ֭ H; יַּין JJN/
+  MAM's key in BHSA: JJN/ sgm st=a x30 (Genesis 9:21)
+  NEIGHBOUR [other state]: tsere for patah on letter 1 (yod) | יֵּין | JJN/ sgm st=c x1 (Daniel 1:5)
+  neighbour same: add a hiriq on letter 2 (yod) | יַּיִן | JJN/ sgm st=a x30 (Genesis 9:21) = MAM's key
+  same full analysis elsewhere: יַיִן x56 (Genesis 19:32); יַּיִן x30 (Genesis 9:21); יָיִן x24 (Genesis 14:18); יָּיִן x10 (Genesis 49:12)
+  same letters: יַיִן x56 [JJN/ sgm st=a x56 same]; יַּיִן x30 [JJN/ sgm st=a x30 same]; יָיִן x24 [JJN/ sgm st=a x24 same]; יָּיִן x10 [JJN/ sgm st=a x10 same]; יֵין x9 [JJN/ sgm st=c x9 other state]; יֵּין x1 [JJN/ sgm st=c x1 other state]
+
+#146 slot 354794 | Proverbs 28:22 | BHL[ nif ptca sgm st=a
+  BHSA נִֽבֳהָ֥ל (key נִבֳהָל; NI45B:@H@71L) in atom נִֽבֳהָ֥ל | prev  | next לַהֹ֗ון | trailer ' ' | accents point meteg, accent merkha
+  MAM  נִ֥בְהָֽל (key נִבְהָל) in atom נִ֥בְהָֽל־
+  diff: letter 2 (bet): BHSA [hataf qamats], MAM [sheva]
+  sp verb | gloss disturb | voc_lex בהל
+  morphemes: pfm  | vbs נִ | lex בֳהָל | vbe  | nme ֜ | uvf  | prs 
+  MAM's key in BHSA: BHL[ nif ptca sgm st=a x1 (Psalms 30:8)
+  neighbour same: sheva for hataf qamats on letter 2 (bet) | נִבְהָל | BHL[ nif ptca sgm st=a x1 (Psalms 30:8) = MAM's key
+  same full analysis elsewhere: נִבְהָל x1 (Psalms 30:8)
+  same letters: נִבְהַל x1 [BHL[ nif perf p3sgm x1 other stem/tense]; נִבְהָל x1 [BHL[ nif ptca sgm st=a x1 same]
+
+#147 slot 355615 | Proverbs 31:12 | XJJM/ plm st=a prs=H
+  BHSA חַיֶּֽיה (key חַיֶּיה; XAJ.E75JH) in atom חַיֶּֽיה | prev יְמֵ֣י | next  | trailer '׃ ' | accents point meteg
+  MAM  חַיֶּֽיהָ׃ (key חַיֶּיהָ) in atom חַיֶּֽיהָ׃
+  diff: letter 4 (he): BHSA [], MAM [qamats]
+  sp subs | gloss life | voc_lex חַיִּים
+  morphemes: pfm  | vbs  | lex חַיּ | vbe  | nme ֶ֜י | uvf  | prs ה
+  MAM's key in BHSA: XJJM/ plm st=a prs=H x1 (Leviticus 18:18)
+  neighbour same: add a qamats on letter 4 (he) | חַיֶּיהָ | XJJM/ plm st=a prs=H x1 (Leviticus 18:18) = MAM's key
+  same full analysis elsewhere: חַיֶּיהָ x1 (Leviticus 18:18)
+  same letters: חַיֶּיהָ x1 [XJJM/ plm st=a prs=H x1 same]
+
+#148 slot 356921 | Ruth 3:9 | >T= p2sgf
+  BHSA אָ֑תּ (key אָתּ; >@92T.) in atom אָ֑תּ | prev מִי־ | next וַתֹּ֗אמֶר | trailer ' ' | accents accent etnahta
+  MAM  אָ֑תְּ (key אָתְּ) in atom אָ֑תְּ
+  diff: letter 2 (tav): BHSA [dagesh/mappiq], MAM [sheva, dagesh/mappiq]
+  sp prps | gloss you | voc_lex אַתְּ
+  morphemes: pfm  | vbs  | lex אָתּ | vbe  | nme  | uvf  | prs 
+  MAM's key in BHSA: >T= p2sgf x5 (Genesis 12:11)
+  neighbour same: add a sheva on letter 2 (tav) | אָתְּ | >T= p2sgf x5 (Genesis 12:11) = MAM's key
+  same full analysis elsewhere: אַתְּ x44 (Genesis 24:23); אָתְּ x5 (Genesis 12:11)
+  same letters: אֶת x8512 [>T x8230 other lexeme, >T== x282 other lexeme]; אֵת x1169 [>T x1028 other lexeme, >T== x141 other lexeme]; אַתְּ x47 [>T= p2sgf x44 same, >TH p2sgm x3 other lexeme]; אָתְּ x5 [>T= p2sgf x5 same]; אֹת x4 [>WT/ sg st=a x4 other lexeme]
+
+#149 slot 358786 | Song of Songs 6:8 | MLKH/ plf st=a
+  BHSA מְּלָכֹ֔ות (key מְּלָכֹות; M.:L@KO80WT) in atom מְּלָכֹ֔ות | prev הֵ֨מָּה֙ | next וּשְׁמֹנִ֖ים | trailer ' ' | accents accent zaqef qatan
+  MAM  מְלָכֹ֔ות (key מְלָכֹות) in atom מְלָכ֔וֹת
+  diff: letter 1 (mem): BHSA [sheva, dagesh/mappiq], MAM [sheva]
+  sp subs | gloss queen | voc_lex מַלְכָּה
+  morphemes: pfm  | vbs  | lex מְּלָך | vbe  | nme ֹ֜ות | uvf  | prs 
+  MAM's key in BHSA: MLKH/ plf st=a x1 (Song of Songs 6:9)
+  neighbour same: remove the dagesh or mappiq on letter 1 (mem) | מְלָכֹות | MLKH/ plf st=a x1 (Song of Songs 6:9) = MAM's key
+  same full analysis elsewhere: מְלָכֹות x1 (Song of Songs 6:9)
+  same letters: מַלְכוּת x39 [MLKWT/ sgf st=c x26 other lexeme, MLKWT/ sgf st=a x13 other lexeme]; מַּלְכוּת x7 [MLKWT/ sgf st=a x7 other lexeme]; מְלָכֹות x1 [MLKH/ plf st=a x1 same]
+
+#150 slot 361175 | Ecclesiastes 5:17 | >KL[ qal infc st=a
+  BHSA אֶכֹול (key אֶכֹול; >EKOWL) in atom לֶֽאֶכֹול־ | prev יָפֶ֣ה | next וְ֠לִשְׁתֹּות | trailer '־' | accents -
+  MAM  אֱכֹול (key אֱכֹול) in atom לֶֽאֱכוֹל־
+  diff: letter 1 (alef): BHSA [segol], MAM [hataf segol]
+  sp verb | gloss eat | voc_lex אכל
+  morphemes: pfm  | vbs  | lex אֶכֹול | vbe  | nme ֜ | uvf  | prs 
+  atom slots: לֶֽ L; אֶכֹול >KL[
+  MAM's key in BHSA: >KL[ qal infc st=a x10 (1 Samuel 20:5); [other stem/tense] >KL[ qal impv p2sgm x4 (1 Samuel 28:22); [other state] >KL[ qal infc st=c x2 (2 Samuel 16:2)
+  NEIGHBOUR [other stem/tense]: hataf segol for segol on letter 1 (alef) | אֱכֹול | >KL[ qal impv p2sgm x4 (1 Samuel 28:22) = MAM's key
+  NEIGHBOUR [other state]: hataf segol for segol on letter 1 (alef) | אֱכֹול | >KL[ qal infc st=c x2 (2 Samuel 16:2) = MAM's key
+  NEIGHBOUR [other stem/tense]: qamats for segol on letter 1 (alef) | אָכֹול | >KL[ qal infa st=a x10 (Genesis 31:15)
+  neighbour same: hataf segol for segol on letter 1 (alef) | אֱכֹול | >KL[ qal infc st=a x10 (1 Samuel 20:5) = MAM's key
+  same full analysis elsewhere: אֱכֹל x35 (Genesis 24:33); אֱכֹול x10 (1 Samuel 20:5); אֲכָל x1 (Genesis 3:11); אֲכֹל x1 (Deuteronomy 12:23); אָכְלָה x1 (1 Samuel 1:9)
+  same letters: אֱכֹול x16 [>KL[ qal infc st=a x10 same, >KL[ qal impv p2sgm x4 other stem/tense, >KL[ qal infc st=c x2 other state]; אָכֹול x10 [>KL[ qal infa st=a x10 other stem/tense]
+
+#151 slot 362494 | Ecclesiastes 9:7 | CTH[ qal impv p2sgm
+  BHSA שֲׁתֵ֥ה (key שֲׁתֵה; C:AT;71H) in atom וּֽשֲׁתֵ֥ה | prev לַחְמֶ֔ךָ | next בְלֶב־ | trailer ' ' | accents accent merkha
+  MAM  שְׁתֵ֥ה (key שְׁתֵה) in atom וּֽשְׁתֵ֥ה
+  diff: letter 1 (shin): BHSA [hataf patah, shin dot], MAM [sheva, shin dot]
+  sp verb | gloss drink | voc_lex שׁתה
+  morphemes: pfm  | vbs  | lex שֲׁתֵה | vbe  | nme  | uvf  | prs 
+  atom slots: וּֽ W; שֲׁתֵ֥ה CTH[
+  MAM's key in BHSA: CTH[ qal impv p2sgm x8 (Genesis 24:14)
+  neighbour same: sheva for hataf patah on letter 1 (shin) | שְׁתֵה | CTH[ qal impv p2sgm x8 (Genesis 24:14) = MAM's key
+  same full analysis elsewhere: שְׁתֵה x8 (Genesis 24:14)
+  same letters: שָׁתָה x10 [CTH[ qal perf p3sgm x8 other stem/tense, CJT[ qal perf p3sgf x2 other lexeme]; שְׁתֵה x8 [CTH[ qal impv p2sgm x8 same]; שֹׁתֶה x6 [CTH[ qal ptca sgm st=a x6 other stem/tense]; שָׁתֹה x3 [CTH[ qal infa st=a x3 other stem/tense]; שַׁתִּהָ x1 [CJT[ qal perf p1sg prs=H x1 other lexeme]; שַׁתָּה x1 [CJT[ qal perf p2sgm x1 other lexeme]; שֹׁתָה x1 [CTH[ qal ptca sgf st=a x1 other stem/tense]
+
+#152 slot 363137 | Ecclesiastes 11:6 | JD<[ qal ptca sgm st=a
+  BHSA יֹודֵ֜ע (key יֹודֵע; JOWD;61<) in atom יֹודֵ֜ע | prev אֵֽינְךָ֨ | next אֵ֣י | trailer ' ' | accents accent geresh
+  MAM  יֹודֵ֜עַ (key יֹודֵעַ) in atom יוֹדֵ֜עַ
+  diff: letter 4 (ayin): BHSA [], MAM [patah]
+  sp verb | gloss know | voc_lex ידע
+  morphemes: pfm  | vbs  | lex יֹודֵע | vbe  | nme ֜ | uvf  | prs 
+  MAM's key in BHSA: JD<[ qal ptca sgm st=a x27 (1 Samuel 26:12); [other state] JD<[ qal ptca sgm st=c x1 (Isaiah 29:11)
+  NEIGHBOUR [other state]: add a patah on letter 4 (ayin) | יֹודֵעַ | JD<[ qal ptca sgm st=c x1 (Isaiah 29:11) = MAM's key
+  neighbour same: add a patah on letter 4 (ayin) | יֹודֵעַ | JD<[ qal ptca sgm st=a x27 (1 Samuel 26:12) = MAM's key
+  same full analysis elsewhere: יֹודֵעַ x27 (1 Samuel 26:12); יֹדֵעַ x18 (Genesis 3:5)
+  same letters: יֹודֵעַ x28 [JD<[ qal ptca sgm st=a x27 same, JD<[ qal ptca sgm st=c x1 other state]; יִוָּדַע x11 [JD<[ nif impf p3sgm x11 other stem/tense]; יִוָּדֵעַ x1 [JD<[ nif impf p3sgm x1 other stem/tense]; יִּוָּדַע x1 [JD<[ nif wayq p3sgm x1 other stem/tense]
+
+#153 slot 363726 | Lamentations 1:11 | BQC[ piel ptca plm st=a
+  BHSA מְבַקְּשִׁ֣ים (key מְבַקְּשִׁים; M:BAQ.:CI74JM) in atom מְבַקְּשִׁ֣ים | prev נֶאֱנָחִים֙ | next לֶ֔חֶם | trailer ' ' | accents accent munah
+  MAM  מְבַקְשִׁ֣ים (key מְבַקְשִׁים) in atom מְבַקְשִׁ֣ים
+  diff: letter 3 (qof): BHSA [sheva, dagesh/mappiq], MAM [sheva]
+  sp verb | gloss seek | voc_lex בקשׁ
+  morphemes: pfm מְ | vbs  | lex בַקְּשׁ | vbe  | nme ִ֜ים | uvf  | prs 
+  MAM's key in BHSA: BQC[ piel ptca plm st=a x11 (Exodus 4:19)
+  neighbour same: remove the dagesh or mappiq on letter 3 (qof) | מְבַקְשִׁים | BQC[ piel ptca plm st=a x11 (Exodus 4:19) = MAM's key
+  same full analysis elsewhere: מְבַקְשִׁים x11 (Exodus 4:19)
+  same letters: מְבַקְשִׁים x11 [BQC[ piel ptca plm st=a x11 same]
+
+#154 slot 369235 | Esther 9:2 | >XCWRWC/ sgm st=a
+  BHSA אֳחַשְׁוֵרֹ֔ושׁ (key אֳחַשְׁוֵרֹושׁ; >:@XAC:W;RO80WC) in atom אֳחַשְׁוֵרֹ֔ושׁ | prev הַמֶּ֣לֶךְ | next לִשְׁלֹ֣חַ | trailer ' ' | accents accent zaqef qatan
+  MAM  אֲחַשְׁוֵרֹ֔ושׁ (key אֲחַשְׁוֵרֹושׁ) in atom אֲחַשְׁוֵר֔וֹשׁ
+  diff: letter 1 (alef): BHSA [hataf qamats], MAM [hataf patah]
+  sp nmpr | gloss Ahasuerus | voc_lex אֲחַשְׁוֵרֹושׁ
+  morphemes: pfm  | vbs  | lex אֳחַשְׁוֵרֹושׁ | vbe  | nme ֜ | uvf  | prs 
+  MAM's key in BHSA: >XCWRWC/ sgm st=a x25 (Esther 1:1)
+  neighbour same: hataf patah for hataf qamats on letter 1 (alef) | אֲחַשְׁוֵרֹושׁ | >XCWRWC/ sgm st=a x25 (Esther 1:1) = MAM's key
+  same full analysis elsewhere: אֲחַשְׁוֵרֹושׁ x25 (Esther 1:1); אֲחַשְׁוֵרֹשׁ x4 (Esther 2:21)
+  same letters: אֲחַשְׁוֵרֹושׁ x25 [>XCWRWC/ sgm st=a x25 same]
+
+#155 slot 370733 | Daniel 2:10 | Aram >NC/ sgm st=a
+  BHSA אֲנָשׁ֙ (key אֲנָשׁ; >:AN@C03) in atom אֲנָשׁ֙ | prev אִיתַ֤י | next עַל־ | trailer ' ' | accents accent pashta
+  MAM  אֱנָשׁ֙ (key אֱנָשׁ) in atom אֱנָשׁ֙
+  diff: letter 1 (alef): BHSA [hataf patah], MAM [hataf segol]
+  sp subs | gloss mankind | voc_lex אֱנָשׁ
+  morphemes: pfm  | vbs  | lex אֲנָשׁ | vbe  | nme ֜ | uvf  | prs 
+  MAM's key in BHSA: Aram >NC/ sgm st=a x10 (Daniel 3:10); [other state] Aram >NC/ sgm st=c x1 (Ezra 4:11)
+  NEIGHBOUR [other state]: hataf segol for hataf patah on letter 1 (alef) | אֱנָשׁ | Aram >NC/ sgm st=c x1 (Ezra 4:11) = MAM's key
+  neighbour same: hataf segol for hataf patah on letter 1 (alef) | אֱנָשׁ | Aram >NC/ sgm st=a x10 (Daniel 3:10) = MAM's key
+  same full analysis elsewhere: אֱנָשׁ x10 (Daniel 3:10)
+  same letters: אֱנָשׁ x11 [Aram >NC/ sgm st=a x10 same, Aram >NC/ sgm st=c x1 other state]
+
+#156 slot 371180 | Daniel 2:31 | Aram DKN sg
+  BHSA דִּכֵּ֥ן (key דִּכֵּן; D.IK.;71N) in atom דִּכֵּ֥ן | prev צַלְמָ֨א | next רַ֛ב | trailer ' ' | accents accent merkha
+  MAM  דִכֵּ֥ן (key דִכֵּן) in atom דִכֵּ֥ן
+  diff: letter 1 (dalet): BHSA [hiriq, dagesh/mappiq], MAM [hiriq]
+  sp prde | gloss that | voc_lex דִּכֵּן
+  morphemes: pfm  | vbs  | lex דִּכֵּן | vbe  | nme  | uvf  | prs 
+  MAM's key in BHSA: Aram DKN sg x2 (Daniel 7:20)
+  neighbour same: remove the dagesh or mappiq on letter 1 (dalet) | דִכֵּן | Aram DKN sg x2 (Daniel 7:20) = MAM's key
+  same full analysis elsewhere: דִכֵּן x2 (Daniel 7:20)
+  same letters: דִכֵּן x2 [Aram DKN sg x2 same]
+
+#157 slot 371267 | Daniel 2:35 | Aram CKX[ htpe perf p3sgm
+  BHSA הִשְׁתֲּכַ֣ח (key הִשְׁתֲּכַח; HIC:T.:AKA74X) in atom הִשְׁתֲּכַ֣ח | prev לָא־ | next לְהֹ֑ון | trailer ' ' | accents accent munah
+  MAM  הִשְׁתְּכַ֣ח (key הִשְׁתְּכַח) in atom הִשְׁתְּכַ֣ח
+  diff: letter 3 (tav): BHSA [hataf patah, dagesh/mappiq], MAM [sheva, dagesh/mappiq]
+  sp verb | gloss find | voc_lex שׁכח
+  morphemes: pfm  | vbs הִשְׁ | lex תֲּכַח | vbe  | nme  | uvf  | prs 
+  MAM's key in BHSA: Aram CKX[ htpe perf p3sgm x2 (Daniel 6:24)
+  neighbour same: sheva for hataf patah on letter 3 (tav) | הִשְׁתְּכַח | Aram CKX[ htpe perf p3sgm x2 (Daniel 6:24) = MAM's key
+  same full analysis elsewhere: הִשְׁתְּכַח x2 (Daniel 6:24)
+  same letters: הִשְׁתְּכַח x2 [Aram CKX[ htpe perf p3sgm x2 same]
+
+#158 slot 371499 | Daniel 2:45 | Aram DQQ[ haf perf p3sgf
+  BHSA הַדֶּקֶת (key הַדֶּקֶת; HAD.EQET) in atom וְ֠הַדֶּקֶת | prev בִידַ֗יִן | next פַּרְזְלָ֨א | trailer ' ' | accents -
+  MAM  הַדֵּ֠קֶת (key הַדֵּקֶת) in atom וְ֠הַדֵּ֠קֶת
+  diff: letter 2 (dalet): BHSA [segol, dagesh/mappiq], MAM [tsere, dagesh/mappiq]
+  sp verb | gloss crush | voc_lex דקק
+  morphemes: pfm  | vbs הַ | lex דֶּק | vbe ֶת | nme  | uvf  | prs 
+  atom slots: וְ֠ W; הַדֶּקֶת DQQ[
+  MAM's key in BHSA: Aram DQQ[ haf perf p3sgf x1 (Daniel 2:34)
+  neighbour same: tsere for segol on letter 2 (dalet) | הַדֵּקֶת | Aram DQQ[ haf perf p3sgf x1 (Daniel 2:34) = MAM's key
+  same full analysis elsewhere: הַדֵּקֶת x1 (Daniel 2:34)
+  same letters: הַדֵּקֶת x1 [Aram DQQ[ haf perf p3sgf x1 same]
+
+#159 slot 371962 | Daniel 3:15 | Aram DJ
+  BHSA דֵּ֥י (key דֵּי; D.;71J) in atom דֵּ֥י | prev אֱלָ֔הּ | next יְשֵֽׁיזְבִנְכֹ֖ון | trailer ' ' | accents accent merkha
+  MAM  דִּ֥י (key דִּי) in atom דִּ֥י
+  diff: letter 1 (dalet): BHSA [tsere, dagesh/mappiq], MAM [hiriq, dagesh/mappiq]
+  sp prep | gloss <relative> | voc_lex דִּי
+  morphemes: pfm  | vbs  | lex דֵּי | vbe  | nme  | uvf  | prs 
+  MAM's key in BHSA: Aram DJ x305 (Jeremiah 10:11)
+  neighbour same: hiriq for tsere on letter 1 (dalet) | דִּי | Aram DJ x305 (Jeremiah 10:11) = MAM's key
+  same full analysis elsewhere: דִּי x305 (Jeremiah 10:11); דִי x38 (Daniel 2:11)
+  same letters: דִּי x305 [Aram DJ x305 same]; דִי x38 [Aram DJ x38 same]
+
+#160 slot 372247 | Daniel 3:27 | Aram SRBL/ plm st=a prs=HWN
+  BHSA סָרְבָּלֵיהֹ֖ון (key סָרְבָּלֵיהֹון; S@R:B.@L;JHO73WN) in atom וְסָרְבָּלֵיהֹ֖ון | prev הִתְחָרַ֔ךְ | next לָ֣א | trailer ' ' | accents accent tipeha
+  MAM  סַרְבָּלֵיהֹ֖ון (key סַרְבָּלֵיהֹון) in atom וְסַרְבָּלֵיה֖וֹן
+  diff: letter 1 (samekh): BHSA [qamats], MAM [patah]
+  sp subs | gloss trousers | voc_lex סַרְבָּל
+  morphemes: pfm  | vbs  | lex סָרְבָּל | vbe  | nme ֵ֜י | uvf  | prs הֹון
+  atom slots: וְ W; סָרְבָּלֵיהֹ֖ון SRBL/
+  MAM's key in BHSA: Aram SRBL/ plm st=a prs=HWN x1 (Daniel 3:21)
+  neighbour same: patah for qamats on letter 1 (samekh) | סַרְבָּלֵיהֹון | Aram SRBL/ plm st=a prs=HWN x1 (Daniel 3:21) = MAM's key
+  same full analysis elsewhere: סַרְבָּלֵיהֹון x1 (Daniel 3:21)
+  same letters: סַרְבָּלֵיהֹון x1 [Aram SRBL/ plm st=a prs=HWN x1 same]
+
+#161 slot 372328 | Daniel 3:29 | Aram >LH/ sgm st=a
+  BHSA אֱלָ֣ה (key אֱלָה; >:EL@74H) in atom אֱלָ֣ה | prev אִיתַי֙ | next אָחֳרָ֔ן | trailer ' ' | accents accent munah
+  MAM  אֱלָ֣הּ (key אֱלָהּ) in atom אֱלָ֣הּ
+  diff: letter 3 (he): BHSA [], MAM [dagesh/mappiq]
+  sp subs | gloss god | voc_lex אֱלָהּ
+  morphemes: pfm  | vbs  | lex אֱלָה | vbe  | nme ֜ | uvf  | prs 
+  MAM's key in BHSA: [other state] Aram >LH/ sgm st=c x18 (Daniel 2:18); Aram >LH/ sgm st=a x6 (Daniel 2:28)
+  NEIGHBOUR [other state]: add a dagesh or mappiq on letter 3 (he) | אֱלָהּ | Aram >LH/ sgm st=c x18 (Daniel 2:18) = MAM's key
+  neighbour same: add a dagesh or mappiq on letter 3 (he) | אֱלָהּ | Aram >LH/ sgm st=a x6 (Daniel 2:28) = MAM's key
+  same full analysis elsewhere: אֱלָהּ x6 (Daniel 2:28)
+  same letters: אֱלָהּ x24 [Aram >LH/ sgm st=c x18 other state, Aram >LH/ sgm st=a x6 same]; אֵלֶּה x1 [Aram >LH pl x1 other lexeme]
+
+#162 slot 373280 | Daniel 5:6 | Aram R<JWN/ plm st=a prs=HJ
+  BHSA רַעיֹנֹ֖הִי (key רַעיֹנֹהִי; RA<JONO73HIJ) in atom וְרַעיֹנֹ֖הִי | prev שְׁנֹ֔והִי | next יְבַהֲלוּנֵּ֑הּ | trailer ' ' | accents accent tipeha
+  MAM  רַעְיֹנֹ֖הִי (key רַעְיֹנֹהִי) in atom וְרַעְיֹנֹ֖הִי
+  diff: letter 2 (ayin): BHSA [], MAM [sheva]
+  sp subs | gloss thought | voc_lex רַעְיֹון
+  morphemes: pfm  | vbs  | lex רַעיֹן | vbe  | nme ֹ֜ | uvf  | prs הִי
+  atom slots: וְ W; רַעיֹנֹ֖הִי R<JWN/
+  MAM's key in BHSA: Aram R<JWN/ plm st=a prs=HJ x1 (Daniel 4:16)
+  neighbour same: add a sheva on letter 2 (ayin) | רַעְיֹנֹהִי | Aram R<JWN/ plm st=a prs=HJ x1 (Daniel 4:16) = MAM's key
+  same full analysis elsewhere: רַעְיֹנֹהִי x1 (Daniel 4:16)
+  same letters: רַעְיֹנֹהִי x1 [Aram R<JWN/ plm st=a prs=HJ x1 same]
+
+#163 slot 373651 | Daniel 5:20 | Aram <DH[ haf perf p3plm
+  BHSA הֶעְדִּ֥יוּ (key הֶעְדִּיוּ; HE<:D.I71JW.) in atom הֶעְדִּ֥יוּ | prev וִֽיקָרָ֖ה | next מִנֵּֽהּ | trailer ' ' | accents accent merkha
+  MAM  הֶעְדִּ֥יו (key הֶעְדִּיו) in atom הֶעְדִּ֥יו
+  diff: letter 5 (vav): BHSA [dagesh/mappiq], MAM []
+  sp verb | gloss go | voc_lex עדה
+  morphemes: pfm  | vbs הֶ | lex עְדִּי | vbe וּ | nme  | uvf  | prs 
+  MAM's key in BHSA: Aram <DH[ haf perf p3plm x1 (Daniel 7:12)
+  neighbour same: remove the dagesh or mappiq on letter 5 (vav) | הֶעְדִּיו | Aram <DH[ haf perf p3plm x1 (Daniel 7:12) = MAM's key
+  same full analysis elsewhere: הֶעְדִּיו x1 (Daniel 7:12)
+  same letters: הֶעְדִּיו x1 [Aram <DH[ haf perf p3plm x1 same]
+
+#164 slot 373768 | Daniel 5:24 | Aram CLX[ peil perf p3sgm
+  BHSA שְׁלִ֖יַחַ (key שְׁלִיַחַ; C:LI73JAXA) in atom שְׁלִ֖יַחַ | prev קֳדָמֹ֔והִי | next פַּסָּ֣א | trailer ' ' | accents accent tipeha
+  MAM  שְׁלִ֖יחַ (key שְׁלִיחַ) in atom שְׁלִ֖יחַ
+  diff: letter 3 (yod): BHSA [patah], MAM []
+  sp verb | gloss send | voc_lex שׁלח
+  morphemes: pfm  | vbs  | lex שְׁלִיַחַ | vbe  | nme  | uvf  | prs 
+  MAM's key in BHSA: Aram CLX[ peil perf p3sgm x1 (Ezra 7:14)
+  neighbour same: remove the patah on letter 3 (yod) | שְׁלִיחַ | Aram CLX[ peil perf p3sgm x1 (Ezra 7:14) = MAM's key
+  same full analysis elsewhere: שְׁלִיחַ x1 (Ezra 7:14)
+  same letters: שְׁלִיחַ x1 [Aram CLX[ peil perf p3sgm x1 same]
+
+#165 slot 374143 | Daniel 6:13 | Aram >RJH/ plm st=e
+  BHSA אַרְיָותָ֑א (key אַרְיָותָא; >AR:J@WT@92>) in atom אַרְיָותָ֑א | prev לְגֹ֖וב | next עָנֵ֨ה | trailer ' ' | accents accent etnahta
+  MAM  אַרְיָוָתָ֑א (key אַרְיָוָתָא) in atom אַרְיָוָתָ֑א
+  diff: letter 4 (vav): BHSA [], MAM [qamats]
+  sp subs | gloss lion | voc_lex אַרְיֵה
+  morphemes: pfm  | vbs  | lex אַרְיָו | vbe  | nme ֜ת | uvf ָא | prs 
+  MAM's key in BHSA: Aram >RJH/ plm st=e x8 (Daniel 6:8)
+  neighbour same: add a qamats on letter 4 (vav) | אַרְיָוָתָא | Aram >RJH/ plm st=e x8 (Daniel 6:8) = MAM's key
+  same full analysis elsewhere: אַרְיָוָתָא x8 (Daniel 6:8)
+  same letters: אַרְיָוָתָא x8 [Aram >RJH/ plm st=e x8 same]
+
+#166 slot 374365 | Daniel 6:22 | Aram DNJ>L/ sgm st=a
+  BHSA דָּנִיֶּ֔אל (key דָּנִיֶּאל; D.@NIJ.E80>L) in atom דָּנִיֶּ֔אל | prev אֱדַ֨יִן֙ | next עִם־ | trailer ' ' | accents accent zaqef qatan
+  MAM  דָּנִיֵּ֔אל (key דָּנִיֵּאל) in atom דָּנִיֵּ֔אל
+  diff: letter 3 (yod): BHSA [segol, dagesh/mappiq], MAM [tsere, dagesh/mappiq]
+  sp nmpr | gloss Daniel | voc_lex דָּנִיֵּאל
+  morphemes: pfm  | vbs  | lex דָּנִיֶּאל | vbe  | nme ֜ | uvf  | prs 
+  MAM's key in BHSA: Aram DNJ>L/ sgm st=a x15 (Daniel 2:13)
+  neighbour same: tsere for segol on letter 3 (yod) | דָּנִיֵּאל | Aram DNJ>L/ sgm st=a x15 (Daniel 2:13) = MAM's key
+  same full analysis elsewhere: דָנִיֵּאל x36 (Daniel 2:15); דָּנִיֵּאל x15 (Daniel 2:13)
+  same letters: דָנִיֵּאל x36 [Aram DNJ>L/ sgm st=a x36 same]; דָּנִיֵּאל x15 [Aram DNJ>L/ sgm st=a x15 same]
+
+#167 slot 375799 | Daniel 9:2 | JRMJH/ sgm st=a
+  BHSA יִרְמִיָ֣ה (key יִרְמִיָה; JIR:MIJ@74H) in atom יִרְמִיָ֣ה | prev אֶל־ | next הַנָּבִ֔יא | trailer ' ' | accents accent munah
+  MAM  יִרְמְיָ֣ה (key יִרְמְיָה) in atom יִרְמְיָ֣ה
+  diff: letter 3 (mem): BHSA [hiriq], MAM [sheva]
+  sp nmpr | gloss Jeremiah | voc_lex יִרְמְיָה
+  morphemes: pfm  | vbs  | lex יִרְמִיָה | vbe  | nme ֜ | uvf  | prs 
+  MAM's key in BHSA: JRMJH/ sgm st=a x17 (Jeremiah 27:1)
+  neighbour same: sheva for hiriq on letter 3 (mem) | יִרְמְיָה | JRMJH/ sgm st=a x17 (Jeremiah 27:1) = MAM's key
+  same full analysis elsewhere: יִרְמְיָה x17 (Jeremiah 27:1)
+  same letters: יִרְמְיָה x17 [JRMJH/ sgm st=a x17 same]
+
+#168 slot 376204 | Daniel 9:19 | QCB[ hif impv p2sgm
+  BHSA הַֽקֲשִׁ֥יבָה (key הַקֲשִׁיבָה; HA45Q:ACI71JB@H) in atom הַֽקֲשִׁ֥יבָה | prev אֲדֹנָ֛י | next וַעֲשֵׂ֖ה | trailer ' ' | accents point meteg, accent merkha
+  MAM  הַֽקְשִׁ֥יבָה (key הַקְשִׁיבָה) in atom הַֽקְשִׁ֥יבָה
+  diff: letter 2 (qof): BHSA [hataf patah], MAM [sheva]
+  sp verb | gloss give attention | voc_lex קשׁב
+  morphemes: pfm  | vbs הַ | lex קֲשִׁיב | vbe ָה | nme  | uvf  | prs 
+  MAM's key in BHSA: QCB[ hif impv p2sgm x9 (Jeremiah 18:19)
+  neighbour same: sheva for hataf patah on letter 2 (qof) | הַקְשִׁיבָה | QCB[ hif impv p2sgm x9 (Jeremiah 18:19) = MAM's key
+  same full analysis elsewhere: הַקְשִׁיבָה x9 (Jeremiah 18:19); הַקְשֵׁב x1 (Job 33:31)
+  same letters: הַקְשִׁיבָה x9 [QCB[ hif impv p2sgm x9 same]
+
+#169 slot 376209 | Daniel 9:19 | LM<N prs=K
+  BHSA לְמַֽעֲנְךָ֣ (key לְמַעֲנְךָ; L:MA45<:AN:K@74) in atom לְמַֽעֲנְךָ֣ | prev תְּאַחַ֑ר | next אֱלֹהַ֔י | trailer ' ' | accents point meteg, accent munah
+  MAM  לְמַֽעַנְךָ֣ (key לְמַעַנְךָ) in atom לְמַֽעַנְךָ֣
+  diff: letter 3 (ayin): BHSA [hataf patah], MAM [patah]
+  sp prep | gloss because of | voc_lex לְמַעַן
+  morphemes: pfm  | vbs  | lex לְמַעֲןְ | vbe  | nme  | uvf  | prs כָ
+  MAM's key in BHSA: LM<N prs=K x1 (Job 18:4)
+  neighbour same: patah for hataf patah on letter 3 (ayin) | לְמַעַנְךָ | LM<N prs=K x1 (Job 18:4) = MAM's key
+  same full analysis elsewhere: לְמַעַנְךָ x1 (Job 18:4)
+  same letters: לְמַעַנְךָ x1 [LM<N prs=K x1 same]
+
+#170 slot 376622 | Daniel 10:8 | KX/ sgm st=a
+  BHSA כֹּ֑ח (key כֹּח; K.O92X) in atom כֹּ֑ח | prev בִּ֖י | next וְהֹודִ֗י | trailer ' ' | accents accent etnahta
+  MAM  כֹּ֑חַ (key כֹּחַ) in atom כֹּ֑חַ
+  diff: letter 2 (het): BHSA [], MAM [patah]
+  sp subs | gloss strength | voc_lex כֹּחַ
+  morphemes: pfm  | vbs  | lex כֹּח | vbe  | nme ֜ | uvf  | prs 
+  MAM's key in BHSA: KX/ sgm st=a x34 (Exodus 15:6); [other state] KX/ sgm st=c x7 (Numbers 14:17); [other lexeme] KX=/ sgm st=a x1 (Leviticus 11:30)
+  NEIGHBOUR [other state]: add a patah on letter 2 (het) | כֹּחַ | KX/ sgm st=c x7 (Numbers 14:17) = MAM's key
+  NEIGHBOUR [other lexeme]: add a patah on letter 2 (het) | כֹּחַ | KX=/ sgm st=a x1 (Leviticus 11:30) = MAM's key
+  neighbour same: add a patah on letter 2 (het) | כֹּחַ | KX/ sgm st=a x34 (Exodus 15:6) = MAM's key
+  same full analysis elsewhere: כֹּחַ x34 (Exodus 15:6); כֹחַ x22 (Exodus 32:11)
+  same letters: כֹּחַ x42 [KX/ sgm st=a x34 same, KX/ sgm st=c x7 other state, KX=/ sgm st=a x1 other lexeme]; כֹחַ x26 [KX/ sgm st=a x22 same, KX/ sgm st=c x4 other state]
+
+#171 slot 377857 | Daniel 11:45 | >HL/ plm st=c
+  BHSA אָהֳלֶ֣י (key אָהֳלֶי; >@H:@LE74J) in atom אָהֳלֶ֣י | prev וְיִטַּע֙ | next אַפַּדְנֹ֔ו | trailer ' ' | accents accent munah
+  MAM  אׇהֳלֵ֣י (key אָהֳלֵי) in atom אׇהֳלֵ֣י
+  diff: letter 3 (lamed): BHSA [segol], MAM [tsere]
+  sp subs | gloss tent | voc_lex אֹהֶל
+  morphemes: pfm  | vbs  | lex אָהֳל | vbe  | nme ֶ֜י | uvf  | prs 
+  MAM's key in BHSA: >HL/ plm st=c x14 (Genesis 9:27)
+  NEIGHBOUR [other person/number/gender/suffix]: hiriq for segol on letter 3 (lamed) | אָהֳלִי | >HL/ sgm st=a prs=J x6 (Joshua 7:21)
+  neighbour same: tsere for segol on letter 3 (lamed) | אָהֳלֵי | >HL/ plm st=c x14 (Genesis 9:27) = MAM's key
+  same full analysis elsewhere: אָהֳלֵי x14 (Genesis 9:27)
+  same letters: אָהֳלֵי x14 [>HL/ plm st=c x14 same]; אָהֳלִי x6 [>HL/ sgm st=a prs=J x6 other person/number/gender/suffix]; אֹהָלַי x1 [>HL/ plm st=a prs=J x1 other person/number/gender/suffix]
+
+#172 slot 382995 | Ezra 10:12 | <NH[ qal wayq p3plm
+  BHSA יַּֽעְנ֧וּ (key יַּעְנוּ; J.A45<:N94W.) in atom וַיַּֽעְנ֧וּ | prev  | next כָֽל־ | trailer ' ' | accents point meteg, accent darga
+  MAM  יַּֽעֲנ֧וּ (key יַּעֲנוּ) in atom וַיַּֽעֲנ֧וּ
+  diff: letter 2 (ayin): BHSA [sheva], MAM [hataf patah]
+  sp verb | gloss answer | voc_lex ענה
+  morphemes: pfm יַּ | vbs  | lex עְן | vbe וּ | nme  | uvf  | prs 
+  atom slots: וַ W; יַּֽעְנ֧וּ <NH[
+  MAM's key in BHSA: <NH[ qal wayq p3plm x15 (Genesis 23:5); [other lexeme] <NH==[ qal wayq p3plm x1 (Ezra 3:11)
+  NEIGHBOUR [other lexeme]: hataf patah for sheva on letter 2 (ayin) | יַּעֲנוּ | <NH==[ qal wayq p3plm x1 (Ezra 3:11) = MAM's key
+  neighbour same: hataf patah for sheva on letter 2 (ayin) | יַּעֲנוּ | <NH[ qal wayq p3plm x15 (Genesis 23:5) = MAM's key
+  same full analysis elsewhere: יַּעֲנוּ x15 (Genesis 23:5)
+  same letters: יַּעֲנוּ x16 [<NH[ qal wayq p3plm x15 same, <NH==[ qal wayq p3plm x1 other lexeme]; יַעֲנוּ x7 [<NH[ qal impf p3plm x4 other stem/tense, <NH==[ qal impf p3plm x2 other lexeme, <NH=[ qal impf p3plm x1 other lexeme]; יְעַנּוּ x2 [<NH=[ piel impf p3plm x2 other lexeme]
+
+#173 slot 383045 | Ezra 10:14 | <MD[ qal impf p3plm
+  BHSA יַֽעֲמְדוּ (key יַעֲמְדוּ; JA45<:AM:DW.) in atom יַֽעֲמְדוּ־ | prev  | next נָ֣א | trailer '־' | accents point meteg
+  MAM  יַֽעַמְדוּ (key יַעַמְדוּ) in atom יַֽעַמְדוּ־
+  diff: letter 2 (ayin): BHSA [hataf patah], MAM [patah]
+  sp verb | gloss stand | voc_lex עמד
+  morphemes: pfm יַ | vbs  | lex עֲמְד | vbe וּ | nme  | uvf  | prs 
+  MAM's key in BHSA: <MD[ qal impf p3plm x17 (Numbers 1:5)
+  neighbour same: patah for hataf patah on letter 2 (ayin) | יַעַמְדוּ | <MD[ qal impf p3plm x17 (Numbers 1:5) = MAM's key
+  neighbour same: holam for sheva on letter 3 (mem) | יַעֲמֹדוּ | <MD[ qal impf p3plm x7 (Isaiah 44:11)
+  same full analysis elsewhere: יַעַמְדוּ x17 (Numbers 1:5); יַעֲמֹדוּ x7 (Isaiah 44:11)
+  same letters: יַּעַמְדוּ x28 [<MD[ qal wayq p3plm x28 other stem/tense]; יַעַמְדוּ x17 [<MD[ qal impf p3plm x17 same]; יַעֲמֹדוּ x7 [<MD[ qal impf p3plm x7 same]; יַּעֲמֹדוּ x1 [<MD[ qal wayq p3plm x1 other stem/tense]
+
+#174 slot 383345 | Ezra 10:32 | BNJMN/ sg st=a
+  BHSA בְּנְיָמִ֥ן (key בְּנְיָמִן; B.:N:J@MI71N) in atom בְּנְיָמִ֥ן | prev  | next מַלּ֖וּךְ | trailer ' ' | accents accent merkha
+  MAM  בִּנְיָמִ֥ן (key בִּנְיָמִן) in atom בִּנְיָמִ֥ן
+  diff: letter 1 (bet): BHSA [sheva, dagesh/mappiq], MAM [hiriq, dagesh/mappiq]
+  sp nmpr | gloss Benjamin | voc_lex בִּנְיָמִן
+  morphemes: pfm  | vbs  | lex בְּנְיָמִן | vbe  | nme ֜ | uvf  | prs 
+  MAM's key in BHSA: BNJMN/ sg st=a x54 (Genesis 42:36)
+  neighbour same: remove the dagesh or mappiq on letter 1 (bet) | בְנְיָמִן | BNJMN/ sg st=a x1 (Exodus 1:3)
+  neighbour same: hiriq for sheva on letter 1 (bet) | בִּנְיָמִן | BNJMN/ sg st=a x54 (Genesis 42:36) = MAM's key
+  same full analysis elsewhere: בִנְיָמִן x92 (Genesis 35:24); בִּנְיָמִן x54 (Genesis 42:36); בִּנְיָמִין x8 (Genesis 42:4); בִנְיָמִין x7 (Genesis 35:18); בְנְיָמִן x1 (Exodus 1:3); בִניָמִן x1 (Jeremiah 6:1)
+  same letters: בִנְיָמִן x92 [BNJMN/ sg st=a x92 same]; בִּנְיָמִן x54 [BNJMN/ sg st=a x54 same]; בְנְיָמִן x1 [BNJMN/ sg st=a x1 same]; בִניָמִן x1 [BNJMN/ sg st=a x1 same]
+
+#175 slot 384035 | Nehemiah 2:13 | GJ>/ sg st=a
+  BHSA גַּ֜יא (key גַּיא; G.A61J>) in atom הַגַּ֜יא | prev בְשַֽׁעַר־ | next לַ֗יְלָה | trailer ' ' | accents accent geresh
+  MAM  גַּ֜יְא (key גַּיְא) in atom הַגַּ֜יְא
+  diff: letter 2 (yod): BHSA [], MAM [sheva]
+  sp subs | gloss valley | voc_lex גַּיְא
+  morphemes: pfm  | vbs  | lex גַּיא | vbe  | nme ֜ | uvf  | prs 
+  atom slots: הַ H; גַּ֜יא GJ>/
+  MAM's key in BHSA: GJ>/ sg st=a x7 (Numbers 21:20)
+  NEIGHBOUR [other state]: tsere for patah on letter 1 (gimel) | גֵּיא | GJ>/ sg st=c x13 (Isaiah 22:1)
+  neighbour same: segol for patah on letter 1 (gimel) | גֶּיא | GJ>/ sg st=a x1 (Isaiah 40:4)
+  neighbour same: add a sheva on letter 2 (yod) | גַּיְא | GJ>/ sg st=a x7 (Numbers 21:20) = MAM's key
+  same full analysis elsewhere: גַּיְא x7 (Numbers 21:20); גָּיְא x2 (Deuteronomy 3:29); גַּי x2 (Joshua 8:11); גַּיְ x1 (Deuteronomy 34:6); גַיְא x1 (1 Samuel 17:52); גֶּיא x1 (Isaiah 40:4)
+  same letters: גֵּיא x13 [GJ>/ sg st=c x13 other state]; גֵיא x10 [GJ>/ sg st=c x10 other state]; גַּיְא x7 [GJ>/ sg st=a x7 same]; גָּיְא x2 [GJ>/ sg st=a x2 same]; גַיְא x1 [GJ>/ sg st=a x1 same]; גֶּיא x1 [GJ>/ sg st=a x1 same]
+
+#176 slot 387040 | Nehemiah 7:67 | CJR[ piel ptca plf st=a
+  BHSA מְשֹׁ֣רֲרֹ֔ות (key מְשֹׁרֲרֹות; M:CO74R:ARO80WT) in atom וּמְשֹׁ֣רֲרֹ֔ות | prev מְשֹֽׁרֲרִים֙ | next מָאתַ֖יִם | trailer ' ' | accents accent munah, accent zaqef qatan
+  MAM  מְשֹׁ֣רְרֹ֔ות (key מְשֹׁרְרֹות) in atom וּמְשֹׁ֣רְר֔וֹת
+  diff: letter 3 (resh): BHSA [hataf patah], MAM [sheva]
+  sp verb | gloss sing | voc_lex שׁיר
+  morphemes: pfm מְ | vbs  | lex שֹׁרֲר | vbe  | nme ֹ֜ות | uvf  | prs 
+  atom slots: וּ W; מְשֹׁ֣רֲרֹ֔ות CJR[
+  MAM's key in BHSA: CJR[ piel ptca plf st=a x1 (Ezra 2:65)
+  neighbour same: sheva for hataf patah on letter 3 (resh) | מְשֹׁרְרֹות | CJR[ piel ptca plf st=a x1 (Ezra 2:65) = MAM's key
+  same full analysis elsewhere: מְשֹׁרְרֹות x1 (Ezra 2:65)
+  same letters: מְשֹׁרְרֹות x1 [CJR[ piel ptca plf st=a x1 same]
+
+#177 slot 388066 | Nehemiah 9:14 | JD<[ hif perf p2sgm
+  BHSA הֹודַ֣עַתָ (key הֹודַעַתָ; HOWDA74<AT@) in atom הֹודַ֣עַתָ | prev קָדְשְׁךָ֖ | next לָהֶ֑ם | trailer ' ' | accents accent munah
+  MAM  הֹודַ֣עְתָּ (key הֹודַעְתָּ) in atom הוֹדַ֣עְתָּ
+  diff: letter 4 (ayin): BHSA [patah], MAM [sheva] | letter 5 (tav): BHSA [qamats], MAM [qamats, dagesh/mappiq]
+  sp verb | gloss know | voc_lex ידע
+  morphemes: pfm  | vbs הֹ | lex ודַעַ | vbe תָ | nme  | uvf  | prs 
+  MAM's key in BHSA: JD<[ hif perf p2sgm x3 (Exodus 18:20)
+  same full analysis elsewhere: הֹודַעְתָּ x3 (Exodus 18:20); הֹודָעְתָּ x1 (Job 26:3)
+  same letters: הֹודַעְתָּ x3 [JD<[ hif perf p2sgm x3 same]; הֹודָעְתָּ x1 [JD<[ hif perf p2sgm x1 same]
+
+#178 slot 392549 | 1 Chronicles 3:1 | DWD==/ sgm st=a
+  BHSA דָויִ֔ד (key דָויִד; D@WJI80D) in atom דָויִ֔ד | prev בְּנֵ֣י | next אֲשֶׁ֥ר | trailer ' ' | accents accent zaqef qatan
+  MAM  דָוִ֔יד (key דָוִיד) in atom דָוִ֔יד
+  diff: letter 2 (vav): BHSA [], MAM [hiriq] | letter 3 (yod): BHSA [hiriq], MAM []
+  sp nmpr | gloss David | voc_lex דָּוִד
+  morphemes: pfm  | vbs  | lex דָויִד | vbe  | nme ֜ | uvf  | prs 
+  MAM's key in BHSA: DWD==/ sgm st=a x70 (1 Kings 11:36)
+  same full analysis elsewhere: דָּוִד x470 (1 Samuel 16:13); דָוִד x319 (1 Samuel 16:21); דָּוִיד x215 (1 Kings 3:14); דָוִיד x70 (1 Kings 11:36)
+  same letters: דָּוִיד x215 [DWD==/ sgm st=a x215 same]; דָוִיד x70 [DWD==/ sgm st=a x70 same]
+
+#179 slot 405019 | 1 Chronicles 27:8 | XMJCJ/ sgm st=a
+  BHSA חַמִישִׁי֙ (key חַמִישִׁי; XAMIJCIJ03) in atom הַחַמִישִׁי֙ | prev  | next לַחֹ֣דֶשׁ | trailer ' ' | accents accent pashta
+  MAM  חֲמִישִׁי֙ (key חֲמִישִׁי) in atom הַחֲמִישִׁי֙
+  diff: letter 1 (het): BHSA [patah], MAM [hataf patah]
+  sp adjv | gloss fifth | voc_lex חֲמִישִׁי
+  morphemes: pfm  | vbs  | lex חַמִישִׁי | vbe  | nme ֜ | uvf  | prs 
+  atom slots: הַ H; חַמִישִׁי֙ XMJCJ/
+  MAM's key in BHSA: XMJCJ/ sgm st=a x24 (Genesis 1:23)
+  neighbour same: hataf patah for patah on letter 1 (het) | חֲמִישִׁי | XMJCJ/ sgm st=a x24 (Genesis 1:23) = MAM's key
+  same full analysis elsewhere: חֲמִישִׁי x24 (Genesis 1:23); חֲמִשִׁי x3 (Ezekiel 20:1)
+  same letters: חֲמִישִׁי x24 [XMJCJ/ sgm st=a x24 same]
+
+#180 slot 406537 | 1 Chronicles 29:18 | CMR[ qal impv p2sgm
+  BHSA שֳׁמְרָה (key שֳׁמְרָה; C:@M:R@H) in atom שֳׁמְרָה־ | prev אֲבֹתֵ֔ינוּ | next זֹּ֣את | trailer '־' | accents -
+  MAM  שׇׁמְרָה (key שָׁמְרָה) in atom שׇׁמְרָה־
+  diff: letter 1 (shin): BHSA [hataf qamats, shin dot], MAM [qamats, shin dot]
+  sp verb | gloss keep | voc_lex שׁמר
+  morphemes: pfm  | vbs  | lex שֳׁמְר | vbe ָה | nme  | uvf  | prs 
+  MAM's key in BHSA: [other stem/tense] CMR[ qal perf p3sgf x3 (Psalms 119:167); CMR[ qal impv p2sgm x2 (Psalms 25:20); [other lexeme] CMRH=/ sgf st=a x1 (Psalms 141:3)
+  NEIGHBOUR [other stem/tense]: qamats for hataf qamats on letter 1 (shin) | שָׁמְרָה | CMR[ qal perf p3sgf x3 (Psalms 119:167) = MAM's key
+  NEIGHBOUR [other lexeme]: qamats for hataf qamats on letter 1 (shin) | שָׁמְרָה | CMRH=/ sgf st=a x1 (Psalms 141:3) = MAM's key
+  neighbour same: qamats for hataf qamats on letter 1 (shin) | שָׁמְרָה | CMR[ qal impv p2sgm x2 (Psalms 25:20) = MAM's key
+  same full analysis elsewhere: שְׁמֹר x13 (Deuteronomy 4:9); שְׁמָר x2 (Exodus 34:11); שָׁמְרָה x2 (Psalms 25:20); שְׁמֹור x2 (Ecclesiastes 8:2)
+  same letters: שָׁמְרָה x6 [CMR[ qal perf p3sgf x3 other stem/tense, CMR[ qal impv p2sgm x2 same, CMRH=/ sgf st=a x1 other lexeme]; שָׁמְרָהּ x1 [CMR[ qal infc st=a prs=H x1 other stem/tense]; שְׁמֻרָה x1 [CMR[ qal ptcp sgf st=a x1 other stem/tense]; שְׁמָרָה x1 [CMR[ qal perf p3sgm prs=H x1 other stem/tense]
+
+#181 slot 406787 | 1 Chronicles 29:29 | >XRWN/ plm st=a
+  BHSA אֲחרֹנִ֑ים (key אֲחרֹנִים; >:AXRONI92JM) in atom וְהָאֲחרֹנִ֑ים | prev הָרִאשֹׁנִ֖ים | next הִנָּ֣ם | trailer ' ' | accents accent etnahta
+  MAM  אַחֲרֹנִ֑ים (key אַחֲרֹנִים) in atom וְהָאַחֲרֹנִ֑ים
+  diff: letter 1 (alef): BHSA [hataf patah], MAM [patah] | letter 2 (het): BHSA [], MAM [hataf patah]
+  sp adjv | gloss at the back | voc_lex אַחֲרֹון
+  morphemes: pfm  | vbs  | lex אֲחרֹן | vbe  | nme ִ֜ים | uvf  | prs 
+  atom slots: וְ W; הָ H; אֲחרֹנִ֑ים >XRWN/
+  MAM's key in BHSA: >XRWN/ plm st=a x12 (Genesis 33:2)
+  neighbour same: add a hataf patah on letter 2 (het) | אֲחֲרֹנִים | >XRWN/ plm st=a x1 (2 Chronicles 26:22)
+  same full analysis elsewhere: אַחֲרֹנִים x12 (Genesis 33:2); אַחֲרֹונִים x4 (Ecclesiastes 4:16); אֲחֲרֹונִים x1 (2 Chronicles 9:29); אֲחַרֹונִים x1 (2 Chronicles 12:15); אֲחֲרֹנִים x1 (2 Chronicles 26:22)
+  same letters: אַחֲרֹנִים x12 [>XRWN/ plm st=a x12 same]; אֲחֲרֹנִים x1 [>XRWN/ plm st=a x1 same]
+
+#182 slot 411698 | 2 Chronicles 9:29 | >XRWN/ plm st=a
+  BHSA אֲחֲרֹונִ֑ים (key אֲחֲרֹונִים; >:AX:AROWNI92JM) in atom וְהָאֲחֲרֹונִ֑ים | prev הָרִאשֹׁנִ֖ים | next הֲלֹא־ | trailer ' ' | accents accent etnahta
+  MAM  אַחֲרֹונִ֑ים (key אַחֲרֹונִים) in atom וְהָאַחֲרוֹנִ֑ים
+  diff: letter 1 (alef): BHSA [hataf patah], MAM [patah]
+  sp adjv | gloss at the back | voc_lex אַחֲרֹון
+  morphemes: pfm  | vbs  | lex אֲחֲרֹון | vbe  | nme ִ֜ים | uvf  | prs 
+  atom slots: וְ W; הָ H; אֲחֲרֹונִ֑ים >XRWN/
+  MAM's key in BHSA: >XRWN/ plm st=a x4 (Ecclesiastes 4:16)
+  neighbour same: patah for hataf patah on letter 1 (alef) | אַחֲרֹונִים | >XRWN/ plm st=a x4 (Ecclesiastes 4:16) = MAM's key
+  neighbour same: patah for hataf patah on letter 2 (het) | אֲחַרֹונִים | >XRWN/ plm st=a x1 (2 Chronicles 12:15)
+  same full analysis elsewhere: אַחֲרֹנִים x12 (Genesis 33:2); אַחֲרֹונִים x4 (Ecclesiastes 4:16); אֲחרֹנִים x1 (1 Chronicles 29:29); אֲחַרֹונִים x1 (2 Chronicles 12:15); אֲחֲרֹנִים x1 (2 Chronicles 26:22)
+  same letters: אַחֲרֹונִים x4 [>XRWN/ plm st=a x4 same]; אֲחַרֹונִים x1 [>XRWN/ plm st=a x1 same]
+
+#183 slot 412944 | 2 Chronicles 12:15 | >XRWN/ plm st=a
+  BHSA אֲ֣חַרֹונִ֔ים (key אֲחַרֹונִים; >:A74XAROWNI80JM) in atom וְהָאֲ֣חַרֹונִ֔ים | prev הָרִאשֹׁנִים֙ | next הֲלֹא־ | trailer ' ' | accents accent munah, accent zaqef qatan
+  MAM  אַ֣חֲרֹונִ֔ים (key אַחֲרֹונִים) in atom וְהָאַ֣חֲרוֹנִ֔ים
+  diff: letter 1 (alef): BHSA [hataf patah], MAM [patah] | letter 2 (het): BHSA [patah], MAM [hataf patah]
+  sp adjv | gloss at the back | voc_lex אַחֲרֹון
+  morphemes: pfm  | vbs  | lex אֲחַרֹון | vbe  | nme ִ֜ים | uvf  | prs 
+  atom slots: וְ W; הָ H; אֲ֣חַרֹונִ֔ים >XRWN/
+  MAM's key in BHSA: >XRWN/ plm st=a x4 (Ecclesiastes 4:16)
+  neighbour same: hataf patah for patah on letter 2 (het) | אֲחֲרֹונִים | >XRWN/ plm st=a x1 (2 Chronicles 9:29)
+  same full analysis elsewhere: אַחֲרֹנִים x12 (Genesis 33:2); אַחֲרֹונִים x4 (Ecclesiastes 4:16); אֲחרֹנִים x1 (1 Chronicles 29:29); אֲחֲרֹונִים x1 (2 Chronicles 9:29); אֲחֲרֹנִים x1 (2 Chronicles 26:22)
+  same letters: אַחֲרֹונִים x4 [>XRWN/ plm st=a x4 same]; אֲחֲרֹונִים x1 [>XRWN/ plm st=a x1 same]
+
+#184 slot 420119 | 2 Chronicles 26:22 | >XRWN/ plm st=a
+  BHSA אֲחֲרֹנִ֑ים (key אֲחֲרֹנִים; >:AX:ARONI92JM) in atom וְהָאֲחֲרֹנִ֑ים | prev הָרִאשֹׁנִ֖ים | next כָּתַ֛ב | trailer ' ' | accents accent etnahta
+  MAM  אַחֲרֹנִ֑ים (key אַחֲרֹנִים) in atom וְהָאַחֲרֹנִ֑ים
+  diff: letter 1 (alef): BHSA [hataf patah], MAM [patah]
+  sp adjv | gloss at the back | voc_lex אַחֲרֹון
+  morphemes: pfm  | vbs  | lex אֲחֲרֹן | vbe  | nme ִ֜ים | uvf  | prs 
+  atom slots: וְ W; הָ H; אֲחֲרֹנִ֑ים >XRWN/
+  MAM's key in BHSA: >XRWN/ plm st=a x12 (Genesis 33:2)
+  neighbour same: patah for hataf patah on letter 1 (alef) | אַחֲרֹנִים | >XRWN/ plm st=a x12 (Genesis 33:2) = MAM's key
+  neighbour same: remove the hataf patah on letter 2 (het) | אֲחרֹנִים | >XRWN/ plm st=a x1 (1 Chronicles 29:29)
+  same full analysis elsewhere: אַחֲרֹנִים x12 (Genesis 33:2); אַחֲרֹונִים x4 (Ecclesiastes 4:16); אֲחרֹנִים x1 (1 Chronicles 29:29); אֲחֲרֹונִים x1 (2 Chronicles 9:29); אֲחַרֹונִים x1 (2 Chronicles 12:15)
+  same letters: אַחֲרֹנִים x12 [>XRWN/ plm st=a x12 same]; אֲחרֹנִים x1 [>XRWN/ plm st=a x1 same]
+

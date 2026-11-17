@@ -1,0 +1,42 @@
+== JR>[ qal impf or wayq, p3 pl m, written with one yod at the start of the stem
+   Deut 13:12 slot 101297 יִֽרָא֑וּן  | JI45R@>92W.N | impf
+   Deut 17:13 slot 103265 יִרָ֑אוּ  | JIR@92>W. | impf
+   Deut 19:20 slot 104302 יִרָ֑אוּ  | JIR@92>W. | impf
+   Deut 21:21 slot 105243 יִרָֽאוּ׃ ס  | JIR@75>W. | impf
+   Josh 4:14 slot 114735 יִּֽרְא֣וּ  | J.I45R:>74W. | wayq
+   1Sam 4:7 slot 143446 יִּֽרְאוּ֙  | J.I45R:>W.03 | wayq
+   1Sam 7:7 slot 144859 יִּֽרְא֖וּ  | J.I45R:>73W. | wayq
+   1Sam 17:11 slot 151006 יִּֽרְא֖וּ  | J.I45R:>73W. | wayq
+   2Sam 10:19 slot 165697 יִּֽרְא֣וּ  | J.I45R:>74W. | wayq
+   2Sam 12:18 slot 166783 יִּֽרְאוּ֩  | J.I45R:>W.04 | wayq
+   1Kgs 3:28 slot 179065 יִּֽרְא֖וּ  | J.I45R:>73W. | wayq
+   1Kgs 8:40 slot 183004 יִֽרָא֔וּךָ  | JI45R@>80W.K@ | impf
+   2Kgs 10:4 slot 201192 יִּֽרְאוּ֙  | J.I45R:>W.03 | wayq
+   Mic 7:17 slot 301390 יִֽרְא֖וּ  | JI45R:>73W. | impf
+   Eccl 3:14 slot 360361 יִּֽרְא֖וּ  | J.I45R:>73W. | impf
+   Eccl 12:5 slot 363333 יִרָ֨אוּ֙  | JIR@33>W.03 | impf
+   Neh 6:16 slot 386266 יִּֽרְא֗וּ  | J.I45R:>81W. | wayq
+
+== >SP[ qal words whose first letter has a holam
+   Num 19:10 slot 82200 אֹסֵ֨ף | >OS;63P | qal ptca nu sg gn m st a
+   1Sam 15:6 slot 149659 אֹֽסִפְךָ֙ | >O45SIP:K@03 | qal impf ps p1 nu sg prs K
+   2Sam 6:1 slot 163423 יֹּ֨סֶף | J.O63SEP | qal wayq ps p3 nu sg gn m
+   2Kgs 22:20 slot 209736 אֹֽסִפְךָ֜ | >O45SIP:K@61 | qal impf ps p1 nu sg prs K
+   Mic 4:6 slot 300427 אֹֽסְפָה֙ | >O45S:P@H03 | qal impf ps p1 nu sg
+   Ps 39:7 slot 316918 אֹסְפָֽם | >OS:P@75M | qal ptca nu sg gn m st a prs M
+   Ps 104:29 slot 328516 תֹּסֵ֣ף | T.OS;74P | qal impf ps p2 nu sg gn m
+   2Chr 34:28 slot 425188 אֹֽסִפְךָ֜ | >O45SIP:K@61 | qal impf ps p1 nu sg prs K
+
+== WLC 4.18's atoms at the review's places, aligned with the BHSA's atoms by letters
+   1Sam 27:10 slot 158430 | BHSA אַל־ | WLC 4.18 אַל־ (notes []) | MAM אַל־
+   Job 24:25 slot 342192 | BHSA לְ֝אַ֗ל | WLC 4.18 לְ֝אַ֗ל (notes []) | MAM לְ֝אַ֗ל
+   2Sam 6:1 slot 163423 | BHSA וַיֹּ֨סֶף | WLC 4.18 וַיֹּ֨סֶף (notes []) | MAM וַיֹּ֨סֶף
+   Mic 1:15 slot 299793 | BHSA אָ֣בִי | WLC 4.18 אָ֣בִי (notes []) | MAM אָ֣בִי
+   Mic 7:17 slot 301390 | BHSA וְיִֽרְא֖וּ | WLC 4.18 וְיִֽרְא֖וּ (notes []) | MAM וְיִֽרְא֖וּ
+   Isa 52:2 slot 230330 | BHSA שְּׁבִ֖י | WLC 4.18 שְּׁבִ֖י (notes []) | MAM שְּׁבִ֖י
+   2Chr 28:19 slot 420804 | BHSA מַ֖עַל | WLC 4.18 מַ֖עַל (notes []) | MAM מַ֖עַל
+   Dan 12:13 slot 378150 | BHSA הַיָּמִֽין | WLC 4.18 הַיָּמִֽין׃ (notes []) | MAM הַיָּמִֽין׃
+   2Chr 26:15 slot 419936 | BHSA חָזָֽק | WLC 4.18 חָזָֽק׃ (notes []) | MAM חָזָֽק׃
+   1Sam 18:29 slot 152786 | BHSA וַיֹּ֣אסֶף | WLC 4.18 וַיֹּ֣אסֶף (notes []) | MAM וַיֹּ֣אסֶף
+   Ps 104:29 slot 328516 | BHSA תֹּסֵ֣ף | WLC 4.18 תֹּסֵ֣ף (notes []) | MAM תֹּסֵ֣ף
+   1Sam 25:8 slot 156661 | BHSA בָּ֑נוּ | WLC 4.18 בָּ֑נוּ (notes []) | MAM בָּ֑נוּ

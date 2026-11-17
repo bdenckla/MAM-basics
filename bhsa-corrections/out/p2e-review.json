@@ -1,0 +1,6209 @@
+{
+ "categories": [
+  "another-word",
+  "follows-pointing",
+  "no-word",
+  "variant",
+  "homograph",
+  "artifact",
+  "unsure"
+ ],
+ "homograph_kinds": {
+  "name": "a name against a common noun",
+  "lexeme": "two of the ETCBC's lexemes of one spelling (numbered homonyms or a split lexeme)",
+  "form": "two forms or parts of speech spelled alike",
+  "article": "with or without the article"
+ },
+ "counts": {
+  "another-word": 3,
+  "follows-pointing": 2,
+  "no-word": 44,
+  "variant": 55,
+  "homograph": 52,
+  "artifact": 0,
+  "unsure": 0
+ },
+ "counts_by_test": {
+  "A groups": {
+   "another-word": 3,
+   "follows-pointing": 0,
+   "no-word": 0,
+   "variant": 0,
+   "homograph": 51,
+   "artifact": 0,
+   "unsure": 0
+  },
+  "A atoms": {
+   "another-word": 4,
+   "follows-pointing": 0,
+   "no-word": 0,
+   "variant": 0,
+   "homograph": 65,
+   "artifact": 0,
+   "unsure": 0
+  },
+  "B atoms": {
+   "another-word": 0,
+   "follows-pointing": 2,
+   "no-word": 44,
+   "variant": 55,
+   "homograph": 1,
+   "artifact": 0,
+   "unsure": 0
+  }
+ },
+ "homograph_kind_counts": {
+  "name": 15,
+  "form": 25,
+  "lexeme": 10,
+  "article": 2
+ },
+ "rows": [
+  {
+   "id": "A5",
+   "test": "A",
+   "kind": "lexeme",
+   "class": null,
+   "slot_level_origin": null,
+   "refs": [
+    "Genesis 7:13"
+   ],
+   "atoms": [
+    {
+     "atom": 2286,
+     "ref": "Genesis 7:13",
+     "bhsa": "וְשֵׁם־",
+     "mam": "וְשֵׁם־",
+     "wlc418": [
+      {
+       "text": "וְשֵׁם־",
+       "notes": []
+      }
+     ],
+     "slots": [
+      3283,
+      3284
+     ]
+    }
+   ],
+   "analysis": "W + CM=/ -.sg.m +n/a",
+   "category": "homograph",
+   "homograph_kind": "name",
+   "reason": "The name Shem (`CM=/`) and the noun 'name' (`CM/`, 89 atoms with the conjunction) are pointed alike; the verse lists Noah's sons.",
+   "evidence": null
+  },
+  {
+   "id": "A6",
+   "test": "A",
+   "kind": "lexeme",
+   "class": null,
+   "slot_level_origin": null,
+   "refs": [
+    "Genesis 14:18"
+   ],
+   "atoms": [
+    {
+     "atom": 4545,
+     "ref": "Genesis 14:18",
+     "bhsa": "שָׁלֵם",
+     "mam": "שָׁלֵם",
+     "wlc418": [
+      {
+       "text": "שָׁלֵם",
+       "notes": []
+      }
+     ],
+     "slots": [
+      6559
+     ]
+    }
+   ],
+   "analysis": "CLM===/ -.sg.? +n/a",
+   "category": "homograph",
+   "homograph_kind": "name",
+   "reason": "The place name Salem and the adjective 'complete' (`CLM=/`, 17 atoms) are pointed alike; here 'king of Salem'.",
+   "evidence": null
+  },
+  {
+   "id": "A10",
+   "test": "A",
+   "kind": "lexeme",
+   "class": null,
+   "slot_level_origin": null,
+   "refs": [
+    "Genesis 25:7"
+   ],
+   "atoms": [
+    {
+     "atom": 8813,
+     "ref": "Genesis 25:7",
+     "bhsa": "חָי",
+     "mam": "חָי",
+     "wlc418": [
+      {
+       "text": "חָי",
+       "notes": []
+      }
+     ],
+     "slots": [
+      12528
+     ]
+    }
+   ],
+   "analysis": "XJH[ qal perf p3.sg.m",
+   "category": "homograph",
+   "homograph_kind": "form",
+   "reason": "The short qal perfect of `XJH[` 'be alive' and the adjective 'alive' (`XJ/`, 21 atoms) are pointed alike; here 'which he lived', of Abraham's years.",
+   "evidence": null
+  },
+  {
+   "id": "A11",
+   "test": "A",
+   "kind": "stem/tense",
+   "class": null,
+   "slot_level_origin": null,
+   "refs": [
+    "Genesis 26:28"
+   ],
+   "atoms": [
+    {
+     "atom": 9523,
+     "ref": "Genesis 26:28",
+     "bhsa": "וְנִכְרְתָה",
+     "mam": "וְנִכְרְתָה",
+     "wlc418": [
+      {
+       "text": "וְנִכְרְתָה",
+       "notes": []
+      }
+     ],
+     "slots": [
+      13510,
+      13511
+     ]
+    }
+   ],
+   "analysis": "W + KRT[ qal impf p1.pl.?",
+   "category": "homograph",
+   "homograph_kind": "form",
+   "reason": "The niphal perfect third feminine singular and the qal cohortative first plural of `KRT[` are pointed alike; here 'let us make a covenant'.",
+   "evidence": null
+  },
+  {
+   "id": "A18",
+   "test": "A",
+   "kind": "lexeme",
+   "class": null,
+   "slot_level_origin": null,
+   "refs": [
+    "Genesis 49:27",
+    "Isaiah 33:23"
+   ],
+   "atoms": [
+    {
+     "atom": 20100,
+     "ref": "Genesis 49:27",
+     "bhsa": "עַד",
+     "mam": "עַד",
+     "wlc418": [
+      {
+       "text": "עַד",
+       "notes": []
+      }
+     ],
+     "slots": [
+      28128
+     ]
+    },
+    {
+     "atom": 157347,
+     "ref": "Isaiah 33:23",
+     "bhsa": "עַד־",
+     "mam": "עַד־",
+     "wlc418": [
+      {
+       "text": "עַד־",
+       "notes": []
+      }
+     ],
+     "slots": [
+      223243
+     ]
+    }
+   ],
+   "analysis": "<D==/ -.sg.m",
+   "category": "homograph",
+   "homograph_kind": "lexeme",
+   "reason": "The ETCBC's `<D==/` 'prey' and the preposition 'until' (`<D`) are pointed alike; here 'devours prey' and 'prey of great spoil'.",
+   "evidence": null
+  },
+  {
+   "id": "A25",
+   "test": "A",
+   "kind": "lexeme",
+   "class": null,
+   "slot_level_origin": null,
+   "refs": [
+    "Exodus 16:1"
+   ],
+   "atoms": [
+    {
+     "atom": 26634,
+     "ref": "Exodus 16:1",
+     "bhsa": "אֵילִם",
+     "mam": "אֵילִם",
+     "wlc418": [
+      {
+       "text": "אֵילִם",
+       "notes": []
+      }
+     ],
+     "slots": [
+      37363
+     ]
+    }
+   ],
+   "analysis": ">JLM=/ -.sg.? +n/a",
+   "category": "homograph",
+   "homograph_kind": "name",
+   "reason": "The place name Elim and the plural of 'ram' spelled without the yod of its ending (`>JL=/`, 25 atoms) are pointed alike; here 'between Elim and Sinai'.",
+   "evidence": null
+  },
+  {
+   "id": "A26",
+   "test": "A",
+   "kind": "lexeme",
+   "class": null,
+   "slot_level_origin": null,
+   "refs": [
+    "Exodus 21:8"
+   ],
+   "atoms": [
+    {
+     "atom": 28608,
+     "ref": "Exodus 21:8",
+     "bhsa": "רָעָה",
+     "mam": "רָעָה",
+     "wlc418": [
+      {
+       "text": "רָעָה",
+       "notes": []
+      }
+     ],
+     "slots": [
+      40137
+     ]
+    }
+   ],
+   "analysis": "R<<[ qal perf p3.sg.f",
+   "category": "homograph",
+   "homograph_kind": "form",
+   "reason": "The qal perfect third feminine singular of `R<<[` 'be evil' and the noun 'evil' (`R<H/`) or the adjective (`R</`) are pointed alike, accents aside; here 'if she displeases her master'.",
+   "evidence": null
+  },
+  {
+   "id": "A28",
+   "test": "A",
+   "kind": "lexeme",
+   "class": null,
+   "slot_level_origin": null,
+   "refs": [
+    "Leviticus 13:45",
+    "Isaiah 52:1"
+   ],
+   "atoms": [
+    {
+     "atom": 42305,
+     "ref": "Leviticus 13:45",
+     "bhsa": "וְטָמֵא",
+     "mam": "וְטָמֵא",
+     "wlc418": [
+      {
+       "text": "וְטָמֵא",
+       "notes": []
+      }
+     ],
+     "slots": [
+      59831,
+      59832
+     ]
+    },
+    {
+     "atom": 162655,
+     "ref": "Isaiah 52:1",
+     "bhsa": "וְטָמֵא",
+     "mam": "וְטָמֵא",
+     "wlc418": [
+      {
+       "text": "וְטָמֵא",
+       "notes": []
+      }
+     ],
+     "slots": [
+      230324,
+      230325
+     ]
+    }
+   ],
+   "analysis": "W + VM>/ -.sg.m",
+   "category": "homograph",
+   "homograph_kind": "form",
+   "reason": "The adjective 'unclean' (`VM>/`) and the stative verb's perfect (`VM>[`, 22 atoms with the conjunction) are pointed alike; here the cry 'unclean' and 'the uncircumcised and the unclean'.",
+   "evidence": null
+  },
+  {
+   "id": "A31",
+   "test": "A",
+   "kind": "lexeme",
+   "class": null,
+   "slot_level_origin": null,
+   "refs": [
+    "Numbers 6:12"
+   ],
+   "atoms": [
+    {
+     "atom": 52053,
+     "ref": "Numbers 6:12",
+     "bhsa": "טָמֵא",
+     "mam": "טָמֵא",
+     "wlc418": [
+      {
+       "text": "טָמֵא",
+       "notes": []
+      }
+     ],
+     "slots": [
+      73622
+     ]
+    }
+   ],
+   "analysis": "VM>[ qal perf p3.sg.m",
+   "category": "homograph",
+   "homograph_kind": "form",
+   "reason": "As at A28, the other way: here the verb, 'because his consecration was defiled'.",
+   "evidence": null
+  },
+  {
+   "id": "A34",
+   "test": "A",
+   "kind": "lexeme",
+   "class": null,
+   "slot_level_origin": null,
+   "refs": [
+    "Numbers 11:15",
+    "Ezekiel 28:14"
+   ],
+   "atoms": [
+    {
+     "atom": 54612,
+     "ref": "Numbers 11:15",
+     "bhsa": "אַתְּ־",
+     "mam": "אַתְּ־",
+     "wlc418": [
+      {
+       "text": "אַתְּ־",
+       "notes": []
+      }
+     ],
+     "slots": [
+      77091
+     ]
+    },
+    {
+     "atom": 198019,
+     "ref": "Ezekiel 28:14",
+     "bhsa": "אַתְּ־",
+     "mam": "אַתְּ־",
+     "wlc418": [
+      {
+       "text": "אַתְּ־",
+       "notes": []
+      }
+     ],
+     "slots": [
+      278577
+     ]
+    }
+   ],
+   "analysis": ">TH p2.sg.m +n/a",
+   "category": "another-word",
+   "homograph_kind": null,
+   "reason": "The pointing is the feminine pronoun 'you' (`>T=`), which the BHSA gives the other 32 atoms of this pointing; the analysis is the masculine `>TH`, by context: Moses addresses God (Numbers 11:15), God the prince of Tyre (Ezekiel 28:14). The BHSA has no qere at either place; where it has the ketiv's two letters with the masculine's qere, at 5 places, it analyses the masculine too (out/p2e-checks.txt, part 5). A correction of gender by context.",
+   "evidence": {
+    "spellings": [
+     {
+      "lex": ">TH",
+      "filter": {},
+      "spellings": [
+       {
+        "form": "אַתָּה",
+        "count": 685,
+        "example": "Genesis 3:14"
+       },
+       {
+        "form": "אָתָּה",
+        "count": 54,
+        "example": "Genesis 3:11"
+       },
+       {
+        "form": "את (ketiv; qere אַתָּה)",
+        "count": 5,
+        "example": "1 Samuel 24:19"
+       },
+       {
+        "form": "אַתְּ",
+        "count": 3,
+        "example": "Numbers 11:15"
+       }
+      ]
+     },
+     {
+      "lex": ">T=",
+      "filter": {},
+      "spellings": [
+       {
+        "form": "אַתְּ",
+        "count": 44,
+        "example": "Genesis 24:23"
+       },
+       {
+        "form": "אתי (ketiv; qere אַתְּ)",
+        "count": 6,
+        "example": "Judges 17:2"
+       },
+       {
+        "form": "אָתְּ",
+        "count": 5,
+        "example": "Genesis 12:11"
+       },
+       {
+        "form": "אתי (ketiv; qere אָתְּ)",
+        "count": 1,
+        "example": "Ezekiel 36:13"
+       },
+       {
+        "form": "אָתּ",
+        "count": 1,
+        "example": "Ruth 3:9"
+       }
+      ]
+     }
+    ],
+    "texts": [
+     {
+      "ref": "Numbers 11:15",
+      "texts": [
+       {
+        "text": "WLC 4.18",
+        "atoms": [
+         {
+          "form": "אַתְּ־",
+          "notes": []
+         }
+        ]
+       },
+       {
+        "text": "WLC 4.20",
+        "atoms": [
+         {
+          "form": "אַתְּ־",
+          "notes": []
+         }
+        ]
+       },
+       {
+        "text": "UXLC 2.6",
+        "atoms": [
+         {
+          "form": "אַתְּ־",
+          "notes": []
+         }
+        ]
+       },
+       {
+        "text": "MAM",
+        "atoms": [
+         {
+          "form": "אַתְּ־",
+          "notes": []
+         }
+        ]
+       },
+       {
+        "text": "BHSA",
+        "atoms": [
+         {
+          "form": "אַתְּ־",
+          "notes": []
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "ref": "Ezekiel 28:14",
+      "texts": [
+       {
+        "text": "WLC 4.18",
+        "atoms": [
+         {
+          "form": "אַתְּ־",
+          "notes": []
+         }
+        ]
+       },
+       {
+        "text": "WLC 4.20",
+        "atoms": [
+         {
+          "form": "אַתְּ־",
+          "notes": []
+         }
+        ]
+       },
+       {
+        "text": "UXLC 2.6",
+        "atoms": [
+         {
+          "form": "אַתְּ־",
+          "notes": []
+         }
+        ]
+       },
+       {
+        "text": "MAM",
+        "atoms": [
+         {
+          "form": "אַתְּ־",
+          "notes": []
+         }
+        ]
+       },
+       {
+        "text": "BHSA",
+        "atoms": [
+         {
+          "form": "אַתְּ־",
+          "notes": []
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "A35",
+   "test": "A",
+   "kind": "lexeme",
+   "class": null,
+   "slot_level_origin": null,
+   "refs": [
+    "Numbers 11:33",
+    "Psalms 78:31"
+   ],
+   "atoms": [
+    {
+     "atom": 54933,
+     "ref": "Numbers 11:33",
+     "bhsa": "וְאַף",
+     "mam": "וְאַף",
+     "wlc418": [
+      {
+       "text": "וְאַף",
+       "notes": []
+      }
+     ],
+     "slots": [
+      77546,
+      77547
+     ]
+    },
+    {
+     "atom": 231202,
+     "ref": "Psalms 78:31",
+     "bhsa": "וְאַף",
+     "mam": "וְאַף",
+     "wlc418": [
+      {
+       "text": "וְאַף",
+       "notes": []
+      }
+     ],
+     "slots": [
+      323805,
+      323806
+     ]
+    }
+   ],
+   "analysis": "W + >P/ -.sg.m",
+   "category": "homograph",
+   "homograph_kind": "form",
+   "reason": "The noun 'nose, anger' (`>P/`, construct) and the particle 'also' (`>P`, 23 atoms with the conjunction) are pointed alike; here 'the anger of the LORD' and 'the anger of God'.",
+   "evidence": null
+  },
+  {
+   "id": "A36",
+   "test": "A",
+   "kind": "stem/tense",
+   "class": null,
+   "slot_level_origin": null,
+   "refs": [
+    "Numbers 14:4"
+   ],
+   "atoms": [
+    {
+     "atom": 55604,
+     "ref": "Numbers 14:4",
+     "bhsa": "נִתְּנָה",
+     "mam": "נִתְּנָה",
+     "wlc418": [
+      {
+       "text": "נִתְּנָה",
+       "notes": []
+      }
+     ],
+     "slots": [
+      78494
+     ]
+    }
+   ],
+   "analysis": "NTN[ qal impf p1.pl.?",
+   "category": "homograph",
+   "homograph_kind": "form",
+   "reason": "As at A11, for `NTN[`: here 'let us appoint a head'.",
+   "evidence": null
+  },
+  {
+   "id": "A38",
+   "test": "A",
+   "kind": "lexeme",
+   "class": null,
+   "slot_level_origin": null,
+   "refs": [
+    "Numbers 23:19"
+   ],
+   "atoms": [
+    {
+     "atom": 60240,
+     "ref": "Numbers 23:19",
+     "bhsa": "הַהוּא",
+     "mam": "הַהוּא",
+     "wlc418": [
+      {
+       "text": "הַהוּא",
+       "notes": []
+      }
+     ],
+     "slots": [
+      85020,
+      85021
+     ]
+    }
+   ],
+   "analysis": "H= + HW> p3.sg.m +n/a",
+   "category": "homograph",
+   "homograph_kind": "form",
+   "reason": "Before a he, the interrogative he and the article both have pataḥ; here the question 'has he said, and will he not do it?'.",
+   "evidence": null
+  },
+  {
+   "id": "A40",
+   "test": "A",
+   "kind": "lexeme",
+   "class": null,
+   "slot_level_origin": null,
+   "refs": [
+    "Deuteronomy 5:27"
+   ],
+   "atoms": [
+    {
+     "atom": 68421,
+     "ref": "Deuteronomy 5:27",
+     "bhsa": "וְאַתְּ",
+     "mam": "וְאַתְּ",
+     "wlc418": [
+      {
+       "text": "וְאַתְּ",
+       "notes": []
+      }
+     ],
+     "slots": [
+      96818,
+      96819
+     ]
+    }
+   ],
+   "analysis": "W + >TH p2.sg.m +n/a",
+   "category": "another-word",
+   "homograph_kind": null,
+   "reason": "As at A34, with the conjunction: the pointing is the feminine pronoun, which the BHSA gives the other 12 atoms of this pointing (`W + >T=`); the analysis is the masculine, the people addressing Moses.",
+   "evidence": {
+    "spellings": [
+     {
+      "lex": ">TH",
+      "filter": {},
+      "spellings": [
+       {
+        "form": "אַתָּה",
+        "count": 685,
+        "example": "Genesis 3:14"
+       },
+       {
+        "form": "אָתָּה",
+        "count": 54,
+        "example": "Genesis 3:11"
+       },
+       {
+        "form": "את (ketiv; qere אַתָּה)",
+        "count": 5,
+        "example": "1 Samuel 24:19"
+       },
+       {
+        "form": "אַתְּ",
+        "count": 3,
+        "example": "Numbers 11:15"
+       }
+      ]
+     },
+     {
+      "lex": ">T=",
+      "filter": {},
+      "spellings": [
+       {
+        "form": "אַתְּ",
+        "count": 44,
+        "example": "Genesis 24:23"
+       },
+       {
+        "form": "אתי (ketiv; qere אַתְּ)",
+        "count": 6,
+        "example": "Judges 17:2"
+       },
+       {
+        "form": "אָתְּ",
+        "count": 5,
+        "example": "Genesis 12:11"
+       },
+       {
+        "form": "אתי (ketiv; qere אָתְּ)",
+        "count": 1,
+        "example": "Ezekiel 36:13"
+       },
+       {
+        "form": "אָתּ",
+        "count": 1,
+        "example": "Ruth 3:9"
+       }
+      ]
+     }
+    ],
+    "texts": [
+     {
+      "ref": "Deuteronomy 5:27",
+      "texts": [
+       {
+        "text": "WLC 4.18",
+        "atoms": [
+         {
+          "form": "וְאַתְּ",
+          "notes": []
+         }
+        ]
+       },
+       {
+        "text": "WLC 4.20",
+        "atoms": [
+         {
+          "form": "וְאַתְּ",
+          "notes": []
+         }
+        ]
+       },
+       {
+        "text": "UXLC 2.6",
+        "atoms": [
+         {
+          "form": "וְאַתְּ",
+          "notes": []
+         }
+        ]
+       },
+       {
+        "text": "MAM",
+        "atoms": [
+         {
+          "form": "וְאַתְּ",
+          "notes": []
+         }
+        ]
+       },
+       {
+        "text": "BHSA",
+        "atoms": [
+         {
+          "form": "וְאַתְּ",
+          "notes": []
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "A41",
+   "test": "A",
+   "kind": "stem/tense",
+   "class": null,
+   "slot_level_origin": null,
+   "refs": [
+    "Deuteronomy 8:11"
+   ],
+   "atoms": [
+    {
+     "atom": 69423,
+     "ref": "Deuteronomy 8:11",
+     "bhsa": "שְׁמֹר",
+     "mam": "שְׁמֹר",
+     "wlc418": [
+      {
+       "text": "שְׁמֹר",
+       "notes": []
+      }
+     ],
+     "slots": [
+      98215
+     ]
+    }
+   ],
+   "analysis": "CMR[ qal infc ?.?.?",
+   "category": "homograph",
+   "homograph_kind": "form",
+   "reason": "The qal infinitive construct and the imperative of `CMR[` (11 atoms) are pointed alike; here after 'so as not to'.",
+   "evidence": null
+  },
+  {
+   "id": "A43",
+   "test": "A",
+   "kind": "segmentation",
+   "class": null,
+   "slot_level_origin": null,
+   "refs": [
+    "Deuteronomy 25:7"
+   ],
+   "atoms": [
+    {
+     "atom": 75638,
+     "ref": "Deuteronomy 25:7",
+     "bhsa": "מֵאֵין",
+     "mam": null,
+     "wlc418": [
+      {
+       "text": "מֵאֵין",
+       "notes": []
+      }
+     ],
+     "slots": [
+      106935
+     ]
+    }
+   ],
+   "analysis": "M>N[ piel perf p3.sg.m",
+   "category": "another-word",
+   "homograph_kind": null,
+   "reason": "The BHSA's letters have a yod after the second tsere, which MAM's lack. So pointed, the atom is 'from' and 'nothing' (`MN + >JN/`), the BHSA's analysis of the other 26 atoms of this pointing; the analysis is the one word that MAM's letters spell, the piel perfect 'refuses' (`M>N[`), which the BHSA has without the yod at 4 other words (out/p2e-checks.txt, part 4): it takes the yod for a vowel letter. WLC 4.18, WLC 4.20 and UXLC 2.6 have the yod. Test B skips the atom, its letters differing from MAM's.",
+   "evidence": {
+    "spellings": [
+     {
+      "lex": "M>N[",
+      "filter": {
+       "vs": "piel",
+       "vt": "perf",
+       "ps": "p3",
+       "nu": "sg",
+       "gn": "m"
+      },
+      "spellings": [
+       {
+        "form": "מֵאֵן",
+        "count": 4,
+        "example": "Exodus 7:14"
+       },
+       {
+        "form": "מֵאֵין",
+        "count": 1,
+        "example": "Deuteronomy 25:7"
+       }
+      ]
+     },
+     {
+      "lex": "M>N[",
+      "filter": {},
+      "spellings": [
+       {
+        "form": "יְמָאֵן",
+        "count": 10,
+        "example": "Genesis 37:35"
+       },
+       {
+        "form": "מֵאֲנוּ",
+        "count": 10,
+        "example": "Jeremiah 5:3"
+       },
+       {
+        "form": "מָאֵן",
+        "count": 5,
+        "example": "Exodus 7:27"
+       },
+       {
+        "form": "מֵאֵן",
+        "count": 4,
+        "example": "Exodus 7:14"
+       },
+       {
+        "form": "יְמָאֲנוּ",
+        "count": 4,
+        "example": "1 Samuel 8:19"
+       },
+       {
+        "form": "מֵאֲנָה",
+        "count": 4,
+        "example": "Jeremiah 15:18"
+       },
+       {
+        "form": "תְּמָאֵן",
+        "count": 2,
+        "example": "Exodus 4:23"
+       },
+       {
+        "form": "מֵאַנְתָּ",
+        "count": 1,
+        "example": "Exodus 10:3"
+       },
+       {
+        "form": "מֵאַנְתֶּם",
+        "count": 1,
+        "example": "Exodus 16:28"
+       },
+       {
+        "form": "מֵאֵין",
+        "count": 1,
+        "example": "Deuteronomy 25:7"
+       },
+       {
+        "form": "תְּמָאֲנוּ",
+        "count": 1,
+        "example": "Isaiah 1:20"
+       },
+       {
+        "form": "מֵאַנְתְּ",
+        "count": 1,
+        "example": "Jeremiah 3:3"
+       },
+       {
+        "form": "מֵּאֲנִים",
+        "count": 1,
+        "example": "Jeremiah 13:10"
+       },
+       {
+        "form": "תְּמָאֵנוּ",
+        "count": 1,
+        "example": "Proverbs 1:24"
+       }
+      ]
+     }
+    ],
+    "texts": [
+     {
+      "ref": "Deuteronomy 25:7",
+      "texts": [
+       {
+        "text": "WLC 4.18",
+        "atoms": [
+         {
+          "form": "מֵאֵין",
+          "notes": []
+         }
+        ]
+       },
+       {
+        "text": "WLC 4.20",
+        "atoms": [
+         {
+          "form": "מֵאֵין",
+          "notes": []
+         }
+        ]
+       },
+       {
+        "text": "UXLC 2.6",
+        "atoms": [
+         {
+          "form": "מֵאֵין",
+          "notes": []
+         }
+        ]
+       },
+       {
+        "text": "MAM",
+        "atoms": [
+         {
+          "form": "מֵאֵן",
+          "notes": []
+         }
+        ]
+       },
+       {
+        "text": "BHSA",
+        "atoms": [
+         {
+          "form": "מֵאֵין",
+          "notes": []
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "A44",
+   "test": "A",
+   "kind": "lexeme",
+   "class": null,
+   "slot_level_origin": null,
+   "refs": [
+    "Deuteronomy 30:3",
+    "Zephaniah 2:7"
+   ],
+   "atoms": [
+    {
+     "atom": 77920,
+     "ref": "Deuteronomy 30:3",
+     "bhsa": "וְשָׁב",
+     "mam": "וְשָׁב",
+     "wlc418": [
+      {
+       "text": "וְשָׁב",
+       "notes": []
+      }
+     ],
+     "slots": [
+      110235,
+      110236
+     ]
+    },
+    {
+     "atom": 215945,
+     "ref": "Zephaniah 2:7",
+     "bhsa": "וְשָׁב",
+     "mam": "וְשָׁב",
+     "wlc418": [
+      {
+       "text": "וְשָׁב",
+       "notes": []
+      }
+     ],
+     "slots": [
+      303587,
+      303588
+     ]
+    }
+   ],
+   "analysis": "W + CWB=[ qal perf p3.sg.m",
+   "category": "homograph",
+   "homograph_kind": "lexeme",
+   "reason": "The ETCBC's second lexeme `CWB=[` (its gloss 'gather'), used with 'fortunes', and `CWB[` 'return' (29 atoms with the conjunction) are pointed alike.",
+   "evidence": null
+  },
+  {
+   "id": "A54",
+   "test": "A",
+   "kind": "lexeme",
+   "class": null,
+   "slot_level_origin": null,
+   "refs": [
+    "Judges 21:19",
+    "Ecclesiastes 3:21"
+   ],
+   "atoms": [
+    {
+     "atom": 99544,
+     "ref": "Judges 21:19",
+     "bhsa": "הָעֹלָה",
+     "mam": "הָעֹלָה",
+     "wlc418": [
+      {
+       "text": "הָעֹלָה",
+       "notes": []
+      }
+     ],
+     "slots": [
+      141387,
+      141388
+     ]
+    },
+    {
+     "atom": 259166,
+     "ref": "Ecclesiastes 3:21",
+     "bhsa": "הָעֹלָה",
+     "mam": "הָעֹלָה",
+     "wlc418": [
+      {
+       "text": "הָעֹלָה",
+       "notes": []
+      }
+     ],
+     "slots": [
+      360509,
+      360510
+     ]
+    }
+   ],
+   "analysis": "H + <LH[ qal ptca ?.sg.f",
+   "category": "homograph",
+   "homograph_kind": "form",
+   "reason": "The feminine participle 'going up' (`<LH[`) and the noun 'burnt offering' (`<LH/`, 61 atoms), each with the article, are pointed alike; here 'the highway that goes up' and the spirit 'that goes upward'.",
+   "evidence": null
+  },
+  {
+   "id": "A58",
+   "test": "A",
+   "kind": "stem/tense",
+   "class": null,
+   "slot_level_origin": null,
+   "refs": [
+    "1 Samuel 9:24",
+    "Obadiah 1:4"
+   ],
+   "atoms": [
+    {
+     "atom": 102875,
+     "ref": "1 Samuel 9:24",
+     "bhsa": "שִׂים־",
+     "mam": "שִׂים־",
+     "wlc418": [
+      {
+       "text": "שִׂים־",
+       "notes": []
+      }
+     ],
+     "slots": [
+      146112
+     ]
+    },
+    {
+     "atom": 212029,
+     "ref": "Obadiah 1:4",
+     "bhsa": "שִׂים",
+     "mam": "שִׂים",
+     "wlc418": [
+      {
+       "text": "שִׂים",
+       "notes": []
+      }
+     ],
+     "slots": [
+      298225
+     ]
+    }
+   ],
+   "analysis": "FJM[ qal ptcp ?.sg.m",
+   "category": "homograph",
+   "homograph_kind": "form",
+   "reason": "The qal passive participle of `FJM[` 'put', its imperative (23 atoms) and its infinitive are pointed alike; the BHSA reads 'set' at both verses: what is left, 'set before you', and a nest 'set among the stars'.",
+   "evidence": null
+  },
+  {
+   "id": "A73",
+   "test": "A",
+   "kind": "lexeme",
+   "class": null,
+   "slot_level_origin": null,
+   "refs": [
+    "1 Kings 6:24"
+   ],
+   "atoms": [
+    {
+     "atom": 126989,
+     "ref": "1 Kings 6:24",
+     "bhsa": "קְצֹות",
+     "mam": "קְצוֹת",
+     "wlc418": [
+      {
+       "text": "קְצוֹת",
+       "notes": []
+      }
+     ],
+     "slots": [
+      180578
+     ]
+    }
+   ],
+   "analysis": "QYWT/ -.pl.f",
+   "category": "homograph",
+   "homograph_kind": "lexeme",
+   "reason": "The ETCBC's lexemes `QYH/` (14 atoms) and `QYWT/`, both glossed 'end', have this plural construct alike; which of the two an atom gets is the ETCBC's lexicography, not its pointing.",
+   "evidence": null
+  },
+  {
+   "id": "A76",
+   "test": "A",
+   "kind": "lexeme",
+   "class": null,
+   "slot_level_origin": null,
+   "refs": [
+    "1 Kings 7:46",
+    "2 Chronicles 4:17"
+   ],
+   "atoms": [
+    {
+     "atom": 127859,
+     "ref": "1 Kings 7:46",
+     "bhsa": "הָאֲדָמָה",
+     "mam": "הָאֲדָמָה",
+     "wlc418": [
+      {
+       "text": "הָאֲדָמָה",
+       "notes": []
+      }
+     ],
+     "slots": [
+      181918,
+      181919
+     ]
+    },
+    {
+     "atom": 292597,
+     "ref": "2 Chronicles 4:17",
+     "bhsa": "הָאֲדָמָה",
+     "mam": "הָאֲדָמָה",
+     "wlc418": [
+      {
+       "text": "הָאֲדָמָה",
+       "notes": []
+      }
+     ],
+     "slots": [
+      408481,
+      408482
+     ]
+    }
+   ],
+   "analysis": "H + >DMH==/ -.sg.? +n/a",
+   "category": "homograph",
+   "homograph_kind": "name",
+   "reason": "The place name Adamah and the noun 'ground' (`>DMH/`, 111 atoms with the article) are pointed alike; the BHSA takes the place name at both verses, 'the ford of Adamah', where they are also read 'the clay ground'.",
+   "evidence": null
+  },
+  {
+   "id": "A78",
+   "test": "A",
+   "kind": "stem/tense",
+   "class": null,
+   "slot_level_origin": null,
+   "refs": [
+    "1 Kings 18:29"
+   ],
+   "atoms": [
+    {
+     "atom": 134305,
+     "ref": "1 Kings 18:29",
+     "bhsa": "לַעֲלֹות",
+     "mam": "לַעֲלוֹת",
+     "wlc418": [
+      {
+       "text": "לַעֲלוֹת",
+       "notes": []
+      }
+     ],
+     "slots": [
+      191004,
+      191005
+     ]
+    }
+   ],
+   "analysis": "L + <LH[ hif infc ?.?.?",
+   "category": "homograph",
+   "homograph_kind": "form",
+   "reason": "After a preposition the hiphil infinitive can lack its he, and then it is pointed as the qal infinitive is (18 atoms); the BHSA reads 'until the offering up of the oblation'.",
+   "evidence": null
+  },
+  {
+   "id": "A82",
+   "test": "A",
+   "kind": "lexeme",
+   "class": null,
+   "slot_level_origin": null,
+   "refs": [
+    "2 Kings 14:7"
+   ],
+   "atoms": [
+    {
+     "atom": 143248,
+     "ref": "2 Kings 14:7",
+     "bhsa": "הַסֶּלַע",
+     "mam": "הַסֶּלַע",
+     "wlc418": [
+      {
+       "text": "הַסֶּלַע",
+       "notes": []
+      }
+     ],
+     "slots": [
+      203769,
+      203770
+     ]
+    }
+   ],
+   "analysis": "H + SL<=/ -.sg.? +n/a",
+   "category": "homograph",
+   "homograph_kind": "name",
+   "reason": "The place name Sela and the noun 'rock' (`SL</`, 11 atoms with the article) are pointed alike; here 'he took Sela'.",
+   "evidence": null
+  },
+  {
+   "id": "A85",
+   "test": "A",
+   "kind": "lexeme",
+   "class": null,
+   "slot_level_origin": null,
+   "refs": [
+    "Isaiah 3:6"
+   ],
+   "atoms": [
+    {
+     "atom": 149869,
+     "ref": "Isaiah 3:6",
+     "bhsa": "לְכָה",
+     "mam": "לְכָה",
+     "wlc418": [
+      {
+       "text": "לְכָה",
+       "notes": []
+      }
+     ],
+     "slots": [
+      213003
+     ]
+    }
+   ],
+   "analysis": "L +K",
+   "category": "homograph",
+   "homograph_kind": "form",
+   "reason": "The long form of 'to you' and the imperative 'go' (`HLK[`, 26 atoms) are pointed alike; here 'you have a cloak'.",
+   "evidence": null
+  },
+  {
+   "id": "A87",
+   "test": "A",
+   "kind": "lexeme",
+   "class": null,
+   "slot_level_origin": null,
+   "refs": [
+    "Isaiah 10:8"
+   ],
+   "atoms": [
+    {
+     "atom": 151715,
+     "ref": "Isaiah 10:8",
+     "bhsa": "שָׂרַי",
+     "mam": "שָׂרַי",
+     "wlc418": [
+      {
+       "text": "שָׂרַי",
+       "notes": []
+      }
+     ],
+     "slots": [
+      215650
+     ]
+    }
+   ],
+   "analysis": "FR/ -.pl.m +J",
+   "category": "homograph",
+   "homograph_kind": "name",
+   "reason": "'My princes' (`FR/` with suffix `J`) and the name Sarai (`FRJ/`, 13 atoms) are pointed alike; here 'are not my princes all kings?'.",
+   "evidence": null
+  },
+  {
+   "id": "A99",
+   "test": "A",
+   "kind": "lexeme",
+   "class": null,
+   "slot_level_origin": null,
+   "refs": [
+    "Isaiah 45:9",
+    "Jeremiah 51:36"
+   ],
+   "atoms": [
+    {
+     "atom": 160885,
+     "ref": "Isaiah 45:9",
+     "bhsa": "רָב",
+     "mam": "רָב",
+     "wlc418": [
+      {
+       "text": "רָב",
+       "notes": []
+      }
+     ],
+     "slots": [
+      228015
+     ]
+    },
+    {
+     "atom": 186944,
+     "ref": "Jeremiah 51:36",
+     "bhsa": "רָב",
+     "mam": "רָב",
+     "wlc418": [
+      {
+       "text": "רָב",
+       "notes": []
+      }
+     ],
+     "slots": [
+      263375
+     ]
+    }
+   ],
+   "analysis": "RJB[ qal ptca ?.sg.m",
+   "category": "homograph",
+   "homograph_kind": "form",
+   "reason": "The participle of `RJB[` 'contend' and the adjective 'much' (`RB/`, 47 atoms) are pointed alike; here 'him who strives with his maker' and 'I am pleading your cause'.",
+   "evidence": null
+  },
+  {
+   "id": "A104",
+   "test": "A",
+   "kind": "lexeme",
+   "class": null,
+   "slot_level_origin": null,
+   "refs": [
+    "Isaiah 57:10",
+    "Psalms 74:19"
+   ],
+   "atoms": [
+    {
+     "atom": 163711,
+     "ref": "Isaiah 57:10",
+     "bhsa": "חַיַּת",
+     "mam": "חַיַּת",
+     "wlc418": [
+      {
+       "text": "חַיַּת",
+       "notes": []
+      }
+     ],
+     "slots": [
+      231715
+     ]
+    },
+    {
+     "atom": 230592,
+     "ref": "Psalms 74:19",
+     "bhsa": "חַיַּת",
+     "mam": "חַיַּת",
+     "wlc418": [
+      {
+       "text": "חַיַּת",
+       "notes": []
+      }
+     ],
+     "slots": [
+      322981
+     ]
+    }
+   ],
+   "analysis": "XJH==/ -.sg.f",
+   "category": "homograph",
+   "homograph_kind": "lexeme",
+   "reason": "The ETCBC's homonyms `XJH/` 'animal' (31 atoms) and `XJH==/` 'life' are pointed alike.",
+   "evidence": null
+  },
+  {
+   "id": "A108",
+   "test": "A",
+   "kind": "lexeme",
+   "class": null,
+   "slot_level_origin": null,
+   "refs": [
+    "Jeremiah 9:5"
+   ],
+   "atoms": [
+    {
+     "atom": 169514,
+     "ref": "Jeremiah 9:5",
+     "bhsa": "דַעַת־",
+     "mam": "דַעַת־",
+     "wlc418": [
+      {
+       "text": "דַעַת־",
+       "notes": []
+      }
+     ],
+     "slots": [
+      239499
+     ]
+    }
+   ],
+   "analysis": "JD<[ qal infc ?.?.?",
+   "category": "homograph",
+   "homograph_kind": "form",
+   "reason": "The qal infinitive of `JD<[` 'know' and the noun 'knowledge' (`D<T/`, 11 atoms) are pointed alike; here with an object, 'they refuse to know me'.",
+   "evidence": null
+  },
+  {
+   "id": "A120",
+   "test": "A",
+   "kind": "lexeme",
+   "class": null,
+   "slot_level_origin": null,
+   "refs": [
+    "Jeremiah 50:27",
+    "Ezekiel 21:34"
+   ],
+   "atoms": [
+    {
+     "atom": 186162,
+     "ref": "Jeremiah 50:27",
+     "bhsa": "יֹומָם",
+     "mam": "יוֹמָם",
+     "wlc418": [
+      {
+       "text": "יוֹמָם",
+       "notes": []
+      }
+     ],
+     "slots": [
+      262375
+     ]
+    },
+    {
+     "atom": 195459,
+     "ref": "Ezekiel 21:34",
+     "bhsa": "יֹומָם",
+     "mam": "יוֹמָם",
+     "wlc418": [
+      {
+       "text": "יוֹמָם",
+       "notes": []
+      }
+     ],
+     "slots": [
+      275149
+     ]
+    }
+   ],
+   "analysis": "JWM/ -.sg.m +M",
+   "category": "homograph",
+   "homograph_kind": "form",
+   "reason": "'Their day' (`JWM/` with suffix `M`) and the adverb 'by day' (`JWMM`, 47 atoms) are pointed alike; here 'their day has come'.",
+   "evidence": null
+  },
+  {
+   "id": "A125",
+   "test": "A",
+   "kind": "lexeme",
+   "class": null,
+   "slot_level_origin": null,
+   "refs": [
+    "Ezekiel 6:13"
+   ],
+   "atoms": [
+    {
+     "atom": 189593,
+     "ref": "Ezekiel 6:13",
+     "bhsa": "אֵלָה",
+     "mam": "אֵלָה",
+     "wlc418": [
+      {
+       "text": "אֵלָה",
+       "notes": []
+      }
+     ],
+     "slots": [
+      267103
+     ]
+    }
+   ],
+   "analysis": ">LH/ -.sg.f",
+   "category": "homograph",
+   "homograph_kind": "name",
+   "reason": "The noun 'big tree' (`>LH/`) and the name Elah (`>LH===/`, 12 atoms) are pointed alike; here 'under every leafy terebinth'.",
+   "evidence": null
+  },
+  {
+   "id": "A126",
+   "test": "A",
+   "kind": "lexeme",
+   "class": null,
+   "slot_level_origin": null,
+   "refs": [
+    "Ezekiel 17:22"
+   ],
+   "atoms": [
+    {
+     "atom": 193550,
+     "ref": "Ezekiel 17:22",
+     "bhsa": "הָרָמָה",
+     "mam": "הָרָמָה",
+     "wlc418": [
+      {
+       "text": "הָרָמָה",
+       "notes": []
+      }
+     ],
+     "slots": [
+      272629,
+      272630
+     ]
+    }
+   ],
+   "analysis": "H + RWM[ qal ptca ?.sg.f",
+   "category": "homograph",
+   "homograph_kind": "name",
+   "reason": "The feminine participle 'lofty' (`RWM[`) and the place name Ramah (`RMH==/`, 12 atoms), each with the article, are pointed alike; here 'the lofty cedar'.",
+   "evidence": null
+  },
+  {
+   "id": "A131",
+   "test": "A",
+   "kind": "lexeme",
+   "class": null,
+   "slot_level_origin": null,
+   "refs": [
+    "Ezekiel 40:5"
+   ],
+   "atoms": [
+    {
+     "atom": 202761,
+     "ref": "Ezekiel 40:5",
+     "bhsa": "קְנֵה",
+     "mam": "קְנֵה",
+     "wlc418": [
+      {
+       "text": "קְנֵה",
+       "notes": []
+      }
+     ],
+     "slots": [
+      285081
+     ]
+    }
+   ],
+   "analysis": "QNH/ -.sg.m",
+   "category": "homograph",
+   "homograph_kind": "form",
+   "reason": "The construct of 'reed' (`QNH/`) and the imperative 'buy' (`QNH[`, 12 atoms) are pointed alike; here 'a measuring reed'.",
+   "evidence": null
+  },
+  {
+   "id": "A132",
+   "test": "A",
+   "kind": "lexeme",
+   "class": null,
+   "slot_level_origin": null,
+   "refs": [
+    "Ezekiel 40:14"
+   ],
+   "atoms": [
+    {
+     "atom": 202895,
+     "ref": "Ezekiel 40:14",
+     "bhsa": "אֵילִים",
+     "mam": "אֵילִים",
+     "wlc418": [
+      {
+       "text": "אֵילִים",
+       "notes": []
+      }
+     ],
+     "slots": [
+      285284
+     ]
+    }
+   ],
+   "analysis": ">JL===/ -.pl.m",
+   "category": "homograph",
+   "homograph_kind": "lexeme",
+   "reason": "The ETCBC's homonyms `>JL=/` 'ram' (16 atoms) and `>JL===/` 'pillar' are pointed alike; here the gate's pillars.",
+   "evidence": null
+  },
+  {
+   "id": "A136",
+   "test": "A",
+   "kind": "lexeme",
+   "class": null,
+   "slot_level_origin": null,
+   "refs": [
+    "Hosea 11:7"
+   ],
+   "atoms": [
+    {
+     "atom": 208498,
+     "ref": "Hosea 11:7",
+     "bhsa": "עַל",
+     "mam": "עַל",
+     "wlc418": [
+      {
+       "text": "עַל",
+       "notes": []
+      }
+     ],
+     "slots": [
+      293405
+     ]
+    }
+   ],
+   "analysis": "<L=/ -.sg.m",
+   "category": "homograph",
+   "homograph_kind": "form",
+   "reason": "The noun 'height' (`<L=/`) and the preposition 'upon' (`<L`, 3476 atoms) are pointed alike; here after a preposition, 'they call him upward'.",
+   "evidence": null
+  },
+  {
+   "id": "A140",
+   "test": "A",
+   "kind": "lexeme",
+   "class": null,
+   "slot_level_origin": null,
+   "refs": [
+    "Joel 1:12"
+   ],
+   "atoms": [
+    {
+     "atom": 209119,
+     "ref": "Joel 1:12",
+     "bhsa": "תָּמָר",
+     "mam": "תָּמָר",
+     "wlc418": [
+      {
+       "text": "תָּמָר",
+       "notes": []
+      }
+     ],
+     "slots": [
+      294227
+     ]
+    }
+   ],
+   "analysis": "TMR/ -.sg.m",
+   "category": "homograph",
+   "homograph_kind": "name",
+   "reason": "The noun 'date-palm' (`TMR/`) and the name Tamar (`TMR===/`, 16 atoms) are pointed alike; here in a list of trees.",
+   "evidence": null
+  },
+  {
+   "id": "A142",
+   "test": "A",
+   "kind": "lexeme",
+   "class": null,
+   "slot_level_origin": null,
+   "refs": [
+    "Amos 6:12"
+   ],
+   "atoms": [
+    {
+     "atom": 211260,
+     "ref": "Amos 6:12",
+     "bhsa": "לְרֹאשׁ",
+     "mam": "לְרֹאשׁ",
+     "wlc418": [
+      {
+       "text": "לְרֹאשׁ",
+       "notes": []
+      }
+     ],
+     "slots": [
+      297151,
+      297152
+     ]
+    }
+   ],
+   "analysis": "L + R>C=/ -.sg.m",
+   "category": "homograph",
+   "homograph_kind": "lexeme",
+   "reason": "The ETCBC's homonyms `R>C/` 'head' (23 atoms with the preposition) and `R>C=/` 'poison' are pointed alike; here 'you have turned justice into poison'.",
+   "evidence": null
+  },
+  {
+   "id": "A145",
+   "test": "A",
+   "kind": "stem/tense",
+   "class": null,
+   "slot_level_origin": null,
+   "refs": [
+    "Micah 7:18",
+    "Psalms 5:5"
+   ],
+   "atoms": [
+    {
+     "atom": 214334,
+     "ref": "Micah 7:18",
+     "bhsa": "חָפֵץ",
+     "mam": "חָפֵץ",
+     "wlc418": [
+      {
+       "text": "חָפֵץ",
+       "notes": []
+      }
+     ],
+     "slots": [
+      301410
+     ]
+    },
+    {
+     "atom": 221286,
+     "ref": "Psalms 5:5",
+     "bhsa": "חָפֵץ",
+     "mam": "חָפֵץ־",
+     "wlc418": [
+      {
+       "text": "חָפֵץ",
+       "notes": []
+      }
+     ],
+     "slots": [
+      311074
+     ]
+    }
+   ],
+   "analysis": "XPY[ qal ptca ?.sg.m",
+   "category": "homograph",
+   "homograph_kind": "form",
+   "reason": "The stative verb's perfect (28 atoms) and its participle (`XPY[`) are pointed alike; here 'he delights in mercy' and 'a God who delights in wickedness'.",
+   "evidence": null
+  },
+  {
+   "id": "A149",
+   "test": "A",
+   "kind": "stem/tense",
+   "class": null,
+   "slot_level_origin": null,
+   "refs": [
+    "Zephaniah 3:8"
+   ],
+   "atoms": [
+    {
+     "atom": 216167,
+     "ref": "Zephaniah 3:8",
+     "bhsa": "קוּמִי",
+     "mam": "קוּמִי",
+     "wlc418": [
+      {
+       "text": "קוּמִי",
+       "notes": []
+      }
+     ],
+     "slots": [
+      303867
+     ]
+    }
+   ],
+   "analysis": "QWM[ qal infc ?.?.? +J",
+   "category": "homograph",
+   "homograph_kind": "form",
+   "reason": "The infinitive with suffix `J` and the feminine imperative of `QWM[` (14 atoms) are pointed alike; here 'the day of my rising'.",
+   "evidence": null
+  },
+  {
+   "id": "A156",
+   "test": "A",
+   "kind": "lexeme",
+   "class": null,
+   "slot_level_origin": null,
+   "refs": [
+    "Psalms 25:21"
+   ],
+   "atoms": [
+    {
+     "atom": 223792,
+     "ref": "Psalms 25:21",
+     "bhsa": "תֹּם־",
+     "mam": "תֹּם־",
+     "wlc418": [
+      {
+       "text": "תֹּם־",
+       "notes": []
+      }
+     ],
+     "slots": [
+      314266
+     ]
+    }
+   ],
+   "analysis": "TM=/ -.sg.m",
+   "category": "homograph",
+   "homograph_kind": "form",
+   "reason": "The noun 'integrity' (`TM=/`) and the qal infinitive of `TMM[` (11 atoms) are pointed alike; here 'integrity and uprightness'.",
+   "evidence": null
+  },
+  {
+   "id": "A157",
+   "test": "A",
+   "kind": "lexeme",
+   "class": null,
+   "slot_level_origin": null,
+   "refs": [
+    "Psalms 28:8",
+    "Psalms 29:11"
+   ],
+   "atoms": [
+    {
+     "atom": 224117,
+     "ref": "Psalms 28:8",
+     "bhsa": "עֹז־",
+     "mam": "עֹז־",
+     "wlc418": [
+      {
+       "text": "עֹז־",
+       "notes": []
+      }
+     ],
+     "slots": [
+      314677
+     ]
+    },
+    {
+     "atom": 224216,
+     "ref": "Psalms 29:11",
+     "bhsa": "עֹז",
+     "mam": "עֹז",
+     "wlc418": [
+      {
+       "text": "עֹז",
+       "notes": [
+        "c"
+       ]
+      }
+     ],
+     "slots": [
+      314805
+     ]
+    }
+   ],
+   "analysis": "<Z=/ -.sg.m",
+   "category": "homograph",
+   "homograph_kind": "lexeme",
+   "reason": "The ETCBC's homonyms `<Z/` 'power' (32 atoms) and `<Z=/` 'protection' are pointed alike.",
+   "evidence": null
+  },
+  {
+   "id": "A174",
+   "test": "A",
+   "kind": "lexeme",
+   "class": null,
+   "slot_level_origin": null,
+   "refs": [
+    "Job 42:10"
+   ],
+   "atoms": [
+    {
+     "atom": 248757,
+     "ref": "Job 42:10",
+     "bhsa": "שָׁב",
+     "mam": "שָׁב",
+     "wlc418": [
+      {
+       "text": "שָׁב",
+       "notes": []
+      }
+     ],
+     "slots": [
+      346779
+     ]
+    }
+   ],
+   "analysis": "CWB=[ qal perf p3.sg.m",
+   "category": "homograph",
+   "homograph_kind": "lexeme",
+   "reason": "As at A44: `CWB=[` with 'fortunes', pointed as `CWB[` 'return' is (33 atoms).",
+   "evidence": null
+  },
+  {
+   "id": "A177",
+   "test": "A",
+   "kind": "lexeme",
+   "class": null,
+   "slot_level_origin": null,
+   "refs": [
+    "Proverbs 8:30"
+   ],
+   "atoms": [
+    {
+     "atom": 250540,
+     "ref": "Proverbs 8:30",
+     "bhsa": "אָמֹון",
+     "mam": "אָמוֹן",
+     "wlc418": [
+      {
+       "text": "אָמוֹן",
+       "notes": []
+      }
+     ],
+     "slots": [
+      349113
+     ]
+    }
+   ],
+   "analysis": ">MWN=/ -.sg.m",
+   "category": "homograph",
+   "homograph_kind": "name",
+   "reason": "The noun 'fondling' (`>MWN=/`) and the name Amon (`>MWN==/`, 16 atoms) are pointed alike; here Wisdom 'beside him'.",
+   "evidence": null
+  },
+  {
+   "id": "A179",
+   "test": "A",
+   "kind": "lexeme",
+   "class": null,
+   "slot_level_origin": null,
+   "refs": [
+    "Proverbs 14:4"
+   ],
+   "atoms": [
+    {
+     "atom": 251585,
+     "ref": "Proverbs 14:4",
+     "bhsa": "אֲלָפִים",
+     "mam": "אֲלָפִים",
+     "wlc418": [
+      {
+       "text": "אֲלָפִים",
+       "notes": []
+      }
+     ],
+     "slots": [
+      350425
+     ]
+    }
+   ],
+   "analysis": ">LP/ -.pl.m",
+   "category": "homograph",
+   "homograph_kind": "lexeme",
+   "reason": "The ETCBC's homonyms `>LP=/` 'thousand' (119 atoms) and `>LP/` 'cattle' are pointed alike; here 'where there are no oxen'.",
+   "evidence": null
+  },
+  {
+   "id": "A184",
+   "test": "A",
+   "kind": "lexeme",
+   "class": null,
+   "slot_level_origin": null,
+   "refs": [
+    "Ruth 1:21"
+   ],
+   "atoms": [
+    {
+     "atom": 256079,
+     "ref": "Ruth 1:21",
+     "bhsa": "מְלֵאָה",
+     "mam": "מְלֵאָה",
+     "wlc418": [
+      {
+       "text": "מְלֵאָה",
+       "notes": []
+      }
+     ],
+     "slots": [
+      356192
+     ]
+    }
+   ],
+   "analysis": "ML>/ -.sg.f",
+   "category": "homograph",
+   "homograph_kind": "form",
+   "reason": "The adjective 'full' (`ML>/`) and the participle of `ML>[` (18 atoms) are pointed alike; here 'I went away full'.",
+   "evidence": null
+  },
+  {
+   "id": "A185",
+   "test": "A",
+   "kind": "lexeme",
+   "class": null,
+   "slot_level_origin": null,
+   "refs": [
+    "Song of Songs 5:15",
+    "Esther 1:6"
+   ],
+   "atoms": [
+    {
+     "atom": 257880,
+     "ref": "Song of Songs 5:15",
+     "bhsa": "שֵׁשׁ",
+     "mam": "שֵׁשׁ",
+     "wlc418": [
+      {
+       "text": "שֵׁשׁ",
+       "notes": []
+      }
+     ],
+     "slots": [
+      358662
+     ]
+    },
+    {
+     "atom": 262937,
+     "ref": "Esther 1:6",
+     "bhsa": "שֵׁשׁ",
+     "mam": "שֵׁשׁ",
+     "wlc418": [
+      {
+       "text": "שֵׁשׁ",
+       "notes": []
+      }
+     ],
+     "slots": [
+      365587
+     ]
+    }
+   ],
+   "analysis": "CC==/ -.sg.m",
+   "category": "homograph",
+   "homograph_kind": "lexeme",
+   "reason": "The ETCBC's homonyms `CC/` 'six' (83 atoms), `CC=/` 'linen' (16) and `CC==/` 'alabaster' are pointed alike; here 'pillars of alabaster'.",
+   "evidence": null
+  },
+  {
+   "id": "A187",
+   "test": "A",
+   "kind": "lexeme",
+   "class": null,
+   "slot_level_origin": null,
+   "refs": [
+    "Ecclesiastes 7:27"
+   ],
+   "atoms": [
+    {
+     "atom": 260166,
+     "ref": "Ecclesiastes 7:27",
+     "bhsa": "חֶשְׁבֹּון",
+     "mam": "חֶשְׁבּוֹן",
+     "wlc418": [
+      {
+       "text": "חֶשְׁבּוֹן",
+       "notes": []
+      }
+     ],
+     "slots": [
+      361881
+     ]
+    }
+   ],
+   "analysis": "XCBWN/ -.sg.m",
+   "category": "homograph",
+   "homograph_kind": "name",
+   "reason": "The noun 'account' (`XCBWN/`) and the place name Heshbon (`XCBWN==/`, 23 atoms) are pointed alike; here 'to find the account'.",
+   "evidence": null
+  },
+  {
+   "id": "A189",
+   "test": "A",
+   "kind": "lexeme",
+   "class": null,
+   "slot_level_origin": null,
+   "refs": [
+    "Esther 1:6"
+   ],
+   "atoms": [
+    {
+     "atom": 262926,
+     "ref": "Esther 1:6",
+     "bhsa": "חוּר",
+     "mam": "חוּר",
+     "wlc418": [
+      {
+       "text": "חוּר",
+       "notes": []
+      }
+     ],
+     "slots": [
+      365572
+     ]
+    }
+   ],
+   "analysis": "XWR/ -.sg.m",
+   "category": "homograph",
+   "homograph_kind": "name",
+   "reason": "The noun 'linen' (`XWR/`) and the name Hur (`XWR=/`, 11 atoms) are pointed alike; here in a list of fabrics.",
+   "evidence": null
+  },
+  {
+   "id": "A192",
+   "test": "A",
+   "kind": "segmentation",
+   "class": null,
+   "slot_level_origin": null,
+   "refs": [
+    "Ezra 3:10"
+   ],
+   "atoms": [
+    {
+     "atom": 272695,
+     "ref": "Ezra 3:10",
+     "bhsa": "בַּחֲצֹצְרֹות",
+     "mam": "בַּחֲצֹצְרוֹת",
+     "wlc418": [
+      {
+       "text": "בַּחֲצֹצְרוֹת",
+       "notes": []
+      }
+     ],
+     "slots": [
+      379391,
+      379392,
+      379393
+     ]
+    }
+   ],
+   "analysis": "B + H + XYYRH/ -.pl.f",
+   "category": "homograph",
+   "homograph_kind": "article",
+   "reason": "Before a ḥataf pataḥ the preposition has pataḥ with or without the article, so the pointing spells 'with trumpets', the analysis of the other 13 atoms of this pointing, and 'with the trumpets', this analysis, alike.",
+   "evidence": null
+  },
+  {
+   "id": "A197",
+   "test": "A",
+   "kind": "lexeme",
+   "class": null,
+   "slot_level_origin": null,
+   "refs": [
+    "Nehemiah 8:7"
+   ],
+   "atoms": [
+    {
+     "atom": 278289,
+     "ref": "Nehemiah 8:7",
+     "bhsa": "יָמִין",
+     "mam": "יָמִין",
+     "wlc418": [
+      {
+       "text": "יָמִין",
+       "notes": []
+      }
+     ],
+     "slots": [
+      387364
+     ]
+    }
+   ],
+   "analysis": "JMJN=/ -.sg.m +n/a",
+   "category": "homograph",
+   "homograph_kind": "name",
+   "reason": "The name Jamin and the noun 'right hand' (`JMJN/`, 21 atoms) are pointed alike; here in a list of names.",
+   "evidence": null
+  },
+  {
+   "id": "A198",
+   "test": "A",
+   "kind": "lexeme",
+   "class": null,
+   "slot_level_origin": null,
+   "refs": [
+    "Nehemiah 8:15"
+   ],
+   "atoms": [
+    {
+     "atom": 278439,
+     "ref": "Nehemiah 8:15",
+     "bhsa": "עֲלֵי־",
+     "mam": "עֲלֵי־",
+     "wlc418": [
+      {
+       "text": "עֲלֵי־",
+       "notes": []
+      }
+     ],
+     "slots": [
+      387605
+     ]
+    }
+   ],
+   "analysis": "<LH=/ -.pl.m",
+   "category": "homograph",
+   "homograph_kind": "form",
+   "reason": "The plural construct of 'leafage' (`<LH=/`) and the poetic preposition 'upon' (`<L`, 38 atoms) are pointed alike; here 'olive branches'.",
+   "evidence": null
+  },
+  {
+   "id": "A207",
+   "test": "A",
+   "kind": "lexeme",
+   "class": null,
+   "slot_level_origin": null,
+   "refs": [
+    "1 Chronicles 6:29",
+    "2 Chronicles 29:12"
+   ],
+   "atoms": [
+    {
+     "atom": 283101,
+     "ref": "1 Chronicles 6:29",
+     "bhsa": "עַבְדִּי",
+     "mam": "עַבְדִּי",
+     "wlc418": [
+      {
+       "text": "עַבְדִּי",
+       "notes": []
+      }
+     ],
+     "slots": [
+      394364
+     ]
+    },
+    {
+     "atom": 301307,
+     "ref": "2 Chronicles 29:12",
+     "bhsa": "עַבְדִּי",
+     "mam": "עַבְדִּי",
+     "wlc418": [
+      {
+       "text": "עַבְדִּי",
+       "notes": []
+      }
+     ],
+     "slots": [
+      421219
+     ]
+    }
+   ],
+   "analysis": "<BDJ/ -.sg.m +n/a",
+   "category": "homograph",
+   "homograph_kind": "name",
+   "reason": "The name Abdi and 'my servant' (`<BD/` with suffix `J`, 52 atoms) are pointed alike; here in genealogies.",
+   "evidence": null
+  },
+  {
+   "id": "A208",
+   "test": "A",
+   "kind": "lexeme",
+   "class": null,
+   "slot_level_origin": null,
+   "refs": [
+    "1 Chronicles 6:44"
+   ],
+   "atoms": [
+    {
+     "atom": 283236,
+     "ref": "1 Chronicles 6:44",
+     "bhsa": "עָשָׁן",
+     "mam": "עָשָׁן",
+     "wlc418": [
+      {
+       "text": "עָשָׁן",
+       "notes": []
+      }
+     ],
+     "slots": [
+      394541
+     ]
+    }
+   ],
+   "analysis": "<CN==/ -.sg.? +n/a",
+   "category": "homograph",
+   "homograph_kind": "name",
+   "reason": "The place name Ashan and the noun 'smoke' (`<CN/`, 12 atoms) are pointed alike; here in a list of towns.",
+   "evidence": null
+  },
+  {
+   "id": "A216",
+   "test": "A",
+   "kind": "lexeme",
+   "class": null,
+   "slot_level_origin": null,
+   "refs": [
+    "1 Chronicles 20:8"
+   ],
+   "atoms": [
+    {
+     "atom": 288191,
+     "ref": "1 Chronicles 20:8",
+     "bhsa": "אֵל",
+     "mam": "אֵל",
+     "wlc418": [
+      {
+       "text": "אֵל",
+       "notes": []
+      }
+     ],
+     "slots": [
+      401789
+     ]
+    }
+   ],
+   "analysis": ">L=== -.pl.? +n/a",
+   "category": "homograph",
+   "homograph_kind": "form",
+   "reason": "The short demonstrative 'these' (`>L===`) and 'God' (`>L/`, 162 atoms) are pointed alike; here 'these were born to the giant'.",
+   "evidence": null
+  },
+  {
+   "id": "A222",
+   "test": "A",
+   "kind": "segmentation",
+   "class": null,
+   "slot_level_origin": null,
+   "refs": [
+    "2 Chronicles 30:10"
+   ],
+   "atoms": [
+    {
+     "atom": 301854,
+     "ref": "2 Chronicles 30:10",
+     "bhsa": "לָעִיר",
+     "mam": "לָעִיר",
+     "wlc418": [
+      {
+       "text": "לָעִיר",
+       "notes": []
+      }
+     ],
+     "slots": [
+      422092,
+      422093
+     ]
+    }
+   ],
+   "analysis": "L + <JR/ -.sg.f",
+   "category": "homograph",
+   "homograph_kind": "article",
+   "reason": "Before a stressed monosyllable in a paired phrase the qamats under the preposition can be its vowel, with no article: here 'from city to city', whose first atom has no article, as the BHSA reads 'from gate to gate' at Exodus 32:27 and 'from generation to generation' at Isaiah 34:10 (out/p2e-checks.txt, part 2). The other 25 atoms of this pointing have the article.",
+   "evidence": null
+  },
+  {
+   "id": "B4762",
+   "test": "B",
+   "kind": null,
+   "class": "mam-unique",
+   "slot_level_origin": [
+    "mam-elsewhere"
+   ],
+   "refs": [
+    "Genesis 15:10"
+   ],
+   "atoms": [
+    {
+     "atom": 4762,
+     "ref": "Genesis 15:10",
+     "bhsa": "הַצִפֹּר",
+     "mam": "הַצִּפֹּר",
+     "wlc418": [
+      {
+       "text": "הַצִפֹּר",
+       "notes": [
+        "1"
+       ]
+      }
+     ],
+     "slots": [
+      6846,
+      6847
+     ]
+    }
+   ],
+   "analysis": "H + YPWR/ -.sg.?",
+   "category": "no-word",
+   "homograph_kind": null,
+   "reason": "No dagesh forte in the tsadi after the article, where MAM has one; with pataḥ and no dagesh the he is not the interrogative either, and the analysis reads the article and 'bird' (`YPWR/`) through it (WLC 4.18 has the BHSA's, with note 1). One of the four slot-level mam-elsewhere artifacts of out/p2d-review.md.",
+   "evidence": null
+  },
+  {
+   "id": "B11268",
+   "test": "B",
+   "kind": null,
+   "class": "mam-unique",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Genesis 30:19"
+   ],
+   "atoms": [
+    {
+     "atom": 11268,
+     "ref": "Genesis 30:19",
+     "bhsa": "לְּיַעֲקֹב",
+     "mam": "לְיַעֲקֹב",
+     "wlc418": [
+      {
+       "text": "לְּיַעֲקֹב",
+       "notes": [
+        "1"
+       ]
+      }
+     ],
+     "slots": [
+      15899,
+      15900
+     ]
+    }
+   ],
+   "analysis": "L + J<QB/ -.sg.m +n/a",
+   "category": "no-word",
+   "homograph_kind": null,
+   "reason": "A dagesh in the preposition's lamed at the start of the atom, which MAM lacks, after an atom with tipeḥa, a disjunctive accent, where the rules of the conjunctive dagesh give none; spells no other word (WLC 4.18 has it, with note 1).",
+   "evidence": null
+  },
+  {
+   "id": "B12313",
+   "test": "B",
+   "kind": null,
+   "class": "mam-unique",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Genesis 31:51"
+   ],
+   "atoms": [
+    {
+     "atom": 12313,
+     "ref": "Genesis 31:51",
+     "bhsa": "הַמַצֵּבָה",
+     "mam": "הַמַּצֵּבָה",
+     "wlc418": [
+      {
+       "text": "הַמַצֵּבָה",
+       "notes": [
+        "1"
+       ]
+      }
+     ],
+     "slots": [
+      17349,
+      17350
+     ]
+    }
+   ],
+   "analysis": "H + MYBH/ -.sg.f",
+   "category": "no-word",
+   "homograph_kind": null,
+   "reason": "No dagesh forte in the mem after the article, where MAM has one, as the BHSA has it twice in the next verse; spells no other word (WLC 4.18 has the BHSA's, with note 1).",
+   "evidence": null
+  },
+  {
+   "id": "B15635",
+   "test": "B",
+   "kind": null,
+   "class": "mam-unique",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Genesis 40:3"
+   ],
+   "atoms": [
+    {
+     "atom": 15635,
+     "ref": "Genesis 40:3",
+     "bhsa": "הַטַבָּחִים",
+     "mam": "הַטַּבָּחִים",
+     "wlc418": [
+      {
+       "text": "הַטַבָּחִים",
+       "notes": [
+        "1"
+       ]
+      }
+     ],
+     "slots": [
+      21956,
+      21957
+     ]
+    }
+   ],
+   "analysis": "H + VBX=/ -.pl.m",
+   "category": "no-word",
+   "homograph_kind": null,
+   "reason": "No dagesh forte in the tet after the article, where MAM has one, as the BHSA has it at its 5 other atoms of this analysis (as at Genesis 37:36); spells no other word (WLC 4.18 note 1).",
+   "evidence": null
+  },
+  {
+   "id": "B16215",
+   "test": "B",
+   "kind": null,
+   "class": "mam-unique",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Genesis 41:24"
+   ],
+   "atoms": [
+    {
+     "atom": 16215,
+     "ref": "Genesis 41:24",
+     "bhsa": "הָשִׁבֳּלִים",
+     "mam": "הַשִּׁבֳּלִים",
+     "wlc418": [
+      {
+       "text": "הָשִׁבֳּלִים",
+       "notes": [
+        "1"
+       ]
+      }
+     ],
+     "slots": [
+      22776,
+      22777
+     ]
+    }
+   ],
+   "analysis": "H + CBLT/ -.pl.f",
+   "category": "no-word",
+   "homograph_kind": null,
+   "reason": "The article has qamats and the shin no dagesh forte, where MAM has pataḥ and the dagesh; the article has qamats instead of a dagesh only before a guttural or resh, and the verse's other atom of this noun has pataḥ (WLC 4.18 has the BHSA's, with note 1).",
+   "evidence": null
+  },
+  {
+   "id": "B20938",
+   "test": "B",
+   "kind": null,
+   "class": "mam-unique",
+   "slot_level_origin": [
+    "mam-elsewhere"
+   ],
+   "refs": [
+    "Exodus 2:10"
+   ],
+   "atoms": [
+    {
+     "atom": 20938,
+     "ref": "Exodus 2:10",
+     "bhsa": "וַיִגְדַּל",
+     "mam": "וַיִּגְדַּל",
+     "wlc418": [
+      {
+       "text": "וַיִגְדַּל",
+       "notes": [
+        "1"
+       ]
+      }
+     ],
+     "slots": [
+      29303,
+      29304
+     ]
+    }
+   ],
+   "analysis": "W + GDL[ qal wayq p3.sg.m",
+   "category": "no-word",
+   "homograph_kind": null,
+   "reason": "No dagesh forte in the yod of the wayyiqtol's prefix after the conjunction's pataḥ, where MAM has one; the conjunction marks the tense, and the analysis reads the regular wayyiqtol (WLC 4.18 has the BHSA's, with note 1). One of the four slot-level mam-elsewhere artifacts of out/p2d-review.md.",
+   "evidence": null
+  },
+  {
+   "id": "B32091",
+   "test": "B",
+   "kind": null,
+   "class": "mam-unique",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Exodus 29:23"
+   ],
+   "atoms": [
+    {
+     "atom": 32091,
+     "ref": "Exodus 29:23",
+     "bhsa": "וַחַלַּת",
+     "mam": "וְחַלַּת",
+     "wlc418": [
+      {
+       "text": "וַחַלַּת",
+       "notes": []
+      }
+     ],
+     "slots": [
+      45043,
+      45044
+     ]
+    }
+   ],
+   "analysis": "W + XLH/ -.sg.f",
+   "category": "no-word",
+   "homograph_kind": null,
+   "reason": "The conjunction has pataḥ, its vowel before a ḥataf pataḥ, but the ḥet after it has a full pataḥ, before which the conjunction has sheva, as MAM's atom has; outside the wayyiqtol the BHSA has the conjunction with pataḥ before a guttural with a full pataḥ only here, at Numbers 16:21 and at Daniel 5:12 (out/p2e-checks.txt, part 3).",
+   "evidence": null
+  },
+  {
+   "id": "B36526",
+   "test": "B",
+   "kind": null,
+   "class": "mam-unique",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Exodus 39:20"
+   ],
+   "atoms": [
+    {
+     "atom": 36526,
+     "ref": "Exodus 39:20",
+     "bhsa": "מִלְמַטָּה",
+     "mam": "מִלְּמַטָּה",
+     "wlc418": [
+      {
+       "text": "מִלְמַטָּה",
+       "notes": []
+      }
+     ],
+     "slots": [
+      51408,
+      51409,
+      51410
+     ]
+    }
+   ],
+   "analysis": "MN + L + MVH==/ -.sg.m",
+   "category": "variant",
+   "homograph_kind": null,
+   "reason": "No dagesh forte in the lamed, which has sheva, after the preposition `MN`, where MAM has one: a dagesh forte that a letter with sheva may lack.",
+   "evidence": null
+  },
+  {
+   "id": "B49943",
+   "test": "B",
+   "kind": null,
+   "class": "mam-unique",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Numbers 2:14"
+   ],
+   "atoms": [
+    {
+     "atom": 49943,
+     "ref": "Numbers 2:14",
+     "bhsa": "וְמַטֵּה",
+     "mam": "וּמַטֵּה",
+     "wlc418": [
+      {
+       "text": "וְמַטֵּה",
+       "notes": []
+      }
+     ],
+     "slots": [
+      70603,
+      70604
+     ]
+    }
+   ],
+   "analysis": "W + MVH/ -.sg.m",
+   "category": "no-word",
+   "homograph_kind": null,
+   "reason": "A sheva under the conjunction's vav before mem, where the rule gives a shuruq, as MAM has (the review's case 5, Part 1's class c).",
+   "evidence": null
+  },
+  {
+   "id": "B57361",
+   "test": "B",
+   "kind": null,
+   "class": "mam-unique",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Numbers 17:12"
+   ],
+   "atoms": [
+    {
+     "atom": 57361,
+     "ref": "Numbers 17:12",
+     "bhsa": "תֹּוך",
+     "mam": "תּוֹךְ",
+     "wlc418": [
+      {
+       "text": "תּוֹך",
+       "notes": [
+        "1"
+       ]
+      }
+     ],
+     "slots": [
+      80991
+     ]
+    }
+   ],
+   "analysis": "TWK/ -.sg.m",
+   "category": "no-word",
+   "homograph_kind": null,
+   "reason": "No sheva in the final kaf, which MAM has (WLC 4.18 has the BHSA's, with note 1).",
+   "evidence": null
+  },
+  {
+   "id": "B60481",
+   "test": "B",
+   "kind": null,
+   "class": "mam-unique",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Numbers 24:9"
+   ],
+   "atoms": [
+    {
+     "atom": 60481,
+     "ref": "Numbers 24:9",
+     "bhsa": "מְבָרֲכֶיךָ",
+     "mam": "מְבָרְכֶיךָ",
+     "wlc418": [
+      {
+       "text": "מְבָרֲכֶיךָ",
+       "notes": []
+      }
+     ],
+     "slots": [
+      85346
+     ]
+    }
+   ],
+   "analysis": "BRK[ piel ptca ?.pl.m +K",
+   "category": "variant",
+   "homograph_kind": null,
+   "reason": "A ḥataf pataḥ under the resh for MAM's vocal sheva: a ḥataf for a vocal sheva, the same word.",
+   "evidence": null
+  },
+  {
+   "id": "B60987",
+   "test": "B",
+   "kind": null,
+   "class": "mam-unique",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Numbers 26:7"
+   ],
+   "atoms": [
+    {
+     "atom": 60987,
+     "ref": "Numbers 26:7",
+     "bhsa": "הָרֻאוּבֵנִי",
+     "mam": "הָראוּבֵנִי",
+     "wlc418": [
+      {
+       "text": "הָרֻאוּבֵנִי",
+       "notes": [
+        "1"
+       ]
+      }
+     ],
+     "slots": [
+      86038,
+      86039
+     ]
+    }
+   ],
+   "analysis": "H + R>WBNJ/ -.sg.m",
+   "category": "no-word",
+   "homograph_kind": null,
+   "reason": "A qubuts under the resh as well as the shuruq after the alef, where MAM has no vowel under the resh and a rafeh on the alef: two vowels for one syllable, as p2c judged the same pattern at Job 31:7 (the review's case 6, Part 1's class c; WLC 4.18 note 1).",
+   "evidence": null
+  },
+  {
+   "id": "B67025",
+   "test": "B",
+   "kind": null,
+   "class": "mam-unique",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Deuteronomy 3:16"
+   ],
+   "atoms": [
+    {
+     "atom": 67025,
+     "ref": "Deuteronomy 3:16",
+     "bhsa": "וְלָרֻאוּבֵנִי",
+     "mam": "וְלָראוּבֵנִי",
+     "wlc418": [
+      {
+       "text": "וְלָרֻאוּבֵנִי",
+       "notes": [
+        "U"
+       ]
+      }
+     ],
+     "slots": [
+      94831,
+      94832,
+      94833,
+      94834
+     ]
+    }
+   ],
+   "analysis": "W + L + H + R>WBNJ/ -.sg.m",
+   "category": "no-word",
+   "homograph_kind": null,
+   "reason": "As at Numbers 26:7 (the review's case 9, Part 1's class c; WLC 4.18 note U).",
+   "evidence": null
+  },
+  {
+   "id": "B95325",
+   "test": "B",
+   "kind": null,
+   "class": "mam-unique",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Judges 11:34"
+   ],
+   "atoms": [
+    {
+     "atom": 95325,
+     "ref": "Judges 11:34",
+     "bhsa": "בְתֻפִּים",
+     "mam": "בְּתֻפִּים",
+     "wlc418": [
+      {
+       "text": "בְתֻפִּים",
+       "notes": []
+      }
+     ],
+     "slots": [
+      135219,
+      135220
+     ]
+    }
+   ],
+   "analysis": "B + TP/ -.pl.m",
+   "category": "variant",
+   "homograph_kind": null,
+   "reason": "No dagesh lene in the bet that begins the atom, which MAM has, after an atom ending in a vowel: a dagesh lene that depends on the atom before.",
+   "evidence": null
+  },
+  {
+   "id": "B95348",
+   "test": "B",
+   "kind": null,
+   "class": "mam-unique",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Judges 11:35"
+   ],
+   "atoms": [
+    {
+     "atom": 95348,
+     "ref": "Judges 11:35",
+     "bhsa": "הָיִיתְ",
+     "mam": "הָיִית",
+     "wlc418": [
+      {
+       "text": "הָיִיתְ",
+       "notes": [
+        "U"
+       ]
+      }
+     ],
+     "slots": [
+      135251
+     ]
+    }
+   ],
+   "analysis": "HJH[ qal perf p2.sg.f",
+   "category": "variant",
+   "homograph_kind": null,
+   "reason": "A sheva under the final tav of the second feminine singular perfect, which MAM lacks; it marks the feminine ending, and the word is the same (WLC 4.18 has it, with note U).",
+   "evidence": null
+  },
+  {
+   "id": "B111052",
+   "test": "B",
+   "kind": null,
+   "class": "mam-unique",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "1 Samuel 26:11"
+   ],
+   "atoms": [
+    {
+     "atom": 111052,
+     "ref": "1 Samuel 26:11",
+     "bhsa": "וְנֵלֲכָה",
+     "mam": "וְנֵלְכָה־",
+     "wlc418": [
+      {
+       "text": "וְנֵלֲכָה",
+       "notes": []
+      }
+     ],
+     "slots": [
+      157831,
+      157832
+     ]
+    }
+   ],
+   "analysis": "W + HLK[ qal impf p1.pl.?",
+   "category": "variant",
+   "homograph_kind": null,
+   "reason": "A ḥataf pataḥ under the lamed for MAM's vocal sheva: a ḥataf for a vocal sheva, the same word.",
+   "evidence": null
+  },
+  {
+   "id": "B114192",
+   "test": "B",
+   "kind": null,
+   "class": "mam-unique",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "2 Samuel 3:27"
+   ],
+   "atoms": [
+    {
+     "atom": 114192,
+     "ref": "2 Samuel 3:27",
+     "bhsa": "לְדַּבֵּר",
+     "mam": "לְדַבֵּר",
+     "wlc418": [
+      {
+       "text": "לְדַבֵּר",
+       "notes": []
+      }
+     ],
+     "slots": [
+      162294,
+      162295
+     ]
+    }
+   ],
+   "analysis": "L + DBR[ piel infc ?.?.?",
+   "category": "no-word",
+   "homograph_kind": null,
+   "reason": "A dagesh in the dalet after the preposition's vocal sheva, where neither a dagesh lene nor the piel's doubling, which is in the bet, belongs; WLC 4.18 and MAM lack it.",
+   "evidence": null
+  },
+  {
+   "id": "B114276",
+   "test": "B",
+   "kind": null,
+   "class": "mam-unique",
+   "slot_level_origin": [
+    "mam-elsewhere"
+   ],
+   "refs": [
+    "2 Samuel 3:32"
+   ],
+   "atoms": [
+    {
+     "atom": 114276,
+     "ref": "2 Samuel 3:32",
+     "bhsa": "וַיִשָּׂא",
+     "mam": "וַיִּשָּׂא",
+     "wlc418": [
+      {
+       "text": "וַיִשָּׂא",
+       "notes": [
+        "1"
+       ]
+      }
+     ],
+     "slots": [
+      162419,
+      162420
+     ]
+    }
+   ],
+   "analysis": "W + NF>[ qal wayq p3.sg.m",
+   "category": "no-word",
+   "homograph_kind": null,
+   "reason": "No dagesh forte in the yod of the wayyiqtol's prefix after the conjunction's pataḥ, where MAM has one; the conjunction marks the tense, and the analysis reads the regular wayyiqtol (WLC 4.18 has the BHSA's, with note 1). One of the four slot-level mam-elsewhere artifacts of out/p2d-review.md.",
+   "evidence": null
+  },
+  {
+   "id": "B119492",
+   "test": "B",
+   "kind": null,
+   "class": "mam-unique",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "2 Samuel 16:4"
+   ],
+   "atoms": [
+    {
+     "atom": 119492,
+     "ref": "2 Samuel 16:4",
+     "bhsa": "לִמְפִי־בֹשֶׁת",
+     "mam": "לִמְפִיבֹשֶׁת",
+     "wlc418": [
+      {
+       "text": "לִמְפִי־",
+       "notes": []
+      },
+      {
+       "text": "בֹשֶׁת",
+       "notes": []
+      }
+     ],
+     "slots": [
+      169856,
+      169857
+     ]
+    }
+   ],
+   "analysis": "L + MPJBCT/ -.sg.m +n/a",
+   "category": "variant",
+   "homograph_kind": null,
+   "reason": "The compound name in two parts joined by a maqaf, where MAM has one atom: the same name, divided.",
+   "evidence": null
+  },
+  {
+   "id": "B119742",
+   "test": "B",
+   "kind": null,
+   "class": "mam-unique",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "2 Samuel 16:19"
+   ],
+   "atoms": [
+    {
+     "atom": 119742,
+     "ref": "2 Samuel 16:19",
+     "bhsa": "לִפָנֶיךָ",
+     "mam": "לְפָנֶיךָ",
+     "wlc418": [
+      {
+       "text": "לְפָנֶיךָ",
+       "notes": []
+      }
+     ],
+     "slots": [
+      170205,
+      170206
+     ]
+    }
+   ],
+   "analysis": "L + PNH/ -.pl.m +K",
+   "category": "no-word",
+   "homograph_kind": null,
+   "reason": "A ḥiriq under the preposition before a letter with a full vowel, where the rule gives sheva, as WLC 4.18 and MAM have; the verse's earlier 'before your father' has the ḥiriq of the construct.",
+   "evidence": null
+  },
+  {
+   "id": "B126114",
+   "test": "B",
+   "kind": null,
+   "class": "mam-unique",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "1 Kings 4:17"
+   ],
+   "atoms": [
+    {
+     "atom": 126114,
+     "ref": "1 Kings 4:17",
+     "bhsa": "בְּיִשָׂשכָר",
+     "mam": "בְּיִשָּׂשכָר",
+     "wlc418": [
+      {
+       "text": "בְּיִשָׂשכָר",
+       "notes": []
+      }
+     ],
+     "slots": [
+      179299,
+      179300
+     ]
+    }
+   ],
+   "analysis": "B + JFFKR/ -.sg.? +n/a",
+   "category": "no-word",
+   "homograph_kind": null,
+   "reason": "No dagesh forte in the first sin of Issachar, which MAM has; the BHSA has the name so at 13 other words (slot level), against 29 with MAM's dagesh.",
+   "evidence": null
+  },
+  {
+   "id": "B135147",
+   "test": "B",
+   "kind": null,
+   "class": "mam-unique",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "1 Kings 20:13"
+   ],
+   "atoms": [
+    {
+     "atom": 135147,
+     "ref": "1 Kings 20:13",
+     "bhsa": "הְרָאִיתָ",
+     "mam": "הֲרָאִיתָ",
+     "wlc418": [
+      {
+       "text": "הְרָאִיתָ",
+       "notes": []
+      }
+     ],
+     "slots": [
+      192224,
+      192225
+     ]
+    }
+   ],
+   "analysis": "H= + R>H[ qal perf p2.sg.m",
+   "category": "variant",
+   "homograph_kind": null,
+   "reason": "A sheva under the interrogative he for MAM's ḥataf pataḥ: a sheva for a ḥataf; the BHSA's interrogative he has sheva at 2 other words (slot level).",
+   "evidence": null
+  },
+  {
+   "id": "B135837",
+   "test": "B",
+   "kind": null,
+   "class": "mam-unique",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "1 Kings 21:8"
+   ],
+   "atoms": [
+    {
+     "atom": 135837,
+     "ref": "1 Kings 21:8",
+     "bhsa": "הַזְקֵנִים",
+     "mam": "הַזְּקֵנִים",
+     "wlc418": [
+      {
+       "text": "הַזְקֵנִים",
+       "notes": [
+        "1"
+       ]
+      }
+     ],
+     "slots": [
+      193189,
+      193190
+     ]
+    }
+   ],
+   "analysis": "H + ZQN/ -.pl.m",
+   "category": "variant",
+   "homograph_kind": null,
+   "reason": "No dagesh forte in the zayin, which has sheva, after the article, where MAM has one: a dagesh forte that a letter with sheva may lack (WLC 4.18 note 1).",
+   "evidence": null
+  },
+  {
+   "id": "B136611",
+   "test": "B",
+   "kind": null,
+   "class": "mam-unique",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "1 Kings 22:29"
+   ],
+   "atoms": [
+    {
+     "atom": 136611,
+     "ref": "1 Kings 22:29",
+     "bhsa": "וְיהֹושָׁפָט",
+     "mam": "וִיהוֹשָׁפָט",
+     "wlc418": [
+      {
+       "text": "וְיהוֹשָׁפָט",
+       "notes": [
+        "1"
+       ]
+      }
+     ],
+     "slots": [
+      194265,
+      194266
+     ]
+    }
+   ],
+   "analysis": "W + JHWCPV/ -.sg.m +n/a",
+   "category": "no-word",
+   "homograph_kind": null,
+   "reason": "A sheva under the conjunction's vav and no vowel under the name's yod, where the rule gives the vav a ḥiriq, as MAM has; spells no other word (WLC 4.18 note 1).",
+   "evidence": null
+  },
+  {
+   "id": "B137860",
+   "test": "B",
+   "kind": null,
+   "class": "mam-unique",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "2 Kings 3:9"
+   ],
+   "atoms": [
+    {
+     "atom": 137860,
+     "ref": "2 Kings 3:9",
+     "bhsa": "וּמֶלֶך־",
+     "mam": "וּמֶלֶךְ־",
+     "wlc418": [
+      {
+       "text": "וּמֶלֶך־",
+       "notes": []
+      }
+     ],
+     "slots": [
+      196004,
+      196005
+     ]
+    }
+   ],
+   "analysis": "W + MLK/ -.sg.m",
+   "category": "no-word",
+   "homograph_kind": null,
+   "reason": "No sheva in the final kaf, which MAM has.",
+   "evidence": null
+  },
+  {
+   "id": "B140816",
+   "test": "B",
+   "kind": null,
+   "class": "mam-unique",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "2 Kings 9:2"
+   ],
+   "atoms": [
+    {
+     "atom": 140816,
+     "ref": "2 Kings 9:2",
+     "bhsa": "מִתֹּוך",
+     "mam": "מִתּוֹךְ",
+     "wlc418": [
+      {
+       "text": "מִתּוֹך",
+       "notes": [
+        "1"
+       ]
+      }
+     ],
+     "slots": [
+      200287,
+      200288
+     ]
+    }
+   ],
+   "analysis": "MN + TWK/ -.sg.m",
+   "category": "no-word",
+   "homograph_kind": null,
+   "reason": "No sheva in the final kaf, which MAM has (WLC 4.18 note 1).",
+   "evidence": null
+  },
+  {
+   "id": "B144095",
+   "test": "B",
+   "kind": null,
+   "class": "mam-unique",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "2 Kings 15:30"
+   ],
+   "atoms": [
+    {
+     "atom": 144095,
+     "ref": "2 Kings 15:30",
+     "bhsa": "עֻזִיָּה",
+     "mam": "עֻזִּיָּה",
+     "wlc418": [
+      {
+       "text": "עֻזִיָּה",
+       "notes": []
+      }
+     ],
+     "slots": [
+      204899
+     ]
+    }
+   ],
+   "analysis": "<ZJH/ -.sg.m +n/a",
+   "category": "no-word",
+   "homograph_kind": null,
+   "reason": "No dagesh forte in the zayin of Uzziah, which the qubuts before it needs and MAM has, as p2c judged 1 Chronicles 11:44's Uzzia; the BHSA has this name so at 2 other words (slot level).",
+   "evidence": null
+  },
+  {
+   "id": "B144293",
+   "test": "B",
+   "kind": null,
+   "class": "mam-unique",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "2 Kings 16:6"
+   ],
+   "atoms": [
+    {
+     "atom": 144293,
+     "ref": "2 Kings 16:6",
+     "bhsa": "הַיְהוּדִים",
+     "mam": "הַיְּהוּדִים",
+     "wlc418": [
+      {
+       "text": "הַיְהוּדִים",
+       "notes": []
+      }
+     ],
+     "slots": [
+      205167,
+      205168
+     ]
+    }
+   ],
+   "analysis": "H + JHWDJ/ -.pl.m",
+   "category": "variant",
+   "homograph_kind": null,
+   "reason": "No dagesh forte in the yod, which has sheva, after the article, where MAM has one: a dagesh forte that a letter with sheva may lack.",
+   "evidence": null
+  },
+  {
+   "id": "B153887",
+   "test": "B",
+   "kind": null,
+   "class": "mam-unique",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Isaiah 20:1"
+   ],
+   "atoms": [
+    {
+     "atom": 153887,
+     "ref": "Isaiah 20:1",
+     "bhsa": "בִּשְׁלֹח",
+     "mam": "בִּשְׁלֹחַ",
+     "wlc418": [
+      {
+       "text": "בִּשְׁלֹח",
+       "notes": []
+      }
+     ],
+     "slots": [
+      218601,
+      218602
+     ]
+    }
+   ],
+   "analysis": "B + CLX[ qal infc ?.?.?",
+   "category": "no-word",
+   "homograph_kind": null,
+   "reason": "No furtive pataḥ under the final ḥet, which MAM has.",
+   "evidence": null
+  },
+  {
+   "id": "B157860",
+   "test": "B",
+   "kind": null,
+   "class": "mam-unique",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Isaiah 36:9"
+   ],
+   "atoms": [
+    {
+     "atom": 157860,
+     "ref": "Isaiah 36:9",
+     "bhsa": "הַקְטַנִּים",
+     "mam": "הַקְּטַנִּים",
+     "wlc418": [
+      {
+       "text": "הַקְטַנִּים",
+       "notes": []
+      }
+     ],
+     "slots": [
+      223944,
+      223945
+     ]
+    }
+   ],
+   "analysis": "H + QVN=/ -.pl.m",
+   "category": "variant",
+   "homograph_kind": null,
+   "reason": "No dagesh forte in the qof, which has sheva, after the article, where MAM has one: a dagesh forte that a letter with sheva may lack.",
+   "evidence": null
+  },
+  {
+   "id": "B158377",
+   "test": "B",
+   "kind": null,
+   "class": "mam-unique",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Isaiah 37:20"
+   ],
+   "atoms": [
+    {
+     "atom": 158377,
+     "ref": "Isaiah 37:20",
+     "bhsa": "מִיָדֹו",
+     "mam": "מִיָּדוֹ",
+     "wlc418": [
+      {
+       "text": "מִיָדוֹ",
+       "notes": [
+        "1"
+       ]
+      }
+     ],
+     "slots": [
+      224640,
+      224641
+     ]
+    }
+   ],
+   "analysis": "MN + JD/ -.sg.? +W",
+   "category": "no-word",
+   "homograph_kind": null,
+   "reason": "No dagesh forte in the yod, which has qamats, after the preposition `MN`, where MAM has one; spells no other word (WLC 4.18 note 1).",
+   "evidence": null
+  },
+  {
+   "id": "B164844",
+   "test": "B",
+   "kind": null,
+   "class": "mam-unique",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Isaiah 62:3"
+   ],
+   "atoms": [
+    {
+     "atom": 164844,
+     "ref": "Isaiah 62:3",
+     "bhsa": "וְהָיִיתְ",
+     "mam": "וְהָיִית",
+     "wlc418": [
+      {
+       "text": "וְהָיִיתְ",
+       "notes": [
+        "1"
+       ]
+      }
+     ],
+     "slots": [
+      233276,
+      233277
+     ]
+    }
+   ],
+   "analysis": "W + HJH[ qal perf p2.sg.f",
+   "category": "variant",
+   "homograph_kind": null,
+   "reason": "As at Judges 11:35: a sheva under the final tav of the second feminine singular perfect (WLC 4.18 note 1).",
+   "evidence": null
+  },
+  {
+   "id": "B185728",
+   "test": "B",
+   "kind": null,
+   "class": "mam-unique",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Jeremiah 49:37"
+   ],
+   "atoms": [
+    {
+     "atom": 185728,
+     "ref": "Jeremiah 49:37",
+     "bhsa": "לפְנֵי",
+     "mam": "לִפְנֵי",
+     "wlc418": [
+      {
+       "text": "לִפְנֵי",
+       "notes": []
+      }
+     ],
+     "slots": [
+      261821,
+      261822
+     ]
+    }
+   ],
+   "analysis": "L + PNH/ -.pl.m",
+   "category": "no-word",
+   "homograph_kind": null,
+   "reason": "No vowel under the preposition's lamed, where WLC 4.18 and MAM have ḥiriq.",
+   "evidence": null
+  },
+  {
+   "id": "B188595",
+   "test": "B",
+   "kind": null,
+   "class": "mam-unique",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Ezekiel 3:10"
+   ],
+   "atoms": [
+    {
+     "atom": 188595,
+     "ref": "Ezekiel 3:10",
+     "bhsa": "שְׁמָע",
+     "mam": "שְּׁמָע",
+     "wlc418": [
+      {
+       "text": "שְׁמָע",
+       "notes": []
+      }
+     ],
+     "slots": [
+      265708
+     ]
+    }
+   ],
+   "analysis": "CM<[ qal impv p2.sg.m",
+   "category": "variant",
+   "homograph_kind": null,
+   "reason": "No dagesh in the shin that begins the atom, where MAM has the conjunctive dagesh after an atom with merkha ending in qamats: a dagesh that depends on the atom before.",
+   "evidence": null
+  },
+  {
+   "id": "B191270",
+   "test": "B",
+   "kind": null,
+   "class": "mam-unique",
+   "slot_level_origin": [
+    "no slot-level row"
+   ],
+   "refs": [
+    "Ezekiel 12:10"
+   ],
+   "atoms": [
+    {
+     "atom": 191270,
+     "ref": "Ezekiel 12:10",
+     "bhsa": "בִּירוּשָׁלַם",
+     "mam": "בִּירוּשָׁלִַם",
+     "wlc418": [
+      {
+       "text": "בִּירוּשָׁלִַם",
+       "notes": [
+        "v"
+       ]
+      }
+     ],
+     "slots": [
+      269514,
+      269515
+     ]
+    }
+   ],
+   "analysis": "B + JRWCLM/ -.sg.? +n/a",
+   "category": "variant",
+   "homograph_kind": null,
+   "reason": "Jerusalem without the orphaned ḥiriq of the implicit yod, which MAM and WLC 4.18 have (WLC's note v); most of the BHSA's words of this analysis have it.",
+   "evidence": null
+  },
+  {
+   "id": "B191748",
+   "test": "B",
+   "kind": null,
+   "class": "mam-unique",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Ezekiel 13:16"
+   ],
+   "atoms": [
+    {
+     "atom": 191748,
+     "ref": "Ezekiel 13:16",
+     "bhsa": "הַנִבְּאִים",
+     "mam": "הַנִּבְּאִים",
+     "wlc418": [
+      {
+       "text": "הַנִבְּאִים",
+       "notes": [
+        "1"
+       ]
+      }
+     ],
+     "slots": [
+      270163,
+      270164
+     ]
+    }
+   ],
+   "analysis": "H + NB>[ nif ptca ?.pl.m",
+   "category": "no-word",
+   "homograph_kind": null,
+   "reason": "No dagesh forte in the nun, which has ḥiriq, after the article, where MAM has one; spells no other word (WLC 4.18 note 1).",
+   "evidence": null
+  },
+  {
+   "id": "B193102",
+   "test": "B",
+   "kind": null,
+   "class": "mam-unique",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Ezekiel 16:54"
+   ],
+   "atoms": [
+    {
+     "atom": 193102,
+     "ref": "Ezekiel 16:54",
+     "bhsa": "וִנִכְלַמְתְּ",
+     "mam": "וְנִכְלַמְתְּ",
+     "wlc418": [
+      {
+       "text": "וְנִכְלַמְתְּ",
+       "notes": [
+        "v"
+       ]
+      }
+     ],
+     "slots": [
+      272015,
+      272016
+     ]
+    }
+   ],
+   "analysis": "W + KLM[ nif perf p2.sg.f",
+   "category": "no-word",
+   "homograph_kind": null,
+   "reason": "A ḥiriq under the conjunction's vav before a nun with ḥiriq, where the rule gives sheva, as MAM and WLC 4.18 have (WLC's note v).",
+   "evidence": null
+  },
+  {
+   "id": "B194351",
+   "test": "B",
+   "kind": null,
+   "class": "mam-unique",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Ezekiel 20:8"
+   ],
+   "atoms": [
+    {
+     "atom": 194351,
+     "ref": "Ezekiel 20:8",
+     "bhsa": "לִּשְׁמֹעַ",
+     "mam": "לִשְׁמֹעַ",
+     "wlc418": [
+      {
+       "text": "לִּשְׁמֹעַ",
+       "notes": []
+      }
+     ],
+     "slots": [
+      273696,
+      273697
+     ]
+    }
+   ],
+   "analysis": "L + CM<[ qal infc ?.?.?",
+   "category": "no-word",
+   "homograph_kind": null,
+   "reason": "A dagesh in the preposition's lamed at the start of the atom, which MAM lacks, after an atom with pashta, a disjunctive accent, where the rules of the conjunctive dagesh give none (WLC 4.18 has it).",
+   "evidence": null
+  },
+  {
+   "id": "B208609",
+   "test": "B",
+   "kind": null,
+   "class": "mam-unique",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Hosea 12:5"
+   ],
+   "atoms": [
+    {
+     "atom": 208609,
+     "ref": "Hosea 12:5",
+     "bhsa": "וָיָּשַׂר",
+     "mam": "וַיָּשַׂר",
+     "wlc418": [
+      {
+       "text": "וָיָּשַׂר",
+       "notes": []
+      }
+     ],
+     "slots": [
+      293553,
+      293554
+     ]
+    }
+   ],
+   "analysis": "W + FWR[ qal wayq p3.sg.m",
+   "category": "no-word",
+   "homograph_kind": null,
+   "reason": "Qamats under the wayyiqtol's conjunction before the prefix's yod with dagesh, where the rule gives pataḥ, as MAM has. The analysis's lexeme, `FWR[` (gloss '<uncertain>'), is one of the two that the BHSA gives MAM's pointing: `FWR[` at 1 Chronicles 20:3, `FRR[` at Judges 9:22.",
+   "evidence": null
+  },
+  {
+   "id": "B209170",
+   "test": "B",
+   "kind": null,
+   "class": "mam-unique",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Joel 1:15"
+   ],
+   "atoms": [
+    {
+     "atom": 209170,
+     "ref": "Joel 1:15",
+     "bhsa": "מִשַׁדַּי",
+     "mam": "מִשַּׁדַּי",
+     "wlc418": [
+      {
+       "text": "מִשַׁדַּי",
+       "notes": [
+        "U"
+       ]
+      }
+     ],
+     "slots": [
+      294292,
+      294293
+     ]
+    }
+   ],
+   "analysis": "MN + CDJ/ -.sg.m +n/a",
+   "category": "no-word",
+   "homograph_kind": null,
+   "reason": "No dagesh forte in the shin, which has pataḥ, after the preposition `MN`, where MAM has one; spells no other word (WLC 4.18 note U).",
+   "evidence": null
+  },
+  {
+   "id": "B212015",
+   "test": "B",
+   "kind": null,
+   "class": "mam-unique",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Obadiah 1:3"
+   ],
+   "atoms": [
+    {
+     "atom": 212015,
+     "ref": "Obadiah 1:3",
+     "bhsa": "סֶּלַע",
+     "mam": "סֶלַע",
+     "wlc418": [
+      {
+       "text": "סֶּלַע",
+       "notes": []
+      }
+     ],
+     "slots": [
+      298207
+     ]
+    }
+   ],
+   "analysis": "SL</ -.sg.m",
+   "category": "variant",
+   "homograph_kind": null,
+   "reason": "A dagesh in the samekh that begins the atom, which MAM lacks, after an atom joined to it by maqaf: a conjunctive dagesh, which depends on the atom before (WLC 4.18 has it).",
+   "evidence": null
+  },
+  {
+   "id": "B212655",
+   "test": "B",
+   "kind": null,
+   "class": "mam-unique",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Jonah 3:2"
+   ],
+   "atoms": [
+    {
+     "atom": 212655,
+     "ref": "Jonah 3:2",
+     "bhsa": "וִּקְרָא",
+     "mam": "וּקְרָא",
+     "wlc418": [
+      {
+       "text": "וִּקְרָא",
+       "notes": [
+        "U"
+       ]
+      }
+     ],
+     "slots": [
+      299095,
+      299096
+     ]
+    }
+   ],
+   "analysis": "W + QR>[ qal impv p2.sg.m",
+   "category": "no-word",
+   "homograph_kind": null,
+   "reason": "The conjunction's vav has a shuruq dot and a ḥiriq, where MAM has a shuruq (the review's case 31, Part 1's class c; WLC 4.18 note U).",
+   "evidence": null
+  },
+  {
+   "id": "B217248",
+   "test": "B",
+   "kind": null,
+   "class": "mam-unique",
+   "slot_level_origin": [
+    "no slot-level row"
+   ],
+   "refs": [
+    "Zechariah 2:2"
+   ],
+   "atoms": [
+    {
+     "atom": 217248,
+     "ref": "Zechariah 2:2",
+     "bhsa": "וִירוּשָׁלָם",
+     "mam": "וִירוּשָׁלִָם",
+     "wlc418": [
+      {
+       "text": "וִירוּשָׁלָם",
+       "notes": [
+        "U"
+       ]
+      }
+     ],
+     "slots": [
+      305395,
+      305396
+     ]
+    }
+   ],
+   "analysis": "W + JRWCLM/ -.sg.? +n/a",
+   "category": "variant",
+   "homograph_kind": null,
+   "reason": "Jerusalem without the orphaned ḥiriq of the implicit yod, which MAM has (the review's case 32, Part 1's class c; WLC 4.18 note U).",
+   "evidence": null
+  },
+  {
+   "id": "B232471",
+   "test": "B",
+   "kind": null,
+   "class": "mam-unique",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Psalms 87:5"
+   ],
+   "atoms": [
+    {
+     "atom": 232471,
+     "ref": "Psalms 87:5",
+     "bhsa": "וּלֲצִיֹּון",
+     "mam": "וּלְצִיּוֹן",
+     "wlc418": [
+      {
+       "text": "וּלֲצִיּוֹן",
+       "notes": []
+      }
+     ],
+     "slots": [
+      325508,
+      325509,
+      325510
+     ]
+    }
+   ],
+   "analysis": "W + L + YJWN==/ -.sg.? +n/a",
+   "category": "variant",
+   "homograph_kind": null,
+   "reason": "A ḥataf pataḥ under the preposition's lamed for MAM's vocal sheva: a ḥataf for a vocal sheva, the same word.",
+   "evidence": null
+  },
+  {
+   "id": "B240515",
+   "test": "B",
+   "kind": null,
+   "class": "mam-unique",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Psalms 150:4"
+   ],
+   "atoms": [
+    {
+     "atom": 240515,
+     "ref": "Psalms 150:4",
+     "bhsa": "בְתֹף",
+     "mam": "בְּתֹף",
+     "wlc418": [
+      {
+       "text": "בְתֹף",
+       "notes": []
+      }
+     ],
+     "slots": [
+      336001,
+      336002
+     ]
+    }
+   ],
+   "analysis": "B + TP/ -.sg.m",
+   "category": "variant",
+   "homograph_kind": null,
+   "reason": "No dagesh lene in the bet that begins the atom, which MAM has, after an atom ending in a vowel: a dagesh lene that depends on the atom before.",
+   "evidence": null
+  },
+  {
+   "id": "B242039",
+   "test": "B",
+   "kind": null,
+   "class": "mam-unique",
+   "slot_level_origin": [
+    "mam-elsewhere"
+   ],
+   "refs": [
+    "Job 8:1"
+   ],
+   "atoms": [
+    {
+     "atom": 242039,
+     "ref": "Job 8:1",
+     "bhsa": "וַיֹאמַר",
+     "mam": "וַיֹּאמַר",
+     "wlc418": [
+      {
+       "text": "וַיֹאמַר",
+       "notes": [
+        "1"
+       ]
+      }
+     ],
+     "slots": [
+      338077,
+      338078
+     ]
+    }
+   ],
+   "analysis": "W + >MR[ qal wayq p3.sg.m",
+   "category": "no-word",
+   "homograph_kind": null,
+   "reason": "No dagesh forte in the yod of the wayyiqtol's prefix after the conjunction's pataḥ, where MAM has one; the conjunction marks the tense, and the analysis reads the regular wayyiqtol (WLC 4.18 has the BHSA's, with note 1). One of the four slot-level mam-elsewhere artifacts of out/p2d-review.md.",
+   "evidence": null
+  },
+  {
+   "id": "B250288",
+   "test": "B",
+   "kind": null,
+   "class": "mam-unique",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Proverbs 7:22"
+   ],
+   "atoms": [
+    {
+     "atom": 250288,
+     "ref": "Proverbs 7:22",
+     "bhsa": "טָבַח",
+     "mam": "טֶבַח",
+     "wlc418": [
+      {
+       "text": "טָבַח",
+       "notes": [
+        "U"
+       ]
+      }
+     ],
+     "slots": [
+      348791
+     ]
+    }
+   ],
+   "analysis": "VBX/ -.sg.m",
+   "category": "variant",
+   "homograph_kind": null,
+   "reason": "Qamats under the tet, the vowel of the noun's pausal form, which the BHSA has at 4 other words of this noun (as at Isaiah 34:2 and Ezekiel 21:20), where MAM has the contextual segol; here the atom has munaḥ, a conjunctive accent, so the vowel is unexpected (WLC 4.18 has the BHSA's, with note U). The qal perfect of `VBX[` would be pointed alike, but the BHSA has no such word, and the context wants the noun (out/p2e-checks.txt, part 1).",
+   "evidence": null
+  },
+  {
+   "id": "B257311",
+   "test": "B",
+   "kind": null,
+   "class": "mam-unique",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Song of Songs 2:9"
+   ],
+   "atoms": [
+    {
+     "atom": 257311,
+     "ref": "Song of Songs 2:9",
+     "bhsa": "הַחֲלֹּנֹות",
+     "mam": "הַחַלֹּנוֹת",
+     "wlc418": [
+      {
+       "text": "הַחֲלֹּנוֹת",
+       "notes": []
+      }
+     ],
+     "slots": [
+      357905,
+      357906
+     ]
+    }
+   ],
+   "analysis": "H + XLWN/ -.pl.f",
+   "category": "no-word",
+   "homograph_kind": null,
+   "reason": "A ḥataf pataḥ under the ḥet before the doubled lamed, whose doubling closes the syllable, where MAM has a full pataḥ; p2c judges such a ḥataf no-word, p2b a variant, and neither makes it a correction.",
+   "evidence": null
+  },
+  {
+   "id": "B263747",
+   "test": "B",
+   "kind": null,
+   "class": "mam-unique",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Esther 3:6"
+   ],
+   "atoms": [
+    {
+     "atom": 263747,
+     "ref": "Esther 3:6",
+     "bhsa": "לִשְׁלֹח",
+     "mam": "לִשְׁלֹחַ",
+     "wlc418": [
+      {
+       "text": "לִשְׁלֹח",
+       "notes": [
+        "U"
+       ]
+      }
+     ],
+     "slots": [
+      366780,
+      366781
+     ]
+    }
+   ],
+   "analysis": "L + CLX[ qal infc ?.?.?",
+   "category": "no-word",
+   "homograph_kind": null,
+   "reason": "No furtive pataḥ under the final ḥet, which MAM has (WLC 4.18 note U).",
+   "evidence": null
+  },
+  {
+   "id": "B269698",
+   "test": "B",
+   "kind": null,
+   "class": "mam-unique",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Daniel 7:20"
+   ],
+   "atoms": [
+    {
+     "atom": 269698,
+     "ref": "Daniel 7:20",
+     "bhsa": "וְפֻם",
+     "mam": "וּפֻם",
+     "wlc418": [
+      {
+       "text": "וְפֻם",
+       "notes": []
+      }
+     ],
+     "slots": [
+      375001,
+      375002
+     ]
+    }
+   ],
+   "analysis": "W + PM/ -.sg.m",
+   "category": "no-word",
+   "homograph_kind": null,
+   "reason": "A sheva under the conjunction's vav before pe, where the rule gives a shuruq, as MAM has (Aramaic; the review's case 41, Part 1's class c).",
+   "evidence": null
+  },
+  {
+   "id": "B290458",
+   "test": "B",
+   "kind": null,
+   "class": "mam-unique",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "1 Chronicles 27:18"
+   ],
+   "atoms": [
+    {
+     "atom": 290458,
+     "ref": "1 Chronicles 27:18",
+     "bhsa": "לְיִשָׂשכָר",
+     "mam": "לְיִשָּׂשכָר",
+     "wlc418": [
+      {
+       "text": "לְיִשָׂשכָר",
+       "notes": []
+      }
+     ],
+     "slots": [
+      405208,
+      405209
+     ]
+    }
+   ],
+   "analysis": "L + JFFKR/ -.sg.? +n/a",
+   "category": "no-word",
+   "homograph_kind": null,
+   "reason": "No dagesh forte in the first sin of Issachar, which MAM has; the BHSA has the name so at 13 other words (slot level), against 29 with MAM's dagesh.",
+   "evidence": null
+  },
+  {
+   "id": "B304199",
+   "test": "B",
+   "kind": null,
+   "class": "mam-unique",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "2 Chronicles 35:15"
+   ],
+   "atoms": [
+    {
+     "atom": 304199,
+     "ref": "2 Chronicles 35:15",
+     "bhsa": "וְהַמְשֹׁרֲרִים",
+     "mam": "וְהַמְשֹׁרְרִים",
+     "wlc418": [
+      {
+       "text": "וְהַמְשֹׁרֲרִים",
+       "notes": []
+      }
+     ],
+     "slots": [
+      425742,
+      425743,
+      425744
+     ]
+    }
+   ],
+   "analysis": "W + H + CJR[ piel ptca ?.pl.m",
+   "category": "variant",
+   "homograph_kind": null,
+   "reason": "A ḥataf pataḥ under the first resh for MAM's vocal sheva: a ḥataf for a vocal sheva, the same word.",
+   "evidence": null
+  },
+  {
+   "id": "B9969",
+   "test": "B",
+   "kind": null,
+   "class": "neither",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Genesis 27:29"
+   ],
+   "atoms": [
+    {
+     "atom": 9969,
+     "ref": "Genesis 27:29",
+     "bhsa": "וּמְבָרֲכֶיךָ",
+     "mam": "וּמְבָרְכֶיךָ",
+     "wlc418": [
+      {
+       "text": "וּמְבָרֲכֶיךָ",
+       "notes": []
+      }
+     ],
+     "slots": [
+      14126,
+      14127
+     ]
+    }
+   ],
+   "analysis": "W + BRK[ piel ptca ?.pl.m +K",
+   "category": "variant",
+   "homograph_kind": null,
+   "reason": "A ḥataf pataḥ under the resh for MAM's vocal sheva: a ḥataf for a vocal sheva, the same word.",
+   "evidence": null
+  },
+  {
+   "id": "B10335",
+   "test": "B",
+   "kind": null,
+   "class": "neither",
+   "slot_level_origin": [
+    "written"
+   ],
+   "refs": [
+    "Genesis 28:6"
+   ],
+   "atoms": [
+    {
+     "atom": 10335,
+     "ref": "Genesis 28:6",
+     "bhsa": "בְּבָרֲכֹו",
+     "mam": "בְּבָרְכוֹ",
+     "wlc418": [
+      {
+       "text": "בְּבָרֲכוֹ",
+       "notes": []
+      }
+     ],
+     "slots": [
+      14613,
+      14614
+     ]
+    }
+   ],
+   "analysis": "B + BRK[ piel infc ?.?.? +W",
+   "category": "variant",
+   "homograph_kind": null,
+   "reason": "A ḥataf pataḥ under the resh for MAM's vocal sheva: a ḥataf for a vocal sheva, the same word.",
+   "evidence": null
+  },
+  {
+   "id": "B12607",
+   "test": "B",
+   "kind": null,
+   "class": "neither",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Genesis 32:18"
+   ],
+   "atoms": [
+    {
+     "atom": 12607,
+     "ref": "Genesis 32:18",
+     "bhsa": "וִשְׁאֵלְךָ",
+     "mam": "וּשְׁאֵלְךָ",
+     "wlc418": [
+      {
+       "text": "וִשְׁאֵלְךָ",
+       "notes": [
+        "1"
+       ]
+      }
+     ],
+     "slots": [
+      17779,
+      17780
+     ]
+    }
+   ],
+   "analysis": "W + C>L[ qal perf p3.sg.m +K",
+   "category": "no-word",
+   "homograph_kind": null,
+   "reason": "A ḥiriq under the conjunction's vav before a shin with sheva, where the rule gives a shuruq, as MAM has (the review's case 1, Part 1's class c; WLC 4.18 note 1).",
+   "evidence": null
+  },
+  {
+   "id": "B19615",
+   "test": "B",
+   "kind": null,
+   "class": "neither",
+   "slot_level_origin": [
+    "written"
+   ],
+   "refs": [
+    "Genesis 48:9"
+   ],
+   "atoms": [
+    {
+     "atom": 19615,
+     "ref": "Genesis 48:9",
+     "bhsa": "וַאֲבָרֲכֵם",
+     "mam": "וַאֲבָרְכֵם",
+     "wlc418": [
+      {
+       "text": "וַאֲבָרֲכֵם",
+       "notes": []
+      }
+     ],
+     "slots": [
+      27479,
+      27480
+     ]
+    }
+   ],
+   "analysis": "W + BRK[ piel impf p1.sg.? +M",
+   "category": "variant",
+   "homograph_kind": null,
+   "reason": "A ḥataf pataḥ under the resh for MAM's vocal sheva: a ḥataf for a vocal sheva, the same word.",
+   "evidence": null
+  },
+  {
+   "id": "B52248",
+   "test": "B",
+   "kind": null,
+   "class": "neither",
+   "slot_level_origin": [
+    "written"
+   ],
+   "refs": [
+    "Numbers 6:27"
+   ],
+   "atoms": [
+    {
+     "atom": 52248,
+     "ref": "Numbers 6:27",
+     "bhsa": "אֲבָרֲכֵם",
+     "mam": "אֲבָרְכֵם",
+     "wlc418": [
+      {
+       "text": "אֲבָרֲכֵם",
+       "notes": []
+      }
+     ],
+     "slots": [
+      73886
+     ]
+    }
+   ],
+   "analysis": "BRK[ piel impf p1.sg.? +M",
+   "category": "variant",
+   "homograph_kind": null,
+   "reason": "A ḥataf pataḥ under the resh for MAM's vocal sheva: a ḥataf for a vocal sheva, the same word.",
+   "evidence": null
+  },
+  {
+   "id": "B67849",
+   "test": "B",
+   "kind": null,
+   "class": "neither",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Deuteronomy 4:35"
+   ],
+   "atoms": [
+    {
+     "atom": 67849,
+     "ref": "Deuteronomy 4:35",
+     "bhsa": "מִלְבַדֹּו",
+     "mam": "מִלְּבַדּוֹ",
+     "wlc418": [
+      {
+       "text": "מִלְבַדּוֹ",
+       "notes": [
+        "U"
+       ]
+      }
+     ],
+     "slots": [
+      96001,
+      96002,
+      96003
+     ]
+    }
+   ],
+   "analysis": "MN + L + BD/ -.sg.m +W",
+   "category": "variant",
+   "homograph_kind": null,
+   "reason": "No dagesh forte in the lamed, which has sheva, after the preposition `MN`, where MAM has one: a dagesh forte that a letter with sheva may lack (WLC 4.18 note U).",
+   "evidence": null
+  },
+  {
+   "id": "B76818",
+   "test": "B",
+   "kind": null,
+   "class": "neither",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Deuteronomy 28:29"
+   ],
+   "atoms": [
+    {
+     "atom": 76818,
+     "ref": "Deuteronomy 28:29",
+     "bhsa": "הָעִוֵּר",
+     "mam": "הַעִוֵּר",
+     "wlc418": [
+      {
+       "text": "הָעִוֵּר",
+       "notes": []
+      }
+     ],
+     "slots": [
+      108652,
+      108653
+     ]
+    }
+   ],
+   "analysis": "H + <WR/ -.sg.m",
+   "category": "variant",
+   "homograph_kind": null,
+   "reason": "The article has qamats before the ayin, its usual vowel there, where MAM has pataḥ.",
+   "evidence": null
+  },
+  {
+   "id": "B78808",
+   "test": "B",
+   "kind": null,
+   "class": "neither",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Deuteronomy 32:6"
+   ],
+   "atoms": [
+    {
+     "atom": 78808,
+     "ref": "Deuteronomy 32:6",
+     "bhsa": "הֲ־",
+     "mam": "הַ",
+     "wlc418": [
+      {
+       "text": "הֲ־",
+       "notes": []
+      }
+     ],
+     "slots": [
+      111509
+     ]
+    }
+   ],
+   "analysis": "H=",
+   "category": "variant",
+   "homograph_kind": null,
+   "reason": "The interrogative he as a separate atom, with ḥataf pataḥ, its vowel before the next atom's pataḥ, and a maqaf; MAM's atom has pataḥ, its vowel before the sheva of MAM's next atom. Both are the interrogative.",
+   "evidence": null
+  },
+  {
+   "id": "B78809",
+   "test": "B",
+   "kind": null,
+   "class": "neither",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Deuteronomy 32:6"
+   ],
+   "atoms": [
+    {
+     "atom": 78809,
+     "ref": "Deuteronomy 32:6",
+     "bhsa": "לַיְהוָה",
+     "mam": "לְיְהֹוָה",
+     "wlc418": [
+      {
+       "text": "לַיְהוָה",
+       "notes": []
+      }
+     ],
+     "slots": [
+      111510,
+      111511
+     ]
+    }
+   ],
+   "analysis": "L + JHWH/ -.sg.m +n/a",
+   "category": "variant",
+   "homograph_kind": null,
+   "reason": "Pataḥ under the preposition and a sheva under the divine name's yod, a sheva that the BHSA's 572 other atoms of this analysis with that pataḥ lack (as at Genesis 4:3); MAM's atom has a sheva under the preposition, the same sheva under the yod and a ḥolam on the he. Both are the preposition with the divine name.",
+   "evidence": null
+  },
+  {
+   "id": "B104213",
+   "test": "B",
+   "kind": null,
+   "class": "neither",
+   "slot_level_origin": [
+    "written"
+   ],
+   "refs": [
+    "1 Samuel 13:10"
+   ],
+   "atoms": [
+    {
+     "atom": 104213,
+     "ref": "1 Samuel 13:10",
+     "bhsa": "לְבָרֲכֹו",
+     "mam": "לְבָרְכוֹ",
+     "wlc418": [
+      {
+       "text": "לְבָרֲכוֹ",
+       "notes": []
+      }
+     ],
+     "slots": [
+      148029,
+      148030
+     ]
+    }
+   ],
+   "analysis": "L + BRK[ piel infc ?.?.? +W",
+   "category": "variant",
+   "homograph_kind": null,
+   "reason": "A ḥataf pataḥ under the resh for MAM's vocal sheva: a ḥataf for a vocal sheva, the same word.",
+   "evidence": null
+  },
+  {
+   "id": "B105206",
+   "test": "B",
+   "kind": null,
+   "class": "neither",
+   "slot_level_origin": [
+    "written"
+   ],
+   "refs": [
+    "1 Samuel 14:49"
+   ],
+   "atoms": [
+    {
+     "atom": 105206,
+     "ref": "1 Samuel 14:49",
+     "bhsa": "וּמַלְכִּי־שׁוּעַ",
+     "mam": "וּמַלְכִּישׁוּעַ",
+     "wlc418": [
+      {
+       "text": "וּמַלְכִּי־",
+       "notes": []
+      },
+      {
+       "text": "שׁוּעַ",
+       "notes": []
+      }
+     ],
+     "slots": [
+      149470,
+      149471
+     ]
+    }
+   ],
+   "analysis": "W + MLKJ_CW</ -.sg.m +n/a",
+   "category": "variant",
+   "homograph_kind": null,
+   "reason": "The compound name in two parts joined by a maqaf, where MAM has one atom: the same name, divided.",
+   "evidence": null
+  },
+  {
+   "id": "B121506",
+   "test": "B",
+   "kind": null,
+   "class": "neither",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "2 Samuel 19:33"
+   ],
+   "atoms": [
+    {
+     "atom": 121506,
+     "ref": "2 Samuel 19:33",
+     "bhsa": "בְשִׁיבָתֹו",
+     "mam": "בְּשִׁיבָתוֹ",
+     "wlc418": [
+      {
+       "text": "בְּשִׁיבָתוֹ",
+       "notes": []
+      }
+     ],
+     "slots": [
+      172776,
+      172777
+     ]
+    }
+   ],
+   "analysis": "B + CJBH/ -.sg.f +W",
+   "category": "variant",
+   "homograph_kind": null,
+   "reason": "No dagesh lene in the bet that begins the atom, which WLC 4.18 and MAM have, after an atom ending in a consonant: a dagesh lene that depends on the atom before.",
+   "evidence": null
+  },
+  {
+   "id": "B143798",
+   "test": "B",
+   "kind": null,
+   "class": "neither",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "2 Kings 15:13"
+   ],
+   "atoms": [
+    {
+     "atom": 143798,
+     "ref": "2 Kings 15:13",
+     "bhsa": "לְעֻזִיָּה",
+     "mam": "לְעֻזִּיָּה",
+     "wlc418": [
+      {
+       "text": "לְעֻזִיָּה",
+       "notes": []
+      }
+     ],
+     "slots": [
+      204505,
+      204506
+     ]
+    }
+   ],
+   "analysis": "L + <ZJH/ -.sg.m +n/a",
+   "category": "no-word",
+   "homograph_kind": null,
+   "reason": "No dagesh forte in the zayin of Uzziah, which the qubuts before it needs and MAM has, as p2c judged 1 Chronicles 11:44's Uzzia; the BHSA has this name so at 2 other words (slot level).",
+   "evidence": null
+  },
+  {
+   "id": "B152607",
+   "test": "B",
+   "kind": null,
+   "class": "neither",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Isaiah 14:3"
+   ],
+   "atoms": [
+    {
+     "atom": 152607,
+     "ref": "Isaiah 14:3",
+     "bhsa": "וּמֵרָגְזֶךָ",
+     "mam": "וּמִרָגְזֶךָ",
+     "wlc418": [
+      {
+       "text": "וּמֵרָגְזֶךָ",
+       "notes": []
+      }
+     ],
+     "slots": [
+      216890,
+      216891,
+      216892
+     ]
+    }
+   ],
+   "analysis": "W + MN + RGZ/ -.sg.m +K",
+   "category": "variant",
+   "homograph_kind": null,
+   "reason": "The preposition `MN` has tsere before the resh, its usual vowel there, where MAM has ḥiriq.",
+   "evidence": null
+  },
+  {
+   "id": "B154111",
+   "test": "B",
+   "kind": null,
+   "class": "neither",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Isaiah 21:11"
+   ],
+   "atoms": [
+    {
+     "atom": 154111,
+     "ref": "Isaiah 21:11",
+     "bhsa": "מִלַּיְלָה",
+     "mam": "מִּלַּיְלָה",
+     "wlc418": [
+      {
+       "text": "מִלַּיְלָה",
+       "notes": []
+      }
+     ],
+     "slots": [
+      218895,
+      218896
+     ]
+    }
+   ],
+   "analysis": "MN + LJLH/ -.sg.m",
+   "category": "variant",
+   "homograph_kind": null,
+   "reason": "No dagesh in the mem that begins the atom, where MAM has the conjunctive dagesh after 'what' joined by maqaf: a dagesh that depends on the atom before.",
+   "evidence": null
+  },
+  {
+   "id": "B154114",
+   "test": "B",
+   "kind": null,
+   "class": "neither",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Isaiah 21:11"
+   ],
+   "atoms": [
+    {
+     "atom": 154114,
+     "ref": "Isaiah 21:11",
+     "bhsa": "מִלֵּיל",
+     "mam": "מִּלֵּיל",
+     "wlc418": [
+      {
+       "text": "מִלֵּיל",
+       "notes": []
+      }
+     ],
+     "slots": [
+      218899,
+      218900
+     ]
+    }
+   ],
+   "analysis": "MN + LJL/ -.sg.m",
+   "category": "variant",
+   "homograph_kind": null,
+   "reason": "No dagesh in the mem that begins the atom, where MAM has the conjunctive dagesh after 'what' joined by maqaf: a dagesh that depends on the atom before.",
+   "evidence": null
+  },
+  {
+   "id": "B156861",
+   "test": "B",
+   "kind": null,
+   "class": "neither",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Isaiah 31:8"
+   ],
+   "atoms": [
+    {
+     "atom": 156861,
+     "ref": "Isaiah 31:8",
+     "bhsa": "תֹּאכֲלֶנּוּ",
+     "mam": "תֹּאכְלֶנּוּ",
+     "wlc418": [
+      {
+       "text": "תֹּאכֲלֶנּוּ",
+       "notes": []
+      }
+     ],
+     "slots": [
+      222633
+     ]
+    }
+   ],
+   "analysis": ">KL[ qal impf p3.sg.f +HW",
+   "category": "homograph",
+   "homograph_kind": "form",
+   "reason": "The second masculine and third feminine singular are pointed alike; the subject is 'a sword', feminine, and the BHSA's other 5 atoms of this pointing are second masculine (as at Numbers 18:10). The ḥataf pataḥ under the kaf, where MAM has sheva, is the BHSA's pointing of those 5 atoms too. out/p2d-review.md lists this atom among Test B's departures in person, number, gender or suffix.",
+   "evidence": null
+  },
+  {
+   "id": "B166062",
+   "test": "B",
+   "kind": null,
+   "class": "neither",
+   "slot_level_origin": [
+    "written"
+   ],
+   "refs": [
+    "Isaiah 66:22"
+   ],
+   "atoms": [
+    {
+     "atom": 166062,
+     "ref": "Isaiah 66:22",
+     "bhsa": "הַחֳדָשִׁים",
+     "mam": "הַחֲדָשִׁים",
+     "wlc418": [
+      {
+       "text": "הַחֳדָשִׁים",
+       "notes": []
+      }
+     ],
+     "slots": [
+      234937,
+      234938
+     ]
+    }
+   ],
+   "analysis": "H + XDC=/ -.pl.m",
+   "category": "follows-pointing",
+   "homograph_kind": null,
+   "reason": "The noun 'month' (`XDC=/`), which the ḥataf qamats spells; MAM's ḥataf pataḥ spells the adjective 'new' (`XDC/`), which the BHSA gives the verse's other atom of that root (the review's case 25, Part 1's class a).",
+   "evidence": null
+  },
+  {
+   "id": "B169391",
+   "test": "B",
+   "kind": null,
+   "class": "neither",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Jeremiah 8:19"
+   ],
+   "atoms": [
+    {
+     "atom": 169391,
+     "ref": "Jeremiah 8:19",
+     "bhsa": "הַיהוָה",
+     "mam": "הַיהֹוָה",
+     "wlc418": [
+      {
+       "text": "הַיהוָה",
+       "notes": []
+      }
+     ],
+     "slots": [
+      239346,
+      239347
+     ]
+    }
+   ],
+   "analysis": "H= + JHWH/ -.sg.m +n/a",
+   "category": "variant",
+   "homograph_kind": null,
+   "reason": "The interrogative he and the divine name, without the ḥolam on the he that MAM's atom has.",
+   "evidence": null
+  },
+  {
+   "id": "B169418",
+   "test": "B",
+   "kind": null,
+   "class": "neither",
+   "slot_level_origin": [
+    "written"
+   ],
+   "refs": [
+    "Jeremiah 8:22"
+   ],
+   "atoms": [
+    {
+     "atom": 169418,
+     "ref": "Jeremiah 8:22",
+     "bhsa": "הַצֳרִי",
+     "mam": "הַצֳּרִי",
+     "wlc418": [
+      {
+       "text": "הַצֳרִי",
+       "notes": []
+      }
+     ],
+     "slots": [
+      239378,
+      239379
+     ]
+    }
+   ],
+   "analysis": "H= + YRJ/ -.sg.m",
+   "category": "variant",
+   "homograph_kind": null,
+   "reason": "The interrogative he with pataḥ before a letter with ḥataf qamats, without the dagesh that MAM's atom has after it; that dagesh is optional after the interrogative, and without it the atom cannot have the article, so the pointing spells the analysis.",
+   "evidence": null
+  },
+  {
+   "id": "B178161",
+   "test": "B",
+   "kind": null,
+   "class": "neither",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Jeremiah 31:34"
+   ],
+   "atoms": [
+    {
+     "atom": 178161,
+     "ref": "Jeremiah 31:34",
+     "bhsa": "לְמִקְטַנָּם",
+     "mam": "לְמִקְּטַנָּם",
+     "wlc418": [
+      {
+       "text": "לְמִקְטַנָּם",
+       "notes": []
+      }
+     ],
+     "slots": [
+      251307,
+      251308,
+      251309
+     ]
+    }
+   ],
+   "analysis": "L + MN + QVN=/ -.sg.m +M",
+   "category": "variant",
+   "homograph_kind": null,
+   "reason": "No dagesh forte in the qof, which has sheva, after the preposition `MN`, where MAM has one: a dagesh forte that a letter with sheva may lack.",
+   "evidence": null
+  },
+  {
+   "id": "B195406",
+   "test": "B",
+   "kind": null,
+   "class": "neither",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Ezekiel 21:31"
+   ],
+   "atoms": [
+    {
+     "atom": 195406,
+     "ref": "Ezekiel 21:31",
+     "bhsa": "וְהַגָּבֹהַ",
+     "mam": "וְהַגָּבֹהַּ",
+     "wlc418": [
+      {
+       "text": "וְהַגָּבֹהַ",
+       "notes": [
+        "1"
+       ]
+      }
+     ],
+     "slots": [
+      275083,
+      275084,
+      275085
+     ]
+    }
+   ],
+   "analysis": "W + H + GBH/ -.sg.m",
+   "category": "no-word",
+   "homograph_kind": null,
+   "reason": "No mappiq in the final he, which has a furtive pataḥ, a vowel that only a consonant has; MAM has the mappiq (WLC 4.18 note 1).",
+   "evidence": null
+  },
+  {
+   "id": "B195815",
+   "test": "B",
+   "kind": null,
+   "class": "neither",
+   "slot_level_origin": [
+    "written"
+   ],
+   "refs": [
+    "Ezekiel 22:26"
+   ],
+   "atoms": [
+    {
+     "atom": 195815,
+     "ref": "Ezekiel 22:26",
+     "bhsa": "וּמִשַׁבְּתֹותַי",
+     "mam": "וּמִשַּׁבְּתוֹתַי",
+     "wlc418": [
+      {
+       "text": "וּמִשַׁבְּתוֹתַי",
+       "notes": []
+      }
+     ],
+     "slots": [
+      275623,
+      275624,
+      275625
+     ]
+    }
+   ],
+   "analysis": "W + MN + CBT/ -.pl.f +J",
+   "category": "no-word",
+   "homograph_kind": null,
+   "reason": "No dagesh forte in the shin, which has pataḥ, after the preposition `MN`, where MAM has one; spells no other word.",
+   "evidence": null
+  },
+  {
+   "id": "B196336",
+   "test": "B",
+   "kind": null,
+   "class": "neither",
+   "slot_level_origin": [
+    "written"
+   ],
+   "refs": [
+    "Ezekiel 23:36"
+   ],
+   "atoms": [
+    {
+     "atom": 196336,
+     "ref": "Ezekiel 23:36",
+     "bhsa": "תֹועֲבֹותֵיהֶן",
+     "mam": "תּוֹעֲבוֹתֵיהֶן",
+     "wlc418": [
+      {
+       "text": "תוֹעֲבוֹתֵיהֶן",
+       "notes": []
+      }
+     ],
+     "slots": [
+      276316
+     ]
+    }
+   ],
+   "analysis": "TW<BH/ -.pl.f +HN",
+   "category": "variant",
+   "homograph_kind": null,
+   "reason": "No dagesh lene in the tav that begins the atom, which MAM has, after an atom ending in a consonant: a dagesh lene that depends on the atom before. WLC 4.18 lacks it too.",
+   "evidence": null
+  },
+  {
+   "id": "B197674",
+   "test": "B",
+   "kind": null,
+   "class": "neither",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Ezekiel 27:20"
+   ],
+   "atoms": [
+    {
+     "atom": 197674,
+     "ref": "Ezekiel 27:20",
+     "bhsa": "בְבִגְדֵי־",
+     "mam": "בְּבִגְדֵי־",
+     "wlc418": [
+      {
+       "text": "בְבִגְדֵי־",
+       "notes": []
+      }
+     ],
+     "slots": [
+      278116,
+      278117
+     ]
+    }
+   ],
+   "analysis": "B + BGD/ -.pl.m",
+   "category": "variant",
+   "homograph_kind": null,
+   "reason": "No dagesh lene in the bet that begins the atom, which MAM has, after an atom ending in a consonant: a dagesh lene that depends on the atom before.",
+   "evidence": null
+  },
+  {
+   "id": "B199639",
+   "test": "B",
+   "kind": null,
+   "class": "neither",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Ezekiel 32:30"
+   ],
+   "atoms": [
+    {
+     "atom": 199639,
+     "ref": "Ezekiel 32:30",
+     "bhsa": "מִגְּבוּרָתָם",
+     "mam": "מִגְבוּרָתָם",
+     "wlc418": [
+      {
+       "text": "מִגְבוּרָתָם",
+       "notes": []
+      }
+     ],
+     "slots": [
+      280743,
+      280744
+     ]
+    }
+   ],
+   "analysis": "MN + GBWRH/ -.sg.f +M",
+   "category": "variant",
+   "homograph_kind": null,
+   "reason": "A dagesh forte in the gimel, which has sheva, after the preposition `MN`, which MAM and WLC 4.18 lack: a dagesh forte that a letter with sheva may have or lack.",
+   "evidence": null
+  },
+  {
+   "id": "B203044",
+   "test": "B",
+   "kind": null,
+   "class": "neither",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Ezekiel 40:25"
+   ],
+   "atoms": [
+    {
+     "atom": 203044,
+     "ref": "Ezekiel 40:25",
+     "bhsa": "כְּהַחֲלֹּנֹות",
+     "mam": "כְּהַחַלֹּנוֹת",
+     "wlc418": [
+      {
+       "text": "כְּהַחֲלֹּנוֹת",
+       "notes": []
+      }
+     ],
+     "slots": [
+      285535,
+      285536,
+      285537
+     ]
+    }
+   ],
+   "analysis": "K + H + XLWN/ -.pl.f",
+   "category": "no-word",
+   "homograph_kind": null,
+   "reason": "A ḥataf pataḥ under the ḥet before the doubled lamed, whose doubling closes the syllable, where MAM has a full pataḥ; p2c judges such a ḥataf no-word, p2b a variant, and neither makes it a correction.",
+   "evidence": null
+  },
+  {
+   "id": "B206999",
+   "test": "B",
+   "kind": null,
+   "class": "neither",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Hosea 2:17"
+   ],
+   "atoms": [
+    {
+     "atom": 206999,
+     "ref": "Hosea 2:17",
+     "bhsa": "וִּכְיֹום",
+     "mam": "וּכְיוֹם",
+     "wlc418": [
+      {
+       "text": "וִּכְיוֹם",
+       "notes": [
+        "U"
+       ]
+      }
+     ],
+     "slots": [
+      291425,
+      291426,
+      291427
+     ]
+    }
+   ],
+   "analysis": "W + K + JWM/ -.sg.m",
+   "category": "no-word",
+   "homograph_kind": null,
+   "reason": "The conjunction's vav has a shuruq dot and a ḥiriq, where MAM has a shuruq (the review's case 29, Part 1's class c; WLC 4.18 note U).",
+   "evidence": null
+  },
+  {
+   "id": "B209394",
+   "test": "B",
+   "kind": null,
+   "class": "neither",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Joel 2:12"
+   ],
+   "atoms": [
+    {
+     "atom": 209394,
+     "ref": "Joel 2:12",
+     "bhsa": "וּבְבְכִי",
+     "mam": "וּבִבְכִי",
+     "wlc418": [
+      {
+       "text": "וּבְבְכִי",
+       "notes": [
+        "U"
+       ]
+      }
+     ],
+     "slots": [
+      294581,
+      294582,
+      294583
+     ]
+    }
+   ],
+   "analysis": "W + B + BKJ/ -.sg.m",
+   "category": "no-word",
+   "homograph_kind": null,
+   "reason": "A sheva under the preposition before a bet with sheva, two sheva marks in a row, where the rule gives the preposition ḥiriq, as MAM has (the review's case 30, Part 1's class c; WLC 4.18 note U).",
+   "evidence": null
+  },
+  {
+   "id": "B209651",
+   "test": "B",
+   "kind": null,
+   "class": "neither",
+   "slot_level_origin": [
+    "written"
+   ],
+   "refs": [
+    "Joel 3:3"
+   ],
+   "atoms": [
+    {
+     "atom": 209651,
+     "ref": "Joel 3:3",
+     "bhsa": "וְתִימֲרֹות",
+     "mam": "וְתִימְרוֹת",
+     "wlc418": [
+      {
+       "text": "וְתִימֲרוֹת",
+       "notes": []
+      }
+     ],
+     "slots": [
+      294952,
+      294953
+     ]
+    }
+   ],
+   "analysis": "W + TJMRH/ -.pl.f",
+   "category": "variant",
+   "homograph_kind": null,
+   "reason": "A ḥataf pataḥ under the mem for MAM's vocal sheva: a ḥataf for a vocal sheva, the same word.",
+   "evidence": null
+  },
+  {
+   "id": "B218909",
+   "test": "B",
+   "kind": null,
+   "class": "neither",
+   "slot_level_origin": [
+    "written"
+   ],
+   "refs": [
+    "Zechariah 9:17"
+   ],
+   "atoms": [
+    {
+     "atom": 218909,
+     "ref": "Zechariah 9:17",
+     "bhsa": "יָפְיֹו",
+     "mam": "יָּפְיוֹ",
+     "wlc418": [
+      {
+       "text": "יָפְיוֹ",
+       "notes": []
+      }
+     ],
+     "slots": [
+      307787
+     ]
+    }
+   ],
+   "analysis": "JPJ/ -.sg.m +W",
+   "category": "variant",
+   "homograph_kind": null,
+   "reason": "No dagesh in the yod that begins the atom, where MAM has the conjunctive dagesh after 'and how' joined by maqaf: a dagesh that depends on the atom before.",
+   "evidence": null
+  },
+  {
+   "id": "B223241",
+   "test": "B",
+   "kind": null,
+   "class": "neither",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Psalms 21:14"
+   ],
+   "atoms": [
+    {
+     "atom": 223241,
+     "ref": "Psalms 21:14",
+     "bhsa": "בְעֻזֶּךָ",
+     "mam": "בְּעֻזֶּךָ",
+     "wlc418": [
+      {
+       "text": "בְּעֻזֶּךָ",
+       "notes": []
+      }
+     ],
+     "slots": [
+      313569,
+      313570
+     ]
+    }
+   ],
+   "analysis": "B + <Z/ -.sg.m +K",
+   "category": "variant",
+   "homograph_kind": null,
+   "reason": "No dagesh lene in the bet that begins the atom, which WLC 4.18 and MAM have, after an atom ending in a vowel: a dagesh lene that depends on the atom before.",
+   "evidence": null
+  },
+  {
+   "id": "B224820",
+   "test": "B",
+   "kind": null,
+   "class": "neither",
+   "slot_level_origin": [
+    "written"
+   ],
+   "refs": [
+    "Psalms 34:2"
+   ],
+   "atoms": [
+    {
+     "atom": 224820,
+     "ref": "Psalms 34:2",
+     "bhsa": "אֲבָרֲכָה",
+     "mam": "אֲבָרְכָה",
+     "wlc418": [
+      {
+       "text": "אֲבָרֲכָה",
+       "notes": []
+      }
+     ],
+     "slots": [
+      315597
+     ]
+    }
+   ],
+   "analysis": "BRK[ piel impf p1.sg.?",
+   "category": "variant",
+   "homograph_kind": null,
+   "reason": "A ḥataf pataḥ under the resh for MAM's vocal sheva: a ḥataf for a vocal sheva, the same word.",
+   "evidence": null
+  },
+  {
+   "id": "B236945",
+   "test": "B",
+   "kind": null,
+   "class": "neither",
+   "slot_level_origin": [
+    "written"
+   ],
+   "refs": [
+    "Psalms 119:14"
+   ],
+   "atoms": [
+    {
+     "atom": 236945,
+     "ref": "Psalms 119:14",
+     "bhsa": "שַׂשְׂתִּי",
+     "mam": "שַּׂשְׂתִּי",
+     "wlc418": [
+      {
+       "text": "שַׂשְׂתִּי",
+       "notes": []
+      }
+     ],
+     "slots": [
+      331424
+     ]
+    }
+   ],
+   "analysis": "FWF[ qal perf p1.sg.?",
+   "category": "variant",
+   "homograph_kind": null,
+   "reason": "No dagesh in the sin that begins the atom, where MAM has the conjunctive dagesh after an atom ending in qamats: a dagesh that depends on the atom before.",
+   "evidence": null
+  },
+  {
+   "id": "B241402",
+   "test": "B",
+   "kind": null,
+   "class": "neither",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Job 4:17"
+   ],
+   "atoms": [
+    {
+     "atom": 241402,
+     "ref": "Job 4:17",
+     "bhsa": "מֵאֱלֹוהַ",
+     "mam": "מֵאֱלוֹהַּ",
+     "wlc418": [
+      {
+       "text": "מֵאֱלוֹהַ",
+       "notes": []
+      }
+     ],
+     "slots": [
+      337244,
+      337245
+     ]
+    }
+   ],
+   "analysis": "MN + >LWH/ -.sg.m",
+   "category": "no-word",
+   "homograph_kind": null,
+   "reason": "No mappiq in the final he, which has a furtive pataḥ, a vowel that only a consonant has; MAM has the mappiq.",
+   "evidence": null
+  },
+  {
+   "id": "B245426",
+   "test": "B",
+   "kind": null,
+   "class": "neither",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Job 27:9"
+   ],
+   "atoms": [
+    {
+     "atom": 245426,
+     "ref": "Job 27:9",
+     "bhsa": "הַצַעֲקָתֹו",
+     "mam": "הֲצַעֲקָתוֹ",
+     "wlc418": [
+      {
+       "text": "הַצַעֲקָתוֹ",
+       "notes": []
+      }
+     ],
+     "slots": [
+      342449,
+      342450
+     ]
+    }
+   ],
+   "analysis": "H= + Y<QH/ -.sg.f +W",
+   "category": "variant",
+   "homograph_kind": null,
+   "reason": "The interrogative he with pataḥ for MAM's ḥataf pataḥ: a full vowel for a ḥataf under a guttural; with no dagesh after it, it cannot be the article.",
+   "evidence": null
+  },
+  {
+   "id": "B247140",
+   "test": "B",
+   "kind": null,
+   "class": "neither",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Job 34:33"
+   ],
+   "atoms": [
+    {
+     "atom": 247140,
+     "ref": "Job 34:33",
+     "bhsa": "הַמֵעִמְּךָ",
+     "mam": "הֲמֵעִמְּךָ",
+     "wlc418": [
+      {
+       "text": "הַמֵעִמְּךָ",
+       "notes": []
+      }
+     ],
+     "slots": [
+      344679,
+      344680,
+      344681
+     ]
+    }
+   ],
+   "analysis": "H= + MN + <M +K",
+   "category": "variant",
+   "homograph_kind": null,
+   "reason": "The interrogative he with pataḥ for MAM's ḥataf pataḥ: a full vowel for a ḥataf under a guttural; with no dagesh after it, it cannot be the article.",
+   "evidence": null
+  },
+  {
+   "id": "B247316",
+   "test": "B",
+   "kind": null,
+   "class": "neither",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Job 36:3"
+   ],
+   "atoms": [
+    {
+     "atom": 247316,
+     "ref": "Job 36:3",
+     "bhsa": "וְלְפֹעֲלִי",
+     "mam": "וּלְפֹעֲלִי",
+     "wlc418": [
+      {
+       "text": "וּלְפֹעֲלִי",
+       "notes": []
+      }
+     ],
+     "slots": [
+      344907,
+      344908,
+      344909
+     ]
+    }
+   ],
+   "analysis": "W + L + P<L[ qal ptca ?.sg.m +J",
+   "category": "no-word",
+   "homograph_kind": null,
+   "reason": "A sheva under the conjunction's vav before the preposition's sheva, two sheva marks in a row, where the rule gives a shuruq, as WLC 4.18 and MAM have.",
+   "evidence": null
+  },
+  {
+   "id": "B247812",
+   "test": "B",
+   "kind": null,
+   "class": "neither",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Job 38:12"
+   ],
+   "atoms": [
+    {
+     "atom": 247812,
+     "ref": "Job 38:12",
+     "bhsa": "הְמִיָּמֶיךָ",
+     "mam": "הֲמִיָּמֶיךָ",
+     "wlc418": [
+      {
+       "text": "הְמִיָּמֶיךָ",
+       "notes": [
+        "1"
+       ]
+      }
+     ],
+     "slots": [
+      345546,
+      345547,
+      345548
+     ]
+    }
+   ],
+   "analysis": "H= + MN + JWM/ -.pl.m +K",
+   "category": "variant",
+   "homograph_kind": null,
+   "reason": "A sheva under the interrogative he for MAM's ḥataf pataḥ: a sheva for a ḥataf (WLC 4.18 note 1).",
+   "evidence": null
+  },
+  {
+   "id": "B248163",
+   "test": "B",
+   "kind": null,
+   "class": "neither",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Job 39:20"
+   ],
+   "atoms": [
+    {
+     "atom": 248163,
+     "ref": "Job 39:20",
+     "bhsa": "הְתַרְעִישֶׁנּוּ",
+     "mam": "הֲתַרְעִישֶׁנּוּ",
+     "wlc418": [
+      {
+       "text": "הְתַרְעִישֶׁנּוּ",
+       "notes": []
+      }
+     ],
+     "slots": [
+      346016,
+      346017
+     ]
+    }
+   ],
+   "analysis": "H= + R<C[ hif impf p2.sg.m +HW",
+   "category": "variant",
+   "homograph_kind": null,
+   "reason": "A sheva under the interrogative he for MAM's ḥataf pataḥ: a sheva for a ḥataf.",
+   "evidence": null
+  },
+  {
+   "id": "B256127",
+   "test": "B",
+   "kind": null,
+   "class": "neither",
+   "slot_level_origin": [
+    "written"
+   ],
+   "refs": [
+    "Ruth 2:2"
+   ],
+   "atoms": [
+    {
+     "atom": 256127,
+     "ref": "Ruth 2:2",
+     "bhsa": "וַאֲלַקֳטָה",
+     "mam": "וַאֲלַקֳּטָה",
+     "wlc418": [
+      {
+       "text": "וַאֲלַקֳטָּה",
+       "notes": [
+        "Q",
+        "n",
+        "p"
+       ]
+      }
+     ],
+     "slots": [
+      356258,
+      356259
+     ]
+    }
+   ],
+   "analysis": "W + LQV[ piel impf p1.sg.?",
+   "category": "variant",
+   "homograph_kind": null,
+   "reason": "No dagesh forte in the piel's qof, which has ḥataf qamats, a vocal sheva's vowel, where MAM has one: a dagesh forte that such a letter may lack (WLC 4.18 has none in the qof and one in the tet, with notes Q, n and p).",
+   "evidence": null
+  },
+  {
+   "id": "B256188",
+   "test": "B",
+   "kind": null,
+   "class": "neither",
+   "slot_level_origin": [
+    "written"
+   ],
+   "refs": [
+    "Ruth 2:7"
+   ],
+   "atoms": [
+    {
+     "atom": 256188,
+     "ref": "Ruth 2:7",
+     "bhsa": "אֲלַקֳטָה־",
+     "mam": "אֲלַקֳּטָה־",
+     "wlc418": [
+      {
+       "text": "אֲלַקֳטָה־",
+       "notes": []
+      }
+     ],
+     "slots": [
+      356355
+     ]
+    }
+   ],
+   "analysis": "LQV[ piel impf p1.sg.?",
+   "category": "variant",
+   "homograph_kind": null,
+   "reason": "No dagesh forte in the piel's qof, which has ḥataf qamats, a vocal sheva's vowel, where MAM has one: a dagesh forte that such a letter may lack.",
+   "evidence": null
+  },
+  {
+   "id": "B257474",
+   "test": "B",
+   "kind": null,
+   "class": "neither",
+   "slot_level_origin": [
+    "written"
+   ],
+   "refs": [
+    "Song of Songs 3:6"
+   ],
+   "atoms": [
+    {
+     "atom": 257474,
+     "ref": "Song of Songs 3:6",
+     "bhsa": "כְּתִימֲרֹות",
+     "mam": "כְּתִימְרוֹת",
+     "wlc418": [
+      {
+       "text": "כְּתִימֲרוֹת",
+       "notes": []
+      }
+     ],
+     "slots": [
+      358135,
+      358136
+     ]
+    }
+   ],
+   "analysis": "K + TJMRH/ -.pl.f",
+   "category": "variant",
+   "homograph_kind": null,
+   "reason": "A ḥataf pataḥ under the mem for MAM's vocal sheva: a ḥataf for a vocal sheva, the same word.",
+   "evidence": null
+  },
+  {
+   "id": "B258854",
+   "test": "B",
+   "kind": null,
+   "class": "neither",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Ecclesiastes 2:22"
+   ],
+   "atoms": [
+    {
+     "atom": 258854,
+     "ref": "Ecclesiastes 2:22",
+     "bhsa": "שֶׁהוּא",
+     "mam": "שְׁהוּא",
+     "wlc418": [
+      {
+       "text": "שֶׁהוּא",
+       "notes": []
+      }
+     ],
+     "slots": [
+      360042,
+      360043
+     ]
+    }
+   ],
+   "analysis": "C + HW> p3.sg.m +n/a",
+   "category": "variant",
+   "homograph_kind": null,
+   "reason": "The relative particle with segol, its usual vowel before he, where MAM has sheva; both are the relative particle.",
+   "evidence": null
+  },
+  {
+   "id": "B265966",
+   "test": "B",
+   "kind": null,
+   "class": "neither",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Daniel 1:4"
+   ],
+   "atoms": [
+    {
+     "atom": 265966,
+     "ref": "Daniel 1:4",
+     "bhsa": "וּלֲלַמְּדָם",
+     "mam": "וּלְלַמְּדָם",
+     "wlc418": [
+      {
+       "text": "וּלֲלַמְּדָם",
+       "notes": []
+      }
+     ],
+     "slots": [
+      370177,
+      370178,
+      370179
+     ]
+    }
+   ],
+   "analysis": "W + L + LMD[ piel infc ?.?.? +M",
+   "category": "variant",
+   "homograph_kind": null,
+   "reason": "A ḥataf pataḥ under the preposition's lamed, before a second lamed, for MAM's vocal sheva: a ḥataf for a vocal sheva, the same word.",
+   "evidence": null
+  },
+  {
+   "id": "B268467",
+   "test": "B",
+   "kind": null,
+   "class": "neither",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Daniel 5:12"
+   ],
+   "atoms": [
+    {
+     "atom": 268467,
+     "ref": "Daniel 5:12",
+     "bhsa": "וַאַחֲוָיַת",
+     "mam": "וְאַחֲוָיַת",
+     "wlc418": [
+      {
+       "text": "וַאַחֲוָיַת",
+       "notes": []
+      }
+     ],
+     "slots": [
+      373435,
+      373436
+     ]
+    }
+   ],
+   "analysis": "W + XWH[ afel infc ?.?.?",
+   "category": "no-word",
+   "homograph_kind": null,
+   "reason": "As at Exodus 29:23, in Aramaic: the conjunction has pataḥ before an alef with a full pataḥ, where MAM has sheva.",
+   "evidence": null
+  },
+  {
+   "id": "B275395",
+   "test": "B",
+   "kind": null,
+   "class": "neither",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "Ezra 10:21"
+   ],
+   "atoms": [
+    {
+     "atom": 275395,
+     "ref": "Ezra 10:21",
+     "bhsa": "וְעֻזִיָּה",
+     "mam": "וְעֻזִּיָּה",
+     "wlc418": [
+      {
+       "text": "וְעֻזִיָּה",
+       "notes": []
+      }
+     ],
+     "slots": [
+      383213,
+      383214
+     ]
+    }
+   ],
+   "analysis": "W + <ZJH/ -.sg.m +n/a",
+   "category": "no-word",
+   "homograph_kind": null,
+   "reason": "No dagesh forte in the zayin of Uzziah, which the qubuts before it needs and MAM has, as p2c judged 1 Chronicles 11:44's Uzzia; the BHSA has this name so at 2 other words (slot level).",
+   "evidence": null
+  },
+  {
+   "id": "B276742",
+   "test": "B",
+   "kind": null,
+   "class": "neither",
+   "slot_level_origin": [
+    "written"
+   ],
+   "refs": [
+    "Nehemiah 4:7"
+   ],
+   "atoms": [
+    {
+     "atom": 276742,
+     "ref": "Nehemiah 4:7",
+     "bhsa": "מִתַּחְתִּיֹּות",
+     "mam": "מִתַּחְתְּיוֹת",
+     "wlc418": [
+      {
+       "text": "מִתַּחְתִּיּוֹת",
+       "notes": []
+      }
+     ],
+     "slots": [
+      385142,
+      385143
+     ]
+    }
+   ],
+   "analysis": "MN + TXTJ/ -.pl.f",
+   "category": "variant",
+   "homograph_kind": null,
+   "reason": "Ḥiriq under the second tav and a dagesh in the yod, the usual feminine plural of an adjective ending in ḥiriq and yod, where MAM has a sheva under the tav and no dagesh in the yod.",
+   "evidence": null
+  },
+  {
+   "id": "B292869",
+   "test": "B",
+   "kind": null,
+   "class": "neither",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "2 Chronicles 5:13"
+   ],
+   "atoms": [
+    {
+     "atom": 292869,
+     "ref": "2 Chronicles 5:13",
+     "bhsa": "וְלַמְשֹׁרֲרִים",
+     "mam": "וְלַמְשֹׁרְרִים",
+     "wlc418": [
+      {
+       "text": "וְלַמְשֹׁרֲרִים",
+       "notes": []
+      }
+     ],
+     "slots": [
+      408910,
+      408911,
+      408912,
+      408913
+     ]
+    }
+   ],
+   "analysis": "W + L + H + CJR[ piel ptca ?.pl.m",
+   "category": "variant",
+   "homograph_kind": null,
+   "reason": "A ḥataf pataḥ under the first resh for MAM's vocal sheva: a ḥataf for a vocal sheva, the same word.",
+   "evidence": null
+  },
+  {
+   "id": "B296463",
+   "test": "B",
+   "kind": null,
+   "class": "neither",
+   "slot_level_origin": [
+    "both"
+   ],
+   "refs": [
+    "2 Chronicles 15:16"
+   ],
+   "atoms": [
+    {
+     "atom": 296463,
+     "ref": "2 Chronicles 15:16",
+     "bhsa": "לַאֲשֵׁרָה",
+     "mam": "לָאֲשֵׁרָה",
+     "wlc418": [
+      {
+       "text": "לַאֲשֵׁרָה",
+       "notes": []
+      }
+     ],
+     "slots": [
+      414147,
+      414148
+     ]
+    }
+   ],
+   "analysis": "L + >CRH/ -.sg.f",
+   "category": "follows-pointing",
+   "homograph_kind": null,
+   "reason": "With pataḥ, the preposition before a ḥataf pataḥ has no article, and the analysis has none (`L + >CRH/`); MAM's qamats is the article's, as the BHSA analyses that pointing at 1 Kings 15:13 and 2 Kings 23:7 (`L + H + >CRH/`).",
+   "evidence": null
+  }
+ ],
+ "bhsa_differs_from_wlc418": [
+  {
+   "id": "B114192",
+   "ref": "2 Samuel 3:27",
+   "bhsa": "לְדַּבֵּר",
+   "wlc418": "לְדַבֵּר",
+   "notes": []
+  },
+  {
+   "id": "B119742",
+   "ref": "2 Samuel 16:19",
+   "bhsa": "לִפָנֶיךָ",
+   "wlc418": "לְפָנֶיךָ",
+   "notes": []
+  },
+  {
+   "id": "B185728",
+   "ref": "Jeremiah 49:37",
+   "bhsa": "לפְנֵי",
+   "wlc418": "לִפְנֵי",
+   "notes": []
+  },
+  {
+   "id": "B191270",
+   "ref": "Ezekiel 12:10",
+   "bhsa": "בִּירוּשָׁלַם",
+   "wlc418": "בִּירוּשָׁלִַם",
+   "notes": [
+    "v"
+   ]
+  },
+  {
+   "id": "B193102",
+   "ref": "Ezekiel 16:54",
+   "bhsa": "וִנִכְלַמְתְּ",
+   "wlc418": "וְנִכְלַמְתְּ",
+   "notes": [
+    "v"
+   ]
+  },
+  {
+   "id": "B121506",
+   "ref": "2 Samuel 19:33",
+   "bhsa": "בְשִׁיבָתֹו",
+   "wlc418": "בְּשִׁיבָתוֹ",
+   "notes": []
+  },
+  {
+   "id": "B199639",
+   "ref": "Ezekiel 32:30",
+   "bhsa": "מִגְּבוּרָתָם",
+   "wlc418": "מִגְבוּרָתָם",
+   "notes": []
+  },
+  {
+   "id": "B223241",
+   "ref": "Psalms 21:14",
+   "bhsa": "בְעֻזֶּךָ",
+   "wlc418": "בְּעֻזֶּךָ",
+   "notes": []
+  },
+  {
+   "id": "B247316",
+   "ref": "Job 36:3",
+   "bhsa": "וְלְפֹעֲלִי",
+   "wlc418": "וּלְפֹעֲלִי",
+   "notes": []
+  },
+  {
+   "id": "B256127",
+   "ref": "Ruth 2:2",
+   "bhsa": "וַאֲלַקֳטָה",
+   "wlc418": "וַאֲלַקֳטָּה",
+   "notes": [
+    "Q",
+    "n",
+    "p"
+   ]
+  }
+ ]
+}

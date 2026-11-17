@@ -1,0 +1,474 @@
+Test B: {"atoms": 304789, "atoms whose pointing differs from MAM's": 7517, "slots: both": 7059, "slots: mam-unique": 184, "slots: neither": 169, "slots: written": 104, "atoms whose letters differ from MAM's, skipped": 1530, "atoms with a ketiv, skipped": 1315, "slots: mam-elsewhere": 8}
+
+== mam-elsewhere: 8 slots
+Genesis 15:10 slot 6847 | BHSA צִפֹּ֖ר | MAM צִּפֹּ֖ר (atom הַצִּפֹּ֖ר) | analysis YPWR/ | own key: YPWR=/ x2 | MAM's key: YPWR/ x9
+Exodus 2:10 slot 29304 | BHSA יִגְדַּ֣ל | MAM יִּגְדַּ֣ל (atom וַיִּגְדַּ֣ל) | analysis GDL[ qal wayq | own key: GDL[ qal impf x11 | MAM's key: GDL[ qal wayq x10
+Exodus 10:28 slot 34429 | BHSA אֶל | MAM אַל (atom אַל־) | analysis >L= | own key: >L x3875 | MAM's key: >L= x723, >L x2, >L== x1, >L=/ x1
+Leviticus 4:35 slot 54258 | BHSA חֶלְבָּ֣ה | MAM חֶלְבָּ֣הּ (atom חֶלְבָּ֣הּ) | analysis XLB=/ | own key: XLBH/ x1 | MAM's key: XLB=/ x1
+Judices 19:23 slot 139678 | BHSA אַל | MAM אֶל (atom אֶל־) | analysis >L | own key: >L= x723, >L x1, >L== x1, >L=/ x1 | MAM's key: >L x3875, >L= x1
+Samuel_II 3:32 slot 162420 | BHSA יִשָּׂ֧א | MAM יִּשָּׂ֧א (atom וַיִּשָּׂ֧א) | analysis NF>[ qal wayq | own key: NF>[ qal impf x39 | MAM's key: NF>[ qal wayq x41
+Jeremia 47:6 slot 260353 | BHSA אַל | MAM אֶל (atom אֶל־) | analysis >L | own key: >L= x723, >L x1, >L== x1, >L=/ x1 | MAM's key: >L x3875, >L= x1
+Iob 8:1 slot 338078 | BHSA יֹאמַֽר | MAM יֹּאמַֽר׃ (atom וַיֹּאמַֽר׃) | analysis >MR[ qal wayq | own key: >MR[ qal impf x65 | MAM's key: >MR[ qal wayq x122, >MR[ qal impf x2
+
+== mam-unique: 184 slots
+Genesis 2:12 slot 899 | BHSA זֲהַ֛ב | MAM זְהַ֛ב (atom וּֽזְהַ֛ב) | analysis ZHB/ | own key:  | MAM's key: ZHB/ x4
+Genesis 2:18 slot 1007 | BHSA אֶֽעֱשֶׂהּ | MAM אֶֽעֱשֶׂה (atom אֶֽעֱשֶׂה־) | analysis <FH[ qal impf | own key:  | MAM's key: <FH[ qal impf x87, <FH[ qal wayq x2
+Genesis 14:10 slot 6392 | BHSA שִׂדִּ֗ים | MAM שִּׂדִּ֗ים (atom הַשִּׂדִּ֗ים) | analysis FDJM/ | own key:  | MAM's key: FDJM/ x2
+Genesis 14:17 slot 6542 | BHSA כְּדָר־לָעֹ֔מֶר | MAM כְּדׇרְלָעֹ֔מֶר (atom כְּדׇרְלָעֹ֔מֶר) | analysis KDRL<MR/ | own key:  | MAM's key: KDRL<MR/ x3
+Genesis 16:2 slot 7063 | BHSA מִמֵּ֑נָּה | MAM מִמֶּ֑נָּה (atom מִמֶּ֑נָּה) | analysis MN | own key:  | MAM's key: MN x60
+Genesis 19:2 slot 8468 | BHSA הְלַכְתֶּ֣ם | MAM הֲלַכְתֶּ֣ם (atom וַהֲלַכְתֶּ֣ם) | analysis HLK[ qal perf | own key:  | MAM's key: HLK[ qal perf x14
+Genesis 22:12 slot 10497 | BHSA מְא֑וּמָּה | MAM מְא֑וּמָה (atom מְא֑וּמָה) | analysis M>WMH/ | own key:  | MAM's key: M>WMH/ x31
+Genesis 26:1 slot 13000 | BHSA אֲבִימֶּ֥לֶךְ | MAM אֲבִימֶ֥לֶךְ (atom אֲבִימֶ֥לֶךְ) | analysis >BJMLK/ | own key:  | MAM's key: >BJMLK/ x66
+Genesis 28:14 slot 14770 | BHSA נִבְרֲכ֥וּ | MAM נִבְרְכ֥וּ (atom וְנִבְרְכ֥וּ) | analysis BRK[ nif perf | own key:  | MAM's key: BRK[ nif perf x2
+Genesis 34:11 slot 18631 | BHSA אָבִ֣יה | MAM אָבִ֣יהָ (atom אָבִ֣יהָ) | analysis >B/ | own key:  | MAM's key: >B/ x34
+Genesis 34:28 slot 18966 | BHSA חֲמֹרֵיהֶּ֑ם | MAM חֲמֹרֵיהֶ֑ם (atom חֲמֹרֵיהֶ֑ם) | analysis XMWR/ | own key:  | MAM's key: XMWR/ x4
+Genesis 39:19 slot 21819 | BHSA עָ֥שָׂהּ | MAM עָ֥שָׂה (atom עָ֥שָׂה) | analysis <FH[ qal perf | own key:  | MAM's key: <FH[ qal perf x414
+Genesis 41:46 slot 23210 | BHSA יַּעְבֹ֖ר | MAM יַּעֲבֹ֖ר (atom וַֽיַּעֲבֹ֖ר) | analysis <BR[ qal wayq | own key:  | MAM's key: <BR[ qal wayq x38
+Genesis 43:7 slot 24253 | BHSA נַ֨גֶּד | MAM נַּ֨גֶּד (atom וַנַּ֨גֶּד־) | analysis NGD[ hif wayq | own key:  | MAM's key: NGD[ hif wayq x1
+Genesis 45:6 slot 25572 | BHSA קָצִּֽיר | MAM קָצִֽיר׃ (atom וְקָצִֽיר׃) | analysis QYJR/ | own key:  | MAM's key: QYJR/ x15, QYJR=/ x1
+Genesis 46:13 slot 26204 | BHSA פֻוָּ֖ה | MAM פֻוָ֖ה (atom וּפֻוָ֖ה) | analysis PWH/ | own key:  | MAM's key: PWH/ x1
+Genesis 49:26 slot 28112 | BHSA תִּֽהְיֶ֨ין֙ | MAM תִּֽהְיֶ֙יןָ֙ (atom תִּֽהְיֶ֙יןָ֙) | analysis HJH[ qal impf | own key:  | MAM's key: HJH[ qal impf x9, HJH[ qal wayq x2
+Exodus 1:3 slot 28787 | BHSA בְנְיָמִֽן | MAM בִנְיָמִֽן׃ (atom וּבִנְיָמִֽן׃) | analysis BNJMN/ | own key:  | MAM's key: BNJMN/ x92
+Exodus 5:18 slot 31150 | BHSA תִּתֵּֽנּוּ | MAM תִּתֵּֽנוּ׃ (atom תִּתֵּֽנוּ׃) | analysis NTN[ qal impf | own key:  | MAM's key: NTN[ qal impf x2
+Exodus 7:10 slot 31949 | BHSA יַּ֣עַשׂוּ | MAM יַּ֣עֲשׂוּ (atom וַיַּ֣עֲשׂוּ) | analysis <FH[ qal wayq | own key:  | MAM's key: <FH[ qal wayq x78
+Exodus 8:3 slot 32442 | BHSA חֲרְטֻמִּ֖ים | MAM חַרְטֻמִּ֖ים (atom הַֽחַרְטֻמִּ֖ים) | analysis XRVM/ | own key:  | MAM's key: XRVM/ x6
+Exodus 8:5 slot 32503 | BHSA צֲפַרְדְּעִ֔ים | MAM צְפַרְדְּעִ֔ים (atom הַֽצְפַרְדְּעִ֔ים) | analysis YPRD</ | own key:  | MAM's key: YPRD</ x10
+Exodus 14:5 slot 36323 | BHSA יֹּֽאמרוּ֙ | MAM יֹּֽאמְרוּ֙ (atom וַיֹּֽאמְרוּ֙) | analysis >MR[ qal wayq | own key:  | MAM's key: >MR[ qal wayq x297, >MR[ qal impf x1
+Exodus 14:13 slot 36485 | BHSA הִֽתְיַצְב֗וּ | MAM הִֽתְיַצְּב֗וּ (atom הִֽתְיַצְּב֗וּ) | analysis JYB[ hit impv | own key:  | MAM's key: JYB[ hit impv x6, JYB[ hit perf x2
+Exodus 20:5 slot 39656 | BHSA תִשְׁתַּחְוֶ֥֣ה | MAM תִשְׁתַּחֲוֶ֥֣ה (atom תִשְׁתַּחֲוֶ֥֣ה) | analysis XWH[ hsht impf | own key:  | MAM's key: XWH[ hsht impf x5
+Exodus 27:15 slot 43587 | BHSA חְמֵ֥שׁ | MAM חֲמֵ֥שׁ (atom חֲמֵ֥שׁ) | analysis XMC/ | own key:  | MAM's key: XMC/ x66
+Exodus 35:7 slot 48611 | BHSA שִׂטִּֽים | MAM שִׁטִּֽים׃ (atom שִׁטִּֽים׃) | analysis CVH/ | own key:  | MAM's key: CVH/ x26
+Exodus 35:32 slot 49082 | BHSA מַֽחַשָׁבֹ֑ת | MAM מַֽחֲשָׁבֹ֑ת (atom מַֽחֲשָׁבֹ֑ת) | analysis MXCBH/ | own key:  | MAM's key: MXCBH/ x2
+Leviticus 5:12 slot 54583 | BHSA אַזְכָּרָתָה֙ | MAM אַזְכָּרָתָהּ֙ (atom אַזְכָּרָתָהּ֙) | analysis >ZKRH/ | own key:  | MAM's key: >ZKRH/ x5
+Leviticus 6:6 slot 55029 | BHSA תִכְבֶֽה | MAM תִכְבֶּֽה׃ (atom תִכְבֶּֽה׃) | analysis KBH[ qal impf | own key:  | MAM's key: KBH[ qal impf x8
+Leviticus 13:26 slot 59416 | BHSA בֶּהֶ֨רֶת֙ | MAM בַּהֶ֙רֶת֙ (atom בַּבַּהֶ֙רֶת֙) | analysis BHRT/ | own key:  | MAM's key: BHRT/ x5
+Leviticus 25:46 slot 67971 | BHSA הִתְנַחֲלְתֶּ֨ם | MAM הִתְנַחַלְתֶּ֨ם (atom וְהִתְנַחַלְתֶּ֨ם) | analysis NXL[ hit perf | own key:  | MAM's key: NXL[ hit perf x1
+Leviticus 26:34 slot 68705 | BHSA הֳשַּׁמָּ֔ה | MAM הׇשַּׁמָּ֔הֿ (atom הׇשַּׁמָּ֔הֿ) | analysis CMM[ hof infc | own key:  | MAM's key: CMM[ hof infc x1
+Numeri 2:12 slot 70591 | BHSA צוּרִֽי־שַׁדָּֽי | MAM צוּרִֽישַׁדָּֽי׃ (atom צוּרִֽישַׁדָּֽי׃) | analysis YWRJCDJ/ | own key:  | MAM's key: YWRJCDJ/ x3
+Numeri 3:30 slot 71373 | BHSA אֶלִיצָפָ֖ן | MAM אֱלִיצָפָ֖ן (atom אֱלִיצָפָ֖ן) | analysis >LJYPN/ | own key:  | MAM's key: >LJYPN/ x3
+Numeri 10:9 slot 76388 | BHSA וֲ | MAM וְ (atom וְנִזְכַּרְתֶּ֗ם) | analysis W | own key:  | MAM's key: W x23914
+Numeri 10:19 slot 76552 | BHSA צוּרִֽי שַׁדָּֽי | MAM צוּרִֽישַׁדָּֽי׃ (atom צוּרִֽישַׁדָּֽי׃) | analysis YWRJCDJ/ | own key:  | MAM's key: YWRJCDJ/ x3
+Numeri 10:25 slot 76626 | BHSA עַמִּי שַׁדָּֽי | MAM עַמִּישַׁדָּֽי׃ (atom עַמִּישַׁדָּֽי׃) | analysis <MJCDJ/ | own key:  | MAM's key: <MJCDJ/ x4
+Numeri 16:21 slot 80461 | BHSA אַכַלֶּ֥ה | MAM אֲכַלֶּ֥ה (atom וַאֲכַלֶּ֥ה) | analysis KLH[ piel impf | own key:  | MAM's key: KLH[ piel impf x4
+Numeri 16:27 slot 80559 | BHSA קֹ֛רֶח | MAM קֹ֛רַח (atom קֹ֛רַח) | analysis QRX==/ | own key:  | MAM's key: QRX==/ x36
+Numeri 16:32 slot 80693 | BHSA רֲכֽוּשׁ | MAM רְכֽוּשׁ׃ (atom הָרְכֽוּשׁ׃) | analysis RKWC/ | own key:  | MAM's key: RKWC/ x11
+Numeri 19:21 slot 82499 | BHSA לָּהֶ֖ם | MAM לָהֶ֖ם (atom לָהֶ֖ם) | analysis L | own key:  | MAM's key: L x646
+Numeri 23:25 slot 85117 | BHSA תְבָרֲכֶֽנּוּ | MAM תְבָרְכֶֽנּוּ׃ (atom תְבָרְכֶֽנּוּ׃) | analysis BRK[ piel impf | own key:  | MAM's key: BRK[ piel impf x1
+Deuteronomium 4:21 slot 95637 | BHSA הִתְאַנֶּף | MAM הִתְאַנַּף (atom הִתְאַנַּף־) | analysis >NP[ hit perf | own key:  | MAM's key: >NP[ hit perf x2
+Deuteronomium 8:20 slot 98390 | BHSA תֹאבֵד֑וּן | MAM תֹּאבֵד֑וּן (atom תֹּאבֵד֑וּן) | analysis >BD[ qal impf | own key:  | MAM's key: >BD[ qal impf x3
+Deuteronomium 12:3 slot 100368 | BHSA מִזְבּחֹתָ֗ם | MAM מִזְבְּחֹתָ֗ם (atom מִזְבְּחֹתָ֗ם) | analysis MZBX/ | own key:  | MAM's key: MZBX/ x1
+Deuteronomium 15:20 slot 102410 | BHSA תֹאכֲלֶ֨נּוּ֙ | MAM תֹאכְלֶ֙נּוּ֙ (atom תֹאכְלֶ֙נּוּ֙) | analysis >KL[ qal impf | own key:  | MAM's key: >KL[ qal impf x1
+Deuteronomium 25:11 slot 107020 | BHSA אִישָּׁ֖הּ | MAM אִישָׁ֖הּ (atom אִישָׁ֖הּ) | analysis >JC/ | own key:  | MAM's key: >JC/ x37
+Deuteronomium 25:18 slot 107117 | BHSA אַֽחַרֶ֔יךָ | MAM אַֽחֲרֶ֔יךָ (atom אַֽחֲרֶ֔יךָ) | analysis >XR/ | own key:  | MAM's key: >XR/ x33
+Deuteronomium 28:11 slot 108281 | BHSA בְהַמְתְּךָ֖ | MAM בְהֶמְתְּךָ֖ (atom בְהֶמְתְּךָ֖) | analysis BHMH/ | own key:  | MAM's key: BHMH/ x3
+Deuteronomium 31:21 slot 111242 | BHSA נִשְׁבָּֽעְתִּי | MAM נִשְׁבַּֽעְתִּי׃ (atom נִשְׁבַּֽעְתִּי׃) | analysis CB<[ nif perf | own key:  | MAM's key: CB<[ nif perf x26
+Deuteronomium 32:17 slot 111670 | BHSA אֱלֹ֔הַ | MAM אֱלֹ֔הַּ (atom אֱלֹ֔הַּ) | analysis >LWH/ | own key:  | MAM's key: >LWH/ x1
+Deuteronomium 34:6 slot 112791 | BHSA גַּיְ֙ | MAM גַּי֙ (atom בַגַּי֙) | analysis GJ>/ | own key:  | MAM's key: GJ>/ x2
+Josua 11:2 slot 119466 | BHSA כִּֽנֲרֹ֖ות | MAM כִּֽנְרֹ֖ות (atom כִּֽנְר֖וֹת) | analysis KNRT/ | own key:  | MAM's key: KNRT/ x2
+Josua 12:22 slot 120337 | BHSA יָקְנֳעָ֥ם | MAM יׇקְנְעָ֥ם (atom יׇקְנְעָ֥ם) | analysis JQN<M/ | own key:  | MAM's key: JQN<M/ x2
+Josua 15:4 slot 121460 | BHSA תֹצְאֹ֥ות | MAM תֹּצְאֹ֥ות (atom תֹּצְא֥וֹת) | analysis TWY>WT/ | own key:  | MAM's key: TWY>WT/ x2
+Josua 24:1 slot 126636 | BHSA יֶּאֶסֹ֧ף | MAM יֶּאֱסֹ֧ף (atom וַיֶּאֱסֹ֧ף) | analysis >SP[ qal wayq | own key:  | MAM's key: >SP[ qal wayq x19
+Judices 3:23 slot 129203 | BHSA עַלִיָּ֛ה | MAM עֲלִיָּ֛ה (atom הָעֲלִיָּ֛ה) | analysis <LJH/ | own key:  | MAM's key: <LJH/ x5
+Judices 9:57 slot 134096 | BHSA קִֽלֲלַ֖ת | MAM קִֽלְלַ֖ת (atom קִֽלְלַ֖ת) | analysis QLLH/ | own key:  | MAM's key: QLLH/ x2
+Samuel_I 2:35 slot 142834 | BHSA התְהַלֵּ֥ךְ | MAM הִתְהַלֵּ֥ךְ (atom וְהִתְהַלֵּ֥ךְ) | analysis HLK[ hit perf | own key:  | MAM's key: HLK[ hit infc x4, HLK[ hit impv x2, HLK[ hit perf x1
+Samuel_I 4:21 slot 143798 | BHSA אִֽי־כָבֹוד֙ | MAM אִֽיכָבֹוד֙ (atom אִֽיכָבוֹד֙) | analysis >JKBWD/ | own key:  | MAM's key: >JKBWD/ x1
+Samuel_I 27:10 slot 158444 | BHSA יַּרְחְמְאֵלִ֔י | MAM יְּרַחְמְאֵלִ֔י (atom הַיְּרַחְמְאֵלִ֔י) | analysis JRXM>LJ/ | own key:  | MAM's key: JRXM>LJ/ x1
+Samuel_II 3:21 slot 162152 | BHSA יְּשַׁלַּ֥ח | MAM יְשַׁלַּ֥ח (atom וַיְשַׁלַּ֥ח) | analysis CLX[ piel wayq | own key:  | MAM's key: CLX[ piel wayq x21, CLX[ piel impf x12
+Samuel_II 4:2 slot 162638 | BHSA בְּאֶֽרֹתִ֖י | MAM בְּאֵרֹתִ֖י (atom הַבְּאֵרֹתִ֖י) | analysis B>RTJ/ | own key:  | MAM's key: B>RTJ/ x3
+Samuel_II 10:11 slot 165526 | BHSA יֶחֱזְק֣וּ | MAM יֶחֶזְק֣וּ (atom יֶחֶזְק֣וּ) | analysis XZQ[ qal impf | own key:  | MAM's key: XZQ[ qal impf x2
+Samuel_II 19:31 slot 172739 | BHSA מֶּ֛לֶך | MAM מֶּ֛לֶךְ (atom הַמֶּ֛לֶךְ) | analysis MLK/ | own key:  | MAM's key: MLK/ x1189
+Samuel_II 20:8 slot 173287 | BHSA לְבֻשׁ֗וּ | MAM לְבֻשֹׁ֗ו (atom לְבֻשׁ֗וֹ) | analysis LBWC/ | own key:  | MAM's key: LBWC/ x2
+Samuel_II 20:12 slot 173389 | BHSA מְּסִלָּ֑ה | MAM מְסִלָּ֑ה (atom הַֽמְסִלָּ֑ה) | analysis MSLH/ | own key:  | MAM's key: MSLH/ x12
+Reges_I 1:13 slot 176373 | BHSA אֲדֹנִיָֽהוּ | MAM אֲדֹנִיָּֽהוּ׃ (atom אֲדֹנִיָּֽהוּ׃) | analysis >DNJHW/ | own key:  | MAM's key: >DNJHW/ x18
+Reges_I 2:13 slot 177571 | BHSA חַגֵּ֗ית | MAM חַגִּ֗ית (atom חַגִּ֗ית) | analysis XGJT/ | own key:  | MAM's key: XGJT/ x4
+Reges_I 4:12 slot 179244 | BHSA יָקְמֳעָֽם | MAM יׇקְמְעָֽם׃ (atom לְיׇקְמְעָֽם׃) | analysis JQM<M/ | own key:  | MAM's key: JQM<M/ x1
+Reges_I 8:55 slot 183362 | BHSA יַּעְמֹ֕ד | MAM יַּעֲמֹ֕ד (atom וַיַּעֲמֹ֕ד) | analysis <MD[ qal wayq | own key:  | MAM's key: <MD[ qal wayq x54
+Reges_II 9:15 slot 200570 | BHSA יְזְרְעֶ֗אל | MAM יִזְרְעֶ֗אל (atom בְיִזְרְעֶ֗אל) | analysis JZR<>L/ | own key:  | MAM's key: JZR<>L/ x23, JZR<>L=/ x3
+Reges_II 10:33 slot 201936 | BHSA רֻאובֵנִ֖י | MAM ראֿוּבֵנִ֖י (atom וְהָראֿוּבֵנִ֖י) | analysis R>WBNJ/ | own key:  | MAM's key: R>WBNJ/ x12
+Reges_II 11:19 slot 202532 | BHSA דֶּֽרֶך | MAM דֶּרֶךְ (atom דֶּרֶךְ־) | analysis DRK/ | own key:  | MAM's key: DRK/ x281
+Reges_II 19:5 slot 207527 | BHSA יְשַֽׁעַיָֽהוּ | MAM יְשַׁעְיָֽהוּ׃ (atom יְשַׁעְיָֽהוּ׃) | analysis JC<JHW/ | own key:  | MAM's key: JC<JHW/ x31
+Reges_II 21:26 slot 209219 | BHSA יִּקְבְֹּ֥ר | MAM יִּקְבֹּ֥ר (atom וַיִּקְבֹּ֥ר) | analysis QBR[ qal wayq | own key:  | MAM's key: QBR[ qal wayq x1
+Jesaia 5:16 slot 213694 | BHSA יִּגְבַּ֛ה | MAM יִּגְבַּ֛הּ (atom וַיִּגְבַּ֛הּ) | analysis GBH[ qal wayq | own key:  | MAM's key: GBH[ qal wayq x3
+Jesaia 11:14 slot 216359 | BHSA מִשְׁלֹ֣וח | MAM מִשְׁלֹ֣וחַ (atom מִשְׁל֣וֹחַ) | analysis MCLWX/ | own key:  | MAM's key: MCLWX/ x2
+Jesaia 13:10 slot 216639 | BHSA יַגִּ֥יהַ | MAM יַגִּ֥יהַּ (atom יַגִּ֥יהַּ) | analysis NGH[ hif impf | own key:  | MAM's key: NGH[ hif impf x2
+Jesaia 13:22 slot 216814 | BHSA אַלְמנֹותָ֔יו | MAM אַלְמְנֹותָ֔יו (atom בְּאַלְמְנוֹתָ֔יו) | analysis >LMNH/ | own key:  | MAM's key: >LMNH/ x1
+Jesaia 27:1 slot 220573 | BHSA חַרְבֹ֨ו | MAM חַרְבֹּ֨ו (atom בְּחַרְבּ֨וֹ) | analysis XRB/ | own key:  | MAM's key: XRB/ x24
+Jesaia 32:9 slot 222791 | BHSA בֹּֽטחֹ֔ות | MAM בֹּֽטְחֹ֔ות (atom בֹּֽטְח֔וֹת) | analysis BVX[ qal ptca | own key:  | MAM's key: BVX[ qal ptca x2
+Jesaia 37:33 slot 224917 | BHSA עֳלֶ֖יהָ | MAM עָלֶ֖יהָ (atom עָלֶ֖יהָ) | analysis <L | own key:  | MAM's key: <L x182
+Jesaia 42:9 slot 226673 | BHSA אַשְׁמִ֥יע | MAM אַשְׁמִ֥יעַ (atom אַשְׁמִ֥יעַ) | analysis CM<[ hif impf | own key:  | MAM's key: CM<[ hif impf x1
+Jesaia 46:4 slot 228381 | BHSA שֵיבָ֖ה | MAM שֵׂיבָ֖ה (atom שֵׂיבָ֖ה) | analysis FJBH/ | own key:  | MAM's key: FJBH/ x12
+Jesaia 46:5 slot 228396 | BHSA תְדַמְי֖וּנִי | MAM תְדַמְּי֖וּנִי (atom תְדַמְּי֖וּנִי) | analysis DMH[ piel impf | own key:  | MAM's key: DMH[ piel impf x1
+Jesaia 48:14 slot 228999 | BHSA שֲׁמָ֔עוּ | MAM שְׁמָ֔עוּ (atom וּֽשְׁמָ֔עוּ) | analysis CM<[ qal impv | own key:  | MAM's key: CM<[ qal impv x1
+Jesaia 65:6 slot 234051 | BHSA אֶחֱשֶׂה֙ | MAM אֶֽחֱשֶׁה֙ (atom אֶֽחֱשֶׁה֙) | analysis XCH[ qal impf | own key:  | MAM's key: XCH[ qal impf x1
+Jeremia 6:1 slot 237672 | BHSA בִניָמִ֗ן | MAM בִנְיָמִ֗ן (atom בִנְיָמִ֗ן) | analysis BNJMN/ | own key:  | MAM's key: BNJMN/ x92
+Jeremia 11:2 slot 240342 | BHSA דִבַּרְתָּם֙ | MAM דִבַּרְתֶּם֙ (atom וְדִבַּרְתֶּם֙) | analysis DBR[ piel perf | own key:  | MAM's key: DBR[ piel perf x4
+Jeremia 28:3 slot 249131 | BHSA נְבוּכַדנֶאצַּ֤ר | MAM נְבוּכַדְנֶאצַּ֤ר (atom נְבוּכַדְנֶאצַּ֤ר) | analysis NBWKDN>YR/ | own key:  | MAM's key: NBWKDN>YR/ x13
+Jeremia 39:9 slot 256575 | BHSA נְבֽוּזַר־אֲדָ֥ן | MAM נְבוּזַרְאֲדָ֥ן (atom נְבוּזַרְאֲדָ֥ן) | analysis NBWZR>DN/ | own key:  | MAM's key: NBWZR>DN/ x14
+Ezechiel 17:7 slot 272303 | BHSA שָׁרֳשֶׁ֣יהָ | MAM שׇׁרָשֶׁ֣יהָ (atom שׇׁרָשֶׁ֣יהָ) | analysis CRC/ | own key:  | MAM's key: CRC/ x3
+Ezechiel 18:21 slot 273098 | BHSA חֻקֹותַ֔י | MAM חֻקֹּותַ֔י (atom חֻקּוֹתַ֔י) | analysis XQH/ | own key:  | MAM's key: XQH/ x16
+Ezechiel 21:17 slot 274811 | BHSA הָיתָ֣ה | MAM הָיְתָ֣ה (atom הָיְתָ֣ה) | analysis HJH[ qal perf | own key:  | MAM's key: HJH[ qal perf x203
+Ezechiel 21:31 slot 275082 | BHSA הַגְבֵּ֔הַ | MAM הַגְבֵּ֔הַּ (atom הַגְבֵּ֔הַּ) | analysis GBH[ hif infa | own key:  | MAM's key: GBH[ hif infa x1
+Ezechiel 35:15 slot 282392 | BHSA נַחְלַ֧ת | MAM נַחֲלַ֧ת (atom לְנַחֲלַ֧ת) | analysis NXLH/ | own key:  | MAM's key: NXLH/ x38
+Ezechiel 42:5 slot 286783 | BHSA הֵ֗נָה | MAM הֵ֗נָּה (atom מֵהֵ֗נָּה) | analysis HNH= | own key:  | MAM's key: HNH== x50, HNH= x47
+Ezechiel 43:14 slot 287454 | BHSA הֳ | MAM הָ (atom וּמֵהָעֲזָרָ֨ה) | analysis H | own key:  | MAM's key: H x6633
+Hosea 2:4 slot 291173 | BHSA פָּנֶ֔יה | MAM פָּנֶ֔יהָ (atom מִפָּנֶ֔יהָ) | analysis PNH/ | own key:  | MAM's key: PNH/ x8
+Hosea 9:4 slot 292849 | BHSA יִטַמָּ֑אוּ | MAM יִטַּמָּ֑אוּ (atom יִטַּמָּ֑אוּ) | analysis VM>[ hit impf | own key:  | MAM's key: VM>[ hit impf x1
+Hosea 13:2 slot 293721 | BHSA יַּעְשׂ֣וּ | MAM יַּעֲשׂ֣וּ (atom וַיַּעֲשׂ֣וּ) | analysis <FH[ qal wayq | own key:  | MAM's key: <FH[ qal wayq x78
+Amos 6:2 slot 296975 | BHSA פְּלִשְׁתּ֗ים | MAM פְּלִשְׁתִּ֗ים (atom פְּלִשְׁתִּ֗ים) | analysis PLCTJ/ | own key:  | MAM's key: PLCTJ/ x144
+Amos 9:4 slot 297889 | BHSA אֹֽיבֵיהֶ֔ם | MAM אֹֽיְבֵיהֶ֔ם (atom אֹֽיְבֵיהֶ֔ם) | analysis >JB[ qal ptca | own key:  | MAM's key: >JB[ qal ptca x28
+Jona 1:3 slot 298599 | BHSA אָנִיָּ֣ה | MAM אֳנִיָּ֣ה׀ (atom אֳנִיָּ֣ה׀) | analysis >NJH/ | own key:  | MAM's key: >NJH/ x3
+Jona 3:3 slot 299111 | BHSA נִֽינְוֶ֖ה | MAM נִֽינְוֵ֖ה (atom נִֽינְוֵ֖ה) | analysis NJNWH/ | own key:  | MAM's key: NJNWH/ x16
+Zephania 3:17 slot 304030 | BHSA קִרְבֵּ֖ך | MAM קִרְבֵּ֖ךְ (atom בְּקִרְבֵּ֖ךְ) | analysis QRB/ | own key:  | MAM's key: QRB/ x7
+Sacharia 1:10 slot 305204 | BHSA הַדַסִּ֖ים | MAM הֲדַסִּ֖ים (atom הַהֲדַסִּ֖ים) | analysis HDS/ | own key:  | MAM's key: HDS/ x2
+Sacharia 4:11 slot 306094 | BHSA אֵ֔לֶה | MAM אֵ֔לֶּה (atom הָאֵ֔לֶּה) | analysis >LH | own key:  | MAM's key: >LH x744
+Sacharia 6:7 slot 306508 | BHSA הִתְהַלֵּ֣ך | MAM הִתְהַלֵּ֣ךְ (atom לְהִתְהַלֵּ֣ךְ) | analysis HLK[ hit infc | own key:  | MAM's key: HLK[ hit infc x4, HLK[ hit impv x2, HLK[ hit perf x1
+Sacharia 7:2 slot 306726 | BHSA שַׂר־אֶ֕צֶר | MAM שַׂרְאֶ֕צֶר (atom שַׂרְאֶ֕צֶר) | analysis FR>YR/ | own key:  | MAM's key: FR>YR/ x2
+Sacharia 10:2 slot 307828 | BHSA שָּׁ֣וא | MAM שָּׁ֣וְא (atom הַשָּׁ֣וְא) | analysis CW>/ | own key:  | MAM's key: CW>/ x13
+Psalmi 12:6 slot 312112 | BHSA אַנְקַ֢ת | MAM אֶנְקַ֢ת (atom מֵאֶנְקַ֢ת) | analysis >NQH/ | own key:  | MAM's key: >NQH/ x2
+Psalmi 31:12 slot 315072 | BHSA שֲׁכֵנַ֨י | MAM שְׁכֵנַ֨י׀ (atom וְלִ֥שְׁכֵנַ֨י׀) | analysis CKN/ | own key:  | MAM's key: CKN/ x1
+Psalmi 35:22 slot 316024 | BHSA אֲל | MAM אַל (atom אַל־) | analysis >L= | own key:  | MAM's key: >L= x723, >L x2, >L== x1, >L=/ x1
+Psalmi 55:22 slot 319581 | BHSA קֲרָב | MAM קְרָב (atom וּֽקְרָב־) | analysis QRB==/ | own key:  | MAM's key: QRB==/ x6, QRB[ qal infc x1
+Psalmi 59:2 slot 320049 | BHSA מִּ | MAM מִֽ (atom מִֽמִּתְקוֹמְמַ֥י) | analysis MN | own key:  | MAM's key: MN x4119
+Psalmi 59:4 slot 320068 | BHSA עַזִ֑ים | MAM עַזִּ֑ים (atom עַזִּ֑ים) | analysis <Z===/ | own key:  | MAM's key: <Z===/ x3
+Psalmi 67:1 slot 321164 | BHSA מְנַצֵּ֥ח | MAM מְנַצֵּ֥חַ (atom לַמְנַצֵּ֥חַ) | analysis NYX[ piel ptca | own key:  | MAM's key: NYX[ piel ptca x55
+Psalmi 68:7 slot 321308 | BHSA סֹ֝ורֲרִ֗ים | MAM סֹ֝ורְרִ֗ים (atom ס֝וֹרְרִ֗ים) | analysis SRR[ qal ptca | own key:  | MAM's key: SRR[ qal ptca x4
+Psalmi 73:28 slot 322775 | BHSA קִֽרֲבַ֥ת | MAM קִ֥רְבַ֥ת (atom קִ֥רְבַ֥ת) | analysis QRBH/ | own key:  | MAM's key: QRBH/ x1
+Psalmi 83:11 slot 324932 | BHSA דֹּ֝֗מֶן | MAM דֹ֝֗מֶן (atom דֹ֝֗מֶן) | analysis DMN/ | own key:  | MAM's key: DMN/ x5
+Psalmi 89:25 slot 325964 | BHSA אֶֽמוּנָתִ֣י | MAM אֱֽמוּנָתִ֣י (atom וֶ֥אֱֽמוּנָתִ֣י) | analysis >MWNH/ | own key:  | MAM's key: >MWNH/ x1
+Psalmi 134:2 slot 333684 | BHSA בָרֲכוּ | MAM בָרְכ֗וּ (atom וּ֝בָרְכ֗וּ) | analysis BRK[ piel impv | own key:  | MAM's key: BRK[ piel impv x1
+Psalmi 139:12 slot 334447 | BHSA מִ֫מֶּ֥ךָ | MAM מִ֫מֶּ֥ךָּ (atom מִ֫מֶּ֥ךָּ) | analysis MN | own key:  | MAM's key: MN x17
+Psalmi 140:4 slot 334601 | BHSA שָֽׁנֲנ֣וּ | MAM שָׁ֥נְנ֣וּ (atom שָׁ֥נְנ֣וּ) | analysis CNN[ qal perf | own key:  | MAM's key: CNN[ qal perf x1
+Psalmi 143:12 slot 335061 | BHSA צֹרֲרֵ֣י | MAM צֹרְרֵ֣י (atom צֹרְרֵ֣י) | analysis YRR=[ qal ptca | own key:  | MAM's key: YRR=[ qal ptca x2
+Psalmi 144:15 slot 335241 | BHSA יֲהוָ֥ה | MAM יְהֹוָ֥ה (atom שֱׁיְהֹוָ֥ה) | analysis JHWH/ | own key:  | MAM's key: JHWH/ x45
+Psalmi 145:2 slot 335260 | BHSA אֲבָרֲכֶ֑ךָּ | MAM אֲבָרְכֶ֑ךָּ (atom אֲבָרְכֶ֑ךָּ) | analysis BRK[ piel impf | own key:  | MAM's key: BRK[ piel impf x1
+Iob 1:21 slot 336507 | BHSA שָׁ֔מָה | MAM שָׁ֔מָּה (atom שָׁ֔מָּה) | analysis CM | own key:  | MAM's key: CM x139
+Iob 9:35 slot 338577 | BHSA אַֽ֭דַבְּרָה | MAM אֲֽ֭דַבְּרָה (atom אֲֽ֭דַבְּרָה) | analysis DBR[ piel impf | own key:  | MAM's key: DBR[ piel impf x15, DBR[ piel wayq x1
+Iob 19:5 slot 340674 | BHSA חֶרְפָּתִּֽי | MAM חֶרְפָּתִֽי׃ (atom חֶרְפָּתִֽי׃) | analysis XRPH/ | own key:  | MAM's key: XRPH/ x5
+Iob 29:25 slot 343091 | BHSA אֶֽבֲחַ֣ר | MAM אֶ֥בְחַ֣ר (atom אֶ֥בְחַ֣ר) | analysis BXR[ qal impf | own key:  | MAM's key: BXR[ qal wayq x3, BXR[ qal impf x2
+Iob 34:10 slot 344443 | BHSA אַֽנֲשֵׁ֥י | MAM אַ֥נְשֵׁ֥י (atom אַ֥נְשֵׁ֥י) | analysis >JC/ | own key:  | MAM's key: >JC/ x201
+Iob 34:33 slot 344682 | BHSA יְשַׁלְמֶ֨נָּה | MAM יְשַׁלְּמֶ֨נָּה׀ (atom יְשַׁלְּמֶ֨נָּה׀) | analysis CLM[ piel impf | own key:  | MAM's key: CLM[ piel impf x2
+Iob 37:6 slot 345255 | BHSA שֶּׁ֨לַג | MAM שֶּׁ֨לֶג׀ (atom לַשֶּׁ֨לֶג׀) | analysis CLG/ | own key:  | MAM's key: CLG/ x5
+Proverbia 8:20 slot 349020 | BHSA אֲהַלֵּ֑ך | MAM אֲהַלֵּ֑ךְ (atom אֲהַלֵּ֑ךְ) | analysis HLK[ piel impf | own key:  | MAM's key: HLK[ piel impf x2
+Proverbia 11:30 slot 349905 | BHSA נְפָשֹׂ֣ות | MAM נְפָשֹׁ֣ות (atom נְפָשׁ֣וֹת) | analysis NPC/ | own key:  | MAM's key: NPC/ x7
+Proverbia 15:3 slot 350739 | BHSA ו | MAM וְ (atom וְטוֹבִֽים׃) | analysis W | own key:  | MAM's key: W x23914
+Proverbia 15:18 slot 350876 | BHSA אֶ֥רֶך | MAM אֶ֥רֶךְ (atom וְאֶ֥רֶךְ) | analysis >RK/ | own key:  | MAM's key: >RK/ x14, >RK===/ x1
+Proverbia 19:4 slot 351883 | BHSA רֵ֥עהוּ | MAM רֵעֵ֥הוּ (atom מֵרֵעֵ֥הוּ) | analysis R<=/ | own key:  | MAM's key: R<=/ x118
+Proverbia 19:11 slot 351952 | BHSA תִפאַרְתֹּ֗ו | MAM תִפְאַרְתֹּ֗ו (atom וְ֝תִפְאַרְתּ֗וֹ) | analysis TP>RT/ | own key:  | MAM's key: TP>RT/ x3
+Proverbia 19:27 slot 352099 | BHSA חַֽדַל | MAM חֲֽדַל (atom חֲֽדַל־) | analysis XDL[ qal impv | own key:  | MAM's key: XDL[ qal impv x5, XDL/ x1
+Proverbia 20:1 slot 352130 | BHSA יַּין | MAM יַּיִן (atom הַ֭יַּיִן) | analysis JJN/ | own key:  | MAM's key: JJN/ x30
+Proverbia 28:22 slot 354794 | BHSA נִֽבֳהָ֥ל | MAM נִ֥בְהָֽל (atom נִ֥בְהָֽל־) | analysis BHL[ nif ptca | own key:  | MAM's key: BHL[ nif ptca x1
+Proverbia 31:12 slot 355615 | BHSA חַיֶּֽיה | MAM חַיֶּֽיהָ׃ (atom חַיֶּֽיהָ׃) | analysis XJJM/ | own key:  | MAM's key: XJJM/ x1
+Ruth 3:9 slot 356921 | BHSA אָ֑תּ | MAM אָ֑תְּ (atom אָ֑תְּ) | analysis >T= | own key:  | MAM's key: >T= x5
+Canticum 6:8 slot 358786 | BHSA מְּלָכֹ֔ות | MAM מְלָכֹ֔ות (atom מְלָכ֔וֹת) | analysis MLKH/ | own key:  | MAM's key: MLKH/ x1
+Ecclesiastes 5:17 slot 361175 | BHSA אֶכֹול | MAM אֱכֹול (atom לֶֽאֱכוֹל־) | analysis >KL[ qal infc | own key:  | MAM's key: >KL[ qal infc x12, >KL[ qal impv x4
+Ecclesiastes 9:7 slot 362494 | BHSA שֲׁתֵ֥ה | MAM שְׁתֵ֥ה (atom וּֽשְׁתֵ֥ה) | analysis CTH[ qal impv | own key:  | MAM's key: CTH[ qal impv x8
+Ecclesiastes 11:6 slot 363137 | BHSA יֹודֵ֜ע | MAM יֹודֵ֜עַ (atom יוֹדֵ֜עַ) | analysis JD<[ qal ptca | own key:  | MAM's key: JD<[ qal ptca x28
+Threni 1:11 slot 363726 | BHSA מְבַקְּשִׁ֣ים | MAM מְבַקְשִׁ֣ים (atom מְבַקְשִׁ֣ים) | analysis BQC[ piel ptca | own key:  | MAM's key: BQC[ piel ptca x11
+Esther 9:2 slot 369235 | BHSA אֳחַשְׁוֵרֹ֔ושׁ | MAM אֲחַשְׁוֵרֹ֔ושׁ (atom אֲחַשְׁוֵר֔וֹשׁ) | analysis >XCWRWC/ | own key:  | MAM's key: >XCWRWC/ x25
+Daniel 2:10 slot 370733 | BHSA אֲנָשׁ֙ | MAM אֱנָשׁ֙ (atom אֱנָשׁ֙) | analysis Aram >NC/ | own key:  | MAM's key: Aram >NC/ x11
+Daniel 2:31 slot 371180 | BHSA דִּכֵּ֥ן | MAM דִכֵּ֥ן (atom דִכֵּ֥ן) | analysis Aram DKN | own key:  | MAM's key: Aram DKN x2
+Daniel 2:35 slot 371267 | BHSA הִשְׁתֲּכַ֣ח | MAM הִשְׁתְּכַ֣ח (atom הִשְׁתְּכַ֣ח) | analysis Aram CKX[ htpe perf | own key:  | MAM's key: Aram CKX[ htpe perf x2
+Daniel 2:45 slot 371499 | BHSA הַדֶּקֶת | MAM הַדֵּ֠קֶת (atom וְ֠הַדֵּ֠קֶת) | analysis Aram DQQ[ haf perf | own key:  | MAM's key: Aram DQQ[ haf perf x1
+Daniel 3:15 slot 371962 | BHSA דֵּ֥י | MAM דִּ֥י (atom דִּ֥י) | analysis Aram DJ | own key:  | MAM's key: Aram DJ x305
+Daniel 3:27 slot 372247 | BHSA סָרְבָּלֵיהֹ֖ון | MAM סַרְבָּלֵיהֹ֖ון (atom וְסַרְבָּלֵיה֖וֹן) | analysis Aram SRBL/ | own key:  | MAM's key: Aram SRBL/ x1
+Daniel 3:29 slot 372328 | BHSA אֱלָ֣ה | MAM אֱלָ֣הּ (atom אֱלָ֣הּ) | analysis Aram >LH/ | own key:  | MAM's key: Aram >LH/ x24
+Daniel 5:6 slot 373280 | BHSA רַעיֹנֹ֖הִי | MAM רַעְיֹנֹ֖הִי (atom וְרַעְיֹנֹ֖הִי) | analysis Aram R<JWN/ | own key:  | MAM's key: Aram R<JWN/ x1
+Daniel 5:20 slot 373651 | BHSA הֶעְדִּ֥יוּ | MAM הֶעְדִּ֥יו (atom הֶעְדִּ֥יו) | analysis Aram <DH[ haf perf | own key:  | MAM's key: Aram <DH[ haf perf x1
+Daniel 5:24 slot 373768 | BHSA שְׁלִ֖יַחַ | MAM שְׁלִ֖יחַ (atom שְׁלִ֖יחַ) | analysis Aram CLX[ peil perf | own key:  | MAM's key: Aram CLX[ peil perf x1
+Daniel 6:13 slot 374143 | BHSA אַרְיָותָ֑א | MAM אַרְיָוָתָ֑א (atom אַרְיָוָתָ֑א) | analysis Aram >RJH/ | own key:  | MAM's key: Aram >RJH/ x8
+Daniel 6:22 slot 374365 | BHSA דָּנִיֶּ֔אל | MAM דָּנִיֵּ֔אל (atom דָּנִיֵּ֔אל) | analysis Aram DNJ>L/ | own key:  | MAM's key: Aram DNJ>L/ x15
+Daniel 9:2 slot 375799 | BHSA יִרְמִיָ֣ה | MAM יִרְמְיָ֣ה (atom יִרְמְיָ֣ה) | analysis JRMJH/ | own key:  | MAM's key: JRMJH/ x17
+Daniel 9:19 slot 376204 | BHSA הַֽקֲשִׁ֥יבָה | MAM הַֽקְשִׁ֥יבָה (atom הַֽקְשִׁ֥יבָה) | analysis QCB[ hif impv | own key:  | MAM's key: QCB[ hif impv x9
+Daniel 9:19 slot 376209 | BHSA לְמַֽעֲנְךָ֣ | MAM לְמַֽעַנְךָ֣ (atom לְמַֽעַנְךָ֣) | analysis LM<N | own key:  | MAM's key: LM<N x1
+Daniel 10:8 slot 376622 | BHSA כֹּ֑ח | MAM כֹּ֑חַ (atom כֹּ֑חַ) | analysis KX/ | own key:  | MAM's key: KX/ x41, KX=/ x1
+Daniel 11:45 slot 377857 | BHSA אָהֳלֶ֣י | MAM אׇהֳלֵ֣י (atom אׇהֳלֵ֣י) | analysis >HL/ | own key:  | MAM's key: >HL/ x14
+Esra 10:12 slot 382995 | BHSA יַּֽעְנ֧וּ | MAM יַּֽעֲנ֧וּ (atom וַיַּֽעֲנ֧וּ) | analysis <NH[ qal wayq | own key:  | MAM's key: <NH[ qal wayq x15, <NH==[ qal wayq x1
+Esra 10:14 slot 383045 | BHSA יַֽעֲמְדוּ | MAM יַֽעַמְדוּ (atom יַֽעַמְדוּ־) | analysis <MD[ qal impf | own key:  | MAM's key: <MD[ qal impf x17
+Esra 10:32 slot 383345 | BHSA בְּנְיָמִ֥ן | MAM בִּנְיָמִ֥ן (atom בִּנְיָמִ֥ן) | analysis BNJMN/ | own key:  | MAM's key: BNJMN/ x54
+Nehemia 2:13 slot 384035 | BHSA גַּ֜יא | MAM גַּ֜יְא (atom הַגַּ֜יְא) | analysis GJ>/ | own key:  | MAM's key: GJ>/ x7
+Nehemia 7:67 slot 387040 | BHSA מְשֹׁ֣רֲרֹ֔ות | MAM מְשֹׁ֣רְרֹ֔ות (atom וּמְשֹׁ֣רְר֔וֹת) | analysis CJR[ piel ptca | own key:  | MAM's key: CJR[ piel ptca x1
+Nehemia 9:14 slot 388066 | BHSA הֹודַ֣עַתָ | MAM הֹודַ֣עְתָּ (atom הוֹדַ֣עְתָּ) | analysis JD<[ hif perf | own key:  | MAM's key: JD<[ hif perf x3
+Chronica_I 3:1 slot 392549 | BHSA דָויִ֔ד | MAM דָוִ֔יד (atom דָוִ֔יד) | analysis DWD==/ | own key:  | MAM's key: DWD==/ x70
+Chronica_I 27:8 slot 405019 | BHSA חַמִישִׁי֙ | MAM חֲמִישִׁי֙ (atom הַחֲמִישִׁי֙) | analysis XMJCJ/ | own key:  | MAM's key: XMJCJ/ x24
+Chronica_I 29:18 slot 406537 | BHSA שֳׁמְרָה | MAM שׇׁמְרָה (atom שׇׁמְרָה־) | analysis CMR[ qal impv | own key:  | MAM's key: CMR[ qal perf x3, CMR[ qal impv x2, CMRH=/ x1
+Chronica_I 29:29 slot 406787 | BHSA אֲחרֹנִ֑ים | MAM אַחֲרֹנִ֑ים (atom וְהָאַחֲרֹנִ֑ים) | analysis >XRWN/ | own key:  | MAM's key: >XRWN/ x12
+Chronica_II 9:29 slot 411698 | BHSA אֲחֲרֹונִ֑ים | MAM אַחֲרֹונִ֑ים (atom וְהָאַחֲרוֹנִ֑ים) | analysis >XRWN/ | own key:  | MAM's key: >XRWN/ x4
+Chronica_II 12:15 slot 412944 | BHSA אֲ֣חַרֹונִ֔ים | MAM אַ֣חֲרֹונִ֔ים (atom וְהָאַ֣חֲרוֹנִ֔ים) | analysis >XRWN/ | own key:  | MAM's key: >XRWN/ x4
+Chronica_II 26:22 slot 420119 | BHSA אֲחֲרֹנִ֑ים | MAM אַחֲרֹנִ֑ים (atom וְהָאַחֲרֹנִ֑ים) | analysis >XRWN/ | own key:  | MAM's key: >XRWN/ x12
+
+== written: 104 slots
+Genesis 3:17 slot 1526 | BHSA תֹּֽאכֲלֶ֔נָּה | MAM תֹּֽאכְלֶ֔נָּה (atom תֹּֽאכְלֶ֔נָּה) | analysis >KL[ qal impf | own key: >KL[ qal impf x1 | MAM's key: 
+Genesis 10:3 slot 4573 | BHSA אַשְׁכֲּנַ֥ז | MAM אַשְׁכְּנַ֥ז (atom אַשְׁכְּנַ֥ז) | analysis >CKNZ/ | own key: >CKNZ/ x1 | MAM's key: 
+Genesis 12:3 slot 5519 | BHSA אֲבָֽרֲכָה֙ | MAM אֲבָֽרְכָה֙ (atom וַאֲבָֽרְכָה֙) | analysis BRK[ piel impf | own key: BRK[ piel impf x2 | MAM's key: 
+Genesis 24:60 slot 12272 | BHSA יְבָרֲכ֤וּ | MAM יְבָרְכ֤וּ (atom וַיְבָרְכ֤וּ) | analysis BRK[ piel wayq | own key: BRK[ piel wayq x7 | MAM's key: 
+Genesis 27:19 slot 13954 | BHSA תְּבָרֲכַ֥נִּי | MAM תְּבָרְכַ֥נִּי (atom תְּבָרְכַ֥נִּי) | analysis BRK[ piel impf | own key: BRK[ piel impf x1 | MAM's key: 
+Genesis 27:27 slot 14088 | BHSA בֵּרֲכֹ֖ו | MAM בֵּרְכֹ֖ו (atom בֵּרְכ֖וֹ) | analysis BRK[ piel perf | own key: BRK[ piel perf x2 | MAM's key: 
+Genesis 27:31 slot 14178 | BHSA תְּבָרֲכַ֥נִּי | MAM תְּבָרְכַ֥נִּי (atom תְּבָרְכַ֥נִּי) | analysis BRK[ piel impf | own key: BRK[ piel impf x1 | MAM's key: 
+Genesis 27:34 slot 14241 | BHSA בָּרֲכֵ֥נִי | MAM בָּרְכֵ֥נִי (atom בָּרְכֵ֥נִי) | analysis BRK[ piel impv | own key: BRK[ piel impv x1 | MAM's key: 
+Genesis 27:38 slot 14321 | BHSA בָּרֲכֵ֥נִי | MAM בָּרְכֵ֥נִי (atom בָּרְכֵ֥נִי) | analysis BRK[ piel impv | own key: BRK[ piel impv x1 | MAM's key: 
+Genesis 27:41 slot 14380 | BHSA בֵּרֲכֹ֖ו | MAM בֵּרְכֹ֖ו (atom בֵּרְכ֖וֹ) | analysis BRK[ piel perf | own key: BRK[ piel perf x2 | MAM's key: 
+Genesis 28:6 slot 14614 | BHSA בָרֲכֹ֣ו | MAM בָרְכֹ֣ו (atom בְּבָרְכ֣וֹ) | analysis BRK[ piel infc | own key: BRK[ piel infc x3 | MAM's key: 
+Genesis 29:3 slot 14999 | BHSA גָלֲל֤וּ | MAM גָלְל֤וּ (atom וְגָלְל֤וּ) | analysis GLL[ qal perf | own key: GLL[ qal perf x1 | MAM's key: 
+Genesis 29:8 slot 15095 | BHSA גָֽלֲלוּ֙ | MAM גָֽלְלוּ֙ (atom וְגָֽלְלוּ֙) | analysis GLL[ qal perf | own key: GLL[ qal perf x1 | MAM's key: 
+Genesis 48:9 slot 27480 | BHSA אֲבָרֲכֵֽם | MAM אֲבָרְכֵֽם׃ (atom וַאֲבָרְכֵֽם׃) | analysis BRK[ piel impf | own key: BRK[ piel impf x1 | MAM's key: 
+Exodus 28:27 slot 44193 | BHSA מֶחְבַּרְתֹּ֑ו | MAM מַחְבַּרְתֹּ֑ו (atom מַחְבַּרְתּ֑וֹ) | analysis MXBRT/ | own key: MXBRT/ x1 | MAM's key: 
+Exodus 39:20 slot 51416 | BHSA מֶחְבַּרְתֹּ֑ו | MAM מַחְבַּרְתֹּ֑ו (atom מַחְבַּרְתּ֑וֹ) | analysis MXBRT/ | own key: MXBRT/ x1 | MAM's key: 
+Leviticus 6:11 slot 55117 | BHSA יֹֽאכֲלֶ֔נָּה | MAM יֹֽאכְלֶ֔נָּה (atom יֹֽאכְלֶ֔נָּה) | analysis >KL[ qal impf | own key: >KL[ qal impf x1 | MAM's key: 
+Leviticus 6:19 slot 55244 | BHSA יֹאכֲלֶ֑נָּה | MAM יֹאכְלֶ֑נָּה (atom יֹאכְלֶ֑נָּה) | analysis >KL[ qal impf | own key: >KL[ qal impf x1 | MAM's key: 
+Leviticus 9:23 slot 57343 | BHSA יְבָרֲכ֖וּ | MAM יְבָרְכ֖וּ (atom וַֽיְבָרְכ֖וּ) | analysis BRK[ piel wayq | own key: BRK[ piel wayq x7 | MAM's key: 
+Numeri 6:27 slot 73886 | BHSA אֲבָרֲכֵֽם | MAM אֲבָרְכֵֽם׃ (atom אֲבָרְכֵֽם׃) | analysis BRK[ piel impf | own key: BRK[ piel impf x1 | MAM's key: 
+Numeri 17:27 slot 81287 | BHSA אָבַֽדְנוּ | MAM אָבָֽדְנוּ׃ (atom אָבָֽדְנוּ׃) | analysis >BD[ qal perf | own key: >BD[ qal perf x1 | MAM's key: 
+Numeri 32:35 slot 90566 | BHSA יָגְבֳּהָֽה | MAM יׇגְבְּהָֽה׃ (atom וְיׇגְבְּהָֽה׃) | analysis JGBHH/ | own key: JGBHH/ x1 | MAM's key: 
+Deuteronomium 2:9 slot 93910 | BHSA אֶל | MAM אַל (atom אַל־) | analysis >L | own key: >L x3874, >L= x1 | MAM's key: >L= x723, >L x2, >L== x1, >L=/ x1
+Deuteronomium 23:22 slot 106271 | BHSA דָּרֹ֨שׁ | MAM דָרֹ֨שׁ (atom דָרֹ֨שׁ) | analysis DRC[ qal infa | own key: DRC[ qal infa x1 | MAM's key: 
+Josua 10:24 slot 118925 | BHSA הֶ | MAM ה (atom ההלכוא) | analysis H | own key: H x388, H= x18 | MAM's key: 
+Josua 22:19 slot 125750 | BHSA אֶל | MAM אַל (atom אַל־) | analysis >L | own key: >L x3874, >L= x1 | MAM's key: >L= x723, >L x2, >L== x1, >L=/ x1
+Josua 22:33 slot 126153 | BHSA יְבָרֲכ֥וּ | MAM יְבָרְכ֥וּ (atom וַיְבָרְכ֥וּ) | analysis BRK[ piel wayq | own key: BRK[ piel wayq x7 | MAM's key: 
+Judices 7:6 slot 131572 | BHSA מֲלַקְקִ֤ים | MAM מְלַקְקִ֤ים (atom הַֽמְלַקְקִ֤ים) | analysis LQQ[ piel ptca | own key: LQQ[ piel ptca x1 | MAM's key: 
+Judices 7:7 slot 131602 | BHSA מֲלַקְקִים֙ | MAM מְלַֽקְקִים֙ (atom הַֽמְלַֽקְקִים֙) | analysis LQQ[ piel ptca | own key: LQQ[ piel ptca x1 | MAM's key: 
+Judices 8:11 slot 132382 | BHSA יָגְבֳּהָ֑ה | MAM יׇגְבְּהָ֑ה (atom וְיׇגְבְּהָ֑ה) | analysis JGBHH/ | own key: JGBHH/ x1 | MAM's key: 
+Judices 16:18 slot 137628 | BHSA דְּלִילָ֗ה | MAM דְלִילָ֗ה (atom דְלִילָ֗ה) | analysis DLJLH/ | own key: DLJLH/ x5 | MAM's key: 
+Judices 19:4 slot 139167 | BHSA יֶּחֱזַק | MAM יַּחֲזֶק (atom וַיַּחֲזֶק־) | analysis XZQ[ qal wayq | own key: XZQ[ qal wayq x14 | MAM's key: XZQ[ hif wayq x2
+Samuel_I 13:10 slot 148030 | BHSA בָרֲכֹֽו | MAM בָרְכֹֽו׃ (atom לְבָרְכֽוֹ׃) | analysis BRK[ piel infc | own key: BRK[ piel infc x3 | MAM's key: 
+Samuel_I 14:49 slot 149471 | BHSA מַלְכִּי־שׁ֑וּעַ | MAM מַלְכִּישׁ֑וּעַ (atom וּמַלְכִּישׁ֑וּעַ) | analysis MLKJ_CW</ | own key: MLKJ_CW</ x4 | MAM's key: 
+Samuel_I 31:2 slot 160219 | BHSA מַלְכִּי־שׁ֖וּעַ | MAM מַלְכִּישׁ֖וּעַ (atom מַלְכִּישׁ֖וּעַ) | analysis MLKJ_CW</ | own key: MLKJ_CW</ x4 | MAM's key: 
+Samuel_II 8:3 slot 164662 | BHSA בִּֽ | MAM ב (atom בנהר׃) | analysis B | own key: B x1173 | MAM's key: 
+Samuel_II 8:3 slot 164663 | BHSA נְהַר | MAM נהר׃ (atom בנהר׃) | analysis NHR/ | own key: NHR/ x21 | MAM's key: 
+Samuel_II 8:10 slot 164795 | BHSA בָרֲכֹ֗ו | MAM בָרְכֹ֗ו (atom וּֽלְבָרְכ֗וֹ) | analysis BRK[ piel infc | own key: BRK[ piel infc x3 | MAM's key: 
+Samuel_II 13:33 slot 167903 | BHSA אִם | MAM אם (atom אם־) | analysis >M | own key: >M x1067 | MAM's key: 
+Samuel_II 15:21 slot 169364 | BHSA אִם | MAM אם (atom אם) | analysis >M | own key: >M x1067 | MAM's key: 
+Reges_I 8:66 slot 183642 | BHSA יְבָרֲכ֖וּ | MAM יְבָרְכ֖וּ (atom וַֽיְבָרְכ֖וּ) | analysis BRK[ piel wayq | own key: BRK[ piel wayq x7 | MAM's key: 
+Reges_II 18:17 slot 206888 | BHSA רַב־שָׁקֵ֨ה | MAM רַבְשָׁקֵ֨ה (atom רַבְשָׁקֵ֨ה) | analysis RB_CQH/ | own key: RB_CQH/ x15 | MAM's key: 
+Reges_II 18:19 slot 206949 | BHSA רַב־שָׁקֵ֔ה | MAM רַבְשָׁקֵ֔ה (atom רַבְשָׁקֵ֔ה) | analysis RB_CQH/ | own key: RB_CQH/ x15 | MAM's key: 
+Reges_II 18:26 slot 207130 | BHSA רַב־שָׁקֵ֗ה | MAM רַבְשָׁקֵ֗ה (atom רַבְשָׁקֵ֗ה) | analysis RB_CQH/ | own key: RB_CQH/ x15 | MAM's key: 
+Reges_II 18:27 slot 207155 | BHSA רַב־שָׁקֵ֗ה | MAM רַבְשָׁקֵ֗ה (atom רַבְשָׁקֵ֗ה) | analysis RB_CQH/ | own key: RB_CQH/ x15 | MAM's key: 
+Reges_II 18:28 slot 207193 | BHSA רַב־שָׁקֵ֔ה | MAM רַבְשָׁקֵ֔ה (atom רַבְשָׁקֵ֔ה) | analysis RB_CQH/ | own key: RB_CQH/ x15 | MAM's key: 
+Reges_II 18:37 slot 207412 | BHSA רַב־שָׁקֵֽה | MAM רַבְשָׁקֵֽה׃ (atom רַבְשָׁקֵֽה׃) | analysis RB_CQH/ | own key: RB_CQH/ x15 | MAM's key: 
+Reges_II 19:4 slot 207493 | BHSA רַב־שָׁקֵ֗ה | MAM רַבְשָׁקֵ֗ה (atom רַבְשָׁקֵ֗ה) | analysis RB_CQH/ | own key: RB_CQH/ x15 | MAM's key: 
+Reges_II 19:8 slot 207573 | BHSA רַב־שָׁקֵ֔ה | MAM רַבְשָׁקֵ֔ה (atom רַבְשָׁקֵ֔ה) | analysis RB_CQH/ | own key: RB_CQH/ x15 | MAM's key: 
+Jesaia 19:25 slot 218581 | BHSA בֵּרֲכֹ֛ו | MAM בֵּרְכֹ֛ו (atom בֵּרְכ֛וֹ) | analysis BRK[ piel perf | own key: BRK[ piel perf x2 | MAM's key: 
+Jesaia 22:21 slot 219314 | BHSA מֶֽמְשֶׁלְתְּךָ֖ | MAM מֶֽמְשַׁלְתְּךָ֖ (atom וּמֶֽמְשַׁלְתְּךָ֖) | analysis MMCLT/ | own key: MMCLT/ x1 | MAM's key: 
+Jesaia 36:2 slot 223767 | BHSA רַב־שָׁקֵ֨ה | MAM רַבְשָׁקֵ֨ה (atom רַבְשָׁקֵ֨ה) | analysis RB_CQH/ | own key: RB_CQH/ x15 | MAM's key: 
+Jesaia 36:4 slot 223813 | BHSA רַב־שָׁקֵ֔ה | MAM רַבְשָׁקֵ֔ה (atom רַבְשָׁקֵ֔ה) | analysis RB_CQH/ | own key: RB_CQH/ x15 | MAM's key: 
+Jesaia 36:11 slot 223989 | BHSA רַב־שָׁקֵ֗ה | MAM רַבְשָׁקֵ֗ה (atom רַבְשָׁקֵ֗ה) | analysis RB_CQH/ | own key: RB_CQH/ x15 | MAM's key: 
+Jesaia 36:12 slot 224013 | BHSA רַב־שָׁקֵ֗ה | MAM רַבְשָׁקֵ֗ה (atom רַבְשָׁקֵ֗ה) | analysis RB_CQH/ | own key: RB_CQH/ x15 | MAM's key: 
+Jesaia 36:13 slot 224051 | BHSA רַב־שָׁקֵ֔ה | MAM רַבְשָׁקֵ֔ה (atom רַבְשָׁקֵ֔ה) | analysis RB_CQH/ | own key: RB_CQH/ x15 | MAM's key: 
+Jesaia 36:22 slot 224250 | BHSA רַב־שָׁקֵֽה | MAM רַבְשָׁקֵֽה׃ (atom רַבְשָׁקֵֽה׃) | analysis RB_CQH/ | own key: RB_CQH/ x15 | MAM's key: 
+Jesaia 37:4 slot 224331 | BHSA רַב־שָׁקֵ֗ה | MAM רַבְשָׁקֵ֗ה (atom רַבְשָׁקֵ֗ה) | analysis RB_CQH/ | own key: RB_CQH/ x15 | MAM's key: 
+Jesaia 37:8 slot 224411 | BHSA רַב־שָׁקֵ֔ה | MAM רַבְשָׁקֵ֔ה (atom רַבְשָׁקֵ֔ה) | analysis RB_CQH/ | own key: RB_CQH/ x15 | MAM's key: 
+Jesaia 66:22 slot 234938 | BHSA חֳדָשִׁים | MAM חֲדָשִׁ֠ים (atom הַ֠חֲדָשִׁ֠ים) | analysis XDC=/ | own key: XDC=/ x38 | MAM's key: XDC/ x10
+Jeremia 8:22 slot 239379 | BHSA צֳרִי֙ | MAM צֳּרִי֙ (atom הַצֳּרִי֙) | analysis YRJ/ | own key: YRJ/ x3 | MAM's key: 
+Jeremia 32:9 slot 251676 | BHSA אֶשְׁקֲלָה | MAM אֶשְׁקְלָה (atom וָֽאֶשְׁקְלָה־) | analysis CQL[ qal wayq | own key: CQL[ qal wayq x1 | MAM's key: 
+Ezechiel 4:12 slot 266313 | BHSA תֹּֽאכֲלֶ֑נָּה | MAM תֹּאכְלֶ֑נָּה (atom תֹּאכְלֶ֑נָּה) | analysis >KL[ qal impf | own key: >KL[ qal impf x1 | MAM's key: 
+Ezechiel 22:26 slot 275625 | BHSA שַׁבְּתֹותַי֙ | MAM שַּׁבְּתֹותַי֙ (atom וּמִשַּׁבְּתוֹתַי֙) | analysis CBT/ | own key: CBT/ x8 | MAM's key: 
+Ezechiel 23:36 slot 276316 | BHSA תֹועֲבֹותֵיהֶֽן | MAM תֹּועֲבֹותֵיהֶֽן׃ (atom תּוֹעֲבוֹתֵיהֶֽן׃) | analysis TW<BH/ | own key: TW<BH/ x1 | MAM's key: 
+Ezechiel 35:6 slot 282252 | BHSA יִרְדֲּפֶ֑ךָ | MAM יִרְדְּפֶ֑ךָ (atom יִרְדְּפֶ֑ךָ) | analysis RDP[ qal impf | own key: RDP[ qal impf x1 | MAM's key: 
+Ezechiel 35:6 slot 282259 | BHSA יִרְדֲּפֶֽךָ | MAM יִרְדְּפֶֽךָ׃ (atom יִרְדְּפֶֽךָ׃) | analysis RDP[ qal impf | own key: RDP[ qal impf x1 | MAM's key: 
+Joel 3:3 slot 294953 | BHSA תִֽימֲרֹ֖ות | MAM תִֽימְרֹ֖ות (atom וְתִֽימְר֖וֹת) | analysis TJMRH/ | own key: TJMRH/ x1 | MAM's key: 
+Sacharia 9:17 slot 307787 | BHSA יָפְיֹ֑ו | MAM יׇּפְיֹ֑ו (atom יׇּפְי֑וֹ) | analysis JPJ/ | own key: JPJ/ x2 | MAM's key: 
+Psalmi 34:2 slot 315597 | BHSA אֲבָרֲכָ֣ה | MAM אֲבָרְכָ֣ה (atom אֲבָרְכָ֣ה) | analysis BRK[ piel impf | own key: BRK[ piel impf x2 | MAM's key: 
+Psalmi 103:1 slot 328014 | BHSA בָּרֲכִ֣י | MAM בָּרְכִ֣י (atom בָּרְכִ֣י) | analysis BRK[ piel impv | own key: BRK[ piel impv x4 | MAM's key: 
+Psalmi 103:2 slot 328024 | BHSA בָּרֲכִ֣י | MAM בָּרְכִ֣י (atom בָּרְכִ֣י) | analysis BRK[ piel impv | own key: BRK[ piel impv x4 | MAM's key: 
+Psalmi 103:22 slot 328231 | BHSA בָּרֲכִ֥י | MAM בָּרְכִ֥י (atom בָּרְכִ֥י) | analysis BRK[ piel impv | own key: BRK[ piel impv x4 | MAM's key: 
+Psalmi 104:1 slot 328235 | BHSA בָּרֲכִ֥י | MAM בָּרְכִ֥י (atom בָּרְכִ֥י) | analysis BRK[ piel impv | own key: BRK[ piel impv x4 | MAM's key: 
+Psalmi 104:35 slot 328578 | BHSA בָּרֲכִ֣י | MAM בָּרְכִ֣י (atom בָּרְכִ֣י) | analysis BRK[ piel impv | own key: BRK[ piel impv x4 | MAM's key: 
+Psalmi 119:14 slot 331424 | BHSA שַׂ֗שְׂתִּי | MAM שַּׂ֗שְׂתִּי (atom שַּׂ֗שְׂתִּי) | analysis FWF[ qal perf | own key: FWF[ qal perf x2 | MAM's key: 
+Psalmi 144:15 slot 335240 | BHSA שֶׁ | MAM שֱׁ (atom שֱׁיְהֹוָ֥ה) | analysis C | own key: C x121 | MAM's key: 
+Psalmi 145:1 slot 335251 | BHSA אֲבָרֲכָ֥ה | MAM אֲבָרְכָ֥ה (atom וַאֲבָרְכָ֥ה) | analysis BRK[ piel impf | own key: BRK[ piel impf x2 | MAM's key: 
+Psalmi 145:13 slot 335355 | BHSA מֶֽמְשֶׁלְתְּךָ֗ | MAM מֶֽמְשַׁלְתְּךָ֗ (atom וּ֝מֶֽמְשַׁלְתְּךָ֗) | analysis MMCLT/ | own key: MMCLT/ x1 | MAM's key: 
+Iob 1:11 slot 336277 | BHSA יְבָרֲכֶֽךָּ | MAM יְבָרְכֶֽךָּ׃ (atom יְבָרְכֶֽךָּ׃) | analysis BRK[ piel impf | own key: BRK[ piel impf x1 | MAM's key: 
+Iob 2:5 slot 336654 | BHSA יְבָרֲכֶֽךָּ | MAM יְבָרְכֶֽךָּ׃ (atom יְבָרְכֶֽךָּ׃) | analysis BRK[ piel impf | own key: BRK[ piel impf x1 | MAM's key: 
+Iob 16:6 slot 340144 | BHSA מִנִּ֥י | MAM מִּנִּ֥י (atom מִּנִּ֥י) | analysis MN | own key: MN x36, MNJ=/ x1 | MAM's key: 
+Ruth 2:2 slot 356259 | BHSA אֲלַקֳטָ֣ה | MAM אֲלַקֳּטָ֣ה (atom וַאֲלַקֳּטָ֣ה) | analysis LQV[ piel impf | own key: LQV[ piel impf x1 | MAM's key: 
+Ruth 2:7 slot 356355 | BHSA אֲלַקֳטָה | MAM אֲלַקֳּטָה (atom אֲלַקֳּטָה־) | analysis LQV[ piel impf | own key: LQV[ piel impf x1 | MAM's key: 
+Canticum 3:6 slot 358136 | BHSA תִֽימֲרֹ֖ות | MAM תִֽימְרֹ֖ות (atom כְּתִֽימְר֖וֹת) | analysis TJMRH/ | own key: TJMRH/ x1 | MAM's key: 
+Daniel 4:4 slot 372433 | BHSA חַרְטֻמַיָּא֙ | MAM חַרְטֻמַּיָּא֙ (atom חַרְטֻמַּיָּא֙) | analysis Aram XRVM/ | own key: Aram XRVM/ x1 | MAM's key: 
+Daniel 4:6 slot 372472 | BHSA חַרְטֻמַיָּא֒ | MAM חַרְטֻמַּיָּא֒ (atom חַרְטֻמַּיָּא֒) | analysis Aram XRVM/ | own key: Aram XRVM/ x1 | MAM's key: 
+Daniel 4:9 slot 372543 | BHSA צִפֲּרֵ֣י | MAM צִפְּרֵ֣י (atom צִפְּרֵ֣י) | analysis Aram YPR/ | own key: Aram YPR/ x1 | MAM's key: 
+Daniel 4:18 slot 372763 | BHSA צִפֲּרֵ֥י | MAM צִפְּרֵ֥י (atom צִפְּרֵ֥י) | analysis Aram YPR/ | own key: Aram YPR/ x1 | MAM's key: 
+Daniel 5:10 slot 373384 | BHSA וְ | MAM ו (atom וזיויך) | analysis Aram W | own key: Aram W x388 | MAM's key: 
+Daniel 7:19 slot 374968 | BHSA וְ | MAM ו (atom וטפריה) | analysis Aram W | own key: Aram W x388 | MAM's key: 
+Daniel 7:19 slot 374976 | BHSA בְּ | MAM ב (atom ברגליה) | analysis Aram B | own key: Aram B x80 | MAM's key: 
+Esra 8:26 slot 382004 | BHSA אֶשְׁקֲלָ֨ה | MAM אֶשְׁקְלָ֨ה (atom וָאֶשְׁקְלָ֨ה) | analysis CQL[ qal wayq | own key: CQL[ qal wayq x1 | MAM's key: 
+Nehemia 4:7 slot 385143 | BHSA תַּחְתִּיֹּ֧ות | MAM תַּחְתְּיֹ֧ות (atom מִֽתַּחְתְּי֧וֹת) | analysis TXTJ/ | own key: TXTJ/ x7 | MAM's key: 
+Nehemia 11:2 slot 389260 | BHSA יְבָרֲכ֖וּ | MAM יְבָרְכ֖וּ (atom וַֽיְבָרְכ֖וּ) | analysis BRK[ piel wayq | own key: BRK[ piel wayq x7 | MAM's key: 
+Chronica_I 1:6 slot 391293 | BHSA אַשְׁכֲּנַ֥ז | MAM אַשְׁכְּנַ֥ז (atom אַשְׁכְּנַ֥ז) | analysis >CKNZ/ | own key: >CKNZ/ x1 | MAM's key: 
+Chronica_I 8:33 slot 395890 | BHSA מַלְכִּי־שׁ֔וּעַ | MAM מַלְכִּישׁ֔וּעַ (atom מַלְכִּישׁ֔וּעַ) | analysis MLKJ_CW</ | own key: MLKJ_CW</ x4 | MAM's key: 
+Chronica_I 9:39 slot 396632 | BHSA מַלְכִּי־שׁ֔וּעַ | MAM מַלְכִּישׁ֔וּעַ (atom מַלְכִּישׁ֔וּעַ) | analysis MLKJ_CW</ | own key: MLKJ_CW</ x4 | MAM's key: 
+Chronica_I 10:2 slot 396746 | BHSA מַלְכִּי־שׁ֖וּעַ | MAM מַלְכִּישׁ֖וּעַ (atom מַלְכִּישׁ֖וּעַ) | analysis MLKJ_CW</ | own key: MLKJ_CW</ x4 | MAM's key: 
+Chronica_I 18:10 slot 400987 | BHSA בָרֲכֹ֗ו | MAM בָרְכֹ֗ו (atom וּֽלְבָרְכ֗וֹ) | analysis BRK[ piel infc | own key: BRK[ piel infc x3 | MAM's key: 
+Chronica_I 29:20 slot 406588 | BHSA יְבָרֲכ֣וּ | MAM יְבָרְכ֣וּ (atom וַיְבָרְכ֣וּ) | analysis BRK[ piel wayq | own key: BRK[ piel wayq x7 | MAM's key: 
+Chronica_II 1:5 slot 406928 | BHSA שָׂ֕ם | MAM שָׁ֕ם (atom שָׁ֕ם) | analysis FJM[ qal perf | own key: FJM[ qal perf x38, FJM[ qal ptca x8 | MAM's key: CM x547
+Chronica_II 30:27 slot 422489 | BHSA יְבָרֲכ֣וּ | MAM יְבָרְכ֣וּ (atom וַיְבָרְכ֣וּ) | analysis BRK[ piel wayq | own key: BRK[ piel wayq x7 | MAM's key: 
+Chronica_II 31:8 slot 422740 | BHSA יְבָרֲכוּ֙ | MAM יְבָרְכוּ֙ (atom וַֽיְבָרְכוּ֙) | analysis BRK[ piel wayq | own key: BRK[ piel wayq x7 | MAM's key: 
+
+== neither: 169 slots
+Genesis 2:23 slot 1137 | BHSA לֻֽקֳחָה | MAM לֻֽקְחָה (atom לֻֽקְחָה־) | analysis LQX[ pual perf | own key:  | MAM's key: 
+Genesis 4:18 slot 1979 | BHSA מְחִיּיָאֵ֗ל | MAM מְחִיָּיאֵ֗ל (atom וּמְחִיָּיאֵ֗ל) | analysis MXJJ>L/ | own key:  | MAM's key: 
+Genesis 6:16 slot 2897 | BHSA תְּכַלֶ֣נָּה | MAM תְּכַלֶּ֣נָּה (atom תְּכַלֶּ֣נָּה) | analysis KLH[ piel impf | own key:  | MAM's key: 
+Genesis 7:23 slot 3524 | BHSA יִשָּׁ֧אֶר | MAM יִּשָּׁ֧אֶר (atom וַיִּשָּׁ֧אֶר) | analysis C>R[ nif wayq | own key:  | MAM's key: 
+Genesis 18:21 slot 8162 | BHSA אֵֽרֲדָה | MAM אֵֽרְדָה (atom אֵֽרְדָה־) | analysis JRD[ qal impf | own key:  | MAM's key: 
+Genesis 25:22 slot 12761 | BHSA יִּתְרֹֽצֲצ֤וּ | MAM יִּתְרֹֽצְצ֤וּ (atom וַיִּתְרֹֽצְצ֤וּ) | analysis RYY[ hit wayq | own key:  | MAM's key: 
+Genesis 27:33 slot 14219 | BHSA אֲבָרֲכֵ֑הוּ | MAM אֲבָרְכֵ֑הוּ (atom וָאֲבָרְכֵ֑הוּ) | analysis BRK[ piel wayq | own key:  | MAM's key: BRK[ piel impf x1
+Genesis 30:27 slot 16020 | BHSA יְבָרֲכֵ֥נִי | MAM יְבָרְכֵ֥נִי (atom וַיְבָרְכֵ֥נִי) | analysis BRK[ piel wayq | own key:  | MAM's key: 
+Genesis 30:37 slot 16229 | BHSA עֶרְמֹ֑ון | MAM עַרְמֹ֑ון (atom וְעַרְמ֑וֹן) | analysis <RMWN/ | own key:  | MAM's key: 
+Genesis 30:38 slot 16253 | BHSA שִֽׁקֲתֹ֣ות | MAM שִֽׁקְתֹ֣ות (atom בְּשִֽׁקְת֣וֹת) | analysis CQT/ | own key:  | MAM's key: 
+Genesis 32:18 slot 17776 | BHSA יִֽפְגָּשְׁךָ֞ | MAM יִֽפְגׇשְׁךָ֞ (atom יִֽפְגׇשְׁךָ֞) | analysis PGC[ qal impf | own key:  | MAM's key: 
+Genesis 38:12 slot 21041 | BHSA גֹּֽזֲזֵ֤י | MAM גֹּֽזְזֵ֤י (atom גֹּֽזְזֵ֤י) | analysis GZZ[ qal ptca | own key:  | MAM's key: 
+Genesis 38:26 slot 21353 | BHSA דַעְתָּֽה | MAM דַעְתָּֽהּ׃ (atom לְדַעְתָּֽהּ׃) | analysis JD<[ qal infc | own key:  | MAM's key: 
+Genesis 49:23 slot 28055 | BHSA יְמָרֲרֻ֖הוּ | MAM יְמָרְרֻ֖הוּ (atom וַֽיְמָרְרֻ֖הוּ) | analysis MRR[ piel wayq | own key:  | MAM's key: 
+Exodus 9:11 slot 33259 | BHSA חֲרְטֻמִּ֖ם | MAM חַרְטֻמִּ֖ם (atom בַּֽחַרְטֻמִּ֖ם) | analysis XRVM/ | own key:  | MAM's key: 
+Exodus 15:10 slot 37043 | BHSA צָֽלֲלוּ֙ | MAM צָֽלְלוּ֙ (atom צָֽלְלוּ֙) | analysis YLL[ qal perf | own key: YLL=[ qal perf x1, YLL==[ qal perf x1 | MAM's key: 
+Exodus 33:16 slot 47643 | BHSA נִפְלֵ֨ינוּ֙ | MAM נִפְלִ֙ינוּ֙ (atom וְנִפְלִ֙ינוּ֙) | analysis PLH[ nif perf | own key:  | MAM's key: 
+Leviticus 5:7 slot 54440 | BHSA תַגִּ֣יע | MAM תַגִּ֣יעַ (atom תַגִּ֣יעַ) | analysis NG<[ hif impf | own key:  | MAM's key: 
+Numeri 6:23 slot 73853 | BHSA תְבָרֲכ֖וּ | MAM תְבָרְכ֖וּ (atom תְבָרְכ֖וּ) | analysis BRK[ piel impf | own key:  | MAM's key: 
+Numeri 33:55 slot 91380 | BHSA צָרֲר֣וּ | MAM צָרְר֣וּ (atom וְצָרְר֣וּ) | analysis YRR=[ qal perf | own key:  | MAM's key: 
+Numeri 35:20 slot 92201 | BHSA יֶהְדָּפֶ֑נּוּ | MAM יֶהְדֳּפֶ֑נּוּ (atom יֶהְדֳּפֶ֑נּוּ) | analysis HDP[ qal impf | own key:  | MAM's key: 
+Deuteronomium 8:15 slot 98269 | BHSA מֹּולִ֨יכֲךָ֜ | MAM מֹּולִ֨יכְךָ֜ (atom הַמּוֹלִ֨יכְךָ֜) | analysis HLK[ hif ptca | own key:  | MAM's key: 
+Deuteronomium 9:3 slot 98465 | BHSA הַֽאַבַדְתָּם֙ | MAM הַֽאֲבַדְתָּם֙ (atom וְהַֽאֲבַדְתָּם֙) | analysis >BD[ hif perf | own key:  | MAM's key: 
+Deuteronomium 24:13 slot 106611 | BHSA בֵֽרֲכֶ֑ךָּ | MAM בֵֽרְכֶ֑ךָּ (atom וּבֵֽרְכֶ֑ךָּ) | analysis BRK[ piel perf | own key:  | MAM's key: 
+Deuteronomium 24:20 slot 106752 | BHSA תְפָאֵ֖ר | MAM תְפַאֵ֖ר (atom תְפַאֵ֖ר) | analysis P>R=[ piel impf | own key:  | MAM's key: 
+Josua 7:25 slot 116736 | BHSA יַעְכֳּרְךָ֥ | MAM יַעְכׇּרְךָ֥ (atom יַעְכׇּרְךָ֥) | analysis <KR[ qal impf | own key:  | MAM's key: 
+Josua 10:24 slot 118926 | BHSA הָלְכ֣וּא | MAM הלכוא (atom ההלכוא) | analysis HLK[ qal perf | own key:  | MAM's key: 
+Judices 5:12 slot 130127 | BHSA שֲׁבֵ֥ה | MAM שְׁבֵ֥ה (atom וּֽשְׁבֵ֥ה) | analysis CBH[ qal impv | own key:  | MAM's key: 
+Judices 7:20 slot 131973 | BHSA שְׂמאֹולָם֙ | MAM שְׂמֹאולָם֙ (atom שְׂמֹאולָם֙) | analysis FM>L/ | own key:  | MAM's key: 
+Judices 9:2 slot 132920 | BHSA עַצְמֵכֶ֥ם | MAM עַצְמְכֶ֥ם (atom עַצְמְכֶ֥ם) | analysis <YM/ | own key:  | MAM's key: 
+Judices 16:2 slot 137248 | BHSA הֲרְגְנֻֽהוּ | MAM הֲרַגְנֻֽהוּ׃ (atom וַהֲרַגְנֻֽהוּ׃) | analysis HRG[ qal perf | own key:  | MAM's key: 
+Judices 16:16 slot 137585 | BHSA תְּאַֽלֲצֵ֑הוּ | MAM תְּאַֽלְצֵ֑הוּ (atom וַתְּאַֽלְצֵ֑הוּ) | analysis >LY[ piel wayq | own key:  | MAM's key: 
+Samuel_I 6:12 slot 144406 | BHSA יִשַּׁ֨רְנָה | MAM יִּשַּׁ֨רְנָה (atom וַיִּשַּׁ֨רְנָה) | analysis JCR[ qal wayq | own key:  | MAM's key: 
+Samuel_I 9:21 slot 146028 | BHSA קַּטַנֵּי֙ | MAM קְּטַנֵּי֙ (atom מִקְּטַנֵּי֙) | analysis QVN=/ | own key:  | MAM's key: 
+Samuel_I 17:31 slot 151471 | BHSA יְּשָּֽׁמְעוּ֙ | MAM יִּשָּֽׁמְעוּ֙ (atom וַיִּשָּֽׁמְעוּ֙) | analysis CM<[ nif wayq | own key:  | MAM's key: 
+Samuel_I 17:40 slot 151713 | BHSA קַלְּעֹ֣ו | MAM קַלְעֹ֣ו (atom וְקַלְע֣וֹ) | analysis QL<==/ | own key:  | MAM's key: 
+Samuel_I 24:11 slot 156227 | BHSA הֲרָגֲךָ֖ | MAM הֲרָגְךָ֖ (atom לַהֲרָגְךָ֖) | analysis HRG[ qal infc | own key:  | MAM's key: 
+Samuel_I 25:20 slot 156951 | BHSA תִּפְגֹּ֖שׁ | MAM תִּפְגֹ֖שׁ (atom וַתִּפְגֹ֖שׁ) | analysis PGC[ qal wayq | own key:  | MAM's key: 
+Samuel_I 26:10 slot 157794 | BHSA יִגָּפֶ֑נּוּ | MAM יִגֳּפֶ֑נּוּ (atom יִגֳּפֶ֑נּוּ) | analysis NGP[ qal impf | own key:  | MAM's key: 
+Samuel_II 6:5 slot 163541 | BHSA צֶלְצֶלִֽים | MAM צֶלְצֱלִֽים׃ (atom וּֽבְצֶלְצֱלִֽים׃) | analysis YLYLJM/ | own key:  | MAM's key: 
+Samuel_II 11:1 slot 165715 | BHSA מַּלְאֿכִ֗ים | MAM מְּלָאכִ֗ים (atom הַמְּלָאכִ֗ים) | analysis MLK/ | own key:  | MAM's key: 
+Reges_I 3:14 slot 178733 | BHSA הַאַרַכְתִּ֖י | MAM הַאֲרַכְתִּ֖י (atom וְהַאֲרַכְתִּ֖י) | analysis >RK[ hif perf | own key:  | MAM's key: 
+Reges_I 17:13 slot 190079 | BHSA הֹוצֵ֣אתְ | MAM הֹוצֵ֣את (atom וְהוֹצֵ֣את) | analysis JY>[ hif perf | own key:  | MAM's key: 
+Reges_I 18:44 slot 191354 | BHSA יַעַצָרְכָ֖ה | MAM יַעֲצׇרְכָ֖ה (atom יַעֲצׇרְכָ֖ה) | analysis <YR[ qal impf | own key:  | MAM's key: 
+Reges_II 4:7 slot 196629 | BHSA תִֽחְיִ֖י | MAM תִּֽחְיִ֖י (atom תִּֽחְיִ֖י) | analysis XJH[ qal impf | own key:  | MAM's key: 
+Reges_II 15:10 slot 204455 | BHSA קָֽבָלְ | MAM קׇֽבׇל (atom קׇֽבׇל־) | analysis QBL=/ | own key:  | MAM's key: 
+Reges_II 17:4 slot 205648 | BHSA יַּעַצְרֵ֨הוּ֙ | MAM יַּעְצְרֵ֙הוּ֙ (atom וַֽיַּעְצְרֵ֙הוּ֙) | analysis <YR[ qal wayq | own key:  | MAM's key: 
+Reges_II 17:21 slot 206043 | BHSA הֶחֱטֵיאָ֖ם | MAM הֶחֱטִיאָ֖ם (atom וְהֶחֱטִיאָ֖ם) | analysis XV>[ hif perf | own key:  | MAM's key: 
+Jesaia 14:11 slot 216993 | BHSA גְאֹונֶ֖ךָ | MAM גְּאֹונֶ֖ךָ (atom גְּאוֹנֶ֖ךָ) | analysis G>WN/ | own key:  | MAM's key: 
+Jesaia 19:6 slot 218239 | BHSA דָּלֲל֥וּ | MAM דָּלְל֥וּ (atom דָּלְל֥וּ) | analysis DLL[ qal perf | own key:  | MAM's key: 
+Jesaia 23:8 slot 219509 | BHSA סֹחֲרֶ֨יה֙ | MAM סֹחֲרֶ֙יהָ֙ (atom סֹחֲרֶ֙יהָ֙) | analysis SXR[ qal ptca | own key:  | MAM's key: 
+Jesaia 43:19 slot 227229 | BHSA תֵֽדָע֑וּהָ | MAM תֵּדָע֑וּהָ (atom תֵּדָע֑וּהָ) | analysis JD<[ qal impf | own key:  | MAM's key: 
+Jesaia 48:17 slot 229058 | BHSA מַדְרִֽיכֲךָ֖ | MAM מַדְרִֽיכְךָ֖ (atom מַדְרִֽיכְךָ֖) | analysis DRK[ hif ptca | own key:  | MAM's key: 
+Jesaia 57:9 slot 231700 | BHSA צִרַ֨יךְ֙ | MAM צִרַ֙יִךְ֙ (atom צִרַ֙יִךְ֙) | analysis YJR==/ | own key:  | MAM's key: 
+Jesaia 57:16 slot 231829 | BHSA אֶקְּצֹ֑וף | MAM אֶקְצֹ֑וף (atom אֶקְצ֑וֹף) | analysis QYP[ qal impf | own key:  | MAM's key: 
+Jeremia 3:17 slot 236379 | BHSA נִקְוּ֨וּ | MAM נִקְו֨וּ (atom וְנִקְו֨וּ) | analysis QWH=[ nif perf | own key:  | MAM's key: 
+Jeremia 3:21 slot 236470 | BHSA הֶעֱוּוּ֙ | MAM הֶעֱווּ֙ (atom הֶעֱווּ֙) | analysis <WH[ hif perf | own key:  | MAM's key: 
+Jeremia 15:10 slot 242407 | BHSA מְקַלְלַֽונִי | MAM מְקַֽלְלַֽוְנִי׃ (atom מְקַֽלְלַֽוְנִי׃) | analysis QLL[ piel ptca | own key:  | MAM's key: 
+Jeremia 20:15 slot 244875 | BHSA שִׂמֳּחָֽהוּ | MAM שִׂמְּחָֽהוּ׃ (atom שִׂמְּחָֽהוּ׃) | analysis FMX[ piel perf | own key:  | MAM's key: 
+Jeremia 22:28 slot 245879 | BHSA הֽוּטֲלוּ֙ | MAM הֽוּטְלוּ֙ (atom הֽוּטְלוּ֙) | analysis VWL[ hof perf | own key:  | MAM's key: 
+Jeremia 31:33 slot 251275 | BHSA אֶכְתֲּבֶ֑נָּה | MAM אֶכְתְּבֶ֑נָּה (atom אֶכְתְּבֶ֑נָּה) | analysis KTB[ qal impf | own key:  | MAM's key: 
+Jeremia 49:16 slot 261422 | BHSA תַגְבִּ֤יהַ | MAM תַגְבִּ֤יהַּ (atom תַגְבִּ֤יהַּ) | analysis GBH[ hif impf | own key:  | MAM's key: 
+Jeremia 50:11 slot 262081 | BHSA אֲבִּרִֽים | MAM אַבִּרִֽים׃ (atom כָּאַבִּרִֽים׃) | analysis >BJR/ | own key:  | MAM's key: 
+Jeremia 52:19 slot 264371 | BHSA מְּנַקִיֹ֔ות | MAM מְּנַקִּיֹּ֔ות (atom הַמְּנַקִּיּ֔וֹת) | analysis MNQJT/ | own key:  | MAM's key: 
+Jeremia 52:21 slot 264436 | BHSA אַצְבָּעֹ֖ות | MAM אֶצְבָּעֹ֖ות (atom אֶצְבָּע֖וֹת) | analysis >YB</ | own key:  | MAM's key: 
+Ezechiel 1:11 slot 264949 | BHSA גְּוִיֹתֵיהֶֽנָה | MAM גְּוִיֹּתֵיהֶֽנָה׃ (atom גְּוִיֹּתֵיהֶֽנָה׃) | analysis GWJH/ | own key:  | MAM's key: 
+Ezechiel 9:8 slot 268281 | BHSA נֵֽאשֲׁאַ֖ר | MAM נֵֽאשְׁאַ֖ר (atom וְנֵֽאשְׁאַ֖ר) | analysis C>R[ nif ptca | own key:  | MAM's key: 
+Ezechiel 16:24 slot 271444 | BHSA גֶּ֑ב | MAM גָּ֑ב (atom גָּ֑ב) | analysis GB/ | own key:  | MAM's key: 
+Ezechiel 18:29 slot 273249 | BHSA יִתָּֽכְנּוּ֙ | MAM יִתָּֽכְנוּ֙ (atom יִתָּֽכְנוּ֙) | analysis TKN[ nif impf | own key:  | MAM's key: 
+Ezechiel 23:5 slot 275784 | BHSA תַּעְגַּב֙ | MAM תֶּעְגַּב֙ (atom וַתֶּעְגַּב֙) | analysis <GB[ qal wayq | own key:  | MAM's key: 
+Ezechiel 24:17 slot 276851 | BHSA פְאֵֽרְךָ֙ | MAM פְּאֵֽרְךָ֙ (atom פְּאֵֽרְךָ֙) | analysis P>R/ | own key:  | MAM's key: 
+Ezechiel 27:27 slot 278220 | BHSA בִדְקֵ֣ך | MAM בִדְקֵ֣ךְ (atom בִדְקֵ֣ךְ) | analysis BDQ/ | own key:  | MAM's key: 
+Ezechiel 27:29 slot 278253 | BHSA אָנִיֹּֽותֵיהֶ֗ם | MAM אֳנִיֹּֽותֵיהֶ֗ם (atom מֵאֳנִיּֽוֹתֵיהֶ֗ם) | analysis >NJH/ | own key:  | MAM's key: 
+Ezechiel 28:16 slot 278614 | BHSA אֶחַלֶּלְךָ֩ | MAM אֲחַלֶּלְךָ֩ (atom וָאֲחַלֶּלְךָ֩) | analysis XLL[ piel wayq | own key:  | MAM's key: 
+Ezechiel 37:23 slot 283685 | BHSA יִֽטַמְּא֣וּ | MAM יִֽטַּמְּא֣וּ (atom יִֽטַּמְּא֣וּ) | analysis VM>[ piel impf | own key:  | MAM's key: VM>[ hit impf x1
+Hosea 4:6 slot 291796 | BHSA אֶמְאָֽסְאךָ֙ | MAM אמאסאך (atom ואמאסאך) | analysis M>S[ qal impf | own key:  | MAM's key: 
+Hosea 9:7 slot 292892 | BHSA שִׁלֻּ֔ם | MAM שִּׁלֻּ֔ם (atom הַשִּׁלֻּ֔ם) | analysis CLWM=/ | own key:  | MAM's key: 
+Micha 3:9 slot 300231 | BHSA מֲתַעֲבִ֣ים | MAM מְתַעֲבִ֣ים (atom הַֽמְתַעֲבִ֣ים) | analysis T<B[ piel ptca | own key:  | MAM's key: 
+Nahum 3:13 slot 302080 | BHSA בְּרִיחָֽיִך | MAM בְּרִיחָֽיִךְ׃ (atom בְּרִיחָֽיִךְ׃) | analysis BRJX/ | own key:  | MAM's key: 
+Habakuk 3:16 slot 303007 | BHSA צָלֲל֣וּ | MAM צָלְל֣וּ (atom צָלְל֣וּ) | analysis YLL=[ qal perf | own key: YLL[ qal perf x1, YLL==[ qal perf x1 | MAM's key: 
+Sacharia 4:12 slot 306110 | BHSA שִׁבֲּלֵ֣י | MAM שִׁבְּלֵ֣י (atom שִׁבְּלֵ֣י) | analysis CBLT/ | own key:  | MAM's key: 
+Sacharia 11:5 slot 308077 | BHSA יַֽהֲרְגֻן֙ | MAM יַֽהַרְגֻן֙ (atom יַֽהַרְגֻן֙) | analysis HRG[ qal impf | own key:  | MAM's key: 
+Maleachi 1:9 slot 309639 | BHSA יחָנֵ֑נוּ | MAM יחׇנֵּ֑נוּ (atom וִֽיחׇנֵּ֑נוּ) | analysis XNN[ qal impf | own key:  | MAM's key: 
+Psalmi 10:14 slot 311929 | BHSA חֵלֶ֑כָה | MAM חֵלֵ֑כָה (atom חֵלֵ֑כָה) | analysis XLKH/ | own key:  | MAM's key: 
+Psalmi 12:7 slot 312123 | BHSA אִֽמֲרֹ֣ות | MAM אִ֥מְרֹ֣ות (atom אִ֥מְר֣וֹת) | analysis >MRH/ | own key:  | MAM's key: 
+Psalmi 21:2 slot 313458 | BHSA יָּ֥גֶיל | MAM יגיל (atom יגיל) | analysis GJL[ qal impf | own key:  | MAM's key: 
+Psalmi 34:1 slot 315594 | BHSA יְגָרֲשֵׁ֗הוּ | MAM יְגָרְשֵׁ֗הוּ (atom וַ֝יְגָרְשֵׁ֗הוּ) | analysis GRC[ piel wayq | own key:  | MAM's key: 
+Psalmi 45:3 slot 317909 | BHSA שְׂפְתֹותֶ֑יךָ | MAM שִׂפְתֹותֶ֑יךָ (atom בְּשִׂפְתוֹתֶ֑יךָ) | analysis FPH/ | own key:  | MAM's key: 
+Psalmi 55:19 slot 319548 | BHSA קֲּרָב | MAM קְּרׇב (atom מִקְּרׇב־) | analysis QRB==/ | own key:  | MAM's key: 
+Psalmi 59:2 slot 320050 | BHSA מִתְקֹומְמַ֥י | MAM מִּתְקֹומְמַ֥י (atom מִֽמִּתְקוֹמְמַ֥י) | analysis QWM[ hit ptca | own key:  | MAM's key: 
+Psalmi 64:9 slot 320802 | BHSA יִ֝תְנֹדֲד֗וּ | MAM יִ֝תְנֹדְד֗וּ (atom יִ֝תְנֹדְד֗וּ) | analysis NWD[ hit impf | own key:  | MAM's key: 
+Psalmi 68:21 slot 321465 | BHSA יהוִ֥ה | MAM יהֹוִ֥ה (atom וְלֵיהֹוִ֥ה) | analysis JHWH/ | own key:  | MAM's key: 
+Psalmi 72:15 slot 322465 | BHSA יְבָרֲכֶֽנְהֽוּ | MAM יְבָרְכֶֽנְהוּ׃ (atom יְבָרְכֶֽנְהוּ׃) | analysis BRK[ piel impf | own key:  | MAM's key: 
+Psalmi 74:5 slot 322838 | BHSA סֲבָךְ | MAM סְבׇךְ (atom בִּסְבׇךְ־) | analysis SBK=/ | own key:  | MAM's key: 
+Psalmi 76:12 slot 323240 | BHSA נִֽדֲר֣וּ | MAM נִ֥דְר֣וּ (atom נִ֥דְר֣וּ) | analysis NDR[ qal impv | own key:  | MAM's key: 
+Psalmi 83:13 slot 324953 | BHSA נִ֣ירֲשָׁה | MAM נִ֣ירְשָׁה (atom נִ֣ירְשָׁה) | analysis JRC[ qal impf | own key:  | MAM's key: 
+Psalmi 94:1 slot 326770 | BHSA הֹופִֽיַע | MAM הֹופִֽיעַ׃ (atom הוֹפִֽיעַ׃) | analysis JP<[ hif impv | own key:  | MAM's key: JP<[ hif perf x3
+Psalmi 103:5 slot 328054 | BHSA מַּשְׂבִּ֣יַע | MAM מַּשְׂבִּ֣יעַ (atom הַמַּשְׂבִּ֣יעַ) | analysis FB<[ hif ptca | own key:  | MAM's key: 
+Psalmi 105:20 slot 328750 | BHSA יַתִּירֵ֑הוּ | MAM יַּתִּירֵ֑הוּ (atom וַיַּתִּירֵ֑הוּ) | analysis NTR[ hif wayq | own key:  | MAM's key: 
+Psalmi 119:69 slot 331840 | BHSA אֱצֹּ֬ר | MAM אֶצֹּ֬ר (atom אֶצֹּ֬ר) | analysis NYR[ qal impf | own key:  | MAM's key: 
+Psalmi 119:175 slot 332648 | BHSA יַעֲזְרֻֽנִי | MAM יַעְזְרֻֽנִי׃ (atom יַעְזְרֻֽנִי׃) | analysis <ZR[ qal impf | own key:  | MAM's key: 
+Psalmi 125:5 slot 333058 | BHSA עַֽקַלְקַלֹּותָ֗ם | MAM עֲֽקַלְקַלֹּותָ֗ם (atom עֲֽקַלְקַלּוֹתָ֗ם) | analysis <QLQL/ | own key:  | MAM's key: 
+Psalmi 145:10 slot 335332 | BHSA יְבָרֲכֽוּכָה | MAM יְבָרְכֽוּכָה׃ (atom יְבָרְכֽוּכָה׃) | analysis BRK[ piel impf | own key:  | MAM's key: 
+Iob 1:5 slot 336141 | BHSA בֵרֲכ֥וּ | MAM בֵרְכ֥וּ (atom וּבֵרְכ֥וּ) | analysis BRK[ piel perf | own key:  | MAM's key: 
+Iob 7:21 slot 338069 | BHSA שִׁ֖חֲרְתַּ֣נִי | MAM שִׁ֖חַרְתַּ֣נִי (atom וְשִׁ֖חַרְתַּ֣נִי) | analysis CXR[ piel perf | own key:  | MAM's key: 
+Iob 9:6 slot 338329 | BHSA יִתְפַלָּצֽוּן | MAM יִתְפַּלָּצֽוּן׃ (atom יִתְפַּלָּצֽוּן׃) | analysis PLY[ hit impf | own key:  | MAM's key: 
+Iob 11:3 slot 338834 | BHSA יַחֲרִ֑ישׁו | MAM יַחֲרִ֑ישׁוּ (atom יַחֲרִ֑ישׁוּ) | analysis XRC[ hif impf | own key:  | MAM's key: 
+Iob 17:9 slot 340383 | BHSA טֳהָר | MAM טְהׇר (atom וּֽטְהׇר־) | analysis VHR/ | own key:  | MAM's key: VHR[ qal impv x2
+Iob 19:2 slot 340649 | BHSA תְדַכְּאוּנַ֥נִי | MAM תְדַכּאֿוּנַ֥נִי (atom וּֽתְדַכּאֿוּנַ֥נִי) | analysis DK>[ piel impf | own key:  | MAM's key: 
+Iob 20:7 slot 340970 | BHSA גֶלֲלֹו | MAM גֶלְלֹו (atom כְּֽ֭גֶלְלוֹ) | analysis GL==/ | own key:  | MAM's key: 
+Iob 20:19 slot 341081 | BHSA יִבֶנֵֽהוּ | MAM יִבְנֵֽהוּ׃ (atom יִבְנֵֽהוּ׃) | analysis BNH[ qal impf | own key:  | MAM's key: 
+Iob 22:21 slot 341682 | BHSA שְׁלם | MAM שְׁלָ֑ם (atom וּשְׁלָ֑ם) | analysis CLM[ qal impv | own key:  | MAM's key: 
+Iob 26:13 slot 342356 | BHSA חֹֽלֲלָ֥ה | MAM חֹלְלָ֥ה (atom חֹלְלָ֥ה) | analysis XLL=[ piel perf | own key:  | MAM's key: 
+Iob 31:7 slot 343476 | BHSA מֻאֽוּם | MAM מֽאֿוּם׃ (atom מֽאֿוּם׃) | analysis M>WM/ | own key:  | MAM's key: 
+Iob 31:20 slot 343597 | BHSA בֵרֲכ֣וּנִי | MAM בֵרְכ֣וּנִי (atom בֵרְכ֣וּנִי) | analysis BRK[ piel perf | own key:  | MAM's key: 
+Iob 31:37 slot 343778 | BHSA אֲקָרֲבֶֽנּוּ | MAM אֲקָֽרְבֶֽנּוּ׃ (atom אֲקָֽרְבֶֽנּוּ׃) | analysis QRB[ piel impf | own key:  | MAM's key: 
+Iob 33:25 slot 344274 | BHSA רֻֽטֲפַ֣שׁ | MAM רֻֽטְפַ֣שׁ (atom רֻֽטְפַ֣שׁ) | analysis RVPC[ qal perf | own key:  | MAM's key: 
+Iob 39:15 slot 345970 | BHSA תְּדוּשֶֽׁהָ | MAM תְדוּשֶֽׁהָ׃ (atom תְדוּשֶֽׁהָ׃) | analysis DWC[ qal impf | own key:  | MAM's key: 
+Iob 40:22 slot 346313 | BHSA צִֽלֲלֹ֑ו | MAM צִֽלְלֹ֑ו (atom צִֽלְל֑וֹ) | analysis YL/ | own key:  | MAM's key: 
+Proverbia 8:26 slot 349073 | BHSA עָפְרֹ֥ות | MAM עַפְרֹ֥ות (atom עַפְר֥וֹת) | analysis <PR/ | own key:  | MAM's key: 
+Proverbia 12:9 slot 349994 | BHSA מְּתַכַּבֵּ֗ד | MAM מִּתְכַּבֵּ֗ד (atom מִ֝מִּתְכַּבֵּ֗ד) | analysis KBD[ tif ptca | own key:  | MAM's key: 
+Proverbia 13:19 slot 350333 | BHSA תֶעֱרַ֣ב | MAM תֶּעֱרַ֣ב (atom תֶּעֱרַ֣ב) | analysis <RB===[ qal impf | own key:  | MAM's key: 
+Proverbia 21:11 slot 352509 | BHSA עְנָשׁ | MAM עֲנׇשׁ (atom בַּֽעֲנׇשׁ־) | analysis <NC[ qal infc | own key:  | MAM's key: 
+Proverbia 23:20 slot 353199 | BHSA זֹלֲלֵ֖י | MAM זֹלְלֵ֖י (atom בְּזֹלְלֵ֖י) | analysis ZLL[ qal ptca | own key:  | MAM's key: 
+Proverbia 30:17 slot 355323 | BHSA יקֲּהַ֫ת | MAM יקְּהַ֫ת (atom לִֽיקְּהַ֫ת־) | analysis JQHH/ | own key:  | MAM's key: 
+Canticum 1:6 slot 357659 | BHSA שֱּׁזָפַ֖תְנִי | MAM שְּׁזָפַ֖תְנִי (atom שֶׁשְּׁזָפַ֖תְנִי) | analysis CZP[ qal perf | own key:  | MAM's key: 
+Canticum 5:2 slot 358497 | BHSA קְוֻּצֹּותַ֖י | MAM קְוֻצֹּותַ֖י (atom קְוֻצּוֹתַ֖י) | analysis QWYWT/ | own key:  | MAM's key: 
+Canticum 5:11 slot 358617 | BHSA קְוּצֹּותָיו֙ | MAM קְוֻצֹּותָיו֙ (atom קְוֻצּוֹתָיו֙) | analysis QWYWT/ | own key:  | MAM's key: 
+Canticum 8:2 slot 359070 | BHSA אֶנְהָֽגֲךָ֗ | MAM אֶנְהָֽגְךָ֗ (atom אֶנְהָֽגְךָ֗) | analysis NHG[ qal impf | own key:  | MAM's key: 
+Threni 1:4 slot 363592 | BHSA נוּגֹ֖ות | MAM נּוּגֹ֖ות (atom נּוּג֖וֹת) | analysis JGH[ nif ptca | own key:  | MAM's key: 
+Threni 2:20 slot 364407 | BHSA עֹלֲלֵ֣י | MAM עֹלְלֵ֣י (atom עֹלְלֵ֣י) | analysis <WLL/ | own key:  | MAM's key: 
+Esther 2:14 slot 366400 | BHSA שַֽׁעֲשְׁגַ֛ז | MAM שַֽׁעַשְׁגַ֛ז (atom שַֽׁעַשְׁגַ֛ז) | analysis C<CGZ/ | own key:  | MAM's key: 
+Daniel 2:10 slot 370758 | BHSA חַרְטֹּ֖ם | MAM חַרְטֹ֖ם (atom חַרְטֹ֖ם) | analysis Aram XRVM/ | own key:  | MAM's key: 
+Daniel 2:16 slot 370865 | BHSA יִנְתֵּן | MAM יִנְתִּן (atom יִנְתִּן־) | analysis Aram NTN[ peal impf | own key:  | MAM's key: 
+Daniel 2:19 slot 370916 | BHSA גֲלִ֑י | MAM גְלִ֑י (atom גְלִ֑י) | analysis Aram GLH[ peil perf | own key:  | MAM's key: 
+Daniel 2:39 slot 371334 | BHSA אֲרַ֣עא | MAM ארעא (atom ארעא) | analysis Aram >R</ | own key:  | MAM's key: 
+Daniel 3:18 slot 372011 | BHSA אלָהָיךְ֙ | MAM אלהיך (atom לאלהיך) | analysis Aram >LH/ | own key:  | MAM's key: 
+Daniel 4:19 slot 372769 | BHSA רְבַ֖ית | MAM רבית (atom רבית) | analysis Aram RBH[ peal perf | own key:  | MAM's key: 
+Daniel 4:27 slot 372960 | BHSA תְקַ֥ף | MAM תְקָ֥ף (atom בִּתְקָ֥ף) | analysis Aram TQP=/ | own key:  | MAM's key: 
+Daniel 5:10 slot 373385 | BHSA זִיוָ֖יךְ | MAM זיויך (atom וזיויך) | analysis Aram ZJW/ | own key:  | MAM's key: 
+Daniel 6:23 slot 374377 | BHSA סֲגַ֛ר | MAM סְגַ֛ר (atom וּֽסְגַ֛ר) | analysis Aram SGR[ peal perf | own key:  | MAM's key: 
+Daniel 7:4 slot 374613 | BHSA גַפַּ֜יהּ | MAM גפיה (atom גפיה) | analysis Aram GP/ | own key:  | MAM's key: 
+Daniel 7:7 slot 374721 | BHSA קָֽדָמַ֔יהּ | MAM קדמיה (atom קדמיה) | analysis Aram QDM/ | own key:  | MAM's key: 
+Daniel 7:19 slot 374969 | BHSA טִפְרַ֣יהּ | MAM טפריה (atom וטפריה) | analysis Aram VPR/ | own key:  | MAM's key: 
+Daniel 7:19 slot 374973 | BHSA מַדֲּקָ֔ה | MAM מַדְּקָ֔ה (atom מַדְּקָ֔ה) | analysis Aram DQQ[ haf ptca | own key:  | MAM's key: 
+Daniel 7:19 slot 374977 | BHSA רַגְלַ֥יהּ | MAM רגליה (atom ברגליה) | analysis Aram RGL/ | own key:  | MAM's key: 
+Daniel 11:15 slot 377243 | BHSA סֹֽולֲלָ֔ה | MAM סֹֽולְלָ֔ה (atom סֽוֹלְלָ֔ה) | analysis SLLH/ | own key:  | MAM's key: 
+Daniel 12:10 slot 378088 | BHSA יִ֠תְבָּֽרֲרוּ | MAM יִ֠תְבָּֽרְר֠וּ (atom יִ֠תְבָּֽרְר֠וּ) | analysis BRR[ hit impf | own key:  | MAM's key: 
+Esra 5:12 slot 380273 | BHSA אֲבָהֳתַ֨נָא֙ | MAM אֲבָהָתַ֙נָא֙ (atom אֲבָהָתַ֙נָא֙) | analysis Aram >B/ | own key:  | MAM's key: 
+Esra 8:31 slot 382110 | BHSA נִּסְעָ֞ה | MAM נִּסְּעָ֞ה (atom וַֽנִּסְּעָ֞ה) | analysis NS<[ qal wayq | own key:  | MAM's key: 
+Nehemia 1:6 slot 383549 | BHSA פְתֻוּחֹ֟ות | MAM פְתוּחֹ֟ות (atom פְתוּח֟וֹת) | analysis PTX[ qal ptcp | own key:  | MAM's key: 
+Nehemia 2:6 slot 383850 | BHSA מַֽהֲלָכֲךָ֖ | MAM מַֽהֲלָכְךָ֖ (atom מַֽהֲלָכְךָ֖) | analysis MHLK/ | own key:  | MAM's key: 
+Nehemia 3:13 slot 384518 | BHSA שֲׁפֹֽות | MAM שְׁפֹֽות׃ (atom הָשְׁפֽוֹת׃) | analysis >CPT/ | own key:  | MAM's key: CPWT/ x1
+Nehemia 5:7 slot 385547 | BHSA נֹשִׁ֑אים | MAM נשאים (atom נשאים) | analysis NC>[ qal ptca | own key:  | MAM's key: 
+Nehemia 12:36 slot 390199 | BHSA מִֽלֲלַ֡י | MAM מִֽלְלַ֡י (atom מִֽלְלַ֡י) | analysis MLLJ/ | own key:  | MAM's key: 
+Nehemia 12:36 slot 390200 | BHSA גִּֽלֲלַ֡י | MAM גִּֽלְלַ֡י (atom גִּֽלְלַ֡י) | analysis GLLJ/ | own key:  | MAM's key: 
+Nehemia 13:19 slot 390965 | BHSA צָֽלֲלוּ֩ | MAM צָֽלְלוּ֩ (atom צָֽלְלוּ֩) | analysis YLL==[ qal perf | own key: YLL[ qal perf x1, YLL=[ qal perf x1 | MAM's key: 
+Chronica_I 2:44 slot 392395 | BHSA יָרְקֳעָ֑ם | MAM יׇרְקְעָ֑ם (atom יׇרְקְעָ֑ם) | analysis JRQ<M/ | own key:  | MAM's key: 
+Chronica_I 3:18 slot 392724 | BHSA מַלְכִּירָ֥ם | MAM מַלְכִירָ֥ם (atom וּמַלְכִירָ֥ם) | analysis MLKJRM/ | own key:  | MAM's key: 
+Chronica_I 4:10 slot 392950 | BHSA תְּבָרֲכֵ֜נִי | MAM תְּבָרְכֵ֜נִי (atom תְּבָרְכֵ֜נִי) | analysis BRK[ piel impf | own key:  | MAM's key: 
+Chronica_I 5:16 slot 393712 | BHSA תֹוצְאֹותָֽם | MAM תֹּוצְאֹותָֽם׃ (atom תּוֹצְאוֹתָֽם׃) | analysis TWY>WT/ | own key:  | MAM's key: 
+Chronica_I 11:28 slot 397575 | BHSA עֲנְּתֹותִֽי | MAM עַנְּתֹותִֽי׃ (atom הָעַנְּתוֹתִֽי׃) | analysis <NTTJ/ | own key:  | MAM's key: 
+Chronica_I 11:44 slot 397690 | BHSA עֻזִיָּ֖א | MAM עֻזִּיָּ֖א (atom עֻזִּיָּ֖א) | analysis <ZJ>/ | own key:  | MAM's key: 
+Chronica_I 11:44 slot 397692 | BHSA עֲשְׁתְּרָתִ֑י | MAM עַשְׁתְּרָתִ֑י (atom הָעַשְׁתְּרָתִ֑י) | analysis <CTRTJ/ | own key:  | MAM's key: 
+Chronica_I 26:5 slot 404361 | BHSA בֵרֲכֹ֖ו | MAM בֵרְכֹ֖ו (atom בֵרְכ֖וֹ) | analysis BRK[ piel perf | own key:  | MAM's key: 
+Chronica_II 20:26 slot 416604 | BHSA בֵּרֲכ֣וּ | MAM בֵּרְכ֣וּ (atom בֵּרְכ֣וּ) | analysis BRK[ piel perf | own key:  | MAM's key: 
+Chronica_II 21:4 slot 416895 | BHSA מַמְלֶ֤כַת | MAM מַמְלֶ֤כֶת (atom מַמְלֶ֤כֶת) | analysis MMLKH/ | own key:  | MAM's key: MMLKT/ x11
+Chronica_II 23:13 slot 417986 | BHSA מְשֹֽׁורֲרִים֙ | MAM מְשֹֽׁורְרִים֙ (atom וְהַמְשֽׁוֹרְרִים֙) | analysis CJR[ piel ptca | own key:  | MAM's key: 
+Chronica_II 29:34 slot 421764 | BHSA יְּחַזְּק֞וּם | MAM יְחַזְּק֞וּם (atom וַֽיְחַזְּק֞וּם) | analysis XZQ[ piel wayq | own key:  | MAM's key: XZQ[ piel impf x1
