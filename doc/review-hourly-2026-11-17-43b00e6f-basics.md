@@ -1,0 +1,33 @@
+# Bounded MAM-basics screen through 43b00e6f
+
+State: completed 2026-11-17; review only, inherited HTML findings remain
+
+Codex (GPT-6; xhigh review), public endpoint `180dd6deec823abb826b3b7f9f67c2b1a624c702` -> `43b00e6f46e1a7ba97232a1c34aad844252f96d8`: three commits / 14 paths. No consequential introduced defect established; no product repair. Receipt parent `d3a871d930a1410100b582b79209c8dd9914ca9c` on `review/hourly-20261117-3691d51b`. Overall reviewed-through stays `210affe3ac2931473bead0de839be0de08309e3d`; broad-tested stays `9fc669d3a84e206f0f95b306d3412cda76d1222f`. Every previous status byte, pending window and finished receipt is preserved.
+
+The complete endpoint was inspected: [renderer and new data](https://github.com/bdenckla/MAM-basics/blob/43b00e6f46e1a7ba97232a1c34aad844252f96d8/py/author_site/stress_helper_comparison.py), generated pages, common input, controls/CSS and authored entrypoint, plus the execution-provenance plan and Claude-only commander skill/references. Those documents are review material; this task neither executes the historical plan nor adopts the commander role. Current AGENTS, review-trial, periodic-review, product scopes and applicable canonical worktree, Hebrew-prose and receipt guidance were read. No runtime sibling input was required; only public repository material was used.
+
+Actual sequential commands from `/workspace/scratch/basics-43b00e6f/source`, with owning interpreter `/workspace/MAM-basics/.venv/bin/python`:
+
+| Command | Actual result |
+| --- | --- |
+| `git diff --check 180dd6de 43b00e6f` | Exit 0; 0.005622 s. |
+| `-m black --check py/author_site/stress_helper_comparison.py py/main_authored.py` | Exit 0; both files unchanged; 0.368054 s. |
+| `py/main_authored.py gen-site --trust-surveys` | Exit 0; 7.107438 s; all generated outputs reproduce committed bytes, clean status. Trusted tracked survey shortcut; no fresh survey/census claim. |
+| `py/main_test.py py/tests/test_site_index_links.py py/tests/test_site_links_relative.py py/tests/test_shared_html_styles.py py/tests/test_prose_mark_order.py -q -ra` | Exit 0; 8 passed, no skips; 16.08 s pytest / 16.258729 s wall. |
+| `py/check_html_syntax_and_sanity.py gh-pages/stress-helpers` | Exit 1; four historical orphan crops, 332 informational CSS references; 0.951429 s. Not a pass. |
+
+Every executed maintained stage leaves empty tracked diffs and status. The four unchanged orphan crop findings remain pending as named in the [previous receipt](review-hourly-2026-11-17-22daa1f9-basics.md); no new crop is referenced by results.html.
+
+Independent disposable checks (commands and scripts in [evidence](review-hourly-2026-11-17-43b00e6f-basics-evidence.zip)):
+
+- `probe.py`, final exit 0: all 123 per-edition records (75 difference findings / 48 spelling findings) retain predecessor-page Hebrew exactly, without normalization. Notes agree except the documented `Zaqef qatan` -> `Zaqef` terminology change. Results render 57 main rows and 43 collapsed spelling rows, 100 form occurrences / 96 distinct forms. Both census tables independently sum and reproduce: primary 5,515 + 20,154 = 25,669; Koren 25,671, the Simanim Tanakh 25,669. All 266 local href/src occurrences and fragments resolve; 185 pointed-font elements and unpointed strand markup check. This validates committed bookkeeping/presentation, not the unavailable original census or printed readings.
+- `guards.py`, exit 0: removed primary findings independently classify as 49 already in index.html, four covered by source notes and three covered by the recorded tradition decision. Seventeen malformed-input probes refuse; a supplementary probe reaches the actual index-overlap guard, and prose/link escaping passes. The original overlap-labelled probe refused earlier on crop shape, so it alone does not establish that guard.
+- `node controls-probe.js`, exit 0: actual committed controls.js runs with a scratch offline DOM adapter. 4,074 filter/search combinations (2,160 comparison / 1,914 results), plus option counts, size/reset and image-toggle checks give 4,100 counted checks; 43 spelling rows stay outside the filter. Results initializes without an image button. This is script evidence, not browser layout, visual accessibility or font-rendering proof.
+
+Two failed reviewer-helper attempts are retained: `probe.txt` exit 1 used the predecessor's full Hosea name without mapping it to Hos; `probe-corrected.txt` exit 1 guessed 27 comparison rows instead of deriving the actual 37 from input identities. The corrected `probe-final.txt` passes. No product command was repeated or source/output bytes changed to address these helper mistakes. Independent probe timing was not measured; Node reports 0.269236957 s internally.
+
+Author-attributed evidence only: gen-site twice including UTF-8 mode off with identical bytes, 27 focused tests, check_all's seven checks, and full suite 1,497 passed / five skipped / 90 subtests. The author explicitly deferred mega to nightly. Those executions are not this screen's checks. Census/recount inputs, printed readings, scans, historical source/provenance and external decision-page contents remain attributed. No original research, source acquisition/live request, bot/email/pCloud action, new editorial/rights decision, full suite/mega, archived BHSA/morphhb study, Private review, Windows/HP/browser/font build or baseline acceptance ran. Earlier browser/source/Windows, four-crop, Taamey D corpus and global-review gaps remain distinct.
+
+Local admission at 20:15:19 UTC found all 39 preceding slot records released, only the short admission probe itself in the check-process inventory, a clean unchanged home at `cb878aef91e692d5561435f00021f73b75868e45`, and no competing local owner. The unique slot belongs to `/root/basics_43b00e6f_review`; cross-machine ownership is not independently verified. Source and receipt parent have the same sole manual-dispatch Pages workflow, blob `18ceb19405424710bda47d9a38c470cc2ed9c385`; root independently reported no open PR for the exact isolated branch. No main/shared integration, PR, dispatch, deployment, configuration or schedule action.
+
+Publication scope is exactly this receipt, its evidence ZIP and an append-only maintained-status section. Archive: 40,185 bytes, SHA-256 `d4d5d5bf705ba5fa930dd5af82ab68400bb19c15904e38b1f2cd99a3344a3864`; internal MANIFEST.json records each payload's size/hash, with safe unique relative regular entries and CRC/payload validation passing. Exact remote parent/scope/bytes and normal owned-worktree removal/slot release are verified at closeout after publication. Artifacts also remain outside the temporary checkouts.
