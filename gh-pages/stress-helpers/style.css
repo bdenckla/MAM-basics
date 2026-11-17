@@ -23,7 +23,12 @@ p { text-align: start; }
 #size-value { font-variant-numeric: tabular-nums; }
 #visible, .credit, .edition, .source { color: light-dark(#4b5762, #bcc8d0); }
 .comparison-table { overflow-x: auto; }
-table { border-collapse: collapse; }
+table { border-collapse: collapse; margin-inline: auto; }
+table.census { margin-block: .65rem 1.4rem; }
+caption { font-weight: 600; text-align: start; margin-block-end: .35rem; }
+td.count { text-align: end; font-variant-numeric: tabular-nums; }
+details { margin-block: 1rem; }
+summary { cursor: pointer; }
 th, td {
     padding: .55rem .7rem;
     border-bottom: 1px solid var(--rule);

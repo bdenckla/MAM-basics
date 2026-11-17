@@ -16,7 +16,9 @@ Subcommands:
                 gh-pages/post-stress-meteg.html and
                 gh-pages/post-stress-meteg-post-silluq-1s17v5.html.
                 Write the combined printed-edition stress-helper report to
-                gh-pages/stress-helpers/index.html.
+                gh-pages/stress-helpers/index.html, and what its census of
+                five accents found beyond that report to
+                gh-pages/stress-helpers/results.html.
                 --trust-surveys lets the post-stress pages that read the survey
                 load it from the tracked out/accgram/post-stress-meteg.json
                 instead of recomputing it from the tracked Phonetic-MAM
@@ -231,7 +233,7 @@ def gen_site(*, trust_surveys: bool = False):
     for out_path in (
         unicode_proposals.gen_html_file(),
         *post_stress_meteg.gen_html_files(trust_survey=trusted),
-        stress_helper_comparison.gen_html_file(),
+        *stress_helper_comparison.gen_html_files(),
         site_index.gen_html_file(),
     ):
         print(f"Generated {out_path}")

@@ -1,7 +1,7 @@
 # Plan: rework the stress-helpers results page to show only what index.html does not
 
-State: live; written 2026-11-17, with Ben's five decisions recorded the same day; being executed
-since later that day on Ben's other computer, which holds the census material.
+State: executed 2026-11-17, on Ben's other computer, which holds the census material; written
+and decided earlier the same day. "Execution, 2026-11-17" records the outcome.
 
 ## Context
 
@@ -152,7 +152,7 @@ Deut 5:6 atom 1 (עליון), the Simanim Tanakh; Deut 5:6 atom 5 (עליון), 
 Deut 5:13 atom 1 (תחתון), the Simanim Tanakh; Deut 5:13 atom 16 (תחתון), the Simanim Tanakh.
 Exod 20:2 atom 12 (עליון), Koren; Exod 20:9 atom 12 (עליון), Koren; Deut 5:6 atom 12 (עליון), Koren.
 
-**Findings about markup, not yet fixed.** index.html's coverage paragraph and both source notes
+**Findings about markup, unfixed at 22daa1f9.** index.html's coverage paragraph and both source notes
 put pointed Hebrew in prose without `lang="hbo"`, so it is not set in Taamey D: the form in "the
 second occurrence of ... in Ruth 2:9" and the forms in the 2Sam 4:6 and 2Sam 13:20 notes.
 results.html marks unpointed strand names `lang="he"`, where the house rule wants a `<bdi>` with
@@ -267,16 +267,65 @@ the suite or skip either under `AGENTS.md`'s products section and `doc/review-tr
 what was skipped, and why, in the last commit's message. Mark the decision page's decisions
 carried out, and set this plan's State to `executed <date>`.
 
+## Execution, 2026-11-17
+
+Claude (Opus 5.5) executed the plan in `C:/Users/BenDe/GitRepos2/MAM-basics`, from `224b29e4`,
+which records Ben's instruction, to the commit that adds this section. Its scratch scripts are in
+that clone's gitignored `.novc/stress-helpers-rework/`.
+
+1. **Stage 1.** The script found every count and list above in results.html at `180dd6de`: of
+   the 96 main rows, 34 repeat an index.html row and 2 are the source-note verses, holding 32
+   Koren and 17 Simanim Tanakh findings; the 60 new rows hold 58 and 20, in the 14, 42 and 4
+   rows listed; no row mixes the two kinds; the spelling table's 43 rows and the
+   printed-tradition table's 9 are as listed, and that table's three Koren rows repeat the main
+   table's grouping rows byte for byte. Decision 1 dropped Exod 20:2 atom 1, Deut 5:6 atom 1 and
+   Deut 5:13 atom 14, all תחתון, which leaves 57 rows with 55 Koren and 20 Simanim Tanakh
+   findings. The records' `verse_href` comes from `verse_external_links.mam_with_doc_url`,
+   relativized by `site_links.site_href_from_url`, which reproduces the links of all 37 records
+   of index.html's inputs. One sentence changed: at 1Sam 2:16, "Zaqef qatan" became "Zaqef",
+   the form of `ROM_ZAQEF_QATAN`, with qatan implicit as the hebrew-prose skill's terminology
+   reference has it from Ben's decision of 2026-10-21.
+2. **Stage 2: 3A applies.** The census records every kept finding's scan, and so its page, but
+   few printed forms: 3 of the 75 findings in the differences table, and 19 of the 48 in the
+   spelling table, have one in their join row. The records that the other rows' `printed.source`
+   names hold the printed letters, the positions of the accent and the helper, the scan and a
+   crop box, but no pointed form. So results.json carries MAM's form and the sentences only, and
+   results.html names each sentence's editions before it, as the decision page's example of 3A
+   did.
+3. **Stage 4.** The recount reproduces every census figure results.html states, both editions'
+   and MAM's by accent. With the 68 rows of `koren-printed-decalogue-join.jsonl` in place of
+   the primary join's 66 manuscript-tradition Decalogue rows, Koren has 25,671 readings: 25,586
+   with the same accent and helper, 26 with a helper in print only, 11 with one in MAM only, 4
+   with it on a different letter and 44 accent differences, with 4 grouping and 42 spelling
+   differences among the agreements. These are the figures Decision 1 derived. The two
+   traditions share 63 readings, as results.html says. The table by edition gained a Total row,
+   since the two editions' totals now differ.
+4. **Stage 3.** `stress_helper_comparison.py` renders both pages, from shared reading,
+   reference and difference cells. It checks that each census table's rows sum to its total,
+   that each edition's total is the table by accent's with the Decalogues of the tradition the
+   edition follows, that the grouping and spelling counts are those of the records, and that no
+   result repeats an index.html record. Besides the plan's two markup findings it puts the
+   pointed וְצָמִת of the Simanim Tanakh's note at Ruth 2:9 in `lang="hbo"`, and the strand
+   names of index.html's coverage paragraph in a `<bdi>`. `style.css` centers the tables, as
+   the common instruction body's "Tables" asks of authored pages, and styles the census tables
+   and the collapsed spelling table.
+5. **Stage 5.** gen-site wrote the same bytes with and without UTF-8 mode. The changed paths
+   are the expected ones, and gen-site's other outputs did not change. `git diff --check`,
+   Black, the focused tests (27 passed) and `py/check_all.py` passed, and a readback of the
+   generated results.html found its rows to be the lists above less Decision 1's three, every
+   MAM form byte for byte the old page's, and its census figures the recount's. The commit
+   message says which broad checks ran.
+
 ## Requirements ledger
 
 | Id | Requirement | Source | Status |
 | --- | --- | --- | --- |
-| R1 | results.html more like index.html in form | Ben, 2026-11-17 | active |
-| R2 | results.html shows only what index.html does not report | Ben, 2026-11-17 | active |
-| R3 | prepare for merging results.html into index.html in substance | Ben, 2026-11-17 | active |
+| R1 | results.html more like index.html in form | Ben, 2026-11-17 | implemented |
+| R2 | results.html shows only what index.html does not report | Ben, 2026-11-17 | implemented; the generator raises on a result that repeats an index.html record |
+| R3 | prepare for merging results.html into index.html in substance | Ben, 2026-11-17 | implemented as preparation: the results are records in index.html's shape; the merge itself is later work |
 | R4 | make the session's work portable to the computer with the census material | Ben, 2026-11-17 | implemented by this plan |
-| R5 | Decisions 1, 2, 4 and 5 | Ben, 2026-11-17 | decided; active |
-| R6 | Decision 3, between 3B and 3A | Ben, 2026-11-17 | decided by a rule that Stage 2 applies |
+| R5 | Decisions 1, 2, 4 and 5 | Ben, 2026-11-17 | implemented |
+| R6 | Decision 3, between 3B and 3A | Ben, 2026-11-17 | implemented: 3A, by the rule, as Stage 2 records |
 
 ## Prompt for the session on the other computer
 

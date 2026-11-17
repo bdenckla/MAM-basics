@@ -1,0 +1,1897 @@
+{
+  "intro": [
+    {
+      "text": "These results come from a census of five accents in prose verses: pashta, segolta, telisha gedolah, telisha qetanna, and zarqa. The printed editions are the Koren Classic Tanakh, Classic Edition, Large Size, and the Feldheim Simanim Tanakh, Elḥanan Yosef edition."
+    },
+    {
+      "text": "An atom is a written form bounded by spaces or maqaf. A chanted word is one atom or a whole maqaf compound. A stress helper indicates stress within the chanted word. A reading here is counted at the atom that bears the target accent. References use MAM verse numbers and, where useful, the atom's position within that verse."
+    },
+    {
+      "text": "The census uses the MAM-parsed plus text at commit eba06de1. It compares Koren with MAM’s printed-tradition Decalogues and the Simanim Tanakh with MAM’s manuscript-tradition ones, as the selected comparisons do. The two printed editions give טעם תחתון in their main text and טעם עליון in their appendices. MAM’s printed tradition has 68 readings with the five accents in the Decalogues, and its manuscript tradition has 66."
+    },
+    {
+      "text": "The selected comparisons, with the printed forms and scans, are on a separate page.",
+      "href": "index.html",
+      "label": "Selected comparisons"
+    }
+  ],
+  "census": {
+    "decalogue_readings": {
+      "manuscript": 66,
+      "printed": 68
+    },
+    "decalogue_tradition": {
+      "koren": "printed",
+      "simanim-tanakh": "manuscript"
+    },
+    "by_accent": {
+      "caption": "MAM’s readings by accent, with the manuscript-tradition Decalogues",
+      "rows": [
+        {
+          "accent": "pashta",
+          "with_helper": 3829,
+          "without_helper": 16825,
+          "total": 20654
+        },
+        {
+          "accent": "segolta",
+          "with_helper": 170,
+          "without_helper": 787,
+          "total": 957
+        },
+        {
+          "accent": "telisha gedolah",
+          "with_helper": 1003,
+          "without_helper": 200,
+          "total": 1203
+        },
+        {
+          "accent": "telisha qetanna",
+          "with_helper": 333,
+          "without_helper": 1534,
+          "total": 1867
+        },
+        {
+          "accent": "zarqa",
+          "with_helper": 180,
+          "without_helper": 808,
+          "total": 988
+        }
+      ],
+      "total": {
+        "with_helper": 5515,
+        "without_helper": 20154,
+        "total": 25669
+      }
+    },
+    "by_edition": {
+      "caption": "Results by edition",
+      "outcomes": [
+        {
+          "id": "same",
+          "label": "Same accent and helper",
+          "counts": {
+            "koren": 25586,
+            "simanim-tanakh": 25630
+          }
+        },
+        {
+          "id": "helper-in-print-only",
+          "label": "Helper in print only",
+          "counts": {
+            "koren": 26,
+            "simanim-tanakh": 27
+          }
+        },
+        {
+          "id": "helper-in-mam-only",
+          "label": "Helper in MAM only",
+          "counts": {
+            "koren": 11,
+            "simanim-tanakh": 4
+          }
+        },
+        {
+          "id": "helper-on-different-letter",
+          "label": "Helper on a different letter",
+          "counts": {
+            "koren": 4,
+            "simanim-tanakh": 2
+          }
+        },
+        {
+          "id": "different-accent",
+          "label": "Different accent",
+          "counts": {
+            "koren": 44,
+            "simanim-tanakh": 6
+          }
+        }
+      ],
+      "total": {
+        "koren": 25671,
+        "simanim-tanakh": 25669
+      },
+      "within_agreement": [
+        {
+          "id": "different-grouping",
+          "label": "Same target accent with a different grouping",
+          "counts": {
+            "koren": 4,
+            "simanim-tanakh": 0
+          }
+        },
+        {
+          "id": "different-spelling",
+          "label": "Spelling differs within the accent and helper agreements",
+          "counts": {
+            "koren": 42,
+            "simanim-tanakh": 6
+          }
+        }
+      ]
+    }
+  },
+  "findings": [
+    {
+      "text": "For segolta, telisha gedolah, telisha qetanna, and zarqa, each edition has 14 places with the same accent and an additional helper. At 1Sam 17:37, both editions have a zarqa helper on yod of וַיֹּאמֶר֮. At Ezek 13:19, both have a segolta helper on lamed of לֶחֶם֒."
+    },
+    {
+      "text": "The four Koren grouping differences in the table above are places where the target accent agrees. Three of them are in the Decalogues, at atom 12 of Exod 20:2, Exod 20:9 and Deut 5:6; there Koren agrees with MAM’s printed tradition in accent and helper at all 68 readings with the five accents. At Ezek 31:12, MAM has pashta on בְּכֹל֙ where Koren has a maqaf joining it to the following atom. This exchange counts once, under the accent differences."
+    },
+    {
+      "text": "At 20 lone-pashta locations, each edition has the primary MAM spelling and the MAM alternative has no corresponding accented form in that edition. At Dan 1:4, both editions have the alef in the primary MAM spelling, while MAM’s spelling alternative כׇּל־מוּם֩ has no separate accented form in either edition."
+    },
+    {
+      "text": "In the combined reading of Gen 35:22, both editions agree with MAM at all three eligible places. The chanted words are יִשְׂרָאֵל֙, וַיִּשְׁכַּ֕ב֙, and אֶת־בִּלְהָ֖ה֙."
+    }
+  ],
+  "spelling": {
+    "summary": "Spelling differences with agreement in accent and helper",
+    "intro": [
+      {
+        "text": "Ten of the 42 Koren spelling differences required alignment by letter. At Job 1:10, Koren has the ketiv letters with the qere’s pointing. Both MAM and Koren have the telisha gedolah helper on tav."
+      }
+    ]
+  },
+  "editions": {
+    "koren": {
+      "differences": [
+        {
+          "book": "Exodus",
+          "chapter": 20,
+          "verse": 2,
+          "atom": 12,
+          "strand": "elyon",
+          "mam": "יִהְיֶֽה־לְךָ֩",
+          "category": "different-grouping",
+          "notes": [
+            {
+              "text": "Munaḥ on the preceding atom and a space where MAM has maqaf. The target accent and helper agree."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/A2-Exodus.html#c20v2"
+        },
+        {
+          "book": "Exodus",
+          "chapter": 20,
+          "verse": 9,
+          "atom": 12,
+          "strand": "elyon",
+          "mam": "וּבִנְךָֽ־וּ֠בִתֶּ֠ךָ",
+          "category": "different-grouping",
+          "notes": [
+            {
+              "text": "Munaḥ on the preceding atom and a space where MAM has maqaf. The target accent and helper agree."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/A2-Exodus.html#c20v9"
+        },
+        {
+          "book": "Exodus",
+          "chapter": 27,
+          "verse": 16,
+          "atom": 14,
+          "mam": "עַמֻּֽדֵיהֶם֙",
+          "category": "different-accent",
+          "notes": [
+            {
+              "text": "Munaḥ on he where MAM has pashta."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/A2-Exodus.html#c27v16"
+        },
+        {
+          "book": "Numbers",
+          "chapter": 34,
+          "verse": 20,
+          "atom": 1,
+          "mam": "וּלְמַטֵּה֙",
+          "category": "different-accent",
+          "notes": [
+            {
+              "text": "Tipeḥa on tet where MAM has pashta."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/A4-Numbers.html#c34v20"
+        },
+        {
+          "book": "Deuter",
+          "chapter": 5,
+          "verse": 6,
+          "atom": 12,
+          "strand": "elyon",
+          "mam": "יִהְיֶֽה־לְךָ֩",
+          "category": "different-grouping",
+          "notes": [
+            {
+              "text": "Maqaf one atom earlier than in MAM, with a space before the target atom. The target accent and helper agree."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/A5-Deuter.html#c5v6"
+        },
+        {
+          "book": "Joshua",
+          "chapter": 1,
+          "verse": 11,
+          "atom": 15,
+          "mam": "אַתֶּם֙",
+          "category": "different-accent",
+          "notes": [
+            {
+              "text": "Mahapakh on tav where MAM has pashta."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/B1-Joshua.html#c1v11"
+        },
+        {
+          "book": "Joshua",
+          "chapter": 7,
+          "verse": 7,
+          "atom": 6,
+          "mam": "לָ֠מָה",
+          "category": "extra-helper",
+          "notes": [
+            {
+              "text": "A telisha gedolah helper on mem."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/B1-Joshua.html#c7v7"
+        },
+        {
+          "book": "Joshua",
+          "chapter": 8,
+          "verse": 2,
+          "atom": 6,
+          "mam": "לִּֽירִיחוֹ֙",
+          "category": "different-accent",
+          "notes": [
+            {
+              "text": "Munaḥ on ḥet where MAM has pashta."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/B1-Joshua.html#c8v2"
+        },
+        {
+          "book": "Joshua",
+          "chapter": 14,
+          "verse": 11,
+          "atom": 4,
+          "mam": "כַּֽאֲשֶׁר֙",
+          "category": "different-accent",
+          "notes": [
+            {
+              "text": "Telisha qetanna on resh where MAM has pashta."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/B1-Joshua.html#c14v11"
+        },
+        {
+          "book": "Joshua",
+          "chapter": 15,
+          "verse": 10,
+          "atom": 1,
+          "mam": "וְנָסַב֩",
+          "category": "different-accent",
+          "notes": [
+            {
+              "text": "Telisha gedolah on vav where MAM has telisha qetanna. The printed accent has a helper on samekh."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/B1-Joshua.html#c15v10"
+        },
+        {
+          "book": "1Samuel",
+          "chapter": 2,
+          "verse": 16,
+          "atom": 14,
+          "mam": "לֹא֙",
+          "category": "different-accent",
+          "notes": [
+            {
+              "text": "Zaqef on lamed where MAM has pashta."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/BA-1Samuel.html#c2v16"
+        },
+        {
+          "book": "1Samuel",
+          "chapter": 4,
+          "verse": 21,
+          "atom": 3,
+          "mam": "אִֽיכָבוֹד֙",
+          "category": "different-grouping",
+          "notes": [
+            {
+              "text": "Two chanted words, with mahapakh on the first and pashta on the second. MAM has one chanted word. The target accent and helper agree."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/BA-1Samuel.html#c4v21"
+        },
+        {
+          "book": "1Samuel",
+          "chapter": 17,
+          "verse": 37,
+          "atom": 1,
+          "mam": "וַיֹּאמֶר֮",
+          "category": "extra-helper",
+          "notes": [
+            {
+              "text": "A zarqa helper on yod."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/BA-1Samuel.html#c17v37"
+        },
+        {
+          "book": "1Samuel",
+          "chapter": 17,
+          "verse": 39,
+          "atom": 8,
+          "mam": "לָלֶכֶת֮",
+          "category": "extra-helper",
+          "notes": [
+            {
+              "text": "A zarqa helper on the second lamed."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/BA-1Samuel.html#c17v39"
+        },
+        {
+          "book": "1Samuel",
+          "chapter": 24,
+          "verse": 3,
+          "atom": 14,
+          "mam": "וְדָוִד֙",
+          "category": "different-accent",
+          "notes": [
+            {
+              "text": "Tevir on the second vav where MAM has pashta."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/BA-1Samuel.html#c24v3"
+        },
+        {
+          "book": "1Samuel",
+          "chapter": 26,
+          "verse": 15,
+          "atom": 1,
+          "mam": "וַיֹּאמֶר֩",
+          "category": "extra-helper",
+          "notes": [
+            {
+              "text": "A telisha qetanna helper on yod."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/BA-1Samuel.html#c26v15"
+        },
+        {
+          "book": "1Samuel",
+          "chapter": 29,
+          "verse": 4,
+          "atom": 12,
+          "mam": "וְיָשֹׁב֙",
+          "category": "different-accent",
+          "notes": [
+            {
+              "text": "Mahapakh on shin where MAM has pashta."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/BA-1Samuel.html#c29v4"
+        },
+        {
+          "book": "2Samuel",
+          "chapter": 11,
+          "verse": 15,
+          "atom": 8,
+          "mam": "אֶל־מוּל֙",
+          "category": "different-accent",
+          "notes": [
+            {
+              "text": "Qadma on mem where MAM has pashta."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/BB-2Samuel.html#c11v15"
+        },
+        {
+          "book": "2Samuel",
+          "chapter": 17,
+          "verse": 11,
+          "atom": 8,
+          "mam": "מִדָּן֙",
+          "category": "different-accent",
+          "notes": [
+            {
+              "text": "Munaḥ on dalet where MAM has pashta."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/BB-2Samuel.html#c17v11"
+        },
+        {
+          "book": "2Samuel",
+          "chapter": 19,
+          "verse": 31,
+          "atom": 9,
+          "mam": "אַ֠חֲרֵי",
+          "category": "extra-helper",
+          "notes": [
+            {
+              "text": "A telisha gedolah helper on resh."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/BB-2Samuel.html#c19v31"
+        },
+        {
+          "book": "1Kings",
+          "chapter": 18,
+          "verse": 36,
+          "atom": 9,
+          "mam": "אֱלֹהֵי֙",
+          "category": "different-accent",
+          "notes": [
+            {
+              "text": "Mahapakh on he where MAM has pashta."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/BC-1Kings.html#c18v36"
+        },
+        {
+          "book": "2Kings",
+          "chapter": 1,
+          "verse": 9,
+          "atom": 8,
+          "mam": "וְהִנֵּה֙",
+          "category": "different-accent",
+          "notes": [
+            {
+              "text": "Mahapakh on nun where MAM has pashta."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/BD-2Kings.html#c1v9"
+        },
+        {
+          "book": "2Kings",
+          "chapter": 5,
+          "verse": 8,
+          "atom": 12,
+          "mam": "וַיִּשְׁלַח֙",
+          "category": "different-accent",
+          "notes": [
+            {
+              "text": "Mahapakh on lamed where MAM has pashta."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/BD-2Kings.html#c5v8"
+        },
+        {
+          "book": "2Kings",
+          "chapter": 6,
+          "verse": 8,
+          "atom": 6,
+          "mam": "וַיִּוָּעַץ֙",
+          "category": "different-accent",
+          "notes": [
+            {
+              "text": "Mahapakh on ayin where MAM has pashta."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/BD-2Kings.html#c6v8"
+        },
+        {
+          "book": "2Kings",
+          "chapter": 9,
+          "verse": 36,
+          "atom": 1,
+          "mam": "וַיָּשֻׁבוּ֮",
+          "category": "extra-helper",
+          "notes": [
+            {
+              "text": "A zarqa helper on shin."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/BD-2Kings.html#c9v36"
+        },
+        {
+          "book": "Isaiah",
+          "chapter": 10,
+          "verse": 16,
+          "atom": 1,
+          "mam": "לָ֠כֵן",
+          "category": "extra-helper",
+          "notes": [
+            {
+              "text": "A telisha gedolah helper on kaf."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/C1-Isaiah.html#c10v16"
+        },
+        {
+          "book": "Isaiah",
+          "chapter": 39,
+          "verse": 2,
+          "atom": 9,
+          "mam": "אֶת־הַכֶּסֶף֩",
+          "category": "extra-helper",
+          "notes": [
+            {
+              "text": "A telisha qetanna helper on kaf."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/C1-Isaiah.html#c39v2"
+        },
+        {
+          "book": "Jeremiah",
+          "chapter": 21,
+          "verse": 10,
+          "atom": 3,
+          "mam": "פָ֠נַי",
+          "category": "extra-helper",
+          "notes": [
+            {
+              "text": "A telisha gedolah helper on nun."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/C2-Jeremiah.html#c21v10"
+        },
+        {
+          "book": "Jeremiah",
+          "chapter": 33,
+          "verse": 26,
+          "atom": 3,
+          "mam": "יַעֲקוֹב֩",
+          "category": "different-accent",
+          "notes": [
+            {
+              "text": "Telisha gedolah on yod where MAM has telisha qetanna. The printed accent has a helper on qof."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/C2-Jeremiah.html#c33v26"
+        },
+        {
+          "book": "Jeremiah",
+          "chapter": 40,
+          "verse": 15,
+          "atom": 6,
+          "mam": "אֶל־גְּדַלְיָהוּ֩",
+          "category": "extra-helper",
+          "notes": [
+            {
+              "text": "A telisha qetanna helper on yod."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/C2-Jeremiah.html#c40v15"
+        },
+        {
+          "book": "Jeremiah",
+          "chapter": 41,
+          "verse": 11,
+          "atom": 12,
+          "mam": "כׇּל־הָרָעָה֙",
+          "category": "different-accent",
+          "notes": [
+            {
+              "text": "Munaḥ on resh where MAM has pashta."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/C2-Jeremiah.html#c41v11"
+        },
+        {
+          "book": "Jeremiah",
+          "chapter": 43,
+          "verse": 1,
+          "atom": 1,
+          "mam": "וַיְהִי֩",
+          "category": "different-accent",
+          "notes": [
+            {
+              "text": "Telisha gedolah on vav where MAM has telisha qetanna. The printed accent has a helper on he."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/C2-Jeremiah.html#c43v1"
+        },
+        {
+          "book": "Jeremiah",
+          "chapter": 49,
+          "verse": 1,
+          "atom": 7,
+          "mam": "אֵין֙",
+          "category": "different-accent",
+          "notes": [
+            {
+              "text": "Munaḥ on alef where MAM has pashta."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/C2-Jeremiah.html#c49v1"
+        },
+        {
+          "book": "Ezekiel",
+          "chapter": 13,
+          "verse": 19,
+          "atom": 8,
+          "mam": "לֶחֶם֒",
+          "category": "extra-helper",
+          "notes": [
+            {
+              "text": "A segolta helper on lamed."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/C3-Ezekiel.html#c13v19"
+        },
+        {
+          "book": "Ezekiel",
+          "chapter": 14,
+          "verse": 16,
+          "atom": 3,
+          "mam": "הָאֵלֶּה֮",
+          "category": "extra-helper",
+          "notes": [
+            {
+              "text": "A zarqa helper on alef."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/C3-Ezekiel.html#c14v16"
+        },
+        {
+          "book": "Ezekiel",
+          "chapter": 16,
+          "verse": 61,
+          "atom": 4,
+          "mam": "וְנִכְלַמְתְּ֒",
+          "category": "extra-helper",
+          "notes": [
+            {
+              "text": "A segolta helper on lamed."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/C3-Ezekiel.html#c16v61"
+        },
+        {
+          "book": "Ezekiel",
+          "chapter": 17,
+          "verse": 16,
+          "atom": 8,
+          "mam": "בִּמְקוֹם֙",
+          "category": "different-accent",
+          "notes": [
+            {
+              "text": "Mahapakh on qof where MAM has pashta."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/C3-Ezekiel.html#c17v16"
+        },
+        {
+          "book": "Ezekiel",
+          "chapter": 18,
+          "verse": 2,
+          "atom": 3,
+          "mam": "אַתֶּם֙",
+          "category": "different-accent",
+          "notes": [
+            {
+              "text": "Mahapakh on tav where MAM has pashta."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/C3-Ezekiel.html#c18v2"
+        },
+        {
+          "book": "Ezekiel",
+          "chapter": 20,
+          "verse": 31,
+          "atom": 6,
+          "mam": "אַתֶּם֩",
+          "category": "different-accent",
+          "notes": [
+            {
+              "text": "Qadma on tav where MAM has telisha qetanna."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/C3-Ezekiel.html#c20v31"
+        },
+        {
+          "book": "Ezekiel",
+          "chapter": 27,
+          "verse": 20,
+          "atom": 1,
+          "mam": "דְּדָן֙",
+          "category": "different-accent",
+          "notes": [
+            {
+              "text": "Tipeḥa on the second dalet where MAM has pashta."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/C3-Ezekiel.html#c27v20"
+        },
+        {
+          "book": "Ezekiel",
+          "chapter": 31,
+          "verse": 12,
+          "atom": 14,
+          "mam": "בְּכֹל֙",
+          "category": "different-accent",
+          "notes": [
+            {
+              "text": "Maqaf to the following atom where MAM has pashta."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/C3-Ezekiel.html#c31v12"
+        },
+        {
+          "book": "Hosea",
+          "chapter": 8,
+          "verse": 5,
+          "atom": 1,
+          "mam": "זָנַח֙",
+          "category": "different-accent",
+          "notes": [
+            {
+              "text": "Mahapakh on nun where MAM has pashta."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/CA-Hosea.html#c8v5"
+        },
+        {
+          "book": "Amos",
+          "chapter": 6,
+          "verse": 10,
+          "atom": 7,
+          "mam": "מִן־הַבַּיִת֒",
+          "category": "extra-helper",
+          "notes": [
+            {
+              "text": "A segolta helper on bet."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/CC-Amos.html#c6v10"
+        },
+        {
+          "book": "Esther",
+          "chapter": 4,
+          "verse": 10,
+          "atom": 2,
+          "mam": "אֶסְתֵּר֙",
+          "category": "different-accent",
+          "notes": [
+            {
+              "text": "Tipeḥa on tav where MAM has pashta."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/E5-Esther.html#c4v10"
+        },
+        {
+          "book": "Daniel",
+          "chapter": 2,
+          "verse": 43,
+          "atom": 3,
+          "mam": "פַּרְזְלָא֙",
+          "category": "different-accent",
+          "notes": [
+            {
+              "text": "Mahapakh on lamed where MAM has pashta."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/F1-Daniel.html#c2v43"
+        },
+        {
+          "book": "Nehemiah",
+          "chapter": 9,
+          "verse": 35,
+          "atom": 2,
+          "mam": "בְּמַלְכוּתָם֩",
+          "category": "different-accent",
+          "notes": [
+            {
+              "text": "Telisha gedolah on bet where MAM has telisha qetanna. The printed accent has a helper on tav."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/FB-Nehemiah.html#c9v35"
+        },
+        {
+          "book": "Nehemiah",
+          "chapter": 12,
+          "verse": 11,
+          "atom": 1,
+          "mam": "וְיוֹיָדָע֙",
+          "category": "different-accent",
+          "notes": [
+            {
+              "text": "Tipeḥa on tav where MAM has pashta. The spelling differs as well."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/FB-Nehemiah.html#c12v11"
+        },
+        {
+          "book": "1Chronicles",
+          "chapter": 22,
+          "verse": 14,
+          "atom": 22,
+          "mam": "וַֽאֲבָנִים֙",
+          "category": "different-accent",
+          "notes": [
+            {
+              "text": "Merkha on nun where MAM has pashta."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/FC-1Chronicles.html#c22v14"
+        },
+        {
+          "book": "1Chronicles",
+          "chapter": 24,
+          "verse": 26,
+          "atom": 2,
+          "mam": "מְרָרִי֙",
+          "category": "different-accent",
+          "notes": [
+            {
+              "text": "Tipeḥa on the second resh where MAM has pashta."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/FC-1Chronicles.html#c24v26"
+        },
+        {
+          "book": "2Chronicles",
+          "chapter": 2,
+          "verse": 9,
+          "atom": 17,
+          "mam": "בַּתִּים֙",
+          "category": "different-accent",
+          "notes": [
+            {
+              "text": "Tipeḥa on tav where MAM has pashta."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/FD-2Chronicles.html#c2v9"
+        },
+        {
+          "book": "2Chronicles",
+          "chapter": 8,
+          "verse": 3,
+          "atom": 2,
+          "mam": "שְׁלֹמֹה֙",
+          "category": "different-accent",
+          "notes": [
+            {
+              "text": "Tipeḥa on mem where MAM has pashta."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/FD-2Chronicles.html#c8v3"
+        },
+        {
+          "book": "2Chronicles",
+          "chapter": 8,
+          "verse": 6,
+          "atom": 22,
+          "mam": "חָשַׁק֙",
+          "category": "different-accent",
+          "notes": [
+            {
+              "text": "Geresh on shin where MAM has pashta."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/FD-2Chronicles.html#c8v6"
+        },
+        {
+          "book": "2Chronicles",
+          "chapter": 24,
+          "verse": 20,
+          "atom": 3,
+          "mam": "לָֽבְשָׁה֙",
+          "category": "different-accent",
+          "notes": [
+            {
+              "text": "Mahapakh on shin where MAM has pashta."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/FD-2Chronicles.html#c24v20"
+        },
+        {
+          "book": "2Chronicles",
+          "chapter": 29,
+          "verse": 31,
+          "atom": 4,
+          "mam": "עַתָּה֙",
+          "category": "different-accent",
+          "notes": [
+            {
+              "text": "Qadma on tav where MAM has pashta."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/FD-2Chronicles.html#c29v31"
+        },
+        {
+          "book": "2Chronicles",
+          "chapter": 30,
+          "verse": 6,
+          "atom": 18,
+          "mam": "אֱלֹהֵי֙",
+          "category": "different-accent",
+          "notes": [
+            {
+              "text": "Mahapakh on he where MAM has pashta."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/FD-2Chronicles.html#c30v6"
+        }
+      ],
+      "spelling": [
+        {
+          "book": "Genesis",
+          "chapter": 7,
+          "verse": 11,
+          "atom": 17,
+          "mam": "כׇּֽל־מַעְיְנֹת֙",
+          "category": "different-spelling",
+          "notes": [
+            {
+              "text": "The compared marks agree."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/A1-Genesis.html#c7v11"
+        },
+        {
+          "book": "Genesis",
+          "chapter": 9,
+          "verse": 29,
+          "atom": 1,
+          "mam": "וַיִּֽהְיוּ֙",
+          "category": "different-spelling",
+          "notes": [
+            {
+              "text": "The compared marks agree."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/A1-Genesis.html#c9v29"
+        },
+        {
+          "book": "Deuter",
+          "chapter": 4,
+          "verse": 21,
+          "atom": 12,
+          "mam": "וּלְבִלְתִּי־בֹא֙",
+          "category": "different-spelling",
+          "notes": [
+            {
+              "text": "The compared marks agree."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/A5-Deuter.html#c4v21"
+        },
+        {
+          "book": "Joshua",
+          "chapter": 6,
+          "verse": 5,
+          "atom": 5,
+          "mam": "כְּשׇׁמְעֲכֶם֙",
+          "category": "different-spelling",
+          "notes": [
+            {
+              "text": "The compared marks agree."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/B1-Joshua.html#c6v5"
+        },
+        {
+          "book": "Joshua",
+          "chapter": 9,
+          "verse": 5,
+          "atom": 3,
+          "mam": "וּמְטֻלָּאוֹת֙",
+          "category": "different-spelling",
+          "notes": [
+            {
+              "text": "The compared marks agree."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/B1-Joshua.html#c9v5"
+        },
+        {
+          "book": "Joshua",
+          "chapter": 13,
+          "verse": 17,
+          "atom": 6,
+          "mam": "דִּיבֹן֙",
+          "category": "different-spelling",
+          "notes": [
+            {
+              "text": "The compared marks agree."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/B1-Joshua.html#c13v17"
+        },
+        {
+          "book": "Joshua",
+          "chapter": 14,
+          "verse": 7,
+          "atom": 16,
+          "mam": "אֹתוֹ֙",
+          "category": "different-spelling",
+          "notes": [
+            {
+              "text": "The compared marks agree."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/B1-Joshua.html#c14v7"
+        },
+        {
+          "book": "Joshua",
+          "chapter": 22,
+          "verse": 19,
+          "atom": 22,
+          "mam": "וְאֹתָ֙נוּ֙",
+          "category": "different-spelling",
+          "notes": [
+            {
+              "text": "The compared marks agree after alignment by letter."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/B1-Joshua.html#c22v19"
+        },
+        {
+          "book": "Joshua",
+          "chapter": 24,
+          "verse": 3,
+          "atom": 13,
+          "mam": "וָֽאַרְבֶּה֙",
+          "category": "different-spelling",
+          "notes": [
+            {
+              "text": "The compared marks agree."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/B1-Joshua.html#c24v3"
+        },
+        {
+          "book": "Joshua",
+          "chapter": 24,
+          "verse": 30,
+          "atom": 2,
+          "mam": "אֹתוֹ֙",
+          "category": "different-spelling",
+          "notes": [
+            {
+              "text": "The compared marks agree."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/B1-Joshua.html#c24v30"
+        },
+        {
+          "book": "Judges",
+          "chapter": 2,
+          "verse": 2,
+          "atom": 5,
+          "mam": "לְיֽוֹשְׁבֵי֙",
+          "category": "different-spelling",
+          "notes": [
+            {
+              "text": "The compared marks agree."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/B2-Judges.html#c2v2"
+        },
+        {
+          "book": "Judges",
+          "chapter": 14,
+          "verse": 16,
+          "atom": 11,
+          "mam": "חַ֙דְתָּ֙",
+          "category": "different-spelling",
+          "notes": [
+            {
+              "text": "The compared marks agree after alignment by letter."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/B2-Judges.html#c14v16"
+        },
+        {
+          "book": "1Samuel",
+          "chapter": 2,
+          "verse": 22,
+          "atom": 14,
+          "mam": "אֲשֶֽׁר־יִשְׁכְּבוּן֙",
+          "category": "different-spelling",
+          "notes": [
+            {
+              "text": "The compared marks agree."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/BA-1Samuel.html#c2v22"
+        },
+        {
+          "book": "1Samuel",
+          "chapter": 12,
+          "verse": 8,
+          "atom": 6,
+          "mam": "אֲבֽוֹתֵיכֶם֙",
+          "category": "different-spelling",
+          "notes": [
+            {
+              "text": "The compared marks agree."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/BA-1Samuel.html#c12v8"
+        },
+        {
+          "book": "1Samuel",
+          "chapter": 12,
+          "verse": 8,
+          "atom": 17,
+          "mam": "אֶת־אֲבֹֽתֵיכֶם֙",
+          "category": "different-spelling",
+          "notes": [
+            {
+              "text": "The compared marks agree."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/BA-1Samuel.html#c12v8"
+        },
+        {
+          "book": "1Samuel",
+          "chapter": 13,
+          "verse": 21,
+          "atom": 4,
+          "mam": "לַמַּֽחֲרֵשֹׁת֙",
+          "category": "different-spelling",
+          "notes": [
+            {
+              "text": "The compared marks agree."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/BA-1Samuel.html#c13v21"
+        },
+        {
+          "book": "1Samuel",
+          "chapter": 24,
+          "verse": 18,
+          "atom": 1,
+          "mam": "וְאַתָּה֙",
+          "category": "different-spelling",
+          "notes": [
+            {
+              "text": "The compared marks agree."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/BA-1Samuel.html#c24v18"
+        },
+        {
+          "book": "2Kings",
+          "chapter": 15,
+          "verse": 25,
+          "atom": 11,
+          "mam": "בֵּית־הַמֶּ֙לֶךְ֙",
+          "category": "different-spelling",
+          "notes": [
+            {
+              "text": "The compared marks agree after alignment by letter."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/BD-2Kings.html#c15v25"
+        },
+        {
+          "book": "2Kings",
+          "chapter": 16,
+          "verse": 6,
+          "atom": 14,
+          "mam": "וַֽאֲדֹמִים֙",
+          "category": "different-spelling",
+          "notes": [
+            {
+              "text": "The compared marks agree."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/BD-2Kings.html#c16v6"
+        },
+        {
+          "book": "Isaiah",
+          "chapter": 2,
+          "verse": 3,
+          "atom": 14,
+          "mam": "וְיֹרֵ֙נוּ֙",
+          "category": "different-spelling",
+          "notes": [
+            {
+              "text": "The compared marks agree after alignment by letter."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/C1-Isaiah.html#c2v3"
+        },
+        {
+          "book": "Isaiah",
+          "chapter": 3,
+          "verse": 16,
+          "atom": 14,
+          "mam": "וְטָפֹף֙",
+          "category": "different-spelling",
+          "notes": [
+            {
+              "text": "The compared marks agree."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/C1-Isaiah.html#c3v16"
+        },
+        {
+          "book": "Isaiah",
+          "chapter": 3,
+          "verse": 23,
+          "atom": 1,
+          "mam": "וְהַגִּלְיֹנִים֙",
+          "category": "different-spelling",
+          "notes": [
+            {
+              "text": "The compared marks agree."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/C1-Isaiah.html#c3v23"
+        },
+        {
+          "book": "Isaiah",
+          "chapter": 17,
+          "verse": 6,
+          "atom": 3,
+          "mam": "עֽוֹלֵלֹת֙",
+          "category": "different-spelling",
+          "notes": [
+            {
+              "text": "The compared marks agree."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/C1-Isaiah.html#c17v6"
+        },
+        {
+          "book": "Isaiah",
+          "chapter": 28,
+          "verse": 15,
+          "atom": 14,
+          "mam": "כִּי־יַֽעֲבֹר֙",
+          "category": "different-spelling",
+          "notes": [
+            {
+              "text": "The compared marks agree."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/C1-Isaiah.html#c28v15"
+        },
+        {
+          "book": "Isaiah",
+          "chapter": 47,
+          "verse": 13,
+          "atom": 11,
+          "mam": "מֽוֹדִעִים֙",
+          "category": "different-spelling",
+          "notes": [
+            {
+              "text": "The compared marks agree."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/C1-Isaiah.html#c47v13"
+        },
+        {
+          "book": "Isaiah",
+          "chapter": 62,
+          "verse": 6,
+          "atom": 13,
+          "mam": "הַמַּזְכִּרִים֙",
+          "category": "different-spelling",
+          "notes": [
+            {
+              "text": "The compared marks agree."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/C1-Isaiah.html#c62v6"
+        },
+        {
+          "book": "Isaiah",
+          "chapter": 65,
+          "verse": 23,
+          "atom": 2,
+          "mam": "יִֽיגְעוּ֙",
+          "category": "different-spelling",
+          "notes": [
+            {
+              "text": "The compared marks agree."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/C1-Isaiah.html#c65v23"
+        },
+        {
+          "book": "Jeremiah",
+          "chapter": 17,
+          "verse": 8,
+          "atom": 11,
+          "mam": "יִרְאֶה֙",
+          "category": "different-spelling",
+          "notes": [
+            {
+              "text": "The compared marks agree."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/C2-Jeremiah.html#c17v8"
+        },
+        {
+          "book": "Ezekiel",
+          "chapter": 14,
+          "verse": 8,
+          "atom": 5,
+          "mam": "וַהֲשִׂמֹתִ֙יהוּ֙",
+          "category": "different-spelling",
+          "notes": [
+            {
+              "text": "The compared marks agree after alignment by letter."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/C3-Ezekiel.html#c14v8"
+        },
+        {
+          "book": "Ezekiel",
+          "chapter": 16,
+          "verse": 22,
+          "atom": 3,
+          "mam": "כׇּל־תּוֹעֲבֹתַ֙יִךְ֙",
+          "category": "different-spelling",
+          "notes": [
+            {
+              "text": "The compared marks agree after alignment by letter."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/C3-Ezekiel.html#c16v22"
+        },
+        {
+          "book": "Ezekiel",
+          "chapter": 27,
+          "verse": 13,
+          "atom": 2,
+          "mam": "תֻּבַל֙",
+          "category": "different-spelling",
+          "notes": [
+            {
+              "text": "The compared marks agree."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/C3-Ezekiel.html#c27v13"
+        },
+        {
+          "book": "Ezekiel",
+          "chapter": 44,
+          "verse": 30,
+          "atom": 13,
+          "mam": "עֲרִסֽוֹתֵיכֶם֙",
+          "category": "different-spelling",
+          "notes": [
+            {
+              "text": "The compared marks agree."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/C3-Ezekiel.html#c44v30"
+        },
+        {
+          "book": "Zechariah",
+          "chapter": 5,
+          "verse": 9,
+          "atom": 14,
+          "mam": "וַתִּשֶּׂ֙אנָה֙",
+          "category": "different-spelling",
+          "notes": [
+            {
+              "text": "The compared marks agree after alignment by letter."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/CK-Zechariah.html#c5v9"
+        },
+        {
+          "book": "Job",
+          "chapter": 1,
+          "verse": 10,
+          "atom": 2,
+          "mam": "הֲלֹֽא־אַ֠תָּ֠ה",
+          "category": "different-spelling",
+          "notes": [
+            {
+              "text": "The compared marks agree after alignment by letter."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/D3-Job.html#c1v10"
+        },
+        {
+          "book": "Song of Songs",
+          "chapter": 1,
+          "verse": 6,
+          "atom": 2,
+          "mam": "אַל־תִּרְא֙וּנִי֙",
+          "category": "different-spelling",
+          "notes": [
+            {
+              "text": "The compared marks agree after alignment by letter."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/E1-Song%20of%20Songs.html#c1v6"
+        },
+        {
+          "book": "Ruth",
+          "chapter": 4,
+          "verse": 4,
+          "atom": 20,
+          "mam": "וְאֵֽדְעָה֙",
+          "category": "different-spelling",
+          "notes": [
+            {
+              "text": "The compared marks agree."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/E2-Ruth.html#c4v4"
+        },
+        {
+          "book": "Daniel",
+          "chapter": 2,
+          "verse": 33,
+          "atom": 5,
+          "mam": "מִנְּהֵין֙",
+          "category": "different-spelling",
+          "notes": [
+            {
+              "text": "The compared marks agree."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/F1-Daniel.html#c2v33"
+        },
+        {
+          "book": "Ezra",
+          "chapter": 7,
+          "verse": 25,
+          "atom": 12,
+          "mam": "דָּאיְנִין֙",
+          "category": "different-spelling",
+          "notes": [
+            {
+              "text": "The compared marks agree."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/FA-Ezra.html#c7v25"
+        },
+        {
+          "book": "Nehemiah",
+          "chapter": 9,
+          "verse": 37,
+          "atom": 9,
+          "mam": "גְּ֠וִיֹּתֵ֠ינוּ",
+          "category": "different-spelling",
+          "notes": [
+            {
+              "text": "The compared marks agree after alignment by letter."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/FB-Nehemiah.html#c9v37"
+        },
+        {
+          "book": "Nehemiah",
+          "chapter": 12,
+          "verse": 46,
+          "atom": 6,
+          "mam": "רָאשֵׁי֙",
+          "category": "different-spelling",
+          "notes": [
+            {
+              "text": "The compared marks agree."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/FB-Nehemiah.html#c12v46"
+        },
+        {
+          "book": "1Chronicles",
+          "chapter": 2,
+          "verse": 55,
+          "atom": 2,
+          "mam": "סֹֽפְרִים֙",
+          "category": "different-spelling",
+          "notes": [
+            {
+              "text": "The compared marks agree."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/FC-1Chronicles.html#c2v55"
+        },
+        {
+          "book": "1Chronicles",
+          "chapter": 6,
+          "verse": 43,
+          "atom": 2,
+          "mam": "וְאֶת־חִילֵז֙",
+          "category": "different-spelling",
+          "notes": [
+            {
+              "text": "The compared marks agree."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/FC-1Chronicles.html#c6v43"
+        }
+      ]
+    },
+    "simanim-tanakh": {
+      "differences": [
+        {
+          "book": "Numbers",
+          "chapter": 34,
+          "verse": 20,
+          "atom": 1,
+          "mam": "וּלְמַטֵּה֙",
+          "category": "different-accent",
+          "notes": [
+            {
+              "text": "Tipeḥa on tet where MAM has pashta."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/A4-Numbers.html#c34v20"
+        },
+        {
+          "book": "Deuter",
+          "chapter": 5,
+          "verse": 13,
+          "atom": 1,
+          "strand": "taxton",
+          "mam": "וְיוֹם֙",
+          "category": "different-accent",
+          "notes": [
+            {
+              "text": "Qadma on yod where MAM has pashta."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/A5-Deuter.html#c5v13"
+        },
+        {
+          "book": "Joshua",
+          "chapter": 7,
+          "verse": 7,
+          "atom": 6,
+          "mam": "לָ֠מָה",
+          "category": "extra-helper",
+          "notes": [
+            {
+              "text": "A telisha gedolah helper on mem."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/B1-Joshua.html#c7v7"
+        },
+        {
+          "book": "Judges",
+          "chapter": 21,
+          "verse": 16,
+          "atom": 1,
+          "mam": "וַיֹּֽאמְרוּ֙",
+          "category": "different-accent",
+          "notes": [
+            {
+              "text": "Qadma on resh where MAM has pashta."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/B2-Judges.html#c21v16"
+        },
+        {
+          "book": "1Samuel",
+          "chapter": 17,
+          "verse": 37,
+          "atom": 1,
+          "mam": "וַיֹּאמֶר֮",
+          "category": "extra-helper",
+          "notes": [
+            {
+              "text": "A zarqa helper on yod."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/BA-1Samuel.html#c17v37"
+        },
+        {
+          "book": "1Samuel",
+          "chapter": 17,
+          "verse": 39,
+          "atom": 8,
+          "mam": "לָלֶכֶת֮",
+          "category": "extra-helper",
+          "notes": [
+            {
+              "text": "A zarqa helper on the second lamed."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/BA-1Samuel.html#c17v39"
+        },
+        {
+          "book": "1Samuel",
+          "chapter": 26,
+          "verse": 15,
+          "atom": 1,
+          "mam": "וַיֹּאמֶר֩",
+          "category": "extra-helper",
+          "notes": [
+            {
+              "text": "A telisha qetanna helper on yod."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/BA-1Samuel.html#c26v15"
+        },
+        {
+          "book": "2Samuel",
+          "chapter": 19,
+          "verse": 31,
+          "atom": 9,
+          "mam": "אַ֠חֲרֵי",
+          "category": "extra-helper",
+          "notes": [
+            {
+              "text": "A telisha gedolah helper on resh."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/BB-2Samuel.html#c19v31"
+        },
+        {
+          "book": "2Kings",
+          "chapter": 9,
+          "verse": 36,
+          "atom": 1,
+          "mam": "וַיָּשֻׁבוּ֮",
+          "category": "extra-helper",
+          "notes": [
+            {
+              "text": "A zarqa helper on shin."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/BD-2Kings.html#c9v36"
+        },
+        {
+          "book": "Isaiah",
+          "chapter": 10,
+          "verse": 16,
+          "atom": 1,
+          "mam": "לָ֠כֵן",
+          "category": "extra-helper",
+          "notes": [
+            {
+              "text": "A telisha gedolah helper on kaf."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/C1-Isaiah.html#c10v16"
+        },
+        {
+          "book": "Isaiah",
+          "chapter": 39,
+          "verse": 2,
+          "atom": 9,
+          "mam": "אֶת־הַכֶּסֶף֩",
+          "category": "extra-helper",
+          "notes": [
+            {
+              "text": "A telisha qetanna helper on kaf."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/C1-Isaiah.html#c39v2"
+        },
+        {
+          "book": "Jeremiah",
+          "chapter": 21,
+          "verse": 10,
+          "atom": 3,
+          "mam": "פָ֠נַי",
+          "category": "extra-helper",
+          "notes": [
+            {
+              "text": "A telisha gedolah helper on nun."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/C2-Jeremiah.html#c21v10"
+        },
+        {
+          "book": "Jeremiah",
+          "chapter": 33,
+          "verse": 26,
+          "atom": 3,
+          "mam": "יַעֲקוֹב֩",
+          "category": "different-accent",
+          "notes": [
+            {
+              "text": "Telisha gedolah on yod where MAM has telisha qetanna. The printed accent has a helper on qof."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/C2-Jeremiah.html#c33v26"
+        },
+        {
+          "book": "Jeremiah",
+          "chapter": 40,
+          "verse": 15,
+          "atom": 6,
+          "mam": "אֶל־גְּדַלְיָהוּ֩",
+          "category": "extra-helper",
+          "notes": [
+            {
+              "text": "A telisha qetanna helper on yod."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/C2-Jeremiah.html#c40v15"
+        },
+        {
+          "book": "Ezekiel",
+          "chapter": 13,
+          "verse": 19,
+          "atom": 8,
+          "mam": "לֶחֶם֒",
+          "category": "extra-helper",
+          "notes": [
+            {
+              "text": "A segolta helper on lamed."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/C3-Ezekiel.html#c13v19"
+        },
+        {
+          "book": "Ezekiel",
+          "chapter": 14,
+          "verse": 16,
+          "atom": 3,
+          "mam": "הָאֵלֶּה֮",
+          "category": "extra-helper",
+          "notes": [
+            {
+              "text": "A zarqa helper on alef."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/C3-Ezekiel.html#c14v16"
+        },
+        {
+          "book": "Ezekiel",
+          "chapter": 16,
+          "verse": 61,
+          "atom": 4,
+          "mam": "וְנִכְלַמְתְּ֒",
+          "category": "extra-helper",
+          "notes": [
+            {
+              "text": "A segolta helper on lamed."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/C3-Ezekiel.html#c16v61"
+        },
+        {
+          "book": "Amos",
+          "chapter": 6,
+          "verse": 10,
+          "atom": 7,
+          "mam": "מִן־הַבַּיִת֒",
+          "category": "extra-helper",
+          "notes": [
+            {
+              "text": "A segolta helper on bet."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/CC-Amos.html#c6v10"
+        },
+        {
+          "book": "Nehemiah",
+          "chapter": 9,
+          "verse": 35,
+          "atom": 2,
+          "mam": "בְּמַלְכוּתָם֩",
+          "category": "different-accent",
+          "notes": [
+            {
+              "text": "Telisha gedolah on bet where MAM has telisha qetanna. The printed accent has a helper on tav."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/FB-Nehemiah.html#c9v35"
+        },
+        {
+          "book": "2Chronicles",
+          "chapter": 29,
+          "verse": 31,
+          "atom": 4,
+          "mam": "עַתָּה֙",
+          "category": "different-accent",
+          "notes": [
+            {
+              "text": "Qadma on tav where MAM has pashta."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/FD-2Chronicles.html#c29v31"
+        }
+      ],
+      "spelling": [
+        {
+          "book": "Genesis",
+          "chapter": 7,
+          "verse": 11,
+          "atom": 17,
+          "mam": "כׇּֽל־מַעְיְנֹת֙",
+          "category": "different-spelling",
+          "notes": [
+            {
+              "text": "The compared marks agree."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/A1-Genesis.html#c7v11"
+        },
+        {
+          "book": "Genesis",
+          "chapter": 9,
+          "verse": 29,
+          "atom": 1,
+          "mam": "וַיִּֽהְיוּ֙",
+          "category": "different-spelling",
+          "notes": [
+            {
+              "text": "The compared marks agree."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/A1-Genesis.html#c9v29"
+        },
+        {
+          "book": "1Samuel",
+          "chapter": 24,
+          "verse": 18,
+          "atom": 1,
+          "mam": "וְאַתָּה֙",
+          "category": "different-spelling",
+          "notes": [
+            {
+              "text": "The compared marks agree."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/BA-1Samuel.html#c24v18"
+        },
+        {
+          "book": "Daniel",
+          "chapter": 2,
+          "verse": 33,
+          "atom": 5,
+          "mam": "מִנְּהֵין֙",
+          "category": "different-spelling",
+          "notes": [
+            {
+              "text": "The compared marks agree."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/F1-Daniel.html#c2v33"
+        },
+        {
+          "book": "Ezra",
+          "chapter": 7,
+          "verse": 25,
+          "atom": 12,
+          "mam": "דָּאיְנִין֙",
+          "category": "different-spelling",
+          "notes": [
+            {
+              "text": "The compared marks agree."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/FA-Ezra.html#c7v25"
+        },
+        {
+          "book": "Nehemiah",
+          "chapter": 1,
+          "verse": 9,
+          "atom": 14,
+          "mam": "וַהֲבִֽיאוֹתִים֙",
+          "category": "different-spelling",
+          "notes": [
+            {
+              "text": "The compared marks agree."
+            }
+          ],
+          "verse_href": "../MAM-with-doc/FB-Nehemiah.html#c1v9"
+        }
+      ]
+    }
+  }
+}

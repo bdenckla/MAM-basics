@@ -11,14 +11,17 @@ document.querySelector("#size-reset").addEventListener("click", () => {
 });
 applySize();
 
+// results.html has no crops, and so no button.
 const toggle = document.querySelector("#toggle-images");
-const crops = document.querySelectorAll("#observations .scan");
-toggle.addEventListener("click", () => {
-    const show = toggle.getAttribute("aria-expanded") === "false";
-    for (const cell of crops) cell.hidden = !show;
-    toggle.textContent = show ? "Hide images" : "Show images";
-    toggle.setAttribute("aria-expanded", show);
-});
+if (toggle) {
+    const crops = document.querySelectorAll("#observations .scan");
+    toggle.addEventListener("click", () => {
+        const show = toggle.getAttribute("aria-expanded") === "false";
+        for (const cell of crops) cell.hidden = !show;
+        toggle.textContent = show ? "Hide images" : "Show images";
+        toggle.setAttribute("aria-expanded", show);
+    });
+}
 
 const input = document.querySelector("#find");
 const menu = document.querySelector("#filter");
