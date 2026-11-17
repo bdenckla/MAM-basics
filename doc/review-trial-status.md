@@ -9,6 +9,12 @@ session confirmed enabled hourly new-main screening from October 16 at 13:00 and
 checks around 02:00 from October 17, America/New_York, with no end date. Scheduling remains
 with that session; this run created no automation.
 
+## Bounded connector screen, 2026-11-17, 3691d51b
+
+Screened `9fc669d3a84e206f0f95b306d3412cda76d1222f` -> `3691d51b619e47c003c671a0ec9cd8efe3c46706`: one commit / one path, eleven added lines in `doc/PLAN-miqra-mevoar.md`. The complete endpoint patch records a draft email and its local artifacts; it explicitly says the draft is for Ben to send, not that it was sent. No executable, data, generated product, Hebrew text or issue citation changed. No consequential introduced defect or repair established; deeper runtime checks are unwarranted for this record-only interval. Draft existence/content, prior live saves and their provenance remain owner-attributed, not independently inspected.
+
+GitHub connector reads only; no executor, tests, generator, browser, email or live bot action ran. The coordinator knew of no concurrent receipt writer; the parent receipt tip was rechecked unchanged immediately before creating this isolated branch. No checkout or expensive-job ownership was taken, and cross-machine activity was not verified. Receipt parent `e8b47881f7419bd9011e2f2ff947fdc25540f6b5` and all previous status text are preserved. Overall reviewed-through remains `210affe3ac2931473bead0de839be0de08309e3d`; last broad-tested remains `9fc669d3a84e206f0f95b306d3412cda76d1222f`. Every earlier gap and limitation remains. The parent has only the manual-dispatch Pages workflow and no open PR; this fresh isolated receipt branch performs no main/shared integration, deployment, dispatch, font or schedule action.
+
 ## Continuing nightly broad checks, 2026-11-17 (UTC)
 
 Actual portable broad coverage adds `9fc669d3a84e206f0f95b306d3412cda76d1222f` against separate pristine required input `3cfacbc28ad75e2939613ab796a90d40a40181c5`: 67 maintained mega steps, exit 0 (522.620330 s); full suite 1497 passed, 5 skipped in 632.53s (0:10:32), exit 0 (636.427085 s wall). Taamey D 61 PASS / 0 FAIL / 0 SKIP; nine-file release check passes, corpus read-only REFRESH PENDING. Eight independently explained platform SVG differences are preserved/restored; every other tracked output is exact. Scoped HTML exits 1 with the same four historical orphan crops as November 15, retained pending rather than called passing. No new defect or repair established.
