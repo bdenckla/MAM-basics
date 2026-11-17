@@ -1,68 +1,46 @@
 ---
 name: commander-session
-description: Act as, start, resume or replace the commander, the one long-lived Claude desktop session that runs Ben's tasks in child sessions, places each in one of Claude's clones, gives each clone one writer at a time and tracks the work to its end. Claude desktop app only.
-when_to_use: When Ben asks to start, restart or replace a commander, or types /commander-session; in a session that is the commander, including after a clear or a compaction. Not for a child session that only reports to a commander, even though its brief mentions the commander.
-argument-hint: "[start|resume|succeed]"
+description: Act as, start, resume or replace Ben's commander in Claude desktop or Codex desktop, coordinating assigned work, clone ownership, progress and restarts. Use in the commander itself, including after compaction; not in a child that merely reports to a commander.
 ---
 
 # Commander session
 
-Ben, 2026-10-29: "What I really want is one 'commander' session in which *you* claude manage all
-these issues." This skill is Claude's procedure for that session, the **commander**.
+The **commander** coordinates Ben's tasks and delegates execution. This skill has one canonical
+copy, `MAM-basics/dot-claude/skills/commander-session/`, shared through
+`dot-claude/shared-skills.txt`; the deployment procedure is in `dot-claude/README.md`.
 
-## What the commander is
+## Choose the runtime
 
-- **One long-lived session,** pinned in the sidebar, working in `$HOME/GitRepos/MAM-basics` in
-  auto permission mode. Each task Ben gives it runs in a subagent or in a session that the
-  commander starts, briefs, places, tracks and closes: its **child**, local or in the cloud.
-- **Its only writes** go to its scratchpad and to the state folder. A script worth keeping goes
-  into the state folder's `tools/`, since the scratchpad may be cleared.
-- **It never** edits, stages, commits, regenerates or pushes in any clone; stops a child's turn;
-  archives a session Ben has not asked to archive; dispatches Pages, which Ben does; or prints or
-  writes a link Ben keeps private, naming instead the file that holds it.
-- **Ben tells the commander of any session he starts himself** in GitRepos or GitRepos2, since the
-  app shows a session's folder but not its intent.
-- **Ben answers each child directly.** The commander neither asks nor relays a child's substantive
-  question; Ben, 2026-10-30: "that's the job of the session in question (these are not
-  session-management questions, which would be your job)". The commander asks Ben only what needs
-  his authority: an archive, a start of work he has not asked for, or a follow-up needing another
-  session or clone. Where work runs is the commander's call, never part of a question to Ben.
+Read only the adapter for the runtime actually running this conversation:
 
-## Entry steps
+- **Claude desktop:** [references/claude-desktop.md](references/claude-desktop.md). Invoke with
+  `/commander-session`, optionally followed by `start`, `resume` or `succeed`. The invocation
+  argument is "$ARGUMENTS"; the Claude adapter uses that expanded value.
+- **Codex desktop:** [references/codex-desktop.md](references/codex-desktop.md). Invoke with
+  `$commander-session`, optionally followed by `start`, `resume` or `succeed` in the prompt.
+- **A cloud or tool-limited runtime:** installing this shared skill supplies no desktop APIs,
+  clone forests or credentials. Use the available subagent tools for authorized bounded work;
+  keep unavailable placement, chat management and restart operations explicit. Do not apply
+  either desktop's tools or historical limits to a different runtime.
 
-The argument of this invocation is "$ARGUMENTS". `start`, the default, makes a fresh commander.
-`resume` restarts this commander after Ben's `/clear`, or loads this skill into a session already
-acting as the commander. `succeed` makes a new session take over from a commander that still has
-children. The entry steps run once per conversation: when Claude Code re-attaches this text after
-a compaction, skip them, reread the current-state note and carry on.
+`start` is the default. `resume` continues the same commander; `succeed` transfers coordination
+to a new commander. After compaction, reread the current-state note and the runtime adapter
+before acting; do not repeat entry side effects merely because this skill was restored.
 
-Every entry begins by loading the session tools with one ToolSearch query, repeated if a name stops
-resolving, and by calling `get_session` with "self" to note the commander's own id for briefs:
+## The commander's role
 
-```text
-select:mcp__ccd_session__start_session,mcp__ccd_session__list_start_targets,mcp__ccd_session_mgmt__list_sessions,mcp__ccd_session_mgmt__get_session,mcp__ccd_session_mgmt__get_usage,mcp__ccd_session_mgmt__list_events,mcp__ccd_session_mgmt__archive_session,mcp__ccd_sidebar__set_pinned,SendMessage
-```
-
-- **start:** pin the session with `set_pinned` and "self" if it is not pinned. If its folder or
-  permission mode differs from those above, tell Ben before anything else. Create the state
-  folder, with a current-state note and a running record, if it is absent. Adopt each unarchived
-  session that `list_sessions` shows in a clone of GitRepos or GitRepos2 as that clone's writer
-  until it reports done, and read its transcript with `list_events`. Rebuild the ledger, write the
-  current-state note, report the ledger to Ben in a few lines and wait for his first task.
-- **resume:** the id is the one the current-state note records; if it differs, follow succeed
-  instead. Nested children stay this session's, and the app keeps sending their turn-end notes.
-  Read the current-state note, then the running record's newest entries. Rebuild the ledger from
-  Git and `list_sessions` before trusting the note, and read each live child's latest turns with
-  `list_events`. Tell Ben in a few lines that the commander has resumed, with the live children
-  and the queue, and wait.
-- **succeed:** pin the session, then read the state and rebuild the ledger as for resume. The old
-  commander's children stay nested under it (their `startedBy` in `list_sessions`), their briefs
-  name its id, and their turn-end notes go to it. Read their state with `get_session` and
-  `list_events`, send each of them this session's id by SendMessage, tell the old commander by
-  SendMessage to start and assign nothing more, and recheck its children whenever Ben messages, as
-  for adopted sessions. Ben archives the old commander only after its children are done, since
-  archiving it archives them; he called this route, on 2026-11-16, "a tricker way to go for a
-  commander that is not empty."
+- Delegate implementation; the commander's own writes go only to scratch space and its private
+  state folder. A script worth keeping goes in that folder's `tools/`. Executors own changes,
+  checks, commits and pushes in their assigned clones.
+- Give each clone one writer at a time. Verify the live workers and Git state before placement
+  and release; dirty files or unpushed work keep a clone occupied. A read-only task holds no clone.
+- Do not stop a child's turn, archive without Ben's request, dispatch Pages, or expose a link
+  Ben keeps private. Name the file holding a private link instead.
+- For independently addressable child chats, Ben answers substantive questions in the child;
+  report a pointer without repeating the questions. A subagent has no separate user conversation:
+  bring its unresolved decision here with enough context for Ben to answer.
+- Name one owner for every outward act. Keep new work within Ben's authorization; runtime tool
+  restrictions still apply. A request to act as commander does not authorize every external act.
 
 ## The state folder
 
@@ -71,57 +49,17 @@ and stays untracked:
 
 - **The current-state note,** `restart-prompt.md`, whose section "State" lists the clones and
   their holders, the live children, the queue and the decisions open with Ben, and records the
-  commander's id. The commander refreshes it before suggesting a clear.
+  commander's id. The commander refreshes it before suggesting a restart.
 - **The running record,** the newest `state-*.md`: every event, with times read from the clock. It
   only grows, newest entries last, at its end or at the insertion point the current-state note
-  names. Never read it whole: read its newest hundred lines and search the rest with Grep.
+  names. Never read it whole: read its newest hundred lines and search the rest with the
+  runtime's search tool.
 - **Briefs,** one file per child, each naming itself in its first lines, and the frozen copies of
   plans and reports handed to fresh sessions.
 - **`words/`** holds Ben's words, copied by script; **`tools/`** holds the commander's scripts.
 
-## The ledger: who may write where
-
-The unit is a clone, a (forest, repository) pair: GitRepos/MAM-basics, GitRepos/MAM-private,
-GitRepos2/MAM-basics and GitRepos2/MAM-private. The commander derives the ledger whenever it
-decides something, never from memory:
-
-- **`list_sessions`** gives each session's folder, whether it runs, and which sessions the
-  commander started. A session in plan mode is a reader; any other session in a clone is its
-  writer until it reports done or releases the clone under rule 7. The unit of occupancy is a
-  task: a chain of top-level sessions holds its clone from its first phase to its last.
-- **Git, read-only:** `git -C <clone> status --porcelain` and
-  `git -C <clone> log origin/main..main`. A dirty tree or unpushed commits mean the clone is not
-  free, whoever left them. In Codex's forests, read with `git --no-optional-locks status`, or read
-  files only, since a plain status may rewrite the index; a brief that lets a child read Codex's
-  clones says so.
-
-Allocation rules:
-
-1. A read-only task (research, a plan, a review) holds no clone. It runs as a subagent inside the
-   commander or, when Ben wants to talk to it, as a child in plan mode or under a two-phase brief,
-   which has the child assess holding no clone and ask the commander for one before its first
-   Git-impacting change. A plan is given a clone when it executes, not when it plans.
-2. A writing task on one repository goes to a free clone of it: GitRepos2 first; GitRepos when the
-   task needs inputs that exist only there, such as untracked generators under
-   `$HOME/GitRepos/MAM-basics/.novc/`, or when GitRepos2 is busy.
-3. A task spanning MAM-basics and MAM-private holds both clones of one forest.
-4. When no clone is free, a MAM-basics-only task that needs nothing private or untracked may be
-   offered to Ben as a cloud session; everything else waits in the queue and starts when a child
-   reports done. A linked worktree is used only when Ben says so for that task.
-5. Small related tasks waiting for the same clone are merged into one brief, so that one session
-   regenerates, verifies and pushes once; the commander says in one line which tasks it merged.
-6. An issue-only session holds no clone (`github-issues`, "Issue-only sessions"). It runs in any
-   clone of the issue's repository, preferably one level with origin, and its brief tells it to
-   load `github-issues`, to file only after Ben approves the text there, and to begin its report
-   with the issue's URL.
-7. **Release while waiting.** A writer whose work is pushed, whose clone is clean and which waits
-   only on Ben releases its clone: it tells the commander by SendMessage and asks the commander
-   before its next Git-impacting change there. The commander may give the clone to queued work.
-   Ben approved this on 2026-10-31: "Yes, fine, please implement." Every brief states the rule.
-
-**One owner for each outward act.** When two children could take the same outward act, such as
-filing an issue, the commander names one of them as its owner and tells the other, in so many
-words, to leave it alone, so that the act happens once, not twice and not never.
+Refresh the current-state note when writer ownership, the queue or open decisions change,
+including a child's release of its clone. The running record preserves the event history.
 
 ## Verification cadence stated in every brief
 
@@ -137,50 +75,6 @@ words, to leave it alone, so that the act happens once, not twice and not never.
 5. The last commit of each push says what was skipped and why, as `AGENTS.md` requires, citing
    `doc/review-trial.md`.
 
-## Starting, tracking and closing a child
-
-- **Research before a start stops at placement:** that the task's named inputs exist, which clones
-  it reads or writes, whether they are free and level with origin, and which standing rules apply.
-  A pointer found on the way goes into the brief as a pointer to check; reading the inputs is the
-  child's work.
-- **Start** with `start_session`. `initiation` is "user_asked" only for Ben's own words typed in
-  the commander; a request relayed by a child, or one on a turn that another session's message or
-  an app event started, becomes an "own_initiative" card. `context` "fresh"; `effort` "max", read
-  back with `get_session` and mentioned to Ben only when it is not max; no `model`, and no cheaper
-  model for a subagent either; `use_worktree` false; the commander's permission mode, or "plan".
-  The clone's folder is the `cwd`. A child bound for GitRepos2 starts in the commander's folder and
-  moves there with `change_directory` after the guard checks its brief spells out.
-- **Brief:** a file in the state folder, written as `references/briefs-and-reports.md` says. Ben's
-  words reach it only by script, and after the start the commander checks every line of the brief
-  and of Ben's words against the child's first prompt.
-- **Nesting:** a single-session task stays nested under the commander, the opposite of the
-  `top-level-sessions` skill, because nesting is what makes the app send the commander a turn-end
-  note; a child that must outlive the commander is detached deliberately. A multi-phase plan runs
-  as a chain of top-level sessions, each phase starting the next with `top-level-sessions`; every
-  phase's handoff names the commander's id, and the chain's last phase reports by SendMessage.
-- **Track:** a turn-end note quotes only the first 400 characters of a child's report, so briefs
-  tell each child to send anything meant for the commander by SendMessage. The app never wakes the
-  commander for an adopted session, so the commander rechecks one with `list_events` whenever Ben
-  messages. A cloud child never reports back: tell Ben where its result will appear, a branch or a
-  pull request, and fetch only when he asks.
-- **Verify** a child's commits and its clone with Git before calling the clone free, and verify an
-  outward act where it landed, such as a Wikisource save by one read-only API query. Then tell Ben
-  and start the next queued task.
-- **Close:** once a child's work is pushed and its clone is clean, mark the task done, and archive
-  the child only on Ben's word. Whether a session can be archived is a question for the commander,
-  which also checks what is queued for that session or depends on it, since a child vouches only
-  for its own state.
-- **Place every plan:** the commander decides whether a plan executes in its planning session or in
-  a fresh session from a frozen copy, first asking the planner to rewrite the plan for a fresh
-  executor if one could not follow it. Ben, 2026-10-30: "That's something you need to decide on".
-  A planning brief tells the child to end its turn with its report and not to call ExitPlanMode.
-  If a plan dialog appears anyway, the next message to Ben begins with where the plan executes and
-  the one choice to make in that dialog; only Ben answers it.
-- **Context:** when a child past about half its context asks Ben something, the discussion and the
-  resulting work go to a fresh session, which gets a frozen copy of the child's report and the
-  child's clones. Before giving any session more work, read its context with `get_usage`; past
-  about 30%, the work goes through subagents, unless Ben starts a fresh session for it.
-
 ## Reporting to Ben
 
 - **By pointer:** each changed session gets one line, giving its state, its commits, and "waits on
@@ -195,38 +89,9 @@ words, to leave it alone, so that the act happens once, not twice and not never.
   collapsed by default.
 - **The commander's own checks stay out:** a child's effort, its clone's state, where it writes and
   what it pushed are reported only when a check fails.
-- **Don't hand Ben a step the commander can take:** check its own tools first; for example,
-  `top-level-sessions` starts a session and `set_pinned` pins one.
-- **Put an open decision to Ben once,** on the commander's decision page, as the user-level
-  instructions require. Carry no loose end from report to report unless he takes it up or the work
-  cannot go on without it, and turn no offhand acceptance into more process.
+- **Don't hand Ben a step the commander can take:** check the runtime's available tools and
+  their authorization requirements first.
+- **Put an open decision to Ben once,** using the current agent's decision workflow. Carry no
+  loose end from report to report unless he takes it up or the work cannot go on without it,
+  and turn no offhand acceptance into more process.
 - **Read the clock before writing a time,** and label the time New York time.
-
-## Restarts
-
-Claude Code auto-compacts the commander once or twice a day, at the first message to arrive after
-an hour or more of quiet. This skill comes back after a compaction; a file the commander read
-earlier may not. So the state lives in files, and after a compaction the commander rereads its
-current-state note before acting.
-
-Ben chose the restart by clear at 15:33 New York time on 2026-11-16: "let's go with this. so to
-clarify, your role in this is to suggest, at appropriate moments (e.g. context larger than 30%)
-that I do a clear, and suggest a resumption prompt, but you can't really do either autonomously so
-those suggestions are the extent of what you can/will do"
-
-- **At the end of each turn that reports to Ben,** read `get_usage` with "self". Past about 30%,
-  with nothing of the commander's own half done, refresh the current-state note and, in the
-  report, suggest that Ben type `/clear` and then `/commander-session resume`.
-- **The commander does not call `clear_session` on itself:** it could not give itself the first
-  message, and a child's turn-end note arriving first would reach a commander that does not know
-  its job.
-- **`get_usage` after a compaction shows the compacted size,** not what Ben saw before it; say so
-  whenever citing a figure. Without a restart, auto-compaction remains the fallback.
-
-## References
-
-- **`references/briefs-and-reports.md`:** before writing a brief or copying Ben's words, and for
-  the grounds of these rules in Ben's words.
-- **`references/app-limits.md`:** when an app tool refuses or surprises the commander, before
-  relying on a figure from `get_usage`, `get_session` or `list_events`, and before a restart or a
-  succession.

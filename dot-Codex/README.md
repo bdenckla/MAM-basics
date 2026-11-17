@@ -50,7 +50,7 @@ retains a transaction backup until verification passes, and rolls back a failed 
 It never removes an unlisted personal skill. Forest layout and synchronization are documented
 in `doc/clone-forests.md` and `in/repo_maintenance_policy.json`, `clone_forests`.
 
-The cross-agent `github-issues`, `hebrew-prose`, `iterative-document-editing`,
+The cross-agent `commander-session`, `github-issues`, `hebrew-prose`, `iterative-document-editing`,
 `linked-worktrees`, `mam-repository-topology`, `mam-wikisource-refresh` and `verse-links`
 skills remain canonical
 under `dot-claude/skills`; `dot-claude/shared-skills.txt` declares their live Codex destinations
@@ -58,6 +58,13 @@ under `~/.agents/skills`. The two state-pruning
 skills are deliberately separate: Claude's `prune-claude-state` remains canonical
 under `dot-claude/skills`, while Codex's `prune-Codex-state` is canonical here at
 `dot-Codex/skills/prune-claude-state/` because it addresses Codex draft plans.
+
+Invoke `$commander-session` in a Codex desktop chat to coordinate assigned work, or add
+`resume` or `succeed` to continue or replace a commander. Its shared entrypoint routes to the
+Codex procedure for GitRepos3/GitRepos4, subagent delegation and the available app chat tools.
+It does not assume Claude's session APIs, context readings or clear/restart commands. The
+canonical shared tree deploys to `~/.agents/skills/commander-session/`; no second Codex-specific
+copy is needed.
 
 ## Machine-local runtime discovery
 

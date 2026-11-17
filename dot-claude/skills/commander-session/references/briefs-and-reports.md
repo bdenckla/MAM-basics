@@ -1,8 +1,9 @@
 # Briefs and reports
 
-The detail behind `SKILL.md`'s sections "Starting, tracking and closing a child" and "Reporting to
-Ben". Ben's words are quoted exactly as the commander's records give them, with their dates;
-everything else is Claude's wording.
+The Claude-specific detail behind `claude-desktop.md`'s "Starting, tracking and closing a
+child" and the shared `SKILL.md`'s "Reporting to Ben". Ben's words are quoted exactly as the
+commander's records give them, with their dates; everything else is Claude's wording except the
+Codex-authored reference routing added for the shared skill.
 
 ## What a brief carries
 
@@ -41,7 +42,7 @@ section "Task prompts and handoffs" and carries, in this order:
      itself about a follow-up it could do in its own clone, and sends the commander by SendMessage
      anything it wants scheduled, not only in its report.
    - **An open decision** is put to Ben once, not carried from report to report.
-   - **Release while waiting,** allocation rule 7 in `SKILL.md`, in full.
+   - **Release while waiting,** allocation rule 7 in `claude-desktop.md`, in full.
    - **Context:** past about 30% of its context with much left, the child carries on through
      subagents, one bounded slice each, with one writer in the clone at a time; past about 70% with
      work left, it writes a standalone handoff into the shared notes folder the app names in each

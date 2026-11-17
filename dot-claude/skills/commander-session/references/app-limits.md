@@ -3,18 +3,19 @@
 What the Claude desktop app and Claude Code gave the commander, and failed to give it, as observed
 from 2026-10-29 to 2026-11-17. A later release may differ: before relying on a limit that matters,
 check it again. Ben's words are quoted exactly as the commander's records give them; everything
-else is Claude's wording.
+else records Claude's observations. Codex's 2026-11-17 port updates file references and explains
+recovery through the new shared entrypoint and Claude adapter.
 
 ## Sessions and tools
 
 - **Locking is cooperative.** Nothing stops a session that Ben starts by hand from writing in a
   clone the commander assigned; the commander can only see that the session exists.
-- **The session tools are deferred** and easy to fumble. `SKILL.md` gives the one ToolSearch query
+- **The session tools are deferred** and easy to fumble. `claude-desktop.md` gives the one ToolSearch query
   that loads them. If a name no longer resolves, search for it by keyword before concluding that
   the app lacks the tool, and then name the missing tool to Ben.
 - **Where a child starts:** the app's guidance for `start_session`'s `cwd` assumes that Ben named
   the place. His standing delegation of Claude's four clones, first given when the commander was
-  started on 2026-10-29 and now in `SKILL.md`'s ledger, is that naming. The app may show Ben a card
+  started on 2026-10-29 and now in `claude-desktop.md`'s ledger, is that naming. The app may show Ben a card
   the first time a session starts in a folder it has not seen.
 - **Relayed requests cannot start a session.** On a turn that another session's message or an app
   event started, the app refuses `start_session`. A request relayed through a child ("ask the
@@ -79,8 +80,11 @@ else is Claude's wording.
 - **What the skills documentation promises,** as read on 2026-11-17: after a compaction Claude Code
   puts back each skill's latest invocation, up to that skill's first 5,000 tokens and up to 25,000
   tokens for all skills together, the most recently invoked first, so that an older skill can drop
-  out entirely. `SKILL.md` therefore stays under 18,000 characters. A commander that has invoked
-  many other skills since this one could lose it; Ben's `/commander-session resume` brings it back.
+  out entirely. The original `SKILL.md` therefore stayed under 18,000 characters. The shared
+  entrypoint now routes to `claude-desktop.md`; restoration of the entrypoint does not restore a
+  reference read earlier, so the commander rereads the adapter after compaction. A commander that
+  has invoked many other skills since this one could lose the entrypoint too; Ben's
+  `/commander-session resume` brings it back.
 - **A change to this skill** goes to its canonical copy, `dot-claude/skills/commander-session/` in
   MAM-basics, through a child holding a MAM-basics clone, once Ben approves the text; the commander
   writes in no clone. The deployed change reaches the commander only at its next invocation, such
@@ -88,7 +92,7 @@ else is Claude's wording.
   during a conversation.
 - **The restart practice had not fired by 2026-11-17:** from Ben's choice of a restart by clear
   until that day's compaction the context grew to 47%, and the commander read `get_usage` once,
-  after the compaction. Hence `SKILL.md`'s rule to read it at the end of each turn that reports to
+  after the compaction. Hence `claude-desktop.md`'s rule to read it at the end of each turn that reports to
   Ben.
 
 ## Restart mechanics
@@ -104,7 +108,7 @@ app's tool descriptions, with the correction of 2026-11-17 on `clear_session`:
   prompt. Its description lists pinned sessions and sessions open on screen among those it refuses,
   but on 2026-11-10 the pinned commander cleared itself this way at Ben's word, and Ben's pointer
   became the cleared conversation's first message. Whether a later release still allows it is
-  untested. The commander does not use it on itself (`SKILL.md`, "Restarts").
+  untested. The commander does not use it on itself (`claude-desktop.md`, "Restarts").
 - **A SessionStart hook** with the matcher `clear` or `compact` can add text to a new conversation's
   context. Such a hook runs in every session that reads its settings file, but it can stay silent
   outside the commander: the app sets `CLAUDE_CODE_HOST_SESSION_ID` in each session's process to
@@ -118,9 +122,9 @@ itself with a restart prompt (is there a sort of "argument" to clear and/or comp
 that gives, in the case of clear, a new first prompt and in the case of compact, a sort of set of
 hints about what to compact?"
 
-At 15:15 he added the route that `SKILL.md` calls succeed: "another option (a third option beyond
+At 15:15 he added the route that `claude-desktop.md` calls succeed: "another option (a third option beyond
 compact and clear) is for the commander to hand off its responsibilities to a new session, though
 that would involve moving any nested sessions' ownership to the new session, so that is a tricker
 way to go for a commander that is not empty."
 
-At 15:33 he chose the restart by clear, in the words that `SKILL.md`, "Restarts", quotes.
+At 15:33 he chose the restart by clear, in the words that `claude-desktop.md`, "Restarts", quotes.

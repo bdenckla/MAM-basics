@@ -51,7 +51,7 @@ Tracked so far:
 
 | Skill | What it is |
 | --- | --- |
-| `commander-session` | For the Claude desktop app only: the procedure of the commander, the one long-lived session that runs Ben's tasks in child sessions and gives each of Claude's clones one writer at a time. `/commander-session` starts a commander, `/commander-session resume` resumes one after `/clear`, and `/commander-session succeed` replaces one that still has children; the commander's state stays untracked in `.novc/commander-session/` in its clone. Added 2026-11-17 by Ben's decision, chiefly because the commander is compacted once or twice a day and Claude Code re-attaches an invoked skill after a compaction but not a file read earlier; not shared with Codex, which has no session tools. |
+| `commander-session` | Shared coordination rules with separate Claude and Codex desktop procedures for the commander, which delegates Ben's tasks, assigns one writer per clone and tracks progress. Claude uses `/commander-session`; Codex uses `$commander-session`; both accept `start`, `resume` or `succeed`. State stays untracked in `.novc/commander-session/`. Added and shared with Codex on 2026-11-17 at Ben's request. Codex uses subagents for delegated work; a new app chat or a message to an existing chat requires Ben's explicit authorization. |
 | `github-issues` | The rules for touching a GitHub issue in Ben's repositories — reading one in full, filing one, commenting on one, correcting a stale fact in an open issue's body with MAM-basics' `py/main_github_issue_edit.py`, closing, reopening, relabelling or reassigning one with a comment saying why, and citing issues. Took over the former user-wide section "Never change an issue's state without a comment saying why" and two MAM-basics memory notes; the common body's "Load task-specific skills" section now routes issue work here. Added and shared with Codex by Ben's 2026-09-14 decisions. Ben superseded that day's cloud exclusion on 2026-09-29: install the rules with explicit transport limits, including the current body-editor restriction. |
 | `hebrew-prose` | The canonical, on-demand consolidation of the rules for writing and editing prose about Hebrew accentuation and cantillation (atom vs. chanted word, the one-scale maqaf rule, corpus choice, primary-source locations, verification). Supersedes the former scattered copies in the old full `~/.claude/CLAUDE.md`, `wlc-utils/CLAUDE.md`, `printed_decalogue_strands.py`'s docstring and the wlc-utils auto-memory — current instruction bodies keep routing pointers, and a rule change goes into the skill first. |
 | `iterative-document-editing` | The shared workflow for evolving multi-turn or multi-session documents, including cumulative revisions, planning and execution separation, and one-writer handoff. |
@@ -127,7 +127,7 @@ configuration.
 
 `dot-claude/skills/` is the canonical source for Claude skills. Every directory there deploys to
 `~/.claude/skills/`. `dot-claude/shared-skills.txt` names the skills that also deploy to
-`~/.agents/skills/`; the declaration currently names `github-issues`, `hebrew-prose`,
+`~/.agents/skills/`; the declaration currently names `commander-session`, `github-issues`, `hebrew-prose`,
 `iterative-document-editing`, `leningrad-tei-checks`, `linked-worktrees`,
 `mam-repository-topology`, `mam-wikisource-refresh` and `verse-links`.
 `dot-Codex/skills/` is the canonical source for Codex-specific skills and deploys only to
