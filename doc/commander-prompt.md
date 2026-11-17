@@ -6,6 +6,11 @@ Paste the prompt into a new local Claude or Codex session. The
 [clone forests runbook](clone-forests.md#forest-ownership) records the
 forest ownership policy.
 
+In the Claude desktop app, start a Claude commander instead by typing
+`/commander-session` in a new session; that loads the
+`commander-session` skill, which holds the full procedure, including how
+to restart a commander.
+
 ```text
 Act as the commander for the clone forests owned by your agent. If you’re
 Claude, you own GitRepos and GitRepos2. If you’re Codex, you own GitRepos3
