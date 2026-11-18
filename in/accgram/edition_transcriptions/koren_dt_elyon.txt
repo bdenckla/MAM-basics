@@ -91,8 +91,8 @@
 # the misread line 2 AGREED with the reference, so the harness had nothing to flag there, and the
 # misreading surfaced only when the scan itself was read again for another purpose.
 #
-# The chanted verse boundary at עבדים stays p-trad (9 verses): ws/ex/elyon/manuscript closes its
-# own verse there (10) but ws/ex/elyon/printed runs on (9), and this transcription has 9.
+# The chanted verse boundary at עבדים stays p-trad (9 verses): ws/dt/elyon/manuscript closes its
+# own verse there (10) but ws/dt/elyon/printed runs on (9), and this transcription has 9.
 #
 # Koren does NOT distinguish narrow-sense paseq from legarmeh (Ben, primary observation about the
 # physical book, recorded nowhere else -- hence the pasoleg_kinds header field).  So all seven
