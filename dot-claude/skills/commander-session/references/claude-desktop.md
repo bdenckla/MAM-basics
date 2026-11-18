@@ -111,7 +111,9 @@ words, to leave it alone, so that the act happens once, not twice and not never.
   back with `get_session` and mentioned to Ben only when it is not max; no `model`, and no cheaper
   model for a subagent either; `use_worktree` false; the commander's permission mode, or "plan".
   The clone's folder is the `cwd`. A child bound for GitRepos2 starts in the commander's folder and
-  moves there with `change_directory` after the guard checks its brief spells out.
+  moves there with `change_directory` after the guard checks its brief spells out. A child never
+  moves into a MAM-private clone: it works there by absolute paths from the MAM-basics clone it
+  holds or, holding none, from the commander's folder, where it writes nothing (`app-limits.md`).
 - **Brief:** a file in the state folder, written as `briefs-and-reports.md` says. Ben's
   words reach it only by script, and after the start the commander checks every line of the brief
   and of Ben's words against the child's first prompt.

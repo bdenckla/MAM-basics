@@ -1,7 +1,7 @@
 # Limits of what the app gives
 
 What the Claude desktop app and Claude Code gave the commander, and failed to give it, as observed
-from 2026-10-29 to 2026-11-17. A later release may differ: before relying on a limit that matters,
+from 2026-10-29 to 2026-11-18. A later release may differ: before relying on a limit that matters,
 check it again. Ben's words are quoted exactly as the commander's records give them; everything
 else records Claude's observations. Codex's 2026-11-17 port updates file references and explains
 recovery through the new shared entrypoint and Claude adapter.
@@ -17,10 +17,20 @@ recovery through the new shared entrypoint and Claude adapter.
   the place. His standing delegation of Claude's four clones, first given when the commander was
   started on 2026-10-29 and now in `claude-desktop.md`'s ledger, is that naming. The app may show Ben a card
   the first time a session starts in a folder it has not seen.
+- **A move into a MAM-private clone failed.** On 2026-11-18 a child in GitRepos/MAM-basics called
+  `change_directory` for GitRepos/MAM-private, the clone the commander had granted it. The move
+  takes effect when the turn ends; this one failed then and left Ben a dialog, which the child
+  quoted as "couldn't move the session to C:\Users\BenDe\GitRepos\MAM-private". The child had worked
+  by absolute paths meanwhile. Moves between the MAM-basics clones have worked. By the tool's
+  description, Ben approves a folder in auto mode unless it is inside a workspace he trusts; whether
+  that explains this failure is not established. So a child never moves into a MAM-private clone
+  (`claude-desktop.md`, "Starting, tracking and closing a child").
 - **Relayed requests cannot start a session.** On a turn that another session's message or an app
-  event started, the app refuses `start_session`. A request relayed through a child ("ask the
-  commander to ...") therefore needs Ben's own words in the commander, or an "own_initiative" card,
-  which Ben starts. A card takes no `cwd`, so it starts in the commander's folder.
+  event started, the app refuses `start_session`. On 2026-11-18 a "user_asked" start succeeded on a
+  turn that a child's message had begun, after Ben's own message asking for that session had arrived
+  in that turn. A request relayed through a child ("ask the commander to ...") therefore needs Ben's
+  own words in the commander, or an "own_initiative" card, which Ben starts. A card takes no `cwd`,
+  so it starts in the commander's folder.
 - **The effort passed to `start_session` is not necessarily what the child runs at.** Two children
   started with "high", on 2026-10-29 and 2026-10-30, recorded max on every turn of their
   transcripts, and `get_session` reported max for both; why the request was not applied is not
