@@ -349,7 +349,7 @@ mark", its *Ethnakhta* row does not.
 
 **Two things Yeivin settles for the framing itself**, worth not re-deriving. §291: a maqaf "has no
 musical motif of its own, and is therefore not considered an 'accent', either conjunctive or
-disjunctive" — the narrow sense the one-scale reading already concedes. §292: the "atom left
+disjunctive" — the narrow sense the one-scale rule already concedes. §292: the "atom left
 blank" gloss, stated as a near-rule for the best manuscripts — a good gloss, still not a
 definition.
 

@@ -1,6 +1,6 @@
 ---
 name: hebrew-prose
-description: Ben's house rules for writing, editing, or reviewing any prose about Hebrew accentuation or cantillation, including rendered pages, docstrings, comments, commit messages, issue text, and chat. Use whenever text discusses accents, cantillation, maqaf, meteg, paseq or legarmeh, strands, Decalogue readings, or the prose and poetic systems. Also use for manuscript-versus-transcription prose beyond accentuation, for any prose that names a manuscript page or folio, such as "page F159A", and for any prose that names the parts of a MAM documentation note, which are doc-parts or clauses, never lines.
+description: Ben's house rules for writing, editing, or reviewing any prose about Hebrew accentuation or cantillation, including rendered pages, docstrings, comments, commit messages, issue text, and chat. Use whenever text discusses accents, cantillation, maqaf, meteg, paseq or legarmeh, strands, the Decalogues' two cantillations, or the prose and poetic systems. Also use for manuscript-versus-transcription prose beyond accentuation, for any prose that names a manuscript page or folio, such as "page F159A", and for any prose that names the parts of a MAM documentation note, which are doc-parts or clauses, never lines.
 ---
 
 # Hebrew accentuation prose

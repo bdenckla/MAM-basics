@@ -333,7 +333,8 @@ unqualified "Simanim" reads as the Tiqqun by historical accident alone.
   two Simanim editions," "a Simanim edition"), and non-prose identifiers (`simanim-lemma` CSS class,
   `#simanim-conclusion` anchor, scan filenames, the `printed-decalogue-simanim` subcommand, the
   `printed_decalogue_simanim_page` module, `doc/simanim-tanakh-signs.md`). Any stem substitution
-  must be anchored on the book/reading suffix or it corrupts that module name.
+  must be anchored on the book-and-strand suffix, such as `_ex_taxton`, or it corrupts that
+  module name.
 - One holdout left on purpose: the edition list in `ps17v14_mam_doc_notes_body.py` — Psalms rules
   out a tiqqun so it is almost certainly SimTan, but it may be quoted from MAM's own apparatus.
   Ask Ben.
@@ -399,7 +400,7 @@ text of four published pages, MAM-parsed's `mpplus.html` and `mpplus-template-ca
 MAM-with-doc's `foi/foi-slh-word.html` and near-Aleppo's `choices.html`. Receipts, executed
 plans, dated records, Ben's request files and pushed commit messages keep their words.
 
-## "Reading" is a technical term here, not a catch-all noun
+## Never the noun "reading"
 
 Ben, 2026-07-28: *"You use 'reading', your favorite word for a lot of things, and one that is …
 not my favorite."* In one intro it stood for a maqaf compound, for a whole printed Decalogue
@@ -414,11 +415,11 @@ word "reading" to mean a form of a word. I would really prefer you to not use th
 name the concrete thing, a word, an atom, a chanted word, a strand or a page. Only the
 identifiers named below keep it.
 
-**The technical sense stays**, and is not a holdout to sweep: the elyon/taḥton `reading` JSON
+**The identifiers that keep it** are not holdouts to sweep: the elyon/taḥton `reading` JSON
 field and dataclass attribute, `dual_cant_readings`' grouped chanted verse,
-`printed_decalogue_strands.resolve_readings`, `render_reading_name`, a transcription's
-`uncertain_readings` header and "a reading Ben has flagged as uncertain", and the ordinary verb.
-`maqaf_nonfinal_accents_page` was swept 2026-07-28 — its "Koren's reading" heading is now
+`printed_decalogue_strands.resolve_readings` and its `READING_SPECS`, `render_reading_name`, and a
+transcription's `uncertain_readings` header. The ordinary verb stays, and a quotation keeps its
+words. `maqaf_nonfinal_accents_page` was swept 2026-07-28 — its "Koren's reading" heading is now
 "Koren's compound."
 
 **"Form" is the same habit.** Ben, 2026-10-13, on plural nouns for ketiv and qere, with the
@@ -430,8 +431,9 @@ Prefer "word", or "atom" where the distinction from a chanted word matters.
 
 ## Strand vocabulary
 
-- **strand** = one single-cantillation reading of a dual-cant passage (alef/תחתון/peshutah,
-  bet/עליון/midrashit). Precedent: MAM-basics' "singly-accented strands." Never "thread."
+- **strand** = a dual-cant passage's text with only one of its two cantillations
+  (alef/תחתון/peshutah, bet/עליון/midrashit). Precedent: MAM-basics' "singly-accented strands."
+  Never "thread."
 - **unpaired** = a stress-helper written without its fusion partner. Never "stranded."
 - **marooned** = an accent or verse number displaced by BHS versification.
 - **orphaned** = a point that belongs to no letter: the ḥiriq of the implicit yod in ירושלם-style
@@ -627,7 +629,7 @@ being drafted; the other rows were proposed for his approval.
 | Rafeh, varika | marks | | |
 | Maqaf, paseq, sof pasuq, inverted nun, and geresh or gershayim as punctuation | marks | | |
 | Pasoleg | marks | stroke, for technical pen-on-ink description | Ben |
-| Ketiv, qere | words, or atoms where the distinction from chanted words matters | forms, as in "the ketiv form of this word has a yod after ..."; readings, though rarely if ever better | Ben |
+| Ketiv, qere | words, or atoms where the distinction from chanted words matters | forms, as in "the ketiv form of this word has a yod after ..." | Ben |
 | Masorah | notes | | |
 | Aliyah | portions | | `notes_on_aliyot` keeps `aliyot` by Ben's exception |
 | Parashah | parashot | | Ben |
@@ -654,8 +656,9 @@ top'"* Narpas is MAM-basics' short name for narrow-sense paseq.
 **Ketiv and qere.** Ben, 2026-10-13: *"I would prefer 'words' where meaning is either clear
 (chanted words vs atoms) or ambiguity (clarity) is not important, atoms where that distinction is
 important."* Of "reading": *"Reading is okay but I'm not sure it is ever better than word, atom,
-or even form."* His wider objection to "form" is recorded under "'Reading' is a technical term
-here, not a catch-all noun".
+or even form."* His words of 2026-11-17 supersede that, so the table no longer lists "readings"
+among the nouns also fine for ketiv and qere. Those words and his wider objection to "form" are
+recorded under “Never the noun "reading"”.
 
 MAM-basics' plural lint, `py/mb_cmn/hebrew_name_plurals.py`, suggests these default nouns on
 rendered pages, as its `doc/hebrew-name-plurals.md` describes.

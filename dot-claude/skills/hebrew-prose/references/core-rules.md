@@ -147,7 +147,7 @@ Ben's undated rule, already present when MAM-basics became the canonical configu
 | SimTiq / SimTan in code; "the Simanim Tiqqun" in prose | a bare "Simanim" where both editions are in play |
 | Mikra'ot Gedolot ha-Keter (`מג"ה`); the Jerusalem Crown (`כתר ירושלים`); the Aleppo Codex (`כתר ארם צובה`) | a bare "the Keter edition", which can name Mikra'ot Gedolot ha-Keter or the Jerusalem Crown |
 | BIL / AIL | "preposed" (outside M-C quotes) |
-| the compound / the page / the edition | "reading" as a vague catch-all noun |
+| the concrete thing: a word, an atom, a chanted word, a compound, a strand, a page, an edition | the noun "reading", in any sense |
 | doc-part or clause, for a part of a MAM doc-note that the `ש` template separates | "line"; "paragraph", unless its `<p>` formatting is the subject |
 
 Each row's reasoning, exemptions and known holdouts: `references/terminology.md`.

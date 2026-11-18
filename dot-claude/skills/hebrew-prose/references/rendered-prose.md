@@ -53,7 +53,7 @@ is a checker error name.
   even a preceding word to anchor it. Scoped to *English* prose: a quoted Biblical verse, a
   Hebrew-language note, and the Hebrew cells of a table are untouched. As of 2026-07-25 the trio
   and its siblings had no other violation, so any new one is newly introduced.
-  **The cost is mechanical as well as a matter of reading comfort, and the rule reaches past
+  **The cost is mechanical as well as a matter of the reader's comfort, and the rule reaches past
   rendered pages to prose written for Ben** — a bullet or paragraph *beginning* on a Hebrew word
   takes RTL as its base direction and is laid out entirely RTL, English and punctuation and list
   marker with it. Ben, 2026-08-25, of chat bullets that opened that way: *"Your output is hard to
@@ -68,10 +68,10 @@ is a checker error name.
   is…".
 - **Cut the sentence that only insists.** Ben, 2026-08-03, of "The transcription is not in doubt:
   the mark was flagged by the diff and re-read off a zoom of the page": *"yank it: it reduces to
-  'I really mean it'."* Evidence for a reading belongs in the transcription's `.txt` header, where
-  a primary observation is recorded; on the page it reads as the author bracing against a doubt
-  the reader had not formed. This is the sibling of "bounded doubts get no mention at all" below —
-  that bans naming the doubt, this bans pre-emptively answering it.
+  'I really mean it'."* Evidence for a transcribed mark belongs in the transcription's `.txt`
+  header, where a primary observation is recorded; on the page it reads as the author bracing
+  against a doubt the reader had not formed. This is the sibling of "bounded doubts get no mention
+  at all" below — that bans naming the doubt, this bans pre-emptively answering it.
 - **Keep inspection audit trails in maintained research notes.** Who inspected which image, when,
   and the reasoning path belong in the maintained research record. A rendered page ordinarily
   states the resulting source classification. Promote the inspector, date, or method to rendered
@@ -242,14 +242,14 @@ satellite pages.
 
 ## Bounded doubts get no mention at all
 
-When a finding rests on a reading Ben has flagged as uncertain, and the uncertainty is
+When a finding rests on a transcribed mark Ben has flagged as uncertain, and the uncertainty is
 **bounded** (it discriminates nothing the page claims) and no surprising result hinges on it, the
 rendered document says **nothing about it** — not a hedge, not a footnote, not a small line. Its
-only reader-facing home is the GitHub issue. The page assumes the reading true and states its
-verdict flat. Ben rejected even an optional footnote-style line offered "for the honesty on the
-page": he is confident enough to treat the readings as true for the documents' purposes, and a
-page that names doubts at that grain invites a reader to weigh them against findings they cannot
-affect.
+only reader-facing home is the GitHub issue. The page assumes that the mark is as transcribed and
+states its verdict flat. Ben rejected even an optional footnote-style line offered "for the honesty
+on the page": he is confident enough to treat such marks as correctly transcribed for the
+documents' purposes, and a page that names doubts at that grain invites a reader to weigh them
+against findings they cannot affect.
 
 Do not offer "mention it in a small line?" as a middle option — the choice is issue-only vs page.
 This governs **rendered documents only**: transcription `.txt` headers, JSON `uncertain_readings`
