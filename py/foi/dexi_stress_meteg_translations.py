@@ -11,8 +11,8 @@ translates. The English omits the lemma, which the row shows beside the note.
 The English names each source rather than giving its siglum, as
 in/near-aleppo/qere-without-ketiv-mam-notes-en.json does; ק-מ is Cambridge Add. 1753,
 as doc/sigil-decoding.md says. A question mark after a siglum, which MAM's
-introduction (in/mam-ws-intro/ch5.mediawiki) uses for a reading that is only in doubt,
-becomes "doubtfully"; a question mark after a pair of accents stays. A part that opens
+introduction (in/mam-ws-intro/ch5.mediawiki) uses where what that source has is only
+in doubt, becomes "doubtfully"; a question mark after a pair of accents stays. A part that opens
 with "=" says that MAM agrees with the sources it names.
 
 MAM's sigil דפוסים, in any of its forms, is "the printed tradition", as the

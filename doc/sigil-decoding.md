@@ -257,7 +257,7 @@ the ב2 row is a decoder for older text only, as the rows for ממ and מ"מ are
 | רמ"ה | Rabbi Meir Halevi Abulafia / Masoret Seyag la-Torah | Confirmed | Accordance header, translation code | |
 | תיגאן | Yemenite manuscripts / Taj tradition | Confirmed | Accordance header, Wikisource | Sometimes English explanation should say Yemenite manuscripts or Taj depending on context. |
 | תאג' חבשוש | The Ḥabshush Taj — National Library of Israel Ms Heb. 5840=34, Torah with Haftarot and Targum, written by David ben Benaya ben Saadia ben Zechariah the scribe, 1485 | Confirmed | Wikisource | A manuscript Taj, as against the printed one in the row below. |
-| תאג' דפוס ראשון | The first printed Taj — *Keter Torah*, Jerusalem 1894–1901, Torah with Targum and Tafsir in the Yemenite tradition, set from manuscripts | Confirmed | Wikisource | The appendix attaches a caveat that a translation should not drop: the Targum and Tafsir there are generally accurate, but in the Torah text itself the attempt to conform it to the Yemenite version left the standard printed reading standing in many places, so where a manuscript Taj differs the manuscript is to be preferred and this printing is a first attempt only. Genesis 40:17 is a note where both Tajes are cited and they disagree. |
+| תאג' דפוס ראשון | The first printed Taj — *Keter Torah*, Jerusalem 1894–1901, Torah with Targum and Tafsir in the Yemenite tradition, set from manuscripts | Confirmed | Wikisource | The appendix attaches a caveat that a translation should not drop: the Targum and Tafsir there are generally accurate, but in the Torah text itself the attempt to conform it to the Yemenite version left the standard printed text standing in many places, so where a manuscript Taj differs the manuscript is to be preferred and this printing is a first attempt only. Genesis 40:17 is a note where both Tajes are cited and they disagree. |
 | המקליד | Westminster / UXLC transcript of Leningrad | Confirmed | Accordance header | Often better translated as transcript or transcriber depending on sentence role. |
 
 ### Qualifiers Attached To Sigla
@@ -447,7 +447,7 @@ table here. The corpus uses both, and the right-hand element separates them:
   leaves of the Keter. Exodus 23:22 puts the equation in a parenthesis, `ומסורות-א,ל (מ"ג-ל)`.
   Daniel 3:25 quotes the note itself: `בהתאם למ"ג-ק-מ: "לגוא א כת בגו חס א"`.
 - **A place of printing on the right gives the edition.** 2 Samuel 15:12 cites `מ"ג-ונציה`
-  beside `א` and `ל` for a reading of the running text, and lists `מ"ג-ורשה` in the printed
+  beside `א` and `ל` as a source for the running text, and lists `מ"ג-ורשה` in the printed
   tradition: `בדפוסים (לטריס, בער, מ"ג-ורשה)`.
 - **A qualifier on the right gives the edition too.** `מ"ג-כתיב` (2 Kings 4:3, 1 Chronicles
   27:12) and `מ"ג-קטנות` (Leviticus 6:2) are the ketiv and the small-letter list of Miqra'ot
