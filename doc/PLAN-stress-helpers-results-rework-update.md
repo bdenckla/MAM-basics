@@ -106,3 +106,111 @@ batch-1 rows and 7 have no batch-2 rows. Ben answered on 2026-11-18:
   box still affects only the table and its count of visible differences. `controls.js` recounts
   from each row's `data-filter` and `data-batch`, and the generator gives each menu choice its
   label, without the count, in `data-label`.
+
+## 2026-11-18: Kor, Sim and KorSim, "p. A38", bare letters, and "the printed tradition"
+
+Recorded by Claude (Opus 5.5), in the commit that makes the edits. Ben typed this list in the
+commander session on 2026-11-18, at 14:15 New York time:
+
+> start (or, more likely, queue) a session that will do these edits to the Kor-Sim-MAM document (I say more likely queue because another session is currently editing the Kor-Sim-MAM stress helper document):
+>
+> In text like this:
+>
+> > Koren has munaḥ on יִהְיֶה and a space where MAM has maqaf. The telisha qetanna on לְךָ agrees, and neither has a helper.
+> >
+> > MAM’s note reports MAM’s compound in the printed editions too, with a meteg on the second yod of יִהְיֶה
+>
+> remove all pointing if it is not needed by the reader to understand the matter at hand.\
+> ====
+> Change "appendix p. 38" and the like to "p. A38" with a hover-explanation of what "A38" means
+> ====
+> In individual rows, change "Koren / SimTan" to "KorSim", hover explained to mean "both Koren and Simanim".
+> ====
+> Change things like
+> > Koren p. 10
+> > SimTan p. 366
+> to
+> > Kor p. 10
+> > Sim p. 366
+> ====
+> Change
+> SH in both printed editions only
+> to
+> SH in KorSim only
+> with "KorSim" hover-explained
+> ====
+> Change "Both editions have ..."
+> to "Kor and Sim have ..." when that's what you mean
+> ====
+> When translating MAM doc-notes, in this document and elsewhere
+> (so make a note in whatever skill and/or other documents help with MAM doc-note translation)
+> for דפסים or whatever the word is you sometimes translate as "printed editions",
+> please instead use "the printed tradition"
+> (this means, typically, the 2nd Venice MG and its descendents, which is pretty much
+> all printed traditions before some 20th century editions such as BHS started being manuscript-based.
+> Note that there were plenty of 20th century editions, even late into the 20th century,
+> that resisted this trend towards being manuscript-based, and are still in the 2nd Venice MG tradition,
+> i.e. the "printed tradition") (admittedly a slightly confusing term now).
+> Another way of putting this is that by "the printed tradition" we mean "editions in the lineage of traditional printed editions")
+> perhaps consult our git-tracked mirror of the mam introduction and see if it is discussed there. And/or maybe in Yeivin ITM.
+
+A session that researched the list, writing nothing, put six decisions to him on its decision page.
+He answered on 2026-11-18, at 15:06 New York time:
+
+> Follow your recommendations for all 6 decisions. As the commander for a fresh session to do it, I'd advise.
+>
+> In "the accepted text of the widespread editions in the lineage of the second Venice Mikraot Gedolot, chosen from the 19th and early 20th centuries.",
+>
+> I don't like "accepted" and "chosen".
+>
+> I don't like "accepted" because it makes it sound like it is authoritative. Can we just drop "accepted" rather than figure out what you meant by it? Or was this your translation of a Hebrew word from MAM's introduction, and thus we should try harder to translate it without implying authority (or without implying too much authority).
+>
+> I don't know what "chosen" is trying to express, so can we drop it? Again, let's not drop it (and let's try to find something better) if this reflects an attempt to translate a Hebrew word.
+>
+> Oh, and I prefer Miqraot to Mikraot, as in general I prefer to transliterate qof with a q. Unless you have specific reason to use 'k' here.
+
+- **1A, bare letters.** The eight notes that named a word in pointed Hebrew name it in bare letters,
+  which keep the surrounding font: in each, the Hebrew only says which word the note is about.
+- **2A, Kor, Sim and KorSim.** A row names its editions KorSim, Kor or Sim beside the printed word
+  and in its difference's label, as in "SH in KorSim only", "SH in Kor only" and "no SH in Sim", and
+  a row of both editions names each on its page labels, as in "Kor p. 10" and "Sim p. 366", and on
+  its crops. Notes that said "Both editions have" or "Both printed editions have" say "Kor and Sim
+  have", Ben's sixth item. Each abbreviation has a hover, his words: Kor "Koren", Sim "Simanim" and
+  KorSim "both Koren and Simanim". The Filter menu's hover gives all three.
+- **3A, "p. A38".** Koren's appendix pages are "p. A38" and "p. A39", whose hovers read "Koren’s
+  appendix, page 38, numbered apart from its main text", and likewise for page 39.
+- **4A, a hover on each "the printed tradition".** The seven notes that render MAM's דפוסים say "the
+  printed tradition", or "part of the printed tradition" at Exod 20:9, and at Lev 23:17, where MAM's
+  note has בדפוסים וקורן, "the printed tradition and Koren". Ben's answer questioned two words of
+  the hover's draft. Both translated MAM's introduction, so both were retranslated rather than
+  dropped: "accepted", for המקובל in הנוסח המקובל בדפוסים (`in/mam-ws-intro/ch3.mediawiki`, lines
+  728 and 730), became "customary", and "chosen", for נבחרות in מהדורות מקרא נבחרות
+  (`appendices.mediawiki`, line 272), became "a selection of". His later wording of the hover is
+  below.
+- **5A.** The renderings of MAM's דפוסים outside this page are left to a separate sweep. Until it
+  lands, the hebrew-prose skill's new section lists them as not yet changed.
+- **6A.** The hebrew-prose skill's `references/core-rules.md` gives the rule behind 1A. Its
+  `references/terminology.md` records Ben's instruction behind 4A, with his words, in the section
+  “MAM's דפוסים is "the printed tradition"”, and `doc/sigil-decoding.md` decodes the sigil the same
+  way.
+- **Miqraot.** Ben's preference for qof as q, as in "Miqraot", is in the skill's
+  `references/terminology.md`, "Transliteration (accgram)".
+
+Three notes also lost a verb that the skill's "Just say has" bans: "prints" at Isa 47:1 and 47:5,
+and "bearing" at Ruth 2:9. The crops' credit names Koren and the Simanim Tanakh.
+
+Ben then wrote, in the session that made these edits, of the hover's text:
+
+> Will you be responsible for implementing the following hover-text for דפוסים ("the printed tradition")?
+>
+> If so, I like the new text:
+>
+> In MAM’s notes, the customary text of a selection of widespread editions from the 19th and early 20th centuries, in the lineage of the second Venice Miqraot Gedolot. The notes cite that Venice edition, and Koren, apart.
+>
+> but I would like it to reiterate what it is talking about, i.e. if it is hover-explaining "the printed tradition", I'd like it to say something like
+>
+> In MAM’s notes, דפוסים, which we usually translate as "the printed tradition" means the customary text of a selection of widespread editions from the 19th and early 20th centuries, in the lineage of the second Venice Miqraot Gedolot. The notes cite that Venice edition, and Koren, apart.
+
+The hover follows his wording, with curly quotation marks and a comma closing its clause:
+
+> In MAM’s notes, דפוסים, which we usually translate as “the printed tradition”, means the customary text of a selection of widespread editions from the 19th and early 20th centuries, in the lineage of the second Venice Miqraot Gedolot. The notes cite that Venice edition, and Koren, apart.

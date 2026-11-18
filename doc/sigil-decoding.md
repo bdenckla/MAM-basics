@@ -250,7 +250,7 @@ the ב2 row is a decoder for older text only, as the rows for ממ and מ"מ are
 | מג"ה | Miqra'ot Gedolot Ha-keter | Confirmed | Accordance header, translation code, Wikisource | |
 | מכון ממרא | Mechon Mamre | Confirmed | Accordance header, Wikisource | Since 2026-11-02 the only name the notes give the edition: ממ and מ"מ, which also stood for it, are under "Retired sigla" above. |
 | סימנים | Simanim edition | Confirmed | Accordance header, Wikisource | |
-| דפוסים | selected printed editions | Confirmed | Accordance header, Wikisource | Scope is broad rather than edition-specific. |
+| דפוסים | the printed tradition: a selection of printed editions of the 19th and early 20th centuries | Confirmed | Accordance header, Wikisource | Scope is broad rather than edition-specific. The introduction's appendices define the sigil, `in/mam-ws-intro/appendices.mediawiki` line 272. Ben's instruction of 2026-11-18 to render it "the printed tradition" is in the hebrew-prose skill's `references/terminology.md`, “MAM's דפוסים is "the printed tradition"”. |
 | קורן | Koren edition | Confirmed | Accordance header, Wikisource | |
 | ברויאר | Breuer editions and writings | Confirmed | Accordance header, Wikisource | |
 | דותן | Dotan editions and writings | Confirmed | Accordance header, Wikisource | |

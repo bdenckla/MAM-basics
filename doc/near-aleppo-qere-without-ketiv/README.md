@@ -112,6 +112,10 @@ current observation and documentation text it assesses. The HTML build requires 
 match and raises if a note or description needs reconciliation. These readable
 source quotations are the subjects of the authored translations and comparisons.
 
+A translation renders MAM's sigil דפוסים as "the printed tradition", as the
+hebrew-prose skill's `references/terminology.md` says in its section
+“MAM's דפוסים is "the printed tradition"”.
+
 Footnote φ1's bracketed expansion includes "of the". Removing that insertion
 leaves "the qere implied by the Leningrad Codex", matching the preceding version
 of the sentence.

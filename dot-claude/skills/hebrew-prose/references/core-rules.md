@@ -149,6 +149,7 @@ Ben's undated rule, already present when MAM-basics became the canonical configu
 | BIL / AIL | "preposed" (outside M-C quotes) |
 | the concrete thing: a word, an atom, a chanted word, a compound, a strand, a page, an edition | the noun "reading", in any sense |
 | doc-part or clause, for a part of a MAM doc-note that the `ש` template separates | "line"; "paragraph", unless its `<p>` formatting is the subject |
+| the printed tradition, for MAM's דפוסים | "the printed editions" |
 
 Each row's reasoning, exemptions and known holdouts: `references/terminology.md`.
 
@@ -164,6 +165,13 @@ and drops vowels, dagesh and the sin/shin dots. Ben, same day, on a first pass t
 *"I said please point with appropriate accents, why did you add vowels. we almost never use
 vowels in such discussions."* The exception is a table where the vowel **is** the point (the
 `printed-decalogue-vowel-diff` and pausal tables), which says so in its own comment.
+
+**Name a word in bare letters when its marks are not the point.** Ben, 2026-11-18, of notes on the
+stress-helpers page that named יהיה and לך with full pointing: *"remove all pointing if it is not
+needed by the reader to understand the matter at hand."* A sentence that names a word only to say
+where something is, such as "munaḥ on X", "the second yod of X" or "after X", gives X in bare
+letters, which keep the surrounding font. The marks it discusses are named in English or shown in a
+form of their own.
 
 **Never retype an accent**: lift the form from the mirrored data at generation time, with an
 assertion that the lookup still finds exactly one match. A hand-typed accent is a claim with no
