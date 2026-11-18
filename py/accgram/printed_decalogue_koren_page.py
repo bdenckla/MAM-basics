@@ -699,14 +699,16 @@ def _munax_munax_precedent() -> _Precedent:
 
     mam_same = accented_alike("mam_simple", ("prose",))
     assert not mam_same, mam_same
-    # No chanted word of MAM, prose or poetic, has a munax on two atoms (Ben's D3 answer,
-    # 2026-11-18).  Such a compound has two accented atoms, so it would be a hit of the scan in
-    # either genre; a field holding a munax among other marks counts too.
+    # No chanted word of MAM's prose verses has a munax on two atoms (Ben's D3 answer,
+    # 2026-11-18).  Such a compound has two accented atoms, so it would be a hit of the scan; a
+    # field holding a munax among other marks counts too.  PROSE ONLY since Ben accepted "2B"
+    # the same day: a pin here defends a sentence on this page, and the conclusion now says
+    # this of MAM's prose verses alone.  The poetic half is stated in the maqaf page's poetic
+    # appendix and pinned by ``maqaf_nonfinal_accents_page.pin_claims``.
     munax = mpa.shape_of([[am.MUNAX]])
-    for genre in ("prose", "poetic"):
-        for o in survey["corpora"]["mam_simple"][genre]["occurrences"]:
-            fields = o["shape"].split("-")
-            assert sum(munax in field.split("+") for field in fields) < 2, o
+    for o in survey["corpora"]["mam_simple"]["prose"]["occurrences"]:
+        fields = o["shape"].split("-")
+        assert sum(munax in field.split("+") for field in fields) < 2, o
     uxlc_hits = accented_alike("uxlc", ("prose", "poetic"))
     assert [(o["bcv"], o["shape"]) for o in uxlc_hits] == [
         ("2c1:11", "mun-mun")
@@ -882,12 +884,21 @@ def _conclusion(
         # TWO COMPOUNDS, NO VERDICT (Ben's D3 answer, 2026-11-18, "D3 A (State it without a
         # verdict)"). Since the correction of the Deuteronomy appendix's line 2 that page has two
         # compounds with a munax on each atom, לא־יהיה as well as לא־תעשה. The paragraph says so,
-        # says that no chanted word of MAM has a munax on two atoms (pinned in
-        # _munax_munax_precedent, prose and poetic, since MAM's poetic verses DO have two
-        # same-accent compounds, both merkha-merkha), and says the checker cannot see either
-        # compound; it calls neither one ungrammatical. The checker sentence describes the code,
-        # not the data, so nothing pins it; wlc-utils#75, a maqaf token of its own, would make it
-        # false.
+        # says that no chanted word of MAM's prose verses has a munax on two atoms (pinned in
+        # _munax_munax_precedent), and says the checker cannot see either compound; it calls
+        # neither one ungrammatical. The checker sentence describes the code, not the data, so
+        # nothing pins it; wlc-utils#75, a maqaf token of its own, would make it false.
+        #
+        # THE PROSE HALF ONLY (Ben, 2026-11-18, accepting "2B" on the decision page "Three
+        # Maqaf-Page Choices"). Until then the munax clause spoke of "no chanted word of MAM, in
+        # its prose verses or its poetic ones"; it now says "of those verses", MAM's prose ones,
+        # as the clause before it does. Ben's decision of 2026-07-27 for the maqaf page's
+        # introduction, to drop a poetic clause rather than qualify it, now governs this
+        # sentence too. The poetic half is the maqaf page's poetic appendix, pinned by
+        # maqaf_nonfinal_accents_page.pin_claims. With MAM's gray maqaf read as a maqaf, MAM's
+        # poetic verses do have two compounds with the same accent on both atoms, Ps 1:2 and
+        # Ps 39:2, both merkha-merkha and both joined by a gray maqaf, which is the caution the
+        # July decision anticipated.
         H.para(
             (
                 "Joining לא־תעשה costs Koren nothing in accents because it keeps the ",
@@ -903,7 +914,7 @@ def _conclusion(
                 link("its own page", _MAQAF_NONFINAL_PAGE),
                 ", and one shape the count comes back empty for is Koren's own: no maqaf"
                 " compound of those verses has the same accent on both atoms, and no chanted"
-                " word of MAM, in its prose verses or its poetic ones, has a ",
+                " word of those verses has a ",
                 _ROM_MUNAX,
                 " on two atoms. ",
                 _UXLC,

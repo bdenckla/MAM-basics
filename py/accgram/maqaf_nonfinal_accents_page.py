@@ -1074,8 +1074,9 @@ def _koren_lo_yihye_case() -> dict:
 
     The תחתון is asserted for what the carry-over paragraph says of this case: it has Koren's
     grouping, לא־יהיה and then לך by itself, but no accent on the joined לא, a merkha on יהיה and
-    a tevir on לך.  So Koren's maqaf is where the other strand has its maqaf, and Koren's munaḥ
-    on יהיה is in neither strand.
+    a tevir on לך.  So Koren's maqaf, where the other strand has its maqaf, is this case's mark
+    that "might have been accidentally carried over from the other strand", and the munaḥ that
+    Koren "also has" on יהיה is "in neither strand".
     """
     elyon = _find_span(_p_trad_strand("dt", "elyon"), ((_LO,), (_YIHYE, _LEKHA)), 2)
     lo, yihye_lekha = elyon
@@ -1507,6 +1508,10 @@ def pin_claims(survey: dict) -> None:
     # "not in poetic ones" dropped rather than qualified, because a compound whose maqaf is
     # unwritten is out of the scan's reach (see the GONE note above).  MAM's gray maqaf, read as a
     # maqaf since 2026-07-31, closes that gap wherever MAM marks one, and the appendix says so.
+    # Ben confirmed this placement on 2026-11-18 by accepting "2B" on the decision page "Three
+    # Maqaf-Page Choices".  The Koren page, whose sentence had stated both halves in one clause,
+    # now states the prose half only, and its ``_munax_munax_precedent`` pins that half alone, so
+    # the poetic half is pinned here and nowhere else.
     munax = mpa.shape_of([[am.MUNAX]])
     for genre_name in ("prose", "poetic"):
         for o in _occurrences(survey, _CORPUS, genre_name):
@@ -1588,10 +1593,13 @@ def _intro(survey: dict) -> tuple[object, ...]:
     for edition in (_KOREN, _SIMTIQ):
         theirs = {case["compound"] for case in cases if case["edition"] == edition}
         assert theirs == compounds, (edition, theirs)
-    # The carry-over paragraph's two sentences: three cases differ from their reference in one
-    # added mark, and the fourth, Koren's לא־יהיה, in a moved maqaf and an added munax.  What
-    # the second sentence says of the other strand -- the maqaf where it has one, the munax in
-    # neither strand -- is asserted where that case is built, ``_koren_lo_yihye_case``.
+    # The carry-over paragraph, one sentence again since Ben's "1B" (2026-11-18): each case
+    # differs from its reference by a mark that might have come from the other strand -- an
+    # added mark for three of them, the moved maqaf for Koren's לא־יהיה -- and Koren's לא־יהיה
+    # "also has" a munax on יהיה.  So the moved maqaf is that case's alone, and a munax is its
+    # one added accent.  What the sentence says of the other strand -- the maqaf where it has
+    # one, the munax in neither strand -- is asserted where that case is built,
+    # ``_koren_lo_yihye_case``.
     moved = [case for case in cases if _reference_difference(case)[1] == "moved"]
     assert [(c["edition"], c["compound"]) for c in moved] == [
         (_KOREN, (_LO, _YIHYE))
@@ -1725,17 +1733,19 @@ def _intro(survey: dict) -> tuple[object, ...]:
         # by cell and derived from the forms rather than typed out.  A sentence that itemizes the
         # row directly above it is a sentence a reader has already read.
         #
-        # A SECOND SENTENCE FOR THE FOURTH CASE (2026-11-18).  Ben's sentence opened "Each strange
-        # spreader differs", which Koren's לא־יהיה made false: it differs from its reference in
-        # two marks, and only one of them is in the other strand.  So his sentence now speaks for
-        # the three it is true of, and one more says what the fourth has -- still without
-        # calling either edition's mark an error.
+        # STILL ONE SENTENCE, FOR FOUR CASES (Ben, 2026-11-18, accepting "1B" on the decision
+        # page "Three Maqaf-Page Choices").  He kept his one-sentence design and his opening
+        # "Each strange spreader differs".  His "by the addition of a mark" became "by a mark",
+        # because Koren's maqaf in לא־יהיה is moved rather than added -- its Diff. fr. Ref. cell
+        # says "maqaf moved" -- and one clause, after the semicolon, adds the munax on יהיה, the
+        # one mark the carry-over cannot explain.  d6899ee7's two-sentence version, "Three of the
+        # four strange spreaders differ ..." and then a sentence on Koren's לא־יהיה alone, is
+        # gone.  Still no mark is called an error.
         text_para(
-            "Three of the four strange spreaders differ from the Wikisource reference by the"
-            f" addition of a mark (either {ROM_MAQAF} or {ROM_MUNAX}) that might have been"
-            f" accidentally carried over from the other strand. Koren's {lo_yihye} differs in"
-            f" two marks: its {ROM_MAQAF} joins {_LO} to {_YIHYE}, as the other strand's does,"
-            f" but its {ROM_MUNAX} on {_YIHYE} is in neither strand."
+            "Each strange spreader differs from the Wikisource reference by a mark"
+            f" (either {ROM_MAQAF} or {ROM_MUNAX}) that might have been accidentally"
+            f" carried over from the other strand; Koren's {lo_yihye} also has a"
+            f" {ROM_MUNAX} on {_YIHYE} that is in neither strand."
         ),
         text_para(
             "But if we take the four as they stand, is there anything in Tanakh like any of"
