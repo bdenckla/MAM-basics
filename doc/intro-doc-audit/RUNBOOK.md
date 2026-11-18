@@ -76,7 +76,9 @@ are automatically authoritative. Bare "in the manuscript" does not name Aleppo.
    translations against the whole clause; preserve question marks, source
    qualifiers and ketiv/qere distinctions. Translate explanatory prose, not
    Scripture. New evidence gets a separate source/version record; do not overwrite
-   the original snapshots merely to make the old discrepancy disappear.
+   the original snapshots merely to make the old discrepancy disappear. Render a
+   doc-note's דפוסים as "the printed tradition", as the hebrew-prose skill's
+   `references/terminology.md` says.
 4. A Ben decision is recorded with its date, authority and exact scope in
    `adjudications.json`, linked by the case's `adjudication` ID. Its `current`,
    `changes` and `proposed_quotation` must agree exactly. Keep the proposal

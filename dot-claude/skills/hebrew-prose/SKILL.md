@@ -1,6 +1,6 @@
 ---
 name: hebrew-prose
-description: Ben's house rules for writing, editing, or reviewing any prose about Hebrew accentuation or cantillation, including rendered pages, docstrings, comments, commit messages, issue text, and chat. Use whenever text discusses accents, cantillation, maqaf, meteg, paseq or legarmeh, strands, the Decalogues' two cantillations, or the prose and poetic systems. Also use for manuscript-versus-transcription prose beyond accentuation, for any prose that names a manuscript page or folio, such as "page F159A", and for any prose that names the parts of a MAM documentation note, which are doc-parts or clauses, never lines.
+description: Ben's house rules for writing, editing, or reviewing any prose about Hebrew accentuation or cantillation, including rendered pages, docstrings, comments, commit messages, issue text, and chat. Use whenever text discusses accents, cantillation, maqaf, meteg, paseq or legarmeh, strands, the Decalogues' two cantillations, or the prose and poetic systems. Also use for manuscript-versus-transcription prose beyond accentuation, for any prose that names a manuscript page or folio, such as "page F159A", and for any prose that names the parts of a MAM documentation note, which are doc-parts or clauses, never lines, and for any English rendering of a MAM documentation note, whose דפוסים is "the printed tradition".
 ---
 
 # Hebrew accentuation prose
@@ -70,6 +70,8 @@ the repository-specific reference before writing. Load only the references neede
 - **The parts of a MAM documentation note that the `ש` template separates:** call them doc-parts
   or clauses, never lines, and paragraphs only where their `<p>` formatting is the subject; read
   `references/terminology.md`, “A doc-note's parts are doc-parts or clauses, never lines”.
+- **An English rendering of a MAM documentation note:** its דפוסים is "the printed tradition"; read
+  `references/terminology.md`, “MAM's דפוסים is "the printed tradition"”.
 - **Rendered HTML, tables, captions, headings, tooltips, or alt text:** read
   `references/rendered-prose.md`. Every table cell holding Hebrew is `dir="rtl"` unless the
   whole table already is.

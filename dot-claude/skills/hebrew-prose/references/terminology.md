@@ -40,9 +40,8 @@ chanted because it is clear from context."*
   stays short: accgram's one-letter appendix heading is `Word` with `title="The chanted
   word; …"`.
 
-Call base characters letters. Name the specific printed tradition rather than generalizing a
-finding to all printed editions. “Paseq vs legarmeh” below distinguishes Unicode PASEQ from
-the grammatical term.
+Call base characters letters. Name the specific edition rather than generalizing a finding to all
+printed editions. “Paseq vs legarmeh” below distinguishes Unicode PASEQ from the grammatical term.
 
 ## Naming an atom by position, not by role
 
@@ -400,6 +399,54 @@ text of four published pages, MAM-parsed's `mpplus.html` and `mpplus-template-ca
 MAM-with-doc's `foi/foi-slh-word.html` and near-Aleppo's `choices.html`. Receipts, executed
 plans, dated records, Ben's request files and pushed commit messages keep their words.
 
+## MAM's דפוסים is "the printed tradition"
+
+Ben's instruction, 2026-11-18, for every English rendering of a MAM documentation note, given while
+the stress-helpers page was being edited: *"When translating MAM doc-notes, in this document and
+elsewhere (so make a note in whatever skill and/or other documents help with MAM doc-note
+translation) for דפסים or whatever the word is you sometimes translate as "printed editions", please
+instead use "the printed tradition" (this means, typically, the 2nd Venice MG and its descendents,
+which is pretty much all printed traditions before some 20th century editions such as BHS started
+being manuscript-based. Note that there were plenty of 20th century editions, even late into the
+20th century, that resisted this trend towards being manuscript-based, and are still in the 2nd
+Venice MG tradition, i.e. the "printed tradition") (admittedly a slightly confusing term now).
+Another way of putting this is that by "the printed tradition" we mean "editions in the lineage of
+traditional printed editions")"*
+
+MAM's introduction gives the sigil a narrower scope than that gloss, and the two agree on the
+lineage. Its appendices, mirrored in MAM-basics' `in/mam-ws-intro/appendices.mediawiki`,
+define דפוסים (line 272) as a selection of Bible editions from the beginning of the 19th century to
+the beginning of the 20th, and say that the term does not mean the Venice Miqraot Gedolot, which the
+notes cite as מ"ג (line 271); Koren has a sigil of its own, קורן (line 281). Its chapter 3,
+`ch3.mediawiki`, says that the notes cite by this sigil the customary text of the printed
+editions, הנוסח המקובל בדפוסים, which rests mainly on the Venice Miqraot Gedolot (lines 728 and
+730). Yeivin's ITM, §§59–60, says "printed editions" and calls the Venice edition, the "Second
+Rabbinic Bible", the "Received Edition"; neither source has a phrase like "the printed tradition".
+
+- **Every form of the sigil is "the printed tradition":** the
+  forms בדפוסים, ובדפוסים, וכמו כן בדפוסים and דפוסים=. A part of it, as
+  in בחלק מהדפוסים, בדפוסים אחרים or יש דפוסים, is "part of the printed tradition".
+- **MAM's distinctions stay.** Its בדפוסים וקורן is "the printed tradition and Koren", never "Koren
+  and other printed editions", and its מ"ג or מ"ג דפוס ונציה is the Venice Miqraot Gedolot, never
+  "the printed tradition".
+- **"A printed edition" in our own voice still names one edition,** such as Koren or the Simanim
+  Tanakh, and "the printed editions" never renders a note's דפוסים.
+- **A rendered page explains the term where its readers meet it.** The stress-helpers page gives
+  each "the printed tradition" a hover: "In MAM’s notes, דפוסים, which we usually translate as “the
+  printed tradition”, means the customary text of a selection of widespread editions from the 19th
+  and early 20th centuries, in the lineage of the second Venice Miqraot Gedolot. The notes cite that
+  Venice edition, and Koren, apart."
+
+`doc/sigil-decoding.md` decodes the sigil the same way. Adopted on 2026-11-18 on the stress-helpers
+page, `gh-pages/stress-helpers/index.html`. Not yet changed on 2026-11-18, and left to a separate
+sweep: the renderings of דפוסים as "printed editions", or the like, in
+`py/foi/dexi_stress_meteg_translations.py`, `py/accgram/telg_doc_notes.py`,
+`py/accgram/ps17v14_mam_doc_notes_body.py`, `py/near_aleppo/`'s `doc_genesis_ketiv.py`,
+`doc_daniel_sheva.py`, `doc_choices.py` and `phase3_policies.py`,
+`in/near-aleppo/doc-note-review.json`, `doc/near-aleppo-avi-ketiv-investigation.html`,
+`doc/intro-doc-audit/human-review.json`, whose words may be its reviewers' own, and MAM-private's
+`mgketer/py/python_modules/manual_suppressions.py` and `doc/PLAN-near-aleppo.md`.
+
 ## Never the noun "reading"
 
 Ben, 2026-07-28: *"You use 'reading', your favorite word for a lot of things, and one that is …
@@ -700,6 +747,11 @@ makes the name a feminine adjective, so it keeps the final `-ah`, as `midrashit`
 ending of הטעמה "מדרשית"; and its first syllable has the feminine's shewa, as in `setumah`,
 `qetanah` and `gedolah`. CLC's and accgram's visible labels keep the romanization rather than
 Hebrew letters (Ben, the same day).
+
+Ben's choice, 2026-11-18: transliterate qof as `q`, as in "Miqraot Gedolot", rather than "Mikraot
+Gedolot". Ben, of a draft that said "Mikraot": *"I prefer Miqraot to Mikraot, as in general I prefer
+to transliterate qof with a q. Unless you have specific reason to use 'k' here."* Like the choices
+above, it applies to new and touched text and starts no sweep.
 
 Tet and tav both use plain `t`/`T` in Ben's transliteration; do not introduce ṭ/Ṭ.
 

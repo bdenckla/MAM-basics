@@ -43,11 +43,12 @@ filenames remain possible. `py/tests/test_tracked_filenames.py` enforces both ru
 
 ## Invoke the `hebrew-prose` skill before accentuation prose
 
-Before writing, editing, or reviewing prose about Hebrew accentuation or cantillation, in any
-register from rendered pages to chat, load the user-level `hebrew-prose` skill and its
-`references/mam-basics.md`, which carries this repository's exceptions. The skill's canonical
-copy is `dot-claude/skills/hebrew-prose/`; never edit a live copy. `dot-claude/README.md`
-gives the deployment and the cloud SessionStart hook, `.claude/hooks/install-user-config.sh`.
+Before writing, editing, or reviewing prose about Hebrew accentuation or cantillation, or an English
+rendering of a MAM documentation note, in any register from rendered pages to chat, load the
+user-level `hebrew-prose` skill and its `references/mam-basics.md`, which carries this repository's
+exceptions. The skill's canonical copy is `dot-claude/skills/hebrew-prose/`; never edit a live copy.
+`dot-claude/README.md` gives the deployment and the cloud SessionStart hook,
+`.claude/hooks/install-user-config.sh`.
 
 ## The MAM introduction is mirrored locally
 
