@@ -349,7 +349,7 @@ are checked separately, in the report's own pasoleg section (§3), so read that 
 difference regions" is not a statement about them. The scanner layer is only partly better — a
 stroke in a legarmeh position does change its token, but one the positional rule does not fire on
 comes out as a plain munaḥ, indistinguishable from no stroke at all, and the stream-for-stream
-comparison against the strand runs only for the seven stems that diverge nowhere.
+comparison against the strand runs only for the six stems that diverge nowhere.
 
 **What the separate check on the strokes still cannot reach.** An edition that does not draw the
 distinction is not checked at all: Koren prints the stroke without saying which kind it is, so all

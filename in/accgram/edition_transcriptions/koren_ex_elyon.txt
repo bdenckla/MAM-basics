@@ -46,9 +46,14 @@
 #     transcribed elyon editions separate ובנך where the Wikisource elyon strand joins it.  That
 #     points at the Wikisource elyon strand as the outlier, not at Koren.
 #   * יהיה is KOREN-ALONE.  No Wikisource strand -- taxton or elyon, manuscript or printed --
-#     separates יהיה־לך; all eight join it, and simtiq_ex_elyon agrees with the join (it has
-#     no divergence there).  Koren is the only witness on this page that splits it.  Recorded
-#     on Ben's confirmed reading, with its uniqueness stated so the claim's strength is plain.
+#     has לא, יהיה and לך as three chanted words.  The four elyon strands join יהיה־לך, and none
+#     of them splits it; the four taxton strands join לא־יהיה (merkha) and leave לך alone with a
+#     tevir.  Until 2026-11-18 this bullet said that "all eight join it", which the taxton strands
+#     refute.  simtiq_ex_elyon agrees with the elyon join (it has no divergence there).  Koren is
+#     the only witness on this page that splits it.  Recorded on Ben's confirmed reading, with its
+#     uniqueness stated so the claim's strength is plain.  Koren's own Deuteronomy appendix
+#     (koren_dt_elyon, p. 39) separates יהיה from לך too, but into two chanted words, with the
+#     taxton strands' grouping: a maqaf joins לא־יהיה, with a munax on each atom.
 #
 # base_skeleton drops the maqaf along with the points, so the reference's JOINING of the atoms
 # -- the very thing at issue -- is not visible in the pinned skeleton: region 1 pins as "לא"

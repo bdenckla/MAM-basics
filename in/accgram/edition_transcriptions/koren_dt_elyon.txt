@@ -10,40 +10,52 @@
 # Deuteronomy Decalogue on p. 39 (the appendix is its own scan sequence, V-039).  The title
 # reads עשרת הדיברות שבפרשת ואתחנן / בטעם העליון.
 #
-# RESULT: 164 reference tokens vs 164 transcribed, 9 chanted verses vs 9, and ZERO divergences.
-# Koren's Deuteronomy elyon follows ws/dt/elyon/printed in EVERY accent.  All seven pasolegs land
-# on their exact reference positions (tokens 16 פסל, 19 בשמים, 25 במים, 69 צוך, 79 שבת, 101 היית,
-# 126 למען).
+# RESULT: 164 reference tokens vs 165 transcribed, 9 chanted verses vs 9, and ONE divergence: a
+# munax on יהיה (5:7, line 2), inserted after the reference word לא, where ws/dt/elyon/printed
+# has a maqaf joining יהיה to לך.  Every other accent follows that strand.  All seven pasolegs
+# land on their exact reference positions (reference tokens 16 פסל, 19 בשמים, 25 במים, 69 צוך,
+# 79 שבת, 101 היית, 126 למען).  Until 2026-11-18 this paragraph said 164 vs 164 with ZERO
+# divergences, on a misreading of line 2 corrected that day (see the corrections below).
 #
-# THE COUNTERPART TO koren_ex_elyon, AND THE CONTRAST WORTH STATING.  The Exodus appendix elyon
-# page (koren_ex_elyon, p. 38) was the first Koren page to diverge: it splits two maqaf compounds
-# the Wikisource ex/elyon strand joins (יהיה־לך and ובנך־ובתך), printing each atom as its own
-# accented word.  THIS page does the OPPOSITE at both sites -- it JOINS them, matching the
-# reference -- so the split is a fact about Koren's Exodus page, not a house habit:
-#   * לֹא יִהְיֶה־לְךָ (5:7): Koren joins יהיה־לך (telisha qetana) with לא separate (munax), exactly
-#     as ws/dt/elyon/printed has it.  No Wikisource strand anywhere -- taxton or elyon, manuscript
-#     or printed -- separates יהיה from לך as its own word, so a split here would have been
-#     Koren-alone; Koren does not split it.
+# THE COUNTERPART TO koren_ex_elyon, AND WHERE THE TWO PART.  The Exodus appendix elyon page
+# (koren_ex_elyon, p. 38) was the first Koren page to diverge: it splits two maqaf compounds the
+# Wikisource ex/elyon strand joins (יהיה־לך and ובנך־ובתך), printing each atom as its own
+# accented chanted word.  THIS page splits the first of them as well, but joins the second,
+# matching the reference -- so the ובנך split is a fact about Koren's Exodus page, not a house
+# habit:
+#   * לא יהיה לך (5:7): Koren has לֹ֣א־יִֽהְיֶ֣ה לְךָ֩ -- a maqaf joining לא to יהיה, a munax on each of
+#     those two atoms, then a space and לך with telisha qetana.  ws/dt/elyon/printed has לא
+#     (munax) and the compound יהיה־לך (telisha qetana), with no accent on יהיה.  So Koren
+#     separates יהיה from לך here as on its Exodus page, though into two chanted words rather
+#     than three.  No strand has what this page has.  Only the four elyon strands have the
+#     compound יהיה־לך, and none of them splits it.  The four taxton strands have this page's
+#     grouping -- לא־יהיה, then לך alone -- but with a merkha on יהיה and a tevir on לך,
+#     where this page has the elyon's munax on לא and telisha qetana on לך, and a munax on יהיה
+#     that no strand has.
 #   * אַתָּה וּבִנְךָ־וּבִתֶּךָ (Shabbat): Koren joins ובנך־ובתך (munax), as ws/dt/elyon/printed has it.
 #     Note the corroboration is REVERSED from Exodus: there the two ex/taxton strands split ובנך,
 #     which is what corroborated the koren_ex_elyon split; in DEUTERONOMY all four dt strands
 #     (elyon+taxton, manuscript+printed) JOIN ובנך־ובתך, so no strand splits it and a split would
 #     have been Koren-alone and uncorroborated.  Koren joins it -- no divergence either way.
 #
-# ONE MAQAF DIFFERENCE, real but invisible to the token comparison: at ל֣א־תעש֣ה
-# (5:14, the Sabbath commandment) Koren prints a maqaf compound (line 12, written mun-mun) where
-# ws/dt/elyon/printed has לא and תעשה as two chanted words, each with a munax of its own.
-# Both emit the same two tokens (mun, mun), so the token comparison sees no difference; the maqaf
-# is kept in the line so the .txt still says which the page had, and this file is the only record
-# of it.  This is the mirror of the koren_ex_elyon splits -- Koren joining where the reference
-# separates -- and unlike them it changes no accent, the joined לא keeping its munax.  It is a
-# difference all the same: the maqaf is the bottom rung of the same scale the accents are on.
+# TWO COMPOUNDS WITH A MUNAX ON EACH ATOM, and the token comparison sees neither one's maqaf.
+# At ל֣א־תעש֣ה (5:14, the Sabbath commandment) Koren prints a maqaf compound (line 12, written
+# mun-mun) where ws/dt/elyon/printed has לא and תעשה as two chanted words, each with a munax of
+# its own.  Both emit the same two tokens (mun, mun), so the token comparison sees no difference;
+# the maqaf is kept in the line so the .txt still says which the page had.  This is the mirror of
+# the koren_ex_elyon splits -- Koren joining where the reference separates -- and unlike them it
+# changes no accent, the joined לא keeping its munax.  It is a difference all the same: the maqaf
+# is the bottom rung of the same scale the accents are on.  The other compound is לא־יהיה (5:7,
+# line 2, also mun-mun), above.  Its maqaf after לא is just as invisible, the joined לא keeping
+# its munax there too; what the comparison does see there is the munax on יהיה, where the
+# reference has the maqaf that joins יהיה to לך.
 #
-# NOT 5:8, which this header said until 2026-07-28.  Line 12's mun-mun is tokens 82-83, and the
-# seven pasoleg positions the RESULT paragraph above names pin that 0-based numbering
-# independently.  At 5:8 ws/dt/elyon/printed already has תעשה joined to לך, and its תעשה
-# carries a meteg rather than an accent, so a compound with a munax on each atom cannot be that
-# site at all.
+# NOT 5:8, which this header said until 2026-07-28.  Line 12's mun-mun is reference tokens 82-83
+# (83-84 in the transcription's own numbering since line 2 gained its munax on 2026-11-18), and
+# the seven pasoleg positions the RESULT paragraph above names pin that 0-based reference
+# numbering independently.  At 5:8 ws/dt/elyon/printed already has תעשה joined to לך, and its
+# תעשה carries a meteg rather than an accent, so a compound with a munax on each atom cannot be
+# that site at all.
 #
 # THREE READINGS were corrected after export, each a transcription slip Ben re-read off the
 # book/editor and agreeing with the reference once fixed -- NOT edition divergences:
@@ -54,6 +66,17 @@
 #     --site check is what placed the doubt before the re-read, not after.
 # The committed JSON carries all three corrections with the superseded reading in corrected_from.
 #
+# A FOURTH READING was corrected on 2026-11-18, and unlike the three above it does NOT agree
+# with the reference once fixed.  Line 2 had ended "mun tq", which reads לא יהיה לך the way the
+# reference groups it: לא, then the compound יהיה־לך.  The page has לא־יהיה, with a munax on
+# each atom, then a space and לך: "mun-mun tq".  A census Codex ran on 2026-11-16, reading
+# Koren's scans for the stress-helpers record, flagged the disagreement (its note is kept in
+# MAM-private's stress-helpers/census-extract-2026-11-17.json); the crop
+# gh-pages/stress-helpers/img/koren-deuter-5-6-V-039-a12-elyon-1.png shows the two chanted
+# words; and Ben accepted the reading on 2026-11-18: "same old word, but correctly transcribed
+# now".  The misreading is what this header's RESULT and counterpart paragraphs rested on until
+# then.  The JSON carries this correction too, with the old line 2 in corrected_from.
+#
 # LINE 24 was recovered.  The Decalogue's closing word לרעך sits alone on its own line, and the
 # editor's band detector dropped it again -- a lone short word carries too little ink per row to
 # clear the cutoff, and this page's wide crop (widened at the left to reach the hung מצותי)
@@ -61,11 +84,12 @@
 # offered a field: Ben flagged its verse-final silluq in line 23 with the ad-hoc aside
 # "[סיל on next line]", which was moved here as line 24; its px_source is measured off the scan.
 #
-# NO reading here is flagged uncertain: the three corrections were re-read and confirmed, and
-# every other position sits in the agreeing majority.  The usual caution still applies -- the
-# harness flags only positions where the two disagree, so only the three above were re-read; the
-# ~161 agreeing positions were not.  What this page adds beyond koren_ex_elyon is that the two
-# maqaf sites, checked against all eight strands, come out agreeing rather than splitting.
+# NO reading here is flagged uncertain: the four corrections were re-read and accepted, and every
+# other position sits in the agreeing majority.  The usual caution still applies -- the harness
+# flags only positions where the two disagree, so only the first three corrections were re-read
+# because of it; the ~161 agreeing positions were not.  The fourth shows the caution is not idle:
+# the misread line 2 AGREED with the reference, so the harness had nothing to flag there, and the
+# misreading surfaced only when the scan itself was read again for another purpose.
 #
 # The chanted verse boundary at עבדים stays p-trad (9 verses): ws/ex/elyon/manuscript closes its
 # own verse there (10) but ws/ex/elyon/printed runs on (9), and this transcription has 9.
@@ -78,10 +102,11 @@
 #
 # Conventions in force for this file:
 #   * One token per ACCENT.  Normally that is one per chanted word, a maqaf compound being one
-#     chanted word; the exception is a word bearing more than one accent.  None occurs here.
-#   * "-" is a maqaf binding two ACCENTS into one chanted word ("mun-mun" on לא־תעשה, line 12),
-#     "+" its simple-word counterpart, "_" binds two MARKS into ONE accent ("mun_leg").  The
-#     maqaf occurs once (line 12); the other two do not.
+#     chanted word; the exception is a chanted word bearing more than one accent.  Two occur
+#     here, the compounds לא־יהיה (line 2) and לא־תעשה (line 12), each with a munax on each atom.
+#   * "-" is a maqaf binding two ACCENTS into one chanted word ("mun-mun" on לא־יהיה, line 2, and
+#     on לא־תעשה, line 12), "+" its simple-word counterpart, "_" binds two MARKS into ONE accent
+#     ("mun_leg").  The maqaf occurs twice (lines 2 and 12); the other two do not.
 #   * A postpositive/prepositive accent written twice on one word -- once at its fixed edge and
 #     once as a stress helper -- is ONE accent, so ONE token.
 #   * meteg is NOT transcribed: it is not a first-class mark of the accent system.
@@ -104,7 +129,7 @@ transcriber: Ben Denckla
 date: 2026-07-22
 
 pash mun zaq
-mun tq qad ger mun rev mun tq
+mun tq qad ger mun rev mun-mun tq
 qad ger rev mun mun mun [pasoleg] paz
 mun mun [pasoleg] paz tq qad ger mer mun [pasoleg]
 mun rev mun zar mun seg mun ger2

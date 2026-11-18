@@ -117,7 +117,7 @@ MAM has each pair as one chanted word.  Ps 78:7 is the other way about -- WLC an
 meteg.  So no maqaf count can measure the poetic side: the asymmetry is real, but it lives in
 Breuer's argument that an unhyphenated word still COUNTS as hyphenated, not in anything a scan
 can see.  So SimTiq's two munax-on-לא are worth the attention this note gives them, and Koren's
-``mun-mun`` on לא־תעשה more still.
+two ``mun-mun`` compounds, on לא־יהיה and לא־תעשה, more still.
 
 CoS is greppable now, so CHECK a Breuer claim rather than restating one from here.  Chapter 9 is
 ``../masorah-books/books/cos/md-export-of-docx/C09-*.md`` -- the two books share one repo since
@@ -138,10 +138,13 @@ about rarity get their numbers.  Deliberately NO counts here: a number restated 
 is a number nothing keeps in step, which is the whole reason the survey was moved out of this
 docstring.  What the page settles, qualitatively, is that an accent on a non-final atom happens in
 well under one percent of prose maqaf compounds; that those cases split into Yeivin's grammatical
-secondary accents and §293's bare scribal habit, most of them the former; and that Koren's
-``mun-mun`` is NOT unprecedented -- 2 Chr 1:11 ויאמר־אלהים ׀ לשלמה is the same shape doing the
-same job before a pazer -- but that its precedent is a MANUSCRIPT one, no printed edition being
-known to have done it, SimTiq's munax on the joined לא being the nearest printed thing there is.
+secondary accents and §293's bare scribal habit, most of them the former; and that no maqaf
+compound of MAM's prose verses has the same accent on two atoms, so Koren's two ``mun-mun``
+compounds have no counterpart there.  The nearest precedent, which the Koren page holds, is
+WLC's, a transcription's rather than the manuscript's -- whether the Leningrad Codex itself has it
+is unchecked: 2 Chr 1:11ויאמר־אלהים ׀ לשלמה is the same shape doing the
+same job before a pazer.  No other printed edition is known to have done it, SimTiq's munax on
+the joined לא being the nearest printed thing there is.
 Read the page before restating any of that: it carries the corpus caveats that bound every one of
 those findings, and the survey module's docstring carries the method.
 

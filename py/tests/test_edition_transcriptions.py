@@ -8,7 +8,7 @@ the divergence set fails here instead of quietly falsifying a page.
 
 ``pytest.skip`` in this file means ONE thing, and it is a finding, not an absence: a page that
 diverges from its Wikisource strand, for which the token-stream control below has no knowable
-answer.  Five
+answer.  Six
 cases skip on a clean run, all of them that.  Nothing here skips on missing data -- the mirrored
 strand JSON and all twelve transcriptions and their exports are committed under ``in/accgram``,
 so an absent one is a deleted tracked file and fails.  See ``paths.require_sibling``.
@@ -198,28 +198,37 @@ _EXPECTED_DIVERGENCES = {
         ("", "mun", "לא"),
         ("", "mun", "ובנךובתך"),
     ],
-    # Koren's Deuteronomy APPENDIX Decalogue (elyon, p. 39) diverges NOWHERE: 164 reference tokens
-    # vs 164, agreeing at every accent.  It is the counterpart to koren_ex_elyon, and the contrast
-    # is the point.  Where the Exodus elyon page SPLITS two maqaf compounds the mirrored strand
-    # joins (יהיה־לך and ובנך־ובתך), printing each atom as its own accented word, this page JOINS
-    # both, matching ws/dt/elyon/printed -- so that split is a fact about Koren's Exodus page, not
-    # a house style.  Checked against all eight strands: none of them SPLITS THE COMPOUND יהיה־לך,
-    # and in Deuteronomy all four dt strands JOIN ובנך־ובתך.  Say it about the compound, never as
-    # "no strand separates יהיה from לך" -- the four taxton strands separate those two words as a
-    # matter of course, binding לא to יהיה (לא־יהיה, merkha) and leaving לך alone with a tevir, so
-    # only the four elyon strands have the compound at all.  The looser wording reached the Koren
-    # page's rendered prose and the 2026-07-25 claim audit found it refuted by the hub's own
-    # four-strands table, which shows the taxton division in its pT row.  That last is the REVERSE
-    # of Exodus,
-    # where the two ex/taxton strands split ובנך and so corroborated the koren_ex_elyon split; in
-    # Deuteronomy no strand splits it, so a split here would have been Koren-alone -- and Koren
-    # makes none.  One maqaf difference is kept in the .txt but cannot be a divergence here,
-    # the token stream having no maqaf token to differ in: לא־תעשה is a maqaf compound on the
-    # page (mun-mun, line 12) where the reference
-    # sets לא and תעשה apart, both munax, so the token stream is identical either way.  Three
-    # transcription slips were corrected before this list: line 5 and line 8 each skipped a munax
-    # on כי, and line 9 read ינקה as pazer where all eight strands (and the page) have pashta.
-    "koren_dt_elyon": [],
+    # Koren's Deuteronomy APPENDIX Decalogue (elyon, p. 39) diverges at ONE point: 164 reference
+    # tokens vs 165.  At לא יהיה לך (5:7) the page has לא־יהיה, a munax on each atom, then a space
+    # and לך with telisha qetana, where ws/dt/elyon/printed has לא (munax) and the compound
+    # יהיה־לך, whose יהיה carries only a meteg.  The divergence is the munax on יהיה, and it pins
+    # exactly as koren_ex_elyon's first region does, anchored at the reference word לא.  The two
+    # pages part over the rest: the Exodus page has three chanted words there, this one two, with
+    # the grouping of the four taxton strands (לא־יהיה, then לך alone with a tevir) but the
+    # elyon's accents on לא and לך, so no strand has this page's chanted words.  Say it that way,
+    # never as "no strand separates יהיה from לך" -- the four taxton strands separate those two
+    # atoms as a matter of course; only the four elyon strands have the compound יהיה־לך, and none
+    # of them splits it.  The looser wording reached the Koren page's rendered prose and the
+    # 2026-07-25 claim audit found it refuted by the hub's own four-strands table, which shows the
+    # taxton division in its pT row.
+    #
+    # Until 2026-11-18 this list was EMPTY and this comment said the page joins יהיה־לך: line 2
+    # had been misread as "mun tq", which agrees with the reference token for token, so nothing
+    # here could flag it.  A census of Koren's scans for the stress-helpers record caught it, and
+    # Ben accepted the corrected reading, "mun-mun tq", on 2026-11-18.
+    #
+    # At the Shabbat commandment the page joins ובנך־ובתך, as all four dt strands do -- the
+    # REVERSE of Exodus, where the two ex/taxton strands split ובנך and so corroborated the
+    # koren_ex_elyon split; here a split would have been Koren-alone, and Koren makes none.  One
+    # maqaf difference is kept in the .txt but cannot be a divergence here, the token stream having
+    # no maqaf token to differ in: לא־תעשה is a maqaf compound on the page (mun-mun, line 12) where
+    # the reference sets לא and תעשה apart, both munax, so the token stream is identical either
+    # way.  The maqaf after לא in לא־יהיה is just as invisible.  Three transcription slips were
+    # corrected before this list was first pinned: line 5 and line 8 each skipped a munax on כי,
+    # and line 9 read ינקה as pazer where all eight strands (and the page) have pashta.
+    "koren_dt_elyon": [
+        ("", "mun", "לא"),
+    ],
     # SimTan's Exodus main Decalogue (taxton, pp. 119-120) -- a different edition from
     # SimTiq though Feldheim publishes both, and the FIRST transcription pinned against a
     # MANUSCRIPT-tradition strand: the eight above are all against a printed-tradition one.  It
@@ -345,7 +354,8 @@ _CHANTED_VERSES = {
     "koren_ex_elyon": 9,
     # The elyon's own division again, in Deuteronomy: עבדים closes its own verse in
     # ws/dt/elyon/manuscript (10) but runs on in ws/dt/elyon/printed (9).  This transcription has
-    # 9, the printed side, with no divergence anywhere to move a boundary.
+    # 9, the printed side.  Its one divergence, the munax on יהיה, is mid-verse, so it cannot move
+    # a boundary.
     "koren_dt_elyon": 9,
     # The FIRST m-trad count pinned here, and the first that is not the printed tradition's.
     # Same boundary as every entry above, taken the other way: עבדים carries an etnaxta and the
@@ -386,7 +396,8 @@ _SKELETON_UNTOUCHED = {
     # compound the reference joins, so no disjunctive is added or removed.  A maqaf difference,
     # like simtiq_ex_elyon, not the disjunctive swap simtiq_dt_taxton makes.
     "koren_ex_elyon",
-    # Zero divergences at all, so nothing touches the skeleton -- the strongest case here.
+    # Its one divergence inserts a munax -- a conjunctive -- on יהיה, where Koren's maqaf joins
+    # לא־יהיה and the reference's joins יהיה־לך, so no disjunctive is added or removed.
     "koren_dt_elyon",
     # Zero divergences too, and against a manuscript-tradition strand.
     "simtan_ex_taxton",
@@ -1158,13 +1169,13 @@ def test_the_synthesized_mark_body_reproduces_the_scanner_on_an_agreeing_page(
     methiga-zaqef, mayela, legarmeh, and the stress-helper pashta and telisha the scanner fuses.
 
     Scoped to the stems that agree at every accent, which is where a difference would have to be
-    the adapter's rather than the edition's.  Seven of the twelve qualify, 76 chanted verses in
-    all; the five that diverge are covered by the grammaticality test below instead.
+    the adapter's rather than the edition's.  Six of the twelve qualify, 67 chanted verses in
+    all; the six that diverge are covered by the grammaticality test below instead.
     """
     if _EXPECTED_DIVERGENCES[stem]:
         # The suite's ONE skip, and it states a finding rather than an absence: this page
         # disagrees with its Wikisource strand somewhere, so the token-for-token control has no
-        # knowable answer here.  Five stems land here on a clean run; see the module docstring
+        # knowable answer here.  Six stems land here on a clean run; see the module docstring
         # for why nothing else in this file is allowed to share the channel.
         pytest.skip(
             f"{stem} diverges from its Wikisource strand; the control needs an agreeing page"

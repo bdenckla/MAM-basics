@@ -11382,7 +11382,7 @@
             "ger",
             "mun",
             "rev",
-            "mun",
+            "mun-mun",
             "tq",
             "qad",
             "ger",
@@ -11425,7 +11425,7 @@
             "mer",
             "silsof"
           ],
-          "marks": "א֙ א֣ א֔ א֣ א֩ א֨ א֜ א֣ א֗ א֣ א֩ א֨ א֜ א֗ א֣ א֣ א֣׀ א֡ א֣ א֣׀ א֡ א֩ א֨ א֜ א֥ א֣׀ א֣ א֗ א֣ א֮ א֣ א֒ א֣ א֞ א֤ א֙ א֣ א֔ א֠ א֨ א֧ א֛ א֥ א֖ א֑ א֤ א֙ א֔ א֖ א֥ אֽ׃",
+          "marks": "א֙ א֣ א֔ א֣ א֩ א֨ א֜ א֣ א֗ א֣-א֣ א֩ א֨ א֜ א֗ א֣ א֣ א֣׀ א֡ א֣ א֣׀ א֡ א֩ א֨ א֜ א֥ א֣׀ א֣ א֗ א֣ א֮ א֣ א֒ א֣ א֞ א֤ א֙ א֣ א֔ א֠ א֨ א֧ א֛ א֥ א֖ א֑ א֤ א֙ א֔ א֖ א֥ אֽ׃",
           "tokens": [
             "TILDE",
             "PASHTA",
@@ -11437,6 +11437,7 @@
             "GERESH",
             "MUNAX",
             "REVIA",
+            "MUNAX",
             "MUNAX",
             "TELISHAQETANNA",
             "AZLA",
@@ -11483,6 +11484,14 @@
           ],
           "status": "ungrammatical",
           "strand_status": "ungrammatical",
+          "chanted_word_accents": [
+            {
+              "marks": "א֣-א֣",
+              "sequence": "munax munax",
+              "kind": "a maqaf compound, its accents split across atoms",
+              "itm_section": null
+            }
+          ],
           "tree": {
             "label": "silluq_clause",
             "children": [
@@ -11543,6 +11552,7 @@
                                   {
                                     "label": "geresh_phrase",
                                     "leaves": [
+                                      "munax",
                                       "munax",
                                       "telishaqetanna",
                                       "azla",
