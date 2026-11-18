@@ -443,10 +443,12 @@ def _pa38_note_section() -> tuple[object, ...]:
 # C3): the rows alternate main / appendix, so the stripe would tint exactly the two appendix rows
 # and read as if it encoded that.
 #
-# Two things are this table's alone, both Ben's of 2026-11-18. The second class, ruled-rows, sets
-# the rows off from each other with a thin rule between each pair, which the zebra cannot do here.
-# And the first column stacks the Decalogue, its pages and its strand in one cell, one per line,
-# with Ex and Dt for the books. The Simanim page's two tables of the same shape have neither.
+# Two things this table shares with the Simanim page's two of the same shape, and with no other
+# table of the trio. The second class, ruled-rows, sets the rows off from each other with a thin
+# rule between each pair, which the zebra cannot do here. And the first column stacks the
+# Decalogue, its pages and its strand in one cell, one per line, with Ex and Dt for the books.
+# Ben asked for both of this table on 2026-11-18 and, answering "Decision 1: A" the same day, for
+# the Simanim page's two.
 #
 # The two readings flagged uncertain during transcription (p. 114's לא of לא תרצח, p. 281's tipexa
 # on את־שמו) are deliberately NOT mentioned here or anywhere on this page -- Ben's call,

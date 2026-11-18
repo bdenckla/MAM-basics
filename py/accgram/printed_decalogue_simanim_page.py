@@ -401,8 +401,9 @@ def _intro(source: dict) -> tuple[object, ...]:
 # parchment, which must NOT invert) cannot pick it up silently.
 
 
-def _lines_with_breaks(lines: tuple[str, ...]) -> tuple[object, ...]:
-    """Interleave ``<br>`` between transcription lines (they follow the scan's own breaks)."""
+def _lines_with_breaks(lines: tuple[object, ...]) -> tuple[object, ...]:
+    """Interleave ``<br>`` between lines: a transcription's lines, which follow the scan's own
+    breaks, or the pieces that the verdict tables' first column stacks in one cell."""
     body: list[object] = []
     for i, line in enumerate(lines):
         if i:
@@ -741,23 +742,31 @@ def _p246_section() -> tuple[object, ...]:
 # (issue wlc-utils#65, finding C3): the four rows alternate main / appendix, so the stripe would tint
 # exactly the two appendix rows and read as if it ENCODED that rather than merely counting rows.
 #
+# Two things these two tables share with the Koren page's, and with no other table of the trio.
+# The second class, ruled-rows, sets the rows off from each other with a thin rule between each
+# pair, which the zebra cannot do here. And the first column stacks the Decalogue, its pages and
+# its strand in one cell, one per line, with Ex and Dt for the books. Ben asked for both of the
+# Koren page's table on 2026-11-18 and, answering "Decision 1: A" the same day, for these two.
+#
 # The last column (issue wlc-utils#52) is the grammaticality verdict, and it is NOT written out per row:
 # each cell is derived from the checker's own result for that transcription, looked up by the
 # stem each row names, so the column cannot claim a verdict the checker does not give. The prose
 # is shared with the Koren page's table -- see transcription_verdict_column.
 def _verdict_table(
-    rows: tuple[tuple[str, str, str, object, object], ...],
+    rows: tuple[tuple[str, str, str, str, object], ...],
     verdicts: dict[str, tp.TranscriptionResult],
 ) -> object:
     header = H.table_row_of_headers(
-        ("Decalogue", "pages", "strand", "how far it follows it", tvc.HEADER)
+        (
+            _lines_with_breaks(("Decalogue", "pages", "strand")),
+            "how far it follows it",
+            tvc.HEADER,
+        )
     )
     body = [
         H.table_row(
             (
-                H.table_header(which),
-                H.table_datum(pages),
-                H.table_datum(strand),
+                H.table_header(_lines_with_breaks((which, pages, strand))),
                 H.table_datum(verdict),
                 H.table_datum(tvc.cell(verdicts[stem])),
             )
@@ -765,7 +774,8 @@ def _verdict_table(
         for which, stem, pages, strand, verdict in rows
     ]
     return H.table(
-        (header, *body), {"class": "printed-decalogue-transcription-verdict"}
+        (header, *body),
+        {"class": "printed-decalogue-transcription-verdict ruled-rows"},
     )
 
 
@@ -773,10 +783,10 @@ def _tiqqun_verdict_table(verdicts: dict[str, tp.TranscriptionResult]) -> object
     return _verdict_table(
         (
             (
-                "Exodus main",
+                "Ex main",
                 "simtiq_ex_elyon",
                 "83–84",
-                ("p-trad ", _ELYON),
+                f"p-trad {_ELYON}",
                 (
                     "Every chanted verse boundary, the whole disjunctive skeleton, and every"
                     " chanted word marked as its Wikisource strand marks it but two, each an"
@@ -790,10 +800,10 @@ def _tiqqun_verdict_table(verdicts: dict[str, tp.TranscriptionResult]) -> object
                 ),
             ),
             (
-                "Exodus appendix",
+                "Ex appendix",
                 "simtiq_ex_taxton",
                 "246",
-                ("p-trad ", _TAHTON),
+                f"p-trad {_TAHTON}",
                 # Not "every accent": two of its three differences are accents it adds, which is
                 # what puts this row a rung above pp. 83-84's maqaf-only pair. The third is the
                 # same maqaf as pp. 83-84's, named as such so this row and the scale above it stay
@@ -809,18 +819,18 @@ def _tiqqun_verdict_table(verdicts: dict[str, tp.TranscriptionResult]) -> object
                 ),
             ),
             (
-                "Deuteronomy main",
+                "Dt main",
                 "simtiq_dt_elyon",
                 "208–209",
-                ("p-trad ", _ELYON),
+                f"p-trad {_ELYON}",
                 "Every accent, with no difference anywhere the comparison reaches — 164 accents"
                 " against 164.",
             ),
             (
-                "Deuteronomy appendix",
+                "Dt appendix",
                 "simtiq_dt_taxton",
                 "247",
-                ("p-trad ", _TAHTON),
+                f"p-trad {_TAHTON}",
                 (
                     "p-trad throughout ",
                     H.bold("except the Shabbat commandment"),
@@ -842,20 +852,20 @@ def _tanakh_verdict_table(
     return _verdict_table(
         (
             (
-                "Exodus main",
+                "Ex main",
                 "simtan_ex_taxton",
                 "119–120",
-                ("m-trad ", _TAHTON),
+                f"m-trad {_TAHTON}",
                 "Every accent, with no difference anywhere the comparison reaches. Its twelve"
                 " chanted verses are"
                 " corroborated independently of any mark, by the edition's own printed verse"
                 " numbers.",
             ),
             (
-                "Deuteronomy main",
+                "Dt main",
                 "simtan_dt_taxton",
                 "297–298",
-                ("m-trad ", _TAHTON),
+                f"m-trad {_TAHTON}",
                 (
                     "Every accent but one: a ",
                     _ROM_QADMA,
@@ -873,17 +883,17 @@ def _tanakh_verdict_table(
                 ),
             ),
             (
-                "Exodus appendix",
+                "Ex appendix",
                 "simtan_ex_elyon",
                 "350",
-                ("m-trad ", _ELYON),
+                f"m-trad {_ELYON}",
                 "Every accent, with no difference anywhere the comparison reaches.",
             ),
             (
-                "Deuteronomy appendix",
+                "Dt appendix",
                 "simtan_dt_elyon",
                 "351",
-                ("m-trad ", _ELYON),
+                f"m-trad {_ELYON}",
                 "Every accent, with no difference anywhere the comparison reaches.",
             ),
         ),
