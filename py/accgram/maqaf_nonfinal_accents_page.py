@@ -2,9 +2,9 @@ r"""Generate gh-pages/wlc/accgram/maqaf-nonfinal-accents.html, and the JSON behi
 
 The rendered account of ``maqaf_nonfinal_accents``' survey, narrowed to one question: how often a
 non-final atom of a compound has an accent of its own in MAM, and what that means for
-``koren_dt_elyon``'s ``mun-mun`` on לא־תעשה.  Every number on the page is spliced from the survey
-this run computes, and the same run writes ``out/accgram/maqaf-nonfinal-accents.json``, so page
-and data cannot drift.
+``koren_dt_elyon``'s two ``mun-mun`` compounds, on לא־יהיה and לא־תעשה.  Every number on the
+page is spliced from the survey this run computes, and the same run writes
+``out/accgram/maqaf-nonfinal-accents.json``, so page and data cannot drift.
 
 The survey is wider than the page: three corpora, both genres, and a ANFA-reason (a)/(b) split telling
 an inherited secondary accent from a maqaf written after an atom that keeps its own conjunctive.
@@ -88,7 +88,7 @@ from py_html import wlc_utils_html as H
 #
 # THE TITLE NAMES THE QUESTION, NOT THE SCAN (Ben, 2026-07-30).  It was "Accents on a Non-Final
 # Atom" -- the survey's own subject, the thing the tables count.  But the survey is the means:
-# the intro asks whether Tanakh has anything like the three strange spreaders of Koren's
+# the intro asks whether Tanakh has anything like the four strange spreaders of Koren's
 # Deuteronomy and the Simanim Tiqqun's Exodus, and every table under it is answering that.  So
 # the title says what the page is FOR.  ("Accents on a Non-Final Atom" had itself dropped "of a
 # maqaf compound" for space earlier the same day, an atom being non-final only within one.)
@@ -904,7 +904,7 @@ def _ref_abbrev(bcv: str) -> str:
     return ref_abbrev(bcv)
 
 
-# The letters the three printed cases are found by -- bare letters, no marks, the marks being
+# The letters the four printed cases are found by -- bare letters, no marks, the marks being
 # exactly what must not be retyped here.  A search PATTERN is one tuple per chanted word, holding
 # that word's atoms in order, so it fixes the grouping as well as the letters.
 _LO = "לא"
@@ -1049,7 +1049,55 @@ def _koren_case() -> dict:
         "href": _KOREN_HREF,
         "book": "Deuteronomy",
         "strand": ELYON,
+        "compound": (_LO, _TAASE),
         "printed": f"{lo}{_MAQAF}{taase}",
+        "same": _render_span(elyon),
+        "other": _render_span(taxton),
+        "pair": pair,
+    }
+
+
+def _koren_lo_yihye_case() -> dict:
+    """Koren's לא־יהיה, beside both Deuteronomy strands -- the case a correction added.
+
+    THE SECOND KOREN CASE, since 2026-11-18, when ``koren_dt_elyon``'s line 2 was corrected
+    (Ben's D1): the page had been read as the עליון groups it, לא by itself and then the compound
+    יהיה־לך, and what it has is לא־יהיה with a munaḥ on each atom, then a space and לך.
+
+    Koren's cell is CONSTRUCTED from the עליון, as ``_koren_case``'s is, but it differs in two
+    marks rather than one.  The עליון has לא by itself with a munaḥ, and the compound יהיה־לך,
+    whose יהיה has a meteg and no accent and whose לך has a telisha qetanna.  Koren's maqaf joins
+    לא to יהיה instead, a space stands before לך, and a munaḥ stands on יהיה where the עליון's
+    meteg does: the meteg is replaced by the munaḥ, the maqaf is moved, and nothing else is
+    touched.  (Koren has a meteg of its own on the first yod of יהיה, which no cell shows, the
+    cells being letters and accents only.)
+
+    The תחתון is asserted for what the carry-over paragraph says of this case: it has Koren's
+    grouping, לא־יהיה and then לך by itself, but no accent on the joined לא, a merkha on יהיה and
+    a tevir on לך.  So Koren's maqaf is where the other strand has its maqaf, and Koren's munaḥ
+    on יהיה is in neither strand.
+    """
+    elyon = _find_span(_p_trad_strand("dt", "elyon"), ((_LO,), (_YIHYE, _LEKHA)), 2)
+    lo, yihye_lekha = elyon
+    yihye, lekha = yihye_lekha.split(_MAQAF)
+    assert _sole_accent(lo) == am.MUNAX, elyon
+    assert not _accents(yihye) and yihye.count(mpa.METEG) == 1, elyon
+    assert _sole_accent(lekha) == am.TELISHA_QETANA, elyon
+    joined = f"{lo}{_MAQAF}{yihye.replace(mpa.METEG, am.MUNAX)}"
+    pair = tuple(_sole_accent(atom) for atom in joined.split(_MAQAF))
+    assert pair == (am.MUNAX, am.MUNAX), pair
+    taxton = _find_span(_p_trad_strand("dt", "taxton"), ((_LO, _YIHYE), (_LEKHA,)), 2)
+    joined_lo, joined_yihye = taxton[0].split(_MAQAF)
+    assert not _accents(joined_lo), taxton
+    assert _accents(joined_yihye) == [am.MERKHA], taxton
+    assert _accents(taxton[1]) == [am.TEVIR], taxton
+    return {
+        "edition": _KOREN,
+        "href": _KOREN_HREF,
+        "book": "Deuteronomy",
+        "strand": ELYON,
+        "compound": (_LO, _YIHYE),
+        "printed": _render_span([joined, lekha]),
         "same": _render_span(elyon),
         "other": _render_span(taxton),
         "pair": pair,
@@ -1107,6 +1155,7 @@ def _simtiq_case(second_letters: str, second_accent: str) -> dict:
         "href": _SIMTIQ_HREF,
         "book": "Exodus",
         "strand": TAHTON,
+        "compound": (_LO, second_letters),
         "printed": _render_span(printed),
         "same": _render_span(taxton),
         "other": _render_span(elyon),
@@ -1115,36 +1164,44 @@ def _simtiq_case(second_letters: str, second_accent: str) -> dict:
 
 
 def printed_cases() -> tuple[dict, ...]:
-    """The three printed cases the intro is about, one row each.
+    """The four printed cases the intro is about, one column each.
 
-    THREE CASES, TWO COMPOUNDS, TWO BOOKS -- Ben's own question, 2026-07-29: "are there really
-    three words/word-pairs, since לא־תעשה has issues in both Koren and SimTiq".  There are three
-    rows: לא־תעשה is one compound but two cases, Koren's in Deuteronomy and the Simanim Tiqqun's
-    in Exodus, and a row is what one edition has at one place in one book.  Merging the two
-    לא־תעשה cases into a row would have to merge two editions, two books and two strands with
-    them.
+    FOUR CASES, TWO COMPOUNDS, TWO BOOKS.  Ben's own question, 2026-07-29, when there were three:
+    "are there really three words/word-pairs, since לא־תעשה has issues in both Koren and
+    SimTiq".  A case is what one edition has at one place in one book, so a compound that two
+    editions share is two cases: merging them would have to merge two editions, two books and
+    two strands with them.  The fourth case arrived on 2026-11-18, when ``koren_dt_elyon``'s
+    line 2 was corrected (Ben's D1): Koren's Deuteronomy page has לא־יהיה with a munaḥ on each
+    atom as well as לא־תעשה, so each edition now has a case on each of the two compounds, and
+    ``_intro`` asserts exactly that before its parenthetical says it.
 
     KOREN AND THE SIMANIM TIQQUN ARE ON A PAR (Ben, same day: the Simanim Tiqqun "really on a par
     with Koren, i.e. the document isn't primarily Koren with SimTiq as an afterthought").  What
     that replaced was a Koren paragraph in running prose followed by a shorter one opening "Koren's
     is not the only such compound in print" -- the afterthought framing in one clause.  Same
-    columns, same derivations, one table: neither edition is the other's footnote.  Koren stays
-    the first row only because the prose above names it first and the answer below answers it
-    first.
+    columns, same derivations, one table: neither edition is the other's footnote.  Koren's two
+    stay the first columns only because the prose above names Koren first and the answer below
+    answers it first.  Within each edition the order is the Decalogue's, לא־יהיה before
+    לא־תעשה.
     """
-    return (_koren_case(), *(_simtiq_case(*case) for case in _SIMTIQ_CASES))
+    return (
+        _koren_lo_yihye_case(),
+        _koren_case(),
+        *(_simtiq_case(*case) for case in _SIMTIQ_CASES),
+    )
 
 
 def unprecedented_pairs() -> tuple[tuple[str, str], ...]:
-    """The accent pair of each of the three printed compounds the page asks about.
+    """The distinct accent pairs of the printed cases the page asks about: three, for four cases.
 
-    Derived from the very forms the table shows -- Koren's from the two atoms it joins, the
-    Simanim Tiqqun's from the munaḥ that construction puts on the joined לא and the accent
+    Derived from the very forms the table shows -- Koren's from the two atoms of each compound,
+    the Simanim Tiqqun's from the munaḥ that construction puts on the joined לא and the accent
     ``_SIMTIQ_CASES`` names on the second atom.  So a refresh of the mirror that changed any of
-    the three would change what ``pin_claims`` looks for, rather than leaving the page asserting
-    the absence of a pair it no longer shows.
+    them would change what ``pin_claims`` looks for, rather than leaving the page asserting the
+    absence of a pair it no longer shows.  Koren has its munaḥ-munaḥ on both of its compounds,
+    so that pair is listed once, in the cases' own order.
     """
-    return tuple(case["pair"] for case in printed_cases())
+    return tuple(dict.fromkeys(case["pair"] for case in printed_cases()))
 
 
 def _mark_display(mark: str) -> str:
@@ -1161,39 +1218,92 @@ def _mark_display(mark: str) -> str:
     return _ACCENT_DISPLAY[mpa.shape_of([[mark]])]
 
 
-def _added_mark(case: dict) -> str:
-    """The one mark the printed compound has that its Wikisource strand of the same name lacks.
+_SEPARATORS = (" ", _MAQAF)
 
-    Ben, 2026-07-30, asking for the row: “+maqaf” (meaning, “maqaf added”) and “+munaḥ”
-    (meaning “munaḥ added”) as appropriate.  Which of the two a case takes is DERIVED from the
-    two forms the table already shows rather than typed in per case: the Strange row's cell and
-    the Reference row's cell, differenced as multisets of characters.  So the row cannot come to
-    disagree with the two rows it summarizes, and a refresh of the mirror that changed either form
-    fails the build here rather than leaving a “+maqaf” standing over a column that no longer
-    has one.
 
-    SPACES ARE DROPPED BEFORE DIFFERENCING, which is what makes Koren's case come out as an
-    addition at all: its Wikisource עליון has לא and תעשה as two chanted words, Koren has them as
-    one compound, and the maqaf is exactly the mark that difference consists of.  Adding a maqaf
-    IS replacing the space with one, so the space is not a mark the row would want to name.
+def _atoms_and_separators(form: str) -> tuple[list[str], list[str]]:
+    """A rendered span's atoms, and the space or maqaf after each atom but the last."""
+    atoms, separators, atom = [], [], ""
+    for ch in form:
+        if ch in _SEPARATORS:
+            atoms.append(atom)
+            separators.append(ch)
+            atom = ""
+        else:
+            atom += ch
+    atoms.append(atom)
+    return atoms, separators
+
+
+def _reference_difference(case: dict) -> tuple[tuple[str, ...], str | None]:
+    """The accents a printed case adds to its Wikisource strand, and what it does to a maqaf.
+
+    Ben, 2026-07-30, asking for the Diff. fr. Ref. row: “+maqaf” (meaning, “maqaf added”) and
+    “+munaḥ” (meaning “munaḥ added”) as appropriate.  Which a case takes is DERIVED from the two
+    forms the table already shows rather than typed in per case: the Strange row's cell and the
+    Reference row's cell.  So the row cannot come to disagree with the two rows it summarizes,
+    and a refresh of the mirror that changed either form fails the build here rather than
+    leaving a “+maqaf” standing over a column that no longer has one.
+
+    TWO COMPARISONS, since 2026-11-18.  The ACCENTS are differenced as multisets, atom by atom
+    over atoms whose letters must agree.  The SEPARATORS are compared place by place: a maqaf
+    where the strand has a space is a maqaf added, and if the strand also has a maqaf where the
+    edition has a space, the maqaf has MOVED.  Until that date one multiset over the whole span,
+    spaces dropped, did both jobs, and it could: every case then differed in one added mark.
+    Koren's לא־יהיה, added that day, does not -- its maqaf follows לא where the עליון's follows
+    יהיה, and it has a munaḥ on יהיה besides -- and the old multiset, which cannot see where a
+    maqaf stands, would have reported it as “+munaḥ” alone, the maqaf count being one on each
+    side.  A moved maqaf IS a space and a maqaf trading places, so the row names it as moved
+    rather than as one added and one dropped.
 
     THE DIFFERENCE IS OVER THE FORMS THE READER SEES -- letters and accents, no vowels and no
     meteg, ``_render_span``'s reduction.  For the Simanim Tiqqun's two that is the whole of the
     honesty of “+munaḥ”: the strand's joined לא has a meteg there, which is not an accent and is
     not shown in either cell, so what the column adds to what the reader can see is the munaḥ and
     nothing else.  ``_simtiq_case``'s docstring is where the meteg it stands in place of is
-    recorded.
+    recorded, and ``_koren_lo_yihye_case``'s where Koren's munaḥ on יהיה stands in place of one.
 
-    The assertions are the point.  Nothing removed, and exactly one thing added, is what lets the
-    row say “+X” at all; a case that differed in two marks, or that dropped one, would need a
-    cell this row has no way to write, and the build stops instead.
+    The assertions are the point.  No accent removed, and either exactly one mark added or one
+    moved maqaf with one accent added, is what lets the row write its cell at all; any other
+    difference would need a cell this row has no way to write, and the build stops instead.
     """
-    printed = Counter(case["printed"].replace(" ", ""))
-    same = Counter(case["same"].replace(" ", ""))
-    added, removed = printed - same, same - printed
-    assert not removed, (case["edition"], case["book"], removed)
-    assert sum(added.values()) == 1, (case["edition"], case["book"], added)
-    return f"+{_mark_display(next(iter(added)))}"
+    printed_atoms, printed_seps = _atoms_and_separators(case["printed"])
+    same_atoms, same_seps = _atoms_and_separators(case["same"])
+    where = (case["edition"], case["book"], case["compound"])
+    assert [_letters(a) for a in printed_atoms] == [
+        _letters(a) for a in same_atoms
+    ], where
+
+    def accents_of(atoms: list[str]) -> Counter:
+        return Counter(ch for atom in atoms for ch in _accents(atom))
+
+    added = accents_of(printed_atoms) - accents_of(same_atoms)
+    removed = accents_of(same_atoms) - accents_of(printed_atoms)
+    assert not removed, (where, removed)
+    pairs = list(zip(printed_seps, same_seps))
+    maqaf_added = sum(1 for p, s in pairs if (p, s) == (_MAQAF, " "))
+    maqaf_dropped = sum(1 for p, s in pairs if (p, s) == (" ", _MAQAF))
+    accents = tuple(sorted(added.elements()))
+    if maqaf_added and maqaf_dropped:
+        assert (maqaf_added, maqaf_dropped, len(accents)) == (1, 1, 1), where
+        return accents, "moved"
+    assert not maqaf_dropped, where
+    if maqaf_added:
+        assert (maqaf_added, len(accents)) == (1, 0), where
+        return accents, "added"
+    assert len(accents) == 1, (where, accents)
+    return accents, None
+
+
+def _diff_from_reference(case: dict) -> str:
+    """The Diff. fr. Ref. cell: “+munaḥ”, “+maqaf”, or “+munaḥ, maqaf moved”."""
+    accents, maqaf = _reference_difference(case)
+    parts = [f"+{_mark_display(mark)}" for mark in accents]
+    if maqaf == "added":
+        parts.append(f"+{_mark_display(_MAQAF)}")
+    elif maqaf == "moved":
+        parts.append(f"{_mark_display(_MAQAF)} moved")
+    return ", ".join(parts)
 
 
 def _pair_key(pair: tuple[str, str]) -> str:
@@ -1361,7 +1471,8 @@ def pin_claims(survey: dict) -> None:
     #     verse is still on the page, as the compound example in the table's munax-before-zaqef
     #     row, spliced rather than named in prose, so the row is what defends it now.
 
-    # THE THREE PRINTED COMPOUNDS, all pinned alike (Ben, 2026-07-29, on being told that the
+    # THE THREE PAIRS OF THE PRINTED CASES -- four cases since 2026-11-18, Koren's munax-munax
+    # being on both of its compounds -- all pinned alike (Ben, 2026-07-29, on being told that the
     # Simanim Tiqqun's two are unprecedented by the same test: "please reframe the page like
     # that"; and 2026-07-30, folding Koren's into the same frame).  Each pair occurs on no
     # chanted word of MAM's prose verses at all -- not on a spreader, not on a concentrator (a
@@ -1382,6 +1493,26 @@ def pin_claims(survey: dict) -> None:
             if "-".join(_pair_of(o["shape"])) == key
         ], key
 
+    # NO MUNAX ON TWO ATOMS, IN EITHER SYSTEM (Ben's D3 answer, 2026-11-18, "D3 A (State it
+    # without a verdict)"): no chanted word of MAM has a munax on two of its atoms.  The prose
+    # half is the loop above, for the munax-munax pair; the poetic half is the poetic appendix's
+    # "none of them with a munax on two of its atoms", of the cases that appendix counts.  A
+    # compound with a munax on two atoms has two accented atoms, so it would be a hit of the
+    # scan, which in poetic verses reads MAM's gray maqaf marks as maqaf marks; so the hits are
+    # where to look, in both genres.  A field holding a munax among other marks counts, and a
+    # legarmeh's munax counts too, the scan's fields being accents alone.
+    #
+    # THE JULY CAUTION STILL BOUNDS THE POETIC HALF, which is why it lives in the poetic
+    # appendix, after "On that reckoning", and not in the intro: Ben, 2026-07-27, had the intro's
+    # "not in poetic ones" dropped rather than qualified, because a compound whose maqaf is
+    # unwritten is out of the scan's reach (see the GONE note above).  MAM's gray maqaf, read as a
+    # maqaf since 2026-07-31, closes that gap wherever MAM marks one, and the appendix says so.
+    munax = mpa.shape_of([[am.MUNAX]])
+    for genre_name in ("prose", "poetic"):
+        for o in _occurrences(survey, _CORPUS, genre_name):
+            fields = o["shape"].split("-")
+            assert sum(munax in field.split("+") for field in fields) < 2, o
+
 
 def _intro(survey: dict) -> tuple[object, ...]:
     # The headline frequency is MAM's, not WLC's.  A claim about what the accentuation DOES
@@ -1392,6 +1523,13 @@ def _intro(survey: dict) -> tuple[object, ...]:
     # is answer the page's question.  Ben, 2026-07-26: "let's leave WLC (and indeed the LC) out of
     # this" -- so the two WLC compounds with a munax on each atom (2 Chr 1:11, 1 Chr 27:14), and
     # the paragraphs that read them as Koren's nearest precedent, are gone rather than demoted.
+    # Nor are they two precedents.  Ben, 2026-11-18, of the maqaf in WLC's 1 Chr 27:14: it "is
+    # bogus, probably caused by incorrectly repeating the maqaf from the similar two previous
+    # words"; "Probably comes from BHS", though "I have not confirmed this"; and it is "Fixed in
+    # UXLC", whose survey corpus here has 2 Chr 1:11 as its one compound with a munax on each
+    # atom.  Of that one: "though the maqaf in 2Chr 1:11 is clear in the Leningrad manuscript, I
+    # view it as likely a scribal error".  The Koren page holds that precedent; this page's
+    # rendered prose names neither WLC nor the Leningrad Codex, as before.
     mam_prose = survey["corpora"]["mam_simple"]["prose"]
     pct = 100.0 * mam_prose["hits"] / mam_prose["maqaf_compounds"]
     conc_pct = 100.0 * mam_prose["concentrators"] / mam_prose["maqaf_compounds"]
@@ -1429,12 +1567,36 @@ def _intro(survey: dict) -> tuple[object, ...]:
     assert first_atom and middle_atom, three_atom
     assert len(first_atom) + len(middle_atom) == len(three_atom), three_atom
     spreader_examples = (spreader_qad_zaq[0], first_atom[0], middle_atom[0])
-    # The three printed cases, derived once and used both for the table and for the answer,
-    # which now names ALL THREE pairs -- the same derivation ``pin_claims`` checks the absence
-    # of, through ``unprecedented_pairs``.  Koren's used to be answered separately, so only the
+    # The four printed cases, derived once and used both for the table and for the answer,
+    # which names ALL THREE pairs -- the same derivation ``pin_claims`` checks the absence of,
+    # through ``unprecedented_pairs``.  Koren's used to be answered separately, so only the
     # Simanim Tiqqun's two were spelled out here.
     cases = printed_cases()
-    koren_pair, *simtiq_pairs = [case["pair"] for case in cases]
+    koren_pairs = {case["pair"] for case in cases if case["edition"] == _KOREN}
+    simtiq_pairs = [case["pair"] for case in cases if case["edition"] == _SIMTIQ]
+    # "which it has on both of its compounds", and "the three pairs": Koren's two cases are
+    # one pair, and the Simanim Tiqqun's two are two others.
+    assert len(koren_pairs) == 1, koren_pairs
+    (koren_pair,) = koren_pairs
+    assert len(set(simtiq_pairs)) == 2, simtiq_pairs
+    assert len(unprecedented_pairs()) == 3, unprecedented_pairs()
+    # The parenthetical's "each have a strange spreader on לא־יהיה and another on לא־תעשה":
+    # two compounds in all, and each edition has a case on each of them.
+    lo_yihye, lo_taase = (_MAQAF.join(c) for c in ((_LO, _YIHYE), (_LO, _TAASE)))
+    compounds = {case["compound"] for case in cases}
+    assert compounds == {(_LO, _YIHYE), (_LO, _TAASE)}, compounds
+    for edition in (_KOREN, _SIMTIQ):
+        theirs = {case["compound"] for case in cases if case["edition"] == edition}
+        assert theirs == compounds, (edition, theirs)
+    # The carry-over paragraph's two sentences: three cases differ from their reference in one
+    # added mark, and the fourth, Koren's לא־יהיה, in a moved maqaf and an added munaḥ.  What
+    # the second sentence says of the other strand -- the maqaf where it has one, the munaḥ in
+    # neither strand -- is asserted where that case is built, ``_koren_lo_yihye_case``.
+    moved = [case for case in cases if _reference_difference(case)[1] == "moved"]
+    assert [(c["edition"], c["compound"]) for c in moved] == [
+        (_KOREN, (_LO, _YIHYE))
+    ], moved
+    assert _reference_difference(moved[0])[0] == (am.MUNAX,), moved
     # GONE (Ben, 2026-07-30): the metigah-zaqef count, and the sentence it was spliced into --
     # "Of the 233 prose cases, 211 are a single grammatical category, metigah-zaqef: a qadma
     # before a zaqef."  It closed the intro's answer, and the answer is about the three printed
@@ -1529,13 +1691,18 @@ def _intro(survey: dict) -> tuple[object, ...]:
         # strand named here is, the other heading off the confusion of meeting לא־תעשה in two of
         # the three columns -- and the parens say so, leaving the argument to run from the count
         # paragraph above the table straight into the carry-over paragraph below.
+        #
+        # FOUR CASES SINCE 2026-11-18, and the second parenthetical changed with them: it said
+        # that both editions have strange spreaders on לא־תעשה, "so there are only two distinct
+        # compounds among these three cases".  With Koren's לא־יהיה each edition has one on each
+        # compound, which ``cases`` is asserted to show above.
         text_para(
             "(Every strand named on this page is a p-trad one.)"
-            " (Both Koren and the Tiqqun have strange spreaders on לא־תעשה,"
-            " so there are only two distinct compounds among these three cases:"
-            " לא־תעשה and לא־יהיה.)"
+            f" (Koren and the Tiqqun each have a strange spreader on {lo_yihye}"
+            f" and another on {lo_taase}, so there are only two distinct compounds among"
+            " these four cases.)"
         ),
-        # THE CARRY-OVER, STILL BEFORE THE QUESTION (Ben, 2026-07-28), and now for all three
+        # THE CARRY-OVER, STILL BEFORE THE QUESTION (Ben, 2026-07-28), and now for all four
         # rather than for Koren alone.  The cheap explanation is disposed of first, and the
         # question is then asked of marks taken as they stand -- which is what the rest of the
         # page does.  Put after the answer, it read as an afterthought undercutting the count it
@@ -1557,17 +1724,26 @@ def _intro(survey: dict) -> tuple[object, ...]:
         # the joined לא of the Simanim Tiqqun's two -- which is now the Diff. fr. Ref. row, cell
         # by cell and derived from the forms rather than typed out.  A sentence that itemizes the
         # row directly above it is a sentence a reader has already read.
+        #
+        # A SECOND SENTENCE FOR THE FOURTH CASE (2026-11-18).  Ben's sentence opened "Each strange
+        # spreader differs", which Koren's לא־יהיה made false: it differs from its reference in
+        # two marks, and only one of them is in the other strand.  So his sentence now speaks for
+        # the three it is true of, and one more says what the fourth has -- still without
+        # calling either edition's mark an error.
         text_para(
-            "Each strange spreader differs from the Wikisource reference by the"
+            "Three of the four strange spreaders differ from the Wikisource reference by the"
             f" addition of a mark (either {ROM_MAQAF} or {ROM_MUNAX}) that might have been"
-            " accidentally carried over from the other strand."
+            f" accidentally carried over from the other strand. Koren's {lo_yihye} differs in"
+            f" two marks: its {ROM_MAQAF} joins {_LO} to {_YIHYE}, as the other strand's does,"
+            f" but its {ROM_MUNAX} on {_YIHYE} is in neither strand."
         ),
         text_para(
-            "But if we take the three as they stand, is there anything in Tanakh like any of"
+            "But if we take the four as they stand, is there anything in Tanakh like any of"
             " them?"
         ),
-        # ONE CLAIM FOR ALL THREE (Ben, 2026-07-30): none of the three pairs occurs on any
-        # chanted word of MAM's prose verses.  What went is the sentence's Koren half -- that no
+        # ONE CLAIM FOR ALL THREE PAIRS (Ben, 2026-07-30): none of the three pairs occurs on any
+        # chanted word of MAM's prose verses.  Since 2026-11-18 the three pairs cover four cases,
+        # Koren's being on both of its compounds.  What went is the sentence's Koren half -- that no
         # maqaf compound has the same accent on both atoms -- and Ben cut it knowing what it
         # cost: "even though it is a stronger claim, and arguably more interesting".  The fault
         # was that it framed Koren's case and the Simanim Tiqqun's two in two different ways in
@@ -1581,9 +1757,26 @@ def _intro(survey: dict) -> tuple[object, ...]:
         # with the wider claim.
         text_para(
             "There is not. None of the three pairs occurs on any chanted word of MAM's prose"
-            f" verses, compound or simple: not Koren's {_pair_in_words(koren_pair)}, and not"
-            f" the Simanim Tiqqun's {_pair_in_words(simtiq_pairs[0])} or"
-            f" {_pair_in_words(simtiq_pairs[1])}."
+            f" verses, compound or simple: not Koren's {_pair_in_words(koren_pair)}, which it"
+            " has on both of its compounds, and not the Simanim Tiqqun's"
+            f" {_pair_in_words(simtiq_pairs[0])} or {_pair_in_words(simtiq_pairs[1])}."
+        ),
+        # THE CHECKER CANNOT SEE THEM (Ben's D3 answer, 2026-11-18, "D3 A (State it without a
+        # verdict)").  The grammar checker the Koren page reports reads each Decalogue as a
+        # stream of accents with no maqaf in it -- ``edition_transcription``'s "WHAT THE TOKEN
+        # STREAM CANNOT SEE" -- so a munaḥ on each atom of a compound reaches it exactly as a
+        # munaḥ on each of two chanted words does.  That is a fact about the code, not the data,
+        # so nothing here pins it; making maqaf a token of its own (wlc-utils#75) would make the
+        # sentence false and must take it out.  Like everything above, it calls neither
+        # compound an error.
+        H.para(
+            (
+                "The grammar checker whose verdicts ",
+                link("the Koren page", _KOREN_HREF),
+                " reports cannot see Koren's two compounds as compounds: it reads a text"
+                f" without its {ROM_MAQAF} marks, so a compound with a {ROM_MUNAX} on each"
+                f" atom reaches it as two chanted words with a {ROM_MUNAX} each.",
+            )
         ),
     )
 
@@ -1599,8 +1792,8 @@ def _intro(survey: dict) -> tuple[object, ...]:
 #
 # THE SHORT-LABEL ROWS ARE CENTERED and the form rows are not (Ben, 2026-07-30, of the first
 # three; the Diff. fr. Ref. row he asked for is a fourth of the same kind).  A row whose cells
-# are an edition name, a book name, a strand name or a "+maqaf" is three short parallel answers,
-# and centering is what makes them read as three answers to one question.  The three form rows
+# are an edition name, a book name, a strand name or a "+maqaf" is four short parallel answers,
+# and centering is what makes them read as four answers to one question.  The three form rows
 # stay right-to-left alone: they are the comparison itself, read down a column, and a Hebrew
 # form left to start at its own start edge is where a reader's eye already is.
 _PRINTED_CASE_ROWS = (
@@ -1640,19 +1833,20 @@ _PRINTED_CASE_ROWS = (
         _HEBREW_CELL,
     ),
     # RIGHT UNDER THE TWO ROWS IT DIFFERENCES, so a reader who has just compared the Strange and
-    # Reference cells of a column meets the one-mark answer in the next cell down rather than
-    # having to carry the comparison to the end of the table.  The cell says what was ADDED and
-    # nothing about where the mark then turns up; the Other strand row below is what answers
-    # that, and the paragraph after the table is what joins the two.
+    # Reference cells of a column meets the answer in the next cell down rather than having to
+    # carry the comparison to the end of the table.  The cell says what was ADDED, or which
+    # maqaf MOVED, and nothing about where the mark then turns up; the Other strand row below is
+    # what answers that, and the paragraphs after the table are what join the two.  Its hover
+    # text said "The one mark ..." until Koren's לא־יהיה (2026-11-18) made one case two marks.
     (
         H.table_header(
             H.abbr(
                 "Diff. fr. Ref.",
-                "The one mark the printed edition has that its Wikisource strand of the"
-                " same name does not",
+                "How the printed edition's marks differ from those of its Wikisource strand"
+                " of the same name",
             )
         ),
-        _added_mark,
+        _diff_from_reference,
         _CENTERED_CELL,
     ),
     (
@@ -1693,7 +1887,7 @@ def _spreader_example_table(examples: tuple[dict, ...]) -> object:
 
 
 def _printed_case_table(cases: tuple[dict, ...]) -> object:
-    """The three printed cases, each above the two Wikisource strands of its book.
+    """The four printed cases, each above the two Wikisource strands of its book.
 
     SHOW IT IN UNICODE (Ben, 2026-07-29: "I can't process all the verbosity, I need to just see
     this using actual unicode. You've fallen into the trap of not giving me Unicode").  Every
@@ -1705,14 +1899,17 @@ def _printed_case_table(cases: tuple[dict, ...]) -> object:
     reference has (which is probably what the editions have)" -- that is, the suggestion that a
     printed oddity came across from the other strand of the same book.  Read down a column: the
     mark the printed cell has and the same-strand cell lacks is in the other-strand cell.  For
-    Koren that mark is the maqaf, and for the Simanim Tiqqun's two the munaḥ on the joined לא, so
-    the correspondence runs in opposite directions in the two editions and the row holds both.
-    Since 2026-07-30 the Diff. fr. Ref. row NAMES that mark, so the reading-down is stated rather
-    than left to be performed: "+maqaf" or "+munaḥ" in one cell, and the cell below it is where
-    that mark already is.  ``_added_mark`` derives it from the two form rows above it.
+    Koren's לא־תעשה that mark is the maqaf, and for the Simanim Tiqqun's two the munaḥ on the
+    joined לא, so the correspondence runs in opposite directions in the two editions and the row
+    holds both.  Koren's לא־יהיה, the fourth case (2026-11-18), fits it only by half: its maqaf
+    stands where the other strand's does, and its munaḥ on יהיה is in neither strand.  Since
+    2026-07-30 the Diff. fr. Ref. row NAMES the difference, so the reading-down is stated rather
+    than left to be performed: "+maqaf" or "+munaḥ" in one cell, or "+munaḥ, maqaf moved", and
+    the cell below it is where a carried mark already is.  ``_diff_from_reference`` derives it
+    from the two form rows above it.
 
     A COLUMN PER (EDITION, COMPOUND) CASE -- a row per case until Ben's transpose ask the same
-    day ("rows become columns") -- and ``printed_cases`` says why there are three of them.
+    day ("rows become columns") -- and ``printed_cases`` says why there are four of them.
     """
     return H.table(
         tuple(
@@ -1725,13 +1922,23 @@ def _printed_case_table(cases: tuple[dict, ...]) -> object:
     )
 
 
-# The scans behind the table above: TWO figures for the three cases, because the Simanim Tiqqun's
-# two compounds sit on the same two printed lines (line 14 of its transcription holds לא־יהיה לך
-# whole, and the לא־ that opens the לא־תעשה compound).  Each crop is one whole printed line, or
-# two where the compound spans a line break, cut by ``main_edition_transcription.py scan-page``
-# from the same source scans the transcriptions are pinned to.
+# The scans behind the table above: THREE figures for the four cases, because the Simanim
+# Tiqqun's two compounds sit on the same two printed lines (line 14 of its transcription holds
+# לא־יהיה לך whole, and the לא־ that opens the לא־תעשה compound), while Koren's two are ten
+# printed lines apart (lines 2 and 12 of koren_dt_elyon).  Each of the first two crops is one
+# whole printed line, or two where the compound spans a line break, cut by
+# ``main_edition_transcription.py scan-page`` from the same source scans the transcriptions are
+# pinned to.
 _KOREN_P39_IMG = "img/Koren-appendix-p-39-Dt-Dec-p-trad-elyon-lo-taase.png"
 _SIMTIQ_P246_IMG = "img/Simanim-Tiqqun-p-246-Ex-Dec-p-trad-taxton-spreaders.png"
+# THE THIRD, Koren's לא־יהיה (2026-11-18), is the stress-helpers record's own crop of the same
+# scan, V-039, referenced where it is rather than copied: it holds that compound and the לך after
+# it and nothing else of the line, and it is the crop the correction of ``koren_dt_elyon``'s
+# line 2 was accepted from.  A path that leaves this page's folder is no problem for the overlay
+# lint, which resolves every src against the page's own directory.
+_KOREN_P39_LO_YIHYE_IMG = (
+    "../../stress-helpers/img/koren-deuter-5-6-V-039-a12-elyon-1.png"
+)
 
 # The viewBox literals must equal each committed PNG's own natural size, since mhi.Box coordinates
 # are in that pixel space, so these are the sizes `scan-page` reported when it wrote the two
@@ -1749,9 +1956,15 @@ _SIMTIQ_P246_IMG = "img/Simanim-Tiqqun-p-246-Ex-Dec-p-trad-taxton-spreaders.png"
 # word.
 _KOREN_P39_VIEWBOX = (1390, 160)
 _SIMTIQ_P246_VIEWBOX = (1500, 293)
+_KOREN_P39_LO_YIHYE_VIEWBOX = (572, 170)
 
 # One box, on the לא־תעשה compound of the middle printed line.
 _KOREN_P39_BOXES: tuple[mhi.Box, ...] = (mhi.Box(x=889, y=39, w=249, h=96),)
+
+# One box, on לא־יהיה, leaving out the לך after it.  Measured off the PNG's ink, not by eye: the
+# compound's ink runs x 203-554 and y 3-166, לך's ends at x 166, so the box has a margin of 16 px
+# on the compound's left and 21 px clear of לך.
+_KOREN_P39_LO_YIHYE_BOXES: tuple[mhi.Box, ...] = (mhi.Box(x=187, y=1, w=381, h=168),)
 
 # THREE boxes for TWO compounds: לא־יהיה whole on the first line, and then the לא־תעשה compound in
 # two pieces, its לא ending the first line and its תעשה opening the second.  Two boxes for one
@@ -1775,10 +1988,15 @@ def _scans_appendix_section() -> tuple[object, ...]:
     """The scans behind the intro's table, as an appendix at the page's foot.
 
     Every cell of that table is lifted or constructed from a mirrored Wikisource strand, so the
-    table states the page's claim about each edition without ever showing the printing.  These two
+    table states the page's claim about each edition without ever showing the printing.  These
     figures are the printing those claims are read off -- each a crop of one or two printed lines,
-    with the strange spreaders boxed.  The heading says "cropped, highlighted scans" for that
-    reason: it was "the printed pages" (Ben, 2026-07-31), which promised whole pages.
+    or of the compound and the word after it, with the strange spreaders boxed.  The heading says
+    "cropped, highlighted scans" for that reason: it was "the printed pages" (Ben, 2026-07-31),
+    which promised whole pages.
+
+    TWO FIGURES FOR KOREN'S p. 39, since 2026-11-18, when its second strange spreader came to
+    light.  Each caption names the compound it highlights, which the one caption did not need to
+    while the page had one.
 
     AN APPENDIX, not part of the intro (Ben, 2026-07-31: "let's banish these two new images to an
     appendix").  They sat directly under the printed-case table when they were first rendered.
@@ -1791,7 +2009,7 @@ def _scans_appendix_section() -> tuple[object, ...]:
     one link that does run down the page, from the prose section to the one-letter appendix, is
     the exception rather than the pattern.
 
-    ``img_class="ink-on-white"`` on both: each is black ink on white paper and wants the
+    ``img_class="ink-on-white"`` on every one: each is black ink on white paper and wants the
     stylesheet's dark-mode inversion.
 
     ONE CLAUSE PER CAPTION (Ben, 2026-07-31): which edition, which Decalogue, which strand, which
@@ -1814,13 +2032,26 @@ def _scans_appendix_section() -> tuple[object, ...]:
     return (
         H.heading_level_2("Appendix: cropped, highlighted scans"),
         mhi.scan_figure(
+            _KOREN_P39_LO_YIHYE_IMG,
+            "Koren appendix p. 39: the Deuteronomy Decalogue's לא־יהיה in the p-trad"
+            " elyon, with an accent on each atom",
+            (
+                "Koren's Deuteronomy Decalogue ",
+                ELYON,
+                " (appendix p. 39), with its strange spreader on לא־יהיה highlighted.",
+            ),
+            img_class="ink-on-white",
+            boxes=_KOREN_P39_LO_YIHYE_BOXES,
+            viewbox=_KOREN_P39_LO_YIHYE_VIEWBOX,
+        ),
+        mhi.scan_figure(
             _KOREN_P39_IMG,
             "Koren appendix p. 39: the Deuteronomy Decalogue's לא־תעשה in the p-trad"
             " elyon, with an accent on each atom",
             (
                 "Koren's Deuteronomy Decalogue ",
                 ELYON,
-                " (appendix p. 39), with its strange spreader highlighted.",
+                " (appendix p. 39), with its strange spreader on לא־תעשה highlighted.",
             ),
             img_class="ink-on-white",
             boxes=_KOREN_P39_BOXES,
@@ -2240,6 +2471,11 @@ def _poetic_section(survey: dict) -> tuple[object, ...]:
     # a paragraph offering the gray total as "the other part of the measure" would count them
     # twice.  What the gray count adds beside the hits is its split by kind, which is what it is
     # quoted for here.
+    #
+    # "none of them with a munaḥ on two of its atoms" is the poetic half of Ben's D3 answer of
+    # 2026-11-18 -- no chanted word of MAM has a munaḥ on two atoms -- the prose half being the
+    # intro's answer.  It names one accent, against this section's rule of naming none, because
+    # Koren's two compounds are what the page asks about; ``pin_claims`` defends it.
     hits = _n(survey, _CORPUS, "poetic", "hits")
     return (
         # Ben's own word, 2026-07-30: "call it an Appendix".  The scope-naming that made "The
@@ -2262,7 +2498,8 @@ def _poetic_section(survey: dict) -> tuple[object, ...]:
                 link(f"{_gray(survey)} gray maqaf marks", _FOI_RARE_TMPLS),
                 ", its mark for a maqaf the manuscript leaves unwritten where the chanted word"
                 " needs one, and this survey reads a gray maqaf as a maqaf. On that reckoning"
-                f" MAM's poetic verses have {hits} cases. Of the gray maqaf marks,"
+                f" MAM's poetic verses have {hits} cases, none of them with a {ROM_MUNAX} on"
+                " two of its atoms. Of the gray maqaf marks,"
                 f" {_gray(survey, mpa.GRAY_KIND_SECOND)} join an atom that has an accent"
                 " alongside the compound's accent; the other"
                 f" {_gray(survey, mpa.GRAY_KIND_SPREAD)} have one accent written across the"

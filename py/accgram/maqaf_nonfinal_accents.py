@@ -1,7 +1,8 @@
 r"""Survey: accents on the NON-FINAL atom of a maqaf compound, across the whole Tanakh.
 
 An accent on a non-final atom of a maqaf compound is the phenomenon behind ``koren_dt_elyon``'s
-``mun-mun`` on לא־תעשה and SimTiq's two munax-on-לא (see ``edition_transcription``).  This module
+two ``mun-mun`` compounds, on לא־יהיה and לא־תעשה, and SimTiq's two munax-on-לא (see
+``edition_transcription``).  This module
 measures it mechanically so the printed-Decalogue pages' claims about how rare it is rest on a
 count that can be regenerated, rather than on prose that has to be re-derived every time someone
 asks.
