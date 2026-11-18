@@ -364,17 +364,21 @@ subject rather than using a bare `# Report`.
 
 Put every decision Ben must make on a decision page before asking him about it: an artifact that
 keeps one URL while the task lasts, or, where no artifact can be published, a local page linked
-by its `file:///` URL. For each decision the page says what raises it, what each choice would do,
-and any recommendation with its reason, so that Ben never has to scroll back or search to learn
-what a question means. Every message that asks for a decision links to the page and names each
-open decision by its number and its question. Keep the page current, marking each decision
-answered or carried out as that happens. Claude Code's multiple-choice dialog and its next-step
-box may show Ben only short labels, so do not use either to ask for a decision; ask him to answer
-on the page or in his own words. Ben, 2026-11-11: "The ergonomics of this workflow are terrible;
-I've been complaining about it for months but we haven't found a solution; maybe this "artifact"
-document will be a solution"; 2026-11-12: "Why not put questions to me via a persistent document
-(e.g. an artifact) that you always refer back to instead of asking me to "research" what your
-questions mean?"
+by its `file:///` URL. For each decision the page says what raises it, what each choice would
+do, and any recommendation with its reason, so that Ben never has to scroll back or search to
+learn what a question means. Every message that asks for a decision links to the page and names
+each open decision by its number and its question. Organize the page for what Ben must do next:
+open decisions first, in number order, under a heading of their own, then the work under way,
+with its status. Take a decision off the page once Ben answers it, and record his answer with
+the work it governs, such as its commit message or plan; the page is not a log of decisions
+made. Claude Code's multiple-choice dialog and its next-step box may show Ben only short labels,
+so do not use either to ask for a decision; ask him to answer on the page or in his own words.
+Ben, 2026-11-11: "The ergonomics of this workflow are terrible; I've been complaining about it
+for months but we haven't found a solution; maybe this "artifact" document will be a solution";
+2026-11-12: "Why not put questions to me via a persistent document (e.g. an artifact) that you
+always refer back to instead of asking me to "research" what your questions mean?"; 2026-11-18:
+"the decisions page is disorganized (starts with 7, and answered decision) and has no top level
+organization. And I'm not sure why it holds already-made decisions at all."
 
 ## Prose names its subject
 
