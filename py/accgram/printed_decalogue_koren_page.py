@@ -19,8 +19,9 @@ committed hand transcription of every printed accent (``in/accgram/edition_trans
 koren_*.txt``), diffed against the mirrored strand and pinned by
 ``tests/test_edition_transcriptions.py``.  TWO of the four match their Wikisource strand mark
 for mark; the other two -- both appendix ones -- differ from it only at the maqaf, the Exodus
-one splitting two compounds that strand joins and the Deuteronomy one joining one it leaves
-apart.  A maqaf difference is an ordinary difference at the bottom of the trio's one scale,
+one splitting two compounds that strand joins, the Deuteronomy one splitting the first of them
+too (it joins לא to יהיה instead, since its line 2 was corrected on 2026-11-18) and joining one
+the strand leaves apart.  A maqaf difference is an ordinary difference at the bottom of the trio's one scale,
 stated to the reader
 via ``printed_decalogue_strands.MAQAF_IS_THE_LAST_RUNG``; a 2026-07-25 claim audit found this page
 using "every accent" two ways at once (see the guardrail comments below), so every verdict here
@@ -95,8 +96,9 @@ still follows the p-trad's chanted verse boundaries).  See the conclusion's scop
 
 Its Deuteronomy עליון is no longer unchased either.  The page long carried a sentence saying the
 Deuteronomy half of the claim rested on the תחתון alone because that appendix Decalogue had never
-been checked; ``koren_dt_elyon`` (p. A39) transcribes it, with zero divergences, so the sentence
-was false and is gone.  Don't reinstate it.
+been checked; ``koren_dt_elyon`` (p. A39) transcribes it -- with one divergence since its line 2
+was corrected on 2026-11-18, a munax on יהיה that neither tradition has -- so the sentence was
+false and is gone.  Don't reinstate it.
 
 Regenerate with ``main_accgram.py generate-html``; test with
 ``tests/test_printed_decalogue_koren.py`` (plus the tree-wide ``tests/test_transliterations.py``).
@@ -109,6 +111,7 @@ import json
 from pathlib import Path
 from typing import NamedTuple
 
+from accgram import accent_marks as am
 from accgram import maqaf_nonfinal_accents as mpa
 from accgram import printed_decalogue as pd
 from accgram import printed_decalogue_strands as pds
@@ -216,8 +219,9 @@ _ROM_ZAQEF_QATAN = rmn(pds.ROM_ZAQEF_QATAN)
 # תחתון strands leave it standing alone -- the reading that refutes this page's old "no strand at
 # all separates יהיה from לך" (see the guardrail comment there).
 _ROM_TEVIR = rmn(pds.ROM_TEVIR)
-# The accent the Deuteronomy appendix Decalogue keeps on the לא it joins by maqaf: the compound is
-# accented on BOTH atoms, which is why that maqaf is invisible to the token diff.
+# The accent the Deuteronomy appendix Decalogue keeps on the לא it joins by maqaf, in לא־יהיה and
+# in לא־תעשה: each compound is accented on BOTH atoms, which is why those maqaf marks are invisible
+# to the token diff.
 _ROM_MUNAX = rmn(pds.ROM_MUNAX)
 
 # The p-trad Decalogue on Hebrew Wikisource sits in the printed-tradition (נוסח הדפוסים) section of
@@ -562,14 +566,20 @@ def _verdict_table(
             "A39",
             f"p-trad {_ELYON}",
             (
-                "Every accent — and it joins both compounds its Exodus counterpart separates, so"
-                " that separation is a fact about the one page rather than a habit of the"
-                " edition. Its one difference is a maqaf, going the other way: Koren has"
-                " לא־תעשה where its Wikisource strand has the two atoms apart, and keeps a ",
+                "Every chanted verse boundary, the whole disjunctive skeleton, and every atom"
+                " marked as its Wikisource strand marks it but three, each at a maqaf. Like its"
+                " Exodus counterpart, it separates יהיה from לך — that strand has a maqaf on"
+                " יהיה where Koren has a ",
                 _ROM_MUNAX,
-                " on the joined לא even so. Both sides therefore have the same two accents, so"
-                " this is a difference no accent can show: it was read off the page rather than"
-                " found by the diff.",
+                " — but it joins לא to יהיה instead, keeping the ",
+                _ROM_MUNAX,
+                " on לא; and it has לא־תעשה where the strand has the two atoms apart, again"
+                " keeping the ",
+                _ROM_MUNAX,
+                " on the joined לא. A maqaf added beside an accent the strand already has is a"
+                " difference no accent can show, so those two were read off the page rather"
+                " than found by the diff. Unlike its Exodus counterpart, it joins ובנך־ובתך as"
+                " its strand does.",
             ),
         ),
     )
@@ -689,6 +699,14 @@ def _munax_munax_precedent() -> _Precedent:
 
     mam_same = accented_alike("mam_simple", ("prose",))
     assert not mam_same, mam_same
+    # No chanted word of MAM, prose or poetic, has a munax on two atoms (Ben's D3 answer,
+    # 2026-11-18).  Such a compound has two accented atoms, so it would be a hit of the scan in
+    # either genre; a field holding a munax among other marks counts too.
+    munax = mpa.shape_of([[am.MUNAX]])
+    for genre in ("prose", "poetic"):
+        for o in survey["corpora"]["mam_simple"][genre]["occurrences"]:
+            fields = o["shape"].split("-")
+            assert sum(munax in field.split("+") for field in fields) < 2, o
     uxlc_hits = accented_alike("uxlc", ("prose", "poetic"))
     assert [(o["bcv"], o["shape"]) for o in uxlc_hits] == [
         ("2c1:11", "mun-mun")
@@ -821,22 +839,34 @@ def _conclusion(
         # only the four עליון strands have that compound, and none of them divides it. Keep the
         # claim about the compound, and keep the תחתון strands' own division visible so the next
         # reader who checks the hub's table finds the two pages agreeing.
+        #
+        # (3) 2026-11-18: the Deuteronomy appendix's line 2 had been misread as the עליון groups
+        # it. Corrected (Ben's D1), that page separates יהיה from לך too, with the תחתון
+        # strands' grouping (לא־יהיה, then לך alone) but the עליון's accents and a munax on יהיה
+        # that no strand has. The paragraph says both pages separate it; the claim about the
+        # compound still holds, since no strand splits יהיה־לך.
         H.para(
             (
                 "Two of the four — the main Decalogues — match their Wikisource strand ",
                 H.bold("mark for mark"),
                 ". The other two part from theirs at the last rung only, each time at a maqaf:"
                 " the Exodus appendix Decalogue separates both יהיה־לך and ובנך־ובתך, and the"
-                " Deuteronomy appendix one joins לא־תעשה. Those are the mildest differences the"
-                " scale has, and not one difference anywhere in the four takes the m-trad's side"
-                " of anything. The separation of יהיה־לך in particular is Koren's own rather"
-                " than a"
+                " Deuteronomy appendix one separates יהיה־לך too, joining לא to יהיה instead,"
+                " and joins לא־תעשה. Those are the mildest differences the scale has, and not"
+                " one difference anywhere in the four takes the m-trad's side of anything. The"
+                " separation of יהיה־לך in particular, on both appendix pages, is Koren's own"
+                " rather than a"
                 f" tradition's: only the {_ELYON} strands have that compound at all — the ",
                 _TAHTON,
                 " strands instead bind לא to יהיה, leaving לך standing on its own with a ",
                 _ROM_TEVIR,
-                f" — and not one of the four {_ELYON} strands separates it. So that separation"
-                " says nothing about which tradition Koren follows.",
+                f" — and not one of the four {_ELYON} strands separates it. The Deuteronomy"
+                " appendix has the grouping of the ",
+                _TAHTON,
+                f" strands there, with the accents of the {_ELYON} ones and a ",
+                _ROM_MUNAX,
+                " on יהיה that no strand has. So that separation says nothing about which"
+                " tradition Koren follows.",
             )
         ),
         # GUARDRAIL (item 4 of doc/review-findings-2026-07-29.md). This paragraph once promised
@@ -848,16 +878,34 @@ def _conclusion(
         # is re-derived by _munax_munax_precedent, which raises on drift. WLC's second
         # compound, at 1 Chronicles 27:14, has a bogus maqaf, so it goes in the footnote and
         # not in the count (Ben, 2026-11-18; see that function's docstring).
+        #
+        # TWO COMPOUNDS, NO VERDICT (Ben's D3 answer, 2026-11-18, "D3 A (State it without a
+        # verdict)"). Since the correction of the Deuteronomy appendix's line 2 that page has two
+        # compounds with a munax on each atom, לא־יהיה as well as לא־תעשה. The paragraph says so,
+        # says that no chanted word of MAM has a munax on two atoms (pinned in
+        # _munax_munax_precedent, prose and poetic, since MAM's poetic verses DO have two
+        # same-accent compounds, both merkha-merkha), and says the checker cannot see either
+        # compound; it calls neither one ungrammatical. The checker sentence describes the code,
+        # not the data, so nothing pins it; wlc-utils#75, a maqaf token of its own, would make it
+        # false.
         H.para(
             (
                 "Joining לא־תעשה costs Koren nothing in accents because it keeps the ",
                 _ROM_MUNAX,
-                " on the לא it joins — and a joined atom that keeps its own accent is the rarer"
+                " on the לא it joins, and its לא־יהיה keeps that ",
+                _ROM_MUNAX,
+                " too, with a second on יהיה — so the Deuteronomy appendix Decalogue has two"
+                " compounds with a ",
+                _ROM_MUNAX,
+                " on each atom. A joined atom that keeps its own accent is the rarer"
                 " thing here, rarer than the maqaf difference itself. How rare it is in MAM's"
                 " prose verses is counted on ",
                 link("its own page", _MAQAF_NONFINAL_PAGE),
                 ", and one shape the count comes back empty for is Koren's own: no maqaf"
-                " compound of those verses has the same accent on both atoms. ",
+                " compound of those verses has the same accent on both atoms, and no chanted"
+                " word of MAM, in its prose verses or its poetic ones, has a ",
+                _ROM_MUNAX,
+                " on two atoms. ",
                 _UXLC,
                 ", a corrected transcription of the Leningrad Codex, has that shape once,",
                 _fn_ref(1),
@@ -866,8 +914,14 @@ def _conclusion(
                 " on both atoms: at 2 Chronicles 1:11, ",
                 hbo(precedent.uxlc),
                 ". The maqaf there is clear in the Leningrad Codex itself, but I take it to be"
-                " likely a scribal error. So Koren's compound is not unheard of — but its one"
-                " precedent is a manuscript's, and no printed edition is known to have one.",
+                " likely a scribal error. So Koren's compounds are not unheard of — but their"
+                " one precedent is a manuscript's, and no other printed edition is known to have"
+                " one. The grammar checker cannot see either compound as a compound: it reads"
+                " the text without its maqaf marks, so a compound with a ",
+                _ROM_MUNAX,
+                " on each atom reaches it as two chanted words with a ",
+                _ROM_MUNAX,
+                " apiece.",
             )
         ),
         # The grammaticality column (issue wlc-utils#52). All four agree with their Wikisource strand, so
@@ -937,8 +991,8 @@ def _conclusion(
                 _TAHTON,
                 " alone: Koren's Deuteronomy ",
                 _ELYON,
-                ", in its appendix (p. A39), has since been transcribed too, and follows the"
-                " p-trad in every accent.",
+                ", in its appendix (p. A39), has since been transcribed too, and takes the"
+                " p-trad's side everywhere the two traditions part.",
             )
         ),
         mhi.scan_figure(

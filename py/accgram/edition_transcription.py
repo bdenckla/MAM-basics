@@ -141,10 +141,12 @@ well under one percent of prose maqaf compounds; that those cases split into Yei
 secondary accents and §293's bare scribal habit, most of them the former; and that no maqaf
 compound of MAM's prose verses has the same accent on two atoms, so Koren's two ``mun-mun``
 compounds have no counterpart there.  The nearest precedent, which the Koren page holds, is
-WLC's, a transcription's rather than the manuscript's -- whether the Leningrad Codex itself has it
-is unchecked: 2 Chr 1:11ויאמר־אלהים ׀ לשלמה is the same shape doing the
-same job before a pazer.  No other printed edition is known to have done it, SimTiq's munax on
-the joined לא being the nearest printed thing there is.
+2 Chr 1:11 ויאמר־אלהים ׀ לשלמה, the same shape doing the same job before a pazer, and UXLC's one
+such compound.  Ben, 2026-11-18: "though the maqaf in 2Chr 1:11 is clear in the Leningrad
+manuscript, I view it as likely a scribal error".  WLC has the shape a second time, at 1 Chr
+27:14, but there its maqaf "is bogus" (Ben, the same day), and UXLC has removed it.  No other
+printed edition is known to have done it, SimTiq's munax on the joined לא being the nearest
+printed thing there is.
 Read the page before restating any of that: it carries the corpus caveats that bound every one of
 those findings, and the survey module's docstring carries the method.
 
