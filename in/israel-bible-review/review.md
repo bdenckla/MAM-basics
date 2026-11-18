@@ -169,7 +169,7 @@ Other works by me about the Masoretic Text can be found in this
     four ירושלמה words, whose lamed has an orphan sheva instead, only 1 Kgs 10:2 has a hair space.
 
 [^wlc-quality]: WLC is not even a particularly good diplomatic edition. It began as a digital copy
-    of the body text of _Biblia Hebraica Stuttgartensia_ (BHS), a diplomatic edition of the LC first
+    of the body text of BHS, a diplomatic edition of the LC first
     published over the decade 1967–1977. WLC has not evolved much beyond BHS. BHS, though a great
     achievement when it was first published, is, by today's standards, no longer a particularly good
     diplomatic edition. (BHS was revised in 1984, 1990, and 1997. What changed in those revisions is

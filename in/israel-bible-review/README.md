@@ -130,6 +130,15 @@ changed.
    > "after" looks fine
 
    So the forms keep them.
+4. **The note on WLC's quality, "the body text of BHS".** Ben, 2026-11-18, asking for a
+   session to do "this one straggling edit of the Israel Bible review":
+
+   > Change "the body text of Biblia Hebraica Stuttgartensia (BHS)" to just "the body text of
+   > BHS". (In my opinion, we don't ever need to spell out titles since all acronyms
+   > (initialisms) are hover-explained.)
+
+   The note now says that WLC "began as a digital copy of the body text of BHS", and the hover
+   that the module's `ABBREVIATIONS` gives every BHS on the page names the edition's title.
 
 ## Open decisions
 
