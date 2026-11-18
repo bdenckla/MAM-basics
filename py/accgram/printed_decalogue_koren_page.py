@@ -285,8 +285,8 @@ def _body_scans() -> tuple[object, ...]:
             "Koren p. 113: the Exodus main Decalogue in the p-trad taḥton",
             (
                 "The start of Koren's Exodus main Decalogue (p. 113), in"
-                f" the p-trad {_TAHTON}. אנכי…עבדים is its own chanted verse — the signal word"
-                " עבדים closes it with a",
+                f" the p-trad {_TAHTON}. The span אנכי…עבדים is its own chanted verse"
+                " — the signal word עבדים closes it with a",
                 *[" ", _ROM_SILLUQ_SOF_PASUQ, "."],
             ),
             img_class="ink-on-white",
