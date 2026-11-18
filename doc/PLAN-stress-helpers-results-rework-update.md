@@ -84,3 +84,25 @@ has a sentence saying what the note reports, with a "MAM doc-note" link, as batc
 Three of the links go to MAM-with-doc's big-doc pages, which hold those notes' text. The read's
 results, one entry per finding with each bearing note's doc-parts, are in MAM-private's
 `stress-helpers/mam-notes-batch2-2026-11-18.json`.
+
+## 2026-11-18: the batches explained, and the menus' counts in step
+
+Recorded by Claude (Opus 5.5), in the commit that carries out the two decisions. Ben typed in the
+commander session on 2026-11-18, "start a session to continue work on
+MAM-basics/gh-pages/stress-helpers/index.html", and the session it started put two questions to
+him on its decision page: Decision 1, whether the page should say what Batch 1 and Batch 2 are,
+since after the merge nothing on it did; and Decision 2, whether the Filter menu's counts should
+follow the Batch choice, since they counted both batches while 4 of the menu's 13 choices have no
+batch-1 rows and 7 have no batch-2 rows. Ben answered on 2026-11-18:
+
+> 1A, 2A
+
+- **1A.** The opening paragraph gains a sentence after its first: "Batch 1 is the original set of
+  comparisons, and batch 2 adds the differences found beyond it." It reuses Ben's phrase of
+  2026-11-17, "the original set of comparisons", and `in/stress-helpers/common.json` holds it.
+- **2A.** Each menu's counts follow the other menu's choice, and a choice that would leave no rows
+  is greyed out but keeps its place. With Batch 2 chosen, for instance, the Filter offers "All
+  differences (56)" and a greyed "No SH in Kor (0)", whose 8 rows are all in batch 1. The search
+  box still affects only the table and its count of visible differences. `controls.js` recounts
+  from each row's `data-filter` and `data-batch`, and the generator gives each menu choice its
+  label, without the count, in `data-label`.

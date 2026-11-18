@@ -13,7 +13,7 @@
 <body>
 <main>
 <h1>Stress helpers in MAM, Koren, and Simanim</h1>
-<p>The table lists differences from MAM in prose verses.</p>
+<p>The table lists differences from MAM in prose verses. Batch 1 is the original set of comparisons, and batch 2 adds the differences found beyond it.</p>
 <div class="controls">
 <div class="size-control">
 <label for="hebrew-size">Hebrew size <output id="size-value" for="hebrew-size">30 px</output></label>
@@ -21,8 +21,8 @@
 <button id="size-reset" type="button">Reset</button>
 </div>
 <label>Search <input id="find" type="search" placeholder="Verse or Hebrew"></label>
-<label>Filter <select id="filter" title="SH means stress helper. Gerstar means geresh or gershayim. Tel. g. means telisha gedolah."><option value="">All differences (93)</option><option value="no-helper-Kor">No SH in Kor (8)</option><option value="no-helper-Sim">No SH in Sim (1)</option><option value="gerstar-telg-KorSim">Gerstar + tel. g. — KorSim (2)</option><option value="redundant-edition-KorSim">Redundant SH in KorSim (12)</option><option value="redundant-edition-Sim">Redundant SH in Sim (2)</option><option value="extra-helper-KorSim">SH in KorSim only (13)</option><option value="extra-helper-Kor">SH in Kor only (1)</option><option value="different-placement-KorSim">Different SH placement — KorSim (1)</option><option value="different-placement-Kor">Different SH placement — Kor (2)</option><option value="different-accent-KorSim">Different accent — KorSim (4)</option><option value="different-accent-Kor">Different accent — Kor (41)</option><option value="different-accent-Sim">Different accent — Sim (2)</option><option value="different-grouping-Kor">Different grouping — Kor (4)</option></select></label>
-<label>Batch <select id="batch"><option value="">All batches (93)</option><option value="1">Batch 1 (37)</option><option value="2">Batch 2 (56)</option></select></label>
+<label>Filter <select id="filter" title="SH means stress helper. Gerstar means geresh or gershayim. Tel. g. means telisha gedolah."><option value="" data-label="All differences">All differences (93)</option><option value="no-helper-Kor" data-label="No SH in Kor">No SH in Kor (8)</option><option value="no-helper-Sim" data-label="No SH in Sim">No SH in Sim (1)</option><option value="gerstar-telg-KorSim" data-label="Gerstar + tel. g. — KorSim">Gerstar + tel. g. — KorSim (2)</option><option value="redundant-edition-KorSim" data-label="Redundant SH in KorSim">Redundant SH in KorSim (12)</option><option value="redundant-edition-Sim" data-label="Redundant SH in Sim">Redundant SH in Sim (2)</option><option value="extra-helper-KorSim" data-label="SH in KorSim only">SH in KorSim only (13)</option><option value="extra-helper-Kor" data-label="SH in Kor only">SH in Kor only (1)</option><option value="different-placement-KorSim" data-label="Different SH placement — KorSim">Different SH placement — KorSim (1)</option><option value="different-placement-Kor" data-label="Different SH placement — Kor">Different SH placement — Kor (2)</option><option value="different-accent-KorSim" data-label="Different accent — KorSim">Different accent — KorSim (4)</option><option value="different-accent-Kor" data-label="Different accent — Kor">Different accent — Kor (41)</option><option value="different-accent-Sim" data-label="Different accent — Sim">Different accent — Sim (2)</option><option value="different-grouping-Kor" data-label="Different grouping — Kor">Different grouping — Kor (4)</option></select></label>
+<label>Batch <select id="batch"><option value="" data-label="All batches">All batches (93)</option><option value="1" data-label="Batch 1">Batch 1 (37)</option><option value="2" data-label="Batch 2">Batch 2 (56)</option></select></label>
 <button id="toggle-images" type="button" aria-controls="observations" aria-expanded="false">Show images</button>
 <output id="visible" aria-live="polite"></output>
 </div>

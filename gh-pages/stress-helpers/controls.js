@@ -32,6 +32,18 @@ function searchKey(text) {
     return text.toLowerCase().replace(/[\u0591-\u05bd\u05bf-\u05c7]/g, "");
 }
 const searchable = rows.map(row => Array.from(row.cells, cell => searchKey(cell.textContent)));
+// Each menu counts the rows that the other menu's choice leaves, and greys out a choice
+// that would leave none.  The search box affects only the table and the readout.
+function recount(target, key, other, otherKey) {
+    const pool = rows.filter(row => !other.value || row.dataset[otherKey] === other.value);
+    for (const option of target.options) {
+        const count = option.value
+            ? pool.filter(row => row.dataset[key] === option.value).length
+            : pool.length;
+        option.textContent = `${option.dataset.label} (${count})`;
+        option.disabled = option.value !== "" && count === 0;
+    }
+}
 function filter() {
     const query = searchKey(input.value.trim());
     let count = 0;
@@ -43,7 +55,13 @@ function filter() {
     }
     visible.textContent = count + (count === 1 ? " difference" : " differences");
 }
+// A menu's choice changes the other menu's counts as well as the table.
+function choose() {
+    recount(menu, "filter", batchMenu, "batch");
+    recount(batchMenu, "batch", menu, "filter");
+    filter();
+}
 input.addEventListener("input", filter);
-menu.addEventListener("change", filter);
-batchMenu.addEventListener("change", filter);
-filter();
+menu.addEventListener("change", choose);
+batchMenu.addEventListener("change", choose);
+choose();

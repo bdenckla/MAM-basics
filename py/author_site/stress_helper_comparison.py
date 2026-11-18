@@ -267,24 +267,30 @@ def _rows(records_by_edition, *, with_scans):
     return rows, counts, batch_counts
 
 
+def _option(value, label, count):
+    """A menu choice showing its count of rows, with its label also kept apart from the
+    count.  controls.js recounts each menu's choices for the other menu's choice, as Ben
+    chose on 2026-11-18 (his answer "2A"), and writes each label anew from data-label.
+    """
+    label = escape(label)
+    return f'<option value="{value}" data-label="{label}">{label} ({count})</option>'
+
+
 def _filter_choices(rows, counts):
-    choices = [f'<option value="">All differences ({len(rows)})</option>']
+    choices = [_option("", "All differences", len(rows))]
     for category, (_, template) in CATEGORIES.items():
         for edition in _FILTER_EDITIONS.values():
             filter_value = f"{category}-{edition}"
             if count := counts[filter_value]:
-                label = escape(template.format(edition=edition))
-                choices.append(
-                    f'<option value="{filter_value}">{label} ({count})</option>'
-                )
+                label = template.format(edition=edition)
+                choices.append(_option(filter_value, label, count))
     return "".join(choices)
 
 
 def _batch_choices(rows, batch_counts):
-    choices = [f'<option value="">All batches ({len(rows)})</option>']
+    choices = [_option("", "All batches", len(rows))]
     for batch, label in _BATCHES.items():
-        count = batch_counts[batch]
-        choices.append(f'<option value="{batch}">{escape(label)} ({count})</option>')
+        choices.append(_option(batch, label, batch_counts[batch]))
     return "".join(choices)
 
 
