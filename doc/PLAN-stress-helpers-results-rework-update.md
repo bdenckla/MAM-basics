@@ -55,3 +55,32 @@ sentence of `doc/simanim-tanakh-signs.md`. Ben answered on 2026-11-18:
 
 The requirements ledger's R3, "prepare for merging results.html into index.html in substance",
 whose status said "the merge itself is later work", is now implemented: merged on 2026-11-18.
+
+## 2026-11-18: MAM's notes at the batch-2 findings
+
+Recorded by Claude (Opus 5.5), in the commit that adds the notes. Ben asked on 2026-11-18:
+
+> For this "further" work, were MAM's notes consulted to see if the simanim and/or koren
+> differences are noted? I think that was done for the original (batch-1) work and should be
+> done for the "further" work if it was not already done.
+
+They had not been. No batch-2 record cited or mentioned a MAM documentation note, and the census
+rows behind them have no field for one, where 11 batch-1 records cite one. A read of MAM's notes
+at every batch-2 finding's verse, in MAM-basics' own copy of MAM's text, found a note on the
+finding's chanted word at 7 of the 74 findings: 6 of Koren's 54 and 1 of the Simanim Tanakh's 20,
+in 6 notes, since one note at 2Chr 29:31 serves both editions. Of the other 67, 60 are at verses
+with no documentation note, and 7 at verses whose notes concern other words. Each of the 7 now
+has a sentence saying what the note reports, with a "MAM doc-note" link, as batch 1's rows have:
+
+- At Exod 27:16, Ezek 20:31 and 2Chr 29:31 the note gives the printed editions the edition's
+  word. At 2Chr 29:31 it also names BHS, Mechon Mamre and Simanim, taken as the Simanim Tanakh,
+  since Chronicles has no tiqqun.
+- At Exod 20:9, עליון, the note names Koren, after Heidenheim, among the printings with munaḥ
+  alone on the compound's first word, as Koren's appendix has it.
+- At Exod 20:2 and Deut 5:6, עליון, the note reports MAM's compound, with its maqaf, in the
+  printed editions, where Koren's appendix has a space. As at Esth 6:1 in batch 1, the row gives
+  what the note reports beside what the edition has.
+
+Three of the links go to MAM-with-doc's big-doc pages, which hold those notes' text. The read's
+results, one entry per finding with each bearing note's doc-parts, are in MAM-private's
+`stress-helpers/mam-notes-batch2-2026-11-18.json`.
