@@ -351,10 +351,12 @@ body.centered-page table.printed-decalogue-transcription-verdict {
    serve because its rows alternate by category, as the opt-outs above explain. Ben, 2026-11-18,
    of printed-decalogue-koren.html's transcription verdict table: its data rows "need to be set
    off from each other, by some mechanism such as divider lines (horizontal row borders) or
-   alternate-row background shading." The rules are those divider lines. As in the ruled-rows
-   tables of ../taamey-d/Taamey-doc-styles.css, the rules are on the rows, which takes the
-   collapsing border model; the cells' vertical padding gives back the space between rows that
-   the model takes away. */
+   alternate-row background shading." The rules are those divider lines. Answering
+   "Decision 1: A" the same day, he asked for them on printed-decalogue-simanim.html's two
+   transcription verdict tables as well. As in the ruled-rows tables of
+   ../taamey-d/Taamey-doc-styles.css, the rules are on the rows, which takes the collapsing
+   border model; the cells' vertical padding gives back the space between rows that the model
+   takes away. */
 table.ruled-rows { border-collapse: collapse; }
 table.ruled-rows tr + tr { border-top: 1px solid light-dark(#ccc, #444); }
 table.ruled-rows th, table.ruled-rows td { padding-top: 0.4em; padding-bottom: 0.4em; }
