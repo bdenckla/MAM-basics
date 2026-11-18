@@ -408,6 +408,12 @@ reader to work out which. **Name the concrete thing**: Koren's *compound*, one p
 one printed *edition*, what the strand *has*. Same complaint as the nameless possessive "its
 strand" and as the exterminated verb synonyms for *has*.
 
+Ben, 2026-11-17: *"Here and everywhere, for months, despite my admonitions … you keep using the
+word "reading" to mean a form of a word. I would really prefer you to not use the word
+"reading." It's vague."* So do not use the noun in prose at all, in any register, chat included:
+name the concrete thing, a word, an atom, a chanted word, a strand or a page. Only the
+identifiers named below keep it.
+
 **The technical sense stays**, and is not a holdout to sweep: the elyon/taḥton `reading` JSON
 field and dataclass attribute, `dual_cant_readings`' grouped chanted verse,
 `printed_decalogue_strands.resolve_readings`, `render_reading_name`, a transcription's
