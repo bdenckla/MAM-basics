@@ -216,7 +216,7 @@ BODY = [
                         "lb2": "",
                         "contents": ["מג״ה"],
                     },
-                    " (Miqra’ot\nGedolot Ha-Keter), but they omit the maqqef.",
+                    " (Mikra’ot\nGedolot Haketer), but they omit the maqqef.",
                 ],
             },
             "\n\n",
@@ -282,7 +282,7 @@ BODY = [
             {
                 "_htel_tag": "li",
                 "contents": [
-                    "Breuer; Miqra’ot Gedolot Ha-Keter; Simanim; Mechon Mamre."
+                    "Breuer; Mikra’ot Gedolot Haketer; Simanim; Mechon Mamre."
                 ],
             },
             "\n",

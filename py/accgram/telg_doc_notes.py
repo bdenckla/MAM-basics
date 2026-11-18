@@ -71,7 +71,7 @@ _EN: dict[str, dict[str, object]] = {
             unpointed("כתי״ל"),
             "), whose marks Breuer also records;" " and so too in ",
             unpointed("מג״ה"),
-            " (Miqra’ot Gedolot Ha-keter), per the practice of the Keter. Jacob"
+            " (Mikra’ot Gedolot Haketer), per the practice of the Keter. Jacob"
             " Sapir's note on the Aleppo Codex (",
             unpointed("א(ס)"),
             ") records only that the word has “two accents” (",
@@ -262,7 +262,7 @@ _SOURCE_KEY = (
             " Koren, apart"
         ),
     ),
-    ("מג״ה", "Miqra’ot Gedolot Ha-keter"),
+    ("מג״ה", "Mikra’ot Gedolot Haketer"),
     ("BHS", "Biblia Hebraica Stuttgartensia"),
     ("המקליד", "the transcriber of the Westminster/UXLC text of Leningrad"),
     ("הקלדה", "the typed WLC text itself"),
