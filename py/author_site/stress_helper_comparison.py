@@ -32,14 +32,25 @@ HREF = f"{DIRECTORY}/{_FNAME}"
 # words govern this title's bare "Simanim", which the hebrew-prose skill's checklist
 # item 7 otherwise avoids; other mentions of the two editions keep their own names.
 TITLE = "Stress helpers in MAM, Koren, and Simanim"
+# Each edition's name in prose and its abbreviation in a row's labels.
 _EDITIONS = {
-    "koren": ("Koren", "Koren"),
-    "simanim-tanakh": ("the Simanim Tanakh", "SimTan"),
+    "koren": ("Koren", "Kor"),
+    "simanim-tanakh": ("the Simanim Tanakh", "Sim"),
 }
+# A row's editions, abbreviated, beside its printed word, in its difference's label and
+# in the Filter menu.
 _FILTER_EDITIONS = {
     ("koren", "simanim-tanakh"): "KorSim",
     ("koren",): "Kor",
     ("simanim-tanakh",): "Sim",
+}
+# Each abbreviation's hover.  Ben, 2026-11-18: "In individual rows, change "Koren /
+# SimTan" to "KorSim", hover explained to mean "both Koren and Simanim"."  His words
+# govern the hovers' bare "Simanim", as they govern TITLE's.
+_ABBREVIATIONS = {
+    "Kor": "Koren",
+    "Sim": "Simanim",
+    "KorSim": "both Koren and Simanim",
 }
 # Each category has a row label and a filter label.
 CATEGORIES = {
@@ -67,10 +78,32 @@ _BATCHES = {1: "Batch 1", 2: "Batch 2"}
 # letters, which keeps the surrounding font (the hebrew-prose skill's rendered-prose
 # reference).
 _STRANDS = {"taxton": accent_names.TAHTON, "elyon": accent_names.ELYON}
-# A record's page section, for a page outside an edition's main text, and the words that
-# name it before the page number.  Koren's appendix Decalogues are on pages numbered apart
-# from its main text.
-_PAGE_SECTIONS = {"appendix": "appendix "}
+# A record's page section, for a page outside an edition's main text: the letter before
+# its page number, and the hover that explains them.  Koren's appendix Decalogues are on
+# pages numbered apart from its main text.  Ben, 2026-11-18: "Change "appendix p. 38"
+# and the like to "p. A38" with a hover-explanation of what "A38" means".
+_PAGE_SECTIONS = {
+    "appendix": (
+        "A",
+        "{edition}’s appendix, page {page}, numbered apart from its main text",
+    ),
+}
+# The hover on each "the printed tradition", which renders MAM's sigil דפוסים in the
+# notes.  Ben, 2026-11-18: "When translating MAM doc-notes, in this document and
+# elsewhere [...] for דפסים or whatever the word is you sometimes translate as "printed
+# editions", please instead use "the printed tradition"".  The hebrew-prose skill's
+# terminology reference quotes the rest of his instruction.  The hover's definition is
+# the MAM introduction's, in in/mam-ws-intro/appendices.mediawiki, line 272, and Ben
+# asked, of its draft, the same day: "I would like it to reiterate what it is talking
+# about".
+_PRINTED_TRADITION = (
+    "In MAM’s notes, דפוסים, which we usually translate as “the printed tradition”,"
+    " means the customary text of a selection of widespread editions from the 19th and"
+    " early 20th centuries, in the lineage of the second Venice Miqraot Gedolot. The"
+    " notes cite that Venice edition, and Koren, apart."
+)
+# What in a note gets a hover: a whole abbreviation, or "the printed tradition".
+_EXPLAINED_RE = re.compile(r"(?<!\w)(KorSim|Kor|Sim|the printed tradition)(?!\w)")
 DEFAULT_SIZE = 30
 _TELISHA_QETANNA = "telisha qetanna"
 _ZARQA = "zarqa"
@@ -114,29 +147,59 @@ _HEBREW = (
 _HEBREW_RUN_RE = re.compile(f"[{_HEBREW}]+(?: +[{_HEBREW}]+)*")
 
 
+def _abbr(name, title=None):
+    """The name with a hover: an abbreviation's meaning, unless a title is given."""
+    title = escape(title or _ABBREVIATIONS[name], quote=True)
+    return f'<abbr title="{title}">{escape(name)}</abbr>'
+
+
 def _romanize(text):
     return _ACCENT_NAME_RE.sub(r'<span class="romanized">\1</span>', escape(text))
 
 
-def _prose(text):
-    """Prose with its romanized names italic and its Hebrew isolated for direction:
-    pointed Hebrew in the pointed-Hebrew font, and unpointed Hebrew, such as a strand's
-    name, in the surrounding font (the hebrew-prose skill's rendered-prose reference,
-    "Unpointed Hebrew keeps the surrounding font")."""
+def _explained(term):
+    if term in _ABBREVIATIONS:
+        return _abbr(term)
+    title = escape(_PRINTED_TRADITION, quote=True)
+    return f'<span class="explained" title="{title}">{escape(term)}</span>'
+
+
+def _english(text):
+    """English with its romanized names italic, and with a hover on each abbreviation
+    and each "the printed tradition"."""
     pieces = []
     cursor = 0
-    for match in _HEBREW_RUN_RE.finditer(text):
-        run = match.group(0)
-        lang = "" if author.is_unpointed_hebrew(run) else ' lang="hbo"'
+    for match in _EXPLAINED_RE.finditer(text):
         pieces.append(_romanize(text[cursor : match.start()]))
-        pieces.append(f"<bdi{lang}>{escape(run)}</bdi>")
+        pieces.append(_explained(match.group(0)))
         cursor = match.end()
     pieces.append(_romanize(text[cursor:]))
     return "".join(pieces)
 
 
-def _marked_label(label):
-    return _romanize(label).replace("SH", '<abbr title="stress helper">SH</abbr>')
+def _prose(text):
+    """Prose with its English as _english gives it and its Hebrew isolated for
+    direction: pointed Hebrew in the pointed-Hebrew font, and unpointed Hebrew, such as
+    a strand's name, in the surrounding font (the hebrew-prose skill's rendered-prose
+    reference, "Unpointed Hebrew keeps the surrounding font")."""
+    pieces = []
+    cursor = 0
+    for match in _HEBREW_RUN_RE.finditer(text):
+        run = match.group(0)
+        lang = "" if author.is_unpointed_hebrew(run) else ' lang="hbo"'
+        pieces.append(_english(text[cursor : match.start()]))
+        pieces.append(f"<bdi{lang}>{escape(run)}</bdi>")
+        cursor = match.end()
+    pieces.append(_english(text[cursor:]))
+    return "".join(pieces)
+
+
+def _marked_label(template, edition):
+    """A row's label, with a hover on its SH and on its editions' abbreviation."""
+    return _abbr(edition).join(
+        _romanize(part).replace("SH", '<abbr title="stress helper">SH</abbr>')
+        for part in template.split("{edition}")
+    )
 
 
 def _linked_note(note):
@@ -150,9 +213,10 @@ def _linked_note(note):
     return f"<p>{prose}</p>"
 
 
-def _reading(edition, word):
+def _reading(label, word):
+    """MAM's or the editions' word, after its label, which is ready markup."""
     return (
-        f'<div class="reading"><span class="edition" dir="ltr">{escape(edition)}</span>'
+        f'<div class="reading"><span class="edition" dir="ltr">{label}</span>'
         f'<span class="hebrew" dir="rtl" lang="hbo">{escape(word)}</span></div>'
     )
 
@@ -161,7 +225,7 @@ def _crop(item, edition_id, reference, labeled):
     edition, short = _EDITIONS[edition_id]
     src = escape(item, quote=True)
     alt = escape(f"{edition} scan crop for {reference}", quote=True)
-    label = f'<span class="source">{short}</span><br>' if labeled else ""
+    label = f'<span class="source">{_abbr(short)}</span><br>' if labeled else ""
     return (
         f'<a href="{src}">{label}<img src="{src}" alt="{alt}" '
         'loading="lazy" decoding="async"></a>'
@@ -183,29 +247,31 @@ def _notes(sources):
 def _row(sources, filter_value, *, with_scans):
     record = next(iter(sources.values()))
     shared = len(sources) > 1
-    edition_names = [_EDITIONS[key] for key in sources]
-    reading_label = " / ".join(short for _, short in edition_names)
-    edition = "both printed editions" if shared else edition_names[0][0]
+    editions = _FILTER_EDITIONS[tuple(sources)]
     reference = f'{BOOK_ABBREVS[record["book"]]} {record["chapter"]}:{record["verse"]}'
     location = record.get("location")
     crop_reference = f"{reference}, {location.lower()}" if location else reference
     verse_href = escape(record["verse_href"], quote=True)
     label = f'<a href="{verse_href}">{escape(reference)}</a>'
     for key, source in sources.items():
-        _, short = _EDITIONS[key]
+        edition, short = _EDITIONS[key]
         scan = escape(source["scan"], quote=True)
-        page_prefix = f"{short} " if shared else ""
+        page_prefix = f"{_abbr(short)} " if shared else ""
+        page = str(source["page"])
         if section := source.get("page_section"):
-            page_prefix += _PAGE_SECTIONS[section]
-        label += f'<br><span class="source" title="{scan}">{page_prefix}p. {source["page"]}</span>'
+            letter, hover = _PAGE_SECTIONS[section]
+            page = _abbr(f"{letter}{page}", hover.format(edition=edition, page=page))
+        label += (
+            f'<br><span class="source" title="{scan}">{page_prefix}p. {page}</span>'
+        )
     if location:
         label += f"<br><small>{escape(location)}</small>"
     if strand := record.get("strand"):
         label += f"<br><bdi>{_STRANDS[strand]}</bdi>"
     row_label, _ = CATEGORIES[record["category"]]
-    name = _marked_label(row_label.format(edition=edition))
+    name = _marked_label(row_label, editions)
     reading = _reading("MAM", record["mam"])
-    reading += _reading(reading_label, record["printed"])
+    reading += _reading(_abbr(editions), record["printed"])
     cells = (
         f'<tr data-filter="{filter_value}" data-batch="{record["batch"]}">'
         f'<td class="readings" dir="rtl">{reading}</td>'
@@ -335,7 +401,7 @@ def _credits(inputs, page):
         for data in inputs.values()
     )
     return f"""{editions}
-<p class="credit">The crops show the printed editions at the locations compared in the table.</p>
+<p class="credit">The crops show Koren and the Simanim Tanakh at the locations compared in the table.</p>
 {_mam_credit(page)}"""
 
 
@@ -346,9 +412,13 @@ def _document(common, inputs, generated_comment):
     )
     choices = _filter_choices(rows, counts)
     batch_choices = _batch_choices(rows, batch_counts)
+    *meanings, last = (
+        f"{name} means {hover}" for name, hover in _ABBREVIATIONS.items()
+    )
     filter_title = (
         "SH means stress helper. Gerstar means geresh or gershayim."
         f" Tel. g. means {accent_names.ROM_TELISHA_GEDOLAH}."
+        f" {', '.join(meanings)}, and {last}."
     )
     body = "\n".join(rows)
     coverage = "\n".join(f"<p>{_prose(line)}</p>" for line in common["coverage"])
