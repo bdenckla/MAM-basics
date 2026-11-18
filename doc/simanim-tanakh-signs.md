@@ -24,11 +24,11 @@ thing being named.
 
 Four things, and they are the reason to read this page at all.
 
-**The rafe (ma'ala 9) is not an accent.** A short zigzag stroke above a letter, sitting higher
-than any accent does, is this edition's rafe, restored where nearly every other printed Tanakh
-dropped it. It appears only in four listed situations, all of them consonantal rather than
-musical, so it never competes with an accent for its slot — but it does sit in the accent zone,
-and it is easy to read as one. It is not transcribed.
+**The rafe (ma'ala 9) is not an accent.** A short zigzag stroke above a letter is this edition's
+rafe, restored where nearly every other printed Tanakh dropped it. It appears only in four listed
+situations, all of them consonantal rather than musical, so it never competes with an accent for
+its slot — but it does sit in the accent zone, below the ring of a *telisha gedolah* on the same
+letter at Joshua 7:7 and Jeremiah 21:10, and it is easy to read as one. It is not transcribed.
 
 **The stroke after a word is hollow or solid, and the difference is the point (ma'ala 16).** The
 one vertical line can be *munax-legarmeh*, an accent and a light disjunctive, or the narrow-sense
