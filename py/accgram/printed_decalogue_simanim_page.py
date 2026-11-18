@@ -712,14 +712,18 @@ def _p246_section() -> tuple[object, ...]:
             )
         ),
         _p246_mapping_table(),
+        # The English words "one", "on" and "the span" keep רגיל, the strand name and עבדים from
+        # running together into one right-to-left run, and keep the clause after the dash from
+        # opening on Hebrew (Ben, 2026-11-18, "2 A": "Fix both ... with English words placed as
+        # the caption's were", the Koren page's p. 113 caption being the model).
         H.para(
             (
                 f"So the note has the Simanim Tiqqun, in its own editorial voice, distinguishing two"
                 f" {_TAHTON} cantillations of the אנכי…עבדים span: what it prints and calls the"
-                f" “ordinary” (רגיל) {_TAHTON} — עבדים with ",
+                " “ordinary” (רגיל) one — with ",
                 _ROM_SILLUQ_SOF_PASUQ,
-                f", אנכי…עבדים as its own verse, its marks identical through עבדים to the m-trad"
-                f" {_ELYON} —"
+                " on עבדים, the span אנכי…עבדים as its own verse, its marks identical through"
+                f" עבדים to the m-trad {_ELYON} —"
                 " versus the Keter's ",
                 _ROM_PASHTA_ETNAHTA,
                 f", the genuine m-trad {_TAHTON}, which it sets aside. The Tiqqun thus knows the two"
@@ -1263,7 +1267,7 @@ def _conclusion(
                 _ROM_QADMA,
                 " and the ",
                 _ROM_ZAQEF_QATAN,
-                " do not stand on one chanted word. ויום and השביעי are two chanted"
+                " do not stand on one chanted word. The atoms ויום and השביעי are two chanted"
                 " words, with a space between them and no maqaf, and both Yeivin and Breuer"
                 " restrict the metigah to the chanted word of the zaqef — Yeivin's ",
                 itm(),
