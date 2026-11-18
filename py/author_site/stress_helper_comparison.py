@@ -5,9 +5,9 @@ index.html is the comparison, from in/stress-helpers/common.json, koren.json and
 simanim-tanakh.json; each of its rows shows MAM's form above the printed edition's form,
 the printed page and a scan crop.  results.html, from in/stress-helpers/results.json, has
 the differences that a census of five accents found beyond index.html's, in index.html's
-row form.  Its rows have no printed form, page or crop: the census material records no
-printed form for most of them (doc/PLAN-stress-helpers-results-rework.md, Stage 2), and the
-crops wait for the rows' move into index.html, whose own records must have them.
+row form: each row shows MAM's word above each edition's word, with that edition's page and
+scan crop, and the page ends with index.html's credits.  The records of both pages must
+have the printed word, page, scan and crops.
 """
 
 from __future__ import annotations
@@ -78,6 +78,10 @@ CATEGORIES = {
 # letters, which keeps the surrounding font (the hebrew-prose skill's rendered-prose
 # reference).
 _STRANDS = {"taxton": accent_names.TAHTON, "elyon": accent_names.ELYON}
+# A record's page section, for a page outside an edition's main text, and the words that
+# name it before the page number.  Koren's appendix Decalogues are on pages numbered apart
+# from its main text.
+_PAGE_SECTIONS = {"appendix": "appendix "}
 DEFAULT_SIZE = 30
 _TELISHA_QETANNA = "telisha qetanna"
 _ZARQA = "zarqa"
@@ -175,30 +179,15 @@ def _crop(item, edition_id, reference, labeled):
     )
 
 
-def _editions_phrase(edition_ids):
-    phrase = " and ".join(_EDITIONS[key][0] for key in edition_ids)
-    return phrase[0].upper() + phrase[1:]
-
-
 def _notes(sources):
-    """The row's notes.  A row with a printed form names its editions beside that form; a
-    row without one names them before each note."""
-    if all("printed" in source for source in sources.values()):
-        return "".join(
-            dict.fromkeys(
-                _linked_note(note)
-                for source in sources.values()
-                for note in source.get("notes", ())
-            )
-        )
-    editions_by_note = {}
-    for key, source in sources.items():
-        for note in source.get("notes", ()):
-            identity = (note["text"], note.get("href"), note.get("label"))
-            editions_by_note.setdefault(identity, (note, []))[1].append(key)
+    """The row's notes, each once.  The row names its editions beside their printed word,
+    so a note that the editions share needs no names before it."""
     return "".join(
-        _linked_note({**note, "text": f"{_editions_phrase(keys)}: {note['text']}"})
-        for note, keys in editions_by_note.values()
+        dict.fromkeys(
+            _linked_note(note)
+            for source in sources.values()
+            for note in source.get("notes", ())
+        )
     )
 
 
@@ -214,13 +203,11 @@ def _row(sources, filter_value, *, with_scans):
     verse_href = escape(record["verse_href"], quote=True)
     label = f'<a href="{verse_href}">{escape(reference)}</a>'
     for key, source in sources.items():
-        # The checks give every index.html record a page, and a results.html record
-        # either a printed form, page and scan or none of them.
-        if "page" not in source:
-            continue
         _, short = _EDITIONS[key]
         scan = escape(source["scan"], quote=True)
         page_prefix = f"{short} " if shared else ""
+        if section := source.get("page_section"):
+            page_prefix += _PAGE_SECTIONS[section]
         label += f'<br><span class="source" title="{scan}">{page_prefix}p. {source["page"]}</span>'
     if location:
         label += f"<br><small>{escape(location)}</small>"
@@ -229,8 +216,7 @@ def _row(sources, filter_value, *, with_scans):
     row_label, _ = CATEGORIES[record["category"]]
     name = _marked_label(row_label.format(edition=edition))
     reading = _reading("MAM", record["mam"])
-    if "printed" in record:
-        reading += _reading(reading_label, record["printed"])
+    reading += _reading(reading_label, record["printed"])
     cells = (
         f'<tr data-filter="{filter_value}">'
         f'<td class="readings" dir="rtl">{reading}</td>'
@@ -331,6 +317,17 @@ def _mam_credit(page):
 Miqra according to the Masorah at Hebrew Wikisource, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</p>"""
 
 
+def _credits(inputs, page):
+    """Both pages' credits: each printed edition's, the crops', and MAM's."""
+    editions = "\n".join(
+        f'<p class="credit">{escape(data["edition_credit"])}</p>'
+        for data in inputs.values()
+    )
+    return f"""{editions}
+<p class="credit">The crops show the printed editions at the locations compared in the table.</p>
+{_mam_credit(page)}"""
+
+
 def _document(common, inputs, generated_comment):
     rows, counts = _rows(
         {edition_id: data["differences"] for edition_id, data in inputs.items()},
@@ -344,10 +341,6 @@ def _document(common, inputs, generated_comment):
     body = "\n".join(rows)
     coverage = "\n".join(f"<p>{_prose(line)}</p>" for line in common["coverage"])
     source_notes = "\n".join(map(_linked_note, common["source_notes"]))
-    credits = "\n".join(
-        f'<p class="credit">{escape(data["edition_credit"])}</p>'
-        for data in inputs.values()
-    )
     return f"""<!doctype html>
 <!-- {escape(generated_comment)} -->
 <html lang="en">
@@ -374,20 +367,18 @@ def _document(common, inputs, generated_comment):
 </tbody>
 </table>
 </div>
-{credits}
-<p class="credit">The crops show the printed editions at the locations compared in the table.</p>
-{_mam_credit(HREF)}
+{_credits(inputs, HREF)}
 </main>
 </body>
 </html>
 """
 
 
-def _results_document(results, generated_comment):
+def _results_document(results, inputs, generated_comment):
     editions = results["editions"]
     rows, counts = _rows(
         {edition_id: data["differences"] for edition_id, data in editions.items()},
-        with_scans=False,
+        with_scans=True,
     )
     choices = _filter_choices(rows, counts)
     body = "\n".join(rows)
@@ -407,16 +398,16 @@ def _results_document(results, generated_comment):
 <main>
 <h1>{RESULTS_TITLE}</h1>
 <p>{_RESULTS_SUMMARY}</p>
-{_controls(choices, "SH means stress helper.", with_images=False)}
+{_controls(choices, "SH means stress helper.", with_images=True)}
 <div class="comparison-table">
 <table id="observations">
-{_table_head(with_scans=False)}
+{_table_head(with_scans=True)}
 <tbody>
 {body}
 </tbody>
 </table>
 </div>
-{_mam_credit(_RESULTS_HREF)}
+{_credits(inputs, _RESULTS_HREF)}
 </main>
 </body>
 </html>
@@ -436,6 +427,31 @@ def _check_record(record, key):
         raise ValueError(f"Invalid atom: {key}")
 
 
+def _check_evidence(record, key, output_dir):
+    """Check the printed word, page, scan and crops that every row of both pages shows."""
+    printed = record["printed"]
+    if not printed or not uni_denorm.has_std_mark_order(printed):
+        raise ValueError(f"Missing or out-of-order printed: {key}")
+    if not (isinstance(record["page"], int) and record["page"] > 0):
+        raise ValueError(f"Invalid page: {key}")
+    if not (isinstance(record["scan"], str) and record["scan"]):
+        raise ValueError(f"Invalid scan: {key}")
+    if "page_section" in record and record["page_section"] not in _PAGE_SECTIONS:
+        raise ValueError(f"Unknown page section: {key}")
+    if not record["crops"]:
+        raise ValueError(f"Comparison lacks image evidence: {key}")
+    comparison_crops = record.get("comparison_crops", {})
+    for edition_id, items in comparison_crops.items():
+        if edition_id not in _EDITIONS or not items:
+            raise ValueError(f"Invalid comparison crops for {edition_id}: {key}")
+    for item in chain(record["crops"], *comparison_crops.values()):
+        crop = Path(item)
+        if len(crop.parts) != 2 or crop.parts[0] != "img":
+            raise ValueError(f"Unexpected crop path: {item}")
+        if not (output_dir / crop).is_file():
+            raise FileNotFoundError(output_dir / crop)
+
+
 def _check(data, output_dir):
     refs = set()
     for record in data["differences"]:
@@ -444,24 +460,10 @@ def _check(data, output_dir):
             raise ValueError(f"Duplicate comparison: {key}")
         refs.add(key)
         _check_record(record, key)
-        printed = record["printed"]
-        if not printed or not uni_denorm.has_std_mark_order(printed):
-            raise ValueError(f"Missing or out-of-order printed: {key}")
-        if not record["crops"]:
-            raise ValueError(f"Comparison lacks image evidence: {key}")
-        comparison_crops = record.get("comparison_crops", {})
-        for edition_id, items in comparison_crops.items():
-            if edition_id not in _EDITIONS or not items:
-                raise ValueError(f"Invalid comparison crops for {edition_id}: {key}")
-        for item in chain(record["crops"], *comparison_crops.values()):
-            crop = Path(item)
-            if len(crop.parts) != 2 or crop.parts[0] != "img":
-                raise ValueError(f"Unexpected crop path: {item}")
-            if not (output_dir / crop).is_file():
-                raise FileNotFoundError(output_dir / crop)
+        _check_evidence(record, key, output_dir)
 
 
-def _check_results(results, inputs):
+def _check_results(results, inputs, output_dir):
     """Check results.json's records, and that results.html repeats nothing that
     index.html shows."""
     if list(results) != ["editions"]:
@@ -485,15 +487,9 @@ def _check_results(results, inputs):
                 raise ValueError(f"Duplicate result: {key}")
             refs.add(key)
             _check_record(record, key)
+            _check_evidence(record, key, output_dir)
             if not record.get("atom") or not record.get("notes"):
                 raise ValueError(f"Result lacks its atom or notes: {key}")
-            if "crops" in record:
-                raise ValueError(f"Result has crops before its move: {key}")
-            optional = {"printed", "page", "scan"} & set(record)
-            if optional and optional != {"printed", "page", "scan"}:
-                raise ValueError(f"Result has only some of {sorted(optional)}: {key}")
-            if optional and not uni_denorm.has_std_mark_order(record["printed"]):
-                raise ValueError(f"Out-of-order printed: {key}")
             identity = (record["book"], record["chapter"], record["verse"])
             if (*identity, record["mam"]) in shown[edition_id]:
                 raise ValueError(f"Result repeats index.html: {edition_id} {key}")
@@ -510,11 +506,11 @@ def render(input_dir, output_dir, *, generated_comment):
     for data in inputs.values():
         _check(data, output_dir)
     results = json.loads((input_dir / "results.json").read_text(encoding="utf-8"))
-    _check_results(results, inputs)
+    _check_results(results, inputs, output_dir)
     written = []
     for fname, page in (
         (_FNAME, _document(common, inputs, generated_comment)),
-        (_RESULTS_FNAME, _results_document(results, generated_comment)),
+        (_RESULTS_FNAME, _results_document(results, inputs, generated_comment)),
     ):
         target = output_dir / fname
         target.write_text(page, encoding="utf-8", newline="\n")

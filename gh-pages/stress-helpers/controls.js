@@ -11,7 +11,7 @@ document.querySelector("#size-reset").addEventListener("click", () => {
 });
 applySize();
 
-// results.html has no crops, and so no button.
+// A page rendered without crops has no button.
 const toggle = document.querySelector("#toggle-images");
 if (toggle) {
     const crops = document.querySelectorAll("#observations .scan");
