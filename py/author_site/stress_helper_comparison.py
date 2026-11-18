@@ -1,13 +1,12 @@
-"""Render the comparison with both printed editions from checked forms and crops, and the
-further differences beside it.
+"""Render the comparison with both printed editions from checked forms and crops.
 
 index.html is the comparison, from in/stress-helpers/common.json, koren.json and
 simanim-tanakh.json; each of its rows shows MAM's form above the printed edition's form,
-the printed page and a scan crop.  results.html, from in/stress-helpers/results.json, has
-the differences that a census of five accents found beyond index.html's, in index.html's
-row form: each row shows MAM's word above each edition's word, with that edition's page and
-scan crop, and the page ends with index.html's credits.  The records of both pages must
-have the printed word, page, scan and crops.
+the printed page and a scan crop.  Each record names its batch: batch 1 is the original
+set of comparisons, and batch 2 has the differences that a census of five accents found
+beyond batch 1.  Rows of different batches never merge, and the page's Batch control
+shows either batch or both.  Every record must have the printed word, page, scan and
+crops.
 """
 
 from __future__ import annotations
@@ -27,25 +26,12 @@ from mb_misc.osis_book_abbrevs import BOOK_ABBREVS
 DIRECTORY = "stress-helpers"
 _FNAME = "index.html"
 HREF = f"{DIRECTORY}/{_FNAME}"
-_RESULTS_FNAME = "results.html"
-_RESULTS_HREF = f"{DIRECTORY}/{_RESULTS_FNAME}"
 # The page's <title> and <h1>, and its link text on the site's index.  Ben asked on
 # 2026-11-14 for the title "Stress helpers in MAM, Koren Classic Tanakh, and Feldheim
 # Simanim Tanakh" to be shortened to "Stress helpers in MAM, Koren, and Simanim".  His
 # words govern this title's bare "Simanim", which the hebrew-prose skill's checklist
 # item 7 otherwise avoids; other mentions of the two editions keep their own names.
 TITLE = "Stress helpers in MAM, Koren, and Simanim"
-# results.html's <title> and <h1>: Ben's Decision 5 of 2026-11-17, in
-# doc/PLAN-stress-helpers-results-rework.md, says "further" so that a reader sees at once
-# that the page supplements index.html.
-RESULTS_TITLE = "Further stress-helper results in MAM, Koren, and the Simanim Tanakh"
-# All that results.html says above its table.  Ben, 2026-11-17: "we're just reporting
-# differences in this document", and, of index.html's comparisons, "you should just refer
-# to them as the original set of comparisons".
-_RESULTS_SUMMARY = (
-    "The table lists differences from MAM in Koren and the Simanim Tanakh beyond those in"
-    f' <a href="{_FNAME}">the original set of comparisons</a>.'
-)
 _EDITIONS = {
     "koren": ("Koren", "Koren"),
     "simanim-tanakh": ("the Simanim Tanakh", "SimTan"),
@@ -55,9 +41,7 @@ _FILTER_EDITIONS = {
     ("koren",): "Kor",
     ("simanim-tanakh",): "Sim",
 }
-# Each category has a row label and a filter label.  index.html has every category but
-# different-grouping; results.html's differences have extra-helper, different-accent and
-# different-grouping.
+# Each category has a row label and a filter label.
 CATEGORIES = {
     "no-helper": ("no SH in {edition}", "No SH in {edition}"),
     "gerstar-telg": (
@@ -74,6 +58,11 @@ CATEGORIES = {
     "different-accent": ("Different accent", "Different accent — {edition}"),
     "different-grouping": ("Different grouping", "Different grouping — {edition}"),
 }
+# A record's batch and the batch's label in the Batch control.  Ben, 2026-11-18, when
+# results.html was merged into this page: "add another filter control, with options
+# batch 1, batch 2, all batches. where batch 1 is pre-merge index.html and batch 2 is
+# pre-merge results.html. Default all batches."
+_BATCHES = {1: "Batch 1", 2: "Batch 2"}
 # A record's strand key, for a word of the Decalogues, and the strand's name in Hebrew
 # letters, which keeps the surrounding font (the hebrew-prose skill's rendered-prose
 # reference).
@@ -218,7 +207,7 @@ def _row(sources, filter_value, *, with_scans):
     reading = _reading("MAM", record["mam"])
     reading += _reading(reading_label, record["printed"])
     cells = (
-        f'<tr data-filter="{filter_value}">'
+        f'<tr data-filter="{filter_value}" data-batch="{record["batch"]}">'
         f'<td class="readings" dir="rtl">{reading}</td>'
         f'<th scope="row">{label}</th>'
         f'<td class="difference"><strong>{name}</strong>{_notes(sources)}</td>'
@@ -252,23 +241,30 @@ def _comparison_key(record):
 
 def _rows(records_by_edition, *, with_scans):
     """The table's rows, with an edition's record merged into another's row where the two
-    match, and each row's filter value counted."""
+    match in the same batch, and each row's filter value and batch counted."""
     comparisons = {}
     for edition_id, records in records_by_edition.items():
         for record in records:
-            key = (*_comparison_key(record), record["verse_href"], record["category"])
+            key = (
+                *_comparison_key(record),
+                record["verse_href"],
+                record["category"],
+                record["batch"],
+            )
             comparisons.setdefault(key, {})[edition_id] = record
     counts = Counter()
+    batch_counts = Counter()
     rows = []
     # By verse, then by atom where the records give one; otherwise in input order.
     for key in sorted(comparisons, key=lambda key: (*key[:3], key[3] or 0)):
         sources = comparisons[key]
-        category = key[-1]
+        *_, category, batch = key
         edition = _FILTER_EDITIONS[tuple(sources)]
         filter_value = f"{category}-{edition}"
         counts[filter_value] += 1
+        batch_counts[batch] += 1
         rows.append(_row(sources, filter_value, with_scans=with_scans))
-    return rows, counts
+    return rows, counts, batch_counts
 
 
 def _filter_choices(rows, counts):
@@ -284,7 +280,15 @@ def _filter_choices(rows, counts):
     return "".join(choices)
 
 
-def _controls(choices, filter_title, *, with_images):
+def _batch_choices(rows, batch_counts):
+    choices = [f'<option value="">All batches ({len(rows)})</option>']
+    for batch, label in _BATCHES.items():
+        count = batch_counts[batch]
+        choices.append(f'<option value="{batch}">{escape(label)} ({count})</option>')
+    return "".join(choices)
+
+
+def _controls(choices, batch_choices, filter_title, *, with_images):
     images = (
         '<button id="toggle-images" type="button" aria-controls="observations"'
         ' aria-expanded="false">Show images</button>\n'
@@ -299,6 +303,7 @@ def _controls(choices, filter_title, *, with_images):
 </div>
 <label>Search <input id="find" type="search" placeholder="Verse or Hebrew"></label>
 <label>Filter <select id="filter" title="{filter_title}">{choices}</select></label>
+<label>Batch <select id="batch">{batch_choices}</select></label>
 {images}<output id="visible" aria-live="polite"></output>
 </div>"""
 
@@ -318,7 +323,7 @@ Miqra according to the Masorah at Hebrew Wikisource, <a href="https://creativeco
 
 
 def _credits(inputs, page):
-    """Both pages' credits: each printed edition's, the crops', and MAM's."""
+    """The page's credits: each printed edition's, the crops', and MAM's."""
     editions = "\n".join(
         f'<p class="credit">{escape(data["edition_credit"])}</p>'
         for data in inputs.values()
@@ -329,18 +334,18 @@ def _credits(inputs, page):
 
 
 def _document(common, inputs, generated_comment):
-    rows, counts = _rows(
+    rows, counts, batch_counts = _rows(
         {edition_id: data["differences"] for edition_id, data in inputs.items()},
         with_scans=True,
     )
     choices = _filter_choices(rows, counts)
+    batch_choices = _batch_choices(rows, batch_counts)
     filter_title = (
         "SH means stress helper. Gerstar means geresh or gershayim."
         f" Tel. g. means {accent_names.ROM_TELISHA_GEDOLAH}."
     )
     body = "\n".join(rows)
     coverage = "\n".join(f"<p>{_prose(line)}</p>" for line in common["coverage"])
-    source_notes = "\n".join(map(_linked_note, common["source_notes"]))
     return f"""<!doctype html>
 <!-- {escape(generated_comment)} -->
 <html lang="en">
@@ -357,8 +362,7 @@ def _document(common, inputs, generated_comment):
 <main>
 <h1>{TITLE}</h1>
 {coverage}
-{source_notes}
-{_controls(choices, filter_title, with_images=True)}
+{_controls(choices, batch_choices, filter_title, with_images=True)}
 <div class="comparison-table">
 <table id="observations">
 {_table_head(with_scans=True)}
@@ -374,49 +378,11 @@ def _document(common, inputs, generated_comment):
 """
 
 
-def _results_document(results, inputs, generated_comment):
-    editions = results["editions"]
-    rows, counts = _rows(
-        {edition_id: data["differences"] for edition_id, data in editions.items()},
-        with_scans=True,
-    )
-    choices = _filter_choices(rows, counts)
-    body = "\n".join(rows)
-    return f"""<!doctype html>
-<!-- {escape(generated_comment)} -->
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{RESULTS_TITLE}</title>
-<link rel="stylesheet" href="../document.css">
-<link rel="stylesheet" href="../wlc/style.css">
-<link rel="stylesheet" href="style.css">
-<script src="controls.js" defer></script>
-</head>
-<body>
-<main>
-<h1>{RESULTS_TITLE}</h1>
-<p>{_RESULTS_SUMMARY}</p>
-{_controls(choices, "SH means stress helper.", with_images=True)}
-<div class="comparison-table">
-<table id="observations">
-{_table_head(with_scans=True)}
-<tbody>
-{body}
-</tbody>
-</table>
-</div>
-{_credits(inputs, _RESULTS_HREF)}
-</main>
-</body>
-</html>
-"""
-
-
 def _check_record(record, key):
     if record["category"] not in CATEGORIES:
         raise ValueError(f"Unknown comparison category: {record}")
+    if record.get("batch") not in _BATCHES:
+        raise ValueError(f"Missing or unknown batch: {key}")
     if not record["mam"] or not uni_denorm.has_std_mark_order(record["mam"]):
         raise ValueError(f"Missing or out-of-order mam: {key}")
     if "strand" in record and record["strand"] not in _STRANDS:
@@ -428,7 +394,7 @@ def _check_record(record, key):
 
 
 def _check_evidence(record, key, output_dir):
-    """Check the printed word, page, scan and crops that every row of both pages shows."""
+    """Check the printed word, page, scan and crops that every row shows."""
     printed = record["printed"]
     if not printed or not uni_denorm.has_std_mark_order(printed):
         raise ValueError(f"Missing or out-of-order printed: {key}")
@@ -452,7 +418,9 @@ def _check_evidence(record, key, output_dir):
             raise FileNotFoundError(output_dir / crop)
 
 
-def _check(data, output_dir):
+def _check(edition_id, data, output_dir):
+    """Check an edition's records: every batch-2 record has notes, and none repeats a
+    batch-1 record's verse and MAM form."""
     refs = set()
     for record in data["differences"]:
         key = _comparison_key(record)
@@ -461,61 +429,32 @@ def _check(data, output_dir):
         refs.add(key)
         _check_record(record, key)
         _check_evidence(record, key, output_dir)
-
-
-def _check_results(results, inputs, output_dir):
-    """Check results.json's records, and that results.html repeats nothing that
-    index.html shows."""
-    if list(results) != ["editions"]:
-        raise ValueError(f"Unexpected fields in results: {list(results)}")
-    editions = results["editions"]
-    if list(editions) != list(_EDITIONS):
-        raise ValueError(f"Unexpected editions in results: {list(editions)}")
-    shown = {
-        edition_id: {
-            (r["book"], r["chapter"], r["verse"], r["mam"]) for r in data["differences"]
-        }
-        for edition_id, data in inputs.items()
+        if record["batch"] == 2 and not record.get("notes"):
+            raise ValueError(f"Batch-2 record lacks notes: {edition_id} {key}")
+    batch_1 = {
+        (r["book"], r["chapter"], r["verse"], r["mam"])
+        for r in data["differences"]
+        if r["batch"] == 1
     }
-    for edition_id, data in editions.items():
-        if set(data) != {"differences"}:
-            raise ValueError(f"Unexpected tables for {edition_id}: {sorted(data)}")
-        refs = set()
-        for record in data["differences"]:
-            key = _comparison_key(record)
-            if key in refs:
-                raise ValueError(f"Duplicate result: {key}")
-            refs.add(key)
-            _check_record(record, key)
-            _check_evidence(record, key, output_dir)
-            if not record.get("atom") or not record.get("notes"):
-                raise ValueError(f"Result lacks its atom or notes: {key}")
-            identity = (record["book"], record["chapter"], record["verse"])
-            if (*identity, record["mam"]) in shown[edition_id]:
-                raise ValueError(f"Result repeats index.html: {edition_id} {key}")
+    for record in data["differences"]:
+        identity = (record["book"], record["chapter"], record["verse"], record["mam"])
+        if record["batch"] == 2 and identity in batch_1:
+            raise ValueError(f"Batch 2 repeats batch 1: {edition_id} {identity}")
 
 
 def render(input_dir, output_dir, *, generated_comment):
-    """Write the combined report, with crops already in output_dir, and the further
-    differences."""
+    """Write the combined report, with crops already in output_dir."""
     common = json.loads((input_dir / "common.json").read_text(encoding="utf-8"))
     inputs = {
         key: json.loads((input_dir / f"{key}.json").read_text(encoding="utf-8"))
         for key in _EDITIONS
     }
-    for data in inputs.values():
-        _check(data, output_dir)
-    results = json.loads((input_dir / "results.json").read_text(encoding="utf-8"))
-    _check_results(results, inputs, output_dir)
-    written = []
-    for fname, page in (
-        (_FNAME, _document(common, inputs, generated_comment)),
-        (_RESULTS_FNAME, _results_document(results, inputs, generated_comment)),
-    ):
-        target = output_dir / fname
-        target.write_text(page, encoding="utf-8", newline="\n")
-        written.append(str(target))
-    return written
+    for edition_id, data in inputs.items():
+        _check(edition_id, data, output_dir)
+    target = output_dir / _FNAME
+    page = _document(common, inputs, generated_comment)
+    target.write_text(page, encoding="utf-8", newline="\n")
+    return [str(target)]
 
 
 def gen_html_files():

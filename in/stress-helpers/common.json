@@ -1,12 +1,5 @@
 {
   "coverage": [
-    "The table lists the original set of comparisons: differences from MAM in prose verses. It covers stress helpers present in MAM and includes some cases where a printed edition has a helper absent from MAM."
-  ],
-  "source_notes": [
-    {
-      "text": "Differences beyond the original set of comparisons are on a separate page.",
-      "href": "results.html",
-      "label": "Further results"
-    }
+    "The table lists differences from MAM in prose verses."
   ]
 }

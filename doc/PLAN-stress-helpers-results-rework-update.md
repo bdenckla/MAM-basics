@@ -1,0 +1,57 @@
+# Updates to the stress-helpers results rework plan
+
+State: open, first entry 2026-11-18.
+
+## 2026-11-18: the pages pared down, then given crops and each edition's word
+
+Recorded by Claude (Opus 5.5). This entry and the next record what became of the base plan's
+results.html after its "Execution, 2026-11-17".
+
+**Effective base State:** executed 2026-11-17; results.html has since been merged into
+index.html, as the next entry says.
+
+Three commits of 2026-11-18, made on Ben's other computer, changed what the execution left.
+MAM-private's `stress-helpers/results-page-process-2026-11-18.md` records what they took off
+both pages, and why.
+
+- `b963105d` carried out Ben's task 1 of 2026-11-17 and the eleven updates he queued that day.
+  results.html lost the spelling-only table that Decision 4 (4A) had put below its differences
+  table, its census tables, its definitions and its paragraphs of facts, and Koren's finding at
+  1Sam 24:3, which the finding's crop showed to be spurious. index.html lost its paragraphs on
+  the Decalogue comparisons and on thirteen chanted words, and its notes at 2Sam 4:6 and
+  2Sam 13:20.
+- `b74a9815` gave each of results.html's 74 findings its edition's word, page, scan and crop, as
+  index.html's rows have them, at Ben's request of 2026-11-17. That overtook Decision 3 (R6),
+  whose 3A had left results.html with MAM's word and the sentences only, and its "Crops wait for
+  the merge into index.html".
+- `267f4eff` corrected `doc/simanim-tanakh-signs.md`'s sentence on the Simanim Tanakh's rafe,
+  from two of those crops.
+
+## 2026-11-18: results.html merged into index.html
+
+Recorded by Claude (Opus 5.5), in the commit that carries out the merge. A decision page put three
+questions to Ben: Decision 1, whether to merge results.html into index.html now; Decision 2, which
+label Ezek 16:61 takes in a merged table; and Decision 3, whether to check the dagesh ḥazaq
+sentence of `doc/simanim-tanakh-signs.md`. Ben answered on 2026-11-18:
+
+> 1A, 2A, 3A.
+>
+> 3A should be done in a totally separate session granted by the commander, in my opinion.
+>
+> 1A (the merge) should add another filter control, with options batch 1, batch 2, all batches.
+> where batch 1 is pre-merge index.html and batch 2 is pre-merge results.html. Default all
+> batches.
+
+- **1A, with the batch filter.** results.json's 74 findings joined `koren.json` and
+  `simanim-tanakh.json` with `"batch": 2`, after the 51 earlier records, which have
+  `"batch": 1`. results.html and results.json are gone, and index.html has one table of 93 rows,
+  37 of batch 1 and 56 of batch 2. Its opening sentence is "The table lists differences from MAM
+  in prose verses.", and its link to results.html is gone. A second filter, "Batch", offers "All
+  batches", the default, "Batch 1" and "Batch 2". The generator raises if a batch-2 record
+  repeats a batch-1 record of its edition, which keeps R2's guarantee.
+- **2A.** Ezek 16:61 is labeled as a redundant helper in both printed editions, like the thirteen
+  rows of the same shape with pashta. Stage 1 had left that label "a question for the merge".
+- **3A** went to a separate session, as Ben asked.
+
+The requirements ledger's R3, "prepare for merging results.html into index.html in substance",
+whose status said "the merge itself is later work", is now implemented: merged on 2026-11-18.

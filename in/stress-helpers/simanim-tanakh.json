@@ -8,6 +8,7 @@
       "mam": "קִ֞֠רְב֞֠וּ",
       "printed": "קִ֠רְב֞וּ",
       "category": "gerstar-telg",
+      "batch": 1,
       "page": 175,
       "scan": "A3-L-0175.jpg",
       "crops": [
@@ -33,6 +34,7 @@
       "mam": "שָׁ֩טוּ֩",
       "printed": "שָׁטוּ֩",
       "category": "no-helper",
+      "batch": 1,
       "page": 236,
       "scan": "A4-N-0236.jpg",
       "crops": [
@@ -53,6 +55,7 @@
       "mam": "וַיֵּבְךְּ֙",
       "printed": "וַיֵּ֙בְךְּ֙",
       "category": "redundant-edition",
+      "batch": 1,
       "page": 511,
       "scan": "BB-2S-0511.jpg",
       "crops": [
@@ -72,6 +75,7 @@
       "mam": "וְשָׁפַלְתְּ֙",
       "printed": "וְשָׁפַ֙לְתְּ֙",
       "category": "redundant-edition",
+      "batch": 1,
       "page": 696,
       "scan": "C1-I-0696.jpg",
       "crops": [
@@ -91,6 +95,7 @@
       "mam": "אָמַרְתְּ֙",
       "printed": "אָמַ֙רְתְּ֙",
       "category": "redundant-edition",
+      "batch": 1,
       "page": 719,
       "scan": "C1-I-0719.jpg",
       "crops": [
@@ -110,6 +115,7 @@
       "mam": "וְיָנַקְתְּ֙",
       "printed": "וְיָנַ֙קְתְּ֙",
       "category": "redundant-edition",
+      "batch": 1,
       "page": 733,
       "scan": "C1-I-0733.jpg",
       "crops": [
@@ -130,6 +136,7 @@
       "mam": "יֹשַׁבְתְּ֙",
       "printed": "יֹשַׁ֙בְתְּ֙",
       "category": "redundant-edition",
+      "batch": 1,
       "page": 777,
       "scan": "C2-Je-0777.jpg",
       "crops": [
@@ -152,6 +159,7 @@
       "mam": "מַה־נֵּחַנְתְּ֙",
       "printed": "מַה־נֵּחַ֙נְתְּ֙",
       "category": "redundant-edition",
+      "batch": 1,
       "page": 777,
       "scan": "C2-Je-0777.jpg",
       "crops": [
@@ -171,6 +179,7 @@
       "mam": "וְגַם־נִלְכַּדְתְּ֙",
       "printed": "וְגַם־נִלְכַּ֙דְתְּ֙",
       "category": "redundant-edition",
+      "batch": 1,
       "page": 829,
       "scan": "C2-Je-0829.jpg",
       "crops": [
@@ -190,6 +199,7 @@
       "mam": "שֹׁכַנְתְּ֙",
       "printed": "שֹׁכַ֙נְתְּ֙",
       "category": "redundant-edition",
+      "batch": 1,
       "page": 831,
       "scan": "C2-Je-0831.jpg",
       "crops": [
@@ -209,6 +219,7 @@
       "mam": "לֹֽא־זָכַרְתְּ֙",
       "printed": "לֹֽא־זָכַ֙רְתְּ֙",
       "category": "redundant-edition",
+      "batch": 1,
       "page": 863,
       "scan": "C3-Ee-0863.jpg",
       "crops": [
@@ -228,6 +239,7 @@
       "mam": "פִּלַּלְתְּ֙",
       "printed": "פִּלַּ֙לְתְּ֙",
       "category": "redundant-edition",
+      "batch": 1,
       "page": 863,
       "scan": "C3-Ee-0863.jpg",
       "crops": [
@@ -247,6 +259,7 @@
       "mam": "וְיָשַׁבְתְּ֙",
       "printed": "וְיָשַׁ֙בְתְּ֙",
       "category": "redundant-edition",
+      "batch": 1,
       "page": 878,
       "scan": "C3-Ee-0878.jpg",
       "crops": [
@@ -266,6 +279,7 @@
       "mam": "וּ֜֠לְאֵ֜֠לֶּה",
       "printed": "וּ֠לְאֵ֜לֶּה",
       "category": "gerstar-telg",
+      "batch": 1,
       "page": 921,
       "scan": "C3-Ee-0921.jpg",
       "crops": [
@@ -287,6 +301,7 @@
       "mam": "וְהָלַכְתְּ֙",
       "printed": "וְהָלַ֙כְתְּ֙",
       "category": "redundant-edition",
+      "batch": 1,
       "page": 1228,
       "scan": "E2-R-1228.jpg",
       "crops": [
@@ -309,6 +324,7 @@
       "mam": "וַיֵּשְׁתְּ֙",
       "printed": "וַיֵּ֙שְׁתְּ֙",
       "category": "redundant-edition",
+      "batch": 1,
       "page": 1230,
       "scan": "E2-R-1230.jpg",
       "crops": [
@@ -328,6 +344,7 @@
       "mam": "וַ֠יָּשֻׁב֠וּ",
       "printed": "וַ֠יָּשֻׁ֠בוּ",
       "category": "different-placement",
+      "batch": 1,
       "page": 1432,
       "scan": "FD-2C-1432.jpg",
       "crops": [
@@ -349,6 +366,429 @@
         }
       ],
       "verse_href": "../MAM-with-doc/FD-2Chronicles.html#c20v27"
+    },
+    {
+      "book": "Numbers",
+      "chapter": 34,
+      "verse": 20,
+      "atom": 1,
+      "mam": "וּלְמַטֵּה֙",
+      "printed": "וּלְמַטֵּ֖ה",
+      "category": "different-accent",
+      "batch": 2,
+      "page": 280,
+      "scan": "A4-N-0280.jpg",
+      "crops": [
+        "img/simanim-tanakh-numbers-34-20-A4-N-0280-a1-1.png"
+      ],
+      "notes": [
+        {
+          "text": "Both editions have tipeḥa on tet where MAM has pashta."
+        }
+      ],
+      "verse_href": "../MAM-with-doc/A4-Numbers.html#c34v20"
+    },
+    {
+      "book": "Deuter",
+      "chapter": 5,
+      "verse": 13,
+      "atom": 1,
+      "strand": "taxton",
+      "mam": "וְיוֹם֙",
+      "printed": "וְי֨וֹם",
+      "category": "different-accent",
+      "batch": 2,
+      "page": 298,
+      "scan": "A5-D-0298.jpg",
+      "crops": [
+        "img/simanim-tanakh-deuter-5-13-A5-D-0298-a1-taxton-1.png"
+      ],
+      "notes": [
+        {
+          "text": "The Simanim Tanakh has qadma on yod where MAM has pashta."
+        }
+      ],
+      "verse_href": "../MAM-with-doc/A5-Deuter.html#c5v13"
+    },
+    {
+      "book": "Joshua",
+      "chapter": 7,
+      "verse": 7,
+      "atom": 6,
+      "mam": "לָ֠מָה",
+      "printed": "לָ֠מָ֠ה",
+      "category": "extra-helper",
+      "batch": 2,
+      "page": 366,
+      "scan": "B1-Js-0366.jpg",
+      "crops": [
+        "img/simanim-tanakh-joshua-7-7-B1-Js-0366-a6-1.png"
+      ],
+      "notes": [
+        {
+          "text": "Both editions have a telisha gedolah helper on mem."
+        }
+      ],
+      "verse_href": "../MAM-with-doc/B1-Joshua.html#c7v7"
+    },
+    {
+      "book": "Judges",
+      "chapter": 21,
+      "verse": 16,
+      "atom": 1,
+      "mam": "וַיֹּֽאמְרוּ֙",
+      "printed": "וַיֹּֽאמְר֨וּ",
+      "category": "different-accent",
+      "batch": 2,
+      "page": 445,
+      "scan": "B2-Ju-0445.jpg",
+      "crops": [
+        "img/simanim-tanakh-judges-21-16-B2-Ju-0445-a1-1.png"
+      ],
+      "notes": [
+        {
+          "text": "The Simanim Tanakh has qadma on resh where MAM has pashta."
+        }
+      ],
+      "verse_href": "../MAM-with-doc/B2-Judges.html#c21v16"
+    },
+    {
+      "book": "1Samuel",
+      "chapter": 17,
+      "verse": 37,
+      "atom": 1,
+      "location": "First occurrence",
+      "mam": "וַיֹּאמֶר֮",
+      "printed": "וַיֹּ֘אמֶר֮",
+      "category": "extra-helper",
+      "batch": 2,
+      "page": 479,
+      "scan": "BA-1S-0479.jpg",
+      "crops": [
+        "img/simanim-tanakh-1samuel-17-37-BA-1S-0479-a1-1.png"
+      ],
+      "notes": [
+        {
+          "text": "Both editions have a zarqa helper on yod."
+        }
+      ],
+      "verse_href": "../MAM-with-doc/BA-1Samuel.html#c17v37"
+    },
+    {
+      "book": "1Samuel",
+      "chapter": 17,
+      "verse": 39,
+      "atom": 8,
+      "location": "First occurrence",
+      "mam": "לָלֶכֶת֮",
+      "printed": "לָלֶ֘כֶת֮",
+      "category": "extra-helper",
+      "batch": 2,
+      "page": 479,
+      "scan": "BA-1S-0479.jpg",
+      "crops": [
+        "img/simanim-tanakh-1samuel-17-39-BA-1S-0479-a8-1.png"
+      ],
+      "notes": [
+        {
+          "text": "Both editions have a zarqa helper on the second lamed."
+        }
+      ],
+      "verse_href": "../MAM-with-doc/BA-1Samuel.html#c17v39"
+    },
+    {
+      "book": "1Samuel",
+      "chapter": 26,
+      "verse": 15,
+      "atom": 1,
+      "mam": "וַיֹּאמֶר֩",
+      "printed": "וַיֹּ֩אמֶר֩",
+      "category": "extra-helper",
+      "batch": 2,
+      "page": 498,
+      "scan": "BA-1S-0498.jpg",
+      "crops": [
+        "img/simanim-tanakh-1samuel-26-15-BA-1S-0498-a1-1.png"
+      ],
+      "notes": [
+        {
+          "text": "Both editions have a telisha qetanna helper on yod."
+        }
+      ],
+      "verse_href": "../MAM-with-doc/BA-1Samuel.html#c26v15"
+    },
+    {
+      "book": "2Samuel",
+      "chapter": 19,
+      "verse": 31,
+      "atom": 9,
+      "mam": "אַ֠חֲרֵי",
+      "printed": "אַֽ֠חֲרֵ֠י",
+      "category": "extra-helper",
+      "batch": 2,
+      "page": 541,
+      "scan": "BB-2S-0541.jpg",
+      "crops": [
+        "img/simanim-tanakh-2samuel-19-31-BB-2S-0541-a9-1.png"
+      ],
+      "notes": [
+        {
+          "text": "Both editions have a telisha gedolah helper on resh."
+        }
+      ],
+      "verse_href": "../MAM-with-doc/BB-2Samuel.html#c19v31"
+    },
+    {
+      "book": "2Kings",
+      "chapter": 9,
+      "verse": 36,
+      "atom": 1,
+      "mam": "וַיָּשֻׁבוּ֮",
+      "printed": "וַיָּשֻׁ֘בוּ֮",
+      "category": "extra-helper",
+      "batch": 2,
+      "page": 631,
+      "scan": "BD-2K-0631.jpg",
+      "crops": [
+        "img/simanim-tanakh-2kings-9-36-BD-2K-0631-a1-1.png"
+      ],
+      "notes": [
+        {
+          "text": "Both editions have a zarqa helper on shin."
+        }
+      ],
+      "verse_href": "../MAM-with-doc/BD-2Kings.html#c9v36"
+    },
+    {
+      "book": "Isaiah",
+      "chapter": 10,
+      "verse": 16,
+      "atom": 1,
+      "mam": "לָ֠כֵן",
+      "printed": "לָ֠כֵ֠ן",
+      "category": "extra-helper",
+      "batch": 2,
+      "page": 678,
+      "scan": "C1-I-0678.jpg",
+      "crops": [
+        "img/simanim-tanakh-isaiah-10-16-C1-I-0678-a1-1.png"
+      ],
+      "notes": [
+        {
+          "text": "Both editions have a telisha gedolah helper on kaf."
+        }
+      ],
+      "verse_href": "../MAM-with-doc/C1-Isaiah.html#c10v16"
+    },
+    {
+      "book": "Isaiah",
+      "chapter": 39,
+      "verse": 2,
+      "atom": 9,
+      "mam": "אֶת־הַכֶּסֶף֩",
+      "printed": "אֶת־הַכֶּ֩סֶף֩",
+      "category": "extra-helper",
+      "batch": 2,
+      "page": 708,
+      "scan": "C1-I-0708.jpg",
+      "crops": [
+        "img/simanim-tanakh-isaiah-39-2-C1-I-0708-a9-1.png"
+      ],
+      "notes": [
+        {
+          "text": "Both editions have a telisha qetanna helper on kaf."
+        }
+      ],
+      "verse_href": "../MAM-with-doc/C1-Isaiah.html#c39v2"
+    },
+    {
+      "book": "Jeremiah",
+      "chapter": 21,
+      "verse": 10,
+      "atom": 3,
+      "mam": "פָ֠נַי",
+      "printed": "פָ֠נַ֠י",
+      "category": "extra-helper",
+      "batch": 2,
+      "page": 775,
+      "scan": "C2-Je-0775.jpg",
+      "crops": [
+        "img/simanim-tanakh-jeremiah-21-10-C2-Je-0775-a3-1.png"
+      ],
+      "notes": [
+        {
+          "text": "Both editions have a telisha gedolah helper on nun."
+        }
+      ],
+      "verse_href": "../MAM-with-doc/C2-Jeremiah.html#c21v10"
+    },
+    {
+      "book": "Jeremiah",
+      "chapter": 33,
+      "verse": 26,
+      "atom": 3,
+      "mam": "יַעֲקוֹב֩",
+      "printed": "יַֽ֠עֲק֠וֹב",
+      "category": "different-accent",
+      "batch": 2,
+      "page": 800,
+      "scan": "C2-Je-0800.jpg",
+      "crops": [
+        "img/simanim-tanakh-jeremiah-33-26-C2-Je-0800-a3-1.png"
+      ],
+      "notes": [
+        {
+          "text": "Both editions have telisha gedolah on yod, with a helper on qof, where MAM has telisha qetanna."
+        }
+      ],
+      "verse_href": "../MAM-with-doc/C2-Jeremiah.html#c33v26"
+    },
+    {
+      "book": "Jeremiah",
+      "chapter": 40,
+      "verse": 15,
+      "atom": 6,
+      "mam": "אֶל־גְּדַלְיָהוּ֩",
+      "printed": "אֶל־גְּדַלְיָ֩הוּ֩",
+      "category": "extra-helper",
+      "batch": 2,
+      "page": 813,
+      "scan": "C2-Je-0813.jpg",
+      "crops": [
+        "img/simanim-tanakh-jeremiah-40-15-C2-Je-0813-a6-1.png"
+      ],
+      "notes": [
+        {
+          "text": "Both editions have a telisha qetanna helper on yod."
+        }
+      ],
+      "verse_href": "../MAM-with-doc/C2-Jeremiah.html#c40v15"
+    },
+    {
+      "book": "Ezekiel",
+      "chapter": 13,
+      "verse": 19,
+      "atom": 8,
+      "mam": "לֶחֶם֒",
+      "printed": "לֶ֒חֶם֒",
+      "category": "extra-helper",
+      "batch": 2,
+      "page": 858,
+      "scan": "C3-Ee-0858.jpg",
+      "crops": [
+        "img/simanim-tanakh-ezekiel-13-19-C3-Ee-0858-a8-1.png"
+      ],
+      "notes": [
+        {
+          "text": "Both editions have a segolta helper on lamed."
+        }
+      ],
+      "verse_href": "../MAM-with-doc/C3-Ezekiel.html#c13v19"
+    },
+    {
+      "book": "Ezekiel",
+      "chapter": 14,
+      "verse": 16,
+      "atom": 3,
+      "mam": "הָאֵלֶּה֮",
+      "printed": "הָאֵ֘לֶּה֮",
+      "category": "extra-helper",
+      "batch": 2,
+      "page": 859,
+      "scan": "C3-Ee-0859.jpg",
+      "crops": [
+        "img/simanim-tanakh-ezekiel-14-16-C3-Ee-0859-a3-1.png"
+      ],
+      "notes": [
+        {
+          "text": "Both editions have a zarqa helper on alef."
+        }
+      ],
+      "verse_href": "../MAM-with-doc/C3-Ezekiel.html#c14v16"
+    },
+    {
+      "book": "Ezekiel",
+      "chapter": 16,
+      "verse": 61,
+      "atom": 4,
+      "mam": "וְנִכְלַמְתְּ֒",
+      "printed": "וְנִכְלַ֒מְתְּ֒",
+      "category": "redundant-edition",
+      "batch": 2,
+      "page": 864,
+      "scan": "C3-Ee-0864.jpg",
+      "crops": [
+        "img/simanim-tanakh-ezekiel-16-61-C3-Ee-0864-a4-1.png"
+      ],
+      "notes": [
+        {
+          "text": "Both editions have a segolta helper on lamed within the final syllable. MAM indicates final stress with a single segolta."
+        }
+      ],
+      "verse_href": "../MAM-with-doc/C3-Ezekiel.html#c16v61"
+    },
+    {
+      "book": "Amos",
+      "chapter": 6,
+      "verse": 10,
+      "atom": 7,
+      "mam": "מִן־הַבַּיִת֒",
+      "printed": "מִן־הַבַּ֒יִת֒",
+      "category": "extra-helper",
+      "batch": 2,
+      "page": 949,
+      "scan": "CC-A-0949.jpg",
+      "crops": [
+        "img/simanim-tanakh-amos-6-10-CC-A-0949-a7-1.png"
+      ],
+      "notes": [
+        {
+          "text": "Both editions have a segolta helper on bet."
+        }
+      ],
+      "verse_href": "../MAM-with-doc/CC-Amos.html#c6v10"
+    },
+    {
+      "book": "Nehemiah",
+      "chapter": 9,
+      "verse": 35,
+      "atom": 2,
+      "mam": "בְּמַלְכוּתָם֩",
+      "printed": "בְּ֠מַלְכוּתָ֠ם",
+      "category": "different-accent",
+      "batch": 2,
+      "page": 1342,
+      "scan": "FB-Ne-1342.jpg",
+      "crops": [
+        "img/simanim-tanakh-nehemiah-9-35-FB-Ne-1342-a2-1.png"
+      ],
+      "notes": [
+        {
+          "text": "Both editions have telisha gedolah on bet, with a helper on tav, where MAM has telisha qetanna."
+        }
+      ],
+      "verse_href": "../MAM-with-doc/FB-Nehemiah.html#c9v35"
+    },
+    {
+      "book": "2Chronicles",
+      "chapter": 29,
+      "verse": 31,
+      "atom": 4,
+      "mam": "עַתָּה֙",
+      "printed": "עַתָּ֨ה",
+      "category": "different-accent",
+      "batch": 2,
+      "page": 1447,
+      "scan": "FD-2C-1447.jpg",
+      "crops": [
+        "img/simanim-tanakh-2chronicles-29-31-FD-2C-1447-a4-1.png"
+      ],
+      "notes": [
+        {
+          "text": "Both editions have qadma on tav where MAM has pashta."
+        }
+      ],
+      "verse_href": "../MAM-with-doc/FD-2Chronicles.html#c29v31"
     }
   ]
 }

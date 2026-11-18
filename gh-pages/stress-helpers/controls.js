@@ -25,6 +25,7 @@ if (toggle) {
 
 const input = document.querySelector("#find");
 const menu = document.querySelector("#filter");
+const batchMenu = document.querySelector("#batch");
 const visible = document.querySelector("#visible");
 const rows = Array.from(document.querySelectorAll("#observations tbody tr"));
 function searchKey(text) {
@@ -36,11 +37,13 @@ function filter() {
     let count = 0;
     for (const [index, row] of rows.entries()) {
         row.hidden = !searchable[index].some(cell => cell.includes(query))
-            || (menu.value && row.dataset.filter !== menu.value);
+            || (menu.value && row.dataset.filter !== menu.value)
+            || (batchMenu.value && row.dataset.batch !== batchMenu.value);
         if (!row.hidden) count++;
     }
     visible.textContent = count + (count === 1 ? " difference" : " differences");
 }
 input.addEventListener("input", filter);
 menu.addEventListener("change", filter);
+batchMenu.addEventListener("change", filter);
 filter();

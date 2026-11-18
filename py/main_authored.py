@@ -16,9 +16,7 @@ Subcommands:
                 gh-pages/post-stress-meteg.html and
                 gh-pages/post-stress-meteg-post-silluq-1s17v5.html.
                 Write the combined printed-edition stress-helper report to
-                gh-pages/stress-helpers/index.html, and what its census of
-                five accents found beyond that report to
-                gh-pages/stress-helpers/results.html.
+                gh-pages/stress-helpers/index.html.
                 --trust-surveys lets the post-stress pages that read the survey
                 load it from the tracked out/accgram/post-stress-meteg.json
                 instead of recomputing it from the tracked Phonetic-MAM

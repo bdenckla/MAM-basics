@@ -1,7 +1,7 @@
 # Plan: rework the stress-helpers results page to show only what index.html does not
 
-State: executed 2026-11-17, on Ben's other computer, which holds the census material; written
-and decided earlier the same day. "Execution, 2026-11-17" records the outcome.
+State: executed 2026-11-17, on Ben's other computer, which holds the census material; written and decided earlier the same day. "Execution, 2026-11-17" records the outcome.
+Updates and later status: [PLAN-stress-helpers-results-rework-update.md](PLAN-stress-helpers-results-rework-update.md).
 
 ## Context
 
