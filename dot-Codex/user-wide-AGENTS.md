@@ -218,7 +218,7 @@ layer. Git Bash can quietly give a wrong answer where PowerShell uses the Window
 directly: `TZ=America/New_York date` prints UTC because Git Bash does not recognize that zone
 name. Read New York time with
 `[System.TimeZoneInfo]::ConvertTimeBySystemTimeZoneId([DateTime]::UtcNow, 'Eastern Standard Time')`,
-and state the zone with every clock reading. A POSIX shell remains correct in a Linux cloud
+and state the zone with every clock time. A POSIX shell remains correct in a Linux cloud
 session.
 
 Never call a PDF unreadable merely because a PDF tool is missing. Claude Code's Read tool reads
@@ -461,11 +461,11 @@ variable: UTF-8 mode is Python's default from Python 3.15.
 
 **A transcription is evidence about the transcription.** Attribute a finding from
 WLC, UXLC, MAM, or another transcription to that transcription. A manuscript claim
-requires an actual manuscript reading or a clearly attributed prior reading. Unless
-the image was consulted, report the manuscript as unverified rather than saying the
-manuscript has the transcription's reading. A transcription's silence supplies
-little evidence about a fine mark. When a task needs a manuscript judgment and the
-manuscript cannot be consulted, state that limitation.
+requires an inspection of the manuscript itself or a clearly attributed earlier
+inspection. Unless the image was consulted, report the manuscript as unverified rather
+than saying the manuscript has what the transcription has. A transcription's silence
+supplies little evidence about a fine mark. When a task needs a manuscript judgment and
+the manuscript cannot be consulted, state that limitation.
 
 ## Hebrew accentuation prose uses the skill
 
