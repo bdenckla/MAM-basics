@@ -164,3 +164,9 @@ without such a line to him.
    already covered those two points, he answered "GPL-3.0". `DATA-LICENSES.md` now gives the
    page and its stylesheet GPL-3.0, and this folder a GPL-3.0 row of its own; the crop's row is
    unchanged.
+2. **Two more titles spelled out beside "WLC".** Put to Ben on 2026-11-18, since his reason
+   for Decision 4 covers them too. The opening paragraph, the review's first mention of WLC,
+   says "the Westminster Leningrad Codex (WLC), version 4.18", and "In a long line" quotes
+   Crossway's publisher: "combines the text of the Westminster Leningrad Codex (WLC)". Should
+   the opening paragraph say "WLC, version 4.18"? Should the quotation stay whole, or end
+   before the title, as "combines the text of" WLC?
