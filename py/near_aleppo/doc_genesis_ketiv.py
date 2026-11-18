@@ -79,7 +79,7 @@ def section():
             [
                 "English summary of MAM's note: The group ",
                 he_name("ב,ש,ש1,ו"),
-                " and printed editions have the deficient ketiv spelling with a "
+                " and the printed tradition have the deficient ketiv spelling with a "
                 "shuruq dot alone on the final vav. MAM consequently gives this "
                 "qere, with no dot on its consonantal vav:",
             ]

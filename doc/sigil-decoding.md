@@ -447,8 +447,8 @@ table here. The corpus uses both, and the right-hand element separates them:
   leaves of the Keter. Exodus 23:22 puts the equation in a parenthesis, `ומסורות-א,ל (מ"ג-ל)`.
   Daniel 3:25 quotes the note itself: `בהתאם למ"ג-ק-מ: "לגוא א כת בגו חס א"`.
 - **A place of printing on the right gives the edition.** 2 Samuel 15:12 cites `מ"ג-ונציה`
-  beside `א` and `ל` for a reading of the running text, and lists `מ"ג-ורשה` among printed
-  editions: `בדפוסים (לטריס, בער, מ"ג-ורשה)`.
+  beside `א` and `ל` for a reading of the running text, and lists `מ"ג-ורשה` in the printed
+  tradition: `בדפוסים (לטריס, בער, מ"ג-ורשה)`.
 - **A qualifier on the right gives the edition too.** `מ"ג-כתיב` (2 Kings 4:3, 1 Chronicles
   27:12) and `מ"ג-קטנות` (Leviticus 6:2) are the ketiv and the small-letter list of Miqra'ot
   Gedolot, `מ"ג-קטנות` standing beside `בכתי"ל-קטנות` in its note.
@@ -456,7 +456,7 @@ table here. The corpus uses both, and the right-hand element separates them:
 The `מ"ג` edition row above says "Venice edition". The corpus does not support reading a bare
 `מ"ג` as Venice specifically, since it distinguishes `מ"ג-ונציה` from `מ"ג-ורשה` and also has
 `מ"ג דפוס ונציה` and `מ"ג נטר` in prose (Genesis 30:16 lists `היידנהיים, ליסר, מ"ג נטר, מ"ג ורשה, בער`
-together as printed editions). Left as a note rather than a change to that row, which is a
+as most of the printed tradition). Left as a note rather than a change to that row, which is a
 separate question from this section's.
 
 **Avi Kadish's #262 answer is evidence toward "Venice", and it is evidence rather than a

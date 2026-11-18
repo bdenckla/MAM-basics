@@ -405,7 +405,7 @@ _CHOICES = (
         "The ḥataf at Jeremiah 31:32, where two clauses disagree",
         "Near-Aleppo has the ḥataf pataḥ of the clause headed `ל`, the one clause that cites a manuscript for a ḥataf.",
         (
-            "The ḥataf qamats of the clause naming Ben-Asher, most printed editions, and Koren, which cites no manuscript",
+            "The ḥataf qamats of the clause naming Ben-Asher, most of the printed tradition, and Koren, which cites no manuscript",
         ),
     ),
     Choice(

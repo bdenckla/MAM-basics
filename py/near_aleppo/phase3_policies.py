@@ -415,8 +415,8 @@ _OR = "או"
 # it, which is what the target beside the body has.
 _LEGARMEH = "מ:לגרמיה-2"
 # At Jeremiah 31:32 the note's forms give two vowels. The clause headed ל quotes the
-# target with a hataf patah, and a clause whose head names בן־אשר, most printed
-# editions and Koren quotes it with a hataf qamats, citing no manuscript. The vowel
+# target with a hataf patah, and a clause whose head names בן־אשר, most of the printed
+# tradition and Koren quotes it with a hataf qamats, citing no manuscript. The vowel
 # is that of the clause headed ל, the one clause citing a manuscript for a hataf,
 # and the inference gives the same vowel. The build raises unless the note still
 # has exactly one clause headed ל giving a vowel, and a clause giving a different

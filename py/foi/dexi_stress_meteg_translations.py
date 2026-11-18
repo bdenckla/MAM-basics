@@ -15,6 +15,9 @@ introduction (in/mam-ws-intro/ch5.mediawiki) uses for a reading that is only in 
 becomes "doubtfully"; a question mark after a pair of accents stays. A part that opens
 with "=" says that MAM agrees with the sources it names.
 
+MAM's sigil דפוסים, in any of its forms, is "the printed tradition", as the
+hebrew-prose skill's references/terminology.md says in its section on that sigil.
+
 The translations are AI-generated. Claude, an AI model, wrote them on 2026-10-27, at
 Ben Denckla's request, and no human has reviewed them yet. The page says so in its
 introduction and under each translation. Remove those caveats and this paragraph only
@@ -130,7 +133,7 @@ _TRANSLATIONS = (
         (
             (
                 "=א?,ל ובדפוסים (דחי וקו של געיה להורות על מקום הטעם, וכך הכריעו במג״ה)",
-                "MAM agrees with the Aleppo Codex (doubtfully), the Leningrad Codex and the printed editions (deḥi, and a ga'ya stroke to show where the stress is; and so Mikra'ot Gedolot ha-Keter decided).",
+                "MAM agrees with the Aleppo Codex (doubtfully), the Leningrad Codex and the printed tradition (deḥi, and a ga'ya stroke to show where the stress is; and so Mikra'ot Gedolot ha-Keter decided).",
             ),
             (
                 "א?=ק֭וּמָ֥ה (הקו קצת נטוי כמרכא, וכן הכריע ברויאר בשתי מהדורותיו האחרונות ועל פיו במכון ממרא)",
@@ -144,7 +147,7 @@ _TRANSLATIONS = (
         (
             (
                 "=א?,ל? (קו של דחי וקו של געיה להורות על מקום הטעם) וכך במהדורותיו הראשונות של ברויאר (מוסד הרב קוק וחורב) ובמג״ה ובדפוסים וקורן וסימנים. והשוו לפסוק המקביל בתהלים קח,ג (שם הקווים לדחי ולגעיה ברורים).",
-                "MAM agrees with the Aleppo Codex and the Leningrad Codex, both doubtfully (a deḥi stroke, and a ga'ya stroke to show where the stress is), as do Breuer's first editions (Mossad HaRav Kook and Horev), Mikra'ot Gedolot ha-Keter, the printed editions, Koren and the Simanim Tanakh. Compare the parallel verse, Psalms 108:3 (there the strokes for the deḥi and the ga'ya are clear).",
+                "MAM agrees with the Aleppo Codex and the Leningrad Codex, both doubtfully (a deḥi stroke, and a ga'ya stroke to show where the stress is), as do Breuer's first editions (Mossad HaRav Kook and Horev), Mikra'ot Gedolot ha-Keter, the printed tradition, Koren and the Simanim Tanakh. Compare the parallel verse, Psalms 108:3 (there the strokes for the deḥi and the ga'ya are clear).",
             ),
             (
                 "א?,ל?=ע֖וּרָ֥ה (טרחא ומרכא?); וראו ברויאר, טעמי המקרא, יא.43 עמ' 285 על טרחא ומרכא כשני המשרתים הסמוכים לרביע. וכך נדפס אצל ברויאר בכתר ירושלים וכמו כן במכון ממרא.",
@@ -172,7 +175,7 @@ _TRANSLATIONS = (
         (
             (
                 "=א?,ל?,ש1? (דחי וקו של געיה להורות על מקום הטעם), וכך במהדורתו הראשונה של ברויאר (מוסד הרב קוק) ובמג״ה, וכמו כן בדפוסים וקורן וסימנים",
-                "MAM agrees with the Aleppo Codex, the Leningrad Codex and Sassoon 1053, all doubtfully (deḥi, and a ga'ya stroke to show where the stress is), as do Breuer's first edition (Mossad HaRav Kook) and Mikra'ot Gedolot ha-Keter, and likewise the printed editions, Koren and the Simanim Tanakh.",
+                "MAM agrees with the Aleppo Codex, the Leningrad Codex and Sassoon 1053, all doubtfully (deḥi, and a ga'ya stroke to show where the stress is), as do Breuer's first edition (Mossad HaRav Kook) and Mikra'ot Gedolot ha-Keter, and likewise the printed tradition, Koren and the Simanim Tanakh.",
             ),
             (
                 'א?,ל?,ש1?=צָ֭רָתִ֥י (דחי ומרכא?); הקו די נוטה לשמאל בכתבי־היד הקרובים, חוץ מכתי"ק-מ שאין בו קו בכלל באות תי״ו (צָ֭רָתִי), עובדה שמצביעה על געיה ולא מרכא. במהדורותיו האחרונות של ברויאר (חורב וכתר ירושלים) נדפסה התיבה במרכא, וכן במכון ממרא.',
@@ -186,7 +189,7 @@ _TRANSLATIONS = (
         (
             (
                 "=א?,ל (קו של דחי וקו של געיה להורות על מקום הטעם), וכך במהדורותיו הראשונות של ברויאר (מוסד הרב קוק וחורב) ובמג״ה, וכמו כן בדפוסים וקורן וסימנים. והשוו לפסוק המקביל בתהלים נז,ט (שם הקווים לדחי ולגעיה פחות ברורים).",
-                "MAM agrees with the Aleppo Codex (doubtfully) and the Leningrad Codex (a deḥi stroke, and a ga'ya stroke to show where the stress is), as do Breuer's first editions (Mossad HaRav Kook and Horev) and Mikra'ot Gedolot ha-Keter, and likewise the printed editions, Koren and the Simanim Tanakh. Compare the parallel verse, Psalms 57:9 (there the strokes for the deḥi and the ga'ya are less clear).",
+                "MAM agrees with the Aleppo Codex (doubtfully) and the Leningrad Codex (a deḥi stroke, and a ga'ya stroke to show where the stress is), as do Breuer's first editions (Mossad HaRav Kook and Horev) and Mikra'ot Gedolot ha-Keter, and likewise the printed tradition, Koren and the Simanim Tanakh. Compare the parallel verse, Psalms 57:9 (there the strokes for the deḥi and the ga'ya are less clear).",
             ),
             (
                 "א?=ע֖וּרָ֥ה (טרחא ומרכא?); וראו ברויאר, טעמי המקרא, יא.43 עמ' 285 על טרחא ומרכא כשני המשרתים הסמוכים לרביע. וכך נדפס אצל ברויאר בכתר ירושלים וכמו כן במכון ממרא.",
@@ -214,7 +217,7 @@ _TRANSLATIONS = (
         (
             (
                 '=א?,ל?,ק-מ? (דחי וקו של געיה להורות על מקום הטעם), וכך במהדורתו הראשונה של ברויאר (מוסד הרב קוק) ובמג״ה, וכמו כן בדפוסים וקורן וסימנים. הקו די ישר בכתר ובכי"ל, אך נטוי באופן ניכר בכתי"ק-מ. בכתי״ש1 אין קו בכלל באות נו״ן (אָ֭נָה), עובדה שמצביעה על געיה ולא מרכא.',
-                "MAM agrees with the Aleppo Codex, the Leningrad Codex and Cambridge Add. 1753, all doubtfully (deḥi, and a ga'ya stroke to show where the stress is), as do Breuer's first edition (Mossad HaRav Kook) and Mikra'ot Gedolot ha-Keter, and likewise the printed editions, Koren and the Simanim Tanakh. The stroke is fairly straight in the Aleppo Codex and the Leningrad Codex, but noticeably slanted in Cambridge Add. 1753. Sassoon 1053 has no stroke at all on the letter nun (אָ֭נָה), a fact that points to ga'ya and not merkha.",
+                "MAM agrees with the Aleppo Codex, the Leningrad Codex and Cambridge Add. 1753, all doubtfully (deḥi, and a ga'ya stroke to show where the stress is), as do Breuer's first edition (Mossad HaRav Kook) and Mikra'ot Gedolot ha-Keter, and likewise the printed tradition, Koren and the Simanim Tanakh. The stroke is fairly straight in the Aleppo Codex and the Leningrad Codex, but noticeably slanted in Cambridge Add. 1753. Sassoon 1053 has no stroke at all on the letter nun (אָ֭נָה), a fact that points to ga'ya and not merkha.",
             ),
             (
                 "א?,ל?,ק-מ?=אָ֭נָ֥ה (דחי ומרכא?); במהדורותיו האחרונות של ברויאר (חורב וכתר ירושלים) נדפסה התיבה במרכא וכן במכון ממרא.",
@@ -236,7 +239,7 @@ _TRANSLATIONS = (
             ),
             (
                 "ל=אֹ֭כֵל (דחי בלבד) וכמו כן בדפוסים ובקורן",
-                "The Leningrad Codex has אֹ֭כֵל (deḥi alone), and so do the printed editions and Koren.",
+                "The Leningrad Codex has אֹ֭כֵל (deḥi alone), and so do the printed tradition and Koren.",
             ),
         ),
     ),
@@ -254,7 +257,7 @@ _TRANSLATIONS = (
             ),
             (
                 "ש1=אָ֭נֹכִי (דחי בלבד) וכן בדפוסים (קורן=אָֽ֭נֹכִי דחי וגעיה באל״ף)",
-                "Sassoon 1053 has אָ֭נֹכִי (deḥi alone), and so do the printed editions (Koren has אָֽ֭נֹכִי, deḥi and ga'ya on the alef).",
+                "Sassoon 1053 has אָ֭נֹכִי (deḥi alone), and so does the printed tradition (Koren has אָֽ֭נֹכִי, deḥi and ga'ya on the alef).",
             ),
         ),
     ),

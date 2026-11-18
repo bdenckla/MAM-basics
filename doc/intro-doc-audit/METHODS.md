@@ -515,7 +515,7 @@ and prior decisions are retained. No persistence or tracking system was added.
 
 The 2026-10-15 Proverbs 30:19 wording review names the Introduction’s layout example
 and MAM body text directly, and removes the redundant discrepancy sentence. Initial
-context review left intentional use of the printed-edition form unresolved, so the case
+context review left intentional use of the printed tradition's form unresolved, so the case
 was placed under Questions. The section link is derived from the unique cached
 heading at chapter 2 line 915; its live rendered anchor was not checked. Source and
 wording details are retained in report-prose-revision.json. Other MAM body-text labels

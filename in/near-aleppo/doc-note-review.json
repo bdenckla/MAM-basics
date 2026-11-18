@@ -13137,7 +13137,7 @@
           {
             "index": 1,
             "disposition": "mam-context",
-            "reason": "Keep this source clause verbatim with its original MAM subject, explanations, alternatives and cross-references. It records the printed editions' dagesh in the pe, which neither MAM's target nor the near target has."
+            "reason": "Keep this source clause verbatim with its original MAM subject, explanations, alternatives and cross-references. It records the dagesh in the pe of the printed tradition and Koren, which neither MAM's target nor the near target has."
           }
         ]
       }
@@ -23145,7 +23145,7 @@
           {
             "index": 1,
             "disposition": "mam-context",
-            "reason": "Retain the other witnesses' qere-without-ketiv analysis, the manuscript/print qualifications and Ofer citation in full as MAM's comparative context."
+            "reason": "Retain the other witnesses' qere-without-ketiv analysis, the manuscript and printed-tradition qualifications and Ofer citation in full as MAM's comparative context."
           }
         ]
       }
@@ -42337,7 +42337,7 @@
           {
             "index": 0,
             "disposition": "mam-context",
-            "reason": "The Leningrad/print agreement is an elliptical relation to the original MAM pair, not a new full-form equality for the pointed ketiv."
+            "reason": "The agreement of Leningrad and the printed tradition is an elliptical relation to the original MAM pair, not a new full-form equality for the pointed ketiv."
           },
           {
             "index": 1,
@@ -78887,7 +78887,7 @@
           {
             "index": 1,
             "disposition": "mam-context",
-            "reason": "The Leningrad/print/Simanim qere with patah is a distinct source alternative. Keep it intact without changing the new lemma's dalet qamats."
+            "reason": "The qere with patah in Leningrad, the printed tradition and Simanim is a distinct source alternative. Keep it intact without changing the new lemma's dalet qamats."
           }
         ]
       }

@@ -17,14 +17,14 @@ it was submitted as #323 on 2026-10-17 and applied on 2026-10-29.
 
 The Introduction’s inserted main form is **עֲלֵ֫י צ֥וּר**. Its own note already
 gives Aleppo’s **עֲלֵ֫י־צ֥וּר**. The 2020 chapter edit promotes the latter to the
-main form and explicitly assigns the spaced form to printed editions.
+main form and explicitly assigns the spaced form to the printed tradition.
 The edit summary says:
 
 > מקף בשתי תיבות של עולה ויורד כמו בכתר ארם צובה (בשני פסוקים)
 
 It describes adding maqaf in two-word oleh–veyored groups following Aleppo,
 in two verses. The history therefore explains the space as MAM’s older choice;
-the current printed-edition attribution alone had not established why the old
+the current attribution to the printed tradition alone had not established why the old
 example used that form.
 
 ## Predecessor, moves and templates

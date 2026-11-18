@@ -3,7 +3,7 @@
     "ref": "Genesis 4:23",
     "target_word": "הַאְזֵ֖נָּה",
     "category": "misc",
-    "translation": "Q3 has ḥataf pataḥ. Other MSS and MAM agree: shewa, no ga'aya. Prints add ga'aya."
+    "translation": "Q3 has ḥataf pataḥ. Other MSS and MAM agree: shewa, no ga'aya. The printed tradition has ga'aya."
   },
   {
     "ref": "Genesis 14:17",
@@ -45,7 +45,7 @@
     "ref": "Exodus 7:10",
     "target_word": "וַיַּ֣עֲשׂוּ כֵ֔ן",
     "category": "lc-differs",
-    "translation": "LC missing ḥataf dots in ayin. Prints have maqaf-joined word with ga'aya."
+    "translation": "LC missing ḥataf dots in ayin. The printed tradition has a maqaf compound with ga'aya."
   },
   {
     "ref": "Exodus 8:3",
@@ -63,7 +63,7 @@
     "ref": "Exodus 14:11",
     "target_word": "הֲֽמִבְּלִ֤י",
     "category": "lc-differs",
-    "translation": "AC(S) etc: ḥataf pataḥ with ga'aya. LC missing ḥataf dots in interrogative he. Prints: ḥataf pataḥ, no ga'aya."
+    "translation": "AC(S) etc: ḥataf pataḥ with ga'aya. LC missing ḥataf dots in interrogative he. The printed tradition: ḥataf pataḥ, no ga'aya."
   },
   {
     "ref": "Exodus 20:4",
@@ -207,7 +207,7 @@
     "ref": "2Samuel 23:13",
     "target_word": "עֲדֻלָּ֑ם",
     "category": "ac-differs",
-    "translation": "AC surprisingly missing ḥataf dots in ayin. MAM, LC, and prints have ḥataf pataḥ."
+    "translation": "AC surprisingly missing ḥataf dots in ayin. MAM, LC, and the printed tradition have ḥataf pataḥ."
   },
   {
     "ref": "2Samuel 24:2",
@@ -219,7 +219,7 @@
     "ref": "1Kings 19:20",
     "target_word": "אֶשְּׁקָה־נָּא֙",
     "category": "vowel-discussion",
-    "translation": "AC and LC have shewa. Some prints/Koren: ḥataf qamats. Q: ḥataf pataḥ. MS debated all three options. MG: left shin dot."
+    "translation": "AC and LC have shewa. Part of the printed tradition and Koren: ḥataf qamats. Q: ḥataf pataḥ. MS debated all three options. MG: left shin dot."
   },
   {
     "ref": "Jeremiah 2:12",
@@ -375,7 +375,7 @@
     "ref": "Esther 2:5",
     "target_word": "מׇרְדֳּכַ֗י",
     "category": "xataf-qamats-for-qamats-qatan",
-    "translation": "LC etc: ḥataf qamats in dalet. Prints: shewa. Applies throughout Esther."
+    "translation": "LC etc: ḥataf qamats in dalet. The printed tradition: shewa. Applies throughout Esther."
   },
   {
     "ref": "Esther 2:14",
@@ -447,6 +447,6 @@
     "ref": "2Chronicles 6:42",
     "target_word": "זׇכְרָ֕ה",
     "category": "xataf-qamats-for-qamats-qatan",
-    "translation": "AC and S1 have ḥataf qamats marking qamats qatan. LC has plain qamats (as prints)."
+    "translation": "AC and S1 have ḥataf qamats marking qamats qatan. LC has plain qamats (as does the printed tradition)."
   }
 ]

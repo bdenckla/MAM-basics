@@ -14,6 +14,9 @@ with a Latin-letter system, and the implicit subject "MAM" is supplied where a
 note opens with "=".  The verbatim Hebrew of each note is shown too, drawn
 byte-exactly from MAM-with-doc via the ``telg_mam_doc_notes`` data module, so the
 English rendering can be checked against the original.
+
+MAM's sigil דפוסים, in the key and in every rendering, is "the printed tradition", as
+the hebrew-prose skill's references/terminology.md says in its section on that sigil.
 """
 
 from __future__ import annotations
@@ -83,7 +86,7 @@ _EN: dict[str, dict[str, object]] = {
                 unpointed("כתי״ו"),
                 ", a sigil left undecoded here), the Yemenite manuscripts (",
                 unpointed("תיגאן"),
-                "), the Sephardic manuscripts, the printed editions" " (",
+                "), the Sephardic manuscripts, the printed tradition" " (",
                 unpointed("דפוסים"),
                 "), and Koren (",
                 unpointed("קורן"),
@@ -114,7 +117,7 @@ _EN: dict[str, dict[str, object]] = {
         ),
         "parts": [
             (
-                "The printed editions and Koren put the telisha first and the"
+                "The printed tradition and Koren put the telisha first and the"
                 " gershayim second on the first letter, as does the Breuer"
                 " edition — and here even ",
                 unpointed("מג״ה"),
@@ -141,7 +144,7 @@ _EN: dict[str, dict[str, object]] = {
                 "The Cairo Codex of the Prophets (",
                 unpointed("ק"),
                 ") puts the telisha first and the geresh second; so too Koren,"
-                " the printed editions, and the Breuer edition.",
+                " the printed tradition, and the Breuer edition.",
             ),
             (
                 "The WLC typed text (",
@@ -184,7 +187,7 @@ _EN: dict[str, dict[str, object]] = {
                 unpointed("ו"),
                 "(?) put each accent on the letter proper to it — the telisha"
                 " gedola at the head of the word and the gershayim on the"
-                " stressed letter — and so do the printed editions, Koren, and"
+                " stressed letter — and so do the printed tradition, Koren, and"
                 " the Breuer editions; even ",
                 unpointed("מג״ה"),
                 " does so, against the practice of the Keter(!).",
@@ -210,7 +213,7 @@ _EN: dict[str, dict[str, object]] = {
                 "The Cairo Codex of the Prophets (",
                 unpointed("ק"),
                 ") puts the telisha gedola at the head and the geresh on a later"
-                " letter; so too the printed editions, Koren, and the Breuer"
+                " letter; so too the printed tradition, Koren, and the Breuer"
                 " edition — and even ",
                 unpointed("מג״ה"),
                 ", against the Keter(!). The WLC typed text does the same"
@@ -250,7 +253,15 @@ _SOURCE_KEY = (
     ("דותן", "Dotan's editions and writings"),
     ("ברויאר", "Breuer's editions and writings"),
     ("קורן", "the Koren edition"),
-    ("דפוסים", "the (selected) printed editions"),
+    (
+        "דפוסים",
+        (
+            "the printed tradition — the customary text of a selection of widespread"
+            " editions from the 19th and early 20th centuries, in the lineage of the"
+            " second Venice Miqra’ot Gedolot; the notes cite that Venice edition, and"
+            " Koren, apart"
+        ),
+    ),
     ("מג״ה", "Miqra’ot Gedolot Ha-keter"),
     ("BHS", "Biblia Hebraica Stuttgartensia"),
     ("המקליד", "the transcriber of the Westminster/UXLC text of Leningrad"),

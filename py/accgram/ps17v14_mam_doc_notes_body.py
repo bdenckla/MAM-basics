@@ -397,7 +397,7 @@ BODY = [
                 "lb2": "",
                 "contents": ["ש1, ק13, גסטר1"],
             },
-            " and the printed\neditions (",
+            " and the printed\ntradition (",
             {
                 "_htel_tag": "bdi",
                 "lb1": "",

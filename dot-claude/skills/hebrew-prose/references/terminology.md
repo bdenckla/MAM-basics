@@ -438,14 +438,11 @@ Rabbinic Bible", the "Received Edition"; neither source has a phrase like "the p
   Venice edition, and Koren, apart."
 
 `doc/sigil-decoding.md` decodes the sigil the same way. Adopted on 2026-11-18 on the stress-helpers
-page, `gh-pages/stress-helpers/index.html`. Not yet changed on 2026-11-18, and left to a separate
-sweep: the renderings of דפוסים as "printed editions", or the like, in
-`py/foi/dexi_stress_meteg_translations.py`, `py/accgram/telg_doc_notes.py`,
-`py/accgram/ps17v14_mam_doc_notes_body.py`, `py/near_aleppo/`'s `doc_genesis_ketiv.py`,
-`doc_daniel_sheva.py`, `doc_choices.py` and `phase3_policies.py`,
-`in/near-aleppo/doc-note-review.json`, `doc/near-aleppo-avi-ketiv-investigation.html`,
-`doc/intro-doc-audit/human-review.json`, whose words may be its reviewers' own, and MAM-private's
-`mgketer/py/python_modules/manual_suppressions.py` and `doc/PLAN-near-aleppo.md`.
+page, `gh-pages/stress-helpers/index.html`, and swept the same day through the other live
+renderings of MAM's notes in MAM-basics and MAM-private, where רוב הדפוסים became "most of the
+printed tradition". Dated records, receipts and executed plans keep their words. Not yet changed
+on 2026-11-18: renderings of the introduction's own דפוסים, among them the translation of the
+introduction in `py/author_misc/he_ws_intro_to_mam_*.py`, which Ben was asked about that day.
 
 ## Never the noun "reading"
 

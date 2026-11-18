@@ -24,7 +24,7 @@
       "target_word": "הַאְזֵ֖נָּה",
       "docnote_comment": "=א(ס),ל,ל1,ו (אין געיה) <א(ס)=מלעיל? כן אבל בלי מתג וה\"א בשוא לבד> וכמו כן בתיגאן ובכתבי־יד ספרדים (בתנ\"ך ליסבון לאחר תיקון)ק3=הַאֲזֵ֖נָּה (בחטף פתח)דפוסים=הַֽאְזֵ֖נָּה (בגעיה)",
       "category": "misc",
-      "translation": "Q3 has ḥataf pataḥ. Other MSS and MAM agree: shewa, no ga'aya. Prints add ga'aya."
+      "translation": "Q3 has ḥataf pataḥ. Other MSS and MAM agree: shewa, no ga'aya. The printed tradition has ga'aya."
     },
     {
       "ref": "Genesis 14:17",
@@ -73,7 +73,7 @@
       "target_word": "וַיַּ֣עֲשׂוּ כֵ֔ן",
       "docnote_comment": "=ל1,ב,ש,ש1,ו ובדפוסיםל!=<וַיַּ֣עַשׂוּ כֵ֔ן> (חסרות נקודות החטף בעי\"ן)דפוסים=וַיַּֽעֲשׂוּ־כֵ֔ן (תיבה מוקפת בגעיה)הערות ברויאר ודותן והמקליד",
       "category": "lc-differs",
-      "translation": "LC missing ḥataf dots in ayin. Prints have maqaf-joined word with ga'aya."
+      "translation": "LC missing ḥataf dots in ayin. The printed tradition has a maqaf compound with ga'aya."
     },
     {
       "ref": "Exodus 8:3",
@@ -94,7 +94,7 @@
       "target_word": "הֲֽמִבְּלִ֤י",
       "docnote_comment": "=א(ס),ב,ש1,ק3,ו (בחטף פתח וגעיה)ש=הֲמִבְּלִ֤י (אין געיה)ל!=הַֽמִבְּלִ֤י (חסרות נקודות החטף בה\"א הַתֵּמַהּ)דפוסים=הֲמִבְּלִ֤י (חטף פתח ואין געיה)הערת ברויאר",
       "category": "lc-differs",
-      "translation": "AC(S) etc: ḥataf pataḥ with ga'aya. LC missing ḥataf dots in interrogative he. Prints: ḥataf pataḥ, no ga'aya."
+      "translation": "AC(S) etc: ḥataf pataḥ with ga'aya. LC missing ḥataf dots in interrogative he. The printed tradition: ḥataf pataḥ, no ga'aya."
     },
     {
       "ref": "Exodus 20:4",
@@ -262,7 +262,7 @@
       "target_word": "עֲדֻלָּ֑ם",
       "docnote_comment": "=ל,ק ובדפוסים (חטף פתח בעי\"ן), וכך אצל ברויאר ומג\"הא!=עַדֻלָּ֑ם (חסרות נקודות החטף בעי\"ן)",
       "category": "ac-differs",
-      "translation": "AC surprisingly missing ḥataf dots in ayin. MAM, LC, and prints have ḥataf pataḥ."
+      "translation": "AC surprisingly missing ḥataf dots in ayin. MAM, LC, and the printed tradition have ḥataf pataḥ."
     },
     {
       "ref": "2Samuel 24:2",
@@ -276,7 +276,7 @@
       "target_word": "אֶשְּׁקָה־נָּא֙",
       "docnote_comment": "=א,ל (בשווא)חלק מהדפוסים וקורן=אֶשֳּׂקָה־נָּא֙ (בחטף קמץ), ק=אֶשֲּׂקָה־נָּא֙ (בחטף פתח) ויש דפוסים גם כך, כולם בעקבות מ\"ש שהתלבט בין שלושת האפשרויותמ\"ג=אֶשְׂקָה־נָּא֙ (בנקודת שי\"ן שמאלית!)",
       "category": "vowel-discussion",
-      "translation": "AC and LC have shewa. Some prints/Koren: ḥataf qamats. Q: ḥataf pataḥ. MS debated all three options. MG: left shin dot."
+      "translation": "AC and LC have shewa. Part of the printed tradition and Koren: ḥataf qamats. Q: ḥataf pataḥ. MS debated all three options. MG: left shin dot."
     },
     {
       "ref": "Jeremiah 2:12",
@@ -444,7 +444,7 @@
       "target_word": "מׇרְדֳּכַ֗י",
       "docnote_comment": "=ל,ש1,ק-מ (האות דל\"ת בחטף קמץ)דפוסים=מׇרְדְּכַ֗י (האות דל\"ת בשווא) כאן ובכל המגילה.",
       "category": "xataf-qamats-for-qamats-qatan",
-      "translation": "LC etc: ḥataf qamats in dalet. Prints: shewa. Applies throughout Esther."
+      "translation": "LC etc: ḥataf qamats in dalet. The printed tradition: shewa. Applies throughout Esther."
     },
     {
       "ref": "Esther 2:14",
@@ -528,7 +528,7 @@
       "target_word": "זׇכְרָ֕ה",
       "docnote_comment": "א,ש1=זֳכְרָ֕ה (חטף קמץ לסימון תנועת קמץ חטוף) וכן במג\"ה.ל=זָכְרָ֕ה בקמץ וכך בדפוסים; ובאופן דומה אצל ברויאר ובסימנים (בקמץ קטן).",
       "category": "xataf-qamats-for-qamats-qatan",
-      "translation": "AC and S1 have ḥataf qamats marking qamats qatan. LC has plain qamats (as prints)."
+      "translation": "AC and S1 have ḥataf qamats marking qamats qatan. LC has plain qamats (as does the printed tradition)."
     }
   ]
 }

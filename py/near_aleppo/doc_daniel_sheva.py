@@ -106,7 +106,7 @@ def section():
                 "English translation of Avi's MAM note: The ketiv of ",
                 he_name(params["1"]),
                 " with the following pointed qere is consistent with Sassoon 1053, "
-                "the Cambridge manuscript, British Library Or. 2375, printed editions, and Koren:",
+                "the Cambridge manuscript, British Library Or. 2375, the printed tradition, and Koren:",
             ]
         ),
         he_display(params["2"]),
