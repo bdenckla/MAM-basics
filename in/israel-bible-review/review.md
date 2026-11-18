@@ -5,7 +5,7 @@ Publishers Jerusalem. Its acknowledgments praise Koren as Israel's foremost Bibl
 thank Koren's staff by name. One might assume from all this that the Hebrew text of the Israel Bible
 is the same as that in other Koren editions of the Tanakh, but it is not. Not even close.
 
-The Hebrew text of the Israel Bible is the Westminster Leningrad Codex (WLC), version 4.18, as
+The Hebrew text of the Israel Bible is WLC, version 4.18, as
 tanach.us distributed it in November 2014 and as Sefaria imported it in early 2015, when Sefaria's
 import script stripped off its accents along with other content such as its
 bracket-notes.[^provenance] The Israel Bible's [website](https://theisraelbible.com/) shows, by

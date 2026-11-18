@@ -166,7 +166,12 @@ without such a line to him.
    unchanged.
 2. **Two more titles spelled out beside "WLC".** Put to Ben on 2026-11-18, since his reason
    for Decision 4 covers them too. The opening paragraph, the review's first mention of WLC,
-   says "the Westminster Leningrad Codex (WLC), version 4.18", and "In a long line" quotes
+   said "the Westminster Leningrad Codex (WLC), version 4.18", and "In a long line" quotes
    Crossway's publisher: "combines the text of the Westminster Leningrad Codex (WLC)". Should
    the opening paragraph say "WLC, version 4.18"? Should the quotation stay whole, or end
    before the title, as "combines the text of" WLC?
+
+   Answered on 2026-11-18. Ben answered "D1 A". D1 was this question's number on the decision
+   page of the session that put it, and its choice A was that the opening paragraph say "WLC,
+   version 4.18" and that the quotation stay whole. The opening paragraph now says "The Hebrew
+   text of the Israel Bible is WLC, version 4.18", and the quotation is unchanged.
