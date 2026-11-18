@@ -69,9 +69,9 @@ _EN: dict[str, dict[str, object]] = {
             unpointed("המקליד"),
             ") since version 4.20 — all following the Leningrad" " manuscript (",
             unpointed("כתי״ל"),
-            "), whose reading Breuer also records;" " and so too in ",
+            "), whose marks Breuer also records;" " and so too in ",
             unpointed("מג״ה"),
-            " (Miqra’ot Gedolot Ha-keter), per the practice of the Keter. Jacob"
+            " (Mikra’ot Gedolot Haketer), per the practice of the Keter. Jacob"
             " Sapir's note on the Aleppo Codex (",
             unpointed("א(ס)"),
             ") records only that the word has “two accents” (",
@@ -225,7 +225,7 @@ _EN: dict[str, dict[str, object]] = {
                 unpointed("ל"),
                 " (Leningrad) carries a doubled geresh — one on the vav and one"
                 " on the alef — where the first (at the head of the chanted word)"
-                " marks that its reading takes precedence in sequence, and the second"
+                " marks that it is read first, and the second"
                 " (on the stressed letter) marks the accent's actual place. This"
                 " is the clearest statement in these notes of why a prepositive"
                 " accent and its impositive partner can land on different letters"
@@ -262,7 +262,7 @@ _SOURCE_KEY = (
             " Koren, apart"
         ),
     ),
-    ("מג״ה", "Miqra’ot Gedolot Ha-keter"),
+    ("מג״ה", "Mikra’ot Gedolot Haketer"),
     ("BHS", "Biblia Hebraica Stuttgartensia"),
     ("המקליד", "the transcriber of the Westminster/UXLC text of Leningrad"),
     ("הקלדה", "the typed WLC text itself"),
@@ -319,22 +319,22 @@ def _intro_section() -> tuple[object, ...]:
             " 17:13), and when it is not they land on different letters of the"
             " one chanted word (the cross-letter words: Leviticus 10:4, Ezekiel 48:10)."
             " Most of what these notes argue is the relative order of the two"
-            " marks on a shared letter — which one “comes first in the reading” —"
+            " marks on a shared letter — which one “is read first” —"
             " and which sources have which first. In 2 Kings 17:13 the leading"
             " mark is technically a geresh muqdam, which the checker reads as a"
             " geresh."
         ),
         H.para(
             (
-                "Some reading conventions: a note opening with “=” means “MAM"
-                " follows …”; elsewhere “X=Y” means source X has the reading Y. A bang"
+                "Some conventions of the notes: a note opening with “=” means “MAM"
+                " follows …”; elsewhere “X=Y” means that source X has Y. A bang"
                 " attaches to that equals — “X!=Y” reads “X surprisingly equals"
-                " Y”, flagging X’s reading as striking or unexpected (for"
+                " Y”, flagging what X has as striking or unexpected (for"
                 " instance a transcript or edition that departs from the codex it"
                 " otherwise follows); a bang ending a clause is the same emphasis"
                 " standing on its own. The lemma shown in each heading is the"
-                " chanted word as it appears in MAM-with-doc — the precise reading MAM"
-                " adopts is the one stated in the note. See the ",
+                " chanted word as it appears in MAM-with-doc — the note states"
+                " exactly what MAM adopts. See the ",
                 link("key", "#key"),
                 " for the sigils and accent terms.",
             )

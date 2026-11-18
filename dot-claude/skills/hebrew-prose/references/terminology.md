@@ -346,8 +346,9 @@ say 'the Keter edition', do you mean the 'Keter Yerushalayim' edition (as oppose
 mgketer.org edition)? If so, please spell it out."* **Two editions carry the word, they are
 different books, and MAM's own notes cite both.**
 
-- **`מקראות גדולות הכתר`**, Mikra'ot Gedolot ha-Keter, abbreviated `מג"ה` in MAM's apparatus and
-  served at mgketer.org. Write the Hebrew, or "Mikra'ot Gedolot ha-Keter".
+- **`מקראות גדולות הכתר`**, Mikra'ot Gedolot Haketer, abbreviated `מג"ה` in MAM's apparatus and
+  served at mgketer.org. Write the Hebrew, or "Mikra'ot Gedolot Haketer", the edition's English
+  title as its publisher, Bar-Ilan University, prints it.
 - **`כתר ירושלים`**, the Jerusalem Crown — Breuer's edition, the one Yosef Ofer did the detailed
   work on. Write "the Jerusalem Crown" or the Hebrew.
 - **And `כתר ארם צובה` is neither**: that is the Aleppo Codex itself, the manuscript both editions
@@ -358,6 +359,23 @@ different books, and MAM's own notes cite both.**
 MAM's prose for the manuscript reports a printed edition unless it excludes that phrase.
 `MAM-private/near-aleppo/census/qere_not_encoded.py` carries the exclusion as `NOT_THE_CODEX`, and
 `PLAN-near-aleppo.md`'s step 40 row records what it cost before it was there.
+
+**Its English name is the publisher's title.** Ben, 2026-11-18, asked on what authority this
+section prescribed "Mikra'ot Gedolot ha-Keter": *"Is that somehow the official transliteration of
+the title?"* It had none. That spelling came in with this section, in github-misc `fc13c18c` of
+2026-09-02, which Claude co-authored, and nothing there cites a source for it. Bar-Ilan
+University, the publisher, writes "Mikra’ot Gedolot “Haketer”" on its English page for the
+project, and Open Library's record of a 1992 volume, OL20685522M, transcribes the English title on
+the back of its title page as "Mikra'ot gedolot 'Haketer'". That record's romanization of the
+Hebrew title, "Miḳraʾot gedolot ha-Keter", was the nearest thing to the old spelling. Ben chose
+the publisher's title the same day, without the quotation marks around Haketer, which Bar-Ilan's
+own headings drop: *"I concur with all 3 of your recommendations."* A title keeps its own
+spelling, so its k stands beside his preference for q under “Transliteration (accgram)” below.
+Changed on adoption, 2026-11-18: the live text of the pages the printed-tradition sweep had
+touched, which are MAM-with-doc's FOI page for deḥi with a stress meteg, accgram's telisha gedola
+and Psalms 17:14 notes, `doc/sigil-decoding.md`, `doc/near-aleppo-avi-ketiv-investigation.html`
+and the intro-doc audit's translations. Other live spellings change when their text is next
+touched; dated records, receipts and executed plans keep their words.
 
 ## A doc-note's parts are doc-parts or clauses, never lines
 
@@ -440,9 +458,14 @@ Rabbinic Bible", the "Received Edition"; neither source has a phrase like "the p
 `doc/sigil-decoding.md` decodes the sigil the same way. Adopted on 2026-11-18 on the stress-helpers
 page, `gh-pages/stress-helpers/index.html`, and swept the same day through the other live
 renderings of MAM's notes in MAM-basics and MAM-private, where רוב הדפוסים became "most of the
-printed tradition". Dated records, receipts and executed plans keep their words. Not yet changed
-on 2026-11-18: renderings of the introduction's own דפוסים, among them the translation of the
-introduction in `py/author_misc/he_ws_intro_to_mam_*.py`, which Ben was asked about that day.
+printed tradition". Dated records, receipts and executed plans keep their words.
+
+The introduction's own דפוסים is "the printed tradition" only where the introduction cites it as a
+sigil, as chapter 5's list for Isaiah 59:19 does; in the introduction's prose, where the word can
+take in Koren, it stays "printed editions". Ben chose this on 2026-11-18 from three choices put to
+him: *"I concur with all 3 of your recommendations."* The intro-doc audit's translation of that
+list changed the same day. The translation of the introduction in
+`py/author_misc/he_ws_intro_to_mam_*.py` renders only its prose, so it keeps "printed editions".
 
 ## Never the noun "reading"
 
@@ -748,7 +771,9 @@ Hebrew letters (Ben, the same day).
 Ben's choice, 2026-11-18: transliterate qof as `q`, as in "Miqraot Gedolot", rather than "Mikraot
 Gedolot". Ben, of a draft that said "Mikraot": *"I prefer Miqraot to Mikraot, as in general I prefer
 to transliterate qof with a q. Unless you have specific reason to use 'k' here."* Like the choices
-above, it applies to new and touched text and starts no sweep.
+above, it applies to new and touched text and starts no sweep. A work's title keeps its own
+spelling: the English title of מקראות גדולות הכתר is "Mikra'ot Gedolot Haketer", with k, as
+“Never a bare "the Keter edition"” says.
 
 Tet and tav both use plain `t`/`T` in Ben's transliteration; do not introduce ṭ/Ṭ.
 
