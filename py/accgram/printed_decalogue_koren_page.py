@@ -265,8 +265,9 @@ _PARA_2 = (
 # invert) cannot pick it up silently.
 
 
-def _lines_with_breaks(lines: tuple[str, ...]) -> tuple[object, ...]:
-    """Interleave ``<br>`` between transcription lines (they follow the scan's own breaks)."""
+def _lines_with_breaks(lines: tuple[object, ...]) -> tuple[object, ...]:
+    """Interleave ``<br>`` between lines: a transcription's lines, which follow the scan's own
+    breaks, or the pieces that the verdict table's first column stacks in one cell."""
     body: list[object] = []
     for i, line in enumerate(lines):
         if i:
@@ -442,6 +443,11 @@ def _pa38_note_section() -> tuple[object, ...]:
 # C3): the rows alternate main / appendix, so the stripe would tint exactly the two appendix rows
 # and read as if it encoded that.
 #
+# Two things are this table's alone, both Ben's of 2026-11-18. The second class, ruled-rows, sets
+# the rows off from each other with a thin rule between each pair, which the zebra cannot do here.
+# And the first column stacks the Decalogue, its pages and its strand in one cell, one per line,
+# with Ex and Dt for the books. The Simanim page's two tables of the same shape have neither.
+#
 # The two readings flagged uncertain during transcription (p. 114's לא of לא תרצח, p. 281's tipexa
 # on את־שמו) are deliberately NOT mentioned here or anywhere on this page -- Ben's call,
 # 2026-07-24. Both are bounded to discriminate nothing this page claims, neither can move a
@@ -487,14 +493,18 @@ def _verdict_table(
     verdicts: dict[str, tp.TranscriptionResult], counts: dict[str, int]
 ) -> object:
     header = H.table_row_of_headers(
-        ("Decalogue", "pages", "strand", "how far it follows it", tvc.HEADER)
+        (
+            _lines_with_breaks(("Decalogue", "pages", "strand")),
+            "how far it follows it",
+            tvc.HEADER,
+        )
     )
     rows = (
         (
-            "Exodus main",
+            "Ex main",
             "koren_ex_taxton",
             "113–114",
-            ("p-trad ", _TAHTON),
+            f"p-trad {_TAHTON}",
             "Every accent, and every maqaf with them — no difference anywhere the comparison"
             " reaches, though this Decalogue settles less"
             " than that suggests. In Exodus the two traditions accent the Shabbat commandment"
@@ -503,10 +513,10 @@ def _verdict_table(
             " traditions' one difference of vowel, the qamats/pataḥ of לא תרצח.",
         ),
         (
-            "Deuteronomy main",
+            "Dt main",
             "koren_dt_taxton",
             "280–281",
-            ("p-trad ", _TAHTON),
+            f"p-trad {_TAHTON}",
             (
                 "Every accent, every maqaf, and ",
                 H.bold("this is the Decalogue that tests the claim"),
@@ -529,10 +539,10 @@ def _verdict_table(
             ),
         ),
         (
-            "Exodus appendix",
+            "Ex appendix",
             "koren_ex_elyon",
             "A38",
-            ("p-trad ", _ELYON),
+            f"p-trad {_ELYON}",
             (
                 "Every chanted verse boundary, the whole disjunctive skeleton, and every chanted"
                 " word marked as its Wikisource strand marks it but two. At יהיה and at ובנך that"
@@ -543,10 +553,10 @@ def _verdict_table(
             ),
         ),
         (
-            "Deuteronomy appendix",
+            "Dt appendix",
             "koren_dt_elyon",
             "A39",
-            ("p-trad ", _ELYON),
+            f"p-trad {_ELYON}",
             (
                 "Every accent — and it joins both compounds its Exodus counterpart separates, so"
                 " that separation is a fact about the one page rather than a habit of the"
@@ -562,9 +572,7 @@ def _verdict_table(
     body = [
         H.table_row(
             (
-                H.table_header(which),
-                H.table_datum(pages),
-                H.table_datum(strand),
+                H.table_header(_lines_with_breaks((which, pages, strand))),
                 H.table_datum(verdict),
                 H.table_datum(tvc.cell(verdicts[stem])),
             )
@@ -572,7 +580,8 @@ def _verdict_table(
         for which, stem, pages, strand, verdict in rows
     ]
     return H.table(
-        (header, *body), {"class": "printed-decalogue-transcription-verdict"}
+        (header, *body),
+        {"class": "printed-decalogue-transcription-verdict ruled-rows"},
     )
 
 
