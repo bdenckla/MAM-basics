@@ -93,9 +93,11 @@ as early scribes wrote it; a sin distinguished from a shin by the height of the 
 lest קמשונים and the like be misread; and the quiescent alef, written but unpronounced, drawn as a
 **hollow** outline letter (אות חלולה).
 
-**6. דגש חזק** (p. יט). Every letter carrying a dagesh xazak is set in a thickened form, so that
-strong and weak dagesh are distinguishable at a glance rather than by rule. This is the payoff of
-the ma'ala-5 font work, which reserved room inside the letter for exactly this contrast.
+**6. דגש חזק** (p. יט). A dagesh xazak is printed as a small square and a dagesh kal as a smaller
+diamond, so that strong and weak dagesh are distinguishable at a glance rather than by rule; the
+letter itself keeps its ordinary weight. The edition's examples are Joshua 2:19, Joshua 10:19 and
+Psalms 1:1. This is the payoff of the ma'ala-5 font work, which reserved room inside the letter for
+exactly this contrast.
 
 **7. שוא נע** (pp. כ-כא). Shva na is printed **כשני ריבועים מוגדלים** — as two enlarged squares —
 against shva nax, which keeps its ordinary form of two small round dots. The contrast is plainly
