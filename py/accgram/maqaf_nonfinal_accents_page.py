@@ -1589,8 +1589,8 @@ def _intro(survey: dict) -> tuple[object, ...]:
         theirs = {case["compound"] for case in cases if case["edition"] == edition}
         assert theirs == compounds, (edition, theirs)
     # The carry-over paragraph's two sentences: three cases differ from their reference in one
-    # added mark, and the fourth, Koren's לא־יהיה, in a moved maqaf and an added munaḥ.  What
-    # the second sentence says of the other strand -- the maqaf where it has one, the munaḥ in
+    # added mark, and the fourth, Koren's לא־יהיה, in a moved maqaf and an added munax.  What
+    # the second sentence says of the other strand -- the maqaf where it has one, the munax in
     # neither strand -- is asserted where that case is built, ``_koren_lo_yihye_case``.
     moved = [case for case in cases if _reference_difference(case)[1] == "moved"]
     assert [(c["edition"], c["compound"]) for c in moved] == [
@@ -1764,8 +1764,8 @@ def _intro(survey: dict) -> tuple[object, ...]:
         # THE CHECKER CANNOT SEE THEM (Ben's D3 answer, 2026-11-18, "D3 A (State it without a
         # verdict)").  The grammar checker the Koren page reports reads each Decalogue as a
         # stream of accents with no maqaf in it -- ``edition_transcription``'s "WHAT THE TOKEN
-        # STREAM CANNOT SEE" -- so a munaḥ on each atom of a compound reaches it exactly as a
-        # munaḥ on each of two chanted words does.  That is a fact about the code, not the data,
+        # STREAM CANNOT SEE" -- so a munax on each atom of a compound reaches it exactly as a
+        # munax on each of two chanted words does.  That is a fact about the code, not the data,
         # so nothing here pins it; making maqaf a token of its own (wlc-utils#75) would make the
         # sentence false and must take it out.  Like everything above, it calls neither
         # compound an error.
@@ -2472,8 +2472,8 @@ def _poetic_section(survey: dict) -> tuple[object, ...]:
     # twice.  What the gray count adds beside the hits is its split by kind, which is what it is
     # quoted for here.
     #
-    # "none of them with a munaḥ on two of its atoms" is the poetic half of Ben's D3 answer of
-    # 2026-11-18 -- no chanted word of MAM has a munaḥ on two atoms -- the prose half being the
+    # "none of them with a munax on two of its atoms" is the poetic half of Ben's D3 answer of
+    # 2026-11-18 -- no chanted word of MAM has a munax on two atoms -- the prose half being the
     # intro's answer.  It names one accent, against this section's rule of naming none, because
     # Koren's two compounds are what the page asks about; ``pin_claims`` defends it.
     hits = _n(survey, _CORPUS, "poetic", "hits")
