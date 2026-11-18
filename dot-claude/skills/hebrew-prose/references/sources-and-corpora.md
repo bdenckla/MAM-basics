@@ -6,7 +6,7 @@
 | --- | --- |
 | **WLC** | The Westminster transcription of **L** — diplomatic. A near-perfect copy of BHS that fixes BHS *transcription* errors. Ben, 2026-09-09: WLC "started life as a transcription of BHS and then became an edition of its own (albeit still *very* close to BHS)"; no version of WLC in play here is a transcription of BHS. |
 | **UXLC** | Started as WLC 4.20 via WLC2XML and "diverged considerably from there" — from WLC and from BHS (Ben, 2026-09-09) — but still **not a second hand**, not a second manuscript. |
-| **MAM** | A **consensus** text: no single manuscript's reading, but the accentuation the Masoretic tradition converges on. |
+| **MAM** | A **consensus** text: it follows no single manuscript, but the accentuation the Masoretic tradition converges on. |
 | **LC / L** | The manuscript itself — the only one of these with a physical, ambiguous vertical **bar**. |
 
 - **Transcription and diplomatic edition are not distinguished here.** Ben, 2026-09-09: BHS, WLC
@@ -29,23 +29,23 @@
   233; 0.63%), which also made the accompanying claim true without exception — WLC's Joshua 20:4
   זקני־העיר has its compound's only accent on the non-final atom because the mark on העיר is a
   mid-verse meteg. **Re-read those numbers out of the regenerated JSON before quoting them.**
-- **Evidence from WLC is about WLC.** A manuscript claim requires an actual manuscript
-  reading or a clearly attributed prior reading. Unless the image was consulted, the manuscript
+- **Evidence from WLC is about WLC.** A manuscript claim requires an inspection of the manuscript
+  itself or a clearly attributed earlier inspection. Unless the image was consulted, the manuscript
   remains unverified; a transcription's silence supplies little evidence about a fine mark.
 - **WLC, BHS 1997 and BHQ are usually ONE transcription, not three that agree.** Ben,
   2026-08-07, correcting exactly that framing: they "should usually be considered a SINGLE
   transcription, not independent transcripts." So their agreeing corroborates nothing about the
-  manuscript — it is one reading counted three times, and treating it as three is how a
+  manuscript — it is one transcription counted three times, and treating it as three is how a
   transcription-tradition error gets promoted to a manuscript fact. The bullets above already
   say WLC is "a near-perfect copy of BHS"; this is the same point where BHQ is also in play, and
   it is the one that gets forgotten, because three names look like three checks. The worked
   case is MAM-basics #218's **gn 18:18**, where MAM has ונברכו־בו as one chanted word and WLC
-  has ונברכו בו with a space: WLC's **bracket-U** note there says outright that it agrees with
-  both BHS 1997 and BHQ on an unexpected reading. That settles that the space is at least as old
-  as BHS and is not WLC's alone — and settles nothing about the LC, which is why the verse is
-  `st-source: tbd` pending a look at page F009B rather than `lc`. What DOES corroborate is
-  someone reading the manuscript: je 37:10, the same shape, is `lc` because UXLC's note reports
-  no maqaf in the image.
+  has ונברכו בו with a space. WLC has a **bracket-U** note there, which its release notes define
+  as "we agree with both BHS 1997 and BHQ on an unexpected reading". That settles that the space
+  is at least as old as BHS and is not WLC's alone — and settles nothing about the LC, which is
+  why the verse is `st-source: tbd` pending a look at page F009B rather than `lc`. What DOES
+  corroborate is someone reading the manuscript: je 37:10, the same shape, is `lc` because UXLC's
+  note reports no maqaf in the image.
 - **Sibling corpora are not WLC 4.22.** A UXLC feature is UXLC-real, not WLC-4.22-real; verify
   against `out/wlc422-kq-u` and accgram's `…_ag.json`. MAM differs in **both** directions — it
   lacks WLC's own oddities and adds composites and dual-cant overlays — so it is the wrong corpus
@@ -133,8 +133,8 @@ and the Hebrew Ofer edition `Yeivin_המסורה למקרא_Ofer-edition_2003.pd
   `C:/Users/BenDe/OneDrive/Documents/Tanakh/misc/Breuer-DM-mekorot-hanosah.pdf`; it is not a
   substitute for the canonical scan. The workbook `quirks listed in Da-at Miqra.xlsx` indexes
   Job quirks rather than the whole series and cannot establish broader coverage.
-- **A missing searchable-text layer is not evidence that the readings are unavailable.** Do
-  not automatically respond by attempting OCR or asking Ben to supply readings. Direct image
+- **A missing searchable-text layer is not evidence that Breuer's notes are unavailable.** Do
+  not automatically respond by attempting OCR or by asking Ben to transcribe them. Direct image
   inspection, limited OCR, and a full Da'at Miqra index are separately scoped work; do not add
   any of them to an unrelated source question.
 - **For the seven meteg-after-silluq words, the coverage is settled.** Ben directly established
@@ -149,9 +149,9 @@ and the Hebrew Ofer edition `Yeivin_המסורה למקרא_Ofer-edition_2003.pd
   `C:/Users/BenDe/OneDrive/Documents/ScansOfBooks/JC1 Jerusalem Crown`, whose files
   `879-05.jpg` to `897-23.jpg` are the back matter's bracketed pages [5] to [23]. Page [5] is
   Yosef Ofer's preface. Breuer's essay "על עקרונות הנוסח במהדורה זו" begins on page [6], and
-  on page [10] its section "רשימות נוסח כתב היד" introduces the lists: book by book, the
-  manuscript's reading wherever the edition departs from it, the Aleppo Codex's (א) where it
-  survives and the Leningrad Codex's (ל) elsewhere. The lists end on page [23] with
+  on page [10] its section "רשימות נוסח כתב היד" introduces the lists: book by book, what the
+  manuscript has wherever the edition departs from it, the manuscript being the Aleppo Codex (א)
+  where it survives and the Leningrad Codex (ל) elsewhere. The lists end on page [23] with
   2 Chronicles. Their footnotes give Breuer's reasons in his first person. The worked case,
   read on 2026-11-05, is note 6 on page [23], at 2 Chronicles 35:9: it says that the Aleppo
   Codex has a tear where the meteg would be and that he followed the Leningrad Codex.

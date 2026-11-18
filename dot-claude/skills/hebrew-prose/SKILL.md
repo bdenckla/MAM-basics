@@ -88,7 +88,7 @@ the repository-specific reference before writing. Load only the references neede
 The checklist and repository exceptions apply in cloud sessions. Source research and
 regeneration require their actual inputs: private OCR, account-local source books and private
 surveys do not arrive with a single MAM-basics checkout. Read a supplied source before making
-its claim; report unavailable source evidence instead of inferring the source's reading.
+its claim; report unavailable source evidence instead of inferring what the source says.
 Machine paths and dated measurements in the references identify their original evidence,
 rather than a resource that must exist in the cloud.
 

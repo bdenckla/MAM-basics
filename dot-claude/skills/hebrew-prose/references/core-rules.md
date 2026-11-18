@@ -120,10 +120,10 @@ Ben's undated rule, already present when MAM-basics became the canonical configu
   as the inference is visible to the reader.
 - **A claim about what the accentuation DOES takes MAM as its corpus**, not WLC: WLC's transcription
   blemishes can affect those counts. Evidence from WLC is about WLC.
-  A manuscript claim requires an actual manuscript reading or a clearly attributed prior reading;
-  an uninspected manuscript remains unverified.
+  A manuscript claim requires an inspection of the manuscript itself or a clearly attributed
+  earlier inspection; an uninspected manuscript remains unverified.
 - **WLC, BHS 1997 and BHQ are usually ONE transcription, not three that agree** (Ben,
-  2026-08-07). Their agreeing corroborates nothing about the manuscript — it is one reading
+  2026-08-07). Their agreeing corroborates nothing about the manuscript — it is one transcription
   counted three times. Never "all three have it, so the LC has it"; only someone reading the
   manuscript settles that. Worked case, and why gn 18:18 is `tbd` rather than `lc`:
   `references/sources-and-corpora.md`.
