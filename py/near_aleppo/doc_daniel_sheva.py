@@ -14,6 +14,7 @@ from near_aleppo.doc_html import (
     table,
 )
 from mb_misc import mb_html
+from mb_misc import printed_tradition
 
 
 def assets():
@@ -105,8 +106,10 @@ def section():
             [
                 "English translation of Avi's MAM note: The ketiv of ",
                 he_name(params["1"]),
-                " with the following pointed qere is consistent with Sassoon 1053, "
-                "the Cambridge manuscript, British Library Or. 2375, the printed tradition, and Koren:",
+                *printed_tradition.explain(
+                    " with the following pointed qere is consistent with Sassoon 1053, "
+                    "the Cambridge manuscript, British Library Or. 2375, the printed tradition, and Koren:"
+                ),
             ]
         ),
         he_display(params["2"]),

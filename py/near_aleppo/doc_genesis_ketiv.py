@@ -7,6 +7,7 @@ from near_aleppo import doc_figures
 from near_aleppo import editorial_ketiv
 from near_aleppo.doc_html import he_display, he_name, link, verse_refs
 from mb_misc import mb_html
+from mb_misc import printed_tradition
 
 VERSE = ("A1-Genesis", "43", "28")
 IDENTIFIER = "A1-Genesis:43:28:0"
@@ -79,9 +80,11 @@ def section():
             [
                 "English summary of MAM's note: The group ",
                 he_name("ב,ש,ש1,ו"),
-                " and the printed tradition have the deficient ketiv spelling with a "
-                "shuruq dot alone on the final vav. MAM consequently gives this "
-                "qere, with no dot on its consonantal vav:",
+                *printed_tradition.explain(
+                    " and the printed tradition have the deficient ketiv spelling with a "
+                    "shuruq dot alone on the final vav. MAM consequently gives this "
+                    "qere, with no dot on its consonantal vav:"
+                ),
             ]
         ),
         he_display(MAM_QERE),

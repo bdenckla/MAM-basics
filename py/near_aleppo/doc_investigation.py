@@ -4,25 +4,37 @@ The authored source stays in doc/. Relative repository evidence links become
 GitHub links; image links and image bytes are published together. The source's
 one font URL names the site's one copy of Taamey D, gh-pages/woff2/Taamey_D.woff2,
 relative to doc/; publishing rewrites it relative to the published page.
+
+The hand-written source cannot import the hover on its "the printed tradition", so it
+repeats the one that mb_misc/printed_tradition.py defines, and publishing raises on a
+hover of that class that differs from it.
 """
 
+from html import unescape
 import posixpath
 import re
 from urllib.parse import quote, urlsplit
 
 from mb_cmn import paths, provenance
+from mb_misc import printed_tradition
 from near_aleppo import build_paths
 from py_html import taamey_d_assets
 
 PAGE = "avi-ketiv-investigation.html"
 _SOURCE = "doc/near-aleppo-avi-ketiv-investigation.html"
 _GITHUB = "https://github.com/bdenckla/MAM-basics/blob/main/"
+_EXPLAINED = re.compile(f'<span class="{printed_tradition.CLASS}" title="([^"]*)">')
 
 
 def render():
     """Return the published HTML and unchanged evidence images as bytes."""
     root = paths.repo_root()
     source = (root / _SOURCE).read_text(encoding="utf-8")
+    for title in _EXPLAINED.findall(source):
+        if unescape(title) != printed_tradition.HOVER:
+            raise ValueError(
+                f"{_SOURCE} has a hover other than the shared one: {title}"
+            )
     pages = {}
 
     def address(match):

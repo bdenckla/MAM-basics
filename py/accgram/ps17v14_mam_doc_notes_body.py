@@ -12,9 +12,13 @@ used to take the serializer's old lb1="\\n" default; since the move to tag-keyed
 tables in ``py_html/wlc_utils_html.py`` they take lb1="", and the page no longer carries
 a newline straight after those block-level open tags.  No browser renders the difference,
 and it is what makes this page break like the other 151.  See that module's table comment.
+
+Its one "the printed tradition", MAM's sigil דפוסים in English, has the hover of
+mb_misc/printed_tradition.py, which explains it.
 """
 
 from accgram import accgram_site
+from mb_misc import printed_tradition
 
 TITLE = "MAM documentation notes on Psalms 17:14 — translation"
 
@@ -397,7 +401,7 @@ BODY = [
                 "lb2": "",
                 "contents": ["ש1, ק13, גסטר1"],
             },
-            " and the printed\ntradition (",
+            *printed_tradition.explain(" and the printed\ntradition ("),
             {
                 "_htel_tag": "bdi",
                 "lb1": "",

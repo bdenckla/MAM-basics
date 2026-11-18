@@ -453,7 +453,15 @@ Rabbinic Bible", the "Received Edition"; neither source has a phrase like "the p
   each "the printed tradition" a hover: "In MAM’s notes, דפוסים, which we usually translate as “the
   printed tradition”, means the customary text of a selection of widespread editions from the 19th
   and early 20th centuries, in the lineage of the second Venice Miqraot Gedolot. The notes cite that
-  Venice edition, and Koren, apart."
+  Venice edition, and Koren, apart." Asked on 2026-11-18 whether the other pages should have it,
+  Ben took the recommendation: a hover on each, defined once, with a dotted underline (*"I concur
+  with all 3 of your recommendations."*). MAM-basics' `py/mb_misc/printed_tradition.py` defines it,
+  as `HOVER`, `CLASS` and `STYLE`, and wraps each occurrence with `explain()` for an element tree
+  or `explain_html()` for HTML built as a string. A page's own definition of the term, such as the
+  key of sigils on the telisha gedola notes, takes none. Eight pages gained it that day:
+  MAM-with-doc's FOI page for deḥi with a stress meteg, accgram's telisha gedola and Psalms 17:14
+  notes, near-Aleppo's choices, Daniel, Genesis 43:28 and Avi-ketiv investigation pages, and the
+  intro-doc audit's review.
 
 `doc/sigil-decoding.md` decodes the sigil the same way. Adopted on 2026-11-18 on the stress-helpers
 page, `gh-pages/stress-helpers/index.html`, and swept the same day through the other live

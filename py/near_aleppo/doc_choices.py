@@ -14,6 +14,7 @@ from near_aleppo.doc_html import isolated
 from near_aleppo.doc_html import link
 from near_aleppo.doc_html import table
 from mb_misc import mb_html
+from mb_misc import printed_tradition
 
 SECTION = ("choices", "Choices that could have gone another way")
 
@@ -952,7 +953,8 @@ def _alternatives(alternatives):
 
 def _prose(text):
     """``text`` as page contents: each name between backticks as Hebrew, isolated, or
-    else as code, and each Hebrew run of the rest isolated."""
+    else as code; each Hebrew run of the rest isolated; and each "the printed
+    tradition" of the rest in a span with the hover that explains it."""
     parts = text.split("`")
     if len(parts) % 2 != 1:
         raise AssertionError(f"unpaired backtick in {text!r}")
@@ -961,5 +963,6 @@ def _prose(text):
         if index % 2:
             out.append(he_name(part) if _HEBREW_LETTER.search(part) else code(part))
         elif part:
-            out.extend(isolated(part))
+            for piece in printed_tradition.explain(part):
+                out.extend(isolated(piece) if isinstance(piece, str) else (piece,))
     return out

@@ -17,6 +17,8 @@ English rendering can be checked against the original.
 
 MAM's sigil דפוסים, in the key and in every rendering, is "the printed tradition", as
 the hebrew-prose skill's references/terminology.md says in its section on that sigil.
+Each "the printed tradition" in a rendering has the hover of mb_misc/printed_tradition.py,
+which explains it; the key's entry for the sigil, which defines it, has none.
 """
 
 from __future__ import annotations
@@ -36,6 +38,7 @@ from accgram.almost_errors_html_shared import (
 )
 from mb_cmn import paths
 from mb_cmn import provenance
+from mb_misc import printed_tradition
 from py_html import wlc_utils_html as H
 
 REPORT_TITLE = "MAM documentation notes on the telg + geresh/gershayim words"
@@ -372,15 +375,28 @@ def _hebrew_blockquote(note: dict) -> object:
     return H.blockquote(tuple(contents), {"dir": "rtl", "lang": "hbo"})
 
 
+def _explained(contents) -> tuple[object, ...]:
+    """Contents as H takes them, a string or a tuple, with each "the printed tradition"
+    in their strings in a span with the hover that explains it."""
+    items = (contents,) if isinstance(contents, str) else contents
+    return tuple(
+        piece
+        for item in items
+        for piece in (
+            printed_tradition.explain(item) if isinstance(item, str) else (item,)
+        )
+    )
+
+
 def _note_section(bcv: str, note_he: dict) -> tuple[object, ...]:
     english = _EN[bcv]
     items: list[object] = [
         H.heading_level_2((ref_display(bcv), " — ", hbo(note_he["lemma"]))),
         verse_links(bcv),
-        H.para(english["intro"]),
+        H.para(_explained(english["intro"])),
     ]
     if english["parts"]:
-        items.append(H.unordered_list(tuple(english["parts"])))
+        items.append(H.unordered_list(tuple(map(_explained, english["parts"]))))
     items.append(H.para(H.small("MAM’s note, verbatim:")))
     items.append(_hebrew_blockquote(note_he))
     return tuple(items)

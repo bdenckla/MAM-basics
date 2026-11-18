@@ -12,6 +12,7 @@ from intro_doc_audit import audit, snapshot
 from mb_cmn import hebrew_verse_numerals as hvn
 from mb_cmn.he_wikisource_url import he_page_url
 from mb_cmn.mam_bknas_and_std_bknas import he_bk39_name
+from mb_misc import printed_tradition
 
 
 def read(name):
@@ -23,7 +24,8 @@ def escaped(value):
 
 
 def prose(value, quotations=()):
-    # Isolate Hebrew embedded in English without changing its codepoints.
+    # Isolate Hebrew embedded in English without changing its codepoints, and give each
+    # "the printed tradition" the hover of mb_misc/printed_tradition.py.
     if quotations:
         positions = []
         for quote in quotations:
@@ -43,6 +45,11 @@ def prose(value, quotations=()):
             cursor = start + len(quote)
         rendered.append(prose(value[cursor:]))
         return "".join(rendered)
+    return printed_tradition.explain_html(value, plain=hebrew_isolated)
+
+
+def hebrew_isolated(value):
+    """The value, escaped, with each run of its Hebrew isolated."""
     return re.sub(
         r"[\u0591-\u05f4\ufb1e]+(?:[ \u05be][\u0591-\u05f4\ufb1e]+)*",
         lambda match: '<bdi lang="he" dir="rtl">' + match[0] + "</bdi>",
@@ -903,6 +910,7 @@ def render_page(cases, reviewed, applied_note, sources, published):
         '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MAM Introduction and doc-note discrepancies</title><style>'
         + font_face(published)
         + STYLE
+        + printed_tradition.STYLE
         + ".he-quote{display:inline-block;white-space:pre-wrap}.passage.full-width{grid-column:1/-1}.readings{display:grid;grid-template-columns:minmax(0,max-content)}.reading{min-width:0;flex:initial}.reading .he{align-self:stretch;text-align:right}.comparison.adjudication{grid-template-columns:1fr}.word-pair .reading+.reading{margin-top:12px}.word-pair .he{align-self:flex-end}"
         + ".case{background:white;border:1px solid #d7e0da;border-radius:8px;margin:18px 0;scroll-margin-top:85px}.case>summary{cursor:pointer;padding:20px 25px;list-style-position:outside;margin-left:20px}.case>summary h3{display:inline;margin:0}.case article{border:0;border-top:1px solid #d7e0da;border-radius:0;margin:0;padding-top:5px}bdi{unicode-bidi:isolate}.membership{overflow-x:auto;margin:24px 0}.membership table{width:100%;border-collapse:collapse}.membership caption{text-align:left;margin-bottom:12px}.membership th,.membership td{border:1px solid #d7e0da;padding:8px 12px;vertical-align:middle}.membership th{font:14px/1.5 system-ui,sans-serif;background:#f2f6f3}.membership .verse{white-space:nowrap;font:14px/1.5 system-ui,sans-serif}.annotation{font-size:14px}"
         + THEME_STYLE

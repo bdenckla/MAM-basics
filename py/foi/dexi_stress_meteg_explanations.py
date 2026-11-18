@@ -10,6 +10,7 @@ import json
 from foi import dexi_stress_meteg_translations as translations
 from foi import foiz_wt_dexi_stress_meteg as dsm
 from mb_misc import mb_html
+from mb_misc import printed_tradition
 
 COUNTED_FOI_PATHS = frozenset(dsm.CENSUS_FOI_PATHS.values())
 _HEBREW = {"lang": "hbo", "dir": "rtl"}
@@ -37,6 +38,9 @@ for (const button of document.querySelectorAll({json.dumps(f"button.{_TOGGLE_CLA
   }});
 }}
 """
+# The page's style: the dotted underline that shows each "the printed tradition" in a
+# translation to have a hover.
+STYLE = printed_tradition.STYLE
 
 
 # The dexi-stress-meteg page's description on MAM-with-doc's FOI index.

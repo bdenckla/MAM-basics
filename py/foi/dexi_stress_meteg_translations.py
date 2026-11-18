@@ -16,7 +16,8 @@ in doubt, becomes "doubtfully"; a question mark after a pair of accents stays. A
 with "=" says that MAM agrees with the sources it names.
 
 MAM's sigil דפוסים, in any of its forms, is "the printed tradition", as the
-hebrew-prose skill's references/terminology.md says in its section on that sigil.
+hebrew-prose skill's references/terminology.md says in its section on that sigil. Each
+"the printed tradition" has the hover of mb_misc/printed_tradition.py, which explains it.
 
 The translations are AI-generated. Claude, an AI model, wrote them on 2026-10-27, at
 Ben Denckla's request, and no human has reviewed them yet. The page says so in its
@@ -27,6 +28,7 @@ once a human has reviewed the translations.
 import re
 
 from mb_misc import mb_html
+from mb_misc import printed_tradition
 
 # A run of Hebrew, with the spaces between its words, as near_aleppo's
 # foi_qere_without_ketiv defines one.
@@ -100,12 +102,13 @@ def _is_element(obj, tag, attr):
 
 
 def _with_hebrew_spans(english, hebrew):
-    """The English part, with each run of Hebrew in it in a span of its own; each such
-    run must be quoted from the Hebrew part."""
+    """The English part, with each run of Hebrew in it in a span of its own, and each
+    "the printed tradition" in a span with its hover; each run of Hebrew must be quoted
+    from the Hebrew part."""
     contents = []
     for run in filter(None, _HEBREW_RUN.split(english)):
         if not _HEBREW_RUN.fullmatch(run):
-            contents.append(run)
+            contents.extend(printed_tradition.explain(run))
         elif run in hebrew:
             contents.append(mb_html.span(run, _HEBREW))
         else:

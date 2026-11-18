@@ -58,6 +58,4 @@ tbody th small, tbody th bdi, tbody th .source { font-weight: normal; }
 .scan img { max-height: 8rem; vertical-align: middle; }
 .scan a + a { margin-top: .2rem; }
 .credit { font-size: .85rem; }
-/* A term with a hover, as the browser underlines an abbr's. */
-.explained { text-decoration: underline dotted; cursor: help; }
 @media print { .controls { display: none; } }

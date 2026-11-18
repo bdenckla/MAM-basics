@@ -367,7 +367,7 @@ def _write_html(args_foi, outfile_stem, html_tables, overall_head):
     write_ctx = mb_html.WriteCtx(
         title,
         _out_path_for_html(outfile_stem),
-        head_style=holam_e.STYLE if outfile_stem == holam_foi.STEM else None,
+        head_style=_STYLES.get(outfile_stem),
         css_hrefs=(_CSS_HREF,),
         html_comment=provenance.generated_html_comment(__file__),
     )
@@ -590,6 +590,13 @@ _COUNTED_FOI_PATHS = {
 # The JavaScript of a stem whose page has a script, which follows the page's tables.
 _SCRIPTS = {
     "dexi-stress-meteg": dexi_stress_meteg_e.SCRIPT,
+}
+
+
+# The style of a stem whose page has a style of its own, in the page's head.
+_STYLES = {
+    holam_foi.STEM: holam_e.STYLE,
+    "dexi-stress-meteg": dexi_stress_meteg_e.STYLE,
 }
 
 

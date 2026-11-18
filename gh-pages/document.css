@@ -31,6 +31,9 @@ body.wide { max-width: 80em; }
     background-color: light-dark(white, black);
 }
 span.romanized { font-style: italic; }
+/* A term with a hover, as the browser underlines an abbr's, such as each "the printed
+   tradition" that py/mb_misc/printed_tradition.py explains. */
+.explained { text-decoration: underline dotted; cursor: help; }
 .book-title { font-style: italic; }
 *[lang="he"] span.book-title { font-weight: bold; font-style: normal; }
 p, li, blockquote { text-align: justify; }

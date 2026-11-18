@@ -21,6 +21,7 @@ import re
 from accgram import printed_decalogue_strands as accent_names
 from mb_author import author
 from mb_cmn import bib_locales, paths, provenance, site_links, uni_denorm
+from mb_misc import printed_tradition
 from mb_misc.osis_book_abbrevs import BOOK_ABBREVS
 
 DIRECTORY = "stress-helpers"
@@ -88,22 +89,9 @@ _PAGE_SECTIONS = {
         "{edition}’s appendix, page {page}, numbered apart from its main text",
     ),
 }
-# The hover on each "the printed tradition", which renders MAM's sigil דפוסים in the
-# notes.  Ben, 2026-11-18: "When translating MAM doc-notes, in this document and
-# elsewhere [...] for דפסים or whatever the word is you sometimes translate as "printed
-# editions", please instead use "the printed tradition"".  The hebrew-prose skill's
-# terminology reference quotes the rest of his instruction.  The hover's definition is
-# the MAM introduction's, in in/mam-ws-intro/appendices.mediawiki, line 272, and Ben
-# asked, of its draft, the same day: "I would like it to reiterate what it is talking
-# about".
-_PRINTED_TRADITION = (
-    "In MAM’s notes, דפוסים, which we usually translate as “the printed tradition”,"
-    " means the customary text of a selection of widespread editions from the 19th and"
-    " early 20th centuries, in the lineage of the second Venice Miqraot Gedolot. The"
-    " notes cite that Venice edition, and Koren, apart."
-)
-# What in a note gets a hover: a whole abbreviation, or "the printed tradition".
-_EXPLAINED_RE = re.compile(r"(?<!\w)(KorSim|Kor|Sim|the printed tradition)(?!\w)")
+# What in a note gets an abbreviation's hover: a whole abbreviation.  Each "the printed
+# tradition" gets the hover of mb_misc/printed_tradition.py.
+_ABBREVIATION_RE = re.compile(r"(?<!\w)(KorSim|Kor|Sim)(?!\w)")
 DEFAULT_SIZE = 30
 _TELISHA_QETANNA = "telisha qetanna"
 _ZARQA = "zarqa"
@@ -157,24 +145,22 @@ def _romanize(text):
     return _ACCENT_NAME_RE.sub(r'<span class="romanized">\1</span>', escape(text))
 
 
-def _explained(term):
-    if term in _ABBREVIATIONS:
-        return _abbr(term)
-    title = escape(_PRINTED_TRADITION, quote=True)
-    return f'<span class="explained" title="{title}">{escape(term)}</span>'
+def _abbreviated(text):
+    """English with its romanized names italic, and with a hover on each abbreviation."""
+    pieces = []
+    cursor = 0
+    for match in _ABBREVIATION_RE.finditer(text):
+        pieces.append(_romanize(text[cursor : match.start()]))
+        pieces.append(_abbr(match.group(0)))
+        cursor = match.end()
+    pieces.append(_romanize(text[cursor:]))
+    return "".join(pieces)
 
 
 def _english(text):
     """English with its romanized names italic, and with a hover on each abbreviation
     and each "the printed tradition"."""
-    pieces = []
-    cursor = 0
-    for match in _EXPLAINED_RE.finditer(text):
-        pieces.append(_romanize(text[cursor : match.start()]))
-        pieces.append(_explained(match.group(0)))
-        cursor = match.end()
-    pieces.append(_romanize(text[cursor:]))
-    return "".join(pieces)
+    return printed_tradition.explain_html(text, plain=_abbreviated)
 
 
 def _prose(text):
