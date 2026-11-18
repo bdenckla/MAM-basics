@@ -1,10 +1,10 @@
-"""Render the comparison with both printed editions from checked readings and crops, and
-the census's further results beside it.
+"""Render the comparison with both printed editions from checked forms and crops, and the
+further differences beside it.
 
 index.html is the comparison, from in/stress-helpers/common.json, koren.json and
 simanim-tanakh.json; each of its rows shows MAM's form above the printed edition's form,
 the printed page and a scan crop.  results.html, from in/stress-helpers/results.json, has
-the census of five accents and the findings that index.html does not show, in index.html's
+the differences that a census of five accents found beyond index.html's, in index.html's
 row form.  Its rows have no printed form, page or crop: the census material records no
 printed form for most of them (doc/PLAN-stress-helpers-results-rework.md, Stage 2), and the
 crops wait for the rows' move into index.html, whose own records must have them.
@@ -39,12 +39,17 @@ TITLE = "Stress helpers in MAM, Koren, and Simanim"
 # doc/PLAN-stress-helpers-results-rework.md, says "further" so that a reader sees at once
 # that the page supplements index.html.
 RESULTS_TITLE = "Further stress-helper results in MAM, Koren, and the Simanim Tanakh"
+# All that results.html says above its table.  Ben, 2026-11-17: "we're just reporting
+# differences in this document", and, of index.html's comparisons, "you should just refer
+# to them as the original set of comparisons".
+_RESULTS_SUMMARY = (
+    "The table lists differences from MAM in Koren and the Simanim Tanakh beyond those in"
+    f' <a href="{_FNAME}">the original set of comparisons</a>.'
+)
 _EDITIONS = {
     "koren": ("Koren", "Koren"),
     "simanim-tanakh": ("the Simanim Tanakh", "SimTan"),
 }
-# The census tables' column headings, which take no determiner.
-_COLUMN_HEADINGS = {"koren": "Koren", "simanim-tanakh": "Simanim Tanakh"}
 _FILTER_EDITIONS = {
     ("koren", "simanim-tanakh"): "KorSim",
     ("koren",): "Kor",
@@ -69,13 +74,9 @@ CATEGORIES = {
     "different-accent": ("Different accent", "Different accent — {edition}"),
     "different-grouping": ("Different grouping", "Different grouping — {edition}"),
 }
-# results.html's collapsed table, outside the filter (Ben's Decision 4, 4A, of
-# 2026-11-17): places where the spelling differs and the accent and helper agree.
-SPELLING_CATEGORIES = {
-    "different-spelling": ("Different spelling", "Different spelling — {edition}"),
-}
-# A record's strand key, for a Decalogue reading, and the strand's name in Hebrew letters,
-# which keeps the surrounding font (the hebrew-prose skill's rendered-prose reference).
+# A record's strand key, for a word of the Decalogues, and the strand's name in Hebrew
+# letters, which keeps the surrounding font (the hebrew-prose skill's rendered-prose
+# reference).
 _STRANDS = {"taxton": accent_names.TAHTON, "elyon": accent_names.ELYON}
 DEFAULT_SIZE = 30
 _TELISHA_QETANNA = "telisha qetanna"
@@ -110,25 +111,6 @@ _ACCENT_NAME_RE = re.compile(
     + r")(?!\w)",
     re.IGNORECASE,
 )
-# The census's five accents, in the order of its table by accent.
-_CENSUS_ACCENTS = (
-    accent_names.ROM_PASHTA,
-    accent_names.ROM_SEGOLTA,
-    accent_names.ROM_TELISHA_GEDOLAH,
-    _TELISHA_QETANNA,
-    _ZARQA,
-)
-# The census's table by edition: the outcomes, which sum to each edition's readings, then
-# the counts within the first outcome's agreements, each also a record category.
-_OUTCOMES = (
-    "same",
-    "helper-in-print-only",
-    "helper-in-mam-only",
-    "helper-on-different-letter",
-    "different-accent",
-)
-_WITHIN_AGREEMENT = ("different-grouping", "different-spelling")
-_TRADITIONS = ("manuscript", "printed")
 # A run of Hebrew -- letters, points, accents, maqaf, sof pasuq, and the CGJ that MAM puts
 # between an accent and a meteg -- with the spaces between its words, as accgram's
 # wrap_hebrew_runs takes one.
@@ -199,7 +181,7 @@ def _editions_phrase(edition_ids):
 
 
 def _notes(sources):
-    """The row's notes.  A row with a printed form names its editions in its reading; a
+    """The row's notes.  A row with a printed form names its editions beside that form; a
     row without one names them before each note."""
     if all("printed" in source for source in sources.values()):
         return "".join(
@@ -220,14 +202,13 @@ def _notes(sources):
     )
 
 
-def _row(sources, filter_value, categories, *, with_scans):
+def _row(sources, filter_value, *, with_scans):
     record = next(iter(sources.values()))
     shared = len(sources) > 1
     edition_names = [_EDITIONS[key] for key in sources]
     reading_label = " / ".join(short for _, short in edition_names)
     edition = "both printed editions" if shared else edition_names[0][0]
     reference = f'{BOOK_ABBREVS[record["book"]]} {record["chapter"]}:{record["verse"]}'
-    instance = record.get("instance")
     location = record.get("location")
     crop_reference = f"{reference}, {location.lower()}" if location else reference
     verse_href = escape(record["verse_href"], quote=True)
@@ -241,15 +222,11 @@ def _row(sources, filter_value, categories, *, with_scans):
         scan = escape(source["scan"], quote=True)
         page_prefix = f"{short} " if shared else ""
         label += f'<br><span class="source" title="{scan}">{page_prefix}p. {source["page"]}</span>'
-    if atom := record.get("atom"):
-        label += f"<br><small>Atom {atom}</small>"
-    if instance:
-        label += f"<br><small>Instance {instance}</small>"
     if location:
         label += f"<br><small>{escape(location)}</small>"
     if strand := record.get("strand"):
         label += f"<br><bdi>{_STRANDS[strand]}</bdi>"
-    row_label, _ = categories[record["category"]]
+    row_label, _ = CATEGORIES[record["category"]]
     name = _marked_label(row_label.format(edition=edition))
     reading = _reading("MAM", record["mam"])
     if "printed" in record:
@@ -281,14 +258,13 @@ def _comparison_key(record):
         record["verse"],
         record.get("atom"),
         record.get("strand"),
-        record.get("instance"),
         record.get("location"),
         record["mam"],
         record.get("printed"),
     )
 
 
-def _rows(records_by_edition, categories, *, with_scans):
+def _rows(records_by_edition, *, with_scans):
     """The table's rows, with an edition's record merged into another's row where the two
     match, and each row's filter value counted."""
     comparisons = {}
@@ -305,7 +281,7 @@ def _rows(records_by_edition, categories, *, with_scans):
         edition = _FILTER_EDITIONS[tuple(sources)]
         filter_value = f"{category}-{edition}"
         counts[filter_value] += 1
-        rows.append(_row(sources, filter_value, categories, with_scans=with_scans))
+        rows.append(_row(sources, filter_value, with_scans=with_scans))
     return rows, counts
 
 
@@ -358,7 +334,6 @@ Miqra according to the Masorah at Hebrew Wikisource, <a href="https://creativeco
 def _document(common, inputs, generated_comment):
     rows, counts = _rows(
         {edition_id: data["differences"] for edition_id, data in inputs.items()},
-        CATEGORIES,
         with_scans=True,
     )
     choices = _filter_choices(rows, counts)
@@ -408,82 +383,14 @@ def _document(common, inputs, generated_comment):
 """
 
 
-def _count_cell(value):
-    return f'<td class="count">{value:,}</td>'
-
-
-def _census_table(label, caption, head, body):
-    return f"""<div class="comparison-table" role="region" aria-label="{escape(label, quote=True)}" tabindex="0">
-<table class="census">
-<caption>{_prose(caption)}</caption>
-<thead><tr>{head}</tr></thead>
-<tbody>
-{body}
-</tbody>
-</table>
-</div>"""
-
-
-def _census(census):
-    by_accent = census["by_accent"]
-    head = (
-        '<th scope="col">Target accent</th><th scope="col">With helper</th>'
-        '<th scope="col">Without helper</th><th scope="col">Total</th>'
-    )
-    columns = ("with_helper", "without_helper", "total")
-    body = [
-        f'<tr><th scope="row">{_romanize(row["accent"])}</th>'
-        + "".join(_count_cell(row[column]) for column in columns)
-        + "</tr>"
-        for row in by_accent["rows"]
-    ]
-    body.append(
-        '<tr><th scope="row">Total</th>'
-        + "".join(_count_cell(by_accent["total"][column]) for column in columns)
-        + "</tr>"
-    )
-    accent_table = _census_table(
-        "Readings by accent", by_accent["caption"], head, "\n".join(body)
-    )
-    by_edition = census["by_edition"]
-    head = '<th scope="col">Result</th>' + "".join(
-        f'<th scope="col">{_COLUMN_HEADINGS[key]}</th>' for key in _EDITIONS
-    )
-
-    def row(label, counts):
-        cells = "".join(_count_cell(counts[key]) for key in _EDITIONS)
-        return f'<tr><th scope="row">{_prose(label)}</th>{cells}</tr>'
-
-    body = [row(item["label"], item["counts"]) for item in by_edition["outcomes"]]
-    body.append(row("Total", by_edition["total"]))
-    body.extend(
-        row(item["label"], item["counts"]) for item in by_edition["within_agreement"]
-    )
-    edition_table = _census_table(
-        "Results by edition", by_edition["caption"], head, "\n".join(body)
-    )
-    return f"{accent_table}\n{edition_table}"
-
-
 def _results_document(results, generated_comment):
     editions = results["editions"]
     rows, counts = _rows(
         {edition_id: data["differences"] for edition_id, data in editions.items()},
-        CATEGORIES,
-        with_scans=False,
-    )
-    spelling_rows, _ = _rows(
-        {edition_id: data["spelling"] for edition_id, data in editions.items()},
-        SPELLING_CATEGORIES,
         with_scans=False,
     )
     choices = _filter_choices(rows, counts)
-    intro = "\n".join(map(_linked_note, results["intro"]))
-    findings = "\n".join(map(_linked_note, results["findings"]))
-    spelling = results["spelling"]
-    spelling_intro = "\n".join(map(_linked_note, spelling["intro"]))
     body = "\n".join(rows)
-    spelling_body = "\n".join(spelling_rows)
     return f"""<!doctype html>
 <!-- {escape(generated_comment)} -->
 <html lang="en">
@@ -499,9 +406,7 @@ def _results_document(results, generated_comment):
 <body>
 <main>
 <h1>{RESULTS_TITLE}</h1>
-{intro}
-{_census(results["census"])}
-{findings}
+<p>{_RESULTS_SUMMARY}</p>
 {_controls(choices, "SH means stress helper.", with_images=False)}
 <div class="comparison-table">
 <table id="observations">
@@ -511,18 +416,6 @@ def _results_document(results, generated_comment):
 </tbody>
 </table>
 </div>
-<details>
-<summary>{_prose(spelling["summary"])}</summary>
-{spelling_intro}
-<div class="comparison-table">
-<table id="spelling">
-{_table_head(with_scans=False)}
-<tbody>
-{spelling_body}
-</tbody>
-</table>
-</div>
-</details>
 {_mam_credit(_RESULTS_HREF)}
 </main>
 </body>
@@ -530,8 +423,8 @@ def _results_document(results, generated_comment):
 """
 
 
-def _check_record(record, categories, key):
-    if record["category"] not in categories:
+def _check_record(record, key):
+    if record["category"] not in CATEGORIES:
         raise ValueError(f"Unknown comparison category: {record}")
     if not record["mam"] or not uni_denorm.has_std_mark_order(record["mam"]):
         raise ValueError(f"Missing or out-of-order mam: {key}")
@@ -550,7 +443,7 @@ def _check(data, output_dir):
         if key in refs:
             raise ValueError(f"Duplicate comparison: {key}")
         refs.add(key)
-        _check_record(record, CATEGORIES, key)
+        _check_record(record, key)
         printed = record["printed"]
         if not printed or not uni_denorm.has_std_mark_order(printed):
             raise ValueError(f"Missing or out-of-order printed: {key}")
@@ -569,8 +462,10 @@ def _check(data, output_dir):
 
 
 def _check_results(results, inputs):
-    """Check results.json's records and census tables, and that results.html repeats
-    nothing that index.html shows."""
+    """Check results.json's records, and that results.html repeats nothing that
+    index.html shows."""
+    if list(results) != ["editions"]:
+        raise ValueError(f"Unexpected fields in results: {list(results)}")
     editions = results["editions"]
     if list(editions) != list(_EDITIONS):
         raise ValueError(f"Unexpected editions in results: {list(editions)}")
@@ -580,89 +475,33 @@ def _check_results(results, inputs):
         }
         for edition_id, data in inputs.items()
     }
-    by_category = {edition_id: Counter() for edition_id in _EDITIONS}
     for edition_id, data in editions.items():
-        if set(data) != {"differences", "spelling"}:
+        if set(data) != {"differences"}:
             raise ValueError(f"Unexpected tables for {edition_id}: {sorted(data)}")
-        for table, categories in (
-            ("differences", CATEGORIES),
-            ("spelling", SPELLING_CATEGORIES),
-        ):
-            refs = set()
-            for record in data[table]:
-                key = _comparison_key(record)
-                if key in refs:
-                    raise ValueError(f"Duplicate result: {key}")
-                refs.add(key)
-                _check_record(record, categories, key)
-                if not record.get("atom") or not record.get("notes"):
-                    raise ValueError(f"Result lacks its atom or notes: {key}")
-                if "crops" in record:
-                    raise ValueError(f"Result has crops before its move: {key}")
-                optional = {"printed", "page", "scan"} & set(record)
-                if optional and optional != {"printed", "page", "scan"}:
-                    raise ValueError(
-                        f"Result has only some of {sorted(optional)}: {key}"
-                    )
-                if optional and not uni_denorm.has_std_mark_order(record["printed"]):
-                    raise ValueError(f"Out-of-order printed: {key}")
-                identity = (record["book"], record["chapter"], record["verse"])
-                if (*identity, record["mam"]) in shown[edition_id]:
-                    raise ValueError(f"Result repeats index.html: {edition_id} {key}")
-                by_category[edition_id][record["category"]] += 1
-    _check_census(results["census"], by_category)
-
-
-def _check_census(census, by_category):
-    by_accent = census["by_accent"]
-    if tuple(row["accent"] for row in by_accent["rows"]) != _CENSUS_ACCENTS:
-        raise ValueError("Unexpected accents in the census table by accent")
-    columns = ("with_helper", "without_helper", "total")
-    for row in by_accent["rows"]:
-        if row["with_helper"] + row["without_helper"] != row["total"]:
-            raise ValueError(f"Census row does not sum to its total: {row}")
-    for column in columns:
-        if sum(row[column] for row in by_accent["rows"]) != by_accent["total"][column]:
-            raise ValueError(f"Census column {column} does not sum to its total")
-    by_edition = census["by_edition"]
-    outcomes = by_edition["outcomes"]
-    within = by_edition["within_agreement"]
-    if tuple(item["id"] for item in outcomes) != _OUTCOMES:
-        raise ValueError("Unexpected outcomes in the census table by edition")
-    if tuple(item["id"] for item in within) != _WITHIN_AGREEMENT:
-        raise ValueError("Unexpected counts within the agreements")
-    readings = census["decalogue_readings"]
-    traditions = census["decalogue_tradition"]
-    if (
-        set(readings) != set(_TRADITIONS)
-        or list(traditions) != list(_EDITIONS)
-        or not set(traditions.values()) <= set(_TRADITIONS)
-    ):
-        raise ValueError("Unexpected Decalogue traditions in the census")
-    for edition_id in _EDITIONS:
-        total = by_edition["total"][edition_id]
-        if sum(item["counts"][edition_id] for item in outcomes) != total:
-            raise ValueError(f"Census outcomes do not sum to the total: {edition_id}")
-        # Each edition is compared with the Decalogues of the tradition it follows, in
-        # place of the manuscript tradition's that the table by accent counts.
-        expected = (
-            by_accent["total"]["total"]
-            - readings["manuscript"]
-            + readings[traditions[edition_id]]
-        )
-        if total != expected:
-            raise ValueError(f"Census total does not fit its Decalogues: {edition_id}")
-        for item in within:
-            count = item["counts"][edition_id]
-            if count > outcomes[0]["counts"][edition_id]:
-                raise ValueError(f"More {item['id']} than agreements: {edition_id}")
-            if count != by_category[edition_id][item["id"]]:
-                raise ValueError(f"Census {item['id']} is not its rows: {edition_id}")
+        refs = set()
+        for record in data["differences"]:
+            key = _comparison_key(record)
+            if key in refs:
+                raise ValueError(f"Duplicate result: {key}")
+            refs.add(key)
+            _check_record(record, key)
+            if not record.get("atom") or not record.get("notes"):
+                raise ValueError(f"Result lacks its atom or notes: {key}")
+            if "crops" in record:
+                raise ValueError(f"Result has crops before its move: {key}")
+            optional = {"printed", "page", "scan"} & set(record)
+            if optional and optional != {"printed", "page", "scan"}:
+                raise ValueError(f"Result has only some of {sorted(optional)}: {key}")
+            if optional and not uni_denorm.has_std_mark_order(record["printed"]):
+                raise ValueError(f"Out-of-order printed: {key}")
+            identity = (record["book"], record["chapter"], record["verse"])
+            if (*identity, record["mam"]) in shown[edition_id]:
+                raise ValueError(f"Result repeats index.html: {edition_id} {key}")
 
 
 def render(input_dir, output_dir, *, generated_comment):
-    """Write the combined report, with crops already in output_dir, and the census's
-    further results."""
+    """Write the combined report, with crops already in output_dir, and the further
+    differences."""
     common = json.loads((input_dir / "common.json").read_text(encoding="utf-8"))
     inputs = {
         key: json.loads((input_dir / f"{key}.json").read_text(encoding="utf-8"))

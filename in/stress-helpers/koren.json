@@ -147,6 +147,7 @@
       "book": "2Kings",
       "chapter": 20,
       "verse": 14,
+      "location": "Second occurrence",
       "mam": "וַיֹּ֙אמֶר֙",
       "printed": "וַיֹּ֣אמֶר",
       "category": "different-accent",
@@ -157,7 +158,7 @@
       ],
       "notes": [
         {
-          "text": "Koren has munaḥ on yod in the second occurrence of this chanted word."
+          "text": "Koren has munaḥ on yod."
         }
       ],
       "verse_href": "../MAM-with-doc/BD-2Kings.html#c20v14"
