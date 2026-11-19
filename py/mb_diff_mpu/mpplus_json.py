@@ -10,6 +10,7 @@ import json
 import os
 
 from mb_cmn import provenance
+from mb_diff_mpu import mpplus_credits
 from mb_diff_mpu.mpplus_expand import split_structural_diff
 from mb_diff_mpu.mpplus_structure import template_name_multiset_delta
 
@@ -77,6 +78,9 @@ def _serialize_diff(d):
         out["docnote_notes"] = d["docnote_notes"]
     if d.get("alternative_changes"):
         out["alternative_changes"] = d["alternative_changes"]
+    credited = mpplus_credits.entry_records(d.get("credit_records", ()), out)
+    if credited:
+        out["credits"] = [mpplus_credits.serialize(credit) for credit in credited]
     return out
 
 
@@ -103,7 +107,9 @@ def write_json(diffs, old_label, new_label, out_path):
     selected text. Each entry has the current template family, one-based occurrence
     in that family within the verse, role, kind, and the actual old/new Scripture
     values. A qere pointing migration uses kind ``pointing-migration``; other
-    changes to these alternatives use ``content``.
+    changes to these alternatives use ``content``. An optional ``credits`` array
+    lists the records of ``in/mam-change-log-credits.json`` that credit the entry,
+    each as ``mpplus_credits.serialize`` writes it.
     """
     expanded = []
     for diff in diffs:

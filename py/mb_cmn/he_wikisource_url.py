@@ -24,3 +24,14 @@ def he_diff_url(title: str, diff: str | int, oldid: str | int) -> str:
     """Build a Hebrew Wikisource diff URL without double-encoding."""
     title_enc = pct_path_component(title)
     return f"{_HE_WIKISOURCE_DIFF_BASE}?" f"title={title_enc}&diff={diff}&oldid={oldid}"
+
+
+def he_permanent_section_url(title: str, oldid: str | int, section: str) -> str:
+    """Build a Hebrew Wikisource permanent link to one revision, at one section's anchor.
+
+    A section's anchor is its title with spaces as underscores. A permanent link survives
+    the archiving of a talk page, which moves its sections to another page.
+    """
+    title_enc = pct_path_component(title)
+    anchor = pct_fragment(section.replace(" ", "_"))
+    return f"{_HE_WIKISOURCE_DIFF_BASE}?title={title_enc}&oldid={oldid}#{anchor}"

@@ -38,6 +38,18 @@ HEAD and writes gh-pages/MAM-with-doc/change-log/unpinned-latest.html when that
 comparison produces diffs. When unreleased diffs are absent, the unpinned-latest
 artifacts are rewritten as empty reports so stale content is not left behind.
 
+Every report credits contributors other than Ben and Avi from the hand-maintained
+in/mam-change-log-credits.json, which mb_diff_mpu/mpplus_credits.py validates: a
+report's JSON lists each record on the entry it credits, and its HTML puts a credit
+line on that entry's card. A run that regenerates the whole change log -- --all,
+--check, --pin and the mega's diff-mpplus step, all of which reach run_all -- stops
+after writing the reports and before writing the index unless each record matches
+exactly one entry across them, and names each record that does not. A refresh that
+changes a credited form trips it; mend the record, restore
+gh-pages/MAM-with-doc/change-log/ with git restore, and run again. A run that writes
+one report, with no arguments or with --old and --new, puts on it the credits that
+match and checks nothing further.
+
 WHICH RELEASE IS THE LATEST IS READ OFF releases.json RATHER THAN OUT OF GIT --
 see _latest_release_entry for the chain walk that replaced a commit count, and
 Ben's decision of 2026-09-11 behind it. That lets this program run in a shallow
@@ -66,6 +78,7 @@ from mb_cmn import paths
 from mb_diff_mpu import (
     mpplus_archive,
     mpplus_classify,
+    mpplus_credits,
     mpplus_extract,
     mpplus_html,
     mpplus_index,
@@ -230,6 +243,7 @@ def generate_report(
             f"{len(verification_errors)} diff(s) failed roundtrip verification; "
             "no JSON or HTML report was written"
         )
+    mpplus_credits.give_diffs_their_records(diffs, mpplus_credits.load_credits())
     old = mpplus_revisions.resolve(old_rev)
     new = mpplus_revisions.resolve(new_rev)
     os.makedirs(os.path.dirname(output) or ".", exist_ok=True)
@@ -310,6 +324,10 @@ def run_all(change_log_dir=CHANGE_LOG_DIR):
     unpinned_info = run_unpinned_latest(change_log_dir)
     if unpinned_info is not None:
         release_info.append(unpinned_info)
+    mpplus_credits.require_each_record_matched_once(
+        change_log_dir,
+        [*(entry["name"] for entry in data["releases"]), "unpinned-latest"],
+    )
     mpplus_index.write_index(release_info, change_log_dir)
     return release_info
 

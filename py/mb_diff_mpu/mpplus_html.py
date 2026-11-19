@@ -18,8 +18,10 @@ sibling mpplus_index.py bypasses mb_html for the same reason.
 
 import difflib
 from collections import Counter
+import unicodedata
 
 from mb_cmn.new_york_time import labelled
+from mb_diff_mpu import mpplus_credits, mpplus_json
 from mb_diff_mpu.grapheme_diff import char_diff_spans
 from mb_diff_mpu.mpplus_structure import template_name_multiset_delta
 from mb_diff_mpu.describe_diff import describe_change, add_name_tooltips
@@ -123,6 +125,44 @@ def _distribute_docnote(old_text, new_text, docnote_notes, expected_count):
     return result
 
 
+def _distribute_credits(diff, expected_count):
+    """Give each card of a text change the credit records whose change is its raw pair.
+
+    As in ``_distribute_docnote``, a card's index is its raw pair's index, the pairs being
+    narrowed on the raw text, as the JSON's ``changes`` are. A credit names a person, so where
+    a credited pair's raw and display narrowings give different counts this raises, rather
+    than fall back to the last card as ``_distribute_docnote`` does.
+    """
+    records = [
+        credit for credit in diff.get("credit_records", ()) if credit.change is not None
+    ]
+    if not records:
+        return [[] for _ in range(expected_count)]
+    raw_pairs = _narrow_to_changed_words(diff["old_text"], diff["new_text"])
+    credited = [
+        [credit for credit in records if credit.change == (old, new)]
+        for old, new, _, _ in raw_pairs
+    ]
+    if not any(credited):
+        return [[] for _ in range(expected_count)]
+    if len(raw_pairs) != expected_count:
+        names = "; ".join(credit.describe() for credit in records)
+        raise mpplus_credits.CreditError(
+            f"{ref_str(diff)}: the raw text narrows to {len(raw_pairs)} changed spans and"
+            f" the displayed text to {expected_count} cards, so no card can be found for"
+            f" {names}"
+        )
+    return credited
+
+
+def _structural_credits(diff):
+    """The credit records of a structural card: those its JSON entry holds."""
+    records = diff.get("credit_records", ())
+    if not records:
+        return []
+    return mpplus_credits.entry_records(records, mpplus_json._serialize_diff(diff))
+
+
 def _format_template_name_changes(names):
     """Format template-name deltas, collapsing duplicates as xN counts."""
     counts = Counter(names)
@@ -150,10 +190,12 @@ def _expand_diffs(diffs):
                 for sub in split:
                     out = dict(sub)
                     out["docnote_notes"] = _note_bodies(sub.get("docnote_notes", []))
+                    out["card_credits"] = _structural_credits(sub)
                     expanded.append(out)
                 continue
             out = dict(diff)
             out["docnote_notes"] = _note_bodies(diff.get("docnote_notes", []))
+            out["card_credits"] = _structural_credits(diff)
             expanded.append(out)
             continue
         old_display = normalize_paseq_spacing(
@@ -167,6 +209,7 @@ def _expand_diffs(diffs):
         notes_per_pair = _distribute_docnote(
             diff["old_text"], diff["new_text"], docnote_notes, len(pairs)
         )
+        credits_per_pair = _distribute_credits(diff, len(pairs))
         tmpl_added, tmpl_removed = template_name_multiset_delta(
             diff["old_ep"], diff["new_ep"]
         )
@@ -182,6 +225,7 @@ def _expand_diffs(diffs):
                 "old_ep": diff["old_ep"],
                 "new_ep": diff["new_ep"],
                 "docnote_notes": notes_per_pair[idx],
+                "card_credits": credits_per_pair[idx],
             }
             if tmpl_added:
                 sub["templates_added"] = tmpl_added
@@ -245,6 +289,26 @@ def _render_alternative_changes(changes):
             f'<span class="pointed-heb" dir="rtl">{new_html}</span>.</p>'
         )
     return paragraphs
+
+
+def _render_credit(credit):
+    """The card's line crediting a contributor, with a link to each piece of evidence.
+
+    The name is shown as given, linked to the contributor's Hebrew Wikisource user page
+    when there is one. A right-to-left name, such as a Hebrew one, is isolated with a
+    ``<bdi>`` that has no ``lang``, as an unpointed name in English prose is.
+    """
+    name_html = _esc(credit.name)
+    if any(unicodedata.bidirectional(char) in ("R", "AL") for char in credit.name):
+        name_html = f"<bdi>{name_html}</bdi>"
+    user_page = mpplus_credits.user_page_url(credit)
+    if user_page is not None:
+        name_html = f'<a href="{_esc(user_page)}" target="_blank" rel="noopener">{name_html}</a>'
+    links = ", ".join(
+        f'<a href="{_esc(url)}" target="_blank" rel="noopener">{_esc(label)}</a>'
+        for _, label, url in credit.evidence
+    )
+    return f'<p class="credit">Credit to {name_html}: {links}.</p>'
 
 
 def _render_card(diff):
@@ -362,6 +426,7 @@ def _render_card(diff):
             f'<span class="heb new-side">{new_html}</span>'
             "</div>"
         )
+    lines.extend(_render_credit(credit) for credit in diff.get("card_credits", ()))
     lines.extend(_render_alternative_changes(diff.get("alternative_changes", [])))
     for note in diff.get("docnote_notes", []):
         body_html = docnote_body_to_html(note)

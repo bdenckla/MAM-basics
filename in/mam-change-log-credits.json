@@ -1,0 +1,45 @@
+{
+  "_header": [
+    "Credits that the MAM change logs, gh-pages/MAM-with-doc/change-log/, show for changes that people other than Ben Denckla and Avi Kadish reported or suggested.",
+    "Hand-maintained. A credit is recorded only on Ben's word; Avi's requests reach it through Ben (Ben's decision of 2026-11-19, doc/PLAN-change-log-credits.md, decision 2).",
+    "py/main_diff.py mpplus puts each record on the change-log entry at its book, chapter and verse that holds its change, one of the entry's changes pairs, or its templates, equal to a structural entry's templates_added and templates_removed. py/mb_diff_mpu/mpplus_credits.py validates the file and names the keys and evidence kinds it takes.",
+    "Every run that regenerates the whole change log, as --all, --check, --pin and the mega's diff-mpplus step do, stops unless each record matches exactly one entry.",
+    "Copy a record's Hebrew forms from the change log's JSON by script, never by typing them: an editor can reorder marks, and the match is exact."
+  ],
+  "contributors": {
+    "asael": {
+      "name": "Asael",
+      "user_page": "עשהאל"
+    }
+  },
+  "credits": [
+    {
+      "contributor": "asael",
+      "book": "2Samuel",
+      "chapter": 4,
+      "verse": 6,
+      "change": {
+        "old": "וְ֠הֵנָּ֠ה",
+        "new": "וְ֠הֵ֠נָּה"
+      },
+      "evidence": [
+        {
+          "kind": "he-wikisource-section",
+          "page": "שיחת משתמש:Dovi",
+          "oldid": 3102556,
+          "section": "הטעמה בשמואל ב' ד' ו'"
+        },
+        {
+          "kind": "he-wikisource-diff",
+          "page": "שמואל ב ד/טעמים",
+          "diff": 3102555,
+          "oldid": 2987851
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decision of 2026-11-19 on Avi's request"
+      }
+    }
+  ]
+}

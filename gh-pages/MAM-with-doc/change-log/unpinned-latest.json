@@ -132,6 +132,26 @@
           "old": "וְ֠הֵנָּ֠ה",
           "new": "וְ֠הֵ֠נָּה"
         }
+      ],
+      "credits": [
+        {
+          "contributor": "asael",
+          "name": "Asael",
+          "change": {
+            "old": "וְ֠הֵנָּ֠ה",
+            "new": "וְ֠הֵ֠נָּה"
+          },
+          "evidence": [
+            {
+              "kind": "he-wikisource-section",
+              "url": "https://he.wikisource.org/w/index.php?title=%D7%A9%D7%99%D7%97%D7%AA%20%D7%9E%D7%A9%D7%AA%D7%9E%D7%A9%3ADovi&oldid=3102556#%D7%94%D7%98%D7%A2%D7%9E%D7%94_%D7%91%D7%A9%D7%9E%D7%95%D7%90%D7%9C_%D7%91%27_%D7%93%27_%D7%95%27"
+            },
+            {
+              "kind": "he-wikisource-diff",
+              "url": "https://he.wikisource.org/w/index.php?title=%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%91%20%D7%93%2F%D7%98%D7%A2%D7%9E%D7%99%D7%9D&diff=3102555&oldid=2987851"
+            }
+          ]
+        }
       ]
     },
     {

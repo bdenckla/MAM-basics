@@ -119,6 +119,7 @@ table.summary tr.total-row { font-weight: 600; cursor: default; }
 .new-side mark.diff-hi { background: var(--new-mark-bg); border-radius: 2px; }
 .arrow { font-size: 1.1rem; color: var(--arrow); }
 .change-desc { font-size: .85rem; color: var(--detail-text); }
+.credit { font-size: .85rem; color: var(--detail-text); margin: .2rem 0 0; }
 .book-header { margin-top: 1.2rem; margin-bottom: .3rem; }
 .book-header.hidden { display: none; }
 .docnote-note {
