@@ -1,6 +1,7 @@
 # November 19 continuing portable MAM-basics nightly
 
 State: completed 2026-11-19; broad stages pass, historical HTML findings retained
+Updates and later status: [review-nightly-2026-11-19-update.md](review-nightly-2026-11-19-update.md).
 
 Exact source `54aaab9300e1559c891275a547dd516a84207354`, separate pristine required input `9aeca70eb69ec810ca52cd9a04cf03f0d7805542`. Latest hourly receipt parent `9c87ace2fa823440a659748cb05626ee74243bec` already covers this source; no new review window is opened or duplicated. Overall reviewed-through remains `210affe3ac2931473bead0de839be0de08309e3d`; all earlier gaps and finished receipts are preserved. Maintained last-tested coverage advances only to this actually executed source.
 
