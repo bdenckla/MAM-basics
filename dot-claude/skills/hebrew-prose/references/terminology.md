@@ -461,7 +461,9 @@ Rabbinic Bible", the "Received Edition"; neither source has a phrase like "the p
   key of sigils on the telisha gedola notes, takes none. Eight pages gained it that day:
   MAM-with-doc's FOI page for deḥi with a stress meteg, accgram's telisha gedola and Psalms 17:14
   notes, near-Aleppo's choices, Daniel, Genesis 43:28 and Avi-ketiv investigation pages, and the
-  intro-doc audit's review.
+  intro-doc audit's review. Near-Aleppo's FOI page of qere without ketiv, whose translation of
+  MAM's note at Jeremiah 31:37 already said "the printed tradition", gained it on 2026-11-19,
+  when Ben took the same recommendation for it (*"yes, I concur with your recommendation"*).
 
 `doc/sigil-decoding.md` decodes the sigil the same way. Adopted on 2026-11-18 on the stress-helpers
 page, `gh-pages/stress-helpers/index.html`, and swept the same day through the other live
