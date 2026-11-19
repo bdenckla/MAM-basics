@@ -21,6 +21,22 @@
           "end": 81,
           "param2": "א=הַֽמֲלַֽקֲקִים֙ (חטף באותיות מ\"ם וקו\"ף הראשונה, וגעיה באותיות ה\"א ולמ\"ד)"
         }
+      ],
+      "credits": [
+        {
+          "contributor": "asael-reiter",
+          "name": "Asael Reiter",
+          "change": {
+            "old": "הַֽמְלַקְﬞקִים֙",
+            "new": "הַֽמְﬞלַֽקְﬞקִים֙"
+          },
+          "evidence": [
+            {
+              "kind": "mam-sheet-changes-row",
+              "url": "https://docs.google.com/spreadsheets/d/1mkQyj6by1AtBUabpbaxaZq9Z2X3pX8ZpwG91ZCSOEYs/edit?gid=953964633#gid=953964633&range=A94"
+            }
+          ]
+        }
       ]
     },
     {
@@ -69,6 +85,22 @@
               "tmpl_name": "ש"
             },
             "הקלדה!=יוֹעֵ֣ץ דָּוִ֗ד (אין קו של לגרמיה) וכמו כן במכון ממרא (!) ובדפוסים (לטריס, בער, מ\"ג-ורשה) וקורן."
+          ]
+        }
+      ],
+      "credits": [
+        {
+          "contributor": "moshe-greenberg",
+          "name": "Moshe Greenberg",
+          "change": {
+            "old": "יוֹעֵ֣ץ",
+            "new": "יוֹעֵ֣ץ׀"
+          },
+          "evidence": [
+            {
+              "kind": "mam-sheet-changes-row",
+              "url": "https://docs.google.com/spreadsheets/d/1mkQyj6by1AtBUabpbaxaZq9Z2X3pX8ZpwG91ZCSOEYs/edit?gid=953964633#gid=953964633&range=A87"
+            }
           ]
         }
       ]
@@ -412,6 +444,22 @@
           "end": 15,
           "param2": "הקמץ היה מתקיים כקמץ גדול אלמלא ההקפה, כמו: \"בָּ֣ז לְ֭דָבָר יֵחָ֣בֶל ל֑וֹ\" (משלי יג,יג), ולכן הוא קמץ גדול אף בתיבה מוקפת."
         }
+      ],
+      "credits": [
+        {
+          "contributor": "anonymous-contributor-at-hebrew-wikisource",
+          "name": "anonymous contributor at Hebrew Wikisource",
+          "change": {
+            "old": "בׇּז־לְרֵעֵ֥הוּ",
+            "new": "בָּז־לְרֵעֵ֥הוּ"
+          },
+          "evidence": [
+            {
+              "kind": "mam-sheet-changes-row",
+              "url": "https://docs.google.com/spreadsheets/d/1mkQyj6by1AtBUabpbaxaZq9Z2X3pX8ZpwG91ZCSOEYs/edit?gid=953964633#gid=953964633&range=A104"
+            }
+          ]
+        }
       ]
     },
     {
@@ -430,6 +478,22 @@
           "start": 0,
           "end": 15,
           "param2": "לגבי הקמץ ראו בהערה לעיל, משלי יא,יב."
+        }
+      ],
+      "credits": [
+        {
+          "contributor": "anonymous-contributor-at-hebrew-wikisource",
+          "name": "anonymous contributor at Hebrew Wikisource",
+          "change": {
+            "old": "בׇּז־לְרֵעֵ֥הוּ",
+            "new": "בָּז־לְרֵעֵ֥הוּ"
+          },
+          "evidence": [
+            {
+              "kind": "mam-sheet-changes-row",
+              "url": "https://docs.google.com/spreadsheets/d/1mkQyj6by1AtBUabpbaxaZq9Z2X3pX8ZpwG91ZCSOEYs/edit?gid=953964633#gid=953964633&range=A104"
+            }
+          ]
         }
       ]
     },

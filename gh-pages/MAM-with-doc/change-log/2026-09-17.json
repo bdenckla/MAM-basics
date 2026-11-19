@@ -192,6 +192,22 @@
           "old": "וַֽיַּעֲמֵ֥ד",
           "new": "וַיַּעֲמֵ֥ד"
         }
+      ],
+      "credits": [
+        {
+          "contributor": "anonymous-contributor-at-wikisource",
+          "name": "anonymous contributor at Wikisource",
+          "change": {
+            "old": "וַֽיַּעֲמֵ֥ד",
+            "new": "וַיַּעֲמֵ֥ד"
+          },
+          "evidence": [
+            {
+              "kind": "mam-sheet-changes-row",
+              "url": "https://docs.google.com/spreadsheets/d/1mkQyj6by1AtBUabpbaxaZq9Z2X3pX8ZpwG91ZCSOEYs/edit?gid=953964633#gid=953964633&range=A31"
+            }
+          ]
+        }
       ]
     },
     {
@@ -219,6 +235,22 @@
               "tmpl_name": "ש"
             },
             "ל?!=וַֽיַּעַמְד֗וּ (געיה כבדה באות וי\"ו?); הקו של הגעיה נכתב בין האותיות וי\"ו ויו\"ד. מבנה התיבה לא מתאים לגעיה כבדה סדירה, ולפי ברויאר ודותן מדובר על געיה קלה באות יו\"ד. אך לפי BHS והמקליד הגעיה שייכת לאות וי\"ו."
+          ]
+        }
+      ],
+      "credits": [
+        {
+          "contributor": "anonymous-contributor-at-wikisource",
+          "name": "anonymous contributor at Wikisource",
+          "change": {
+            "old": "וַֽיַּעַמְד֗וּ",
+            "new": "וַיַּֽעַמְד֗וּ"
+          },
+          "evidence": [
+            {
+              "kind": "mam-sheet-changes-row",
+              "url": "https://docs.google.com/spreadsheets/d/1mkQyj6by1AtBUabpbaxaZq9Z2X3pX8ZpwG91ZCSOEYs/edit?gid=953964633#gid=953964633&range=A30"
+            }
           ]
         }
       ]
@@ -252,6 +284,22 @@
           "old": "יְהוֹשֻׁעַ֙",
           "new": "יְהוֹשֻׁ֙עַ֙"
         }
+      ],
+      "credits": [
+        {
+          "contributor": "daniel-holman",
+          "name": "Daniel Holman",
+          "change": {
+            "old": "יְהוֹשֻׁעַ֙",
+            "new": "יְהוֹשֻׁ֙עַ֙"
+          },
+          "evidence": [
+            {
+              "kind": "mam-sheet-changes-row",
+              "url": "https://docs.google.com/spreadsheets/d/1mkQyj6by1AtBUabpbaxaZq9Z2X3pX8ZpwG91ZCSOEYs/edit?gid=953964633#gid=953964633&range=A18"
+            }
+          ]
+        }
       ]
     },
     {
@@ -278,6 +326,22 @@
         {
           "old": "בְנֵֽי־שִׁמְע֖וֹן",
           "new": "בְנֵי־שִׁמְע֖וֹן"
+        }
+      ],
+      "credits": [
+        {
+          "contributor": "daniel-holman",
+          "name": "Daniel Holman",
+          "change": {
+            "old": "בְנֵֽי־שִׁמְע֖וֹן",
+            "new": "בְנֵי־שִׁמְע֖וֹן"
+          },
+          "evidence": [
+            {
+              "kind": "mam-sheet-changes-row",
+              "url": "https://docs.google.com/spreadsheets/d/1mkQyj6by1AtBUabpbaxaZq9Z2X3pX8ZpwG91ZCSOEYs/edit?gid=953964633#gid=953964633&range=A16"
+            }
+          ]
         }
       ]
     },
@@ -447,6 +511,22 @@
           "old": "כִּֽי־סָגַ֥ר",
           "new": "כִּי־סָגַ֥ר"
         }
+      ],
+      "credits": [
+        {
+          "contributor": "daniel-holman",
+          "name": "Daniel Holman",
+          "change": {
+            "old": "כִּֽי־סָגַ֥ר",
+            "new": "כִּי־סָגַ֥ר"
+          },
+          "evidence": [
+            {
+              "kind": "mam-sheet-changes-row",
+              "url": "https://docs.google.com/spreadsheets/d/1mkQyj6by1AtBUabpbaxaZq9Z2X3pX8ZpwG91ZCSOEYs/edit?gid=953964633#gid=953964633&range=A15"
+            }
+          ]
+        }
       ]
     },
     {
@@ -482,6 +562,22 @@
         {
           "old": "כִּֽי־שָׁם֙",
           "new": "כִּי־שָׁם֙"
+        }
+      ],
+      "credits": [
+        {
+          "contributor": "daniel-holman",
+          "name": "Daniel Holman",
+          "change": {
+            "old": "כִּֽי־שָׁם֙",
+            "new": "כִּי־שָׁם֙"
+          },
+          "evidence": [
+            {
+              "kind": "mam-sheet-changes-row",
+              "url": "https://docs.google.com/spreadsheets/d/1mkQyj6by1AtBUabpbaxaZq9Z2X3pX8ZpwG91ZCSOEYs/edit?gid=953964633#gid=953964633&range=A14"
+            }
+          ]
         }
       ]
     },
@@ -672,6 +768,22 @@
           "old": "אֶל־אֲדֹֽנֵיהֶ֑ם",
           "new": "אֶל־אֲדֹנֵיהֶ֑ם"
         }
+      ],
+      "credits": [
+        {
+          "contributor": "daniel-holman",
+          "name": "Daniel Holman",
+          "change": {
+            "old": "אֶל־אֲדֹֽנֵיהֶ֑ם",
+            "new": "אֶל־אֲדֹנֵיהֶ֑ם"
+          },
+          "evidence": [
+            {
+              "kind": "mam-sheet-changes-row",
+              "url": "https://docs.google.com/spreadsheets/d/1mkQyj6by1AtBUabpbaxaZq9Z2X3pX8ZpwG91ZCSOEYs/edit?gid=953964633#gid=953964633&range=A13"
+            }
+          ]
+        }
       ]
     },
     {
@@ -700,6 +812,36 @@
           "old": "וִֽיהוּדָ֑ה",
           "new": "וִיהוּדָ֑ה"
         }
+      ],
+      "credits": [
+        {
+          "contributor": "daniel-holman",
+          "name": "Daniel Holman",
+          "change": {
+            "old": "עַל־יְרֽוּשָׁלַ֖͏ִם",
+            "new": "עַל־יְרוּשָׁלַ֖͏ִם"
+          },
+          "evidence": [
+            {
+              "kind": "mam-sheet-changes-row",
+              "url": "https://docs.google.com/spreadsheets/d/1mkQyj6by1AtBUabpbaxaZq9Z2X3pX8ZpwG91ZCSOEYs/edit?gid=953964633#gid=953964633&range=A12"
+            }
+          ]
+        },
+        {
+          "contributor": "daniel-holman",
+          "name": "Daniel Holman",
+          "change": {
+            "old": "וִֽיהוּדָ֑ה",
+            "new": "וִיהוּדָ֑ה"
+          },
+          "evidence": [
+            {
+              "kind": "mam-sheet-changes-row",
+              "url": "https://docs.google.com/spreadsheets/d/1mkQyj6by1AtBUabpbaxaZq9Z2X3pX8ZpwG91ZCSOEYs/edit?gid=953964633#gid=953964633&range=A12"
+            }
+          ]
+        }
       ]
     },
     {
@@ -711,6 +853,22 @@
         {
           "old": "לַֽאדֹנָ֧י",
           "new": "לַאדֹנָ֧י"
+        }
+      ],
+      "credits": [
+        {
+          "contributor": "daniel-holman",
+          "name": "Daniel Holman",
+          "change": {
+            "old": "לַֽאדֹנָ֧י",
+            "new": "לַאדֹנָ֧י"
+          },
+          "evidence": [
+            {
+              "kind": "mam-sheet-changes-row",
+              "url": "https://docs.google.com/spreadsheets/d/1mkQyj6by1AtBUabpbaxaZq9Z2X3pX8ZpwG91ZCSOEYs/edit?gid=953964633#gid=953964633&range=A10"
+            }
+          ]
         }
       ]
     },
@@ -736,6 +894,22 @@
           "old": "וְ֠הָיָ֠ה",
           "new": "וְֽ֠הָיָ֠ה"
         }
+      ],
+      "credits": [
+        {
+          "contributor": "daniel-holman",
+          "name": "Daniel Holman",
+          "change": {
+            "old": "וְ֠הָיָ֠ה",
+            "new": "וְֽ֠הָיָ֠ה"
+          },
+          "evidence": [
+            {
+              "kind": "mam-sheet-changes-row",
+              "url": "https://docs.google.com/spreadsheets/d/1mkQyj6by1AtBUabpbaxaZq9Z2X3pX8ZpwG91ZCSOEYs/edit?gid=953964633#gid=953964633&range=A6"
+            }
+          ]
+        }
       ]
     },
     {
@@ -748,6 +922,26 @@
           "old": "מִֽי־נָתַ֨ן",
           "new": "מִי־נָתַ֨ן"
         }
+      ],
+      "credits": [
+        {
+          "contributor": "daniel-holman",
+          "name": "Daniel Holman",
+          "change": {
+            "old": "מִֽי־נָתַ֨ן",
+            "new": "מִי־נָתַ֨ן"
+          },
+          "evidence": [
+            {
+              "kind": "mam-sheet-changes-row",
+              "url": "https://docs.google.com/spreadsheets/d/1mkQyj6by1AtBUabpbaxaZq9Z2X3pX8ZpwG91ZCSOEYs/edit?gid=953964633#gid=953964633&range=A9"
+            },
+            {
+              "kind": "mam-sheet-changes-row",
+              "url": "https://docs.google.com/spreadsheets/d/1mkQyj6by1AtBUabpbaxaZq9Z2X3pX8ZpwG91ZCSOEYs/edit?gid=953964633#gid=953964633&range=A240"
+            }
+          ]
+        }
       ]
     },
     {
@@ -759,6 +953,22 @@
         {
           "old": "יַֽעֲזׇר־לִ֔י",
           "new": "יַעֲזׇר־לִ֔י"
+        }
+      ],
+      "credits": [
+        {
+          "contributor": "daniel-holman",
+          "name": "Daniel Holman",
+          "change": {
+            "old": "יַֽעֲזׇר־לִ֔י",
+            "new": "יַעֲזׇר־לִ֔י"
+          },
+          "evidence": [
+            {
+              "kind": "mam-sheet-changes-row",
+              "url": "https://docs.google.com/spreadsheets/d/1mkQyj6by1AtBUabpbaxaZq9Z2X3pX8ZpwG91ZCSOEYs/edit?gid=953964633#gid=953964633&range=A8"
+            }
+          ]
         }
       ]
     },
@@ -872,6 +1082,22 @@
           "old": "וְלֹֽא־יִמָּצֵ֥א",
           "new": "וְלֹא־יִמָּצֵ֥א"
         }
+      ],
+      "credits": [
+        {
+          "contributor": "daniel-holman",
+          "name": "Daniel Holman",
+          "change": {
+            "old": "וְלֹֽא־יִמָּצֵ֥א",
+            "new": "וְלֹא־יִמָּצֵ֥א"
+          },
+          "evidence": [
+            {
+              "kind": "mam-sheet-changes-row",
+              "url": "https://docs.google.com/spreadsheets/d/1mkQyj6by1AtBUabpbaxaZq9Z2X3pX8ZpwG91ZCSOEYs/edit?gid=953964633#gid=953964633&range=A7"
+            }
+          ]
+        }
       ]
     },
     {
@@ -883,6 +1109,22 @@
         {
           "old": "אֲשֶׁר־זֵ֣רוּ",
           "new": "אֲשֶׁר־זֵר֣וּ"
+        }
+      ],
+      "credits": [
+        {
+          "contributor": "daniel-holman",
+          "name": "Daniel Holman",
+          "change": {
+            "old": "אֲשֶׁר־זֵ֣רוּ",
+            "new": "אֲשֶׁר־זֵר֣וּ"
+          },
+          "evidence": [
+            {
+              "kind": "mam-sheet-changes-row",
+              "url": "https://docs.google.com/spreadsheets/d/1mkQyj6by1AtBUabpbaxaZq9Z2X3pX8ZpwG91ZCSOEYs/edit?gid=953964633#gid=953964633&range=A17"
+            }
+          ]
         }
       ]
     },
@@ -1099,6 +1341,22 @@
           "old": "כִּֽי־חָזָֽק׃",
           "new": "כִּי־חָזָֽק׃"
         }
+      ],
+      "credits": [
+        {
+          "contributor": "daniel-holman",
+          "name": "Daniel Holman",
+          "change": {
+            "old": "כִּֽי־חָזָֽק׃",
+            "new": "כִּי־חָזָֽק׃"
+          },
+          "evidence": [
+            {
+              "kind": "mam-sheet-changes-row",
+              "url": "https://docs.google.com/spreadsheets/d/1mkQyj6by1AtBUabpbaxaZq9Z2X3pX8ZpwG91ZCSOEYs/edit?gid=953964633#gid=953964633&range=A11"
+            }
+          ]
+        }
       ]
     },
     {
@@ -1110,6 +1368,22 @@
         {
           "old": "מֶלֶךְ־יִשְׂרָאֵ֑ל",
           "new": "מֶֽלֶךְ־יִשְׂרָאֵ֑ל"
+        }
+      ],
+      "credits": [
+        {
+          "contributor": "daniel-holman",
+          "name": "Daniel Holman",
+          "change": {
+            "old": "מֶלֶךְ־יִשְׂרָאֵ֑ל",
+            "new": "מֶֽלֶךְ־יִשְׂרָאֵ֑ל"
+          },
+          "evidence": [
+            {
+              "kind": "mam-sheet-changes-row",
+              "url": "https://docs.google.com/spreadsheets/d/1mkQyj6by1AtBUabpbaxaZq9Z2X3pX8ZpwG91ZCSOEYs/edit?gid=953964633#gid=953964633&range=A5"
+            }
+          ]
         }
       ]
     },

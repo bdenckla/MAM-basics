@@ -4,17 +4,46 @@
     "Hand-maintained. A credit is recorded only on Ben's word; Avi's requests reach it through Ben (Ben's decision of 2026-11-19, doc/PLAN-change-log-credits.md, decision 2).",
     "py/main_diff.py mpplus puts each record on the change-log entry at its book, chapter and verse that holds its change, one of the entry's changes pairs, or its templates, equal to a structural entry's templates_added and templates_removed. py/mb_diff_mpu/mpplus_credits.py validates the file and names the keys and evidence kinds it takes.",
     "Every run that regenerates the whole change log, as --all, --check, --pin and the mega's diff-mpplus step do, stops unless each record matches exactly one entry.",
-    "Copy a record's Hebrew forms from the change log's JSON by script, never by typing them: an editor can reorder marks, and the match is exact."
+    "Copy a record's Hebrew forms from the change log's JSON by script, never by typing them: an editor can reorder marks, and the match is exact.",
+    "The records whose evidence is a Sheet row (kind mam-sheet-changes-row) were ported on 2026-11-19 from the frozen changes tab of MAM's old Google Sheet, captured in in/mam-go-changes-tab/, as doc/change-log-credits-sheet-port-2026-11-19.md records."
   ],
   "contributors": {
-    "asael": {
-      "name": "Asael",
+    "asael-reiter": {
+      "name": "Asael Reiter",
       "user_page": "עשהאל"
+    },
+    "daniel-holman": {
+      "name": "Daniel Holman",
+      "user_page": null
+    },
+    "anonymous-contributor-at-wikisource": {
+      "name": "anonymous contributor at Wikisource",
+      "user_page": null
+    },
+    "moshe-greenberg": {
+      "name": "Moshe Greenberg",
+      "user_page": null
+    },
+    "anonymous-contributor-at-hebrew-wikisource": {
+      "name": "anonymous contributor at Hebrew Wikisource",
+      "user_page": null
+    },
+    "anonymous-contributor-at-alhatorah": {
+      "name": "anonymous contributor at AlHatorah",
+      "user_page": null
+    },
+    "timothy-leininger": {
+      "name": "Timothy Leininger",
+      "user_page": null
+    },
+    "anonymous-editor-at-hebrew-wikisource": {
+      "name": "anonymous editor at Hebrew Wikisource",
+      "user_page": null
     }
   },
   "credits": [
     {
-      "contributor": "asael",
+      "contributor": "asael-reiter",
       "book": "2Samuel",
       "chapter": 4,
       "verse": 6,
@@ -39,6 +68,1230 @@
       "recorded": {
         "on": "2026-11-19",
         "basis": "Ben's decision of 2026-11-19 on Avi's request"
+      }
+    },
+    {
+      "contributor": "daniel-holman",
+      "book": "2Chronicles",
+      "chapter": 28,
+      "verse": 19,
+      "change": {
+        "old": "מֶלֶךְ־יִשְׂרָאֵ֑ל",
+        "new": "מֶֽלֶךְ־יִשְׂרָאֵ֑ל"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 5
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "daniel-holman",
+      "book": "Isaiah",
+      "chapter": 24,
+      "verse": 18,
+      "change": {
+        "old": "וְ֠הָיָ֠ה",
+        "new": "וְֽ֠הָיָ֠ה"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 6
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "daniel-holman",
+      "book": "Tsefaniah",
+      "chapter": 3,
+      "verse": 13,
+      "change": {
+        "old": "וְלֹֽא־יִמָּצֵ֥א",
+        "new": "וְלֹא־יִמָּצֵ֥א"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 7
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "daniel-holman",
+      "book": "Isaiah",
+      "chapter": 50,
+      "verse": 7,
+      "change": {
+        "old": "יַֽעֲזׇר־לִ֔י",
+        "new": "יַעֲזׇר־לִ֔י"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 8
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "daniel-holman",
+      "book": "Isaiah",
+      "chapter": 42,
+      "verse": 24,
+      "change": {
+        "old": "מִֽי־נָתַ֨ן",
+        "new": "מִי־נָתַ֨ן"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 9
+        },
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 240
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "daniel-holman",
+      "book": "Isaiah",
+      "chapter": 22,
+      "verse": 5,
+      "change": {
+        "old": "לַֽאדֹנָ֧י",
+        "new": "לַאדֹנָ֧י"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 10
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "daniel-holman",
+      "book": "2Chronicles",
+      "chapter": 26,
+      "verse": 15,
+      "change": {
+        "old": "כִּֽי־חָזָֽק׃",
+        "new": "כִּי־חָזָֽק׃"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 11
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "daniel-holman",
+      "book": "2Kings",
+      "chapter": 21,
+      "verse": 12,
+      "change": {
+        "old": "עַל־יְרֽוּשָׁלַ֖͏ִם",
+        "new": "עַל־יְרוּשָׁלַ֖͏ִם"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 12
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "daniel-holman",
+      "book": "2Kings",
+      "chapter": 21,
+      "verse": 12,
+      "change": {
+        "old": "וִֽיהוּדָ֑ה",
+        "new": "וִיהוּדָ֑ה"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 12
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "daniel-holman",
+      "book": "2Kings",
+      "chapter": 6,
+      "verse": 23,
+      "change": {
+        "old": "אֶל־אֲדֹֽנֵיהֶ֑ם",
+        "new": "אֶל־אֲדֹנֵיהֶ֑ם"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 13
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "daniel-holman",
+      "book": "1Samuel",
+      "chapter": 22,
+      "verse": 22,
+      "change": {
+        "old": "כִּֽי־שָׁם֙",
+        "new": "כִּי־שָׁם֙"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 14
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "daniel-holman",
+      "book": "1Samuel",
+      "chapter": 1,
+      "verse": 6,
+      "change": {
+        "old": "כִּֽי־סָגַ֥ר",
+        "new": "כִּי־סָגַ֥ר"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 15
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "daniel-holman",
+      "book": "Joshua",
+      "chapter": 19,
+      "verse": 8,
+      "change": {
+        "old": "בְנֵֽי־שִׁמְע֖וֹן",
+        "new": "בְנֵי־שִׁמְע֖וֹן"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 16
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "daniel-holman",
+      "book": "Zechariah",
+      "chapter": 2,
+      "verse": 4,
+      "change": {
+        "old": "אֲשֶׁר־זֵ֣רוּ",
+        "new": "אֲשֶׁר־זֵר֣וּ"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 17
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "daniel-holman",
+      "book": "Joshua",
+      "chapter": 10,
+      "verse": 12,
+      "change": {
+        "old": "יְהוֹשֻׁעַ֙",
+        "new": "יְהוֹשֻׁ֙עַ֙"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 18
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "anonymous-contributor-at-wikisource",
+      "book": "Numbers",
+      "chapter": 16,
+      "verse": 18,
+      "change": {
+        "old": "וַֽיַּעַמְד֗וּ",
+        "new": "וַיַּֽעַמְד֗וּ"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 30
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "anonymous-contributor-at-wikisource",
+      "book": "Numbers",
+      "chapter": 11,
+      "verse": 24,
+      "change": {
+        "old": "וַֽיַּעֲמֵ֥ד",
+        "new": "וַיַּעֲמֵ֥ד"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 31
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "moshe-greenberg",
+      "book": "Isaiah",
+      "chapter": 10,
+      "verse": 17,
+      "change": {
+        "old": "וְאָכְלָ֛ה",
+        "new": "וְאָ֥כְלָ֛ה"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 82
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "moshe-greenberg",
+      "book": "2Samuel",
+      "chapter": 15,
+      "verse": 12,
+      "change": {
+        "old": "יוֹעֵ֣ץ",
+        "new": "יוֹעֵ֣ץ׀"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 87
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "asael-reiter",
+      "book": "Judges",
+      "chapter": 7,
+      "verse": 7,
+      "change": {
+        "old": "הַֽמְלַקְﬞקִים֙",
+        "new": "הַֽמְﬞלַֽקְﬞקִים֙"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 94
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "anonymous-contributor-at-hebrew-wikisource",
+      "book": "Proverbs",
+      "chapter": 11,
+      "verse": 12,
+      "change": {
+        "old": "בׇּז־לְרֵעֵ֥הוּ",
+        "new": "בָּז־לְרֵעֵ֥הוּ"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 104
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "anonymous-contributor-at-hebrew-wikisource",
+      "book": "Proverbs",
+      "chapter": 14,
+      "verse": 21,
+      "change": {
+        "old": "בׇּז־לְרֵעֵ֥הוּ",
+        "new": "בָּז־לְרֵעֵ֥הוּ"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 104
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "anonymous-contributor-at-alhatorah",
+      "book": "Job",
+      "chapter": 21,
+      "verse": 24,
+      "change": {
+        "old": "עֲ֭טִינָיו",
+        "new": "עֲ֭טִנָיו"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 112
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "timothy-leininger",
+      "book": "Proverbs",
+      "chapter": 5,
+      "verse": 13,
+      "change": {
+        "old": "לֹֽא־הִטִּ֥יתִי",
+        "new": "לֹא־הִטִּ֥יתִי"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 138
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "anonymous-editor-at-hebrew-wikisource",
+      "book": "Genesis",
+      "chapter": 45,
+      "verse": 14,
+      "change": {
+        "old": "בִנְיָמִֽן־אָחִ֖יו",
+        "new": "בִנְיָֽמִן־אָחִ֖יו"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 139
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "asael-reiter",
+      "book": "2Samuel",
+      "chapter": 24,
+      "verse": 10,
+      "change": {
+        "old": "יְהֹוָ֔ה",
+        "new": "יְהֹוָ֗ה"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 142
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "daniel-holman",
+      "book": "Zechariah",
+      "chapter": 2,
+      "verse": 9,
+      "change": {
+        "old": "אֶֽהְיֶ֥ה",
+        "new": "אֶהְיֶ֥ה"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 143
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "daniel-holman",
+      "book": "Hosea",
+      "chapter": 2,
+      "verse": 10,
+      "change": {
+        "old": "אָנֹכִי֙",
+        "new": "אָֽנֹכִי֙"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 144
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "daniel-holman",
+      "book": "Hosea",
+      "chapter": 12,
+      "verse": 3,
+      "change": {
+        "old": "לַיהֹוָ֖ה",
+        "new": "לַֽיהֹוָ֖ה"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 144
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "daniel-holman",
+      "book": "Micah",
+      "chapter": 3,
+      "verse": 3,
+      "change": {
+        "old": "וּפָרְשׂוּ֙",
+        "new": "וּפָֽרְשׂוּ֙"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 144
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "daniel-holman",
+      "book": "Micah",
+      "chapter": 3,
+      "verse": 5,
+      "change": {
+        "old": "וַאֲשֶׁר֙",
+        "new": "וַֽאֲשֶׁר֙"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 144
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "daniel-holman",
+      "book": "Zechariah",
+      "chapter": 10,
+      "verse": 6,
+      "change": {
+        "old": "לֹא־זְנַחְתִּ֑ים",
+        "new": "לֹֽא־זְנַחְתִּ֑ים"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 144
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "daniel-holman",
+      "book": "Malachi",
+      "chapter": 2,
+      "verse": 3,
+      "change": {
+        "old": "וְזֵרִ֤יתִי",
+        "new": "וְזֵרִ֤יתִֽי"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 144
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "daniel-holman",
+      "book": "Hosea",
+      "chapter": 6,
+      "verse": 3,
+      "change": {
+        "old": "מֹֽצָא֑וֹ",
+        "new": "מֹצָא֑וֹ"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 145
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "daniel-holman",
+      "book": "Hosea",
+      "chapter": 11,
+      "verse": 8,
+      "change": {
+        "old": "נִֽחוּמָֽי׃",
+        "new": "נִחוּמָֽי׃"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 145
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "daniel-holman",
+      "book": "Joel",
+      "chapter": 2,
+      "verse": 2,
+      "change": {
+        "old": "עַל־הֶֽהָרִ֑ים",
+        "new": "עַל־הֶהָרִ֑ים"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 145
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "daniel-holman",
+      "book": "Joel",
+      "chapter": 2,
+      "verse": 27,
+      "change": {
+        "old": "וְלֹֽא־יֵבֹ֥שׁוּ",
+        "new": "וְלֹא־יֵבֹ֥שׁוּ"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 145
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "daniel-holman",
+      "book": "Joel",
+      "chapter": 3,
+      "verse": 5,
+      "change": {
+        "old": "תִּֽהְיֶ֣ה",
+        "new": "תִּהְיֶ֣ה"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 145
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "daniel-holman",
+      "book": "Joel",
+      "chapter": 4,
+      "verse": 17,
+      "change": {
+        "old": "יְרֽוּשָׁלַ֙͏ִם֙",
+        "new": "יְרוּשָׁלַ֙͏ִם֙"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 145
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "daniel-holman",
+      "book": "Amos",
+      "chapter": 2,
+      "verse": 6,
+      "change": {
+        "old": "בַּֽעֲב֥וּר",
+        "new": "בַּעֲב֥וּר"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 145
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "daniel-holman",
+      "book": "Amos",
+      "chapter": 5,
+      "verse": 14,
+      "change": {
+        "old": "וִֽיהִי־כֵ֞ן",
+        "new": "וִיהִי־כֵ֞ן"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 145
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "daniel-holman",
+      "book": "Amos",
+      "chapter": 8,
+      "verse": 11,
+      "change": {
+        "old": "וְלֹֽא־צָמָ֣א",
+        "new": "וְלֹא־צָמָ֣א"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 145
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "daniel-holman",
+      "book": "Jonah",
+      "chapter": 3,
+      "verse": 10,
+      "change": {
+        "old": "אֶֽת־מַ֣עֲשֵׂיהֶ֔ם",
+        "new": "אֶת־מַ֣עֲשֵׂיהֶ֔ם"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 145
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "daniel-holman",
+      "book": "Micah",
+      "chapter": 6,
+      "verse": 13,
+      "change": {
+        "old": "הֶֽחֱלֵ֣יתִי",
+        "new": "הֶחֱלֵ֣יתִי"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 145
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "daniel-holman",
+      "book": "Tsefaniah",
+      "chapter": 1,
+      "verse": 11,
+      "change": {
+        "old": "יֹֽשְׁבֵ֣י",
+        "new": "יֹשְׁבֵ֣י"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 145
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "daniel-holman",
+      "book": "Tsefaniah",
+      "chapter": 3,
+      "verse": 13,
+      "change": {
+        "old": "כִּֽי־הֵ֛מָּה",
+        "new": "כִּי־הֵ֛מָּה"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 145
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "daniel-holman",
+      "book": "Tsefaniah",
+      "chapter": 3,
+      "verse": 9,
+      "change": {
+        "old": "כִּֽי־אָ֛ז",
+        "new": "כִּי־אָ֛ז"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 145
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "daniel-holman",
+      "book": "Tsefaniah",
+      "chapter": 3,
+      "verse": 16,
+      "change": {
+        "old": "לִירֽוּשָׁלַ֖͏ִם",
+        "new": "לִירוּשָׁלַ֖͏ִם"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 145
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "daniel-holman",
+      "book": "Zechariah",
+      "chapter": 11,
+      "verse": 13,
+      "change": {
+        "old": "וָֽאַשְׁלִ֥יךְ",
+        "new": "וָאַשְׁלִ֥יךְ"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 145
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "daniel-holman",
+      "book": "Zechariah",
+      "chapter": 12,
+      "verse": 2,
+      "change": {
+        "old": "אֶת־יְרֽוּשָׁלַ֧͏ִם",
+        "new": "אֶת־יְרוּשָׁלַ֧͏ִם"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 145
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "daniel-holman",
+      "book": "Zechariah",
+      "chapter": 13,
+      "verse": 2,
+      "change": {
+        "old": "הָֽעֲצַבִּים֙",
+        "new": "הָעֲצַבִּים֙"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 145
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "daniel-holman",
+      "book": "Zechariah",
+      "chapter": 13,
+      "verse": 3,
+      "change": {
+        "old": "כִּֽי־יִנָּבֵ֣א",
+        "new": "כִּי־יִנָּבֵ֣א"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 145
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "daniel-holman",
+      "book": "Zechariah",
+      "chapter": 14,
+      "verse": 10,
+      "change": {
+        "old": "יְרֽוּשָׁלָ֑͏ִם",
+        "new": "יְרוּשָׁלָ֑͏ִם"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 145
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "daniel-holman",
+      "book": "Malachi",
+      "chapter": 1,
+      "verse": 2,
+      "change": {
+        "old": "וַֽאֲמַרְתֶּ֖ם",
+        "new": "וַאֲמַרְתֶּ֖ם"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 145
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "daniel-holman",
+      "book": "Malachi",
+      "chapter": 1,
+      "verse": 7,
+      "change": {
+        "old": "וַֽאֲמַרְתֶּ֖ם",
+        "new": "וַאֲמַרְתֶּ֖ם"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 145
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "daniel-holman",
+      "book": "Malachi",
+      "chapter": 1,
+      "verse": 8,
+      "change": {
+        "old": "וְכִֽי־תַגִּישׁ֨וּן",
+        "new": "וְכִי־תַגִּישׁ֨וּן"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 145
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "daniel-holman",
+      "book": "Malachi",
+      "chapter": 2,
+      "verse": 6,
+      "change": {
+        "old": "לֹֽא־נִמְצָ֣א",
+        "new": "לֹא־נִמְצָ֣א"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 145
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "daniel-holman",
+      "book": "Malachi",
+      "chapter": 2,
+      "verse": 11,
+      "change": {
+        "old": "בָּֽגְדָ֣ה",
+        "new": "בָּגְדָ֣ה"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 145
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "daniel-holman",
+      "book": "Malachi",
+      "chapter": 3,
+      "verse": 4,
+      "change": {
+        "old": "וִירֽוּשָׁלָ֑͏ִם",
+        "new": "וִירוּשָׁלָ֑͏ִם"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 145
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "daniel-holman",
+      "book": "Malachi",
+      "chapter": 3,
+      "verse": 7,
+      "change": {
+        "old": "אֲבֹֽתֵיכֶ֜ם",
+        "new": "אֲבֹתֵיכֶ֜ם"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 145
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
+      }
+    },
+    {
+      "contributor": "daniel-holman",
+      "book": "Malachi",
+      "chapter": 3,
+      "verse": 8,
+      "change": {
+        "old": "קֹֽבְעִ֣ים",
+        "new": "קֹבְעִ֣ים"
+      },
+      "evidence": [
+        {
+          "kind": "mam-sheet-changes-row",
+          "row": 145
+        }
+      ],
+      "recorded": {
+        "on": "2026-11-19",
+        "basis": "Ben's decisions of 2026-11-19 on the Sheet port (doc/change-log-credits-sheet-port-2026-11-19.md)"
       }
     }
   ]

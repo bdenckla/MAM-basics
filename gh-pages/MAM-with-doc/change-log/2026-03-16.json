@@ -960,6 +960,22 @@
           "old": "וְאָכְלָ֛ה",
           "new": "וְאָ֥כְלָ֛ה"
         }
+      ],
+      "credits": [
+        {
+          "contributor": "moshe-greenberg",
+          "name": "Moshe Greenberg",
+          "change": {
+            "old": "וְאָכְלָ֛ה",
+            "new": "וְאָ֥כְלָ֛ה"
+          },
+          "evidence": [
+            {
+              "kind": "mam-sheet-changes-row",
+              "url": "https://docs.google.com/spreadsheets/d/1mkQyj6by1AtBUabpbaxaZq9Z2X3pX8ZpwG91ZCSOEYs/edit?gid=953964633#gid=953964633&range=A82"
+            }
+          ]
+        }
       ]
     },
     {
