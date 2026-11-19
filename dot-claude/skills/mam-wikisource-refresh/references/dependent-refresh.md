@@ -189,6 +189,12 @@ them. Approval of the refresh approves nothing that they protect.
    cannot split. Give Ben the word, its verse and its forms, and wait for his decision on its
    encoding; commit the resulting change to the corpus refresh on its own, quoting him, then
    resume with `./.venv/Scripts/python.exe py/main_0_mega.py --resume-from taamey-d-corpus`.
+7. **The change logs' credits.** `py/main_diff.py mpplus --all` stops when a record of
+   `in/mam-change-log-credits.json` matches no entry of the change logs, or more than one.
+   A refresh trips it when it changes a credited form again before the release is pinned.
+   Show Ben the record and the entry's new forms; change the record as he says, in a commit
+   of its own that quotes him, then resume. A change to the credits file legitimately
+   changes the named releases that hold its entries; an ordinary refresh changes no record.
 
 ## Required scenario behavior
 

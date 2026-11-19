@@ -135,6 +135,12 @@ English summaries of the notes it lists. When a refresh changes one of those not
 `out/explicit-xataf-extras.json` shows the note's new text beside its unchanged summary: reread
 the summary and repair it in the same way.
 
+The MAM change logs credit contributors who are neither Ben nor Avi, from
+`in/mam-change-log-credits.json`. A credit is Ben's statement: record one only on his word,
+in a commit of its own that quotes him, never on an agent's reading of Wikisource. When a
+refresh's change came from such a contributor's report, as 2 Samuel 4:6 did on 2026-11-19,
+say so to Ben with the report's link, and record nothing until he answers.
+
 ## Complete the dependent refresh
 
 When chapter data or chapter metadata changed, read and follow
