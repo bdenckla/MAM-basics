@@ -201,6 +201,10 @@ _EXCLUDE_DIR_PREFIXES = (
     "in/mam-ws-bot-edits/",
     # Byte-verbatim captures that downloads rewrite; AGENTS.md: never repair them.
     "in/mam-ws-special/",
+    # The old Google Sheet's changes tab, captured once, byte for byte, for the change
+    # logs' credits, and the manifest that records the capture. The Sheet's own text
+    # has an h followed by a COMBINING DOT BELOW; AGENTS.md: never repair a capture.
+    "in/mam-go-changes-tab/",
     "in/chabad-ctr/",
     "in/UXLC-39/",
     "in/UXLC-misc/",
