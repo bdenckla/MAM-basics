@@ -12916,7 +12916,7 @@ x,_,y,·,i,(mos),y,m.,(sopa)
 START/STOP spi-samekh2
 
 1Samuel 17:37 in vtrad vtmam
-v,_,y,·,o,α,m,∵,r,(zarnor)
+v,_,y,·,o,(zarshit),α,m,∵,r,(zarnor)
 SPACE
 d,·,a,v,i,d,(seg_a)
 SPACE
@@ -12994,7 +12994,7 @@ l,:,m,_,d,·,a,(ger),y,v
 SPACE
 v,_,y,·,o,(mun),α,∵,l
 SPACE
-l,a,l,∵,k,∵,τ,(zarnor)
+l,a,l,∵,(zarshit),k,∵,τ,(zarnor)
 SPACE
 k,·,i,(mun),y
 SPACE
@@ -21004,7 +21004,7 @@ SPACE
 START/STOP spi-pe2
 
 1Samuel 26:15 in vtrad vtmam
-v,_,y,·,o,α,m,∵,r,(tel_q)
+v,_,y,·,o,(tel_q),α,m,∵,r,(tel_q)
 SPACE
 d,·,a,v,i,(qom),d
 SPACE
@@ -27105,7 +27105,7 @@ SPACE
 h,_,(mos),c,·,oa,h,:a,r,a,(mos),y,i,m.,(sopa)
 
 2Samuel 4:6 in vtrad vtmam
-v,:,(tel_g),h,‥,n,·,a,(tel_g),h
+v,:,(tel_g),h,‥,(tel_g),n,·,a,h
 SPACE
 b,·,a,(ger),α,v,·
 SPACE
@@ -33283,7 +33283,7 @@ SPACE
 SPACE
 h,_,α,:_,m,i,y,n,(mun),v,o,n.
 SPACE
-α,a,x,i,(zarshit),y,k.,:,(zarnor)
+α,a,x,i,y,k.,:,(zarnor)
 SPACE
 h,a,y,a,(mun),h
 SPACE
@@ -39687,7 +39687,7 @@ SPACE
 SPACE
 y,i,q,·,a,(atn),x
 SPACE
-α,_,(tel_g),x,:_,r,‥,y
+α,_,(tel_g),x,:_,r,‥,(tel_g),y
 SPACE
 α,:_,$,·sh,∵,r,-,b,·,a,(ger_2),α
 SPACE

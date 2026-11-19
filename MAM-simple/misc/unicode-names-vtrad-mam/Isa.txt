@@ -5034,7 +5034,7 @@ l,o,α,-,3,‥,(mos),c.,(sopa)
 START/STOP spi-pe2
 
 Isaiah 10:16 in vtrad vtmam
-l,a,(tel_g),k,‥,n.
+l,a,(tel_g),k,‥,(tel_g),n.
 SPACE
 y,:,$,·sh,_,l,·,_,(qom),x
 SPACE
@@ -18517,7 +18517,7 @@ START kq-trivial
 n,:,k,o,τ,o,(paz),h
 STOP kq-trivial
 SPACE
-α,∵,τ,-,h,_,k,·,∵,σ,∵,p.,(tel_q)
+α,∵,τ,-,h,_,k,·,∵,(tel_q),σ,∵,p.,(tel_q)
 SPACE
 v,:,α,∵,τ,-,h,_,z,·,a,h,a,(qom),b
 SPACE

@@ -14097,7 +14097,7 @@ k,·,i,(mun),y
 SPACE
 $,·si,_,(mun),m,:,τ,·,i,y
 SPACE
-p,a,(tel_g),n,_,y
+p,a,(tel_g),n,_,(tel_g),y
 SPACE
 b,·,a,3,i,(qom),y,r
 SPACE
@@ -29338,7 +29338,7 @@ b,·,∵,n.,-,q,a,r,‥,(paz),x,_
 SPACE
 α,a,m,_,(mun),r
 SPACE
-α,∵,l,-,g,·,:,d,_,l,:,y,a,h,v,·,(tel_q)
+α,∵,l,-,g,·,:,d,_,l,:,y,a,(tel_q),h,v,·,(tel_q)
 SPACE
 b,_,σ,·,‥,(qom),τ,∵,r
 SPACE

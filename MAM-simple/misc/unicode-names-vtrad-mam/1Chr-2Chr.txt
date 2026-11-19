@@ -32175,7 +32175,7 @@ SPACE
 3,_,d,-,h,_,y,·,(mos),v,o,m.,(sopa)
 
 2Chronicles 20:27 in vtrad vtmam
-v,_,(tel_g),y,·,a,$,·sh,u,b,(tel_g),v,·
+v,_,(tel_g),y,·,a,$,·sh,u,(tel_g),b,v,·
 SPACE
 k,·,oa,l,-,α,i,(qom),y,$,·sh
 SPACE

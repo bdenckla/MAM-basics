@@ -31629,7 +31629,7 @@ SPACE
 h,_,y,·,a,d,a,(mos),y,i,m.,(sopa)
 
 2Kings 9:36 in vtrad vtmam
-v,_,y,·,a,$,·sh,u,b,v,·,(zarnor)
+v,_,y,·,a,$,·sh,u,(zarshit),b,v,·,(zarnor)
 SPACE
 v,_,y,·,_,g,·,i,(mun),y,d,v,·
 SPACE

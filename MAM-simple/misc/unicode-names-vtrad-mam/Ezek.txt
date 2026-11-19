@@ -7233,7 +7233,7 @@ $,·si,:,3,o,r,i,y,m.,(zarnor)
 SPACE
 v,·,b,i,p,:,τ,(mun),v,o,τ,‥,y
 SPACE
-l,∵,x,∵,m.,(seg_a)
+l,∵,(seg_a),x,∵,m.,(seg_a)
 SPACE
 l,:,h,a,m,i,(mah),y,τ
 SPACE
@@ -7842,7 +7842,7 @@ $,·sh,:,l,o,(qom),$,·sh,∵,τ
 SPACE
 h,a,α,:_,n,a,$,·sh,i,(mun),y,m.
 SPACE
-h,a,α,‥,l,·,∵,h,(zarnor)
+h,a,α,‥,(zarshit),l,·,∵,h,(zarnor)
 SPACE
 b,·,:,τ,v,o,k,a,h,·,(seg_a)
 SPACE

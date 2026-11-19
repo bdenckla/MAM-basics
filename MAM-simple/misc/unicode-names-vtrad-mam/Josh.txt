@@ -4100,7 +4100,7 @@ SPACE
 SPACE
 y,:∵,h,o,v,i,(rev),h
 SPACE
-l,a,(tel_g),m,a,h
+l,a,(tel_g),m,a,(tel_g),h
 SPACE
 h,‥,3,:_,b,_,(qom),r,:,τ,·,a
 SPACE

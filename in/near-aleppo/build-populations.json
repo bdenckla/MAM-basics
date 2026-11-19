@@ -7,7 +7,7 @@
     "מ:לגרמיה-2": 1785,
     "מ:פסק": 508,
     "מ:מקף אפור": 116,
-    "נוסח": 3596,
+    "נוסח": 3597,
     "מ:הערה-2": 27,
     "מ:כפול": 34,
     "מ:קו״כ-אם-2": 149,
@@ -85,16 +85,16 @@
     "stress helpers: pashta's stress helper kept, a letter standing between": 3627,
     "stress helpers: pashta's stress helper kept by a note whose agreeing clause cites the codex for the doubling": 0,
     "stress helpers: pashta's stress helper kept by a note whose agreeing clause cites ל for the doubling, no clause citing the codex": 0,
-    "stress helpers: segolta's stress helper stripped": 168,
+    "stress helpers: segolta's stress helper stripped": 170,
     "stress helpers: segolta's stress helper kept by a note whose agreeing clause cites the codex for the doubling": 0,
     "stress helpers: segolta's stress helper kept by a note whose agreeing clause cites ל for the doubling, no clause citing the codex": 0,
-    "stress helpers: telisha qetanah's stress helper stripped": 325,
+    "stress helpers: telisha qetanah's stress helper stripped": 328,
     "stress helpers: telisha qetanah's stress helper kept by a note whose agreeing clause cites the codex for the doubling": 5,
     "stress helpers: telisha qetanah's stress helper kept by a note whose agreeing clause cites ל for the doubling, no clause citing the codex": 3,
-    "stress helpers: telisha gedolah's stress helper stripped": 997,
+    "stress helpers: telisha gedolah's stress helper stripped": 1001,
     "stress helpers: telisha gedolah's stress helper kept by a note whose agreeing clause cites the codex for the doubling": 1,
     "stress helpers: telisha gedolah's stress helper kept by a note whose agreeing clause cites ל for the doubling, no clause citing the codex": 1,
-    "stress helpers: zarqa's stress helper stripped": 179,
+    "stress helpers: zarqa's stress helper stripped": 182,
     "stress helpers: zarqa's stress helper kept by a note whose agreeing clause cites the codex for the doubling": 1,
     "stress helpers: zarqa's stress helper kept by a note whose agreeing clause cites ל for the doubling, no clause citing the codex": 0,
     "stress helpers: pashta's stress helper stripped (unselected parameter)": 0,
@@ -290,7 +290,7 @@
     ]
   },
   "phase5_counts": {
-    "codex readings: notes walked": 3596,
+    "codex readings: notes walked": 3597,
     "codex readings: empty clauses in note bodies": 1,
     "codex readings: direct codex siglum elements": 1152,
     "codex readings: direct differing clauses": 1144,
@@ -619,7 +619,7 @@
     ]
   },
   "phase6_counts": {
-    "נוסח: notes reached": 3596,
+    "נוסח: notes reached": 3597,
     "מ:הערה-2: notes reached": 27,
     "נוסח: notes given MAM's target": 1553,
     "מ:הערה-2: notes given MAM's target": 5

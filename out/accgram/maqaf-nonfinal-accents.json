@@ -8611,7 +8611,7 @@
     "verses": 18724,
     "maqaf_compounds": 36786,
     "hits": 233,
-    "simple_two_accent_words": 1494,
+    "simple_two_accent_words": 1497,
     "simple_by_pair": {
      "mun-zaq": 958,
      "qad-zaq": 199,
@@ -8721,7 +8721,7 @@
     },
     "simple_excluded": {
      "a stress-helper pair: one accent written twice": {
-      "tsit-tsor": 135
+      "tsit-tsor": 138
      },
      "the two marks are on one letter": {
       "ger2-telg": 3,
@@ -9244,6 +9244,24 @@
       "reason": "a stress-helper pair: one accent written twice"
      },
      {
+      "bcv": "1s17:37",
+      "word": "וַיֹּ֘אמֶר֮",
+      "pair": [
+       "tsit",
+       "tsor"
+      ],
+      "reason": "a stress-helper pair: one accent written twice"
+     },
+     {
+      "bcv": "1s17:39",
+      "word": "לָלֶ֘כֶת֮",
+      "pair": [
+       "tsit",
+       "tsor"
+      ],
+      "reason": "a stress-helper pair: one accent written twice"
+     },
+     {
       "bcv": "1s20:2",
       "word": "חָלִ֘ילָה֮",
       "pair": [
@@ -9300,15 +9318,6 @@
      {
       "bcv": "2s12:4",
       "word": "הֵ֘לֶךְ֮",
-      "pair": [
-       "tsit",
-       "tsor"
-      ],
-      "reason": "a stress-helper pair: one accent written twice"
-     },
-     {
-      "bcv": "2s13:20",
-      "word": "אָחִ֘יךְ֮",
       "pair": [
        "tsit",
        "tsor"
@@ -9496,6 +9505,15 @@
       "reason": "a stress-helper pair: one accent written twice"
      },
      {
+      "bcv": "2k9:36",
+      "word": "וַיָּשֻׁ֘בוּ֮",
+      "pair": [
+       "tsit",
+       "tsor"
+      ],
+      "reason": "a stress-helper pair: one accent written twice"
+     },
+     {
       "bcv": "2k15:29",
       "word": "פִּלְאֶ֘סֶר֮",
       "pair": [
@@ -9633,6 +9651,15 @@
      {
       "bcv": "je49:3",
       "word": "צְעַ֘קְנָה֮",
+      "pair": [
+       "tsit",
+       "tsor"
+      ],
+      "reason": "a stress-helper pair: one accent written twice"
+     },
+     {
+      "bcv": "ek14:16",
+      "word": "הָאֵ֘לֶּה֮",
       "pair": [
        "tsit",
        "tsor"

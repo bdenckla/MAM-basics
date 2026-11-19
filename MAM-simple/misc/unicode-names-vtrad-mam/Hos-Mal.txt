@@ -8605,7 +8605,7 @@ l,:,h,v,o,c,i,(mun),y,α
 SPACE
 3,:_,c,a,m,i,y,m.,(zarnor)
 SPACE
-m,i,n.,-,h,_,b,·,_,y,i,τ,(seg_a)
+m,i,n.,-,h,_,b,·,_,(seg_a),y,i,τ,(seg_a)
 SPACE
 v,:,α,a,m,_,(ger_2),r
 SPACE
