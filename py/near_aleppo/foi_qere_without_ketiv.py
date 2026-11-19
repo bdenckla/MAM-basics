@@ -19,6 +19,7 @@ from mb_cmn import site_links
 from mb_cmn import verse_external_links as vel
 from mb_author import author
 from mb_misc import mb_html
+from mb_misc import printed_tradition
 from mwd import mwd_write_book
 from near_aleppo import build_paths, doc_figures, qere_without_ketiv
 from py_misc import orphan_marks
@@ -793,7 +794,11 @@ def _encoding(row):
 
 
 def _prose(text, names=()):
-    """Isolate Hebrew phrases, style marked phrases and italicize romanizations."""
+    """Isolate Hebrew phrases, style marked phrases and italicize romanizations.
+
+    Each "the printed tradition" gets the hover of mb_misc/printed_tradition.py, which
+    explains it.
+    """
     parts = [text]
     if names:
         pattern = r"(?<!\w)(" + "|".join(re.escape(name) for name in names) + r")(?!\w)"
@@ -802,25 +807,15 @@ def _prose(text, names=()):
     for part in parts:
         if part in names:
             result.append(mb_html.span(part, {"class": "romanized"}))
-        else:
-            result.extend(
-                (
-                    mb_html.bdi(
-                        run,
-                        {
-                            "lang": "hbo",
-                            "dir": "rtl",
-                            **(
-                                {"class": "pointed"} if _HEBREW_MARK.search(run) else {}
-                            ),
-                        },
-                    )
-                    if _HEBREW.fullmatch(run)
-                    else run
-                )
-                for run in _HEBREW.split(part)
-                if run
-            )
+            continue
+        for run in filter(None, _HEBREW.split(part)):
+            if not _HEBREW.fullmatch(run):
+                result.extend(printed_tradition.explain(run))
+                continue
+            attr = {"lang": "hbo", "dir": "rtl"}
+            if _HEBREW_MARK.search(run):
+                attr["class"] = "pointed"
+            result.append(mb_html.bdi(run, attr))
     return result
 
 
