@@ -14,7 +14,7 @@ from mb_cmn.new_york_time import labelled
 
 
 def write_index(release_info, change_log_dir):
-    """Write index.html listing all releases (newest first).
+    """Write index.html listing all releases (newest first), then a link to contributors.html.
 
     Each entry in release_info is a dict with "name", "count", and "old_date" keys.
     """
@@ -44,7 +44,15 @@ def write_index(release_info, change_log_dir):
             f' <a href="{name}.html">{name}</a>'
             f" &mdash; {count} {suffix}</li>"
         )
-    lines.extend(["</ul>", "</body>", "</html>"])
+    lines.extend(
+        [
+            "</ul>",
+            '<p><a href="contributors.html">Contributors credited in the MAM change'
+            " logs</a></p>",
+            "</body>",
+            "</html>",
+        ]
+    )
     path = f"{change_log_dir}/index.html"
     with open(path, "w", encoding="utf-8", newline="") as f:
         f.write("\n".join(lines) + "\n")

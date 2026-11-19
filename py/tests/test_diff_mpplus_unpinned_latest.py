@@ -123,7 +123,7 @@ def test_registered_report_tree_declares_every_checked_artifact():
     ]
     assert releases, "releases.json must name at least one release"
     directory = Path(diff_mpplus.CHANGE_LOG_DIR)
-    expected = {"index.html"}
+    expected = {"contributors.html", "index.html"}
     shared_base = (directory / "../../report.css").resolve()
     assert shared_base.is_file(), shared_base
     # The site's one copy of the font, beside the shared base; generation never writes it.
@@ -155,9 +155,10 @@ def test_registered_report_tree_declares_every_checked_artifact():
                 assert fonts, f"no Hebrew font declared by {asset}"
                 for font in fonts:
                     assert (directory / font).resolve() == shared_font, font
-    index_assets = _ReportAssets()
-    index_assets.feed((directory / "index.html").read_text(encoding="utf-8"))
-    assert index_assets.assets == {"../../report.css", "style.css"}
+    for page in ("contributors.html", "index.html"):
+        page_assets = _ReportAssets()
+        page_assets.feed((directory / page).read_text(encoding="utf-8"))
+        assert page_assets.assets == {"../../report.css", "style.css"}, page
     checked = diff_mpplus.generated_artifact_names()
     assert len(checked) == len(set(checked)), "duplicate checked artifact"
     assert set(checked) == expected

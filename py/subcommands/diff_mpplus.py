@@ -41,14 +41,17 @@ artifacts are rewritten as empty reports so stale content is not left behind.
 Every report credits contributors other than Ben and Avi from the hand-maintained
 in/mam-change-log-credits.json, which mb_diff_mpu/mpplus_credits.py validates: a
 report's JSON lists each record on the entry it credits, and its HTML puts a credit
-line on that entry's card. A run that regenerates the whole change log -- --all,
---check, --pin and the mega's diff-mpplus step, all of which reach run_all -- stops
-after writing the reports and before writing the index unless each record matches
-exactly one entry across them, and names each record that does not. A refresh that
-changes a credited form trips it; mend the record, restore
-gh-pages/MAM-with-doc/change-log/ with git restore, and run again. A run that writes
-one report, with no arguments or with --old and --new, puts on it the credits that
-match and checks nothing further.
+line on that entry's card and gives the card an id. A run that regenerates the whole
+change log -- --all, --check, --pin and the mega's diff-mpplus step, all of which reach
+run_all -- stops after writing the reports and before writing contributors.html and the
+index unless each record matches exactly one entry across them, and names each record
+that does not. A refresh that changes a credited form trips it; mend the record,
+restore gh-pages/MAM-with-doc/change-log/ with git restore, and run again. Once each
+record has matched, mb_diff_mpu/mpplus_contributors.py writes contributors.html, which
+lists each contributor and the changes credited to them, each linked to its card by the
+card's id, and the index links that page. A run that writes one report, with no
+arguments or with --old and --new, puts on it the credits that match and checks
+nothing further.
 
 WHICH RELEASE IS THE LATEST IS READ OFF releases.json RATHER THAN OUT OF GIT --
 see _latest_release_entry for the chain walk that replaced a commit count, and
@@ -78,6 +81,7 @@ from mb_cmn import paths
 from mb_diff_mpu import (
     mpplus_archive,
     mpplus_classify,
+    mpplus_contributors,
     mpplus_credits,
     mpplus_extract,
     mpplus_html,
@@ -109,6 +113,7 @@ def generated_artifact_names() -> tuple[str, ...]:
         (
             "unpinned-latest.html",
             "unpinned-latest.json",
+            "contributors.html",
             "index.html",
             "style.css",
             "filter.js",
@@ -306,7 +311,8 @@ def _refuse_unstored_boundaries(boundaries):
 
 
 def run_all(change_log_dir=CHANGE_LOG_DIR):
-    """Generate reports for named releases plus unpinned-latest, then write index.
+    """Generate reports for named releases plus unpinned-latest, check their credits, then
+    write contributors.html and the index.
 
     Returns each release's index entry. Refuses first any boundary that is not a stored
     release; ``_refuse_unstored_boundaries`` says why.
@@ -324,10 +330,11 @@ def run_all(change_log_dir=CHANGE_LOG_DIR):
     unpinned_info = run_unpinned_latest(change_log_dir)
     if unpinned_info is not None:
         release_info.append(unpinned_info)
-    mpplus_credits.require_each_record_matched_once(
-        change_log_dir,
-        [*(entry["name"] for entry in data["releases"]), "unpinned-latest"],
+    report_names = [*(entry["name"] for entry in data["releases"]), "unpinned-latest"]
+    matches = mpplus_credits.require_each_record_matched_once(
+        change_log_dir, report_names
     )
+    mpplus_contributors.write_contributors(matches, report_names, change_log_dir)
     mpplus_index.write_index(release_info, change_log_dir)
     return release_info
 
@@ -505,6 +512,7 @@ def run_pin(name):
         change_log / f"{name}.json",
         change_log / "unpinned-latest.html",
         change_log / "unpinned-latest.json",
+        change_log / "contributors.html",
         change_log / "index.html",
     )
     print(f"Pinned release {name}, {old} to {new}, with {count} changes.")

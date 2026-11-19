@@ -12,22 +12,28 @@ are closed: anything else raises.
 ``generate_report`` gives each diff the records at its verse, whatever the entry point, so
 that a standalone report and the published one agree. ``mpplus_json`` then lists on an entry
 each record whose selector the entry holds, and ``mpplus_html`` puts a line on the card of
-each credited pair. ``run_all`` calls ``require_each_record_matched_once`` after it writes
-every report and before it writes the index: it reads the reports' JSON back and stops unless
-each record matched exactly one entry across them.
+each credited pair and gives that card an id, ``card_id``. ``run_all`` calls
+``require_each_record_matched_once`` after it writes every report and before it writes
+contributors.html and the index: it reads the reports' JSON back, stops unless each record
+matched exactly one entry across them, and returns the matches, from which
+``mpplus_contributors`` writes contributors.html.
 
 Exports:
     Credit                           — one validated record, with its contributor's name
     CreditError                      — a broken rule of the file, or an unmatched record
+    Match                            — a record and the one entry it matched
     load_credits                     — read and validate the credits file
     give_diffs_their_records         — give each diff the records at its verse
     entry_records                    — the records whose selector a serialized entry holds
     serialize                        — a record as a change log's JSON lists it
+    card_id                          — the id of the card that shows a record's change
     user_page_url                    — a contributor's Hebrew Wikisource user page, or None
-    require_each_record_matched_once — the completeness check of ``run_all``
+    require_each_record_matched_once — the completeness check of ``run_all``, which returns
+                                       each record's match
 """
 
 from dataclasses import dataclass
+import hashlib
 import json
 from pathlib import Path
 import re
@@ -61,7 +67,8 @@ _USER_NAMESPACE = "משתמש"
 
 
 class CreditError(ValueError):
-    """The credits file breaks a rule of its format, or a record matches no single entry."""
+    """The credits file breaks a rule of its format, or a record matches no single entry
+    or card."""
 
 
 @dataclass(frozen=True)
@@ -94,6 +101,19 @@ class Credit:
             f"record {self.number} ({self.contributor}, {self.book}"
             f" {self.chapter}:{self.verse}, {selector})"
         )
+
+
+@dataclass(frozen=True)
+class Match:
+    """A record and the one entry it matched.
+
+    ``report`` is the name of the entry's report, such as ``2026-09-17`` or
+    ``unpinned-latest``, and ``entry`` the entry's one-based position in that report's JSON.
+    """
+
+    credit: Credit
+    report: str
+    entry: int
 
 
 def _require(condition, message):
@@ -316,6 +336,34 @@ def serialize(credit):
     return out
 
 
+def card_id(credit):
+    """The HTML id of the card that shows the change a record credits.
+
+    The id is ``credit-<book>-<chapter>-<verse>-<digest>``, the digest being the first 8 hex
+    digits of the SHA-256 of the record's selector, ``{"change": ...}`` or
+    ``{"templates": ...}`` as the file has it, written as compact JSON with sorted keys and
+    encoded in UTF-8. It depends on the record's verse and selector alone, so adding records
+    or reordering them changes no other card's id, and the records that credit one change
+    give its card one id. A book's spaces become hyphens, since an id holds no space; Song of
+    Songs is the one book whose name has any. ``mpplus_html`` gives a credited card the id of
+    its first credit; a later card of the same report whose id would repeat an earlier
+    card's gets -2, -3 and so on after it.
+    """
+    if credit.change is not None:
+        selector = {"change": {"old": credit.change[0], "new": credit.change[1]}}
+    elif credit.templates is not None:
+        added, removed = credit.templates
+        selector = {"templates": {"added": list(added), "removed": list(removed)}}
+    else:
+        raise AssertionError(f"record {credit.number} has neither change nor templates")
+    encoded = json.dumps(
+        selector, ensure_ascii=False, sort_keys=True, separators=(",", ":")
+    ).encode("utf-8")
+    digest = hashlib.sha256(encoded).hexdigest()[:8]
+    book = credit.book.replace(" ", "-")
+    return f"credit-{book}-{credit.chapter}-{credit.verse}-{digest}"
+
+
 def user_page_url(credit):
     """The contributor's user page on Hebrew Wikisource, or None when there is none."""
     if credit.user_page is None:
@@ -329,7 +377,8 @@ def require_each_record_matched_once(change_log_dir, report_names):
     It reads the JSON of the named reports in ``change_log_dir`` back, so that it checks
     what was written rather than a second computation of it. A record matched no entry when
     a refresh changed the form it credits, or when it was mistyped; it matched more than one
-    when the same change was made twice.
+    when the same change was made twice. It returns each record's ``Match``, in the file's
+    order, for ``mpplus_contributors.write_contributors``.
     """
     credits = load_credits()
     expected = [serialize(credit) for credit in credits]
@@ -341,9 +390,14 @@ def require_each_record_matched_once(change_log_dir, report_names):
             for listed in entry.get("credits", ()):
                 for index, credit in enumerate(credits):
                     if _at_verse(credit, entry) and listed == expected[index]:
-                        found[index].append(f"{name}.json, entry {position}")
+                        found[index].append((name, position))
     problems = [
-        f"  {credit.describe()} matched {'; '.join(where) if where else 'no entry'}"
+        f"  {credit.describe()} matched "
+        + (
+            "; ".join(f"{name}.json, entry {position}" for name, position in where)
+            if where
+            else "no entry"
+        )
         for credit, where in zip(credits, found)
         if len(where) != 1
     ]
@@ -356,3 +410,7 @@ def require_each_record_matched_once(change_log_dir, report_names):
             + "\nMend each record, then restore gh-pages/MAM-with-doc/change-log/ with"
             " git restore and run py/main_diff.py mpplus --all again."
         )
+    return [
+        Match(credit=credit, report=where[0][0], entry=where[0][1])
+        for credit, where in zip(credits, found)
+    ]

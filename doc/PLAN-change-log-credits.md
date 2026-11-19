@@ -1,6 +1,6 @@
 # Plan: credit outsiders' contributions in the MAM change logs
 
-State: live; written and approved by Ben on 2026-11-19, not yet executed
+State: executed 2026-11-19; Phases 1 to 4 pushed that day, the Sheet port recorded in [change-log-credits-sheet-port-2026-11-19.md](change-log-credits-sheet-port-2026-11-19.md)
 
 ## Origin, and whose words are whose
 

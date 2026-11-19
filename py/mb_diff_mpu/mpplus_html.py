@@ -2,7 +2,10 @@
 Generate an HTML diff report with category filtering.
 
 Exports:
-    write_report  — write the HTML report file
+    write_report         — write the HTML report file
+    credit_name_html     — a credited contributor's name as a card shows it
+    credit_evidence_html — a credit's links to its evidence as a card shows them
+    credit_line_html     — a card's line crediting a contributor
 
 This subsystem builds HTML by string assembly, deliberately bypassing the repo's
 `mb_misc.mb_html` tree-builder (nothing in mb_diff_mpu imports it). The choice is
@@ -291,8 +294,8 @@ def _render_alternative_changes(changes):
     return paragraphs
 
 
-def _render_credit(credit):
-    """The card's line crediting a contributor, with a link to each piece of evidence.
+def credit_name_html(credit):
+    """A credited contributor's name as a card shows it.
 
     The name is shown as given, linked to the contributor's Hebrew Wikisource user page
     when there is one. A right-to-left name, such as a Hebrew one, is isolated with a
@@ -304,14 +307,47 @@ def _render_credit(credit):
     user_page = mpplus_credits.user_page_url(credit)
     if user_page is not None:
         name_html = f'<a href="{_esc(user_page)}" target="_blank" rel="noopener">{name_html}</a>'
-    links = ", ".join(
+    return name_html
+
+
+def credit_evidence_html(credit):
+    """A credit's links to its evidence, comma-separated, each under its label."""
+    return ", ".join(
         f'<a href="{_esc(url)}" target="_blank" rel="noopener">{_esc(label)}</a>'
         for _, label, url in credit.evidence
     )
-    return f'<p class="credit">Credit to {name_html}: {links}.</p>'
 
 
-def _render_card(diff):
+def credit_line_html(credit):
+    """The card's line crediting a contributor, with a link to each piece of evidence."""
+    return (
+        f'<p class="credit">Credit to {credit_name_html(credit)}:'
+        f" {credit_evidence_html(credit)}.</p>"
+    )
+
+
+def _card_ids(diffs):
+    """Each card's id, or None for a card that carries no credit.
+
+    A credited card's id is ``mpplus_credits.card_id`` of its first credit. A later card of
+    the report whose id would repeat an earlier card's, as when one verse changes the same
+    form the same way twice, gets -2, -3 and so on after it. An uncredited card has no id,
+    so that crediting a change alters no other card.
+    """
+    seen = Counter()
+    ids = []
+    for diff in diffs:
+        card_credits = diff.get("card_credits", ())
+        if not card_credits:
+            ids.append(None)
+            continue
+        base = mpplus_credits.card_id(card_credits[0])
+        seen[base] += 1
+        ids.append(base if seen[base] == 1 else f"{base}-{seen[base]}")
+    return ids
+
+
+def _render_card(diff, card_id=None):
     cat = diff["category"]
     label, _ = CATEGORY_INFO.get(cat, (cat, "#888"))
     ref = ref_str(diff)
@@ -402,7 +438,8 @@ def _render_card(diff):
     if eng_desc:
         esc_desc = add_name_tooltips(_esc(eng_desc))
         desc_html = f' <span class="change-desc">&mdash; {esc_desc}</span>'
-    lines = [f'<div class="diff-card" data-categories="{_esc(cat)}">']
+    id_attr = "" if card_id is None else f' id="{_esc(card_id)}"'
+    lines = [f'<div class="diff-card"{id_attr} data-categories="{_esc(cat)}">']
     lines.append(
         f'<div class="verse-ref"><span class="ref-text">{_esc(ref)}'
         f' <a class="ref-link" href="{_esc(mwd_href)}" target="_blank" rel="noopener">MwD</a>'
@@ -426,7 +463,7 @@ def _render_card(diff):
             f'<span class="heb new-side">{new_html}</span>'
             "</div>"
         )
-    lines.extend(_render_credit(credit) for credit in diff.get("card_credits", ()))
+    lines.extend(credit_line_html(credit) for credit in diff.get("card_credits", ()))
     lines.extend(_render_alternative_changes(diff.get("alternative_changes", [])))
     for note in diff.get("docnote_notes", []):
         body_html = docnote_body_to_html(note)
@@ -444,7 +481,7 @@ def _render_cards(diffs):
     book_counts = Counter(d["book"] for d in diffs)
     parts = []
     current_book = None
-    for diff in diffs:
+    for diff, card_id in zip(diffs, _card_ids(diffs)):
         if diff["book"] != current_book:
             current_book = diff["book"]
             n = book_counts[current_book]
@@ -455,7 +492,7 @@ def _render_cards(diffs):
                 f"{_esc(current_book)} "
                 f'(<span class="book-count">{n} {suffix}</span>)</h2>'
             )
-        parts.append(_render_card(diff))
+        parts.append(_render_card(diff, card_id))
     return "\n".join(parts)
 
 
