@@ -214,3 +214,45 @@ Ben then wrote, in the session that made these edits, of the hover's text:
 The hover follows his wording, with curly quotation marks and a comma closing its clause:
 
 > In MAM’s notes, דפוסים, which we usually translate as “the printed tradition”, means the customary text of a selection of widespread editions from the 19th and early 20th centuries, in the lineage of the second Venice Miqraot Gedolot. The notes cite that Venice edition, and Koren, apart.
+
+## 2026-11-19: the rows that MAM's Wikisource refresh resolved, removed
+
+Recorded by Claude (Opus 5.5), in the commit that removes them. MAM-basics' Wikisource refresh of
+2026-11-19, `9e364a70`, took Avi Kadish's edits that give MAM the printed editions' stress helper
+at 14 verses where this page had a row, and `ed5c5633` regenerated MAM's products from it. Ben
+chose on 2026-11-19:
+
+> I choose 1B: git history shows what was found. I choose that the document only show what currently exists, after Avi's fixes.
+
+Of the crop at Deut 33:21 he wrote:
+
+> The file koren-deuter-33-21-A5-D-326-note-1.png shows tsere under yod and segol under tav.
+
+- **The 14 verses' rows are gone.** `koren.json` lost 14 of its 88 records and
+  `simanim-tanakh.json` 14 of its 37, 28 records in all, after a check by script that MAM's text
+  in `MAM-parsed/plus/` now has, at each of the 14 verses, the printed word's stress helper where
+  the printed word has it. Thirteen were batch 2's rows with a helper in both printed editions
+  only, at Josh 7:7, 1Sam 17:37, 17:39 and 26:15, 2Sam 19:31, 2Kgs 9:36, Isa 10:16 and 39:2,
+  Jer 21:10 and 40:15, Ezek 13:19 and 14:16, and Amos 6:10. The fourteenth, batch 1's row at
+  2Chr 20:27, had MAM's telisha gedolah helper on bet, where both editions have it on shin. MAM
+  now has it on shin, the correction that #371 documents, and the page no longer links that issue.
+  At 2Sam 19:31 both editions still have a meteg on alef that MAM lacks, a difference that none of
+  the page's categories covers. The 28 crops of the removed records, which nothing else in the
+  repository referenced, are deleted. The table has 79 rows, 36 of batch 1 and 43 of batch 2,
+  where it had 93, 37 and 56, and the Filter menu no longer offers "SH in KorSim only" or
+  "Different SH placement — KorSim", which had no other rows.
+- **Deut 33:21.** The row's Koren word had a segol under yod and a tsere under tav, as MAM's
+  earlier note gave Koren's word. A script swapped those two vowels, keeping every other mark, so
+  that the word is now וַיֵּ֙תֶא֙, where it was וַיֶּ֙תֵא֙. The new word is, code point for code point, the
+  word that MAM's rewritten note gives Koren. The row's sentence, which reported the earlier note's
+  Koren clause and added that the scan shows a dagesh in yod, now reads: "MAM’s note reports final
+  stress in MAM. For Koren, as for Heidenheim’s edition, which follows Ein HaQore, the note
+  reports a tsere under yod with the pashta’s stress helper and a segol under tav, as the crop
+  shows." The row keeps its category, "SH in Kor only": Koren has the pashta's stress helper on
+  yod, where MAM has a single pashta.
+- **Judg 18:19 and Ezek 19:9.** MAM's notes there now name Koren, and each of the two Koren rows
+  gains a sentence on its note, with a "MAM doc-note" link. At Judg 18:19 the sentence is "MAM’s
+  note gives final stress for the printed tradition and Koren." At Ezek 19:9 the sentence is
+  "MAM’s note gives final stress for the Leningrad Codex and other manuscripts, and for the
+  printed tradition and Koren.", and its link goes to MAM-with-doc's Ezekiel big-doc page, which
+  holds that note.

@@ -338,36 +338,6 @@
       "verse_href": "../MAM-with-doc/E2-Ruth.html#c3v7"
     },
     {
-      "book": "2Chronicles",
-      "chapter": 20,
-      "verse": 27,
-      "mam": "וַ֠יָּשֻׁב֠וּ",
-      "printed": "וַ֠יָּשֻׁ֠בוּ",
-      "category": "different-placement",
-      "batch": 1,
-      "page": 1432,
-      "scan": "FD-2C-1432.jpg",
-      "crops": [
-        "img/simanim-tanakh-2chronicles-20-27-FD-2C-1432-1609-1.png"
-      ],
-      "notes": [
-        {
-          "text": "MAM puts the telisha gedolah helper on bet. Koren and the Simanim Tanakh put it on shin."
-        },
-        {
-          "text": "At Gen 14:7, MAM has the same vowels and puts the helper on shin, as Kor and Sim do in Chronicles. The helper on bet in Chronicles is likely a MAM error.",
-          "href": "../MAM-with-doc/A1-Genesis.html#c14v7",
-          "label": "MAM at Gen 14:7"
-        },
-        {
-          "text": "The issue documents the proposed correction.",
-          "href": "https://github.com/bdenckla/MAM-basics/issues/371",
-          "label": "MAM-basics #371"
-        }
-      ],
-      "verse_href": "../MAM-with-doc/FD-2Chronicles.html#c20v27"
-    },
-    {
       "book": "Numbers",
       "chapter": 34,
       "verse": 20,
@@ -416,27 +386,6 @@
       "verse_href": "../MAM-with-doc/A5-Deuter.html#c5v13"
     },
     {
-      "book": "Joshua",
-      "chapter": 7,
-      "verse": 7,
-      "atom": 6,
-      "mam": "לָ֠מָה",
-      "printed": "לָ֠מָ֠ה",
-      "category": "extra-helper",
-      "batch": 2,
-      "page": 366,
-      "scan": "B1-Js-0366.jpg",
-      "crops": [
-        "img/simanim-tanakh-joshua-7-7-B1-Js-0366-a6-1.png"
-      ],
-      "notes": [
-        {
-          "text": "Kor and Sim have a telisha gedolah helper on mem."
-        }
-      ],
-      "verse_href": "../MAM-with-doc/B1-Joshua.html#c7v7"
-    },
-    {
       "book": "Judges",
       "chapter": 21,
       "verse": 16,
@@ -456,176 +405,6 @@
         }
       ],
       "verse_href": "../MAM-with-doc/B2-Judges.html#c21v16"
-    },
-    {
-      "book": "1Samuel",
-      "chapter": 17,
-      "verse": 37,
-      "atom": 1,
-      "location": "First occurrence",
-      "mam": "וַיֹּאמֶר֮",
-      "printed": "וַיֹּ֘אמֶר֮",
-      "category": "extra-helper",
-      "batch": 2,
-      "page": 479,
-      "scan": "BA-1S-0479.jpg",
-      "crops": [
-        "img/simanim-tanakh-1samuel-17-37-BA-1S-0479-a1-1.png"
-      ],
-      "notes": [
-        {
-          "text": "Kor and Sim have a zarqa helper on yod."
-        }
-      ],
-      "verse_href": "../MAM-with-doc/BA-1Samuel.html#c17v37"
-    },
-    {
-      "book": "1Samuel",
-      "chapter": 17,
-      "verse": 39,
-      "atom": 8,
-      "location": "First occurrence",
-      "mam": "לָלֶכֶת֮",
-      "printed": "לָלֶ֘כֶת֮",
-      "category": "extra-helper",
-      "batch": 2,
-      "page": 479,
-      "scan": "BA-1S-0479.jpg",
-      "crops": [
-        "img/simanim-tanakh-1samuel-17-39-BA-1S-0479-a8-1.png"
-      ],
-      "notes": [
-        {
-          "text": "Kor and Sim have a zarqa helper on the second lamed."
-        }
-      ],
-      "verse_href": "../MAM-with-doc/BA-1Samuel.html#c17v39"
-    },
-    {
-      "book": "1Samuel",
-      "chapter": 26,
-      "verse": 15,
-      "atom": 1,
-      "mam": "וַיֹּאמֶר֩",
-      "printed": "וַיֹּ֩אמֶר֩",
-      "category": "extra-helper",
-      "batch": 2,
-      "page": 498,
-      "scan": "BA-1S-0498.jpg",
-      "crops": [
-        "img/simanim-tanakh-1samuel-26-15-BA-1S-0498-a1-1.png"
-      ],
-      "notes": [
-        {
-          "text": "Kor and Sim have a telisha qetanna helper on yod."
-        }
-      ],
-      "verse_href": "../MAM-with-doc/BA-1Samuel.html#c26v15"
-    },
-    {
-      "book": "2Samuel",
-      "chapter": 19,
-      "verse": 31,
-      "atom": 9,
-      "mam": "אַ֠חֲרֵי",
-      "printed": "אַֽ֠חֲרֵ֠י",
-      "category": "extra-helper",
-      "batch": 2,
-      "page": 541,
-      "scan": "BB-2S-0541.jpg",
-      "crops": [
-        "img/simanim-tanakh-2samuel-19-31-BB-2S-0541-a9-1.png"
-      ],
-      "notes": [
-        {
-          "text": "Kor and Sim have a telisha gedolah helper on resh."
-        }
-      ],
-      "verse_href": "../MAM-with-doc/BB-2Samuel.html#c19v31"
-    },
-    {
-      "book": "2Kings",
-      "chapter": 9,
-      "verse": 36,
-      "atom": 1,
-      "mam": "וַיָּשֻׁבוּ֮",
-      "printed": "וַיָּשֻׁ֘בוּ֮",
-      "category": "extra-helper",
-      "batch": 2,
-      "page": 631,
-      "scan": "BD-2K-0631.jpg",
-      "crops": [
-        "img/simanim-tanakh-2kings-9-36-BD-2K-0631-a1-1.png"
-      ],
-      "notes": [
-        {
-          "text": "Kor and Sim have a zarqa helper on shin."
-        }
-      ],
-      "verse_href": "../MAM-with-doc/BD-2Kings.html#c9v36"
-    },
-    {
-      "book": "Isaiah",
-      "chapter": 10,
-      "verse": 16,
-      "atom": 1,
-      "mam": "לָ֠כֵן",
-      "printed": "לָ֠כֵ֠ן",
-      "category": "extra-helper",
-      "batch": 2,
-      "page": 678,
-      "scan": "C1-I-0678.jpg",
-      "crops": [
-        "img/simanim-tanakh-isaiah-10-16-C1-I-0678-a1-1.png"
-      ],
-      "notes": [
-        {
-          "text": "Kor and Sim have a telisha gedolah helper on kaf."
-        }
-      ],
-      "verse_href": "../MAM-with-doc/C1-Isaiah.html#c10v16"
-    },
-    {
-      "book": "Isaiah",
-      "chapter": 39,
-      "verse": 2,
-      "atom": 9,
-      "mam": "אֶת־הַכֶּסֶף֩",
-      "printed": "אֶת־הַכֶּ֩סֶף֩",
-      "category": "extra-helper",
-      "batch": 2,
-      "page": 708,
-      "scan": "C1-I-0708.jpg",
-      "crops": [
-        "img/simanim-tanakh-isaiah-39-2-C1-I-0708-a9-1.png"
-      ],
-      "notes": [
-        {
-          "text": "Kor and Sim have a telisha qetanna helper on kaf."
-        }
-      ],
-      "verse_href": "../MAM-with-doc/C1-Isaiah.html#c39v2"
-    },
-    {
-      "book": "Jeremiah",
-      "chapter": 21,
-      "verse": 10,
-      "atom": 3,
-      "mam": "פָ֠נַי",
-      "printed": "פָ֠נַ֠י",
-      "category": "extra-helper",
-      "batch": 2,
-      "page": 775,
-      "scan": "C2-Je-0775.jpg",
-      "crops": [
-        "img/simanim-tanakh-jeremiah-21-10-C2-Je-0775-a3-1.png"
-      ],
-      "notes": [
-        {
-          "text": "Kor and Sim have a telisha gedolah helper on nun."
-        }
-      ],
-      "verse_href": "../MAM-with-doc/C2-Jeremiah.html#c21v10"
     },
     {
       "book": "Jeremiah",
@@ -649,69 +428,6 @@
       "verse_href": "../MAM-with-doc/C2-Jeremiah.html#c33v26"
     },
     {
-      "book": "Jeremiah",
-      "chapter": 40,
-      "verse": 15,
-      "atom": 6,
-      "mam": "אֶל־גְּדַלְיָהוּ֩",
-      "printed": "אֶל־גְּדַלְיָ֩הוּ֩",
-      "category": "extra-helper",
-      "batch": 2,
-      "page": 813,
-      "scan": "C2-Je-0813.jpg",
-      "crops": [
-        "img/simanim-tanakh-jeremiah-40-15-C2-Je-0813-a6-1.png"
-      ],
-      "notes": [
-        {
-          "text": "Kor and Sim have a telisha qetanna helper on yod."
-        }
-      ],
-      "verse_href": "../MAM-with-doc/C2-Jeremiah.html#c40v15"
-    },
-    {
-      "book": "Ezekiel",
-      "chapter": 13,
-      "verse": 19,
-      "atom": 8,
-      "mam": "לֶחֶם֒",
-      "printed": "לֶ֒חֶם֒",
-      "category": "extra-helper",
-      "batch": 2,
-      "page": 858,
-      "scan": "C3-Ee-0858.jpg",
-      "crops": [
-        "img/simanim-tanakh-ezekiel-13-19-C3-Ee-0858-a8-1.png"
-      ],
-      "notes": [
-        {
-          "text": "Kor and Sim have a segolta helper on lamed."
-        }
-      ],
-      "verse_href": "../MAM-with-doc/C3-Ezekiel.html#c13v19"
-    },
-    {
-      "book": "Ezekiel",
-      "chapter": 14,
-      "verse": 16,
-      "atom": 3,
-      "mam": "הָאֵלֶּה֮",
-      "printed": "הָאֵ֘לֶּה֮",
-      "category": "extra-helper",
-      "batch": 2,
-      "page": 859,
-      "scan": "C3-Ee-0859.jpg",
-      "crops": [
-        "img/simanim-tanakh-ezekiel-14-16-C3-Ee-0859-a3-1.png"
-      ],
-      "notes": [
-        {
-          "text": "Kor and Sim have a zarqa helper on alef."
-        }
-      ],
-      "verse_href": "../MAM-with-doc/C3-Ezekiel.html#c14v16"
-    },
-    {
       "book": "Ezekiel",
       "chapter": 16,
       "verse": 61,
@@ -731,27 +447,6 @@
         }
       ],
       "verse_href": "../MAM-with-doc/C3-Ezekiel.html#c16v61"
-    },
-    {
-      "book": "Amos",
-      "chapter": 6,
-      "verse": 10,
-      "atom": 7,
-      "mam": "מִן־הַבַּיִת֒",
-      "printed": "מִן־הַבַּ֒יִת֒",
-      "category": "extra-helper",
-      "batch": 2,
-      "page": 949,
-      "scan": "CC-A-0949.jpg",
-      "crops": [
-        "img/simanim-tanakh-amos-6-10-CC-A-0949-a7-1.png"
-      ],
-      "notes": [
-        {
-          "text": "Kor and Sim have a segolta helper on bet."
-        }
-      ],
-      "verse_href": "../MAM-with-doc/CC-Amos.html#c6v10"
     },
     {
       "book": "Nehemiah",
