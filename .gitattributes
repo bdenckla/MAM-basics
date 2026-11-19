@@ -55,6 +55,12 @@ in/mam-ws-intro/*.mediawiki whitespace=-blank-at-eol
 # only in its deliberate corrections.
 uxlc/in/UXLC-misc-fixed/*.xml whitespace=-blank-at-eol,-space-before-tab
 
+# The changes tab of MAM's old Google Sheet, captured byte for byte on 2026-11-19 for the
+# change-log credits; in/mam-go-changes-tab/manifest.json records its SHA-256. Its rows end in
+# CRLF, but its first cell, the freeze banner, holds a bare LF, which the *.csv rule above
+# would turn into CRLF on checkout, so Git must keep its bytes.
+in/mam-go-changes-tab/changes.csv -text whitespace=cr-at-eol
+
 # Preserve this frozen review's exact bytes, including its line-final spaces.
 doc/yod-holam-review-20261007.html -text whitespace=-blank-at-eol
 

@@ -1,0 +1,13 @@
+{
+  "_header": [
+    "A byte-for-byte capture of the changes tab of MAM's old Google Sheet, through its published CSV, for the change-log credits of doc/PLAN-change-log-credits.md, Phase 3.",
+    "Captured once, read-only, through mb_cmn.polite_download with obey_robots_txt=True. Never normalize or edit changes.csv.",
+    "Record 1 is the freeze banner and record 2 the header, so a data record's one-based index is its row in the Sheet."
+  ],
+  "url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQrnXDxQJ3pojK_9K4TiRwCpz-NCMmW5mWE9fH5ITpV0IF9aV4-XVtmShTyyIoB_PGRCk4o_YQYWPsU/pub?output=csv&gid=953964633",
+  "gid": 953964633,
+  "retrieved": "2026-11-19T16:30:05+00:00",
+  "bytes": 189511,
+  "sha256": "030cb757027c00754600a43a989d8fd5bf6b8f2ed3f6196f23d39d6f1567684e",
+  "records": 1084
+}
