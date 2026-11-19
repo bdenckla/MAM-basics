@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "inventory_sha256": "95e6a64d6e3b42540d4f02585e8ef9fb8389140e5c4ed07f21d5238c7977087d",
+  "inventory_sha256": "80440c641c186f21954081aa9e30b1f5c360d6708618fcfa8503b527fbf81143",
   "notes": [
     {
       "id": "A1-Genesis 1:1 note 1 נוסח",
@@ -11475,23 +11475,23 @@
       ],
       "note_ordinal": 1,
       "source_template": "נוסח",
-      "source_note_sha256": "9506c38e1d5857febb5403d7867064aa96ebe94c7138105deeabede00101425c",
+      "source_note_sha256": "bab602ceef382eb0aa451e8821d680d4de34e0a4ad3c0836236da5bd4b95b0dd",
       "original_target": "שָׁ֩טוּ֩",
       "near_target": "שָׁטוּ֩",
       "original_body": [
-        "=סימון של טעם כפול מלעיל לפי כללי הדקדוק, וכן הכריעו במהדורת קורן ובתיקון קוראים חורב (ובקריאתו של הרב ירמיהו וידר).",
+        "=סימון של טעם כפול מלעיל לפי כללי הדקדוק, וכך הכריע עין הקורא (\"שָׁטוּ֩ לעיל.\") המובא בחומש מאור עינים של היידנהיים, וכך הדפיס היידנהיים על פיו בטעם כפול (שָׁ֩טוּ֩). וכמו כן במהדורת קורן ובתיקון קוראים חורב (ובקריאתו של הרב ירמיהו וידר). והשוו ירמיהו יא,י (שָׁ֩בוּ֩).",
         {
           "tmpl_name": "ש"
         },
-        "א(ס),ל,ב,ש,ש1,ק3,ו=שָׁטוּ֩ (תלישא קטנה בסוף התיבה כנהוג) <ש֩טו֩ מלעיל? על וי\"ו ואין בו הכרעה כמ\"ש>",
+        "א(ס),ל,ב,ש,ש1,ק3,ו=שָׁטוּ֩ (תלישא קטנה בסוף התיבה כנהוג) <א(ס)=ש֩טו֩ מלעיל? על וי\"ו ואין בו הכרעה כמ\"ש>. ובמ\"ש כתב: כתוב בספר פתח דברי (דף פ׳) שהוא מלרע על דרך הזרות כמו וְסָרוּ הצפרדעי׳, כי שָמוּ אתי בבור, וכ״כ האפודי בפ׳ י״ו, וספר רב פעלים. גם בספר ספרדי קדמון מסור עליו ל׳ ומלרע. ובעל א״ת כתב שאם קבלה נקבל ואם לדין יש תשובה, שהתלשא קטנה שבסוף המלה אינה ראיה, שהיא מהטעמים שדרכם לבא בסוף המלה לעולם אפי׳ כשהמלה מלעיל, כמו וַיִצֶר֩ וַיִבֶן֩ דפ׳ בראשית, ע״ש. ועיין מ״ש בירמיה סי׳ י״א.",
         {
           "tmpl_name": "ש"
         },
         "סימנים=שָׁטוּ֩ (מלרע) לפי מנהגי הקריאה של הספרדים והתימנים."
       ],
       "clauses": [
-        "=סימון של טעם כפול מלעיל לפי כללי הדקדוק, וכן הכריעו במהדורת קורן ובתיקון קוראים חורב (ובקריאתו של הרב ירמיהו וידר).",
-        "א(ס),ל,ב,ש,ש1,ק3,ו=שָׁטוּ֩ (תלישא קטנה בסוף התיבה כנהוג) <ש֩טו֩ מלעיל? על וי\"ו ואין בו הכרעה כמ\"ש>",
+        "=סימון של טעם כפול מלעיל לפי כללי הדקדוק, וכך הכריע עין הקורא (\"שָׁטוּ֩ לעיל.\") המובא בחומש מאור עינים של היידנהיים, וכך הדפיס היידנהיים על פיו בטעם כפול (שָׁ֩טוּ֩). וכמו כן במהדורת קורן ובתיקון קוראים חורב (ובקריאתו של הרב ירמיהו וידר). והשוו ירמיהו יא,י (שָׁ֩בוּ֩).",
+        "א(ס),ל,ב,ש,ש1,ק3,ו=שָׁטוּ֩ (תלישא קטנה בסוף התיבה כנהוג) <א(ס)=ש֩טו֩ מלעיל? על וי\"ו ואין בו הכרעה כמ\"ש>. ובמ\"ש כתב: כתוב בספר פתח דברי (דף פ׳) שהוא מלרע על דרך הזרות כמו וְסָרוּ הצפרדעי׳, כי שָמוּ אתי בבור, וכ״כ האפודי בפ׳ י״ו, וספר רב פעלים. גם בספר ספרדי קדמון מסור עליו ל׳ ומלרע. ובעל א״ת כתב שאם קבלה נקבל ואם לדין יש תשובה, שהתלשא קטנה שבסוף המלה אינה ראיה, שהיא מהטעמים שדרכם לבא בסוף המלה לעולם אפי׳ כשהמלה מלעיל, כמו וַיִצֶר֩ וַיִבֶן֩ דפ׳ בראשית, ע״ש. ועיין מ״ש בירמיה סי׳ י״א.",
         "סימנים=שָׁטוּ֩ (מלרע) לפי מנהגי הקריאה של הספרדים והתימנים."
       ],
       "change_causes": [
@@ -11502,24 +11502,23 @@
         "pages": [],
         "partial_gap_boundaries": []
       },
-      "candidate_clause": null,
-      "proposal_reason": "No unique plain clause quoting the complete target; retain the source note.",
-      "evidence_sha256": "06196178fa1883eb5112a6e5f00f6e7c069bb7e65d24772b564a641cdafcafc6",
+      "candidate_clause": 2,
+      "proposal_reason": "One literal full-target alternative; semantic review of its suffix and other clauses required.",
+      "evidence_sha256": "5353395f54def2eb9980ae20908db48182f9ff8aa4e2b0988e69eaee99480692",
       "review": {
         "status": "reviewed",
-        "presentation": "framed-mam",
-        "reason": "No unique plain clause quoting the complete target; retain the source note. Individual clause review confirms that explicit MAM context preserves the source's claims and qualifications without a new interpretation.",
+        "presentation": "recast",
+        "reason": "Reviewed literal source agreement: retain the complete source head and suffix; keep all remaining clauses in their original order under MAM's labelled target. This attributes agreement and does not explain near-Aleppo's selection.",
         "proposed_parts": {
-          "near_clause": null,
+          "near_clause": [
+            "=סימנים (מלרע) לפי מנהגי הקריאה של הספרדים והתימנים."
+          ],
           "mam_clauses": [
             [
-              "=סימון של טעם כפול מלעיל לפי כללי הדקדוק, וכן הכריעו במהדורת קורן ובתיקון קוראים חורב (ובקריאתו של הרב ירמיהו וידר)."
+              "=סימון של טעם כפול מלעיל לפי כללי הדקדוק, וכך הכריע עין הקורא (\"שָׁטוּ֩ לעיל.\") המובא בחומש מאור עינים של היידנהיים, וכך הדפיס היידנהיים על פיו בטעם כפול (שָׁ֩טוּ֩). וכמו כן במהדורת קורן ובתיקון קוראים חורב (ובקריאתו של הרב ירמיהו וידר). והשוו ירמיהו יא,י (שָׁ֩בוּ֩)."
             ],
             [
-              "א(ס),ל,ב,ש,ש1,ק3,ו=שָׁטוּ֩ (תלישא קטנה בסוף התיבה כנהוג) <ש֩טו֩ מלעיל? על וי\"ו ואין בו הכרעה כמ\"ש>"
-            ],
-            [
-              "סימנים=שָׁטוּ֩ (מלרע) לפי מנהגי הקריאה של הספרדים והתימנים."
+              "א(ס),ל,ב,ש,ש1,ק3,ו=שָׁטוּ֩ (תלישא קטנה בסוף התיבה כנהוג) <א(ס)=ש֩טו֩ מלעיל? על וי\"ו ואין בו הכרעה כמ\"ש>. ובמ\"ש כתב: כתוב בספר פתח דברי (דף פ׳) שהוא מלרע על דרך הזרות כמו וְסָרוּ הצפרדעי׳, כי שָמוּ אתי בבור, וכ״כ האפודי בפ׳ י״ו, וספר רב פעלים. גם בספר ספרדי קדמון מסור עליו ל׳ ומלרע. ובעל א״ת כתב שאם קבלה נקבל ואם לדין יש תשובה, שהתלשא קטנה שבסוף המלה אינה ראיה, שהיא מהטעמים שדרכם לבא בסוף המלה לעולם אפי׳ כשהמלה מלעיל, כמו וַיִצֶר֩ וַיִבֶן֩ דפ׳ בראשית, ע״ש. ועיין מ״ש בירמיה סי׳ י״א."
             ]
           ]
         },
@@ -11527,17 +11526,17 @@
           {
             "index": 0,
             "disposition": "mam-context",
-            "reason": "Keep this source clause verbatim with its original MAM subject, explanations, alternatives and cross-references. No unique plain clause quoting the complete target; retain the source note. Individual clause review confirms that explicit MAM context preserves the source's claims and qualifications without a new interpretation."
+            "reason": "Keep this source clause verbatim with its original MAM subject, explanations, alternatives and cross-references. Reorganization changes only the independently reviewed literal agreement clause."
           },
           {
             "index": 1,
             "disposition": "mam-context",
-            "reason": "Keep this source clause verbatim with its original MAM subject, explanations, alternatives and cross-references. No unique plain clause quoting the complete target; retain the source note. Individual clause review confirms that explicit MAM context preserves the source's claims and qualifications without a new interpretation."
+            "reason": "Keep this source clause verbatim with its original MAM subject, explanations, alternatives and cross-references. Reorganization changes only the independently reviewed literal agreement clause."
           },
           {
             "index": 2,
-            "disposition": "mam-context",
-            "reason": "Keep this source clause verbatim with its original MAM subject, explanations, alternatives and cross-references. No unique plain clause quoting the complete target; retain the source note. Individual clause review confirms that explicit MAM context preserves the source's claims and qualifications without a new interpretation."
+            "disposition": "near-subject",
+            "reason": "Complete literal form matches the near target; preserve the attributed source and every qualification verbatim."
           }
         ]
       }
@@ -35050,19 +35049,24 @@
       ],
       "note_ordinal": 1,
       "source_template": "נוסח",
-      "source_note_sha256": "fb7c85e681eaf510d7774f64d09bf6b2ddf161e66b4e187d6ccce2eb85939cb1",
+      "source_note_sha256": "d56286b7972b5e87055a71f18e6b037bec02721936046eed252d1306f0d5a68a",
       "original_target": "שָׁ֩בוּ֩",
       "near_target": "שָׁבוּ֩",
       "original_body": [
-        "=ל (טעם כפול בכתב־היד בהברה המוטעמת, להורות על מקום הטעם במקום שאפשר לטעות בו)",
+        "=ל (טעם כפול בכתב־היד בהברה המוטעמת, להורות על מקום הטעם במקום שאפשר לטעות בו); וכמו כן במהדורת בער בטעם כפול.",
         {
           "tmpl_name": "ש"
         },
-        "א=שָׁבוּ֩ כדרכו אפילו אם הטעם מלעיל"
+        "א=שָׁבוּ֩ כדרכו, גם כאשר הטעם מלעיל.",
+        {
+          "tmpl_name": "ש"
+        },
+        "במ\"ש כתב: \"בספר אחד ספרדי נכתב בצדו טעמו מלעיל, גם בספר אחד קדמון כתוב עליו מלעיל. אבל שָׁטוּ֩ מלרע, עיין מ״ש בפרשת בהעלתך (במדבר יא,ח).\" אמנם שם לגבי שָׁטוּ֩ לא הכריע, ובסוף דבריו הביא את נימוקו של אור תורה שהטעם מלעיל."
       ],
       "clauses": [
-        "=ל (טעם כפול בכתב־היד בהברה המוטעמת, להורות על מקום הטעם במקום שאפשר לטעות בו)",
-        "א=שָׁבוּ֩ כדרכו אפילו אם הטעם מלעיל"
+        "=ל (טעם כפול בכתב־היד בהברה המוטעמת, להורות על מקום הטעם במקום שאפשר לטעות בו); וכמו כן במהדורת בער בטעם כפול.",
+        "א=שָׁבוּ֩ כדרכו, גם כאשר הטעם מלעיל.",
+        "במ\"ש כתב: \"בספר אחד ספרדי נכתב בצדו טעמו מלעיל, גם בספר אחד קדמון כתוב עליו מלעיל. אבל שָׁטוּ֩ מלרע, עיין מ״ש בפרשת בהעלתך (במדבר יא,ח).\" אמנם שם לגבי שָׁטוּ֩ לא הכריע, ובסוף דבריו הביא את נימוקו של אור תורה שהטעם מלעיל."
       ],
       "change_causes": [
         "representation policies"
@@ -35076,18 +35080,21 @@
       },
       "candidate_clause": 1,
       "proposal_reason": "One literal full-target alternative; semantic review of its suffix and other clauses required.",
-      "evidence_sha256": "e4dc522c8be602eb0cc471278f4321ad06c2aaa364e641009c7814457f2f5be5",
+      "evidence_sha256": "6812cede020ae82623a1de408597d8f7599b4fb9bde2e764d1d7929affdaf2e9",
       "review": {
         "status": "reviewed",
         "presentation": "recast",
         "reason": "Reviewed literal source agreement: retain the complete source head and suffix; keep all remaining clauses in their original order under MAM's labelled target. This attributes agreement and does not explain near-Aleppo's selection.",
         "proposed_parts": {
           "near_clause": [
-            "=א כדרכו אפילו אם הטעם מלעיל"
+            "=א כדרכו, גם כאשר הטעם מלעיל."
           ],
           "mam_clauses": [
             [
-              "=ל (טעם כפול בכתב־היד בהברה המוטעמת, להורות על מקום הטעם במקום שאפשר לטעות בו)"
+              "=ל (טעם כפול בכתב־היד בהברה המוטעמת, להורות על מקום הטעם במקום שאפשר לטעות בו); וכמו כן במהדורת בער בטעם כפול."
+            ],
+            [
+              "במ\"ש כתב: \"בספר אחד ספרדי נכתב בצדו טעמו מלעיל, גם בספר אחד קדמון כתוב עליו מלעיל. אבל שָׁטוּ֩ מלרע, עיין מ״ש בפרשת בהעלתך (במדבר יא,ח).\" אמנם שם לגבי שָׁטוּ֩ לא הכריע, ובסוף דבריו הביא את נימוקו של אור תורה שהטעם מלעיל."
             ]
           ]
         },
@@ -35101,6 +35108,11 @@
             "index": 1,
             "disposition": "near-subject",
             "reason": "Complete literal form matches the near target; preserve the attributed source and every qualification verbatim."
+          },
+          {
+            "index": 2,
+            "disposition": "mam-context",
+            "reason": "Keep this source clause verbatim with its original MAM subject, explanations, alternatives and cross-references. Reorganization changes only the independently reviewed literal agreement clause."
           }
         ]
       }
