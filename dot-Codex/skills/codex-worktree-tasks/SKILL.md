@@ -18,7 +18,8 @@ By Ben's decision of 2026-10-20, Codex works by default in full clones in the fo
 worktrees; the common instruction body's “Clone forests and portable work” gives the ownership
 rule. A Codex-managed worktree remains permitted when a task needs one. Create it only from a
 saved project whose clone is in a Codex forest: integration fast-forwards the home clone's
-`main`, and `$HOME/GitRepos` and `$HOME/GitRepos2` belong to Claude.
+`main`, and `$HOME/GitRepos`, `$HOME/GitRepos2`, `D:/GitRepos5` and `D:/GitRepos6` belong to
+Claude.
 
 ## Load the reference for the selected work
 

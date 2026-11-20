@@ -14,9 +14,10 @@ recovery through the new shared entrypoint and Claude adapter.
   that loads them. If a name no longer resolves, search for it by keyword before concluding that
   the app lacks the tool, and then name the missing tool to Ben.
 - **Where a child starts:** the app's guidance for `start_session`'s `cwd` assumes that Ben named
-  the place. His standing delegation of Claude's four clones, first given when the commander was
-  started on 2026-10-29 and now in `claude-desktop.md`'s ledger, is that naming. The app may show Ben a card
-  the first time a session starts in a folder it has not seen.
+  the place. His standing delegation of Claude's clones, first given when the commander was
+  started on 2026-10-29, extended to the D: forests' clones on 2026-11-20 and now in
+  `claude-desktop.md`'s ledger, is that naming. The app may show Ben a card the first time a
+  session starts in a folder it has not seen.
 - **A move into a MAM-private clone failed.** On 2026-11-18 a child in GitRepos/MAM-basics called
   `change_directory` for GitRepos/MAM-private, the clone the commander had granted it. The move
   takes effect when the turn ends; this one failed then and left Ben a dialog, which the child

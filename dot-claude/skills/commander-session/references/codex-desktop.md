@@ -53,8 +53,9 @@ including `status --porcelain=v1 -z`. Check unpushed commits as well as dirty fi
 Within one clone, one assigned executor writes, stages and commits at a time. Other agents may
 read. Subagents share the workspace; they do not acquire isolated checkouts by being spawned.
 Give simultaneous writers separate verified checkouts and explicit paths. Do not edit or run
-generators in Claude's GitRepos or GitRepos2; read those forests only with optional Git locks
-disabled. If no suitable clone is free, queue the writing work and continue independent reading.
+generators in Claude's forests, `$HOME/GitRepos`, `$HOME/GitRepos2`, `D:/GitRepos5` and
+`D:/GitRepos6`; read those forests only with optional Git locks disabled. If no suitable clone is
+free, queue the writing work and continue independent reading.
 A linked worktree requires Ben's request for that task and the worktree skills. Cloud placement
 requires the user request and a verified environment with the task's required inputs.
 

@@ -13,7 +13,7 @@ these issues." This skill is Claude's procedure for that session, the **commande
 
 The Claude commander is one long-lived session, pinned in the sidebar, working in
 `$HOME/GitRepos/MAM-basics` in auto permission mode. Its children are subagents or local/cloud
-sessions. Ben tells the commander of sessions he starts himself in GitRepos or GitRepos2, since
+sessions. Ben tells the commander of sessions he starts himself in any of Claude's forests, since
 the app shows a session's folder but not its intent. Ben answers child sessions directly; the
 commander asks only about session management and new work needing his authority. Placement is
 the commander's call.
@@ -37,7 +37,7 @@ select:mcp__ccd_session__start_session,mcp__ccd_session__list_start_targets,mcp_
 - **start:** pin the session with `set_pinned` and "self" if it is not pinned. If its folder or
   permission mode differs from those above, tell Ben before anything else. Create the state
   folder, with a current-state note and a running record, if it is absent. Adopt each unarchived
-  session that `list_sessions` shows in a clone of GitRepos or GitRepos2 as that clone's writer
+  session that `list_sessions` shows in a clone of any of Claude's forests as that clone's writer
   until it reports done, and read its transcript with `list_events`. Rebuild the ledger, write the
   current-state note, report the ledger to Ben in a few lines and wait for his first task.
 - **resume:** the id is the one the current-state note records; if it differs, follow succeed
@@ -57,9 +57,10 @@ select:mcp__ccd_session__start_session,mcp__ccd_session__list_start_targets,mcp_
 
 ## The ledger: who may write where
 
-The unit is a clone, a (forest, repository) pair: GitRepos/MAM-basics, GitRepos/MAM-private,
-GitRepos2/MAM-basics and GitRepos2/MAM-private. The commander derives the ledger whenever it
-decides something, never from memory:
+The unit is a clone, a (forest, repository) pair: MAM-basics or MAM-private in one of Claude's
+four forests, `$HOME/GitRepos`, `$HOME/GitRepos2`, `D:/GitRepos5` and `D:/GitRepos6`, the last two
+on an external drive (Ben, 2026-11-20). The commander derives the ledger whenever it decides
+something, never from memory:
 
 - **`list_sessions`** gives each session's folder, whether it runs, and which sessions the
   commander started. A session in plan mode is a reader; any other session in a clone is its
@@ -110,8 +111,9 @@ words, to leave it alone, so that the act happens once, not twice and not never.
   an app event started, becomes an "own_initiative" card. `context` "fresh"; `effort` "max", read
   back with `get_session` and mentioned to Ben only when it is not max; no `model`, and no cheaper
   model for a subagent either; `use_worktree` false; the commander's permission mode, or "plan".
-  The clone's folder is the `cwd`. A child bound for GitRepos2 starts in the commander's folder and
-  moves there with `change_directory` after the guard checks its brief spells out. A child never
+  The clone's folder is the `cwd`. A child bound for GitRepos2, GitRepos5 or GitRepos6 starts in
+  the commander's folder and moves there with `change_directory` after the guard checks its brief
+  spells out. A child never
   moves into a MAM-private clone: it works there by absolute paths from the MAM-basics clone it
   holds or, holding none, from the commander's folder, where it writes nothing (`app-limits.md`).
 - **Brief:** a file in the state folder, written as `briefs-and-reports.md` says. Ben's

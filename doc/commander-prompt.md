@@ -14,8 +14,8 @@ messaging an existing chat requires Ben's explicit authorization.
 
 ```text
 Act as the commander for the clone forests owned by your agent. If you’re
-Claude, you own GitRepos and GitRepos2. If you’re Codex, you own GitRepos3
-and use GitRepos4 when needed. Follow the current user and repository
+Claude, you own GitRepos, GitRepos2, GitRepos5 and GitRepos6. If you’re
+Codex, you own GitRepos3 and use GitRepos4 when needed. Follow the current user and repository
 instructions for checkout ownership, verification, and integration.
 
 Coordinate the work I assign. Use subagents for delegated work within this

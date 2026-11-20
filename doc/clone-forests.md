@@ -1,11 +1,13 @@
 # Full clone forests and dependency constraints
 
 State: runbook. Ben approved the forest and pinning policy on 2026-09-29 and forest ownership on
-2026-10-20.
+2026-10-20, and gave Claude two more forests on 2026-11-20.
 
 `in/repo_maintenance_policy.json`, `clone_forests`, declares the layout. Each machine's
-`$HOME/GitRepos` is its primary forest; optional `$HOME/GitRepos<N>` forests have integer N
-at least 2. Every forest holds the canonical repository names in `all-repos.code-workspace`
+`$HOME/GitRepos` is its primary forest; optional `GitRepos<N>` forests have integer N at least 2
+and are normally `$HOME/GitRepos<N>`. On Ben's Windows machine, GitRepos5 and GitRepos6 are
+`D:/GitRepos5` and `D:/GitRepos6`, on an external drive. Every forest holds the canonical
+repository names in `all-repos.code-workspace`
 with matching origins. No machine or forest is globally primary. Forest creation is separate
 from worktree retirement; an existing forest is not a disposable task directory.
 
@@ -19,6 +21,15 @@ forests and portable work” gives the rule every session follows. The same day 
 clone the default checkout: "I'm not forbidding worktrees, just trying to shift the default mode
 of work to be in these forests of clones rather than worktrees of a clone in one of those forests
 of clones."
+
+On 2026-11-20 Ben gave Claude two more forests: “create a GitRepos5 and a GitRepos6 on the 'D'
+(D:) drive, and assign/allocate them to Claude. So Claude will now have 4 "clone forests"
+(GitRepos instances) to choose from”. Claude therefore owns `$HOME/GitRepos`, `$HOME/GitRepos2`,
+`D:/GitRepos5` and `D:/GitRepos6`. The D: drive is a 1 TB SSD attached by USB, which Windows
+reports as a fixed drive. Claude created the two forests that day from
+`$HOME/GitRepos2/MAM-basics`: it cloned each roster repository with the synchronizer's own clone
+command, then ran the write form of `--sync-forest` on each root, which verified the clones and
+created their environments.
 
 Only a forest's owner runs the write form of `--sync-forest` on it. The check forms below,
 `--sync-forest <root> --check` and `--forest-status`, fetch but change no checkout, local branch
@@ -80,7 +91,9 @@ the clone. Any other session, lease or worktree occupancy in the same clone keep
 ```
 
 This discovers the primary and numbered secondary forests under the account home, checks each,
-and attributes registered external worktree sessions to their home forest. Runtime formats
+and attributes registered external worktree sessions to their home forest. It does not yet
+discover a forest elsewhere, so check `D:/GitRepos5` and `D:/GitRepos6` with
+`--sync-forest D:/GitRepos5 --check` and `--sync-forest D:/GitRepos6 --check`. Runtime formats
 can change; unreadable installed records block writes rather than proving inactivity.
 
 ## Environments

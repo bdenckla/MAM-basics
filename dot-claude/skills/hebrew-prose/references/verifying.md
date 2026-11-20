@@ -135,8 +135,8 @@ point, run with the cwd at that tree's own root —
 .venv/Scripts/python.exe py/main_ocr.py <subcommand>
 ```
 
-`<forest>` is the directory holding the invoking checkout's home clone, `$HOME/GitRepos` or
-`$HOME/GitRepos<N>`.
+`<forest>` is the directory holding the invoking checkout's home clone, `$HOME/GitRepos`,
+`$HOME/GitRepos<N>`, or `D:/GitRepos5` or `D:/GitRepos6` on Ben's Windows machine.
 
 Since 2026-08-01 **no module there is runnable on its own**, and this is by design:
 `python py/cos/check_cos_claims.py` puts `py/cos/` on `sys.path[0]` and cannot find the shared

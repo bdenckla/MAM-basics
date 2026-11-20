@@ -74,8 +74,10 @@ choice requiring judgment remains Ben's decision.
 A **forest** holds a full independent clone of every repository in the declared workspace
 roster, under canonical names with matching origins. Each machine's `$HOME/GitRepos` is its
 **primary forest**, distinguished by being created first. Optional **secondary forests** are
-`$HOME/GitRepos<N>`, for integers N at least 2. No machine or forest is globally primary.
-MAM-basics' `in/repo_maintenance_policy.json`, `clone_forests`, declares this layout.
+`GitRepos<N>`, for integers N at least 2, normally `$HOME/GitRepos<N>`; on Ben's Windows
+machine, GitRepos5 and GitRepos6 are `D:/GitRepos5` and `D:/GitRepos6`, on an external drive.
+No machine or forest is globally primary. MAM-basics' `in/repo_maintenance_policy.json`,
+`clone_forests`, declares this layout.
 
 Every full clone has its own Python environments. Corresponding environments use the same
 tracked `requirements.txt` and `constraints.txt` at the same commit; installed versions do not
@@ -98,21 +100,22 @@ that machine. The scan archive is at `$HOME/OneDrive/Documents/ScansOfBooks` by 
 configuration, are found through explicit account configuration.
 
 **Each forest has one owning agent**, by Ben's decision of 2026-10-20, so that Claude and Codex
-need not coordinate checkouts with each other. Claude owns `$HOME/GitRepos` and
-`$HOME/GitRepos2`. Codex owns `$HOME/GitRepos3` and, when it needs another place,
-`$HOME/GitRepos4`, which Codex may create. Only a forest's owner edits, commits, runs generators
-or synchronizes clones there, including through a linked worktree whose home clone is there;
-either agent may read any forest. Work already under way in the other agent's forest on
+need not coordinate checkouts with each other. Claude owns `$HOME/GitRepos`, `$HOME/GitRepos2`,
+`D:/GitRepos5` and `D:/GitRepos6`. Codex owns `$HOME/GitRepos3` and, when it needs another
+place, `$HOME/GitRepos4`, which Codex may create. Only a forest's owner edits, commits, runs
+generators or synchronizes clones there, including through a linked worktree whose home clone is
+there; either agent may read any forest. Work already under way in the other agent's forest on
 2026-10-20 finishes there, pushes its work and leaves each clone it used clean on `main`.
 
 **A full clone is the default checkout.** Ben's preference, 2026-10-20: work, including a session
 started for separate or parallel work, runs in a full clone in a forest its agent owns rather
 than in a new linked worktree. Worktrees remain permitted; in Ben's words, "managing their
-growth, i.e. deleting them, is proving too taxing." Claude gets no third forest for now: Ben
-decided the same day to gain experience with this scheme first. A Claude session that needs to
-write while both of Claude's forests are in use runs as a cloud session where the task can run
-in the cloud, which Ben called "usually … an even better alternative than a worktree"
-(2026-10-20); otherwise it may use a linked worktree.
+growth, i.e. deleting them, is proving too taxing." On 2026-11-20 Ben gave Claude two more
+forests: “create a GitRepos5 and a GitRepos6 on the 'D' (D:) drive, and assign/allocate them to
+Claude. So Claude will now have 4 "clone forests" (GitRepos instances) to choose from”. A Claude
+session that needs to write while all of Claude's forests are in use runs as a cloud session
+where the task can run in the cloud, which Ben called "usually … an even better alternative than
+a worktree" (2026-10-20); otherwise it may use a linked worktree.
 
 ## Linked worktrees
 
