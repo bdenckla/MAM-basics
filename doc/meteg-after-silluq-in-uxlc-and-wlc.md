@@ -81,11 +81,11 @@ Built by `py/main_verse_links.py`, the user-level `verse-links` skill's command,
 
 | Reference | MAM's final atom | tanach.us | Sefaria's image of the folio | Where the atom is |
 |---|---|---|---|---|
-| 1 Samuel 17:5 | נְחֹֽשֶׁת׃ | [tanach.us](https://tanach.us/Tanach.xml?1Sam17:5) | [folio 159A](https://manuscripts.sefaria.org/leningrad-color/BIB_LENCDX_F159A.jpg) | estimated at column 3, line 8.7 (atom 14 of 14); column 3, line 8 in the crop on `gh-pages/post-stress-meteg-post-silluq.html` |
-| 1 Kings 14:14 | עָֽתָּה׃ | [tanach.us](https://tanach.us/Tanach.xml?1Kings14:14) | [folio 195B](https://manuscripts.sefaria.org/leningrad-color/BIB_LENCDX_F195B.jpg) | estimated at column 3, line 1.9 (atom 16 of 16); column 2, line 27 in UXLC's change record 2022.08.31 - 17 |
-| Psalms 60:10 | הִתְרוֹעָֽעִי׃ | [tanach.us](https://tanach.us/Tanach.xml?Ps60:10) | [folio 377B](https://manuscripts.sefaria.org/leningrad-color/BIB_LENCDX_F377B.jpg) | estimated at column 1, line 6.9 (atom 10 of 10) |
-| Psalms 70:2 | חֽוּשָׁה׃ | [tanach.us](https://tanach.us/Tanach.xml?Ps70:2) | [folio 379B](https://manuscripts.sefaria.org/leningrad-color/BIB_LENCDX_F379B.jpg) | estimated at column 1, line 23.2 (atom 5 of 5) |
-| Psalms 72:15 | יְבָרְכֶֽנְהוּ׃ | [tanach.us](https://tanach.us/Tanach.xml?Ps72:15) | [folio 380A](https://manuscripts.sefaria.org/leningrad-color/BIB_LENCDX_F380A.jpg) | estimated at column 2, line 5.5 (atom 11 of 11); column 2, line 3 in Ben's reading, 2026-09-10 (`doc/meteg-after-silluq-psalms-72-15.md`) |
+| 1 Samuel 17:5 | נְחֹֽשֶׁת׃ | [tanach.us](https://tanach.us/Tanach.html?1Sam17:5-17:5) | [folio 159A](https://manuscripts.sefaria.org/leningrad-color/BIB_LENCDX_F159A.jpg) | estimated at column 3, line 8.7 (atom 14 of 14); column 3, line 8 in the crop on `gh-pages/post-stress-meteg-post-silluq.html` |
+| 1 Kings 14:14 | עָֽתָּה׃ | [tanach.us](https://tanach.us/Tanach.html?1Kings14:14-14:14) | [folio 195B](https://manuscripts.sefaria.org/leningrad-color/BIB_LENCDX_F195B.jpg) | estimated at column 3, line 1.9 (atom 16 of 16); column 2, line 27 in UXLC's change record 2022.08.31 - 17 |
+| Psalms 60:10 | הִתְרוֹעָֽעִי׃ | [tanach.us](https://tanach.us/Tanach.html?Ps60:10-60:10) | [folio 377B](https://manuscripts.sefaria.org/leningrad-color/BIB_LENCDX_F377B.jpg) | estimated at column 1, line 6.9 (atom 10 of 10) |
+| Psalms 70:2 | חֽוּשָׁה׃ | [tanach.us](https://tanach.us/Tanach.html?Ps70:2-70:2) | [folio 379B](https://manuscripts.sefaria.org/leningrad-color/BIB_LENCDX_F379B.jpg) | estimated at column 1, line 23.2 (atom 5 of 5) |
+| Psalms 72:15 | יְבָרְכֶֽנְהוּ׃ | [tanach.us](https://tanach.us/Tanach.html?Ps72:15-72:15) | [folio 380A](https://manuscripts.sefaria.org/leningrad-color/BIB_LENCDX_F380A.jpg) | estimated at column 2, line 5.5 (atom 11 of 11); column 2, line 3 in Ben's reading, 2026-09-10 (`doc/meteg-after-silluq-psalms-72-15.md`) |
 
 ## 7. The supplementary aligned pass: the 121 verses the plan's alignment skips, with one hit
 

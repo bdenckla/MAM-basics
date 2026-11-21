@@ -1,6 +1,7 @@
 import py_html.wlc_utils_html as wlc_utils_html
 import py_html.my_html_for_img as my_html_for_img
 from py_html.my_html_span_romanized import rmn
+from mb_cmn.uxlc_verse_url import uxlc_verse_url
 
 
 def _html_for_pcl(pcl):
@@ -19,9 +20,7 @@ def _html_for_pcl(pcl):
 
 
 def _html_for_bcv_str_wlt_tdu(bcv_str):  # wlt_tdu: with link to tanach.us
-    return wlc_utils_html.anchor(
-        bcv_str, {"href": f"https://tanach.us/Tanach.xml?{bcv_str}"}
-    )
+    return wlc_utils_html.anchor(bcv_str, {"href": uxlc_verse_url(bcv_str)})
 
 
 def _html_for_kq(kq):

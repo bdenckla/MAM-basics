@@ -5,6 +5,7 @@ from author_boj_util import boj_site
 from author_boj_util.is_lop import is_lop
 from mb_cmn import my_utils
 from mb_cmn.my_utils import intersperse, sl_map
+from mb_cmn.uxlc_verse_url import uxlc_verse_url
 from author_boj_util.common_titles_etc import d1d_detail_href
 from author_boj_util import author
 from author_boj_util.qr_relations import ACCENT_INFO
@@ -289,7 +290,7 @@ def _ensure_lop(yyycom):
 
 def _ancs(quirkrec):
     cv = quirkrec["qr-cv"]
-    uxlc_href = f"https://tanach.us/Tanach.xml?Job{cv}"
+    uxlc_href = uxlc_verse_url(f"Job{cv}")
     uxlc_anc = boj_html.anchor_h("U", uxlc_href)
     cn_v_vn = "c" + cv.replace(":", "v")
     mwd_href = boj_site.jobn_details_href(f"MAM-with-doc/D3-Job.html#{cn_v_vn}")
