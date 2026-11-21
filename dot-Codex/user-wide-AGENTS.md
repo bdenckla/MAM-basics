@@ -74,8 +74,9 @@ choice requiring judgment remains Ben's decision.
 A **forest** holds a full independent clone of every repository in the declared workspace
 roster, under canonical names with matching origins. Each machine's `$HOME/GitRepos` is its
 **primary forest**, distinguished by being created first. Optional **secondary forests** are
-`GitRepos<N>`, for integers N at least 2, normally `$HOME/GitRepos<N>`; on Ben's Windows
-machine, GitRepos5 and GitRepos6 are `D:/GitRepos5` and `D:/GitRepos6`, on an external drive.
+`GitRepos<N>`, for integers N at least 2, directly in the account home or directly at the root
+of a local fixed drive, one forest to a number on each machine; on Ben's Windows machine,
+GitRepos5 and GitRepos6 are `D:/GitRepos5` and `D:/GitRepos6`, on an external drive.
 No machine or forest is globally primary. MAM-basics' `in/repo_maintenance_policy.json`,
 `clone_forests`, declares this layout.
 

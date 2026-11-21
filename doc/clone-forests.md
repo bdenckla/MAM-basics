@@ -1,15 +1,17 @@
 # Full clone forests and dependency constraints
 
 State: runbook. Ben approved the forest and pinning policy on 2026-09-29 and forest ownership on
-2026-10-20, and gave Claude two more forests on 2026-11-20.
+2026-10-20; on 2026-11-20 he gave Claude two more forests and approved where a numbered forest
+may live.
 
 `in/repo_maintenance_policy.json`, `clone_forests`, declares the layout. Each machine's
 `$HOME/GitRepos` is its primary forest; optional `GitRepos<N>` forests have integer N at least 2
-and are normally `$HOME/GitRepos<N>`. On Ben's Windows machine, GitRepos5 and GitRepos6 are
-`D:/GitRepos5` and `D:/GitRepos6`, on an external drive. Every forest holds the canonical
-repository names in `all-repos.code-workspace`
-with matching origins. No machine or forest is globally primary. Forest creation is separate
-from worktree retirement; an existing forest is not a disposable task directory.
+and live directly in the account home, as `$HOME/GitRepos<N>`, or directly at the root of a
+local fixed drive, and each number names at most one forest on a machine. On Ben's Windows
+machine, GitRepos5 and GitRepos6 are `D:/GitRepos5` and `D:/GitRepos6`, on an external drive.
+Every forest holds the canonical repository names in `all-repos.code-workspace` with matching
+origins. No machine or forest is globally primary. Forest creation is separate from worktree
+retirement; an existing forest is not a disposable task directory.
 
 ## Forest ownership
 
@@ -29,7 +31,11 @@ On 2026-11-20 Ben gave Claude two more forests: “create a GitRepos5 and a GitR
 reports as a fixed drive. Claude created the two forests that day from
 `$HOME/GitRepos2/MAM-basics`: it cloned each roster repository with the synchronizer's own clone
 command, then ran the write form of `--sync-forest` on each root, which verified the clones and
-created their environments.
+created their environments. The same day Ben approved Claude's recommended rule for where a
+numbered forest may live, the rule stated above, which was D1 on a decision page outside this
+repository: "I concur with your recommendations for D1 and D2". D2 was the order in which the
+Claude commander gives out Claude's forests, which the `commander-session` skill's
+`references/claude-desktop.md` records.
 
 Only a forest's owner runs the write form of `--sync-forest` on it. The check forms below,
 `--sync-forest <root> --check` and `--forest-status`, fetch but change no checkout, local branch
@@ -90,11 +96,12 @@ the clone. Any other session, lease or worktree occupancy in the same clone keep
 ./.venv/Scripts/python.exe py/main_repo_util.py --forest-status
 ```
 
-This discovers the primary and numbered secondary forests under the account home, checks each,
-and attributes registered external worktree sessions to their home forest. It does not yet
-discover a forest elsewhere, so check `D:/GitRepos5` and `D:/GitRepos6` with
-`--sync-forest D:/GitRepos5 --check` and `--sync-forest D:/GitRepos6 --check`. Runtime formats
-can change; unreadable installed records block writes rather than proving inactivity.
+This discovers the primary forest, `$HOME/GitRepos`, and every numbered forest directly in the
+account home or directly at the root of a local fixed drive, checks each, and attributes
+registered external worktree sessions to their home forest. It fails before checking any forest
+when one number names forests in two places or the root of a fixed drive cannot be listed. A
+forest on a drive that is not attached is not reported, like any absent numbered forest. Runtime
+formats can change; unreadable installed records block writes rather than proving inactivity.
 
 ## Environments
 

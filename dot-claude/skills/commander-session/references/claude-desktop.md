@@ -78,9 +78,12 @@ Allocation rules:
    commander or, when Ben wants to talk to it, as a child in plan mode or under a two-phase brief,
    which has the child assess holding no clone and ask the commander for one before its first
    Git-impacting change. A plan is given a clone when it executes, not when it plans.
-2. A writing task on one repository goes to a free clone of it: GitRepos2 first; GitRepos when the
-   task needs inputs that exist only there, such as untracked generators under
-   `$HOME/GitRepos/MAM-basics/.novc/`, or when GitRepos2 is busy.
+2. A writing task on one repository goes to the first free clone of it in the order GitRepos2,
+   GitRepos5, GitRepos6, GitRepos. GitRepos still comes first when the task needs inputs that
+   exist only there, such as untracked generators under `$HOME/GitRepos/MAM-basics/.novc/`. This
+   order was Claude's recommendation and D2 on a decision page outside this repository; Ben
+   approved it on 2026-11-20: "I concur with your recommendations for D1 and D2". D1 there was
+   where a numbered forest may live, which `doc/clone-forests.md` records.
 3. A task spanning MAM-basics and MAM-private holds both clones of one forest.
 4. When no clone is free, a MAM-basics-only task that needs nothing private or untracked may be
    offered to Ben as a cloud session; everything else waits in the queue and starts when a child

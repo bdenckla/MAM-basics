@@ -10,15 +10,22 @@ environments stay untouched. A clone that only the calling Claude session occupi
 not refused, even when it is dirty, off main, mid-operation or locked: a write skips it
 unfetched and does not count it as a failure, since that session updates its own
 checkout. Every repository failure is reported while the remaining roster runs.
+
+``forest_roots`` finds a machine's forests for ``--forest-status``: the primary forest,
+``GitRepos`` in the account home, and each numbered ``GitRepos<N>`` directly in the home
+or directly at the root of a local fixed drive.
 """
 
 from __future__ import annotations
 
+import ctypes
 import json
 import os
 from pathlib import Path
 import re
 import subprocess
+import sys
+from typing import Sequence
 
 from mb_cmn import paths, provenance
 from repo_util.forest_environments import (
@@ -32,7 +39,10 @@ from repo_util.worktree_owners import inside, runtime_facts
 from repo_util.worktree_retirement_git import RetirementError, _list_worktrees
 from repo_util.worktree_retirement_inspection import _operation_markers, _status_entries
 
-_FOREST_NAME = re.compile(r"GitRepos(?:[2-9]|[1-9][0-9]+)?\Z")
+# A numbered forest's name, GitRepos<N> for an integer N at least 2, capturing N.
+_NUMBERED_FOREST = re.compile(r"GitRepos([2-9]|[1-9][0-9]+)")
+# What GetDriveTypeW returns for a local fixed drive: DRIVE_FIXED.
+_DRIVE_FIXED = 3
 
 
 def _git(repo: Path, *arguments: str) -> str:
@@ -376,24 +386,75 @@ def run_forest_sync(root: Path, *, check: bool, source: Path | None = None) -> b
     return problems == 0
 
 
-def run_forest_status(*, home: Path | None = None) -> bool:
-    """Discover primary and numbered secondary forests in the account home."""
-    account = home or Path.home()
-    roots = [account / "GitRepos"]
+def _fixed_drive_roots() -> list[Path]:
+    """The root of each local fixed drive that Windows reports; on other systems, none."""
+    if sys.platform != "win32":
+        return []
     try:
-        roots.extend(
-            sorted(
-                (
-                    child
-                    for child in account.iterdir()
-                    if child.name != "GitRepos"
-                    and _FOREST_NAME.fullmatch(child.name)
-                    and child.is_dir()
-                ),
-                key=lambda child: int(child.name.removeprefix("GitRepos")),
-            )
-        )
+        drives = os.listdrives()
     except OSError as exc:
+        raise ForestError(f"cannot list this machine's drives: {exc}") from exc
+    return [
+        Path(drive)
+        for drive in drives
+        if ctypes.windll.kernel32.GetDriveTypeW(drive) == _DRIVE_FIXED
+    ]
+
+
+def _numbered_forests(directory: Path) -> list[tuple[int, Path]]:
+    """Each numbered forest directly in ``directory``, with its number."""
+    try:
+        return [
+            (int(numbered.group(1)), child)
+            for child in directory.iterdir()
+            if (numbered := _NUMBERED_FOREST.fullmatch(child.name)) and child.is_dir()
+        ]
+    except OSError as exc:
+        raise ForestError(f"cannot list {directory}: {exc}") from exc
+
+
+def forest_roots(
+    account: Path, drive_roots: Sequence[Path] | None = None
+) -> list[Path]:
+    """This machine's forests: the primary first, then each numbered forest by number.
+
+    The primary forest is ``account / "GitRepos"``, listed whether or not it exists.  A
+    numbered forest, ``GitRepos<N>`` for an integer N at least 2, is a directory directly
+    in ``account`` or directly at one of ``drive_roots``, which default to the roots of
+    this machine's local fixed drives; an unnumbered ``GitRepos`` at a drive root is no
+    forest.  A forest on a drive that is not attached is simply not found.  Raises
+    ForestError, naming the paths, when one number names a forest in more than one
+    place, or when ``account``, a drive root or the list of drives cannot be read.
+    """
+    if drive_roots is None:
+        drive_roots = _fixed_drive_roots()
+    places: dict[int, list[Path]] = {}
+    for directory in (account, *drive_roots):
+        for number, forest in _numbered_forests(directory):
+            found = places.setdefault(number, [])
+            # One directory reached twice, as a home that is a drive root would be, is
+            # one place.
+            if forest not in found:
+                found.append(forest)
+    duplicated = [
+        f"GitRepos{number} names a forest in more than one place: "
+        + " and ".join(map(str, where))
+        for number, where in sorted(places.items())
+        if len(where) > 1
+    ]
+    if duplicated:
+        raise ForestError("; ".join(duplicated))
+    return [account / "GitRepos", *(places[number][0] for number in sorted(places))]
+
+
+def run_forest_status(*, home: Path | None = None) -> bool:
+    """Fetch and check every forest that ``forest_roots`` finds for the account home.
+
+    A discovery failure fails the run before any forest is checked.
+    """
+    try:
+        roots = forest_roots(home or Path.home())
+    except (OSError, ForestError) as exc:
         print(f"FOREST_DISCOVERY_FAILED: {exc}")
         return False
     success = True

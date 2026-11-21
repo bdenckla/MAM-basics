@@ -40,7 +40,8 @@ guard. Old schema-1 preflights must be prepared again with the new safety gates.
 
 ``--sync-forest ROOT`` uses all-repos.code-workspace, matching source origins and independent
 environments. ``--check`` fetches and reports without cloning, merging or installing.
-``--forest-status`` discovers the account's primary and numbered secondary forests.
+``--forest-status`` discovers the account's primary and numbered secondary forests, the
+numbered ones in the account home or at the root of a local fixed drive, and checks each.
 Ineligible repositories are reported with their local branches, checkouts and environments
 unchanged, though a write run has fetched an ahead or diverged clone before refusing it; no
 action resets, stashes, switches branches, forces history or deletes checkouts.
@@ -160,7 +161,10 @@ def build_parser() -> argparse.ArgumentParser:
     action_group.add_argument(
         "--forest-status",
         action="store_true",
-        help="Fetch and check GitRepos and every numbered GitReposN forest",
+        help=(
+            "Fetch and check GitRepos and every numbered GitReposN forest in the"
+            " account home or at the root of a local fixed drive"
+        ),
     )
     action_group.add_argument("--commit-across-repos", action="store_true")
 
