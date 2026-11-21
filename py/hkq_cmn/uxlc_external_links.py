@@ -13,13 +13,14 @@ from urllib.parse import quote
 
 from mb_cmn import bib_locales as tbn
 from mb_cmn import site_links
+from mb_cmn.uxlc_verse_url import uxlc_verse_url
 
 # Its MwD link is drawn only on a holman page, uxlc_corrections.html.
 # The holman pages' folder below the deploy root: a page's link to another page of the
 # site is relative to it (mb_cmn/site_links.py).
 _HOLMAN_FOLDER = "holman"
 
-# The book code tanach.us puts in a Tanach.xml query, e.g. Tanach.xml?Ex7:20.
+# The book code tanach.us puts in its verse citations, e.g. Ex in Ex7:20.
 # Copied whole from MAM-basics py/uxlc_fois/fois_mark_grammar_html.py's
 # _TANACH_US_BOOK_CODES; that repo also has a py_uxlc table of the same codes,
 # but the py_uxlc one was missing Nahum and Habakkuk until 2026-10-20.
@@ -81,10 +82,7 @@ def verse_links(book: str, chapter: int, verse: int) -> tuple[VerseLink, ...]:
     return (
         VerseLink(
             label="UXLC",
-            href=(
-                "https://tanach.us/Tanach.xml?"
-                f"{TANACH_US_BOOK_CODES[book]}{chapter}:{verse}"
-            ),
+            href=uxlc_verse_url(f"{TANACH_US_BOOK_CODES[book]}{chapter}:{verse}"),
             title="This verse at tanach.us, the UXLC's home",
         ),
         VerseLink(

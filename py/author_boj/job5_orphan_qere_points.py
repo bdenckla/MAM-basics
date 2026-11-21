@@ -2,11 +2,10 @@
 
 from boj_render import boj_html
 from mb_cmn import bib_locales as tbn
+from mb_cmn.uxlc_verse_url import uxlc_verse_url
 from author_boj_util import author
 from author_boj_util import boj_site
 from author_boj_util.common_titles_etc import D5_TITLE, D5_H1_CONTENTS, D5_FNAME
-
-_UXLC = "https://tanach.us/Tanach.xml"
 
 
 def gen_html_file(tdm_ch):
@@ -19,7 +18,7 @@ def _links_to_u_and_m(bkid, ch, vr):
     cv = f"{ch}:{vr}"
     cn_v_vn = f"c{ch}v{vr}"
     osdf = tbn.ordered_short_dash_full_39(bkid)
-    u = boj_html.anchor_h("U", f"{_UXLC}?{bkid}{cv}")
+    u = boj_html.anchor_h("U", uxlc_verse_url(f"{bkid}{cv}"))
     m = boj_html.anchor_h(
         "M", boj_site.jobn_href(f"MAM-with-doc/{osdf}.html#{cn_v_vn}")
     )

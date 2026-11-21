@@ -3,6 +3,7 @@
 import py_uxlc.my_uxlc_book_abbreviations as u_bk_abbr
 from wlc_cmn.wlc_book_codes import bk39id_to_wlc_bb
 from wlc_cmn.wlc_book_codes import wlc_bb_to_bk39id
+from mb_cmn.uxlc_verse_url import uxlc_verse_url
 
 
 def make_wbs_from_std_bcv_triple(std_bcv_triple):
@@ -43,7 +44,7 @@ def get_tanach_dot_us_url(wlc_bcv_str):
     uxlc_bkid = get_uxlc_bkid(wlc_bcv_str)
     wlc_cv_str = _get_cv_str(wlc_bcv_str)
     uxlc_bcv_str = uxlc_bkid + wlc_cv_str
-    return f"https://tanach.us/Tanach.xml?{uxlc_bcv_str}"
+    return uxlc_verse_url(uxlc_bcv_str)
 
 
 def _get_std_bkid(wlc_bcv_str):

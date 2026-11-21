@@ -4,6 +4,7 @@ import uxlc_misc.uxlc_utils_html as uxlc_utils_html
 import mb_cmn.bib_locales as tbn
 import uxlc_misc.my_uxlc_book_abbreviations as u_bk_abbr
 from mb_cmn.uxlc_change_url import uxlc_change_url
+from mb_cmn.uxlc_verse_url import uxlc_verse_url
 from mb_cmn import site_links
 import uxlc_paths
 
@@ -44,7 +45,7 @@ def _uxlc_bcv_str(record):
 
 def _tanach_dot_us_url(record):
     uxlc_bcv_str = _uxlc_bcv_str(record)
-    return f"https://tanach.us/Tanach.xml?{uxlc_bcv_str}"
+    return uxlc_verse_url(uxlc_bcv_str)
 
 
 def _mam_with_doc_url(record):

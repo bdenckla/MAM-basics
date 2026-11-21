@@ -6,6 +6,7 @@ from pathlib import Path
 import re
 
 from mb_cmn.uxlc_change_url import uxlc_change_url
+from mb_cmn.uxlc_verse_url import uxlc_verse_url
 import uxlc_misc.uxlc_utils_html as uxlc_utils_html
 import uxlc_fois.fois_mark_name_abbrev as fois_mark_name_abbrev
 import uxlc_fois.fois_mark_grammar_foi as fois_mark_grammar_foi
@@ -471,7 +472,7 @@ def _tanach_us_book_code(book):
 
 
 def _tanach_us_bcv_url(book, chapter, verse):
-    return f"https://tanach.us/Tanach.xml?{_tanach_us_book_code(book)}{chapter}:{verse}"
+    return uxlc_verse_url(f"{_tanach_us_book_code(book)}{chapter}:{verse}")
 
 
 def _class_label(class_key):
