@@ -702,6 +702,13 @@ NOT_IN_MEGA: dict[str, str] = {
         " Ben gave his word to execute: it writes untracked previews of the pages only."
         "  Recorded in in/miqra-mevoar/README.md."
     ),
+    "py/main_miqra_mevoar.py base-headings": (
+        "Claude-written on 2026-11-22, in Stage 12 of doc/PLAN-miqra-mevoar.md, which"
+        " Ben gave his word to execute: it reads the Torah's base chapters from live"
+        " Hebrew Wikisource, anonymously, and writes the places of their headings to"
+        " in/miqra-mevoar-base-headings/.  Recorded in"
+        " in/miqra-mevoar-base-headings/README.md."
+    ),
 }
 
 # ---------------------------------------------------------------------------

@@ -219,9 +219,12 @@ bytes equal the generated text's. The saved revision's ids and diff link go to
 `main_ws_bot.py miqra-mevoar-display` creates Miqra Mevoar's display pages, each of which sets
 the verses of a book, or of a part of one, in MAM's text beside Rabbi Kokhav's paraphrase, in
 the form of Avi's pages for the five megillot. `py/miqra_mevoar/display_page.py` generates them
-from MAM-simple and the tracked JSON in `in/miqra-mevoar/`: a line for each verse, a break line
-before a verse that follows a petuha or a setuma or that has a heading, which is transcluded from
-its base chapter, and the category line. `--page` names a page by its key, such as `hoshea` or
+from MAM-simple and the tracked JSON in `in/miqra-mevoar/` or, for the Torah, the places of the
+headings in its base chapters, which `py/main_miqra_mevoar.py base-headings` records in
+`in/miqra-mevoar-base-headings/`: a line for each verse, a break line before a verse that follows
+a petuha or a setuma or that has a heading, which is transcluded from its base chapter, and the
+category line. The Decalogue's verses call the templates of Avi's pages of Yitro and Va'etchanan
+instead of the verse template. `--page` names a page by its key, such as `hoshea` or
 `yehoshua-1`, and may be given more than once; without it the run takes every page of the
 generator's table. A saving run needs `--summary`, the edit summary, which Ben approves with the
 run:
