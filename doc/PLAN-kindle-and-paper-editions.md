@@ -1,14 +1,20 @@
 # Plan: Kindle and paper editions of MAM and its introduction
 
-State: live, written 2026-11-22. Planning only: no stage has run, and none starts until Ben says
-to execute it, in a fresh session. Four decisions wait on him, under “Open decisions”.
+State: live, written 2026-11-22. Planning only: Stage 0 is under way, no later stage has run, and
+none starts until Ben says to execute it, in a fresh session. No decision waits on him: he answered
+the four open ones the same day (“Decisions ledger”, entries 3 to 6). What remains of Stage 0 is his
+own step, asking Avi Kadish to take part, which comes before Stage 1.
 
 Written 2026-11-22 by Claude (Opus 5.5), in a session that the session “Commander for Claude's
 forests” started at Ben's request. Ben's words under “Ben's request” are quoted exactly, as the
 commander relayed them and as its transcript holds them; everything else in this plan is that
 agent's reconstruction, from the research recorded under “What the plan rests on”. A fresh session
-executes this plan; the session that wrote it does not. Its thin issue is filed once Ben approves
-the issue's text (Decision 4), and this paragraph then names it.
+executes this plan; the session that wrote it does not. Its thin issue is
+[#376](https://github.com/bdenckla/MAM-basics/issues/376), filed on 2026-11-22, with the text Ben
+approved, by a second session that the commander started, “Kindle and paper plan: Ben's decisions
+and the issue”. That session also recorded Ben's answers to the plan's four open decisions, as
+“Decisions ledger”, entries 3 to 6, and brought the rest of the plan into line with them, in words
+of its own.
 
 ## Ben's request
 
@@ -20,9 +26,9 @@ He added, at 14:43:29 UTC (09:43 New York time):
 
 > regarding that kindle and paper plan, note that this would be a multi-volume edition where each volume could contain only a portion of a book of the bible, or, in contrast, multiple volumes. This many-to-one and one-to-many arrangement is common in series such as Da-at Miqra.
 
-This plan reads his “multiple volumes” as “multiple books”: one volume may hold several books,
-his “many-to-one”, and one book may run across several volumes, his “one-to-many”. Decision 1
-asks him to confirm that reading, since the volume map below rests on it.
+This plan reads his “multiple volumes” as “multiple books”: one volume may hold several books, his
+“many-to-one”, and one book may run across several volumes, his “one-to-many”. He confirmed that
+reading, on which the volume map below rests (“Decisions ledger”, entry 3).
 
 ## What this plan does
 
@@ -56,8 +62,8 @@ buys and signs up for nothing: every such act is Ben's, stage by stage (Stage 7)
    Stage 6, with this plan's recommendation.
 7. **Volumes that need not match the books, in both directions, as in Da'at Miqra.** Ben's second
    message. Active: “The volume map” and Stages 2 and 5; the reading of his “multiple volumes” is
-   Decision 1. Da'at Miqra is his example of the principle, not a division to copy: Ben,
-   2026-11-22, “Yes I was just giving it as an example, not at all suggesting (as you perhaps
+   “Decisions ledger”, entry 3. Da'at Miqra is his example of the principle, not a division to copy:
+   Ben, 2026-11-22, “Yes I was just giving it as an example, not at all suggesting (as you perhaps
    inferred) that we would use its exact division.”
 
 ## Decisions ledger
@@ -70,49 +76,33 @@ buys and signs up for nothing: every such act is Ben's, stage by stage (Stage 7)
 2. **Ordinary paper.** Ben, the same day: “Our multi-volume approach has various benefits, one of
    which is that we can use normal-thickness paper.” A statement of the design's purpose, recorded
    under “The volume map”. Active.
+3. **A volume may hold several books, and a book may run across several volumes.** Ben, 2026-11-22,
+   at 20:52:29 UTC (15:52 New York time), in the session “Kindle and paper plan: Ben's decisions and
+   the issue”, accepting at once the recommendation of each of the four decisions under “Open
+   decisions” as pushed in `75434292`: “I concur with all four of your recommendations in the
+   decision document.” This entry records the first, 1A, which confirms the reading of his “multiple
+   volumes” as “multiple books” under “Ben's request”, on which “The volume map” rests. Active.
+4. **The MAM edition comes first, beginning with its first volume,** the Torah in the recommended
+   arrangement, about 378 pages with its notes. Ben, in the message of entry 3, accepting 2A of the
+   four: “I concur with all four of your recommendations in the decision document.” So Stage 5, step
+   1, builds that volume before Stage 3 or Stage 4 starts. Active.
+5. **Ben asks Avi Kadish to take part now, before Stage 1.** Ben, in the message of entry 3,
+   accepting 3A of the four: “I concur with all four of your recommendations in the decision
+   document.” He asks Avi whether Avi will provide the editions to KDP and IngramSpark himself, or
+   authorize Ben in writing; how Avi wants the editions credited; whether he wants a say in how they
+   present MAM and its notes; and whether anyone else holds rights in MAM or its introduction that
+   he cannot speak for. Stage 1 starts only once Ben has asked. Avi's answer decides which channels
+   the editions are built for, so Stages 3 and 5, which build them, wait for it, relayed by Ben.
+   Active.
+6. **The issue is filed as drafted.** Ben, in the message of entry 3, accepting 4A of the four: “I
+   concur with all four of your recommendations in the decision document.” Filed on 2026-11-22 as
+   [#376](https://github.com/bdenckla/MAM-basics/issues/376). Implemented.
 
 ## Open decisions
 
-The session that wrote this plan keeps them, with the same numbers, on [its decision
-page](https://claude.ai/artifact/D4RAma4dtotjjSiAbZyVQA), which only Ben can open.
-
-1. **Does “multiple volumes” mean several books in one volume?** Ben's second message says a
-   volume “could contain only a portion of a book of the bible, or, in contrast, multiple
-   volumes”. This plan reads the last word as “books”: his “in contrast” sets it against “a
-   portion of a book”, and his “many-to-one and one-to-many” names both directions.
-   1. **1A, yes:** a volume may hold several books, and a book may run across several volumes.
-      The volume map allows both. Recommended.
-   2. **1B, something else,** which Ben would say.
-2. **Which edition comes first?** Stage 1's trial sets samples of all three, so the toolchain is
-   tested on each whichever comes first; this decides the order of Stages 3 to 5.
-   1. **2A, the MAM edition's first volume,** the Torah in the recommended arrangement, about 378
-      pages with its notes. It is the edition readers most want, it exercises at once everything
-      hardest to set, the cantillation, the notes and the Decalogue appendix, and its license
-      statement says exactly how to credit it. Recommended.
-   2. **2B, the Hebrew introduction,** about 258 pages. Its prose is mostly unpointed, so it tests
-      right-to-left prose more than cantillation; it moves whenever Avi Kadish edits it, the open
-      discrepancies of #346 bear on its text, and it is his prose, so it depends on Decision 3 even
-      more than the MAM edition does.
-   3. **2C, the English introduction,** not ready: its translation is a partial draft that nobody
-      has reviewed, and finishing it is `doc/PLAN-english-intro.md`'s work.
-3. **Ask Avi Kadish to take part before anything is published?** KDP and IngramSpark refuse
-   content freely available on the web unless its copyright owner provides it, and MAM was
-   “prepared by Seth (Avi) Kadish” (“Rights and the platforms' rules”).
-   1. **3A, ask now, before Stage 1.** Ben would ask whether Avi will provide the editions to KDP
-      and IngramSpark himself, or authorize Ben in writing; how he wants the editions credited;
-      whether he wants a say in how they present MAM and its notes; and whether anyone else holds
-      rights in MAM or its introduction that he cannot speak for. The answer decides which
-      channels the editions are built for before any is built. Recommended: it closes the plan's
-      largest uncertainty first, and it gives the editor of the work a voice in its first printed
-      edition.
-   2. **3B, ask after Stage 1's trial, before Stage 7.** The work goes ahead, and the channels stay
-      uncertain until the end.
-   3. **3C, do not ask, and rely on CC BY-SA.** KDP and IngramSpark would most likely refuse the
-      editions, which could then be sold only where freely licensed content is accepted, such as
-      Lulu's own store, or given away.
-4. **Approve the issue's text?** The decision page shows the draft, its title and body.
-   1. **4A, file it as drafted.** Recommended.
-   2. **4B, file it with the changes Ben names.**
+None. Ben answered on 2026-11-22 the four that this plan first listed here, as pushed in `75434292`,
+and “Decisions ledger”, entries 3 to 6, records his answers. Each later stage asks its own decisions
+on a decision page of its own (“Deferred decisions”).
 
 ## Checkouts, programs and ownership
 
@@ -646,8 +636,8 @@ HarfBuzz's sources are cited at commit `276cf4a7` of https://github.com/harfbuzz
    written authorization that a platform accepts, KDP and IngramSpark can take it; if not, the
    editions are limited to channels that take freely licensed content, such as Lulu's own store.
    Whether a platform accepts a licensee under CC BY-SA, or an owner's written permission, as
-   content that the owner supplies is unconfirmed: only the platform can say. Decision 3 asks Ben
-   whether to ask Avi.
+   content that the owner supplies is unconfirmed: only the platform can say. Ben chose to ask Avi
+   before Stage 1 (“Decisions ledger”, entry 5).
 5. **Questions for a lawyer, if Ben wants one,** and not answered here: whether Amazon's terms for
    Kindle buyers add terms that section 2(a)(5)(C) forbids even without DRM; whether an edition
    that adds front matter and appendices is a collection or an adaptation; how a notice should
@@ -866,7 +856,8 @@ editions.
 2. **No DRM, and no KDP Select.** CC BY-SA 4.0 forbids technical measures that limit what a reader
    may do with the text, so every eBook is sold without DRM; KDP Select's exclusivity is closed to
    it anyway.
-3. **Avi Kadish's part** is Decision 3.
+3. **Avi Kadish's part** waits on Avi's answer to what Ben asks him before Stage 1 (“Decisions
+   ledger”, entry 5).
 4. **The font's notice,** with its license, its copyright holders and the address of its source
    archive, is on every copyright page (“Risks”, item 6).
 5. **No endorsement implied.** The editions say who prepared them, and suggest no endorsement by
@@ -885,9 +876,11 @@ commit.
 
 ### Stage 0: Ben's decisions
 
-Ben answers Decisions 1 to 4 on the decision page, or in his own words. The planning session
-records each answer, with its date and his words, in “Decisions ledger”, takes it off “Open
-decisions”, and files this plan's issue on his approval of its text (Decision 4).
+Done on 2026-11-22, but for Ben's own step. Ben answered the four open decisions, accepting each
+recommendation; the session “Kindle and paper plan: Ben's decisions and the issue” recorded his
+answers as “Decisions ledger”, entries 3 to 6, and filed this plan's issue, #376, with the text he
+approved. What remains is the step of entry 5, which is Ben's: he asks Avi Kadish to take part.
+Stage 1 starts only once he has.
 
 ### Stage 1: a toolchain trial on samples
 
@@ -895,8 +888,9 @@ decisions”, and files this plan's issue on his approval of its text (Decision 
 MAM's pointed and cantillated Hebrew correctly in print and in each eBook reader, and how much
 text a page holds.
 
-**Preconditions.** Decisions 1 to 3 answered; the programs the trial needs installed, each on Ben's
-word: those named in “Checkouts, programs and ownership”, item 6, as far as the trial uses them.
+**Preconditions.** Ben has asked Avi Kadish to take part (Stage 0; “Decisions ledger”, entry 5); the
+programs the trial needs installed, each on Ben's word: those named in “Checkouts, programs and
+ownership”, item 6, as far as the trial uses them.
 
 **Steps.**
 
@@ -976,8 +970,8 @@ mega run nightly, as `doc/review-trial.md` says.
 
 ### Stage 3: the Hebrew introduction
 
-**Preconditions.** Stage 2 pushed; Decision 3 answered, and, if Ben chose to ask Avi Kadish, his
-answer relayed by Ben.
+**Preconditions.** Stage 2 pushed; Stage 5, step 1, done (“Decisions ledger”, entry 4); Avi Kadish's
+answer relayed by Ben (entry 5).
 
 **Steps.**
 
@@ -1006,12 +1000,13 @@ adds the translation's own source and contributors to MAM's.
 
 ### Stage 5: the MAM edition
 
-**Preconditions.** Stage 2 pushed, with the volume map Ben chose.
+**Preconditions.** Stage 2 pushed, with the volume map Ben chose; Avi Kadish's answer relayed by Ben
+(“Decisions ledger”, entry 5).
 
 **Steps.**
 
-1. Build the first volume, by Decision 2, as a print PDF and an EPUB, and check them as Stage 1
-   did; give Ben the files to read before anything is ordered or uploaded.
+1. Build the first volume (“Decisions ledger”, entry 4) as a print PDF and an EPUB, and check them
+   as Stage 1 did; give Ben the files to read before anything is ordered or uploaded.
 2. With his corrections made, build the remaining volumes, one commit for each change to the
    generator or the map, and report every volume's page count against the budget.
 3. Ask Ben the deferred decisions of this stage: the titles' language, and any preface.
@@ -1076,7 +1071,8 @@ stages found.
 1. **Kindle's rendering of cantillation.** No source shows that any Kindle renderer positions Hebrew
    marks from an embedded font, and a reader can turn the publisher's font off (“Kindle”, item 5),
    so the Kindle edition of anything with cantillation waits on Stage 1's device test.
-2. **The platforms' rules on freely available content,** which Decision 3 addresses.
+2. **The platforms' rules on freely available content,** which Ben's request to Avi Kadish before
+   Stage 1 addresses (“Decisions ledger”, entry 5).
 3. **Right-to-left binding:** a right-to-left hardcover exists only at IngramSpark, and KDP's
    Hebrew paperback sells only on Amazon.
 4. **The text moves.** MAM and its introduction change on Wikisource, so each printing is a
