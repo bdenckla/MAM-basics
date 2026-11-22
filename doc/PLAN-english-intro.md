@@ -164,18 +164,18 @@ with all three off your recommendations on the decision page."
    [MAM-basics#375](https://github.com/bdenckla/MAM-basics/issues/375), "Improve and extend the
    English translation of MAM's introduction".
 
-### Open, on the decision page
+### Decision 9, answered on the decision page, 2026-11-22
 
-9. **Decision 9: the evaluation's Hebrew out of MAM's mark order.**
-   `py/tests/test_prose_mark_order.py` fails on 27 lines of
-   `doc/intro-en-evaluation-2026-11-22.md`, whose Hebrew quotations keep the mirrors' Unicode
-   order. That file is a finished record, which the `iterative-document-editing` skill keeps
-   immutable apart from its pointer to its update. The choices are 9A, a one-time exception:
-   pass the base's Hebrew through `give_std_mark_order`, which changes nothing on a rendered
-   page, and record the correction in its update file (recommended); and 9B, leaving the base
-   as it is and exempting it from the lint by name, as a quotation of captures, recorded in
-   `doc/mam-normal-mark-order.md`. (The decision page's Decision 4, already answered, was about
-   the user-level instructions, not this plan's Decision 4.)
+9. **Decision 9: the evaluation's Hebrew out of MAM's mark order. Answered 9A.** Ben,
+   2026-11-22: "I approve 9A on the decision page". `py/tests/test_prose_mark_order.py` failed on
+   27 lines of `doc/intro-en-evaluation-2026-11-22.md`, whose Hebrew quotations kept the
+   mirrors' Unicode order, and that file is a finished record, which the
+   `iterative-document-editing` skill keeps immutable apart from its pointer to its update. 9A
+   made a one-time exception: those lines were passed through `give_std_mark_order`, which
+   changes nothing on a rendered page, and the correction is recorded in the update file. The
+   choice not taken was 9B, leaving the base as it was and exempting it from the lint by name.
+   (The decision page's Decision 4, also answered, was about the user-level instructions, not
+   this plan's Decision 4.)
 
 ### Later, put to Ben when their phase starts
 
@@ -365,8 +365,9 @@ diff, repeated its checks of the pages, and committed it.
    remains, before the next dispatch of the Pages workflow publishes the pages.
 
 The focused tests over the touched surface passed, apart from `py/tests/test_prose_mark_order.py`,
-which fails on Phase 2's `doc/intro-en-evaluation-2026-11-22.md` as it did before this phase.
-That file is a finished record, so its fix waits on Ben (Decision 9 below).
+which failed on Phase 2's `doc/intro-en-evaluation-2026-11-22.md`, as it had before this phase.
+That file is a finished record; Ben's answer to Decision 9 below let its Hebrew be put in MAM's
+mark order, and the lint now passes.
 
 ### Phase 4: the evaluation's tweaks on English Wikisource (on Ben's word)
 
