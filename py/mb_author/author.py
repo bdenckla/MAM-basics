@@ -3,6 +3,7 @@ import os
 import re
 from urllib.parse import quote
 from mb_misc import mb_html
+from mb_misc import styles_authored
 from mb_cmn import provenance
 from mb_cmn import str_defs as sd
 from mb_cmn.my_utils import sl_map
@@ -251,13 +252,67 @@ def para_table(cpara_before, table_data, cparas_after=None):
     ]
 
 
+def he_en_gen_html_file(py_file, tdm_ch, fname, title, cbody, body_class=None):
+    """Write a page of he_en_table_wct tables, a section of the Introduction to MAM in
+    Hebrew and English side by side, with a control that shows Hebrew, English or both,
+    by Ben's Decision 2A of doc/PLAN-english-intro.md.
+
+    The control and its script, styles_authored.HE_EN_VIEW_JS, open the body, so that the
+    script chooses the view before the tables are parsed. py/main_authored.py copies the
+    script beside the page, as it does the page's style.css, whose rules the views are.
+    The page asks for the viewport tag, so that a phone stacks the two sides rather than
+    shrinking the desktop layout.
+    """
+    return help_gen_html_file(
+        py_file,
+        tdm_ch,
+        fname,
+        title,
+        [*_he_en_view_control(), *cbody],
+        body_class,
+        viewport=True,
+    )
+
+
 def he_en_table_wct(ti_he_en_triples):
-    """Hebrew-English table with centered titles."""
+    """Hebrew-English table with centered titles, for a page that he_en_gen_html_file
+    writes.
+
+    Each triple is a section's English label, or None, its Hebrew cell and its English
+    cell. The Hebrew is on the left. The classes are what the page's view control shows
+    and hides: he-side for the Hebrew cells, en-side for the English cells and the label
+    rows, which only the English has.
+    """
     cg = mb_html.colgroup(
         [mb_html.col({"width": "40%"}), mb_html.col({"width": "60%"})]
     )
     args_to_table = [cg, *sum_of_map(_he_en_table_wci_row_pair, ti_he_en_triples)]
-    return table_c(args_to_table)
+    return mb_html.table(args_to_table, {"class": "center he-en"})
+
+
+def he_en_english_only(contents):
+    """Matter of a he_en_gen_html_file page, outside its tables, that only the English
+    has, which the view control hides with the English cells."""
+    return mb_html.div(contents, {"class": "en-side"})
+
+
+def he_en_footnote_ref(n, text, side):
+    """The reference to footnote n in one side's cells of a he_en_gen_html_file page.
+
+    side is "he" or "en". Each side has ids of its own, so that a reference in an English
+    cell leads to the English copy of the note, whose mark (he_en_footnote_mark) leads
+    back to it, and a reference in a Hebrew cell to the Hebrew copy. The ids are unique on
+    a page that refers to each note once on each side.
+    """
+    _check_he_en_side(side)
+    return mb_html.anchor(text, {"id": f"fnref-{side}-{n}", "href": f"#fn-{side}-{n}"})
+
+
+def he_en_footnote_mark(n, text, side):
+    """The mark that opens one side's copy of footnote n, linking back to the reference
+    on that side (he_en_footnote_ref)."""
+    _check_he_en_side(side)
+    return mb_html.anchor(text, {"id": f"fn-{side}-{n}", "href": f"#fnref-{side}-{n}"})
 
 
 def dollar_sub(contents):
@@ -325,19 +380,53 @@ def span_color(contents, color):
 
 
 def _he_en_table_wci_row_pair(ti_he_en_triple):
-    _VT = "vertical-align: top"
+    """A section's label row, if it has a label, and its row of Hebrew and English. The
+    cells' top alignment and the label's centering are style.css's (td.he-side,
+    td.en-side and tr.he-en-label), so that the views can change them."""
     title, hebrew, english = ti_he_en_triple
     content_row = _std_row_of_data(
-        [{"dir": "rtl", "style": _VT}, {"dir": "ltr", "style": _VT}],
+        [{"class": "he-side", "dir": "rtl"}, {"class": "en-side", "dir": "ltr"}],
         [hebrew, english],
     )
     if title is None:
         return [content_row]
-    title_row = _std_row_of_data(
-        [{"colspan": "2", "style": "padding-right: 20%"}],
-        [para_cc(title)],
-    )
+    title_cell = mb_html.table_datum(_std_cell(para_cc(title)), {"colspan": "2"})
+    title_row = mb_html.table_row([title_cell], {"class": "he-en-label en-side"})
     return [title_row, content_row]
+
+
+def _check_he_en_side(side):
+    if side not in ("he", "en"):
+        raise ValueError(f"not a side of a he_en_table_wct table: {side!r}")
+
+
+def _he_en_view_control():
+    """The view control of a he_en_gen_html_file page, and the script that runs it.
+
+    The buttons are labeled with Hebrew's own name for Hebrew (_HE_EN_VIEW_HEBREW),
+    "English" and "Both". The control is hidden until the script shows it. A page whose
+    script does not run shows both sides, which is the button marked pressed here.
+    """
+    buttons = [
+        _he_en_view_button(_HE_EN_VIEW_HEBREW, "he", {"lang": "he", "dir": "rtl"}),
+        _he_en_view_button("English", "en", {"lang": "en"}),
+        _he_en_view_button("Both", "both", {"lang": "en"}),
+    ]
+    control_attr = {
+        "id": "he-en-view",
+        "class": "he-en-view",
+        "role": "group",
+        "aria-label": "Languages shown",
+        "hidden": "",
+    }
+    script = mb_html.script(None, {"src": styles_authored.HE_EN_VIEW_JS})
+    return [mb_html.div(buttons, control_attr), script]
+
+
+def _he_en_view_button(label, view, lang_attr):
+    pressed = "true" if view == "both" else "false"
+    attr = {"type": "button", "data-view": view, "aria-pressed": pressed, **lang_attr}
+    return mb_html.button(label, attr)
 
 
 def _de_dict(table_data):
@@ -502,6 +591,12 @@ _HEBREW_MARK_RE = re.compile(
     "\N{HEBREW POINT QAMATS QATAN}-\U000005c9]"
 )
 _HEBREW_LETTER_RE = re.compile("[א-ת]")
+
+# Hebrew's own name for Hebrew, the label of the view control's button for the Hebrew
+# alone. It is the label that the Hebrew introduction's root page gives its link to the
+# Hebrew abstract, beside "English" for the English one (in/mam-ws-intro/root.mediawiki),
+# and was copied from there by script.
+_HE_EN_VIEW_HEBREW = "עברית"
 
 _AID = "https://www.chabad.org/library/bible_cdo/aid"
 _G = "https://docs.google.com/document/u/0"

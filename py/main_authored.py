@@ -142,6 +142,9 @@ def almost_main():
     #
     css_href = "style.css"
     styles_authored.make_css_file_for_authored(f"{top_dir_misc}/{css_href}")
+    # The script of the three side-by-side pages below, which load it from beside them.
+    js_name = styles_authored.HE_EN_VIEW_JS
+    styles_authored.make_js_file_for_he_en_view(f"{top_dir_misc}/{js_name}")
     #
     tdm_ch = top_dir_misc, ("../../document.css", css_href)
     tdm_ch_aliyot = top_dir_misc, ("../../document.css", "aliyot-styles.css")

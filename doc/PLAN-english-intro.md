@@ -1,6 +1,6 @@
 # Plan: keep the English Introduction to MAM in parallel on English Wikisource and in gh-pages
 
-State: live; Phases 1 and 2 executed 2026-11-22; Phase 3 next, by Ben's Decision 2
+State: live; Phases 1, 2 and 3 executed 2026-11-22; Phases 4, 5 and 7 wait on Ben's word
 
 ## Origin, and whose words are whose
 
@@ -164,6 +164,19 @@ with all three off your recommendations on the decision page."
    [MAM-basics#375](https://github.com/bdenckla/MAM-basics/issues/375), "Improve and extend the
    English translation of MAM's introduction".
 
+### Open, on the decision page
+
+9. **Decision 9: the evaluation's Hebrew out of MAM's mark order.**
+   `py/tests/test_prose_mark_order.py` fails on 27 lines of
+   `doc/intro-en-evaluation-2026-11-22.md`, whose Hebrew quotations keep the mirrors' Unicode
+   order. That file is a finished record, which the `iterative-document-editing` skill keeps
+   immutable apart from its pointer to its update. The choices are 9A, a one-time exception:
+   pass the base's Hebrew through `give_std_mark_order`, which changes nothing on a rendered
+   page, and record the correction in its update file (recommended); and 9B, leaving the base
+   as it is and exempting it from the lint by name, as a quotation of captures, recorded in
+   `doc/mam-normal-mark-order.md`. (The decision page's Decision 4, already answered, was about
+   the user-level instructions, not this plan's Decision 4.)
+
 ### Later, put to Ben when their phase starts
 
 4. **Where the English lives on English Wikisource** (Phases 4 and 5): in Dovi's user space,
@@ -295,10 +308,10 @@ above. With its update file,
 Its findings are not yet acted on. Later dispositions go in its single update file, as the
 `iterative-document-editing` skill says.
 
-### Phase 3: three modes for the side-by-side pages (Decision 2A; next)
+### Phase 3: three modes for the side-by-side pages (executed 2026-11-22)
 
 Ben's question, "does the current side-by-side allow closing/opening "sides" (all 3 modes:
-Hebrew, English, and bilingual?)". The answer on 2026-11-22 is no. Under 2A:
+Hebrew, English, and bilingual?)". The answer was no until this phase, which carries out 2A:
 
 1. In `he_en_table_wct` and `_he_en_table_wci_row_pair` of `py/mb_author/author.py`, mark each
    Hebrew cell, English cell and label row with a class, and wrap the table so that one
@@ -321,6 +334,39 @@ Hebrew, English, and bilingual?)". The answer on 2026-11-22 is no. Under 2A:
    script behavior.
 8. Commit and push. `gh-pages/` is a published product, so the last commit pushed says which
    broad checks it skipped and why, as `AGENTS.md`'s products section requires.
+
+**Executed 2026-11-22** in `C:/Users/BenDe/GitRepos2/MAM-basics`, from `e079f702`, in the commit
+that records it here. A sub-agent wrote it; the session that started it reviewed the source
+diff, repeated its checks of the pages, and committed it.
+
+1. `he_en_gen_html_file` in `py/mb_author/author.py` writes the three pages with the viewport tag
+   and the control. `he_en_table_wct` marks the cells `he-side` and `en-side`, and the label
+   rows `he-en-label en-side`. The view is `data-view` on `body`.
+2. English copies of the notes already existed, in the English cells of each page's notes
+   table; only their ids were missing. `he_en_footnote_ref` and `he_en_footnote_mark` now give
+   each side its own: `fnref-he-N` and `fn-he-N`, `fnref-en-N` and `fn-en-N`. The Hebrew ids
+   were renamed from `fnref-N` and `fn-N`, which no link in this repository named.
+3. The views are rules of `py/mb_misc/styles_authored.css`, the source of
+   `gh-pages/MAM-with-doc/misc/style.css`. The script is `py/mb_misc/he_en_view.js`, which
+   `py/main_authored.py gen-misc` copies beside the pages. `doc/html-styles.md` records both.
+4. Two choices go beyond the design's words. The control is a band fixed across the top of the
+   window, its buttons at the right, and the body keeps the band's height clear, so the band
+   covers no text at rest and a footnote's target stops below it. And either language shown
+   alone narrows the page to 40em, the width of the site's other prose pages.
+5. Regeneration changed only the three pages, `style.css` and the new script. A script took
+   each page's text at `e079f702` as the oracle: with the intended substitutions applied to it,
+   it equals the new page apart from line wrapping, Hebrew included. On each page the ids are
+   unique, every in-page link has a target, and every footnote link stays on its own side.
+6. **The views were not checked in a browser.** The app's browser pane refuses its page tools
+   and screenshots on a local file, and a local server needs a launch configuration, which only
+   Ben may ask for. The script passed `node --check` and a run against a stub page that
+   exercised `?view`, `aria-pressed`, `replaceState` and the scroll that keeps the reader's
+   place, but nothing has checked the layout. Ben's look at desktop and phone widths is what
+   remains, before the next dispatch of the Pages workflow publishes the pages.
+
+The focused tests over the touched surface passed, apart from `py/tests/test_prose_mark_order.py`,
+which fails on Phase 2's `doc/intro-en-evaluation-2026-11-22.md` as it did before this phase.
+That file is a finished record, so its fix waits on Ben (Decision 9 below).
 
 ### Phase 4: the evaluation's tweaks on English Wikisource (on Ben's word)
 

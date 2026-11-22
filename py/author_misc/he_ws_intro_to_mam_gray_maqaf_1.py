@@ -13,7 +13,6 @@ The English translation is original to this project.
 
 from mb_cmn.my_utils import sl_map
 from mb_misc import mam_attribution
-from mb_misc import mb_html
 from mb_cmn import my_utils
 from mb_cmn import hebrew_punctuation as hpu
 from mb_author import author
@@ -25,7 +24,7 @@ def anchor():
 
 
 def gen_html_file(tdm_ch, body_class=None):
-    return author.help_gen_html_file(
+    return author.he_en_gen_html_file(
         __file__, tdm_ch, _FNAME, _TITLE, _CBODY, body_class
     )
 
@@ -37,15 +36,12 @@ _FN_BASE = 136
 
 
 def _footnote_marker(n: int, side="h"):
-    """Footnote marker for body text, linking to the footnote entry.
+    """Footnote marker for body text, linking to the footnote entry on its own side.
 
-    side="h": Hebrew side — carries the anchor id (for the back-link target).
-    side="e": English side — link only (no id, to avoid duplicate ids).
+    side="h": a Hebrew cell's marker; side="e": an English cell's. Each side's markers
+    and notes have ids of their own (author.he_en_footnote_ref).
     """
-    text = f"[B+{n}]"
-    if side == "h":
-        return mb_html.anchor(text, {"id": f"fnref-{n}", "href": f"#fn-{n}"})
-    return author.anchor_h(text, f"#fn-{n}")
+    return author.he_en_footnote_ref(n, f"[B+{n}]", {"h": "he", "e": "en"}[side])
 
 
 def _ait(contents):
@@ -450,8 +446,8 @@ _MAM_ATTRIBUTION = author.para(
 
 def _ftnt_triple(n, ftnt_h, ftnt_e):
     text = f"[B+{n}]"
-    marker_h = mb_html.anchor(text, {"id": f"fn-{n}", "href": f"#fnref-{n}"})
-    marker_e = author.anchor_h(text, f"#fnref-{n}")
+    marker_h = author.he_en_footnote_mark(n, text, "he")
+    marker_e = author.he_en_footnote_mark(n, text, "en")
     return (
         f"Footnote B+{n}",
         author.para_modhe([marker_h, " ", *ftnt_h]),

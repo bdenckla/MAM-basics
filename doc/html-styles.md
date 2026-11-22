@@ -120,6 +120,19 @@ index that links the page does not repeat the caveat beside the link. Ben,
 2026-11-11: "There is no need for this qualification at the index.html level;
 the existing qualification if and when the reader gets to the document is fine".
 
+## Side-by-side pages of the Introduction to MAM
+
+The three pages under `gh-pages/MAM-with-doc/misc/` that set a section of the
+Introduction to MAM in Hebrew and English side by side show Hebrew, English or both,
+by Ben's Decision 2A of `doc/PLAN-english-intro.md`. `he_en_gen_html_file` in
+`py/mb_author/author.py` writes each with the viewport tag and a view control, and
+`he_en_table_wct` marks each cell and label row with its side. The views are rules
+of the family's `style.css`, whose source is `py/mb_misc/styles_authored.css`. The
+control's script has its source beside that one, `py/mb_misc/he_en_view.js`, and
+`py/main_authored.py gen-misc` copies both into the pages' folder. A page whose
+script does not run, or whose address asks for `?view=both`, shows both sides;
+`?view=he` and `?view=en` show one.
+
 ## Regeneration and verification
 
 Run the affected generators, then the mega and suite required by `AGENTS.md`.

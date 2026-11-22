@@ -29,3 +29,73 @@ p.ai-caveat {
     padding: 0.6em 1em;
     text-align: left;
 }
+/* The side-by-side pages of the Introduction to MAM, which author.he_en_gen_html_file
+   writes. Each row of their tables (author.he_en_table_wct) has a Hebrew cell,
+   td.he-side, on the left and an English cell, td.en-side, on the right, and a section's
+   first row has an English label row, tr.he-en-label, above it. A control shows Hebrew,
+   English or both, by Ben's Decision 2A of doc/PLAN-english-intro.md: he_en_view.js sets
+   body's data-view to "he", "en" or "both". Where the script has not run, body has no
+   data-view and the page shows both. */
+td.he-side, td.en-side { vertical-align: top; }
+/* Centers the label on the boundary of the two columns, 40% from the left. */
+tr.he-en-label > td { padding-right: 20%; }
+/* What belongs to one side, the label rows and any matter only the English has
+   included, is hidden while the other side is shown alone. Important, so that no
+   layout rule below can show it again. */
+body[data-view="he"] .en-side, body[data-view="en"] .he-side { display: none !important; }
+/* Stacked, a row's cells are blocks, one above the other, Hebrew first, each at full
+   width. The view of both stacks on a phone, and either side alone stacks at every
+   width, at the width of the site's other prose pages. */
+@media (max-width: 40em) {
+    :is(table.he-en, table.he-en > tbody, table.he-en > tbody > tr,
+        table.he-en > tbody > tr > td) { display: block; }
+    table.he-en > colgroup { display: none; }
+    tr.he-en-label > td { padding-right: 0.4em; }
+}
+body.wide:is([data-view="he"], [data-view="en"]) { max-width: 40em; }
+body:is([data-view="he"], [data-view="en"])
+    :is(table.he-en, table.he-en > tbody, table.he-en > tbody > tr,
+        table.he-en > tbody > tr > td) { display: block; }
+body:is([data-view="he"], [data-view="en"]) table.he-en > colgroup { display: none; }
+body:is([data-view="he"], [data-view="en"]) tr.he-en-label > td { padding-right: 0.4em; }
+/* The control, hidden until the script runs. Then it is fixed at the top right of the
+   window, in a band across the top that the body keeps clear, so that at no width does
+   it cover text; a link's target stops below the band. It does not print, and the page
+   prints the view on screen. */
+.he-en-view[hidden] { display: none; }
+.he-en-view {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2.4em;
+    box-sizing: border-box;
+    padding: 0 1em;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.4em;
+    background-color: light-dark(white, black);
+    border-bottom: 1px solid light-dark(#ccc, #444);
+}
+body[data-view] { padding-top: 2.4em; }
+body[data-view] a[id] { scroll-margin-top: 2.8em; }
+.he-en-view button {
+    font: inherit;
+    font-size: 0.8em;
+    padding: 0.25em 0.9em;
+    color: inherit;
+    background-color: light-dark(white, black);
+    border: 1px solid light-dark(#888, #999);
+    border-radius: 0.3em;
+    cursor: pointer;
+}
+.he-en-view button[aria-pressed="true"] {
+    color: light-dark(white, black);
+    background-color: light-dark(black, white);
+}
+@media print {
+    .he-en-view { display: none; }
+    body[data-view] { padding-top: 0; }
+}
