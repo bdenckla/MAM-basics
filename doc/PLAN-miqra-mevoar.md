@@ -1173,7 +1173,30 @@ byte-for-byte copy of that frozen plan; this ledger and the State line are the e
     breaks and headings differ from MAM-simple's and the base chapters' at a few places, five
     of them heading lines that transclude from another book's or another chapter's base
     chapter. Stage 12 follows MAM-simple and the base chapters, as Stage 10's choice 1 does.
-  - **Stage 12,** written into this plan as planning, with its four open choices.
+  - **Stage 12,** written into this plan as planning, with its four open choices, and pushed
+    as `45a975f7`.
+  - **The code,** made by a subagent of this session from the stage's text, as its design items
+    1 to 3 and 5 give it, with recommendations 1a, 2a and 3a: `f910d8b3`, the heading places and
+    the subcommand `py/main_miqra_mevoar.py base-headings`, whose one run, ending at 10:04 New
+    York time, parsed all 187 base chapters and recorded 443 headings, equal to an independent
+    reading of the pages kept at 09:18; and `a65a91d1`, the generator, the display table's 15
+    entries, the bot mode's counts and the test. The 19 pages already in the table generate
+    byte for byte as before, and the 124 base chapters that `pages` writes are unchanged.
+    Checks: `git diff --check`; Black on the changed Python files; Stage 11's verification
+    command with `py/tests/test_product_scopes.py` added (159 passed). Pushed as `a65a91d1`.
+  - **The dry run,** at 10:36 New York time, after a check that no `main_ws_bot.py` process was
+    running and that no session of the commander's family was doing bot work. Before it,
+    `base-headings --check` found every heading where the records have it, with no revision
+    changed, and the main page, read again, was still at revision 3103840, with the same 15
+    links and labels. `miqra-mevoar-display --no-save` over the 15 pages gave 15 creates, each
+    with the stage's counts and with no missing link or transcluded page, and each equal byte
+    for byte to the subagent's offline page (run
+    `.novc/mam-ws-bot-miqra-mevoar-display-runs/20261122-103600-150955-0500/`).
+  - **The decision page,** an artifact, https://claude.ai/artifact/XYchLEVJdwMQh5FM3wDJHN,
+    puts to Ben decisions 1 to 4 and two saving runs, each recommended now, after a fresh
+    check of the preconditions and a fresh dry run that gives the same pages: decision 5, run
+    A, the nine pages that no decision changes, and decision 6, run B, the four that decisions
+    2 and 3 shape. Run C, Genesis' and Exodus' first parts, waits on decision 1.
 
 ## Background for a fresh executor
 
