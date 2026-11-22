@@ -34,9 +34,11 @@ word for each run, given on its decision page, the bot created all five, so Stag
 executed (execution ledger, “Stage 11, the display pages of Judges and Daniel”). On
 2026-11-22 Avi asked for the display pages of the five books of the Torah, which his main page
 now links in parts, and Ben gave his word to plan and execute them in one session (decisions
-ledger entry 16). Stage 12, written that day, plans them: four of its choices wait on Ben's
-answers, and each saving run on his word (execution ledger, “Stage 12, the display pages of
-the Torah”). The execution ledger below records each finished stage.
+ledger entry 16). Stage 12, written that day, plans them, and its code and its dry run are
+done. On Ben's word of the same day the stage is paused: its four open choices go to Avi in an
+email for Ben to send, and its saves wait until the work resumes on Avi's answers (decisions
+ledger entry 17; Stage 12, “Resuming Stage 12”). The execution ledger below records each
+finished stage.
 
 Written 2026-11-02 by Claude (Opus 5.5) in the Phase 1 session that the session "Commander for
 Claude's forests" started for Avi's email "Mikra Mevo'ar at Wikisource". The quoted decisions are
@@ -60,7 +62,7 @@ the five books of the Torah, three parts to a book, which the main page links in
 
 ## Decisions ledger
 
-Entries 1 to 3 and 10 to 16 are Ben's decisions. Entries 5 to 9 were Claude's proposals,
+Entries 1 to 3 and 10 to 17 are Ben's decisions. Entries 5 to 9 were Claude's proposals,
 approved by Ben's word in entry 3.
 
 1. **Route: the bot, after a pilot.** Ben, 2026-11-02, answering "Which route should the pages
@@ -174,6 +176,21 @@ approved by Ben's word in entry 3.
     and then to draft the reply for Ben to send. Each saving run still needs his word for that
     run (entry 3), and the stage's four open choices wait on his answers on its decision page.
     Active.
+17. **Stage 12 paused, its questions to Avi.** Ben, 2026-11-22, before 10:45 New York time, in
+    the session executing Stage 12, after its dry run, exactly:
+
+    > Save your work so far in git in a way that will be easily resumable, i.e. save it in a way that will require little or no redundant work required when we resume.
+    >
+    > Then compose an email asking all these questions of Avi, except perhaps the "save run A and save run B" ones, which aren't really his call. I don't understand what they are, but my vague sense is that the decision should be clear given my "save your work so far ..." instructions above.
+
+    and then, about the email:
+
+    > In the email, apologize that I'm not making some or all of these decisions myself, but admit that I cannot because I am not following any of the details or looking at the pages; I am basically acting as a relay of his emails to Claude.
+
+    So Stage 12's decisions 1 to 4 go to Avi, in an email that the session drafted for Ben to
+    send. The session reads the rest of his words as holding the saving runs, decisions 5 and
+    6, until the work resumes after Avi answers; each saving run still needs Ben's word for
+    that run (entry 3). Active.
 
 Deferred, each until its own decision:
 
@@ -1197,6 +1214,9 @@ byte-for-byte copy of that frozen plan; this ledger and the State line are the e
     check of the preconditions and a fresh dry run that gives the same pages: decision 5, run
     A, the nine pages that no decision changes, and decision 6, run B, the four that decisions
     2 and 3 shape. Run C, Genesis' and Exodus' first parts, waits on decision 1.
+  - **Paused,** on Ben's word before 10:45 New York time (decisions ledger entry 17): the
+    stage's decisions 1 to 4 go to Avi in an email drafted for Ben to send, and its saving runs
+    wait until the work resumes (Stage 12, “Resuming Stage 12”).
 
 ## Background for a fresh executor
 
@@ -1948,8 +1968,9 @@ at `3bc9510e` and from the live pages, read anonymously at 09:18 New York time, 
    second part begins where its book's weekly portions and its title begin a new subject.
    Decision 1.
 
-**Choices.** Decisions 1 to 4 are Ben's, on the stage's decision page; the code follows each
-recommendation, marked (a), until he answers:
+**Choices.** Decisions 1 to 4 were Ben's, on the stage's decision page, until he passed them to
+Avi on 2026-11-22 (decisions ledger entry 17); the code follows each recommendation, marked
+(a), until Avi answers:
 
 1. **The first parts of Genesis and Exodus.** (a) The table gives `gen-1` chapters 1 to 11 and
    `exod-1` chapters 1 to 17, the chapters up to each second part's label, so that the dry run
@@ -2105,6 +2126,43 @@ session, verified clean on `main` at `3bc9510e`, level with origin; its own
 on every Git call. The session releases the clone while it waits on Ben. Its untracked inputs
 and evidence, the kept responses among them, are in `.novc/miqra-mevoar-torah-2026-11-22/` of
 that clone alone.
+
+**Resuming Stage 12.** On 2026-11-22 Ben paused the stage after its dry run (decisions ledger
+entry 17). Done: the stage, pushed as `45a975f7`; its code, `f910d8b3` and `a65a91d1`; its dry
+run; and the record of them, `c5a09ec0` (execution ledger, “Stage 12, the display pages of
+the Torah”). Nothing is saved on Wikisource. Waiting: Avi's answers to the four questions of
+the email that the session drafted for Ben to send,
+`D:/GitRepos5/MAM-basics/.novc/miqra-mevoar-torah-2026-11-22/email-2026-11-22/email-to-avi-2026-11-22.md`,
+with its copyable page beside it; then Ben's word for each saving run. The session that
+resumes:
+
+1. Records Avi's answers, as Ben relays them, in the decisions ledger.
+2. Changes the code only where an answer is not the recommendation, and keeps every other
+   page of `display_page.PAGES` byte for byte, compared by a scratch script before and after:
+   decision 1 is the ranges of `gen-1` and `exod-1` in `PAGES`, with their rows of the Counts
+   table measured again; 2b removes `DECALOGUE` and its line shape; 3b or 3c changes
+   `DISPUTED_PETUHOT` and the parser's acceptance of its texts; 4b needs a stage of its own.
+   Then the focused checks of “Verification” above, a commit and a push.
+3. Checks the preconditions and runs a fresh dry run, as “The dry run and the saves” says.
+4. Puts each saving run to Ben with its pages, their count, its summary and a page to look
+   at, on the stage's decision page, https://claude.ai/artifact/XYchLEVJdwMQh5FM3wDJHN, and
+   saves only on his word for that run: run A, the nine pages that no decision changes; run
+   B, `exod-2`, `exod-3`, `lev-1` and `deut-1`; and run C, `gen-1` and `exod-1`, once their
+   ranges are settled.
+5. After each save, does what “The dry run and the saves” says, and tells the commander
+   the pages saved and their revisions.
+6. Drafts the reply to Avi on the saves, as “The reply to Avi” says.
+
+The session's helpers are untracked, in
+`D:/GitRepos5/MAM-basics/.novc/miqra-mevoar-torah-2026-11-22/`. In `scripts/`:
+`check_main_page.py`, the main page's precondition; `summarize_display_run.py`, which compares
+a dry run's counts with the Counts table, and whose copy of the table a change of decision 1's
+ranges updates; the launcher `run_bot_with_plan_summary.py`, which copies Stage 10's summary
+from this plan; and `read_after_save.py`, the read after a save. In `decision-page/`: the
+decision page's builder, `build_page.py`. In `wikisource/`: the responses kept on 2026-11-22.
+A session in another clone reads them there by absolute path and copies what it runs into its
+own `.novc/`, as this session copied round 1's. The kept responses are evidence of 2026-11-22;
+the preconditions read the live pages again.
 
 ## Later Word files
 
