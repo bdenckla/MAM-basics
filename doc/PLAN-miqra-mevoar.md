@@ -35,10 +35,10 @@ executed (execution ledger, “Stage 11, the display pages of Judges and Daniel�
 2026-11-22 Avi asked for the display pages of the five books of the Torah, which his main page
 now links in parts, and Ben gave his word to plan and execute them in one session (decisions
 ledger entry 16). Stage 12, written that day, plans them, and its code and its dry run are
-done. On Ben's word of the same day the stage is paused: its four open choices go to Avi in an
-email for Ben to send, and its saves wait until the work resumes on Avi's answers (decisions
-ledger entry 17; Stage 12, “Resuming Stage 12”). The execution ledger below records each
-finished stage.
+done. On Ben's word of the same day the stage is paused: its four open choices went to Avi in
+an email that Ben sent the same day, and its saves wait until the work resumes on Avi's
+answers (decisions ledger entry 17; Stage 12, “Resuming Stage 12”). The execution ledger
+below records each finished stage.
 
 Written 2026-11-02 by Claude (Opus 5.5) in the Phase 1 session that the session "Commander for
 Claude's forests" started for Avi's email "Mikra Mevo'ar at Wikisource". The quoted decisions are
@@ -1217,6 +1217,14 @@ byte-for-byte copy of that frozen plan; this ledger and the State line are the e
   - **Paused,** on Ben's word before 10:45 New York time (decisions ledger entry 17): the
     stage's decisions 1 to 4 go to Avi in an email drafted for Ben to send, and its saving runs
     wait until the work resumes (Stage 12, “Resuming Stage 12”).
+  - **The email to Avi** went out: Ben, in this session at about 11:26 New York time: “I have
+    sent the email to Avi.” It is the draft
+    `.novc/miqra-mevoar-torah-2026-11-22/email-2026-11-22/email-to-avi-2026-11-22.md` of
+    `D:/GitRepos5/MAM-basics`, built with its copyable page by `scripts/build_email.py` in that
+    folder. It apologizes, as Ben asked (decisions ledger entry 17), that he relays these
+    questions instead of deciding them himself; asks Avi the stage's four questions, each with
+    the choice that the pages follow unless he prefers another; and lists the slips found on
+    his weekly-portion pages. Stage 12 waits on his answers.
 
 ## Background for a fresh executor
 
@@ -2131,7 +2139,7 @@ that clone alone.
 entry 17). Done: the stage, pushed as `45a975f7`; its code, `f910d8b3` and `a65a91d1`; its dry
 run; and the record of them, `c5a09ec0` (execution ledger, “Stage 12, the display pages of
 the Torah”). Nothing is saved on Wikisource. Waiting: Avi's answers to the four questions of
-the email that the session drafted for Ben to send,
+the email that the session drafted and Ben sent on 2026-11-22,
 `D:/GitRepos5/MAM-basics/.novc/miqra-mevoar-torah-2026-11-22/email-2026-11-22/email-to-avi-2026-11-22.md`,
 with its copyable page beside it; then Ben's word for each saving run. The session that
 resumes:
