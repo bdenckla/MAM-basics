@@ -1,0 +1,955 @@
+{
+  "about": "Each section of the English mirror, in/mam-ws-intro-en/, in page order, with the sections of the Hebrew mirror, in/mam-ws-intro/, that it translates and its coverage of them. in/mam-ws-intro-en/README.md, The section map, says what each field means and how the map is kept.",
+  "evaluation": "doc/intro-en-evaluation-2026-11-22.md",
+  "pages": {
+    "root": [
+      {
+        "english": null,
+        "hebrew": [
+          {
+            "page": "root",
+            "heading": null
+          }
+        ],
+        "coverage": "full",
+        "evaluation_slices": [
+          "root-abstract"
+        ],
+        "note": "The title. The translator's note To the Reader, signed by Mitchell Powell, translates nothing; the evaluation checked only its license statement (root-abstract-1)."
+      },
+      {
+        "english": "Contents",
+        "hebrew": [
+          {
+            "page": "root",
+            "heading": "תוכן העניינים"
+          }
+        ],
+        "coverage": "partial",
+        "evaluation_slices": [
+          "root-abstract"
+        ],
+        "note": "Its entries for the spreadsheet and its guide lack the Hebrew's archive label and freeze (root-abstract-5)."
+      }
+    ],
+    "summary": [
+      {
+        "english": null,
+        "hebrew": [
+          {
+            "page": "summary",
+            "heading": null
+          }
+        ],
+        "coverage": "full",
+        "evaluation_slices": [
+          "root-abstract"
+        ]
+      },
+      {
+        "english": "A Concise Explanation of this Edition",
+        "hebrew": [
+          {
+            "page": "summary",
+            "heading": "הסבר קצר על המהדורה"
+          }
+        ],
+        "coverage": "full",
+        "evaluation_slices": [
+          "root-abstract"
+        ]
+      },
+      {
+        "english": "Three Special Features",
+        "hebrew": [
+          {
+            "page": "summary",
+            "heading": "שלוש תכונות מיוחדות"
+          }
+        ],
+        "coverage": "full",
+        "evaluation_slices": [
+          "root-abstract"
+        ]
+      },
+      {
+        "english": "1. Free Content License",
+        "hebrew": [
+          {
+            "page": "summary",
+            "heading": "1. רישיון לשימוש חופשי"
+          }
+        ],
+        "coverage": "partial",
+        "evaluation_slices": [
+          "root-abstract"
+        ]
+      },
+      {
+        "english": "2. Reader's Edition (Tiqqun Qor'im)",
+        "hebrew": [
+          {
+            "page": "summary",
+            "heading": "2. \"תיקון קוראים\" ומהדורת לימוד"
+          }
+        ],
+        "coverage": "partial",
+        "evaluation_slices": [
+          "root-abstract"
+        ]
+      },
+      {
+        "english": "3. Full, Transparent Editorial Documentation",
+        "hebrew": [
+          {
+            "page": "summary",
+            "heading": "3. תיעוד מלא ושקוף לקביעת הנוסח ושיטת העריכה"
+          }
+        ],
+        "coverage": "partial",
+        "evaluation_slices": [
+          "root-abstract"
+        ]
+      },
+      {
+        "english": "Contents of the Full Introduction",
+        "hebrew": [
+          {
+            "page": "summary",
+            "heading": "תוכן המבוא המלא"
+          }
+        ],
+        "coverage": "partial",
+        "evaluation_slices": [
+          "root-abstract"
+        ],
+        "note": "It transcludes the English root's Contents, as the Hebrew transcludes the Hebrew root's, so drift in that list is the root's entry (root-abstract-2 to root-abstract-5)."
+      },
+      {
+        "english": "Original Announcements in English",
+        "hebrew": [
+          {
+            "page": "summary",
+            "heading": "ההודעות המקוריות בתקשורת"
+          }
+        ],
+        "coverage": "full",
+        "evaluation_slices": [
+          "root-abstract"
+        ]
+      },
+      {
+        "english": "Related projects",
+        "hebrew": [
+          {
+            "page": "summary",
+            "heading": "פרויקטים נלווים"
+          }
+        ],
+        "coverage": "partial",
+        "evaluation_slices": [
+          "root-abstract"
+        ],
+        "note": "The Hebrew section also shows the list of participants, transcluded from the Appendices, which the English leaves out (root-abstract-26)."
+      },
+      {
+        "english": "External Applications",
+        "hebrew": [
+          {
+            "page": "appendices",
+            "heading": "יישומים חיצוניים"
+          }
+        ],
+        "coverage": "partial",
+        "evaluation_slices": [
+          "root-abstract"
+        ],
+        "note": "Its Hebrew counterpart is in the Appendices, outside the part that the Hebrew summary transcludes."
+      },
+      {
+        "english": "Dedication",
+        "hebrew": [
+          {
+            "page": "appendices",
+            "heading": "הקדשה"
+          }
+        ],
+        "coverage": "full",
+        "evaluation_slices": [
+          "root-abstract"
+        ],
+        "note": "The Hebrew summary transcludes this section of the Appendices."
+      },
+      {
+        "english": "\"Miqra as Oral Torah, Written Torah and Digital Torah\"",
+        "hebrew": [
+          {
+            "page": "summary",
+            "heading": "\"מקרא כתורה שבעל־פה, תורה שבכתב ותורה דיגיטלית\""
+          }
+        ],
+        "coverage": "full",
+        "evaluation_slices": [
+          "root-abstract"
+        ]
+      },
+      {
+        "english": "Notes",
+        "hebrew": [
+          {
+            "page": "summary",
+            "heading": "הערות"
+          }
+        ],
+        "coverage": "partial",
+        "evaluation_slices": [
+          "root-abstract"
+        ],
+        "note": "The evaluation judged notes 1 to 5 together; note 4 has no Hebrew counterpart."
+      }
+    ],
+    "ch1": [
+      {
+        "english": null,
+        "hebrew": [
+          {
+            "page": "ch1",
+            "heading": null
+          }
+        ],
+        "coverage": "full",
+        "evaluation_slices": [
+          "ch1-ch2"
+        ],
+        "note": "The title only. No English section renders the chapter's body (ch1-ch2-1)."
+      },
+      {
+        "english": "Footnotes",
+        "hebrew": [
+          {
+            "page": "ch1",
+            "heading": "הערות"
+          }
+        ],
+        "coverage": "none",
+        "evaluation_slices": [
+          "ch1-ch2"
+        ],
+        "note": "An empty list over the untranslated chapter (ch1-ch2-1)."
+      }
+    ],
+    "ch2": [
+      {
+        "english": null,
+        "hebrew": [
+          {
+            "page": "ch2",
+            "heading": null
+          }
+        ],
+        "coverage": "full",
+        "evaluation_slices": [
+          "ch1-ch2"
+        ]
+      },
+      {
+        "english": "4.6 Ḥatafim in Non-Guttural Letters",
+        "hebrew": [
+          {
+            "page": "ch2",
+            "heading": "חטפים באותיות לא גרוניות"
+          }
+        ],
+        "coverage": "partial",
+        "evaluation_slices": [
+          "ch1-ch2"
+        ]
+      },
+      {
+        "english": "9.1 The Practice of the Scribes versus the Practice of the Printed Editions",
+        "hebrew": [
+          {
+            "page": "ch2",
+            "heading": "מנהג הסופרים מול מנהג הדפוסים"
+          }
+        ],
+        "coverage": "partial",
+        "evaluation_slices": [
+          "ch1-ch2"
+        ],
+        "note": "The evaluation's coverage reads full, except its two footnotes, which appear only as bare numbers."
+      },
+      {
+        "english": "Footnotes",
+        "hebrew": [
+          {
+            "page": "ch2",
+            "heading": "הערות"
+          }
+        ],
+        "coverage": "partial",
+        "evaluation_slices": [
+          "ch1-ch2"
+        ],
+        "note": "The evaluation judged footnotes 1 and 2 together (ch1-ch2-7)."
+      }
+    ],
+    "ch3": [
+      {
+        "english": null,
+        "hebrew": [
+          {
+            "page": "ch3",
+            "heading": null
+          }
+        ],
+        "coverage": "full",
+        "evaluation_slices": [
+          "ch3a"
+        ]
+      },
+      {
+        "english": "A Concise Explanation of the Text of the Torah",
+        "hebrew": [
+          {
+            "page": "ch3",
+            "heading": "הסבר קצר על קביעת הנוסח בתורה"
+          }
+        ],
+        "coverage": "partial",
+        "evaluation_slices": [
+          "ch3a"
+        ]
+      },
+      {
+        "english": "Masorah of the Books in the Torah: The Text of the Letters and Words",
+        "hebrew": [
+          {
+            "page": "ch3",
+            "heading": "מסורת הסופרים בתורה: נוסח האותיות והתיבות"
+          }
+        ],
+        "coverage": "full",
+        "evaluation_slices": [
+          "ch3a"
+        ],
+        "note": "A heading only, and mistranslated (ch3a-7)."
+      },
+      {
+        "english": "Text of the Letters in the Torah",
+        "hebrew": [
+          {
+            "page": "ch3",
+            "heading": "נוסח האותיות בתורה"
+          }
+        ],
+        "coverage": "partial",
+        "evaluation_slices": [
+          "ch3a"
+        ]
+      },
+      {
+        "english": "The Letter Text of the Leningrad Codex",
+        "hebrew": [
+          {
+            "page": "ch3",
+            "heading": "האותיות החריגות בתורה בכתי\"ל"
+          }
+        ],
+        "coverage": "full",
+        "evaluation_slices": [
+          "ch3a"
+        ],
+        "note": "The Hebrew section also holds the five book lists, which have no headings of their own there; the English heads each list separately, and each of those entries names this Hebrew section too."
+      },
+      {
+        "english": "Book of Genesis",
+        "hebrew": [
+          {
+            "page": "ch3",
+            "heading": "האותיות החריגות בתורה בכתי\"ל"
+          }
+        ],
+        "coverage": "full",
+        "evaluation_slices": [
+          "ch3a"
+        ]
+      },
+      {
+        "english": "Book of Exodus",
+        "hebrew": [
+          {
+            "page": "ch3",
+            "heading": "האותיות החריגות בתורה בכתי\"ל"
+          }
+        ],
+        "coverage": "partial",
+        "evaluation_slices": [
+          "ch3a"
+        ]
+      },
+      {
+        "english": "Book of Leviticus",
+        "hebrew": [
+          {
+            "page": "ch3",
+            "heading": "האותיות החריגות בתורה בכתי\"ל"
+          }
+        ],
+        "coverage": "full",
+        "evaluation_slices": [
+          "ch3a"
+        ]
+      },
+      {
+        "english": "Book of Numbers",
+        "hebrew": [
+          {
+            "page": "ch3",
+            "heading": "האותיות החריגות בתורה בכתי\"ל"
+          }
+        ],
+        "coverage": "partial",
+        "evaluation_slices": [
+          "ch3a"
+        ]
+      },
+      {
+        "english": "Book of Deuteronomy",
+        "hebrew": [
+          {
+            "page": "ch3",
+            "heading": "האותיות החריגות בתורה בכתי\"ל"
+          }
+        ],
+        "coverage": "full",
+        "evaluation_slices": [
+          "ch3a"
+        ]
+      },
+      {
+        "english": "Summary of Results",
+        "hebrew": [
+          {
+            "page": "ch3",
+            "heading": "סיכום התוצאות"
+          }
+        ],
+        "coverage": "partial",
+        "evaluation_slices": [
+          "ch3a"
+        ]
+      },
+      {
+        "english": "How the Letter-Text is Documented",
+        "hebrew": [],
+        "coverage": "none",
+        "evaluation_slices": [
+          "ch3b"
+        ],
+        "note": "It translates an older Hebrew text, which the current chapter replaced with a rewritten section near its start; the evaluation's slice ch3b names it (ch3a-6)."
+      },
+      {
+        "english": "Conjoined Words in the Torah",
+        "hebrew": [
+          {
+            "page": "ch3",
+            "heading": "תיבות מחוברות בתורה"
+          }
+        ],
+        "coverage": "full",
+        "evaluation_slices": [
+          "ch3b"
+        ]
+      },
+      {
+        "english": "Scribal Tradition in the Torah: Division of the Parashot",
+        "hebrew": [
+          {
+            "page": "ch3",
+            "heading": "מסורת הסופרים בתורה: חלוקת הפרשות"
+          }
+        ],
+        "coverage": "partial",
+        "evaluation_slices": [
+          "ch3b"
+        ]
+      },
+      {
+        "english": "Scribal Tradition in the Torah: Anomalous Letters",
+        "hebrew": [
+          {
+            "page": "ch3",
+            "heading": "מסורת הסופרים בתורה: אותיות מיוחדות"
+          }
+        ],
+        "coverage": "full",
+        "evaluation_slices": [
+          "ch3b"
+        ]
+      },
+      {
+        "english": "Large and Small Letters",
+        "hebrew": [
+          {
+            "page": "ch3",
+            "heading": "אותיות גדולות וקטנות"
+          }
+        ],
+        "coverage": "full",
+        "evaluation_slices": [
+          "ch3b"
+        ]
+      },
+      {
+        "english": "Dotted letters",
+        "hebrew": [
+          {
+            "page": "ch3",
+            "heading": "אותיות מנוקדות"
+          }
+        ],
+        "coverage": "full",
+        "evaluation_slices": [
+          "ch3b"
+        ]
+      },
+      {
+        "english": "Inverted nun",
+        "hebrew": [
+          {
+            "page": "ch3",
+            "heading": "נו\"ן הפוכה"
+          }
+        ],
+        "coverage": "full",
+        "evaluation_slices": [
+          "ch3b"
+        ]
+      },
+      {
+        "english": "The Writers' Tradition in the Torah: Special Notes",
+        "hebrew": [
+          {
+            "page": "ch3",
+            "heading": "מסורת הסופרים בתורה: הערות מיוחדות"
+          }
+        ],
+        "coverage": "full",
+        "evaluation_slices": [
+          "ch3c"
+        ],
+        "note": "The evaluation's coverage is full, though the English translates an older Hebrew and lacks three rows of the table."
+      },
+      {
+        "english": "Tradition of the Scribes in the Torah: Ktiv Edition (Letters Only)",
+        "hebrew": [
+          {
+            "page": "ch3",
+            "heading": "מסורת הסופרים בתורה: מהדורת כתיב (אותיות בלבד)"
+          }
+        ],
+        "coverage": "full",
+        "evaluation_slices": [
+          "ch3c"
+        ]
+      },
+      {
+        "english": "The Readers' Tradition in the Torah: Wording of the Vowels and the Accents",
+        "hebrew": [
+          {
+            "page": "ch3",
+            "heading": "מסורת הסופרים בתורה לעומת מסורת הקוראים: ההבדל ברמת הדיוק"
+          }
+        ],
+        "coverage": "partial",
+        "evaluation_slices": [
+          "ch3c"
+        ],
+        "note": "A heading only. The Hebrew section now has another title and no subsection; the evaluation judged this heading with the English subsection under it."
+      },
+      {
+        "english": "Wording of the Vowels and the Accents Vis-a-Vis the Letters",
+        "hebrew": [
+          {
+            "page": "ch3",
+            "heading": "מסורת הסופרים בתורה לעומת מסורת הקוראים: ההבדל ברמת הדיוק"
+          }
+        ],
+        "coverage": "partial",
+        "evaluation_slices": [
+          "ch3c"
+        ]
+      },
+      {
+        "english": "Footnotes",
+        "hebrew": [
+          {
+            "page": "ch3",
+            "heading": "הערות"
+          }
+        ],
+        "coverage": "full",
+        "evaluation_slices": [
+          "ch3a",
+          "ch3c"
+        ],
+        "note": "The evaluation judged footnotes 1 to 12 in slice ch3a and 22 to 31 in slice ch3c, both full; slice ch3b judged 13 to 21 with the sections that cite them."
+      }
+    ],
+    "appendices": [
+      {
+        "english": null,
+        "hebrew": [
+          {
+            "page": "appendices",
+            "heading": null
+          }
+        ],
+        "coverage": "full",
+        "evaluation_slices": [
+          "appendices"
+        ],
+        "note": "The title only. The evaluation's section map has no row for it; this coverage is Claude's reading of the evaluation, 2026-11-22."
+      },
+      {
+        "english": "List of Corrections",
+        "hebrew": [
+          {
+            "page": "appendices",
+            "heading": "רשימת תיקונים ושינויים"
+          }
+        ],
+        "coverage": "partial",
+        "evaluation_slices": [
+          "appendices"
+        ],
+        "note": "The English puts this section first, the Hebrew after the templates."
+      },
+      {
+        "english": "List of Sources (Manuscripts and Printed Books) and Tools",
+        "hebrew": [
+          {
+            "page": "appendices",
+            "heading": "רשימת מקורות (כתבי־יד, דפוסים ומחקרים), כלי עזר וחומר להעשרה"
+          }
+        ],
+        "coverage": "full",
+        "evaluation_slices": [
+          "appendices"
+        ]
+      },
+      {
+        "english": "The Two Main Manuscripts which Underlie the Biblical Text",
+        "hebrew": [
+          {
+            "page": "appendices",
+            "heading": "שני כתבי־היד העיקריים שהם היסוד לנוסח המקרא"
+          },
+          {
+            "page": "appendices",
+            "heading": "א. כתר ארם צובה (יד בן צבי 1)"
+          },
+          {
+            "page": "appendices",
+            "heading": "ב. כתב־יד לנינגרד (הספרייה הלאומית הרוסית, סנקט פטרבורג, Ms. EVR I B 19a)"
+          }
+        ],
+        "coverage": "partial",
+        "evaluation_slices": [
+          "appendices"
+        ],
+        "note": "The English leaves out the Hebrew's third subsection, on external sites, entirely."
+      },
+      {
+        "english": "Additional Manuscripts (Tiberian and Yemenite)",
+        "hebrew": [
+          {
+            "page": "appendices",
+            "heading": "כתבי־היד לתורה"
+          },
+          {
+            "page": "appendices",
+            "heading": "כתבי־היד לנביאים"
+          },
+          {
+            "page": "appendices",
+            "heading": "כתבי־היד לכתובים"
+          }
+        ],
+        "coverage": "partial",
+        "evaluation_slices": [
+          "appendices"
+        ]
+      },
+      {
+        "english": "Biblical Editions Based on Tiberian Manuscripts",
+        "hebrew": [
+          {
+            "page": "appendices",
+            "heading": "מהדורות מקרא המיוסדות על כתבי־היד הטברנים"
+          }
+        ],
+        "coverage": "full",
+        "evaluation_slices": [
+          "appendices"
+        ],
+        "note": "The evaluation judged this section with its two subsections."
+      },
+      {
+        "english": "Editions based on the Leningrad Codex",
+        "hebrew": [
+          {
+            "page": "appendices",
+            "heading": "מהדורות מקרא המיוסדות על כתבי־היד הטברנים"
+          }
+        ],
+        "coverage": "full",
+        "evaluation_slices": [
+          "appendices"
+        ]
+      },
+      {
+        "english": "Editions based on the Aleppo Codex",
+        "hebrew": [
+          {
+            "page": "appendices",
+            "heading": "מהדורות מקרא המיוסדות על כתבי־היד הטברנים"
+          }
+        ],
+        "coverage": "full",
+        "evaluation_slices": [
+          "appendices"
+        ]
+      },
+      {
+        "english": "Printed Editions (Not Based on Tiberian Manuscripts)",
+        "hebrew": [
+          {
+            "page": "appendices",
+            "heading": "דפוסים נפוצים (שאינם מיוסדים על כתבי־היד הטברנים)"
+          }
+        ],
+        "coverage": "partial",
+        "evaluation_slices": [
+          "appendices"
+        ]
+      },
+      {
+        "english": "Additional Tools",
+        "hebrew": [
+          {
+            "page": "appendices",
+            "heading": "ספרות המסורה וכלי עזר"
+          }
+        ],
+        "coverage": "partial",
+        "evaluation_slices": [
+          "appendices"
+        ]
+      },
+      {
+        "english": "Divisions of the Parashot",
+        "hebrew": [
+          {
+            "page": "appendices",
+            "heading": "ספרות המסורה וכלי עזר"
+          }
+        ],
+        "coverage": "full",
+        "evaluation_slices": [
+          "appendices"
+        ],
+        "note": "In the Hebrew, a paragraph closing the section on tools, not a section of its own."
+      },
+      {
+        "english": "List of Templates for Documentation and Design",
+        "hebrew": [
+          {
+            "page": "appendices",
+            "heading": "רשימת התבניות לתיעוד ועיצוב"
+          }
+        ],
+        "coverage": "partial",
+        "evaluation_slices": [
+          "appendices"
+        ],
+        "note": "The evaluation's coverage reads summary: the English renders only the first sentence."
+      },
+      {
+        "english": "Abbreviations Used",
+        "hebrew": [],
+        "coverage": "none",
+        "evaluation_slices": [
+          "appendices"
+        ],
+        "note": "An empty heading. The Hebrew gives each siglum with its source in the list of sources."
+      },
+      {
+        "english": "Stages in the Development of the Project",
+        "hebrew": [
+          {
+            "page": "appendices",
+            "heading": "שלבי העבודה בפיתוח הפרויקט"
+          },
+          {
+            "page": "appendices",
+            "heading": "חלק ראשון: תורה"
+          },
+          {
+            "page": "appendices",
+            "heading": "חלק שני: חמש מגילות ושאר המקומות החסרים בכתר ארם צובה"
+          },
+          {
+            "page": "appendices",
+            "heading": "חלק שלישי: שאר ספרי נביאים וכתובים לפי כתר ארם צובה"
+          },
+          {
+            "page": "appendices",
+            "heading": "הגהה יסודית של כל המקרא"
+          }
+        ],
+        "coverage": "partial",
+        "evaluation_slices": [
+          "appendices"
+        ],
+        "note": "The evaluation's coverage reads summary: one paragraph for the Hebrew section and its parts."
+      },
+      {
+        "english": "The Spreadsheet and Transfer of the Project to the Main Namespace at Hebrew Wikisource",
+        "hebrew": [
+          {
+            "page": "appendices",
+            "heading": "גיליון הנתונים (2015–2026) והעברת הפרויקט למרחב הראשי של ויקיטקסט"
+          }
+        ],
+        "coverage": "partial",
+        "evaluation_slices": [
+          "appendices"
+        ]
+      },
+      {
+        "english": "Footnotes",
+        "hebrew": [
+          {
+            "page": "appendices",
+            "heading": "הערות"
+          }
+        ],
+        "coverage": "partial",
+        "evaluation_slices": [
+          "appendices"
+        ],
+        "note": "The evaluation judged the notes with the sections that cite them, most of them partial; this coverage is Claude's reading of the evaluation, 2026-11-22."
+      }
+    ],
+    "data-sheet-guide": [
+      {
+        "english": null,
+        "hebrew": [
+          {
+            "page": "data-sheet-guide",
+            "heading": null
+          },
+          {
+            "page": "data-sheet-guide",
+            "heading": "גיליון הנתונים"
+          }
+        ],
+        "coverage": "partial",
+        "evaluation_slices": [
+          "data-sheet-guide"
+        ],
+        "note": "It also holds the navigation bar, which translates nothing, and the general explanation and format, which match a text from before the sheet's freeze (data-sheet-guide-1, data-sheet-guide-2)."
+      },
+      {
+        "english": "Column A: Book Name and Chapter Number",
+        "hebrew": [
+          {
+            "page": "data-sheet-guide",
+            "heading": "טור A בקובץ: שם הספר ומספר הפרק"
+          }
+        ],
+        "coverage": "full",
+        "evaluation_slices": [
+          "data-sheet-guide"
+        ]
+      },
+      {
+        "english": "Column B: Verse Number",
+        "hebrew": [
+          {
+            "page": "data-sheet-guide",
+            "heading": "טור B בקובץ: מספר הפסוק"
+          }
+        ],
+        "coverage": "full",
+        "evaluation_slices": [
+          "data-sheet-guide"
+        ]
+      },
+      {
+        "english": "Column C: Code before the Verse",
+        "hebrew": [
+          {
+            "page": "data-sheet-guide",
+            "heading": "טור C בקובץ: קוד הבא לפני הפסוק"
+          }
+        ],
+        "coverage": "full",
+        "evaluation_slices": [
+          "data-sheet-guide"
+        ]
+      },
+      {
+        "english": "Column D: Navigation Template for the Verse",
+        "hebrew": [
+          {
+            "page": "data-sheet-guide",
+            "heading": "טור D בקובץ: תבנית הניווט לפסוק"
+          }
+        ],
+        "coverage": "partial",
+        "evaluation_slices": [
+          "data-sheet-guide"
+        ]
+      },
+      {
+        "english": "Column E: Complete Text of the Verse",
+        "hebrew": [
+          {
+            "page": "data-sheet-guide",
+            "heading": "טור E בקובץ: הנוסח המלא של הפסוק"
+          }
+        ],
+        "coverage": "full",
+        "evaluation_slices": [
+          "data-sheet-guide"
+        ]
+      },
+      {
+        "english": "What the Spreadsheet Does Not Include",
+        "hebrew": [],
+        "coverage": "none",
+        "evaluation_slices": [
+          "data-sheet-guide"
+        ],
+        "note": "No counterpart in the current Hebrew (data-sheet-guide-14)."
+      },
+      {
+        "english": "Notes",
+        "hebrew": [
+          {
+            "page": "data-sheet-guide",
+            "heading": "הערות"
+          }
+        ],
+        "coverage": "full",
+        "evaluation_slices": [
+          "data-sheet-guide"
+        ],
+        "note": "Note 2 is an English addition."
+      }
+    ]
+  }
+}

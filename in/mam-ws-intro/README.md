@@ -12,6 +12,15 @@ have unrelated refresh rhythms, and nothing downstream reparses when the introdu
 The partial English translation on English Wikisource is mirrored beside it, under the same
 slugs, in [`in/mam-ws-intro-en/`](../mam-ws-intro-en/README.md).
 
+Since 2026-11-22 a refresh ends with a **drift list**: each section of the English translation
+whose Hebrew counterpart, in the section map that
+[`in/mam-ws-intro-en/README.md`](../mam-ws-intro-en/README.md) describes, the refresh changed,
+compared with the mirror as the refresh found it. Those are the candidates for the translation
+to follow, so copy the list into the refresh's commit message. Take it from the first refresh
+after the last commit, since a second run compares with what the first one wrote and prints an
+empty list. A refresh that renames or removes a heading that the map names fails
+`py/tests/test_intro_en_section_map.py` until the map follows it.
+
 | File under `in/mam-ws-intro/` | Wikisource subpage |
 |---|---|
 | `root.mediawiki` | the introduction's root page |

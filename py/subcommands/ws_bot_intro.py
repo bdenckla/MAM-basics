@@ -17,8 +17,9 @@ has three keys:
 result to the run's pages/ directory and saves nothing. Like the chapter bot's dry run,
 it then exits non-zero, listing each page that a save would change. A saving run saves
 each changed page and then refreshes the introduction's mirror, as
-`py/main_download.py fr-ws-intro` does, unless `--no-post-download` is given. Each run
-writes its artifacts to a fresh directory under .novc/mam-ws-bot-intro-runs/.
+`py/main_download.py fr-ws-intro` does, drift list included, unless `--no-post-download`
+is given. Each run writes its artifacts to a fresh directory under
+.novc/mam-ws-bot-intro-runs/.
 """
 
 import json

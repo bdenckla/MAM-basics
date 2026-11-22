@@ -64,6 +64,17 @@ tree.  Nothing here is time-varying -- the manifest's provenance line is stable,
 order follows ``_SLUG_TO_TITLE``, and the wikitext is written byte for byte as fetched
 -- and that is a property to preserve, since it is what makes a post-refresh diff
 legible.
+
+THE DRIFT LIST.  After writing the mirror, a refresh prints the drift list of
+``ws/ws_intro_en_section_map.py``: each section of the English mirror,
+``in/mam-ws-intro-en/``, whose Hebrew counterpart in the section map,
+``in/mam-ws-intro-en-section-map.json``, this run changed, compared with the mirror as
+the run found it.  Those are the candidates for the English translation to follow,
+Phase 6 of ``doc/PLAN-english-intro.md``, and ``in/mam-ws-intro/README.md`` asks for
+the list in the refresh's commit message.  The list comes after the mirror is written,
+so a section map out of step with the mirror fails the run loudly without keeping the
+mirror from being refreshed.  A second run over an unchanged wiki prints an empty list,
+since it compares with what the first run wrote.
 """
 
 import json
@@ -73,6 +84,7 @@ from mb_cmn import paths
 from mb_cmn import polite_download
 from mb_misc import my_utils_for_mainish as my_utils_fm
 from mb_misc import ws_urls
+from ws import ws_intro_en_section_map
 from ws import ws_revision_api
 
 _ROOT_TITLE = "ויקיטקסט:מבוא למקרא על פי המסורה"
@@ -98,11 +110,13 @@ _SLUG_TO_TITLE = {
 
 
 def run() -> None:
-    """Download the MAM introduction from Hebrew Wikisource and write the mirror."""
+    """Download the MAM introduction, write the mirror, and print the drift list."""
+    replaced = _mirrored_wikitexts()
     with polite_download.PoliteDownloader(_DOWNLOAD_CONFIG) as downloader:
         _assert_declared_set_is_live_set(downloader)
         slugs_to_revisions = _download_revisions(downloader)
     _write_mirror(slugs_to_revisions)
+    _print_drift_list(replaced, slugs_to_revisions)
 
 
 def run_from_args(_args) -> None:
@@ -259,6 +273,30 @@ def _write_mirror(slugs_to_revisions) -> None:
 
 def _write_wikitext(content, out_fp) -> None:
     out_fp.write(content)
+
+
+def _mirrored_wikitexts():
+    """Slug -> the page's mirrored wikitext as this run finds it, or None if absent."""
+    texts = {}
+    for slug in _SLUG_TO_TITLE:
+        path = page_path(slug)
+        if path.exists():
+            with open(path, "r", encoding="utf-8", newline="") as page_fp:
+                texts[slug] = page_fp.read()
+        else:
+            texts[slug] = None
+    return texts
+
+
+def _print_drift_list(replaced, slugs_to_revisions) -> None:
+    """Print each mapped English section whose Hebrew counterpart this run changed."""
+    written = {
+        slug: revision["content"] for slug, revision in slugs_to_revisions.items()
+    }
+    section_map = ws_intro_en_section_map.load()
+    drifts = ws_intro_en_section_map.drift(section_map, replaced, written)
+    for line in ws_intro_en_section_map.drift_report(drifts):
+        print(line)
 
 
 def read_manifest():

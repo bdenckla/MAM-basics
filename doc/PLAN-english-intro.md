@@ -1,6 +1,6 @@
 # Plan: keep the English Introduction to MAM in parallel on English Wikisource and in gh-pages
 
-State: live; Phases 1, 2 and 3 executed 2026-11-22; Phases 4, 5 and 7 wait on Ben's word
+State: live; Phases 1, 2 and 3, and Phase 6's steps 1 and 2, executed 2026-11-22; Phases 4, 5 and 7 wait on Ben's word
 
 ## Origin, and whose words are whose
 
@@ -406,7 +406,7 @@ mam-basics gh-pages". It starts only when Ben says so, after Decisions 4, 5 and 
    page to `_SLUG_TO_TITLE` and to the README's table.
 4. Add the differential check of "The design" for each uploaded passage.
 
-### Phase 6: keeping the two in parallel (live)
+### Phase 6: keeping the two in parallel (live; steps 1 and 2 executed 2026-11-22)
 
 1. Keep a tracked section map, with each English section and the Hebrew section it translates,
    starting from the evaluation's section maps. A lint fails if a mapped heading is gone from
@@ -419,6 +419,108 @@ mam-basics gh-pages". It starts only when Ben says so, after Decisions 4, 5 and 
    mirror, in the Phase 3 layout. That needs a renderer of the English pages' wikitext that
    dispatches explicitly on every template it recognizes and raises on any other, as the
    user-level instructions require.
+
+**Steps 1 and 2, executed 2026-11-22** in `D:/GitRepos6/MAM-basics`, which the commander
+assigned, from `9abf4daf`, in the commit that records them here. The commander's brief for them,
+`intro-en-phase-6-brief-2026-11-22.md` in its state folder, also asked for Ben's browser check to
+be recorded in Phase 3's item 6, which `9abf4daf` had already done. Steps 3 and 4 remain.
+
+1. **The section map is `in/mam-ws-intro-en-section-map.json`**, which
+   `in/mam-ws-intro-en/README.md`, "The section map", describes field by field. It is JSON for
+   three reasons:
+   - Two programs read it, the lint and the drift list, and an English section can name several
+     Hebrew sections, so it needs a structure that a program reads without a parser of its own.
+     A Markdown table would need one, and would set Hebrew and English in bidirectional cells. A
+     Python module would mix the judgments with code.
+   - Its Hebrew must be written by script, and a JSON file is easily rewritten by one.
+   - The repository's JSON writer, `file_io.json_dump_to_file_path`, writes it deterministically,
+     so a scripted edit changes only what it means to.
+
+   It sits in `in/`, beside the two mirrors rather than in either of them. Their directories hold
+   captures in Unicode's mark order, which the mark-order rule exempts, and the map is authored,
+   in MAM's order.
+2. **What the map holds.** The 68 sections of the seven English pages with text, the redirect
+   having none: 7 leads and 61 headings. Their coverage is 34 full, 30 partial and 4 none. They
+   name 65 distinct Hebrew sections, 74 times, on the seven paired Hebrew pages. Two sections of
+   the Abstract name sections of the Appendices, which is where their Hebrew is.
+   - A section is a heading's own text, up to the next heading of any level. So the evaluation's
+     rows were regrouped wherever they split one of the mirrors' sections or joined several.
+   - The coverage is the evaluation's, except where its word was none of the three. The two
+     Appendices sections that it called "summary", and Chapter 2's section 9.1, which it called
+     "full, except its two footnotes", became partial. Chapter 1's "full for the title, none for
+     the body" became full for the lead, which holds the title. Two entries had no row in the
+     evaluation, the Appendices' title and its notes, and their notes say that their coverage is
+     Claude's reading. Every such entry's note says what the evaluation said.
+   - Chapter 3's five Hebrew book lists have no headings of their own. So the six English
+     sections from "The Letter Text of the Leningrad Codex" to "Book of Deuteronomy" name the one
+     Hebrew section that holds the lists, and a change in any list flags all six.
+3. **The reader**, `py/ws/ws_intro_en_section_map.py`, names a heading by its text as a reader
+   sees it, through a closed dispatch. It recognizes runs of two, three or five apostrophes,
+   internal links, and external links with a label. It recognizes no template, tag or entity in a
+   heading, raising on any, and it refuses a page holding anything that could hide a heading or
+   fake one, such as a comment or a nowiki element that spans lines. Of the fourteen pages that
+   the map reads, one Hebrew heading holds links, the Appendices' subsection on the Leningrad
+   Codex, and two English headings hold italics. No heading holds a template, and no page holds
+   what the reader refuses.
+4. **The lint**, `py/tests/test_intro_en_section_map.py`, has four tests. An English page's
+   entries must be exactly its lead and its headings, in order. Each Hebrew heading that the map
+   names must be on its page exactly once. Each evaluation slice that an entry cites must be in
+   the evaluation. And the whole map must be in MAM's mark order. The first test goes beyond
+   step 1's words: it also fails on an English section that the map lacks, since without that the
+   map would not stay a map of each English section.
+
+   Its **negative control** was a scratch script that ran the four tests over a scratch copy of
+   both mirrors and the map, with `paths.in_dir` pointed at the copy. The unchanged copy passed.
+   Five copies, each changed by script, each failed the test meant to catch the change, and the
+   failure named it:
+   1. a Hebrew heading renamed, Chapter 3's section on conjoined words, at line 244;
+   2. an English heading renamed, Chapter 3's "Conjoined Words in the Torah";
+   3. that Hebrew heading repeated at the end of its page;
+   4. an English heading added to the Appendices;
+   5. a word in Unicode's mark order, copied from the English Chapter 3, put into the map.
+5. **The drift list runs inside `fr-ws-intro`**, in `run()` of
+   `py/subcommands/download_wikisource_intro.py`, after the mirror is written. The introduction
+   bot's saving run calls the same function, so its runs print the list too. This plan's design
+   reads each wiki's changes as mirror diffs on each refresh. The refresh is the one moment when
+   the Hebrew mirror's diff exists without reading Git history, since the refresh holds both the
+   text it replaces and the text it writes. So the list costs no request and no Git call. It comes
+   after the write, so a map out of step with the mirror fails the run loudly without blocking the
+   refresh. The list is printed, not tracked: a tracked list rewritten by each run would break the
+   mirror's check that a second refresh over an unchanged wiki leaves a clean tree.
+   `in/mam-ws-intro/README.md` asks for the list in the refresh's commit message, so Git's history
+   keeps it.
+6. **The drift list's first output came from a replay.** A refresh's diff is a task of its own,
+   so this task ran no refresh. A scratch script gave `drift` the Hebrew mirror of each of the
+   twelve latest commits that changed `in/mam-ws-intro/`, against that commit's first parent's.
+   The map was in step with every one of them. Six lists were empty: the latest commit,
+   `d3f52187`, changed only the mirror's README, and the latest refresh, `5b5c5c58` of 2026-11-07,
+   changed only the Leningrad index. The other six named these candidates:
+   - `7f43a3c8` of 2026-11-06, which corrected UXCL to UXLC and linked tanach.us on seven pages:
+     12, the Abstract's "1. Free Content License" and 11 sections of the Appendices, each with a
+     one-line change;
+   - `55f5c399` of 2026-11-02: 4, Chapter 3's "Text of the Letters in the Torah" and "Summary of
+     Results", and the Appendices' "The Two Main Manuscripts which Underlie the Biblical Text"
+     through two of its counterparts;
+   - `64494043` of 2026-11-06: 2, the Appendices' "Additional Manuscripts (Tiberian and
+     Yemenite)" through two of its counterparts;
+   - `f82138dd` of 2026-10-29: Chapter 2's "4.6 Ḥatafim in Non-Guttural Letters";
+   - `0cb9332a` of 2026-10-28: the Appendices' "Stages in the Development of the Project";
+   - `2716f633` of 2026-10-18: the Appendices' "Printed Editions (Not Based on Tiberian
+     Manuscripts)".
+
+   An offline run of the refresh's own drift-list functions, with the mirror's text standing in
+   for the download, printed the empty list. With one line of a mapped section changed, and then
+   with a mapped heading renamed, it printed that candidate.
+7. **Unchanged outputs:** nothing that the mega writes changed, and nothing under `gh-pages/`.
+8. **Checks:** Black on the five changed Python files, `git diff --check`, and `py/main_test.py`
+   over the new lint and fifteen tests of the touched surface, all 98 passing:
+   `test_prose_mark_order`, `test_prose_conventions`, `test_tracked_filenames`,
+   `test_h_dot_below_nfc`, `test_entry_point_subcommands`, `test_mega_coverage`,
+   `test_product_scopes`, `test_explicit_time_zones`, `test_stderr_error_handler`,
+   `test_sibling_reach`, `test_no_machine_paths_in_artifacts`, `test_receipt_update_links`,
+   `test_cgj_between_marks`, `test_wikisource_special_page_download` and
+   `test_main_download_fr_wikisource`. The new lint also passed with Python's UTF-8 mode off. The
+   mega and the full suite are left to the nightly run, as `doc/review-trial.md` says.
 
 ### Phase 7: the Hebrew downloaders under Wikimedia's robots.txt (on Ben's word)
 
@@ -435,9 +537,9 @@ records his answer for them.
 - **Skills:** `hebrew-prose`, with its `references/mam-basics.md`, for any English rendering of
   the introduction; `iterative-document-editing` for this plan and the evaluation's update;
   `github-issues` for the issue that points here.
-- **Unchanged outputs:** Phases 1, 2 and 4 change nothing that the mega writes. Phase 3 changes
-  only the three pages that `gen-misc` writes, and Phase 5 only adds wikitext beside them. An
-  unexpected diff elsewhere is a finding.
+- **Unchanged outputs:** Phases 1, 2 and 4, and Phase 6's steps 1 and 2, change nothing that the
+  mega writes. Phase 3 changes only the three pages that `gen-misc` writes, and Phase 5 only adds
+  wikitext beside them. An unexpected diff elsewhere is a finding.
 - **Verification:** `doc/review-trial.md` governs: focused checks matched to what changed, Black
   on every changed Python file, and the mega and the suite left to the nightly run unless Ben
   asks.

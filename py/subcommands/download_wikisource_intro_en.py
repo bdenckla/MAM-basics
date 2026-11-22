@@ -101,11 +101,17 @@ def run_from_args(_args) -> None:
     run()
 
 
-def _text_slugs():
+def text_slugs():
     """The declared slugs whose English pages have text, that is, are not redirects."""
     return [
         slug for slug in _SLUG_TO_TITLE if slug not in _REDIRECT_SLUG_TO_TARGET_SLUG
     ]
+
+
+def page_path(slug):
+    """The mirrored wikitext of one declared English page."""
+    assert slug in _SLUG_TO_TITLE, sorted(_SLUG_TO_TITLE)
+    return paths.in_dir() / _MIRROR_DIR_NAME / f"{slug}.mediawiki"
 
 
 def _hebrew_titles(hebrew_pages):
@@ -123,12 +129,12 @@ def _interlanguage_targets(hebrew_pages):
     it would name an English page that this mirror does not pair with it; the Hebrew
     redirect has none, and the redirect checks pair it instead.
     """
-    text_slugs = _text_slugs()
+    paired_slugs = text_slugs()
     targets = {}
     for slug in hebrew_pages:
         wikitext = download_wikisource_intro.page_path(slug).read_text(encoding="utf-8")
         links = [link.strip() for link in _INTERLANGUAGE_LINK_RE.findall(wikitext)]
-        if slug in text_slugs:
+        if slug in paired_slugs:
             assert len(links) == 1, (
                 "a paired Hebrew page's English links",
                 slug,
@@ -195,11 +201,11 @@ def _assert_pairs_are_interlanguage_links(downloader, interlanguage_targets) -> 
     a client of its own, because a ChapterClient refuses to see one page under two
     requested titles, and the redirect and its target are exactly that.
     """
-    text_slugs = _text_slugs()
+    paired_slugs = text_slugs()
     client = ws_revision_api.ChapterClient(downloader, _API_PHP)
-    targets = [interlanguage_targets[slug] for slug in text_slugs]
+    targets = [interlanguage_targets[slug] for slug in paired_slugs]
     results = client.by_titles(targets, content=False)
-    for slug in text_slugs:
+    for slug in paired_slugs:
         identity, _lines = results[interlanguage_targets[slug]]
         assert identity["resolved_title"] == _SLUG_TO_TITLE[slug], (slug, identity)
 
