@@ -1,0 +1,639 @@
+{{#lst:User:Dovi/Miqra according to the Masorah|miqra template}}
+-----
+{{c|{{xl|'''[[User:Dovi/Miqra according to the Masorah/Introduction|Introduction to Miqra according to the Masorah]]'''}}}}
+{{c|{{xl|'''Chapter 3: Establishing the Text of the Torah'''}}}}
+-----
+
+
+==A Concise Explanation of the Text of the Torah==
+
+'''The letter-text and the division of ''parashot'' in this edition are based upon Torah scrolls (the spelling of Yemenite scrolls in the main text and alternate spellings in the [https://he.wikisource.org/wiki/משתמש:Dovi/מקרא_על_פי_המסורה/מידע_על_מהדורה_זו/פרק_ג#מסורת_הסופרים_בתורה:_הערות_מיוחדות notes]). The basis for vowel-points, accents and ''meteg''s is the Leningrad Codex. Using it as a base we have made corrections and modifications in order to match its anomalous readings to the text of the Masorah according to the method of the Aleppo Codex. In places where the Aleppo Codex exists or there is evidence about what it contained, the text is based upon it. After establishing the text, minor adjustments have been made according to [[User:Dovi/Miqra according to the Masorah/Information about this Edition/Chapter 2|the stylistic principles of this edition]].'''
+
+For detailed information about the methodology used to determine the text of the Torah, see the following sections.
+
+==Masorah of the Books in the Torah: The Text of the Letters and Words==
+
+===Text of the Letters in the Torah===
+
+'''Text of the letters in the Masoretic period''': the text of the letters according to the Masorah is reflected well as an accurate '''ideal''' from the Masoretic notes. However, in the Tiberian manuscripts closest to the Aleppo Codex, this ideal is not realized with perfect execution. The manuscripts went through processes of proofreading and corrections in this direction, yet in every one of them there remain mistakes in the written text. Mistakes of this sort are generally peculiar to a single manuscript, in which the spelling in some particular word will vary from the rest of the manuscripts. This being so, it is possible to determine the spelling of the Masoretic text anywhere – either according to the '''Masoretic notes''', or according to the text of the '''majority of manuscripts, or according to both together'''. And, as it happens, an eclectic text compiled from the majority of the manuscripts is exactly the same as the text documented in the Masoretic notes in almost every place. All this was demonstrated by the Rabbi Mordechai Breuer for the first time in his important book, ''The Aleppo Codex and the Received Text of the Bible.''<ref>Jerusalem: Mossad Ha-Rav Kook, 5737.</ref>
+
+'''After the Masoretic period''': In addition, Breuer showed that the text which emerges from the combination of the Masoretic together with most of the traditions in the manuscripts close to the Aleppo Codex is completely in line with the Yemenite text, and in almost all places is in line with the text of the Torah scrolls in Sepharad and Ashkenaz. The text of the spelling in the Torah scrolls (outside Yemen) is determined after the age of the Tiberian Masoretes through the writings of later scholars of Masorah: in the books ''Masoret Seyag la-Torah'' of Rabbi Meir Halevi Abulafia, ''Or Torah'' of Rabbi Menachem Di Lonzano, and ''Minḥat Shai'' of Rabbi Yedidya Shlomo Raphael Norzi. The scholars of the Masorah in these generations worked according to a '''distinctly electic method''', using to the best of their ability those Masoretic notes which were available to them, and those manuscripts which seemed accurate to them.<ref>A book is defined as ‘accurate’ insofar as it corresponds to the spelling in parallel books and to the Masoretic notes. It is important to note that the method of work in this field by the halakhic scholars was to adhere generally to the Tiberian Masorah and the eclectic method even when opposed to the sages in the Talmud and Midrashim (in places that call for a particular spelling). The sages of the Talmud testify that they themselves were not experts in the deficient and plene spellings (''Kiddushin'' 3a), and in the eyes of the halakhic scholars who dealt with the text of the Torah, this situation lasted to their very time. And so they decided in the end (after serious deliberation) to accept the Masoretic notes and the testimony of the majority of accurate manuscripts, instead of the spelling quoted in the Talmud, and even in the places where we learn halakhah from the spelling! (See the examples given in ''Gilyon ha-Shas'' by Rabbi Akiva Eger on ''Shabbat'', page 55, 72 (?) of ''Tosafot'' D.H. (?). For deliberation on this issue see Breuer, C.6 (?) (page 88) and notes 2, 3 there.</ref> It happens that their work has been accomplished so beautifully that it is almost perfect (and almost identical to the Yemenite text). On the other hand, the Yemenite version itself seems to be based not on an eclectic method but on a '''perfect job of copying''' the Aleppo Codex.<ref>See Breuer, ibid., pp. 87-89.</ref> And if so, it follows that in the Yemenite text we have clear and precise testimony to the text that was in the Aleppo Codex.<ref>Breuer produced a number of evidences of this, ibid., p. 90. Among them: the testimony of Yemenite writers whose books were written "with the correction of the well-known book in Egypt"; the written text which fits perfectly with the Masorah (and with the Yemenite text) at the end of the Torah in the Aleppo Codex; the wording of the Aleppo Codex in the Neviim and Ketuvim (remarkably accurate compared to all other manuscripts). To these evidences of Breuer’s, one might add the text of the Teffilin parashot prescribed in the Mishneh Torah (See J. S. Penkower, '''''New Evidence for the Pentateuch Text in the Aleppo Codex''''' [Ramat-Gan, Published by Bar-Ilan U., 1992], pp. 53-55), and likewise the rest of the existing witnesses to the text that was in the Aleppo Codex (such as Penkower, “Meorot Natan by Rabbi Jacob Saphir”, '''Lĕšonénu''' 35, 5746 [1985/6], pp. 151-213). About 12 years after Breuer’s book was published, Yosef Ofer found reliable evidence for this assertion; see his article “The Aleppo Codex in Light of the Lists of Umberto Cassuto”, Sefunot, New Series, Book four (19) 5749, pp. 309-313.</ref> And we also find that the Aleppo Codex itself constitutes a uniquely '''perfect execution''' of the text of the letters in the Torah according to the Masorah (in contrast to the rest of the manuscripts close to it). This determination is also confirmed by the precise spelling of the letters in the books of the Neviim and Ketuvim, where it has a remarkable accuracy unlike any other manuscript.<ref>See about this in the next chapter …</ref>
+
+It seems, then, that there is not to be found definite testimony to the wording of the letters of the Masorah in any one manuscript close to the crown alone, and it is not appropriate to establish an edition of the Bible on such a text.<ref>According to the calculation of Breuer (ibid., p. 86), the most accurate manuscript for the letter-text of the Torah is manuscript ש1 (differing from what is written in the Masorah in 20 places), and the next manuscript ש (25 places), [http://www.bl.uk/manuscripts/FullDisplay.aspx?ref=Or_4445 manuscript ב (Or. 4445 in the British Museum]; 65 places); the Leningrad Codex (120 places; regarding the Leningrad Codex, see for more details the list below).</ref>
+
+===The Letter Text of the Leningrad Codex===
+
+'''Level of accuracy of the Leningrad Codex''': Our edition is based, as said before, on the Westminster transcript of the Leningrad Codex. The accuracy of the letter-text of the Leningrad Codex is good enough to be considered one important witness among others, but its level of accuracy is lower than the other manuscripts close to the Aleppo Codex. According to Yeivin’s appraisal, “The text of the letters deviates chapter by chapter from the Aleppo Codex in plene and defective spelling. The Masorah of the Leningrad Codex … at times contradicts the biblical text.”<ref>Yeivin, נו.2 (?) page 385.</ref> And according to Breuer, it has a deviation from the wording of the Masorah “in close to 120 places in the Torah”.<ref>Breuer, page 86. For a more precise result, see [https://he.wikisource.org/wiki/משתמש:Dovi/מקרא_על_פי_המסורה/מידע_על_מהדורה_זו/פרק_ג#סיכום_התוצאות below].</ref> And therefore the text of the letters in the Torah in our edition will be corrected as stated according to the scrolls of Yemen, and will not be left following the Leningrad Codex (which is the base text of the transcription).
+
+'''Below is a list of all the places where the text in the Leningrad Codex (the base text of the transcription in our edition) differs from the written text of the Yemenite scrolls.'''
+
+The list is necessary to allow a thorough proofreading of the spelling in our edition, vis-a-vis the Westminster transcription on the one hand, and the text of the Yemenite scrolls on the other. The first item on each line of the list is the spelling that appears in the Yemenite scrolls and corresponds to the Masorah, and is followed by an asterisk (*). The second item is the spelling of the Leningrad Codex, followed by an exclamation mark (!) in places where the spelling of the Leningrad Codex contradicts the Masoretic notes within the Leningrad Codex itself.<ref>In addition to this list, it is always possible to carry out a precise examination by computer, comparing the text of the letters in the Westminster transcription of the Leningrad Codex with the letters of our edition and the letters of the Mechon Mamre edition. The full documentation of the wording is found in each specific case in the ‘edit’ pages of the linked chapter pages.</ref>
+
+====Book of Genesis====
+
+In all 20 words with anomalous spelling; one of them (#19) is uncertain.
+
+# ''Noaḥ'' (8:20): [הַטְּהֹרָ֗ה]* / L=[הַטְּהוֹרָ֗ה]! 
+# ''Noaḥ'' (8:20): [הַטָּה֔וֹר]* / L=[הַטָּהֹ֔ר]! 
+# ''Lekh-Lekha'' (13:8): [וּבֵינֶ֔ךָ]* / L=[וּבֵינֶ֔יךָ] 
+# ''Lekh-Lekha'' (14:22): [הֲרִמֹ֨תִי]* / L=[הֲרִימֹ֨תִי] 
+# ''Vayeira'' (19:16): [וַיַּחֲזִ֨יקוּ]* / L=[וַיַּחֲזִ֨קוּ]! 
+# ''Vayeira'' (19:20): [וְהִ֣וא]* / L=[וְהִ֣יא]! 
+# ''Ḥayyei Sarah'' (25:3): [וּלְטוּשִׁ֖ם]* / L=[וּלְטוּשִׁ֖ים] 
+# ''Toldot'' (26:7, 2nd instance): [הִֽוא]* / L=[הִֽיא]! 
+# ''Toldot'' (27:30): [בַּעֲבֻ֖ר]* / L=[בַּעֲב֖וּר]! 
+# ''Vayishlaḥ'' (35:5): [סְבִיב֣וֹתֵיהֶ֔ם]* / L=[סְבִיבֹ֣תֵיהֶ֔ם]! 
+# ''Vayishlaḥ'' (35:23): [וּזְבֻלֽוּן]* / L=[וּזְבוּלֻֽן]! 
+# ''Vayeishev'' (40:10): [וְהִ֤וא]* / L=[וְהִ֤יא]! 
+# ''Mikeitz'' (41:35): [הַטֹּב֔וֹת]* / L=[הַטֹּבֹ֔ת]! 
+# ''Vayigash'' (45:15): [עֲלֵהֶ֑ם]* / L=[עֲלֵיהֶ֑ם]! 
+# ''Vayigash'' (46:9): [וְחֶצְרֹ֥ן]* / L=[וְחֶצְר֥וֹן] 
+# ''Vayigash'' (46:12): [חֶצְרֹ֥ן]* / L=[חֶצְר֥וֹן] 
+# ''Vayigash'' (46:13): [וְשִׁמְרֹֽן]* / L=[וְשִׁמְרֽוֹן] 
+# ''Vayigash'' (46:14): [זְבֻל֑וּן]* / L=[זְבוּלֻ֑ן]! 
+# ''Vayigash'' (47:24): [חֲמִישִׁ֖ית]* / L?=[חֲמִישִׁ֖ת]!?
+# ''Vayḥi'' (49:13): [אֳנִיֹּ֔ת]* / L=[אֳנִיּ֔וֹת]!
+
+====Book of Exodus====
+
+'''In all 25 words with anomalous spelling:'''
+
+# ''Shemot'' (1:16): [הִ֖וא]* / L=[הִ֖יא]!
+# ''Shemot'' (4:3): [וַיַּשְׁלִכֵ֥הוּ]* / L = [וַיַּשְׁלִיכֵ֥הוּ] (= the Masorah parva of the Leningrad Codex[!], against most Masorahs and manuscripts)
+# ''Vaʾeira'' (5:14): [חֶצְרֹ֣ן]* / L=[חֶצְר֣וֹן]
+# ''Vaʾeira'' (8:15): [הַֽחַרְטֻמִּם֙]* / L=[הַֽחַרְטֻמִּים֙]!
+# ''Bo'' (10:25): [וְעֹלֹ֑ת] / L=[וְעֹל֑וֹת]!
+# ''Bo'' (12:4): [מִהְי֣וֹת]* / L=[מִהְיֹ֣ת]!
+# ''Beshallaḥ'' (14:13): [תֹסִ֛פוּ]* / L=[תֹסִ֛יפוּ]!
+# ''Beshallaḥ'' (14:14): [תַּחֲרִשֽׁוּן]* / L=[תַּחֲרִישֽׁוּן]!
+# ''Beshallaḥ'' (14:22): [חוֹמָ֔ה]* / L=[חֹמָ֔ה]!
+# ''Yitro'' (19:11, 2nd instance): [הַשְּׁלִשִׁ֗י]* / L=[הַשְּׁלִישִׁ֗י]!
+# ''Yitro'' (19:19): [הַשֹּׁפָ֔ר]* / L=[הַשּׁוֹפָ֔ר]!
+# ''Mishpaṭim'' (23:22): [שָׁמ֤וֹעַ]* / L=[שָׁמֹ֤עַ]! (= the Masorah parva of the Leningrad Codex[!], against the Masorah magna and against the Masorahs and manuscripts)
+# ''Terumah'' (25:22): [אֲר֣וֹן]* / L=[אֲרֹ֣ן]!
+# ''Terumah'' (26:24): [תֹֽאֲמִם֮]* / L=[תֹֽאֲמִים֮]
+# ''Tetzaveh'' (28:28, 1st instance): [הָאֵפוֹד֙]* / [הָאֵפֹד֙]!
+# ''Tetzaveh'' (29:22): [עֲלֵיהֶ֔ן]* / L=[עֲלֵהֶ֔ן]!
+# ''Tetzaveh'' (29:40): [רְבִיעִ֥ת]* / [רְבִעִ֥ית]
+# ''Ki Tissa'' (32:34): [עֲלֵהֶ֖ם]* / L=[עֲלֵיהֶ֖ם]!
+# ''Ki Tissa'' (34:24): [גְּבֻלֶ֑ךָ]* / L=[גְּבוּלֶ֑ךָ]!
+# ''Vayaqhel'' (36:13): [הַיְרִיעֹ֜ת]* / L=[הַיְרִעֹ֜ת]
+# ''Vayaqhel'' (36:19): [אֵילִ֖ם]* / L=[אֵלִ֖ים]!
+# ''Vayaqhel'' (37:3, 3rd instance): [טַבָּעֹ֔ת]* / L=[טַבָּע֔וֹת]
+# ''Vayaqhel'' (38:10): [הָעַמּוּדִ֛ים]* / L=[הָעַמֻּדִ֛ים]! (= Masorah parva of the Leningrad Codex [!], against the Masorah magna of the Leningrad Codex and against the manuscripts)
+# ''Pequdei'' (39:13): [מִשְׁבְּצֹ֥ת]* / L=[מִשְׁבְּצ֥וֹת]!
+# ''Pequdei'' (39:35): [אֲר֥וֹן]* / L=[אֲרֹ֥ן]!
+
+====Book of Leviticus====
+
+'''In all 14 words with anomalous spelling.'''
+
+# ''Vayiqra'' (5:11): [הִֽוא]* / L=[הִֽיא]!
+# ''Shemini'' (10:1): [וַיַּקְרִ֜יבוּ]* / L=[וַיַּקְרִ֜בוּ]!
+# ''Shemini'' (10:13): [קָד֔וֹשׁ]* / L=[קָדֹ֔שׁ]!
+# ''Shemini'' (11:4): [וּמִמַּפְרִסֵ֖י]* / L=[וּמִמַּפְרִיסֵ֖י]
+# ''Tazria'' (13:6): [הִ֔וא]* / L=[הִ֔יא]!
+# ''Metzora'' (14:10): [תְּמִימִ֔ם]* / L=[תְּמִימִ֔ים]
+# ''Aḥarei Mot'' (16:8): [גֹּרָל֑וֹת]* / L=[גּוֹרָל֑וֹת]!
+# ''Aḥarei Mot'' (18:29): [הַתּוֹעֵבֹ֖ת]* / L=[הַתּוֹעֵב֖וֹת]!
+# ''Qedoshim'' (19:4): [הָ֣אֱלִילִ֔ם]* / L=[הָ֣אֱלִילִ֔ים]!
+# ''Qedoshim'' (20:6): [לִזְנֹ֖ת]* / L=[לִזְנ֖וֹת]!
+# ''Qedoshim'' (20:18): [וְהִ֕וא]* / L=[וְהִ֕יא]!
+# ''Emor'' (23:20):  [הַבִּכֻּרִ֤ים]* / L=[הַבִּכּוּרִ֤ים]!
+# ''Emor'' (23:48): [נִדְבֹ֣תֵיכֶ֔ם]* / L=[נִדְב֣וֹתֵיכֶ֔ם]!
+# ''Beḥuqotai'' (26:35): [לִהְי֥וֹת]* / L=[לִהְיֹ֥ת]!
+
+====Book of Numbers====
+
+'''In all 30 words with anomalous spelling.'''
+
+# ''Bemidbar'' (1:17): [בְּשֵׁמֹֽת]* (= the Yeminite scrolls) / L=[בְּשֵׁמֽוֹת]! (= the scrolls of Sepharad and Ashkenaz)
+# ''Bemidbar'' (3:2): [הַבְּכֹ֣ר]* / L=[הַבְּכ֣וֹר]!
+# ''Bemidbar'' (3:42): [בְּכ֖וֹר]* / L=[בְּכֹ֖ר]!
+# ''Bemidbar'' (3:43): [שֵׁמֹ֛ת]* / L=[שֵׁמ֛וֹת]!
+# ''Naso'' (7:7): [הָעֲגָל֗וֹת]* / L=[הָעֲגָלֹ֗ת]!
+# ''Naso'' (7:23): [עַתֻּדִ֣ים]* / L=[עַתּוּדִ֣ים]!
+# ''Behaʿalotekha'' (9:3): [בְּמֹעֲד֑וֹ]* / L=[בְּמוֹעֲד֑וֹ]!
+# ''Behaʿalotekha'' (9:7): [הַקְרִ֜יב]* / L=[הַקְרִ֜ב]!
+# ''Behaʿalotekha'' (9:17): [הֵעָל֤וֹת]* / L=[הֵעָלֹ֤ת]!
+# ''Behaʿalotekha'' (10:9): [בַּחֲצֹצְרֹ֑ת]* / L=[בַּחֲצֹצְר֑וֹת]!
+# ''Behaʿalotekha'' (10:16): [חֵלֹֽן]* / L=[חֵלֽוֹן]
+# ''Behaʿalotekha'' (11:26): [עֲלֵהֶ֣ם]* / L=[עֲלֵיהֶ֣ם]!
+# ''Shelaḥ'' (13:26): [אֹתָ֤ם]* / L=[אוֹתָ֤ם]!
+# ''Shelah'' (13:29, 3rd instance): [יוֹשֵׁ֣ב]* / L=[יֹשֵׁ֣ב]!
+# ''Shelaḥ'' (13:32): [וַיֹּצִ֜יאוּ]* / L=[וַיּוֹצִ֜יאוּ]!
+# ''Shelaḥ'' (15:39): [תָת֜וּרוּ]* / [תָתֻ֜רוּ]
+# ''Ḥuqqat'' (19:7): [יָבֹ֣א]* / L=[יָב֣וֹא]! (= the Masorah parva of the Leningrad Codex [!] against the Masorah magna of the Leningrad Codex and the majority of the manuscripts)
+# ''Ḥuqqat'' (20:17): [גְּבֻלֶֽךָ]* / L=[גְּבוּלֶֽךָ]!
+# ''Ḥuqqat'' (21:13): [מִגְּבֻ֣ל]* / L=[מִגְּב֣וּל]
+# ''Ḥuqqat'' (21:30): [דִּיבֹ֑ן]* / L=[דִּיב֑וֹן]!
+# ''Balaq'' (22:5): [בְּעֹ֗ר]* (=the Yemenite manuscripts) / L=[בְּע֗וֹר] (the scrolls of Sepharad and Ashkenaz)
+# ''Balaq'' (22:38):  [הֲיָכֹ֥ל]* / L=[הֲיָכ֥וֹל]!
+# ''Balaq'' (23:29): [אֵילִֽם]* / L=[אֵילִֽים]!
+# ''Pinḥas'' (26:24): [הַיָּשֻׁבִ֑י]* / L=[הַיָּשׁוּבִ֑י]!
+# ''Maṭṭot'' (32:22): [נְקִיִּ֛ם]* / L=[נְקִיִּ֛ים]!
+# ''Masʿei'' (33:35): [בְּעֶצְיֹ֥ן]* / L=[בְּעֶצְי֥וֹן]
+# ''Masʿei'' (33:52): [בָּמוֹתָ֖ם]* / L=[בָּמֹתָ֖ם] (=the majority of manuscripts, but not the Masorah!)
+# ''Masʿei'' (34:12, 2nd instance): [הַגְּבֻ֔ל]* / L=[הַגְּב֔וּל]
+# ''Masʿei'' (35:19): [יְמִתֶֽנּוּ]* / L=[יְמִיתֶֽנּוּ]!
+
+====Book of Deuteronomy====
+
+'''In all 38 words with anomalous spelling.'''
+
+# ''Devarim'' (1:15): [אוֹתָ֛ם]* / L=[אֹתָ֛ם]!
+# ''Devarim'' (2:23): [מִכַּפְתֹּ֔ר]* / L=[מִכַּפְתּ֔וֹר]
+# ''Devarim'' (3:5): [בְּצֻרֹ֛ת]* / L=[בְּצֻר֛וֹת]!
+# ''Vaʾetḥanan'' (3:25):  [וְהַלְּבָנֹֽן]* / L=[וְהַלְּבָנֽוֹן]!
+# ''Vaʾetḥanan'' (4:3): [הָֽרֹא֔וֹת]* / L=[הָֽרֹאֹ֔ת]
+# ''Vaʾetḥanan'' (4:42): [מִתְּמֹ֣ל]* / L=[מִתְּמ֣וֹל]!
+# ''Vaʾetḥanan'' (4:42): [שִׁלְשֹׁ֑ם]* / L=[שִׁלְשׁ֑וֹם]!
+# ''Vaʾetḥanan'' (6:9): [מְזֻז֥וֹת]* / L=[מְזוּזֹ֥ת]
+# ''Vaʾetḥanan'' (6:21): [וַיֹּצִיאֵ֧נוּ]* / L=[וַיּוֹצִיאֵ֧נוּ]!
+# ''Eiqev'' (7:16): [תָח֥וֹס]* / L=[תָחֹ֥ס]!
+# ''Eiqev'' (8:2): [הוֹלִֽיכְךָ֜]* / L=[הֹלִֽיכֲךָ֜]
+# ''Eiqev'' (8:3): [הוֹדִֽיעֲךָ֗]* / L=[הוֹדִֽעֲךָ֗]
+# ''Eiqev'' (8:12): [טֹבִ֛ים]* / L=[טוֹבִ֛ים]!
+# ''Eiqev'' (9:15): [לוּחֹ֣ת]* / L=[לֻחֹ֣ת]
+# ''Eiqev'' (10:11): [וְיִֽירְשׁ֣וּ]* / L=[וְיִֽרְשׁ֣וּ]!
+# ''Reʾeh'' (12:2): [גְּבֻֽלְךָ֮]* / L=[גְּבֽוּלְךָ֮]!
+# ''Shophtim'' (18:22) [יָבֹ֔א]* / L=[יָב֔וֹא]!
+# ''Shophtim'' (20:1): [אֹיְבֶ֗ךָ]* / L=[אֹיְבֶ֗יךָ]!
+# ''Ki-Teitzei'' (21:15): [הַבְּכֹ֖ר]* / L=[הַבְּכ֖וֹר]!
+# ''Ki-Teitzei'' (22:14): [וְהוֹצִ֥א]* / L=[וְהוֹצִ֥יא]!
+# ''Ki-Teitzei'' (24:13): [כְּב֣וֹא]* / L=[כְּבֹ֣א]!
+# ''Ki-Teitzei'' (25:7): [מֵאֵ֨ן]* / L=[מֵאֵ֨ין]
+# ''Ki-Tavo'' (28:18): [וְעַשְׁתְּרֹ֥ת]* / L=[וְעַשְׁתְּר֥וֹת]!
+# ''Ki-Tavo'' (28:49): [מֵרָחֹק֙]* / L=[מֵרָחוֹק֙]!
+# ''Ki-Tavo'' (28:52): [הַגְּבֹהֹ֣ת]* / L=[הַגְּבֹה֣וֹת]
+# ''Ki-Tavo'' (28:58): [הַכְּתֻבִ֖ים]* / L=[הַכְּתוּבִ֖ים]!
+# ''Ki-Tavo'' (28:59): [גְּדֹלֹת֙]* / L=[גְּדֹלוֹת֙]!
+# ''Nitzavim'' (40:9): [לְטֹבָ֑ה]* / L=[לְטוֹבָ֑ה]!
+# ''Nitzavim'' (40:18): [לָב֥וֹא]* / L=[לָבֹ֥א]!
+# ''Nitzavim'' (40:19): [הַעִדֹ֨תִי]* / L=[הַעִידֹ֨תִי]!
+# ''Haʾazinu'' (42:7): [דֹּר־וָדֹ֑ר]* / L=[דּוֹר־וָד֑וֹר]
+# ''Haʾazinu'' (42:24): [בְּהֵמֹת֙]* / L=[בְּהֵמוֹת֙]
+# ''Haʾazinu'' (42:27): [יָדֵ֣נוּ]* / L=[יָדֵ֣ינוּ]!
+# ''Haʾazinu'' (42:44): [חָת֖וּם]* / L=[חָתֻ֖ם]!
+# ''Ve-Zot ha-Berakhah'' (43:12): [כְּתֵפָ֖יו]* / L=[כְּתֵיפָ֖יו]
+# ''Ve-Zot ha-Berakhah'' (43:19): [וּשְׂפֻנֵ֖י]* / L=[וּשְׂפוּנֵ֖י]
+# ''Ve-Zot ha-Berakhah'' (43:25): [מִנְעָלֶ֑ךָ]* / L=[מִנְעָלֶ֑יךָ]
+# ''Ve-Zot ha-Berakhah'' (44:11): [הָ֨אֹתֹ֜ת]* / L=[הָ֨אֹת֜וֹת]!
+
+====Summary of Results====
+
+'''The main text of the Leningrad Codex versus the Masorahs and the מסירות:''' There are about 127 places in the Torah (one of them uncertain) in which the spelling of the Leningrad Codex disagrees with the Yemenite scrolls (which agree in their letters with the Masoretic notes and the majority of the מסירות). In a clear majority of these places, the spelling in the main text of the Leningrad Codex disagrees the Masoretic notes within the Leningrad Codex itself (all items that have an exclamation mark [!]). In 4 places there is support for the unusual spelling of the Leningrad Codex in its own Masorah parva, while in 3 of them there is an internal contradiction within the Leningrad Codex itself between the Masorah parva and the Masorah magna. It transpires that in addition to the many mistakes in the spelling of the letters of the Leningrad Codex, there are also some errors even in its Masorah parva. Generally speaking, the Masoretic material in the Leningrad Codex (both magna and parva) are an important witness to the Masoretic Text, and it is often more accurate than the main text of the manuscript.
+
+'''The Leningrad Codex as compared to the scrolls of Sepharad and Ashkenaz, and as compared to the Yemenite scrolls:''' In 2 places (Numbers 1:17; 22:5) out of 9, the main text of the Leningrad Codex agrees with the Torah scrolls of Sepharad and Ashkenaz against the Yemenite text. In the other 7 places where where there are spelling differences between the Sephardi and Ashkenazi text as opposed to the Yemenite text (for full details see below in the [https://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%AA%D7%9E%D7%A9:Dovi/%D7%9E%D7%A7%D7%A8%D7%90_%D7%A2%D7%9C_%D7%A4%D7%99_%D7%94%D7%9E%D7%A1%D7%95%D7%A8%D7%94/%D7%9E%D7%99%D7%93%D7%A2_%D7%A2%D7%9C_%D7%9E%D7%94%D7%93%D7%95%D7%A8%D7%94_%D7%96%D7%95/%D7%A4%D7%A8%D7%A7_%D7%92#%D7%9E%D7%A1%D7%95%D7%A8%D7%AA_%D7%94%D7%A1%D7%95%D7%A4%D7%A8%D7%99%D7%9D_%D7%91%D7%AA%D7%95%D7%A8%D7%94:_%D7%94%D7%A2%D7%A8%D7%95%D7%AA_%D7%9E%D7%99%D7%95%D7%97%D7%93%D7%95%D7%AA list of special notes] in red), the Leningrad Codex agrees with the Yemenite text.
+
+'''The Leningrad Codex in a few places which remain uncertain:''' According to Breuer's method in his book (the method of the Masoretic notes together with the majority of the מסירות), there remain only six letters in all the Torah where the general method cannot produce a decisive conclusion, and the spelling of the Masorah remains uncertain (if the Yemenite scrolls are not taken into account):<ref>Breuer, ibid., page 84 (chapter 3, section 1.ד). The data were correct at the time he wrote the book, although since then new manuscripts have been examined, and in particular new evidence has been discovered text of the Aleppo Codex in the Torah, by means of which it is now possible to determine with certainty the text in some of the places, so theat they are no longer uncertain.</ref>
+
+# Genesis, ''Vayigash'' [https://he.wikisource.org/wiki/%D7%91%D7%A8%D7%90%D7%A9%D7%99%D7%AA_%D7%9E%D7%95/%D7%98%D7%A2%D7%9E%D7%99%D7%9D#%D7%9E%D7%95_%D7%99%D7%91 (46:12)]: [חֶצְרֹ֥ן]* (= scrolls of all witnesses) / L=[חֶצְר֥וֹן]
+# Exodus, ''Beshallaḥ'' [https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%AA_%D7%99%D7%93/%D7%98%D7%A2%D7%9E%D7%99%D7%9D#%D7%99%D7%93_%D7%9B%D7%91 (14:22)]: [חוֹמָ֔ה]* (=the scrolls of all witnesses) / L=[חֹמָ֔ה]!
+# Numbers, ''Bemidbar'' [https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%AA_%D7%99%D7%93/%D7%98%D7%A2%D7%9E%D7%99%D7%9D#%D7%99%D7%93_%D7%9B%D7%91 (1:17)]: [בְּשֵׁמֹֽת]* (=Yemenite scrolls) / L=[בְּשֵׁמֽוֹת]! (=scrolls of Sepharad and Ashkenaz)
+# Numbers, ''Behaʿalotekha'' [https://he.wikisource.org/wiki/%D7%91%D7%9E%D7%93%D7%91%D7%A8_%D7%99/%D7%98%D7%A2%D7%9E%D7%99%D7%9D#%D7%99_%D7%99 (10:10)]: L=[חׇדְשֵׁיכֶם֒]* (=Yemenite scrolls) / [חָדְשֵׁכֶם֒] (=Sephardi and Ashkanazi scrolls)
+# Numbers, ''Balaq'' [https://he.wikisource.org/wiki/%D7%91%D7%9E%D7%93%D7%91%D7%A8_%D7%9B%D7%91/%D7%98%D7%A2%D7%9E%D7%99%D7%9D#%D7%9B%D7%91_%D7%94 (22:5)]: [בְּעֹ֗ר]* (=Yemenite scrolls) / L=[בְּע֗וֹר] (=Sephardi and Ashkanazi scrolls)
+# Numbers, ''Masʿei'' [https://he.wikisource.org/wiki/%D7%91%D7%9E%D7%93%D7%91%D7%A8_%D7%9C%D7%92/%D7%98%D7%A2%D7%9E%D7%99%D7%9D#%D7%9C%D7%92_%D7%A0%D7%91 (33:52)]: [בָּמוֹתָ֖ם]* (=the scrolls of all witnesses) / L=[בָּמֹתָ֖ם] (=the majority of manuscripts but not the Masorah!)
+
+From this is follows that 3 of the spelling difference between the Torah scrolls are also in the list of remaining questionable places according to Breuer's method (in the remaining six spelling differences there is a decided advantage to the Yemenite text).<ref>Breuer, p. 87.</ref> In two of these three places (Numbers 1:17; 22:5), the Leningrad Codex presents the text which is found in Ashkenazi and Sephardi scrolls, while in one place (Numbers 10:10) the text of the Leningrad Codex is supported by the Yemenite text. It seems that in all 3 of these words, and even in all six of the remaining questionable places, it is not simply a matter of a scribe's absent-minded mistake, but rather of words where the scribes found it hard to make a conscious decision. That is to say: this is not a division between מסירות but between traditions.<ref>According to Breuer, p. 86 (ג.2).</ref>
+
+====How the Letter-Text is Documented====
+
+The documentation of the text can be found on the 'edit' pages within the parameters of the template entitled 'נוסח'. Wherever the text of the letters in the Leningrad Codex differs from the Yemenite text, we indicate in the template the evidence supporting the Yemenite wording.<ref>The same thing is done also in the few places where the wording remains questionable according to the Breuer method, or where the text of the Leningrad Codex is the same as the Yemenite text although there are differences of spelling in the among the Torah scrolls ([https://he.wikisource.org/wiki/%D7%91%D7%9E%D7%93%D7%91%D7%A8_%D7%99/%D7%98%D7%A2%D7%9E%D7%99%D7%9D#%D7%99_%D7%99 Numbers 10:10]).</ref> If it is, for example, MS S or MS S1, we specify the manuscript by its abbreviation.<ref>We did not use MS B (Or. 4445 in the British Museum), on which Breuer also based his research and his editions, because we did not have direct access to a photograph of it while the project was being prepared (now this important manuscript is available in a quality scan.) It was not necessary, however, because in any case the text of the Torah could be determined according to the objective measure of the Yemenite text, and in all but a few places it is possible to arrive at the required outcome by using the group L, S, S1 only. Only in rare places did we mention the spelling of MS B in the textual documentation, and we supplied the information about it according to the notes in Ginsburg (in which he referred to it as א) or according to what Breuer reported in his notes.</ref> In the case of a Masoretic note, we relay the information as follows:
+
+*Regarding the Masoretic Notes in the Aleppo Codex or the Leningrad Codex (or the two together), we refer to them as מסורת-א (Masorah of the Aleppo Codex) or מסורת-ל (Masorah of the Leningrad Codex) or מסורות-אל (for both in agreement). We did not specify whether it was the Masorah magna or the Masorah parva (unless there was a special need to do so). Nor have we usually given the full references to the Masoretic notes, nor their wording, and whoever wants to examine them must turn to the literature intended for this.
+
+*Regarding the Masoretic notes in the rest of the Tiberian manuscripts, we specify only "מסורת טברנית" (for one note) or "מסורות טברניות" (for two or more notes).
+
+*Regarding the Masoretic notes in the printed editions (those based in large part on the ''Mikraot Gedolot'' of the Venetian edition), we did not present them at all except in places where there was no clear decision according to the Tiberian manuscripts; and then we referred to them simply by the term "מסורה" (''Masorah'') alone.
+
+*The decisions of Rabbi Meir Abulafia, or in some cases of the "Torah Letter" and ''Minḥat Shai'', we specified after the manuscript and the Masoretic notes.
+
+*In the documentation of the letters of the Torah, we did not mention the common printed edition, because they all correspond to the wording of the Torah scrolls according to Abulafia and ''Or Torah'' and ''Minḥat Shai''. We also did not usually include the spelling of ''Mikraot Gedolot'' (2d ed., Venice; called ד in Breuer) in the documentation, because it is almost completely irrelevant for deciding the spelling according to the Yemenite scrolls.
+
+===Conjoined Words in the Torah===
+
+'''In the following list we have presented all the conjoined words in the Torah (totalling 11 words), for which there are differences of spelling in the following sources: Sephardi and Ashkenazi books, Yemenite books, the Aleppo Codex (or testimonies about it), the Leningrad Codex.'''
+
+# Genesis, ''Lekh-Lekha'' ([https://he.wikisource.org/wiki/%D7%91%D7%A8%D7%90%D7%A9%D7%99%D7%AA_%D7%99%D7%93/%D7%98%D7%A2%D7%9E%D7%99%D7%9D#%D7%99%D7%93_%D7%99%D7%96 14:17]): [כְּדׇרְלָעֹ֔מֶר]* / L=[כְּדָר־לָעֹ֔מֶר]
+# Genesis, ''Miqqeitz'' ([https://he.wikisource.org/wiki/%D7%91%D7%A8%D7%90%D7%A9%D7%99%D7%AA_%D7%9E%D7%90/%D7%98%D7%A2%D7%9E%D7%99%D7%9D#%D7%9E%D7%90_%D7%9E%D7%94 41:45]): [פּ֥וֹטִי פֶ֛רַע]*=L / [פּֽוֹטִיפֶ֛רַע] (=Yemenite books; and see the [https://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%AA%D7%9E%D7%A9:Dovi/%D7%9E%D7%A7%D7%A8%D7%90_%D7%A2%D7%9C_%D7%A4%D7%99_%D7%94%D7%9E%D7%A1%D7%95%D7%A8%D7%94/%D7%9E%D7%99%D7%93%D7%A2_%D7%A2%D7%9C_%D7%9E%D7%94%D7%93%D7%95%D7%A8%D7%94_%D7%96%D7%95/%D7%A4%D7%A8%D7%A7_%D7%92#%D7%9E%D7%A1%D7%95%D7%A8%D7%AA_%D7%94%D7%A1%D7%95%D7%A4%D7%A8%D7%99%D7%9D_%D7%91%D7%AA%D7%95%D7%A8%D7%94:_%D7%94%D7%A2%D7%A8%D7%95%D7%AA_%D7%9E%D7%99%D7%95%D7%97%D7%93%D7%95%D7%AA special notes on the Torah].)
+# Genesis, ''Miqqeitz'' ([https://he.wikisource.org/wiki/%D7%91%D7%A8%D7%90%D7%A9%D7%99%D7%AA_%D7%9E%D7%90/%D7%98%D7%A2%D7%9E%D7%99%D7%9D#%D7%9E%D7%90_%D7%A0 41:50]): [פּ֥וֹטִי פֶ֖רַע]*=L / [פּֽוֹטִיפֶ֖רַע] (=Yemenite books; and see the [https://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%AA%D7%9E%D7%A9:Dovi/%D7%9E%D7%A7%D7%A8%D7%90_%D7%A2%D7%9C_%D7%A4%D7%99_%D7%94%D7%9E%D7%A1%D7%95%D7%A8%D7%94/%D7%9E%D7%99%D7%93%D7%A2_%D7%A2%D7%9C_%D7%9E%D7%94%D7%93%D7%95%D7%A8%D7%94_%D7%96%D7%95/%D7%A4%D7%A8%D7%A7_%D7%92#%D7%9E%D7%A1%D7%95%D7%A8%D7%AA_%D7%94%D7%A1%D7%95%D7%A4%D7%A8%D7%99%D7%9D_%D7%91%D7%AA%D7%95%D7%A8%D7%94:_%D7%94%D7%A2%D7%A8%D7%95%D7%AA_%D7%9E%D7%99%D7%95%D7%97%D7%93%D7%95%D7%AA special notes on the Torah])
+# Genesis, ''Vayigash'' (46:20): [פּ֥וֹטִי פֶ֖רַע]*=L / [פּֽוֹטִיפֶ֖רַע] (=Yemenite books; and see in [https://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%AA%D7%9E%D7%A9:Dovi/%D7%9E%D7%A7%D7%A8%D7%90_%D7%A2%D7%9C_%D7%A4%D7%99_%D7%94%D7%9E%D7%A1%D7%95%D7%A8%D7%94/%D7%9E%D7%99%D7%93%D7%A2_%D7%A2%D7%9C_%D7%9E%D7%94%D7%93%D7%95%D7%A8%D7%94_%D7%96%D7%95/%D7%A4%D7%A8%D7%A7_%D7%92#%D7%9E%D7%A1%D7%95%D7%A8%D7%AA_%D7%94%D7%A1%D7%95%D7%A4%D7%A8%D7%99%D7%9D_%D7%91%D7%AA%D7%95%D7%A8%D7%94:_%D7%94%D7%A2%D7%A8%D7%95%D7%AA_%D7%9E%D7%99%D7%95%D7%97%D7%93%D7%95%D7%AA the special notes on the Torah])
+# Exodus, ''Beshellaḥ'' ([https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%AA_%D7%99%D7%96/%D7%98%D7%A2%D7%9E%D7%99%D7%9D#%D7%99%D7%96_%D7%98%D7%96 17:16]): [כֵּ֣ס יָ֔הּ]*=L (=Yemenite, Sephardi, and Ashkenazi) / [כֵּ֣סְיָ֔הּ] (=A(S); and see in the [https://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%AA%D7%9E%D7%A9:Dovi/%D7%9E%D7%A7%D7%A8%D7%90_%D7%A2%D7%9C_%D7%A4%D7%99_%D7%94%D7%9E%D7%A1%D7%95%D7%A8%D7%94/%D7%9E%D7%99%D7%93%D7%A2_%D7%A2%D7%9C_%D7%9E%D7%94%D7%93%D7%95%D7%A8%D7%94_%D7%96%D7%95/%D7%A4%D7%A8%D7%A7_%D7%92#%D7%9E%D7%A1%D7%95%D7%A8%D7%AA_%D7%94%D7%A1%D7%95%D7%A4%D7%A8%D7%99%D7%9D_%D7%91%D7%AA%D7%95%D7%A8%D7%94:_%D7%94%D7%A2%D7%A8%D7%95%D7%AA_%D7%9E%D7%99%D7%95%D7%97%D7%93%D7%95%D7%AA special notes on the Torah])
+# Numbers, ''Bemidbar'' ([https://he.wikisource.org/wiki/%D7%91%D7%9E%D7%93%D7%91%D7%A8_%D7%90/%D7%98%D7%A2%D7%9E%D7%99%D7%9D#%D7%90_%D7%99 1:10]): [פְּדָהצֽוּר]*=L? / L=[פְּדָה צֽוּר]?
+# Numbers, ''Bemidbar'' ([https://he.wikisource.org/wiki/%D7%91%D7%9E%D7%93%D7%91%D7%A8_%D7%91/%D7%98%D7%A2%D7%9E%D7%99%D7%9D#%D7%91_%D7%99%D7%91 2:12]):  [צוּרִֽישַׁדָּֽי]* / L=[צוּרִֽי־שַׁדָּֽי]
+# Numbers, ''Naso'' ([https://he.wikisource.org/wiki/%D7%91%D7%9E%D7%93%D7%91%D7%A8_%D7%96/%D7%98%D7%A2%D7%9E%D7%99%D7%9D#%D7%96_%D7%A0%D7%93 7:54]):  [פְּדָהצֽוּר]* / L=[פְּדָה־צֽוּר]
+# Numbers, ''Behaʿalotekha'' ([https://he.wikisource.org/wiki/%D7%91%D7%9E%D7%93%D7%91%D7%A8_%D7%99/%D7%98%D7%A2%D7%9E%D7%99%D7%9D#%D7%99_%D7%99%D7%98 10:19]): [צוּרִֽישַׁדָּֽי]*=L? / L=[צוּרִֽי שַׁדָּֽי]?
+# Numbers, ''Behaʿalotekha'' ([https://he.wikisource.org/wiki/%D7%91%D7%9E%D7%93%D7%91%D7%A8_%D7%99/%D7%98%D7%A2%D7%9E%D7%99%D7%9D#%D7%99_%D7%9B%D7%92 10:23]): [פְּדָהצֽוּר]* / L=[פְּדָה־צֽוּר]
+# Deuteronomy, ''Haʾazinu'' ([https://he.wikisource.org/wiki/%D7%93%D7%91%D7%A8%D7%99%D7%9D_%D7%9C%D7%91/%D7%98%D7%A2%D7%9E%D7%99%D7%9D#%D7%9C%D7%91_%D7%95 42:6]): [{{X-larger|הַ}}לְיְהֹוָה֙]* / A=[הַ לְיְהוָה֙] / L=[הֲ־לַיהוָה֙] / Yemenite scrolls=[{{X-larger|הַֽ}}לְיהֹוָה֙] (and see also in the [https://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%AA%D7%9E%D7%A9:Dovi/%D7%9E%D7%A7%D7%A8%D7%90_%D7%A2%D7%9C_%D7%A4%D7%99_%D7%94%D7%9E%D7%A1%D7%95%D7%A8%D7%94/%D7%9E%D7%99%D7%93%D7%A2_%D7%A2%D7%9C_%D7%9E%D7%94%D7%93%D7%95%D7%A8%D7%94_%D7%96%D7%95/%D7%A4%D7%A8%D7%A7_%D7%92#%D7%9E%D7%A1%D7%95%D7%A8%D7%AA_%D7%94%D7%A1%D7%95%D7%A4%D7%A8%D7%99%D7%9D_%D7%91%D7%AA%D7%95%D7%A8%D7%94:_%D7%94%D7%A2%D7%A8%D7%95%D7%AA_%D7%9E%D7%99%D7%95%D7%97%D7%93%D7%95%D7%AA special notes on the Torah] and in the [https://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%AA%D7%9E%D7%A9:Dovi/%D7%9E%D7%A7%D7%A8%D7%90_%D7%A2%D7%9C_%D7%A4%D7%99_%D7%94%D7%9E%D7%A1%D7%95%D7%A8%D7%94/%D7%9E%D7%99%D7%93%D7%A2_%D7%A2%D7%9C_%D7%9E%D7%94%D7%93%D7%95%D7%A8%D7%94_%D7%96%D7%95/%D7%A4%D7%A8%D7%A7_%D7%92#%D7%94_%D7%9C%D7%94' list of large letters])
+
+From the two words "כס[ ]יה" and "ה[ ]ליהוה" it becomes clear that there is no definite evidence in the Yemenite scrolls regarding the text of the Aleppo Codex specifically in the matter of the conjoined words. It would appear, then, that the same is true when it comes to the word  "פוטי[]פרע" (in 3 places). In all these places we have presented the customary text in the Sephardi and Ashkenazi scrolls in the main text of this edition, while the text in the books of Yemen ("פוטיפרע" and "הליהוה"), or of the Aleppo Codex as compared to the Torah scrolls in all witnesses ("כסיה"), we have placed in special notes.
+
+In all other places, where the text of the Leningrad Codex various from the Torah scrolls in all witnesses and from the Aleppo Codex (even when uncertain), we documented the data regarding the word in question within the notes of the 'edit' pages.
+
+==Scribal Tradition in the Torah: Division of the Parashot==
+
+The gaps which divide the parashot are prominent in the Masoretic Text, and this division constitutes an essential component of it. However, not every one of the following gaps which indicate the beginning of a new parasha appears uniformly in all the Tiberian manuscripts, and it seems that no authoritative determination has been made on this issue.<ref>One should compare this finding reflected in the Tiberian tradition to the situation prevailing in the Babylonian tradition: recently we have been finding lists of parashot.</ref> This broad characterization is only in a generalization: most of the time there is a parasha space in the same places in the various manuscripts and of the same type, although there are many tens of differences in the parashot divisions between the manuscripts related to the Aleppo Codex and the Leningrad Codex in particular.<ref>There is relatively little research in this area, and there is not even a complete list documenting differences in the distribution of the parashot divisions among the manuscripts. Documentation for some of the scrolls (or for some of the manuscripts) can be found in the volumes that have already been published in two series: the Hebrew University Bible Project (Ezekiel and the Twelve) and the ''Biblia Hebraica Quinta''. A number of researchers have touched a little upon the exegetical significance the parashot divisions. But it seems the most important thing about the gaps which divide parashot is not in the history of their transmission, nor even in the local meaning of the passages where they are, but in their experiential significance in [https://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%AA%D7%9E%D7%A9:Dovi/%D7%9E%D7%A7%D7%A8%D7%90_%D7%A2%D7%9C_%D7%A4%D7%99_%D7%94%D7%9E%D7%A1%D7%95%D7%A8%D7%94/%D7%9E%D7%99%D7%93%D7%A2_%D7%A2%D7%9C_%D7%9E%D7%94%D7%93%D7%95%D7%A8%D7%94_%D7%96%D7%95/%D7%A4%D7%A8%D7%A7_%D7%90#%D7%9E%D7%94%D7%95_%22%D7%9E%D6%B4%D7%A7%D6%B0%D7%A8%D6%B8%D7%90%22? reading the Tanakh], and as the Midrash says at the beginning of Torat Kohanim: "And what are the section breaks used for? To give space to Moses to look between parashah and parashah and between matter and matter. And indeed, these matters are ''qal v'ḥomer'' (that is, ''a fortiori''): For if a person who hears from the mouth of the Holy One, Blessed be He, and speaks with the Holy Spirit needs to look between parashah and parashah and between matter and matter, how much more so the layman who hears from a layman?" (from the opening of "Torat Kohanim" in "Dibbura d'Nedavah").</ref>
+
+The situation since the end of the Middle Ages has been entirely different: since then, and to the present day, there has prevailed an almost complete uniformity in the divisions of the parashot in the Torah scrolls of all witnesses. This uniformity is the direct result of the ruling of Maimonides on the [https://he.wikisource.org/wiki/%D7%A8%D7%9E%D7%91%22%D7%9D_%D7%94%D7%9C%D7%9B%D7%95%D7%AA_%D7%AA%D7%A4%D7%99%D7%9C%D7%99%D7%9F_%D7%95%D7%9E%D7%96%D7%95%D7%96%D7%94_%D7%95%D7%A1%D7%A4%D7%A8_%D7%AA%D7%95%D7%A8%D7%94_%D7%97 halakhot of Torah scrolls (chapter 8)]. Because Maimonides fixed the divisions of the parashot on the basis of the Aleppo Codex, his ruling brought almost all Torah scrolls closer to the Aleppo Codex in their divisions.<ref>For a summary of the subject, see the Introduction to ''Mikraʾot Gedolot ha-Keter'' (pp.50-52), where it is noted that in the era of the Masoretes, as of yet no binding version had been established of the parashot, the petuḥot, and the setumot, and this situation prevailed until halakhic authorities began to deal with this issue intensively (beginning with Maimonides, who determined the parashot according to the Aleppo Codex). This phenomenon should be compared to the matter of the [https://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%AA%D7%9E%D7%A9:Dovi/%D7%9E%D7%A7%D7%A8%D7%90_%D7%A2%D7%9C_%D7%A4%D7%99_%D7%94%D7%9E%D7%A1%D7%95%D7%A8%D7%94/%D7%9E%D7%99%D7%93%D7%A2_%D7%A2%D7%9C_%D7%9E%D7%94%D7%93%D7%95%D7%A8%D7%94_%D7%96%D7%95/%D7%A4%D7%A8%D7%A7_%D7%92#%D7%9E%D7%A1%D7%95%D7%A8%D7%AA_%D7%94%D7%A1%D7%95%D7%A4%D7%A8%D7%99%D7%9D_%D7%91%D7%AA%D7%95%D7%A8%D7%94:_%D7%90%D7%95%D7%AA%D7%99%D7%95%D7%AA_%D7%9E%D7%99%D7%95%D7%97%D7%93%D7%95%D7%AA large and small letters], which were not applied in most of the Tiberian manuscripts, but due to the great preoccupation with this mater on the part of later Masoretic scholars, they came to be a prominent component of the Masoretic Text.</ref>
+
+The division of the parashot in [http://tanach.us/ODTFiles/ the Westminster transcription] is according to the Leningrad Codex, and, and said before, this division differs in tens of places from what is accepted in Torah scrolls, and from what was decided as halakha by Maimonides according to the Aleppo Codex. Therefore, the division of the parashot in the Leningrad Codex has undergone a careful proofreading in our edition in order to match the division accepted in Torah scrolls, and we have recorded all the changes in the textual documentation.
+
+In addition, regarding one parashah which is marked in two different places (Leviticus 7:22; 7:28; and in the Aleppo Codex there was probably a gap in both places), and likewise regarding two anomalous places (Exodus 14:1; Deuteronomy 27:20) where the type of parashah in the Aleppo Codex was different from our Torah scrolls (or even where there is uncertainty about it) there will be a special note in our edition, and they are:
+
+#In the book of Exodus, Parashat Ki Tissa ([https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%AA_%D7%9C%D7%93/%D7%98%D7%A2%D7%9E%D7%99%D7%9D#%D7%9C%D7%93_%D7%90 34:1]), in the verse, "וַיֹּ֤אמֶר... פְּסׇל־לְךָ֛", we note: "A closed section break is supplied by the Aleppo Codex" (in the Torah scrolls there is an open section break according to Maimonides).
+#In the book of Leviticus, Parashat Tsav ([https://he.wikisource.org/wiki/%D7%95%D7%99%D7%A7%D7%A8%D7%90_%D7%96/%D7%98%D7%A2%D7%9E%D7%99%D7%9D#%D7%96_%D7%9B%D7%91 7:22]), in the verse "וַיְדַבֵּ֥ר... דַּבֵּ֛ר... כׇּל־חֵ֜לֶב", we note: "There is no parashah in the Sephardi and Ashkenazi scrolls" (in Yemenite scrolls there is a parashah on account of one possible interpretation of a statement by Maimonides, and it would appear that in the Aleppo Codex there was also a parashah here).
+#In the book of Leviticus, Parashat Tsav ([https://he.wikisource.org/wiki/%D7%93%D7%91%D7%A8%D7%99%D7%9D_%D7%9B%D7%96/%D7%98%D7%A2%D7%9E%D7%99%D7%9D#%D7%9B%D7%96_%D7%9B 7:28]), in the verse "וַיְדַבֵּ֥ר... דַּבֵּ֛ר... הַמַּקְרִ֞יב", we note: "There is no parashah in the Yemenite scrolls" (in the Ashkenazi and Sephardi scrolls there is a parashah on account of one possible interpretation of a statement by Maimonides, and the Aleppo Codex also had a parashah here).
+#In the book of Deuteronomy, Parashat Ki Tavo (27:20), in the verses "אָר֗וּר שֹׁכֵב֙ עִם־אֵ֣שֶׁת אָבִ֔יו", we note: "A closed section break is supplied in the Aleppo Codex" (in the Torah scrolls there is no parashah, due to Maimonides).
+
+For more information on the divisions of parashot throughout the Bible, see [https://he.wikipedia.org/wiki/en:Parashah here] (in English); this information will serve as a basis for our edition.
+
+For information about the division of the parashot in our edition in the Neviim and Ketuvim, see [https://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%AA%D7%9E%D7%A9:Dovi/%D7%9E%D7%A7%D7%A8%D7%90_%D7%A2%D7%9C_%D7%A4%D7%99_%D7%94%D7%9E%D7%A1%D7%95%D7%A8%D7%94/%D7%9E%D7%99%D7%93%D7%A2_%D7%A2%D7%9C_%D7%9E%D7%94%D7%93%D7%95%D7%A8%D7%94_%D7%96%D7%95/%D7%A4%D7%A8%D7%A7_%D7%93#%D7%A9%D7%97%D7%96%D7%95%D7%A8_%D7%97%D7%9C%D7%95%D7%A7%D7%AA_%D7%94%D7%A4%D7%A8%D7%A9%D7%95%D7%AA_%D7%91%D7%A0%D7%91%D7%99%D7%90%D7%99%D7%9D_%D7%95%D7%9B%D7%AA%D7%95%D7%91%D7%99%D7%9D here] (for the places missing in the Aleppo Codex) and [https://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%AA%D7%9E%D7%A9:Dovi/%D7%9E%D7%A7%D7%A8%D7%90_%D7%A2%D7%9C_%D7%A4%D7%99_%D7%94%D7%9E%D7%A1%D7%95%D7%A8%D7%94/%D7%9E%D7%99%D7%93%D7%A2_%D7%A2%D7%9C_%D7%9E%D7%94%D7%93%D7%95%D7%A8%D7%94_%D7%96%D7%95/%D7%A4%D7%A8%D7%A7_%D7%94 here] (for places existing in the Aleppo Codex).
+
+==Scribal Tradition in the Torah: Anomalous Letters==
+
+[[File:Leningrad-codex-25-mesorah.pdf|thumb|List of large and small letters in the final Masorah of the Leningrad Codex|page=5]]
+
+[[File:Ochlah-W'ochlah-1864-HB36175.pdf|thumb|List of large and small letters in the book ''Ochla ve-Ochla'', in the Frensdorff edition (Hanover, 5624).|page=90]]
+
+[[File:MG1525D.djvu|thumb|List of large and small letters in the Masorah magna at the beginning of the book of Chronicles in the ''Mikraot Gedolot'' (Venetian printing, 5284-5286).|page=401]]
+
+[To be continued.]
+
+===Large and Small Letters===
+
+The phenomenon of larger and small letters is more common in the Pentateuch than [https://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%AA%D7%9E%D7%A9:Dovi/%D7%9E%D7%A7%D7%A8%D7%90_%D7%A2%D7%9C_%D7%A4%D7%99_%D7%94%D7%9E%D7%A1%D7%95%D7%A8%D7%94/%D7%9E%D7%99%D7%93%D7%A2_%D7%A2%D7%9C_%D7%9E%D7%94%D7%93%D7%95%D7%A8%D7%94_%D7%96%D7%95/%D7%A4%D7%A8%D7%A7_%D7%94#%D7%90%D7%95%D7%AA%D7%99%D7%95%D7%AA_%D7%92%D7%93%D7%95%D7%9C%D7%95%D7%AA_%D7%95%D7%A7%D7%98%D7%A0%D7%95%D7%AA in the books of the Neviim and Ketuvim].<ref>According to the accepted practice in Torah scrolls today (which do not contain all the large and small letters for which there is evidence in various traditions), there are about 23 large and small letters in all the various traditions together, as compared to about 36 letters (in 34 words) in all the books of the Neviim and Ketuvim (by maximum count), while the books of the Neviim and Ketuvim are more than four times as extensive (!) as the Torah. And according to other traditions, there are over 20 additional letters in the Torah alone (and not in the Neviim and Ketuvim).</ref> But most of the larger letters in the Torah and in the rest of the Bible, and also a significant number of the small ones -- do not appear at all in the biblical text of the Tiberian manuscripts, and only some are set out in the ancient Masoretic lists. This is despite the fact that in later generations their appearance has generally been considered a prominent component of "the Masoretic Text" (even if there are different traditions as to which letters are considered large or small). In this respect, the strict writing of the larger and smaller letters is similar to the strict and standardized [https://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%AA%D7%9E%D7%A9:Dovi/%D7%9E%D7%A7%D7%A8%D7%90_%D7%A2%D7%9C_%D7%A4%D7%99_%D7%94%D7%9E%D7%A1%D7%95%D7%A8%D7%94/%D7%9E%D7%99%D7%93%D7%A2_%D7%A2%D7%9C_%D7%9E%D7%94%D7%93%D7%95%D7%A8%D7%94_%D7%96%D7%95/%D7%A4%D7%A8%D7%A7_%D7%92#%D7%9E%D7%A1%D7%95%D7%A8%D7%AA_%D7%94%D7%A1%D7%95%D7%A4%D7%A8%D7%99%D7%9D_%D7%91%D7%AA%D7%95%D7%A8%D7%94:_%D7%97%D7%9C%D7%95%D7%A7%D7%AA_%D7%94%D7%A4%D7%A8%D7%A9%D7%95%D7%AA division of the parashot]: the carefully defined execution of both phenomena is the result of the work of Masoretic scholars and halakhic jurists who lived after Tiberian Masoretic period.<ref>
+See in the Introduction to the ''Mikraot Gedolot HaKeter'', Volume Joshua-Judges, pp. 47-49, and especially the conclusion there: "The distinction of the large and small letters as a prominent feature of 'the Masoretic Text' is later than the Masoretic period ... And until then, the writing of such letters was given as a matter carried out optionally by the scribes according to their received writing tradition, and not according to any agreed-upon list ... It is then an aspect held in common between the issue of parashot and the issue of the letters, that both of them were made a prominent feature of the (Tiberian) Masoretic 
+Text only after the period of the Masoretes. However, while in the domain of anomalous letters the direction of development was contrary to the tradition of Ben Asher, as reflected in the Leningrad Codex, nevertheless, when it comes to parashiyot, the Leningrad Codex in fact became a standard and model for pedantic writers of the 'Masoretic Text' in future generations." It is worth noting that in ''Mikraot Gedolot HaKeter'' the anomalous letters are not usually distinguished (just as they are usually lacking in the Leningrad Codex). 
+</ref>
+
+In our edition -- which is intended to be a ''tikkun kore'im'' (a ''a corrective guide for readers''), and it is true that it will set forth the traditional of scribes in our own day -- we will note the large and the small letters according to the maximalist custom as accepted in the majority of Torah scrolls and printed editions of the Bible (and that usually in accordance with the ''Minchat Shai''). In cases of doubt we will decide according to the Koren edition, which almost always reflects the tradition accepted in the printed editions. In the textual documentation we will note the sources that support the display of the anomalous letter.
+
+In the five books of the Pentateuch we will add comments on the difference that exist between the Torah scrolls in our day (according to the Sephardi, Ashkenazi, and Yemenite traditions) and the text of the Aleppo Codex (according to witnesses) concerning the large and the small letters. For the list of comments on this topic see [https://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%AA%D7%9E%D7%A9:Dovi/%D7%9E%D7%A7%D7%A8%D7%90_%D7%A2%D7%9C_%D7%A4%D7%99_%D7%94%D7%9E%D7%A1%D7%95%D7%A8%D7%94/%D7%9E%D7%99%D7%93%D7%A2_%D7%A2%D7%9C_%D7%9E%D7%94%D7%93%D7%95%D7%A8%D7%94_%D7%96%D7%95/%D7%A4%D7%A8%D7%A7_%D7%92#%D7%9E%D7%A1%D7%95%D7%A8%D7%AA_%D7%94%D7%A1%D7%95%D7%A4%D7%A8%D7%99%D7%9D_%D7%91%D7%AA%D7%95%D7%A8%D7%94:_%D7%94%D7%A2%D7%A8%D7%95%D7%AA_%D7%9E%D7%99%D7%95%D7%97%D7%93%D7%95%D7%AA| here (in green)].
+
+'''Below is a list of all the large and small letters that appear in the body of the text in our edition (or in [https://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%AA%D7%9E%D7%A9:Dovi/%D7%9E%D7%A7%D7%A8%D7%90_%D7%A2%D7%9C_%D7%A4%D7%99_%D7%94%D7%9E%D7%A1%D7%95%D7%A8%D7%94/%D7%9E%D7%99%D7%93%D7%A2_%D7%A2%D7%9C_%D7%9E%D7%94%D7%93%D7%95%D7%A8%D7%94_%D7%96%D7%95/%D7%A4%D7%A8%D7%A7_%D7%92#%D7%9E%D7%A1%D7%95%D7%A8%D7%AA_%D7%94%D7%A1%D7%95%D7%A4%D7%A8%D7%99%D7%9D_%D7%91%D7%AA%D7%95%D7%A8%D7%94:_%D7%94%D7%A2%D7%A8%D7%95%D7%AA_%D7%9E%D7%99%D7%95%D7%97%D7%93%D7%95%D7%AA| the special notes]):'''
+
+#'''(Large)''' ''Bereshit, Bereshit'' (1:1): ['''בְּ'''רֵאשִׁ֖ית]* (=מ"ס-ל) / L=[בְּרֵאשִׁ֖ית]
+#'''(Small)''' ''Bereshit'', ''Bereshit'' (2:4): [בְּ'''הִ'''בָּֽרְאָ֑ם]* (=מ"ס-ל) / L=[בְּהִבָּֽרְאָ֑ם]
+#'''(Large)''' ''Bereshit'', ''Bereshit'' (5:1): [סֵ֔פֶר]* (with an ordinary ''samekh'') is found in the Leningrad Codex, while ['''סֵ֔'''פֶר] (with an enlarged ''samekh'') is found in Yemenite scrolls. See also in [https://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%AA%D7%9E%D7%A9:Dovi/%D7%9E%D7%A7%D7%A8%D7%90_%D7%A2%D7%9C_%D7%A4%D7%99_%D7%94%D7%9E%D7%A1%D7%95%D7%A8%D7%94/%D7%9E%D7%99%D7%93%D7%A2_%D7%A2%D7%9C_%D7%9E%D7%94%D7%93%D7%95%D7%A8%D7%94_%D7%96%D7%95/%D7%A4%D7%A8%D7%A7_%D7%92#%D7%9E%D7%A1%D7%95%D7%A8%D7%AA_%D7%94%D7%A1%D7%95%D7%A4%D7%A8%D7%99%D7%9D_%D7%91%D7%AA%D7%95%D7%A8%D7%94:_%D7%94%D7%A2%D7%A8%D7%95%D7%AA_%D7%9E%D7%99%D7%95%D7%97%D7%93%D7%95%D7%AA the special notes on the Torah].
+#'''(Small)''' ''Bereshit'', ''Ḥayyei Sarah'' (23:2): [וְלִבְ'''כֹּ'''תָֽהּ]* (=מ"ס-ל) / L=[וְלִבְכֹּתָֽהּ]
+#'''(Small)''' ''Bereshit'', ''Toldot'' (27:46): ['''קַ֣'''צְתִּי]* (=מ"ס-ל) / L=[קַ֣צְתִּי]
+#'''(Large)''' ''Shemot'', ''Ki Tissa'' (34:7): ['''נֹ'''צֵ֥ר]* / The Leningrad Codex reads [נֹצֵ֥ר] (without an enlarged nun). Also lacking the enlarged nun are the Yemenite scrolls; see also [https://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%AA%D7%9E%D7%A9:Dovi/%D7%9E%D7%A7%D7%A8%D7%90_%D7%A2%D7%9C_%D7%A4%D7%99_%D7%94%D7%9E%D7%A1%D7%95%D7%A8%D7%94/%D7%9E%D7%99%D7%93%D7%A2_%D7%A2%D7%9C_%D7%9E%D7%94%D7%93%D7%95%D7%A8%D7%94_%D7%96%D7%95/%D7%A4%D7%A8%D7%A7_%D7%92#%D7%9E%D7%A1%D7%95%D7%A8%D7%AA_%D7%94%D7%A1%D7%95%D7%A4%D7%A8%D7%99%D7%9D_%D7%91%D7%AA%D7%95%D7%A8%D7%94:_%D7%94%D7%A2%D7%A8%D7%95%D7%AA_%D7%9E%D7%99%D7%95%D7%97%D7%93%D7%95%D7%AA the special notes on the Torah].
+#'''(Large)''' ''Shemot'', ''Ki Tissa'' (34:14): [אַחֵ֑'''ר''']* (=מ"ס-ל) / L=[אַחֵ֑ר]
+#'''(Small)''' ''Vayiqra'', ''Vayiqra'' (1:1): [וַיִּקְרָ֖'''א''']* (=מ"ס-ל) / L=[וַיִּקְרָ֖א]
+#'''(Small)''' ''Vayikra'', ''Tsav'' (6:2): ['''מ'''וֹקְדָ֨ה]* / The Leningrad Codex has [מוֹקְדָ֨ה] without the smaller mem, and likewise the Yemenite scrolls. See also [https://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%AA%D7%9E%D7%A9:Dovi/%D7%9E%D7%A7%D7%A8%D7%90_%D7%A2%D7%9C_%D7%A4%D7%99_%D7%94%D7%9E%D7%A1%D7%95%D7%A8%D7%94/%D7%9E%D7%99%D7%93%D7%A2_%D7%A2%D7%9C_%D7%9E%D7%94%D7%93%D7%95%D7%A8%D7%94_%D7%96%D7%95/%D7%A4%D7%A8%D7%A7_%D7%92#%D7%9E%D7%A1%D7%95%D7%A8%D7%AA_%D7%94%D7%A1%D7%95%D7%A4%D7%A8%D7%99%D7%9D_%D7%91%D7%AA%D7%95%D7%A8%D7%94:_%D7%94%D7%A2%D7%A8%D7%95%D7%AA_%D7%9E%D7%99%D7%95%D7%97%D7%93%D7%95%D7%AA the special notes on the Torah])
+#'''(Large)''' ''Vayiqra'', ''Shemini'' (11:42): [עַל־גָּח֜'''וֹ'''ן]*=L (=מ"ס-ל)
+#'''(Large)''' ''Vayiqra'', ''Tazria'' (13:33): [וְהִ֨תְ'''גַּ'''לָּ֔ח]* (=מ"ס-ל) / L=[וְהִ֨תְגַּלָּ֔ח]
+#'''(Large)''' ''Bamidbar'', ''Shelaḥ'' (14:17): ['''יִ'''גְדַּל]* (=מ"ס-ל) / L=[יִגְדַּל]
+#'''(Small)''' ''Bamidbar'', ''Pinḥas'' (25:11): [פִּֽינְחָ֨ס]* without a small yod appears in the Leningrad Codex, while [פִּֽ'''י'''נְחָ֨ס] with the yod small appears in the custom accepted in the Sephardi and Ashkenazi scrolls; and see also in the special notes on the Torah.)
+#'''(small or broken vav)''' ''Bamidbar'', ''Pinḥas'' (25:12): [שָׁלֽוֹם]* appears without an unusual vav in the Leningrad Codex, but [שָׁלֽ'''וֹ'''ם] (וי"ו קטנה, or broken in the scrolls of Sepharad and Ashkenaz; and see in [https://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%AA%D7%9E%D7%A9:Dovi/%D7%9E%D7%A7%D7%A8%D7%90_%D7%A2%D7%9C_%D7%A4%D7%99_%D7%94%D7%9E%D7%A1%D7%95%D7%A8%D7%94/%D7%9E%D7%99%D7%93%D7%A2_%D7%A2%D7%9C_%D7%9E%D7%94%D7%93%D7%95%D7%A8%D7%94_%D7%96%D7%95/%D7%A4%D7%A8%D7%A7_%D7%92#%D7%9E%D7%A1%D7%95%D7%A8%D7%AA_%D7%94%D7%A1%D7%95%D7%A4%D7%A8%D7%99%D7%9D_%D7%91%D7%AA%D7%95%D7%A8%D7%94:_%D7%94%D7%A2%D7%A8%D7%95%D7%AA_%D7%9E%D7%99%D7%95%D7%97%D7%93%D7%95%D7%AA the special notes on the Torah].)
+#'''(Large)''' ''Bamidbar'', ''Pinḥas'' (27:5): [מִשְׁפָּטָ֖'''ן|''']*=L (=מ"ס-ל)
+#'''(Large)''' ''Devarim'', ''Vaetḥanan'' (6:4): [שְׁמַ֖'''ע''']*=L (=מ"ס-ל)
+#'''(Large)''' ''Devarim'', ''Vaetḥanan'' (6:4): [אֶחָֽ'''ד''']*=L (=מ"ס-ל)
+#'''(Large)''' ''Devarim'', ''Eikev'' (11:21): [עַל־הָאָֽרֶץ]*=L / [עַל־הָאָֽרֶ'''ץ'''] (=Yemenite scrolls; and see in the special notes on the Torah)
+#'''(Small)''' ''Devarim'', ''Ki Teitzei'' (22:6): [קַן־צִפּ֣וֹר]*=L / ['''קַ'''ן־צִפּ֣וֹר] (=ספרי תימן ומ"ס-ל!); and see also in the special notes on the Torah.)
+#'''(Large)''' ''Devarim'', ''Nitzavim'' (29:27): [וַיַּשְׁ'''לִ'''כֵ֛ם]* (=מ"ס-ל) / אל=[וַיַּשְׁלִכֵ֛ם]
+#'''(Large)''' '''Devarim'', ''Ha-Azinu'' (32:6): ['''הַ''' לְיְהֹוָה֙]* with a large he appears in the final Masorah of the Leningrad Codex, while it is possible that no enlarged he appears in the Aleppo Codex. In the body of the Leningrad Codex itself, the he is not enlarged. In Yemenite scrols, and in the final Masorah of the Leningrad Codex, the he is enlarged. And see also [https://he.wikisource.org/w/index.php?title=%D7%9E%D7%A9%D7%AA%D7%9E%D7%A9:Dovi/%D7%9E%D7%A7%D7%A8%D7%90_%D7%A2%D7%9C_%D7%A4%D7%99_%D7%94%D7%9E%D7%A1%D7%95%D7%A8%D7%94/%D7%9E%D7%99%D7%93%D7%A2_%D7%A2%D7%9C_%D7%9E%D7%94%D7%93%D7%95%D7%A8%D7%94_%D7%96%D7%95/%D7%A4%D7%A8%D7%A7_%D7%92&action=submit#%D7%9E%D7%A1%D7%95%D7%A8%D7%AA_%D7%94%D7%A1%D7%95%D7%A4%D7%A8%D7%99%D7%9D_%D7%91%D7%AA%D7%95%D7%A8%D7%94:_%D7%94%D7%A2%D7%A8%D7%95%D7%AA_%D7%9E%D7%99%D7%95%D7%97%D7%93%D7%95%D7%AA the special notes on the Torah].
+#'''(Small)''' ''Devarim'', ''Ha-Azinu'' (32:18): [תֶּ֑שִׁ'''י''']* (=מ"ס-ל) / אל=[תֶּ֑שִׁי]
+#'''(Large)''' ''Devarim'', ''Vezot Ha-Berakhah'' (33:29) [אַשְׁרֶ֨יךָ]* with an ordinary aleph appears in the Aleppo Codex and Leningrad Codex, while ['''אַ'''שְׁרֶ֨יךָ] with an enlarged aleph in the Yemenite scrolls and the final Masorah of the Leningrad Codex); and see in the special notes on the Torah.)
+
+'''Below is a list of additional anomalous letters in the Torah'''<ref>The list of additional letters is based largely on the table that appears in the [http://www.jewishencyclopedia.com/articles/13809-small-and-large-letters ''Jewish Encyclopedia''], and also upon the lists [http://www.sofer.co.uk/html/large_letters.html here] and [http://www.win.tue.nl/~aeb/natlang/hebrew/hebrew_bible.html here].</ref>
+
+#'''(Large)''' ''Bereshit'', ''Vayetzei'' (30:42): [וּבְהַעֲטִ֥י'''ף''']
+#'''(Large)''' ''Bereshit'', ''Vayishlaḥ'' (34:31): [הַכְ'''ז'''וֹנָ֕ה]
+#'''(Large)''' ''Bereshit'', ''Vayeḥi'' (49:12): ['''חַ'''כְלִילִ֥י]
+#'''(Large)''' ''Bereshit'', ''Vayeḥi'' (50:23): [שִׁלֵּשִׁ֑י'''ם''']
+#'''(Large)''' ''Shemot'', ''Shemot'' (2:2): [כִּי־'''ט֣'''וֹב]
+#'''(Large)''' ''Shemot'', ''Bo'' (11:8): ['''צֵ֤'''א]
+#'''(Large)''' ''Shemot'', תצוה 28:35): [צִּ֖י'''ץ''']
+#'''(Small or "joined" ''qof'')''' ''Shemot'', ''Ki Tissa'' (32:25)  [בְּ'''קָ'''מֵיהֶֽם] (with a small ''qof'' or a "joined" ''qof''; and see below in parashat Nasso [Numbers 7:2])
+#'''(Large)''' ''Shemot'', ''Ki Tissa'' (34:11): ['''שְׁ'''מׇ֨ר־לְךָ֔]
+#'''(Large)''' ''Vayiqra'', ''Tsav'' (8:16 '''or''' 8:23):
+##[וַיִּשְׁ'''חָ֗'''ט]with a large ''het'' (8:16); and according to ''Masekhet Soferim'' ['''וַיִּשְׁחָ֗ט'''] (all letters enlarged)
+##[וַיִּשְׁ'''חָ֓'''ט] (8:23); ''and according to Masekhet Soferim'' ['''וַיִּשְׁחָ֓ט'''] (all the letters)
+#'''(Large)''' ''Vayiqra'', ''Shemini'' (11:30): [וְהַ'''לְּ'''טָאָ֑ה]
+#'''(Large)''' ''Bamidbar'', ''Bamidbar'' (1:18): [לְ'''גֻ'''לְגְּלֹתָֽם] (=ל?מ"ס-ל)
+#'''(Large)''' ''Bamidbar'', ''Bamidbar'' (3:16): [עַל־'''פִּ֣'''י]
+#'''("joined" ''qof'')''' ''Bamidbar'', ''Nasso'' (7:2): [עַל־הַפְּקֻדִֽים׃] (קו"ף דבוקה, and see above in parashat Ki Tissa [32:24])
+#'''(Large)''' ''Bamidbar'', ''Shelaḥ'' (13:30): [וַיַּ֧הַ'''ס''']
+#'''(Large)''' ''Bamidbar'', ''Balaq'' (24:5): ['''מַ'''ה־טֹּ֥בוּ]
+#'''(Large)''' ''Devarim'', ''Devarim'' (2:33): [וַנַּ֥'''ךְ''']
+#'''(Large)''' ''Devarim'', ''Devarim'' (3:11): [עֶ֣רֶ'''שׂ''']
+#'''(Small)''' ''Devarim'', ''Eikev'' (9:24): ['''מַ'''מְרִ֥ים]
+#'''(Large)''' ''Devarim'', ''Shoftim'' (18:13): ['''תָּ'''מִ֣ים]
+#'''(Large)''' ''Devarim'', ''Ki Tavo'' (28:58): [וְהִתְמַ'''כַּ'''רְתֶּ֨ם]
+#'''(Large)''' ''Devarim'', ''Ha-Azinu'' (32:4): [הַ'''צּ'''וּר֙]
+#'''(Large)''' ''Devarim'', ''Ha-Azinu'' (32:5): [וּ'''פְ'''תַלְתֹּֽל׃]
+#'''(Large)''' ''Devarim'', ''Vezot Ha-Berakhah'' (34:12): [כׇּל־יִשְׂרָאֵֽ'''ל'''׃]
+
+===Dotted letters===
+
+Unlike the large and small letters, the marking of the dotted letters has been consistently executed in the manuscripts, in agreement with the Masoretic lists. Nevertheless, there is still disagreement about certain details. Below is a list of the dotted letters in the Torah in our edition and in the most important manuscripts:
+
+#''Bereshit'', ''Lekh-lekha'' (16:5): [וּבֵינֶֽיׄךָ]*=L
+#''Bereshit'', ''Vayera'' (18:9): [אֵׄלָ֔יׄוׄ]* / ל=[אֵׄלָׄ֔יׄוׄ] (=מ"ס-ל <ד' [נקודות]>)
+#''Bereshit'', ''Vayera'' (19:33): [וּבְקוּׄמָֽהּ]*=L
+#''Bereshit'', ''Vayishlaḥ'' (33:4): [וַׄיִּׄשָּׁׄקֵ֑ׄהׄוּׄ]*=L
+#''Bereshit'', ''Vayeshev'' (37:12): [אֶׄתׄ־צֹ֥אן]*=L
+#''Bamidbar'', ''Bamidbar'' (3:39): [וְׄאַׄהֲׄרֹ֛ׄןׄ]*=L
+#''Bamidbar'', ''Behaʿalotkha'' (9:10): [רְחֹקָ֜הׄ]*=L
+#''Bamidbar'', ''Ḥuqqat'' (21:30): [אֲשֶׁ֖רׄ]*=L
+#''Bamidbar'', ''Pinḥas'' (29:15): [וְעִשָּׂרוֹׄן֙]* / L=[וְעִשָּׂרׄוֹן֙] (הנקודה ברי"ש!)
+#''Devarim'', ''Nitzavim'' (29:28): [לָ֤ׄנׄוּׄ וּׄלְׄבָׄנֵׄ֙יׄנׄוּׄ֙ עַׄד־עוֹלָ֔ם]*=א / L=[לָ֤ׄנׄוּׄ וּׄלְׄבָׄנֵׄ֙יׄנׄוּׄ֙ עַד־עוֹלָ֔ם] (=מ"ס-ל)
+
+===Inverted nun===
+
+The phenomenon of the inverted nun or isolated nun (׆) is found around one parashah in the Torah (at the beginning and at the end, a total of twice), while in the Neviim and Ketuvim it is found 7 times in Psalm 107 (23-28, 40). Their location and shape in the Torah are determined in our edition according to what is known to us about the phenomenon in the Aleppo Codex and in the manuscripts close to it.<ref>For full documentation of the data, see the textual documentation on the edit page.</ref>
+
+'''The appearance of the inverted nun in our edition and in the textual sources:'''
+
+1. [https://he.wikisource.org/wiki/%D7%91%D7%9E%D7%93%D7%91%D7%A8_%D7%99/%D7%98%D7%A2%D7%9E%D7%99%D7%9D#%D7%99_%D7%9C%D7%94 In our edition: ''Bamidbar'', ''Beha'alotkha'' (10:34-36)].
+
+2. [https://commons.wikimedia.org/w/index.php?title=File:Leningrad-codex-04-numbers.pdf&page=17 In the Leningrad Codex] ([http://tanach.us/Tanach.xml?Num10:1-10:36 the Westminster transcription])
+
+3. In MS S: [https://commons.wikimedia.org/w/index.php?title=File:Damascus_Codex_%28Torah%29_4Numbers.djvu&page=33 First Column] | [https://commons.wikimedia.org/w/index.php?title=File:Damascus_Codex_%28Torah%29_4Numbers.djvu&page=34 Second Column]
+
+4. In [http://www.bl.uk/manuscripts/Viewer.aspx?ref=or_4445_f115r MS B] (see there page 129, 81 and 82 (?))
+
+5. In [https://commons.wikimedia.org/w/index.php?title=File:Tanakh-Sassoon1053-04-Numbers.pdf&page=12 MS S1].
+
+6. In [https://commons.wikimedia.org/w/index.php?title=File:MG1525A.djvu&page=332 Miqra'ot Gedolot, Venice printing] ("ב׆סע", "כמתא׆נים"!)
+
+7. In [https://commons.wikimedia.org/w/index.php?title=File:Sefer-Torah-Elihu-Shannon-2.djvu&page=165 a typical Torah scroll written on parchment]
+
+8. In [https://commons.wikimedia.org/w/index.php?title=File:David-kokhav-sefer-torah.pdf&page=155 a unique Torah scroll written on parchment]
+
+==The Writers' Tradition in the Torah: Special Notes==
+
+Our edition is intended, as said before, to present the tradition of scribes in the Torah according to the Tiberian tradition, and according to Torah scrolls in our day. One can approach the text of the letters in the Torah that was in the Aleppo Codex by means of reliable reconstruction (according to the Breuer method and according to clear evidence), and it becomes evident that this is identical to the text of the letters in Yemenite Torah scrolls (which fully represents the Masoretic method) although on rare occasions (8-9 letters only in the entire Torah) there is a difference between the Yemenite scrolls on the one hand and the Ashkenazi and Sephardi scrolls on the other in the clear (?) spelling. In our edition a special note will appear in every place where the Ashkenazi and/or Sephardi scrolls differ from the Yemenite text.<ref>The text of the brief comment will first of all make note of the Sephardi scrolls before the Ashkenazi ("In the scrolls of Sepharad and Ashkenaz"), because in the few places where there are differences of this type (in all 8-9 places in all the Torah), the source of them all is rulings of Rabbi Moses Isserles according to the "according scrolls of Sepharad." In a later era, the rulings of Rabbi Moses Isserles were applied in the Torah scrolls of the Ashkenazim. Today, most Ashkenazi scrolls are almost identical to the Sephardi scrolls (except one hundred times (?) in the word דַּכָּ֛א/דַּכָּ֛ה), and the both of them differ from Yemenite scrolls in their letters in eight places (Sephardi) or nine places (Ashkenazi), where only the Yemenite scrolls are perfectly according to the Masorah. But there are places where for many years the old printed editions have specified the proper text of the Masorah as according to "Ashkenazi Text" (?), and especially in [https://he.wikisource.org/wiki/%D7%A7%D7%98%D7%92%D7%95%D7%A8%D7%99%D7%94:%D7%93%D7%91%D7%A8%D7%99%D7%9D_%D7%9B%D7%92_%D7%91 Deuteronomy 23:2] they specified "דכא" instead of "דכה" with the ''aleph'' (the first as according to the Ashkenazi text and the second according to the Sephardi scrolls in according with the determination of Rabbi Moses Isserles, although there is no such practice today in the Sephardi scrolls). To this very day, "דכא" is still written with ''aleph'' in the Torah scrolls of Chabad. Therefore, the wording of the note in [https://he.wikisource.org/wiki/%D7%A7%D7%98%D7%92%D7%95%D7%A8%D7%99%D7%94:%D7%93%D7%91%D7%A8%D7%99%D7%9D_%D7%9B%D7%92_%D7%91 Deuteronomy 23:2] will be: "In most of the Ashkenazi scrolls ...", and in the other places, "In the Sephardi and Ashkenazi scrolls...". For more details on the old Ashkenazi wording and its adaptation to the Masorah, see the article by Mordechai (?) Glatzer, "[http://www.ybz.org.il/_Uploads/dbsAttachedFiles/Article_92.7(1).pdf The Masorah Between East and West]."</ref>
+
+Apart from explicit [differences in?] wording, that is, the wording of the letters, a special note will also appear in all the places in which the text of the scrolls differs among Torah scrolls, or between them and the Aleppo Codex (in its [surviving] body or according to testimony). This refers to the conjoined words and to special letters (such as larger letters and small and truncated letters), and likewise to differences in the divisions of the parashot. In all of these places, we also note the difference in a visible way through a note in the body of the text (and not only by documenting the text in the scarcely-visible (?) edit page).<ref>As said before, the expression "scrolls of Sepharad and Ashkenaz" refers mainly to scrolls that are common today, when all matters of spelling in them have already been adapted to the decision of Moses Isserles and/or Or Torah and Minḥat Shai. For a source available online to confirm unusual phenomena in Yemenite Torah scrolls, see [https://nosachteiman.co.il/category/%d7%aa%d7%95%d7%9b%d7%9f/%d7%a4%d7%a8%d7%a9%d7%aa-%d7%94%d7%a9%d7%91%d7%95%d7%a2/ here].
+</ref>
+
+'''The following table lists all the places where a comment will appear in our edition. The types of differences are highlighted by colors:'''
+
+*Red=clear differences in the wording of the letters (9 places in the Torah)
+*Orange=conjoined words (3 appearances in the Torah, one of them in 3 places)
+*Gold=differences in the divisions of the parashot: type of parashah (open or closed) or the absence of a parashah (4 places in the Torah)
+*Green=unusual letters: large or small or truncated (8<ref>The number 8 does not include "הַ[ ]לְיְהֹוָה֙"(Deuteronomy 32:6), which appears in the table in orange; see towards the end of the table regarding the wording of the Aleppo Codex.</ref> places in the Torah)
+
+There are 24 differences of all these types in the Torah (distinct letter wording, conjoined words, unusual (?) letters, passage division). One difference ("פוטי[ ]פרע") is found in 3 places, and in each place there is a comment, and therefore there are in all 26 notes on the wording of the Torah. One can see all the notes in one place, together with direct links into the body of the text, on the page which displays [https://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%AA%D7%9E%D7%A9:Dovi/%D7%AA%D7%95%D7%A8%D7%94_%D7%A2%D7%9C_%D7%A4%D7%99_%D7%94%D7%9E%D7%A1%D7%95%D7%A8%D7%94/%D7%AA%D7%95%D7%A8%D7%94_%D7%9B%D7%AA%D7%99%D7%91#%D7%94%D7%A2%D7%A8%D7%95%D7%AA the Torah according to the tradition of the scribes (letters only)].
+
+{| width=100% border=5 cellpadding=2 align=center
+|colspan=8 align=center|'''Variants appearing in Torah scrolls'''<br>Showing the differences between the Aleppo Codex and Torah scrolls in our day according to the Yemenite, Sephardi, and Ashkenazi traditions. 
+|- align=center
+!Verse
+!Weekly reading
+!Word or context
+!Aleppo Codex<br>(per witnesses)
+!Yemenite scrolls
+!Sephardi and Ashkenazi scrolls
+!Wording appearing<br>in our edition
+!The note in our edition
+|- align=center bgcolor="red"
+|Genesis 4:13
+|''Bereshit''
+|מִנְּשֽׂ(וֹ)א
+|מִנְּשֹֽׂא‏
+|מִנְּשֹֽׂא‏
+|מִנְּשֽׂוֹא
+|מִנְּשֹֽׂא‏
+|In Sephardi and Ashkenazi scrolls מִנְּשֽׂוֹא
+|- align=center bgcolor="lime"
+|Genesis 5:1
+|''Bereshit''
+|The ''samekh'' (ס) of סֵ֔פֶר
+|
+|Large ס
+|Normal ס
+|Normal ס
+|In Yemenite scrolls '''סֵ֔'''פֶר  with large ס
+|- align=center bgcolor="red"
+|Genesis 7:11
+|''Noaḥ''
+|מַעְיְנ(וֹ)ת֙
+|מַעְיְנֹת֙‏
+|מַעְיְנֹת֙‏
+|מַעְיְנוֹת֙
+|מַעְיְנֹת֙‏
+|In Sephardi and Ashkenazi scrolls מַעְיְנוֹת֙
+|- align=center bgcolor="red"
+|Genesis 9:29
+|''Noaḥ''
+|וַיִּֽהְיוּ֙ / וַֽיְהִי֙
+|וַיִּֽהְיוּ֙
+|וַיִּֽהְיוּ֙
+|וַֽיְהִי֙
+|וַיִּֽהְיוּ֙
+|In Sephardi and Ashkenazi scrolls וַֽיְהִי֙
+|- align=center bgcolor="orange"
+|Genesis 41:45;<br>Genesis 41:3;<br>Genesis 46:2.
+|''Miqeitz 1''<br>''Miqeitz 2''<br>''Vayigash''
+|פוטי[ ]פרע
+|פוטי פרע
+|פוטיפרע<br>(one word)
+|פוטי פרע<br>(two words)
+|פוטי פרע
+|In Yemenite scrolls<br>פּֽוֹטִיפֶ֛רַע/פּֽוֹטִיפֶ֖רַע/פּֽוֹטִיפֶ֖רַע<br>in one word
+|- align=center bgcolor="orange"
+|Exodus 17:15
+|''Beshalaḥ''
+|כֵּ֣ס[ ]יָ֔הּ
+|כֵּ֣סְיָ֔הּ
+|כֵּ֣ס יָ֔הּ
+|כֵּ֣ס יָ֔הּ
+|כֵּ֣ס יָ֔הּ
+|In the Aleppo Codex it is written כֵּ֣סְיָ֔הּ in one word.
+|- align=center bgcolor="red"
+|Exodus 25:31
+|''Terumah''
+|תֵּ(י)עָשֶׂ֤ה
+|תֵּעָשֶׂ֤ה‏
+|תֵּעָשֶׂ֤ה‏
+|תֵּיעָשֶׂ֤ה
+|תֵּעָשֶׂ֤ה‏
+|In Sephardi and Ashkenazi scrolls תֵּיעָשֶׂ֤ה
+|- align=center bgcolor="red"
+|Exodus 28:26
+|''Tetzaveh''
+|הָאֵפ֖(וֹ)ד
+|הָאֵפֹ֖ד
+|הָאֵפֹ֖ד
+|הָאֵפ֖וֹד
+|הָאֵפֹ֖ד‏
+|In Sephardi and Ashkenazi scrolls הָאֵפ֖וֹד
+|- align=center bgcolor="yellow"
+|Exodus 34:1
+|''Ki Tissa''
+|וַיֹּ֤אמֶר...<br>פְּסָל־לְךָ֛
+|closed section break?
+|open section break
+|open section break
+|open section break
+|doubtful (?) section break in the Aleppo Codex
+|- align=center bgcolor="lime"
+|Exodus 34:7
+|''Ki Tissa''
+|The ''nun'' (נ) of נֹצֵ֥ר‏
+|regular נ 
+|regular נ
+|regular נ
+|large נ
+|In Yemenite scrolls נֹצֵ֥ר  with regular נ
+|- align=center bgcolor="lime"
+|Leviticus 6:2
+|''Tsav''
+|The ''mem'' (מ) of מוֹקְדָ֨ה
+|
+|regular מ
+|small מ
+|small מ
+|In Yemenite scrolls מוֹקְדָ֨ה  with regular מ
+|- align=center bgcolor="yellow"
+|Leviticus 7:22
+|''Tsav''
+|וַיְדַבֵּ֥ר... דַּבֵּ֛ר...<br>כָּל־חֵ֜לֶב
+|open section break <br>(apparently)
+|open section break
+|no section break
+|open section break
+|no section break in the Sephardi and Ashkenazi scrolls
+|- align=center bgcolor="yellow"
+|Leviticus 7:28
+|''Tsav''
+|וַיְדַבֵּ֥ר...דַּבֵּ֛ר...<br>הַמַּקְרִ֞יב
+|open section break
+|no section break
+|open section break
+|open section break
+|no section break in the Yemenite scrolls
+|- align=center bgcolor="red"
+|Numbers 1:17
+|''Bamidbar''
+|בְּשֵׁמֽ(וֹ)ת
+|בְּשֵׁמֹֽת
+|בְּשֵׁמֹֽת
+|בְּשֵׁמֽוֹת
+|בְּשֵׁמֹֽת
+|In Sephardi and Ashkenazi scrolls בְּשֵׁמֽוֹת
+|- align=center bgcolor="red"
+|Numbers 10:10
+|''Behaʿalotkha''
+|חָדְשֵׁ[י]כֶם֒
+|חָדְשֵׁיכֶם֒
+|חָדְשֵׁיכֶם֒
+|חָדְשֵׁכֶם֒
+|חָדְשֵׁיכֶם֒
+|In Sephardi and Ashkenazi scrolls חָדְשֵׁכֶם֒
+|- align=center bgcolor="red"
+|Numbers 22:5
+|''Balaq''
+|בְּע֗(וֹ)ר
+|בְּעֹ֗ר
+|בְּעֹ֗ר?<ref>|1=יש כאן עדויות חולקות, and perhaps נראה שעדיפה העדות המפורשת המגובה בעדות המושלמת (in every other place) of Yemenite scrolls =בְּעֹ֗ר, as opposed to the testimony שבשתיקה של א(ס)=בְּע֗וֹר. למידע מלא והפניות, ראו בהערת  in ''parashat Balaq''.</ref>
+|בְּע֗וֹר
+|בְּעֹ֗ר
+|In Sephardi and Ashkenazi scrolls בְּע֗וֹר
+|- align=center bgcolor="lime"
+|Numbers 25:10
+|''Pinḥas''
+|The ''yod'' (י) of פִּֽינְחָ֨ס
+|פִּֽינְחָ֨ס<br>(regular letter)
+|פִּֽינְחָ֨ס<br>(regular letter)
+|נהוג לכתוב ביו"ד זעירא<ref>The source of the custom is the book of the Zohar, and it has no basis in the Masoretic literature. Later Masoretic sages mention it but did not accept it, as for example the ''Minḥat Shai'', were it is written '''פינחס'''. An open section break (?). It is said in the Zohar here and also parashat ''Aḥarei Mot'' that ''Pinḥas'' has a small ''yod'', and that from the ''alphabet'' (?) of (?) small (?). But in all the books and traditions and in our alphabet of small letters (?), there is not found (? -- various difficult words). Which further means (?) that here alone ''Pinḥas'' is spelled in full with yod (?), and all the (? ... ?) full. Thus far its language(?). And so it is found in all the books and traditions. And ''Baal Or Torah'' (?) extended (?) to clarify the Zohar so that it would not be in disagreement with our scrolls. And I do not know what is hidden from me (?). Thus far the language of the ''Minḥat Shai''. But the small ''yod'' is found in practice in most Torah scrolls common in our day, and in many of the printed Pentateuchs it is even stated that the small ''yod'' is "according to tradition". And see also note 45 in this article by Prof. Yeshayahu Maori.</ref>
+|פִּֽינְחָ֨ס (regular letter)
+|In Sephardi and Ashkenazi scrolls there is a custom of writing פִּֽ{{אות-ק|י}}נְחָ֨ס with a small ''yod'' (י).
+|- align=center bgcolor="lime"
+|Numbers 25:12
+|''Pinḥas''
+|The ''vav'' (ו) of שָׁלֽוֹם
+|שָׁלֽוֹם<br>(regular letter)
+|שָׁלֽוֹם<br>(regular letter)
+|broken vav
+|שָׁלֽוֹם<br>(regular letter)
+|In Sephardi and Ashkenazi scrolls the ''vav'' is broken.
+|- align=center bgcolor="lime"
+|Deuteronomy 11:21
+|''Eiqev''
+|''tsaddi'' (צ) of הָאָֽרֶץ
+|
+|regular ''tsaddi''
+|regular ''tsaddi''
+|regular ''tsaddi''
+|In Yemenite scrolls הָאָֽרֶ'''ץ''' with regular ''tsaddi''
+|- align=center bgcolor="lime"
+|Deuteronomy 22:6
+|''Ki Teitzei''
+|''qof'' (ק) of קַן־צִפּ֣וֹר
+|
+|regular ''qof''
+|regular ''qof''
+|regular ''qof''
+|In Yemenite scrolls קַן  with regular ''qof''
+|- align=center bgcolor="red"
+|Deuteronomy 23:2
+|''Ki Teitzei''
+|דַּכָּ֛א / דַּכָּ֛ה
+|דַּכָּ֛א
+|דַּכָּ֛א
+|דַּכָּ֛ה
+|דַּכָּ֛א
+|In most Sephardi and Ashkenazi scrolls דַּכָּ֛ה
+|- align=center bgcolor="yellow"
+|Deuteronomy 27:20
+|''Ki Tavo''
+|אָר֗וּר שֹׁכֵב֙<br>עִם־אֵ֣שֶׁת אָבִ֔יו
+|closed section break?
+|no section break
+|no section break
+|no section break
+|doubtful closed section in the Aleppo Codex
+|- align=center bgcolor="orange"
+|Deuteronomy 32:6
+|''Ha-Azinu''
+|'''הַ'''[ ]לְיְהֹוָה֙ with large ''he'' (ה)
+|הַ לְיְהוָה֙ (?)
+|'''הַֽ'''לְיהֹוָה֙ with large ה
+|'''הַ''' לְיְהֹוָה֙ with large ה
+|'''הַ''' לְיְהֹוָה֙ with large ה
+|In Yemenite scrolls '''הַֽ'''לְיהֹוָה֙ with large ''he'' in one word
+|- align=center bgcolor="lime"
+|Deuteronomy 33:29
+|''Vezot Ha-Barakhah''
+|The ''aleph'' (א) of אַשְׁרֶ֨יךָ
+|regular א
+|regular א
+|regular א
+|regular א
+|In Yemenite scrolls '''אַ'''שְׁרֶ֨יךָ  with regular א
+|}
+
+==Tradition of the Scribes in the Torah: ''Ktiv'' Edition (Letters Only)==
+
+See: [https://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%AA%D7%9E%D7%A9:Dovi/%D7%9E%D7%A7%D7%A8%D7%90_%D7%A2%D7%9C_%D7%A4%D7%99_%D7%94%D7%9E%D7%A1%D7%95%D7%A8%D7%94/%D7%AA%D7%95%D7%A8%D7%94_%D7%9B%D7%AA%D7%99%D7%91 The Torah according to the Scribal Tradition (Letters of the ''Ktiv'' Only)].
+
+==The Readers' Tradition in the Torah: Wording of the Vowels and the Accents==
+
+===Wording of the Vowels and the Accents Vis-a-Vis the Letters===
+
+There is a fundamental difference the tradition of ''reading'' (that is, pronunciation and cantillation) reflected in the manuscripts and the ''writing'' tradition found in them: the wording of the ''letters'' in the manuscripts is not uniform at all, but the ''vowels  of the words and the accents'' are uniform in nearly every place. Breuer's findings show that the wording of the accents in the manuscripts is surprisingly stable, and even in the received text of the printed editions we do not find many variants of importance; the wording of the printed editions is even more accurate than some of the manuscripts in its accents. Something similar is true of the accents: the wording in the manuscripts is stable and uniform, and contains no fundamental divisions (?). While in the received wording of the printed editions there are a number of is indeed noticeable, but not particularly large. 
+
+This is how Rabbi Breuer described and explained the historical development that emerges from comparison between the two different domains (the letters as opposed to the vowels and accents in the wonderful (and revolutionary for its time) summary that he wrote based on his findings:<ref>''The Aleppo Codex and the Received Text of the Bible'', pp. 91-94. We have quoted Breuer's words extensively because of their great educational importance, and their great contribution to the understanding of the subject. Indeed, for the same reason (?) we have partially (?) shortened them, added emphasis to them (?), made slight changes to them (?) for clarity (especially in punctuation), and also omitted some of Breuer's comments. Regarding the revolutionary change in perception in Breuer's subsequent remarks (?), compare his opinion to the approach which was accepted up to his time among researchers of the Masorah. At that time, these [researchers] did not think that the "Masoretic Text" existed or was created as a single text, unified in all details. This approach is expressed clearly (?) in Orlinsky's introduction to the Ginsburg edition, reprinted in: ''The Canon and Masorah of the Hebrew Bible: An Introductory Reader'' (New York: Ktav, 1974).</ref>
+
+:It was found that the wording of the Torah in the period before the Masorah should be described thusly. How the words were to be read was clear and obvious (?) to all. Whereas the text of the letters -- in terms of omissions and additions (?) -- was considered a broken valley (?). The sages of the Masorah found this valley and built a fence around it. And this, then, was their role in relation to their ''ktiv'' and ''qere'': they did not rule on how to ''read'' the accepted letters -- rather the opposite: they ruled on how ''to write'' the accepted reading tradition.
+
+:''In this respect, then, the oral Torah preceded the written. The sages of the Masorah received from their predecessors the recitation as oral Torah -- and prescribed for it the symbols of vowels and accents. It was for this text of the oral Torah that they afterward determined the final version of the written Torah.''
+
+:Therefore you will find that the great majority of the regularity of the Masorah to the words as read (?) -- and not to the words as spelled.<ref>Breuer's note: This is reflected, among other things, in the case of the words which have a ''qere'' and a ''ktiv'': the word is always referred to in the Masorah according its ''qere'', and not according to the ''ktiv''.</ref> ''The tradition does not make reference to a particular combination of letters -- in order to determine the different ways of reading them; but rather it refers to particular combinations of sounds (?) and vowels -- in order to determine the different ways of writing them.'' Thus the words as read (?) of the Bible are the foundation which precedes the Masoretes; this foundation was given the written words and the final wording was determined<ref>Breuer's note: It should go without saying that the sages of the Masorah did not fabricate the wording from their hearts, but rather determined in on the basis of the scrolls in front of them. But in the generations before the Masorah existed, every scribe copied from the scroll in front of him, and there was no way to decide among the variants; while the sages of the Masorah made a definitive halakhic ruling on this subject.</ref>
+
+:It is therefore only natural that the vowel pointing is uniform in the manuscripts, while the spelling of the words varies in places (?). These two phenomena are simply an extension of the state of things before the Masorah. The accepted oral Torah has not been forgotten, while the parent (?) who wrote "the renewed"<ref>Breuer's note: Compare the language of the questioner in the responsa of Rabbi Shlomo ibn Aderet [??]: And we are not afraid to alter the language of the scrolls of the Talmud ... and how conjecture (?) of new Masoretic books come close (?).</ref> still has not spread (?) throughout Israel. And also in the era leading up to the Masoretes, they were still not proficient as to shorter and fuller spellings -- much as in the Talmudic era.<ref>Breuer's note: Some scrolls are exceptions to this rule -- such as 'the famous scroll in Egypt' (?) -- but they do not change general picture. These are not the norm (?) but a minority, and their influence was not significant in most of Israel. Testifying to this are the words of Rabbi Moses Isserles in the introduction to his book. And see more later here (?).</ref>
+
+[More to be added.]
+
+==Footnotes==
+
+{{reflist}}
+
+'''Misc: Some useful characters for editing this page:''' ẒẓḥḤṬṭ—
+
+[[he:משתמש:Dovi/מקרא על פי המסורה/מידע על מהדורה זו/פרק ג]]

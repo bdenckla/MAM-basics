@@ -1,6 +1,6 @@
 # Plan: keep the English Introduction to MAM in parallel on English Wikisource and in gh-pages
 
-State: live; Phase 2 executed 2026-11-22; Phase 1 waits on Ben's Decision 1, and Phase 3 on his Decision 2
+State: live; Phases 1 and 2 executed 2026-11-22; Phase 3 next, by Ben's Decision 2
 
 ## Origin, and whose words are whose
 
@@ -19,9 +19,9 @@ typed this in the commander at 09:37 New York time on 2026-11-22, as the command
 The bracketed omission is one sentence pointing to a private precedent for the modes, which
 this public file does not describe. Everything else in this plan is Claude's reconstruction and
 design, not Ben's words, until a decision below quotes him. Ben's "Intro to MAM" is the introduction that `in/mam-ws-intro/`
-mirrors from Hebrew Wikisource. The session's decision page,
-`https://claude.ai/artifact/6q3B6d6QmYh8QxMeDG8uJB`, holds the open decisions and their
-recommendations.
+mirrors from Hebrew Wikisource. The decision page,
+`https://claude.ai/artifact/6q3B6d6QmYh8QxMeDG8uJB`, puts this plan's open decisions to Ben, with
+their recommendations; "Decisions" below records the ones he has answered.
 
 ## Where things stand on 2026-11-22
 
@@ -54,8 +54,9 @@ else of English Wikisource but `robots.txt` and the policy pages below:
 The word counts are rough counts of Latin-letter words in each rendered page, navigation
 included. Chapters 4 and 5 have no English page. The root's note to the reader is signed by
 Mitchell Powell. It describes the translation as a student's partial draft, made slowly with
-online dictionaries and machine translation, and releases it under CC BY-SA. Three redirects
-matter here:
+online dictionaries and machine translation, and releases it under CC BY-SA. An eighth page
+under the prefix, which the article views did not show, is a redirect: Phase 1's first refresh
+found it (item 4 below). Four redirects matter here:
 
 1. `User:Dovi/Miqra according to the Masorah/Information about this Edition`, which the Hebrew
    root's interlanguage link names, leads to the English root.
@@ -64,6 +65,11 @@ matter here:
    the seven.
 3. `User:Dovi/Miqra according to the Mesorah/Technical Guide`, which the Hebrew root links inline,
    leads to the Technical Guide.
+4. `User:Dovi/Miqra according to the Masorah/Introduction/Technical Guide`, revision 14796336,
+   which the English root's contents list links, leads to `/Technical Guide to the Spreadsheet`.
+   Dovi's move of the guide from that title on 2025-01-17 left it behind. It is the one redirect
+   under the prefix, and the English mirror holds it, under `technical-guide`, the slug of the
+   Hebrew redirect to the Hebrew guide.
 
 ### The English held only in gh-pages
 
@@ -139,19 +145,24 @@ through the Action API under the same `robots.txt`, the downloaders with
 
 ## Decisions
 
-### Open, on the decision page
+### Answered on the decision page, 2026-11-22
 
-1. **Decision 1: how the English mirror reads English Wikisource.** The choices are 1A, the
-   Action API as the Hebrew mirror uses it, within the Robot policy's Action API limits
-   (recommended); 1B, only URLs that `robots.txt`'s directives allow, that is the article view
-   for the revision id and `/wiki/<title>?action=raw&oldid=<revision>` for the wikitext; and 1C,
-   asking Wikimedia first, at the address the Robot policy gives. Phase 1 waits on it.
-2. **Decision 2: three modes for the side-by-side pages.** The choices are 2A, Hebrew, English
-   and bilingual modes built once in the shared builder, with the Hebrew left where it is
-   (recommended); 2B, the same with the Hebrew on the right; and 2C, not now. Phase 3 waits on
-   it.
-3. **Decision 3: the thin issue's text.** The draft on the decision page points to this plan,
-   and it is filed only once this plan is pushed and Ben approves the text.
+Ben, 2026-11-22, of the decision page's recommendations for the three decisions below: "I concur
+with all three off your recommendations on the decision page."
+
+1. **Decision 1: how the English mirror reads English Wikisource. Answered 1A**, the Action API
+   as the Hebrew mirror uses it, within the Robot policy's Action API limits. The choices not
+   taken were 1B, only URLs that `robots.txt`'s directives allow, that is the article view for
+   the revision id and `/wiki/<title>?action=raw&oldid=<revision>` for the wikitext, and 1C,
+   asking Wikimedia first, at the address the Robot policy gives. Phase 1 carried it out.
+2. **Decision 2: three modes for the side-by-side pages. Answered 2A**, Hebrew, English and
+   bilingual modes built once in the shared builder, with the Hebrew left where it is. The
+   choices not taken were 2B, the same with the Hebrew on the right, and 2C, not now. Phase 3
+   carries it out.
+3. **Decision 3: the thin issue's text. Answered 3A**, the draft on the decision page, which
+   points to this plan. It is filed as
+   [MAM-basics#375](https://github.com/bdenckla/MAM-basics/issues/375), "Improve and extend the
+   English translation of MAM's introduction".
 
 ### Later, put to Ben when their phase starts
 
@@ -197,7 +208,7 @@ search.
 Each phase runs in a full clone in a forest that Claude owns, on `main`, as the user-level
 instructions say. A fresh session executes each phase and owns its integration.
 
-### Phase 1: the English mirror (waits on Decision 1)
+### Phase 1: the English mirror (executed 2026-11-22)
 
 Ben's item 1. The mirror goes in `in/mam-ws-intro-en/`, beside the Hebrew one, refreshed by a
 new `py/main_download.py fr-ws-intro-en`, separate from `fr-ws-intro` for the reason the Hebrew
@@ -207,18 +218,23 @@ mirror is separate from `fr-wikisource`: unrelated refresh rhythms.
    `git status --porcelain`; then fetch and fast-forward `main`.
 2. Write `py/subcommands/download_wikisource_intro_en.py`, modeled on
    `py/subcommands/download_wikisource_intro.py`:
-   - `_SLUG_TO_TITLE` declares the seven pages of the table above, each under its Hebrew
+   - `_SLUG_TO_TITLE` declares the eight pages under the prefix, each under its Hebrew
      counterpart's slug, so `in/mam-ws-intro-en/ch3.mediawiki` translates part of
-     `in/mam-ws-intro/ch3.mediawiki`.
-   - A live-set check fails if the pages under the prefix gain or lose one. Under 1A it lists
-     the prefix with `list=allpages`; under 1B `Special:PrefixIndex` is disallowed, so it can
-     only compare the declared set with the English root's links.
-   - A pairing check fails unless each paired Hebrew page's single line-start interlanguage
-     link names its English page, or a redirect to it, and each unpaired Hebrew page has none.
-   - Under 1A, `ws_revision_api.ChapterClient` reads metadata by title and then the exact bytes
-     by revision id, one request at a time, at least five seconds apart, with `maxlag=1`. A
-     redirect and its target are one page under two titles, which a `ChapterClient` refuses, so
-     the pairing check needs a client of its own.
+     `in/mam-ws-intro/ch3.mediawiki`: the seven of the table above, and the redirect of
+     "The English on English Wikisource", item 4, under `technical-guide`.
+   - A live-set check fails if the pages under the prefix gain or lose one. It lists the
+     prefix with `list=allpages`, redirects included.
+   - A pairing check fails unless each Hebrew page paired with an English page with text has
+     exactly one interlanguage link, naming that page or a redirect to it, and every other
+     Hebrew page has none. A redirect check fails unless the English redirect and the Hebrew
+     redirect of `technical-guide` each lead to their own wiki's page of `data-sheet-guide`.
+   - Metadata comes by title and then the exact bytes by revision id, one request at a time,
+     at least five seconds apart, with `maxlag=1`. The pairing check resolves the Hebrew
+     pages' interlanguage targets through a `ws_revision_api.ChapterClient` of its own, since a
+     redirect and its target are one page under two titles, which a `ChapterClient` refuses.
+     The declared pages' metadata comes from a query that follows no redirect, so that the
+     declared redirect is read as itself, and their bytes from
+     `ChapterClient.by_raw_revisions`.
    - It writes each page's wikitext byte for byte, and a `manifest.json` with the Hebrew
      manifest's `title`, `revid`, `timestamp` and `size`, plus `hebrew_title`, taken from the
      Hebrew manifest.
@@ -227,15 +243,38 @@ mirror is separate from `fr-wikisource`: unrelated refresh rhythms.
    "Claude-written proposal, not yet reviewed by Ben".
 5. Write `in/mam-ws-intro-en/README.md`: the sense in which the mirror is parallel, its file
    table, its refresh command, Ben's Decision 1 quoted, its license and staleness, and the
-   translator's note. Add a `DATA-LICENSES.md` row: CC-BY-SA 4.0, English Wikisource's terms,
-   which the translator's note also states. Add one sentence to `in/mam-ws-intro/README.md`
-   pointing to the English mirror.
+   translator's note. Add a `DATA-LICENSES.md` row: CC-BY-SA 4.0, English Wikisource's terms;
+   the translator's note also releases the English under the CC BY-SA license, naming no
+   version. Add one sentence to `in/mam-ws-intro/README.md` pointing to the English mirror.
 6. Run the refresh twice. The second run must leave a clean tree, which is the mirror's check.
    Read every mirrored file and the manifest, and compare each `size` with the bytes on disk.
 7. Run Black on the changed Python, then
    `./.venv/Scripts/python.exe py/main_test.py py/tests/test_mega_coverage.py py/tests/test_tracked_filenames.py`.
 8. Commit, naming the paths, with the message in a file. Fetch and merge `origin/main`, then
    push.
+
+**Executed 2026-11-22** in `C:/Users/BenDe/GitRepos2/MAM-basics`, from `2f2a11bd`, in the commit
+that records it here. The first refresh failed its live-set check: the listing found an eighth
+page under the prefix, `/Technical Guide`, which the article views had not shown. One more
+request read it as itself, a 102-byte redirect to `/Technical Guide to the Spreadsheet`. The
+Hebrew mirror already holds its own redirect of the same slug "as the redirect it is", in the
+words of `py/subcommands/download_wikisource_intro.py`, so the English mirror applies that rule
+and holds this one under `technical-guide`, with step 2's redirect check. The seven pages with
+text came at the revisions of the table above. The second refresh wrote the same bytes as the
+first. Each `size` matched the bytes on disk, and no file holds a carriage return. Every mirrored
+file was read in full: each is one complete wiki page, and each fits its row of the table
+above. Three steps
+beyond the list above follow from the mirror's being a verbatim capture, as the Hebrew one is:
+
+1. `.gitattributes` keeps the line-final blanks of `ch2` (1 line), `ch3` (23) and `appendices`
+   (1), as it keeps the Hebrew mirror's.
+2. `doc/mam-normal-mark-order.md` records the 339 clusters of `ch3.mediawiki` in the other mark
+   order.
+3. `py/tests/test_h_dot_below_nfc.py` excludes the English captures by name, as it does the
+   Hebrew ones, though none has a decomposed h with dot below today.
+
+The focused tests of step 7, run with `py/tests/test_h_dot_below_nfc.py` and
+`py/tests/test_entry_point_subcommands.py`, passed: 50 tests.
 
 ### Phase 2: the evaluation (executed 2026-11-22)
 
@@ -256,7 +295,7 @@ above. With its update file,
 Its findings are not yet acted on. Later dispositions go in its single update file, as the
 `iterative-document-editing` skill says.
 
-### Phase 3: three modes for the side-by-side pages (waits on Decision 2)
+### Phase 3: three modes for the side-by-side pages (Decision 2A; next)
 
 Ben's question, "does the current side-by-side allow closing/opening "sides" (all 3 modes:
 Hebrew, English, and bilingual?)". The answer on 2026-11-22 is no. Under 2A:

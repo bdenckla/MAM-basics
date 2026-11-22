@@ -159,23 +159,26 @@ _EXCLUDE_FILES = {
     "in/accgram/uxlc_accent_changes.json",
 }
 
-# Byte-verbatim captures of Hebrew Wikisource pages beside hand-written files, so excluded
-# by name (AGENTS.md: never repair them): the mirrored introduction's manifest and every
-# page it lists, which the introduction's refresh rewrites, and one section of the
-# Village Pump, captured once.  The README beside the introduction's pages stays in scope.
-_INTRO_MANIFEST = "in/mam-ws-intro/manifest.json"
+# Byte-verbatim captures of Wikisource pages beside hand-written files, so excluded by
+# name (AGENTS.md: never repair them): each mirrored introduction's manifest and every
+# page it lists, which that introduction's refresh rewrites, the Hebrew from Hebrew
+# Wikisource and its English translation from English Wikisource, and one section of the
+# Village Pump, captured once.  The README beside each introduction's pages stays in
+# scope.
+_INTRO_MIRROR_DIRS = ("in/mam-ws-intro", "in/mam-ws-intro-en")
 
 
 def _capture_files() -> frozenset[str]:
-    manifest = json.loads(
-        (paths.repo_root() / _INTRO_MANIFEST).read_text(encoding="utf-8")
-    )
-    pages = {f"in/mam-ws-intro/{slug}.mediawiki" for slug in manifest["pages"]}
-    assert pages, f"{_INTRO_MANIFEST} lists no page"
-    return frozenset(
-        {_INTRO_MANIFEST, "doc/wikisource-dagesh-discussion-2026-10-01.mediawiki"}
-        | pages
-    )
+    files = {"doc/wikisource-dagesh-discussion-2026-10-01.mediawiki"}
+    for mirror_dir in _INTRO_MIRROR_DIRS:
+        manifest_path = f"{mirror_dir}/manifest.json"
+        manifest = json.loads(
+            (paths.repo_root() / manifest_path).read_text(encoding="utf-8")
+        )
+        pages = {f"{mirror_dir}/{slug}.mediawiki" for slug in manifest["pages"]}
+        assert pages, f"{manifest_path} lists no page"
+        files |= {manifest_path} | pages
+    return frozenset(files)
 
 
 # External/generated directory prefixes: out/ (generated) and external

@@ -48,6 +48,9 @@ in/mam-ws-special/*.mediawiki whitespace=-blank-at-eol
 # 2026-10-16 its line-final spaces and tabs stay as downloaded, without judging
 # whether the source should have them.
 in/mam-ws-intro/*.mediawiki whitespace=-blank-at-eol
+# The mirrored English translation of that introduction, from English Wikisource, is a
+# verbatim download beside it, and keeps its line-final blanks by the same rule.
+in/mam-ws-intro-en/*.mediawiki whitespace=-blank-at-eol
 
 # The UXLC change lists in uxlc/in/UXLC-misc/ are verbatim downloads: many of their
 # lines end in spaces, and the 2023.07.04 list indents some with a space before a tab.

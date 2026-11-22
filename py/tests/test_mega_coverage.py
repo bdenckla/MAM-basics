@@ -327,6 +327,12 @@ NOT_IN_MEGA: dict[str, str] = {
         " downstream reparses.  Recorded in CLAUDE.md's section on in/mam-ws-intro/ and"
         " doc/mega-coverage-2026-09-10.md §3."
     ),
+    "py/main_download.py fr-ws-intro-en": (
+        "Claude-written proposal, not yet reviewed by Ben: a network download of the"
+        " English translation of the introduction to MAM from English Wikisource, which"
+        " nothing downstream reparses, the reason that fr-ws-intro is left out.  Recorded"
+        " in in/mam-ws-intro-en/README.md and doc/PLAN-english-intro.md, Phase 1."
+    ),
     "py/main_ws_bot.py real --no-save": (
         "Reads live Wikisource pages through the bot's login.  Recorded in"
         " https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-holman-meteg-rollout-programme.md and"

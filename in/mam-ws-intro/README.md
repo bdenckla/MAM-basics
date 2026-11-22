@@ -9,6 +9,8 @@ thirteen of its pages are mirrored locally as verbatim wikitext, one `.mediawiki
 Refresh with `.venv/Scripts/python.exe py/main_download.py fr-ws-intro`, which is deliberately
 **separate** from `fr-wikisource` (Ben's decision, 2026-08-31): the books and the introduction
 have unrelated refresh rhythms, and nothing downstream reparses when the introduction moves.
+The partial English translation on English Wikisource is mirrored beside it, under the same
+slugs, in [`in/mam-ws-intro-en/`](../mam-ws-intro-en/README.md).
 
 | File under `in/mam-ws-intro/` | Wikisource subpage |
 |---|---|

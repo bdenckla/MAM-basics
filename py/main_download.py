@@ -6,15 +6,21 @@ Subcommands:
                 Download MAM chapters and the 36 special pages from Hebrew Wikisource.
     fr-ws-intro
                 Download the MAM introduction from Hebrew Wikisource.
+    fr-ws-intro-en
+                Download the English translation of the MAM introduction from English
+                Wikisource.
 
 fr-ws-intro is deliberately separate from fr-wikisource rather than a step of it: the
 books and the introduction have unrelated refresh rhythms, nothing downstream reparses
 when the introduction moves, and a chapter-scoped fr-wikisource run should not pay for
-1.8 MB of introduction.  Ben's decision, 2026-08-31.
+1.8 MB of introduction.  Ben's decision, 2026-08-31.  fr-ws-intro-en is separate from
+fr-ws-intro for the same reason: the translation moves when its translators edit it,
+not when the Hebrew does.
 
 Examples:
     .venv/Scripts/python.exe py/main_download.py fr-wikisource --book39 Joshua --chapter 11
     .venv/Scripts/python.exe py/main_download.py fr-ws-intro
+    .venv/Scripts/python.exe py/main_download.py fr-ws-intro-en
 """
 
 import argparse
@@ -22,6 +28,7 @@ import sys
 
 from subcommands import download_wikisource
 from subcommands import download_wikisource_intro
+from subcommands import download_wikisource_intro_en
 from ws import ws_download_selector as wsds
 
 
@@ -69,6 +76,15 @@ def _add_subcommands(subparsers) -> None:
     )
     ws_intro_parser.set_defaults(func=_run_wikisource_intro)
 
+    ws_intro_en_parser = subparsers.add_parser(
+        "fr-ws-intro-en",
+        help=(
+            "Download the English translation of the MAM introduction from English"
+            " Wikisource."
+        ),
+    )
+    ws_intro_en_parser.set_defaults(func=_run_wikisource_intro_en)
+
 
 def _run_wikisource(args: argparse.Namespace) -> None:
     download_wikisource.run_from_args(args)
@@ -76,6 +92,10 @@ def _run_wikisource(args: argparse.Namespace) -> None:
 
 def _run_wikisource_intro(args: argparse.Namespace) -> None:
     download_wikisource_intro.run_from_args(args)
+
+
+def _run_wikisource_intro_en(args: argparse.Namespace) -> None:
+    download_wikisource_intro_en.run_from_args(args)
 
 
 if __name__ == "__main__":

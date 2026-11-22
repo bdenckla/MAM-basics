@@ -1,0 +1,89 @@
+{{#lst:User:Dovi/Miqra according to the Masorah|miqra template}}
+-----
+{{c|{{xl|'''[[User:Dovi/Miqra according to the Masorah/Introduction|Introduction to Miqra according to the Masorah]]'''}}}}
+{{c|{{xl|'''Abstract'''}}}}
+-----
+
+<section begin=Abstract/>
+==A Concise Explanation of this Edition==
+
+'''''Miqra according to the Masorah'' ([[:he:מקרא על פי המסורה#ראש|מקרא על פי המסורה]]) is a Hebrew edition of the Tanakh in a digital online format under an [[#1. Free Content License|open license]]. It is a [[#2. Reader's Edition (Tiqqun Qor'im)|reader's edition]] based on the [[:HE:ויקיטקסט:מבוא למקרא על פי המסורה/מפתח לכתר ארם צובה|Aleppo Codex]] and [[:HE:ויקיטקסט:מבוא למקרא על פי המסורה/נספחים#רשימת מקורות (כתבי־יד ודפוסים), כלי עזר וחומרים קשורים|related manuscripts]], which consults the full range of relevant masoretic scholarship and [[#3. Full, Transparent Editorial Documentation|documents]] its sources.'''
+
+==Three Special Features==
+Three features make this edition of the Tanakh unique:
+#'''[[#1. Free Content License|a free content license]]''',
+#'''[[#2. Reader's Edition (Tiqqun Qor'im)|styling as a reader's edition]]''',
+#'''[[#3. Full Editorial Documentation|full editorial documentation]]'''.
+
+These three unique features of ''Miqra according to the Masorah'' are thoroughly described in the extensive, six-chapter '''[[:he:ויקיטקסט:מבוא למקרא על פי המסורה|introduction to the edition]]''' (Hebrew). Here we provide a general abstract in English.
+
+====1. Free Content License====
+
+Like several other modern editions of the Tanakh, ''Miqra according to the Masorah'' provides an accurate, documented text. But unlike most others, it is made available under a free and open license for public use ([https://creativecommons.org/licenses/by-sa/4.0/deed.en CC-BY-SA]).<ref>The attribution required by the free and open license should be implemented by a link to '''this webpage''', which is the project's main page in all languages other than Hebrew. Attribution in Hebrew should be a link to '''[[:HE:משתמש:Dovi/מקרא על פי המסורה#ראש|the Hebrew version of this page]]'''.</ref> This license for '''a free and open cultural work'''<ref>See [https://freedomdefined.org/Definition "Definition of ''Free Cultural Works''"] and [http://opendefinition.org/ "The Open Definition"].</ref> covers both the text itself and its exhaustive documentation.
+
+Before ''Miqra according to the Masorah'' two important digital versions of the Tanakh were available online, but neither of them offered a full combination of two features: (1) a free license and (2) an accurate, documented text appropriate for reading with cantillation.
+*The first was [http://www.mechon-mamre.org/c/ct/c0.htm Mechon Mamre], which is an excellent, accurate online version of the Tanakh according to the masorah (approximating the Breuer methodology). But it lacks documentation, and it is not available under a free license: You can make limited private use of it without asking for permission and paying a fee, but you cannot reproduce it or improve it (e.g. by posting it on your website together with a translation, commentary, or any other added feature). It is also undocumented: Although Mechon-Mamre's text has been carefully proofread, there are no explanations of the editorial decisions that went into producing the text.
+*The second was the Westminster Leningrad Codex now called the [https://tanach.us/Tanach.xml  Unicode/XML Leningrad Codex (UXLC)], a professional edition whose publisher has graciously made it available with no restrictions. This edition strives to be well-documented, and its editorial principles are transparent. However, its text is not entirely appropriate for Jewish use. The UXLC is an attempt to create an exact digital representation of one extremely important manuscript, namely the '''[https://archive.org/details/Leningrad_Codex_Color_Images/mode/2up Leningrad Codex (LC)]'''. As a direct result of its mission to be a diplomatic edition of the LC, it purposely includes that manuscript's thousands of minor idiosyncrasies and blatant errors.<ref>It is important to bear in mind that the practical purpose of the UXLC is to provide a justifiable base text for bible translators, teachers and scholars, and for that the Leningrad Codex is generally sufficient. But its numerous minor anomalies (in its spelling and vocalization) make it insufficient for Jews who want to chant or read the Torah and the Tanakh according to their ''niqqud'' and ''te`amim''. An added indication of its practical purpose is the fact that the UXLC omits basic elements of the Leningrad Codex when they are irrelevant to Christian translators and scholars. These include the division of the Torah into weekly readings, and of the Tanakh into ''sedarim''. The "song" formatting is not represented at all. These are all basic elements of the Leningrad Codex and of the traditional Jewish division of the Tanakh for public reading, but they are not reproduced in the UXLC. The chapter divisions are added instead. Most striking is that the UXLC reproduces the base text of the Leningrad Codex but utterly ignores its ''masorah'', even though that ''masorah'' is meant as a quality control feature for the very text that has been digitally reproduced. All of this renders the UXLC, as it stands, inappropriate for use by traditional Jews.</ref>
+
+The unique goals of ''Miqra according to the Masorah'' are thoroughly described in '''[[:he:ויקיטקסט:מבוא למקרא על פי המסורה/פרק א|chapter one]]''' of the full introduction to the edition in Hebrew, along with its sources of inspiration in scholarship and history.
+
+===2. Reader's Edition (Tiqqun Qor'im)===
+
+Full masoretic editions of the Bible in manuscript (such as the [https://archive.org/details/Aleppo_Codex/mode/1up Aleppo Codex]) and in print (such as the classic editions of ''[[:COMMONS:Category:Mikraot Gedolot|Miqra'ot Gedolot]]'') are a nuanced combination of two ancient traditions: the tradition of the '''scribes''' (who transmit the written letter-text) and the tradition of the '''readers''' (who transmit the oral vocalization of the text for public reading). But this combination is ideal for neither scribes nor readers. That is why, for centuries, two kinds of derivative editions have been produced: The ''Tiqqun Soferim'' is designed to be a useful tool for scribes, while the ''Tiqqun Qor'im'' is designed as a useful tool for readers. The latter term is used today for [[:COMMONS:File:Tikkun-Koreim-HB50656.pdf|an edition]] that shows the plain letter text next to vocalized text in two parallel columns, a format meant to help the reader practice the reading. But the same term may also be applied more loosely to any text that drops the full apparatus of masoretic notes in favor of a basic vocalized text, as is found in typical one-volume editions of the Tanakh. In recent years, many such editions have added helpful symbols and formatting to the text for the benefit of those who want to chant the text accurately. Such an edition may also be considered a ''Tiqqun Qor'im''.
+
+The most visibly unique element of ''Miqra according to the Masorah'' is this aspect of its style: The text has been formatted appropriately for use as a ''Tiqqun Qor'im'' (in the looser sense), by providing helpful features to the reader that are not always present in the manuscripts and older editions. For instance, when a ''ta`am'' is marked in a syllable that is not stressed, a double symbol has been added consistently in the proper place (''pashta'', ''zarqa'', ''segol'', ''telisha''). ''Legarmeih'' and ''paseq'' are visibly distinguished. ''Qamaz qatan'' has been added in full (alternatives are documented where traditions differ about its application).
+
+Furthermore, the [[:w:Parashah|''parashah'']] divisions (''parashah petuhah'' and ''parashah setumah'') are indicated visually (instead of using the letters פ and ס), in way that maximizes their impact on a computer screen or in print, and is consistent with their use in the Aleppo Codex and by Maimonides. ''Sifrei Emet'' (the three poetic books Psalms, Proverbs, and Job) appear in an entirely new format (see the full text of '''[[:he:ספר משלי/טעמים|Proverbs]]''' for example).<ref>The new format for ''Sifrei Emet'' and the reasoning behind it are discussed in detail '''[[:he:ויקיטקסט:מבוא למקרא על פי המסורה/פרק ב#צורת השיר בספרי אמ"ת|here]]''' (Hebrew).</ref>
+
+The detailed stylistic features of ''Miqra according to the Masorah'' are thoroughly described in '''[[:he:ויקיטקסט:מבוא למקרא על פי המסורה/פרק ב|chapter two]]''' of the full introduction to the edition in Hebrew.
+
+In addition to the features described above, the code already contains full implementation for marking mobile ''shewa'', ''dagesh ḥazaq'', and the stressed syllable in the three poetic books. These features do not yet appear in Wikisource, but they are fully expressed in the '''[https://bdenckla.github.io/phonetic-hbo/ Phonetic Tanakh]''' (external site).
+
+===3. Full, Transparent Editorial Documentation===
+
+Various editions of the Torah or Tanakh in Hebrew may seem identical to the untrained eye, but the truth is that each and every edition—from Koren to Breuer and from Artscroll to JPS—makes a multitude of small editorial decisions. In most editions these decisions are not transparent, and the student of Torah therefore relies upon the good judgment of the editor.
+
+In ''Miqra according to the Masorah'', the entire editorial process and the full reasoning behind it are fully described and documented in all of their details. All editing has been done from scratch, and every stylistic alteration or textual decision made regarding detail in the entire Tanakh is documented, and its sources or reasons are made transparent.<ref>The basic method for establishing textual details in this edition is similar to those of Mordechai Breuer and ''Mikra'ot Gedolot Haketer'' (Bar-Ilan University Press), both of which are extremely similar to each other: Despite the impression one can get from reading the literature about them, the differences between them are nearly insignificant compared to their similarities. Both of them largely conform to the original conclusions of Israel Yeivin regarding the reconstruction of the Aleppo Codex in its missing parts for ''niqqud'' and ''te`amim'', and to the conclusions of Breuer himself for the letter-text. This new edition differs from both Breuer and MGH significantly more than they differ from each other. The most visibly unique feature is in the formatting, which was briefly described [[#Reader's Edition (Tiqqun Qor'im)|above]].</ref>
+
+The textual basis of the text of the Torah is described in chapter '''[[:he:ויקיטקסט:מבוא למקרא על פי המסורה/פרק ג|chapter three]]''' of the full introduction to the edition in Hebrew, while the textual basis for the text of ''Nevi'im'' and ''Ketuvim'' is described in '''[[:he:ויקיטקסט:מבוא למקרא על פי המסורה/פרק ד|chapter four]]''' (for the missing places in the Aleppo Codex) and '''[[:he:ויקיטקסט:מבוא למקרא על פי המסורה/פרק ה|chapter five]]''' (for the extant places in the Aleppo Codex). A list of sources and other information may be found in the '''[[:he:ויקיטקסט:מבוא למקרא על פי המסורה/נספחים|appendices]]'''.
+
+In addition, there is local documentation for every decision regarding the text or styling of any particular word in its letters, vowels, accents and even for a ''ga`ya'' (=''meteg''). This documentation is found in the '''documentation notes''' to ''Miqra according to the Masorah'', which may be viewed conveniently in '''[https://bdenckla.github.io/MAM-with-doc/ ''Miqra according to the Masorah'' with Documentation Notes]''' (external site) or as footnotes in '''[https://mg.alhatorah.org/ Mikraot Gedolot AlHatorah]'''.
+
+A list of corrections made to the text over time may be viewed [https://docs.google.com/spreadsheets/d/1mkQyj6by1AtBUabpbaxaZq9Z2X3pX8ZpwG91ZCSOEYs/edit?gid=953964633#gid=953964633 here].
+
+==Contents of the Full Introduction==
+{{#lst:User:Dovi/Miqra according to the Masorah/Information about this Edition|contents}}
+
+==Original Announcements in English==
+
+The English-language description of ''Miqra according to the Masorah'' originally appeared as announcements on two websites in 2013:
+*'''[http://torahmusings.com/2013/08/weekly-freebies-experimental-edition-of-tanakh/ Torah Musings]'''
+*'''[http://opensiddur.org/?p=7610 The Open Siddur Project]'''
+
+The information on this page is a corrected and updated version of those announcements.
+
+==Related projects==
+
+#'''[[:s:he:ויבינו במקרא/מקראי מועד|''Miqra'ei Mo`ed'']]''' (Torah and ''haftarah'' readings for special days).
+#'''[[:s:he:ויבינו במקרא/ויבינו במקרא|''Vayavinu ba-Miqra'']]''' (audio recordings of the biblical books).
+#'''[[:s:he:תרגום אונקלוס|Targum Onkelos according to the ''Taj'']]''' (Yemenite tradition), which is included within '''[[:s:he:מקרא ותרגום|''Miqra ve-Targum'']]''' (parallel edition) and '''[[:s:he:מקרא ותרגום ורש"י|''Miqra ve-Targum ve-Rashi'']]''' (Miqra and Targum in parallel with vocalized Rashi below).
+#'''[[:s:he:רש"י מנוקד על המקרא|Rashi's commentary on the Torah and Five ''Megillot'']]''', which is included within '''[[:s:he:מקרא ותרגום ורש"י|''Miqra ve-Targum ve-Rashi'']]''' (Miqra and Targum in parallel with vocalized Rashi below).
+
+==External Applications==
+*'''Miqra according to the Masorah''' serves as the text of the Tanakh within '''[http://mg.alhatorah.org/ Mikra'ot Gedolot Al Hatorah]'''.
+*'''Miqra according to the Masorah''' has been available at '''[https://www.sefaria.org.il/Genesis.1?vhe=Miqra_according_to_the_Masorah&lang=bi&aliyot=0 Sefaria]''' since 4 Shevat 5781 (17.01.2021), and became the default Hebrew version of the Tanakh on 9 Sivan 5781 (20.05.2021).
+*A module for '''Miqra according to the Masorah''' was developed for '''[https://www.accordancebible.com/ Accordance Bible Software]''' (the text remains open content).
+Work on all of these applications contributed to the correction of numerous small errors and helped improve the accuracy of the text.
+
+==Dedication==
+
+'''[[:he:מקרא על פי המסורה#ראש|Miqra according to the Masorah]]''' is dedicated to my beloved bride, '''Tamara Klyachkin Kadish''', in anticipation of our wedding on the eve of 8 Adar 5778. '''You are the jewel in my crown.'''
+<section end=Abstract/>
+=="''Miqra'' as Oral Torah, Written Torah and Digital Torah"==
+
+[https://hakirah.org/Vol36Kadish.pdf "''Miqra'' as Oral Torah, Written Torah and Digital Torah"], an article about the project and its significance by [[:s:he:משתמש:Dovi|Seth (Avi) Kadish]] and [[:s:he:משתמש:Bdenckla|Ben Denckla]]. [https://hakirah.org/Volume%2036.htm '''''Ḥakirah''''' 36 (2025)], pp. 39-77.
+
+==Notes==
+<references/>
+
+[[he:ויקיטקסט:מבוא למקרא על פי המסורה/תקציר]]

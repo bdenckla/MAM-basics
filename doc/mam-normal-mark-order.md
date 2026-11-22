@@ -63,6 +63,10 @@ gives its own Hebrew examples in MAM-normal order.
 byte for byte, was added 2026-09-27 with 5,369 clusters in the other order in 25 of its 36
 `.mediawiki` files.
 
+`in/mam-ws-intro-en/`, the English translation of the introduction, which `py/main_download.py
+fr-ws-intro-en` mirrors byte for byte from English Wikisource, was added 2026-11-22 with 339
+clusters in the other order, all in `ch3.mediawiki`.
+
 `Taamey-D/qa-in/`, the corpus of Taamey D's shaping checks, moved here from hbofonts on
 2026-10-29 with 16 of its 556,525 clusters in the other order: 5 in five words from the UXLC's
 word list, in `bible_words_21.testcases.json`, and 11 in six test cases quoting MAM's

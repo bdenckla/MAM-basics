@@ -1,0 +1,36 @@
+{{#lst:User:Dovi/Miqra according to the Masorah|miqra template}}
+-----
+{{c|{{xl|'''[[User:Dovi/Miqra according to the Masorah/Introduction|Introduction to Miqra according to the Masorah]]'''}}}}
+-----
+
+
+'''To the Reader:'''
+
+There exists at [[:he:מקרא על פי המסורה|Hebrew Wikisource]] a fascinating resource for students of the Hebrew Bible – an edition of the Hebrew Bible which takes as its point of reference the Aleppo Codex, rather than the Leningrad Codex, as one most commonly finds online.
+
+For my own use, I’ve been translating bits of the documentation of the project into English. If you are reading this, please do not think of this as a reliable, scholarly translation. My Hebrew is limited, and I’ve been compiling this very slowly, using such elementary tools as online dictionaries and even Google Translate to help me understand what I am reading.
+
+These notes should not be considered a substitute for the Wikisource Project notes themselves, and may contain all sorts of errors. In some places, where I am especially confused, I have placed a question mark (?) to alert the reader that my translation may be especially unreliable. Consider these pages simply one student allowing another student to peek into his notebook – nothing more; at least until more experienced readers of Hebrew have had a chance to validate the work.
+
+The original ''Miqra according to the Masorah''  (''MAM'') project is under a Creative Commons license (CC BY-SA 3.0), so it should live beyond any one author and can be improved at will. If I understand correctly, the CC-BY-SA license requires that any derivative work be released under the same license. As this document contains long translated sections from MAM, it too must be available under the CC-BY-SA license, and I hereby release it.
+
+Sincerely,
+
+Mitchell Powell
+
+==Contents==
+<section begin=contents/>'''About this Edition: [[User:Dovi/Miqra according to the Masorah/Information about this Edition/Abstract|English Abstract]] | [[:he:ויקיטקסט:מבוא למקרא על פי המסורה/תקציר|Hebrew Abstract]]''' | '''[[:HE:ויקיטקסט:מבוא למקרא על פי המסורה|Full Introduction in Hebrew]]'''
+
+'''Partial English Translation:'''
+#'''[[User:Dovi/Miqra according to the Masorah/Introduction/Chapter 1|Chapter 1: General Introduction]]''' (not yet translated)
+#'''[[User:Dovi/Miqra according to the Masorah/Introduction/Chapter 2|Chapter 2: Styling Miqra for the Reader]]''' (In this chapter, there is completed so far a draft translation of only a portion of the subsection "Ḥatafim in Non-Gutteral Letters".)
+#'''[[User:Dovi/Miqra according to the Masorah/Introduction/Chapter 3|Chapter 3: Establishing the Text of the Torah]]''' (partial translation)
+#'''Chapter 4: Establishing the Text of Nevi'im and Ketuvim: Places Missing in the Aleppo Codex''' (not yet translated)
+#'''Chapter 5: Establishing the Text of Nevi'im and Ketuvim: Places Extant in the Aleppo Codex''' (not yet translated)
+#'''[[User:Dovi/Miqra according to the Masorah/Introduction/Appendices|Appendices]]''' (includes lists of sources and templates; so far there is a partial translation)
+#'''[https://docs.google.com/spreadsheets/d/1mkQyj6by1AtBUabpbaxaZq9Z2X3pX8ZpwG91ZCSOEYs/edit?gid=920165745#gid=920165745 The Technical Basis for the Project Organized in a Spreadsheet]'''
+#'''Technical Guide to the Spreadsheet:''' [[User:Dovi/Miqra according to the Masorah/Introduction/Technical Guide|English]] | [[:he:ויקיטקסט:מבוא למקרא על פי המסורה/מדריך טכני לגיליון הנתונים|Hebrew]]<section end=contents/>
+
+'''Misc: Some useful characters for editing this page:''' ẒẓḥḤṬṭ—
+
+[[he:ויקיטקסט:מבוא למקרא על פי המסורה]]

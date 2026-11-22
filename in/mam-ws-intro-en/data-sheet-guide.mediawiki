@@ -1,0 +1,80 @@
+{{#lst:User:Dovi/Miqra according to the Masorah|miqra template}}
+-----
+{{c|{{xl|'''[[User:Dovi/Miqra according to the Masorah/Introduction|Introduction to Miqra according to the Masorah]]'''}}}}
+{{c|{{xl|'''Technical Guide to the Spreadsheet'''}}}}
+-----
+
+
+'''General explanation:''' The text of "Miqra according to the Masorah" project was transferred to '''[https://docs.google.com/spreadsheets/d/1mkQyj6by1AtBUabpbaxaZq9Z2X3pX8ZpwG91ZCSOEYs/edit?gid=920165745#gid=920165745 this spreadsheet file]''' at Google Docs on May 11, 2014. The text now at Hebrew Wikisource is based on that spreadsheet, which also available as a useful open source basis for other applications. Future corrections will be made within the Google Docs file itself, and every change that is made can be imported automatically to Hebrew Wikisource. All future suggestions at Hebrew Wikisource for corrections or improvements to Tanakh pages, after being checked and implemented, will be implemented in parallel to the file.
+
+'''General format of the file:''' Each "sheet" within the file contains the text and code for a set of biblical books. Each line contains a single verse, along with the navigation information and formatting code associated with it. Different kinds of elements (navigation elements, formatting code, and the text itself) are isolated in five or six different columns, which appear from right to left (A-E).<ref>In earlier versions of the spreadsheet columns F and G were occasionally utilized as well: Column F was used for verses coded in Song format (Song of the Sea, Song of Moses, etc.). Column G was used, rarely, for code appearing ''after'' the conclusion of a verse (chiefly for certain tags after verses in Esther). All text as now been removed from the spreadsheet in Columns F and G. The "Song" code can now be found on protected pages at Hebrew Wikisource (a table listing pages with "Song" code can be found '''[[:he:משתמש:Dovi/מקרא על פי המסורה/מידע על מהדורה זו/פרק ב#הדפים העדכניים לצורת השיר|here]]'''). The special tags from Esther have been removed and the text has been formatted via other methods.</ref> This is meant to facilitate automatic tagging of elements and to ease the use of the material in other contexts.
+
+==Column A: Book Name and Chapter Number==
+
+'''The first column (A) in each sheet of the file is for the name of the book and the number of the chapter.''' The number is represented by a Hebrew letter or letters following a backslash. The book names are according to the division of the Tanakh into 24 books according to the Masorah.
+
+'''For most books''' the expression in column A is simple. For instance, "ספר יהושע/א" means Joshua chapter 1, or "מגילת קהלת/יא" means Ecclesiastes chapter 11, or "ספר דניאל/יב" means Daniel chapter 12.
+
+'''But for some books''', which are divided into two or more parts in the system according to which the chapters are numbered, expressions of this sort will occur: "ספר מלכים/מל"א טו", which means "1K chapter 15" ''within'' the Book of Kings (i.e. the artificial subdivision "1 Kings" is included as part of the chapter number). Similarly: "ספר עזרא/נחמיה א", which means "Nehemiah chapter 1" ''within'' the Book of Ezra (because Ezra and Nehemiah together are a single book according to the Masorah). These sorts of expressions are found in Column A for the following books:
+#Samuel (=1 Samuel & 2 Samuel),
+#Kings (=1 Kings and 2 Kings),
+#The Twelve Minor Prophets (all twelve are a single book),<ref name="ovadiah_quirk">One quirk is that Ovadiah is spelled עבדיה in column A but it is spelled עובדיה in column D.</ref>
+#Ezra (=Ezra and Nehemiah),
+#Chronicles (=1 Chronicles & 2 Chronicles).
+
+'''Appendices:''' In certain books there is an appendix at the end, following the final chapter. For instance, after Genesis 50 there is '''one''' additional row that in Column A is called "ספר בראשית/נספח" ("Book of Genesis/Appendix"). The appendix to a particular book is designed to contain extra textual material directly related to that book, but which cannot be defined using the regular categories of "chapter" and "verse" (for instance tables comparing the two parallel systems of cantillation for the Ten Commandments or extra formats for songs). The actual content of an appendix will appear in Column C (and sometimes also in Column E if the quantity of text is above the capacity for one cell such as in the appendix to Deuteronomy).
+
+==Column B: Verse Number==
+
+'''The second column (B) in each sheet of the file is for the verse number.''' The number is represented by a Hebrew letter or letters. But besides the actual verses themselves, two further "artificial" verses have been added at the beginning and at the end of each chapter:
+#Verse number "0" (zero) is an artificial verse added at the beginning of each chapter, which is the designated place for the code appearing at the beginning of a chapter (special code which is not specifically associated with verse 1 but rather with the entire chapter). This special code is found in [[#Column C: Code before the Verse|Column C]] of verse "0".
+#Verse number "תתת", which has been added at the end of each chapter, is also artificial; it is the designated place for the code appearing at the end of a chapter, and sometimes also for special notes or appendices which appear at the end of a chapter. This special code is found in [[#Column C: Code before the Verse|Column C]] of verse "תתת".
+
+'''Appendices:''' For books that have an appendix at the end (such as Genesis), Column B will be '''empty''' in the single row of the appendix, because the text in appendices is not divided into verses.
+
+==Column C: Code before the Verse==
+
+'''The third column (C) in each sheet of the file is for code that comes before the verse itself.''' This code usually represents formatting that occurs immediately ''before'' the verse itself, for instance:
+#A simple space to divide it visually from the previous verse (represented by the code "__"),
+#a "new line" to divide it from the previous verse (represented by the code "//"),
+#a template for the visual representation of a new ''[[:w:Parashah|parashah]]'' in which this is the first verse (such as <nowiki>{{פפ}} or {{סס}}</nowiki>),
+#a combination of the above,
+#or other less common templates.
+
+For a full list of templates that visually implement the ''[[:w:Parashah|parashah]]'' divisions, as well as other templates which may occur ''before'' the verse itself and are found in Column C, see the list found in the "templates" sheet within the spreadsheet.
+
+As mentioned [[#Column B: Verse Number|above]], Column C also contains the code found at the beginning and at the end of a chapter:
+#Column C for verse "0" contains code for the beginning of a chapter (which is not associated specifically with verse 1).
+#Column C for verse "תתת" contains code for the end of a chapter (along with the various notes and appendices found at the end of some chapters).
+
+==Column D: Navigation Template for the Verse==
+
+'''The fourth column (D) in each sheet of the file is for the [[:he:תבנית:מ:פסוק|navigation template]] of the verse (complete with all relevant parameters).''' In Hebrew Wikisource edit pages, this template is tagged (to allow for its automatic omission in flowing text without the interruption of numbers). The template itself surrounded by its tags is placed directly before the text of a verse, with absolutely no space or any other interruption between them. The template is used to show running chapter and verse numbers in the right margin of the wiki page, as well as traditional navigation notations such as ''seder'' numbers or ''aliyah'' numbers in the left margin.
+
+Some technical information about the template:
+#The template is always used with a minimum of three parameters: Book name (according to the system of chapter numbers!),<ref name="ovadiah_quirk" /> chapter number (as a Hebrew letter or letters), verse number (as a Hebrew letter or letters). For instance: <nowiki>{{מ:פסוק|יהושע|א|א}}</nowiki> (template for Joshua 1:1) or <nowiki>{{מ:פסוק|שמואל א|א|א}}</nowiki> (template for 1 Samuel 1:1).
+#It sometimes has a further parameter for the ''seder'' number (e.g. <nowiki>{{מ:פסוק|עזרא|א|א|סדר=א}}</nowiki>).
+#In the Torah it sometimes has a further parameter for the ''aliyah'' number (e.g. <nowiki>{{מ:פסוק|דברים|כו|יב|עלייה=שני}}</nowiki>). The first ''aliyah'' in a weekly portion is labeled by the ''name'' of that portion rather than by number (e.g. ויצא rather than ראשון).
+#The navigation template can easily be adjusted to include additional parameters, such as for section titles in the margins.
+#The navigation template is ''always'' used in conjunction with the [[:he:תבנית:מ:שוליים|margin template]] and a parameter of "5" (<nowiki>{{מ:שוליים|5}}</nowiki>), which is found in the code at the beginning of each chapter (verse "0" of [[#Column C: Code before the Verse|Column C]]).
+#In the special Song format, which is embedded in the code for a table (see [[#Column F: The Verse in Song Format (with table code)|Column F]] below), an [[:he:תבנית:מ:פסוק-שירה|alternative template]] is sometimes used in order to show the navigation notations properly in the margins even from within a table. This alternative template is employed exclusively [[#Column F: The Verse in Song Format (with table code)|within column F in the contexts listed below]]. Note that the alternative template for use within songs is already hardcoded in its proper place for "Song" verses within [[#Column F: The Verse in Song Format (with table code)|Column F]], and the regular verse template in Column D is never used in versions based on the Song Format in [[#Column F: The Verse in Song Format (with table code)|Column F]].
+
+==Column E: Complete Text of the Verse==
+
+'''The fifth column (E) in each sheet of the file is for the full text of the verse itself.''' This text is mostly composed of letters and diacritical marks (''[[:w:niqqud|niqqud]]'' and ''[[:w:cantillation|te`amim]]'') in [[:w:Unicode and HTML for the Hebrew alphabet|Unicode]], but it also has additional content related to the presentation of the verse:
+#Templates for tagging and representing ''qeri ukhtiv'', or for rare symbols and other unusual phenomena,
+#Documentation notes about the basis of the text itself, which are found following the single parameter in the frequently used '''[[:he:תבנית:נוסח|documentation template]]'''.
+
+For a full list of the templates found in Column E, which are used ''within'' verses for special formatting or documentation, see the list found in the "templates" sheet within the spreadsheet.
+
+==What the Spreadsheet Does Not Include==
+Certain special elements of ''Miqra according to the Masorah'' don't fit the verse-by-verse format of the spreadsheet. These include the following:
+#Code for 54 pages that show the weekly Torah Portion (''Parashat ha-Shavu`a'') and ''Haftarot''. Links to all of these pages can be found [[:HE:משתמש:Dovi/מקרא על פי המסורה/תורה|'''here''']].
+#Code for pages that show the Torah reading for holidays and associated ''haftarot''. Links to these pages can be found [[:HE:מקראי מועד|'''here''']].
+#Code for pages that show two parallel cantillations of the Ten Commandments ("upper" and "lower" cantillation). The code for these pages is [[:HE:עשרת הדברות בסיס/טעמים|'''here''']] and [[:HE:עשרת הדברות/טעמים|'''here''']].
+#Code for pages that show 8 different biblical passages in special "song" format. Links to all of the pages needed to create the "song" format and show it on appropriate pages can be found in the chart [[:HE:משתמש:Dovi/מקרא_על_פי_המסורה/מידע_על_מהדורה_זו/פרק_ב#דפי_המקרא_לצורת_השיר|'''here''']].
+
+==Notes==
+<references/>
+
+[[he:משתמש:Dovi/מקרא על פי המסורה/מדריך טכני]]

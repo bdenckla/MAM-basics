@@ -1,0 +1,14 @@
+{{#lst:User:Dovi/Miqra according to the Masorah|miqra template}}
+-----
+{{c|{{xl|'''[[User:Dovi/Miqra according to the Masorah/Introduction|Introduction to Miqra according to the Masorah]]'''}}}}
+{{c|{{xl|'''Chapter 1: General Introduction'''}}}}
+-----
+
+
+==Footnotes==
+
+{{reflist}}
+
+'''Misc: Some useful characters for editing this page:''' ẒẓḥḤṬṭ—
+
+[[he:משתמש:Dovi/מקרא על פי המסורה/מידע על מהדורה זו/פרק א]]
