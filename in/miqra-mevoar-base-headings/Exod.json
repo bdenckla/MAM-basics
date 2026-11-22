@@ -1,0 +1,388 @@
+{
+ "book": "שמות",
+ "chapters": [
+  {
+   "chapter": 1,
+   "page_id": 376585,
+   "revision_id": 1453546,
+   "headings": [
+    1,
+    8
+   ]
+  },
+  {
+   "chapter": 2,
+   "page_id": 376586,
+   "revision_id": 1453547,
+   "headings": [
+    1,
+    11,
+    23
+   ]
+  },
+  {
+   "chapter": 3,
+   "page_id": 376587,
+   "revision_id": 1453548,
+   "headings": [
+    1
+   ]
+  },
+  {
+   "chapter": 4,
+   "page_id": 376588,
+   "revision_id": 3103905,
+   "headings": [
+    18,
+    27
+   ]
+  },
+  {
+   "chapter": 5,
+   "page_id": 376589,
+   "revision_id": 1453550,
+   "headings": []
+  },
+  {
+   "chapter": 6,
+   "page_id": 376590,
+   "revision_id": 1453551,
+   "headings": [
+    2,
+    14
+   ]
+  },
+  {
+   "chapter": 7,
+   "page_id": 376592,
+   "revision_id": 1453552,
+   "headings": [
+    1,
+    14,
+    26
+   ]
+  },
+  {
+   "chapter": 8,
+   "page_id": 376593,
+   "revision_id": 1453553,
+   "headings": [
+    12,
+    16
+   ]
+  },
+  {
+   "chapter": 9,
+   "page_id": 376594,
+   "revision_id": 1453554,
+   "headings": [
+    1,
+    8,
+    13
+   ]
+  },
+  {
+   "chapter": 10,
+   "page_id": 376595,
+   "revision_id": 1453557,
+   "headings": [
+    1,
+    21
+   ]
+  },
+  {
+   "chapter": 11,
+   "page_id": 376596,
+   "revision_id": 1453558,
+   "headings": [
+    1
+   ]
+  },
+  {
+   "chapter": 12,
+   "page_id": 376597,
+   "revision_id": 1453559,
+   "headings": [
+    1,
+    21,
+    29,
+    37,
+    43
+   ]
+  },
+  {
+   "chapter": 13,
+   "page_id": 376598,
+   "revision_id": 2879566,
+   "headings": [
+    1,
+    11,
+    17
+   ]
+  },
+  {
+   "chapter": 14,
+   "page_id": 376599,
+   "revision_id": 1453561,
+   "headings": [
+    1,
+    15,
+    26
+   ]
+  },
+  {
+   "chapter": 15,
+   "page_id": 376600,
+   "revision_id": 1453555,
+   "headings": [
+    1,
+    22,
+    27
+   ]
+  },
+  {
+   "chapter": 16,
+   "page_id": 376601,
+   "revision_id": 1453556,
+   "headings": []
+  },
+  {
+   "chapter": 17,
+   "page_id": 376602,
+   "revision_id": 1453562,
+   "headings": [
+    1,
+    8
+   ]
+  },
+  {
+   "chapter": 18,
+   "page_id": 376603,
+   "revision_id": 1453563,
+   "headings": [
+    1
+   ]
+  },
+  {
+   "chapter": 19,
+   "page_id": 376604,
+   "revision_id": 1453564,
+   "headings": [
+    1
+   ]
+  },
+  {
+   "chapter": 20,
+   "page_id": 376605,
+   "revision_id": 1453565,
+   "headings": [
+    1,
+    14
+   ]
+  },
+  {
+   "chapter": 21,
+   "page_id": 376606,
+   "revision_id": 1453566,
+   "headings": [
+    1,
+    12,
+    28,
+    37
+   ]
+  },
+  {
+   "chapter": 22,
+   "page_id": 376607,
+   "revision_id": 1453567,
+   "headings": [
+    6,
+    15
+   ]
+  },
+  {
+   "chapter": 23,
+   "page_id": 376608,
+   "revision_id": 1453568,
+   "headings": [
+    10,
+    20
+   ]
+  },
+  {
+   "chapter": 24,
+   "page_id": 376609,
+   "revision_id": 1453569,
+   "headings": [
+    1,
+    12
+   ]
+  },
+  {
+   "chapter": 25,
+   "page_id": 376610,
+   "revision_id": 1453570,
+   "headings": [
+    1,
+    10,
+    23,
+    31
+   ]
+  },
+  {
+   "chapter": 26,
+   "page_id": 376611,
+   "revision_id": 1453571,
+   "headings": [
+    1,
+    15,
+    31
+   ]
+  },
+  {
+   "chapter": 27,
+   "page_id": 376612,
+   "revision_id": 1453572,
+   "headings": [
+    1,
+    9,
+    20
+   ]
+  },
+  {
+   "chapter": 28,
+   "page_id": 376613,
+   "revision_id": 1453573,
+   "headings": [
+    1,
+    6,
+    15,
+    31,
+    36,
+    39
+   ]
+  },
+  {
+   "chapter": 29,
+   "page_id": 376614,
+   "revision_id": 3103906,
+   "headings": [
+    1,
+    38
+   ]
+  },
+  {
+   "chapter": 30,
+   "page_id": 376615,
+   "revision_id": 1453575,
+   "headings": [
+    1,
+    11,
+    17,
+    22,
+    34
+   ]
+  },
+  {
+   "chapter": 31,
+   "page_id": 376616,
+   "revision_id": 1453576,
+   "headings": [
+    1,
+    12,
+    18
+   ]
+  },
+  {
+   "chapter": 32,
+   "page_id": 376617,
+   "revision_id": 1453577,
+   "headings": [
+    7,
+    15
+   ]
+  },
+  {
+   "chapter": 33,
+   "page_id": 376618,
+   "revision_id": 1453578,
+   "headings": [
+    1,
+    12,
+    17
+   ]
+  },
+  {
+   "chapter": 34,
+   "page_id": 376619,
+   "revision_id": 1453579,
+   "headings": [
+    11,
+    27
+   ]
+  },
+  {
+   "chapter": 35,
+   "page_id": 376620,
+   "revision_id": 1453580,
+   "headings": [
+    1,
+    4,
+    30
+   ]
+  },
+  {
+   "chapter": 36,
+   "page_id": 376621,
+   "revision_id": 1453581,
+   "headings": [
+    8,
+    20
+   ]
+  },
+  {
+   "chapter": 37,
+   "page_id": 376622,
+   "revision_id": 1453582,
+   "headings": [
+    1,
+    10,
+    17,
+    25
+   ]
+  },
+  {
+   "chapter": 38,
+   "page_id": 376623,
+   "revision_id": 1453583,
+   "headings": [
+    1,
+    8,
+    9,
+    21
+   ]
+  },
+  {
+   "chapter": 39,
+   "page_id": 376624,
+   "revision_id": 3103908,
+   "headings": [
+    2,
+    8,
+    22,
+    27,
+    30,
+    33
+   ]
+  },
+  {
+   "chapter": 40,
+   "page_id": 376625,
+   "revision_id": 1453585,
+   "headings": [
+    1,
+    17
+   ]
+  }
+ ]
+}

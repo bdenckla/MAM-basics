@@ -5,7 +5,10 @@ converter extracts each verse's heading and paraphrase into the tracked JSON und
 in/miqra-mevoar/, checks it against MAM-simple, and writes the base-chapter pages that
 `py/main_ws_bot.py miqra-mevoar` creates on Hebrew Wikisource. Neither the Word files
 nor the pages are tracked. in/miqra-mevoar/README.md says how to regenerate the JSON,
-and doc/PLAN-miqra-mevoar.md is the plan of record.
+and doc/PLAN-miqra-mevoar.md is the plan of record. The Torah's base chapters were made
+on Wikisource before this converter, from no Word file that it reads, so base-headings
+reads the places of their headings from Wikisource instead, for the Torah's display
+pages; in/miqra-mevoar-base-headings/README.md says how.
 
 Subcommands:
     fetch
@@ -24,17 +27,27 @@ Subcommands:
     pages
         Write each chapter's page from the tracked JSON into the new directory --out,
         as MediaWiki would store it, with titles.tsv.
+    base-headings
+        Read the latest revision of every base chapter of the Torah on Hebrew
+        Wikisource, anonymously, parse it by a closed parser, and write the verses
+        before which it has a heading to in/miqra-mevoar-base-headings/<OSIS>.json.
+        With --check, write nothing: list each chapter whose revision changed since
+        those records, and exit non-zero if a heading's place differs from them or if
+        a page does not parse.
 
 Examples:
     .venv/Scripts/python.exe py/main_miqra_mevoar.py fetch --link-file path/to/link.txt
     .venv/Scripts/python.exe py/main_miqra_mevoar.py extract .novc/miqra-mevoar/pcloud/<timestamp>
     .venv/Scripts/python.exe py/main_miqra_mevoar.py check .novc/miqra-mevoar/pcloud/<timestamp>
     .venv/Scripts/python.exe py/main_miqra_mevoar.py pages --out .novc/miqra-mevoar/pages/<timestamp>
+    .venv/Scripts/python.exe py/main_miqra_mevoar.py base-headings
+    .venv/Scripts/python.exe py/main_miqra_mevoar.py base-headings --check
 """
 
 import argparse
 import sys
 
+from miqra_mevoar import base_headings
 from miqra_mevoar import check
 from miqra_mevoar import extract
 from miqra_mevoar import fetch
@@ -65,6 +78,18 @@ def build_parser():
         "pages", help="write the pages from the tracked JSON"
     )
     pages_parser.add_argument("--out", required=True, help="a directory to create")
+    base_headings_parser = subparsers.add_parser(
+        "base-headings",
+        help="record the places of the headings in the Torah's base chapters",
+    )
+    base_headings_parser.add_argument(
+        "--check",
+        action="store_true",
+        help=(
+            "write nothing; fail if a heading's place differs from the records or a"
+            " page does not parse"
+        ),
+    )
     return parser
 
 
@@ -80,6 +105,8 @@ def main():
         sys.exit(check.run(args.directory))
     elif args.subcommand == "pages":
         pages.run(args.out)
+    elif args.subcommand == "base-headings":
+        sys.exit(base_headings.run(check=args.check))
     else:
         raise ValueError(f"unknown subcommand {args.subcommand}")
 

@@ -7,7 +7,9 @@ heading. Each verse is one line, wrapped in Labeled Section Transclusion
 tags named by the verse numeral, and a section heading is a line of its own before its
 verse, starting with "*" and wrapped in tags named כותרת <verse>. The last line is the
 category. Template מקרא מבואר transcludes these sections beside MAM's verse. These are
-the line shapes of the live pages, and the only ones written here.
+the line shapes of the base chapters that the bot made, and the only ones written here.
+The Torah's base chapters, made on Wikisource before the bot, have a few more, which
+py/miqra_mevoar/base_headings.py reads.
 
 page_title takes a book as its pair of names in mam_bknas, a BS_ pair, so that it titles
 any of MAM's chapters, not only those of the books in books.BOOKS: the index,
@@ -32,18 +34,28 @@ def page_title(mam_book, chapter_number):
     return f"{_TITLE_PREFIX}{book}/{hvn.INT_TO_STR_DIC[chapter_number]}"
 
 
+def chapter_heading(chapter_number):
+    """A base chapter's first line, the heading of its chapter, named by its numeral."""
+    numeral = hvn.INT_TO_STR_DIC[chapter_number]
+    return f"{CHAPTER_HEADING_START}{numeral}{CHAPTER_HEADING_END}"
+
+
 def chapter_wikitext(chapter):
     """A base chapter's page text from its tracked record, exactly as a save stores it."""
-    lines = [f"==פרק {hvn.INT_TO_STR_DIC[chapter['chapter']]}=="]
+    lines = [chapter_heading(chapter["chapter"])]
     for verse in chapter["verses"]:
         numeral = hvn.INT_TO_STR_DIC[verse["verse"]]
         where = f"chapter {chapter['chapter']} verse {verse['verse']}"
         if verse["heading"] is not None:
             heading = _plain(verse["heading"], f"the heading before {where}")
             section = f"{HEADING_SECTION}{numeral}"
-            lines.append(f"*<{_START}{section}/>{heading}<{_END}{section}/>")
+            lines.append(
+                f"*<{SECTION_START}{section}/>{heading}<{SECTION_END}{section}/>"
+            )
         paraphrase = _plain(verse["paraphrase"], f"the paraphrase of {where}")
-        lines.append(f"<{_START}{numeral}/>{paraphrase}<{_END}{numeral}/>")
+        lines.append(
+            f"<{SECTION_START}{numeral}/>{paraphrase}<{SECTION_END}{numeral}/>"
+        )
     lines.append(CATEGORY)
     # NFC, the form MediaWiki stores, is right here: the paraphrase is Rabbi Kokhav's
     # text, not MAM's, and the tracked JSON keeps the Word file's own mark order.
@@ -70,12 +82,16 @@ def _plain(text, where):
     return text
 
 
+# A chapter heading is these and its chapter's numeral between them.
+CHAPTER_HEADING_START = "==פרק "
+CHAPTER_HEADING_END = "=="
 INDEX_TITLE = "מקרא מבואר/פרקי בסיס"
 # The category line ends both the base chapters and the index.
 CATEGORY = "[[קטגוריה:מקרא מבואר]]"
 _TITLE_PREFIX = f"{INDEX_TITLE}/ספר "
-_START = "קטע התחלה="
-_END = "קטע סוף="
+# A section's begin tag is "<", this, its name and "/>", and its end tag likewise.
+SECTION_START = "קטע התחלה="
+SECTION_END = "קטע סוף="
 # A heading's section is named by this and its verse's numeral, the name by which a
 # display page transcludes the heading from its base chapter.
 HEADING_SECTION = "כותרת "
