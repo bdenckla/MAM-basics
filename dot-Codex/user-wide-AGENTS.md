@@ -358,6 +358,12 @@ for it. Ben, 2026-11-11, to a session at 30%: "Please try to do so via sub-agent
 session since you are already at 30% context"; 2026-11-12: "why would you do that to a session
 already 63% context full?"
 
+A session that finds itself past about 50% of its context with substantial work left does not wait
+to be told: it writes a standalone handoff and asks for a fresh session to continue, through its
+commander when it has one. Ben, 2026-11-22, to a session at 59% that had planned to carry on
+through sub-agents: "Why do I keep on having to manage this, i.e. why didn't you come up with this
+yourself, at this obvious (to me) juncture?"
+
 ## Final messages begin with one H1 report heading
 
 Begin every final message with `# Report: <subject>`, with nothing above it, and use no other H1
