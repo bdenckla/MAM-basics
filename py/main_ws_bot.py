@@ -24,7 +24,8 @@ Subcommands:
                 reviewed revision that --base-revid names.
     miqra-mevoar-display
                 Create Miqra Mevoar's display pages via pywikibot, each a book or a
-                part of one, from MAM-simple and the tracked JSON, selecting them by
+                part of one, from MAM-simple and the tracked JSON, or for the Torah
+                the places of the headings in its base chapters, selecting them by
                 --page; it never edits a page that exists.
 
 Examples:

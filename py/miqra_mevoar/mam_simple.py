@@ -8,7 +8,9 @@ a display page shows. _projected reads a verse's elements to text by a closed di
 keeping a ketiv and its qere both, for a comparison of letters only: so it reads a hung
 letter, such as the nun of Judges 18:30, as its letter, and keeps a word that is read
 but not written, such as the one of Judges 20:13, as it keeps a qere. verse_breaks reads
-the petuha and setuma break elements by a closed dispatch of their places.
+the petuha and setuma break elements by a closed dispatch of their places, and
+scribal_difference_breaks gives the note of each break that a scribal-difference element
+holds.
 """
 
 import json
@@ -45,20 +47,36 @@ def verse_breaks(book):
     """The break, PETUHA or SETUMA, before each verse of a book that has one, by key.
 
     A break element between two chapters, between two verses or as a verse's last child
-    stands before the book's next verse. A break among a verse's children, with a child
-    before it and a child after it, is inside the verse, which shows it, so it is left
-    out. A break anywhere else raises: first or last among a book's chapters or a
-    chapter's verses, a verse's first child, one nested deeper in a verse, and one with
-    no verse of the book after it; so does a second break before the same verse. A break
-    between two books stands outside both and is not read.
+    stands before the book's next verse. So does the break of a scribal-difference
+    element that is a verse's last child and whose target holds that break and nothing
+    else, as at the ends of Exodus 33:23 and of Leviticus 7:21 and 7:27, where MAM's
+    note says which tradition lacks the petuha or doubts it. A break among a verse's
+    children, with a child before it and a child after it, is inside the verse, which
+    shows it, so it is left out. A break anywhere else raises: first or last among a
+    book's chapters or a chapter's verses, a verse's first child, one nested deeper in a
+    verse in any other way, and one with no verse of the book after it; so does a
+    second break before the same verse. A break between two books stands outside both
+    and is not read.
     """
+    return {key: kind for key, (kind, _note) in _breaks(book).items()}
+
+
+def scribal_difference_breaks(book):
+    """The note of each break that verse_breaks reads from a scribal-difference element,
+    keyed by the verse before which the break stands."""
+    return {key: note for key, (_kind, note) in _breaks(book).items() if note}
+
+
+def _breaks(book):
+    """(kind, note) of the break before each verse of a book that has one, by key, as
+    verse_breaks describes; the note is a scribal-difference element's, or None."""
     found, pending = {}, None
     chapters = _book_element(book)["contents"]
     for at, chapter in enumerate(chapters):
         if chapter["type"] in _BREAKS:
             where = f"{book.osis_id}: a break that is not between two chapters"
             pending = _break_kind(
-                chapter, pending, _between(chapters, at, "chapter"), where
+                chapter, None, pending, _between(chapters, at, "chapter"), where
             )
             continue
         if chapter["type"] != "chapter":
@@ -70,7 +88,7 @@ def verse_breaks(book):
             if verse["type"] in _BREAKS:
                 where = f"{chapter['osisID']}: a break that is not between two verses"
                 pending = _break_kind(
-                    verse, pending, _between(verses, verse_at, "verse"), where
+                    verse, None, pending, _between(verses, verse_at, "verse"), where
                 )
                 continue
             if verse["type"] != "verse":
@@ -81,15 +99,20 @@ def verse_breaks(book):
                 found[_verse_key(book, verse)], pending = pending, None
             children = verse.get("contents", [])
             for child_at, child in enumerate(children):
+                last = child_at == len(children) - 1
                 if child["type"] not in _BREAKS:
-                    if _holds_break(child):
+                    if not _holds_break(child):
+                        continue
+                    if child["type"] != "scrdfftar" or not last:
                         raise ValueError(
                             f"{verse['osisID']}: a break nested in a {child['type']}"
                         )
+                    held, note = _scribal_difference_break(child, verse["osisID"])
+                    pending = _break_kind(held, note, pending, True, verse["osisID"])
                 elif child_at == 0:
                     raise ValueError(f"{verse['osisID']}: a break begins the verse")
-                elif child_at == len(children) - 1:
-                    pending = _break_kind(child, pending, True, verse["osisID"])
+                elif last:
+                    pending = _break_kind(child, None, pending, True, verse["osisID"])
     if pending is not None:
         raise ValueError(f"{book.osis_id}: a break after the book's last verse")
     return found
@@ -148,13 +171,36 @@ def _between(siblings, at, kind):
     )
 
 
-def _break_kind(element, pending, placed, where):
-    """The kind of a break that stands before the next verse; raise if it cannot."""
+def _break_kind(element, note, pending, placed, where):
+    """The kind of a break that stands before the next verse, and its note; raise if it
+    cannot stand there."""
     if not placed:
         raise ValueError(where)
     if pending is not None:
         raise ValueError(f"{where}: a second break before one verse")
-    return _BREAK_KINDS[element["type"]]
+    return _BREAK_KINDS[element["type"]], note
+
+
+def _scribal_difference_break(element, where):
+    """The break that a scribal-difference element's target holds, and the element's
+    note; raise unless the element has a target that holds one break and nothing else,
+    and then a note."""
+    keys = {"type", "sdt-starpos", "contents"}
+    if set(element) != keys or element["sdt-starpos"] not in _STAR_POSITIONS:
+        raise ValueError(f"{where}: a scribal-difference element of an unknown shape")
+    parts = element["contents"]
+    if [part["type"] for part in parts] != ["sdt-target", "sdt-note"]:
+        raise ValueError(f"{where}: a scribal-difference element of other parts")
+    target, note = parts
+    held = target.get("contents", [])
+    if set(target) != {"type", "contents"} or len(held) != 1:
+        raise ValueError(f"{where}: a scribal-difference target with more than a break")
+    if held[0]["type"] not in _BREAKS:
+        raise ValueError(f"{where}: a scribal-difference target with a break nested")
+    text = note.get("text")
+    if set(note) != {"type", "text"} or not isinstance(text, str) or not text:
+        raise ValueError(f"{where}: a scribal-difference note of an unknown shape")
+    return held[0], text
 
 
 def _holds_break(node):
@@ -205,4 +251,6 @@ _BREAK_KINDS = {
     "spi-samekh3": SETUMA,
 }
 _BREAKS = frozenset(_BREAK_KINDS)
+# The sides of its target on which a scribal-difference element's note belongs.
+_STAR_POSITIONS = frozenset({"before-word", "after-word"})
 _NON_LETTER = re.compile("[^\N{HEBREW LETTER ALEF}-\N{HEBREW LETTER TAV}]")
