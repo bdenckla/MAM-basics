@@ -357,12 +357,14 @@ diff, repeated its checks of the pages, and committed it.
    each page's text at `e079f702` as the oracle: with the intended substitutions applied to it,
    it equals the new page apart from line wrapping, Hebrew included. On each page the ids are
    unique, every in-page link has a target, and every footnote link stays on its own side.
-6. **The views were not checked in a browser.** The app's browser pane refuses its page tools
+6. **Ben checked the views at desktop width.** The app's browser pane refused its page tools
    and screenshots on a local file, and a local server needs a launch configuration, which only
-   Ben may ask for. The script passed `node --check` and a run against a stub page that
-   exercised `?view`, `aria-pressed`, `replaceState` and the scroll that keeps the reader's
-   place, but nothing has checked the layout. Ben's look at desktop and phone widths is what
-   remains, before the next dispatch of the Pages workflow publishes the pages.
+   Ben may ask for, so the session left the look in a browser to him. The script had passed
+   `node --check` and a run against a stub page that exercised `?view`, `aria-pressed`,
+   `replaceState` and the scroll that keeps the reader's place. Ben, 2026-11-22: "I took a look
+   at desktop width and those pages look fine. I'm not that concerned about how they look at
+   phone width." So the phone layout stays unchecked, by his choice. The pages reach the site at
+   the next dispatch of the Pages workflow.
 
 The focused tests over the touched surface passed, apart from `py/tests/test_prose_mark_order.py`,
 which failed on Phase 2's `doc/intro-en-evaluation-2026-11-22.md`, as it had before this phase.
