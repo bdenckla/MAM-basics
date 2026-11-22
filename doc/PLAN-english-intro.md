@@ -242,8 +242,9 @@ mirror is separate from `fr-wikisource`: unrelated refresh rhythms.
 Ben's item 2. [intro-en-evaluation-2026-11-22.md](intro-en-evaluation-2026-11-22.md) compares each
 English page with the Hebrew mirror and records each shortfall with a suggested tweak. Seven
 parallel sub-agents read one slice each, from the article views of the revisions in the table
-above. It records 242 findings, 70 of them substantive, and five problems that run through the
-pages:
+above. With its update file,
+[intro-en-evaluation-2026-11-22-update.md](intro-en-evaluation-2026-11-22-update.md), it records
+243 findings, 71 of them substantive, and five problems that run through the pages:
 
 1. drift, since most of the English predates revisions of the Hebrew, including the data sheet's
    freeze on 12 September 2026 and a relabeled roster of sigla;
@@ -287,12 +288,19 @@ Hebrew, English, and bilingual?)". The answer on 2026-11-22 is no. Under 2A:
 This phase edits English Wikisource, which is outward-facing. It starts only when Ben says so,
 after Decisions 4 and 5.
 
-1. Take the findings Ben accepts from the evaluation.
-2. Edit the English pages by hand, or through a new `intro-en` mode of `py/main_ws_bot.py`,
+1. Take the findings Ben accepts from the evaluation. Start with the four links of the English
+   Appendices to `hcanat.us`, the UXLC's development host (`appendices-8`). Ben, 2026-11-22:
+   "we are trying to stamp out all uses of hcanat.us from all MAM-related stuff. It is a dev
+   server." `7f43a3c8` removed that host from the Hebrew introduction on 2026-11-06.
+2. Write each link to a UXLC verse in tanach.us's HTML view, which `uxlc_verse_url` in
+   `py/mb_cmn/uxlc_verse_url.py` builds, as `738dae4e` does for this repository's own pages
+   (`ch3b-37`, in the update file). A link to the whole `Tanach.xml` stays XML, as that commit
+   keeps XML downloads.
+3. Edit the English pages by hand, or through a new `intro-en` mode of `py/main_ws_bot.py`,
    modeled on `intro`: an explicit-replacement edit file, a `--no-save` dry run, and a saving
    run that refreshes the English mirror. The bot account `BDencklaBot` edits Hebrew Wikisource
    today; whether it edits English Wikisource is Ben's choice.
-3. Refresh the mirror, read its diff, and record each finding's disposition in
+4. Refresh the mirror, read its diff, and record each finding's disposition in
    `doc/intro-en-evaluation-2026-11-22-update.md`.
 
 ### Phase 5: the English held only in gh-pages, uploaded (on Ben's word)

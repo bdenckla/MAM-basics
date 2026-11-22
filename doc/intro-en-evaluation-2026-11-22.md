@@ -1,6 +1,7 @@
 # Evaluation of the English translation of the Introduction to MAM, 2026-11-22
 
 State: completed 2026-11-22; not yet acted on
+Updates and later status: [intro-en-evaluation-2026-11-22-update.md](intro-en-evaluation-2026-11-22-update.md).
 
 Written by Claude (Opus 5.5) on 2026-11-22, as Phase 2 of
 [PLAN-english-intro.md](PLAN-english-intro.md), whose section "Origin, and whose words are
