@@ -37,9 +37,9 @@ now links in parts, and Ben gave his word to plan and execute them in one sessio
 ledger entry 16). Stage 12, written that day, plans them, and its code and its dry run are
 done. On Ben's word of the same day the stage paused, and its four open choices went to Avi
 in an email that Ben sent the same day (decisions ledger entry 17). Avi answered that
-evening, and Ben relayed the answers with his word to act on them (entry 18): Avi reported
-the two labels that decision 1 questioned as corrected and chose 2a, 3a and 4b, the bot's
-block of title and navigation. A fresh session resumed Stage 12, found the fixes in place, and
+evening, and Ben relayed the answers with his word to act on them (entry 18): Avi corrected
+the two labels that decision 1 questioned and chose 2a, 3a and 4b, the bot's block of title
+and navigation. A fresh session resumed Stage 12, found his fixes on the live pages, and
 wrote Stage 13, which plans the block (execution ledger, “Stage 12 resumed”). On 2026-11-23
 Ben chose the three recommendations of the stage's decision page (decisions ledger entry 19),
 among them the 15 pages' creation with their blocks, in one saving run; another fresh session
@@ -48,8 +48,9 @@ blocks that day, as revisions 3104108 to 3104122 (execution ledger, “Stage 13,
 2026-11-23”). Genesis' second part is over MediaWiki's include-size limit, so its last 64
 verses do not show. On Ben's answer to the stage's decision 11 (decisions ledger entry 20),
 the reply to Avi tells him and asks how he wants the part handled; it also asks whether he
-wants blocks on the six parts made without one (entry 19's 9a). The reply waits on Ben to
-send it, and its two questions on Avi's answers.
+wants blocks on the six parts made without one (entry 19's 9a). Ben sent it that morning,
+and its two questions wait on Avi's answers. On Ben's answer to decision 12 (entry 21), the
+display mode's dry run now also fails a page that uses more than 90% of that limit.
 The execution ledger below records each finished stage.
 
 Written 2026-11-02 by Claude (Opus 5.5) in the Phase 1 session that the session "Commander for
@@ -254,6 +255,18 @@ approved by Ben's word in entry 3.
     for instance by dividing the part into two pages on his main page or by a lighter verse
     template, and the bot then makes what he chooses, by a stage that Ben approves; the page
     stays as it is meanwhile. Active.
+21. **Stage 13's decision 12, an include-size check in the dry run.** Ben, 2026-11-23, at
+    06:06 New York time, in the session of entry 20, exactly:
+
+    > I concur with your recommendation 12a: Yes, the bot's dry run should also check each page against Wikisource's include-size limit.
+
+    Decision 12 of the stage's decision page offered the earlier session's follow-up to the
+    finding behind entry 20: a check, in the display mode's dry run, of the parse's limit
+    report. Its recommendation, (a): the dry run also records each page's post-expand include
+    size in the run's outcomes and fails a page that uses more than 90% of the limit, in one
+    focused commit to `py/subcommands/ws_bot_miqra_mevoar_display.py`, checked by a dry run
+    of the 15 Torah pages, which saves nothing. Implemented (execution ledger, “Stage 13,
+    2026-11-23”).
 
 Deferred, each until its own decision:
 
@@ -1426,8 +1439,9 @@ byte-for-byte copy of that frozen plan; this ledger and the State line are the e
     Exodus' third part, uses 77.3% of the limit. The dry run's parse did not catch it, since
     it checks only for missing pages.
     Ben chose the decision page's recommendation for it, 11a (decisions ledger entry 20).
-    A check of the parse's limit report in the dry run, which would have caught it, is
-    offered to Ben as decision 12 of the decision page.
+    A check of the parse's limit report in the dry run, which would have caught it, was
+    offered to Ben as decision 12 of the decision page, and he chose 12a (decisions ledger
+    entry 21).
   - **Ben's answer to decision 11** reached a fresh Claude (Opus 5.5) session that the
     commander started with a brief saved as
     `C:/Users/BenDe/GitRepos/MAM-basics/.novc/commander-session/miqra-mevoar-stage-13-reply-brief-2026-11-23.md`,
@@ -1449,13 +1463,35 @@ byte-for-byte copy of that frozen plan; this ledger and the State line are the e
     wrong: the draft called the special templates' spans, Exodus 20:2 to 20:12 and
     Deuteronomy 5:6 to 5:17, the Ten Commandments, but in MAM's numbering Exodus 20:13, the
     commandment against coveting, is the last, and it has the ordinary verse template, as on
-    Avi's page of Yitro. Two were borne out by no kept read: every revision that made one of
-    the fixes is Dovi's, the main page's 3104053 among them, whose edit summary names
-    Exodus' section and whose parent, 3104052, was not read; and the kept revisions of
-    Avi's page of Tsav, whose petuḥah lines carry the notes, are Dovi's of 2020. The reply now
-    corrects the first and words the others neutrally, and this plan's State, its list of
-    Stage 12's pages, Stage 12's item 5 and two comments of `py/miqra_mevoar/display_page.py`
-    no longer say that Avi corrected the labels in revision 3104053.
+    Avi's page of Yitro, and the reply now says so. The check also took Dovi, who made every
+    revision of the fixes, the main page's 3104053 among them, and the kept revisions of
+    Avi's page of Tsav, for an editor other than Avi, and so called two attributions
+    unconfirmed: the reply's thanks became Avi's and Dovi's together, its "your note" became
+    "its note", and for one commit, `c4375b18`, this plan's State, its list of Stage 12's
+    pages, Stage 12's item 5 and two comments of `py/miqra_mevoar/display_page.py` did not
+    say that Avi corrected the labels. Dovi is Avi's username, as Ben wrote when he sent the
+    reply (below): those passages say so again, and Ben's one edit of the reply made its
+    thanks Avi's alone.
+  - **The reply, sent.** Ben, 2026-11-23, at 06:09 New York time, in this session, exactly:
+
+    > I sent the email with one edit. That one edit collapses "you and Dovi" to simply "you" because Dovi is Avi's username.
+
+    So the reply went to Avi as drafted but for its first sentence, which thanks Avi alone
+    for the fixes. Its two questions, on Genesis' second part and on the blocks of the six
+    parts made without one, wait on his answers.
+  - **The include-size check, on Ben's answer 12a** (decisions ledger entry 21). A subagent of
+    the session changed `py/subcommands/ws_bot_miqra_mevoar_display.py`, pushed as
+    `19065462`: the dry run's one parse of each page also asks for the parse's limit report,
+    records the page's post-expand include size, the bytes used and the limit, in its outcome
+    in `misc/outcomes.json`, and fails a page that uses more than 90% of the limit;
+    `py/main_ws_bot.py`'s help and `py/ws/pywikibot-setup.md` say so. Black and
+    `git diff --check` are clean, and the tests that import the mode or its entry point give
+    50 passed. Its dry run of the 15 Torah pages at 06:14 New York time, which saved nothing
+    (run `.novc/mam-ws-bot-miqra-mevoar-display-runs/20261123-061448-817840-0500/`), found all 15
+    unchanged and exited 1, naming Genesis' second part alone, at 2,097,152 of 2,097,152
+    bytes; each page's recorded include size equals the kept parse of its live page
+    (`stage13/include-check/`). Until the part is divided or its verse template lightened,
+    a dry run that includes `gen-2` exits non-zero for it.
 
 ## Background for a fresh executor
 
@@ -1463,6 +1499,9 @@ Read `C:/Users/BenDe/GitRepos2/MAM-basics/.novc/miqra-mevoar-2026-11-02/README.m
 describes the Phase 1 prototype, which this plan turns into tracked code. Paths below without a
 drive are relative to that folder.
 
+- **Avi edits as Dovi.** Dovi is Avi's username on Hebrew Wikisource, as Ben wrote on
+  2026-11-23 (execution ledger, “Stage 13, 2026-11-23”), so an edit that this plan
+  gives to Dovi is Avi's own.
 - **Pages on Wikisource.** A base chapter is titled `מקרא מבואר/פרקי בסיס/ספר <book>/<chapter>`,
   with the book named by `mb_cmn.mam_bknas.he_bk39_name` and the chapter as a Hebrew numeral from
   `mb_cmn.hebrew_verse_numerals`. Its first line is the chapter heading. Each verse is one line,
@@ -2142,7 +2181,7 @@ same section links, stay as they are: no page of this stage has one of their tit
 **The pages,** keyed as the bot mode names them, by the book's OSIS abbreviation in lower case
 and the part's number, with the names that the main page links, copied from that revision by
 script, and the ranges that each link's label gives, parsed by script, as revision 3104053
-gives them for `gen-1` and `exod-1`, whose labels were corrected by then (decision 1):
+gives them for `gen-1` and `exod-1`, whose labels Avi had corrected by then (decision 1):
 
 1. `gen-1`: `מקרא מבואר/תצוגה/ספר בראשית 1`, Genesis 1 to 11, as its label has given since revision 3104053 (decision 1).
 2. `gen-2`: `מקרא מבואר/תצוגה/ספר בראשית 2`, Genesis 12 to 36.
@@ -2205,9 +2244,8 @@ at `3bc9510e` and from the live pages, read anonymously at 09:18 New York time, 
    chapters 1 to 12, and its second, 12 to 36, both show chapter 12's 20 verses; and Exodus'
    first part, 1 to 11, and its second, 18 to 24, leave out chapters 12 to 17, 183 verses. Each
    second part begins where its book's weekly portions and its title begin a new subject.
-   Decision 1. Both first parts' labels were corrected on 2026-11-22, to chapters 1 to 11 and
-   1 to 17, as the main page's revision 3104053 gives them and as Avi's answer 1 reported
-   (decisions ledger entry 18).
+   Decision 1. Avi corrected both first parts' labels on 2026-11-22, to chapters 1 to 11 and
+   1 to 17, as the main page's revision 3104053 gives them (decisions ledger entry 18).
 
 **Choices.** Decisions 1 to 4 were Ben's, on the stage's decision page, until he passed them to
 Avi on 2026-11-22 (decisions ledger entry 17). Avi's answers, which Ben relayed that evening
