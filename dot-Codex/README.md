@@ -60,8 +60,9 @@ under `dot-claude/skills`, while Codex's `prune-Codex-state` is canonical here a
 `dot-Codex/skills/prune-claude-state/` because it addresses Codex draft plans.
 
 Invoke `$commander-session` in a Codex desktop chat to coordinate assigned work, or add
-`resume` or `succeed` to continue or replace a commander. Its shared entrypoint routes to the
-Codex procedure for GitRepos3/GitRepos4, subagent delegation and the available app chat tools.
+`resume` to restore saved coordination in the same chat or a fresh chat. The skill compares
+chat ids to choose same-commander recovery or a safe handover. Its shared entrypoint routes to
+the Codex procedure for GitRepos3/GitRepos4, subagent delegation and the available app chat tools.
 It does not assume Claude's session APIs, context readings or clear/restart commands. The
 canonical shared tree deploys to `~/.agents/skills/commander-session/`; no second Codex-specific
 copy is needed.

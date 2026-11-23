@@ -14,17 +14,23 @@ copy, `MAM-basics/dot-claude/skills/commander-session/`, shared through
 Read only the adapter for the runtime actually running this conversation:
 
 - **Claude desktop:** [references/claude-desktop.md](references/claude-desktop.md). Invoke with
-  `/commander-session`, optionally followed by `start`, `resume` or `succeed`. The invocation
+  `/commander-session`, optionally followed by `start` or `resume`. The invocation
   argument is "$ARGUMENTS"; the Claude adapter uses that expanded value.
 - **Codex desktop:** [references/codex-desktop.md](references/codex-desktop.md). Invoke with
-  `$commander-session`, optionally followed by `start`, `resume` or `succeed` in the prompt.
+  `$commander-session`, optionally followed by `start` or `resume` in the prompt.
 - **A cloud or tool-limited runtime:** installing this shared skill supplies no desktop APIs,
   clone forests or credentials. Use the available subagent tools for authorized bounded work;
   keep unavailable placement, chat management and restart operations explicit. Do not apply
   either desktop's tools or historical limits to a different runtime.
 
-`start` is the default. `resume` continues the same commander; `succeed` transfers coordination
-to a new commander. After compaction, reread the current-state note and the runtime adapter
+`start` is the default. `resume` restores saved coordination in the current chat or a fresh chat.
+The runtime adapter compares the verified current chat id with the commander id in the saved
+state: a matching id continues the same commander; a different id requires a safe handover.
+If either id is unavailable, recover state read-only until identity and writer ownership are
+verified; do not guess or assign conflicting work. Once identity and writer ownership are
+reconciled, record the current commander id and retained writer assignments in the current-state
+note. `succeed` remains a compatibility alias for `resume` in old prompts. After compaction,
+reread the current-state note and the runtime adapter
 before acting; do not repeat entry side effects merely because this skill was restored.
 
 ## The commander's role
