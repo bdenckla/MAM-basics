@@ -1,6 +1,7 @@
 # Open Siddur's use of MAM, 2026-11-23
 
 State: completed 2026-11-23
+Updates and later status: [opensiddur-use-of-mam-2026-11-23-update.md](opensiddur-use-of-mam-2026-11-23-update.md).
 
 Written by Claude (Opus 5.5) on 2026-11-23, from research done on 2026-11-22 and analyses done on
 2026-11-23. On 2026-11-22 Ben asked a Claude session to "research how (if at all) repos in the
