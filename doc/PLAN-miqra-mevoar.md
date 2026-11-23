@@ -1313,7 +1313,23 @@ byte-for-byte copy of that frozen plan; this ledger and the State line are the e
     18 headings and its 12 chapters (`resume/survey/joshua-1-block-check.txt`); 441 of the
     Torah's 443 headings begin with the same word (`resume/survey/first-words.txt`); and of the
     six parts made without a block, all but Judges' second still hold the bot's text alone
-    (`resume/scripts/compare_table_pages.py`).
+    (`resume/scripts/compare_table_pages.py`). Pushed as `a6632256`.
+  - **The dry run,** from that commit, at 20:55 New York time, after a check that no
+    `main_ws_bot.py` process was running and that no session of the commander's family was
+    doing bot work. Before it, the main page, read again at 20:54, was still at revision
+    3104053, with the same 15 links and labels (`resume/scripts/check_main_page.py`), and
+    `base-headings --check`, ending at 20:55, found every heading where the records have it,
+    with no revision changed. `miqra-mevoar-display --no-save` over the 15 pages gave 15
+    creates, each with Stage 12's counts and with no missing link or transcluded page, and
+    each equal byte for byte to the page of the dry run of 10:36 and to Stage 12's offline page
+    (run `.novc/mam-ws-bot-miqra-mevoar-display-runs/20261122-205552-105959-0500/`).
+  - **The decision page,** https://claude.ai/artifact/XYchLEVJdwMQh5FM3wDJHN, rebuilt by
+    `resume/decision-page/build_page.py`, reports the checks above and puts Stage 13's decisions
+    7 to 9 to Ben, each recommending (a); under 7b it puts to him one saving run of the 15
+    pages without blocks, with Stage 10's summary. Nothing is saved on Wikisource.
+  - **Stage 13's executor's prompt** is
+    `C:/Users/BenDe/AppData/Local/Claude-Data/claude_pzs8sxrjxfjjc/side-session-notes/local_a80ded65-f78e-4280-8493-9dab3b8c5686/miqra-mevoar-stage-13-prompt-2026-11-22.md`,
+    sent to the commander, to start once this ledger records Ben's answers to decisions 7 to 9.
 
 ## Background for a fresh executor
 
