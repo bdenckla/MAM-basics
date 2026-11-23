@@ -498,3 +498,61 @@ neither names the space.
 
 Item 6's "**Poetic line breaks.**", which counts the 4,269 ר4 of column C as dropped, stands as
 written. The message of commit `3d6c66b8`, which added the record, names neither behavior.
+
+## 2026-11-23: the pull request that fixes the festival portions
+
+Written by Claude (Opus 5.5) on 2026-11-23, in the session that took over the festival pull
+request from the session that prepared it. That session put the pull request's title, body and
+commit messages to Ben for approval, and asked whether to open a second pull request, to
+opensiddur-projects, with the regenerated humash. It recommended approving the texts as written
+and not opening the second pull request now. Ben, exactly:
+
+> I concur with both of your recommendations.
+
+**[opensiddur/opensiddur-processor#320](https://github.com/opensiddur/opensiddur-processor/pull/320),
+"Print each festival Torah reading's aliyot in the order read, and only their verses", opened on
+2026-11-23 at 13:09 New York time, fixes the humash importer so that each festival division
+prints only the verses read, in the order in which they are read.** It is how Open Siddur was
+told of the faults that the entries "2026-11-23: the bridging festival portions, explained" and
+"2026-11-23: the released books print the bridges" describe, in the form Ben asked for in the
+second of them; nothing else has been said to Open Siddur.
+
+1. **The branch,** `festival-readings` on Ben's fork, `bdenckla/opensiddur-processor`, holds two
+   commits on the processor's `main` at `474cb10`: the fix, `7917a2c`, and the changes that an
+   independent code review led to, `1bcbe38`. Together they change
+   `opensiddur/importer/humash/build.py` and `opensiddur/importer/humash/model.py`, add
+   `opensiddur/tests/importer/humash/test_festival_readings.py`, and add a bullet to the
+   `[Unreleased]` section of `CHANGELOG.md`.
+2. **The fix.** `festival_file` no longer sorts a day's aliyot by verse and transcludes one range
+   from the first verse to the last. It keeps hebcal's order, cuts the aliyot into runs that are
+   read without a break, segments each run by itself, and opens each later run with a citation
+   of its own, as the importer already did for a haftarah read from two passages. The repeat
+   instruction is decided over the whole reading, in reading order, and the five maftirs of
+   Shabbat Hol HaMoed Sukkot, which hebcal keys by the day on which that Shabbat falls, no
+   longer count as repeating one another.
+3. **The regeneration,** without validation, since jing does not run where the work was done.
+   At `474cb10`, with sourcetexts at its pin, `dacca4a`, the importer reproduced all 195 humash
+   files of opensiddur-projects' `c91943d`, the release's commit, byte for byte, which repeats,
+   independently, the regeneration that "2026-11-23: the released books print the bridges" took
+   from another session's report. With the fix, 13 files change: the six bridging divisions, the
+   six weekday Sukkot divisions and `reading_sukkot_shabbat_chol_hamoed`; the other 182 do not.
+   A separate script written for this survey, which compares each festival division's
+   transclusions with hebcal's aliyot verse by verse, finds none of the release's faults in the
+   branch's files. It still reports the day-keyed maftirs, because it counts any overlap as a
+   repeat.
+4. **The tests.** The humash's 154 tests pass, rerun at `1bcbe38` when this entry was written.
+   Against `main`'s code, the new test fails for exactly the 13 divisions and for 366 of its 493
+   synthetic arrangements. The whole suite, run on Windows without jing or the compiled schema,
+   fails the same 248 tests on `main` and on the branch. No check had run on GitHub when this
+   entry was written.
+5. **What the pull request leaves to Open Siddur:** whether a volume for one date should print
+   only the maftir for its own day, and the regenerated humash for opensiddur-projects, which
+   the pull request's body offers to submit. By Ben's answer at the head of this entry, Claude
+   opens that second pull request only if Open Siddur asks for it and Ben agrees.
+6. **Ben's two other open pull requests in that repository,**
+   [opensiddur/opensiddur-processor#316](https://github.com/opensiddur/opensiddur-processor/pull/316),
+   branch `mam-parsed-plus`, and
+   [opensiddur/opensiddur-processor#319](https://github.com/opensiddur/opensiddur-processor/pull/319),
+   branch `windows-tests`, each share only `CHANGELOG.md` with the festival pull request, and git
+   merge-tree reports no conflict with either one's head, `90e28d2` or `e01c63a`. The festival
+   pull request's body mentions neither.
