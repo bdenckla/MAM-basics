@@ -12,8 +12,8 @@ Daniel's two from its Stage 11. Their names are those that the main page,
 Daniel's two parts, of the Writings, and, for the Torah's parts, in revision 3103840,
 from its section of the Torah, each copied by script, as the comment on PAGES says. A
 part's first and last verses are those that its link's label gives, parsed by script,
-in revision 3104053 for the first parts of Genesis and of Exodus, whose labels Avi
-corrected there, as the comment on them says. Obadiah's name has no vav, as Avi's link
+in revision 3104053 for the first parts of Genesis and of Exodus, whose labels were
+corrected by then, as the comment on them says. Obadiah's name has no vav, as Avi's link
 and the Word file's title row have it, but its verses name the book as MAM does, with
 the vav.
 Avi moved Joshua's two parts after Stage 10 created them, and their category lines
@@ -586,8 +586,8 @@ PAGES = {
     for page in (
         # By decision 1a of Stage 12, the first parts of Genesis and of Exodus end
         # where their second parts begin, though the labels of revision 3103840
-        # ended them at chapters 12 and 11, so that every verse is on a page; Avi
-        # corrected the two labels to these ranges in revision 3104053.
+        # ended them at chapters 12 and 11, so that every verse is on a page; the
+        # two labels have given these ranges since revision 3104053.
         Page(
             "gen-1",
             "ספר בראשית 1",
