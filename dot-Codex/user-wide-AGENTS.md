@@ -100,6 +100,10 @@ that machine. The scan archive is at `$HOME/OneDrive/Documents/ScansOfBooks` by 
 `BOOK_SCANS_ROOT` overrides that location; other such inputs, such as the user's pywikibot
 configuration, are found through explicit account configuration.
 
+Reading an online-only OneDrive file makes OneDrive download it. A command that names its OneDrive
+inputs reads them on demand, so no step asks Ben to mark them "Always keep on this device"; a sweep
+over a whole OneDrive tree may still refuse online-only files, so as not to download the tree.
+
 **Each forest has one owning agent**, by Ben's decision of 2026-10-20, so that Claude and Codex
 need not coordinate checkouts with each other. Claude owns `$HOME/GitRepos`, `$HOME/GitRepos2`,
 `D:/GitRepos5` and `D:/GitRepos6`. Codex owns `$HOME/GitRepos3` and, when it needs another
