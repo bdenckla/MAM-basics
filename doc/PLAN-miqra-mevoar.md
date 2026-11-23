@@ -43,9 +43,11 @@ and navigation. A fresh session resumed Stage 12, found his fixes on the live pa
 wrote Stage 13, which plans the block (execution ledger, “Stage 12 resumed”). On 2026-11-23
 Ben chose the three recommendations of the stage's decision page (decisions ledger entry 19),
 among them the 15 pages' creation with their blocks, in one saving run; another fresh session
-took his answers and executes Stage 13, whose code and dry run are done (execution ledger,
-“Stage 13, 2026-11-23”); its saving run waits on his word, which decision 10 of the
-stage's decision page asks.
+took his answers and executes Stage 13: on his word the bot created the 15 pages with their
+blocks that day, as revisions 3104108 to 3104122 (execution ledger, “Stage 13,
+2026-11-23”). Genesis' second part is over MediaWiki's include-size limit, so its last 64
+verses do not show; that waits on Ben, as decision 11 of the stage's decision page, and so
+does the reply to Avi.
 The execution ledger below records each finished stage.
 
 Written 2026-11-02 by Claude (Opus 5.5) in the Phase 1 session that the session "Commander for
@@ -1395,6 +1397,19 @@ byte-for-byte copy of that frozen plan; this ledger and the State line are the e
     run to Ben as decision 10: the 15 pages, created with their blocks in one run with Stage
     10's summary, after a fresh check of the preconditions and a fresh dry run. Nothing is
     saved on Wikisource.
+  - **The save,** on Ben's word for decision 10, at 05:10 New York time: "yes, proceed to create the 15 pages in one saving run now". After a
+    fresh check of the preconditions and a fresh dry run at 05:12 that gave the same pages,
+    BDencklaBot created the 15 pages from 05:15 to 05:18 as revisions 3104108 to 3104122,
+    386,857 bytes in all, with Stage 10's summary, copied from the plan by script (run
+    `.novc/mam-ws-bot-miqra-mevoar-display-runs/20261123-051542-873501-0500/`). A read after
+    the run, without the bot's login, and a `--no-save` rerun that found all 15 unchanged
+    bear it out; `py/ws/ws_bot_edit_history.md` records it.
+  - **A finding of the read after the run.** Genesis' second part is over MediaWiki's limit
+    on the post-expand include size, as Stage 12's page without its block already was: the
+    live page omits its last 69 templates, so Genesis 35:9 to 36:43, 64 verses, show as links
+    to the verse template (`stage13/include-size/`). The other 14 pages use at most 77% of
+    the limit. The dry run's parse did not catch it, since it checks only for missing pages.
+    It waits on Ben, as decision 11 of the decision page.
 
 ## Background for a fresh executor
 

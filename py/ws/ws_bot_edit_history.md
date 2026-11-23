@@ -1577,7 +1577,7 @@ infrastructure has changed enough to make them misleading examples:
   precondition's run `.novc/mam-ws-bot-miqra-mevoar-runs/20261116-172530-530303-0500/`; the
   read after the run in `.novc/miqra-mevoar-stage-11-2026-11-16/read-after-save-daniel/`.
 
-### Miqra Mevoar's display pages: Judges' three parts, 2026-11-16 — current
+### Miqra Mevoar's display pages: Judges' three parts, 2026-11-16
 
 - **Purpose:** Create the display pages of Judges' three parts, 1:1 to 2:5, 2:6 to 16:31 and
   chapters 17 to 21, which the main page of Miqra Mevoar links from its section of the
@@ -1618,6 +1618,60 @@ infrastructure has changed enough to make them misleading examples:
   `.novc/mam-ws-bot-miqra-mevoar-display-runs/20261116-172733-004691-0500/`; the
   precondition's run `.novc/mam-ws-bot-miqra-mevoar-runs/20261116-172722-680784-0500/`; the
   read after the run in `.novc/miqra-mevoar-stage-11-2026-11-16/read-after-save-judges/`.
+
+### Miqra Mevoar's display pages: the Torah's 15 parts, 2026-11-23 — current
+
+- **Purpose:** Create the display pages of the five books of the Torah, three parts to a book,
+  which the main page of Miqra Mevoar links from its section of the Torah (revision 3104053),
+  in the form of the display pages above, each beginning with a block of title and navigation
+  in the very same style as the block that Dovi added to Joshua's first part in revision
+  3103803: the part's name, its topics, each transcluding its heading from its base chapter,
+  and its chapters, each linked to its first verse on the page. The display mode's table took
+  the pages in Stage 12 of `doc/PLAN-miqra-mevoar.md` (`f910d8b3` and `a65a91d1`), and their
+  blocks in its Stage 13 (`6986c023`). The places of their headings come from
+  `in/miqra-mevoar-base-headings/`, the records of the headings in the Torah's 187 base
+  chapters.
+- **Authorization:** Ben, 2026-11-23, in the Stage 13 session, answering decision 10 of its
+  decision page, https://claude.ai/artifact/XYchLEVJdwMQh5FM3wDJHN: "yes, proceed to create the 15 pages in one saving run now". Recommendation
+  10a was to save the 15 pages in one run with Stage 10's summary, after a fresh check of the
+  preconditions and a fresh dry run that gives the same pages.
+- **Mode:** `main_ws_bot.py miqra-mevoar-display`, as in Stage 10, with `--page` for each of
+  `gen-1` to `deut-3`.
+- **Saving run:** fifteen pages created, from 05:15 to 05:18 New York time, 386,857 bytes in
+  all, with the summary of the entries above: Genesis' three parts as revisions 3104108 to
+  3104110, Exodus' as 3104111 to 3104113, Leviticus' as 3104114 to 3104116, Numbers' as
+  3104117 to 3104119, and Deuteronomy's as 3104120 to 3104122. The summary was copied from the
+  plan by script and given to the run without passing through a shell.
+- **Safety rule:** before the dry run, `py/main_miqra_mevoar.py base-headings --check` found
+  every heading of the Torah's 187 base chapters where the records have it, with no revision
+  changed; the main page was still at revision 3104053, whose 15 links and labels give the
+  pages' titles and their blocks' names; and Joshua's first part, the blocks' model, was still
+  at revision 3103803. No `main_ws_bot.py` process was running on the machine, and no other
+  session of the commander's family was doing bot work, before either bot run. The
+  `--no-save` dry run gave fifteen creates, with no missing link or transcluded page, and its
+  pages equal byte for byte those that the decision page put to Ben
+  (`.novc/mam-ws-bot-miqra-mevoar-display-runs/20261123-050616-088631-0500/`). The saving run's pages equal the dry run's, and it
+  read each new revision back through the API, uncached, and its bytes equalled the generated
+  text. A read after the run, without the bot's login, found each page with one revision,
+  BDencklaBot's, not minor, with the approved summary and with the SHA-1 and size of the
+  generated page, and each creation and its entry in the category with the bot flag in the
+  recent changes.
+- **Finding:** Genesis' second part, chapters 12 to 36, is over MediaWiki's limit of
+  2,097,152 bytes on the post-expand include size, as its page without the block already
+  was, so MediaWiki omits the page's last 69 templates: Genesis 35:9 to 36:43, 64 verses,
+  show as links to the verse template, and the page is in the category of pages over the
+  limit. The other 14 pages use at most 77% of the limit. Put to Ben as decision 11 of the
+  decision page.
+- **One-shot:** no. Confirmed 2026-11-23, immediately after the run: a `--no-save` rerun found
+  all fifteen pages unchanged, with no missing link or transcluded page, and exited zero
+  (`.novc/mam-ws-bot-miqra-mevoar-display-runs/20261123-051917-041542-0500/`).
+- **Edit level:** Whole page text, generated; page-targeted by key.
+- **Input:** `MAM-simple/json-vtrad-mam/` and `in/miqra-mevoar-base-headings/`; run artifacts
+  `.novc/mam-ws-bot-miqra-mevoar-display-runs/20261123-051542-873501-0500/`; dry run
+  `.novc/mam-ws-bot-miqra-mevoar-display-runs/20261123-051215-978688-0500/`; the precondition's log
+  `.novc/miqra-mevoar-torah-2026-11-22/stage13/logs/base-headings-check-2.txt`; the read after the run in
+  `.novc/miqra-mevoar-torah-2026-11-22/stage13/read-after-save-torah-2/`; the measurement of the include size in
+  `.novc/miqra-mevoar-torah-2026-11-22/stage13/include-size/`.
 
 ## How to look up the original code
 
