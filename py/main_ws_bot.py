@@ -246,8 +246,9 @@ def build_parser() -> argparse.ArgumentParser:
         "--no-save",
         action="store_true",
         help=(
-            "Save nothing; fail if any page would be created or if a generated page"
-            " shows a missing page"
+            "Save nothing; fail if any page would be created, or if a generated page"
+            " shows a missing page or uses more than 90%% of the limit on the"
+            " post-expand include size"
         ),
     )
     miqra_mevoar_display_parser.add_argument(

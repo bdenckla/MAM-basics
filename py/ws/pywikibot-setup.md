@@ -238,12 +238,15 @@ is unchanged, and a page that exists with another text is refused: nothing is sa
 the run exits non-zero, listing the editors of its revisions. `--no-save` also renders each
 generated page through the API's `parse` action, which saves nothing, and exits non-zero if a
 link or a transcluded page on it is missing, as a misspelled book name or a missing base chapter
-would make one; before the save it is expected to exit non-zero, listing each page that a save
-would create. A saving run reads each saved revision back through the API, uncached, and exits
-non-zero unless its bytes equal the generated text's. Each run writes the generated pages to
+would make one, or if the page uses more than 90% of MediaWiki's limit on the post-expand include
+size, past which the page's last templates are not expanded; before the save it is expected to
+exit non-zero, listing each page that a save would create. A saving run reads each saved revision
+back through the API, uncached, and exits non-zero unless its bytes equal the generated text's.
+Each run writes the generated pages to
 `.novc/mam-ws-bot-miqra-mevoar-display-runs/<timestamp>/pages/`, each page's outcome and counts
 to `misc/outcomes.json` there, and the saved pages' revision ids and diff links to
-`misc/saved-pages.json`.
+`misc/saved-pages.json`. A `--no-save` run adds to each page's outcome its missing pages and its
+include size: the bytes used and the limit.
 
 ## Real-run artifact layout
 

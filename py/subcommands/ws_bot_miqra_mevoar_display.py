@@ -20,12 +20,15 @@ Every run writes each generated page to its pages/ directory and each page's out
 with its counts of verse lines, breaks and headings, to misc/outcomes.json. `--no-save`
 also renders each generated page through the API's parse action, which saves nothing,
 and requires that no link or transcluded page on it be missing, as a misspelled book
-name or a missing base chapter would make one. It saves nothing and, like the other
-modes' dry runs, exits non-zero if any page would be created. A saving run reads each
-saved revision back through the API, uncached, requires its bytes to equal the generated
-text's, records each page's new revision id and its diff link in misc/saved-pages.json,
-and exits non-zero on any mismatch. No MAM page changes, so there is no post-run
-download. Each run's artifacts go to a fresh directory under
+name or a missing base chapter would make one, and that the page use no more than 90%
+of MediaWiki's limit on the post-expand include size, past which the page's last
+templates are left unexpanded. It records in each page's outcome the page's missing
+pages and its include size: the bytes used and the limit. It saves nothing and, like
+the other modes' dry runs, exits non-zero if any page would be created. A saving run
+reads each saved revision back through the API, uncached, requires its bytes to equal
+the generated text's, records each page's new revision id and its diff link in
+misc/saved-pages.json, and exits non-zero on any mismatch. No MAM page changes, so
+there is no post-run download. Each run's artifacts go to a fresh directory under
 .novc/mam-ws-bot-miqra-mevoar-display-runs/.
 """
 
@@ -71,11 +74,14 @@ def run(keys, pywikibot_args, summary=None, no_save=False):
                 "revisions": revisions,
                 "counts": _counts(verses),
                 "missing-pages": None,
+                "include-size": None,
             }
             outcomes.append(entry)
             print(f"{outcome:<9} {title}")
             if no_save:
-                entry["missing-pages"] = _missing_pages(site, title, texts[title])
+                entry["missing-pages"], entry["include-size"] = _parse_checks(
+                    site, title, texts[title]
+                )
                 continue
             if outcome != "create":
                 continue
@@ -148,14 +154,19 @@ def _counts(verses):
     }
 
 
-def _missing_pages(site, title, text):
-    """The links and transcluded pages of text, rendered as title, that do not exist."""
+def _parse_checks(site, title, text):
+    """Render text as title, saving nothing; give its missing pages and include size.
+
+    The missing pages are the links and transcluded pages that do not exist. The include
+    size is the post-expand include size that the parse's limit report gives: the bytes
+    used and MediaWiki's limit on them.
+    """
     parsed = site.simple_request(
         action="parse",
         title=title,
         text=text,
         contentmodel="wikitext",
-        prop="links|templates",
+        prop="links|templates|limitreportdata",
         formatversion=2,
     ).submit()["parse"]
     missing = []
@@ -165,7 +176,23 @@ def _missing_pages(site, title, text):
                 raise ValueError(f"The parse of {title} gives an unknown {prop} item")
             if not item["exists"]:
                 missing.append(item["title"])
-    return sorted(set(missing))
+    return sorted(set(missing)), _include_size(title, parsed["limitreportdata"])
+
+
+def _include_size(title, limit_report):
+    """The post-expand include size in the parse's limit report: bytes used and limit."""
+    items = [item for item in limit_report if item["name"] == _INCLUDE_SIZE_ITEM]
+    if len(items) != 1:
+        raise ValueError(
+            f"The parse of {title} gives {len(items)} {_INCLUDE_SIZE_ITEM} items"
+        )
+    used, limit = items[0].get("0"), items[0].get("1")
+    # The type, not isinstance, since a bool is an int to isinstance.
+    if type(used) is not int or type(limit) is not int:
+        raise ValueError(
+            f"The parse of {title} gives an unknown {_INCLUDE_SIZE_ITEM} item"
+        )
+    return {"used": used, "limit": limit}
 
 
 def _save(page, title, text, summary):
@@ -247,6 +274,13 @@ def _exit_if_any(outcomes, failures, no_save):
         if entry["missing-pages"]:
             lines.append(f"- missing pages on {entry['title']}:")
             lines.extend(f"    {missing}" for missing in entry["missing-pages"])
+        size = entry["include-size"]
+        if size and 100 * size["used"] > _INCLUDE_SIZE_MAX_PERCENT * size["limit"]:
+            lines.append(
+                f"- more than {_INCLUDE_SIZE_MAX_PERCENT}% of the limit on the"
+                f" post-expand include size, {size['used']} of {size['limit']} bytes:"
+                f" {entry['title']}"
+            )
     if no_save:
         lines.extend(
             f"- would create: {entry['title']}"
@@ -271,6 +305,13 @@ def _write_text(text, outfp):
 
 _RUNS_ROOT = ".novc/mam-ws-bot-miqra-mevoar-display-runs"
 _STAMP = "%Y%m%d-%H%M%S-%f%z"
+_INCLUDE_SIZE_ITEM = "limitreport-postexpandincludesize"
+# By Ben's decision 12a of 2026-11-23, decisions ledger entry 21 of
+# doc/PLAN-miqra-mevoar.md, a dry run fails a page that uses more than this percentage
+# of its limit on the post-expand include size. Past the limit, MediaWiki leaves the
+# page's last templates unexpanded, and the limit report gives the limit itself as
+# the bytes used.
+_INCLUDE_SIZE_MAX_PERCENT = 90
 _API_PHP = "https://he.wikisource.org/w/api.php"
 # The waits before each further read of a saved revision; None ends the reads.
 _REREAD_WAITS_S = (5.0, 10.0, 20.0, None)
