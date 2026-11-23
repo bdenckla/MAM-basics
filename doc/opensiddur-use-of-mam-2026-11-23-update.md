@@ -357,6 +357,56 @@ divisions and the 55 haftarah divisions alike.
 
 ### What this entry could not cover
 
-Whether the released books print the gaps, and how, is read from the release's TEI and the
-exporter's rules: no book was built, and opening a release file is a download that waits on
-Ben's approval. Nothing has been said to Open Siddur.
+No book was built. Whether the released books print the gaps was read here from the
+release's TEI and the exporter's rules; the books were checked later the same day, with Ben's
+approval, and the next entry gives the result. Nothing had been said to Open Siddur when this
+entry was written.
+
+## 2026-11-23: the released books print the bridges
+
+Written by Claude (Opus 5.5) on 2026-11-23, in the session that wrote the entry above. Ben,
+answering the two questions that entry left open, exactly:
+
+> I concur with your recommendation for decision 1: please download the two released Humash files and use them to check whether they print the gaps.
+
+and, on whether Open Siddur should be told:
+
+> in spirit I choose "You [Ben] tell them" but I would like you (Claude) to do the telling and the form I choose, unless you object, is a pull request. Isn't this fixable in code? In fact I'm hoping the download of the two Humash files is just to verify that indeed these are code-generated and not hand-fixed to eliminate these problems.
+
+**Both released books print all six bridges, where the TEI puts them, and nothing in them looks
+hand-edited: the faults are the code's, all the way to the books.** A separate session is
+preparing the pull request that fixes the importer; it puts the pull request's text to Ben before
+opening it, and its outcome belongs in a later entry here.
+
+1. **The files,** from opensiddur-projects' release `v20261108`, downloaded on 2026-11-23 with
+   Ben's approval and kept untracked:
+   `chumash-opensiddur-he-annual-v20261108.pdf`, 9,439,943 bytes, SHA-256
+   `AB1CBC29101BAA28488F79D64FB9FC43F4BAD583A924A7CA8D4C9778FBB26D10`; and
+   `chumash-opensiddur-he-annual-v20261108.html`, 17,925,002 bytes, SHA-256
+   `4092B707402F94CE9F8B2013725186814B68737B50E155E678204938843F6E3C`.
+2. **The electronic book.** A sub-agent's script compared each checked division of the HTML file
+   with the release's TEI, item by item. All six gaps print where the TEI puts them, each Hebrew
+   verse faced by JPS's English. The Sukkot weekday divisions print their aliyot in the order 1,
+   4, 2, 3 (1, 2, 4, 3 on Hoshana Raba), with the repeat instruction where the TEI has it, and the
+   Shabbat of the intermediate days prints its five maftirs in a row. The two controls, the fifth
+   day of Hanukkah and the first day of Hol HaMoed Pesah, print only their own verses. Each
+   Hebrew verse checked in Exodus and Numbers, 3,047 in all, matches MAM's TEI letter for letter,
+   marks included. Checked again by a script of this session's own: the section of the sixth day
+   of Hanukkah holds 1,404 verse markers, its 702 verses in two columns (6, then the gap's 681,
+   then 15), with chapter markers 8 to 28; that of the fourth day of Hol HaMoed Pesah, 638
+   verses (14, 617 and 7); that of the fast-day morning, 58 (4, 44 and 10); and that of the fifth
+   day of Hanukkah, 12.
+3. **The PDF.** The sub-agent's reader of the PDF's text found the same six gaps in the same
+   places, and the same Sukkot faults; in these divisions the PDF differs from the HTML file only
+   in setting the repeat instruction on its label's line. The sixth day of Hanukkah's gap runs
+   from printed page 1069 to page 1151 (pages 1071 to 1153 of the file). This session read page
+   1151 by eye: under the running heads of the festival readings and of the sixth day of
+   Hanukkah, it ends Numbers 27 with verses 22 and 23, and only then sets the first aliyah's label
+   and Numbers 28:1.
+4. **No sign of a hand edit.** Nothing in the checked divisions differs from the TEI. The PDF's
+   metadata gives one time for its creation and its last change, 2026-11-08 23:12:07 UTC, from
+   LuaHBTeX, and the file has one cross-reference section, which suggests that nothing was added
+   to it after it was written; the release was published at 23:36:49 UTC that day. The TEI is
+   itself code-generated: the session that prepared the processor's pull request to read
+   MAM-parsed/plus reported that its regeneration of the humash reproduced all 195 files of the
+   release's commit, `c91943d`, byte for byte. This session did not repeat that regeneration.
