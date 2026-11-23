@@ -23,10 +23,14 @@ Subcommands:
                 it links every chapter that MAM-simple has, saving only over the
                 reviewed revision that --base-revid names.
     miqra-mevoar-display
-                Create Miqra Mevoar's display pages via pywikibot, each a book or a
-                part of one, from MAM-simple and the tracked JSON, or for the Torah
-                the places of the headings in its base chapters, selecting them by
-                --page; it never edits a page that exists.
+                Create or update Miqra Mevoar's display pages via pywikibot, each a
+                book or a part of one, from MAM-simple and the tracked JSON, or for
+                the Torah the places of the headings in its base chapters, selecting
+                them by --page. It updates a page that exists only where the page
+                differs from the generated text in no more than its block of title
+                and navigation and its category line, and it adds a block to Avi's
+                pages for the Five Megillot, which it did not make, only where
+                --page names them.
 
 Examples:
     .venv/Scripts/python.exe py/main_ws_bot.py proto --edits path.json
@@ -231,24 +235,25 @@ def build_parser() -> argparse.ArgumentParser:
 
     miqra_mevoar_display_parser = subparsers.add_parser(
         "miqra-mevoar-display",
-        help="Create Miqra Mevoar's display pages via pywikibot.",
+        help="Create or update Miqra Mevoar's display pages via pywikibot.",
     )
     miqra_mevoar_display_parser.add_argument(
         "--page",
         action="append",
         metavar="KEY",
         help=(
-            "A display page by its key, such as hoshea or yehoshua-1; may be"
-            " repeated; every page when none is given"
+            "A display page by its key, such as hoshea, yehoshua-1 or, for a page"
+            " that only takes a block, esther; may be repeated; every page of the"
+            " generator's table PAGES when none is given"
         ),
     )
     miqra_mevoar_display_parser.add_argument(
         "--no-save",
         action="store_true",
         help=(
-            "Save nothing; fail if any page would be created, or if a generated page"
-            " shows a missing page or uses more than 90%% of the limit on the"
-            " post-expand include size"
+            "Save nothing; fail if any page would be created or updated, or if a"
+            " generated page shows a missing page or uses more than 90%% of the"
+            " limit on the post-expand include size"
         ),
     )
     miqra_mevoar_display_parser.add_argument(

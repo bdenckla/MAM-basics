@@ -216,37 +216,48 @@ bytes equal the generated text's. The saved revision's ids and diff link go to
 
 ## Miqra Mevoar's display pages
 
-`main_ws_bot.py miqra-mevoar-display` creates Miqra Mevoar's display pages, each of which sets
-the verses of a book, or of a part of one, in MAM's text beside Rabbi Kokhav's paraphrase, in
-the form of Avi's pages for the five megillot. `py/miqra_mevoar/display_page.py` generates them
-from MAM-simple and the tracked JSON in `in/miqra-mevoar/` or, for the Torah, the places of the
-headings in its base chapters, which `py/main_miqra_mevoar.py base-headings` records in
-`in/miqra-mevoar-base-headings/`: a line for each verse, a break line before a verse that follows
+`main_ws_bot.py miqra-mevoar-display` creates and updates Miqra Mevoar's display pages, each of
+which sets the verses of a book, or of a part of one, in MAM's text beside Rabbi Kokhav's
+paraphrase, in the form of Avi's pages for the five megillot. `py/miqra_mevoar/display_page.py`
+generates the pages of its table `PAGES` from MAM-simple and the tracked JSON in
+`in/miqra-mevoar/` or, for the Torah, the places of the headings in its base chapters, which
+`py/main_miqra_mevoar.py base-headings` records in `in/miqra-mevoar-base-headings/`: a block of
+title and navigation at the top, a line for each verse, a break line before a verse that follows
 a petuha or a setuma or that has a heading, which is transcluded from its base chapter, and the
 category line. The Decalogue's verses call the templates of Avi's pages of Yitro and Va'etchanan
-instead of the verse template. `--page` names a page by its key, such as `hoshea` or
-`yehoshua-1`, and may be given more than once; without it the run takes every page of the
-generator's table. A saving run needs `--summary`, the edit summary, which Ben approves with the
-run:
+instead of the verse template. Its second table, `BLOCK_ONLY_PAGES`, lists Avi's pages for the
+Five Megillot, which the bot did not make: the run generates such a page from its live text,
+adding its block at the top and changing no other line. `--page` names a page of either table by
+its key, such as `hoshea`, `yehoshua-1` or `esther`, and may be given more than once; without it
+the run takes every page of `PAGES`. A saving run needs `--summary`, the edit summary, which Ben
+approves with the run:
 
        .venv/Scripts/python.exe py/main_ws_bot.py miqra-mevoar-display --no-save -dir:$env:USERPROFILE/.pywikibot
 
        .venv/Scripts/python.exe py/main_ws_bot.py miqra-mevoar-display --summary "<summary>" -dir:$env:USERPROFILE/.pywikibot
 
-The mode only creates pages, with `createonly`. A page whose live text equals the generated text
-is unchanged, and a page that exists with another text is refused: nothing is saved for it, and
-the run exits non-zero, listing the editors of its revisions. `--no-save` also renders each
-generated page through the API's `parse` action, which saves nothing, and exits non-zero if a
-link or a transcluded page on it is missing, as a misspelled book name or a missing base chapter
-would make one, or if the page uses more than 90% of MediaWiki's limit on the post-expand include
-size, past which the page's last templates are not expanded; before the save it is expected to
-exit non-zero, listing each page that a save would create. A saving run reads each saved revision
-back through the API, uncached, and exits non-zero unless its bytes equal the generated text's.
-Each run writes the generated pages to
-`.novc/mam-ws-bot-miqra-mevoar-display-runs/<timestamp>/pages/`, each page's outcome and counts
-to `misc/outcomes.json` there, and the saved pages' revision ids and diff links to
-`misc/saved-pages.json`. A `--no-save` run adds to each page's outcome its missing pages and its
-include size: the bytes used and the limit.
+A page that does not exist is created, with `createonly`; a page of `BLOCK_ONLY_PAGES` that does
+not exist is refused instead. A page whose live text equals the generated text is unchanged. A
+page whose live text differs from the generated text only in a block at the top of either and in
+their category lines, the update rule of Stage 14 of `doc/PLAN-miqra-mevoar.md`, is updated:
+saved with `nocreate`, with the revision whose text was compared as `baserevid` and its time as
+`basetimestamp`, so that an edit made since makes MediaWiki detect a conflict. Any other page that
+exists is refused, as is a page of `BLOCK_ONLY_PAGES` to which no block can be added, since its
+live text does not read, its verse lines name another book, it begins with a block other than
+its own, or it has no heading, whose block waits on decision 14 of the plan: nothing is saved for
+it, and the run exits non-zero, giving the reason and listing the editors of the page's
+revisions. `--no-save` also renders each generated page through the API's `parse` action, which
+saves nothing, and exits non-zero if a link or a transcluded page on it is missing, as a
+misspelled book name or a missing base chapter would make one, or if the page uses more than 90%
+of MediaWiki's limit on the post-expand include size, past which the page's last templates are
+not expanded; before the save it is expected to exit non-zero, listing each page that a save
+would create or update. A saving run reads each saved revision back through the API, uncached,
+and exits non-zero unless its bytes equal the generated text's. Each run writes the live text of
+each selected page that exists to `.novc/mam-ws-bot-miqra-mevoar-display-runs/<timestamp>/live/`,
+the generated pages to `pages/` there, each page's outcome, with the reason for a refusal, the
+revision whose text was compared and the page's counts, to `misc/outcomes.json`, and the saved
+pages' revision ids and diff links to `misc/saved-pages.json`. A `--no-save` run adds to each
+page's outcome its missing pages and its include size: the bytes used and the limit.
 
 ## Real-run artifact layout
 

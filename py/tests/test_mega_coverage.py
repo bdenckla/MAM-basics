@@ -487,7 +487,8 @@ NOT_IN_MEGA: dict[str, str] = {
     ),
     "py/main_ws_bot.py miqra-mevoar-display": (
         "Claude-written on 2026-11-04, in Stage 10 of doc/PLAN-miqra-mevoar.md, which"
-        " Ben gave his word to execute: it creates Miqra Mevoar's display pages on live"
+        " Ben gave his word to execute: it creates Miqra Mevoar's display pages, and"
+        " since Stage 14 adds or replaces their blocks of title and navigation, on live"
         " Hebrew Wikisource under Ben's bot account, so every run is a deliberate act,"
         " each saving run on Ben's word.  Recorded in py/ws/pywikibot-setup.md and"
         " doc/PLAN-miqra-mevoar.md."

@@ -32,21 +32,25 @@ reading:
 - Its category line sorts it under its own name, or under the sort key that
   display_page.PAGES gives it, as it gives Joshua's two parts the names under which
   Stage 10 created them.
-- The pages of a book, such as Joshua's two parts, Judges' three, Daniel's two and each
-  book of the Torah's three, together show its verses once each, in order, across a
-  boundary inside a chapter, as between Judges 2:5 and 2:6, as well as between
-  chapters.
-- Each page of a book of the Torah, and no other page, begins with a block of title and
-  navigation: its line, a horizontal rule and two blank lines. The links of the block's
-  line, found by this test's own reading of it, are its topics and then its chapters.
-  Its topics are the verses to which the oracle of the headings gives a heading, in
-  order, each anchored by its chapter's and its verse's numerals and labelled by the
-  transclusion of its heading's section from its base chapter; its chapters are those
-  of the oracle's verses on the page, each anchored at its first verse there and
-  labelled by its numeral. read_page gives back the block's name, which must be the
-  block_name that display_page.PAGES gives the page. Each block_name holds a Hebrew
-  point, is in NFC, the form MediaWiki stores, and has no range in parentheses at its
-  end.
+- The pages of a book, such as Joshua's two parts, Judges' three, Daniel's two,
+  Genesis' four and each other book of the Torah's three, together show its verses once
+  each, in order, across a boundary inside a chapter, as between Judges 2:5 and 2:6 or
+  Genesis 25:18 and 25:19, as well as between chapters.
+- Every page begins with a block of title and navigation: its line, a horizontal rule
+  and two blank lines. The links of the block's line, found by this test's own reading
+  of it, are its topics and then its chapters. Its topics are the verses to which the
+  oracle of the headings gives a heading, in order, each anchored by its chapter's and
+  its verse's numerals and labelled by the transclusion of its heading's section from
+  its base chapter; its chapters are those of the oracle's verses on the page, each
+  anchored at its first verse there and labelled by its numeral. read_page gives back
+  the block's name, which must be the block_name that display_page.PAGES gives the
+  page.
+- The block_name of every entry of display_page.PAGES and of
+  display_page.BLOCK_ONLY_PAGES holds a Hebrew point, is in NFC, the form MediaWiki
+  stores, and has no range in parentheses at its end, and the two tables' keys do not
+  meet. The pages of BLOCK_ONLY_PAGES, Avi's pages for the Five Megillot, which the bot
+  did not make, have no oracle here: the dry run's reads of their live pages are their
+  check.
 
 The oracle finds each book in MAM-simple by its OSIS abbreviation in
 py/mb_misc/osis_book_abbrevs.py, not by the converter's tables of books. A missing input
@@ -90,27 +94,30 @@ def test_a_page_shows_mam_simple_and_the_tracked_headings(key):
     expected = _expected_verses(page)
     assert verses == expected
     assert block_name == page.block_name
-    osis_id, _verses = _mam_simple_verses(_book(page.stem).mam_book)
-    assert (block_name is not None) == (osis_id in _TORAH), osis_id
-    if block_name is not None:
-        lines = text.split("\n")
-        assert lines[1:4] == [_RULE, "", ""]
-        assert _BLOCK_LINK.findall(lines[0]) == _expected_block_links(expected)
+    assert block_name is not None, key
+    lines = text.split("\n")
+    assert lines[1:4] == [_RULE, "", ""]
+    assert _BLOCK_LINK.findall(lines[0]) == _expected_block_links(expected)
 
 
 def test_each_block_name_is_pointed_nfc_and_without_a_range():
-    names = {
-        key: page.block_name
-        for key, page in display_page.PAGES.items()
-        if page.block_name is not None
-    }
-    assert names, "display_page.PAGES gives no page a block_name"
-    for key, name in names.items():
+    entries = [
+        (key, page.block_name)
+        for table in (display_page.PAGES, display_page.BLOCK_ONLY_PAGES)
+        for key, page in table.items()
+    ]
+    assert display_page.BLOCK_ONLY_PAGES, "display_page.BLOCK_ONLY_PAGES lists no page"
+    for key, name in entries:
+        assert name is not None, key
         assert any(
             unicodedata.name(char, "").startswith("HEBREW POINT") for char in name
         ), key
         assert unicodedata.is_normalized("NFC", name), key
         assert _RANGE_AT_END.search(name) is None, key
+
+
+def test_the_tables_keys_do_not_meet():
+    assert set(display_page.PAGES).isdisjoint(display_page.BLOCK_ONLY_PAGES)
 
 
 def test_the_pages_of_a_book_show_it_once():
@@ -354,8 +361,6 @@ _SAMPE_LETTERS = {
     "samekh2": "\N{HEBREW LETTER SAMEKH}",
     "samekh3": "\N{HEBREW LETTER SAMEKH}",
 }
-# The books of the Torah, by their OSIS abbreviations, whose pages have a block.
-_TORAH = frozenset({"Gen", "Exod", "Lev", "Num", "Deut"})
 # A block's horizontal rule, as on Joshua's first part, the block's model.
 _RULE = "-----"
 # The parser function by which a page transcludes a section of another page, the

@@ -4,26 +4,36 @@ A display page, titled DISPLAY_PREFIX and its name, sets each of its verses in M
 text beside Rabbi Kokhav's paraphrase from the verse's base chapter, in the form of
 Avi's pages for the five megillot. PAGES lists the books and the parts of books, as Avi
 divided them, whose base chapters exist: the Torah's five books, three parts each, from
-Stage 12 of doc/PLAN-miqra-mevoar.md; Joshua's two parts and five books of the Twelve
-from its Stage 10; Micah, Nahum, Habakkuk, Zephaniah, Haggai and Zechariah from its
-round 1 of 2026-11-16, and Malachi from its round 2; and Judges' three parts and
-Daniel's two from its Stage 11. Their names are those that the main page,
+Stage 12 of doc/PLAN-miqra-mevoar.md, but Genesis, in four parts since its Stage 14;
+Joshua's two parts and five books of the Twelve from its Stage 10; Micah, Nahum,
+Habakkuk, Zephaniah, Haggai and Zechariah from its round 1 of 2026-11-16, and Malachi
+from its round 2; and Judges' three parts and Daniel's two from its Stage 11. Their
+names are those that the main page,
 מקרא מבואר, links in revision 3103065, from its section of the Prophets and, for
 Daniel's two parts, of the Writings, and, for the Torah's parts, in revision 3103840,
-from its section of the Torah, each copied by script, as the comment on PAGES says. A
-part's first and last verses are those that its link's label gives, parsed by script,
-in revision 3104053 for the first parts of Genesis and of Exodus, whose labels Avi
-had corrected by then, as the comment on them says. Obadiah's name has no vav, as Avi's link
-and the Word file's title row have it, but its verses name the book as MAM does, with
-the vav.
+from its section of the Torah, but the name of Genesis' fourth part, in revision
+3104162, each copied by script, as the comment on PAGES says. A part's first and last
+verses are those that its link's label gives, parsed by script, in revision 3104053
+for the first parts of Genesis and of Exodus, whose labels Avi had corrected by then,
+and in revision 3104162 for Genesis' second, third and fourth parts, as the comments
+in PAGES say. Obadiah's name has no vav, as Avi's link and the Word file's title row
+have it, but its verses name the book as MAM does, with the vav.
 Avi moved Joshua's two parts after Stage 10 created them, and their category lines
 still sort them under the names they had then, which PAGES keeps as their sort keys.
 
-Since Stage 13 of the plan, each of the Torah's fifteen parts begins with a block of
-title and navigation, in the very same style as the block that Dovi added to Joshua's
-first part in revision 3103803: PAGES gives each of them its block_name, the label of
-its link in revision 3104053 without the range in parentheses at its end, copied by
-script, as the comment on PAGES says, and gives no other page one.
+Every page of PAGES begins with a block of title and navigation, in the very same style
+as the block that Dovi added to Joshua's first part in revision 3103803: the Torah's
+parts since Stage 13 of the plan, and every other page since its Stage 15, by which the
+generator's block replaces Dovi's on Joshua's first part. PAGES gives each page its
+block_name, the label of its link on the main page without the range in parentheses at
+the label's end, where it has one, copied by script, as the comment on PAGES says.
+
+BLOCK_ONLY_PAGES lists Avi's pages for the Five Megillot, made in 2020, which the bot
+did not make and to which Stage 15 only adds a block: block_only_page_text gives such
+a page's live text with its block at its top, built from the page's own verses as a
+generated page's block is, and changes no other line. A page without a heading has no
+topic, and block_line raises on it, since the block of such a page waits on decision 14
+of the plan; of the Five Megillot, only Lamentations has headings.
 
 A page's stem names its book: a Word file's stem in books.BOOKS, or an OSIS
 abbreviation in base_headings.BOOKS, two sets of keys that must not meet. The places of
@@ -85,6 +95,17 @@ or whose chapters are not the page's chapters at their first verses on the page;
 the chapter parameter anywhere that item 1 does not put it; on a verse line at a verse
 to which item 2 gives a Decalogue line, and on a Decalogue line anywhere else; and on a
 disputed petuha's first parameter before any verse but its own.
+
+read_block_only_page reads a page of BLOCK_ONLY_PAGES as read_page reads a page, and
+its notes besides, of two kinds and no others: after its block, if it has one, or at
+its top, an opening note, one line of text that holds no template's call and no tag and
+begins with none of wikitext's marks of a line, then two blank lines; and before the
+blank line and the category line at its end, a closing notes section, a blank line, a
+level-2 heading line whose text is plain, and <references/>.
+
+differs_only_in_block is the bot's update rule, from Stage 14 of the plan: a page's live
+text and its generated text, each ending in a category line, are equal but for a block
+at the top of either and for their category lines.
 """
 
 import dataclasses
@@ -92,6 +113,7 @@ import re
 import unicodedata
 
 from mb_cmn import hebrew_verse_numerals as hvn
+from mb_cmn import mam_bknas
 from miqra_mevoar import base_headings
 from miqra_mevoar import books
 from miqra_mevoar import mam_simple
@@ -151,9 +173,75 @@ class Verse:
     decalogue: tuple[str, str | None] | None = None
 
 
+@dataclasses.dataclass(frozen=True)
+class BlockOnlyPage:
+    """A display page that the bot did not make and to which it only adds a block: its
+    key, its name after DISPLAY_PREFIX, its book, as a BS_ pair of mam_bknas, and its
+    block's name."""
+
+    key: str
+    name: str
+    mam_book: tuple[str, str | None]
+    block_name: str
+
+    def title(self) -> str:
+        """The page's title on Wikisource."""
+        return f"{DISPLAY_PREFIX}{self.name}"
+
+
+@dataclasses.dataclass(frozen=True)
+class Notes:
+    """A page's notes, which only a page of BLOCK_ONLY_PAGES may have, each where it
+    stands or None: the line of its opening note, and the heading line of its closing
+    notes section."""
+
+    opening: str | None = None
+    closing: str | None = None
+
+
 def page_text(page):
     """A display page's text, exactly as a save stores it."""
-    return _text(page.block_name, page_verses(page), page.category_sort_key())
+    return _text(page.block_name, page_verses(page), page.category_sort_key(), Notes())
+
+
+def block_only_page_text(page, live):
+    """A page of BLOCK_ONLY_PAGES with its block at its top, from its live text: the live
+    text itself where it already begins with that very block, or else the block's four
+    lines and then the live text, notes in place, which must read back as itself. Raise
+    where the live text does not read, where a verse line names a book other than the
+    page's, where the page begins with another block, and where the block would have no
+    topic, as block_line does."""
+    block_name, verses, sort_key, notes = read_block_only_page(live)
+    book = mam_bknas.he_bk39_name(*page.mam_book)
+    if strays := sorted({verse.book for verse in verses} - {book}):
+        raise ValueError(f"{page.key}: verse lines name {strays}, not {book!r}")
+    if block_name is not None:
+        if block_name != page.block_name:
+            raise ValueError(f"{page.key} begins with another block, {block_name!r}")
+        return live
+    text = "\n".join([*_block(page.block_name, verses), live])
+    if read_block_only_page(text) != (page.block_name, verses, sort_key, notes):
+        raise ValueError(f"{page.key} with its block does not read back as itself")
+    return text
+
+
+def differs_only_in_block(live, generated):
+    """Whether a page's live text differs from its generated text in no more than a block
+    at the top of either and their category lines: each text's last line is a category
+    line, and the two are equal once each loses its last line and its block, if it has
+    one, as _block_match finds it. Stage 14's update rule; a text of any other shape
+    gives False."""
+    rests = []
+    for text in (live, generated):
+        lines = text.split("\n")
+        if _CATEGORY_LINE.fullmatch(lines[-1]) is None:
+            return False
+        try:
+            block = _block_match(lines)
+        except ValueError:
+            return False
+        rests.append(lines[0 if block is None else _BLOCK_LENGTH : -1])
+    return rests[0] == rests[1]
 
 
 def block_line(name, topics, chapters):
@@ -229,6 +317,19 @@ def book_of_stem(stem):
 def read_page(text):
     """A page's block's name, or None, its verses and its category's sort key; raise on
     any line of another shape."""
+    block_name, verses, sort_key, _notes = _read(text, with_notes=False)
+    return block_name, verses, sort_key
+
+
+def read_block_only_page(text):
+    """A page of BLOCK_ONLY_PAGES as its block's name, or None, its verses, its
+    category's sort key and its Notes; raise on any line of another shape."""
+    return _read(text, with_notes=True)
+
+
+def _read(text, with_notes):
+    """A page's block's name, or None, its verses, its category's sort key and its Notes,
+    which it may have only with_notes; raise on any line of another shape."""
     lines = text.split("\n")
     if len(lines) < 3 or lines[-2] != "":
         raise ValueError("A display page ends in a blank line and its category line")
@@ -236,8 +337,59 @@ def read_page(text):
     if category is None:
         raise ValueError(f"{lines[-1]!r} is not a display page's category line")
     block, body = _read_block(lines[:-2])
+    notes = Notes()
+    if with_notes:
+        notes, body = _read_notes(body)
+    verses = _read_verses(body)
+    block_name = None if block is None else _check_block(block, verses)
+    if _text(block_name, verses, category.group(1), notes) != text:
+        raise ValueError("A display page does not read back as itself")
+    return block_name, verses, category.group(1), notes
+
+
+def _read_notes(lines):
+    """A page's Notes and its lines between them: an opening note, its line and two blank
+    lines, where the lines begin with one, and a closing notes section, a blank line,
+    its heading line and _REFERENCES, where they end with one."""
+    opening = closing = None
+    if lines[1:3] == ["", ""] and _is_opening_note(lines[0]):
+        opening, lines = lines[0], lines[3:]
+    if (
+        len(lines) >= 3
+        and lines[-3] == ""
+        and _is_notes_heading(lines[-2])
+        and lines[-1] == _REFERENCES
+    ):
+        closing, lines = lines[-2], lines[:-3]
+    return Notes(opening, closing), lines
+
+
+def _is_opening_note(line):
+    """Whether a line is an opening note: text that holds no template's call and no tag,
+    begins with none of wikitext's marks of a line, and is not a category line."""
+    return (
+        _NOTE_START.match(line) is not None
+        and not any(mark in line for mark in _NOT_IN_A_NOTE)
+        and _CATEGORY_LINE.fullmatch(line) is None
+    )
+
+
+def _is_notes_heading(line):
+    """Whether a line is a closing notes section's heading: a level-2 heading whose text,
+    without the spaces at its ends, is plain."""
+    match = _NOTES_HEADING.fullmatch(line)
+    if match is None:
+        return False
+    heading = match.group(1).strip(" ")
+    return heading != "" and not wikitext.wikitext_hazards(heading)
+
+
+def _read_verses(lines):
+    """The verses of a page's lines of verses and breaks, each with what the break line
+    before it gives; raise on any line of another shape, and as the module's docstring
+    says of read_page."""
     verses, pending = [], None
-    for line in body:
+    for line in lines:
         if match := _BREAK_LINE.fullmatch(line):
             letter, target, section = match.groups()
             if letter is None and target is None:
@@ -276,29 +428,33 @@ def read_page(text):
         raise ValueError("A display page's last break line has no verse after it")
     if not verses:
         raise ValueError("A display page has no verse")
-    block_name = None if block is None else _check_block(block, verses)
-    if _text(block_name, verses, category.group(1)) != text:
-        raise ValueError("A display page does not read back as itself")
-    return block_name, verses, category.group(1)
+    return verses
 
 
 def _read_block(lines):
     """A page's block, as its name, its topics and its chapters, and the page's lines
     after it; or None and all the lines, where the first line is not a block's line. A
     block is only a page's first four lines: its line, the rule and two blank lines."""
-    match = _BLOCK_LINE.fullmatch(lines[0])
+    match = _block_match(lines)
     if match is None:
         return None, lines
-    if lines[1:4] != [_BLOCK_RULE, "", ""]:
-        raise ValueError(
-            "A block's line is not followed by its rule and two blank lines"
-        )
     name, topics, chapters = match.groups()
     return (
         name,
         _read_links(topics, _TOPIC_SEPARATOR, _TOPIC_LINK),
         _read_links(chapters, _CHAPTER_SEPARATOR, _CHAPTER_LINK),
-    ), lines[4:]
+    ), lines[_BLOCK_LENGTH:]
+
+
+def _block_match(lines):
+    """_BLOCK_LINE's match of a page's first line, or None where that is not a block's
+    line; raise unless a block's line is followed by its rule and two blank lines."""
+    match = _BLOCK_LINE.fullmatch(lines[0])
+    if match is not None and lines[1:_BLOCK_LENGTH] != [_BLOCK_RULE, "", ""]:
+        raise ValueError(
+            "A block's line is not followed by its rule and two blank lines"
+        )
+    return match
 
 
 def _read_links(text, separator, link):
@@ -471,8 +627,12 @@ def _tracked_heading_keys(book, keys):
     }
 
 
-def _text(block_name, verses, sort_key):
+def _text(block_name, verses, sort_key, notes):
+    """A page's text from its block's name, or None, its verses, its category's sort key
+    and its Notes; raise unless the text is in NFC."""
     lines = [] if block_name is None else _block(block_name, verses)
+    if notes.opening is not None:
+        lines.extend([notes.opening, "", ""])
     for verse in verses:
         if verse.letter is not None or verse.heading is not None:
             lines.append(_break_line(verse.letter, verse.heading))
@@ -488,6 +648,8 @@ def _text(block_name, verses, sort_key):
         if verse.chapter_parameter is not None:
             parameters.append(f"{_CHAPTER_PARAMETER}={verse.chapter_parameter}")
         lines.append(_template_line(_VERSE_TEMPLATE, *parameters))
+    if notes.closing is not None:
+        lines.extend(["", notes.closing, _REFERENCES])
     lines.extend(["", _category_line(sort_key)])
     text = "\n".join(lines)
     if not unicodedata.is_normalized("NFC", text):
@@ -575,11 +737,22 @@ if not set(books.BOOKS).isdisjoint(base_headings.BOOKS):
 # names of the Torah's fifteen parts from 3103840 by script, and parsed each part's
 # first and last verses from its link's label, but for the first parts of Genesis and
 # of Exodus, as the comment on them says; the labels of revision 3104053, parsed by
-# script, give all fifteen parts their ranges here.
+# script, gave all fifteen parts their ranges, which the Torah's parts but Genesis'
+# second and third keep here.
 # Joshua's sort keys are the names under which Stage 10 created its two pages.
 # Stage 13 copied by script each of the Torah's fifteen parts' block_name, its link's
-# label in revision 3104053 without the range in parentheses at the label's end; each
-# is pointed and in NFC, as MediaWiki stores it. No other entry has a block_name.
+# label in revision 3104053 without the range in parentheses at the label's end.
+# Stage 14 follows Avi's division of Genesis' second part in two in revision 3104126:
+# gen-2 and gen-3 are now the parts of Genesis 12:1 to 25:18 and 25:19 to 36:43, and
+# gen-4 is chapters 37 to 50, which were gen-3's in Stages 12 and 13. It copied by
+# script gen-4's name, and the block_name of gen-2, gen-3 and gen-4, from their links
+# in revision 3104162, and parsed each one's first and last verses from its link's
+# label; gen-3's block_name keeps its label's two spaces after the colon, which a
+# browser shows as one. Stage 15 copied by script the block_name of every other entry,
+# Joshua's, Judges', the Twelve's and Daniel's, from its link's label in revision
+# 3104162, without the range at the end of each label of a part; the labels of the
+# Twelve's books have none. Every entry has a block_name, and each is pointed and in
+# NFC, as MediaWiki stores it.
 DISPLAY_PREFIX = "מקרא מבואר/תצוגה/"
 PAGES = {
     page.key: page
@@ -599,15 +772,24 @@ PAGES = {
             "gen-2",
             "ספר בראשית 2",
             "Gen",
-            (12, 36),
-            block_name="סֵפֶר בְּרֵאשִׁית, חֵלֶק שֵׁנִי: אֲבוֹת יִשְׂרָאֵל",
+            (12, 25),
+            last_verse=18,
+            block_name="סֵפֶר בְּרֵאשִׁית, חֵלֶק שֵׁנִי: אֲבוֹת יִשְׂרָאֵל – אַבְרָהָם וְנִסְיוֹנוֹתָיו",
         ),
         Page(
             "gen-3",
             "ספר בראשית 3",
             "Gen",
+            (25, 36),
+            first_verse=19,
+            block_name='סֵפֶר בְּרֵאשִׁית, חֵלֶק שְׁלִישִׁי:  אֲבוֹת יִשְׂרָאֵל – "תּוֹלְדֹת יִצְחָק", יַעֲקֹב וְעֵשָׂו',
+        ),
+        Page(
+            "gen-4",
+            "ספר בראשית 4",
+            "Gen",
             (37, 50),
-            block_name="סֵפֶר בְּרֵאשִׁית, חֵלֶק שְׁלִישִׁי: בְּנֵי יִשְׂרָאֵל",
+            block_name="סֵפֶר בְּרֵאשִׁית, חֵלֶק רְבִיעִי: בְּנֵי יִשְׂרָאֵל",
         ),
         # Exodus' first part, by decision 1a, as gen-1's comment says.
         Page(
@@ -698,29 +880,105 @@ PAGES = {
             (27, 34),
             block_name="סֵפֶר דְּבָרִים, חֵלֶק שְׁלִישִׁי: דִּבְרֵי מֹשֶׁה הָאַחֲרוֹנִים",
         ),
-        Page("yehoshua-1", "ספר יהושע 1", "yehoshua", (1, 12), sort_key="ספר יהושע א"),
-        Page("yehoshua-2", "ספר יהושע 2", "yehoshua", (13, 24), sort_key="ספר יהושע ב"),
-        Page("sephershoftim-1", "ספר שופטים 1", "sephershoftim", (1, 2), last_verse=5),
         Page(
-            "sephershoftim-2", "ספר שופטים 2", "sephershoftim", (2, 16), first_verse=6
+            "yehoshua-1",
+            "ספר יהושע 1",
+            "yehoshua",
+            (1, 12),
+            sort_key="ספר יהושע א",
+            block_name="סֵפֶר יְהוֹשֻׁעַ, חֵלֶק רִאשׁוֹן: כִּבּוּשׁ הָאָרֶץ",
         ),
-        Page("sephershoftim-3", "ספר שופטים 3", "sephershoftim", (17, 21)),
-        Page("hoshea", "הושע", "hoshea"),
-        Page("yoel", "יואל", "yoel"),
-        Page("amos", "עמוס", "amos"),
-        Page("ovadya", "עבדיה", "ovadya"),
-        Page("yona", "יונה", "yona"),
-        Page("mikha", "מיכה", "mikha"),
-        Page("nahum", "נחום", "nahum"),
-        Page("havaquq", "חבקוק", "havaquq"),
-        Page("tzefanya", "צפניה", "tzefanya"),
-        Page("hagay", "חגי", "hagay"),
-        Page("zekharya", "זכריה", "zekharya"),
-        Page("malakhi", "מלאכי", "malakhi"),
-        Page("daniyel-1", "ספר דניאל 1", "daniyel", (1, 6)),
-        Page("daniyel-2", "ספר דניאל 2", "daniyel", (7, 12)),
+        Page(
+            "yehoshua-2",
+            "ספר יהושע 2",
+            "yehoshua",
+            (13, 24),
+            sort_key="ספר יהושע ב",
+            block_name="סֵפֶר יְהוֹשֻׁעַ, חֵלֶק שֵׁנִי: חֲלֻקַּת הָאָרֶץ",
+        ),
+        Page(
+            "sephershoftim-1",
+            "ספר שופטים 1",
+            "sephershoftim",
+            (1, 2),
+            last_verse=5,
+            block_name='סֵפֶר שׁוֹפְטִים, חֵלֶק רִאשׁוֹן: "וְהוֹרֵישׁ לֹא הוֹרִישׁוֹ"',
+        ),
+        Page(
+            "sephershoftim-2",
+            "ספר שופטים 2",
+            "sephershoftim",
+            (2, 16),
+            first_verse=6,
+            block_name='סֵפֶר שׁוֹפְטִים, חֵלֶק שֵׁנִי: "וַיָּקֶם ה\' שֹׁפְטִים וַיּוֹשִׁיעוּם"',
+        ),
+        Page(
+            "sephershoftim-3",
+            "ספר שופטים 3",
+            "sephershoftim",
+            (17, 21),
+            block_name='סֵפֶר שׁוֹפְטִים, חֵלֶק שְׁלִישִׁי: "אִישׁ הַיָּשָׁר בְּעֵינָיו יַעֲשֶׂה"',
+        ),
+        Page("hoshea", "הושע", "hoshea", block_name="הוֹשֵׁעַ"),
+        Page("yoel", "יואל", "yoel", block_name="יוֹאֵל"),
+        Page("amos", "עמוס", "amos", block_name="עָמוֹס"),
+        Page("ovadya", "עבדיה", "ovadya", block_name="עֹבַדְיָה"),
+        Page("yona", "יונה", "yona", block_name="יוֹנָה"),
+        Page("mikha", "מיכה", "mikha", block_name="מִיכָה"),
+        Page("nahum", "נחום", "nahum", block_name="נַחוּם"),
+        Page("havaquq", "חבקוק", "havaquq", block_name="חֲבַקּוּק"),
+        Page("tzefanya", "צפניה", "tzefanya", block_name="צְפַנְיָה"),
+        Page("hagay", "חגי", "hagay", block_name="חַגַּי"),
+        Page("zekharya", "זכריה", "zekharya", block_name="זְכַרְיָה"),
+        Page("malakhi", "מלאכי", "malakhi", block_name="מַלְאָכִי"),
+        Page(
+            "daniyel-1",
+            "ספר דניאל 1",
+            "daniyel",
+            (1, 6),
+            block_name="סֵפֶר דָּנִיֵּאל, חֵלֶק רִאשׁוֹן: קוֹרוֹת דָּנִיֵּאל וַחֲבֵרָיו",
+        ),
+        Page(
+            "daniyel-2",
+            "ספר דניאל 2",
+            "daniyel",
+            (7, 12),
+            block_name="סֵפֶר דָּנִיֵּאל, חֵלֶק שֵׁנִי: חֶזְיוֹנוֹת דָּנִיֵּאל",
+        ),
     )
 }
+# The pages of BLOCK_ONLY_PAGES: Avi's pages for the Five Megillot, made in 2020, to
+# which Stage 15 only adds a block. Each one's name after DISPLAY_PREFIX is mam_bknas'
+# name of its book, as its link on the main page has it, and its block_name its link's
+# label in revision 3104162, which has no range, copied by script; each is pointed and
+# in NFC, as MediaWiki stores it.
+BLOCK_ONLY_PAGES = {
+    page.key: page
+    for page in (
+        BlockOnlyPage(
+            "song",
+            mam_bknas.BS_SONG[0],
+            mam_bknas.BS_SONG,
+            "מְגִלַּת שִׁיר הַשִּׁירִים",
+        ),
+        BlockOnlyPage("ruth", mam_bknas.BS_RUTH[0], mam_bknas.BS_RUTH, "מְגִלַּת רוּת"),
+        BlockOnlyPage(
+            "lament", mam_bknas.BS_LAMENT[0], mam_bknas.BS_LAMENT, "מְגִלַּת אֵיכָה"
+        ),
+        BlockOnlyPage(
+            "qohelet", mam_bknas.BS_QOHELET[0], mam_bknas.BS_QOHELET, "מְגִלַּת קֹהֶלֶת"
+        ),
+        BlockOnlyPage(
+            "esther", mam_bknas.BS_ESTHER[0], mam_bknas.BS_ESTHER, "מְגִלַּת אֶסְתֵּר"
+        ),
+    )
+}
+# A key names a page of one table only, and no two pages share a title.
+if not set(PAGES).isdisjoint(BLOCK_ONLY_PAGES):
+    raise ValueError("PAGES and BLOCK_ONLY_PAGES share a key")
+_TITLES = [page.title() for page in (*PAGES.values(), *BLOCK_ONLY_PAGES.values())]
+if len(set(_TITLES)) != len(_TITLES):
+    raise ValueError("Two display pages share a title")
 # The templates, their parameters and the section function, copied by script from the
 # megillot's display pages as read on 2026-11-04 and checked against the templates' own
 # text, except the verse template's chapter parameter, which Stage 11 copied by script
@@ -749,6 +1007,18 @@ _CHAPTER_SEPARATOR = ", "
 _BLOCK_END = ")}}{{מ:טעמי המקרא-סוף}}"
 # The block's second line, a horizontal rule, before its two blank lines.
 _BLOCK_RULE = "-----"
+# A block's lines: its line, the rule and two blank lines.
+_BLOCK_LENGTH = 4
+# The notes that a page of BLOCK_ONLY_PAGES may have, as Avi's pages of Lamentations
+# and Esther have them. An opening note's line holds none of _NOT_IN_A_NOTE, a
+# template's call or a tag, and begins with a character that _NOTE_START allows, which
+# is no space and no mark of a heading, a list, an indent, a table or a rule. A closing
+# notes section's heading line is a level-2 heading, _NOTES_HEADING, and its last line
+# is _REFERENCES.
+_NOT_IN_A_NOTE = ("{{", "}}", "<", ">")
+_NOTE_START = re.compile(r"[^\s=*#:;|{\-]")
+_NOTES_HEADING = re.compile(r"==([^=\n]+)==")
+_REFERENCES = "<references/>"
 # The Decalogue's templates, copied by script from Avi's pages of Yitro, revision
 # 962744, and of Va'etchanan, revision 962961: on each page, the template that its
 # verses of the Decalogue call with their numerals, and the one that Exodus 20:12, or

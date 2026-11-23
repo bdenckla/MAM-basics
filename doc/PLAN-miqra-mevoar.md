@@ -55,7 +55,8 @@ Avi answered both questions the same day, and Ben gave his word to carry out the
 asks for (entry 22): Avi divided Genesis' second part into two, so that Genesis has four parts,
 which Stage 14 plans, and asked for the block on every part of Joshua, Judges, the Twelve, the
 Five Megillot and Daniel, which Stage 15 plans. A fresh session wrote both stages that day and
-executes them, each saving run on Ben's word; the stages' choices, decisions 13 and 14, wait on
+executes them, each saving run on Ben's word. Their code and dry runs are done, and the
+stages' choices, decisions 13 and 14, and their three saving runs, decisions 15 to 17, wait on
 his answers on its decision page.
 The execution ledger below records each finished stage.
 
@@ -1546,7 +1547,75 @@ byte-for-byte copy of that frozen plan; this ledger and the State line are the e
     3103154; and Song of Songs 957437, Ruth 957455, Lamentations 961348, Ecclesiastes 961349
     and Esther 961350.
   - **Avi's question on the verse template,** studied by another subagent of the session,
-    which saved nothing (`lighter-template/report.md`): under way when Stages 14 and 15 were written; its findings go to decision 13.
+    which saved nothing (`lighter-template/report.md`): about 165 anonymous reads, among them parses of
+    pages with drafts of the template put in its place by the API's template sandbox. A control
+    render of Avi's page of Ruth with the live template's own text reproduced its live include
+    size exactly. The study found what Stage 14's decision 13 says; it also found that the old
+    second part had 785 verses and needed about 107.8% of the limit.
+  - **The earlier session's prompt** for this round,
+    `miqra-mevoar-avi-answers-prompt-2026-11-23.md` in the commander's shared notes folder,
+    `C:/Users/BenDe/AppData/Local/Claude-Data/claude_pzs8sxrjxfjjc/side-session-notes/local_a80ded65-f78e-4280-8493-9dab3b8c5686/`,
+    which the session of entries 20 and 21 wrote before it was archived, asks to be named
+    here. Read at the commander's pointer, it adds nothing that Stages 14 and 15 lack.
+  - **The decision page,** https://claude.ai/artifact/XYchLEVJdwMQh5FM3wDJHN, in its version
+    12, puts decisions 13 and 14 to Ben.
+  - **The code of Stages 14 and 15,** but for the block without topics, which waits on
+    decision 14, written by a subagent of the session from the two stages' designs, its
+    checks repeated by the session and its diff reviewed by another subagent (`impl/`,
+    `verify/` and `review/`):
+    - The 28 pointed literals of `display_page.py`, names and block names, were copied by
+      script from the kept main page of revision 3104162 and read back through `ascii()`
+      (`impl/copy-names.log`); the ranges parsed from the labels are the survey's.
+    - Every page of `PAGES`, written before and after the change (`impl/before/`,
+      `impl/after/`, compared in `impl/compare-before-after.txt`): the Torah's 13 pages other
+      than Genesis' second to fourth parts are unchanged byte for byte; `gen-4` is the old
+      `gen-3` but for its block's name and its category line's sort key; `gen-2`, 378 verses,
+      and `gen-3`, 407, together show the old `gen-2`'s 785 verses, their lines the old page's
+      but for `gen-3`'s first verse line, which gives the chapter parameter; each of the other
+      18 pages is its old text with a block's four lines at its top; and Joshua's first part
+      is the kept live text of revision 3103803 but for its block's 18 topics' labels.
+    - On the survey's kept live texts (`impl/check-live.txt`): the update rule holds for the
+      20 pages of `PAGES` that the two stages edit, and every page that they do not edit is
+      unchanged; nine controls, each one change away from a page, are refused; Lamentations
+      gets its block of five topics, and a second application changes nothing; the other four
+      megillot raise for want of a topic.
+    - `git diff --check` and Black are clean, and Stage 13's command gives 164 passed, as the
+      session's own run of it gave too (`verify/test-run-1.txt`).
+      `py/tests/test_miqra_mevoar_save_receipts.py` changes one line: its display case now
+      stands in for the run's read of the live page, `_live`, rather than for its outcome.
+    - Beyond the designs: a run with no `--page` selects only the pages of `PAGES`; each
+      outcome records the revision whose text it compared and, for a refusal, the reason; and
+      a megillah's opening note may not begin with a space or with a character that starts a
+      list, a heading, an indentation or a table.
+    - **The review,** by a subagent of the session that read the diff against the stages'
+      designs (`review/`), found no defect that could cause a wrong save and none elsewhere
+      in the code. The update rule refused each of 18 adversarial texts that it should; an
+      offline simulation of pywikibot's own save, with a newer revision loaded while the
+      request was built, sent the compared revision as the base, for a page of `PAGES` and
+      for Lamentations; and the megillot's reader raised on a foreign line put at every
+      position of Lamentations' text. Its three findings on the documents are fixed in the
+      same commit: the bot mode's docstring and `py/ws/pywikibot-setup.md` name every reason
+      for refusing a megillah's page, a line of the latter is wrapped,
+      `py/tests/test_mega_coverage.py`'s note on the mode says that it also updates pages,
+      and “Later Word files” no longer says that a run over the whole table refuses
+      Joshua's first part and Judges' second.
+  - **The dry runs,** at 11:13 New York time, saving nothing, after the preconditions: at
+    11:11, `scripts/check_preconditions.py` found the 40 surveyed pages at their revisions and
+    the main page still at revision 3104162 (`preconditions/`); `base-headings --check` found
+    all 443 headings of the Torah's 187 base chapters where the records have them
+    (`logs/base-headings-check-1.txt`); and no `main_ws_bot.py` process ran, nor did any
+    other session of the commander's family do bot work. Stage 14's run,
+    `20261123-111317-927016-0500`, gave `gen-1` unchanged, `gen-2` and `gen-3` creates, at
+    52.5% and 55.2% of the include-size limit, and `gen-4` an update of its lines 1 and 491
+    alone, at 63.3%. Stage 15's, `20261123-111327-523737-0500`, gave 20 updates, each the
+    block's four lines added at the top but Joshua's first part's, its line 1 replaced, at
+    3.0% to 68.1% of the limit, and refused the four megillot without a heading. No page had
+    a missing link or transcluded page (`dry-runs/`). Rendered by the parse action, each of
+    the 23 new blocks shows its name whole in bold and its topics and chapters in order;
+    Joshua's first part's 18 transcluded topics show the text of Dovi's copies, and every
+    topic of a book in the tracked JSON shows its heading there, but for one of Micah's,
+    which shows the heading as since revised on its base chapter (`render/`). The decision
+    page puts the three saving runs to Ben as decisions 15 to 17.
 
 ## Background for a fresh executor
 
@@ -2750,11 +2819,34 @@ on, each of Genesis' keys names the part of its number.
 https://claude.ai/artifact/XYchLEVJdwMQh5FM3wDJHN:
 
 Avi asks what making the verse template lighter would mean, and whether it should be done
-regardless, if it improves efficiency. A subagent of the session that wrote this stage is
-measuring what the verse template's expansion costs a page in post-expand include size, what a
-lighter version would save and what else it would change (execution ledger, “Avi's answers,
-2026-11-23”). The decision page then puts to Ben whether to make the change, with each choice's
-consequences and a recommendation.
+regardless, if it improves efficiency. A subagent of the session that wrote this stage measured
+it, saving nothing (execution ledger, “Avi's answers, 2026-11-23”):
+
+1. **What costs the bytes.** MediaWiki counts a template's output again at every level of
+   templates that encloses it. The verse template wraps MAM's verse, and the paraphrase, each in
+   a template of smaller type, a redirect to a template that calls a third, so each verse's two
+   texts are counted four times; a verse line costs about 2,800 bytes of the limit of 2,097,152.
+2. **The lighter template.** Writing out, in the verse template, the span that the smaller
+   type's templates produce, in place of each of its four calls of them (draft A), gives the
+   same HTML byte for byte, as checked on seven sample lines and on Avi's whole page of Ruth,
+   and makes every page about 37% smaller: Exodus' third part, the largest page, from 77.3% of
+   the limit to 48.5%. Genesis' old second part would have fit, at about 67.5%, as would Dovi's
+   page of the whole of Leviticus, a user page now over the limit, at 76.2%. Also writing out
+   the font template's division and the other small templates (draft B, with the break
+   template likewise) makes pages about 45% smaller, but the copy of the font template's
+   division would no longer follow that template's later changes.
+3. **What else it changes.** Readers download the same HTML; the gain is room under the
+   parser's limits, not speed. One edit of the template, which Dovi wrote, re-renders the 95
+   pages that use it: the bot's 33, Avi's 54 weekly portions, his 5 megillot and 3 more. The
+   anchors that the blocks link to are unchanged, and so is the bot's text: the generator
+   calls the template with the same name and parameters under every choice.
+
+The choices: (a) the reply explains this and offers Avi draft A, to install himself if he
+wishes; (b) the same with draft B and its break template; (c) the reply explains it and offers
+no draft, since the division of Genesis keeps every bot page under 78%. Recommended: (a),
+since the template is Avi's to change, draft A changes nothing that readers see, and it keeps
+the template's link to the font template, which draft B would cut. The study's report and its
+drafts are in `.novc/miqra-mevoar-avi-answers-2026-11-23/lighter-template/`.
 
 No template changes, on Wikisource or in the generator, before Ben answers.
 
@@ -2836,7 +2928,7 @@ reply of that day, and executes it after Stage 14's code, on Ben's word (decisio
 
 **What the pages are,** as the reads of Stage 14's “What Avi did” found them:
 
-1. **Nineteen pages of `PAGES` have no block:** Joshua's second part, Judges' three, the
+1. **Eighteen pages of `PAGES` have no block:** Joshua's second part, Judges' three, the
    Twelve's twelve and Daniel's two. Each holds the generator's text byte for byte, Judges'
    second part again since Dovi's revision 3104129 restored the bot's revision 3103156, with
    the summary "Temporary restoration, to allow adding navigation."
@@ -2871,8 +2963,9 @@ the page's label without its range, if it has one. The bot changes no other line
 **The design:**
 
 1. **Generator,** `py/miqra_mevoar/display_page.py`:
-   - The 19 entries of `PAGES` take their `block_name`, copied by script from their links'
-     labels in revision 3104162, without the range where a label has one. Every page of
+   - Those 18 entries of `PAGES` and Joshua's first part take their `block_name`, copied
+     by script from their links' labels in revision 3104162, without the range where a
+     label has one. Every page of
      `PAGES` then has a block.
    - A second table, `BLOCK_ONLY_PAGES`, lists the Five Megillot's pages, which the bot did not
      make and to which it only adds a block: each one's key, its name after `DISPLAY_PREFIX`,
@@ -2910,8 +3003,8 @@ latest revision still gives their labels of revision 3104162; and no `main_ws_bo
 runs, and no other session of the commander's family does bot work. If one differs, stop and
 report it to Ben.
 
-**Verification,** as Stage 14's, and by scratch scripts: every page of `PAGES` but these 19 and
-Joshua's first part unchanged byte for byte by this stage; each of the 19, after its block's
+**Verification,** as Stage 14's, and by scratch scripts: every page of `PAGES` but these 18 and
+Joshua's first part unchanged byte for byte by this stage; each of the 18, after its block's
 four lines, equal to its page before this stage; Joshua's first part equal to revision 3103803
 but for its block's line, whose name, anchors and chapters are unchanged and whose topics'
 labels are transclusions; and each of the five megillot, from the text of its kept read, equal
@@ -2942,12 +3035,11 @@ JSON's diff, and then Stages 6 to 8 for its pages, each saving run again on Ben'
 goes through only for pages that nobody but BDencklaBot has edited. A book of the Twelve whose
 base chapters arrive this way then gets its display page through Stage 10's mode, added to that
 mode's table, again on Ben's word for each saving run. Such a run names its pages with `--page`:
-a run over the whole table refuses Joshua's part one, which carries Avi's model (execution
-ledger, “Avi's answer to the reply”), and Judges' part two, to which Dovi added two pictures
-on 2026-11-21 (execution ledger, “Stage 12, the display pages of the Torah”). Since round 1
-of 2026-11-16 the table gives Joshua's two
-entries the titles to which Avi moved them, and keeps Stage 10's names as their sort keys
-(decisions ledger entry 15, item 5).
+since Stage 14 the mode updates a page whose live text differs from its generated text only
+in its block and its category line, so a run over the whole table would also update each
+page that still lacks its block, and refuses only a page that someone has edited further.
+Since round 1 of 2026-11-16 the table gives Joshua's two entries the titles to which Avi moved
+them, and keeps Stage 10's names as their sort keys (decisions ledger entry 15, item 5).
 
 ## Measurements of 2026-11-02
 

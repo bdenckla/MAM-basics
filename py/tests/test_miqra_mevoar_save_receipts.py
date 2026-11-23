@@ -45,7 +45,7 @@ def test_saved_ids_survive_verification(
     monkeypatch.setattr(bot.pywikibot, "Page", lambda *_args: object())
     if mode == "display":
         title = display_page.PAGES["yona"].title()
-        monkeypatch.setattr(bot, "_outcome", lambda *_args: (outcome, []))
+        monkeypatch.setattr(bot, "_live", lambda *_args: None)
         run = lambda: bot.run(["yona"], [], summary="offline receipt check")
     elif mode == "chapters":
         title = wikitext.page_title(books.BOOKS["yona"].mam_book, 1)
