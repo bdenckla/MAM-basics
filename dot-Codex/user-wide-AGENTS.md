@@ -248,13 +248,17 @@ flows.
 
 ## Web requests obey robots.txt
 
-Before an agent's first request to a website in a task, it reads the site's `/robots.txt`, and it
-sends no request, `HEAD` included, to a path disallowed by the group that governs it: for an agent
-acting on Ben's request, the `*` group, unless the file names a group for such agents. It keeps the
-file's `Crawl-delay`. A file that robots.txt bars an agent from fetching is Ben's to download by
-hand. A refusal by a site's firewall ends the session's requests to that site, and no agent changes
-its user agent or headers to get past one. A script in a MAM-basics checkout fetches through
-`py/mb_cmn/polite_download.py`, which obeys robots.txt and spaces its requests.
+Before an agent's first request of its own to a website in a task, it reads the site's
+`/robots.txt`, and it sends no request, `HEAD` included, to a path disallowed by the group that
+governs it: for an agent acting on Ben's request, the `*` group, unless the file names a group for
+such agents. It keeps the file's `Crawl-delay`. A file that robots.txt bars an agent from fetching
+is Ben's to download by hand. A refusal by a site's firewall ends the session's requests to that
+site, and no agent changes its user agent or headers to get past one. A tracked command keeps the
+robots.txt setting its own code gives it: MAM-basics' Wikisource download reads
+`https://he.wikisource.org/w/api.php`, which Wikisource's robots.txt disallows, with
+`obey_robots_txt=False`. A new script in a MAM-basics checkout fetches through
+`py/mb_cmn/polite_download.py` with `obey_robots_txt=True` and a `ThrottleConfig` no shorter than
+the site's `Crawl-delay`, since neither is that helper's default.
 
 ## Authored paths use forward slashes
 
