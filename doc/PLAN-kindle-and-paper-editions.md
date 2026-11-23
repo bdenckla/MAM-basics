@@ -1,9 +1,11 @@
 # Plan: Kindle and paper editions of MAM and its introduction
 
-State: live, written 2026-11-22. Planning only: Stage 0 is under way, no later stage has run, and
-none starts until Ben says to execute it, in a fresh session. No decision waits on him: he answered
-the four open ones the same day (“Decisions ledger”, entries 3 to 6). What remains of Stage 0 is his
-own step, asking Avi Kadish to take part, which comes before Stage 1.
+State: live, written 2026-11-22 and revised 2026-11-23. Planning only: Stage 0 is under way, no
+later stage has run, and none starts until Ben says to execute it, in a fresh session. No decision
+waits on him: he answered the four open ones the same day (“Decisions ledger”, entries 3 to 6), and
+the revision of 2026-11-23, which adds Open Siddur's typesetting mechanism as a concrete print
+candidate (“Requirements ledger”, entry 8), opened none. What remains of Stage 0 is his own step,
+asking Avi Kadish to take part, which comes before Stage 1.
 
 Written 2026-11-22 by Claude (Opus 5.5), in a session that the session “Commander for Claude's
 forests” started at Ben's request. Ben's words under “Ben's request” are quoted exactly, as the
@@ -14,7 +16,10 @@ executes this plan; the session that wrote it does not. Its thin issue is
 approved, by a second session that the commander started, “Kindle and paper plan: Ben's decisions
 and the issue”. That session also recorded Ben's answers to the plan's four open decisions, as
 “Decisions ledger”, entries 3 to 6, and brought the rest of the plan into line with them, in words
-of its own.
+of its own. On 2026-11-23 a third session that the commander started at Ben's request, “Print
+edition: typesetting mechanism, and Open Siddur's”, added Open Siddur's typesetting mechanism
+(“Requirements ledger”, entry 8), in words of its own, from the research recorded under “Open
+Siddur's mechanism”.
 
 ## Ben's request
 
@@ -29,6 +34,17 @@ He added, at 14:43:29 UTC (09:43 New York time):
 This plan reads his “multiple volumes” as “multiple books”: one volume may hold several books, his
 “many-to-one”, and one book may run across several volumes, his “one-to-many”. He confirmed that
 reading, on which the volume map below rests (“Decisions ledger”, entry 3).
+
+On 2026-11-23, at 09:52:33 UTC (04:52 New York time), he typed the following in the commander, as
+the commander relayed it to the session that made this plan's revision of that day:
+
+> start a session that will:
+>
+> 1. report what concrete mechanisms, if any, were proposed for the actual typesetting (PDF generation) in the planning for a multi-volume print edition of MAM
+> 2. if appropriate, add to the plan the idea of using, as a concrete mechanism, whatever concrete mechanism Open Siddur uses to publish its books that include selections from MAM (lualuatex or something?)
+
+This plan reads his “Open Siddur” as Open Siddur's processor, opensiddur/opensiddur-processor on
+GitHub, which typesets the PDFs of the books that opensiddur/opensiddur-projects releases.
 
 ## What this plan does
 
@@ -65,6 +81,12 @@ buys and signs up for nothing: every such act is Ben's, stage by stage (Stage 7)
    “Decisions ledger”, entry 3. Da'at Miqra is his example of the principle, not a division to copy:
    Ben, 2026-11-22, “Yes I was just giving it as an example, not at all suggesting (as you perhaps
    inferred) that we would use its exact division.”
+8. **Open Siddur's typesetting mechanism, “if appropriate”.** Ben's message of 2026-11-23.
+   Implemented: “Open Siddur's mechanism”, under “What the plan rests on”, finds it appropriate as a
+   concrete form of the plan's LuaLaTeX candidate, to be borrowed rather than run. The candidates
+   table and items 8 and 9 of “Typesetting toolchains”, “What the text shows”, item 2, Stage 1's
+   step 2, “Deferred decisions”, item 1, “Risks”, item 8, and the input manifest carry it;
+   “Checkouts, programs and ownership”, item 6, lists its packages.
 
 ## Decisions ledger
 
@@ -126,11 +148,12 @@ on a decision page of its own (“Deferred decisions”).
    naming its paths, fetches and merges `origin/main`, runs the checks the stage names, and pushes
    `main` normally. The checks follow `doc/review-trial.md` and `AGENTS.md`, “What this
    repository's products are, and which check a change owes”.
-6. **Programs outside Python:** a current TeX Live, with LuaLaTeX, babel and pdfx; Node.js, with the
-   Vivliostyle CLI and DAISY's Ace; Java, with EPUBCheck; Amazon's Kindle Previewer; a PDF/X
-   preflight tool, which Stage 1 chooses; and, to load a test book onto an e-ink Kindle, calibre
-   with its KFX Output plugin, which drives Kindle Previewer. Installing any of them changes Ben's
-   machine, so each installation waits for his word; Stage 1 names what it needs before it starts.
+6. **Programs outside Python:** a current TeX Live, with LuaLaTeX, babel, polyglossia, luabidi,
+   reledmac and pdfx; Node.js, with the Vivliostyle CLI and DAISY's Ace; Java, with EPUBCheck;
+   Amazon's Kindle Previewer; a PDF/X preflight tool, which Stage 1 chooses; and, to load a test
+   book onto an e-ink Kindle, calibre with its KFX Output plugin, which drives Kindle Previewer.
+   Installing any of them changes Ben's machine, so each installation waits for his word; Stage 1
+   names what it needs before it starts.
 
 ## What the plan rests on
 
@@ -526,6 +549,7 @@ HarfBuzz's sources are cited at commit `276cf4a7` of https://github.com/harfbuzz
    | Toolchain | Shaping | Right to left | PDF/X | EPUB | Cost and license |
    |---|---|---|---|---|---|
    | LuaLaTeX with babel 26.16, HarfBuzz mode | HarfBuzz | mature | X-1a, X-3, X-4 through pdfx | no | free |
+   | LuaLaTeX with polyglossia, luabidi and reledmac, as Open Siddur's processor writes it | HarfBuzz on the Hebrew family | in use for MAM's text | none written; pdfx could add it | no | free; the processor's code LGPL-3.0-or-later |
    | XeLaTeX with polyglossia and bidi | HarfBuzz, ICU's properties | mature, frozen | through pdfx | no | free |
    | ConTeXt LMTX | its own | capable, thinly documented for Hebrew | its own | not checked | free |
    | WeasyPrint 70.0 | Pango, then HarfBuzz | documented as unsupported | X-1a to X-5g | no | BSD |
@@ -553,11 +577,121 @@ HarfBuzz's sources are cited at commit `276cf4a7` of https://github.com/harfbuzz
    EPUBCheck and by DAISY's Ace.
 8. **Prior art.** SIL's PTXprint typesets Scripture with footnotes from USFM
    (https://software.sil.org/ptxprint/), and eBible.org distributes the WLC as EPUB 3 and PDF
-   (https://ebible.org/details.php?id=hboWLC).
+   (https://ebible.org/details.php?id=hboWLC). Open Siddur's processor sets MAM's own text with
+   LuaLaTeX in HarfBuzz mode (“Open Siddur's mechanism”).
 9. **So:** the generator writes XHTML, which is the EPUB; print takes the most mature engine,
-   LuaLaTeX in HarfBuzz mode, or the same XHTML through Vivliostyle, if Stage 1 finds that it
-   sets MAM as well, which would leave one source for both; and an independent PDF/X preflight
-   checks every interior before upload.
+   LuaLaTeX in HarfBuzz mode, written in the manner of Open Siddur's processor, which already sets
+   MAM's text in it (“Open Siddur's mechanism”, item 7), or the same XHTML through Vivliostyle, if
+   Stage 1 finds that it sets MAM as well, which would leave one source for both; and an independent
+   PDF/X preflight checks every interior before upload.
+
+### Open Siddur's mechanism
+
+Open Siddur's processor, https://github.com/opensiddur/opensiddur-processor, makes the HTML and PDF
+books that opensiddur/opensiddur-projects releases from its TEI files; three books of that
+repository's release `v20261108`, of 2026-11-08, set MAM's text. Two read-only sub-agents of the
+session that added this section read the processor, the projects and the hosted builder through
+GitHub's API on 2026-11-23, and that session checked the claims below at the commits cited. `OSP`
+below is
+`https://github.com/opensiddur/opensiddur-processor/blob/474cb10ebb49261d672c693550003c0f45960463/`,
+the processor's `main` of 2026-11-23; its tag `v0.7.0` (`723b083c`), which built the release's
+books, typesets in the same way and declares its Hebrew font identically (`typography_tex.py`,
+lines 309 to 313 at the tag). `OSR` below is
+`https://github.com/opensiddur/opensiddur-projects/blob/c91943dc9ec9b039447bbed358e982cc529ae621/`,
+the release's tag.
+
+1. **The pipeline.** A compiler resolves a book's transclusions into one linear XML file. From it
+   the PDF stage writes LaTeX, through an XSLT 3.0 stylesheet,
+   `opensiddur/exporter/tex/reledmac.xslt`, for the text, and Python,
+   `opensiddur/exporter/tex/typography_tex.py`, for the preamble, from a book's YAML `typography`
+   settings, which `doc/typography.md` documents; then it runs LuaLaTeX (OSP
+   `scripts/tei-to-pdf.sh`; `opensiddur/exporter/pdf/pdf.py`, lines 1 to 15). It runs
+   `lualatex -interaction=nonstopmode -halt-on-error`, BibTeX if anything is cited, and LuaLaTeX
+   again while the log asks for a rerun, at most six passes of up to an hour each (`pdf.py`, lines
+   84 to 87, 137 to 157 and 266 to 277). The code is under the GNU LGPL, version 3 or later (OSP
+   `LICENSE`; `pyproject.toml`, line 8), whose terms let GPL-3.0 code such as this repository's
+   adapt it, its notices kept.
+2. **Its Hebrew.** fontspec declares the Hebrew family with
+   `[Renderer=HarfBuzz,Script=Hebrew,BoldFont={*},AutoFakeBold=2]`, beside a comment that HarfBuzz
+   shaping is what places the vowels and the cantillation correctly (`typography_tex.py`, lines 310
+   to 314). The Latin family, and any family a book's settings add, gets no `Renderer`, so Hebrew
+   set in one of them would be shaped in luaotfload's node mode (lines 337 to 344 and 357 to 363).
+   polyglossia sets English as the default language and Hebrew as the other (`reledmac.xslt`,
+   lines 148 to 150), and its Hebrew module loads luabidi
+   (`opensiddur/exporter/tex/install-tex.sh`, line 11). The exporter normalizes nothing and
+   replaces no character, so the code points of its TEI reach the `.tex` unchanged, and HarfBuzz
+   then sorts their marks as “Typesetting toolchains”, item 1, describes. Fonts are named by family
+   and checked against fontconfig (`opensiddur/exporter/typography.py`, lines 408 to 458). The
+   default Hebrew chain is Frank Ruehl CLM, Ezra SIL, SBL Hebrew and FreeSerif
+   (`doc/typography.md`, lines 74 to 80), and the release builds install Culmus, Ezra SIL, Linux
+   Libertine and FreeFont from Ubuntu's packages (`.github/workflows/release-book.yml`, lines 67
+   to 72).
+3. **Its notes and its pages.** reledmac sets every note in its apparatus series B, as a footnote
+   marked in the text by a raised mark, a number by default, with no lemma and no line reference
+   (`reledmac.xslt`, lines 407 to 411 and 4075 to 4105); line numbers run in the outer margin,
+   every fifth line (`typography_tex.py`, lines 745 to 790). reledpar sets a parallel text in two
+   columns or on facing pages, in batches of 500 blocks, since it holds no more than 5,120 chunks
+   in one group (`reledmac.xslt`, lines 100 to 107). The paper is US letter by default, or another
+   standard size or a custom one, set through the geometry package (`typography.py`, lines 210 to
+   224); PDFs are bound on the right by default, with the margins mirrored to match (OSP
+   `CHANGELOG.md`, lines 92 and 93; `typography_tex.py`, lines 444 to 465). Nothing writes bleed,
+   crop marks, a trim or bleed box, PDF/X, PDF/A or a cover, and no code reorders the pages.
+4. **The books with MAM's text.** Two of the three have PDFs. The Humash (annual cycle) sets MAM in
+   one column facing the JPS 1917 translation in the other, on US letter paper at 11 points, with
+   MAM's notes and with Frank Ruehl CLM first in its Hebrew chain (OSR
+   `settings/chumash-opensiddur-he/annual.yaml`, lines 38 and 39, and 113 to 157); the Heidenheim
+   Haggadah with English translation fills from MAM the biblical text it lacks. The Expanded
+   Ashkenazi Siddur is HTML only. The Humash's PDF, of 9,439,943 bytes, took 1 hour 14 minutes to
+   typeset in the release's run on GitHub's runner
+   (https://github.com/opensiddur/opensiddur-projects/actions/runs/42529362985), whose job may run
+   330 minutes; the job's comment says the full Humash takes “about 90 minutes to typeset on a
+   desktop” (`release-book.yml`, lines 42 to 44). The sub-agents' searches of the processor, the
+   projects and the hosted builder, opensiddur-infra, found no mention of print on demand, bleed,
+   PDF/X or CMYK: the books' “printed book” is the PDF.
+5. **Its MAM text.** Its converter reads MAM's Google Sheet as exported on 2026-05-27, before the
+   sheet was frozen on 2026-09-12, and parses the sheet's wikitext with handlers of its own for
+   MAM's templates (OSP `opensiddur/importer/miqra_al_pi_hamasorah/miqra_wikitext.py`), so its
+   choices among MAM's alternatives are its own, not the explicit ones that “What the text shows”
+   requires of this edition.
+6. **Its limits.**
+   1. The processor's open issues 86 and 87, opened on 2026-08-21, weigh Typst and SILE as
+      replacements for LuaLaTeX with reledmac and reledpar; issue 86 cites reledpar's limit of
+      5,120 chunks, and puts HarfBuzz shaping first among a replacement's requirements
+      (https://github.com/opensiddur/opensiddur-processor/issues/86,
+      https://github.com/opensiddur/opensiddur-processor/issues/87).
+   2. The stylesheet patches internal macros of reledmac and reledpar (`reledmac.xslt`, lines 477
+      to 522, among others), which a new release of either package can break, and no build pins
+      its TeX Live: the release builds take whatever Ubuntu's packages hold on GitHub's runner
+      (`opensiddur/exporter/tex/install-tex.sh`; `release-book.yml`, line 42).
+   3. A missing glyph does not fail a build, since the log is read only for rerun messages
+      (`pdf.py`, lines 137 to 157), and no test checks where a vowel or an accent lands.
+   4. The hosted builder records an earlier report about vowel placement that its comparison of an
+      old and a new TeX image has not resolved
+      (https://github.com/opensiddur/opensiddur-infra/blob/cbbf4d07668194aef0464d296539a5437bec6133/docs/verification.md,
+      lines 104 and 149).
+7. **So:** Open Siddur's mechanism is a fitting concrete candidate. It is this plan's LuaLaTeX
+   candidate in HarfBuzz mode, already setting MAM's points and accents at book length, with
+   working answers for notes, a right binding, trims and reruns, under a license that lets this
+   repository adapt its code. It can be used in two ways:
+   1. **Borrow its design, recommended.** The generator writes LaTeX in the processor's manner,
+      from the render-element trees: fontspec's `Renderer=HarfBuzz` on every family that can set
+      Hebrew, not only the Hebrew one; polyglossia with luabidi, or babel; reledmac for MAM's
+      notes, either as footnotes keyed by marks, as the processor sets them, or as a lemma
+      apparatus, which reledmac provides and the processor turns off; the geometry package for the
+      trim; the mirrored margins of a right binding; and the rerun loop with `-halt-on-error`. To
+      that it adds what print on demand needs and the processor lacks: Taamey D loaded from this
+      repository's file through fontspec's `Path` option, PDF/X through pdfx with the independent
+      preflight, trim and bleed boxes, each interior in reading order and in reverse (“Print on
+      demand”, item 9), and a build that fails on a missing character. It keeps this plan's own
+      requirements too: the layout features of “What the text shows”, item 3, and Stage 1's
+      comparison of every mark with HarfBuzz's own rendering.
+   2. **Run the processor itself, not recommended for the edition.** Its text would be its
+      converter's reading of a snapshot older than the sheet's freezing, with choices of its own,
+      rather than the closed dispatch over `MAM-parsed/plus/` that “What the text shows” requires;
+      it loads fonts by installed name and writes no PDF/X; and the edition would depend on
+      another organization's code, whose maintainers are weighing a move off LaTeX. Its released
+      Humash can still serve Stage 1 as a specimen of the mechanism setting MAM's text (Stage 1,
+      step 2).
 
 ### Identifiers
 
@@ -729,7 +863,9 @@ HarfBuzz's sources are cited at commit `276cf4a7` of https://github.com/harfbuzz
 2. **The documentation notes are printed** (“Decisions ledger”, entry 1). How they are set is
    deferred to Stage 1's trial: as MAM-with-doc sets them, each lemma and each part on a line of
    its own, at the foot of the page or in a column beside the text; or run on as an apparatus;
-   and, in an eBook, as notes that open from a mark in the text.
+   and, in an eBook, as notes that open from a mark in the text. In LaTeX, reledmac can set them at
+   the foot of the page either way: as notes keyed by marks, as Open Siddur's Humash prints MAM's
+   notes, or as a lemma apparatus (“Open Siddur's mechanism”, items 3 and 7).
 3. **Layout features.** Stage 2 lists every layout feature from the render-tag survey rather than
    from memory. The ones known now are the petuḥah and setumah breaks, the layout of poetic
    verses, the large and small letters, the inverted nuns, MAM's gray maqaf (`MAM-parsed/README.md`,
@@ -906,11 +1042,15 @@ ownership”, item 6, as far as the trial uses them.
       has a table and pointed examples;
    7. a page of the English introduction, from `in/mam-ws-intro-en/ch3.mediawiki`.
 2. Build each sample with each candidate toolchain, as a print PDF at the candidate trims and as an
-   EPUB 3 with Taamey D embedded. The print candidates are LuaLaTeX with babel in HarfBuzz mode,
-   writing PDF/X-1a through pdfx, and the same XHTML as the EPUB, set by Vivliostyle; the EPUB is
-   the scratch script's own XHTML, with `lang="he"`, `dir="rtl"`, a right-to-left page progression
-   and Taamey D embedded and unobfuscated. Record each engine's HarfBuzz version, and run each PDF
-   through the preflight.
+   EPUB 3 with Taamey D embedded. The print candidates are LuaLaTeX in HarfBuzz mode, writing
+   PDF/X-1a through pdfx, in two forms, with babel and in the manner of Open Siddur's processor,
+   with polyglossia, luabidi and reledmac (“Open Siddur's mechanism”, item 7); and the same XHTML
+   as the EPUB, set by Vivliostyle. The EPUB is the scratch script's own XHTML, with `lang="he"`,
+   `dir="rtl"`, a right-to-left page progression and Taamey D embedded and unobfuscated. Record
+   each engine's HarfBuzz version, and run each PDF through the preflight. If Ben agrees to the
+   download, also read Open Siddur's released Humash, `chumash-opensiddur-he-annual-v20261108.pdf`
+   (9,439,943 bytes), from opensiddur-projects' release `v20261108`, at high zoom, as a specimen of
+   the mechanism setting MAM's text in another font.
 3. Check each build:
    1. **Shaping.** Set the hardest-words page with HarfBuzz itself, through vharfbuzz and Taamey
       D, and compare each build's rendering of it with that reference at high zoom: every mark
@@ -1052,9 +1192,10 @@ rules on new editions, read at that time.
 Each is asked when its stage arrives, on that stage's decision page, with what the earlier
 stages found.
 
-1. **Stage 1:** the toolchain for print and for the eBooks; how, or whether, the Kindle edition
-   of MAM's text is made; the trim, columns and paper; the text faces for unpointed Hebrew and
-   for Latin script; how the notes are set.
+1. **Stage 1:** the toolchain for print, LuaLaTeX with babel or in Open Siddur's manner, or
+   Vivliostyle, and for the eBooks; how, or whether, the Kindle edition of MAM's text is made; the
+   trim, columns and paper; the text faces for unpointed Hebrew and for Latin script; how the notes
+   are set; whether the trial downloads Open Siddur's released Humash as a specimen.
 2. **Stage 2:** the volume arrangement (“Candidate arrangements”); whether the typesetting
    sources are tracked; whether a refresh of MAM's text obliges rerunning the generator.
 3. **Stage 3:** the Hebrew introduction's contents.
@@ -1085,6 +1226,10 @@ stages found.
    of the release's source archive under `gh-pages/taamey-d/downloads/`. Whether that suffices
    is Ben's judgment as the font's maintainer, or a lawyer's.
 7. **Programs installed on Ben's machine,** each on his word (Stage 1).
+8. **The LaTeX packages' internals.** Open Siddur's processor patches internal macros of reledmac
+   and reledpar, which a new release of either can break (“Open Siddur's mechanism”, item 6); a
+   generator that borrows its design patches as little as it can, and Stage 1 records the versions
+   it used.
 
 ## Input manifest
 
@@ -1098,4 +1243,6 @@ stages found.
 | `in/mam-ws-intro-en/` | 8 pages, with `manifest.json`, mirrored 2026-11-22 | the English introduction | refreshed at Stage 4; never edited |
 | Taamey D | the release pinned in `in/font-support/taamey-d-1.2/`; `Taamey-D/font-m-TaD/Taamey_D.ttf` | pointed Hebrew | embedded |
 | `DATA-LICENSES.md` | “The MAM statement, repeated verbatim” | the editions' license and attribution | quoted on each copyright page |
+| opensiddur/opensiddur-processor | `main` at `474cb10e` and tag `v0.7.0` at `723b083c`, read on GitHub on 2026-11-23 | the design of the LuaLaTeX candidate (“Open Siddur's mechanism”) | read; adapted under its LGPL if Stage 1 chooses it; never run by the generator |
+| Open Siddur's released Humash | `chumash-opensiddur-he-annual-v20261108.pdf`, 9,439,943 bytes, opensiddur-projects' release `v20261108` | Stage 1's specimen | downloaded only on Ben's word; never tracked |
 | `in/book-editions/` | to be written at Stage 2 | the volume map and the front and back matter | tracked |
