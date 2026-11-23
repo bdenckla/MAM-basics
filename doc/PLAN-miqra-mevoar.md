@@ -40,9 +40,10 @@ in an email that Ben sent the same day (decisions ledger entry 17). Avi answered
 evening, and Ben relayed the answers with his word to act on them (entry 18): Avi corrected
 the two labels that decision 1 questioned and chose 2a, 3a and 4b, the bot's block of title
 and navigation. A fresh session resumed Stage 12, found his fixes on the live pages, and
-wrote Stage 13, which plans the block (execution ledger, “Stage 12 resumed”). Whether the 15
-pages are saved now or with their blocks, and two other choices of Stage 13, wait on Ben's
-answers, decisions 7 to 9 of the stage's decision page; each saving run waits on his word.
+wrote Stage 13, which plans the block (execution ledger, “Stage 12 resumed”). On 2026-11-23
+Ben chose the three recommendations of the stage's decision page (decisions ledger entry 19),
+among them the 15 pages' creation with their blocks, in one saving run; another fresh session
+took his answers and executes Stage 13, and each saving run waits on his word.
 The execution ledger below records each finished stage.
 
 Written 2026-11-02 by Claude (Opus 5.5) in the Phase 1 session that the session "Commander for
@@ -223,6 +224,17 @@ approved by Ben's word in entry 3.
     session that resumed the stage reads Ben's words as his word to act on the four answers
     and to check Avi's fixes, and, for 4b, to plan that stage, which a fresh session
     executes; each saving run still needs his word for that run (entry 3). Active.
+19. **Stage 13's decisions 7 to 9.** Ben, 2026-11-23, at 04:27 New York time, in the session
+    that the commander started to take his answers and execute Stage 13, exactly:
+
+    > I concur with all of your recommendations on the decision page. Please either proceed here or ask the commander for a fresh session in which you will proceed.
+
+    The page recommended (a) for each of the three (Stage 13, “Choices”): 7a, the 15 pages
+    created once, with their blocks, in one saving run by the stage's executor; 8a, each
+    topic's label transcluding its heading from its base chapter; and 9a, no block now for the
+    six parts made without one, the reply to Avi asking whether he wants them. The session,
+    which did not write the stage, executes it, as his words allow; each saving run still
+    needs his word for that run (entry 3). Active.
 
 Deferred, each until its own decision:
 
@@ -2295,9 +2307,9 @@ that kind of title and navigation in the very same style as Joshua 1, that would
 (decisions ledger entry 18). A fresh session executes it, never the session that wrote it;
 Ben's word to act on Avi's answers covers its execution, and each saving run still needs his
 word for that run (entry 3). The design is that session's proposal. Three choices that neither the plan nor
-Avi's words settle, decisions 7 to 9 of the stage's decision page, wait on Ben's answers there,
-and the executor follows each one's recommendation, marked (a), until the decisions ledger
-records his answer.
+Avi's words settled, decisions 7 to 9 of the stage's decision page, took Ben's answers on
+2026-11-23: he chose each one's recommendation, marked (a), as decisions ledger entry 19
+records.
 
 **What it does.** BDencklaBot creates the Torah's 15 part pages of Stage 12, `gen-1` to
 `deut-3`, each with a block of title and navigation at its top (decision 7a), in the very same
@@ -2358,7 +2370,8 @@ the same reads by `resume/scripts/survey_heading_texts.py` and `survey_block_inp
    the order of the pages, the headings of Stage 12's Counts table.
 
 **Choices,** decisions 7 to 9 of the stage's decision page,
-https://claude.ai/artifact/XYchLEVJdwMQh5FM3wDJHN, numbered after Stage 12's 1 to 6:
+https://claude.ai/artifact/XYchLEVJdwMQh5FM3wDJHN, numbered after Stage 12's 1 to 6. Ben
+chose 7a, 8a and 9a on 2026-11-23 (decisions ledger entry 19):
 
 7. **When the 15 pages are saved.** (a) With their blocks: this stage's executor creates each
    page once, in one saving run of the 15. (b) Now, without blocks: the session that resumed
@@ -2417,7 +2430,7 @@ https://claude.ai/artifact/XYchLEVJdwMQh5FM3wDJHN, numbered after Stage 12's 1 t
      end.
    - A missing input fails rather than skips.
 
-**If Ben answers otherwise:**
+**If Ben had answered otherwise,** which he did not (decisions ledger entry 19):
 
 - **Decision 7b or 9b** adds an **update** outcome to the bot mode, for a page that exists and
   whose live text equals, byte for byte, the text that the generator gives it without its
