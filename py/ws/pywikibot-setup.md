@@ -227,9 +227,10 @@ a petuha or a setuma or that has a heading, which is transcluded from its base c
 category line. The Decalogue's verses call the templates of Avi's pages of Yitro and Va'etchanan
 instead of the verse template. Its second table, `BLOCK_ONLY_PAGES`, lists Avi's pages for the
 Five Megillot, which the bot did not make: the run generates such a page from its live text,
-adding its block at the top and changing no other line. `--page` names a page of either table by
-its key, such as `hoshea`, `yehoshua-1` or `esther`, and may be given more than once; without it
-the run takes every page of `PAGES`. A saving run needs `--summary`, the edit summary, which Ben
+adding its block at the top and changing no other line; on a page without a heading, by decision
+14a of `doc/PLAN-miqra-mevoar.md`, the block has no topics. `--page` names a page of either table
+by its key, such as `hoshea`, `yehoshua-1` or `esther`, and may be given more than once; without
+it the run takes every page of `PAGES`. A saving run needs `--summary`, the edit summary, which Ben
 approves with the run:
 
        .venv/Scripts/python.exe py/main_ws_bot.py miqra-mevoar-display --no-save -dir:$env:USERPROFILE/.pywikibot
@@ -243,10 +244,10 @@ their category lines, the update rule of Stage 14 of `doc/PLAN-miqra-mevoar.md`,
 saved with `nocreate`, with the revision whose text was compared as `baserevid` and its time as
 `basetimestamp`, so that an edit made since makes MediaWiki detect a conflict. Any other page that
 exists is refused, as is a page of `BLOCK_ONLY_PAGES` to which no block can be added, since its
-live text does not read, its verse lines name another book, it begins with a block other than
-its own, or it has no heading, whose block waits on decision 14 of the plan: nothing is saved for
-it, and the run exits non-zero, giving the reason and listing the editors of the page's
-revisions. `--no-save` also renders each generated page through the API's `parse` action, which
+live text does not read, its verse lines name another book, or it begins with a block other than
+its own: nothing is saved for it, and the run exits non-zero, giving the reason and listing the
+editors of the page's revisions.
+`--no-save` also renders each generated page through the API's `parse` action, which
 saves nothing, and exits non-zero if a link or a transcluded page on it is missing, as a
 misspelled book name or a missing base chapter would make one, or if the page uses more than 90%
 of MediaWiki's limit on the post-expand include size, past which the page's last templates are

@@ -12,7 +12,8 @@ the Torah, the places of the headings in its base chapters in
 in/miqra-mevoar-base-headings/, before any page is read. A page of BLOCK_ONLY_PAGES,
 one of Avi's pages for the Five Megillot, which the bot did not make, is generated from
 its live text by display_page.block_only_page_text, which adds its block of title and
-navigation at its top and changes no other line (Stage 15 of doc/PLAN-miqra-mevoar.md).
+navigation at its top and changes no other line (Stage 15 of doc/PLAN-miqra-mevoar.md);
+on a page without a heading, by the plan's decision 14a, the block has no topics.
 Each generated page is compared with the latest revision of the live page, and the page
 then has one of four outcomes:
   create     the page does not exist. It is saved with createonly, so that a page someone
@@ -28,11 +29,10 @@ then has one of four outcomes:
              since makes MediaWiki detect a conflict.
   refuse     the page exists with another text, or a page of BLOCK_ONLY_PAGES does not
              exist or no block can be added to it: its live text does not read, its
-             verse lines name another book, it begins with a block other than its own,
-             or it has no heading, which leaves its block without a topic, and the block
-             of such a page waits on decision 14 of the plan. Nothing is saved for it; the
-             run records the reason, lists the editors of the page's revisions and
-             exits non-zero when it ends. People, not the bot, reconcile such a page.
+             verse lines name another book, or it begins with a block other than its
+             own. Nothing is saved for it; the run records the reason, lists the
+             editors of the page's revisions and exits non-zero when it ends. People,
+             not the bot, reconcile such a page.
 
 Every run writes the live text of each selected page that exists to its live/
 directory, each generated page to its pages/ directory and each page's outcome, with the

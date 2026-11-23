@@ -31,9 +31,9 @@ the label's end, where it has one, copied by script, as the comment on PAGES say
 BLOCK_ONLY_PAGES lists Avi's pages for the Five Megillot, made in 2020, which the bot
 did not make and to which Stage 15 only adds a block: block_only_page_text gives such
 a page's live text with its block at its top, built from the page's own verses as a
-generated page's block is, and changes no other line. A page without a heading has no
-topic, and block_line raises on it, since the block of such a page waits on decision 14
-of the plan; of the Five Megillot, only Lamentations has headings.
+generated page's block is, and changes no other line. Of the Five Megillot, only
+Lamentations has headings, so the other four take blocks without topics, as the
+paragraph below on a page's block says.
 
 A page's stem names its book: a Word file's stem in books.BOOKS, or an OSIS
 abbreviation in base_headings.BOOKS, two sets of keys that must not meet. The places of
@@ -50,7 +50,12 @@ line makes; _BLOCK_AFTER_TOPICS; its chapters, joined by _CHAPTER_SEPARATOR, eac
 link, [[#<chapter> <verse>|<chapter>]], to the chapter's first verse on the page, in
 the page's order; and _BLOCK_END. Chapters and verses are numerals, and the links reach
 the anchors that the verse template and the Decalogue's templates make for their
-verses. Those pieces of fixed text are Joshua's, as the comment on them says.
+verses. Those pieces of fixed text are Joshua's, as the comment on them says. By
+decision 14a of Stage 15 of the plan, a page none of whose verses has a heading has a
+block without topics, whose line gives between the block's name and its chapters only
+_BLOCK_WITHOUT_TOPICS: _BLOCK_AFTER_NAME up to and including its call of the line-break
+template, and _BLOCK_AFTER_TOPICS from its parenthesis on, each cut by code from
+Joshua's pieces. No other page has a block without topics.
 
 After its block, if it has one, a page has four line shapes and no others: the three of
 the megillot's pages, and on the Torah's pages the Decalogue's:
@@ -91,10 +96,11 @@ read_page, a closed parser of the block and the four shapes, reads a page back a
 block's name, or None, its verses and its category's sort key, and raises on any other
 line; on a block anywhere but a page's first four lines, or in any other shape; on a
 block whose topics are not the page's headings, in order, with the same transclusions,
-or whose chapters are not the page's chapters at their first verses on the page; on
-the chapter parameter anywhere that item 1 does not put it; on a verse line at a verse
-to which item 2 gives a Decalogue line, and on a Decalogue line anywhere else; and on a
-disputed petuha's first parameter before any verse but its own.
+or whose chapters are not the page's chapters at their first verses on the page, and so
+on a block without topics on a page with a heading; on the chapter parameter anywhere
+that item 1 does not put it; on a verse line at a verse to which item 2 gives a
+Decalogue line, and on a Decalogue line anywhere else; and on a disputed petuha's first
+parameter before any verse but its own.
 
 read_block_only_page reads a page of BLOCK_ONLY_PAGES as read_page reads a page, and
 its notes besides, of two kinds and no others: after its block, if it has one, or at
@@ -105,7 +111,8 @@ level-2 heading line whose text is plain, and <references/>.
 
 differs_only_in_block is the bot's update rule, from Stage 14 of the plan: a page's live
 text and its generated text, each ending in a category line, are equal but for a block
-at the top of either and for their category lines.
+at the top of either and for their category lines. A block without topics counts as a
+block there only on a page without a heading.
 """
 
 import dataclasses
@@ -207,10 +214,10 @@ def page_text(page):
 def block_only_page_text(page, live):
     """A page of BLOCK_ONLY_PAGES with its block at its top, from its live text: the live
     text itself where it already begins with that very block, or else the block's four
-    lines and then the live text, notes in place, which must read back as itself. Raise
-    where the live text does not read, where a verse line names a book other than the
-    page's, where the page begins with another block, and where the block would have no
-    topic, as block_line does."""
+    lines and then the live text, notes in place, which must read back as itself. A
+    page without a heading takes a block without topics. Raise where the live text does
+    not read, where a verse line names a book other than the page's, and where the page
+    begins with another block."""
     block_name, verses, sort_key, notes = read_block_only_page(live)
     book = mam_bknas.he_bk39_name(*page.mam_book)
     if strays := sorted({verse.book for verse in verses} - {book}):
@@ -229,8 +236,8 @@ def differs_only_in_block(live, generated):
     """Whether a page's live text differs from its generated text in no more than a block
     at the top of either and their category lines: each text's last line is a category
     line, and the two are equal once each loses its last line and its block, if it has
-    one, as _block_match finds it. Stage 14's update rule; a text of any other shape
-    gives False."""
+    one, as _block_match finds it, which takes a block without topics only on a page
+    without a heading. Stage 14's update rule; a text of any other shape gives False."""
     rests = []
     for text in (live, generated):
         lines = text.split("\n")
@@ -248,19 +255,29 @@ def block_line(name, topics, chapters):
     """A block's line: the part's name; its topics, each ((chapter, verse), label), the
     numerals of the verse before which its heading stands and its link's label; and its
     chapters, each (chapter, verse), the numerals of the chapter and of its first verse
-    on the page, each linked by the chapter's numeral. The name, a template's parameter,
-    must be plain text, as _BLOCK_NAME and wikitext.wikitext_hazards allow it."""
+    on the page, each linked by the chapter's numeral. Without topics, as the block of a
+    page without a heading has none by decision 14a of the plan, the line gives only
+    _BLOCK_WITHOUT_TOPICS between the name and the chapters; a block always has a
+    chapter. The name, a template's parameter, must be plain text, as _BLOCK_NAME and
+    wikitext.wikitext_hazards allow it."""
     if _BLOCK_NAME.fullmatch(name) is None or wikitext.wikitext_hazards(name):
         raise ValueError(f"A block's name is not plain text: {name!r}")
-    if not topics or not chapters:
-        raise ValueError(f"The block of {name!r} has no topic or no chapter")
+    if not chapters:
+        raise ValueError(f"The block of {name!r} has no chapter")
+    between = _BLOCK_WITHOUT_TOPICS
+    if topics:
+        between = "".join(
+            (
+                _BLOCK_AFTER_NAME,
+                _TOPIC_SEPARATOR.join(_anchor_link(*topic) for topic in topics),
+                _BLOCK_AFTER_TOPICS,
+            )
+        )
     return "".join(
         (
             _BLOCK_START,
             name,
-            _BLOCK_AFTER_NAME,
-            _TOPIC_SEPARATOR.join(_anchor_link(*topic) for topic in topics),
-            _BLOCK_AFTER_TOPICS,
+            between,
             _CHAPTER_SEPARATOR.join(
                 _anchor_link(anchor, anchor[0]) for anchor in chapters
             ),
@@ -432,29 +449,45 @@ def _read_verses(lines):
 
 
 def _read_block(lines):
-    """A page's block, as its name, its topics and its chapters, and the page's lines
-    after it; or None and all the lines, where the first line is not a block's line. A
-    block is only a page's first four lines: its line, the rule and two blank lines."""
+    """A page's block, as its name, its topics, none for a block without topics, and its
+    chapters, and the page's lines after it; or None and all the lines, where the first
+    line is not a block's line. A block is only a page's first four lines: its line, the
+    rule and two blank lines."""
     match = _block_match(lines)
     if match is None:
         return None, lines
     name, topics, chapters = match.groups()
     return (
         name,
-        _read_links(topics, _TOPIC_SEPARATOR, _TOPIC_LINK),
+        [] if topics is None else _read_links(topics, _TOPIC_SEPARATOR, _TOPIC_LINK),
         _read_links(chapters, _CHAPTER_SEPARATOR, _CHAPTER_LINK),
     ), lines[_BLOCK_LENGTH:]
 
 
 def _block_match(lines):
     """_BLOCK_LINE's match of a page's first line, or None where that is not a block's
-    line; raise unless a block's line is followed by its rule and two blank lines."""
+    line; raise unless a block's line is followed by its rule and two blank lines, and
+    where the line of a block without topics, whose topics' group is None, stands on a
+    page with a heading: where a break line after the block gives one."""
     match = _BLOCK_LINE.fullmatch(lines[0])
-    if match is not None and lines[1:_BLOCK_LENGTH] != [_BLOCK_RULE, "", ""]:
+    if match is None:
+        return None
+    if lines[1:_BLOCK_LENGTH] != [_BLOCK_RULE, "", ""]:
         raise ValueError(
             "A block's line is not followed by its rule and two blank lines"
         )
+    if match.group(2) is None and any(
+        _gives_heading(line) for line in lines[_BLOCK_LENGTH:]
+    ):
+        raise ValueError("A block without topics is on a page with a heading")
     return match
+
+
+def _gives_heading(line):
+    """Whether a line is a break line with the heading parameter, which gives the verse
+    after it a heading; _BREAK_LINE's second group is that heading's base chapter."""
+    match = _BREAK_LINE.fullmatch(line)
+    return match is not None and match.group(2) is not None
 
 
 def _read_links(text, separator, link):
@@ -471,8 +504,9 @@ def _read_links(text, separator, link):
 
 def _check_block(block, verses):
     """A block's name; raise unless its topics are the page's headings, in order, each
-    at its verse and with its break line's transclusion, and its chapters the page's
-    chapters, each at its first verse on the page and named by its numeral."""
+    at its verse and with its break line's transclusion, so that a block without topics
+    stands only on a page without a heading, and its chapters the page's chapters, each
+    at its first verse on the page and named by its numeral."""
     name, topics, chapters = block
     headings = [
         (verse.chapter, verse.verse, *verse.heading)
@@ -951,7 +985,9 @@ PAGES = {
 # which Stage 15 only adds a block. Each one's name after DISPLAY_PREFIX is mam_bknas'
 # name of its book, as its link on the main page has it, and its block_name its link's
 # label in revision 3104162, which has no range, copied by script; each is pointed and
-# in NFC, as MediaWiki stores it.
+# in NFC, as MediaWiki stores it. Of the five, only Lamentations has headings, as Stage
+# 15 of the plan records; by the plan's decision 14a, each of the other four takes a
+# block without topics.
 BLOCK_ONLY_PAGES = {
     page.key: page
     for page in (
@@ -1005,6 +1041,17 @@ _TOPIC_SEPARATOR = " · "
 _BLOCK_AFTER_TOPICS = "'''{{ש}}(פרקים: "
 _CHAPTER_SEPARATOR = ", "
 _BLOCK_END = ")}}{{מ:טעמי המקרא-סוף}}"
+# What the line of a block without topics, the block of a page without a heading by
+# decision 14a of Stage 15 of the plan, gives between its name and its chapters:
+# _BLOCK_AFTER_NAME up to and including its call of the line-break template, the first
+# template that it calls, and _BLOCK_AFTER_TOPICS from its parenthesis on, each cut by
+# code from those pieces of Joshua's block.
+_BLOCK_WITHOUT_TOPICS = (
+    _BLOCK_AFTER_NAME[
+        : _BLOCK_AFTER_NAME.index("}}", _BLOCK_AFTER_NAME.index("{{")) + len("}}")
+    ]
+    + _BLOCK_AFTER_TOPICS[_BLOCK_AFTER_TOPICS.index("(") :]
+)
 # The block's second line, a horizontal rule, before its two blank lines.
 _BLOCK_RULE = "-----"
 # A block's lines: its line, the rule and two blank lines.
@@ -1111,18 +1158,21 @@ _CATEGORY_LINE = re.compile(
     re.escape(wikitext.CATEGORY[:-2]) + r"\|" + _ARGUMENT + r"\]\]"
 )
 # A block's name, which holds no bracket, brace, pipe, tag, equals sign or line break,
-# and a block's line: its name, and the text of its topics and of its chapters, which
-# _read_links reads.
+# and a block's line: its name; the text of its topics, or, on the line of a block
+# without topics, _BLOCK_WITHOUT_TOPICS, which leaves the topics' group None; and the
+# text of its chapters. _read_links reads the topics and the chapters.
 _BLOCK_NAME = re.compile(r"[^\[\]{}|<>=\n]+")
 _BLOCK_LINE = re.compile(
     re.escape(_BLOCK_START)
     + "("
     + _BLOCK_NAME.pattern
-    + ")"
+    + ")(?:"
     + re.escape(_BLOCK_AFTER_NAME)
     + "(.+?)"
     + re.escape(_BLOCK_AFTER_TOPICS)
-    + "(.+?)"
+    + "|"
+    + re.escape(_BLOCK_WITHOUT_TOPICS)
+    + ")(.+?)"
     + re.escape(_BLOCK_END)
 )
 # A chapter's or a verse's numeral in a block's anchor, and a block's links: a topic's,

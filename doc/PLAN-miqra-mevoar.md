@@ -1687,6 +1687,30 @@ byte-for-byte copy of that frozen plan; this ledger and the State line are the e
     byte for byte and each parent the compared revision (`read-after/run3/`), and a dry rerun
     found all 20 unchanged (`py/ws/ws_bot_edit_history.md`, “Miqra Mevoar's display pages: the
     block on 20 more pages, 2026-11-23”).
+  - **Decision 14a's code,** the block without topics, written by a subagent of the session from
+    Stage 15's design (`code-14a/brief.md`), its diff read and its checks repeated by the
+    session (`code-14a/report.md`). `display_page.py` gains `_BLOCK_WITHOUT_TOPICS`, which a
+    block's line gives between its name and its chapters when the block has no topics: the
+    part of `_BLOCK_AFTER_NAME` up to and including its call of the line-break template, and
+    `_BLOCK_AFTER_TOPICS` from its parenthesis on, each cut by code. The readers take that
+    line only on a page none of whose break lines gives a heading, and the module's, the bot
+    mode's and `py/ws/pywikibot-setup.md`'s documents say so. Every page of `PAGES` is
+    unchanged byte for byte, as `scripts/verify_14a_pages.py` found against the pages that the
+    earlier session wrote after `b27b3e77`. On the kept live texts, each of the four megillot
+    without a heading takes exactly the block's four lines at its top, a second application
+    changes nothing, and Lamentations' text is unchanged (`code-14a/megillot-after.txt`); a
+    block without topics on a page with a heading does not read, and a block without a chapter
+    raises (`code-14a/refusals.txt`). `git diff --check` and Black are clean, and Stage 13's
+    command gives 164 passed, as before (`code-14a/test-run-mine.txt`).
+  - **The dry run of decision 18,** at 12:25 New York time, saving nothing, after the
+    preconditions held again (`preconditions/check-20261123T172548Z.txt`): run
+    `20261123-122555-033260-0500` gave Song of Songs, Ruth, Ecclesiastes and Esther each an
+    update that adds the block's four lines at its top and changes no other line, comparing
+    the revision that the survey found, at about 16%, 13%, 30% and 30% of the include-size
+    limit, with no missing link or transcluded page (`dry-runs/run18-summary.txt`). Rendered
+    by the parse action, each block shows its name whole in bold and its chapters in order,
+    with no topic (`render/run18/`). The decision page puts the saving run to Ben as decision
+    18, with run 3's summary.
 
 ## Background for a fresh executor
 
