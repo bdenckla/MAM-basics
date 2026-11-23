@@ -43,8 +43,9 @@ and navigation. A fresh session resumed Stage 12, found his fixes on the live pa
 wrote Stage 13, which plans the block (execution ledger, “Stage 12 resumed”). On 2026-11-23
 Ben chose the three recommendations of the stage's decision page (decisions ledger entry 19),
 among them the 15 pages' creation with their blocks, in one saving run; another fresh session
-took his answers and executes Stage 13, whose code is done (execution ledger, “Stage 13,
-2026-11-23”); its dry run follows, and its saving run waits on his word.
+took his answers and executes Stage 13, whose code and dry run are done (execution ledger,
+“Stage 13, 2026-11-23”); its saving run waits on his word, which decision 10 of the
+stage's decision page asks.
 The execution ledger below records each finished stage.
 
 Written 2026-11-02 by Claude (Opus 5.5) in the Phase 1 session that the session "Commander for
@@ -1376,6 +1377,24 @@ byte-for-byte copy of that frozen plan; this ledger and the State line are the e
     and as the code's comments say: byte-accurate copies, which keep that order by Ben's rule
     of 2026-10-30 (`doc/mam-normal-mark-order.md`). `py/check_mark_order.py`, which covers
     `.py` files, is run by hand and gates neither the suite nor the mega.
+  - **The dry run,** from `6986c023`, at 05:06 New York time, after a check that no
+    `main_ws_bot.py` process was running. Before it, `base-headings --check`, ending at 05:04,
+    parsed all 187 base chapters and found every heading where the records have it, with no
+    revision changed (`stage13/logs/base-headings-check-1.txt`); and anonymous reads at 05:05
+    found the main page still at revision 3104053, with the same 15 links and labels, and
+    Joshua's first part still at revision 3103803 (`stage13/code/reads/`).
+    `miqra-mevoar-display --no-save` over the 15 pages gave 15 creates, each with Stage 12's
+    counts, 5,844 verse lines in all, and with no missing link or transcluded page; each page
+    equals byte for byte the generator's offline page, and after its block's four lines the
+    page of the dry run of 2026-11-22 at 20:55 (run
+    `.novc/mam-ws-bot-miqra-mevoar-display-runs/20261123-050616-088631-0500/`, summarized by
+    `stage13/scripts/summarize_stage13_run.py`). The blocks' lines of `lev-1` and `num-1`,
+    rendered through the API's parse action, which saves nothing, each show their name whole
+    in bold, the apostrophe at the end of `lev-1`'s included (`stage13/parse/`).
+  - **The decision page,** https://claude.ai/artifact/XYchLEVJdwMQh5FM3wDJHN, puts the saving
+    run to Ben as decision 10: the 15 pages, created with their blocks in one run with Stage
+    10's summary, after a fresh check of the preconditions and a fresh dry run. Nothing is
+    saved on Wikisource.
 
 ## Background for a fresh executor
 
