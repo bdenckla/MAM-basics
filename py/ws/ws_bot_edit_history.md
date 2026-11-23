@@ -1719,7 +1719,7 @@ infrastructure has changed enough to make them misleading examples:
   reports in `.novc/miqra-mevoar-avi-saves-2026-11-23/preconditions/` and `.novc/miqra-mevoar-avi-saves-2026-11-23/logs/`; the read
   after the run in `.novc/miqra-mevoar-avi-saves-2026-11-23/read-after/run1/`.
 
-### Miqra Mevoar's display page: Genesis' fourth part, 2026-11-23 — current
+### Miqra Mevoar's display page: Genesis' fourth part, 2026-11-23
 
 - **Purpose:** Update the display page of Genesis' fourth part, chapters 37 to 50, which the
   entry of the Torah's 15 parts created as the third part, revision 3104110, and which Dovi
@@ -1767,6 +1767,69 @@ infrastructure has changed enough to make them misleading examples:
   `.novc/mam-ws-bot-miqra-mevoar-display-runs/20261123-115457-491465-0500/`; the preconditions'
   reports in `.novc/miqra-mevoar-avi-saves-2026-11-23/preconditions/` and `.novc/miqra-mevoar-avi-saves-2026-11-23/logs/`; the read
   after the run in `.novc/miqra-mevoar-avi-saves-2026-11-23/read-after/run2/`.
+
+### Miqra Mevoar's display pages: the block on 20 more pages, 2026-11-23 — current
+
+- **Purpose:** Put the block of title and navigation of the entries above at the top of the
+  19 display pages that the bot made without one, Joshua's second part, Judges' three parts,
+  the Twelve's twelve pages and Daniel's two parts, and at the top of Avi's page of
+  Lamentations, made in 2020, above its opening note; and on Joshua's first part, Avi's
+  model, replace Dovi's block with the generator's, whose 18 topics transclude their
+  headings, as the other blocks' topics do. Avi asked for the block on every part of Joshua,
+  Judges, the Twelve, the Five Megillot and Daniel (decisions ledger entry 22 of
+  `doc/PLAN-miqra-mevoar.md`); Stage 15 of the plan gave the display mode those pages, their
+  blocks' names and a table of the megillot's pages, to which the bot only adds a block
+  (`b27b3e77`). The bot changed no other line of any page. The other four megillot, which
+  have no heading, wait on the block without topics.
+- **Authorization:** Ben, 2026-11-23, at 11:44 New York time, in the session that took his
+  answers to decisions 13 to 17 of the decision page,
+  https://claude.ai/artifact/XYchLEVJdwMQh5FM3wDJHN: "I concur with all of your
+  recommendations on the decision page". Recommendation 17a was to save the 20 pages with
+  the summary below, after fresh checks.
+- **Mode:** `main_ws_bot.py miqra-mevoar-display`, with `--page` for each of
+  `yehoshua-1`, `yehoshua-2`, `sephershoftim-1` to `sephershoftim-3`, the Twelve's keys
+  from `hoshea` to `malakhi`, `daniyel-1`, `daniyel-2` and `lament`, and the summary "Block of
+  title and navigation, as Avi asked", in English as decisions ledger entry 9 of the plan
+  makes the default.
+- **Saving run:** twenty pages updated, from 11:58 to 12:02 New York time, 186,603 bytes in all,
+  as revisions 3104173 to 3104192, each over the revision that the run compared: Joshua's first
+  part 3104173, over 3103803; Joshua's second part 3104174, over 3101500; Judges' first part
+  3104175, over 3103155; Judges' second part 3104176, over 3104129; Judges' third part 3104177,
+  over 3103157; Hosea 3104178, over 3101359; Joel 3104179, over 3101360; Amos 3104180, over
+  3101361; Obadiah 3104181, over 3101362; Jonah 3104182, over 3101363; Micah 3104183, over
+  3103035; Nahum 3104184, over 3103036; Habakkuk 3104185, over 3103037; Zephaniah 3104186, over
+  3103041; Haggai 3104187, over 3103038; Zechariah 3104188, over 3103039; Malachi 3104189, over
+  3103136; Daniel's first part 3104190, over 3103153; Daniel's second part 3104191, over
+  3103154; Lamentations 3104192, over 961348. Each page but Joshua's first part gained the
+  block's four lines at its top; on Joshua's first part, line 1, the block's, was replaced. The
+  summary was copied from the plan by script and given to the run without passing through a
+  shell.
+- **Safety rule:** before the dry run, anonymous reads found the 40 pages of the two stages'
+  survey at their surveyed revisions but for Genesis' second to fourth parts, at the
+  revisions of the entries above, and the main page still at revision 3104162, whose labels
+  give the blocks' names. No `main_ws_bot.py` process was running on the machine, and no
+  other session of the commander's family was doing bot work, before either bot run. The
+  `--no-save` dry run gave twenty updates, each comparing the revision that the survey found,
+  at 3.0% to 68.1% of the include-size limit, with no missing link or transcluded page, and
+  its pages and outcomes equal byte for byte those that the decision page put to Ben
+  (`.novc/mam-ws-bot-miqra-mevoar-display-runs/20261123-111327-523737-0500/`). The saving run saved each update with `nocreate`,
+  with the compared revision as its base revision, read each new revision back through the
+  API, uncached, and its bytes equalled the generated text. A read after the run, without
+  the bot's login, found each new revision BDencklaBot's, not minor, with the approved
+  summary, its parent the compared revision and its text the generated page's byte for byte,
+  and each edit with the bot flag in the recent changes.
+- **Finding:** one of Micah's 12 topics shows the heading as revised on its base chapter
+  after the Word file, not the Word file's, since each topic transcludes its heading.
+- **One-shot:** no. Confirmed 2026-11-23, immediately after the run: a `--no-save` rerun found
+  all twenty pages unchanged and exited zero (`.novc/mam-ws-bot-miqra-mevoar-display-runs/20261123-120424-678076-0500/`).
+- **Edit level:** Whole page text, generated, or for Lamentations its live text with the
+  block added, saved only over a text that differs from it in the block alone; page-targeted
+  by key.
+- **Input:** `MAM-simple/json-vtrad-mam/` and `in/miqra-mevoar/`, and Lamentations' live
+  text; run artifacts `.novc/mam-ws-bot-miqra-mevoar-display-runs/20261123-115834-510984-0500/`; dry run
+  `.novc/mam-ws-bot-miqra-mevoar-display-runs/20261123-115757-275850-0500/`; the preconditions' reports in
+  `.novc/miqra-mevoar-avi-saves-2026-11-23/preconditions/`; the read after the run in
+  `.novc/miqra-mevoar-avi-saves-2026-11-23/read-after/run3/`.
 
 ## How to look up the original code
 
