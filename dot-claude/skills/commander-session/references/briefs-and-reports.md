@@ -44,9 +44,11 @@ section "Task prompts and handoffs" and carries, in this order:
    - **An open decision** is put to Ben once, not carried from report to report.
    - **Release while waiting,** allocation rule 7 in `claude-desktop.md`, in full.
    - **Context:** past about 30% of its context with much left, the child carries on through
-     subagents, one bounded slice each, with one writer in the clone at a time; past about 70% with
-     work left, it writes a standalone handoff into the shared notes folder the app names in each
-     child's prompt, stops, and sends the handoff to the commander by SendMessage.
+     subagents, one bounded slice each, with one writer in the clone at a time; past about 50% with
+     substantial work left, it writes a standalone handoff into the shared notes folder the app
+     names in each child's prompt, stops, and asks the commander by SendMessage for a fresh
+     session, as the user-wide instructions' section "Delegate bounded work when it helps" has said
+     since 2026-11-22.
    - **Credentials:** Git and `gh` get no chance to ask for them: `GIT_TERMINAL_PROMPT=0`,
      `GCM_INTERACTIVE=never`, `GIT_SSH_COMMAND=ssh -o BatchMode=yes` and `GH_PROMPT_DISABLED=1`.
    - **Standing rules:** no history rewrite, no force-push, no amend; PowerShell 7, with no `sed`
@@ -134,6 +136,9 @@ section "Task prompts and handoffs" and carries, in this order:
   - "Yes, but I advise a fresh session for this and any other follow-up work";
   - "as usual, I'd like like to discuss that (I don't have an answer yet), and do the resulting
     work in a fresh session".
+- **The 50% handoff in every brief.** Ben, 2026-11-22, when the commander asked whether this file's
+  brief template should say 50%, as the user-wide instructions do, instead of 70%: "Please
+  standardize on 50%".
 - **One owner for each outward act.** Ben, 2026-10-31, after one child offered to file an issue
   that another child had already drafted: "I'm concerned that we have some cross-session
   responsibility, which could result in double-issue filing or zero-issue filing"
