@@ -54,10 +54,13 @@ display mode's dry run now also fails a page that uses more than 90% of that lim
 Avi answered both questions the same day, and Ben gave his word to carry out the work that Avi
 asks for (entry 22): Avi divided Genesis' second part into two, so that Genesis has four parts,
 which Stage 14 plans, and asked for the block on every part of Joshua, Judges, the Twelve, the
-Five Megillot and Daniel, which Stage 15 plans. A fresh session wrote both stages that day and
-executes them, each saving run on Ben's word. Their code and dry runs are done, and the
-stages' choices, decisions 13 and 14, and their three saving runs, decisions 15 to 17, wait on
-his answers on its decision page.
+Five Megillot and Daniel, which Stage 15 plans. A fresh session wrote both stages that day,
+with their code and dry runs, and Ben chose every recommendation of their decision page
+(entry 23): the reply offers Avi a lighter verse template, a page without a heading gets a
+block without topics, and the three saving runs, decisions 15 to 17, go ahead. Another fresh
+session takes his answers and executes the rest of both stages (execution ledger, “The saves
+of Stages 14 and 15, 2026-11-23”); the four megillot without a heading get their blocks by a
+saving run that waits on his word, as decision 18.
 The execution ledger below records each finished stage.
 
 Written 2026-11-02 by Claude (Opus 5.5) in the Phase 1 session that the session "Commander for
@@ -86,7 +89,7 @@ every display page of Joshua, Judges, the Twelve, the Five Megillot and Daniel.
 
 ## Decisions ledger
 
-Entries 1 to 3 and 10 to 18 are Ben's decisions. Entries 5 to 9 were Claude's proposals,
+Entries 1 to 3 and 10 to 23 are Ben's decisions. Entries 5 to 9 were Claude's proposals,
 approved by Ben's word in entry 3.
 
 1. **Route: the bot, after a pilot.** Ben, 2026-11-02, answering "Which route should the pages
@@ -300,6 +303,25 @@ approved by Ben's word in entry 3.
     others, which Stage 15 plans. The session that the commander started for the email reads
     Ben's words as his word to plan and carry out that work and to draft the reply for him to
     send; each saving run still needs his word for that run (entry 3). Active.
+23. **Decisions 13 to 17 of Stages 14 and 15.** Ben, 2026-11-23, at 11:44 New York time, in
+    the session that the commander started to take his answers, make the saves that he
+    approves and draft the reply to Avi, exactly:
+
+    > I concur with all of your recommendations on the decision page
+
+    The decision page, in its version 13, recommended (a) for each of the five: 13a, the
+    reply explains what a lighter verse template would be and offers Avi draft A, to install
+    himself if he wishes (Stage 14, “Avi's question on the verse template”); 14a, the block
+    of a page without a heading gives the page's name and its chapters, without the line of
+    topics (Stage 15, “Choices”); 15a, saving run 1, which creates Genesis' second and third
+    parts with Stage 10's summary; 16a, saving run 2, which updates Genesis' fourth part with
+    the summary "Part 4 after its move from part 3: the block's name and the category's sort
+    key, as the main page names it"; and 17a, saving run 3, which puts the block on 20 pages,
+    replacing Joshua's first part's, with the summary "Block of title and navigation, as Avi
+    asked". Each of the three runs saves after a fresh check of its preconditions and a fresh
+    dry run that gives the same pages. Under 14a, the four megillot without a heading get their
+    blocks by a saving run of their own, decision 18, which goes to Ben once its dry run is
+    done, since each saving run needs his word for that run (entry 3). Active.
 
 Deferred, each until its own decision:
 
@@ -1616,6 +1638,20 @@ byte-for-byte copy of that frozen plan; this ledger and the State line are the e
     topic of a book in the tracked JSON shows its heading there, but for one of Micah's,
     which shows the heading as since revised on its base chapter (`render/`). The decision
     page puts the three saving runs to Ben as decisions 15 to 17.
+- **The saves of Stages 14 and 15, 2026-11-23:** the session of “Avi's answers, 2026-11-23”
+  handed off at about 11:35 New York time, its handoff frozen as
+  `miqra-mevoar-avi-answers-handoff-frozen-2026-11-23.md` beside the commander's brief for the
+  next session,
+  `C:/Users/BenDe/GitRepos/MAM-basics/.novc/commander-session/miqra-mevoar-avi-saves-brief-2026-11-23.md`.
+  That next session, a fresh Claude (Opus 5.5) session, takes Ben's answers, makes the saves
+  that he approves and drafts the reply. Its checkout, `D:/GitRepos5/MAM-basics`, was verified
+  before its first edit: on `main`, clean, at `b27b3e777db2b08ca4495e64623101da8ebb9e1e`, level
+  with origin, with no other session working in it. Its scripts and evidence are in that
+  clone's `.novc/miqra-mevoar-avi-saves-2026-11-23/`, beside the earlier session's.
+  - **Ben's answers** to decisions 13 to 17 came in the session at 11:44 New York time
+    (decisions ledger entry 23), copied by script from its transcript
+    (`ben-words/answers-13-to-17.txt`). The earlier session's transcript holds no answer: the
+    only message that Ben typed there after its handoff asks whether it can be archived.
 
 ## Background for a fresh executor
 
@@ -2848,7 +2884,8 @@ since the template is Avi's to change, draft A changes nothing that readers see,
 the template's link to the font template, which draft B would cut. The study's report and its
 drafts are in `.novc/miqra-mevoar-avi-answers-2026-11-23/lighter-template/`.
 
-No template changes, on Wikisource or in the generator, before Ben answers.
+Ben chose (a) on 2026-11-23 (decisions ledger entry 23): the reply offers Avi draft A, and
+nothing here changes a template, on Wikisource or in the generator.
 
 **The design:**
 
@@ -2956,9 +2993,12 @@ the page's label without its range, if it has one. The bot changes no other line
     (a) The block gives the page's name and its chapters, without the line of topics. (b) None
     on those four now; the reply asks Avi how he wants them. Recommended: (a), since it gives
     every page that Avi named its block, in the same style, and leaves out only the line that
-    would have nothing in it.
-17. **The saving run of the 24 pages,** with an English summary (decisions ledger entry 9) that
-    Ben approves with the run.
+    would have nothing in it. Ben chose (a) (decisions ledger entry 23).
+17. **The saving run of the 20 pages whose blocks have topics,** with an English summary
+    (decisions ledger entry 9) that Ben approves with the run. He approved it, with its summary
+    (entry 23).
+18. **The saving run of the four megillot without a heading,** under 14a, once the block without
+    topics is coded and dry-run, with a summary that Ben approves with the run.
 
 **The design:**
 
@@ -3013,13 +3053,14 @@ action, which saves nothing, and check that each name shows whole in bold and th
 topic's label renders as its heading; on Joshua's first part, as the copied label that it
 replaces, or report each one that differs.
 
-**The dry run and the save.** Run `--no-save` with `--page` naming the 24 pages: 24 updates,
-with no missing link or transcluded page and every page under 90% of the include-size limit.
-Report them to Ben on the decision page, with a page to look at; then stop. One saving run of
-the 24, decision 17, on Ben's word for that run; after it, a read after the run without the
-bot's login, a dry rerun that finds every saved page unchanged, and an entry in
-`py/ws/ws_bot_edit_history.md`, the execution ledger and the State. Commit, fetch, merge
-`origin/main` if it moved, and push.
+**The dry runs and the saves.** Run `--no-save` with `--page` naming the pages of a saving run:
+an update for each, with no missing link or transcluded page and every page under 90% of the
+include-size limit. Report them to Ben on the decision page, with a page to look at; then stop.
+Two saving runs, each on Ben's word for that run: decision 17, the 20 pages whose blocks have
+topics, and decision 18, the four megillot without a heading, once the block without topics is
+coded. After each, a read after the run without the bot's login, a dry rerun that finds every
+saved page unchanged, and an entry in `py/ws/ws_bot_edit_history.md`, the execution ledger and
+the State. Commit, fetch, merge `origin/main` if it moved, and push.
 
 **The reply to Avi,** drafted for Ben once the saves that he approves are done, as the
 user-level section “Emails written for Ben to send” says: it reports Genesis' new parts and the
