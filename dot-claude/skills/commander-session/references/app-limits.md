@@ -133,7 +133,7 @@ itself with a restart prompt (is there a sort of "argument" to clear and/or comp
 that gives, in the case of clear, a new first prompt and in the case of compact, a sort of set of
 hints about what to compact?"
 
-At 15:15 he added the route that `claude-desktop.md` calls succeed: "another option (a third option beyond
+At 15:15 he added the handover to a new session: "another option (a third option beyond
 compact and clear) is for the commander to hand off its responsibilities to a new session, though
 that would involve moving any nested sessions' ownership to the new session, so that is a tricker
 way to go for a commander that is not empty."
