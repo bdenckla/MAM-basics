@@ -63,8 +63,8 @@ session took his answers and executed the rest of both stages that day (executio
 and third parts, as revisions 3104169 and 3104170, and updated its fourth part, as revision
 3104171; put the block on the 20 pages of decision 17, as revisions 3104173 to 3104192; and,
 on his word for decision 18 (entry 24), put the block without topics on the four megillot
-without a heading, as revisions 3104206 to 3104209. The reply to Avi is drafted for Ben to
-send.
+without a heading, as revisions 3104206 to 3104209. Ben sent the reply to Avi that day, with
+draft A of the lighter verse template attached, so Stages 14 and 15 are executed.
 The execution ledger below records each finished stage.
 
 Written 2026-11-02 by Claude (Opus 5.5) in the Phase 1 session that the session "Commander for
@@ -1737,6 +1737,12 @@ byte-for-byte copy of that frozen plan; this ledger and the State line are the e
     block copies, and that Judges' second part can take its two pictures again. Since Dovi is
     Avi's username, it speaks of Dovi's edits as Avi's own. Its 29 links lead to 27 existing
     pages, as anonymous reads found (`check_links.py`). Nothing is sent.
+  - **The reply, sent.** Ben, 2026-11-23, at 13:25 New York time, in this session, exactly:
+
+    > Okay I sent the email to Avi with the attachment. Can this session be archived?
+
+    So the reply went to Avi, with `verse-template-draft-A.txt` attached. It asks Avi
+    nothing; whether to install the lighter verse template is his to decide.
   - **The dry run of decision 18,** at 12:25 New York time, saving nothing, after the
     preconditions held again (`preconditions/check-20261123T172548Z.txt`): run
     `20261123-122555-033260-0500` gave Song of Songs, Ruth, Ecclesiastes and Esther each an
