@@ -58,12 +58,13 @@ Five Megillot and Daniel, which Stage 15 plans. A fresh session wrote both stage
 with their code and dry runs, and Ben chose every recommendation of their decision page
 (entry 23): the reply offers Avi a lighter verse template, a page without a heading gets a
 block without topics, and the three saving runs, decisions 15 to 17, go ahead. Another fresh
-session takes his answers and executes the rest of both stages (execution ledger, “The saves
-of Stages 14 and 15, 2026-11-23”); the four megillot without a heading get their blocks by a
-saving run that waits on his word, as decision 18. On his word the bot created Genesis' second
-and third parts that day, as revisions 3104169 and 3104170, and updated its fourth part, as
-revision 3104171; and it put the block on the 20 pages of decision 17, as revisions 3104173 to
-3104192.
+session took his answers and executed the rest of both stages that day (execution ledger,
+“The saves of Stages 14 and 15, 2026-11-23”). On his word the bot created Genesis' second
+and third parts, as revisions 3104169 and 3104170, and updated its fourth part, as revision
+3104171; put the block on the 20 pages of decision 17, as revisions 3104173 to 3104192; and,
+on his word for decision 18 (entry 24), put the block without topics on the four megillot
+without a heading, as revisions 3104206 to 3104209. The reply to Avi is drafted for Ben to
+send.
 The execution ledger below records each finished stage.
 
 Written 2026-11-02 by Claude (Opus 5.5) in the Phase 1 session that the session "Commander for
@@ -92,7 +93,7 @@ every display page of Joshua, Judges, the Twelve, the Five Megillot and Daniel.
 
 ## Decisions ledger
 
-Entries 1 to 3 and 10 to 23 are Ben's decisions. Entries 5 to 9 were Claude's proposals,
+Entries 1 to 3 and 10 to 24 are Ben's decisions. Entries 5 to 9 were Claude's proposals,
 approved by Ben's word in entry 3.
 
 1. **Route: the bot, after a pilot.** Ben, 2026-11-02, answering "Which route should the pages
@@ -325,6 +326,20 @@ approved by Ben's word in entry 3.
     dry run that gives the same pages. Under 14a, the four megillot without a heading get their
     blocks by a saving run of their own, decision 18, which goes to Ben once its dry run is
     done, since each saving run needs his word for that run (entry 3). Active.
+24. **Decision 18 of Stage 15, the four megillot's saving run.** Ben, 2026-11-23, at 13:07
+    New York time, in the session of entry 23, in a reply that quotes the question of
+    decision 18 as the session's report put it:
+
+    > 18. Saving run 4: shall the bot add a block of name and chapters, with no line of topics, to Song of Songs, Ruth, Ecclesiastes and Esther, with run 3’s summary “Block of title and navigation, as Avi asked”?
+
+    and answers exactly:
+
+    > yes, go ahead
+
+    So the bot saves Song of Songs, Ruth, Ecclesiastes and Esther, each with the block without
+    topics at its top, with the summary "Block of title and navigation, as Avi asked", after a
+    fresh check of the preconditions and a fresh dry run that gives the pages that the decision
+    page reported. Active.
 
 Deferred, each until its own decision:
 
@@ -1702,6 +1717,26 @@ byte-for-byte copy of that frozen plan; this ledger and the State line are the e
     block without topics on a page with a heading does not read, and a block without a chapter
     raises (`code-14a/refusals.txt`). `git diff --check` and Black are clean, and Stage 13's
     command gives 164 passed, as before (`code-14a/test-run-mine.txt`).
+  - **Saving run 4, decision 18,** on Ben's word (entry 24). At 13:08 New York time the
+    preconditions held again (`preconditions/check-20261123T180856Z.txt`), no bot process ran,
+    and a fresh dry run of the four pages gave the reported pages and outcomes byte for byte
+    (`dry-runs/run18-fresh-vs-reported.txt`). At 13:09 and 13:10 BDencklaBot updated Song of
+    Songs, Ruth, Ecclesiastes and Esther as revisions 3104206 to 3104209, with entry 24's
+    summary, copied from this plan by script. The read after the run, without the bot's login,
+    found each text the run's page file byte for byte and each parent the compared revision
+    (`read-after/run4/`), and a dry rerun found all four unchanged
+    (`py/ws/ws_bot_edit_history.md`, “Miqra Mevoar's display pages: the block on the four
+    megillot without a heading, 2026-11-23”).
+  - **The reply to Avi, drafted** for Ben to send, in `email-2026-11-23/`: Markdown with no hard
+    line wraps and a page that copies its body, `email-to-avi-2026-11-23-pm.md` and `.html`,
+    built by `build_email.py`, which builds every link from a title that a run recorded, with
+    draft A of the lighter verse template attached byte for byte as
+    `verse-template-draft-A.txt`. It reports the four saving runs, answers Avi's question on the
+    verse template as Ben's answer 13a decides, and notes Micah's heading at 2:1, now as revised
+    on its base chapter, the two spaces after the colon of the third part's label, which its
+    block copies, and that Judges' second part can take its two pictures again. Since Dovi is
+    Avi's username, it speaks of Dovi's edits as Avi's own. Its 29 links lead to 27 existing
+    pages, as anonymous reads found (`check_links.py`). Nothing is sent.
   - **The dry run of decision 18,** at 12:25 New York time, saving nothing, after the
     preconditions held again (`preconditions/check-20261123T172548Z.txt`): run
     `20261123-122555-033260-0500` gave Song of Songs, Ruth, Ecclesiastes and Esther each an

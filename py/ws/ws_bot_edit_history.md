@@ -1768,7 +1768,7 @@ infrastructure has changed enough to make them misleading examples:
   reports in `.novc/miqra-mevoar-avi-saves-2026-11-23/preconditions/` and `.novc/miqra-mevoar-avi-saves-2026-11-23/logs/`; the read
   after the run in `.novc/miqra-mevoar-avi-saves-2026-11-23/read-after/run2/`.
 
-### Miqra Mevoar's display pages: the block on 20 more pages, 2026-11-23 — current
+### Miqra Mevoar's display pages: the block on 20 more pages, 2026-11-23
 
 - **Purpose:** Put the block of title and navigation of the entries above at the top of the
   19 display pages that the bot made without one, Joshua's second part, Judges' three parts,
@@ -1830,6 +1830,50 @@ infrastructure has changed enough to make them misleading examples:
   `.novc/mam-ws-bot-miqra-mevoar-display-runs/20261123-115757-275850-0500/`; the preconditions' reports in
   `.novc/miqra-mevoar-avi-saves-2026-11-23/preconditions/`; the read after the run in
   `.novc/miqra-mevoar-avi-saves-2026-11-23/read-after/run3/`.
+
+### Miqra Mevoar's display pages: the block on the four megillot without a heading, 2026-11-23 — current
+
+- **Purpose:** Put a block of title and navigation without topics at the top of Avi's pages of
+  Song of Songs, Ruth, Ecclesiastes and Esther, made in 2020, above Esther's opening note: the
+  page's name, and its chapters, each linked to its first verse, with no line of topics,
+  since these pages have no headings. Decision 14a of `doc/PLAN-miqra-mevoar.md` chose that
+  block (decisions ledger entry 23), and `e4a49579` coded it. The bot changed no other line.
+- **Authorization:** Ben, 2026-11-23, at 13:07 New York time, in the session that made the
+  saves of the entries above, answering decision 18 of the decision page,
+  https://claude.ai/artifact/XYchLEVJdwMQh5FM3wDJHN, which asked whether the bot should add
+  such a block to the four pages with the summary of the entry above: "yes, go ahead"
+  (decisions ledger entry 24).
+- **Mode:** `main_ws_bot.py miqra-mevoar-display`, with `--page song --page ruth --page
+  qohelet --page esther` and the summary of the entry above, "Block of title and navigation,
+  as Avi asked".
+- **Saving run:** four pages updated, at 13:09 and 13:10 New York time, 28,329 bytes in all,
+  as revisions 3104206 to 3104209, each over the revision that the run compared: Song of
+  Songs 3104206, over 957437; Ruth 3104207, over 957455; Ecclesiastes 3104208, over 961349;
+  and Esther 3104209, over 961350. Each gained the block's four lines at its top. The summary
+  was copied from the plan by script and given to the run without passing through a shell.
+- **Safety rule:** before the dry run, anonymous reads found the 40 pages of the two stages'
+  survey at their surveyed revisions or at the revisions of the entries above, and the main
+  page still at revision 3104162, whose labels give the blocks' names. No `main_ws_bot.py`
+  process was running on the machine, and no other session of the commander's family was
+  doing bot work, before either bot run. The `--no-save` dry run gave four updates, each
+  comparing the revision that the survey found, at 13% to 30% of the include-size limit, with
+  no missing link or transcluded page, and its pages and outcomes equal byte for byte those
+  that the decision page put to Ben (`.novc/mam-ws-bot-miqra-mevoar-display-runs/20261123-122555-033260-0500/`). The saving run
+  saved each update with `nocreate`, with the compared revision as its base revision, read
+  each new revision back through the API, uncached, and its bytes equalled the generated
+  text. A read after the run, without the bot's login, found each new revision BDencklaBot's,
+  not minor, with the approved summary, its parent the compared revision and its text the
+  generated page's byte for byte, and each edit with the bot flag in the recent changes.
+- **One-shot:** no. Confirmed 2026-11-23, immediately after the run: a `--no-save` rerun found
+  all four pages unchanged and exited zero, and the live texts that it read equal the saved
+  pages byte for byte (`.novc/mam-ws-bot-miqra-mevoar-display-runs/20261123-131041-160450-0500/`).
+- **Edit level:** Each page's live text with the block added, saved only over a text that
+  differs from it in the block alone; page-targeted by key.
+- **Input:** each page's live text, from whose verses `display_page.block_only_page_text`
+  builds the block; run artifacts `.novc/mam-ws-bot-miqra-mevoar-display-runs/20261123-130925-454293-0500/`; dry run
+  `.novc/mam-ws-bot-miqra-mevoar-display-runs/20261123-130858-113407-0500/`; the preconditions'
+  reports in `.novc/miqra-mevoar-avi-saves-2026-11-23/preconditions/`; the read after the run in
+  `.novc/miqra-mevoar-avi-saves-2026-11-23/read-after/run4/`.
 
 ## How to look up the original code
 
