@@ -61,7 +61,8 @@ block without topics, and the three saving runs, decisions 15 to 17, go ahead. A
 session takes his answers and executes the rest of both stages (execution ledger, “The saves
 of Stages 14 and 15, 2026-11-23”); the four megillot without a heading get their blocks by a
 saving run that waits on his word, as decision 18. On his word the bot created Genesis' second
-and third parts that day, as revisions 3104169 and 3104170.
+and third parts that day, as revisions 3104169 and 3104170, and updated its fourth part, as
+revision 3104171.
 The execution ledger below records each finished stage.
 
 Written 2026-11-02 by Claude (Opus 5.5) in the Phase 1 session that the session "Commander for
@@ -1665,6 +1666,16 @@ byte-for-byte copy of that frozen plan; this ledger and the State line are the e
     run's page files (`read-after/run1/`), and a dry rerun found both unchanged
     (`py/ws/ws_bot_edit_history.md`, “Miqra Mevoar's display pages: Genesis' second and
     third parts, 2026-11-23”).
+  - **Saving run 2, decision 16,** on Ben's word (entry 23). At 11:54 New York time the
+    preconditions held again (`preconditions/check-20261123T165449Z.txt`, with Genesis' second
+    and third parts at their new revisions, and `logs/base-headings-check-run2.txt`), no bot
+    process ran, and a fresh dry run of `gen-4` gave the reported page and outcome byte for
+    byte, comparing revision 3104127 (`dry-runs/run2-fresh-vs-reported.txt`). At 11:55
+    BDencklaBot updated Genesis' fourth part as revision 3104171, its lines 1 and 491 alone,
+    with entry 23's summary, copied from this plan by script. The read after the run, without
+    the bot's login, found its text the run's page file byte for byte and its parent 3104127
+    (`read-after/run2/`), and a dry rerun found it unchanged (`py/ws/ws_bot_edit_history.md`,
+    “Miqra Mevoar's display page: Genesis' fourth part, 2026-11-23”).
 
 ## Background for a fresh executor
 

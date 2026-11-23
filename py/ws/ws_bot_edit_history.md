@@ -1673,7 +1673,7 @@ infrastructure has changed enough to make them misleading examples:
   `.novc/miqra-mevoar-torah-2026-11-22/stage13/read-after-save-torah-2/`; the measurement of the include size in
   `.novc/miqra-mevoar-torah-2026-11-22/stage13/include-size/`.
 
-### Miqra Mevoar's display pages: Genesis' second and third parts, 2026-11-23 — current
+### Miqra Mevoar's display pages: Genesis' second and third parts, 2026-11-23
 
 - **Purpose:** Create the display pages of Genesis' new second and third parts, 12:1 to 25:18
   and 25:19 to 36:43, into which Avi divided the second part of the entry above on the main
@@ -1718,6 +1718,55 @@ infrastructure has changed enough to make them misleading examples:
   `.novc/mam-ws-bot-miqra-mevoar-display-runs/20261123-115012-773854-0500/`; the preconditions'
   reports in `.novc/miqra-mevoar-avi-saves-2026-11-23/preconditions/` and `.novc/miqra-mevoar-avi-saves-2026-11-23/logs/`; the read
   after the run in `.novc/miqra-mevoar-avi-saves-2026-11-23/read-after/run1/`.
+
+### Miqra Mevoar's display page: Genesis' fourth part, 2026-11-23 — current
+
+- **Purpose:** Update the display page of Genesis' fourth part, chapters 37 to 50, which the
+  entry of the Torah's 15 parts created as the third part, revision 3104110, and which Dovi
+  moved unchanged to the fourth part's title, the move's revision being 3104127. The update
+  gives the page's block the name of the main page's new label for it (revision 3104126; the
+  latest, 3104162, labels it alike), with the ordinal for fourth in place of the one for
+  third, and makes its category line sort it under its own name; it changes no other line.
+  Stage 14 of `doc/PLAN-miqra-mevoar.md` (`b27b3e77`) gave the display mode the part and its
+  update outcome: a page that exists is updated only if its text, without a block at its top
+  and without its category line, equals the generated text without its block and its
+  category line.
+- **Authorization:** Ben, 2026-11-23, at 11:44 New York time, in the session that took his
+  answers to decisions 13 to 17 of the decision page,
+  https://claude.ai/artifact/XYchLEVJdwMQh5FM3wDJHN: "I concur with all of your
+  recommendations on the decision page". Recommendation 16a was to save the update with the
+  summary below, after fresh checks.
+- **Mode:** `main_ws_bot.py miqra-mevoar-display`, with `--page gen-4` and the summary "Part 4
+  after its move from part 3: the block's name and the category's sort key, as the main page
+  names it", in English as decisions ledger entry 9 of the plan makes the default.
+- **Saving run:** one page updated, at 11:55 New York time, 28,108 bytes, as revision 3104171,
+  whose parent is 3104127: of its 491 lines, line 1, the block's, and line 491, the category
+  line, changed. The summary was copied from the plan by script and given to the run without
+  passing through a shell.
+- **Safety rule:** before the dry run, `py/main_miqra_mevoar.py base-headings --check` found
+  every heading of the Torah's 187 base chapters where the records have it, with no revision
+  changed; anonymous reads found the 40 pages of the two stages' survey at their surveyed
+  revisions but for Genesis' second and third parts, at the revisions of the entry above, and
+  the main page still at revision 3104162. No `main_ws_bot.py` process was running on the
+  machine, and no other session of the commander's family was doing bot work, before either
+  bot run. The `--no-save` dry run gave one update, of lines 1 and 491 alone, comparing
+  revision 3104127, at 63.3% of the include-size limit, with no missing link or transcluded
+  page, and its page and outcome equal byte for byte those that the decision page put to Ben
+  (`.novc/mam-ws-bot-miqra-mevoar-display-runs/20261123-111317-927016-0500/`). The saving run saved with `nocreate`, with the
+  compared revision as its base revision, read the new revision back through the API,
+  uncached, and its bytes equalled the generated text. A read after the run, without the
+  bot's login, found the new revision BDencklaBot's, not minor, with the approved summary,
+  its parent the compared revision and its text the generated page's byte for byte, and its
+  edit with the bot flag in the recent changes.
+- **One-shot:** no. Confirmed 2026-11-23, immediately after the run: a `--no-save` rerun found
+  the page unchanged and exited zero (`.novc/mam-ws-bot-miqra-mevoar-display-runs/20261123-115618-122780-0500/`).
+- **Edit level:** Whole page text, generated, saved only over a text that differs from it in
+  the block and the category line alone; page-targeted by key.
+- **Input:** `MAM-simple/json-vtrad-mam/` and `in/miqra-mevoar-base-headings/`; run artifacts
+  `.novc/mam-ws-bot-miqra-mevoar-display-runs/20261123-115541-074057-0500/`; dry run
+  `.novc/mam-ws-bot-miqra-mevoar-display-runs/20261123-115457-491465-0500/`; the preconditions'
+  reports in `.novc/miqra-mevoar-avi-saves-2026-11-23/preconditions/` and `.novc/miqra-mevoar-avi-saves-2026-11-23/logs/`; the read
+  after the run in `.novc/miqra-mevoar-avi-saves-2026-11-23/read-after/run2/`.
 
 ## How to look up the original code
 
