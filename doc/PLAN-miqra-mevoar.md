@@ -51,6 +51,12 @@ the reply to Avi tells him and asks how he wants the part handled; it also asks 
 wants blocks on the six parts made without one (entry 19's 9a). Ben sent it that morning,
 and its two questions wait on Avi's answers. On Ben's answer to decision 12 (entry 21), the
 display mode's dry run now also fails a page that uses more than 90% of that limit.
+Avi answered both questions the same day, and Ben gave his word to carry out the work that Avi
+asks for (entry 22): Avi divided Genesis' second part into two, so that Genesis has four parts,
+which Stage 14 plans, and asked for the block on every part of Joshua, Judges, the Twelve, the
+Five Megillot and Daniel, which Stage 15 plans. A fresh session wrote both stages that day and
+executes them, each saving run on Ben's word; the stages' choices, decisions 13 and 14, wait on
+his answers on its decision page.
 The execution ledger below records each finished stage.
 
 Written 2026-11-02 by Claude (Opus 5.5) in the Phase 1 session that the session "Commander for
@@ -73,6 +79,9 @@ linked from his main page that day. Stage 12, added on 2026-11-22, plans the dis
 the five books of the Torah, three parts to a book, which the main page links in its revision
 3103840 of 2026-11-21. Stage 13, added on 2026-11-22, plans the block of title and navigation
 that Avi asked for on each of those 15 parts, in the style of Joshua's first part.
+Stage 14, added on 2026-11-23, plans the two parts into which Avi divided Genesis' second part,
+and the new name of the fourth part's block. Stage 15, added the same day, plans the block on
+every display page of Joshua, Judges, the Twelve, the Five Megillot and Daniel.
 
 ## Decisions ledger
 
@@ -267,6 +276,29 @@ approved by Ben's word in entry 3.
     focused commit to `py/subcommands/ws_bot_miqra_mevoar_display.py`, checked by a dry run
     of the 15 Torah pages, which saves nothing. Implemented (execution ledger, “Stage 13,
     2026-11-23”).
+22. **Avi's answers to the reply of 2026-11-23, and Ben's word.** Ben, 2026-11-23, at 10:01
+    New York time, in the commander session, asking it for a session, and pasting Avi's email
+    after his first line, exactly but for the two lines that the app wraps around a paste,
+    which a script dropped:
+
+    > Start a session that will respond (in actions and email) to this email from Avi regarding the ongoing Miqra Mevoar project:
+    >
+    > Thanks, everything that was done looks perfect! The way to deal with split chapters is exactly what I expected too.
+    >
+    > 1. I have broken down the second part of Genesis into two parts (currently red links), deleted the previous part two, and renamed the previous part three as part four. So those two parts are ready for the bot to create them. I'm curious what it would mean to "make the verse template lighter". If it improves efficiency, then perhaps it should be done regardless?
+    > 2. Yes, it would actually be great if the bot could create the navigation block for all the remaining books in all of their parts: Joshua, Judges, Twelve Prophets, Five Megillot and Daniel. I have temporarily reverted Judges 2 to the version which the bot created, so that the navigation block can be added there too. For the first part of Joshua, which served as the initial model, it would be great if the bot could make that like the others, i.e. titles via transclusion.
+
+    Avi's two numbered answers are to the two questions of the reply that Ben sent that
+    morning (execution ledger, “Stage 13, 2026-11-23”, “The reply, sent”). To the first, on
+    Genesis' second part (entry 20), he divided the part into two, deleted the old second part
+    and moved the old third part to the fourth part's title, which Stage 14 plans; he also
+    asks what a lighter verse template would mean, which goes to Ben as decision 13 of the
+    decision page. To the second, on blocks for the six parts made without one (entry 19's
+    9a), he asks for the block on every part of Joshua, Judges, the Twelve, the Five Megillot
+    and Daniel, with Joshua's first part, his model, given topics by transclusion like the
+    others, which Stage 15 plans. The session that the commander started for the email reads
+    Ben's words as his word to plan and carry out that work and to draft the reply for him to
+    send; each saving run still needs his word for that run (entry 3). Active.
 
 Deferred, each until its own decision:
 
@@ -1492,6 +1524,29 @@ byte-for-byte copy of that frozen plan; this ledger and the State line are the e
     bytes; each page's recorded include size equals the kept parse of its live page
     (`stage13/include-check/`). Until the part is divided or its verse template lightened,
     a dry run that includes `gen-2` exits non-zero for it.
+- **Avi's answers, 2026-11-23:** Ben's request of decisions ledger entry 22 reached a fresh
+  Claude (Opus 5.5) session, "Miqra Mevoar: Avi's answers", that the commander started with a
+  brief saved as
+  `C:/Users/BenDe/GitRepos/MAM-basics/.novc/commander-session/miqra-mevoar-avi-answers-brief-2026-11-23.md`.
+  Its checkout, `D:/GitRepos5/MAM-basics`, was verified before its first edit: on `main`,
+  clean, at `6f96318bd25e8b113ba28b5feee06992ff079127`, which it fast-forwarded to origin's
+  `4c83955a8b28c717c061e0c19ad7af8a87334271`, with no other session working in it. Its
+  scripts and evidence are in that clone's `.novc/miqra-mevoar-avi-answers-2026-11-23/`.
+  - **The survey,** anonymous reads from 15:16 to 15:27 UTC by a subagent of the session,
+    which saved nothing (`survey/report.md`, its scripts, raw responses and page texts beside
+    it). It found what Stage 14's “What Avi did” and Stage 15's “What the pages are” say. The
+    main page is at revision 3104162, by Dovi; of his eleven revisions after 3104053, the
+    first, 3104126, gave Genesis its four links, and the others rewrote the unlinked labels of
+    later books' parts in the Prophets and the Writings and pointed the labels of the five
+    megillot, so that all 148 of its display links have pointed labels. The latest revisions
+    of the 24 pages of Stage 15, which its preconditions name: Joshua's first part 3103803 and
+    second part 3101500; Judges' parts 3103155, 3104129 and 3103157; Hosea, Joel, Amos,
+    Obadiah and Jonah 3101359 to 3101363; Micah, Nahum, Habakkuk, Haggai and Zechariah
+    3103035 to 3103039; Zephaniah 3103041; Malachi 3103136; Daniel's parts 3103153 and
+    3103154; and Song of Songs 957437, Ruth 957455, Lamentations 961348, Ecclesiastes 961349
+    and Esther 961350.
+  - **Avi's question on the verse template,** studied by another subagent of the session,
+    which saved nothing (`lighter-template/report.md`): under way when Stages 14 and 15 were written; its findings go to decision 13.
 
 ## Background for a fresh executor
 
@@ -2662,6 +2717,223 @@ editing this plan, and `hebrew-prose`, with its `references/mam-basics.md`, befo
 the Hebrew text. The executor owns its commits' integration: it commits on `main`, naming its
 paths, fetches and merges `origin/main` before each push, and pushes `main`. The kept responses
 are evidence of 2026-11-22; the preconditions read the live pages again.
+
+## Stage 14. Genesis in four parts, on Ben's word
+
+A fresh session wrote this stage on 2026-11-23, on Avi's answer to the first question of the
+reply of that day, and executes it, on Ben's word to carry out the work that Avi's email asks
+for (decisions ledger entry 22); each saving run still needs his word for that run (entry 3).
+
+**What Avi did,** as anonymous reads of 2026-11-23, from 15:16 to 15:27 UTC, found it
+(execution ledger, “Avi's answers, 2026-11-23”):
+
+1. In the main page's revision 3104126, unchanged in that respect in 3104162, Genesis has
+   four parts. The first part's link and label are unchanged. The second part runs from 12:1
+   to 25:18, its name the old second part's with a phrase added at its end; the third, from
+   25:19 to the end of chapter 36, has a new name, with two spaces after its colon; and the
+   fourth, chapters 37 to 50, has the old third part's label with the ordinal for fourth in
+   place of the one for third.
+2. Dovi deleted Stage 13's second part, revision 3104109, moved its third part, revision
+   3104110, to the fourth part's title, and deleted the redirect that the move left, so the
+   titles of the second and third parts are free. The fourth part's latest revision, 3104127,
+   is the move's null revision: its text is the old third part's byte for byte, so its block
+   still names it the third part and its category line still sorts it under the third part's
+   title.
+
+**What it does.** BDencklaBot creates the new second and third parts, each with its block,
+and edits the fourth part so that its block's name is its new label's and its category line
+sorts it under its own name. Every other page keeps its text byte for byte. In the records of
+Stages 12 and 13, `gen-2` is chapters 12 to 36 and `gen-3` chapters 37 to 50; from this stage
+on, each of Genesis' keys names the part of its number.
+
+**Avi's question on the verse template,** decision 13 of the decision page,
+https://claude.ai/artifact/XYchLEVJdwMQh5FM3wDJHN:
+
+Avi asks what making the verse template lighter would mean, and whether it should be done
+regardless, if it improves efficiency. A subagent of the session that wrote this stage is
+measuring what the verse template's expansion costs a page in post-expand include size, what a
+lighter version would save and what else it would change (execution ledger, “Avi's answers,
+2026-11-23”). The decision page then puts to Ben whether to make the change, with each choice's
+consequences and a recommendation.
+
+No template changes, on Wikisource or in the generator, before Ben answers.
+
+**The design:**
+
+1. **Generator,** `py/miqra_mevoar/display_page.py`: in `PAGES`, `gen-2` runs from 12:1 to
+   25:18 and `gen-3` from 25:19 to 36:43, and `gen-4`, chapters 37 to 50, is new. Each one's
+   name is copied by script from its link's target in revision 3104162, its `block_name` from
+   its link's label without the range in parentheses at its end, and its first and last verses
+   parsed by script from that range, as Stage 12 parsed its ranges. `gen-3`'s name keeps the
+   label's two spaces after its colon; a browser shows one. The module docstring and the
+   table's comment say so.
+2. **Bot mode,** `py/subcommands/ws_bot_miqra_mevoar_display.py`, gains a fourth outcome,
+   **update**: the page exists, and its text, without a block at its top and without its
+   category line, equals the generated text without its block and its category line, both last
+   lines being category lines. So an update adds or replaces a block, may change the category's
+   sort key, and changes nothing else. A saving run saves an update with `nocreate`, guarded by
+   the `baserevid` and `basetimestamp` of the revision whose text it checked, as `_save` in
+   `py/subcommands/ws_bot_miqra_mevoar.py` guards the base chapters' updates, and reads it back
+   as it reads a creation back. Any other page that exists is refused, as now. Each run also
+   writes the live text of each page that exists to its run's `live/` directory, and an
+   update's outcome records the checked revision. The module docstring, `py/main_ws_bot.py`'s
+   help and `py/ws/pywikibot-setup.md` say so.
+3. **Test,** `py/tests/test_miqra_mevoar_display.py`, unchanged: its oracles read the new
+   entries of `PAGES`, and its check that a book's pages show it once covers Genesis' four
+   parts, across their boundary inside chapter 25.
+
+**Preconditions,** before the dry run and again before each save:
+
+- `py/main_miqra_mevoar.py base-headings --check` finds every heading of the Torah's base
+  chapters where the records have it. If one differs, stop and report it to Ben.
+- The main page's latest revision, read again by script, still gives Genesis' four links and
+  labels of revision 3104162; the fourth part is still at revision 3104127; and the second and
+  third parts' titles still do not exist. If not, stop and report it.
+- No `main_ws_bot.py` process runs, and no other session of the commander's family does bot
+  work.
+
+**Verification,** focused, under `doc/review-trial.md`: `git diff --check`; Black on the
+changed Python files; Stage 13's command (Stage 13, “Verification”); and scratch scripts that
+write every page of `PAGES` before and after the change and require every page but Genesis'
+second to fourth parts to be unchanged byte for byte; the new `gen-4` to equal the old `gen-3`
+but for its block's name and its category line's sort key; and the new `gen-2` and `gen-3`,
+read back by `read_page`, to show together the old `gen-2`'s verses, with their break lines,
+the chapter parameter on `gen-3`'s first verse line as the only line not in the old page.
+Expected unchanged: every product directory that `py/product_scopes.py` declares, and `in/`.
+The mega runs none of this code; the last pushed commit's message says what was skipped and
+why.
+
+**The dry run and the saves.** Run `--no-save` with `--page gen-1 --page gen-2 --page gen-3
+--page gen-4`: `gen-1` unchanged, two creates and one update, with no missing link or
+transcluded page and every page under 90% of the include-size limit. Render the blocks of
+`gen-2` and `gen-3` through the API's parse action, which saves nothing, and check that each
+name shows whole in bold. Then two saving runs, each on Ben's word for that run:
+
+- **Run 1, decision 15,** creates `gen-2` and `gen-3` with Stage 10's summary, copied from this
+  plan by script through the launcher `scripts/run_bot_with_plan_summary.py display`.
+- **Run 2, decision 16,** updates `gen-4` with an English summary (decisions ledger entry 9)
+  that Ben approves with the run.
+
+After each, a read after the run, without the bot's login; a dry rerun that finds every saved
+page unchanged; and an entry in `py/ws/ws_bot_edit_history.md`, the execution ledger and the
+State. Commit, fetch, merge `origin/main` if it moved, and push.
+
+**Checkout and coordination:** `D:/GitRepos5/MAM-basics`, with its own
+`.venv/Scripts/python.exe`, run from its root, and `-c safe.directory=D:/GitRepos5/MAM-basics`
+on every Git call. Its `.novc/miqra-mevoar-avi-answers-2026-11-23/` holds this stage's and
+Stage 15's scripts and evidence, and `.novc/miqra-mevoar-torah-2026-11-22/` Stage 13's helpers.
+Before the first edit: verify the clone; fetch, and require `main`, clean, at the commit that
+added this stage or a descendant. Load `iterative-document-editing` before editing this plan,
+and `hebrew-prose`, with its `references/mam-basics.md`, before prose about the Hebrew text.
+The executor commits on `main`, naming its paths, fetches and merges `origin/main` before each
+push, and pushes `main`.
+
+## Stage 15. The block on the other books' parts, on Ben's word
+
+A fresh session wrote this stage on 2026-11-23, on Avi's answer to the second question of the
+reply of that day, and executes it after Stage 14's code, on Ben's word (decisions ledger entry
+22); each saving run still needs his word for that run (entry 3).
+
+**What the pages are,** as the reads of Stage 14's “What Avi did” found them:
+
+1. **Nineteen pages of `PAGES` have no block:** Joshua's second part, Judges' three, the
+   Twelve's twelve and Daniel's two. Each holds the generator's text byte for byte, Judges'
+   second part again since Dovi's revision 3104129 restored the bot's revision 3103156, with
+   the summary "Temporary restoration, to allow adding navigation."
+2. **Joshua's first part,** at revision 3103803, is the generator's text after its block's four
+   lines, and its block differs from the one that the generator would give it only in its 18
+   topics' labels, which are copies of the headings' text.
+3. **The Five Megillot's pages are Avi's,** made in 2020, and in no table of the generator.
+   Song of Songs, Ruth and Ecclesiastes have only the generator's line shapes. Lamentations and
+   Esther each begin with a note, a line and two blank lines, and Esther ends with a notes
+   section, a blank line, a heading line and `<references/>`, before its blank line and its
+   category line. Only Lamentations has headings, five, each transcluded from its base chapter
+   as the generator's are; the other four have none.
+4. **Their labels** on the main page, in revision 3104162, are all pointed. Those of Joshua's,
+   Judges' and Daniel's parts end with a range, as the Torah's do; the Twelve's are the books'
+   bare names, and the megillot's are the word for scroll and the book's name.
+
+**What it does.** BDencklaBot edits each of these 24 pages and no other: on Joshua's first part
+it replaces Dovi's block with the generator's, whose topics transclude the headings, and on the
+other 23 it adds a block at the top, above Lamentations' and Esther's notes. Each block's name is
+the page's label without its range, if it has one. The bot changes no other line.
+
+**Choices,** for the decision page:
+
+14. **The block of a page without a heading:** Song of Songs, Ruth, Ecclesiastes and Esther.
+    (a) The block gives the page's name and its chapters, without the line of topics. (b) None
+    on those four now; the reply asks Avi how he wants them. Recommended: (a), since it gives
+    every page that Avi named its block, in the same style, and leaves out only the line that
+    would have nothing in it.
+17. **The saving run of the 24 pages,** with an English summary (decisions ledger entry 9) that
+    Ben approves with the run.
+
+**The design:**
+
+1. **Generator,** `py/miqra_mevoar/display_page.py`:
+   - The 19 entries of `PAGES` take their `block_name`, copied by script from their links'
+     labels in revision 3104162, without the range where a label has one. Every page of
+     `PAGES` then has a block.
+   - A second table, `BLOCK_ONLY_PAGES`, lists the Five Megillot's pages, which the bot did not
+     make and to which it only adds a block: each one's key, its name after `DISPLAY_PREFIX`,
+     `mam_bknas`' name of its book, and its `block_name`, its link's label in revision 3104162,
+     copied by script. Its keys and `PAGES`' must not meet.
+   - A closed reader of such a page gives its block's name, or None, its verses, its sort key
+     and its notes, and raises on any other line. It accepts the four line shapes of
+     `read_page`, a block in its first four lines, and two kinds of note only: after the block,
+     if any, a note line, which holds no template's call and no tag, then two blank lines; and
+     before the blank line and the category line at the end, a blank line, a level-2 heading
+     line and `<references/>`. A function gives such a page's text with its block at its top,
+     built from the page's own verses as a generated page's is: if the page already begins with
+     that very block, its text unchanged; if it begins with another block, it raises.
+   - Under decision 14a, `block_line` gives, for a page with no heading, the block's line
+     without its topics: `_BLOCK_START`, the name, `_BLOCK_AFTER_NAME` up to and including its
+     line-break template's call, `_BLOCK_AFTER_TOPICS` from its parenthesis on, the chapters and
+     `_BLOCK_END`, each piece cut by code from the constants, never typed; and the readers
+     accept that line only on a page without a heading.
+   - The module docstring and the tables' comments say so.
+2. **Bot mode:** `--page` takes the keys of both tables. For a page of `BLOCK_ONLY_PAGES`, a
+   run reads the live page before it generates its text, which is the live text with its
+   block; a page that does not exist or does not read is refused, one that already has its
+   block is unchanged, and any other is an update, guarded as Stage 14's are. The counts of
+   such a page come from its reader. The module docstring, `py/main_ws_bot.py`'s help and
+   `py/ws/pywikibot-setup.md` say so.
+3. **Test,** `py/tests/test_miqra_mevoar_display.py`: every page of `PAGES` has a block, whose
+   links the test's own oracles give, as for the Torah's pages; the `block_name` of every
+   entry of both tables holds a Hebrew point, is in NFC and has no range at its end; and the
+   tables' keys do not meet. The megillot have no oracle here: the dry run's reads of their
+   live pages are their check.
+
+**Preconditions,** before the dry run and again before the save: each of the 24 pages is still
+at the revision that Stage 14's reads found, as the execution ledger lists them; the main page's
+latest revision still gives their labels of revision 3104162; and no `main_ws_bot.py` process
+runs, and no other session of the commander's family does bot work. If one differs, stop and
+report it to Ben.
+
+**Verification,** as Stage 14's, and by scratch scripts: every page of `PAGES` but these 19 and
+Joshua's first part unchanged byte for byte by this stage; each of the 19, after its block's
+four lines, equal to its page before this stage; Joshua's first part equal to revision 3103803
+but for its block's line, whose name, anchors and chapters are unchanged and whose topics'
+labels are transclusions; and each of the five megillot, from the text of its kept read, equal
+to that text with its block at the top. Render each new block's line through the API's parse
+action, which saves nothing, and check that each name shows whole in bold and that each
+topic's label renders as its heading; on Joshua's first part, as the copied label that it
+replaces, or report each one that differs.
+
+**The dry run and the save.** Run `--no-save` with `--page` naming the 24 pages: 24 updates,
+with no missing link or transcluded page and every page under 90% of the include-size limit.
+Report them to Ben on the decision page, with a page to look at; then stop. One saving run of
+the 24, decision 17, on Ben's word for that run; after it, a read after the run without the
+bot's login, a dry rerun that finds every saved page unchanged, and an entry in
+`py/ws/ws_bot_edit_history.md`, the execution ledger and the State. Commit, fetch, merge
+`origin/main` if it moved, and push.
+
+**The reply to Avi,** drafted for Ben once the saves that he approves are done, as the
+user-level section “Emails written for Ben to send” says: it reports Genesis' new parts and the
+blocks, answers his question on the verse template as Ben's answer to decision 13 decides, and
+asks nothing that Ben's answers have settled. Nothing is sent: Ben sends it himself.
+
+**Checkout and coordination:** as Stage 14's.
 
 ## Later Word files
 
