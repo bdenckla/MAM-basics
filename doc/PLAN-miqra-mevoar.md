@@ -60,7 +60,8 @@ with their code and dry runs, and Ben chose every recommendation of their decisi
 block without topics, and the three saving runs, decisions 15 to 17, go ahead. Another fresh
 session takes his answers and executes the rest of both stages (execution ledger, “The saves
 of Stages 14 and 15, 2026-11-23”); the four megillot without a heading get their blocks by a
-saving run that waits on his word, as decision 18.
+saving run that waits on his word, as decision 18. On his word the bot created Genesis' second
+and third parts that day, as revisions 3104169 and 3104170.
 The execution ledger below records each finished stage.
 
 Written 2026-11-02 by Claude (Opus 5.5) in the Phase 1 session that the session "Commander for
@@ -1652,6 +1653,18 @@ byte-for-byte copy of that frozen plan; this ledger and the State line are the e
     (decisions ledger entry 23), copied by script from its transcript
     (`ben-words/answers-13-to-17.txt`). The earlier session's transcript holds no answer: the
     only message that Ben typed there after its handoff asks whether it can be archived.
+  - **Saving run 1, decision 15,** on Ben's word (decisions ledger entry 23). At 11:50 New York
+    time the preconditions held: `preconditions/check-20261123T165001Z.txt` found the 40
+    surveyed pages at their revisions and the main page at revision 3104162, and
+    `logs/base-headings-check-run1.txt` all 443 headings of the Torah's 187 base chapters where
+    the records have them; no `main_ws_bot.py` process ran, nor did any other session of the
+    commander's family do bot work; and a fresh dry run of `gen-2` and `gen-3` gave the
+    reported pages and outcomes byte for byte (`dry-runs/run1-fresh-vs-reported.txt`). At 11:51
+    BDencklaBot created Genesis' second part as revision 3104169 and its third as 3104170, with
+    Stage 10's summary. The read after the run, without the bot's login, found both as the
+    run's page files (`read-after/run1/`), and a dry rerun found both unchanged
+    (`py/ws/ws_bot_edit_history.md`, “Miqra Mevoar's display pages: Genesis' second and
+    third parts, 2026-11-23”).
 
 ## Background for a fresh executor
 

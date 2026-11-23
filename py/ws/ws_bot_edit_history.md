@@ -1619,7 +1619,7 @@ infrastructure has changed enough to make them misleading examples:
   precondition's run `.novc/mam-ws-bot-miqra-mevoar-runs/20261116-172722-680784-0500/`; the
   read after the run in `.novc/miqra-mevoar-stage-11-2026-11-16/read-after-save-judges/`.
 
-### Miqra Mevoar's display pages: the Torah's 15 parts, 2026-11-23 — current
+### Miqra Mevoar's display pages: the Torah's 15 parts, 2026-11-23
 
 - **Purpose:** Create the display pages of the five books of the Torah, three parts to a book,
   which the main page of Miqra Mevoar links from its section of the Torah (revision 3104053),
@@ -1672,6 +1672,52 @@ infrastructure has changed enough to make them misleading examples:
   `.novc/miqra-mevoar-torah-2026-11-22/stage13/logs/base-headings-check-2.txt`; the read after the run in
   `.novc/miqra-mevoar-torah-2026-11-22/stage13/read-after-save-torah-2/`; the measurement of the include size in
   `.novc/miqra-mevoar-torah-2026-11-22/stage13/include-size/`.
+
+### Miqra Mevoar's display pages: Genesis' second and third parts, 2026-11-23 — current
+
+- **Purpose:** Create the display pages of Genesis' new second and third parts, 12:1 to 25:18
+  and 25:19 to 36:43, into which Avi divided the second part of the entry above on the main
+  page of Miqra Mevoar (revision 3104126; the latest, 3104162, links them alike), since that
+  part was over MediaWiki's include-size limit. Dovi deleted the old second part, revision
+  3104109, and moved the old third part to the fourth part's title. Each new page begins with
+  the block of title and navigation of the entry above. The display mode's table took the
+  pages in Stage 14 of `doc/PLAN-miqra-mevoar.md` (`b27b3e77`).
+- **Authorization:** Ben, 2026-11-23, at 11:44 New York time, in the session that took his
+  answers to decisions 13 to 17 of the decision page,
+  https://claude.ai/artifact/XYchLEVJdwMQh5FM3wDJHN: "I concur with all of your
+  recommendations on the decision page". Recommendation 15a was to save the 2 pages with Stage
+  10's summary, after a fresh check of the preconditions and a fresh dry run that gives the
+  same pages.
+- **Mode:** `main_ws_bot.py miqra-mevoar-display`, as in Stage 10, with `--page gen-2 --page
+  gen-3`.
+- **Saving run:** two pages created, at 11:51 New York time, 49,674 bytes in all, with the
+  summary of the entries above: Genesis 12:1 to 25:18 as revision 3104169, and 25:19 to 36:43
+  as 3104170. The summary was copied from the plan by script and given to the run without
+  passing through a shell.
+- **Safety rule:** before the dry run, `py/main_miqra_mevoar.py base-headings --check` found
+  every heading of the Torah's 187 base chapters where the records have it, with no revision
+  changed; anonymous reads found the 40 pages of the two stages' survey at their surveyed
+  revisions, the titles of the second and third parts missing, and the main page still at
+  revision 3104162, whose links and labels give the pages' titles and their blocks' names. No
+  `main_ws_bot.py` process was running on the machine, and no other session of the
+  commander's family was doing bot work, before either bot run. The `--no-save` dry run gave
+  two creates, at 52.5% and 55.2% of the include-size limit, with no missing link or
+  transcluded page, and its pages and outcomes equal byte for byte those that the decision
+  page put to Ben (`.novc/mam-ws-bot-miqra-mevoar-display-runs/20261123-111317-927016-0500/`). The saving run's pages equal the
+  dry run's, and it read each new revision back through the API, uncached, and its bytes
+  equalled the generated text. A read after the run, without the bot's login, found each page
+  with one revision, BDencklaBot's, not minor, with the approved summary and with the SHA-1
+  and size of the generated page, and each creation and its entry in the category with the
+  bot flag in the recent changes.
+- **One-shot:** no. Confirmed 2026-11-23, immediately after the run: a `--no-save` rerun found
+  both pages unchanged and exited zero, and the live texts that it read equal the saved pages
+  byte for byte (`.novc/mam-ws-bot-miqra-mevoar-display-runs/20261123-115221-542436-0500/`).
+- **Edit level:** Whole page text, generated; page-targeted by key.
+- **Input:** `MAM-simple/json-vtrad-mam/` and `in/miqra-mevoar-base-headings/`; run artifacts
+  `.novc/mam-ws-bot-miqra-mevoar-display-runs/20261123-115110-757048-0500/`; dry run
+  `.novc/mam-ws-bot-miqra-mevoar-display-runs/20261123-115012-773854-0500/`; the preconditions'
+  reports in `.novc/miqra-mevoar-avi-saves-2026-11-23/preconditions/` and `.novc/miqra-mevoar-avi-saves-2026-11-23/logs/`; the read
+  after the run in `.novc/miqra-mevoar-avi-saves-2026-11-23/read-after/run1/`.
 
 ## How to look up the original code
 
