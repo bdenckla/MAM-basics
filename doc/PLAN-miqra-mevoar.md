@@ -35,10 +35,13 @@ executed (execution ledger, “Stage 11, the display pages of Judges and Daniel�
 2026-11-22 Avi asked for the display pages of the five books of the Torah, which his main page
 now links in parts, and Ben gave his word to plan and execute them in one session (decisions
 ledger entry 16). Stage 12, written that day, plans them, and its code and its dry run are
-done. On Ben's word of the same day the stage is paused: its four open choices went to Avi in
-an email that Ben sent the same day, and its saves wait until the work resumes on Avi's
-answers (decisions ledger entry 17; Stage 12, “Resuming Stage 12”). The execution ledger
-below records each finished stage.
+done. On Ben's word of the same day the stage paused, and its four open choices went to Avi
+in an email that Ben sent the same day (decisions ledger entry 17). Avi answered that
+evening, and Ben relayed the answers with his word to act on them (entry 18): Avi corrected
+the two labels that decision 1 questioned and chose 2a, 3a and 4b, the bot's block of title
+and navigation, which needs a stage of its own. A fresh session resumed Stage 12 and found
+his fixes on the live pages (execution ledger, “Stage 12 resumed”); the stage's saves wait
+on Ben's word for each run. The execution ledger below records each finished stage.
 
 Written 2026-11-02 by Claude (Opus 5.5) in the Phase 1 session that the session "Commander for
 Claude's forests" started for Avi's email "Mikra Mevo'ar at Wikisource". The quoted decisions are
@@ -62,7 +65,7 @@ the five books of the Torah, three parts to a book, which the main page links in
 
 ## Decisions ledger
 
-Entries 1 to 3 and 10 to 17 are Ben's decisions. Entries 5 to 9 were Claude's proposals,
+Entries 1 to 3 and 10 to 18 are Ben's decisions. Entries 5 to 9 were Claude's proposals,
 approved by Ben's word in entry 3.
 
 1. **Route: the bot, after a pilot.** Ben, 2026-11-02, answering "Which route should the pages
@@ -190,7 +193,33 @@ approved by Ben's word in entry 3.
     So Stage 12's decisions 1 to 4 go to Avi, in an email that the session drafted for Ben to
     send. The session reads the rest of his words as holding the saving runs, decisions 5 and
     6, until the work resumes after Avi answers; each saving run still needs Ben's word for
-    that run (entry 3). Active.
+    that run (entry 3). Settled by entry 18.
+18. **Avi's answers to Stage 12's questions.** Ben, 2026-11-22, at 20:14 New York time, in
+    the commander session, relaying Avi's answers to the email of entry 17, exactly:
+
+    > regarding the miqra mevoar project, avi writes in an email:
+    >
+    > 1. Fixed.
+    > 2. Use the same special templates as in the parashah pages (טעם תחתון).
+    > 3. Do the same as in the parashah pages.
+    > 4. If the bot can create that kind of title and navigation in the very same style as Joshua 1, that would be great!
+    >
+    > All of the typos listed in the parashah pages, listed at the end, are now fixed.
+    >
+    > please act upon the decisions 1 thru 4 he provides. or I guess check that 1 is indeed fixed and act on decisions 2, 3, and 4. you might also check that indeed "All of the typos listed in the parashah pages, listed at the end [of the email in 5 bullet points], are now fixed.
+    >
+    > do you have record of the email this references (e.g. the numbers 1 thru 4) or should I provide that for context?
+
+    Avi's four numbered answers are to the email's four questions, which are Stage 12's
+    decisions 1 to 4, and the slips that he calls fixed are the five that the email listed
+    at its end. So decision 1 rests on his corrected labels, which give Genesis' first part
+    chapters 1 to 11 and Exodus' first part chapters 1 to 17, the ranges of 1a; decisions 2
+    and 3 take 2a and 3a; and decision 4 takes 4b, a block of title and navigation that the
+    bot builds on each of the Torah's 15 parts in the very same style as Joshua's first
+    part, which needs a stage of its own (Stage 12, “Resuming Stage 12”, step 2). The
+    session that resumed the stage reads Ben's words as his word to act on the four answers
+    and to check Avi's fixes, and, for 4b, to plan that stage, which a fresh session
+    executes; each saving run still needs his word for that run (entry 3). Active.
 
 Deferred, each until its own decision:
 
@@ -1224,7 +1253,53 @@ byte-for-byte copy of that frozen plan; this ledger and the State line are the e
     folder. It apologizes, as Ben asked (decisions ledger entry 17), that he relays these
     questions instead of deciding them himself; asks Avi the stage's four questions, each with
     the choice that the pages follow unless he prefers another; and lists the slips found on
-    his weekly-portion pages. Stage 12 waits on his answers.
+    his weekly-portion pages. Stage 12 then waited on his answers.
+- **Stage 12 resumed, 2026-11-22:** Ben's message of decisions ledger entry 18 reached a fresh
+  Claude (Opus 5.5) session that the commander started with a brief saved as
+  `C:/Users/BenDe/GitRepos/MAM-basics/.novc/commander-session/miqra-mevoar-torah-resume-brief-2026-11-22.md`.
+  Its checkout, `D:/GitRepos5/MAM-basics`, was verified before its first edit: on `main`,
+  clean, at `d541ec755ad1c5aa9bd053a87532e8c60816ff55`, with no other session working in it,
+  and fast-forwarded to origin's `aeec88eab432487ed0f6ada4cf614c3a47e958c3`. Its scripts and
+  evidence are in that clone's `.novc/miqra-mevoar-torah-2026-11-22/resume/`.
+  - **The reads,** anonymous, saving nothing: the main page's latest revision, 3104053,
+    Dovi's of 16:08 New York time; and, at 20:24, the Torah's 15 part titles, its 54
+    weekly-portion pages, its 187 base chapters and the 34 pages of the display table
+    (`resume/wikisource/torah-read-20261123T012439Z/`). None of the 15 part pages exists, and
+    no page of the table has changed since the reads of 2026-11-22 at 09:18.
+  - **Decision 1.** The labels of revision 3104053, parsed by Stage 12's parser, give Genesis'
+    first part chapters 1 to 11 and Exodus' first part chapters 1 to 17, the ranges that
+    `display_page.PAGES` already gives them; the other 13 labels are those of revision
+    3103840, and each of the 15 gives its page's range in the table
+    (`resume/survey/labels-3104053.txt`). The table is unchanged, and its comments no longer
+    call the two ranges pending.
+  - **The five slips,** each fixed on its live page, by Dovi, between 16:13 and 16:24 New York
+    time (`resume/survey/slips.txt`): Naso's heading before Numbers 5:1 now transcludes from
+    the base chapter of chapter 5 (revision 3104057); Devarim's before Deuteronomy 2:2, 2:9 and
+    2:17 from that of Deuteronomy 2 (3104059); Shoftim's before 19:1 from that of chapter 19,
+    with the heading of 18:9 now before 18:9 and no break line before 18:19 (3104063); Ki
+    Tetze's heading before 22:6 stands inside its template (3104067); and the verse line of
+    Leviticus 21:20 in its base chapter holds no tag but its own (3104069). The analysis of
+    2026-11-22, rerun on the new read, no longer finds the first four
+    (`resume/survey/analysis-diff.txt`).
+  - **Decisions 2 and 3.** Avi's pages of Yitro, Va'etchanan, Ki Tisa and Tzav are still at
+    revisions 962744, 962961, 966044 and 966718, from which the code copied the Decalogue's
+    templates and the disputed petuhot's first parameters, so 2a and 3a need no change.
+  - **A comparison newly possible.** The rerun analysis now reads the breaks of Exodus and
+    Leviticus, since Stage 12's `mam_simple.verse_breaks` reads the nested petuhot instead of
+    raising on them, so it compares those books' weekly-portion pages too. Besides the
+    disputed petuhot, which Tzav shows as decision 3a has them, it finds four breaks where
+    Avi's pages differ from MAM-simple, of the kind that it found in the other three books on
+    2026-11-22 and that the email did not list: a petuha before Exodus 34:11, where MAM-simple
+    has no break; petuhot before Leviticus 13:38 and 13:40, where it has setumot; and a
+    petuha before Leviticus 23:5, where it has one before 23:4
+    (`resume/survey/new-breaks.txt`). The display pages follow MAM-simple there, as
+    everywhere (Stage 10's choice 1).
+  - **The heading places.** `base-headings --check`, ending at 20:37 New York time, parsed all
+    187 base chapters and found every heading where the records have it. Only Leviticus 21's
+    revision had changed, and the check reported no stray tag, where on 2026-11-22 it
+    reported verse 1's end tag inside verse 20's line. Since that base chapter is an input of
+    the hand-run `base-headings`, the session ran it again, ending at 20:39: its one change to
+    the records is Leviticus 21's revision id, 3009315 to 3104069.
 
 ## Background for a fresh executor
 
@@ -1898,9 +1973,10 @@ the display pages of the five books of the Torah that his main page now links in
 this one session, which he asked to do the work and then to draft the reply; a subagent of
 this session, given this stage's text as a fresh executor, makes the code change. Each saving
 run still needs Ben's word for that run (decisions ledger entry 3). The design is this
-session's proposal. The four choices that neither the plan nor Ben's words settle wait on his
-answers on the stage's decision page, and the code follows each one's recommendation until he
-answers.
+session's proposal. The four choices that neither the plan nor Ben's words settled went to
+Avi (decisions ledger entry 17), and his answers, which Ben relayed the same evening, settle
+them (entry 18): decisions 1 to 3 as the code has them, and 4b, which needs a stage of its
+own.
 
 **What it does.** BDencklaBot creates the 15 display pages that the main page `מקרא מבואר` links
 from its section `==ספרי התורה==` in revision 3103840, Dovi's of 2026-11-21 at 16:32 New York
@@ -1910,13 +1986,13 @@ same section links, stay as they are: no page of this stage has one of their tit
 
 **The pages,** keyed as the bot mode names them, by the book's OSIS abbreviation in lower case
 and the part's number, with the names that the main page links, copied from that revision by
-script, and the ranges that each link's label gives, parsed by script, except where decision 1
-says otherwise:
+script, and the ranges that each link's label gives, parsed by script, as revision 3104053
+gives them for `gen-1` and `exod-1`, whose labels Avi corrected there (decision 1):
 
-1. `gen-1`: `מקרא מבואר/תצוגה/ספר בראשית 1`, Genesis 1 to 11; its label gives chapters 1 to 12 (decision 1).
+1. `gen-1`: `מקרא מבואר/תצוגה/ספר בראשית 1`, Genesis 1 to 11, as its label has given since revision 3104053 (decision 1).
 2. `gen-2`: `מקרא מבואר/תצוגה/ספר בראשית 2`, Genesis 12 to 36.
 3. `gen-3`: `מקרא מבואר/תצוגה/ספר בראשית 3`, Genesis 37 to 50.
-4. `exod-1`: `מקרא מבואר/תצוגה/ספר שמות 1`, Exodus 1 to 17; its label gives chapters 1 to 11 (decision 1).
+4. `exod-1`: `מקרא מבואר/תצוגה/ספר שמות 1`, Exodus 1 to 17, as its label has given since revision 3104053 (decision 1).
 5. `exod-2`: `מקרא מבואר/תצוגה/ספר שמות 2`, Exodus 18 to 24.
 6. `exod-3`: `מקרא מבואר/תצוגה/ספר שמות 3`, Exodus 25 to 40.
 7. `lev-1`: `מקרא מבואר/תצוגה/ספר ויקרא 1`, Leviticus 1 to 10.
@@ -1974,11 +2050,13 @@ at `3bc9510e` and from the live pages, read anonymously at 09:18 New York time, 
    chapters 1 to 12, and its second, 12 to 36, both show chapter 12's 20 verses; and Exodus'
    first part, 1 to 11, and its second, 18 to 24, leave out chapters 12 to 17, 183 verses. Each
    second part begins where its book's weekly portions and its title begin a new subject.
-   Decision 1.
+   Decision 1. Avi corrected both first parts' labels on 2026-11-22, to chapters 1 to 11 and
+   1 to 17, in the main page's revision 3104053 (decisions ledger entry 18).
 
 **Choices.** Decisions 1 to 4 were Ben's, on the stage's decision page, until he passed them to
-Avi on 2026-11-22 (decisions ledger entry 17); the code follows each recommendation, marked
-(a), until Avi answers:
+Avi on 2026-11-22 (decisions ledger entry 17). Avi's answers, which Ben relayed that evening
+(entry 18), settle them: 1a, with the two labels corrected; 2a; 3a; and 4b, which needs a
+stage of its own. The code follows (a) for decisions 1 to 3:
 
 1. **The first parts of Genesis and Exodus.** (a) The table gives `gen-1` chapters 1 to 11 and
    `exod-1` chapters 1 to 17, the chapters up to each second part's label, so that the dry run
@@ -2138,11 +2216,12 @@ that clone alone.
 **Resuming Stage 12.** On 2026-11-22 Ben paused the stage after its dry run (decisions ledger
 entry 17). Done: the stage, pushed as `45a975f7`; its code, `f910d8b3` and `a65a91d1`; its dry
 run; and the record of them, `c5a09ec0` (execution ledger, “Stage 12, the display pages of
-the Torah”). Nothing is saved on Wikisource. Waiting: Avi's answers to the four questions of
-the email that the session drafted and Ben sent on 2026-11-22,
+the Torah”). Nothing is saved on Wikisource. Avi answered the four questions of the email that
+the session drafted and Ben sent on 2026-11-22,
 `D:/GitRepos5/MAM-basics/.novc/miqra-mevoar-torah-2026-11-22/email-2026-11-22/email-to-avi-2026-11-22.md`,
-with its copyable page beside it; then Ben's word for each saving run. The session that
-resumes:
+with its copyable page beside it, the same evening (decisions ledger entry 18), and a fresh
+session resumed the stage (execution ledger, “Stage 12 resumed”); each saving run waits on
+Ben's word for that run. The session that resumes:
 
 1. Records Avi's answers, as Ben relays them, in the decisions ledger.
 2. Changes the code only where an answer is not the recommendation, and keeps every other
