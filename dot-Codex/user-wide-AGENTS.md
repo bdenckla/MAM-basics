@@ -246,6 +246,16 @@ A throwaway scratch script has one requirement: it does its requested job and no
 ignore source-style preferences, but it still uses explicit UTF-8 handling when non-ASCII text
 flows.
 
+## Web requests obey robots.txt
+
+Before an agent's first request to a website in a task, it reads the site's `/robots.txt`, and it
+sends no request, `HEAD` included, to a path disallowed by the group that governs it: for an agent
+acting on Ben's request, the `*` group, unless the file names a group for such agents. It keeps the
+file's `Crawl-delay`. A file that robots.txt bars an agent from fetching is Ben's to download by
+hand. A refusal by a site's firewall ends the session's requests to that site, and no agent changes
+its user agent or headers to get past one. A script in a MAM-basics checkout fetches through
+`py/mb_cmn/polite_download.py`, which obeys robots.txt and spaces its requests.
+
 ## Authored paths use forward slashes
 
 In tracked source, docstrings, comments, documentation, test data, and commands, write ordinary
