@@ -10,11 +10,11 @@ same day, had the bot create the seven of those pages whose base chapters exist,
 3101357 to 3101363, and Ben then sent Avi a reply about them with three questions (execution
 ledger, “The reply to Avi”). Avi answered on 2026-11-05: he had added Amos's link to the main
 page and renamed Joshua's two display pages, and he is building a model for the parts of large
-books (execution ledger, “Avi's answer to the reply”). The State stays live: the model waits on
-Avi and then on Ben's decision (Deferred, “The parts of large books”), and Word files of further books
-take the course of “Later Word files”. With its change of 2026-11-16 the display mode's table
-took Joshua's live titles and kept Stage 10's names as their sort keys (decisions ledger entries
-14 and 15). On 2026-11-16 Avi's folder held nine new
+books (execution ledger, “Avi's answer to the reply”). The State stayed live while the model
+waited on Avi and then on Ben's decision (Deferred, “The parts of large books”); Word files of
+further books take the course of “Later Word files”. With its change of 2026-11-16 the
+display mode's table took Joshua's live titles and kept Stage 10's names as their sort keys
+(decisions ledger entries 14 and 15). On 2026-11-16 Avi's folder held nine new
 books and none of the first six: the text of Micah, Nahum, Habakkuk, Haggai and Zechariah is now
 tracked (execution ledger, “Later Word files, 2026-11-16”). Ben's decisions of that day
 (decisions ledger entry 15) gave round 1 to a fresh session: the bot created those five books'
@@ -45,14 +45,14 @@ Ben chose the three recommendations of the stage's decision page (decisions ledg
 among them the 15 pages' creation with their blocks, in one saving run; another fresh session
 took his answers and executes Stage 13: on his word the bot created the 15 pages with their
 blocks that day, as revisions 3104108 to 3104122 (execution ledger, “Stage 13,
-2026-11-23”). Genesis' second part is over MediaWiki's include-size limit, so its last 64
-verses do not show. On Ben's answer to the stage's decision 11 (decisions ledger entry 20),
+2026-11-23”). Genesis' second part was over MediaWiki's include-size limit, so its last 64
+verses did not show. On Ben's answer to the stage's decision 11 (decisions ledger entry 20),
 the reply to Avi tells him and asks how he wants the part handled; it also asks whether he
 wants blocks on the six parts made without one (entry 19's 9a). Ben sent it that morning,
-and its two questions wait on Avi's answers. On Ben's answer to decision 12 (entry 21), the
+and its two questions waited on Avi's answers. On Ben's answer to decision 12 (entry 21), the
 display mode's dry run now also fails a page that uses more than 90% of that limit.
 Avi answered both questions the same day, and Ben gave his word to carry out the work that Avi
-asks for (entry 22): Avi divided Genesis' second part into two, so that Genesis has four parts,
+asks for (entry 22): Avi divided Genesis' second part into two, so that Genesis had four parts,
 which Stage 14 plans, and asked for the block on every part of Joshua, Judges, the Twelve, the
 Five Megillot and Daniel, which Stage 15 plans. A fresh session wrote both stages that day,
 with their code and dry runs, and Ben chose every recommendation of their decision page
@@ -65,6 +65,16 @@ and third parts, as revisions 3104169 and 3104170, and updated its fourth part, 
 on his word for decision 18 (entry 24), put the block without topics on the four megillot
 without a heading, as revisions 3104206 to 3104209. Ben sent the reply to Avi that day, with
 draft A of the lighter verse template attached, so Stages 14 and 15 are executed.
+That afternoon Avi answered in two emails, which Ben relayed, seeing no need for more work or
+for a reply (entry 25). Avi had changed the verse template, put Judges' two
+pictures back and converted Genesis back into three parts himself, and all three parts "show
+up correctly now"; he can now tell Rabbi Kokhav that everything is up to date, and "we're just
+waiting for the next book". Anonymous reads that afternoon confirmed each change: the template
+is draft A byte for byte, Judges' second part has its two pictures again, and each of
+Genesis' three parts is within the include-size limit (execution ledger, “Avi's report,
+2026-11-23”). Nothing that this plan does next undoes Avi's changes, though the display table
+still divides Genesis in four (Deferred, “Genesis in three parts again”). The State stays live
+for the next book, whose Word file takes the course of “Later Word files”.
 The execution ledger below records each finished stage.
 
 Written 2026-11-02 by Claude (Opus 5.5) in the Phase 1 session that the session "Commander for
@@ -93,7 +103,7 @@ every display page of Joshua, Judges, the Twelve, the Five Megillot and Daniel.
 
 ## Decisions ledger
 
-Entries 1 to 3 and 10 to 24 are Ben's decisions. Entries 5 to 9 were Claude's proposals,
+Entries 1 to 3 and 10 to 25 are Ben's decisions. Entries 5 to 9 were Claude's proposals,
 approved by Ben's word in entry 3.
 
 1. **Route: the bot, after a pilot.** Ben, 2026-11-02, answering "Which route should the pages
@@ -340,6 +350,27 @@ approved by Ben's word in entry 3.
     topics at its top, with the summary "Block of title and navigation, as Avi asked", after a
     fresh check of the preconditions and a fresh dry run that gives the pages that the decision
     page reported. Active.
+25. **Avi's two emails of 2026-11-23, and no reply.** Ben, 2026-11-23, at 16:25 New York time,
+    in the commander session, asking it for a session and pasting Avi's two emails, exactly, as
+    the commander's brief for that session quotes him:
+
+    > Please start a session that will reflect these emails from Avi. seems like no additional work is needed, nor even a response to Avi, but it seems like maybe you were tracking the state of the project, in which case maybe it needs a state update based on these emails:
+    >
+    > Email 1 of 2:
+    > Thanks so much! I [changed the template](https://he.wikisource.org/w/index.php?title=%D7%AA%D7%91%D7%A0%D7%99%D7%AA:%D7%9E%D7%A7%D7%A8%D7%90_%D7%9E%D7%91%D7%95%D7%90%D7%A8&curid=375657&diff=3104224&oldid=2852518) and put the two pictures back into Judges.
+    > It all looks great. Now I can write to Rabbi Kokhav and tell him that everything is up to date, and we're just waiting for the next book. Thanks for your help in making this available to the public.
+    >
+    > Email 2 of 2:
+    > PS I manually converted Genesis back into three parts (rather than four).
+    > All three parts show up correctly now, thanks to your help.
+
+    Avi's emails answer the reply that Ben sent that afternoon (execution ledger, “The saves of
+    Stages 14 and 15, 2026-11-23”, “The reply, sent”). His link is the diff of the verse
+    template's revision 3104224 against its revision 2852518, and the two pictures are those of
+    Judges' second part, which the reply said the part could take again. The session that the
+    commander started for the emails reads Ben's words as his word to bring this plan's record
+    up to date and to do nothing else: no reply to Avi, no bot run, dry or saving, and no edit
+    on Wikisource. Active.
 
 Deferred, each until its own decision:
 
@@ -457,6 +488,18 @@ Deferred, each until its own decision:
   after Avi's answers”): he made both corrections in the files, Daniel's file is final, he
   linked display pages for Judges and Daniel from the main page, and the pictures may be
   ignored. Stage 11 is the stage that the fourth answer called for.
+- **Genesis in three parts again.** Since Avi's edits of 2026-11-23 (execution ledger, “Avi's
+  report, 2026-11-23”), Wikisource has three display pages of Genesis, and the display table,
+  `PAGES` in `py/miqra_mevoar/display_page.py`, still has Stage 14's four: `gen-2` and `gen-3`
+  the parts of 12:1 to 25:18 and 25:19 to 36:43, and `gen-4` chapters 37 to 50, at a title
+  that is now a redirect. Nothing waits on it, since the bot refuses each of those three pages,
+  as that entry says. A stage that next needs Genesis' pages first makes the table follow
+  Avi's three parts, on Ben's word. As read on 2026-11-23, such a table would give the second
+  part, chapters 12 to 36 with its label's name in its block, a text that differs from the
+  live one only in the blank line before the category line, which the live text lacks, so the
+  update rule would still refuse that page; and it would give the third part, chapters 37 to
+  50, an update of its category line alone, since that line still sorts the page under the
+  fourth part's title.
 
 ## Execution ledger
 
@@ -1752,6 +1795,80 @@ byte-for-byte copy of that frozen plan; this ledger and the State line are the e
     by the parse action, each block shows its name whole in bold and its chapters in order,
     with no topic (`render/run18/`). The decision page puts the saving run to Ben as decision
     18, with run 3's summary.
+- **Avi's report, 2026-11-23:** Ben's message of decisions ledger entry 25 reached a fresh
+  Claude (Opus 5.5) session that the commander started with a brief saved as
+  `C:/Users/BenDe/GitRepos/MAM-basics/.novc/commander-session/mm-avi-emails-brief-2026-11-23.md`.
+  Its checkout, `D:/GitRepos6/MAM-basics`, was verified before its first edit: on `main`,
+  clean, at `d5a295e8d17e69a1fd83611c7c43406178997f4c`, which it fast-forwarded to origin's
+  `28c397effff720f1c220ed516c024f30a0a4d9a1`, with no other session working in it. Its
+  scripts and evidence are in that clone's `.novc/mm-avi-emails-2026-11-23/`.
+  - **The reads,** anonymous, from 21:34 to 21:38 UTC, saving nothing (`s01-summary.txt`,
+    `s02-latest.txt`, `s02-diffs.txt`, `s02-template.txt`, `s02-main.txt` and
+    `s03-diffs.txt`, with the raw answers in `raw/`): Dovi's contributions and log events
+    since 17:00 UTC; the verse template's history and its revisions 2852518 and 3104224; the
+    main page's revisions after 3104162; the latest revision of every page of the display
+    mode's two tables, and the texts of Genesis' four titles, Judges' second part and
+    Zephaniah, each compared with the generator's text for its key; and the parse's include
+    size of Genesis' three parts. Since the bot's saves, the reads found no revision of those
+    pages by anyone but Dovi, and they confirm each fact of Avi's report:
+    1. **The template.** Dovi's revision 3104224 of the verse template, at 15:10 New York
+       time, is draft A of the reply byte for byte: it writes out the span of smaller type in
+       the four places where revision 2852518 called the smaller type's template. Its
+       summary says, in Hebrew, that it spares long pages the calls of that template, which
+       weigh on them.
+    2. **Judges' two pictures.** Dovi's revision 3104214 of Judges' second part, at 13:46 New
+       York time, whose summary says, in Hebrew, that he put the pictures back after the
+       navigation was added, and his minor revision 3104225 at 15:23 New York time leave the
+       bot's revision 3104176 unchanged but for eight lines before its category line: two
+       sections, each a level-2 heading that gives a plant's name in 8:7 or 9:14, with a
+       picture of the plant.
+    3. **Genesis in three parts.** Between 15:48 and 16:02 New York time, in the main page's
+       revisions 3104233 to 3104243, Dovi gave Genesis three links: the first part's
+       unchanged, the second part's for chapters 12 to 36 and the third's for chapters 37 to
+       50. To the bot's second part, revision 3104169, he added the verses of 25:19 to 36:43
+       with their break lines, and to its block their topics and chapters, and he shortened
+       its block's name to match the new label (revisions 3104234 to 3104236 and 3104242). He
+       deleted the bot's third part, which the bot had created as revision 3104170, with a
+       summary that says, in Hebrew, that the deletion makes room for moving Genesis 4 to
+       Genesis 3; moved the fourth part, at the bot's revision 3104171, to the third part's
+       title, leaving a redirect at the fourth's (revisions 3104237 and 3104238); and gave its
+       block the third part's name (revision 3104241). The parse puts the three parts
+       at 25.7%, 67.4% and 39.4% of the include-size limit, so each shows whole: the second
+       part, 785 verses, takes about the 67.5% that Stage 14's study foresaw under draft A
+       for chapters 12 to 36 in one part, and the third, which Stage 14's dry run measured at
+       63.3% as the fourth part under the old template, takes 39.4%.
+  - **Beyond the report,** the reads found three more things:
+    1. By a script that saves nothing (`s04-three-parts.txt`), Genesis' second part is the
+       generator's text for 12:1 to 36:43 with its label's name in its block, but for the
+       blank line before its category line, which it lacks; and its third part is the bot's
+       old fourth part but for its block's name, so its category line still sorts it under
+       the fourth part's title.
+    2. The label with two spaces after its colon, which the reply noted, went with the old
+       third part, after Dovi had removed the second space (main page revision 3104215).
+    3. Dovi also put two pictures at the end of Zephaniah's display page, each under a
+       level-2 heading that gives a word of 2:14: an owl of each of the two kinds, Strix and
+       Bubo, that the descriptions of the Word file's two pictures name (revisions 3104227 to
+       3104230). In the paraphrase of 2:14 on its base chapter 2 he linked those two words to
+       the headings (revisions 3104231 and 3104232). Avi's emails do not mention these.
+  - **Nothing that the plan does next undoes Avi's changes.** The bot edits no template: the
+    generator calls the verse template by the same name and parameters, and the display
+    mode's dry run measures each page's include size under the live template, now draft A. A
+    new book takes the course of “Later Word files”: its base chapters' runs name its book,
+    and its display run names its pages with `--page`, so neither touches a page of Genesis,
+    Judges or Zephaniah. A display run that names one of those pages, or a run over the whole
+    table, compares each page with its live text, and on the texts that the reads kept
+    `differs_only_in_block` is false for Genesis' second and third parts, Judges' second part
+    and Zephaniah, and for Genesis' fourth part, now a redirect: the run refuses each, saves
+    nothing for it and exits non-zero, while Genesis' first part is unchanged. The
+    base-chapter mode updates only a page that nobody but BDencklaBot has edited, so a
+    revised Word file of Zephaniah would leave Dovi's links in place. The display table's
+    four parts of Genesis wait on no one (Deferred, “Genesis in three parts again”).
+  - **The recheck,** at 21:46 UTC, found no contribution by BDencklaBot since its fourth
+    saving run, none by Dovi since his revision 3104243, and the verse template, the main page
+    and every page of the two tables at the revisions that the reads found
+    (`s05-recheck-20261123T214607Z.txt`).
+  - **Nothing sent and nothing saved,** as entry 25 says: no email to Avi, no bot run and no
+    edit on Wikisource.
 
 ## Background for a fresh executor
 
@@ -2928,6 +3045,10 @@ are evidence of 2026-11-22; the preconditions read the live pages again.
 A fresh session wrote this stage on 2026-11-23, on Avi's answer to the first question of the
 reply of that day, and executes it, on Ben's word to carry out the work that Avi's email asks
 for (decisions ledger entry 22); each saving run still needs his word for that run (entry 3).
+Its saves were made that day (execution ledger, “The saves of Stages 14 and 15, 2026-11-23”),
+and that afternoon Avi converted Genesis back into three parts himself (execution ledger,
+“Avi's report, 2026-11-23”), so Wikisource no longer has the four parts that this stage
+describes.
 
 **What Avi did,** as anonymous reads of 2026-11-23, from 15:16 to 15:27 UTC, found it
 (execution ledger, “Avi's answers, 2026-11-23”):
@@ -3177,8 +3298,10 @@ goes through only for pages that nobody but BDencklaBot has edited. A book of th
 base chapters arrive this way then gets its display page through Stage 10's mode, added to that
 mode's table, again on Ben's word for each saving run. Such a run names its pages with `--page`:
 since Stage 14 the mode updates a page whose live text differs from its generated text only
-in its block and its category line, so a run over the whole table would also update each
-page that still lacks its block, and refuses only a page that someone has edited further.
+in its block and its category line, and refuses a page that someone has edited further, so
+a run over the whole table would refuse Genesis' second, third and fourth parts, Judges'
+second part and Zephaniah, which Avi edited or moved after the saves of 2026-11-23 (Deferred,
+“Genesis in three parts again”).
 Since round 1 of 2026-11-16 the table gives Joshua's two entries the titles to which Avi moved
 them, and keeps Stage 10's names as their sort keys (decisions ledger entry 15, item 5).
 
