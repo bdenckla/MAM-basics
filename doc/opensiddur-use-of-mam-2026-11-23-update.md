@@ -410,3 +410,91 @@ opening it, and its outcome belongs in a later entry here.
    itself code-generated: the session that prepared the processor's pull request to read
    MAM-parsed/plus reported that its regeneration of the humash reproduced all 195 files of the
    release's commit, `c91943d`, byte for byte. This session did not repeat that regeneration.
+
+## 2026-11-23: narpas, legarmeh and the space between verses
+
+Written by Claude (Opus 5.5) on 2026-11-23, in the session that took over the review of Open
+Siddur's pull request
+[opensiddur/opensiddur-processor#316](https://github.com/opensiddur/opensiddur-processor/pull/316).
+That pull request's body listed two behaviors of the TEI as known issues, and this record counts
+both among its defects. Ben doubts both. His words, of 2026-11-23:
+
+> Failing to distinguish narpas from legarmeh is a common editorial choice. As usual, it *could*
+> be an accident, but it is far from safe to assume that it was an accident.
+
+And of the TEI's lack of any character between verses:
+
+> But it seems to me an legitimate encoding (albeit a bit burdensome to the edition-generating
+> application) that says "if there's no special whitespace between verses, supply your own space"
+
+### 1. Writing narpas and legarmeh alike is an editorial choice, not a defect
+
+Two passages count it as a defect, and should be read without that:
+
+1. Under "Whether MAM's templates are navigated well (item 4)", the caution "**Narpas and its
+   spacing.**"
+2. Under item 6, in the list "**Distinctions lost.**", the item "**Narpas and legarmeh.**"
+
+The facts stand: מ:פסק and מ:לגרמיה-2 both become HEBREW PUNCTUATION PASEQ, no markup says which
+is which, and MAM's spacing survives. But the printed tradition writes them alike too. MAM's
+introduction, chapter 2, section ד, says that Unicode has one character for both and that the
+printed editions all set the stroke alike, and MAM tells the two apart on its page only by its
+two templates' look: a bold stroke after a thin space for legarmeh, a small gray stroke between
+thin spaces for narpas
+([ch2.mediawiki L242-L244](https://github.com/bdenckla/MAM-basics/blob/aa92904ca59c718259794bb8cf273dfdc7150ba8/in/mam-ws-intro/ch2.mediawiki?plain=1#L242-L244)).
+The consumer notice of MAM-parsed plus asks nothing about the distinction: its rule on narpas
+says only that narpas forms no compound and that the spacing around it is the edition's choice.
+
+The TEI still tells most strokes apart by their spacing, since MAM's text, as MAM-parsed plus
+has it, never puts a space after narpas and puts one after most legarmeh: of the 2,295 strokes in
+the running text of the TEI at `c91943d`, 1,686 are followed by a space and 482 by a letter. The
+other 127 stand beside markup, where spacing does not say which they are.
+
+The code does not settle whether the processor's author meant it. The wikitext step labels the
+two, as `miqra:punct` with `type="legarmeh"` or `type="paseq"`
+([miqra_wikitext.py L595-L599](https://github.com/opensiddur/opensiddur-processor/blob/474cb10ebb49261d672c693550003c0f45960463/opensiddur/importer/miqra_al_pi_hamasorah/miqra_wikitext.py#L595-L599)),
+and the stylesheet's one rule for them prints only the character
+([miqra_to_tei.xslt L374-L376](https://github.com/opensiddur/opensiddur-processor/blob/474cb10ebb49261d672c693550003c0f45960463/opensiddur/importer/miqra_al_pi_hamasorah/miqra_to_tei.xslt#L374-L376)),
+as it prints the gray maqaf as a plain maqaf, which the consumer notice expressly allows. That
+rule dates from the importer's first commit, `b1f2246`, and no comment, test, README, changelog
+entry or issue says why.
+
+### 2. Nothing between verses is an encoding, not fused atoms
+
+Two passages count it as a defect, and should be read without that:
+
+1. Under item 4's cautions, the last clause of "**Whitespace templates dropped, fusing
+   atoms.**": "and between verses the TEI has no whitespace at all, only a milestone, at 18,896
+   verse boundaries."
+2. Under item 6, in the list "**Atoms fused and whitespace lost.**", the item "**Between
+   verses.**"
+
+The facts stand. What the record did not say is where the rest of column C goes: a parashah
+break, the song layout's included, becomes a paragraph boundary, closing the paragraph after the
+sof pasuq and opening the next with the verse's milestone. Only the plain space and the template
+ר4 are left out.
+
+Nor did it say how the books separate verses. Both of the processor's exporters print each verse
+milestone as a superscript verse number, with a thin space after it and nothing before it
+([reledmac.xslt L2261-L2293](https://github.com/opensiddur/opensiddur-processor/blob/474cb10ebb49261d672c693550003c0f45960463/opensiddur/exporter/tex/reledmac.xslt#L2261-L2293),
+[typography_tex.py L585-L599](https://github.com/opensiddur/opensiddur-processor/blob/474cb10ebb49261d672c693550003c0f45960463/opensiddur/exporter/tex/typography_tex.py#L585-L599),
+[html.xslt L502-L511](https://github.com/opensiddur/opensiddur-processor/blob/474cb10ebb49261d672c693550003c0f45960463/opensiddur/exporter/html/html.xslt#L502-L511),
+[reader.css L77-L81](https://github.com/opensiddur/opensiddur-processor/blob/474cb10ebb49261d672c693550003c0f45960463/opensiddur/exporter/html/assets/reader.css#L77-L81)).
+The processor's WLC text puts a space before nearly every verse milestone, and its JPS 1917 text
+a space, a line break or a paragraph's start; MAM's puts nothing there unless a paragraph
+starts. So in the books MAM's verse number stands against the sof pasuq before it, and a book
+that hid verse
+numbers, as the setting `markers.verse_numbers: hidden` allows and no book in
+opensiddur-projects does, would run MAM's verses together. This is read from the code; no book
+was built.
+
+The code does not settle intent here either. The stylesheet's comment "Column C: only parashah
+markers structure paragraphs; // line breaks are cosmetic." dates from the importer's first
+commit
+([miqra_to_tei.xslt L93-L98](https://github.com/opensiddur/opensiddur-processor/blob/474cb10ebb49261d672c693550003c0f45960463/opensiddur/importer/miqra_al_pi_hamasorah/miqra_to_tei.xslt#L93-L98)),
+and the importer's README calls column C "Navigation / header wikitext"
+([README.md L57](https://github.com/opensiddur/opensiddur-processor/blob/474cb10ebb49261d672c693550003c0f45960463/opensiddur/importer/miqra_al_pi_hamasorah/README.md#L57));
+neither names the space.
+
+Item 6's "**Poetic line breaks.**", which counts the 4,269 ר4 of column C as dropped, stands as
+written. The message of commit `3d6c66b8`, which added the record, names neither behavior.
