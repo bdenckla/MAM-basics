@@ -25,12 +25,17 @@ runtime; do not substitute Claude's session APIs or invent a `self` thread id.
   pagination to include older active chats. Inspect relevant chats with `read_thread` and rebuild
   the ledger from their verified task scope and Git. Record and report the live work and queue;
   carry on with any assignment Ben has already supplied.
-- **resume:** read `restart-prompt.md` and the newest running-record entries, then reconstruct
-  the ledger from live agents, app chats and Git. Same-chat subagents may still be available;
-  verify them with `collaboration.list_agents`. A different commander chat follows succeed.
-- **succeed:** read the previous commander's state and verify current work before assigning
-  anything. App chats are peers; do not claim to reparent subagents or transfer message
-  subscriptions. Treat work of the previous commander as occupied until its writer releases it.
+- **resume:** read `restart-prompt.md` and the newest running-record entries. Identify this chat
+  from trusted runtime context or the app's returned entries, and compare its id with the saved
+  commander id. If either id is unavailable, recover state read-only until identity and writer
+  ownership are verified; do not guess, pin an unidentified chat or overwrite the recorded owner.
+  Reconstruct the ledger from live agents, app chats and Git before assigning work. If the ids
+  match, same-chat subagents may still be available; verify them with
+  `collaboration.list_agents`. If the ids differ, complete the handover below.
+- **Handover when the chat id differs:** pin the identified commander if needed, and verify the
+  previous commander's current work before assigning anything. App chats are peers; do not
+  claim to reparent subagents or transfer message subscriptions. Treat work of the previous
+  commander as occupied until its writer releases it.
   Message an existing chat only under the authorization rule below. Archive the previous
   commander only when Ben asks and its outstanding work has been accounted for.
 
@@ -137,6 +142,6 @@ required commits. Use available context evidence to suggest a restart around Ben
 threshold; if context is unavailable, say so only when it affects placement or a restart
 decision. Do not assert a Codex equivalent of Claude's `/clear`, `clear_session` or automatic
 skill restoration. When a fresh commander is needed, prepare a standalone resumption prompt
-pointing to the state and `$commander-session succeed`; create a new chat only if Ben asks.
+pointing to the state and `$commander-session resume`; create a new chat only if Ben asks.
 After compaction or a user-started fresh chat, reread the skill, adapter and current-state note
 and verify all live work before continuing.

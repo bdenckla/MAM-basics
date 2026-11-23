@@ -19,14 +19,31 @@ the vav.
 Avi moved Joshua's two parts after Stage 10 created them, and their category lines
 still sort them under the names they had then, which PAGES keeps as their sort keys.
 
+Since Stage 13 of the plan, each of the Torah's fifteen parts begins with a block of
+title and navigation, in the very same style as the block that Dovi added to Joshua's
+first part in revision 3103803: PAGES gives each of them its block_name, the label of
+its link in revision 3104053 without the range in parentheses at its end, copied by
+script, as the comment on PAGES says, and gives no other page one.
+
 A page's stem names its book: a Word file's stem in books.BOOKS, or an OSIS
 abbreviation in base_headings.BOOKS, two sets of keys that must not meet. The places of
 its headings come from the tracked JSON, in/miqra-mevoar/, for a book of the first, and
 for the Torah, whose base chapters were made before the converter, from base_headings'
 records of the headings in those base chapters.
 
-A page has four line shapes and no others: the three of the megillot's pages, and on the
-Torah's pages the Decalogue's:
+A page with a block_name begins with its block, four lines: the block's line, a
+horizontal rule, _BLOCK_RULE, and two blank lines. The block's line is _BLOCK_START, the
+block's name and _BLOCK_AFTER_NAME; its topics, joined by _TOPIC_SEPARATOR, each a link,
+[[#<chapter> <verse>|<label>]], to a verse of the page that has a heading, in the
+page's order, labelled by the very transclusion of the heading that the verse's break
+line makes; _BLOCK_AFTER_TOPICS; its chapters, joined by _CHAPTER_SEPARATOR, each a
+link, [[#<chapter> <verse>|<chapter>]], to the chapter's first verse on the page, in
+the page's order; and _BLOCK_END. Chapters and verses are numerals, and the links reach
+the anchors that the verse template and the Decalogue's templates make for their
+verses. Those pieces of fixed text are Joshua's, as the comment on them says.
+
+After its block, if it has one, a page has four line shapes and no others: the three of
+the megillot's pages, and on the Torah's pages the Decalogue's:
 
 1. A verse: {{מקרא מבואר|<book>|<chapter>|<verse>}}, the book as
    mam_bknas.he_bk39_name names it and the chapter and verse as Hebrew numerals. The
@@ -60,11 +77,14 @@ Torah's pages the Decalogue's:
    that PAGES gives it.
 
 page_text generates a page in NFC with no final newline, exactly as a save stores it.
-read_page, a closed parser of the four shapes, reads a page back as its verses and
-raises on any other line; on the chapter parameter anywhere that item 1 does not put
-it; on a verse line at a verse to which item 2 gives a Decalogue line, and on a
-Decalogue line anywhere else; and on a disputed petuha's first parameter before any
-verse but its own.
+read_page, a closed parser of the block and the four shapes, reads a page back as its
+block's name, or None, its verses and its category's sort key, and raises on any other
+line; on a block anywhere but a page's first four lines, or in any other shape; on a
+block whose topics are not the page's headings, in order, with the same transclusions,
+or whose chapters are not the page's chapters at their first verses on the page; on
+the chapter parameter anywhere that item 1 does not put it; on a verse line at a verse
+to which item 2 gives a Decalogue line, and on a Decalogue line anywhere else; and on a
+disputed petuha's first parameter before any verse but its own.
 """
 
 import dataclasses
@@ -82,8 +102,8 @@ from miqra_mevoar import wikitext
 @dataclasses.dataclass(frozen=True)
 class Page:
     """One display page: its key, its name after DISPLAY_PREFIX, its book, its chapters
-    and the verses in them at which it begins and ends, and its category line's sort key
-    where that is not its name."""
+    and the verses in them at which it begins and ends, its category line's sort key
+    where that is not its name, and its block's name where it has a block."""
 
     key: str
     name: str
@@ -98,6 +118,9 @@ class Page:
     # chapter at which it ends, or None for that chapter's last verse.
     first_verse: int = 1
     last_verse: int | None = None
+    # The part's name in its block of title and navigation, or None for a page without
+    # a block.
+    block_name: str | None = None
 
     def title(self) -> str:
         """The page's title on Wikisource."""
@@ -130,7 +153,32 @@ class Verse:
 
 def page_text(page):
     """A display page's text, exactly as a save stores it."""
-    return _text(page_verses(page), page.category_sort_key())
+    return _text(page.block_name, page_verses(page), page.category_sort_key())
+
+
+def block_line(name, topics, chapters):
+    """A block's line: the part's name; its topics, each ((chapter, verse), label), the
+    numerals of the verse before which its heading stands and its link's label; and its
+    chapters, each (chapter, verse), the numerals of the chapter and of its first verse
+    on the page, each linked by the chapter's numeral. The name, a template's parameter,
+    must be plain text, as _BLOCK_NAME and wikitext.wikitext_hazards allow it."""
+    if _BLOCK_NAME.fullmatch(name) is None or wikitext.wikitext_hazards(name):
+        raise ValueError(f"A block's name is not plain text: {name!r}")
+    if not topics or not chapters:
+        raise ValueError(f"The block of {name!r} has no topic or no chapter")
+    return "".join(
+        (
+            _BLOCK_START,
+            name,
+            _BLOCK_AFTER_NAME,
+            _TOPIC_SEPARATOR.join(_anchor_link(*topic) for topic in topics),
+            _BLOCK_AFTER_TOPICS,
+            _CHAPTER_SEPARATOR.join(
+                _anchor_link(anchor, anchor[0]) for anchor in chapters
+            ),
+            _BLOCK_END,
+        )
+    )
 
 
 def page_verses(page):
@@ -179,15 +227,17 @@ def book_of_stem(stem):
 
 
 def read_page(text):
-    """A page's verses and its category's sort key; raise on any line of another shape."""
+    """A page's block's name, or None, its verses and its category's sort key; raise on
+    any line of another shape."""
     lines = text.split("\n")
     if len(lines) < 3 or lines[-2] != "":
         raise ValueError("A display page ends in a blank line and its category line")
     category = _CATEGORY_LINE.fullmatch(lines[-1])
     if category is None:
         raise ValueError(f"{lines[-1]!r} is not a display page's category line")
+    block, body = _read_block(lines[:-2])
     verses, pending = [], None
-    for line in lines[:-2]:
+    for line in body:
         if match := _BREAK_LINE.fullmatch(line):
             letter, target, section = match.groups()
             if letter is None and target is None:
@@ -226,9 +276,61 @@ def read_page(text):
         raise ValueError("A display page's last break line has no verse after it")
     if not verses:
         raise ValueError("A display page has no verse")
-    if _text(verses, category.group(1)) != text:
+    block_name = None if block is None else _check_block(block, verses)
+    if _text(block_name, verses, category.group(1)) != text:
         raise ValueError("A display page does not read back as itself")
-    return verses, category.group(1)
+    return block_name, verses, category.group(1)
+
+
+def _read_block(lines):
+    """A page's block, as its name, its topics and its chapters, and the page's lines
+    after it; or None and all the lines, where the first line is not a block's line. A
+    block is only a page's first four lines: its line, the rule and two blank lines."""
+    match = _BLOCK_LINE.fullmatch(lines[0])
+    if match is None:
+        return None, lines
+    if lines[1:4] != [_BLOCK_RULE, "", ""]:
+        raise ValueError(
+            "A block's line is not followed by its rule and two blank lines"
+        )
+    name, topics, chapters = match.groups()
+    return (
+        name,
+        _read_links(topics, _TOPIC_SEPARATOR, _TOPIC_LINK),
+        _read_links(chapters, _CHAPTER_SEPARATOR, _CHAPTER_LINK),
+    ), lines[4:]
+
+
+def _read_links(text, separator, link):
+    """The groups of each link of a block's topics or chapters; raise unless the text is
+    those links and the separator between each two of them."""
+    found = []
+    for item in text.split(separator):
+        match = link.fullmatch(item)
+        if match is None:
+            raise ValueError(f"{item!r} is not a link of a block's line")
+        found.append(match.groups())
+    return found
+
+
+def _check_block(block, verses):
+    """A block's name; raise unless its topics are the page's headings, in order, each
+    at its verse and with its break line's transclusion, and its chapters the page's
+    chapters, each at its first verse on the page and named by its numeral."""
+    name, topics, chapters = block
+    headings = [
+        (verse.chapter, verse.verse, *verse.heading)
+        for verse in verses
+        if verse.heading is not None
+    ]
+    if topics != headings:
+        raise ValueError(f"The block of {name!r} has topics other than its headings")
+    expected = [(chapter, verse, chapter) for chapter, verse in _first_verses(verses)]
+    if chapters != expected:
+        raise ValueError(
+            f"The block of {name!r} has chapters other than its page's first verses"
+        )
+    return name
 
 
 def _check_chapter_parameter(line, verses, chapter, verse, chapter_parameter):
@@ -369,8 +471,8 @@ def _tracked_heading_keys(book, keys):
     }
 
 
-def _text(verses, name):
-    lines = []
+def _text(block_name, verses, sort_key):
+    lines = [] if block_name is None else _block(block_name, verses)
     for verse in verses:
         if verse.letter is not None or verse.heading is not None:
             lines.append(_break_line(verse.letter, verse.heading))
@@ -386,7 +488,7 @@ def _text(verses, name):
         if verse.chapter_parameter is not None:
             parameters.append(f"{_CHAPTER_PARAMETER}={verse.chapter_parameter}")
         lines.append(_template_line(_VERSE_TEMPLATE, *parameters))
-    lines.extend(["", _category_line(name)])
+    lines.extend(["", _category_line(sort_key)])
     text = "\n".join(lines)
     if not unicodedata.is_normalized("NFC", text):
         raise ValueError(
@@ -395,15 +497,46 @@ def _text(verses, name):
     return text
 
 
+def _block(name, verses):
+    """A page's block, its four lines: its line, the rule and two blank lines. Its topics
+    are the page's verses that have a heading, each labelled by its break line's
+    transclusion of it, and its chapters the page's, each at its first verse there."""
+    topics = [
+        ((verse.chapter, verse.verse), _transclusion(*verse.heading))
+        for verse in verses
+        if verse.heading is not None
+    ]
+    return [block_line(name, topics, _first_verses(verses)), _BLOCK_RULE, "", ""]
+
+
+def _first_verses(verses):
+    """The (chapter, verse) numerals of each chapter's first verse among verses, in
+    order."""
+    firsts = {}
+    for verse in verses:
+        firsts.setdefault(verse.chapter, verse.verse)
+    return list(firsts.items())
+
+
+def _anchor_link(anchor, label):
+    """A link to the anchor that the verse template makes at a verse, by its chapter's
+    and its verse's numerals."""
+    chapter, verse = anchor
+    return f"[[#{chapter} {verse}|{label}]]"
+
+
 def _break_line(letter, heading):
     parameters = []
     if letter is not None:
         parameters.append(f"{_BREAK_PARAMETER}={letter}")
     if heading is not None:
-        target, section = heading
-        transclusion = "{{" + _SECTION_FUNCTION + ":" + target + "|" + section + "}}"
-        parameters.append(f"{_HEADING_PARAMETER}={transclusion}")
+        parameters.append(f"{_HEADING_PARAMETER}={_transclusion(*heading)}")
     return _template_line(_BREAK_TEMPLATE, *parameters)
+
+
+def _transclusion(target, section):
+    """The transclusion of a heading's section from its base chapter."""
+    return "{{" + _SECTION_FUNCTION + ":" + target + "|" + section + "}}"
 
 
 def _template_line(name, *parameters):
@@ -444,6 +577,9 @@ if not set(books.BOOKS).isdisjoint(base_headings.BOOKS):
 # of Exodus, as the comment on them says; the labels of revision 3104053, parsed by
 # script, give all fifteen parts their ranges here.
 # Joshua's sort keys are the names under which Stage 10 created its two pages.
+# Stage 13 copied by script each of the Torah's fifteen parts' block_name, its link's
+# label in revision 3104053 without the range in parentheses at the label's end; each
+# is pointed and in NFC, as MediaWiki stores it. No other entry has a block_name.
 DISPLAY_PREFIX = "מקרא מבואר/תצוגה/"
 PAGES = {
     page.key: page
@@ -452,22 +588,116 @@ PAGES = {
         # where their second parts begin, though the labels of revision 3103840
         # ended them at chapters 12 and 11, so that every verse is on a page; Avi
         # corrected the two labels to these ranges in revision 3104053.
-        Page("gen-1", "ספר בראשית 1", "Gen", (1, 11)),
-        Page("gen-2", "ספר בראשית 2", "Gen", (12, 36)),
-        Page("gen-3", "ספר בראשית 3", "Gen", (37, 50)),
+        Page(
+            "gen-1",
+            "ספר בראשית 1",
+            "Gen",
+            (1, 11),
+            block_name="סֵפֶר בְּרֵאשִׁית, חֵלֶק רִאשׁוֹן: רֵאשִׁית הָאָדָם",
+        ),
+        Page(
+            "gen-2",
+            "ספר בראשית 2",
+            "Gen",
+            (12, 36),
+            block_name="סֵפֶר בְּרֵאשִׁית, חֵלֶק שֵׁנִי: אֲבוֹת יִשְׂרָאֵל",
+        ),
+        Page(
+            "gen-3",
+            "ספר בראשית 3",
+            "Gen",
+            (37, 50),
+            block_name="סֵפֶר בְּרֵאשִׁית, חֵלֶק שְׁלִישִׁי: בְּנֵי יִשְׂרָאֵל",
+        ),
         # Exodus' first part, by decision 1a, as gen-1's comment says.
-        Page("exod-1", "ספר שמות 1", "Exod", (1, 17)),
-        Page("exod-2", "ספר שמות 2", "Exod", (18, 24)),
-        Page("exod-3", "ספר שמות 3", "Exod", (25, 40)),
-        Page("lev-1", "ספר ויקרא 1", "Lev", (1, 10)),
-        Page("lev-2", "ספר ויקרא 2", "Lev", (11, 18)),
-        Page("lev-3", "ספר ויקרא 3", "Lev", (19, 27)),
-        Page("num-1", "ספר במדבר 1", "Num", (1, 10)),
-        Page("num-2", "ספר במדבר 2", "Num", (11, 22), last_verse=1),
-        Page("num-3", "ספר במדבר 3", "Num", (22, 36), first_verse=2),
-        Page("deut-1", "ספר דברים 1", "Deut", (1, 11), last_verse=25),
-        Page("deut-2", "ספר דברים 2", "Deut", (11, 26), first_verse=26),
-        Page("deut-3", "ספר דברים 3", "Deut", (27, 34)),
+        Page(
+            "exod-1",
+            "ספר שמות 1",
+            "Exod",
+            (1, 17),
+            block_name="סֵפֶר שְׁמוֹת, חֵלֶק רִאשׁוֹן: מִשִּׁעְבּוּד לִגְאֻלָּה",
+        ),
+        Page(
+            "exod-2",
+            "ספר שמות 2",
+            "Exod",
+            (18, 24),
+            block_name="סֵפֶר שְׁמוֹת, חֵלֶק שֵׁנִי: מַעֲמַד הַר סִינַי",
+        ),
+        Page(
+            "exod-3",
+            "ספר שמות 3",
+            "Exod",
+            (25, 40),
+            block_name="סֵפֶר שְׁמוֹת, חֵלֶק שְׁלִישִׁי: מְלֶאכֶת הַמִּשְׁכָּן",
+        ),
+        Page(
+            "lev-1",
+            "ספר ויקרא 1",
+            "Lev",
+            (1, 10),
+            block_name="סֵפֶר וַיִּקְרָא, חֵלֶק רִאשׁוֹן: עֲבוֹדַת ה'",
+        ),
+        Page(
+            "lev-2",
+            "ספר ויקרא 2",
+            "Lev",
+            (11, 18),
+            block_name="סֵפֶר וַיִּקְרָא, חֵלֶק שֵׁנִי: טֻמְאָה וְטָהֳרָה",
+        ),
+        Page(
+            "lev-3",
+            "ספר ויקרא 3",
+            "Lev",
+            (19, 27),
+            block_name="סֵפֶר וַיִּקְרָא, חֵלֶק שְׁלִישִׁי: קְדֻשָּׁה",
+        ),
+        Page(
+            "num-1",
+            "ספר במדבר 1",
+            "Num",
+            (1, 10),
+            block_name="סֵפֶר בְּמִדְבַּר, חֵלֶק רִאשׁוֹן: \"עַל פִּי ה' יַחֲנוּ וְעַל פִּי ה' יִסָּעוּ\"",
+        ),
+        Page(
+            "num-2",
+            "ספר במדבר 2",
+            "Num",
+            (11, 22),
+            last_verse=1,
+            block_name='סֵפֶר בְּמִדְבַּר, חֵלֶק שֵׁנִי: "וַיָּרֶב הָעָם"',
+        ),
+        Page(
+            "num-3",
+            "ספר במדבר 3",
+            "Num",
+            (22, 36),
+            first_verse=2,
+            block_name='סֵפֶר בְּמִדְבַּר, חֵלֶק שְׁלִישִׁי: "בְּעַרְבֹת מוֹאָב עַל יַרְדֵּן יְרֵחוֹ"',
+        ),
+        Page(
+            "deut-1",
+            "ספר דברים 1",
+            "Deut",
+            (1, 11),
+            last_verse=25,
+            block_name='סֵפֶר דְּבָרִים, חֵלֶק רִאשׁוֹן: "שְׁמַע יִשְׂרָאֵל"',
+        ),
+        Page(
+            "deut-2",
+            "ספר דברים 2",
+            "Deut",
+            (11, 26),
+            first_verse=26,
+            block_name="סֵפֶר דְּבָרִים, חֵלֶק שֵׁנִי: הַחֻקִּים וְהַמִּשְׁפָּטִים",
+        ),
+        Page(
+            "deut-3",
+            "ספר דברים 3",
+            "Deut",
+            (27, 34),
+            block_name="סֵפֶר דְּבָרִים, חֵלֶק שְׁלִישִׁי: דִּבְרֵי מֹשֶׁה הָאַחֲרוֹנִים",
+        ),
         Page("yehoshua-1", "ספר יהושע 1", "yehoshua", (1, 12), sort_key="ספר יהושע א"),
         Page("yehoshua-2", "ספר יהושע 2", "yehoshua", (13, 24), sort_key="ספר יהושע ב"),
         Page("sephershoftim-1", "ספר שופטים 1", "sephershoftim", (1, 2), last_verse=5),
@@ -502,6 +732,23 @@ _BREAK_TEMPLATE = "פרשה במקרא מבואר"
 _BREAK_PARAMETER = "פרשה"
 _HEADING_PARAMETER = "כותרת"
 _SECTION_FUNCTION = "#קטע"
+# The fixed text of a block's line, copied by script from the first line of Joshua's
+# first part in revision 3103803, the block that Dovi added there, and divided as Stage
+# 13 of the plan divides it; it is in NFC, as MediaWiki stores it. Before the part's
+# name: a template's call, two templates' openings and the opening of bold. After it:
+# the close of the bold and of the inner template, a template's call, and bold opened
+# again on the word for topics, a colon and a space. Between two topics. After the
+# topics: the close of the bold, the same template's call, and a parenthesis opened on
+# the word for chapters, a colon and a space. Between two chapters. After the chapters:
+# the close of the parenthesis and of the outer template, and one more template's call.
+_BLOCK_START = "{{מ:טעמי המקרא|15}}{{מרכז|{{ג|'''"
+_BLOCK_AFTER_NAME = "'''}}{{ש}}'''נוֹשְׂאִים: "
+_TOPIC_SEPARATOR = " · "
+_BLOCK_AFTER_TOPICS = "'''{{ש}}(פרקים: "
+_CHAPTER_SEPARATOR = ", "
+_BLOCK_END = ")}}{{מ:טעמי המקרא-סוף}}"
+# The block's second line, a horizontal rule, before its two blank lines.
+_BLOCK_RULE = "-----"
 # The Decalogue's templates, copied by script from Avi's pages of Yitro, revision
 # 962744, and of Va'etchanan, revision 962961: on each page, the template that its
 # verses of the Decalogue call with their numerals, and the one that Exodus 20:12, or
@@ -593,3 +840,33 @@ _BREAK_LINE = re.compile(
 _CATEGORY_LINE = re.compile(
     re.escape(wikitext.CATEGORY[:-2]) + r"\|" + _ARGUMENT + r"\]\]"
 )
+# A block's name, which holds no bracket, brace, pipe, tag, equals sign or line break,
+# and a block's line: its name, and the text of its topics and of its chapters, which
+# _read_links reads.
+_BLOCK_NAME = re.compile(r"[^\[\]{}|<>=\n]+")
+_BLOCK_LINE = re.compile(
+    re.escape(_BLOCK_START)
+    + "("
+    + _BLOCK_NAME.pattern
+    + ")"
+    + re.escape(_BLOCK_AFTER_NAME)
+    + "(.+?)"
+    + re.escape(_BLOCK_AFTER_TOPICS)
+    + "(.+?)"
+    + re.escape(_BLOCK_END)
+)
+# A chapter's or a verse's numeral in a block's anchor, and a block's links: a topic's,
+# labelled by its heading's transclusion, and a chapter's, labelled by its numeral.
+_NUMERAL = r"([^\s|{}\[\]=#]+)"
+_ANCHOR = r"\[\[#" + _NUMERAL + " " + _NUMERAL + r"\|"
+_TOPIC_LINK = re.compile(
+    _ANCHOR
+    + r"\{\{"
+    + re.escape(_SECTION_FUNCTION)
+    + ":"
+    + _ARGUMENT
+    + r"\|"
+    + _ARGUMENT
+    + r"\}\}\]\]"
+)
+_CHAPTER_LINK = re.compile(_ANCHOR + _NUMERAL + r"\]\]")

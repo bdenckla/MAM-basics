@@ -63,7 +63,7 @@ def run(keys, pywikibot_args, summary=None, no_save=False):
             _write_text_file(run_root, page_entry.key, texts[title])
             page = pywikibot.Page(site, title)
             outcome, revisions = _outcome(page, texts[title])
-            verses, _name = display_page.read_page(texts[title])
+            _block_name, verses, _sort_key = display_page.read_page(texts[title])
             entry = {
                 "key": page_entry.key,
                 "title": title,

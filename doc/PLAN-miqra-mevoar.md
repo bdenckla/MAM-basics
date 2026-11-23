@@ -43,7 +43,11 @@ and navigation. A fresh session resumed Stage 12, found his fixes on the live pa
 wrote Stage 13, which plans the block (execution ledger, “Stage 12 resumed”). On 2026-11-23
 Ben chose the three recommendations of the stage's decision page (decisions ledger entry 19),
 among them the 15 pages' creation with their blocks, in one saving run; another fresh session
-took his answers and executes Stage 13, and each saving run waits on his word.
+took his answers and executes Stage 13: on his word the bot created the 15 pages with their
+blocks that day, as revisions 3104108 to 3104122 (execution ledger, “Stage 13,
+2026-11-23”). Genesis' second part is over MediaWiki's include-size limit, so its last 64
+verses do not show; that waits on Ben, as decision 11 of the stage's decision page, and so
+does the reply to Avi.
 The execution ledger below records each finished stage.
 
 Written 2026-11-02 by Claude (Opus 5.5) in the Phase 1 session that the session "Commander for
@@ -1342,6 +1346,70 @@ byte-for-byte copy of that frozen plan; this ledger and the State line are the e
   - **Stage 13's executor's prompt** is
     `C:/Users/BenDe/AppData/Local/Claude-Data/claude_pzs8sxrjxfjjc/side-session-notes/local_a80ded65-f78e-4280-8493-9dab3b8c5686/miqra-mevoar-stage-13-prompt-2026-11-22.md`,
     sent to the commander, to start once this ledger records Ben's answers to decisions 7 to 9.
+- **Stage 13, 2026-11-23:** Ben's answers to decisions 7 to 9 reached a fresh Claude (Opus 5.5)
+  session, "Miqra Mevoar: decisions 7 to 9, then Stage 13", that the commander started with a
+  brief saved as
+  `C:/Users/BenDe/GitRepos/MAM-basics/.novc/commander-session/miqra-mevoar-stage-13-brief-2026-11-22.md`.
+  Its checkout, `D:/GitRepos5/MAM-basics`, was verified before its first edit: on `main`,
+  clean, at `f948233b08cb4809f92bd9c3be748ef55381cd97`, level with origin, with no other
+  session working in it. Its scripts and evidence are in that clone's
+  `.novc/miqra-mevoar-torah-2026-11-22/stage13/`.
+  - **Ben's answers,** 7a, 8a and 9a, are decisions ledger entry 19, pushed as `632ff4b6`.
+  - **The code,** as the stage's design gives it for those answers, written by a subagent of
+    the session, which reviewed its diff and repeated its checks. Before the copying,
+    anonymous reads at 04:38 New York time found the main page still at revision 3104053,
+    with the same 15 links and labels, and Joshua's first part still at revision 3103803,
+    its text equal to the kept copy's (`stage13/code/reads/`). The 15 names in
+    `display_page.PAGES` and the six pieces of fixed text were copied by script from the
+    kept reads and read back through `ascii()` (`stage13/code/verify-copied.txt`).
+    `read_page` now returns the block's name, or None, before the verses and the sort key;
+    the bot mode's call changed with it, and no helper that this stage names calls it.
+  - **Verification.** The 19 pages without a block are unchanged byte for byte, and each of
+    the 15 is its block's four lines and then Stage 12's page byte for byte
+    (`resume/generated-after-comments/`). The blocks have the stage's 17, 49, 26, 37, 14, 54,
+    24, 23, 23, 24, 28, 20, 24, 65 and 15 topics, and on `num-3` chapter 22 links to 22:2 and
+    on `deut-2` chapter 11 to 11:26 (`stage13/code/compare-after.txt`). `block_line`, given
+    the name of Joshua's first part, its 18 headings and its 12 chapters, gives revision
+    3103803's first line byte for byte, 1,355 bytes (`stage13/code/rebuild-joshua.txt`). 24
+    altered pages and 6 bad names all raise (`stage13/code/block-controls.txt`).
+    `git diff --check` and Black are clean, and the stage's focused command gives 162 passed,
+    the 161 before and the new test of the names.
+  - **The names' mark order.** The 15 names and the word for topics are pointed literals in
+    NFC, the order in which MediaWiki stores them, as the stage's test requires of each name
+    and as the code's comments say: byte-accurate copies, which keep that order by Ben's rule
+    of 2026-10-30 (`doc/mam-normal-mark-order.md`). `py/check_mark_order.py`, which covers
+    `.py` files, is run by hand and gates neither the suite nor the mega.
+  - **The dry run,** from `6986c023`, at 05:06 New York time, after a check that no
+    `main_ws_bot.py` process was running. Before it, `base-headings --check`, ending at 05:04,
+    parsed all 187 base chapters and found every heading where the records have it, with no
+    revision changed (`stage13/logs/base-headings-check-1.txt`); and anonymous reads at 05:05
+    found the main page still at revision 3104053, with the same 15 links and labels, and
+    Joshua's first part still at revision 3103803 (`stage13/code/reads/`).
+    `miqra-mevoar-display --no-save` over the 15 pages gave 15 creates, each with Stage 12's
+    counts, 5,844 verse lines in all, and with no missing link or transcluded page; each page
+    equals byte for byte the generator's offline page, and after its block's four lines the
+    page of the dry run of 2026-11-22 at 20:55 (run
+    `.novc/mam-ws-bot-miqra-mevoar-display-runs/20261123-050616-088631-0500/`, summarized by
+    `stage13/scripts/summarize_stage13_run.py`). The blocks' lines of `lev-1` and `num-1`,
+    rendered through the API's parse action, which saves nothing, each show their name whole
+    in bold, the apostrophe at the end of `lev-1`'s included (`stage13/parse/`).
+  - **The decision page,** https://claude.ai/artifact/XYchLEVJdwMQh5FM3wDJHN, puts the saving
+    run to Ben as decision 10: the 15 pages, created with their blocks in one run with Stage
+    10's summary, after a fresh check of the preconditions and a fresh dry run. Nothing is
+    saved on Wikisource.
+  - **The save,** on Ben's word for decision 10, at 05:10 New York time: "yes, proceed to create the 15 pages in one saving run now". After a
+    fresh check of the preconditions and a fresh dry run at 05:12 that gave the same pages,
+    BDencklaBot created the 15 pages from 05:15 to 05:18 as revisions 3104108 to 3104122,
+    386,857 bytes in all, with Stage 10's summary, copied from the plan by script (run
+    `.novc/mam-ws-bot-miqra-mevoar-display-runs/20261123-051542-873501-0500/`). A read after
+    the run, without the bot's login, and a `--no-save` rerun that found all 15 unchanged
+    bear it out; `py/ws/ws_bot_edit_history.md` records it.
+  - **A finding of the read after the run.** Genesis' second part is over MediaWiki's limit
+    on the post-expand include size, as Stage 12's page without its block already was: the
+    live page omits its last 69 templates, so Genesis 35:9 to 36:43, 64 verses, show as links
+    to the verse template (`stage13/include-size/`). The other 14 pages use at most 77% of
+    the limit. The dry run's parse did not catch it, since it checks only for missing pages.
+    It waits on Ben, as decision 11 of the decision page.
 
 ## Background for a fresh executor
 

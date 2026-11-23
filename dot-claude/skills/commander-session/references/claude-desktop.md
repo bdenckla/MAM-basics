@@ -21,9 +21,9 @@ the commander's call.
 ## Entry steps
 
 Read the argument expanded into the shared skill invocation. `start`, the default, makes a fresh commander.
-`resume` restarts this commander after Ben's `/clear`, or loads this skill into a session already
-acting as the commander. `succeed` makes a new session take over from a commander that still has
-children. The entry steps run once per conversation: when Claude Code re-attaches the shared
+`resume` restores saved coordination after Ben's `/clear`, in a session already acting as the
+commander, or in a fresh session taking over. Compare session ids to choose the recovery below.
+The entry steps run once per conversation: when Claude Code re-attaches the shared
 entrypoint after a compaction, skip them, reread this adapter and the current-state note and
 carry on.
 
@@ -40,13 +40,16 @@ select:mcp__ccd_session__start_session,mcp__ccd_session__list_start_targets,mcp_
   session that `list_sessions` shows in a clone of any of Claude's forests as that clone's writer
   until it reports done, and read its transcript with `list_events`. Rebuild the ledger, write the
   current-state note, report the ledger to Ben in a few lines and wait for his first task.
-- **resume:** the id is the one the current-state note records; if it differs, follow succeed
-  instead. Nested children stay this session's, and the app keeps sending their turn-end notes.
-  Read the current-state note, then the running record's newest entries. Rebuild the ledger from
-  Git and `list_sessions` before trusting the note, and read each live child's latest turns with
-  `list_events`. Tell Ben in a few lines that the commander has resumed, with the live children
-  and the queue, and wait.
-- **succeed:** pin the session, then read the state and rebuild the ledger as for resume. The old
+- **resume:** read the current-state note, then the running record's newest entries. Compare this
+  session's id, returned by `get_session` with "self", with the commander id the note records.
+  If either id is unavailable, keep recovery read-only until identity and writer ownership are
+  verified; do not guess or overwrite the recorded owner. Rebuild the ledger from Git and
+  `list_sessions` before trusting the note, and read each live child's latest turns with
+  `list_events`. If the ids match, nested children stay this session's, and the app keeps sending
+  their turn-end notes. If the ids differ, complete the handover below before assigning work.
+  Tell Ben in a few lines that the commander has resumed, with the live children and the queue,
+  and wait.
+- **Handover when the session id differs:** pin the session after rebuilding the ledger. The old
   commander's children stay nested under it (their `startedBy` in `list_sessions`), their briefs
   name its id, and their turn-end notes go to it. Read their state with `get_session` and
   `list_events`, send each of them this session's id by SendMessage, tell the old commander by
