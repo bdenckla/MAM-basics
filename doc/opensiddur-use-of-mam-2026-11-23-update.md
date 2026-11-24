@@ -556,3 +556,123 @@ second of them; nothing else has been said to Open Siddur.
    branch `windows-tests`, each share only `CHANGELOG.md` with the festival pull request, and git
    merge-tree reports no conflict with either one's head, `90e28d2` or `e01c63a`. The festival
    pull request's body mentions neither.
+
+## 2026-11-23: answering the review of pull request 316
+
+Written by Claude (Opus 5.5) on 2026-11-23, in the session that answered the review of
+[opensiddur/opensiddur-processor#316](https://github.com/opensiddur/opensiddur-processor/pull/316),
+by a sub-agent of that session, from the facts that the session checked. Efraim Feinstein
+submitted the review on 2026-11-23 at 22:05:48 UTC, 17:05 New York time. The session found each
+of its eight comments accurate and put ten decisions to Ben: a commit and a reply for each
+comment; whether the new commits should follow Open Siddur's conventions where two of Ben's
+standing rules differ; and whether to edit the pull request's description and post a summary
+comment. Ben, at 18:05 New York time, exactly:
+
+> I accept all 10 of your recommendations.
+
+**Six commits on the pull request's branch fix what all eight comments found; a reply under each
+comment, a summary comment and an edit of the description say so on the pull request. The pull
+request now waits on Open Siddur.**
+
+1. **The review,** in the state "Commented", holds a thank-you, for the contribution and for
+   being told that MAM's Google Sheet is no longer maintained, and eight inline comments. CI's
+   "Run Tests" had passed on the head reviewed, `90e28d2`.
+2. **The new commits follow Open Siddur's conventions where two of Ben's standing rules
+   differ,** as the session recommended. The processor's tests include example-based unit tests
+   of synthetic cases, which Ben's rules add only when he asks for one, and its Python files are
+   not formatted with Black, which Ben's rules run on every changed Python file.
+3. **The commits,** `90e28d2..7f224c1` on `mam-parsed-plus`, the pull request's branch on Ben's
+   fork, `bdenckla/opensiddur-processor`, were written by a sub-agent of the session, checked by
+   the session and pushed at 18:44 New York time, a fast-forward. Under each commit are the
+   comments whose findings it fixes, numbered in GitHub's order:
+   1. `32ba582`, "Convert every MAM book before writing any, so that --only-book numbers notes
+      as a full run does":
+      [comment 1](https://github.com/opensiddur/opensiddur-processor/pull/316#discussion_r4672654647),
+      that with `--only-book` the pull request's converter, `convert.py`, restarted the note
+      ids at `miqra-note-1`, and
+      [comment 5](https://github.com/opensiddur/opensiddur-processor/pull/316#discussion_r4672654673),
+      that `convert.py` found a missing book only after it had written the files of the books
+      before it. The pull request did not introduce the fault that comment 1 found: the TSV
+      converter on the processor's `main` had numbered notes the same way, through a
+      module-level processor.
+   2. `50e5627`, "Retry a rate-limited 403, and fail at once when GitHub asks for a wait over a
+      minute":
+      [comment 2](https://github.com/opensiddur/opensiddur-processor/pull/316#discussion_r4672654657),
+      that `download.py` failed on a 403 carrying `Retry-After` as on a bare 403, and
+      [comment 3](https://github.com/opensiddur/opensiddur-processor/pull/316#discussion_r4672654664),
+      that its waits for `Retry-After` and `X-RateLimit-Reset` had no bound.
+   3. `feda7b5`, "Replace the unit test that read the real download with convert --check":
+      [comment 4](https://github.com/opensiddur/opensiddur-processor/pull/316#discussion_r4672654668),
+      that a unit test in `test_miqra_plus.py` read the real download in sourcetexts.
+   4. `06afc42`, "Read the humash's aliyah markers through the converter's load_source":
+      [comment 6](https://github.com/opensiddur/opensiddur-processor/pull/316#discussion_r4672654680),
+      that the humash's `aliyot.py` read the files of MAM-parsed plus without the converter's
+      checks, and the first part of
+      [comment 7](https://github.com/opensiddur/opensiddur-processor/pull/316#discussion_r4672654687),
+      that `aliyot.py` duplicated the converter's loading.
+   5. `572a6c9`, "Keep one copy of the patterns and the XML escaping that the importer defined
+      twice": the rest of comment 7, three smaller duplicates, of the full-SHA pattern, the
+      number pattern and `_xml_escape`.
+   6. `7f224c1`, "Check the download's files byte for byte, leaving line ends to sourcetexts'
+      .gitattributes":
+      [comment 8](https://github.com/opensiddur/opensiddur-processor/pull/316#discussion_r4672654695),
+      that `download.py` handled CRLF in three places, where one line of `.gitattributes` in
+      sourcetexts fixes the cause.
+4. **The checks,** made by the session:
+   1. The MAM importer's and the humash's tests pass after each of the six commits: 271, 273,
+      274, 275, 275 and 272 tests, in the commits' order, against 269 at `90e28d2`.
+   2. The MAM project and the humash, regenerated without validation, since jing does not run
+      where the work was done, are byte for byte what `90e28d2`'s tree produced, all 44 files
+      and all 195, at both pins, MAM-basics `632ff4b` and MAM-parsed `8a254bf`.
+   3. `--only-book` writes, for Exodus, for Hosea and for II Chronicles, exactly the file that
+      the full run writes.
+   4. The processor's whole suite, run on Windows without jing or the compiled schema, ran 2,951
+      tests, and the same 243 failed as on the processor's `main` and at `90e28d2`.
+   5. No pointed Hebrew in the changed files changed.
+   6. git merge-tree finds no conflict between the new head and the heads of
+      [opensiddur/opensiddur-processor#319](https://github.com/opensiddur/opensiddur-processor/pull/319),
+      `e01c63a`, and
+      [opensiddur/opensiddur-processor#320](https://github.com/opensiddur/opensiddur-processor/pull/320),
+      `1bcbe38`; and git diff --name-only from the processor's `main`, `474cb10`, to each head
+      shows that the new head still shares only `CHANGELOG.md` with pull request 320. This
+      repeats, for the new head, item 6 of the entry "2026-11-23: the pull request that fixes
+      the festival portions".
+5. **By an eleventh decision, the replies and the summary comment each say that a Claude session
+   wrote them, and the description says who edited it.** Before posting, the session loaded
+   Ben's `github-issues` skill, whose rules say that every comment or body edit a session writes
+   says that it is agent-written and gives the date. The plan that Ben had accepted under the
+   tenth decision said that the replies would carry no such line, so the session asked him
+   whether each reply and the summary comment should open with a line saying that a Claude
+   session wrote it, and the description end with a dated line saying who edited it. It
+   recommended yes. Ben, at 19:59 New York time, exactly:
+
+   > For decision 11, follow your recommendation.
+
+6. **The description,** edited at 19:59 New York time (00:59:49 UTC on 2026-11-24), changes the
+   three passages that Ben approved: the download's bullet, on rate limits and waits; the
+   converter's bullet, on converting every book first, `--only-book` and `--check`; and step 1
+   of "Order of merging", which now requires the sourcetexts commit that adds the download to
+   carry the `.gitattributes` line `sources/miqra_al_pi_hamasorah/** -text`. After its line
+   saying that it was generated with Claude Code, it now ends with the line "Edited on
+   2026-11-23 by a Claude session, with Ben's approval, to describe the commits that answer the
+   review." Read back from GitHub, the stored description equals what was sent.
+7. **The replies,** posted at 20:00 New York time, one under each comment, each open with
+   "Written by a Claude session on 2026-11-23, at Ben's request." Read back from GitHub, each
+   equals what was sent. In the comments' order, they are the replies to comments
+   [1](https://github.com/opensiddur/opensiddur-processor/pull/316#discussion_r4674123621),
+   [2](https://github.com/opensiddur/opensiddur-processor/pull/316#discussion_r4674123891),
+   [3](https://github.com/opensiddur/opensiddur-processor/pull/316#discussion_r4674124071),
+   [4](https://github.com/opensiddur/opensiddur-processor/pull/316#discussion_r4674124271),
+   [5](https://github.com/opensiddur/opensiddur-processor/pull/316#discussion_r4674124487),
+   [6](https://github.com/opensiddur/opensiddur-processor/pull/316#discussion_r4674124685),
+   [7](https://github.com/opensiddur/opensiddur-processor/pull/316#discussion_r4674124877) and
+   [8](https://github.com/opensiddur/opensiddur-processor/pull/316#discussion_r4674125120).
+8. **[The summary comment](https://github.com/opensiddur/opensiddur-processor/pull/316#issuecomment-7118657993),**
+   posted at 20:00 New York time with the same opening line, thanks Efraim Feinstein, names the
+   six commits and says that at the pinned commit the MAM project's 44 files and the humash's
+   195 are byte for byte what they were before the six commits.
+9. **What is left to Open Siddur:** approving the run of CI's "Run Tests" on `7f224c1`, which
+   waits for a maintainer's approval, as it did after the first push; merging; the sourcetexts
+   commit that adds the download, with that `.gitattributes` line; and regenerating
+   opensiddur-projects. The paired pull requests that the description offers, to sourcetexts and
+   opensiddur-projects, remain only offered.
