@@ -668,9 +668,10 @@ request now waits on Open Siddur.**
    [7](https://github.com/opensiddur/opensiddur-processor/pull/316#discussion_r4674124877) and
    [8](https://github.com/opensiddur/opensiddur-processor/pull/316#discussion_r4674125120).
 8. **[The summary comment](https://github.com/opensiddur/opensiddur-processor/pull/316#issuecomment-7118657993),**
-   posted at 20:00 New York time with the same opening line, thanks Efraim Feinstein, names the
-   six commits and says that at the pinned commit the MAM project's 44 files and the humash's
-   195 are byte for byte what they were before the six commits.
+   posted at 20:00 New York time with the same opening line, thanks Efraim Feinstein, gives the
+   six commits as the range `32ba582` to `7f224c1`, and says that at the pinned commit the MAM
+   project's 44 files and the humash's 195 are byte for byte what they were before the six
+   commits.
 9. **What is left to Open Siddur:** approving the run of CI's "Run Tests" on `7f224c1`, which
    waits for a maintainer's approval, as it did after the first push; merging; the sourcetexts
    commit that adds the download, with that `.gitattributes` line; and regenerating
