@@ -78,7 +78,11 @@ for the next book, whose Word file takes the course of “Later Word files”.
 On 2026-11-25 Avi asked, for Rabbi Kokhav, for the fifth part of Isaiah, chapters 40 to 66, whose
 Word file still holds the book's earlier chapters unfinished. Stage 16, written that day, plans the
 part's 27 base chapters and its display page, and Ben gave his word to execute it the same day
-(decisions ledger entry 26).
+(decisions ledger entry 26). A fresh session executed it that day: on Ben's word for the stage's
+decision 4 (entry 27), BDencklaBot created the 27 base chapters, as revisions 3104473 to
+3104499, and the part's display page, as revision 3104504, so Stage 16 is executed (execution
+ledger, “Stage 16, 2026-11-25”). Ben sent Avi the reply that the stage drafted, and the note
+that the pages are up waits for him to send. The State stays live for the next book.
 The execution ledger below records each finished stage.
 
 Written 2026-11-02 by Claude (Opus 5.5) in the Phase 1 session that the session "Commander for
@@ -109,7 +113,7 @@ part, chapters 40 to 66, which Avi asked for before Rabbi Kokhav has finished th
 
 ## Decisions ledger
 
-Entries 1 to 3 and 10 to 26 are Ben's decisions. Entries 5 to 9 were Claude's proposals,
+Entries 1 to 3 and 10 to 27 are Ben's decisions. Entries 5 to 9 were Claude's proposals,
 approved by Ben's word in entry 3.
 
 1. **Route: the bot, after a pilot.** Ben, 2026-11-02, answering "Which route should the pages
@@ -396,6 +400,23 @@ approved by Ben's word in entry 3.
     So both answers are (a). Stage 16 executes as written, in a fresh session that the planning
     session started, and Ben sends the reply to Avi himself; each saving run still needs his word
     for that run (entry 3). Active.
+27. **Stage 16's decision 4, the two saving runs.** Ben, 2026-11-25, at 09:16 New York time, in
+    the session that executed Stage 16, replying to that session's report. The stage's decision
+    page, https://claude.ai/artifact/V7yeTrJ1ZNd7Qu9JumfGrm, put decision 4 as "Make saving run
+    A now, and saving run B once its dry run checks out?". His message quotes the report's
+    question as its first line after a marker, with the question's first letter cut:
+
+    > hould BDencklaBot make saving run A now (the 27 base chapters), and run B once its dry run checks out (the display page)? I recommend (a), both.
+
+    and answers exactly:
+
+    > Yes, go ahead, and do both, as you recommend.
+
+    Recommendation (a) was that the bot creates the 27 base chapters with entry 9's summary,
+    and that if run B's dry run then shows the stage's counts, 525 verses, 33 headings and 103
+    break lines, no red link and an include size under 90% of the limit, the bot creates the
+    display page with Stage 10's summary without asking again; if the dry run differs, the
+    session stops and asks. Active.
 
 Deferred, each until its own decision:
 
@@ -1894,6 +1915,105 @@ byte-for-byte copy of that frozen plan; this ledger and the State line are the e
     (`s05-recheck-20261123T214607Z.txt`).
   - **Nothing sent and nothing saved,** as entry 25 says: no email to Avi, no bot run and no
     edit on Wikisource.
+- **Stage 16, 2026-11-25:** Ben's word of decisions ledger entry 26 reached a fresh Claude
+  (Opus 5.5) session, which the planning session, "Miqra Mevoar: plan Isaiah 40-66 (Part 5)",
+  started with a handoff saved as
+  `C:/Users/BenDe/AppData/Local/Claude-Data/claude_pzs8sxrjxfjjc/side-session-notes/local_f6dc75ef-56e6-40ea-8b86-15cd73cde950/miqra-mevoar-isaiah-stage-16-handoff-2026-11-25.md`.
+  Its checkout, `C:/Users/BenDe/GitRepos2/MAM-basics`, was verified at 08:38 New York time,
+  before its first edit: on `main`, clean, at `66bb2376dc9ee6d0bb7892576e96490334d81cd2`, level
+  with origin, with no other session working in it. Its scripts and evidence are in that
+  clone's `.novc/miqra-mevoar-isaiah-2026-11-25/exec/`, beside the planning session's.
+  - **The plan and the code.** `5880307f`, at 08:41 New York time, inserted Stage 16 by script
+    from its draft, with entry 26. `b523af61`, at 08:54, is the code change of Stage 16's
+    design, items 1 to 10, with `in/miqra-mevoar/yeshayahu.json`, its README, and the lines on
+    `--chapters` of `py/main_ws_bot.py`'s help and of `py/ws/pywikibot-setup.md`. Both were
+    pushed as `66bb2376..b523af61`; origin had not moved. The Hebrew of Isaiah's two table
+    entries was copied by script (`insert_isaiah_entries.py`): the book's title from the Word
+    file's title row, equal to the name that `mam_bknas.he_bk39_name` gives, and the display
+    page's name and block name from the main page's revision 3104257.
+  - **Extraction and check.** `extract` gave 27 chapters, 525 verses and 33 headings, with 79
+    rows read past before 40:1 and the two pictures named, row 130 (41:15), cell 1, and row
+    476 (58:5), cell 3. `check --book yeshayahu` found no failure (report
+    `.novc/miqra-mevoar/checks/20261125-084853-965271-0500.txt`): its smallest margin is 0.435,
+    at 43:24, and its lowest ratio 0.886, at 42:20, the stage's figures. `check` without
+    `--book` refused the directory, as designed (`20261125-084855-029452-0500.txt`).
+    `read_isaiah.py` found the JSON's chapters, verse counts, headings and source equal to the
+    stage's and to the fetch's manifest, and the generated display page's counts equal to the
+    stage's table.
+  - **Unchanged.** Scratch scripts compared the pages before and after the change (`before/`,
+    `after/` and `compare_before_after.py`): the 35 earlier display pages are unchanged byte
+    for byte, and so are the 124 base-chapter pages of the other 15 books, with `titles.tsv`
+    equal but for Isaiah's 27 added lines; the other books' JSON is untouched.
+    `git diff --check` and Black are clean, and Stage 16's focused test command gives 158
+    passed. The mega and the full suite were skipped under `doc/review-trial.md`, as the commit
+    says.
+  - **Reads of Wikisource.** Since `286dcfd7` and `995e71ab`, the user-level instructions
+    (`dot-Codex/user-wide-AGENTS.md`, “Web requests obey robots.txt”) require an agent's own
+    requests to obey robots.txt. The robots.txt of he.wikisource.org, saved as
+    `he-wikisource-robots.txt`, disallows `/w/` and `/api/` in its `*` group; its one
+    Crawl-delay, of 5 seconds, is SemrushBot's. So the session's own reads went through
+    `py/mb_cmn/polite_download.py` with `obey_robots_txt=True`, 5 seconds apart all the same,
+    to `/wiki/` pages only, anonymously, where earlier stages' reads went to the API; the
+    tracked bot modes keep their own settings. `preconditions.py` reads the main page and the
+    base-chapter index: each one's current revision, and each link's colour, red for a page
+    that does not exist.
+  - **Preconditions,** each report in `preconditions/`: before run A's dry run
+    (`check-20261125T135642Z.txt`), before its save (`check-20261125T141659Z.txt`), before run
+    B's dry run (`check-20261125T142611Z.txt`) and before its save
+    (`check-20261125T142650Z.txt`). Each time, the Word file's SHA-256 equalled the JSON's
+    source; the main page was at revision 3104257, with one link to the display page, red, its
+    label equal to that revision's; and the index was at revision 3101312, with Isaiah 40 to
+    66's 27 links red before run A and blue after it. No `main_ws_bot.py` process ran before
+    any bot run, and the pywikibot directory held `user-config.py`, `password.py` and the bot's
+    cookie file of 2026-08-27.
+  - **Run A, dry,** at 08:57 New York time
+    (`.novc/mam-ws-bot-miqra-mevoar-runs/20261125-085705-182055-0500/`): 27 creates, chapters 40
+    to 66 in order, each page equal to the `pages --out` preview
+    (`dry-runs/runA-dry-summary.txt`). The decision page, in its version 4 at 08:58, put both
+    saving runs to Ben as decision 4; its version 5, at 09:00, took off decision 3 and marked
+    the reply sent.
+  - **The reply, sent.** Ben, at 08:51 New York time, in the planning session, exactly:
+
+    > Okay, I sent the reply to Avi.
+
+    So the reply went as drafted (`../reply-to-avi-draft.md`).
+  - **Saving run A,** on Ben's word (decisions ledger entry 27), which a script copied from the
+    session's transcript into `ben-words.json`. `launch_run.py` copied entry 9's summary from
+    this plan by script and gave it to the run without a shell. A first launch at 09:17 New
+    York time never started: its log folder did not exist, so PowerShell refused the
+    redirection, and no run directory was made. The run
+    (`.novc/mam-ws-bot-miqra-mevoar-runs/20261125-091740-252276-0500/`) created the 27 base
+    chapters from 09:17 to 09:22, as revisions 3104473 to 3104499, consecutive, page ids
+    1757543 to 1757569, 164,961 bytes in all; it read each back through the API, uncached,
+    equal to the text sent, and its pages equal the dry run's (`saves/runA-save-summary.txt`).
+    Its login was the stage's first, since a dry run does not log in, and it worked (Stage 16,
+    “Preconditions”, now corrected). The read after the run, at 14:23 UTC
+    (`read-after/runA.txt`), found each page's current revision and page id the run's. A dry
+    rerun found all 27 unchanged and exited zero
+    (`.novc/mam-ws-bot-miqra-mevoar-runs/20261125-092551-221021-0500/`).
+  - **Run B, dry,** at 09:26 New York time
+    (`.novc/mam-ws-bot-miqra-mevoar-display-runs/20261125-092633-102413-0500/`): one create,
+    with the stage's counts, 525 verse lines, 34 petuhot, 69 setumot, 33 headings, and break
+    lines 70, 0 and 33 (break only, heading only, both); no missing link or transcluded page;
+    an include size of 1,026,926 bytes of 2,097,152, 49.0%, a little above the stage's estimate
+    of 46 to 47%; and the page equal byte for byte to the one generated after the code change
+    (`after/display/`). That met decision 4's conditions, so the session saved without a
+    further question.
+  - **Saving run B,** at 09:27 New York time
+    (`.novc/mam-ws-bot-miqra-mevoar-display-runs/20261125-092705-224906-0500/`), with Stage 10's
+    summary, copied by script: the display page created as revision 3104504, page id 1757570,
+    36,398 bytes, read back by the run equal to the text sent, its page equal to the dry run's.
+    The read after the run, at 14:27 UTC (`read-after/runB.txt`), found revision 3104504
+    current; a dry rerun found the page unchanged, at the same include size, and exited zero
+    (`.novc/mam-ws-bot-miqra-mevoar-display-runs/20261125-092735-325831-0500/`), and the live
+    text that it read equals the saved page byte for byte. At 14:28 UTC
+    (`preconditions/check-20261125T142810Z.txt`) the main page, still at revision 3104257,
+    linked the part in blue.
+  - **What the reads could not check:** the bot flag in the recent changes, since robots.txt
+    disallows `/wiki/Special:` pages.
+  - **The note to Avi that the pages are up,** drafted for Ben to send
+    (`../note-to-avi-pages-up.md` and `.html`, built by `build_note.py`, its three links built
+    from the pages' titles), and shown on the decision page's version 6. Nothing is sent.
 
 ## Background for a fresh executor
 
@@ -3322,7 +3442,8 @@ Avi's email about Isaiah's fifth part, after fetching and examining the Word fil
 live pages, saving nothing. By Ben's rule a fresh session executes it, not the session that wrote
 it. Ben gave his word to execute it on 2026-11-25, approving the design, which was that
 session's proposal, with the recommended answers to its two decisions (“Ben's answers”,
-below, and decisions ledger entry 26); each saving run still needs his word.
+below, and decisions ledger entry 26); each saving run still needs his word. A fresh session
+executed it on 2026-11-25 (execution ledger, “Stage 16, 2026-11-25”).
 
 **Ben's answers.** The session that wrote this stage put two decisions to Ben on its decision page:
 1, “Go ahead with Part 5 now, as Stage 16 plans it?”, whose recommended answer, (a), was to approve
@@ -3540,7 +3661,9 @@ books, and the design changes each place. Its notes and scratch scripts are in
   work.
 - BDencklaBot's pywikibot directory on this laptop, `$env:USERPROFILE/.pywikibot`, holds
   `user-config.py`, `password.py` and the bot's cookie file of 2026-08-27, as read on 2026-11-25.
-  The dry run's login check is the test that the login still works here.
+  A dry run does not log in: it only checks, by `ws_bot_real.assert_pywikibot_dir_configured`,
+  that a pywikibot directory is named and holds `user-config.py` and `password.py`. So the first
+  saving run's login is the test that the login still works here; on 2026-11-25 it worked.
 
 **Verification,** focused, under `doc/review-trial.md`: `git diff --check`; Black on the changed
 Python files; and Stage 11's targeted tests:
@@ -3613,6 +3736,11 @@ second part and Zephaniah, which Avi edited or moved after the saves of 2026-11-
 “Genesis in three parts again”).
 Since round 1 of 2026-11-16 the table gives Joshua's two entries the titles to which Avi moved
 them, and keeps Stage 10's names as their sort keys (decisions ledger entry 15, item 5).
+Isaiah's entry in `books.BOOKS` declares chapters 40 to 66 (Stage 16, choice 1). When Isaiah's
+whole Word file comes, the entry declares none: Isaiah's chapters 1 to 39 are created as a new
+book's are, and each of chapters 40 to 66 is unchanged, updated or refused by the chapter mode's
+rule. Since Stage 16, `check --book <stem>` checks a directory that holds only some books' Word
+files.
 
 ## Measurements of 2026-11-02
 

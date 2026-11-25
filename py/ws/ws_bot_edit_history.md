@@ -1831,7 +1831,7 @@ infrastructure has changed enough to make them misleading examples:
   `.novc/miqra-mevoar-avi-saves-2026-11-23/preconditions/`; the read after the run in
   `.novc/miqra-mevoar-avi-saves-2026-11-23/read-after/run3/`.
 
-### Miqra Mevoar's display pages: the block on the four megillot without a heading, 2026-11-23 — current
+### Miqra Mevoar's display pages: the block on the four megillot without a heading, 2026-11-23
 
 - **Purpose:** Put a block of title and navigation without topics at the top of Avi's pages of
   Song of Songs, Ruth, Ecclesiastes and Esther, made in 2020, above Esther's opening note: the
@@ -1874,6 +1874,94 @@ infrastructure has changed enough to make them misleading examples:
   `.novc/mam-ws-bot-miqra-mevoar-display-runs/20261123-130858-113407-0500/`; the preconditions'
   reports in `.novc/miqra-mevoar-avi-saves-2026-11-23/preconditions/`; the read after the run in
   `.novc/miqra-mevoar-avi-saves-2026-11-23/read-after/run4/`.
+
+### Miqra Mevoar's base chapters: Isaiah 40 to 66, 27 chapters, 2026-11-25
+
+- **Purpose:** Create the base chapters of Rabbi David Kokhav's Miqra Mevoar for Isaiah's fifth
+  part, chapters 40 to 66, which Avi asked for on 2026-11-25, for Rabbi Kokhav, while chapters 1
+  to 39 are unfinished: 27 pages. Their text has been tracked since `b523af61`, in Stage 16 of
+  `doc/PLAN-miqra-mevoar.md`, when the converter learned to read a Word file of several tables
+  and a book whose tracked text begins at a declared chapter. The file's two pictures, beside
+  the number of 41:15 and in the paraphrase cell of 58:5, hold no text and are not on the pages.
+- **Authorization:** Ben, 2026-11-25, at 09:16 New York time, in the session that executed
+  Stage 16, answering decision 4 of the stage's decision page,
+  https://claude.ai/artifact/V7yeTrJ1ZNd7Qu9JumfGrm, which asked whether to make saving run A
+  now, the 27 base chapters, and saving run B, the display page, once its dry run checks out:
+  "Yes, go ahead, and do both, as you recommend." (the plan's decisions ledger, entry 27).
+  Recommendation (a) was to create the 27 base chapters with the summary that Avi gave for new
+  chapters.
+- **Mode:** `main_ws_bot.py miqra-mevoar`, as in Stage 8, over `yeshayahu`.
+- **Saving run:** 27 pages created, from 09:17 to 09:22 New York time, 164,961 bytes in all,
+  with the summary פרק חדש במקרא מבואר: Isaiah 40–66 as revisions 3104473 to 3104499,
+  consecutive, page ids 1757543 to 1757569. The summary was copied from the plan by script and
+  given to the run without passing through a shell.
+- **Safety rule:** before the dry run, and again before the save, the fetch directory's Word file
+  had the SHA-256 that `in/miqra-mevoar/yeshayahu.json` records as its source; the main page was
+  at revision 3104257, and the base-chapter index at revision 3101312, with its links to the 27
+  base chapters red, so that none of the pages existed; and no `main_ws_bot.py` process was
+  running on the machine. The `--no-save` dry run gave 27 creates, chapters 40 to 66 in order,
+  and no refusal, and its pages equal byte for byte those that `pages --out` wrote; the saving
+  run's pages equal the dry run's. The saving run read each new revision back through the API,
+  uncached, and its bytes equalled the generated text. The read after the run, anonymous, went
+  to each page's `/wiki/` address, 5 seconds apart, and not to the API: Wikisource's robots.txt
+  disallows `/w/` and `/api/`, and since `286dcfd7` and `995e71ab` the user-level instructions
+  require an agent's own requests to obey it. It found each page's current revision and page
+  id the run's. It could not check the bot flag in the recent changes, since robots.txt also
+  disallows `/wiki/Special:` pages.
+- **One-shot:** no. Confirmed 2026-11-25, immediately after the run: a `--no-save` rerun found all
+  27 pages unchanged and exited zero
+  (`.novc/mam-ws-bot-miqra-mevoar-runs/20261125-092551-221021-0500/`).
+- **Edit level:** Whole page text, generated; page-targeted by book and chapter.
+- **JSON file:** `in/miqra-mevoar/yeshayahu.json`; run artifacts
+  `.novc/mam-ws-bot-miqra-mevoar-runs/20261125-091740-252276-0500/`, dry run
+  `.novc/mam-ws-bot-miqra-mevoar-runs/20261125-085705-182055-0500/`; the preconditions' reports
+  in `.novc/miqra-mevoar-isaiah-2026-11-25/exec/preconditions/`; the read after the run in
+  `.novc/miqra-mevoar-isaiah-2026-11-25/exec/read-after/runA.txt`.
+
+### Miqra Mevoar's display page: Isaiah's fifth part, 2026-11-25 — current
+
+- **Purpose:** Create the display page of Isaiah's fifth part, chapters 40 to 66, which the main
+  page of Miqra Mevoar links from its section of the Prophets (revision 3104257), in the form of
+  the display pages above, with the block of title and navigation at its top: the part's name,
+  as the link's label gives it without its chapter range, its 33 topics and its 27 chapters.
+  The display mode's table took the page in `b523af61`, in Stage 16 of
+  `doc/PLAN-miqra-mevoar.md`. Its base chapters exist (the entry above).
+- **Authorization:** Ben, 2026-11-25, at 09:16 New York time, in the session that executed
+  Stage 16, answering decision 4 of the stage's decision page,
+  https://claude.ai/artifact/V7yeTrJ1ZNd7Qu9JumfGrm, as the entry above quotes him: "Yes, go
+  ahead, and do both, as you recommend." (the plan's decisions ledger, entry 27).
+  Recommendation (a) was to create the page with Stage 10's summary, without asking again, if
+  its dry run showed the stage's counts, 525 verses, 33 headings and 103 break lines, no red
+  link and an include size under 90% of the limit, and otherwise to stop and ask.
+- **Mode:** `main_ws_bot.py miqra-mevoar-display`, as in Stage 10, with `--page yeshayahu-5`.
+- **Saving run:** one page created, at 09:27 New York time, 36,398 bytes, with the summary
+  דף תצוגה חדש במקרא מבואר, "a new display page in Miqra Mevoar", as revision 3104504, page id
+  1757570. The summary was copied from the plan by script and given to the run without passing
+  through a shell.
+- **Safety rule:** before the dry run, and again before the save, the fetch directory's Word file
+  still had the SHA-256 that `in/miqra-mevoar/yeshayahu.json` records; the main page was still
+  at revision 3104257, whose link and label give the page's title and its block's name, with
+  that link red; and the base-chapter index, still at revision 3101312, linked all 27 base
+  chapters in blue. No `main_ws_bot.py` process was running on the machine before either bot
+  run. The `--no-save` dry run gave one create with the stage's counts, 525 verse lines, 34
+  petuhot, 69 setumot, 33 headings and 103 break lines, with no missing link or transcluded
+  page, at 49.0% of the include-size limit, and its page equals byte for byte the one generated
+  after the code change. The saving run's page equals the dry run's, and it read the new
+  revision back through the API, uncached, and its bytes equalled the generated text. The read
+  after the run, anonymous, went to the page's `/wiki/` address, for the reason that the entry
+  above gives, and found revision 3104504 current, with the run's page id; a read at 09:28 New
+  York time found the main page, still at revision 3104257, linking the page in blue. It could
+  not check the bot flag in the recent changes.
+- **One-shot:** no. Confirmed 2026-11-25, immediately after the run: a `--no-save` rerun found the
+  page unchanged, with no missing link or transcluded page and at the same include size, and
+  exited zero, and the live text that it read equals the saved page byte for byte
+  (`.novc/mam-ws-bot-miqra-mevoar-display-runs/20261125-092735-325831-0500/`).
+- **Edit level:** Whole page text, generated; page-targeted by key.
+- **Input:** `MAM-simple/json-vtrad-mam/` and `in/miqra-mevoar/`; run artifacts
+  `.novc/mam-ws-bot-miqra-mevoar-display-runs/20261125-092705-224906-0500/`; dry run
+  `.novc/mam-ws-bot-miqra-mevoar-display-runs/20261125-092633-102413-0500/`; the preconditions'
+  reports in `.novc/miqra-mevoar-isaiah-2026-11-25/exec/preconditions/`; the read after the run
+  in `.novc/miqra-mevoar-isaiah-2026-11-25/exec/read-after/runB.txt`.
 
 ## How to look up the original code
 
