@@ -168,8 +168,10 @@ the run ends by naming each such page. Each run writes the base and edited page 
 `main_ws_bot.py miqra-mevoar` creates the base-chapter pages of Rabbi David Kokhav's Miqra
 Mevoar from the tracked JSON in `in/miqra-mevoar/`, which `py/main_miqra_mevoar.py` writes; it
 reads no edit file. `--book` names a book by its Word file's stem, such as `yehoshua`, and may be
-given more than once; `--chapters FIRST-LAST` narrows the chapters of a single book. A saving
-run needs `--summary`, the edit summary, which Ben approves with the run:
+given more than once; `--chapters FIRST-LAST` narrows the chapters of a single book, by their
+numbers, which must be within the book's tracked record: Isaiah's holds chapters 40 to 66 only,
+so it takes `--chapters 40-41`, not `1-2`. A saving run needs `--summary`, the edit summary,
+which Ben approves with the run:
 
        .venv/Scripts/python.exe py/main_ws_bot.py miqra-mevoar --book yehoshua --chapters 1-2 --no-save -dir:$env:USERPROFILE/.pywikibot
 

@@ -191,7 +191,10 @@ def build_parser() -> argparse.ArgumentParser:
     miqra_mevoar_parser.add_argument(
         "--chapters",
         metavar="FIRST-LAST",
-        help="The chapters of a single --book to select, such as 1-2",
+        help=(
+            "The chapters of a single --book to select, by their numbers, which must be"
+            " within its tracked record, such as 1-2, or 40-41 for Isaiah's"
+        ),
     )
     miqra_mevoar_parser.add_argument(
         "--no-save",

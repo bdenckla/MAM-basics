@@ -38,6 +38,23 @@ def verse_keys(book):
     return [key for key, _verse in _verses(book)]
 
 
+def record_verse_keys(book):
+    """Each (chapter, verse) that a book's tracked record holds, in MAM-simple's order:
+    the verses of the chapters that the book's entry in books.BOOKS declares, or of every
+    chapter; raise if the declared chapters are not within the book's."""
+    keys = verse_keys(book)
+    if book.chapters is None:
+        return keys
+    first, last = book.chapters
+    numbers = list(dict.fromkeys(chapter for chapter, _verse in keys))
+    if not (first <= last and first in numbers and last in numbers):
+        raise ValueError(
+            f"{book.osis_id}: chapters {first} to {last} are not within MAM-simple's"
+            f" {numbers[0]} to {numbers[-1]}"
+        )
+    return [key for key in keys if first <= key[0] <= last]
+
+
 def verse_letters(book):
     """The Hebrew letters of each verse of a book, keyed by (chapter, verse)."""
     return {key: _NON_LETTER.sub("", _projected(verse)) for key, verse in _verses(book)}

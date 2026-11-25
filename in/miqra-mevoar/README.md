@@ -2,7 +2,9 @@
 
 The files here hold Rabbi David Kokhav's Miqra Mevoar, a paraphrase of the Bible, for fifteen
 books: Joshua, Judges, Hosea, Joel, Amos, Obadiah, Jonah, Micah, Nahum, Habakkuk, Zephaniah,
-Haggai, Zechariah and Malachi, of the Prophets, and Daniel, of the Writings. Each `<stem>.json` is extracted from one
+Haggai, Zechariah and Malachi, of the Prophets, and Daniel, of the Writings; and for Isaiah's
+chapters 40 to 66, the fifth of the book's parts, which Avi asked for on 2026-11-25 while
+chapters 1 to 39 are unfinished. Each `<stem>.json` is extracted from one
 of the Word files that reach Avi, for publication on Hebrew Wikisource as the base chapters of
 its Miqra Mevoar project. The project's main page gives its license as Creative Commons
 Attribution-ShareAlike 3.0 Unported, and says that the attribution the license asks for is a
@@ -17,8 +19,15 @@ Each file is one book: the book's name as the page titles give it; the Word file
 and SHA-256; and the book's chapters, each verse with the heading before it, or null, and its
 paraphrase. The extraction joins a cell's paragraphs and makes each run of whitespace one space;
 it changes nothing else. A picture in a cell holds no text and is left out, as are Judges' two,
-in the paraphrase cells of 8:7 and 9:14, and Zephaniah's two, beside the numbers of 2:13 and
-2:14; `extract` and `check` name each one by its file, row and cell.
+in the paraphrase cells of 8:7 and 9:14, Zephaniah's two, beside the numbers of 2:13 and
+2:14, and Isaiah's two, beside the number of 41:15 and at the start of the paraphrase cell of
+58:5; `extract` and `check` name each one by its file, row and cell.
+
+`yeshayahu.json` holds Isaiah's chapters 40 to 66 only, the chapters that the book's entry in
+`py/miqra_mevoar/books.py` declares. Its Word file has rows of some of chapters 1 to 39 too,
+unfinished, which Avi asked to be ignored: `extract` reads them past, but for the heading of
+40:1, and `extract` and `check` say how many rows they read past. When the whole book comes,
+the entry declares no chapters, and the file holds the whole book.
 
 The Word files' Bible column is not kept. It is MAM's text, copied from Wikisource, which
 Wikisource and MAM-simple already hold. `check` compares it with MAM-simple's verse of the same
@@ -62,6 +71,15 @@ Check the extraction against the tracked JSON and MAM-simple. The check writes a
 
 ```powershell
 ./.venv/Scripts/python.exe py/main_miqra_mevoar.py check .novc/miqra-mevoar/pcloud/<timestamp>
+```
+
+To check only the books of a fetch, without joining the other books' files, name them with
+`--book`, which may be repeated. The directory's Word files must then be exactly those books',
+each with its tracked JSON, and the report names the tracked books that the check leaves out.
+The joined directory remains the way to check every book at once:
+
+```powershell
+./.venv/Scripts/python.exe py/main_miqra_mevoar.py check .novc/miqra-mevoar/pcloud/<timestamp> --book yeshayahu
 ```
 
 Write the pages into a new directory to preview them:

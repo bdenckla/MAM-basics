@@ -1,10 +1,13 @@
-"""Read the one table of a Miqra Mevoar Word file by a closed dispatch over its XML.
+"""Read the table of a Miqra Mevoar Word file by a closed dispatch over its XML.
 
 A .docx file is a zip of XML parts. This reads word/document.xml and word/styles.xml
 with the standard library. At every level, the body, the table, its rows, cells,
 paragraphs and runs, each element is either one this module names or an error, so a
 file laid out in a way the converter has not seen stops it rather than being guessed
-at. Three things that hold none of the book's text are read past:
+at. A file may have several tables, as Isaiah's has four, separated by empty
+paragraphs: read_table reads them in the body's order as one table. A paragraph before
+the first table or between two tables must hold no text, picture or field. Three
+things that hold none of the book's text are read past:
 
 - A picture in a table cell: a drawing whose graphic data is one picture and which
   holds no text, as Judges and Zephaniah have. read_table gives each one's row and
@@ -39,15 +42,16 @@ class Picture:
 
 @dataclasses.dataclass(frozen=True)
 class Table:
-    """The file's one table: each row's cells, each a list of (style, text), and the
-    pictures read past in its cells, in the table's order."""
+    """The file's tables, in the body's order, as one table: each row's cells, each a
+    list of (style, text), and the pictures read past in its cells, in that order."""
 
     rows: list
     pictures: list
 
 
 def read_table(docx_path):
-    """The file's one table: its rows and the pictures read past in its cells."""
+    """The file's tables as one table: their rows, in the body's order, and the pictures
+    read past in their cells, each in its row's place among all the rows."""
     name = docx_path.name
     with zipfile.ZipFile(docx_path) as zf:
         style_names = _style_names(ElementTree.fromstring(zf.read("word/styles.xml")))
@@ -56,33 +60,36 @@ def read_table(docx_path):
     for child in document.find(f"{_W}body"):
         tag = _local(child.tag)
         if tag == "tbl":
+            # The paragraphs since the table before this one stand between two tables.
+            for para in after_table:
+                _require_empty(para, name, "between two tables")
             tables.append(child)
+            after_table = []
         elif tag == "p" and tables:
             after_table.append(child)
         elif tag == "p":
-            text = _para_text(child, name)
-            if text.strip():
-                raise ValueError(f"{name}: text outside the table: {text!r}")
+            _require_empty(child, name, "before the table")
         elif tag == "sdt":
             _require_table_of_contents(child, name)
         elif tag != "sectPr":
             raise ValueError(f"{name}: unknown body element {tag}")
-    if len(tables) != 1:
-        raise ValueError(f"{name}: expected one table, found {len(tables)}")
+    if not tables:
+        raise ValueError(f"{name}: no table")
     _read_past_contents_field(after_table, style_names, name)
     rows, pictures = [], []
-    for child in tables[0]:
-        tag = _local(child.tag)
-        if tag == "tr":
-            cells = []
-            for at, (paragraphs, count) in enumerate(
-                _row_cells(child, style_names, name)
-            ):
-                cells.append(paragraphs)
-                pictures.extend(Picture(len(rows), at) for _ in range(count))
-            rows.append(cells)
-        elif tag not in _TABLE_SKIP:
-            raise ValueError(f"{name}: unknown table element {tag}")
+    for table in tables:
+        for child in table:
+            tag = _local(child.tag)
+            if tag == "tr":
+                cells = []
+                for at, (paragraphs, count) in enumerate(
+                    _row_cells(child, style_names, name)
+                ):
+                    cells.append(paragraphs)
+                    pictures.extend(Picture(len(rows), at) for _ in range(count))
+                rows.append(cells)
+            elif tag not in _TABLE_SKIP:
+                raise ValueError(f"{name}: unknown table element {tag}")
     return Table(rows, pictures)
 
 
@@ -128,14 +135,14 @@ def _para_style(para, style_names, name):
     return style_names[style_id]
 
 
-def _para_text(para, name):
-    """The text of a paragraph before the table, where a picture or a field is an error."""
-    out = []
+def _require_empty(para, name, where):
+    """Raise unless a paragraph before the first table or between two tables, as where
+    says, holds no text, picture or field."""
     for kind, value in _para_items(para, name):
         if kind != _TEXT:
-            raise ValueError(f"{name}: a {kind} before the table: {value!r}")
-        out.append(value)
-    return "".join(out)
+            raise ValueError(f"{name}: a {kind} {where}: {value!r}")
+        if value.strip():
+            raise ValueError(f"{name}: text {where}: {value!r}")
 
 
 def _para_items(para, name):

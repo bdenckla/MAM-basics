@@ -2,8 +2,10 @@
 
 Each file holds one book: its name, its Word file's name, size and SHA-256, and its
 chapters, each verse with the heading before it, or null, and its paraphrase, in the
-Word file's own mark order. The Bible column is not kept: it is MAM's text, which
-Wikisource and MAM-simple already hold. Every read checks the record's whole shape.
+Word file's own mark order. Its chapters are the whole book's, or, where the book's
+entry in books.BOOKS declares its chapters, as Isaiah's declares 40 to 66, those
+alone. The Bible column is not kept: it is MAM's text, which Wikisource and MAM-simple
+already hold. Every read checks the record's whole shape.
 """
 
 import json
@@ -42,12 +44,15 @@ def write_record(book, record):
 
 
 def require_shape(record, book, where):
-    """Raise unless record has exactly the keys and numbering of a book's record."""
+    """Raise unless record has exactly the keys and numbering of a book's record: its
+    chapters numbered from 1, or from the first of the chapters that the book declares,
+    and then ending at the last of those."""
     _require_keys(record, {"book", "source", "chapters"}, where)
     if record["book"] != book.bk39_name():
         raise ValueError(f"{where}: book {record['book']!r}, not {book.bk39_name()!r}")
     _require_keys(record["source"], {"file", "size", "sha256"}, f"{where} source")
-    for number, chapter in enumerate(record["chapters"], start=1):
+    first = 1 if book.chapters is None else book.chapters[0]
+    for number, chapter in enumerate(record["chapters"], start=first):
         _require_keys(chapter, {"chapter", "verses"}, f"{where} chapter {number}")
         if chapter["chapter"] != number:
             raise ValueError(
@@ -64,6 +69,14 @@ def require_shape(record, book, where):
             raise ValueError(f"{where}: chapter {number} has no verses")
     if not record["chapters"]:
         raise ValueError(f"{where}: no chapters")
+    if (
+        book.chapters is not None
+        and record["chapters"][-1]["chapter"] != book.chapters[1]
+    ):
+        raise ValueError(
+            f"{where}: the chapters end at {record['chapters'][-1]['chapter']},"
+            f" not {book.chapters[1]}"
+        )
 
 
 def _require_keys(mapping, keys, where):

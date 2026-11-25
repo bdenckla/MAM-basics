@@ -2,7 +2,11 @@
 
 For every in/miqra-mevoar/*.json, the book's chapters, and each chapter's verse numbers,
 must equal those of MAM-simple (MAM-simple/json-vtrad-mam/), the oracle against which
-`py/main_miqra_mevoar.py check` also measures the Word files. The tracked headings and
+`py/main_miqra_mevoar.py check` also measures the Word files: the whole book's, or,
+where the book's entry in py/miqra_mevoar/books.py declares its chapters, as Isaiah's
+declares 40 to 66, those of the declared chapters, which must lie within MAM-simple's.
+This test takes them from MAM-simple's whole book by its own filter, not through
+mam_simple.record_verse_keys. The tracked headings and
 paraphrases are also linted for what py/miqra_mevoar/wikitext.py refuses: a line break
 or another control character, a space at either end, and wikitext. An empty directory,
 or a book that MAM-simple lacks, fails rather than skips.
@@ -35,7 +39,11 @@ def test_versification_equals_mam_simple(stem):
         for chapter in record["chapters"]
         for verse in chapter["verses"]
     ]
-    assert keys == mam_simple.verse_keys(book)
+    mam_keys = mam_simple.verse_keys(book)
+    numbers = [chapter for chapter, _verse in mam_keys]
+    first, last = book.chapters or (numbers[0], numbers[-1])
+    assert numbers[0] <= first <= last <= numbers[-1], (stem, book.chapters)
+    assert keys == [key for key in mam_keys if first <= key[0] <= last]
 
 
 @pytest.mark.parametrize("stem", _STEMS)

@@ -35,7 +35,9 @@ reading:
 - The pages of a book, such as Joshua's two parts, Judges' three, Daniel's two,
   Genesis' four and each other book of the Torah's three, together show its verses once
   each, in order, across a boundary inside a chapter, as between Judges 2:5 and 2:6 or
-  Genesis 25:18 and 25:19, as well as between chapters.
+  Genesis 25:18 and 25:19, as well as between chapters. A book's verses here are
+  MAM-simple's of the chapters that its tracked record holds, which may be only some of
+  them: Isaiah's one page shows 40:1 to 66:24.
 - Every page begins with a block of title and navigation: its line, a horizontal rule
   and two blank lines. The links of the block's line, found by this test's own reading
   of it, are its topics and then its chapters. Its topics are the verses to which the
@@ -130,10 +132,13 @@ def test_the_pages_of_a_book_show_it_once():
             (verse.chapter, verse.verse) for verse in verses
         )
     for stem, numerals in shown.items():
-        _osis_id, verses = _mam_simple_verses(_book(stem).mam_book)
+        book = _book(stem)
+        _osis_id, verses = _mam_simple_verses(book.mam_book)
+        held = _record_chapters(stem, book)
         expected = [
             (hvn.INT_TO_STR_DIC[chapter], hvn.INT_TO_STR_DIC[verse])
             for (chapter, verse), _sampe in verses
+            if held is None or chapter in held
         ]
         assert numerals == expected, stem
 
@@ -245,6 +250,15 @@ def _book(stem):
     if stem in books.BOOKS:
         return books.BOOKS[stem]
     return base_headings.BOOKS[stem]
+
+
+def _record_chapters(stem, book):
+    """The numbers of the chapters that a book's tracked record holds, for a book of
+    books.BOOKS, whose record may hold only some, as Isaiah's holds 40 to 66; or None,
+    for a book of the Torah, whose pages show the whole book."""
+    if stem not in books.BOOKS:
+        return None
+    return {chapter["chapter"] for chapter in tracked.read_record(book)["chapters"]}
 
 
 def _headings(stem, book):

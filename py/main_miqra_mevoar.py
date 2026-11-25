@@ -18,12 +18,17 @@ Subcommands:
     extract
         Write in/miqra-mevoar/<stem>.json from every .docx in DIRECTORY, refusing an
         unknown book, row or element, a numbering gap, or a heading or paraphrase with
-        a line break or wikitext.
+        a line break or wikitext. A book's JSON holds the whole book, or only the
+        chapters that its entry in py/miqra_mevoar/books.py declares, as Isaiah's
+        declares 40 to 66.
     check
         Extract the .docx files in DIRECTORY again and require them to equal the
         tracked JSON, their versification to equal MAM-simple's, and each row's Bible
-        column to match MAM-simple's verse. Writes a report under
-        .novc/miqra-mevoar/checks/ and nothing tracked; exits non-zero on a failure.
+        column to match MAM-simple's verse. DIRECTORY's Word files must be exactly the
+        tracked books', or, with --book STEM, repeatable, exactly those books', and the
+        report then names the tracked books that the check leaves out. Writes a report
+        under .novc/miqra-mevoar/checks/ and nothing tracked; exits non-zero on a
+        failure.
     pages
         Write each chapter's page from the tracked JSON into the new directory --out,
         as MediaWiki would store it, with titles.tsv.
@@ -39,6 +44,7 @@ Examples:
     .venv/Scripts/python.exe py/main_miqra_mevoar.py fetch --link-file path/to/link.txt
     .venv/Scripts/python.exe py/main_miqra_mevoar.py extract .novc/miqra-mevoar/pcloud/<timestamp>
     .venv/Scripts/python.exe py/main_miqra_mevoar.py check .novc/miqra-mevoar/pcloud/<timestamp>
+    .venv/Scripts/python.exe py/main_miqra_mevoar.py check .novc/miqra-mevoar/pcloud/<timestamp> --book yeshayahu
     .venv/Scripts/python.exe py/main_miqra_mevoar.py pages --out .novc/miqra-mevoar/pages/<timestamp>
     .venv/Scripts/python.exe py/main_miqra_mevoar.py base-headings
     .venv/Scripts/python.exe py/main_miqra_mevoar.py base-headings --check
@@ -74,6 +80,16 @@ def build_parser():
         "check", help="check the Word files against the JSON and MAM-simple"
     )
     check_parser.add_argument("directory", help="a directory of Word files")
+    check_parser.add_argument(
+        "--book",
+        action="append",
+        dest="books",
+        metavar="STEM",
+        help=(
+            "check this book only, repeatable: the directory must hold the Word files"
+            " of the books named and no others"
+        ),
+    )
     pages_parser = subparsers.add_parser(
         "pages", help="write the pages from the tracked JSON"
     )
@@ -102,7 +118,7 @@ def main():
     elif args.subcommand == "extract":
         extract.run(args.directory)
     elif args.subcommand == "check":
-        sys.exit(check.run(args.directory))
+        sys.exit(check.run(args.directory, args.books))
     elif args.subcommand == "pages":
         pages.run(args.out)
     elif args.subcommand == "base-headings":

@@ -7,12 +7,14 @@ divided them, whose base chapters exist: the Torah's five books, three parts eac
 Stage 12 of doc/PLAN-miqra-mevoar.md, but Genesis, in four parts since its Stage 14;
 Joshua's two parts and five books of the Twelve from its Stage 10; Micah, Nahum,
 Habakkuk, Zephaniah, Haggai and Zechariah from its round 1 of 2026-11-16, and Malachi
-from its round 2; and Judges' three parts and Daniel's two from its Stage 11. Their
-names are those that the main page,
+from its round 2; Judges' three parts and Daniel's two from its Stage 11; and Isaiah's
+fifth part, chapters 40 to 66, from its Stage 16. Their names are those that the main
+page,
 מקרא מבואר, links in revision 3103065, from its section of the Prophets and, for
 Daniel's two parts, of the Writings, and, for the Torah's parts, in revision 3103840,
 from its section of the Torah, but the name of Genesis' fourth part, in revision
-3104162, each copied by script, as the comment on PAGES says. A part's first and last
+3104162, and of Isaiah's fifth part, in revision 3104257, each copied by script, as the
+comment on PAGES says. A part's first and last
 verses are those that its link's label gives, parsed by script, in revision 3104053
 for the first parts of Genesis and of Exodus, whose labels Avi had corrected by then,
 and in revision 3104162 for Genesis' second, third and fourth parts, as the comments
@@ -39,7 +41,9 @@ A page's stem names its book: a Word file's stem in books.BOOKS, or an OSIS
 abbreviation in base_headings.BOOKS, two sets of keys that must not meet. The places of
 its headings come from the tracked JSON, in/miqra-mevoar/, for a book of the first, and
 for the Torah, whose base chapters were made before the converter, from base_headings'
-records of the headings in those base chapters.
+records of the headings in those base chapters. A book's tracked JSON may hold only
+some of its chapters, as Isaiah's holds 40 to 66, and it must hold every verse of a
+page of the book.
 
 A page with a block_name begins with its block, four lines: the block's line, a
 horizontal rule, _BLOCK_RULE, and two blank lines. The block's line is _BLOCK_START, the
@@ -293,7 +297,7 @@ def page_verses(page):
     breaks = mam_simple.verse_breaks(book)
     letters = {key: _LETTERS[kind] for key, kind in breaks.items()}
     letters |= _disputed_letters(book, breaks)
-    headings = _heading_keys(page.stem, book, keys)
+    headings = _heading_keys(page.stem, book, keys, page_keys)
     decalogue = _decalogue(book, keys)
     verses = []
     for chapter, verse in page_keys:
@@ -617,11 +621,12 @@ def _disputed_letters(book, breaks):
     return letters
 
 
-def _heading_keys(stem, book, keys):
+def _heading_keys(stem, book, keys, page_keys):
     """The keys of the verses that have a heading: in the tracked JSON for a book of
-    books.BOOKS, and in base_headings' record for a book of the Torah."""
+    books.BOOKS, which must hold every verse of the page, and in base_headings' record
+    for a book of the Torah."""
     if stem in books.BOOKS:
-        return _tracked_heading_keys(book, keys)
+        return _tracked_heading_keys(book, page_keys)
     if stem in base_headings.BOOKS:
         return _base_heading_keys(book, keys)
     raise ValueError(f"No display page's book has the stem {stem!r}")
@@ -643,16 +648,26 @@ def _base_heading_keys(book, keys):
     return found
 
 
-def _tracked_heading_keys(book, keys):
-    """The keys of the verses that the tracked JSON gives a heading."""
+def _tracked_heading_keys(book, page_keys):
+    """The keys of the verses that the tracked JSON gives a heading. Its verses must be
+    MAM-simple's of the chapters that it holds, mam_simple.record_verse_keys, and they
+    must include every verse of the page, so that a page beyond them, such as one of
+    Isaiah 1 to 39 while the JSON holds 40 to 66, raises rather than showing no
+    heading."""
     record = tracked.read_record(book)
     tracked_keys = [
         (chapter["chapter"], verse["verse"])
         for chapter in record["chapters"]
         for verse in chapter["verses"]
     ]
-    if tracked_keys != keys:
+    if tracked_keys != mam_simple.record_verse_keys(book):
         raise ValueError(f"{book.stem}: the tracked JSON's verses are not MAM-simple's")
+    held = set(tracked_keys)
+    if strays := [key for key in page_keys if key not in held]:
+        raise ValueError(
+            f"{book.stem}: the tracked JSON lacks the page's verses {strays[0]} to"
+            f" {strays[-1]}"
+        )
     return {
         (chapter["chapter"], verse["verse"])
         for chapter in record["chapters"]
@@ -785,8 +800,10 @@ if not set(books.BOOKS).isdisjoint(base_headings.BOOKS):
 # browser shows as one. Stage 15 copied by script the block_name of every other entry,
 # Joshua's, Judges', the Twelve's and Daniel's, from its link's label in revision
 # 3104162, without the range at the end of each label of a part; the labels of the
-# Twelve's books have none. Every entry has a block_name, and each is pointed and in
-# NFC, as MediaWiki stores it.
+# Twelve's books have none. Stage 16 copied by script yeshayahu-5's name, and its
+# block_name, its link's label without its range, from revision 3104257, whose
+# label gives the part chapters 40 to 66. Every entry has a block_name, and each is
+# pointed and in NFC, as MediaWiki stores it.
 DISPLAY_PREFIX = "מקרא מבואר/תצוגה/"
 PAGES = {
     page.key: page
@@ -952,6 +969,13 @@ PAGES = {
             "sephershoftim",
             (17, 21),
             block_name='סֵפֶר שׁוֹפְטִים, חֵלֶק שְׁלִישִׁי: "אִישׁ הַיָּשָׁר בְּעֵינָיו יַעֲשֶׂה"',
+        ),
+        Page(
+            "yeshayahu-5",
+            "ספר ישעיהו 5",
+            "yeshayahu",
+            (40, 66),
+            block_name="סֵפֶר יְשַׁעְיָהוּ, חֵלֶק חֲמִישִׁי: נֶחָמוֹת",
         ),
         Page("hoshea", "הושע", "hoshea", block_name="הוֹשֵׁעַ"),
         Page("yoel", "יואל", "yoel", block_name="יוֹאֵל"),

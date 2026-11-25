@@ -3,8 +3,11 @@
 For every .docx in a directory, the check extracts the book again and requires:
 
 1. the record to equal the tracked JSON, and the directory's books to be the tracked
-   books;
-2. the book's chapters, and each chapter's verse numbers, to equal MAM-simple's;
+   books, or, where books are named, as `check --book` names them, to be exactly those
+   books, the report naming the tracked books that the check leaves out;
+2. the book's chapters, and each chapter's verse numbers, to equal MAM-simple's, of the
+   chapters that the book's entry declares where it declares them
+   (mam_simple.record_verse_keys);
 3. each row's Bible column, letters only, to match MAM-simple's verse of the same
    number better than either neighbouring verse, with a ratio of at least _FLOOR.
 
@@ -12,7 +15,8 @@ The ratio is difflib's, without autojunk. A verse with a ketiv and a qere scores
 since MAM-simple's projection keeps both: Joshua 15:53 scored 0.78 and Hosea 10:10 0.88
 on 2026-11-02, while their closer neighbouring verses scored 0.34. The margin of a row
 is its ratio less its best neighbour's. The report, under .novc/miqra-mevoar/checks/,
-lists each book's five smallest margins and lowest ratios, and names each picture that
+lists each book's five smallest margins and lowest ratios, says how many rows the
+extraction read past before a book's declared chapters, and names each picture that
 the extraction read past in the book's Word file. Nothing tracked is written.
 """
 
@@ -28,19 +32,30 @@ from miqra_mevoar import mam_simple
 from miqra_mevoar import tracked
 
 
-def run(directory):
-    """Check every .docx in directory; return 1 if any check fails, else 0."""
+def run(directory, stems=None):
+    """Check every .docx in directory; return 1 if any check fails, else 0. Its Word
+    files must be exactly the tracked books', or, where stems names books, exactly
+    those books'."""
     report, failures = [f"Miqra Mevoar check of {directory}"], []
     docx_paths = extract.docx_paths(directory)
     docx_stems = [path.stem for path in docx_paths]
     tracked_stems = [book.stem for book in tracked.tracked_books()]
-    if docx_stems != tracked_stems:
-        failures.append(f"Word files {docx_stems}, tracked JSON {tracked_stems}")
+    if stems is None:
+        if docx_stems != tracked_stems:
+            failures.append(f"Word files {docx_stems}, tracked JSON {tracked_stems}")
+    else:
+        if len(set(stems)) != len(stems):
+            raise SystemExit(f"A --book is given twice: {stems}")
+        named = sorted(books.book_of_stem(stem).stem for stem in stems)
+        if docx_stems != named:
+            failures.append(f"Word files {docx_stems}, --book {named}")
+        left_out = [stem for stem in tracked_stems if stem not in named]
+        report.append(f"tracked books that this check leaves out: {left_out}")
     for docx_path in docx_paths:
         book = books.book_of_stem(docx_path.stem)
-        record, bible, pictures = extract.extract_book(docx_path, book)
+        record, bible, notes = extract.extract_book(docx_path, book)
         _check_book(book, record, bible, report, failures)
-        report.extend(f"  {line}" for line in pictures)
+        report.extend(f"  {line}" for line in notes)
     report.append("")
     report.append(f"failures: {len(failures)}")
     report.extend(f"  FAIL {failure}" for failure in failures)
@@ -70,7 +85,7 @@ def _check_book(book, record, bible, report, failures):
         for chapter in record["chapters"]
         for verse in chapter["verses"]
     ]
-    mam_keys = mam_simple.verse_keys(book)
+    mam_keys = mam_simple.record_verse_keys(book)
     if keys != mam_keys:
         failures.append(
             f"{book.stem}: versification differs from MAM-simple's:"

@@ -4,6 +4,9 @@ Usage (run from the repository root):
     .venv/Scripts/python.exe py/main_ws_bot.py miqra-mevoar --book yehoshua --chapters 1-2 --no-save -dir:path/to/.pywikibot
     .venv/Scripts/python.exe py/main_ws_bot.py miqra-mevoar --book yehoshua --chapters 1-2 --summary "..." -dir:path/to/.pywikibot
 
+--chapters FIRST-LAST selects chapters by their numbers, which must be within the book's
+tracked record: Isaiah's, which holds chapters 40 to 66 only, takes --chapters 40-41.
+
 Each selected chapter's page is generated from the tracked JSON, in/miqra-mevoar/, by the
 converter's own function, py/miqra_mevoar/wikitext.py's chapter_wikitext, and compared
 with the live page. The chapter then has one of four outcomes:
@@ -108,19 +111,27 @@ def _selected_chapters(stems, chapter_range):
         book = books.book_of_stem(stem)
         chapters = tracked.read_record(book)["chapters"]
         if chapter_range is not None:
-            first, last = _range(chapter_range, len(chapters))
-            chapters = chapters[first - 1 : last]
+            first, last = _range(chapter_range, chapters)
+            chapters = [
+                chapter for chapter in chapters if first <= chapter["chapter"] <= last
+            ]
         selected.extend((book, chapter) for chapter in chapters)
     return selected
 
 
-def _range(text, count):
+def _range(text, chapters):
+    """The first and last chapter numbers that --chapters selects, which must be within
+    the record's chapters: Isaiah's record, for one, begins at chapter 40."""
     match = re.fullmatch(r"([0-9]+)-([0-9]+)", text)
     if match is None:
         raise SystemExit(f"--chapters takes FIRST-LAST, not {text!r}")
     first, last = int(match.group(1)), int(match.group(2))
-    if not 1 <= first <= last <= count:
-        raise SystemExit(f"--chapters {text} is not within the book's {count} chapters")
+    lowest, highest = chapters[0]["chapter"], chapters[-1]["chapter"]
+    if not lowest <= first <= last <= highest:
+        raise SystemExit(
+            f"--chapters {text} is not within the record's chapters,"
+            f" {lowest} to {highest}"
+        )
     return first, last
 
 
