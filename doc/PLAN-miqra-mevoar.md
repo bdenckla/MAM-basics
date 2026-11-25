@@ -75,6 +75,10 @@ Genesis' three parts is within the include-size limit (execution ledger, “Avi'
 2026-11-23”). Nothing that this plan does next undoes Avi's changes, though the display table
 still divides Genesis in four (Deferred, “Genesis in three parts again”). The State stays live
 for the next book, whose Word file takes the course of “Later Word files”.
+On 2026-11-25 Avi asked, for Rabbi Kokhav, for the fifth part of Isaiah, chapters 40 to 66, whose
+Word file still holds the book's earlier chapters unfinished. Stage 16, written that day, plans the
+part's 27 base chapters and its display page, and Ben gave his word to execute it the same day
+(decisions ledger entry 26).
 The execution ledger below records each finished stage.
 
 Written 2026-11-02 by Claude (Opus 5.5) in the Phase 1 session that the session "Commander for
@@ -100,10 +104,12 @@ that Avi asked for on each of those 15 parts, in the style of Joshua's first par
 Stage 14, added on 2026-11-23, plans the two parts into which Avi divided Genesis' second part,
 and the new name of the fourth part's block. Stage 15, added the same day, plans the block on
 every display page of Joshua, Judges, the Twelve, the Five Megillot and Daniel.
+Stage 16, added on 2026-11-25, plans the 27 base chapters and the display page of Isaiah's fifth
+part, chapters 40 to 66, which Avi asked for before Rabbi Kokhav has finished the book.
 
 ## Decisions ledger
 
-Entries 1 to 3 and 10 to 25 are Ben's decisions. Entries 5 to 9 were Claude's proposals,
+Entries 1 to 3 and 10 to 26 are Ben's decisions. Entries 5 to 9 were Claude's proposals,
 approved by Ben's word in entry 3.
 
 1. **Route: the bot, after a pilot.** Ben, 2026-11-02, answering "Which route should the pages
@@ -371,6 +377,25 @@ approved by Ben's word in entry 3.
     commander started for the emails reads Ben's words as his word to bring this plan's record
     up to date and to do nothing else: no reply to Avi, no bot run, dry or saving, and no edit
     on Wikisource. Active.
+26. **Stage 16, Isaiah's fifth part.** Ben, 2026-11-25, at 00:18 New York time, in the commander
+    session, asked for a session for a text that he pasted, which quotes Avi's email (Stage 16, “The
+    ask”) and asks for an examination of Avi's Word file of Isaiah, a plan and a draft answer to
+    Avi. That session, a Claude (Opus 5.5) session, wrote Stage 16 and put two decisions to Ben on
+    its decision page: 1, “Go ahead with Part 5 now, as Stage 16 plans it?”, whose recommended
+    answer, (a), was to approve the stage, its seven choices included, and to send the reply to Avi
+    as drafted; and 2, “How should `check` run without the other 15 books' Word files?”, whose
+    recommended answer, (a), was the new option `check --book`. Ben answered at 08:28 New York time,
+    in that session, in a message that begins, exactly:
+
+    > Choices 1 to 7 (all choices) of stage 16 are fine with me, to the extent I understand them (which is not important that I understand them fully, due to some combination of my trust in you and their low-stakes nature).
+
+    and ends, after two sentences about the page that rendered the stage for him:
+
+    > Anyway, just get all this done, follow all your recommendations, this has become to belabored of a process.
+
+    So both answers are (a). Stage 16 executes as written, in a fresh session that the planning
+    session started, and Ben sends the reply to Avi himself; each saving run still needs his word
+    for that run (entry 3). Active.
 
 Deferred, each until its own decision:
 
@@ -3289,6 +3314,290 @@ blocks, answers his question on the verse template as Ben's answer to decision 1
 asks nothing that Ben's answers have settled. Nothing is sent: Ben sends it himself.
 
 **Checkout and coordination:** as Stage 14's.
+
+## Stage 16. Isaiah 40 to 66, the fifth part, on Ben's word
+
+Claude (Opus 5.5) wrote this stage on 2026-11-25 in the session that the commander started for
+Avi's email about Isaiah's fifth part, after fetching and examining the Word file and reading the
+live pages, saving nothing. By Ben's rule a fresh session executes it, not the session that wrote
+it. Ben gave his word to execute it on 2026-11-25, approving the design, which was that
+session's proposal, with the recommended answers to its two decisions (“Ben's answers”,
+below, and decisions ledger entry 26); each saving run still needs his word.
+
+**Ben's answers.** The session that wrote this stage put two decisions to Ben on its decision page:
+1, “Go ahead with Part 5 now, as Stage 16 plans it?”, whose recommended answer, (a), was to approve
+this stage, its seven choices included, and to send the reply to Avi as drafted; and 2, “How should
+`check` run without the other 15 books' Word files?”, whose recommended answer, (a), was the new
+option `check --book`, design item 6. On 2026-11-25 at 08:28 New York time Ben wrote, in that
+session: "Choices 1 to 7 (all choices) of stage 16 are fine with me, to the extent I understand them
+(which is not important that I understand them fully, due to some combination of my trust in you and
+their low-stakes nature)." and "Anyway, just get all this done, follow all your recommendations,
+this has become to belabored of a process." So both answers are (a), and this stage executes as
+written.
+
+**The ask.** Avi's email, as quoted in the text that Ben pasted into the commander session on
+2026-11-25 at 00:18 New York time: "Rabbi Kokhav asks if it is possible to upload the last
+section of Isaiah, namely the visions of comfort and redemption (part 5 = chapters 40-66). I made
+a link for Part 5 on the main page of Miqra Mevo'ar. The Isaiah file is in the folder. Chapters
+1-39 are still incomplete, and whatever material is there should be ignored. If this involves
+too much work let me know, and I'll tell him to wait until he finishes the whole book."
+
+**What it does.** The converter learns to read a Word file of several tables, and a book whose
+tracked text begins at a declared chapter. It extracts Isaiah 40 to 66 from `yeshayahu.docx`
+into `in/miqra-mevoar/yeshayahu.json`. BDencklaBot then creates the 27 base chapters, and then
+the display page that Avi's new link names, with its block of title and navigation. It only
+creates pages; it never edits one.
+
+**The Word file,** fetched on 2026-11-25 at 00:24 New York time into
+`C:/Users/BenDe/GitRepos2/MAM-basics/.novc/miqra-mevoar/pcloud/20261125-002419-332456-0500/`,
+whose `manifest.json` records it: `yeshayahu.docx`, 376,447 bytes, SHA-256 beginning
+`2b87c2534f6e5313`, modified at 04:44:15 UTC on 2026-11-24. The folder held nothing else but
+Joshua's old lock file, which `fetch` skips. The scratch scripts and reports of the examination
+are in `C:/Users/BenDe/GitRepos2/MAM-basics/.novc/miqra-mevoar-isaiah-2026-11-25/`
+(`examine-report.txt`, `structure-report.txt`, `picture-context.txt`), and they read the file as
+`extract.py` does, with `docx_table.py`'s own functions:
+
+1. **Four tables,** separated by empty paragraphs, 638 rows in all, and no text outside them.
+   `docx_table.read_table` requires one table, so `extract` refuses the file at its first step.
+2. **Table 1** begins with the title row, whose Bible cell, styled "heading 2", holds Isaiah's
+   pointed name, `ישעיהו` with its marks stripped, and then has 1:1 to 1:27. **Table 2** has
+   rows of chapters 6, 7 and 9 only, and **table 3** rows of chapters 27 to 29 only, ending at
+   29:24. Chapters 2 to 5, 8, 10 to 26 and 30 to 39 have no rows at all.
+3. **Table 4,** rows 80 to 637, begins with a heading row, styled "heading 3", and then holds
+   40:1 to 66:24 without a gap. So nothing odd stands at the boundary: the last row before
+   table 4 is 29:24, and the row before 40:1 is the heading of 40:1.
+4. **Every one of the 638 rows classifies** under `extract._classify`; the incomplete chapters
+   would fail only `_build`'s numbering, at chapter 6 after chapter 1.
+5. **Chapters 40 to 66:** 525 verse rows, equal in order to MAM-simple's 525 verses of Isaiah 40
+   to 66, every one with a paraphrase; 33 headings, the first that of 40:1; no heading after a
+   heading, and no second title row.
+6. **The Bible column,** compared as `check` compares it: no failure. The smallest margin is
+   0.435, at 43:24, and the lowest ratio 0.886, at 42:20; 409 of the 525 verses equal
+   MAM-simple's letter for letter.
+7. **Two pictures,** read past as Judges' and Zephaniah's are: a photograph of a threshing
+   sledge, 1.9 by 1.4 cm, at the start of the verse cell of 41:15 (row 130, cell 1), and a small
+   hook, 0.7 by 0.4 cm, at the start of the paraphrase cell of 58:5 (row 476, cell 3), whose
+   paraphrase leaves a run of spaces for it after the words for "like a hook". `extract`
+   makes that run one space.
+
+**The live pages,** read anonymously on 2026-11-25 between 00:24 and 00:33 New York time,
+saving nothing (`.novc/miqra-mevoar-isaiah-2026-11-25/wikisource-2/`):
+
+- **The main page** `מקרא מבואר` is at revision 3104257, Dovi's of 2026-11-24 at 02:04 New York
+  time. Its section `==ספרי הנביאים==` lists Isaiah's five parts, as Avi divided the book, under
+  the book's bold name: the first four as plain text, chapters 1 to 12, 13 to 23, 24 to 35 and
+  36 to 39, and the fifth as the only link, to `מקרא מבואר/תצוגה/ספר ישעיהו 5`, labelled, as the
+  other parts are, with the part's pointed name, "the book of Isaiah, fifth part: consolations",
+  and its chapters, 40 to 66, as Hebrew numerals in parentheses. Since revision 3104162, which
+  Stage 15 read, Dovi changed Genesis' three links (decisions ledger entry 25) and made this
+  line a link, and changed nothing else.
+- **No Isaiah page exists:** none of Isaiah's 66 base-chapter titles, none of the 112 pages under
+  `מקרא מבואר/תצוגה/`, and not the link's target.
+- **The base-chapter index,** `מקרא מבואר/פרקי בסיס` at revision 3101312, links all 66 of Isaiah's
+  base chapters, so the 27 creations make their links blue with no edit of the index.
+- **The include size.** Three live display pages, measured through the API's `parse` action,
+  use 3.64 to 3.76 bytes of the post-expand include size per byte of their text, MAM-simple's
+  projected verses and the tracked paraphrases and headings: Judges' second part 876,959 bytes
+  for 430 verses, Daniel's first 449,334 for 196, and Zechariah 428,361 for 211, of a limit of
+  2,097,152. Isaiah 40 to 66 has 263,057 bytes of such text, so its page should use about
+  960,000 to 990,000 bytes, 46 to 47% of the limit, against the dry run's 90%
+  (`include-size.txt` there; `isaiah_bytes.py` beside it).
+
+**Choices,** each a proposal that Ben's word approves:
+
+1. **The tracked text holds chapters 40 to 66 only.** Isaiah's entry in `books.BOOKS` declares
+   the first chapter that the Word file contributes, 40; every other book's is 1. When Rabbi
+   Kokhav finishes the book and Avi's folder holds the whole file, the entry's first chapter
+   becomes 1 and “Later Word files” applies: chapters 1 to 39 are created, and each of 40 to 66
+   is unchanged, updated or refused by the chapter mode's rule.
+2. **The rows before 40:1 are read past unread,** as Avi asked: every row after the title row and
+   before the verse row that opens the declared first chapter, but for a heading row that
+   stands right before that verse row, with only empty rows between, which is that verse's
+   heading by the converter's own rule. They are read past before `_classify` sees them, since a
+   row of an unfinished chapter, such as a verse with no paraphrase yet, would be refused.
+   `extract` and `check` say how many rows they read past. The title row is still required, as
+   the first row of text, and its name must still equal the entry's title.
+3. **The tables of a file are read in body order as one table,** with the paragraphs between them
+   required to hold no text, picture or field, as the paragraphs before the first table are.
+4. **`check` with a directory that holds only some tracked books:** the new option
+   `check --book`, design item 6, Ben's answer to decision 2.
+5. **The display page,** keyed `yeshayahu-5`, as Joshua's, Judges' and Daniel's parts are keyed:
+   `מקרא מבואר/תצוגה/ספר ישעיהו 5`, chapters 40 to 66, its name copied by script from revision
+   3104257. Its block of title and navigation, which every display page of the Prophets has had
+   since Stage 15, names the part by the link's label without its chapter range, as Stage 13's
+   design item 1 has it, copied by script from revision 3104257; it gives the part's 33
+   headings as its topics and links chapters 40 to 66.
+6. **As on the earlier pages:** the break before the page's first verse is shown, so the page
+   opens, after its block, with a break line that has both parameters, MAM's petuha before 40:1
+   and the heading of 40:1; a break inside a verse gets no line, and Isaiah 40 to 66 has none;
+   and the page's sort key is its own name.
+7. **The two pictures are left out,** as Judges' and Zephaniah's were, and named by `extract` and
+   `check`. The reply tells Avi, since Avi put Judges' pictures back by hand.
+
+**Counts,** measured on 2026-11-25 from MAM-simple at `66bb2376` and the Word file; the dry runs'
+pages must have them. The breaks were counted by `walk_breaks.py`, a walk of MAM-simple that
+shares no code with the converter, and again through `mam_simple.verse_breaks`, with the same
+result:
+
+| Pages | Verse lines | Petuhot, setumot | Headings | Break lines: break only, heading only, both |
+|---|---|---|---|---|
+| 27 base chapters, 40 to 66 | 525 | — | 33 | — |
+| Display page, 40 to 66 | 525 | 34, 69 | 33 | 70, 0, 33 |
+
+Every heading of 40 to 66 stands at a petuha or a setuma, so the display page has 103 break
+lines. Chapter by chapter, the verse counts are MAM-simple's: 31, 29, 25, 28, 28, 25, 13, 15,
+22, 26, 11, 23, 15, 12, 17, 13, 12, 21, 14, 21, 22, 11, 12, 19, 11, 25 and 24.
+
+**The design.** A read-only audit of the converter at `66bb2376` found where it assumes whole
+books, and the design changes each place. Its notes and scratch scripts are in
+`.novc/miqra-mevoar-isaiah-2026-11-25/audit/`.
+
+1. **Books,** `py/miqra_mevoar/books.py`: `Book` gains `chapters: tuple[int, int] | None = None`,
+   the first and last chapters that the book's Word file contributes, or None for the whole
+   book, as `display_page.Page.chapters` gives a page's. `BOOKS` gains
+   `Book("yeshayahu", <title>, mam_bknas.BS_ISAIAH, "Isa.json", "Isa", chapters=(40, 66))`, its
+   title the title row's text with its marks stripped, copied from the file by script;
+   `mam_bknas.he_bk39_name` gives the same name. The module docstring says that a book may be
+   partial, and why Isaiah's is.
+2. **The reader,** `py/miqra_mevoar/docx_table.py`: `read_table` reads the body's tables in
+   order as one table, each picture's row being its place among all the rows. A paragraph
+   before the first table or between two tables holds no text, picture or field; the
+   paragraphs after the last table keep today's rule, empty or Daniel's kind of table of
+   contents. Today every paragraph after the first table goes to that rule, which would pass
+   Isaiah's empty paragraphs between tables only by accident. Every file of the 15 tracked books
+   has one table, so nothing changes for them.
+3. **The extraction,** `py/miqra_mevoar/extract.py`, `_build`. For a book whose `chapters` is
+   None, nothing changes. For a range:
+   - After the title row, every row is read past before `_classify` sees it, up to the row whose
+     chapter cell is the first chapter's numeral and whose verse cell is alef; only those two
+     cells of a row are read to find it. If there is no such row, `_build` raises.
+   - The last row with text before that row is then looked at. If its chapter and verse cells
+     are empty, `_classify` names its kind: a heading is that verse's heading, as every heading
+     row is the next verse's; an empty row, one with only a pe or a samekh, is read past; and
+     any other kind raises. A row with a chapter or verse number, such as an unfinished verse of
+     chapter 39, is read past.
+   - The chapters are numbered from the range's first, and the last must be the range's last.
+   - Each row read past has the place "a row read past, before 40:1", in the range's numbers,
+     so that a picture in one is named rather than raising `KeyError` in `extract_book`'s
+     picture lines. `extract` and `check` print how many rows they read past.
+   - The title row is still required as the first row of text, and a title row whose paraphrase
+     cell holds a heading raises for a range, since that heading would belong to 1:1.
+4. **The record,** `py/miqra_mevoar/tracked.py`: `require_shape` numbers a book's chapters from
+   its range's first and requires its range's last, where the book declares a range.
+5. **MAM-simple,** `py/miqra_mevoar/mam_simple.py`: `record_verse_keys(book)` gives the keys of
+   the verses within the book's range, or of every verse, and raises if the range is not within
+   the book's chapters. `check._check_book` compares the record's keys with it. So does
+   `display_page._tracked_heading_keys`, which also raises unless every verse of the page is
+   within the record: otherwise a page of Isaiah 1 to 39 would quietly show no headings.
+6. **`check`'s books** (decision 2, answer (a)): `check <directory>` keeps today's rule, that the
+   directory's Word files are exactly the tracked books. A new option, `--book <stem>`,
+   repeatable, names the books that this check covers instead: the directory's Word files must
+   then be exactly those books, each with tracked JSON, and the report names the tracked books
+   that it left out. `py/main_miqra_mevoar.py`'s docstring and the README say so, and the
+   README's joined directory remains the way to check every book at once.
+7. **The chapter mode,** `py/subcommands/ws_bot_miqra_mevoar.py`: `_selected_chapters` and
+   `_range` select `--chapters` by chapter number within the record's chapters, so
+   `--chapters 40-41` selects Isaiah 40 and 41, and `1-2` is refused with a message that names
+   the record's first and last chapters. For a book whose record begins at chapter 1, the
+   selection is today's.
+8. **The display table,** `py/miqra_mevoar/display_page.py`: `PAGES` gains
+   `Page("yeshayahu-5", <name>, "yeshayahu", (40, 66), block_name=<the label without its range>)`,
+   the name and the block's name copied by script from revision 3104257, which the table's
+   comment cites; `first_verse`, `last_verse` and `sort_key` keep their defaults. The block's
+   topics and chapters come from the tracked headings and MAM-simple, as every block's do.
+   `BLOCK_ONLY_PAGES`, `DECALOGUE` and `DISPUTED_PETUHOT` are untouched: Isaiah has no break
+   nested in another element. The display mode needs nothing new; its runs name the page with
+   `--page`. Offline, with only `_tracked_heading_keys`'s check bypassed in memory, the audit's
+   `page_text` for chapters 40 to 66 gave 525 verse lines that read back, a first line with
+   the petuha and the heading of 40:1 and no chapter parameter, and a block with 33 topics and
+   27 chapters.
+9. **Tests,** differential, with no example test:
+   - `py/tests/test_miqra_mevoar_versification.py`: each record has MAM-simple's verses of the
+     book's declared chapters, which the test takes from MAM-simple's whole book by its own
+     filter, not through `record_verse_keys`, and a declared range must lie within
+     MAM-simple's chapters.
+   - `py/tests/test_miqra_mevoar_display.py`: `test_the_pages_of_a_book_show_it_once` requires a
+     book's pages together to show its record's verses once each, in order, so Isaiah's one
+     page shows 40:1 to 66:24; its `block_name` checks apply to the new entry as they stand.
+   - The new reading of tables and ranges is tested by the real file: `extract`, `check`'s
+     comparison with MAM-simple, and a full reading of the new JSON against this stage's
+     counts.
+10. **Prose:** the docstrings that call a book whole, in `books.py`, `tracked.py`,
+    `py/main_miqra_mevoar.py` and `display_page.py`, and `in/miqra-mevoar/README.md`, which gains
+    Isaiah 40 to 66, its two pictures and `check --book`.
+
+**Preconditions,** before each dry run and again before each save:
+
+- The fetch directory's `yeshayahu.docx` still has the SHA-256 that `in/miqra-mevoar/yeshayahu.json`
+  records. A new fetch with a changed file is new material: extract and check it again and read
+  the JSON's diff before any save.
+- The main page's latest revision, read again by script, still links
+  `מקרא מבואר/תצוגה/ספר ישעיהו 5`; none of the 27 base chapters and not the display page exists
+  before its run. If one does, stop and report it.
+- Before the display page's dry run, the 27 base chapters exist, created by run A; otherwise the
+  dry run's parse check finds the page's links to them red.
+- No `main_ws_bot.py` process runs, and no other session of the commander's family does bot
+  work.
+- BDencklaBot's pywikibot directory on this laptop, `$env:USERPROFILE/.pywikibot`, holds
+  `user-config.py`, `password.py` and the bot's cookie file of 2026-08-27, as read on 2026-11-25.
+  The dry run's login check is the test that the login still works here.
+
+**Verification,** focused, under `doc/review-trial.md`: `git diff --check`; Black on the changed
+Python files; and Stage 11's targeted tests:
+
+```powershell
+./.venv/Scripts/python.exe py/main_test.py py/tests/test_miqra_mevoar_display.py py/tests/test_miqra_mevoar_versification.py py/tests/test_miqra_mevoar_index.py py/tests/test_miqra_mevoar_bot_revision_guard.py py/tests/test_mega_coverage.py py/tests/test_entry_point_subcommands.py py/tests/source_hygiene_test.py py/tests/test_prose_conventions.py py/tests/test_transliterations.py py/tests/test_explicit_time_zones.py py/tests/test_stderr_error_handler.py py/tests/test_h_dot_below_nfc.py py/tests/test_prose_mark_order.py py/tests/test_tracked_filenames.py py/tests/test_miqra_mevoar_save_receipts.py
+```
+
+Expected unchanged: the other 15 books' tracked JSON, byte for byte, which `extract` leaves alone
+since the fetch directory holds only Isaiah's file; the generated text of every page already in
+`display_page.PAGES`, byte for byte, and the pages that `pages --out` writes for the other 15
+books, compared by a scratch script before and after the change; every product directory that
+`py/product_scopes.py` declares; `in/mam-ws/` and `in/mam-ws-bot-edits/`. The mega runs none of
+this code; the last pushed commit's message says what was skipped and why, citing
+`doc/review-trial.md`.
+
+**The runs.** All from the clone's root with its own interpreter, each saving run on Ben's word
+for that run, given with its summary, which a launcher in
+`.novc/miqra-mevoar-isaiah-2026-11-25/` copies from this plan by script, as round 1's launcher
+did; that launcher is on another computer.
+
+0. Insert this stage after Stage 15, record Ben's answers, quoted above, as decisions ledger
+   entry 26, and bring the State and “What this plan does” up to date. Commit the plan alone.
+1. After the code change, `extract` and `check --book yeshayahu` on the fetch directory, then
+   `pages --out` into a new directory; read the new `in/miqra-mevoar/yeshayahu.json` against the
+   counts above, and read its first and last chapters' pages. Commit and push the code, the
+   JSON, the tests and the README before any bot run.
+2. **Run A, dry:** `py/main_ws_bot.py miqra-mevoar --book yeshayahu --no-save
+   -dir:$env:USERPROFILE/.pywikibot`, which must report 27 creates, chapters 40 to 66.
+3. **Run A, saving,** on Ben's word: the same command without `--no-save`, with Avi's summary of
+   decisions ledger entry 9, `פרק חדש במקרא מבואר`. Then a read of each saved page, and a dry
+   rerun that finds all 27 unchanged.
+4. **Run B, dry:** `py/main_ws_bot.py miqra-mevoar-display --page yeshayahu-5 --no-save
+   -dir:$env:USERPROFILE/.pywikibot`, which must report one create, the counts above, no red
+   link, and an include size under 90% of the limit. Read the page's first lines and its last.
+5. **Run B, saving,** on Ben's word: the same command without `--no-save`, with Stage 10's
+   summary, `דף תצוגה חדש במקרא מבואר`. Then a read of the saved page, and a dry rerun that finds
+   it unchanged.
+6. After each save, an entry in `py/ws/ws_bot_edit_history.md`; after both, the execution
+   ledger, this plan's State, “What this plan does” and `in/miqra-mevoar/README.md`. Commit,
+   fetch, merge `origin/main` if it moved, run the focused checks again if it did, and push.
+
+**The reply to Avi,** drafted on 2026-11-25 and approved as drafted by Ben's answer to decision 1,
+for Ben to send before the runs, answering Avi's question:
+`C:/Users/BenDe/GitRepos2/MAM-basics/.novc/miqra-mevoar-isaiah-2026-11-25/reply-to-avi-draft.md`,
+with its copyable page, `reply-to-avi-draft.html`, beside it, built by `render_reply.py`. After
+the saves, the executor drafts a short note that the pages are up, for Ben to send. Send
+nothing.
+
+**Checkout and coordination:** `C:/Users/BenDe/GitRepos2/MAM-basics`, which the commander assigns,
+verified clean on `main` at the commit that adds this stage or a descendant, with
+`git merge-base --is-ancestor`; its own `.venv/Scripts/python.exe`, run from its root; and
+`-c safe.directory=C:/Users/BenDe/GitRepos2/MAM-basics` on every Git call. Its untracked inputs
+are in this clone alone: the fetch directory, the link file `.novc/miqra-mevoar/pcloud-link.txt`,
+which nothing may print or copy elsewhere (decisions ledger entry 8), and the examination's
+scratch directory. The earlier books' Word files and fetches are on another computer and are not
+needed.
 
 ## Later Word files
 
