@@ -81,8 +81,8 @@ part's 27 base chapters and its display page, and Ben gave his word to execute i
 (decisions ledger entry 26). A fresh session executed it that day: on Ben's word for the stage's
 decision 4 (entry 27), BDencklaBot created the 27 base chapters, as revisions 3104473 to
 3104499, and the part's display page, as revision 3104504, so Stage 16 is executed (execution
-ledger, “Stage 16, 2026-11-25”). Ben sent Avi the reply that the stage drafted, and the note
-that the pages are up waits for him to send. The State stays live for the next book.
+ledger, “Stage 16, 2026-11-25”). Ben sent Avi the reply that the stage drafted and, that
+evening, the note that the pages are up. The State stays live for the next book.
 The execution ledger below records each finished stage.
 
 Written 2026-11-02 by Claude (Opus 5.5) in the Phase 1 session that the session "Commander for
@@ -2013,7 +2013,18 @@ byte-for-byte copy of that frozen plan; this ledger and the State line are the e
     disallows `/wiki/Special:` pages.
   - **The note to Avi that the pages are up,** drafted for Ben to send
     (`../note-to-avi-pages-up.md` and `.html`, built by `build_note.py`, its three links built
-    from the pages' titles), and shown on the decision page's version 6. Nothing is sent.
+    from the pages' titles), and shown on the decision page's version 6. The note's page showed
+    the three links as Markdown text: `build_note.py` escaped their angle brackets before
+    looking for the links, and so found none. Ben noticed, and `build_note.py` now finds the
+    links first and fails unless all three become links; the note's rebuilt page and the
+    decision page's version 8, updated at 18:49 New York time, showed the fixed note.
+  - **The note, sent.** Ben, at 18:56 New York time, in the executing session, after the fix,
+    exactly, as a script copied it from the session's transcript into `ben-words-note.json`:
+
+    > Okay, I sent the note to Avi.
+
+    The decision page's version 9, updated at 18:58 New York time, took the note off and marked
+    it sent.
 
 ## Background for a fresh executor
 
