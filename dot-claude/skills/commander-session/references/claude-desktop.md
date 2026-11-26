@@ -136,8 +136,10 @@ words, to leave it alone, so that the act happens once, not twice and not never.
   messages. A cloud child never reports back: tell Ben where its result will appear, a branch or a
   pull request, and fetch only when he asks.
 - **Verify** a child's commits and its clone with Git before calling the clone free, and verify an
-  outward act where it landed, such as a Wikisource save by one read-only API query. Then tell Ben
-  and start the next queued task.
+  outward act where it landed, by a request that the user-level section "Web requests obey
+  robots.txt" allows. Since that section bars the commander's own requests to Wikisource's
+  `api.php`, check a Wikisource save against the read-back that the child's tracked bot run
+  records. Then tell Ben and start the next queued task.
 - **Close:** once a child's work is pushed and its clone is clean, mark the task done, and archive
   the child only on Ben's word. Whether a session can be archived is a question for the commander,
   which also checks what is queued for that session or depends on it, since a child vouches only
