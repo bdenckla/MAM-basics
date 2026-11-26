@@ -258,7 +258,7 @@ evidence. Name the letter and marks and use “has”. Two extra notes:
   which is usually the whole reason the source is being cited. It also makes a trailing "and
   nowhere earlier" redundant — delete that rather than keep both.
 
-## Name the mark; never "-shaped"
+## Name the mark
 
 Two rulings from 2026-08-03, on one sentence about the Simanim Tanakh's p. 298.
 
@@ -267,6 +267,8 @@ Two rulings from 2026-08-03, on one sentence about the Simanim Tanakh's p. 298.
   sharpest exactly where such a sentence is most tempting: *pashta* and *qadma* really are
   near-identical marks, so "-shaped" reads as a claim about the glyph rather than about which
   strand the accent belongs to. Say "an עליון accent."
+  The suffix itself is not banned. Ben, 2026-11-26: *"I don't see a reason to forbid "-shaped"
+  suffix; there are times when that is useful to say."*
 - **Name the mark rather than referring to it.** Ben, of "So the mark is very likely the edition's
   error": *"why be coy? name the mark (qadma) or even 'qadma on ויום'."* This is the rendered-prose
   face of the global "name the referent, don't leave me to reconstruct it" rule — a mark that has
@@ -278,6 +280,17 @@ nothing the positive had not, and then: *"isn't it inside much more than a תח�
 inside an otherwise תחתון-conforming Decalogue?"* — which the transcription's own header bears out,
 166 accents against 166 with one divergence. Take the scope from the measurement, not from the
 nearest grammatical unit.
+
+## Short Unicode names, as in "Unicode QADMA"
+
+Ben, 2026-11-26, of a draft that named Unicode QADMA as "HEBREW ACCENT QADMA (U+05A8)":
+*""Unicode QADMA" would not only suffice, but be better (more succinct with no loss of
+intelligibility)"*. Where prose names a Hebrew code point rather than the accent or point it
+encodes, write "Unicode" and the code point's name without "HEBREW" and its class word,
+"ACCENT", "POINT", "PUNCTUATION" or "MARK", as in "Unicode QADMA", "Unicode PASEQ" and
+"Unicode RAFE". Where two names would then be the same, drop only "HEBREW", as in "Unicode
+ACCENT GERESH" and "Unicode PUNCTUATION GERESH". Ben, the same day: *"no need to fall back to
+the full name; in particular "HEBREW" is in common and thus adds nothing."*
 
 ## Never "witness"
 
@@ -764,6 +777,15 @@ brevity matters, use **zaqef** with **qatan** implicit. Name **zaqef gadol** exp
 where it applies. For example, write "zaqef–revia" rather than "zaqef qatan–revia".
 Keep full names when they clarify a contrast, and preserve literal quotations,
 Unicode names and technical identifiers.
+
+## Gerstar where brevity matters
+
+Ben, 2026-11-26: *"We frequently refer to "geresh or gershayim" as "gerstar" or "ger-star"; feel
+free to do so for brevity (explaining it the first time it is used in any given document)"*. He
+prefers the spelling **gerstar**, without a hyphen (Ben, the same day: *"gerstar (no hyphen)
+preferred"*). So "gerstar" may stand for "geresh or gershayim", as in "a gerstar followed by
+darga and tevir", once a document has explained it at its first use. accgram's almost-errors
+page, the UXLC features-of-interest pages and Taamey D's `@gerstar_tg` class already use it.
 
 ## Transliteration (accgram)
 
