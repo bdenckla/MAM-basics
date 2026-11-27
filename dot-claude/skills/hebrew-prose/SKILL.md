@@ -74,7 +74,9 @@ the repository-specific reference before writing. Load only the references neede
   `references/terminology.md`, “MAM's דפוסים is "the printed tradition"”.
 - **Rendered HTML, tables, captions, headings, tooltips, or alt text:** read
   `references/rendered-prose.md`. Every table cell holding Hebrew is `dir="rtl"` unless the
-  whole table already is.
+  whole table already is. Pointed forms that a page invites its reader to compare are stacked,
+  one above the other, each beside its label, and an image of a form stands directly above its
+  Unicode text.
 - **MAM-basics prose:** also read `references/mam-basics.md`. In particular, the pages in
   `gh-pages/post-stress-meteg/` deliberately use plain "word" because their
   introduction fixes the meaning; never change those pages to "chanted word".

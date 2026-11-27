@@ -130,6 +130,22 @@ in Latin text beside it: a row label, a note or a column. A link on pointed Hebr
 already do. Ben, 2026-11-14, of a dotted underline under a CLC form on a local stack page:
 “You can't use underlining with pointed hebrew, come on. it makes it unreadable.”
 
+## Compared forms are stacked
+
+When a page invites its reader to compare two or more pointed forms, such as a transcription's
+form and MAM's, a lemma and its body-text form, or a form before and after a correction, set
+them one above the other, each beside a Latin label naming its source, so that their letters and
+marks line up for the eye. Do not set them side by side in one line or row, and do not leave the
+second inside a sentence such as “MAM has” followed by the form. An image of a printed or
+written form and its Unicode text are stacked the same way, the image directly above the text.
+Until 2026-11-27 the rule lived only in single page families' own specifications, such as
+`doc/intro-doc-audit/METHODS.md`, after Ben's guidance of 2026-10-14, and
+`morphhb-on-mam/in/page-spec.md`, so a new page family could miss it. Ben, 2026-11-27, of a
+review page: “are the two pointed hebrew strings not stacked, as I have been asking for,
+consistently, for months, coming up on a year, in cases like this in which comparison is
+"invited"?” And of its images: “why ask my eye to fly back and forth with the image way over to
+the right and the unicode hebrew way over to the left.”
+
 ## Cite the two books as ITM and CoS, with the full title on hover
 
 Ben, 2026-07-28: *"'Breuer, Chapter 9' doesn't say what breuer book … use CoS and ITM

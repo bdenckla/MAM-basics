@@ -251,10 +251,13 @@ flows.
 Before an agent's first request of its own to a website in a task, it reads the site's
 `/robots.txt`, and it sends no request, `HEAD` included, to a path disallowed by the group that
 governs it: for an agent acting on Ben's request, the `*` group, unless the file names a group for
-such agents. It keeps the file's `Crawl-delay`. A file that robots.txt bars an agent from fetching
-is Ben's to download by hand. A refusal by a site's firewall ends the session's requests to that
-site, and no agent changes its user agent or headers to get past one. A tracked command keeps the
-robots.txt setting its own code gives it: MAM-basics' Wikisource download reads
+such agents. A group that names any of Anthropic's agents, such as ClaudeBot, Claude-User,
+Claude-Web or anthropic-ai, is such a group: that site has asked Claude to stay away. An agent that
+hands a fetch to a subagent reads robots.txt itself first, and gives the subagent only paths that
+the file allows. It keeps the file's `Crawl-delay`. A file that robots.txt bars an agent from
+fetching is Ben's to download by hand. A refusal by a site's firewall ends the session's requests to
+that site, and no agent changes its user agent or headers to get past one. A tracked command keeps
+the robots.txt setting its own code gives it: MAM-basics' Wikisource download reads
 `https://he.wikisource.org/w/api.php`, which Wikisource's robots.txt disallows, with
 `obey_robots_txt=False`. A new script in a MAM-basics checkout fetches through
 `py/mb_cmn/polite_download.py` with `obey_robots_txt=True` and a `ThrottleConfig` no shorter than
