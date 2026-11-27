@@ -242,6 +242,11 @@ a deḥi or yetiv at the letter's right edge. Ben, 2026-10-27, after the measure
 `Taamey-D/font-m-TaD/Taamey_D.sym.fea`'s "Note on the general below-mark chain": "Prepare the
 general below-mark chain for main."
 
+Taamey D centres the masorah circle over a letter but has no anchor for the circle on a maqaf or
+a space, so it draws a circle that follows either at that character's left edge. [The masorah
+circle: how it is stored and drawn](../doc/masorah-circle.md) records this beside the SBL Hebrew
+manual's guidance and SBL Hebrew's own drawing of the circle.
+
 ## Publication
 
 The site's pages that set Hebrew in Taamey D, `gh-pages/taamey-d/Taamey_D.html` among them, load

@@ -157,6 +157,11 @@ bot run of 2026-10-28 put a CGJ between the two vowels of each (“Ketiv forms w
 one letter” in `py/ws/ws_bot_edit_history.md`). A CGJ between two vowels keeps their stored
 order in HarfBuzz, as it does under normalization.
 
+The same manual also says where the masorah circle, HEBREW MARK MASORA CIRCLE, is stored and
+where it goes among a letter's marks. [The masorah circle: how it is stored and
+drawn](masorah-circle.md) records what it says, with Unicode's text and how Taamey D draws the
+circle.
+
 Since 2026-10-28, `is_fragile` in `py/mb_cmn/uni_norm_fragile.py` has checked a string against
 both orders. After dropping the marks in its `_DROP_TABLE`, it calls the string fragile when
 normalization to NFC or HarfBuzz's reordering would change the order of the marks below any
