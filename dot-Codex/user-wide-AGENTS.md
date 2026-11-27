@@ -455,6 +455,9 @@ MAM-basics checkout's `Taamey-D/font-m-TaD/Taamey_D.ttf` rather than from an ins
 
 ## Unicode in source and at runtime
 
+Consult the SBL Hebrew manual as if it were an addendum to the Unicode spec. MAM-private keeps a
+copy in `sbl-hebrew-manual/`, with a README that maps its pages.
+
 Never write an orphan combining mark as a raw code literal. Use a named escape such as
 `"\N{HEBREW POINT METEG}"`; in languages without named escapes, use a numeric escape and an
 adjacent Unicode-name comment. This restriction does not apply to a mark anchored on a base
